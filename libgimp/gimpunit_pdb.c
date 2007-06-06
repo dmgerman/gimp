@@ -93,7 +93,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_number_of_built_in_units:  *  * Returns the number of built-in units.  *  * This procedure returns the number of defined units built-in to the  * GIMP.  *  * Returns: The number of built-in units.  */
+comment|/**  * _gimp_unit_get_number_of_built_in_units:  *  * Returns the number of built-in units.  *  * This procedure returns the number of defined units built-in to GIMP.  *  * Returns: The number of built-in units.  */
 end_comment
 
 begin_function

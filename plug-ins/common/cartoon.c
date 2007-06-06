@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Cartoon filter for the GIMP for BIPS  *  -Spencer Kimball  *  * This filter propagates dark values in an image based on  *  each pixel's relative darkness to a neighboring average  */
+comment|/* Cartoon filter for GIMP for BIPS  *  -Spencer Kimball  *  * This filter propagates dark values in an image based on  *  each pixel's relative darkness to a neighboring average  */
 end_comment
 
 begin_include
@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fcf7df0108
+DECL|struct|__anon2b651fed0108
 block|{
 DECL|member|mask_radius
 name|gdouble

@@ -1930,7 +1930,7 @@ name|infile
 argument_list|)
 expr_stmt|;
 comment|/* At this point you may want to check to see whether any corrupt-data    * warnings occurred (test whether jerr.num_warnings is nonzero).    */
-comment|/* Tell the GIMP to display the image.    */
+comment|/* Tell GIMP to display the image.    */
 comment|/* gimp_drawable_flush (l_drawable); */
 return|return
 operator|(

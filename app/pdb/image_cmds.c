@@ -10128,7 +10128,7 @@ literal|"gimp-image-list"
 argument_list|,
 literal|"Returns the list of images currently open."
 argument_list|,
-literal|"This procedure returns the list of images currently open in the GIMP."
+literal|"This procedure returns the list of images currently open in GIMP."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

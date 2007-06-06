@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  * These routines are useful for working with the GIMP and need not be  * specific to plug-in-maze.  *  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
+comment|/* $Id$  * These routines are useful for working with GIMP and need not be  * specific to plug-in-maze.  *  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  */
 end_comment
 
 begin_comment

@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2936e8ba0103
+DECL|enum|__anon2782c0100103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3546,7 +3546,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in the GIMP's toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values.  **/
+comment|/**  * gimp_run_procedure2:  * @name:          the name of the procedure to run  * @n_return_vals: return location for the number of return values  * @n_params:      the number of parameters the procedure takes.  * @params:        the procedure's parameters array.  *  * This function calls a GIMP procedure and returns its return values.  * To get more information about the available procedures and the  * parameters they expect, please have a look at the Procedure Browser  * as found in the Xtns menu in GIMP's toolbox.  *  * As soon as you don't need the return values any longer, you should  * free them using gimp_destroy_params().  *  * Return value: the procedure's return values.  **/
 end_comment
 
 begin_function

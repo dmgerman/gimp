@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/******************************************************************************    fractaltrace.c  -- This is a plug-in for the GIMP 1.0    Copyright (C) 1997  Hirotsuna Mizuno                       s1041150@u-aizu.ac.jp    This program is free software; you can redistribute it and/or modify it   under the terms of the GNU General Public License as published by the Free   Software Foundation; either version 2 of the License, or (at your option)   any later version.    This program is distributed in the hope that it will be useful, but WITHOUT   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for   more details.    You should have received a copy of the GNU General Public License along with   this program; if not, write to the Free Software Foundation, Inc.,   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  ******************************************************************************/
+comment|/******************************************************************************    fractaltrace.c  -- This is a plug-in for GIMP 1.0    Copyright (C) 1997  Hirotsuna Mizuno                       s1041150@u-aizu.ac.jp    This program is free software; you can redistribute it and/or modify it   under the terms of the GNU General Public License as published by the Free   Software Foundation; either version 2 of the License, or (at your option)   any later version.    This program is distributed in the hope that it will be useful, but WITHOUT   ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or   FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for   more details.    You should have received a copy of the GNU General Public License along with   this program; if not, write to the Free Software Foundation, Inc.,   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  ******************************************************************************/
 end_comment
 
 begin_define
@@ -184,7 +184,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon294fde8d0103
+DECL|enum|__anon29fb306e0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -204,7 +204,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fde8d0208
+DECL|struct|__anon29fb306e0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -411,7 +411,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fde8d0308
+DECL|struct|__anon29fb306e0308
 block|{
 DECL|member|x1
 name|gint
@@ -454,7 +454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fde8d0408
+DECL|struct|__anon29fb306e0408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fde8d0508
+DECL|struct|__anon29fb306e0508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2914,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fde8d0608
+DECL|struct|__anon29fb306e0608
 block|{
 DECL|member|preview
 name|GtkWidget

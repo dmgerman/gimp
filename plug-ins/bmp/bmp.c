@@ -24,7 +24,7 @@ comment|/* Some Parts that deal with the interaction with */
 end_comment
 
 begin_comment
-comment|/* the Gimp are taken from the GIF plugin by      */
+comment|/* GIMP are taken from the GIF plugin by          */
 end_comment
 
 begin_comment

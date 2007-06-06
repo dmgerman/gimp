@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* xjt.c  *  * XJT (JPEG-TAR fileformat) loading and saving file filter for the GIMP  *  -hof (Wolfgang Hofer)  *  * This filter requires UNIX tar and the "jpeglib" Library to run.  * For optional further compression you also should install  *  gzip and bzip2 compression Programs.  *  * IMPORTANT NOTE:  *   This plugin needs GIMP 1.1.18 or newer versions of the GIMP-core to run.  */
+comment|/* xjt.c  *  * XJT (JPEG-TAR fileformat) loading and saving file filter for GIMP  *  -hof (Wolfgang Hofer)  *  * This filter requires UNIX tar and the "jpeglib" Library to run.  * For optional further compression you also should install  *  gzip and bzip2 compression Programs.  *  * IMPORTANT NOTE:  *   This plugin needs GIMP 1.1.18 or newer versions of the GIMP-core to run.  */
 end_comment
 
 begin_comment
@@ -264,7 +264,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880103
+DECL|enum|__anon2b24c00f0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -464,7 +464,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880203
+DECL|enum|__anon2b24c00f0203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -524,7 +524,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880303
+DECL|enum|__anon2b24c00f0303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880403
+DECL|enum|__anon2b24c00f0403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -576,7 +576,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880503
+DECL|enum|__anon2b24c00f0503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -596,7 +596,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880603
+DECL|enum|__anon2b24c00f0603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -631,7 +631,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27daf1880703
+DECL|enum|__anon2b24c00f0703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -756,7 +756,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880808
+DECL|struct|__anon2b24c00f0808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -792,7 +792,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880908
+DECL|struct|__anon2b24c00f0908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -841,7 +841,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880a08
+DECL|struct|__anon2b24c00f0a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -878,7 +878,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880b08
+DECL|struct|__anon2b24c00f0b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -928,7 +928,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880c08
+DECL|struct|__anon2b24c00f0c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -1002,7 +1002,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880d08
+DECL|struct|__anon2b24c00f0d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1087,7 +1087,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880e08
+DECL|struct|__anon2b24c00f0e08
 block|{
 DECL|member|position
 name|gint32
@@ -1111,7 +1111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27daf1880f08
+DECL|struct|__anon2b24c00f0f08
 block|{
 DECL|member|version
 name|gchar

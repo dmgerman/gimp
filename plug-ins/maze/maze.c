@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* $Id$  * This is a plug-in for the GIMP.  * It draws mazes...  *  * Implemented as a GIMP 0.99 Plugin by  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  *  * Code generously borrowed from assorted GIMP plugins  * and used as a template to get me started on this one.  :)  *  * TO DO:  *   maze_face.c: Rework the divboxes to be more like spinbuttons.  *  *   Maybe add an option to kill the outer border.  *  *   Fix that stray line down there between maze wall and dead space border...  *  *   handy.c: Make get_colors() work with indexed.  * HELP! *  *  */
+comment|/* $Id$  * This is a plug-in for GIMP.  * It draws mazes...  *  * Implemented as a GIMP 0.99 Plugin by  * Kevin Turner<acapnotic@users.sourceforge.net>  * http://gimp-plug-ins.sourceforge.net/maze/  *  * Code generously borrowed from assorted GIMP plugins  * and used as a template to get me started on this one.  :)  *  * TO DO:  *   maze_face.c: Rework the divboxes to be more like spinbuttons.  *  *   Maybe add an option to kill the outer border.  *  *   Fix that stray line down there between maze wall and dead space border...  *  *   handy.c: Make get_colors() work with indexed.  * HELP! *  *  */
 end_comment
 
 begin_comment

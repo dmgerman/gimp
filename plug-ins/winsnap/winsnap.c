@@ -343,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5d20040108
+DECL|struct|__anon2963102b0108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c5d20040208
+DECL|struct|__anon2963102b0208
 typedef|typedef
 struct|struct
 block|{
@@ -3856,7 +3856,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * sendBMPToGIMP  *  * Take the captured data and send it across  * to the GIMP.  */
+comment|/*  * sendBMPToGIMP  *  * Take the captured data and send it across  * to GIMP.  */
 end_comment
 
 begin_function

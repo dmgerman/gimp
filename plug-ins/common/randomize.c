@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a plugin for the GIMP v 1.0 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997-8 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a plugin for GIMP v 1.0 or later.  Documentation is  * available at http://www.rru.com/~meo/gimp/ .  *  * Copyright (C) 1997-8 Miles O'Neal<meo@rru.com>  http://www.rru.com/~meo/  * GUI based on GTK code from:  *    alienmap (Copyright (C) 1996, 1997 Daniel Cotting)  *    plasma   (Copyright (C) 1996 Stephen Norris),  *    oilify   (Copyright (C) 1996 Torsten Martinsen),  *    ripple   (Copyright (C) 1997 Brian Degenhardt) and  *    whirl    (Copyright (C) 1997 Federico Mena Quintero).  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  ****************************************************************************/
 end_comment
 
 begin_comment
@@ -165,7 +165,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946d0870108
+DECL|struct|__anon2bcf6e2f0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -341,7 +341,7 @@ argument_list|()
 end_macro
 
 begin_comment
-comment|/*********************************  *  *  query() - query_proc  *  *      called by the GIMP to learn about this plug-in  *  ********************************/
+comment|/*********************************  *  *  query() - query_proc  *  *      called by GIMP to learn about this plug-in  *  ********************************/
 end_comment
 
 begin_function
@@ -644,7 +644,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*********************************  *  *  run() - main routine  *  *  This handles the main interaction with the GIMP itself,  *  and invokes the routine that actually does the work.  *  ********************************/
+comment|/*********************************  *  *  run() - main routine  *  *  This handles the main interaction with GIMP itself,  *  and invokes the routine that actually does the work.  *  ********************************/
 end_comment
 
 begin_function
@@ -1163,7 +1163,7 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
-comment|/*    *  DONE!    *  Set the status where the GIMP can see it, and let go    *  of the drawable.    */
+comment|/*    *  DONE!    *  Set the status where GIMP can see it, and let go    *  of the drawable.    */
 name|g_rand_free
 argument_list|(
 name|gr

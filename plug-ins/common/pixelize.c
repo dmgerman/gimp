@@ -8,7 +8,7 @@ comment|/*  * version 1.04  * This version requires GIMP v0.99.10 or above.  *  
 end_comment
 
 begin_comment
-comment|/* pixelize filter written for the GIMP  *  -Tracy Scott  *  * This filter acts as a low pass filter on the color components of  * the provided region  */
+comment|/* pixelize filter written for GIMP  *  -Tracy Scott  *  * This filter acts as a low pass filter on the color components of  * the provided region  */
 end_comment
 
 begin_include
@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1531a0108
+DECL|struct|__anon291aba240108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c1531a0208
+DECL|struct|__anon291aba240208
 block|{
 DECL|member|x
 DECL|member|y

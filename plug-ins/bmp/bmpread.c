@@ -2783,7 +2783,7 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/* Make a new image in the gimp */
+comment|/* Make a new image in GIMP */
 switch|switch
 condition|(
 name|bpp

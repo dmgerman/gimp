@@ -104,7 +104,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_list:  * @num_images: The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in the  * GIMP.  *  * Returns: The list of images currently open.  */
+comment|/**  * gimp_image_list:  * @num_images: The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: The list of images currently open.  */
 end_comment
 
 begin_function

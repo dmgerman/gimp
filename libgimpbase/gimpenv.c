@@ -1280,7 +1280,7 @@ name|int
 name|csidl
 parameter_list|)
 block|{
-DECL|union|__anon2c3ba7ce010a
+DECL|union|__anon2a285bba010a
 union|union
 block|{
 DECL|member|c
@@ -1825,7 +1825,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gtkrc:  *  * Returns the name of the GIMP's application-specific gtkrc file.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The name of the GIMP's application-specific gtkrc file.  **/
+comment|/**  * gimp_gtkrc:  *  * Returns the name of GIMP's application-specific gtkrc file.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The name of GIMP's application-specific gtkrc file.  **/
 end_comment
 
 begin_function

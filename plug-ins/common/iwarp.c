@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* IWarp  a plug-in for the GIMP    Version 0.1     IWarp is a gimp plug-in for interactive image warping. To apply the    selected deformation to the image, press the left mouse button and    move the mouse pointer in the preview image.     Copyright (C) 1997 Norbert Schmitz    nobert.schmitz@student.uni-tuebingen.de     Most of the gimp and gtk specific code is taken from other plug-ins     v0.11a     animation of non-alpha layers (background) creates now layers with     alpha channel. (thanks to Adrian Likins for reporting this bug)    v0.12     fixes a very bad bug.      (thanks to Arthur Hagen for reporting it)   v0.13     2005 - changed to scale preview with the window;            JoÃ£o S. O. Bueno Calligaris  */
+comment|/* IWarp  a plug-in for GIMP    Version 0.1     IWarp is a gimp plug-in for interactive image warping. To apply the    selected deformation to the image, press the left mouse button and    move the mouse pointer in the preview image.     Copyright (C) 1997 Norbert Schmitz    nobert.schmitz@student.uni-tuebingen.de     Most of the gimp and gtk specific code is taken from other plug-ins     v0.11a     animation of non-alpha layers (background) creates now layers with     alpha channel. (thanks to Adrian Likins for reporting this bug)    v0.12     fixes a very bad bug.      (thanks to Arthur Hagen for reporting it)   v0.13     2005 - changed to scale preview with the window;            JoÃ£o S. O. Bueno Calligaris  */
 end_comment
 
 begin_include
@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c2bdc80103
+DECL|enum|__anon29abea8e0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2bdc80208
+DECL|struct|__anon29abea8e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c2bdc80308
+DECL|struct|__anon29abea8e0308
 block|{
 DECL|member|deform_area_radius
 name|gint

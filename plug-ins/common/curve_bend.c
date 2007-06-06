@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* curve_bend plugin for the GIMP */
+comment|/* curve_bend plugin for GIMP */
 end_comment
 
 begin_comment
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b7970108
+DECL|struct|__anon2b0a9f8d0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae0b7970208
+DECL|struct|__anon2b0a9f8d0208
 block|{
 DECL|member|y
 name|gint32
@@ -16292,7 +16292,7 @@ operator|->
 name|drawable_id
 argument_list|)
 expr_stmt|;
-comment|/* set layer invisible and dummyname and     * add at top of the image while working     * (for the case of undo the gimp must know,     *  that the layer was part of the image)     */
+comment|/* set layer invisible and dummyname and     * add at top of the image while working     * (for the case of undo GIMP must know,     *  that the layer was part of the image)     */
 name|gimp_image_add_layer
 argument_list|(
 name|l_image_id

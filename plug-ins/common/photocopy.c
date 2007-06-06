@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Photocopy filter for the GIMP for BIPS  *  -Spencer Kimball  *  * This filter propagates dark values in an image based on  *  each pixel's relative darkness to a neighboring average  *  and sets the remaining pixels to white.  */
+comment|/* Photocopy filter for GIMP for BIPS  *  -Spencer Kimball  *  * This filter propagates dark values in an image based on  *  each pixel's relative darkness to a neighboring average  *  and sets the remaining pixels to white.  */
 end_comment
 
 begin_include
@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274c2ee50108
+DECL|struct|__anon2c47b4150108
 block|{
 DECL|member|mask_radius
 name|gdouble

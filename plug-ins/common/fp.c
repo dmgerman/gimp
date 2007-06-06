@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for the GIMP.  *  * Copyright (C) Pavel Grinfeld (pavel@ml.com)  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/*  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This is a plug-in for GIMP.  *  * Copyright (C) Pavel Grinfeld (pavel@ml.com)  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a286f0108
+DECL|struct|__anon286ef0640108
 block|{
 DECL|member|run
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a286f0208
+DECL|struct|__anon286ef0640208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274a286f0303
+DECL|enum|__anon286ef0640303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a286f0403
+DECL|enum|__anon286ef0640403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a286f0503
+DECL|enum|__anon286ef0640503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +221,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a286f0603
+DECL|enum|__anon286ef0640603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a286f0703
+DECL|enum|__anon286ef0640703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +268,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a286f0808
+DECL|struct|__anon286ef0640808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a286f0908
+DECL|struct|__anon286ef0640908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a286f0a08
+DECL|struct|__anon286ef0640a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1312,7 +1312,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon274a286f0b08
+DECL|struct|__anon286ef0640b08
 block|{
 DECL|member|bna
 name|GtkWidget

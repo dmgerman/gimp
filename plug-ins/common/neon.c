@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Neon filter for the GIMP for BIPS  *  -Spencer Kimball  *  * This filter works in a manner similar to the "edge"  *  plug-in, but uses the first derivative of the gaussian  *  operator to achieve resolution independence. The IIR  *  method of calculating the effect is utilized to keep  *  the processing time constant between large and small  *  standard deviations.  */
+comment|/* Neon filter for GIMP for BIPS  *  -Spencer Kimball  *  * This filter works in a manner similar to the "edge"  *  plug-in, but uses the first derivative of the gaussian  *  operator to achieve resolution independence. The IIR  *  method of calculating the effect is utilized to keep  *  the processing time constant between large and small  *  standard deviations.  */
 end_comment
 
 begin_include
@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275073f30108
+DECL|struct|__anon2ac1ea2c0108
 block|{
 DECL|member|radius
 name|gdouble

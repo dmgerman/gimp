@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/****************************************************************************  * This is a plugin for the GIMP v 2.0 or later.  *  * Copyright (C) 2002 Martin Guldahl<mguldahl@xmission.com>  * Based on GTK code from:  *    homomorphic (Copyright (C) 2001 Valter Marcus Hilden)  *    rand-noted  (Copyright (C) 1998 Miles O'Neal)  *    nlfilt      (Copyright (C) 1997 Eric L. Hernes)  *    pagecurl    (Copyright (C) 1996 Federico Mena Quintero)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  ****************************************************************************/
+comment|/****************************************************************************  * This is a plugin for GIMP v 2.0 or later.  *  * Copyright (C) 2002 Martin Guldahl<mguldahl@xmission.com>  * Based on GTK code from:  *    homomorphic (Copyright (C) 2001 Valter Marcus Hilden)  *    rand-noted  (Copyright (C) 1998 Miles O'Neal)  *    nlfilt      (Copyright (C) 1997 Eric L. Hernes)  *    pagecurl    (Copyright (C) 1996 Federico Mena Quintero)  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  *  ****************************************************************************/
 end_comment
 
 begin_include
@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b62957e0103
+DECL|enum|__anon27b24c3f0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62957e0208
+DECL|struct|__anon27b24c3f0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b62957e0308
+DECL|struct|__anon27b24c3f0308
 block|{
 DECL|member|red
 name|CmChannelType

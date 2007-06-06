@@ -1502,7 +1502,7 @@ literal|"gimp-unit-get-number-of-built-in-units"
 argument_list|,
 literal|"Returns the number of built-in units."
 argument_list|,
-literal|"This procedure returns the number of defined units built-in to the GIMP."
+literal|"This procedure returns the number of defined units built-in to GIMP."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

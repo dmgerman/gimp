@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* Softglow filter for the GIMP for BIPS  *  -Spencer Kimball  *  * This filter screens a desaturated, sigmoidally transferred  *  and gaussian blurred version of the drawable over itself  *  to create a "softglow" photographic effect.  */
+comment|/* Softglow filter for GIMP for BIPS  *  -Spencer Kimball  *  * This filter screens a desaturated, sigmoidally transferred  *  and gaussian blurred version of the drawable over itself  *  to create a "softglow" photographic effect.  */
 end_comment
 
 begin_include
@@ -99,7 +99,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3120d20108
+DECL|struct|__anon2afbf8070108
 block|{
 DECL|member|glow_radius
 name|gdouble

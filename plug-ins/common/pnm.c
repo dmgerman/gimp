@@ -357,7 +357,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292b6b330108
+DECL|struct|__anon29492b140108
 block|{
 DECL|member|raw
 name|gint
@@ -2593,7 +2593,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-comment|/* Tell the GIMP to display the image.    */
+comment|/* Tell GIMP to display the image.    */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

@@ -8011,7 +8011,7 @@ argument_list|)
 expr_stmt|;
 name|fputs
 argument_list|(
-literal|"# This is a data file for the Fractal Explorer plug-in for the GIMP   *\n"
+literal|"# This is a data file for the Fractal Explorer plug-in for GIMP       *\n"
 argument_list|,
 name|fp
 argument_list|)

@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* WMF loading file filter for the GIMP  * -Dom Lachowicz<cinamod@hotmail.com> 2003  * -Francis James Franklin<fjf@alinameridon.com>  */
+comment|/* WMF loading file filter for GIMP  * -Dom Lachowicz<cinamod@hotmail.com> 2003  * -Francis James Franklin<fjf@alinameridon.com>  */
 end_comment
 
 begin_include
@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27df6d690108
+DECL|struct|__anon2c4ae9290108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -4889,7 +4889,7 @@ argument_list|(
 literal|1.0
 argument_list|)
 expr_stmt|;
-comment|/* Tell the GIMP to display the image.    */
+comment|/* Tell GIMP to display the image.    */
 name|gimp_image_add_layer
 argument_list|(
 name|image

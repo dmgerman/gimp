@@ -651,14 +651,14 @@ name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"/* color_map file created by the GIMP */\n"
+literal|"/* color_map file created by GIMP */\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
 argument_list|(
 name|file
 argument_list|,
-literal|"/* http://www.gimp.org/               */\n"
+literal|"/* http://www.gimp.org/           */\n"
 argument_list|)
 expr_stmt|;
 name|fprintf

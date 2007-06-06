@@ -1520,7 +1520,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Read the image in and give it to the GIMP a line at a time */
+comment|/* Read the image in and give it to GIMP a line at a time */
 name|buffer
 operator|=
 name|g_new
@@ -2824,7 +2824,7 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
-comment|/* Get the image from the GIMP one line at a time and write it out */
+comment|/* Get the image from GIMP one line at a time and write it out */
 for|for
 control|(
 name|i

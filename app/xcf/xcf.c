@@ -357,7 +357,7 @@ literal|"Saves file in the .xcf file format"
 argument_list|,
 literal|"The XCF file format has been designed "
 literal|"specifically for loading and saving "
-literal|"tiled and layered images in the GIMP. "
+literal|"tiled and layered images in GIMP. "
 literal|"This procedure will save the specified "
 literal|"image in the xcf file format."
 argument_list|,
@@ -606,7 +606,7 @@ literal|"Loads file saved in the .xcf file format"
 argument_list|,
 literal|"The XCF file format has been designed "
 literal|"specifically for loading and saving "
-literal|"tiled and layered images in the GIMP. "
+literal|"tiled and layered images in GIMP. "
 literal|"This procedure will load the specified "
 literal|"file."
 argument_list|,

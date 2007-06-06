@@ -1984,7 +1984,7 @@ argument_list|(
 name|DICOM
 argument_list|)
 expr_stmt|;
-comment|/* Tell the GIMP to display the image. */
+comment|/* Tell GIMP to display the image. */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable

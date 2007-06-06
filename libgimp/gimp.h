@@ -342,7 +342,7 @@ DECL|member|quit_proc
 name|GimpQuitProc
 name|quit_proc
 decl_stmt|;
-comment|/* called by the gimp so that the plug-in can inform the    *  gimp of what it does. (ie. installing a procedure database    *  procedure).    */
+comment|/* called by gimp so that the plug-in can inform the    *  gimp of what it does. (ie. installing a procedure database    *  procedure).    */
 DECL|member|query_proc
 name|GimpQueryProc
 name|query_proc

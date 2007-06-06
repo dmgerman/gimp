@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a9db3b0103
+DECL|enum|__anon2c6260ac0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -880,7 +880,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  Do all the actual context help calls in idle functions and check for  *  some widget holding a grab before starting the query because strange  *  things happen if (1) the help browser pops up while the query has  *  grabbed the pointer or (2) the query grabs the pointer while some  *  other part of the gimp has grabbed it (e.g. a tool, eek)  */
+comment|/*  Do all the actual context help calls in idle functions and check for  *  some widget holding a grab before starting the query because strange  *  things happen if (1) the help browser pops up while the query has  *  grabbed the pointer or (2) the query grabs the pointer while some  *  other part of GIMP has grabbed it (e.g. a tool, eek)  */
 end_comment
 
 begin_function
