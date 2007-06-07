@@ -487,18 +487,13 @@ name|GimpUndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
-comment|/*  Composite preview  */
-DECL|member|comp_preview
+comment|/*  Preview  */
+DECL|member|preview
 name|TempBuf
 modifier|*
-name|comp_preview
+name|preview
 decl_stmt|;
-comment|/*  the composite preview        */
-DECL|member|comp_preview_valid
-name|gboolean
-name|comp_preview_valid
-decl_stmt|;
-comment|/*  preview valid-1/channel      */
+comment|/*  the projection preview       */
 comment|/*  Signal emmision accumulator  */
 DECL|member|flush_accum
 name|GimpImageFlushAccumulator
