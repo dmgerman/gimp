@@ -61,6 +61,14 @@ value|48
 end_define
 
 begin_define
+DECL|macro|GIMP_VIEWABLE_PRIORITY_IDLE
+define|#
+directive|define
+name|GIMP_VIEWABLE_PRIORITY_IDLE
+value|(G_PRIORITY_LOW + 100)
+end_define
+
+begin_define
 DECL|macro|GIMP_TYPE_VIEWABLE
 define|#
 directive|define

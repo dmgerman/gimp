@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c377a560103
+DECL|enum|__anon2bddfa970103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c377a560203
+DECL|enum|__anon2bddfa970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1614,7 +1614,7 @@ name|preview_idle_id
 operator|=
 name|g_idle_add_full
 argument_list|(
-name|G_PRIORITY_DEFAULT_IDLE
+name|GIMP_VIEWABLE_PRIORITY_IDLE
 argument_list|,
 name|gimp_undo_create_preview_idle
 argument_list|,
