@@ -85,6 +85,7 @@ DECL|macro|SCHEME_EXPORT
 define|#
 directive|define
 name|SCHEME_EXPORT
+value|extern
 end_define
 
 begin_else
@@ -568,7 +569,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon2a203c55010a
+DECL|union|__anon29eb4033010a
 union|union
 block|{
 DECL|member|ivalue
