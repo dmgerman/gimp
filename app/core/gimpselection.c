@@ -2899,7 +2899,7 @@ name|image
 argument_list|,
 name|context
 argument_list|,
-name|gimp_pickable_get_bytes
+name|gimp_pickable_get_image_type
 argument_list|(
 name|pickable
 argument_list|)
