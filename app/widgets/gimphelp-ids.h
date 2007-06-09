@@ -729,6 +729,14 @@ value|"gimp-image-resize-to-layers"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_IMAGE_RESIZE_TO_SELECTION
+define|#
+directive|define
+name|GIMP_HELP_IMAGE_RESIZE_TO_SELECTION
+value|"gimp-image-resize-to-selection"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_IMAGE_PRINT_SIZE
 define|#
 directive|define

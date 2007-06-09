@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7910800103
+DECL|enum|__anon2a2f91070103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7910800203
+DECL|enum|__anon2a2f91070203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7910800303
+DECL|enum|__anon2a2f91070303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7910800403
+DECL|enum|__anon2a2f91070403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7910800508
+DECL|struct|__anon2a2f91070508
 block|{
 DECL|member|h_style
 name|gint
@@ -378,7 +378,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Align _Visible Layers..."
+literal|"Align Visi_ble Layers..."
 argument_list|)
 argument_list|,
 literal|"RGB*,GRAY*,INDEXED*"

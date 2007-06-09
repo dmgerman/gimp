@@ -100,6 +100,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_resize_to_selection
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

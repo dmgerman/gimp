@@ -370,6 +370,31 @@ name|GIMP_HELP_IMAGE_RESIZE_TO_LAYERS
 block|}
 block|,
 block|{
+literal|"image-resize-to-selection"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"F_it Canvas to Selection"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Resize the image to the extents of the selection"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|image_resize_to_selection_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_IMAGE_RESIZE_TO_SELECTION
+block|}
+block|,
+block|{
 literal|"image-print-size"
 block|,
 name|GIMP_STOCK_PRINT_RESOLUTION
@@ -1114,6 +1139,15 @@ argument_list|(
 literal|"image-resize-to-layers"
 argument_list|,
 name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"image-resize-to-selection"
+argument_list|,
+name|image
+operator|&&
+name|sel
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
