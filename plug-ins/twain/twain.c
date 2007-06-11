@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d13d300108
+DECL|struct|__anon2c1dcfc70108
 typedef|typedef
 struct|struct
 block|{
@@ -1157,7 +1157,15 @@ parameter_list|)
 block|{
 name|GimpRunMode
 name|run_mode
-decl_stmt|;
+init|=
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
 comment|/* Initialize the return values    * Always return at least the status to the caller.    */
 name|values
 index|[
@@ -1167,7 +1175,7 @@ operator|.
 name|type
 operator|=
 name|GIMP_PDB_STATUS
-expr_stmt|;
+decl_stmt|;
 name|values
 index|[
 literal|0
@@ -1213,18 +1221,6 @@ name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 return|return;
 block|}
-comment|/* Get the runmode from the in-parameters */
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 comment|/* Set up the rest of the return parameters */
 name|values
 index|[
@@ -1411,7 +1407,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon28d13d300208
+DECL|struct|__anon2c1dcfc70208
 typedef|typedef
 struct|struct
 block|{
