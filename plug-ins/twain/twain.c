@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1dcfc70108
+DECL|struct|__anon297d75ef0108
 typedef|typedef
 struct|struct
 block|{
@@ -1166,6 +1166,7 @@ operator|.
 name|data
 operator|.
 name|d_int32
+decl_stmt|;
 comment|/* Initialize the return values    * Always return at least the status to the caller.    */
 name|values
 index|[
@@ -1175,7 +1176,7 @@ operator|.
 name|type
 operator|=
 name|GIMP_PDB_STATUS
-decl_stmt|;
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1407,7 +1408,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c1dcfc70208
+DECL|struct|__anon297d75ef0208
 typedef|typedef
 struct|struct
 block|{

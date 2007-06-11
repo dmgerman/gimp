@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b5b80a0103
+DECL|enum|__anon2b522a760103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b5b80a0203
+DECL|enum|__anon2b522a760203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5b80a0308
+DECL|struct|__anon2b522a760308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5b80a0408
+DECL|struct|__anon2b522a760408
 block|{
 DECL|member|fp
 name|FILE
@@ -1118,7 +1118,7 @@ else|else
 block|{
 name|status
 operator|=
-name|GIMP_PDB_CALLING_ERROR
+name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
