@@ -640,7 +640,9 @@ name|BoundSeg
 modifier|*
 modifier|*
 name|segs_ptrs_by_xy1
-decl_stmt|,
+decl_stmt|;
+specifier|const
+name|BoundSeg
 modifier|*
 modifier|*
 name|segs_ptrs_by_xy2
