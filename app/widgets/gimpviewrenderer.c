@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a5e2630103
+DECL|enum|__anon2c721e030103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -542,13 +542,13 @@ name|renderer
 operator|->
 name|width
 operator|=
-literal|8
+literal|0
 expr_stmt|;
 name|renderer
 operator|->
 name|height
 operator|=
-literal|8
+literal|0
 expr_stmt|;
 name|renderer
 operator|->
@@ -3973,6 +3973,7 @@ name|gint
 name|dest_bytes
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -4034,6 +4035,20 @@ decl_stmt|;
 name|gint
 name|offset
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|temp_buf
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|dest_buffer
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/*  Here are the different cases this functions handles correctly:    *  1)  Offset temp_buf which does not necessarily cover full image area    *  2)  Color conversion of temp_buf if it is gray and image is color    *  3)  Background check buffer for transparent temp_bufs    *  4)  Using the optional "channel" argument, one channel can be extracted    *      from a multi-channel temp_buf and composited as a grayscale    *  Prereqs:    *  1)  Grayscale temp_bufs have bytes == {1, 2}    *  2)  Color temp_bufs have bytes == {3, 4}    *  3)  If image is gray, then temp_buf should have bytes == {1, 2}    */
 name|color
 operator|=
