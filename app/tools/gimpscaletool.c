@@ -1176,23 +1176,6 @@ condition|)
 block|{
 comment|/*  FIXME: improve this  */
 name|gdouble
-name|w
-init|=
-name|tr_tool
-operator|->
-name|trans_info
-index|[
-name|X1
-index|]
-operator|-
-name|tr_tool
-operator|->
-name|trans_info
-index|[
-name|X0
-index|]
-decl_stmt|;
-name|gdouble
 name|h
 init|=
 name|tr_tool
