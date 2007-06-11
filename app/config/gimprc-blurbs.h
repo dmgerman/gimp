@@ -934,7 +934,7 @@ define|#
 directive|define
 name|THUMBNAIL_SIZE_BLURB
 define|\
-value|N_("Sets the size of the thumbnail shown in the Open dialog. Note that " \    "GIMP can not create thumbnails if layer previews are disabled.")
+value|N_("Sets the size of the thumbnail shown in the Open dialog.")
 end_define
 
 begin_define

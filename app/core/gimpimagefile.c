@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277122460103
+DECL|enum|__anon2a1697f70103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -826,18 +826,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|imagefile
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|layer_previews
-condition|)
-return|return;
-if|if
-condition|(
 name|size
 operator|<
 literal|1
@@ -1153,18 +1141,6 @@ name|imagefile
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|imagefile
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|layer_previews
-condition|)
-return|return;
 if|if
 condition|(
 name|size
