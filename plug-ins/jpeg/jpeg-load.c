@@ -242,6 +242,11 @@ decl_stmt|;
 name|jpeg_saved_marker_ptr
 name|marker
 decl_stmt|;
+name|gboolean
+name|found_exif
+init|=
+name|FALSE
+decl_stmt|;
 comment|/* We set up the normal JPEG error routines. */
 name|cinfo
 operator|.
@@ -270,6 +275,7 @@ operator|!
 name|preview
 condition|)
 block|{
+comment|/* Note: this usage of client_data and my_emit_message() may be a bit          redundant now that we only look for EXIF data in APP1 markers          instead of feeding the whole file to libexif immediately.  We also          depend on a slighly more robust version of libexif.  We should          consider removing this code in the future.  --Raphael, 2007-06-12       */
 name|cinfo
 operator|.
 name|client_data
@@ -971,6 +977,11 @@ name|JPEG_APP_HEADER_EXIF
 argument_list|)
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/* FIXME: this flag is a workaround until we handle exif here */
+name|found_exif
+operator|=
+name|TRUE
 expr_stmt|;
 comment|/* Note: maybe split the loop to ensure that the EXIF block is */
 comment|/*       always parsed before any XMP packet */
@@ -1730,6 +1741,8 @@ directive|ifdef
 name|HAVE_EXIF
 if|if
 condition|(
+name|found_exif
+operator|&&
 operator|!
 name|GPOINTER_TO_INT
 argument_list|(
@@ -1895,7 +1908,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b161cce0108
+DECL|struct|__anon273d98f90108
 block|{
 DECL|member|pub
 name|struct
