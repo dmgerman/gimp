@@ -450,10 +450,10 @@ expr_stmt|;
 name|paint_funcs_free
 argument_list|()
 expr_stmt|;
-name|tile_swap_exit
+name|tile_cache_exit
 argument_list|()
 expr_stmt|;
-name|tile_cache_exit
+name|tile_swap_exit
 argument_list|()
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func

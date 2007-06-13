@@ -336,6 +336,19 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|cur_cache_size
+operator|>
+literal|0
+condition|)
+name|g_warning
+argument_list|(
+literal|"tile cache not empty (%ld bytes left)"
+argument_list|,
+name|cur_cache_size
+argument_list|)
+expr_stmt|;
 name|tile_cache_set_size
 argument_list|(
 literal|0
