@@ -412,6 +412,21 @@ end_function
 
 begin_function
 name|void
+DECL|function|errors_exit (void)
+name|errors_exit
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|the_errors_gimp
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_fatal_error (const gchar * fmt,...)
 name|gimp_fatal_error
 parameter_list|(

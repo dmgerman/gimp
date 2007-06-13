@@ -765,6 +765,9 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+name|errors_exit
+argument_list|()
+expr_stmt|;
 name|base_exit
 argument_list|()
 expr_stmt|;
