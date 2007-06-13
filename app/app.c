@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile-swap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -841,7 +847,7 @@ expr_stmt|;
 else|#
 directive|else
 comment|/*  make sure that the swap file is removed before we quit */
-name|base_exit
+name|tile_swap_exit
 argument_list|()
 expr_stmt|;
 name|exit
