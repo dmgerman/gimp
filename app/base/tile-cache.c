@@ -121,6 +121,7 @@ end_typedef
 begin_decl_stmt
 DECL|variable|max_tile_size
 specifier|static
+specifier|const
 name|gulong
 name|max_tile_size
 init|=
@@ -376,10 +377,6 @@ goto|;
 comment|/* First check and see if the tile is already    *  in the cache. In that case we will simply place    *  it at the end of the tile list to indicate that    *  it was the most recently accessed tile.    */
 name|list
 operator|=
-operator|(
-name|TileList
-operator|*
-operator|)
 name|tile
 operator|->
 name|listhead
@@ -570,10 +567,6 @@ name|last
 operator|=
 name|tile
 expr_stmt|;
-comment|/* gosgood@idt.net 1999-12-04                                  */
-comment|/* bytes on cur_cache_dirty miscounted in CVS 1.12:            */
-comment|/* Invariant: test for selecting dirty list should be the same */
-comment|/* as counting files dirty.                                    */
 if|if
 condition|(
 name|tile
@@ -655,6 +648,41 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|tile_cache_set_size (gulong cache_size)
+name|tile_cache_set_size
+parameter_list|(
+name|gulong
+name|cache_size
+parameter_list|)
+block|{
+name|CACHE_LOCK
+expr_stmt|;
+name|max_cache_size
+operator|=
+name|cache_size
+expr_stmt|;
+while|while
+condition|(
+name|cur_cache_size
+operator|>
+name|max_cache_size
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|tile_cache_zorch_next
+argument_list|()
+condition|)
+break|break;
+block|}
+name|CACHE_UNLOCK
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|tile_cache_flush_internal (Tile * tile)
@@ -668,18 +696,12 @@ block|{
 name|TileList
 modifier|*
 name|list
-decl_stmt|;
-comment|/* Find where the tile is in the cache.    */
-name|list
-operator|=
-operator|(
-name|TileList
-operator|*
-operator|)
+init|=
 name|tile
 operator|->
 name|listhead
-expr_stmt|;
+decl_stmt|;
+comment|/* Find where the tile is in the cache.    */
 if|if
 condition|(
 name|list
@@ -761,41 +783,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|tile_cache_set_size (gulong cache_size)
-name|tile_cache_set_size
-parameter_list|(
-name|gulong
-name|cache_size
-parameter_list|)
-block|{
-name|CACHE_LOCK
-expr_stmt|;
-name|max_cache_size
-operator|=
-name|cache_size
-expr_stmt|;
-while|while
-condition|(
-name|cur_cache_size
-operator|>
-name|max_cache_size
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|tile_cache_zorch_next
-argument_list|()
-condition|)
-break|break;
-block|}
-name|CACHE_UNLOCK
-expr_stmt|;
 block|}
 end_function
 
