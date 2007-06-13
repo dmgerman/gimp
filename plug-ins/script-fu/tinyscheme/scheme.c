@@ -10950,6 +10950,10 @@ name|char_cnt
 parameter_list|)
 block|{
 name|int
+name|free_bytes
+decl_stmt|;
+comment|/* Space remaining in buffer (in bytes) */
+name|int
 name|l
 decl_stmt|;
 name|char
@@ -11141,7 +11145,7 @@ directive|endif
 block|}
 else|else
 block|{
-name|l
+name|free_bytes
 operator|=
 name|pt
 operator|->
@@ -11161,10 +11165,20 @@ name|curr
 expr_stmt|;
 if|if
 condition|(
-name|l
+name|free_bytes
 operator|>
 literal|0
 condition|)
+block|{
+name|l
+operator|=
+name|min
+argument_list|(
+name|char_cnt
+argument_list|,
+name|free_bytes
+argument_list|)
+expr_stmt|;
 name|memcpy
 argument_list|(
 name|pt
@@ -11177,14 +11191,20 @@ name|curr
 argument_list|,
 name|chars
 argument_list|,
-name|min
-argument_list|(
-name|char_cnt
-argument_list|,
 name|l
 argument_list|)
-argument_list|)
 expr_stmt|;
+name|pt
+operator|->
+name|rep
+operator|.
+name|string
+operator|.
+name|curr
+operator|+=
+name|l
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
@@ -11436,7 +11456,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2bb5bc2b0103
+DECL|enum|__anon2977afc20103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28198,7 +28218,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2bb5bc2b0208
+DECL|struct|__anon2977afc20208
 specifier|static
 struct|struct
 block|{
@@ -28433,7 +28453,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2bb5bc2b0308
+DECL|struct|__anon2977afc20308
 typedef|typedef
 struct|struct
 block|{
