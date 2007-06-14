@@ -269,7 +269,7 @@ name|TRC
 parameter_list|(
 name|x
 parameter_list|)
-value|printf x
+value|g_printerr x
 end_define
 
 begin_else
@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b49b70103
+DECL|enum|__anon2b0db3de0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298b49b70203
+DECL|enum|__anon2b0db3de0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -408,6 +408,18 @@ end_enum
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_color_managed_iface_init
+parameter_list|(
+name|GimpColorManagedInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -816,6 +828,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|guint8
+modifier|*
+name|gimp_image_get_icc_profile
+parameter_list|(
+name|GimpColorManaged
+modifier|*
+name|managed
+parameter_list|,
+name|gsize
+modifier|*
+name|len
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_decl_stmt
 DECL|variable|valid_combinations
 specifier|static
@@ -931,13 +960,15 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-name|G_DEFINE_TYPE
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpImage
 argument_list|,
 argument|gimp_image
 argument_list|,
 argument|GIMP_TYPE_VIEWABLE
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)
 argument_list|)
 end_macro
 
@@ -2275,6 +2306,26 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_color_hash_init
 argument_list|()
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_color_managed_iface_init (GimpColorManagedInterface * iface)
+name|gimp_color_managed_iface_init
+parameter_list|(
+name|GimpColorManagedInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|get_icc_profile
+operator|=
+name|gimp_image_get_icc_profile
 expr_stmt|;
 block|}
 end_function
@@ -9368,7 +9419,7 @@ operator|=
 operator|*
 name|parasite
 expr_stmt|;
-comment|/* only set the dirty bit manually if we can be saved and the new      parasite differs from the current one and we aren't undoable */
+comment|/*  only set the dirty bit manually if we can be saved and the new    *  parasite differs from the current one and we aren't undoable    */
 if|if
 condition|(
 name|gimp_parasite_is_undoable
@@ -9390,7 +9441,7 @@ operator|&
 name|copy
 argument_list|)
 expr_stmt|;
-comment|/*  We used to push an cantundo on te stack here. This made the undo stack       unusable (NULL on the stack) and prevented people from undoing after a       save (since most save plug-ins attach an undoable comment parasite).       Now we simply attach the parasite without pushing an undo. That way it's       undoable but does not block the undo system.   --Sven    */
+comment|/*  We used to push an cantundo on te stack here. This made the undo stack    *  unusable (NULL on the stack) and prevented people from undoing after a    *  save (since most save plug-ins attach an undoable comment parasite).    *  Now we simply attach the parasite without pushing an undo. That way    *  it's undoable but does not block the undo system.   --Sven    */
 name|gimp_parasite_list_add
 argument_list|(
 name|image
@@ -9443,6 +9494,27 @@ argument_list|,
 name|parasite
 operator|->
 name|name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|parasite
+operator|->
+name|name
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -9540,6 +9612,25 @@ argument_list|,
 literal|0
 argument_list|,
 name|name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15206,6 +15297,65 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|guint8
+modifier|*
+DECL|function|gimp_image_get_icc_profile (GimpColorManaged * managed,gsize * len)
+name|gimp_image_get_icc_profile
+parameter_list|(
+name|GimpColorManaged
+modifier|*
+name|managed
+parameter_list|,
+name|gsize
+modifier|*
+name|len
+parameter_list|)
+block|{
+specifier|const
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
+name|parasite
+operator|=
+name|gimp_image_parasite_find
+argument_list|(
+name|GIMP_IMAGE
+argument_list|(
+name|managed
+argument_list|)
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|parasite
+condition|)
+block|{
+operator|*
+name|len
+operator|=
+name|gimp_parasite_data_size
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+return|;
+block|}
+return|return
+name|NULL
+return|;
 block|}
 end_function
 
