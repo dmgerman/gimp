@@ -2478,7 +2478,7 @@ argument_list|)
 expr_stmt|;
 name|new_all_objs
 operator|=
-name|g_list_append
+name|g_list_prepend
 argument_list|(
 name|new_all_objs
 argument_list|,
@@ -2492,6 +2492,13 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+name|new_all_objs
+operator|=
+name|g_list_reverse
+argument_list|(
+name|new_all_objs
+argument_list|)
+expr_stmt|;
 return|return
 name|new_all_objs
 return|;
