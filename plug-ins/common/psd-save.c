@@ -408,13 +408,13 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|void
-modifier|*
+name|gconstpointer
 name|buf
 parameter_list|,
-name|long
+name|glong
 name|len
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -431,13 +431,15 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|,
 name|gint
 name|padding
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -454,10 +456,12 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -477,6 +481,7 @@ parameter_list|,
 name|guchar
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -496,6 +501,7 @@ parameter_list|,
 name|gint16
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -515,6 +521,7 @@ parameter_list|,
 name|gint32
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -531,10 +538,12 @@ name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -1222,17 +1231,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_string (FILE * fd,char * val,gchar * why)
+DECL|function|write_string (FILE * fd,const gchar * val,const gchar * why)
 name|write_string
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -1270,27 +1281,28 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_pascalstring (FILE * fd,char * val,gint padding,gchar * why)
+DECL|function|write_pascalstring (FILE * fd,const gchar * val,gint padding,const gchar * why)
 name|write_pascalstring
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|,
 name|gint
 name|padding
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|len
 decl_stmt|;
 name|gint
@@ -1311,8 +1323,7 @@ condition|?
 literal|255
 else|:
 operator|(
-name|unsigned
-name|char
+name|guchar
 operator|)
 name|strlen
 argument_list|(
@@ -1410,20 +1421,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|xfwrite (FILE * fd,void * buf,long len,gchar * why)
+DECL|function|xfwrite (FILE * fd,gconstpointer buf,glong len,const gchar * why)
 name|xfwrite
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|void
-modifier|*
+name|gconstpointer
 name|buf
 parameter_list|,
-name|long
+name|glong
 name|len
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -1463,7 +1474,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_gchar (FILE * fd,guchar val,gchar * why)
+DECL|function|write_gchar (FILE * fd,guchar val,const gchar * why)
 name|write_gchar
 parameter_list|(
 name|FILE
@@ -1473,13 +1484,13 @@ parameter_list|,
 name|guchar
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|b
 index|[
 literal|2
@@ -1555,7 +1566,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_gint16 (FILE * fd,gint16 val,gchar * why)
+DECL|function|write_gint16 (FILE * fd,gint16 val,const gchar * why)
 name|write_gint16
 parameter_list|(
 name|FILE
@@ -1565,13 +1576,13 @@ parameter_list|,
 name|gint16
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|b
 index|[
 literal|2
@@ -1635,7 +1646,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_gint32 (FILE * fd,gint32 val,gchar * why)
+DECL|function|write_gint32 (FILE * fd,gint32 val,const gchar * why)
 name|write_gint32
 parameter_list|(
 name|FILE
@@ -1645,13 +1656,13 @@ parameter_list|,
 name|gint32
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
 parameter_list|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|b
 index|[
 literal|4
@@ -1740,17 +1751,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|write_datablock_luni (FILE * fd,char * val,gchar * why)
+DECL|function|write_datablock_luni (FILE * fd,const gchar * val,const gchar * why)
 name|write_datablock_luni
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
 parameter_list|,
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|val
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|why
@@ -1802,8 +1815,7 @@ condition|(
 name|luniName
 condition|)
 block|{
-name|unsigned
-name|char
+name|guchar
 name|len
 init|=
 operator|(
@@ -1946,18 +1958,16 @@ modifier|*
 name|dest_ptr
 parameter_list|)
 block|{
+name|gint32
+name|remaining
+init|=
+name|length
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
-name|gint32
-name|remaining
-decl_stmt|;
-name|remaining
-operator|=
-name|length
-expr_stmt|;
 name|length
 operator|=
 literal|0
