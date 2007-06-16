@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef5cbf0103
+DECL|enum|__anon2890bd540103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1413,7 +1413,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_projection_get_level:  * @proj:    pointer to a GimpProjection  * @scale_x: horizontal scale factor  * @scale_y: vertical scale factor  *  * This function returns a theoritical optimal pyramid level for a given  * scale factor. Depending on the size of the image, a smaller level may  * be used later.  *  * Return value: the pyramid level to use for a given display scale factor.  **/
+comment|/**  * gimp_projection_get_level:  * @proj:    pointer to a GimpProjection  * @scale_x: horizontal scale factor  * @scale_y: vertical scale factor  *  * This function returns the optimal pyramid level for a given scale factor.  *  * Return value: the pyramid level to use for a given display scale factor.  **/
 end_comment
 
 begin_function
@@ -1439,6 +1439,28 @@ name|gdouble
 name|next
 init|=
 literal|1.0
+decl_stmt|;
+name|guint
+name|width
+init|=
+name|proj
+operator|->
+name|image
+operator|->
+name|width
+operator|>>
+literal|1
+decl_stmt|;
+name|guint
+name|height
+init|=
+name|proj
+operator|->
+name|image
+operator|->
+name|height
+operator|>>
+literal|1
 decl_stmt|;
 name|gint
 name|level
@@ -1476,6 +1498,36 @@ name|level
 operator|++
 control|)
 block|{
+name|width
+operator|>>=
+literal|1
+expr_stmt|;
+name|height
+operator|>>=
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+condition|)
+break|break;
+if|if
+condition|(
+name|width
+operator|<=
+name|TILE_WIDTH
+operator|&&
+name|height
+operator|<=
+name|TILE_HEIGHT
+condition|)
+break|break;
 name|next
 operator|/=
 literal|2
