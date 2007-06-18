@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2beee5270103
+DECL|enum|__anon2b0ba0f80103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beee5270208
+DECL|struct|__anon2b0ba0f80208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2beee5270308
+DECL|struct|__anon2b0ba0f80308
 block|{
 DECL|member|signature
 name|gchar
@@ -4093,7 +4093,7 @@ argument_list|)
 decl_stmt|;
 name|g_message
 argument_list|(
-literal|"Error: layer blend signature is incorrect. :-("
+literal|"Error: layer blend signature is incorrect"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -5966,7 +5966,7 @@ name|gint
 name|channeli
 parameter_list|)
 block|{
-name|int
+name|gint
 name|width
 decl_stmt|,
 name|height
@@ -6035,6 +6035,26 @@ name|channel
 operator|->
 name|height
 expr_stmt|;
+if|if
+condition|(
+name|width
+operator|>
+name|G_MAXINT16
+operator|||
+name|height
+operator|>
+name|G_MAXINT16
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Error: Invalid channel dimensions"
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
 name|IFDBG
 block|{
 name|printf
@@ -6266,7 +6286,7 @@ expr_stmt|;
 block|}
 name|g_message
 argument_list|(
-literal|"*** Unknown compression type in channel."
+literal|"Error: Unknown compression type in channel"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -9524,7 +9544,7 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"Error: Sorry, can't deal with a layered image of this type.\n"
+literal|"Error: Can't deal with a layered image of this type"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -11533,9 +11553,9 @@ operator|>
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: unexpected EOF while reading image data\n"
+literal|"Unexpected end of file while reading image data"
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -12722,9 +12742,9 @@ operator|==
 name|EOF
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: unexpected EOF while reading '%s' chunk\n"
+literal|"Unexpected end of file while reading '%s' chunk"
 argument_list|,
 name|why
 argument_list|)
@@ -12930,9 +12950,9 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_message
 argument_list|(
-literal|"PSD: unexpected EOF while reading '%s' chunk\n"
+literal|"Unexpected end of file while reading '%s' chunk"
 argument_list|,
 name|why
 argument_list|)
