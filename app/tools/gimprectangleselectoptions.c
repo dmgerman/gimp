@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d95aa0103
+DECL|enum|__anon2bd17eda0103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -566,9 +566,9 @@ argument_list|(
 literal|"Radius:"
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|,
-literal|100.0
+literal|10.0
 argument_list|,
 literal|1
 argument_list|,
