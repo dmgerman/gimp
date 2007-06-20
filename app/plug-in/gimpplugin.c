@@ -171,6 +171,28 @@ directive|include
 file|<io.h>
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|pipe
+end_ifndef
+
+begin_define
+DECL|macro|pipe (fds)
+define|#
+directive|define
+name|pipe
+parameter_list|(
+name|fds
+parameter_list|)
+value|_pipe(fds, 4096, _O_BINARY)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_endif
 endif|#
 directive|endif
