@@ -219,17 +219,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|tile_mark_valid
-parameter_list|(
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|TileRowHint
 name|tile_get_rowhint
 parameter_list|(

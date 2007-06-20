@@ -910,25 +910,6 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_mark_valid (Tile * tile)
-name|tile_mark_valid
-parameter_list|(
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-block|{
-name|tile
-operator|->
-name|valid
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
 DECL|function|tile_attach (Tile * tile,void * tm,gint tile_num)
 name|tile_attach
 parameter_list|(
