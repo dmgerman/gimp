@@ -289,6 +289,15 @@ name|TileManager
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|TilePyramid
+typedef|typedef
+name|struct
+name|_TilePyramid
+name|TilePyramid
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  functions  */
 end_comment

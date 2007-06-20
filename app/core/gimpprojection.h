@@ -137,22 +137,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PROJECTION, GimpProjectionClass))
 end_define
 
-begin_define
-DECL|macro|PYRAMID_MAX_LEVELS
-define|#
-directive|define
-name|PYRAMID_MAX_LEVELS
-value|10
-end_define
-
-begin_define
-DECL|macro|PYRAMID_BASE_LEVEL
-define|#
-directive|define
-name|PYRAMID_BASE_LEVEL
-value|0
-end_define
-
 begin_typedef
 DECL|typedef|GimpProjectionClass
 typedef|typedef
@@ -176,26 +160,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-DECL|member|type
-name|GimpImageType
-name|type
-decl_stmt|;
-DECL|member|bytes
-name|gint
-name|bytes
-decl_stmt|;
-comment|/* An image pyramid. Level n + 1 has half the width and height of level n. */
 DECL|member|pyramid
-name|TileManager
+name|TilePyramid
 modifier|*
 name|pyramid
-index|[
-name|PYRAMID_MAX_LEVELS
-index|]
-decl_stmt|;
-DECL|member|top_level
-name|gint
-name|top_level
 decl_stmt|;
 DECL|member|update_areas
 name|GSList
