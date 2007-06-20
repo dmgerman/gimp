@@ -207,11 +207,6 @@ modifier|*
 name|data
 decl_stmt|;
 comment|/* the data for the tile. this may be NULL in which                          *  case the tile data is on disk.                          */
-DECL|member|swap_num
-name|gint
-name|swap_num
-decl_stmt|;
-comment|/* the index into the file table of the file to be used                          * for swapping. swap_num 1 is always the global                          * swap file.                          */
 DECL|member|swap_offset
 name|gint64
 name|swap_offset
