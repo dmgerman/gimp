@@ -1809,7 +1809,14 @@ name|gint
 name|channel
 parameter_list|)
 block|{
-comment|/* Add point onto the curve */
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
+decl_stmt|;
 name|gint
 name|closest_point
 init|=
@@ -1826,8 +1833,6 @@ name|i
 decl_stmt|;
 switch|switch
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -1868,8 +1873,6 @@ control|)
 block|{
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -1892,8 +1895,6 @@ name|abs
 argument_list|(
 name|curvex
 operator|-
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -1917,8 +1918,6 @@ name|abs
 argument_list|(
 name|curvex
 operator|-
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -1955,8 +1954,6 @@ operator|)
 operator|/
 literal|16
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -1972,8 +1969,6 @@ index|]
 operator|=
 name|curvex
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -1987,8 +1982,6 @@ index|[
 literal|1
 index|]
 operator|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -2030,6 +2023,14 @@ modifier|*
 name|kevent
 parameter_list|)
 block|{
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
+decl_stmt|;
 name|gint
 name|i
 init|=
@@ -2040,8 +2041,6 @@ decl_stmt|;
 name|gint
 name|y
 init|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -2068,8 +2067,6 @@ name|tool
 operator|->
 name|grabbed
 operator|||
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -2115,8 +2112,6 @@ control|)
 block|{
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -2173,8 +2168,6 @@ control|)
 block|{
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -2233,8 +2226,6 @@ else|:
 literal|1
 operator|)
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -2259,8 +2250,6 @@ argument_list|)
 expr_stmt|;
 name|curves_calculate_curve
 argument_list|(
-name|tool
-operator|->
 name|curves
 argument_list|,
 name|tool
@@ -2300,8 +2289,6 @@ else|:
 literal|1
 operator|)
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -2326,8 +2313,6 @@ argument_list|)
 expr_stmt|;
 name|curves_calculate_curve
 argument_list|(
-name|tool
-operator|->
 name|curves
 argument_list|,
 name|tool
@@ -3660,6 +3645,14 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
+decl_stmt|;
 name|FILE
 modifier|*
 name|file
@@ -3843,8 +3836,6 @@ name|i
 operator|++
 control|)
 block|{
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -3868,8 +3859,6 @@ name|j
 operator|++
 control|)
 block|{
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -3891,8 +3880,6 @@ index|[
 name|j
 index|]
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -3931,8 +3918,6 @@ operator|++
 control|)
 name|curves_calculate_curve
 argument_list|(
-name|tool
-operator|->
 name|curves
 argument_list|,
 name|i
@@ -3986,6 +3971,14 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
+decl_stmt|;
 name|FILE
 modifier|*
 name|file
@@ -4015,8 +4008,6 @@ operator|++
 control|)
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -4051,8 +4042,6 @@ operator|*
 literal|32
 argument_list|)
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -4070,8 +4059,6 @@ index|]
 operator|=
 name|index
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -4087,8 +4074,6 @@ index|[
 literal|1
 index|]
 operator|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4141,8 +4126,6 @@ name|file
 argument_list|,
 literal|"%d %d "
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -4156,8 +4139,6 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -4206,6 +4187,14 @@ parameter_list|)
 block|{
 name|GimpHistogramChannel
 name|channel
+decl_stmt|;
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
 decl_stmt|;
 if|if
 condition|(
@@ -4285,8 +4274,6 @@ operator|->
 name|xrange
 argument_list|)
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4296,8 +4283,6 @@ operator|->
 name|channel
 index|]
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4307,8 +4292,6 @@ operator|->
 name|channel
 index|]
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4338,8 +4321,6 @@ operator|->
 name|xrange
 argument_list|)
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4347,8 +4328,6 @@ index|[
 name|GIMP_HISTOGRAM_RED
 index|]
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4356,8 +4335,6 @@ index|[
 name|GIMP_HISTOGRAM_GREEN
 index|]
 argument_list|,
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4643,6 +4620,14 @@ block|{
 name|GimpCurveType
 name|curve_type
 decl_stmt|;
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
+decl_stmt|;
 name|gimp_radio_button_update
 argument_list|(
 name|widget
@@ -4653,8 +4638,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -4667,8 +4650,6 @@ operator|!=
 name|curve_type
 condition|)
 block|{
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -4717,8 +4698,6 @@ operator|*
 literal|32
 argument_list|)
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -4738,8 +4717,6 @@ index|]
 operator|=
 name|index
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -4757,8 +4734,6 @@ index|[
 literal|1
 index|]
 operator|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -4775,8 +4750,6 @@ block|}
 block|}
 name|curves_calculate_curve
 argument_list|(
-name|tool
-operator|->
 name|curves
 argument_list|,
 name|tool
@@ -4894,10 +4867,13 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GimpCursorType
-name|new_cursor
+name|Curves
+modifier|*
+name|curves
 init|=
-name|GDK_X_CURSOR
+name|tool
+operator|->
+name|curves
 decl_stmt|;
 name|GdkEventButton
 modifier|*
@@ -4906,6 +4882,11 @@ decl_stmt|;
 name|GdkEventMotion
 modifier|*
 name|mevent
+decl_stmt|;
+name|GimpCursorType
+name|new_cursor
+init|=
+name|GDK_X_CURSOR
 decl_stmt|;
 name|gint
 name|i
@@ -5066,8 +5047,6 @@ control|)
 block|{
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5092,8 +5071,6 @@ name|abs
 argument_list|(
 name|x
 operator|-
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5119,8 +5096,6 @@ name|abs
 argument_list|(
 name|x
 operator|-
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5203,8 +5178,6 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -5243,8 +5216,6 @@ operator|--
 control|)
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5268,8 +5239,6 @@ name|tool
 operator|->
 name|leftmost
 operator|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5310,8 +5279,6 @@ operator|++
 control|)
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5335,8 +5302,6 @@ name|tool
 operator|->
 name|rightmost
 operator|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5360,8 +5325,6 @@ name|selected
 operator|=
 name|closest_point
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5381,8 +5344,6 @@ index|]
 operator|=
 name|x
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5416,8 +5377,6 @@ break|break;
 case|case
 name|GIMP_CURVE_FREE
 case|:
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -5450,8 +5409,6 @@ break|break;
 block|}
 name|curves_calculate_curve
 argument_list|(
-name|tool
-operator|->
 name|curves
 argument_list|,
 name|tool
@@ -5521,8 +5478,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -5558,8 +5513,6 @@ name|event
 expr_stmt|;
 switch|switch
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -5584,8 +5537,6 @@ condition|)
 block|{
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5621,8 +5572,6 @@ name|new_cursor
 operator|=
 name|GDK_TCROSS
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5670,8 +5619,6 @@ literal|16
 expr_stmt|;
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5696,8 +5643,6 @@ name|selected
 operator|=
 name|closest_point
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5717,8 +5662,6 @@ index|]
 operator|=
 name|x
 expr_stmt|;
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -5743,8 +5686,6 @@ expr_stmt|;
 block|}
 name|curves_calculate_curve
 argument_list|(
-name|tool
-operator|->
 name|curves
 argument_list|,
 name|tool
@@ -5831,6 +5772,7 @@ name|x2
 operator|!=
 name|x1
 condition|)
+block|{
 for|for
 control|(
 name|i
@@ -5844,8 +5786,6 @@ condition|;
 name|i
 operator|++
 control|)
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -5884,9 +5824,9 @@ name|x1
 operator|)
 operator|)
 expr_stmt|;
+block|}
 else|else
-name|tool
-operator|->
+block|{
 name|curves
 operator|->
 name|curve
@@ -5903,6 +5843,7 @@ literal|255
 operator|-
 name|y
 expr_stmt|;
+block|}
 name|tool
 operator|->
 name|selected
@@ -6308,6 +6249,14 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
+name|Curves
+modifier|*
+name|curves
+init|=
+name|tool
+operator|->
+name|curves
+decl_stmt|;
 name|GimpHistogramChannel
 name|channel
 decl_stmt|;
@@ -6550,8 +6499,6 @@ name|y
 operator|=
 literal|255
 operator|-
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve
@@ -6622,8 +6569,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tool
-operator|->
 name|curves
 operator|->
 name|curve_type
@@ -6653,8 +6598,6 @@ control|)
 block|{
 name|x
 operator|=
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
@@ -6681,8 +6624,6 @@ name|y
 operator|=
 literal|255
 operator|-
-name|tool
-operator|->
 name|curves
 operator|->
 name|points
