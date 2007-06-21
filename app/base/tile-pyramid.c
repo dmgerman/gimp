@@ -1030,7 +1030,7 @@ argument_list|,
 name|tile_pyramid_validate_tile
 argument_list|)
 expr_stmt|;
-name|tile_manager_set_level_below
+name|tile_manager_set_user_data
 argument_list|(
 name|pyramid
 operator|->
@@ -1077,7 +1077,7 @@ name|TileManager
 modifier|*
 name|level_below
 init|=
-name|tile_manager_get_level_below
+name|tile_manager_get_user_data
 argument_list|(
 name|tm
 argument_list|)
