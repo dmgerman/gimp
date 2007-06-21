@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be381df0103
+DECL|enum|__anon2b42adfb0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -937,7 +937,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_channel_validate
+name|gimp_channel_validate_tile
 parameter_list|(
 name|TileManager
 modifier|*
@@ -6847,8 +6847,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_channel_validate (TileManager * tm,Tile * tile)
-name|gimp_channel_validate
+DECL|function|gimp_channel_validate_tile (TileManager * tm,Tile * tile)
+name|gimp_channel_validate_tile
 parameter_list|(
 name|TileManager
 modifier|*
@@ -7930,7 +7930,12 @@ argument_list|)
 operator|->
 name|tiles
 argument_list|,
-name|gimp_channel_validate
+operator|(
+name|TileValidateProc
+operator|)
+name|gimp_channel_validate_tile
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

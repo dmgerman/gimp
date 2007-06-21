@@ -543,7 +543,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_selection_validate
+name|gimp_selection_validate_tile
 parameter_list|(
 name|TileManager
 modifier|*
@@ -2121,8 +2121,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_selection_validate (TileManager * tm,Tile * tile)
-name|gimp_selection_validate
+DECL|function|gimp_selection_validate_tile (TileManager * tm,Tile * tile)
+name|gimp_selection_validate_tile
 parameter_list|(
 name|TileManager
 modifier|*
@@ -2262,7 +2262,6 @@ name|y2
 operator|=
 name|height
 expr_stmt|;
-comment|/*  Set the validate procedure  */
 name|tile_manager_set_validate_proc
 argument_list|(
 name|GIMP_DRAWABLE
@@ -2272,7 +2271,12 @@ argument_list|)
 operator|->
 name|tiles
 argument_list|,
-name|gimp_selection_validate
+operator|(
+name|TileValidateProc
+operator|)
+name|gimp_selection_validate_tile
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return

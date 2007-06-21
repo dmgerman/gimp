@@ -111,6 +111,10 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
+parameter_list|,
+name|TileManager
+modifier|*
+name|tm_below
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -644,7 +648,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * tile_pyramid_set_validate_proc:  * @pyramid:   a #TilePyramid  * @proc:      a function to validate the bottom level tiles  * @user_data: data to attach to the bottom level tile manager  *  * Sets a validation proc and user data on the bottom-most tile manager.  **/
+comment|/**  * tile_pyramid_set_validate_proc:  * @pyramid:   a #TilePyramid  * @proc:      a function to validate the bottom level tiles  * @user_data: data to pass to the validation @proc  *  * Sets a validation procedure on the bottom-most tile manager.  **/
 end_comment
 
 begin_function
@@ -680,16 +684,6 @@ literal|0
 index|]
 argument_list|,
 name|proc
-argument_list|)
-expr_stmt|;
-name|tile_manager_set_user_data
-argument_list|(
-name|pyramid
-operator|->
-name|tiles
-index|[
-literal|0
-index|]
 argument_list|,
 name|user_data
 argument_list|)
@@ -1005,18 +999,6 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
-name|tile_manager_set_user_data
-argument_list|(
-name|pyramid
-operator|->
-name|tiles
-index|[
-name|level
-index|]
-argument_list|,
-name|pyramid
-argument_list|)
-expr_stmt|;
 comment|/* Use the level below to validate tiles. */
 name|tile_manager_set_validate_proc
 argument_list|(
@@ -1027,17 +1009,10 @@ index|[
 name|level
 index|]
 argument_list|,
+operator|(
+name|TileValidateProc
+operator|)
 name|tile_pyramid_validate_tile
-argument_list|)
-expr_stmt|;
-name|tile_manager_set_user_data
-argument_list|(
-name|pyramid
-operator|->
-name|tiles
-index|[
-name|level
-index|]
 argument_list|,
 name|pyramid
 operator|->
@@ -1061,7 +1036,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_pyramid_validate_tile (TileManager * tm,Tile * tile)
+DECL|function|tile_pyramid_validate_tile (TileManager * tm,Tile * tile,TileManager * tm_below)
 name|tile_pyramid_validate_tile
 parameter_list|(
 name|TileManager
@@ -1071,17 +1046,12 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
-parameter_list|)
-block|{
+parameter_list|,
 name|TileManager
 modifier|*
-name|level_below
-init|=
-name|tile_manager_get_user_data
-argument_list|(
-name|tm
-argument_list|)
-decl_stmt|;
+name|tm_below
+parameter_list|)
+block|{
 name|gint
 name|tile_col
 decl_stmt|;
@@ -1139,7 +1109,7 @@ name|source
 init|=
 name|tile_manager_get_at
 argument_list|(
-name|level_below
+name|tm_below
 argument_list|,
 name|tile_col
 operator|*

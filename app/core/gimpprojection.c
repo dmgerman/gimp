@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28724a310103
+DECL|enum|__anon28eaf5960103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -327,6 +327,10 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
+parameter_list|,
+name|GimpProjection
+modifier|*
+name|proj
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1260,6 +1264,9 @@ name|proj
 operator|->
 name|pyramid
 argument_list|,
+operator|(
+name|TileValidateProc
+operator|)
 name|gimp_projection_validate_tile
 argument_list|,
 name|proj
@@ -2638,7 +2645,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_validate_tile (TileManager * tm,Tile * tile)
+DECL|function|gimp_projection_validate_tile (TileManager * tm,Tile * tile,GimpProjection * proj)
 name|gimp_projection_validate_tile
 parameter_list|(
 name|TileManager
@@ -2648,17 +2655,12 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
-parameter_list|)
-block|{
+parameter_list|,
 name|GimpProjection
 modifier|*
 name|proj
-init|=
-name|tile_manager_get_user_data
-argument_list|(
-name|tm
-argument_list|)
-decl_stmt|;
+parameter_list|)
+block|{
 name|gint
 name|x
 decl_stmt|,

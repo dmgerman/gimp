@@ -318,6 +318,9 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 function_decl|;
 end_typedef

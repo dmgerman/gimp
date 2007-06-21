@@ -7101,7 +7101,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gradmap_tile_validate (TileManager * tm,Tile * tile)
+DECL|function|gradmap_tile_validate (TileManager * tm,Tile * tile,GimpImage * image)
 name|gradmap_tile_validate
 parameter_list|(
 name|TileManager
@@ -7111,6 +7111,10 @@ parameter_list|,
 name|Tile
 modifier|*
 name|tile
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 block|{
 specifier|static
@@ -7118,15 +7122,6 @@ name|gboolean
 name|first_gradient
 init|=
 name|TRUE
-decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|tile_manager_get_user_data
-argument_list|(
-name|tm
-argument_list|)
 decl_stmt|;
 name|GimpPickable
 modifier|*
@@ -7887,18 +7882,16 @@ operator|*
 name|COST_WIDTH
 argument_list|)
 expr_stmt|;
-name|tile_manager_set_user_data
-argument_list|(
-name|tm
-argument_list|,
-name|image
-argument_list|)
-expr_stmt|;
 name|tile_manager_set_validate_proc
 argument_list|(
 name|tm
 argument_list|,
+operator|(
+name|TileValidateProc
+operator|)
 name|gradmap_tile_validate
+argument_list|,
+name|image
 argument_list|)
 expr_stmt|;
 return|return

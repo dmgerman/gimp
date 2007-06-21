@@ -399,7 +399,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_set_validate_proc (TileManager * tm,TileValidateProc proc)
+DECL|function|tile_manager_set_validate_proc (TileManager * tm,TileValidateProc proc,gpointer user_data)
 name|tile_manager_set_validate_proc
 parameter_list|(
 name|TileManager
@@ -408,6 +408,9 @@ name|tm
 parameter_list|,
 name|TileValidateProc
 name|proc
+parameter_list|,
+name|gpointer
+name|user_data
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -422,6 +425,12 @@ operator|->
 name|validate_proc
 operator|=
 name|proc
+expr_stmt|;
+name|tm
+operator|->
+name|user_data
+operator|=
+name|user_data
 expr_stmt|;
 block|}
 end_function
@@ -1237,6 +1246,10 @@ argument_list|(
 name|tm
 argument_list|,
 name|tile
+argument_list|,
+name|tm
+operator|->
+name|user_data
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -2129,63 +2142,6 @@ name|i
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|tile_manager_set_user_data (TileManager * tm,gpointer user_data)
-name|tile_manager_set_user_data
-parameter_list|(
-name|TileManager
-modifier|*
-name|tm
-parameter_list|,
-name|gpointer
-name|user_data
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|tm
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|tm
-operator|->
-name|user_data
-operator|=
-name|user_data
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|gpointer
-DECL|function|tile_manager_get_user_data (const TileManager * tm)
-name|tile_manager_get_user_data
-parameter_list|(
-specifier|const
-name|TileManager
-modifier|*
-name|tm
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|tm
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|tm
-operator|->
-name|user_data
-return|;
 block|}
 end_function
 

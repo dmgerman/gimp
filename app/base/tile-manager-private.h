@@ -70,7 +70,12 @@ DECL|member|validate_proc
 name|TileValidateProc
 name|validate_proc
 decl_stmt|;
-comment|/*  this proc is called when an attempt                                      *  to get an invalid tile is made.                                      */
+comment|/*  this proc is called when an attempt  *                                      *  to get an invalid tile is made       */
+DECL|member|user_data
+name|gpointer
+name|user_data
+decl_stmt|;
+comment|/*  data to pass to the validate_proc    */
 DECL|member|cached_num
 name|gint
 name|cached_num
@@ -82,11 +87,6 @@ modifier|*
 name|cached_tile
 decl_stmt|;
 comment|/*  the actual cached tile               */
-DECL|member|user_data
-name|gpointer
-name|user_data
-decl_stmt|;
-comment|/*  hook for hanging data off of         */
 block|}
 struct|;
 end_struct
