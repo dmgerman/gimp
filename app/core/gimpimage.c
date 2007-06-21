@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54e7f40103
+DECL|enum|__anon27d9c23c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54e7f40203
+DECL|enum|__anon27d9c23c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2866,6 +2866,14 @@ name|mask_changed
 operator|=
 name|FALSE
 expr_stmt|;
+name|image
+operator|->
+name|flush_accum
+operator|.
+name|preview_invalidated
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -4844,6 +4852,15 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|image
+operator|->
+name|flush_accum
+operator|.
+name|preview_invalidated
+condition|)
+block|{
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
@@ -4852,6 +4869,15 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|image
+operator|->
+name|flush_accum
+operator|.
+name|preview_invalidated
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -7155,6 +7181,14 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+expr_stmt|;
+name|image
+operator|->
+name|flush_accum
+operator|.
+name|preview_invalidated
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function

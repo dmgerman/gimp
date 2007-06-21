@@ -143,6 +143,10 @@ DECL|member|mask_changed
 name|gboolean
 name|mask_changed
 decl_stmt|;
+DECL|member|preview_invalidated
+name|gboolean
+name|preview_invalidated
+decl_stmt|;
 block|}
 struct|;
 end_struct
