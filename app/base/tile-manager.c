@@ -435,7 +435,7 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get_tile (TileManager * tm,gint xpixel,gint ypixel,gint wantread,gint wantwrite)
+DECL|function|tile_manager_get_tile (TileManager * tm,gint xpixel,gint ypixel,gboolean wantread,gboolean wantwrite)
 name|tile_manager_get_tile
 parameter_list|(
 name|TileManager
@@ -448,10 +448,10 @@ parameter_list|,
 name|gint
 name|ypixel
 parameter_list|,
-name|gint
+name|gboolean
 name|wantread
 parameter_list|,
-name|gint
+name|gboolean
 name|wantwrite
 parameter_list|)
 block|{
@@ -489,7 +489,7 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get (TileManager * tm,gint tile_num,gint wantread,gint wantwrite)
+DECL|function|tile_manager_get (TileManager * tm,gint tile_num,gboolean wantread,gboolean wantwrite)
 name|tile_manager_get
 parameter_list|(
 name|TileManager
@@ -499,10 +499,10 @@ parameter_list|,
 name|gint
 name|tile_num
 parameter_list|,
-name|gint
+name|gboolean
 name|wantread
 parameter_list|,
-name|gint
+name|gboolean
 name|wantwrite
 parameter_list|)
 block|{
@@ -1118,7 +1118,7 @@ end_function
 begin_function
 name|Tile
 modifier|*
-DECL|function|tile_manager_get_at (TileManager * tm,gint tile_col,gint tile_row,gint wantread,gint wantwrite)
+DECL|function|tile_manager_get_at (TileManager * tm,gint tile_col,gint tile_row,gboolean wantread,gboolean wantwrite)
 name|tile_manager_get_at
 parameter_list|(
 name|TileManager
@@ -1131,10 +1131,10 @@ parameter_list|,
 name|gint
 name|tile_row
 parameter_list|,
-name|gint
+name|gboolean
 name|wantread
 parameter_list|,
-name|gint
+name|gboolean
 name|wantwrite
 parameter_list|)
 block|{
@@ -2500,8 +2500,14 @@ name|gboolean
 name|sparse
 parameter_list|)
 block|{
+comment|/*  the tile manager itself  */
 name|gint64
 name|memsize
+init|=
+sizeof|sizeof
+argument_list|(
+name|TileManager
+argument_list|)
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2510,14 +2516,6 @@ operator|!=
 name|NULL
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-comment|/*  the tile manager itself  */
-name|memsize
-operator|=
-sizeof|sizeof
-argument_list|(
-name|TileManager
 argument_list|)
 expr_stmt|;
 comment|/*  the array of tiles  */
@@ -2546,7 +2544,7 @@ name|gpointer
 argument_list|)
 operator|)
 expr_stmt|;
-comment|/*  the memory allocated for the tiles   */
+comment|/*  the memory allocated for the tiles  */
 if|if
 condition|(
 name|sparse

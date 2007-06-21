@@ -477,10 +477,6 @@ block|{
 comment|/* an invalid tile should never be shared, so this should work */
 name|tile_manager_validate
 argument_list|(
-operator|(
-name|TileManager
-operator|*
-operator|)
 name|tile
 operator|->
 name|tlink
@@ -950,10 +946,6 @@ block|{
 comment|/* trying to share invalid tiles is problematic, not to mention silly */
 name|tile_manager_validate
 argument_list|(
-operator|(
-name|TileManager
-operator|*
-operator|)
 name|tile
 operator|->
 name|tlink

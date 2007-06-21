@@ -176,7 +176,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0c9fd80103
+DECL|enum|__anon2b57c7aa0103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -489,10 +489,10 @@ end_ifdef
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_win32_large_truncate (int fd,gint64 size)
+DECL|function|gimp_win32_large_truncate (gint fd,gint64 size)
 name|gimp_win32_large_truncate
 parameter_list|(
-name|int
+name|gint
 name|fd
 parameter_list|,
 name|gint64
