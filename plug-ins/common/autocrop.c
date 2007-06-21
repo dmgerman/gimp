@@ -1173,8 +1173,10 @@ expr_stmt|;
 if|if
 condition|(
 name|layer_only
-operator|&&
-operator|(
+condition|)
+block|{
+if|if
+condition|(
 name|x2
 operator|-
 name|x1
@@ -1186,7 +1188,6 @@ operator|-
 name|y1
 operator|!=
 name|height
-operator|)
 condition|)
 block|{
 name|gimp_layer_resize
@@ -1208,6 +1209,7 @@ operator|-
 name|y1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
