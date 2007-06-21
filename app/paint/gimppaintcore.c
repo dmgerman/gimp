@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a58f710103
+DECL|enum|__anon2add41b20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1752,20 +1752,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  invalidate the previews -- have to do it here, because    *  it is not done during the actual painting.    */
+comment|/*  invalidate the drawable preview -- have to do it here, because    *  it is not done during the actual painting.    */
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

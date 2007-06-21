@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0db3de0103
+DECL|enum|__anon2c54e7f40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0db3de0203
+DECL|enum|__anon2c54e7f40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4783,14 +4783,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -4852,6 +4844,14 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -4975,14 +4975,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -5035,14 +5027,6 @@ argument_list|,
 name|gimp_item_height
 argument_list|(
 name|item
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6990,14 +6974,6 @@ argument_list|,
 name|image
 operator|->
 name|height
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -12785,14 +12761,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|TRUE
@@ -13834,14 +13802,6 @@ name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
 argument_list|)
 argument_list|)
 expr_stmt|;

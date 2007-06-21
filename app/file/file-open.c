@@ -2146,6 +2146,30 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+comment|/* make sure the entire projection is properly constructed, because    * load plug-ins are not required to call gimp_drawable_update() or    * anything.    */
+name|gimp_image_update
+argument_list|(
+name|image
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|image
+operator|->
+name|width
+argument_list|,
+name|image
+operator|->
+name|height
+argument_list|)
+expr_stmt|;
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+comment|/* same for drawable previews */
 name|gimp_image_invalidate_layer_previews
 argument_list|(
 name|image
@@ -2154,14 +2178,6 @@ expr_stmt|;
 name|gimp_image_invalidate_channel_previews
 argument_list|(
 name|image
-argument_list|)
-expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
