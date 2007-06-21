@@ -137,6 +137,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * tile_pyramid_new:  * @type:   type of pixel data stored in the pyramid  * @width:  bottom level width  * @height: bottom level height  *  * Creates a new #TilePyramid, managing a set of tile-managers where  * each level is a sized-down version of the level below.  *  * This only works correctly if you set a validate procedure using  * tile_pyramid_set_validate_proc() and invalidate areas. With some  * small changes, it could be made to work for non-validating tile  * managers also. But currently only the projection uses it.  *  * Only the bottom-most tile-manager is allocated at this point. Upper  * levels are created only if they are requested.  *  * Return value: a newly allocate #TilePyramid  **/
+end_comment
+
 begin_function
 name|TilePyramid
 modifier|*
@@ -280,6 +284,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * tile_pyramid_destroy:  * @pyramid: a #TilePyramid  *  * Destroys resources allocated for @pyramid and unrefs all contained  * tile-managers.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|tile_pyramid_destroy (TilePyramid * pyramid)
@@ -334,6 +342,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * tile_pyramid_get_level:  * @width:  width of the bottom level  * @height: height of the bottom level  * @scale:  zoom ratio  *  * Calculates the optimal level to request from a #TilePyramid in order  * to display at a certain @scale.  *  * Return value: the level to use for @scale  **/
+end_comment
 
 begin_function
 name|gint
@@ -436,6 +448,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * tile_pyramid_get_tiles:  * @pyramid: a #TilePyramid  * @level:   level, typically obtained using tile_pyramid_get_level()  *  * Gives access to the #TileManager at @level of the @pyramid.  *  * Return value: pointer to a #TileManager  **/
+end_comment
+
 begin_function
 name|TileManager
 modifier|*
@@ -493,9 +509,13 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * tile_pyramid_invalidate_area:  * @pyramid: a #TilePyramid  * @x:  * @y:  * @width:  * @height:  *  * Invalidates the tiles in the given area on all levels.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|tile_pyramid_invalidate_area (TilePyramid * pyramid,gint x,gint y,gint w,gint h)
+DECL|function|tile_pyramid_invalidate_area (TilePyramid * pyramid,gint x,gint y,gint width,gint height)
 name|tile_pyramid_invalidate_area
 parameter_list|(
 name|TilePyramid
@@ -509,10 +529,10 @@ name|gint
 name|y
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|)
 block|{
 name|gint
@@ -525,6 +545,39 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|x
+operator|>=
+literal|0
+operator|&&
+name|y
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|width
+operator|>=
+literal|0
+operator|&&
+name|height
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|width
+operator|==
+literal|0
+operator|||
+name|height
+operator|==
+literal|0
+condition|)
+return|return;
 for|for
 control|(
 name|level
@@ -552,35 +605,47 @@ name|level
 index|]
 argument_list|,
 name|x
-operator|>>
-name|level
 argument_list|,
 name|y
-operator|>>
-name|level
 argument_list|,
 name|MAX
 argument_list|(
-name|w
-operator|>>
-name|level
+name|width
 argument_list|,
 literal|1
 argument_list|)
 argument_list|,
 name|MAX
 argument_list|(
-name|h
-operator|>>
-name|level
+name|height
 argument_list|,
 literal|1
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|x
+operator|>>=
+literal|1
+expr_stmt|;
+name|y
+operator|>>=
+literal|1
+expr_stmt|;
+name|width
+operator|>>=
+literal|1
+expr_stmt|;
+name|height
+operator|>>=
+literal|1
+expr_stmt|;
 block|}
 block|}
 end_function
+
+begin_comment
+comment|/**  * tile_pyramid_set_validate_proc:  * @pyramid:   a #TilePyramid  * @proc:      a function to validate the bottom level tiles  * @user_data: data to attach to the bottom level tile manager  *  * Sets a validation proc and user data on the bottom-most tile manager.  **/
+end_comment
 
 begin_function
 name|void
@@ -632,6 +697,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * tile_pyramid_get_width:  * @pyramid: a #TilePyramid  *  * Return value: the width of the pyramid's bottom level  **/
+end_comment
+
 begin_function
 name|gint
 DECL|function|tile_pyramid_get_width (const TilePyramid * pyramid)
@@ -659,6 +728,10 @@ name|width
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * tile_pyramid_get_height:  * @pyramid: a #TilePyramid  *  * Return value: the height of the pyramid's bottom level  **/
+end_comment
 
 begin_function
 name|gint
@@ -688,6 +761,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * tile_pyramid_get_bpp:  * @pyramid: a #TilePyramid  *  * Return value: the number of bytes per pixel stored in the @pyramid  **/
+end_comment
+
 begin_function
 name|gint
 DECL|function|tile_pyramid_get_bpp (const TilePyramid * pyramid)
@@ -715,6 +792,10 @@ name|bytes
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * tile_pyramid_get_memsize:  * @pyramid:   a #TilePyramid  *  * Return value: size of memory allocated for the @pyramid  **/
+end_comment
 
 begin_function
 name|gint64

@@ -90,10 +90,10 @@ name|gint
 name|y
 parameter_list|,
 name|gint
-name|w
+name|width
 parameter_list|,
 name|gint
-name|h
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl
