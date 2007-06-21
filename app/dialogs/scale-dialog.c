@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b529b60108
+DECL|struct|__anon29e2a0020108
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -888,7 +888,7 @@ argument_list|(
 literal|"Indexed color layers are always scaled "
 literal|"without interpolation. The chosen "
 literal|"interpolation type will affect channels "
-literal|"and masks only."
+literal|"and layer masks only."
 argument_list|)
 argument_list|)
 expr_stmt|;
