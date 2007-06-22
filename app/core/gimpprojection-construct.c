@@ -1164,6 +1164,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_projection_initialize:  * @proj: A #GimpProjection.  * @x:  * @y:  * @w:  * @h:  *  * This function determines whether a visible layer with combine mode Normal  * provides complete coverage over the specified area.  If not, the projection  * is initialized to transparent black.  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -1196,7 +1200,6 @@ name|coverage
 init|=
 name|FALSE
 decl_stmt|;
-comment|/*  this function determines whether a visible layer    *  provides complete coverage over the image.  If not,    *  the projection is initialized to transparent    */
 for|for
 control|(
 name|list
@@ -1261,6 +1264,16 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|)
+operator|&&
+name|gimp_layer_get_mode
+argument_list|(
+name|GIMP_LAYER
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+operator|==
+name|GIMP_NORMAL_MODE
 operator|&&
 operator|(
 name|off_x
