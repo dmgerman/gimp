@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00108
+DECL|struct|__anon28b65ffd0108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00208
+DECL|struct|__anon28b65ffd0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00308
+DECL|struct|__anon28b65ffd0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -718,7 +718,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00408
+DECL|struct|__anon28b65ffd0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +825,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00508
+DECL|struct|__anon28b65ffd0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -993,7 +993,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00608
+DECL|struct|__anon28b65ffd0608
 block|{
 DECL|member|name
 specifier|const
@@ -4948,7 +4948,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
@@ -5057,7 +5057,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -5087,7 +5087,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -7070,7 +7070,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9aca00708
+DECL|struct|__anon28b65ffd0708
 block|{
 DECL|member|index
 name|gint
