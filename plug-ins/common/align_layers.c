@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f91070103
+DECL|enum|__anon2bff81ae0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f91070203
+DECL|enum|__anon2bff81ae0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f91070303
+DECL|enum|__anon2bff81ae0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f91070403
+DECL|enum|__anon2bff81ae0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2f91070508
+DECL|struct|__anon2bff81ae0508
 block|{
 DECL|member|h_style
 name|gint
@@ -550,6 +550,19 @@ name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|VALS
+argument_list|)
+expr_stmt|;
+name|VALS
+operator|.
+name|grid_size
+operator|=
+name|MAX
+argument_list|(
+name|VALS
+operator|.
+name|grid_size
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 if|if
@@ -2027,7 +2040,7 @@ name|VALS
 operator|.
 name|grid_size
 argument_list|,
-literal|0
+literal|1
 argument_list|,
 literal|200
 argument_list|,
