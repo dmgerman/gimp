@@ -303,7 +303,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a407410103
+DECL|enum|__anon298edd1d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3503,14 +3503,14 @@ operator|->
 name|no_data
 argument_list|)
 expr_stmt|;
-comment|/*  initialize the list of gimp fonts  */
+comment|/*  initialize the list of fonts  */
 name|status_callback
 argument_list|(
 name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"Fonts"
+literal|"Fonts (this may take a while)"
 argument_list|)
 argument_list|,
 literal|0.5
