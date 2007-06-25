@@ -7958,17 +7958,10 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-name|void
-modifier|*
+name|gpointer
 name|pr
 decl_stmt|;
-name|guint8
-modifier|*
-name|gradient
-decl_stmt|;
 name|gfloat
-name|g
-decl_stmt|,
 name|max_gradient
 decl_stmt|;
 comment|/* Initialise the gradient map tile manager for this image if we    * don't already have one. */
@@ -8196,8 +8189,11 @@ name|i
 operator|++
 control|)
 block|{
+specifier|const
+name|guint8
+modifier|*
 name|gradient
-operator|=
+init|=
 name|srcPR
 operator|.
 name|data
@@ -8213,7 +8209,7 @@ name|srcPR
 operator|.
 name|y
 operator|)
-expr_stmt|;
+decl_stmt|;
 for|for
 control|(
 name|j
@@ -8230,11 +8226,12 @@ name|j
 operator|++
 control|)
 block|{
+name|gfloat
 name|g
-operator|=
+init|=
 operator|*
 name|gradient
-expr_stmt|;
+decl_stmt|;
 name|gradient
 operator|+=
 name|COST_WIDTH
