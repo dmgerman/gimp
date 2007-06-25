@@ -323,7 +323,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_read: error"
+literal|"%s: gimp_wire_read: error"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -414,7 +414,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_read(): error: %s"
+literal|"%s: gimp_wire_read(): error: %s"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -434,7 +434,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_read(): error"
+literal|"%s: gimp_wire_read(): error"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -461,7 +461,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_read(): unexpected EOF"
+literal|"%s: gimp_wire_read(): unexpected EOF"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -550,7 +550,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_write: error"
+literal|"%s: gimp_wire_write: error"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -642,7 +642,7 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_write(): error: %s"
+literal|"%s: gimp_wire_write(): error: %s"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -662,7 +662,7 @@ else|else
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: wire_write(): error"
+literal|"%s: gimp_wire_write(): error"
 argument_list|,
 name|g_get_prgname
 argument_list|()
@@ -779,6 +779,19 @@ name|handler
 decl_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
+operator|!
+name|wire_ht
+argument_list|)
+condition|)
+name|g_error
+argument_list|(
+literal|"gimp_wire_read_msg: the wire protocol has not been initialized"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|wire_error_val
 condition|)
 return|return
@@ -819,12 +832,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|handler
+argument_list|)
 condition|)
 name|g_error
 argument_list|(
-literal|"could not find handler for message: %d"
+literal|"gimp_wire_read_msg: could not find handler for message: %d"
 argument_list|,
 name|msg
 operator|->
@@ -875,6 +891,19 @@ name|handler
 decl_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
+operator|!
+name|wire_ht
+argument_list|)
+condition|)
+name|g_error
+argument_list|(
+literal|"gimp_wire_write_msg: the wire protocol has not been initialized"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|wire_error_val
 condition|)
 return|return
@@ -895,12 +924,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|handler
+argument_list|)
 condition|)
 name|g_error
 argument_list|(
-literal|"could not find handler for message: %d"
+literal|"gimp_wire_write_msg: could not find handler for message: %d"
 argument_list|,
 name|msg
 operator|->
@@ -962,6 +994,19 @@ name|GimpWireHandler
 modifier|*
 name|handler
 decl_stmt|;
+if|if
+condition|(
+name|G_UNLIKELY
+argument_list|(
+operator|!
+name|wire_ht
+argument_list|)
+condition|)
+name|g_error
+argument_list|(
+literal|"gimp_wire_destroy: the wire protocol has not been initialized"
+argument_list|)
+expr_stmt|;
 name|handler
 operator|=
 name|g_hash_table_lookup
@@ -976,12 +1021,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|handler
+argument_list|)
 condition|)
 name|g_error
 argument_list|(
-literal|"could not find handler for message: %d\n"
+literal|"gimp_wire_destroy: could not find handler for message: %d\n"
 argument_list|,
 name|msg
 operator|->
