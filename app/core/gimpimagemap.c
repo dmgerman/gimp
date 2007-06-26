@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293dc7680103
+DECL|enum|__anon2c706b560103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -2115,9 +2115,16 @@ name|idle_id
 operator|=
 literal|0
 expr_stmt|;
-name|gimp_image_flush
+name|g_signal_emit
 argument_list|(
-name|image
+name|image_map
+argument_list|,
+name|image_map_signals
+index|[
+name|FLUSH
+index|]
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
