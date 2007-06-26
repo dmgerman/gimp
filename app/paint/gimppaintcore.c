@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add41b20103
+DECL|enum|__anon2b5edb3e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3315,10 +3315,10 @@ init|=
 name|NULL
 decl_stmt|;
 name|gint
-name|offx
+name|off_x
 decl_stmt|;
 name|gint
-name|offy
+name|off_y
 decl_stmt|;
 name|image
 operator|=
@@ -3328,6 +3328,20 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+operator|&
+name|off_x
+argument_list|,
+operator|&
+name|off_y
 argument_list|)
 expr_stmt|;
 comment|/*  set undo blocks  */
@@ -3380,26 +3394,6 @@ operator|->
 name|projection
 argument_list|)
 decl_stmt|;
-name|gint
-name|off_x
-decl_stmt|;
-name|gint
-name|off_y
-decl_stmt|;
-name|gimp_item_offsets
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
-operator|&
-name|off_x
-argument_list|,
-operator|&
-name|off_y
-argument_list|)
-expr_stmt|;
 name|gimp_paint_core_validate_saved_proj_tiles
 argument_list|(
 name|core
@@ -3661,21 +3655,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the image -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
-name|gimp_item_offsets
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
-operator|&
-name|offx
-argument_list|,
-operator|&
-name|offy
-argument_list|)
-expr_stmt|;
+comment|/*  Update the image -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable preview to be constantly invalidated    */
 name|gimp_image_update
 argument_list|(
 name|image
@@ -3686,7 +3666,7 @@ name|canvas_buf
 operator|->
 name|x
 operator|+
-name|offx
+name|off_x
 argument_list|,
 name|core
 operator|->
@@ -3694,7 +3674,7 @@ name|canvas_buf
 operator|->
 name|y
 operator|+
-name|offy
+name|off_y
 argument_list|,
 name|core
 operator|->
@@ -3751,10 +3731,10 @@ name|PixelRegion
 name|srcPR
 decl_stmt|;
 name|gint
-name|offx
+name|off_x
 decl_stmt|;
 name|gint
-name|offy
+name|off_y
 decl_stmt|;
 if|if
 condition|(
@@ -3792,6 +3772,20 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_item_offsets
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+operator|&
+name|off_x
+argument_list|,
+operator|&
+name|off_y
 argument_list|)
 expr_stmt|;
 comment|/*  set undo blocks  */
@@ -4064,21 +4058,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*  Update the image -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable and image previews to be constantly invalidated    */
-name|gimp_item_offsets
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|,
-operator|&
-name|offx
-argument_list|,
-operator|&
-name|offy
-argument_list|)
-expr_stmt|;
+comment|/*  Update the image -- It is important to call gimp_image_update()    *  instead of gimp_drawable_update() because we don't want the    *  drawable preview to be constantly invalidated    */
 name|gimp_image_update
 argument_list|(
 name|image
@@ -4089,7 +4069,7 @@ name|canvas_buf
 operator|->
 name|x
 operator|+
-name|offx
+name|off_x
 argument_list|,
 name|core
 operator|->
@@ -4097,7 +4077,7 @@ name|canvas_buf
 operator|->
 name|y
 operator|+
-name|offy
+name|off_y
 argument_list|,
 name|core
 operator|->
