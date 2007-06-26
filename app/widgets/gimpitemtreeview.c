@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15944f0103
+DECL|enum|__anon29c5be970103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -251,6 +251,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|,
 name|GimpItemTreeView
 modifier|*
@@ -2107,12 +2110,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_image_flush (GimpImage * image,GimpItemTreeView * view)
+DECL|function|gimp_item_tree_view_image_flush (GimpImage * image,gboolean invalidate_preview,GimpItemTreeView * view)
 name|gimp_item_tree_view_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|,
 name|GimpItemTreeView
 modifier|*

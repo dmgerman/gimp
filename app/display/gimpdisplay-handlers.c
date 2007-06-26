@@ -107,6 +107,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+name|gboolean
+name|invalidate_preview
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -417,12 +420,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_flush_handler (GimpImage * image,GimpDisplay * display)
+DECL|function|gimp_display_flush_handler (GimpImage * image,gboolean invalidate_preview,GimpDisplay * display)
 name|gimp_display_flush_handler
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|,
 name|GimpDisplay
 modifier|*

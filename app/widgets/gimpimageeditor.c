@@ -116,6 +116,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+name|gboolean
+name|invalidate_preview
+parameter_list|,
 name|GimpImageEditor
 modifier|*
 name|editor
@@ -565,12 +568,15 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_editor_image_flush (GimpImage * image,GimpImageEditor * editor)
+DECL|function|gimp_image_editor_image_flush (GimpImage * image,gboolean invalidate_preview,GimpImageEditor * editor)
 name|gimp_image_editor_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|,
 name|GimpImageEditor
 modifier|*

@@ -129,6 +129,9 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+name|gboolean
+name|invalidate_preview
+parameter_list|,
 name|GimpImageDock
 modifier|*
 name|dock
@@ -630,12 +633,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_dock_image_flush (GimpImage * image,GimpImageDock * dock)
+DECL|function|gimp_image_dock_image_flush (GimpImage * image,gboolean invalidate_preview,GimpImageDock * dock)
 name|gimp_image_dock_image_flush
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|,
 name|GimpImageDock
 modifier|*

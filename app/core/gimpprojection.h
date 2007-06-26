@@ -178,6 +178,10 @@ DECL|member|construct_flag
 name|gboolean
 name|construct_flag
 decl_stmt|;
+DECL|member|invalidate_preview
+name|gboolean
+name|invalidate_preview
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9c23c0103
+DECL|enum|__anon2c04c9fc0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9c23c0203
+DECL|enum|__anon2c04c9fc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -624,6 +624,9 @@ parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1947,11 +1950,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__VOID
+name|gimp_marshal_VOID__BOOLEAN
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|0
+literal|1
+argument_list|,
+name|G_TYPE_BOOLEAN
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -4798,12 +4803,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_real_flush (GimpImage * image)
+DECL|function|gimp_image_real_flush (GimpImage * image,gboolean invalidate_preview)
 name|gimp_image_real_flush
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|gboolean
+name|invalidate_preview
 parameter_list|)
 block|{
 if|if
@@ -4861,14 +4869,7 @@ operator|.
 name|preview_invalidated
 condition|)
 block|{
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
+comment|/*  don't invalidate the preview here, the projection does this when        *  it is completely constructed.        */
 name|image
 operator|->
 name|flush_accum
@@ -8066,6 +8067,12 @@ name|FLUSH
 index|]
 argument_list|,
 literal|0
+argument_list|,
+name|image
+operator|->
+name|flush_accum
+operator|.
+name|preview_invalidated
 argument_list|)
 expr_stmt|;
 block|}
