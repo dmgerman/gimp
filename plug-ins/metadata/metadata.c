@@ -24,31 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimp/gimp.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimp/stdplugins-intl.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"interface.h"
 end_include
 
 begin_include
@@ -64,7 +46,7 @@ file|"xmp-encode.h"
 end_include
 
 begin_comment
-comment|/* FIXME: uncomment when these are working #include "exif-decode.h" #include "exif-encode.h" #include "iptc-decode.h" */
+comment|/* FIXME: uncomment when these are working #include "interface.h" #include "exif-decode.h" #include "exif-encode.h" #include "iptc-decode.h" */
 end_comment
 
 begin_define
@@ -180,38 +162,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|static
-specifier|const
-name|GimpParamDef
-name|editor_args
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"run-mode"
-block|,
-literal|"Interactive, non-interactive"
-block|}
-block|,
-block|{
-name|GIMP_PDB_IMAGE
-block|,
-literal|"image"
-block|,
-literal|"Input image"
-block|}
-block|,
-block|{
-name|GIMP_PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Input drawable (unused)"
-block|}
-block|}
-decl_stmt|;
+comment|/* FIXME: uncomment when these are working   static const GimpParamDef editor_args[] =   {     { GIMP_PDB_INT32,       "run-mode",  "Interactive, non-interactive" },     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_DRAWABLE,    "drawable",  "Input drawable (unused)"      }   }; */
 specifier|static
 specifier|const
 name|GimpParamDef
@@ -534,70 +485,7 @@ literal|"Overwrite existing file: { FALSE (0), TRUE (1) }"
 block|}
 block|}
 decl_stmt|;
-name|gimp_install_procedure
-argument_list|(
-name|EDITOR_PROC
-argument_list|,
-name|N_
-argument_list|(
-literal|"View and edit metadata (EXIF, IPTC, XMP)"
-argument_list|)
-argument_list|,
-literal|"View and edit metadata information attached to the "
-literal|"current image.  This can include EXIF, IPTC and/or "
-literal|"XMP information.  Some or all of this metadata "
-literal|"will be saved in the file, depending on the output "
-literal|"file format."
-argument_list|,
-literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
-argument_list|,
-literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
-argument_list|,
-literal|"2004-2005"
-argument_list|,
-name|N_
-argument_list|(
-literal|"Propert_ies"
-argument_list|)
-argument_list|,
-literal|"RGB*, INDEXED*, GRAY*"
-argument_list|,
-name|GIMP_PLUGIN
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|editor_args
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|editor_args
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_register
-argument_list|(
-name|EDITOR_PROC
-argument_list|,
-literal|"<Image>/File/Info"
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_icon_register
-argument_list|(
-name|EDITOR_PROC
-argument_list|,
-name|GIMP_ICON_TYPE_STOCK_ID
-argument_list|,
-operator|(
-specifier|const
-name|guint8
-operator|*
-operator|)
-name|GTK_STOCK_PROPERTIES
-argument_list|)
-expr_stmt|;
-comment|/* FIXME: The GNOME HIG recommends using the accel Alt+Return for this */
+comment|/* FIXME: uncomment when these are working   gimp_install_procedure (EDITOR_PROC, 			  N_("View and edit metadata (EXIF, IPTC, XMP)"),                           "View and edit metadata information attached to the "                           "current image.  This can include EXIF, IPTC and/or "                           "XMP information.  Some or all of this metadata "                           "will be saved in the file, depending on the output "                           "file format.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2004-2005",                           N_("Propert_ies"),                           "RGB*, INDEXED*, GRAY*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (editor_args), 0,                           editor_args, NULL);    gimp_plugin_menu_register (EDITOR_PROC, "<Image>/File/Info");   gimp_plugin_icon_register (EDITOR_PROC, GIMP_ICON_TYPE_STOCK_ID,  */
 name|gimp_install_procedure
 argument_list|(
 name|DECODE_XMP_PROC
@@ -1161,56 +1049,6 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|EDITOR_PROC
-argument_list|)
-condition|)
-block|{
-name|GimpRunMode
-name|run_mode
-decl_stmt|;
-name|run_mode
-operator|=
-name|param
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
-condition|)
-block|{
-comment|/* Hello, user! */
-if|if
-condition|(
-operator|!
-name|metadata_dialog
-argument_list|(
-name|image_ID
-argument_list|,
-name|xmp_model
-argument_list|)
-condition|)
-name|status
-operator|=
-name|GIMP_PDB_CANCEL
-expr_stmt|;
-block|}
-block|}
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-name|name
-argument_list|,
 name|DECODE_XMP_PROC
 argument_list|)
 condition|)
@@ -1619,6 +1457,29 @@ condition|)
 block|{
 comment|/* FIXME: this is easy to implement, but the first thing to do is */
 comment|/* to improve the code of export_dialog_response() in interface.c */
+name|g_warning
+argument_list|(
+literal|"Not implemented yet\n"
+argument_list|)
+expr_stmt|;
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|EDITOR_PROC
+argument_list|)
+condition|)
+block|{
+comment|/* FIXME: uncomment when these are working       GimpRunMode run_mode;        run_mode = param[0].data.d_int32;       if (run_mode == GIMP_RUN_INTERACTIVE)         {           if (! metadata_dialog (image_ID, xmp_model))             status = GIMP_PDB_CANCEL;         }         */
 name|g_warning
 argument_list|(
 literal|"Not implemented yet\n"
