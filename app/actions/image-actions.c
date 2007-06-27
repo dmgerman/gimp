@@ -579,7 +579,7 @@ argument_list|(
 literal|"Image Pr_operties"
 argument_list|)
 block|,
-name|NULL
+literal|"<alt>Return"
 block|,
 name|N_
 argument_list|(
