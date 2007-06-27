@@ -271,6 +271,12 @@ name|color_dialog
 operator|=
 name|NULL
 expr_stmt|;
+name|panel
+operator|->
+name|recoursing
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -698,7 +704,7 @@ operator|)
 operator|&
 name|color
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|gimp_color_button_has_alpha
 argument_list|(
@@ -917,6 +923,11 @@ condition|(
 name|panel
 operator|->
 name|color_dialog
+operator|&&
+operator|!
+name|panel
+operator|->
+name|recoursing
 condition|)
 block|{
 name|gimp_color_button_get_color
@@ -1025,9 +1036,34 @@ block|{
 case|case
 name|GIMP_COLOR_DIALOG_UPDATE
 case|:
+name|panel
+operator|->
+name|recoursing
+operator|=
+name|TRUE
+expr_stmt|;
+name|gimp_color_button_set_color
+argument_list|(
+name|GIMP_COLOR_BUTTON
+argument_list|(
+name|panel
+argument_list|)
+argument_list|,
+name|color
+argument_list|)
+expr_stmt|;
+name|panel
+operator|->
+name|recoursing
+operator|=
+name|FALSE
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_COLOR_DIALOG_OK
+case|:
+case|case
+name|GIMP_COLOR_DIALOG_CANCEL
 case|:
 name|gimp_color_button_set_color
 argument_list|(
@@ -1039,10 +1075,6 @@ argument_list|,
 name|color
 argument_list|)
 expr_stmt|;
-comment|/* Fallthrough */
-case|case
-name|GIMP_COLOR_DIALOG_CANCEL
-case|:
 name|gtk_widget_hide
 argument_list|(
 name|panel
@@ -1050,6 +1082,7 @@ operator|->
 name|color_dialog
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 block|}
 end_function

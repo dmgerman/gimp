@@ -148,6 +148,12 @@ name|GtkWidget
 modifier|*
 name|text_view
 decl_stmt|;
+name|editor
+operator|->
+name|recoursing
+operator|=
+name|FALSE
+expr_stmt|;
 name|scrolled_window
 operator|=
 name|gtk_scrolled_window_new
@@ -372,7 +378,7 @@ if|if
 condition|(
 name|editor
 operator|->
-name|recursing
+name|recoursing
 condition|)
 return|return;
 name|g_signal_handlers_block_by_func
@@ -580,7 +586,7 @@ literal|0
 expr_stmt|;
 name|editor
 operator|->
-name|recursing
+name|recoursing
 operator|=
 name|TRUE
 expr_stmt|;
@@ -635,7 +641,7 @@ expr_stmt|;
 block|}
 name|editor
 operator|->
-name|recursing
+name|recoursing
 operator|=
 name|FALSE
 expr_stmt|;

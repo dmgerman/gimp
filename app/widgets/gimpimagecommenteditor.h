@@ -108,9 +108,9 @@ name|GtkTextBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-DECL|member|recursing
+DECL|member|recoursing
 name|gboolean
-name|recursing
+name|recoursing
 decl_stmt|;
 block|}
 struct|;
