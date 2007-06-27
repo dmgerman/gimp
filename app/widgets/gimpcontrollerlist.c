@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d0b2f80103
+DECL|enum|__anon2bbc18d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d0b2f80203
+DECL|enum|__anon2bbc18d50203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1363,7 +1363,7 @@ operator|->
 name|dest
 argument_list|)
 argument_list|,
-name|GTK_STOCK_EDIT
+name|GTK_STOCK_PROPERTIES
 argument_list|,
 name|_
 argument_list|(
