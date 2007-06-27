@@ -238,6 +238,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gtk_text_view_set_wrap_mode
+argument_list|(
+name|GTK_TEXT_VIEW
+argument_list|(
+name|text_view
+argument_list|)
+argument_list|,
+name|GTK_WRAP_WORD
+argument_list|)
+expr_stmt|;
 name|gtk_text_view_set_pixels_above_lines
 argument_list|(
 name|GTK_TEXT_VIEW
