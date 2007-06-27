@@ -908,6 +908,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImageCommentEditor
+typedef|typedef
+name|struct
+name|_GimpImageCommentEditor
+name|GimpImageCommentEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageParasiteView
 typedef|typedef
 name|struct
