@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba465df0103
+DECL|enum|__anon2c353fea0103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -56,10 +56,13 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ba465df0203
+DECL|enum|__anon2c353fea0203
 block|{
 DECL|enumerator|RECT_INACTIVE
 name|RECT_INACTIVE
+block|,
+DECL|enumerator|RECT_DEAD
+name|RECT_DEAD
 block|,
 DECL|enumerator|RECT_CREATING
 name|RECT_CREATING
