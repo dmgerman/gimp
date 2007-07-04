@@ -39,6 +39,14 @@ value|2
 end_define
 
 begin_define
+DECL|macro|BRUSH_CORE_JITTER_LUTSIZE
+define|#
+directive|define
+name|BRUSH_CORE_JITTER_LUTSIZE
+value|360
+end_define
+
+begin_define
 DECL|macro|PRESSURE_SCALE
 define|#
 directive|define
@@ -234,6 +242,20 @@ decl_stmt|;
 DECL|member|jitter
 name|gdouble
 name|jitter
+decl_stmt|;
+DECL|member|jitter_lut_x
+name|gdouble
+name|jitter_lut_x
+index|[
+name|BRUSH_CORE_JITTER_LUTSIZE
+index|]
+decl_stmt|;
+DECL|member|jitter_lut_y
+name|gdouble
+name|jitter_lut_y
+index|[
+name|BRUSH_CORE_JITTER_LUTSIZE
+index|]
 decl_stmt|;
 DECL|member|rand
 name|GRand
