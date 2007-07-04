@@ -3002,7 +3002,7 @@ block|}
 if|if
 condition|(
 name|width
-operator|==
+operator|<=
 literal|0
 condition|)
 block|{
@@ -3026,8 +3026,33 @@ return|;
 block|}
 if|if
 condition|(
+name|width
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"'%s':\nImage width is larger than GIMP can handle"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+if|if
+condition|(
 name|height
-operator|==
+operator|<=
 literal|0
 condition|)
 block|{
@@ -3036,6 +3061,31 @@ argument_list|(
 name|_
 argument_list|(
 literal|"'%s':\nNo image height specified"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+if|if
+condition|(
+name|height
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"'%s':\nImage height is larger than GIMP can handle"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4077,7 +4127,7 @@ literal|1
 condition|)
 name|printf
 argument_list|(
-literal|"TGA: writing %dx(%d+%d) pixel region\n"
+literal|"XBM: writing %dx(%d+%d) pixel region\n"
 argument_list|,
 name|width
 argument_list|,

@@ -357,7 +357,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29492b140108
+DECL|struct|__anon29526eae0108
 block|{
 DECL|member|raw
 name|gint
@@ -2304,6 +2304,24 @@ literal|"Invalid X resolution."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|CHECK_FOR_ERROR
+argument_list|(
+name|pnminfo
+operator|->
+name|xres
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+argument_list|,
+name|pnminfo
+operator|->
+name|jmpbuf
+argument_list|,
+name|_
+argument_list|(
+literal|"Image width is larger than GIMP can handle."
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|pnmscanner_gettoken
 argument_list|(
 name|scan
@@ -2362,6 +2380,24 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Invalid Y resolution."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|CHECK_FOR_ERROR
+argument_list|(
+name|pnminfo
+operator|->
+name|yres
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+argument_list|,
+name|pnminfo
+operator|->
+name|jmpbuf
+argument_list|,
+name|_
+argument_list|(
+literal|"Image height is larger than GIMP can handle."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2672,6 +2708,7 @@ operator|)
 else|:
 literal|1
 expr_stmt|;
+comment|/* No overflow as long as gimp_tile_height()< 2730 = 2^(31 - 18) / 3 */
 name|data
 operator|=
 name|g_new

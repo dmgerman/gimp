@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60103
+DECL|enum|__anon279818460103
 typedef|typedef
 enum|enum
 block|{
@@ -185,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60203
+DECL|enum|__anon279818460203
 typedef|typedef
 enum|enum
 block|{
@@ -225,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60303
+DECL|enum|__anon279818460303
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60403
+DECL|enum|__anon279818460403
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60503
+DECL|enum|__anon279818460503
 typedef|typedef
 enum|enum
 block|{
@@ -313,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60603
+DECL|enum|__anon279818460603
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60703
+DECL|enum|__anon279818460703
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60803
+DECL|enum|__anon279818460803
 typedef|typedef
 enum|enum
 block|{
@@ -391,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60903
+DECL|enum|__anon279818460903
 typedef|typedef
 enum|enum
 block|{
@@ -439,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60a03
+DECL|enum|__anon279818460a03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60b03
+DECL|enum|__anon279818460b03
 typedef|typedef
 enum|enum
 block|{
@@ -524,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon29c2cbb60c03
+DECL|enum|__anon279818460c03
 typedef|typedef
 enum|enum
 block|{
@@ -597,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c2cbb60d08
+DECL|struct|__anon279818460d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c2cbb60e08
+DECL|struct|__anon279818460e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -4601,6 +4601,58 @@ index|[
 literal|1
 index|]
 expr_stmt|;
+comment|/* FIXME: checking for G_MAXINT16 is too restrictive */
+if|if
+condition|(
+operator|(
+name|width
+operator|<=
+literal|0
+operator|)
+operator|||
+operator|(
+name|width
+operator|>
+name|G_MAXINT16
+operator|)
+operator|||
+operator|(
+name|height
+operator|<=
+literal|0
+operator|)
+operator|||
+operator|(
+name|height
+operator|>
+name|G_MAXINT16
+operator|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Invalid layer dimensions: %dx%d"
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+name|gimp_image_delete
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|IFDBG
 argument_list|(
 literal|2
