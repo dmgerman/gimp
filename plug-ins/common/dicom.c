@@ -103,7 +103,7 @@ name|_DicomInfo
 block|{
 DECL|member|width
 DECL|member|height
-name|gint
+name|guint
 name|width
 decl_stmt|,
 name|height
@@ -1011,12 +1011,12 @@ name|DicomInfo
 modifier|*
 name|dicominfo
 decl_stmt|;
-name|gint
+name|guint
 name|width
 init|=
 literal|0
 decl_stmt|;
-name|gint
+name|guint
 name|height
 init|=
 literal|0
@@ -1579,6 +1579,29 @@ operator|==
 literal|0xFFFEE000
 condition|)
 continue|continue;
+comment|/* Even for pixel data, we don't handle very large element          lengths */
+if|if
+condition|(
+name|element_length
+operator|>=
+operator|(
+name|G_MAXUINT
+operator|-
+literal|6
+operator|)
+condition|)
+block|{
+name|g_error
+argument_list|(
+literal|"'%s' seems to have an incorrect value field length."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Read contents. Allocate a bit more to make room for casts to int        below. */
 name|value
 operator|=
@@ -1791,6 +1814,32 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+operator|(
+name|width
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+operator|)
+operator|||
+operator|(
+name|height
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+operator|)
+condition|)
+block|{
+name|g_error
+argument_list|(
+literal|"'%s' has a larger image size than GIMP can handle."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 name|dicominfo
 operator|->
