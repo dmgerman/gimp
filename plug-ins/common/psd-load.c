@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0ba0f80103
+DECL|enum|__anon27c09cbd0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ba0f80208
+DECL|struct|__anon27c09cbd0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b0ba0f80308
+DECL|struct|__anon27c09cbd0308
 block|{
 DECL|member|signature
 name|gchar
@@ -928,6 +928,11 @@ parameter_list|(
 name|FILE
 modifier|*
 name|fd
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -8560,6 +8565,8 @@ expr_stmt|;
 name|read_whole_file
 argument_list|(
 name|fd
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 if|if
@@ -13078,12 +13085,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|read_whole_file (FILE * fd)
+DECL|function|read_whole_file (FILE * fd,const gchar * filename)
 name|read_whole_file
 parameter_list|(
 name|FILE
 modifier|*
 name|fd
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
 parameter_list|)
 block|{
 name|guint16
@@ -13149,6 +13161,27 @@ argument_list|,
 literal|"channels"
 argument_list|)
 expr_stmt|;
+comment|/* Photoshop CS (version 8) supports a maximum of 56 channels */
+if|if
+condition|(
+name|PSDheader
+operator|.
+name|channels
+operator|>
+literal|56
+condition|)
+block|{
+name|g_error
+argument_list|(
+literal|"'%s' has more channels than GIMP can handle."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|PSDheader
 operator|.
 name|rows
@@ -13171,6 +13204,37 @@ argument_list|,
 literal|"columns"
 argument_list|)
 expr_stmt|;
+comment|/* Photoshop CS (version 8) supports 300000 x 300000, but this        is currently larger than GIMP_MAX_IMAGE_SIZE */
+if|if
+condition|(
+operator|(
+name|PSDheader
+operator|.
+name|rows
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+operator|)
+operator|||
+operator|(
+name|PSDheader
+operator|.
+name|columns
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+operator|)
+condition|)
+block|{
+name|g_error
+argument_list|(
+literal|"'%s' has a larger image size than GIMP can handle."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 name|PSDheader
 operator|.
 name|bpp
