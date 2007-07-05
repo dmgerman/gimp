@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590103
+DECL|enum|__anon2a339df00103
 typedef|typedef
 enum|enum
 block|{
@@ -185,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590203
+DECL|enum|__anon2a339df00203
 typedef|typedef
 enum|enum
 block|{
@@ -225,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590303
+DECL|enum|__anon2a339df00303
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590403
+DECL|enum|__anon2a339df00403
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590503
+DECL|enum|__anon2a339df00503
 typedef|typedef
 enum|enum
 block|{
@@ -313,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590603
+DECL|enum|__anon2a339df00603
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590703
+DECL|enum|__anon2a339df00703
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590803
+DECL|enum|__anon2a339df00803
 typedef|typedef
 enum|enum
 block|{
@@ -391,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590903
+DECL|enum|__anon2a339df00903
 typedef|typedef
 enum|enum
 block|{
@@ -439,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590a03
+DECL|enum|__anon2a339df00a03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590b03
+DECL|enum|__anon2a339df00b03
 typedef|typedef
 enum|enum
 block|{
@@ -524,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon27832e590c03
+DECL|enum|__anon2a339df00c03
 typedef|typedef
 enum|enum
 block|{
@@ -597,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27832e590d08
+DECL|struct|__anon2a339df00d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27832e590e08
+DECL|struct|__anon2a339df00e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -1316,11 +1316,6 @@ argument_list|(
 literal|"Error reading block header"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1355,11 +1350,6 @@ else|else
 name|g_message
 argument_list|(
 literal|"Invalid block header"
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
 argument_list|)
 expr_stmt|;
 return|return
@@ -1479,11 +1469,6 @@ block|{
 name|g_message
 argument_list|(
 literal|"Invalid general image attribute chunk size"
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
 argument_list|)
 expr_stmt|;
 return|return
@@ -1686,11 +1671,6 @@ argument_list|(
 literal|"Error reading general image attribute block"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1781,11 +1761,6 @@ operator|->
 name|compression
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -1818,11 +1793,6 @@ argument_list|,
 name|ia
 operator|->
 name|depth
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
 argument_list|)
 expr_stmt|;
 return|return
@@ -3480,11 +3450,6 @@ argument_list|(
 literal|"zlib error"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -3549,11 +3514,6 @@ name|inflateEnd
 argument_list|(
 operator|&
 name|zstream
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
 argument_list|)
 expr_stmt|;
 return|return
@@ -6116,15 +6076,9 @@ argument_list|(
 literal|"Error reading file header"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 if|if
 condition|(
@@ -6145,15 +6099,9 @@ argument_list|(
 literal|"Incorrect file signature"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 name|major
 operator|=
@@ -6187,15 +6135,9 @@ argument_list|,
 name|minor
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 elseif|else
 if|if
@@ -6236,15 +6178,9 @@ argument_list|,
 name|minor
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 comment|/* Read all the blocks */
 name|block_number
@@ -6323,15 +6259,9 @@ argument_list|(
 literal|"Duplicate General Image Attributes block"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 if|if
 condition|(
@@ -6350,10 +6280,11 @@ operator|==
 operator|-
 literal|1
 condition|)
-return|return
-operator|-
-literal|1
-return|;
+block|{
+goto|goto
+name|error
+goto|;
+block|}
 name|IFDBG
 argument_list|(
 literal|2
@@ -6414,15 +6345,9 @@ operator|-
 literal|1
 condition|)
 block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 name|gimp_image_set_filename
 argument_list|(
@@ -6645,6 +6570,13 @@ argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+condition|)
 name|gimp_image_delete
 argument_list|(
 name|image_ID
