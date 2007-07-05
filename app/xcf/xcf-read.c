@@ -59,7 +59,7 @@ block|{
 name|guint
 name|total
 init|=
-name|count
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -68,6 +68,8 @@ operator|>
 literal|0
 condition|)
 block|{
+name|total
+operator|+=
 name|xcf_read_int8
 argument_list|(
 name|fp
@@ -105,8 +107,6 @@ block|}
 block|}
 return|return
 name|total
-operator|*
-literal|4
 return|;
 block|}
 end_function
@@ -171,7 +171,7 @@ block|{
 name|guint
 name|total
 init|=
-name|count
+literal|0
 decl_stmt|;
 while|while
 condition|(
@@ -209,6 +209,10 @@ literal|0
 condition|)
 comment|/* something bad happened */
 break|break;
+name|total
+operator|+=
+name|bytes
+expr_stmt|;
 name|count
 operator|-=
 name|bytes
