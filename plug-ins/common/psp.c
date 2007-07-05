@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40103
+DECL|enum|__anon27832e590103
 typedef|typedef
 enum|enum
 block|{
@@ -185,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40203
+DECL|enum|__anon27832e590203
 typedef|typedef
 enum|enum
 block|{
@@ -225,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40303
+DECL|enum|__anon27832e590303
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40403
+DECL|enum|__anon27832e590403
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40503
+DECL|enum|__anon27832e590503
 typedef|typedef
 enum|enum
 block|{
@@ -313,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40603
+DECL|enum|__anon27832e590603
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40703
+DECL|enum|__anon27832e590703
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40803
+DECL|enum|__anon27832e590803
 typedef|typedef
 enum|enum
 block|{
@@ -391,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40903
+DECL|enum|__anon27832e590903
 typedef|typedef
 enum|enum
 block|{
@@ -439,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40a03
+DECL|enum|__anon27832e590a03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40b03
+DECL|enum|__anon27832e590b03
 typedef|typedef
 enum|enum
 block|{
@@ -524,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon28eb69e40c03
+DECL|enum|__anon27832e590c03
 typedef|typedef
 enum|enum
 block|{
@@ -597,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb69e40d08
+DECL|struct|__anon27832e590d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eb69e40e08
+DECL|struct|__anon27832e590e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -2075,16 +2075,6 @@ argument_list|(
 literal|"Error reading creator keyword chunk"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2107,16 +2097,6 @@ block|{
 name|g_message
 argument_list|(
 literal|"Invalid keyword chunk header"
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -2183,16 +2163,6 @@ block|{
 name|g_message
 argument_list|(
 literal|"Error reading creator keyword data"
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -2299,16 +2269,6 @@ argument_list|(
 literal|"Error reading creator keyword data"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -2368,11 +2328,6 @@ operator|<
 literal|0
 condition|)
 block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -3719,6 +3674,8 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|name
+init|=
+name|NULL
 decl_stmt|;
 name|guint16
 name|namelen
@@ -3862,17 +3819,10 @@ operator|==
 operator|-
 literal|1
 condition|)
-block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 if|if
 condition|(
 name|sub_id
@@ -3888,16 +3838,6 @@ name|block_name
 argument_list|(
 name|sub_id
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -4199,14 +4139,9 @@ argument_list|(
 literal|"Error reading layer information chunk"
 argument_list|)
 expr_stmt|;
-name|fclose
+name|g_free
 argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
+name|name
 argument_list|)
 expr_stmt|;
 return|return
@@ -4476,16 +4411,6 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -4654,16 +4579,6 @@ argument_list|,
 name|width
 argument_list|,
 name|height
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -4912,16 +4827,6 @@ argument_list|(
 literal|"Error creating layer"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5014,11 +4919,6 @@ operator|<
 literal|0
 condition|)
 block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5039,10 +4939,12 @@ if|if
 condition|(
 name|null_layer
 condition|)
+block|{
 name|pixels
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 else|else
 block|{
 name|pixels
@@ -5180,16 +5082,6 @@ name|sub_id
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5282,16 +5174,6 @@ argument_list|(
 literal|"Error reading channel information chunk"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5339,16 +5221,6 @@ argument_list|,
 name|bitmap_type
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5366,16 +5238,6 @@ argument_list|(
 literal|"Invalid channel type %d in channel information chunk"
 argument_list|,
 name|channel_type
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -5447,11 +5309,6 @@ operator|<
 literal|0
 condition|)
 block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5485,11 +5342,6 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5511,11 +5363,6 @@ operator|<
 literal|0
 condition|)
 block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5575,11 +5422,6 @@ operator|<
 literal|0
 condition|)
 block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
@@ -5772,16 +5614,6 @@ block|{
 name|g_message
 argument_list|(
 literal|"Error reading tube data chunk"
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
 argument_list|)
 expr_stmt|;
 return|return
@@ -6581,10 +6413,17 @@ operator|==
 operator|-
 literal|1
 condition|)
+block|{
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 name|gimp_image_set_filename
 argument_list|(
 name|image_ID
@@ -6620,20 +6459,9 @@ argument_list|(
 literal|"Missing General Image Attributes block"
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 block|}
 switch|switch
 condition|(
@@ -6660,10 +6488,9 @@ operator|==
 operator|-
 literal|1
 condition|)
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 break|break;
 case|case
 name|PSP_COLOR_BLOCK
@@ -6690,10 +6517,9 @@ operator|==
 operator|-
 literal|1
 condition|)
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 break|break;
 case|case
 name|PSP_SELECTION_BLOCK
@@ -6735,10 +6561,9 @@ operator|==
 operator|-
 literal|1
 condition|)
-return|return
-operator|-
-literal|1
-return|;
+goto|goto
+name|error
+goto|;
 break|break;
 case|case
 name|PSP_LAYER_BLOCK
@@ -6798,17 +6623,9 @@ argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|gimp_image_delete
-argument_list|(
-name|image_ID
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|error
+goto|;
 name|block_number
 operator|++
 expr_stmt|;
@@ -6821,6 +6638,8 @@ operator|-
 literal|1
 condition|)
 block|{
+name|error
+label|:
 name|fclose
 argument_list|(
 name|f
