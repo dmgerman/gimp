@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -3898,7 +3904,7 @@ literal|"The corner radius in X direction"
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,
@@ -3920,7 +3926,7 @@ literal|"The corner radius in Y direction"
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|0
 argument_list|,

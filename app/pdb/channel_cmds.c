@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -1502,7 +1508,7 @@ literal|"The channel width"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -1524,7 +1530,7 @@ literal|"The channel height"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,

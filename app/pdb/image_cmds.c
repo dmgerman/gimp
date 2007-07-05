@@ -10206,7 +10206,7 @@ literal|"The width of the image"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -10228,7 +10228,7 @@ literal|"The height of the image"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -10875,7 +10875,7 @@ literal|"New image width"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -10897,7 +10897,7 @@ literal|"New image height"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -11105,7 +11105,7 @@ literal|"New image width"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -11127,7 +11127,7 @@ literal|"New image height"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -11220,7 +11220,7 @@ literal|"New image width: (0< new_width<= width)"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -11242,7 +11242,7 @@ literal|"New image height: (0< new_height<= height)"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,

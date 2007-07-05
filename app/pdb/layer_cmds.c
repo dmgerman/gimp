@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb-types.h"
 end_include
 
@@ -3631,7 +3637,7 @@ literal|"The layer width"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -3653,7 +3659,7 @@ literal|"The layer height"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -4151,7 +4157,7 @@ literal|"New layer width"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -4173,7 +4179,7 @@ literal|"New layer height"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -4284,7 +4290,7 @@ literal|"New layer width"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -4306,7 +4312,7 @@ literal|"New layer height"
 argument_list|,
 literal|1
 argument_list|,
-name|G_MAXINT32
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|1
 argument_list|,
