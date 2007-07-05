@@ -559,14 +559,8 @@ argument_list|(
 literal|"Messages are redirected to stderr."
 argument_list|)
 expr_stmt|;
-block|}
-comment|/*  yes, these lines are repeated here for a reason  */
 if|if
 condition|(
-name|dialog
-operator|->
-name|last_box
-operator|&&
 name|dialog
 operator|->
 name|last_domain
@@ -598,19 +592,8 @@ operator|==
 literal|0
 condition|)
 block|{
-if|if
-condition|(
-name|gimp_message_box_repeat
-argument_list|(
-name|GIMP_MESSAGE_BOX
-argument_list|(
-name|dialog
-operator|->
-name|last_box
-argument_list|)
-argument_list|)
-condition|)
 return|return;
+block|}
 block|}
 name|box
 operator|=
