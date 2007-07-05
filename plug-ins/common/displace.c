@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e2743b0103
+DECL|enum|__anon2c1517830103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e2743b0208
+DECL|struct|__anon2c1517830208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -239,7 +239,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gint
 name|displace_get_label_size
 parameter_list|(
 name|void
@@ -381,16 +381,6 @@ modifier|*
 name|toggle_y
 init|=
 name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|label_maxwidth
-specifier|static
-name|gint
-name|label_maxwidth
-init|=
-literal|0
 decl_stmt|;
 end_decl_stmt
 
@@ -2171,9 +2161,6 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
-name|displace_get_label_size
-argument_list|()
-expr_stmt|;
 name|displace_set_labels
 argument_list|()
 expr_stmt|;
@@ -3739,6 +3726,13 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+comment|/* get the max. possible size of both check-buttons */
+name|gint
+name|label_maxwidth
+init|=
+name|displace_get_label_size
+argument_list|()
+decl_stmt|;
 name|gtk_button_set_label
 argument_list|(
 name|GTK_BUTTON
@@ -3781,6 +3775,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* "displace_get_label_size()" must be called before */
 name|gtk_widget_set_size_request
 argument_list|(
 name|toggle_x
@@ -3806,22 +3801,29 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gint
 DECL|function|displace_get_label_size (void)
 name|displace_get_label_size
 parameter_list|(
 name|void
 parameter_list|)
 block|{
+specifier|static
+name|gint
+name|label_maxwidth
+init|=
+literal|0
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+if|if
+condition|(
+operator|!
 name|label_maxwidth
-operator|=
-literal|0
-expr_stmt|;
+condition|)
 for|for
 control|(
 name|i
@@ -3894,6 +3896,9 @@ operator|.
 name|width
 expr_stmt|;
 block|}
+return|return
+name|label_maxwidth
+return|;
 block|}
 end_function
 
