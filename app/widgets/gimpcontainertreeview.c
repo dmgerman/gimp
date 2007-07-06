@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294452ae0103
+DECL|enum|__anon2b73ebde0103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -2316,15 +2316,7 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack as soon as bug #149906 is fixed
-endif|#
-directive|endif
-comment|/*  if the store is empty after this remove, clear out renderers        *  from all cells so they don't keep refing the viewables        */
+comment|/*  If the store is empty after this remove, clear out renderers        *  from all cells so they don't keep refing the viewables        *  (see bug #149906).        */
 if|if
 condition|(
 operator|!
@@ -2354,10 +2346,9 @@ name|list
 condition|;
 name|list
 operator|=
-name|g_list_next
-argument_list|(
 name|list
-argument_list|)
+operator|->
+name|next
 control|)
 name|g_object_set
 argument_list|(
@@ -2920,15 +2911,7 @@ name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack as soon as bug #149906 is fixed
-endif|#
-directive|endif
-comment|/*  clear out renderers from all cells so they don't keep refing the    *  viewables    */
+comment|/*  Clear out renderers from all cells so they don't keep refing the    *  viewables (see bug #149906).    */
 if|if
 condition|(
 operator|!
@@ -2958,10 +2941,9 @@ name|list
 condition|;
 name|list
 operator|=
-name|g_list_next
-argument_list|(
 name|list
-argument_list|)
+operator|->
+name|next
 control|)
 name|g_object_set
 argument_list|(
@@ -3253,11 +3235,6 @@ block|{
 name|GtkTreeIter
 name|iter
 decl_stmt|;
-name|g_print
-argument_list|(
-literal|"editing canceled\n"
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gtk_tree_selection_get_selected
@@ -3310,13 +3287,6 @@ operator|->
 name|viewable
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"restoring '%s'\n"
-argument_list|,
-name|name
 argument_list|)
 expr_stmt|;
 name|gtk_list_store_set
