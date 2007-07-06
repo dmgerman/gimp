@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b09ccba0103
+DECL|enum|__anon2a1ab1440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8845,11 +8845,24 @@ condition|)
 block|{
 if|if
 condition|(
-operator|!
 name|area
 operator|->
 name|colormap
 condition|)
+name|memset
+argument_list|(
+name|area
+operator|->
+name|colormap
+argument_list|,
+literal|0
+argument_list|,
+literal|3
+operator|*
+literal|256
+argument_list|)
+expr_stmt|;
+else|else
 name|area
 operator|->
 name|colormap
