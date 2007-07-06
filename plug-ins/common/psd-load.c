@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed2fee0103
+DECL|enum|__anon2958ebbe0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed2fee0208
+DECL|struct|__anon2958ebbe0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29ed2fee0308
+DECL|struct|__anon2958ebbe0308
 block|{
 DECL|member|signature
 name|gchar
@@ -4815,17 +4815,6 @@ operator|->
 name|name
 argument_list|)
 decl_stmt|;
-name|layer
-operator|->
-name|name
-operator|=
-name|sanitise_string
-argument_list|(
-name|layer
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 comment|/* Layer name string lengths are padded to be divisible by 4 */
 name|numpadchars
 operator|=
@@ -4878,6 +4867,17 @@ operator|+=
 name|numpadchars
 expr_stmt|;
 block|}
+name|layer
+operator|->
+name|name
+operator|=
+name|sanitise_string
+argument_list|(
+name|layer
+operator|->
+name|name
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
