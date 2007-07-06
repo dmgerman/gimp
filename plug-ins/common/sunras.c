@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b07050108
+DECL|struct|__anon2c11dd600108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b07050208
+DECL|struct|__anon2c11dd600208
 block|{
 DECL|member|val
 name|gint
@@ -812,7 +812,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b07050308
+DECL|struct|__anon2c11dd600308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1664,6 +1664,35 @@ operator|-
 literal|1
 operator|)
 return|;
+block|}
+if|if
+condition|(
+operator|(
+name|sunhdr
+operator|.
+name|l_ras_maplength
+operator|<
+literal|0
+operator|)
+operator|||
+operator|(
+name|sunhdr
+operator|.
+name|l_ras_maplength
+operator|>
+operator|(
+literal|256
+operator|*
+literal|3
+operator|)
+operator|)
+condition|)
+block|{
+name|g_error
+argument_list|(
+literal|"Map lengths greater than 256 entries are unsupported by GIMP."
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* Is there a RGB colourmap ? */
 if|if
