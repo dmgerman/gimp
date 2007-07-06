@@ -1110,8 +1110,11 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,
-literal|"XCF: This file is corrupt!  I have loaded as much\n"
+name|_
+argument_list|(
+literal|"This XCF file is corrupt!  I have loaded as much "
 literal|"of it as I can, but it is incomplete."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
@@ -1137,8 +1140,11 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"XCF: This file is corrupt!  I could not even\n"
+name|_
+argument_list|(
+literal|"This XCF file is corrupt!  I could not even "
 literal|"salvage any partial image data from it."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -1525,7 +1531,7 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"unknown compression type: %d"
+literal|"Unknown compression type: %d"
 argument_list|,
 operator|(
 name|int
@@ -1679,7 +1685,7 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,
-literal|"guide orientation out of range in XCF file"
+literal|"Guide orientation out of range in XCF file"
 argument_list|)
 expr_stmt|;
 continue|continue;

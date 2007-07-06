@@ -406,6 +406,8 @@ name|g_strconcat
 argument_list|(
 name|tmp
 argument_list|,
+literal|" "
+argument_list|,
 name|_
 argument_list|(
 literal|"(invalid UTF-8 string)"
