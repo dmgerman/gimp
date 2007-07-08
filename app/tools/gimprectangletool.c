@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fa5890103
+DECL|enum|__anon2c0b320c0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -4266,6 +4266,16 @@ operator|==
 name|GDK_SHIFT_MASK
 condition|)
 block|{
+comment|/* Here we want to handle manualy when to update the rectangle, so we        * don't want gimp_rectangle_tool_options_notify to do anything.        */
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|options
+argument_list|,
+name|gimp_rectangle_tool_options_notify
+argument_list|,
+name|rectangle
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|options
@@ -4278,6 +4288,15 @@ operator|->
 name|fixed_aspect
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|options
+argument_list|,
+name|gimp_rectangle_tool_options_notify
+argument_list|,
+name|rectangle
 argument_list|)
 expr_stmt|;
 block|}
