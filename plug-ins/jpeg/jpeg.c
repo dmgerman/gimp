@@ -1333,6 +1333,10 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* HAVE_EXIF */
+name|load_defaults
+argument_list|()
+expr_stmt|;
+comment|/* erase default parameters if defaults are recorded */
 switch|switch
 condition|(
 name|run_mode
