@@ -91,7 +91,7 @@ index|[]
 init|=
 block|{
 block|{
-literal|"selection-editor-popup"
+literal|"selection-popup"
 block|,
 name|GIMP_STOCK_TOOL_RECT_SELECT
 block|,
