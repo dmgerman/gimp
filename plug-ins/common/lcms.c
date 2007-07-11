@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Color management plug-in based on littleCMS  * Copyright (C) 2006, 2007  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcdf58d0103
+DECL|enum|__anon2bd5c9380103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcdf58d0203
+DECL|enum|__anon2bd5c9380203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcdf58d0308
+DECL|struct|__anon2bd5c9380308
 block|{
 DECL|member|name
 specifier|const
@@ -355,6 +355,10 @@ name|config
 parameter_list|,
 name|gint32
 name|image
+parameter_list|,
+name|guchar
+modifier|*
+name|checksum
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -432,12 +436,28 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|lcms_sRGB_checksum
+parameter_list|(
+name|guchar
+modifier|*
+name|digest
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|cmsHPROFILE
 name|lcms_config_get_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
 name|config
+parameter_list|,
+name|guchar
+modifier|*
+name|checksum
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -709,14 +729,14 @@ argument_list|,
 literal|"Set ICC color profile on the image"
 argument_list|,
 literal|"This procedure sets an ICC color profile on an "
-literal|"image using the 'icc-profile' parasite.  It does "
+literal|"image using the 'icc-profile' parasite. It does "
 literal|"not do any color conversion."
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -747,15 +767,15 @@ literal|"Set the default RGB color profile on the image"
 argument_list|,
 literal|"This procedure sets the user-configured RGB "
 literal|"profile on an image using the 'icc-profile' "
-literal|"parasite.  If no RGB profile is configured, sRGB "
-literal|"is assumed and the parasite is unset.  This "
+literal|"parasite. If no RGB profile is configured, sRGB "
+literal|"is assumed and the parasite is unset. This "
 literal|"procedure does not do any color conversion."
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -786,7 +806,8 @@ literal|"Apply a color profile on the image"
 argument_list|,
 literal|"This procedure transform from the image's color "
 literal|"profile (or the default RGB profile if none is "
-literal|"set) to the given ICC color profile.  The profile "
+literal|"set) to the given ICC color profile. Only RGB "
+literal|"color profiles are accepted. The profile "
 literal|"is then set on the image using the 'icc-profile' "
 literal|"parasite."
 argument_list|,
@@ -794,7 +815,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -835,7 +856,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -864,15 +885,15 @@ name|PLUG_IN_PROC_INFO
 argument_list|,
 literal|"Retrieve information about an image's color profile"
 argument_list|,
-literal|"This procedure returns information about the "
-literal|"color profile attached to an image.  If no profile "
-literal|"is attached, sRGB is assumed."
+literal|"This procedure returns information about the RGB "
+literal|"color profile attached to an image. If no RGB "
+literal|"color profile is attached, sRGB is assumed."
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -911,7 +932,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"Sven Neumann"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -1694,6 +1715,18 @@ name|dest_profile
 init|=
 name|NULL
 decl_stmt|;
+name|guchar
+name|src_md5
+index|[
+literal|16
+index|]
+decl_stmt|;
+name|guchar
+name|dest_md5
+index|[
+literal|16
+index|]
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_COLOR_CONFIG
@@ -1801,6 +1834,8 @@ argument_list|(
 name|config
 argument_list|,
 name|image
+argument_list|,
+name|src_md5
 argument_list|)
 expr_stmt|;
 if|if
@@ -1816,7 +1851,8 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"lcms: attached color profile is not for RGB color space\n"
+literal|"lcms: attached color profile is not for RGB color space "
+literal|"skipping\n"
 argument_list|)
 expr_stmt|;
 name|cmsCloseProfile
@@ -1845,21 +1881,63 @@ condition|(
 operator|!
 name|src_profile
 condition|)
+block|{
 name|src_profile
 operator|=
 name|cmsCreate_sRGBProfile
 argument_list|()
 expr_stmt|;
+name|lcms_sRGB_checksum
+argument_list|(
+name|src_md5
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
 name|dest_profile
 condition|)
+block|{
 name|dest_profile
 operator|=
 name|cmsCreate_sRGBProfile
 argument_list|()
 expr_stmt|;
+name|lcms_sRGB_checksum
+argument_list|(
+name|dest_md5
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|memcmp
+argument_list|(
+name|src_md5
+argument_list|,
+name|dest_md5
+argument_list|,
+literal|16
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+name|cmsCloseProfile
+argument_list|(
+name|src_profile
+argument_list|)
+expr_stmt|;
+name|cmsCloseProfile
+argument_list|(
+name|dest_profile
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_PDB_SUCCESS
+return|;
+block|}
 if|if
 condition|(
 name|run_mode
@@ -2094,8 +2172,37 @@ argument_list|(
 name|config
 argument_list|,
 name|image
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|profile
+operator|&&
+operator|!
+name|lcms_icc_profile_is_rgb
+argument_list|(
+name|profile
+argument_list|)
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"lcms: attached color profile is not for RGB color space "
+literal|"skipping\n"
+argument_list|)
+expr_stmt|;
+name|cmsCloseProfile
+argument_list|(
+name|profile
+argument_list|)
+expr_stmt|;
+name|profile
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|profile
@@ -2264,8 +2371,179 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|lcms_sRGB_checksum (guchar * digest)
+name|lcms_sRGB_checksum
+parameter_list|(
+name|guchar
+modifier|*
+name|digest
+parameter_list|)
+block|{
+name|digest
+index|[
+literal|0
+index|]
+operator|=
+literal|0xcb
+expr_stmt|;
+name|digest
+index|[
+literal|1
+index|]
+operator|=
+literal|0x63
+expr_stmt|;
+name|digest
+index|[
+literal|2
+index|]
+operator|=
+literal|0x14
+expr_stmt|;
+name|digest
+index|[
+literal|3
+index|]
+operator|=
+literal|0x56
+expr_stmt|;
+name|digest
+index|[
+literal|4
+index|]
+operator|=
+literal|0xd4
+expr_stmt|;
+name|digest
+index|[
+literal|5
+index|]
+operator|=
+literal|0x0a
+expr_stmt|;
+name|digest
+index|[
+literal|6
+index|]
+operator|=
+literal|0x01
+expr_stmt|;
+name|digest
+index|[
+literal|7
+index|]
+operator|=
+literal|0x62
+expr_stmt|;
+name|digest
+index|[
+literal|8
+index|]
+operator|=
+literal|0xa0
+expr_stmt|;
+name|digest
+index|[
+literal|9
+index|]
+operator|=
+literal|0xdb
+expr_stmt|;
+name|digest
+index|[
+literal|10
+index|]
+operator|=
+literal|0xe6
+expr_stmt|;
+name|digest
+index|[
+literal|11
+index|]
+operator|=
+literal|0x32
+expr_stmt|;
+name|digest
+index|[
+literal|12
+index|]
+operator|=
+literal|0x8b
+expr_stmt|;
+name|digest
+index|[
+literal|13
+index|]
+operator|=
+literal|0xea
+expr_stmt|;
+name|digest
+index|[
+literal|14
+index|]
+operator|=
+literal|0x1a
+expr_stmt|;
+name|digest
+index|[
+literal|15
+index|]
+operator|=
+literal|0x89
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|lcms_calculate_checksum (const gchar * data,gsize len,guchar * digest)
+name|lcms_calculate_checksum
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|data
+parameter_list|,
+name|gsize
+name|len
+parameter_list|,
+name|guchar
+modifier|*
+name|digest
+parameter_list|)
+block|{
+if|if
+condition|(
+name|digest
+condition|)
+name|gimp_md5_get_digest
+argument_list|(
+name|data
+operator|+
+sizeof|sizeof
+argument_list|(
+name|icHeader
+argument_list|)
+argument_list|,
+name|len
+operator|-
+sizeof|sizeof
+argument_list|(
+name|icHeader
+argument_list|)
+argument_list|,
+name|digest
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|cmsHPROFILE
-DECL|function|lcms_image_get_profile (GimpColorConfig * config,gint32 image)
+DECL|function|lcms_image_get_profile (GimpColorConfig * config,gint32 image,guchar * checksum)
 name|lcms_image_get_profile
 parameter_list|(
 name|GimpColorConfig
@@ -2274,6 +2552,10 @@ name|config
 parameter_list|,
 name|gint32
 name|image
+parameter_list|,
+name|guchar
+modifier|*
+name|checksum
 parameter_list|)
 block|{
 name|GimpParasite
@@ -2330,9 +2612,32 @@ expr_stmt|;
 comment|/* FIXME: we leak the parasite, the data is used by the profile */
 if|if
 condition|(
-operator|!
 name|profile
 condition|)
+block|{
+name|lcms_calculate_checksum
+argument_list|(
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|gimp_parasite_data_size
+argument_list|(
+name|parasite
+argument_list|)
+argument_list|,
+name|checksum
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -2343,6 +2648,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 else|else
 block|{
 name|profile
@@ -2350,6 +2656,8 @@ operator|=
 name|lcms_config_get_profile
 argument_list|(
 name|config
+argument_list|,
+name|checksum
 argument_list|)
 expr_stmt|;
 block|}
@@ -2472,28 +2780,15 @@ condition|(
 name|profile
 condition|)
 block|{
-name|gboolean
-name|rgb
-init|=
-name|lcms_icc_profile_is_rgb
-argument_list|(
-name|profile
-argument_list|)
+name|GimpParasite
+modifier|*
+name|parasite
 decl_stmt|;
 name|cmsCloseProfile
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|rgb
-condition|)
-block|{
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -2529,23 +2824,6 @@ name|success
 operator|=
 name|TRUE
 expr_stmt|;
-block|}
-else|else
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Color profile '%s' is not for RGB color space."
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -3110,12 +3388,16 @@ end_function
 begin_function
 specifier|static
 name|cmsHPROFILE
-DECL|function|lcms_config_get_profile (GimpColorConfig * config)
+DECL|function|lcms_config_get_profile (GimpColorConfig * config,guchar * checksum)
 name|lcms_config_get_profile
 parameter_list|(
 name|GimpColorConfig
 modifier|*
 name|config
+parameter_list|,
+name|guchar
+modifier|*
+name|checksum
 parameter_list|)
 block|{
 if|if
@@ -3127,26 +3409,133 @@ condition|)
 block|{
 name|cmsHPROFILE
 name|profile
+decl_stmt|;
+name|GMappedFile
+modifier|*
+name|file
+decl_stmt|;
+name|gchar
+modifier|*
+name|data
+decl_stmt|;
+name|gsize
+name|len
+decl_stmt|;
+name|GError
+modifier|*
+name|error
 init|=
-name|cmsOpenProfileFromFile
+name|NULL
+decl_stmt|;
+name|file
+operator|=
+name|g_mapped_file_new
 argument_list|(
 name|config
 operator|->
 name|rgb_profile
 argument_list|,
-literal|"r"
+name|FALSE
+argument_list|,
+operator|&
+name|error
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 operator|!
-name|profile
+name|file
 condition|)
+block|{
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not open ICC profile from '%s'"
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|config
+operator|->
+name|rgb_profile
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+name|len
+operator|=
+name|g_mapped_file_get_length
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|data
+operator|=
+name|g_memdup
+argument_list|(
+name|g_mapped_file_get_contents
+argument_list|(
+name|file
+argument_list|)
+argument_list|,
+name|len
+argument_list|)
+expr_stmt|;
+name|g_mapped_file_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+name|profile
+operator|=
+name|cmsOpenProfileFromMem
+argument_list|(
+name|data
+argument_list|,
+name|len
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: we leak the data, it is used by the profile */
+if|if
+condition|(
+name|profile
+condition|)
+block|{
+name|lcms_calculate_checksum
+argument_list|(
+name|data
+argument_list|,
+name|len
+argument_list|,
+name|checksum
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_free
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Could not load ICC profile from '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -3157,6 +3546,7 @@ name|rgb_profile
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|profile
 return|;
