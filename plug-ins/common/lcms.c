@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d02020103
+DECL|enum|__anon2935ef9d0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d02020203
+DECL|enum|__anon2935ef9d0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d02020308
+DECL|struct|__anon2935ef9d0308
 block|{
 DECL|member|name
 specifier|const
@@ -1924,6 +1924,24 @@ operator|==
 literal|0
 condition|)
 block|{
+name|gchar
+modifier|*
+name|src_desc
+init|=
+name|lcms_icc_profile_get_desc
+argument_list|(
+name|src_profile
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
+name|dest_desc
+init|=
+name|lcms_icc_profile_get_desc
+argument_list|(
+name|dest_profile
+argument_list|)
+decl_stmt|;
 name|cmsCloseProfile
 argument_list|(
 name|src_profile
@@ -1932,6 +1950,35 @@ expr_stmt|;
 name|cmsCloseProfile
 argument_list|(
 name|dest_profile
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"skipping conversion because profiles seem to be equal:\n"
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|" %s\n"
+argument_list|,
+name|src_desc
+argument_list|)
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|" %s\n"
+argument_list|,
+name|dest_desc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|src_desc
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|dest_desc
 argument_list|)
 expr_stmt|;
 return|return
