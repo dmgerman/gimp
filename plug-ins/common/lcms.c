@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5c9380103
+DECL|enum|__anon2c2d02020103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5c9380203
+DECL|enum|__anon2c2d02020203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5c9380308
+DECL|struct|__anon2c2d02020308
 block|{
 DECL|member|name
 specifier|const
@@ -1852,7 +1852,7 @@ block|{
 name|g_printerr
 argument_list|(
 literal|"lcms: attached color profile is not for RGB color space "
-literal|"skipping\n"
+literal|"(skipping)\n"
 argument_list|)
 expr_stmt|;
 name|cmsCloseProfile
@@ -2190,7 +2190,7 @@ block|{
 name|g_printerr
 argument_list|(
 literal|"lcms: attached color profile is not for RGB color space "
-literal|"skipping\n"
+literal|"(skipping)\n"
 argument_list|)
 expr_stmt|;
 name|cmsCloseProfile
