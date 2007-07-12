@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f6ade0103
+DECL|enum|__anon27f8fcbf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1332,6 +1332,41 @@ break|break;
 case|case
 name|PROP_FONT
 case|:
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|font
+init|=
+name|g_value_get_string
+argument_list|(
+name|value
+argument_list|)
+decl_stmt|;
+name|gsize
+name|len
+init|=
+name|strlen
+argument_list|(
+name|font
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|g_str_has_suffix
+argument_list|(
+name|font
+argument_list|,
+literal|" Not-Rotated"
+argument_list|)
+condition|)
+name|len
+operator|-=
+name|strlen
+argument_list|(
+literal|" Not-Rotated"
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|text
@@ -1343,11 +1378,14 @@ name|text
 operator|->
 name|font
 operator|=
-name|g_value_dup_string
+name|g_strndup
 argument_list|(
-name|value
+name|font
+argument_list|,
+name|len
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|PROP_FONT_SIZE

@@ -479,6 +479,9 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+name|gsize
+name|len
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -492,6 +495,13 @@ argument_list|(
 name|desc
 argument_list|)
 expr_stmt|;
+name|len
+operator|=
+name|strlen
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -499,8 +509,7 @@ name|g_utf8_validate
 argument_list|(
 name|name
 argument_list|,
-operator|-
-literal|1
+name|len
 argument_list|,
 name|NULL
 argument_list|)
@@ -513,6 +522,35 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|remove this as soon as we depend on Pango 1.6.5
+endif|#
+directive|endif
+if|if
+condition|(
+name|g_str_has_suffix
+argument_list|(
+name|name
+argument_list|,
+literal|" Not-Rotated"
+argument_list|)
+condition|)
+name|name
+index|[
+name|len
+operator|-
+name|strlen
+argument_list|(
+literal|" Not-Rotated"
+argument_list|)
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
 name|font
 operator|=
 name|g_object_new
