@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c10dc40103
+DECL|enum|__anon298b5cd00103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c10dc40208
+DECL|struct|__anon298b5cd00208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c10dc40308
+DECL|struct|__anon298b5cd00308
 block|{
 DECL|member|signature
 name|gchar
@@ -1721,7 +1721,8 @@ name|GIMP_OVERLAY_MODE
 return|;
 name|g_printerr
 argument_list|(
-literal|"PSD: Warning - UNKNOWN layer-blend mode, reverting to 'normal'\n"
+literal|"PSD: Warning - "
+literal|"UNKNOWN layer-blend mode, reverting to 'normal'\n"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1835,7 +1836,7 @@ case|:
 comment|/* 5 == Columns, but what the heck is a column? */
 default|default:
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Warning: unable to convert psd unit %d to gimp unit\n"
 argument_list|,
@@ -2113,7 +2114,7 @@ condition|)
 comment|/* 2998&& 2000 */
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tThe psd plugin does not currently support reading path data.\n"
 argument_list|)
@@ -2152,7 +2153,7 @@ init|=
 name|Size
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tALPHA CHANNEL NAMES:\n"
 argument_list|)
@@ -2196,20 +2197,13 @@ name|remaining
 condition|)
 block|{
 name|IFDBG
-block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\nYay, a file bug.  "
 literal|"Yuck.  Photoshop 4/Mac?  "
 literal|"I'll work around you.\n"
 argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
+decl_stmt|;
 break|break;
 block|}
 if|if
@@ -2272,7 +2266,7 @@ operator|=
 name|sname
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tname: \"%s\"\n"
 argument_list|,
@@ -2305,8 +2299,7 @@ operator|=
 name|NULL
 expr_stmt|;
 name|IFDBG
-block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tNull channel name %d.\n"
 argument_list|,
@@ -2314,13 +2307,7 @@ name|psd_image
 operator|.
 name|num_aux_channels
 argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
+decl_stmt|;
 block|}
 name|psd_image
 operator|.
@@ -2403,7 +2390,7 @@ literal|0x03ef
 case|:
 comment|/* 1007 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tDISPLAYINFO STRUCTURE: unhandled\n"
 argument_list|)
@@ -2456,7 +2443,7 @@ name|caption
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tcontent: \"%s\"\n"
 argument_list|,
@@ -2485,7 +2472,7 @@ literal|0x03f2
 case|:
 comment|/* 1010 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tBACKGROUND COLOR: unhandled\n"
 argument_list|)
@@ -2512,7 +2499,7 @@ literal|0x03f4
 case|:
 comment|/* 1012 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tGREY/MULTICHANNEL HALFTONING INFO: unhandled\n"
 argument_list|)
@@ -2539,7 +2526,7 @@ literal|0x03f5
 case|:
 comment|/* 1013 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tCOLOUR HALFTONING INFO: unhandled\n"
 argument_list|)
@@ -2566,7 +2553,7 @@ literal|0x03f6
 case|:
 comment|/* 1014 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tDUOTONE HALFTONING INFO: unhandled\n"
 argument_list|)
@@ -2593,7 +2580,7 @@ literal|0x03f7
 case|:
 comment|/* 1015 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tGREYSCALE/MULTICHANNEL TRANSFER FUNCTION: unhandled\n"
 argument_list|)
@@ -2620,7 +2607,7 @@ literal|0x03f8
 case|:
 comment|/* 1016 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tCOLOUR TRANSFER FUNCTION: unhandled\n"
 argument_list|)
@@ -2647,7 +2634,7 @@ literal|0x03f9
 case|:
 comment|/* 1017 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tDUOTONE TRANSFER FUNCTION: unhandled\n"
 argument_list|)
@@ -2674,7 +2661,7 @@ literal|0x03fa
 case|:
 comment|/* 1018 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tDUOTONE IMAGE INFO: unhandled\n"
 argument_list|)
@@ -2701,7 +2688,7 @@ literal|0x03fb
 case|:
 comment|/* 1019 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tEFFECTIVE BLACK/WHITE VALUES: unhandled\n"
 argument_list|)
@@ -2728,7 +2715,7 @@ literal|0x03fe
 case|:
 comment|/* 1022 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tQUICK MASK INFO: unhandled\n"
 argument_list|)
@@ -2756,7 +2743,7 @@ case|:
 comment|/* 1024 */
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tLAYER STATE INFO:\n"
 argument_list|)
@@ -2773,7 +2760,7 @@ literal|"ID target_layer_num"
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\ttarget: %d\n"
 argument_list|,
@@ -2799,13 +2786,13 @@ literal|0x0402
 case|:
 comment|/* 1026 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tLAYER GROUP INFO: unhandled\n"
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t(Inferred number of layers: %d)\n"
 argument_list|,
@@ -2841,7 +2828,7 @@ literal|0x0405
 case|:
 comment|/* 1029 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tIMAGE MODE FOR RAW FORMAT: unhandled\n"
 argument_list|)
@@ -2877,7 +2864,7 @@ name|int
 name|i
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tGUIDE INFORMATION:\n"
 argument_list|)
@@ -3010,7 +2997,7 @@ operator|-=
 literal|12
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tSize: %d\n"
 argument_list|,
@@ -3018,7 +3005,7 @@ name|Size
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tMagic: %d %d %d %d %d %d\n"
 argument_list|,
@@ -3036,7 +3023,7 @@ name|magic6
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tMagic: 0x%04x 0x%04x 0x%04x 0x%04x 0x%04x 0x%04x\n"
 argument_list|,
@@ -3083,7 +3070,7 @@ literal|5
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"** FUNNY AMOUNT OF GUIDE DATA (%d)\n"
 argument_list|,
@@ -3095,7 +3082,7 @@ name|funny_amount_of_guide_data
 goto|;
 block|}
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tNumber of guides is %d\n"
 argument_list|,
@@ -3154,7 +3141,7 @@ literal|"guide"
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Position: %d     %x\n"
 argument_list|,
@@ -3267,7 +3254,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tGuide %d at %d, %s\n"
 argument_list|,
@@ -3299,7 +3286,7 @@ condition|)
 block|{
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"** GUIDE INFORMATION DROSS: "
 argument_list|)
@@ -3342,7 +3329,7 @@ case|:
 comment|/* 1005 */
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tResolution Info:\n"
 argument_list|)
@@ -3439,7 +3426,7 @@ operator|+=
 name|Size
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tres = %f, %f\n"
 argument_list|,
@@ -3477,7 +3464,7 @@ comment|/* 2 bytes     bits per pixel     Always 24?          */
 comment|/* 2 bytes     planes             Always 1?           */
 comment|/* size bytes  data               JFIF (or raw) data  */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t<Photoshop 4.0 style thumbnail (BGR)>  unhandled\n"
 argument_list|)
@@ -3506,7 +3493,7 @@ case|:
 comment|/* 1036 */
 comment|/* See above */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t<Photoshop 5.0 style thumbnail (RGB)> unhandled\n"
 argument_list|)
@@ -3565,7 +3552,7 @@ literal|0x2710
 case|:
 comment|/* 10000 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t<Field is irrelevant to GIMP at this time.>\n"
 argument_list|)
@@ -3596,7 +3583,7 @@ literal|0x03eb
 case|:
 comment|/* 1003 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t<Obsolete Photoshop 2.0 field.>\n"
 argument_list|)
@@ -3631,7 +3618,7 @@ literal|0x0403
 case|:
 comment|/* 1027 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t<Obsolete field.>\n"
 argument_list|)
@@ -3656,7 +3643,7 @@ break|break;
 default|default:
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t<Undocumented field.>\n"
 argument_list|)
@@ -3760,7 +3747,7 @@ name|guint32
 name|xdsize
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tLAYER RECORD (layer %d)\n"
 argument_list|,
@@ -3922,7 +3909,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tLayer extents: (%d,%d) -> (%d,%d)\n"
 argument_list|,
@@ -3954,7 +3941,7 @@ operator|+=
 literal|2
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tNumber of channels: %d\n"
 argument_list|,
@@ -4048,7 +4035,7 @@ name|i
 decl_stmt|;
 comment|/* table 11-13 */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tCHANNEL LENGTH INFO (%d)\n"
 argument_list|,
@@ -4074,7 +4061,7 @@ operator|+=
 literal|2
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\tChannel TYPE: %d\n"
 argument_list|,
@@ -4102,7 +4089,7 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\tChannel Data Length: %d\n"
 argument_list|,
@@ -4116,7 +4103,7 @@ block|}
 else|else
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tOo-er, layer has no channels.  Hmm.\n"
 argument_list|)
@@ -4155,7 +4142,7 @@ literal|0
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t(layer blend signature '%c%c%c%c' is incorrect: quitting)\n"
 argument_list|,
@@ -4210,7 +4197,7 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tBlend type: PSD(\"%c%c%c%c\") = GIMP(%d)\n"
 argument_list|,
@@ -4268,7 +4255,7 @@ operator|)
 operator|++
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tLayer Opacity: %d\n"
 argument_list|,
@@ -4295,7 +4282,7 @@ operator|)
 operator|++
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tLayer Clipping: %d (%s)\n"
 argument_list|,
@@ -4330,7 +4317,7 @@ operator|)
 operator|++
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tLayer Flags: %d (%s, %s)\n"
 argument_list|,
@@ -4411,7 +4398,7 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\tEXTRA DATA SIZE: %d\n"
 argument_list|,
@@ -4447,7 +4434,7 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\tLAYER MASK DATA SIZE: %d\n"
 argument_list|,
@@ -4623,7 +4610,7 @@ operator|+=
 literal|2
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\ttop:    %d\n"
 argument_list|,
@@ -4631,7 +4618,7 @@ name|top
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tleft:   %d\n"
 argument_list|,
@@ -4639,7 +4626,7 @@ name|left
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tbottom: %d\n"
 argument_list|,
@@ -4647,7 +4634,7 @@ name|bottom
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tright:  %d\n"
 argument_list|,
@@ -4655,7 +4642,7 @@ name|right
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tcolor:  %d\n"
 argument_list|,
@@ -4663,7 +4650,7 @@ name|color
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tflags:  %X\n"
 argument_list|,
@@ -4671,7 +4658,7 @@ name|flags
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\trelative: %d\n"
 argument_list|,
@@ -4681,7 +4668,7 @@ literal|0x1
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\tvisible:  %d\n"
 argument_list|,
@@ -4697,7 +4684,7 @@ operator|)
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\tinvert:   %d\n"
 argument_list|,
@@ -4748,7 +4735,7 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tLAYER RANGES DATA SIZE: %d\n"
 argument_list|,
@@ -4814,7 +4801,7 @@ name|name
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tLAYER NAME: '%s'\n"
 argument_list|,
@@ -4890,7 +4877,7 @@ block|}
 else|else
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tNULL LAYER NAME\n"
 argument_list|)
@@ -4898,7 +4885,7 @@ decl_stmt|;
 block|}
 comment|/*     The remaining data in this layer contains any number of blocks that follow     this structure:       4 bytes for signature (always 8BIM)       4 bytes for a key to define kind of data       4 bytes for size of data to follow       ? bytes of data    */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\tLAYER EXTRA DATA BLOCKS\n"
 argument_list|)
@@ -4953,7 +4940,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\tKEY: 0x%08x '%c%c%c%c' / Size: 0x%04x  "
 argument_list|,
@@ -5070,7 +5057,7 @@ name|name
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Long Layer Name: '%s'\n"
 argument_list|,
@@ -5096,7 +5083,7 @@ literal|"layer extra data block lyid"
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Layer ID #%d\n"
 argument_list|,
@@ -5132,7 +5119,7 @@ literal|"iOpa: Layer Fill padding throw"
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Layer Fill = %d (%d%%)\n"
 argument_list|,
@@ -5177,7 +5164,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Layer Color=%d "
 argument_list|,
@@ -5192,7 +5179,7 @@ block|{
 case|case
 literal|0
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"None\n"
 argument_list|)
@@ -5201,7 +5188,7 @@ break|break;
 case|case
 literal|1
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Red\n"
 argument_list|)
@@ -5210,7 +5197,7 @@ break|break;
 case|case
 literal|2
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Orange\n"
 argument_list|)
@@ -5219,7 +5206,7 @@ break|break;
 case|case
 literal|3
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Yellow\n"
 argument_list|)
@@ -5228,7 +5215,7 @@ break|break;
 case|case
 literal|4
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Green\n"
 argument_list|)
@@ -5237,7 +5224,7 @@ break|break;
 case|case
 literal|5
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Blue\n"
 argument_list|)
@@ -5246,7 +5233,7 @@ break|break;
 case|case
 literal|6
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Violet\n"
 argument_list|)
@@ -5255,14 +5242,14 @@ break|break;
 case|case
 literal|7
 case|:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Grey\n"
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Undefined\n"
 argument_list|)
@@ -5295,7 +5282,7 @@ literal|"layer extra data block lsct type"
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Layer Set Controls:\n\t\t\t\t\t\t\tType = 0x%08x "
 argument_list|,
@@ -5333,7 +5320,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Close layer set.\n\t\t\t\t\t\t\tBlend = 0x%08x '%c%c%c%c'\n"
 argument_list|,
@@ -5419,7 +5406,7 @@ case|case
 literal|3
 case|:
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Open layer set.\n"
 argument_list|)
@@ -5444,7 +5431,7 @@ expr_stmt|;
 break|break;
 default|default:
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Unknown\n"
 argument_list|)
@@ -5486,7 +5473,7 @@ argument_list|)
 decl_stmt|;
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"lnsr = 0x%08x '%c%c%c%c'\n"
 argument_list|,
@@ -5558,7 +5545,7 @@ case|case
 literal|0x62676e64
 case|:
 comment|/* 'bgnd' */
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\t(background?)\n"
 argument_list|)
@@ -5568,7 +5555,7 @@ case|case
 literal|0x6c617972
 case|:
 comment|/* 'layr' */
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\t(Layer?)\n"
 argument_list|)
@@ -5578,14 +5565,14 @@ case|case
 literal|0x6c736574
 case|:
 comment|/* 'lset' */
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\tNew layer set.\n"
 argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\t\t\tUnknown\n"
 argument_list|)
@@ -5605,7 +5592,7 @@ case|:
 comment|/* lfx2:  More Layer effects settings. */
 default|default:
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"<Undefined Block>\n"
 argument_list|)
@@ -5733,7 +5720,7 @@ condition|)
 block|{
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Warning: layer record dross: "
 argument_list|)
@@ -5800,7 +5787,7 @@ name|gint
 name|i
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tLAYER STRUCTURE SECTION\n"
 argument_list|)
@@ -5824,7 +5811,7 @@ operator|+=
 literal|2
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tCanonical number of layers: %d%s\n"
 argument_list|,
@@ -6196,7 +6183,7 @@ expr_stmt|;
 block|}
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\tLayer (%d) Channel (%d:%d) Compression: %d (%s)\n"
 argument_list|,
@@ -6225,11 +6212,6 @@ literal|"RLE"
 else|:
 literal|"*UNKNOWN!*"
 operator|)
-argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
 argument_list|)
 expr_stmt|;
 block|}
@@ -6344,7 +6326,6 @@ name|blockread
 operator|=
 name|offset
 expr_stmt|;
-comment|/*IFDBG {printf("\nHere comes the guitar solo...\n");           fflush(stdout);}*/
 for|for
 control|(
 name|linei
@@ -6359,7 +6340,6 @@ name|linei
 operator|++
 control|)
 block|{
-comment|/*printf(" %d ", *offset);*/
 name|unpack_pb_channel
 argument_list|(
 name|fd
@@ -6390,8 +6370,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|IFDBG
-block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\t\t\t\tActual compressed size was %d bytes\n"
 argument_list|,
@@ -6399,30 +6378,17 @@ name|offset
 operator|-
 name|blockread
 argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
+decl_stmt|;
 block|}
 break|break;
 default|default:
 comment|/* *unknown* */
 name|IFDBG
-block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\nEEP!\n"
 argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
+decl_stmt|;
 name|g_message
 argument_list|(
 literal|"Error: Unknown compression type in channel"
@@ -6475,13 +6441,13 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\tLAYER INFO SECTION\n"
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\t\tSECTION LENGTH: %u\n"
 argument_list|,
@@ -6537,13 +6503,13 @@ name|fd
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"LAYER AND MASK INFO\n"
 argument_list|)
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\tSECTION LENGTH: %u\n"
 argument_list|,
@@ -6566,18 +6532,11 @@ name|offset
 argument_list|)
 expr_stmt|;
 name|IFDBG
-block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"And...?\n"
 argument_list|)
-expr_stmt|;
-name|fflush
-argument_list|(
-name|stdout
-argument_list|)
-expr_stmt|;
-block|}
+decl_stmt|;
 if|if
 condition|(
 name|offset
@@ -6587,7 +6546,7 @@ condition|)
 block|{
 name|IFDBG
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"PSD: Supposedly there are %d bytes of mask info left.\n"
 argument_list|,
@@ -6614,22 +6573,22 @@ operator|==
 literal|24
 operator|)
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"     That sounds good to me.\n"
 argument_list|)
 expr_stmt|;
 else|else
-name|printf
+name|g_print
 argument_list|(
 literal|"     That sounds strange to me.\n"
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*      if ((getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0))         {           printf("*** This mask info block looks pretty bogus.\n");         }*/
+comment|/*      if ((getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0) ||           (getguchar(fd, "mask info throw")!=0))         {           g_print("*** This mask info block looks pretty bogus.\n");         }*/
 block|}
 else|else
-name|printf
+name|g_print
 argument_list|(
 literal|"PSD: Stern warning - no mask info.\n"
 argument_list|)
@@ -6676,7 +6635,7 @@ init|=
 literal|0
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"IMAGE RESOURCE BLOCK:\n"
 argument_list|)
@@ -6735,7 +6694,7 @@ operator|+=
 literal|2
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\tID: 0x%04x / "
 argument_list|,
@@ -6760,7 +6719,7 @@ name|Name
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\"%s\" "
 argument_list|,
@@ -6835,7 +6794,7 @@ operator|+=
 literal|4
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Size: %d\n"
 argument_list|,
@@ -6869,7 +6828,7 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"PSD: Warning, unknown resource signature \"%.4s\" at or before offset %d ::: skipping\n"
 argument_list|,
@@ -6902,7 +6861,7 @@ literal|1
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"+1"
 argument_list|)
@@ -6921,7 +6880,7 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-comment|/*  if (offset != PSDheader.imgreslen)     {       printf("\tSucking imageres byte...\n");       throwchunk (1, fd, "imageres suck");       offset ++;     }*/
+comment|/*  if (offset != PSDheader.imgreslen)     {       g_print("\tSucking imageres byte...\n");       throwchunk (1, fd, "imageres suck");       offset ++;     }*/
 block|}
 end_function
 
@@ -6966,7 +6925,7 @@ operator|!
 name|rgb_data
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"NULL rgb data - eep!"
 argument_list|)
@@ -7106,7 +7065,7 @@ operator|!
 name|alpha
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"NULL channel - eep!"
 argument_list|)
@@ -7216,7 +7175,7 @@ operator|!
 name|blue
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"NULL channel - eep!"
 argument_list|)
@@ -7353,7 +7312,7 @@ operator|!
 name|alpha
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"chans_to_RGBA : NULL channel - eep!"
 argument_list|)
@@ -7721,7 +7680,7 @@ name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Extracting primary channel data (%d channels)\n"
 literal|"\tand %d auxiliary channels.\n"
@@ -7750,7 +7709,7 @@ operator|)
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"(bad channel dimensions -- skipping)"
 argument_list|)
@@ -8089,7 +8048,7 @@ name|aux_data
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Done with that.\n\n"
 argument_list|)
@@ -8131,7 +8090,7 @@ name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Extracting %d/%d auxiliary channels.\n"
 argument_list|,
@@ -8157,7 +8116,7 @@ operator|)
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"(bad channel dimensions -- skipping)"
 argument_list|)
@@ -8375,7 +8334,7 @@ name|aux_data
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Done with that.\n\n"
 argument_list|)
@@ -8422,7 +8381,7 @@ decl_stmt|,
 name|y
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"--> %p %p : %d %d . %d %d . %d %d\n"
 argument_list|,
@@ -8638,7 +8597,7 @@ decl_stmt|,
 name|ichan
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"------- %s ---------------------------------\n"
 argument_list|,
@@ -8943,7 +8902,7 @@ operator|->
 name|num_channels
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Hey, it's a LAYER with %d channels!\n"
 argument_list|,
@@ -8960,7 +8919,7 @@ name|GIMP_GRAY
 case|:
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"It's GRAY.\n"
 argument_list|)
@@ -9167,7 +9126,7 @@ name|GIMP_RGB
 case|:
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"It's RGB, %dx%d.\n"
 argument_list|,
@@ -9907,7 +9866,7 @@ endif|#
 directive|endif
 comment|/* PANOTOOLS_FIX */
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Adding layer mask %d to layer %d\n"
 argument_list|,
@@ -10196,7 +10155,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"::::::::::: WANT AUX :::::::::::::::::::::::::::::::::::::::\n"
 argument_list|)
@@ -10224,7 +10183,7 @@ condition|)
 comment|/* Photoshop2-style: NO LAYERS. */
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Image data %ld chars\n"
 argument_list|,
@@ -10429,7 +10388,7 @@ literal|1
 return|;
 block|}
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"psd:%d gimp:%d gimpbase:%d\n"
 argument_list|,
@@ -10473,7 +10432,7 @@ operator|)
 condition|)
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"(bad psd2-style image dimensions -- skipping)"
 argument_list|)
@@ -10534,7 +10493,7 @@ operator|)
 operator|!=
 literal|0
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"PSD: Colourmap looks screwed! Aiee!\n"
 argument_list|)
@@ -10547,7 +10506,7 @@ name|colmaplen
 operator|==
 literal|0
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"PSD: Indexed image has no colourmap!\n"
 argument_list|)
@@ -10560,7 +10519,7 @@ name|colmaplen
 operator|!=
 literal|768
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"PSD: Warning: Indexed image is %d!=256 colours.\n"
 argument_list|,
@@ -10686,7 +10645,7 @@ literal|3
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"aux? Aieeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee!!!!!!!!!\n"
 argument_list|)
@@ -11089,7 +11048,7 @@ operator|==
 name|GIMP_INDEXEDA_IMAGE
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"@@@@ Didn't know that this could happen...\n"
 argument_list|)
@@ -11185,7 +11144,7 @@ block|}
 else|else
 block|{
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"Uhhh... uhm... extra channels... heavy...\n"
 argument_list|)
@@ -11257,7 +11216,7 @@ name|int
 name|i
 decl_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"--- Adding %d Guides\n"
 argument_list|,
@@ -11316,7 +11275,7 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"--- %d layers : pos %ld : a-alph %d ---\n"
 argument_list|,
@@ -11501,7 +11460,7 @@ argument_list|)
 expr_stmt|;
 block|}
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"clen %ld\n"
 argument_list|,
@@ -11919,7 +11878,7 @@ operator|<
 literal|0
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"*** Unpacking overshot destination (%d) buffer by %d bytes!\n"
 argument_list|,
@@ -12464,7 +12423,7 @@ block|{
 name|guint32
 name|i
 decl_stmt|;
-name|printf
+name|g_print
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -12483,7 +12442,7 @@ name|i
 operator|++
 control|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"%02x "
 argument_list|,
@@ -12499,7 +12458,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\n"
 argument_list|)
@@ -12556,7 +12515,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
 literal|"PSD: unable to seek forward while reading '%s' chunk\n"
 argument_list|,
@@ -13127,17 +13086,13 @@ name|dest
 decl_stmt|;
 name|gint
 name|pix
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|pos
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|bpplane
 decl_stmt|;
-name|bpplane
-operator|=
-name|len
-operator|/
-name|step
-expr_stmt|;
 if|if
 condition|(
 name|len
@@ -13147,12 +13102,19 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|printf
+name|g_printerr
 argument_list|(
-literal|"PSD: Stern warning: data size is not a factor of step size!\n"
+literal|"PSD: Stern warning: "
+literal|"data size is not a factor of step size!\n"
 argument_list|)
 expr_stmt|;
 block|}
+name|bpplane
+operator|=
+name|len
+operator|/
+name|step
+expr_stmt|;
 for|for
 control|(
 name|pix
@@ -13554,7 +13516,7 @@ literal|"compression"
 argument_list|)
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"<<compr:%d>>"
 argument_list|,
@@ -13726,7 +13688,7 @@ operator|.
 name|mode
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"HEAD:\n"
 literal|"\tChannels %d\n\tRows %d\n\tColumns %d\n\tDepth %d\n\tMode %d (%s)\n"
@@ -13766,9 +13728,8 @@ operator|.
 name|colmaplen
 argument_list|)
 decl_stmt|;
-comment|/*    printf("\tImage resource length: %lu\n", PSDheader.imgreslen);*/
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\tLayer/Mask Data length: %u\n"
 argument_list|,
@@ -13784,7 +13745,7 @@ operator|.
 name|compression
 expr_stmt|;
 name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
 literal|"\tCompression %d (%s)\n"
 argument_list|,
