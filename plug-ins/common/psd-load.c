@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298b5cd00103
+DECL|enum|__anon29ae66c20103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298b5cd00208
+DECL|struct|__anon29ae66c20208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298b5cd00308
+DECL|struct|__anon29ae66c20308
 block|{
 DECL|member|signature
 name|gchar
@@ -10926,9 +10926,22 @@ name|fd
 argument_list|,
 name|dest
 argument_list|,
+name|MIN
+argument_list|(
 name|PSDheader
 operator|.
 name|imgdatalen
+argument_list|,
+name|step
+operator|*
+name|PSDheader
+operator|.
+name|columns
+operator|*
+name|PSDheader
+operator|.
+name|rows
+argument_list|)
 argument_list|,
 literal|"raw image data"
 argument_list|,
@@ -10958,9 +10971,22 @@ name|fd
 argument_list|,
 name|cmykbuf
 argument_list|,
+name|MIN
+argument_list|(
 name|PSDheader
 operator|.
 name|imgdatalen
+argument_list|,
+name|step
+operator|*
+name|PSDheader
+operator|.
+name|columns
+operator|*
+name|PSDheader
+operator|.
+name|rows
+argument_list|)
 argument_list|,
 literal|"raw cmyk image data"
 argument_list|,
