@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27942ef00103
+DECL|enum|__anon2b9f87320103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27942ef00203
+DECL|enum|__anon2b9f87320203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27942ef00303
+DECL|enum|__anon2b9f87320303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2773,6 +2773,16 @@ break|break;
 case|case
 name|GIMP_BUTTON_RELEASE_CLICK
 case|:
+comment|/* When a dead area is clicked, don't execute. */
+if|if
+condition|(
+name|private
+operator|->
+name|function
+operator|==
+name|RECT_DEAD
+condition|)
+break|break;
 if|if
 condition|(
 name|gimp_rectangle_tool_execute
