@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b98085e0103
+DECL|enum|__anon2a0c79cd0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98085e0203
+DECL|enum|__anon2a0c79cd0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98085e0303
+DECL|enum|__anon2a0c79cd0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -582,6 +582,18 @@ begin_function_decl
 specifier|static
 name|void
 name|gimp_rectangle_tool_set_highlight
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_rectangle_tool_update_handle_sizes
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -1842,7 +1854,7 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_RESUME
 case|:
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -2032,6 +2044,11 @@ argument_list|,
 name|y
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
+argument_list|(
+name|rectangle
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_start
@@ -2849,6 +2866,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
+argument_list|(
+name|rectangle
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
@@ -3035,8 +3057,8 @@ argument_list|,
 name|current_y
 argument_list|)
 expr_stmt|;
-comment|/*  recalculate the coordinates for rectangle_draw based on the new values  */
-name|gimp_rectangle_tool_configure
+comment|/* Update the highlight. */
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -3417,7 +3439,7 @@ operator|->
 name|lasty
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -3495,7 +3517,7 @@ operator|->
 name|lasty
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -3528,7 +3550,7 @@ operator|->
 name|other_side_y
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -4259,13 +4281,12 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-comment|/*   g_object_set (rectangle, */
-comment|/*                 "x1", private->x1, */
-comment|/*                 "y1", private->y1, */
-comment|/*                 "x2", private->x2, */
-comment|/*                 "y2", private->y2, */
-comment|/*                 NULL); */
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
+argument_list|(
+name|rectangle
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
 name|rectangle
 argument_list|)
@@ -6000,8 +6021,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_configure (GimpRectangleTool * rectangle)
-name|gimp_rectangle_tool_configure
+DECL|function|gimp_rectangle_tool_update_handle_sizes (GimpRectangleTool * rectangle)
+name|gimp_rectangle_tool_update_handle_sizes
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -6066,11 +6087,6 @@ operator|->
 name|display
 condition|)
 return|return;
-name|gimp_rectangle_tool_set_highlight
-argument_list|(
-name|rectangle
-argument_list|)
-expr_stmt|;
 name|shell
 operator|=
 name|GIMP_DISPLAY_SHELL
@@ -6283,7 +6299,12 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
+argument_list|(
+name|rectangle
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
 name|rectangle
 argument_list|)
@@ -6582,7 +6603,7 @@ operator|->
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -6967,7 +6988,12 @@ argument_list|,
 name|old_function
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
+argument_list|(
+name|rectangle
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
 name|rectangle
 argument_list|)
@@ -7791,7 +7817,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_configure
+name|gimp_rectangle_tool_set_highlight
 argument_list|(
 name|rectangle
 argument_list|)
