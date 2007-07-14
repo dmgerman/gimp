@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c79cd0103
+DECL|enum|__anon29027c300103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c79cd0203
+DECL|enum|__anon29027c300203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0c79cd0303
+DECL|enum|__anon29027c300303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -1855,6 +1855,11 @@ case|case
 name|GIMP_TOOL_ACTION_RESUME
 case|:
 name|gimp_rectangle_tool_set_highlight
+argument_list|(
+name|rectangle
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
 name|rectangle
 argument_list|)
@@ -6020,6 +6025,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_rectangle_tool_update_handle_sizes (GimpRectangleTool * rectangle)
 name|gimp_rectangle_tool_update_handle_sizes
