@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f87320103
+DECL|enum|__anon2b98085e0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9f87320203
+DECL|enum|__anon2b98085e0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9f87320303
+DECL|enum|__anon2b98085e0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -8760,7 +8760,6 @@ if|if
 condition|(
 name|symmetrically
 condition|)
-block|{
 name|private
 operator|->
 name|x2
@@ -8777,15 +8776,10 @@ name|min_x
 condition|)
 name|private
 operator|->
-name|x1
-operator|=
-name|private
-operator|->
 name|x2
 operator|=
 name|min_x
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|clamped_sides
@@ -8826,7 +8820,6 @@ if|if
 condition|(
 name|symmetrically
 condition|)
-block|{
 name|private
 operator|->
 name|x1
@@ -8847,7 +8840,6 @@ name|x1
 operator|=
 name|max_x
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|clamped_sides
@@ -8950,7 +8942,6 @@ if|if
 condition|(
 name|symmetrically
 condition|)
-block|{
 name|private
 operator|->
 name|y2
@@ -8967,15 +8958,10 @@ name|min_y
 condition|)
 name|private
 operator|->
-name|y1
-operator|=
-name|private
-operator|->
 name|y2
 operator|=
 name|min_y
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|clamped_sides
@@ -9016,7 +9002,6 @@ if|if
 condition|(
 name|symmetrically
 condition|)
-block|{
 name|private
 operator|->
 name|y1
@@ -9035,13 +9020,8 @@ name|private
 operator|->
 name|y1
 operator|=
-name|private
-operator|->
-name|y2
-operator|=
 name|max_y
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|clamped_sides
