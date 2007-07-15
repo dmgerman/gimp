@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb74b7f0103
+DECL|enum|__anon2ade7e820103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb74b7f0203
+DECL|enum|__anon2ade7e820203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb74b7f0303
+DECL|enum|__anon2ade7e820303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -315,6 +315,7 @@ name|gint
 name|center_y_on_fixed_center
 decl_stmt|;
 comment|/* The rest of the members are internal state variables, that is, variables    * that might change during the manipulation session of the rectangle. Make    * sure these variables are in consistent states.    */
+comment|/* Coordinates of upper left and lower right rectangle corners. */
 DECL|member|x1
 DECL|member|y1
 name|gint
@@ -322,7 +323,6 @@ name|x1
 decl_stmt|,
 name|y1
 decl_stmt|;
-comment|/*  upper left hand coordinate     */
 DECL|member|x2
 DECL|member|y2
 name|gint
@@ -330,57 +330,61 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  lower right hand coords        */
+comment|/* What modification state the rectangle is in. What corner are we resizing,    * or are we moving the rectangle? etc.    */
 DECL|member|function
 name|guint
 name|function
 decl_stmt|;
-comment|/*  moving or resizing             */
+comment|/* How to constrain the rectangle. */
 DECL|member|constraint
 name|GimpRectangleConstraint
 name|constraint
 decl_stmt|;
-comment|/* how to constrain rectangle     */
+comment|/* Previous coordinate applied to the rectangle. */
 DECL|member|lastx
 name|gint
 name|lastx
 decl_stmt|;
-comment|/*  previous x coord               */
 DECL|member|lasty
 name|gint
 name|lasty
 decl_stmt|;
-comment|/*  previous y coord               */
+comment|/* Width and height of corner handles. */
 DECL|member|handle_w
 name|gint
 name|handle_w
 decl_stmt|;
-comment|/*  handle width                   */
 DECL|member|handle_h
 name|gint
 name|handle_h
 decl_stmt|;
-comment|/*  handle height                  */
-comment|/*  Top and bottom side handle                                        *  width.                                        */
+comment|/* Width and height of side handles. */
 DECL|member|top_and_bottom_handle_w
 name|gint
 name|top_and_bottom_handle_w
 decl_stmt|;
-comment|/*  Left and right side handle                                        *  height.                                        */
 DECL|member|left_and_right_handle_h
 name|gint
 name|left_and_right_handle_h
 decl_stmt|;
+comment|/* For what scale the handle sizes is calculated. We must cache this so that    * we can differentiate between when the tool is resumed because of zoom level    * just has changed or because the highlight has just been updated.    */
+DECL|member|scale_x_used_for_handle_size_calculations
+name|gdouble
+name|scale_x_used_for_handle_size_calculations
+decl_stmt|;
+DECL|member|scale_y_used_for_handle_size_calculations
+name|gdouble
+name|scale_y_used_for_handle_size_calculations
+decl_stmt|;
+comment|/* For saving in case of cancelation. */
 DECL|member|saved_x1
 name|gint
 name|saved_x1
 decl_stmt|;
-comment|/*  for saving in case action      */
 DECL|member|saved_y1
 name|gint
 name|saved_y1
 decl_stmt|;
-comment|/*  is canceled                    */
 DECL|member|saved_x2
 name|gint
 name|saved_x2
@@ -401,11 +405,11 @@ DECL|member|suppress_updates
 name|gint
 name|suppress_updates
 decl_stmt|;
+comment|/* Synced with options->guide, only exists for drawing. */
 DECL|member|guide
 name|GimpRectangleGuide
 name|guide
 decl_stmt|;
-comment|/* synced with options->guide, only exists for drawing */
 block|}
 struct|;
 end_struct
@@ -598,6 +602,18 @@ parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rectangle
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_rectangle_tool_scale_has_changed
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1859,6 +1875,14 @@ argument_list|(
 name|rectangle
 argument_list|)
 expr_stmt|;
+comment|/* When highlightning is on, the shell gets paused/unpaused which means we        * will get here, but we only want to recalculate handle sizes when the        * zoom has changed.        */
+if|if
+condition|(
+name|gimp_rectangle_tool_scale_has_changed
+argument_list|(
+name|rectangle
+argument_list|)
+condition|)
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
 name|rectangle
@@ -2051,11 +2075,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_update_handle_sizes
-argument_list|(
-name|rectangle
-argument_list|)
-expr_stmt|;
 name|gimp_rectangle_tool_start
 argument_list|(
 name|rectangle
@@ -2165,6 +2184,11 @@ argument_list|,
 name|y
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_update_handle_sizes
+argument_list|(
+name|rectangle
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_snap_offsets
@@ -6258,6 +6282,101 @@ argument_list|,
 name|G_MAXINT
 argument_list|)
 expr_stmt|;
+name|private
+operator|->
+name|scale_x_used_for_handle_size_calculations
+operator|=
+name|shell
+operator|->
+name|scale_x
+expr_stmt|;
+name|private
+operator|->
+name|scale_y_used_for_handle_size_calculations
+operator|=
+name|shell
+operator|->
+name|scale_y
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_rectangle_tool_scale_has_changed:  * rectangle_tool: A #GimpRectangleTool.  *  * Returns true if the scale that was used to calculate handle sizes is not the  * same as the current shell scale.  */
+end_comment
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_rectangle_tool_scale_has_changed (GimpRectangleTool * rectangle_tool)
+name|gimp_rectangle_tool_scale_has_changed
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle_tool
+parameter_list|)
+block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|GIMP_TOOL
+argument_list|(
+name|rectangle_tool
+argument_list|)
+decl_stmt|;
+name|GimpRectangleToolPrivate
+modifier|*
+name|private
+init|=
+name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
+if|if
+condition|(
+name|tool
+operator|->
+name|display
+operator|==
+name|NULL
+condition|)
+return|return
+name|TRUE
+return|;
+name|shell
+operator|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|tool
+operator|->
+name|display
+operator|->
+name|shell
+argument_list|)
+expr_stmt|;
+return|return
+name|shell
+operator|->
+name|scale_x
+operator|!=
+name|private
+operator|->
+name|scale_x_used_for_handle_size_calculations
+operator|||
+name|shell
+operator|->
+name|scale_y
+operator|!=
+name|private
+operator|->
+name|scale_y_used_for_handle_size_calculations
+return|;
 block|}
 end_function
 
@@ -10839,7 +10958,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_get_constraints:  * @rectangle_tool: A #GimpRectagnelTool.  * @min_x:  * @min_y:  * @max_x:  * @max_y:          Pointers of where to put constraints. NULL allowed.  * @constraint:     Wether to return image or layer constraints.  *  * Calculates constraint coordinates for image or layer.  */
+comment|/**  * gimp_rectangle_tool_get_constraints:  * @rectangle_tool: A #GimpRectangleTool.  * @min_x:  * @min_y:  * @max_x:  * @max_y:          Pointers of where to put constraints. NULL allowed.  * @constraint:     Wether to return image or layer constraints.  *  * Calculates constraint coordinates for image or layer.  */
 end_comment
 
 begin_function
