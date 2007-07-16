@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp.h"
 end_include
 
@@ -111,6 +117,26 @@ if|if
 condition|(
 name|image
 condition|)
+block|{
+name|gimp_config_sync
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_image
+argument_list|)
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|template
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|gimp_template_set_from_image
 argument_list|(
 name|template
@@ -118,7 +144,9 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|gimp_config_sync
 argument_list|(
 name|G_OBJECT
@@ -136,6 +164,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|template
 return|;
