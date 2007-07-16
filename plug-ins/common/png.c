@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c74670108
+DECL|struct|__anon2b08f9110108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273c74670208
+DECL|struct|__anon2b08f9110208
 block|{
 DECL|member|run
 name|gboolean
@@ -757,13 +757,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-literal|"image/png"
-argument_list|)
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|SAVE2_PROC
@@ -773,7 +766,7 @@ argument_list|,
 literal|"This plug-in saves Portable Network Graphics "
 literal|"(PNG) files. "
 literal|"This procedure adds 2 extra parameters to "
-literal|"file_png_save that allows to control whether "
+literal|"file-png-save that allows to control whether "
 literal|"image comments are saved and whether transparent "
 literal|"pixels are saved or nullified."
 argument_list|,
@@ -805,13 +798,6 @@ argument_list|,
 name|save_args2
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_register_file_handler_mime
-argument_list|(
-name|SAVE2_PROC
-argument_list|,
-literal|"image/png"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
