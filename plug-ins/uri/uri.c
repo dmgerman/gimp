@@ -393,7 +393,8 @@ name|LOAD_PROC
 argument_list|,
 literal|"loads files given an URI"
 argument_list|,
-literal|"You need to have GNU Wget or GnomeVFS installed."
+name|uri_backend_get_load_help
+argument_list|()
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -462,7 +463,8 @@ name|SAVE_PROC
 argument_list|,
 literal|"saves files given an URI"
 argument_list|,
-literal|"You need to have GNU Wget or GnomeVFS installed."
+name|uri_backend_get_save_help
+argument_list|()
 argument_list|,
 literal|"Michael Natterer"
 argument_list|,

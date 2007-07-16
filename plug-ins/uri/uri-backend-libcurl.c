@@ -228,6 +228,38 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
+DECL|function|uri_backend_get_load_help (void)
+name|uri_backend_get_load_help
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+literal|"Loads a file using the libcurl file transfer library"
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|uri_backend_get_save_help (void)
+name|uri_backend_get_save_help
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
 DECL|function|uri_backend_get_load_protocols (void)
 name|uri_backend_get_load_protocols
 parameter_list|(

@@ -350,6 +350,38 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
+DECL|function|uri_backend_get_load_help (void)
+name|uri_backend_get_load_help
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+literal|"Loads a file using the GnomeVFS library"
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
+DECL|function|uri_backend_get_save_help (void)
+name|uri_backend_get_save_help
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+literal|"Saves a file using the GnomeVFS library"
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|gchar
+modifier|*
 DECL|function|uri_backend_get_load_protocols (void)
 name|uri_backend_get_load_protocols
 parameter_list|(
@@ -1244,7 +1276,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6e8190108
+DECL|struct|__anon289456d80108
 block|{
 DECL|member|in_args
 specifier|const
