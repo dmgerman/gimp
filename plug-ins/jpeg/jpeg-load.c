@@ -1112,6 +1112,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
 comment|/* if we found any EXIF block, then attach the metadata to the image */
 if|if
 condition|(
@@ -1142,6 +1145,8 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+endif|#
+directive|endif
 comment|/* Step 5.2: check for XMP metadata in APP1 markers (after EXIF) */
 for|for
 control|(
@@ -1832,6 +1837,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
 if|if
 condition|(
 name|orientation
@@ -1845,6 +1853,8 @@ argument_list|,
 name|orientation
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|image_ID
 return|;
@@ -2077,7 +2087,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4131c0108
+DECL|struct|__anon2a404fb00108
 block|{
 DECL|member|pub
 name|struct
