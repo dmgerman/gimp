@@ -84,7 +84,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b69bc880103
+DECL|enum|__anon29886c3e0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -3563,7 +3563,7 @@ name|list
 init|=
 name|NULL
 decl_stmt|;
-comment|/* EXTENSIONS can be NULL.  Avoid calling strtok if it is.  */
+comment|/*  extensions can be NULL.  Avoid calling strtok if it is.  */
 if|if
 condition|(
 name|extensions
@@ -3577,6 +3577,7 @@ name|gchar
 modifier|*
 name|next_token
 decl_stmt|;
+comment|/*  work on a copy  */
 name|extensions
 operator|=
 name|g_strdup
@@ -3678,6 +3679,7 @@ name|file_proc
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/*  extensions  */
 if|if
 condition|(
 name|proc
@@ -3707,6 +3709,35 @@ operator|=
 name|g_strdup
 argument_list|(
 name|extensions
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|proc
+operator|->
+name|extensions_list
+condition|)
+block|{
+name|g_slist_foreach
+argument_list|(
+name|proc
+operator|->
+name|extensions_list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_slist_free
+argument_list|(
+name|proc
+operator|->
+name|extensions_list
 argument_list|)
 expr_stmt|;
 block|}
@@ -3721,6 +3752,7 @@ operator|->
 name|extensions
 argument_list|)
 expr_stmt|;
+comment|/*  prefixes  */
 if|if
 condition|(
 name|proc
@@ -3753,6 +3785,35 @@ name|prefixes
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|proc
+operator|->
+name|prefixes_list
+condition|)
+block|{
+name|g_slist_foreach
+argument_list|(
+name|proc
+operator|->
+name|prefixes_list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_slist_free
+argument_list|(
+name|proc
+operator|->
+name|prefixes_list
+argument_list|)
+expr_stmt|;
+block|}
 name|proc
 operator|->
 name|prefixes_list
@@ -3764,6 +3825,7 @@ operator|->
 name|prefixes
 argument_list|)
 expr_stmt|;
+comment|/*  magics  */
 if|if
 condition|(
 name|proc
@@ -3793,6 +3855,35 @@ operator|=
 name|g_strdup
 argument_list|(
 name|magics
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|proc
+operator|->
+name|magics_list
+condition|)
+block|{
+name|g_slist_foreach
+argument_list|(
+name|proc
+operator|->
+name|magics_list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_free
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_slist_free
+argument_list|(
+name|proc
+operator|->
+name|magics_list
 argument_list|)
 expr_stmt|;
 block|}

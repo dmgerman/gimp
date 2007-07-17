@@ -778,6 +778,7 @@ name|rgb
 operator|->
 name|b
 return|;
+else|else
 return|return
 operator|(
 name|rgb
@@ -849,6 +850,7 @@ name|rgb
 operator|->
 name|b
 return|;
+else|else
 return|return
 operator|(
 name|rgb
