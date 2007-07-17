@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c9461e0103
+DECL|enum|__anon2b70eb940103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1629,6 +1629,9 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|gint
+name|size
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_COLORMAP_EDITOR
@@ -1659,6 +1662,22 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|size
+operator|=
+name|gimp_image_get_colormap_size
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|size
+operator|<
+literal|1
+condition|)
+return|return
+name|FALSE
+return|;
 name|index
 operator|=
 name|CLAMP
@@ -1667,10 +1686,7 @@ name|index
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_image_get_colormap_size
-argument_list|(
-name|image
-argument_list|)
+name|size
 operator|-
 literal|1
 argument_list|)
@@ -1993,7 +2009,7 @@ operator|/
 name|xn
 operator|)
 expr_stmt|;
-comment|/* We used to render just multiples of "cellsize" here, but the    *  colormap as dockable looks better if it always fills the    *  available allocation->width (which should always be larger than    *  "xn * cellsize"). Defensively, we use MAX(width,xn*cellsize)    *  below   --Mitch    *     width  = xn * cellsize;    height = yn * cellsize; */
+comment|/* We used to render just multiples of "cellsize" here, but the    *  colormap as dockable looks better if it always fills the    *  available allocation->width (which should always be larger than    *  "xn * cellsize"). Defensively, we use MAX (width, xn * cellsize)    *  below   --Mitch    */
 name|editor
 operator|->
 name|xn
@@ -2320,6 +2336,14 @@ name|y
 decl_stmt|,
 name|k
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|editor
+operator|->
+name|xn
+condition|)
+return|return;
 name|x
 operator|=
 operator|(
@@ -3262,6 +3286,12 @@ if|if
 condition|(
 operator|!
 name|HAVE_COLORMAP
+argument_list|(
+name|image
+argument_list|)
+operator|||
+operator|!
+name|gimp_image_get_colormap_size
 argument_list|(
 name|image
 argument_list|)
