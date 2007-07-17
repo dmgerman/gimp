@@ -34,6 +34,14 @@ name|GimpText
 modifier|*
 name|text
 decl_stmt|;
+DECL|member|xres
+name|gdouble
+name|xres
+decl_stmt|;
+DECL|member|yres
+name|gdouble
+name|yres
+decl_stmt|;
 DECL|member|layout
 name|PangoLayout
 modifier|*
