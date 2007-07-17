@@ -394,6 +394,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|identifier
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|blurb
 operator|!=
 name|NULL

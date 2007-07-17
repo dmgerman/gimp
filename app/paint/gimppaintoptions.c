@@ -231,7 +231,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f7babe0103
+DECL|enum|__anon275915110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2084,6 +2084,15 @@ argument_list|,
 name|paint_info
 operator|->
 name|gimp
+argument_list|,
+literal|"name"
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|paint_info
+argument_list|)
+operator|->
+name|name
 argument_list|,
 literal|"paint-info"
 argument_list|,

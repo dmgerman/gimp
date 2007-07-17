@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f78150103
+DECL|enum|__anon2933e8920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1036,6 +1036,10 @@ argument_list|,
 literal|"gimp"
 argument_list|,
 name|gimp
+argument_list|,
+literal|"name"
+argument_list|,
+name|identifier
 argument_list|,
 name|NULL
 argument_list|)
