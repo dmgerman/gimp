@@ -1681,6 +1681,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 name|menu_dock
 operator|->
 name|image_container
