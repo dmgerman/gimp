@@ -1510,10 +1510,6 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox2
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|button
 decl_stmt|;
 name|GtkWidget
@@ -1554,15 +1550,6 @@ operator|=
 name|GIMP_RECTANGLE_OPTIONS_GET_PRIVATE
 argument_list|(
 name|tool_options
-argument_list|)
-expr_stmt|;
-name|vbox2
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Fixed Center */

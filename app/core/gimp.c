@@ -303,7 +303,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298edd1d0103
+DECL|enum|__anon289ac8440103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1640,6 +1640,27 @@ expr_stmt|;
 name|gimp
 operator|->
 name|session_name
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|gimp
+operator|->
+name|context_list
+condition|)
+block|{
+name|g_list_free
+argument_list|(
+name|gimp
+operator|->
+name|context_list
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|->
+name|context_list
 operator|=
 name|NULL
 expr_stmt|;
