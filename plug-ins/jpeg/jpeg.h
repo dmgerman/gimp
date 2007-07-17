@@ -44,7 +44,7 @@ DECL|macro|JPEG_APP_HEADER_EXIF
 define|#
 directive|define
 name|JPEG_APP_HEADER_EXIF
-value|"Exif"
+value|"Exif\0\0"
 end_define
 
 begin_define
@@ -255,17 +255,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|jpeg_apply_exif_data_to_image
+name|gint
+name|jpeg_exif_get_orientation
 parameter_list|(
-specifier|const
-name|gchar
+name|ExifData
 modifier|*
-name|filename
-parameter_list|,
-specifier|const
-name|gint32
-name|image_ID
+name|exif_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -281,6 +276,19 @@ parameter_list|,
 specifier|const
 name|gint32
 name|image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|jpeg_exif_rotate
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+name|orientation
 parameter_list|)
 function_decl|;
 end_function_decl

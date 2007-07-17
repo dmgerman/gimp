@@ -123,20 +123,6 @@ end_define
 
 begin_function_decl
 specifier|static
-name|void
-name|jpeg_exif_rotate
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-name|gint
-name|orientation
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gboolean
 name|jpeg_exif_rotate_query
 parameter_list|(
@@ -248,26 +234,15 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|jpeg_apply_exif_data_to_image (const gchar * filename,const gint32 image_ID)
-name|jpeg_apply_exif_data_to_image
+name|gint
+DECL|function|jpeg_exif_get_orientation (ExifData * exif_data)
+name|jpeg_exif_get_orientation
 parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|filename
-parameter_list|,
-specifier|const
-name|gint32
-name|image_ID
-parameter_list|)
-block|{
 name|ExifData
 modifier|*
 name|exif_data
-init|=
-name|NULL
-decl_stmt|;
+parameter_list|)
+block|{
 name|ExifEntry
 modifier|*
 name|entry
@@ -275,44 +250,6 @@ decl_stmt|;
 name|gint
 name|byte_order
 decl_stmt|;
-name|exif_data
-operator|=
-name|jpeg_exif_data_new_from_file
-argument_list|(
-name|filename
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|exif_data
-condition|)
-return|return;
-comment|/* return if there is no thumbnail, to work around bug #358117 */
-if|if
-condition|(
-operator|!
-name|exif_data
-operator|->
-name|data
-operator|||
-name|exif_data
-operator|->
-name|size
-operator|==
-literal|0
-condition|)
-return|return;
-comment|/* Previous versions of this code were checking for the presence of    * some well-known tags in the EXIF data before proceeding because    * libexif could return a non-null exif_data even if the file    * contained no EXIF data.  Now that the calling code in jpeg-load.c    * checks for a JPEG APP1 marker containing the EXIF header before    * calling this function, these tests are not necessary anymore.    * See also bug #446809.    */
-name|gimp_metadata_store_exif
-argument_list|(
-name|image_ID
-argument_list|,
-name|exif_data
-argument_list|)
-expr_stmt|;
 name|byte_order
 operator|=
 name|exif_data_get_byte_order
@@ -340,10 +277,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|jpeg_exif_rotate
-argument_list|(
-name|image_ID
-argument_list|,
+return|return
 name|exif_get_short
 argument_list|(
 name|entry
@@ -352,14 +286,11 @@ name|data
 argument_list|,
 name|byte_order
 argument_list|)
-argument_list|)
-expr_stmt|;
+return|;
 block|}
-name|exif_data_unref
-argument_list|(
-name|exif_data
-argument_list|)
-expr_stmt|;
+return|return
+literal|0
+return|;
 block|}
 end_function
 
@@ -818,7 +749,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|jpeg_exif_rotate (gint32 image_ID,gint orientation)
 name|jpeg_exif_rotate

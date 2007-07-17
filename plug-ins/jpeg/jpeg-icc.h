@@ -22,25 +22,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  * Reading a JPEG file that may contain an ICC profile requires two steps:  *  * 1. After jpeg_create_decompress() but before jpeg_read_header(),  *    call jpeg_icc_setup_read_profile().  This routine tells the IJG  *    library to save in memory any APP2 markers it may find in the  *    file.  *  * 2. After jpeg_read_header(), call jpeg_icc_read_profile() to find  *    out whether there was a profile and obtain it if so.  */
-end_comment
-
-begin_comment
-comment|/*  * Prepare for reading an ICC profile  */
-end_comment
-
-begin_function_decl
-name|void
-name|jpeg_icc_setup_read_profile
-parameter_list|(
-name|j_decompress_ptr
-name|cinfo
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  * See if there was an ICC profile in the JPEG file being read;  * if so, reassemble and return the profile data.  *  * TRUE is returned if an ICC profile was found, FALSE if not.  * If TRUE is returned, *icc_data_ptr is set to point to the  * returned data, and *icc_data_len is set to its length.  *  * IMPORTANT: the data at **icc_data_ptr has been allocated with malloc()  * and must be freed by the caller with free() when the caller no longer  * needs it.  (Alternatively, we could write this routine to use the  * IJG library's memory allocator, so that the data would be freed implicitly  * at jpeg_finish_decompress() time.  But it seems likely that many apps  * will prefer to have the data stick around after decompression finishes.)  */
+comment|/*  * Reading a JPEG file that may contain an ICC profile requires two steps:  *  * 1. After jpeg_create_decompress() but before jpeg_read_header(),  *    ask the IJG library to save in memory any APP2 markers it may find  *    in the file.  *  * 2. After jpeg_read_header(), call jpeg_icc_read_profile() to find  *    out whether there was a profile and obtain it if so.  *  * See if there was an ICC profile in the JPEG file being read;  * if so, reassemble and return the profile data.  *  * TRUE is returned if an ICC profile was found, FALSE if not.  * If TRUE is returned, *icc_data_ptr is set to point to the  * returned data, and *icc_data_len is set to its length.  *  * IMPORTANT: the data at **icc_data_ptr has been allocated with malloc()  * and must be freed by the caller with free() when the caller no longer  * needs it.  (Alternatively, we could write this routine to use the  * IJG library's memory allocator, so that the data would be freed implicitly  * at jpeg_finish_decompress() time.  But it seems likely that many apps  * will prefer to have the data stick around after decompression finishes.)  */
 end_comment
 
 begin_function_decl

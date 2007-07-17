@@ -321,32 +321,6 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Prepare for reading an ICC profile  */
-end_comment
-
-begin_function
-name|void
-DECL|function|jpeg_icc_setup_read_profile (j_decompress_ptr cinfo)
-name|jpeg_icc_setup_read_profile
-parameter_list|(
-name|j_decompress_ptr
-name|cinfo
-parameter_list|)
-block|{
-comment|/* Tell the library to keep any APP2 data it may find */
-name|jpeg_save_markers
-argument_list|(
-name|cinfo
-argument_list|,
-name|ICC_MARKER
-argument_list|,
-literal|0xFFFF
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
 comment|/*  * Handy subroutine to test whether a saved marker is an ICC profile marker.  */
 end_comment
 
