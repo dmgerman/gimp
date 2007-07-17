@@ -559,7 +559,7 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* set software to "GIMP" */
+comment|/* set software to "GIMP" and include the version number */
 if|if
 condition|(
 operator|(
@@ -584,7 +584,8 @@ name|gchar
 modifier|*
 name|name
 init|=
-literal|"GIMP"
+literal|"GIMP "
+name|GIMP_VERSION
 decl_stmt|;
 name|entry
 operator|->
