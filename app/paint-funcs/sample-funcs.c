@@ -214,7 +214,7 @@ decl_stmt|;
 name|gint
 name|frac
 decl_stmt|;
-name|gint
+name|gboolean
 name|advance_dest
 decl_stmt|;
 if|#
@@ -1068,7 +1068,7 @@ decl_stmt|;
 name|gint
 name|frac
 decl_stmt|;
-name|gint
+name|gboolean
 name|advance_dest
 decl_stmt|;
 name|g_return_if_fail
