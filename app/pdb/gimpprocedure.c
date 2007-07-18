@@ -915,37 +915,44 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,gchar * original_name,gchar * blurb,gchar * help,gchar * author,gchar * copyright,gchar * date,gchar * deprecated)
+DECL|function|gimp_procedure_set_strings (GimpProcedure * procedure,const gchar * original_name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * deprecated)
 name|gimp_procedure_set_strings
 parameter_list|(
 name|GimpProcedure
 modifier|*
 name|procedure
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|original_name
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|blurb
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|author
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|copyright
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|date
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|deprecated
