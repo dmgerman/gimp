@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/scale-funcs.h"
+file|"paint-funcs/sample-funcs.h"
 end_include
 
 begin_include

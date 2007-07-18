@@ -91,24 +91,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|subsample_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|destPR
-parameter_list|,
-name|gint
-name|subsample
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gfloat
 modifier|*
 name|create_lanczos_lookup
@@ -128,7 +110,7 @@ comment|/*  __SCALE_FUNCS_H__  */
 end_comment
 
 begin_comment
-comment|/* determining LANCZOS_SPP value   1000 points per unit will produce typically 1 bit of error per channel on a Lanczos3 window   4000 should not produce a detectable error caused by lookup table size.on 8b colours ie 24bit RGB   this req 80kB of memory comparable to a small 250x150 px image. Filling the array is a small part of   the time required for the transform.   This will need reviewing when GIMP handles images with more bytes per pixel. */
+comment|/*  * Determining LANCZOS_SPP value  *  * 1000 points per unit will produce typically 1 bit of error per channel  * on a Lanczos3 window. 4000 should not produce a detectable error caused  * by lookup table size.  * On 8b colours ie 24bit RGB this req 80kB of memory comparable to a small  * 250x150 px image. Filling the array is a small part of  the time required  * for the transform.  * This will need reviewing when GIMP handles images with more bytes per pixel.  */
 end_comment
 
 end_unit
