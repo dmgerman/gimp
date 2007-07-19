@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e70b10108
+DECL|struct|__anon290cdbee0108
 block|{
 DECL|member|width
 name|gint
@@ -2506,11 +2506,6 @@ decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
-init|=
-name|gimp_image_active_drawable
-argument_list|(
-name|image
-argument_list|)
 decl_stmt|;
 name|GimpScanConvert
 modifier|*
@@ -2520,6 +2515,13 @@ name|GimpChannel
 modifier|*
 name|mask
 decl_stmt|;
+name|drawable
+operator|=
+name|gimp_image_get_active_drawable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|fg_select
 operator|=
 name|GIMP_FOREGROUND_SELECT_TOOL

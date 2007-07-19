@@ -559,7 +559,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->
@@ -862,6 +862,15 @@ operator|)
 operator|)
 condition|)
 block|{
+name|GimpDrawable
+modifier|*
+name|drawable
+init|=
+name|gimp_image_get_active_drawable
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|GimpProgress
 modifier|*
 name|progress
@@ -893,10 +902,7 @@ name|gimp_item_offsets
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
-argument_list|(
-name|image
-argument_list|)
+name|drawable
 argument_list|)
 argument_list|,
 operator|&
@@ -908,10 +914,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_blend
 argument_list|(
-name|gimp_image_active_drawable
-argument_list|(
-name|image
-argument_list|)
+name|drawable
 argument_list|,
 name|context
 argument_list|,
@@ -1359,7 +1362,7 @@ switch|switch
 condition|(
 name|gimp_drawable_type
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->

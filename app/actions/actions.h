@@ -268,7 +268,7 @@ parameter_list|,
 name|data
 parameter_list|)
 define|\
-value|return_if_no_image (image,data); \   drawable = gimp_image_active_drawable (image); \   if (! drawable) \     return
+value|return_if_no_image (image,data); \   drawable = gimp_image_get_active_drawable (image); \   if (! drawable) \     return
 end_define
 
 begin_define

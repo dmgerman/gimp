@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c04c9fc0103
+DECL|enum|__anon28bd6a220103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c04c9fc0203
+DECL|enum|__anon28bd6a220203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10091,8 +10091,8 @@ end_function
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_image_active_drawable (const GimpImage * image)
-name|gimp_image_active_drawable
+DECL|function|gimp_image_get_active_drawable (const GimpImage * image)
+name|gimp_image_get_active_drawable
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -15099,7 +15099,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|image
 argument_list|)

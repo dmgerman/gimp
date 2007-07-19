@@ -812,16 +812,14 @@ decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
-decl_stmt|;
-name|drawable
-operator|=
-name|gimp_image_active_drawable
+init|=
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->
 name|image
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 switch|switch
 condition|(
 name|action
@@ -1130,7 +1128,7 @@ return|return;
 block|}
 name|drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->
@@ -1561,7 +1559,7 @@ return|return;
 block|}
 name|drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->
@@ -1753,7 +1751,7 @@ return|return;
 block|}
 name|drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->
@@ -2216,7 +2214,7 @@ expr_stmt|;
 block|}
 name|drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->

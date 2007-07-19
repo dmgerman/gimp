@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c15e9c00103
+DECL|enum|__anon2b690b060103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1293,7 +1293,7 @@ condition|)
 block|{
 name|active_drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|image
 argument_list|)

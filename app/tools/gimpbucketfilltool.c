@@ -429,7 +429,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 init|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->

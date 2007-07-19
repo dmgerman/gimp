@@ -339,7 +339,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->
@@ -534,7 +534,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->
@@ -728,7 +728,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->
@@ -889,7 +889,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->
@@ -1011,7 +1011,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->
@@ -1218,7 +1218,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->
@@ -1423,7 +1423,7 @@ name|item
 operator|=
 name|GIMP_ITEM
 argument_list|(
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|shell
 operator|->

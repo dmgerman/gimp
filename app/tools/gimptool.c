@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b776f9a0103
+DECL|enum|__anon274c3ade0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1112,7 +1112,7 @@ name|tool
 operator|->
 name|drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->

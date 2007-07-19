@@ -676,7 +676,7 @@ name|drawable
 decl_stmt|;
 name|drawable
 operator|=
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 argument_list|(
 name|display
 operator|->
@@ -874,7 +874,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon289d6f650108
+DECL|struct|__anon29a3b07b0108
 block|{
 DECL|member|label
 specifier|const

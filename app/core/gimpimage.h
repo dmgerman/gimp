@@ -1982,7 +1982,7 @@ end_function_decl
 begin_function_decl
 name|GimpDrawable
 modifier|*
-name|gimp_image_active_drawable
+name|gimp_image_get_active_drawable
 parameter_list|(
 specifier|const
 name|GimpImage
