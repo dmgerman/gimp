@@ -357,7 +357,7 @@ literal|"g3"
 argument_list|,
 literal|""
 argument_list|,
-literal|"0,short,0x0001,0,short,0x0014"
+literal|"4,string,Research"
 argument_list|)
 expr_stmt|;
 block|}
