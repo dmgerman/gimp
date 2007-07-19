@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276bb1730103
+DECL|enum|__anon2c82d3cc0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2206,12 +2206,11 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|color_tool
 operator|->
 name|enabled
 condition|)
-return|return;
+block|{
 if|if
 condition|(
 name|color_tool
@@ -2351,6 +2350,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+name|GIMP_DRAW_TOOL_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|draw
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
