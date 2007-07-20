@@ -87,13 +87,21 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|CHANNEL_WAS_ACTIVE
+define|#
+directive|define
+name|CHANNEL_WAS_ACTIVE
+value|(0x2)
+end_define
+
 begin_comment
 comment|/*  public functions  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_set_quick_mask_state (GimpImage * image,gboolean quick_mask_state)
+DECL|function|gimp_image_set_quick_mask_state (GimpImage * image,gboolean active)
 name|gimp_image_set_quick_mask_state
 parameter_list|(
 name|GimpImage
@@ -101,7 +109,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gboolean
-name|quick_mask_state
+name|active
 parameter_list|)
 block|{
 name|GimpChannel
@@ -111,6 +119,9 @@ decl_stmt|;
 name|GimpChannel
 modifier|*
 name|mask
+decl_stmt|;
+name|gboolean
+name|channel_was_active
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -122,23 +133,63 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|quick_mask_state
+name|active
 operator|==
+name|gimp_image_get_quick_mask_state
+argument_list|(
+name|image
+argument_list|)
+condition|)
+return|return;
+comment|/*  Keep track of the state so that we can make the right drawable    *  active again when deactiviting quick mask (see bug #134371).    */
+if|if
+condition|(
 name|image
 operator|->
 name|quick_mask_state
 condition|)
-return|return;
-comment|/*  set image->quick_mask_state early so we can return early when    *  being called recursively    */
+name|channel_was_active
+operator|=
+operator|(
+name|image
+operator|->
+name|quick_mask_state
+operator|&
+name|CHANNEL_WAS_ACTIVE
+operator|)
+operator|!=
+literal|0
+expr_stmt|;
+else|else
+name|channel_was_active
+operator|=
+name|gimp_image_get_active_channel
+argument_list|(
+name|image
+argument_list|)
+operator|!=
+name|NULL
+expr_stmt|;
+comment|/*  Set image->quick_mask_state early so we can return early when    *  being called recursively.    */
 name|image
 operator|->
 name|quick_mask_state
 operator|=
-name|quick_mask_state
+operator|(
+name|active
 condition|?
 name|TRUE
+operator||
+operator|(
+name|channel_was_active
+condition|?
+name|CHANNEL_WAS_ACTIVE
+else|:
+literal|0
+operator|)
 else|:
 name|FALSE
+operator|)
 expr_stmt|;
 name|selection
 operator|=
@@ -156,7 +207,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|quick_mask_state
+name|active
 condition|)
 block|{
 if|if
@@ -397,6 +448,16 @@ argument_list|,
 name|mask
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|channel_was_active
+condition|)
+name|gimp_image_unset_active_channel
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
@@ -434,9 +495,13 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
 name|image
 operator|->
 name|quick_mask_state
+operator|!=
+literal|0
+operator|)
 return|;
 block|}
 end_function

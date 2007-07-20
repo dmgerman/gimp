@@ -37,7 +37,7 @@ modifier|*
 name|image
 parameter_list|,
 name|gboolean
-name|quick_mask_state
+name|active
 parameter_list|)
 function_decl|;
 end_function_decl
