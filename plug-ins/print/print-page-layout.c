@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d600140108
+DECL|struct|__anon2be3fe860108
 block|{
 DECL|member|data
 name|PrintData
@@ -439,7 +439,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -736,11 +736,11 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Ignore Page Margins"
+literal|"Ignore Page _Margins"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1649,7 +1649,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_X resolution:"
+literal|"X resolution:"
 argument_list|)
 argument_list|,
 literal|0
@@ -1677,7 +1677,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y resolution:"
+literal|"Y resolution:"
 argument_list|)
 argument_list|,
 literal|1
@@ -2188,7 +2188,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"X:"
+literal|"_X:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2216,7 +2216,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Y:"
+literal|"_Y:"
 argument_list|)
 argument_list|,
 literal|1
@@ -2312,7 +2312,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|0
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2385,7 +2385,7 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|6
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_button_box_set_layout
@@ -2409,7 +2409,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Horizontally"
+literal|"H_orizontally"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2451,7 +2451,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Vertically"
+literal|"_Vertically"
 argument_list|)
 argument_list|)
 expr_stmt|;
