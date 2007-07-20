@@ -6796,8 +6796,7 @@ name|GIMP_STOCK_RESET
 argument_list|,
 name|_
 argument_list|(
-literal|"_Reset Saved Keyboard Shortcuts to "
-literal|"Default Values"
+literal|"_Reset Keyboard Shortcuts to Default Values"
 argument_list|)
 argument_list|,
 name|GTK_BOX
@@ -8958,7 +8957,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b44749e0108
+DECL|struct|__anon2b3b25260108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10120,7 +10119,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b44749e0208
+DECL|struct|__anon2b3b25260208
 block|{
 DECL|member|label
 specifier|const
@@ -11099,7 +11098,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b44749e0308
+DECL|struct|__anon2b3b25260308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11254,7 +11253,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b44749e0408
+DECL|struct|__anon2b3b25260408
 block|{
 DECL|member|tree_label
 specifier|const
