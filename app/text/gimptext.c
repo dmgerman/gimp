@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f8fcbf0103
+DECL|enum|__anon2c071b220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1343,6 +1343,18 @@ argument_list|(
 name|value
 argument_list|)
 decl_stmt|;
+name|g_free
+argument_list|(
+name|text
+operator|->
+name|font
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|font
+condition|)
+block|{
 name|gsize
 name|len
 init|=
@@ -1367,13 +1379,6 @@ argument_list|(
 literal|" Not-Rotated"
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|text
-operator|->
-name|font
-argument_list|)
-expr_stmt|;
 name|text
 operator|->
 name|font
@@ -1385,6 +1390,16 @@ argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|text
+operator|->
+name|font
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 break|break;
 case|case
