@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ade7e820103
+DECL|enum|__anon28a628920103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade7e820203
+DECL|enum|__anon28a628920203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ade7e820303
+DECL|enum|__anon28a628920303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3565,7 +3565,7 @@ operator|&
 name|GDK_BUTTON1_MASK
 condition|)
 block|{
-comment|/* If we are leaving fixed_center mode we want to set the "other side"            * where it should be. Don't do anything if we came here by a mouse-click            * though, since then the user has confirmed the shape and we don't want            * to modify it afterwards.            */
+comment|/* If we are leaving fixed_center mode we want to set the            * "other side" where it should be. Don't do anything if we            * came here by a mouse-click though, since then the user            * has confirmed the shape and we don't want to modify it            * afterwards.            */
 name|gimp_rectangle_tool_set_other_side_coord
 argument_list|(
 name|rectangle
@@ -6302,7 +6302,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_scale_has_changed:  * rectangle_tool: A #GimpRectangleTool.  *  * Returns true if the scale that was used to calculate handle sizes is not the  * same as the current shell scale.  */
+comment|/**  * gimp_rectangle_tool_scale_has_changed:  * @rectangle_tool: A #GimpRectangleTool.  *  * Returns %TRUE if the scale that was used to calculate handle sizes  * is not the same as the current shell scale.  */
 end_comment
 
 begin_function
