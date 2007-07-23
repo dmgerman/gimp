@@ -846,6 +846,12 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|export
+operator|==
+name|GIMP_EXPORT_EXPORT
+condition|)
 name|gimp_image_delete
 argument_list|(
 name|image_ID
