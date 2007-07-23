@@ -168,27 +168,26 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|load_print_settings (PrintData * data)
+DECL|function|load_print_settings (PrintData * data,gint32 image_ID)
 name|load_print_settings
 parameter_list|(
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+name|gint32
+name|image_ID
 parameter_list|)
 block|{
 name|GKeyFile
 modifier|*
 name|key_file
-decl_stmt|;
-name|key_file
-operator|=
+init|=
 name|print_settings_key_file_from_parasite
 argument_list|(
-name|data
-operator|->
-name|image_id
+name|image_ID
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -232,12 +231,15 @@ end_comment
 
 begin_function
 name|void
-DECL|function|save_print_settings (PrintData * data)
+DECL|function|save_print_settings (PrintData * data,gint32 image_ID)
 name|save_print_settings
 parameter_list|(
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+name|gint32
+name|image_ID
 parameter_list|)
 block|{
 name|GKeyFile
@@ -326,9 +328,7 @@ name|save_print_settings_as_parasite
 argument_list|(
 name|key_file
 argument_list|,
-name|data
-operator|->
-name|image_id
+name|image_ID
 argument_list|)
 expr_stmt|;
 name|g_key_file_free

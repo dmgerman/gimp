@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c138dca0108
+DECL|struct|__anon29d8946d0108
 block|{
 DECL|member|num_pages
 name|gint
@@ -16,10 +16,6 @@ DECL|member|drawable_id
 name|gint32
 name|drawable_id
 decl_stmt|;
-DECL|member|image_id
-name|gint32
-name|image_id
-decl_stmt|;
 DECL|member|unit
 name|GimpUnit
 name|unit
@@ -28,11 +24,6 @@ DECL|member|show_info_header
 name|gboolean
 name|show_info_header
 decl_stmt|;
-DECL|member|operation
-name|GtkPrintOperation
-modifier|*
-name|operation
-decl_stmt|;
 DECL|member|xres
 name|gdouble
 name|xres
@@ -40,6 +31,10 @@ decl_stmt|;
 DECL|member|yres
 name|gdouble
 name|yres
+decl_stmt|;
+DECL|member|image_unit
+name|GimpUnit
+name|image_unit
 decl_stmt|;
 DECL|member|offset_x
 name|gdouble
@@ -52,6 +47,11 @@ decl_stmt|;
 DECL|member|use_full_page
 name|gboolean
 name|use_full_page
+decl_stmt|;
+DECL|member|operation
+name|GtkPrintOperation
+modifier|*
+name|operation
 decl_stmt|;
 DECL|member|orientation
 name|GtkPageOrientation

@@ -10,6 +10,9 @@ parameter_list|(
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -21,6 +24,9 @@ parameter_list|(
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
