@@ -592,8 +592,6 @@ argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
-operator||
-name|GIMP_EXPORT_NEEDS_ALPHA
 argument_list|)
 expr_stmt|;
 if|if
