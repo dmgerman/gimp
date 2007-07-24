@@ -2392,7 +2392,7 @@ operator|(
 name|filename
 operator|)
 condition|?
-name|g_path_get_basename
+name|g_filename_display_basename
 argument_list|(
 name|filename
 argument_list|)
