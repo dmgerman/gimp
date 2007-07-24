@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5073390108
+DECL|struct|__anon28ed40760108
 block|{
 DECL|member|data
 name|PrintData
@@ -1673,7 +1673,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"X resolution:"
+literal|"_X resolution:"
 argument_list|)
 argument_list|,
 literal|0
@@ -1701,7 +1701,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Y resolution:"
+literal|"_Y resolution:"
 argument_list|)
 argument_list|,
 literal|1
@@ -1967,7 +1967,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Offset"
+literal|"Image Offsets"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2193,7 +2193,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_X:"
+literal|"_Left:"
 argument_list|)
 argument_list|,
 literal|0
@@ -2221,7 +2221,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"_Y:"
+literal|"_Top:"
 argument_list|)
 argument_list|,
 literal|1
