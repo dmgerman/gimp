@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293ef48b0108
+DECL|struct|__anon2a5073390108
 block|{
 DECL|member|data
 name|PrintData
@@ -2266,7 +2266,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_size_entry_set_value
+name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
@@ -2275,10 +2275,12 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+name|data
+operator|->
+name|offset_x
 argument_list|)
 expr_stmt|;
-name|gimp_size_entry_set_value
+name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
@@ -2287,7 +2289,9 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|0
+name|data
+operator|->
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
