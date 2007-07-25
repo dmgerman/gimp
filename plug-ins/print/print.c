@@ -121,9 +121,6 @@ parameter_list|(
 name|gint32
 name|image_ID
 parameter_list|,
-name|gint32
-name|drawable_ID
-parameter_list|,
 name|gboolean
 name|interactive
 parameter_list|)
@@ -282,15 +279,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"Input image"
-block|}
-block|,
-block|{
-name|GIMP_PDB_DRAWABLE
-block|,
-literal|"drawable"
-block|,
-literal|"Drawable to print"
+literal|"Image to print"
 block|}
 block|}
 decl_stmt|;
@@ -309,7 +298,7 @@ literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
-literal|"2006"
+literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
@@ -498,8 +487,6 @@ name|print_image
 argument_list|(
 name|image_ID
 argument_list|,
-name|drawable_ID
-argument_list|,
 name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
@@ -536,14 +523,11 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|print_image (gint32 image_ID,gint32 drawable_ID,gboolean interactive)
+DECL|function|print_image (gint32 image_ID,gboolean interactive)
 name|print_image
 parameter_list|(
 name|gint32
 name|image_ID
-parameter_list|,
-name|gint32
-name|drawable_ID
 parameter_list|,
 name|gboolean
 name|interactive
@@ -563,6 +547,14 @@ name|gint32
 name|orig_image_ID
 init|=
 name|image_ID
+decl_stmt|;
+name|gint32
+name|drawable_ID
+init|=
+name|gimp_image_get_active_drawable
+argument_list|(
+name|image_ID
+argument_list|)
 decl_stmt|;
 name|PrintData
 name|data
