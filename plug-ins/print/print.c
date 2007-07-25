@@ -484,12 +484,6 @@ operator|==
 literal|0
 condition|)
 block|{
-if|if
-condition|(
-name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
-condition|)
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
