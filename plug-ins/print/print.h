@@ -6,11 +6,15 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d8946d0108
+DECL|struct|__anon29001b470108
 block|{
 DECL|member|num_pages
 name|gint
 name|num_pages
+decl_stmt|;
+DECL|member|image_id
+name|gint32
+name|image_id
 decl_stmt|;
 DECL|member|drawable_id
 name|gint32

@@ -168,15 +168,12 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|load_print_settings (PrintData * data,gint32 image_ID)
+DECL|function|load_print_settings (PrintData * data)
 name|load_print_settings
 parameter_list|(
 name|PrintData
 modifier|*
 name|data
-parameter_list|,
-name|gint32
-name|image_ID
 parameter_list|)
 block|{
 name|GKeyFile
@@ -185,7 +182,9 @@ name|key_file
 init|=
 name|print_settings_key_file_from_parasite
 argument_list|(
-name|image_ID
+name|data
+operator|->
+name|image_id
 argument_list|)
 decl_stmt|;
 if|if
@@ -231,15 +230,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|save_print_settings (PrintData * data,gint32 image_ID)
+DECL|function|save_print_settings (PrintData * data)
 name|save_print_settings
 parameter_list|(
 name|PrintData
 modifier|*
 name|data
-parameter_list|,
-name|gint32
-name|image_ID
 parameter_list|)
 block|{
 name|GKeyFile
@@ -324,11 +320,22 @@ operator|->
 name|offset_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_image_is_valid
+argument_list|(
+name|data
+operator|->
+name|image_id
+argument_list|)
+condition|)
 name|save_print_settings_as_parasite
 argument_list|(
 name|key_file
 argument_list|,
-name|image_ID
+name|data
+operator|->
+name|image_id
 argument_list|)
 expr_stmt|;
 name|g_key_file_free
