@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274c3ade0103
+DECL|enum|__anon27f62f7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3125,7 +3125,7 @@ operator|->
 name|button_press_state
 operator|&=
 operator|~
-name|GDK_MOD1_MASK
+name|GDK_CONTROL_MASK
 expr_stmt|;
 block|}
 else|else
