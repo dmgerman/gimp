@@ -294,7 +294,7 @@ argument_list|)
 argument_list|,
 literal|"Print the image using the GTK+ Print API."
 argument_list|,
-literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
+literal|"Bill Skaggs, Sven Neumann, Stefan RÃ¶llin"
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
@@ -850,7 +850,8 @@ name|GTK_BUTTONS_OK
 argument_list|,
 name|_
 argument_list|(
-literal|"An error occurred while trying to print:"
+literal|"An error occurred "
+literal|"while trying to print:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -922,30 +923,11 @@ argument_list|(
 name|image_ID
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|jobname
-init|=
-name|g_strdup_printf
-argument_list|(
-literal|"%s - %s"
-argument_list|,
-name|g_get_application_name
-argument_list|()
-argument_list|,
-name|name
-argument_list|)
-decl_stmt|;
 name|gtk_print_operation_set_job_name
 argument_list|(
 name|operation
 argument_list|,
-name|jobname
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|jobname
+name|name
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -975,12 +957,6 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|data
-operator|->
-name|num_pages
-operator|=
-literal|1
-expr_stmt|;
 name|gtk_print_operation_set_n_pages
 argument_list|(
 name|operation
