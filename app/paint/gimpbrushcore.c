@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7621f0103
+DECL|enum|__anon2bd396fc0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1769,6 +1769,16 @@ decl_stmt|;
 name|gdouble
 name|mag
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_BRUSH
+argument_list|(
+name|core
+operator|->
+name|brush
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_avoid_exact_integer
 argument_list|(
 operator|&
