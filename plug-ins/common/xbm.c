@@ -227,7 +227,7 @@ comment|/* prefix */
 name|FALSE
 block|,
 comment|/* write_mask */
-literal|"_mask"
+literal|"-mask"
 block|}
 decl_stmt|;
 end_decl_stmt
