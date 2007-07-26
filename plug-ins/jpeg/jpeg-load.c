@@ -105,6 +105,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"jpeg-settings.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"jpeg-load.h"
 end_include
 
@@ -854,6 +860,15 @@ name|NULL
 decl_stmt|;
 endif|#
 directive|endif
+comment|/* Step 5.0: save the original JPEG settings in a parasite */
+name|jpeg_detect_original_settings
+argument_list|(
+operator|&
+name|cinfo
+argument_list|,
+name|image_ID
+argument_list|)
+expr_stmt|;
 comment|/* Step 5.1: check for comments, or EXIF metadata in APP1 markers */
 for|for
 control|(
@@ -2068,7 +2083,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8ac5070108
+DECL|struct|__anon2c1937aa0108
 block|{
 DECL|member|pub
 name|struct
