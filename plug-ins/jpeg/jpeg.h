@@ -142,6 +142,13 @@ name|image_comment
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|gboolean
+name|has_metadata
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|gint32
 name|load_image

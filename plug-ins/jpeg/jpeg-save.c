@@ -256,7 +256,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d53c30108
+DECL|struct|__anon2b52ac920108
 block|{
 DECL|member|cinfo
 name|struct
@@ -332,7 +332,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d53c30208
+DECL|struct|__anon2b52ac920208
 block|{
 DECL|member|run
 name|gboolean
@@ -2403,6 +2403,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|app_block
+argument_list|)
+expr_stmt|;
+name|gimp_parasite_free
+argument_list|(
+name|parasite
 argument_list|)
 expr_stmt|;
 block|}
@@ -4601,7 +4606,6 @@ operator|.
 name|save_xmp
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: check if XMP packet exists, disable toggle if not */
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -4612,6 +4616,15 @@ argument_list|,
 name|jsvals
 operator|.
 name|save_xmp
+operator|&&
+name|has_metadata
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|toggle
+argument_list|,
+name|has_metadata
 argument_list|)
 expr_stmt|;
 comment|/* Subsampling */
@@ -6086,7 +6099,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4d53c30308
+DECL|struct|__anon2b52ac920308
 block|{
 DECL|member|pub
 name|struct
