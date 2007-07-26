@@ -489,6 +489,11 @@ operator|==
 literal|0
 condition|)
 block|{
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
@@ -884,6 +889,13 @@ name|gboolean
 name|interactive
 parameter_list|)
 block|{
+name|g_printerr
+argument_list|(
+literal|"Print: %s\n"
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|interactive
@@ -933,16 +945,6 @@ expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|dialog
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_printerr
-argument_list|(
-literal|"Print: %s\n"
-argument_list|,
-name|message
 argument_list|)
 expr_stmt|;
 block|}
