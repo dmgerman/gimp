@@ -2217,9 +2217,12 @@ name|gimp_image_base_type
 argument_list|(
 name|image
 argument_list|)
-operator|!=
+operator|==
 name|GIMP_GRAY
-operator|&&
+condition|)
+return|return;
+if|if
+condition|(
 operator|!
 name|plug_in_icc_profile_apply_rgb
 argument_list|(
