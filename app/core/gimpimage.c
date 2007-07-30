@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bd6a220103
+DECL|enum|__anon2b6184910103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bd6a220203
+DECL|enum|__anon2b6184910203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4981,21 +4981,17 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-name|x
-operator|+=
-name|offset_x
-expr_stmt|;
-name|y
-operator|+=
-name|offset_y
-expr_stmt|;
 name|gimp_image_update
 argument_list|(
 name|image
 argument_list|,
 name|x
+operator|+
+name|offset_x
 argument_list|,
 name|y
+operator|+
+name|offset_y
 argument_list|,
 name|width
 argument_list|,
