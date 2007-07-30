@@ -129,6 +129,13 @@ range|:
 literal|1
 decl_stmt|;
 comment|/*  Is the plug-in open?              */
+DECL|member|hup
+name|guint
+name|hup
+range|:
+literal|1
+decl_stmt|;
+comment|/*  Did we receive a G_IO_HUP         */
 DECL|member|pid
 name|GPid
 name|pid

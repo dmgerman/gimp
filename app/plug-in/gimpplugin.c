@@ -602,6 +602,12 @@ name|FALSE
 expr_stmt|;
 name|plug_in
 operator|->
+name|hup
+operator|=
+name|FALSE
+expr_stmt|;
+name|plug_in
+operator|->
 name|pid
 operator|=
 literal|0
@@ -1887,10 +1893,15 @@ name|status
 decl_stmt|;
 endif|#
 directive|endif
-comment|/*  Ask the filter to exit gracefully  */
+comment|/*  Ask the filter to exit gracefully,           but not if it is closed because of a broken pipe.  */
 if|if
 condition|(
 name|kill_it
+operator|&&
+operator|!
+name|plug_in
+operator|->
+name|hup
 condition|)
 block|{
 name|gp_quit_write
@@ -2554,6 +2565,18 @@ name|G_IO_HUP
 operator|)
 condition|)
 block|{
+if|if
+condition|(
+name|cond
+operator|&
+name|G_IO_HUP
+condition|)
+name|plug_in
+operator|->
+name|hup
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 name|plug_in
