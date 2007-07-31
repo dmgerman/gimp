@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a628920103
+DECL|enum|__anon28e5457f0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a628920203
+DECL|enum|__anon28e5457f0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a628920303
+DECL|enum|__anon28e5457f0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3202,7 +3202,7 @@ name|private
 operator|->
 name|lasty
 decl_stmt|;
-comment|/* When the user starts to move the cursor, set the current function to        * one of the corner-grabbed functions, depending on in what direction        * the user starts dragging the rectangle.        */
+comment|/* When the user starts to move the cursor, set the current        * function to one of the corner-grabbed functions, depending on        * in what direction the user starts dragging the rectangle.        */
 if|if
 condition|(
 name|dx
@@ -4970,7 +4970,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* FIXME: This is currently the only measure done to make this area            * dead. In the final code the concrete rectangle tools will have to            * be written to handle this state.            */
+comment|/* FIXME: This is currently the only measure done to make            * this area dead. In the final code the concrete rectangle            * tools will have to be written to handle this state.            */
 name|function
 operator|=
 name|RECT_DEAD
