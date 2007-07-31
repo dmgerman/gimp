@@ -1116,6 +1116,11 @@ name|renderer
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_tree_path_free
+argument_list|(
+name|path
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
