@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2eb02e0108
+DECL|struct|__anon2ac2424c0108
 block|{
 DECL|member|new_width
 name|gint
@@ -283,7 +283,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"new-image"
 block|,
-literal|"Output image (N/A if new-image == FALSE)"
+literal|"Output image (-1 if new-image == FALSE)"
 block|}
 block|,
 block|{
@@ -291,7 +291,7 @@ name|GIMP_PDB_LAYER
 block|,
 literal|"new-layer"
 block|,
-literal|"Output layer (N/A if new-image == FALSE)"
+literal|"Output layer (-1 if new-image == FALSE)"
 block|}
 block|}
 decl_stmt|;
@@ -638,7 +638,6 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/*  Make sure that the drawable is gray or RGB color  */
 if|if
 condition|(
 name|status
@@ -652,20 +651,6 @@ name|_
 argument_list|(
 literal|"Tiling"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_tile_cache_ntiles
-argument_list|(
-literal|2
-operator|*
-operator|(
-name|width
-operator|+
-literal|1
-operator|)
-operator|/
-name|gimp_tile_width
-argument_list|()
 argument_list|)
 expr_stmt|;
 name|values
@@ -810,30 +795,29 @@ name|new_layer
 decl_stmt|;
 name|GimpImageBaseType
 name|image_type
+init|=
+name|GIMP_RGB
 decl_stmt|;
 name|gint32
 name|new_image_id
+init|=
+literal|0
 decl_stmt|;
 name|gint
 name|old_width
-decl_stmt|,
-name|old_height
 decl_stmt|;
 name|gint
-name|width
-decl_stmt|,
-name|height
+name|old_height
 decl_stmt|;
 name|gint
 name|i
 decl_stmt|,
 name|j
-decl_stmt|,
-name|k
 decl_stmt|;
 name|gint
 name|progress
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|max_progress
 decl_stmt|;
 name|gpointer
@@ -867,14 +851,6 @@ literal|1
 return|;
 block|}
 comment|/* initialize */
-name|image_type
-operator|=
-name|GIMP_RGB
-expr_stmt|;
-name|new_image_id
-operator|=
-literal|0
-expr_stmt|;
 name|old_width
 operator|=
 name|gimp_drawable_width
@@ -1122,10 +1098,11 @@ operator|+=
 name|old_height
 control|)
 block|{
+name|gint
 name|height
-operator|=
+init|=
 name|old_height
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|height
@@ -1161,10 +1138,14 @@ operator|+=
 name|old_width
 control|)
 block|{
+name|gint
 name|width
-operator|=
+init|=
 name|old_width
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|c
+decl_stmt|;
 if|if
 condition|(
 name|width
@@ -1237,6 +1218,10 @@ argument_list|,
 operator|&
 name|dest_rgn
 argument_list|)
+operator|,
+name|c
+operator|=
+literal|0
 init|;
 name|pr
 operator|!=
@@ -1248,8 +1233,14 @@ name|gimp_pixel_rgns_process
 argument_list|(
 name|pr
 argument_list|)
+operator|,
+name|c
+operator|++
 control|)
 block|{
+name|gint
+name|k
+decl_stmt|;
 for|for
 control|(
 name|k
@@ -1306,6 +1297,14 @@ name|src_rgn
 operator|.
 name|h
 expr_stmt|;
+if|if
+condition|(
+name|c
+operator|%
+literal|8
+operator|==
+literal|0
+condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
@@ -1366,12 +1365,12 @@ operator|==
 name|GIMP_INDEXED
 condition|)
 block|{
-name|gint
-name|ncols
-decl_stmt|;
 name|guchar
 modifier|*
 name|cmap
+decl_stmt|;
+name|gint
+name|ncols
 decl_stmt|;
 name|cmap
 operator|=
