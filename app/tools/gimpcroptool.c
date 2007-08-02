@@ -896,15 +896,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_tool_control_set_tool_cursor
-argument_list|(
-name|tool
-operator|->
-name|control
-argument_list|,
-name|GIMP_TOOL_CURSOR_CROP
-argument_list|)
-expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
