@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprogress.h"
 end_include
 
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1697f70103
+DECL|enum|__anon2ad91cc80103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2957,6 +2963,17 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/*  we need the projection constructed NOW, not some time later  */
+name|gimp_pickable_flush
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|image
+operator|->
+name|projection
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|pixbuf
 operator|=
 name|gimp_viewable_get_new_pixbuf

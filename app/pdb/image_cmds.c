@@ -6913,6 +6913,16 @@ operator|/
 name|dheight
 argument_list|)
 expr_stmt|;
+name|gimp_pickable_flush
+argument_list|(
+name|GIMP_PICKABLE
+argument_list|(
+name|image
+operator|->
+name|projection
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|buf
 operator|=
 name|gimp_viewable_get_new_preview

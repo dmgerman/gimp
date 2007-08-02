@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b14493e0103
+DECL|enum|__anon29ea91fb0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -968,6 +968,31 @@ argument_list|(
 name|proj
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|proj
+operator|->
+name|invalidate_preview
+condition|)
+block|{
+comment|/* invalidate the preview here since it is constructed from        * the projection        */
+name|proj
+operator|->
+name|invalidate_preview
+operator|=
+name|FALSE
+expr_stmt|;
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|proj
+operator|->
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
