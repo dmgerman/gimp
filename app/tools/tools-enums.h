@@ -41,7 +41,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890103
+DECL|enum|__anon2c0304700103
 block|{
 DECL|enumerator|GIMP_BUTTON_RELEASE_NORMAL
 name|GIMP_BUTTON_RELEASE_NORMAL
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890203
+DECL|enum|__anon2c0304700203
 block|{
 DECL|enumerator|GIMP_RECTANGLE_GUIDE_NONE
 name|GIMP_RECTANGLE_GUIDE_NONE
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890303
+DECL|enum|__anon2c0304700303
 block|{
 DECL|enumerator|GIMP_RECTANGLE_CONSTRAIN_NONE
 name|GIMP_RECTANGLE_CONSTRAIN_NONE
@@ -138,6 +138,51 @@ name|GIMP_RECTANGLE_CONSTRAIN_DRAWABLE
 DECL|typedef|GimpRectangleConstraint
 block|}
 name|GimpRectangleConstraint
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_RECTANGLE_TOOL_FIXED_RULE
+define|#
+directive|define
+name|GIMP_TYPE_RECTANGLE_TOOL_FIXED_RULE
+value|(gimp_rectangle_tool_fixed_rule_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_rectangle_tool_fixed_rule_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2c0304700403
+block|{
+DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
+block|,
+comment|/*< desc="Aspect ratio">*/
+DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+block|,
+comment|/*< desc="Width">*/
+DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+block|,
+comment|/*< desc="Height">*/
+DECL|enumerator|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
+block|,
+comment|/*< desc="Size">*/
+DECL|typedef|GimpRectangleToolFixedRule
+block|}
+name|GimpRectangleToolFixedRule
 typedef|;
 end_typedef
 
@@ -162,7 +207,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890403
+DECL|enum|__anon2c0304700503
 block|{
 DECL|enumerator|GIMP_RECT_SELECT_MODE_FREE
 name|GIMP_RECT_SELECT_MODE_FREE
@@ -202,7 +247,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890503
+DECL|enum|__anon2c0304700603
 block|{
 DECL|enumerator|GIMP_TRANSFORM_TYPE_LAYER
 name|GIMP_TRANSFORM_TYPE_LAYER
@@ -242,7 +287,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890603
+DECL|enum|__anon2c0304700703
 block|{
 DECL|enumerator|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
 name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
@@ -286,7 +331,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890703
+DECL|enum|__anon2c0304700803
 block|{
 DECL|enumerator|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
@@ -322,7 +367,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af77c890803
+DECL|enum|__anon2c0304700903
 block|{
 DECL|enumerator|GIMP_VECTOR_MODE_DESIGN
 name|GIMP_VECTOR_MODE_DESIGN
@@ -349,7 +394,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af77c890903
+DECL|enum|__anon2c0304700a03
 block|{
 DECL|enumerator|SELECTION_SELECT
 name|SELECTION_SELECT
@@ -379,7 +424,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af77c890a03
+DECL|enum|__anon2c0304700b03
 block|{
 DECL|enumerator|GIMP_TOOL_ACTION_PAUSE
 name|GIMP_TOOL_ACTION_PAUSE
@@ -403,7 +448,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af77c890b03
+DECL|enum|__anon2c0304700c03
 block|{
 DECL|enumerator|GIMP_TRANSLATE_MODE_VECTORS
 name|GIMP_TRANSLATE_MODE_VECTORS
@@ -442,7 +487,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af77c890c03
+DECL|enum|__anon2c0304700d03
 block|{
 DECL|enumerator|GIMP_MOTION_MODE_EXACT
 name|GIMP_MOTION_MODE_EXACT
@@ -466,7 +511,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< skip>*/
-DECL|enum|__anon2af77c890d03
+DECL|enum|__anon2c0304700e03
 block|{
 DECL|enumerator|TRANSFORM_CREATING
 name|TRANSFORM_CREATING
