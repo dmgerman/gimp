@@ -1899,7 +1899,7 @@ name|aspect_button_box
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2027,7 +2027,7 @@ name|size_button_box
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2187,7 +2187,7 @@ name|table
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2208,7 +2208,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_table_attach
+name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
@@ -2224,18 +2224,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|1
-argument_list|,
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-name|GTK_SHRINK
-operator||
-name|GTK_FILL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2282,7 +2270,7 @@ name|button
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2328,9 +2316,9 @@ argument_list|)
 argument_list|,
 name|combo
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -2795,13 +2783,14 @@ argument_list|(
 name|button
 argument_list|)
 expr_stmt|;
+comment|/* X, Y, Width, Height table */
 name|table
 operator|=
 name|gtk_table_new
 argument_list|(
 literal|4
 argument_list|,
-literal|6
+literal|2
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3108,7 +3097,7 @@ name|hbox
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -3131,7 +3120,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
+name|gtk_box_pack_start_defaults
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -3139,12 +3128,6 @@ name|hbox
 argument_list|)
 argument_list|,
 name|combo
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
