@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ed2cf0103
+DECL|enum|__anon2ae966f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0ed2cf0203
+DECL|enum|__anon2ae966f60203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -308,6 +308,18 @@ end_enum
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_color_managed_iface_init
+parameter_list|(
+name|GimpColorManagedInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -508,6 +520,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+specifier|const
+name|guint8
+modifier|*
+name|gimp_display_shell_get_icc_profile
+parameter_list|(
+name|GimpColorManaged
+modifier|*
+name|managed
+parameter_list|,
+name|gsize
+modifier|*
+name|len
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
@@ -517,7 +547,7 @@ argument|gimp_display_shell
 argument_list|,
 argument|GTK_TYPE_WINDOW
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)
 argument_list|)
 end_macro
 
@@ -1438,6 +1468,26 @@ name|GIMP_HELP_IMAGE_WINDOW
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_color_managed_iface_init (GimpColorManagedInterface * iface)
+name|gimp_color_managed_iface_init
+parameter_list|(
+name|GimpColorManagedInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|get_icc_profile
+operator|=
+name|gimp_display_shell_get_icc_profile
 expr_stmt|;
 block|}
 end_function
@@ -2377,6 +2427,56 @@ argument_list|,
 literal|"menu-tooltip"
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+specifier|const
+name|guint8
+modifier|*
+DECL|function|gimp_display_shell_get_icc_profile (GimpColorManaged * managed,gsize * len)
+name|gimp_display_shell_get_icc_profile
+parameter_list|(
+name|GimpColorManaged
+modifier|*
+name|managed
+parameter_list|,
+name|gsize
+modifier|*
+name|len
+parameter_list|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|managed
+argument_list|)
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|shell
+operator|->
+name|display
+operator|->
+name|image
+decl_stmt|;
+return|return
+name|gimp_color_managed_get_icc_profile
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|len
+argument_list|)
+return|;
 block|}
 end_function
 
@@ -4641,6 +4741,14 @@ name|RECONNECT
 index|]
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_color_managed_profile_changed
+argument_list|(
+name|GIMP_COLOR_MANAGED
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_setup

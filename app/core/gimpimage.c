@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6184910103
+DECL|enum|__anon2c6475c50103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6184910203
+DECL|enum|__anon2c6475c50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -832,6 +832,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 specifier|const
 name|guint8
 modifier|*
@@ -15298,6 +15299,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 specifier|const
 name|guint8
 modifier|*
