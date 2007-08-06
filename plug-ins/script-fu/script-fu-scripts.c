@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b51aaef0108
+DECL|struct|__anon294834ec0108
 block|{
 DECL|member|script
 name|SFScript
@@ -6142,7 +6142,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2b51aaef0208
+DECL|struct|__anon294834ec0208
 block|{
 DECL|member|old
 specifier|const
@@ -6162,9 +6162,51 @@ index|[]
 init|=
 block|{
 block|{
+literal|"<Image>/Script-Fu/Alchemy"
+block|,
+literal|"<Image>/Filters/Artistic"
+block|}
+block|,
+block|{
+literal|"<Image>/Script-Fu/Alpha to Logo"
+block|,
+literal|"<Image>/Filters/Alpha to Logo"
+block|}
+block|,
+block|{
 literal|"<Image>/Script-Fu/Animators"
 block|,
 literal|"<Image>/Filters/Animation/Animators"
+block|}
+block|,
+block|{
+literal|"<Image>/Script-Fu/Decor"
+block|,
+literal|"<Image>/Filters/Decor"
+block|}
+block|,
+block|{
+literal|"<Image>/Script-Fu/Render"
+block|,
+literal|"<Image>/Filters/Render"
+block|}
+block|,
+block|{
+literal|"<Image>/Script-Fu/Selection"
+block|,
+literal|"<Image>/Select/Modify"
+block|}
+block|,
+block|{
+literal|"<Image>/Script-Fu/Shadow"
+block|,
+literal|"<Image>/Filters/Light and Shadow/Shadow"
+block|}
+block|,
+block|{
+literal|"<Image>/Script-Fu/Stencil Ops"
+block|,
+literal|"<Image>/Filters/Decor"
 block|}
 block|}
 struct|;
