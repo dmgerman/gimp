@@ -36,6 +36,10 @@ name|GimpColorDisplayStack
 modifier|*
 name|gimp_display_shell_filter_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|GimpColorConfig
 modifier|*
 name|config

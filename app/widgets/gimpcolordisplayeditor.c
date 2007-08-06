@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c90b460103
+DECL|enum|__anon291147df0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c90b460203
+DECL|enum|__anon291147df0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -2004,9 +2004,11 @@ argument_list|)
 expr_stmt|;
 name|display
 operator|=
-name|gimp_color_display_new
+name|g_object_new
 argument_list|(
 name|type
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

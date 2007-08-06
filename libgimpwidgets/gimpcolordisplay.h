@@ -298,6 +298,12 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|GimpColorDisplay
 modifier|*
@@ -308,6 +314,11 @@ name|display_type
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 name|GimpColorDisplay
@@ -426,6 +437,30 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_color_display_get_enabled
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorConfig
+modifier|*
+name|gimp_color_display_get_config
+parameter_list|(
+name|GimpColorDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpColorManaged
+modifier|*
+name|gimp_color_display_get_managed
 parameter_list|(
 name|GimpColorDisplay
 modifier|*
