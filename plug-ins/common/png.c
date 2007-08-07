@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9a8940108
+DECL|struct|__anon2774d0000108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9a8940208
+DECL|struct|__anon2774d0000208
 block|{
 DECL|member|run
 name|gboolean
@@ -5141,7 +5141,14 @@ name|profile_name
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+operator|!
+name|pngvals
+operator|.
+name|gama
+condition|)
 block|{
 name|png_set_sRGB
 argument_list|(
