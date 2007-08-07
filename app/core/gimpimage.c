@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6475c50103
+DECL|enum|__anon28b77f220103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6475c50203
+DECL|enum|__anon28b77f220203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -15337,13 +15337,25 @@ condition|(
 name|parasite
 condition|)
 block|{
-operator|*
-name|len
-operator|=
+name|gsize
+name|data_size
+init|=
 name|gimp_parasite_data_size
 argument_list|(
 name|parasite
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|data_size
+operator|>
+literal|0
+condition|)
+block|{
+operator|*
+name|len
+operator|=
+name|data_size
 expr_stmt|;
 return|return
 name|gimp_parasite_data
@@ -15351,6 +15363,7 @@ argument_list|(
 name|parasite
 argument_list|)
 return|;
+block|}
 block|}
 return|return
 name|NULL
