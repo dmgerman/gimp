@@ -27,7 +27,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29005ca50103
+DECL|enum|__anon2b1d0e540103
 block|{
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
 name|GIMP_PALETTE_FILE_FORMAT_UNKNOWN
@@ -46,7 +46,11 @@ block|,
 comment|/* Photoshop binary color palette      */
 DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_PSP_PAL
 name|GIMP_PALETTE_FILE_FORMAT_PSP_PAL
+block|,
 comment|/* JASC's Paint Shop Pro color palette */
+DECL|enumerator|GIMP_PALETTE_FILE_FORMAT_ACO
+name|GIMP_PALETTE_FILE_FORMAT_ACO
+comment|/* Photoshop ACO color file            */
 DECL|typedef|GimpPaletteFileFormat
 block|}
 name|GimpPaletteFileFormat
@@ -111,6 +115,24 @@ begin_function_decl
 name|GList
 modifier|*
 name|gimp_palette_load_psp
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GList
+modifier|*
+name|gimp_palette_load_aco
 parameter_list|(
 specifier|const
 name|gchar
