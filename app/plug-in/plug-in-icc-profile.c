@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in-icc-profile.h"
 end_include
 
@@ -340,9 +346,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_EXECUTION_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -424,9 +430,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_NOT_FOUND
 argument_list|,
 name|_
 argument_list|(

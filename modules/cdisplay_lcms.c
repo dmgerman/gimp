@@ -1630,6 +1630,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|profile
+operator|&&
 operator|!
 name|cdisplay_lcms_profile_is_rgb
 argument_list|(
