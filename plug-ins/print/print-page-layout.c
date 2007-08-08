@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad8320a0108
+DECL|struct|__anon2a32adfe0108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad8320a0203
+DECL|enum|__anon2a32adfe0203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -1227,7 +1227,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Size"
+literal|"Size"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1237,7 +1237,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|12
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2020,7 +2020,7 @@ name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Image Offsets"
+literal|"Position"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2030,7 +2030,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|12
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -2087,6 +2087,18 @@ name|table
 argument_list|)
 argument_list|,
 literal|6
+argument_list|)
+expr_stmt|;
+name|gtk_table_set_col_spacing
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacing

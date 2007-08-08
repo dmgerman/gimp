@@ -805,7 +805,7 @@ name|operation
 argument_list|,
 name|_
 argument_list|(
-literal|"Image"
+literal|"Image Settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
