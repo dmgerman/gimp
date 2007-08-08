@@ -525,9 +525,9 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_PARAM_READWRITE
+name|GIMP_CONFIG_PARAM_FLAGS
 operator||
-name|G_PARAM_CONSTRUCT
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -549,9 +549,9 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_PARAM_READWRITE
+name|GIMP_CONFIG_PARAM_FLAGS
 operator||
-name|G_PARAM_CONSTRUCT
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -573,9 +573,9 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_PARAM_READWRITE
+name|GIMP_CONFIG_PARAM_FLAGS
 operator||
-name|G_PARAM_CONSTRUCT
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -597,9 +597,9 @@ name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 literal|100.0
 argument_list|,
-name|GIMP_PARAM_READWRITE
+name|GIMP_CONFIG_PARAM_FLAGS
 operator||
-name|G_PARAM_CONSTRUCT
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 argument_list|)
 expr_stmt|;
