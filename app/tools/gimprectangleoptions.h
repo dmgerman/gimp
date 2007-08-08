@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec5b1c0103
+DECL|enum|__anon2c7748c50103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -53,6 +53,12 @@ name|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_WIDTH
 block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_HEIGHT
 name|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_HEIGHT
+block|,
+DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_SIZE_WIDTH
+name|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_SIZE_WIDTH
+block|,
+DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_SIZE_HEIGHT
+name|GIMP_RECTANGLE_OPTIONS_PROP_DESIRED_FIXED_SIZE_HEIGHT
 block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_ASPECT_NUMERATOR
 name|GIMP_RECTANGLE_OPTIONS_PROP_ASPECT_NUMERATOR
@@ -217,6 +223,7 @@ DECL|member|height
 name|gdouble
 name|height
 decl_stmt|;
+comment|/* Width and height for Fixed: Width and Fixed: Height */
 DECL|member|desired_fixed_width
 name|gdouble
 name|desired_fixed_width
@@ -224,6 +231,15 @@ decl_stmt|;
 DECL|member|desired_fixed_height
 name|gdouble
 name|desired_fixed_height
+decl_stmt|;
+comment|/* Width and height for Fixed: Size */
+DECL|member|desired_fixed_size_width
+name|gdouble
+name|desired_fixed_size_width
+decl_stmt|;
+DECL|member|desired_fixed_size_height
+name|gdouble
+name|desired_fixed_size_height
 decl_stmt|;
 DECL|member|aspect_numerator
 name|gdouble

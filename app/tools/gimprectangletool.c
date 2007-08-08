@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4db1040103
+DECL|enum|__anon2b70356b0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4db1040203
+DECL|enum|__anon2b70356b0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c4db1040303
+DECL|enum|__anon2b70356b0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -820,6 +820,9 @@ name|rectangle_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
+parameter_list|,
+name|gint
+name|width
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -835,6 +838,9 @@ name|rectangle_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -9571,13 +9577,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_fixed_width:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * Makes the rectangle have a fixed_width, following the constrainment rules  * of fixed widths as well. Please refer to the rectangle tools spec.  */
+comment|/**  * gimp_rectangle_tool_apply_fixed_width:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @width:  *  * Makes the rectangle have a fixed_width, following the constrainment rules  * of fixed widths as well. Please refer to the rectangle tools spec.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_apply_fixed_width (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint)
+DECL|function|gimp_rectangle_tool_apply_fixed_width (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint,gint width)
 name|gimp_rectangle_tool_apply_fixed_width
 parameter_list|(
 name|GimpRectangleTool
@@ -9586,6 +9592,9 @@ name|rectangle_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
+parameter_list|,
+name|gint
+name|width
 parameter_list|)
 block|{
 name|GimpRectangleToolPrivate
@@ -9646,9 +9655,7 @@ name|private
 operator|->
 name|center_x_on_fixed_center
 operator|-
-name|options_private
-operator|->
-name|desired_fixed_width
+name|width
 operator|/
 literal|2
 expr_stmt|;
@@ -9660,9 +9667,7 @@ name|private
 operator|->
 name|x1
 operator|+
-name|options_private
-operator|->
-name|desired_fixed_width
+name|width
 expr_stmt|;
 break|break;
 case|case
@@ -9683,9 +9688,7 @@ name|private
 operator|->
 name|center_x_on_fixed_center
 operator|-
-name|options_private
-operator|->
-name|desired_fixed_width
+name|width
 operator|/
 literal|2
 expr_stmt|;
@@ -9697,9 +9700,7 @@ name|private
 operator|->
 name|x1
 operator|+
-name|options_private
-operator|->
-name|desired_fixed_width
+name|width
 expr_stmt|;
 break|break;
 block|}
@@ -9715,13 +9716,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_fixed_height:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * Makes the rectangle have a fixed_height, following the constrainment rules  * of fixed heights as well. Please refer to the rectangle tools spec.  */
+comment|/**  * gimp_rectangle_tool_apply_fixed_height:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @height:  *  * Makes the rectangle have a fixed_height, following the constrainment rules  * of fixed heights as well. Please refer to the rectangle tools spec.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_apply_fixed_height (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint)
+DECL|function|gimp_rectangle_tool_apply_fixed_height (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint,gint height)
 name|gimp_rectangle_tool_apply_fixed_height
 parameter_list|(
 name|GimpRectangleTool
@@ -9730,6 +9731,9 @@ name|rectangle_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
+parameter_list|,
+name|gint
+name|height
 parameter_list|)
 block|{
 name|GimpRectangleToolPrivate
@@ -9790,9 +9794,7 @@ name|private
 operator|->
 name|center_y_on_fixed_center
 operator|-
-name|options_private
-operator|->
-name|desired_fixed_height
+name|height
 operator|/
 literal|2
 expr_stmt|;
@@ -9804,9 +9806,7 @@ name|private
 operator|->
 name|y1
 operator|+
-name|options_private
-operator|->
-name|desired_fixed_height
+name|height
 expr_stmt|;
 break|break;
 case|case
@@ -9827,9 +9827,7 @@ name|private
 operator|->
 name|center_y_on_fixed_center
 operator|-
-name|options_private
-operator|->
-name|desired_fixed_height
+name|height
 operator|/
 literal|2
 expr_stmt|;
@@ -9841,9 +9839,7 @@ name|private
 operator|->
 name|y1
 operator|+
-name|options_private
-operator|->
-name|desired_fixed_height
+name|height
 expr_stmt|;
 break|break;
 block|}
@@ -10845,7 +10841,7 @@ name|constraint_to_use
 operator|=
 name|GIMP_RECTANGLE_CONSTRAIN_IMAGE
 expr_stmt|;
-comment|/* fixed_aspect and fixed_width/height are mutually exclusive. */
+comment|/* Apply the active fixed-rule */
 if|if
 condition|(
 name|gimp_rectangle_options_fixed_rule_active
@@ -10959,50 +10955,15 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-else|else
-comment|/* !options_private->fixed_aspect */
-block|{
-name|gboolean
-name|fixed_width
-decl_stmt|;
-name|gboolean
-name|fixed_height
-decl_stmt|;
-name|gboolean
-name|fixed_size
-decl_stmt|;
-name|fixed_width
-operator|=
-name|gimp_rectangle_options_fixed_rule_active
-argument_list|(
-name|options
-argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
-argument_list|)
-expr_stmt|;
-name|fixed_height
-operator|=
-name|gimp_rectangle_options_fixed_rule_active
-argument_list|(
-name|options
-argument_list|,
-name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
-argument_list|)
-expr_stmt|;
-name|fixed_size
-operator|=
+elseif|else
+if|if
+condition|(
 name|gimp_rectangle_options_fixed_rule_active
 argument_list|(
 name|options
 argument_list|,
 name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|fixed_width
-operator|||
-name|fixed_size
 condition|)
 block|{
 name|gimp_rectangle_tool_apply_fixed_width
@@ -11010,14 +10971,56 @@ argument_list|(
 name|rectangle_tool
 argument_list|,
 name|constraint_to_use
+argument_list|,
+name|options_private
+operator|->
+name|desired_fixed_size_width
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_tool_apply_fixed_height
+argument_list|(
+name|rectangle_tool
+argument_list|,
+name|constraint_to_use
+argument_list|,
+name|options_private
+operator|->
+name|desired_fixed_size_height
 argument_list|)
 expr_stmt|;
 block|}
+elseif|else
 if|if
 condition|(
-name|fixed_height
-operator|||
-name|fixed_size
+name|gimp_rectangle_options_fixed_rule_active
+argument_list|(
+name|options
+argument_list|,
+name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
+argument_list|)
+condition|)
+block|{
+name|gimp_rectangle_tool_apply_fixed_width
+argument_list|(
+name|rectangle_tool
+argument_list|,
+name|constraint_to_use
+argument_list|,
+name|options_private
+operator|->
+name|desired_fixed_width
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|gimp_rectangle_options_fixed_rule_active
+argument_list|(
+name|options
+argument_list|,
+name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
+argument_list|)
 condition|)
 block|{
 name|gimp_rectangle_tool_apply_fixed_height
@@ -11025,9 +11028,12 @@ argument_list|(
 name|rectangle_tool
 argument_list|,
 name|constraint_to_use
+argument_list|,
+name|options_private
+operator|->
+name|desired_fixed_height
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
