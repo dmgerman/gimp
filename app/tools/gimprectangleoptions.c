@@ -2568,8 +2568,6 @@ argument_list|,
 literal|"aspect-numerator"
 argument_list|,
 literal|"aspect-denominator"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_ref_sink
@@ -2782,8 +2780,6 @@ argument_list|,
 literal|"desired-fixed-size-width"
 argument_list|,
 literal|"desired-fixed-size-height"
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_ref_sink

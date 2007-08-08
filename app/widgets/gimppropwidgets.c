@@ -1475,10 +1475,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*****************  *  ratio entry  *  *****************/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9252dd0108
+DECL|struct|__anon2bb4b39b0108
 block|{
 DECL|member|config
 name|GObject
@@ -1496,12 +1500,6 @@ specifier|const
 name|gchar
 modifier|*
 name|denominator_property
-decl_stmt|;
-DECL|member|fixed_aspect_property
-specifier|const
-name|gchar
-modifier|*
-name|fixed_aspect_property
 decl_stmt|;
 DECL|typedef|AspectData
 block|}
@@ -1567,13 +1565,13 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_aspect_ratio_new:  * @config:                Object to which property is attached.  * @numerator_property:    Name of double property for numerator.  * @denominator_property:  Name of double property for denominator.  * @fixed_aspect_property: Name of boolean property for fixed aspect (or %NULL).  *  * Return value: a #GimpRatioEntry widget  */
+comment|/**  * gimp_prop_aspect_ratio_new:  * @config:                Object to which property is attached.  * @numerator_property:    Name of double property for numerator.  * @denominator_property:  Name of double property for denominator.  *  * Return value: a #GimpRatioEntry widget  */
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_prop_aspect_ratio_new (GObject * config,const gchar * numerator_property,const gchar * denominator_property,const gchar * fixed_aspect_property)
+DECL|function|gimp_prop_aspect_ratio_new (GObject * config,const gchar * numerator_property,const gchar * denominator_property)
 name|gimp_prop_aspect_ratio_new
 parameter_list|(
 name|GObject
@@ -1589,11 +1587,6 @@ specifier|const
 name|gchar
 modifier|*
 name|denominator_property
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|fixed_aspect_property
 parameter_list|)
 block|{
 name|AspectData
@@ -1651,12 +1644,6 @@ operator|->
 name|denominator_property
 operator|=
 name|denominator_property
-expr_stmt|;
-name|aspect_data
-operator|->
-name|fixed_aspect_property
-operator|=
-name|fixed_aspect_property
 expr_stmt|;
 name|entry
 operator|=
@@ -1882,12 +1869,6 @@ operator|->
 name|denominator_property
 argument_list|,
 name|denom
-argument_list|,
-name|data
-operator|->
-name|fixed_aspect_property
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
 argument_list|)

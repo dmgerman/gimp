@@ -163,11 +163,6 @@ specifier|const
 name|gchar
 modifier|*
 name|denominator_property
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|fixed_aspect_property
 parameter_list|)
 function_decl|;
 end_function_decl
