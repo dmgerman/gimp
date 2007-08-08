@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d78fe0103
+DECL|enum|__anon2b190d7c0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d78fe0203
+DECL|enum|__anon2b190d7c0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8d78fe0308
+DECL|struct|__anon2b190d7c0308
 block|{
 DECL|member|name
 specifier|const
@@ -2611,11 +2611,6 @@ name|parasite
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_parasite_free
-argument_list|(
-name|parasite
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|profile
@@ -2649,6 +2644,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 block|}
 elseif|else
 if|if
