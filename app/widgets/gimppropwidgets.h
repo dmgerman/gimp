@@ -167,6 +167,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  GParamDouble, GParamDouble  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_size_2d_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|width_property
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|height_property
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

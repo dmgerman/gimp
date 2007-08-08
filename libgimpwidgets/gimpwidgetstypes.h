@@ -271,6 +271,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpNumberPairEntry
+typedef|typedef
+name|struct
+name|_GimpNumberPairEntry
+name|GimpNumberPairEntry
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOffsetArea
 typedef|typedef
 name|struct
@@ -330,15 +339,6 @@ typedef|typedef
 name|struct
 name|_GimpPixmap
 name|GimpPixmap
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpRatioEntry
-typedef|typedef
-name|struct
-name|_GimpRatioEntry
-name|GimpRatioEntry
 typedef|;
 end_typedef
 

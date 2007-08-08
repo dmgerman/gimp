@@ -193,6 +193,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpnumberpairentry.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpoffsetarea.h>
 end_include
 
@@ -242,12 +248,6 @@ begin_include
 include|#
 directive|include
 file|<libgimpwidgets/gimpquerybox.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpwidgets/gimpratioentry.h>
 end_include
 
 begin_include

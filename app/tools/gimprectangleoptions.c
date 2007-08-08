@@ -77,13 +77,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ca7d640103
+DECL|enum|__anon286e44f30103
 block|{
-DECL|enumerator|COLUMN_NUMERATOR
-name|COLUMN_NUMERATOR
+DECL|enumerator|COLUMN_LEFT_NUMBER
+name|COLUMN_LEFT_NUMBER
 block|,
-DECL|enumerator|COLUMN_DENOMINATOR
-name|COLUMN_DENOMINATOR
+DECL|enumerator|COLUMN_RIGHT_NUMBER
+name|COLUMN_RIGHT_NUMBER
 block|,
 DECL|enumerator|COLUMN_TEXT
 name|COLUMN_TEXT
@@ -157,7 +157,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_ratio_entry_history_select
+name|gimp_number_pair_entry_history_select
 parameter_list|(
 name|GtkEntryCompletion
 modifier|*
@@ -171,7 +171,7 @@ name|GtkTreeIter
 modifier|*
 name|iter
 parameter_list|,
-name|GimpRatioEntry
+name|GimpNumberPairEntry
 modifier|*
 name|entry
 parameter_list|)
@@ -181,7 +181,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_ratio_entry_history_add
+name|gimp_number_pair_entry_history_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2913,12 +2913,11 @@ name|fixed_height_entry
 argument_list|)
 expr_stmt|;
 comment|/* Size entry */
-comment|/* TODO: This should not be an aspect speciallized entry. */
 name|private
 operator|->
 name|fixed_size_entry
 operator|=
-name|gimp_prop_aspect_ratio_new
+name|gimp_prop_size_2d_new
 argument_list|(
 name|config
 argument_list|,
@@ -3637,7 +3636,7 @@ literal|"ratio-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_ratio_entry_history_add
+name|gimp_number_pair_entry_history_add
 argument_list|)
 argument_list|,
 name|history
@@ -3651,7 +3650,7 @@ literal|"match-selected"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_ratio_entry_history_select
+name|gimp_number_pair_entry_history_select
 argument_list|)
 argument_list|,
 name|entry
@@ -3663,8 +3662,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_ratio_entry_history_select (GtkEntryCompletion * completion,GtkTreeModel * model,GtkTreeIter * iter,GimpRatioEntry * entry)
-name|gimp_ratio_entry_history_select
+DECL|function|gimp_number_pair_entry_history_select (GtkEntryCompletion * completion,GtkTreeModel * model,GtkTreeIter * iter,GimpNumberPairEntry * entry)
+name|gimp_number_pair_entry_history_select
 parameter_list|(
 name|GtkEntryCompletion
 modifier|*
@@ -3678,16 +3677,16 @@ name|GtkTreeIter
 modifier|*
 name|iter
 parameter_list|,
-name|GimpRatioEntry
+name|GimpNumberPairEntry
 modifier|*
 name|entry
 parameter_list|)
 block|{
 name|gdouble
-name|numerator
+name|left_number
 decl_stmt|;
 name|gdouble
-name|denominator
+name|right_number
 decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
@@ -3695,27 +3694,27 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|COLUMN_NUMERATOR
+name|COLUMN_LEFT_NUMBER
 argument_list|,
 operator|&
-name|numerator
+name|left_number
 argument_list|,
-name|COLUMN_DENOMINATOR
+name|COLUMN_RIGHT_NUMBER
 argument_list|,
 operator|&
-name|denominator
+name|right_number
 argument_list|,
 operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_ratio_entry_set_fraction
+name|gimp_number_pair_entry_set_values
 argument_list|(
 name|entry
 argument_list|,
-name|numerator
+name|left_number
 argument_list|,
-name|denominator
+name|right_number
 argument_list|)
 expr_stmt|;
 return|return
@@ -3727,8 +3726,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ratio_entry_history_add (GtkWidget * entry,GtkTreeModel * model)
-name|gimp_ratio_entry_history_add
+DECL|function|gimp_number_pair_entry_history_add (GtkWidget * entry,GtkTreeModel * model)
+name|gimp_number_pair_entry_history_add
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -3753,10 +3752,10 @@ name|gboolean
 name|iter_valid
 decl_stmt|;
 name|gdouble
-name|numerator
+name|left_number
 decl_stmt|;
 name|gdouble
-name|denominator
+name|right_number
 decl_stmt|;
 specifier|const
 name|gchar
@@ -3773,18 +3772,18 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_ratio_entry_get_fraction
+name|gimp_number_pair_entry_get_values
 argument_list|(
-name|GIMP_RATIO_ENTRY
+name|GIMP_NUMBER_PAIR_ENTRY
 argument_list|(
 name|entry
 argument_list|)
 argument_list|,
 operator|&
-name|numerator
+name|left_number
 argument_list|,
 operator|&
-name|denominator
+name|right_number
 argument_list|)
 expr_stmt|;
 for|for
@@ -3898,13 +3897,13 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|COLUMN_NUMERATOR
+name|COLUMN_LEFT_NUMBER
 argument_list|,
-name|numerator
+name|left_number
 argument_list|,
-name|COLUMN_DENOMINATOR
+name|COLUMN_RIGHT_NUMBER
 argument_list|,
-name|denominator
+name|right_number
 argument_list|,
 name|COLUMN_TEXT
 argument_list|,
