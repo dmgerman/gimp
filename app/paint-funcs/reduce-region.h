@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SAMPLE_FUNCS_H__
+name|__REDUCE_REGION_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SAMPLE_FUNCS_H__
+DECL|macro|__REDUCE_REGION_H__
 define|#
 directive|define
-name|__SAMPLE_FUNCS_H__
+name|__REDUCE_REGION_H__
 end_define
 
 begin_function_decl
 name|void
-name|subsample_region
+name|reduce_region
 parameter_list|(
 name|PixelRegion
 modifier|*
@@ -28,31 +28,11 @@ name|PixelRegion
 modifier|*
 name|destPR
 parameter_list|,
-name|gint
-name|subsample
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|subsample_indexed_region
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|srcPR
+name|GimpProgressFunc
+name|progress_callback
 parameter_list|,
-name|PixelRegion
-modifier|*
-name|destPR
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|cmap
-parameter_list|,
-name|gint
-name|subsample
+name|gpointer
+name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -63,7 +43,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SAMPLE_FUNCS_H__  */
+comment|/*  __REDUCE_REGION_H__  */
 end_comment
 
 end_unit

@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"scale-funcs.h"
+file|"scale-region.h"
 end_include
 
 begin_define

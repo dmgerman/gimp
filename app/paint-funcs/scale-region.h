@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCALE_FUNCS_H__
+name|__SCALE_REGION_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCALE_FUNCS_H__
+DECL|macro|__SCALE_REGION_H__
 define|#
 directive|define
-name|__SCALE_FUNCS_H__
+name|__SCALE_REGION_H__
 end_define
 
 begin_define
@@ -106,7 +106,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCALE_FUNCS_H__  */
+comment|/*  __SCALE_REGION_H__  */
 end_comment
 
 begin_comment

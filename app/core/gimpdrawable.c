@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/scale-funcs.h"
+file|"paint-funcs/scale-region.h"
 end_include
 
 begin_include
@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9c1b70103
+DECL|enum|__anon28c98fdc0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

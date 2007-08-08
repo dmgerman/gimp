@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sample-funcs.h"
+file|"subsample-region.h"
 end_include
 
 begin_define

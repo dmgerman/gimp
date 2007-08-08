@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/scale-funcs.h"
+file|"paint-funcs/scale-region.h"
 end_include
 
 begin_include

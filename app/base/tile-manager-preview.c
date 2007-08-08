@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs/sample-funcs.h"
+file|"paint-funcs/subsample-region.h"
 end_include
 
 begin_include
