@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9723d40103
+DECL|enum|__anon2c1322b20103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -71,7 +71,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9723d40203
+DECL|enum|__anon2c1322b20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9723d40308
+DECL|struct|__anon2c1322b20308
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -1124,7 +1124,7 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-literal|0.0
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|priv
