@@ -671,6 +671,12 @@ literal|0
 expr_stmt|;
 name|data
 operator|.
+name|center
+operator|=
+name|CENTER_BOTH
+expr_stmt|;
+name|data
+operator|.
 name|use_full_page
 operator|=
 name|FALSE
