@@ -150,6 +150,7 @@ name|PixelRegion
 modifier|*
 name|dstPR
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -1174,13 +1175,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|reduce_bilinear (PixelRegion * dstPR,guchar * src,gint source_w,gint source_h,gint bytes)
+DECL|function|reduce_bilinear (PixelRegion * dstPR,const guchar * src,gint source_w,gint source_h,gint bytes)
 name|reduce_bilinear
 parameter_list|(
 name|PixelRegion
 modifier|*
 name|dstPR
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -1195,6 +1197,22 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
+specifier|const
+name|gdouble
+name|scale
+init|=
+operator|(
+name|gdouble
+operator|)
+name|dstPR
+operator|->
+name|h
+operator|/
+operator|(
+name|gdouble
+operator|)
+name|source_h
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1210,9 +1228,6 @@ decl_stmt|,
 name|y0
 decl_stmt|,
 name|y1
-decl_stmt|;
-name|gdouble
-name|scale
 decl_stmt|;
 name|gdouble
 name|xfrac
@@ -1235,20 +1250,6 @@ name|guchar
 modifier|*
 name|dst
 decl_stmt|;
-name|scale
-operator|=
-operator|(
-name|gdouble
-operator|)
-name|dstPR
-operator|->
-name|h
-operator|/
-operator|(
-name|gdouble
-operator|)
-name|source_h
-expr_stmt|;
 name|dst
 operator|=
 name|g_new
