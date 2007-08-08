@@ -1860,7 +1860,6 @@ argument_list|,
 name|nitems
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: check memory mamagement of cmsOpenProfileFromMem */
 name|g_free
 argument_list|(
 name|data

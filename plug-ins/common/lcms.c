@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70ab900103
+DECL|enum|__anon2b8d78fe0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70ab900203
+DECL|enum|__anon2b8d78fe0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c70ab900308
+DECL|struct|__anon2b8d78fe0308
 block|{
 DECL|member|name
 specifier|const
@@ -2611,7 +2611,11 @@ name|parasite
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: we leak the parasite, the data is used by the profile */
+name|gimp_parasite_free
+argument_list|(
+name|parasite
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|profile
@@ -2635,11 +2639,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_parasite_free
-argument_list|(
-name|parasite
-argument_list|)
-expr_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -3484,26 +3483,16 @@ return|return
 name|NULL
 return|;
 block|}
-name|len
-operator|=
-name|g_mapped_file_get_length
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
 name|data
 operator|=
-name|g_memdup
-argument_list|(
 name|g_mapped_file_get_contents
 argument_list|(
 name|file
 argument_list|)
-argument_list|,
-name|len
-argument_list|)
 expr_stmt|;
-name|g_mapped_file_free
+name|len
+operator|=
+name|g_mapped_file_get_length
 argument_list|(
 name|file
 argument_list|)
@@ -3517,7 +3506,6 @@ argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: we leak the data, it is used by the profile */
 if|if
 condition|(
 name|profile
@@ -3535,11 +3523,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -3554,6 +3537,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_mapped_file_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 return|return
 name|profile
 return|;

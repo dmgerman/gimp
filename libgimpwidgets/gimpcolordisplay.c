@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7766620103
+DECL|enum|__anon290dcbf10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7766620203
+DECL|enum|__anon290dcbf10203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -98,7 +98,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7766620308
+DECL|struct|__anon290dcbf10308
 block|{
 DECL|member|config
 name|GimpColorConfig
@@ -149,7 +149,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_display_finalize
+name|gimp_color_display_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -300,9 +300,9 @@ name|gimp_color_display_constructor
 expr_stmt|;
 name|object_class
 operator|->
-name|finalize
+name|dispose
 operator|=
-name|gimp_color_display_finalize
+name|gimp_color_display_dispose
 expr_stmt|;
 name|object_class
 operator|->
@@ -565,8 +565,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_finalize (GObject * object)
-name|gimp_color_display_finalize
+DECL|function|gimp_color_display_dispose (GObject * object)
+name|gimp_color_display_dispose
 parameter_list|(
 name|GObject
 modifier|*
@@ -651,7 +651,7 @@ argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|finalize
+name|dispose
 argument_list|(
 name|object
 argument_list|)
