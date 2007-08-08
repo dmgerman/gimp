@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e08440103
+DECL|enum|__anon2b9723d40103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -71,7 +71,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e08440203
+DECL|enum|__anon2b9723d40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -91,10 +91,10 @@ block|}
 enum|;
 end_enum
 
-begin_struct
-DECL|struct|_GimpNumberPairEntryPrivate
+begin_typedef
+typedef|typedef
 struct|struct
-name|_GimpNumberPairEntryPrivate
+DECL|struct|__anon2b9723d40308
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -105,7 +105,7 @@ DECL|member|right_number
 name|gdouble
 name|right_number
 decl_stmt|;
-comment|/* What number pair that should be displayed when not in user_override mode. */
+comment|/* What number pair that should be displayed when not in      user_override mode. */
 DECL|member|default_left_number
 name|gdouble
 name|default_left_number
@@ -114,19 +114,19 @@ DECL|member|default_right_number
 name|gdouble
 name|default_right_number
 decl_stmt|;
-comment|/* Whether or not the current value in the entry has been explicitly set by    * the user.    */
+comment|/* Whether or not the current value in the entry has been explicitly    * set by the user.    */
 DECL|member|user_override
 name|gboolean
 name|user_override
 decl_stmt|;
-comment|/* What separators that are valid when parsing input, e.g. when the widget is    * used for aspect ratio, valid separators are typically ':' and '/'.    */
+comment|/* What separators that are valid when parsing input, e.g. when the    * widget is used for aspect ratio, valid separators are typically    * ':' and '/'.    */
 DECL|member|separators
 specifier|const
 name|gchar
 modifier|*
 name|separators
 decl_stmt|;
-comment|/* Whether or to not to divide the numbers with the greatest common divisor    * when input ends in '='.    */
+comment|/* Whether or to not to divide the numbers with the greatest common    * divisor when input ends in '='.    */
 DECL|member|allow_simplification
 name|gboolean
 name|allow_simplification
@@ -140,9 +140,23 @@ DECL|member|max_valid_value
 name|gdouble
 name|max_valid_value
 decl_stmt|;
+DECL|typedef|GimpNumberPairEntryPrivate
 block|}
-struct|;
-end_struct
+name|GimpNumberPairEntryPrivate
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE (obj)
+define|#
+directive|define
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+parameter_list|(
+name|obj
+parameter_list|)
+define|\
+value|((GimpNumberPairEntryPrivate *) ((GimpNumberPairEntry *) (obj))->priv)
+end_define
 
 begin_function_decl
 specifier|static
@@ -636,6 +650,10 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|entry
 operator|->
 name|priv
@@ -649,72 +667,61 @@ argument_list|,
 name|GimpNumberPairEntryPrivate
 argument_list|)
 expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
 name|entry
-operator|->
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|left_number
 operator|=
 literal|1.0
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
 operator|=
 literal|1.0
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_left_number
 operator|=
 literal|1.0
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_right_number
 operator|=
 literal|1.0
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|user_override
 operator|=
 name|FALSE
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|separators
 operator|=
 name|NULL
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|allow_simplification
 operator|=
 name|FALSE
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|min_valid_value
 operator|=
 name|G_MINDOUBLE
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|max_valid_value
@@ -753,7 +760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_new:  * @separators:           A string of valid separators.  * @allow_simplification: Whether or not to divide the numbers with the greatest  *                        common divider when input ends in '='.  * @min_valid_value:      Minimum value of a number considered valid when  *                        parsing user input.  * @max_valid_value:      Maximum value of a number considered valid when  *                        parsing user input.  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that accepts  * two numbers separated by a separator. Typical input example with a 'x'  * separator: "377x233".  *  * The first separator of @separators is used to display the current value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_new:  * @separators:           A string of valid separators.  * @allow_simplification: Whether or not to divide the numbers with  *                        the greatest common divider when input ends  *                        in '='.  * @min_valid_value:      Minimum value of a number considered valid when  *                        parsing user input.  * @max_valid_value:      Maximum value of a number considered valid when  *                        parsing user input.  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The first separator of @separators is used to display the current value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -780,6 +787,10 @@ block|{
 name|GimpNumberPairEntry
 modifier|*
 name|entry
+decl_stmt|;
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -811,32 +822,31 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
 name|entry
-operator|->
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|separators
 operator|=
 name|separators
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|allow_simplification
 operator|=
 name|allow_simplification
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|min_valid_value
 operator|=
 name|min_valid_value
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|max_valid_value
@@ -1034,7 +1044,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_ratio:  * @entry: A #gimpnumberpairentry widget.  * @ratio: Ratio to set in the widget.  *  * Sets the numbers of the #GimpNumberPairEntry to have the desired ratio. If  * the new ratio is different than the previous ratio, the "ratio-changed"  * signal is emitted.  *  * An attempt is made to convert the decimal number into a fraction with  * left_number and right_number< 1000.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_ratio:  * @entry: A #gimpnumberpairentry widget.  * @ratio: Ratio to set in the widget.  *  * Sets the numbers of the #GimpNumberPairEntry to have the desired  * ratio. If the new ratio is different than the previous ratio, the  * "ratio-changed" signal is emitted.  *  * An attempt is made to convert the decimal number into a fraction  * with left_number and right_number< 1000.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1057,6 +1067,14 @@ decl_stmt|;
 name|gdouble
 name|denominator
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_NUMBER_PAIR_ENTRY
+argument_list|(
+name|entry
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_number_pair_entry_ratio_to_fraction
 argument_list|(
 name|ratio
@@ -1095,15 +1113,32 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
-return|return
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_NUMBER_PAIR_ENTRY
+argument_list|(
 name|entry
-operator|->
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+return|return
 name|priv
 operator|->
 name|left_number
 operator|/
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1112,12 +1147,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_values:  * @entry:        A #GimpNumberPairEntry widget.  * @left_number:  Left number in the entry.  * @right_number: Right number in the entry.  *  * Forces setting the numbers displayed by a #GimpNumberPairEntry, ignoring if  * the user has set his/her own value. The state of user-override will not be  * changed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Left number in the entry.  * @right: Right number in the entry.  *  * Forces setting the numbers displayed by a #GimpNumberPairEntry,  * ignoring if the user has set his/her own value. The state of  * user-override will not be changed.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_number_pair_entry_set_values (GimpNumberPairEntry * entry,gdouble left_number,gdouble right_number)
+DECL|function|gimp_number_pair_entry_set_values (GimpNumberPairEntry * entry,gdouble left,gdouble right)
 name|gimp_number_pair_entry_set_values
 parameter_list|(
 name|GimpNumberPairEntry
@@ -1125,12 +1160,16 @@ modifier|*
 name|entry
 parameter_list|,
 name|gdouble
-name|left_number
+name|left
 parameter_list|,
 name|gdouble
-name|right_number
+name|right
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|GimpAspectType
 name|old_aspect
 decl_stmt|;
@@ -1161,19 +1200,22 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 comment|/* Store current values */
 name|old_left_number
 operator|=
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 expr_stmt|;
 name|old_right_number
 operator|=
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1181,6 +1223,13 @@ expr_stmt|;
 name|old_ratio
 operator|=
 name|gimp_number_pair_entry_get_ratio
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+name|old_aspect
+operator|=
+name|gimp_number_pair_entry_get_aspect
 argument_list|(
 name|entry
 argument_list|)
@@ -1195,21 +1244,17 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Set the new numbers and update the entry */
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 operator|=
-name|left_number
+name|left
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
 operator|=
-name|right_number
+name|right
 expr_stmt|;
 name|g_object_notify
 argument_list|(
@@ -1290,16 +1335,12 @@ if|if
 condition|(
 name|old_left_number
 operator|!=
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 operator|||
 name|old_right_number
 operator|!=
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1356,12 +1397,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_values:  * @entry:        A #GimpNumberPairEntry widget.  * @left_number:  Pointer of where to store the left number (may be %NULL).  * @right_number: Pointer of to store the right number (may be %NULL).  *  * Gets the numbers displayed by a #GimpNumberPairEntry.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Pointer of where to store the left number (may be %NULL).  * @right: Pointer of to store the right number (may be %NULL).  *  * Gets the numbers displayed by a #GimpNumberPairEntry.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_number_pair_entry_get_values (GimpNumberPairEntry * entry,gdouble * left_number,gdouble * right_number)
+DECL|function|gimp_number_pair_entry_get_values (GimpNumberPairEntry * entry,gdouble * left,gdouble * right)
 name|gimp_number_pair_entry_get_values
 parameter_list|(
 name|GimpNumberPairEntry
@@ -1370,13 +1411,17 @@ name|entry
 parameter_list|,
 name|gdouble
 modifier|*
-name|left_number
+name|left
 parameter_list|,
 name|gdouble
 modifier|*
-name|right_number
+name|right
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_NUMBER_PAIR_ENTRY
@@ -1385,32 +1430,35 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|left_number
+name|left
 operator|!=
 name|NULL
 condition|)
 operator|*
-name|left_number
+name|left
 operator|=
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 expr_stmt|;
 if|if
 condition|(
-name|right_number
+name|right
 operator|!=
 name|NULL
 condition|)
 operator|*
-name|right_number
+name|right
 operator|=
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1419,7 +1467,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_aspect:  * @entry: A #gimpnumberpairentry widget.  * @aspect: the new aspect  *  * Sets the aspect of the ratio by swapping the left_number and right_number if  * necessary (or setting them to 1.0 in case that @aspect is  * %GIMP_ASPECT_SQUARE).  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_aspect:  * @entry: A #gimpnumberpairentry widget.  * @aspect: the new aspect  *  * Sets the aspect of the ratio by swapping the left_number and  * right_number if necessary (or setting them to 1.0 in case that  * @aspect is %GIMP_ASPECT_SQUARE).  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1436,6 +1484,10 @@ name|GimpAspectType
 name|aspect
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_NUMBER_PAIR_ENTRY
@@ -1454,6 +1506,13 @@ operator|==
 name|aspect
 condition|)
 return|return;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|aspect
@@ -1466,14 +1525,10 @@ name|gimp_number_pair_entry_set_values
 argument_list|(
 name|entry
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
@@ -1490,14 +1545,10 @@ name|gimp_number_pair_entry_set_values
 argument_list|(
 name|entry
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
@@ -1523,6 +1574,10 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_NUMBER_PAIR_ENTRY
@@ -1533,16 +1588,19 @@ argument_list|,
 name|GIMP_ASPECT_SQUARE
 argument_list|)
 expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 operator|>
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1555,14 +1613,10 @@ block|}
 elseif|else
 if|if
 condition|(
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 operator|<
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1673,7 +1727,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_strdup_number_pair_string:  * @entry:  * @left_number:  * @right_number:  *  * Returns allocated data, must be g_free:d.  */
+comment|/**  * gimp_number_pair_entry_strdup_number_pair_string:  * @entry:  * @left_number:  * @right_number:  *  * Returns allocated data, must be g_free:d.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1694,6 +1748,15 @@ name|gdouble
 name|right_number
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+init|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+decl_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -1701,8 +1764,6 @@ literal|"%g%c%g"
 argument_list|,
 name|left_number
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|separators
@@ -1727,6 +1788,15 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+init|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|buffer
@@ -1737,14 +1807,10 @@ name|gimp_number_pair_entry_strdup_number_pair_string
 argument_list|(
 name|entry
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -1782,6 +1848,15 @@ name|gchar
 name|candidate
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+init|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -1791,8 +1866,6 @@ for|for
 control|(
 name|c
 operator|=
-name|entry
-operator|->
 name|priv
 operator|->
 name|separators
@@ -1835,6 +1908,15 @@ modifier|*
 name|text
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+init|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+decl_stmt|;
 name|gdouble
 name|new_left_number
 decl_stmt|;
@@ -1894,21 +1976,15 @@ name|gimp_number_pair_entry_set_values
 argument_list|(
 name|entry
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_left_number
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_right_number
 argument_list|)
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|user_override
@@ -1948,8 +2024,6 @@ argument_list|,
 name|new_right_number
 argument_list|)
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|user_override
@@ -1963,8 +2037,6 @@ literal|4
 case|:
 if|if
 condition|(
-name|entry
-operator|->
 name|priv
 operator|->
 name|allow_simplification
@@ -2003,8 +2075,6 @@ operator|/
 name|new_right_number
 argument_list|)
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|user_override
@@ -2078,6 +2148,17 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -2109,8 +2190,6 @@ argument_list|(
 name|value
 argument_list|)
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -2124,8 +2203,6 @@ name|gimp_number_pair_entry_set_values
 argument_list|(
 name|entry
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
@@ -2197,6 +2274,17 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -2223,8 +2311,6 @@ name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|left_number
@@ -2238,8 +2324,6 @@ name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|right_number
@@ -2275,6 +2359,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_number_pair_entry_set_default_values:  * @entry: A #GimpNumberPairEntry widget.  * @left:  Left number in the entry.  * @right: Right number in the entry.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_number_pair_entry_set_default_values (GimpNumberPairEntry * entry,gdouble left,gdouble right)
@@ -2291,6 +2379,10 @@ name|gdouble
 name|right
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_NUMBER_PAIR_ENTRY
@@ -2299,16 +2391,19 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
 name|entry
-operator|->
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|default_left_number
 operator|=
 name|left
 expr_stmt|;
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_right_number
@@ -2318,8 +2413,6 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|entry
-operator|->
 name|priv
 operator|->
 name|user_override
@@ -2329,14 +2422,10 @@ name|gimp_number_pair_entry_set_values
 argument_list|(
 name|entry
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_left_number
 argument_list|,
-name|entry
-operator|->
 name|priv
 operator|->
 name|default_right_number
@@ -2363,38 +2452,41 @@ name|gdouble
 name|right_number
 parameter_list|)
 block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+init|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+decl_stmt|;
 return|return
+operator|(
 name|left_number
 operator|>=
-name|entry
-operator|->
 name|priv
 operator|->
 name|min_valid_value
 operator|&&
 name|left_number
 operator|<=
-name|entry
-operator|->
 name|priv
 operator|->
 name|max_valid_value
 operator|&&
 name|right_number
 operator|>=
-name|entry
-operator|->
 name|priv
 operator|->
 name|min_valid_value
 operator|&&
 name|right_number
 operator|<=
-name|entry
-operator|->
 name|priv
 operator|->
 name|max_valid_value
+operator|)
 return|;
 block|}
 end_function
