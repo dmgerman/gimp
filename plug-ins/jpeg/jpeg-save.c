@@ -256,7 +256,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52ac920108
+DECL|struct|__anon2c64d7de0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -332,7 +332,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52ac920208
+DECL|struct|__anon2c64d7de0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2911,7 +2911,7 @@ block|{
 comment|/* we freeze undo saving so that we can avoid sucking up            * tile cache with our unneeded preview steps. */
 name|gimp_image_undo_freeze
 argument_list|(
-name|image_ID_global
+name|preview_image_ID
 argument_list|)
 expr_stmt|;
 name|undo_touched
@@ -2923,7 +2923,7 @@ name|save_image
 argument_list|(
 name|tn
 argument_list|,
-name|image_ID_global
+name|preview_image_ID
 argument_list|,
 name|drawable_ID_global
 argument_list|,
@@ -2943,7 +2943,7 @@ name|display_ID
 operator|=
 name|gimp_display_new
 argument_list|(
-name|image_ID_global
+name|preview_image_ID
 argument_list|)
 expr_stmt|;
 block|}
@@ -3002,28 +3002,37 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|g_printerr
+argument_list|(
+literal|"destroy_preview (%d, %d)\n"
+argument_list|,
+name|preview_image_ID
+argument_list|,
+name|preview_layer_ID
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|layer_ID_global
-operator|!=
-operator|-
-literal|1
+name|gimp_image_is_valid
+argument_list|(
+name|preview_image_ID
+argument_list|)
 operator|&&
-name|image_ID_global
-operator|!=
-operator|-
-literal|1
+name|gimp_drawable_is_valid
+argument_list|(
+name|preview_layer_ID
+argument_list|)
 condition|)
 block|{
 comment|/*  assuming that reference counting is working correctly,           we do not need to delete the layer, removing it from           the image should be sufficient  */
 name|gimp_image_remove_layer
 argument_list|(
-name|image_ID_global
+name|preview_image_ID
 argument_list|,
-name|layer_ID_global
+name|preview_layer_ID
 argument_list|)
 expr_stmt|;
-name|layer_ID_global
+name|preview_layer_ID
 operator|=
 operator|-
 literal|1
@@ -5332,6 +5341,9 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
+name|destroy_preview
+argument_list|()
+expr_stmt|;
 return|return
 name|pg
 operator|.
@@ -6099,7 +6111,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b52ac920308
+DECL|struct|__anon2c64d7de0308
 block|{
 DECL|member|pub
 name|struct

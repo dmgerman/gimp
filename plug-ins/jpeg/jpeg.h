@@ -94,14 +94,14 @@ begin_decl_stmt
 specifier|extern
 name|gint32
 specifier|volatile
-name|image_ID_global
+name|preview_image_ID
 decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
 name|gint32
-name|layer_ID_global
+name|preview_layer_ID
 decl_stmt|;
 end_decl_stmt
 

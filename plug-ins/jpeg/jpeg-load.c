@@ -143,14 +143,6 @@ function_decl|;
 end_function_decl
 
 begin_decl_stmt
-DECL|variable|image_ID_global
-name|gint32
-specifier|volatile
-name|image_ID_global
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|drawable_global
 name|GimpDrawable
 modifier|*
@@ -159,9 +151,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|layer_ID_global
+DECL|variable|preview_image_ID
 name|gint32
-name|layer_ID_global
+specifier|volatile
+name|preview_image_ID
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|preview_layer_ID
+name|gint32
+name|preview_layer_ID
 decl_stmt|;
 end_decl_stmt
 
@@ -705,7 +705,7 @@ condition|)
 block|{
 name|image_ID
 operator|=
-name|image_ID_global
+name|preview_image_ID
 expr_stmt|;
 block|}
 else|else
@@ -746,13 +746,11 @@ condition|(
 name|preview
 condition|)
 block|{
-name|layer_ID_global
-operator|=
-name|layer_ID
+name|preview_layer_ID
 operator|=
 name|gimp_layer_new
 argument_list|(
-name|image_ID
+name|preview_image_ID
 argument_list|,
 name|_
 argument_list|(
@@ -773,6 +771,10 @@ literal|100
 argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
+expr_stmt|;
+name|layer_ID
+operator|=
+name|preview_layer_ID
 expr_stmt|;
 block|}
 else|else
@@ -2083,7 +2085,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1937aa0108
+DECL|struct|__anon297dea520108
 block|{
 DECL|member|pub
 name|struct
