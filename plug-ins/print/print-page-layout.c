@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a31dd060108
+DECL|struct|__anon2aac0c680108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31dd060203
+DECL|enum|__anon2aac0c680203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -3563,6 +3563,23 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+comment|/* return early if we are called from a unit change */
+if|if
+condition|(
+name|gimp_size_entry_get_unit
+argument_list|(
+name|info
+operator|.
+name|size_entry
+argument_list|)
+operator|!=
+name|info
+operator|.
+name|data
+operator|->
+name|unit
+condition|)
+return|return;
 name|info
 operator|.
 name|data
@@ -3847,6 +3864,23 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+comment|/* return early if we are called from a unit change */
+if|if
+condition|(
+name|gimp_size_entry_get_unit
+argument_list|(
+name|info
+operator|.
+name|size_entry
+argument_list|)
+operator|!=
+name|info
+operator|.
+name|data
+operator|->
+name|unit
+condition|)
+return|return;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|info
