@@ -125,9 +125,14 @@ name|GdkPixbuf
 modifier|*
 name|pixbuf
 decl_stmt|;
-DECL|member|drawable_id
-name|gint32
-name|drawable_id
+DECL|member|dragging
+name|gboolean
+name|dragging
+decl_stmt|;
+DECL|member|drawable
+name|GimpDrawable
+modifier|*
+name|drawable
 decl_stmt|;
 DECL|member|image_offset_x
 name|gdouble
