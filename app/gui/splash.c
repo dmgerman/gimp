@@ -64,7 +64,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ade5f0108
+DECL|struct|__anon29fc903f0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -1360,9 +1360,9 @@ name|splash
 operator|->
 name|height
 operator|-
+operator|(
 literal|2
 operator|*
-operator|(
 name|logical
 operator|.
 name|height
