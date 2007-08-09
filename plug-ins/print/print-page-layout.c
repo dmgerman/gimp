@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a91414c0108
+DECL|struct|__anon29c569f80108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a91414c0203
+DECL|enum|__anon29c569f80203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -461,7 +461,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|12
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
