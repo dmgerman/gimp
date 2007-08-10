@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a5bb770103
+DECL|enum|__anon2a9fd9530103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -71,7 +71,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a5bb770203
+DECL|enum|__anon2a9fd9530203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -115,7 +115,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5bb770308
+DECL|struct|__anon2a9fd9530308
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -177,21 +177,6 @@ parameter_list|)
 define|\
 value|((GimpNumberPairEntryPrivate *) ((GimpNumberPairEntry *) (obj))->priv)
 end_define
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_number_pair_entry_set_user_override
-parameter_list|(
-name|GimpNumberPairEntry
-modifier|*
-name|entry
-parameter_list|,
-name|gboolean
-name|user_override
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -1209,7 +1194,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_ratio:  * @entry: A #gimpnumberpairentry widget.  * @ratio: Ratio to set in the widget.  *  * Sets the numbers of the #GimpNumberPairEntry to have the desired  * ratio. If the new ratio is different than the previous ratio, the  * "ratio-changed" signal is emitted.  *  * An attempt is made to convert the decimal number into a fraction  * with left_number and right_number< 1000.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_ratio:  * @entry: A #GimpNumberPairEntry widget.  * @ratio: Ratio to set in the widget.  *  * Sets the numbers of the #GimpNumberPairEntry to have the desired  * ratio. If the new ratio is different than the previous ratio, the  * "ratio-changed" signal is emitted.  *  * An attempt is made to convert the decimal number into a fraction  * with left_number and right_number< 1000.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1263,7 +1248,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_ratio:  * @entry: A #gimpnumberpairentry widget.  *  * Retrieves the ratio of the numbers displayed by a #GimpNumberPairEntry.  *  * Returns: The ratio value.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_ratio:  * @entry: A #GimpNumberPairEntry widget.  *  * Retrieves the ratio of the numbers displayed by a #GimpNumberPairEntry.  *  * Returns: The ratio value.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1630,7 +1615,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_aspect:  * @entry: A #gimpnumberpairentry widget.  * @aspect: the new aspect  *  * Sets the aspect of the ratio by swapping the left_number and  * right_number if necessary (or setting them to 1.0 in case that  * @aspect is %GIMP_ASPECT_SQUARE).  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_aspect:  * @entry:  A #GimpNumberPairEntry widget.  * @aspect: The new aspect.  *  * Sets the aspect of the ratio by swapping the left_number and  * right_number if necessary (or setting them to 1.0 in case that  * @aspect is %GIMP_ASPECT_SQUARE).  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1722,7 +1707,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_aspect:  * @entry: A #gimpnumberpairentry widget.  *  * Gets the aspect of the ratio displayed by a #GimpNumberPairEntry.  *  * Returns: The entry's current aspect.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_get_aspect:  * @entry: A #GimpNumberPairEntry widget.  *  * Gets the aspect of the ratio displayed by a #GimpNumberPairEntry.  *  * Returns: The entry's current aspect.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1796,8 +1781,11 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_number_pair_entry_set_user_override:  * @entry:         A #GimpNumberPairEntry widget.  * @user_override: %TRUE sets the entry in user overridden mode, %FALSE disables.  *  * When the entry is not in user overridden mode, the values will change when  * the default values are changed. When in user overridden mode, setting default  * values will not affect the active values.  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_number_pair_entry_set_user_override (GimpNumberPairEntry * entry,gboolean user_override)
 name|gimp_number_pair_entry_set_user_override
@@ -1813,12 +1801,22 @@ block|{
 name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
-init|=
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_NUMBER_PAIR_ENTRY
+argument_list|(
+name|entry
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
 name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
 argument_list|(
 name|entry
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|priv
 operator|->
 name|user_override
@@ -1847,6 +1845,49 @@ name|default_right_number
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_number_pair_entry_get_user_override:  * @entry: A #GimpNumberPairEntry widget.  *  * Returns: Wether or not the the widget is in user overridden mode.  *  * Since: GIMP 2.4  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_number_pair_entry_get_user_override (GimpNumberPairEntry * entry)
+name|gimp_number_pair_entry_get_user_override
+parameter_list|(
+name|GimpNumberPairEntry
+modifier|*
+name|entry
+parameter_list|)
+block|{
+name|GimpNumberPairEntryPrivate
+modifier|*
+name|priv
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_NUMBER_PAIR_ENTRY
+argument_list|(
+name|entry
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|priv
+operator|=
+name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+return|return
+name|priv
+operator|->
+name|user_override
+return|;
 block|}
 end_function
 
