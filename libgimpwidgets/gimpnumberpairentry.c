@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9fd9530103
+DECL|enum|__anon28b417b80103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -71,7 +71,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9fd9530203
+DECL|enum|__anon28b417b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -115,7 +115,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9fd9530308
+DECL|struct|__anon28b417b80308
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -928,12 +928,21 @@ block|{
 name|GimpNumberPairEntryPrivate
 modifier|*
 name|priv
-init|=
+decl_stmt|;
+name|priv
+operator|=
 name|GIMP_NUMBER_PAIR_ENTRY_GET_PRIVATE
 argument_list|(
 name|object
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+if|if
+condition|(
+name|priv
+operator|->
+name|separators
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|priv
@@ -947,6 +956,7 @@ name|separators
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
@@ -961,7 +971,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_new:  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The widget supports simplification of the entered ratio when the input ends  * in '=', if "allow-simplification" is TRUE.  *  * The "separators" property contains a string of characters valid as separators  * when parsing input. The first separator is used when displaying the current  * values.  *  * It is possible to specify what range of values that shall be considered as  * valid when parsing user input, by changing "min-valid-value" and  * "max-valid-value".  *  * The first separator of @separators is used to display the current value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_new:  *  * Creates a new #GimpNumberPairEntry widget, which is a GtkEntry that  * accepts two numbers separated by a separator. Typical input example  * with a 'x' separator: "377x233".  *  * The widget supports simplification of the entered ratio when the  * input ends in '=', if "allow-simplification" is TRUE.  *  * The "separators" property contains a string of characters valid as  * separators when parsing input. The first separator is used when  * displaying the current values.  *  * It is possible to specify what range of values that shall be  * considered as valid when parsing user input, by changing  * "min-valid-value" and "max-valid-value".  *  * The first separator of @separators is used to display the current  * value.  *  * Return value: The new #GimpNumberPairEntry widget.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1782,7 +1792,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_set_user_override:  * @entry:         A #GimpNumberPairEntry widget.  * @user_override: %TRUE sets the entry in user overridden mode, %FALSE disables.  *  * When the entry is not in user overridden mode, the values will change when  * the default values are changed. When in user overridden mode, setting default  * values will not affect the active values.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_set_user_override:  * @entry:         A #GimpNumberPairEntry widget.  * @user_override: %TRUE sets the entry in user overridden mode,  *                 %FALSE disables.  *  * When the entry is not in user overridden mode, the values will  * change when the default values are changed. When in user overridden  * mode, setting default values will not affect the active values.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
