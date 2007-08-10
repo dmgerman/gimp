@@ -7100,7 +7100,7 @@ condition|)
 return|return
 name|NULL
 return|;
-comment|/* work around bug in GtkFileChooserButton */
+comment|/* work around bug in GtkFileChooserButton (bug #436576) */
 name|title
 operator|=
 name|g_strdup
