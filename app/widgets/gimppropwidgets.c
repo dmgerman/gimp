@@ -1482,7 +1482,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb9d3e40108
+DECL|struct|__anon29fe44c70108
 block|{
 DECL|member|config
 name|GObject
@@ -2014,7 +2014,9 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"left-number"
+name|data
+operator|->
+name|left_number_property
 argument_list|)
 operator|==
 literal|0
@@ -2025,7 +2027,9 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"right-number"
+name|data
+operator|->
+name|right_number_property
 argument_list|)
 operator|==
 literal|0
@@ -2080,7 +2084,9 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"default-left-number"
+name|data
+operator|->
+name|default_left_number_property
 argument_list|)
 operator|==
 literal|0
@@ -2091,7 +2097,9 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"default-right-number"
+name|data
+operator|->
+name|default_right_number_property
 argument_list|)
 operator|==
 literal|0
@@ -2146,7 +2154,9 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-literal|"user-override"
+name|data
+operator|->
+name|user_override_property
 argument_list|)
 operator|==
 literal|0
