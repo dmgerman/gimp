@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7ac46d0108
+DECL|struct|__anon2c915c000108
 block|{
 DECL|member|quality
 name|gdouble
@@ -55,6 +55,10 @@ decl_stmt|;
 DECL|member|save_xmp
 name|gboolean
 name|save_xmp
+decl_stmt|;
+DECL|member|use_quant_tables
+name|gboolean
+name|use_quant_tables
 decl_stmt|;
 DECL|typedef|JpegSaveVals
 block|}

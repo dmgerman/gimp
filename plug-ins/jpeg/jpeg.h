@@ -149,6 +149,27 @@ name|has_metadata
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|extern
+name|gint
+name|orig_quality
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|orig_subsmp
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|num_quant_tables
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|gint32
 name|load_image

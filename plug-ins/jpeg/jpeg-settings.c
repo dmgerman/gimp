@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * Structure of the "jpeg-settings" parasite:  *       1 byte  - JPEG color space (JCS_YCbCr, JCS_GRAYSCALE, JCS_CMYK, ...)  *       1 byte  - quality (according to the IJG scale, 0..100)  *       1 byte  - number of components (0..4)  *       1 byte  - number of quantization tables (0..4)  *   C * 2 bytes - sampling factors for each component (1..4)  * T * 128 bytes - quantization tables (if different from IJG tables)  *  * Additional data following the quantization tables is currently  * ignored and can be used for future extensions.  *  * The parasite contains the original subsampling for each component  * instead of saving only the subsampling type as used by the jpeg  * plug-in ("subsmp") in order to improve the compatibility with  * future versions of the plug-in that may support more subsampling  * types.  The same applies to the other settings: for example, up to  * 4 quantization tables will be saved in the parasite even if the  * current code cannot restore more than 3 of them (4 tables may be  * needed by unusual JPEG color spaces such as JCS_CMYK or JCS_YCCK).  */
+comment|/*  * Structure of the "jpeg-settings" parasite:  *       1 byte  - JPEG color space (JCS_YCbCr, JCS_GRAYSCALE, JCS_CMYK, ...)  *       1 byte  - quality (1..100 according to the IJG scale, or 0)  *       1 byte  - number of components (0..4)  *       1 byte  - number of quantization tables (0..4)  *   C * 2 bytes - sampling factors for each component (1..4)  * T * 128 bytes - quantization tables (only if different from IJG tables)  *  * Additional data following the quantization tables is currently  * ignored and can be used for future extensions.  *  * The parasite contains the original subsampling for each component  * instead of saving only the subsampling type as used by the jpeg  * plug-in ("subsmp") in order to improve the compatibility with  * future versions of the plug-in that may support more subsampling  * types.  The same applies to the other settings: for example, up to  * 4 quantization tables will be saved in the parasite even if the  * current code cannot restore more than 3 of them (4 tables may be  * needed by unusual JPEG color spaces such as JCS_CMYK or JCS_YCCK).  */
 end_comment
 
 begin_include
@@ -399,7 +399,7 @@ comment|/*  * TODO: compare the JPEG color space found in the parasite with the 
 end_comment
 
 begin_comment
-comment|/**  * jpeg_restore_original_settings:  * @image_ID: the image that may contain original jpeg settings in a parasite.  * @quality: where to store the original jpeg quality.  * @subsmp: where to store the original subsampling type.  * @num_quant_tables: where to store the number of quantization tables found.  *  * Retrieve the original JPEG settings (quality, type of subsampling  * and number of quantization tables) from the parasite attached to  * @image_ID.  If the number of quantization tables is greater than  * zero, then these tables can be retrieved from the parasite by  * calling jpeg_get_original_tables().  *  * Return Value: TRUE if a valid parasite was attached to the image  */
+comment|/**  * jpeg_restore_original_settings:  * @image_ID: the image that may contain original jpeg settings in a parasite.  * @quality: where to store the original jpeg quality.  * @subsmp: where to store the original subsampling type.  * @num_quant_tables: where to store the number of quantization tables found.  *  * Retrieve the original JPEG settings (quality, type of subsampling  * and number of quantization tables) from the parasite attached to  * @image_ID.  If the number of quantization tables is greater than  * zero, then these tables can be retrieved from the parasite by  * calling jpeg_restore_original_tables().  *  * Return Value: TRUE if a valid parasite was attached to the image  */
 end_comment
 
 begin_function
@@ -826,11 +826,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * jpeg_restore_original_tables:  * @image_ID: the image that may contain original jpeg settings in a parasite.  * @num_quant_tables: the number of quantization tables to restore.  *  * Retrieve the original quantization tables from the parasite  * attached to @image_ID.  Each table is an array of coefficients that  * can be associated with a component of a JPEG image when saving it.  *  * An array of newly allocated tables is returned if @num_quant_tables  * matches the number of tables saved in the parasite.  When these  * tables are not needed anymore, the caller should free them using  * g_free().  If no parasite exists or if it cannot be used, this  * function returns NULL.  *  * Return Value: an array of quantization tables, or NULL.  */
+comment|/**  * jpeg_restore_original_tables:  * @image_ID: the image that may contain original jpeg settings in a parasite.  * @num_quant_tables: the number of quantization tables to restore.  *  * Retrieve the original quantization tables from the parasite  * attached to @image_ID.  Each table is an array of coefficients that  * can be associated with a component of a JPEG image when saving it.  *  * An array of newly allocated tables is returned if @num_quant_tables  * matches the number of tables saved in the parasite.  These tables  * are returned as arrays of unsigned integers even if they will never  * use more than 16 bits (8 bits in most cases) because the IJG JPEG  * library expects arrays of unsigned integers.  When these tables are  * not needed anymore, the caller should free them using g_free().  If  * no parasite exists or if it cannot be used, this function returns  * NULL.  *  * Return Value: an array of quantization tables, or NULL.  */
 end_comment
 
 begin_function
-name|guint16
+name|guint
 modifier|*
 modifier|*
 DECL|function|jpeg_restore_original_tables (gint32 image_ID,gint num_quant_tables)
@@ -861,7 +861,7 @@ decl_stmt|;
 name|gint
 name|num_tables
 decl_stmt|;
-name|guint16
+name|guint
 modifier|*
 modifier|*
 name|quant_tables
@@ -883,7 +883,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|parasite
 condition|)
 block|{
@@ -955,7 +954,7 @@ name|quant_tables
 operator|=
 name|g_new
 argument_list|(
-name|guint16
+name|guint
 operator|*
 argument_list|,
 name|num_tables
@@ -982,7 +981,7 @@ index|]
 operator|=
 name|g_new
 argument_list|(
-name|guint16
+name|guint
 argument_list|,
 literal|128
 argument_list|)
@@ -995,13 +994,13 @@ literal|0
 init|;
 name|i
 operator|<
-literal|128
+literal|64
 condition|;
 name|i
 operator|++
 control|)
 block|{
-name|guint16
+name|guint
 name|c
 decl_stmt|;
 name|c
