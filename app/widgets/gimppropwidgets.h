@@ -142,7 +142,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  GParamDouble, GParamDouble  */
+comment|/*  GParamDouble, GParamDouble, GParamDouble, GParamDouble, GParamBoolean  */
 end_comment
 
 begin_function_decl
@@ -163,6 +163,21 @@ specifier|const
 name|gchar
 modifier|*
 name|right_number_property
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|default_numerator_property
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|default_denominator_property
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|overridden_fixed_aspect_property
 parameter_list|,
 name|gboolean
 name|connect_numbers_changed
