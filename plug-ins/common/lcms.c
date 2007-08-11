@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da45330103
+DECL|enum|__anon29d045360103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da45330203
+DECL|enum|__anon29d045360203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29da45330308
+DECL|struct|__anon29d045360308
 block|{
 DECL|member|name
 specifier|const
@@ -370,6 +370,9 @@ name|lcms_image_set_profile
 parameter_list|(
 name|gint32
 name|image
+parameter_list|,
+name|cmsHPROFILE
+name|profile
 parameter_list|,
 specifier|const
 name|gchar
@@ -1703,6 +1706,8 @@ name|lcms_image_set_profile
 argument_list|(
 name|image
 argument_list|,
+name|NULL
+argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
@@ -1714,6 +1719,8 @@ operator|=
 name|lcms_image_set_profile
 argument_list|(
 name|image
+argument_list|,
+name|NULL
 argument_list|,
 name|config
 operator|->
@@ -2074,6 +2081,8 @@ operator|!
 name|lcms_image_set_profile
 argument_list|(
 name|image
+argument_list|,
+name|dest_profile
 argument_list|,
 name|filename
 argument_list|)
@@ -2853,11 +2862,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|lcms_image_set_profile (gint32 image,const gchar * filename)
+DECL|function|lcms_image_set_profile (gint32 image,cmsHPROFILE profile,const gchar * filename)
 name|lcms_image_set_profile
 parameter_list|(
 name|gint32
 name|image
+parameter_list|,
+name|cmsHPROFILE
+name|profile
 parameter_list|,
 specifier|const
 name|gchar
@@ -2865,11 +2877,6 @@ modifier|*
 name|filename
 parameter_list|)
 block|{
-name|gboolean
-name|success
-init|=
-name|FALSE
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|image
@@ -2885,12 +2892,13 @@ condition|(
 name|filename
 condition|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|GMappedFile
 modifier|*
 name|file
-decl_stmt|;
-name|cmsHPROFILE
-name|profile
 decl_stmt|;
 name|GError
 modifier|*
@@ -2943,6 +2951,12 @@ name|FALSE
 return|;
 block|}
 comment|/* check that this file is actually an ICC profile */
+if|if
+condition|(
+operator|!
+name|profile
+condition|)
+block|{
 name|profile
 operator|=
 name|cmsOpenProfileFromMem
@@ -2963,15 +2977,32 @@ condition|(
 name|profile
 condition|)
 block|{
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
 name|cmsCloseProfile
 argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"'%s' does not appear to be an ICC color profile"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+block|}
 name|parasite
 operator|=
 name|gimp_parasite_new
@@ -2993,6 +3024,11 @@ name|file
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_mapped_file_free
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
 name|gimp_image_parasite_attach
 argument_list|(
 name|image
@@ -3012,32 +3048,9 @@ argument_list|,
 literal|"icc-profile-name"
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+return|return
 name|TRUE
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"'%s' does not appear to be an ICC color profile"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-name|g_mapped_file_free
-argument_list|(
-name|file
-argument_list|)
-expr_stmt|;
+return|;
 block|}
 else|else
 block|{
@@ -3055,14 +3068,10 @@ argument_list|,
 literal|"icc-profile-name"
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 return|return
-name|success
+name|TRUE
 return|;
+block|}
 block|}
 end_function
 
