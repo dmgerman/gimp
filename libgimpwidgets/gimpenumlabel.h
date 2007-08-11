@@ -22,6 +22,10 @@ directive|include
 file|<gtk/gtklabel.h>
 end_include
 
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
+
 begin_define
 DECL|macro|GIMP_TYPE_ENUM_LABEL
 define|#
@@ -163,6 +167,10 @@ name|value
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

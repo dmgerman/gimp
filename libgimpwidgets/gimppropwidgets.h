@@ -16,11 +16,9 @@ directive|define
 name|__GIMP_PROP_WIDGETS_H__
 end_define
 
-begin_comment
-comment|/*  GParamBoolean  */
-end_comment
-
 begin_function_decl
+name|G_BEGIN_DECLS
+comment|/*  GParamBoolean  */
 name|GtkWidget
 modifier|*
 name|gimp_prop_check_button_new
@@ -831,6 +829,10 @@ name|icon_size
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#

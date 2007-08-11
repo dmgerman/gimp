@@ -17,6 +17,7 @@ name|__GIMP_ENUM_WIDGETS_H__
 end_define
 
 begin_function_decl
+name|G_BEGIN_DECLS
 name|GtkWidget
 modifier|*
 name|gimp_enum_radio_box_new
@@ -206,6 +207,10 @@ name|ypad
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#
