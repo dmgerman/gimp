@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c569f80108
+DECL|struct|__anon2c48ab050108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c569f80203
+DECL|enum|__anon2c48ab050203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -4347,8 +4347,12 @@ operator|->
 name|preview
 argument_list|)
 argument_list|,
+name|data
+operator|->
 name|offset_x
 argument_list|,
+name|data
+operator|->
 name|offset_y
 argument_list|)
 expr_stmt|;
