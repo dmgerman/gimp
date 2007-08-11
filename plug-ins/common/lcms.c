@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b190d7c0103
+DECL|enum|__anon2bf05ffe0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b190d7c0203
+DECL|enum|__anon2bf05ffe0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b190d7c0308
+DECL|struct|__anon2bf05ffe0308
 block|{
 DECL|member|name
 specifier|const
@@ -741,7 +741,7 @@ literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Set color profile"
+literal|"_Assign Color Profile..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -780,7 +780,7 @@ literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Set default RGB profile"
+literal|"Assign default RGB Profile"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -820,7 +820,7 @@ literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Apply color profile"
+literal|"_Convert to Color Profile..."
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -861,7 +861,7 @@ literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Apply default RGB profile"
+literal|"Convert to default RGB Profile"
 argument_list|)
 argument_list|,
 literal|"RGB*, INDEXED*"
@@ -898,7 +898,7 @@ literal|"2006, 2007"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Color Profile Information"
+literal|"Image Color Profile Information"
 argument_list|)
 argument_list|,
 literal|"*"
@@ -957,6 +957,20 @@ argument_list|,
 name|file_args
 argument_list|,
 name|info_return_vals
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC_SET
+argument_list|,
+literal|"<Image>/Image/Mode/Color Profile"
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC_APPLY
+argument_list|,
+literal|"<Image>/Image/Mode/Color Profile"
 argument_list|)
 expr_stmt|;
 block|}
