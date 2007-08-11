@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fc8570108
+DECL|struct|__anon29aaa96e0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -346,7 +346,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fc8570208
+DECL|struct|__anon29aaa96e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -4694,7 +4694,7 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use custom quantization tables"
+literal|"Use custom quality settings"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4709,7 +4709,7 @@ name|toggle
 argument_list|,
 literal|0
 argument_list|,
-literal|2
+literal|4
 argument_list|,
 literal|5
 argument_list|,
@@ -4727,6 +4727,21 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|toggle
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toggle
+argument_list|,
+name|_
+argument_list|(
+literal|"If the original image was loaded from a JPEG "
+literal|"file using non-standard quality settings "
+literal|"(quantization tables), enable this option to "
+literal|"get almost the same quality and file size."
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -6393,7 +6408,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2fc8570308
+DECL|struct|__anon29aaa96e0308
 block|{
 DECL|member|pub
 name|struct
