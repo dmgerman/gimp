@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b175760103
+DECL|enum|__anon2752a5fc0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b175760203
+DECL|enum|__anon2752a5fc0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b175760303
+DECL|enum|__anon2752a5fc0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -585,7 +585,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -1876,7 +1876,7 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_RESUME
 case|:
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -2901,6 +2901,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_update_highlight
+argument_list|(
+name|rectangle
+argument_list|)
+expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
 name|rectangle
@@ -3093,7 +3098,7 @@ name|current_y
 argument_list|)
 expr_stmt|;
 comment|/* Update the highlight. */
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -3575,7 +3580,7 @@ operator|->
 name|lasty
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -3653,7 +3658,7 @@ operator|->
 name|lasty
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -3686,7 +3691,7 @@ operator|->
 name|other_side_y
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -4426,7 +4431,7 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -6540,7 +6545,7 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -6844,7 +6849,7 @@ operator|->
 name|y1
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -7204,7 +7209,7 @@ argument_list|,
 name|old_function
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -7576,7 +7581,7 @@ literal|"highlight"
 argument_list|)
 condition|)
 block|{
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -8049,7 +8054,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_highlight
+name|gimp_rectangle_tool_update_highlight
 argument_list|(
 name|rectangle
 argument_list|)
@@ -8152,8 +8157,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_set_highlight (GimpRectangleTool * rectangle)
-name|gimp_rectangle_tool_set_highlight
+DECL|function|gimp_rectangle_tool_update_highlight (GimpRectangleTool * rectangle)
+name|gimp_rectangle_tool_update_highlight
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
