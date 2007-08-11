@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2752a5fc0103
+DECL|enum|__anon29c1e0df0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2752a5fc0203
+DECL|enum|__anon29c1e0df0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2752a5fc0303
+DECL|enum|__anon29c1e0df0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2819,6 +2819,30 @@ operator|->
 name|saved_y2
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* If the first created rectangle was canceled, halt the tool */
+if|if
+condition|(
+name|private
+operator|->
+name|saved_x1
+operator|==
+name|private
+operator|->
+name|saved_x2
+operator|&&
+name|private
+operator|->
+name|saved_y1
+operator|==
+name|private
+operator|->
+name|saved_y2
+condition|)
+name|gimp_rectangle_tool_halt
+argument_list|(
+name|rectangle
 argument_list|)
 expr_stmt|;
 break|break;
