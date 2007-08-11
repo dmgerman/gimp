@@ -1482,7 +1482,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fe44c70108
+DECL|struct|__anon2a1b9c840108
 block|{
 DECL|member|config
 name|GObject
@@ -1585,7 +1585,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_prop_number_pair_entry_number_pair_user_override_changed
+name|gimp_prop_number_pair_entry_number_pair_user_override_notify
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1882,7 +1882,7 @@ literal|"notify::user-override"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_prop_number_pair_entry_number_pair_user_override_changed
+name|gimp_prop_number_pair_entry_number_pair_user_override_notify
 argument_list|)
 argument_list|,
 name|data
@@ -2255,8 +2255,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_number_pair_entry_number_pair_user_override_changed (GtkWidget * entry,GParamSpec * param_spec,GimpPropNumberPairEntryData * data)
-name|gimp_prop_number_pair_entry_number_pair_user_override_changed
+DECL|function|gimp_prop_number_pair_entry_number_pair_user_override_notify (GtkWidget * entry,GParamSpec * param_spec,GimpPropNumberPairEntryData * data)
+name|gimp_prop_number_pair_entry_number_pair_user_override_notify
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -2272,9 +2272,28 @@ name|data
 parameter_list|)
 block|{
 name|gboolean
-name|user_override
+name|old_config_user_override
 decl_stmt|;
-name|user_override
+name|gboolean
+name|new_config_user_override
+decl_stmt|;
+name|g_object_get
+argument_list|(
+name|data
+operator|->
+name|config
+argument_list|,
+name|data
+operator|->
+name|user_override_property
+argument_list|,
+operator|&
+name|old_config_user_override
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|new_config_user_override
 operator|=
 name|gimp_number_pair_entry_get_user_override
 argument_list|(
@@ -2284,6 +2303,13 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Only set when property changed, to avoid deadlocks */
+if|if
+condition|(
+name|new_config_user_override
+operator|!=
+name|old_config_user_override
+condition|)
 name|g_object_set
 argument_list|(
 name|data
@@ -2294,7 +2320,7 @@ name|data
 operator|->
 name|user_override_property
 argument_list|,
-name|user_override
+name|new_config_user_override
 argument_list|,
 name|NULL
 argument_list|)
