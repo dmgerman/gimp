@@ -197,7 +197,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"plug-in/plug-in-error.h"
+file|"plug-in/gimppluginerror.h"
 end_include
 
 begin_include

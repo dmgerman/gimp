@@ -6,20 +6,20 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__PLUG_IN_ERROR_H__
+name|__GIMP_PLUG_IN_ERROR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__PLUG_IN_ERROR_H__
+DECL|macro|__GIMP_PLUG_IN_ERROR_H__
 define|#
 directive|define
-name|__PLUG_IN_ERROR_H__
+name|__GIMP_PLUG_IN_ERROR_H__
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon293ff5520103
+DECL|enum|__anon2a20d9090103
 block|{
 DECL|enumerator|GIMP_PLUG_IN_EXECUTION_FAILED
 name|GIMP_PLUG_IN_EXECUTION_FAILED
@@ -56,7 +56,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __PLUG_IN_ERROR_H__ */
+comment|/* __GIMP_PLUG_IN_ERROR_H__ */
 end_comment
 
 end_unit
