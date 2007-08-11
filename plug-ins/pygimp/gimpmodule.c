@@ -6229,6 +6229,7 @@ block|{
 name|GimpUserDirectory
 name|type
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|user_dir
@@ -6305,11 +6306,6 @@ block|{
 name|ret
 operator|=
 name|PyString_FromString
-argument_list|(
-name|user_dir
-argument_list|)
-expr_stmt|;
-name|g_free
 argument_list|(
 name|user_dir
 argument_list|)

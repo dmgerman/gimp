@@ -1075,6 +1075,7 @@ name|gchar
 modifier|*
 name|automatic_help_id
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|pictures
@@ -1432,7 +1433,6 @@ if|if
 condition|(
 name|pictures
 condition|)
-block|{
 name|gtk_file_chooser_add_shortcut_folder
 argument_list|(
 name|GTK_FILE_CHOOSER
@@ -1445,12 +1445,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|pictures
-argument_list|)
-expr_stmt|;
-block|}
 name|gimp_file_dialog_add_preview
 argument_list|(
 name|dialog
