@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcoords.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstroke-new.h"
 end_include
 
