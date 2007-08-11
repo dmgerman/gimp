@@ -3943,7 +3943,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2882a6280108
+DECL|struct|__anon295a42ec0108
 block|{
 DECL|member|config
 name|GObject
@@ -9276,7 +9276,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2882a6280208
+DECL|struct|__anon295a42ec0208
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10438,7 +10438,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2882a6280308
+DECL|struct|__anon295a42ec0308
 block|{
 DECL|member|label
 specifier|const
@@ -10665,12 +10665,6 @@ literal|2
 condition|)
 comment|/* display profile */
 block|{
-if|#
-directive|if
-name|defined
-argument_list|(
-name|GDK_WINDOWING_X11
-argument_list|)
 name|button
 operator|=
 name|gimp_prop_check_button_new
@@ -10682,7 +10676,8 @@ argument_list|,
 name|_
 argument_list|(
 literal|"_Try to obtain the monitor "
-literal|"profile from the X server"
+literal|"profile from the windowing "
+literal|"system"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -10714,8 +10709,6 @@ expr_stmt|;
 name|row
 operator|++
 expr_stmt|;
-endif|#
-directive|endif
 name|prefs_enum_combo_box_add
 argument_list|(
 name|color_config
@@ -11420,7 +11413,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2882a6280408
+DECL|struct|__anon295a42ec0408
 block|{
 DECL|member|property_name
 specifier|const
@@ -11575,7 +11568,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2882a6280508
+DECL|struct|__anon295a42ec0508
 block|{
 DECL|member|tree_label
 specifier|const
