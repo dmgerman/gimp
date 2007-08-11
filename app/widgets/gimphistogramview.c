@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f0efc50103
+DECL|enum|__anon28e8af060103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f0efc50203
+DECL|enum|__anon28e8af060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -248,7 +248,7 @@ parameter_list|,
 name|gint
 name|j
 parameter_list|,
-name|gint
+name|gdouble
 name|max
 parameter_list|,
 name|gint
@@ -1629,7 +1629,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_histogram_view_draw_spike (GimpHistogramView * view,GimpHistogramChannel channel,GdkGC * gc,gint x,gint i,gint j,gint max,gint height,gint border)
+DECL|function|gimp_histogram_view_draw_spike (GimpHistogramView * view,GimpHistogramChannel channel,GdkGC * gc,gint x,gint i,gint j,gdouble max,gint height,gint border)
 name|gimp_histogram_view_draw_spike
 parameter_list|(
 name|GimpHistogramView
@@ -1652,7 +1652,7 @@ parameter_list|,
 name|gint
 name|j
 parameter_list|,
-name|gint
+name|gdouble
 name|max
 parameter_list|,
 name|gint
@@ -1732,7 +1732,7 @@ operator|(
 operator|(
 name|height
 operator|-
-literal|1
+literal|2
 operator|)
 operator|*
 name|value
@@ -1755,7 +1755,7 @@ operator|(
 operator|(
 name|height
 operator|-
-literal|1
+literal|2
 operator|)
 operator|*
 name|log
