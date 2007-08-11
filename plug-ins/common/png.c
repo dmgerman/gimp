@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774d0000108
+DECL|struct|__anon292557790108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2774d0000208
+DECL|struct|__anon292557790208
 block|{
 DECL|member|run
 name|gboolean
@@ -3692,7 +3692,9 @@ name|gimp_parasite_new
 argument_list|(
 literal|"icc-profile"
 argument_list|,
-literal|0
+name|GIMP_PARASITE_PERSISTENT
+operator||
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|proflen
 argument_list|,
@@ -3751,7 +3753,9 @@ name|gimp_parasite_new
 argument_list|(
 literal|"icc-profile-name"
 argument_list|,
-literal|0
+name|GIMP_PARASITE_PERSISTENT
+operator||
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|strlen
 argument_list|(

@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ea96f0108
+DECL|struct|__anon28c6ddfc0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ea96f0208
+DECL|struct|__anon28c6ddfc0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287ea96f0308
+DECL|struct|__anon28c6ddfc0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2781,7 +2781,9 @@ name|gimp_parasite_new
 argument_list|(
 literal|"icc-profile"
 argument_list|,
-literal|0
+name|GIMP_PARASITE_PERSISTENT
+operator||
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|profile_size
 argument_list|,

@@ -707,6 +707,12 @@ if|if
 condition|(
 name|image
 condition|)
+block|{
+name|gimp_image_undo_disable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|file_open_handle_color_profile
 argument_list|(
 name|image
@@ -718,6 +724,12 @@ argument_list|,
 name|run_mode
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_enable
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|image
 return|;

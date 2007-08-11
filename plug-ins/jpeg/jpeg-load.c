@@ -1342,7 +1342,9 @@ name|gimp_parasite_new
 argument_list|(
 literal|"icc-profile"
 argument_list|,
-literal|0
+name|GIMP_PARASITE_PERSISTENT
+operator||
+name|GIMP_PARASITE_UNDOABLE
 argument_list|,
 name|profile_size
 argument_list|,
@@ -2085,7 +2087,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297dea520108
+DECL|struct|__anon2c164ce50108
 block|{
 DECL|member|pub
 name|struct
