@@ -1037,6 +1037,18 @@ name|LIBGIMP_DOMAIN
 block|}
 block|,
 block|{
+name|GIMP_STOCK_AUTO_MODE
+block|,
+name|NULL
+block|,
+literal|0
+block|,
+literal|0
+block|,
+name|LIBGIMP_DOMAIN
+block|}
+block|,
+block|{
 name|GIMP_STOCK_CONVERT_RGB
 block|,
 name|NULL
@@ -2639,7 +2651,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0108
+DECL|struct|__anon2a9db0d30108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3451,7 +3463,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0208
+DECL|struct|__anon2a9db0d30208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3473,6 +3485,12 @@ block|{
 name|GIMP_STOCK_CENTER
 block|,
 name|stock_center_16
+block|}
+block|,
+block|{
+name|GIMP_STOCK_AUTO_MODE
+block|,
+name|stock_auto_mode_16
 block|}
 block|,
 block|{
@@ -4355,7 +4373,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0308
+DECL|struct|__anon2a9db0d30308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4452,7 +4470,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0408
+DECL|struct|__anon2a9db0d30408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4597,7 +4615,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0508
+DECL|struct|__anon2a9db0d30508
 block|{
 DECL|member|stock_id
 specifier|const
