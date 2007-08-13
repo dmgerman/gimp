@@ -506,11 +506,6 @@ directive|define
 name|GIMP_STOCK_TOOL_ZOOM
 value|"gimp-tool-zoom"
 comment|/*  in menu size:  */
-DECL|macro|GIMP_STOCK_AUTO_MODE
-define|#
-directive|define
-name|GIMP_STOCK_AUTO_MODE
-value|"gimp-auto-mode"
 DECL|macro|GIMP_STOCK_CONVERT_RGB
 define|#
 directive|define
