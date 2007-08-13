@@ -43,18 +43,18 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS_LCMS_H
-end_ifdef
-
 begin_define
 DECL|macro|LCMS_WIN_TYPES_ALREADY_DEFINED
 define|#
 directive|define
 name|LCMS_WIN_TYPES_ALREADY_DEFINED
 end_define
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_LCMS_LCMS_H
+end_ifdef
 
 begin_include
 include|#
