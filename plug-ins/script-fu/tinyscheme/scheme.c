@@ -10856,6 +10856,7 @@ operator|<=
 literal|0
 condition|)
 return|return;
+comment|/* Get length of 'chars' in bytes */
 name|char_cnt
 operator|=
 name|g_utf8_offset_to_pointer
@@ -11333,7 +11334,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2aa7aea30103
+DECL|enum|__anon2b9dd2080103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28055,7 +28056,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2aa7aea30208
+DECL|struct|__anon2b9dd2080208
 specifier|static
 struct|struct
 block|{
@@ -28290,7 +28291,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2aa7aea30308
+DECL|struct|__anon2b9dd2080308
 typedef|typedef
 struct|struct
 block|{

@@ -1073,7 +1073,6 @@ operator|.
 name|value
 argument_list|)
 condition|)
-block|{
 return|return
 name|sc
 operator|.
@@ -1086,13 +1085,15 @@ operator|.
 name|value
 argument_list|)
 return|;
-block|}
-else|else
 return|return
 literal|"Success"
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* len is length of 'string' in bytes */
+end_comment
 
 begin_function
 name|void
@@ -1123,19 +1124,6 @@ literal|0
 operator|&&
 name|ts_console_mode
 condition|)
-block|{
-comment|/* len is the number of UTF-8 characters; we need the number of bytes */
-name|len
-operator|=
-name|g_utf8_offset_to_pointer
-argument_list|(
-name|string
-argument_list|,
-name|len
-argument_list|)
-operator|-
-name|string
-expr_stmt|;
 name|script_fu_output_to_console
 argument_list|(
 name|string
@@ -1143,7 +1131,6 @@ argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
