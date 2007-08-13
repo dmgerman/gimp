@@ -9,11 +9,28 @@ directive|include
 file|"config.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib.h>
+end_include
+
+begin_comment
+comment|/* lcms.h uses the "inline" keyword */
+end_comment
+
 begin_ifdef
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
 end_ifdef
+
+begin_define
+DECL|macro|STRICT
+define|#
+directive|define
+name|STRICT
+end_define
 
 begin_include
 include|#
@@ -25,16 +42,6 @@ begin_endif
 endif|#
 directive|endif
 end_endif
-
-begin_include
-include|#
-directive|include
-file|<glib.h>
-end_include
-
-begin_comment
-comment|/* lcms.h uses the "inline" keyword */
-end_comment
 
 begin_ifdef
 ifdef|#
