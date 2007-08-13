@@ -38,17 +38,17 @@ directive|include
 file|<windows.h>
 end_include
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_define
 DECL|macro|LCMS_WIN_TYPES_ALREADY_DEFINED
 define|#
 directive|define
 name|LCMS_WIN_TYPES_ALREADY_DEFINED
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_ifdef
 ifdef|#
