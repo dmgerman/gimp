@@ -4177,11 +4177,6 @@ name|store
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
@@ -9297,7 +9292,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b7bdf160108
+DECL|struct|__anon29c4a7390108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10459,7 +10454,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7bdf160208
+DECL|struct|__anon29c4a7390208
 block|{
 DECL|member|label
 specifier|const
@@ -11480,7 +11475,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7bdf160308
+DECL|struct|__anon29c4a7390308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11635,7 +11630,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b7bdf160408
+DECL|struct|__anon29c4a7390408
 block|{
 DECL|member|tree_label
 specifier|const

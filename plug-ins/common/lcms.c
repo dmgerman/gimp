@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3fee650103
+DECL|enum|__anon2952a23e0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3fee650203
+DECL|enum|__anon2952a23e0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3fee650308
+DECL|struct|__anon2952a23e0308
 block|{
 DECL|member|name
 specifier|const
@@ -4901,11 +4901,6 @@ name|lcms_icc_file_chooser_dialog_response
 argument_list|)
 argument_list|,
 name|combo
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|dialog
 argument_list|)
 expr_stmt|;
 if|if
