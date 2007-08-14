@@ -111,10 +111,10 @@ name|GtkTextBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-DECL|member|uri
+DECL|member|filename
 name|gchar
 modifier|*
-name|uri
+name|filename
 decl_stmt|;
 DECL|member|desc
 name|gchar

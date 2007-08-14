@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ceadec0103
+DECL|enum|__anon2ad1df8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -58,7 +58,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ceadec0208
+DECL|struct|__anon2ad1df8d0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -929,12 +929,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_add:  * @combo:  * @uri:  * @label:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_add:  * @combo:  * @filename:  * @label:  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_profile_combo_box_add (GimpColorProfileComboBox * combo,const gchar * uri,const gchar * label)
+DECL|function|gimp_color_profile_combo_box_add (GimpColorProfileComboBox * combo,const gchar * filename,const gchar * label)
 name|gimp_color_profile_combo_box_add
 parameter_list|(
 name|GimpColorProfileComboBox
@@ -944,7 +944,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
@@ -970,7 +970,7 @@ name|label
 operator|!=
 name|NULL
 operator|||
-name|uri
+name|filename
 operator|==
 name|NULL
 argument_list|)
@@ -992,7 +992,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|label
 argument_list|)
@@ -1001,12 +1001,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_set_active:  * @combo:  * @uri:  * @label:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_set_active:  * @combo:  * @filename:  * @label:  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_profile_combo_box_set_active (GimpColorProfileComboBox * combo,const gchar * uri,const gchar * label)
+DECL|function|gimp_color_profile_combo_box_set_active (GimpColorProfileComboBox * combo,const gchar * filename,const gchar * label)
 name|gimp_color_profile_combo_box_set_active
 parameter_list|(
 name|GimpColorProfileComboBox
@@ -1016,7 +1016,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
@@ -1058,7 +1058,7 @@ argument_list|(
 name|model
 argument_list|)
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|label
 argument_list|,
@@ -1138,7 +1138,7 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|uri
+name|filename
 decl_stmt|;
 name|gint
 name|type
@@ -1155,10 +1155,10 @@ argument_list|,
 operator|&
 name|type
 argument_list|,
-name|GIMP_COLOR_PROFILE_STORE_URI
+name|GIMP_COLOR_PROFILE_STORE_FILENAME
 argument_list|,
 operator|&
-name|uri
+name|filename
 argument_list|,
 operator|-
 literal|1
@@ -1171,11 +1171,11 @@ operator|==
 name|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
 condition|)
 return|return
-name|uri
+name|filename
 return|;
 name|g_free
 argument_list|(
-name|uri
+name|filename
 argument_list|)
 expr_stmt|;
 block|}

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9f71a0103
+DECL|enum|__anon2c75de440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -176,7 +176,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
@@ -371,7 +371,7 @@ block|,
 comment|/*  GIMP_COLOR_PROFILE_STORE_LABEL      */
 name|G_TYPE_STRING
 block|,
-comment|/*  GIMP_COLOR_PROFILE_STORE_URI        */
+comment|/*  GIMP_COLOR_PROFILE_STORE_FILENAME   */
 name|G_TYPE_INT
 comment|/*  GIMP_COLOR_PROFILE_STORE_INDEX      */
 block|}
@@ -783,12 +783,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_add:  * @store:  * @label:  * @uri:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_store_add:  * @store:  * @filename:  * @label:  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_color_profile_store_add (GimpColorProfileStore * store,const gchar * uri,const gchar * label)
+DECL|function|gimp_color_profile_store_add (GimpColorProfileStore * store,const gchar * filename,const gchar * label)
 name|gimp_color_profile_store_add
 parameter_list|(
 name|GimpColorProfileStore
@@ -798,7 +798,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
@@ -826,20 +826,18 @@ name|label
 operator|!=
 name|NULL
 operator|||
-name|uri
+name|filename
 operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|uri
-operator|==
-name|NULL
+operator|!
+name|filename
 operator|&&
+operator|!
 name|label
-operator|==
-name|NULL
 condition|)
 name|label
 operator|=
@@ -886,9 +884,9 @@ name|GIMP_COLOR_PROFILE_STORE_ITEM_TYPE
 argument_list|,
 name|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
 argument_list|,
-name|GIMP_COLOR_PROFILE_STORE_URI
+name|GIMP_COLOR_PROFILE_STORE_FILENAME
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|GIMP_COLOR_PROFILE_STORE_LABEL
 argument_list|,
@@ -907,12 +905,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_color_profile_store_history_add:  * @store:  * @uri:  * @label:  * @iter:  *  * Return value: %TRUE if the iter is valid and pointing to the item  *  * Since: GIMP 2.4  **/
+comment|/**  * _gimp_color_profile_store_history_add:  * @store:  * @filename:  * @label:  * @iter:  *  * Return value: %TRUE if the iter is valid and pointing to the item  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|_gimp_color_profile_store_history_add (GimpColorProfileStore * store,const gchar * uri,const gchar * label,GtkTreeIter * iter)
+DECL|function|_gimp_color_profile_store_history_add (GimpColorProfileStore * store,const gchar * filename,const gchar * label,GtkTreeIter * iter)
 name|_gimp_color_profile_store_history_add
 parameter_list|(
 name|GimpColorProfileStore
@@ -922,7 +920,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
@@ -1004,7 +1002,7 @@ name|index
 decl_stmt|;
 name|gchar
 modifier|*
-name|this_uri
+name|this
 decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
@@ -1043,17 +1041,17 @@ name|max
 operator|=
 name|index
 expr_stmt|;
-comment|/*  check if we found an URI match  */
+comment|/*  check if we found a filename match  */
 name|gtk_tree_model_get
 argument_list|(
 name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_COLOR_PROFILE_STORE_URI
+name|GIMP_COLOR_PROFILE_STORE_FILENAME
 argument_list|,
 operator|&
-name|this_uri
+name|this
 argument_list|,
 operator|-
 literal|1
@@ -1062,15 +1060,15 @@ expr_stmt|;
 if|if
 condition|(
 operator|(
-name|this_uri
+name|this
 operator|&&
-name|uri
+name|filename
 operator|&&
 name|strcmp
 argument_list|(
-name|uri
+name|filename
 argument_list|,
-name|this_uri
+name|this
 argument_list|)
 operator|==
 literal|0
@@ -1078,10 +1076,10 @@ operator|)
 operator|||
 operator|(
 operator|!
-name|this_uri
+name|this
 operator|&&
 operator|!
-name|uri
+name|filename
 operator|)
 condition|)
 block|{
@@ -1112,7 +1110,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|this_uri
+name|this
 argument_list|)
 expr_stmt|;
 return|return
@@ -1123,7 +1121,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|uri
+name|filename
 condition|)
 return|return
 name|FALSE
@@ -1144,7 +1142,7 @@ name|store
 argument_list|,
 name|iter
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|label
 argument_list|,
@@ -1155,19 +1153,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|g_filename_from_uri
-argument_list|(
-name|uri
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-decl_stmt|;
 name|gchar
 modifier|*
 name|basename
@@ -1185,7 +1170,7 @@ name|store
 argument_list|,
 name|iter
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|basename
 argument_list|,
@@ -1198,11 +1183,6 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
 block|}
 return|return
 name|iter_valid
@@ -1213,7 +1193,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_color_profile_store_history_insert (GimpColorProfileStore * store,GtkTreeIter * iter,const gchar * uri,const gchar * label,gint index)
+DECL|function|gimp_color_profile_store_history_insert (GimpColorProfileStore * store,GtkTreeIter * iter,const gchar * filename,const gchar * label,gint index)
 name|gimp_color_profile_store_history_insert
 parameter_list|(
 name|GimpColorProfileStore
@@ -1227,7 +1207,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
@@ -1255,7 +1235,7 @@ name|iter_valid
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|uri
+name|filename
 operator|!=
 name|NULL
 argument_list|,
@@ -1454,9 +1434,9 @@ name|GIMP_COLOR_PROFILE_STORE_ITEM_TYPE
 argument_list|,
 name|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
 argument_list|,
-name|GIMP_COLOR_PROFILE_STORE_URI
+name|GIMP_COLOR_PROFILE_STORE_FILENAME
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|GIMP_COLOR_PROFILE_STORE_LABEL
 argument_list|,
@@ -1782,6 +1762,23 @@ name|uri
 argument_list|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|filename
+init|=
+name|g_filename_from_uri
+argument_list|(
+name|uri
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|filename
+condition|)
 name|gimp_color_profile_store_history_insert
 argument_list|(
 name|store
@@ -1789,11 +1786,16 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|uri
+name|filename
 argument_list|,
 name|label
 argument_list|,
 name|index
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2113,7 +2115,7 @@ name|label
 decl_stmt|;
 name|gchar
 modifier|*
-name|uri
+name|filename
 decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
@@ -2127,10 +2129,10 @@ argument_list|,
 operator|&
 name|label
 argument_list|,
-name|GIMP_COLOR_PROFILE_STORE_URI
+name|GIMP_COLOR_PROFILE_STORE_FILENAME
 argument_list|,
 operator|&
-name|uri
+name|filename
 argument_list|,
 operator|-
 literal|1
@@ -2138,9 +2140,27 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|uri
+name|filename
 operator|&&
 name|label
+condition|)
+block|{
+name|gchar
+modifier|*
+name|uri
+init|=
+name|g_filename_to_uri
+argument_list|(
+name|filename
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|uri
 condition|)
 block|{
 name|gimp_config_writer_open
@@ -2169,10 +2189,16 @@ argument_list|(
 name|writer
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|uri
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+name|g_free
+argument_list|(
+name|filename
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -203,7 +203,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|filename
 parameter_list|,
 specifier|const
 name|gchar
