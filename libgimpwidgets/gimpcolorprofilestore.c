@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf8e880103
+DECL|enum|__anon2ba9f71a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1122,6 +1122,14 @@ block|}
 block|}
 if|if
 condition|(
+operator|!
+name|uri
+condition|)
+return|return
+name|FALSE
+return|;
+if|if
+condition|(
 name|label
 operator|&&
 operator|*
@@ -1145,11 +1153,7 @@ name|max
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|uri
-condition|)
+else|else
 block|{
 name|gchar
 modifier|*
@@ -1199,12 +1203,6 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-return|return
-name|FALSE
-return|;
 block|}
 return|return
 name|iter_valid
