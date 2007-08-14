@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ae66c20103
+DECL|enum|__anon2756deee0103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -316,7 +316,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ae66c20208
+DECL|struct|__anon2756deee0208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +566,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29ae66c20308
+DECL|struct|__anon2756deee0308
 block|{
 DECL|member|signature
 name|gchar
@@ -3877,10 +3877,13 @@ name|GIMP_MAX_IMAGE_SIZE
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"Input file has a larger layer size than GIMP can handle."
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 if|if
@@ -3902,10 +3905,13 @@ name|height
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"Input file has a larger layer size than GIMP can handle."
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|IFDBG
@@ -4556,10 +4562,13 @@ name|GIMP_MAX_IMAGE_SIZE
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"Input file has a larger layer mask size than GIMP can handle."
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 if|if
@@ -4581,10 +4590,13 @@ name|lm_height
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"Input file has a larger layer mask size than GIMP can handle."
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|color
@@ -13283,7 +13295,7 @@ operator|>
 literal|56
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"'%s' has more channels than GIMP can handle."
 argument_list|,
@@ -13292,6 +13304,9 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|PSDheader
@@ -13336,7 +13351,7 @@ name|GIMP_MAX_IMAGE_SIZE
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"'%s' has a larger image size than GIMP can handle."
 argument_list|,
@@ -13345,6 +13360,9 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 if|if
@@ -13366,7 +13384,7 @@ name|rows
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"'%s' has a larger image size than GIMP can handle."
 argument_list|,
@@ -13375,6 +13393,9 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|PSDheader

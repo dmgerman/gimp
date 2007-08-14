@@ -1591,7 +1591,7 @@ literal|6
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"'%s' seems to have an incorrect value field length."
 argument_list|,
@@ -1600,6 +1600,9 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 comment|/* Read contents. Allocate a bit more to make room for casts to int        below. */
@@ -1830,7 +1833,7 @@ name|GIMP_MAX_IMAGE_SIZE
 operator|)
 condition|)
 block|{
-name|g_error
+name|g_message
 argument_list|(
 literal|"'%s' has a larger image size than GIMP can handle."
 argument_list|,
@@ -1839,6 +1842,9 @@ argument_list|(
 name|filename
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
 expr_stmt|;
 block|}
 name|dicominfo
