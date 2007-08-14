@@ -136,6 +136,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpColorProfileComboBox
+typedef|typedef
+name|struct
+name|_GimpColorProfileComboBox
+name|GimpColorProfileComboBox
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpColorProfileStore
+typedef|typedef
+name|struct
+name|_GimpColorProfileStore
+name|GimpColorProfileStore
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorScale
 typedef|typedef
 name|struct

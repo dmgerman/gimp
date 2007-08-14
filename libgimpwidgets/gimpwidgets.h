@@ -91,6 +91,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcolorprofilecombobox.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpwidgets/gimpcolorprofilestore.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpcolorscale.h>
 end_include
 
