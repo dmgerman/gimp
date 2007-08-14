@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2952a23e0103
+DECL|enum|__anon2944359b0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2952a23e0203
+DECL|enum|__anon2944359b0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952a23e0308
+DECL|struct|__anon2944359b0308
 block|{
 DECL|member|name
 specifier|const
@@ -4860,6 +4860,10 @@ name|gchar
 modifier|*
 name|name
 decl_stmt|;
+name|gchar
+modifier|*
+name|uri
+decl_stmt|;
 name|cmsHPROFILE
 name|profile
 decl_stmt|;
@@ -4967,6 +4971,30 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|config
+operator|->
+name|rgb_profile
+condition|)
+name|uri
+operator|=
+name|g_filename_to_uri
+argument_list|(
+name|config
+operator|->
+name|rgb_profile
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+else|else
+name|uri
+operator|=
+name|NULL
+expr_stmt|;
 name|gimp_color_profile_combo_box_add
 argument_list|(
 name|GIMP_COLOR_PROFILE_COMBO_BOX
@@ -4974,11 +5002,14 @@ argument_list|(
 name|combo
 argument_list|)
 argument_list|,
-name|config
-operator|->
-name|rgb_profile
+name|uri
 argument_list|,
 name|label
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|uri
 argument_list|)
 expr_stmt|;
 name|g_free
