@@ -532,7 +532,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_item_list_get_list:  * @item:  A linked @item.  * @which: Which items to return.  *  * This function returns a #GList og #GimpItem's for which the  * "linked" property is #TRUE. Note that the passed in @item  * must be linked too.  *  * Return value: The list of linked items, excluding the passed @item.  **/
+comment|/**  * gimp_image_item_list_get_list:  * @image:   An @image.  * @exclude: An item to exclude.  * @type:    Which type of items to return.  * @set:     Set the returned items are part of.  *  * This function returns a #GList of #GimpItem<!-- -->s for which the  * @type and @set criterions match.  *  * Return value: The list of items, excluding @exclude.  **/
 end_comment
 
 begin_function
