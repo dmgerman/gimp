@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27972e7d0108
+DECL|struct|__anon292a087c0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -1954,7 +1954,7 @@ name|config
 operator|->
 name|opacity
 operator|/
-literal|25600.0
+literal|25500.0
 expr_stmt|;
 operator|*
 operator|(
