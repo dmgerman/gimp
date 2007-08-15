@@ -38,6 +38,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPlugInDebug
+typedef|typedef
+name|struct
+name|_GimpPlugInDebug
+name|GimpPlugInDebug
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPlugInDef
 typedef|typedef
 name|struct

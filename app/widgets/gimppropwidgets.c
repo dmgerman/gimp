@@ -1482,7 +1482,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1b9c840108
+DECL|struct|__anon2bae3d970108
 block|{
 DECL|member|config
 name|GObject
@@ -1603,7 +1603,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_number_pair_entry_new:  * @config:                        Object to which properties are attached.  * @left_number_property:          Name of double property for left number.  * @right_number_property:         Name of double property for right number.  * @default_left_number_property:  Name of double property for default left number.  * @default_right_number_property: Name of double property for default right number.  * @user_override_property:        Name of boolean property for user override mode.  * @connect_numbers_changed:       %TRUE to connect to the widgets "numbers-changed"  *                                 signal, %FALSE to not connect.  * @connect_numbers_changed:       %TRUE to connect to the widgets "ratio-changed"  *                                 signal, %FALSE to not connect.  * @separators:  * @allow_simplification:  * @min_valid_value:  * @max_valid_value:         What to pass to gimp_number_pair_entry_new ().  *  * Return value: A #GimpNumberPairEntry widget.  */
+comment|/**  * gimp_prop_number_pair_entry_new:  * @config:                        Object to which properties are attached.  * @left_number_property:          Name of double property for left number.  * @right_number_property:         Name of double property for right number.  * @default_left_number_property:  Name of double property for default left number.  * @default_right_number_property: Name of double property for default right number.  * @user_override_property:        Name of boolean property for user override mode.  * @connect_numbers_changed:       %TRUE to connect to the widgets "numbers-changed"  *                                 signal, %FALSE to not connect.  * @connect_ratio_changed:         %TRUE to connect to the widgets "ratio-changed"  *                                 signal, %FALSE to not connect.  * @separators:  * @allow_simplification:  * @min_valid_value:  * @max_valid_value:         What to pass to gimp_number_pair_entry_new ().  *  * Return value: A #GimpNumberPairEntry widget.  */
 end_comment
 
 begin_function
