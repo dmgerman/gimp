@@ -6448,8 +6448,14 @@ operator|->
 name|drawable_id
 expr_stmt|;
 comment|/* create the appropriate object type */
+comment|/* avoids calling gimp_drawable_is_layer with an invalid id      * pygimp_channel_new handles it cleanly       */
 if|if
 condition|(
+name|gimp_drawable_is_valid
+argument_list|(
+name|ID
+argument_list|)
+operator|&&
 name|gimp_drawable_is_layer
 argument_list|(
 name|ID
