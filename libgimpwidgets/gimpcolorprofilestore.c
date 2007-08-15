@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c75de440103
+DECL|enum|__anon2ae06bdc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -752,7 +752,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_new:  * @history:  *  * Return value: a new #GimpColorProfileStore.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_store_new:  * @history: filename of the profilerc (or %NULL for no history)  *  * Creates a new #GimpColorProfileStore object and populates it with  * last used profiles read from the file @history. The updated history  * is written back to disk when the store is disposed.  *  * The filename passed as @history is typically created using the  * following code snippet:  *<informalexample><programlisting>  *  gchar *history = gimp_personal_rc_file ("profilerc");  *</programlisting></informalexample>  *  * Return value: a new #GimpColorProfileStore  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -783,7 +783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_store_add:  * @store:  * @filename:  * @label:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_store_add:  * @store:  * @filename:  * @label:  *  * Adds an item to the #GimpColorProfileStore. Items added with this  * function will be kept at the top, separated from the history of last  * used items.  *  * This function is often used to add a selectable item for the %NULL  * filename. If you pass %NULL for both @filename and @label, the  * @label will be set to the string "None" for you (and translated for  * the user).  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
