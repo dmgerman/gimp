@@ -1088,6 +1088,19 @@ block|}
 name|gimp_progress_end
 argument_list|()
 expr_stmt|;
+comment|/* generate events to solve the problems described in bug #466928 */
+name|g_timeout_add
+argument_list|(
+literal|1000
+argument_list|,
+operator|(
+name|GSourceFunc
+operator|)
+name|gtk_true
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
