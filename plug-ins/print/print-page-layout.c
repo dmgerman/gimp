@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48ab050108
+DECL|struct|__anon274f98880108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c48ab050203
+DECL|enum|__anon274f98880203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -669,9 +669,9 @@ argument_list|)
 argument_list|,
 name|main_hbox
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
