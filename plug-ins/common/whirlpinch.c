@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afdc4eb0108
+DECL|struct|__anon29a50c530108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -603,10 +603,10 @@ operator|&
 name|sel_y1
 argument_list|,
 operator|&
-name|sel_x2
+name|sel_width
 argument_list|,
 operator|&
-name|sel_y2
+name|sel_height
 argument_list|)
 condition|)
 block|{
@@ -631,17 +631,17 @@ name|ntile_cols
 argument_list|)
 expr_stmt|;
 comment|/* Calculate scaling parameters */
-name|sel_width
-operator|=
 name|sel_x2
-operator|-
-name|sel_x1
-expr_stmt|;
-name|sel_height
 operator|=
+name|sel_x1
+operator|+
+name|sel_width
+expr_stmt|;
 name|sel_y2
-operator|-
+operator|=
 name|sel_y1
+operator|+
+name|sel_height
 expr_stmt|;
 name|cen_x
 operator|=
