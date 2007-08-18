@@ -2175,7 +2175,7 @@ name|group
 argument_list|,
 literal|"view-zoom-revert"
 argument_list|,
-name|N_
+name|_
 argument_list|(
 literal|"Re_vert Zoom"
 argument_list|)
