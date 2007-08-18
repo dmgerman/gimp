@@ -290,6 +290,9 @@ parameter_list|(
 name|GimpCropTool
 modifier|*
 name|crop_tool
+parameter_list|,
+name|gboolean
+name|ignore_pending
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -740,6 +743,8 @@ name|GIMP_CROP_TOOL
 argument_list|(
 name|object
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -899,6 +904,8 @@ name|GIMP_CROP_TOOL
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_button_release
@@ -1263,6 +1270,8 @@ name|GIMP_CROP_TOOL
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1276,11 +1285,11 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_crop_tool_update_default_fixed_ratio_options:  * @crop_tool:  *  * Sets the default aspect numerator/denominator to that of the current  * layer/image/pending crop rectangle.  */
+comment|/**  * gimp_crop_tool_update_default_fixed_ratio_options:  * @crop_tool:  * @ignore_pending: %TRUE to ignore any pending crop rectangle.  *  * Sets the default aspect numerator/denominator to that of the current  * layer/image/pending crop rectangle.  */
 end_comment
 
 begin_function
-DECL|function|gimp_crop_tool_update_default_fixed_ratio_options (GimpCropTool * crop_tool)
+DECL|function|gimp_crop_tool_update_default_fixed_ratio_options (GimpCropTool * crop_tool,gboolean ignore_pending)
 specifier|static
 name|void
 name|gimp_crop_tool_update_default_fixed_ratio_options
@@ -1288,6 +1297,9 @@ parameter_list|(
 name|GimpCropTool
 modifier|*
 name|crop_tool
+parameter_list|,
+name|gboolean
+name|ignore_pending
 parameter_list|)
 block|{
 name|GimpTool
@@ -1336,6 +1348,9 @@ operator|->
 name|display
 operator|!=
 name|NULL
+operator|&&
+operator|!
+name|ignore_pending
 condition|)
 block|{
 name|gint
@@ -1569,6 +1584,8 @@ name|GIMP_CROP_TOOL
 argument_list|(
 name|tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1599,6 +1616,8 @@ name|GIMP_CROP_TOOL
 argument_list|(
 name|crop_tool
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
