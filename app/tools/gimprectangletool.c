@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de5d900103
+DECL|enum|__anon2bacc59e0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -181,7 +181,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de5d900203
+DECL|enum|__anon2bacc59e0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -232,7 +232,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de5d900303
+DECL|enum|__anon2bacc59e0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -11144,6 +11144,16 @@ argument_list|(
 name|rectangle_tool
 argument_list|)
 expr_stmt|;
+comment|/* If the rectangle is being moved, we are done already since we should change it's shape then. */
+if|if
+condition|(
+name|private
+operator|->
+name|function
+operator|==
+name|RECT_MOVING
+condition|)
+return|return;
 comment|/* Apply the active fixed-rule */
 if|if
 condition|(
