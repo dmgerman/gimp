@@ -4264,19 +4264,19 @@ literal|2
 expr_stmt|;
 name|top_weight
 operator|>>=
-literal|3
+literal|2
 expr_stmt|;
 name|bottom_weight
 operator|>>=
-literal|3
+literal|2
 expr_stmt|;
 name|center_weight
 operator|>>=
-literal|3
+literal|2
 expr_stmt|;
 name|sum
 operator|>>=
-literal|5
+literal|4
 expr_stmt|;
 comment|/* need to adjust the sum of weights accordingly as                            well */
 switch|switch
@@ -5094,13 +5094,13 @@ name|info
 operator|->
 name|scalex
 operator|<
-literal|0.20
+literal|0.25
 operator|||
 name|info
 operator|->
 name|scaley
 operator|<
-literal|0.20
+literal|0.25
 operator|)
 condition|)
 comment|/* use nearest neighbour scaling when being abused, to avoid integer overflows */
@@ -7276,7 +7276,7 @@ modifier|*
 name|info
 parameter_list|)
 block|{
-comment|/* NOTE: there are some additional overhead that can be factored out    * in the tile administration in this fast path, see above commented    * out code for inspiration.    */
+comment|/* NOTE: there are some additional overhead that can be factored out    * in the tile administration in this fast path    */
 name|Tile
 modifier|*
 name|tile0
