@@ -4172,7 +4172,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|compute_sample (gint left_weight,gint middle_weight,gint right_weight,gint top_weight,gint center_weight,gint bottom_weight,gint sum,const guchar * src[9],guchar * dest,gint bpp)
+DECL|function|compute_sample (gint left_weight,gint middle_weight,gint right_weight,gint top_weight,gint center_weight,gint bottom_weight,gint sum,const guchar ** src,guchar * dest,gint bpp)
 name|compute_sample
 parameter_list|(
 name|gint
@@ -4199,10 +4199,8 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
+modifier|*
 name|src
-index|[
-literal|9
-index|]
 parameter_list|,
 name|guchar
 modifier|*
