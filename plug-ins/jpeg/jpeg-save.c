@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aaa96e0108
+DECL|struct|__anon2c13c8900108
 block|{
 DECL|member|cinfo
 name|struct
@@ -346,7 +346,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aaa96e0208
+DECL|struct|__anon2c13c8900208
 block|{
 DECL|member|run
 name|gboolean
@@ -4694,7 +4694,8 @@ name|gtk_check_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Use custom quality settings"
+literal|"Use quality settings from original "
+literal|"image"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6408,7 +6409,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aaa96e0308
+DECL|struct|__anon2c13c8900308
 block|{
 DECL|member|pub
 name|struct
