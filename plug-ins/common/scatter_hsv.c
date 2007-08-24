@@ -183,8 +183,8 @@ parameter_list|,
 name|gint
 name|max
 parameter_list|,
-name|gint
-name|mod_p
+name|gboolean
+name|wraps_around
 parameter_list|,
 name|gint
 name|rand_max
@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb9d830108
+DECL|struct|__anon298db6b10108
 block|{
 DECL|member|holdness
 name|gint
@@ -324,7 +324,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"hue-distance"
 block|,
-literal|"distribution distance on hue axis [0,255]"
+literal|"scattering of hue angle [0,180]"
 block|}
 block|,
 block|{
@@ -581,6 +581,8 @@ name|VALS
 operator|.
 name|holdness
 operator|=
+name|CLAMP
+argument_list|(
 name|param
 index|[
 literal|3
@@ -589,11 +591,18 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|,
+literal|1
+argument_list|,
+literal|8
+argument_list|)
 expr_stmt|;
 name|VALS
 operator|.
 name|hue_distance
 operator|=
+name|CLAMP
+argument_list|(
 name|param
 index|[
 literal|4
@@ -602,11 +611,18 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|,
+literal|0
+argument_list|,
+literal|180
+argument_list|)
 expr_stmt|;
 name|VALS
 operator|.
 name|saturation_distance
 operator|=
+name|CLAMP
+argument_list|(
 name|param
 index|[
 literal|5
@@ -615,11 +631,18 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|)
 expr_stmt|;
 name|VALS
 operator|.
 name|value_distance
 operator|=
+name|CLAMP
+argument_list|(
 name|param
 index|[
 literal|6
@@ -628,6 +651,11 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -863,7 +891,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|randomize_value (gint now,gint min,gint max,gint mod_p,gint rand_max)
+DECL|function|randomize_value (gint now,gint min,gint max,gboolean wraps_around,gint rand_max)
 name|randomize_value
 parameter_list|(
 name|gint
@@ -875,8 +903,8 @@ parameter_list|,
 name|gint
 name|max
 parameter_list|,
-name|gint
-name|mod_p
+name|gboolean
+name|wraps_around
 parameter_list|,
 name|gint
 name|rand_max
@@ -985,9 +1013,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|mod_p
+name|wraps_around
 operator|==
-literal|1
+name|TRUE
 condition|)
 name|new
 operator|+=
@@ -1008,9 +1036,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|mod_p
+name|wraps_around
 operator|==
-literal|1
+name|TRUE
 condition|)
 name|new
 operator|-=
@@ -1111,9 +1139,9 @@ name|h
 argument_list|,
 literal|0
 argument_list|,
-literal|255
+literal|360
 argument_list|,
-literal|1
+name|TRUE
 argument_list|,
 name|VALS
 operator|.
@@ -1140,7 +1168,7 @@ literal|0
 argument_list|,
 literal|255
 argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 name|VALS
 operator|.
@@ -1167,7 +1195,7 @@ literal|0
 argument_list|,
 literal|255
 argument_list|,
-literal|0
+name|FALSE
 argument_list|,
 name|VALS
 operator|.
@@ -1820,11 +1848,11 @@ name|hue_distance
 argument_list|,
 literal|0
 argument_list|,
-literal|255
+literal|180
 argument_list|,
 literal|1
 argument_list|,
-literal|8
+literal|6
 argument_list|,
 literal|0
 argument_list|,
