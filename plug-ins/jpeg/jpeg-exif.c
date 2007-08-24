@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * EXIF-handling code for the jpeg plugin.  May eventually be better  * to move this stuff into libgimpbase and make it available for  * other plugins.  */
+comment|/*  * EXIF-handling code for the jpeg plugin.  May eventually be better  * to move this stuff into libgimpbase or a new libgimpmetadata and  * make it available for other plugins.  */
 end_comment
 
 begin_include
@@ -97,6 +97,12 @@ begin_include
 include|#
 directive|include
 file|"jpeg.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"jpeg-settings.h"
 end_include
 
 begin_include
@@ -919,6 +925,11 @@ argument_list|,
 name|GIMP_ROTATE_90
 argument_list|)
 expr_stmt|;
+name|jpeg_swap_original_settings
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 name|gimp_image_flip
 argument_list|(
 name|image_ID
@@ -938,6 +949,11 @@ argument_list|,
 name|GIMP_ROTATE_90
 argument_list|)
 expr_stmt|;
+name|jpeg_swap_original_settings
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 literal|7
@@ -948,6 +964,11 @@ argument_list|(
 name|image_ID
 argument_list|,
 name|GIMP_ROTATE_90
+argument_list|)
+expr_stmt|;
+name|jpeg_swap_original_settings
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 name|gimp_image_flip
@@ -967,6 +988,11 @@ argument_list|(
 name|image_ID
 argument_list|,
 name|GIMP_ROTATE_270
+argument_list|)
+expr_stmt|;
+name|jpeg_swap_original_settings
+argument_list|(
+name|image_ID
 argument_list|)
 expr_stmt|;
 break|break;
