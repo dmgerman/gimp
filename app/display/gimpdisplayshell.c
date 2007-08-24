@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffdf850103
+DECL|enum|__anon2a909ef70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffdf850203
+DECL|enum|__anon2a909ef70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7097,12 +7097,18 @@ name|shell
 operator|->
 name|highlight
 operator|=
-name|g_slice_dup
+name|g_slice_new
 argument_list|(
 name|GdkRectangle
-argument_list|,
-name|highlight
 argument_list|)
+expr_stmt|;
+operator|*
+name|shell
+operator|->
+name|highlight
+operator|=
+operator|*
+name|highlight
 expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(
