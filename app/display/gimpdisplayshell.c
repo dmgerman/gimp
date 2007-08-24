@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd700e0103
+DECL|enum|__anon28ffdf850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbd700e0203
+DECL|enum|__anon28ffdf850203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1813,8 +1813,10 @@ operator|->
 name|highlight
 condition|)
 block|{
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GdkRectangle
+argument_list|,
 name|shell
 operator|->
 name|highlight
@@ -7063,8 +7065,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GdkRectangle
+argument_list|,
 name|shell
 operator|->
 name|highlight
@@ -7093,14 +7097,11 @@ name|shell
 operator|->
 name|highlight
 operator|=
-name|g_memdup
-argument_list|(
-name|highlight
-argument_list|,
-sizeof|sizeof
+name|g_slice_dup
 argument_list|(
 name|GdkRectangle
-argument_list|)
+argument_list|,
+name|highlight
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_full
