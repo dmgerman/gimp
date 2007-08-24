@@ -171,7 +171,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|gimp_zoom_quality
-comment|/*GIMP_DISPLAY_ZOOM_PIXEL_AA;  */
+comment|/*GIMP_DISPLAY_ZOOM_PIXEL_AA;*/
 end_comment
 
 begin_typedef
@@ -4241,7 +4241,6 @@ parameter_list|,
 name|gint
 name|sum
 parameter_list|,
-comment|/* divisor for */
 specifier|const
 name|guchar
 modifier|*
@@ -4257,36 +4256,6 @@ name|gint
 name|bpp
 parameter_list|)
 block|{
-comment|/* adjusting the weights to avoid integer overflowing */
-name|left_weight
-operator|>>=
-literal|2
-expr_stmt|;
-name|right_weight
-operator|>>=
-literal|2
-expr_stmt|;
-name|middle_weight
-operator|>>=
-literal|2
-expr_stmt|;
-name|top_weight
-operator|>>=
-literal|2
-expr_stmt|;
-name|bottom_weight
-operator|>>=
-literal|2
-expr_stmt|;
-name|center_weight
-operator|>>=
-literal|2
-expr_stmt|;
-name|sum
-operator|>>=
-literal|4
-expr_stmt|;
-comment|/* need to adjust the sum of weights accordingly as                            well */
 switch|switch
 condition|(
 name|bpp
@@ -4295,7 +4264,7 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|gint
+name|guint
 name|a
 decl_stmt|;
 case|case
@@ -4307,7 +4276,7 @@ directive|define
 name|ALPHA
 value|3
 block|{
-name|gint
+name|guint
 name|factors
 index|[
 literal|9
@@ -4405,6 +4374,26 @@ operator|*
 name|bottom_weight
 block|}
 decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|9
+condition|;
+name|i
+operator|++
+control|)
+name|factors
+index|[
+name|i
+index|]
+operator|>>=
+literal|8
+expr_stmt|;
 name|a
 operator|=
 operator|(
@@ -4471,9 +4460,17 @@ index|[
 name|ALPHA
 index|]
 operator|=
+operator|(
 name|a
+operator|<<
+literal|4
+operator|)
 operator|/
+operator|(
 name|sum
+operator|>>
+literal|4
+operator|)
 expr_stmt|;
 for|for
 control|(
@@ -4482,19 +4479,21 @@ operator|=
 literal|0
 init|;
 name|i
-operator|<
+operator|<=
 name|ALPHA
 condition|;
 name|i
 operator|++
 control|)
 block|{
-name|gint
+name|guint
 name|res
 decl_stmt|;
 if|if
 condition|(
 name|a
+operator|>
+literal|0.001
 condition|)
 block|{
 name|res
@@ -4693,7 +4692,7 @@ name|ALPHA
 value|1
 comment|/* NOTE: this is a copy and paste of the code above, the ALPHA changes          * the behavior in all needed ways. */
 block|{
-name|gint
+name|guint
 name|factors
 index|[
 literal|9
@@ -4791,6 +4790,26 @@ operator|*
 name|bottom_weight
 block|}
 decl_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|9
+condition|;
+name|i
+operator|++
+control|)
+name|factors
+index|[
+name|i
+index|]
+operator|>>=
+literal|8
+expr_stmt|;
 name|a
 operator|=
 operator|(
@@ -4857,9 +4876,17 @@ index|[
 name|ALPHA
 index|]
 operator|=
+operator|(
 name|a
+operator|<<
+literal|4
+operator|)
 operator|/
+operator|(
 name|sum
+operator|>>
+literal|4
+operator|)
 expr_stmt|;
 for|for
 control|(
@@ -4868,19 +4895,21 @@ operator|=
 literal|0
 init|;
 name|i
-operator|<
+operator|<=
 name|ALPHA
 condition|;
 name|i
 operator|++
 control|)
 block|{
-name|gint
+name|guint
 name|res
 decl_stmt|;
 if|if
 condition|(
 name|a
+operator|>
+literal|0.001
 condition|)
 block|{
 name|res
@@ -5225,7 +5254,7 @@ operator|==
 literal|1.0
 operator|)
 operator|||
-comment|/* use nearest neighbour for exact use of                                    levels */
+comment|/* use nearest neighbour for exact levels */
 operator|(
 name|info
 operator|->
@@ -5252,23 +5281,7 @@ name|GIMP_DISPLAY_ZOOM_PIXEL_AA
 operator|)
 operator|)
 operator|)
-operator|||
-comment|/* use nearest neighbour interpolation when the desired scale        * is 1:1 with the available pyramid. By removing this optimization        * zoom levels> 100% will have antialiasing on the crossings in the        * borders of the pixelation cells.        */
-operator|(
-name|info
-operator|->
-name|scalex
-operator|<
-literal|0.25
-operator|||
-name|info
-operator|->
-name|scaley
-operator|<
-literal|0.25
-operator|)
 condition|)
-comment|/* use nearest neighbour scaling when being abused, to avoid integer          * overflows */
 block|{
 return|return
 name|render_image_tile_fault_nearest
@@ -5277,7 +5290,6 @@ name|info
 argument_list|)
 return|;
 block|}
-comment|/* FIXME: it is crucial that this fast path is migrated to the    * proper box filter code as well before commiting to GIMP */
 elseif|else
 if|if
 condition|(
@@ -8164,7 +8176,7 @@ if|if
 condition|(
 name|tile
 index|[
-literal|2
+literal|0
 index|]
 condition|)
 block|{
@@ -8177,7 +8189,7 @@ name|tile_data_pointer
 argument_list|(
 name|tile
 index|[
-literal|2
+literal|0
 index|]
 argument_list|,
 operator|(
