@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298db6b10108
+DECL|struct|__anon2bfd1a1d0108
 block|{
 DECL|member|holdness
 name|gint
@@ -559,7 +559,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Cannot operate on non-RGB drawables."
+name|_
+argument_list|(
+literal|"Can only operate on RGB drawables."
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1014,8 +1017,6 @@ block|{
 if|if
 condition|(
 name|wraps_around
-operator|==
-name|TRUE
 condition|)
 name|new
 operator|+=
@@ -1037,8 +1038,6 @@ block|{
 if|if
 condition|(
 name|wraps_around
-operator|==
-name|TRUE
 condition|)
 name|new
 operator|-=
@@ -1057,9 +1056,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|scatter_hsv_scatter (guchar * r,guchar * g,guchar * b)
 specifier|static
 name|void
+DECL|function|scatter_hsv_scatter (guchar * r,guchar * g,guchar * b)
 name|scatter_hsv_scatter
 parameter_list|(
 name|guchar
@@ -1125,11 +1124,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-literal|0
-operator|<
 name|VALS
 operator|.
 name|hue_distance
+operator|>
+literal|0
 condition|)
 name|h
 operator|=
@@ -1150,13 +1149,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
-literal|0
-operator|<
 name|VALS
 operator|.
 name|saturation_distance
-operator|)
+operator|>
+literal|0
 condition|)
 name|s
 operator|=
@@ -1177,13 +1174,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
-literal|0
-operator|<
 name|VALS
 operator|.
 name|value_distance
-operator|)
+operator|>
+literal|0
 condition|)
 name|v
 operator|=
