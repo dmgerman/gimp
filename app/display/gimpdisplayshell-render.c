@@ -4212,8 +4212,8 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|compute_sample (guint left_weight,guint center_weight,guint right_weight,guint top_weight,guint middle_weight,guint bottom_weight,guint sum,const guchar ** src,guchar * dest,gint bpp)
-name|compute_sample
+DECL|function|box_filter (guint left_weight,guint center_weight,guint right_weight,guint top_weight,guint middle_weight,guint bottom_weight,guint sum,const guchar ** src,guchar * dest,gint bpp)
+name|box_filter
 parameter_list|(
 name|guint
 name|left_weight
@@ -5028,7 +5028,7 @@ break|break;
 default|default:
 name|g_warning
 argument_list|(
-literal|"bpp=%i not implemented as bicubic filter"
+literal|"bpp=%i not implemented as box filter"
 argument_list|,
 name|bpp
 argument_list|)
@@ -5212,7 +5212,7 @@ name|GIMP_DISPLAY_ZOOM_PIXEL_AA
 operator|)
 operator|)
 operator|)
-comment|/* or at any point when we're at more than 200% */
+comment|/* or at any point when both scale factors are more than 200% */
 operator|||
 operator|(
 name|info
@@ -5222,7 +5222,7 @@ operator|->
 name|scale_x
 operator|>
 literal|2.0
-operator|||
+operator|&&
 name|info
 operator|->
 name|shell
@@ -5308,7 +5308,7 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* all the tiles needed are in a single row */
+comment|/* all the tiles needed are in a single row, use a tile iterator        * optimized for this case. */
 return|return
 name|render_image_tile_fault_one_row
 argument_list|(
@@ -6267,7 +6267,7 @@ name|left_weight
 operator|-
 name|right_weight
 expr_stmt|;
-name|compute_sample
+name|box_filter
 argument_list|(
 name|left_weight
 argument_list|,
@@ -8535,7 +8535,7 @@ name|left_weight
 operator|-
 name|right_weight
 expr_stmt|;
-name|compute_sample
+name|box_filter
 argument_list|(
 name|left_weight
 argument_list|,
