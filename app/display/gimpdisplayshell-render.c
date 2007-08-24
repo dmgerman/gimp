@@ -4212,14 +4212,14 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|compute_sample (guint left_weight,guint middle_weight,guint right_weight,guint top_weight,guint center_weight,guint bottom_weight,guint sum,const guchar ** src,guchar * dest,gint bpp)
+DECL|function|compute_sample (guint left_weight,guint center_weight,guint right_weight,guint top_weight,guint middle_weight,guint bottom_weight,guint sum,const guchar ** src,guchar * dest,gint bpp)
 name|compute_sample
 parameter_list|(
 name|guint
 name|left_weight
 parameter_list|,
 name|guint
-name|middle_weight
+name|center_weight
 parameter_list|,
 name|guint
 name|right_weight
@@ -4228,7 +4228,7 @@ name|guint
 name|top_weight
 parameter_list|,
 name|guint
-name|center_weight
+name|middle_weight
 parameter_list|,
 name|guint
 name|bottom_weight
@@ -4301,7 +4301,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|center_weight
+name|middle_weight
 operator|)
 operator|>>
 literal|8
@@ -4343,7 +4343,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|center_weight
+name|middle_weight
 operator|)
 operator|>>
 literal|8
@@ -4385,7 +4385,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|center_weight
+name|middle_weight
 operator|)
 operator|>>
 literal|8
@@ -4408,7 +4408,7 @@ decl_stmt|;
 name|a
 operator|=
 operator|(
-name|middle_weight
+name|center_weight
 operator|*
 operator|(
 name|factors
@@ -4501,7 +4501,7 @@ index|]
 operator|=
 operator|(
 operator|(
-name|middle_weight
+name|center_weight
 operator|*
 operator|(
 name|factors
@@ -4683,7 +4683,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|center_weight
+name|middle_weight
 operator|)
 operator|>>
 literal|8
@@ -4725,7 +4725,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|center_weight
+name|middle_weight
 operator|)
 operator|>>
 literal|8
@@ -4767,7 +4767,7 @@ index|[
 name|ALPHA
 index|]
 operator|*
-name|center_weight
+name|middle_weight
 operator|)
 operator|>>
 literal|8
@@ -4790,7 +4790,7 @@ decl_stmt|;
 name|a
 operator|=
 operator|(
-name|middle_weight
+name|center_weight
 operator|*
 operator|(
 name|factors
@@ -4883,7 +4883,7 @@ index|]
 operator|=
 operator|(
 operator|(
-name|middle_weight
+name|center_weight
 operator|*
 operator|(
 name|factors
@@ -5147,7 +5147,7 @@ name|guint
 name|left_weight
 decl_stmt|;
 name|guint
-name|middle_weight
+name|center_weight
 decl_stmt|;
 name|guint
 name|right_weight
@@ -5156,7 +5156,7 @@ name|guint
 name|top_weight
 decl_stmt|;
 name|guint
-name|center_weight
+name|middle_weight
 decl_stmt|;
 name|guint
 name|bottom_weight
@@ -5402,7 +5402,7 @@ operator|-
 name|dy
 operator|)
 expr_stmt|;
-name|center_weight
+name|middle_weight
 operator|=
 name|footprint_y
 operator|-
@@ -6259,7 +6259,7 @@ operator|-
 name|dx
 operator|)
 expr_stmt|;
-name|middle_weight
+name|center_weight
 operator|=
 name|footprint_x
 operator|-
@@ -6271,13 +6271,13 @@ name|compute_sample
 argument_list|(
 name|left_weight
 argument_list|,
-name|middle_weight
+name|center_weight
 argument_list|,
 name|right_weight
 argument_list|,
 name|top_weight
 argument_list|,
-name|center_weight
+name|middle_weight
 argument_list|,
 name|bottom_weight
 argument_list|,
@@ -7781,7 +7781,7 @@ name|guint
 name|left_weight
 decl_stmt|;
 name|guint
-name|middle_weight
+name|center_weight
 decl_stmt|;
 name|guint
 name|right_weight
@@ -7790,7 +7790,7 @@ name|guint
 name|top_weight
 decl_stmt|;
 name|guint
-name|center_weight
+name|middle_weight
 decl_stmt|;
 name|guint
 name|bottom_weight
@@ -7881,7 +7881,7 @@ operator|-
 name|dy
 operator|)
 expr_stmt|;
-name|center_weight
+name|middle_weight
 operator|=
 name|footprint_y
 operator|-
@@ -8527,7 +8527,7 @@ operator|-
 name|dx
 operator|)
 expr_stmt|;
-name|middle_weight
+name|center_weight
 operator|=
 name|footprint_x
 operator|-
@@ -8539,13 +8539,13 @@ name|compute_sample
 argument_list|(
 name|left_weight
 argument_list|,
-name|middle_weight
+name|center_weight
 argument_list|,
 name|right_weight
 argument_list|,
 name|top_weight
 argument_list|,
-name|center_weight
+name|middle_weight
 argument_list|,
 name|bottom_weight
 argument_list|,
