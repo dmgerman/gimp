@@ -290,7 +290,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is not empty.  *  * Returns: Is the selection empty?  */
+comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is empty.  *  * Returns: Is the selection empty?  */
 end_comment
 
 begin_function

@@ -2444,7 +2444,7 @@ literal|"gimp-selection-is-empty"
 argument_list|,
 literal|"Determine whether the selection is empty."
 argument_list|,
-literal|"This procedure returns TRUE if the selection for the specified image is not empty."
+literal|"This procedure returns TRUE if the selection for the specified image is empty."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
