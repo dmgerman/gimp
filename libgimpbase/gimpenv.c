@@ -475,7 +475,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP2_DIRECTORY exists, it is used. If it is  * an absolute path, it is used as is.  If it is a relative path, it  * is taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP2_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the home  * directory. If no home directory exists, we use a per-user  * subdirectory of gimp_data_directory().  In any case, we always  * return some non-empty string, whether it corresponds to an existing  * directory or not.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The user-specific GIMP settings directory.  **/
+comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP2_DIRECTORY exists, it is used. If it is  * an absolute path, it is used as is.  If it is a relative path, it  * is taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP2_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the home  * directory. If no home directory exists, we use a per-user  * subdirectory of gimp_data_directory().  In any case, we always  * return some non-empty string, whether it corresponds to an existing  * directory or not.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -1020,7 +1020,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment  * variable GIMP2_DATADIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The top directory for GIMP data.  **/
+comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment  * variable GIMP2_DATADIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP data.  **/
 end_comment
 
 begin_function
@@ -1077,7 +1077,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP2_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The top directory for GIMP locale files.  */
+comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP2_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP locale files.  */
 end_comment
 
 begin_function
@@ -1134,7 +1134,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP2_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used.  On Win32, the installation directory as deduced  * from the executable's name is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The top directory for GIMP config files.  **/
+comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP2_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.).  *  * Returns: The top directory for GIMP config files.  **/
 end_comment
 
 begin_function
@@ -1280,7 +1280,7 @@ name|int
 name|csidl
 parameter_list|)
 block|{
-DECL|union|__anon2a036b63010a
+DECL|union|__anon28dad322010a
 union|union
 block|{
 DECL|member|c
@@ -1886,7 +1886,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the  * environment variable GIMP2_PLUGINDIR exists, that is used.  It  * should be an absolute pathname. Otherwise, on Unix the compile-time  * defined directory is used. On Win32, the installation directory as  * deduced from the executable's name is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
+comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the  * environment variable GIMP2_PLUGINDIR exists, that is used.  It  * should be an absolute pathname. Otherwise, on Unix the compile-time  * defined directory is used. On Windows, the installation directory as  * deduced from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
 end_comment
 
 begin_function
@@ -1943,7 +1943,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is allocated dynamically and *SHOULD* be freed  * with g_free() after use. The returned string is in the encoding used  * for filenames by the system, which isn't necessarily UTF-8 (never  * is on Windows).  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
+comment|/**  * gimp_personal_rc_file:  * @basename: The basename of a rc_file.  *  * Returns the name of a file in the user-specific GIMP settings directory.  *  * The returned string is allocated dynamically and *SHOULD* be freed  * with g_free() after use. The returned string is in the encoding  * used for filenames by GLib, which isn't necessarily  * UTF-8. (On Windows it always is UTF-8.)  *  * Returns: The name of a file in the user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -1973,7 +1973,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gtkrc:  *  * Returns the name of GIMP's application-specific gtkrc file.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the system, which isn't necessarily UTF-8 (never is on Windows).  *  * Returns: The name of GIMP's application-specific gtkrc file.  **/
+comment|/**  * gimp_gtkrc:  *  * Returns the name of GIMP's application-specific gtkrc file.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The name of GIMP's application-specific gtkrc file.  **/
 end_comment
 
 begin_function
