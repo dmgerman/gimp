@@ -1584,6 +1584,8 @@ index|[
 name|red
 index|]
 operator|=
+name|CLAMP
+argument_list|(
 operator|(
 call|(
 name|gdouble
@@ -1600,6 +1602,11 @@ operator|*
 name|RED_FACTOR
 operator|)
 operator|)
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|)
 expr_stmt|;
 block|}
 else|else
