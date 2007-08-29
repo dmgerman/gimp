@@ -1718,11 +1718,11 @@ name|save_xmp
 expr_stmt|;
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|=
 name|save_vals
 operator|->
-name|use_quant_tables
+name|use_orig_quality
 expr_stmt|;
 name|gimp_parasite_free
 argument_list|(
@@ -1755,7 +1755,7 @@ name|orig_quality
 expr_stmt|;
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|=
 name|TRUE
 expr_stmt|;

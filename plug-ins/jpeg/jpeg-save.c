@@ -252,10 +252,10 @@ value|TRUE
 end_define
 
 begin_define
-DECL|macro|DEFAULT_USE_QUANT_TABLES
+DECL|macro|DEFAULT_USE_ORIG_QUALITY
 define|#
 directive|define
-name|DEFAULT_USE_QUANT_TABLES
+name|DEFAULT_USE_ORIG_QUALITY
 value|FALSE
 end_define
 
@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13c8900108
+DECL|struct|__anon2c12f6f00108
 block|{
 DECL|member|cinfo
 name|struct
@@ -346,7 +346,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13c8900208
+DECL|struct|__anon2c12f6f00208
 block|{
 DECL|member|run
 name|gboolean
@@ -436,10 +436,10 @@ name|GtkWidget
 modifier|*
 name|save_xmp
 decl_stmt|;
-DECL|member|use_quant_tables
+DECL|member|use_orig_quality
 name|GtkWidget
 modifier|*
-name|use_quant_tables
+name|use_orig_quality
 decl_stmt|;
 comment|/*quant tables toggle*/
 DECL|typedef|JpegSaveGui
@@ -509,7 +509,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|use_quant_changed
+name|use_orig_qual_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -518,6 +518,22 @@ parameter_list|,
 name|GtkObject
 modifier|*
 name|scale_entry
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|use_orig_qual_changed2
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|toggle
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|combo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1519,7 +1535,7 @@ if|if
 condition|(
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|&&
 name|num_quant_tables
 operator|>
@@ -4683,10 +4699,10 @@ argument_list|,
 name|has_metadata
 argument_list|)
 expr_stmt|;
-comment|/* custom quantization tables */
+comment|/* custom quantization tables - now used also for original quality */
 name|pg
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|=
 name|toggle
 operator|=
@@ -4759,7 +4775,7 @@ argument_list|,
 operator|&
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -4771,10 +4787,10 @@ argument_list|)
 argument_list|,
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|&&
 operator|(
-name|num_quant_tables
+name|orig_quality
 operator|>
 literal|0
 operator|)
@@ -4785,7 +4801,7 @@ argument_list|(
 name|toggle
 argument_list|,
 operator|(
-name|num_quant_tables
+name|orig_quality
 operator|>
 literal|0
 operator|)
@@ -4807,20 +4823,20 @@ argument_list|)
 argument_list|,
 name|pg
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|pg
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 argument_list|,
 literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|use_quant_changed
+name|use_orig_qual_changed
 argument_list|)
 argument_list|,
 name|pg
@@ -4983,13 +4999,35 @@ expr_stmt|;
 if|if
 condition|(
 name|dtype
-operator|!=
+operator|==
 name|GIMP_RGB_IMAGE
-operator|&&
+operator|||
 name|dtype
-operator|!=
+operator|==
 name|GIMP_RGBA_IMAGE
 condition|)
+block|{
+name|g_signal_connect
+argument_list|(
+name|pg
+operator|.
+name|use_orig_quality
+argument_list|,
+literal|"toggled"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|use_orig_qual_changed2
+argument_list|)
+argument_list|,
+name|pg
+operator|.
+name|subsmp
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|combo
@@ -4997,6 +5035,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* DCT method */
 name|label
 operator|=
@@ -5725,9 +5764,9 @@ name|DEFAULT_XMP
 expr_stmt|;
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|=
-name|DEFAULT_USE_QUANT_TABLES
+name|DEFAULT_USE_ORIG_QUALITY
 expr_stmt|;
 ifdef|#
 directive|ifdef
@@ -6021,7 +6060,7 @@ argument_list|)
 expr_stmt|;
 name|SET_ACTIVE_BTTN
 argument_list|(
-name|use_quant_tables
+name|use_orig_quality
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE_BTTN
@@ -6293,7 +6332,7 @@ if|if
 condition|(
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 condition|)
 block|{
 name|gtk_toggle_button_set_active
@@ -6313,8 +6352,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|use_quant_changed (GtkWidget * toggle,GtkObject * scale_entry)
-name|use_quant_changed
+DECL|function|use_orig_qual_changed (GtkWidget * toggle,GtkObject * scale_entry)
+name|use_orig_qual_changed
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -6329,7 +6368,7 @@ if|if
 condition|(
 name|jsvals
 operator|.
-name|use_quant_tables
+name|use_orig_quality
 operator|&&
 name|orig_quality
 operator|>
@@ -6362,6 +6401,47 @@ argument_list|,
 name|quality_changed
 argument_list|,
 name|toggle
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|use_orig_qual_changed2 (GtkWidget * toggle,GtkWidget * combo)
+name|use_orig_qual_changed2
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|toggle
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|combo
+parameter_list|)
+block|{
+comment|/* the test is (orig_quality> 0), not (orig_subsmp> 0) - this is normal */
+if|if
+condition|(
+name|jsvals
+operator|.
+name|use_orig_quality
+operator|&&
+name|orig_quality
+operator|>
+literal|0
+condition|)
+block|{
+name|gimp_int_combo_box_set_active
+argument_list|(
+name|GIMP_INT_COMBO_BOX
+argument_list|(
+name|combo
+argument_list|)
+argument_list|,
+name|orig_subsmp
 argument_list|)
 expr_stmt|;
 block|}
@@ -6409,7 +6489,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c13c8900308
+DECL|struct|__anon2c12f6f00308
 block|{
 DECL|member|pub
 name|struct
