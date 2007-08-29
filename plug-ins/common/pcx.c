@@ -73,94 +73,8 @@ name|PLUG_IN_BINARY
 value|"pcx"
 end_define
 
-begin_if
-if|#
-directive|if
-name|G_BYTE_ORDER
-operator|==
-name|G_BIG_ENDIAN
-end_if
-
-begin_define
-DECL|macro|qtohl (x)
-define|#
-directive|define
-name|qtohl
-parameter_list|(
-name|x
-parameter_list|)
-define|\
-value|((unsigned long int)((((unsigned long int)(x)& 0x000000ffU)<< 24) | \                              (((unsigned long int)(x)& 0x0000ff00U)<<  8) | \                              (((unsigned long int)(x)& 0x00ff0000U)>>  8) | \                              (((unsigned long int)(x)& 0xff000000U)>> 24)))
-end_define
-
-begin_define
-DECL|macro|qtohs (x)
-define|#
-directive|define
-name|qtohs
-parameter_list|(
-name|x
-parameter_list|)
-define|\
-value|((unsigned short int)((((unsigned short int)(x)& 0x00ff)<< 8) | \                               (((unsigned short int)(x)& 0xff00)>> 8)))
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|qtohl (x)
-define|#
-directive|define
-name|qtohl
-parameter_list|(
-name|x
-parameter_list|)
-value|(x)
-end_define
-
-begin_define
-DECL|macro|qtohs (x)
-define|#
-directive|define
-name|qtohs
-parameter_list|(
-name|x
-parameter_list|)
-value|(x)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_define
-DECL|macro|htoql (x)
-define|#
-directive|define
-name|htoql
-parameter_list|(
-name|x
-parameter_list|)
-value|qtohl(x)
-end_define
-
-begin_define
-DECL|macro|htoqs (x)
-define|#
-directive|define
-name|htoqs
-parameter_list|(
-name|x
-parameter_list|)
-value|qtohs(x)
-end_define
-
 begin_comment
-comment|/* Declare loacl functions.  */
+comment|/* Declare local functions.  */
 end_comment
 
 begin_function_decl
@@ -235,7 +149,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 function_decl|;
@@ -260,7 +174,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 function_decl|;
@@ -285,7 +199,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 function_decl|;
@@ -310,7 +224,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 function_decl|;
@@ -1049,7 +963,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3eff3e0108
+DECL|struct|__anon27a84fbf0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1148,7 +1062,7 @@ decl_stmt|;
 name|GimpPixelRgn
 name|pixel_rgn
 decl_stmt|;
-name|gint
+name|gint16
 name|offset_x
 decl_stmt|,
 name|offset_y
@@ -1286,7 +1200,7 @@ return|;
 block|}
 name|offset_x
 operator|=
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1295,7 +1209,7 @@ argument_list|)
 expr_stmt|;
 name|offset_y
 operator|=
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1304,7 +1218,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1317,7 +1231,7 @@ literal|1
 expr_stmt|;
 name|height
 operator|=
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1330,17 +1244,9 @@ literal|1
 expr_stmt|;
 if|if
 condition|(
-operator|(
 name|width
 operator|<
 literal|0
-operator|)
-operator|||
-operator|(
-name|width
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
-operator|)
 condition|)
 block|{
 name|g_message
@@ -1360,17 +1266,9 @@ return|;
 block|}
 if|if
 condition|(
-operator|(
 name|height
 operator|<
 literal|0
-operator|)
-operator|||
-operator|(
-name|height
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
-operator|)
 condition|)
 block|{
 name|g_message
@@ -1390,7 +1288,7 @@ return|;
 block|}
 if|if
 condition|(
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1407,7 +1305,7 @@ argument_list|(
 literal|"Invalid number of bytes per line: %hd"
 argument_list|)
 argument_list|,
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1575,7 +1473,7 @@ name|height
 argument_list|,
 name|dest
 argument_list|,
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1632,7 +1530,7 @@ name|height
 argument_list|,
 name|dest
 argument_list|,
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1691,7 +1589,7 @@ name|height
 argument_list|,
 name|dest
 argument_list|,
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1771,7 +1669,7 @@ name|height
 argument_list|,
 name|dest
 argument_list|,
-name|qtohs
+name|GINT16_FROM_LE
 argument_list|(
 name|pcx_header
 operator|.
@@ -1855,7 +1753,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_8 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
+DECL|function|load_8 (FILE * fp,gint width,gint height,guchar * buffer,gint16 bytes)
 name|load_8
 parameter_list|(
 name|FILE
@@ -1872,7 +1770,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 block|{
@@ -1951,7 +1849,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_24 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
+DECL|function|load_24 (FILE * fp,gint width,gint height,guchar * buffer,gint16 bytes)
 name|load_24
 parameter_list|(
 name|FILE
@@ -1968,7 +1866,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 block|{
@@ -2088,7 +1986,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_1 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
+DECL|function|load_1 (FILE * fp,gint width,gint height,guchar * buffer,gint16 bytes)
 name|load_1
 parameter_list|(
 name|FILE
@@ -2105,7 +2003,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 block|{
@@ -2226,7 +2124,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|load_4 (FILE * fp,gint width,gint height,guchar * buffer,gint bytes)
+DECL|function|load_4 (FILE * fp,gint width,gint height,guchar * buffer,gint16 bytes)
 name|load_4
 parameter_list|(
 name|FILE
@@ -2243,7 +2141,7 @@ name|guchar
 modifier|*
 name|buffer
 parameter_list|,
-name|gint
+name|gint16
 name|bytes
 parameter_list|)
 block|{
@@ -2680,7 +2578,7 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|width
 argument_list|)
@@ -2695,7 +2593,7 @@ name|pcx_header
 operator|.
 name|color
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 literal|1
 argument_list|)
@@ -2720,7 +2618,7 @@ name|pcx_header
 operator|.
 name|color
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 literal|1
 argument_list|)
@@ -2729,7 +2627,7 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|width
 argument_list|)
@@ -2754,7 +2652,7 @@ name|pcx_header
 operator|.
 name|color
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 literal|2
 argument_list|)
@@ -2763,7 +2661,7 @@ name|pcx_header
 operator|.
 name|bytesperline
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|width
 argument_list|)
@@ -2857,7 +2755,7 @@ name|pcx_header
 operator|.
 name|x1
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|offset_x
 argument_list|)
@@ -2866,7 +2764,7 @@ name|pcx_header
 operator|.
 name|y1
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|offset_y
 argument_list|)
@@ -2875,7 +2773,7 @@ name|pcx_header
 operator|.
 name|x2
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|offset_x
 operator|+
@@ -2888,7 +2786,7 @@ name|pcx_header
 operator|.
 name|y2
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 name|offset_y
 operator|+
@@ -2901,7 +2799,7 @@ name|pcx_header
 operator|.
 name|hdpi
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 literal|300
 argument_list|)
@@ -2910,7 +2808,7 @@ name|pcx_header
 operator|.
 name|vdpi
 operator|=
-name|htoqs
+name|GINT16_TO_LE
 argument_list|(
 literal|300
 argument_list|)
