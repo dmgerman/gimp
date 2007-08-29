@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c69380103
+DECL|enum|__anon2c4adc390103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c69380203
+DECL|enum|__anon2c4adc390203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c69380308
+DECL|struct|__anon2c4adc390308
 block|{
 DECL|member|name
 specifier|const
@@ -2943,14 +2943,6 @@ name|filename
 parameter_list|)
 block|{
 name|gint32
-name|selection
-init|=
-name|gimp_image_get_selection
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
-name|gint32
 name|saved_selection
 init|=
 operator|-
@@ -3035,7 +3027,7 @@ condition|(
 operator|!
 name|gimp_selection_is_empty
 argument_list|(
-name|selection
+name|image
 argument_list|)
 condition|)
 block|{
@@ -3043,12 +3035,12 @@ name|saved_selection
 operator|=
 name|gimp_selection_save
 argument_list|(
-name|selection
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_selection_none
 argument_list|(
-name|selection
+name|image
 argument_list|)
 expr_stmt|;
 block|}
@@ -3104,11 +3096,20 @@ operator|!=
 operator|-
 literal|1
 condition|)
+block|{
 name|gimp_selection_load
 argument_list|(
 name|saved_selection
 argument_list|)
 expr_stmt|;
+name|gimp_image_remove_channel
+argument_list|(
+name|image
+argument_list|,
+name|saved_selection
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_progress_update
 argument_list|(
 literal|1.0
