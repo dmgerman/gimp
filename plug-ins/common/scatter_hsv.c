@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfd1a1d0108
+DECL|struct|__anon2a3d53c40108
 block|{
 DECL|member|holdness
 name|gint
@@ -1138,7 +1138,7 @@ name|h
 argument_list|,
 literal|0
 argument_list|,
-literal|360
+literal|359
 argument_list|,
 name|TRUE
 argument_list|,
