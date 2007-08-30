@@ -306,6 +306,8 @@ literal|"file"
 argument_list|,
 literal|"context"
 argument_list|,
+literal|"help"
+argument_list|,
 literal|"edit"
 argument_list|,
 literal|"select"

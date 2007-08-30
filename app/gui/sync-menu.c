@@ -262,7 +262,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f097fd0108
+DECL|struct|__anon291cde890108
 block|{
 DECL|member|menu
 name|MenuRef
@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f097fd0208
+DECL|struct|__anon291cde890208
 block|{
 DECL|member|menu
 name|MenuRef
