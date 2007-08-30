@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7fbad80108
+DECL|struct|__anon29fe0da40108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3339,6 +3339,9 @@ decl_stmt|;
 name|GString
 modifier|*
 name|s
+decl_stmt|,
+modifier|*
+name|output
 decl_stmt|;
 name|gchar
 modifier|*
@@ -3935,6 +3938,20 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  run the command through the interpreter  */
+name|output
+operator|=
+name|g_string_new
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|ts_register_output_func
+argument_list|(
+name|ts_gstring_output_func
+argument_list|,
+name|output
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ts_interpret_string
@@ -3945,6 +3962,17 @@ condition|)
 name|script_fu_error_msg
 argument_list|(
 name|command
+argument_list|,
+name|output
+operator|->
+name|str
+argument_list|)
+expr_stmt|;
+name|g_string_free
+argument_list|(
+name|output
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_free

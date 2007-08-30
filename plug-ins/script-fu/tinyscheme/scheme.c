@@ -163,6 +163,24 @@ directive|include
 file|"scheme-private.h"
 end_include
 
+begin_if
+if|#
+directive|if
+operator|!
+name|STANDALONE
+end_if
+
+begin_include
+include|#
+directive|include
+file|"../scheme-wrapper.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_comment
 comment|/* Used for documentation purposes, to signal functions in 'interface' */
 end_comment
@@ -408,7 +426,7 @@ name|a
 parameter_list|,
 name|b
 parameter_list|)
-value|((a<= b) ? a : b)
+value|((a)<= (b) ? (a) : (b))
 end_define
 
 begin_if
@@ -3767,25 +3785,6 @@ parameter_list|,
 name|pointer
 name|args
 parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-DECL|variable|ts_output_routine
-name|void
-function_decl|(
-modifier|*
-name|ts_output_routine
-function_decl|)
-parameter_list|(
-specifier|const
-name|char
-modifier|*
-parameter_list|,
-name|int
-parameter_list|)
-init|=
-name|NULL
 function_decl|;
 end_function_decl
 
@@ -10833,10 +10832,6 @@ comment|/* Space remaining in buffer (in bytes) */
 name|int
 name|l
 decl_stmt|;
-name|char
-modifier|*
-name|s
-decl_stmt|;
 name|port
 modifier|*
 name|pt
@@ -10871,52 +10866,6 @@ argument_list|)
 operator|-
 name|chars
 expr_stmt|;
-if|if
-condition|(
-name|sc
-operator|->
-name|print_error
-condition|)
-block|{
-name|l
-operator|=
-name|strlen
-argument_list|(
-name|sc
-operator|->
-name|linebuff
-argument_list|)
-expr_stmt|;
-name|s
-operator|=
-operator|&
-name|sc
-operator|->
-name|linebuff
-index|[
-name|l
-index|]
-expr_stmt|;
-name|memcpy
-argument_list|(
-name|s
-argument_list|,
-name|chars
-argument_list|,
-name|min
-argument_list|(
-name|char_cnt
-argument_list|,
-name|LINESIZE
-operator|-
-name|l
-operator|-
-literal|1
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
 if|if
 condition|(
 name|pt
@@ -10960,7 +10909,7 @@ expr_stmt|;
 else|#
 directive|else
 comment|/* If output is still directed to stdout (the default) it should be    */
-comment|/* safe to redirect it to the routine pointed to by ts_output_routine. */
+comment|/* safe to redirect it to the registered output routine. */
 if|if
 condition|(
 name|pt
@@ -10972,16 +10921,11 @@ operator|.
 name|file
 operator|==
 name|stdout
-operator|&&
-name|ts_output_routine
-operator|!=
-name|NULL
 condition|)
-call|(
-modifier|*
-name|ts_output_routine
-call|)
+name|ts_output_string
 argument_list|(
+name|TS_OUTPUT_NORMAL
+argument_list|,
 name|chars
 argument_list|,
 name|char_cnt
@@ -11334,7 +11278,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b9dd2080103
+DECL|enum|__anon2b9de3950103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -24414,31 +24358,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|sc
-operator|->
-name|print_error
-operator|==
-literal|0
-condition|)
-comment|/* Reset buffer if not already */
-name|sc
-operator|->
-name|linebuff
-index|[
-literal|0
-index|]
-operator|=
-literal|'\0'
-expr_stmt|;
-comment|/* in error message output mode*/
-name|sc
-operator|->
-name|print_error
-operator|=
-literal|1
-expr_stmt|;
 name|putstr
 argument_list|(
 name|sc
@@ -24552,12 +24471,6 @@ name|sc
 argument_list|,
 literal|"\n"
 argument_list|)
-expr_stmt|;
-name|sc
-operator|->
-name|print_error
-operator|=
-literal|0
 expr_stmt|;
 if|if
 condition|(
@@ -26479,26 +26392,20 @@ argument_list|)
 expr_stmt|;
 block|}
 default|default:
-name|sprintf
+name|Error_1
 argument_list|(
 name|sc
-operator|->
-name|linebuff
 argument_list|,
-literal|"syntax error: illegal token %d"
+literal|"syntax error: illegal token"
+argument_list|,
+name|mk_integer
+argument_list|(
+name|sc
 argument_list|,
 name|sc
 operator|->
 name|tok
 argument_list|)
-expr_stmt|;
-name|Error_0
-argument_list|(
-name|sc
-argument_list|,
-name|sc
-operator|->
-name|linebuff
 argument_list|)
 expr_stmt|;
 block|}
@@ -28056,7 +27963,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b9dd2080208
+DECL|struct|__anon2b9de3950208
 specifier|static
 struct|struct
 block|{
@@ -28291,7 +28198,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b9dd2080308
+DECL|struct|__anon2b9de3950308
 typedef|typedef
 struct|struct
 block|{
@@ -29791,12 +29698,6 @@ expr_stmt|;
 name|sc
 operator|->
 name|print_output
-operator|=
-literal|0
-expr_stmt|;
-name|sc
-operator|->
-name|print_error
 operator|=
 literal|0
 expr_stmt|;

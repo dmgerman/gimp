@@ -64,6 +64,11 @@ specifier|const
 name|gchar
 modifier|*
 name|command
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|msg
 parameter_list|)
 function_decl|;
 end_function_decl

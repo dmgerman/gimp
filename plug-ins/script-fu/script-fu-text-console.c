@@ -98,9 +98,11 @@ literal|1
 index|]
 decl_stmt|;
 comment|/*  Enable Script-Fu output  */
-name|ts_set_output_file
+name|ts_register_output_func
 argument_list|(
-name|stdout
+name|ts_stdout_output_func
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|ts_print_welcome

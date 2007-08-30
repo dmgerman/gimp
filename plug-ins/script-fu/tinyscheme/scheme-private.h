@@ -74,10 +74,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon27a5c109010a
+DECL|union|__anon2b02180e010a
 union|union
 block|{
-DECL|struct|__anon27a5c1090208
+DECL|struct|__anon2b02180e0208
 struct|struct
 block|{
 DECL|member|file
@@ -93,7 +93,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon27a5c1090308
+DECL|struct|__anon2b02180e0308
 struct|struct
 block|{
 DECL|member|start
@@ -139,10 +139,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon27a5c109040a
+DECL|union|__anon2b02180e040a
 union|union
 block|{
-DECL|struct|__anon27a5c1090508
+DECL|struct|__anon2b02180e0508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -171,7 +171,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon27a5c1090608
+DECL|struct|__anon2b02180e0608
 struct|struct
 block|{
 DECL|member|_car
@@ -288,11 +288,6 @@ name|int
 name|print_output
 decl_stmt|;
 comment|/* set to 1 to print results and error messages */
-DECL|member|print_error
-name|int
-name|print_error
-decl_stmt|;
-comment|/* set to 1 while printing error messages */
 DECL|member|_sink
 name|struct
 name|cell
@@ -468,13 +463,6 @@ define|#
 directive|define
 name|LINESIZE
 value|1024
-DECL|member|linebuff
-name|char
-name|linebuff
-index|[
-name|LINESIZE
-index|]
-decl_stmt|;
 DECL|member|strbuff
 name|char
 name|strbuff

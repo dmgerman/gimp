@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294834ec0108
+DECL|struct|__anon2a04c6870108
 block|{
 DECL|member|script
 name|SFScript
@@ -408,16 +408,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|1
-end_if
-
-begin_comment
-comment|/* ~~~~~ */
-end_comment
-
 begin_function
 specifier|static
 name|pointer
@@ -433,9 +423,14 @@ modifier|*
 name|msg
 parameter_list|)
 block|{
-name|g_printerr
+name|ts_output_string
 argument_list|(
+name|TS_OUTPUT_ERROR
+argument_list|,
 name|msg
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 return|return
@@ -445,11 +440,6 @@ name|F
 return|;
 block|}
 end_function
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 name|pointer
@@ -4172,13 +4162,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|script_fu_error_msg (const gchar * command)
+DECL|function|script_fu_error_msg (const gchar * command,const gchar * msg)
 name|script_fu_error_msg
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|command
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|msg
 parameter_list|)
 block|{
 name|g_message
@@ -4190,8 +4185,7 @@ argument_list|)
 argument_list|,
 name|command
 argument_list|,
-name|ts_get_error_msg
-argument_list|()
+name|msg
 argument_list|)
 expr_stmt|;
 block|}
@@ -4245,6 +4239,10 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
+name|GString
+modifier|*
+name|output
+decl_stmt|;
 name|command
 operator|=
 name|g_strdup_printf
@@ -4259,6 +4257,20 @@ argument_list|(
 name|escaped
 argument_list|)
 expr_stmt|;
+name|output
+operator|=
+name|g_string_new
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|ts_register_output_func
+argument_list|(
+name|ts_gstring_output_func
+argument_list|,
+name|output
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ts_interpret_string
@@ -4269,6 +4281,17 @@ condition|)
 name|script_fu_error_msg
 argument_list|(
 name|command
+argument_list|,
+name|output
+operator|->
+name|str
+argument_list|)
+expr_stmt|;
+name|g_string_free
+argument_list|(
+name|output
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -4910,6 +4933,10 @@ name|min_args
 init|=
 literal|0
 decl_stmt|;
+name|GString
+modifier|*
+name|output
+decl_stmt|;
 name|run_mode
 operator|=
 name|params
@@ -5485,6 +5512,20 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  run the command through the interpreter  */
+name|output
+operator|=
+name|g_string_new
+argument_list|(
+literal|""
+argument_list|)
+expr_stmt|;
+name|ts_register_output_func
+argument_list|(
+name|ts_gstring_output_func
+argument_list|,
+name|output
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ts_interpret_string
@@ -5495,6 +5536,17 @@ condition|)
 name|script_fu_error_msg
 argument_list|(
 name|command
+argument_list|,
+name|output
+operator|->
+name|str
+argument_list|)
+expr_stmt|;
+name|g_string_free
+argument_list|(
+name|output
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -6142,7 +6194,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon294834ec0208
+DECL|struct|__anon2a04c6870208
 block|{
 DECL|member|old
 specifier|const

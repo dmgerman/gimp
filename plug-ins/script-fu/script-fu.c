@@ -539,11 +539,6 @@ operator|=
 name|script_fu_search_path
 argument_list|()
 expr_stmt|;
-name|ts_set_console_mode
-argument_list|(
-literal|0
-argument_list|)
-expr_stmt|;
 comment|/*  Determine before we allow scripts to register themselves    *   whether this is the base, automatically installed script-fu extension    */
 if|if
 condition|(
@@ -672,10 +667,6 @@ literal|0
 condition|)
 block|{
 comment|/*        *  The script-fu text console for interactive Scheme development        */
-name|ts_output_routine
-operator|=
-name|NULL
-expr_stmt|;
 name|script_fu_text_console_run
 argument_list|(
 name|name

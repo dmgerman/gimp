@@ -74,21 +74,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|script_fu_output_to_console
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|text
-parameter_list|,
-name|gint
-name|len
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
