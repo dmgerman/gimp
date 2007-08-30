@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d53c40108
+DECL|struct|__anon2925b1130108
 block|{
 DECL|member|holdness
 name|gint
@@ -1122,13 +1122,22 @@ operator|&
 name|v
 argument_list|)
 expr_stmt|;
+comment|/* there is no need for scattering hue of desaturated pixels here */
 if|if
 condition|(
+operator|(
 name|VALS
 operator|.
 name|hue_distance
 operator|>
 literal|0
+operator|)
+operator|&&
+operator|(
+name|s
+operator|>
+literal|0
+operator|)
 condition|)
 name|h
 operator|=
@@ -1147,6 +1156,7 @@ operator|.
 name|hue_distance
 argument_list|)
 expr_stmt|;
+comment|/* desaturated pixels get random hue before increasing saturation */
 if|if
 condition|(
 name|VALS
@@ -1155,6 +1165,22 @@ name|saturation_distance
 operator|>
 literal|0
 condition|)
+block|{
+if|if
+condition|(
+name|s
+operator|==
+literal|0
+condition|)
+name|h
+operator|=
+name|g_random_int_range
+argument_list|(
+literal|0
+argument_list|,
+literal|360
+argument_list|)
+expr_stmt|;
 name|s
 operator|=
 name|randomize_value
@@ -1172,6 +1198,7 @@ operator|.
 name|saturation_distance
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|VALS
