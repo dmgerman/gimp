@@ -11278,7 +11278,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b9de3950103
+DECL|enum|__anon2937cd870103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -23575,6 +23575,16 @@ case|:
 comment|/* integer? */
 name|s_retbool
 argument_list|(
+name|is_number
+argument_list|(
+name|car
+argument_list|(
+name|sc
+operator|->
+name|args
+argument_list|)
+argument_list|)
+operator|&&
 name|is_integer
 argument_list|(
 name|car
@@ -27963,7 +27973,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b9de3950208
+DECL|struct|__anon2937cd870208
 specifier|static
 struct|struct
 block|{
@@ -28198,7 +28208,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b9de3950308
+DECL|struct|__anon2937cd870308
 typedef|typedef
 struct|struct
 block|{
