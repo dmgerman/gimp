@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a909ef70103
+DECL|enum|__anon2a226bbf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a909ef70203
+DECL|enum|__anon2a226bbf0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3059,6 +3059,9 @@ argument_list|,
 name|main_vbox
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|HAVE_CARBON
 name|shell
 operator|->
 name|menubar
@@ -3075,6 +3078,9 @@ argument_list|,
 literal|"/image-menubar"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* !HAVE_CARBON */
 if|if
 condition|(
 name|shell

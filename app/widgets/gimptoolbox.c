@@ -922,6 +922,9 @@ operator|->
 name|ui_manager
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|HAVE_CARBON
 name|toolbox
 operator|->
 name|menu_bar
@@ -933,6 +936,9 @@ argument_list|,
 literal|"/toolbox-menubar"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
+comment|/* !HAVE_CARBON */
 if|if
 condition|(
 name|toolbox
