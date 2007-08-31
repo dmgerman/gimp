@@ -5212,7 +5212,7 @@ name|GIMP_DISPLAY_ZOOM_PIXEL_AA
 operator|)
 operator|)
 operator|)
-comment|/* or at any point when both scale factors are more than 200% */
+comment|/* or at any point when both scale factors are greater or equal to 200% */
 operator|||
 operator|(
 name|info
@@ -5220,7 +5220,7 @@ operator|->
 name|shell
 operator|->
 name|scale_x
-operator|>
+operator|>=
 literal|2.0
 operator|&&
 name|info
@@ -5228,7 +5228,7 @@ operator|->
 name|shell
 operator|->
 name|scale_y
-operator|>
+operator|>=
 literal|2.0
 operator|)
 condition|)
