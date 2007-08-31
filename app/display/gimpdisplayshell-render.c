@@ -5169,8 +5169,8 @@ name|gimp_zoom_quality
 operator|&
 name|GIMP_DISPLAY_ZOOM_FAST
 operator|)
-operator|||
 comment|/* use nearest neighbour for exact levels */
+operator|||
 operator|(
 name|info
 operator|->
@@ -5230,6 +5230,18 @@ operator|->
 name|scale_y
 operator|>=
 literal|2.0
+operator|)
+comment|/* or when we're scaling a 1bpp texture, this code-path seems to be        * invoked when interacting with SIOX which uses a palletized drawable        */
+operator|||
+operator|(
+name|tile_manager_bpp
+argument_list|(
+name|info
+operator|->
+name|src_tiles
+argument_list|)
+operator|==
+literal|1
 operator|)
 condition|)
 block|{
