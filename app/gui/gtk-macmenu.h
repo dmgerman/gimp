@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SYNC_MENU_H__
+name|__GTK_MACMENU_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SYNC_MENU_H__
+DECL|macro|__GTK_MACMENU_H__
 define|#
 directive|define
-name|__SYNC_MENU_H__
+name|__GTK_MACMENU_H__
 end_define
 
 begin_include
@@ -87,7 +87,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __SYNC_MENU_H__ */
+comment|/* __GTK_MACMENU_H__ */
 end_comment
 
 end_unit

@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sync-menu.h"
+file|"gtk-macmenu.h"
 end_include
 
 begin_comment
@@ -262,7 +262,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7668100108
+DECL|struct|__anon2c748d260108
 block|{
 DECL|member|menu
 name|MenuRef
@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7668100208
+DECL|struct|__anon2c748d260208
 block|{
 DECL|member|menu
 name|MenuRef

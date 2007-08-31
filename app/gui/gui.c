@@ -330,7 +330,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|"sync-menu.h"
+file|"gtk-macmenu.h"
 end_include
 
 begin_endif
