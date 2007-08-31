@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a04c6870108
+DECL|struct|__anon29885cfe0108
 block|{
 DECL|member|script
 name|SFScript
@@ -405,39 +405,6 @@ name|script_menu_list
 operator|=
 name|NULL
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|pointer
-DECL|function|my_err (scheme * sc,char * msg)
-name|my_err
-parameter_list|(
-name|scheme
-modifier|*
-name|sc
-parameter_list|,
-name|char
-modifier|*
-name|msg
-parameter_list|)
-block|{
-name|ts_output_string
-argument_list|(
-name|TS_OUTPUT_ERROR
-argument_list|,
-name|msg
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-return|return
-name|sc
-operator|->
-name|F
-return|;
 block|}
 end_function
 
@@ -1002,11 +969,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: argument types must be integer values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -1046,11 +1015,13 @@ expr_stmt|;
 block|}
 else|else
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: missing type specifier"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 if|if
@@ -1082,11 +1053,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: argument labels must be strings"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -1129,11 +1102,13 @@ expr_stmt|;
 block|}
 else|else
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: missing arguments label"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 if|if
@@ -1193,11 +1168,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: default IDs must be integer values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -1487,11 +1464,13 @@ literal|1
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: invalid default color name"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|gimp_rgb_set_alpha
@@ -1683,11 +1662,13 @@ block|}
 else|else
 block|{
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: color defaults must be a list of 3 integers or a color name"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 block|}
@@ -1771,11 +1752,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: toggle default must be an integer value"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -1889,11 +1872,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: value defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -2010,11 +1995,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: string defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -2123,11 +2110,13 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: adjustment defaults must be a list"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|adj_list
@@ -2493,11 +2482,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: filename defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 comment|/* fallthrough */
@@ -2524,11 +2515,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: dirname defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -2702,11 +2695,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: font defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -2820,11 +2815,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: palette defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -2938,11 +2935,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: pattern defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -3051,11 +3050,13 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: brush defaults must be a list"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|brush_list
@@ -3366,11 +3367,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: gradient defaults must be string values"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|script
@@ -3479,11 +3482,13 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: option defaults must be a list"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 for|for
@@ -3645,11 +3650,13 @@ name|a
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: enum defaults must be a list"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|option_list
@@ -3683,11 +3690,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: first element in enum defaults must be a type-name"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|val
@@ -3758,11 +3767,13 @@ name|val
 argument_list|)
 expr_stmt|;
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: first element in enum defaults must be the name of a registered type"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 block|}
@@ -3810,11 +3821,13 @@ argument_list|)
 argument_list|)
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: second element in enum defaults must be a string"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 name|enum_value
@@ -3928,11 +3941,13 @@ block|}
 else|else
 block|{
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"script-fu-register: missing default argument"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 block|}
@@ -4042,11 +4057,13 @@ operator|!=
 literal|2
 condition|)
 return|return
-name|my_err
+name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
 literal|"Incorrect number of arguments for script-fu-menu-register"
+argument_list|,
+literal|0
 argument_list|)
 return|;
 comment|/*  Find the script PDB entry name  */
@@ -6194,7 +6211,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2a04c6870208
+DECL|struct|__anon29885cfe0208
 block|{
 DECL|member|old
 specifier|const

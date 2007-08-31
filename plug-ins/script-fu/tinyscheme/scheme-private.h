@@ -74,10 +74,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2b02180e010a
+DECL|union|__anon28d5f10e010a
 union|union
 block|{
-DECL|struct|__anon2b02180e0208
+DECL|struct|__anon28d5f10e0208
 struct|struct
 block|{
 DECL|member|file
@@ -93,7 +93,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2b02180e0308
+DECL|struct|__anon28d5f10e0308
 struct|struct
 block|{
 DECL|member|start
@@ -139,10 +139,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2b02180e040a
+DECL|union|__anon28d5f10e040a
 union|union
 block|{
-DECL|struct|__anon2b02180e0508
+DECL|struct|__anon28d5f10e0508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -171,7 +171,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2b02180e0608
+DECL|struct|__anon28d5f10e0608
 struct|struct
 block|{
 DECL|member|_car
@@ -278,6 +278,11 @@ name|pointer
 name|safe_foreign
 decl_stmt|;
 comment|/* register to avoid gc problems */
+DECL|member|foreign_error
+name|pointer
+name|foreign_error
+decl_stmt|;
+comment|/* used for foreign functions to signal an error */
 DECL|member|interactive_repl
 name|int
 name|interactive_repl
