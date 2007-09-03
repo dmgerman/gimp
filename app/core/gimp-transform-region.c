@@ -4329,9 +4329,9 @@ control|)
 block|{
 name|gint
 name|newval
-decl_stmt|;
-name|newval
-operator|=
+init|=
+name|ROUND
+argument_list|(
 operator|(
 name|a_recip
 operator|*
@@ -4392,7 +4392,8 @@ argument_list|,
 name|dv
 argument_list|)
 operator|)
-expr_stmt|;
+argument_list|)
+decl_stmt|;
 name|color
 index|[
 name|i
@@ -6328,6 +6329,8 @@ block|{
 name|gint
 name|newval
 init|=
+name|ROUND
+argument_list|(
 operator|(
 name|a_recip
 operator|*
@@ -6428,6 +6431,7 @@ name|bytes
 argument_list|)
 argument_list|)
 operator|)
+argument_list|)
 decl_stmt|;
 name|color
 index|[
@@ -6922,7 +6926,10 @@ index|]
 operator|=
 name|CLAMP
 argument_list|(
+name|ROUND
+argument_list|(
 name|newval
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
