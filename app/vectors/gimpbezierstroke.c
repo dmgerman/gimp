@@ -9384,14 +9384,16 @@ decl_stmt|;
 name|GimpCoords
 name|dx
 init|=
-operator|*
-name|center
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|GimpCoords
 name|dy
 init|=
-operator|*
-name|center
+block|{
+literal|0
+block|, }
 decl_stmt|;
 specifier|const
 name|gdouble
