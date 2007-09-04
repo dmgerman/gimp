@@ -3589,7 +3589,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|FIXME remove hack as soon as bug #375864 is fixed */
+warning|FIXME remove hack as soon as bug #375864 is fixed
 endif|#
 directive|endif
 if|if
