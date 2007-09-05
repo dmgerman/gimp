@@ -74,10 +74,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon28d5f10e010a
+DECL|union|__anon2a4c7b2d010a
 union|union
 block|{
-DECL|struct|__anon28d5f10e0208
+DECL|struct|__anon2a4c7b2d0208
 struct|struct
 block|{
 DECL|member|file
@@ -93,7 +93,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon28d5f10e0308
+DECL|struct|__anon2a4c7b2d0308
 struct|struct
 block|{
 DECL|member|start
@@ -139,10 +139,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon28d5f10e040a
+DECL|union|__anon2a4c7b2d040a
 union|union
 block|{
-DECL|struct|__anon28d5f10e0508
+DECL|struct|__anon2a4c7b2d0508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -171,7 +171,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon28d5f10e0608
+DECL|struct|__anon2a4c7b2d0608
 struct|struct
 block|{
 DECL|member|_car
@@ -225,13 +225,13 @@ DECL|macro|CELL_SEGSIZE
 define|#
 directive|define
 name|CELL_SEGSIZE
-value|5000
+value|25000
 comment|/* # of cells in one segment */
 DECL|macro|CELL_NSEGMENT
 define|#
 directive|define
 name|CELL_NSEGMENT
-value|20
+value|50
 comment|/* # of segments for cells */
 DECL|member|alloc_seg
 name|char
