@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e7328f0103
+DECL|enum|__anon27c287560103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7328f0208
+DECL|struct|__anon27c287560208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -862,7 +862,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon28e7328f0308
+DECL|struct|__anon27c287560308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -2624,6 +2624,7 @@ expr_stmt|;
 block|}
 else|else
 comment|/* Grayscale */
+block|{
 name|chanmask
 index|[
 literal|0
@@ -2636,6 +2637,7 @@ index|[
 literal|0
 index|]
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_drawable_has_alpha
@@ -2654,7 +2656,7 @@ name|config
 operator|.
 name|channels
 index|[
-name|alpha_channel
+literal|4
 index|]
 expr_stmt|;
 name|src_row_w
@@ -3835,28 +3837,6 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|CHANNELS
-condition|;
-name|i
-operator|++
-control|)
-name|config
-operator|.
-name|channels
-index|[
-name|i
-index|]
-operator|=
-name|FALSE
-expr_stmt|;
 name|config
 operator|.
 name|alpha_weighting
