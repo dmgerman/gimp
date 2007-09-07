@@ -3451,6 +3451,10 @@ name|cached_num
 condition|)
 comment|/* must fetch a new tile */
 block|{
+name|Tile
+modifier|*
+name|tile
+decl_stmt|;
 if|if
 condition|(
 name|tm
@@ -3470,11 +3474,17 @@ name|tm
 operator|->
 name|cached_num
 operator|=
-name|num
+operator|-
+literal|1
 expr_stmt|;
 name|tm
 operator|->
 name|cached_tile
+operator|=
+name|NULL
+expr_stmt|;
+comment|/*  use a temporary variable instead of assigning to            *  tm->cached_tile directly to make sure tm->cached_num            *  and tm->cached_tile are always in a consistent state.            *  (the requested tile might be invalid and needs to be            *  validated, which would call tile_manager_get() recursively,            *  which in turn would clear the cached tile) See bug #472770.            */
+name|tile
 operator|=
 name|tile_manager_get
 argument_list|(
@@ -3486,6 +3496,18 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|tm
+operator|->
+name|cached_num
+operator|=
+name|num
+expr_stmt|;
+name|tm
+operator|->
+name|cached_tile
+operator|=
+name|tile
 expr_stmt|;
 block|}
 if|if
