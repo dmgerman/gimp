@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2989f6fe0103
+DECL|enum|__anon2b9d18dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -505,15 +505,6 @@ modifier|*
 name|accum
 parameter_list|)
 block|{
-name|GimpForegroundSelectToolUndo
-modifier|*
-name|foreground_select_tool_undo
-init|=
-name|GIMP_FOREGROUND_SELECT_TOOL_UNDO
-argument_list|(
-name|undo
-argument_list|)
-decl_stmt|;
 name|GIMP_UNDO_CLASS
 argument_list|(
 name|parent_class
