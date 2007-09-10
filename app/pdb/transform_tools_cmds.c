@@ -636,8 +636,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|TRUE
-argument_list|,
 literal|3
 argument_list|,
 name|FALSE
@@ -924,8 +922,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|FALSE
 argument_list|,
 literal|3
 argument_list|,
@@ -1282,8 +1278,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|TRUE
-argument_list|,
 literal|3
 argument_list|,
 name|FALSE
@@ -1588,8 +1582,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|FALSE
 argument_list|,
 literal|3
 argument_list|,
@@ -1970,8 +1962,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|TRUE
 argument_list|,
 literal|3
 argument_list|,

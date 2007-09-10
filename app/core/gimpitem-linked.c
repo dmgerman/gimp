@@ -412,7 +412,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_linked_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
+DECL|function|gimp_item_linked_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_item_linked_transform
 parameter_list|(
 name|GimpItem
@@ -433,9 +433,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -530,8 +527,6 @@ argument_list|,
 name|direction
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|supersample
 argument_list|,
 name|recursion_level
 argument_list|,

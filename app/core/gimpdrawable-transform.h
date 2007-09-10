@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c59c6970103
+DECL|enum|__anon2b25d3e30103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -77,9 +77,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -177,9 +174,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level

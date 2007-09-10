@@ -651,8 +651,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -1001,8 +999,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -1464,8 +1460,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -1894,8 +1888,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -2532,8 +2524,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -2901,8 +2891,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -3306,8 +3294,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -3679,8 +3665,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolate
-argument_list|,
 literal|3
 argument_list|,
 name|clip_result
@@ -4033,8 +4017,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -4355,8 +4337,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -4812,8 +4792,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -5236,8 +5214,6 @@ argument_list|,
 name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
-argument_list|,
-name|interpolate
 argument_list|,
 literal|3
 argument_list|,
@@ -5787,8 +5763,6 @@ name|transform_direction
 argument_list|,
 name|interpolation
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -6306,8 +6280,6 @@ name|GIMP_TRANSFORM_FORWARD
 argument_list|,
 name|interpolation_type
 argument_list|,
-name|interpolate
-argument_list|,
 literal|3
 argument_list|,
 name|clip_result
@@ -6760,7 +6732,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6778,7 +6750,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,
@@ -7356,7 +7328,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -7374,7 +7346,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,
@@ -8142,7 +8114,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8160,7 +8132,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,
@@ -8643,7 +8615,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -8661,7 +8633,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,
@@ -9117,7 +9089,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9135,7 +9107,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,
@@ -9660,7 +9632,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -9678,7 +9650,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,
@@ -10352,7 +10324,7 @@ literal|"supersample"
 argument_list|,
 literal|"supersample"
 argument_list|,
-literal|"Whether to perform supersample"
+literal|"This parameter is ignored, supersampling is performed based on the interpolation type"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -10370,7 +10342,7 @@ literal|"recursion-level"
 argument_list|,
 literal|"recursion level"
 argument_list|,
-literal|"Level of recursion (3 is a nice default)"
+literal|"Maximum recursion level used for supersampling (3 is a nice value)"
 argument_list|,
 literal|1
 argument_list|,

@@ -1731,8 +1731,6 @@ name|matrix
 argument_list|,
 name|GIMP_INTERPOLATION_LINEAR
 argument_list|,
-name|FALSE
-argument_list|,
 literal|0
 argument_list|,
 name|NULL

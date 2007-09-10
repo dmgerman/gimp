@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afb97e80103
+DECL|enum|__anon298b92d20103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -382,9 +382,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interp_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -2078,7 +2075,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_vectors_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
+DECL|function|gimp_vectors_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_vectors_transform
 parameter_list|(
 name|GimpItem
@@ -2099,9 +2096,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level

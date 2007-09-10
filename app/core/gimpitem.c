@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aba22570103
+DECL|enum|__anon2bcf95850103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aba22570203
+DECL|enum|__anon2bcf95850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3560,7 +3560,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation,gboolean supersample,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
+DECL|function|gimp_item_transform (GimpItem * item,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_item_transform
 parameter_list|(
 name|GimpItem
@@ -3581,9 +3581,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -3685,8 +3682,6 @@ argument_list|,
 name|direction
 argument_list|,
 name|interpolation
-argument_list|,
-name|supersample
 argument_list|,
 name|recursion_level
 argument_list|,

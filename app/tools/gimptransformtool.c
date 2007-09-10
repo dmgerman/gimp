@@ -4754,10 +4754,6 @@ name|interpolation
 argument_list|,
 name|options
 operator|->
-name|supersample
-argument_list|,
-name|options
-operator|->
 name|recursion_level
 argument_list|,
 name|options
@@ -4818,10 +4814,6 @@ argument_list|,
 name|options
 operator|->
 name|interpolation
-argument_list|,
-name|options
-operator|->
-name|supersample
 argument_list|,
 name|options
 operator|->
@@ -4914,10 +4906,6 @@ name|interpolation
 argument_list|,
 name|options
 operator|->
-name|supersample
-argument_list|,
-name|options
-operator|->
 name|recursion_level
 argument_list|,
 name|clip_result
@@ -4949,10 +4937,6 @@ argument_list|,
 name|options
 operator|->
 name|interpolation
-argument_list|,
-name|options
-operator|->
-name|supersample
 argument_list|,
 name|options
 operator|->

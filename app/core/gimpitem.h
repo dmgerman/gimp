@@ -435,9 +435,6 @@ parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
 parameter_list|,
-name|gboolean
-name|supersample
-parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
@@ -937,9 +934,6 @@ name|direction
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level

@@ -211,9 +211,6 @@ parameter_list|,
 name|gint
 name|alpha
 parameter_list|,
-name|gboolean
-name|supersample
-parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
@@ -274,9 +271,6 @@ parameter_list|,
 name|gint
 name|alpha
 parameter_list|,
-name|gboolean
-name|supersample
-parameter_list|,
 name|gint
 name|recursion_level
 parameter_list|,
@@ -336,9 +330,6 @@ name|m
 parameter_list|,
 name|gint
 name|alpha
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -611,7 +602,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_transform_region (GimpPickable * pickable,GimpContext * context,TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,const GimpMatrix3 * matrix,GimpInterpolationType interpolation_type,gboolean supersample,gint recursion_level,GimpProgress * progress)
+DECL|function|gimp_transform_region (GimpPickable * pickable,GimpContext * context,TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,const GimpMatrix3 * matrix,GimpInterpolationType interpolation_type,gint recursion_level,GimpProgress * progress)
 name|gimp_transform_region
 parameter_list|(
 name|GimpPickable
@@ -649,9 +640,6 @@ name|matrix
 parameter_list|,
 name|GimpInterpolationType
 name|interpolation_type
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -936,8 +924,6 @@ name|m
 argument_list|,
 name|alpha
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|bg_color
@@ -976,8 +962,6 @@ name|m
 argument_list|,
 name|alpha
 argument_list|,
-name|supersample
-argument_list|,
 name|recursion_level
 argument_list|,
 name|bg_color
@@ -1015,8 +999,6 @@ operator|&
 name|m
 argument_list|,
 name|alpha
-argument_list|,
-name|supersample
 argument_list|,
 name|recursion_level
 argument_list|,
@@ -1537,7 +1519,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_region_linear (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,gboolean supersample,gint recursion_level,const guchar * bg_color,GimpProgress * progress)
+DECL|function|gimp_transform_region_linear (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,gint recursion_level,const guchar * bg_color,GimpProgress * progress)
 name|gimp_transform_region_linear
 parameter_list|(
 name|TileManager
@@ -1579,9 +1561,6 @@ name|m
 parameter_list|,
 name|gint
 name|alpha
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -1840,8 +1819,6 @@ expr_stmt|;
 comment|/*  Set the destination pixels  */
 if|if
 condition|(
-name|supersample
-operator|&&
 name|supersample_dtest
 argument_list|(
 name|u
@@ -2105,7 +2082,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_region_cubic (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,gboolean supersample,gint recursion_level,const guchar * bg_color,GimpProgress * progress)
+DECL|function|gimp_transform_region_cubic (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,gint recursion_level,const guchar * bg_color,GimpProgress * progress)
 name|gimp_transform_region_cubic
 parameter_list|(
 name|TileManager
@@ -2147,9 +2124,6 @@ name|m
 parameter_list|,
 name|gint
 name|alpha
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -2407,8 +2381,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|supersample
-operator|&&
 name|supersample_dtest
 argument_list|(
 name|u
@@ -2672,7 +2644,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_transform_region_lanczos (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,gboolean supersample,gint recursion_level,const guchar * bg_color,GimpProgress * progress)
+DECL|function|gimp_transform_region_lanczos (TileManager * orig_tiles,PixelRegion * destPR,gint dest_x1,gint dest_y1,gint dest_x2,gint dest_y2,gint u1,gint v1,gint u2,gint v2,const GimpMatrix3 * m,gint alpha,gint recursion_level,const guchar * bg_color,GimpProgress * progress)
 name|gimp_transform_region_lanczos
 parameter_list|(
 name|TileManager
@@ -2714,9 +2686,6 @@ name|m
 parameter_list|,
 name|gint
 name|alpha
-parameter_list|,
-name|gboolean
-name|supersample
 parameter_list|,
 name|gint
 name|recursion_level
@@ -2985,8 +2954,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|supersample
-operator|&&
 name|supersample_dtest
 argument_list|(
 name|u
