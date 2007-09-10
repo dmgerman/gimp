@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00103
+DECL|enum|__anon29bc67a30103
 typedef|typedef
 enum|enum
 block|{
@@ -185,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00203
+DECL|enum|__anon29bc67a30203
 typedef|typedef
 enum|enum
 block|{
@@ -225,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00303
+DECL|enum|__anon29bc67a30303
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00403
+DECL|enum|__anon29bc67a30403
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00503
+DECL|enum|__anon29bc67a30503
 typedef|typedef
 enum|enum
 block|{
@@ -313,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00603
+DECL|enum|__anon29bc67a30603
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00703
+DECL|enum|__anon29bc67a30703
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00803
+DECL|enum|__anon29bc67a30803
 typedef|typedef
 enum|enum
 block|{
@@ -391,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00903
+DECL|enum|__anon29bc67a30903
 typedef|typedef
 enum|enum
 block|{
@@ -439,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00a03
+DECL|enum|__anon29bc67a30a03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00b03
+DECL|enum|__anon29bc67a30b03
 typedef|typedef
 enum|enum
 block|{
@@ -524,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon2a339df00c03
+DECL|enum|__anon29bc67a30c03
 typedef|typedef
 enum|enum
 block|{
@@ -597,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a339df00d08
+DECL|struct|__anon29bc67a30d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a339df00e08
+DECL|struct|__anon29bc67a30e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -5653,7 +5653,9 @@ literal|1
 init|;
 name|i
 operator|<
-name|column_count
+name|params
+operator|.
+name|cols
 condition|;
 name|i
 operator|++
@@ -5670,7 +5672,9 @@ operator|*
 name|i
 operator|)
 operator|/
-name|column_count
+name|params
+operator|.
+name|cols
 argument_list|)
 expr_stmt|;
 for|for
@@ -5681,7 +5685,9 @@ literal|1
 init|;
 name|i
 operator|<
-name|row_count
+name|params
+operator|.
+name|rows
 condition|;
 name|i
 operator|++
@@ -5698,7 +5704,9 @@ operator|*
 name|i
 operator|)
 operator|/
-name|row_count
+name|params
+operator|.
+name|rows
 argument_list|)
 expr_stmt|;
 comment|/* We use a parasite to pass in the tube (pipe) parameters in    * case we will have any use of those, for instance in the gpb    * plug-in that saves a GIMP image pipe.    */
