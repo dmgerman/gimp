@@ -1744,15 +1744,6 @@ operator|->
 name|core
 argument_list|)
 decl_stmt|;
-name|GimpSourceCore
-modifier|*
-name|source_core
-init|=
-name|GIMP_SOURCE_CORE
-argument_list|(
-name|clone
-argument_list|)
-decl_stmt|;
 name|GimpPerspectiveCloneOptions
 modifier|*
 name|options
