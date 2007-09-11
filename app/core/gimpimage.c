@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b77f220103
+DECL|enum|__anon2a4a795d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b77f220203
+DECL|enum|__anon2a4a795d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12291,6 +12291,19 @@ name|position
 operator|++
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|layers
+condition|)
+name|gimp_image_set_active_layer
+argument_list|(
+name|image
+argument_list|,
+name|layers
+operator|->
+name|data
+argument_list|)
+expr_stmt|;
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
