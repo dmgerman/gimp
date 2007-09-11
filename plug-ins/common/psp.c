@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30103
+DECL|enum|__anon27b4f3d20103
 typedef|typedef
 enum|enum
 block|{
@@ -185,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30203
+DECL|enum|__anon27b4f3d20203
 typedef|typedef
 enum|enum
 block|{
@@ -225,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30303
+DECL|enum|__anon27b4f3d20303
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30403
+DECL|enum|__anon27b4f3d20403
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30503
+DECL|enum|__anon27b4f3d20503
 typedef|typedef
 enum|enum
 block|{
@@ -313,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30603
+DECL|enum|__anon27b4f3d20603
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30703
+DECL|enum|__anon27b4f3d20703
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30803
+DECL|enum|__anon27b4f3d20803
 typedef|typedef
 enum|enum
 block|{
@@ -391,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30903
+DECL|enum|__anon27b4f3d20903
 typedef|typedef
 enum|enum
 block|{
@@ -439,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30a03
+DECL|enum|__anon27b4f3d20a03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30b03
+DECL|enum|__anon27b4f3d20b03
 typedef|typedef
 enum|enum
 block|{
@@ -524,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon29bc67a30c03
+DECL|enum|__anon27b4f3d20c03
 typedef|typedef
 enum|enum
 block|{
@@ -597,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc67a30d08
+DECL|struct|__anon27b4f3d20d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc67a30e08
+DECL|struct|__anon27b4f3d20e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -775,13 +775,13 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|major
-DECL|variable|minor
+DECL|variable|psp_ver_major
+DECL|variable|psp_ver_minor
 specifier|static
 name|guint16
-name|major
+name|psp_ver_major
 decl_stmt|,
-name|minor
+name|psp_ver_minor
 decl_stmt|;
 end_decl_stmt
 
@@ -1292,7 +1292,7 @@ operator|<
 literal|1
 operator|||
 operator|(
-name|major
+name|psp_ver_major
 operator|<
 literal|4
 operator|&&
@@ -1375,7 +1375,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|<
 literal|4
 condition|)
@@ -1478,7 +1478,7 @@ return|;
 block|}
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|>=
 literal|4
 condition|)
@@ -3815,7 +3815,7 @@ expr_stmt|;
 comment|/* Read layer information chunk */
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|>=
 literal|4
 condition|)
@@ -4859,7 +4859,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|<
 literal|4
 condition|)
@@ -5056,7 +5056,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|==
 literal|4
 condition|)
@@ -5249,7 +5249,7 @@ name|PSP_CHANNEL_RED
 expr_stmt|;
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|<
 literal|4
 condition|)
@@ -6053,7 +6053,7 @@ operator|||
 name|fread
 argument_list|(
 operator|&
-name|major
+name|psp_ver_major
 argument_list|,
 literal|2
 argument_list|,
@@ -6067,7 +6067,7 @@ operator|||
 name|fread
 argument_list|(
 operator|&
-name|minor
+name|psp_ver_minor
 argument_list|,
 literal|2
 argument_list|,
@@ -6111,24 +6111,24 @@ goto|goto
 name|error
 goto|;
 block|}
-name|major
+name|psp_ver_major
 operator|=
 name|GUINT16_FROM_LE
 argument_list|(
-name|major
+name|psp_ver_major
 argument_list|)
 expr_stmt|;
-name|minor
+name|psp_ver_minor
 operator|=
 name|GUINT16_FROM_LE
 argument_list|(
-name|minor
+name|psp_ver_minor
 argument_list|)
 expr_stmt|;
 comment|/* I only have the documentation for file format version 3.0,    * but PSP 6 writes version 4.0. Let's hope it's backwards compatible.    * Earlier versions probably don't have all the fields I expect    * so don't accept those.    */
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|<
 literal|3
 condition|)
@@ -6138,9 +6138,9 @@ argument_list|(
 literal|"Unsupported PSP file format version "
 literal|"%d.%d, only knows 3.0 (and later?)"
 argument_list|,
-name|major
+name|psp_ver_major
 argument_list|,
-name|minor
+name|psp_ver_minor
 argument_list|)
 expr_stmt|;
 goto|goto
@@ -6150,7 +6150,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|==
 literal|3
 condition|)
@@ -6159,11 +6159,11 @@ comment|/* OK */
 elseif|else
 if|if
 condition|(
-name|major
+name|psp_ver_major
 operator|==
 literal|4
 operator|&&
-name|minor
+name|psp_ver_minor
 operator|==
 literal|0
 condition|)
@@ -6181,9 +6181,9 @@ name|g_message
 argument_list|(
 literal|"Unsupported PSP file format version %d.%d"
 argument_list|,
-name|major
+name|psp_ver_major
 argument_list|,
-name|minor
+name|psp_ver_minor
 argument_list|)
 expr_stmt|;
 goto|goto
