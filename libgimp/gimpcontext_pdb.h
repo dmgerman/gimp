@@ -64,6 +64,23 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_context_list_paint_methods
+parameter_list|(
+name|gint
+modifier|*
+name|num_paint_methods
+parameter_list|,
+name|gchar
+modifier|*
+modifier|*
+modifier|*
+name|paint_methods
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_context_get_foreground
 parameter_list|(
 name|GimpRGB
