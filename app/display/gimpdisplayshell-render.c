@@ -152,7 +152,7 @@ end_define
 
 begin_comment
 DECL|macro|GIMP_DISPLAY_ZOOM_PIXEL_AA
-comment|/* provide AA edges when zooming in                                                on the actual pixels (in current                                              code only enables it between 100%                                              and 200% zoom) */
+comment|/* provide AA edges when zooming in                                                on the actual pixels (in current                                                code only enables it between                                                100% and 200% zoom)                                              */
 end_comment
 
 begin_comment
@@ -4271,6 +4271,7 @@ directive|define
 name|ALPHA
 value|3
 block|{
+specifier|const
 name|guint
 name|factors
 index|[
@@ -4653,6 +4654,7 @@ name|ALPHA
 value|1
 comment|/* NOTE: this is a copy and paste of the code above, the ALPHA changes          * the behavior in all needed ways. */
 block|{
+specifier|const
 name|guint
 name|factors
 index|[
@@ -6357,7 +6359,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* this forces a refetch of the left most source                              samples */
+comment|/* this forces a refetch of the left most source                                samples */
 block|}
 if|if
 condition|(
@@ -6389,7 +6391,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* this forces a refetch of the left most source                              samples */
+comment|/* this forces a refetch of the left most source                                samples */
 block|}
 if|if
 condition|(
@@ -6421,7 +6423,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* this forces a refetch of the left most source                              samples */
+comment|/* this forces a refetch of the left most source                                samples */
 block|}
 name|src
 index|[
@@ -8625,7 +8627,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* this forces a refetch of the left most source                              samples */
+comment|/* this forces a refetch of the left most source                                samples */
 block|}
 if|if
 condition|(
@@ -8657,7 +8659,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* this forces a refetch of the left most source                              samples */
+comment|/* this forces a refetch of the left most source                                samples */
 block|}
 if|if
 condition|(
@@ -8689,7 +8691,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* this forces a refetch of the left most source                              samples */
+comment|/* this forces a refetch of the left most source                                samples */
 block|}
 name|src
 index|[
