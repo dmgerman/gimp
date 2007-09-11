@@ -343,20 +343,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  open layers in reverse order so they appear in the same    *  order as in the file dialog    */
-if|if
-condition|(
-name|dialog
-operator|->
-name|image
-condition|)
-name|uris
-operator|=
-name|g_slist_reverse
-argument_list|(
-name|uris
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|list
