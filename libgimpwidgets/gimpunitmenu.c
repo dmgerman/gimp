@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b876c860103
+DECL|enum|__anon2ae259520103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +72,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b876c860203
+DECL|enum|__anon2ae259520203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2055,12 +2055,31 @@ name|GtkTreePath
 modifier|*
 name|path
 decl_stmt|;
+name|GtkDialogFlags
+name|flags
+init|=
+name|GTK_DIALOG_DESTROY_WITH_PARENT
+decl_stmt|;
 name|GimpUnit
 name|unit
 decl_stmt|;
 name|gint
 name|num_units
 decl_stmt|;
+if|if
+condition|(
+name|gtk_window_get_modal
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+condition|)
+name|flags
+operator||=
+name|GTK_DIALOG_MODAL
+expr_stmt|;
 name|menu
 operator|->
 name|selection
@@ -2076,7 +2095,7 @@ literal|"gimp-unit-selection"
 argument_list|,
 name|parent
 argument_list|,
-name|GTK_DIALOG_DESTROY_WITH_PARENT
+name|flags
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
