@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c037c1b0103
+DECL|enum|__anon2766ef170103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c037c1b0203
+DECL|enum|__anon2766ef170203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c037c1b0308
+DECL|struct|__anon2766ef170308
 block|{
 DECL|member|name
 specifier|const
@@ -3604,6 +3604,10 @@ argument_list|,
 name|intent
 argument_list|,
 name|bpc
+condition|?
+name|cmsFLAGS_WHITEBLACKCOMPENSATION
+else|:
+literal|0
 argument_list|)
 expr_stmt|;
 name|last_format
@@ -3730,6 +3734,10 @@ argument_list|,
 name|intent
 argument_list|,
 name|bpc
+condition|?
+name|cmsFLAGS_WHITEBLACKCOMPENSATION
+else|:
+literal|0
 argument_list|)
 expr_stmt|;
 if|if
