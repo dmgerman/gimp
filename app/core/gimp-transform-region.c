@@ -5061,11 +5061,6 @@ name|gdouble
 name|y3
 parameter_list|)
 block|{
-DECL|macro|SQRT2
-define|#
-directive|define
-name|SQRT2
-value|1.414213562373095
 return|return
 operator|(
 name|fabs
@@ -5075,7 +5070,7 @@ operator|-
 name|x1
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5084,7 +5079,7 @@ operator|-
 name|x2
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5093,7 +5088,7 @@ operator|-
 name|x3
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5102,7 +5097,7 @@ operator|-
 name|x0
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5111,7 +5106,7 @@ operator|-
 name|y1
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5120,7 +5115,7 @@ operator|-
 name|y2
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5129,7 +5124,7 @@ operator|-
 name|y3
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5138,7 +5133,7 @@ operator|-
 name|y0
 argument_list|)
 operator|>
-name|SQRT2
+name|G_SQRT2
 operator|)
 return|;
 block|}
