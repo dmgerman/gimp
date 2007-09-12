@@ -12958,12 +12958,8 @@ argument_list|(
 name|tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 name|width

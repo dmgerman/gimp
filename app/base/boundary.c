@@ -2159,6 +2159,7 @@ expr_stmt|;
 name|data
 operator|=
 operator|(
+operator|(
 specifier|const
 name|guchar
 operator|*
@@ -2168,15 +2169,10 @@ argument_list|(
 name|tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|scanline
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 operator|+
-operator|(
 name|tile_bpp
 argument_list|(
 name|tile

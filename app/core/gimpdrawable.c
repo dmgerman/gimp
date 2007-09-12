@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ad63dd0103
+DECL|enum|__anon2989e1a70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3187,18 +3187,11 @@ argument_list|,
 name|src_tile
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|swap_pixels (tile_data_pointer (src_tile, 0, 0),                                tile_data_pointer (dest_tile, 0, 0),                                tile_size (src_tile));
-endif|#
-directive|endif
 name|tile_release
 argument_list|(
 name|dest_tile
 argument_list|,
 name|FALSE
-comment|/* TRUE */
 argument_list|)
 expr_stmt|;
 name|tile_release
@@ -3206,7 +3199,6 @@ argument_list|(
 name|src_tile
 argument_list|,
 name|FALSE
-comment|/* TRUE */
 argument_list|)
 expr_stmt|;
 block|}

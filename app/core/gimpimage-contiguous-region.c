@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ae10d0108
+DECL|struct|__anon287fe3d50108
 block|{
 DECL|member|image
 name|GimpImage
@@ -584,6 +584,7 @@ condition|(
 name|tile
 condition|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|start
@@ -601,12 +602,8 @@ argument_list|(
 name|tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 if|if
@@ -1944,12 +1941,8 @@ operator|*
 name|s_tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1961,12 +1954,8 @@ operator|*
 name|m_tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 block|}
@@ -2742,6 +2731,7 @@ name|val
 operator|=
 operator|*
 operator|(
+specifier|const
 name|guchar
 operator|*
 operator|)
@@ -2751,12 +2741,8 @@ argument_list|(
 name|tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 operator|)
 expr_stmt|;

@@ -5934,6 +5934,7 @@ specifier|static
 name|gint
 name|cur_tiley
 decl_stmt|;
+specifier|const
 name|guint8
 modifier|*
 name|p
@@ -6010,12 +6011,8 @@ argument_list|(
 name|cur_tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 operator|*

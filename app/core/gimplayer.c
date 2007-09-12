@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28049bf60103
+DECL|enum|__anon2767a4ef0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28049bf60203
+DECL|enum|__anon2767a4ef0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3695,6 +3695,7 @@ operator|=
 operator|*
 operator|(
 operator|(
+specifier|const
 name|guchar
 operator|*
 operator|)
@@ -3703,12 +3704,8 @@ argument_list|(
 name|tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 operator|+
 name|tile_bpp

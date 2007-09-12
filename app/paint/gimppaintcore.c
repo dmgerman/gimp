@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5edb3e0103
+DECL|enum|__anon27ba4f560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2735,14 +2735,10 @@ argument_list|,
 name|srcPR
 operator|.
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|srcPR
 operator|.
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 block|}
@@ -3177,14 +3173,10 @@ argument_list|,
 name|srcPR
 operator|.
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|srcPR
 operator|.
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 expr_stmt|;
 block|}

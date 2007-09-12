@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac42cc10103
+DECL|enum|__anon2c0073800103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3876,12 +3876,8 @@ argument_list|(
 name|tile
 argument_list|,
 name|x
-operator|%
-name|TILE_WIDTH
 argument_list|,
 name|y
-operator|%
-name|TILE_HEIGHT
 argument_list|)
 operator|)
 expr_stmt|;
