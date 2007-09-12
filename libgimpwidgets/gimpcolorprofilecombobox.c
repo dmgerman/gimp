@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279c7db30103
+DECL|enum|__anon2c006e9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -58,7 +58,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c7db30208
+DECL|struct|__anon2c006e9b0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -1019,7 +1019,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_profile_combo_box_set_active:  * @combo:    a #GimpColorProfileComboBox  * @filename: filename of the profile to select  * @label:    label  *  * Selects a color profile from the @combo and makes it the active  * item.  If the profile is not listed in the @combo, then it is  * added.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_color_profile_combo_box_set_active:  * @combo:    a #GimpColorProfileComboBox  * @filename: filename of the profile to select  * @label:    label to use when adding a new entry (can be %NULL)  *  * Selects a color profile from the @combo and makes it the active  * item.  If the profile is not listed in the @combo, then it is added  * with the given @label (or @filename in case that @label is %NULL).  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
