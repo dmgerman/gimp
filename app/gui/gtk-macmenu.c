@@ -9,17 +9,17 @@ directive|include
 file|"config.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_CARBON
-end_ifdef
-
 begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|GDK_WINDOWING_QUARTZ
+end_ifdef
 
 begin_include
 include|#
@@ -262,7 +262,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c748d260108
+DECL|struct|__anon29b78b5c0108
 block|{
 DECL|member|menu
 name|MenuRef
@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c748d260208
+DECL|struct|__anon29b78b5c0208
 block|{
 DECL|member|menu
 name|MenuRef
@@ -2747,7 +2747,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_CARBON */
+comment|/* GDK_WINDOWING_QUARTZ */
 end_comment
 
 end_unit

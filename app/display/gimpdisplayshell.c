@@ -275,7 +275,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a226bbf0103
+DECL|enum|__anon2977f0690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a226bbf0203
+DECL|enum|__anon2977f0690203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3061,7 +3061,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|HAVE_CARBON
+name|GDK_WINDOWING_QUARTZ
 name|shell
 operator|->
 name|menubar
@@ -3080,7 +3080,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* !HAVE_CARBON */
+comment|/* !GDK_WINDOWING_QUARTZ */
 if|if
 condition|(
 name|shell

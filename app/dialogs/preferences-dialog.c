@@ -5341,7 +5341,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|HAVE_CARBON
+name|GDK_WINDOWING_QUARTZ
 name|prefs_check_button_add
 argument_list|(
 name|object
@@ -5361,7 +5361,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* !HAVE_CARBON */
+comment|/* !GDK_WINDOWING_QUARTZ */
 name|prefs_check_button_add
 argument_list|(
 name|object
@@ -9339,7 +9339,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ae605430108
+DECL|struct|__anon2c1936ee0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10501,7 +10501,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae605430208
+DECL|struct|__anon2c1936ee0208
 block|{
 DECL|member|label
 specifier|const
@@ -11522,7 +11522,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae605430308
+DECL|struct|__anon2c1936ee0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11677,7 +11677,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae605430408
+DECL|struct|__anon2c1936ee0408
 block|{
 DECL|member|tree_label
 specifier|const

@@ -324,7 +324,7 @@ end_include
 begin_ifdef
 ifdef|#
 directive|ifdef
-name|HAVE_CARBON
+name|GDK_WINDOWING_QUARTZ
 end_ifdef
 
 begin_include
@@ -339,7 +339,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* HAVE_CARBON */
+comment|/* GDK_WINDOWING_QUARTZ */
 end_comment
 
 begin_include
@@ -1864,7 +1864,7 @@ argument_list|)
 expr_stmt|;
 ifdef|#
 directive|ifdef
-name|HAVE_CARBON
+name|GDK_WINDOWING_QUARTZ
 block|{
 name|GtkWidget
 modifier|*
@@ -2005,7 +2005,7 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
-comment|/* HAVE_CARBON */
+comment|/* GDK_WINDOWING_QUARTZ */
 name|g_signal_connect_object
 argument_list|(
 name|gui_config

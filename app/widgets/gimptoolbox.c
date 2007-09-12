@@ -924,7 +924,7 @@ argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
-name|HAVE_CARBON
+name|GDK_WINDOWING_QUARTZ
 name|toolbox
 operator|->
 name|menu_bar
@@ -938,7 +938,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* !HAVE_CARBON */
+comment|/* !GDK_WINDOWING_QUARTZ */
 if|if
 condition|(
 name|toolbox
