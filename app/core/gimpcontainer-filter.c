@@ -76,7 +76,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0569590108
+DECL|struct|__anon2b2f620b0108
 block|{
 DECL|member|filter
 name|GimpObjectFilterFunc
@@ -380,6 +380,8 @@ name|regex
 argument_list|,
 name|regexp
 argument_list|,
+name|REG_EXTENDED
+operator||
 name|REG_ICASE
 operator||
 name|REG_NOSUB
