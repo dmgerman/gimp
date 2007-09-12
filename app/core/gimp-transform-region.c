@@ -4912,7 +4912,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Returns TRUE if one of the deltas of the  * quad edge is> 1.0 (16.16 fixed values).  */
+comment|/*  * Returns TRUE if one of the deltas of the quad edge is> 1.0 (16.16 fixed  * values). This is the condition used on whether additional recursive  * subdivision should be used.  */
 end_comment
 
 begin_function
@@ -5026,7 +5026,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  *  Returns TRUE if one of the deltas of the  *  quad edge is> 1.0 (double values).  */
+comment|/*  * Returns TRUE if one of the deltas of the quad edge is> sqrt(2) (double  * values). This is the condition used on whether supersampling should be used  * or not. By making this sqrt(2) supersampling will not be triggered by  * rotations.  */
 end_comment
 
 begin_function
@@ -5061,6 +5061,11 @@ name|gdouble
 name|y3
 parameter_list|)
 block|{
+DECL|macro|SQRT2
+define|#
+directive|define
+name|SQRT2
+value|1.414213562373095
 return|return
 operator|(
 name|fabs
@@ -5070,7 +5075,7 @@ operator|-
 name|x1
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5079,7 +5084,7 @@ operator|-
 name|x2
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5088,7 +5093,7 @@ operator|-
 name|x3
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5097,7 +5102,7 @@ operator|-
 name|x0
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5106,7 +5111,7 @@ operator|-
 name|y1
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5115,7 +5120,7 @@ operator|-
 name|y2
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5124,7 +5129,7 @@ operator|-
 name|y3
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|||
 name|fabs
 argument_list|(
@@ -5133,7 +5138,7 @@ operator|-
 name|y0
 argument_list|)
 operator|>
-literal|1.0
+name|SQRT2
 operator|)
 return|;
 block|}
