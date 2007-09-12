@@ -1231,7 +1231,7 @@ operator|+
 operator|(
 name|xoff
 operator|%
-name|TILE_HEIGHT
+name|TILE_WIDTH
 operator|)
 decl_stmt|;
 return|return
