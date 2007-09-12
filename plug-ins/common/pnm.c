@@ -357,7 +357,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29526eae0108
+DECL|struct|__anon28c8e02b0108
 block|{
 DECL|member|raw
 name|gint
@@ -2893,6 +2893,29 @@ break|break;
 case|case
 literal|1
 case|:
+if|if
+condition|(
+name|info
+operator|->
+name|np
+condition|)
+name|d
+index|[
+name|b
+index|]
+operator|=
+operator|(
+operator|*
+name|buf
+operator|==
+literal|'0'
+operator|)
+condition|?
+literal|0x00
+else|:
+literal|0xff
+expr_stmt|;
+else|else
 name|d
 index|[
 name|b
@@ -2909,6 +2932,7 @@ literal|0xff
 else|:
 literal|0x00
 expr_stmt|;
+comment|/* invert for PBM */
 break|break;
 default|default:
 name|d
