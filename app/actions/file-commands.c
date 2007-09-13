@@ -864,6 +864,10 @@ operator|=
 name|file_save
 argument_list|(
 name|image
+operator|->
+name|gimp
+argument_list|,
+name|image
 argument_list|,
 name|action_data_get_context
 argument_list|(

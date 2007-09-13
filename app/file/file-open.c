@@ -227,12 +227,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimprecentlist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1411,6 +1405,8 @@ name|save_document_history
 condition|)
 name|gimp_recent_list_add_uri
 argument_list|(
+name|gimp
+argument_list|,
 name|uri
 argument_list|,
 name|mime_type
@@ -1879,6 +1875,8 @@ name|save_document_history
 condition|)
 name|gimp_recent_list_add_uri
 argument_list|(
+name|gimp
+argument_list|,
 name|uri
 argument_list|,
 name|mime_type

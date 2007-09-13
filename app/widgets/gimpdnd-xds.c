@@ -548,6 +548,10 @@ condition|(
 name|file_save
 argument_list|(
 name|image
+operator|->
+name|gimp
+argument_list|,
+name|image
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
