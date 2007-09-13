@@ -9,6 +9,29 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED (GtkTooltips)
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -113,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290fc6760103
+DECL|enum|__anon2923d5810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

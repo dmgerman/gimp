@@ -1005,8 +1005,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|description
-operator|&&
 name|strlen
 argument_list|(
 name|description

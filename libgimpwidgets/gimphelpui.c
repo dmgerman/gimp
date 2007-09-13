@@ -9,6 +9,29 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|GTK_DISABLE_DEPRECATED (GtkTooltips)
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -48,7 +71,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6260ac0103
+DECL|enum|__anon2a30005e0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP

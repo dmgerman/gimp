@@ -209,10 +209,6 @@ literal|"GDK_DISPLAY"
 decl_stmt|;
 endif|#
 directive|endif
-if|if
-condition|(
-name|var_name
-condition|)
 name|putenv
 argument_list|(
 name|g_strdup_printf
