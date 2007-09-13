@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89953b0103
+DECL|enum|__anon2c2b54b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89953b0203
+DECL|enum|__anon2c2b54b60203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -382,16 +382,6 @@ name|GQuark
 name|quark_preview_pixbuf
 init|=
 literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|debug_context
-specifier|static
-name|gboolean
-name|debug_context
-init|=
-name|TRUE
 decl_stmt|;
 end_decl_stmt
 
@@ -2259,11 +2249,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|debug_context
-operator|&&
+name|G_UNLIKELY
+argument_list|(
 name|context
 operator|==
 name|NULL
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(
@@ -2465,11 +2456,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|debug_context
-operator|&&
+name|G_UNLIKELY
+argument_list|(
 name|context
 operator|==
 name|NULL
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(
@@ -2798,11 +2790,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|debug_context
-operator|&&
+name|G_UNLIKELY
+argument_list|(
 name|context
 operator|==
 name|NULL
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(
@@ -3006,11 +2999,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|debug_context
-operator|&&
+name|G_UNLIKELY
+argument_list|(
 name|context
 operator|==
 name|NULL
+argument_list|)
 condition|)
 name|g_warning
 argument_list|(
