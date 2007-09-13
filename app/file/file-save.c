@@ -194,13 +194,9 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (Gimp * gimp,GimpImage * image,GimpContext * context,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
+DECL|function|file_save (GimpImage * image,GimpContext * context,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
 name|file_save
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -255,16 +251,6 @@ decl_stmt|;
 name|gint32
 name|drawable_ID
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_GIMP
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|GIMP_PDB_CALLING_ERROR
-argument_list|)
-expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -689,6 +675,8 @@ name|save_document_history
 condition|)
 name|gimp_recent_list_add_uri
 argument_list|(
+name|image
+operator|->
 name|gimp
 argument_list|,
 name|uri
