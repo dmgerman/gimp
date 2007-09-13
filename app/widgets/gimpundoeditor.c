@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1ab5780103
+DECL|enum|__anon276d54640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -783,15 +783,6 @@ argument_list|(
 name|docked
 argument_list|)
 decl_stmt|;
-name|parent_docked_iface
-operator|->
-name|set_context
-argument_list|(
-name|docked
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|editor
@@ -821,6 +812,16 @@ name|g_object_ref
 argument_list|(
 name|editor
 operator|->
+name|context
+argument_list|)
+expr_stmt|;
+comment|/* This calls gimp_undo_editor_set_image(), so make sure that it    * isn't called before editor->context has been initialized.    */
+name|parent_docked_iface
+operator|->
+name|set_context
+argument_list|(
+name|docked
+argument_list|,
 name|context
 argument_list|)
 expr_stmt|;

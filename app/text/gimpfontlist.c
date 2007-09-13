@@ -527,7 +527,7 @@ directive|ifdef
 name|__GNUC__
 warning|#
 directive|warning
-warning|remove this as soon as we depend on Pango 1.6.5
+warning|remove this as soon as we depend on Pango 1.16.5
 endif|#
 directive|endif
 if|if
