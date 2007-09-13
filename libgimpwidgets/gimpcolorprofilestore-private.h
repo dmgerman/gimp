@@ -16,14 +16,10 @@ directive|define
 name|__GIMP_COLOR_PROFILE_STORE_PRIVATE_H__
 end_define
 
-begin_macro
-name|G_BEGIN_DECLS
-end_macro
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ea0e990103
+DECL|enum|__anon2b79f1b70103
 block|{
 DECL|enumerator|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
 name|GIMP_COLOR_PROFILE_STORE_ITEM_FILE
@@ -45,7 +41,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ea0e990203
+DECL|enum|__anon2b79f1b70203
 block|{
 DECL|enumerator|GIMP_COLOR_PROFILE_STORE_ITEM_TYPE
 name|GIMP_COLOR_PROFILE_STORE_ITEM_TYPE
@@ -82,6 +78,22 @@ specifier|const
 name|gchar
 modifier|*
 name|label
+parameter_list|,
+name|GtkTreeIter
+modifier|*
+name|iter
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|G_GNUC_INTERNAL
+name|void
+name|_gimp_color_profile_store_history_reorder
+parameter_list|(
+name|GimpColorProfileStore
+modifier|*
+name|store
 parameter_list|,
 name|GtkTreeIter
 modifier|*

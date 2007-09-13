@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c006e9b0103
+DECL|enum|__anon29368a0d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -58,7 +58,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c006e9b0208
+DECL|struct|__anon29368a0d0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -812,7 +812,17 @@ operator|&
 name|iter
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: update order of history  */
+name|_gimp_color_profile_store_history_reorder
+argument_list|(
+name|GIMP_COLOR_PROFILE_STORE
+argument_list|(
+name|model
+argument_list|)
+argument_list|,
+operator|&
+name|iter
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 break|break;
