@@ -786,20 +786,15 @@ name|filename
 parameter_list|)
 block|{
 comment|/*  skip files starting with '.' so we don't try to parse    *  stuff like .DS_Store or other metadata storage files    */
-if|if
-condition|(
+return|return
+operator|(
 name|filename
 index|[
 literal|0
 index|]
 operator|==
 literal|'.'
-condition|)
-return|return
-name|TRUE
-return|;
-return|return
-name|FALSE
+operator|)
 return|;
 block|}
 end_function
