@@ -2365,6 +2365,20 @@ decl_stmt|;
 name|GtkRecentData
 name|recent
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|groups
+index|[
+literal|2
+index|]
+init|=
+block|{
+literal|"Graphics"
+block|,
+name|NULL
+block|}
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_GIMP
@@ -2435,12 +2449,7 @@ name|recent
 operator|.
 name|app_name
 operator|=
-operator|(
-name|gchar
-operator|*
-operator|)
-name|g_get_application_name
-argument_list|()
+literal|"GNU Image Manipulation Program"
 expr_stmt|;
 name|recent
 operator|.
@@ -2453,7 +2462,7 @@ name|recent
 operator|.
 name|groups
 operator|=
-name|NULL
+name|groups
 expr_stmt|;
 name|recent
 operator|.
