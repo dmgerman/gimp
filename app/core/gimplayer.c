@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2767a4ef0103
+DECL|enum|__anon27a6dfcc0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2767a4ef0203
+DECL|enum|__anon27a6dfcc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6015,7 +6015,7 @@ operator|->
 name|mask
 condition|)
 return|return;
-comment|/*  this operation can only be done to layers with an alpha channel  */
+comment|/*  APPLY can only be done to layers with an alpha channel  */
 if|if
 condition|(
 operator|!
@@ -6027,7 +6027,17 @@ name|layer
 argument_list|)
 argument_list|)
 condition|)
-return|return;
+name|g_return_if_fail
+argument_list|(
+name|mode
+operator|==
+name|GIMP_MASK_DISCARD
+operator|||
+name|push_undo
+operator|==
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|item
 operator|=
 name|GIMP_ITEM
@@ -6089,6 +6099,28 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mode
+operator|==
+name|GIMP_MASK_APPLY
+operator|&&
+operator|!
+name|gimp_drawable_has_alpha
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|gimp_layer_add_alpha
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 comment|/*  check if applying the mask changes the projection  */
 if|if
