@@ -315,7 +315,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_add_alpha:  * @layer_ID: The layer.  *  * Add an alpha channel to the layer if it doesn't already have one.  *  * This procedure adds an additional component to the specified layer  * if it does not already possess an alpha channel. An alpha channel  * makes it possible to move a layer from the bottom of the layer stack  * and to clear and erase to transparency, instead of the background  * color. This transforms images of type RGB to RGBA, GRAY to GRAYA,  * and INDEXED to INDEXEDA.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_add_alpha:  * @layer_ID: The layer.  *  * Add an alpha channel to the layer if it doesn't already have one.  *  * This procedure adds an additional component to the specified layer  * if it does not already possess an alpha channel. An alpha channel  * makes it possible to clear and erase to transparency, instead of the  * background color. This transforms layers of type RGB to RGBA, GRAY  * to GRAYA, and INDEXED to INDEXEDA.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -344,6 +344,73 @@ operator|=
 name|gimp_run_procedure
 argument_list|(
 literal|"gimp-layer-add-alpha"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_LAYER
+argument_list|,
+name|layer_ID
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_layer_flatten:  * @layer_ID: The layer.  *  * Remove the alpha channel from the layer if it has one.  *  * This procedure removes the alpha channel from a layer, blending all  * (partially) transparent pixels in the layer against the background  * color. This transforms layers of type RGBA to RGB, GRAYA to GRAY,  * and INDEXEDA to INDEXED.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_layer_flatten (gint32 layer_ID)
+name|gimp_layer_flatten
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-layer-flatten"
 argument_list|,
 operator|&
 name|nreturn_vals

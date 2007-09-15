@@ -92,6 +92,16 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_layer_flatten
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_layer_scale
 parameter_list|(
 name|gint32
