@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2756deee0103
+DECL|enum|__anon2c6f91720103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -278,6 +278,10 @@ DECL|member|visible
 name|gboolean
 name|visible
 decl_stmt|;
+DECL|member|drop
+name|gboolean
+name|drop
+decl_stmt|;
 DECL|member|name
 name|gchar
 modifier|*
@@ -316,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756deee0208
+DECL|struct|__anon2c6f91720208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -566,7 +570,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2756deee0308
+DECL|struct|__anon2c6f91720308
 block|{
 DECL|member|signature
 name|gchar
@@ -3858,6 +3862,12 @@ name|bottom
 operator|-
 name|top
 expr_stmt|;
+name|layer
+operator|->
+name|drop
+operator|=
+name|FALSE
+expr_stmt|;
 if|if
 condition|(
 operator|(
@@ -5270,6 +5280,83 @@ block|}
 block|}
 block|}
 break|break;
+comment|/* Adjustment layers */
+case|case
+literal|0x6c65766c
+case|:
+comment|/* levl     levels */
+case|case
+literal|0x63757276
+case|:
+comment|/* curv     curves */
+case|case
+literal|0x62726974
+case|:
+comment|/* brit     brightness& contrast */
+case|case
+literal|0x626c6e63
+case|:
+comment|/* blnc     color balance */
+case|case
+literal|0x626c7768
+case|:
+comment|/* blwh     black& white */
+case|case
+literal|0x68756520
+case|:
+comment|/* hue      hue& saturation  (PS4) */
+case|case
+literal|0x68756532
+case|:
+comment|/* hue2     hue& saturation (PS5& later) */
+case|case
+literal|0x73656c63
+case|:
+comment|/* selc     selective color */
+case|case
+literal|0x6d697872
+case|:
+comment|/* mixr     channel mixer */
+case|case
+literal|0x6772646d
+case|:
+comment|/* grdm     gradient map */
+case|case
+literal|0x7068666c
+case|:
+comment|/* phfl     photo filter */
+case|case
+literal|0x65787041
+case|:
+comment|/* expA     exposure */
+case|case
+literal|0x6e767274
+case|:
+comment|/* nvrt     invert */
+case|case
+literal|0x74687273
+case|:
+comment|/* thrs     threshold */
+case|case
+literal|0x706f7374
+case|:
+comment|/* post     posterize */
+name|layer
+operator|->
+name|drop
+operator|=
+name|TRUE
+expr_stmt|;
+name|throwchunk
+argument_list|(
+name|xdsize
+argument_list|,
+name|fd
+argument_list|,
+literal|"Adjustment layers throw"
+argument_list|)
+expr_stmt|;
+break|break;
 comment|/* lsct: Layer Set Controls Type */
 case|case
 literal|0x6c736374
@@ -5312,6 +5399,14 @@ case|:
 case|case
 literal|2
 case|:
+comment|/* 1 = Start folder - Open */
+comment|/* 2 = Start folder - Closed */
+name|layer
+operator|->
+name|drop
+operator|=
+name|TRUE
+expr_stmt|;
 name|blendsignature
 operator|=
 name|getgint32
@@ -5334,7 +5429,7 @@ name|IFDBG
 block|{
 name|g_printerr
 argument_list|(
-literal|"Close layer set.\n\t\t\t\t\t\t\tBlend = 0x%08x '%c%c%c%c'\n"
+literal|"Start layer set.\n\t\t\t\t\t\t\tBlend = 0x%08x '%c%c%c%c'\n"
 argument_list|,
 name|blendkey
 argument_list|,
@@ -5417,12 +5512,20 @@ break|break;
 case|case
 literal|3
 case|:
+comment|/* 3 = End folder */
 name|IFDBG
 name|g_printerr
 argument_list|(
-literal|"Open layer set.\n"
+literal|"End layer set.\n"
 argument_list|)
 decl_stmt|;
+comment|/* These are hidden layers in the ps UI */
+name|layer
+operator|->
+name|drop
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 name|xdsize
@@ -10112,6 +10215,19 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|merged_data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|->
+name|drop
+condition|)
+name|gimp_image_remove_layer
+argument_list|(
+name|image_ID
+argument_list|,
+name|layer_ID
 argument_list|)
 expr_stmt|;
 name|gimp_progress_update
