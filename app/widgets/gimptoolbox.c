@@ -922,9 +922,9 @@ operator|->
 name|ui_manager
 argument_list|)
 expr_stmt|;
-ifndef|#
-directive|ifndef
-name|GDK_WINDOWING_QUARTZ
+ifdef|#
+directive|ifdef
+name|ENABLE_TOOLBOX_MENU
 name|toolbox
 operator|->
 name|menu_bar
@@ -938,7 +938,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* !GDK_WINDOWING_QUARTZ */
+comment|/* ENABLE_TOOLBOX_MENU */
 if|if
 condition|(
 name|toolbox

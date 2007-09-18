@@ -33,6 +33,12 @@ directive|include
 file|"gimppluginmanager-menu-branch.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"plug-in-menu-path.h"
+end_include
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -207,7 +213,7 @@ name|branch
 operator|->
 name|menu_path
 operator|=
-name|g_strdup
+name|plug_in_menu_path_map
 argument_list|(
 name|menu_path
 argument_list|)
@@ -240,10 +246,16 @@ name|manager
 argument_list|,
 literal|"menu-branch-added"
 argument_list|,
+name|branch
+operator|->
 name|prog_name
 argument_list|,
+name|branch
+operator|->
 name|menu_path
 argument_list|,
+name|branch
+operator|->
 name|menu_label
 argument_list|)
 expr_stmt|;

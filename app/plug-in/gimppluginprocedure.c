@@ -79,12 +79,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"plug-in-menu-path.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29886c3e0103
+DECL|enum|__anon2a2c45380103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1455,6 +1461,10 @@ name|gchar
 modifier|*
 name|p
 decl_stmt|;
+name|gchar
+modifier|*
+name|mapped_path
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PLUG_IN_PROCEDURE
@@ -2208,6 +2218,13 @@ argument_list|(
 name|basename
 argument_list|)
 expr_stmt|;
+name|mapped_path
+operator|=
+name|plug_in_menu_path_map
+argument_list|(
+name|menu_path
+argument_list|)
+expr_stmt|;
 name|proc
 operator|->
 name|menu_paths
@@ -2218,10 +2235,7 @@ name|proc
 operator|->
 name|menu_paths
 argument_list|,
-name|g_strdup
-argument_list|(
-name|menu_path
-argument_list|)
+name|mapped_path
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -2235,7 +2249,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|menu_path
+name|mapped_path
 argument_list|)
 expr_stmt|;
 return|return
