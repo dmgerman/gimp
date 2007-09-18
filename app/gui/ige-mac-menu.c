@@ -36,27 +36,27 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtk-macmenu.h"
+file|"ige-mac-menu.h"
 end_include
 
 begin_comment
-comment|/* TODO  *  * - Setup shortcuts, possibly transforming ctrl->cmd  * - Sync menus  * - Create on demand? (can this be done with gtk+? ie fill in menu items when the menu is opened)  * - Figure out what to do per app/window...  * - Toggle/radio items  *  */
+comment|/* TODO  *  * - Sync adding/removing/reordering items  * - Create on demand? (can this be done with gtk+? ie fill in menu      items when the menu is opened)  * - Figure out what to do per app/window...  *  */
 end_comment
 
 begin_define
-DECL|macro|GTK_QUARTZ_MENU_CREATOR
+DECL|macro|IGE_QUARTZ_MENU_CREATOR
 define|#
 directive|define
-name|GTK_QUARTZ_MENU_CREATOR
-value|'GTKC'
+name|IGE_QUARTZ_MENU_CREATOR
+value|'IGEC'
 end_define
 
 begin_define
-DECL|macro|GTK_QUARTZ_ITEM_WIDGET
+DECL|macro|IGE_QUARTZ_ITEM_WIDGET
 define|#
 directive|define
-name|GTK_QUARTZ_ITEM_WIDGET
-value|'GWID'
+name|IGE_QUARTZ_ITEM_WIDGET
+value|'IWID'
 end_define
 
 begin_function_decl
@@ -262,7 +262,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b78b5c0108
+DECL|struct|__anon2c3c5fcb0108
 block|{
 DECL|member|menu
 name|MenuRef
@@ -418,7 +418,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b78b5c0208
+DECL|struct|__anon2c3c5fcb0208
 block|{
 DECL|member|menu
 name|MenuRef
@@ -1751,7 +1751,7 @@ decl_stmt|;
 name|OSStatus
 name|err
 decl_stmt|;
-comment|//g_print ("Menu: kEventClassCommand/kEventCommandProcess\n");
+comment|/*g_print ("Menu: kEventClassCommand/kEventCommandProcess\n");*/
 name|err
 operator|=
 name|GetEventParameter
@@ -1788,23 +1788,6 @@ name|widget
 init|=
 name|NULL
 decl_stmt|;
-if|if
-condition|(
-name|command
-operator|.
-name|commandID
-operator|==
-name|kHICommandQuit
-condition|)
-block|{
-name|gtk_main_quit
-argument_list|()
-expr_stmt|;
-comment|/* Just testing... */
-return|return
-name|noErr
-return|;
-block|}
 comment|/* Get any GtkWidget associated with the item. */
 name|err
 operator|=
@@ -1822,9 +1805,9 @@ name|menu
 operator|.
 name|menuItemIndex
 argument_list|,
-name|GTK_QUARTZ_MENU_CREATOR
+name|IGE_QUARTZ_MENU_CREATOR
 argument_list|,
-name|GTK_QUARTZ_ITEM_WIDGET
+name|IGE_QUARTZ_ITEM_WIDGET
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -1843,7 +1826,10 @@ name|err
 operator|==
 name|noErr
 operator|&&
+name|GTK_IS_WIDGET
+argument_list|(
 name|widget
+argument_list|)
 condition|)
 block|{
 name|gtk_menu_item_activate
@@ -1894,18 +1880,18 @@ case|case
 name|kEventMenuTargetItem
 case|:
 comment|/* This is called when an item is selected (what is the 	   * GTK+ term? prelight?) 	   */
-comment|//g_print ("kEventClassMenu/kEventMenuTargetItem\n");
+comment|/*g_print ("kEventClassMenu/kEventMenuTargetItem\n");*/
 break|break;
 case|case
 name|kEventMenuOpening
 case|:
 comment|/* Is it possible to dynamically build the menu here? We 	   * can at least set visibility/sensitivity. 	   */
-comment|//g_print ("kEventClassMenu/kEventMenuOpening\n");
+comment|/*g_print ("kEventClassMenu/kEventMenuOpening\n");*/
 break|break;
 case|case
 name|kEventMenuClosed
 case|:
-comment|//g_print ("kEventClassMenu/kEventMenuClosed\n");
+comment|/*g_print ("kEventClassMenu/kEventMenuClosed\n");*/
 break|break;
 default|default:
 break|break;
@@ -2249,9 +2235,9 @@ name|carbon_menu
 argument_list|,
 name|carbon_index
 argument_list|,
-name|GTK_QUARTZ_MENU_CREATOR
+name|IGE_QUARTZ_MENU_CREATOR
 argument_list|,
-name|GTK_QUARTZ_ITEM_WIDGET
+name|IGE_QUARTZ_ITEM_WIDGET
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -2337,8 +2323,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gtk_macmenu_set_menubar (GtkMenuShell * menu_shell)
-name|gtk_macmenu_set_menubar
+DECL|function|ige_mac_menu_set_menubar (GtkMenuShell * menu_shell)
+name|ige_mac_menu_set_menubar
 parameter_list|(
 name|GtkMenuShell
 modifier|*
@@ -2416,8 +2402,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gtk_macmenu_set_quit_item (GtkMenuItem * menu_item)
-name|gtk_macmenu_set_quit_item
+DECL|function|ige_mac_menu_set_quit_item (GtkMenuItem * menu_item)
+name|ige_mac_menu_set_quit_item
 parameter_list|(
 name|GtkMenuItem
 modifier|*
@@ -2473,9 +2459,9 @@ name|appmenu
 argument_list|,
 name|index
 argument_list|,
-name|GTK_QUARTZ_MENU_CREATOR
+name|IGE_QUARTZ_MENU_CREATOR
 argument_list|,
-name|GTK_QUARTZ_ITEM_WIDGET
+name|IGE_QUARTZ_ITEM_WIDGET
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -2500,8 +2486,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gtk_macmenu_set_about_item (GtkMenuItem * menu_item,const gchar * label)
-name|gtk_macmenu_set_about_item
+DECL|function|ige_mac_menu_set_about_item (GtkMenuItem * menu_item,const gchar * label)
+name|ige_mac_menu_set_about_item
 parameter_list|(
 name|GtkMenuItem
 modifier|*
@@ -2583,9 +2569,9 @@ name|appmenu
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_QUARTZ_MENU_CREATOR
+name|IGE_QUARTZ_MENU_CREATOR
 argument_list|,
-name|GTK_QUARTZ_ITEM_WIDGET
+name|IGE_QUARTZ_ITEM_WIDGET
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -2615,8 +2601,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gtk_macmenu_set_prefs_item (GtkMenuItem * menu_item,const gchar * label)
-name|gtk_macmenu_set_prefs_item
+DECL|function|ige_mac_menu_set_prefs_item (GtkMenuItem * menu_item,const gchar * label)
+name|ige_mac_menu_set_prefs_item
 parameter_list|(
 name|GtkMenuItem
 modifier|*
@@ -2711,9 +2697,9 @@ name|appmenu
 argument_list|,
 literal|3
 argument_list|,
-name|GTK_QUARTZ_MENU_CREATOR
+name|IGE_QUARTZ_MENU_CREATOR
 argument_list|,
-name|GTK_QUARTZ_ITEM_WIDGET
+name|IGE_QUARTZ_ITEM_WIDGET
 argument_list|,
 sizeof|sizeof
 argument_list|(

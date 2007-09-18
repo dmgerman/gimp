@@ -330,7 +330,7 @@ end_ifdef
 begin_include
 include|#
 directive|include
-file|"gtk-macmenu.h"
+file|"ige-mac-menu.h"
 end_include
 
 begin_endif
@@ -1903,7 +1903,7 @@ name|menu
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_macmenu_set_menubar
+name|ige_mac_menu_set_menubar
 argument_list|(
 name|GTK_MENU_SHELL
 argument_list|(
@@ -1930,7 +1930,7 @@ argument_list|(
 name|item
 argument_list|)
 condition|)
-name|gtk_macmenu_set_quit_item
+name|ige_mac_menu_set_quit_item
 argument_list|(
 name|GTK_MENU_ITEM
 argument_list|(
@@ -1957,7 +1957,7 @@ argument_list|(
 name|item
 argument_list|)
 condition|)
-name|gtk_macmenu_set_about_item
+name|ige_mac_menu_set_about_item
 argument_list|(
 name|GTK_MENU_ITEM
 argument_list|(
@@ -1989,7 +1989,7 @@ argument_list|(
 name|item
 argument_list|)
 condition|)
-name|gtk_macmenu_set_prefs_item
+name|ige_mac_menu_set_prefs_item
 argument_list|(
 name|GTK_MENU_ITEM
 argument_list|(

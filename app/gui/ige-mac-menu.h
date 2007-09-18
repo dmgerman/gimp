@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GTK_MACMENU_H__
+name|__IGE_MAC_MENU_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GTK_MACMENU_H__
+DECL|macro|__IGE_MAC_MENU_H__
 define|#
 directive|define
-name|__GTK_MACMENU_H__
+name|__IGE_MAC_MENU_H__
 end_define
 
 begin_include
@@ -25,7 +25,7 @@ end_include
 begin_function_decl
 name|G_BEGIN_DECLS
 name|void
-name|gtk_macmenu_set_menubar
+name|ige_mac_menu_set_menubar
 parameter_list|(
 name|GtkMenuShell
 modifier|*
@@ -36,7 +36,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gtk_macmenu_set_quit_item
+name|ige_mac_menu_set_quit_item
 parameter_list|(
 name|GtkMenuItem
 modifier|*
@@ -47,7 +47,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gtk_macmenu_set_about_item
+name|ige_mac_menu_set_about_item
 parameter_list|(
 name|GtkMenuItem
 modifier|*
@@ -63,7 +63,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gtk_macmenu_set_prefs_item
+name|ige_mac_menu_set_prefs_item
 parameter_list|(
 name|GtkMenuItem
 modifier|*
@@ -87,7 +87,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GTK_MACMENU_H__ */
+comment|/* __IGE_MAC_MENU_H__ */
 end_comment
 
 end_unit
