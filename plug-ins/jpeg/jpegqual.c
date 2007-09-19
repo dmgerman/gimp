@@ -4,11 +4,11 @@ comment|/* jpegqual.c - analyze quality settings of existing JPEG files  *  * Co
 end_comment
 
 begin_comment
-comment|/*  * This program analyzes the quantization tables of the JPEG files  * given on the command line and displays their quality settings.  *  * It can be used to validate the formula used in jpeg_detect_quality(),  * by comparing the quality reported for different JPEG files.  *  * It can also dump quantization tables so that they can be integrated  * into this program and recognized later.  This can be used to identify  * which device or which program saved a JPEG file.  */
+comment|/*  * This program analyzes the quantization tables of the JPEG files  * given on the command line and displays their quality settings.  *  * It is useful for developers or maintainers of the JPEG plug-in  * because it can be used to validate the formula used in  * jpeg_detect_quality(), by comparing the quality reported for  * different JPEG files.  *  * It can also dump quantization tables so that they can be integrated  * into this program and recognized later.  This can be used to identify  * which device or which program saved a JPEG file.  */
 end_comment
 
 begin_comment
-comment|/*  * TODO:  * - rename this program!  * - update quant_info[].  * - get rid of the command-line option '--name' (too cumbersome to use).  * - rewrite the parser for command-line options and use GOption instead.  * - reorganize the options: 2 groups for print options and for selection.  * - re-add the code to compare different formulas for approx. IJG quality.  */
+comment|/*  * TODO:  * - rename this program!  * - update quant_info[].  * - reorganize the options: 2 groups for print options and for selection.  * - re-add the code to compare different formulas for approx. IJG quality.  */
 end_comment
 
 begin_include
@@ -26,6 +26,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<setjmp.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -38,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<jerror.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"jpeg-quality.h"
 end_include
 
@@ -45,90 +57,13 @@ begin_comment
 comment|/* command-line options */
 end_comment
 
-begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon28ae5c2c0108
-block|{
-DECL|member|option
-specifier|const
-name|gchar
-modifier|*
-name|option
-decl_stmt|;
-DECL|member|description
-specifier|const
-name|gchar
-modifier|*
-name|description
-decl_stmt|;
-DECL|typedef|OptionDesc
-block|}
-name|OptionDesc
-typedef|;
-end_typedef
-
-begin_decl_stmt
-DECL|variable|options_desc
-specifier|static
-specifier|const
-name|OptionDesc
-name|options_desc
-index|[]
-init|=
-block|{
-block|{
-literal|"-h, --help"
-block|,
-literal|"Display this help message"
-block|}
-block|,
-block|{
-literal|"-s, --summary"
-block|,
-literal|"Print summary information and IJG quality (enabled by default)"
-block|}
-block|,
-block|{
-literal|"-t, --tables"
-block|,
-literal|"Dump quantization tables"
-block|}
-block|,
-block|{
-literal|"-c, --c-tables"
-block|,
-literal|"Dump quantization tables as C code"
-block|}
-block|,
-block|{
-literal|"-n, --name<name>"
-block|,
-literal|"Camera or software name (used when printing tables)"
-block|}
-block|,
-block|{
-literal|"-u, --unknown"
-block|,
-literal|"Only print information about files with unknown tables"
-block|}
-block|,
-block|{
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
-end_decl_stmt
-
 begin_decl_stmt
 DECL|variable|option_summary
 specifier|static
 name|gboolean
 name|option_summary
 init|=
-name|TRUE
+name|FALSE
 decl_stmt|;
 end_decl_stmt
 
@@ -153,17 +88,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|option_name
-specifier|static
-name|gchar
-modifier|*
-name|option_name
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|option_unknown
 specifier|static
 name|gboolean
@@ -173,83 +97,192 @@ name|FALSE
 decl_stmt|;
 end_decl_stmt
 
-begin_if
-if|#
-directive|if
+begin_decl_stmt
+DECL|variable|option_ignore_err
+specifier|static
+name|gboolean
+name|option_ignore_err
+init|=
+name|FALSE
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|option_entries
+specifier|static
+name|GOptionEntry
+name|option_entries
+index|[]
+init|=
+block|{
+block|{
+literal|"ignore-errors"
+block|,
+literal|'i'
+block|,
 literal|0
-end_if
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|option_ignore_err
+block|,
+literal|"Continue processing other files after a JPEG error"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"summary"
+block|,
+literal|'s'
+block|,
+literal|0
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|option_summary
+block|,
+literal|"Print summary information and closest IJG quality"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tables"
+block|,
+literal|'t'
+block|,
+literal|0
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|option_table_2cols
+block|,
+literal|"Dump quantization tables"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"c-tables"
+block|,
+literal|'c'
+block|,
+literal|0
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|option_ctable
+block|,
+literal|"Dump quantization tables as C code"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"ctables"
+block|,
+literal|0
+block|,
+name|G_OPTION_FLAG_HIDDEN
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|option_ctable
+block|,
+name|NULL
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"unknown"
+block|,
+literal|'u'
+block|,
+literal|0
+block|,
+name|G_OPTION_ARG_NONE
+block|,
+operator|&
+name|option_unknown
+block|,
+literal|"Only print information about files with unknown tables"
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|NULL
+block|}
+block|}
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
-comment|/* FIXME */
+comment|/* information about known JPEG quantization tables */
 end_comment
-
-begin_comment
-unit|static guint16 **ijg_luminance       = NULL;
-comment|/* luminance, baseline */
-end_comment
-
-begin_comment
-unit|static guint16 **ijg_chrominance     = NULL;
-comment|/* chrominance, baseline */
-end_comment
-
-begin_comment
-unit|static guint16 **ijg_luminance_nb    = NULL;
-comment|/* luminance, not baseline */
-end_comment
-
-begin_comment
-unit|static guint16 **ijg_chrominance_nb  = NULL;
-comment|/* chrominance, not baseline */
-end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae5c2c0208
+DECL|struct|__anon29263e5a0108
 block|{
 DECL|member|lum_sum
 specifier|const
 name|gint
 name|lum_sum
 decl_stmt|;
+comment|/* sum of luminance table divisors */
 DECL|member|chrom_sum
 specifier|const
 name|gint
 name|chrom_sum
 decl_stmt|;
+comment|/* sum of chrominance table divisors */
 DECL|member|subsmp_h
 specifier|const
 name|gint
 name|subsmp_h
 decl_stmt|;
+comment|/* horizontal subsampling (1st component) */
 DECL|member|subsmp_v
 specifier|const
 name|gint
 name|subsmp_v
 decl_stmt|;
+comment|/* vertical subsampling (1st component) */
+DECL|member|num_quant_tables
+specifier|const
+name|gint
+name|num_quant_tables
+decl_stmt|;
+comment|/* number of tables (< 0 if no grayscale) */
 DECL|member|source_name
 specifier|const
 name|gchar
 modifier|*
 name|source_name
 decl_stmt|;
+comment|/* name of software of device */
 DECL|member|setting_name
 specifier|const
 name|gchar
 modifier|*
 name|setting_name
 decl_stmt|;
+comment|/* name of quality setting */
 DECL|member|ijg_qual
 specifier|const
 name|gint
 name|ijg_qual
 decl_stmt|;
+comment|/* closest IJG quality setting */
 DECL|typedef|QuantInfo
 block|}
 name|QuantInfo
@@ -274,6 +307,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 100"
@@ -289,6 +324,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -306,6 +343,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 98"
@@ -321,6 +360,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -338,6 +379,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 96"
@@ -353,6 +396,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -370,6 +415,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 94"
@@ -385,6 +432,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -402,6 +451,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 92"
@@ -417,6 +468,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -434,6 +487,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 90"
@@ -449,6 +504,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -466,6 +523,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 88"
@@ -481,6 +540,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -498,6 +559,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 86"
@@ -513,6 +576,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -530,6 +595,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 84"
@@ -545,6 +612,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -562,6 +631,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 82"
@@ -577,6 +648,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -594,6 +667,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 80"
@@ -609,6 +684,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -626,6 +703,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 78"
@@ -641,6 +720,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -658,6 +739,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 76"
@@ -673,6 +756,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -690,6 +775,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 74"
@@ -705,6 +792,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -722,6 +811,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 72"
@@ -737,6 +828,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -754,6 +847,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 70"
@@ -769,6 +864,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -786,6 +883,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 68"
@@ -801,6 +900,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -818,6 +919,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 66"
@@ -833,6 +936,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -850,6 +955,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 64"
@@ -865,6 +972,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -882,6 +991,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 62"
@@ -897,6 +1008,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -914,6 +1027,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 60"
@@ -929,6 +1044,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -946,6 +1063,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 58"
@@ -961,6 +1080,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -978,6 +1099,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 56"
@@ -993,6 +1116,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1010,6 +1135,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 54"
@@ -1025,6 +1152,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1042,6 +1171,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 52"
@@ -1057,6 +1188,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1074,6 +1207,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 50"
@@ -1089,6 +1224,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1106,6 +1243,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 48"
@@ -1121,6 +1260,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1138,6 +1279,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 46"
@@ -1153,6 +1296,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1170,6 +1315,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 44"
@@ -1185,6 +1332,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1202,6 +1351,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 42"
@@ -1217,6 +1368,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1234,6 +1387,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 40"
@@ -1249,6 +1404,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1266,6 +1423,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 38"
@@ -1281,6 +1440,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1298,6 +1459,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 36"
@@ -1313,6 +1476,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1330,6 +1495,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 34"
@@ -1345,6 +1512,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1362,6 +1531,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 32"
@@ -1377,6 +1548,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1394,6 +1567,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 30"
@@ -1409,6 +1584,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1426,6 +1603,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 28"
@@ -1441,6 +1620,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1458,6 +1639,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 26"
@@ -1473,6 +1656,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1490,6 +1675,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 24"
@@ -1505,6 +1692,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1522,6 +1711,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 22"
@@ -1537,6 +1728,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1554,6 +1747,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 20"
@@ -1569,6 +1764,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1586,6 +1783,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 18"
@@ -1601,6 +1800,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1618,6 +1819,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 16"
@@ -1633,6 +1836,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1650,6 +1855,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 14"
@@ -1665,6 +1872,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1682,6 +1891,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 12"
@@ -1697,6 +1908,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1714,6 +1927,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 10"
@@ -1729,6 +1944,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1746,6 +1963,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 8"
@@ -1761,6 +1980,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1778,6 +1999,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 6"
@@ -1793,6 +2016,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1810,6 +2035,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 4"
@@ -1825,6 +2052,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1842,6 +2071,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 2"
@@ -1857,6 +2088,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1874,6 +2107,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"quality 0"
@@ -1889,6 +2124,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1907,6 +2144,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 22"
@@ -1923,6 +2162,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1941,6 +2182,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 20"
@@ -1957,6 +2200,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -1975,6 +2220,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 18"
@@ -1991,6 +2238,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2009,6 +2258,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 16"
@@ -2025,6 +2276,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2043,6 +2296,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 14"
@@ -2058,6 +2313,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2075,6 +2332,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 12"
@@ -2090,6 +2349,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2107,6 +2368,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 10"
@@ -2122,6 +2385,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2139,6 +2404,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 8"
@@ -2154,6 +2421,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2171,6 +2440,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 6"
@@ -2186,6 +2457,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2203,6 +2476,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 4"
@@ -2218,6 +2493,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2235,6 +2512,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 2"
@@ -2250,6 +2529,8 @@ block|,
 literal|0
 block|,
 literal|0
+block|,
+literal|2
 block|,
 literal|"IJG JPEG Library"
 block|,
@@ -2267,6 +2548,8 @@ literal|0
 block|,
 literal|0
 block|,
+literal|2
+block|,
 literal|"IJG JPEG Library"
 block|,
 literal|"not baseline 0"
@@ -2274,6 +2557,7 @@ block|,
 literal|0
 block|}
 block|,
+comment|/* FIXME: the following entries are incomplete and need to be verified */
 block|{
 literal|319
 block|,
@@ -2282,6 +2566,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"ACD ?"
 block|,
@@ -2300,6 +2586,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"ACD ?"
 block|,
 literal|"?"
@@ -2317,6 +2605,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"ACD ?"
 block|,
 literal|"?"
@@ -2329,6 +2619,8 @@ block|{
 literal|1590
 block|,
 literal|3556
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2351,6 +2643,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS3"
 block|,
 literal|"?"
@@ -2367,6 +2661,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Adobe Photoshop CS or CS2"
 block|,
@@ -2385,6 +2681,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 11"
@@ -2402,7 +2700,9 @@ literal|1
 block|,
 literal|1
 block|,
-literal|"Adobe Photoshop CS2"
+literal|2
+block|,
+literal|"Adobe Photoshop 7.0 or CS2"
 block|,
 literal|"quality 10"
 block|,
@@ -2418,6 +2718,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Adobe Photoshop CS2"
 block|,
@@ -2436,6 +2738,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 8"
@@ -2453,6 +2757,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 7"
@@ -2465,6 +2771,8 @@ block|{
 literal|884
 block|,
 literal|831
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2487,6 +2795,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 5"
@@ -2499,6 +2809,8 @@ block|{
 literal|1126
 block|,
 literal|940
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2521,6 +2833,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 3"
@@ -2533,6 +2847,8 @@ block|{
 literal|1281
 block|,
 literal|998
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2555,6 +2871,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 1"
@@ -2567,6 +2885,8 @@ block|{
 literal|1582
 block|,
 literal|1108
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2589,6 +2909,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"save for web 100"
@@ -2605,6 +2927,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Adobe Photoshop CS2"
 block|,
@@ -2623,6 +2947,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"save for web 80"
@@ -2639,6 +2965,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Adobe Photoshop CS2"
 block|,
@@ -2657,6 +2985,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"save for web 60"
@@ -2669,6 +2999,8 @@ block|{
 literal|1221
 block|,
 literal|1348
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2691,6 +3023,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"save for web 40"
@@ -2703,6 +3037,8 @@ block|{
 literal|2223
 block|,
 literal|2464
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2725,6 +3061,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS2"
 block|,
 literal|"save for web 20"
@@ -2737,6 +3075,8 @@ block|{
 literal|3514
 block|,
 literal|3738
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2759,6 +3099,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS or Lightroom"
 block|,
 literal|"save for web 100?"
@@ -2775,6 +3117,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Adobe Photoshop CS"
 block|,
@@ -2793,9 +3137,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS or Elements 4.0"
 block|,
-literal|"?"
+literal|"quality 8"
 block|,
 operator|-
 literal|91
@@ -2805,6 +3151,8 @@ block|{
 literal|844
 block|,
 literal|849
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2827,6 +3175,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop CS"
 block|,
 literal|"?"
@@ -2844,9 +3194,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop 7.0"
 block|,
-literal|"?"
+literal|"quality 10"
 block|,
 operator|-
 literal|93
@@ -2861,9 +3213,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop 7.0 CE"
 block|,
-literal|"?"
+literal|"quality 9"
 block|,
 operator|-
 literal|92
@@ -2877,6 +3231,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Adobe Photoshop 7.0"
 block|,
@@ -2895,6 +3251,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop 5.0"
 block|,
 literal|"?"
@@ -2907,6 +3265,8 @@ block|{
 literal|717
 block|,
 literal|782
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2929,6 +3289,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop 4.0"
 block|,
 literal|"?"
@@ -2946,9 +3308,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"85%"
 block|,
 operator|-
 literal|94
@@ -2963,9 +3327,11 @@ literal|1
 block|,
 literal|1
 block|,
-literal|"Adobe Photoshop ?"
+literal|2
 block|,
-literal|"?"
+literal|"Adobe Photoshop 6.0"
+block|,
+literal|"quality 10"
 block|,
 operator|-
 literal|93
@@ -2975,6 +3341,8 @@ block|{
 literal|427
 block|,
 literal|613
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -2997,9 +3365,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"75%"
 block|,
 operator|-
 literal|92
@@ -3014,9 +3384,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"65%"
 block|,
 operator|-
 literal|87
@@ -3031,9 +3403,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"55%"
 block|,
 operator|-
 literal|83
@@ -3048,9 +3422,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"52%"
 block|,
 operator|-
 literal|82
@@ -3065,9 +3441,11 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"51%"
 block|,
 operator|-
 literal|81
@@ -3082,12 +3460,33 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"?"
+literal|"29%"
 block|,
 operator|-
 literal|73
+block|}
+block|,
+block|{
+literal|4028
+block|,
+literal|4174
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop ?"
+block|,
+literal|"3%"
+block|,
+operator|-
+literal|55
 block|}
 block|,
 block|{
@@ -3099,12 +3498,14 @@ literal|1
 block|,
 literal|1
 block|,
+literal|1
+block|,
 literal|"Adobe Photoshop ?"
 block|,
 literal|"?"
 block|,
 operator|-
-literal|97
+literal|93
 block|}
 block|,
 block|{
@@ -3116,9 +3517,11 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe ImageReady"
 block|,
-literal|"?"
+literal|"22%"
 block|,
 operator|-
 literal|70
@@ -3133,9 +3536,11 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Adobe ImageReady"
 block|,
-literal|"?"
+literal|"6%"
 block|,
 operator|-
 literal|57
@@ -3150,7 +3555,9 @@ literal|2
 block|,
 literal|1
 block|,
-literal|"Apple Quicktime 7"
+literal|2
+block|,
+literal|"Apple Quicktime 7.1"
 block|,
 literal|"?"
 block|,
@@ -3167,7 +3574,9 @@ literal|2
 block|,
 literal|2
 block|,
-literal|"Apple Quicktime 7"
+literal|2
+block|,
+literal|"Apple Quicktime 7.2"
 block|,
 literal|"?"
 block|,
@@ -3184,7 +3593,9 @@ literal|2
 block|,
 literal|1
 block|,
-literal|"Apple Quicktime 7"
+literal|2
+block|,
+literal|"Apple Quicktime 7.1"
 block|,
 literal|"?"
 block|,
@@ -3201,6 +3612,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Apple ?"
 block|,
 literal|"?"
@@ -3213,6 +3626,8 @@ block|{
 literal|1511
 block|,
 literal|2229
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -3235,6 +3650,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Canon EOS 300D, 350D or 400D"
 block|,
 literal|"Fine"
@@ -3251,6 +3668,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Canon EOS 10D"
 block|,
@@ -3269,6 +3688,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Canon Digital Ixus"
 block|,
 literal|"Fine"
@@ -3285,6 +3706,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Canon PowerShot A95, S1, S2, SD400 or SD630"
 block|,
@@ -3303,12 +3726,33 @@ literal|1
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Canon PowerShot A430"
 block|,
 literal|"Superfine"
 block|,
 operator|-
 literal|95
+block|}
+block|,
+block|{
+literal|533
+block|,
+literal|1325
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Canon PowerShot A430"
+block|,
+literal|"Superfine"
+block|,
+operator|-
+literal|89
 block|}
 block|,
 block|{
@@ -3320,7 +3764,9 @@ literal|2
 block|,
 literal|1
 block|,
-literal|"Canon PowerShot S200 or Ixus 800"
+literal|2
+block|,
+literal|"Canon PowerShot S5 IS, S200 or Ixus 800"
 block|,
 literal|"Superfine"
 block|,
@@ -3329,9 +3775,30 @@ literal|95
 block|}
 block|,
 block|{
+literal|533
+block|,
+literal|1325
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Canon Digital Ixus 400"
+block|,
+literal|"Fine"
+block|,
+operator|-
+literal|89
+block|}
+block|,
+block|{
 literal|64
 block|,
 literal|64
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -3353,6 +3820,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|3
+block|,
 literal|"FujiFilm MX-2700"
 block|,
 literal|"?"
@@ -3362,37 +3831,22 @@ literal|96
 block|}
 block|,
 block|{
-literal|2056
+literal|389
 block|,
-literal|3102
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|"FujiFilm DX-10"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|71
-block|}
-block|,
-block|{
-literal|1254
-block|,
-literal|1888
+literal|560
 block|,
 literal|2
 block|,
 literal|1
 block|,
-literal|"FujiFilm MX-1700 Zoom"
+literal|3
 block|,
-literal|"?"
+literal|"FujiFilm FinePix S700"
+block|,
+literal|"Fine"
 block|,
 operator|-
-literal|82
+literal|94
 block|}
 block|,
 block|{
@@ -3404,6 +3858,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|3
+block|,
 literal|"FujiFilm FinePix 2600 Zoom"
 block|,
 literal|"Fine"
@@ -3413,9 +3869,124 @@ literal|93
 block|}
 block|,
 block|{
+literal|1254
+block|,
+literal|1888
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"FujiFilm MX-1700 Zoom"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|82
+block|}
+block|,
+block|{
+literal|2056
+block|,
+literal|3102
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"FujiFilm DX-10"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|71
+block|}
+block|,
+block|{
+literal|167
+block|,
+literal|240
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|3
+block|,
+literal|"HP PhotoSmart C850, C935"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|97
+block|}
+block|,
+block|{
+literal|1970
+block|,
+literal|1970
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|3
+block|,
+literal|"HP PhotoSmart C812"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|78
+block|}
+block|,
+block|{
+literal|566
+block|,
+literal|583
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Kodak V610"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|93
+block|}
+block|,
+block|{
+literal|736
+block|,
+literal|1110
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Kodak DC240"
+block|,
+literal|"?"
+block|,
+literal|90
+block|}
+block|,
+block|{
 literal|1375
 block|,
 literal|1131
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -3434,15 +4005,224 @@ literal|736
 block|,
 literal|1110
 block|,
+literal|1
+block|,
+literal|1
+block|,
+operator|-
 literal|2
 block|,
-literal|2
+literal|"Kodak Imaging"
 block|,
-literal|"Kodak DC240"
-block|,
-literal|"?"
+literal|"High (high res.)"
 block|,
 literal|90
+block|}
+block|,
+block|{
+literal|736
+block|,
+literal|1110
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"High (medium res.)"
+block|,
+literal|90
+block|}
+block|,
+block|{
+literal|736
+block|,
+literal|1110
+block|,
+literal|4
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"High (low res.)"
+block|,
+literal|90
+block|}
+block|,
+block|{
+literal|736
+block|,
+literal|0
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"High (grayscale)"
+block|,
+literal|90
+block|}
+block|,
+block|{
+literal|3688
+block|,
+literal|5505
+block|,
+literal|1
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Medium (high res.)"
+block|,
+literal|50
+block|}
+block|,
+block|{
+literal|3688
+block|,
+literal|5505
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Medium (medium res.)"
+block|,
+literal|50
+block|}
+block|,
+block|{
+literal|3688
+block|,
+literal|5505
+block|,
+literal|4
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Medium (low res.)"
+block|,
+literal|50
+block|}
+block|,
+block|{
+literal|3688
+block|,
+literal|0
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Medium (grayscale)"
+block|,
+literal|50
+block|}
+block|,
+block|{
+literal|9056
+block|,
+literal|13790
+block|,
+literal|1
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Low (high res.)"
+block|,
+literal|20
+block|}
+block|,
+block|{
+literal|9056
+block|,
+literal|13790
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Low (medium res.)"
+block|,
+literal|20
+block|}
+block|,
+block|{
+literal|9056
+block|,
+literal|13790
+block|,
+literal|4
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Low (low res.)"
+block|,
+literal|20
+block|}
+block|,
+block|{
+literal|9056
+block|,
+literal|0
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|"Kodak Imaging"
+block|,
+literal|"Low (grayscale)"
+block|,
+literal|20
 block|}
 block|,
 block|{
@@ -3453,6 +4233,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Lead ?"
 block|,
@@ -3471,6 +4253,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Lead ?"
 block|,
 literal|"?"
@@ -3487,6 +4271,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Lead ?"
 block|,
@@ -3505,6 +4291,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Lead ?"
 block|,
 literal|"?"
@@ -3521,6 +4309,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Lead ?"
 block|,
@@ -3539,12 +4329,51 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Lead ?"
 block|,
 literal|"?"
 block|,
 operator|-
 literal|22
+block|}
+block|,
+block|{
+literal|96
+block|,
+literal|117
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Leica Digilux 3"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|98
+block|}
+block|,
+block|{
+literal|221
+block|,
+literal|333
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Leica M8"
+block|,
+literal|"?"
+block|,
+literal|97
 block|}
 block|,
 block|{
@@ -3556,12 +4385,32 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Medion ?"
 block|,
 literal|"?"
 block|,
 operator|-
 literal|92
+block|}
+block|,
+block|{
+literal|1858
+block|,
+literal|2780
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Microsoft Office"
+block|,
+literal|"Default"
+block|,
+literal|75
 block|}
 block|,
 block|{
@@ -3572,6 +4421,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D50, D70, D70s, D80"
 block|,
@@ -3590,6 +4441,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 or D70s"
 block|,
 literal|"Normal"
@@ -3606,6 +4459,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D70 or D70s"
 block|,
@@ -3624,6 +4479,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 or D70s"
 block|,
 literal|"Basic + raw"
@@ -3640,6 +4497,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D70 v1.0"
 block|,
@@ -3658,6 +4517,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 v1.0"
 block|,
 literal|"Fine"
@@ -3674,6 +4535,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D70 v1.0"
 block|,
@@ -3692,6 +4555,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 v1.0"
 block|,
 literal|"Fine"
@@ -3708,6 +4573,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D70 v1.0"
 block|,
@@ -3726,6 +4593,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 v1.0"
 block|,
 literal|"Fine"
@@ -3742,6 +4611,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D70 v1.0"
 block|,
@@ -3760,6 +4631,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 v1.0"
 block|,
 literal|"Fine"
@@ -3776,6 +4649,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon D70 v1.0"
 block|,
@@ -3794,6 +4669,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 v1.0"
 block|,
 literal|"Fine"
@@ -3811,12 +4688,89 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D70 v1.0"
 block|,
 literal|"Fine"
 block|,
 operator|-
 literal|92
+block|}
+block|,
+block|{
+literal|261
+block|,
+literal|389
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Nikon D50"
+block|,
+literal|"Normal"
+block|,
+operator|-
+literal|96
+block|}
+block|,
+block|{
+literal|345
+block|,
+literal|499
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Nikon D50"
+block|,
+literal|"Normal"
+block|,
+operator|-
+literal|95
+block|}
+block|,
+block|{
+literal|547
+block|,
+literal|825
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Nikon D50"
+block|,
+literal|"Fine"
+block|,
+operator|-
+literal|92
+block|}
+block|,
+block|{
+literal|963
+block|,
+literal|1442
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Nikon D50"
+block|,
+literal|"?"
+block|,
+literal|87
 block|}
 block|,
 block|{
@@ -3828,11 +4782,67 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon D40"
 block|,
 literal|"?"
 block|,
 operator|-
+literal|88
+block|}
+block|,
+block|{
+literal|667
+block|,
+literal|999
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"Nikon E4300"
+block|,
+literal|"Normal"
+block|,
+literal|91
+block|}
+block|,
+block|{
+literal|736
+block|,
+literal|1110
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"Nikon E4300"
+block|,
+literal|"Normal"
+block|,
+literal|90
+block|}
+block|,
+block|{
+literal|884
+block|,
+literal|1332
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"Nikon E4300"
+block|,
+literal|"Normal"
+block|,
 literal|88
 block|}
 block|,
@@ -3844,6 +4854,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon Browser 6"
 block|,
@@ -3860,6 +4872,8 @@ block|,
 literal|1
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Nikon Browser 6"
 block|,
@@ -3878,6 +4892,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Nikon Browser 6"
 block|,
 literal|"Standard eq"
@@ -3890,6 +4906,8 @@ block|{
 literal|2746
 block|,
 literal|5112
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -3912,6 +4930,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"Nikon Browser 6"
 block|,
 literal|"Maximum compression"
@@ -3924,6 +4944,8 @@ block|{
 literal|736
 block|,
 literal|1110
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -3945,6 +4967,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Olympus u770SW,S770SW"
 block|,
 literal|"?"
@@ -3961,6 +4985,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Olympus u750,S750"
 block|,
@@ -3979,11 +5005,143 @@ literal|2
 block|,
 literal|2
 block|,
-literal|"Olympus U710,S710"
+literal|2
+block|,
+literal|"Olympus u710,S710"
 block|,
 literal|"Super high quality?"
 block|,
 literal|80
+block|}
+block|,
+block|{
+literal|259
+block|,
+literal|393
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Olympus u30D,S410D,u410D?"
+block|,
+literal|"High quality?"
+block|,
+operator|-
+literal|96
+block|}
+block|,
+block|{
+literal|437
+block|,
+literal|617
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Olympus u30D,S410D,u410D"
+block|,
+literal|"High quality"
+block|,
+operator|-
+literal|94
+block|}
+block|,
+block|{
+literal|447
+block|,
+literal|670
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Olympus u30D,S410D,u410D"
+block|,
+literal|"High quality"
+block|,
+operator|-
+literal|93
+block|}
+block|,
+block|{
+literal|814
+block|,
+literal|1223
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"Olympus C960Z,D460Z"
+block|,
+literal|"Standard quality"
+block|,
+literal|89
+block|}
+block|,
+block|{
+literal|884
+block|,
+literal|1332
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"Olympus C211Z"
+block|,
+literal|"Standard quality"
+block|,
+literal|88
+block|}
+block|,
+block|{
+literal|1552
+block|,
+literal|2336
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|3
+block|,
+literal|"Olympus C990Z,D490Z"
+block|,
+literal|"High quality"
+block|,
+literal|79
+block|}
+block|,
+block|{
+literal|261
+block|,
+literal|392
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Panasonic DMC-FZ5"
+block|,
+literal|"High"
+block|,
+operator|-
+literal|96
 block|}
 block|,
 block|{
@@ -3994,6 +5152,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
 block|,
@@ -4012,6 +5172,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Panasonic DMC-FZ30"
 block|,
 literal|"High"
@@ -4028,6 +5190,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
 block|,
@@ -4046,6 +5210,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Panasonic DMC-FZ30"
 block|,
 literal|"High"
@@ -4062,6 +5228,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
 block|,
@@ -4080,6 +5248,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Panasonic DMC-FZ30"
 block|,
 literal|"High"
@@ -4096,6 +5266,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
 block|,
@@ -4114,6 +5286,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Panasonic DMC-FZ30"
 block|,
 literal|"High"
@@ -4130,6 +5304,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
 block|,
@@ -4148,6 +5324,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Panasonic DMC-FZ30"
 block|,
 literal|"High"
@@ -4164,6 +5342,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
 block|,
@@ -4182,12 +5362,33 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Ricoh Caplio R1V"
 block|,
 literal|"?"
 block|,
 operator|-
 literal|95
+block|}
+block|,
+block|{
+literal|274
+block|,
+literal|443
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Roxio PhotoSuite"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|96
 block|}
 block|,
 block|{
@@ -4198,6 +5399,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Samsung Digimax V3"
 block|,
@@ -4216,12 +5419,33 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Samsung Digimax V3"
 block|,
 literal|"?"
 block|,
 operator|-
 literal|82
+block|}
+block|,
+block|{
+literal|218
+block|,
+literal|331
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Samsung Digimax S600"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|97
 block|}
 block|,
 block|{
@@ -4232,6 +5456,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|3
 block|,
 literal|"Sanyo SR6"
 block|,
@@ -4250,6 +5476,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|3
+block|,
 literal|"Sanyo SX113"
 block|,
 literal|"?"
@@ -4266,6 +5494,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"Sony Cybershot"
 block|,
@@ -4284,6 +5514,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Sony Cybershot"
 block|,
 literal|"?"
@@ -4301,11 +5533,32 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Sony DSC-W55"
 block|,
 literal|"?"
 block|,
 literal|99
+block|}
+block|,
+block|{
+literal|122
+block|,
+literal|169
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Sony DSC-F828, DSC-F88"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|98
 block|}
 block|,
 block|{
@@ -4317,7 +5570,9 @@ literal|2
 block|,
 literal|1
 block|,
-literal|"Sony DSC-W50"
+literal|2
+block|,
+literal|"Sony DSC-W50, DSC-H2, DSC-H5"
 block|,
 literal|"?"
 block|,
@@ -4325,9 +5580,29 @@ literal|97
 block|}
 block|,
 block|{
+literal|518
+block|,
+literal|779
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Sony DSC-W70"
+block|,
+literal|"?"
+block|,
+literal|93
+block|}
+block|,
+block|{
 literal|1477
 block|,
 literal|2221
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -4341,6 +5616,25 @@ literal|80
 block|}
 block|,
 block|{
+literal|324
+block|,
+literal|682
+block|,
+literal|2
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Sony DSLR-A100"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|94
+block|}
+block|,
+block|{
 literal|736
 block|,
 literal|1110
@@ -4348,6 +5642,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson K750i"
 block|,
@@ -4365,6 +5661,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"Normal"
@@ -4376,6 +5674,8 @@ block|{
 literal|836
 block|,
 literal|1094
+block|,
+literal|2
 block|,
 literal|2
 block|,
@@ -4398,6 +5698,8 @@ literal|2
 block|,
 literal|2
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"Panorama normal"
@@ -4414,6 +5716,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson K750i"
 block|,
@@ -4432,6 +5736,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"?"
@@ -4448,6 +5754,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson K750i"
 block|,
@@ -4466,6 +5774,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"?"
@@ -4482,6 +5792,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson K750i"
 block|,
@@ -4500,6 +5812,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"?"
@@ -4516,6 +5830,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson K750i"
 block|,
@@ -4534,6 +5850,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"?"
@@ -4550,6 +5868,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson K750i"
 block|,
@@ -4568,6 +5888,8 @@ literal|2
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"SonyEricsson K750i"
 block|,
 literal|"?"
@@ -4584,6 +5906,8 @@ block|,
 literal|2
 block|,
 literal|1
+block|,
+literal|2
 block|,
 literal|"SonyEricsson Z600"
 block|,
@@ -4602,6 +5926,8 @@ literal|1
 block|,
 literal|1
 block|,
+literal|2
+block|,
 literal|"Xing VT-Compress"
 block|,
 literal|"?"
@@ -4613,6 +5939,67 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_typedef
+typedef|typedef
+struct|struct
+DECL|struct|__anon29263e5a0208
+block|{
+DECL|member|hashval
+name|guint32
+name|hashval
+decl_stmt|;
+DECL|member|subsmp_h
+name|gint
+name|subsmp_h
+decl_stmt|;
+DECL|member|subsmp_v
+name|gint
+name|subsmp_v
+decl_stmt|;
+DECL|member|num_quant_tables
+name|gint
+name|num_quant_tables
+decl_stmt|;
+DECL|member|ijg_qual
+name|gint
+name|ijg_qual
+decl_stmt|;
+DECL|member|files
+name|GSList
+modifier|*
+name|files
+decl_stmt|;
+DECL|member|luminance
+name|guint16
+name|luminance
+index|[
+name|DCTSIZE2
+index|]
+decl_stmt|;
+DECL|member|chrominance
+name|guint16
+name|chrominance
+index|[
+name|DCTSIZE2
+index|]
+decl_stmt|;
+DECL|typedef|QuantTableData
+block|}
+name|QuantTableData
+typedef|;
+end_typedef
+
+begin_decl_stmt
+DECL|variable|found_tables
+specifier|static
+name|GSList
+modifier|*
+name|found_tables
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_if
 if|#
 directive|if
@@ -4620,7 +6007,27 @@ literal|0
 end_if
 
 begin_comment
-comment|/* FIXME */
+comment|/* FIXME ---v-v-v---------------------------------------------v-v-v--- */
+end_comment
+
+begin_comment
+unit|static guint16 **ijg_luminance       = NULL;
+comment|/* luminance, baseline */
+end_comment
+
+begin_comment
+unit|static guint16 **ijg_chrominance     = NULL;
+comment|/* chrominance, baseline */
+end_comment
+
+begin_comment
+unit|static guint16 **ijg_luminance_nb    = NULL;
+comment|/* luminance, not baseline */
+end_comment
+
+begin_comment
+unit|static guint16 **ijg_chrominance_nb  = NULL;
+comment|/* chrominance, not baseline */
 end_comment
 
 begin_comment
@@ -4639,20 +6046,477 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* FIXME */
+comment|/* FIXME ---^-^-^--------------------------------------------^-^-^--- */
+end_comment
+
+begin_comment
+comment|/*  * Trivial hash function (simple, but good enough for 1 to 4 * 64 short ints).  */
+end_comment
+
+begin_function
+specifier|static
+name|guint32
+DECL|function|hash_quant_tables (struct jpeg_decompress_struct * cinfo)
+name|hash_quant_tables
+parameter_list|(
+name|struct
+name|jpeg_decompress_struct
+modifier|*
+name|cinfo
+parameter_list|)
+block|{
+name|guint32
+name|hashval
+decl_stmt|;
+name|gint
+name|t
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|hashval
+operator|=
+literal|11
+expr_stmt|;
+for|for
+control|(
+name|t
+operator|=
+literal|0
+init|;
+name|t
+operator|<
+literal|4
+condition|;
+name|t
+operator|++
+control|)
+if|if
+condition|(
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+name|t
+index|]
+condition|)
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
+operator|++
+control|)
+name|hashval
+operator|=
+name|hashval
+operator|*
+literal|4177
+operator|+
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+name|t
+index|]
+operator|->
+name|quantval
+index|[
+name|i
+index|]
+expr_stmt|;
+return|return
+name|hashval
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|add_unknown_table (struct jpeg_decompress_struct * cinfo,gchar * filename)
+name|add_unknown_table
+parameter_list|(
+name|struct
+name|jpeg_decompress_struct
+modifier|*
+name|cinfo
+parameter_list|,
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+block|{
+name|guint32
+name|hashval
+decl_stmt|;
+name|GSList
+modifier|*
+name|list
+decl_stmt|;
+name|QuantTableData
+modifier|*
+name|table_data
+decl_stmt|;
+name|gint
+name|num_quant_tables
+decl_stmt|;
+name|gint
+name|t
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|hashval
+operator|=
+name|hash_quant_tables
+argument_list|(
+name|cinfo
+argument_list|)
+expr_stmt|;
+comment|/* linear search - the number of unknown tables is usually very small */
+for|for
+control|(
+name|list
+operator|=
+name|found_tables
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|list
+operator|->
+name|next
+control|)
+block|{
+name|table_data
+operator|=
+name|list
+operator|->
+name|data
+expr_stmt|;
+if|if
+condition|(
+name|table_data
+operator|->
+name|hashval
+operator|==
+name|hashval
+operator|&&
+name|table_data
+operator|->
+name|subsmp_h
+operator|==
+name|cinfo
+operator|->
+name|comp_info
+index|[
+literal|0
+index|]
+operator|.
+name|h_samp_factor
+operator|&&
+name|table_data
+operator|->
+name|subsmp_v
+operator|==
+name|cinfo
+operator|->
+name|comp_info
+index|[
+literal|0
+index|]
+operator|.
+name|v_samp_factor
+condition|)
+block|{
+comment|/* this unknown table has already been seen in previous files */
+name|table_data
+operator|->
+name|files
+operator|=
+name|g_slist_prepend
+argument_list|(
+name|table_data
+operator|->
+name|files
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+block|}
+comment|/* not found => new table */
+name|table_data
+operator|=
+name|g_new
+argument_list|(
+name|QuantTableData
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+name|table_data
+operator|->
+name|hashval
+operator|=
+name|hashval
+expr_stmt|;
+name|table_data
+operator|->
+name|subsmp_h
+operator|=
+name|cinfo
+operator|->
+name|comp_info
+index|[
+literal|0
+index|]
+operator|.
+name|h_samp_factor
+expr_stmt|;
+name|table_data
+operator|->
+name|subsmp_v
+operator|=
+name|cinfo
+operator|->
+name|comp_info
+index|[
+literal|0
+index|]
+operator|.
+name|v_samp_factor
+expr_stmt|;
+name|num_quant_tables
+operator|=
+literal|0
+expr_stmt|;
+for|for
+control|(
+name|t
+operator|=
+literal|0
+init|;
+name|t
+operator|<
+literal|4
+condition|;
+name|t
+operator|++
+control|)
+if|if
+condition|(
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+name|t
+index|]
+condition|)
+name|num_quant_tables
+operator|++
+expr_stmt|;
+name|table_data
+operator|->
+name|num_quant_tables
+operator|=
+name|num_quant_tables
+expr_stmt|;
+name|table_data
+operator|->
+name|ijg_qual
+operator|=
+name|jpeg_detect_quality
+argument_list|(
+name|cinfo
+argument_list|)
+expr_stmt|;
+name|table_data
+operator|->
+name|files
+operator|=
+name|g_slist_prepend
+argument_list|(
+name|NULL
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+literal|0
+index|]
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
+operator|++
+control|)
+name|table_data
+operator|->
+name|luminance
+index|[
+name|i
+index|]
+operator|=
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+literal|0
+index|]
+operator|->
+name|quantval
+index|[
+name|i
+index|]
+expr_stmt|;
+block|}
+else|else
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
+operator|++
+control|)
+name|table_data
+operator|->
+name|luminance
+index|[
+name|i
+index|]
+operator|=
+literal|0
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+literal|1
+index|]
+condition|)
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
+operator|++
+control|)
+name|table_data
+operator|->
+name|chrominance
+index|[
+name|i
+index|]
+operator|=
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+literal|1
+index|]
+operator|->
+name|quantval
+index|[
+name|i
+index|]
+expr_stmt|;
+block|}
+else|else
+block|{
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
+operator|++
+control|)
+name|table_data
+operator|->
+name|chrominance
+index|[
+name|i
+index|]
+operator|=
+literal|0
+expr_stmt|;
+block|}
+name|found_tables
+operator|=
+name|g_slist_prepend
+argument_list|(
+name|found_tables
+argument_list|,
+name|table_data
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  * Analyze the JPEG quantization tables and return a list of devices or  * software that can generate the same tables and subsampling factors.  */
 end_comment
 
 begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|detect_source (struct jpeg_decompress_struct * cinfo)
+DECL|function|detect_source (struct jpeg_decompress_struct * cinfo,gint num_quant_tables)
 name|detect_source
 parameter_list|(
 name|struct
 name|jpeg_decompress_struct
 modifier|*
 name|cinfo
+parameter_list|,
+name|gint
+name|num_quant_tables
 parameter_list|)
 block|{
 name|guint
@@ -4677,6 +6541,16 @@ name|chrom_sum
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+literal|0
+index|]
+condition|)
+block|{
 for|for
 control|(
 name|i
@@ -4704,6 +6578,7 @@ index|[
 name|i
 index|]
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|cinfo
@@ -4752,6 +6627,10 @@ condition|(
 name|chrom_sum
 operator|==
 literal|0
+operator|&&
+name|num_quant_tables
+operator|==
+literal|1
 condition|)
 block|{
 comment|/* grayscale */
@@ -4836,6 +6715,15 @@ index|]
 operator|.
 name|v_samp_factor
 operator|)
+operator|&&
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|num_quant_tables
+operator|>
+literal|0
 condition|)
 block|{
 name|source_list
@@ -4950,6 +6838,27 @@ index|]
 operator|.
 name|v_samp_factor
 operator|)
+operator|&&
+operator|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|num_quant_tables
+operator|==
+name|num_quant_tables
+operator|||
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|num_quant_tables
+operator|==
+operator|-
+name|num_quant_tables
+operator|)
 condition|)
 block|{
 name|source_list
@@ -4977,16 +6886,23 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * ... FIXME: docs  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|print_summary (struct jpeg_decompress_struct * cinfo)
+DECL|function|print_summary (struct jpeg_decompress_struct * cinfo,gint num_quant_tables)
 name|print_summary
 parameter_list|(
 name|struct
 name|jpeg_decompress_struct
 modifier|*
 name|cinfo
+parameter_list|,
+name|gint
+name|num_quant_tables
 parameter_list|)
 block|{
 name|gint
@@ -5174,11 +7090,21 @@ argument_list|(
 literal|"\n"
 argument_list|)
 expr_stmt|;
+comment|/* Number of quantization tables */
+name|g_print
+argument_list|(
+literal|"\tQ.tables: %d\n"
+argument_list|,
+name|num_quant_tables
+argument_list|)
+expr_stmt|;
 name|source_list
 operator|=
 name|detect_source
 argument_list|(
 name|cinfo
+argument_list|,
+name|num_quant_tables
 argument_list|)
 expr_stmt|;
 if|if
@@ -5272,11 +7198,23 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|table_id
+operator|>=
+literal|0
+condition|)
 name|g_print
 argument_list|(
 literal|"    {  /* table %d */\n      "
 argument_list|,
 name|table_id
+argument_list|)
+expr_stmt|;
+else|else
+name|g_print
+argument_list|(
+literal|"    {\n      "
 argument_list|)
 expr_stmt|;
 for|for
@@ -5628,16 +7566,98 @@ block|}
 end_function
 
 begin_comment
+comment|/*  * Error handling as in the IJG libjpeg example.  */
+end_comment
+
+begin_typedef
+DECL|struct|my_error_mgr
+typedef|typedef
+struct|struct
+name|my_error_mgr
+block|{
+DECL|member|pub
+name|struct
+name|jpeg_error_mgr
+name|pub
+decl_stmt|;
+comment|/* "public" fields */
+ifdef|#
+directive|ifdef
+name|__ia64__
+DECL|member|dummy
+name|long
+name|double
+name|dummy
+decl_stmt|;
+comment|/* bug #138357 */
+endif|#
+directive|endif
+DECL|member|setjmp_buffer
+name|jmp_buf
+name|setjmp_buffer
+decl_stmt|;
+comment|/* for return to caller */
+DECL|typedef|my_error_ptr
+block|}
+typedef|*
+name|my_error_ptr
+typedef|;
+end_typedef
+
+begin_function
+specifier|static
+name|void
+DECL|function|my_error_exit (j_common_ptr cinfo)
+name|my_error_exit
+parameter_list|(
+name|j_common_ptr
+name|cinfo
+parameter_list|)
+block|{
+name|my_error_ptr
+name|myerr
+init|=
+operator|(
+name|my_error_ptr
+operator|)
+name|cinfo
+operator|->
+name|err
+decl_stmt|;
+call|(
+modifier|*
+name|cinfo
+operator|->
+name|err
+operator|->
+name|output_message
+call|)
+argument_list|(
+name|cinfo
+argument_list|)
+expr_stmt|;
+name|longjmp
+argument_list|(
+name|myerr
+operator|->
+name|setjmp_buffer
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
 comment|/*  * Analyze a JPEG file according to the command-line options.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|analyze_file (const gchar * filename)
+DECL|function|analyze_file (gchar * filename)
 name|analyze_file
 parameter_list|(
-specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -5648,7 +7668,7 @@ name|jpeg_decompress_struct
 name|cinfo
 decl_stmt|;
 name|struct
-name|jpeg_error_mgr
+name|my_error_mgr
 name|jerr
 decl_stmt|;
 name|FILE
@@ -5657,6 +7677,9 @@ name|f
 decl_stmt|;
 name|gint
 name|i
+decl_stmt|;
+name|gint
+name|num_quant_tables
 decl_stmt|;
 name|GSList
 modifier|*
@@ -5678,7 +7701,7 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"Cannot open '%s'\n"
 argument_list|,
@@ -5708,8 +7731,44 @@ name|jpeg_std_error
 argument_list|(
 operator|&
 name|jerr
+operator|.
+name|pub
 argument_list|)
 expr_stmt|;
+name|jerr
+operator|.
+name|pub
+operator|.
+name|error_exit
+operator|=
+name|my_error_exit
+expr_stmt|;
+if|if
+condition|(
+name|setjmp
+argument_list|(
+name|jerr
+operator|.
+name|setjmp_buffer
+argument_list|)
+condition|)
+block|{
+comment|/* if we get here, the JPEG code has signaled an error. */
+name|jpeg_destroy_decompress
+argument_list|(
+operator|&
+name|cinfo
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|jpeg_create_decompress
 argument_list|(
 operator|&
@@ -5732,19 +7791,57 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|num_quant_tables
+operator|=
+literal|0
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+literal|4
+condition|;
+name|i
+operator|++
+control|)
+if|if
+condition|(
+name|cinfo
+operator|.
+name|quant_tbl_ptrs
+index|[
+name|i
+index|]
+condition|)
+name|num_quant_tables
+operator|++
+expr_stmt|;
 name|source_list
 operator|=
 name|detect_source
 argument_list|(
 operator|&
 name|cinfo
+argument_list|,
+name|num_quant_tables
 argument_list|)
 expr_stmt|;
+name|add_unknown_table
+argument_list|(
+operator|&
+name|cinfo
+argument_list|,
+name|filename
+argument_list|)
+expr_stmt|;
+comment|/* FIXME */
+comment|/*   if (!source_list)     {       add_unknown_table (&cinfo, filename);     }   */
 if|if
 condition|(
-operator|!
-name|source_list
-operator|||
 operator|!
 name|option_unknown
 condition|)
@@ -5757,6 +7854,8 @@ name|print_summary
 argument_list|(
 operator|&
 name|cinfo
+argument_list|,
+name|num_quant_tables
 argument_list|)
 expr_stmt|;
 if|if
@@ -5766,17 +7865,9 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"  {\n    /* %s */\n    \"%s\", \"?\",\n    %hd, %hd,\n"
+literal|"  {\n    /* %s */\n    \"?\", \"?\",\n    %hd, %hd,\n    %d,\n"
 argument_list|,
 name|filename
-argument_list|,
-operator|(
-name|option_name
-condition|?
-name|option_name
-else|:
-name|filename
-operator|)
 argument_list|,
 name|cinfo
 operator|.
@@ -5795,6 +7886,8 @@ literal|0
 index|]
 operator|.
 name|v_samp_factor
+argument_list|,
+name|num_quant_tables
 argument_list|)
 expr_stmt|;
 for|for
@@ -5954,77 +8047,506 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Help?  */
+comment|/*  * ... FIXME: docs  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|usage (void)
-name|usage
+DECL|function|print_unknown_tables (void)
+name|print_unknown_tables
 parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|const
-name|OptionDesc
+name|GSList
 modifier|*
-name|opt
+name|list
 decl_stmt|;
+name|GSList
+modifier|*
+name|flist
+decl_stmt|;
+name|QuantTableData
+modifier|*
+name|table_data
+decl_stmt|;
+name|gint
+name|num_files
+decl_stmt|;
+name|gint
+name|total_files
+init|=
+literal|0
+decl_stmt|;
+for|for
+control|(
+name|list
+operator|=
+name|found_tables
+init|;
+name|list
+condition|;
+name|list
+operator|=
+name|list
+operator|->
+name|next
+control|)
+block|{
+name|table_data
+operator|=
+name|list
+operator|->
+name|data
+expr_stmt|;
+if|if
+condition|(
+name|option_ctable
+condition|)
+block|{
 name|g_print
 argument_list|(
-literal|"This program analyzes the quantization tables of the JPEG files given on the\n"
-literal|"command line and displays their quality settings.\n"
-literal|"\n"
+literal|"  {\n"
 argument_list|)
 expr_stmt|;
-name|g_print
-argument_list|(
-literal|"Usage:\n"
-literal|"  jpegqual [options] file [[options] file [...]]\n"
-literal|"\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"Options:\n"
-argument_list|)
+name|num_files
+operator|=
+literal|0
 expr_stmt|;
 for|for
 control|(
-name|opt
+name|flist
 operator|=
-name|options_desc
-init|;
-name|opt
+name|table_data
 operator|->
-name|option
+name|files
+init|;
+name|flist
 condition|;
-name|opt
+name|flist
+operator|=
+name|flist
+operator|->
+name|next
+control|)
+block|{
+name|g_print
+argument_list|(
+literal|"    /* %s */\n"
+argument_list|,
+operator|(
+name|gchar
+operator|*
+operator|)
+operator|(
+name|flist
+operator|->
+name|data
+operator|)
+argument_list|)
+expr_stmt|;
+name|num_files
+operator|++
+expr_stmt|;
+block|}
+block|{
+comment|/* FIXME */
+name|guint
+name|lum_sum
+decl_stmt|;
+name|guint
+name|chrom_sum
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|total_files
+operator|+=
+name|num_files
+expr_stmt|;
+name|lum_sum
+operator|=
+literal|0
+expr_stmt|;
+name|chrom_sum
+operator|=
+literal|0
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
 operator|++
 control|)
+name|lum_sum
+operator|+=
+name|table_data
+operator|->
+name|luminance
+index|[
+name|i
+index|]
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE2
+condition|;
+name|i
+operator|++
+control|)
+name|chrom_sum
+operator|+=
+name|table_data
+operator|->
+name|chrominance
+index|[
+name|i
+index|]
+expr_stmt|;
 name|g_print
 argument_list|(
-literal|"  %-20s %s.\n"
+literal|"    /* hash 0x%x, IJG %d, lum %d, chrom %d, files: %d */\n"
 argument_list|,
-name|opt
+name|table_data
 operator|->
-name|option
+name|hashval
 argument_list|,
-name|opt
+name|table_data
 operator|->
-name|description
+name|ijg_qual
+argument_list|,
+name|lum_sum
+argument_list|,
+name|chrom_sum
+argument_list|,
+name|num_files
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|chrom_sum
+operator|==
+literal|0
+operator|&&
+name|table_data
+operator|->
+name|num_quant_tables
+operator|==
+literal|1
+condition|)
+block|{
+comment|/* grayscale */
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|quant_info
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|lum_sum
+operator|==
+name|lum_sum
+operator|&&
+operator|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_h
+operator|==
+literal|0
+operator|||
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_h
+operator|==
+name|table_data
+operator|->
+name|subsmp_h
+operator|)
+operator|&&
+operator|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_v
+operator|==
+literal|0
+operator|||
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_v
+operator|==
+name|table_data
+operator|->
+name|subsmp_v
+operator|)
+operator|&&
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|num_quant_tables
+operator|>
+literal|0
+condition|)
+block|{
+name|g_print
+argument_list|(
+literal|"    XXX \"%s\", \"%s\",\n"
+argument_list|,
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|source_name
+argument_list|,
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|setting_name
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+else|else
+block|{
+comment|/* RGB and other color spaces */
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|quant_info
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+block|{
+if|if
+condition|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|lum_sum
+operator|==
+name|lum_sum
+operator|&&
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|chrom_sum
+operator|==
+name|chrom_sum
+operator|&&
+operator|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_h
+operator|==
+literal|0
+operator|||
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_h
+operator|==
+name|table_data
+operator|->
+name|subsmp_h
+operator|)
+operator|&&
+operator|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_v
+operator|==
+literal|0
+operator|||
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|subsmp_v
+operator|==
+name|table_data
+operator|->
+name|subsmp_v
+operator|)
+operator|&&
+operator|(
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|num_quant_tables
+operator|==
+name|table_data
+operator|->
+name|num_quant_tables
+operator|||
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|num_quant_tables
+operator|==
+operator|-
+name|table_data
+operator|->
+name|num_quant_tables
+operator|)
+condition|)
+block|{
+name|g_print
+argument_list|(
+literal|"    XXX \"%s\", \"%s\",\n"
+argument_list|,
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|source_name
+argument_list|,
+name|quant_info
+index|[
+name|i
+index|]
+operator|.
+name|setting_name
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+block|}
+block|}
+comment|/* FIXME */
+name|g_print
+argument_list|(
+literal|"    \"?\", \"? (hash %x)\",\n"
+literal|"    %hd, %hd,\n    %d,\n"
+argument_list|,
+name|table_data
+operator|->
+name|hashval
+argument_list|,
+name|table_data
+operator|->
+name|subsmp_h
+argument_list|,
+name|table_data
+operator|->
+name|subsmp_v
+argument_list|,
+operator|-
+name|table_data
+operator|->
+name|num_quant_tables
+argument_list|)
+expr_stmt|;
+name|print_ctable
+argument_list|(
+operator|-
+literal|1
+argument_list|,
+name|table_data
+operator|->
+name|luminance
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|print_ctable
+argument_list|(
+operator|-
+literal|1
+argument_list|,
+name|table_data
+operator|->
+name|chrominance
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\n"
+literal|"  },\n"
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 name|g_print
 argument_list|(
-literal|"Options may be given before any file.  Long boolean options can be negated\n"
-literal|"by prefixing them with --no.  For example: --no-summary.\n"
+literal|"/* TOTAL FILES: %d */\n"
+argument_list|,
+name|total_files
 argument_list|)
 expr_stmt|;
 block|}
@@ -6048,23 +8570,90 @@ name|argv
 index|[]
 parameter_list|)
 block|{
-name|gboolean
-name|parse_options
+name|GError
+modifier|*
+name|error
 init|=
-name|TRUE
+name|NULL
+decl_stmt|;
+name|GOptionContext
+modifier|*
+name|context
 decl_stmt|;
 name|g_set_prgname
 argument_list|(
 literal|"jpegqual"
 argument_list|)
 expr_stmt|;
+name|context
+operator|=
+name|g_option_context_new
+argument_list|(
+literal|"FILE [...] - analyzes JPEG quantization tables"
+argument_list|)
+expr_stmt|;
+name|g_option_context_add_main_entries
+argument_list|(
+name|context
+argument_list|,
+name|option_entries
+argument_list|,
+name|NULL
+comment|/* skip i18n? */
+argument_list|)
+expr_stmt|;
+name|g_option_context_parse
+argument_list|(
+name|context
+argument_list|,
+operator|&
+name|argc
+argument_list|,
+operator|&
+name|argv
+argument_list|,
+operator|&
+name|error
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|argc
-operator|>
+operator|<=
 literal|1
 condition|)
 block|{
+name|g_printerr
+argument_list|(
+literal|"Missing file name.  Try the option --help for help\n"
+argument_list|)
+expr_stmt|;
+return|return
+literal|1
+return|;
+block|}
+if|if
+condition|(
+operator|!
+name|option_summary
+operator|&&
+operator|!
+name|option_ctable
+operator|&&
+operator|!
+name|option_table_2cols
+condition|)
+block|{
+name|g_printerr
+argument_list|(
+literal|"Missing output option.  Assuming that you wanted --summary.\n"
+argument_list|)
+expr_stmt|;
+name|option_summary
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 for|for
 control|(
 name|argv
@@ -6073,7 +8662,8 @@ operator|,
 name|argc
 operator|--
 init|;
-name|argc
+operator|*
+name|argv
 condition|;
 name|argv
 operator|++
@@ -6084,317 +8674,34 @@ control|)
 block|{
 if|if
 condition|(
-name|parse_options
-operator|&&
-operator|*
-operator|*
-name|argv
-operator|==
-literal|'-'
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--"
-argument_list|)
-condition|)
-name|parse_options
-operator|=
-name|FALSE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-s"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--summary"
-argument_list|)
-condition|)
-name|option_summary
-operator|=
-name|TRUE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--no-summary"
-argument_list|)
-condition|)
-name|option_summary
-operator|=
-name|FALSE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-c"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--c-tables"
-argument_list|)
-condition|)
-name|option_ctable
-operator|=
-name|TRUE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--no-c-tables"
-argument_list|)
-condition|)
-name|option_ctable
-operator|=
-name|FALSE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-t"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--tables"
-argument_list|)
-condition|)
-name|option_table_2cols
-operator|=
-name|TRUE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--no-tables"
-argument_list|)
-condition|)
-name|option_table_2cols
-operator|=
-name|FALSE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-n"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--name"
-argument_list|)
-operator|)
-operator|&&
-name|argc
-operator|>
-literal|1
-condition|)
-block|{
-name|argv
-operator|++
-expr_stmt|;
-name|argc
-operator|--
-expr_stmt|;
-name|option_name
-operator|=
-operator|*
-name|argv
-expr_stmt|;
-block|}
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-u"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--unknown"
-argument_list|)
-condition|)
-name|option_unknown
-operator|=
-name|TRUE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--no-unkown"
-argument_list|)
-condition|)
-name|option_unknown
-operator|=
-name|FALSE
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-h"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"--help"
-argument_list|)
-operator|||
-operator|!
-name|strcmp
-argument_list|(
-operator|*
-name|argv
-argument_list|,
-literal|"-?"
-argument_list|)
-condition|)
-block|{
-name|usage
-argument_list|()
-expr_stmt|;
-return|return
-literal|0
-return|;
-block|}
-else|else
-block|{
-name|g_print
-argument_list|(
-literal|"Unknown option or missing argument: '%s'.  "
-literal|"Try '--help' for help.\n"
-argument_list|,
-operator|*
-name|argv
-argument_list|)
-expr_stmt|;
-return|return
-literal|1
-return|;
-block|}
-block|}
-else|else
-block|{
-if|if
-condition|(
 operator|!
 name|analyze_file
 argument_list|(
 operator|*
 name|argv
 argument_list|)
+operator|&&
+operator|!
+name|option_ignore_err
 condition|)
 return|return
 literal|1
 return|;
 block|}
+if|if
+condition|(
+name|option_unknown
+operator|&&
+name|found_tables
+condition|)
+block|{
+name|print_unknown_tables
+argument_list|()
+expr_stmt|;
 block|}
 return|return
 literal|0
 return|;
-block|}
-else|else
-block|{
-name|usage
-argument_list|()
-expr_stmt|;
-return|return
-literal|1
-return|;
-block|}
 block|}
 end_function
 
