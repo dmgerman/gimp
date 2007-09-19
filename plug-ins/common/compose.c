@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3bc7b0108
+DECL|struct|__anon27ffaf030108
 block|{
 union|union
-DECL|union|__anon28a3bc7b020a
+DECL|union|__anon27ffaf03020a
 block|{
 DECL|member|ID
 name|gint32
@@ -651,7 +651,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3bc7b0308
+DECL|struct|__anon27ffaf030308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1190,7 +1190,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3bc7b0408
+DECL|struct|__anon27ffaf030408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1230,7 +1230,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3bc7b0508
+DECL|struct|__anon27ffaf030508
 block|{
 DECL|member|width
 DECL|member|height
@@ -1492,38 +1492,6 @@ literal|"compose-type"
 block|,
 literal|"What to compose: RGB, RGBA, HSV, HSL, CMY, CMYK"
 block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value1"
-block|,
-literal|"Mask value if image 1 is -1"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value2"
-block|,
-literal|"Mask value if image 2 is -1"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value3"
-block|,
-literal|"Mask value if image 3 is -1"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value4"
-block|,
-literal|"Mask value if image 4 is -1"
-block|}
 block|}
 decl_stmt|;
 specifier|static
@@ -1603,38 +1571,6 @@ block|,
 literal|"compose-type"
 block|,
 literal|"What to compose: RGB, RGBA, HSV, HSL, CMY, CMYK"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value1"
-block|,
-literal|"Mask value if image 1 is -1"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value2"
-block|,
-literal|"Mask value if image 2 is -1"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value3"
-block|,
-literal|"Mask value if image 3 is -1"
-block|}
-block|,
-block|{
-name|GIMP_PDB_INT8
-block|,
-literal|"value4"
-block|,
-literal|"Mask value if image 4 is -1"
 block|}
 block|}
 decl_stmt|;
@@ -2472,21 +2408,6 @@ operator|-
 literal|1
 condition|)
 block|{
-if|if
-condition|(
-name|nparams
-operator|<
-literal|8
-operator|+
-name|i
-condition|)
-block|{
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-break|break;
-block|}
 name|composevals
 operator|.
 name|inputs
@@ -2509,16 +2430,7 @@ name|comp
 operator|.
 name|val
 operator|=
-name|param
-index|[
-literal|7
-operator|+
-name|i
-index|]
-operator|.
-name|data
-operator|.
-name|d_int8
+literal|0
 expr_stmt|;
 block|}
 else|else
