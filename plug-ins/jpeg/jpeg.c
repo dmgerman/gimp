@@ -1572,15 +1572,7 @@ case|:
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
-comment|/*  Possibly retrieve data  */
-name|gimp_get_data
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-operator|&
-name|jsvals
-argument_list|)
-expr_stmt|;
+comment|/* restore the values found when loading the file (if available) */
 name|jpeg_restore_original_settings
 argument_list|(
 name|orig_image_ID
@@ -1595,7 +1587,7 @@ operator|&
 name|num_quant_tables
 argument_list|)
 expr_stmt|;
-comment|/* load up the previously used values */
+comment|/* load up the previously used values (if file was saved once) */
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -1865,6 +1857,7 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
 name|save_image
 argument_list|(
 name|param
@@ -1885,23 +1878,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 condition|)
-block|{
-comment|/*  Store mvals data  */
-name|gimp_set_data
-argument_list|(
-name|SAVE_PROC
-argument_list|,
-operator|&
-name|jsvals
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|JpegSaveVals
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|status
 operator|=

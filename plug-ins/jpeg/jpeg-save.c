@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c12f6f00108
+DECL|struct|__anon29ecaf9e0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -346,7 +346,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c12f6f00208
+DECL|struct|__anon29ecaf9e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2348,6 +2348,9 @@ name|exif_buf_len
 argument_list|)
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
 literal|"jpeg-save: saving EXIF block (%d bytes)\n"
@@ -2355,6 +2358,8 @@ argument_list|,
 name|exif_buf_len
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|jpeg_write_marker
 argument_list|(
 operator|&
@@ -2391,6 +2396,9 @@ operator|*
 name|image_comment
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
 literal|"jpeg-save: saving image comment (%d bytes)\n"
@@ -2404,6 +2412,8 @@ name|image_comment
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|jpeg_write_marker
 argument_list|(
 operator|&
@@ -2484,6 +2494,9 @@ argument_list|)
 operator|-
 literal|10
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
 literal|"jpeg-save: saving XMP packet (%d bytes)\n"
@@ -2494,6 +2507,8 @@ operator|)
 name|xmp_data_size
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|app_block
 operator|=
 name|g_malloc
@@ -3153,15 +3168,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|g_printerr
-argument_list|(
-literal|"destroy_preview (%d, %d)\n"
-argument_list|,
-name|preview_image_ID
-argument_list|,
-name|preview_layer_ID
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_image_is_valid
@@ -6489,7 +6495,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c12f6f00308
+DECL|struct|__anon29ecaf9e0308
 block|{
 DECL|member|pub
 name|struct

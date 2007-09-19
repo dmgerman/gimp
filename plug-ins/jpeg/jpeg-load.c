@@ -919,6 +919,9 @@ operator|==
 name|JPEG_COM
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
 literal|"jpeg-load: found image comment (%d bytes)\n"
@@ -928,6 +931,8 @@ operator|->
 name|data_length
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -998,6 +1003,9 @@ name|data
 argument_list|)
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
 literal|"jpeg-load: found EXIF block (%d bytes)\n"
@@ -1015,6 +1023,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 ifdef|#
 directive|ifdef
 name|HAVE_EXIF
@@ -1227,6 +1237,9 @@ name|gchar
 modifier|*
 name|xmp_packet
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|g_print
 argument_list|(
 literal|"jpeg-load: found XMP packet (%d bytes)\n"
@@ -1244,6 +1257,8 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|xmp_packet
 operator|=
 name|g_strndup
@@ -2087,7 +2102,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c164ce50108
+DECL|struct|__anon2bf3f2260108
 block|{
 DECL|member|pub
 name|struct
