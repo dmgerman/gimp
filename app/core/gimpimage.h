@@ -243,12 +243,18 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  provides a unique ID         */
+DECL|member|load_proc
+name|GimpPlugInProcedure
+modifier|*
+name|load_proc
+decl_stmt|;
+comment|/*  procedure used for loading   */
 DECL|member|save_proc
 name|GimpPlugInProcedure
 modifier|*
 name|save_proc
 decl_stmt|;
-comment|/*  last PDB save proc used      */
+comment|/*  last save procedure used     */
 DECL|member|width
 DECL|member|height
 name|gint
@@ -1049,6 +1055,34 @@ begin_function_decl
 name|gchar
 modifier|*
 name|gimp_image_get_filename
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_set_load_proc
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|GimpPlugInProcedure
+modifier|*
+name|proc
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpPlugInProcedure
+modifier|*
+name|gimp_image_get_load_proc
 parameter_list|(
 specifier|const
 name|GimpImage

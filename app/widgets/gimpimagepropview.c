@@ -142,7 +142,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae52cc0103
+DECL|enum|__anon287e5aaf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1505,6 +1505,18 @@ decl_stmt|;
 name|proc
 operator|=
 name|gimp_image_get_save_proc
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|proc
+condition|)
+name|proc
+operator|=
+name|gimp_image_get_load_proc
 argument_list|(
 name|image
 argument_list|)
