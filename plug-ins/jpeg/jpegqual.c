@@ -231,8 +231,10 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29263e5a0108
+DECL|struct|__anon2a35f80f0108
 block|{
+comment|/* const guint  hash; */
+comment|/* hash of luminance/chrominance tables */
 DECL|member|lum_sum
 specifier|const
 name|gint
@@ -2567,6 +2569,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"ACD ?"
@@ -2586,6 +2589,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"ACD ?"
@@ -2605,6 +2609,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"ACD ?"
@@ -2624,6 +2629,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"ACD ?"
@@ -2632,25 +2638,6 @@ literal|"?"
 block|,
 operator|-
 literal|71
-block|}
-block|,
-block|{
-literal|284
-block|,
-literal|443
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop CS3"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|96
 block|}
 block|,
 block|{
@@ -2683,7 +2670,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS2"
+literal|"Adobe Photoshop CS or CS2, Camera Raw 3"
 block|,
 literal|"quality 11"
 block|,
@@ -2702,7 +2689,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 7.0 or CS2"
+literal|"Adobe Photoshop 7.0 (or CS2)"
 block|,
 literal|"quality 10"
 block|,
@@ -2721,7 +2708,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS2"
+literal|"Adobe Photoshop 7.0, CS, CS2"
 block|,
 literal|"quality 9"
 block|,
@@ -2740,7 +2727,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS2"
+literal|"Adobe Photoshop 7.0, CS, CS2"
 block|,
 literal|"quality 8"
 block|,
@@ -2892,7 +2879,7 @@ literal|2
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS2"
+literal|"Adobe Photoshop 7.0, CS, CS2"
 block|,
 literal|"quality 0"
 block|,
@@ -3101,9 +3088,9 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS or Lightroom"
+literal|"Adobe Photoshop 7.0, CS, CS2 or Lightroom"
 block|,
-literal|"save for web 100?"
+literal|"quality 12"
 block|,
 operator|-
 literal|98
@@ -3122,7 +3109,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop CS"
 block|,
-literal|"?"
+literal|"quality 11"
 block|,
 operator|-
 literal|96
@@ -3139,7 +3126,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS or Elements 4.0"
+literal|"Adobe Photoshop 7.0, CS, CS2, Elements 4.0"
 block|,
 literal|"quality 8"
 block|,
@@ -3160,7 +3147,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop CS"
 block|,
-literal|"?"
+literal|"quality 5"
 block|,
 operator|-
 literal|90
@@ -3215,7 +3202,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 7.0 CE"
+literal|"Adobe Photoshop 5.0, 7.0"
 block|,
 literal|"quality 9"
 block|,
@@ -3234,31 +3221,12 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 7.0"
+literal|"Adobe Photoshop 7.0, CS2"
 block|,
-literal|"?"
+literal|"quality 7"
 block|,
 operator|-
 literal|90
-block|}
-block|,
-block|{
-literal|539
-block|,
-literal|801
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 5.0"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|92
 block|}
 block|,
 block|{
@@ -3312,7 +3280,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"85%"
+literal|"save for web 85"
 block|,
 operator|-
 literal|94
@@ -3369,7 +3337,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"75%"
+literal|"save for web 75"
 block|,
 operator|-
 literal|92
@@ -3388,7 +3356,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"65%"
+literal|"save for web 65"
 block|,
 operator|-
 literal|87
@@ -3407,7 +3375,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"55%"
+literal|"save for web 55"
 block|,
 operator|-
 literal|83
@@ -3426,7 +3394,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"52%"
+literal|"save for web 52"
 block|,
 operator|-
 literal|82
@@ -3445,7 +3413,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"51%"
+literal|"save for web 51"
 block|,
 operator|-
 literal|81
@@ -3464,7 +3432,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"29%"
+literal|"save for web 29"
 block|,
 operator|-
 literal|73
@@ -3483,7 +3451,7 @@ literal|2
 block|,
 literal|"Adobe Photoshop ?"
 block|,
-literal|"3%"
+literal|"save for web 3"
 block|,
 operator|-
 literal|55
@@ -3521,7 +3489,7 @@ literal|2
 block|,
 literal|"Adobe ImageReady"
 block|,
-literal|"22%"
+literal|"save for web 22"
 block|,
 operator|-
 literal|70
@@ -3540,7 +3508,7 @@ literal|2
 block|,
 literal|"Adobe ImageReady"
 block|,
-literal|"6%"
+literal|"save for web 6"
 block|,
 operator|-
 literal|57
@@ -3557,7 +3525,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Apple Quicktime 7.1"
+literal|"Apple Quicktime 7.1 or 7.2"
 block|,
 literal|"?"
 block|,
@@ -3593,6 +3561,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Apple Quicktime 7.1"
@@ -3650,6 +3619,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Canon EOS 300D, 350D or 400D"
@@ -3669,33 +3639,15 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Canon EOS 10D"
 block|,
-literal|"?"
+literal|"Normal"
 block|,
 operator|-
 literal|90
-block|}
-block|,
-block|{
-literal|533
-block|,
-literal|1925
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Canon Digital Ixus"
-block|,
-literal|"Fine"
-block|,
-operator|-
-literal|86
 block|}
 block|,
 block|{
@@ -3707,6 +3659,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Canon PowerShot A95, S1, S2, SD400 or SD630"
@@ -3722,51 +3675,14 @@ literal|192
 block|,
 literal|556
 block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Canon PowerShot A430"
-block|,
-literal|"Superfine"
-block|,
-operator|-
-literal|95
-block|}
-block|,
-block|{
-literal|533
-block|,
-literal|1325
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Canon PowerShot A430"
-block|,
-literal|"Superfine"
-block|,
-operator|-
-literal|89
-block|}
-block|,
-block|{
-literal|192
-block|,
-literal|556
-block|,
 literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
-literal|"Canon PowerShot S5 IS, S200 or Ixus 800"
+literal|"Canon PowerShot S5 IS, A300, A430, S200, SD500, SD700, Ixus 700 or 800"
 block|,
 literal|"Superfine"
 block|,
@@ -3783,6 +3699,7 @@ literal|1
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Canon Digital Ixus 400"
@@ -3794,24 +3711,6 @@ literal|89
 block|}
 block|,
 block|{
-literal|64
-block|,
-literal|64
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Casio EX-Z600"
-block|,
-literal|"Fine"
-block|,
-literal|100
-block|}
-block|,
-block|{
 literal|288
 block|,
 literal|443
@@ -3820,6 +3719,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"FujiFilm MX-2700"
@@ -3839,6 +3739,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"FujiFilm FinePix S700"
@@ -3858,6 +3759,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"FujiFilm FinePix 2600 Zoom"
@@ -3869,41 +3771,23 @@ literal|93
 block|}
 block|,
 block|{
-literal|1254
+literal|167
 block|,
-literal|1888
+literal|240
 block|,
 literal|2
 block|,
-literal|1
+literal|2
 block|,
+operator|-
 literal|3
 block|,
-literal|"FujiFilm MX-1700 Zoom"
+literal|"HP PhotoSmart C850, C935"
 block|,
 literal|"?"
 block|,
 operator|-
-literal|82
-block|}
-block|,
-block|{
-literal|2056
-block|,
-literal|3102
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|3
-block|,
-literal|"FujiFilm DX-10"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|71
+literal|97
 block|}
 block|,
 block|{
@@ -3915,6 +3799,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|3
 block|,
 literal|"HP PhotoSmart C850, C935"
@@ -3934,6 +3819,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|3
 block|,
 literal|"HP PhotoSmart C812"
@@ -3945,6 +3831,25 @@ literal|78
 block|}
 block|,
 block|{
+literal|369
+block|,
+literal|558
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|3
+block|,
+literal|"Kodak P880"
+block|,
+literal|"?"
+block|,
+literal|95
+block|}
+block|,
+block|{
 literal|566
 block|,
 literal|583
@@ -3953,11 +3858,12 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Kodak V610"
 block|,
-literal|"?"
+literal|"Fine"
 block|,
 operator|-
 literal|93
@@ -3972,6 +3878,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Kodak DC240"
@@ -3979,25 +3886,6 @@ block|,
 literal|"?"
 block|,
 literal|90
-block|}
-block|,
-block|{
-literal|1375
-block|,
-literal|1131
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Kodak DC210"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|86
 block|}
 block|,
 block|{
@@ -4234,6 +4122,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Lead ?"
@@ -4253,6 +4142,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Lead ?"
@@ -4272,6 +4162,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Lead ?"
@@ -4291,6 +4182,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Lead ?"
@@ -4310,6 +4202,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Lead ?"
@@ -4329,6 +4222,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Lead ?"
@@ -4348,6 +4242,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Leica Digilux 3"
@@ -4367,6 +4262,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Leica M8"
@@ -4385,6 +4281,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Medion ?"
@@ -4393,6 +4290,26 @@ literal|"?"
 block|,
 operator|-
 literal|92
+block|}
+block|,
+block|{
+literal|433
+block|,
+literal|667
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Medion ?"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|94
 block|}
 block|,
 block|{
@@ -4422,6 +4339,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D50, D70, D70s, D80"
@@ -4441,6 +4359,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 or D70s"
@@ -4460,6 +4379,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 or D70s"
@@ -4479,6 +4399,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 or D70s"
@@ -4498,6 +4419,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4517,6 +4439,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4536,6 +4459,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4555,6 +4479,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4574,6 +4499,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4593,6 +4519,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4612,6 +4539,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4631,6 +4559,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4650,6 +4579,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4669,6 +4599,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4688,6 +4619,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D70 v1.0"
@@ -4707,6 +4639,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D50"
@@ -4726,6 +4659,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D50"
@@ -4737,43 +4671,6 @@ literal|95
 block|}
 block|,
 block|{
-literal|547
-block|,
-literal|825
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Nikon D50"
-block|,
-literal|"Fine"
-block|,
-operator|-
-literal|92
-block|}
-block|,
-block|{
-literal|963
-block|,
-literal|1442
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Nikon D50"
-block|,
-literal|"?"
-block|,
-literal|87
-block|}
-block|,
-block|{
 literal|855
 block|,
 literal|1279
@@ -4782,6 +4679,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon D40"
@@ -4801,6 +4699,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"Nikon E4300"
@@ -4819,6 +4718,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"Nikon E4300"
@@ -4837,6 +4737,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"Nikon E4300"
@@ -4855,6 +4756,7 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon Browser 6"
@@ -4873,9 +4775,10 @@ literal|1
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
-literal|"Nikon Browser 6"
+literal|"Nikon Browser 6 or PictureProject 1.6"
 block|,
 literal|"Standard quality"
 block|,
@@ -4892,6 +4795,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon Browser 6"
@@ -4911,6 +4815,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon Browser 6"
@@ -4930,6 +4835,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Nikon Browser 6"
@@ -4949,6 +4855,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Olympus Camedia Master"
@@ -4956,44 +4863,6 @@ block|,
 literal|"High quality?"
 block|,
 literal|90
-block|}
-block|,
-block|{
-literal|1057
-block|,
-literal|1561
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Olympus u770SW,S770SW"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|85
-block|}
-block|,
-block|{
-literal|275
-block|,
-literal|395
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Olympus u750,S750"
-block|,
-literal|"Raw?"
-block|,
-operator|-
-literal|96
 block|}
 block|,
 block|{
@@ -5005,6 +4874,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Olympus u710,S710"
@@ -5012,25 +4882,6 @@ block|,
 literal|"Super high quality?"
 block|,
 literal|80
-block|}
-block|,
-block|{
-literal|259
-block|,
-literal|393
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Olympus u30D,S410D,u410D?"
-block|,
-literal|"High quality?"
-block|,
-operator|-
-literal|96
 block|}
 block|,
 block|{
@@ -5042,6 +4893,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Olympus u30D,S410D,u410D"
@@ -5061,6 +4913,27 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
+literal|2
+block|,
+literal|"Olympus u30D,S410D,u410D"
+block|,
+literal|"High quality"
+block|,
+operator|-
+literal|93
+block|}
+block|,
+block|{
+literal|447
+block|,
+literal|670
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
 literal|2
 block|,
 literal|"Olympus u30D,S410D,u410D"
@@ -5080,6 +4953,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"Olympus C960Z,D460Z"
@@ -5098,6 +4972,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"Olympus C211Z"
@@ -5116,6 +4991,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|3
 block|,
 literal|"Olympus C990Z,D490Z"
@@ -5134,6 +5010,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ5"
@@ -5153,6 +5030,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5172,6 +5050,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5191,6 +5070,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5210,6 +5090,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5229,6 +5110,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5248,6 +5130,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5267,6 +5150,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5286,6 +5170,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5305,6 +5190,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5324,6 +5210,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5343,6 +5230,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Panasonic DMC-FZ30"
@@ -5400,6 +5288,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Samsung Digimax V3"
@@ -5419,6 +5308,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Samsung Digimax V3"
@@ -5438,6 +5328,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Samsung Digimax S600"
@@ -5449,44 +5340,6 @@ literal|97
 block|}
 block|,
 block|{
-literal|1075
-block|,
-literal|1612
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|3
-block|,
-literal|"Sanyo SR6"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|85
-block|}
-block|,
-block|{
-literal|785
-block|,
-literal|1168
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|3
-block|,
-literal|"Sanyo SX113"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|89
-block|}
-block|,
-block|{
 literal|258
 block|,
 literal|389
@@ -5495,6 +5348,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Sony Cybershot"
@@ -5506,25 +5360,6 @@ literal|96
 block|}
 block|,
 block|{
-literal|2782
-block|,
-literal|4259
-block|,
-literal|2
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Sony Cybershot"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|61
-block|}
-block|,
-block|{
 literal|86
 block|,
 literal|115
@@ -5533,11 +5368,12 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Sony DSC-W55"
 block|,
-literal|"?"
+literal|"Fine"
 block|,
 literal|99
 block|}
@@ -5551,6 +5387,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Sony DSC-F828, DSC-F88"
@@ -5570,9 +5407,10 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
-literal|"Sony DSC-W50, DSC-H2, DSC-H5"
+literal|"Sony DSC-W30, DSC-W50, DSC-H2, DSC-H5"
 block|,
 literal|"?"
 block|,
@@ -5588,6 +5426,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Sony DSC-W70"
@@ -5606,6 +5445,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"Sony DSC-W30, DSC-P43, DSC-S600"
@@ -5624,6 +5464,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"Sony DSLR-A100"
@@ -5643,6 +5484,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5661,9 +5503,10 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
-literal|"SonyEricsson K750i"
+literal|"SonyEricsson K750i or W200i"
 block|,
 literal|"Normal"
 block|,
@@ -5679,6 +5522,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5698,6 +5542,7 @@ literal|2
 block|,
 literal|2
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5717,6 +5562,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5736,6 +5582,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5755,6 +5602,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5774,6 +5622,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5793,6 +5642,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5812,6 +5662,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5831,6 +5682,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5850,6 +5702,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5869,6 +5722,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5888,6 +5742,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson K750i"
@@ -5907,6 +5762,7 @@ literal|2
 block|,
 literal|1
 block|,
+operator|-
 literal|2
 block|,
 literal|"SonyEricsson Z600"
@@ -5915,6 +5771,44 @@ literal|"Default"
 block|,
 operator|-
 literal|83
+block|}
+block|,
+block|{
+literal|2211
+block|,
+literal|3284
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
+literal|"Trust 760 Powerc@m"
+block|,
+literal|"?"
+block|,
+literal|70
+block|}
+block|,
+block|{
+literal|2211
+block|,
+literal|3284
+block|,
+literal|1
+block|,
+literal|2
+block|,
+operator|-
+literal|2
+block|,
+literal|"Trust 760 Powerc@m"
+block|,
+literal|"?"
+block|,
+literal|70
 block|}
 block|,
 block|{
@@ -5942,7 +5836,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29263e5a0208
+DECL|struct|__anon2a35f80f0208
 block|{
 DECL|member|hashval
 name|guint32
