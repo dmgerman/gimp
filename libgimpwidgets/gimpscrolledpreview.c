@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ed3a080108
+DECL|struct|__anon29da92fb0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -583,8 +583,9 @@ name|priv
 operator|->
 name|frozen
 operator|=
-literal|0
+literal|1
 expr_stmt|;
+comment|/* we are frozen during init */
 comment|/*  scrollbars  */
 name|adj
 operator|=
@@ -960,6 +961,13 @@ argument_list|,
 name|preview
 argument_list|)
 expr_stmt|;
+name|priv
+operator|->
+name|frozen
+operator|=
+literal|0
+expr_stmt|;
+comment|/* thaw without actually calling draw/invalidate */
 block|}
 end_function
 
@@ -1407,6 +1415,11 @@ argument_list|)
 operator|->
 name|ymin
 decl_stmt|;
+name|gimp_scrolled_preview_freeze
+argument_list|(
+name|preview
+argument_list|)
+expr_stmt|;
 name|GIMP_PREVIEW
 argument_list|(
 name|preview
@@ -1611,20 +1624,9 @@ name|nav_icon
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_preview_draw
-argument_list|(
-name|GIMP_PREVIEW
+name|gimp_scrolled_preview_thaw
 argument_list|(
 name|preview
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_preview_invalidate
-argument_list|(
-name|GIMP_PREVIEW
-argument_list|(
-name|preview
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3531,6 +3533,11 @@ name|preview
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_scrolled_preview_freeze
+argument_list|(
+name|preview
+argument_list|)
+expr_stmt|;
 name|gimp_scrolled_preview_hscr_update
 argument_list|(
 name|preview
@@ -3591,6 +3598,11 @@ name|preview
 argument_list|)
 operator|->
 name|ymin
+argument_list|)
+expr_stmt|;
+name|gimp_scrolled_preview_thaw
+argument_list|(
+name|preview
 argument_list|)
 expr_stmt|;
 block|}

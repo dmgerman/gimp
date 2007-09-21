@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1be0550103
+DECL|enum|__anon27cbeb6f0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1be0550203
+DECL|enum|__anon27cbeb6f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1be0550308
+DECL|struct|__anon27cbeb6f0308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -1232,7 +1232,7 @@ operator|->
 name|controls
 argument_list|)
 expr_stmt|;
-comment|/*  toggle button to (des)activate the instant preview  */
+comment|/*  toggle button to (de)activate the instant preview  */
 name|preview
 operator|->
 name|toggle
@@ -2001,15 +2001,7 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|class
-operator|->
-name|draw
-condition|)
-name|class
-operator|->
-name|draw
+name|gimp_preview_draw
 argument_list|(
 name|preview
 argument_list|)
