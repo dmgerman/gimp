@@ -82,7 +82,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acfbd640108
+DECL|struct|__anon29245b590108
 block|{
 DECL|member|shift_amount
 name|gint
@@ -91,10 +91,6 @@ decl_stmt|;
 DECL|member|orientation
 name|gint
 name|orientation
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|ShiftValues
 block|}
@@ -230,10 +226,7 @@ literal|5
 block|,
 comment|/* shift amount */
 name|HORIZONTAL
-block|,
 comment|/* orientation  */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1423,10 +1416,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|shvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

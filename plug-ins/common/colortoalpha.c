@@ -66,15 +66,11 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279d71ba0108
+DECL|struct|__anon2b7a37e20108
 block|{
 DECL|member|color
 name|GimpRGB
 name|color
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|C2AValues
 block|}
@@ -238,10 +234,7 @@ literal|1.0
 block|,
 literal|1.0
 block|}
-block|,
 comment|/* white default */
-name|TRUE
-comment|/* preview       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1654,10 +1647,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|pvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

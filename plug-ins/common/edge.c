@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293941a20103
+DECL|enum|__anon27c3f6c90103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293941a20208
+DECL|struct|__anon27c3f6c90208
 block|{
 DECL|member|amount
 name|gdouble
@@ -130,10 +130,6 @@ decl_stmt|;
 DECL|member|wrapmode
 name|gint
 name|wrapmode
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|EdgeVals
 block|}
@@ -353,10 +349,7 @@ name|SOBEL
 block|,
 comment|/* Edge detection algorithm */
 name|GIMP_PIXEL_FETCHER_EDGE_SMEAR
-block|,
 comment|/* wrapmode */
-name|TRUE
-comment|/* update_preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3223,10 +3216,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|evals
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

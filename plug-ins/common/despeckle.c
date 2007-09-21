@@ -154,19 +154,6 @@ comment|/* White level */
 end_comment
 
 begin_define
-DECL|macro|update_toggle
-define|#
-directive|define
-name|update_toggle
-value|(despeckle_vals[4])
-end_define
-
-begin_comment
-DECL|macro|update_toggle
-comment|/* Update the preview? */
-end_comment
-
-begin_define
 DECL|macro|VALUE_SWAP (a,b)
 define|#
 directive|define
@@ -452,7 +439,7 @@ specifier|static
 name|gint
 name|despeckle_vals
 index|[
-literal|7
+literal|4
 index|]
 init|=
 block|{
@@ -466,10 +453,7 @@ literal|7
 block|,
 comment|/* Default value for the black level */
 literal|248
-block|,
 comment|/* Default value for the white level */
-name|TRUE
-comment|/* Default value for the update toggle */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1451,8 +1435,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|update_toggle
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

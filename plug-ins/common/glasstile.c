@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b41a6b0108
+DECL|struct|__anon2c1112b80108
 block|{
 DECL|member|xblock
 name|gint
@@ -69,10 +69,6 @@ decl_stmt|;
 DECL|member|yblock
 name|gint
 name|yblock
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 comment|/* interface only */
 DECL|member|constrain
@@ -88,7 +84,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b41a6b0208
+DECL|struct|__anon2c1112b80208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -254,9 +250,6 @@ comment|/* tile width  */
 literal|20
 block|,
 comment|/* tile height */
-name|TRUE
-block|,
-comment|/* preview     */
 comment|/* interface only */
 name|TRUE
 comment|/* constrained */
@@ -905,10 +898,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|gtvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

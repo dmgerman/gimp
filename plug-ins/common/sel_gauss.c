@@ -106,7 +106,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0ec8130108
+DECL|struct|__anon2a544d7c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -115,10 +115,6 @@ decl_stmt|;
 DECL|member|maxdelta
 name|gint
 name|maxdelta
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|BlurValues
 block|}
@@ -246,10 +242,7 @@ literal|5.0
 block|,
 comment|/* radius   */
 literal|50
-block|,
 comment|/* maxdelta */
-name|TRUE
-comment|/* update_preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -877,10 +870,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|bvals
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

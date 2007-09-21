@@ -8,7 +8,7 @@ comment|/* memo    the initial value of each pixel is the value of the pixel its
 end_comment
 
 begin_comment
-comment|/*    in response to bug #156545, after lengthy discussion, the meanings of "dilate"    and "erode" are being swapped -- 19 May 2006. */
+comment|/*    in response to bug #156545, after lengthy discussion, the meanings    of "dilate" and "erode" are being swapped -- 19 May 2006. */
 end_comment
 
 begin_include
@@ -708,7 +708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a981780108
+DECL|struct|__anon2c865ac50108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -733,10 +733,6 @@ decl_stmt|;
 DECL|member|upper_limit
 name|gint
 name|upper_limit
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|VPValueType
 block|}
@@ -767,10 +763,7 @@ literal|0
 block|,
 comment|/* lower_limit                           */
 literal|255
-block|,
 comment|/* upper_limit                           */
-name|TRUE
-comment|/* preview                               */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -876,7 +869,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a981780208
+DECL|struct|__anon2c865ac50208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4029,7 +4022,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a981780308
+DECL|struct|__anon2c865ac50308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -5827,10 +5820,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|vpvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

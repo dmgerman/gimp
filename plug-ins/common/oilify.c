@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac065470108
+DECL|struct|__anon2c702cff0108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -127,10 +127,6 @@ decl_stmt|;
 DECL|member|mode
 name|gint
 name|mode
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|OilifyVals
 block|}
@@ -261,10 +257,7 @@ literal|1
 block|,
 comment|/* exponent map       */
 name|MODE_INTEN
-block|,
 comment|/* mode               */
-name|TRUE
-comment|/* preview            */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3251,10 +3244,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|ovals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf80f1b0108
+DECL|struct|__anon2b0c0d420108
 block|{
 DECL|member|height
 name|gint
@@ -75,10 +75,6 @@ decl_stmt|;
 DECL|member|limit
 name|gboolean
 name|limit
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|EngraveValues
 block|}
@@ -245,10 +241,7 @@ literal|10
 block|,
 comment|/* height  */
 name|FALSE
-block|,
 comment|/* limit   */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -813,10 +806,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|pvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
@@ -1175,7 +1165,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf80f1b0208
+DECL|struct|__anon2b0c0d420208
 block|{
 DECL|member|x
 DECL|member|y

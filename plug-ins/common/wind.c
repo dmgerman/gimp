@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a689b0103
+DECL|enum|__anon2946985a0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a689b0203
+DECL|enum|__anon2946985a0203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1a689b0303
+DECL|enum|__anon2946985a0303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -469,11 +469,6 @@ name|edge_t
 name|edge
 decl_stmt|;
 comment|/* controls abs, negation of derivative */
-DECL|member|update_preview
-name|gboolean
-name|update_preview
-decl_stmt|;
-comment|/* should the preview be active? */
 block|}
 struct|;
 end_struct
@@ -506,10 +501,7 @@ name|RENDER_WIND
 block|,
 comment|/* default algorithm */
 name|LEADING
-block|,
-comment|/* abs(derivative); */
-name|TRUE
-comment|/* update_preview */
+comment|/* abs(derivative) */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -3864,10 +3856,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|config
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

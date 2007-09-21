@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0108
+DECL|struct|__anon27d67c720108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0208
+DECL|struct|__anon27d67c720208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0308
+DECL|struct|__anon27d67c720308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -701,10 +701,6 @@ name|gboolean
 name|lock_channels
 decl_stmt|;
 comment|/* changes to one channel affect all */
-DECL|member|preview
-name|gboolean
-name|preview
-decl_stmt|;
 DECL|typedef|NewsprintUIValues
 block|}
 name|NewsprintUIValues
@@ -718,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0408
+DECL|struct|__anon27d67c720408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -825,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0508
+DECL|struct|__anon27d67c720508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -958,10 +954,7 @@ literal|7.2
 block|,
 comment|/* output lpi    */
 name|FALSE
-block|,
 comment|/* lock channels */
-name|TRUE
-comment|/* preview       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -993,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0608
+DECL|struct|__anon27d67c720608
 block|{
 DECL|member|name
 specifier|const
@@ -4978,10 +4971,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|pvals_ui
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults
@@ -7070,7 +7060,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b65ffd0708
+DECL|struct|__anon27d67c720708
 block|{
 DECL|member|index
 name|gint

@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c47b4150108
+DECL|struct|__anon2c01ab250108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -105,10 +105,6 @@ decl_stmt|;
 DECL|member|pct_white
 name|gdouble
 name|pct_white
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|PhotocopyVals
 block|}
@@ -325,10 +321,7 @@ literal|0.2
 block|,
 comment|/* pct_black */
 literal|0.2
-block|,
 comment|/* pct_white */
-name|TRUE
-comment|/* update_preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -4616,10 +4609,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|pvals
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

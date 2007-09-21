@@ -328,15 +328,11 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293653870108
+DECL|struct|__anon28afd5a80108
 block|{
 DECL|member|sharpen_percent
 name|gint
 name|sharpen_percent
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|SharpenParams
 block|}
@@ -352,8 +348,6 @@ name|sharpen_params
 init|=
 block|{
 literal|10
-block|,
-name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1763,10 +1757,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|sharpen_params
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

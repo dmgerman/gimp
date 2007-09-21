@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1517830103
+DECL|enum|__anon2a3e8f560103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1517830208
+DECL|struct|__anon2a3e8f560208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -129,10 +129,6 @@ decl_stmt|;
 DECL|member|mode
 name|DisplaceMode
 name|mode
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|DisplaceVals
 block|}
@@ -340,9 +336,7 @@ name|GIMP_PIXEL_FETCHER_EDGE_WRAP
 block|,
 comment|/* displace_type */
 name|CARTESIAN_MODE
-block|,
 comment|/* mode */
-name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1240,10 +1234,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|dvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

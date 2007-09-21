@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c52aa0108
+DECL|struct|__anon2af35bfb0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -70,10 +70,6 @@ DECL|member|filter
 name|gint
 name|filter
 decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
-decl_stmt|;
 DECL|typedef|NLFilterValues
 block|}
 name|NLFilterValues
@@ -83,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2c52aa0203
+DECL|enum|__anon2af35bfb0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -111,8 +107,6 @@ block|,
 literal|0.3
 block|,
 literal|0
-block|,
-name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -6120,10 +6114,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|nlfvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

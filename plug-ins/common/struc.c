@@ -40883,7 +40883,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2601a0103
+DECL|enum|__anon29584cca0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40903,7 +40903,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d2601a0208
+DECL|struct|__anon29584cca0208
 block|{
 DECL|member|direction
 name|gint
@@ -40912,10 +40912,6 @@ decl_stmt|;
 DECL|member|depth
 name|gint
 name|depth
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|StrucValues
 block|}
@@ -41033,9 +41029,7 @@ literal|0
 block|,
 comment|/* direction */
 literal|4
-block|,
 comment|/* depth     */
-name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -41672,10 +41666,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|svals
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

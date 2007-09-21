@@ -62,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29556a000103
+DECL|enum|__anon2934ac330103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -86,7 +86,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29556a000208
+DECL|struct|__anon2934ac330208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -111,10 +111,6 @@ decl_stmt|;
 DECL|member|blur_outward
 name|gboolean
 name|blur_outward
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|mblur_vals_t
 block|}
@@ -316,24 +312,21 @@ init|=
 block|{
 name|MBLUR_LINEAR
 block|,
-comment|/* mblur_type */
+comment|/* mblur_type   */
 literal|5
 block|,
-comment|/* length     */
+comment|/* length       */
 literal|10
 block|,
-comment|/* radius     */
+comment|/* radius       */
 literal|100000.0
 block|,
-comment|/* center_x   */
+comment|/* center_x     */
 literal|100000.0
 block|,
-comment|/* center_y   */
+comment|/* center_y     */
 name|TRUE
-block|,
 comment|/* blur_outward */
-name|TRUE
-comment|/* preview    */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -4590,10 +4583,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|mbvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

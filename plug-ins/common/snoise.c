@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291cb16c0108
+DECL|struct|__anon2bdd53890108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -134,10 +134,6 @@ decl_stmt|;
 DECL|member|random_seed
 name|gboolean
 name|random_seed
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|SolidNoiseValues
 block|}
@@ -341,10 +337,7 @@ literal|4.0
 block|,
 comment|/* ysize         */
 name|FALSE
-block|,
 comment|/* random seed   */
-name|TRUE
-comment|/* preview       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2374,10 +2367,7 @@ name|gimp_aspect_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|snvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b94f100108
+DECL|struct|__anon2bc68ce90108
 block|{
 DECL|member|period
 name|gint
@@ -157,10 +157,6 @@ decl_stmt|;
 DECL|member|tile
 name|gboolean
 name|tile
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|RippleValues
 block|}
@@ -334,10 +330,7 @@ name|TRUE
 block|,
 comment|/* antialias   */
 name|FALSE
-block|,
 comment|/* tile        */
-name|TRUE
-comment|/* preview     */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -923,7 +916,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28b94f100208
+DECL|struct|__anon2bc68ce90208
 typedef|typedef
 struct|struct
 block|{
@@ -2177,10 +2170,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|rvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

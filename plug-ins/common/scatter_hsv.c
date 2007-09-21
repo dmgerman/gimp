@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925b1130108
+DECL|struct|__anon28e6ef000108
 block|{
 DECL|member|holdness
 name|gint
@@ -235,10 +235,6 @@ decl_stmt|;
 DECL|member|value_distance
 name|gint
 name|value_distance
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|ValueType
 block|}
@@ -260,8 +256,6 @@ block|,
 literal|10
 block|,
 literal|10
-block|,
-name|TRUE
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1677,10 +1671,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|VALS
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

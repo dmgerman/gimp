@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b30bbb80108
+DECL|struct|__anon28c3e5490108
 block|{
 DECL|member|seed
 name|guint32
@@ -101,10 +101,6 @@ decl_stmt|;
 DECL|member|random_seed
 name|gboolean
 name|random_seed
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|PlasmaValues
 block|}
@@ -392,10 +388,7 @@ literal|1.0
 block|,
 comment|/* turbulence      */
 name|FALSE
-block|,
 comment|/* Use random seed */
-name|TRUE
-comment|/* preview         */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1089,10 +1082,7 @@ name|gimp_aspect_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|pvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

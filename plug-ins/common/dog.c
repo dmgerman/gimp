@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29513ae90108
+DECL|struct|__anon286f03d70108
 block|{
 DECL|member|inner
 name|gdouble
@@ -73,10 +73,6 @@ decl_stmt|;
 DECL|member|invert
 name|gboolean
 name|invert
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|DoGValues
 block|}
@@ -340,11 +336,7 @@ name|TRUE
 block|,
 comment|/* normalize     */
 name|TRUE
-block|,
 comment|/* invert        */
-name|TRUE
-block|,
-comment|/* preview       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1073,10 +1065,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|dogvals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

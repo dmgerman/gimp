@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b97e850103
+DECL|enum|__anon2c877cc90103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -69,7 +69,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b97e850208
+DECL|struct|__anon2c877cc90208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -86,10 +86,6 @@ decl_stmt|;
 DECL|member|embossp
 name|gint32
 name|embossp
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|piArgs
 block|}
@@ -114,10 +110,7 @@ literal|20
 block|,
 comment|/* depth     */
 literal|1
-block|,
 comment|/* emboss    */
-name|TRUE
-comment|/* preview   */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2172,10 +2165,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|evals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

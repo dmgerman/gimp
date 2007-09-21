@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2019310108
+DECL|struct|__anon29bf8e6d0108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -170,10 +170,6 @@ decl_stmt|;
 DECL|member|colortype
 name|gint
 name|colortype
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|SparkleVals
 block|}
@@ -476,10 +472,7 @@ name|FALSE
 block|,
 comment|/* border               */
 name|NATURAL
-block|,
 comment|/* colortype            */
-name|FALSE
-comment|/* update_preview       */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1538,10 +1531,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|svals
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

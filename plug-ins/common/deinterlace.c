@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5dd0060103
+DECL|enum|__anon27e56b930103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -59,15 +59,11 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5dd0060208
+DECL|struct|__anon27e56b930208
 block|{
 DECL|member|evenness
 name|gint
 name|evenness
-decl_stmt|;
-DECL|member|preview
-name|gboolean
-name|preview
 decl_stmt|;
 DECL|typedef|DeinterlaceValues
 block|}
@@ -178,10 +174,7 @@ name|devals
 init|=
 block|{
 name|EVEN_FIELDS
-block|,
 comment|/* evenness */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1407,10 +1400,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|devals
-operator|.
-name|preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start_defaults

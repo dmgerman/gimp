@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ed461d0103
+DECL|enum|__anon2b69ae350103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed461d0208
+DECL|struct|__anon2b69ae350208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed461d0308
+DECL|struct|__anon2b69ae350308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed461d0408
+DECL|struct|__anon2b69ae350408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ed461d0508
+DECL|struct|__anon2b69ae350508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -292,10 +292,6 @@ decl_stmt|;
 DECL|member|grout_color
 name|gint
 name|grout_color
-decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
 decl_stmt|;
 DECL|typedef|MosaicVals
 block|}
@@ -1403,10 +1399,7 @@ name|SMOOTH
 block|,
 comment|/* tile_surface */
 name|BW
-block|,
 comment|/* grout_color */
-name|TRUE
-comment|/* preview */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2778,10 +2771,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|mvals
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

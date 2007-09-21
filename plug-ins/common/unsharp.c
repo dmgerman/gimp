@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a3b400108
+DECL|struct|__anon2add59cc0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -90,10 +90,6 @@ DECL|member|threshold
 name|gint
 name|threshold
 decl_stmt|;
-DECL|member|update_preview
-name|gboolean
-name|update_preview
-decl_stmt|;
 DECL|typedef|UnsharpMaskParams
 block|}
 name|UnsharpMaskParams
@@ -103,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a3b400208
+DECL|struct|__anon2add59cc0208
 block|{
 DECL|member|run
 name|gboolean
@@ -326,15 +322,12 @@ init|=
 block|{
 literal|5.0
 block|,
-comment|/* default radius = 5 */
+comment|/* default radius    */
 literal|0.5
 block|,
-comment|/* default amount = .5 */
+comment|/* default amount    */
 literal|0
-block|,
-comment|/* default threshold = 0 */
-name|TRUE
-comment|/* default is to update the preview */
+comment|/* default threshold */
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -2759,10 +2752,7 @@ name|gimp_drawable_preview_new
 argument_list|(
 name|drawable
 argument_list|,
-operator|&
-name|unsharp_params
-operator|.
-name|update_preview
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
