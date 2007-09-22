@@ -112,9 +112,15 @@ DECL|member|parent_instence
 name|GimpToolOptions
 name|parent_instence
 decl_stmt|;
+comment|/* Work on the current layer rather than the image. */
 DECL|member|layer_only
 name|gboolean
 name|layer_only
+decl_stmt|;
+comment|/* Allow the crop rectangle to be larger than the image/layer. This    * will resize the image/layer.    */
+DECL|member|allow_growing
+name|gboolean
+name|allow_growing
 decl_stmt|;
 block|}
 struct|;
