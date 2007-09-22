@@ -10294,11 +10294,6 @@ decl_stmt|;
 name|int
 name|i
 decl_stmt|;
-while|while
-condition|(
-name|TRUE
-condition|)
-block|{
 name|c
 operator|=
 name|fgetc
@@ -10328,6 +10323,11 @@ index|]
 operator|=
 name|c
 expr_stmt|;
+while|while
+condition|(
+name|TRUE
+condition|)
+block|{
 if|if
 condition|(
 name|utf8
@@ -10441,29 +10441,41 @@ block|}
 if|if
 condition|(
 name|i
-operator|<=
+operator|>
 name|len
-operator|||
-operator|(
-name|utf8
-index|[
-name|len
-index|]
-operator|&
-literal|0xc0
-operator|)
-operator|!=
-literal|0x80
 condition|)
 block|{
-comment|/* Invalid UTF-8 sequence. Try pushing back the last                  * byte read as the start of a new character. */
-name|ungetc
+return|return
+name|g_utf8_get_char
 argument_list|(
+operator|(
+name|char
+operator|*
+operator|)
+name|utf8
+argument_list|)
+return|;
+block|}
+comment|/* we did not get enough continuation characters. */
+name|utf8
+index|[
+literal|0
+index|]
+operator|=
 name|utf8
 index|[
 name|i
 index|]
-argument_list|,
+expr_stmt|;
+comment|/* ignore and restart */
+block|}
+else|else
+block|{
+comment|/* Everything else is invalid and will be ignored */
+name|c
+operator|=
+name|fgetc
+argument_list|(
 name|pt
 operator|->
 name|rep
@@ -10473,26 +10485,23 @@ operator|.
 name|file
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
+if|if
+condition|(
+name|c
+operator|==
+name|EOF
+condition|)
 return|return
-name|g_utf8_get_char
-argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
-operator|&
+name|EOF
+return|;
 name|utf8
 index|[
 literal|0
 index|]
-argument_list|)
-return|;
+operator|=
+name|c
+expr_stmt|;
 block|}
-block|}
-comment|/* Everything else is invalid and will be ignored */
 block|}
 block|}
 else|else
@@ -11423,7 +11432,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c4e64450103
+DECL|enum|__anon2c545b3c0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28173,7 +28182,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c4e64450208
+DECL|struct|__anon2c545b3c0208
 specifier|static
 struct|struct
 block|{
@@ -28408,7 +28417,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c4e64450308
+DECL|struct|__anon2c545b3c0308
 typedef|typedef
 struct|struct
 block|{
