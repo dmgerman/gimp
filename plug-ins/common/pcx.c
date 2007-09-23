@@ -963,7 +963,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon297a49d40108
+DECL|struct|__anon2ae0f8620108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1040,7 +1040,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon297a49d40208
+DECL|struct|__anon2ae0f8620208
 specifier|static
 struct|struct
 block|{
@@ -1214,11 +1214,11 @@ end_struct
 begin_function
 specifier|static
 name|void
-DECL|function|pcx_header_from_buffer (const gpointer buf)
+DECL|function|pcx_header_from_buffer (guint8 * buf)
 name|pcx_header_from_buffer
 parameter_list|(
-specifier|const
-name|gpointer
+name|guint8
+modifier|*
 name|buf
 parameter_list|)
 block|{
@@ -1286,11 +1286,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pcx_header_to_buffer (const gpointer buf)
+DECL|function|pcx_header_to_buffer (guint8 * buf)
 name|pcx_header_to_buffer
 parameter_list|(
-specifier|const
-name|gpointer
+name|guint8
+modifier|*
 name|buf
 parameter_list|)
 block|{
