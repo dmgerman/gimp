@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e92210103
+DECL|enum|__anon2ad6299e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2280,12 +2280,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/*  make sure to expose a superset of the transformed sub-pixel expose    *  area, not a subset. bug #126942. --mitch    */
+comment|/*  make sure to expose a superset of the transformed sub-pixel expose    *  area, not a subset. bug #126942. --mitch    *    *  also acommodate for spill introduced by potential box filtering.    *  (bug #474509). --simon    */
 name|x1
 operator|=
 name|floor
 argument_list|(
 name|x1_f
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|y1
@@ -2293,6 +2295,8 @@ operator|=
 name|floor
 argument_list|(
 name|y1_f
+operator|-
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|x2
@@ -2300,6 +2304,8 @@ operator|=
 name|ceil
 argument_list|(
 name|x2_f
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|y2
@@ -2307,6 +2313,8 @@ operator|=
 name|ceil
 argument_list|(
 name|y2_f
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_area
