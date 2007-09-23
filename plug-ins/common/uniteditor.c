@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4ebde20103
+DECL|enum|__anon2b3bf0090103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ebde20208
+DECL|struct|__anon2b3bf0090208
 block|{
 DECL|member|title
 specifier|const
@@ -541,6 +541,13 @@ argument_list|,
 name|args
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PLUG_IN_PROC
+argument_list|,
+literal|"<Toolbox>/File/Preferences"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
