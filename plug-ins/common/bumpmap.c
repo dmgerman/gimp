@@ -87,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a94dcb60103
+DECL|enum|__anon28add7cd0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a94dcb60203
+DECL|enum|__anon28add7cd0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a94dcb60308
+DECL|struct|__anon28add7cd0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a94dcb60408
+DECL|struct|__anon28add7cd0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a94dcb60508
+DECL|struct|__anon28add7cd0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -4900,6 +4900,9 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 break|break;
 case|case
 name|GDK_BUTTON_RELEASE
@@ -4929,6 +4932,9 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 break|break;
 case|case
@@ -5118,6 +5124,9 @@ argument_list|(
 name|preview
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 break|break;
 default|default:
 break|break;
