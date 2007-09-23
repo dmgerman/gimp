@@ -1008,12 +1008,16 @@ name|context
 argument_list|)
 expr_stmt|;
 return|return
+name|tool_info
+condition|?
 name|g_strdup
 argument_list|(
 name|tool_info
 operator|->
 name|blurb
 argument_list|)
+else|:
+name|NULL
 return|;
 block|}
 end_function
