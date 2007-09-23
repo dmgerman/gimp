@@ -496,7 +496,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rect_select_tool_selection_visible
+name|gimp_rect_select_tool_should_draw
 parameter_list|(
 name|GimpRectSelectTool
 modifier|*
@@ -1033,7 +1033,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rect_select_tool_selection_visible
+name|gimp_rect_select_tool_should_draw
 argument_list|(
 name|rect_sel
 argument_list|)
@@ -2410,8 +2410,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rect_select_tool_selection_visible (GimpRectSelectTool * rect_select_tool)
-name|gimp_rect_select_tool_selection_visible
+DECL|function|gimp_rect_select_tool_should_draw (GimpRectSelectTool * rect_select_tool)
+name|gimp_rect_select_tool_should_draw
 parameter_list|(
 name|GimpRectSelectTool
 modifier|*
@@ -2440,7 +2440,7 @@ operator|->
 name|shell
 argument_list|)
 decl_stmt|;
-comment|/* Don't draw the rectangle if `Show selection' is off. */
+comment|/* If the tool is active i.e. if we are creating or resizing the    * rectangle, always draw it. Otherwise only draw it if selections    * are drawn.    */
 if|if
 condition|(
 name|gimp_tool_control_is_active
@@ -2452,9 +2452,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|rect_select_tool
-operator|->
-name|saved_show_selection
+name|TRUE
 return|;
 block|}
 else|else
