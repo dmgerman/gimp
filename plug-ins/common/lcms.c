@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27497d6f0103
+DECL|enum|__anon2bdf06930103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27497d6f0203
+DECL|enum|__anon2bdf06930203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27497d6f0308
+DECL|struct|__anon2bdf06930308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27497d6f0408
+DECL|struct|__anon2bdf06930408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -895,7 +895,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC_SET
 argument_list|,
-literal|"Set ICC color profile on the image"
+name|N_
+argument_list|(
+literal|"Set a color profile on the image"
+argument_list|)
 argument_list|,
 literal|"This procedure sets an ICC color profile on an "
 literal|"image using the 'icc-profile' parasite. It does "
@@ -971,7 +974,10 @@ name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC_APPLY
 argument_list|,
+name|_
+argument_list|(
 literal|"Apply a color profile on the image"
+argument_list|)
 argument_list|,
 literal|"This procedure transform from the image's color "
 literal|"profile (or the default RGB profile if none is "
