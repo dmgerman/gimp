@@ -2803,7 +2803,6 @@ directive|define
 name|ALPHA
 value|3
 block|{
-specifier|const
 name|guint
 name|factors
 index|[
@@ -3186,7 +3185,6 @@ name|ALPHA
 value|1
 comment|/* NOTE: this is a copy and paste of the code above, the ALPHA changes          * the behavior in all needed ways. */
 block|{
-specifier|const
 name|guint
 name|factors
 index|[
