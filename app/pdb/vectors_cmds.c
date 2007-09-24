@@ -3416,6 +3416,8 @@ argument_list|(
 name|GimpCoords
 argument_list|,
 name|num_points
+operator|/
+literal|2
 argument_list|)
 expr_stmt|;
 for|for
@@ -3427,6 +3429,8 @@ init|;
 name|i
 operator|<
 name|num_points
+operator|/
+literal|2
 condition|;
 name|i
 operator|++
