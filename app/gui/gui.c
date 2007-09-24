@@ -2016,10 +2016,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Preferences"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -2050,10 +2047,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Keyboard Shortcuts"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -2084,10 +2078,7 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Units"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
