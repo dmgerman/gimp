@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40b2de0108
+DECL|struct|__anon29771abd0108
 block|{
 DECL|member|name
 specifier|const
@@ -706,7 +706,7 @@ argument_list|(
 literal|"Clear Document History"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GTK_STOCK_CLEAR
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

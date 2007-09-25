@@ -869,7 +869,7 @@ argument_list|(
 literal|"Delete Object"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GTK_STOCK_DELETE
 argument_list|,
 name|GTK_WIDGET
 argument_list|(

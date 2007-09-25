@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2986be410103
+DECL|enum|__anon288b4c700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -653,7 +653,7 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-literal|0.5
+literal|0.0
 argument_list|,
 literal|0.0
 argument_list|)

@@ -1290,7 +1290,7 @@ argument_list|(
 literal|"Revert Image"
 argument_list|)
 argument_list|,
-name|GIMP_STOCK_QUESTION
+name|GTK_STOCK_REVERT_TO_SAVED
 argument_list|,
 name|display
 operator|->
