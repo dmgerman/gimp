@@ -228,6 +228,11 @@ condition|(
 name|success
 condition|)
 block|{
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|display
 operator|=
 name|gimp_create_display

@@ -969,7 +969,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e27a50108
+DECL|struct|__anon290f71b60108
 block|{
 DECL|member|type
 specifier|const
@@ -1682,7 +1682,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e27a50208
+DECL|struct|__anon290f71b60208
 block|{
 DECL|member|extract_type
 name|gchar
@@ -2484,7 +2484,6 @@ name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
 condition|)
-block|{
 name|gimp_set_data
 argument_list|(
 name|PLUG_IN_PROC
@@ -2498,10 +2497,6 @@ name|DecoVals
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_displays_flush
-argument_list|()
-expr_stmt|;
-block|}
 block|}
 block|}
 name|values
