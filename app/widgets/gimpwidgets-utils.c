@@ -1804,7 +1804,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon296ce3000108
+DECL|struct|__anon289f63050108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -4008,7 +4008,7 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|tmp
+name|accel
 init|=
 name|gimp_get_accel_string
 argument_list|(
@@ -4023,20 +4023,18 @@ argument_list|)
 decl_stmt|;
 name|tooltip
 operator|=
-name|g_strconcat
+name|g_strdup_printf
 argument_list|(
+literal|"%s  (%s)"
+argument_list|,
 name|orig_tooltip
 argument_list|,
-literal|"     "
-argument_list|,
-name|tmp
-argument_list|,
-name|NULL
+name|accel
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|tmp
+name|accel
 argument_list|)
 expr_stmt|;
 block|}
