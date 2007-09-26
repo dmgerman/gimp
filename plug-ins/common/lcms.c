@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf06930103
+DECL|enum|__anon2772c6780103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf06930203
+DECL|enum|__anon2772c6780203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf06930308
+DECL|struct|__anon2772c6780308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdf06930408
+DECL|struct|__anon2772c6780408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -403,6 +403,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|undo_group
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2086,6 +2089,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|filename
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2102,6 +2107,8 @@ argument_list|,
 name|config
 operator|->
 name|rgb_profile
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3073,7 +3080,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|lcms_image_set_profile (gint32 image,cmsHPROFILE profile,const gchar * filename)
+DECL|function|lcms_image_set_profile (gint32 image,cmsHPROFILE profile,const gchar * filename,gboolean undo_group)
 name|lcms_image_set_profile
 parameter_list|(
 name|gint32
@@ -3086,6 +3093,9 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|gboolean
+name|undo_group
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -3214,6 +3224,10 @@ name|FALSE
 return|;
 block|}
 block|}
+if|if
+condition|(
+name|undo_group
+condition|)
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -3260,6 +3274,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|undo_group
+condition|)
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -3280,6 +3298,10 @@ argument_list|,
 literal|"icc-profile-name"
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|undo_group
+condition|)
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
@@ -3339,6 +3361,8 @@ argument_list|,
 name|dest_profile
 argument_list|,
 name|filename
+argument_list|,
+name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -6187,6 +6211,8 @@ argument_list|,
 name|dest_profile
 argument_list|,
 name|filename
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
