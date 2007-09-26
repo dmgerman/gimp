@@ -113,12 +113,12 @@ value|-1
 end_define
 
 begin_typedef
-DECL|typedef|EntscaleIntCallbackFunc
+DECL|typedef|EntscaleIntCallback
 typedef|typedef
 name|void
 function_decl|(
 modifier|*
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 function_decl|)
 parameter_list|(
 name|gint
@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d574950108
+DECL|struct|__anon27d9d4580108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -150,7 +150,7 @@ name|gboolean
 name|constraint
 decl_stmt|;
 DECL|member|callback
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 name|callback
 decl_stmt|;
 DECL|member|call_data
@@ -343,7 +343,7 @@ parameter_list|,
 name|gboolean
 name|constraint
 parameter_list|,
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 name|callback
 parameter_list|,
 name|gpointer
@@ -456,7 +456,11 @@ name|tilecheck
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|entry
+name|width_entry
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|height_entry
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -664,7 +668,7 @@ name|GTK_SIZE_GROUP_HORIZONTAL
 argument_list|)
 expr_stmt|;
 comment|/* entscale == Entry and Scale pair function found in pixelize.c */
-name|entry
+name|width_entry
 operator|=
 name|entscale_int_new
 argument_list|(
@@ -693,12 +697,12 @@ argument_list|,
 name|TRUE
 argument_list|,
 operator|(
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 operator|)
 name|height_width_callback
 argument_list|,
 operator|&
-name|entry
+name|width_entry
 argument_list|)
 expr_stmt|;
 name|trow
@@ -712,10 +716,10 @@ argument_list|(
 operator|&
 name|sel_w
 argument_list|,
-name|entry
+name|width_entry
 argument_list|,
 operator|&
-name|entry
+name|width_entry
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -739,7 +743,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|entry
+name|width_entry
 argument_list|)
 argument_list|,
 name|buffer
@@ -787,7 +791,7 @@ expr_stmt|;
 name|trow
 operator|++
 expr_stmt|;
-name|entry
+name|height_entry
 operator|=
 name|entscale_int_new
 argument_list|(
@@ -816,12 +820,12 @@ argument_list|,
 name|TRUE
 argument_list|,
 operator|(
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 operator|)
 name|height_width_callback
 argument_list|,
 operator|&
-name|entry
+name|height_entry
 argument_list|)
 expr_stmt|;
 name|trow
@@ -834,10 +838,10 @@ argument_list|(
 operator|&
 name|sel_h
 argument_list|,
-name|entry
+name|height_entry
 argument_list|,
 operator|&
-name|entry
+name|height_entry
 argument_list|)
 expr_stmt|;
 name|g_snprintf
@@ -861,7 +865,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|entry
+name|height_entry
 argument_list|)
 argument_list|,
 name|buffer
@@ -2121,7 +2125,7 @@ name|EntscaleIntData
 modifier|*
 name|userdata
 decl_stmt|;
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 name|friend_callback
 decl_stmt|;
 name|divs
@@ -2379,7 +2383,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|entscale_int_new (GtkWidget * table,gint x,gint y,const gchar * caption,gint * intvar,gint min,gint max,gboolean constraint,EntscaleIntCallbackFunc callback,gpointer call_data)
+DECL|function|entscale_int_new (GtkWidget * table,gint x,gint y,const gchar * caption,gint * intvar,gint min,gint max,gboolean constraint,EntscaleIntCallback callback,gpointer call_data)
 name|entscale_int_new
 parameter_list|(
 name|GtkWidget
@@ -2410,7 +2414,7 @@ parameter_list|,
 name|gboolean
 name|constraint
 parameter_list|,
-name|EntscaleIntCallbackFunc
+name|EntscaleIntCallback
 name|callback
 parameter_list|,
 name|gpointer
