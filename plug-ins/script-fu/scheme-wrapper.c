@@ -3035,9 +3035,9 @@ name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
-literal|"Procedure database argument marshaller was called with no arguments. "
+literal|"Procedure argument marshaller was called with no arguments. "
 literal|"The procedure to be executed and the arguments it requires "
-literal|" (possibly none) must be specified."
+literal|"(possibly none) must be specified."
 argument_list|,
 literal|0
 argument_list|)
@@ -4088,7 +4088,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not a number (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)"
 argument_list|,
 name|j
 operator|+
@@ -4392,7 +4392,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not a number (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)"
 argument_list|,
 name|j
 operator|+
@@ -4696,7 +4696,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not a number (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)"
 argument_list|,
 name|j
 operator|+
@@ -5000,7 +5000,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not a number (argument %d for function %s)\n"
+literal|"Item %d in vector is not a number (argument %d for function %s)"
 argument_list|,
 name|j
 operator|+
@@ -5305,7 +5305,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Item %d in vector is not a string (argument %d for function %s)\n"
+literal|"Item %d in vector is not a string (argument %d for function %s)"
 argument_list|,
 name|j
 operator|+
@@ -6544,7 +6544,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Procedural database execution of %s did not return a status:\n    "
+literal|"Procedure execution of %s did not return a status"
 argument_list|,
 name|proc_name
 argument_list|)
@@ -6606,7 +6606,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Procedural database execution of %s failed:\n    "
+literal|"Procedure execution of %s failed"
 argument_list|,
 name|proc_name
 argument_list|)
@@ -6634,7 +6634,7 @@ argument_list|(
 name|error_str
 argument_list|)
 argument_list|,
-literal|"Procedural database execution of %s failed on invalid input arguments:\n    "
+literal|"Procedure execution of %s failed on invalid input arguments"
 argument_list|,
 name|proc_name
 argument_list|)
@@ -8134,7 +8134,7 @@ name|foreign_error
 argument_list|(
 name|sc
 argument_list|,
-literal|"Procedural database execution returned multiple status values"
+literal|"Procedure execution returned multiple status values"
 argument_list|,
 literal|0
 argument_list|)
