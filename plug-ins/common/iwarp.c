@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29abea8e0103
+DECL|enum|__anon293298220103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29abea8e0208
+DECL|struct|__anon293298220208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29abea8e0308
+DECL|struct|__anon293298220308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1192,7 +1192,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-comment|/*  Make sure that the drawable is gray or RGB color  */
+comment|/*  Make sure that the drawable is grayscale or RGB color  */
 if|if
 condition|(
 name|gimp_drawable_is_rgb
@@ -1217,6 +1217,9 @@ condition|)
 block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
+case|:
+case|case
+name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_get_data
 argument_list|(
@@ -1272,14 +1275,6 @@ expr_stmt|;
 break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
-case|:
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|status
 operator|=
