@@ -576,6 +576,27 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|param
+operator|!=
+name|NULL
+condition|)
+name|set_run_mode_constant
+argument_list|(
+operator|(
+name|GimpRunMode
+operator|)
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+argument_list|)
+expr_stmt|;
 comment|/*  Load all of the available scripts  */
 name|script_fu_find_scripts
 argument_list|(

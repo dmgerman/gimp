@@ -119,6 +119,16 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|set_run_mode_constant
+parameter_list|(
+name|GimpRunMode
+name|run_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|ts_interpret_stdin
 parameter_list|(
 name|void

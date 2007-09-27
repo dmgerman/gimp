@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1b5ca0108
+DECL|struct|__anon27a594910108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -157,7 +157,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac1b5ca0203
+DECL|enum|__anon27a594910203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2909,6 +2909,11 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|set_run_mode_constant
+argument_list|(
+name|run_mode
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(

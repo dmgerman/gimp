@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af45fc10108
+DECL|struct|__anon29345a870108
 block|{
 DECL|member|script
 name|SFScript
@@ -5099,9 +5099,7 @@ condition|)
 block|{
 name|GimpRunMode
 name|run_mode
-decl_stmt|;
-name|run_mode
-operator|=
+init|=
 name|params
 index|[
 literal|0
@@ -5110,18 +5108,11 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
-if|if
-condition|(
-name|script
-operator|->
-name|num_args
-operator|==
-literal|0
-condition|)
+decl_stmt|;
+name|set_run_mode_constant
+argument_list|(
 name|run_mode
-operator|=
-name|GIMP_RUN_NONINTERACTIVE
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -6748,7 +6739,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2af45fc10208
+DECL|struct|__anon29345a870208
 block|{
 DECL|member|old
 specifier|const
