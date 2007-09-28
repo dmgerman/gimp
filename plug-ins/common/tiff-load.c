@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6ddfc0108
+DECL|struct|__anon2aaa221b0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6ddfc0208
+DECL|struct|__anon2aaa221b0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c6ddfc0308
+DECL|struct|__anon2aaa221b0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -4290,7 +4290,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-name|gimp_pixel_rgn_set_rect
+name|gimp_pixel_rgn_set_row
 argument_list|(
 operator|&
 operator|(
@@ -4324,8 +4324,6 @@ operator|-
 literal|1
 argument_list|,
 name|imageWidth
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 if|if
