@@ -1954,7 +1954,7 @@ comment|/*  gint functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgb_to_hsv_int:  * @red: The red channel value, returns the Hue channel  * @green: The green channel value, returns the Saturation channel  * @blue: The blue channel value, returns the Value channel  *  * The arguments are pointers to int representing channel values in  * the RGB colorspace, and the values pointed to are all in the range  * [0, 255].  *  * The function changes the arguments to point to the HSV value  * corresponding, with the returned values in the following  * ranges: H [0, 360], S [0, 255], V [0, 255].  **/
+comment|/**  * gimp_rgb_to_hsv_int:  * @red: The red channel value, returns the Hue channel  * @green: The green channel value, returns the Saturation channel  * @blue: The blue channel value, returns the Value channel  *  * The arguments are pointers to int representing channel values in  * the RGB colorspace, and the values pointed to are all in the range  * [0, 255].  *  * The function changes the arguments to point to the HSV value  * corresponding, with the returned values in the following  * ranges: H [0, 359], S [0, 255], V [0, 255].  **/
 end_comment
 
 begin_function
@@ -2086,10 +2086,12 @@ name|s
 operator|==
 literal|0.0
 condition|)
+block|{
 name|h
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 else|else
 block|{
 if|if
@@ -2192,6 +2194,19 @@ name|ROUND
 argument_list|(
 name|v
 argument_list|)
+expr_stmt|;
+comment|/* avoid the ambiguity of returning different values for the same color */
+if|if
+condition|(
+operator|*
+name|red
+operator|==
+literal|360
+condition|)
+operator|*
+name|red
+operator|=
+literal|0
 expr_stmt|;
 block|}
 end_function
