@@ -289,13 +289,6 @@ modifier|*
 modifier|*
 name|rowbuf
 decl_stmt|;
-name|guchar
-modifier|*
-name|profile
-decl_stmt|;
-name|guint
-name|profile_size
-decl_stmt|;
 name|gint
 name|image_type
 decl_stmt|;
@@ -871,6 +864,17 @@ name|comment_buffer
 init|=
 name|NULL
 decl_stmt|;
+name|guint8
+modifier|*
+name|profile
+init|=
+name|NULL
+decl_stmt|;
+name|guint
+name|profile_size
+init|=
+literal|0
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|HAVE_EXIF
@@ -1354,8 +1358,6 @@ expr_stmt|;
 block|}
 block|}
 comment|/* Step 5.3: check for an embedded ICC profile in APP2 markers */
-if|if
-condition|(
 name|jpeg_icc_read_profile
 argument_list|(
 operator|&
@@ -1367,8 +1369,7 @@ argument_list|,
 operator|&
 name|profile_size
 argument_list|)
-condition|)
-block|{
+expr_stmt|;
 if|if
 condition|(
 name|cinfo
@@ -1388,8 +1389,12 @@ name|profile_size
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-comment|/* don't attach the profile if we are converting the data */
+elseif|else
+if|if
+condition|(
+name|profile
+condition|)
+comment|/* don't attach the profile if we are transforming */
 block|{
 name|GimpParasite
 modifier|*
@@ -1428,7 +1433,6 @@ argument_list|(
 name|profile
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* Do not attach the "jpeg-save-options" parasite to the image        * because this conflicts with the global defaults (bug #75398).        */
 block|}
 comment|/* Step 6: while (scan lines remain to be read) */
@@ -1896,7 +1900,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2971edc20108
+DECL|struct|__anon27d7af9c0108
 block|{
 DECL|member|pub
 name|struct
