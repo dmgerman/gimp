@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0b7ef30103
+DECL|enum|__anon2887a3080103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4209,11 +4209,13 @@ block|{
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-name|fd_set
-name|readfds
-decl_stmt|;
 name|gint
 name|select_val
+decl_stmt|;
+do|do
+block|{
+name|fd_set
+name|readfds
 decl_stmt|;
 name|struct
 name|timeval
@@ -4311,6 +4313,10 @@ name|select_val
 operator|==
 operator|-
 literal|1
+operator|&&
+name|errno
+operator|!=
+name|EINTR
 condition|)
 block|{
 name|perror
@@ -4322,6 +4328,19 @@ name|gimp_quit
 argument_list|()
 expr_stmt|;
 block|}
+block|}
+do|while
+condition|(
+name|select_val
+operator|==
+operator|-
+literal|1
+operator|&&
+name|errno
+operator|==
+name|EINTR
+condition|)
+do|;
 else|#
 directive|else
 comment|/* Zero means infinite wait for us, but g_poll and    * g_io_channel_win32_poll use -1 to indicate    * infinite wait.    */
