@@ -40,7 +40,18 @@ name|PROJ_ROUND
 parameter_list|(
 name|coord
 parameter_list|)
-value|((gint) ceil (coord))
+value|((gint) (coord))
+end_define
+
+begin_define
+DECL|macro|PROJ_ROUND64 (coord)
+define|#
+directive|define
+name|PROJ_ROUND64
+parameter_list|(
+name|coord
+parameter_list|)
+value|((gint64) (coord))
 end_define
 
 begin_comment
@@ -301,6 +312,29 @@ name|gdouble
 name|scale_y
 decl_stmt|;
 comment|/*  vertical scale factor              */
+DECL|member|level
+name|gint
+name|level
+decl_stmt|;
+comment|/*  level of projection pyramid        */
+DECL|member|x_src_dec
+name|gint
+name|x_src_dec
+decl_stmt|;
+comment|/*  increments for the bresenham style */
+DECL|member|y_src_dec
+name|gint
+name|y_src_dec
+decl_stmt|;
+comment|/*  image --> display transformation   */
+DECL|member|x_dest_inc
+name|gint
+name|x_dest_inc
+decl_stmt|;
+DECL|member|y_dest_inc
+name|gint
+name|y_dest_inc
+decl_stmt|;
 DECL|member|last_scale
 name|gdouble
 name|last_scale
