@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c2529d20108
+DECL|struct|__anon2bb8421c0108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c2529d20208
+DECL|struct|__anon2bb8421c0208
 typedef|typedef
 struct|struct
 block|{
@@ -1729,6 +1729,11 @@ argument_list|,
 literal|"wrong type of parameter"
 argument_list|)
 expr_stmt|;
+name|Py_DECREF
+argument_list|(
+name|tuple
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
@@ -1748,6 +1753,11 @@ argument_list|(
 name|PyExc_TypeError
 argument_list|,
 literal|"wrong number of parameters"
+argument_list|)
+expr_stmt|;
+name|Py_DECREF
+argument_list|(
+name|tuple
 argument_list|)
 expr_stmt|;
 return|return
