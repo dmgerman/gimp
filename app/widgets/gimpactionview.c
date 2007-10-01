@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpwidgets-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1745,7 +1739,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b9c9f0108
+DECL|struct|__anon2c5a72bd0108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -1947,7 +1941,7 @@ argument_list|)
 expr_stmt|;
 name|accel_string
 operator|=
-name|gimp_get_accel_string
+name|gtk_accelerator_get_label
 argument_list|(
 name|accel_key
 argument_list|,
