@@ -709,7 +709,7 @@ break|break;
 case|case
 name|XMP_TYPE_THUMBNAIL_ALT
 case|:
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"FIXME: output not implemented yet (%s:%s)"
 argument_list|,
@@ -726,7 +726,7 @@ break|break;
 case|case
 name|XMP_TYPE_UNKNOWN
 case|:
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"Unknown property type for %s"
 argument_list|,

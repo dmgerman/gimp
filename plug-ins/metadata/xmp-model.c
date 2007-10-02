@@ -1876,7 +1876,7 @@ name|iter
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"Unable to set XMP property '%s' because its schema is bad"
 argument_list|,
@@ -3189,7 +3189,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"While parsing XMP metadata:\n%s\n"
 argument_list|,

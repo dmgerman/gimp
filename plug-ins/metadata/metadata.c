@@ -971,7 +971,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
 literal|"Metadata parasite seems to be corrupt"
 argument_list|)
@@ -1126,9 +1126,9 @@ name|GET_PROC
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Not implemented yet\n"
+literal|"Not implemented yet (GET_PROC)\n"
 argument_list|)
 expr_stmt|;
 comment|/* FIXME */
@@ -1149,9 +1149,9 @@ name|SET_PROC
 argument_list|)
 condition|)
 block|{
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Not implemented yet\n"
+literal|"Not implemented yet (SET_PROC)\n"
 argument_list|)
 expr_stmt|;
 comment|/* FIXME */
@@ -1457,9 +1457,9 @@ condition|)
 block|{
 comment|/* FIXME: this is easy to implement, but the first thing to do is */
 comment|/* to improve the code of export_dialog_response() in interface.c */
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Not implemented yet\n"
+literal|"Not implemented yet (EXPORT_PROC)\n"
 argument_list|)
 expr_stmt|;
 name|status
@@ -1480,9 +1480,9 @@ argument_list|)
 condition|)
 block|{
 comment|/* FIXME: uncomment when these are working       GimpRunMode run_mode;        run_mode = param[0].data.d_int32;       if (run_mode == GIMP_RUN_INTERACTIVE)         {           if (! metadata_dialog (image_ID, xmp_model))             status = GIMP_PDB_CANCEL;         }         */
-name|g_warning
+name|g_printerr
 argument_list|(
-literal|"Not implemented yet\n"
+literal|"Not implemented yet (EDITOR_PROC)\n"
 argument_list|)
 expr_stmt|;
 name|status
