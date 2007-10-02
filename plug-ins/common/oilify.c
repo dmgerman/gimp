@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c702cff0108
+DECL|struct|__anon2bf027360108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -999,9 +999,10 @@ begin_function
 specifier|static
 specifier|inline
 name|gfloat
-DECL|function|get_map_value (guchar * src,gint bpp)
+DECL|function|get_map_value (const guchar * src,gint bpp)
 name|get_map_value
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -1042,11 +1043,18 @@ expr_stmt|;
 else|else
 name|value
 operator|=
-operator|(
-name|gfloat
-operator|)
 operator|*
 name|src
+expr_stmt|;
+if|if
+condition|(
+name|value
+operator|<
+literal|1.0
+condition|)
+name|value
+operator|=
+literal|1.0
 expr_stmt|;
 comment|/*  value should be in [0,1]  */
 name|value
