@@ -218,7 +218,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e6ef000108
+DECL|struct|__anon276008ef0108
 block|{
 DECL|member|holdness
 name|gint
@@ -1579,7 +1579,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Scatter HSV"
+literal|"HSV Noise"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
