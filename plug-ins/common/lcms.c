@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772c6780103
+DECL|enum|__anon2bcb5db90103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772c6780203
+DECL|enum|__anon2bcb5db90203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772c6780308
+DECL|struct|__anon2bcb5db90308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2772c6780408
+DECL|struct|__anon2bcb5db90408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -1210,16 +1210,6 @@ name|filename
 init|=
 name|NULL
 decl_stmt|;
-name|GimpColorRenderingIntent
-name|intent
-init|=
-name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
-decl_stmt|;
-name|gboolean
-name|bpc
-init|=
-name|FALSE
-decl_stmt|;
 name|GimpColorConfig
 modifier|*
 name|config
@@ -1230,6 +1220,12 @@ name|gboolean
 name|dont_ask
 init|=
 name|FALSE
+decl_stmt|;
+name|GimpColorRenderingIntent
+name|intent
+decl_stmt|;
+name|gboolean
+name|bpc
 decl_stmt|;
 specifier|static
 name|GimpParam
@@ -1328,6 +1324,29 @@ name|config
 operator|=
 name|gimp_get_color_configuration
 argument_list|()
+expr_stmt|;
+if|if
+condition|(
+name|config
+condition|)
+name|intent
+operator|=
+name|config
+operator|->
+name|display_intent
+expr_stmt|;
+else|else
+name|intent
+operator|=
+name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
+expr_stmt|;
+name|bpc
+operator|=
+operator|(
+name|intent
+operator|==
+name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
+operator|)
 expr_stmt|;
 switch|switch
 condition|(
