@@ -1452,7 +1452,7 @@ condition|)
 block|{
 name|flags
 operator||=
-name|cmsFLAGS_WHITEBLACKCOMPENSATION
+name|cmsFLAGS_BLACKPOINTCOMPENSATION
 expr_stmt|;
 block|}
 if|if

@@ -1900,7 +1900,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4da2a0108
+DECL|struct|__anon2b9e16d40108
 block|{
 DECL|member|pub
 name|struct
@@ -3287,7 +3287,7 @@ condition|)
 block|{
 name|flags
 operator||=
-name|cmsFLAGS_WHITEBLACKCOMPENSATION
+name|cmsFLAGS_BLACKPOINTCOMPENSATION
 expr_stmt|;
 block|}
 name|transform

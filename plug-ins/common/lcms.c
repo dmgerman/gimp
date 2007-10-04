@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb5db90103
+DECL|enum|__anon2c3019bb0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcb5db90203
+DECL|enum|__anon2c3019bb0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcb5db90308
+DECL|struct|__anon2c3019bb0308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcb5db90408
+DECL|struct|__anon2c3019bb0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3705,7 +3705,7 @@ name|intent
 argument_list|,
 name|bpc
 condition|?
-name|cmsFLAGS_WHITEBLACKCOMPENSATION
+name|cmsFLAGS_BLACKPOINTCOMPENSATION
 else|:
 literal|0
 argument_list|)
@@ -3835,7 +3835,7 @@ name|intent
 argument_list|,
 name|bpc
 condition|?
-name|cmsFLAGS_WHITEBLACKCOMPENSATION
+name|cmsFLAGS_BLACKPOINTCOMPENSATION
 else|:
 literal|0
 argument_list|)
