@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -33,6 +39,14 @@ define|#
 directive|define
 name|PLUG_IN_PROC
 value|"plug-in-mblur"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_PROC_INWARD
+define|#
+directive|define
+name|PLUG_IN_PROC_INWARD
+value|"plug-in-mblur-inward"
 end_define
 
 begin_define
@@ -62,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2934ac330103
+DECL|enum|__anon2c408b930103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -86,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2934ac330208
+DECL|struct|__anon2c408b930208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -496,14 +510,6 @@ literal|"center-y"
 block|,
 literal|"Center Y (optional)"
 block|}
-block|,
-block|{
-name|GIMP_PDB_INT32
-block|,
-literal|"blur-outward"
-block|,
-literal|"For radial, 1 for outward, 0 for inward (optional)"
-block|}
 block|,   }
 decl_stmt|;
 name|gimp_install_procedure
@@ -518,6 +524,45 @@ argument_list|,
 literal|"This plug-in simulates the effect seen when "
 literal|"photographing a moving object at a slow shutter "
 literal|"speed. Done by adding multiple displaced copies."
+argument_list|,
+literal|"Torsten Martinsen, Federico Mena Quintero, Daniel Skarda, Joerg Gittinger"
+argument_list|,
+literal|"Torsten Martinsen, Federico Mena Quintero, Daniel Skarda, Joerg Gittinger"
+argument_list|,
+name|PLUG_IN_VERSION
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Motion Blur..."
+argument_list|)
+argument_list|,
+literal|"RGB*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PLUG_IN_PROC_INWARD
+argument_list|,
+name|N_
+argument_list|(
+literal|"Simulate movement using directional blur"
+argument_list|)
+argument_list|,
+literal|"This procedure is equivalent to plug-in-mblur but "
+literal|"performs the radial blur inward instead of outward."
 argument_list|,
 literal|"Torsten Martinsen, Federico Mena Quintero, Daniel Skarda, Joerg Gittinger"
 argument_list|,
@@ -804,31 +849,23 @@ break|break;
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
-comment|/* Make sure all the arguments are present */
 if|if
 condition|(
-name|nparams
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PLUG_IN_PROC_INWARD
+argument_list|)
 operator|==
-literal|9
+literal|0
 condition|)
-block|{
 name|mbvals
 operator|.
 name|blur_outward
 operator|=
-name|param
-index|[
-literal|8
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
+name|FALSE
 expr_stmt|;
-operator|--
-name|nparams
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|nparams
@@ -870,10 +907,12 @@ name|nparams
 operator|!=
 literal|6
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|status
