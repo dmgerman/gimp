@@ -215,6 +215,22 @@ name|RESPONSE_RESET
 value|1
 end_define
 
+begin_define
+DECL|macro|COLOR_BUTTON_WIDTH
+define|#
+directive|define
+name|COLOR_BUTTON_WIDTH
+value|40
+end_define
+
+begin_define
+DECL|macro|COLOR_BUTTON_HEIGHT
+define|#
+directive|define
+name|COLOR_BUTTON_HEIGHT
+value|24
+end_define
+
 begin_comment
 comment|/*  preferences local functions  */
 end_comment
@@ -4845,9 +4861,9 @@ name|property_name
 argument_list|,
 name|title
 argument_list|,
-literal|60
+name|COLOR_BUTTON_WIDTH
 argument_list|,
-literal|24
+name|COLOR_BUTTON_HEIGHT
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|)
@@ -9339,7 +9355,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c6b637e0108
+DECL|struct|__anon294234c10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10501,7 +10517,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6b637e0208
+DECL|struct|__anon294234c10208
 block|{
 DECL|member|label
 specifier|const
@@ -10993,10 +11009,9 @@ argument_list|(
 literal|"Select Warning Color"
 argument_list|)
 argument_list|,
-literal|40
+name|COLOR_BUTTON_WIDTH
 argument_list|,
-operator|-
-literal|1
+name|COLOR_BUTTON_HEIGHT
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
 argument_list|)
@@ -11662,7 +11677,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6b637e0308
+DECL|struct|__anon294234c10308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11817,7 +11832,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6b637e0408
+DECL|struct|__anon294234c10408
 block|{
 DECL|member|tree_label
 specifier|const
