@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c408b930103
+DECL|enum|__anon2afa74ae0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c408b930208
+DECL|struct|__anon2afa74ae0208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -562,7 +562,7 @@ literal|"Simulate movement using directional blur"
 argument_list|)
 argument_list|,
 literal|"This procedure is equivalent to plug-in-mblur but "
-literal|"performs the radial blur inward instead of outward."
+literal|"performs the zoom blur inward instead of outward."
 argument_list|,
 literal|"Torsten Martinsen, Federico Mena Quintero, Daniel Skarda, Joerg Gittinger"
 argument_list|,
