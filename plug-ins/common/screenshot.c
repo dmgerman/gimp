@@ -322,7 +322,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297f3fcb0103
+DECL|enum|__anon2a4393ef0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -341,7 +341,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297f3fcb0208
+DECL|struct|__anon2a4393ef0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -3163,6 +3163,12 @@ expr_stmt|;
 if|if
 condition|(
 name|shape
+operator|&&
+operator|!
+name|gdk_region_empty
+argument_list|(
+name|shape
+argument_list|)
 condition|)
 block|{
 name|image_select_shape
