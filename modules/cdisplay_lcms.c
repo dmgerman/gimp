@@ -1959,13 +1959,6 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|atom_name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gdk_property_get
