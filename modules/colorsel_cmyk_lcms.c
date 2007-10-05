@@ -1751,12 +1751,6 @@ if|if
 condition|(
 operator|!
 name|config
-operator|||
-name|config
-operator|->
-name|mode
-operator|==
-name|GIMP_COLOR_MANAGEMENT_OFF
 condition|)
 goto|goto
 name|out
