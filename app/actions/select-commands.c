@@ -434,6 +434,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|widget
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
@@ -441,6 +445,15 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
+name|return_if_no_widget
+argument_list|(
+name|widget
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|gimp_selection_float
 argument_list|(
 name|gimp_image_get_mask
@@ -464,12 +477,37 @@ literal|0
 argument_list|,
 literal|0
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
 name|gimp_image_flush
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_message
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
+name|_
+argument_list|(
+literal|"Cannot float selection because the selected region "
+literal|"is empty."
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

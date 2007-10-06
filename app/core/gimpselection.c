@@ -3416,13 +3416,11 @@ name|gint
 name|x1
 decl_stmt|,
 name|y1
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|x2
 decl_stmt|,
 name|y2
-decl_stmt|;
-name|gboolean
-name|non_empty
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -3478,8 +3476,9 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure there is a region to float...  */
-name|non_empty
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_mask_bounds
 argument_list|(
 name|drawable
@@ -3496,46 +3495,20 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|non_empty
 operator|||
 operator|(
 name|x1
 operator|==
 name|x2
-operator|)
 operator|||
-operator|(
 name|y1
 operator|==
 name|y2
 operator|)
 condition|)
-block|{
-name|gimp_message
-argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_MESSAGE_WARNING
-argument_list|,
-name|_
-argument_list|(
-literal|"Cannot float selection because the "
-literal|"selected region is empty."
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
-block|}
 comment|/*  Start an undo group  */
 name|gimp_image_undo_group_start
 argument_list|(
