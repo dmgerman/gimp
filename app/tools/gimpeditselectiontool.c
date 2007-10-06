@@ -2701,7 +2701,12 @@ if|if
 condition|(
 operator|!
 name|floating_sel
+operator|&&
+name|edit_select
+operator|->
+name|segs_in
 condition|)
+block|{
 name|gimp_draw_tool_draw_boundary
 argument_list|(
 name|draw_tool
@@ -2729,6 +2734,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|edit_select
