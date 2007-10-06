@@ -19928,6 +19928,7 @@ name|InitialMode
 name|type
 decl_stmt|;
 DECL|member|data
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -19977,6 +19978,7 @@ name|guchar
 modifier|*
 name|buf
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -20669,7 +20671,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,GimpLayerModeEffects mode,const gboolean * affect,InitialMode type)
+DECL|function|initial_region (PixelRegion * src,PixelRegion * dest,PixelRegion * mask,const guchar * data,guint opacity,GimpLayerModeEffects mode,const gboolean * affect,InitialMode type)
 name|initial_region
 parameter_list|(
 name|PixelRegion
@@ -20684,6 +20686,7 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -20783,6 +20786,7 @@ name|CombinationMode
 name|type
 decl_stmt|;
 DECL|member|data
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -20928,6 +20932,7 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -22398,7 +22403,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,GimpLayerModeEffects mode,const gboolean * affect,CombinationMode type)
+DECL|function|combine_regions (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,const guchar * data,guint opacity,GimpLayerModeEffects mode,const gboolean * affect,CombinationMode type)
 name|combine_regions
 parameter_list|(
 name|PixelRegion
@@ -22417,6 +22422,7 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -22692,7 +22698,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_regions_replace (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,guchar * data,guint opacity,const gboolean * affect,CombinationMode type)
+DECL|function|combine_regions_replace (PixelRegion * src1,PixelRegion * src2,PixelRegion * dest,PixelRegion * mask,const guchar * data,guint opacity,const gboolean * affect,CombinationMode type)
 name|combine_regions_replace
 parameter_list|(
 name|PixelRegion
@@ -22711,6 +22717,7 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data

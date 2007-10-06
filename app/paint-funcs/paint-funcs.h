@@ -1767,6 +1767,7 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -1808,6 +1809,7 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -1849,6 +1851,7 @@ name|PixelRegion
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
