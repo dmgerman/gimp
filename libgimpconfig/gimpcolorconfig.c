@@ -155,7 +155,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a4e910103
+DECL|enum|__anon2c8a6d820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,11 +306,11 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
-literal|0xff
+literal|0x80
 argument_list|,
-literal|0x00
+literal|0x80
 argument_list|,
-literal|0xff
+literal|0x80
 argument_list|,
 literal|0xff
 argument_list|)
