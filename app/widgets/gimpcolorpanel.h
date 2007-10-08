@@ -113,10 +113,6 @@ name|GtkWidget
 modifier|*
 name|color_dialog
 decl_stmt|;
-DECL|member|recoursing
-name|gboolean
-name|recoursing
-decl_stmt|;
 block|}
 struct|;
 end_struct
