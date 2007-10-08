@@ -312,11 +312,6 @@ name|gdouble
 name|scale_y
 decl_stmt|;
 comment|/*  vertical scale factor              */
-DECL|member|level
-name|gint
-name|level
-decl_stmt|;
-comment|/*  level of projection pyramid        */
 DECL|member|x_src_dec
 name|gint
 name|x_src_dec

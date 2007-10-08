@@ -281,7 +281,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d66060103
+DECL|enum|__anon273a20e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,7 +294,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d66060203
+DECL|enum|__anon273a20e60203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -918,12 +918,6 @@ operator|->
 name|scale_y
 operator|=
 literal|1.0
-expr_stmt|;
-name|shell
-operator|->
-name|level
-operator|=
-literal|0
 expr_stmt|;
 name|shell
 operator|->
@@ -4907,25 +4901,6 @@ name|image
 operator|->
 name|yresolution
 operator|)
-expr_stmt|;
-name|shell
-operator|->
-name|level
-operator|=
-name|gimp_projection_get_level
-argument_list|(
-name|image
-operator|->
-name|projection
-argument_list|,
-name|shell
-operator|->
-name|scale_x
-argument_list|,
-name|shell
-operator|->
-name|scale_y
-argument_list|)
 expr_stmt|;
 name|shell
 operator|->
