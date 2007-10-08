@@ -218,6 +218,10 @@ DECL|member|xor_color
 name|GimpRGB
 name|xor_color
 decl_stmt|;
+DECL|member|zoom_quality
+name|GimpZoomQuality
+name|zoom_quality
+decl_stmt|;
 block|}
 struct|;
 end_struct

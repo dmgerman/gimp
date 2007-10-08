@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3a1dfb0103
+DECL|enum|__anon2b899f940103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3a1dfb0203
+DECL|enum|__anon2b899f940203
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -128,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3a1dfb0303
+DECL|enum|__anon2b899f940303
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -144,6 +144,42 @@ comment|/*< desc="Switch to Move tool">*/
 DECL|typedef|GimpSpaceBarAction
 block|}
 name|GimpSpaceBarAction
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_ZOOM_QUALITY
+define|#
+directive|define
+name|GIMP_TYPE_ZOOM_QUALITY
+value|(gimp_zoom_quality_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_zoom_quality_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b899f940403
+block|{
+DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
+name|GIMP_ZOOM_QUALITY_LOW
+block|,
+comment|/*< desc="quality|Low">*/
+DECL|enumerator|GIMP_ZOOM_QUALITY_HIGH
+name|GIMP_ZOOM_QUALITY_HIGH
+comment|/*< desc="quality|High">*/
+DECL|typedef|GimpZoomQuality
+block|}
+name|GimpZoomQuality
 typedef|;
 end_typedef
 

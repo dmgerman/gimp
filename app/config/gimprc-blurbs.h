@@ -1069,6 +1069,15 @@ define|\
 value|"Sets the color that is used for XOR drawing. This setting only exists as " \ "a workaround for buggy display drivers. If lines on the canvas are not " \ "correctly undrawn, try to set this to white."
 end_define
 
+begin_define
+DECL|macro|ZOOM_QUALITY_BLURB
+define|#
+directive|define
+name|ZOOM_QUALITY_BLURB
+define|\
+value|"There's a tradeoff between speed and quality of the zoomed-out display."
+end_define
+
 begin_endif
 endif|#
 directive|endif
