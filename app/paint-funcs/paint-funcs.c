@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile-rowhints.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/tile.h"
 end_include
 

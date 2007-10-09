@@ -158,7 +158,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"tile-private.h"
+file|"tile-rowhints.h"
 end_include
 
 begin_include
@@ -170,13 +170,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b57c7aa0103
+DECL|enum|__anon28992bfd0103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN

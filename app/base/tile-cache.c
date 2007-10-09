@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile-rowhints.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile-private.h"
 end_include
 
