@@ -262,6 +262,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tile_update_rowhints
+parameter_list|(
+name|Tile
+modifier|*
+name|tile
+parameter_list|,
+name|gint
+name|start
+parameter_list|,
+name|gint
+name|rows
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 modifier|*
 name|tile_data_pointer
 parameter_list|(
