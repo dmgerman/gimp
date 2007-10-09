@@ -2318,7 +2318,7 @@ name|mtime
 operator|)
 condition|)
 block|{
-comment|/* Use pluginrc entry, deleting ondisk entry */
+comment|/* Use pluginrc entry, deleting on-disk entry */
 name|list
 operator|->
 name|data
@@ -2333,7 +2333,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Use ondisk entry, deleting pluginrc entry */
+comment|/* Use on-disk entry, deleting pluginrc entry */
 name|g_object_unref
 argument_list|(
 name|plug_in_def
@@ -2369,9 +2369,18 @@ name|write_pluginrc
 operator|=
 name|TRUE
 expr_stmt|;
+if|if
+condition|(
+name|manager
+operator|->
+name|gimp
+operator|->
+name|be_verbose
+condition|)
+block|{
 name|g_printerr
 argument_list|(
-literal|"Executable not found: '%s'\n"
+literal|"pluginrc lists '%s', but it wasn't found\n"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2381,6 +2390,7 @@ name|prog
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|g_object_unref
 argument_list|(
 name|plug_in_def
