@@ -71,7 +71,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a30005e0103
+DECL|enum|__anon29ec27a90103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -407,7 +407,7 @@ name|GDK_F1
 argument_list|,
 literal|0
 argument_list|,
-literal|"show_help"
+literal|"show-help"
 argument_list|,
 literal|1
 argument_list|,
@@ -424,7 +424,7 @@ name|GDK_KP_F1
 argument_list|,
 literal|0
 argument_list|,
-literal|"show_help"
+literal|"show-help"
 argument_list|,
 literal|1
 argument_list|,
