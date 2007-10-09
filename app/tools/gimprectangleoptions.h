@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0b8e0a0103
+DECL|enum|__anon298c3a5c0103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -83,6 +83,9 @@ name|GIMP_RECTANGLE_OPTIONS_PROP_DEFAULT_ASPECT_DENOMINATOR
 block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_OVERRIDDEN_FIXED_ASPECT
 name|GIMP_RECTANGLE_OPTIONS_PROP_OVERRIDDEN_FIXED_ASPECT
+block|,
+DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_USE_STRING_CURRENT
+name|GIMP_RECTANGLE_OPTIONS_PROP_USE_STRING_CURRENT
 block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_RULE_ACTIVE
 name|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_RULE_ACTIVE
@@ -314,6 +317,11 @@ name|GimpUnit
 name|unit
 decl_stmt|;
 comment|/* options gui */
+comment|/* This gboolean is not part of the actual rectangle tool options,    * and should be refactored out along with the pointers to widgets.    */
+DECL|member|use_string_current
+name|gboolean
+name|use_string_current
+decl_stmt|;
 DECL|member|auto_shrink_button
 name|GtkWidget
 modifier|*

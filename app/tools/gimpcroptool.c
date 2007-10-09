@@ -1260,7 +1260,7 @@ operator|!
 name|ignore_pending
 condition|)
 block|{
-comment|/* There is a pending rectangle and we should not ignore it, so        * set default Fixed: Aspect ratio and Fixed: Size to the same        * as the current pending rectangle width/height.        */
+comment|/* There is a pending rectangle and we should not ignore it, so        * set default Fixed: Aspect ratio to the same as the current        * pending rectangle width/height.        */
 name|gimp_rectangle_tool_pending_size_set
 argument_list|(
 name|rectangle_tool
@@ -1275,24 +1275,24 @@ argument_list|,
 literal|"default-aspect-denominator"
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_pending_size_set
+name|g_object_set
 argument_list|(
-name|rectangle_tool
-argument_list|,
 name|G_OBJECT
 argument_list|(
 name|rectangle_options
 argument_list|)
 argument_list|,
-literal|"default-fixed-size-width"
+literal|"use-string-current"
 argument_list|,
-literal|"default-fixed-size-height"
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* There is no pending rectangle, set default Fixed: Aspect        * ratio to that of the current image/layer, and the size to        * 100x100.        */
+comment|/* There is no pending rectangle, set default Fixed: Aspect        * ratio to that of the current image/layer.        */
 name|gimp_rectangle_tool_constraint_size_set
 argument_list|(
 name|rectangle_tool
@@ -1314,13 +1314,9 @@ argument_list|(
 name|rectangle_options
 argument_list|)
 argument_list|,
-literal|"default-fixed-size-width"
+literal|"use-string-current"
 argument_list|,
-literal|100.0
-argument_list|,
-literal|"default-fixed-size-height"
-argument_list|,
-literal|100.0
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)
