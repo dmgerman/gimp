@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23bf570103
+DECL|enum|__anon28ad40b30103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +77,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c23bf570203
+DECL|enum|__anon28ad40b30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c23bf570303
+DECL|enum|__anon28ad40b30303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23bf570408
+DECL|struct|__anon28ad40b30408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -1823,7 +1823,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  * @string: A string to be shown.  *  * Returns the string manully set to be shown, or %NULL if values are  * shown in a normal fashion.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  * @string: A string to be shown.  *  * Returns: the string manully set to be shown, or %NULL if values are  * shown in a normal fashion.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
