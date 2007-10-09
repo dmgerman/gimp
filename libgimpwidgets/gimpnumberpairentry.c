@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef44220103
+DECL|enum|__anon28b7a5f00103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +77,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef44220203
+DECL|enum|__anon28b7a5f00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ef44220303
+DECL|enum|__anon28b7a5f00303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -140,7 +140,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ef44220408
+DECL|struct|__anon28b7a5f00408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2396,7 +2396,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_strdup_number_pair_string:  * @entry:  * @left_number:  * @right_number:  *  * Returns allocated data, must be g_free:d.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_number_pair_entry_strdup_number_pair_string:  * @entry:  * @left_number:  * @right_number:  *  * Returns: allocated data, must be g_free:d.  **/
 end_comment
 
 begin_function
