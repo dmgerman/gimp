@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf95850103
+DECL|enum|__anon2c40ce470103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf95850203
+DECL|enum|__anon2c40ce470203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1785,7 +1785,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_is_removed:  * @item: the #GimpItem to check.  *  * Returns #TRUE if the 'removed' flag is set for @item, and  * #FALSE otherwise.  */
+comment|/**  * gimp_item_is_removed:  * @item: the #GimpItem to check.  *  * Returns: %TRUE if the 'removed' flag is set for @item, %FALSE otherwise.  */
 end_comment
 
 begin_function

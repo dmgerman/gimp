@@ -28,7 +28,7 @@ file|"tools-utils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_tool_motion_constrain_helper:  * @dx: the (fixed) delta-x  * @dy: a suggested delta-y  *  * Returns an adjusted dy' near dy such that the slope (dx,dy')  * is a multiple of 15 degrees.  **/
+comment|/**  * gimp_tool_motion_constrain_helper:  * @dx: the (fixed) delta-x  * @dy: a suggested delta-y  *  * Returns: An adjusted dy' near dy such that the slope (dx,dy')  *          is a multiple of 15 degrees.  **/
 end_comment
 
 begin_function
