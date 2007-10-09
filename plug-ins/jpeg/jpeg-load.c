@@ -276,6 +276,9 @@ name|struct
 name|my_error_mgr
 name|jerr
 decl_stmt|;
+name|jpeg_saved_marker_ptr
+name|marker
+decl_stmt|;
 name|FILE
 modifier|*
 name|infile
@@ -307,9 +310,6 @@ decl_stmt|,
 name|start
 decl_stmt|,
 name|end
-decl_stmt|;
-name|jpeg_saved_marker_ptr
-name|marker
 decl_stmt|;
 name|gint
 name|orientation
@@ -546,9 +546,6 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Step 3: read file parameters with jpeg_read_header() */
-operator|(
-name|void
-operator|)
 name|jpeg_read_header
 argument_list|(
 operator|&
@@ -567,7 +564,7 @@ operator|&
 name|cinfo
 argument_list|)
 expr_stmt|;
-comment|/* We may need to do some setup of our own at this point before reading    * the data.  After jpeg_start_decompress() we have the correct scaled    * output image dimensions available, as well as the output colormap    * if we asked for color quantization.    * In this example, we need to make an output work buffer of the right size.    */
+comment|/* We may need to do some setup of our own at this point before reading    * the data.  After jpeg_start_decompress() we have the correct scaled    * output image dimensions available, as well as the output colormap    * if we asked for color quantization.    */
 comment|/* temporary buffer */
 name|tile_height
 operator|=
@@ -631,7 +628,6 @@ name|output_components
 operator|*
 name|i
 expr_stmt|;
-comment|/* Create a new image of the proper size and associate the filename with it.       Preview layers, not being on the bottom of a layer stack, MUST HAVE      AN ALPHA CHANNEL!    */
 switch|switch
 condition|(
 name|cinfo
@@ -1900,7 +1896,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e16d40108
+DECL|struct|__anon2b2c632a0108
 block|{
 DECL|member|pub
 name|struct
