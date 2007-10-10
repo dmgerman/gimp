@@ -72,7 +72,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895149d0103
+DECL|enum|__anon2bdf8bd40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895149d0203
+DECL|enum|__anon2bdf8bd40203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
