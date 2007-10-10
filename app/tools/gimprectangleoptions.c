@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cd34900103
+DECL|enum|__anon28b585270103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2730,9 +2730,6 @@ modifier|*
 name|private
 decl_stmt|;
 name|gboolean
-name|use_string_current
-decl_stmt|;
-name|gboolean
 name|user_override
 decl_stmt|;
 name|private
@@ -2749,22 +2746,12 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
-name|g_object_get
-argument_list|(
-name|rectangle_options
-argument_list|,
-literal|"use-string-current"
-argument_list|,
-operator|&
-name|use_string_current
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gimp_number_pair_entry_set_default_text
 argument_list|(
 name|entry
 argument_list|,
+name|private
+operator|->
 name|use_string_current
 condition|?
 name|_
@@ -2782,6 +2769,8 @@ operator|->
 name|aspect_button_box
 argument_list|,
 operator|!
+name|private
+operator|->
 name|use_string_current
 operator|||
 name|user_override
