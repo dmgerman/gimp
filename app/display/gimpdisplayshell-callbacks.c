@@ -2624,7 +2624,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: ENTER_NOTIFY\n"
+literal|"tool event (display %p): ENTER_NOTIFY\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2679,7 +2681,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: LEAVE_NOTIFY\n"
+literal|"tool event (display %p): LEAVE_NOTIFY\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2730,7 +2734,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: PROXIMITY_IN\n"
+literal|"tool event (display %p): PROXIMITY_IN\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2758,7 +2764,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: PROXIMITY_OUT\n"
+literal|"tool event (display %p): PROXIMITY_OUT\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2815,7 +2823,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: FOCUS_IN\n"
+literal|"tool event (display %p): FOCUS_IN\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2853,7 +2863,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: FOCUS_OUT\n"
+literal|"tool event (display %p): FOCUS_OUT\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2924,7 +2936,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: BUTTON_PRESS\n"
+literal|"tool event (display %p): BUTTON_PRESS\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3284,6 +3298,17 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  make sure the newly created tool has the right state                      */
+name|gimp_display_shell_update_focus
+argument_list|(
+name|shell
+argument_list|,
+operator|&
+name|image_coords
+argument_list|,
+name|state
+argument_list|)
+expr_stmt|;
 name|initialized
 operator|=
 name|tool_manager_initialize_active
@@ -3402,7 +3427,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: BUTTON_RELEASE\n"
+literal|"tool event (display %p): BUTTON_RELEASE\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3604,7 +3631,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: SCROLL\n"
+literal|"tool event (display %p): SCROLL\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3974,7 +4003,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: MOTION_NOTIFY\n"
+literal|"tool event (display %p): MOTION_NOTIFY\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4553,7 +4584,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: KEY_PRESS\n"
+literal|"tool event (display %p): KEY_PRESS\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4913,7 +4946,9 @@ name|D
 argument_list|(
 name|g_printerr
 argument_list|(
-literal|"tool event: KEY_RELEASE\n"
+literal|"tool event (display %p): KEY_RELEASE\n"
+argument_list|,
+name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
