@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29345a870108
+DECL|struct|__anon2bdbd1590108
 block|{
 DECL|member|script
 name|SFScript
@@ -2587,7 +2587,7 @@ condition|)
 operator|*
 name|val
 operator|=
-literal|'\\'
+name|G_DIR_SEPARATOR
 expr_stmt|;
 name|val
 operator|++
@@ -6739,7 +6739,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon29345a870208
+DECL|struct|__anon2bdbd1590208
 block|{
 DECL|member|old
 specifier|const
