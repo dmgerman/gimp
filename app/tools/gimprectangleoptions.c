@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b585270103
+DECL|enum|__anon2801f9220103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3688,7 +3688,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-literal|3
+literal|2
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -3777,7 +3777,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Y */
@@ -3845,7 +3845,7 @@ name|entry
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Width */
@@ -3920,7 +3920,7 @@ name|width_entry
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|row
@@ -3998,7 +3998,7 @@ name|height_entry
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|row
