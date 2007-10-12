@@ -650,19 +650,12 @@ name|stroke
 argument_list|)
 control|)
 block|{
-name|GimpVector2
-modifier|*
-name|points
-decl_stmt|;
-name|gboolean
-name|closed
-decl_stmt|;
 name|GArray
 modifier|*
 name|coords
 decl_stmt|;
-name|gint
-name|i
+name|gboolean
+name|closed
 decl_stmt|;
 comment|/* Get the interpolated version of this stroke, and add it to our        * scanconvert.        */
 name|coords
@@ -686,8 +679,10 @@ operator|->
 name|len
 condition|)
 block|{
+name|GimpVector2
+modifier|*
 name|points
-operator|=
+init|=
 name|g_new0
 argument_list|(
 name|GimpVector2
@@ -696,7 +691,10 @@ name|coords
 operator|->
 name|len
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
