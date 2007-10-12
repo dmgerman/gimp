@@ -144,7 +144,10 @@ name|selector_class
 operator|->
 name|name
 operator|=
+name|_
+argument_list|(
 literal|"Palette"
+argument_list|)
 expr_stmt|;
 name|selector_class
 operator|->
