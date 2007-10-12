@@ -11432,14 +11432,13 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c545b3c0103
+DECL|enum|__anon2babd0650103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
 DECL|enumerator|st_x2
 DECL|enumerator|st_oct1
 DECL|enumerator|st_oct2
-DECL|enumerator|st_oct3
 enum|enum
 block|{
 name|st_ok
@@ -11453,8 +11452,6 @@ block|,
 name|st_oct1
 block|,
 name|st_oct2
-block|,
-name|st_oct3
 block|}
 name|state
 init|=
@@ -11582,18 +11579,6 @@ literal|'2'
 case|:
 case|case
 literal|'3'
-case|:
-case|case
-literal|'4'
-case|:
-case|case
-literal|'5'
-case|:
-case|case
-literal|'6'
-case|:
-case|case
-literal|'7'
 case|:
 name|state
 operator|=
@@ -11758,12 +11743,11 @@ break|break;
 case|case
 name|st_oct1
 case|:
+comment|/* State when handling second octal digit */
 case|case
 name|st_oct2
 case|:
-case|case
-name|st_oct3
-case|:
+comment|/* State when handling third octal digit */
 if|if
 condition|(
 operator|!
@@ -11824,28 +11808,18 @@ argument_list|(
 name|c
 argument_list|)
 expr_stmt|;
-switch|switch
+if|if
 condition|(
 name|state
-condition|)
-block|{
-case|case
+operator|==
 name|st_oct1
-case|:
+condition|)
 name|state
 operator|=
 name|st_oct2
 expr_stmt|;
-break|break;
-case|case
-name|st_oct2
-case|:
-name|state
-operator|=
-name|st_oct3
-expr_stmt|;
-break|break;
-default|default:
+else|else
+block|{
 operator|*
 name|p
 operator|++
@@ -11856,7 +11830,6 @@ name|state
 operator|=
 name|st_ok
 expr_stmt|;
-break|break;
 block|}
 block|}
 break|break;
@@ -28182,7 +28155,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c545b3c0208
+DECL|struct|__anon2babd0650208
 specifier|static
 struct|struct
 block|{
@@ -28417,7 +28390,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c545b3c0308
+DECL|struct|__anon2babd0650308
 typedef|typedef
 struct|struct
 block|{
