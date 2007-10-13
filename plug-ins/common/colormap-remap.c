@@ -569,13 +569,6 @@ block|{
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
-name|gimp_get_data
-argument_list|(
-name|PLUG_IN_PROC_REMAP
-argument_list|,
-name|map
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1656,7 +1649,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290174b50103
+DECL|enum|__anon29d7d8eb0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
