@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af0200e0103
+DECL|enum|__anon2757bb3a0103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -111,7 +111,7 @@ block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_LAST
 name|GIMP_RECTANGLE_OPTIONS_PROP_LAST
 init|=
-name|GIMP_RECTANGLE_OPTIONS_PROP_UNIT
+name|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_Y
 DECL|typedef|GimpRectangleOptionsProp
 block|}
 name|GimpRectangleOptionsProp
