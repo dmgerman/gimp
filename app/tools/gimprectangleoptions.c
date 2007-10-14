@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1cdd320103
+DECL|enum|__anon28f93fb40103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3544,18 +3544,12 @@ argument_list|,
 literal|300
 argument_list|)
 expr_stmt|;
-name|gimp_size_entry_show_unit_menu
-argument_list|(
-name|GIMP_SIZE_ENTRY
-argument_list|(
-name|private
-operator|->
-name|height_entry
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_size_entry_show_unit_menu (GIMP_SIZE_ENTRY (private->height_entry),                                   FALSE);
+endif|#
+directive|endif
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
