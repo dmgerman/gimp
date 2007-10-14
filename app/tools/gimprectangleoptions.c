@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f93fb40103
+DECL|enum|__anon2888b8840103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3503,7 +3503,7 @@ name|row
 argument_list|,
 name|_
 argument_list|(
-literal|"Width:"
+literal|"W:"
 argument_list|)
 argument_list|,
 literal|0.0
@@ -3563,7 +3563,7 @@ name|row
 argument_list|,
 name|_
 argument_list|(
-literal|"Height:"
+literal|"H:"
 argument_list|)
 argument_list|,
 literal|0.0
