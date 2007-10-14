@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910190d0103
+DECL|enum|__anon2bf6b3c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1648,6 +1648,8 @@ argument_list|(
 name|config
 argument_list|,
 literal|"font-size"
+argument_list|,
+name|FALSE
 argument_list|,
 literal|"font-size-unit"
 argument_list|,

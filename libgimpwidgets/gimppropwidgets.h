@@ -643,6 +643,9 @@ name|gchar
 modifier|*
 name|property_name
 parameter_list|,
+name|gboolean
+name|property_is_pixel
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
