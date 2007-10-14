@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289be1630103
+DECL|enum|__anon2a2a18b20103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -199,7 +199,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289be1630203
+DECL|enum|__anon2a2a18b20203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -250,7 +250,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289be1630303
+DECL|enum|__anon2a2a18b20303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -7614,11 +7614,11 @@ name|g_object_set
 argument_list|(
 name|options
 argument_list|,
-literal|"x0"
+literal|"x"
 argument_list|,
 name|x
 argument_list|,
-literal|"y0"
+literal|"y"
 argument_list|,
 name|y
 argument_list|,
@@ -7916,7 +7916,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"x0"
+literal|"x"
 argument_list|)
 condition|)
 block|{
@@ -7928,7 +7928,7 @@ name|x1
 operator|!=
 name|options_private
 operator|->
-name|x0
+name|x
 condition|)
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
@@ -7938,7 +7938,7 @@ name|RECT_MOVING
 argument_list|,
 name|options_private
 operator|->
-name|x0
+name|x
 argument_list|,
 name|private
 operator|->
@@ -7956,7 +7956,7 @@ name|pspec
 operator|->
 name|name
 argument_list|,
-literal|"y0"
+literal|"y"
 argument_list|)
 condition|)
 block|{
@@ -7968,7 +7968,7 @@ name|y1
 operator|!=
 name|options_private
 operator|->
-name|y0
+name|y
 condition|)
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
@@ -7982,7 +7982,7 @@ name|x1
 argument_list|,
 name|options_private
 operator|->
-name|y0
+name|y
 argument_list|)
 expr_stmt|;
 block|}
@@ -8266,7 +8266,7 @@ name|g_object_set
 argument_list|(
 name|options
 argument_list|,
-literal|"x0"
+literal|"x"
 argument_list|,
 name|x
 argument_list|,
@@ -8277,7 +8277,7 @@ name|g_object_set
 argument_list|(
 name|options
 argument_list|,
-literal|"y0"
+literal|"y"
 argument_list|,
 name|y
 argument_list|,
