@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f274d0103
+DECL|enum|__anon2746675f0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2490,7 +2490,7 @@ name|private
 operator|->
 name|use_string_current
 condition|?
-comment|/* Current, as in                                             * what is currently in use.                                             */
+comment|/* Current, as in what is currently in use. */
 name|_
 argument_list|(
 literal|"Current"
@@ -3531,6 +3531,7 @@ literal|0
 argument_list|,
 name|row
 argument_list|,
+comment|/* Width */
 name|_
 argument_list|(
 literal|"W:"
@@ -3591,6 +3592,7 @@ literal|0
 argument_list|,
 name|row
 argument_list|,
+comment|/* Height */
 name|_
 argument_list|(
 literal|"H:"
