@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2757bb3a0103
+DECL|enum|__anon2c0c61550103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -373,6 +373,16 @@ DECL|member|size_history
 name|GtkListStore
 modifier|*
 name|size_history
+decl_stmt|;
+DECL|member|x_entry
+name|GtkWidget
+modifier|*
+name|x_entry
+decl_stmt|;
+DECL|member|y_entry
+name|GtkWidget
+modifier|*
+name|y_entry
 decl_stmt|;
 DECL|member|width_entry
 name|GtkWidget

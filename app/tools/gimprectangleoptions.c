@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2888b8840103
+DECL|enum|__anon2781063f0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2501,10 +2501,6 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|entry
-decl_stmt|;
 name|gint
 name|row
 init|=
@@ -2566,6 +2562,10 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|entry
 decl_stmt|;
 name|GtkSizeGroup
 modifier|*
@@ -3341,7 +3341,9 @@ name|table
 argument_list|)
 expr_stmt|;
 comment|/* X */
-name|entry
+name|private
+operator|->
+name|x_entry
 operator|=
 name|gimp_prop_size_entry_new
 argument_list|(
@@ -3364,7 +3366,9 @@ name|gimp_size_entry_show_unit_menu
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|entry
+name|private
+operator|->
+name|x_entry
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3391,7 +3395,9 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|entry
+name|private
+operator|->
+name|x_entry
 argument_list|,
 literal|1
 argument_list|,
@@ -3399,7 +3405,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Y */
-name|entry
+name|private
+operator|->
+name|y_entry
 operator|=
 name|gimp_prop_size_entry_new
 argument_list|(
@@ -3422,7 +3430,9 @@ name|gimp_size_entry_show_unit_menu
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|entry
+name|private
+operator|->
+name|y_entry
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3449,7 +3459,9 @@ literal|0.0
 argument_list|,
 literal|0.5
 argument_list|,
-name|entry
+name|private
+operator|->
+name|y_entry
 argument_list|,
 literal|1
 argument_list|,
