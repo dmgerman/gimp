@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f59f810103
+DECL|enum|__anon2c2f274d0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2490,6 +2490,7 @@ name|private
 operator|->
 name|use_string_current
 condition|?
+comment|/* Current, as in                                             * what is currently in use.                                             */
 name|_
 argument_list|(
 literal|"Current"
@@ -3691,7 +3692,7 @@ name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Auto Shrink Selection"
+literal|"Auto Shrink"
 argument_list|)
 argument_list|)
 expr_stmt|;
