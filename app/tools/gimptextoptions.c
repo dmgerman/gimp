@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf6b3c10103
+DECL|enum|__anon2b5704900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2114,13 +2114,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/*  Create a path from the current text  */
 name|button
 operator|=
 name|gtk_button_new_with_label
 argument_list|(
 name|_
 argument_list|(
-literal|"Create Path from Text"
+literal|"Path from Text"
 argument_list|)
 argument_list|)
 expr_stmt|;
