@@ -196,7 +196,7 @@ name|GIMP_PERSPECTIVE_CLONE_MODE_ADJUST
 block|,
 name|N_
 argument_list|(
-literal|"Modify Perspective Plane"
+literal|"Modify Perspective"
 argument_list|)
 block|,
 name|NULL
