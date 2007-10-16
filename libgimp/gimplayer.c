@@ -88,7 +88,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_copy:  * @layer_ID: The layer to copy.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image. If you create  * a copy of the background layer, remember to add an alpha channel  * before you add the new layer to the image.  *  * Returns: The newly copied layer.  */
+comment|/**  * gimp_layer_copy:  * @layer_ID: The layer to copy.  *  * Copy a layer.  *  * This procedure copies the specified layer and returns the copy. The  * newly copied layer is for use within the original layer's image. It  * should not be subsequently added to any other image.  *  * Returns: The newly copied layer.  */
 end_comment
 
 begin_function
