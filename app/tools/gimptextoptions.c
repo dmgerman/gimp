@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5704900103
+DECL|enum|__anon2a308e450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1538,6 +1538,10 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
+name|GtkSizeGroup
+modifier|*
+name|size_group
+decl_stmt|;
 name|gint
 name|row
 init|=
@@ -1877,6 +1881,13 @@ expr_stmt|;
 name|row
 operator|++
 expr_stmt|;
+name|size_group
+operator|=
+name|gtk_size_group_new
+argument_list|(
+name|GTK_SIZE_GROUP_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|button
 operator|=
 name|gimp_prop_color_button_new
@@ -1890,8 +1901,7 @@ argument_list|(
 literal|"Text Color"
 argument_list|)
 argument_list|,
-operator|-
-literal|1
+literal|40
 argument_list|,
 literal|24
 argument_list|,
@@ -1936,7 +1946,14 @@ name|button
 argument_list|,
 literal|1
 argument_list|,
-name|FALSE
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|size_group
+argument_list|,
+name|button
 argument_list|)
 expr_stmt|;
 name|box
@@ -1980,6 +1997,18 @@ argument_list|,
 literal|2
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|size_group
+argument_list|,
+name|box
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|size_group
 argument_list|)
 expr_stmt|;
 name|spinbutton

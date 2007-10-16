@@ -136,7 +136,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2923d5810103
+DECL|enum|__anon293872640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1446,7 +1446,7 @@ literal|"interactive"
 argument_list|,
 name|_
 argument_list|(
-literal|"Show interactive boundary"
+literal|"Interactive boundary"
 argument_list|)
 argument_list|)
 expr_stmt|;
