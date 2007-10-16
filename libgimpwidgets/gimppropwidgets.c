@@ -9101,10 +9101,6 @@ argument_list|,
 name|param_spec
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|property_is_pixel
-condition|)
 name|g_signal_connect
 argument_list|(
 name|sizeentry
@@ -9119,7 +9115,6 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-else|else
 name|g_signal_connect
 argument_list|(
 name|sizeentry
