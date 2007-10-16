@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275743c00103
+DECL|enum|__anon2b972c540103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275743c00203
+DECL|enum|__anon2b972c540203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2631,6 +2631,29 @@ operator|=
 name|gtk_window_new
 argument_list|(
 name|GTK_WINDOW_POPUP
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_type_hint
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|GDK_WINDOW_TYPE_HINT_DND
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_screen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|gtk_widget_get_screen
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_widget_realize
