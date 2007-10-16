@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f00e80103
+DECL|enum|__anon28db57860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -650,6 +650,7 @@ operator|=
 name|gimp_button_new
 argument_list|()
 expr_stmt|;
+comment|/*  Create a selection from the current path  */
 name|gtk_button_set_label
 argument_list|(
 name|GTK_BUTTON
@@ -659,7 +660,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Create Selection from Path"
+literal|"Selection from Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
