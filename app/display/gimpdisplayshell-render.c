@@ -2926,27 +2926,34 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|box_filter (guint left_weight,guint center_weight,guint right_weight,guint top_weight,guint middle_weight,guint bottom_weight,guint sum,const guchar ** src,guchar * dest,gint bpp)
+DECL|function|box_filter (const guint left_weight,const guint center_weight,const guint right_weight,const guint top_weight,const guint middle_weight,const guint bottom_weight,const guint sum,const guchar ** src,guchar * dest,const gint bpp)
 name|box_filter
 parameter_list|(
+specifier|const
 name|guint
 name|left_weight
 parameter_list|,
+specifier|const
 name|guint
 name|center_weight
 parameter_list|,
+specifier|const
 name|guint
 name|right_weight
 parameter_list|,
+specifier|const
 name|guint
 name|top_weight
 parameter_list|,
+specifier|const
 name|guint
 name|middle_weight
 parameter_list|,
+specifier|const
 name|guint
 name|bottom_weight
 parameter_list|,
+specifier|const
 name|guint
 name|sum
 parameter_list|,
@@ -2961,6 +2968,7 @@ name|guchar
 modifier|*
 name|dest
 parameter_list|,
+specifier|const
 name|gint
 name|bpp
 parameter_list|)
@@ -2972,9 +2980,6 @@ condition|)
 block|{
 name|gint
 name|i
-decl_stmt|;
-name|guint
-name|a
 decl_stmt|;
 case|case
 literal|4
@@ -3119,8 +3124,9 @@ operator|>>
 literal|8
 block|}
 decl_stmt|;
+name|guint
 name|a
-operator|=
+init|=
 operator|(
 name|center_weight
 operator|*
@@ -3179,7 +3185,7 @@ literal|8
 index|]
 operator|)
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|dest
 index|[
 name|ALPHA
@@ -3501,8 +3507,9 @@ operator|>>
 literal|8
 block|}
 decl_stmt|;
+name|guint
 name|a
-operator|=
+init|=
 operator|(
 name|center_weight
 operator|*
@@ -3561,7 +3568,7 @@ literal|8
 index|]
 operator|)
 operator|)
-expr_stmt|;
+decl_stmt|;
 name|dest
 index|[
 name|ALPHA
