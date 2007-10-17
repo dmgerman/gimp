@@ -1109,7 +1109,7 @@ block|,
 block|{
 literal|"console-messages"
 block|,
-literal|0
+literal|'c'
 block|,
 literal|0
 block|,
