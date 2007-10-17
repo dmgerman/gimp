@@ -8659,7 +8659,7 @@ name|gimp_prop_size_entry_callback
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|,
 name|GObject
 modifier|*
@@ -8683,7 +8683,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -8703,7 +8703,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -8749,7 +8749,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|sizeentry
+name|entry
 decl_stmt|;
 name|GParamSpec
 modifier|*
@@ -8945,7 +8945,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-name|sizeentry
+name|entry
 operator|=
 name|gimp_size_entry_new
 argument_list|(
@@ -8983,7 +8983,7 @@ name|gtk_table_set_col_spacing
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|1
@@ -8999,7 +8999,7 @@ name|gimp_size_entry_get_help_widget
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -9018,7 +9018,7 @@ name|NULL
 argument_list|,
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 operator|->
 name|unitmenu
@@ -9030,7 +9030,7 @@ name|gimp_size_entry_set_unit
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|unit_value
@@ -9046,7 +9046,7 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -9060,7 +9060,7 @@ name|gimp_size_entry_set_value_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -9074,7 +9074,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"value-is-pixel"
@@ -9097,7 +9097,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -9110,7 +9110,7 @@ name|gimp_size_entry_set_value
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -9122,7 +9122,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec"
@@ -9132,7 +9132,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|"refval-changed"
 argument_list|,
@@ -9146,7 +9146,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|"value-changed"
 argument_list|,
@@ -9169,7 +9169,7 @@ argument_list|(
 name|gimp_prop_size_entry_notify
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 if|if
@@ -9181,7 +9181,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-unit"
@@ -9191,7 +9191,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|"unit-changed"
 argument_list|,
@@ -9214,12 +9214,12 @@ argument_list|(
 name|gimp_prop_size_entry_notify_unit
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|sizeentry
+name|entry
 return|;
 block|}
 end_function
@@ -9227,12 +9227,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_size_entry_callback (GimpSizeEntry * sizeentry,GObject * config)
+DECL|function|gimp_prop_size_entry_callback (GimpSizeEntry * entry,GObject * config)
 name|gimp_prop_size_entry_callback
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|,
 name|GObject
 modifier|*
@@ -9262,7 +9262,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec"
@@ -9280,7 +9280,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-unit"
@@ -9294,7 +9294,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"value-is-pixel"
@@ -9309,7 +9309,7 @@ name|value
 operator|=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -9319,7 +9319,7 @@ name|value
 operator|=
 name|gimp_size_entry_get_value
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -9328,7 +9328,7 @@ name|unit_value
 operator|=
 name|gimp_size_entry_get_unit
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 if|if
@@ -9438,7 +9438,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_size_entry_notify (GObject * config,GParamSpec * param_spec,GimpSizeEntry * sizeentry)
+DECL|function|gimp_prop_size_entry_notify (GObject * config,GParamSpec * param_spec,GimpSizeEntry * entry)
 name|gimp_prop_size_entry_notify
 parameter_list|(
 name|GObject
@@ -9451,7 +9451,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 block|{
 name|gdouble
@@ -9518,7 +9518,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"value-is-pixel"
@@ -9533,7 +9533,7 @@ name|entry_value
 operator|=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -9543,7 +9543,7 @@ name|entry_value
 operator|=
 name|gimp_size_entry_get_value
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -9557,7 +9557,7 @@ condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_size_entry_callback
 argument_list|,
@@ -9570,7 +9570,7 @@ name|value_is_pixel
 condition|)
 name|gimp_size_entry_set_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|,
@@ -9580,7 +9580,7 @@ expr_stmt|;
 else|else
 name|gimp_size_entry_set_value
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|,
@@ -9589,7 +9589,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_size_entry_callback
 argument_list|,
@@ -9603,7 +9603,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_size_entry_notify_unit (GObject * config,GParamSpec * param_spec,GimpSizeEntry * sizeentry)
+DECL|function|gimp_prop_size_entry_notify_unit (GObject * config,GParamSpec * param_spec,GimpSizeEntry * entry)
 name|gimp_prop_size_entry_notify_unit
 parameter_list|(
 name|GObject
@@ -9616,7 +9616,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 block|{
 name|GimpUnit
@@ -9642,13 +9642,13 @@ name|value
 operator|!=
 name|gimp_size_entry_get_unit
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_size_entry_callback
 argument_list|,
@@ -9657,14 +9657,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_unit
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_size_entry_callback
 argument_list|,
@@ -9694,7 +9694,7 @@ name|gimp_prop_coordinates_callback
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|,
 name|GObject
 modifier|*
@@ -9718,7 +9718,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -9738,7 +9738,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -9758,7 +9758,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -9812,7 +9812,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|sizeentry
+name|entry
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -9820,7 +9820,7 @@ name|chainbutton
 init|=
 name|NULL
 decl_stmt|;
-name|sizeentry
+name|entry
 operator|=
 name|gimp_size_entry_new
 argument_list|(
@@ -9857,7 +9857,7 @@ name|gtk_table_attach_defaults
 argument_list|(
 name|GTK_TABLE
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|chainbutton
@@ -9890,7 +9890,7 @@ name|y_property_name
 argument_list|,
 name|unit_property_name
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|,
 name|chainbutton
 argument_list|,
@@ -9902,7 +9902,7 @@ condition|)
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 return|return
@@ -9910,14 +9910,14 @@ name|NULL
 return|;
 block|}
 return|return
-name|sizeentry
+name|entry
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_prop_coordinates_connect (GObject * config,const gchar * x_property_name,const gchar * y_property_name,const gchar * unit_property_name,GtkWidget * sizeentry,GtkWidget * chainbutton,gdouble xresolution,gdouble yresolution)
+DECL|function|gimp_prop_coordinates_connect (GObject * config,const gchar * x_property_name,const gchar * y_property_name,const gchar * unit_property_name,GtkWidget * entry,GtkWidget * chainbutton,gdouble xresolution,gdouble yresolution)
 name|gimp_prop_coordinates_connect
 parameter_list|(
 name|GObject
@@ -9941,7 +9941,7 @@ name|unit_property_name
 parameter_list|,
 name|GtkWidget
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -10002,7 +10002,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|FALSE
@@ -10012,7 +10012,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 operator|->
 name|number_of_fields
@@ -10175,7 +10175,7 @@ name|gimp_size_entry_get_help_widget
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -10192,7 +10192,7 @@ name|gimp_size_entry_get_help_widget
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|1
@@ -10211,7 +10211,7 @@ name|NULL
 argument_list|,
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 operator|->
 name|unitmenu
@@ -10223,7 +10223,7 @@ name|gimp_size_entry_set_unit
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 name|unit_value
@@ -10233,7 +10233,7 @@ switch|switch
 condition|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 operator|->
 name|update_policy
@@ -10246,7 +10246,7 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -10260,7 +10260,7 @@ name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|1
@@ -10316,7 +10316,7 @@ name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -10330,7 +10330,7 @@ name|gimp_size_entry_set_refval_boundaries
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|1
@@ -10344,7 +10344,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -10356,7 +10356,7 @@ name|gimp_size_entry_set_refval
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|1
@@ -10368,7 +10368,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-x"
@@ -10380,7 +10380,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-y"
@@ -10406,7 +10406,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"old-x-value"
@@ -10437,7 +10437,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"old-y-value"
@@ -10473,7 +10473,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"chainbutton"
@@ -10484,7 +10484,7 @@ expr_stmt|;
 block|}
 name|g_signal_connect
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|"value-changed"
 argument_list|,
@@ -10498,7 +10498,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|"refval-changed"
 argument_list|,
@@ -10521,7 +10521,7 @@ argument_list|(
 name|gimp_prop_coordinates_notify_x
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 name|connect_notify
@@ -10535,7 +10535,7 @@ argument_list|(
 name|gimp_prop_coordinates_notify_y
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 if|if
@@ -10547,7 +10547,7 @@ name|g_object_set_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-unit"
@@ -10573,7 +10573,7 @@ name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"old-unit-value"
@@ -10588,7 +10588,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|"unit-changed"
 argument_list|,
@@ -10611,7 +10611,7 @@ argument_list|(
 name|gimp_prop_coordinates_notify_unit
 argument_list|)
 argument_list|,
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -10624,12 +10624,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_coordinates_callback (GimpSizeEntry * sizeentry,GObject * config)
+DECL|function|gimp_prop_coordinates_callback (GimpSizeEntry * entry,GObject * config)
 name|gimp_prop_coordinates_callback
 parameter_list|(
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|,
 name|GObject
 modifier|*
@@ -10678,7 +10678,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-x"
@@ -10690,7 +10690,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-y"
@@ -10711,7 +10711,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"gimp-config-param-spec-unit"
@@ -10721,7 +10721,7 @@ name|x_value
 operator|=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -10730,7 +10730,7 @@ name|y_value
 operator|=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|1
 argument_list|)
@@ -10739,7 +10739,7 @@ name|unit_value
 operator|=
 name|gimp_size_entry_get_unit
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 expr_stmt|;
 name|old_x_value
@@ -10748,7 +10748,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"old-x-value"
@@ -10760,7 +10760,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"old-y-value"
@@ -10772,7 +10772,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"old-unit-value"
@@ -10812,7 +10812,7 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 argument_list|,
 literal|"chainbutton"
@@ -11069,7 +11069,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_coordinates_notify_x (GObject * config,GParamSpec * param_spec,GimpSizeEntry * sizeentry)
+DECL|function|gimp_prop_coordinates_notify_x (GObject * config,GParamSpec * param_spec,GimpSizeEntry * entry)
 name|gimp_prop_coordinates_notify_x
 parameter_list|(
 name|GObject
@@ -11082,7 +11082,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 block|{
 name|gdouble
@@ -11141,7 +11141,7 @@ name|value
 operator|!=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|)
@@ -11149,7 +11149,7 @@ condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_coordinates_callback
 argument_list|,
@@ -11158,7 +11158,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|0
 argument_list|,
@@ -11167,7 +11167,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_coordinates_callback
 argument_list|,
@@ -11181,7 +11181,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_coordinates_notify_y (GObject * config,GParamSpec * param_spec,GimpSizeEntry * sizeentry)
+DECL|function|gimp_prop_coordinates_notify_y (GObject * config,GParamSpec * param_spec,GimpSizeEntry * entry)
 name|gimp_prop_coordinates_notify_y
 parameter_list|(
 name|GObject
@@ -11194,7 +11194,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 block|{
 name|gdouble
@@ -11253,7 +11253,7 @@ name|value
 operator|!=
 name|gimp_size_entry_get_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|1
 argument_list|)
@@ -11261,7 +11261,7 @@ condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_coordinates_callback
 argument_list|,
@@ -11270,7 +11270,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 literal|1
 argument_list|,
@@ -11279,7 +11279,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_coordinates_callback
 argument_list|,
@@ -11293,7 +11293,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_coordinates_notify_unit (GObject * config,GParamSpec * param_spec,GimpSizeEntry * sizeentry)
+DECL|function|gimp_prop_coordinates_notify_unit (GObject * config,GParamSpec * param_spec,GimpSizeEntry * entry)
 name|gimp_prop_coordinates_notify_unit
 parameter_list|(
 name|GObject
@@ -11306,7 +11306,7 @@ name|param_spec
 parameter_list|,
 name|GimpSizeEntry
 modifier|*
-name|sizeentry
+name|entry
 parameter_list|)
 block|{
 name|GimpUnit
@@ -11332,13 +11332,13 @@ name|value
 operator|!=
 name|gimp_size_entry_get_unit
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|)
 condition|)
 block|{
 name|g_signal_handlers_block_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_coordinates_callback
 argument_list|,
@@ -11347,14 +11347,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_unit
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
-name|sizeentry
+name|entry
 argument_list|,
 name|gimp_prop_coordinates_callback
 argument_list|,
