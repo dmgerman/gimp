@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad40b30103
+DECL|enum|__anon279496640103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +77,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad40b30203
+DECL|enum|__anon279496640203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ad40b30303
+DECL|enum|__anon279496640303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad40b30408
+DECL|struct|__anon279496640408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -1755,8 +1755,8 @@ comment|/**  * gimp_number_pair_entry_set_default_text:  * @entry:  A #GimpNumbe
 end_comment
 
 begin_function
-DECL|function|gimp_number_pair_entry_set_default_text (GimpNumberPairEntry * entry,const gchar * string)
 name|void
+DECL|function|gimp_number_pair_entry_set_default_text (GimpNumberPairEntry * entry,const gchar * string)
 name|gimp_number_pair_entry_set_default_text
 parameter_list|(
 name|GimpNumberPairEntry
@@ -1823,14 +1823,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  * @string: A string to be shown.  *  * Returns: the string manully set to be shown, or %NULL if values are  * shown in a normal fashion.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_number_pair_entry_get_default_text:  * @entry:  A #GimpNumberPairEntry widget.  *  * Returns: the string manully set to be shown, or %NULL if values are  *          shown in a normal fashion.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
-DECL|function|gimp_number_pair_entry_get_default_text (GimpNumberPairEntry * entry)
 specifier|const
 name|gchar
 modifier|*
+DECL|function|gimp_number_pair_entry_get_default_text (GimpNumberPairEntry * entry)
 name|gimp_number_pair_entry_get_default_text
 parameter_list|(
 name|GimpNumberPairEntry
