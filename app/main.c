@@ -1029,7 +1029,7 @@ block|,
 block|{
 literal|"gimprc"
 block|,
-literal|0
+literal|'g'
 block|,
 literal|0
 block|,
