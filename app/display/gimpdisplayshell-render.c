@@ -134,7 +134,7 @@ DECL|macro|GIMP_DISPLAY_ZOOM_FAST
 define|#
 directive|define
 name|GIMP_DISPLAY_ZOOM_FAST
-value|1<< 0
+value|(1<< 0)
 end_define
 
 begin_comment
@@ -147,7 +147,7 @@ DECL|macro|GIMP_DISPLAY_ZOOM_PIXEL_AA
 define|#
 directive|define
 name|GIMP_DISPLAY_ZOOM_PIXEL_AA
-value|1<< 1
+value|(1<< 1)
 end_define
 
 begin_comment
@@ -293,10 +293,6 @@ decl_stmt|;
 DECL|member|footprint_y
 name|gint
 name|footprint_y
-decl_stmt|;
-DECL|member|footarea
-name|gint
-name|footarea
 decl_stmt|;
 DECL|member|footshift_x
 name|gint
@@ -2816,18 +2812,6 @@ name|footshift_y
 operator|++
 expr_stmt|;
 block|}
-name|info
-operator|->
-name|footarea
-operator|=
-name|info
-operator|->
-name|footprint_x
-operator|*
-name|info
-operator|->
-name|footprint_y
-expr_stmt|;
 block|}
 end_function
 
@@ -2926,7 +2910,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|box_filter (const guint left_weight,const guint center_weight,const guint right_weight,const guint top_weight,const guint middle_weight,const guint bottom_weight,const guint sum,const guchar ** src,guchar * dest,const gint bpp)
+DECL|function|box_filter (const guint left_weight,const guint center_weight,const guint right_weight,const guint top_weight,const guint middle_weight,const guint bottom_weight,const guchar ** src,guchar * dest,const gint bpp)
 name|box_filter
 parameter_list|(
 specifier|const
@@ -2954,10 +2938,6 @@ name|guint
 name|bottom_weight
 parameter_list|,
 specifier|const
-name|guint
-name|sum
-parameter_list|,
-specifier|const
 name|guchar
 modifier|*
 modifier|*
@@ -2973,14 +2953,35 @@ name|gint
 name|bpp
 parameter_list|)
 block|{
+specifier|const
+name|guint
+name|sum
+init|=
+operator|(
+operator|(
+name|left_weight
+operator|+
+name|center_weight
+operator|+
+name|right_weight
+operator|)
+operator|*
+operator|(
+name|top_weight
+operator|+
+name|middle_weight
+operator|+
+name|bottom_weight
+operator|)
+operator|)
+operator|>>
+literal|8
+decl_stmt|;
 switch|switch
 condition|(
 name|bpp
 condition|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 case|case
 literal|4
 case|:
@@ -3186,15 +3187,14 @@ index|]
 operator|)
 operator|)
 decl_stmt|;
-name|dest
-index|[
-name|ALPHA
-index|]
-operator|=
+if|if
+condition|(
 name|a
-operator|/
-name|sum
-expr_stmt|;
+condition|)
+block|{
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -3202,17 +3202,12 @@ operator|=
 literal|0
 init|;
 name|i
-operator|<=
+operator|<
 name|ALPHA
 condition|;
 name|i
 operator|++
 control|)
-block|{
-if|if
-condition|(
-name|a
-condition|)
 block|{
 name|dest
 index|[
@@ -3357,6 +3352,25 @@ operator|&
 literal|0xff
 expr_stmt|;
 block|}
+name|dest
+index|[
+name|ALPHA
+index|]
+operator|=
+name|a
+operator|/
+name|sum
+expr_stmt|;
+block|}
+else|else
+block|{
+name|dest
+index|[
+name|ALPHA
+index|]
+operator|=
+literal|0
+expr_stmt|;
 block|}
 block|}
 undef|#
@@ -3371,7 +3385,7 @@ define|#
 directive|define
 name|ALPHA
 value|1
-comment|/* NOTE: this is a copy and paste of the code above, the ALPHA changes          * the behavior in all needed ways. */
+comment|/* NOTE: this is a copy and paste of the code above, ALPHA changes          *       the behavior in all needed ways.          */
 block|{
 name|guint
 name|factors
@@ -3569,15 +3583,14 @@ index|]
 operator|)
 operator|)
 decl_stmt|;
-name|dest
-index|[
-name|ALPHA
-index|]
-operator|=
+if|if
+condition|(
 name|a
-operator|/
-name|sum
-expr_stmt|;
+condition|)
+block|{
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -3585,17 +3598,12 @@ operator|=
 literal|0
 init|;
 name|i
-operator|<=
+operator|<
 name|ALPHA
 condition|;
 name|i
 operator|++
 control|)
-block|{
-if|if
-condition|(
-name|a
-condition|)
 block|{
 name|dest
 index|[
@@ -3740,6 +3748,25 @@ operator|&
 literal|0xff
 expr_stmt|;
 block|}
+name|dest
+index|[
+name|ALPHA
+index|]
+operator|=
+name|a
+operator|/
+name|sum
+expr_stmt|;
+block|}
+else|else
+block|{
+name|dest
+index|[
+name|ALPHA
+index|]
+operator|=
+literal|0
+expr_stmt|;
 block|}
 block|}
 undef|#
@@ -5096,10 +5123,6 @@ argument_list|,
 name|middle_weight
 argument_list|,
 name|bottom_weight
-argument_list|,
-name|info
-operator|->
-name|footarea
 argument_list|,
 name|src
 argument_list|,
@@ -7318,10 +7341,6 @@ argument_list|,
 name|middle_weight
 argument_list|,
 name|bottom_weight
-argument_list|,
-name|info
-operator|->
-name|footarea
 argument_list|,
 name|src
 argument_list|,
