@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781ceac0103
+DECL|enum|__anon275ef4ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1062,7 +1062,9 @@ name|UNDO_LEVELS_BLURB
 argument_list|,
 literal|0
 argument_list|,
-name|G_MAXINT
+literal|1
+operator|<<
+literal|20
 argument_list|,
 literal|5
 argument_list|,

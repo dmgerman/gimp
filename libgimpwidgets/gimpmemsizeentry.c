@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2937f0b60103
+DECL|enum|__anon298ad96c0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -694,7 +694,7 @@ operator|->
 name|spinbutton
 argument_list|)
 argument_list|,
-literal|10
+literal|7
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
