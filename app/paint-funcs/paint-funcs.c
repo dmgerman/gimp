@@ -5966,7 +5966,7 @@ specifier|const
 name|guchar
 name|mask_alpha
 init|=
-name|OPAQUE_OPACITY
+name|opacity
 decl_stmt|;
 while|while
 condition|(
