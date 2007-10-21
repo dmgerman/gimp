@@ -7681,6 +7681,7 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
+comment|/* hook the current list into return_val, so that it                      * inherits the set_safe_foreign()-protection.                      * May be removed when tinyscheme fixes the GC issue                      * with foreign functions */
 name|sc
 operator|->
 name|vptr
