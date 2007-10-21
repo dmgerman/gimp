@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb4b980108
+DECL|struct|__anon29fbb2e50108
 block|{
 DECL|member|image
 name|GimpImage
@@ -372,11 +372,22 @@ name|private
 operator|->
 name|context
 argument_list|,
+comment|/* Use Normal mode instead of Replace.                  * This is not quite correct but the dialog is somewhat                  * difficult to use otherwise.                  */
 literal|"paint-mode"
 argument_list|,
+operator|(
 name|undo
 operator|->
 name|paint_mode
+operator|==
+name|GIMP_REPLACE_MODE
+condition|?
+name|GIMP_NORMAL_MODE
+else|:
+name|undo
+operator|->
+name|paint_mode
+operator|)
 argument_list|,
 literal|"opacity"
 argument_list|,
