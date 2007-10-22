@@ -231,9 +231,13 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d371b0108
+DECL|struct|__anon2779cd150108
 block|{
-comment|/* const guint  hash; */
+DECL|member|hash
+specifier|const
+name|guint
+name|hash
+decl_stmt|;
 comment|/* hash of luminance/chrominance tables */
 DECL|member|lum_sum
 specifier|const
@@ -301,6 +305,8 @@ index|[]
 init|=
 block|{
 block|{
+literal|0x0a82648b
+block|,
 literal|64
 block|,
 literal|64
@@ -319,6 +325,8 @@ literal|100
 block|}
 block|,
 block|{
+literal|0x4d981764
+block|,
 literal|86
 block|,
 literal|115
@@ -337,6 +345,8 @@ literal|99
 block|}
 block|,
 block|{
+literal|0x62b71702
+block|,
 literal|151
 block|,
 literal|224
@@ -355,6 +365,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x29e095c5
+block|,
 literal|221
 block|,
 literal|333
@@ -373,6 +385,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0xb62c754a
+block|,
 literal|292
 block|,
 literal|443
@@ -391,6 +405,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x8e55c78a
+block|,
 literal|369
 block|,
 literal|558
@@ -409,6 +425,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x0664d770
+block|,
 literal|441
 block|,
 literal|668
@@ -427,6 +445,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x59e5c5bc
+block|,
 literal|518
 block|,
 literal|779
@@ -445,6 +465,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0xd6f26606
+block|,
 literal|592
 block|,
 literal|891
@@ -463,6 +485,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0x8aa986ad
+block|,
 literal|667
 block|,
 literal|999
@@ -481,6 +505,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -499,6 +525,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x75de9350
+block|,
 literal|814
 block|,
 literal|1223
@@ -517,6 +545,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0x88fdf223
+block|,
 literal|884
 block|,
 literal|1332
@@ -535,6 +565,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0xf40a6a50
+block|,
 literal|961
 block|,
 literal|1444
@@ -553,6 +585,8 @@ literal|87
 block|}
 block|,
 block|{
+literal|0xe9f2c235
+block|,
 literal|1031
 block|,
 literal|1555
@@ -571,6 +605,8 @@ literal|86
 block|}
 block|,
 block|{
+literal|0x82683892
+block|,
 literal|1109
 block|,
 literal|1666
@@ -589,6 +625,8 @@ literal|85
 block|}
 block|,
 block|{
+literal|0xb1aecce8
+block|,
 literal|1179
 block|,
 literal|1778
@@ -607,6 +645,8 @@ literal|84
 block|}
 block|,
 block|{
+literal|0x83375efe
+block|,
 literal|1251
 block|,
 literal|1888
@@ -625,6 +665,8 @@ literal|83
 block|}
 block|,
 block|{
+literal|0x1e99f479
+block|,
 literal|1326
 block|,
 literal|2000
@@ -643,6 +685,8 @@ literal|82
 block|}
 block|,
 block|{
+literal|0x1a02d360
+block|,
 literal|1398
 block|,
 literal|2111
@@ -661,6 +705,8 @@ literal|81
 block|}
 block|,
 block|{
+literal|0x96129a0d
+block|,
 literal|1477
 block|,
 literal|2221
@@ -679,6 +725,8 @@ literal|80
 block|}
 block|,
 block|{
+literal|0x64d4144b
+block|,
 literal|1552
 block|,
 literal|2336
@@ -697,6 +745,8 @@ literal|79
 block|}
 block|,
 block|{
+literal|0x48a344ac
+block|,
 literal|1620
 block|,
 literal|2445
@@ -715,6 +765,8 @@ literal|78
 block|}
 block|,
 block|{
+literal|0x16e820e3
+block|,
 literal|1692
 block|,
 literal|2556
@@ -733,6 +785,8 @@ literal|77
 block|}
 block|,
 block|{
+literal|0x246b2e95
+block|,
 literal|1773
 block|,
 literal|2669
@@ -751,6 +805,8 @@ literal|76
 block|}
 block|,
 block|{
+literal|0x10b035e9
+block|,
 literal|1858
 block|,
 literal|2780
@@ -769,6 +825,8 @@ literal|75
 block|}
 block|,
 block|{
+literal|0xd5c653da
+block|,
 literal|1915
 block|,
 literal|2836
@@ -787,6 +845,8 @@ literal|74
 block|}
 block|,
 block|{
+literal|0xe349618c
+block|,
 literal|1996
 block|,
 literal|2949
@@ -805,6 +865,8 @@ literal|73
 block|}
 block|,
 block|{
+literal|0xb18e3dc3
+block|,
 literal|2068
 block|,
 literal|3060
@@ -823,6 +885,8 @@ literal|72
 block|}
 block|,
 block|{
+literal|0x955d6e24
+block|,
 literal|2136
 block|,
 literal|3169
@@ -841,6 +905,8 @@ literal|71
 block|}
 block|,
 block|{
+literal|0x641ee862
+block|,
 literal|2211
 block|,
 literal|3284
@@ -859,6 +925,8 @@ literal|70
 block|}
 block|,
 block|{
+literal|0xe02eaf0f
+block|,
 literal|2290
 block|,
 literal|3394
@@ -877,6 +945,8 @@ literal|69
 block|}
 block|,
 block|{
+literal|0xdb978df6
+block|,
 literal|2362
 block|,
 literal|3505
@@ -895,6 +965,8 @@ literal|68
 block|}
 block|,
 block|{
+literal|0x76fa2371
+block|,
 literal|2437
 block|,
 literal|3617
@@ -913,6 +985,8 @@ literal|67
 block|}
 block|,
 block|{
+literal|0x4882b587
+block|,
 literal|2509
 block|,
 literal|3727
@@ -931,6 +1005,8 @@ literal|66
 block|}
 block|,
 block|{
+literal|0x25556ae1
+block|,
 literal|2583
 block|,
 literal|3839
@@ -949,6 +1025,8 @@ literal|65
 block|}
 block|,
 block|{
+literal|0x103ec03a
+block|,
 literal|2657
 block|,
 literal|3950
@@ -967,6 +1045,8 @@ literal|64
 block|}
 block|,
 block|{
+literal|0x0627181f
+block|,
 literal|2727
 block|,
 literal|4061
@@ -985,6 +1065,8 @@ literal|63
 block|}
 block|,
 block|{
+literal|0x7133904c
+block|,
 literal|2804
 block|,
 literal|4173
@@ -1003,6 +1085,8 @@ literal|62
 block|}
 block|,
 block|{
+literal|0x8452ef1f
+block|,
 literal|2874
 block|,
 literal|4282
@@ -1021,6 +1105,8 @@ literal|61
 block|}
 block|,
 block|{
+literal|0xe2b013be
+block|,
 literal|2952
 block|,
 literal|4395
@@ -1039,6 +1125,8 @@ literal|60
 block|}
 block|,
 block|{
+literal|0x6f87fbc2
+block|,
 literal|3021
 block|,
 literal|4506
@@ -1057,6 +1145,8 @@ literal|59
 block|}
 block|,
 block|{
+literal|0x233f1c69
+block|,
 literal|3096
 block|,
 literal|4614
@@ -1075,6 +1165,8 @@ literal|58
 block|}
 block|,
 block|{
+literal|0xa04bbcb3
+block|,
 literal|3170
 block|,
 literal|4726
@@ -1093,6 +1185,8 @@ literal|57
 block|}
 block|,
 block|{
+literal|0xf3ccaaff
+block|,
 literal|3247
 block|,
 literal|4837
@@ -1111,6 +1205,8 @@ literal|56
 block|}
 block|,
 block|{
+literal|0x1967dbe9
+block|,
 literal|3323
 block|,
 literal|4947
@@ -1129,6 +1225,8 @@ literal|55
 block|}
 block|,
 block|{
+literal|0x44050d25
+block|,
 literal|3396
 block|,
 literal|5062
@@ -1147,6 +1245,8 @@ literal|54
 block|}
 block|,
 block|{
+literal|0xd050ecaa
+block|,
 literal|3467
 block|,
 literal|5172
@@ -1165,6 +1265,8 @@ literal|53
 block|}
 block|,
 block|{
+literal|0x9e99f8f1
+block|,
 literal|3541
 block|,
 literal|5281
@@ -1183,6 +1285,8 @@ literal|52
 block|}
 block|,
 block|{
+literal|0xdf2423f4
+block|,
 literal|3621
 block|,
 literal|5396
@@ -1201,6 +1305,8 @@ literal|51
 block|}
 block|,
 block|{
+literal|0xe0f48a64
+block|,
 literal|3688
 block|,
 literal|5505
@@ -1219,6 +1325,8 @@ literal|50
 block|}
 block|,
 block|{
+literal|0xe2c4f0d4
+block|,
 literal|3755
 block|,
 literal|5614
@@ -1237,6 +1345,8 @@ literal|49
 block|}
 block|,
 block|{
+literal|0x234f1bd7
+block|,
 literal|3835
 block|,
 literal|5729
@@ -1255,6 +1365,8 @@ literal|48
 block|}
 block|,
 block|{
+literal|0xf198281e
+block|,
 literal|3909
 block|,
 literal|5838
@@ -1273,6 +1385,8 @@ literal|47
 block|}
 block|,
 block|{
+literal|0x7de407a3
+block|,
 literal|3980
 block|,
 literal|5948
@@ -1291,6 +1405,8 @@ literal|46
 block|}
 block|,
 block|{
+literal|0xb3aa597b
+block|,
 literal|4092
 block|,
 literal|6116
@@ -1309,6 +1425,8 @@ literal|45
 block|}
 block|,
 block|{
+literal|0x32b48093
+block|,
 literal|4166
 block|,
 literal|6226
@@ -1327,6 +1445,8 @@ literal|44
 block|}
 block|,
 block|{
+literal|0x9ea9f85f
+block|,
 literal|4280
 block|,
 literal|6396
@@ -1345,6 +1465,8 @@ literal|43
 block|}
 block|,
 block|{
+literal|0x335d6006
+block|,
 literal|4393
 block|,
 literal|6562
@@ -1363,6 +1485,8 @@ literal|42
 block|}
 block|,
 block|{
+literal|0xa727ea4a
+block|,
 literal|4463
 block|,
 literal|6672
@@ -1381,6 +1505,8 @@ literal|41
 block|}
 block|,
 block|{
+literal|0x1889cfc4
+block|,
 literal|4616
 block|,
 literal|6897
@@ -1399,6 +1525,8 @@ literal|40
 block|}
 block|,
 block|{
+literal|0xb1aa548e
+block|,
 literal|4719
 block|,
 literal|7060
@@ -1417,6 +1545,8 @@ literal|39
 block|}
 block|,
 block|{
+literal|0x99bebdd3
+block|,
 literal|4829
 block|,
 literal|7227
@@ -1435,6 +1565,8 @@ literal|38
 block|}
 block|,
 block|{
+literal|0xf728d062
+block|,
 literal|4976
 block|,
 literal|7447
@@ -1453,6 +1585,8 @@ literal|37
 block|}
 block|,
 block|{
+literal|0xe1ba65b9
+block|,
 literal|5086
 block|,
 literal|7616
@@ -1471,6 +1605,8 @@ literal|36
 block|}
 block|,
 block|{
+literal|0x2c8ba6a4
+block|,
 literal|5240
 block|,
 literal|7841
@@ -1489,6 +1625,8 @@ literal|35
 block|}
 block|,
 block|{
+literal|0x03f7963a
+block|,
 literal|5421
 block|,
 literal|8114
@@ -1507,6 +1645,8 @@ literal|34
 block|}
 block|,
 block|{
+literal|0xa19bed1e
+block|,
 literal|5571
 block|,
 literal|8288
@@ -1525,6 +1665,8 @@ literal|33
 block|}
 block|,
 block|{
+literal|0x7945d01c
+block|,
 literal|5756
 block|,
 literal|8565
@@ -1543,6 +1685,8 @@ literal|32
 block|}
 block|,
 block|{
+literal|0xcc36df1a
+block|,
 literal|5939
 block|,
 literal|8844
@@ -1561,6 +1705,8 @@ literal|31
 block|}
 block|,
 block|{
+literal|0x3eb1b5ca
+block|,
 literal|6125
 block|,
 literal|9122
@@ -1579,6 +1725,8 @@ literal|30
 block|}
 block|,
 block|{
+literal|0xd7f65293
+block|,
 literal|6345
 block|,
 literal|9455
@@ -1597,6 +1745,8 @@ literal|29
 block|}
 block|,
 block|{
+literal|0x4c0a8178
+block|,
 literal|6562
 block|,
 literal|9787
@@ -1615,6 +1765,8 @@ literal|28
 block|}
 block|,
 block|{
+literal|0x8281d1a1
+block|,
 literal|6823
 block|,
 literal|10175
@@ -1633,6 +1785,8 @@ literal|27
 block|}
 block|,
 block|{
+literal|0x0bbc9f7e
+block|,
 literal|7084
 block|,
 literal|10567
@@ -1651,6 +1805,8 @@ literal|26
 block|}
 block|,
 block|{
+literal|0xa8ac1cbd
+block|,
 literal|7376
 block|,
 literal|11010
@@ -1669,6 +1825,8 @@ literal|25
 block|}
 block|,
 block|{
+literal|0x459b99fc
+block|,
 literal|7668
 block|,
 literal|11453
@@ -1687,6 +1845,8 @@ literal|24
 block|}
 block|,
 block|{
+literal|0xda09c178
+block|,
 literal|7995
 block|,
 literal|11954
@@ -1705,6 +1865,8 @@ literal|23
 block|}
 block|,
 block|{
+literal|0x1c651f15
+block|,
 literal|8331
 block|,
 literal|12511
@@ -1723,6 +1885,8 @@ literal|22
 block|}
 block|,
 block|{
+literal|0x59025244
+block|,
 literal|8680
 block|,
 literal|13121
@@ -1741,6 +1905,8 @@ literal|21
 block|}
 block|,
 block|{
+literal|0xa130f919
+block|,
 literal|9056
 block|,
 literal|13790
@@ -1759,6 +1925,8 @@ literal|20
 block|}
 block|,
 block|{
+literal|0x109756cf
+block|,
 literal|9368
 block|,
 literal|14204
@@ -1777,6 +1945,8 @@ literal|19
 block|}
 block|,
 block|{
+literal|0xe929cab5
+block|,
 literal|9679
 block|,
 literal|14267
@@ -1795,6 +1965,8 @@ literal|18
 block|}
 block|,
 block|{
+literal|0xcddca370
+block|,
 literal|10027
 block|,
 literal|14346
@@ -1813,6 +1985,8 @@ literal|17
 block|}
 block|,
 block|{
+literal|0xd5fc76c0
+block|,
 literal|10360
 block|,
 literal|14429
@@ -1831,6 +2005,8 @@ literal|16
 block|}
 block|,
 block|{
+literal|0x533a1a03
+block|,
 literal|10714
 block|,
 literal|14526
@@ -1849,6 +2025,8 @@ literal|15
 block|}
 block|,
 block|{
+literal|0x0d8adaff
+block|,
 literal|11081
 block|,
 literal|14635
@@ -1867,6 +2045,8 @@ literal|14
 block|}
 block|,
 block|{
+literal|0x0d2ee95d
+block|,
 literal|11456
 block|,
 literal|14754
@@ -1885,6 +2065,8 @@ literal|13
 block|}
 block|,
 block|{
+literal|0x3a1d59a0
+block|,
 literal|11861
 block|,
 literal|14864
@@ -1903,6 +2085,8 @@ literal|12
 block|}
 block|,
 block|{
+literal|0x66555d04
+block|,
 literal|12240
 block|,
 literal|14985
@@ -1921,6 +2105,8 @@ literal|11
 block|}
 block|,
 block|{
+literal|0x7fa051b1
+block|,
 literal|12560
 block|,
 literal|15110
@@ -1939,6 +2125,8 @@ literal|10
 block|}
 block|,
 block|{
+literal|0x7b668ca3
+block|,
 literal|12859
 block|,
 literal|15245
@@ -1957,6 +2145,8 @@ literal|9
 block|}
 block|,
 block|{
+literal|0xb44d7082
+block|,
 literal|13230
 block|,
 literal|15369
@@ -1975,6 +2165,8 @@ literal|8
 block|}
 block|,
 block|{
+literal|0xe838d325
+block|,
 literal|13623
 block|,
 literal|15523
@@ -1993,6 +2185,8 @@ literal|7
 block|}
 block|,
 block|{
+literal|0xb6f58977
+block|,
 literal|14073
 block|,
 literal|15731
@@ -2011,6 +2205,8 @@ literal|6
 block|}
 block|,
 block|{
+literal|0xfd3e9fc4
+block|,
 literal|14655
 block|,
 literal|16010
@@ -2029,6 +2225,8 @@ literal|5
 block|}
 block|,
 block|{
+literal|0x7782b922
+block|,
 literal|15277
 block|,
 literal|16218
@@ -2047,6 +2245,8 @@ literal|4
 block|}
 block|,
 block|{
+literal|0x5a03ac45
+block|,
 literal|15946
 block|,
 literal|16320
@@ -2065,6 +2265,8 @@ literal|3
 block|}
 block|,
 block|{
+literal|0xe0afaa36
+block|,
 literal|16315
 block|,
 literal|16320
@@ -2083,6 +2285,8 @@ literal|2
 block|}
 block|,
 block|{
+literal|0x6d640b8b
+block|,
 literal|16320
 block|,
 literal|16320
@@ -2101,6 +2305,8 @@ literal|1
 block|}
 block|,
 block|{
+literal|0x6d640b8b
+block|,
 literal|16320
 block|,
 literal|16320
@@ -2119,6 +2325,8 @@ literal|1
 block|}
 block|,
 block|{
+literal|0x4b1d5895
+block|,
 literal|8008
 block|,
 literal|11954
@@ -2138,6 +2346,8 @@ literal|22
 block|}
 block|,
 block|{
+literal|0x36c32c2c
+block|,
 literal|8370
 block|,
 literal|12511
@@ -2157,6 +2367,8 @@ literal|21
 block|}
 block|,
 block|{
+literal|0xa971f812
+block|,
 literal|8774
 block|,
 literal|13121
@@ -2176,6 +2388,8 @@ literal|20
 block|}
 block|,
 block|{
+literal|0xa01f5a9b
+block|,
 literal|9234
 block|,
 literal|13790
@@ -2195,6 +2409,8 @@ literal|19
 block|}
 block|,
 block|{
+literal|0x0e45ab9a
+block|,
 literal|9700
 block|,
 literal|14459
@@ -2214,6 +2430,8 @@ literal|17
 block|}
 block|,
 block|{
+literal|0x5e654320
+block|,
 literal|10209
 block|,
 literal|15236
@@ -2233,6 +2451,8 @@ literal|14
 block|}
 block|,
 block|{
+literal|0x5fc0115c
+block|,
 literal|10843
 block|,
 literal|16182
@@ -2252,6 +2472,8 @@ literal|11
 block|}
 block|,
 block|{
+literal|0x5d8b8e7b
+block|,
 literal|11505
 block|,
 literal|17183
@@ -2271,6 +2493,8 @@ literal|7
 block|}
 block|,
 block|{
+literal|0x63f8b8c1
+block|,
 literal|12279
 block|,
 literal|18351
@@ -2290,6 +2514,8 @@ literal|5
 block|}
 block|,
 block|{
+literal|0x675ecd7a
+block|,
 literal|13166
 block|,
 literal|19633
@@ -2308,6 +2534,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x7a65d374
+block|,
 literal|14160
 block|,
 literal|21129
@@ -2326,6 +2554,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0xf5d0af6a
+block|,
 literal|15344
 block|,
 literal|22911
@@ -2344,6 +2574,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x0227aaf0
+block|,
 literal|16748
 block|,
 literal|24969
@@ -2362,6 +2594,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0xffd2d3c8
+block|,
 literal|18440
 block|,
 literal|27525
@@ -2380,6 +2614,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x27f48623
+block|,
 literal|20471
 block|,
 literal|30529
@@ -2398,6 +2634,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0xff1fab81
+block|,
 literal|23056
 block|,
 literal|34422
@@ -2416,6 +2654,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0xcfeac62b
+block|,
 literal|26334
 block|,
 literal|39314
@@ -2434,6 +2674,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x4a8e947e
+block|,
 literal|30719
 block|,
 literal|45876
@@ -2452,6 +2694,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0xe668af85
+block|,
 literal|36880
 block|,
 literal|55050
@@ -2470,6 +2714,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x6d4b1215
+block|,
 literal|46114
 block|,
 literal|68840
@@ -2488,6 +2734,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0xf2734901
+block|,
 literal|61445
 block|,
 literal|91697
@@ -2506,6 +2754,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x9a2a42bc
+block|,
 literal|92200
 block|,
 literal|137625
@@ -2524,6 +2774,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x1b178d6d
+block|,
 literal|184400
 block|,
 literal|275250
@@ -2542,6 +2794,8 @@ literal|0
 block|}
 block|,
 block|{
+literal|0x1b178d6d
+block|,
 literal|184400
 block|,
 literal|275250
@@ -2561,6 +2815,8 @@ block|}
 block|,
 comment|/* FIXME: the following entries are incomplete and need to be verified */
 block|{
+literal|0x31258383
+block|,
 literal|319
 block|,
 literal|665
@@ -2581,6 +2837,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x91d018a3
+block|,
 literal|436
 block|,
 literal|996
@@ -2601,6 +2859,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0x954ee70e
+block|,
 literal|664
 block|,
 literal|1499
@@ -2621,6 +2881,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0xe351bb55
+block|,
 literal|1590
 block|,
 literal|3556
@@ -2641,6 +2903,8 @@ literal|71
 block|}
 block|,
 block|{
+literal|0x5a81e2c0
+block|,
 literal|95
 block|,
 literal|166
@@ -2660,6 +2924,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0xcd0d41ae
+block|,
 literal|232
 block|,
 literal|443
@@ -2679,6 +2945,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x1b141cb3
+block|,
 literal|406
 block|,
 literal|722
@@ -2698,6 +2966,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0xc84c0187
+block|,
 literal|539
 block|,
 literal|801
@@ -2717,6 +2987,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0x1e822409
+block|,
 literal|649
 block|,
 literal|853
@@ -2736,6 +3008,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0x3104202b
+block|,
 literal|786
 block|,
 literal|926
@@ -2755,6 +3029,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0xcd21f666
+block|,
 literal|717
 block|,
 literal|782
@@ -2774,6 +3050,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0x1b74e018
+block|,
 literal|844
 block|,
 literal|849
@@ -2793,6 +3071,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0xde39ed89
+block|,
 literal|962
 block|,
 literal|892
@@ -2812,6 +3092,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0xbdef8414
+block|,
 literal|1068
 block|,
 literal|941
@@ -2831,6 +3113,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0xfedf6432
+block|,
 literal|1281
 block|,
 literal|998
@@ -2850,6 +3134,8 @@ literal|87
 block|}
 block|,
 block|{
+literal|0x5d6afd92
+block|,
 literal|1484
 block|,
 literal|1083
@@ -2869,6 +3155,8 @@ literal|86
 block|}
 block|,
 block|{
+literal|0x4c7d2f7d
+block|,
 literal|1582
 block|,
 literal|1108
@@ -2888,6 +3176,8 @@ literal|85
 block|}
 block|,
 block|{
+literal|0x68e798b2
+block|,
 literal|95
 block|,
 literal|168
@@ -2907,6 +3197,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x9f3456f2
+block|,
 literal|234
 block|,
 literal|445
@@ -2926,6 +3218,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0xda807dd5
+block|,
 literal|406
 block|,
 literal|724
@@ -2945,6 +3239,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0xf70a37ce
+block|,
 literal|646
 block|,
 literal|1149
@@ -2964,6 +3260,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0xf36979d2
+block|,
 literal|974
 block|,
 literal|1769
@@ -2983,6 +3281,8 @@ literal|85
 block|}
 block|,
 block|{
+literal|0x4966f484
+block|,
 literal|1221
 block|,
 literal|1348
@@ -3002,6 +3302,8 @@ literal|86
 block|}
 block|,
 block|{
+literal|0xaddf6d45
+block|,
 literal|1821
 block|,
 literal|1997
@@ -3021,6 +3323,8 @@ literal|79
 block|}
 block|,
 block|{
+literal|0xeffa362a
+block|,
 literal|2223
 block|,
 literal|2464
@@ -3040,6 +3344,8 @@ literal|74
 block|}
 block|,
 block|{
+literal|0x7aa980c1
+block|,
 literal|2575
 block|,
 literal|2903
@@ -3059,6 +3365,8 @@ literal|70
 block|}
 block|,
 block|{
+literal|0x489e344f
+block|,
 literal|3514
 block|,
 literal|3738
@@ -3078,6 +3386,8 @@ literal|60
 block|}
 block|,
 block|{
+literal|0x1a2cffe0
+block|,
 literal|535
 block|,
 literal|750
@@ -3097,6 +3407,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x1e96d5d3
+block|,
 literal|109
 block|,
 literal|171
@@ -3116,6 +3428,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x6771042c
+block|,
 literal|303
 block|,
 literal|466
@@ -3135,6 +3449,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xd4553f25
+block|,
 literal|668
 block|,
 literal|830
@@ -3154,6 +3470,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0xd3b24cb4
+block|,
 literal|794
 block|,
 literal|895
@@ -3173,6 +3491,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x4ad5990c
+block|,
 literal|971
 block|,
 literal|950
@@ -3192,6 +3512,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0x4293dfde
+block|,
 literal|884
 block|,
 literal|831
@@ -3211,6 +3533,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0xba0212ec
+block|,
 literal|1032
 block|,
 literal|889
@@ -3230,6 +3554,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0x4b50947d
+block|,
 literal|1126
 block|,
 literal|940
@@ -3249,6 +3575,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0xad0f8e5c
+block|,
 literal|1216
 block|,
 literal|977
@@ -3268,6 +3596,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0x560b5f0c
+block|,
 literal|339
 block|,
 literal|670
@@ -3287,6 +3617,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x9539b14b
+block|,
 literal|427
 block|,
 literal|613
@@ -3306,6 +3638,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x841f2655
+block|,
 literal|525
 block|,
 literal|941
@@ -3325,6 +3659,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0xaa2161e2
+block|,
 literal|803
 block|,
 literal|1428
@@ -3344,6 +3680,8 @@ literal|87
 block|}
 block|,
 block|{
+literal|0x743feb84
+block|,
 literal|1085
 block|,
 literal|1996
@@ -3363,6 +3701,8 @@ literal|83
 block|}
 block|,
 block|{
+literal|0xe9f14743
+block|,
 literal|1156
 block|,
 literal|2116
@@ -3382,6 +3722,8 @@ literal|82
 block|}
 block|,
 block|{
+literal|0x1003c8fb
+block|,
 literal|1175
 block|,
 literal|2169
@@ -3401,6 +3743,8 @@ literal|81
 block|}
 block|,
 block|{
+literal|0xd7804c45
+block|,
 literal|2272
 block|,
 literal|2522
@@ -3420,6 +3764,8 @@ literal|73
 block|}
 block|,
 block|{
+literal|0xcb5aa8ad
+block|,
 literal|2515
 block|,
 literal|2831
@@ -3439,6 +3785,8 @@ literal|70
 block|}
 block|,
 block|{
+literal|0x956d2a00
+block|,
 literal|3822
 block|,
 literal|3975
@@ -3458,6 +3806,8 @@ literal|57
 block|}
 block|,
 block|{
+literal|0xba53e0c5
+block|,
 literal|4028
 block|,
 literal|4174
@@ -3477,6 +3827,8 @@ literal|55
 block|}
 block|,
 block|{
+literal|0x13c0c8bc
+block|,
 literal|513
 block|,
 literal|0
@@ -3496,6 +3848,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x3fad5c43
+block|,
 literal|255
 block|,
 literal|393
@@ -3515,6 +3869,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x6529bd03
+block|,
 literal|513
 block|,
 literal|775
@@ -3534,6 +3890,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x354e610a
+block|,
 literal|543
 block|,
 literal|784
@@ -3554,6 +3912,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0xd596795e
+block|,
 literal|361
 block|,
 literal|506
@@ -3573,6 +3933,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x74da8ba7
+block|,
 literal|1511
 block|,
 literal|2229
@@ -3592,6 +3954,8 @@ literal|79
 block|}
 block|,
 block|{
+literal|0x6391ca2b
+block|,
 literal|188
 block|,
 literal|276
@@ -3612,6 +3976,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0x00474eb0
+block|,
 literal|708
 block|,
 literal|1057
@@ -3632,6 +3998,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x535174bd
+block|,
 literal|533
 block|,
 literal|1325
@@ -3652,6 +4020,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0xb7be6b97
+block|,
 literal|192
 block|,
 literal|556
@@ -3672,6 +4042,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xb5b5c61d
+block|,
 literal|533
 block|,
 literal|1325
@@ -3692,6 +4064,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0xa7a2c471
+block|,
 literal|288
 block|,
 literal|443
@@ -3712,6 +4086,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x8db061f0
+block|,
 literal|389
 block|,
 literal|560
@@ -3732,6 +4108,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0xbb7b97ba
+block|,
 literal|515
 block|,
 literal|774
@@ -3752,6 +4130,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x71bcdf92
+block|,
 literal|167
 block|,
 literal|240
@@ -3772,6 +4152,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0x71bcdf92
+block|,
 literal|167
 block|,
 literal|240
@@ -3792,6 +4174,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0x9542cc81
+block|,
 literal|1970
 block|,
 literal|1970
@@ -3812,6 +4196,8 @@ literal|78
 block|}
 block|,
 block|{
+literal|0xdb7b71d8
+block|,
 literal|369
 block|,
 literal|558
@@ -3831,6 +4217,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x82e461f8
+block|,
 literal|566
 block|,
 literal|583
@@ -3851,6 +4239,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -3870,6 +4260,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -3889,6 +4281,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -3908,6 +4302,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -3927,6 +4323,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x3841f91b
+block|,
 literal|736
 block|,
 literal|0
@@ -3945,6 +4343,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0xe0f48a64
+block|,
 literal|3688
 block|,
 literal|5505
@@ -3964,6 +4364,8 @@ literal|50
 block|}
 block|,
 block|{
+literal|0xe0f48a64
+block|,
 literal|3688
 block|,
 literal|5505
@@ -3983,6 +4385,8 @@ literal|50
 block|}
 block|,
 block|{
+literal|0xe0f48a64
+block|,
 literal|3688
 block|,
 literal|5505
@@ -4002,6 +4406,8 @@ literal|50
 block|}
 block|,
 block|{
+literal|0x9ebccf53
+block|,
 literal|3688
 block|,
 literal|0
@@ -4020,6 +4426,8 @@ literal|50
 block|}
 block|,
 block|{
+literal|0xa130f919
+block|,
 literal|9056
 block|,
 literal|13790
@@ -4039,6 +4447,8 @@ literal|20
 block|}
 block|,
 block|{
+literal|0xa130f919
+block|,
 literal|9056
 block|,
 literal|13790
@@ -4058,6 +4468,8 @@ literal|20
 block|}
 block|,
 block|{
+literal|0xa130f919
+block|,
 literal|9056
 block|,
 literal|13790
@@ -4077,6 +4489,8 @@ literal|20
 block|}
 block|,
 block|{
+literal|0x34216b8b
+block|,
 literal|9056
 block|,
 literal|0
@@ -4095,6 +4509,8 @@ literal|20
 block|}
 block|,
 block|{
+literal|0x403b528f
+block|,
 literal|161
 block|,
 literal|179
@@ -4115,6 +4531,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x8550a881
+block|,
 literal|711
 block|,
 literal|1055
@@ -4135,6 +4553,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x98fb09fc
+block|,
 literal|1079
 block|,
 literal|1610
@@ -4155,6 +4575,8 @@ literal|85
 block|}
 block|,
 block|{
+literal|0xfbb88fb8
+block|,
 literal|2031
 block|,
 literal|3054
@@ -4175,6 +4597,8 @@ literal|72
 block|}
 block|,
 block|{
+literal|0x5fa57f78
+block|,
 literal|4835
 block|,
 literal|7226
@@ -4195,6 +4619,8 @@ literal|37
 block|}
 block|,
 block|{
+literal|0x85b97881
+block|,
 literal|8199
 block|,
 literal|12287
@@ -4215,6 +4641,8 @@ literal|22
 block|}
 block|,
 block|{
+literal|0xd3cd4ad0
+block|,
 literal|96
 block|,
 literal|117
@@ -4235,6 +4663,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x29e095c5
+block|,
 literal|221
 block|,
 literal|333
@@ -4254,6 +4684,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0xee344795
+block|,
 literal|582
 block|,
 literal|836
@@ -4274,6 +4706,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0x991408d7
+block|,
 literal|433
 block|,
 literal|667
@@ -4294,6 +4728,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x10b035e9
+block|,
 literal|1858
 block|,
 literal|2780
@@ -4312,6 +4748,8 @@ literal|75
 block|}
 block|,
 block|{
+literal|0x20fcfcb8
+block|,
 literal|116
 block|,
 literal|169
@@ -4332,6 +4770,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x2530fec2
+block|,
 literal|218
 block|,
 literal|333
@@ -4352,6 +4792,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0xe5dbee70
+block|,
 literal|616
 block|,
 literal|941
@@ -4372,6 +4814,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0x0e082d61
+block|,
 literal|671
 block|,
 literal|999
@@ -4392,6 +4836,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0xcc6c9703
+block|,
 literal|127
 block|,
 literal|169
@@ -4412,6 +4858,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x8cdfa365
+block|,
 literal|302
 block|,
 literal|444
@@ -4432,6 +4880,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x23246639
+block|,
 literal|315
 block|,
 literal|499
@@ -4452,6 +4902,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x978378a8
+block|,
 literal|329
 block|,
 literal|500
@@ -4472,6 +4924,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x748a8379
+block|,
 literal|346
 block|,
 literal|500
@@ -4492,6 +4946,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xa85255cd
+block|,
 literal|372
 block|,
 literal|558
@@ -4512,6 +4968,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x016406e0
+block|,
 literal|389
 block|,
 literal|560
@@ -4532,6 +4990,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0xda3a50f1
+block|,
 literal|419
 block|,
 literal|611
@@ -4552,6 +5012,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0xd8e45108
+block|,
 literal|449
 block|,
 literal|668
@@ -4572,6 +5034,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x8a62bf3c
+block|,
 literal|506
 block|,
 literal|775
@@ -4592,6 +5056,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0xc3108c99
+block|,
 literal|529
 block|,
 literal|781
@@ -4612,6 +5078,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0xeabc51a5
+block|,
 literal|261
 block|,
 literal|389
@@ -4632,6 +5100,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x0cddf617
+block|,
 literal|345
 block|,
 literal|499
@@ -4652,6 +5122,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x2b3b6401
+block|,
 literal|855
 block|,
 literal|1279
@@ -4672,6 +5144,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0x5d1ca944
+block|,
 literal|667
 block|,
 literal|999
@@ -4691,6 +5165,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0xabcbdc47
+block|,
 literal|736
 block|,
 literal|1110
@@ -4710,6 +5186,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x10b2ad77
+block|,
 literal|884
 block|,
 literal|1332
@@ -4729,6 +5207,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0x0a82648b
+block|,
 literal|64
 block|,
 literal|64
@@ -4748,6 +5228,8 @@ literal|100
 block|}
 block|,
 block|{
+literal|0xb091eaf2
+block|,
 literal|779
 block|,
 literal|1164
@@ -4768,6 +5250,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0x1a856066
+block|,
 literal|1697
 block|,
 literal|2554
@@ -4788,6 +5272,8 @@ literal|76
 block|}
 block|,
 block|{
+literal|0xdf0774bd
+block|,
 literal|2746
 block|,
 literal|5112
@@ -4808,6 +5294,8 @@ literal|57
 block|}
 block|,
 block|{
+literal|0xe2fd6fb9
+block|,
 literal|8024
 block|,
 literal|12006
@@ -4828,6 +5316,8 @@ literal|22
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -4847,6 +5337,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x96129a0d
+block|,
 literal|1477
 block|,
 literal|2221
@@ -4866,6 +5358,8 @@ literal|80
 block|}
 block|,
 block|{
+literal|0x824f84b9
+block|,
 literal|437
 block|,
 literal|617
@@ -4886,6 +5380,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x1b050d58
+block|,
 literal|447
 block|,
 literal|670
@@ -4906,6 +5402,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x1b050d58
+block|,
 literal|447
 block|,
 literal|670
@@ -4926,6 +5424,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x68058c37
+block|,
 literal|814
 block|,
 literal|1223
@@ -4945,6 +5445,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0x10b2ad77
+block|,
 literal|884
 block|,
 literal|1332
@@ -4964,6 +5466,8 @@ literal|88
 block|}
 block|,
 block|{
+literal|0x0f5fa4cb
+block|,
 literal|1552
 block|,
 literal|2336
@@ -4983,6 +5487,8 @@ literal|79
 block|}
 block|,
 block|{
+literal|0xf51554a8
+block|,
 literal|261
 block|,
 literal|392
@@ -5003,6 +5509,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0xf01efe6e
+block|,
 literal|251
 block|,
 literal|392
@@ -5023,6 +5531,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x08064360
+block|,
 literal|280
 block|,
 literal|445
@@ -5043,6 +5553,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x05831bbb
+block|,
 literal|304
 block|,
 literal|448
@@ -5063,6 +5575,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xe6c08bea
+block|,
 literal|316
 block|,
 literal|499
@@ -5083,6 +5597,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xcb5f5f7d
+block|,
 literal|332
 block|,
 literal|550
@@ -5103,6 +5619,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xb53cf359
+block|,
 literal|355
 block|,
 literal|555
@@ -5123,6 +5641,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xdbcd2690
+block|,
 literal|375
 block|,
 literal|606
@@ -5143,6 +5663,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x594a3212
+block|,
 literal|400
 block|,
 literal|615
@@ -5163,6 +5685,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0xde23f16a
+block|,
 literal|420
 block|,
 literal|667
@@ -5183,6 +5707,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0xc0a43b37
+block|,
 literal|501
 block|,
 literal|775
@@ -5203,6 +5729,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0xc298e887
+block|,
 literal|577
 block|,
 literal|891
@@ -5223,6 +5751,8 @@ literal|92
 block|}
 block|,
 block|{
+literal|0x039b6bc2
+block|,
 literal|324
 block|,
 literal|499
@@ -5242,6 +5772,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0xf60dc348
+block|,
 literal|274
 block|,
 literal|443
@@ -5261,6 +5793,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0xc6f47fa4
+block|,
 literal|634
 block|,
 literal|943
@@ -5281,6 +5815,8 @@ literal|91
 block|}
 block|,
 block|{
+literal|0xb9284f39
+block|,
 literal|1313
 block|,
 literal|1997
@@ -5301,6 +5837,8 @@ literal|82
 block|}
 block|,
 block|{
+literal|0x5dedca50
+block|,
 literal|218
 block|,
 literal|331
@@ -5321,6 +5859,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0x095451e2
+block|,
 literal|258
 block|,
 literal|389
@@ -5341,6 +5881,8 @@ literal|96
 block|}
 block|,
 block|{
+literal|0x4d981764
+block|,
 literal|86
 block|,
 literal|115
@@ -5360,6 +5902,8 @@ literal|99
 block|}
 block|,
 block|{
+literal|0x6d2b20ce
+block|,
 literal|122
 block|,
 literal|169
@@ -5380,6 +5924,8 @@ literal|98
 block|}
 block|,
 block|{
+literal|0x29e095c5
+block|,
 literal|221
 block|,
 literal|333
@@ -5399,6 +5945,8 @@ literal|97
 block|}
 block|,
 block|{
+literal|0x59e5c5bc
+block|,
 literal|518
 block|,
 literal|779
@@ -5418,6 +5966,8 @@ literal|93
 block|}
 block|,
 block|{
+literal|0x96129a0d
+block|,
 literal|1477
 block|,
 literal|2221
@@ -5437,6 +5987,8 @@ literal|80
 block|}
 block|,
 block|{
+literal|0xa4d9a6d9
+block|,
 literal|324
 block|,
 literal|682
@@ -5457,6 +6009,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x17816eb1
+block|,
 literal|736
 block|,
 literal|1110
@@ -5476,6 +6030,8 @@ literal|90
 block|}
 block|,
 block|{
+literal|0x10b035e9
+block|,
 literal|1858
 block|,
 literal|2780
@@ -5495,6 +6051,8 @@ literal|75
 block|}
 block|,
 block|{
+literal|0x1b0ad9d5
+block|,
 literal|836
 block|,
 literal|1094
@@ -5515,6 +6073,8 @@ literal|89
 block|}
 block|,
 block|{
+literal|0x1cd8bb9f
+block|,
 literal|1672
 block|,
 literal|2188
@@ -5535,6 +6095,8 @@ literal|79
 block|}
 block|,
 block|{
+literal|0x81d174af
+block|,
 literal|361
 block|,
 literal|555
@@ -5555,6 +6117,8 @@ literal|95
 block|}
 block|,
 block|{
+literal|0x991408d7
+block|,
 literal|433
 block|,
 literal|667
@@ -5575,6 +6139,8 @@ literal|94
 block|}
 block|,
 block|{
+literal|0x00034978
+block|,
 literal|954
 block|,
 literal|1443
@@ -5595,6 +6161,8 @@ literal|87
 block|}
 block|,
 block|{
+literal|0xd27667ab
+block|,
 literal|1024
 block|,
 literal|1504
@@ -5615,6 +6183,8 @@ literal|86
 block|}
 block|,
 block|{
+literal|0x94e96153
+block|,
 literal|1097
 block|,
 literal|1615
@@ -5635,6 +6205,8 @@ literal|85
 block|}
 block|,
 block|{
+literal|0xf524688a
+block|,
 literal|1168
 block|,
 literal|1727
@@ -5655,6 +6227,8 @@ literal|84
 block|}
 block|,
 block|{
+literal|0x5e5e4237
+block|,
 literal|1324
 block|,
 literal|2000
@@ -5675,6 +6249,8 @@ literal|82
 block|}
 block|,
 block|{
+literal|0x2e94a836
+block|,
 literal|1473
 block|,
 literal|2170
@@ -5695,6 +6271,8 @@ literal|80
 block|}
 block|,
 block|{
+literal|0xdd957ed4
+block|,
 literal|1615
 block|,
 literal|2394
@@ -5715,6 +6293,8 @@ literal|78
 block|}
 block|,
 block|{
+literal|0x4147561e
+block|,
 literal|1759
 block|,
 literal|2612
@@ -5735,6 +6315,8 @@ literal|76
 block|}
 block|,
 block|{
+literal|0x6f5af2b1
+block|,
 literal|1491
 block|,
 literal|1491
@@ -5755,6 +6337,8 @@ literal|83
 block|}
 block|,
 block|{
+literal|0x641ee862
+block|,
 literal|2211
 block|,
 literal|3284
@@ -5774,6 +6358,8 @@ literal|70
 block|}
 block|,
 block|{
+literal|0x0bd95282
+block|,
 literal|2211
 block|,
 literal|3284
@@ -5793,6 +6379,8 @@ literal|70
 block|}
 block|,
 block|{
+literal|0xe9814c86
+block|,
 literal|1830
 block|,
 literal|2725
@@ -5810,14 +6398,14 @@ block|,
 operator|-
 literal|75
 block|}
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293d371b0208
+DECL|struct|__anon2779cd150208
 block|{
 DECL|member|hashval
 name|guint32
@@ -6003,6 +6591,110 @@ index|]
 operator|->
 name|quantval
 index|[
+name|i
+index|]
+expr_stmt|;
+return|return
+name|hashval
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|guint32
+DECL|function|hash_transposed_quant_tables (struct jpeg_decompress_struct * cinfo)
+name|hash_transposed_quant_tables
+parameter_list|(
+name|struct
+name|jpeg_decompress_struct
+modifier|*
+name|cinfo
+parameter_list|)
+block|{
+name|guint32
+name|hashval
+decl_stmt|;
+name|gint
+name|t
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
+name|hashval
+operator|=
+literal|11
+expr_stmt|;
+for|for
+control|(
+name|t
+operator|=
+literal|0
+init|;
+name|t
+operator|<
+literal|4
+condition|;
+name|t
+operator|++
+control|)
+if|if
+condition|(
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+name|t
+index|]
+condition|)
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|DCTSIZE
+condition|;
+name|i
+operator|++
+control|)
+for|for
+control|(
+name|j
+operator|=
+literal|0
+init|;
+name|j
+operator|<
+name|DCTSIZE
+condition|;
+name|j
+operator|++
+control|)
+name|hashval
+operator|=
+name|hashval
+operator|*
+literal|4177
+operator|+
+name|cinfo
+operator|->
+name|quant_tbl_ptrs
+index|[
+name|t
+index|]
+operator|->
+name|quantval
+index|[
+name|j
+operator|*
+literal|8
+operator|+
 name|i
 index|]
 expr_stmt|;
@@ -6790,10 +7482,6 @@ name|GSList
 modifier|*
 name|source_list
 decl_stmt|;
-name|QuantInfo
-modifier|*
-name|source_info
-decl_stmt|;
 comment|/* detect JPEG quality - test the formula used in the jpeg plug-in */
 name|quality
 operator|=
@@ -6991,6 +7679,26 @@ name|GSList
 modifier|*
 name|l
 decl_stmt|;
+name|guint32
+name|hash
+decl_stmt|;
+name|guint32
+name|hash_t
+decl_stmt|;
+name|hash
+operator|=
+name|hash_quant_tables
+argument_list|(
+name|cinfo
+argument_list|)
+expr_stmt|;
+name|hash_t
+operator|=
+name|hash_transposed_quant_tables
+argument_list|(
+name|cinfo
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|l
@@ -7006,15 +7714,65 @@ operator|->
 name|next
 control|)
 block|{
+name|QuantInfo
+modifier|*
 name|source_info
-operator|=
+init|=
 name|l
 operator|->
 name|data
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|comment
+init|=
+literal|""
+decl_stmt|;
+if|if
+condition|(
+name|source_info
+operator|->
+name|hash
+operator|==
+name|hash
+condition|)
+name|comment
+operator|=
+literal|""
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|source_info
+operator|->
+name|hash
+operator|==
+name|hash_t
+condition|)
+name|comment
+operator|=
+literal|" (rotated)"
+expr_stmt|;
+elseif|else
+if|if
+condition|(
+name|num_quant_tables
+operator|==
+literal|1
+condition|)
+name|comment
+operator|=
+literal|" (grayscale)"
+expr_stmt|;
+else|else
+name|comment
+operator|=
+literal|" (FALSE MATCH)"
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"\tSource:   %s - %s\n"
+literal|"\tSource:   %s - %s%s\n"
 argument_list|,
 name|source_info
 operator|->
@@ -7023,6 +7781,8 @@ argument_list|,
 name|source_info
 operator|->
 name|setting_name
+argument_list|,
+name|comment
 argument_list|)
 expr_stmt|;
 block|}
@@ -7705,6 +8465,12 @@ argument_list|,
 name|num_quant_tables
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|source_list
+condition|)
+block|{
 name|add_unknown_table
 argument_list|(
 operator|&
@@ -7713,8 +8479,7 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
-comment|/*   if (!source_list)     {       add_unknown_table (&cinfo, filename);     }   */
+block|}
 if|if
 condition|(
 operator|!
