@@ -365,7 +365,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279c8c670103
+DECL|enum|__anon2975c6df0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -392,7 +392,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279c8c670203
+DECL|enum|__anon2975c6df0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -413,7 +413,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670308
+DECL|struct|__anon2975c6df0308
 block|{
 DECL|member|name
 name|gchar
@@ -554,7 +554,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670408
+DECL|struct|__anon2975c6df0408
 block|{
 DECL|member|fp
 name|FILE
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279c8c670503
+DECL|enum|__anon2975c6df0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -602,7 +602,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670608
+DECL|struct|__anon2975c6df0608
 block|{
 DECL|member|init
 name|gint
@@ -624,7 +624,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon279c8c670708
+DECL|struct|__anon2975c6df0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -703,7 +703,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670808
+DECL|struct|__anon2975c6df0808
 block|{
 DECL|member|init
 name|gint
@@ -773,7 +773,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670908
+DECL|struct|__anon2975c6df0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -800,7 +800,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670a08
+DECL|struct|__anon2975c6df0a08
 block|{
 DECL|member|init
 name|gint
@@ -970,7 +970,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670b08
+DECL|struct|__anon2975c6df0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -997,7 +997,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670c08
+DECL|struct|__anon2975c6df0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1238,7 +1238,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670d08
+DECL|struct|__anon2975c6df0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1315,7 +1315,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c8c670e08
+DECL|struct|__anon2975c6df0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -3673,10 +3673,12 @@ specifier|static
 name|void
 name|gradient_get_blend
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|fg
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg
@@ -8514,7 +8516,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon279c8c670f08
+DECL|struct|__anon2975c6df0f08
 specifier|static
 struct|struct
 block|{
@@ -12913,6 +12915,7 @@ name|b
 decl_stmt|;
 name|dy
 operator|=
+operator|(
 name|dlg
 operator|->
 name|pwin
@@ -12939,6 +12942,7 @@ operator|*
 name|y
 operator|/
 name|DLG_PREVIEW_HEIGHT
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -13037,6 +13041,7 @@ control|)
 block|{
 name|dx
 operator|=
+operator|(
 name|dlg
 operator|->
 name|pwin
@@ -13063,6 +13068,7 @@ operator|*
 name|x
 operator|/
 name|DLG_PREVIEW_WIDTH
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -14472,7 +14478,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon279c8c671008
+DECL|struct|__anon2975c6df1008
 block|{
 DECL|member|label
 specifier|const
@@ -22333,19 +22339,23 @@ operator|<
 name|GIMP_CHECK_SIZE_SM
 operator|)
 condition|)
+block|{
 name|check
 operator|=
 name|GIMP_CHECK_LIGHT
 operator|*
 literal|255
 expr_stmt|;
+block|}
 else|else
+block|{
 name|check
 operator|=
 name|GIMP_CHECK_DARK
 operator|*
 literal|255
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|src
@@ -22488,6 +22498,7 @@ argument_list|,
 name|GIMP_RGB_IMAGE
 argument_list|,
 operator|(
+specifier|const
 name|guchar
 operator|*
 operator|)
@@ -23037,7 +23048,7 @@ name|gint
 name|nvalues
 parameter_list|)
 block|{
-specifier|static
+specifier|const
 name|guchar
 name|white
 index|[
@@ -23054,7 +23065,7 @@ block|,
 literal|255
 block|}
 decl_stmt|;
-specifier|static
+specifier|const
 name|guchar
 name|white_trans
 index|[
@@ -23071,7 +23082,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-specifier|static
+specifier|const
 name|guchar
 name|red_trans
 index|[
@@ -23088,7 +23099,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-specifier|static
+specifier|const
 name|guchar
 name|blue_trans
 index|[
@@ -23105,7 +23116,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-specifier|static
+specifier|const
 name|guchar
 name|yellow_trans
 index|[
@@ -23280,13 +23291,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gradient_get_blend (guchar * fg,guchar * bg,guchar * values,gint nvalues)
+DECL|function|gradient_get_blend (const guchar * fg,const guchar * bg,guchar * values,gint nvalues)
 name|gradient_get_blend
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|fg
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|bg
