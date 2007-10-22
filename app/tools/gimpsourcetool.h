@@ -136,6 +136,10 @@ DECL|member|src_y
 name|gint
 name|src_y
 decl_stmt|;
+DECL|member|show_source_outline
+name|gboolean
+name|show_source_outline
+decl_stmt|;
 DECL|member|status_paint
 specifier|const
 name|gchar
