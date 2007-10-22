@@ -11432,7 +11432,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2babd0650103
+DECL|enum|__anon297269470103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -11579,6 +11579,18 @@ literal|'2'
 case|:
 case|case
 literal|'3'
+case|:
+case|case
+literal|'4'
+case|:
+case|case
+literal|'5'
+case|:
+case|case
+literal|'6'
+case|:
+case|case
+literal|'7'
 case|:
 name|state
 operator|=
@@ -11764,17 +11776,6 @@ operator|>
 literal|7
 condition|)
 block|{
-if|if
-condition|(
-name|state
-operator|==
-name|st_oct1
-condition|)
-return|return
-name|sc
-operator|->
-name|F
-return|;
 operator|*
 name|p
 operator|++
@@ -11795,6 +11796,22 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* Is value of three character octal too big for a byte? */
+if|if
+condition|(
+name|state
+operator|==
+name|st_oct2
+operator|&&
+name|c1
+operator|>=
+literal|32
+condition|)
+return|return
+name|sc
+operator|->
+name|F
+return|;
 name|c1
 operator|=
 operator|(
@@ -28155,7 +28172,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2babd0650208
+DECL|struct|__anon297269470208
 specifier|static
 struct|struct
 block|{
@@ -28390,7 +28407,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2babd0650308
+DECL|struct|__anon297269470308
 typedef|typedef
 struct|struct
 block|{
