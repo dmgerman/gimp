@@ -1064,7 +1064,7 @@ argument_list|(
 name|wbox
 argument_list|)
 argument_list|,
-literal|7
+literal|4
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
