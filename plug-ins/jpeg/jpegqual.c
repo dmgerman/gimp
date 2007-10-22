@@ -231,7 +231,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35f80f0108
+DECL|struct|__anon293d371b0108
 block|{
 comment|/* const guint  hash; */
 comment|/* hash of luminance/chrominance tables */
@@ -2641,9 +2641,9 @@ literal|71
 block|}
 block|,
 block|{
-literal|109
+literal|95
 block|,
-literal|171
+literal|166
 block|,
 literal|1
 block|,
@@ -2651,7 +2651,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS or CS2"
+literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 12"
 block|,
@@ -2660,9 +2660,9 @@ literal|98
 block|}
 block|,
 block|{
-literal|303
+literal|232
 block|,
-literal|466
+literal|443
 block|,
 literal|1
 block|,
@@ -2670,18 +2670,18 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop CS or CS2, Camera Raw 3"
+literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 11"
 block|,
 operator|-
-literal|95
+literal|96
 block|}
 block|,
 block|{
-literal|535
+literal|406
 block|,
-literal|750
+literal|722
 block|,
 literal|1
 block|,
@@ -2689,7 +2689,7 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 7.0 (or CS2)"
+literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 10"
 block|,
@@ -2698,9 +2698,9 @@ literal|93
 block|}
 block|,
 block|{
-literal|668
+literal|539
 block|,
-literal|830
+literal|801
 block|,
 literal|1
 block|,
@@ -2708,37 +2708,37 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 7.0, CS, CS2"
+literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 9"
+block|,
+operator|-
+literal|92
+block|}
+block|,
+block|{
+literal|649
+block|,
+literal|853
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop CS2"
+block|,
+literal|"quality 8"
 block|,
 operator|-
 literal|91
 block|}
 block|,
 block|{
-literal|794
+literal|786
 block|,
-literal|895
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 7.0, CS, CS2"
-block|,
-literal|"quality 8"
-block|,
-operator|-
-literal|90
-block|}
-block|,
-block|{
-literal|971
-block|,
-literal|950
+literal|926
 block|,
 literal|1
 block|,
@@ -2751,13 +2751,13 @@ block|,
 literal|"quality 7"
 block|,
 operator|-
-literal|89
+literal|90
 block|}
 block|,
 block|{
-literal|884
+literal|717
 block|,
-literal|831
+literal|782
 block|,
 literal|2
 block|,
@@ -2770,13 +2770,13 @@ block|,
 literal|"quality 6"
 block|,
 operator|-
-literal|90
+literal|91
 block|}
 block|,
 block|{
-literal|1032
+literal|844
 block|,
-literal|889
+literal|849
 block|,
 literal|2
 block|,
@@ -2789,13 +2789,13 @@ block|,
 literal|"quality 5"
 block|,
 operator|-
-literal|89
+literal|90
 block|}
 block|,
 block|{
-literal|1126
+literal|962
 block|,
-literal|940
+literal|892
 block|,
 literal|2
 block|,
@@ -2808,13 +2808,13 @@ block|,
 literal|"quality 4"
 block|,
 operator|-
-literal|88
+literal|89
 block|}
 block|,
 block|{
-literal|1216
+literal|1068
 block|,
-literal|977
+literal|941
 block|,
 literal|2
 block|,
@@ -2827,7 +2827,7 @@ block|,
 literal|"quality 3"
 block|,
 operator|-
-literal|88
+literal|89
 block|}
 block|,
 block|{
@@ -2879,7 +2879,7 @@ literal|2
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 7.0, CS, CS2"
+literal|"Adobe Photoshop CS2"
 block|,
 literal|"quality 0"
 block|,
@@ -3078,104 +3078,9 @@ literal|60
 block|}
 block|,
 block|{
-literal|95
+literal|535
 block|,
-literal|166
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 7.0, CS, CS2 or Lightroom"
-block|,
-literal|"quality 12"
-block|,
-operator|-
-literal|98
-block|}
-block|,
-block|{
-literal|232
-block|,
-literal|443
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop CS"
-block|,
-literal|"quality 11"
-block|,
-operator|-
-literal|96
-block|}
-block|,
-block|{
-literal|649
-block|,
-literal|853
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 7.0, CS, CS2, Elements 4.0"
-block|,
-literal|"quality 8"
-block|,
-operator|-
-literal|91
-block|}
-block|,
-block|{
-literal|844
-block|,
-literal|849
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop CS"
-block|,
-literal|"quality 5"
-block|,
-operator|-
-literal|90
-block|}
-block|,
-block|{
-literal|962
-block|,
-literal|892
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop CS"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|89
-block|}
-block|,
-block|{
-literal|406
-block|,
-literal|722
+literal|750
 block|,
 literal|1
 block|,
@@ -3192,9 +3097,9 @@ literal|93
 block|}
 block|,
 block|{
-literal|539
+literal|109
 block|,
-literal|801
+literal|171
 block|,
 literal|1
 block|,
@@ -3202,69 +3107,164 @@ literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 5.0, 7.0"
+literal|"Adobe Photoshop CS"
+block|,
+literal|"quality 12"
+block|,
+operator|-
+literal|98
+block|}
+block|,
+block|{
+literal|303
+block|,
+literal|466
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop CS, Camera Raw 3"
+block|,
+literal|"quality 11"
+block|,
+operator|-
+literal|95
+block|}
+block|,
+block|{
+literal|668
+block|,
+literal|830
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop 7.0, CS"
 block|,
 literal|"quality 9"
-block|,
-operator|-
-literal|92
-block|}
-block|,
-block|{
-literal|786
-block|,
-literal|926
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 7.0, CS2"
-block|,
-literal|"quality 7"
-block|,
-operator|-
-literal|90
-block|}
-block|,
-block|{
-literal|717
-block|,
-literal|782
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 5.0"
-block|,
-literal|"?"
 block|,
 operator|-
 literal|91
 block|}
 block|,
 block|{
-literal|1068
+literal|794
 block|,
-literal|941
+literal|895
+block|,
+literal|1
+block|,
+literal|1
 block|,
 literal|2
 block|,
-literal|2
+literal|"Adobe Photoshop 7.0, CS"
+block|,
+literal|"quality 8"
+block|,
+operator|-
+literal|90
+block|}
+block|,
+block|{
+literal|971
+block|,
+literal|950
+block|,
+literal|1
+block|,
+literal|1
 block|,
 literal|2
 block|,
-literal|"Adobe Photoshop 4.0"
+literal|"Adobe Photoshop CS"
 block|,
-literal|"?"
+literal|"quality 7"
 block|,
 operator|-
 literal|89
+block|}
+block|,
+block|{
+literal|884
+block|,
+literal|831
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop CS"
+block|,
+literal|"quality 6"
+block|,
+operator|-
+literal|90
+block|}
+block|,
+block|{
+literal|1032
+block|,
+literal|889
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop CS"
+block|,
+literal|"quality 5"
+block|,
+operator|-
+literal|89
+block|}
+block|,
+block|{
+literal|1126
+block|,
+literal|940
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop CS"
+block|,
+literal|"quality 4"
+block|,
+operator|-
+literal|88
+block|}
+block|,
+block|{
+literal|1216
+block|,
+literal|977
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop CS"
+block|,
+literal|"quality 3"
+block|,
+operator|-
+literal|88
 block|}
 block|,
 block|{
@@ -3284,25 +3284,6 @@ literal|"save for web 85"
 block|,
 operator|-
 literal|94
-block|}
-block|,
-block|{
-literal|406
-block|,
-literal|722
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop 6.0"
-block|,
-literal|"quality 10"
-block|,
-operator|-
-literal|93
 block|}
 block|,
 block|{
@@ -3439,44 +3420,6 @@ literal|73
 block|}
 block|,
 block|{
-literal|4028
-block|,
-literal|4174
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|2
-block|,
-literal|"Adobe Photoshop ?"
-block|,
-literal|"save for web 3"
-block|,
-operator|-
-literal|55
-block|}
-block|,
-block|{
-literal|513
-block|,
-literal|0
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|1
-block|,
-literal|"Adobe Photoshop ?"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|93
-block|}
-block|,
-block|{
 literal|2515
 block|,
 literal|2831
@@ -3512,6 +3455,44 @@ literal|"save for web 6"
 block|,
 operator|-
 literal|57
+block|}
+block|,
+block|{
+literal|4028
+block|,
+literal|4174
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|2
+block|,
+literal|"Adobe Photoshop ?"
+block|,
+literal|"save for web 3"
+block|,
+operator|-
+literal|55
+block|}
+block|,
+block|{
+literal|513
+block|,
+literal|0
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|1
+block|,
+literal|"Adobe Photoshop ?"
+block|,
+literal|"?"
+block|,
+operator|-
+literal|93
 block|}
 block|,
 block|{
@@ -5836,7 +5817,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a35f80f0208
+DECL|struct|__anon293d371b0208
 block|{
 DECL|member|hashval
 name|guint32
