@@ -566,6 +566,7 @@ parameter_list|,
 name|gboolean
 name|destHasAlpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|source
@@ -6515,7 +6516,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|util_convertColorspace (guchar * dest,gint destBPP,gboolean destHasAlpha,guchar * source,gint sourceBPP,gboolean sourceHasAlpha,gint length)
+DECL|function|util_convertColorspace (guchar * dest,gint destBPP,gboolean destHasAlpha,const guchar * source,gint sourceBPP,gboolean sourceHasAlpha,gint length)
 name|util_convertColorspace
 parameter_list|(
 name|guchar
@@ -6528,6 +6529,7 @@ parameter_list|,
 name|gboolean
 name|destHasAlpha
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|source
@@ -7005,19 +7007,6 @@ operator|+=
 name|sourceBPP
 control|)
 block|{
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|length
-condition|;
-name|i
-operator|++
-control|)
 name|dest
 index|[
 name|destPos
