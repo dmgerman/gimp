@@ -241,7 +241,7 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-comment|/*  make sure the image application coordinates are within image bounds  */
+comment|/*  make sure the image application coordinates are within drawable bounds  */
 name|x1
 operator|=
 name|CLAMP
@@ -680,24 +680,6 @@ condition|(
 name|mask
 condition|)
 block|{
-name|gint
-name|mx
-decl_stmt|,
-name|my
-decl_stmt|;
-comment|/*  configure the mask pixel region        *  don't use x1 and y1 because they are in layer        *  coordinate system.  Need mask coordinate system        */
-name|mx
-operator|=
-name|x1
-operator|+
-name|offset_x
-expr_stmt|;
-name|my
-operator|=
-name|y1
-operator|+
-name|offset_y
-expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -711,9 +693,13 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|mx
+name|x1
+operator|+
+name|offset_x
 argument_list|,
-name|my
+name|y1
+operator|+
+name|offset_y
 argument_list|,
 operator|(
 name|x2
@@ -959,7 +945,7 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
-comment|/*  make sure the image application coordinates are within image bounds  */
+comment|/*  make sure the image application coordinates are within drawable bounds  */
 name|x1
 operator|=
 name|CLAMP
@@ -1245,24 +1231,6 @@ name|guchar
 modifier|*
 name|temp_data
 decl_stmt|;
-name|gint
-name|mx
-decl_stmt|,
-name|my
-decl_stmt|;
-comment|/*  configure the mask pixel region        *  don't use x1 and y1 because they are in layer        *  coordinate system.  Need mask coordinate system        */
-name|mx
-operator|=
-name|x1
-operator|+
-name|offset_x
-expr_stmt|;
-name|my
-operator|=
-name|y1
-operator|+
-name|offset_y
-expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -1276,9 +1244,13 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|mx
+name|x1
+operator|+
+name|offset_x
 argument_list|,
-name|my
+name|y1
+operator|+
+name|offset_y
 argument_list|,
 operator|(
 name|x2
