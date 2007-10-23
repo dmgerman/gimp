@@ -94,16 +94,16 @@ DECL|macro|RANGE_ADJUST_MASK
 define|#
 directive|define
 name|RANGE_ADJUST_MASK
-value|GDK_EXPOSURE_MASK | \                           GDK_ENTER_NOTIFY_MASK | \                           GDK_BUTTON_PRESS_MASK | \                           GDK_BUTTON_RELEASE_MASK | \                           GDK_BUTTON1_MOTION_MASK | \                           GDK_POINTER_MOTION_HINT_MASK
+value|(GDK_EXPOSURE_MASK       | \                            GDK_ENTER_NOTIFY_MASK   | \                            GDK_BUTTON_PRESS_MASK   | \                            GDK_BUTTON_RELEASE_MASK | \                            GDK_BUTTON1_MOTION_MASK | \                            GDK_POINTER_MOTION_HINT_MASK)
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ef0640108
+DECL|struct|__anon279f323a0108
 block|{
 DECL|member|run
-name|gint
+name|gboolean
 name|run
 decl_stmt|;
 DECL|typedef|fpInterface
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ef0640208
+DECL|struct|__anon279f323a0208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon286ef0640303
+DECL|enum|__anon279f323a0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon286ef0640403
+DECL|enum|__anon279f323a0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286ef0640503
+DECL|enum|__anon279f323a0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +221,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286ef0640603
+DECL|enum|__anon279f323a0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286ef0640703
+DECL|enum|__anon279f323a0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +268,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ef0640808
+DECL|struct|__anon279f323a0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ef0640908
+DECL|struct|__anon279f323a0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286ef0640a08
+DECL|struct|__anon279f323a0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -529,7 +529,9 @@ specifier|static
 name|void
 name|fp_advanced_dialog
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -726,7 +728,9 @@ name|GtkWidget
 modifier|*
 name|fp_create_circle_palette
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -737,7 +741,9 @@ name|GtkWidget
 modifier|*
 name|fp_create_lnd
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -759,7 +765,9 @@ name|GtkWidget
 modifier|*
 name|fp_create_msnls
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1312,7 +1320,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon286ef0640b08
+DECL|struct|__anon279f323a0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -2777,10 +2785,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|fp_create_circle_palette (void)
+DECL|function|fp_create_circle_palette (GtkWidget * parent)
 name|fp_create_circle_palette
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -2868,6 +2878,19 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Hue Variations"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|win
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3792,10 +3815,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|fp_create_lnd (void)
+DECL|function|fp_create_lnd (GtkWidget * parent)
 name|fp_create_lnd
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -3853,6 +3878,19 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Value Variations"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|win
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4085,10 +4123,12 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|fp_create_msnls (void)
+DECL|function|fp_create_msnls (GtkWidget * parent)
 name|fp_create_msnls
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
 name|GtkWidget
@@ -4146,6 +4186,19 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Saturation Variations"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|win
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6325,7 +6378,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|fp_advanced_dialog
-argument_list|()
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 name|fp_frames
 operator|.
@@ -6361,7 +6416,9 @@ operator|=
 name|palette
 operator|=
 name|fp_create_circle_palette
-argument_list|()
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 name|fp_frames
 operator|.
@@ -6370,7 +6427,9 @@ operator|=
 name|lnd
 operator|=
 name|fp_create_lnd
-argument_list|()
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 name|fp_frames
 operator|.
@@ -6388,7 +6447,9 @@ operator|=
 name|satur
 operator|=
 name|fp_create_msnls
-argument_list|()
+argument_list|(
+name|dlg
+argument_list|)
 expr_stmt|;
 name|fp_frames
 operator|.
@@ -6848,12 +6909,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fp_advanced_dialog (void)
+DECL|function|fp_advanced_dialog (GtkWidget * parent)
 name|fp_advanced_dialog
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|parent
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|rangeNames
@@ -6950,6 +7014,21 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Advanced Filter Pack Options"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|AW
+operator|.
+name|window
+argument_list|)
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|parent
 argument_list|)
 argument_list|)
 expr_stmt|;
