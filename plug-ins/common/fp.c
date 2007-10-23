@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925b2400108
+DECL|struct|__anon298737800108
 block|{
 DECL|member|run
 name|gboolean
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925b2400208
+DECL|struct|__anon298737800208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +149,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2925b2400303
+DECL|enum|__anon298737800303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +170,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925b2400403
+DECL|enum|__anon298737800403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +202,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925b2400503
+DECL|enum|__anon298737800503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +221,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925b2400603
+DECL|enum|__anon298737800603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +249,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2925b2400703
+DECL|enum|__anon298737800703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +268,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925b2400808
+DECL|struct|__anon298737800808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +299,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925b2400908
+DECL|struct|__anon298737800908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -396,7 +396,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2925b2400a08
+DECL|struct|__anon298737800a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1278,7 +1278,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2925b2400b08
+DECL|struct|__anon298737800b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -7652,22 +7652,6 @@ operator|&
 name|fpvals
 operator|.
 name|preview_size
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|frame
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|update_range_labels
