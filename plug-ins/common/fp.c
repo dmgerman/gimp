@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -100,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298737800108
+DECL|struct|__anon29a18e7c0108
 block|{
 DECL|member|run
 name|gboolean
@@ -115,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298737800208
+DECL|struct|__anon29a18e7c0208
 block|{
 DECL|member|width
 name|gint
@@ -149,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298737800303
+DECL|enum|__anon29a18e7c0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -170,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon298737800403
+DECL|enum|__anon29a18e7c0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -202,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298737800503
+DECL|enum|__anon29a18e7c0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -221,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298737800603
+DECL|enum|__anon29a18e7c0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -249,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298737800703
+DECL|enum|__anon29a18e7c0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -268,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298737800808
+DECL|struct|__anon29a18e7c0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -299,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298737800908
+DECL|struct|__anon29a18e7c0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -396,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298737800a08
+DECL|struct|__anon29a18e7c0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1278,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon298737800b08
+DECL|struct|__anon29a18e7c0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -1411,6 +1417,8 @@ specifier|static
 name|GimpDrawable
 modifier|*
 name|drawable
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1420,6 +1428,8 @@ specifier|static
 name|GimpDrawable
 modifier|*
 name|mask
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -1686,6 +1696,25 @@ operator|.
 name|d_drawable
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_selection_is_empty
+argument_list|(
+name|param
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_image
+argument_list|)
+condition|)
+name|mask
+operator|=
+name|NULL
+expr_stmt|;
+else|else
 name|mask
 operator|=
 name|gimp_drawable_get
@@ -1868,11 +1897,27 @@ argument_list|()
 expr_stmt|;
 block|}
 else|else
+block|{
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
+block|}
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|mask
+condition|)
+name|gimp_drawable_detach
+argument_list|(
+name|mask
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0
@@ -1883,17 +1928,6 @@ operator|.
 name|d_status
 operator|=
 name|status
-expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|gimp_drawable_detach
-argument_list|(
-name|drawable
-argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -6158,7 +6192,7 @@ name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dlg
@@ -8902,6 +8936,26 @@ operator|*
 name|RH
 argument_list|)
 expr_stmt|;
+name|src_row
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|width
+operator|*
+name|bytes
+argument_list|)
+expr_stmt|;
+name|src_mask_row
+operator|=
+name|g_new
+argument_list|(
+name|guchar
+argument_list|,
+name|width
+argument_list|)
+expr_stmt|;
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -8922,6 +8976,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mask
+condition|)
+block|{
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
@@ -8942,28 +9001,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|src_row
-operator|=
-name|g_new
+block|}
+else|else
+block|{
+name|memset
 argument_list|(
-name|guchar
-argument_list|,
-name|width
-operator|*
-name|bytes
-argument_list|)
-expr_stmt|;
 name|src_mask_row
-operator|=
-name|g_new
-argument_list|(
-name|guchar
+argument_list|,
+literal|255
 argument_list|,
 name|width
-operator|*
-name|bytes
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|i
@@ -9011,6 +9061,10 @@ argument_list|,
 name|width
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|mask
+condition|)
 name|gimp_pixel_rgn_get_row
 argument_list|(
 operator|&
@@ -9240,6 +9294,7 @@ name|bytes
 operator|==
 literal|4
 condition|)
+block|{
 name|tempRGB
 index|[
 name|i
@@ -9264,6 +9319,7 @@ operator|+
 literal|3
 index|]
 expr_stmt|;
+block|}
 block|}
 block|}
 name|g_free
