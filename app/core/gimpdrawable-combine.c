@@ -137,8 +137,6 @@ name|PixelRegion
 name|src1PR
 decl_stmt|,
 name|destPR
-decl_stmt|,
-name|maskPR
 decl_stmt|;
 name|CombinationMode
 name|operation
@@ -680,6 +678,9 @@ condition|(
 name|mask
 condition|)
 block|{
+name|PixelRegion
+name|maskPR
+decl_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
