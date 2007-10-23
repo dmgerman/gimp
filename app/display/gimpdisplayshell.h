@@ -40,7 +40,7 @@ name|PROJ_ROUND
 parameter_list|(
 name|coord
 parameter_list|)
-value|((gint) (coord))
+value|((gint) ((coord) + 0.5))
 end_define
 
 begin_define
@@ -51,7 +51,7 @@ name|PROJ_ROUND64
 parameter_list|(
 name|coord
 parameter_list|)
-value|((gint64) (coord))
+value|((gint64) ((coord) + 0.5))
 end_define
 
 begin_comment
