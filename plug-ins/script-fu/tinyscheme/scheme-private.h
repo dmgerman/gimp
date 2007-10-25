@@ -74,10 +74,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2a4c7b2d010a
+DECL|union|__anon288ec9b3010a
 union|union
 block|{
-DECL|struct|__anon2a4c7b2d0208
+DECL|struct|__anon288ec9b30208
 struct|struct
 block|{
 DECL|member|file
@@ -93,7 +93,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2a4c7b2d0308
+DECL|struct|__anon288ec9b30308
 struct|struct
 block|{
 DECL|member|start
@@ -139,10 +139,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2a4c7b2d040a
+DECL|union|__anon288ec9b3040a
 union|union
 block|{
-DECL|struct|__anon2a4c7b2d0508
+DECL|struct|__anon288ec9b30508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -171,7 +171,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2a4c7b2d0608
+DECL|struct|__anon288ec9b30608
 struct|struct
 block|{
 DECL|member|_car
@@ -526,6 +526,9 @@ comment|/* number of frames allocated for dump stack */
 DECL|member|backchar
 name|gunichar
 name|backchar
+index|[
+literal|2
+index|]
 decl_stmt|;
 DECL|member|bc_flag
 name|int
