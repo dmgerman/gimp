@@ -1474,7 +1474,7 @@ name|editor
 operator|->
 name|drawable
 argument_list|,
-literal|"invalidate-preview"
+literal|"update"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
