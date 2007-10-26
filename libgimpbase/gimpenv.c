@@ -754,12 +754,6 @@ decl_stmt|,
 modifier|*
 name|sep2
 decl_stmt|;
-if|if
-condition|(
-name|G_WIN32_HAVE_WIDECHAR_API
-argument_list|()
-condition|)
-block|{
 name|wchar_t
 name|w_filename
 index|[
@@ -814,64 +808,6 @@ argument_list|(
 literal|"Converting module filename to UTF-8 failed"
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|gchar
-name|cp_filename
-index|[
-name|MAX_PATH
-index|]
-decl_stmt|;
-if|if
-condition|(
-name|GetModuleFileNameA
-argument_list|(
-name|NULL
-argument_list|,
-name|cp_filename
-argument_list|,
-name|G_N_ELEMENTS
-argument_list|(
-name|cp_filename
-argument_list|)
-argument_list|)
-operator|==
-literal|0
-condition|)
-name|g_error
-argument_list|(
-literal|"GetModuleFilenameA failed"
-argument_list|)
-expr_stmt|;
-name|filename
-operator|=
-name|g_locale_to_utf8
-argument_list|(
-name|cp_filename
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|filename
-operator|==
-name|NULL
-condition|)
-name|g_error
-argument_list|(
-literal|"Converting module filename to UTF-8 failed"
-argument_list|)
-expr_stmt|;
-block|}
 comment|/* If the executable file name is of the format      *<foobar>\bin\*.exe or      *<foobar>\lib\gimp\GIMP_API_VERSION\plug-ins\*.exe, use<foobar>.      * Otherwise, use the directory where the executable is.      */
 name|sep1
 operator|=
@@ -1077,7 +1013,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP2_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP locale files.  */
+comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP2_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the C library, which isn't necessarily UTF-8. (On Windows, unlike  * the other similar functions here, the return value from this  * function is in the system codepage, never in UTF-8. It can thus be  * passed directly to the bindtextdomain() function from libintl which  * does not handle UTF-8.)  *  * Returns: The top directory for GIMP locale files.  */
 end_comment
 
 begin_function
@@ -1126,6 +1062,36 @@ argument_list|(
 name|tmp
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|tmp
+operator|=
+name|g_locale_from_utf8
+argument_list|(
+name|gimp_locale_dir
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gimp_locale_dir
+argument_list|)
+expr_stmt|;
+name|gimp_locale_dir
+operator|=
+name|tmp
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 return|return
 name|gimp_locale_dir
@@ -1280,7 +1246,7 @@ name|int
 name|csidl
 parameter_list|)
 block|{
-DECL|union|__anon28dad322010a
+DECL|union|__anon2b8a25b3010a
 union|union
 block|{
 DECL|member|c
