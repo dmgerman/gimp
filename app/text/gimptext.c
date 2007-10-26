@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c071b220103
+DECL|enum|__anon2c1f15e10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -387,7 +387,7 @@ literal|0.0
 argument_list|,
 literal|8192.0
 argument_list|,
-literal|18.0
+literal|24.0
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
