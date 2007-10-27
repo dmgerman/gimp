@@ -4,10 +4,6 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* $Id$ */
-end_comment
-
-begin_comment
 comment|/*  * The pnm reading and writing code was written from scratch by Erik Nygren  * (nygren@mit.edu) based on the specifications in the man pages and  * does not contain any code from the netpbm or pbmplus distributions.  *  * 2006: pbm saving written by Martin K Collins (martin@mkcollins.org)  */
 end_comment
 
@@ -357,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8e02b0108
+DECL|struct|__anon2b5baf2f0108
 block|{
 DECL|member|raw
 name|gint
@@ -549,6 +545,7 @@ name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -565,6 +562,7 @@ name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -581,6 +579,7 @@ name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -597,6 +596,7 @@ name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -613,6 +613,7 @@ name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -629,6 +630,7 @@ name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -773,12 +775,13 @@ parameter_list|,
 name|errmsg
 parameter_list|)
 define|\
-value|if ((predicate)) \         { g_message ((errmsg)); longjmp((jmpbuf),1); }
+value|if ((predicate)) \         { g_message ((errmsg)); longjmp ((jmpbuf), 1); }
 end_define
 
 begin_struct
 DECL|struct|struct_pnm_types
 specifier|static
+specifier|const
 struct|struct
 name|struct_pnm_types
 block|{
@@ -2548,11 +2551,11 @@ operator|->
 name|np
 operator|>=
 literal|3
-operator|)
 condition|?
 name|GIMP_RGB_IMAGE
 else|:
 name|GIMP_GRAY_IMAGE
+operator|)
 argument_list|,
 literal|100
 argument_list|,
@@ -3653,13 +3656,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pnmsaverow_raw_pbm (PNMRowInfo * ri,guchar * data)
+DECL|function|pnmsaverow_raw_pbm (PNMRowInfo * ri,const guchar * data)
 name|pnmsaverow_raw_pbm
 parameter_list|(
 name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -3686,12 +3690,12 @@ name|gint32
 name|len
 init|=
 operator|(
-name|int
+name|gint
 operator|)
 name|ceil
 argument_list|(
 call|(
-name|double
+name|gdouble
 call|)
 argument_list|(
 name|ri
@@ -3809,13 +3813,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pnmsaverow_ascii_pbm (PNMRowInfo * ri,guchar * data)
+DECL|function|pnmsaverow_ascii_pbm (PNMRowInfo * ri,const guchar * data)
 name|pnmsaverow_ascii_pbm
 parameter_list|(
 name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -3956,13 +3961,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pnmsaverow_raw (PNMRowInfo * ri,guchar * data)
+DECL|function|pnmsaverow_raw (PNMRowInfo * ri,const guchar * data)
 name|pnmsaverow_raw
 parameter_list|(
 name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -3995,13 +4001,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pnmsaverow_raw_indexed (PNMRowInfo * ri,guchar * data)
+DECL|function|pnmsaverow_raw_indexed (PNMRowInfo * ri,const guchar * data)
 name|pnmsaverow_raw_indexed
 parameter_list|(
 name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -4107,13 +4114,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pnmsaverow_ascii (PNMRowInfo * ri,guchar * data)
+DECL|function|pnmsaverow_ascii (PNMRowInfo * ri,const guchar * data)
 name|pnmsaverow_ascii
 parameter_list|(
 name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -4153,7 +4161,7 @@ block|{
 name|sprintf
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|rbcur
@@ -4190,7 +4198,7 @@ argument_list|,
 name|strlen
 argument_list|(
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
 name|ri
@@ -4209,13 +4217,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|pnmsaverow_ascii_indexed (PNMRowInfo * ri,guchar * data)
+DECL|function|pnmsaverow_ascii_indexed (PNMRowInfo * ri,const guchar * data)
 name|pnmsaverow_ascii_indexed
 parameter_list|(
 name|PNMRowInfo
 modifier|*
 name|ri
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|data
@@ -4408,6 +4417,7 @@ parameter_list|(
 name|PNMRowInfo
 modifier|*
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 parameter_list|)
@@ -4910,15 +4920,15 @@ operator|!
 name|pbm
 condition|)
 block|{
-name|gint
-name|i
-decl_stmt|;
 name|guchar
 modifier|*
 name|cmap
 decl_stmt|;
 name|gint
 name|colors
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|cmap
 operator|=
@@ -5626,7 +5636,7 @@ name|gint
 name|bufsize
 parameter_list|)
 block|{
-name|int
+name|gint
 name|ctr
 init|=
 literal|0
@@ -5850,6 +5860,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
 name|s
 operator|->
 name|eof
@@ -5872,6 +5883,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
@@ -5889,7 +5901,7 @@ modifier|*
 name|s
 parameter_list|)
 block|{
-name|int
+name|gint
 name|state
 init|=
 literal|0
@@ -5951,17 +5963,21 @@ operator|->
 name|cur
 argument_list|)
 condition|)
+block|{
 name|state
 operator|=
 operator|-
 literal|1
 expr_stmt|;
+block|}
 else|else
+block|{
 name|pnmscanner_getchar
 argument_list|(
 name|s
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 literal|1
