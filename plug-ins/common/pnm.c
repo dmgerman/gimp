@@ -353,7 +353,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5baf2f0108
+DECL|struct|__anon29c724a50108
 block|{
 DECL|member|raw
 name|gint
@@ -2695,6 +2695,11 @@ index|[
 name|BUFLEN
 index|]
 decl_stmt|;
+name|gboolean
+name|aborted
+init|=
+name|FALSE
+decl_stmt|;
 name|np
 operator|=
 operator|(
@@ -2748,6 +2753,9 @@ name|info
 operator|->
 name|yres
 condition|;
+name|y
+operator|+=
+name|scanlines
 control|)
 block|{
 name|start
@@ -2825,7 +2833,21 @@ name|b
 operator|++
 control|)
 block|{
-comment|/* Truncated files will just have all 0's at the end of the images */
+if|if
+condition|(
+name|aborted
+condition|)
+block|{
+name|d
+index|[
+name|b
+index|]
+operator|=
+literal|0
+expr_stmt|;
+continue|continue;
+block|}
+comment|/* Truncated files will just have all 0's                    at the end of the images */
 if|if
 condition|(
 name|pnmscanner_eof
@@ -2833,6 +2855,7 @@ argument_list|(
 name|scan
 argument_list|)
 condition|)
+block|{
 name|g_message
 argument_list|(
 name|_
@@ -2841,6 +2864,19 @@ literal|"Premature end of file."
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|aborted
+operator|=
+name|TRUE
+expr_stmt|;
+name|d
+index|[
+name|b
+index|]
+operator|=
+literal|0
+expr_stmt|;
+continue|continue;
+block|}
 if|if
 condition|(
 name|info
@@ -3016,10 +3052,6 @@ name|xres
 argument_list|,
 name|scanlines
 argument_list|)
-expr_stmt|;
-name|y
-operator|+=
-name|scanlines
 expr_stmt|;
 block|}
 name|gimp_progress_update
