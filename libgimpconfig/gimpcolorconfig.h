@@ -86,6 +86,7 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
+comment|/*< public>*/
 DECL|member|mode
 name|GimpColorManagementMode
 name|mode
@@ -135,6 +136,7 @@ DECL|member|out_of_gamut_color
 name|GimpRGB
 name|out_of_gamut_color
 decl_stmt|;
+comment|/*< private>*/
 comment|/* Padding for future expansion */
 DECL|member|_gimp_reserved1
 name|void
