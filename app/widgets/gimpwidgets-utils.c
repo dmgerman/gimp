@@ -1804,7 +1804,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b1fb2c00108
+DECL|struct|__anon2aefcf320108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3281,6 +3281,11 @@ name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|fclose
+argument_list|(
+name|file
 argument_list|)
 expr_stmt|;
 return|return
