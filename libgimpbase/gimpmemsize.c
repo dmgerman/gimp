@@ -781,10 +781,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|str
-operator|||
-operator|!
+operator|&&
 name|gimp_memsize_deserialize
 argument_list|(
 name|str
@@ -793,11 +791,7 @@ operator|&
 name|memsize
 argument_list|)
 condition|)
-name|g_warning
-argument_list|(
-literal|"Can't convert string to GimpMemsize."
-argument_list|)
-expr_stmt|;
+block|{
 name|g_value_set_uint64
 argument_list|(
 name|dest_value
@@ -805,6 +799,15 @@ argument_list|,
 name|memsize
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_warning
+argument_list|(
+literal|"Can't convert string to GimpMemsize."
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
