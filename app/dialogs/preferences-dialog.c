@@ -1839,11 +1839,14 @@ argument_list|,
 literal|"monitor_resolution_sizeentry"
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_SIZE_ENTRY
+argument_list|(
 name|entry
-condition|)
-block|{
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|xres
 operator|=
 name|gimp_size_entry_get_refval
@@ -1862,7 +1865,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_object_set
 argument_list|(
@@ -9355,7 +9357,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon294234c10108
+DECL|struct|__anon2adfef510108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10517,7 +10519,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294234c10208
+DECL|struct|__anon2adfef510208
 block|{
 DECL|member|label
 specifier|const
@@ -11677,7 +11679,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294234c10308
+DECL|struct|__anon2adfef510308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11832,7 +11834,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon294234c10408
+DECL|struct|__anon2adfef510408
 block|{
 DECL|member|tree_label
 specifier|const
