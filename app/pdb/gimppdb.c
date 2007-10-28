@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e95c860103
+DECL|enum|__anon2bca50840103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1644,6 +1644,11 @@ argument_list|,
 name|GIMP_PDB_CALLING_ERROR
 argument_list|)
 expr_stmt|;
+name|va_end
+argument_list|(
+name|va_args
+argument_list|)
+expr_stmt|;
 return|return
 name|return_vals
 return|;
@@ -1700,6 +1705,11 @@ operator|->
 name|values
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
+argument_list|)
+expr_stmt|;
+name|va_end
+argument_list|(
+name|va_args
 argument_list|)
 expr_stmt|;
 return|return
