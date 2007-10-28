@@ -1219,7 +1219,7 @@ operator|>=
 literal|0
 operator|&&
 name|channel
-operator|<=
+operator|<
 literal|7
 condition|)
 block|{
