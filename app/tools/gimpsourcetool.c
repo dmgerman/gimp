@@ -1553,6 +1553,8 @@ operator|->
 name|src_y
 operator|+
 name|off_y
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle

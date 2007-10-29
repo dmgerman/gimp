@@ -2757,7 +2757,11 @@ name|ty
 argument_list|)
 operator|+
 operator|(
+operator|(
 name|height
+operator|+
+literal|1
+operator|)
 operator|>>
 literal|1
 operator|)
@@ -2796,7 +2800,11 @@ name|tx
 argument_list|)
 operator|+
 operator|(
+operator|(
 name|width
+operator|+
+literal|1
+operator|)
 operator|>>
 literal|1
 operator|)
