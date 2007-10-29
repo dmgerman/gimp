@@ -1309,6 +1309,24 @@ comment|/* Sample block matrix */
 name|gulong
 name|num_samples
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|render_func
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|put_pixel_func
+operator|!=
+name|NULL
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 comment|/* Initialize color */
 name|gimp_rgba_set
 argument_list|(
