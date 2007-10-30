@@ -971,32 +971,12 @@ name|level
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Currently, only RGBA and GRAYA projection types are used - the rest    * are in case of future need.  -- austin, 28th Nov 1998.    *    * I retired them before they reach the age of 9 years unused...    *                              -- simon,  23rd Sep 2007.    */
+comment|/* Currently, only RGBA and GRAYA projection types are used. */
 name|type
 operator|=
 name|gimp_projection_get_image_type
 argument_list|(
 name|projection
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|G_UNLIKELY
-argument_list|(
-name|type
-operator|!=
-name|GIMP_RGBA_IMAGE
-operator|&&
-name|type
-operator|!=
-name|GIMP_GRAYA_IMAGE
-argument_list|)
-condition|)
-name|g_warning
-argument_list|(
-literal|"using untested projection type %d"
-argument_list|,
-name|type
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1025,9 +1005,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_printerr
+name|g_warning
 argument_list|(
-literal|"gimp_display_shell_render: unsupported projection type\n"
+literal|"%s: unsupported projection type (%d)"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|type
 argument_list|)
 expr_stmt|;
 name|g_assert_not_reached
@@ -2968,7 +2952,7 @@ name|bottom_weight
 operator|)
 operator|)
 operator|>>
-literal|8
+literal|4
 decl_stmt|;
 switch|switch
 condition|(
@@ -3003,7 +2987,7 @@ operator|*
 name|top_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3017,7 +3001,7 @@ operator|*
 name|middle_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3031,7 +3015,7 @@ operator|*
 name|bottom_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3045,7 +3029,7 @@ operator|*
 name|top_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3059,7 +3043,7 @@ operator|*
 name|middle_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3073,7 +3057,7 @@ operator|*
 name|bottom_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3087,7 +3071,7 @@ operator|*
 name|top_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3101,7 +3085,7 @@ operator|*
 name|middle_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3115,7 +3099,7 @@ operator|*
 name|bottom_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|}
 decl_stmt|;
 name|guint
@@ -3357,12 +3341,6 @@ operator|(
 name|sum
 operator|>>
 literal|1
-operator|)
-operator|+
-operator|(
-name|sum
-operator|>>
-literal|2
 operator|)
 operator|)
 operator|/
@@ -3413,7 +3391,7 @@ operator|*
 name|top_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3427,7 +3405,7 @@ operator|*
 name|middle_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3441,7 +3419,7 @@ operator|*
 name|bottom_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3455,7 +3433,7 @@ operator|*
 name|top_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3469,7 +3447,7 @@ operator|*
 name|middle_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3483,7 +3461,7 @@ operator|*
 name|bottom_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3497,7 +3475,7 @@ operator|*
 name|top_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3511,7 +3489,7 @@ operator|*
 name|middle_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|,
 operator|(
 name|src
@@ -3525,7 +3503,7 @@ operator|*
 name|bottom_weight
 operator|)
 operator|>>
-literal|8
+literal|4
 block|}
 decl_stmt|;
 name|guint
@@ -3767,12 +3745,6 @@ operator|(
 name|sum
 operator|>>
 literal|1
-operator|)
-operator|+
-operator|(
-name|sum
-operator|>>
-literal|2
 operator|)
 operator|)
 operator|/
