@@ -1568,7 +1568,11 @@ index|[
 literal|1
 index|]
 operator|=
+operator|(
 name|a
+operator|+
+literal|2
+operator|)
 operator|>>
 literal|2
 expr_stmt|;
@@ -2056,7 +2060,11 @@ index|[
 literal|3
 index|]
 operator|=
+operator|(
 name|a
+operator|+
+literal|2
+operator|)
 operator|>>
 literal|2
 expr_stmt|;
