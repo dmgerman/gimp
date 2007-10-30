@@ -576,6 +576,10 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|paint_core
+operator|->
+name|use_pressure
+operator|&&
 name|pressure_options
 operator|->
 name|opacity
