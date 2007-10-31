@@ -577,11 +577,9 @@ expr_stmt|;
 comment|/*  update every 10 seconds  */
 name|source
 operator|=
-name|g_timeout_source_new
+name|g_timeout_source_new_seconds
 argument_list|(
 literal|10
-operator|*
-literal|1000
 argument_list|)
 expr_stmt|;
 name|g_source_set_closure
