@@ -488,12 +488,6 @@ name|allow_non_utf8
 range|:
 literal|1
 decl_stmt|;
-DECL|member|null_ok
-name|guint
-name|null_ok
-range|:
-literal|1
-decl_stmt|;
 DECL|member|non_empty
 name|guint
 name|non_empty
