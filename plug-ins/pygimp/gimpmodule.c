@@ -20,6 +20,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include

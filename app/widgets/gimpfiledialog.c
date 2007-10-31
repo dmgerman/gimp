@@ -1424,9 +1424,9 @@ expr_stmt|;
 block|}
 name|pictures
 operator|=
-name|gimp_user_directory
+name|g_get_user_special_dir
 argument_list|(
-name|GIMP_USER_DIRECTORY_PICTURES
+name|G_USER_DIRECTORY_PICTURES
 argument_list|)
 expr_stmt|;
 if|if
