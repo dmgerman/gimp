@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a847600103
+DECL|enum|__anon2b3cb79b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -925,6 +925,8 @@ argument_list|,
 name|DASHES_HEIGHT
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 name|gdk_cairo_set_source_color
 argument_list|(
 name|cr
@@ -945,8 +947,6 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 name|cairo_destroy
 argument_list|(
 name|cr
