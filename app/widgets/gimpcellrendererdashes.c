@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3cb79b0103
+DECL|enum|__anon273cc90b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -838,10 +838,7 @@ name|cr
 operator|=
 name|gdk_cairo_create
 argument_list|(
-name|GDK_DRAWABLE
-argument_list|(
 name|window
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_cairo_rectangle

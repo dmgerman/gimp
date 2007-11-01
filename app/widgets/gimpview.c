@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a313c10103
+DECL|enum|__anon2b393e030103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -1025,19 +1025,6 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|view
-operator|->
-name|renderer
-condition|)
-name|gimp_view_renderer_unrealize
-argument_list|(
-name|view
-operator|->
-name|renderer
-argument_list|)
-expr_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
