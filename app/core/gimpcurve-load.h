@@ -6,62 +6,38 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CURVES_H__
+name|__GIMP_CURVE_LOAD_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CURVES_H__
+DECL|macro|__GIMP_CURVE_LOAD_H__
 define|#
 directive|define
-name|__CURVES_H__
+name|__GIMP_CURVE_LOAD_H__
 end_define
 
-begin_struct
-DECL|struct|_Curves
-struct|struct
-name|_Curves
-block|{
-DECL|member|curve
-name|guchar
-name|curve
-index|[
-literal|5
-index|]
-index|[
-literal|256
-index|]
-decl_stmt|;
-block|}
-struct|;
-end_struct
+begin_define
+DECL|macro|GIMP_CURVE_FILE_EXTENSION
+define|#
+directive|define
+name|GIMP_CURVE_FILE_EXTENSION
+value|".curve"
+end_define
 
 begin_function_decl
-name|void
-name|curves_init
-parameter_list|(
-name|Curves
+name|GList
 modifier|*
-name|curves
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gfloat
-name|curves_lut_func
+name|gimp_curve_load
 parameter_list|(
-name|Curves
+specifier|const
+name|gchar
 modifier|*
-name|curves
+name|filename
 parameter_list|,
-name|gint
-name|nchannels
-parameter_list|,
-name|gint
-name|channel
-parameter_list|,
-name|gfloat
-name|value
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -72,7 +48,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CURVES_H__  */
+comment|/* __GIMP_CURVE_LOAD_H__ */
 end_comment
 
 end_unit

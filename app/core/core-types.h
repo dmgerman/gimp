@@ -376,6 +376,15 @@ name|GimpPalette
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpCurve
+typedef|typedef
+name|struct
+name|_GimpCurve
+name|GimpCurve
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  drawable objects  */
 end_comment

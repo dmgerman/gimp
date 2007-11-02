@@ -6,62 +6,32 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__CURVES_H__
+name|__GIMP_CURVE_SAVE_H__
 end_ifndef
 
 begin_define
-DECL|macro|__CURVES_H__
+DECL|macro|__GIMP_CURVE_SAVE_H__
 define|#
 directive|define
-name|__CURVES_H__
+name|__GIMP_CURVE_SAVE_H__
 end_define
 
-begin_struct
-DECL|struct|_Curves
-struct|struct
-name|_Curves
-block|{
-DECL|member|curve
-name|guchar
-name|curve
-index|[
-literal|5
-index|]
-index|[
-literal|256
-index|]
-decl_stmt|;
-block|}
-struct|;
-end_struct
+begin_comment
+comment|/*  don't call this function directly, use gimp_data_save() instead  */
+end_comment
 
 begin_function_decl
-name|void
-name|curves_init
+name|gboolean
+name|gimp_curve_save
 parameter_list|(
-name|Curves
+name|GimpData
 modifier|*
-name|curves
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gfloat
-name|curves_lut_func
-parameter_list|(
-name|Curves
+name|data
+parameter_list|,
+name|GError
 modifier|*
-name|curves
-parameter_list|,
-name|gint
-name|nchannels
-parameter_list|,
-name|gint
-name|channel
-parameter_list|,
-name|gfloat
-name|value
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -72,7 +42,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CURVES_H__  */
+comment|/* __GIMP_CURVE_SAVE_H__ */
 end_comment
 
 end_unit
