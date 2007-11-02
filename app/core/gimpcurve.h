@@ -279,6 +279,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_curve_set_curve
+parameter_list|(
+name|GimpCurve
+modifier|*
+name|curve
+parameter_list|,
+name|gint
+name|x
+parameter_list|,
+name|gint
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_curve_get_uchar
 parameter_list|(
 name|GimpCurve
@@ -291,6 +308,10 @@ name|dest_array
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* FIXME: make private */
+end_comment
 
 begin_function_decl
 name|void
