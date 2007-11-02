@@ -12,7 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtk.h>
+file|<cairo.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -26,6 +32,10 @@ include|#
 directive|include
 file|"gimpcairo-utils.h"
 end_include
+
+begin_comment
+comment|/**  * gimp_cairo_set_source_color:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the color described by @color.  *  * This function calls cairo_set_source_rgba() for you.  **/
+end_comment
 
 begin_function
 name|void
@@ -41,7 +51,7 @@ modifier|*
 name|color
 parameter_list|)
 block|{
-name|cairo_set_source_rgb
+name|cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -56,6 +66,10 @@ argument_list|,
 name|color
 operator|->
 name|b
+argument_list|,
+name|color
+operator|->
+name|a
 argument_list|)
 expr_stmt|;
 block|}
