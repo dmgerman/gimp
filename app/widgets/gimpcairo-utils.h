@@ -31,6 +31,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|cairo_surface_t
+modifier|*
+name|gimp_cairo_create_surface_from_pixbuf
+parameter_list|(
+name|GdkPixbuf
+modifier|*
+name|pixbuf
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
