@@ -366,6 +366,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_histogram_view_set_selected
+parameter_list|(
+name|GimpHistogramView
+modifier|*
+name|view
+parameter_list|,
+name|gint
+name|selected
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_histogram_view_set_xpos
 parameter_list|(
 name|GimpHistogramView

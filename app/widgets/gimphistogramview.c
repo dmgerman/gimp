@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97e2e70103
+DECL|enum|__anon2792c41c0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97e2e70203
+DECL|enum|__anon2792c41c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3723,6 +3723,44 @@ name|view
 operator|->
 name|curve
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_histogram_view_set_selected (GimpHistogramView * view,gint selected)
+name|gimp_histogram_view_set_selected
+parameter_list|(
+name|GimpHistogramView
+modifier|*
+name|view
+parameter_list|,
+name|gint
+name|selected
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_HISTOGRAM_VIEW
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|view
+operator|->
+name|selected
+operator|=
+name|selected
+expr_stmt|;
+name|gtk_widget_queue_draw
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
