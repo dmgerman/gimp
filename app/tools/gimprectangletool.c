@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4816bd0103
+DECL|enum|__anon2ae4e0260103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -219,7 +219,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4816bd0203
+DECL|enum|__anon2ae4e0260203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4816bd0303
+DECL|enum|__anon2ae4e0260303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -469,7 +469,7 @@ name|gimp_rectangle_tool_get_private
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -481,7 +481,7 @@ name|gimp_rectangle_tool_start
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -497,7 +497,7 @@ name|gimp_rectangle_tool_halt
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -521,7 +521,7 @@ name|gimp_rectangle_tool_update_options
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -545,7 +545,7 @@ name|pspec
 parameter_list|,
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -561,7 +561,7 @@ name|options
 parameter_list|,
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -573,7 +573,7 @@ name|gimp_rectangle_tool_check_function
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -585,7 +585,7 @@ name|gimp_rectangle_tool_rectangle_changed
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -597,7 +597,7 @@ name|gimp_rectangle_tool_auto_shrink
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -609,7 +609,7 @@ name|gimp_rectangle_tool_coord_outside
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpCoords
 modifier|*
@@ -625,7 +625,7 @@ name|gimp_rectangle_tool_coord_on_handle
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpCoords
 modifier|*
@@ -656,7 +656,7 @@ name|gimp_rectangle_tool_update_highlight
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -668,7 +668,7 @@ name|gimp_rectangle_tool_update_handle_sizes
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -680,7 +680,7 @@ name|gimp_rectangle_tool_scale_has_changed
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -692,7 +692,7 @@ name|gimp_rectangle_tool_get_other_side
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 specifier|const
 name|gchar
@@ -716,7 +716,7 @@ name|gimp_rectangle_tool_get_other_side_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 modifier|*
@@ -736,7 +736,7 @@ name|gimp_rectangle_tool_set_other_side_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 name|other_side_x
@@ -754,7 +754,7 @@ name|gimp_rectangle_tool_apply_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 name|coord_x
@@ -772,7 +772,7 @@ name|gimp_rectangle_tool_clamp
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|ClampedSide
 modifier|*
@@ -794,7 +794,7 @@ name|gimp_rectangle_tool_clamp_width
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|ClampedSide
 modifier|*
@@ -816,7 +816,7 @@ name|gimp_rectangle_tool_clamp_height
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|ClampedSide
 modifier|*
@@ -838,7 +838,7 @@ name|gimp_rectangle_tool_keep_inside
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -853,7 +853,7 @@ name|gimp_rectangle_tool_keep_inside_horizontally
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -868,7 +868,7 @@ name|gimp_rectangle_tool_keep_inside_vertically
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -883,7 +883,7 @@ name|gimp_rectangle_tool_apply_fixed_width
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -901,7 +901,7 @@ name|gimp_rectangle_tool_apply_fixed_height
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -919,7 +919,7 @@ name|gimp_rectangle_tool_apply_aspect
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gdouble
 name|aspect
@@ -937,7 +937,7 @@ name|gimp_rectangle_tool_update_with_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 name|new_x
@@ -955,7 +955,7 @@ name|gimp_rectangle_tool_get_constraints
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 modifier|*
@@ -986,7 +986,7 @@ name|gimp_rectangle_tool_handle_general_clamping
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1574,12 +1574,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_get_press_coords (GimpRectangleTool * rectangle,gint * pressx_ptr,gint * pressy_ptr)
+DECL|function|gimp_rectangle_tool_get_press_coords (GimpRectangleTool * rect_tool,gint * pressx_ptr,gint * pressy_ptr)
 name|gimp_rectangle_tool_get_press_coords
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|gint
 modifier|*
@@ -1598,7 +1598,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 operator|*
@@ -1624,12 +1624,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_pending_size_set (GimpRectangleTool * rectangle_tool,GObject * object,const gchar * width_property,const gchar * height_property)
+DECL|function|gimp_rectangle_tool_pending_size_set (GimpRectangleTool * rect_tool,GObject * object,const gchar * width_property,const gchar * height_property)
 name|gimp_rectangle_tool_pending_size_set
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GObject
 modifier|*
@@ -1654,7 +1654,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1676,7 +1676,7 @@ name|private
 operator|=
 name|gimp_rectangle_tool_get_private
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -1735,12 +1735,12 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_constraint_size_set (GimpRectangleTool * rectangle_tool,GObject * object,const gchar * width_property,const gchar * height_property)
+DECL|function|gimp_rectangle_tool_constraint_size_set (GimpRectangleTool * rect_tool,GObject * object,const gchar * width_property,const gchar * height_property)
 name|gimp_rectangle_tool_constraint_size_set
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GObject
 modifier|*
@@ -1779,7 +1779,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1787,7 +1787,7 @@ name|tool
 operator|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|context
@@ -1832,7 +1832,7 @@ name|constraint
 operator|=
 name|gimp_rectangle_tool_get_constraint
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -1953,7 +1953,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 init|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -1968,7 +1968,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2033,7 +2033,7 @@ name|GIMP_RECTANGLE_TOOL_PROP_CONSTRAINT
 case|:
 name|gimp_rectangle_tool_set_constraint
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|g_value_get_enum
 argument_list|(
@@ -2080,7 +2080,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 init|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -2095,7 +2095,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -2164,7 +2164,7 @@ name|value
 argument_list|,
 name|gimp_rectangle_tool_get_constraint
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2196,7 +2196,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 init|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -2250,7 +2250,7 @@ argument_list|(
 name|gimp_rectangle_tool_options_notify
 argument_list|)
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|,
 literal|0
 argument_list|)
@@ -2277,7 +2277,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 init|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -2298,7 +2298,7 @@ name|GIMP_TOOL_ACTION_RESUME
 case|:
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* When highlightning is on, the shell gets paused/unpaused which means we        * will get here, but we only want to recalculate handle sizes when the        * zoom has changed.        */
@@ -2306,12 +2306,12 @@ if|if
 condition|(
 name|gimp_rectangle_tool_scale_has_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 condition|)
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2320,7 +2320,7 @@ name|GIMP_TOOL_ACTION_HALT
 case|:
 name|gimp_rectangle_tool_halt
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2356,7 +2356,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 decl_stmt|;
 name|GimpDrawTool
 modifier|*
@@ -2392,7 +2392,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|rectangle
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -2489,14 +2489,14 @@ expr_stmt|;
 block|}
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_CREATING
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -2519,7 +2519,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_start
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|display
 argument_list|)
@@ -2607,7 +2607,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -2630,7 +2630,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* Created rectangles should not be started in narrow-mode */
@@ -3062,7 +3062,7 @@ literal|0
 decl_stmt|;
 name|gimp_rectangle_tool_get_other_side_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 operator|&
 name|other_side_x
@@ -3128,7 +3128,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 decl_stmt|;
 name|GimpRectangleToolPrivate
 modifier|*
@@ -3146,7 +3146,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|rectangle
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -3207,7 +3207,7 @@ name|GIMP_BUTTON_RELEASE_NORMAL
 case|:
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3235,7 +3235,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -3285,7 +3285,7 @@ name|saved_y2
 condition|)
 name|gimp_rectangle_tool_halt
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3306,12 +3306,12 @@ if|if
 condition|(
 name|gimp_rectangle_tool_execute
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 condition|)
 name|gimp_rectangle_tool_halt
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3370,12 +3370,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -3415,7 +3415,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 decl_stmt|;
 name|GimpRectangleToolPrivate
 modifier|*
@@ -3448,7 +3448,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|rectangle
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -3557,7 +3557,7 @@ expr_stmt|;
 comment|/* This is the core rectangle shape updating function: */
 name|gimp_rectangle_tool_update_with_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|current_x
 argument_list|,
@@ -3567,7 +3567,7 @@ expr_stmt|;
 comment|/* Update the highlight. */
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -3758,7 +3758,7 @@ expr_stmt|;
 block|}
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|function
 argument_list|)
@@ -3777,7 +3777,7 @@ comment|/* For fixed size, set the function to moving immediately since the     
 comment|/* We fake a coord update to get the right size. */
 name|gimp_rectangle_tool_update_with_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|current_x
 argument_list|,
@@ -3835,7 +3835,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_MOVING
 argument_list|)
@@ -3844,7 +3844,7 @@ block|}
 block|}
 name|gimp_rectangle_tool_update_options
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|display
 argument_list|)
@@ -3901,7 +3901,7 @@ name|draw_tool
 decl_stmt|;
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 decl_stmt|;
 name|GimpRectangleOptions
 modifier|*
@@ -3930,7 +3930,7 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|rectangle
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -3941,7 +3941,7 @@ name|private
 operator|=
 name|gimp_rectangle_tool_get_private
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
@@ -3977,7 +3977,7 @@ name|options
 argument_list|,
 name|gimp_rectangle_tool_options_notify
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -4000,7 +4000,7 @@ name|options
 argument_list|,
 name|gimp_rectangle_tool_options_notify
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* Only change the shape if the mouse is still down (i.e. the user is        * still editing the rectangle.        */
@@ -4022,7 +4022,7 @@ block|{
 comment|/* Reset anchor point */
 name|gimp_rectangle_tool_set_other_side_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|private
 operator|->
@@ -4036,7 +4036,7 @@ expr_stmt|;
 block|}
 name|gimp_rectangle_tool_update_with_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|private
 operator|->
@@ -4049,12 +4049,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -4114,7 +4114,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_with_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|private
 operator|->
@@ -4127,12 +4127,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -4147,7 +4147,7 @@ block|{
 comment|/* If we are leaving fixed_center mode we want to set the            * "other side" where it should be. Don't do anything if we            * came here by a mouse-click though, since then the user            * has confirmed the shape and we don't want to modify it            * afterwards.            */
 name|gimp_rectangle_tool_set_other_side_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|private
 operator|->
@@ -4160,12 +4160,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -4177,7 +4177,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_options
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|tool
 operator|->
@@ -4231,12 +4231,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_check_function (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_check_function (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_check_function
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpRectangleToolPrivate
@@ -4250,7 +4250,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|function
@@ -4424,7 +4424,7 @@ block|}
 block|}
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|function
 argument_list|)
@@ -4452,7 +4452,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 decl_stmt|;
 name|GimpRectangleToolPrivate
 modifier|*
@@ -4499,7 +4499,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|rectangle
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -4564,12 +4564,12 @@ if|if
 condition|(
 name|gimp_rectangle_tool_execute
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 condition|)
 name|gimp_rectangle_tool_halt
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 return|return
@@ -4580,12 +4580,12 @@ name|GDK_Escape
 case|:
 name|gimp_rectangle_tool_cancel
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_halt
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 return|return
@@ -4619,7 +4619,7 @@ name|gimp_tool_control_set_snap_offsets
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 operator|->
 name|control
@@ -4859,7 +4859,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_with_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|new_x
 argument_list|,
@@ -4900,17 +4900,17 @@ literal|2
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_options
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|tool
 operator|->
@@ -4927,7 +4927,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/*  Evil hack to suppress oper updates. We do this because we don't    *  want the rectangle tool to change function while the rectangle    *  is being resized or moved using the keyboard.    */
@@ -4973,7 +4973,7 @@ name|private
 decl_stmt|;
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 decl_stmt|;
 name|gint
 name|function
@@ -4993,7 +4993,7 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|rectangle_tool
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -5027,7 +5027,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_outside
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|)
@@ -5044,7 +5044,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5062,7 +5062,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5080,7 +5080,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5098,7 +5098,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5116,7 +5116,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5134,7 +5134,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5152,7 +5152,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5170,7 +5170,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5188,7 +5188,7 @@ if|if
 condition|(
 name|gimp_rectangle_tool_coord_on_handle
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
@@ -5244,7 +5244,7 @@ parameter_list|)
 block|{
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 decl_stmt|;
 name|GimpRectangleToolPrivate
 modifier|*
@@ -5263,7 +5263,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|rectangle
+name|rect_tool
 operator|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
@@ -6298,12 +6298,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_update_handle_sizes (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_update_handle_sizes (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_update_handle_sizes
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpTool
@@ -6312,7 +6312,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleToolPrivate
@@ -6756,18 +6756,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_scale_has_changed:  * @rectangle_tool: A #GimpRectangleTool.  *  * Returns: %TRUE if the scale that was used to calculate handle sizes  *          is not the same as the current shell scale.  */
+comment|/**  * gimp_rectangle_tool_scale_has_changed:  * @rect_tool: A #GimpRectangleTool.  *  * Returns: %TRUE if the scale that was used to calculate handle sizes  *          is not the same as the current shell scale.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_scale_has_changed (GimpRectangleTool * rectangle_tool)
+DECL|function|gimp_rectangle_tool_scale_has_changed (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_scale_has_changed
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpTool
@@ -6776,7 +6776,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleToolPrivate
@@ -6836,12 +6836,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_start (GimpRectangleTool * rectangle,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_start (GimpRectangleTool * rect_tool,GimpDisplay * display)
 name|gimp_rectangle_tool_start
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -6854,7 +6854,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleOptionsPrivate
@@ -6879,7 +6879,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|tool
@@ -6903,19 +6903,19 @@ argument_list|(
 name|gimp_rectangle_tool_shell_scrolled
 argument_list|)
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* initialize the statusbar display */
@@ -7261,7 +7261,7 @@ argument_list|(
 name|gimp_rectangle_tool_auto_shrink
 argument_list|)
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_sensitive
@@ -7280,12 +7280,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_halt (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_halt (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_halt
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpTool
@@ -7294,7 +7294,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleOptionsPrivate
@@ -7345,7 +7345,7 @@ argument_list|)
 argument_list|,
 name|gimp_rectangle_tool_shell_scrolled
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -7355,7 +7355,7 @@ name|gimp_draw_tool_is_active
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 condition|)
@@ -7363,7 +7363,7 @@ name|gimp_draw_tool_stop
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7397,7 +7397,7 @@ name|NULL
 expr_stmt|;
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_INACTIVE
 argument_list|)
@@ -7426,7 +7426,7 @@ name|auto_shrink_button
 argument_list|,
 name|gimp_rectangle_tool_auto_shrink
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -7435,12 +7435,12 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_tool_execute (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_execute (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_execute
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpRectangleToolInterface
@@ -7456,7 +7456,7 @@ name|iface
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_INTERFACE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -7474,14 +7474,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7491,7 +7491,7 @@ name|iface
 operator|->
 name|execute
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|private
 operator|->
@@ -7520,14 +7520,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7540,12 +7540,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_cancel (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_cancel (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_cancel
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpRectangleToolInterface
@@ -7556,7 +7556,7 @@ name|iface
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_INTERFACE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -7569,7 +7569,7 @@ name|iface
 operator|->
 name|cancel
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -7578,12 +7578,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_update_options (GimpRectangleTool * rectangle,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_update_options (GimpRectangleTool * rect_tool,GimpDisplay * display)
 name|gimp_rectangle_tool_update_options
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -7619,14 +7619,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|x
@@ -7695,7 +7695,7 @@ name|options
 argument_list|,
 name|gimp_rectangle_tool_options_notify
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -7756,7 +7756,7 @@ name|options
 argument_list|,
 name|gimp_rectangle_tool_options_notify
 argument_list|,
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -7765,12 +7765,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_synthesize_motion (GimpRectangleTool * rectangle,gint function,gint new_x,gint new_y)
+DECL|function|gimp_rectangle_tool_synthesize_motion (GimpRectangleTool * rect_tool,gint function,gint new_x,gint new_y)
 name|gimp_rectangle_tool_synthesize_motion
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|gint
 name|function
@@ -7793,7 +7793,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|old_function
@@ -7806,20 +7806,20 @@ name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|function
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_with_coord
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|new_x
 argument_list|,
@@ -7861,11 +7861,11 @@ literal|2
 expr_stmt|;
 name|gimp_rectangle_tool_update_options
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 operator|->
 name|display
@@ -7873,32 +7873,32 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_set_function
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|old_function
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -7907,7 +7907,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_options_notify (GimpRectangleOptions * options,GParamSpec * pspec,GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_options_notify (GimpRectangleOptions * options,GParamSpec * pspec,GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_options_notify
 parameter_list|(
 name|GimpRectangleOptions
@@ -7920,7 +7920,7 @@ name|pspec
 parameter_list|,
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpTool
@@ -7929,7 +7929,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleToolPrivate
@@ -7969,7 +7969,7 @@ name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7985,7 +7985,7 @@ name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8024,7 +8024,7 @@ name|x
 condition|)
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_MOVING
 argument_list|,
@@ -8064,7 +8064,7 @@ name|y
 condition|)
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_MOVING
 argument_list|,
@@ -8146,7 +8146,7 @@ expr_stmt|;
 block|}
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_RESIZING_RIGHT
 argument_list|,
@@ -8227,7 +8227,7 @@ expr_stmt|;
 block|}
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_RESIZING_BOTTOM
 argument_list|,
@@ -8331,7 +8331,7 @@ name|y1
 decl_stmt|;
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_RESIZING_LOWER_RIGHT
 argument_list|,
@@ -8545,7 +8545,7 @@ name|x1
 decl_stmt|;
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|RECT_RESIZING_LOWER_RIGHT
 argument_list|,
@@ -8572,7 +8572,7 @@ condition|)
 block|{
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -8582,7 +8582,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_shell_scrolled (GimpDisplayShell * shell,GimpRectangleTool * rectangle_tool)
+DECL|function|gimp_rectangle_tool_shell_scrolled (GimpDisplayShell * shell,GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_shell_scrolled
 parameter_list|(
 name|GimpDisplayShell
@@ -8591,7 +8591,7 @@ name|shell
 parameter_list|,
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpDrawTool
@@ -8600,7 +8600,7 @@ name|draw_tool
 init|=
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|gimp_draw_tool_pause
@@ -8610,7 +8610,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -8623,19 +8623,19 @@ end_function
 
 begin_function
 name|GimpRectangleFunction
-DECL|function|gimp_rectangle_tool_get_function (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_get_function (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_get_function
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|,
 name|RECT_INACTIVE
@@ -8644,7 +8644,7 @@ expr_stmt|;
 return|return
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 operator|->
 name|function
@@ -8654,12 +8654,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_set_function (GimpRectangleTool * rectangle,GimpRectangleFunction function)
+DECL|function|gimp_rectangle_tool_set_function (GimpRectangleTool * rect_tool,GimpRectangleFunction function)
 name|gimp_rectangle_tool_set_function
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|,
 name|GimpRectangleFunction
 name|function
@@ -8673,7 +8673,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8681,7 +8681,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* redraw the tool when the function changes */
@@ -8701,7 +8701,7 @@ name|draw_tool
 init|=
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|gimp_draw_tool_pause
@@ -8727,17 +8727,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_rectangle_changed (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_rectangle_changed (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_rectangle_changed
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|g_signal_emit
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|gimp_rectangle_tool_signals
 index|[
@@ -8753,12 +8753,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_auto_shrink (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_auto_shrink (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_auto_shrink
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpTool
@@ -8767,7 +8767,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleToolPrivate
@@ -8974,13 +8974,13 @@ name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 literal|"x1"
 argument_list|,
@@ -9011,31 +9011,31 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_rectangle_changed
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_handle_sizes
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_update_highlight
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
 name|gimp_rectangle_tool_update_options
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|,
 name|tool
 operator|->
@@ -9052,12 +9052,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_coord_outside (GimpRectangleTool * rectangle_tool,GimpCoords * coord)
+DECL|function|gimp_rectangle_tool_coord_outside (GimpRectangleTool * rect_tool,GimpCoords * coord)
 name|gimp_rectangle_tool_coord_outside
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpCoords
 modifier|*
@@ -9089,7 +9089,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|narrow_mode
@@ -9104,7 +9104,7 @@ name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 operator|->
 name|display
@@ -9227,12 +9227,12 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_coord_on_handle (GimpRectangleTool * rectangle_tool,GimpCoords * coords,GtkAnchorType anchor)
+DECL|function|gimp_rectangle_tool_coord_on_handle (GimpRectangleTool * rect_tool,GimpCoords * coords,GtkAnchorType anchor)
 name|gimp_rectangle_tool_coord_on_handle
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpCoords
 modifier|*
@@ -9248,7 +9248,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpDrawTool
@@ -9877,12 +9877,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_update_highlight (GimpRectangleTool * rectangle)
+DECL|function|gimp_rectangle_tool_update_highlight (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_update_highlight
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpTool
@@ -9891,7 +9891,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleOptions
@@ -10025,18 +10025,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_get_other_side:  * @rectangle_tool: A #GimpRectangleTool.  * @other_x:        Pointer to where to set the other-x string.  * @other_y:        Pointer to where to set the other-y string.  *  * Calculates what property variables that hold the coordinates of the opposite  * side (either the opposite corner or literally the opposite side), based on  * the current function. The opposite of a corner needs two coordinates, the  * opposite of a side only needs one.  */
+comment|/**  * gimp_rectangle_tool_get_other_side:  * @rect_tool:      A #GimpRectangleTool.  * @other_x:        Pointer to where to set the other-x string.  * @other_y:        Pointer to where to set the other-y string.  *  * Calculates what property variables that hold the coordinates of the opposite  * side (either the opposite corner or literally the opposite side), based on  * the current function. The opposite of a corner needs two coordinates, the  * opposite of a side only needs one.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_get_other_side (GimpRectangleTool * rectangle_tool,const gchar ** other_x,const gchar ** other_y)
+DECL|function|gimp_rectangle_tool_get_other_side (GimpRectangleTool * rect_tool,const gchar ** other_x,const gchar ** other_y)
 name|gimp_rectangle_tool_get_other_side
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 specifier|const
 name|gchar
@@ -10059,7 +10059,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -10170,12 +10170,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_get_other_side_coord (GimpRectangleTool * rectangle_tool,gint * other_side_x,gint * other_side_y)
+DECL|function|gimp_rectangle_tool_get_other_side_coord (GimpRectangleTool * rect_tool,gint * other_side_x,gint * other_side_y)
 name|gimp_rectangle_tool_get_other_side_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 modifier|*
@@ -10202,7 +10202,7 @@ name|NULL
 decl_stmt|;
 name|gimp_rectangle_tool_get_other_side
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 operator|&
 name|other_x
@@ -10217,7 +10217,7 @@ name|other_x
 condition|)
 name|g_object_get
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|other_x
 argument_list|,
@@ -10232,7 +10232,7 @@ name|other_y
 condition|)
 name|g_object_get
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|other_y
 argument_list|,
@@ -10247,12 +10247,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_set_other_side_coord (GimpRectangleTool * rectangle_tool,gint other_side_x,gint other_side_y)
+DECL|function|gimp_rectangle_tool_set_other_side_coord (GimpRectangleTool * rect_tool,gint other_side_x,gint other_side_y)
 name|gimp_rectangle_tool_set_other_side_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 name|other_side_x
@@ -10277,7 +10277,7 @@ name|NULL
 decl_stmt|;
 name|gimp_rectangle_tool_get_other_side
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 operator|&
 name|other_x
@@ -10292,7 +10292,7 @@ name|other_x
 condition|)
 name|g_object_set
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|other_x
 argument_list|,
@@ -10307,7 +10307,7 @@ name|other_y
 condition|)
 name|g_object_set
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|other_y
 argument_list|,
@@ -10326,12 +10326,12 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_apply_coord (GimpRectangleTool * rectangle_tool,gint coord_x,gint coord_y)
+DECL|function|gimp_rectangle_tool_apply_coord (GimpRectangleTool * rect_tool,gint coord_x,gint coord_y)
 name|gimp_rectangle_tool_apply_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 name|coord_x
@@ -10356,14 +10356,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options_private
@@ -10617,18 +10617,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_clamp_width:  * @rectangle_tool: A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps rectangle inside specified bounds, providing information of where  * clamping was done. Can also clamp symmetrically.  */
+comment|/**  * gimp_rectangle_tool_clamp_width:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps rectangle inside specified bounds, providing information of where  * clamping was done. Can also clamp symmetrically.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_clamp (GimpRectangleTool * rectangle_tool,ClampedSide * clamped_sides,GimpRectangleConstraint constraint,gboolean symmetrically)
+DECL|function|gimp_rectangle_tool_clamp (GimpRectangleTool * rect_tool,ClampedSide * clamped_sides,GimpRectangleConstraint constraint,gboolean symmetrically)
 name|gimp_rectangle_tool_clamp
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|ClampedSide
 modifier|*
@@ -10643,7 +10643,7 @@ parameter_list|)
 block|{
 name|gimp_rectangle_tool_clamp_width
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|clamped_sides
 argument_list|,
@@ -10654,7 +10654,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_clamp_height
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|clamped_sides
 argument_list|,
@@ -10667,18 +10667,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_clamp_width:  * @rectangle_tool: A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps height of rectangle. Set symmetrically to true when using for  * fixed_center:ed rectangles, since that will clamp symmetrically which is just  * what is needed.  *  * When this function constrains, it puts what it constrains in  * @constraint. This information is essential when an aspect ratio is to be  * applied.  */
+comment|/**  * gimp_rectangle_tool_clamp_width:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps height of rectangle. Set symmetrically to true when using for  * fixed_center:ed rectangles, since that will clamp symmetrically which is just  * what is needed.  *  * When this function constrains, it puts what it constrains in  * @constraint. This information is essential when an aspect ratio is to be  * applied.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_clamp_width (GimpRectangleTool * rectangle_tool,ClampedSide * clamped_sides,GimpRectangleConstraint constraint,gboolean symmetrically)
+DECL|function|gimp_rectangle_tool_clamp_width (GimpRectangleTool * rect_tool,ClampedSide * clamped_sides,GimpRectangleConstraint constraint,gboolean symmetrically)
 name|gimp_rectangle_tool_clamp_width
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|ClampedSide
 modifier|*
@@ -10712,12 +10712,12 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_get_constraints
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 operator|&
 name|min_x
@@ -10852,18 +10852,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_clamp_height:  * @rectangle_tool: A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps height of rectangle. Set symmetrically to true when using for  * fixed_center:ed rectangles, since that will clamp symmetrically which is just  * what is needed.  *  * When this function constrains, it puts what it constrains in  * @constraint. This information is essential when an aspect ratio is to be  * applied.  */
+comment|/**  * gimp_rectangle_tool_clamp_height:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps height of rectangle. Set symmetrically to true when using for  * fixed_center:ed rectangles, since that will clamp symmetrically which is just  * what is needed.  *  * When this function constrains, it puts what it constrains in  * @constraint. This information is essential when an aspect ratio is to be  * applied.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_clamp_height (GimpRectangleTool * rectangle_tool,ClampedSide * clamped_sides,GimpRectangleConstraint constraint,gboolean symmetrically)
+DECL|function|gimp_rectangle_tool_clamp_height (GimpRectangleTool * rect_tool,ClampedSide * clamped_sides,GimpRectangleConstraint constraint,gboolean symmetrically)
 name|gimp_rectangle_tool_clamp_height
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|ClampedSide
 modifier|*
@@ -10897,12 +10897,12 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_get_constraints
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|NULL
 argument_list|,
@@ -11037,18 +11037,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_keep_inside:  * @rectangle_tool: A #GimpRectangleTool.  *  * If the rectangle is outside of the canvas, move it into it. If the rectangle is  * larger than the canvas in any direction, make it fill the canvas in that direction.  */
+comment|/**  * gimp_rectangle_tool_keep_inside:  * @rect_tool: A #GimpRectangleTool.  *  * If the rectangle is outside of the canvas, move it into it. If the rectangle is  * larger than the canvas in any direction, make it fill the canvas in that direction.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_keep_inside (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint)
+DECL|function|gimp_rectangle_tool_keep_inside (GimpRectangleTool * rect_tool,GimpRectangleConstraint constraint)
 name|gimp_rectangle_tool_keep_inside
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -11056,14 +11056,14 @@ parameter_list|)
 block|{
 name|gimp_rectangle_tool_keep_inside_horizontally
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_keep_inside_vertically
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint
 argument_list|)
@@ -11072,18 +11072,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_keep_inside_horizontally:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * If the rectangle is outside of the given constraint horizontally, move it  * inside. If it is too big to fit inside, make it just as big as the width  * limit.  */
+comment|/**  * gimp_rectangle_tool_keep_inside_horizontally:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * If the rectangle is outside of the given constraint horizontally, move it  * inside. If it is too big to fit inside, make it just as big as the width  * limit.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_keep_inside_horizontally (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint)
+DECL|function|gimp_rectangle_tool_keep_inside_horizontally (GimpRectangleTool * rect_tool,GimpRectangleConstraint constraint)
 name|gimp_rectangle_tool_keep_inside_horizontally
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -11103,7 +11103,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -11115,7 +11115,7 @@ condition|)
 return|return;
 name|gimp_rectangle_tool_get_constraints
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 operator|&
 name|min_x
@@ -11227,18 +11227,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_keep_inside_vertically:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * If the rectangle is outside of the given constraint vertically, move it  * inside. If it is too big to fit inside, make it just as big as the width  * limit.  */
+comment|/**  * gimp_rectangle_tool_keep_inside_vertically:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * If the rectangle is outside of the given constraint vertically, move it  * inside. If it is too big to fit inside, make it just as big as the width  * limit.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_keep_inside_vertically (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint)
+DECL|function|gimp_rectangle_tool_keep_inside_vertically (GimpRectangleTool * rect_tool,GimpRectangleConstraint constraint)
 name|gimp_rectangle_tool_keep_inside_vertically
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -11258,7 +11258,7 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 if|if
@@ -11270,7 +11270,7 @@ condition|)
 return|return;
 name|gimp_rectangle_tool_get_constraints
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|NULL
 argument_list|,
@@ -11382,18 +11382,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_fixed_width:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @width:  *  * Makes the rectangle have a fixed_width, following the constrainment rules  * of fixed widths as well. Please refer to the rectangle tools spec.  */
+comment|/**  * gimp_rectangle_tool_apply_fixed_width:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @width:  *  * Makes the rectangle have a fixed_width, following the constrainment rules  * of fixed widths as well. Please refer to the rectangle tools spec.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_apply_fixed_width (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint,gint width)
+DECL|function|gimp_rectangle_tool_apply_fixed_width (GimpRectangleTool * rect_tool,GimpRectangleConstraint constraint,gint width)
 name|gimp_rectangle_tool_apply_fixed_width
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -11418,14 +11418,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options_private
@@ -11512,7 +11512,7 @@ block|}
 comment|/* Width shall be kept even after constraints, so we move the    * rectangle sideways rather than adjusting a side.    */
 name|gimp_rectangle_tool_keep_inside_horizontally
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint
 argument_list|)
@@ -11521,18 +11521,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_fixed_height:  * @rectangle_tool: A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @height:  *  * Makes the rectangle have a fixed_height, following the constrainment rules  * of fixed heights as well. Please refer to the rectangle tools spec.  */
+comment|/**  * gimp_rectangle_tool_apply_fixed_height:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @height:  *  * Makes the rectangle have a fixed_height, following the constrainment rules  * of fixed heights as well. Please refer to the rectangle tools spec.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_apply_fixed_height (GimpRectangleTool * rectangle_tool,GimpRectangleConstraint constraint,gint height)
+DECL|function|gimp_rectangle_tool_apply_fixed_height (GimpRectangleTool * rect_tool,GimpRectangleConstraint constraint,gint height)
 name|gimp_rectangle_tool_apply_fixed_height
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|GimpRectangleConstraint
 name|constraint
@@ -11557,14 +11557,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options_private
@@ -11651,7 +11651,7 @@ block|}
 comment|/* Width shall be kept even after constraints, so we move the    * rectangle sideways rather than adjusting a side.    */
 name|gimp_rectangle_tool_keep_inside_vertically
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint
 argument_list|)
@@ -11660,18 +11660,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_aspect:  * @rectangle_tool: A #GimpRectangleTool.  * @aspect:         The desired aspect.  * @clamped_sides:  Bitfield of sides that have been clamped.  *  * Adjust the rectangle to the desired aspect.  *  * Sometimes, a side must not be moved outwards, for example if a the RIGHT side  * has been clamped previously, we must not move the RIGHT side to the right,  * since that would violate the constraint again. The clamped_sides bitfield  * keeps track of sides that have previously been clamped.  *  * If fixed_center is used, the function adjusts the aspect by symmetrically  * adjusting the left and right, or top and bottom side.  */
+comment|/**  * gimp_rectangle_tool_apply_aspect:  * @rect_tool:      A #GimpRectangleTool.  * @aspect:         The desired aspect.  * @clamped_sides:  Bitfield of sides that have been clamped.  *  * Adjust the rectangle to the desired aspect.  *  * Sometimes, a side must not be moved outwards, for example if a the RIGHT side  * has been clamped previously, we must not move the RIGHT side to the right,  * since that would violate the constraint again. The clamped_sides bitfield  * keeps track of sides that have previously been clamped.  *  * If fixed_center is used, the function adjusts the aspect by symmetrically  * adjusting the left and right, or top and bottom side.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_apply_aspect (GimpRectangleTool * rectangle_tool,gdouble aspect,gint clamped_sides)
+DECL|function|gimp_rectangle_tool_apply_aspect (GimpRectangleTool * rect_tool,gdouble aspect,gint clamped_sides)
 name|gimp_rectangle_tool_apply_aspect
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gdouble
 name|aspect
@@ -11710,14 +11710,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options_private
@@ -12555,18 +12555,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_update_with_coord:  * @rectangle_tool: A #GimpRectangleTool.  * @new_x:          New X-coordinate in the context of the current function.  * @new_y:          New Y-coordinate in the context of the current function.  *  * The core rectangle adjustment function. It updates the rectangle for the  * passed cursor coordinate, taking current function and tool options into  * account.  It also updates the current private->function if necessary.  */
+comment|/**  * gimp_rectangle_tool_update_with_coord:  * @rect_tool:      A #GimpRectangleTool.  * @new_x:          New X-coordinate in the context of the current function.  * @new_y:          New Y-coordinate in the context of the current function.  *  * The core rectangle adjustment function. It updates the rectangle for the  * passed cursor coordinate, taking current function and tool options into  * account.  It also updates the current private->function if necessary.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_update_with_coord (GimpRectangleTool * rectangle_tool,gint new_x,gint new_y)
+DECL|function|gimp_rectangle_tool_update_with_coord (GimpRectangleTool * rect_tool,gint new_x,gint new_y)
 name|gimp_rectangle_tool_update_with_coord
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 name|new_x
@@ -12581,7 +12581,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|GimpRectangleToolPrivate
@@ -12619,7 +12619,7 @@ expr_stmt|;
 comment|/* Move the corner or edge the user currently has grabbed. */
 name|gimp_rectangle_tool_apply_coord
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|new_x
 argument_list|,
@@ -12629,13 +12629,13 @@ expr_stmt|;
 comment|/* Update private->function. The function changes if the user "flips" the    * rectangle.    */
 name|gimp_rectangle_tool_check_function
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* E.g. the crop tool will set up clamping always to be used, and this    * function handles that.    */
 name|gimp_rectangle_tool_handle_general_clamping
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* Calculate what constraint to use when needed. */
@@ -12643,7 +12643,7 @@ name|constraint_to_use
 operator|=
 name|gimp_rectangle_tool_get_constraint
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* If the rectangle is being moved, we are done already since we should change it's shape then. */
@@ -12710,7 +12710,7 @@ condition|)
 block|{
 name|gimp_rectangle_tool_apply_aspect
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|aspect
 argument_list|,
@@ -12736,7 +12736,7 @@ name|CLAMPED_NONE
 decl_stmt|;
 name|gimp_rectangle_tool_apply_aspect
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|aspect
 argument_list|,
@@ -12746,7 +12746,7 @@ expr_stmt|;
 comment|/* After we have applied aspect, we might have taken the                * rectangle outside of constraint, so clamp and apply                * aspect again. We will get the right result this time,                * since 'clamped_sides' will be setup correctly now.                */
 name|gimp_rectangle_tool_clamp
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 operator|&
 name|clamped_sides
@@ -12760,7 +12760,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_apply_aspect
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|aspect
 argument_list|,
@@ -12772,7 +12772,7 @@ else|else
 block|{
 name|gimp_rectangle_tool_apply_aspect
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|aspect
 argument_list|,
@@ -12782,7 +12782,7 @@ expr_stmt|;
 comment|/* When fixed ratio is used, we always want the                * rectangle inside the canvas.                */
 name|gimp_rectangle_tool_keep_inside
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint_to_use
 argument_list|)
@@ -12803,7 +12803,7 @@ condition|)
 block|{
 name|gimp_rectangle_tool_apply_fixed_width
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint_to_use
 argument_list|,
@@ -12814,7 +12814,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_apply_fixed_height
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint_to_use
 argument_list|,
@@ -12837,7 +12837,7 @@ condition|)
 block|{
 name|gimp_rectangle_tool_apply_fixed_width
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint_to_use
 argument_list|,
@@ -12860,7 +12860,7 @@ condition|)
 block|{
 name|gimp_rectangle_tool_apply_fixed_height
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint_to_use
 argument_list|,
@@ -12874,18 +12874,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_get_constraints:  * @rectangle_tool: A #GimpRectangleTool.  * @min_x:  * @min_y:  * @max_x:  * @max_y:          Pointers of where to put constraints. NULL allowed.  * @constraint:     Wether to return image or layer constraints.  *  * Calculates constraint coordinates for image or layer.  */
+comment|/**  * gimp_rectangle_tool_get_constraints:  * @rect_tool:      A #GimpRectangleTool.  * @min_x:  * @min_y:  * @max_x:  * @max_y:          Pointers of where to put constraints. NULL allowed.  * @constraint:     Wether to return image or layer constraints.  *  * Calculates constraint coordinates for image or layer.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_get_constraints (GimpRectangleTool * rectangle_tool,gint * min_x,gint * min_y,gint * max_x,gint * max_y,GimpRectangleConstraint constraint)
+DECL|function|gimp_rectangle_tool_get_constraints (GimpRectangleTool * rect_tool,gint * min_x,gint * min_y,gint * max_x,gint * max_y,GimpRectangleConstraint constraint)
 name|gimp_rectangle_tool_get_constraints
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|,
 name|gint
 modifier|*
@@ -12913,7 +12913,7 @@ name|tool
 init|=
 name|GIMP_TOOL
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 decl_stmt|;
 name|gint
@@ -13097,18 +13097,18 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_handle_general_clamping:  * @rectangle_tool: A #GimpRectangleTool.  *  * Make sure that contraints are applied to the rectangle, either by manually  * doing it, or by looking at the rectangle tool options and concluding it will  * be done later.  */
+comment|/**  * gimp_rectangle_tool_handle_general_clamping:  * @rect_tool: A #GimpRectangleTool.  *  * Make sure that contraints are applied to the rectangle, either by manually  * doing it, or by looking at the rectangle tool options and concluding it will  * be done later.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_handle_general_clamping (GimpRectangleTool * rectangle_tool)
+DECL|function|gimp_rectangle_tool_handle_general_clamping (GimpRectangleTool * rect_tool)
 name|gimp_rectangle_tool_handle_general_clamping
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
-name|rectangle_tool
+name|rect_tool
 parameter_list|)
 block|{
 name|GimpRectangleToolPrivate
@@ -13130,14 +13130,14 @@ name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_OPTIONS
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 name|options_private
@@ -13151,7 +13151,7 @@ name|constraint
 operator|=
 name|gimp_rectangle_tool_get_constraint
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|)
 expr_stmt|;
 comment|/* fixed_aspect takes care of clamping by it self, so just return in    * case that is in use. Also return if no constraints should be    * enforced.    */
@@ -13173,7 +13173,7 @@ condition|)
 block|{
 name|gimp_rectangle_tool_clamp
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|NULL
 argument_list|,
@@ -13189,7 +13189,7 @@ else|else
 block|{
 name|gimp_rectangle_tool_keep_inside
 argument_list|(
-name|rectangle_tool
+name|rect_tool
 argument_list|,
 name|constraint
 argument_list|)
