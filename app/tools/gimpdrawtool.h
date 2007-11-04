@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c19d430103
+DECL|enum|__anon28bfb1450103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -637,6 +637,9 @@ name|draw_tool
 parameter_list|,
 name|gboolean
 name|highlight
+parameter_list|,
+name|gboolean
+name|put_outside
 parameter_list|,
 name|gdouble
 name|x1
