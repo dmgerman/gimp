@@ -863,7 +863,7 @@ operator|/
 literal|2
 expr_stmt|;
 block|}
-name|gimp_view_renderer_render_buffer
+name|gimp_view_renderer_render_surface
 argument_list|(
 name|renderer
 argument_list|,

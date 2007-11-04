@@ -275,7 +275,7 @@ condition|(
 name|render_buf
 condition|)
 block|{
-name|gimp_view_renderer_default_render_buffer
+name|gimp_view_renderer_default_render_surface
 argument_list|(
 name|renderer
 argument_list|,

@@ -151,24 +151,17 @@ DECL|member|border_color
 name|GimpRGB
 name|border_color
 decl_stmt|;
+comment|/*< protected>*/
+DECL|member|surface
+name|cairo_surface_t
+modifier|*
+name|surface
+decl_stmt|;
 comment|/*< private>*/
 DECL|member|pattern
 name|cairo_pattern_t
 modifier|*
 name|pattern
-decl_stmt|;
-DECL|member|buffer
-name|guchar
-modifier|*
-name|buffer
-decl_stmt|;
-DECL|member|rowstride
-name|gint
-name|rowstride
-decl_stmt|;
-DECL|member|bytes
-name|gint
-name|bytes
 decl_stmt|;
 DECL|member|pixbuf
 name|GdkPixbuf
@@ -279,23 +272,18 @@ name|GimpViewRenderer
 modifier|*
 name|renderer
 parameter_list|,
-name|GdkWindow
-modifier|*
-name|window
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|,
 specifier|const
 name|GdkRectangle
 modifier|*
 name|draw_area
-parameter_list|,
-specifier|const
-name|GdkRectangle
-modifier|*
-name|expose_area
 parameter_list|)
 function_decl|;
 DECL|member|render
@@ -585,7 +573,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_view_renderer_default_render_buffer
+name|gimp_view_renderer_default_render_surface
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -624,7 +612,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_view_renderer_render_buffer
+name|gimp_view_renderer_render_surface
 parameter_list|(
 name|GimpViewRenderer
 modifier|*

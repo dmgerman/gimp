@@ -60,14 +60,6 @@ begin_decl_stmt
 specifier|extern
 name|guchar
 modifier|*
-name|gimp_render_temp_buf
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|guchar
-modifier|*
 name|gimp_render_blend_dark_check
 decl_stmt|;
 end_decl_stmt

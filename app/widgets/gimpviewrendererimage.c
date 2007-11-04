@@ -447,7 +447,7 @@ operator|->
 name|channel
 argument_list|)
 expr_stmt|;
-name|gimp_view_renderer_render_buffer
+name|gimp_view_renderer_render_surface
 argument_list|(
 name|renderer
 argument_list|,
