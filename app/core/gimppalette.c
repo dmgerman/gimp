@@ -596,6 +596,8 @@ expr_stmt|;
 operator|*
 name|height
 operator|=
+literal|1
+operator|+
 name|size
 operator|/
 literal|2
