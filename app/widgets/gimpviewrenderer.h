@@ -283,7 +283,7 @@ parameter_list|,
 specifier|const
 name|GdkRectangle
 modifier|*
-name|draw_area
+name|area
 parameter_list|)
 function_decl|;
 DECL|member|render

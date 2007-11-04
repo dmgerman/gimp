@@ -83,7 +83,7 @@ parameter_list|,
 specifier|const
 name|GdkRectangle
 modifier|*
-name|draw_area
+name|area
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -152,7 +152,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_renderer_vectors_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * draw_area)
+DECL|function|gimp_view_renderer_vectors_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * area)
 name|gimp_view_renderer_vectors_draw
 parameter_list|(
 name|GimpViewRenderer
@@ -170,7 +170,7 @@ parameter_list|,
 specifier|const
 name|GdkRectangle
 modifier|*
-name|draw_area
+name|area
 parameter_list|)
 block|{
 name|GimpVectors
@@ -213,12 +213,12 @@ argument_list|)
 expr_stmt|;
 name|x
 operator|=
-name|draw_area
+name|area
 operator|->
 name|x
 operator|+
 operator|(
-name|draw_area
+name|area
 operator|->
 name|width
 operator|-
@@ -231,12 +231,12 @@ literal|2
 expr_stmt|;
 name|y
 operator|=
-name|draw_area
+name|area
 operator|->
 name|y
 operator|+
 operator|(
-name|draw_area
+name|area
 operator|->
 name|height
 operator|-

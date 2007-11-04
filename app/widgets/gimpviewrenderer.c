@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a074c60103
+DECL|enum|__anon2aad88930103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2661,7 +2661,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_renderer_real_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * draw_area)
+DECL|function|gimp_view_renderer_real_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * area)
 name|gimp_view_renderer_real_draw
 parameter_list|(
 name|GimpViewRenderer
@@ -2679,7 +2679,7 @@ parameter_list|,
 specifier|const
 name|GdkRectangle
 modifier|*
-name|draw_area
+name|area
 parameter_list|)
 block|{
 if|if
@@ -2774,12 +2774,12 @@ expr_stmt|;
 block|}
 name|x
 operator|=
-name|draw_area
+name|area
 operator|->
 name|x
 operator|+
 operator|(
-name|draw_area
+name|area
 operator|->
 name|width
 operator|-
@@ -2790,12 +2790,12 @@ literal|2
 expr_stmt|;
 name|y
 operator|=
-name|draw_area
+name|area
 operator|->
 name|y
 operator|+
 operator|(
-name|draw_area
+name|area
 operator|->
 name|height
 operator|-
@@ -2865,12 +2865,12 @@ name|y
 decl_stmt|;
 name|x
 operator|=
-name|draw_area
+name|area
 operator|->
 name|x
 operator|+
 operator|(
-name|draw_area
+name|area
 operator|->
 name|width
 operator|-
@@ -2881,12 +2881,12 @@ literal|2
 expr_stmt|;
 name|y
 operator|=
-name|draw_area
+name|area
 operator|->
 name|y
 operator|+
 operator|(
-name|draw_area
+name|area
 operator|->
 name|height
 operator|-
