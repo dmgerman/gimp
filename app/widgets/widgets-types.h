@@ -845,6 +845,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCurveView
+typedef|typedef
+name|struct
+name|_GimpCurveView
+name|GimpCurveView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDashEditor
 typedef|typedef
 name|struct
