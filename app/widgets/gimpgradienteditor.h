@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae6d0060103
+DECL|enum|__anon2c87f39c0103
 block|{
 DECL|enumerator|GRAD_DRAG_NONE
 name|GRAD_DRAG_NONE
@@ -201,11 +201,6 @@ name|gboolean
 name|view_button_down
 decl_stmt|;
 comment|/*  Gradient control  */
-DECL|member|control_pixmap
-name|GdkPixmap
-modifier|*
-name|control_pixmap
-decl_stmt|;
 DECL|member|control_drag_segment
 name|GimpGradientSegment
 modifier|*
