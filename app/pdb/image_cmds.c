@@ -17877,11 +17877,11 @@ literal|"Find a vectors with a given tattoo in an image."
 argument_list|,
 literal|"This procedure returns the vectors with the given tattoo in the specified image."
 argument_list|,
-literal|"Jay Cox"
+literal|"Simon Budig"
 argument_list|,
-literal|"Jay Cox"
+literal|"Simon Budig"
 argument_list|,
-literal|"1998"
+literal|"2005"
 argument_list|,
 name|NULL
 argument_list|)

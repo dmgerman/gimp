@@ -1017,6 +1017,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint32
+name|gimp_image_get_vectors_by_tattoo
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+name|tattoo
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
