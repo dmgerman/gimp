@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e15cf0103
+DECL|enum|__anon2b1fd5a80103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -219,7 +219,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e15cf0203
+DECL|enum|__anon2b1fd5a80203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296e15cf0303
+DECL|enum|__anon2b1fd5a80303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3515,7 +3515,7 @@ argument_list|(
 name|options
 argument_list|)
 expr_stmt|;
-comment|/*  This is the only case when the motion events should be ignored --    *  we're just waiting for the button release event to execute.    */
+comment|/* Motion events should be ignored when we're just waiting for the    * button release event to execute or if the user has grabbed a dead    * area of the rectangle.    */
 if|if
 condition|(
 name|private
@@ -3523,6 +3523,12 @@ operator|->
 name|function
 operator|==
 name|RECT_EXECUTING
+operator|||
+name|private
+operator|->
+name|function
+operator|==
+name|RECT_DEAD
 condition|)
 return|return;
 name|current_x
