@@ -112,6 +112,26 @@ DECL|member|selected
 name|gint
 name|selected
 decl_stmt|;
+DECL|member|last
+name|gint
+name|last
+decl_stmt|;
+DECL|member|leftmost
+name|gint
+name|leftmost
+decl_stmt|;
+DECL|member|rightmost
+name|gint
+name|rightmost
+decl_stmt|;
+DECL|member|grabbed
+name|gboolean
+name|grabbed
+decl_stmt|;
+DECL|member|cursor_type
+name|GdkCursorType
+name|cursor_type
+decl_stmt|;
 DECL|member|xpos
 name|gint
 name|xpos
@@ -232,7 +252,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_curve_view_set_cusor
+name|gimp_curve_view_set_cursor
 parameter_list|(
 name|GimpCurveView
 modifier|*
