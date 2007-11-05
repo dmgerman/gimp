@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1718200103
+DECL|enum|__anon296e15cf0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -219,7 +219,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1718200203
+DECL|enum|__anon296e15cf0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -262,7 +262,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1718200303
+DECL|enum|__anon296e15cf0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -402,10 +402,10 @@ DECL|member|narrow_mode
 name|gboolean
 name|narrow_mode
 decl_stmt|;
-comment|/* True when the rectangle is being rubber banded. */
-DECL|member|rubber_banding
+comment|/* True when the rectangle is being adjusted (moved or    * rubber-banded).    */
+DECL|member|rect_adjusting
 name|gboolean
-name|rubber_banding
+name|rect_adjusting
 decl_stmt|;
 comment|/* For what scale the handle sizes is calculated. We must cache this so that    * we can differentiate between when the tool is resumed because of zoom level    * just has changed or because the highlight has just been updated.    */
 DECL|member|scale_x_used_for_handle_size_calculations
@@ -669,7 +669,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rectangle_tool_rubber_banding_func
+name|gimp_rectangle_tool_rect_adjusting_func
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -3104,9 +3104,9 @@ block|}
 comment|/* Is the rectangle being rubber-banded? */
 name|private
 operator|->
-name|rubber_banding
+name|rect_adjusting
 operator|=
-name|gimp_rectangle_tool_rubber_banding_func
+name|gimp_rectangle_tool_rect_adjusting_func
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -3403,7 +3403,7 @@ expr_stmt|;
 comment|/* On button release, we are not rubber-banding the rectangle any longer. */
 name|private
 operator|->
-name|rubber_banding
+name|rect_adjusting
 operator|=
 name|FALSE
 expr_stmt|;
@@ -3603,11 +3603,10 @@ argument_list|,
 name|current_y
 argument_list|)
 expr_stmt|;
-comment|/* Update the highlight, but only if it is not being    * rubber-banded. If it is being rubber-banded, the highlight is not    * shown anyway.    */
+comment|/* Update the highlight, but only if it is not being adjusted. If it    * is not being adjusted, the highlight is not shown anyway.    */
 if|if
 condition|(
-operator|!
-name|gimp_rectangle_tool_rubber_banding_func
+name|gimp_rectangle_tool_rect_adjusting_func
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -10015,7 +10014,7 @@ name|highlight
 operator|||
 name|private
 operator|->
-name|rubber_banding
+name|rect_adjusting
 condition|)
 block|{
 name|gimp_display_shell_set_highlight
@@ -10095,14 +10094,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_rubber_banding_func:  *  * Returns: %TRUE if the current function is a rubber-banding  *          function.  */
+comment|/**  * gimp_rectangle_tool_rect_adjusting_func:  *  * Returns: %TRUE if the current function is a rectangle adjusting  *          function.  */
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_rubber_banding_func (GimpRectangleTool * rect_tool)
-name|gimp_rectangle_tool_rubber_banding_func
+DECL|function|gimp_rectangle_tool_rect_adjusting_func (GimpRectangleTool * rect_tool)
+name|gimp_rectangle_tool_rect_adjusting_func
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -10114,9 +10113,9 @@ modifier|*
 name|private
 decl_stmt|;
 name|gboolean
-name|rubber_banding_func
+name|rect_adjusting_func
 decl_stmt|;
-name|rubber_banding_func
+name|rect_adjusting_func
 operator|=
 name|FALSE
 expr_stmt|;
@@ -10134,6 +10133,9 @@ operator|->
 name|function
 condition|)
 block|{
+case|case
+name|RECT_MOVING
+case|:
 case|case
 name|RECT_CREATING
 case|:
@@ -10161,20 +10163,26 @@ case|:
 case|case
 name|RECT_RESIZING_LOWER_RIGHT
 case|:
-name|rubber_banding_func
+name|rect_adjusting_func
 operator|=
 name|TRUE
 expr_stmt|;
 break|break;
+case|case
+name|RECT_INACTIVE
+case|:
+case|case
+name|RECT_DEAD
+case|:
 default|default:
-name|rubber_banding_func
+name|rect_adjusting_func
 operator|=
 name|FALSE
 expr_stmt|;
 break|break;
 block|}
 return|return
-name|rubber_banding_func
+name|rect_adjusting_func
 return|;
 block|}
 end_function
