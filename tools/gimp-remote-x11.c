@@ -12,13 +12,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
+file|<stdlib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
+file|<string.h>
 end_include
 
 begin_include
@@ -519,14 +519,13 @@ if|if
 condition|(
 name|startup_id
 condition|)
-name|putenv
+name|g_setenv
 argument_list|(
-name|g_strdup_printf
-argument_list|(
-literal|"DESKTOP_STARTUP_ID=%s"
+literal|"DESKTOP_STARTUP_ID"
 argument_list|,
 name|startup_id
-argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if

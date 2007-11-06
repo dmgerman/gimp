@@ -8,12 +8,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<string.h>
 end_include
 
@@ -2335,9 +2329,13 @@ argument_list|(
 literal|314159
 argument_list|)
 expr_stmt|;
-name|putenv
+name|g_setenv
 argument_list|(
-literal|"GIMP_COMPOSITE=0x1"
+literal|"GIMP_COMPOSITE"
+argument_list|,
+literal|"0x1"
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|iterations
