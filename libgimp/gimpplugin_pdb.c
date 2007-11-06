@@ -254,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_menu_branch_register:  * @menu_path: The sub-menu's menu path.  * @menu_name: The name of the sub-menu.  *  * Register a sub-menu.  *  * This procedure installs an sub-menu which does not belong to any  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_plugin_menu_branch_register:  * @menu_path: The sub-menu's menu path.  * @menu_name: The name of the sub-menu.  *  * Register a sub-menu.  *  * This procedure installs a sub-menu which does not belong to any  * procedure. The menu-name should be the untranslated menu label. GIMP  * will look up the translation in the textdomain registered for the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

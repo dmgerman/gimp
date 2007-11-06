@@ -1761,7 +1761,7 @@ literal|"gimp-plugin-menu-branch-register"
 argument_list|,
 literal|"Register a sub-menu."
 argument_list|,
-literal|"This procedure installs an sub-menu which does not belong to any procedure."
+literal|"This procedure installs a sub-menu which does not belong to any procedure. The menu-name should be the untranslated menu label. GIMP will look up the translation in the textdomain registered for the plug-in."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
