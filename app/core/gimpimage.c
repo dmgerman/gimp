@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29237da20103
+DECL|enum|__anon2b40adf60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29237da20203
+DECL|enum|__anon2b40adf60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8043,6 +8043,8 @@ name|CLEAN
 index|]
 argument_list|,
 literal|0
+argument_list|,
+name|GIMP_DIRTY_ALL
 argument_list|)
 expr_stmt|;
 block|}
