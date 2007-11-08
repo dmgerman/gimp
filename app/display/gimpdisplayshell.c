@@ -281,7 +281,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a20e60103
+DECL|enum|__anon28fe3b600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,7 +294,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a20e60203
+DECL|enum|__anon28fe3b600203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2425,6 +2425,8 @@ name|statusbar
 argument_list|)
 argument_list|,
 literal|"menu-tooltip"
+argument_list|,
+literal|"%s"
 argument_list|,
 name|tooltip
 argument_list|)
