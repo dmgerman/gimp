@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fb70e20103
+DECL|enum|__anon29bcb2ab0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1945,16 +1945,16 @@ argument_list|(
 name|cr
 argument_list|,
 name|x
+operator|-
+literal|0.5
 argument_list|,
 name|y
+operator|+
+literal|0.5
 argument_list|,
 name|w
-operator|+
-literal|1
 argument_list|,
 name|h
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|cairo_fill_preserve
