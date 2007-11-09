@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bcb2ab0103
+DECL|enum|__anon29b5acd50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1945,7 +1945,7 @@ argument_list|(
 name|cr
 argument_list|,
 name|x
-operator|-
+operator|+
 literal|0.5
 argument_list|,
 name|y
