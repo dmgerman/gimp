@@ -3175,20 +3175,6 @@ argument_list|(
 name|col_area
 argument_list|)
 expr_stmt|;
-name|gimp_help_set_help_data
-argument_list|(
-name|col_area
-argument_list|,
-name|_
-argument_list|(
-literal|"Foreground& background colors.  The black and white "
-literal|"squares reset colors.  The arrows swap colors. Click "
-literal|"to open the color selection dialog."
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 name|alignment
 return|;

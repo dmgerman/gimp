@@ -139,20 +139,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|/*  only for private use in libgimpwidgets  */
-end_comment
-
-begin_function_decl
-name|G_GNUC_INTERNAL
-name|void
-name|_gimp_help_init
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 name|G_END_DECLS
 end_macro

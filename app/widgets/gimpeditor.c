@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c60fb10103
+DECL|enum|__anon297e4b270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2107,7 +2107,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c60fb10208
+DECL|struct|__anon297e4b270208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2660,14 +2660,14 @@ name|g_strconcat
 argument_list|(
 name|tooltip
 argument_list|,
-literal|"\n("
+literal|"\n<b>"
 argument_list|,
 name|gimp_get_mod_string
 argument_list|(
 name|mod_mask
 argument_list|)
 argument_list|,
-literal|")  "
+literal|"</b>  "
 argument_list|,
 name|ext_tooltip
 argument_list|,

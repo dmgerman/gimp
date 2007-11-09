@@ -101,7 +101,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0980880103
+DECL|enum|__anon277354c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -463,6 +463,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_CONFIG_PARAM_RESTART
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN

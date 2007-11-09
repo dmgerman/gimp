@@ -1804,7 +1804,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2aefcf320108
+DECL|struct|__anon2c24331d0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3772,7 +3772,7 @@ name|tooltip
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s  (%s)"
+literal|"%s<b>%s</b>"
 argument_list|,
 name|orig_tooltip
 argument_list|,

@@ -251,6 +251,21 @@ operator||
 name|GDK_LEAVE_NOTIFY_MASK
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|color_area
+argument_list|,
+name|_
+argument_list|(
+literal|"Foreground&amp; background colors.\n"
+literal|"The black and white squares reset colors.\n"
+literal|"The arrows swap colors.\n"
+literal|"Click to open the color selection dialog."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|color_area

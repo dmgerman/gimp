@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimphelpui.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstock.h"
 end_include
 
@@ -240,9 +234,6 @@ name|g_list_free
 argument_list|(
 name|icon_list
 argument_list|)
-expr_stmt|;
-name|_gimp_help_init
-argument_list|()
 expr_stmt|;
 name|gimp_widgets_initialized
 operator|=
