@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7662f20108
+DECL|struct|__anon2a3344710108
 block|{
 DECL|member|width
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7662f20203
+DECL|enum|__anon2a3344710203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2433,22 +2433,24 @@ modifier|*
 name|locale
 parameter_list|)
 block|{
+if|#
+directive|if
+literal|0
+block|g_printerr ("%s: processing %s (parent %s)\n",               G_STRFUNC,               item->title  ? item->title  : "NULL",               item->parent ? item->parent : "NULL");
+endif|#
+directive|endif
+if|if
+condition|(
+name|item
+operator|->
+name|title
+condition|)
+block|{
 name|gchar
 modifier|*
 modifier|*
 name|indices
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-if|#
-directive|if
-literal|0
-block|g_printerr ("%s: processing %s (parent %s)\n",               G_STRFUNC, item->title, item->parent ? item->parent : "NULL");
-endif|#
-directive|endif
-name|indices
-operator|=
+init|=
 name|g_strsplit
 argument_list|(
 name|item
@@ -2460,7 +2462,10 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|gint
+name|i
+decl_stmt|;
 for|for
 control|(
 name|i
@@ -2512,6 +2517,7 @@ argument_list|(
 name|indices
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|item
@@ -3005,16 +3011,14 @@ block|{
 name|GtkTreeIter
 modifier|*
 name|iter
-decl_stmt|;
-name|iter
-operator|=
+init|=
 name|g_hash_table_lookup
 argument_list|(
 name|uri_hash_table
 argument_list|,
 name|ref
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|iter
