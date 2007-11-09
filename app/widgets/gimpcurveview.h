@@ -108,6 +108,14 @@ name|GimpCurve
 modifier|*
 name|curve
 decl_stmt|;
+DECL|member|grid_rows
+name|gint
+name|grid_rows
+decl_stmt|;
+DECL|member|grid_columns
+name|gint
+name|grid_columns
+decl_stmt|;
 DECL|member|selected
 name|gint
 name|selected
