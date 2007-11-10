@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a12320103
+DECL|enum|__anon2a52a9270103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a12320203
+DECL|enum|__anon2a52a9270203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5a12320303
+DECL|enum|__anon2a52a9270303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5a12320408
+DECL|struct|__anon2a52a9270408
 block|{
 DECL|member|n_pages
 name|gint
@@ -1847,23 +1847,12 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GimpPageSelector
-modifier|*
-name|selector
-decl_stmt|;
-name|selector
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_PAGE_SELECTOR
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|GTK_WIDGET
-argument_list|(
-name|selector
 argument_list|)
 return|;
 block|}
