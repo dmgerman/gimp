@@ -1192,7 +1192,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Zoom 1:1"
+literal|"Zoom 2:1"
 argument_list|)
 block|,
 literal|20000
