@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c717020103
+DECL|enum|__anon293eb55e0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c717020203
+DECL|enum|__anon293eb55e0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c717020303
+DECL|enum|__anon293eb55e0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -12608,13 +12608,13 @@ argument_list|,
 name|new_y
 argument_list|)
 expr_stmt|;
-comment|/* Update private->function. The function changes if the user "flips" the    * rectangle.    */
+comment|/* Update private->function. The function changes if the user    * "flips" the rectangle.    */
 name|gimp_rectangle_tool_check_function
 argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-comment|/* E.g. the crop tool will set up clamping always to be used, and this    * function handles that.    */
+comment|/* Clamp the rectangle if necessary */
 name|gimp_rectangle_tool_handle_general_clamping
 argument_list|(
 name|rect_tool
@@ -12628,7 +12628,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-comment|/* If the rectangle is being moved, we are done already since we should change it's shape then. */
+comment|/* If the rectangle is being moved, we are done already since we    * should not change it's shape then.    */
 if|if
 condition|(
 name|private
@@ -12761,7 +12761,6 @@ argument_list|,
 name|CLAMPED_NONE
 argument_list|)
 expr_stmt|;
-comment|/* When fixed ratio is used, we always want the                * rectangle inside the canvas.                */
 name|gimp_rectangle_tool_keep_inside
 argument_list|(
 name|rect_tool
