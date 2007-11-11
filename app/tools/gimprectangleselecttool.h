@@ -123,38 +123,9 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
-DECL|member|operation
-name|GimpChannelOps
-name|operation
-decl_stmt|;
-comment|/* remember for use when modifying   */
-DECL|member|use_saved_op
-name|gboolean
-name|use_saved_op
-decl_stmt|;
-comment|/* use operation or get from options */
-DECL|member|saved_show_selection
-name|gboolean
-name|saved_show_selection
-decl_stmt|;
-comment|/* used to remember existing value   */
-DECL|member|undo
-name|GimpUndo
-modifier|*
-name|undo
-decl_stmt|;
-DECL|member|redo
-name|GimpUndo
-modifier|*
-name|redo
-decl_stmt|;
-DECL|member|round_corners
-name|gboolean
-name|round_corners
-decl_stmt|;
-DECL|member|corner_radius
-name|gdouble
-name|corner_radius
+DECL|member|priv
+name|gpointer
+name|priv
 decl_stmt|;
 block|}
 struct|;
