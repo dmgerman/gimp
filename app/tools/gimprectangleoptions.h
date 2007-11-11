@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d0df170103
+DECL|enum|__anon2c160af70103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -105,16 +105,10 @@ block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_CENTER
 name|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_CENTER
 block|,
-DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_X
-name|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_X
-block|,
-DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_Y
-name|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_Y
-block|,
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_LAST
 name|GIMP_RECTANGLE_OPTIONS_PROP_LAST
 init|=
-name|GIMP_RECTANGLE_OPTIONS_PROP_CENTER_Y
+name|GIMP_RECTANGLE_OPTIONS_PROP_FIXED_CENTER
 DECL|typedef|GimpRectangleOptionsProp
 block|}
 name|GimpRectangleOptionsProp
@@ -314,6 +308,10 @@ DECL|member|overridden_fixed_aspect
 name|gboolean
 name|overridden_fixed_aspect
 decl_stmt|;
+DECL|member|fixed_center
+name|gboolean
+name|fixed_center
+decl_stmt|;
 comment|/* This gboolean is not part of the actual rectangle tool options,    * and should be refactored out along with the pointers to widgets.    */
 DECL|member|use_string_current
 name|gboolean
@@ -322,18 +320,6 @@ decl_stmt|;
 DECL|member|fixed_unit
 name|GimpUnit
 name|fixed_unit
-decl_stmt|;
-DECL|member|fixed_center
-name|gboolean
-name|fixed_center
-decl_stmt|;
-DECL|member|center_x
-name|gdouble
-name|center_x
-decl_stmt|;
-DECL|member|center_y
-name|gdouble
-name|center_y
 decl_stmt|;
 comment|/* options gui */
 DECL|member|auto_shrink_button
