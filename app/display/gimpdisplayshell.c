@@ -281,7 +281,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fe3b600103
+DECL|enum|__anon27f2d13f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,7 +294,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fe3b600203
+DECL|enum|__anon27f2d13f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4706,6 +4706,11 @@ operator|->
 name|color_management
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|filter
+condition|)
+block|{
 name|gimp_display_shell_filter_set
 argument_list|(
 name|shell
@@ -4718,6 +4723,7 @@ argument_list|(
 name|filter
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_display_shell_connect
 argument_list|(
 name|shell
