@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpimagemaptool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimpmovetool.h"
 end_include
 
@@ -5433,6 +5439,12 @@ name|sample_point
 operator|&&
 operator|(
 name|GIMP_IS_COLOR_TOOL
+argument_list|(
+name|active_tool
+argument_list|)
+operator|&&
+operator|!
+name|GIMP_IS_IMAGE_MAP_TOOL
 argument_list|(
 name|active_tool
 argument_list|)
