@@ -319,7 +319,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29491b470108
+DECL|struct|__anon2a4777690108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc
@@ -1477,7 +1477,7 @@ block|}
 endif|#
 directive|endif
 return|return
-name|GIMP_UNIT_INCH
+name|GIMP_UNIT_MM
 return|;
 block|}
 end_function

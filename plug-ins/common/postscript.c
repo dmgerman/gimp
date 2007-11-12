@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bceb5950108
+DECL|struct|__anon292029360108
 block|{
 DECL|member|resolution
 name|guint
@@ -304,7 +304,7 @@ name|height
 decl_stmt|;
 comment|/* desired size (ghostscript may ignore this) */
 DECL|member|use_bbox
-name|gint
+name|gboolean
 name|use_bbox
 decl_stmt|;
 comment|/* 0: use width/height, 1: try to use BoundingBox */
@@ -352,7 +352,7 @@ block|,
 literal|1170
 block|,
 comment|/* default width/height (A4)      */
-literal|1
+name|TRUE
 block|,
 comment|/* try to use BoundingBox         */
 literal|"1"
@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bceb5950208
+DECL|struct|__anon292029360208
 block|{
 DECL|member|width
 DECL|member|height
@@ -416,12 +416,12 @@ name|y_offset
 decl_stmt|;
 comment|/* Offset to image on page */
 DECL|member|unit_mm
-name|gint
+name|gboolean
 name|unit_mm
 decl_stmt|;
 comment|/* Unit of measure (0: inch, 1: mm) */
 DECL|member|keep_ratio
-name|gint
+name|gboolean
 name|keep_ratio
 decl_stmt|;
 comment|/* Keep aspect ratio */
@@ -436,12 +436,12 @@ name|level
 decl_stmt|;
 comment|/* PostScript Level */
 DECL|member|eps
-name|gint
+name|gboolean
 name|eps
 decl_stmt|;
 comment|/* Encapsulated PostScript flag */
 DECL|member|preview
-name|gint
+name|gboolean
 name|preview
 decl_stmt|;
 comment|/* Preview Flag */
@@ -473,10 +473,10 @@ block|,
 literal|5.0
 block|,
 comment|/* Offset */
-literal|1
+name|TRUE
 block|,
 comment|/* Unit is mm */
-literal|1
+name|TRUE
 block|,
 comment|/* Keep edge ratio */
 literal|0
@@ -485,10 +485,10 @@ comment|/* Rotate */
 literal|2
 block|,
 comment|/* PostScript Level */
-literal|0
+name|FALSE
 block|,
 comment|/* Encapsulated PostScript flag */
-literal|0
+name|FALSE
 block|,
 comment|/* Preview flag */
 literal|256
@@ -1006,7 +1006,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bceb5950308
+DECL|struct|__anon292029360308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1875,7 +1875,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bceb5950408
+DECL|struct|__anon292029360408
 block|{
 DECL|member|eol
 name|long
@@ -3100,13 +3100,14 @@ name|data
 operator|.
 name|d_string
 argument_list|,
-operator|!
 name|strcmp
 argument_list|(
 name|name
 argument_list|,
 name|LOAD_PDF_PROC
 argument_list|)
+operator|==
+literal|0
 argument_list|)
 condition|)
 name|status
@@ -3656,6 +3657,7 @@ name|psvals
 operator|.
 name|eps
 operator|=
+operator|(
 name|param
 index|[
 literal|12
@@ -3664,6 +3666,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+operator|!=
+literal|0
+operator|)
 expr_stmt|;
 name|psvals
 operator|.
