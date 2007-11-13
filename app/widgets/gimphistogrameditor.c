@@ -1594,9 +1594,11 @@ name|editor
 operator|->
 name|idle_id
 operator|=
-name|g_idle_add_full
+name|g_timeout_add_full
 argument_list|(
 name|G_PRIORITY_LOW
+argument_list|,
+literal|200
 argument_list|,
 operator|(
 name|GSourceFunc
