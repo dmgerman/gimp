@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296c3cb70103
+DECL|enum|__anon27cee3220103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2471,6 +2471,33 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+if|if
+condition|(
+name|renderer
+operator|->
+name|viewable
+condition|)
+block|{
+comment|/*  reset clipping because the draw() implementation is            *  allowed to do additional clipping            */
+name|cairo_reset_clip
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|gdk_cairo_rectangle
+argument_list|(
+name|cr
+argument_list|,
+operator|&
+name|render_rect
+argument_list|)
+expr_stmt|;
+name|cairo_clip
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+block|}
 name|cairo_set_line_width
 argument_list|(
 name|cr
