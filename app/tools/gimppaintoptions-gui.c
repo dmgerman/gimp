@@ -498,6 +498,10 @@ name|GIMP_TYPE_BRUSH_TOOL
 argument_list|)
 condition|)
 block|{
+name|GtkObject
+modifier|*
+name|adj
+decl_stmt|;
 name|button
 operator|=
 name|gimp_prop_brush_box_new
@@ -544,17 +548,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|tool_type
-operator|!=
-name|GIMP_TYPE_SMUDGE_TOOL
-condition|)
-block|{
-name|GtkObject
-modifier|*
-name|adj
-decl_stmt|;
 name|adj
 operator|=
 name|gimp_prop_scale_entry_new
@@ -598,7 +591,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 comment|/*  the gradient  */
 if|if

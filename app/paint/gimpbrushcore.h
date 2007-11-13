@@ -298,10 +298,10 @@ DECL|member|handles_changing_brush
 name|gboolean
 name|handles_changing_brush
 decl_stmt|;
-comment|/*  Scale the brush mask depending on pressure  */
-DECL|member|use_scale
+comment|/*  Set for tools that don't mind if the brush scales while painting  */
+DECL|member|handles_scaling_brush
 name|gboolean
-name|use_scale
+name|handles_scaling_brush
 decl_stmt|;
 DECL|member|set_brush
 name|void

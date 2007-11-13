@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd396fc0103
+DECL|enum|__anon2b5ec28e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -640,7 +640,7 @@ name|FALSE
 expr_stmt|;
 name|klass
 operator|->
-name|use_scale
+name|handles_scaling_brush
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3093,6 +3093,15 @@ name|brush_width
 decl_stmt|,
 name|brush_height
 decl_stmt|;
+if|if
+condition|(
+name|GIMP_BRUSH_CORE_GET_CLASS
+argument_list|(
+name|core
+argument_list|)
+operator|->
+name|handles_scaling_brush
+condition|)
 name|core
 operator|->
 name|scale
@@ -3110,6 +3119,7 @@ operator|.
 name|pressure
 argument_list|)
 expr_stmt|;
+comment|/* else use scale from start(), we don't support on-the-fly scaling */
 name|gimp_brush_scale_size
 argument_list|(
 name|core
@@ -3539,15 +3549,6 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|GIMP_BRUSH_CORE_GET_CLASS
-argument_list|(
-name|core
-argument_list|)
-operator|->
-name|use_scale
-condition|)
 name|scale
 operator|=
 name|paint_options
@@ -4133,11 +4134,8 @@ argument_list|(
 name|core
 argument_list|)
 operator|->
-name|use_scale
-condition|)
-block|{
-if|if
-condition|(
+name|handles_scaling_brush
+operator|&&
 name|GIMP_PAINT_CORE
 argument_list|(
 name|core
@@ -4204,7 +4202,6 @@ name|paint_options
 operator|->
 name|brush_scale
 expr_stmt|;
-block|}
 return|return
 name|scale
 return|;
