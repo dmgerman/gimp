@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cee3220103
+DECL|enum|__anon27a8c9eb0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2375,6 +2375,11 @@ operator|->
 name|viewable
 condition|)
 block|{
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|GIMP_VIEW_RENDERER_GET_CLASS
 argument_list|(
 name|renderer
@@ -2389,6 +2394,11 @@ argument_list|,
 name|cr
 argument_list|,
 name|draw_area
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 block|}
@@ -2471,33 +2481,6 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-if|if
-condition|(
-name|renderer
-operator|->
-name|viewable
-condition|)
-block|{
-comment|/*  reset clipping because the draw() implementation is            *  allowed to do additional clipping            */
-name|cairo_reset_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_rectangle
-argument_list|(
-name|cr
-argument_list|,
-operator|&
-name|render_rect
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-block|}
 name|cairo_set_line_width
 argument_list|(
 name|cr
