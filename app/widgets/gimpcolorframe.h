@@ -148,11 +148,6 @@ name|GtkWidget
 modifier|*
 name|menu
 decl_stmt|;
-DECL|member|number_label
-name|GtkWidget
-modifier|*
-name|number_label
-decl_stmt|;
 DECL|member|color_area
 name|GtkWidget
 modifier|*
@@ -173,6 +168,11 @@ name|value_labels
 index|[
 name|GIMP_COLOR_FRAME_ROWS
 index|]
+decl_stmt|;
+DECL|member|number_layout
+name|PangoLayout
+modifier|*
+name|number_layout
 decl_stmt|;
 block|}
 struct|;
