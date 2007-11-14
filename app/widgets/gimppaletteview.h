@@ -113,11 +113,6 @@ name|GimpPaletteEntry
 modifier|*
 name|dnd_entry
 decl_stmt|;
-DECL|member|gc
-name|GdkGC
-modifier|*
-name|gc
-decl_stmt|;
 block|}
 struct|;
 end_struct
