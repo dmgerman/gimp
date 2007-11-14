@@ -4649,10 +4649,9 @@ name|statusbar
 operator|->
 name|cursor_label
 argument_list|,
-name|text
+name|NULL
 argument_list|)
 expr_stmt|;
-else|else
 name|pango_layout_set_text
 argument_list|(
 name|layout
