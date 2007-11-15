@@ -1161,7 +1161,7 @@ operator|->
 name|hist
 argument_list|)
 expr_stmt|;
-name|gimp_histogram_view_set_histogram
+name|gimp_histogram_view_set_background
 argument_list|(
 name|GIMP_HISTOGRAM_VIEW
 argument_list|(
