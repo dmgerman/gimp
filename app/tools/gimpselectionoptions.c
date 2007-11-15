@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273e6bf20103
+DECL|enum|__anon288c204e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1146,6 +1146,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|tip
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|tooltip
 argument_list|)
 expr_stmt|;
 block|}

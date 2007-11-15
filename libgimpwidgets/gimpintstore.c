@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28713a510103
+DECL|enum|__anon2c901b110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +55,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28713a510208
+DECL|struct|__anon2c901b110208
 block|{
 DECL|member|user_data_type
 name|GType
@@ -786,6 +786,10 @@ parameter_list|)
 block|{
 name|GtkTreeIter
 name|iter
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
