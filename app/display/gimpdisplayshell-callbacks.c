@@ -306,49 +306,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"gimp-log.h"
 end_include
 
-begin_comment
-comment|/* #define DEBUG_TOOL_EVENTS */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DEBUG_TOOL_EVENTS
-end_ifdef
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-value|stmnt
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -2626,14 +2591,13 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): ENTER_NOTIFY\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): ENTER_NOTIFY"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2683,14 +2647,13 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): LEAVE_NOTIFY\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): LEAVE_NOTIFY"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2736,14 +2699,13 @@ break|break;
 case|case
 name|GDK_PROXIMITY_IN
 case|:
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): PROXIMITY_IN\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): PROXIMITY_IN"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|tool_manager_oper_update_active
@@ -2766,14 +2728,13 @@ break|break;
 case|case
 name|GDK_PROXIMITY_OUT
 case|:
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): PROXIMITY_OUT\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): PROXIMITY_OUT"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|shell
@@ -2825,14 +2786,13 @@ operator|->
 name|in
 condition|)
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): FOCUS_IN\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): FOCUS_IN"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_SET_FLAGS
@@ -2865,14 +2825,13 @@ block|}
 block|}
 else|else
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): FOCUS_OUT\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): FOCUS_OUT"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|GTK_WIDGET_UNSET_FLAGS
@@ -2938,14 +2897,13 @@ decl_stmt|;
 name|GdkEventMask
 name|event_mask
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): BUTTON_PRESS\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): BUTTON_PRESS"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3429,14 +3387,13 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): BUTTON_RELEASE\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): BUTTON_RELEASE"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_autoscroll_stop
@@ -3633,14 +3590,13 @@ name|GimpController
 modifier|*
 name|wheel
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): SCROLL\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): SCROLL"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|wheel
@@ -4005,14 +3961,13 @@ name|compressed_motion
 init|=
 name|NULL
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): MOTION_NOTIFY\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): MOTION_NOTIFY"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4586,14 +4541,13 @@ break|break;
 case|case
 name|GDK_KEY_PRESS
 case|:
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): KEY_PRESS\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): KEY_PRESS"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -4948,14 +4902,13 @@ break|break;
 case|case
 name|GDK_KEY_RELEASE
 case|:
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"tool event (display %p): KEY_RELEASE\n"
+name|TOOLS
+argument_list|,
+literal|"event (display %p): KEY_RELEASE"
 argument_list|,
 name|display
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

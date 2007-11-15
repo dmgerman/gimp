@@ -244,6 +244,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -1340,6 +1346,9 @@ name|gimp_env_init
 argument_list|(
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|gimp_log_init
+argument_list|()
 expr_stmt|;
 name|gimp_init_i18n
 argument_list|()
