@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279d94720103
+DECL|enum|__anon29b393790103
 block|{
 DECL|enumerator|GIMP_LOG_TOOLS
 name|GIMP_LOG_TOOLS
@@ -45,7 +45,7 @@ name|format
 modifier|...
 parameter_list|)
 define|\
-value|G_STMT_START { \         if (gimp_log_flags&& GIMP_LOG_##type) \           gimp_log (G_STRFUNC, __LINE__, #type, format); \         } G_STMT_END
+value|G_STMT_START { \         if (gimp_log_flags& GIMP_LOG_##type) \           gimp_log (G_STRFUNC, __LINE__, #type, format); \         } G_STMT_END
 end_define
 
 begin_decl_stmt
