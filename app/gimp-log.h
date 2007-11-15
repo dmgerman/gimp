@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b393790103
+DECL|enum|__anon2acd67700103
 block|{
 DECL|enumerator|GIMP_LOG_TOOLS
 name|GIMP_LOG_TOOLS
@@ -27,6 +27,13 @@ init|=
 literal|1
 operator|<<
 literal|0
+block|,
+DECL|enumerator|GIMP_LOG_DND
+name|GIMP_LOG_DND
+init|=
+literal|1
+operator|<<
+literal|1
 DECL|typedef|GimpLogFlags
 block|}
 name|GimpLogFlags

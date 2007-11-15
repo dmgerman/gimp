@@ -135,10 +135,6 @@ directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
-begin_comment
-comment|/*  #define DEBUG_DND  */
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -178,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -196,43 +198,6 @@ directive|define
 name|DRAG_ICON_OFFSET
 value|-8
 end_define
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DEBUG_DND
-end_ifdef
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-value|stmnt
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
 DECL|typedef|GimpDndGetIconFunc
@@ -1773,14 +1738,13 @@ literal|"gimp-dnd-get-data-type"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"\ngimp_dnd_data_drag_begin (%d)\n"
+name|DND
+argument_list|,
+literal|"data type %d"
 argument_list|,
 name|data_type
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2009,16 +1973,35 @@ modifier|*
 name|context
 parameter_list|)
 block|{
+name|GimpDndType
+name|data_type
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|icon_widget
 decl_stmt|;
-name|D
+name|data_type
+operator|=
+name|GPOINTER_TO_INT
 argument_list|(
-name|g_printerr
+name|g_object_get_data
 argument_list|(
-literal|"\ngimp_dnd_data_drag_end\n"
+name|G_OBJECT
+argument_list|(
+name|widget
 argument_list|)
+argument_list|,
+literal|"gimp-dnd-get-data-type"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|DND
+argument_list|,
+literal|"data type %d"
+argument_list|,
+name|data_type
 argument_list|)
 expr_stmt|;
 name|icon_widget
@@ -2115,14 +2098,13 @@ decl_stmt|;
 name|GimpDndType
 name|data_type
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"\ngimp_dnd_data_drag_handle(%d)\n"
+name|DND
+argument_list|,
+literal|"data type %d"
 argument_list|,
 name|info
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2161,18 +2143,17 @@ operator|==
 name|info
 condition|)
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"gimp_dnd_data_drag_handle(%s)\n"
+name|DND
+argument_list|,
+literal|"target %s"
 argument_list|,
 name|dnd_data
 operator|->
 name|target_entry
 operator|.
 name|target
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2279,14 +2260,13 @@ block|{
 name|GimpDndType
 name|data_type
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"\ngimp_dnd_data_drop_handle(%d)\n"
+name|DND
+argument_list|,
+literal|"data type %d"
 argument_list|,
 name|info
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2357,18 +2337,17 @@ name|set_data_data
 init|=
 name|NULL
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"gimp_dnd_data_drop_handle(%s)\n"
+name|DND
+argument_list|,
+literal|"target %s"
 argument_list|,
 name|dnd_data
 operator|->
 name|target_entry
 operator|.
 name|target
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
