@@ -170,49 +170,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"gimp-log.h"
 end_include
 
-begin_comment
-comment|/* #define DEBUG_DND */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DEBUG_DND
-end_ifdef
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-value|stmnt
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -508,16 +473,13 @@ name|selection
 operator|->
 name|data
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: raw buffer>>%s<<\n"
+name|DND
 argument_list|,
-name|G_STRFUNC
+literal|"raw buffer>>%s<<"
 argument_list|,
 name|buffer
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|{
@@ -696,16 +658,13 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: trying to convert \"%s\" to an uri.\n"
+name|DND
 argument_list|,
-name|G_STRFUNC
+literal|"trying to convert \"%s\" to an uri"
 argument_list|,
 name|dnd_crap
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|filename
@@ -2749,16 +2708,13 @@ return|return
 name|NULL
 return|;
 block|}
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"%s: name = '%s'\n"
+name|DND
 argument_list|,
-name|G_STRFUNC
+literal|"name = '%s'"
 argument_list|,
 name|name
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2861,20 +2817,17 @@ name|str
 operator|+
 name|name_offset
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_printerr
-argument_list|(
-literal|"%s: pid = %d, addr = %p, name = '%s'\n"
+name|DND
 argument_list|,
-name|G_STRFUNC
+literal|"pid = %d, addr = %p, name = '%s'"
 argument_list|,
 name|pid
 argument_list|,
 name|object_addr
 argument_list|,
 name|name
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

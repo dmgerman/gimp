@@ -180,49 +180,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"gimp-log.h"
 end_include
 
-begin_comment
-comment|/* #define DEBUG_DND */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DEBUG_DND
-end_ifdef
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-value|stmnt
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
 
 begin_comment
 comment|/*  local function prototypes  */
@@ -743,12 +708,11 @@ name|GimpItem
 modifier|*
 name|new_item
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop drawable on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1001,12 +965,11 @@ name|GimpItem
 modifier|*
 name|new_item
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop vectors on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1142,12 +1105,11 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop SVG on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1388,12 +1350,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop pattern on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1448,12 +1409,11 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop color on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_dnd_bucket_fill
@@ -1529,12 +1489,11 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop buffer on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1661,12 +1620,11 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop uri list on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 for|for
@@ -1928,12 +1886,11 @@ name|gchar
 modifier|*
 name|desc
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop component on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2199,12 +2156,11 @@ name|GimpLayer
 modifier|*
 name|new_layer
 decl_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"drop pixbuf on canvas\n"
-argument_list|)
+name|DND
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
