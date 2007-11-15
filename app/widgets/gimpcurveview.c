@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6e3300103
+DECL|enum|__anon2947425d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -304,15 +304,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GimpHistogramViewClass
-modifier|*
-name|hist_class
-init|=
-name|GIMP_HISTOGRAM_VIEW_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -378,12 +369,6 @@ operator|->
 name|key_press_event
 operator|=
 name|gimp_curve_view_key_press
-expr_stmt|;
-name|hist_class
-operator|->
-name|light_histogram
-operator|=
-name|TRUE
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(

@@ -113,6 +113,11 @@ name|GimpHistogram
 modifier|*
 name|histogram
 decl_stmt|;
+DECL|member|bg_histogram
+name|GimpHistogram
+modifier|*
+name|bg_histogram
+decl_stmt|;
 DECL|member|idle_id
 name|guint
 name|idle_id
