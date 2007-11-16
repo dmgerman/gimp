@@ -202,7 +202,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon27dfed250108
+DECL|struct|__anon2b54704c0108
 specifier|static
 struct|struct
 block|{
@@ -628,6 +628,9 @@ modifier|*
 name|args
 parameter_list|)
 block|{
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 if|if
 condition|(
 name|msvc_syntax
@@ -640,7 +643,8 @@ argument_list|,
 name|args
 argument_list|)
 return|;
-else|else
+endif|#
+directive|endif
 return|return
 name|one_line_output
 argument_list|(
@@ -762,9 +766,6 @@ name|prefix
 operator|=
 name|path
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
 if|if
 condition|(
 name|slash
@@ -794,8 +795,6 @@ operator|=
 literal|'/'
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 return|return
 name|prefix
 return|;
@@ -1513,10 +1512,14 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|here_comes_linker_flags
+init|=
+literal|""
 decl_stmt|;
 name|gchar
 modifier|*
 name|windows_subsystem_flag
+init|=
+literal|""
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1702,11 +1705,11 @@ literal|"-Fe"
 expr_stmt|;
 name|here_comes_linker_flags
 operator|=
-literal|"-link"
+literal|" -link"
 expr_stmt|;
 name|windows_subsystem_flag
 operator|=
-literal|"-subsystem:windows"
+literal|" -subsystem:windows"
 expr_stmt|;
 block|}
 else|else
@@ -1715,20 +1718,21 @@ name|output_flag
 operator|=
 literal|"-o "
 expr_stmt|;
-name|here_comes_linker_flags
-operator|=
-literal|""
-expr_stmt|;
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
 name|windows_subsystem_flag
 operator|=
-literal|"-mwindows"
+literal|" -mwindows"
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 name|cmd
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s %s %s %s%s%s %s %s %s %s %s %s"
+literal|"%s %s %s %s%s%s %s%s %s%s %s %s"
 argument_list|,
 name|env_cc
 argument_list|,
@@ -2743,6 +2747,28 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+ifndef|#
+directive|ifndef
+name|G_OS_WIN32
+if|if
+condition|(
+name|msvc_syntax
+condition|)
+block|{
+name|fprintf
+argument_list|(
+name|stderr
+argument_list|,
+literal|"Ignoring --msvc-syntax\n"
+argument_list|)
+expr_stmt|;
+name|msvc_syntax
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 name|find_out_env_flags
 argument_list|()
 expr_stmt|;
