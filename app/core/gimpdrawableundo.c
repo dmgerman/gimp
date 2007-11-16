@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29465ef90103
+DECL|enum|__anon2c505af20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -818,12 +818,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|drawable_undo
-operator|->
-name|tiles
-condition|)
 name|memsize
 operator|+=
 name|tile_manager_get_memsize

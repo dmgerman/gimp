@@ -334,12 +334,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|vectors_mod_undo
-operator|->
-name|vectors
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize

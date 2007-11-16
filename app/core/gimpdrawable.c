@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2989e1a70103
+DECL|enum|__anon2796db160103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1121,12 +1121,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|drawable
-operator|->
-name|tiles
-condition|)
 name|memsize
 operator|+=
 name|tile_manager_get_memsize
@@ -1138,12 +1132,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|drawable
-operator|->
-name|preview_cache
-condition|)
 operator|*
 name|gui_size
 operator|+=

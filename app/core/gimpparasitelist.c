@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c979a780103
+DECL|enum|__anon2a1fddd30103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -603,12 +603,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|list
-operator|->
-name|table
-condition|)
 name|memsize
 operator|+=
 name|gimp_g_hash_table_get_memsize_foreach

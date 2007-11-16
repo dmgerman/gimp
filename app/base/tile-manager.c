@@ -2438,15 +2438,14 @@ argument_list|(
 name|TileManager
 argument_list|)
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|tm
-operator|!=
-name|NULL
-argument_list|,
+condition|)
+return|return
 literal|0
-argument_list|)
-expr_stmt|;
+return|;
 comment|/*  the array of tiles  */
 name|memsize
 operator|+=

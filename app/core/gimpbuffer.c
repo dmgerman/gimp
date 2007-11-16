@@ -421,12 +421,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|buffer
-operator|->
-name|tiles
-condition|)
 name|memsize
 operator|+=
 name|tile_manager_get_memsize

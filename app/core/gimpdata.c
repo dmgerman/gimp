@@ -82,6 +82,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdata.h"
 end_include
 
@@ -99,7 +105,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60ed0c0103
+DECL|enum|__anon2950ded40103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -112,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60ed0c0203
+DECL|enum|__anon2950ded40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1044,22 +1050,14 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|data
-operator|->
-name|filename
-condition|)
 name|memsize
 operator|+=
-name|strlen
+name|gimp_string_get_memsize
 argument_list|(
 name|data
 operator|->
 name|filename
 argument_list|)
-operator|+
-literal|1
 expr_stmt|;
 return|return
 name|memsize

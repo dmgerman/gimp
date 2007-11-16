@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ed259d0103
+DECL|enum|__anon28ddba410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -684,12 +684,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|undo
-operator|->
-name|value
-condition|)
 name|memsize
 operator|+=
 name|gimp_g_value_get_memsize
@@ -699,12 +693,6 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|undo
-operator|->
-name|text
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize

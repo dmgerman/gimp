@@ -392,12 +392,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|pattern
-operator|->
-name|mask
-condition|)
 name|memsize
 operator|+=
 name|temp_buf_get_memsize

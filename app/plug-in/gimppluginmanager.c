@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae82bd80103
+DECL|enum|__anon28e5874b0103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -976,7 +976,6 @@ operator|->
 name|plug_in_stack
 argument_list|,
 literal|0
-comment|/* FIXME */
 argument_list|)
 expr_stmt|;
 name|memsize

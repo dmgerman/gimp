@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6420a50103
+DECL|enum|__anon29dc2d3b0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6420a50203
+DECL|enum|__anon29dc2d3b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -816,12 +816,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|brush
-operator|->
-name|mask
-condition|)
 name|memsize
 operator|+=
 name|temp_buf_get_memsize
@@ -831,12 +825,6 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|brush
-operator|->
-name|pixmap
-condition|)
 name|memsize
 operator|+=
 name|temp_buf_get_memsize

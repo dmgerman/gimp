@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40adf60103
+DECL|enum|__anon28eb023a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40adf60203
+DECL|enum|__anon28eb023a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4162,12 +4162,6 @@ name|memsize
 operator|+=
 name|GIMP_IMAGE_COLORMAP_SIZE
 expr_stmt|;
-if|if
-condition|(
-name|image
-operator|->
-name|shadow
-condition|)
 name|memsize
 operator|+=
 name|tile_manager_get_memsize
@@ -4179,12 +4173,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-operator|->
-name|projection
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -4213,12 +4201,6 @@ name|GimpGuide
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-operator|->
-name|grid
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -4300,12 +4282,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-operator|->
-name|selection_mask
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -4362,12 +4338,6 @@ argument_list|,
 name|gui_size
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-operator|->
-name|preview
-condition|)
 operator|*
 name|gui_size
 operator|+=

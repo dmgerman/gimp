@@ -303,7 +303,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ac8440103
+DECL|enum|__anon27df14a40103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1766,14 +1766,16 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-name|gimp_g_object_get_memsize
+name|gimp_object_get_memsize
 argument_list|(
-name|G_OBJECT
+name|GIMP_OBJECT
 argument_list|(
 name|gimp
 operator|->
 name|plug_in_manager
 argument_list|)
+argument_list|,
+name|gui_size
 argument_list|)
 expr_stmt|;
 name|memsize
@@ -1812,12 +1814,6 @@ argument_list|,
 name|gui_size
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp
-operator|->
-name|global_buffer
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -1834,7 +1830,6 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-operator|(
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1846,7 +1841,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1858,7 +1855,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1870,7 +1869,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1882,7 +1883,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1894,7 +1897,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1906,7 +1911,6 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|)
 expr_stmt|;
 name|memsize
 operator|+=
@@ -1924,7 +1928,6 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-operator|(
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1936,7 +1939,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1948,7 +1953,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1960,7 +1967,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1972,7 +1981,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -1984,7 +1995,6 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|)
 expr_stmt|;
 name|memsize
 operator|+=
@@ -1999,7 +2009,6 @@ argument_list|)
 expr_stmt|;
 name|memsize
 operator|+=
-operator|(
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -2011,7 +2020,9 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|+
+expr_stmt|;
+name|memsize
+operator|+=
 name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
@@ -2023,7 +2034,6 @@ argument_list|)
 argument_list|,
 name|gui_size
 argument_list|)
-operator|)
 expr_stmt|;
 return|return
 name|memsize

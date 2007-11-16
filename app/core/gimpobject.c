@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f96640103
+DECL|enum|__anon2b68a9e40103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f96640203
+DECL|enum|__anon2b68a9e40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1289,6 +1289,10 @@ literal|0
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|object
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_OBJECT
 argument_list|(
 name|object
@@ -1297,6 +1301,25 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|object
+condition|)
+block|{
+if|if
+condition|(
+name|gui_size
+condition|)
+operator|*
+name|gui_size
+operator|=
+literal|0
+expr_stmt|;
+return|return
+literal|0
+return|;
+block|}
 ifdef|#
 directive|ifdef
 name|DEBUG_MEMSIZE
@@ -1569,10 +1592,6 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
-name|object
-operator|->
-name|name
-operator|&&
 operator|!
 name|object
 operator|->
@@ -1580,14 +1599,12 @@ name|static_name
 condition|)
 name|memsize
 operator|+=
-name|strlen
+name|gimp_string_get_memsize
 argument_list|(
 name|object
 operator|->
 name|name
 argument_list|)
-operator|+
-literal|1
 expr_stmt|;
 return|return
 name|memsize

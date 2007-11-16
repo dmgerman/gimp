@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddfa970103
+DECL|enum|__anon2be563860103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddfa970203
+DECL|enum|__anon2be563860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1034,12 +1034,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|undo
-operator|->
-name|preview
-condition|)
 operator|*
 name|gui_size
 operator|+=

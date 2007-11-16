@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6dfcc0103
+DECL|enum|__anon299e11520103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6dfcc0203
+DECL|enum|__anon299e11520203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1777,12 +1777,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|layer
-operator|->
-name|mask
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
@@ -1797,14 +1791,6 @@ argument_list|,
 name|gui_size
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|layer
-operator|->
-name|fs
-operator|.
-name|backing_store
-condition|)
 operator|*
 name|gui_size
 operator|+=

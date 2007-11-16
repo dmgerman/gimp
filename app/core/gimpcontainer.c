@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -37,6 +31,12 @@ begin_include
 include|#
 directive|include
 file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-utils.h"
 end_include
 
 begin_include
@@ -124,7 +124,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794229c0103
+DECL|enum|__anon2925b1c30103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794229c0203
+DECL|enum|__anon2925b1c30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1084,14 +1084,12 @@ argument_list|(
 name|GimpContainerHandler
 argument_list|)
 operator|+
-name|strlen
+name|gimp_string_get_memsize
 argument_list|(
 name|handler
 operator|->
 name|signame
 argument_list|)
-operator|+
-literal|1
 operator|)
 expr_stmt|;
 block|}
@@ -1116,7 +1114,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2794229c0308
+DECL|struct|__anon2925b1c30308
 block|{
 DECL|member|writer
 name|GimpConfigWriter

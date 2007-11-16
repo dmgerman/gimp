@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2902e3960103
+DECL|enum|__anon2c7918680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2902e3960203
+DECL|enum|__anon2c7918680203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -929,10 +929,6 @@ argument_list|,
 name|quark_preview_pixbuf
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|temp_buf
-condition|)
 operator|*
 name|gui_size
 operator|+=

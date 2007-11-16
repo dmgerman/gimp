@@ -299,12 +299,6 @@ name|memsize
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|stack
-operator|->
-name|undos
-condition|)
 name|memsize
 operator|+=
 name|gimp_object_get_memsize
