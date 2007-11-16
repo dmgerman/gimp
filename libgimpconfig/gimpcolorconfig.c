@@ -155,7 +155,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8a6d820103
+DECL|enum|__anon2b3aa01d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -411,7 +411,7 @@ literal|"display-profile-from-gdk"
 argument_list|,
 name|DISPLAY_PROFILE_FROM_GDK_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
