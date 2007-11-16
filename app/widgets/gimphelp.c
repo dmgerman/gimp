@@ -108,12 +108,14 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"gimp-log.h"
 end_include
 
-begin_comment
-comment|/*  #define GIMP_HELP_DEBUG  */
-end_comment
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
 
 begin_typedef
 DECL|typedef|GimpIdleHelp
@@ -437,12 +439,11 @@ name|procedure_name
 init|=
 name|NULL
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HELP_DEBUG
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"Help Domain: %s\n"
+name|HELP
+argument_list|,
+literal|"Domain = '%s', ID = '%s'"
 argument_list|,
 name|idle_help
 operator|->
@@ -453,11 +454,6 @@ operator|->
 name|help_domain
 else|:
 literal|"NULL"
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"Help ID: %s\n\n"
 argument_list|,
 name|idle_help
 operator|->
@@ -470,8 +466,6 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|config
@@ -1050,6 +1044,33 @@ name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|HELP
+argument_list|,
+literal|"Calling help via %s: %s %s %s"
+argument_list|,
+name|procedure_name
+argument_list|,
+name|help_domain
+condition|?
+name|help_domain
+else|:
+literal|"(null)"
+argument_list|,
+name|help_locales
+condition|?
+name|help_locales
+else|:
+literal|"(null)"
+argument_list|,
+name|help_id
+condition|?
+name|help_id
+else|:
+literal|"(null)"
+argument_list|)
+expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_pdb_execute_procedure_by_name
@@ -1280,12 +1301,11 @@ name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_HELP_DEBUG
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"Calling help via %s: %s %s %s\n"
+name|HELP
+argument_list|,
+literal|"Calling help via %s: %s %s %s"
 argument_list|,
 name|procedure_name
 argument_list|,
@@ -1308,8 +1328,6 @@ else|:
 literal|"(null)"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|return_vals
 operator|=
 name|gimp_pdb_execute_procedure_by_name

@@ -70,6 +70,12 @@ literal|"dnd"
 block|,
 name|GIMP_LOG_DND
 block|}
+block|,
+block|{
+literal|"help"
+block|,
+name|GIMP_LOG_HELP
+block|}
 block|}
 decl_stmt|;
 name|gimp_log_flags
