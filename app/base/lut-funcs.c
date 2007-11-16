@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acab8b60108
+DECL|struct|__anon29e3fe920108
 block|{
 DECL|member|brightness
 name|gdouble
@@ -234,9 +234,6 @@ name|GimpLutFunc
 operator|)
 name|brightness_contrast_lut_func
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|data
 argument_list|,
@@ -497,9 +494,6 @@ name|GimpLutFunc
 operator|)
 name|add_lut_func
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|amount
 argument_list|,
@@ -635,9 +629,6 @@ name|GimpLutFunc
 operator|)
 name|intersect_lut_func
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|value
 argument_list|,
@@ -777,9 +768,6 @@ name|GimpLutFunc
 operator|)
 name|threshold_lut_func
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|value
 argument_list|,
@@ -947,9 +935,6 @@ name|GimpLutFunc
 operator|)
 name|posterize_lut_func
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|levels
 argument_list|,
@@ -1001,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acab8b60208
+DECL|struct|__anon29e3fe920208
 block|{
 DECL|member|histogram
 name|GimpHistogram
@@ -1250,8 +1235,12 @@ expr_stmt|;
 while|while
 condition|(
 name|sum
-operator|<=
+operator|<
 name|desired
+operator|&&
+name|j
+operator|<
+literal|256
 condition|)
 block|{
 name|j
@@ -1337,9 +1326,6 @@ name|GimpLutFunc
 operator|)
 name|equalize_lut_func
 argument_list|,
-operator|(
-name|gpointer
-operator|)
 operator|&
 name|hlut
 argument_list|,
