@@ -167,6 +167,9 @@ argument_list|(
 name|_SC_PAGE_SIZE
 argument_list|)
 return|return
+operator|(
+name|guint64
+operator|)
 name|sysconf
 argument_list|(
 name|_SC_PHYS_PAGES
