@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gimptool in C  * Copyright (C) 2001--2007 Tor Lillqvist  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* gimptool in C  * Copyright (C) 2001-2007 Tor Lillqvist  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -202,11 +202,12 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2b54704c0108
+DECL|struct|__anon27dbead60108
 specifier|static
 struct|struct
 block|{
 DECL|member|option
+specifier|const
 name|gchar
 modifier|*
 name|option
@@ -304,7 +305,7 @@ if|#
 directive|if
 literal|0
 comment|/* For --includedir we want the includedir of the developer package,    * not an includedir under the runtime installation prefix.    */
-block|{ "includedir", INCLUDEDIR },
+block|{ "includedir",     INCLUDEDIR     },
 endif|#
 directive|endif
 block|{
@@ -460,7 +461,7 @@ argument_list|,
 literal|"r"
 argument_list|)
 decl_stmt|;
-name|char
+name|gchar
 name|line
 index|[
 literal|1000
@@ -473,10 +474,8 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Cannot run '%s'\n"
 argument_list|,
 name|command
@@ -484,7 +483,7 @@ argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}
@@ -592,10 +591,8 @@ operator|==
 literal|0
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"No output from '%s'\n"
 argument_list|,
 name|command
@@ -603,7 +600,7 @@ argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}
@@ -675,7 +672,7 @@ name|gchar
 modifier|*
 name|path
 decl_stmt|;
-name|char
+name|gchar
 modifier|*
 name|p
 decl_stmt|,
@@ -801,10 +798,8 @@ return|;
 block|}
 block|}
 block|}
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Cannot determine GIMP "
 name|GIMP_APP_VERSION
 literal|" installation location\n"
@@ -812,7 +807,7 @@ argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 else|#
@@ -1148,7 +1143,7 @@ name|int
 name|exit_status
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"\ Usage: gimptool-2.0 [OPTION]...\n\ \n\ General options:\n\   --help                  print this message\n\   --quiet, --silent       don't echo build commands\n\   --version               print the version of GIMP associated with this script\n\   -n, --just-print, --dry-run, --recon\n\                           don't actually run any commands; just print them\n\ Developer options:\n\   --cflags                print the compiler flags that are necessary to\n\                           compile a plug-in\n\   --libs                  print the linker flags that are necessary to link a\n\                           plug-in\n\   --prefix=PREFIX         use PREFIX instead of the installation prefix that\n\                           GIMP was built when computing the output for --cflags\n\                           and --libs\n\   --exec-prefix=PREFIX    use PREFIX instead of the installation exec prefix\n\                           that GIMP was built when computing the output for\n\                           --cflags and --libs\n\   --msvc-syntax           print flags in MSVC syntax\n\ \n\ Installation directory options:\n\   --prefix --exec-prefix --bindir --sbindir --libexecdir --datadir --sysconfdir\n\   --sharedstatedir --localstatedir --libdir --infodir --mandir --includedir\n\   --gimpplugindir --gimpdatadir\n\ \n\ The --cflags and --libs options can be appended with -noui to get appropriate\n\ settings for plug-ins which do not use GTK+.\n\ \n\ User options:\n\   --build plug-in.c               build a plug-in from a source file\n\   --install plug-in.c             same as --build, but installs the built\n\                                   plug-in as well\n\   --install-bin plug-in           install a compiled plug-in\n\   --install-script script.scm     install a script-fu script\n\ \n\   --uninstall-bin plug-in         remove a plug-in again\n\   --uninstall-script plug-in      remove a script-fu script\n\ \n\ The --install and --uninstall options have \"admin\" counterparts (with\n\ prefix --install-admin instead of --install) that can be used instead to\n\ install/uninstall a plug-in or script in the machine directory instead of a\n\ user directory.\n\ \n\ For plug-ins which do not use GTK+, the --build and --install options can be\n\ appended with -noui for appropriate settings. For plug-ins that use GTK+ but\n\ not libgumpui, append -nogimpui.\n"
 argument_list|)
@@ -1189,7 +1184,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1228,7 +1223,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1267,7 +1262,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1306,7 +1301,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1345,7 +1340,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1384,7 +1379,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1423,7 +1418,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1450,7 +1445,7 @@ condition|(
 operator|!
 name|silent
 condition|)
-name|printf
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -1527,9 +1522,6 @@ name|p
 decl_stmt|,
 modifier|*
 name|q
-decl_stmt|,
-modifier|*
-name|r
 decl_stmt|;
 if|if
 condition|(
@@ -1606,10 +1598,8 @@ literal|0
 operator|)
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"plug-in source %s is not a C or C++ file?\n"
 argument_list|,
 name|what
@@ -1617,7 +1607,7 @@ argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1638,15 +1628,18 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
+block|{
+name|gchar
+modifier|*
 name|r
-operator|=
+init|=
 name|strrchr
 argument_list|(
 name|dest_exe
 argument_list|,
 literal|'/'
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|r
@@ -1667,6 +1660,7 @@ name|q
 operator|=
 name|r
 expr_stmt|;
+block|}
 endif|#
 directive|endif
 if|if
@@ -2587,7 +2581,7 @@ literal|1
 condition|)
 name|usage
 argument_list|(
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 comment|/* First scan for flags that affect our behaviour globally, but    * are still allowed late on the command line.    */
@@ -2653,10 +2647,12 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|dry_run
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2672,11 +2668,13 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|usage
 argument_list|(
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2690,6 +2688,7 @@ argument_list|,
 literal|"--prefix="
 argument_list|)
 condition|)
+block|{
 name|prefix
 operator|=
 name|argv
@@ -2702,6 +2701,7 @@ argument_list|(
 literal|"--prefix="
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2715,6 +2715,7 @@ argument_list|,
 literal|"--exec-prefix="
 argument_list|)
 condition|)
+block|{
 name|exec_prefix
 operator|=
 name|argv
@@ -2727,6 +2728,7 @@ argument_list|(
 literal|"--exec_prefix="
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2742,10 +2744,12 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|msvc_syntax
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 block|}
 ifndef|#
 directive|ifndef
@@ -2755,10 +2759,8 @@ condition|(
 name|msvc_syntax
 condition|)
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Ignoring --msvc-syntax\n"
 argument_list|)
 expr_stmt|;
@@ -2801,6 +2803,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|strcmp
@@ -2828,6 +2831,7 @@ operator|==
 literal|0
 condition|)
 break|break;
+block|}
 if|if
 condition|(
 name|i
@@ -2837,7 +2841,8 @@ argument_list|(
 name|dirs
 argument_list|)
 condition|)
-name|printf
+block|{
+name|g_print
 argument_list|(
 literal|"%s\n"
 argument_list|,
@@ -2852,6 +2857,7 @@ name|value
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2879,10 +2885,12 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
 name|silent
 operator|=
 name|TRUE
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -2899,7 +2907,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|printf
+name|g_print
 argument_list|(
 literal|"%d.%d.%d\n"
 argument_list|,
@@ -2912,7 +2920,7 @@ argument_list|)
 expr_stmt|;
 name|exit
 argument_list|(
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
@@ -3549,10 +3557,8 @@ argument_list|)
 expr_stmt|;
 else|else
 block|{
-name|fprintf
+name|g_printerr
 argument_list|(
-name|stderr
-argument_list|,
 literal|"Unrecognized switch %s\n"
 argument_list|,
 name|argv
@@ -3563,14 +3569,14 @@ argument_list|)
 expr_stmt|;
 name|usage
 argument_list|(
-literal|1
+name|EXIT_FAILURE
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 name|exit
 argument_list|(
-literal|0
+name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
 block|}
