@@ -76,6 +76,12 @@ literal|"help"
 block|,
 name|GIMP_LOG_HELP
 block|}
+block|,
+block|{
+literal|"dialog-factory"
+block|,
+name|GIMP_LOG_DIALOG_FACTORY
+block|}
 block|}
 decl_stmt|;
 name|gimp_log_flags

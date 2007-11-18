@@ -87,46 +87,11 @@ directive|include
 file|"gimpsessioninfo.h"
 end_include
 
-begin_comment
-comment|/* #define DEBUG_FACTORY */
-end_comment
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|DEBUG_FACTORY
-end_ifdef
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-value|stmnt
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|D (stmnt)
-define|#
-directive|define
-name|D
-parameter_list|(
-name|stmnt
-parameter_list|)
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
 
 begin_function_decl
 specifier|static
@@ -2674,13 +2639,11 @@ name|entry
 condition|)
 comment|/* dialog is a toplevel (but not a GimpDock) or a GimpDockable */
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: adding %s \"%s\"\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"adding %s \"%s\""
 argument_list|,
 name|toplevel
 condition|?
@@ -2691,7 +2654,6 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -2762,20 +2724,17 @@ operator|->
 name|identifier
 argument_list|)
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: corrupt session info: %p (widget %p)\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"corrupt session info: %p (widget %p)"
 argument_list|,
 name|info
 argument_list|,
 name|info
 operator|->
 name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2788,13 +2747,11 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: updating session info %p (widget %p) for %s \"%s\"\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"updating session info %p (widget %p) for %s \"%s\""
 argument_list|,
 name|info
 argument_list|,
@@ -2811,7 +2768,6 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2848,13 +2804,11 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: creating session info %p (widget %p) for %s \"%s\"\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"creating session info %p (widget %p) for %s \"%s\""
 argument_list|,
 name|info
 argument_list|,
@@ -2871,7 +2825,6 @@ argument_list|,
 name|entry
 operator|->
 name|identifier
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2934,14 +2887,11 @@ block|}
 else|else
 comment|/*  dialog is a GimpDock  */
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: adding dock\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
-argument_list|)
+literal|"adding dock"
 argument_list|)
 expr_stmt|;
 for|for
@@ -2993,20 +2943,17 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: updating session info %p (widget %p) for dock\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"updating session info %p (widget %p) for dock"
 argument_list|,
 name|info
 argument_list|,
 name|info
 operator|->
 name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_set_geometry
@@ -3035,20 +2982,17 @@ name|widget
 operator|=
 name|dialog
 expr_stmt|;
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: creating session info %p (widget %p) for dock\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"creating session info %p (widget %p) for dock"
 argument_list|,
 name|info
 argument_list|,
 name|info
 operator|->
 name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if we create a new session info, we never call            *  gimp_session_info_set_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
@@ -3419,13 +3363,11 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: removing \"%s\"\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"removing \"%s\""
 argument_list|,
 name|entry
 condition|?
@@ -3434,7 +3376,6 @@ operator|->
 name|identifier
 else|:
 literal|"dock"
-argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -3474,13 +3415,11 @@ operator|==
 name|dialog
 condition|)
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: clearing session info %p (widget %p) for \"%s\"\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"clearing session info %p (widget %p) for \"%s\""
 argument_list|,
 name|session_info
 argument_list|,
@@ -3495,7 +3434,6 @@ operator|->
 name|identifier
 else|:
 literal|"dock"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|session_info
@@ -4365,18 +4303,15 @@ operator|==
 name|dialog
 condition|)
 block|{
-name|D
+name|GIMP_LOG
 argument_list|(
-name|g_print
-argument_list|(
-literal|"%s: updating session info for \"%s\" from window geometry\n"
+name|DIALOG_FACTORY
 argument_list|,
-name|G_STRFUNC
+literal|"updating session info for \"%s\" from window geometry"
 argument_list|,
 name|entry
 operator|->
 name|identifier
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_get_geometry
