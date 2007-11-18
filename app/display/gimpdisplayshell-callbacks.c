@@ -2901,9 +2901,13 @@ name|GIMP_LOG
 argument_list|(
 name|TOOLS
 argument_list|,
-literal|"event (display %p): BUTTON_PRESS"
+literal|"event (display %p): BUTTON_PRESS (%d)"
 argument_list|,
 name|display
+argument_list|,
+name|bevent
+operator|->
+name|button
 argument_list|)
 expr_stmt|;
 if|if
@@ -3391,9 +3395,13 @@ name|GIMP_LOG
 argument_list|(
 name|TOOLS
 argument_list|,
-literal|"event (display %p): BUTTON_RELEASE"
+literal|"event (display %p): BUTTON_RELEASE (%d)"
 argument_list|,
 name|display
+argument_list|,
+name|bevent
+operator|->
+name|button
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_autoscroll_stop
@@ -3594,9 +3602,13 @@ name|GIMP_LOG
 argument_list|(
 name|TOOLS
 argument_list|,
-literal|"event (display %p): SCROLL"
+literal|"event (display %p): SCROLL (%d)"
 argument_list|,
 name|display
+argument_list|,
+name|sevent
+operator|->
+name|direction
 argument_list|)
 expr_stmt|;
 name|wheel
@@ -4541,21 +4553,6 @@ break|break;
 case|case
 name|GDK_KEY_PRESS
 case|:
-name|GIMP_LOG
-argument_list|(
-name|TOOLS
-argument_list|,
-literal|"event (display %p): KEY_PRESS"
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
-condition|)
 block|{
 name|GdkEventKey
 modifier|*
@@ -4567,6 +4564,42 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|TOOLS
+argument_list|,
+literal|"event (display %p): KEY_PRESS (%d, %s)"
+argument_list|,
+name|display
+argument_list|,
+name|kevent
+operator|->
+name|keyval
+argument_list|,
+name|gdk_keyval_name
+argument_list|(
+name|kevent
+operator|->
+name|keyval
+argument_list|)
+condition|?
+name|gdk_keyval_name
+argument_list|(
+name|kevent
+operator|->
+name|keyval
+argument_list|)
+else|:
+literal|"<none>"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
+condition|)
+block|{
 switch|switch
 condition|(
 name|kevent
@@ -4643,16 +4676,6 @@ block|}
 block|}
 else|else
 block|{
-name|GdkEventKey
-modifier|*
-name|kevent
-init|=
-operator|(
-name|GdkEventKey
-operator|*
-operator|)
-name|event
-decl_stmt|;
 name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
@@ -4898,25 +4921,11 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 break|break;
 case|case
 name|GDK_KEY_RELEASE
 case|:
-name|GIMP_LOG
-argument_list|(
-name|TOOLS
-argument_list|,
-literal|"event (display %p): KEY_RELEASE"
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
-condition|)
 block|{
 name|GdkEventKey
 modifier|*
@@ -4928,6 +4937,42 @@ operator|*
 operator|)
 name|event
 decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|TOOLS
+argument_list|,
+literal|"event (display %p): KEY_RELEASE (%d, %s)"
+argument_list|,
+name|display
+argument_list|,
+name|kevent
+operator|->
+name|keyval
+argument_list|,
+name|gdk_keyval_name
+argument_list|(
+name|kevent
+operator|->
+name|keyval
+argument_list|)
+condition|?
+name|gdk_keyval_name
+argument_list|(
+name|kevent
+operator|->
+name|keyval
+argument_list|)
+else|:
+literal|"<none>"
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
+condition|)
+block|{
 switch|switch
 condition|(
 name|kevent
@@ -5005,16 +5050,6 @@ block|}
 block|}
 else|else
 block|{
-name|GdkEventKey
-modifier|*
-name|kevent
-init|=
-operator|(
-name|GdkEventKey
-operator|*
-operator|)
-name|event
-decl_stmt|;
 name|tool_manager_focus_display_active
 argument_list|(
 name|gimp
@@ -5083,7 +5118,7 @@ operator|&=
 operator|~
 name|key
 expr_stmt|;
-comment|/*  For all modifier keys: call the tools modifier_state *and*                  *  oper_update method so tools can choose if they are interested                  *  in the press itself or only in the resulting state                  */
+comment|/*  For all modifier keys: call the tools                    *  modifier_state *and* oper_update method so tools                    *  can choose if they are interested in the press                    *  itself or only in the resulting state                    */
 if|if
 condition|(
 operator|!
@@ -5120,6 +5155,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 break|break;
 default|default:
