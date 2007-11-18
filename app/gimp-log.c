@@ -82,6 +82,12 @@ literal|"dialog-factory"
 block|,
 name|GIMP_LOG_DIALOG_FACTORY
 block|}
+block|,
+block|{
+literal|"save-dialog"
+block|,
+name|GIMP_LOG_SAVE_DIALOG
+block|}
 block|}
 decl_stmt|;
 name|gimp_log_flags

@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -791,18 +797,13 @@ operator|!
 name|basename_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: basename has no valid extension\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"basename has no valid extension"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 operator|!
@@ -821,18 +822,13 @@ name|ext
 init|=
 name|NULL
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: basename has no '.', trying to add extension\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"basename has no '.', trying to add extension"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 operator|!
@@ -900,20 +896,15 @@ name|gchar
 modifier|*
 name|utf8
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: appending .%s to basename\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"appending .%s to basename"
 argument_list|,
 name|ext
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|g_free
 argument_list|(
 name|uri
@@ -993,21 +984,15 @@ argument_list|(
 name|utf8
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: set basename to %s, rerunning response and "
-literal|"bailing out\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"set basename to %s, rerunning response and bailing out"
 argument_list|,
 name|basename
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  call the response callback again, so the                *  overwrite-confirm logic can check the changed uri                */
 name|gtk_dialog_response
 argument_list|(
@@ -1035,18 +1020,13 @@ return|;
 block|}
 else|else
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: save_proc has no extensions, continuing without\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"save_proc has no extensions, continuing without"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  there may be file formats with no extension at all, use                *  the selected proc in this case.                */
 name|basename_proc
 operator|=
@@ -1068,18 +1048,13 @@ operator|!
 name|basename_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: unable to figure save_proc, bailing out\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"unable to figure save_proc, bailing out"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_message
 argument_list|(
 name|gimp
@@ -1126,19 +1101,14 @@ operator|->
 name|extensions_list
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: basename has '.', but save_proc has no extensions, "
-literal|"accepting random extension\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"basename has '.', but save_proc has no extensions, "
+literal|"accepting random extension"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  accept any random extension if the file format has            *  no extensions at all            */
 name|basename_proc
 operator|=
@@ -1162,36 +1132,26 @@ operator|!
 name|save_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: no save_proc was selected from the list\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"no save_proc was selected from the list"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 operator|!
 name|basename_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: basename had no useful extension, bailing out\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"basename has no useful extension, bailing out"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gimp_message
 argument_list|(
 name|gimp
@@ -1226,14 +1186,11 @@ return|return
 name|FALSE
 return|;
 block|}
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: use URI's proc '%s' so indirect saving works\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"use URI's proc '%s' so indirect saving works"
 argument_list|,
 name|uri_proc
 operator|->
@@ -1243,11 +1200,9 @@ name|uri_proc
 operator|->
 name|menu_label
 else|:
-literal|"?"
+literal|"<unnamed>"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  use the URI's proc if no save proc was selected  */
 name|save_proc
 operator|=
@@ -1256,22 +1211,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: save_proc '%s' was selected from the list\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"save_proc '%s' was selected from the list"
 argument_list|,
 name|save_proc
 operator|->
 name|menu_label
+condition|?
+name|save_proc
+operator|->
+name|menu_label
+else|:
+literal|"<unnamed>"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|save_proc
@@ -1279,14 +1235,11 @@ operator|!=
 name|basename_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: however the basename's proc is '%s'\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"however the basename's proc is '%s'"
 argument_list|,
 name|basename_proc
 condition|?
@@ -1297,8 +1250,6 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|uri_proc
@@ -1306,18 +1257,13 @@ operator|!=
 name|basename_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: that's impossible for remote URIs, bailing out\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"that's impossible for remote URIs, bailing out"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  remote URI  */
 name|gimp_message
 argument_list|(
@@ -1356,18 +1302,13 @@ return|;
 block|}
 else|else
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: ask the user if she really wants that filename\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"ask the user if she really wants that filename"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  local URI  */
 if|if
 condition|(
@@ -1404,22 +1345,23 @@ operator|!=
 name|uri_proc
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: use URI's proc '%s' so indirect saving works\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"use URI's proc '%s' so indirect saving works"
 argument_list|,
 name|uri_proc
 operator|->
 name|menu_label
+condition|?
+name|uri_proc
+operator|->
+name|menu_label
+else|:
+literal|"<unnamed>"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  need to use the URI's proc for saving because e.g.            *  the GIF plug-in can't save a GIF to sftp://            */
 name|save_proc
 operator|=
