@@ -3657,6 +3657,12 @@ operator|<
 name|scale
 operator|->
 name|width
+operator|-
+operator|(
+name|y
+operator|%
+literal|2
+operator|)
 condition|;
 name|x
 operator|+=
