@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ff7dd0103
+DECL|enum|__anon2bd4634b0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6ff7dd0203
+DECL|enum|__anon2bd4634b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
