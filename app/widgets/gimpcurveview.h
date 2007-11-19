@@ -108,6 +108,10 @@ name|GimpCurve
 modifier|*
 name|curve
 decl_stmt|;
+DECL|member|draw_base_line
+name|gboolean
+name|draw_base_line
+decl_stmt|;
 DECL|member|grid_rows
 name|gint
 name|grid_rows
