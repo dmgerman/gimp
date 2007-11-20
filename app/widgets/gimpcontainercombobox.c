@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ee9920103
+DECL|enum|__anon2a240a070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ee9920203
+DECL|enum|__anon2a240a070203
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -653,6 +653,16 @@ name|gimp_container_combo_box_changed
 argument_list|)
 argument_list|,
 name|combo_box
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|combo_box
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1249,7 +1259,6 @@ argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
-comment|/*  GimpContainerViews don't select items by default  */
 if|if
 condition|(
 name|gtk_tree_model_iter_n_children
@@ -1261,6 +1270,8 @@ argument_list|)
 operator|==
 literal|1
 condition|)
+block|{
+comment|/*  GimpContainerViews don't select items by default  */
 name|gtk_combo_box_set_active
 argument_list|(
 name|GTK_COMBO_BOX
@@ -1272,6 +1283,17 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_container_combo_box_set
 argument_list|(
 name|GIMP_CONTAINER_COMBO_BOX
@@ -1373,6 +1395,16 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1778,6 +1810,16 @@ name|GTK_LIST_STORE
 argument_list|(
 name|model
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|parent_view_iface
