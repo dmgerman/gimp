@@ -6,133 +6,145 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_HISTOGRAM_BOX_H__
+name|__GIMP_HANDLE_BAR_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_HISTOGRAM_BOX_H__
+DECL|macro|__GIMP_HANDLE_BAR_H__
 define|#
 directive|define
-name|__GIMP_HISTOGRAM_BOX_H__
+name|__GIMP_HANDLE_BAR_H__
+end_define
+
+begin_include
+include|#
+directive|include
+file|<gtk/gtkmisc.h>
+end_include
+
+begin_define
+DECL|macro|GIMP_TYPE_HANDLE_BAR
+define|#
+directive|define
+name|GIMP_TYPE_HANDLE_BAR
+value|(gimp_handle_bar_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_HISTOGRAM_BOX
+DECL|macro|GIMP_HANDLE_BAR (obj)
 define|#
 directive|define
-name|GIMP_TYPE_HISTOGRAM_BOX
-value|(gimp_histogram_box_get_type ())
-end_define
-
-begin_define
-DECL|macro|GIMP_HISTOGRAM_BOX (obj)
-define|#
-directive|define
-name|GIMP_HISTOGRAM_BOX
+name|GIMP_HANDLE_BAR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HISTOGRAM_BOX, GimpHistogramBox))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_HANDLE_BAR, GimpHandleBar))
 end_define
 
 begin_define
-DECL|macro|GIMP_HISTOGRAM_BOX_CLASS (klass)
+DECL|macro|GIMP_HANDLE_BAR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_HISTOGRAM_BOX_CLASS
+name|GIMP_HANDLE_BAR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HISTOGRAM_BOX, GimpHistogramBoxClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_HANDLE_BAR, GimpHandleBarClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_HISTOGRAM_BOX (obj)
+DECL|macro|GIMP_IS_HANDLE_BAR (obj)
 define|#
 directive|define
-name|GIMP_IS_HISTOGRAM_BOX
+name|GIMP_IS_HANDLE_BAR
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HISTOGRAM_BOX))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_HANDLE_BAR))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_HISTOGRAM_BOX_CLASS (klass)
+DECL|macro|GIMP_IS_HANDLE_BAR_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_HISTOGRAM_BOX_CLASS
+name|GIMP_IS_HANDLE_BAR_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HISTOGRAM_BOX))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_HANDLE_BAR))
 end_define
 
 begin_define
-DECL|macro|GIMP_HISTOGRAM_BOX_GET_CLASS (obj)
+DECL|macro|GIMP_HANDLE_BAR_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_HISTOGRAM_BOX_GET_CLASS
+name|GIMP_HANDLE_BAR_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HISTOGRAM_BOX, GimpHistogramBoxClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_HANDLE_BAR, GimpHandleBarClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpHistogramBoxClass
+DECL|typedef|GimpHandleBarClass
 typedef|typedef
 name|struct
-name|_GimpHistogramBoxClass
-name|GimpHistogramBoxClass
+name|_GimpHandleBarClass
+name|GimpHandleBarClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpHistogramBox
+DECL|struct|_GimpHandleBar
 struct|struct
-name|_GimpHistogramBox
+name|_GimpHandleBar
 block|{
-DECL|member|parent_instance
-name|GtkVBox
-name|parent_instance
+DECL|member|parent_class
+name|GtkEventBox
+name|parent_class
 decl_stmt|;
-DECL|member|view
-name|GimpHistogramView
-modifier|*
-name|view
+DECL|member|orientation
+name|GtkOrientation
+name|orientation
 decl_stmt|;
-DECL|member|color_bar
-name|GtkWidget
-modifier|*
-name|color_bar
-decl_stmt|;
-DECL|member|slider_bar
-name|GtkWidget
-modifier|*
-name|slider_bar
-decl_stmt|;
-DECL|member|low_adj
+DECL|member|slider_adj
 name|GtkAdjustment
 modifier|*
-name|low_adj
+name|slider_adj
+index|[
+literal|3
+index|]
 decl_stmt|;
-DECL|member|high_adj
-name|GtkAdjustment
-modifier|*
-name|high_adj
+DECL|member|lower
+name|gdouble
+name|lower
+decl_stmt|;
+DECL|member|upper
+name|gdouble
+name|upper
+decl_stmt|;
+DECL|member|slider_pos
+name|gint
+name|slider_pos
+index|[
+literal|3
+index|]
+decl_stmt|;
+DECL|member|active_slider
+name|gint
+name|active_slider
 decl_stmt|;
 block|}
 struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpHistogramBoxClass
+DECL|struct|_GimpHandleBarClass
 struct|struct
-name|_GimpHistogramBoxClass
+name|_GimpHandleBarClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkEventBoxClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -141,7 +153,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_histogram_box_get_type
+name|gimp_handle_bar_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -152,23 +164,28 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_histogram_box_new
+name|gimp_handle_bar_new
 parameter_list|(
-name|void
+name|GtkOrientation
+name|orientation
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_histogram_box_set_channel
+name|gimp_handle_bar_set_adjustment
 parameter_list|(
-name|GimpHistogramBox
+name|GimpHandleBar
 modifier|*
-name|box
+name|bar
 parameter_list|,
-name|GimpHistogramChannel
-name|channel
+name|gint
+name|handle_no
+parameter_list|,
+name|GtkAdjustment
+modifier|*
+name|adjustment
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -179,7 +196,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_HISTOGRAM_BOX_H__  */
+comment|/*  __GIMP_HANDLE_BAR_H__  */
 end_comment
 
 end_unit

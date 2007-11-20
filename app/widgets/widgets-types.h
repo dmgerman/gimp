@@ -899,6 +899,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpHandleBar
+typedef|typedef
+name|struct
+name|_GimpHandleBar
+name|GimpHandleBar
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpHistogramBox
 typedef|typedef
 name|struct
