@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294522d70103
+DECL|enum|__anon2c25e1df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -619,6 +619,7 @@ operator|+=
 literal|3
 control|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src
@@ -728,6 +729,7 @@ operator|*
 name|width
 control|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|src
