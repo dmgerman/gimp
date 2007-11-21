@@ -81,6 +81,20 @@ name|DEFAULT_WEB_BROWSER
 value|"not used on Windows"
 end_define
 
+begin_elif
+elif|#
+directive|elif
+name|HAVE_CARBON
+end_elif
+
+begin_define
+DECL|macro|DEFAULT_WEB_BROWSER
+define|#
+directive|define
+name|DEFAULT_WEB_BROWSER
+value|"open %s"
+end_define
+
 begin_else
 else|#
 directive|else
@@ -101,7 +115,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon277354c50103
+DECL|enum|__anon28e9358c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
