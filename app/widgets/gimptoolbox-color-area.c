@@ -257,7 +257,7 @@ name|color_area
 argument_list|,
 name|_
 argument_list|(
-literal|"Foreground&amp; background colors.\n"
+literal|"Foreground& background colors.\n"
 literal|"The black and white squares reset colors.\n"
 literal|"The arrows swap colors.\n"
 literal|"Click to open the color selection dialog."

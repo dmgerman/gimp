@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288c204e0103
+DECL|enum|__anon277f2f1b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1134,7 +1134,7 @@ argument_list|,
 name|modifier
 argument_list|)
 decl_stmt|;
-name|gimp_help_set_help_data
+name|gimp_help_set_help_data_with_markup
 argument_list|(
 name|button
 argument_list|,

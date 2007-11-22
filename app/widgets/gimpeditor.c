@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e4b270103
+DECL|enum|__anon29a2de2a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2107,7 +2107,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e4b270208
+DECL|struct|__anon29a2de2a0208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2763,7 +2763,7 @@ name|tooltip
 operator|||
 name|help_id
 condition|)
-name|gimp_help_set_help_data
+name|gimp_help_set_help_data_with_markup
 argument_list|(
 name|button
 argument_list|,

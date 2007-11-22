@@ -1804,7 +1804,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c24331d0108
+DECL|struct|__anon2ae7039a0108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3795,7 +3795,7 @@ name|orig_tooltip
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_help_set_help_data
+name|gimp_help_set_help_data_with_markup
 argument_list|(
 name|widget
 argument_list|,
@@ -3836,15 +3836,11 @@ name|GClosure
 modifier|*
 name|accel_closure
 init|=
-name|NULL
-decl_stmt|;
-name|accel_closure
-operator|=
 name|gtk_action_get_accel_closure
 argument_list|(
 name|action
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|accel_closure

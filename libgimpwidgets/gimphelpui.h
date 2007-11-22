@@ -107,6 +107,31 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  set help data with markup for non-window widgets  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_help_set_help_data_with_markup
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|tooltip
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  activate the context help inspector  */
 end_comment
 
