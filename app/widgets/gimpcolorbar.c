@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c25e1df0103
+DECL|enum|__anon28d456320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,14 +138,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorBar,gimp_color_bar,GTK_TYPE_MISC)
+DECL|function|G_DEFINE_TYPE (GimpColorBar,gimp_color_bar,GTK_TYPE_EVENT_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpColorBar
 argument_list|,
 argument|gimp_color_bar
 argument_list|,
-argument|GTK_TYPE_MISC
+argument|GTK_TYPE_EVENT_BOX
 argument_list|)
 end_macro
 
@@ -301,11 +301,14 @@ modifier|*
 name|bar
 parameter_list|)
 block|{
-name|GTK_WIDGET_SET_FLAGS
+name|gtk_event_box_set_visible_window
+argument_list|(
+name|GTK_EVENT_BOX
 argument_list|(
 name|bar
+argument_list|)
 argument_list|,
-name|GTK_NO_WINDOW
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|bar
@@ -523,21 +526,21 @@ name|j
 decl_stmt|;
 name|x
 operator|=
-name|GTK_MISC
+name|GTK_CONTAINER
 argument_list|(
 name|bar
 argument_list|)
 operator|->
-name|xpad
+name|border_width
 expr_stmt|;
 name|y
 operator|=
-name|GTK_MISC
+name|GTK_CONTAINER
 argument_list|(
 name|bar
 argument_list|)
 operator|->
-name|ypad
+name|border_width
 expr_stmt|;
 name|width
 operator|=

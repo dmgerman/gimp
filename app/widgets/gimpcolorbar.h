@@ -100,7 +100,7 @@ struct|struct
 name|_GimpColorBar
 block|{
 DECL|member|parent_class
-name|GtkMisc
+name|GtkEventBox
 name|parent_class
 decl_stmt|;
 DECL|member|orientation
@@ -126,7 +126,7 @@ struct|struct
 name|_GimpColorBarClass
 block|{
 DECL|member|parent_class
-name|GtkMiscClass
+name|GtkEventBoxClass
 name|parent_class
 decl_stmt|;
 block|}
