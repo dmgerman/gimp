@@ -1021,7 +1021,7 @@ operator|&
 name|cp
 argument_list|)
 expr_stmt|;
-comment|/* compute the colormap entries.  the input colormap is 256 long with 	 entries from 0 to 1.0 */
+comment|/* compute the colormap entries.  the input colormap is 256 long with          entries from 0 to 1.0 */
 for|for
 control|(
 name|j
@@ -1408,13 +1408,14 @@ if|if
 condition|(
 name|progress
 operator|&&
-operator|!
 operator|(
 name|sbc
 operator|++
-operator|&
+operator|%
 literal|32
 operator|)
+operator|==
+literal|0
 condition|)
 call|(
 modifier|*
@@ -2072,12 +2073,13 @@ if|if
 condition|(
 name|progress
 operator|&&
-operator|!
 operator|(
 name|j
-operator|&
+operator|%
 literal|32
 operator|)
+operator|==
+literal|0
 condition|)
 call|(
 modifier|*
