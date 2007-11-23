@@ -1916,7 +1916,7 @@ literal|"gimp-procedural-db-dump"
 argument_list|,
 literal|"Dumps the current contents of the procedural database"
 argument_list|,
-literal|"This procedure dumps the contents of the procedural database to the specified file. The file will contain all of the information provided for each registered procedure. This file is in a format appropriate for use with the supplied \"pdb_self_doc.el\" Elisp script, which generates a texinfo document."
+literal|"This procedure dumps the contents of the procedural database to the specified file. The file will contain all of the information provided for each registered procedure."
 argument_list|,
 literal|"Spencer Kimball& Josh MacDonald"
 argument_list|,

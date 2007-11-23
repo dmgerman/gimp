@@ -104,7 +104,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_procedural_db_dump:  * @filename: The dump filename.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified file. The file will contain all of the information  * provided for each registered procedure. This file is in a format  * appropriate for use with the supplied \"pdb_self_doc.el\" Elisp  * script, which generates a texinfo document.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_procedural_db_dump:  * @filename: The dump filename.  *  * Dumps the current contents of the procedural database  *  * This procedure dumps the contents of the procedural database to the  * specified file. The file will contain all of the information  * provided for each registered procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
