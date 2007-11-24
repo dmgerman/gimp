@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c996f4a0103
+DECL|enum|__anon28b8544a0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
