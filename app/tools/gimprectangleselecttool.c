@@ -1476,7 +1476,7 @@ if|if
 condition|(
 name|function
 operator|==
-name|RECT_INACTIVE
+name|GIMP_RECTANGLE_TOOL_INACTIVE
 condition|)
 block|{
 name|GimpDisplay
@@ -1558,7 +1558,7 @@ name|gimp_rectangle_tool_set_function
 argument_list|(
 name|rectangle
 argument_list|,
-name|RECT_CREATING
+name|GIMP_RECTANGLE_TOOL_CREATING
 argument_list|)
 expr_stmt|;
 name|gimp_rectangle_tool_button_press
@@ -1602,7 +1602,7 @@ if|if
 condition|(
 name|function
 operator|==
-name|RECT_CREATING
+name|GIMP_RECTANGLE_TOOL_CREATING
 condition|)
 block|{
 name|priv
@@ -2121,7 +2121,7 @@ if|if
 condition|(
 name|function
 operator|==
-name|RECT_INACTIVE
+name|GIMP_RECTANGLE_TOOL_INACTIVE
 condition|)
 name|GIMP_SELECTION_TOOL
 argument_list|(
@@ -2929,7 +2929,7 @@ name|gimp_rectangle_tool_set_function
 argument_list|(
 name|rectangle
 argument_list|,
-name|RECT_MOVING
+name|GIMP_RECTANGLE_TOOL_MOVING
 argument_list|)
 expr_stmt|;
 return|return
