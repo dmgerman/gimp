@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c043a8f0103
+DECL|enum|__anon292e60970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1366,6 +1366,10 @@ expr_stmt|;
 break|break;
 block|}
 comment|/*  to get a nice antialiased outline, render the blob at double size  */
+name|radius
+operator|*=
+literal|2.0
+expr_stmt|;
 name|blob
 operator|=
 name|function
@@ -1378,8 +1382,6 @@ literal|2.0
 operator|*
 name|yc
 argument_list|,
-literal|2.0
-operator|*
 name|radius
 operator|*
 name|cos
@@ -1389,8 +1391,6 @@ operator|->
 name|angle
 argument_list|)
 argument_list|,
-literal|2.0
-operator|*
 name|radius
 operator|*
 name|sin
