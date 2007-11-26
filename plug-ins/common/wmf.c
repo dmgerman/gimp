@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ee9140108
+DECL|struct|__anon28d1fa2e0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -259,6 +259,11 @@ parameter_list|,
 name|guint
 modifier|*
 name|height
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4294,7 +4299,7 @@ begin_function
 specifier|static
 name|guchar
 modifier|*
-DECL|function|wmf_load_file (const gchar * filename,guint * width,guint * height)
+DECL|function|wmf_load_file (const gchar * filename,guint * width,guint * height,GError ** error)
 name|wmf_load_file
 parameter_list|(
 specifier|const
@@ -4309,6 +4314,11 @@ parameter_list|,
 name|guint
 modifier|*
 name|height
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GMappedFile
@@ -4369,7 +4379,7 @@ name|filename
 argument_list|,
 name|FALSE
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -4715,6 +4725,12 @@ name|done
 init|=
 literal|0
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
@@ -4729,6 +4745,9 @@ name|width
 argument_list|,
 operator|&
 name|height
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 name|rowstride
@@ -4743,11 +4762,41 @@ operator|!
 name|pixels
 condition|)
 block|{
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not open '%s' for reading."
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4756,6 +4805,7 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 operator|-
 literal|1
