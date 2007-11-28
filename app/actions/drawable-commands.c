@@ -1068,7 +1068,7 @@ argument_list|,
 operator|(
 name|GimpOrientationType
 operator|)
-name|action
+name|value
 argument_list|,
 name|axis
 argument_list|,
