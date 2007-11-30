@@ -2117,6 +2117,15 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
+comment|/*  if no tiles have been allocated, there's no need to invalidate any  */
+if|if
+condition|(
+operator|!
+name|tm
+operator|->
+name|tiles
+condition|)
+return|return;
 for|for
 control|(
 name|i
