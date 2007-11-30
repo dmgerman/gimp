@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b728f40103
+DECL|enum|__anon2a0f0ecf0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2118,11 +2118,15 @@ name|idle_render
 operator|.
 name|idle_id
 operator|=
-name|g_idle_add
+name|g_idle_add_full
 argument_list|(
+name|G_PRIORITY_HIGH_IDLE
+argument_list|,
 name|gimp_projection_idle_render_callback
 argument_list|,
 name|proj
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
