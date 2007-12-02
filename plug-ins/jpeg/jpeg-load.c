@@ -1690,6 +1690,18 @@ condition|(
 name|cinfo
 operator|->
 name|saw_JFIF_marker
+operator|&&
+name|cinfo
+operator|->
+name|X_density
+operator|!=
+literal|0
+operator|&&
+name|cinfo
+operator|->
+name|Y_density
+operator|!=
+literal|0
 condition|)
 block|{
 name|gdouble
@@ -1722,14 +1734,6 @@ case|case
 literal|0
 case|:
 comment|/* unknown -> set the aspect ratio but use the default                  *  image resolution                  */
-if|if
-condition|(
-name|cinfo
-operator|->
-name|Y_density
-operator|!=
-literal|0
-condition|)
 name|asymmetry
 operator|=
 name|xresolution
@@ -1896,7 +1900,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2c632a0108
+DECL|struct|__anon2b01fdd70108
 block|{
 DECL|member|pub
 name|struct
