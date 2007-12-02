@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1b7d00108
+DECL|struct|__anon28d1aa660108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1b7d00208
+DECL|struct|__anon28d1aa660208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1b7d00308
+DECL|struct|__anon28d1aa660308
 block|{
 DECL|member|o_pages
 name|gint
@@ -3053,11 +3053,6 @@ case|case
 name|RESUNIT_NONE
 case|:
 comment|/* ImageMagick writes files with this silly resunit */
-name|g_message
-argument_list|(
-literal|"Warning: resolution units meaningless"
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|RESUNIT_INCH
