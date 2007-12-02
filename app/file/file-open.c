@@ -546,6 +546,8 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|error
+argument_list|,
 name|GIMP_OBJECT
 argument_list|(
 name|file_proc
@@ -659,6 +661,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
+if|if
+condition|(
+name|error
+operator|&&
+operator|!
+operator|*
+name|error
+condition|)
 name|g_set_error
 argument_list|(
 name|error
@@ -695,6 +705,14 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+if|if
+condition|(
+name|error
+operator|&&
+operator|!
+operator|*
+name|error
+condition|)
 name|g_set_error
 argument_list|(
 name|error
@@ -750,7 +768,7 @@ end_comment
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|file_open_thumbnail (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,gint size,const gchar ** mime_type,gint * image_width,gint * image_height)
+DECL|function|file_open_thumbnail (Gimp * gimp,GimpContext * context,GimpProgress * progress,const gchar * uri,gint size,const gchar ** mime_type,gint * image_width,gint * image_height,GError ** error)
 name|file_open_thumbnail
 parameter_list|(
 name|Gimp
@@ -786,6 +804,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|image_height
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPlugInProcedure
@@ -852,6 +875,20 @@ name|g_return_val_if_fail
 argument_list|(
 name|image_height
 operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
 name|NULL
 argument_list|,
 name|NULL
@@ -972,6 +1009,8 @@ argument_list|,
 name|context
 argument_list|,
 name|progress
+argument_list|,
+name|error
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

@@ -77,7 +77,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_add_hguide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_add_hguide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_add_hguide_invoker
 parameter_list|(
 name|GimpProcedure
@@ -100,6 +100,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -230,7 +235,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_add_vguide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_add_vguide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_add_vguide_invoker
 parameter_list|(
 name|GimpProcedure
@@ -253,6 +258,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -383,7 +393,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_delete_guide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_delete_guide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_delete_guide_invoker
 parameter_list|(
 name|GimpProcedure
@@ -406,6 +416,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -498,7 +513,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_find_next_guide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_find_next_guide_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_find_next_guide_invoker
 parameter_list|(
 name|GimpProcedure
@@ -521,6 +536,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -639,7 +659,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_get_guide_orientation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_get_guide_orientation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_get_guide_orientation_invoker
 parameter_list|(
 name|GimpProcedure
@@ -662,6 +682,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -782,7 +807,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_get_guide_position_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_get_guide_position_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_get_guide_position_invoker
 parameter_list|(
 name|GimpProcedure
@@ -805,6 +830,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

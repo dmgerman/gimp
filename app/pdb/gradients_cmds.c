@@ -95,7 +95,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradients_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradients_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradients_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -118,6 +118,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gimp_data_factory_data_refresh
@@ -142,7 +147,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradients_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradients_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradients_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -165,6 +170,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -281,7 +291,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradients_sample_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradients_sample_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradients_sample_uniform_invoker
 parameter_list|(
 name|GimpProcedure
@@ -304,6 +314,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -538,7 +553,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradients_sample_custom_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradients_sample_custom_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradients_sample_custom_invoker
 parameter_list|(
 name|GimpProcedure
@@ -561,6 +576,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -794,7 +814,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradients_get_gradient_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradients_get_gradient_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradients_get_gradient_data_invoker
 parameter_list|(
 name|GimpProcedure
@@ -817,6 +837,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

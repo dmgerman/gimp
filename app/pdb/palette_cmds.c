@@ -95,7 +95,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -118,6 +118,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -230,7 +235,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_duplicate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -253,6 +258,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -402,7 +412,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_rename_invoker
 parameter_list|(
 name|GimpProcedure
@@ -425,6 +435,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -580,7 +595,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -603,6 +618,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -742,7 +762,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_is_editable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -765,6 +785,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -878,7 +903,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_get_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_get_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_get_info_invoker
 parameter_list|(
 name|GimpProcedure
@@ -901,6 +926,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1011,7 +1041,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_get_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_get_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_get_columns_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1034,6 +1064,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1144,7 +1179,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_set_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_set_columns_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_set_columns_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1167,6 +1202,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1271,7 +1311,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_add_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_add_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_add_entry_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1294,6 +1334,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1465,7 +1510,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_delete_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_delete_entry_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_delete_entry_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1488,6 +1533,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1626,7 +1676,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_entry_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_entry_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_entry_get_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1649,6 +1699,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1818,7 +1873,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_entry_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_entry_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_entry_set_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1841,6 +1896,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2003,7 +2063,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_entry_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_entry_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_entry_get_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2026,6 +2086,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2190,7 +2255,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|palette_entry_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|palette_entry_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|palette_entry_set_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2213,6 +2278,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

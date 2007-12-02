@@ -107,7 +107,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|flip_invoker
 parameter_list|(
 name|GimpProcedure
@@ -130,6 +130,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -277,7 +282,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|perspective_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|perspective_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|perspective_invoker
 parameter_list|(
 name|GimpProcedure
@@ -300,6 +305,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -690,7 +700,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|rotate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|rotate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|rotate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -713,6 +723,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -977,7 +992,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|scale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|scale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|scale_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1000,6 +1015,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1332,7 +1352,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|shear_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|shear_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|shear_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1355,6 +1375,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1637,7 +1662,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|transform_2d_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|transform_2d_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|transform_2d_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1660,6 +1685,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

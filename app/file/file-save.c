@@ -472,6 +472,8 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|error
+argument_list|,
 name|GIMP_OBJECT
 argument_list|(
 name|file_proc
@@ -695,6 +697,16 @@ operator|!=
 name|GIMP_PDB_CANCEL
 condition|)
 block|{
+if|if
+condition|(
+name|error
+operator|&&
+operator|*
+name|error
+operator|==
+name|NULL
+condition|)
+block|{
 name|g_set_error
 argument_list|(
 name|error
@@ -714,6 +726,7 @@ name|file_proc
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_object_unref
 argument_list|(

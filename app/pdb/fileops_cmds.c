@@ -131,7 +131,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|file_load_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|file_load_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|file_load_invoker
 parameter_list|(
 name|GimpProcedure
@@ -154,6 +154,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -343,6 +348,8 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|error
+argument_list|,
 name|GIMP_OBJECT
 argument_list|(
 name|proc
@@ -422,7 +429,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|file_load_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|file_load_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|file_load_layer_invoker
 parameter_list|(
 name|GimpProcedure
@@ -445,6 +452,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -636,7 +648,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|file_load_layers_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|file_load_layers_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|file_load_layers_invoker
 parameter_list|(
 name|GimpProcedure
@@ -659,6 +671,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -928,7 +945,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|file_save_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|file_save_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|file_save_invoker
 parameter_list|(
 name|GimpProcedure
@@ -951,6 +968,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -1140,6 +1162,8 @@ name|context
 argument_list|,
 name|progress
 argument_list|,
+name|error
+argument_list|,
 name|GIMP_OBJECT
 argument_list|(
 name|proc
@@ -1165,7 +1189,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|file_load_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|file_load_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|file_load_thumbnail_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1188,6 +1212,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1382,7 +1411,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|file_save_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|file_save_thumbnail_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|file_save_thumbnail_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1405,6 +1434,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1479,7 +1513,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|temp_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|temp_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1502,6 +1536,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1588,7 +1627,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|register_magic_load_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|register_magic_load_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|register_magic_load_handler_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1611,6 +1650,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1742,7 +1786,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|register_load_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|register_load_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|register_load_handler_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1765,6 +1809,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1878,7 +1927,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|register_save_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|register_save_handler_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|register_save_handler_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1901,6 +1950,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2012,7 +2066,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|register_file_handler_mime_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|register_file_handler_mime_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|register_file_handler_mime_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2035,6 +2089,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2126,7 +2185,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|register_thumbnail_loader_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|register_thumbnail_loader_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|register_thumbnail_loader_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2149,6 +2208,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

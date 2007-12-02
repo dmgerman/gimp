@@ -101,7 +101,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|brushes_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|brushes_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|brushes_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -124,6 +124,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gimp_data_factory_data_refresh
@@ -148,7 +153,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|brushes_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|brushes_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|brushes_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -171,6 +176,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -287,7 +297,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|brushes_get_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|brushes_get_brush_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|brushes_get_brush_invoker
 parameter_list|(
 name|GimpProcedure
@@ -310,6 +320,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -475,7 +490,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|brushes_get_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|brushes_get_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|brushes_get_spacing_invoker
 parameter_list|(
 name|GimpProcedure
@@ -498,6 +513,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -575,7 +595,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|brushes_set_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|brushes_set_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|brushes_set_spacing_invoker
 parameter_list|(
 name|GimpProcedure
@@ -598,6 +618,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -652,7 +677,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|brushes_get_brush_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|brushes_get_brush_data_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|brushes_get_brush_data_invoker
 parameter_list|(
 name|GimpProcedure
@@ -675,6 +700,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

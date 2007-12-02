@@ -52,6 +52,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_typedef
@@ -258,6 +263,11 @@ parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 DECL|member|execute_async
@@ -522,6 +532,11 @@ parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -553,6 +568,11 @@ parameter_list|,
 name|GimpObject
 modifier|*
 name|display
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

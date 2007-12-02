@@ -125,7 +125,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_is_valid_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_is_valid_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_is_valid_invoker
 parameter_list|(
 name|GimpProcedure
@@ -148,6 +148,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -228,7 +233,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -251,6 +256,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -356,7 +366,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_get_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_get_image_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_get_image_invoker
 parameter_list|(
 name|GimpProcedure
@@ -379,6 +389,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -467,7 +482,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_get_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_get_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -490,6 +505,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -581,7 +601,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_set_name_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_set_name_invoker
 parameter_list|(
 name|GimpProcedure
@@ -604,6 +624,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -681,7 +706,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_get_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_get_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_get_visible_invoker
 parameter_list|(
 name|GimpProcedure
@@ -704,6 +729,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -791,7 +821,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_set_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_set_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_set_visible_invoker
 parameter_list|(
 name|GimpProcedure
@@ -814,6 +844,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -889,7 +924,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_get_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_get_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_get_linked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -912,6 +947,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -999,7 +1039,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_set_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_set_linked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_set_linked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1022,6 +1062,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1097,7 +1142,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_get_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1120,6 +1165,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1207,7 +1257,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_set_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1230,6 +1280,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1303,7 +1358,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_get_strokes_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_get_strokes_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_get_strokes_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1326,6 +1381,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1494,7 +1554,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_get_length_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_get_length_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_get_length_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1517,6 +1577,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1655,7 +1720,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_get_point_at_dist_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1678,6 +1743,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1921,7 +1991,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_remove_stroke_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_remove_stroke_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_remove_stroke_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1944,6 +2014,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2034,7 +2109,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_close_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_close_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_close_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2057,6 +2132,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2145,7 +2225,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_translate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_translate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_translate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2168,6 +2248,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2292,7 +2377,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_scale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_scale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_scale_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2315,6 +2400,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2439,7 +2529,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_rotate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_rotate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_rotate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2462,6 +2552,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2604,7 +2699,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_flip_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2627,6 +2722,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2751,7 +2851,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_flip_free_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_flip_free_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_flip_free_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2774,6 +2874,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2934,7 +3039,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_get_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_get_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_get_points_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2957,6 +3062,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3253,7 +3363,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_new_from_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_new_from_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_new_from_points_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3276,6 +3386,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3562,7 +3677,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_stroke_interpolate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_stroke_interpolate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_stroke_interpolate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3585,6 +3700,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3868,7 +3988,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_bezier_stroke_new_moveto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_bezier_stroke_new_moveto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_bezier_stroke_new_moveto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3891,6 +4011,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4043,7 +4168,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_bezier_stroke_lineto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_bezier_stroke_lineto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_bezier_stroke_lineto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4066,6 +4191,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4208,7 +4338,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_bezier_stroke_conicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_bezier_stroke_conicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_bezier_stroke_conicto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4231,6 +4361,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4425,7 +4560,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_bezier_stroke_cubicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_bezier_stroke_cubicto_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_bezier_stroke_cubicto_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4448,6 +4583,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4694,7 +4834,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_bezier_stroke_new_ellipse_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_bezier_stroke_new_ellipse_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_bezier_stroke_new_ellipse_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4717,6 +4857,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4923,7 +5068,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_to_selection_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_to_selection_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_to_selection_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4946,6 +5091,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5123,7 +5273,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_import_from_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_import_from_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_import_from_file_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5146,6 +5296,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5401,7 +5556,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_import_from_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_import_from_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_import_from_string_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5424,6 +5579,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5697,7 +5857,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_export_to_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_export_to_file_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_export_to_file_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5720,6 +5880,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5788,46 +5953,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
-name|vectors
-operator|!=
-name|NULL
-operator|&&
-operator|!
-name|GIMP_IS_VECTORS
-argument_list|(
-name|vectors
-argument_list|)
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-operator|&
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"argument is not a valid Vectors object"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-else|else
 name|success
 operator|=
 name|gimp_vectors_export_file
@@ -5838,37 +5963,9 @@ name|vectors
 argument_list|,
 name|filename
 argument_list|,
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|success
-operator|&&
-name|error
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Failed to export path: %s"
-argument_list|)
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 return|return
 name|gimp_procedure_get_return_values
@@ -5885,7 +5982,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_export_to_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_export_to_string_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_export_to_string_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5908,6 +6005,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5968,46 +6070,6 @@ condition|(
 name|success
 condition|)
 block|{
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
-if|if
-condition|(
-name|vectors
-operator|!=
-name|NULL
-operator|&&
-operator|!
-name|GIMP_IS_VECTORS
-argument_list|(
-name|vectors
-argument_list|)
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-operator|&
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"argument is not a valid Vectors object"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-else|else
 name|string
 operator|=
 name|gimp_vectors_export_string
@@ -6025,33 +6087,6 @@ operator|!=
 name|NULL
 operator|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|success
-operator|&&
-name|error
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Failed to save path as string: %s"
-argument_list|)
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 name|return_vals
 operator|=

@@ -83,7 +83,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_get_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_get_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_get_spacing_invoker
 parameter_list|(
 name|GimpProcedure
@@ -106,6 +106,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -238,7 +243,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_set_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_set_spacing_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_set_spacing_invoker
 parameter_list|(
 name|GimpProcedure
@@ -261,6 +266,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -373,7 +383,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_get_offset_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_get_offset_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_get_offset_invoker
 parameter_list|(
 name|GimpProcedure
@@ -396,6 +406,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -528,7 +543,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_set_offset_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_set_offset_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_set_offset_invoker
 parameter_list|(
 name|GimpProcedure
@@ -551,6 +566,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -663,7 +683,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_get_foreground_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_get_foreground_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_get_foreground_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -686,6 +706,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -796,7 +821,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_set_foreground_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_set_foreground_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_set_foreground_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -819,6 +844,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -913,7 +943,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_get_background_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_get_background_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_get_background_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -936,6 +966,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1046,7 +1081,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_set_background_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_set_background_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_set_background_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1069,6 +1104,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1163,7 +1203,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_get_style_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_get_style_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_get_style_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1186,6 +1226,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1293,7 +1338,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_grid_set_style_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_grid_set_style_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_grid_set_style_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1316,6 +1361,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

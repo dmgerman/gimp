@@ -137,7 +137,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_cut_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_cut_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_cut_invoker
 parameter_list|(
 name|GimpProcedure
@@ -160,6 +160,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -279,7 +284,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_copy_invoker
 parameter_list|(
 name|GimpProcedure
@@ -302,6 +307,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -421,7 +431,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_copy_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_copy_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_copy_visible_invoker
 parameter_list|(
 name|GimpProcedure
@@ -444,6 +454,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -532,7 +547,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_paste_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_paste_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_paste_invoker
 parameter_list|(
 name|GimpProcedure
@@ -555,6 +570,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -712,7 +732,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_paste_as_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -735,6 +755,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -825,7 +850,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_named_cut_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_named_cut_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_named_cut_invoker
 parameter_list|(
 name|GimpProcedure
@@ -848,6 +873,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1006,7 +1036,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_named_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_named_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_named_copy_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1029,6 +1059,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1187,7 +1222,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_named_copy_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_named_copy_visible_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_named_copy_visible_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1210,6 +1245,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1337,7 +1377,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_named_paste_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_named_paste_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_named_paste_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1360,6 +1400,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1548,7 +1593,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_named_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_named_paste_as_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_named_paste_as_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1571,6 +1616,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1696,7 +1746,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_clear_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_clear_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_clear_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1719,6 +1769,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1806,7 +1861,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_fill_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1829,6 +1884,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1937,7 +1997,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_bucket_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_bucket_fill_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_bucket_fill_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1960,6 +2020,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2191,7 +2256,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_bucket_fill_full_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_bucket_fill_full_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_bucket_fill_full_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2214,6 +2279,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2476,7 +2546,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_blend_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_blend_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_blend_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2499,6 +2569,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2904,7 +2979,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_stroke_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_stroke_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_stroke_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2927,6 +3002,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3053,7 +3133,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|edit_stroke_vectors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|edit_stroke_vectors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|edit_stroke_vectors_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3076,6 +3156,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

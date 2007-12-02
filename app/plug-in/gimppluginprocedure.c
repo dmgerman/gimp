@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288018ed0103
+DECL|enum|__anon29df975d0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -160,6 +160,11 @@ parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -863,7 +868,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gimp_plug_in_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args)
+DECL|function|gimp_plug_in_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GError ** error)
 name|gimp_plug_in_procedure_execute
 parameter_list|(
 name|GimpProcedure
@@ -885,6 +890,11 @@ parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 if|if
@@ -912,6 +922,8 @@ argument_list|,
 name|progress
 argument_list|,
 name|args
+argument_list|,
+name|error
 argument_list|)
 return|;
 return|return

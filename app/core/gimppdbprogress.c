@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dfcab80103
+DECL|enum|__anon2c4b8a280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1058,6 +1058,8 @@ argument_list|,
 name|progress
 operator|->
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

@@ -293,7 +293,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -316,6 +316,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -428,7 +433,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_duplicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_duplicate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -451,6 +456,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -600,7 +610,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_is_editable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_is_editable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -623,6 +633,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -736,7 +751,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_rename_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_rename_invoker
 parameter_list|(
 name|GimpProcedure
@@ -759,6 +774,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -914,7 +934,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -937,6 +957,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1076,7 +1101,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_get_uniform_samples_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_get_uniform_samples_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_get_uniform_samples_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1099,6 +1124,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1367,7 +1397,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_get_custom_samples_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_get_custom_samples_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_get_custom_samples_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1390,6 +1420,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1660,7 +1695,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_left_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_left_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_left_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1683,6 +1718,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1855,7 +1895,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_set_left_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_set_left_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_set_left_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1878,6 +1918,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2031,7 +2076,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_right_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_right_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_right_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2054,6 +2099,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2226,7 +2276,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_set_right_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_set_right_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_set_right_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2249,6 +2299,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2402,7 +2457,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_left_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_left_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_left_pos_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2425,6 +2480,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2559,7 +2619,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_set_left_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_set_left_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_set_left_pos_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2582,6 +2642,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2741,7 +2806,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_middle_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_middle_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_middle_pos_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2764,6 +2829,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2898,7 +2968,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_set_middle_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_set_middle_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_set_middle_pos_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2921,6 +2991,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3080,7 +3155,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_right_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_right_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_right_pos_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3103,6 +3178,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3237,7 +3317,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_set_right_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_set_right_pos_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_set_right_pos_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3260,6 +3340,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3419,7 +3504,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_blending_function_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_blending_function_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_blending_function_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3442,6 +3527,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3576,7 +3666,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_get_coloring_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_get_coloring_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_get_coloring_type_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3599,6 +3689,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3733,7 +3828,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_set_blending_function_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_set_blending_function_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_set_blending_function_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3756,6 +3851,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -3910,7 +4010,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_set_coloring_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_set_coloring_type_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_set_coloring_type_invoker
 parameter_list|(
 name|GimpProcedure
@@ -3933,6 +4033,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4087,7 +4192,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_flip_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_flip_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4110,6 +4215,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4250,7 +4360,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_replicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_replicate_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_replicate_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4273,6 +4383,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4431,7 +4546,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_split_midpoint_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_split_midpoint_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_split_midpoint_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4454,6 +4569,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4596,7 +4716,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_split_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_split_uniform_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_split_uniform_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4619,6 +4739,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4779,7 +4904,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4802,6 +4927,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -4942,7 +5072,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_redistribute_handles_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_redistribute_handles_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_redistribute_handles_invoker
 parameter_list|(
 name|GimpProcedure
@@ -4965,6 +5095,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5101,7 +5236,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_blend_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_blend_colors_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_blend_colors_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5124,6 +5259,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5274,7 +5414,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_blend_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_blend_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_blend_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5297,6 +5437,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -5447,7 +5592,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gradient_segment_range_move_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|gradient_segment_range_move_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|gradient_segment_range_move_invoker
 parameter_list|(
 name|GimpProcedure
@@ -5470,6 +5615,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

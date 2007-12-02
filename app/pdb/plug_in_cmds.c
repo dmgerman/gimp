@@ -113,7 +113,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|plugins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|plugins_query_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|plugins_query_invoker
 parameter_list|(
 name|GimpProcedure
@@ -136,6 +136,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -422,7 +427,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|plugin_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|plugin_domain_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|plugin_domain_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -445,6 +450,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -547,7 +557,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|plugin_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|plugin_help_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|plugin_help_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -570,6 +580,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -672,7 +687,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|plugin_menu_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|plugin_menu_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|plugin_menu_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -695,6 +710,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -807,7 +827,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|plugin_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|plugin_menu_branch_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|plugin_menu_branch_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -830,6 +850,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -930,7 +955,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|plugin_icon_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|plugin_icon_register_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|plugin_icon_register_invoker
 parameter_list|(
 name|GimpProcedure
@@ -953,6 +978,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

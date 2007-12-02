@@ -83,7 +83,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|text_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|text_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|text_fontname_invoker
 parameter_list|(
 name|GimpProcedure
@@ -106,6 +106,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -402,7 +407,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|text_get_extents_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|text_get_extents_fontname_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|text_get_extents_fontname_invoker
 parameter_list|(
 name|GimpProcedure
@@ -425,6 +430,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -649,7 +659,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|text_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|text_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|text_invoker
 parameter_list|(
 name|GimpProcedure
@@ -672,6 +682,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1094,7 +1109,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|text_get_extents_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|text_get_extents_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|text_get_extents_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1117,6 +1132,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

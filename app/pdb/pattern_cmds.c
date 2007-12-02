@@ -95,7 +95,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|pattern_get_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|pattern_get_info_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|pattern_get_info_invoker
 parameter_list|(
 name|GimpProcedure
@@ -118,6 +118,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -286,7 +291,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|pattern_get_pixels_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|pattern_get_pixels_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|pattern_get_pixels_invoker
 parameter_list|(
 name|GimpProcedure
@@ -309,6 +314,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

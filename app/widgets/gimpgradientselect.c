@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29994fa70103
+DECL|enum|__anon295857cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -147,6 +147,11 @@ name|object
 parameter_list|,
 name|gboolean
 name|closing
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -420,7 +425,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gimp_gradient_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing)
+DECL|function|gimp_gradient_select_run_callback (GimpPdbDialog * dialog,GimpObject * object,gboolean closing,GError ** error)
 name|gimp_gradient_select_run_callback
 parameter_list|(
 name|GimpPdbDialog
@@ -433,6 +438,11 @@ name|object
 parameter_list|,
 name|gboolean
 name|closing
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpGradient
@@ -623,6 +633,8 @@ operator|->
 name|caller_context
 argument_list|,
 name|NULL
+argument_list|,
+name|error
 argument_list|,
 name|dialog
 operator|->

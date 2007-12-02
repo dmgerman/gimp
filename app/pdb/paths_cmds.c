@@ -131,7 +131,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -154,6 +154,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -267,7 +272,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_get_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_get_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_get_current_invoker
 parameter_list|(
 name|GimpProcedure
@@ -290,6 +295,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -399,7 +409,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_set_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_set_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_set_current_invoker
 parameter_list|(
 name|GimpProcedure
@@ -422,6 +432,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -514,7 +529,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_delete_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_delete_invoker
 parameter_list|(
 name|GimpProcedure
@@ -537,6 +552,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -629,7 +649,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_get_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_get_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_get_points_invoker
 parameter_list|(
 name|GimpProcedure
@@ -652,6 +672,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -950,7 +975,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_set_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_set_points_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_set_points_invoker
 parameter_list|(
 name|GimpProcedure
@@ -973,6 +998,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1263,7 +1293,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_stroke_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_stroke_current_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_stroke_current_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1286,6 +1316,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1411,7 +1446,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_get_point_at_dist_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_get_point_at_dist_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1434,6 +1469,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1728,7 +1768,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_get_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_get_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1751,6 +1791,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1876,7 +1921,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_set_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_set_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1899,6 +1944,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2010,7 +2060,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|get_path_by_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|get_path_by_tattoo_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|get_path_by_tattoo_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2033,6 +2083,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2160,7 +2215,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_get_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_get_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_get_locked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2183,6 +2238,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2308,7 +2368,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_set_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_set_locked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_set_locked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2331,6 +2391,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2444,7 +2509,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_to_selection_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_to_selection_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_to_selection_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2467,6 +2532,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -2659,7 +2729,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|path_import_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|path_import_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|path_import_invoker
 parameter_list|(
 name|GimpProcedure
@@ -2682,6 +2752,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

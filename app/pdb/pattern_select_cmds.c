@@ -65,7 +65,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|patterns_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|patterns_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|patterns_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -88,6 +88,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -214,7 +219,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|patterns_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|patterns_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|patterns_close_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -237,6 +242,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -317,7 +327,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|patterns_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|patterns_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|patterns_set_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -340,6 +350,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

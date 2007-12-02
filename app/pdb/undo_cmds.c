@@ -89,7 +89,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_group_start_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_group_start_invoker
 parameter_list|(
 name|GimpProcedure
@@ -112,6 +112,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -215,7 +220,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_group_end_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_group_end_invoker
 parameter_list|(
 name|GimpProcedure
@@ -238,6 +243,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -317,7 +327,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_is_enabled_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_is_enabled_invoker
 parameter_list|(
 name|GimpProcedure
@@ -340,6 +350,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -424,7 +439,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_disable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_disable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -447,6 +462,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -541,7 +561,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_enable_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_enable_invoker
 parameter_list|(
 name|GimpProcedure
@@ -564,6 +584,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -658,7 +683,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_freeze_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_freeze_invoker
 parameter_list|(
 name|GimpProcedure
@@ -681,6 +706,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -775,7 +805,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_undo_thaw_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_undo_thaw_invoker
 parameter_list|(
 name|GimpProcedure
@@ -798,6 +828,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

@@ -89,7 +89,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|by_color_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|by_color_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|by_color_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -112,6 +112,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -316,7 +321,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|by_color_select_full_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|by_color_select_full_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|by_color_select_full_invoker
 parameter_list|(
 name|GimpProcedure
@@ -339,6 +344,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -590,7 +600,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|ellipse_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|ellipse_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|ellipse_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -613,6 +623,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -828,7 +843,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|free_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|free_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|free_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -851,6 +866,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1031,7 +1051,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fuzzy_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fuzzy_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fuzzy_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1054,6 +1074,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1274,7 +1299,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fuzzy_select_full_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fuzzy_select_full_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fuzzy_select_full_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1297,6 +1322,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1564,7 +1594,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|rect_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1587,6 +1617,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1784,7 +1819,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|round_rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|round_rect_select_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|round_rect_select_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1807,6 +1842,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

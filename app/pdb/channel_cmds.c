@@ -89,7 +89,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -112,6 +112,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -311,7 +316,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_new_from_component_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_new_from_component_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_new_from_component_invoker
 parameter_list|(
 name|GimpProcedure
@@ -334,6 +339,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -492,7 +502,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_copy_invoker
 parameter_list|(
 name|GimpProcedure
@@ -515,6 +525,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -622,7 +637,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_combine_masks_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_combine_masks_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_combine_masks_invoker
 parameter_list|(
 name|GimpProcedure
@@ -645,6 +660,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -782,7 +802,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_get_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_get_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_get_show_masked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -805,6 +825,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -889,7 +914,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_set_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_set_show_masked_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_set_show_masked_invoker
 parameter_list|(
 name|GimpProcedure
@@ -912,6 +937,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -982,7 +1012,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_get_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_get_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_get_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1005,6 +1035,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1091,7 +1126,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_set_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_set_opacity_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_set_opacity_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1114,6 +1149,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1188,7 +1228,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_get_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_get_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1211,6 +1251,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1313,7 +1358,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|channel_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|channel_set_color_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|channel_set_color_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1336,6 +1381,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

@@ -77,7 +77,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fonts_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fonts_refresh_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fonts_refresh_invoker
 parameter_list|(
 name|GimpProcedure
@@ -100,6 +100,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gimp_fonts_load
@@ -122,7 +127,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fonts_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fonts_get_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fonts_get_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -145,6 +150,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

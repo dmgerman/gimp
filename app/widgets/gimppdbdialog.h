@@ -188,6 +188,11 @@ name|object
 parameter_list|,
 name|gboolean
 name|closing
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 block|}

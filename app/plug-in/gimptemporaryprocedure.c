@@ -95,6 +95,11 @@ parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -281,7 +286,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|gimp_temporary_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args)
+DECL|function|gimp_temporary_procedure_execute (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,GValueArray * args,GError ** error)
 name|gimp_temporary_procedure_execute
 parameter_list|(
 name|GimpProcedure
@@ -303,6 +308,11 @@ parameter_list|,
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 return|return

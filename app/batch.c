@@ -447,6 +447,12 @@ name|GValueArray
 modifier|*
 name|return_vals
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|gint
 name|i
 init|=
@@ -538,6 +544,9 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+operator|&
+name|error
+argument_list|,
 name|proc_name
 argument_list|,
 name|args
@@ -560,27 +569,63 @@ block|{
 case|case
 name|GIMP_PDB_EXECUTION_ERROR
 case|:
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|g_printerr
 argument_list|(
-literal|"batch command: experienced an execution error.\n"
+literal|"batch command experienced an execution error: %s\n"
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_printerr
+argument_list|(
+literal|"batch command experienced an execution error\n"
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_PDB_CALLING_ERROR
 case|:
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|g_printerr
 argument_list|(
-literal|"batch command: experienced a calling error.\n"
+literal|"batch command experienced a calling error: %s\n"
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|g_printerr
+argument_list|(
+literal|"batch command experienced a calling error\n"
+argument_list|)
+expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_PDB_SUCCESS
 case|:
 name|g_printerr
 argument_list|(
-literal|"batch command: executed successfully.\n"
+literal|"batch command executed successfully\n"
 argument_list|)
 expr_stmt|;
 break|break;
@@ -593,6 +638,15 @@ expr_stmt|;
 name|g_value_array_free
 argument_list|(
 name|args
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+name|g_error_free
+argument_list|(
+name|error
 argument_list|)
 expr_stmt|;
 return|return;

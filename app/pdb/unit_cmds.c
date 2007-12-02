@@ -65,7 +65,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_number_of_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_number_of_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_number_of_units_invoker
 parameter_list|(
 name|GimpProcedure
@@ -88,6 +88,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -138,7 +143,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_number_of_built_in_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_number_of_built_in_units_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_number_of_built_in_units_invoker
 parameter_list|(
 name|GimpProcedure
@@ -161,6 +166,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -211,7 +221,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_new_invoker
 parameter_list|(
 name|GimpProcedure
@@ -234,6 +244,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -435,7 +450,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_deletion_flag_invoker
 parameter_list|(
 name|GimpProcedure
@@ -458,6 +473,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -541,7 +561,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_set_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_set_deletion_flag_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_set_deletion_flag_invoker
 parameter_list|(
 name|GimpProcedure
@@ -564,6 +584,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -633,7 +658,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_identifier_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_identifier_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_identifier_invoker
 parameter_list|(
 name|GimpProcedure
@@ -656,6 +681,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -743,7 +773,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_factor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_factor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_factor_invoker
 parameter_list|(
 name|GimpProcedure
@@ -766,6 +796,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -849,7 +884,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_digits_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_digits_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_digits_invoker
 parameter_list|(
 name|GimpProcedure
@@ -872,6 +907,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -955,7 +995,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_symbol_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_symbol_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_symbol_invoker
 parameter_list|(
 name|GimpProcedure
@@ -978,6 +1018,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1065,7 +1110,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_abbreviation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_abbreviation_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_abbreviation_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1088,6 +1133,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1175,7 +1225,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_singular_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_singular_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_singular_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1198,6 +1248,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1285,7 +1340,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|unit_get_plural_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|unit_get_plural_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|unit_get_plural_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1308,6 +1363,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

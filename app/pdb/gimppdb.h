@@ -292,6 +292,11 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -320,6 +325,11 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|,
 specifier|const
 name|gchar

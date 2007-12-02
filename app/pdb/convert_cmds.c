@@ -89,7 +89,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_convert_rgb_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_convert_rgb_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_convert_rgb_invoker
 parameter_list|(
 name|GimpProcedure
@@ -112,6 +112,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -194,7 +199,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_convert_grayscale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_convert_grayscale_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_convert_grayscale_invoker
 parameter_list|(
 name|GimpProcedure
@@ -217,6 +222,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -299,7 +309,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_convert_indexed_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_convert_indexed_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_convert_indexed_invoker
 parameter_list|(
 name|GimpProcedure
@@ -322,6 +332,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -571,7 +586,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_convert_set_dither_matrix_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_convert_set_dither_matrix_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_convert_set_dither_matrix_invoker
 parameter_list|(
 name|GimpProcedure
@@ -594,6 +609,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

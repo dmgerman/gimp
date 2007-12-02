@@ -83,7 +83,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -106,6 +106,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -204,7 +209,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -227,6 +232,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -280,7 +290,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -303,6 +313,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -356,7 +371,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -379,6 +394,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GValueArray
@@ -454,7 +474,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -477,6 +497,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -594,7 +619,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -617,6 +642,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -689,7 +719,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -712,6 +742,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -784,7 +819,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|image_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|image_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|image_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -807,6 +842,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -918,7 +958,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|drawable_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|drawable_parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -941,6 +981,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1061,7 +1106,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|drawable_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|drawable_parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1084,6 +1129,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1159,7 +1209,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|drawable_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|drawable_parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1182,6 +1232,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1257,7 +1312,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|drawable_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|drawable_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|drawable_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1280,6 +1335,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1394,7 +1454,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_parasite_find_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_parasite_find_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1417,6 +1477,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1537,7 +1602,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_parasite_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_parasite_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1560,6 +1625,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1635,7 +1705,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_parasite_detach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_parasite_detach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1658,6 +1728,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1733,7 +1808,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|vectors_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|vectors_parasite_list_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|vectors_parasite_list_invoker
 parameter_list|(
 name|GimpProcedure
@@ -1756,6 +1831,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

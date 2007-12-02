@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad91cc80103
+DECL|enum|__anon29c5c9ed0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -935,6 +935,8 @@ name|width
 argument_list|,
 operator|&
 name|height
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

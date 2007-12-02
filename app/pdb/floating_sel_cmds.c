@@ -71,7 +71,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|floating_sel_remove_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|floating_sel_remove_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|floating_sel_remove_invoker
 parameter_list|(
 name|GimpProcedure
@@ -94,6 +94,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -158,7 +163,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|floating_sel_anchor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|floating_sel_anchor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|floating_sel_anchor_invoker
 parameter_list|(
 name|GimpProcedure
@@ -181,6 +186,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -245,7 +255,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|floating_sel_to_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|floating_sel_to_layer_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|floating_sel_to_layer_invoker
 parameter_list|(
 name|GimpProcedure
@@ -268,6 +278,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -332,7 +347,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|floating_sel_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|floating_sel_attach_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|floating_sel_attach_invoker
 parameter_list|(
 name|GimpProcedure
@@ -355,6 +370,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -443,7 +463,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|floating_sel_rigor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|floating_sel_rigor_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|floating_sel_rigor_invoker
 parameter_list|(
 name|GimpProcedure
@@ -466,6 +486,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -548,7 +573,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|floating_sel_relax_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|floating_sel_relax_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|floating_sel_relax_invoker
 parameter_list|(
 name|GimpProcedure
@@ -571,6 +596,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean

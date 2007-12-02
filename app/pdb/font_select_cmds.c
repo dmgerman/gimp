@@ -59,7 +59,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fonts_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fonts_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fonts_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -82,6 +82,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -206,7 +211,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fonts_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fonts_close_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fonts_close_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -229,6 +234,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -307,7 +317,7 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
-DECL|function|fonts_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args)
+DECL|function|fonts_set_popup_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|fonts_set_popup_invoker
 parameter_list|(
 name|GimpProcedure
@@ -330,6 +340,11 @@ specifier|const
 name|GValueArray
 modifier|*
 name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
