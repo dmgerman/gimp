@@ -28,6 +28,11 @@ parameter_list|,
 name|XcfInfo
 modifier|*
 name|info
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

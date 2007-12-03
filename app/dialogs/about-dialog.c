@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ef53bf0108
+DECL|struct|__anon2be1950d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -809,6 +809,8 @@ operator|->
 name|pdb
 argument_list|,
 name|context
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

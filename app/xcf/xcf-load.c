@@ -553,7 +553,7 @@ end_define
 begin_function
 name|GimpImage
 modifier|*
-DECL|function|xcf_load_image (Gimp * gimp,XcfInfo * info)
+DECL|function|xcf_load_image (Gimp * gimp,XcfInfo * info,GError ** error)
 name|xcf_load_image
 parameter_list|(
 name|Gimp
@@ -563,6 +563,11 @@ parameter_list|,
 name|XcfInfo
 modifier|*
 name|info
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImage
@@ -1133,18 +1138,13 @@ name|image
 return|;
 name|hard_error
 label|:
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|gimp
+name|error
 argument_list|,
-name|G_OBJECT
-argument_list|(
-name|info
-operator|->
-name|progress
-argument_list|)
+name|G_FILE_ERROR
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(

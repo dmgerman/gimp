@@ -631,66 +631,6 @@ value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&tm
 end_define
 
 begin_define
-DECL|macro|xcf_write_int32_print_error (info,data,count)
-define|#
-directive|define
-name|xcf_write_int32_print_error
-parameter_list|(
-name|info
-parameter_list|,
-name|data
-parameter_list|,
-name|count
-parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int32 (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, G_OBJECT (info->progress),     \                     GIMP_MESSAGE_ERROR,                        \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
-end_define
-
-begin_define
-DECL|macro|xcf_write_int8_print_error (info,data,count)
-define|#
-directive|define
-name|xcf_write_int8_print_error
-parameter_list|(
-name|info
-parameter_list|,
-name|data
-parameter_list|,
-name|count
-parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_int8 (info->fp, data, count,&error); \   if (error)                                                  \     {                                                         \       gimp_message (info->gimp, G_OBJECT (info->progress),    \                     GIMP_MESSAGE_ERROR,                       \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
-end_define
-
-begin_define
-DECL|macro|xcf_write_float_print_error (info,data,count)
-define|#
-directive|define
-name|xcf_write_float_print_error
-parameter_list|(
-name|info
-parameter_list|,
-name|data
-parameter_list|,
-name|count
-parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_float (info->fp, data, count,&error); \   if (error)                                                   \     {                                                          \       gimp_message (info->gimp, G_OBJECT (info->progress),     \                     GIMP_MESSAGE_ERROR,                        \                     _("Error saving XCF file: %s"),            \                     error->message);                           \       return FALSE;                                            \     }                                                          \   } G_STMT_END
-end_define
-
-begin_define
-DECL|macro|xcf_write_string_print_error (info,data,count)
-define|#
-directive|define
-name|xcf_write_string_print_error
-parameter_list|(
-name|info
-parameter_list|,
-name|data
-parameter_list|,
-name|count
-parameter_list|)
-value|G_STMT_START { \   info->cp += xcf_write_string (info->fp, data, count,&error); \   if (error)                                                    \     {                                                           \       gimp_message (info->gimp, G_OBJECT (info->progress),      \                     GIMP_MESSAGE_ERROR,                         \                     _("Error saving XCF file: %s"),             \                     error->message);                            \       return FALSE;                                             \     }                                                           \   } G_STMT_END
-end_define
-
-begin_define
 DECL|macro|xcf_write_prop_type_check_error (info,prop_type)
 define|#
 directive|define
@@ -704,19 +644,6 @@ value|G_STMT_START { \   guint32 _prop_int32 = prop_type;                     \ 
 end_define
 
 begin_define
-DECL|macro|xcf_write_prop_type_print_error (info,prop_type)
-define|#
-directive|define
-name|xcf_write_prop_type_print_error
-parameter_list|(
-name|info
-parameter_list|,
-name|prop_type
-parameter_list|)
-value|G_STMT_START { \   guint32 _prop_int32 = prop_type;                     \   xcf_write_int32_print_error (info,&_prop_int32, 1); \   } G_STMT_END
-end_define
-
-begin_define
 DECL|macro|xcf_check_error (x)
 define|#
 directive|define
@@ -725,19 +652,6 @@ parameter_list|(
 name|x
 parameter_list|)
 value|G_STMT_START { \   if (! (x))                                                  \     return FALSE;                                             \   } G_STMT_END
-end_define
-
-begin_define
-DECL|macro|xcf_print_error (info,x)
-define|#
-directive|define
-name|xcf_print_error
-parameter_list|(
-name|info
-parameter_list|,
-name|x
-parameter_list|)
-value|G_STMT_START {               \   if (! (x))                                                  \     {                                                         \       gimp_message (info->gimp, G_OBJECT (info->progress),    \                     GIMP_MESSAGE_ERROR,                       \                     _("Error saving XCF file: %s"),           \                     error->message);                          \       return FALSE;                                           \     }                                                         \   } G_STMT_END
 end_define
 
 begin_define
@@ -866,7 +780,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|xcf_save_image (XcfInfo * info,GimpImage * image)
+DECL|function|xcf_save_image (XcfInfo * info,GimpImage * image,GError ** error)
 name|xcf_save_image
 parameter_list|(
 name|XcfInfo
@@ -876,6 +790,11 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpLayer
@@ -937,7 +856,7 @@ index|]
 decl_stmt|;
 name|GError
 modifier|*
-name|error
+name|tmp_error
 init|=
 name|NULL
 decl_stmt|;
@@ -991,7 +910,7 @@ literal|"gimp xcf file"
 argument_list|)
 expr_stmt|;
 block|}
-name|xcf_write_int8_print_error
+name|xcf_write_int8_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1005,7 +924,7 @@ literal|14
 argument_list|)
 expr_stmt|;
 comment|/* write out the width, height and image type information for the image */
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1021,7 +940,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1043,7 +962,7 @@ name|image
 operator|->
 name|base_type
 expr_stmt|;
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1118,17 +1037,14 @@ operator|+=
 literal|1
 expr_stmt|;
 comment|/* write the property information for the image.    */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_save_image_props
 argument_list|(
 name|info
 argument_list|,
 name|image
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1146,10 +1062,8 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* seek to after the offset lists */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
@@ -1168,7 +1082,6 @@ operator|)
 operator|*
 literal|4
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1210,10 +1123,8 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* write out the layer. */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_save_layer
 argument_list|(
 name|info
@@ -1222,7 +1133,6 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1233,22 +1143,19 @@ name|info
 argument_list|)
 expr_stmt|;
 comment|/* seek back to where we are to write out the next        *  layer offset and write it out.        */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1266,15 +1173,12 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* seek to the end of the file which is where        *  we will write out the next layer.        */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_end
 argument_list|(
 name|info
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1285,22 +1189,19 @@ name|offset
 operator|=
 literal|0
 expr_stmt|;
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1316,15 +1217,12 @@ name|info
 operator|->
 name|cp
 expr_stmt|;
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_end
 argument_list|(
 name|info
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1387,10 +1285,8 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* write out the layer. */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_save_channel
 argument_list|(
 name|info
@@ -1399,7 +1295,6 @@ name|image
 argument_list|,
 name|channel
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1410,22 +1305,19 @@ name|info
 argument_list|)
 expr_stmt|;
 comment|/* seek back to where we are to write out the next        *  channel offset and write it out.        */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -1443,15 +1335,12 @@ operator|->
 name|cp
 expr_stmt|;
 comment|/* seek to the end of the file which is where        *  we will write out the next channel.        */
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_end
 argument_list|(
 name|info
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
@@ -1462,22 +1351,19 @@ name|offset
 operator|=
 literal|0
 expr_stmt|;
-name|xcf_print_error
+name|xcf_check_error
 argument_list|(
-name|info
-argument_list|,
 name|xcf_seek_pos
 argument_list|(
 name|info
 argument_list|,
 name|saved_pos
 argument_list|,
-operator|&
 name|error
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|xcf_write_int32_print_error
+name|xcf_write_int32_check_error
 argument_list|(
 name|info
 argument_list|,
@@ -6676,7 +6562,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2783c5a30108
+DECL|struct|__anon279f8f8e0108
 block|{
 DECL|member|info
 name|XcfInfo
