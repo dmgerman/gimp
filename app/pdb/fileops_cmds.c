@@ -229,7 +229,7 @@ name|load_procs
 argument_list|,
 name|uri
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -580,7 +580,7 @@ argument_list|,
 operator|&
 name|status
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -804,7 +804,7 @@ argument_list|,
 operator|&
 name|status
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1043,7 +1043,7 @@ name|save_procs
 argument_list|,
 name|uri
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
