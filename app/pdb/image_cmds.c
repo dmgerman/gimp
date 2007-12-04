@@ -9020,7 +9020,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 decl_stmt|;
 if|if
@@ -9043,7 +9043,7 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 decl_stmt|;
 if|if
