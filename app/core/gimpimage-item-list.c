@@ -533,13 +533,15 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_image_item_list_get_list (GimpImage * image,GimpItem * exclude,GimpItemTypeMask type,GimpItemSet set)
+DECL|function|gimp_image_item_list_get_list (const GimpImage * image,const GimpItem * exclude,GimpItemTypeMask type,GimpItemSet set)
 name|gimp_image_item_list_get_list
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+specifier|const
 name|GimpItem
 modifier|*
 name|exclude

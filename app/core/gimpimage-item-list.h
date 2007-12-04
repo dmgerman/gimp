@@ -144,10 +144,12 @@ name|GList
 modifier|*
 name|gimp_image_item_list_get_list
 parameter_list|(
+specifier|const
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+specifier|const
 name|GimpItem
 modifier|*
 name|exclude

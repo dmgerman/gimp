@@ -88,6 +88,12 @@ literal|"save-dialog"
 block|,
 name|GIMP_LOG_SAVE_DIALOG
 block|}
+block|,
+block|{
+literal|"image-scale"
+block|,
+name|GIMP_LOG_IMAGE_SCALE
+block|}
 block|}
 decl_stmt|;
 name|gimp_log_flags
