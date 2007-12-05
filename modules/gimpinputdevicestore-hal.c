@@ -21,6 +21,12 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpinputdevicestore.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -45,15 +51,9 @@ directive|include
 file|<hal/libhal.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpinputdevicestore.h"
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon291cec060103
+DECL|enum|__anon288ab3830103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291cec060203
+DECL|enum|__anon288ab3830203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291cec060303
+DECL|enum|__anon288ab3830303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -1629,6 +1629,94 @@ operator|->
 name|error
 argument_list|)
 else|:
+name|NULL
+return|;
+block|}
+end_function
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_comment
+comment|/* HAVE_LIBHAL */
+end_comment
+
+begin_decl_stmt
+DECL|variable|gimp_input_device_store_type
+name|GType
+name|gimp_input_device_store_type
+init|=
+name|G_TYPE_NONE
+decl_stmt|;
+end_decl_stmt
+
+begin_function
+name|GType
+DECL|function|gimp_input_device_store_get_type (GTypeModule * module)
+name|gimp_input_device_store_get_type
+parameter_list|(
+name|GTypeModule
+modifier|*
+name|module
+parameter_list|)
+block|{
+return|return
+name|G_TYPE_NONE
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpInputDeviceStore
+modifier|*
+DECL|function|gimp_input_device_store_new (void)
+name|gimp_input_device_store_new
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_input_device_store_get_device_file (GimpInputDeviceStore * store,const gchar * udi)
+name|gimp_input_device_store_get_device_file
+parameter_list|(
+name|GimpInputDeviceStore
+modifier|*
+name|store
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|udi
+parameter_list|)
+block|{
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+name|GError
+modifier|*
+DECL|function|gimp_input_device_store_get_error (GimpInputDeviceStore * store)
+name|gimp_input_device_store_get_error
+parameter_list|(
+name|GimpInputDeviceStore
+modifier|*
+name|store
+parameter_list|)
+block|{
+return|return
 name|NULL
 return|;
 block|}
