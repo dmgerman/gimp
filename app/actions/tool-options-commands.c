@@ -375,7 +375,7 @@ argument_list|(
 name|options
 argument_list|)
 argument_list|,
-literal|0
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 expr_stmt|;
 name|gimp_object_take_name
@@ -472,7 +472,7 @@ operator|->
 name|tool_options
 argument_list|)
 argument_list|,
-literal|0
+name|GIMP_CONFIG_PARAM_SERIALIZE
 argument_list|)
 expr_stmt|;
 block|}
