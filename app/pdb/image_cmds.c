@@ -196,6 +196,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdberror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -9493,16 +9499,13 @@ operator|>
 name|GIMP_MAX_RESOLUTION
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|gimp
+name|error
 argument_list|,
-name|G_OBJECT
-argument_list|(
-name|progress
-argument_list|)
+name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_MESSAGE_WARNING
+name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
