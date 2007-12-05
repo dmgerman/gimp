@@ -471,6 +471,8 @@ name|num_matches
 argument_list|,
 operator|&
 name|procedure_names
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -681,6 +683,8 @@ name|num_args
 argument_list|,
 operator|&
 name|num_values
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|proc_type

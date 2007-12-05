@@ -84,6 +84,11 @@ modifier|*
 modifier|*
 modifier|*
 name|procs
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -137,6 +142,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_values
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

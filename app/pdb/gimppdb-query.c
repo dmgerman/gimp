@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdberror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-pdb-compat.h"
 end_include
 
@@ -436,7 +442,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_query (GimpPDB * pdb,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs)
+DECL|function|gimp_pdb_query (GimpPDB * pdb,const gchar * name,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,const gchar * proc_type,gint * num_procs,gchar *** procs,GError ** error)
 name|gimp_pdb_query
 parameter_list|(
 name|GimpPDB
@@ -487,10 +493,19 @@ modifier|*
 modifier|*
 modifier|*
 name|procs
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|PDBQuery
 name|pdb_query
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 name|gboolean
 name|success
@@ -588,6 +603,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 operator|*
 name|num_procs
 operator|=
@@ -610,7 +639,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -621,7 +650,7 @@ operator|.
 name|name_regex
 condition|)
 goto|goto
-name|cleanup_after_name
+name|cleanup
 goto|;
 name|pdb_query
 operator|.
@@ -635,7 +664,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -646,7 +675,7 @@ operator|.
 name|blurb_regex
 condition|)
 goto|goto
-name|cleanup_after_blurb
+name|cleanup
 goto|;
 name|pdb_query
 operator|.
@@ -660,7 +689,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -671,7 +700,7 @@ operator|.
 name|help_regex
 condition|)
 goto|goto
-name|cleanup_after_help
+name|cleanup
 goto|;
 name|pdb_query
 operator|.
@@ -685,7 +714,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -696,7 +725,7 @@ operator|.
 name|author_regex
 condition|)
 goto|goto
-name|cleanup_after_author
+name|cleanup
 goto|;
 name|pdb_query
 operator|.
@@ -710,7 +739,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -721,7 +750,7 @@ operator|.
 name|copyright_regex
 condition|)
 goto|goto
-name|cleanup_after_copyright
+name|cleanup
 goto|;
 name|pdb_query
 operator|.
@@ -735,7 +764,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -746,7 +775,7 @@ operator|.
 name|date_regex
 condition|)
 goto|goto
-name|cleanup_after_date
+name|cleanup
 goto|;
 name|pdb_query
 operator|.
@@ -760,7 +789,7 @@ name|PDB_REGEX_FLAGS
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -771,7 +800,7 @@ operator|.
 name|proc_type_regex
 condition|)
 goto|goto
-name|cleanup_after_proc_type
+name|cleanup
 goto|;
 name|success
 operator|=
@@ -831,6 +860,14 @@ operator|&
 name|pdb_query
 argument_list|)
 expr_stmt|;
+name|cleanup
+label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|proc_type_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -838,8 +875,12 @@ operator|.
 name|proc_type_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_proc_type
-label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|date_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -847,8 +888,12 @@ operator|.
 name|date_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_date
-label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|copyright_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -856,8 +901,12 @@ operator|.
 name|copyright_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_copyright
-label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|author_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -865,8 +914,12 @@ operator|.
 name|author_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_author
-label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|help_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -874,8 +927,12 @@ operator|.
 name|help_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_help
-label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|blurb_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -883,8 +940,12 @@ operator|.
 name|blurb_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_blurb
-label|:
+if|if
+condition|(
+name|pdb_query
+operator|.
+name|name_regex
+condition|)
 name|g_regex_unref
 argument_list|(
 name|pdb_query
@@ -892,8 +953,6 @@ operator|.
 name|name_regex
 argument_list|)
 expr_stmt|;
-name|cleanup_after_name
-label|:
 if|if
 condition|(
 name|success
@@ -922,7 +981,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_proc_info (GimpPDB * pdb,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values)
+DECL|function|gimp_pdb_proc_info (GimpPDB * pdb,const gchar * proc_name,gchar ** blurb,gchar ** help,gchar ** author,gchar ** copyright,gchar ** date,GimpPDBProcType * proc_type,gint * num_args,gint * num_values,GError ** error)
 name|gimp_pdb_proc_info
 parameter_list|(
 name|GimpPDB
@@ -970,6 +1029,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|num_values
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpProcedure
@@ -993,6 +1057,20 @@ name|g_return_val_if_fail
 argument_list|(
 name|proc_name
 operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
 name|NULL
 argument_list|,
 name|FALSE
@@ -1189,6 +1267,22 @@ return|return
 name|TRUE
 return|;
 block|}
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_PROCEDURE_NOT_FOUND
+argument_list|,
+name|_
+argument_list|(
+literal|"Procedure '%s' not found"
+argument_list|)
+argument_list|,
+name|proc_name
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
