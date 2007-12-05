@@ -201,7 +201,7 @@ literal|1
 index|]
 argument_list|)
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -542,7 +542,7 @@ name|gimp
 argument_list|,
 name|filename
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 decl_stmt|;
 if|if
@@ -766,7 +766,7 @@ name|gimp
 argument_list|,
 name|filename
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 decl_stmt|;
 if|if
@@ -1015,7 +1015,7 @@ literal|3
 index|]
 argument_list|)
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
