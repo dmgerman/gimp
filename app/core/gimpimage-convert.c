@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2bf189b70103
+DECL|enum|__anon273d18ee0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf189b70208
+DECL|struct|__anon273d18ee0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf189b70308
+DECL|struct|__anon273d18ee0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2754,8 +2754,8 @@ block|}
 end_function
 
 begin_function
-name|void
-DECL|function|gimp_image_convert (GimpImage * image,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress)
+name|gboolean
+DECL|function|gimp_image_convert (GimpImage * image,GimpImageBaseType new_type,gint num_cols,GimpConvertDitherType dither,gboolean alpha_dither,gboolean remove_dups,GimpConvertPaletteType palette_type,GimpPalette * custom_palette,GimpProgress * progress,GError ** error)
 name|gimp_image_convert
 parameter_list|(
 name|GimpImage
@@ -2788,6 +2788,11 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|QuantizeObj
@@ -2815,15 +2820,17 @@ name|nth_layer
 decl_stmt|,
 name|n_layers
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|new_type
 operator|!=
@@ -2831,9 +2838,11 @@ name|gimp_image_base_type
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|progress
 operator|==
@@ -2843,6 +2852,22 @@ name|GIMP_IS_PROGRESS
 argument_list|(
 name|progress
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2852,7 +2877,7 @@ operator|==
 name|GIMP_CUSTOM_PALETTE
 condition|)
 block|{
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|custom_palette
 operator|==
@@ -2862,6 +2887,8 @@ name|GIMP_IS_PALETTE
 argument_list|(
 name|custom_palette
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -2882,18 +2909,13 @@ operator|<
 literal|1
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|image
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|G_OBJECT
-argument_list|(
-name|progress
-argument_list|)
+literal|0
 argument_list|,
-name|GIMP_MESSAGE_ERROR
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -2901,7 +2923,9 @@ literal|"Cannot convert image: palette is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 block|}
 name|theCustomPalette
@@ -4072,6 +4096,9 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 

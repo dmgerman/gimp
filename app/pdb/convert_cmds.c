@@ -157,6 +157,8 @@ argument_list|)
 operator|!=
 name|GIMP_RGB
 condition|)
+name|success
+operator|=
 name|gimp_image_convert
 argument_list|(
 name|image
@@ -176,6 +178,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 else|else
@@ -267,6 +271,8 @@ argument_list|)
 operator|!=
 name|GIMP_GRAY
 condition|)
+name|success
+operator|=
 name|gimp_image_convert
 argument_list|(
 name|image
@@ -286,6 +292,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 else|else
@@ -549,6 +557,8 @@ if|if
 condition|(
 name|success
 condition|)
+name|success
+operator|=
 name|gimp_image_convert
 argument_list|(
 name|image
@@ -568,6 +578,8 @@ argument_list|,
 name|pal
 argument_list|,
 name|NULL
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}

@@ -25,7 +25,7 @@ value|256
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_image_convert
 parameter_list|(
 name|GimpImage
@@ -58,6 +58,11 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
