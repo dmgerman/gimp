@@ -17,7 +17,7 @@ name|__GIMP_DRAWABLE_BUCKET_FILL_H__
 end_define
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_drawable_bucket_fill
 parameter_list|(
 name|GimpDrawable
@@ -57,6 +57,11 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

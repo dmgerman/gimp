@@ -2204,6 +2204,8 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
 name|gimp_drawable_bucket_fill
 argument_list|(
 name|drawable
@@ -2232,6 +2234,8 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -2495,6 +2499,8 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|success
+operator|=
 name|gimp_drawable_bucket_fill
 argument_list|(
 name|drawable
@@ -2522,6 +2528,8 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
