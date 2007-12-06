@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffce950103
+DECL|enum|__anon276177be0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffce950203
+DECL|enum|__anon276177be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2795,6 +2795,8 @@ expr_stmt|;
 name|floating_sel_to_layer
 argument_list|(
 name|layer
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

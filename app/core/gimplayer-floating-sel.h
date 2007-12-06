@@ -65,12 +65,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|floating_sel_to_layer
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

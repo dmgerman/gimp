@@ -253,6 +253,8 @@ condition|)
 name|floating_sel_to_layer
 argument_list|(
 name|floating_sel
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|mask
