@@ -76,7 +76,7 @@ end_decl_stmt
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * strokes,gint n_strokes)
+DECL|function|gimp_paint_core_stroke (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * strokes,gint n_strokes,GError ** error)
 name|gimp_paint_core_stroke
 parameter_list|(
 name|GimpPaintCore
@@ -97,6 +97,11 @@ name|strokes
 parameter_list|,
 name|gint
 name|n_strokes
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -160,6 +165,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_paint_core_start
@@ -176,7 +195,7 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 condition|)
 block|{
@@ -299,7 +318,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke_boundary (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y)
+DECL|function|gimp_paint_core_stroke_boundary (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,GError ** error)
 name|gimp_paint_core_stroke_boundary
 parameter_list|(
 name|GimpPaintCore
@@ -327,6 +346,11 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImage
@@ -416,6 +440,20 @@ operator|&&
 name|n_bound_segs
 operator|>
 literal|0
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -698,7 +736,7 @@ index|[
 literal|0
 index|]
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 condition|)
 block|{
@@ -802,6 +840,10 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+break|break;
+block|}
 name|n_coords
 operator|=
 literal|0
@@ -895,14 +937,14 @@ name|stroke_segs
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|initialized
 return|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke_vectors (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpVectors * vectors)
+DECL|function|gimp_paint_core_stroke_vectors (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpVectors * vectors,GError ** error)
 name|gimp_paint_core_stroke_vectors
 parameter_list|(
 name|GimpPaintCore
@@ -920,6 +962,11 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GList
@@ -999,6 +1046,20 @@ name|GIMP_IS_VECTORS
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1150,7 +1211,7 @@ argument_list|,
 literal|0
 argument_list|)
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 condition|)
 block|{
@@ -1265,6 +1326,21 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+if|if
+condition|(
+name|coords
+condition|)
+name|g_array_free
+argument_list|(
+name|coords
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+break|break;
+block|}
 block|}
 if|if
 condition|(
@@ -1297,7 +1373,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|TRUE
+name|initialized
 return|;
 block|}
 end_function

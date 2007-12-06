@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c40ce470103
+DECL|enum|__anon2ac479be0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c40ce470203
+DECL|enum|__anon2ac479be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3700,7 +3700,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeDesc * stroke_desc,gboolean use_default_values,GimpProgress * progress)
+DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeDesc * stroke_desc,gboolean use_default_values,GimpProgress * progress,GError ** error)
 name|gimp_item_stroke
 parameter_list|(
 name|GimpItem
@@ -3725,6 +3725,11 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpItemClass
@@ -3813,6 +3818,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|item_class
 operator|=
 name|GIMP_ITEM_GET_CLASS
@@ -3869,6 +3888,8 @@ argument_list|,
 name|stroke_desc
 argument_list|,
 name|progress
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

@@ -1417,6 +1417,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|progress
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|g_object_unref

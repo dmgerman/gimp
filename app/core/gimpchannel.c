@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0073800103
+DECL|enum|__anon2a305d370103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -497,6 +497,11 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3159,7 +3164,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc,GimpProgress * progress)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc,GimpProgress * progress,GError ** error)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -3177,6 +3182,11 @@ parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpChannel
@@ -3243,21 +3253,13 @@ literal|0
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|G_OBJECT
-argument_list|(
-name|progress
-argument_list|)
+literal|0
 argument_list|,
-name|GIMP_MESSAGE_WARNING
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -3355,6 +3357,8 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|g_object_unref

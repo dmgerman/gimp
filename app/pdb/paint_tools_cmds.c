@@ -111,7 +111,7 @@ end_decl_stmt
 begin_function
 specifier|static
 name|gboolean
-DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,const gdouble * strokes,const gchar * first_property_name,...)
+DECL|function|paint_tools_stroke (Gimp * gimp,GimpContext * context,GimpPaintOptions * options,GimpDrawable * drawable,gint n_strokes,const gdouble * strokes,GError ** error,const gchar * first_property_name,...)
 name|paint_tools_stroke
 parameter_list|(
 name|Gimp
@@ -137,6 +137,11 @@ specifier|const
 name|gdouble
 modifier|*
 name|strokes
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|,
 specifier|const
 name|gchar
@@ -295,6 +300,8 @@ argument_list|,
 name|coords
 argument_list|,
 name|n_strokes
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -503,6 +510,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -682,6 +691,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -941,6 +952,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -1132,6 +1145,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -1360,6 +1375,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -1539,6 +1556,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -1787,6 +1806,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -1966,6 +1987,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -2194,6 +2217,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -2373,6 +2398,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -2605,6 +2632,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -2796,6 +2825,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -3056,6 +3087,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -3236,6 +3269,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -3415,6 +3450,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
@@ -3623,6 +3660,8 @@ name|num_strokes
 argument_list|,
 name|strokes
 argument_list|,
+name|error
+argument_list|,
 literal|"undo-desc"
 argument_list|,
 name|info
@@ -3802,6 +3841,8 @@ argument_list|,
 name|num_strokes
 argument_list|,
 name|strokes
+argument_list|,
+name|error
 argument_list|,
 literal|"undo-desc"
 argument_list|,
