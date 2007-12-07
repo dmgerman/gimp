@@ -438,6 +438,12 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|return_if_no_image
 argument_list|(
 name|image
@@ -476,6 +482,9 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -500,11 +509,17 @@ argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,
-name|_
-argument_list|(
-literal|"Cannot float selection because the selected region "
-literal|"is empty."
+literal|"%s"
+argument_list|,
+name|error
+operator|->
+name|message
 argument_list|)
+expr_stmt|;
+name|g_clear_error
+argument_list|(
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 block|}

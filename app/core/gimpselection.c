@@ -2560,7 +2560,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_selection_extract (GimpChannel * selection,GimpPickable * pickable,GimpContext * context,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha)
+DECL|function|gimp_selection_extract (GimpChannel * selection,GimpPickable * pickable,GimpContext * context,gboolean cut_image,gboolean keep_indexed,gboolean add_alpha,GError ** error)
 name|gimp_selection_extract
 parameter_list|(
 name|GimpChannel
@@ -2583,6 +2583,11 @@ name|keep_indexed
 parameter_list|,
 name|gboolean
 name|add_alpha
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImage
@@ -2686,6 +2691,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|gimp_pickable_get_image
@@ -2765,15 +2784,13 @@ operator|)
 operator|)
 condition|)
 block|{
-name|gimp_message
+name|g_set_error
 argument_list|(
-name|image
-operator|->
-name|gimp
+name|error
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
-name|GIMP_MESSAGE_WARNING
+literal|0
 argument_list|,
 name|_
 argument_list|(
@@ -3379,7 +3396,7 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_selection_float (GimpChannel * selection,GimpDrawable * drawable,GimpContext * context,gboolean cut_image,gint off_x,gint off_y)
+DECL|function|gimp_selection_float (GimpChannel * selection,GimpDrawable * drawable,GimpContext * context,gboolean cut_image,gint off_x,gint off_y,GError ** error)
 name|gimp_selection_float
 parameter_list|(
 name|GimpChannel
@@ -3402,6 +3419,11 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImage
@@ -3469,6 +3491,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
@@ -3510,9 +3546,26 @@ operator|==
 name|y2
 operator|)
 condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Cannot float selection because the selected region "
+literal|"is empty."
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|NULL
 return|;
+block|}
 comment|/*  Start an undo group  */
 name|gimp_image_undo_group_start
 argument_list|(
@@ -3545,6 +3598,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  Clear the selection as if we had cut the pixels  */

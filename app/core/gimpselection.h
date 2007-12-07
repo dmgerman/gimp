@@ -204,6 +204,11 @@ name|keep_indexed
 parameter_list|,
 name|gboolean
 name|add_alpha
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -233,6 +238,11 @@ name|off_x
 parameter_list|,
 name|gint
 name|off_y
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

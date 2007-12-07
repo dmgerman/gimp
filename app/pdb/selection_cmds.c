@@ -837,6 +837,8 @@ argument_list|,
 name|offx
 argument_list|,
 name|offy
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if

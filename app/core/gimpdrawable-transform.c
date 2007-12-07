@@ -3312,6 +3312,8 @@ argument_list|,
 name|FALSE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
@@ -3364,6 +3366,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -3388,6 +3392,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
