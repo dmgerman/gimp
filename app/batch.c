@@ -202,6 +202,12 @@ name|batch_interpreter
 operator|=
 name|BATCH_DEFAULT_EVAL_PROC
 expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|be_verbose
+condition|)
 name|g_printerr
 argument_list|(
 name|_
