@@ -1237,11 +1237,6 @@ argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
-name|PyMem_Free
-argument_list|(
-name|name
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1349,11 +1344,6 @@ argument_list|,
 name|hex
 argument_list|,
 name|len
-argument_list|)
-expr_stmt|;
-name|PyMem_Free
-argument_list|(
-name|hex
 argument_list|)
 expr_stmt|;
 if|if
@@ -1493,11 +1483,6 @@ argument_list|,
 name|css
 argument_list|,
 name|len
-argument_list|)
-expr_stmt|;
-name|PyMem_Free
-argument_list|(
-name|css
 argument_list|)
 expr_stmt|;
 if|if
