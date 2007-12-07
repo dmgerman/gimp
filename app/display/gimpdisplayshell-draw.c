@@ -599,7 +599,7 @@ name|x_real
 decl_stmt|,
 name|y_real
 decl_stmt|;
-name|gint
+name|gdouble
 name|x_offset
 decl_stmt|,
 name|y_offset
