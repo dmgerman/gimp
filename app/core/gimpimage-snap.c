@@ -348,7 +348,7 @@ expr_stmt|;
 while|while
 condition|(
 name|xoffset
-operator|<
+operator|>
 name|xspacing
 condition|)
 name|xoffset
