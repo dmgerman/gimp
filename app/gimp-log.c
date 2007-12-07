@@ -60,9 +60,15 @@ index|[]
 init|=
 block|{
 block|{
-literal|"tools"
+literal|"tool-events"
 block|,
-name|GIMP_LOG_TOOLS
+name|GIMP_LOG_TOOL_EVENTS
+block|}
+block|,
+block|{
+literal|"tool-focus"
+block|,
+name|GIMP_LOG_TOOL_FOCUS
 block|}
 block|,
 block|{

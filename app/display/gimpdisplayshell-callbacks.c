@@ -2593,7 +2593,7 @@ name|event
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): ENTER_NOTIFY"
 argument_list|,
@@ -2649,7 +2649,7 @@ name|event
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): LEAVE_NOTIFY"
 argument_list|,
@@ -2701,7 +2701,7 @@ name|GDK_PROXIMITY_IN
 case|:
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): PROXIMITY_IN"
 argument_list|,
@@ -2730,7 +2730,7 @@ name|GDK_PROXIMITY_OUT
 case|:
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): PROXIMITY_OUT"
 argument_list|,
@@ -2788,7 +2788,7 @@ condition|)
 block|{
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): FOCUS_IN"
 argument_list|,
@@ -2827,7 +2827,7 @@ else|else
 block|{
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): FOCUS_OUT"
 argument_list|,
@@ -2899,7 +2899,7 @@ name|event_mask
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): BUTTON_PRESS (%d)"
 argument_list|,
@@ -3393,7 +3393,7 @@ name|event
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): BUTTON_RELEASE (%d)"
 argument_list|,
@@ -3600,7 +3600,7 @@ name|wheel
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): SCROLL (%d)"
 argument_list|,
@@ -3975,7 +3975,7 @@ name|NULL
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): MOTION_NOTIFY"
 argument_list|,
@@ -4566,7 +4566,7 @@ name|event
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): KEY_PRESS (%d, %s)"
 argument_list|,
@@ -4939,7 +4939,7 @@ name|event
 decl_stmt|;
 name|GIMP_LOG
 argument_list|(
-name|TOOLS
+name|TOOL_EVENTS
 argument_list|,
 literal|"event (display %p): KEY_RELEASE (%d, %s)"
 argument_list|,

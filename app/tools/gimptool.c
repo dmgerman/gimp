@@ -87,9 +87,15 @@ directive|include
 file|"gimptoolcontrol.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon279648ce0103
+DECL|enum|__anon295b8c7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2463,14 +2469,11 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_FOCUS
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"%s: tool: %p  display: %p  focus_display: %p\n"
+name|TOOL_FOCUS
 argument_list|,
-name|G_STRFUNC
+literal|"tool: %p  focus_display: %p  tool->focus_display: %p"
 argument_list|,
 name|tool
 argument_list|,
@@ -2481,8 +2484,6 @@ operator|->
 name|focus_display
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|display
@@ -2718,14 +2719,11 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_FOCUS
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"%s: tool: %p  display: %p  focus_display: %p\n"
+name|TOOL_FOCUS
 argument_list|,
-name|G_STRFUNC
+literal|"tool: %p  display: %p  tool->focus_display: %p"
 argument_list|,
 name|tool
 argument_list|,
@@ -2736,8 +2734,6 @@ operator|->
 name|focus_display
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|g_return_if_fail
 argument_list|(
 name|display
@@ -2974,6 +2970,21 @@ name|GIMP_IS_DISPLAY
 argument_list|(
 name|display
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|TOOL_FOCUS
+argument_list|,
+literal|"tool: %p  display: %p  tool->focus_display: %p"
+argument_list|,
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|tool
+operator|->
+name|focus_display
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
