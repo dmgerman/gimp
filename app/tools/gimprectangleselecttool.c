@@ -866,6 +866,14 @@ name|GimpRectSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
+name|gimp_rectangle_tool_init
+argument_list|(
+name|GIMP_RECTANGLE_TOOL
+argument_list|(
+name|rect_sel_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|rect_sel_tool
 operator|->
 name|priv

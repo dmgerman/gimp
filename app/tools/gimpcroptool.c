@@ -594,6 +594,14 @@ argument_list|(
 name|crop_tool
 argument_list|)
 decl_stmt|;
+name|gimp_rectangle_tool_init
+argument_list|(
+name|GIMP_RECTANGLE_TOOL
+argument_list|(
+name|crop_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_wants_click
 argument_list|(
 name|tool

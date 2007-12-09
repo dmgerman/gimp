@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d339290103
+DECL|enum|__anon2b8265170103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d339290203
+DECL|enum|__anon2b8265170203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d339290303
+DECL|enum|__anon2b8265170303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -330,6 +330,11 @@ decl_stmt|;
 DECL|member|center_y_on_fixed_center
 name|gdouble
 name|center_y_on_fixed_center
+decl_stmt|;
+comment|/* True when the rectangle is being adjusted (moved or    * rubber-banded).    */
+DECL|member|rect_adjusting
+name|gboolean
+name|rect_adjusting
 decl_stmt|;
 comment|/* The rest of the members are internal state variables, that is, variables    * that might change during the manipulation session of the rectangle. Make    * sure these variables are in consistent states.    */
 comment|/* Coordinates of upper left and lower right rectangle corners. */
@@ -408,11 +413,6 @@ comment|/* Wether or not the rectangle is in a 'narrow situation' i.e. it is    
 DECL|member|narrow_mode
 name|gboolean
 name|narrow_mode
-decl_stmt|;
-comment|/* True when the rectangle is being adjusted (moved or    * rubber-banded).    */
-DECL|member|rect_adjusting
-name|gboolean
-name|rect_adjusting
 decl_stmt|;
 comment|/* For what scale the handle sizes is calculated. We must cache this so that    * we can differentiate between when the tool is resumed because of zoom level    * just has changed or because the highlight has just been updated.    */
 DECL|member|scale_x_used_for_handle_size_calculations
@@ -1489,6 +1489,24 @@ block|}
 return|return
 name|private
 return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_rectangle_tool_init:  * @rect_tool:  *  * Initializes the GimpRectangleTool.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_rectangle_tool_init (GimpRectangleTool * rect_tool)
+name|gimp_rectangle_tool_init
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rect_tool
+parameter_list|)
+block|{
+comment|/* No need to initialize anything yet. */
 block|}
 end_function
 
