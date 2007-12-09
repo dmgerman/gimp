@@ -744,7 +744,7 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-name|NULL
+literal|0
 argument_list|,
 literal|0
 argument_list|,
@@ -755,7 +755,9 @@ literal|"because it belongs to a layer mask or channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|FALSE
+return|;
 block|}
 name|gimp_image_undo_group_start
 argument_list|(
