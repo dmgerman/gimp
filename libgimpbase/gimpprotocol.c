@@ -2806,6 +2806,11 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|config
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|config
@@ -2834,6 +2839,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2948,6 +2954,12 @@ argument_list|,
 name|tile_req
 argument_list|)
 expr_stmt|;
+name|msg
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -3050,6 +3062,18 @@ modifier|*
 name|msg
 parameter_list|)
 block|{
+name|GPTileReq
+modifier|*
+name|tile_req
+init|=
+name|msg
+operator|->
+name|data
+decl_stmt|;
+if|if
+condition|(
+name|tile_req
+condition|)
 name|g_slice_free
 argument_list|(
 name|GPTileReq
@@ -3375,6 +3399,12 @@ argument_list|,
 name|tile_data
 argument_list|)
 expr_stmt|;
+name|msg
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -3603,6 +3633,11 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|tile_data
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|tile_data
@@ -3617,6 +3652,7 @@ argument_list|,
 name|tile_data
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3708,6 +3744,12 @@ argument_list|,
 name|proc_run
 argument_list|)
 expr_stmt|;
+name|msg
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -3792,6 +3834,11 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|proc_run
+condition|)
+block|{
 name|gp_params_destroy
 argument_list|(
 name|proc_run
@@ -3817,6 +3864,7 @@ argument_list|,
 name|proc_run
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3908,6 +3956,12 @@ argument_list|,
 name|proc_return
 argument_list|)
 expr_stmt|;
+name|msg
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -3992,6 +4046,11 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|proc_return
+condition|)
+block|{
 name|gp_params_destroy
 argument_list|(
 name|proc_return
@@ -4017,6 +4076,7 @@ argument_list|,
 name|proc_return
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -4868,6 +4928,12 @@ argument_list|,
 name|proc_install
 argument_list|)
 expr_stmt|;
+name|msg
+operator|->
+name|data
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
@@ -5300,6 +5366,11 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|proc_install
+condition|)
+block|{
 name|gint
 name|i
 decl_stmt|;
@@ -5463,6 +5534,7 @@ name|proc_install
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 end_function
 
 begin_comment
@@ -5601,6 +5673,11 @@ name|msg
 operator|->
 name|data
 decl_stmt|;
+if|if
+condition|(
+name|proc_uninstall
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|proc_uninstall
@@ -5615,6 +5692,7 @@ argument_list|,
 name|proc_uninstall
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
