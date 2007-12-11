@@ -1024,6 +1024,33 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function
+DECL|function|num_is_integer (pointer p)
+specifier|static
+name|INLINE
+name|int
+name|num_is_integer
+parameter_list|(
+name|pointer
+name|p
+parameter_list|)
+block|{
+return|return
+operator|(
+operator|(
+name|p
+operator|)
+operator|->
+name|_object
+operator|.
+name|_number
+operator|.
+name|is_fixnum
+operator|)
+return|;
+block|}
+end_function
+
 begin_decl_stmt
 DECL|variable|num_zero
 specifier|static
@@ -1236,6 +1263,11 @@ name|p
 parameter_list|)
 block|{
 return|return
+name|is_number
+argument_list|(
+name|p
+argument_list|)
+operator|&&
 operator|(
 operator|(
 name|p
@@ -1263,6 +1295,11 @@ name|p
 parameter_list|)
 block|{
 return|return
+name|is_number
+argument_list|(
+name|p
+argument_list|)
+operator|&&
 operator|(
 operator|!
 operator|(
@@ -1380,7 +1417,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|is_integer
+name|num_is_integer
 argument_list|(
 name|p
 argument_list|)
@@ -1429,7 +1466,7 @@ block|{
 return|return
 operator|(
 operator|!
-name|is_integer
+name|num_is_integer
 argument_list|(
 name|p
 argument_list|)
@@ -1488,10 +1525,10 @@ value|((p)->_object._number.value.rvalue)
 end_define
 
 begin_define
-DECL|macro|set_integer (p)
+DECL|macro|set_num_integer (p)
 define|#
 directive|define
-name|set_integer
+name|set_num_integer
 parameter_list|(
 name|p
 parameter_list|)
@@ -1499,10 +1536,10 @@ value|(p)->_object._number.is_fixnum=1;
 end_define
 
 begin_define
-DECL|macro|set_real (p)
+DECL|macro|set_num_real (p)
 define|#
 directive|define
-name|set_real
+name|set_num_real
 parameter_list|(
 name|p
 parameter_list|)
@@ -6692,7 +6729,7 @@ argument_list|)
 operator|=
 name|c
 expr_stmt|;
-name|set_integer
+name|set_num_integer
 argument_list|(
 name|x
 argument_list|)
@@ -6757,7 +6794,7 @@ argument_list|)
 operator|=
 name|num
 expr_stmt|;
-name|set_integer
+name|set_num_integer
 argument_list|(
 name|x
 argument_list|)
@@ -6818,7 +6855,7 @@ argument_list|)
 operator|=
 name|n
 expr_stmt|;
-name|set_real
+name|set_num_real
 argument_list|(
 name|x
 argument_list|)
@@ -7491,7 +7528,7 @@ argument_list|)
 operator|=
 name|len
 expr_stmt|;
-name|set_integer
+name|set_num_integer
 argument_list|(
 name|x
 argument_list|)
@@ -11438,7 +11475,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon28d74d900103
+DECL|enum|__anon277c70ad0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -12766,7 +12803,7 @@ name|strbuff
 expr_stmt|;
 if|if
 condition|(
-name|is_integer
+name|num_is_integer
 argument_list|(
 name|l
 argument_list|)
@@ -20201,7 +20238,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|is_integer
+name|num_is_integer
 argument_list|(
 name|x
 argument_list|)
@@ -28117,37 +28154,6 @@ block|}
 end_function
 
 begin_function
-DECL|function|is_num_integer (pointer p)
-specifier|static
-name|int
-name|is_num_integer
-parameter_list|(
-name|pointer
-name|p
-parameter_list|)
-block|{
-return|return
-name|is_number
-argument_list|(
-name|p
-argument_list|)
-operator|&&
-operator|(
-operator|(
-name|p
-operator|)
-operator|->
-name|_object
-operator|.
-name|_number
-operator|.
-name|is_fixnum
-operator|)
-return|;
-block|}
-end_function
-
-begin_function
 DECL|function|is_nonneg (pointer p)
 specifier|static
 name|int
@@ -28158,7 +28164,7 @@ name|p
 parameter_list|)
 block|{
 return|return
-name|is_num_integer
+name|is_integer
 argument_list|(
 name|p
 argument_list|)
@@ -28178,7 +28184,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon28d74d900208
+DECL|struct|__anon277c70ad0208
 specifier|static
 struct|struct
 block|{
@@ -28278,7 +28284,7 @@ literal|"number"
 block|}
 block|,
 block|{
-name|is_num_integer
+name|is_integer
 block|,
 literal|"integer"
 block|}
@@ -28288,7 +28294,7 @@ name|is_nonneg
 block|,
 literal|"non-negative integer"
 block|}
-block|, }
+block|}
 struct|;
 end_struct
 
@@ -28413,7 +28419,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon28d74d900308
+DECL|struct|__anon277c70ad0308
 typedef|typedef
 struct|struct
 block|{
@@ -29154,7 +29160,7 @@ name|long
 operator|)
 name|op
 expr_stmt|;
-name|set_integer
+name|set_num_integer
 argument_list|(
 name|y
 argument_list|)
