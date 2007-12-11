@@ -175,11 +175,9 @@ name|handler
 condition|)
 name|handler
 operator|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|GimpWireHandler
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|handler
