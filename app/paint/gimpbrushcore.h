@@ -442,6 +442,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|TempBuf
+modifier|*
+name|gimp_brush_core_get_brush_mask
+parameter_list|(
+name|GimpBrushCore
+modifier|*
+name|core
+parameter_list|,
+name|GimpBrushApplicationMode
+name|brush_hardness
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

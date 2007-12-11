@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5ec28e0103
+DECL|enum|__anon299b02940103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -415,22 +415,6 @@ parameter_list|,
 name|GimpBrush
 modifier|*
 name|brush
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|TempBuf
-modifier|*
-name|gimp_brush_core_get_brush_mask
-parameter_list|(
-name|GimpBrushCore
-modifier|*
-name|core
-parameter_list|,
-name|GimpBrushApplicationMode
-name|brush_hardness
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -6156,7 +6140,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|TempBuf
 modifier|*
 DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,GimpBrushApplicationMode brush_hardness)
