@@ -82,13 +82,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
+file|"core/gimppalette.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimppalette.h"
+file|"gimppdb-utils.h"
 end_include
 
 begin_include
@@ -552,27 +552,20 @@ argument_list|(
 name|name
 argument_list|)
 condition|)
-block|{
 name|palette
 operator|=
-operator|(
-name|GimpPalette
-operator|*
-operator|)
-name|gimp_container_get_child_by_name
+name|gimp_pdb_get_palette
 argument_list|(
 name|gimp
-operator|->
-name|palette_factory
-operator|->
-name|container
 argument_list|,
 name|name
+argument_list|,
+name|FALSE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|palette
 operator|=
 name|gimp_context_get_palette
@@ -580,7 +573,6 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|palette
