@@ -1547,6 +1547,19 @@ return|return
 name|FALSE
 return|;
 block|}
+comment|/*  make sure that the string is NULL-terminated  */
+name|data
+index|[
+name|i
+index|]
+index|[
+name|tmp
+operator|-
+literal|1
+index|]
+operator|=
+literal|'\0'
+expr_stmt|;
 block|}
 else|else
 block|{
