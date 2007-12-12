@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1558890103
+DECL|enum|__anon2b05c0aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -988,6 +988,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|color
 operator|->
 name|opaque
@@ -997,7 +998,7 @@ operator|->
 name|color
 operator|.
 name|a
-operator|!=
+operator|<
 literal|1.0
 condition|)
 block|{
