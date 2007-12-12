@@ -40,13 +40,13 @@ file|"gimpcairo-utils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_cairo_set_source_color:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the color described by @color.  *  * This function calls cairo_set_source_rgba() for you.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_set_source_rgb:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid opaque color  * described by @color.  *  * This function calls cairo_set_source_rgb() for you.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cairo_set_source_color (cairo_t * cr,GimpRGB * color)
-name|gimp_cairo_set_source_color
+DECL|function|gimp_cairo_set_source_rgb (cairo_t * cr,GimpRGB * color)
+name|gimp_cairo_set_source_rgb
 parameter_list|(
 name|cairo_t
 modifier|*
@@ -57,20 +57,44 @@ modifier|*
 name|color
 parameter_list|)
 block|{
-name|g_return_if_fail
+name|cairo_set_source_rgb
 argument_list|(
 name|cr
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+argument_list|,
 name|color
-operator|!=
-name|NULL
+operator|->
+name|r
+argument_list|,
+name|color
+operator|->
+name|g
+argument_list|,
+name|color
+operator|->
+name|b
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_cairo_set_source_rgba:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid translucent color  * described by @color.  *  * This function calls cairo_set_source_rgba() for you.  *  * Since: GIMP 2.6  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_cairo_set_source_rgba (cairo_t * cr,GimpRGB * color)
+name|gimp_cairo_set_source_rgba
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+block|{
 name|cairo_set_source_rgba
 argument_list|(
 name|cr

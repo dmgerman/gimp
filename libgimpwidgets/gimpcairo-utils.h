@@ -18,7 +18,22 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_cairo_set_source_color
+name|gimp_cairo_set_source_rgb
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_cairo_set_source_rgba
 parameter_list|(
 name|cairo_t
 modifier|*

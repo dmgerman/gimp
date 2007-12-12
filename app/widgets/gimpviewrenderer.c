@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0990740103
+DECL|enum|__anon28c7e5a90103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2491,7 +2491,7 @@ argument_list|,
 name|CAIRO_LINE_JOIN_ROUND
 argument_list|)
 expr_stmt|;
-name|gimp_cairo_set_source_color
+name|gimp_cairo_set_source_rgb
 argument_list|(
 name|cr
 argument_list|,
