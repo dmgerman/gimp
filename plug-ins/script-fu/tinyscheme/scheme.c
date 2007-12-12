@@ -5670,12 +5670,16 @@ expr_stmt|;
 if|if
 condition|(
 name|x
-operator|==
+operator|!=
 name|sc
 operator|->
 name|NIL
 condition|)
 block|{
+return|return
+name|x
+return|;
+block|}
 comment|/* If not, try gc'ing some */
 name|gc
 argument_list|(
@@ -5702,12 +5706,16 @@ expr_stmt|;
 if|if
 condition|(
 name|x
-operator|==
+operator|!=
 name|sc
 operator|->
 name|NIL
 condition|)
 block|{
+return|return
+name|x
+return|;
+block|}
 comment|/* If there still aren't, try getting more heap */
 if|if
 condition|(
@@ -5732,7 +5740,6 @@ operator|->
 name|sink
 return|;
 block|}
-block|}
 name|x
 operator|=
 name|find_consecutive_cells
@@ -5745,12 +5752,16 @@ expr_stmt|;
 if|if
 condition|(
 name|x
-operator|==
+operator|!=
 name|sc
 operator|->
 name|NIL
 condition|)
 block|{
+return|return
+name|x
+return|;
+block|}
 comment|/* If all fail, report failure */
 name|sc
 operator|->
@@ -5762,13 +5773,6 @@ return|return
 name|sc
 operator|->
 name|sink
-return|;
-block|}
-block|}
-return|return
-operator|(
-name|x
-operator|)
 return|;
 block|}
 end_function
@@ -11475,7 +11479,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c40aab10103
+DECL|enum|__anon2987b92a0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28185,7 +28189,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c40aab10208
+DECL|struct|__anon2987b92a0208
 specifier|static
 struct|struct
 block|{
@@ -28420,7 +28424,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c40aab10308
+DECL|struct|__anon2987b92a0308
 typedef|typedef
 struct|struct
 block|{
