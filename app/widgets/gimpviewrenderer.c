@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2997ecc40103
+DECL|enum|__anon2a0990740103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4455,7 +4455,7 @@ name|surface
 decl_stmt|;
 name|surface
 operator|=
-name|gimp_cairo_create_surface_from_pixbuf
+name|gimp_cairo_surface_create_from_pixbuf
 argument_list|(
 name|pixbuf
 argument_list|)

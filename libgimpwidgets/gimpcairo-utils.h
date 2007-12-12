@@ -32,9 +32,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|cairo_pattern_t
+modifier|*
+name|gimp_cairo_checkerboard_create
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|gint
+name|size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|cairo_surface_t
 modifier|*
-name|gimp_cairo_create_surface_from_pixbuf
+name|gimp_cairo_surface_create_from_pixbuf
 parameter_list|(
 name|GdkPixbuf
 modifier|*
