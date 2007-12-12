@@ -182,7 +182,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28992bfd0103
+DECL|enum|__anon2a44264b0103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -492,11 +492,39 @@ directive|ifdef
 name|G_OS_WIN32
 end_ifdef
 
+begin_define
+DECL|macro|LARGE_SEEK (f,o,w)
+define|#
+directive|define
+name|LARGE_SEEK
+parameter_list|(
+name|f
+parameter_list|,
+name|o
+parameter_list|,
+name|w
+parameter_list|)
+value|_lseeki64 (f, o, w)
+end_define
+
+begin_define
+DECL|macro|LARGE_TRUNCATE (f,s)
+define|#
+directive|define
+name|LARGE_TRUNCATE
+parameter_list|(
+name|f
+parameter_list|,
+name|s
+parameter_list|)
+value|win32_large_truncate (f, s)
+end_define
+
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_win32_large_truncate (gint fd,gint64 size)
-name|gimp_win32_large_truncate
+DECL|function|win32_large_truncate (gint fd,gint64 size)
+name|win32_large_truncate
 parameter_list|(
 name|gint
 name|fd
@@ -539,6 +567,39 @@ literal|1
 return|;
 block|}
 end_function
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|LARGE_SEEK (f,o,t)
+define|#
+directive|define
+name|LARGE_SEEK
+parameter_list|(
+name|f
+parameter_list|,
+name|o
+parameter_list|,
+name|t
+parameter_list|)
+value|lseek (f, o, t)
+end_define
+
+begin_define
+DECL|macro|LARGE_TRUNCATE (f,s)
+define|#
+directive|define
+name|LARGE_TRUNCATE
+parameter_list|(
+name|f
+parameter_list|,
+name|s
+parameter_list|)
+value|ftruncate (f, s)
+end_define
 
 begin_endif
 endif|#
