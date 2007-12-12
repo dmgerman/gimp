@@ -155,7 +155,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c35d8af0103
+DECL|enum|__anon27e5f9d60103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2649,9 +2649,6 @@ decl_stmt|;
 name|GdkAtom
 name|target_atom
 decl_stmt|;
-name|guint
-name|unused
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2727,14 +2724,6 @@ argument_list|,
 name|target_list
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|Remove "unused" as soon as we depend on GTK+>= 2.12.1
-endif|#
-directive|endif
 if|if
 condition|(
 name|gtk_target_list_find
@@ -2743,8 +2732,7 @@ name|target_list
 argument_list|,
 name|target_atom
 argument_list|,
-operator|&
-name|unused
+name|NULL
 argument_list|)
 condition|)
 block|{
