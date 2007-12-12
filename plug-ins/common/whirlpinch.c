@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f51d870108
+DECL|struct|__anon298118780108
 block|{
 DECL|member|whirl
 name|gdouble
@@ -2305,9 +2305,9 @@ operator|.
 name|whirl
 argument_list|,
 operator|-
-literal|360.0
+literal|720.0
 argument_list|,
-literal|360.0
+literal|720.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2315,11 +2315,12 @@ literal|15.0
 argument_list|,
 literal|2
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-literal|0
+operator|-
+literal|3600.0
 argument_list|,
-literal|0
+literal|3600.0
 argument_list|,
 name|NULL
 argument_list|,
