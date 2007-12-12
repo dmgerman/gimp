@@ -11475,7 +11475,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon277c70ad0103
+DECL|enum|__anon2c40aab10103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -15980,13 +15980,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|s_goto
+else|else
+block|{
+name|s_retbool
 argument_list|(
-name|sc
-argument_list|,
-name|OP_T0LVL
+literal|1
 argument_list|)
 expr_stmt|;
+block|}
 case|case
 name|OP_T0LVL
 case|:
@@ -28184,7 +28185,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon277c70ad0208
+DECL|struct|__anon2c40aab10208
 specifier|static
 struct|struct
 block|{
@@ -28419,7 +28420,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon277c70ad0308
+DECL|struct|__anon2c40aab10308
 typedef|typedef
 struct|struct
 block|{
