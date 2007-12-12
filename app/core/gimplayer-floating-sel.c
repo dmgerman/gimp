@@ -891,6 +891,9 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
