@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac479be0103
+DECL|enum|__anon2c3efff20103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac479be0203
+DECL|enum|__anon2c3efff20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,6 +299,11 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1495,7 +1500,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_item_real_rename (GimpItem * item,const gchar * new_name,const gchar * undo_desc)
+DECL|function|gimp_item_real_rename (GimpItem * item,const gchar * new_name,const gchar * undo_desc,GError ** error)
 name|gimp_item_real_rename
 parameter_list|(
 name|GimpItem
@@ -1511,6 +1516,11 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 if|if
@@ -2273,12 +2283,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_rename:  * @item:     The #GimpItem to rename.  * @new_name: The new name to give the item.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
+comment|/**  * gimp_item_rename:  * @item:     The #GimpItem to rename.  * @new_name: The new name to give the item.  * @error:    Return location for error message.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_rename (GimpItem * item,const gchar * new_name)
+DECL|function|gimp_item_rename (GimpItem * item,const gchar * new_name,GError ** error)
 name|gimp_item_rename
 parameter_list|(
 name|GimpItem
@@ -2289,6 +2299,11 @@ specifier|const
 name|gchar
 modifier|*
 name|new_name
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpItemClass
@@ -2301,6 +2316,20 @@ name|GIMP_IS_ITEM
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2354,6 +2383,8 @@ argument_list|,
 name|item_class
 operator|->
 name|rename_desc
+argument_list|,
+name|error
 argument_list|)
 return|;
 return|return

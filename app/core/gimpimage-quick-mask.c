@@ -340,6 +340,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|GIMP_IMAGE_QUICK_MASK_NAME
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

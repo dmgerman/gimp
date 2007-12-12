@@ -2522,6 +2522,8 @@ name|vectors
 argument_list|)
 argument_list|,
 name|new_name
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

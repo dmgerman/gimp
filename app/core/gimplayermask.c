@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291d2c9f0103
+DECL|enum|__anon294fbb8a0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -143,6 +143,11 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -557,7 +562,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_mask_rename (GimpItem * item,const gchar * new_name,const gchar * undo_desc)
+DECL|function|gimp_layer_mask_rename (GimpItem * item,const gchar * new_name,const gchar * undo_desc,GError ** error)
 name|gimp_layer_mask_rename
 parameter_list|(
 name|GimpItem
@@ -573,9 +578,28 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* reject renaming, layer masks are always named "<layer name> mask"  */
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+name|_
+argument_list|(
+literal|"Cannot rename layer masks."
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|FALSE
 return|;
