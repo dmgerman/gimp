@@ -37,6 +37,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpcairo-utils.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpcellrenderercolor.h>
 end_include
 

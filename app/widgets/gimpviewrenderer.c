@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcairo-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimprender.h"
 end_include
 
@@ -107,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a8c9eb0103
+DECL|enum|__anon2997ecc40103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE

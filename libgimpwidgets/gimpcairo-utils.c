@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcairo-utils.c  * Copyright (C) 2007 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcairo-utils.c  * Copyright (C) 2007 Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -34,7 +34,7 @@ file|"gimpcairo-utils.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_cairo_set_source_color:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the color described by @color.  *  * This function calls cairo_set_source_rgba() for you.  **/
+comment|/**  * gimp_cairo_set_source_color:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the color described by @color.  *  * This function calls cairo_set_source_rgba() for you.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -76,7 +76,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_create_surface_from_pixbuf:  * @pixbuf: a GdkPixbuf  *  * Create a Cairo image surface from a GdkPixbuf.  *  * You should avoid calling this function as there are probably more  * efficient ways of achieving the result you are looking for.  **/
+comment|/**  * gimp_cairo_create_surface_from_pixbuf:  * @pixbuf: a GdkPixbuf  *  * Create a Cairo image surface from a GdkPixbuf.  *  * You should avoid calling this function as there are probably more  * efficient ways of achieving the result you are looking for.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function

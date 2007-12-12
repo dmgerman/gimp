@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcairo-utils.h  * Copyright (C) 2007 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcairo-utils.h  * Copyright (C) 2007 Sven Neumann<sven@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -43,27 +43,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_define
-DECL|macro|INT_MULT (a,b,t)
-define|#
-directive|define
-name|INT_MULT
-parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|,
-name|t
-parameter_list|)
-value|((t) = (a) * (b) + 0x80, ((((t)>> 8) + (t))>> 8))
-end_define
-
 begin_comment
 comment|/*  some useful macros for writing directly to a Cairo surface  */
 end_comment
 
 begin_comment
-comment|/**  * GIMP_CAIRO_RGB24_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_RGB24.  **/
+comment|/**  * GIMP_CAIRO_RGB24_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_RGB24.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_if
@@ -121,7 +106,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/**  * GIMP_CAIRO_ARGB32_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_ARGB32.  **/
+comment|/**  * GIMP_CAIRO_ARGB32_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_if
@@ -149,7 +134,7 @@ parameter_list|,
 name|a
 parameter_list|)
 define|\
-value|G_STMT_START {                                   \     guint t1, t2, t3;                              \     d[0] = INT_MULT ((b), (a), t1);                \     d[1] = INT_MULT ((g), (a), t2);                \     d[2] = INT_MULT ((r), (a), t3);                \     d[3] = (a);                                    \   } G_STMT_END
+value|G_STMT_START {                                   \     guint tr = (a) * (r) + 0x80;                   \     guint tg = (a) * (g) + 0x80;                   \     guint tb = (a) * (b) + 0x80;                   \     d[0] = (((tb)>> 8) + (tb))>> 8;              \     d[1] = (((tg)>> 8) + (tg))>> 8;              \     d[2] = (((tr)>> 8) + (tr))>> 8;              \     d[3] = (a);                                    \   } G_STMT_END
 end_define
 
 begin_else
@@ -174,7 +159,7 @@ parameter_list|,
 name|a
 parameter_list|)
 define|\
-value|G_STMT_START {                                   \     guint t1, t2, t3;                              \     d[0] = (a);                                    \     d[1] = INT_MULT ((r), (a), t1);                \     d[2] = INT_MULT ((g), (a), t2);                \     d[3] = INT_MULT ((b), (a), t3);                \   } G_STMT_END
+value|G_STMT_START {                                   \     guint tr = (a) * (r) + 0x80;                   \     guint tg = (a) * (g) + 0x80;                   \     guint tb = (a) * (b) + 0x80;                   \     d[0] = (a);                                    \     d[1] = (((tr)>> 8) + (tr))>> 8;              \     d[2] = (((tg)>> 8) + (tg))>> 8;              \     d[3] = (((tb)>> 8) + (tb))>> 8;              \   } G_STMT_END
 end_define
 
 begin_endif
