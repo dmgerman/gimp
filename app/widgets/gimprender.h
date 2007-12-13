@@ -32,6 +32,28 @@ name|GIMP_RENDER_BUF_HEIGHT
 value|256
 end_define
 
+begin_comment
+comment|/* the dark and light checkerboard colors */
+end_comment
+
+begin_decl_stmt
+specifier|extern
+name|guchar
+name|gimp_render_dark_check
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|guchar
+name|gimp_render_light_check
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* buffers that contain pre-rendered patterns/colors */
+end_comment
+
 begin_decl_stmt
 specifier|extern
 name|guchar
@@ -55,6 +77,10 @@ modifier|*
 name|gimp_render_white_buf
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* lookup tables for blending over a checkerboard */
+end_comment
 
 begin_decl_stmt
 specifier|extern
