@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0907270103
+DECL|enum|__anon2b9a14200103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0907270203
+DECL|enum|__anon2b9a14200203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0907270303
+DECL|enum|__anon2b9a14200303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3170,27 +3170,18 @@ expr_stmt|;
 comment|/* If the first created rectangle was canceled, halt the tool */
 if|if
 condition|(
-name|private
-operator|->
-name|saved_x1
-operator|==
-name|private
-operator|->
-name|saved_x2
-operator|&&
-name|private
-operator|->
-name|saved_y1
-operator|==
-name|private
-operator|->
-name|saved_y2
+name|gimp_rectangle_tool_rectangle_is_new
+argument_list|(
+name|rect_tool
+argument_list|)
 condition|)
+block|{
 name|gimp_rectangle_tool_halt
 argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_BUTTON_RELEASE_CLICK
