@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2f5c930103
+DECL|enum|__anon2a5072740103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -209,7 +209,7 @@ comment|/* no varargs macros */
 end_comment
 
 begin_comment
-comment|/* need to expand all the short forms to make them known constants at compile time  */
+comment|/* need to expand all the short forms  * to make them known constants at compile time  */
 end_comment
 
 begin_define
