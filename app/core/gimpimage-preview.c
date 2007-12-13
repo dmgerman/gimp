@@ -367,6 +367,10 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
+name|TempBuf
+modifier|*
+name|buf
+decl_stmt|;
 name|TileManager
 modifier|*
 name|tiles
@@ -379,6 +383,9 @@ name|scale_y
 decl_stmt|;
 name|gint
 name|level
+decl_stmt|;
+name|gboolean
+name|is_premult
 decl_stmt|;
 name|scale_x
 operator|=
@@ -430,9 +437,13 @@ operator|->
 name|projection
 argument_list|,
 name|level
+argument_list|,
+operator|&
+name|is_premult
 argument_list|)
 expr_stmt|;
-return|return
+name|buf
+operator|=
 name|tile_manager_get_preview
 argument_list|(
 name|tiles
@@ -441,6 +452,19 @@ name|width
 argument_list|,
 name|height
 argument_list|)
+expr_stmt|;
+comment|/* FIXME: We could avoid this if the view renderer and all other    *        preview code would know how to deal with pre-multiply alpha.    */
+if|if
+condition|(
+name|is_premult
+condition|)
+name|temp_buf_demultiply
+argument_list|(
+name|buf
+argument_list|)
+expr_stmt|;
+return|return
+name|buf
 return|;
 block|}
 end_function

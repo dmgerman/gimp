@@ -71,6 +71,10 @@ name|pyramid
 parameter_list|,
 name|gint
 name|level
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_premult
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f0ecf0103
+DECL|enum|__anon2ad372350103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1225,6 +1225,8 @@ argument_list|(
 name|proj
 argument_list|,
 literal|0
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -1233,7 +1235,7 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_projection_get_tiles_at_level (GimpProjection * proj,gint level)
+DECL|function|gimp_projection_get_tiles_at_level (GimpProjection * proj,gint level,gboolean * is_premult)
 name|gimp_projection_get_tiles_at_level
 parameter_list|(
 name|GimpProjection
@@ -1242,6 +1244,10 @@ name|proj
 parameter_list|,
 name|gint
 name|level
+parameter_list|,
+name|gboolean
+modifier|*
+name|is_premult
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1309,6 +1315,8 @@ operator|->
 name|pyramid
 argument_list|,
 name|level
+argument_list|,
+name|is_premult
 argument_list|)
 return|;
 block|}
@@ -1473,33 +1481,6 @@ argument_list|(
 name|proj
 argument_list|)
 argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-name|gdouble
-DECL|function|gimp_projection_get_opacity (const GimpProjection * proj)
-name|gimp_projection_get_opacity
-parameter_list|(
-specifier|const
-name|GimpProjection
-modifier|*
-name|proj
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_PROJECTION
-argument_list|(
-name|proj
-argument_list|)
-argument_list|,
-name|GIMP_OPACITY_OPAQUE
-argument_list|)
-expr_stmt|;
-return|return
-name|GIMP_OPACITY_OPAQUE
 return|;
 block|}
 end_function

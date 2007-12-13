@@ -25,7 +25,7 @@ DECL|member|bytes
 name|gint
 name|bytes
 decl_stmt|;
-comment|/*  the necessary info                             */
+comment|/*  number of bytes per pixel (1,2,3 or 4)         */
 DECL|member|width
 name|gint
 name|width
@@ -47,7 +47,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  The data buffer. Do never access this field                           directly, use temp_buf_data() instead !!       */
+comment|/*  The data buffer. Do never access this field                             directly, use temp_buf_data() instead !!       */
 block|}
 struct|;
 end_struct
@@ -196,6 +196,17 @@ name|dest_x
 parameter_list|,
 name|gint
 name|dest_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|temp_buf_demultiply
+parameter_list|(
+name|TempBuf
+modifier|*
+name|buf
 parameter_list|)
 function_decl|;
 end_function_decl
