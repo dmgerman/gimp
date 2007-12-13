@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3c48380103
+DECL|enum|__anon28e699fd0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3c48380203
+DECL|enum|__anon28e699fd0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3c48380303
+DECL|enum|__anon28e699fd0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2230,13 +2230,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_is_active_at:  * @rect_tool:  * @display:   The #GimpDisplay to test for.  *  * Returns: %TRUE if there is a rectangle active on %display, %FALSE  *          otherwise.  **/
+comment|/**  * gimp_rectangle_tool_is_active_on_display:  * @rect_tool:  * @display:   The #GimpDisplay to test for.  *  * Returns: %TRUE if there is a rectangle active on %display, %FALSE  *          otherwise.  **/
 end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_rectangle_tool_is_active_at (GimpRectangleTool * rect_tool,GimpDisplay * display)
-name|gimp_rectangle_tool_is_active_at
+DECL|function|gimp_rectangle_tool_is_active_on_display (GimpRectangleTool * rect_tool,GimpDisplay * display)
+name|gimp_rectangle_tool_is_active_on_display
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -2854,7 +2854,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rect_tool
 argument_list|,
@@ -3264,7 +3264,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rect_tool
 argument_list|,
@@ -4573,7 +4573,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rect_tool
 argument_list|,
@@ -5073,7 +5073,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rect_tool
 argument_list|,
@@ -5371,7 +5371,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rect_tool
 argument_list|,
@@ -6410,7 +6410,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rect_tool
 argument_list|,

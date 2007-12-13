@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c11da5d0103
+DECL|enum|__anon2b49f4390103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -55,7 +55,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c11da5d0203
+DECL|enum|__anon2b49f4390203
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_INACTIVE
 name|GIMP_RECTANGLE_TOOL_INACTIVE
@@ -627,7 +627,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 parameter_list|(
 name|GimpRectangleTool
 modifier|*

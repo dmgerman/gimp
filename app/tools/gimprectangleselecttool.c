@@ -1452,7 +1452,7 @@ name|rectangle
 argument_list|)
 operator|&&
 operator|!
-name|gimp_rectangle_tool_is_active_at
+name|gimp_rectangle_tool_is_active_on_display
 argument_list|(
 name|rectangle
 argument_list|,
