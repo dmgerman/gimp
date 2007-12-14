@@ -70,12 +70,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontainer.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable-blend.h"
 end_include
 
@@ -119,6 +113,12 @@ begin_include
 include|#
 directive|include
 file|"gimp-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppdb-utils.h"
 end_include
 
 begin_include
@@ -1703,17 +1703,13 @@ name|GimpBuffer
 modifier|*
 name|buffer
 init|=
-operator|(
-name|GimpBuffer
-operator|*
-operator|)
-name|gimp_container_get_child_by_name
+name|gimp_pdb_get_buffer
 argument_list|(
 name|gimp
-operator|->
-name|named_buffers
 argument_list|,
 name|buffer_name
+argument_list|,
+name|error
 argument_list|)
 decl_stmt|;
 if|if
@@ -1884,17 +1880,13 @@ name|GimpBuffer
 modifier|*
 name|buffer
 init|=
-operator|(
-name|GimpBuffer
-operator|*
-operator|)
-name|gimp_container_get_child_by_name
+name|gimp_pdb_get_buffer
 argument_list|(
 name|gimp
-operator|->
-name|named_buffers
 argument_list|,
 name|buffer_name
+argument_list|,
+name|error
 argument_list|)
 decl_stmt|;
 if|if
