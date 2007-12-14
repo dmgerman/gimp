@@ -177,6 +177,11 @@ name|context
 parameter_list|,
 name|gboolean
 name|cut_pixels
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -240,7 +245,7 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_cut (GimpImage * image,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_cut (GimpImage * image,GimpDrawable * drawable,GimpContext * context,GError ** error)
 name|gimp_edit_cut
 parameter_list|(
 name|GimpImage
@@ -254,6 +259,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -299,6 +309,20 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -317,6 +341,8 @@ argument_list|,
 name|context
 argument_list|,
 name|TRUE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -356,7 +382,7 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_copy (GimpImage * image,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_copy (GimpImage * image,GimpDrawable * drawable,GimpContext * context,GError ** error)
 name|gimp_edit_copy
 parameter_list|(
 name|GimpImage
@@ -370,6 +396,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -419,6 +450,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|buffer
 operator|=
 name|gimp_edit_extract
@@ -433,6 +478,8 @@ argument_list|,
 name|context
 argument_list|,
 name|FALSE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -472,7 +519,7 @@ begin_function
 specifier|const
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_copy_visible (GimpImage * image,GimpContext * context)
+DECL|function|gimp_edit_copy_visible (GimpImage * image,GimpContext * context,GError ** error)
 name|gimp_edit_copy_visible
 parameter_list|(
 name|GimpImage
@@ -482,6 +529,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -504,6 +556,20 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -524,6 +590,8 @@ argument_list|,
 name|context
 argument_list|,
 name|FALSE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1336,7 +1404,7 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_cut (GimpImage * image,const gchar * name,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_named_cut (GimpImage * image,const gchar * name,GimpDrawable * drawable,GimpContext * context,GError ** error)
 name|gimp_edit_named_cut
 parameter_list|(
 name|GimpImage
@@ -1355,6 +1423,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -1409,6 +1482,20 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -1427,6 +1514,8 @@ argument_list|,
 name|context
 argument_list|,
 name|TRUE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1483,7 +1572,7 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_copy (GimpImage * image,const gchar * name,GimpDrawable * drawable,GimpContext * context)
+DECL|function|gimp_edit_named_copy (GimpImage * image,const gchar * name,GimpDrawable * drawable,GimpContext * context,GError ** error)
 name|gimp_edit_named_copy
 parameter_list|(
 name|GimpImage
@@ -1502,6 +1591,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -1560,6 +1654,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|buffer
 operator|=
 name|gimp_edit_extract
@@ -1574,6 +1682,8 @@ argument_list|,
 name|context
 argument_list|,
 name|FALSE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1630,7 +1740,7 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_edit_named_copy_visible (GimpImage * image,const gchar * name,GimpContext * context)
+DECL|function|gimp_edit_named_copy_visible (GimpImage * image,const gchar * name,GimpContext * context,GError ** error)
 name|gimp_edit_named_copy_visible
 parameter_list|(
 name|GimpImage
@@ -1645,6 +1755,11 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpBuffer
@@ -1676,6 +1791,20 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -1696,6 +1825,8 @@ argument_list|,
 name|context
 argument_list|,
 name|FALSE
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -2198,7 +2329,7 @@ begin_function
 specifier|static
 name|GimpBuffer
 modifier|*
-DECL|function|gimp_edit_extract (GimpImage * image,GimpPickable * pickable,GimpContext * context,gboolean cut_pixels)
+DECL|function|gimp_edit_extract (GimpImage * image,GimpPickable * pickable,GimpContext * context,gboolean cut_pixels,GError ** error)
 name|gimp_edit_extract
 parameter_list|(
 name|GimpImage
@@ -2215,17 +2346,16 @@ name|context
 parameter_list|,
 name|gboolean
 name|cut_pixels
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|TileManager
 modifier|*
 name|tiles
-decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -2263,40 +2393,9 @@ name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
-operator|&
 name|error
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|tiles
-condition|)
-block|{
-name|gimp_message
-argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_clear_error
-argument_list|(
-operator|&
-name|error
-argument_list|)
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|cut_pixels
