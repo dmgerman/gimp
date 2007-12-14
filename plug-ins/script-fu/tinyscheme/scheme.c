@@ -11479,7 +11479,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2987b92a0103
+DECL|enum|__anon2a2098b30103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -13797,6 +13797,19 @@ argument_list|(
 name|b
 argument_list|)
 condition|)
+block|{
+if|if
+condition|(
+name|num_is_integer
+argument_list|(
+name|a
+argument_list|)
+operator|==
+name|num_is_integer
+argument_list|(
+name|b
+argument_list|)
+condition|)
 return|return
 name|num_eq
 argument_list|(
@@ -13811,7 +13824,7 @@ name|b
 argument_list|)
 argument_list|)
 return|;
-else|else
+block|}
 return|return
 operator|(
 literal|0
@@ -28189,7 +28202,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2987b92a0208
+DECL|struct|__anon2a2098b30208
 specifier|static
 struct|struct
 block|{
@@ -28424,7 +28437,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2987b92a0308
+DECL|struct|__anon2a2098b30308
 typedef|typedef
 struct|struct
 block|{
