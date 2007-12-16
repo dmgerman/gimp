@@ -116,7 +116,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scale_fit_to
+name|gimp_display_shell_scale_fill
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

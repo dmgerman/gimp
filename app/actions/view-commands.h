@@ -46,7 +46,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|view_zoom_fit_to_cmd_callback
+name|view_zoom_fill_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

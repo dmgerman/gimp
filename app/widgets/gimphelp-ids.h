@@ -433,11 +433,11 @@ value|"gimp-view-zoom-fit-in"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_VIEW_ZOOM_FIT_TO
+DECL|macro|GIMP_HELP_VIEW_ZOOM_FILL
 define|#
 directive|define
-name|GIMP_HELP_VIEW_ZOOM_FIT_TO
-value|"gimp-view-zoom-fit-to"
+name|GIMP_HELP_VIEW_ZOOM_FILL
+value|"gimp-view-zoom-fill"
 end_define
 
 begin_define

@@ -322,8 +322,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|view_zoom_fit_to_cmd_callback (GtkAction * action,gpointer data)
-name|view_zoom_fit_to_cmd_callback
+DECL|function|view_zoom_fill_cmd_callback (GtkAction * action,gpointer data)
+name|view_zoom_fill_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -344,7 +344,7 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_fit_to
+name|gimp_display_shell_scale_fill
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(

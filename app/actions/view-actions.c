@@ -336,28 +336,28 @@ name|GIMP_HELP_VIEW_ZOOM_FIT_IN
 block|}
 block|,
 block|{
-literal|"view-zoom-fit-to"
+literal|"view-zoom-fill"
 block|,
 name|GTK_STOCK_ZOOM_FIT
 block|,
 name|N_
 argument_list|(
-literal|"Fit Image _to Window"
+literal|"Fi_ll Window"
 argument_list|)
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Adjust the zoom ratio so that the window is used optimally"
+literal|"Adjust the zoom ratio so that the entire window is used"
 argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|view_zoom_fit_to_cmd_callback
+name|view_zoom_fill_cmd_callback
 argument_list|)
 block|,
-name|GIMP_HELP_VIEW_ZOOM_FIT_TO
+name|GIMP_HELP_VIEW_ZOOM_FILL
 block|}
 block|,
 block|{
@@ -2205,7 +2205,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"view-zoom-fit-to"
+literal|"view-zoom-fill"
 argument_list|,
 name|display
 argument_list|)

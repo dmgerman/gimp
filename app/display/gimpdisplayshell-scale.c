@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3472a40108
+DECL|struct|__anon2c6c19b10108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1459,13 +1459,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_fit_to:  * @shell:     the #GimpDisplayShell  *  * Sets the scale such that the entire display area is precisely filled by the  * image.  **/
+comment|/**  * gimp_display_shell_scale_fill:  * @shell:     the #GimpDisplayShell  *  * Sets the scale such that the entire display area is precisely filled by the  * image.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_fit_to (GimpDisplayShell * shell)
-name|gimp_display_shell_scale_fit_to
+DECL|function|gimp_display_shell_scale_fill (GimpDisplayShell * shell)
+name|gimp_display_shell_scale_fill
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

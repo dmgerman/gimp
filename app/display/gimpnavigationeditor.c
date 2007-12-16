@@ -1535,7 +1535,7 @@ argument_list|)
 expr_stmt|;
 name|editor
 operator|->
-name|zoom_fit_to_button
+name|zoom_fill_button
 operator|=
 name|gimp_editor_add_action_button
 argument_list|(
@@ -1546,7 +1546,7 @@ argument_list|)
 argument_list|,
 literal|"view"
 argument_list|,
-literal|"view-zoom-fit-to"
+literal|"view-zoom-fill"
 argument_list|,
 name|NULL
 argument_list|)
