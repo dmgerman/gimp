@@ -47,6 +47,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_cairo_set_focus_line_pattern
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|cairo_pattern_t
 modifier|*
 name|gimp_cairo_checkerboard_create
