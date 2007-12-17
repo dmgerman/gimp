@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b20210103
+DECL|enum|__anon2b780ee40103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b20210208
+DECL|struct|__anon2b780ee40208
 block|{
 DECL|member|amount
 name|gdouble
@@ -477,7 +477,7 @@ literal|"1996"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Sharp _Edges..."
+literal|"_Edge..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*"
@@ -3376,7 +3376,7 @@ name|gimp_int_combo_box_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Default"
+literal|"Prewitt"
 argument_list|)
 argument_list|,
 name|PREWITT
