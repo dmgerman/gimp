@@ -128,7 +128,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6f91720103
+DECL|enum|__anon27de33920103
 block|{
 DECL|enumerator|PSD_UNKNOWN_IMAGE
 name|PSD_UNKNOWN_IMAGE
@@ -320,7 +320,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6f91720208
+DECL|struct|__anon27de33920208
 block|{
 DECL|member|hRes
 name|Fixed
@@ -570,7 +570,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c6f91720308
+DECL|struct|__anon27de33920308
 block|{
 DECL|member|signature
 name|gchar
@@ -4898,6 +4898,23 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* Skip padding for Null string */
+name|fseek
+argument_list|(
+name|fd
+argument_list|,
+literal|3
+argument_list|,
+name|SEEK_CUR
+argument_list|)
+expr_stmt|;
+operator|(
+operator|*
+name|offset
+operator|)
+operator|+=
+literal|3
+expr_stmt|;
 name|IFDBG
 name|g_printerr
 argument_list|(
@@ -5067,6 +5084,7 @@ name|layer
 operator|->
 name|name
 condition|)
+block|{
 name|layer
 operator|->
 name|name
@@ -5088,6 +5106,7 @@ operator|->
 name|name
 argument_list|)
 decl_stmt|;
+block|}
 break|break;
 comment|/* lyid: Layer id number */
 case|case
