@@ -1236,8 +1236,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tile_manager_validate (TileManager * tm,Tile * tile)
-name|tile_manager_validate
+DECL|function|tile_manager_validate_tile (TileManager * tm,Tile * tile)
+name|tile_manager_validate_tile
 parameter_list|(
 name|TileManager
 modifier|*
@@ -1274,6 +1274,7 @@ name|tm
 operator|->
 name|validate_proc
 condition|)
+block|{
 call|(
 modifier|*
 name|tm
@@ -1290,6 +1291,25 @@ operator|->
 name|user_data
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+comment|/*  Set the contents of the tile to empty  */
+name|memset
+argument_list|(
+name|tile
+operator|->
+name|data
+argument_list|,
+literal|0
+argument_list|,
+name|tile_size
+argument_list|(
+name|tile
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 ifdef|#
 directive|ifdef
 name|DEBUG_TILE_MANAGER

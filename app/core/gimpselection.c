@@ -545,22 +545,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_selection_validate_tile
-parameter_list|(
-name|TileManager
-modifier|*
-name|tm
-parameter_list|,
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpSelection,gimp_selection,GIMP_TYPE_CHANNEL)
 name|G_DEFINE_TYPE
@@ -2122,44 +2106,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_selection_validate_tile (TileManager * tm,Tile * tile)
-name|gimp_selection_validate_tile
-parameter_list|(
-name|TileManager
-modifier|*
-name|tm
-parameter_list|,
-name|Tile
-modifier|*
-name|tile
-parameter_list|)
-block|{
-comment|/*  Set the contents of the tile to empty  */
-name|memset
-argument_list|(
-name|tile_data_pointer
-argument_list|(
-name|tile
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|)
-argument_list|,
-name|TRANSPARENT_OPACITY
-argument_list|,
-name|tile_size
-argument_list|(
-name|tile
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -2265,23 +2211,6 @@ operator|->
 name|y2
 operator|=
 name|height
-expr_stmt|;
-name|tile_manager_set_validate_proc
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|channel
-argument_list|)
-operator|->
-name|tiles
-argument_list|,
-operator|(
-name|TileValidateProc
-operator|)
-name|gimp_selection_validate_tile
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 return|return
 name|channel

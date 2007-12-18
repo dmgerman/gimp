@@ -296,7 +296,7 @@ name|valid
 condition|)
 block|{
 comment|/* an invalid tile should never be shared, so this should work */
-name|tile_manager_validate
+name|tile_manager_validate_tile
 argument_list|(
 name|tile
 operator|->
@@ -755,7 +755,7 @@ operator|)
 condition|)
 block|{
 comment|/* trying to share invalid tiles is problematic, not to mention silly */
-name|tile_manager_validate
+name|tile_manager_validate_tile
 argument_list|(
 name|tile
 operator|->

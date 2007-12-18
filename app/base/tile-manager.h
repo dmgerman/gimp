@@ -207,7 +207,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|tile_manager_validate
+name|tile_manager_validate_tile
 parameter_list|(
 name|TileManager
 modifier|*
