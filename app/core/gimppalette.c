@@ -1867,17 +1867,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|palette
-operator|->
-name|n_colors
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
