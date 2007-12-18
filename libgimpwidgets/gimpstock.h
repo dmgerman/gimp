@@ -787,7 +787,7 @@ DECL|macro|GIMP_STOCK_MOVE_TO_SCREEN
 define|#
 directive|define
 name|GIMP_STOCK_MOVE_TO_SCREEN
-value|"gimp_move-to-screen"
+value|"gimp-move-to-screen"
 DECL|macro|GIMP_STOCK_DEFAULT_COLORS
 define|#
 directive|define
