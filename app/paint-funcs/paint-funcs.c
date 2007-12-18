@@ -1134,7 +1134,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
+DECL|function|combine_indexed_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,guint length,const guint bytes)
 name|combine_indexed_and_indexed_pixels
 parameter_list|(
 specifier|const
@@ -1156,6 +1156,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -1167,16 +1168,11 @@ parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
 block|{
-name|gint
-name|b
-decl_stmt|;
-name|gint
-name|tmp
-decl_stmt|;
 if|if
 condition|(
 name|mask
@@ -1195,6 +1191,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -1207,6 +1208,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -1272,10 +1276,8 @@ name|length
 operator|--
 condition|)
 block|{
-name|guchar
-name|new_alpha
-init|=
-name|opacity
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -1301,7 +1303,7 @@ index|[
 name|b
 index|]
 operator|&&
-name|new_alpha
+name|opacity
 operator|>
 literal|127
 operator|)
@@ -1335,7 +1337,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
+DECL|function|combine_indexed_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,guint length,const guint bytes)
 name|combine_indexed_and_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -1357,6 +1359,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -1368,6 +1371,7 @@ parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -1383,12 +1387,6 @@ name|gint
 name|src2_bytes
 init|=
 literal|2
-decl_stmt|;
-name|glong
-name|tmp
-decl_stmt|;
-name|gint
-name|b
 decl_stmt|;
 if|if
 condition|(
@@ -1408,6 +1406,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -1425,6 +1428,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -1490,6 +1496,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -1504,6 +1515,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -1563,7 +1577,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_indexed_a_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
+DECL|function|combine_indexed_a_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,guint length,const guint bytes)
 name|combine_indexed_a_and_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -1585,6 +1599,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -1596,6 +1611,7 @@ parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -1605,12 +1621,6 @@ name|gint
 name|alpha
 init|=
 literal|1
-decl_stmt|;
-name|gint
-name|b
-decl_stmt|;
-name|glong
-name|tmp
 decl_stmt|;
 if|if
 condition|(
@@ -1630,6 +1640,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -1647,6 +1662,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -1735,6 +1753,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -1749,6 +1772,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -1831,7 +1857,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guchar * cmap,guint opacity,guint length,guint bytes)
+DECL|function|combine_inten_a_and_indexed_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guchar * cmap,const guint opacity,guint length,const guint bytes)
 name|combine_inten_a_and_indexed_pixels
 parameter_list|(
 specifier|const
@@ -1858,12 +1884,14 @@ name|guchar
 modifier|*
 name|cmap
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -1873,12 +1901,6 @@ name|gint
 name|src2_bytes
 init|=
 literal|1
-decl_stmt|;
-name|gint
-name|b
-decl_stmt|;
-name|glong
-name|tmp
 decl_stmt|;
 if|if
 condition|(
@@ -1898,7 +1920,12 @@ name|length
 operator|--
 condition|)
 block|{
-name|gint
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
+name|guint
 name|index
 init|=
 name|src2
@@ -1908,6 +1935,7 @@ index|]
 operator|*
 literal|3
 decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -1922,6 +1950,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -2005,7 +2036,12 @@ name|length
 operator|--
 condition|)
 block|{
-name|gint
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
+name|guint
 name|index
 init|=
 name|src2
@@ -2015,6 +2051,7 @@ index|]
 operator|*
 literal|3
 decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2026,6 +2063,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -2084,7 +2124,6 @@ name|b
 index|]
 expr_stmt|;
 comment|/*  alpha channel is opaque  */
-comment|/* m++; /Per */
 name|src1
 operator|+=
 name|bytes
@@ -2104,7 +2143,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guchar * cmap,guint opacity,guint length,guint bytes)
+DECL|function|combine_inten_a_and_indexed_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guchar * cmap,const guint opacity,guint length,const guint bytes)
 name|combine_inten_a_and_indexed_a_pixels
 parameter_list|(
 specifier|const
@@ -2131,12 +2170,14 @@ name|guchar
 modifier|*
 name|cmap
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -2152,12 +2193,6 @@ name|gint
 name|src2_bytes
 init|=
 literal|2
-decl_stmt|;
-name|gint
-name|b
-decl_stmt|;
-name|glong
-name|tmp
 decl_stmt|;
 if|if
 condition|(
@@ -2177,7 +2212,11 @@ name|length
 operator|--
 condition|)
 block|{
-name|gint
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+name|guint
 name|index
 init|=
 name|src2
@@ -2187,6 +2226,7 @@ index|]
 operator|*
 literal|3
 decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2204,6 +2244,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -2287,7 +2330,11 @@ name|length
 operator|--
 condition|)
 block|{
-name|gint
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+name|guint
 name|index
 init|=
 name|src2
@@ -2297,6 +2344,7 @@ index|]
 operator|*
 literal|3
 decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2311,6 +2359,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -2369,7 +2420,6 @@ name|b
 index|]
 expr_stmt|;
 comment|/*  alpha channel is opaque  */
-comment|/* m++; /Per */
 name|src1
 operator|+=
 name|bytes
@@ -2389,7 +2439,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
+DECL|function|combine_inten_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,guint length,const guint bytes)
 name|combine_inten_and_inten_pixels
 parameter_list|(
 specifier|const
@@ -2411,6 +2461,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -2422,16 +2473,11 @@ parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
 block|{
-name|gint
-name|b
-decl_stmt|;
-name|gint
-name|tmp
-decl_stmt|;
 if|if
 condition|(
 name|mask
@@ -2450,6 +2496,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2462,6 +2513,9 @@ name|opacity
 argument_list|,
 name|tmp
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -2535,6 +2589,13 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
+name|guint
+name|b
+decl_stmt|;
 for|for
 control|(
 name|b
@@ -2601,7 +2662,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,guint length,guint bytes)
+DECL|function|combine_inten_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,guint length,const guint bytes)
 name|combine_inten_and_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -2623,6 +2684,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -2634,6 +2696,7 @@ parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -2651,13 +2714,6 @@ init|=
 name|bytes
 operator|+
 literal|1
-decl_stmt|;
-name|gint
-name|b
-decl_stmt|;
-specifier|register
-name|glong
-name|t1
 decl_stmt|;
 if|if
 condition|(
@@ -2677,6 +2733,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|glong
+name|t1
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2694,6 +2755,9 @@ name|opacity
 argument_list|,
 name|t1
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -2789,6 +2853,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|glong
+name|t1
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2892,6 +2961,11 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|glong
+name|t1
+decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -2906,6 +2980,9 @@ name|opacity
 argument_list|,
 name|t1
 argument_list|)
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 for|for
 control|(
@@ -3000,7 +3077,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,gboolean mode_affect,guint length,guint bytes)
+DECL|function|combine_inten_a_and_inten_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,const gboolean mode_affect,guint length,const guint bytes)
 name|combine_inten_a_and_inten_pixels
 parameter_list|(
 specifier|const
@@ -3022,6 +3099,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -3030,6 +3108,7 @@ name|gboolean
 modifier|*
 name|affect
 parameter_list|,
+specifier|const
 name|gboolean
 name|mode_affect
 parameter_list|,
@@ -3037,6 +3116,7 @@ comment|/*  how does the combination mode affect alpha?  */
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -3067,9 +3147,6 @@ decl_stmt|;
 name|gfloat
 name|compl_ratio
 decl_stmt|;
-name|glong
-name|tmp
-decl_stmt|;
 if|if
 condition|(
 name|mask
@@ -3096,6 +3173,10 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -3218,6 +3299,10 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -3348,6 +3433,10 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -3418,7 +3507,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -3437,6 +3525,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 name|src1
@@ -3458,7 +3547,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,guint opacity,const gboolean * affect,gboolean mode_affect,guint length,guint bytes)
+DECL|function|combine_inten_a_and_inten_a_pixels (const guchar * src1,const guchar * src2,guchar * dest,const guchar * mask,const guint opacity,const gboolean * affect,const gboolean mode_affect,guint length,const guint bytes)
 name|combine_inten_a_and_inten_a_pixels
 parameter_list|(
 specifier|const
@@ -3480,6 +3569,7 @@ name|guchar
 modifier|*
 name|mask
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
@@ -3488,6 +3578,7 @@ name|gboolean
 modifier|*
 name|affect
 parameter_list|,
+specifier|const
 name|gboolean
 name|mode_affect
 parameter_list|,
@@ -3495,6 +3586,7 @@ comment|/*  how does the combination mode affect alpha?  */
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -3516,9 +3608,6 @@ name|ratio
 decl_stmt|;
 name|gfloat
 name|compl_ratio
-decl_stmt|;
-name|glong
-name|tmp
 decl_stmt|;
 if|if
 condition|(
@@ -3606,6 +3695,10 @@ operator|--
 condition|)
 block|{
 comment|/* GUTS */
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -3668,7 +3761,6 @@ name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -3676,6 +3768,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 expr_stmt|;
 block|}
 else|else
@@ -3690,7 +3783,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -3709,6 +3801,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -3791,6 +3884,10 @@ operator|--
 condition|)
 block|{
 comment|/* GUTS */
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -3853,7 +3950,6 @@ name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -3861,6 +3957,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 expr_stmt|;
 block|}
 else|else
@@ -3875,7 +3972,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -3894,6 +3990,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -3972,6 +4069,10 @@ operator|--
 condition|)
 block|{
 comment|/* GUTS */
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -4029,12 +4130,10 @@ index|[
 name|alpha
 index|]
 operator|=
-operator|(
 name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -4056,7 +4155,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -4075,6 +4173,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -4165,6 +4264,10 @@ operator|--
 condition|)
 block|{
 comment|/* GUTS */
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -4229,7 +4332,6 @@ name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -4237,6 +4339,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 expr_stmt|;
 block|}
 else|else
@@ -4251,7 +4354,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -4270,6 +4372,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -4352,6 +4455,10 @@ operator|--
 condition|)
 block|{
 comment|/* GUTS */
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -4416,7 +4523,6 @@ name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -4424,6 +4530,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 expr_stmt|;
 block|}
 else|else
@@ -4438,7 +4545,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -4457,6 +4563,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -4535,6 +4642,10 @@ operator|--
 condition|)
 block|{
 comment|/* GUTS */
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -4594,12 +4705,10 @@ index|[
 name|alpha
 index|]
 operator|=
-operator|(
 name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -4621,7 +4730,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -4640,6 +4748,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -4678,6 +4787,10 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -4727,12 +4840,10 @@ index|[
 name|alpha
 index|]
 operator|=
-operator|(
 name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -4754,7 +4865,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -4773,6 +4883,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -4799,6 +4910,10 @@ name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|tmp
+decl_stmt|;
 name|guchar
 name|src2_alpha
 init|=
@@ -4855,12 +4970,10 @@ index|[
 name|alpha
 index|]
 operator|=
-operator|(
 name|affect
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|new_alpha
 else|:
@@ -4882,7 +4995,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -4901,6 +5013,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -4930,7 +5043,7 @@ end_undef
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_channel_mask_pixels (const guchar * src,const guchar * channel,guchar * dest,const guchar * col,guint opacity,guint length,guint bytes)
+DECL|function|combine_inten_a_and_channel_mask_pixels (const guchar * src,const guchar * channel,guchar * dest,const guchar * col,const guint opacity,guint length,const guint bytes)
 name|combine_inten_a_and_channel_mask_pixels
 parameter_list|(
 specifier|const
@@ -4952,12 +5065,14 @@ name|guchar
 modifier|*
 name|col
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -4970,20 +5085,16 @@ name|bytes
 operator|-
 literal|1
 decl_stmt|;
-name|gint
-name|b
-decl_stmt|;
-name|gint
-name|t
-decl_stmt|,
-name|s
-decl_stmt|;
 while|while
 condition|(
 name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|t
+decl_stmt|;
 name|guchar
 name|channel_alpha
 init|=
@@ -5004,9 +5115,11 @@ condition|(
 name|channel_alpha
 condition|)
 block|{
-name|guchar
-name|compl_alpha
+specifier|register
+name|gulong
+name|s
 decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -5030,6 +5143,12 @@ name|channel_alpha
 argument_list|,
 name|t
 argument_list|)
+decl_stmt|;
+name|guchar
+name|compl_alpha
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 if|if
 condition|(
@@ -5133,7 +5252,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|combine_inten_a_and_channel_selection_pixels (const guchar * src,const guchar * channel,guchar * dest,const guchar * col,guint opacity,guint length,guint bytes)
+DECL|function|combine_inten_a_and_channel_selection_pixels (const guchar * src,const guchar * channel,guchar * dest,const guchar * col,const guint opacity,guint length,const guint bytes)
 name|combine_inten_a_and_channel_selection_pixels
 parameter_list|(
 specifier|const
@@ -5155,12 +5274,14 @@ name|guchar
 modifier|*
 name|col
 parameter_list|,
+specifier|const
 name|guint
 name|opacity
 parameter_list|,
 name|guint
 name|length
 parameter_list|,
+specifier|const
 name|guint
 name|bytes
 parameter_list|)
@@ -5173,20 +5294,16 @@ name|bytes
 operator|-
 literal|1
 decl_stmt|;
-name|gint
-name|b
-decl_stmt|;
-name|gint
-name|t
-decl_stmt|,
-name|s
-decl_stmt|;
 while|while
 condition|(
 name|length
 operator|--
 condition|)
 block|{
+specifier|register
+name|gulong
+name|t
+decl_stmt|;
 name|guchar
 name|channel_alpha
 init|=
@@ -5205,9 +5322,11 @@ condition|(
 name|channel_alpha
 condition|)
 block|{
-name|guchar
-name|compl_alpha
+specifier|register
+name|gulong
+name|s
 decl_stmt|;
+specifier|const
 name|guchar
 name|new_alpha
 init|=
@@ -5231,6 +5350,12 @@ name|channel_alpha
 argument_list|,
 name|t
 argument_list|)
+decl_stmt|;
+name|guchar
+name|compl_alpha
+decl_stmt|;
+name|guint
+name|b
 decl_stmt|;
 if|if
 condition|(
@@ -5305,6 +5430,7 @@ name|new_alpha
 expr_stmt|;
 block|}
 else|else
+block|{
 name|memcpy
 argument_list|(
 name|dest
@@ -5314,6 +5440,7 @@ argument_list|,
 name|bytes
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  advance pointers  */
 name|src
 operator|+=
@@ -21943,7 +22070,7 @@ index|]
 operator|)
 operator|)
 expr_stmt|;
-comment|/* Second check - if any single colour channel can't be affected,      we can't use the opacity quickskip.   */
+comment|/* Second check - if any single colour channel can't be affected,      we can't use the opacity quickskip.    */
 if|if
 condition|(
 name|st
