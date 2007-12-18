@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29416efd0103
+DECL|enum|__anon2c087f3d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -507,6 +507,19 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|TileManager
+modifier|*
+name|gimp_drawable_real_get_tiles
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -882,6 +895,12 @@ operator|->
 name|replace_region
 operator|=
 name|gimp_drawable_real_replace_region
+expr_stmt|;
+name|klass
+operator|->
+name|get_tiles
+operator|=
+name|gimp_drawable_real_get_tiles
 expr_stmt|;
 name|klass
 operator|->
@@ -2680,6 +2699,26 @@ end_function
 
 begin_function
 specifier|static
+name|TileManager
+modifier|*
+DECL|function|gimp_drawable_real_get_tiles (GimpDrawable * drawable)
+name|gimp_drawable_real_get_tiles
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+block|{
+return|return
+name|drawable
+operator|->
+name|tiles
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gimp_drawable_real_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles,GimpImageType type,gint offset_x,gint offset_y)
 name|gimp_drawable_real_set_tiles
@@ -3903,10 +3942,9 @@ end_function
 begin_function
 name|TileManager
 modifier|*
-DECL|function|gimp_drawable_get_tiles (const GimpDrawable * drawable)
+DECL|function|gimp_drawable_get_tiles (GimpDrawable * drawable)
 name|gimp_drawable_get_tiles
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -3923,9 +3961,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_DRAWABLE_GET_CLASS
+argument_list|(
 name|drawable
+argument_list|)
 operator|->
-name|tiles
+name|get_tiles
+argument_list|(
+name|drawable
+argument_list|)
 return|;
 block|}
 end_function

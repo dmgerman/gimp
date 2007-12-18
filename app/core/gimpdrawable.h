@@ -312,6 +312,19 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
+DECL|member|get_tiles
+name|TileManager
+modifier|*
+function_decl|(
+modifier|*
+name|get_tiles
+function_decl|)
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
+parameter_list|)
+function_decl|;
 DECL|member|set_tiles
 name|void
 function_decl|(
@@ -620,7 +633,6 @@ name|TileManager
 modifier|*
 name|gimp_drawable_get_tiles
 parameter_list|(
-specifier|const
 name|GimpDrawable
 modifier|*
 name|drawable
