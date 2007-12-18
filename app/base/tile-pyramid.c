@@ -152,9 +152,11 @@ name|Tile
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 name|i
 parameter_list|,
+specifier|const
 name|gint
 name|j
 parameter_list|)
@@ -174,9 +176,11 @@ name|Tile
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 name|i
 parameter_list|,
+specifier|const
 name|gint
 name|j
 parameter_list|)
@@ -1374,7 +1378,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tile_pyramid_write_quarter (Tile * dest,Tile * src,gint i,gint j)
+DECL|function|tile_pyramid_write_quarter (Tile * dest,Tile * src,const gint i,const gint j)
 name|tile_pyramid_write_quarter
 parameter_list|(
 name|Tile
@@ -1385,9 +1389,11 @@ name|Tile
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 name|i
 parameter_list|,
+specifier|const
 name|gint
 name|j
 parameter_list|)
@@ -1642,6 +1648,7 @@ name|x
 operator|++
 control|)
 block|{
+specifier|const
 name|guint
 name|a
 init|=
@@ -1988,6 +1995,7 @@ name|x
 operator|++
 control|)
 block|{
+specifier|const
 name|guint
 name|a
 init|=
@@ -2369,7 +2377,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|tile_pyramid_write_upper_quarter (Tile * dest,Tile * src,gint i,gint j)
+DECL|function|tile_pyramid_write_upper_quarter (Tile * dest,Tile * src,const gint i,const gint j)
 name|tile_pyramid_write_upper_quarter
 parameter_list|(
 name|Tile
@@ -2380,9 +2388,11 @@ name|Tile
 modifier|*
 name|src
 parameter_list|,
+specifier|const
 name|gint
 name|i
 parameter_list|,
+specifier|const
 name|gint
 name|j
 parameter_list|)
