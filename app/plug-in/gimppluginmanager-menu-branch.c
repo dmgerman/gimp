@@ -280,5 +280,34 @@ directive|endif
 block|}
 end_function
 
+begin_function
+name|GSList
+modifier|*
+DECL|function|gimp_plug_in_manager_get_menu_branches (GimpPlugInManager * manager)
+name|gimp_plug_in_manager_get_menu_branches
+parameter_list|(
+name|GimpPlugInManager
+modifier|*
+name|manager
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PLUG_IN_MANAGER
+argument_list|(
+name|manager
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|manager
+operator|->
+name|menu_branches
+return|;
+block|}
+end_function
+
 end_unit
 

@@ -81,6 +81,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GSList
+modifier|*
+name|gimp_plug_in_manager_get_menu_branches
+parameter_list|(
+name|GimpPlugInManager
+modifier|*
+name|manager
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
