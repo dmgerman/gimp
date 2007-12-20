@@ -789,6 +789,9 @@ expr_stmt|;
 name|base_exit
 argument_list|()
 expr_stmt|;
+name|gegl_exit
+argument_list|()
+expr_stmt|;
 block|}
 end_function
 
@@ -858,8 +861,11 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-comment|/*  make sure that the swap file is removed before we quit */
+comment|/*  make sure that the swap files are removed before we quit */
 name|tile_swap_exit
+argument_list|()
+expr_stmt|;
+name|gegl_exit
 argument_list|()
 expr_stmt|;
 name|exit
