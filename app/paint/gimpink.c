@@ -592,13 +592,6 @@ argument_list|(
 name|paint_core
 argument_list|)
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%d\n"
-argument_list|,
-name|time
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|paint_state
@@ -2494,7 +2487,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e6d20b0103
+DECL|enum|__anon27efd7bf0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
