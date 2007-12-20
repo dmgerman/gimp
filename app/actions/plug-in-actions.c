@@ -2726,13 +2726,13 @@ name|copy_original
 argument_list|)
 condition|)
 block|{
-name|gchar
-modifier|*
-name|label
-decl_stmt|;
 name|GtkAction
 modifier|*
 name|action
+decl_stmt|;
+name|gchar
+modifier|*
+name|label
 decl_stmt|;
 name|label
 operator|=
@@ -2796,6 +2796,7 @@ name|p2
 operator|=
 literal|'\0'
 expr_stmt|;
+comment|/* recursively call ourselves with the last part of the path removed */
 name|plug_in_actions_build_path
 argument_list|(
 name|group
