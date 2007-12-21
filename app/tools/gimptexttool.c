@@ -1209,9 +1209,10 @@ name|coords
 operator|->
 name|x
 operator|<
+name|gimp_item_width
+argument_list|(
 name|item
-operator|->
-name|width
+argument_list|)
 operator|&&
 name|coords
 operator|->
@@ -1223,9 +1224,10 @@ name|coords
 operator|->
 name|y
 operator|<
+name|gimp_item_height
+argument_list|(
 name|item
-operator|->
-name|height
+argument_list|)
 condition|)
 block|{
 comment|/*  did the user click on a text layer?  */
