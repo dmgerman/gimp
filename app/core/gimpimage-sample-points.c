@@ -153,7 +153,7 @@ name|image
 argument_list|,
 name|_
 argument_list|(
-literal|"Add Sample_Point"
+literal|"Add Sample Point"
 argument_list|)
 argument_list|,
 name|sample_point
