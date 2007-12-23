@@ -1008,9 +1008,10 @@ name|item
 operator|->
 name|offset_x
 operator|+
+name|gimp_item_width
+argument_list|(
 name|item
-operator|->
-name|width
+argument_list|)
 expr_stmt|;
 name|max_y
 operator|=
@@ -1018,9 +1019,10 @@ name|item
 operator|->
 name|offset_y
 operator|+
+name|gimp_item_height
+argument_list|(
 name|item
-operator|->
-name|height
+argument_list|)
 expr_stmt|;
 comment|/*  Respect all layers  */
 for|for
@@ -1080,9 +1082,10 @@ name|item
 operator|->
 name|offset_x
 operator|+
+name|gimp_item_width
+argument_list|(
 name|item
-operator|->
-name|width
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|max_y
@@ -1095,9 +1098,10 @@ name|item
 operator|->
 name|offset_y
 operator|+
+name|gimp_item_height
+argument_list|(
 name|item
-operator|->
-name|height
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

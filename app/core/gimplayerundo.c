@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b0108a0103
+DECL|enum|__anon2a2845c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -955,14 +955,23 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|layer
-operator|->
-name|mask
-condition|)
-name|GIMP_ITEM
+name|gimp_layer_get_mask
 argument_list|(
 name|layer
-operator|->
+argument_list|)
+condition|)
+block|{
+name|GimpLayerMask
+modifier|*
+name|mask
+init|=
+name|gimp_layer_get_mask
+argument_list|(
+name|layer
+argument_list|)
+decl_stmt|;
+name|GIMP_ITEM
+argument_list|(
 name|mask
 argument_list|)
 operator|->
@@ -970,6 +979,7 @@ name|removed
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(

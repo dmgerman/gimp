@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fbb8a0103
+DECL|enum|__anon29de720d0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -669,24 +669,27 @@ name|name
 argument_list|)
 expr_stmt|;
 comment|/*  set the layer_mask color and opacity  */
+name|gimp_channel_set_color
+argument_list|(
 name|GIMP_CHANNEL
 argument_list|(
 name|layer_mask
 argument_list|)
-operator|->
+argument_list|,
 name|color
-operator|=
-operator|*
-name|color
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
+name|gimp_channel_set_show_masked
+argument_list|(
 name|GIMP_CHANNEL
 argument_list|(
 name|layer_mask
 argument_list|)
-operator|->
-name|show_masked
-operator|=
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/*  selection mask variables  */
 name|GIMP_CHANNEL

@@ -295,9 +295,10 @@ name|tiles
 operator|=
 name|tile_manager_ref
 argument_list|(
+name|gimp_drawable_get_tiles
+argument_list|(
 name|drawable
-operator|->
-name|tiles
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|drawable_mod_undo
@@ -491,9 +492,10 @@ name|tiles
 operator|=
 name|tile_manager_ref
 argument_list|(
+name|gimp_drawable_get_tiles
+argument_list|(
 name|drawable
-operator|->
-name|tiles
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|drawable_mod_undo

@@ -2330,15 +2330,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_layer_get_mask
+argument_list|(
 name|layer
-operator|->
-name|mask
+argument_list|)
 operator|&&
+name|gimp_layer_mask_get_apply
+argument_list|(
 name|layer
 operator|->
 name|mask
-operator|->
-name|apply_mask
+argument_list|)
 condition|)
 block|{
 name|TileManager
@@ -2407,9 +2409,10 @@ block|}
 comment|/* DISSOLVE_MODE is special since it is the only mode that does not        *  work on the projection with the lower layer, but only locally on        *  the layers alpha channel.        */
 name|mode
 operator|=
+name|gimp_layer_get_mode
+argument_list|(
 name|layer
-operator|->
-name|mode
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2440,9 +2443,10 @@ name|mask
 argument_list|,
 name|NULL
 argument_list|,
+name|gimp_layer_get_opacity
+argument_list|(
 name|layer
-operator|->
-name|opacity
+argument_list|)
 operator|*
 literal|255.999
 argument_list|,
