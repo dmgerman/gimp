@@ -576,6 +576,35 @@ block|}
 end_function
 
 begin_function
+name|GList
+modifier|*
+DECL|function|gimp_image_get_guides (GimpImage * image)
+name|gimp_image_get_guides
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|image
+operator|->
+name|guides
+return|;
+block|}
+end_function
+
+begin_function
 name|GimpGuide
 modifier|*
 DECL|function|gimp_image_get_guide (GimpImage * image,guint32 id)

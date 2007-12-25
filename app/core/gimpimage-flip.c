@@ -470,9 +470,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_image_get_guides
+argument_list|(
 name|image
-operator|->
-name|guides
+argument_list|)
 init|;
 name|list
 condition|;
@@ -569,9 +570,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_image_get_sample_points
+argument_list|(
 name|image
-operator|->
-name|sample_points
+argument_list|)
 init|;
 name|list
 condition|;

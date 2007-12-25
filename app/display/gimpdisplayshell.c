@@ -108,6 +108,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-grid.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimage-guides.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-snap.h"
 end_include
 
@@ -281,7 +293,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be88990103
+DECL|enum|__anon27700ee30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,7 +306,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be88990203
+DECL|enum|__anon27700ee30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5215,13 +5227,14 @@ argument_list|(
 name|shell
 argument_list|)
 operator|&&
+name|gimp_image_get_guides
+argument_list|(
 name|shell
 operator|->
 name|display
 operator|->
 name|image
-operator|->
-name|guides
+argument_list|)
 condition|)
 block|{
 name|snap_to_guides
@@ -5236,13 +5249,14 @@ argument_list|(
 name|shell
 argument_list|)
 operator|&&
+name|gimp_image_get_grid
+argument_list|(
 name|shell
 operator|->
 name|display
 operator|->
 name|image
-operator|->
-name|grid
+argument_list|)
 condition|)
 block|{
 name|snap_to_grid

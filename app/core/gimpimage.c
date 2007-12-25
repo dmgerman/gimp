@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb8377b0103
+DECL|enum|__anon28811a060103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb8377b0203
+DECL|enum|__anon28811a060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4194,9 +4194,10 @@ name|memsize
 operator|+=
 name|gimp_g_list_get_memsize
 argument_list|(
+name|gimp_image_get_guides
+argument_list|(
 name|image
-operator|->
-name|guides
+argument_list|)
 argument_list|,
 sizeof|sizeof
 argument_list|(
@@ -4222,9 +4223,10 @@ name|memsize
 operator|+=
 name|gimp_g_list_get_memsize
 argument_list|(
+name|gimp_image_get_sample_points
+argument_list|(
 name|image
-operator|->
-name|sample_points
+argument_list|)
 argument_list|,
 sizeof|sizeof
 argument_list|(

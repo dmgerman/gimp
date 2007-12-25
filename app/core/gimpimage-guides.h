@@ -110,6 +110,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GList
+modifier|*
+name|gimp_image_get_guides
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpGuide
 modifier|*
 name|gimp_image_get_guide

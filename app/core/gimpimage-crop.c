@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf33ee50103
+DECL|enum|__anon2bafe2030103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -796,9 +796,10 @@ block|}
 comment|/*  Reposition or remove all guides  */
 name|list
 operator|=
+name|gimp_image_get_guides
+argument_list|(
 name|image
-operator|->
-name|guides
+argument_list|)
 expr_stmt|;
 while|while
 condition|(
@@ -936,9 +937,10 @@ block|}
 comment|/*  Reposition or remove sample points  */
 name|list
 operator|=
+name|gimp_image_get_sample_points
+argument_list|(
 name|image
-operator|->
-name|sample_points
+argument_list|)
 expr_stmt|;
 while|while
 condition|(

@@ -562,6 +562,35 @@ block|}
 end_function
 
 begin_function
+name|GList
+modifier|*
+DECL|function|gimp_image_get_sample_points (GimpImage * image)
+name|gimp_image_get_sample_points
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|image
+operator|->
+name|sample_points
+return|;
+block|}
+end_function
+
+begin_function
 name|GimpSamplePoint
 modifier|*
 DECL|function|gimp_image_find_sample_point (GimpImage * image,gdouble x,gdouble y,gdouble epsilon_x,gdouble epsilon_y)
