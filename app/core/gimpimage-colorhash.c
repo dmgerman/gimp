@@ -33,6 +33,12 @@ directive|include
 file|"gimpimage-colorhash.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimage-colormap.h"
+end_include
+
 begin_define
 DECL|macro|MAXDIFF
 define|#
@@ -367,6 +373,7 @@ name|gint
 name|b
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -385,15 +392,17 @@ name|cmap_index
 decl_stmt|;
 name|cmap
 operator|=
+name|gimp_image_get_colormap
+argument_list|(
 name|image
-operator|->
-name|cmap
+argument_list|)
 expr_stmt|;
 name|num_cols
 operator|=
+name|gimp_image_get_colormap_size
+argument_list|(
 name|image
-operator|->
-name|num_cols
+argument_list|)
 expr_stmt|;
 name|pixel
 operator|=

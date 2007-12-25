@@ -329,15 +329,17 @@ argument_list|)
 expr_stmt|;
 name|old_width
 operator|=
+name|gimp_image_get_width
+argument_list|(
 name|image
-operator|->
-name|width
+argument_list|)
 expr_stmt|;
 name|old_height
 operator|=
+name|gimp_image_get_height
+argument_list|(
 name|image
-operator|->
-name|height
+argument_list|)
 expr_stmt|;
 comment|/*  Push the image size to the stack  */
 name|gimp_image_undo_push_image_size

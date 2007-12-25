@@ -911,9 +911,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+name|gimp_image_get_width
+argument_list|(
 name|image
-operator|->
-name|width
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_size
@@ -929,9 +930,10 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
+name|gimp_image_get_height
+argument_list|(
 name|image
-operator|->
-name|height
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -945,9 +947,10 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
+name|gimp_image_get_width
+argument_list|(
 name|image
-operator|->
-name|width
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_set_refval
@@ -961,9 +964,10 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
+name|gimp_image_get_height
+argument_list|(
 name|image
-operator|->
-name|height
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  The radio frame  */

@@ -495,13 +495,15 @@ name|str
 argument_list|,
 literal|"     viewBox=\"0 0 %d %d\">\n"
 argument_list|,
+name|gimp_image_get_width
+argument_list|(
 name|image
-operator|->
-name|width
+argument_list|)
 argument_list|,
+name|gimp_image_get_height
+argument_list|(
 name|image
-operator|->
-name|height
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -616,9 +618,10 @@ operator|=
 operator|(
 name|gdouble
 operator|)
+name|gimp_image_get_width
+argument_list|(
 name|image
-operator|->
-name|width
+argument_list|)
 operator|/
 name|image
 operator|->
@@ -629,9 +632,10 @@ operator|=
 operator|(
 name|gdouble
 operator|)
+name|gimp_image_get_height
+argument_list|(
 name|image
-operator|->
-name|height
+argument_list|)
 operator|/
 name|image
 operator|->

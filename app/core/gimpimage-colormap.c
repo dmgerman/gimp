@@ -240,9 +240,10 @@ elseif|else
 if|if
 condition|(
 operator|!
+name|gimp_image_base_type
+argument_list|(
 name|image
-operator|->
-name|base_type
+argument_list|)
 operator|==
 name|GIMP_INDEXED
 condition|)

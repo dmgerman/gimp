@@ -165,9 +165,10 @@ if|if
 condition|(
 name|yposition
 operator|<=
+name|gimp_image_get_height
+argument_list|(
 name|image
-operator|->
-name|height
+argument_list|)
 condition|)
 block|{
 name|GimpGuide
@@ -323,9 +324,10 @@ if|if
 condition|(
 name|xposition
 operator|<=
+name|gimp_image_get_width
+argument_list|(
 name|image
-operator|->
-name|width
+argument_list|)
 condition|)
 block|{
 name|GimpGuide

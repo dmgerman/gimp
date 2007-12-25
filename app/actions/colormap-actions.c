@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-colormap.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpactiongroup.h"
 end_include
 
@@ -296,9 +302,10 @@ name|GIMP_INDEXED
 expr_stmt|;
 name|num_colors
 operator|=
+name|gimp_image_get_colormap_size
+argument_list|(
 name|image
-operator|->
-name|num_cols
+argument_list|)
 expr_stmt|;
 block|}
 if|if
