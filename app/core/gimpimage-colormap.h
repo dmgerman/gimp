@@ -61,7 +61,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 parameter_list|,
 name|gint
 name|n_colors

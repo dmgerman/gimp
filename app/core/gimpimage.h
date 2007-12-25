@@ -283,17 +283,17 @@ name|GimpImageBaseType
 name|base_type
 decl_stmt|;
 comment|/*  base gimp_image type         */
-DECL|member|cmap
+DECL|member|colormap
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 decl_stmt|;
-comment|/*  colormap--for indexed        */
-DECL|member|num_cols
+comment|/*  colormap (for indexed)       */
+DECL|member|n_colors
 name|gint
-name|num_cols
+name|n_colors
 decl_stmt|;
-comment|/*  number of cols--for indexed  */
+comment|/*  # of colors (for indexed)    */
 DECL|member|dirty
 name|gint
 name|dirty

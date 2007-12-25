@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1905330103
+DECL|enum|__anon2c2dc6100103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2128,7 +2128,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -2595,7 +2595,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -2613,7 +2613,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -2633,7 +2633,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -2797,7 +2797,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -2815,7 +2815,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -2835,7 +2835,7 @@ index|]
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|col
 operator|*
@@ -3350,7 +3350,7 @@ name|col
 operator|=
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|+
 name|editor
 operator|->

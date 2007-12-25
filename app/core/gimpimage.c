@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b03c0300103
+DECL|enum|__anon2bb8377b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b03c0300203
+DECL|enum|__anon2bb8377b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2406,13 +2406,13 @@ name|GIMP_RGB
 expr_stmt|;
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|NULL
 expr_stmt|;
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|=
 literal|0
 expr_stmt|;
@@ -3093,13 +3093,13 @@ case|:
 comment|/* always allocate 256 colors for the colormap */
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|=
 literal|0
 expr_stmt|;
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|g_new0
 argument_list|(
@@ -3707,19 +3707,19 @@ if|if
 condition|(
 name|image
 operator|->
-name|cmap
+name|colormap
 condition|)
 block|{
 name|g_free
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 argument_list|)
 expr_stmt|;
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|NULL
 expr_stmt|;
@@ -4156,9 +4156,10 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
+name|gimp_image_get_colormap
+argument_list|(
 name|image
-operator|->
-name|cmap
+argument_list|)
 condition|)
 name|memsize
 operator|+=
@@ -7454,7 +7455,7 @@ name|color_index
 operator|<
 name|image
 operator|->
-name|num_cols
+name|n_colors
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -8470,7 +8471,7 @@ operator|++
 operator|=
 name|src_image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|index
 operator|++
@@ -8482,7 +8483,7 @@ operator|++
 operator|=
 name|src_image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|index
 operator|++
@@ -8494,7 +8495,7 @@ operator|++
 operator|=
 name|src_image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|index
 operator|++

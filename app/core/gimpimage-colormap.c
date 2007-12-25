@@ -83,7 +83,7 @@ expr_stmt|;
 return|return
 name|image
 operator|->
-name|cmap
+name|colormap
 return|;
 block|}
 end_function
@@ -112,14 +112,14 @@ expr_stmt|;
 return|return
 name|image
 operator|->
-name|num_cols
+name|n_colors
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_set_colormap (GimpImage * image,const guchar * cmap,gint n_colors,gboolean push_undo)
+DECL|function|gimp_image_set_colormap (GimpImage * image,const guchar * colormap,gint n_colors,gboolean push_undo)
 name|gimp_image_set_colormap
 parameter_list|(
 name|GimpImage
@@ -129,7 +129,7 @@ parameter_list|,
 specifier|const
 name|guchar
 modifier|*
-name|cmap
+name|colormap
 parameter_list|,
 name|gint
 name|n_colors
@@ -148,7 +148,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 operator|||
@@ -186,13 +186,13 @@ if|if
 condition|(
 name|image
 operator|->
-name|cmap
+name|colormap
 condition|)
 name|memset
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 argument_list|,
 literal|0
 argument_list|,
@@ -201,7 +201,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|cmap
+name|colormap
 condition|)
 block|{
 if|if
@@ -209,11 +209,11 @@ condition|(
 operator|!
 name|image
 operator|->
-name|cmap
+name|colormap
 condition|)
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|g_new0
 argument_list|(
@@ -226,9 +226,9 @@ name|memcpy
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 argument_list|,
-name|cmap
+name|colormap
 argument_list|,
 name|n_colors
 operator|*
@@ -252,25 +252,25 @@ if|if
 condition|(
 name|image
 operator|->
-name|cmap
+name|colormap
 condition|)
 name|g_free
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 argument_list|)
 expr_stmt|;
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|=
 name|NULL
 expr_stmt|;
 block|}
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|=
 name|n_colors
 expr_stmt|;
@@ -314,7 +314,7 @@ name|g_return_if_fail
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -329,7 +329,7 @@ name|color_index
 operator|<
 name|image
 operator|->
-name|num_cols
+name|n_colors
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -345,7 +345,7 @@ name|color
 argument_list|,
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|color_index
 operator|*
@@ -354,7 +354,7 @@ index|]
 argument_list|,
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|color_index
 operator|*
@@ -365,7 +365,7 @@ index|]
 argument_list|,
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|color_index
 operator|*
@@ -413,7 +413,7 @@ name|g_return_if_fail
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -428,7 +428,7 @@ name|color_index
 operator|<
 name|image
 operator|->
-name|num_cols
+name|n_colors
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -459,7 +459,7 @@ argument_list|,
 operator|&
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|color_index
 operator|*
@@ -469,7 +469,7 @@ argument_list|,
 operator|&
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|color_index
 operator|*
@@ -481,7 +481,7 @@ argument_list|,
 operator|&
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|color_index
 operator|*
@@ -528,7 +528,7 @@ name|g_return_if_fail
 argument_list|(
 name|image
 operator|->
-name|cmap
+name|colormap
 operator|!=
 name|NULL
 argument_list|)
@@ -537,7 +537,7 @@ name|g_return_if_fail
 argument_list|(
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|<
 literal|256
 argument_list|)
@@ -566,11 +566,11 @@ argument_list|,
 operator|&
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|*
 literal|3
 index|]
@@ -578,11 +578,11 @@ argument_list|,
 operator|&
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|*
 literal|3
 operator|+
@@ -592,11 +592,11 @@ argument_list|,
 operator|&
 name|image
 operator|->
-name|cmap
+name|colormap
 index|[
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|*
 literal|3
 operator|+
@@ -606,7 +606,7 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|->
-name|num_cols
+name|n_colors
 operator|++
 expr_stmt|;
 name|gimp_image_colormap_changed
