@@ -714,32 +714,29 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_SPEW
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"\n\n%s: URI = %s\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"URI = %s"
 argument_list|,
 name|uri
 argument_list|)
 expr_stmt|;
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: basename = %s\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"basename = %s"
 argument_list|,
 name|basename
 argument_list|)
 expr_stmt|;
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: selected save_proc: %s\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"selected save_proc: %s"
 argument_list|,
 name|save_proc
 operator|&&
@@ -754,11 +751,11 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: URI save_proc: %s\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"URI save_proc: %s"
 argument_list|,
 name|uri_proc
 condition|?
@@ -769,11 +766,11 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
-name|g_print
+name|GIMP_LOG
 argument_list|(
-literal|"%s: basename save_proc: %s\n\n"
+name|SAVE_DIALOG
 argument_list|,
-name|G_STRFUNC
+literal|"basename save_proc: %s"
 argument_list|,
 name|basename_proc
 operator|&&
@@ -788,8 +785,6 @@ else|:
 literal|"NULL"
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 comment|/*  first check if the user entered an extension at all  */
 if|if
 condition|(
