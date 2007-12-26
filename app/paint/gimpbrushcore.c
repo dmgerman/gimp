@@ -109,7 +109,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299b02940103
+DECL|enum|__anon29a42bb80103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1610,6 +1610,7 @@ modifier|*
 name|x
 parameter_list|)
 block|{
+specifier|const
 name|gdouble
 name|integral
 init|=
@@ -1619,6 +1620,7 @@ operator|*
 name|x
 argument_list|)
 decl_stmt|;
+specifier|const
 name|gdouble
 name|fractional
 init|=
@@ -1633,6 +1635,7 @@ name|fractional
 operator|<
 name|EPSILON
 condition|)
+block|{
 operator|*
 name|x
 operator|=
@@ -1640,6 +1643,7 @@ name|integral
 operator|+
 name|EPSILON
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -1651,6 +1655,7 @@ operator|-
 name|EPSILON
 operator|)
 condition|)
+block|{
 operator|*
 name|x
 operator|=
@@ -1662,6 +1667,7 @@ operator|-
 name|EPSILON
 operator|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -3504,8 +3510,6 @@ name|NULL
 decl_stmt|;
 name|gdouble
 name|scale
-init|=
-literal|1.0
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -4237,7 +4241,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|p
 index|[
 name|i
@@ -4250,7 +4253,6 @@ operator|+
 literal|1
 index|]
 expr_stmt|;
-block|}
 name|p
 index|[
 name|i
@@ -4290,6 +4292,7 @@ decl_stmt|;
 name|gdouble
 name|left
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|m
@@ -4297,11 +4300,6 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|d
-decl_stmt|;
-name|guchar
-name|empty
-init|=
-name|TRANSPARENT_OPACITY
 decl_stmt|;
 specifier|const
 name|gint
@@ -4345,6 +4343,12 @@ name|accum
 index|[
 name|KERNEL_HEIGHT
 index|]
+decl_stmt|;
+specifier|const
+name|guchar
+name|empty
+init|=
+name|TRANSPARENT_OPACITY
 decl_stmt|;
 name|gint
 name|offs
@@ -5016,6 +5020,7 @@ index|[
 literal|256
 index|]
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|source
@@ -5024,14 +5029,15 @@ name|guchar
 modifier|*
 name|dest
 decl_stmt|;
+name|TempBuf
+modifier|*
+name|subsample_mask
+decl_stmt|;
+specifier|const
 name|guchar
 name|empty
 init|=
 name|TRANSPARENT_OPACITY
-decl_stmt|;
-name|TempBuf
-modifier|*
-name|subsample_mask
 decl_stmt|;
 name|gint
 name|i
@@ -5115,7 +5121,6 @@ directive|ifdef
 name|FANCY_PRESSURE
 comment|/* Create the pressure profile    *    * It is: I'(I) = tanh (20 * (pressure - 0.5) * I)           : pressure> 0.5    *        I'(I) = 1 - tanh (20 * (0.5 - pressure) * (1 - I)) : pressure< 0.5    *    * It looks like:    *    *    low pressure      medium pressure     high pressure    *    *         |                   /                  --    *         |                  /                  /    *        /                  /                  |    *      --                  /                   |    */
 block|{
-specifier|static
 name|gdouble
 name|map
 index|[
@@ -5459,6 +5464,7 @@ name|TempBuf
 modifier|*
 name|dest
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|m
@@ -5466,11 +5472,6 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|d
-decl_stmt|;
-name|guchar
-name|empty
-init|=
-name|TRANSPARENT_OPACITY
 decl_stmt|;
 name|gint
 name|dest_offset_x
@@ -5486,6 +5487,12 @@ name|gint
 name|i
 decl_stmt|,
 name|j
+decl_stmt|;
+specifier|const
+name|guchar
+name|empty
+init|=
+name|TRANSPARENT_OPACITY
 decl_stmt|;
 if|if
 condition|(
@@ -6724,6 +6731,11 @@ name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|mask
+decl_stmt|;
 name|guchar
 modifier|*
 name|b
@@ -6732,13 +6744,10 @@ name|guchar
 modifier|*
 name|p
 decl_stmt|;
-name|guchar
-modifier|*
-name|mask
-decl_stmt|;
 name|gdouble
 name|alpha
 decl_stmt|;
+specifier|const
 name|gdouble
 name|factor
 init|=
@@ -6750,8 +6759,6 @@ name|x_index
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|,
-name|byte_loop
 decl_stmt|;
 comment|/*  Make sure x, y are positive  */
 while|while
@@ -6849,6 +6856,9 @@ name|i
 operator|++
 control|)
 block|{
+name|gint
+name|byte_loop
+decl_stmt|;
 comment|/* attempt to avoid doing this calc twice in the loop */
 name|x_index
 operator|=
