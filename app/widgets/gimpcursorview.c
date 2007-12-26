@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2969089e0103
+DECL|enum|__anon2ab322cc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1731,6 +1731,12 @@ decl_stmt|;
 name|gint
 name|color_index
 decl_stmt|;
+name|gdouble
+name|xres
+decl_stmt|;
+name|gdouble
+name|yres
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CURSOR_VIEW
@@ -1758,6 +1764,17 @@ operator|=
 name|gimp_image_get_unit
 argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|gimp_image_get_resolution
+argument_list|(
+name|image
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
 argument_list|)
 expr_stmt|;
 name|in_image
@@ -1931,9 +1948,7 @@ name|x
 operator|*
 name|unit_factor
 operator|/
-name|image
-operator|->
-name|xresolution
+name|xres
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -1963,9 +1978,7 @@ name|y
 operator|*
 name|unit_factor
 operator|/
-name|image
-operator|->
-name|yresolution
+name|yres
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text

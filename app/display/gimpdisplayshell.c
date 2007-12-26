@@ -293,7 +293,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27700ee30103
+DECL|enum|__anon274b2bf60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27700ee30203
+DECL|enum|__anon274b2bf60203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4864,6 +4864,12 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|gdouble
+name|xres
+decl_stmt|;
+name|gdouble
+name|yres
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -4879,6 +4885,17 @@ operator|->
 name|display
 operator|->
 name|image
+expr_stmt|;
+name|gimp_image_get_resolution
+argument_list|(
+name|image
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
 expr_stmt|;
 name|shell
 operator|->
@@ -4897,9 +4914,7 @@ argument_list|(
 name|shell
 argument_list|)
 operator|/
-name|image
-operator|->
-name|xresolution
+name|xres
 operator|)
 expr_stmt|;
 name|shell
@@ -4919,9 +4934,7 @@ argument_list|(
 name|shell
 argument_list|)
 operator|/
-name|image
-operator|->
-name|yresolution
+name|yres
 operator|)
 expr_stmt|;
 name|shell

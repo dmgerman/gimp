@@ -148,7 +148,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b3975f0103
+DECL|enum|__anon278f1d9d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1778,6 +1778,23 @@ index|[
 literal|256
 index|]
 decl_stmt|;
+name|gdouble
+name|xres
+decl_stmt|;
+name|gdouble
+name|yres
+decl_stmt|;
+name|gimp_image_get_resolution
+argument_list|(
+name|image
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+expr_stmt|;
 comment|/*  pixel size  */
 name|g_snprintf
 argument_list|(
@@ -1898,9 +1915,7 @@ argument_list|)
 operator|*
 name|unit_factor
 operator|/
-name|image
-operator|->
-name|xresolution
+name|xres
 argument_list|,
 name|gimp_image_get_height
 argument_list|(
@@ -1909,9 +1924,7 @@ argument_list|)
 operator|*
 name|unit_factor
 operator|/
-name|image
-operator|->
-name|yresolution
+name|yres
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -1983,15 +1996,11 @@ argument_list|(
 literal|"%g Ã %g %s"
 argument_list|)
 argument_list|,
-name|image
-operator|->
-name|xresolution
+name|xres
 operator|/
 name|unit_factor
 argument_list|,
-name|image
-operator|->
-name|yresolution
+name|yres
 operator|/
 name|unit_factor
 argument_list|,

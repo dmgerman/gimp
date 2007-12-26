@@ -540,6 +540,23 @@ operator|!
 name|layer
 condition|)
 block|{
+name|gdouble
+name|xres
+decl_stmt|;
+name|gdouble
+name|yres
+decl_stmt|;
+name|gimp_image_get_resolution
+argument_list|(
+name|image
+argument_list|,
+operator|&
+name|xres
+argument_list|,
+operator|&
+name|yres
+argument_list|)
+expr_stmt|;
 comment|/*  The size labels  */
 name|label
 operator|=
@@ -841,9 +858,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|image
-operator|->
-name|xresolution
+name|xres
 argument_list|,
 name|FALSE
 argument_list|)
@@ -859,9 +874,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|image
-operator|->
-name|yresolution
+name|yres
 argument_list|,
 name|FALSE
 argument_list|)
