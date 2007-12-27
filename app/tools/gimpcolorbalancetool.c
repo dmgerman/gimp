@@ -81,46 +81,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|CYAN_RED
-define|#
-directive|define
-name|CYAN_RED
-value|(1<< 0)
-end_define
-
-begin_define
-DECL|macro|MAGENTA_GREEN
-define|#
-directive|define
-name|MAGENTA_GREEN
-value|(1<< 1)
-end_define
-
-begin_define
-DECL|macro|YELLOW_BLUE
-define|#
-directive|define
-name|YELLOW_BLUE
-value|(1<< 2)
-end_define
-
-begin_define
-DECL|macro|PRESERVE
-define|#
-directive|define
-name|PRESERVE
-value|(1<< 3)
-end_define
-
-begin_define
-DECL|macro|ALL
-define|#
-directive|define
-name|ALL
-value|(CYAN_RED | MAGENTA_GREEN | YELLOW_BLUE | PRESERVE)
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -202,9 +162,6 @@ parameter_list|(
 name|GimpColorBalanceTool
 modifier|*
 name|cb_tool
-parameter_list|,
-name|gint
-name|update
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -645,8 +602,6 @@ expr_stmt|;
 name|color_balance_update
 argument_list|(
 name|cb_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 return|return
@@ -1507,8 +1462,6 @@ expr_stmt|;
 name|color_balance_update
 argument_list|(
 name|cb_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1517,32 +1470,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_update (GimpColorBalanceTool * cb_tool,gint update)
+DECL|function|color_balance_update (GimpColorBalanceTool * cb_tool)
 name|color_balance_update
 parameter_list|(
 name|GimpColorBalanceTool
 modifier|*
 name|cb_tool
-parameter_list|,
-name|gint
-name|update
 parameter_list|)
 block|{
 name|GimpTransferMode
 name|tm
-decl_stmt|;
-name|tm
-operator|=
+init|=
 name|cb_tool
 operator|->
 name|transfer_mode
-expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|CYAN_RED
-condition|)
+decl_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
 name|cb_tool
@@ -1559,12 +1501,6 @@ name|tm
 index|]
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|MAGENTA_GREEN
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|cb_tool
@@ -1581,12 +1517,6 @@ name|tm
 index|]
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|YELLOW_BLUE
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|cb_tool
@@ -1603,12 +1533,6 @@ name|tm
 index|]
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|PRESERVE
-condition|)
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -1656,8 +1580,6 @@ expr_stmt|;
 name|color_balance_update
 argument_list|(
 name|cb_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1692,8 +1614,6 @@ expr_stmt|;
 name|color_balance_update
 argument_list|(
 name|cb_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview
