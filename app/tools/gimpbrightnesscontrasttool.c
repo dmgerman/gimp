@@ -107,30 +107,6 @@ name|SLIDER_WIDTH
 value|200
 end_define
 
-begin_define
-DECL|macro|BRIGHTNESS
-define|#
-directive|define
-name|BRIGHTNESS
-value|0x1
-end_define
-
-begin_define
-DECL|macro|CONTRAST
-define|#
-directive|define
-name|CONTRAST
-value|0x2
-end_define
-
-begin_define
-DECL|macro|ALL
-define|#
-directive|define
-name|ALL
-value|(BRIGHTNESS | CONTRAST)
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -289,9 +265,6 @@ parameter_list|(
 name|GimpBrightnessContrastTool
 modifier|*
 name|bc_tool
-parameter_list|,
-name|gint
-name|update
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -693,8 +666,6 @@ expr_stmt|;
 name|brightness_contrast_update
 argument_list|(
 name|bc_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 return|return
@@ -1060,8 +1031,6 @@ expr_stmt|;
 name|brightness_contrast_update
 argument_list|(
 name|bc_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview
@@ -1396,8 +1365,6 @@ expr_stmt|;
 name|brightness_contrast_update
 argument_list|(
 name|bc_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1406,23 +1373,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_update (GimpBrightnessContrastTool * bc_tool,gint update)
+DECL|function|brightness_contrast_update (GimpBrightnessContrastTool * bc_tool)
 name|brightness_contrast_update
 parameter_list|(
 name|GimpBrightnessContrastTool
 modifier|*
 name|bc_tool
-parameter_list|,
-name|gint
-name|update
 parameter_list|)
 block|{
-if|if
-condition|(
-name|update
-operator|&
-name|BRIGHTNESS
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|bc_tool
@@ -1434,12 +1392,6 @@ operator|->
 name|brightness
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|CONTRAST
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|bc_tool
