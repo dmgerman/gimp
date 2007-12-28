@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2271980103
+DECL|enum|__anon2a3e400a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -237,7 +237,7 @@ begin_function_decl
 specifier|static
 name|cairo_pattern_t
 modifier|*
-name|gimp_view_renderer_create_pattern
+name|gimp_view_renderer_create_background
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
@@ -2754,7 +2754,7 @@ name|renderer
 operator|->
 name|pattern
 operator|=
-name|gimp_view_renderer_create_pattern
+name|gimp_view_renderer_create_background
 argument_list|(
 name|renderer
 argument_list|,
@@ -2925,10 +2925,15 @@ operator|==
 name|CAIRO_CONTENT_COLOR_ALPHA
 condition|)
 block|{
-name|cairo_pattern_t
-modifier|*
+if|if
+condition|(
+operator|!
+name|renderer
+operator|->
 name|pattern
-decl_stmt|;
+condition|)
+name|renderer
+operator|->
 name|pattern
 operator|=
 name|gimp_cairo_checkerboard_create
@@ -2942,11 +2947,8 @@ name|cairo_set_source
 argument_list|(
 name|cr
 argument_list|,
-name|pattern
-argument_list|)
-expr_stmt|;
-name|cairo_pattern_destroy
-argument_list|(
+name|renderer
+operator|->
 name|pattern
 argument_list|)
 expr_stmt|;
@@ -4442,12 +4444,16 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/* This function creates a background pattern from a stock icon  * if renderer->bg_stock_id is set.  */
+end_comment
+
 begin_function
 specifier|static
 name|cairo_pattern_t
 modifier|*
-DECL|function|gimp_view_renderer_create_pattern (GimpViewRenderer * renderer,GtkWidget * widget)
-name|gimp_view_renderer_create_pattern
+DECL|function|gimp_view_renderer_create_background (GimpViewRenderer * renderer,GtkWidget * widget)
+name|gimp_view_renderer_create_background
 parameter_list|(
 name|GimpViewRenderer
 modifier|*
