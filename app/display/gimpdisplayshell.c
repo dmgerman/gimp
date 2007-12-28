@@ -287,7 +287,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7e5280103
+DECL|enum|__anon27a664c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -300,7 +300,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c7e5280203
+DECL|enum|__anon27a664c50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4953,32 +4953,28 @@ name|shell
 operator|->
 name|x_src_dec
 operator|=
-name|ceil
+name|SCALEX
 argument_list|(
+name|shell
+argument_list|,
 name|gimp_image_get_width
 argument_list|(
 name|image
 argument_list|)
-operator|*
-name|shell
-operator|->
-name|scale_x
 argument_list|)
 expr_stmt|;
 name|shell
 operator|->
 name|y_src_dec
 operator|=
-name|ceil
+name|SCALEY
 argument_list|(
+name|shell
+argument_list|,
 name|gimp_image_get_height
 argument_list|(
 name|image
 argument_list|)
-operator|*
-name|shell
-operator|->
-name|scale_y
 argument_list|)
 expr_stmt|;
 block|}

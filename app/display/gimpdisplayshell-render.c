@@ -2606,21 +2606,6 @@ operator|<<
 name|level
 operator|)
 expr_stmt|;
-name|info
-operator|->
-name|src_y
-operator|=
-operator|(
-name|gdouble
-operator|)
-name|info
-operator|->
-name|y
-operator|/
-name|info
-operator|->
-name|scaley
-expr_stmt|;
 comment|/* use Bresenham like stepping */
 name|info
 operator|->
@@ -2717,11 +2702,11 @@ operator|)
 name|info
 operator|->
 name|y_dest_inc
+operator|)
 operator|*
 name|info
 operator|->
 name|y
-operator|)
 operator|+
 name|info
 operator|->
