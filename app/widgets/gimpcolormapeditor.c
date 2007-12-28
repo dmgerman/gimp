@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2dc6100103
+DECL|enum|__anon278063a30103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
