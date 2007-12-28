@@ -72,6 +72,14 @@ name|cr
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|light
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|dark
 parameter_list|)
 function_decl|;
 end_function_decl

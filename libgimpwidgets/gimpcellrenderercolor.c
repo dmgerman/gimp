@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad8426f0103
+DECL|enum|__anon27a7b8b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1072,6 +1072,10 @@ argument_list|(
 name|cr
 argument_list|,
 name|GIMP_CHECK_SIZE_SM
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|cairo_set_source

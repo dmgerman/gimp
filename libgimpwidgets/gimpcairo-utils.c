@@ -287,13 +287,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_checkerboard_create:  * @cr:   Cairo context  * @size: check size  *  * Create a repeating checkerboard pattern.  *  * Return value: a new Cairo pattern that can be used as a source on @cr.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_checkerboard_create:  * @cr:    Cairo context  * @size:  check size  * @light: light check color or %NULL to use the default light gray  * @dark:  dark check color or %NULL to use the default dark gray  *  * Create a repeating checkerboard pattern.  *  * Return value: a new Cairo pattern that can be used as a source on @cr.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
 name|cairo_pattern_t
 modifier|*
-DECL|function|gimp_cairo_checkerboard_create (cairo_t * cr,gint size)
+DECL|function|gimp_cairo_checkerboard_create (cairo_t * cr,gint size,GimpRGB * light,GimpRGB * dark)
 name|gimp_cairo_checkerboard_create
 parameter_list|(
 name|cairo_t
@@ -302,6 +302,14 @@ name|cr
 parameter_list|,
 name|gint
 name|size
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|light
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|dark
 parameter_list|)
 block|{
 name|cairo_t
@@ -361,6 +369,18 @@ argument_list|(
 name|surface
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|light
+condition|)
+name|gimp_cairo_set_source_rgb
+argument_list|(
+name|context
+argument_list|,
+name|light
+argument_list|)
+expr_stmt|;
+else|else
 name|cairo_set_source_rgb
 argument_list|(
 name|context
@@ -403,6 +423,18 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|dark
+condition|)
+name|gimp_cairo_set_source_rgb
+argument_list|(
+name|context
+argument_list|,
+name|dark
+argument_list|)
+expr_stmt|;
+else|else
 name|cairo_set_source_rgb
 argument_list|(
 name|context
