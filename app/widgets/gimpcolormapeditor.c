@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon278063a30103
+DECL|enum|__anon28b9535d0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2218,9 +2218,15 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|gimp_render_light_check
+name|gimp_render_blend_dark_check
+index|[
+literal|0
+index|]
 else|:
-name|gimp_render_dark_check
+name|gimp_render_blend_light_check
+index|[
+literal|0
+index|]
 operator|)
 expr_stmt|;
 name|gtk_preview_draw_row
@@ -3044,9 +3050,15 @@ operator|&
 literal|0x4
 operator|)
 condition|?
-name|gimp_render_dark_check
+name|gimp_render_blend_dark_check
+index|[
+literal|0
+index|]
 else|:
-name|gimp_render_light_check
+name|gimp_render_blend_light_check
+index|[
+literal|0
+index|]
 expr_stmt|;
 block|}
 for|for

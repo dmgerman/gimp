@@ -24,6 +24,7 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -39,6 +40,7 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -73,10 +75,12 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|light
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|dark

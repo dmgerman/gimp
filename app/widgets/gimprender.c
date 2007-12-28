@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpcolor/gimpcolor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -71,22 +77,8 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  accelerate transparency of image scaling  */
+comment|/*  accelerate blending on the checkerboard  */
 end_comment
-
-begin_decl_stmt
-DECL|variable|gimp_render_dark_check
-name|guchar
-name|gimp_render_dark_check
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|gimp_render_light_check
-name|guchar
-name|gimp_render_light_check
-decl_stmt|;
-end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|gimp_render_check_buf
@@ -145,6 +137,22 @@ modifier|*
 name|gimp_render_blend_white
 init|=
 name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|light
+specifier|static
+name|GimpRGB
+name|light
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|dark
+specifier|static
+name|GimpRGB
+name|dark
 decl_stmt|;
 end_decl_stmt
 
@@ -319,6 +327,40 @@ block|}
 end_function
 
 begin_function
+specifier|const
+name|GimpRGB
+modifier|*
+DECL|function|gimp_render_light_check_color (void)
+name|gimp_render_light_check_color
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+operator|&
+name|light
+return|;
+block|}
+end_function
+
+begin_function
+specifier|const
+name|GimpRGB
+modifier|*
+DECL|function|gimp_render_dark_check_color (void)
+name|gimp_render_dark_check_color
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+operator|&
+name|dark
+return|;
+block|}
+end_function
+
+begin_function
 specifier|static
 name|void
 DECL|function|gimp_render_setup_notify (gpointer config,GParamSpec * param_spec,Gimp * gimp)
@@ -338,6 +380,12 @@ parameter_list|)
 block|{
 name|GimpCheckType
 name|check_type
+decl_stmt|;
+name|guchar
+name|dark_check
+decl_stmt|;
+name|guchar
+name|light_check
 decl_stmt|;
 name|gint
 name|i
@@ -361,10 +409,38 @@ argument_list|(
 name|check_type
 argument_list|,
 operator|&
-name|gimp_render_light_check
+name|light_check
 argument_list|,
 operator|&
-name|gimp_render_dark_check
+name|dark_check
+argument_list|)
+expr_stmt|;
+name|gimp_rgba_set_uchar
+argument_list|(
+operator|&
+name|light
+argument_list|,
+name|light_check
+argument_list|,
+name|light_check
+argument_list|,
+name|light_check
+argument_list|,
+literal|255
+argument_list|)
+expr_stmt|;
+name|gimp_rgba_set_uchar
+argument_list|(
+operator|&
+name|dark
+argument_list|,
+name|dark_check
+argument_list|,
+name|dark_check
+argument_list|,
+name|dark_check
+argument_list|,
+literal|255
 argument_list|)
 expr_stmt|;
 if|if
@@ -456,7 +532,7 @@ name|j
 operator|*
 name|i
 operator|+
-name|gimp_render_dark_check
+name|dark_check
 operator|*
 operator|(
 literal|255
@@ -488,7 +564,7 @@ name|j
 operator|*
 name|i
 operator|+
-name|gimp_render_light_check
+name|light_check
 operator|*
 operator|(
 literal|255
@@ -628,7 +704,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|gimp_render_dark_check
+name|dark_check
 expr_stmt|;
 name|gimp_render_check_buf
 index|[
@@ -639,7 +715,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|gimp_render_dark_check
+name|dark_check
 expr_stmt|;
 name|gimp_render_check_buf
 index|[
@@ -650,7 +726,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|gimp_render_dark_check
+name|dark_check
 expr_stmt|;
 block|}
 else|else
@@ -664,7 +740,7 @@ operator|+
 literal|0
 index|]
 operator|=
-name|gimp_render_light_check
+name|light_check
 expr_stmt|;
 name|gimp_render_check_buf
 index|[
@@ -675,7 +751,7 @@ operator|+
 literal|1
 index|]
 operator|=
-name|gimp_render_light_check
+name|light_check
 expr_stmt|;
 name|gimp_render_check_buf
 index|[
@@ -686,7 +762,7 @@ operator|+
 literal|2
 index|]
 operator|=
-name|gimp_render_light_check
+name|light_check
 expr_stmt|;
 block|}
 block|}

@@ -45,13 +45,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cairo_set_source_rgb (cairo_t * cr,GimpRGB * color)
+DECL|function|gimp_cairo_set_source_rgb (cairo_t * cr,const GimpRGB * color)
 name|gimp_cairo_set_source_rgb
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -83,13 +84,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_cairo_set_source_rgba (cairo_t * cr,GimpRGB * color)
+DECL|function|gimp_cairo_set_source_rgba (cairo_t * cr,const GimpRGB * color)
 name|gimp_cairo_set_source_rgba
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|color
@@ -293,7 +295,7 @@ end_comment
 begin_function
 name|cairo_pattern_t
 modifier|*
-DECL|function|gimp_cairo_checkerboard_create (cairo_t * cr,gint size,GimpRGB * light,GimpRGB * dark)
+DECL|function|gimp_cairo_checkerboard_create (cairo_t * cr,gint size,const GimpRGB * light,const GimpRGB * dark)
 name|gimp_cairo_checkerboard_create
 parameter_list|(
 name|cairo_t
@@ -303,10 +305,12 @@ parameter_list|,
 name|gint
 name|size
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|light
 parameter_list|,
+specifier|const
 name|GimpRGB
 modifier|*
 name|dark

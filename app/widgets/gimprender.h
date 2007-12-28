@@ -33,24 +33,6 @@ value|256
 end_define
 
 begin_comment
-comment|/* the dark and light checkerboard colors */
-end_comment
-
-begin_decl_stmt
-specifier|extern
-name|guchar
-name|gimp_render_dark_check
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|guchar
-name|gimp_render_light_check
-decl_stmt|;
-end_decl_stmt
-
-begin_comment
 comment|/* buffers that contain pre-rendered patterns/colors */
 end_comment
 
@@ -124,6 +106,28 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|GimpRGB
+modifier|*
+name|gimp_render_light_check_color
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|GimpRGB
+modifier|*
+name|gimp_render_dark_check_color
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
