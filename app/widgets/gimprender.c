@@ -628,7 +628,7 @@ DECL|macro|BUF_SIZE
 define|#
 directive|define
 name|BUF_SIZE
-value|(MAX (GIMP_RENDER_BUF_WIDTH, \                        GIMP_VIEWABLE_MAX_PREVIEW_SIZE) + 4)
+value|(GIMP_VIEWABLE_MAX_PREVIEW_SIZE + 4)
 name|gimp_render_check_buf
 operator|=
 name|g_new

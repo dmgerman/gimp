@@ -144,12 +144,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimprender.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -293,7 +287,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b2bf60103
+DECL|enum|__anon28c7e5280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +300,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274b2bf60203
+DECL|enum|__anon28c7e5280203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1137,9 +1131,9 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
-name|GIMP_RENDER_BUF_WIDTH
+name|GIMP_DISPLAY_RENDER_BUF_WIDTH
 operator|*
-name|GIMP_RENDER_BUF_HEIGHT
+name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 operator|*
 literal|3
 argument_list|)

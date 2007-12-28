@@ -16,22 +16,6 @@ directive|define
 name|__GIMP_RENDER_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_RENDER_BUF_WIDTH
-define|#
-directive|define
-name|GIMP_RENDER_BUF_WIDTH
-value|256
-end_define
-
-begin_define
-DECL|macro|GIMP_RENDER_BUF_HEIGHT
-define|#
-directive|define
-name|GIMP_RENDER_BUF_HEIGHT
-value|256
-end_define
-
 begin_comment
 comment|/* buffers that contain pre-rendered patterns/colors */
 end_comment

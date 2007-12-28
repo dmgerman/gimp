@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimprender.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
@@ -2561,7 +2555,7 @@ name|y2
 condition|;
 name|i
 operator|+=
-name|GIMP_RENDER_BUF_HEIGHT
+name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 control|)
 block|{
 for|for
@@ -2576,7 +2570,7 @@ name|x2
 condition|;
 name|j
 operator|+=
-name|GIMP_RENDER_BUF_WIDTH
+name|GIMP_DISPLAY_RENDER_BUF_WIDTH
 control|)
 block|{
 name|gint
@@ -2592,7 +2586,7 @@ name|x2
 operator|-
 name|j
 argument_list|,
-name|GIMP_RENDER_BUF_WIDTH
+name|GIMP_DISPLAY_RENDER_BUF_WIDTH
 argument_list|)
 expr_stmt|;
 name|dy
@@ -2603,7 +2597,7 @@ name|y2
 operator|-
 name|i
 argument_list|,
-name|GIMP_RENDER_BUF_HEIGHT
+name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_render
