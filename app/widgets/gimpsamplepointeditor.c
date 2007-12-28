@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28efd79b0103
+DECL|enum|__anon29e0de680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1646,6 +1646,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+if|if
+condition|(
+name|image_editor
+operator|->
+name|image
+condition|)
+block|{
 name|sample_points
 operator|=
 name|gimp_image_get_sample_points
@@ -1655,12 +1662,6 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image_editor
-operator|->
-name|image
-condition|)
 name|n_points
 operator|=
 name|MIN
@@ -1673,6 +1674,7 @@ name|sample_points
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 for|for
 control|(
 name|i
