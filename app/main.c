@@ -1290,6 +1290,15 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_gegl_ops_init
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function
 name|int
 DECL|function|main (int argc,char ** argv)
@@ -1699,6 +1708,9 @@ name|abort_message
 argument_list|)
 expr_stmt|;
 name|gimp_init_signal_handlers
+argument_list|()
+expr_stmt|;
+name|gimp_gegl_ops_init
 argument_list|()
 expr_stmt|;
 name|app_run
