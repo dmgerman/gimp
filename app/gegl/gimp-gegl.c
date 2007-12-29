@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
+file|"gegl-types.h"
 end_include
 
 begin_include
