@@ -16,17 +16,18 @@ directive|define
 name|__GIMP_GEGL_UTILS_H__
 end_define
 
-begin_function_decl
+begin_decl_stmt
 specifier|const
 name|Babl
 modifier|*
 name|gimp_bpp_to_babl_format
-parameter_list|(
+argument_list|(
 name|guint
 name|bpp
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_endif
 endif|#
