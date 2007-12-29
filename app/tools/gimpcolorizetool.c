@@ -105,54 +105,6 @@ name|DA_HEIGHT
 value|20
 end_define
 
-begin_define
-DECL|macro|HUE_SLIDER
-define|#
-directive|define
-name|HUE_SLIDER
-value|(1<< 0)
-end_define
-
-begin_define
-DECL|macro|SATURATION_SLIDER
-define|#
-directive|define
-name|SATURATION_SLIDER
-value|(1<< 1)
-end_define
-
-begin_define
-DECL|macro|LIGHTNESS_SLIDER
-define|#
-directive|define
-name|LIGHTNESS_SLIDER
-value|(1<< 2)
-end_define
-
-begin_define
-DECL|macro|DRAW
-define|#
-directive|define
-name|DRAW
-value|(1<< 3)
-end_define
-
-begin_define
-DECL|macro|SLIDERS
-define|#
-directive|define
-name|SLIDERS
-value|(HUE_SLIDER | LIGHTNESS_SLIDER | SATURATION_SLIDER)
-end_define
-
-begin_define
-DECL|macro|ALL
-define|#
-directive|define
-name|ALL
-value|(SLIDERS | DRAW)
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -229,14 +181,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|colorize_update
+name|colorize_update_sliders
 parameter_list|(
 name|GimpColorizeTool
 modifier|*
 name|col_tool
-parameter_list|,
-name|gint
-name|update
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -244,7 +193,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|colorize_hue_adj_update
+name|colorize_hue_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -260,7 +209,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|colorize_saturation_adj_update
+name|colorize_saturation_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -276,7 +225,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|colorize_lightness_adj_update
+name|colorize_lightness_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -598,6 +547,13 @@ operator|->
 name|colorize
 argument_list|)
 expr_stmt|;
+name|colorize_calculate
+argument_list|(
+name|col_tool
+operator|->
+name|colorize
+argument_list|)
+expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -612,11 +568,9 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-name|colorize_update
+name|colorize_update_sliders
 argument_list|(
 name|col_tool
-argument_list|,
-name|ALL
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview
@@ -915,7 +869,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|colorize_hue_adj_update
+name|colorize_hue_changed
 argument_list|)
 argument_list|,
 name|col_tool
@@ -1004,7 +958,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|colorize_saturation_adj_update
+name|colorize_saturation_changed
 argument_list|)
 argument_list|,
 name|col_tool
@@ -1092,7 +1046,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|colorize_lightness_adj_update
+name|colorize_lightness_changed
 argument_list|)
 argument_list|,
 name|col_tool
@@ -1128,11 +1082,16 @@ operator|->
 name|colorize
 argument_list|)
 expr_stmt|;
-name|colorize_update
+name|colorize_calculate
 argument_list|(
 name|col_tool
-argument_list|,
-name|ALL
+operator|->
+name|colorize
+argument_list|)
+expr_stmt|;
+name|colorize_update_sliders
+argument_list|(
+name|col_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -1141,30 +1100,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorize_update (GimpColorizeTool * col_tool,gint update)
-name|colorize_update
+DECL|function|colorize_update_sliders (GimpColorizeTool * col_tool)
+name|colorize_update_sliders
 parameter_list|(
 name|GimpColorizeTool
 modifier|*
 name|col_tool
-parameter_list|,
-name|gint
-name|update
 parameter_list|)
 block|{
-name|colorize_calculate
-argument_list|(
-name|col_tool
-operator|->
-name|colorize
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|HUE_SLIDER
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
@@ -1181,12 +1124,6 @@ operator|->
 name|hue
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|SATURATION_SLIDER
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
@@ -1203,12 +1140,6 @@ operator|->
 name|saturation
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|update
-operator|&
-name|LIGHTNESS_SLIDER
-condition|)
 name|gtk_adjustment_set_value
 argument_list|(
 name|GTK_ADJUSTMENT
@@ -1231,8 +1162,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorize_hue_adj_update (GtkAdjustment * adjustment,GimpColorizeTool * col_tool)
-name|colorize_hue_adj_update
+DECL|function|colorize_hue_changed (GtkAdjustment * adjustment,GimpColorizeTool * col_tool)
+name|colorize_hue_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1266,11 +1197,11 @@ name|adjustment
 operator|->
 name|value
 expr_stmt|;
-name|colorize_update
+name|colorize_calculate
 argument_list|(
 name|col_tool
-argument_list|,
-name|DRAW
+operator|->
+name|colorize
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview
@@ -1288,8 +1219,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorize_saturation_adj_update (GtkAdjustment * adjustment,GimpColorizeTool * col_tool)
-name|colorize_saturation_adj_update
+DECL|function|colorize_saturation_changed (GtkAdjustment * adjustment,GimpColorizeTool * col_tool)
+name|colorize_saturation_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1323,11 +1254,11 @@ name|adjustment
 operator|->
 name|value
 expr_stmt|;
-name|colorize_update
+name|colorize_calculate
 argument_list|(
 name|col_tool
-argument_list|,
-name|DRAW
+operator|->
+name|colorize
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview
@@ -1345,8 +1276,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorize_lightness_adj_update (GtkAdjustment * adjustment,GimpColorizeTool * col_tool)
-name|colorize_lightness_adj_update
+DECL|function|colorize_lightness_changed (GtkAdjustment * adjustment,GimpColorizeTool * col_tool)
+name|colorize_lightness_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1380,11 +1311,11 @@ name|adjustment
 operator|->
 name|value
 expr_stmt|;
-name|colorize_update
+name|colorize_calculate
 argument_list|(
 name|col_tool
-argument_list|,
-name|DRAW
+operator|->
+name|colorize
 argument_list|)
 expr_stmt|;
 name|gimp_image_map_tool_preview

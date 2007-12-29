@@ -260,7 +260,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|brightness_contrast_update
+name|brightness_contrast_update_sliders
 parameter_list|(
 name|GimpBrightnessContrastTool
 modifier|*
@@ -663,7 +663,7 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-name|brightness_contrast_update
+name|brightness_contrast_update_sliders
 argument_list|(
 name|bc_tool
 argument_list|)
@@ -1028,7 +1028,7 @@ argument_list|,
 literal|127.0
 argument_list|)
 expr_stmt|;
-name|brightness_contrast_update
+name|brightness_contrast_update_sliders
 argument_list|(
 name|bc_tool
 argument_list|)
@@ -1362,7 +1362,7 @@ name|contrast
 operator|=
 literal|0.0
 expr_stmt|;
-name|brightness_contrast_update
+name|brightness_contrast_update_sliders
 argument_list|(
 name|bc_tool
 argument_list|)
@@ -1373,8 +1373,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|brightness_contrast_update (GimpBrightnessContrastTool * bc_tool)
-name|brightness_contrast_update
+DECL|function|brightness_contrast_update_sliders (GimpBrightnessContrastTool * bc_tool)
+name|brightness_contrast_update_sliders
 parameter_list|(
 name|GimpBrightnessContrastTool
 modifier|*

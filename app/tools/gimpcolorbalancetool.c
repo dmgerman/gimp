@@ -201,7 +201,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|color_balance_preserve_update
+name|color_balance_preserve_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -217,7 +217,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|color_balance_cr_adjustment_update
+name|color_balance_cr_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -233,7 +233,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|color_balance_mg_adjustment_update
+name|color_balance_mg_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -249,7 +249,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|color_balance_yb_adjustment_update
+name|color_balance_yb_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1190,7 +1190,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|color_balance_cr_adjustment_update
+name|color_balance_cr_changed
 argument_list|)
 argument_list|,
 name|cb_tool
@@ -1227,7 +1227,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|color_balance_mg_adjustment_update
+name|color_balance_mg_changed
 argument_list|)
 argument_list|,
 name|cb_tool
@@ -1264,7 +1264,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|color_balance_yb_adjustment_update
+name|color_balance_yb_changed
 argument_list|)
 argument_list|,
 name|cb_tool
@@ -1410,7 +1410,7 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|color_balance_preserve_update
+name|color_balance_preserve_toggled
 argument_list|)
 argument_list|,
 name|cb_tool
@@ -1630,8 +1630,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_preserve_update (GtkWidget * widget,GimpColorBalanceTool * cb_tool)
-name|color_balance_preserve_update
+DECL|function|color_balance_preserve_toggled (GtkWidget * widget,GimpColorBalanceTool * cb_tool)
+name|color_balance_preserve_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1644,16 +1644,14 @@ parameter_list|)
 block|{
 name|gboolean
 name|active
-decl_stmt|;
-name|active
-operator|=
+init|=
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
 operator|->
 name|active
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|cb_tool
@@ -1688,8 +1686,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_cr_adjustment_update (GtkAdjustment * adjustment,GimpColorBalanceTool * cb_tool)
-name|color_balance_cr_adjustment_update
+DECL|function|color_balance_cr_changed (GtkAdjustment * adjustment,GimpColorBalanceTool * cb_tool)
+name|color_balance_cr_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1702,13 +1700,11 @@ parameter_list|)
 block|{
 name|GimpTransferMode
 name|tm
-decl_stmt|;
-name|tm
-operator|=
+init|=
 name|cb_tool
 operator|->
 name|transfer_mode
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|cb_tool
@@ -1753,8 +1749,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_mg_adjustment_update (GtkAdjustment * adjustment,GimpColorBalanceTool * cb_tool)
-name|color_balance_mg_adjustment_update
+DECL|function|color_balance_mg_changed (GtkAdjustment * adjustment,GimpColorBalanceTool * cb_tool)
+name|color_balance_mg_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1767,13 +1763,11 @@ parameter_list|)
 block|{
 name|GimpTransferMode
 name|tm
-decl_stmt|;
-name|tm
-operator|=
+init|=
 name|cb_tool
 operator|->
 name|transfer_mode
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|cb_tool
@@ -1818,8 +1812,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|color_balance_yb_adjustment_update (GtkAdjustment * adjustment,GimpColorBalanceTool * cb_tool)
-name|color_balance_yb_adjustment_update
+DECL|function|color_balance_yb_changed (GtkAdjustment * adjustment,GimpColorBalanceTool * cb_tool)
+name|color_balance_yb_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -1832,13 +1826,11 @@ parameter_list|)
 block|{
 name|GimpTransferMode
 name|tm
-decl_stmt|;
-name|tm
-operator|=
+init|=
 name|cb_tool
 operator|->
 name|transfer_mode
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|cb_tool

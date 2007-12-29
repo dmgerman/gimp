@@ -459,7 +459,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_low_input_adjustment_update
+name|levels_low_input_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -475,7 +475,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_gamma_adjustment_update
+name|levels_gamma_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -491,7 +491,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_linear_gamma_adjustment_update
+name|levels_linear_gamma_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -507,7 +507,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_high_input_adjustment_update
+name|levels_high_input_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -523,7 +523,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_low_output_adjustment_update
+name|levels_low_output_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -539,7 +539,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|levels_high_output_adjustment_update
+name|levels_high_output_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -2402,7 +2402,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_low_input_adjustment_update
+name|levels_low_input_changed
 argument_list|)
 argument_list|,
 name|tool
@@ -2501,7 +2501,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_gamma_adjustment_update
+name|levels_gamma_changed
 argument_list|)
 argument_list|,
 name|tool
@@ -2539,7 +2539,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_linear_gamma_adjustment_update
+name|levels_linear_gamma_changed
 argument_list|)
 argument_list|,
 name|tool
@@ -2693,7 +2693,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_high_input_adjustment_update
+name|levels_high_input_changed
 argument_list|)
 argument_list|,
 name|tool
@@ -3112,7 +3112,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_low_output_adjustment_update
+name|levels_low_output_changed
 argument_list|)
 argument_list|,
 name|tool
@@ -3199,7 +3199,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|levels_high_output_adjustment_update
+name|levels_high_output_changed
 argument_list|)
 argument_list|,
 name|tool
@@ -4825,8 +4825,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_linear_gamma_adjustment_update (GtkAdjustment * adjustment,GimpLevelsTool * tool)
-name|levels_linear_gamma_adjustment_update
+DECL|function|levels_linear_gamma_changed (GtkAdjustment * adjustment,GimpLevelsTool * tool)
+name|levels_linear_gamma_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -4934,8 +4934,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_low_input_adjustment_update (GtkAdjustment * adjustment,GimpLevelsTool * tool)
-name|levels_low_input_adjustment_update
+DECL|function|levels_low_input_changed (GtkAdjustment * adjustment,GimpLevelsTool * tool)
+name|levels_low_input_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -5040,8 +5040,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_gamma_adjustment_update (GtkAdjustment * adjustment,GimpLevelsTool * tool)
-name|levels_gamma_adjustment_update
+DECL|function|levels_gamma_changed (GtkAdjustment * adjustment,GimpLevelsTool * tool)
+name|levels_gamma_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -5110,8 +5110,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_high_input_adjustment_update (GtkAdjustment * adjustment,GimpLevelsTool * tool)
-name|levels_high_input_adjustment_update
+DECL|function|levels_high_input_changed (GtkAdjustment * adjustment,GimpLevelsTool * tool)
+name|levels_high_input_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -5216,8 +5216,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_low_output_adjustment_update (GtkAdjustment * adjustment,GimpLevelsTool * tool)
-name|levels_low_output_adjustment_update
+DECL|function|levels_low_output_changed (GtkAdjustment * adjustment,GimpLevelsTool * tool)
+name|levels_low_output_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -5282,8 +5282,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|levels_high_output_adjustment_update (GtkAdjustment * adjustment,GimpLevelsTool * tool)
-name|levels_high_output_adjustment_update
+DECL|function|levels_high_output_changed (GtkAdjustment * adjustment,GimpLevelsTool * tool)
+name|levels_high_output_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
