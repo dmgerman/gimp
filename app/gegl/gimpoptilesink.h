@@ -1,32 +1,20 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpops.c  * Copyright (C) 2007 Ãyvind KolÃ¥s<pippin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationtilesink.h  * Copyright (C) 2007 Ãyvind KolÃ¥s<pippin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GIMP_OPERATION_TILE_SINK_H
+name|__GIMP_OPERATION_TILE_SINK_H__
 end_ifndef
 
 begin_define
-DECL|macro|_GIMP_OPERATION_TILE_SINK_H
+DECL|macro|__GIMP_OPERATION_TILE_SINK_H__
 define|#
 directive|define
-name|_GIMP_OPERATION_TILE_SINK_H
+name|__GIMP_OPERATION_TILE_SINK_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl/gegl-types.h"
-end_include
 
 begin_include
 include|#
@@ -34,24 +22,15 @@ directive|include
 file|"gegl/gegl-operation-sink.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
-
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GIMP_TYPE_OPERATION_TILE_SINK
 define|#
 directive|define
 name|GIMP_TYPE_OPERATION_TILE_SINK
 value|(gimp_operation_tile_sink_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_OPERATION_TILE_SINK (obj)
 define|#
 directive|define
@@ -60,6 +39,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_OPERATION_TILE_SINK, GimpOperationTileSink))
+end_define
+
+begin_define
 DECL|macro|GIMP_OPERATION_TILE_SINK_CLASS (klass)
 define|#
 directive|define
@@ -68,6 +50,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_TILE_SINK, GimpOperationTileSinkClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_OPERATION_TILE_SINK_GET_CLASS (obj)
 define|#
 directive|define
@@ -76,32 +61,36 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GIMP_TYPE_OPERATION_TILE_SINK, GimpOperationTileSinkClass))
-DECL|typedef|GimpOperationTileSink
-typedef|typedef
-name|struct
-name|_GimpOperationTileSink
-name|GimpOperationTileSink
-typedef|;
-DECL|struct|_GimpOperationTileSink
-struct|struct
-name|_GimpOperationTileSink
-block|{
-DECL|member|operation_sink
-name|GeglOperationSinkClass
-name|operation_sink
-decl_stmt|;
-DECL|member|tile_manager
-name|gpointer
-name|tile_manager
-decl_stmt|;
-block|}
-struct|;
+end_define
+
+begin_typedef
 DECL|typedef|GimpOperationTileSinkClass
 typedef|typedef
 name|struct
 name|_GimpOperationTileSinkClass
 name|GimpOperationTileSinkClass
 typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpOperationTileSink
+struct|struct
+name|_GimpOperationTileSink
+block|{
+DECL|member|parent_instance
+name|GeglOperationSink
+name|parent_instance
+decl_stmt|;
+DECL|member|tile_manager
+name|TileManager
+modifier|*
+name|tile_manager
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpOperationTileSinkClass
 struct|struct
 name|_GimpOperationTileSinkClass
@@ -112,6 +101,9 @@ name|operation_sink_class
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gimp_operation_tile_sink_get_type
 argument_list|(
@@ -119,11 +111,7 @@ name|void
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_decl_stmt
 
 begin_endif
 endif|#
@@ -131,13 +119,8 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __cplusplus */
+comment|/* __GIMP_OPERATION_TILE_SINK_H__ */
 end_comment
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

@@ -6,6 +6,18 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"config.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -24,32 +36,45 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"base/pixel-region.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoptilesource.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app/base/base-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app/base/tile-manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"app/base/pixel-region.h"
-end_include
+begin_enum
+enum|enum
+DECL|enum|__anon27d833fe0103
+block|{
+DECL|enumerator|PROP_0
+name|PROP_0
+block|,
+DECL|enumerator|PROP_TILE_MANAGER
+name|PROP_TILE_MANAGER
+block|}
+enum|;
+end_enum
 
 begin_function_decl
 specifier|static
@@ -61,7 +86,7 @@ modifier|*
 name|gobject
 parameter_list|,
 name|guint
-name|prop_id
+name|property_id
 parameter_list|,
 name|GValue
 modifier|*
@@ -84,7 +109,7 @@ modifier|*
 name|gobject
 parameter_list|,
 name|guint
-name|prop_id
+name|property_id
 parameter_list|,
 specifier|const
 name|GValue
@@ -124,32 +149,6 @@ name|operation
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_enum
-enum|enum
-DECL|enum|__anon2c5b0feb0103
-block|{
-DECL|enumerator|PROP_0
-name|PROP_0
-block|,
-DECL|enumerator|PROP_TILE_MANAGER
-name|PROP_TILE_MANAGER
-block|}
-enum|;
-end_enum
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_operation_tile_source_init (GimpOperationTileSource * self)
-name|gimp_operation_tile_source_init
-parameter_list|(
-name|GimpOperationTileSource
-modifier|*
-name|self
-parameter_list|)
-block|{ }
-end_function
 
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpOperationTileSource,gimp_operation_tile_source,GEGL_TYPE_OPERATION_SOURCE)
@@ -193,7 +192,7 @@ argument_list|)
 decl_stmt|;
 name|GeglOperationSourceClass
 modifier|*
-name|operation_source_class
+name|source_class
 init|=
 name|GEGL_OPERATION_SOURCE_CLASS
 argument_list|(
@@ -212,17 +211,17 @@ name|get_property
 operator|=
 name|get_property
 expr_stmt|;
-name|operation_source_class
-operator|->
-name|process
-operator|=
-name|process
-expr_stmt|;
 name|operation_class
 operator|->
 name|get_defined_region
 operator|=
 name|get_defined_region
+expr_stmt|;
+name|source_class
+operator|->
+name|process
+operator|=
+name|process
 expr_stmt|;
 name|gegl_operation_class_set_name
 argument_list|(
@@ -240,24 +239,15 @@ name|PROP_TILE_MANAGER
 argument_list|,
 name|g_param_spec_pointer
 argument_list|(
-literal|"tile_manager"
+literal|"tile-manager"
 argument_list|,
-literal|"tile_manager"
+literal|"Tile Manager"
 argument_list|,
 literal|"The tile manager to use as a destination"
 argument_list|,
-call|(
-name|GParamFlags
-call|)
-argument_list|(
-operator|(
-name|G_PARAM_READABLE
-operator||
-name|G_PARAM_WRITABLE
-operator|)
+name|G_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -267,7 +257,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_property (GObject * object,guint prop_id,GValue * value,GParamSpec * pspec)
+DECL|function|gimp_operation_tile_source_init (GimpOperationTileSource * self)
+name|gimp_operation_tile_source_init
+parameter_list|(
+name|GimpOperationTileSource
+modifier|*
+name|self
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
 name|get_property
 parameter_list|(
 name|GObject
@@ -275,7 +278,7 @@ modifier|*
 name|object
 parameter_list|,
 name|guint
-name|prop_id
+name|property_id
 parameter_list|,
 name|GValue
 modifier|*
@@ -297,7 +300,7 @@ argument_list|)
 decl_stmt|;
 switch|switch
 condition|(
-name|prop_id
+name|property_id
 condition|)
 block|{
 case|case
@@ -322,7 +325,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_property (GObject * object,guint prop_id,const GValue * value,GParamSpec * pspec)
+DECL|function|set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
 name|set_property
 parameter_list|(
 name|GObject
@@ -330,7 +333,7 @@ modifier|*
 name|object
 parameter_list|,
 name|guint
-name|prop_id
+name|property_id
 parameter_list|,
 specifier|const
 name|GValue
@@ -353,7 +356,7 @@ argument_list|)
 decl_stmt|;
 switch|switch
 condition|(
-name|prop_id
+name|property_id
 condition|)
 block|{
 case|case
@@ -376,10 +379,10 @@ block|}
 end_function
 
 begin_function
-DECL|function|bpp_to_format (guint bpp)
 specifier|static
 name|Babl
 modifier|*
+DECL|function|bpp_to_format (guint bpp)
 name|bpp_to_format
 parameter_list|(
 name|guint
@@ -644,19 +647,6 @@ modifier|*
 name|operation
 parameter_list|)
 block|{
-name|GeglRectangle
-name|result
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-decl_stmt|;
 name|GimpOperationTileSource
 modifier|*
 name|self
@@ -666,18 +656,20 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
+name|GeglRectangle
+name|result
+init|=
+block|{
+literal|0
+block|, }
+decl_stmt|;
 if|if
 condition|(
-operator|!
 name|self
 operator|->
 name|tile_manager
 condition|)
 block|{
-return|return
-name|result
-return|;
-block|}
 name|result
 operator|.
 name|x
@@ -712,6 +704,7 @@ operator|->
 name|tile_manager
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|result
 return|;

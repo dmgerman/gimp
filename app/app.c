@@ -112,6 +112,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/gimp-gegl.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -575,6 +581,9 @@ argument_list|,
 name|use_cpu_accel
 argument_list|)
 expr_stmt|;
+name|gimp_gegl_init
+argument_list|()
+expr_stmt|;
 ifndef|#
 directive|ifndef
 name|GIMP_CONSOLE_COMPILATION
@@ -786,10 +795,10 @@ expr_stmt|;
 name|errors_exit
 argument_list|()
 expr_stmt|;
-name|base_exit
+name|gegl_exit
 argument_list|()
 expr_stmt|;
-name|gegl_exit
+name|base_exit
 argument_list|()
 expr_stmt|;
 block|}
@@ -861,11 +870,11 @@ argument_list|)
 expr_stmt|;
 else|#
 directive|else
-comment|/*  make sure that the swap files are removed before we quit */
-name|tile_swap_exit
+name|gegl_exit
 argument_list|()
 expr_stmt|;
-name|gegl_exit
+comment|/*  make sure that the swap files are removed before we quit */
+name|tile_swap_exit
 argument_list|()
 expr_stmt|;
 name|exit
