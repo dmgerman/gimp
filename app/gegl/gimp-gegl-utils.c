@@ -38,6 +38,19 @@ name|guint
 name|bpp
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|bpp
+operator|>
+literal|0
+operator|&&
+name|bpp
+operator|<=
+literal|4
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|bpp
@@ -80,11 +93,6 @@ literal|"R'G'B'A u8"
 argument_list|)
 return|;
 block|}
-name|g_warning
-argument_list|(
-literal|"bpp !(>0&&<=4)"
-argument_list|)
-expr_stmt|;
 return|return
 name|NULL
 return|;
