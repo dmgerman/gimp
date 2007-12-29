@@ -16,6 +16,35 @@ directive|define
 name|__TILE_MANAGER_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TYPE_TILE_MANAGER
+define|#
+directive|define
+name|GIMP_TYPE_TILE_MANAGER
+value|(gimp_tile_manager_get_type ())
+end_define
+
+begin_define
+DECL|macro|GIMP_VALUE_HOLDS_TILE_MANAGER (value)
+define|#
+directive|define
+name|GIMP_VALUE_HOLDS_TILE_MANAGER
+parameter_list|(
+name|value
+parameter_list|)
+value|(G_TYPE_CHECK_VALUE_TYPE ((value), GIMP_TYPE_TILE_MANAGER))
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_tile_manager_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* Creates a new tile manager with the specified width for the  *  toplevel. The toplevel size is used to compute the number of  *  levels and their size. Each level is 1/2 the width and height of  *  the level above it.  *  * The toplevel is level 0. The smallest level in the hierarchy  *  is "nlevels - 1". That level will be smaller than TILE_WIDTH x  *  TILE_HEIGHT  */
 end_comment

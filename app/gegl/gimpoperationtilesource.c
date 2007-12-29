@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"base/tile-manager.h"
 end_include
 
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba27a20103
+DECL|enum|__anon2920775f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -85,11 +79,23 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|tile_source_get_property
+name|gimp_operation_tile_source_finalize
 parameter_list|(
 name|GObject
 modifier|*
-name|gobject
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_operation_tile_source_get_property
+parameter_list|(
+name|GObject
+modifier|*
+name|object
 parameter_list|,
 name|guint
 name|property_id
@@ -108,11 +114,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|tile_source_set_property
+name|gimp_operation_tile_source_set_property
 parameter_list|(
 name|GObject
 modifier|*
-name|gobject
+name|object
 parameter_list|,
 name|guint
 name|property_id
@@ -132,7 +138,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GeglRectangle
-name|tile_source_get_defined_region
+name|gimp_operation_tile_source_get_defined_region
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -144,7 +150,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|tile_source_process
+name|gimp_operation_tile_source_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -167,6 +173,14 @@ argument_list|,
 argument|GEGL_TYPE_OPERATION_SOURCE
 argument_list|)
 end_macro
+
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_operation_tile_source_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -207,27 +221,33 @@ argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
+name|finalize
+operator|=
+name|gimp_operation_tile_source_finalize
+expr_stmt|;
+name|object_class
+operator|->
 name|set_property
 operator|=
-name|tile_source_set_property
+name|gimp_operation_tile_source_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|tile_source_get_property
+name|gimp_operation_tile_source_get_property
 expr_stmt|;
 name|operation_class
 operator|->
 name|get_defined_region
 operator|=
-name|tile_source_get_defined_region
+name|gimp_operation_tile_source_get_defined_region
 expr_stmt|;
 name|source_class
 operator|->
 name|process
 operator|=
-name|tile_source_process
+name|gimp_operation_tile_source_process
 expr_stmt|;
 name|gegl_operation_class_set_name
 argument_list|(
@@ -243,13 +263,15 @@ name|object_class
 argument_list|,
 name|PROP_TILE_MANAGER
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_boxed
 argument_list|(
 literal|"tile-manager"
 argument_list|,
 literal|"Tile Manager"
 argument_list|,
-literal|"The tile manager to use as a destination"
+literal|"The tile manager to use as source"
+argument_list|,
+name|GIMP_TYPE_TILE_MANAGER
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -276,8 +298,62 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_source_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|tile_source_get_property
+DECL|function|gimp_operation_tile_source_finalize (GObject * object)
+name|gimp_operation_tile_source_finalize
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+block|{
+name|GimpOperationTileSource
+modifier|*
+name|self
+init|=
+name|GIMP_OPERATION_TILE_SOURCE
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|self
+operator|->
+name|tile_manager
+condition|)
+block|{
+name|tile_manager_unref
+argument_list|(
+name|self
+operator|->
+name|tile_manager
+argument_list|)
+expr_stmt|;
+name|self
+operator|->
+name|tile_manager
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|finalize
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_operation_tile_source_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_operation_tile_source_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -312,7 +388,7 @@ block|{
 case|case
 name|PROP_TILE_MANAGER
 case|:
-name|g_value_set_pointer
+name|g_value_set_boxed
 argument_list|(
 name|value
 argument_list|,
@@ -340,8 +416,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|tile_source_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|tile_source_set_property
+DECL|function|gimp_operation_tile_source_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_operation_tile_source_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -377,11 +453,24 @@ block|{
 case|case
 name|PROP_TILE_MANAGER
 case|:
+if|if
+condition|(
+name|self
+operator|->
+name|tile_manager
+condition|)
+name|tile_manager_unref
+argument_list|(
+name|self
+operator|->
+name|tile_manager
+argument_list|)
+expr_stmt|;
 name|self
 operator|->
 name|tile_manager
 operator|=
-name|g_value_get_pointer
+name|g_value_dup_boxed
 argument_list|(
 name|value
 argument_list|)
@@ -405,8 +494,8 @@ end_function
 begin_function
 specifier|static
 name|GeglRectangle
-DECL|function|tile_source_get_defined_region (GeglOperation * operation)
-name|tile_source_get_defined_region
+DECL|function|gimp_operation_tile_source_get_defined_region (GeglOperation * operation)
+name|gimp_operation_tile_source_get_defined_region
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -480,8 +569,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|tile_source_process (GeglOperation * operation,gpointer context_id)
-name|tile_source_process
+DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,gpointer context_id)
+name|gimp_operation_tile_source_process
 parameter_list|(
 name|GeglOperation
 modifier|*
