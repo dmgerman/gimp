@@ -18,19 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gegl/buffer/gegl-buffer.h>
+file|<glib-object.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gegl/gegl-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gegl/buffer/gegl-buffer.h>
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b143000103
+DECL|enum|__anon289425c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

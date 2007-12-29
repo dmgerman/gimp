@@ -16,9 +16,23 @@ directive|define
 name|__GEGL_OPERATION_H__
 end_define
 
-begin_comment
-comment|/*#include "graph/gegl-node.h"*/
-end_comment
+begin_include
+include|#
+directive|include
+file|"gegl-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"buffer/gegl-buffer-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|<babl/babl.h>
+end_include
 
 begin_macro
 name|G_BEGIN_DECLS
@@ -266,6 +280,7 @@ name|gchar
 modifier|*
 name|input_pad
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
@@ -283,6 +298,7 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
@@ -352,6 +368,7 @@ comment|/* returns the ROI passed to _this_ operation */
 end_comment
 
 begin_function_decl
+specifier|const
 name|GeglRectangle
 modifier|*
 name|gegl_operation_get_requested_region
@@ -440,6 +457,7 @@ comment|/* returns the bounding box of the buffer that needs to be computed */
 end_comment
 
 begin_function_decl
+specifier|const
 name|GeglRectangle
 modifier|*
 name|gegl_operation_result_rect
@@ -459,6 +477,7 @@ comment|/* returns the bounding box of the buffer needed for computation */
 end_comment
 
 begin_function_decl
+specifier|const
 name|GeglRectangle
 modifier|*
 name|gegl_operation_need_rect
@@ -515,6 +534,7 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
@@ -535,6 +555,7 @@ name|gchar
 modifier|*
 name|input_pad
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
@@ -857,7 +878,31 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gegl_operation_vector_prop_changed
+parameter_list|(
+name|GeglVector
+modifier|*
+name|vector
+parameter_list|,
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gegl_extension_handler_cleanup
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gegl_operation_gtype_cleanup
 parameter_list|(
 name|void
 parameter_list|)

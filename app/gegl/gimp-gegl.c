@@ -12,13 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gegl/buffer/gegl-buffer.h>
+file|<glib-object.h>
 end_include
 
 begin_include
@@ -30,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl-types.h"
+file|"base/base-types.h"
 end_include
 
 begin_include
