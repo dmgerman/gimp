@@ -60,12 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoptilesink.h"
+file|"gimp-gegl-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationtilesink.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292caeba0103
+DECL|enum|__anon2adbbcd20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -79,7 +85,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|get_property
+name|tile_sink_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -102,7 +108,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|set_property
+name|tile_sink_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -126,7 +132,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|process
+name|tile_sink_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -137,70 +143,6 @@ name|context_id
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_function
-DECL|function|bpp_to_format (guint bpp)
-specifier|static
-name|Babl
-modifier|*
-name|bpp_to_format
-parameter_list|(
-name|guint
-name|bpp
-parameter_list|)
-block|{
-switch|switch
-condition|(
-name|bpp
-condition|)
-block|{
-case|case
-literal|1
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y' u8"
-argument_list|)
-return|;
-case|case
-literal|2
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"Y'A u8"
-argument_list|)
-return|;
-case|case
-literal|3
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"R'G'B' u8"
-argument_list|)
-return|;
-case|case
-literal|4
-case|:
-return|return
-name|babl_format
-argument_list|(
-literal|"R'G'B'A u8"
-argument_list|)
-return|;
-block|}
-name|g_warning
-argument_list|(
-literal|"bpp !(>0&&<=4)"
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-end_function
 
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpOperationTileSink,gimp_operation_tile_sink,GEGL_TYPE_OPERATION_SINK)
@@ -255,19 +197,19 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|set_property
+name|tile_sink_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|get_property
+name|tile_sink_get_property
 expr_stmt|;
 name|sink_class
 operator|->
 name|process
 operator|=
-name|process
+name|tile_sink_process
 expr_stmt|;
 name|gegl_operation_class_set_name
 argument_list|(
@@ -316,8 +258,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|get_property
+DECL|function|tile_sink_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|tile_sink_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -380,8 +322,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|set_property
+DECL|function|tile_sink_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|tile_sink_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -445,8 +387,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|process (GeglOperation * operation,gpointer context_id)
-name|process
+DECL|function|tile_sink_process (GeglOperation * operation,gpointer context_id)
+name|tile_sink_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -465,6 +407,13 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|self
+operator|->
+name|tile_manager
+condition|)
+block|{
 name|GeglBuffer
 modifier|*
 name|input
@@ -473,19 +422,13 @@ name|GeglRectangle
 modifier|*
 name|extent
 decl_stmt|;
-if|if
-condition|(
-name|self
-operator|->
-name|tile_manager
-condition|)
-block|{
 name|gpointer
 name|pr
 decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
+specifier|const
 name|Babl
 modifier|*
 name|format
@@ -544,7 +487,7 @@ argument_list|)
 expr_stmt|;
 name|format
 operator|=
-name|bpp_to_format
+name|gimp_bpp_to_babl_format
 argument_list|(
 name|tile_manager_bpp
 argument_list|(

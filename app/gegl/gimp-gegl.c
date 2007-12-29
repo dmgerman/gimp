@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoptilesink.h"
+file|"gimpoperationtilesink.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoptilesource.h"
+file|"gimpoperationtilesource.h"
 end_include
 
 begin_function
