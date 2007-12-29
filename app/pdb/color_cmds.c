@@ -1610,6 +1610,8 @@ condition|)
 name|gimp_drawable_invert
 argument_list|(
 name|drawable
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 block|}

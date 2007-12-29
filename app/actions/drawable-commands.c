@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dialogs/desaturate-dialog.h"
 end_include
 
@@ -381,6 +387,10 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|widget
@@ -390,6 +400,13 @@ argument_list|(
 name|image
 argument_list|,
 name|drawable
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -433,6 +450,11 @@ block|}
 name|gimp_drawable_invert
 argument_list|(
 name|drawable
+argument_list|,
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
