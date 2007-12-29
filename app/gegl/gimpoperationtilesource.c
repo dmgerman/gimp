@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac499020103
+DECL|enum|__anon2b8165770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -725,6 +725,7 @@ operator|.
 name|h
 block|}
 decl_stmt|;
+comment|/* FIXME: need to use the correct size instead of the full extent            */
 name|gegl_buffer_set
 argument_list|(
 name|output
@@ -737,6 +738,8 @@ argument_list|,
 name|srcPR
 operator|.
 name|data
+argument_list|,
+name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
 block|}
