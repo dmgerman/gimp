@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41d70d0103
+DECL|enum|__anon2c0293970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -243,6 +243,13 @@ name|get_defined_region
 operator|=
 name|gimp_operation_tile_source_get_defined_region
 expr_stmt|;
+name|operation_class
+operator|->
+name|adjust_result_region
+operator|=
+name|NULL
+expr_stmt|;
+comment|/* the default source is                                                  expanding to agressivly                                                  make use of available caching,                                                  this behavior is at least a                                                  little unexpected. */
 name|source_class
 operator|->
 name|process
