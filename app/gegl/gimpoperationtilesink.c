@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adbbcd20103
+DECL|enum|__anon2b864a980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -418,20 +418,21 @@ name|GeglBuffer
 modifier|*
 name|input
 decl_stmt|;
-name|GeglRectangle
-modifier|*
-name|extent
-decl_stmt|;
-name|gpointer
-name|pr
-decl_stmt|;
-name|PixelRegion
-name|destPR
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
 name|format
+decl_stmt|;
+specifier|const
+name|GeglRectangle
+modifier|*
+name|extent
+decl_stmt|;
+name|PixelRegion
+name|destPR
+decl_stmt|;
+name|gpointer
+name|pr
 decl_stmt|;
 comment|/* is this somethings that should be done already for all sinks? */
 name|input
