@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8b7360103
+DECL|enum|__anon27ccef950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -236,6 +236,12 @@ operator|->
 name|process
 operator|=
 name|gimp_operation_tile_sink_process
+expr_stmt|;
+name|sink_class
+operator|->
+name|needs_full
+operator|=
+name|FALSE
 expr_stmt|;
 name|gegl_operation_class_set_name
 argument_list|(

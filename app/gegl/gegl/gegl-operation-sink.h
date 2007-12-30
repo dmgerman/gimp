@@ -76,6 +76,22 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION_SINK, GeglOperationSinkClass))
+DECL|macro|GEGL_IS_OPERATION_SINK (obj)
+define|#
+directive|define
+name|GEGL_IS_OPERATION_SINK
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GEGL_TYPE_OPERATION_SINK))
+DECL|macro|GEGL_IS_OPERATION_SINK_CLASS (klass)
+define|#
+directive|define
+name|GEGL_IS_OPERATION_SINK_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GEGL_TYPE_OPERATION_SINK))
 DECL|typedef|GeglOperationSink
 typedef|typedef
 name|struct
@@ -106,6 +122,10 @@ DECL|member|operation_class
 name|GeglOperationClass
 name|operation_class
 decl_stmt|;
+DECL|member|needs_full
+name|gboolean
+name|needs_full
+decl_stmt|;
 DECL|member|process
 name|gboolean
 function_decl|(
@@ -130,6 +150,14 @@ name|void
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
+name|gboolean
+name|gegl_operation_sink_needs_full
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
 ifdef|#
 directive|ifdef
 name|__cplusplus
