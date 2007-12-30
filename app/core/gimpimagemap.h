@@ -173,6 +173,10 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GeglNode
+modifier|*
+name|operation
 parameter_list|)
 function_decl|;
 end_function_decl

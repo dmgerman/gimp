@@ -16,6 +16,29 @@ directive|define
 name|__GIMP_IMAGE_MAP_TOOL_H__
 end_define
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: dont include gegl.h here
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_include
+include|#
+directive|include
+file|<gegl.h>
+end_include
+
 begin_include
 include|#
 directive|include
@@ -151,6 +174,11 @@ name|GtkWidget
 modifier|*
 name|settings_dialog
 decl_stmt|;
+comment|/* temp hack */
+DECL|member|use_gegl
+name|gboolean
+name|use_gegl
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -201,6 +229,19 @@ modifier|*
 name|save_dialog_title
 decl_stmt|;
 comment|/* virtual functions */
+DECL|member|get_operation
+name|GeglNode
+modifier|*
+function_decl|(
+modifier|*
+name|get_operation
+function_decl|)
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|)
+function_decl|;
 DECL|member|map
 name|void
 function_decl|(
