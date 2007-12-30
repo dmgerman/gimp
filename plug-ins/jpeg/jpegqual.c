@@ -267,7 +267,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8739330108
+DECL|struct|__anon2c60662e0108
 block|{
 DECL|member|hash
 specifier|const
@@ -4047,6 +4047,28 @@ block|,
 operator|-
 literal|2
 block|,
+literal|"Canon Digital Ixus v2"
+block|,
+literal|"Fine"
+block|,
+operator|-
+literal|92
+block|}
+block|,
+block|{
+literal|0x535174bd
+block|,
+literal|533
+block|,
+literal|1325
+block|,
+literal|2
+block|,
+literal|1
+block|,
+operator|-
+literal|2
+block|,
 literal|"Canon PowerShot A95, S1, S2, SD400 or SD630"
 block|,
 literal|"Fine"
@@ -4163,28 +4185,6 @@ literal|"Fine"
 block|,
 operator|-
 literal|93
-block|}
-block|,
-block|{
-literal|0x71bcdf92
-block|,
-literal|167
-block|,
-literal|240
-block|,
-literal|2
-block|,
-literal|2
-block|,
-operator|-
-literal|3
-block|,
-literal|"HP PhotoSmart C850, C935"
-block|,
-literal|"?"
-block|,
-operator|-
-literal|97
 block|}
 block|,
 block|{
@@ -6441,7 +6441,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8739330208
+DECL|struct|__anon2c60662e0208
 block|{
 DECL|member|hashval
 name|guint32
