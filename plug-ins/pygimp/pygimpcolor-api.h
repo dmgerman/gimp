@@ -109,6 +109,22 @@ modifier|*
 name|cmyk
 parameter_list|)
 function_decl|;
+DECL|member|rgb_from_pyobject
+name|int
+function_decl|(
+modifier|*
+name|rgb_from_pyobject
+function_decl|)
+parameter_list|(
+name|PyObject
+modifier|*
+name|object
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -267,6 +283,14 @@ define|#
 directive|define
 name|pygimp_cmyk_new
 value|(_PyGimpColor_API->cmyk_new)
+end_define
+
+begin_define
+DECL|macro|pygimp_rgb_from_pyobject
+define|#
+directive|define
+name|pygimp_rgb_from_pyobject
+value|(_PyGimpColor_API->rgb_from_pyobject)
 end_define
 
 begin_define

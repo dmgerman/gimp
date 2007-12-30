@@ -165,6 +165,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|int
+name|pygimp_rgb_from_pyobject
+parameter_list|(
+name|PyObject
+modifier|*
+name|object
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro

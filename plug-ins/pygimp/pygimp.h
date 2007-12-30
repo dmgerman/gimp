@@ -337,7 +337,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bf83f000108
+DECL|struct|__anon2746abd40108
 typedef|typedef
 struct|struct
 block|{
@@ -394,7 +394,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bf83f000208
+DECL|struct|__anon2746abd40208
 typedef|typedef
 struct|struct
 block|{
@@ -464,7 +464,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bf83f000308
+DECL|struct|__anon2746abd40308
 typedef|typedef
 struct|struct
 block|{
@@ -552,6 +552,63 @@ name|PyTypeObject
 name|PyGimpVectorsBezierStroke_Type
 decl_stmt|;
 end_decl_stmt
+
+begin_typedef
+DECL|struct|__anon2746abd40408
+typedef|typedef
+struct|struct
+block|{
+name|PyObject_HEAD
+DECL|member|pf
+name|GimpPixelFetcher
+modifier|*
+name|pf
+decl_stmt|;
+DECL|member|drawable
+name|PyGimpDrawable
+modifier|*
+name|drawable
+decl_stmt|;
+comment|/* keep the drawable around */
+DECL|member|shadow
+name|gboolean
+name|shadow
+decl_stmt|;
+DECL|member|bg_color
+name|GimpRGB
+name|bg_color
+decl_stmt|;
+DECL|member|edge_mode
+name|GimpPixelFetcherEdgeMode
+name|edge_mode
+decl_stmt|;
+DECL|member|bpp
+name|int
+name|bpp
+decl_stmt|;
+DECL|typedef|PyGimpPixelFetcher
+block|}
+name|PyGimpPixelFetcher
+typedef|;
+end_typedef
+
+begin_decl_stmt
+specifier|extern
+name|PyTypeObject
+name|PyGimpPixelFetcher_Type
+decl_stmt|;
+end_decl_stmt
+
+begin_define
+DECL|macro|pygimp_pixel_fetcher_check (v)
+define|#
+directive|define
+name|pygimp_pixel_fetcher_check
+parameter_list|(
+name|v
+parameter_list|)
+value|(PyObject_TypeCheck(v,&PyGimpPixelFetcher_Type))
+end_define
 
 begin_macro
 name|G_END_DECLS
