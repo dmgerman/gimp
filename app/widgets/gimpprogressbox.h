@@ -115,6 +115,10 @@ DECL|member|cancelable
 name|gboolean
 name|cancelable
 decl_stmt|;
+DECL|member|value
+name|gdouble
+name|value
+decl_stmt|;
 DECL|member|label
 name|GtkWidget
 modifier|*

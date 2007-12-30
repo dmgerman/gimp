@@ -203,6 +203,10 @@ DECL|member|progress_shown
 name|gboolean
 name|progress_shown
 decl_stmt|;
+DECL|member|progress_value
+name|gdouble
+name|progress_value
+decl_stmt|;
 block|}
 struct|;
 end_struct
