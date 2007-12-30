@@ -29,6 +29,19 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|const
+name|Babl
+modifier|*
+name|gimp_bpp_to_babl_format_linear
+argument_list|(
+name|guint
+name|bpp
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif

@@ -86,6 +86,11 @@ name|TileManager
 modifier|*
 name|tile_manager
 decl_stmt|;
+DECL|member|linear
+name|gboolean
+name|linear
+decl_stmt|;
+comment|/* should linear data be assumed */
 block|}
 struct|;
 end_struct
