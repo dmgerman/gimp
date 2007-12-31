@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297de2010103
+DECL|enum|__anon2911f87e0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297de2010203
+DECL|enum|__anon2911f87e0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297de2010303
+DECL|enum|__anon2911f87e0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -6740,7 +6740,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|" x "
+literal|" Ã "
 argument_list|,
 literal|0
 argument_list|,
