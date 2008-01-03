@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GEGL_OPERATION_SINK_H
+name|_GEGL_OPERATION_POINT_FILTER_H
 end_ifndef
 
 begin_define
-DECL|macro|_GEGL_OPERATION_SINK_H
+DECL|macro|_GEGL_OPERATION_POINT_FILTER_H
 define|#
 directive|define
-name|_GEGL_OPERATION_SINK_H
+name|_GEGL_OPERATION_POINT_FILTER_H
 end_define
 
 begin_include
@@ -31,7 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl-operation.h"
+file|"gegl-operation-filter.h"
 end_include
 
 begin_macro
@@ -39,84 +39,62 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_define
-DECL|macro|GEGL_TYPE_OPERATION_SINK
+DECL|macro|GEGL_TYPE_OPERATION_POINT_FILTER
 define|#
 directive|define
-name|GEGL_TYPE_OPERATION_SINK
-value|(gegl_operation_sink_get_type ())
+name|GEGL_TYPE_OPERATION_POINT_FILTER
+value|(gegl_operation_point_filter_get_type ())
 end_define
 
 begin_define
-DECL|macro|GEGL_OPERATION_SINK (obj)
+DECL|macro|GEGL_OPERATION_POINT_FILTER (obj)
 define|#
 directive|define
-name|GEGL_OPERATION_SINK
+name|GEGL_OPERATION_POINT_FILTER
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GEGL_TYPE_OPERATION_SINK, GeglOperationSink))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GEGL_TYPE_OPERATION_POINT_FILTER, GeglOperationPointFilter))
 end_define
 
 begin_define
-DECL|macro|GEGL_OPERATION_SINK_CLASS (klass)
+DECL|macro|GEGL_OPERATION_POINT_FILTER_CLASS (klass)
 define|#
 directive|define
-name|GEGL_OPERATION_SINK_CLASS
+name|GEGL_OPERATION_POINT_FILTER_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GEGL_TYPE_OPERATION_SINK, GeglOperationSinkClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GEGL_TYPE_OPERATION_POINT_FILTER, GeglOperationPointFilterClass))
 end_define
 
 begin_define
-DECL|macro|GEGL_OPERATION_SINK_GET_CLASS (obj)
+DECL|macro|GEGL_OPERATION_POINT_FILTER_GET_CLASS (obj)
 define|#
 directive|define
-name|GEGL_OPERATION_SINK_GET_CLASS
+name|GEGL_OPERATION_POINT_FILTER_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION_SINK, GeglOperationSinkClass))
-end_define
-
-begin_define
-DECL|macro|GEGL_IS_OPERATION_SINK (obj)
-define|#
-directive|define
-name|GEGL_IS_OPERATION_SINK
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GEGL_TYPE_OPERATION_SINK))
-end_define
-
-begin_define
-DECL|macro|GEGL_IS_OPERATION_SINK_CLASS (klass)
-define|#
-directive|define
-name|GEGL_IS_OPERATION_SINK_CLASS
-parameter_list|(
-name|klass
-parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GEGL_TYPE_OPERATION_SINK))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION_POINT_FILTER, GeglOperationPointFilterClass))
 end_define
 
 begin_typedef
-DECL|typedef|GeglOperationSink
+DECL|typedef|GeglOperationPointFilter
 typedef|typedef
 name|struct
-name|_GeglOperationSink
-name|GeglOperationSink
+name|_GeglOperationPointFilter
+name|GeglOperationPointFilter
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GeglOperationSink
+DECL|struct|_GeglOperationPointFilter
 struct|struct
-name|_GeglOperationSink
+name|_GeglOperationPointFilter
 block|{
 DECL|member|parent_instance
-name|GeglOperation
+name|GeglOperationFilter
 name|parent_instance
 decl_stmt|;
 block|}
@@ -124,26 +102,22 @@ struct|;
 end_struct
 
 begin_typedef
-DECL|typedef|GeglOperationSinkClass
+DECL|typedef|GeglOperationPointFilterClass
 typedef|typedef
 name|struct
-name|_GeglOperationSinkClass
-name|GeglOperationSinkClass
+name|_GeglOperationPointFilterClass
+name|GeglOperationPointFilterClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GeglOperationSinkClass
+DECL|struct|_GeglOperationPointFilterClass
 struct|struct
-name|_GeglOperationSinkClass
+name|_GeglOperationPointFilterClass
 block|{
 DECL|member|parent_class
-name|GeglOperationClass
+name|GeglOperationFilterClass
 name|parent_class
-decl_stmt|;
-DECL|member|needs_full
-name|gboolean
-name|needs_full
 decl_stmt|;
 DECL|member|process
 name|gboolean
@@ -156,34 +130,35 @@ name|GeglOperation
 modifier|*
 name|self
 parameter_list|,
-name|gpointer
-name|context_id
+comment|/* for parameters      */
+name|void
+modifier|*
+name|in_buf
+parameter_list|,
+comment|/* input buffer */
+name|void
+modifier|*
+name|out_buf
+parameter_list|,
+comment|/* output buffer */
+name|glong
+name|samples
 parameter_list|)
 function_decl|;
+comment|/* number of samples   */
 block|}
 struct|;
 end_struct
 
 begin_decl_stmt
 name|GType
-name|gegl_operation_sink_get_type
+name|gegl_operation_point_filter_get_type
 argument_list|(
 name|void
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|gboolean
-name|gegl_operation_sink_needs_full
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_macro
 name|G_END_DECLS

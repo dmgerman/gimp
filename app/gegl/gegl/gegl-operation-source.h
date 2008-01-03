@@ -34,24 +34,19 @@ directive|include
 file|"gegl-operation.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
-comment|/* __cplusplus */
+begin_define
 DECL|macro|GEGL_TYPE_OPERATION_SOURCE
 define|#
 directive|define
 name|GEGL_TYPE_OPERATION_SOURCE
 value|(gegl_operation_source_get_type ())
+end_define
+
+begin_define
 DECL|macro|GEGL_OPERATION_SOURCE (obj)
 define|#
 directive|define
@@ -60,6 +55,9 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GEGL_TYPE_OPERATION_SOURCE, GeglOperationSource))
+end_define
+
+begin_define
 DECL|macro|GEGL_OPERATION_SOURCE_CLASS (klass)
 define|#
 directive|define
@@ -68,6 +66,9 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GEGL_TYPE_OPERATION_SOURCE, GeglOperationSourceClass))
+end_define
+
+begin_define
 DECL|macro|GEGL_OPERATION_SOURCE_GET_CLASS (obj)
 define|#
 directive|define
@@ -76,35 +77,47 @@ parameter_list|(
 name|obj
 parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION_SOURCE, GeglOperationSourceClass))
+end_define
+
+begin_typedef
 DECL|typedef|GeglOperationSource
 typedef|typedef
 name|struct
 name|_GeglOperationSource
 name|GeglOperationSource
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GeglOperationSource
 struct|struct
 name|_GeglOperationSource
 block|{
-DECL|member|operation
+DECL|member|parent_instance
 name|GeglOperation
-name|operation
+name|parent_instance
 decl_stmt|;
 block|}
 struct|;
+end_struct
+
+begin_typedef
 DECL|typedef|GeglOperationSourceClass
 typedef|typedef
 name|struct
 name|_GeglOperationSourceClass
 name|GeglOperationSourceClass
 typedef|;
+end_typedef
+
+begin_struct
 DECL|struct|_GeglOperationSourceClass
 struct|struct
 name|_GeglOperationSourceClass
 block|{
-DECL|member|operation_class
+DECL|member|parent_class
 name|GeglOperationClass
-name|operation_class
+name|parent_class
 decl_stmt|;
 DECL|member|process
 name|gboolean
@@ -123,6 +136,9 @@ parameter_list|)
 function_decl|;
 block|}
 struct|;
+end_struct
+
+begin_decl_stmt
 name|GType
 name|gegl_operation_source_get_type
 argument_list|(
@@ -130,20 +146,11 @@ name|void
 argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_decl_stmt
 
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __cplusplus */
-end_comment
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#
