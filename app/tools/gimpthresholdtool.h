@@ -117,11 +117,6 @@ name|Threshold
 modifier|*
 name|threshold
 decl_stmt|;
-DECL|member|t_node
-name|GeglNode
-modifier|*
-name|t_node
-decl_stmt|;
 comment|/*  dialog  */
 DECL|member|hist
 name|GimpHistogram

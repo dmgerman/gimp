@@ -139,11 +139,6 @@ name|GimpLut
 modifier|*
 name|lut
 decl_stmt|;
-DECL|member|bc_node
-name|GeglNode
-modifier|*
-name|bc_node
-decl_stmt|;
 comment|/*  dialog  */
 DECL|member|brightness_data
 name|GtkAdjustment

@@ -142,6 +142,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+DECL|member|operation
+name|GeglNode
+modifier|*
+name|operation
+decl_stmt|;
 DECL|member|image_map
 name|GimpImageMap
 modifier|*
