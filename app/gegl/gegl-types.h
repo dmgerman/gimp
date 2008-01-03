@@ -32,6 +32,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationThreshold
+typedef|typedef
+name|struct
+name|_GimpOperationThreshold
+name|GimpOperationThreshold
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationTileSink
 typedef|typedef
 name|struct
