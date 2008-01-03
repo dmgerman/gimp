@@ -23,6 +23,15 @@ file|"base/base-types.h"
 end_include
 
 begin_typedef
+DECL|typedef|GimpOperationDesaturate
+typedef|typedef
+name|struct
+name|_GimpOperationDesaturate
+name|GimpOperationDesaturate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationTileSink
 typedef|typedef
 name|struct

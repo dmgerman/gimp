@@ -100,9 +100,9 @@ DECL|struct|_GimpOperationTileSinkClass
 struct|struct
 name|_GimpOperationTileSinkClass
 block|{
-DECL|member|operation_sink_class
+DECL|member|parent_class
 name|GeglOperationSinkClass
-name|operation_sink_class
+name|parent_class
 decl_stmt|;
 DECL|member|data_written
 name|void
