@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2980ee0103
+DECL|enum|__anon2c1daa6b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2980ee0203
+DECL|enum|__anon2c1daa6b0203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -174,6 +174,16 @@ name|operation
 parameter_list|,
 name|gpointer
 name|context_id
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|need
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -608,7 +618,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,gpointer context_id)
+DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,gpointer context_id,const GeglRectangle * result)
 name|gimp_operation_tile_sink_process
 parameter_list|(
 name|GeglOperation
@@ -617,6 +627,11 @@ name|operation
 parameter_list|,
 name|gpointer
 name|context_id
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result
 parameter_list|)
 block|{
 name|GimpOperationTileSink
@@ -644,11 +659,6 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-specifier|const
-name|GeglRectangle
-modifier|*
-name|extent
-decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
@@ -666,15 +676,6 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|extent
-operator|=
-name|gegl_operation_result_rect
-argument_list|(
-name|operation
-argument_list|,
-name|context_id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|self
@@ -719,19 +720,19 @@ name|self
 operator|->
 name|tile_manager
 argument_list|,
-name|extent
+name|result
 operator|->
 name|x
 argument_list|,
-name|extent
+name|result
 operator|->
 name|y
 argument_list|,
-name|extent
+name|result
 operator|->
 name|width
 argument_list|,
-name|extent
+name|result
 operator|->
 name|height
 argument_list|,
@@ -813,7 +814,7 @@ index|]
 argument_list|,
 literal|0
 argument_list|,
-name|extent
+name|result
 argument_list|)
 expr_stmt|;
 block|}

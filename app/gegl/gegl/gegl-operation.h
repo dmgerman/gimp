@@ -224,9 +224,6 @@ parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
-parameter_list|,
-name|gpointer
-name|context_id
 parameter_list|)
 function_decl|;
 comment|/* Returns a bounding rectangle for the data that is defined by this op. (is    * already implemented in GeglOperationPointFilter and    * GeglOperationPointComposer, GeglOperationAreaFilter base classes.    */
@@ -324,7 +321,8 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
-comment|/* do the actual processing needed to put GeglBuffers on the output pad */
+comment|/* XXX: get array of in Gvalues and out Gvalues, filled with buffers? */
+comment|/* do the actual processing needed to put GeglBuffers on the output pad    * Replace context_id with an actual object?    *    * GeglOperationData<- per evaluation unique data for operation?    *                       (or node?)     *    * .. compute_input request?    *    */
 DECL|member|process
 name|gboolean
 function_decl|(
@@ -336,6 +334,7 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
+comment|/*                               GValue             **pads,                               const gchar        **pad_names,                               gint                 n_pads,                               const GeglRectangle *result_rect,                               const GeglRectangle *requested_rect,     */
 name|gpointer
 name|context_id
 parameter_list|,
@@ -343,6 +342,11 @@ specifier|const
 name|gchar
 modifier|*
 name|output_pad
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result_rect
 parameter_list|)
 function_decl|;
 block|}
@@ -364,26 +368,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* returns the ROI passed to _this_ operation */
-end_comment
-
-begin_function_decl
-specifier|const
-name|GeglRectangle
-modifier|*
-name|gegl_operation_get_requested_region
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/* retrieves the bounding box of a connected input */
 end_comment
 
@@ -391,27 +375,6 @@ begin_function_decl
 name|GeglRectangle
 modifier|*
 name|gegl_operation_source_get_defined_region
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|pad_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* retrieves the node providing data to a named input pad */
-end_comment
-
-begin_function_decl
-name|GeglNode
-modifier|*
-name|gegl_operation_get_source_node
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -452,49 +415,51 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_if
+if|#
+directive|if
+literal|0
+end_if
+
 begin_comment
 comment|/* returns the bounding box of the buffer that needs to be computed */
 end_comment
 
-begin_function_decl
-specifier|const
-name|GeglRectangle
-modifier|*
-name|gegl_operation_result_rect
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
+unit|const GeglRectangle * gegl_operation_result_rect    (GeglOperation *operation,                                                      gpointer       context_id);
 comment|/* returns the bounding box of the buffer needed for computation */
 end_comment
 
-begin_function_decl
-specifier|const
-name|GeglRectangle
-modifier|*
-name|gegl_operation_need_rect
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_endif
+unit|const GeglRectangle * gegl_operation_need_rect      (GeglOperation *operation,                                                      gpointer       context_id);
+endif|#
+directive|endif
+end_endif
 
 begin_comment
 comment|/* virtual method invokers that depends only on the set properties of a  * operation|node  */
 end_comment
+
+begin_comment
+comment|/* retrieves the node providing data to a named input pad */
+end_comment
+
+begin_function_decl
+name|GeglNode
+modifier|*
+name|gegl_operation_get_source_node
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|pad_name
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GeglRectangle
@@ -607,9 +572,6 @@ parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
-parameter_list|,
-name|gpointer
-name|context_id
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -629,6 +591,11 @@ specifier|const
 name|gchar
 modifier|*
 name|output_pad
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result_rect
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -729,7 +696,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* create a pad for a specified property for this operation, this method is  * to be called from the attach method of operations, most operations do not  * have to care about this since a super class will do it for them.  */
+comment|/* create a pad for a specified property for this operation, this method is  * to be called from the attach method of operations, most operations do not  * have to care about this since a super class like filter, sink, source or  * composer already does so.  */
 end_comment
 
 begin_function_decl
@@ -788,7 +755,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* set a dynamic named instance for this node, this function takes over ownership  * of the reference (mostly used to set the "output" GeglBuffer) for operations  */
+comment|/* set a dynamic named instance for this node, this function takes over  * ownership of the reference (should only be used for internal GeglOperation  * implementations that override caching behaviour, use with care)  */
 end_comment
 
 begin_function_decl
@@ -838,26 +805,6 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GeglBuffer
-modifier|*
-name|gegl_operation_get_source
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|pad_name
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -132,6 +132,11 @@ name|self
 parameter_list|,
 name|gpointer
 name|context_id
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result
 parameter_list|)
 function_decl|;
 block|}

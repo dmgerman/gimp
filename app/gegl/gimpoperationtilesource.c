@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a3e650103
+DECL|enum|__anon2c7899f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -161,6 +161,16 @@ name|operation
 parameter_list|,
 name|gpointer
 name|context_id
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|need
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -627,7 +637,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,gpointer context_id)
+DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,gpointer context_id,const GeglRectangle * result)
 name|gimp_operation_tile_source_process
 parameter_list|(
 name|GeglOperation
@@ -636,6 +646,11 @@ name|operation
 parameter_list|,
 name|gpointer
 name|context_id
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result
 parameter_list|)
 block|{
 name|GimpOperationTileSource
@@ -663,11 +678,6 @@ name|Babl
 modifier|*
 name|format
 decl_stmt|;
-specifier|const
-name|GeglRectangle
-modifier|*
-name|extent
-decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
@@ -685,15 +695,6 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|extent
-operator|=
-name|gegl_operation_result_rect
-argument_list|(
-name|operation
-argument_list|,
-name|context_id
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|self
@@ -719,7 +720,7 @@ name|output
 operator|=
 name|gegl_buffer_new
 argument_list|(
-name|extent
+name|result
 argument_list|,
 name|format
 argument_list|)
@@ -733,19 +734,19 @@ name|self
 operator|->
 name|tile_manager
 argument_list|,
-name|extent
+name|result
 operator|->
 name|x
 argument_list|,
-name|extent
+name|result
 operator|->
 name|y
 argument_list|,
-name|extent
+name|result
 operator|->
 name|width
 argument_list|,
-name|extent
+name|result
 operator|->
 name|height
 argument_list|,
