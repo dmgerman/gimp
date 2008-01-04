@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7899f80103
+DECL|enum|__anon2a0c482e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -161,11 +161,6 @@ name|operation
 parameter_list|,
 name|gpointer
 name|context_id
-parameter_list|,
-specifier|const
-name|GeglRectangle
-modifier|*
-name|need
 parameter_list|,
 specifier|const
 name|GeglRectangle
