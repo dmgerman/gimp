@@ -3116,8 +3116,10 @@ name|selection
 operator|->
 name|timeout
 operator|=
-name|g_timeout_add
+name|g_timeout_add_full
 argument_list|(
+name|G_PRIORITY_DEFAULT_IDLE
+argument_list|,
 name|config
 operator|->
 name|marching_ants_speed
@@ -3128,6 +3130,8 @@ operator|)
 name|selection_timeout
 argument_list|,
 name|selection
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
