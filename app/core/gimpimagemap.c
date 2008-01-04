@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b36bfa0103
+DECL|enum|__anon2ae1c6370103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1684,10 +1684,6 @@ operator|->
 name|gegl
 condition|)
 block|{
-name|GObject
-modifier|*
-name|sink_operation
-decl_stmt|;
 name|image_map
 operator|->
 name|gegl
@@ -1765,6 +1761,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|{
+name|GObject
+modifier|*
+name|sink_operation
+decl_stmt|;
 name|g_object_get
 argument_list|(
 name|image_map
@@ -1798,6 +1799,7 @@ argument_list|(
 name|sink_operation
 argument_list|)
 expr_stmt|;
+block|}
 name|gegl_node_link_many
 argument_list|(
 name|image_map
@@ -1831,6 +1833,10 @@ argument_list|,
 name|image_map
 operator|->
 name|undo_tiles
+argument_list|,
+literal|"linear"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
@@ -1876,6 +1882,10 @@ name|image_map
 operator|->
 name|drawable
 argument_list|)
+argument_list|,
+literal|"linear"
+argument_list|,
+name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
