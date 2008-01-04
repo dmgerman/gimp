@@ -1825,12 +1825,6 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GeglNode
-modifier|*
-name|operation
-init|=
-name|NULL
-decl_stmt|;
 if|if
 condition|(
 name|tool
@@ -1899,7 +1893,13 @@ name|blurb
 argument_list|,
 name|tool
 operator|->
+name|use_gegl
+condition|?
+name|tool
+operator|->
 name|operation
+else|:
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
