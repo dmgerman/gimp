@@ -85,9 +85,17 @@ name|DEFAULT_MONITOR_RESOLUTION
 value|96.0
 end_define
 
+begin_define
+DECL|macro|DEFAULT_MARCHING_ANTS_SPEED
+define|#
+directive|define
+name|DEFAULT_MARCHING_ANTS_SPEED
+value|200
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon295b51a20103
+DECL|enum|__anon2c79501a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -411,7 +419,7 @@ literal|10
 argument_list|,
 literal|1000
 argument_list|,
-literal|100
+name|DEFAULT_MARCHING_ANTS_SPEED
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
