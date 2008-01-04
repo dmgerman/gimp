@@ -36,7 +36,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationcolorize.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationdesaturate.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpoperationposterize.h"
 end_include
 
 begin_include
@@ -67,7 +79,17 @@ parameter_list|)
 block|{
 name|g_type_class_ref
 argument_list|(
+name|GIMP_TYPE_OPERATION_COLORIZE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
 name|GIMP_TYPE_OPERATION_DESATURATE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_POSTERIZE
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

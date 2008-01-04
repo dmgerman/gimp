@@ -23,11 +23,29 @@ file|"base/base-types.h"
 end_include
 
 begin_typedef
+DECL|typedef|GimpOperationColorize
+typedef|typedef
+name|struct
+name|_GimpOperationColorize
+name|GimpOperationColorize
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDesaturate
 typedef|typedef
 name|struct
 name|_GimpOperationDesaturate
 name|GimpOperationDesaturate
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpOperationPosterize
+typedef|typedef
+name|struct
+name|_GimpOperationPosterize
+name|GimpOperationPosterize
 typedef|;
 end_typedef
 

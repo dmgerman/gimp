@@ -144,6 +144,19 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|GeglNode
+modifier|*
+name|gimp_posterize_tool_get_operation
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|im_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_posterize_tool_map
 parameter_list|(
@@ -181,7 +194,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|posterize_levels_adjustment_update
+name|gimp_posterize_tool_levels_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
@@ -327,6 +340,12 @@ name|_
 argument_list|(
 literal|"Posterize (Reduce Number of Colors)"
 argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|get_operation
+operator|=
+name|gimp_posterize_tool_get_operation
 expr_stmt|;
 name|im_tool_class
 operator|->
@@ -556,6 +575,33 @@ end_function
 
 begin_function
 specifier|static
+name|GeglNode
+modifier|*
+DECL|function|gimp_posterize_tool_get_operation (GimpImageMapTool * im_tool)
+name|gimp_posterize_tool_get_operation
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|im_tool
+parameter_list|)
+block|{
+return|return
+name|g_object_new
+argument_list|(
+name|GEGL_TYPE_NODE
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gimp-posterize"
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gimp_posterize_tool_map (GimpImageMapTool * image_map_tool)
 name|gimp_posterize_tool_map
@@ -574,6 +620,29 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|image_map_tool
+operator|->
+name|operation
+condition|)
+block|{
+name|gegl_node_set
+argument_list|(
+name|image_map_tool
+operator|->
+name|operation
+argument_list|,
+literal|"levels"
+argument_list|,
+name|posterize_tool
+operator|->
+name|levels
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|posterize_lut_setup
 argument_list|(
 name|posterize_tool
@@ -784,7 +853,7 @@ literal|"value-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|posterize_levels_adjustment_update
+name|gimp_posterize_tool_levels_changed
 argument_list|)
 argument_list|,
 name|posterize_tool
@@ -839,8 +908,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|posterize_levels_adjustment_update (GtkAdjustment * adjustment,GimpPosterizeTool * posterize_tool)
-name|posterize_levels_adjustment_update
+DECL|function|gimp_posterize_tool_levels_changed (GtkAdjustment * adjustment,GimpPosterizeTool * posterize_tool)
+name|gimp_posterize_tool_levels_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
