@@ -39,6 +39,28 @@ directive|include
 file|"base/pixel-region.h"
 end_include
 
+begin_comment
+comment|/* temp */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"config/gimpcoreconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -62,16 +84,6 @@ include|#
 directive|include
 file|"gimp-intl.h"
 end_include
-
-begin_decl_stmt
-DECL|variable|enable_gegl
-specifier|static
-name|gboolean
-name|enable_gegl
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -172,7 +184,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|enable_gegl
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+operator|->
+name|image
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|use_gegl
 condition|)
 block|{
 name|GeglNode

@@ -286,6 +286,10 @@ DECL|member|save_document_history
 name|gboolean
 name|save_document_history
 decl_stmt|;
+DECL|member|use_gegl
+name|gboolean
+name|use_gegl
+decl_stmt|;
 block|}
 struct|;
 end_struct

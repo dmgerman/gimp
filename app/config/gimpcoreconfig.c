@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ef4ae0103
+DECL|enum|__anon298975dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -246,6 +246,9 @@ name|PROP_COLOR_PROFILE_POLICY
 block|,
 DECL|enumerator|PROP_SAVE_DOCUMENT_HISTORY
 name|PROP_SAVE_DOCUMENT_HISTORY
+block|,
+DECL|enumerator|PROP_USE_GEGL
+name|PROP_USE_GEGL
 block|}
 enum|;
 end_enum
@@ -1313,6 +1316,29 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+comment|/*  not serialized  */
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_USE_GEGL
+argument_list|,
+name|g_param_spec_boolean
+argument_list|(
+literal|"use-gegl"
+argument_list|,
+literal|"Use GEGL"
+argument_list|,
+literal|"Use GEGL"
+argument_list|,
+name|TRUE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2384,6 +2410,19 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_USE_GEGL
+case|:
+name|core_config
+operator|->
+name|use_gegl
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -2965,6 +3004,19 @@ argument_list|,
 name|core_config
 operator|->
 name|save_document_history
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_USE_GEGL
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|core_config
+operator|->
+name|use_gegl
 argument_list|)
 expr_stmt|;
 break|break;

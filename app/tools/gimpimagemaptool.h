@@ -179,11 +179,6 @@ name|GtkWidget
 modifier|*
 name|settings_dialog
 decl_stmt|;
-comment|/* temp hack */
-DECL|member|use_gegl
-name|gboolean
-name|use_gegl
-decl_stmt|;
 block|}
 struct|;
 end_struct
