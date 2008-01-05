@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/graph/gegl-node-context.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl/buffer/gegl-buffer.h>
 end_include
 
@@ -77,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933e8ff0103
+DECL|enum|__anon27afa2320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933e8ff0203
+DECL|enum|__anon27afa2320203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -172,8 +178,9 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -613,15 +620,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,gpointer context_id,const GeglRectangle * result)
+DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,GeglNodeContext * context,const GeglRectangle * result)
 name|gimp_operation_tile_sink_process
 parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -694,16 +702,11 @@ argument_list|)
 expr_stmt|;
 name|input
 operator|=
-name|GEGL_BUFFER
+name|gegl_node_context_get_source
 argument_list|(
-name|gegl_operation_get_data
-argument_list|(
-name|operation
-argument_list|,
-name|context_id
+name|context
 argument_list|,
 literal|"input"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init

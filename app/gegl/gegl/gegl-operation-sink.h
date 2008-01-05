@@ -156,8 +156,9 @@ name|GeglOperation
 modifier|*
 name|self
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GeglRectangle

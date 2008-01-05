@@ -129,11 +129,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GeglNodeDynamic
+DECL|typedef|GeglNodeContext
 typedef|typedef
 name|struct
-name|_GeglNodeDynamic
-name|GeglNodeDynamic
+name|_GeglNodeContext
+name|GeglNodeContext
 typedef|;
 end_typedef
 

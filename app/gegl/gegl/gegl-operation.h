@@ -321,8 +321,6 @@ name|gint
 name|y
 parameter_list|)
 function_decl|;
-comment|/* XXX: get array of in Gvalues and out Gvalues, filled with buffers? */
-comment|/* do the actual processing needed to put GeglBuffers on the output pad    * Replace context_id with an actual object?    *    * GeglOperationData<- per evaluation unique data for operation?    *                       (or node?)     *    * .. compute_input request?    *    */
 DECL|member|process
 name|gboolean
 function_decl|(
@@ -334,9 +332,9 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
-comment|/*                               GValue             **pads,                               const gchar        **pad_names,                               gint                 n_pads,                               const GeglRectangle *result_rect,                               const GeglRectangle *requested_rect,     */
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -414,27 +412,6 @@ name|region
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-comment|/* returns the bounding box of the buffer that needs to be computed */
-end_comment
-
-begin_comment
-unit|const GeglRectangle * gegl_operation_result_rect    (GeglOperation *operation,                                                      gpointer       context_id);
-comment|/* returns the bounding box of the buffer needed for computation */
-end_comment
-
-begin_endif
-unit|const GeglRectangle * gegl_operation_need_rect      (GeglOperation *operation,                                                      gpointer       context_id);
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* virtual method invokers that depends only on the set properties of a  * operation|node  */
@@ -547,7 +524,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* virtual method invokers that change behavior based on the roi being computed,  * needs a context_id being based that is used for storing dynamic data.  */
+comment|/* virtual method invokers that change behavior based on the roi being computed,  * needs a context_id being based that is used for storing context data.  */
 end_comment
 
 begin_function_decl
@@ -584,8 +561,9 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -596,50 +574,6 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|result_rect
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* retrieve the buffer that we are going to write into, it will be of the  * dimensions retrieved through the rectangle computation, and of the format  * currently specified on the associated nodes, "property_name" pad.  */
-end_comment
-
-begin_function_decl
-name|GeglBuffer
-modifier|*
-name|gegl_operation_get_target
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GeglBuffer
-modifier|*
-name|gegl_operation_get_source
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -750,61 +684,6 @@ specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* set a dynamic named instance for this node, this function takes over  * ownership of the reference (should only be used for internal GeglOperation  * implementations that override caching behaviour, use with care)  */
-end_comment
-
-begin_function_decl
-name|void
-name|gegl_operation_set_data
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|,
-name|GObject
-modifier|*
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*************************  *  The following is internal GEGL functions, declared in the header for now, should.  *  be removed when the operation API is made public.  */
-end_comment
-
-begin_comment
-comment|/* retrieve a gobject previously set dynamically on an operation */
-end_comment
-
-begin_function_decl
-name|GObject
-modifier|*
-name|gegl_operation_get_data
-parameter_list|(
-name|GeglOperation
-modifier|*
-name|operation
-parameter_list|,
-name|gpointer
-name|context_id
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
 parameter_list|)
 function_decl|;
 end_function_decl

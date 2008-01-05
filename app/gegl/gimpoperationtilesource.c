@@ -60,12 +60,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gegl/graph/gegl-node-context.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationtilesource.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c482e0103
+DECL|enum|__anon2910ca480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -159,8 +165,9 @@ name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -632,15 +639,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,gpointer context_id,const GeglRectangle * result)
+DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,GeglNodeContext * context,const GeglRectangle * result)
 name|gimp_operation_tile_source_process
 parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -810,11 +818,9 @@ name|rowstride
 argument_list|)
 expr_stmt|;
 block|}
-name|gegl_operation_set_data
+name|gegl_node_context_set_object
 argument_list|(
-name|operation
-argument_list|,
-name|context_id
+name|context
 argument_list|,
 literal|"output"
 argument_list|,
