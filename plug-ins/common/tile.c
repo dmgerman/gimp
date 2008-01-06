@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac2424c0108
+DECL|struct|__anon27a5d5c30108
 block|{
 DECL|member|new_width
 name|gint
@@ -1301,7 +1301,7 @@ if|if
 condition|(
 name|c
 operator|%
-literal|8
+literal|16
 operator|==
 literal|0
 condition|)
