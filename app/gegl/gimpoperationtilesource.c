@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2910ca480103
+DECL|enum|__anon2ae8faf40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -684,7 +684,6 @@ decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
-specifier|const
 name|guint
 name|bpp
 init|=
