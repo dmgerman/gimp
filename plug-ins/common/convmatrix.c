@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6e533b0103
+DECL|enum|__anon2b1c64fc0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6e533b0208
+DECL|struct|__anon2b1c64fc0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -862,7 +862,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c6e533b0308
+DECL|struct|__anon2b1c64fc0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -2479,9 +2479,8 @@ index|]
 decl_stmt|;
 name|gint
 name|bpp
-decl_stmt|,
-name|channel
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|alpha_channel
 decl_stmt|;
 comment|/* Get the input area. This is the bounding box of the selection in    *  the image (or the entire image if there is no selection). Only    *  operating on the input area is simply an optimization. It doesn't    *  need to be done for correct operation. (It simply makes it go    *  faster, since fewer pixels need to be operated on).    */
@@ -2603,6 +2602,8 @@ init|;
 name|i
 operator|<
 name|CHANNELS
+operator|-
+literal|1
 condition|;
 name|i
 operator|++
@@ -2863,6 +2864,9 @@ name|row
 operator|++
 control|)
 block|{
+name|gint
+name|channel
+decl_stmt|;
 name|x_offset
 operator|=
 literal|0
