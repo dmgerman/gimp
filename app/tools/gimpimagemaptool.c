@@ -620,6 +620,12 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
+name|get_operation
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
 name|map
 operator|=
 name|NULL
@@ -712,6 +718,12 @@ name|NULL
 expr_stmt|;
 name|image_map_tool
 operator|->
+name|operation
+operator|=
+name|NULL
+expr_stmt|;
+name|image_map_tool
+operator|->
 name|image_map
 operator|=
 name|NULL
@@ -737,6 +749,12 @@ expr_stmt|;
 name|image_map_tool
 operator|->
 name|save_button
+operator|=
+name|NULL
+expr_stmt|;
+name|image_map_tool
+operator|->
+name|settings_dialog
 operator|=
 name|NULL
 expr_stmt|;
@@ -3410,6 +3428,13 @@ modifier|*
 name|im_tool
 parameter_list|)
 block|{
+if|if
+condition|(
+name|im_tool
+operator|->
+name|image_map
+condition|)
+block|{
 name|gimp_tool_control_set_preserve
 argument_list|(
 name|GIMP_TOOL
@@ -3444,6 +3469,7 @@ argument_list|(
 name|im_tool
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
