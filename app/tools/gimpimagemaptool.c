@@ -1861,6 +1861,13 @@ operator|!
 name|tool
 operator|->
 name|operation
+operator|&&
+name|GIMP_IMAGE_MAP_TOOL_GET_CLASS
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|get_operation
 condition|)
 name|tool
 operator|->
