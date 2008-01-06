@@ -1215,10 +1215,6 @@ decl_stmt|;
 if|if
 condition|(
 name|channel
-operator|>=
-literal|0
-operator|&&
-name|channel
 operator|<
 literal|7
 condition|)

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a52a9270103
+DECL|enum|__anon2937ac980103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a52a9270203
+DECL|enum|__anon2937ac980203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +97,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a52a9270303
+DECL|enum|__anon2937ac980303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a52a9270408
+DECL|struct|__anon2937ac980408
 block|{
 DECL|member|n_pages
 name|gint
@@ -2153,10 +2153,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|target
-operator|>=
-name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
-operator|&&
 name|target
 operator|<=
 name|GIMP_PAGE_SELECTOR_TARGET_IMAGES
