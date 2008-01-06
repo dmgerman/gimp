@@ -464,7 +464,7 @@ name|gimp_register_file_handler_mime
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"image/psd"
+literal|"image/x-psd"
 argument_list|)
 expr_stmt|;
 endif|#
