@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GEGL_OPERATION_FILTER_H
+name|__GEGL_OPERATION_FILTER_H__
 end_ifndef
 
 begin_define
-DECL|macro|_GEGL_OPERATION_FILTER_H
+DECL|macro|__GEGL_OPERATION_FILTER_H__
 define|#
 directive|define
-name|_GEGL_OPERATION_FILTER_H
+name|__GEGL_OPERATION_FILTER_H__
 end_define
 
 begin_include
@@ -66,6 +66,28 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GEGL_TYPE_OPERATION_FILTER, GeglOperationFilterClass))
+end_define
+
+begin_define
+DECL|macro|GEGL_IS_OPERATION_FILTER (obj)
+define|#
+directive|define
+name|GEGL_IS_OPERATION_FILTER
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GEGL_TYPE_OPERATION_FILTER))
+end_define
+
+begin_define
+DECL|macro|GEGL_IS_OPERATION_FILTER_CLASS (klass)
+define|#
+directive|define
+name|GEGL_IS_OPERATION_FILTER_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GEGL_TYPE_OPERATION_FILTER))
 end_define
 
 begin_define
@@ -130,8 +152,14 @@ name|GeglOperation
 modifier|*
 name|self
 parameter_list|,
-name|gpointer
-name|context_id
+name|GeglNodeContext
+modifier|*
+name|context
+parameter_list|,
+specifier|const
+name|GeglRectangle
+modifier|*
+name|result
 parameter_list|)
 function_decl|;
 block|}

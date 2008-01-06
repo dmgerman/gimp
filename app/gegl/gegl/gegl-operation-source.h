@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl-operation.h"
 end_include
 
@@ -66,6 +54,28 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GEGL_TYPE_OPERATION_SOURCE, GeglOperationSourceClass))
+end_define
+
+begin_define
+DECL|macro|GEGL_IS_OPERATION_SOURCE (obj)
+define|#
+directive|define
+name|GEGL_IS_OPERATION_SOURCE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GEGL_TYPE_OPERATION_SOURCE, GeglOperationSource))
+end_define
+
+begin_define
+DECL|macro|GEGL_IS_OPERATION_SOURCE_CLASS (klass)
+define|#
+directive|define
+name|GEGL_IS_OPERATION_SOURCE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GEGL_TYPE_OPERATION_SOURCE, GeglOperationSourceClass))
 end_define
 
 begin_define

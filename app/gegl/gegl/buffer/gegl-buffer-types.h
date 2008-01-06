@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GEGL_BUFFER_TYPES_H
+name|__GEGL_BUFFER_TYPES_H__
 end_ifndef
 
 begin_define
-DECL|macro|_GEGL_BUFFER_TYPES_H
+DECL|macro|__GEGL_BUFFER_TYPES_H__
 define|#
 directive|define
-name|_GEGL_BUFFER_TYPES_H
+name|__GEGL_BUFFER_TYPES_H__
 end_define
 
 begin_typedef
@@ -136,7 +136,7 @@ end_typedef
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GEGL_BUFFER_H
+name|__GEGL_BUFFER_H__
 end_ifndef
 
 begin_typedef

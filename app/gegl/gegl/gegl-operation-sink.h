@@ -6,27 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_GEGL_OPERATION_SINK_H
+name|__GEGL_OPERATION_SINK_H__
 end_ifndef
 
 begin_define
-DECL|macro|_GEGL_OPERATION_SINK_H
+DECL|macro|__GEGL_OPERATION_SINK_H__
 define|#
 directive|define
-name|_GEGL_OPERATION_SINK_H
+name|__GEGL_OPERATION_SINK_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl-types.h"
-end_include
 
 begin_include
 include|#
@@ -69,17 +57,6 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GEGL_TYPE_OPERATION_SINK, GeglOperatio
 end_define
 
 begin_define
-DECL|macro|GEGL_OPERATION_SINK_GET_CLASS (obj)
-define|#
-directive|define
-name|GEGL_OPERATION_SINK_GET_CLASS
-parameter_list|(
-name|obj
-parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION_SINK, GeglOperationSinkClass))
-end_define
-
-begin_define
 DECL|macro|GEGL_IS_OPERATION_SINK (obj)
 define|#
 directive|define
@@ -99,6 +76,17 @@ parameter_list|(
 name|klass
 parameter_list|)
 value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GEGL_TYPE_OPERATION_SINK))
+end_define
+
+begin_define
+DECL|macro|GEGL_OPERATION_SINK_GET_CLASS (obj)
+define|#
+directive|define
+name|GEGL_OPERATION_SINK_GET_CLASS
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION_SINK, GeglOperationSinkClass))
 end_define
 
 begin_typedef

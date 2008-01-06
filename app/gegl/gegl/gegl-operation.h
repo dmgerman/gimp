@@ -19,6 +19,18 @@ end_define
 begin_include
 include|#
 directive|include
+file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl-types.h"
 end_include
 
@@ -26,12 +38,6 @@ begin_include
 include|#
 directive|include
 file|"buffer/gegl-buffer-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<babl/babl.h>
 end_include
 
 begin_macro
@@ -256,8 +262,10 @@ name|gchar
 modifier|*
 name|input_pad
 parameter_list|,
+specifier|const
 name|GeglRectangle
-name|region
+modifier|*
+name|input_region
 parameter_list|)
 function_decl|;
 comment|/* computes the rectangle needed to be correctly computed in a buffer    * on the named input_pad, for a given result rectangle    */
@@ -406,6 +414,7 @@ name|gchar
 modifier|*
 name|pad_name
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|region
@@ -451,8 +460,10 @@ name|gchar
 modifier|*
 name|input_pad
 parameter_list|,
+specifier|const
 name|GeglRectangle
-name|region
+modifier|*
+name|input_region
 parameter_list|)
 function_decl|;
 end_function_decl
