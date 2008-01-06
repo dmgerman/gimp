@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ad96c0103
+DECL|enum|__anon2bc1e0f10103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -578,10 +578,10 @@ condition|(
 name|value
 operator|>
 operator|(
-operator|(
-name|guint64
-operator|)
+name|G_GUINT64_CONSTANT
+argument_list|(
 literal|1
+argument_list|)
 operator|<<
 name|shift
 operator|)
@@ -589,10 +589,10 @@ operator|&&
 name|value
 operator|%
 operator|(
-operator|(
-name|guint64
-operator|)
+name|G_GUINT64_CONSTANT
+argument_list|(
 literal|1
+argument_list|)
 operator|<<
 name|shift
 operator|)
@@ -893,10 +893,10 @@ condition|(
 name|value
 operator|>
 operator|(
-operator|(
-name|guint64
-operator|)
+name|G_GUINT64_CONSTANT
+argument_list|(
 literal|1
+argument_list|)
 operator|<<
 name|shift
 operator|)
@@ -904,10 +904,10 @@ operator|&&
 name|value
 operator|%
 operator|(
-operator|(
-name|guint64
-operator|)
+name|G_GUINT64_CONSTANT
+argument_list|(
 literal|1
+argument_list|)
 operator|<<
 name|shift
 operator|)
