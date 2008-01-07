@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf133170103
+DECL|enum|__anon28a40e670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -677,6 +677,7 @@ operator|&
 name|rgb
 argument_list|)
 expr_stmt|;
+comment|/*  the code in base/colorize.c would multiply r,b,g with lum,        *  but this is a bug since it should multiply with 255. We        *  don't repeat this bug here (this is the reason why the gegl        *  colorize is brighter than the legacy one).        */
 name|dest
 index|[
 name|RED_PIX
@@ -686,6 +687,7 @@ name|rgb
 operator|.
 name|r
 expr_stmt|;
+comment|/* * lum; */
 name|dest
 index|[
 name|GREEN_PIX
@@ -695,6 +697,7 @@ name|rgb
 operator|.
 name|g
 expr_stmt|;
+comment|/* * lum; */
 name|dest
 index|[
 name|BLUE_PIX
@@ -704,6 +707,8 @@ name|rgb
 operator|.
 name|b
 expr_stmt|;
+comment|/* * lum */
+empty_stmt|;
 name|dest
 index|[
 name|ALPHA_PIX
