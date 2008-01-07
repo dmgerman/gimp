@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationlevels.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationposterize.h"
 end_include
 
@@ -85,6 +91,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_DESATURATE
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_LEVELS
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

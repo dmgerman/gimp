@@ -41,6 +41,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationLevels
+typedef|typedef
+name|struct
+name|_GimpOperationLevels
+name|GimpOperationLevels
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationPosterize
 typedef|typedef
 name|struct
