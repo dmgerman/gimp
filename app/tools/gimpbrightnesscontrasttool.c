@@ -765,7 +765,7 @@ name|bc_tool
 operator|->
 name|brightness
 operator|/
-literal|127.0
+literal|256.0
 expr_stmt|;
 name|contrast
 operator|=
