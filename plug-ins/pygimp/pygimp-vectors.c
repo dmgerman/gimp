@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2ac393080108
+DECL|struct|__anon2949525d0108
 typedef|typedef
 struct|struct
 block|{
@@ -673,7 +673,7 @@ name|args
 argument_list|,
 name|kwargs
 argument_list|,
-literal|"id:rotate"
+literal|"id:flip"
 argument_list|,
 name|kwlist
 argument_list|,
