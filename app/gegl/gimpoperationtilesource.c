@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae8faf40103
+DECL|enum|__anon2c6a12c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -168,6 +168,10 @@ parameter_list|,
 name|GeglNodeContext
 modifier|*
 name|context
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|output
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -639,7 +643,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,GeglNodeContext * context,const GeglRectangle * result)
+DECL|function|gimp_operation_tile_source_process (GeglOperation * operation,GeglNodeContext * context,GeglBuffer * output,const GeglRectangle * result)
 name|gimp_operation_tile_source_process
 parameter_list|(
 name|GeglOperation
@@ -649,6 +653,10 @@ parameter_list|,
 name|GeglNodeContext
 modifier|*
 name|context
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|output
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -703,6 +711,7 @@ name|self
 operator|->
 name|linear
 condition|)
+comment|/* FIXME: this should be set in prepare and not process */
 name|format
 operator|=
 name|gimp_bpp_to_babl_format_linear
@@ -727,6 +736,7 @@ argument_list|,
 name|format
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: use the passed in buffer */
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -829,6 +839,7 @@ name|output
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: should not be needed                                                                               if using the passed in                                                                                buffer */
 block|}
 return|return
 name|TRUE

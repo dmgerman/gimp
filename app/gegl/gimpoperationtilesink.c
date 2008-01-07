@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0748610103
+DECL|enum|__anon2bed19e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0748610203
+DECL|enum|__anon2bed19e80203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -181,6 +181,10 @@ parameter_list|,
 name|GeglNodeContext
 modifier|*
 name|context
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|input
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -620,7 +624,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,GeglNodeContext * context,const GeglRectangle * result)
+DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,GeglNodeContext * context,GeglBuffer * input,const GeglRectangle * result)
 name|gimp_operation_tile_sink_process
 parameter_list|(
 name|GeglOperation
@@ -630,6 +634,10 @@ parameter_list|,
 name|GeglNodeContext
 modifier|*
 name|context
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|input
 parameter_list|,
 specifier|const
 name|GeglRectangle
@@ -653,10 +661,6 @@ operator|->
 name|tile_manager
 condition|)
 block|{
-name|GeglBuffer
-modifier|*
-name|input
-decl_stmt|;
 specifier|const
 name|Babl
 modifier|*
@@ -697,15 +701,6 @@ operator|=
 name|gimp_bpp_to_babl_format
 argument_list|(
 name|bpp
-argument_list|)
-expr_stmt|;
-name|input
-operator|=
-name|gegl_node_context_get_source
-argument_list|(
-name|context
-argument_list|,
-literal|"input"
 argument_list|)
 expr_stmt|;
 name|pixel_region_init

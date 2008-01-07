@@ -144,6 +144,10 @@ name|GeglNodeContext
 modifier|*
 name|context
 parameter_list|,
+name|GeglBuffer
+modifier|*
+name|output
+parameter_list|,
 specifier|const
 name|GeglRectangle
 modifier|*
