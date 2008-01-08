@@ -862,8 +862,6 @@ argument_list|,
 name|new_image
 argument_list|,
 name|new_type
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1296,8 +1294,6 @@ argument_list|,
 name|new_image
 argument_list|,
 name|GIMP_TYPE_LAYER
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;

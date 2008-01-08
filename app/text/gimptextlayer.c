@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53e5200103
+DECL|enum|__anon28d1bf820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -250,9 +250,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -933,7 +930,7 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_text_layer_duplicate (GimpItem * item,GType new_type,gboolean add_alpha)
+DECL|function|gimp_text_layer_duplicate (GimpItem * item,GType new_type)
 name|gimp_text_layer_duplicate
 parameter_list|(
 name|GimpItem
@@ -942,9 +939,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|GimpItem
@@ -975,8 +969,6 @@ argument_list|(
 name|item
 argument_list|,
 name|new_type
-argument_list|,
-name|add_alpha
 argument_list|)
 expr_stmt|;
 if|if

@@ -755,8 +755,6 @@ argument_list|,
 name|image
 argument_list|,
 name|new_type
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -996,8 +994,6 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|viewable
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1927,8 +1923,6 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|GIMP_TYPE_LAYER
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

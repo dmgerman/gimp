@@ -233,9 +233,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 DECL|member|convert
@@ -625,9 +622,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -647,9 +641,6 @@ name|dest_image
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl

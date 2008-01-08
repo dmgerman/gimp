@@ -425,8 +425,6 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|layer
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -589,8 +587,6 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|channel
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -710,8 +706,6 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|vectors
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;

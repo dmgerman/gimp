@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc677480103
+DECL|enum|__anon29e8b2f50103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -203,9 +203,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1288,7 +1285,7 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_vectors_duplicate (GimpItem * item,GType new_type,gboolean add_alpha)
+DECL|function|gimp_vectors_duplicate (GimpItem * item,GType new_type)
 name|gimp_vectors_duplicate
 parameter_list|(
 name|GimpItem
@@ -1297,9 +1294,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|GimpItem
@@ -1330,8 +1324,6 @@ argument_list|(
 name|item
 argument_list|,
 name|new_type
-argument_list|,
-name|add_alpha
 argument_list|)
 expr_stmt|;
 if|if

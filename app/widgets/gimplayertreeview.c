@@ -3371,8 +3371,6 @@ operator|->
 name|image
 argument_list|,
 name|GIMP_TYPE_LAYER
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

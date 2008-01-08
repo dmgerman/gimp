@@ -307,8 +307,6 @@ name|selection
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;

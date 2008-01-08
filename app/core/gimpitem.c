@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea65c50103
+DECL|enum|__anon29e137fc0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ea65c50203
+DECL|enum|__anon29e137fc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -258,9 +258,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1183,7 +1180,7 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_real_duplicate (GimpItem * item,GType new_type,gboolean add_alpha)
+DECL|function|gimp_item_real_duplicate (GimpItem * item,GType new_type)
 name|gimp_item_real_duplicate
 parameter_list|(
 name|GimpItem
@@ -1192,9 +1189,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|GimpItem
@@ -2108,13 +2102,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_duplicate:  * @item:      The #GimpItem to duplicate.  * @new_type:  The type to make the new item.  * @add_alpha: #TRUE if an alpha channel should be added to the new item.  *  * Returns: the newly created item.  */
+comment|/**  * gimp_item_duplicate:  * @item:     The #GimpItem to duplicate.  * @new_type: The type to make the new item.  *  * Returns: the newly created item.  */
 end_comment
 
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_duplicate (GimpItem * item,GType new_type,gboolean add_alpha)
+DECL|function|gimp_item_duplicate (GimpItem * item,GType new_type)
 name|gimp_item_duplicate
 parameter_list|(
 name|GimpItem
@@ -2123,9 +2117,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2173,21 +2164,19 @@ argument_list|(
 name|item
 argument_list|,
 name|new_type
-argument_list|,
-name|add_alpha
 argument_list|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_convert:  * @item:       The #GimpItem to convert.  * @dest_image: The #GimpImage in which to place the converted item.  * @new_type:   The type to convert the item to.  * @add_alpha:  #TRUE if an alpha channel should be added to the converted item.  *  * Returns: the new item that results from the conversion.  */
+comment|/**  * gimp_item_convert:  * @item:       The #GimpItem to convert.  * @dest_image: The #GimpImage in which to place the converted item.  * @new_type:   The type to convert the item to.  *  * Returns: the new item that results from the conversion.  */
 end_comment
 
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_convert (GimpItem * item,GimpImage * dest_image,GType new_type,gboolean add_alpha)
+DECL|function|gimp_item_convert (GimpItem * item,GimpImage * dest_image,GType new_type)
 name|gimp_item_convert
 parameter_list|(
 name|GimpItem
@@ -2200,9 +2189,6 @@ name|dest_image
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|GimpItem
@@ -2260,8 +2246,6 @@ argument_list|(
 name|item
 argument_list|,
 name|new_type
-argument_list|,
-name|add_alpha
 argument_list|)
 expr_stmt|;
 if|if

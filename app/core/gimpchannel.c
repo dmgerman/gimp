@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292514d10103
+DECL|enum|__anon29e9603c0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -284,9 +284,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1783,7 +1780,7 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_channel_duplicate (GimpItem * item,GType new_type,gboolean add_alpha)
+DECL|function|gimp_channel_duplicate (GimpItem * item,GType new_type)
 name|gimp_channel_duplicate
 parameter_list|(
 name|GimpItem
@@ -1792,9 +1789,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|GimpItem
@@ -1813,19 +1807,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|g_type_is_a
-argument_list|(
-name|new_type
-argument_list|,
-name|GIMP_TYPE_CHANNEL
-argument_list|)
-condition|)
-name|add_alpha
-operator|=
-name|FALSE
-expr_stmt|;
 name|new_item
 operator|=
 name|GIMP_ITEM_CLASS
@@ -1838,8 +1819,6 @@ argument_list|(
 name|item
 argument_list|,
 name|new_type
-argument_list|,
-name|add_alpha
 argument_list|)
 expr_stmt|;
 if|if

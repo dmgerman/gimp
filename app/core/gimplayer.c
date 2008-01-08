@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f7cdaa0103
+DECL|enum|__anon2887c3c80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f7cdaa0203
+DECL|enum|__anon2887c3c80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -371,9 +371,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2269,7 +2266,7 @@ begin_function
 specifier|static
 name|GimpItem
 modifier|*
-DECL|function|gimp_layer_duplicate (GimpItem * item,GType new_type,gboolean add_alpha)
+DECL|function|gimp_layer_duplicate (GimpItem * item,GType new_type)
 name|gimp_layer_duplicate
 parameter_list|(
 name|GimpItem
@@ -2278,9 +2275,6 @@ name|item
 parameter_list|,
 name|GType
 name|new_type
-parameter_list|,
-name|gboolean
-name|add_alpha
 parameter_list|)
 block|{
 name|GimpItem
@@ -2311,8 +2305,6 @@ argument_list|(
 name|item
 argument_list|,
 name|new_type
-argument_list|,
-name|add_alpha
 argument_list|)
 expr_stmt|;
 if|if
@@ -2387,8 +2379,10 @@ condition|)
 block|{
 name|GimpItem
 modifier|*
-name|new_mask
-init|=
+name|mask
+decl_stmt|;
+name|mask
+operator|=
 name|gimp_item_duplicate
 argument_list|(
 name|GIMP_ITEM
@@ -2404,17 +2398,15 @@ name|layer
 operator|->
 name|mask
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_layer_add_mask
 argument_list|(
 name|new_layer
 argument_list|,
 name|GIMP_LAYER_MASK
 argument_list|(
-name|new_mask
+name|mask
 argument_list|)
 argument_list|,
 name|FALSE

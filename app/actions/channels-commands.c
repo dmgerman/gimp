@@ -968,8 +968,6 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|channel
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1270,8 +1268,6 @@ name|selection
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL
-argument_list|,
-name|FALSE
 argument_list|)
 argument_list|)
 expr_stmt|;

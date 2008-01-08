@@ -2254,8 +2254,6 @@ name|G_TYPE_FROM_INSTANCE
 argument_list|(
 name|src
 argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 if|if

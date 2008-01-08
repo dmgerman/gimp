@@ -869,8 +869,6 @@ argument_list|,
 name|item_view_class
 operator|->
 name|item_type
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_linked
