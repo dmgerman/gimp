@@ -29,12 +29,6 @@ name|GeglConnection
 typedef|;
 end_typedef
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GEGL_H__
-end_ifndef
-
 begin_typedef
 DECL|typedef|GeglColor
 typedef|typedef
@@ -52,11 +46,6 @@ name|_GeglCurve
 name|GeglCurve
 typedef|;
 end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
 DECL|typedef|GeglCRVisitor
@@ -130,12 +119,6 @@ name|GeglNeedVisitor
 typedef|;
 end_typedef
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GEGL_H__
-end_ifndef
-
 begin_typedef
 DECL|typedef|GeglNode
 typedef|typedef
@@ -144,11 +127,6 @@ name|_GeglNode
 name|GeglNode
 typedef|;
 end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
 DECL|typedef|GeglNodeContext
@@ -177,12 +155,6 @@ name|GeglPad
 typedef|;
 end_typedef
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GEGL_H__
-end_ifndef
-
 begin_typedef
 DECL|typedef|GeglVector
 typedef|typedef
@@ -200,11 +172,6 @@ name|_GeglProcessor
 name|GeglProcessor
 typedef|;
 end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
 DECL|typedef|GeglPrepareVisitor
@@ -238,12 +205,6 @@ name|GeglVisitor
 typedef|;
 end_typedef
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GEGL_H__
-end_ifndef
-
 begin_typedef
 DECL|typedef|GeglRectangle
 typedef|typedef
@@ -252,11 +213,6 @@ name|_GeglRectangle
 name|GeglRectangle
 typedef|;
 end_typedef
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_typedef
 DECL|typedef|GeglPoint
@@ -275,12 +231,6 @@ name|_GeglDimension
 name|GeglDimension
 typedef|;
 end_typedef
-
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GEGL_H__
-end_ifndef
 
 begin_struct
 DECL|struct|_GeglRectangle
@@ -306,11 +256,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_struct
 DECL|struct|_GeglPoint

@@ -144,10 +144,6 @@ name|GeglOperation
 modifier|*
 name|self
 parameter_list|,
-name|GeglNodeContext
-modifier|*
-name|context
-parameter_list|,
 name|GeglBuffer
 modifier|*
 name|input

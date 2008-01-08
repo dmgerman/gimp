@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bed19e80103
+DECL|enum|__anon2ab8a8720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bed19e80203
+DECL|enum|__anon2ab8a8720203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -177,10 +177,6 @@ parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
-parameter_list|,
-name|GeglNodeContext
-modifier|*
-name|context
 parameter_list|,
 name|GeglBuffer
 modifier|*
@@ -624,16 +620,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,GeglNodeContext * context,GeglBuffer * input,const GeglRectangle * result)
+DECL|function|gimp_operation_tile_sink_process (GeglOperation * operation,GeglBuffer * input,const GeglRectangle * result)
 name|gimp_operation_tile_sink_process
 parameter_list|(
 name|GeglOperation
 modifier|*
 name|operation
-parameter_list|,
-name|GeglNodeContext
-modifier|*
-name|context
 parameter_list|,
 name|GeglBuffer
 modifier|*
