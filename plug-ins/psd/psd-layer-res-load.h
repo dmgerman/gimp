@@ -27,6 +27,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -46,6 +51,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

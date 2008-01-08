@@ -883,7 +883,7 @@ comment|/* Image colour modes */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0103
+DECL|enum|__anon2a10e4620103
 typedef|typedef
 enum|enum
 block|{
@@ -945,7 +945,7 @@ comment|/* Image colour spaces */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0203
+DECL|enum|__anon2a10e4620203
 typedef|typedef
 enum|enum
 block|{
@@ -1032,7 +1032,7 @@ comment|/* Image Resource IDs */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0303
+DECL|enum|__anon2a10e4620303
 typedef|typedef
 enum|enum
 block|{
@@ -1394,7 +1394,7 @@ comment|/* Display resolution units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0403
+DECL|enum|__anon2a10e4620403
 typedef|typedef
 enum|enum
 block|{
@@ -1421,7 +1421,7 @@ comment|/* Width and height units */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0503
+DECL|enum|__anon2a10e4620503
 typedef|typedef
 enum|enum
 block|{
@@ -1466,7 +1466,7 @@ comment|/* Thumbnail image data encoding */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0603
+DECL|enum|__anon2a10e4620603
 typedef|typedef
 enum|enum
 block|{
@@ -1492,7 +1492,7 @@ comment|/* Path record types */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0703
+DECL|enum|__anon2a10e4620703
 typedef|typedef
 enum|enum
 block|{
@@ -1560,7 +1560,7 @@ comment|/* Channel ID */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0803
+DECL|enum|__anon2a10e4620803
 typedef|typedef
 enum|enum
 block|{
@@ -1606,7 +1606,7 @@ comment|/* Clipping */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0903
+DECL|enum|__anon2a10e4620903
 typedef|typedef
 enum|enum
 block|{
@@ -1632,7 +1632,7 @@ comment|/* Image compression mode */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0a03
+DECL|enum|__anon2a10e4620a03
 typedef|typedef
 enum|enum
 block|{
@@ -1664,7 +1664,7 @@ comment|/* Vertical - horizontal selection */
 end_comment
 
 begin_typedef
-DECL|enum|__anon29e96c8c0b03
+DECL|enum|__anon2a10e4620b03
 typedef|typedef
 enum|enum
 block|{
@@ -1717,7 +1717,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c0c08
+DECL|struct|__anon2a10e4620c08
 block|{
 DECL|member|red
 name|guint16
@@ -1744,7 +1744,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c0d08
+DECL|struct|__anon2a10e4620d08
 block|{
 DECL|member|hue
 name|guint16
@@ -1771,7 +1771,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c0e08
+DECL|struct|__anon2a10e4620e08
 block|{
 DECL|member|cyan
 name|guint16
@@ -1802,7 +1802,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c0f08
+DECL|struct|__anon2a10e4620f08
 block|{
 DECL|member|L
 name|guint16
@@ -1829,7 +1829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1008
+DECL|struct|__anon2a10e4621008
 block|{
 DECL|member|gray
 name|guint16
@@ -1848,7 +1848,7 @@ end_comment
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29e96c8c110a
+DECL|union|__anon2a10e462110a
 block|{
 DECL|member|rgb
 name|CMRGBColor
@@ -1881,7 +1881,7 @@ comment|/* Image resolution data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96c8c1208
+DECL|struct|__anon2a10e4621208
 typedef|typedef
 struct|struct
 block|{
@@ -1926,7 +1926,7 @@ comment|/* Grid& guide header */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96c8c1308
+DECL|struct|__anon2a10e4621308
 typedef|typedef
 struct|struct
 block|{
@@ -1961,7 +1961,7 @@ comment|/* Guide resource block */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96c8c1408
+DECL|struct|__anon2a10e4621408
 typedef|typedef
 struct|struct
 block|{
@@ -1986,7 +1986,7 @@ comment|/* Thumbnail data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96c8c1508
+DECL|struct|__anon2a10e4621508
 typedef|typedef
 struct|struct
 block|{
@@ -2041,7 +2041,7 @@ comment|/* Channel display info data */
 end_comment
 
 begin_typedef
-DECL|struct|__anon29e96c8c1608
+DECL|struct|__anon2a10e4621608
 typedef|typedef
 struct|struct
 block|{
@@ -2086,7 +2086,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1708
+DECL|struct|__anon2a10e4621708
 block|{
 DECL|member|channel_id
 name|gint16
@@ -2111,7 +2111,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1808
+DECL|struct|__anon2a10e4621808
 block|{
 DECL|member|trans_prot
 name|gboolean
@@ -2151,7 +2151,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1908
+DECL|struct|__anon2a10e4621908
 block|{
 DECL|member|relative_pos
 name|gboolean
@@ -2181,7 +2181,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1a08
+DECL|struct|__anon2a10e4621a08
 block|{
 DECL|member|top
 name|guint32
@@ -2241,7 +2241,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1b08
+DECL|struct|__anon2a10e4621b08
 block|{
 DECL|member|top
 name|guint32
@@ -2276,7 +2276,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1c08
+DECL|struct|__anon2a10e4621c08
 block|{
 DECL|member|drop
 name|gboolean
@@ -2399,7 +2399,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1d08
+DECL|struct|__anon2a10e4621d08
 block|{
 DECL|member|id
 name|gint16
@@ -2441,7 +2441,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1e08
+DECL|struct|__anon2a10e4621e08
 block|{
 DECL|member|gimp_color
 name|GimpRGB
@@ -2481,7 +2481,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c1f08
+DECL|struct|__anon2a10e4621f08
 block|{
 DECL|member|type
 name|gchar
@@ -2527,7 +2527,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c2008
+DECL|struct|__anon2a10e4622008
 block|{
 DECL|member|sig
 name|gchar
@@ -2568,7 +2568,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96c8c2108
+DECL|struct|__anon2a10e4622108
 block|{
 DECL|member|channels
 name|guint16

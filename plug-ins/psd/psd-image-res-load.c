@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/* ----- Known Image Resource Block Types -----   All image resources not otherwise handled, including unknown types   are added as image parasites.   The data is attached as-is from the file (i.e. in big endian order).    PSD_PS2_IMAGE_INFO    = 1000,    Dropped    * 0x03e8 - Obsolete - ps 2.0 image info *   PSD_MAC_PRINT_INFO    = 1001,    PS Only    * 0x03e9 - Optional - Mac print manager print info record *   PSD_PS2_COLOR_TAB     = 1003,    Dropped    * 0x03eb - Obsolete - ps 2.0 indexed colour table *   PSD_RESN_INFO         = 1005,    Loaded     * 0x03ed - ResolutionInfo structure *   PSD_ALPHA_NAMES       = 1006,    Loaded     * 0x03ee - Alpha channel names *   PSD_DISPLAY_INFO      = 1007,    Loaded     * 0x03ef - DisplayInfo structure *   PSD_CAPTION           = 1008,    Loaded     * 0x03f0 - Optional - Caption string *   PSD_BORDER_INFO       = 1009,               * 0x03f1 - Border info *   PSD_BACKGROUND_COL    = 1010,               * 0x03f2 - Background colour *   PSD_PRINT_FLAGS       = 1011,               * 0x03f3 - Print flags *   PSD_GREY_HALFTONE     = 1012,               * 0x03f4 - Greyscale and multichannel halftoning info *   PSD_COLOR_HALFTONE    = 1013,               * 0x03f5 - Colour halftoning info *   PSD_DUOTONE_HALFTONE  = 1014,               * 0x03f6 - Duotone halftoning info *   PSD_GREY_XFER         = 1015,               * 0x03f7 - Greyscale and multichannel transfer functions *   PSD_COLOR_XFER        = 1016,               * 0x03f8 - Colour transfer functions *   PSD_DUOTONE_XFER      = 1017,               * 0x03f9 - Duotone transfer functions *   PSD_DUOTONE_INFO      = 1018,               * 0x03fa - Duotone image information *   PSD_EFFECTIVE_BW      = 1019,               * 0x03fb - Effective black& white values for dot range *   PSD_OBSOLETE_01       = 1020,    Dropped    * 0x03fc - Obsolete *   PSD_EPS_OPT           = 1021,               * 0x03fd - EPS options *   PSD_QUICK_MASK        = 1022,    Loaded     * 0x03fe - Quick mask info *   PSD_OBSOLETE_02       = 1023,    Dropped    * 0x03ff - Obsolete *   PSD_LAYER_STATE       = 1024,    Loaded     * 0x0400 - Layer state info *   PSD_WORKING_PATH      = 1025,               * 0x0401 - Working path (not saved) *   PSD_LAYER_GROUP       = 1026,               * 0x0402 - Layers group info *   PSD_OBSOLETE_03       = 1027,    Dropped    * 0x0403 - Obsolete *   PSD_IPTC_NAA_DATA     = 1028,    Loaded     * 0x0404 - IPTC-NAA record (IMV4.pdf) *   PSD_IMAGE_MODE_RAW    = 1029,               * 0x0405 - Image mode for raw format files *   PSD_JPEG_QUAL         = 1030,    PS Only    * 0x0406 - JPEG quality *   PSD_GRID_GUIDE        = 1032,    Loaded     * 0x0408 - Grid& guide info *   PSD_THUMB_RES         = 1033,    Special    * 0x0409 - Thumbnail resource *   PSD_COPYRIGHT_FLG     = 1034,               * 0x040a - Copyright flag *   PSD_URL               = 1035,               * 0x040b - URL string *   PSD_THUMB_RES2        = 1036,    Special    * 0x040c - Thumbnail resource *   PSD_GLOBAL_ANGLE      = 1037,               * 0x040d - Global angle *   PSD_COLOR_SAMPLER     = 1038,               * 0x040e - Colour samplers resource *   PSD_ICC_PROFILE       = 1039,    Loaded     * 0x040f - ICC Profile *   PSD_WATERMARK         = 1040,               * 0x0410 - Watermark *   PSD_ICC_UNTAGGED      = 1041,               * 0x0411 - Do not use ICC profile flag *   PSD_EFFECTS_VISIBLE   = 1042,               * 0x0412 - Show   hide all effects layers *   PSD_SPOT_HALFTONE     = 1043,               * 0x0413 - Spot halftone *   PSD_DOC_IDS           = 1044,               * 0x0414 - Document specific IDs *   PSD_ALPHA_NAMES_UNI   = 1045,    Loaded     * 0x0415 - Unicode alpha names *   PSD_IDX_COL_TAB_CNT   = 1046,    Loaded     * 0x0416 - Indexed colour table count *   PSD_IDX_TRANSPARENT   = 1047,               * 0x0417 - Index of transparent colour (if any) *   PSD_GLOBAL_ALT        = 1049,               * 0x0419 - Global altitude *   PSD_SLICES            = 1050,               * 0x041a - Slices *   PSD_WORKFLOW_URL_UNI  = 1051,               * 0x041b - Workflow URL - Unicode string *   PSD_JUMP_TO_XPEP      = 1052,               * 0x041c - Jump to XPEP (?) *   PSD_ALPHA_ID          = 1053,    Loaded     * 0x041d - Alpha IDs *   PSD_URL_LIST_UNI      = 1054,               * 0x041e - URL list - unicode *   PSD_VERSION_INFO      = 1057,               * 0x0421 - Version info *   PSD_EXIF_DATA         = 1058,    Loaded     * 0x0422 - Exif data block *   PSD_XMP_DATA          = 1060,    Loaded     * 0x0424 - XMP data block *   PSD_PATH_INFO_FIRST   = 2000,    Loaded     * 0x07d0 - First path info block *   PSD_PATH_INFO_LAST    = 2998,    Loaded     * 0x0bb6 - Last path info block *   PSD_CLIPPING_PATH     = 2999,               * 0x0bb7 - Name of clipping path *   PSD_PRINT_FLAGS_2     = 10000               * 0x2710 - Print flags *  */
+comment|/* ----- Known Image Resource Block Types -----   All image resources not otherwise handled, including unknown types   are added as image parasites.   The data is attached as-is from the file (i.e. in big endian order).    PSD_PS2_IMAGE_INFO    = 1000,    Dropped    * 0x03e8 - Obsolete - ps 2.0 image info *   PSD_MAC_PRINT_INFO    = 1001,    PS Only    * 0x03e9 - Optional - Mac print manager print info record *   PSD_PS2_COLOR_TAB     = 1003,    Dropped    * 0x03eb - Obsolete - ps 2.0 indexed colour table *   PSD_RESN_INFO         = 1005,    Loaded     * 0x03ed - ResolutionInfo structure *   PSD_ALPHA_NAMES       = 1006,    Loaded     * 0x03ee - Alpha channel names *   PSD_DISPLAY_INFO      = 1007,    Loaded     * 0x03ef - DisplayInfo structure *   PSD_CAPTION           = 1008,    Loaded     * 0x03f0 - Optional - Caption string *   PSD_BORDER_INFO       = 1009,               * 0x03f1 - Border info *   PSD_BACKGROUND_COL    = 1010,               * 0x03f2 - Background colour *   PSD_PRINT_FLAGS       = 1011,               * 0x03f3 - Print flags *   PSD_GREY_HALFTONE     = 1012,               * 0x03f4 - Greyscale and multichannel halftoning info *   PSD_COLOR_HALFTONE    = 1013,               * 0x03f5 - Colour halftoning info *   PSD_DUOTONE_HALFTONE  = 1014,               * 0x03f6 - Duotone halftoning info *   PSD_GREY_XFER         = 1015,               * 0x03f7 - Greyscale and multichannel transfer functions *   PSD_COLOR_XFER        = 1016,               * 0x03f8 - Colour transfer functions *   PSD_DUOTONE_XFER      = 1017,               * 0x03f9 - Duotone transfer functions *   PSD_DUOTONE_INFO      = 1018,               * 0x03fa - Duotone image information *   PSD_EFFECTIVE_BW      = 1019,               * 0x03fb - Effective black& white values for dot range *   PSD_OBSOLETE_01       = 1020,    Dropped    * 0x03fc - Obsolete *   PSD_EPS_OPT           = 1021,               * 0x03fd - EPS options *   PSD_QUICK_MASK        = 1022,    Loaded     * 0x03fe - Quick mask info *   PSD_OBSOLETE_02       = 1023,    Dropped    * 0x03ff - Obsolete *   PSD_LAYER_STATE       = 1024,    Loaded     * 0x0400 - Layer state info *   PSD_WORKING_PATH      = 1025,               * 0x0401 - Working path (not saved) *   PSD_LAYER_GROUP       = 1026,               * 0x0402 - Layers group info *   PSD_OBSOLETE_03       = 1027,    Dropped    * 0x0403 - Obsolete *   PSD_IPTC_NAA_DATA     = 1028,    Loaded     * 0x0404 - IPTC-NAA record (IMV4.pdf) *   PSD_IMAGE_MODE_RAW    = 1029,               * 0x0405 - Image mode for raw format files *   PSD_JPEG_QUAL         = 1030,    PS Only    * 0x0406 - JPEG quality *   PSD_GRID_GUIDE        = 1032,    Loaded     * 0x0408 - Grid& guide info *   PSD_THUMB_RES         = 1033,    Special    * 0x0409 - Thumbnail resource *   PSD_COPYRIGHT_FLG     = 1034,               * 0x040a - Copyright flag *   PSD_URL               = 1035,               * 0x040b - URL string *   PSD_THUMB_RES2        = 1036,    Special    * 0x040c - Thumbnail resource *   PSD_GLOBAL_ANGLE      = 1037,               * 0x040d - Global angle *   PSD_COLOR_SAMPLER     = 1038,               * 0x040e - Colour samplers resource *   PSD_ICC_PROFILE       = 1039,    Loaded     * 0x040f - ICC Profile *   PSD_WATERMARK         = 1040,               * 0x0410 - Watermark *   PSD_ICC_UNTAGGED      = 1041,               * 0x0411 - Do not use ICC profile flag *   PSD_EFFECTS_VISIBLE   = 1042,               * 0x0412 - Show   hide all effects layers *   PSD_SPOT_HALFTONE     = 1043,               * 0x0413 - Spot halftone *   PSD_DOC_IDS           = 1044,               * 0x0414 - Document specific IDs *   PSD_ALPHA_NAMES_UNI   = 1045,    Loaded     * 0x0415 - Unicode alpha names *   PSD_IDX_COL_TAB_CNT   = 1046,    Loaded     * 0x0416 - Indexed colour table count *   PSD_IDX_TRANSPARENT   = 1047,               * 0x0417 - Index of transparent colour (if any) *   PSD_GLOBAL_ALT        = 1049,               * 0x0419 - Global altitude *   PSD_SLICES            = 1050,               * 0x041a - Slices *   PSD_WORKFLOW_URL_UNI  = 1051,               * 0x041b - Workflow URL - Unicode string *   PSD_JUMP_TO_XPEP      = 1052,               * 0x041c - Jump to XPEP (?) *   PSD_ALPHA_ID          = 1053,    Loaded     * 0x041d - Alpha IDs *   PSD_URL_LIST_UNI      = 1054,               * 0x041e - URL list - unicode *   PSD_VERSION_INFO      = 1057,               * 0x0421 - Version info *   PSD_EXIF_DATA         = 1058,    Loaded     * 0x0422 - Exif data block *   PSD_XMP_DATA          = 1060,    Loaded     * 0x0424 - XMP data block *   PSD_PATH_INFO_FIRST   = 2000,    Loaded     * 0x07d0 - First path info block *   PSD_PATH_INFO_LAST    = 2998,    Loaded     * 0x0bb6 - Last path info block *   PSD_CLIPPING_PATH     = 2999,               * 0x0bb7 - Name of clipping path *   PSD_PRINT_FLAGS_2     = 10000               * 0x2710 - Print flags * */
 end_comment
 
 begin_include
@@ -17,6 +17,12 @@ begin_include
 include|#
 directive|include
 file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<errno.h>
 end_include
 
 begin_include
@@ -138,6 +144,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -159,6 +170,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -180,6 +196,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -205,6 +226,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -230,6 +256,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -251,6 +282,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -276,6 +312,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -301,6 +342,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -322,6 +368,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -343,6 +394,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -364,6 +420,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -385,6 +446,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -410,6 +476,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -431,6 +502,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -456,6 +532,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -477,6 +558,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -498,6 +584,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -519,6 +610,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -529,7 +625,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|get_image_resource_header (PSDimageres * res_a,FILE * f)
+DECL|function|get_image_resource_header (PSDimageres * res_a,FILE * f,GError ** error)
 name|get_image_resource_header
 parameter_list|(
 name|PSDimageres
@@ -539,11 +635,17 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint32
 name|read_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|write_len
 decl_stmt|;
 name|gchar
@@ -585,12 +687,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block header"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -622,8 +728,19 @@ argument_list|,
 literal|2
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|error
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 if|if
 condition|(
 name|name
@@ -651,7 +768,7 @@ index|[
 literal|0
 index|]
 operator|=
-literal|0
+literal|0x0
 expr_stmt|;
 name|g_free
 argument_list|(
@@ -677,12 +794,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error image resource block length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -743,7 +864,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_image_resource (PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_image_resource (PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_image_resource
 parameter_list|(
 name|PSDimageres
@@ -761,6 +882,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -783,12 +909,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -825,18 +955,23 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
-name|g_message
+block|{
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unknown image resource type signature %.4s"
-argument_list|)
 argument_list|,
 name|res_a
 operator|->
 name|type
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
 switch|switch
 condition|(
 name|res_a
@@ -901,7 +1036,7 @@ case|:
 case|case
 name|PSD_JPEG_QUAL
 case|:
-comment|/* Save photoshop resources with no meaning for GIMP           as image parasites */
+comment|/* Save photoshop resources with no meaning for GIMP               as image parasites */
 name|load_resource_ps_only
 argument_list|(
 name|res_a
@@ -909,6 +1044,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -922,6 +1059,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -937,6 +1076,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -952,6 +1093,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -965,6 +1108,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -980,6 +1125,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -995,6 +1142,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1008,6 +1157,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1021,6 +1172,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1034,6 +1187,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1049,6 +1204,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1062,6 +1219,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1077,6 +1236,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1090,6 +1251,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1103,6 +1266,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1128,6 +1293,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 else|else
@@ -1138,8 +1305,11 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 comment|/* Image blocks are null padded to even length */
 if|if
@@ -1184,12 +1354,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1205,7 +1379,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_thumbnail_resource (PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_thumbnail_resource (PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_thumbnail_resource
 parameter_list|(
 name|PSDimageres
@@ -1219,6 +1393,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -1246,12 +1425,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1283,6 +1466,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|rtn
@@ -1333,12 +1518,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1359,7 +1548,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_unknown (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_unknown (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_unknown
 parameter_list|(
 specifier|const
@@ -1374,6 +1563,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Unknown image resources attached as parasites to re-save later */
@@ -1429,16 +1623,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1518,7 +1712,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_ps_only (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_ps_only (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_ps_only
 parameter_list|(
 specifier|const
@@ -1533,6 +1727,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Save photoshop resources with no meaning for GIMP as image parasites      to re-save later */
@@ -1588,16 +1787,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1677,7 +1876,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1005 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1005 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1005
 parameter_list|(
 specifier|const
@@ -1692,6 +1891,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load image resolution and unit of measure */
@@ -1810,16 +2014,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1926,7 +2130,7 @@ operator|.
 name|heightUnit
 argument_list|)
 expr_stmt|;
-comment|/* Resolution always record as pixels / inch in a fixed point implied      decimal int32 with 16 bits before point and 16 after (i.e. cast as      double and divide resolution by 2^16 */
+comment|/* Resolution always recorded as pixels / inch in a fixed point implied      decimal int32 with 16 bits before point and 16 after (i.e. cast as      double and divide resolution by 2^16 */
 name|gimp_image_set_resolution
 argument_list|(
 name|image_id
@@ -1990,7 +2194,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1006 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_resource_1006 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1006
 parameter_list|(
 specifier|const
@@ -2009,6 +2213,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load alpha channel names stored as a series of pascal strings      unpadded between strings */
@@ -2018,9 +2227,11 @@ name|str
 decl_stmt|;
 name|gint32
 name|block_rem
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|read_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|write_len
 decl_stmt|;
 name|IFDBG
@@ -2041,7 +2252,7 @@ condition|)
 block|{
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -2085,11 +2296,22 @@ argument_list|,
 literal|1
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|error
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -2118,14 +2340,6 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|g_strdup
-argument_list|(
-name|str
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
@@ -2144,7 +2358,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1007 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_resource_1007 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1007
 parameter_list|(
 specifier|const
@@ -2163,6 +2377,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load alpha channel display info */
@@ -2328,16 +2547,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -2633,13 +2852,13 @@ case|case
 name|PSD_CS_ANPA
 case|:
 default|default:
-name|IFDBG
+if|if
+condition|(
+name|CONVERSION_WARNINGS
+condition|)
+name|g_message
 argument_list|(
-literal|2
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Color space %d not supported by GIMP"
+literal|"Unsupported color space: %d"
 argument_list|,
 name|dsp_info
 operator|.
@@ -2659,6 +2878,14 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_rgb_set_alpha
+argument_list|(
+operator|&
+name|gimp_rgb
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|IFDBG
 argument_list|(
 literal|2
@@ -2829,7 +3056,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1008 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1008 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1008
 parameter_list|(
 specifier|const
@@ -2844,6 +3071,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load image caption */
@@ -2857,7 +3089,8 @@ name|caption
 decl_stmt|;
 name|gint32
 name|read_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|write_len
 decl_stmt|;
 name|IFDBG
@@ -2882,11 +3115,22 @@ argument_list|,
 literal|1
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|error
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -2934,7 +3178,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1022 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_resource_1022 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1022
 parameter_list|(
 specifier|const
@@ -2953,6 +3197,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load quick mask info */
@@ -3002,16 +3251,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -3054,7 +3303,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1024 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_resource_1024 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1024
 parameter_list|(
 specifier|const
@@ -3073,6 +3322,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load image layer state - current active layer counting from bottom up */
@@ -3104,16 +3358,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -3141,7 +3395,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1028 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1028 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1028
 parameter_list|(
 specifier|const
@@ -3156,6 +3410,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load IPTC data block */
@@ -3226,16 +3485,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -3363,7 +3622,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -3421,7 +3680,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1032 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1032 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1032
 parameter_list|(
 specifier|const
@@ -3436,6 +3695,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load grid and guides */
@@ -3525,16 +3789,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -3588,7 +3852,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -3662,16 +3926,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -3698,7 +3962,7 @@ literal|32
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -3750,7 +4014,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1033 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1033 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1033
 parameter_list|(
 specifier|const
@@ -3765,6 +4029,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load thumbnail image */
@@ -3792,10 +4061,12 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|rgb_buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 modifier|*
 name|rowbuf
@@ -3948,16 +4219,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4085,12 +4356,13 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_message
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unknown thumbnail format %d"
-argument_list|)
 argument_list|,
 name|thumb_info
 operator|.
@@ -4528,7 +4800,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1039 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1039 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1039
 parameter_list|(
 specifier|const
@@ -4543,6 +4815,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load ICC profile */
@@ -4590,16 +4867,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4648,7 +4925,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1045 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_resource_1045 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1045
 parameter_list|(
 specifier|const
@@ -4667,6 +4944,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load alpha channel names stored as a series of unicode strings      in a GPtrArray */
@@ -4676,9 +4958,11 @@ name|str
 decl_stmt|;
 name|gint32
 name|block_rem
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|read_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|write_len
 decl_stmt|;
 name|IFDBG
@@ -4697,15 +4981,53 @@ operator|->
 name|alpha_names
 condition|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
 literal|"Deleting localised alpha channel names"
 argument_list|)
 expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|img_a
+operator|->
+name|alpha_names
+operator|->
+name|len
+condition|;
+operator|++
+name|i
+control|)
+block|{
+name|str
+operator|=
+name|g_ptr_array_index
+argument_list|(
+name|img_a
+operator|->
+name|alpha_names
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
+expr_stmt|;
+block|}
 name|g_ptr_array_free
 argument_list|(
 name|img_a
@@ -4749,11 +5071,22 @@ argument_list|,
 literal|1
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|error
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -4782,14 +5115,6 @@ argument_list|,
 operator|(
 name|gpointer
 operator|)
-name|g_strdup
-argument_list|(
-name|str
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
 name|str
 argument_list|)
 expr_stmt|;
@@ -4808,7 +5133,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1046 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1046 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1046
 parameter_list|(
 specifier|const
@@ -4823,6 +5148,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load indexed color table count */
@@ -4866,16 +5196,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4892,7 +5222,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -4953,7 +5283,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1053 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|load_resource_1053 (const PSDimageres * res_a,const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|load_resource_1053
 parameter_list|(
 specifier|const
@@ -4972,12 +5302,18 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load image alpha channel ids (tattoos) */
 name|gint16
 name|tot_rec
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|cidx
 decl_stmt|;
 name|IFDBG
@@ -5064,16 +5400,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -5124,7 +5460,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1058 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1058 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1058
 parameter_list|(
 specifier|const
@@ -5139,6 +5475,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load EXIF data block */
@@ -5156,7 +5497,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|exif_buf
-decl_stmt|,
+decl_stmt|;
+name|guchar
 modifier|*
 name|tmp_data
 decl_stmt|;
@@ -5165,10 +5507,15 @@ name|exif_buf_len
 decl_stmt|;
 name|gint16
 name|jpeg_len
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|jpeg_fill
 init|=
 literal|0
+decl_stmt|;
+name|GimpParam
+modifier|*
+name|return_vals
 decl_stmt|;
 name|gint
 name|nreturn_vals
@@ -5226,16 +5573,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -5378,7 +5725,7 @@ condition|)
 block|{
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -5420,6 +5767,8 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/* Merge with existing XMP data block */
+name|return_vals
+operator|=
 name|gimp_run_procedure
 argument_list|(
 name|DECODE_XMP_PROC
@@ -5443,9 +5792,16 @@ argument_list|(
 name|tmp_data
 argument_list|)
 expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -5488,7 +5844,7 @@ condition|)
 block|{
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -5612,7 +5968,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -5670,7 +6026,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_1060 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_1060 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_1060
 parameter_list|(
 specifier|const
@@ -5685,9 +6041,18 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load XMP Metadata block */
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
 name|gint
 name|nreturn_vals
 decl_stmt|;
@@ -5733,16 +6098,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -5760,6 +6125,8 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
+name|return_vals
+operator|=
 name|gimp_run_procedure
 argument_list|(
 name|DECODE_XMP_PROC
@@ -5783,6 +6150,13 @@ argument_list|(
 name|res_data
 argument_list|)
 expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
 return|return
 literal|0
 return|;
@@ -5792,7 +6166,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_2000 (const PSDimageres * res_a,const gint32 image_id,FILE * f)
+DECL|function|load_resource_2000 (const PSDimageres * res_a,const gint32 image_id,FILE * f,GError ** error)
 name|load_resource_2000
 parameter_list|(
 specifier|const
@@ -5807,12 +6181,13 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
 name|gdouble
 modifier|*
 name|controlpoints
@@ -5822,12 +6197,14 @@ name|x
 index|[
 literal|3
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|y
 index|[
 literal|3
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|vector_id
 init|=
 operator|-
@@ -5835,25 +6212,32 @@ literal|1
 decl_stmt|;
 name|gint16
 name|type
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|init_fill
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|num_rec
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|path_rec
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|cntr
 decl_stmt|;
 name|gint
 name|image_width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|image_height
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|i
 decl_stmt|;
 name|gboolean
 name|closed
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|fill
 decl_stmt|;
 comment|/* Load path data from image resources 2000-2998 */
@@ -5904,16 +6288,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -5935,12 +6319,13 @@ operator|!=
 name|PSD_PATH_FILL_RULE
 condition|)
 block|{
-name|g_message
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unexpected path record type: %d"
-argument_list|)
 argument_list|,
 name|type
 argument_list|)
@@ -5969,12 +6354,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6009,34 +6398,14 @@ name|image_id
 argument_list|)
 expr_stmt|;
 comment|/* Create path */
-name|name
-operator|=
-name|gimp_any_to_utf8
-argument_list|(
-name|res_a
-operator|->
-name|name
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|_
-argument_list|(
-literal|"Invalid UTF-8 string in PSD file"
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|vector_id
 operator|=
 name|gimp_vectors_new
 argument_list|(
 name|image_id
 argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
+name|res_a
+operator|->
 name|name
 argument_list|)
 expr_stmt|;
@@ -6074,16 +6443,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6100,7 +6469,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6134,12 +6503,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6173,16 +6546,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6214,12 +6587,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6257,16 +6634,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6288,12 +6665,16 @@ operator|>
 name|path_rec
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Too many path point records"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6303,7 +6684,7 @@ return|;
 block|}
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6359,12 +6740,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6396,16 +6781,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6422,7 +6807,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6555,16 +6940,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block %d"
+name|f
 argument_list|)
 argument_list|,
-name|res_a
-operator|->
-name|id
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6649,7 +7034,7 @@ expr_stmt|;
 block|}
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6689,12 +7074,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unexpected path type record %d"
-argument_list|)
 argument_list|,
 name|type
 argument_list|)
@@ -6713,12 +7099,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6770,12 +7160,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return

@@ -16,6 +16,34 @@ directive|define
 name|__PSD_UTIL_H__
 end_define
 
+begin_comment
+comment|/*  *  Set file read error  */
+end_comment
+
+begin_function_decl
+name|void
+name|psd_set_error
+parameter_list|(
+specifier|const
+name|gboolean
+name|file_eof
+parameter_list|,
+specifier|const
+name|gint
+name|err_no
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  * Reads a pascal string from the file padded to a multiple of mod_len  * and returns a utf-8 string.  */
+end_comment
+
 begin_function_decl
 name|gchar
 modifier|*
@@ -31,14 +59,23 @@ name|bytes_written
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  *  Converts utf-8 string to current locale and writes as pascal  *  string with padding to a multiple of mod_len.  */
+end_comment
 
 begin_function_decl
 name|gint32
@@ -51,14 +88,23 @@ name|src
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  * Reads a utf-16 string from the file padded to a multiple of mod_len  * and returns a utf-8 string.  */
+end_comment
 
 begin_function_decl
 name|gchar
@@ -75,14 +121,23 @@ name|bytes_written
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  *  Converts utf-8 string to utf-16 and writes 4 byte length  *  then string padding to multiple of mod_len.  */
+end_comment
 
 begin_function_decl
 name|gint32
@@ -95,11 +150,16 @@ name|src
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

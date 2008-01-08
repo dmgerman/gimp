@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib/gstdio.h>
 end_include
 
@@ -76,6 +82,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -97,6 +108,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -118,6 +134,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -139,6 +160,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -160,6 +186,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -181,6 +212,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -202,6 +238,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -223,6 +264,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -233,7 +279,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|get_layer_resource_header (PSDlayerres * res_a,FILE * f)
+DECL|function|get_layer_resource_header (PSDlayerres * res_a,FILE * f,GError ** error)
 name|get_layer_resource_header
 parameter_list|(
 name|PSDlayerres
@@ -243,6 +289,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 if|if
@@ -294,12 +345,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer resource block header"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -360,7 +415,7 @@ end_function
 
 begin_function
 name|gint
-DECL|function|load_layer_resource (PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_layer_resource (PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_layer_resource
 parameter_list|(
 name|PSDlayerres
@@ -374,6 +429,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -396,12 +456,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -425,18 +489,23 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
-name|g_message
+block|{
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unknown layer resource signature %.4s"
-argument_list|)
 argument_list|,
 name|res_a
 operator|->
 name|sig
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
 if|if
 condition|(
 name|memcmp
@@ -641,6 +710,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -692,6 +763,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -730,6 +803,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -768,6 +843,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -793,6 +870,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -818,6 +897,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 elseif|else
@@ -843,6 +924,8 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 else|else
@@ -853,8 +936,11 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Layer blocks are null padded to even length */
 if|if
 condition|(
@@ -898,12 +984,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -924,7 +1014,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_unknown (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_unknown (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_unknown
 parameter_list|(
 specifier|const
@@ -939,6 +1029,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|IFDBG
@@ -963,7 +1058,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_ladj (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_ladj (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_ladj
 parameter_list|(
 specifier|const
@@ -978,6 +1073,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load adjustment layer */
@@ -1016,13 +1116,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning:\n"
 literal|"The image file contains adjustment layers. "
 literal|"These are not supported by the GIMP and will "
 literal|"be dropped."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|msg_flag
@@ -1039,7 +1136,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_lfil (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_lfil (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_lfil
 parameter_list|(
 specifier|const
@@ -1054,6 +1151,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load fill layer */
@@ -1086,13 +1188,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning:\n"
 literal|"The image file contains fill layers. "
 literal|"These are not supported by the GIMP and will "
 literal|"be rasterized."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|msg_flag
@@ -1109,7 +1208,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_lfx (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_lfx (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_lfx
 parameter_list|(
 specifier|const
@@ -1124,6 +1223,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load layer effects */
@@ -1156,13 +1260,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning:\n"
 literal|"The image file contains layer effects. "
 literal|"These are not supported by the GIMP and will "
 literal|"be dropped."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|msg_flag
@@ -1179,7 +1280,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_ltyp (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_ltyp (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_ltyp
 parameter_list|(
 specifier|const
@@ -1194,12 +1295,18 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load type tool layer */
 name|gint16
 name|version
-decl_stmt|,
+decl_stmt|;
+name|gint16
 name|text_desc_vers
 decl_stmt|;
 name|gint32
@@ -1207,28 +1314,38 @@ name|desc_version
 decl_stmt|;
 name|guint64
 name|t_xx
-decl_stmt|,
+decl_stmt|;
+name|guint64
 name|t_xy
-decl_stmt|,
+decl_stmt|;
+name|guint64
 name|t_yx
-decl_stmt|,
+decl_stmt|;
+name|guint64
 name|t_yy
-decl_stmt|,
+decl_stmt|;
+name|guint64
 name|t_tx
-decl_stmt|,
+decl_stmt|;
+name|guint64
 name|t_ty
 decl_stmt|;
 name|gdouble
 name|transform_xx
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|transform_xy
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|transform_yx
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|transform_yy
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|transform_tx
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|transform_ty
 decl_stmt|;
 specifier|static
@@ -1260,13 +1377,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning:\n"
 literal|"The image file contains type tool layers. "
 literal|"These are not supported by the GIMP and will "
 literal|"be dropped."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|msg_flag
@@ -1420,12 +1534,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading text descriptor info"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1545,7 +1663,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_luni (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_luni (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_luni
 parameter_list|(
 specifier|const
@@ -1560,12 +1678,18 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load layer name in unicode (length padded to multiple of 4 bytes) */
 name|gint32
 name|read_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|write_len
 decl_stmt|;
 name|IFDBG
@@ -1605,11 +1729,22 @@ argument_list|,
 literal|4
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|error
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -1629,7 +1764,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_lyid (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_lyid (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_lyid
 parameter_list|(
 specifier|const
@@ -1644,6 +1779,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load layer id (tattoo) */
@@ -1675,12 +1815,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer ID"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1701,7 +1845,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -1721,7 +1865,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|load_resource_lsct (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f)
+DECL|function|load_resource_lsct (const PSDlayerres * res_a,PSDlayer * lyr_a,FILE * f,GError ** error)
 name|load_resource_lsct
 parameter_list|(
 specifier|const
@@ -1736,6 +1880,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 comment|/* Load adjustment layer */
@@ -1778,12 +1927,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading Section divider record"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1800,7 +1953,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -1838,13 +1991,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning:\n"
 literal|"The image file contains layer groups. "
 literal|"These are not supported by the GIMP and will "
 literal|"be dropped."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|msg_flag

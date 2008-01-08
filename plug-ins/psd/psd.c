@@ -641,26 +641,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Could not open '%s' for reading"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|param
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"psd-util.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"psd-image-res-load.h"
 end_include
 
@@ -73,6 +79,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -89,6 +100,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -105,6 +121,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -142,6 +163,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -185,6 +211,12 @@ name|image_id
 init|=
 operator|-
 literal|1
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
 decl_stmt|;
 comment|/* ----- Open PSD file ----- */
 if|if
@@ -261,7 +293,7 @@ name|gimp_progress_init_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Loading thumbnail for '%s'"
+literal|"Opening thumbnail for '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -270,6 +302,7 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Header block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -279,7 +312,6 @@ argument_list|(
 literal|"Read header block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Header block ----- */
 if|if
 condition|(
 name|read_header_block
@@ -288,26 +320,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.2
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Colour Mode block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -317,7 +345,6 @@ argument_list|(
 literal|"Read colour mode block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Colour Mode block ----- */
 if|if
 condition|(
 name|read_color_mode_block
@@ -326,26 +353,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.4
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Image Resource block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -355,7 +378,6 @@ argument_list|(
 literal|"Read image resource block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Image Resource block ----- */
 if|if
 condition|(
 name|read_image_resource_block
@@ -364,26 +386,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.6
 argument_list|)
 expr_stmt|;
+comment|/* ----- Create GIMP image ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -393,7 +411,6 @@ argument_list|(
 literal|"Create GIMP image"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Create GIMP image ----- */
 name|image_id
 operator|=
 name|create_gimp_image
@@ -407,26 +424,13 @@ expr_stmt|;
 if|if
 condition|(
 name|image_id
-operator|==
-operator|-
-literal|1
+operator|<
+literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-name|gimp_progress_update
-argument_list|(
-literal|0.8
-argument_list|)
-expr_stmt|;
+goto|goto
+name|load_error
+goto|;
+comment|/* ----- Add image resources ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -436,7 +440,6 @@ argument_list|(
 literal|"Add image resources"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Add image resources ----- */
 if|if
 condition|(
 name|add_image_resources
@@ -447,26 +450,16 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|1
 condition|)
-block|{
-name|gimp_image_delete
-argument_list|(
-name|image_id
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|1.0
@@ -504,6 +497,40 @@ expr_stmt|;
 return|return
 name|image_id
 return|;
+comment|/* ----- Process load errors ----- */
+name|load_error
+label|:
+comment|/* Delete partially loaded image */
+if|if
+condition|(
+name|image_id
+operator|>
+literal|0
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_id
+argument_list|)
+expr_stmt|;
+comment|/* Close file if Open */
+if|if
+condition|(
+operator|!
+operator|(
+name|f
+operator|==
+name|NULL
+operator|)
+condition|)
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 end_function
 
@@ -514,7 +541,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|read_header_block (PSDimage * img_a,FILE * f)
+DECL|function|read_header_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_header_block
 parameter_list|(
 name|PSDimage
@@ -524,6 +551,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint16
@@ -664,12 +696,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading file header"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -786,42 +822,20 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Incorrect file signature"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 if|if
 condition|(
 name|version
 operator|!=
 literal|1
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unsupported PSD file format version %d"
-argument_list|)
-argument_list|,
-name|version
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 if|if
 condition|(
 name|img_a
@@ -830,55 +844,46 @@ name|channels
 operator|>
 name|MAX_CHANNELS
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Too many channels in file (%d)"
-argument_list|)
-argument_list|,
-name|img_a
-operator|->
-name|channels
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 if|if
 condition|(
 name|img_a
 operator|->
 name|rows
-operator|==
-literal|0
+operator|<
+literal|1
 operator|||
 name|img_a
 operator|->
-name|columns
-operator|==
-literal|0
+name|rows
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Unsupported PSD file version (< 2.5)"
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* FIXME - image size */
-comment|/* in resource block 1000 */
 return|return
 operator|-
 literal|1
 return|;
-comment|/* don't have PS2 file spec */
-block|}
+if|if
+condition|(
+name|img_a
+operator|->
+name|columns
+operator|<
+literal|1
+operator|||
+name|img_a
+operator|->
+name|columns
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+condition|)
+return|return
+operator|-
+literal|1
+return|;
 return|return
 literal|0
 return|;
@@ -888,7 +893,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_color_mode_block (PSDimage * img_a,FILE * f)
+DECL|function|read_color_mode_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_color_mode_block
 parameter_list|(
 name|PSDimage
@@ -898,6 +903,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint32
@@ -926,12 +936,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading color block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -943,17 +957,6 @@ name|block_len
 operator|=
 name|GUINT32_FROM_BE
 argument_list|(
-name|block_len
-argument_list|)
-expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|1
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Color map block size = %d"
-argument_list|,
 name|block_len
 argument_list|)
 expr_stmt|;
@@ -984,12 +987,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1006,7 +1013,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_image_resource_block (PSDimage * img_a,FILE * f)
+DECL|function|read_image_resource_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_image_resource_block
 parameter_list|(
 name|PSDimage
@@ -1016,6 +1023,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint32
@@ -1041,12 +1053,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1112,12 +1128,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1169,9 +1189,6 @@ argument_list|(
 literal|"Create image"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
 name|image_id
 operator|=
 name|gimp_image_new
@@ -1188,35 +1205,17 @@ name|img_a
 operator|->
 name|base_type
 argument_list|)
-operator|)
-operator|==
-operator|-
-literal|1
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Could not create a new image"
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-name|gimp_image_undo_disable
-argument_list|(
-name|image_id
-argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 name|image_id
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image_id
 argument_list|)
 expr_stmt|;
 return|return
@@ -1228,7 +1227,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|add_image_resources
 parameter_list|(
 specifier|const
@@ -1242,6 +1241,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|PSDimageres
@@ -1266,12 +1270,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1303,6 +1311,8 @@ operator|&
 name|res_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -1329,16 +1339,9 @@ name|img_a
 operator|->
 name|image_res_len
 condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Unexpected end of image resource data"
-argument_list|)
-expr_stmt|;
 return|return
 literal|0
 return|;
-block|}
 name|status
 operator|=
 name|load_thumbnail_resource
@@ -1349,6 +1352,8 @@ argument_list|,
 name|image_id
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 comment|/* Error */

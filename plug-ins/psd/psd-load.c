@@ -85,6 +85,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -101,6 +106,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -117,6 +127,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -135,6 +150,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -151,6 +171,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -204,6 +229,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,6 +259,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -249,6 +284,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -256,6 +296,18 @@ end_function_decl
 begin_comment
 comment|/*  Local utility function prototypes  */
 end_comment
+
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|get_psd_color_mode_name
+parameter_list|(
+name|PSDColorMode
+name|mode
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -310,6 +362,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -393,6 +450,12 @@ name|image_id
 init|=
 operator|-
 literal|1
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
 decl_stmt|;
 comment|/* ----- Open PSD file ----- */
 if|if
@@ -478,6 +541,7 @@ name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Header block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -487,7 +551,6 @@ argument_list|(
 literal|"Read header block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Header block ----- */
 if|if
 condition|(
 name|read_header_block
@@ -496,26 +559,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.1
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Colour Mode block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -525,7 +584,6 @@ argument_list|(
 literal|"Read colour mode block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Colour Mode block ----- */
 if|if
 condition|(
 name|read_color_mode_block
@@ -534,26 +592,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.2
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Image Resource block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -563,7 +617,6 @@ argument_list|(
 literal|"Read image resource block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Image Resource block ----- */
 if|if
 condition|(
 name|read_image_resource_block
@@ -572,26 +625,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.3
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Layer& Mask block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -601,7 +650,6 @@ argument_list|(
 literal|"Read layer& mask block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Layer& Mask block ----- */
 name|lyr_a
 operator|=
 name|read_layer_block
@@ -610,6 +658,9 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -619,29 +670,20 @@ operator|.
 name|num_layers
 operator|!=
 literal|0
-condition|)
-if|if
-condition|(
+operator|&&
 name|lyr_a
 operator|==
 name|NULL
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.4
 argument_list|)
 expr_stmt|;
+comment|/* ----- Read the PSD file Merged Image Data block ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -651,7 +693,6 @@ argument_list|(
 literal|"Read merged image and extra alpha channel block"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Read the PSD file Merged Image Data block ----- */
 if|if
 condition|(
 name|read_merged_image_block
@@ -660,26 +701,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.5
 argument_list|)
 expr_stmt|;
+comment|/* ----- Create GIMP image ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -689,7 +726,6 @@ argument_list|(
 literal|"Create GIMP image"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Create GIMP image ----- */
 name|image_id
 operator|=
 name|create_gimp_image
@@ -703,26 +739,18 @@ expr_stmt|;
 if|if
 condition|(
 name|image_id
-operator|==
-operator|-
-literal|1
+operator|<
+literal|0
 condition|)
-block|{
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.6
 argument_list|)
 expr_stmt|;
+comment|/* ----- Add colour map ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -732,7 +760,6 @@ argument_list|(
 literal|"Add color map"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Add colour map ----- */
 if|if
 condition|(
 name|add_color_map
@@ -745,27 +772,15 @@ argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|gimp_image_delete
-argument_list|(
-name|image_id
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.7
 argument_list|)
 expr_stmt|;
+comment|/* ----- Add image resources ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -775,7 +790,6 @@ argument_list|(
 literal|"Add image resources"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Add image resources ----- */
 if|if
 condition|(
 name|add_image_resources
@@ -786,31 +800,22 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|gimp_image_delete
-argument_list|(
-name|image_id
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.8
 argument_list|)
 expr_stmt|;
+comment|/* ----- Add layers -----*/
 name|IFDBG
 argument_list|(
 literal|2
@@ -820,7 +825,6 @@ argument_list|(
 literal|"Add layers"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Add layers -----*/
 if|if
 condition|(
 name|add_layers
@@ -833,31 +837,22 @@ argument_list|,
 name|lyr_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|gimp_image_delete
-argument_list|(
-name|image_id
-argument_list|)
-expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
+goto|goto
+name|load_error
+goto|;
 name|gimp_progress_update
 argument_list|(
 literal|0.9
 argument_list|)
 expr_stmt|;
+comment|/* ----- Add merged image data and extra alpha channels ----- */
 name|IFDBG
 argument_list|(
 literal|2
@@ -867,7 +862,6 @@ argument_list|(
 literal|"Add merged image data and extra alpha channels"
 argument_list|)
 expr_stmt|;
-comment|/* ----- Add merged image data and extra alpha channels ----- */
 if|if
 condition|(
 name|add_merged_image
@@ -878,26 +872,21 @@ operator|&
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
 condition|)
-block|{
-name|gimp_image_delete
+goto|goto
+name|load_error
+goto|;
+name|gimp_progress_update
 argument_list|(
-name|image_id
+literal|1.0
 argument_list|)
 expr_stmt|;
-name|fclose
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
 name|IFDBG
 argument_list|(
 literal|2
@@ -919,11 +908,6 @@ literal|"\n----------------------------------------"
 literal|"----------------------------------------\n"
 argument_list|)
 expr_stmt|;
-name|gimp_progress_update
-argument_list|(
-literal|1.0
-argument_list|)
-expr_stmt|;
 name|gimp_image_clean_all
 argument_list|(
 name|image_id
@@ -942,6 +926,63 @@ expr_stmt|;
 return|return
 name|image_id
 return|;
+comment|/* ----- Process load errors ----- */
+name|load_error
+label|:
+if|if
+condition|(
+name|error
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Error loading PSD file:\n\n%s"
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
+comment|/* Delete partially loaded image */
+if|if
+condition|(
+name|image_id
+operator|>
+literal|0
+condition|)
+name|gimp_image_delete
+argument_list|(
+name|image_id
+argument_list|)
+expr_stmt|;
+comment|/* Close file if Open */
+if|if
+condition|(
+operator|!
+operator|(
+name|f
+operator|==
+name|NULL
+operator|)
+condition|)
+name|fclose
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 end_function
 
@@ -952,7 +993,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|read_header_block (PSDimage * img_a,FILE * f)
+DECL|function|read_header_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_header_block
 parameter_list|(
 name|PSDimage
@@ -962,6 +1003,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint16
@@ -1102,12 +1148,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading file header"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1225,11 +1275,17 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Incorrect file signature"
+literal|"Not a valid photoshop document file"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1245,11 +1301,17 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Unsupported PSD file format version %d"
+literal|"Unsupported file format version: %d"
 argument_list|)
 argument_list|,
 name|version
@@ -1269,11 +1331,17 @@ operator|>
 name|MAX_CHANNELS
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Too many channels in file (%d)"
+literal|"Too many channels in file: %d"
 argument_list|)
 argument_list|,
 name|img_a
@@ -1286,65 +1354,82 @@ operator|-
 literal|1
 return|;
 block|}
+comment|/* Photoshop CS (version 8) supports 300000 x 300000, but this        is currently larger than GIMP_MAX_IMAGE_SIZE */
 if|if
 condition|(
 name|img_a
 operator|->
 name|rows
-operator|==
-literal|0
+operator|<
+literal|1
 operator|||
 name|img_a
 operator|->
-name|columns
-operator|==
-literal|0
+name|rows
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Unsupported PSD file version (< 2.5)"
+literal|"Unsupported or invalid image height: %d"
 argument_list|)
+argument_list|,
+name|img_a
+operator|->
+name|rows
 argument_list|)
 expr_stmt|;
-comment|/* FIXME - image size */
-comment|/* in resource block 1000 */
 return|return
 operator|-
 literal|1
 return|;
-comment|/* don't have PS2 file spec */
 block|}
-comment|/* Photoshop CS (version 8) supports 300000 x 300000, but this        is currently larger than GIMP_MAX_IMAGE_SIZE */
 if|if
 condition|(
-operator|(
 name|img_a
 operator|->
-name|rows
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
-operator|)
+name|columns
+operator|<
+literal|1
 operator|||
-operator|(
 name|img_a
 operator|->
 name|columns
 operator|>
 name|GIMP_MAX_IMAGE_SIZE
-operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image size too large for GIMP."
+literal|"Unsupported or invalid image width: %d"
 argument_list|)
+argument_list|,
+name|img_a
+operator|->
+name|columns
 argument_list|)
 expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
 block|}
 if|if
 condition|(
@@ -1379,16 +1464,25 @@ operator|!=
 name|PSD_DUOTONE
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"PSD color mode %d is not supported"
+literal|"Unsupported color mode: %s"
 argument_list|)
 argument_list|,
+name|get_psd_color_mode_name
+argument_list|(
 name|img_a
 operator|->
 name|color_mode
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1422,13 +1516,10 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning:\n"
 literal|"The image you are loading has 16 bits per channel. GIMP "
 literal|"can only handle 8 bit, so it will be converted for you. "
 literal|"Information will be lost because of this conversion."
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1459,11 +1550,17 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Unknown bit depth: %d."
+literal|"Unsupported bit depth: %d"
 argument_list|)
 argument_list|,
 name|img_a
@@ -1486,7 +1583,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_color_mode_block (PSDimage * img_a,FILE * f)
+DECL|function|read_color_mode_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_color_mode_block
 parameter_list|(
 name|PSDimage
@@ -1496,6 +1593,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 specifier|static
@@ -1549,12 +1651,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading color block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1602,11 +1708,26 @@ operator|==
 name|PSD_DUOTONE
 condition|)
 block|{
-name|g_message
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"No color block for indexed or duotone image"
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The file is corrupt!"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1633,11 +1754,26 @@ operator|!=
 literal|768
 condition|)
 block|{
-name|g_message
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Invalid color block size for indexed image"
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The file is corrupt!"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1683,12 +1819,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading color block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1759,12 +1899,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading color block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1842,7 +1986,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_image_resource_block (PSDimage * img_a,FILE * f)
+DECL|function|read_image_resource_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_image_resource_block
 parameter_list|(
 name|PSDimage
@@ -1852,6 +1996,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guint32
@@ -1877,12 +2026,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading image resource block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1948,12 +2101,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1972,7 +2129,7 @@ specifier|static
 name|PSDlayer
 modifier|*
 modifier|*
-DECL|function|read_layer_block (PSDimage * img_a,FILE * f)
+DECL|function|read_layer_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_layer_block
 parameter_list|(
 name|PSDimage
@@ -1982,6 +2139,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|PSDlayer
@@ -1991,20 +2153,24 @@ name|lyr_a
 decl_stmt|;
 name|guint32
 name|block_len
-decl_stmt|,
+decl_stmt|;
+name|guint32
 name|block_end
-decl_stmt|,
+decl_stmt|;
+name|guint32
 name|block_rem
 decl_stmt|;
 name|gint32
 name|read_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|write_len
 decl_stmt|;
 name|gint
 name|lidx
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer index */
+name|gint
 name|cidx
 decl_stmt|;
 comment|/* Channel index */
@@ -2025,12 +2191,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer and mask block"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|img_a
@@ -2151,12 +2321,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading number of layers"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 name|img_a
@@ -2394,12 +2568,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer record (i)"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -2503,11 +2681,17 @@ operator|>
 name|MAX_CHANNELS
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Too many channels in layer (%d)"
+literal|"Too many channels in layer: %d"
 argument_list|)
 argument_list|,
 name|lyr_a
@@ -2524,25 +2708,6 @@ return|;
 block|}
 if|if
 condition|(
-operator|(
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|right
-operator|-
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|left
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
-operator|)
-operator|||
-operator|(
 name|lyr_a
 index|[
 name|lidx
@@ -2558,30 +2723,91 @@ operator|->
 name|top
 operator|>
 name|GIMP_MAX_IMAGE_SIZE
-operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Layer size too large for GIMP."
+literal|"Unsupported or invalid layer height: %d"
 argument_list|)
+argument_list|,
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|bottom
+operator|-
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|top
 argument_list|)
 expr_stmt|;
 return|return
 name|NULL
 return|;
 block|}
-name|IFDBG
+if|if
+condition|(
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|right
+operator|-
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|left
+operator|>
+name|GIMP_MAX_IMAGE_SIZE
+condition|)
+block|{
+name|g_set_error
 argument_list|(
-literal|2
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Unsupported or invalid layer width: %d"
 argument_list|)
-name|g_debug
-argument_list|(
-literal|" "
+argument_list|,
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|right
+operator|-
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|left
 argument_list|)
 expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
 name|IFDBG
 argument_list|(
 literal|2
@@ -2717,12 +2943,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer - channel record"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -2801,7 +3031,7 @@ name|data_len
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -2967,12 +3197,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer record (ii)"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -2998,12 +3232,13 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|IFDBG
 argument_list|(
-name|_
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Incorrect layer mode signature %.4s"
-argument_list|)
 argument_list|,
 name|lyr_a
 index|[
@@ -3011,6 +3246,20 @@ name|lidx
 index|]
 operator|->
 name|mode_key
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The file is corrupt!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -3234,12 +3483,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer mask data length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -3604,12 +3857,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer mask record"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4038,12 +4295,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer mask extra record"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4298,9 +4559,13 @@ name|FALSE
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|IFDBG
 argument_list|(
-literal|"Unknown layer mask size ... skipping"
+literal|1
+argument_list|)
+name|g_debug
+argument_list|(
+literal|"Unknown layer mask record size ... skipping"
 argument_list|)
 expr_stmt|;
 if|if
@@ -4317,12 +4582,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4388,7 +4657,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -4432,12 +4701,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer blending ranges length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4491,12 +4764,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4522,8 +4799,18 @@ argument_list|,
 literal|4
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|*
+name|error
+condition|)
+return|return
+name|NULL
+return|;
 name|block_rem
 operator|-=
 name|read_len
@@ -4556,6 +4843,8 @@ operator|&
 name|res_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -4576,9 +4865,27 @@ operator|>
 name|block_rem
 condition|)
 block|{
-name|g_message
+name|IFDBG
+argument_list|(
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unexpected end of layer resource data"
+argument_list|)
+expr_stmt|;
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The file is corrupt!"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -4598,6 +4905,8 @@ name|lidx
 index|]
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -4633,12 +4942,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4672,12 +4985,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4720,12 +5037,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -4742,7 +5063,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_merged_image_block (PSDimage * img_a,FILE * f)
+DECL|function|read_merged_image_block (PSDimage * img_a,FILE * f,GError ** error)
 name|read_merged_image_block
 parameter_list|(
 name|PSDimage
@@ -4752,6 +5073,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|img_a
@@ -4763,6 +5089,8 @@ argument_list|(
 name|f
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
 name|fseek
 argument_list|(
 name|f
@@ -4771,7 +5099,27 @@ literal|0
 argument_list|,
 name|SEEK_END
 argument_list|)
+operator|<
+literal|0
+condition|)
+block|{
+name|psd_set_error
+argument_list|(
+name|feof
+argument_list|(
+name|f
+argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
+argument_list|)
 expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 name|img_a
 operator|->
 name|merged_image_len
@@ -4874,16 +5222,10 @@ name|GIMP_RGB
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+comment|/* Color mode already validated - should not be here */
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"PSD color mode %d not supported"
-argument_list|)
-argument_list|,
-name|img_a
-operator|->
-name|color_mode
+literal|"Invalid color mode"
 argument_list|)
 expr_stmt|;
 return|return
@@ -4902,9 +5244,6 @@ argument_list|(
 literal|"Create image"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|(
 name|image_id
 operator|=
 name|gimp_image_new
@@ -4921,35 +5260,17 @@ name|img_a
 operator|->
 name|base_type
 argument_list|)
-operator|)
-operator|==
-operator|-
-literal|1
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Could not create a new image"
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-name|gimp_image_undo_disable
-argument_list|(
-name|image_id
-argument_list|)
 expr_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 name|image_id
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|gimp_image_undo_disable
+argument_list|(
+name|image_id
 argument_list|)
 expr_stmt|;
 return|return
@@ -5064,7 +5385,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|add_image_resources (const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|add_image_resources
 parameter_list|(
 specifier|const
@@ -5078,6 +5399,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|PSDimageres
@@ -5099,12 +5425,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -5185,6 +5515,8 @@ operator|&
 name|res_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -5212,7 +5544,11 @@ operator|->
 name|image_res_len
 condition|)
 block|{
-name|g_message
+name|IFDBG
+argument_list|(
+literal|1
+argument_list|)
+name|g_debug
 argument_list|(
 literal|"Unexpected end of image resource data"
 argument_list|)
@@ -5233,6 +5569,8 @@ argument_list|,
 name|img_a
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -5251,7 +5589,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_layers (const gint32 image_id,PSDimage * img_a,PSDlayer ** lyr_a,FILE * f)
+DECL|function|add_layers (const gint32 image_id,PSDimage * img_a,PSDlayer ** lyr_a,FILE * f,GError ** error)
 name|add_layers
 parameter_list|(
 specifier|const
@@ -5270,6 +5608,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|PSDchannel
@@ -5283,53 +5626,68 @@ name|pixels
 decl_stmt|;
 name|guint16
 name|comp_mode
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|alpha_chn
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|user_mask_chn
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|layer_channels
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|channel_idx
 index|[
 name|MAX_CHANNELS
 index|]
-decl_stmt|,
+decl_stmt|;
+name|guint16
 modifier|*
 name|rle_pack_len
 decl_stmt|;
 name|gint32
 name|l_x
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer x */
+name|gint32
 name|l_y
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer y */
+name|gint32
 name|l_w
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer width */
+name|gint32
 name|l_h
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer height */
+name|gint32
 name|lm_x
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer mask x */
+name|gint32
 name|lm_y
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer mask y */
+name|gint32
 name|lm_w
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer mask width */
+name|gint32
 name|lm_h
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer mask height */
+name|gint32
 name|layer_size
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|layer_id
 init|=
 operator|-
 literal|1
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|mask_id
 init|=
 operator|-
@@ -5337,26 +5695,33 @@ literal|1
 decl_stmt|;
 name|gint
 name|lidx
-decl_stmt|,
+decl_stmt|;
 comment|/* Layer index */
+name|gint
 name|cidx
-decl_stmt|,
+decl_stmt|;
 comment|/* Channel index */
+name|gint
 name|rowi
-decl_stmt|,
+decl_stmt|;
 comment|/* Row index */
+name|gint
 name|coli
-decl_stmt|,
+decl_stmt|;
 comment|/* Column index */
+name|gint
 name|i
 decl_stmt|;
 name|gboolean
 name|alpha
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|user_mask
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|empty
-decl_stmt|,
+decl_stmt|;
+name|gboolean
 name|empty_mask
 decl_stmt|;
 name|GimpDrawable
@@ -5424,12 +5789,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -5504,6 +5873,9 @@ condition|;
 operator|++
 name|cidx
 control|)
+block|{
+if|if
+condition|(
 name|fseek
 argument_list|(
 name|f
@@ -5522,7 +5894,28 @@ name|data_len
 argument_list|,
 name|SEEK_CUR
 argument_list|)
+operator|<
+literal|0
+condition|)
+block|{
+name|psd_set_error
+argument_list|(
+name|feof
+argument_list|(
+name|f
+argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
+argument_list|)
 expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+block|}
 name|g_free
 argument_list|(
 name|lyr_a
@@ -5644,7 +6037,7 @@ name|FALSE
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6020,7 +6413,7 @@ expr_stmt|;
 block|}
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6065,12 +6458,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer compression mode"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6087,7 +6484,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6126,7 +6523,7 @@ case|:
 comment|/* Planar raw data */
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6165,24 +6562,16 @@ argument_list|,
 name|NULL
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|1
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error reading raw channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 break|break;
 case|case
 name|PSD_COMP_RLE
@@ -6190,7 +6579,7 @@ case|:
 comment|/* Packbits */
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6299,12 +6688,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading packbits length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -6319,22 +6712,6 @@ index|]
 operator|=
 name|GUINT16_FROM_BE
 argument_list|(
-name|rle_pack_len
-index|[
-name|rowi
-index|]
-argument_list|)
-expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Row %d, Packed length %d"
-argument_list|,
-name|rowi
-argument_list|,
 name|rle_pack_len
 index|[
 name|rowi
@@ -6369,24 +6746,16 @@ argument_list|,
 name|rle_pack_len
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|1
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error reading packbits channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 name|g_free
 argument_list|(
 name|rle_pack_len
@@ -6400,11 +6769,17 @@ comment|/* ? */
 case|case
 name|PSD_COMP_ZIP_PRED
 case|:
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Compression mode not supported %d"
+literal|"Unsupported compression mode: %d"
 argument_list|)
 argument_list|,
 name|comp_mode
@@ -6473,7 +6848,7 @@ name|rows
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6787,7 +7162,7 @@ name|top
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6807,7 +7182,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6831,19 +7206,6 @@ operator|*
 name|layer_channels
 argument_list|)
 expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|2
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Allocate Pixels %d x %d"
-argument_list|,
-name|layer_size
-argument_list|,
-name|layer_channels
-argument_list|)
-expr_stmt|;
 for|for
 control|(
 name|cidx
@@ -6860,7 +7222,7 @@ control|)
 block|{
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -6885,7 +7247,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|pixels
 index|[
 operator|(
@@ -6910,56 +7271,6 @@ index|[
 name|i
 index|]
 expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Pixels, %d, %d"
-argument_list|,
-operator|(
-name|i
-operator|*
-name|layer_channels
-operator|)
-operator|+
-name|cidx
-argument_list|,
-name|pixels
-index|[
-operator|(
-name|i
-operator|*
-name|layer_channels
-operator|)
-operator|+
-name|cidx
-index|]
-argument_list|)
-expr_stmt|;
-block|}
-name|IFDBG
-argument_list|(
-literal|2
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Done channel %d, id %d"
-argument_list|,
-name|cidx
-argument_list|,
-name|lyr_chn
-index|[
-name|channel_idx
-index|[
-name|cidx
-index|]
-index|]
-operator|->
-name|id
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|lyr_chn
@@ -6971,20 +7282,6 @@ index|]
 index|]
 operator|->
 name|data
-argument_list|)
-expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|2
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Free channel %d"
-argument_list|,
-name|channel_idx
-index|[
-name|cidx
-index|]
 argument_list|)
 expr_stmt|;
 block|}
@@ -7035,11 +7332,11 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
-literal|"New layer %d"
+literal|"Layer tattoo: %d"
 argument_list|,
 name|layer_id
 argument_list|)
@@ -7206,7 +7503,7 @@ condition|)
 block|{
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7421,7 +7718,7 @@ expr_stmt|;
 block|}
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7432,7 +7729,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7465,7 +7762,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7477,7 +7774,7 @@ expr_stmt|;
 comment|/* Crop mask at layer boundry */
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7521,12 +7818,9 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
 literal|"Warning\n"
 literal|"Layer mask partly lies outside layer boundry. The mask will be "
 literal|"cropped which may result in data loss."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|i
@@ -7591,19 +7885,6 @@ operator|<
 name|l_w
 condition|)
 block|{
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Row %d, col %d"
-argument_list|,
-name|rowi
-argument_list|,
-name|coli
-argument_list|)
-expr_stmt|;
 name|pixels
 index|[
 name|i
@@ -7721,7 +8002,7 @@ expr_stmt|;
 comment|/* Draw layer mask data */
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7738,7 +8019,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -7946,7 +8227,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|add_merged_image (const gint32 image_id,PSDimage * img_a,FILE * f)
+DECL|function|add_merged_image (const gint32 image_id,PSDimage * img_a,FILE * f,GError ** error)
 name|add_merged_image
 parameter_list|(
 specifier|const
@@ -7960,6 +8241,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|PSDchannel
@@ -7978,13 +8264,17 @@ name|pixels
 decl_stmt|;
 name|guint16
 name|comp_mode
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|base_channels
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|extra_channels
-decl_stmt|,
+decl_stmt|;
+name|guint16
 name|total_channels
-decl_stmt|,
+decl_stmt|;
+name|guint16
 modifier|*
 name|rle_pack_len
 index|[
@@ -7993,26 +8283,32 @@ index|]
 decl_stmt|;
 name|guint32
 name|block_len
-decl_stmt|,
+decl_stmt|;
+name|guint32
 name|block_start
-decl_stmt|,
+decl_stmt|;
+name|guint32
 name|block_end
-decl_stmt|,
+decl_stmt|;
+name|guint32
 name|alpha_id
 decl_stmt|;
 name|gint32
 name|layer_size
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|layer_id
 init|=
 operator|-
 literal|1
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|channel_id
 init|=
 operator|-
 literal|1
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|active_layer
 decl_stmt|;
 name|gint16
@@ -8021,17 +8317,22 @@ decl_stmt|;
 name|gint
 modifier|*
 name|lyr_lst
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|cidx
-decl_stmt|,
+decl_stmt|;
 comment|/* Channel index */
+name|gint
 name|rowi
-decl_stmt|,
+decl_stmt|;
 comment|/* Row index */
+name|gint
 name|lyr_count
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|offset
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|i
 decl_stmt|;
 name|gboolean
@@ -8229,12 +8530,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading layer compression mode"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -8260,7 +8565,7 @@ case|:
 comment|/* Planar raw data */
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -8324,24 +8629,16 @@ argument_list|,
 name|NULL
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|1
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error reading raw channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 block|}
 break|break;
 case|case
@@ -8351,7 +8648,7 @@ comment|/* Packbits */
 comment|/* Image data is stored as packed scanlines in planar order                with all compressed length counters stored first */
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -8467,12 +8764,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading packbits length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -8503,7 +8804,7 @@ block|}
 block|}
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -8546,24 +8847,16 @@ name|cidx
 index|]
 argument_list|,
 name|f
+argument_list|,
+name|error
 argument_list|)
 operator|<
 literal|1
 condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Error reading packbits channel"
-argument_list|)
-argument_list|)
-expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
-block|}
 name|g_free
 argument_list|(
 name|rle_pack_len
@@ -8581,11 +8874,17 @@ comment|/* ? */
 case|case
 name|PSD_COMP_ZIP_PRED
 case|:
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Compression mode not supported %d"
+literal|"Unsupported compression mode: %d"
 argument_list|)
 argument_list|,
 name|comp_mode
@@ -8689,34 +8988,6 @@ name|data
 index|[
 name|i
 index|]
-expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Pixels, %d, %d"
-argument_list|,
-operator|(
-name|i
-operator|*
-name|base_channels
-operator|)
-operator|+
-name|cidx
-argument_list|,
-name|pixels
-index|[
-operator|(
-name|i
-operator|*
-name|base_channels
-operator|)
-operator|+
-name|cidx
-index|]
-argument_list|)
 expr_stmt|;
 block|}
 name|g_free
@@ -8842,7 +9113,8 @@ name|pixels
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
+else|else
+block|{
 comment|/* Free merged image data for layered image */
 if|if
 condition|(
@@ -8871,11 +9143,19 @@ operator|.
 name|data
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* ----- Draw extra alpha channels ----- */
 if|if
 condition|(
+operator|(
 name|extra_channels
 comment|/* Extra alpha channels */
+operator|||
+name|img_a
+operator|->
+name|transparency
+operator|)
+comment|/* Transparency alpha channel */
 operator|&&
 name|image_id
 operator|>
@@ -8906,16 +9186,50 @@ name|img_a
 operator|->
 name|transparency
 condition|)
+block|{
 name|offset
 operator|=
 literal|1
 expr_stmt|;
+comment|/* Free "Transparency" channel name */
+name|alpha_name
+operator|=
+name|g_ptr_array_index
+argument_list|(
+name|img_a
+operator|->
+name|alpha_names
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|alpha_name
+condition|)
+name|g_free
+argument_list|(
+name|alpha_name
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 name|offset
 operator|=
 literal|0
 expr_stmt|;
 comment|/* Draw channels */
+name|IFDBG
+argument_list|(
+literal|2
+argument_list|)
+name|g_debug
+argument_list|(
+literal|"Number of channels: %d"
+argument_list|,
+name|extra_channels
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -8959,6 +9273,29 @@ operator|+
 name|offset
 condition|)
 block|{
+comment|/* Free "Quick Mask" channel name */
+name|alpha_name
+operator|=
+name|g_ptr_array_index
+argument_list|(
+name|img_a
+operator|->
+name|alpha_names
+argument_list|,
+name|i
+operator|+
+name|offset
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|alpha_name
+condition|)
+name|g_free
+argument_list|(
+name|alpha_name
+argument_list|)
+expr_stmt|;
 name|alpha_name
 operator|=
 name|g_strdup
@@ -9106,7 +9443,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_rgb_set
+name|gimp_rgba_set
 argument_list|(
 operator|&
 name|alpha_rgb
@@ -9116,6 +9453,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|alpha_opacity
@@ -9211,6 +9550,11 @@ argument_list|,
 name|channel_id
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|alpha_name
 argument_list|)
 expr_stmt|;
 name|drawable
@@ -9454,6 +9798,90 @@ end_comment
 
 begin_function
 specifier|static
+name|gchar
+modifier|*
+DECL|function|get_psd_color_mode_name (PSDColorMode mode)
+name|get_psd_color_mode_name
+parameter_list|(
+name|PSDColorMode
+name|mode
+parameter_list|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|psd_color_mode_names
+index|[]
+init|=
+block|{
+literal|"BITMAP"
+block|,
+literal|"GRAYSCALE"
+block|,
+literal|"INDEXED"
+block|,
+literal|"RGB"
+block|,
+literal|"CMYK"
+block|,
+literal|"UNKNOWN (5)"
+block|,
+literal|"UNKNOWN (6)"
+block|,
+literal|"MULTICHANNEL"
+block|,
+literal|"DUOTONE"
+block|,
+literal|"LAB"
+block|}
+decl_stmt|;
+specifier|static
+name|gchar
+modifier|*
+name|err_name
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|mode
+operator|>=
+name|PSD_BITMAP
+operator|&&
+name|mode
+operator|<=
+name|PSD_LAB
+condition|)
+block|{
+return|return
+name|psd_color_mode_names
+index|[
+name|mode
+index|]
+return|;
+block|}
+name|g_free
+argument_list|(
+name|err_name
+argument_list|)
+expr_stmt|;
+name|err_name
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"UNKNOWN (%d)"
+argument_list|,
+name|mode
+argument_list|)
+expr_stmt|;
+return|return
+name|err_name
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|psd_to_gimp_color_map (guchar * map256)
 name|psd_to_gimp_color_map
@@ -9639,7 +10067,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|read_channel_data (PSDchannel * channel,const guint16 bps,const guint16 compression,const guint16 * rle_pack_len,FILE * f)
+DECL|function|read_channel_data (PSDchannel * channel,const guint16 bps,const guint16 compression,const guint16 * rle_pack_len,FILE * f,GError ** error)
 name|read_channel_data
 parameter_list|(
 name|PSDchannel
@@ -9662,6 +10090,11 @@ parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gchar
@@ -9772,10 +10205,24 @@ argument_list|)
 operator|<
 literal|1
 condition|)
+block|{
+name|psd_set_error
+argument_list|(
+name|feof
+argument_list|(
+name|f
+argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
+argument_list|)
+expr_stmt|;
 return|return
 operator|-
 literal|1
 return|;
+block|}
 break|break;
 case|case
 name|PSD_COMP_RLE
@@ -9813,21 +10260,7 @@ argument_list|(
 name|readline_len
 argument_list|)
 expr_stmt|;
-comment|/*      FIXME check for over-run             if (ftell (f) + rle_pack_len[i]> block_end)               {                 g_message (_("Unexpected end of file"));                 return -1;               } */
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"pack len %d"
-argument_list|,
-name|rle_pack_len
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
+comment|/*      FIXME check for over-run             if (ftell (f) + rle_pack_len[i]> block_end)               {                 psd_set_error (TRUE, errno, error);                 return -1;               } */
 if|if
 condition|(
 name|fread
@@ -9847,12 +10280,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading packbits data"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -10065,7 +10502,7 @@ name|len
 parameter_list|)
 block|{
 comment|/* Convert 16 bit to 8 bit dropping low byte */
-name|int
+name|gint
 name|i
 decl_stmt|;
 name|IFDBG

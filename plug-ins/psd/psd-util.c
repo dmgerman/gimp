@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib/gstdio.h>
 end_include
 
@@ -61,14 +67,91 @@ begin_comment
 comment|/*  Local function prototypes  */
 end_comment
 
+begin_function_decl
+specifier|static
+name|gchar
+modifier|*
+name|gimp_layer_mode_effects_name
+parameter_list|(
+specifier|const
+name|GimpLayerModeEffects
+name|mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Utility function */
 end_comment
 
 begin_function
+name|void
+DECL|function|psd_set_error (const gboolean file_eof,const gint err_no,GError ** error)
+name|psd_set_error
+parameter_list|(
+specifier|const
+name|gboolean
+name|file_eof
+parameter_list|,
+specifier|const
+name|gint
+name|err_no
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+block|{
+comment|/*    *  Set error    */
+if|if
+condition|(
+name|file_eof
+condition|)
+operator|*
+name|error
+operator|=
+name|g_error_new
+argument_list|(
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Unexpected end of file"
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+operator|*
+name|error
+operator|=
+name|g_error_new
+argument_list|(
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|err_no
+argument_list|)
+argument_list|,
+literal|"%s"
+argument_list|,
+name|g_strerror
+argument_list|(
+name|err_no
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+end_function
+
+begin_function
 name|gchar
 modifier|*
-DECL|function|fread_pascal_string (gint32 * bytes_read,gint32 * bytes_written,const guint16 pad_len,FILE * f)
+DECL|function|fread_pascal_string (gint32 * bytes_read,gint32 * bytes_written,const guint16 mod_len,FILE * f,GError ** error)
 name|fread_pascal_string
 parameter_list|(
 name|gint32
@@ -81,18 +164,24 @@ name|bytes_written
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
-comment|/* Reads a pascal string padded to a multiple of pad_len and converts to utf-8 */
+comment|/*    * Reads a pascal string from the file padded to a multiple of mod_len    * and returns a utf-8 string.    */
 name|gchar
 modifier|*
 name|str
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|utf8_str
 decl_stmt|;
@@ -130,12 +219,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading pascal string length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -172,7 +265,7 @@ name|fseek
 argument_list|(
 name|f
 argument_list|,
-name|pad_len
+name|mod_len
 operator|-
 literal|1
 argument_list|,
@@ -182,12 +275,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -198,7 +295,7 @@ operator|*
 name|bytes_read
 operator|+=
 operator|(
-name|pad_len
+name|mod_len
 operator|-
 literal|1
 operator|)
@@ -235,12 +332,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading pascal string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -254,7 +355,7 @@ name|len
 expr_stmt|;
 if|if
 condition|(
-name|pad_len
+name|mod_len
 operator|>
 literal|0
 condition|)
@@ -269,7 +370,7 @@ while|while
 condition|(
 name|padded_len
 operator|%
-name|pad_len
+name|mod_len
 operator|!=
 literal|0
 condition|)
@@ -288,12 +389,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -319,10 +424,7 @@ name|str
 argument_list|,
 name|len
 argument_list|,
-name|_
-argument_list|(
-literal|"Invalid UTF-8 string in PSD file"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 operator|*
@@ -340,7 +442,7 @@ argument_list|)
 expr_stmt|;
 name|IFDBG
 argument_list|(
-literal|2
+literal|3
 argument_list|)
 name|g_debug
 argument_list|(
@@ -363,7 +465,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|fwrite_pascal_string (const gchar * src,const guint16 pad_len,FILE * f)
+DECL|function|fwrite_pascal_string (const gchar * src,const guint16 mod_len,FILE * f,GError ** error)
 name|fwrite_pascal_string
 parameter_list|(
 specifier|const
@@ -373,21 +475,28 @@ name|src
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
-comment|/* Converts utf-8 string to current locale and writes as pascal string with      padding to pad width */
+comment|/*    *  Converts utf-8 string to current locale and writes as pascal    *  string with padding to a multiple of mod_len.    */
 name|gchar
 modifier|*
 name|str
-decl_stmt|,
+decl_stmt|;
+name|gchar
 modifier|*
 name|pascal_str
-decl_stmt|,
+decl_stmt|;
+name|gchar
 name|null_str
 init|=
 literal|0x0
@@ -442,12 +551,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error writing pascal string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -538,12 +651,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error writing pascal string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -575,7 +692,7 @@ block|}
 comment|/* Pad with nulls */
 if|if
 condition|(
-name|pad_len
+name|mod_len
 operator|>
 literal|0
 condition|)
@@ -584,7 +701,7 @@ while|while
 condition|(
 name|bytes_written
 operator|%
-name|pad_len
+name|mod_len
 operator|!=
 literal|0
 condition|)
@@ -606,12 +723,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error writing pascal string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -633,7 +754,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|fread_unicode_string (gint32 * bytes_read,gint32 * bytes_written,const guint16 pad_len,FILE * f)
+DECL|function|fread_unicode_string (gint32 * bytes_read,gint32 * bytes_written,const guint16 mod_len,FILE * f,GError ** error)
 name|fread_unicode_string
 parameter_list|(
 name|gint32
@@ -646,14 +767,19 @@ name|bytes_written
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
-comment|/* Reads a utf-16 string padded to a multiple of pad_len and converts to utf-8 */
+comment|/*    * Reads a utf-16 string from the file padded to a multiple of mod_len    * and returns a utf-8 string.    */
 name|gchar
 modifier|*
 name|utf8_str
@@ -664,9 +790,11 @@ name|utf16_str
 decl_stmt|;
 name|gint32
 name|len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|i
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|padded_len
 decl_stmt|;
 name|glong
@@ -700,12 +828,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading unicode string length"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -748,7 +880,7 @@ name|fseek
 argument_list|(
 name|f
 argument_list|,
-name|pad_len
+name|mod_len
 operator|-
 literal|1
 argument_list|,
@@ -758,12 +890,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -774,7 +910,7 @@ operator|*
 name|bytes_read
 operator|+=
 operator|(
-name|pad_len
+name|mod_len
 operator|-
 literal|1
 operator|)
@@ -831,12 +967,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error reading unicode string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -864,7 +1004,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|pad_len
+name|mod_len
 operator|>
 literal|0
 condition|)
@@ -879,7 +1019,7 @@ while|while
 condition|(
 name|padded_len
 operator|%
-name|pad_len
+name|mod_len
 operator|!=
 literal|0
 condition|)
@@ -898,12 +1038,16 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error setting file position"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -972,7 +1116,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|fwrite_unicode_string (const gchar * src,const guint16 pad_len,FILE * f)
+DECL|function|fwrite_unicode_string (const gchar * src,const guint16 mod_len,FILE * f,GError ** error)
 name|fwrite_unicode_string
 parameter_list|(
 specifier|const
@@ -982,14 +1126,19 @@ name|src
 parameter_list|,
 specifier|const
 name|guint16
-name|pad_len
+name|mod_len
 parameter_list|,
 name|FILE
 modifier|*
 name|f
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
-comment|/* Converts utf-8 string to utf-16 and writes 4 byte length then string      padding to pad width */
+comment|/*    *  Converts utf-8 string to utf-16 and writes 4 byte length    *  then string padding to multiple of mod_len.    */
 name|gunichar2
 modifier|*
 name|utf16_str
@@ -1003,7 +1152,8 @@ name|gint32
 name|utf16_len
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|bytes_written
 init|=
 literal|0
@@ -1039,12 +1189,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error writing unicode string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1148,12 +1302,16 @@ operator|+
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error writing unicode string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1190,7 +1348,7 @@ block|}
 comment|/* Pad with nulls */
 if|if
 condition|(
-name|pad_len
+name|mod_len
 operator|>
 literal|0
 condition|)
@@ -1199,7 +1357,7 @@ while|while
 condition|(
 name|bytes_written
 operator|%
-name|pad_len
+name|mod_len
 operator|!=
 literal|0
 condition|)
@@ -1221,12 +1379,16 @@ operator|<
 literal|1
 condition|)
 block|{
-name|g_message
+name|psd_set_error
 argument_list|(
-name|_
+name|feof
 argument_list|(
-literal|"Error writing unicode string"
+name|f
 argument_list|)
+argument_list|,
+name|errno
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1267,7 +1429,7 @@ name|unpacked_len
 parameter_list|)
 block|{
 comment|/*  *  Decode a PackBits chunk.  */
-name|int
+name|gint
 name|n
 decl_stmt|;
 name|gchar
@@ -1277,41 +1439,22 @@ name|gint32
 name|unpack_left
 init|=
 name|unpacked_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|pack_left
 init|=
 name|packed_len
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|error_code
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint32
 name|return_val
 init|=
 literal|0
 decl_stmt|;
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Decode packbits"
-argument_list|)
-expr_stmt|;
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Packed len %d, unpacked %d"
-argument_list|,
-name|packed_len
-argument_list|,
-name|unpacked_len
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 name|unpack_left
@@ -1572,19 +1715,6 @@ operator|++
 expr_stmt|;
 block|}
 block|}
-name|IFDBG
-argument_list|(
-literal|3
-argument_list|)
-name|g_debug
-argument_list|(
-literal|"Pack left %d, unpack left %d"
-argument_list|,
-name|pack_left
-argument_list|,
-name|unpack_left
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|unpack_left
@@ -2259,15 +2389,23 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"SATURATION"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"saturation blend mode. Results will differ."
-argument_list|)
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_SATURATION_MODE
 return|;
@@ -2308,15 +2446,23 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"LUMINOSITY (VALUE)"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"value (luminosity) blend mode. Results will differ."
-argument_list|)
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_VALUE_MODE
 return|;
@@ -2391,15 +2537,23 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"OVERLAY"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"overlay blend mode. Results will differ."
-argument_list|)
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_OVERLAY_MODE
 return|;
@@ -2440,15 +2594,23 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"SOFT LIGHT"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"soft light blend mode. Results will differ."
-argument_list|)
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_SOFTLIGHT_MODE
 return|;
@@ -2489,15 +2651,22 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"EXCLUSION"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Exclusion blend mode not supported by GIMP. "
-literal|"Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2555,15 +2724,22 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"LINEAR BURN"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Linear burn blend mode not supported by GIMP. "
-literal|"Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2604,15 +2780,22 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"LINEAR LIGHT"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Linear light blend mode not supported by GIMP. "
-literal|"Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2636,15 +2819,22 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"PIN LIGHT"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Pin light blend mode not supported by GIMP. "
-literal|"Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2668,15 +2858,22 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"VIVID LIGHT"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Vivid light blend mode not supported by GIMP. "
-literal|"Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2700,15 +2897,22 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|mode_name
+init|=
+literal|"HARD MIX"
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Hard mix blend mode not supported by GIMP. "
-literal|"Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|mode_name
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2717,16 +2921,31 @@ if|if
 condition|(
 name|CONVERSION_WARNINGS
 condition|)
+block|{
+name|gchar
+modifier|*
+name|mode_name
+init|=
+name|g_strndup
+argument_list|(
+name|psd_mode
+argument_list|,
+literal|4
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Unknown blend mode %.4s. Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
 argument_list|,
-name|psd_mode
+name|mode_name
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|mode_name
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|GIMP_NORMAL_MODE
 return|;
@@ -2790,10 +3009,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Behind blend mode not supported in PSD file. "
-literal|"Blend mode reverts to normal."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2844,10 +3064,12 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"overlay blend mode. Results will differ."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2899,10 +3121,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Photoshop does not support the subtract "
-literal|"blend mode. Layer mode reverts to normal."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2967,10 +3190,12 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"saturation blend mode. Results will differ."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3008,10 +3233,12 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Gimp uses a different equation to photoshop for "
+literal|"blend mode: %s. Results will differ."
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"value (luminosity) blend mode. Results will differ."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3035,10 +3262,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Photoshop does not support the divide "
-literal|"blend mode. Layer mode reverts to normal."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3103,10 +3331,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Gimp uses a different equation to photoshop for the "
-literal|"soft light blend mode. Results will differ."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3130,10 +3359,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Photoshop does not support the grain extract "
-literal|"blend mode. Layer mode reverts to normal."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3156,10 +3386,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Photoshop does not support the grain merge "
-literal|"blend mode. Layer mode reverts to normal."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3182,10 +3413,11 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
+argument_list|,
+name|gimp_layer_mode_effects_name
 argument_list|(
-literal|"Photoshop does not support the color erase "
-literal|"blend mode. Layer mode reverts to normal."
+name|gimp_layer_mode
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3206,12 +3438,12 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Blend mode %d not supported. Blend mode reverts to normal."
-argument_list|)
+literal|"Unsupported blend mode: %s. Mode reverts to normal"
 argument_list|,
+name|gimp_layer_mode_effects_name
+argument_list|(
 name|gimp_layer_mode
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|psd_mode
@@ -3226,6 +3458,115 @@ expr_stmt|;
 block|}
 return|return
 name|psd_mode
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gchar
+modifier|*
+DECL|function|gimp_layer_mode_effects_name (const GimpLayerModeEffects mode)
+name|gimp_layer_mode_effects_name
+parameter_list|(
+specifier|const
+name|GimpLayerModeEffects
+name|mode
+parameter_list|)
+block|{
+specifier|static
+name|gchar
+modifier|*
+name|layer_mode_effects_names
+index|[]
+init|=
+block|{
+literal|"NORMAL"
+block|,
+literal|"DISSOLVE"
+block|,
+literal|"BEHIND"
+block|,
+literal|"MULTIPLY"
+block|,
+literal|"SCREEN"
+block|,
+literal|"OVERLAY"
+block|,
+literal|"DIFFERENCE"
+block|,
+literal|"ADD"
+block|,
+literal|"SUBTRACT"
+block|,
+literal|"DARKEN"
+block|,
+literal|"LIGHTEN"
+block|,
+literal|"HUE"
+block|,
+literal|"SATURATION"
+block|,
+literal|"COLOR"
+block|,
+literal|"VALUE"
+block|,
+literal|"DIVIDE"
+block|,
+literal|"DODGE"
+block|,
+literal|"BURN"
+block|,
+literal|"HARD LIGHT"
+block|,
+literal|"SOFT LIGHT"
+block|,
+literal|"GRAIN EXTRACT"
+block|,
+literal|"GRAIN MERGE"
+block|,
+literal|"COLOR ERASE"
+block|}
+decl_stmt|;
+specifier|static
+name|gchar
+modifier|*
+name|err_name
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|mode
+operator|>=
+literal|0
+operator|&&
+name|mode
+operator|<=
+name|GIMP_COLOR_ERASE_MODE
+condition|)
+return|return
+name|layer_mode_effects_names
+index|[
+name|mode
+index|]
+return|;
+name|g_free
+argument_list|(
+name|err_name
+argument_list|)
+expr_stmt|;
+name|err_name
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"UNKNOWN (%d)"
+argument_list|,
+name|mode
+argument_list|)
+expr_stmt|;
+return|return
+name|err_name
 return|;
 block|}
 end_function
