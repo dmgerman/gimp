@@ -122,7 +122,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b41b44d0103
+DECL|enum|__anon274f066f0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1183,7 +1183,7 @@ end_function
 begin_function
 name|GimpImageMap
 modifier|*
-DECL|function|gimp_image_map_new (GimpDrawable * drawable,const gchar * undo_desc,GeglNode * operation)
+DECL|function|gimp_image_map_new (GimpDrawable * drawable,const gchar * undo_desc,GeglNode * operation,GimpImageMapApplyFunc apply_func,gpointer apply_data)
 name|gimp_image_map_new
 parameter_list|(
 name|GimpDrawable
@@ -1198,6 +1198,12 @@ parameter_list|,
 name|GeglNode
 modifier|*
 name|operation
+parameter_list|,
+name|GimpImageMapApplyFunc
+name|apply_func
+parameter_list|,
+name|gpointer
+name|apply_data
 parameter_list|)
 block|{
 name|GimpImageMap
@@ -1237,6 +1243,19 @@ name|GEGL_IS_NODE
 argument_list|(
 name|operation
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|operation
+operator|!=
+name|NULL
+operator|||
+name|apply_func
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -1281,6 +1300,18 @@ argument_list|(
 name|operation
 argument_list|)
 expr_stmt|;
+name|image_map
+operator|->
+name|apply_func
+operator|=
+name|apply_func
+expr_stmt|;
+name|image_map
+operator|->
+name|apply_data
+operator|=
+name|apply_data
+expr_stmt|;
 name|gimp_viewable_preview_freeze
 argument_list|(
 name|GIMP_VIEWABLE
@@ -1297,18 +1328,17 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_map_apply (GimpImageMap * image_map,GimpImageMapApplyFunc apply_func,gpointer apply_data)
+DECL|function|gimp_image_map_apply (GimpImageMap * image_map,const GeglRectangle * visible)
 name|gimp_image_map_apply
 parameter_list|(
 name|GimpImageMap
 modifier|*
 name|image_map
 parameter_list|,
-name|GimpImageMapApplyFunc
-name|apply_func
-parameter_list|,
-name|gpointer
-name|apply_data
+specifier|const
+name|GeglRectangle
+modifier|*
+name|visible
 parameter_list|)
 block|{
 name|GeglRectangle
@@ -1316,12 +1346,14 @@ name|rect
 decl_stmt|;
 name|gint
 name|undo_offset_x
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|undo_offset_y
 decl_stmt|;
 name|gint
 name|undo_width
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|undo_height
 decl_stmt|;
 name|g_return_if_fail
@@ -1331,25 +1363,6 @@ argument_list|(
 name|image_map
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|apply_func
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|image_map
-operator|->
-name|apply_func
-operator|=
-name|apply_func
-expr_stmt|;
-name|image_map
-operator|->
-name|apply_data
-operator|=
-name|apply_data
 expr_stmt|;
 comment|/*  If we're still working, remove the timer  */
 if|if
