@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* Convolution Matrix plug-in for GIMP -- Version 0.1  * Copyright (C) 1997 Lauri Alanko<la@iki.fi>  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * The GNU General Public License is also available from  * http://www.fsf.org/copyleft/gpl.html  *  *  * CHANGELOG:  * v0.14        21.09.2006                   (gg<gg at catking the net>)  *      Replace numerical consts by named const, much variable renaming for maintainability  *      Generalisation of code w.r.t. matrix dimension with aim to support 7x7  *      Some minor bug fixes.  *  * v0.13        15.12.2000  *      Made the PDB interface actually work.   (Simon Budig<simon@gimp.org>)  *  * v0.12        15.9.1997  *      Got rid of the unportable snprintf. Also made some _tiny_ GUI fixes.  *  * v0.11        20.7.1997  *      Negative values in the matrix are now abs'ed when used to weight  *      alpha. Embossing effects should work properly now. Also fixed a  *      totally idiotic bug with embossing.  *  * v0.1         2.7.1997  *      Initial release. Works... kinda.  *  *  * TODO:  *  * - remove channels selector (that's what the channels dialog is for)  * - remove idiotic slowdowns  * - clean up code  * - optimize properly  * - save& load matrices  * - spiffy frontend for designing matrices  *  * What else?  *  *  */
+comment|/* Convolution Matrix plug-in for GIMP -- Version 0.1  * Copyright (C) 1997 Lauri Alanko<la@iki.fi>  *  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b1c64fc0103
+DECL|enum|__anon2a003b2f0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c64fc0208
+DECL|struct|__anon2a003b2f0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -862,7 +862,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b1c64fc0308
+DECL|struct|__anon2a003b2f0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -2463,9 +2463,6 @@ name|guchar
 modifier|*
 name|tmp_row
 decl_stmt|;
-name|gfloat
-name|sum
-decl_stmt|;
 name|gint
 name|x_offset
 decl_stmt|;
@@ -2898,6 +2895,9 @@ name|channel
 operator|++
 control|)
 block|{
+name|guchar
+name|d
+decl_stmt|;
 if|if
 condition|(
 name|chanmask
@@ -2905,8 +2905,14 @@ index|[
 name|channel
 index|]
 condition|)
-name|sum
+block|{
+name|gint
+name|result
+decl_stmt|;
+name|result
 operator|=
+name|ROUND
+argument_list|(
 name|convolve_pixel
 argument_list|(
 name|src_row
@@ -2917,9 +2923,24 @@ name|channel
 argument_list|,
 name|drawable
 argument_list|)
+argument_list|)
 expr_stmt|;
+name|d
+operator|=
+name|CLAMP
+argument_list|(
+name|result
+argument_list|,
+literal|0
+argument_list|,
+literal|255
+argument_list|)
+expr_stmt|;
+block|}
 else|else
-name|sum
+block|{
+comment|/* copy unmodified pixel */
+name|d
 operator|=
 name|src_row
 index|[
@@ -2933,7 +2954,7 @@ operator|*
 name|bpp
 index|]
 expr_stmt|;
-comment|/* copy unmodified px */
+block|}
 name|dest_row
 index|[
 name|HALF_WINDOW
@@ -2942,17 +2963,7 @@ index|[
 name|x_offset
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
-name|CLAMP
-argument_list|(
-name|sum
-argument_list|,
-literal|0
-argument_list|,
-literal|255
-argument_list|)
+name|d
 expr_stmt|;
 name|x_offset
 operator|++
