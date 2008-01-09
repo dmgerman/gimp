@@ -581,6 +581,11 @@ name|set_config
 operator|=
 name|colorsel_cmyk_set_config
 expr_stmt|;
+name|cmsErrorAction
+argument_list|(
+name|LCMS_ERROR_IGNORE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
