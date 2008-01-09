@@ -48,7 +48,7 @@ DECL|macro|COLORSEL_TYPE_CMYK
 define|#
 directive|define
 name|COLORSEL_TYPE_CMYK
-value|(colorsel_cmyk_type)
+value|(colorsel_cmyk_get_type ())
 end_define
 
 begin_define
@@ -156,37 +156,10 @@ struct|;
 end_struct
 
 begin_function_decl
-specifier|static
 name|GType
 name|colorsel_cmyk_get_type
 parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
-name|colorsel_cmyk_class_init
-parameter_list|(
-name|ColorselCmykClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|colorsel_cmyk_init
-parameter_list|(
-name|ColorselCmyk
-modifier|*
-name|cmyk
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -271,22 +244,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|colorsel_cmyk_type
-specifier|static
-name|GType
-name|colorsel_cmyk_type
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
+begin_macro
+DECL|function|G_DEFINE_DYNAMIC_TYPE (ColorselCmyk,colorsel_cmyk,GIMP_TYPE_COLOR_SELECTOR)
+name|G_DEFINE_DYNAMIC_TYPE
+argument_list|(
+argument|ColorselCmyk
+argument_list|,
+argument|colorsel_cmyk
+argument_list|,
+argument|GIMP_TYPE_COLOR_SELECTOR
+argument_list|)
+end_macro
 
 begin_function
 name|G_MODULE_EXPORT
 specifier|const
 name|GimpModuleInfo
 modifier|*
-DECL|function|gimp_module_query (GTypeModule * module)
 name|gimp_module_query
 parameter_list|(
 name|GTypeModule
@@ -312,98 +286,13 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|colorsel_cmyk_get_type
+name|colorsel_cmyk_register_type
 argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GType
-DECL|function|colorsel_cmyk_get_type (GTypeModule * module)
-name|colorsel_cmyk_get_type
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|colorsel_cmyk_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|select_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|ColorselCmykClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|colorsel_cmyk_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|ColorselCmyk
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|colorsel_cmyk_init
-block|,       }
-decl_stmt|;
-name|colorsel_cmyk_type
-operator|=
-name|g_type_module_register_type
-argument_list|(
-name|module
-argument_list|,
-name|GIMP_TYPE_COLOR_SELECTOR
-argument_list|,
-literal|"ColorselCmyk"
-argument_list|,
-operator|&
-name|select_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|colorsel_cmyk_type
 return|;
 block|}
 end_function
@@ -457,6 +346,19 @@ operator|=
 name|colorsel_cmyk_set_color
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|colorsel_cmyk_class_finalize (ColorselCmykClass * klass)
+name|colorsel_cmyk_class_finalize
+parameter_list|(
+name|ColorselCmykClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

@@ -154,7 +154,7 @@ DECL|macro|CDISPLAY_TYPE_LCMS
 define|#
 directive|define
 name|CDISPLAY_TYPE_LCMS
-value|(cdisplay_lcms_type)
+value|(cdisplay_lcms_get_type ())
 end_define
 
 begin_define
@@ -250,37 +250,10 @@ struct|;
 end_struct
 
 begin_function_decl
-specifier|static
 name|GType
 name|cdisplay_lcms_get_type
 parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
-name|cdisplay_lcms_class_init
-parameter_list|(
-name|CdisplayLcmsClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|cdisplay_lcms_init
-parameter_list|(
-name|CdisplayLcms
-modifier|*
-name|lcms
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -473,33 +446,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|cdisplay_lcms_type
-specifier|static
-name|GType
-name|cdisplay_lcms_type
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpColorDisplayClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_macro
+DECL|function|G_DEFINE_DYNAMIC_TYPE (CdisplayLcms,cdisplay_lcms,GIMP_TYPE_COLOR_DISPLAY)
+name|G_DEFINE_DYNAMIC_TYPE
+argument_list|(
+argument|CdisplayLcms
+argument_list|,
+argument|cdisplay_lcms
+argument_list|,
+argument|GIMP_TYPE_COLOR_DISPLAY
+argument_list|)
+end_macro
 
 begin_function
 name|G_MODULE_EXPORT
 specifier|const
 name|GimpModuleInfo
 modifier|*
-DECL|function|gimp_module_query (GTypeModule * module)
 name|gimp_module_query
 parameter_list|(
 name|GTypeModule
@@ -525,98 +488,13 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|cdisplay_lcms_get_type
+name|cdisplay_lcms_register_type
 argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GType
-DECL|function|cdisplay_lcms_get_type (GTypeModule * module)
-name|cdisplay_lcms_get_type
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|cdisplay_lcms_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|display_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|CdisplayLcmsClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|cdisplay_lcms_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|CdisplayLcms
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|cdisplay_lcms_init
-block|,       }
-decl_stmt|;
-name|cdisplay_lcms_type
-operator|=
-name|g_type_module_register_type
-argument_list|(
-name|module
-argument_list|,
-name|GIMP_TYPE_COLOR_DISPLAY
-argument_list|,
-literal|"CdisplayLcms"
-argument_list|,
-operator|&
-name|display_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|cdisplay_lcms_type
 return|;
 block|}
 end_function
@@ -650,13 +528,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -708,6 +579,19 @@ name|LCMS_ERROR_IGNORE
 argument_list|)
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|cdisplay_lcms_class_finalize (CdisplayLcmsClass * klass)
+name|cdisplay_lcms_class_finalize
+parameter_list|(
+name|CdisplayLcmsClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
 end_function
 
 begin_function
@@ -773,7 +657,7 @@ expr_stmt|;
 block|}
 name|G_OBJECT_CLASS
 argument_list|(
-name|parent_class
+name|cdisplay_lcms_parent_class
 argument_list|)
 operator|->
 name|finalize
@@ -1960,7 +1844,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d04bf0108
+DECL|struct|__anon28bd25e20108
 block|{
 DECL|member|data
 name|guchar
@@ -1979,7 +1863,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1d04bf0203
+DECL|enum|__anon28bd25e20203
 block|{
 DECL|enumerator|openReadSpool
 name|openReadSpool

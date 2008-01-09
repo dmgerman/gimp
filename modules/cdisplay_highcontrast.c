@@ -58,7 +58,7 @@ DECL|macro|CDISPLAY_TYPE_CONTRAST
 define|#
 directive|define
 name|CDISPLAY_TYPE_CONTRAST
-value|(cdisplay_contrast_type)
+value|(cdisplay_contrast_get_type ())
 end_define
 
 begin_define
@@ -162,7 +162,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon294691430103
+DECL|enum|__anon2a1b32850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -174,25 +174,10 @@ enum|;
 end_enum
 
 begin_function_decl
-specifier|static
 name|GType
 name|cdisplay_contrast_get_type
 parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
-name|cdisplay_contrast_class_init
-parameter_list|(
-name|CdisplayContrastClass
-modifier|*
-name|klass
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -326,33 +311,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|cdisplay_contrast_type
-specifier|static
-name|GType
-name|cdisplay_contrast_type
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpColorDisplayClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_macro
+DECL|function|G_DEFINE_DYNAMIC_TYPE (CdisplayContrast,cdisplay_contrast,GIMP_TYPE_COLOR_DISPLAY)
+name|G_DEFINE_DYNAMIC_TYPE
+argument_list|(
+argument|CdisplayContrast
+argument_list|,
+argument|cdisplay_contrast
+argument_list|,
+argument|GIMP_TYPE_COLOR_DISPLAY
+argument_list|)
+end_macro
 
 begin_function
 name|G_MODULE_EXPORT
 specifier|const
 name|GimpModuleInfo
 modifier|*
-DECL|function|gimp_module_query (GTypeModule * module)
 name|gimp_module_query
 parameter_list|(
 name|GTypeModule
@@ -378,96 +353,13 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|cdisplay_contrast_get_type
+name|cdisplay_contrast_register_type
 argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GType
-DECL|function|cdisplay_contrast_get_type (GTypeModule * module)
-name|cdisplay_contrast_get_type
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|cdisplay_contrast_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|display_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|CdisplayContrastClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|cdisplay_contrast_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|CdisplayContrast
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-name|NULL
-comment|/* instance_init  */
-block|}
-decl_stmt|;
-name|cdisplay_contrast_type
-operator|=
-name|g_type_module_register_type
-argument_list|(
-name|module
-argument_list|,
-name|GIMP_TYPE_COLOR_DISPLAY
-argument_list|,
-literal|"CdisplayContrast"
-argument_list|,
-operator|&
-name|display_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|cdisplay_contrast_type
 return|;
 block|}
 end_function
@@ -501,13 +393,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|get_property
@@ -573,6 +458,32 @@ operator|=
 name|cdisplay_contrast_configure
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|cdisplay_contrast_class_finalize (CdisplayContrastClass * klass)
+name|cdisplay_contrast_class_finalize
+parameter_list|(
+name|CdisplayContrastClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|cdisplay_contrast_init (CdisplayContrast * contrast)
+name|cdisplay_contrast_init
+parameter_list|(
+name|CdisplayContrast
+modifier|*
+name|contrast
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

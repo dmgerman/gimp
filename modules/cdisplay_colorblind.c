@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299edf420103
+DECL|enum|__anon29cdaaa20103
 block|{
 DECL|enumerator|COLORBLIND_DEFICIENCY_PROTANOPIA
 name|COLORBLIND_DEFICIENCY_PROTANOPIA
@@ -81,7 +81,7 @@ end_define
 begin_function_decl
 specifier|static
 name|GType
-name|cdisplay_colorblind_deficiency_get_type
+name|cdisplay_colorblind_deficiency_register_type
 parameter_list|(
 name|GTypeModule
 modifier|*
@@ -208,7 +208,7 @@ DECL|macro|CDISPLAY_TYPE_COLORBLIND
 define|#
 directive|define
 name|CDISPLAY_TYPE_COLORBLIND
-value|(cdisplay_colorblind_type)
+value|(cdisplay_colorblind_get_type ())
 end_define
 
 begin_define
@@ -345,7 +345,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon299edf420203
+DECL|enum|__anon29cdaaa20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,37 +357,10 @@ enum|;
 end_enum
 
 begin_function_decl
-specifier|static
 name|GType
 name|cdisplay_colorblind_get_type
 parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
-name|cdisplay_colorblind_class_init
-parameter_list|(
-name|CdisplayColorblindClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|cdisplay_colorblind_init
-parameter_list|(
-name|CdisplayColorblind
-modifier|*
-name|colorblind
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -622,34 +595,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|cdisplay_colorblind_type
-specifier|static
-name|GType
-name|cdisplay_colorblind_type
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
+begin_macro
+name|G_DEFINE_DYNAMIC_TYPE
+argument_list|(
+argument|CdisplayColorblind
+argument_list|,
+argument|cdisplay_colorblind
+argument_list|,
+argument|GIMP_TYPE_COLOR_DISPLAY
+argument_list|)
+end_macro
 
 begin_decl_stmt
-DECL|variable|cdisplay_colorblind_deficiency_type
 specifier|static
 name|GType
 name|cdisplay_colorblind_deficiency_type
 init|=
 literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpColorDisplayClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -684,12 +646,12 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|cdisplay_colorblind_get_type
+name|cdisplay_colorblind_register_type
 argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
-name|cdisplay_colorblind_deficiency_get_type
+name|cdisplay_colorblind_deficiency_register_type
 argument_list|(
 name|module
 argument_list|)
@@ -703,93 +665,8 @@ end_function
 begin_function
 specifier|static
 name|GType
-DECL|function|cdisplay_colorblind_get_type (GTypeModule * module)
-name|cdisplay_colorblind_get_type
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|cdisplay_colorblind_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|display_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|CdisplayColorblindClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|cdisplay_colorblind_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|CdisplayColorblind
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|cdisplay_colorblind_init
-block|,       }
-decl_stmt|;
-name|cdisplay_colorblind_type
-operator|=
-name|g_type_module_register_type
-argument_list|(
-name|module
-argument_list|,
-name|GIMP_TYPE_COLOR_DISPLAY
-argument_list|,
-literal|"CdisplayColorblind"
-argument_list|,
-operator|&
-name|display_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|cdisplay_colorblind_type
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GType
-DECL|function|cdisplay_colorblind_deficiency_get_type (GTypeModule * module)
-name|cdisplay_colorblind_deficiency_get_type
+DECL|function|cdisplay_colorblind_deficiency_register_type (GTypeModule * module)
+name|cdisplay_colorblind_deficiency_register_type
 parameter_list|(
 name|GTypeModule
 modifier|*
@@ -864,13 +741,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|get_property
@@ -940,6 +810,19 @@ operator|=
 name|cdisplay_colorblind_changed
 expr_stmt|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|cdisplay_colorblind_class_finalize (CdisplayColorblindClass * klass)
+name|cdisplay_colorblind_class_finalize
+parameter_list|(
+name|CdisplayColorblindClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
 end_function
 
 begin_function

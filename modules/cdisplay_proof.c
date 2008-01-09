@@ -94,7 +94,7 @@ DECL|macro|CDISPLAY_TYPE_PROOF
 define|#
 directive|define
 name|CDISPLAY_TYPE_PROOF
-value|(cdisplay_proof_type)
+value|(cdisplay_proof_get_type ())
 end_define
 
 begin_define
@@ -204,7 +204,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cdbdad0103
+DECL|enum|__anon2be038f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,37 +222,10 @@ enum|;
 end_enum
 
 begin_function_decl
-specifier|static
 name|GType
 name|cdisplay_proof_get_type
 parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
-name|cdisplay_proof_class_init
-parameter_list|(
-name|CdisplayProofClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|cdisplay_proof_init
-parameter_list|(
-name|CdisplayProof
-modifier|*
-name|proof
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,33 +368,23 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|cdisplay_proof_type
-specifier|static
-name|GType
-name|cdisplay_proof_type
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpColorDisplayClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
+begin_macro
+DECL|function|G_DEFINE_DYNAMIC_TYPE (CdisplayProof,cdisplay_proof,GIMP_TYPE_COLOR_DISPLAY)
+name|G_DEFINE_DYNAMIC_TYPE
+argument_list|(
+argument|CdisplayProof
+argument_list|,
+argument|cdisplay_proof
+argument_list|,
+argument|GIMP_TYPE_COLOR_DISPLAY
+argument_list|)
+end_macro
 
 begin_function
 name|G_MODULE_EXPORT
 specifier|const
 name|GimpModuleInfo
 modifier|*
-DECL|function|gimp_module_query (GTypeModule * module)
 name|gimp_module_query
 parameter_list|(
 name|GTypeModule
@@ -447,98 +410,13 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|cdisplay_proof_get_type
+name|cdisplay_proof_register_type
 argument_list|(
 name|module
 argument_list|)
 expr_stmt|;
 return|return
 name|TRUE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GType
-DECL|function|cdisplay_proof_get_type (GTypeModule * module)
-name|cdisplay_proof_get_type
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|cdisplay_proof_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|display_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|CdisplayProofClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|cdisplay_proof_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|CdisplayProof
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|cdisplay_proof_init
-block|,       }
-decl_stmt|;
-name|cdisplay_proof_type
-operator|=
-name|g_type_module_register_type
-argument_list|(
-name|module
-argument_list|,
-name|GIMP_TYPE_COLOR_DISPLAY
-argument_list|,
-literal|"CdisplayProof"
-argument_list|,
-operator|&
-name|display_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|cdisplay_proof_type
 return|;
 block|}
 end_function
@@ -572,13 +450,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -696,6 +567,19 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|cdisplay_proof_class_finalize (CdisplayProofClass * klass)
+name|cdisplay_proof_class_finalize
+parameter_list|(
+name|CdisplayProofClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|cdisplay_proof_init (CdisplayProof * proof)
 name|cdisplay_proof_init
 parameter_list|(
@@ -783,7 +667,7 @@ expr_stmt|;
 block|}
 name|G_OBJECT_CLASS
 argument_list|(
-name|parent_class
+name|cdisplay_proof_parent_class
 argument_list|)
 operator|->
 name|finalize

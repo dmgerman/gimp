@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279772a10108
+DECL|struct|__anon2c3f2f270108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon279772a10203
+DECL|enum|__anon2c3f2f270203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -165,7 +165,7 @@ DECL|macro|CONTROLLER_TYPE_MIDI
 define|#
 directive|define
 name|CONTROLLER_TYPE_MIDI
-value|(controller_type)
+value|(controller_midi_get_type ())
 end_define
 
 begin_define
@@ -319,35 +319,9 @@ end_struct
 
 begin_function_decl
 name|GType
-name|midi_get_type
+name|controller_midi_get_type
 parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|void
-name|midi_class_init
-parameter_list|(
-name|ControllerMidiClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|midi_init
-parameter_list|(
-name|ControllerMidi
-modifier|*
-name|midi
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -645,29 +619,19 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
-begin_decl_stmt
-DECL|variable|controller_type
-specifier|static
-name|GType
-name|controller_type
-init|=
-literal|0
-decl_stmt|;
-end_decl_stmt
+begin_macro
+DECL|function|G_DEFINE_DYNAMIC_TYPE (ControllerMidi,controller_midi,GIMP_TYPE_CONTROLLER)
+name|G_DEFINE_DYNAMIC_TYPE
+argument_list|(
+argument|ControllerMidi
+argument_list|,
+argument|controller_midi
+argument_list|,
+argument|GIMP_TYPE_CONTROLLER
+argument_list|)
+end_macro
 
 begin_decl_stmt
-DECL|variable|parent_class
-specifier|static
-name|GimpControllerClass
-modifier|*
-name|parent_class
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|midi_events
 specifier|static
 name|MidiEvent
 name|midi_events
@@ -686,7 +650,6 @@ name|G_MODULE_EXPORT
 specifier|const
 name|GimpModuleInfo
 modifier|*
-DECL|function|gimp_module_query (GTypeModule * module)
 name|gimp_module_query
 parameter_list|(
 name|GTypeModule
@@ -712,7 +675,7 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|midi_get_type
+name|controller_midi_register_type
 argument_list|(
 name|module
 argument_list|)
@@ -724,94 +687,10 @@ block|}
 end_function
 
 begin_function
-name|GType
-DECL|function|midi_get_type (GTypeModule * module)
-name|midi_get_type
-parameter_list|(
-name|GTypeModule
-modifier|*
-name|module
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|controller_type
-condition|)
-block|{
-specifier|const
-name|GTypeInfo
-name|controller_info
-init|=
-block|{
-sizeof|sizeof
-argument_list|(
-name|ControllerMidiClass
-argument_list|)
-block|,
-operator|(
-name|GBaseInitFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GBaseFinalizeFunc
-operator|)
-name|NULL
-block|,
-operator|(
-name|GClassInitFunc
-operator|)
-name|midi_class_init
-block|,
-name|NULL
-block|,
-comment|/* class_finalize */
-name|NULL
-block|,
-comment|/* class_data     */
-sizeof|sizeof
-argument_list|(
-name|ControllerMidi
-argument_list|)
-block|,
-literal|0
-block|,
-comment|/* n_preallocs    */
-operator|(
-name|GInstanceInitFunc
-operator|)
-name|midi_init
-block|}
-decl_stmt|;
-name|controller_type
-operator|=
-name|g_type_module_register_type
-argument_list|(
-name|module
-argument_list|,
-name|GIMP_TYPE_CONTROLLER
-argument_list|,
-literal|"ControllerMidi"
-argument_list|,
-operator|&
-name|controller_info
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|controller_type
-return|;
-block|}
-end_function
-
-begin_function
 specifier|static
 name|void
-DECL|function|midi_class_init (ControllerMidiClass * klass)
-name|midi_class_init
+DECL|function|controller_midi_class_init (ControllerMidiClass * klass)
+name|controller_midi_class_init
 parameter_list|(
 name|ControllerMidiClass
 modifier|*
@@ -840,13 +719,6 @@ name|gchar
 modifier|*
 name|blurb
 decl_stmt|;
-name|parent_class
-operator|=
-name|g_type_class_peek_parent
-argument_list|(
-name|klass
-argument_list|)
-expr_stmt|;
 name|object_class
 operator|->
 name|dispose
@@ -994,8 +866,21 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|midi_init (ControllerMidi * midi)
-name|midi_init
+DECL|function|controller_midi_class_finalize (ControllerMidiClass * klass)
+name|controller_midi_class_finalize
+parameter_list|(
+name|ControllerMidiClass
+modifier|*
+name|klass
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|controller_midi_init (ControllerMidi * midi)
+name|controller_midi_init
 parameter_list|(
 name|ControllerMidi
 modifier|*
@@ -1123,7 +1008,7 @@ argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
-name|parent_class
+name|controller_midi_parent_class
 argument_list|)
 operator|->
 name|dispose
