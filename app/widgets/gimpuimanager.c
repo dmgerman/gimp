@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a430c10103
+DECL|enum|__anon27f91ac70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a430c10203
+DECL|enum|__anon27f91ac70203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2165,7 +2165,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a430c10308
+DECL|struct|__anon27f91ac70308
 block|{
 DECL|member|x
 name|guint
@@ -2312,6 +2312,12 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|widget
+condition|)
+return|return;
 name|g_return_if_fail
 argument_list|(
 name|GTK_IS_MENU
