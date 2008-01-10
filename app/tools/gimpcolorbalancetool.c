@@ -708,13 +708,6 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|image_map_tool
-operator|->
-name|operation
-condition|)
-block|{
 name|ColorBalance
 modifier|*
 name|cb
@@ -811,7 +804,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|color_balance_create_lookup_tables
 argument_list|(
 name|cb_tool

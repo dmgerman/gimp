@@ -772,13 +772,6 @@ argument_list|(
 name|im_tool
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|im_tool
-operator|->
-name|operation
-condition|)
-block|{
 name|gdouble
 name|brightness
 decl_stmt|;
@@ -840,7 +833,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|brightness_contrast_lut_setup
 argument_list|(
 name|bc_tool

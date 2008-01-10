@@ -662,13 +662,6 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|image_map_tool
-operator|->
-name|operation
-condition|)
-block|{
 name|gegl_node_set
 argument_list|(
 name|image_map_tool
@@ -702,7 +695,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|colorize_calculate
 argument_list|(
 name|col_tool

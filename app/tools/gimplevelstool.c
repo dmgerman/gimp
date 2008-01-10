@@ -1254,21 +1254,6 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|image_map_tool
-operator|->
-name|operation
-condition|)
-block|{
-name|Levels
-modifier|*
-name|levels
-init|=
-name|tool
-operator|->
-name|levels
-decl_stmt|;
 name|GimpHistogramChannel
 name|channel
 decl_stmt|;
@@ -1333,6 +1318,8 @@ name|operation
 argument_list|,
 literal|"gamma"
 argument_list|,
+name|tool
+operator|->
 name|levels
 operator|->
 name|gamma
@@ -1342,6 +1329,8 @@ index|]
 argument_list|,
 literal|"low-input"
 argument_list|,
+name|tool
+operator|->
 name|levels
 operator|->
 name|low_input
@@ -1353,6 +1342,8 @@ literal|255.0
 argument_list|,
 literal|"high-input"
 argument_list|,
+name|tool
+operator|->
 name|levels
 operator|->
 name|high_input
@@ -1364,6 +1355,8 @@ literal|255.0
 argument_list|,
 literal|"low-output"
 argument_list|,
+name|tool
+operator|->
 name|levels
 operator|->
 name|low_output
@@ -1375,6 +1368,8 @@ literal|255.0
 argument_list|,
 literal|"high-output"
 argument_list|,
+name|tool
+operator|->
 name|levels
 operator|->
 name|high_output
@@ -1400,7 +1395,6 @@ operator|==
 literal|1
 condition|)
 break|break;
-block|}
 block|}
 name|gimp_lut_setup
 argument_list|(
