@@ -23,6 +23,15 @@ file|"base/base-types.h"
 end_include
 
 begin_typedef
+DECL|typedef|GimpOperationColorBalance
+typedef|typedef
+name|struct
+name|_GimpOperationColorBalance
+name|GimpOperationColorBalance
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationColorize
 typedef|typedef
 name|struct

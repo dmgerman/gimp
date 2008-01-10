@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationcolorbalance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationcolorize.h"
 end_include
 
@@ -83,6 +89,11 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_COLOR_BALANCE
+argument_list|)
+expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_COLORIZE
