@@ -110,7 +110,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297eea600103
+DECL|enum|__anon296ae8c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -639,7 +639,7 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|gimp_input_device_store_get_type
+name|gimp_input_device_store_register_types
 argument_list|(
 name|module
 argument_list|)

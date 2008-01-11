@@ -103,7 +103,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b675fba0108
+DECL|struct|__anon2c0059590108
 block|{
 DECL|member|code
 name|guint16
@@ -614,7 +614,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b675fba0203
+DECL|enum|__anon2c0059590203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -989,7 +989,7 @@ modifier|*
 name|module
 parameter_list|)
 block|{
-name|gimp_input_device_store_get_type
+name|gimp_input_device_store_register_types
 argument_list|(
 name|module
 argument_list|)
