@@ -50,6 +50,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationHueSaturation
+typedef|typedef
+name|struct
+name|_GimpOperationHueSaturation
+name|GimpOperationHueSaturation
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationLevels
 typedef|typedef
 name|struct
