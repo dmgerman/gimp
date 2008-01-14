@@ -123,6 +123,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_display_shell_eval_event
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
+name|gdouble
+name|inertia_factor
+parameter_list|,
+name|guint32
+name|time
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

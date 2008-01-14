@@ -29,22 +29,6 @@ file|"gimpink-blob.h"
 end_include
 
 begin_define
-DECL|macro|DIST_SMOOTHER_BUFFER
-define|#
-directive|define
-name|DIST_SMOOTHER_BUFFER
-value|10
-end_define
-
-begin_define
-DECL|macro|TIME_SMOOTHER_BUFFER
-define|#
-directive|define
-name|TIME_SMOOTHER_BUFFER
-value|10
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_INK
 define|#
 directive|define
@@ -143,39 +127,6 @@ modifier|*
 name|last_blob
 decl_stmt|;
 comment|/*  blob for last cursor position  */
-comment|/* circular distance history buffer */
-DECL|member|dt_buffer
-name|gdouble
-name|dt_buffer
-index|[
-name|DIST_SMOOTHER_BUFFER
-index|]
-decl_stmt|;
-DECL|member|dt_index
-name|gint
-name|dt_index
-decl_stmt|;
-comment|/* circular timing history buffer */
-DECL|member|ts_buffer
-name|guint32
-name|ts_buffer
-index|[
-name|TIME_SMOOTHER_BUFFER
-index|]
-decl_stmt|;
-DECL|member|ts_index
-name|gint
-name|ts_index
-decl_stmt|;
-DECL|member|last_time
-name|guint32
-name|last_time
-decl_stmt|;
-comment|/*  previous time of a motion event  */
-DECL|member|init_velocity
-name|gboolean
-name|init_velocity
-decl_stmt|;
 block|}
 struct|;
 end_struct

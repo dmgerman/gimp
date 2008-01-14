@@ -686,9 +686,14 @@ DECL|member|button_press_before_focus
 name|gboolean
 name|button_press_before_focus
 decl_stmt|;
-DECL|member|last_motion_time
+DECL|member|last_disp_motion_time
 name|guint32
-name|last_motion_time
+name|last_disp_motion_time
+decl_stmt|;
+comment|/*  previous time of a forwarded motion event  */
+DECL|member|last_read_motion_time
+name|guint32
+name|last_read_motion_time
 decl_stmt|;
 DECL|member|highlight
 name|GdkRectangle
@@ -709,6 +714,11 @@ DECL|member|scroll_info
 name|gpointer
 name|scroll_info
 decl_stmt|;
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
+decl_stmt|;
+comment|/* last motion event */
 block|}
 struct|;
 end_struct
