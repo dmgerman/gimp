@@ -151,6 +151,14 @@ name|STATUSBAR_SIZE
 value|200
 end_define
 
+begin_define
+DECL|macro|N_SNAP_LINES
+define|#
+directive|define
+name|N_SNAP_LINES
+value|12
+end_define
+
 begin_function_decl
 specifier|static
 name|GObject
@@ -1008,6 +1016,8 @@ operator|->
 name|cur_coords
 operator|.
 name|y
+argument_list|,
+name|N_SNAP_LINES
 argument_list|)
 expr_stmt|;
 block|}

@@ -125,6 +125,14 @@ name|TARGET_SIZE
 value|15
 end_define
 
+begin_define
+DECL|macro|N_SNAP_LINES
+define|#
+directive|define
+name|N_SNAP_LINES
+value|12
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1170,6 +1178,8 @@ operator|&
 name|blend_tool
 operator|->
 name|end_y
+argument_list|,
+name|N_SNAP_LINES
 argument_list|)
 expr_stmt|;
 block|}
@@ -1305,6 +1315,8 @@ operator|&
 name|blend_tool
 operator|->
 name|end_y
+argument_list|,
+name|N_SNAP_LINES
 argument_list|)
 expr_stmt|;
 block|}

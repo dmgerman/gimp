@@ -151,6 +151,14 @@ name|ARC_RADIUS
 value|30
 end_define
 
+begin_define
+DECL|macro|N_SNAP_LINES
+define|#
+directive|define
+name|N_SNAP_LINES
+value|12
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1900,6 +1908,8 @@ name|x
 argument_list|,
 operator|&
 name|y
+argument_list|,
+name|N_SNAP_LINES
 argument_list|)
 expr_stmt|;
 name|measure
@@ -2199,6 +2209,8 @@ name|x
 argument_list|,
 operator|&
 name|y
+argument_list|,
+name|N_SNAP_LINES
 argument_list|)
 expr_stmt|;
 name|measure
