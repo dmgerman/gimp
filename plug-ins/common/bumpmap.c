@@ -87,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28add7cd0103
+DECL|enum|__anon27c4e8540103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28add7cd0203
+DECL|enum|__anon27c4e8540203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28add7cd0308
+DECL|struct|__anon27c4e8540308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28add7cd0408
+DECL|struct|__anon27c4e8540408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28add7cd0508
+DECL|struct|__anon27c4e8540508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -1294,19 +1294,6 @@ operator|.
 name|data
 operator|.
 name|d_float
-expr_stmt|;
-name|bmvals
-operator|.
-name|depth
-operator|=
-name|param
-index|[
-literal|6
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
 expr_stmt|;
 name|bmvals
 operator|.
@@ -2400,6 +2387,7 @@ operator|*
 literal|255.0
 expr_stmt|;
 comment|/* Calculate constant Z component of surface normal */
+comment|/*              (depth may be 0 if non-interactive) */
 name|nz
 operator|=
 operator|(
@@ -2408,9 +2396,14 @@ operator|*
 literal|255
 operator|)
 operator|/
+name|MAX
+argument_list|(
 name|bmvals
 operator|.
 name|depth
+argument_list|,
+literal|1
+argument_list|)
 expr_stmt|;
 name|params
 operator|->
