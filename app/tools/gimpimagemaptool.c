@@ -2654,6 +2654,10 @@ condition|(
 name|options
 operator|->
 name|preview
+operator|&&
+name|image_map_tool
+operator|->
+name|image_map
 condition|)
 block|{
 name|gimp_tool_control_set_preserve
