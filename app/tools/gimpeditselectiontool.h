@@ -176,6 +176,19 @@ DECL|member|propagate_release
 name|gboolean
 name|propagate_release
 decl_stmt|;
+DECL|member|constrain
+name|gboolean
+name|constrain
+decl_stmt|;
+comment|/*  Constrain the movement            */
+DECL|member|start_x
+DECL|member|start_y
+name|gdouble
+name|start_x
+decl_stmt|,
+name|start_y
+decl_stmt|;
+comment|/*  Coords when button was pressed    */
 block|}
 struct|;
 end_struct
