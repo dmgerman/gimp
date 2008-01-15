@@ -125,14 +125,6 @@ name|TARGET_SIZE
 value|15
 end_define
 
-begin_define
-DECL|macro|N_SNAP_LINES
-define|#
-directive|define
-name|N_SNAP_LINES
-value|12
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1151,7 +1143,6 @@ operator|->
 name|y
 expr_stmt|;
 block|}
-comment|/* Restrict to multiples of 15 degrees if ctrl is pressed */
 if|if
 condition|(
 name|state
@@ -1179,7 +1170,7 @@ name|blend_tool
 operator|->
 name|end_y
 argument_list|,
-name|N_SNAP_LINES
+name|GIMP_TOOL_CONSTRAIN_15_DEGREES
 argument_list|)
 expr_stmt|;
 block|}
@@ -1316,7 +1307,7 @@ name|blend_tool
 operator|->
 name|end_y
 argument_list|,
-name|N_SNAP_LINES
+name|GIMP_TOOL_CONSTRAIN_15_DEGREES
 argument_list|)
 expr_stmt|;
 block|}

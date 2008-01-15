@@ -16,6 +16,34 @@ directive|define
 name|__TOOLS_UTILS_H__
 end_define
 
+begin_comment
+comment|/*  * Common values for the n_snap_lines parameter of  * gimp_tool_motion_constrain.  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_TOOL_CONSTRAIN_90_DEGREES
+define|#
+directive|define
+name|GIMP_TOOL_CONSTRAIN_90_DEGREES
+value|2
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_CONSTRAIN_45_DEGREES
+define|#
+directive|define
+name|GIMP_TOOL_CONSTRAIN_45_DEGREES
+value|4
+end_define
+
+begin_define
+DECL|macro|GIMP_TOOL_CONSTRAIN_15_DEGREES
+define|#
+directive|define
+name|GIMP_TOOL_CONSTRAIN_15_DEGREES
+value|12
+end_define
+
 begin_function_decl
 name|void
 name|gimp_tool_motion_constrain

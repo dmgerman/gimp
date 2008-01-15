@@ -211,18 +211,6 @@ name|ARROW_VELOCITY
 value|25
 end_define
 
-begin_comment
-comment|/**  * The number of evenly distributed lines onto which moving will be  * constrained when movement constraint is active.  */
-end_comment
-
-begin_define
-DECL|macro|N_SNAP_LINES
-define|#
-directive|define
-name|N_SNAP_LINES
-value|4
-end_define
-
 begin_function_decl
 specifier|static
 name|void
@@ -2241,7 +2229,7 @@ name|coords
 operator|->
 name|y
 argument_list|,
-name|N_SNAP_LINES
+name|GIMP_TOOL_CONSTRAIN_45_DEGREES
 argument_list|)
 expr_stmt|;
 block|}

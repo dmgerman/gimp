@@ -151,14 +151,6 @@ name|ARC_RADIUS
 value|30
 end_define
 
-begin_define
-DECL|macro|N_SNAP_LINES
-define|#
-directive|define
-name|N_SNAP_LINES
-value|12
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -1909,7 +1901,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-name|N_SNAP_LINES
+name|GIMP_TOOL_CONSTRAIN_15_DEGREES
 argument_list|)
 expr_stmt|;
 name|measure
@@ -2210,7 +2202,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-name|N_SNAP_LINES
+name|GIMP_TOOL_CONSTRAIN_15_DEGREES
 argument_list|)
 expr_stmt|;
 name|measure
