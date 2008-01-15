@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a40e670103
+DECL|enum|__anon29a052870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,7 +222,7 @@ name|object_class
 argument_list|,
 name|PROP_HUE
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"hue"
 argument_list|,
@@ -232,9 +232,9 @@ literal|"Hue"
 argument_list|,
 literal|0.0
 argument_list|,
-literal|360.0
+literal|1.0
 argument_list|,
-literal|180.0
+literal|0.5
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -248,7 +248,7 @@ name|object_class
 argument_list|,
 name|PROP_SATURATION
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"saturation"
 argument_list|,
@@ -258,9 +258,9 @@ literal|"Saturation"
 argument_list|,
 literal|0.0
 argument_list|,
-literal|100.0
+literal|1.0
 argument_list|,
-literal|50.0
+literal|0.5
 argument_list|,
 name|G_PARAM_READWRITE
 operator||
@@ -274,7 +274,7 @@ name|object_class
 argument_list|,
 name|PROP_LIGHTNESS
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"lightness"
 argument_list|,
@@ -283,9 +283,9 @@ argument_list|,
 literal|"Lightness"
 argument_list|,
 operator|-
-literal|100.0
+literal|1.0
 argument_list|,
-literal|100.0
+literal|1.0
 argument_list|,
 literal|0.0
 argument_list|,
@@ -350,7 +350,7 @@ block|{
 case|case
 name|PROP_HUE
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -363,7 +363,7 @@ break|break;
 case|case
 name|PROP_SATURATION
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -376,7 +376,7 @@ break|break;
 case|case
 name|PROP_LIGHTNESS
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -445,7 +445,7 @@ name|self
 operator|->
 name|hue
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -458,7 +458,7 @@ name|self
 operator|->
 name|saturation
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -471,7 +471,7 @@ name|self
 operator|->
 name|lightness
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -593,28 +593,24 @@ operator|=
 name|lum
 operator|*
 operator|(
-literal|100.0
+literal|1.0
 operator|-
 name|self
 operator|->
 name|lightness
 operator|)
-operator|/
-literal|100.0
 expr_stmt|;
 name|lum
 operator|+=
 literal|1.0
 operator|-
 operator|(
-literal|100.0
+literal|1.0
 operator|-
 name|self
 operator|->
 name|lightness
 operator|)
-operator|/
-literal|100.0
 expr_stmt|;
 block|}
 elseif|else
@@ -636,10 +632,8 @@ name|self
 operator|->
 name|lightness
 operator|+
-literal|100.0
+literal|1.0
 operator|)
-operator|/
-literal|100.0
 expr_stmt|;
 block|}
 name|hsl
@@ -649,8 +643,6 @@ operator|=
 name|self
 operator|->
 name|hue
-operator|/
-literal|360.0
 expr_stmt|;
 name|hsl
 operator|.
@@ -659,8 +651,6 @@ operator|=
 name|self
 operator|->
 name|saturation
-operator|/
-literal|100.0
 expr_stmt|;
 name|hsl
 operator|.

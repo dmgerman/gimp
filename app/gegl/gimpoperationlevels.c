@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3457220103
+DECL|enum|__anon2b266b7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -261,7 +261,7 @@ name|object_class
 argument_list|,
 name|PROP_GAMMA
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"gamma"
 argument_list|,
@@ -287,7 +287,7 @@ name|object_class
 argument_list|,
 name|PROP_LOW_INPUT
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"low-input"
 argument_list|,
@@ -313,7 +313,7 @@ name|object_class
 argument_list|,
 name|PROP_HIGH_INPUT
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"high-input"
 argument_list|,
@@ -339,7 +339,7 @@ name|object_class
 argument_list|,
 name|PROP_LOW_OUTPUT
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"low-output"
 argument_list|,
@@ -365,7 +365,7 @@ name|object_class
 argument_list|,
 name|PROP_HIGH_OUTPUT
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"high-output"
 argument_list|,
@@ -523,7 +523,7 @@ break|break;
 case|case
 name|PROP_GAMMA
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -541,7 +541,7 @@ break|break;
 case|case
 name|PROP_LOW_INPUT
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -559,7 +559,7 @@ break|break;
 case|case
 name|PROP_HIGH_INPUT
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -577,7 +577,7 @@ break|break;
 case|case
 name|PROP_LOW_OUTPUT
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -595,7 +595,7 @@ break|break;
 case|case
 name|PROP_HIGH_OUTPUT
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -687,7 +687,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -705,7 +705,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -723,7 +723,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -741,7 +741,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -759,7 +759,7 @@ operator|->
 name|channel
 index|]
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -783,26 +783,26 @@ end_function
 begin_function
 specifier|static
 specifier|inline
-name|gfloat
-DECL|function|gimp_operation_levels_map (gfloat value,gfloat gamma,gfloat low_input,gfloat high_input,gfloat low_output,gfloat high_output)
+name|gdouble
+DECL|function|gimp_operation_levels_map (gdouble value,gdouble gamma,gdouble low_input,gdouble high_input,gdouble low_output,gdouble high_output)
 name|gimp_operation_levels_map
 parameter_list|(
-name|gfloat
+name|gdouble
 name|value
 parameter_list|,
-name|gfloat
+name|gdouble
 name|gamma
 parameter_list|,
-name|gfloat
+name|gdouble
 name|low_input
 parameter_list|,
-name|gfloat
+name|gdouble
 name|high_input
 parameter_list|,
-name|gfloat
+name|gdouble
 name|low_output
 parameter_list|,
-name|gfloat
+name|gdouble
 name|high_output
 parameter_list|)
 block|{
@@ -996,7 +996,7 @@ name|channel
 operator|++
 control|)
 block|{
-name|gfloat
+name|gdouble
 name|value
 decl_stmt|;
 name|value
@@ -1059,7 +1059,7 @@ if|if
 condition|(
 name|channel
 operator|!=
-literal|3
+name|ALPHA_PIX
 condition|)
 name|value
 operator|=

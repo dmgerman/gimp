@@ -675,6 +675,8 @@ operator|->
 name|colorize
 operator|->
 name|hue
+operator|/
+literal|360.0
 argument_list|,
 literal|"saturation"
 argument_list|,
@@ -683,6 +685,8 @@ operator|->
 name|colorize
 operator|->
 name|saturation
+operator|/
+literal|100.0
 argument_list|,
 literal|"lightness"
 argument_list|,
@@ -691,6 +695,8 @@ operator|->
 name|colorize
 operator|->
 name|lightness
+operator|/
+literal|100.0
 argument_list|,
 name|NULL
 argument_list|)

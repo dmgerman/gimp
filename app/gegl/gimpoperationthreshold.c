@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcfd8b70103
+DECL|enum|__anon29fd78680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -219,7 +219,7 @@ name|object_class
 argument_list|,
 name|PROP_LOW
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"low"
 argument_list|,
@@ -245,7 +245,7 @@ name|object_class
 argument_list|,
 name|PROP_HIGH
 argument_list|,
-name|g_param_spec_float
+name|g_param_spec_double
 argument_list|(
 literal|"high"
 argument_list|,
@@ -320,7 +320,7 @@ block|{
 case|case
 name|PROP_LOW
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -333,7 +333,7 @@ break|break;
 case|case
 name|PROP_HIGH
 case|:
-name|g_value_set_float
+name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
@@ -402,7 +402,7 @@ name|self
 operator|->
 name|low
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)
@@ -415,7 +415,7 @@ name|self
 operator|->
 name|high
 operator|=
-name|g_value_get_float
+name|g_value_get_double
 argument_list|(
 name|value
 argument_list|)

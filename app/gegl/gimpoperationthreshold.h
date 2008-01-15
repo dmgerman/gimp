@@ -82,11 +82,11 @@ name|GeglOperationPointFilter
 name|parent_instance
 decl_stmt|;
 DECL|member|low
-name|gfloat
+name|gdouble
 name|low
 decl_stmt|;
 DECL|member|high
-name|gfloat
+name|gdouble
 name|high
 decl_stmt|;
 block|}
