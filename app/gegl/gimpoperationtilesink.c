@@ -18,25 +18,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gegl/gegl-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl/graph/gegl-node-context.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gegl/buffer/gegl-buffer.h>
+file|"gegl/buffer/gegl-buffer.h"
 end_include
 
 begin_include
@@ -77,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f52180103
+DECL|enum|__anon29617a8c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2f52180203
+DECL|enum|__anon29617a8c0203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN

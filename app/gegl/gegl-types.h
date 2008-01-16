@@ -6,20 +6,26 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__OUR_GEGL_TYPES_H__
+name|__GEGL_TYPES_H__
 end_ifndef
 
 begin_define
-DECL|macro|__OUR_GEGL_TYPES_H__
+DECL|macro|__GEGL_TYPES_H__
 define|#
 directive|define
-name|__OUR_GEGL_TYPES_H__
+name|__GEGL_TYPES_H__
 end_define
 
 begin_include
 include|#
 directive|include
 file|"base/base-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gegl/gegl-types.h"
 end_include
 
 begin_typedef
@@ -109,7 +115,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __OUR_GEGL_TYPES_H__ */
+comment|/* __GEGL_TYPES_H__ */
 end_comment
 
 end_unit
