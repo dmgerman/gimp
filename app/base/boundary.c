@@ -329,26 +329,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gint
-name|cmp_xy
-parameter_list|(
-name|gint
-name|ax
-parameter_list|,
-name|gint
-name|ay
-parameter_list|,
-name|gint
-name|bx
-parameter_list|,
-name|gint
-name|by
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
 name|cmp_segptr_xy1_addr
 parameter_list|(
 specifier|const
@@ -3064,19 +3044,24 @@ end_comment
 
 begin_function
 specifier|static
+specifier|inline
 name|gint
-DECL|function|cmp_xy (gint ax,gint ay,gint bx,gint by)
+DECL|function|cmp_xy (const gint ax,const gint ay,const gint bx,const gint by)
 name|cmp_xy
 parameter_list|(
+specifier|const
 name|gint
 name|ax
 parameter_list|,
+specifier|const
 name|gint
 name|ay
 parameter_list|,
+specifier|const
 name|gint
 name|bx
 parameter_list|,
+specifier|const
 name|gint
 name|by
 parameter_list|)
