@@ -315,6 +315,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|DEFAULT_EVENT_SMOOTHING
+define|#
+directive|define
+name|DEFAULT_EVENT_SMOOTHING
+value|0.7
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -4498,7 +4506,7 @@ name|height
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Early removal of useless events saves CPU time.                          * Defaulting smoothing to 0.4.                          */
+comment|/* Early removal of useless events saves CPU time.                          */
 if|if
 condition|(
 name|gimp_display_shell_eval_event
@@ -4508,7 +4516,7 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-literal|0.4
+name|DEFAULT_EVENT_SMOOTHING
 argument_list|,
 name|history_events
 index|[
@@ -4537,23 +4545,6 @@ name|state
 argument_list|,
 name|display
 argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|last_coords
-operator|=
-name|image_coords
-expr_stmt|;
-name|shell
-operator|->
-name|last_disp_motion_time
-operator|=
-name|history_events
-index|[
-name|i
-index|]
-operator|->
-name|time
 expr_stmt|;
 block|}
 name|shell
@@ -4578,7 +4569,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Early removal of useless events saves CPU time.                      * Defaulting smoothing to 0.4.                      */
+comment|/* Early removal of useless events saves CPU time.                      */
 if|if
 condition|(
 name|gimp_display_shell_eval_event
@@ -4588,7 +4579,7 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-literal|0.4
+name|DEFAULT_EVENT_SMOOTHING
 argument_list|,
 name|time
 argument_list|)
@@ -4607,18 +4598,6 @@ name|state
 argument_list|,
 name|display
 argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|last_coords
-operator|=
-name|image_coords
-expr_stmt|;
-name|shell
-operator|->
-name|last_disp_motion_time
-operator|=
-name|time
 expr_stmt|;
 block|}
 name|shell
@@ -4646,7 +4625,7 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* Early removal of useless events saves CPU time.              * Smoothing coasting to avoid unpredicted jumps when making contact.              * This may need a different solution but cant properly test it without              * adjustment.              */
+comment|/* Early removal of useless events saves CPU time.              * Smoothing is 0.0 here for coasting.              */
 if|if
 condition|(
 name|gimp_display_shell_eval_event
@@ -4656,7 +4635,7 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-literal|0.4
+literal|0.0
 argument_list|,
 name|time
 argument_list|)
@@ -4677,18 +4656,6 @@ name|proximity
 argument_list|,
 name|display
 argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|last_coords
-operator|=
-name|image_coords
-expr_stmt|;
-name|shell
-operator|->
-name|last_disp_motion_time
-operator|=
-name|time
 expr_stmt|;
 block|}
 name|shell
