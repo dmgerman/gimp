@@ -28,6 +28,10 @@ directive|include
 file|"gegl/gegl-types.h"
 end_include
 
+begin_comment
+comment|/*  operations  */
+end_comment
+
 begin_typedef
 DECL|typedef|GimpOperationColorBalance
 typedef|typedef
@@ -106,6 +110,19 @@ typedef|typedef
 name|struct
 name|_GimpOperationTileSource
 name|GimpOperationTileSource
+typedef|;
+end_typedef
+
+begin_comment
+comment|/*  operation config objects  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpLevelsConfig
+typedef|typedef
+name|struct
+name|_GimpLevelsConfig
+name|GimpLevelsConfig
 typedef|;
 end_typedef
 

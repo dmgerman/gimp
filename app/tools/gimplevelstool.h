@@ -122,6 +122,11 @@ name|Levels
 modifier|*
 name|levels
 decl_stmt|;
+DECL|member|config
+name|GimpLevelsConfig
+modifier|*
+name|config
+decl_stmt|;
 comment|/* dialog */
 DECL|member|color
 name|gboolean
