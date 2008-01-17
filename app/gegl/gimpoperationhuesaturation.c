@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5772430103
+DECL|enum|__anon2ac43ce60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -931,6 +931,15 @@ name|dest
 init|=
 name|out_buf
 decl_stmt|;
+name|gfloat
+name|overlap
+init|=
+name|self
+operator|->
+name|overlap
+operator|/
+literal|2.0
+decl_stmt|;
 name|glong
 name|sample
 decl_stmt|;
@@ -984,15 +993,6 @@ name|gfloat
 name|secondary_intensity
 init|=
 literal|0.0
-decl_stmt|;
-name|gfloat
-name|overlap
-init|=
-name|self
-operator|->
-name|overlap
-operator|/
-literal|2.0
 decl_stmt|;
 name|rgb
 operator|.
