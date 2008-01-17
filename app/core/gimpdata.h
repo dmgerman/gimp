@@ -35,7 +35,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a4124c20103
+DECL|enum|__anon273bfcee0103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -179,6 +179,11 @@ decl_stmt|;
 DECL|member|mtime
 name|time_t
 name|mtime
+decl_stmt|;
+DECL|member|tags
+name|GList
+modifier|*
+name|tags
 decl_stmt|;
 block|}
 struct|;
