@@ -107,30 +107,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj),  GEGL_TYPE_OPERATION, GeglOperationClass))
 end_define
 
-begin_define
-DECL|macro|MAX_PADS
-define|#
-directive|define
-name|MAX_PADS
-value|16
-end_define
-
-begin_define
-DECL|macro|MAX_INPUT_PADS
-define|#
-directive|define
-name|MAX_INPUT_PADS
-value|MAX_PADS
-end_define
-
-begin_define
-DECL|macro|MAX_OUTPUT_PADS
-define|#
-directive|define
-name|MAX_OUTPUT_PADS
-value|MAX_PADS
-end_define
-
 begin_typedef
 DECL|typedef|GeglOperationClass
 typedef|typedef

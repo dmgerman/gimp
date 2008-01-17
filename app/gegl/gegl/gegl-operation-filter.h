@@ -19,18 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gegl-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl-operation.h"
 end_include
 
@@ -152,9 +140,13 @@ name|GeglOperation
 modifier|*
 name|self
 parameter_list|,
-name|GeglNodeContext
+name|GeglBuffer
 modifier|*
-name|context
+name|input
+parameter_list|,
+name|GeglBuffer
+modifier|*
+name|output
 parameter_list|,
 specifier|const
 name|GeglRectangle
