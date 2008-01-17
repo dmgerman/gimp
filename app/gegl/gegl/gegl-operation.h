@@ -37,7 +37,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/buffer/gegl-buffer.h"
+file|"gegl-buffer.h"
 end_include
 
 begin_macro
