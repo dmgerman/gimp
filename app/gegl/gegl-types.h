@@ -118,6 +118,15 @@ comment|/*  operation config objects  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpColorizeConfig
+typedef|typedef
+name|struct
+name|_GimpColorizeConfig
+name|GimpColorizeConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpLevelsConfig
 typedef|typedef
 name|struct
