@@ -52,7 +52,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e3fe920108
+DECL|struct|__anon28beb33f0108
 block|{
 DECL|member|brightness
 name|gdouble
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e3fe920208
+DECL|struct|__anon28beb33f0208
 block|{
 DECL|member|histogram
 name|GimpHistogram
@@ -1012,7 +1012,7 @@ end_typedef
 begin_function
 specifier|static
 name|gfloat
-DECL|function|equalize_lut_func (hist_lut_struct * hlut,gint n_channels,gint channel,gfloat value)
+DECL|function|equalize_lut_func (hist_lut_struct * hlut,gint nchannels,gint channel,gfloat value)
 name|equalize_lut_func
 parameter_list|(
 name|hist_lut_struct
@@ -1020,7 +1020,7 @@ modifier|*
 name|hlut
 parameter_list|,
 name|gint
-name|n_channels
+name|nchannels
 parameter_list|,
 name|gint
 name|channel
@@ -1037,6 +1037,28 @@ decl_stmt|;
 name|gint
 name|j
 decl_stmt|;
+comment|/* don't equalize the alpha channel */
+if|if
+condition|(
+operator|(
+name|nchannels
+operator|==
+literal|2
+operator|||
+name|nchannels
+operator|==
+literal|4
+operator|)
+operator|&&
+name|channel
+operator|==
+name|nchannels
+operator|-
+literal|1
+condition|)
+return|return
+name|value
+return|;
 name|j
 operator|=
 call|(
