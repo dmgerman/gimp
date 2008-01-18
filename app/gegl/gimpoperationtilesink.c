@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29330ee80103
+DECL|enum|__anon278491d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29330ee80203
+DECL|enum|__anon278491d50203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
