@@ -2122,6 +2122,11 @@ name|motion_x
 decl_stmt|,
 name|motion_y
 decl_stmt|;
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
 name|gdk_flush
 argument_list|()
 expr_stmt|;
@@ -2212,14 +2217,6 @@ argument_list|,
 name|motion_y
 argument_list|)
 expr_stmt|;
-comment|/******************************************* adam's live move *******/
-comment|/********************************************************************/
-block|{
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
 name|x
 operator|=
 name|edit_select
@@ -2337,7 +2334,7 @@ comment|/*  fallthru  */
 case|case
 name|GIMP_TRANSLATE_MODE_LAYER
 case|:
-comment|/*  for CHANNEL_TRANSLATE, only translate the linked layers              *  and vectors on-the-fly, the channel is translated              *  on button_release.              */
+comment|/*  for CHANNEL_TRANSLATE, only translate the linked layers            *  and vectors on-the-fly, the channel is translated            *  on button_release.            */
 if|if
 condition|(
 name|edit_select
@@ -2596,9 +2593,6 @@ operator|->
 name|projection
 argument_list|)
 expr_stmt|;
-block|}
-comment|/********************************************************************/
-comment|/********************************************************************/
 name|gimp_tool_pop_status
 argument_list|(
 name|tool
