@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gegl/gegl-operation-sink.h"
+file|<operation/gegl-operation-sink.h>
 end_include
 
 begin_define

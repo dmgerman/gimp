@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gegl/gegl-operation-point-filter.h"
+file|<operation/gegl-operation-point-filter.h>
 end_include
 
 begin_define
