@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d456320103
+DECL|enum|__anon2b312a9e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -269,7 +269,7 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_ORIENTATION
+name|PROP_CHANNEL
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
