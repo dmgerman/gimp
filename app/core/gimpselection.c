@@ -3120,16 +3120,6 @@ operator|&&
 name|cut_image
 condition|)
 block|{
-comment|/*  Clear the region  */
-name|gimp_channel_clear
-argument_list|(
-name|selection
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 comment|/*  Update the region  */
 name|gimp_drawable_update
 argument_list|(
