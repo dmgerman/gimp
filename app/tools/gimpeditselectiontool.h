@@ -189,6 +189,14 @@ decl_stmt|,
 name|start_y
 decl_stmt|;
 comment|/*  Coords when button was pressed    */
+DECL|member|last_x
+DECL|member|last_y
+name|gdouble
+name|last_x
+decl_stmt|,
+name|last_y
+decl_stmt|;
+comment|/*  Previous coords sent to _motion   */
 block|}
 struct|;
 end_struct
