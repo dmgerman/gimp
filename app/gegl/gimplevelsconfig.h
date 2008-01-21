@@ -253,6 +253,28 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  temp cruft  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_levels_config_to_levels_cruft
+parameter_list|(
+name|GimpLevelsConfig
+modifier|*
+name|config
+parameter_list|,
+name|Levels
+modifier|*
+name|cruft
+parameter_list|,
+name|gboolean
+name|is_color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
