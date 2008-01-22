@@ -421,7 +421,7 @@ DECL|member|id
 name|char
 name|id
 index|[
-literal|1024
+literal|4096
 index|]
 decl_stmt|;
 comment|/* Large enough to hold all polygon points! */

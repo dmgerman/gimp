@@ -619,7 +619,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon27b821140103
+DECL|enum|__anon28c584b80103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -780,7 +780,7 @@ DECL|member|id
 name|char
 name|id
 index|[
-literal|1024
+literal|4096
 index|]
 decl_stmt|;
 comment|/* Large enough to hold all polygon points! */
@@ -6600,7 +6600,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon27b821140203
+DECL|enum|__anon28c584b80203
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{
