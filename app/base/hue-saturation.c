@@ -84,36 +84,7 @@ condition|;
 name|partition
 operator|++
 control|)
-name|hue_saturation_partition_reset
-argument_list|(
-name|hs
-argument_list|,
-name|partition
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|hue_saturation_partition_reset (HueSaturation * hs,GimpHueRange partition)
-name|hue_saturation_partition_reset
-parameter_list|(
-name|HueSaturation
-modifier|*
-name|hs
-parameter_list|,
-name|GimpHueRange
-name|partition
-parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|hs
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|hs
 operator|->
 name|hue
@@ -141,6 +112,7 @@ index|]
 operator|=
 literal|0.0
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -198,6 +170,7 @@ name|i
 operator|++
 control|)
 block|{
+comment|/*  Hue  */
 name|value
 operator|=
 operator|(

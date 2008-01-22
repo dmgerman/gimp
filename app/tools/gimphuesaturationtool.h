@@ -112,6 +112,11 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
+DECL|member|config
+name|GimpHueSaturationConfig
+modifier|*
+name|config
+decl_stmt|;
 DECL|member|hue_saturation
 name|HueSaturation
 modifier|*

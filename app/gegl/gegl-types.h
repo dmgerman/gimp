@@ -127,6 +127,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpHueSaturationConfig
+typedef|typedef
+name|struct
+name|_GimpHueSaturationConfig
+name|GimpHueSaturationConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpLevelsConfig
 typedef|typedef
 name|struct

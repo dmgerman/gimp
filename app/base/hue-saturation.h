@@ -93,20 +93,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|hue_saturation_partition_reset
-parameter_list|(
-name|HueSaturation
-modifier|*
-name|hs
-parameter_list|,
-name|GimpHueRange
-name|partition
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|hue_saturation_calculate_transfers
 parameter_list|(
 name|HueSaturation
