@@ -323,6 +323,14 @@ name|DEFAULT_EVENT_SMOOTHING
 value|0.7
 end_define
 
+begin_define
+DECL|macro|DEFAULT_EVENT_FILTER
+define|#
+directive|define
+name|DEFAULT_EVENT_FILTER
+value|0.5
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -4518,6 +4526,8 @@ name|image_coords
 argument_list|,
 name|DEFAULT_EVENT_SMOOTHING
 argument_list|,
+name|DEFAULT_EVENT_FILTER
+argument_list|,
 name|history_events
 index|[
 name|i
@@ -4581,6 +4591,8 @@ name|image_coords
 argument_list|,
 name|DEFAULT_EVENT_SMOOTHING
 argument_list|,
+name|DEFAULT_EVENT_FILTER
+argument_list|,
 name|time
 argument_list|)
 condition|)
@@ -4636,6 +4648,8 @@ operator|&
 name|image_coords
 argument_list|,
 literal|0.0
+argument_list|,
+name|DEFAULT_EVENT_FILTER
 argument_list|,
 name|time
 argument_list|)

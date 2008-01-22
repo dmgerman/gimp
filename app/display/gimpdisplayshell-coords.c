@@ -788,7 +788,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_eval_event (GimpDisplayShell * shell,GimpCoords * coords,gdouble inertia_factor,guint32 time)
+DECL|function|gimp_display_shell_eval_event (GimpDisplayShell * shell,GimpCoords * coords,gdouble inertia_factor,gdouble filter_treshhold,guint32 time)
 name|gimp_display_shell_eval_event
 parameter_list|(
 name|GimpDisplayShell
@@ -801,6 +801,9 @@ name|coords
 parameter_list|,
 name|gdouble
 name|inertia_factor
+parameter_list|,
+name|gdouble
+name|filter_treshhold
 parameter_list|,
 name|guint32
 name|time
@@ -885,7 +888,7 @@ name|coords
 operator|->
 name|y
 decl_stmt|;
-comment|/* Events with distances less than 1 in either motion direction        * are not worth handling.        */
+comment|/* Events with distances less than the filter_threshold are not          worth handling.        */
 if|if
 condition|(
 name|fabs
@@ -893,14 +896,14 @@ argument_list|(
 name|dx
 argument_list|)
 operator|<
-literal|1.0
+name|filter_treshhold
 operator|&&
 name|fabs
 argument_list|(
 name|dy
 argument_list|)
 operator|<
-literal|1.0
+name|filter_treshhold
 condition|)
 return|return
 name|FALSE
@@ -1045,6 +1048,12 @@ block|}
 if|if
 condition|(
 name|inertia_factor
+operator|>
+literal|0
+operator|&&
+name|coords
+operator|->
+name|distance
 operator|>
 literal|0
 condition|)
