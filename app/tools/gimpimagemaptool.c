@@ -57,16 +57,6 @@ directive|include
 file|"tools-types.h"
 end_include
 
-begin_comment
-comment|/* temp */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -2071,9 +2061,9 @@ modifier|*
 name|tool
 parameter_list|)
 block|{
-name|GimpCoreConfig
+name|Gimp
 modifier|*
-name|config
+name|gimp
 init|=
 name|GIMP_TOOL
 argument_list|(
@@ -2083,8 +2073,6 @@ operator|->
 name|tool_info
 operator|->
 name|gimp
-operator|->
-name|config
 decl_stmt|;
 name|gboolean
 name|use_gegl
@@ -2124,16 +2112,15 @@ argument_list|)
 expr_stmt|;
 name|use_gegl
 operator|=
-operator|(
-name|config
-operator|->
-name|use_gegl
+name|gimp_use_gegl
+argument_list|(
+name|gimp
+argument_list|)
 operator|||
 operator|!
 name|tool
 operator|->
 name|apply_func
-operator|)
 expr_stmt|;
 name|tool
 operator|->

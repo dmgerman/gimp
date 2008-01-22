@@ -64,12 +64,6 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp.h"
 end_include
 
@@ -334,6 +328,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_use_gegl
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
@@ -342,10 +338,7 @@ operator|->
 name|image
 operator|->
 name|gimp
-operator|->
-name|config
-operator|->
-name|use_gegl
+argument_list|)
 condition|)
 block|{
 name|GeglNode
@@ -707,6 +700,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_use_gegl
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
@@ -715,10 +710,7 @@ operator|->
 name|image
 operator|->
 name|gimp
-operator|->
-name|config
-operator|->
-name|use_gegl
+argument_list|)
 condition|)
 block|{
 name|GeglNode
