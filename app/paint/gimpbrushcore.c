@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint-funcs/paint-funcs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -109,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a42bb80103
+DECL|enum|__anon2c53ad690103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3597,6 +3603,13 @@ argument_list|,
 name|mask
 operator|->
 name|height
+argument_list|)
+expr_stmt|;
+comment|/*  dilate the mask in order to obtain a simpler boundary  */
+name|dilate_region
+argument_list|(
+operator|&
+name|PR
 argument_list|)
 expr_stmt|;
 name|boundary

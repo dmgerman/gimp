@@ -1239,9 +1239,6 @@ decl_stmt|;
 name|gdouble
 name|width
 init|=
-operator|(
-name|gdouble
-operator|)
 name|brush_core
 operator|->
 name|brush_bound_width
@@ -1249,9 +1246,6 @@ decl_stmt|;
 name|gdouble
 name|height
 init|=
-operator|(
-name|gdouble
-operator|)
 name|brush_core
 operator|->
 name|brush_bound_height
