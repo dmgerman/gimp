@@ -81,9 +81,21 @@ directive|include
 file|"gimpprojection-construct.h"
 end_include
 
+begin_comment
+comment|/*  halfway between G_PRIORITY_HIGH_IDLE and G_PRIORITY_DEFAULT_IDLE  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PROJECTION_IDLE_PRIORITY
+define|#
+directive|define
+name|GIMP_PROJECTION_IDLE_PRIORITY
+value|150
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon27b81b1d0103
+DECL|enum|__anon29c06e720103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2114,7 +2126,7 @@ name|idle_id
 operator|=
 name|g_idle_add_full
 argument_list|(
-name|G_PRIORITY_HIGH_IDLE
+name|GIMP_PROJECTION_IDLE_PRIORITY
 argument_list|,
 name|gimp_projection_idle_render_callback
 argument_list|,
