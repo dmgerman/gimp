@@ -16,44 +16,6 @@ directive|define
 name|__GIMP_IMAGE_MAP_TOOL_H__
 end_define
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|__GEGL_H__
-end_ifndef
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: dont include gegl.h here
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_include
-include|#
-directive|include
-file|<gegl.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-comment|/* __GEGL_H__ */
-end_comment
-
 begin_include
 include|#
 directive|include
