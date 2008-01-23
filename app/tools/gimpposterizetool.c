@@ -573,12 +573,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|posterize_tool
 operator|->
 name|levels_data
-argument_list|)
 argument_list|,
 name|posterize_tool
 operator|->
@@ -892,12 +889,9 @@ name|POSTERIZE_DEFAULT_LEVELS
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|posterize_tool
 operator|->
 name|levels_data
-argument_list|)
 argument_list|,
 name|posterize_tool
 operator|->
