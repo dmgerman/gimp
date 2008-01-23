@@ -89,6 +89,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_list_free
+argument_list|(
+name|mru
+operator|->
+name|list
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|mru
@@ -112,6 +119,11 @@ modifier|*
 name|link
 parameter_list|)
 block|{
+if|if
+condition|(
+name|link
+condition|)
+block|{
 name|g_free
 argument_list|(
 name|link
@@ -132,6 +144,7 @@ argument_list|,
 name|link
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

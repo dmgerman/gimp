@@ -75,7 +75,7 @@ argument_list|,
 name|get_dialog
 argument_list|()
 argument_list|,
-literal|"name"
+literal|"program-name"
 argument_list|,
 name|_
 argument_list|(
