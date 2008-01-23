@@ -122,11 +122,6 @@ name|GimpLut
 modifier|*
 name|lut
 decl_stmt|;
-DECL|member|levels
-name|Levels
-modifier|*
-name|levels
-decl_stmt|;
 comment|/* dialog */
 DECL|member|color
 name|gboolean

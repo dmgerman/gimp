@@ -141,6 +141,23 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|gdouble
+name|gimp_operation_levels_map_input
+parameter_list|(
+name|GimpLevelsConfig
+modifier|*
+name|config
+parameter_list|,
+name|GimpHistogramChannel
+name|channel
+parameter_list|,
+name|gdouble
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

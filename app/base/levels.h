@@ -56,17 +56,6 @@ index|[
 literal|5
 index|]
 decl_stmt|;
-DECL|member|input
-name|guchar
-name|input
-index|[
-literal|5
-index|]
-index|[
-literal|256
-index|]
-decl_stmt|;
-comment|/* this is used only by the gui */
 block|}
 struct|;
 end_struct
@@ -74,17 +63,6 @@ end_struct
 begin_function_decl
 name|void
 name|levels_init
-parameter_list|(
-name|Levels
-modifier|*
-name|levels
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|levels_calculate_transfers
 parameter_list|(
 name|Levels
 modifier|*
