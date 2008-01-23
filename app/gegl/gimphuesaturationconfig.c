@@ -39,7 +39,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c5c410103
+DECL|enum|__anon28b962bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -695,7 +695,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_hue_saturation_config_to_cruft (GimpHueSaturationConfig * config,HueSaturation * hs)
+DECL|function|gimp_hue_saturation_config_to_cruft (GimpHueSaturationConfig * config,HueSaturation * cruft)
 name|gimp_hue_saturation_config_to_cruft
 parameter_list|(
 name|GimpHueSaturationConfig
@@ -704,7 +704,7 @@ name|config
 parameter_list|,
 name|HueSaturation
 modifier|*
-name|hs
+name|cruft
 parameter_list|)
 block|{
 name|GimpHueRange
@@ -720,7 +720,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|hs
+name|cruft
 operator|!=
 name|NULL
 argument_list|)
@@ -739,7 +739,7 @@ name|range
 operator|++
 control|)
 block|{
-name|hs
+name|cruft
 operator|->
 name|hue
 index|[
@@ -755,7 +755,7 @@ index|]
 operator|*
 literal|180
 expr_stmt|;
-name|hs
+name|cruft
 operator|->
 name|saturation
 index|[
@@ -771,7 +771,7 @@ index|]
 operator|*
 literal|100
 expr_stmt|;
-name|hs
+name|cruft
 operator|->
 name|lightness
 index|[
@@ -788,7 +788,7 @@ operator|*
 literal|100
 expr_stmt|;
 block|}
-name|hs
+name|cruft
 operator|->
 name|overlap
 operator|=
@@ -797,6 +797,11 @@ operator|->
 name|overlap
 operator|*
 literal|100
+expr_stmt|;
+name|hue_saturation_calculate_transfers
+argument_list|(
+name|cruft
+argument_list|)
 expr_stmt|;
 block|}
 end_function

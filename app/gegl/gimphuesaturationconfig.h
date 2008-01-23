@@ -192,7 +192,7 @@ name|config
 parameter_list|,
 name|HueSaturation
 modifier|*
-name|hs
+name|cruft
 parameter_list|)
 function_decl|;
 end_function_decl

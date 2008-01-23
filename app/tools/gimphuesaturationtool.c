@@ -849,13 +849,6 @@ operator|->
 name|hue_saturation
 argument_list|)
 expr_stmt|;
-name|hue_saturation_calculate_transfers
-argument_list|(
-name|hs_tool
-operator|->
-name|hue_saturation
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -942,7 +935,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2c156dc30108
+DECL|struct|__anon2919875d0108
 block|{
 DECL|member|label
 specifier|const
