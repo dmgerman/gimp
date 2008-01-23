@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be1950d0108
+DECL|struct|__anon2c7281c50108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -423,28 +423,10 @@ argument_list|(
 literal|"About GIMP"
 argument_list|)
 argument_list|,
-if|#
-directive|if
-name|GTK_CHECK_VERSION
-argument_list|(
-literal|2
-operator|,
-literal|11
-operator|,
-literal|0
-argument_list|)
 literal|"program-name"
 argument_list|,
 name|GIMP_ACRONYM
 argument_list|,
-else|#
-directive|else
-literal|"name"
-argument_list|,
-name|GIMP_ACRONYM
-argument_list|,
-endif|#
-directive|endif
 literal|"version"
 argument_list|,
 name|GIMP_VERSION
