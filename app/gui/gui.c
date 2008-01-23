@@ -1142,11 +1142,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|mismatch
-decl_stmt|;
 DECL|macro|GTK_REQUIRED_MAJOR
 define|#
 directive|define
@@ -1162,8 +1157,11 @@ define|#
 directive|define
 name|GTK_REQUIRED_MICRO
 value|1
+specifier|const
+name|gchar
+modifier|*
 name|mismatch
-operator|=
+init|=
 name|gtk_check_version
 argument_list|(
 name|GTK_REQUIRED_MAJOR
@@ -1172,7 +1170,7 @@ name|GTK_REQUIRED_MINOR
 argument_list|,
 name|GTK_REQUIRED_MICRO
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|mismatch
