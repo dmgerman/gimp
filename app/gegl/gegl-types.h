@@ -51,6 +51,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationCurves
+typedef|typedef
+name|struct
+name|_GimpOperationCurves
+name|GimpOperationCurves
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationDesaturate
 typedef|typedef
 name|struct
@@ -123,6 +132,15 @@ typedef|typedef
 name|struct
 name|_GimpColorizeConfig
 name|GimpColorizeConfig
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpCurvesConfig
+typedef|typedef
+name|struct
+name|_GimpCurvesConfig
+name|GimpCurvesConfig
 typedef|;
 end_typedef
 

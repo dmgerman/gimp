@@ -101,13 +101,10 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
-DECL|member|curve
-name|GimpCurve
+DECL|member|config
+name|GimpCurvesConfig
 modifier|*
-name|curve
-index|[
-literal|5
-index|]
+name|config
 decl_stmt|;
 DECL|member|lut
 name|GimpLut
