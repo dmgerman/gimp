@@ -943,7 +943,7 @@ argument_list|(
 name|selection
 argument_list|)
 expr_stmt|;
-comment|/*  If this selection is paused or invisible, do not start it  */
+comment|/*  If this selection is paused, do not start it  */
 if|if
 condition|(
 name|selection
@@ -951,10 +951,6 @@ operator|->
 name|paused
 operator|==
 literal|0
-operator|&&
-name|selection
-operator|->
-name|visible
 condition|)
 block|{
 name|selection
@@ -3111,6 +3107,10 @@ condition|(
 name|selection
 operator|->
 name|segs_in
+operator|&&
+name|selection
+operator|->
+name|visible
 condition|)
 name|selection
 operator|->
