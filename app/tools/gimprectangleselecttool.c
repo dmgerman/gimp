@@ -3000,6 +3000,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* Reset the automatic undo/redo mechanism */
+name|priv
+operator|->
+name|undo
+operator|=
+name|NULL
+expr_stmt|;
+name|priv
+operator|->
+name|redo
+operator|=
+name|NULL
+expr_stmt|;
 return|return
 name|TRUE
 return|;
