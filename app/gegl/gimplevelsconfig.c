@@ -57,7 +57,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af5c0a30103
+DECL|enum|__anon291ec7c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1491,8 +1491,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_levels_config_to_levels_cruft (GimpLevelsConfig * config,Levels * cruft,gboolean is_color)
-name|gimp_levels_config_to_levels_cruft
+DECL|function|gimp_levels_config_to_cruft (GimpLevelsConfig * config,Levels * cruft,gboolean is_color)
+name|gimp_levels_config_to_cruft
 parameter_list|(
 name|GimpLevelsConfig
 modifier|*

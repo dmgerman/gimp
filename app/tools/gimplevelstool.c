@@ -1286,7 +1286,7 @@ decl_stmt|;
 name|Levels
 name|levels
 decl_stmt|;
-name|gimp_levels_config_to_levels_cruft
+name|gimp_levels_config_to_cruft
 argument_list|(
 name|tool
 operator|->

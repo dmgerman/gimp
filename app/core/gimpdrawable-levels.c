@@ -436,7 +436,7 @@ name|height
 argument_list|)
 condition|)
 return|return;
-name|gimp_levels_config_to_levels_cruft
+name|gimp_levels_config_to_cruft
 argument_list|(
 name|config
 argument_list|,
@@ -777,7 +777,7 @@ name|GimpLut
 modifier|*
 name|lut
 decl_stmt|;
-name|gimp_levels_config_to_levels_cruft
+name|gimp_levels_config_to_cruft
 argument_list|(
 name|config
 argument_list|,

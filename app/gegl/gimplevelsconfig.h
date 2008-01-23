@@ -259,7 +259,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_levels_config_to_levels_cruft
+name|gimp_levels_config_to_cruft
 parameter_list|(
 name|GimpLevelsConfig
 modifier|*
