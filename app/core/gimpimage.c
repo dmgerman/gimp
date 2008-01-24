@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28811a060103
+DECL|enum|__anon2ad632cd0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -382,7 +382,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28811a060203
+DECL|enum|__anon2ad632cd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7829,7 +7829,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* NOTE about the image->dirty counter:  *   If 0, then the image is clean (ie, copy on disk is the same as the one  *      in memory).  *   If positive, then that's the number of dirtying operations done  *       on the image since the last save.  *   If negative, then user has hit undo and gone back in time prior  *       to the saved copy.  Hitting redo will eventually come back to  *       the saved copy.  *  *   The image is dirty (ie, needs saving) if counter is non-zero.  *  *   If the counter is around 10000, this is due to undo-ing back  *   before a saved version, then mutating the image (thus destroying  *   the redo stack).  Once this has happened, it's impossible to get  *   the image back to the state on disk, since the redo info has been  *   freed.  See undo.c for the gorey details.  */
+comment|/* NOTE about the image->dirty counter:  *   If 0, then the image is clean (ie, copy on disk is the same as the one  *      in memory).  *   If positive, then that's the number of dirtying operations done  *       on the image since the last save.  *   If negative, then user has hit undo and gone back in time prior  *       to the saved copy.  Hitting redo will eventually come back to  *       the saved copy.  *  *   The image is dirty (ie, needs saving) if counter is non-zero.  *  *   If the counter is around 100000, this is due to undo-ing back  *   before a saved version, then changing the image (thus destroying  *   the redo stack).  Once this has happened, it's impossible to get  *   the image back to the state on disk, since the redo info has been  *   freed.  See gimpimage-undo.c for the gory details.  */
 end_comment
 
 begin_comment

@@ -475,7 +475,7 @@ argument_list|,
 name|GIMP_UNDO_MODE_REDO
 argument_list|)
 expr_stmt|;
-comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.  The only hope for salvation    * is to save the image now!  -- austin    */
+comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.    */
 if|if
 condition|(
 name|image
@@ -488,7 +488,7 @@ name|image
 operator|->
 name|dirty
 operator|=
-literal|10000
+literal|100000
 expr_stmt|;
 comment|/* The same applies to the case where the image would become clean    * due to undo actions, but since user can't undo without an undo    * stack, that's not so much a problem.    */
 block|}
@@ -614,21 +614,6 @@ name|gimp_image_undo_free_redo
 argument_list|(
 name|image
 argument_list|)
-expr_stmt|;
-comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.  The only hope for salvation    * is to save the image now!  -- austin    */
-if|if
-condition|(
-name|image
-operator|->
-name|dirty
-operator|<
-literal|0
-condition|)
-name|image
-operator|->
-name|dirty
-operator|=
-literal|10000
 expr_stmt|;
 name|undo_group
 operator|=
@@ -970,21 +955,6 @@ name|gimp_image_undo_free_redo
 argument_list|(
 name|image
 argument_list|)
-expr_stmt|;
-comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.  The only hope for salvation    * is to save the image now!  -- austin    */
-if|if
-condition|(
-name|image
-operator|->
-name|dirty
-operator|<
-literal|0
-condition|)
-name|image
-operator|->
-name|dirty
-operator|=
-literal|10000
 expr_stmt|;
 if|if
 condition|(
@@ -1641,15 +1611,13 @@ block|{
 name|GimpContainer
 modifier|*
 name|container
-decl_stmt|;
-name|container
-operator|=
+init|=
 name|image
 operator|->
 name|redo_stack
 operator|->
 name|undos
-expr_stmt|;
+decl_stmt|;
 ifdef|#
 directive|ifdef
 name|DEBUG_IMAGE_UNDO
@@ -1678,6 +1646,14 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+if|if
+condition|(
+name|gimp_container_is_empty
+argument_list|(
+name|container
+argument_list|)
+condition|)
+return|return;
 while|while
 condition|(
 name|gimp_container_num_children
@@ -1742,6 +1718,24 @@ name|g_object_unref
 argument_list|(
 name|freed
 argument_list|)
+expr_stmt|;
+block|}
+comment|/* We need to use<= here because the undo counter has already been    * incremented at this point.    */
+if|if
+condition|(
+name|image
+operator|->
+name|dirty
+operator|<=
+literal|0
+condition|)
+block|{
+comment|/* If the image was dirty, but could become clean by redo-ing        * some actions, then it should now become 'infinitely' dirty.        * This is because we've just nuked the actions that would allow        * the image to become clean again.        */
+name|image
+operator|->
+name|dirty
+operator|=
+literal|100000
 expr_stmt|;
 block|}
 block|}
