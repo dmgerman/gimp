@@ -2639,7 +2639,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0108
+DECL|struct|__anon27694d660108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3439,6 +3439,12 @@ name|stock_web_24
 block|}
 block|,
 block|{
+name|GIMP_STOCK_WILBER
+block|,
+name|stock_wilber_22
+block|}
+block|,
+block|{
 name|GIMP_STOCK_VIDEO
 block|,
 name|stock_video_24
@@ -3451,7 +3457,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0208
+DECL|struct|__anon27694d660208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4355,7 +4361,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0308
+DECL|struct|__anon27694d660308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4452,7 +4458,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0408
+DECL|struct|__anon27694d660408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4597,7 +4603,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a3080ab0508
+DECL|struct|__anon27694d660508
 block|{
 DECL|member|stock_id
 specifier|const
