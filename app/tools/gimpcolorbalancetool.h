@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_COLOR_BALANCE_DIALOG_H__
+name|__GIMP_COLOR_BALANCE_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_COLOR_BALANCE_DIALOG_H__
+DECL|macro|__GIMP_COLOR_BALANCE_TOOL_H__
 define|#
 directive|define
-name|__GIMP_COLOR_BALANCE_DIALOG_H__
+name|__GIMP_COLOR_BALANCE_TOOL_H__
 end_define
 
 begin_include
@@ -123,15 +123,21 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
+DECL|member|config
+name|GimpColorBalanceConfig
+modifier|*
+name|config
+decl_stmt|;
 DECL|member|color_balance
 name|ColorBalance
 modifier|*
 name|color_balance
 decl_stmt|;
 comment|/*  dialog  */
-DECL|member|transfer_mode
-name|GimpTransferMode
-name|transfer_mode
+DECL|member|range_radio
+name|GtkWidget
+modifier|*
+name|range_radio
 decl_stmt|;
 DECL|member|cyan_red_adj
 name|GtkAdjustment
@@ -199,7 +205,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_COLOR_BALANCE_GIMP_H__  */
+comment|/*  __GIMP_COLOR_BALANCE_TOOL_H__  */
 end_comment
 
 end_unit
