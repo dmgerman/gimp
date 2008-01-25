@@ -171,6 +171,15 @@ name|GimpLevelsConfig
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpThresholdConfig
+typedef|typedef
+name|struct
+name|_GimpThresholdConfig
+name|GimpThresholdConfig
+typedef|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif
