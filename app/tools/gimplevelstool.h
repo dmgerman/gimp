@@ -131,10 +131,6 @@ DECL|member|alpha
 name|gboolean
 name|alpha
 decl_stmt|;
-DECL|member|channel
-name|GimpHistogramChannel
-name|channel
-decl_stmt|;
 DECL|member|hist
 name|GimpHistogram
 modifier|*

@@ -120,10 +120,6 @@ DECL|member|alpha
 name|gboolean
 name|alpha
 decl_stmt|;
-DECL|member|channel
-name|GimpHistogramChannel
-name|channel
-decl_stmt|;
 DECL|member|col_value
 name|gint
 name|col_value
