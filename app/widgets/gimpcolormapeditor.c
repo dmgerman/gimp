@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af7e810103
+DECL|enum|__anon2886611a0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2134,6 +2134,14 @@ name|b
 index|]
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|j
+operator|*
+name|cellsize
+operator|>
+name|width
+condition|)
 name|memset
 argument_list|(
 name|row
