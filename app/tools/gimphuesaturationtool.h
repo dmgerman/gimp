@@ -123,14 +123,15 @@ modifier|*
 name|hue_saturation
 decl_stmt|;
 comment|/*  dialog  */
-DECL|member|hue_partition
-name|GimpHueRange
-name|hue_partition
-decl_stmt|;
-DECL|member|hue_partition_da
+DECL|member|range_radio
 name|GtkWidget
 modifier|*
-name|hue_partition_da
+name|range_radio
+decl_stmt|;
+DECL|member|hue_range_color_area
+name|GtkWidget
+modifier|*
+name|hue_range_color_area
 index|[
 literal|6
 index|]
