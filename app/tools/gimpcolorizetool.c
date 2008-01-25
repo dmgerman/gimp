@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -484,15 +478,6 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|g_slice_free
-argument_list|(
-name|Colorize
-argument_list|,
-name|col_tool
-operator|->
-name|colorize
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|col_tool
@@ -514,6 +499,15 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|g_slice_free
+argument_list|(
+name|Colorize
+argument_list|,
+name|col_tool
+operator|->
+name|colorize
+argument_list|)
+expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class

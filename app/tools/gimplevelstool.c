@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimagemap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpcolorbar.h"
 end_include
 
