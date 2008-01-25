@@ -59,6 +59,28 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_POSTERIZE, GimpOpe
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_OPERATION_POSTERIZE (obj)
+define|#
+directive|define
+name|GIMP_IS_OPERATION_POSTERIZE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_POSTERIZE))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_OPERATION_POSTERIZE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_OPERATION_POSTERIZE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_POSTERIZE))
+end_define
+
+begin_define
 DECL|macro|GIMP_OPERATION_POSTERIZE_GET_CLASS (obj)
 define|#
 directive|define
@@ -87,9 +109,10 @@ DECL|member|parent_instance
 name|GeglOperationPointFilter
 name|parent_instance
 decl_stmt|;
-DECL|member|levels
-name|gint
-name|levels
+DECL|member|config
+name|GimpPosterizeConfig
+modifier|*
+name|config
 decl_stmt|;
 block|}
 struct|;

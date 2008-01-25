@@ -172,6 +172,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpPosterizeConfig
+typedef|typedef
+name|struct
+name|_GimpPosterizeConfig
+name|GimpPosterizeConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpThresholdConfig
 typedef|typedef
 name|struct

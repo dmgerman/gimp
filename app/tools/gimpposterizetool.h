@@ -112,9 +112,10 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
-DECL|member|levels
-name|gint
-name|levels
+DECL|member|config
+name|GimpPosterizeConfig
+modifier|*
+name|config
 decl_stmt|;
 DECL|member|lut
 name|GimpLut
