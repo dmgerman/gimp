@@ -87,6 +87,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationPointFilter
+typedef|typedef
+name|struct
+name|_GimpOperationPointFilter
+name|GimpOperationPointFilter
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationPosterize
 typedef|typedef
 name|struct
