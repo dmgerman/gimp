@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -680,11 +686,14 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_hue_saturation_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|hs_tool
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -918,7 +927,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon279675cc0108
+DECL|struct|__anon2c3a9c120108
 block|{
 DECL|member|label
 specifier|const
@@ -2316,11 +2325,14 @@ name|config
 operator|->
 name|range
 decl_stmt|;
-name|gimp_hue_saturation_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|hs_tool
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -2647,12 +2659,6 @@ argument_list|(
 name|hs_tool
 operator|->
 name|config
-argument_list|,
-name|hs_tool
-operator|->
-name|config
-operator|->
-name|range
 argument_list|)
 expr_stmt|;
 name|hue_saturation_update_sliders

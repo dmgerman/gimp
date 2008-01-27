@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl-types.h"
 end_include
 
@@ -39,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd08d100103
+DECL|enum|__anon29d72a370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -101,14 +107,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpThresholdConfig,gimp_threshold_config,G_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpThresholdConfig,gimp_threshold_config,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpThresholdConfig
 argument_list|,
 argument|gimp_threshold_config
 argument_list|,
 argument|G_TYPE_OBJECT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
@@ -371,43 +379,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/*  public functions  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_threshold_config_reset (GimpThresholdConfig * config)
-name|gimp_threshold_config_reset
-parameter_list|(
-name|GimpThresholdConfig
-modifier|*
-name|config
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_THRESHOLD_CONFIG
-argument_list|(
-name|config
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|config
-operator|->
-name|low
-operator|=
-literal|0.5
-expr_stmt|;
-name|config
-operator|->
-name|high
-operator|=
-literal|1.0
-expr_stmt|;
 block|}
 end_function
 

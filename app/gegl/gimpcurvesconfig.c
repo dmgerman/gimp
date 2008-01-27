@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib/gstdio.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpcolor/gimpcolor.h"
 end_include
 
@@ -75,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62b7200103
+DECL|enum|__anon2b53034c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,6 +94,18 @@ name|PROP_CURVE
 block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_curves_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -148,15 +166,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_curves_config_reset
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpCurvesConfig,gimp_curves_config,G_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCurvesConfig,gimp_curves_config,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_curves_config_iface_init))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpCurvesConfig
 argument_list|,
 argument|gimp_curves_config
 argument_list|,
 argument|G_TYPE_OBJECT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_curves_config_iface_init)
 argument_list|)
 end_macro
 
@@ -255,6 +287,26 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_curves_config_iface_init (GimpConfigInterface * iface)
+name|gimp_curves_config_iface_init
+parameter_list|(
+name|GimpConfigInterface
+modifier|*
+name|iface
+parameter_list|)
+block|{
+name|iface
+operator|->
+name|reset
+operator|=
+name|gimp_curves_config_reset
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_curves_config_init (GimpCurvesConfig * self)
 name|gimp_curves_config_init
 parameter_list|(
@@ -296,9 +348,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_curves_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|self
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -573,36 +628,36 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*  public functions  */
-end_comment
-
 begin_function
+specifier|static
 name|void
-DECL|function|gimp_curves_config_reset (GimpCurvesConfig * config)
+DECL|function|gimp_curves_config_reset (GimpConfig * config)
 name|gimp_curves_config_reset
 parameter_list|(
-name|GimpCurvesConfig
+name|GimpConfig
 modifier|*
 name|config
 parameter_list|)
 block|{
+name|GimpCurvesConfig
+modifier|*
+name|c_config
+init|=
+name|GIMP_CURVES_CONFIG
+argument_list|(
+name|config
+argument_list|)
+decl_stmt|;
 name|GimpHistogramChannel
 name|channel
 decl_stmt|;
-name|g_return_if_fail
+name|g_object_freeze_notify
 argument_list|(
-name|GIMP_IS_CURVES_CONFIG
+name|G_OBJECT
 argument_list|(
 name|config
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|config
-operator|->
-name|channel
-operator|=
-name|GIMP_HISTOGRAM_VALUE
 expr_stmt|;
 for|for
 control|(
@@ -618,33 +673,51 @@ name|channel
 operator|++
 control|)
 block|{
-name|gimp_curve_reset
-argument_list|(
-name|config
+name|c_config
 operator|->
-name|curve
-index|[
 name|channel
-index|]
-argument_list|,
-name|FALSE
+operator|=
+name|channel
+expr_stmt|;
+name|gimp_curves_config_reset_channel
+argument_list|(
+name|c_config
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_config_reset_property
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+literal|"channel"
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|config
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_curves_config_reset_channel (GimpCurvesConfig * config,GimpHistogramChannel channel)
+DECL|function|gimp_curves_config_reset_channel (GimpCurvesConfig * config)
 name|gimp_curves_config_reset_channel
 parameter_list|(
 name|GimpCurvesConfig
 modifier|*
 name|config
-parameter_list|,
-name|GimpHistogramChannel
-name|channel
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -661,10 +734,12 @@ name|config
 operator|->
 name|curve
 index|[
+name|config
+operator|->
 name|channel
 index|]
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

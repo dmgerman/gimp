@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl-types.h"
 end_include
 
@@ -29,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291da8050103
+DECL|enum|__anon278eda170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,14 +94,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpPosterizeConfig,gimp_posterize_config,G_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpPosterizeConfig,gimp_posterize_config,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpPosterizeConfig
 argument_list|,
 argument|gimp_posterize_config
 argument_list|,
 argument|G_TYPE_OBJECT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
@@ -306,37 +314,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/*  public functions  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_posterize_config_reset (GimpPosterizeConfig * config)
-name|gimp_posterize_config_reset
-parameter_list|(
-name|GimpPosterizeConfig
-modifier|*
-name|config
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_POSTERIZE_CONFIG
-argument_list|(
-name|config
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|config
-operator|->
-name|levels
-operator|=
-literal|3
-expr_stmt|;
 block|}
 end_function
 

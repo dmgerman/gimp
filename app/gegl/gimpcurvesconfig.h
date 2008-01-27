@@ -168,25 +168,11 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_curves_config_reset
-parameter_list|(
-name|GimpCurvesConfig
-modifier|*
-name|config
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_curves_config_reset_channel
 parameter_list|(
 name|GimpCurvesConfig
 modifier|*
 name|config
-parameter_list|,
-name|GimpHistogramChannel
-name|channel
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gegl-types.h"
 end_include
 
@@ -39,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e90c890103
+DECL|enum|__anon2a435ee60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -104,14 +110,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorizeConfig,gimp_colorize_config,G_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpColorizeConfig,gimp_colorize_config,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpColorizeConfig
 argument_list|,
 argument|gimp_colorize_config
 argument_list|,
 argument|G_TYPE_OBJECT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
@@ -427,49 +435,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-block|}
-end_function
-
-begin_comment
-comment|/*  public functions  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_colorize_config_reset (GimpColorizeConfig * config)
-name|gimp_colorize_config_reset
-parameter_list|(
-name|GimpColorizeConfig
-modifier|*
-name|config
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_COLORIZE_CONFIG
-argument_list|(
-name|config
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|config
-operator|->
-name|hue
-operator|=
-literal|0.5
-expr_stmt|;
-name|config
-operator|->
-name|saturation
-operator|=
-literal|0.5
-expr_stmt|;
-name|config
-operator|->
-name|lightness
-operator|=
-literal|0.0
-expr_stmt|;
 block|}
 end_function
 

@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -638,11 +644,14 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_color_balance_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|cb_tool
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -1578,11 +1587,14 @@ name|config
 operator|->
 name|range
 decl_stmt|;
-name|gimp_color_balance_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|cb_tool
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_set
@@ -1775,12 +1787,6 @@ argument_list|(
 name|cb_tool
 operator|->
 name|config
-argument_list|,
-name|cb_tool
-operator|->
-name|config
-operator|->
-name|range
 argument_list|)
 expr_stmt|;
 name|color_balance_update

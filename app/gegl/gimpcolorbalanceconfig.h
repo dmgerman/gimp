@@ -155,25 +155,11 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_color_balance_config_reset
-parameter_list|(
-name|GimpColorBalanceConfig
-modifier|*
-name|config
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_color_balance_config_reset_range
 parameter_list|(
 name|GimpColorBalanceConfig
 modifier|*
 name|config
-parameter_list|,
-name|GimpTransferMode
-name|range
 parameter_list|)
 function_decl|;
 end_function_decl

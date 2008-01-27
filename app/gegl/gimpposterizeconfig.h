@@ -128,17 +128,6 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|void
-name|gimp_posterize_config_reset
-parameter_list|(
-name|GimpPosterizeConfig
-modifier|*
-name|config
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

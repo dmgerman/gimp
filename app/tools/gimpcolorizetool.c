@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpconfig/gimpconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
@@ -596,11 +602,14 @@ return|return
 name|FALSE
 return|;
 block|}
-name|gimp_colorize_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|col_tool
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
@@ -1185,11 +1194,14 @@ argument_list|(
 name|image_map_tool
 argument_list|)
 decl_stmt|;
-name|gimp_colorize_config_reset
+name|gimp_config_reset
+argument_list|(
+name|GIMP_CONFIG
 argument_list|(
 name|col_tool
 operator|->
 name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|colorize_update_sliders
