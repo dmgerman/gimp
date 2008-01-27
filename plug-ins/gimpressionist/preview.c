@@ -431,21 +431,6 @@ name|gpointer
 name|d
 parameter_list|)
 block|{
-comment|/* This portion is remmed out because of the remming out of the    * code below.    *            -- Shlomi Fish    * */
-if|#
-directive|if
-literal|0
-block|guchar buf[PREVIEWSIZE*3];    if (!PPM_IS_INITED (&infile)&& d)     grabarea();
-endif|#
-directive|endif
-comment|/* It seems that infile.col must be true here. (after grabarea() that is.)    * Thus, I'm removing this entire portion of the code in hope that    * it works OK afterwards.    *            -- Shlomi Fish    * */
-if|#
-directive|if
-literal|0
-block|if (!PPM_IS_INITED (&infile)&& !d) {     guchar *buffer;      buffer = g_new0 (guchar, 3*PREVIEWSIZE*PREVIEWSIZE);     gimp_preview_area_draw (GIMP_PREVIEW_AREA (preview),                             0, 0, PREVIEWSIZE, PREVIEWSIZE,                             GIMP_RGB_IMAGE,                             buffer,                             PREVIEWSIZE * 3);      g_free (buffer);   }   else
-endif|#
-directive|endif
-block|{
 if|if
 condition|(
 operator|!
@@ -646,7 +631,6 @@ operator|&
 name|alpha_ppm
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
