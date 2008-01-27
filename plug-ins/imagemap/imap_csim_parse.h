@@ -419,12 +419,9 @@ name|value
 decl_stmt|;
 DECL|member|id
 name|char
+modifier|*
 name|id
-index|[
-literal|4096
-index|]
 decl_stmt|;
-comment|/* Large enough to hold all polygon points! */
 block|}
 comment|/* Line 1489 of yacc.c.  */
 line|#

@@ -224,10 +224,8 @@ name|value
 decl_stmt|;
 DECL|member|id
 name|char
+modifier|*
 name|id
-index|[
-literal|256
-index|]
 decl_stmt|;
 block|}
 comment|/* Line 1489 of yacc.c.  */
