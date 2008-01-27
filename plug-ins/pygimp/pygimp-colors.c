@@ -12234,7 +12234,7 @@ name|SET_MEMBER
 parameter_list|(
 name|m
 parameter_list|)
-value|G_STMT_START {				\     if (PyInt_Check(m))						\ 	rgb.m = (double) PyInt_AS_LONG(m) / 255.0;		\     else if (PyFloat_Check(m))					\         rgb.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return -1;						\     }								\ } G_STMT_END
+value|G_STMT_START {				\     if (PyInt_Check(m))						\ 	rgb.m = (double) PyInt_AS_LONG(m) / 255.0;		\     else if (PyFloat_Check(m))					\         rgb.m = PyFloat_AS_DOUBLE(m);				\     else {							\ 	PyErr_SetString(PyExc_TypeError,			\ 			#m " must be an int or a float");	\ 	return 0;						\     }								\ } G_STMT_END
 name|SET_MEMBER
 argument_list|(
 name|r
@@ -12266,6 +12266,9 @@ name|a
 operator|=
 literal|1.0
 expr_stmt|;
+return|return
+literal|1
+return|;
 block|}
 name|PyErr_SetString
 argument_list|(
