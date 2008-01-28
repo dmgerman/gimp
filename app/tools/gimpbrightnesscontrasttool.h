@@ -112,6 +112,16 @@ DECL|member|parent_instance
 name|GimpImageMapTool
 name|parent_instance
 decl_stmt|;
+DECL|member|config
+name|GimpBrightnessContrastConfig
+modifier|*
+name|config
+decl_stmt|;
+DECL|member|lut
+name|GimpLut
+modifier|*
+name|lut
+decl_stmt|;
 DECL|member|x
 DECL|member|y
 name|gdouble
@@ -125,19 +135,6 @@ name|gdouble
 name|dx
 decl_stmt|,
 name|dy
-decl_stmt|;
-DECL|member|brightness
-name|gdouble
-name|brightness
-decl_stmt|;
-DECL|member|contrast
-name|gdouble
-name|contrast
-decl_stmt|;
-DECL|member|lut
-name|GimpLut
-modifier|*
-name|lut
 decl_stmt|;
 comment|/*  dialog  */
 DECL|member|brightness_data

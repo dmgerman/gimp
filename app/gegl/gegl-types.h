@@ -136,6 +136,15 @@ comment|/*  operation config objects  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpBrightnessContrastConfig
+typedef|typedef
+name|struct
+name|_GimpBrightnessContrastConfig
+name|GimpBrightnessContrastConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorBalanceConfig
 typedef|typedef
 name|struct
