@@ -110,7 +110,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296ae8c80103
+DECL|enum|__anon2c1514a40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -181,7 +181,7 @@ DECL|macro|CONTROLLER_TYPE_DX_DINPUT
 define|#
 directive|define
 name|CONTROLLER_TYPE_DX_DINPUT
-value|(controller_dx_input_get_type ())
+value|(controller_dx_dinput_get_type ())
 end_define
 
 begin_define
@@ -598,12 +598,12 @@ decl_stmt|;
 end_decl_stmt
 
 begin_macro
-DECL|function|G_DEFINE_DYNAMIC_TYPE (ControllerDXInput,controller_dx_input,GIMP_TYPE_CONTROLLER)
+DECL|function|G_DEFINE_DYNAMIC_TYPE (ControllerDXDInput,controller_dx_dinput,GIMP_TYPE_CONTROLLER)
 name|G_DEFINE_DYNAMIC_TYPE
 argument_list|(
-argument|ControllerDXInput
+argument|ControllerDXDInput
 argument_list|,
-argument|controller_dx_input
+argument|controller_dx_dinput
 argument_list|,
 argument|GIMP_TYPE_CONTROLLER
 argument_list|)
@@ -899,7 +899,7 @@ argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
 argument_list|(
-name|controller_dx_input_parent_class
+name|controller_dx_dinput_parent_class
 argument_list|)
 operator|->
 name|dispose
@@ -1074,7 +1074,7 @@ expr_stmt|;
 block|}
 name|G_OBJECT_CLASS
 argument_list|(
-name|controller_dx_input_parent_class
+name|controller_dx_dinput_parent_class
 argument_list|)
 operator|->
 name|finalize
@@ -4648,14 +4648,6 @@ argument_list|(
 literal|"  dwFlags:"
 argument_list|)
 expr_stmt|;
-DECL|macro|BIT (x)
-define|#
-directive|define
-name|BIT
-parameter_list|(
-name|x
-parameter_list|)
-value|if (oformat->dwFlags& DIDOI_ASPECT##x) g_print (" DIDOI_ASPECT"#x)
 switch|switch
 condition|(
 name|oformat
