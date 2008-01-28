@@ -889,10 +889,6 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|GimpCoords
-modifier|*
-name|snapped_coords
-parameter_list|,
 name|gint
 name|snap_offset_x
 parameter_list|,

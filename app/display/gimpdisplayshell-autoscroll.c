@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ade9000108
+DECL|struct|__anon276017440108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -560,9 +560,6 @@ expr_stmt|;
 name|gimp_display_shell_snap_coords
 argument_list|(
 name|shell
-argument_list|,
-operator|&
-name|image_coords
 argument_list|,
 operator|&
 name|image_coords

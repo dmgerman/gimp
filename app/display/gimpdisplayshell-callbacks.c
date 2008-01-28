@@ -2582,9 +2582,6 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-operator|&
-name|image_coords
-argument_list|,
 name|x
 argument_list|,
 name|y
@@ -3965,9 +3962,6 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-operator|&
-name|image_coords
-argument_list|,
 name|x
 argument_list|,
 name|y
@@ -4173,9 +4167,6 @@ expr_stmt|;
 name|gimp_display_shell_snap_coords
 argument_list|(
 name|shell
-argument_list|,
-operator|&
-name|image_coords
 argument_list|,
 operator|&
 name|image_coords
@@ -4503,9 +4494,6 @@ expr_stmt|;
 name|gimp_display_shell_snap_coords
 argument_list|(
 name|shell
-argument_list|,
-operator|&
-name|image_coords
 argument_list|,
 operator|&
 name|image_coords

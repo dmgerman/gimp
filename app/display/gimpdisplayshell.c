@@ -287,7 +287,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a664c50103
+DECL|enum|__anon28f6b76e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -300,7 +300,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a664c50203
+DECL|enum|__anon28f6b76e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5136,7 +5136,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_snap_coords (GimpDisplayShell * shell,GimpCoords * coords,GimpCoords * snapped_coords,gint snap_offset_x,gint snap_offset_y,gint snap_width,gint snap_height)
+DECL|function|gimp_display_shell_snap_coords (GimpDisplayShell * shell,GimpCoords * coords,gint snap_offset_x,gint snap_offset_y,gint snap_width,gint snap_height)
 name|gimp_display_shell_snap_coords
 parameter_list|(
 name|GimpDisplayShell
@@ -5146,10 +5146,6 @@ parameter_list|,
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|GimpCoords
-modifier|*
-name|snapped_coords
 parameter_list|,
 name|gint
 name|snap_offset_x
@@ -5164,6 +5160,10 @@ name|gint
 name|snap_height
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|gboolean
 name|snap_to_guides
 init|=
@@ -5208,20 +5208,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|snapped_coords
-operator|!=
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-operator|*
-name|snapped_coords
+name|image
 operator|=
-operator|*
-name|coords
+name|shell
+operator|->
+name|display
+operator|->
+name|image
 expr_stmt|;
 if|if
 condition|(
@@ -5232,10 +5225,6 @@ argument_list|)
 operator|&&
 name|gimp_image_get_guides
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 condition|)
@@ -5254,10 +5243,6 @@ argument_list|)
 operator|&&
 name|gimp_image_get_grid
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 condition|)
@@ -5283,10 +5268,6 @@ argument_list|)
 operator|&&
 name|gimp_image_get_active_vectors
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 condition|)
@@ -5307,22 +5288,18 @@ operator|||
 name|snap_to_vectors
 condition|)
 block|{
+name|gint
+name|snap_distance
+decl_stmt|;
 name|gdouble
 name|tx
 decl_stmt|,
 name|ty
 decl_stmt|;
-name|gint
-name|snap_distance
-decl_stmt|;
 name|snap_distance
 operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 operator|->
 name|gimp
@@ -5470,7 +5447,7 @@ condition|(
 name|snapped
 condition|)
 block|{
-name|snapped_coords
+name|coords
 operator|->
 name|x
 operator|=
@@ -5478,7 +5455,7 @@ name|tx
 operator|-
 name|snap_offset_x
 expr_stmt|;
-name|snapped_coords
+name|coords
 operator|->
 name|y
 operator|=
