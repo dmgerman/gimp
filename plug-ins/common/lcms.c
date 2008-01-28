@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276816060103
+DECL|enum|__anon29e5c2940103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276816060203
+DECL|enum|__anon29e5c2940203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276816060308
+DECL|struct|__anon29e5c2940308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276816060408
+DECL|struct|__anon29e5c2940408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3166,16 +3166,6 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Could not open '%s' for reading: %s"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|,
 name|error
 operator|->
 name|message
@@ -4275,16 +4265,6 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-name|_
-argument_list|(
-literal|"Could not open '%s' for reading: %s"
-argument_list|)
-argument_list|,
-name|gimp_filename_to_utf8
-argument_list|(
-name|filename
-argument_list|)
-argument_list|,
 name|error
 operator|->
 name|message
