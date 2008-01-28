@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e5c2940103
+DECL|enum|__anon28a3eb7d0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e5c2940203
+DECL|enum|__anon28a3eb7d0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5c2940308
+DECL|struct|__anon28a3eb7d0308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5c2940408
+DECL|struct|__anon28a3eb7d0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -6108,9 +6108,11 @@ name|bpc
 argument_list|)
 expr_stmt|;
 block|}
+while|while
+condition|(
+operator|(
 name|run
 operator|=
-operator|(
 name|gimp_dialog_run
 argument_list|(
 name|GIMP_DIALOG
@@ -6118,18 +6120,9 @@ argument_list|(
 name|dialog
 argument_list|)
 argument_list|)
+operator|)
 operator|==
 name|GTK_RESPONSE_OK
-operator|)
-expr_stmt|;
-name|gtk_widget_hide
-argument_list|(
-name|dialog
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|run
 condition|)
 block|{
 name|gchar
@@ -6144,6 +6137,13 @@ decl_stmt|;
 name|cmsHPROFILE
 name|dest_profile
 decl_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dialog
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|filename
@@ -6167,6 +6167,11 @@ name|cmsCreate_sRGBProfile
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|dest_profile
+condition|)
+block|{
 if|if
 condition|(
 name|lcms_icc_profile_is_rgb
@@ -6229,6 +6234,20 @@ block|}
 name|cmsCloseProfile
 argument_list|(
 name|dest_profile
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|success
+condition|)
+break|break;
+else|else
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dialog
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
