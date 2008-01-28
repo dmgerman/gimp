@@ -401,7 +401,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_properties:  * @config: a #GimpConfig.  * @writer: a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_property:  * @config:     a #GimpConfig.  * @param_spec: a #GParamSpec.  * @writer:     a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
