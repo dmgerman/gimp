@@ -1680,7 +1680,7 @@ name|g_warning
 argument_list|(
 literal|"%s: tile coordinates out of range."
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1791,7 +1791,7 @@ name|g_warning
 argument_list|(
 literal|"%s: tile out of range"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1811,7 +1811,7 @@ name|g_warning
 argument_list|(
 literal|"%s: empty tile level - initializing"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 name|tm
@@ -2033,7 +2033,7 @@ name|g_warning
 argument_list|(
 literal|"%s: srctile not validated yet!  please report"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2079,7 +2079,7 @@ name|g_warning
 argument_list|(
 literal|"%s: nonconformant map (%p -> %p)"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|,
 name|srctile
 argument_list|,
@@ -2741,7 +2741,7 @@ name|g_warning
 argument_list|(
 literal|"%s: tile not attached to manager"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2932,7 +2932,7 @@ name|g_warning
 argument_list|(
 literal|"%s: tile not attached to manager"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 return|return;

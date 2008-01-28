@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3019bb0103
+DECL|enum|__anon276816060103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3019bb0203
+DECL|enum|__anon276816060203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3019bb0308
+DECL|struct|__anon276816060308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3019bb0408
+DECL|struct|__anon276816060408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3665,7 +3665,7 @@ name|g_warning
 argument_list|(
 literal|"%s: unexpected bpp"
 argument_list|,
-name|G_GNUC_FUNCTION
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 continue|continue;
