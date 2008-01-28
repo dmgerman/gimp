@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af951370103
+DECL|enum|__anon2c54bbba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -755,13 +755,6 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|self
-operator|->
-name|tile_manager
-condition|)
-block|{
 specifier|const
 name|Babl
 modifier|*
@@ -773,6 +766,16 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|self
+operator|->
+name|tile_manager
+condition|)
+return|return
+name|FALSE
+return|;
 name|format
 operator|=
 name|gegl_operation_get_format
@@ -871,7 +874,6 @@ operator|.
 name|rowstride
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 return|return
 name|TRUE

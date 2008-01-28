@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d085f80103
+DECL|enum|__anon2ac552370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d085f80203
+DECL|enum|__anon2ac552370203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -628,13 +628,6 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|self
-operator|->
-name|tile_manager
-condition|)
-block|{
 specifier|const
 name|Babl
 modifier|*
@@ -645,17 +638,29 @@ name|destPR
 decl_stmt|;
 name|guint
 name|bpp
-init|=
+decl_stmt|;
+name|gpointer
+name|pr
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|self
+operator|->
+name|tile_manager
+condition|)
+return|return
+name|FALSE
+return|;
+name|bpp
+operator|=
 name|tile_manager_bpp
 argument_list|(
 name|self
 operator|->
 name|tile_manager
 argument_list|)
-decl_stmt|;
-name|gpointer
-name|pr
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|self
@@ -783,15 +788,6 @@ argument_list|,
 name|result
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-name|g_warning
-argument_list|(
-literal|"no tilemanager?"
-argument_list|)
-expr_stmt|;
-block|}
 return|return
 name|TRUE
 return|;
