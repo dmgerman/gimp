@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0c3370103
+DECL|enum|__anon278341060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -410,22 +410,11 @@ name|dest
 init|=
 name|out_buf
 decl_stmt|;
-name|glong
-name|sample
-decl_stmt|;
-for|for
-control|(
-name|sample
-operator|=
-literal|0
-init|;
-name|sample
-operator|<
+while|while
+condition|(
 name|samples
-condition|;
-name|sample
-operator|++
-control|)
+operator|--
+condition|)
 block|{
 name|gfloat
 name|value
