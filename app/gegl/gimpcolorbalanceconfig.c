@@ -57,7 +57,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc12d50103
+DECL|enum|__anon2c81c9280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -554,6 +554,27 @@ operator|=
 name|g_value_get_enum
 argument_list|(
 name|value
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|object
+argument_list|,
+literal|"cyan-red"
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|object
+argument_list|,
+literal|"magenta-green"
+argument_list|)
+expr_stmt|;
+name|g_object_notify
+argument_list|(
+name|object
+argument_list|,
+literal|"yellow-blue"
 argument_list|)
 expr_stmt|;
 break|break;
