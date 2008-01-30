@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956567b0103
+DECL|enum|__anon28f818c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -185,17 +185,17 @@ name|get_property
 operator|=
 name|gimp_operation_desaturate_get_property
 expr_stmt|;
-name|point_class
-operator|->
-name|process
-operator|=
-name|gimp_operation_desaturate_process
-expr_stmt|;
 name|operation_class
 operator|->
 name|name
 operator|=
 literal|"gimp-desaturate"
+expr_stmt|;
+name|point_class
+operator|->
+name|process
+operator|=
+name|gimp_operation_desaturate_process
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(

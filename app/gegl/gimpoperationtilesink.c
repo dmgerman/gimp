@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac552370103
+DECL|enum|__anon2754fa890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac552370203
+DECL|enum|__anon2754fa890203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -297,6 +297,12 @@ name|get_property
 operator|=
 name|gimp_operation_tile_sink_get_property
 expr_stmt|;
+name|operation_class
+operator|->
+name|name
+operator|=
+literal|"gimp-tilemanager-sink"
+expr_stmt|;
 name|sink_class
 operator|->
 name|process
@@ -309,14 +315,6 @@ name|needs_full
 operator|=
 name|FALSE
 expr_stmt|;
-name|gegl_operation_class_set_name
-argument_list|(
-name|operation_class
-argument_list|,
-literal|"gimp-tilemanager-sink"
-argument_list|)
-expr_stmt|;
-empty_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
