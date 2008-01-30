@@ -137,12 +137,11 @@ name|process
 operator|=
 name|gimp_operation_colorize_process
 expr_stmt|;
-name|gegl_operation_class_set_name
-argument_list|(
 name|operation_class
-argument_list|,
+operator|->
+name|name
+operator|=
 literal|"gimp-colorize"
-argument_list|)
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
