@@ -124,6 +124,11 @@ name|GeglNode
 modifier|*
 name|operation
 decl_stmt|;
+DECL|member|config
+name|GObject
+modifier|*
+name|config
+decl_stmt|;
 DECL|member|apply_func
 name|GimpImageMapApplyFunc
 name|apply_func
@@ -225,6 +230,11 @@ parameter_list|(
 name|GimpImageMapTool
 modifier|*
 name|image_map_tool
+parameter_list|,
+name|GObject
+modifier|*
+modifier|*
+name|config
 parameter_list|)
 function_decl|;
 DECL|member|map
