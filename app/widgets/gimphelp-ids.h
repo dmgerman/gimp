@@ -1857,6 +1857,14 @@ value|"gimp-tool-perspective-clone"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_POLYGON_SELECT
+define|#
+directive|define
+name|GIMP_HELP_TOOL_POLYGON_SELECT
+value|"gimp-tool-polygon-select"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_POSTERIZE
 define|#
 directive|define
