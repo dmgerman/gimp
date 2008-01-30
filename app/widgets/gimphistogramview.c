@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4634b0103
+DECL|enum|__anon27bc0d9a0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4634b0203
+DECL|enum|__anon27bc0d9a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2667,6 +2667,14 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|channel
+operator|!=
+name|view
+operator|->
+name|channel
+condition|)
 name|g_object_set
 argument_list|(
 name|view
@@ -2730,6 +2738,14 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|scale
+operator|!=
+name|view
+operator|->
+name|scale
+condition|)
 name|g_object_set
 argument_list|(
 name|view
@@ -2796,6 +2812,31 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|view
+operator|->
+name|start
+operator|!=
+name|MIN
+argument_list|(
+name|start
+argument_list|,
+name|end
+argument_list|)
+operator|||
+name|view
+operator|->
+name|end
+operator|!=
+name|MAX
+argument_list|(
+name|start
+argument_list|,
+name|end
+argument_list|)
+condition|)
+block|{
 name|view
 operator|->
 name|start
@@ -2846,6 +2887,7 @@ operator|->
 name|end
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
