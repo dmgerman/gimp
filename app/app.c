@@ -70,12 +70,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -249,14 +243,6 @@ parameter_list|)
 block|{
 name|g_type_init
 argument_list|()
-expr_stmt|;
-name|g_option_context_add_group
-argument_list|(
-name|context
-argument_list|,
-name|gegl_get_option_group
-argument_list|()
-argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
