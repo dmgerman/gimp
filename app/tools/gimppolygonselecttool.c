@@ -1873,7 +1873,7 @@ argument_list|)
 argument_list|,
 name|Q_
 argument_list|(
-literal|"command|Free Select"
+literal|"command|Polygon Select"
 argument_list|)
 argument_list|,
 name|poly_sel_tool
