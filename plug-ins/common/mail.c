@@ -239,7 +239,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c8e76b0103
+DECL|enum|__anon28ec9d770103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -277,7 +277,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8e76b0208
+DECL|struct|__anon28ec9d770208
 block|{
 DECL|member|receipt
 name|gchar
@@ -678,10 +678,10 @@ name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Email the image"
+literal|"Send the image by email"
 argument_list|)
 argument_list|,
-literal|"You need to have uuencode and mail installed"
+literal|"You need to have sendmail installed"
 argument_list|,
 literal|"Adrian Likins, Reagan Blundell"
 argument_list|,
