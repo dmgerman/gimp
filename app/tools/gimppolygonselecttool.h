@@ -95,15 +95,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPolygonSelectToolPrivate
-typedef|typedef
-name|struct
-name|_GimpPolygonSelectToolPrivate
-name|GimpPolygonSelectToolPrivate
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpPolygonSelectToolClass
 typedef|typedef
 name|struct
@@ -111,24 +102,6 @@ name|_GimpPolygonSelectToolClass
 name|GimpPolygonSelectToolClass
 typedef|;
 end_typedef
-
-begin_struct
-DECL|struct|_GimpPolygonSelectTool
-struct|struct
-name|_GimpPolygonSelectTool
-block|{
-DECL|member|parent_instance
-name|GimpSelectionTool
-name|parent_instance
-decl_stmt|;
-DECL|member|priv
-name|GimpPolygonSelectToolPrivate
-modifier|*
-name|priv
-decl_stmt|;
-block|}
-struct|;
-end_struct
 
 begin_struct
 DECL|struct|_GimpPolygonSelectToolClass
