@@ -31,7 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl/gegl-types.h"
+file|"base/base-types.h"
 end_include
 
 begin_include
@@ -1004,6 +1004,12 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_include
+include|#
+directive|include
+file|"gegl/gegl-types.h"
+end_include
 
 begin_include
 include|#

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9ec3f50103
+DECL|enum|__anon2c42c0940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,14 +94,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpPosterizeConfig,gimp_posterize_config,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpPosterizeConfig,gimp_posterize_config,GIMP_TYPE_VIEWABLE,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpPosterizeConfig
 argument_list|,
 argument|gimp_posterize_config
 argument_list|,
-argument|G_TYPE_OBJECT
+argument|GIMP_TYPE_VIEWABLE
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
@@ -134,6 +134,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+init|=
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -146,17 +155,19 @@ name|get_property
 operator|=
 name|gimp_posterize_config_get_property
 expr_stmt|;
-name|g_object_class_install_property
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-tool-posterize"
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_INT
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_LEVELS
 argument_list|,
-name|g_param_spec_int
-argument_list|(
 literal|"levels"
-argument_list|,
-literal|"Levels"
 argument_list|,
 literal|"Posterize levels"
 argument_list|,
@@ -166,10 +177,7 @@ literal|256
 argument_list|,
 literal|3
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
-argument_list|)
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

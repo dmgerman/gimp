@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_LEVELS_CONFIG_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"core/gimpviewable.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_LEVELS_CONFIG
 define|#
@@ -94,7 +100,7 @@ struct|struct
 name|_GimpLevelsConfig
 block|{
 DECL|member|parent_instance
-name|GObject
+name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|channel
@@ -146,7 +152,7 @@ struct|struct
 name|_GimpLevelsConfigClass
 block|{
 DECL|member|parent_class
-name|GObjectClass
+name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 block|}

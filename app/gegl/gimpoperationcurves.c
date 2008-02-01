@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcurve.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcurvesconfig.h"
 end_include
 

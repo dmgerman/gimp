@@ -19,32 +19,8 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gdk-pixbuf/gdk-pixbuf.h>
+file|"core/gimpviewable.h"
 end_include
-
-begin_comment
-comment|/* eek */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"core/core-types.h"
-end_include
-
-begin_comment
-comment|/* eek */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"core/gimpcurve.h"
-end_include
-
-begin_comment
-comment|/* eek */
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_CURVES_CONFIG
@@ -124,7 +100,7 @@ struct|struct
 name|_GimpCurvesConfig
 block|{
 DECL|member|parent_instance
-name|GObject
+name|GimpViewable
 name|parent_instance
 decl_stmt|;
 DECL|member|channel
@@ -149,7 +125,7 @@ struct|struct
 name|_GimpCurvesConfigClass
 block|{
 DECL|member|parent_class
-name|GObjectClass
+name|GimpViewableClass
 name|parent_class
 decl_stmt|;
 block|}

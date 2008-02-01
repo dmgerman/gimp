@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933f03c0103
+DECL|enum|__anon2b30a8720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,14 +97,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpBrightnessContrastConfig,gimp_brightness_contrast_config,G_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpBrightnessContrastConfig,gimp_brightness_contrast_config,GIMP_TYPE_VIEWABLE,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpBrightnessContrastConfig
 argument_list|,
 argument|gimp_brightness_contrast_config
 argument_list|,
-argument|G_TYPE_OBJECT
+argument|GIMP_TYPE_VIEWABLE
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
@@ -137,6 +137,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpViewableClass
+modifier|*
+name|viewable_class
+init|=
+name|GIMP_VIEWABLE_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|set_property
@@ -149,17 +158,19 @@ name|get_property
 operator|=
 name|gimp_brightness_contrast_config_get_property
 expr_stmt|;
-name|g_object_class_install_property
+name|viewable_class
+operator|->
+name|default_stock_id
+operator|=
+literal|"gimp-tool-brightness-constrast"
+expr_stmt|;
+name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_BRIGHTNESS
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"brightness"
-argument_list|,
-literal|"Brightness"
 argument_list|,
 literal|"Brightness"
 argument_list|,
@@ -170,23 +181,16 @@ literal|1.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
-argument_list|)
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_object_class_install_property
+name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
 name|PROP_CONTRAST
 argument_list|,
-name|g_param_spec_double
-argument_list|(
 literal|"contrast"
-argument_list|,
-literal|"Contrast"
 argument_list|,
 literal|"Contrast"
 argument_list|,
@@ -197,10 +201,7 @@ literal|1.0
 argument_list|,
 literal|0.0
 argument_list|,
-name|G_PARAM_READWRITE
-operator||
-name|G_PARAM_CONSTRUCT
-argument_list|)
+literal|0
 argument_list|)
 expr_stmt|;
 block|}

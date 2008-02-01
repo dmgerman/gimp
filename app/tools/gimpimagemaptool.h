@@ -218,6 +218,11 @@ name|gchar
 modifier|*
 name|save_dialog_title
 decl_stmt|;
+DECL|member|recent_settings
+name|GimpContainer
+modifier|*
+name|recent_settings
+decl_stmt|;
 comment|/* virtual functions */
 DECL|member|get_operation
 name|GeglNode
