@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aedd3390103
+DECL|enum|__anon289bd60a0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1180,6 +1180,22 @@ operator|||
 name|GIMP_IS_CONTAINER
 argument_list|(
 name|container
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|container
+condition|)
+name|g_return_if_fail
+argument_list|(
+name|g_type_is_a
+argument_list|(
+name|container
+operator|->
+name|children_type
+argument_list|,
+name|GIMP_TYPE_VIEWABLE
 argument_list|)
 argument_list|)
 expr_stmt|;
