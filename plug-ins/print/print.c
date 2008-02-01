@@ -58,6 +58,14 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"print"
+end_define
+
+begin_define
 DECL|macro|PRINT_PROC_NAME
 define|#
 directive|define
@@ -66,11 +74,11 @@ value|"file-print-gtk"
 end_define
 
 begin_define
-DECL|macro|PLUG_IN_BINARY
+DECL|macro|PAGE_SETUP_PROC_NAME
 define|#
 directive|define
-name|PLUG_IN_BINARY
-value|"print"
+name|PAGE_SETUP_PROC_NAME
+value|"file-print-gtk-page-setup"
 end_define
 
 begin_function_decl
@@ -115,7 +123,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpPDBStatusType
 name|print_image
 parameter_list|(
 name|gint32
@@ -123,6 +131,17 @@ name|image_ID
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpPDBStatusType
+name|page_setup
+parameter_list|(
+name|gint32
+name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -358,6 +377,52 @@ operator|)
 name|GTK_STOCK_PRINT
 argument_list|)
 expr_stmt|;
+name|gimp_install_procedure
+argument_list|(
+name|PAGE_SETUP_PROC_NAME
+argument_list|,
+name|N_
+argument_list|(
+literal|"Adjust page size and orientation for printing"
+argument_list|)
+argument_list|,
+literal|"Adjust page size and orientation for printing for "
+literal|"printing the image using the GTK+ Print API."
+argument_list|,
+literal|"Bill Skaggs, Sven Neumann, Stefan RÃ¶llin"
+argument_list|,
+literal|"Sven Neumann<sven@gimp.org>"
+argument_list|,
+literal|"2008"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Page Set_up ..."
+argument_list|)
+argument_list|,
+literal|"*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|print_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|print_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|PAGE_SETUP_PROC_NAME
+argument_list|,
+literal|"<Image>/File/Send"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -402,14 +467,9 @@ name|run_mode
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
-init|=
-name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
 name|image_ID
-decl_stmt|;
-name|gint32
-name|drawable_ID
 decl_stmt|;
 name|run_mode
 operator|=
@@ -434,6 +494,11 @@ operator|*
 name|return_vals
 operator|=
 name|values
+expr_stmt|;
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
 expr_stmt|;
 name|values
 index|[
@@ -466,17 +531,6 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|drawable_ID
-operator|=
-name|param
-index|[
-literal|2
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
 if|if
 condition|(
 name|strcmp
@@ -489,21 +543,8 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_thread_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_ui_init
-argument_list|(
-name|PLUG_IN_BINARY
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
+name|status
+operator|=
 name|print_image
 argument_list|(
 name|image_ID
@@ -512,11 +553,41 @@ name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
 argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|PAGE_SETUP_PROC_NAME
+argument_list|)
+operator|==
+literal|0
+condition|)
+block|{
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
 condition|)
 block|{
 name|status
 operator|=
-name|GIMP_PDB_EXECUTION_ERROR
+name|page_setup
+argument_list|(
+name|image_ID
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -543,7 +614,7 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpPDBStatusType
 DECL|function|print_image (gint32 image_ID,gboolean interactive)
 name|print_image
 parameter_list|(
@@ -608,7 +679,7 @@ operator|==
 name|GIMP_EXPORT_CANCEL
 condition|)
 return|return
-name|FALSE
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 name|operation
 operator|=
@@ -769,6 +840,13 @@ condition|(
 name|interactive
 condition|)
 block|{
+name|gimp_ui_init
+argument_list|(
+name|PLUG_IN_BINARY
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|operation
@@ -875,7 +953,35 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|TRUE
+name|GIMP_PDB_SUCCESS
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpPDBStatusType
+DECL|function|page_setup (gint32 image_ID)
+name|page_setup
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+block|{
+name|gimp_ui_init
+argument_list|(
+name|PLUG_IN_BINARY
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_message
+argument_list|(
+literal|"Page Setup is not yet implemented"
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 end_function
