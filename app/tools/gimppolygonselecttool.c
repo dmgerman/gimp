@@ -1577,6 +1577,15 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+if|if
+condition|(
+name|poly_sel_tool
+operator|->
+name|num_points
+operator|>=
+literal|3
+condition|)
+block|{
 name|gimp_polygon_select_tool_select
 argument_list|(
 name|poly_sel_tool
@@ -1584,6 +1593,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_polygon_select_tool_halt
 argument_list|(
 name|poly_sel_tool
