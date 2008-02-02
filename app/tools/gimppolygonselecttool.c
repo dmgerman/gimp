@@ -1948,6 +1948,11 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
+name|poly_sel_tool
+operator|->
+name|num_points
+operator|--
+expr_stmt|;
 if|if
 condition|(
 name|poly_sel_tool
@@ -1961,14 +1966,6 @@ name|gimp_polygon_select_tool_halt
 argument_list|(
 name|poly_sel_tool
 argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|poly_sel_tool
-operator|->
-name|num_points
-operator|--
 expr_stmt|;
 block|}
 name|gimp_draw_tool_resume
