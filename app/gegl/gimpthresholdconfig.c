@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae69cdf0103
+DECL|enum|__anon2987c3890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -389,7 +389,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_threshold_config_to_cruft (GimpThresholdConfig * config,Threshold * cruft)
+DECL|function|gimp_threshold_config_to_cruft (GimpThresholdConfig * config,Threshold * cruft,gboolean color)
 name|gimp_threshold_config_to_cruft
 parameter_list|(
 name|GimpThresholdConfig
@@ -399,6 +399,9 @@ parameter_list|,
 name|Threshold
 modifier|*
 name|cruft
+parameter_list|,
+name|gboolean
+name|color
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -435,6 +438,12 @@ operator|->
 name|high
 operator|*
 literal|255.999
+expr_stmt|;
+name|cruft
+operator|->
+name|color
+operator|=
+name|color
 expr_stmt|;
 block|}
 end_function

@@ -153,6 +153,9 @@ parameter_list|,
 name|Threshold
 modifier|*
 name|cruft
+parameter_list|,
+name|gboolean
+name|color
 parameter_list|)
 function_decl|;
 end_function_decl
