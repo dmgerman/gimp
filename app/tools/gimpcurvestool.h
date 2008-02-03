@@ -112,13 +112,10 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/* dialog */
-DECL|member|color
-name|gboolean
-name|color
-decl_stmt|;
-DECL|member|alpha
-name|gboolean
-name|alpha
+DECL|member|hist
+name|GimpHistogram
+modifier|*
+name|hist
 decl_stmt|;
 DECL|member|col_value
 name|gint
@@ -126,11 +123,6 @@ name|col_value
 index|[
 literal|5
 index|]
-decl_stmt|;
-DECL|member|hist
-name|GimpHistogram
-modifier|*
-name|hist
 decl_stmt|;
 DECL|member|channel_menu
 name|GtkWidget

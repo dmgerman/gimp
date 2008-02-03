@@ -123,14 +123,6 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/* dialog */
-DECL|member|color
-name|gboolean
-name|color
-decl_stmt|;
-DECL|member|alpha
-name|gboolean
-name|alpha
-decl_stmt|;
 DECL|member|hist
 name|GimpHistogram
 modifier|*
