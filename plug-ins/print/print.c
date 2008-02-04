@@ -87,6 +87,14 @@ name|PAGE_SETUP_PROC_NAME
 value|"file-print-gtk-page-setup"
 end_define
 
+begin_define
+DECL|macro|PRINT_TEMP_PROC_NAME
+define|#
+directive|define
+name|PRINT_TEMP_PROC_NAME
+value|"file-print-gtk-page-setup-notify-temp"
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -1539,8 +1547,8 @@ block|{
 return|return
 name|g_strdup_printf
 argument_list|(
-name|PRINT_PROC_NAME
-literal|"-temp-%d"
+name|PRINT_TEMP_PROC_NAME
+literal|"-%d"
 argument_list|,
 name|image_ID
 argument_list|)
