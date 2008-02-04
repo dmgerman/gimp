@@ -2875,13 +2875,13 @@ argument_list|(
 name|NULL
 argument_list|)
 expr_stmt|;
-name|localtime_r
+name|tm
+operator|=
+operator|*
+name|localtime
 argument_list|(
 operator|&
 name|now
-argument_list|,
-operator|&
-name|tm
 argument_list|)
 expr_stmt|;
 name|strftime
@@ -2893,7 +2893,7 @@ argument_list|(
 name|buf
 argument_list|)
 argument_list|,
-literal|"%F %T"
+literal|"%Y-%m-%d %T"
 argument_list|,
 operator|&
 name|tm
