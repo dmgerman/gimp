@@ -357,7 +357,7 @@ literal|"1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Script-Fu _Console"
+literal|"_Console"
 argument_list|)
 argument_list|,
 name|NULL
