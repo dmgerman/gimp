@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"internal_procs.h"
 end_include
 
@@ -798,12 +804,14 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_item_is_attached
+name|gimp_pdb_item_is_attached
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|error
 argument_list|)
 condition|)
 block|{

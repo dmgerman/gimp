@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text/gimptext-compat.h"
 end_include
 
@@ -308,12 +314,14 @@ condition|(
 name|drawable
 operator|&&
 operator|!
-name|gimp_item_is_attached
+name|gimp_pdb_item_is_attached
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|error
 argument_list|)
 condition|)
 name|success
@@ -1010,12 +1018,14 @@ condition|(
 name|drawable
 operator|&&
 operator|!
-name|gimp_item_is_attached
+name|gimp_pdb_item_is_attached
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|error
 argument_list|)
 condition|)
 name|success
