@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f16ace0108
+DECL|struct|__anon2bb4dbec0108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f16ace0203
+DECL|enum|__anon2bb4dbec0203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -940,7 +940,7 @@ operator|&
 name|info
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|data
 operator|->
@@ -953,8 +953,9 @@ argument_list|(
 name|print_page_setup_notify
 argument_list|)
 argument_list|,
-operator|&
-name|info
+name|layout
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 return|return

@@ -27,18 +27,6 @@ directive|include
 file|"print-page-setup.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|print_page_setup_save
-parameter_list|(
-name|GtkPrintOperation
-modifier|*
-name|operation
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
 DECL|function|print_page_setup_dialog (GtkPrintOperation * operation)
@@ -52,17 +40,17 @@ block|{
 name|GtkPrintSettings
 modifier|*
 name|settings
-init|=
-name|gtk_print_settings_new
-argument_list|()
 decl_stmt|;
 name|GtkPageSetup
 modifier|*
 name|setup
 decl_stmt|;
-name|print_page_setup_load
+name|g_return_if_fail
+argument_list|(
+name|GTK_IS_PRINT_OPERATION
 argument_list|(
 name|operation
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|setup
@@ -71,6 +59,11 @@ name|gtk_print_operation_get_default_page_setup
 argument_list|(
 name|operation
 argument_list|)
+expr_stmt|;
+name|settings
+operator|=
+name|gtk_print_settings_new
+argument_list|()
 expr_stmt|;
 name|setup
 operator|=
@@ -83,6 +76,11 @@ argument_list|,
 name|settings
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|settings
+argument_list|)
+expr_stmt|;
 name|gtk_print_operation_set_default_page_setup
 argument_list|(
 name|operation
@@ -90,22 +88,20 @@ argument_list|,
 name|setup
 argument_list|)
 expr_stmt|;
-name|print_page_setup_save
-argument_list|(
-name|operation
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_function
 name|gboolean
-DECL|function|print_page_setup_load (GtkPrintOperation * operation)
+DECL|function|print_page_setup_load (GtkPrintOperation * operation,gint32 image_ID)
 name|print_page_setup_load
 parameter_list|(
 name|GtkPrintOperation
 modifier|*
 name|operation
+parameter_list|,
+name|gint32
+name|image_ID
 parameter_list|)
 block|{
 name|GtkPageSetup
@@ -170,7 +166,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|print_page_setup_save (GtkPrintOperation * operation)
 name|print_page_setup_save
