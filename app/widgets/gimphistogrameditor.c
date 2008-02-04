@@ -1266,7 +1266,7 @@ operator|->
 name|histogram
 condition|)
 block|{
-name|gimp_histogram_free
+name|gimp_histogram_unref
 argument_list|(
 name|editor
 operator|->
@@ -1294,7 +1294,7 @@ operator|->
 name|bg_histogram
 condition|)
 block|{
-name|gimp_histogram_free
+name|gimp_histogram_unref
 argument_list|(
 name|editor
 operator|->
@@ -1470,7 +1470,7 @@ argument_list|)
 operator|->
 name|view
 decl_stmt|;
-name|gimp_histogram_free
+name|gimp_histogram_unref
 argument_list|(
 name|editor
 operator|->
@@ -1774,7 +1774,7 @@ operator|->
 name|bg_histogram
 condition|)
 block|{
-name|gimp_histogram_free
+name|gimp_histogram_unref
 argument_list|(
 name|editor
 operator|->

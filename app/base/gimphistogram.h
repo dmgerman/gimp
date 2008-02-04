@@ -27,8 +27,20 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpHistogram
+modifier|*
+name|gimp_histogram_ref
+parameter_list|(
+name|GimpHistogram
+modifier|*
+name|histogram
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
-name|gimp_histogram_free
+name|gimp_histogram_unref
 parameter_list|(
 name|GimpHistogram
 modifier|*

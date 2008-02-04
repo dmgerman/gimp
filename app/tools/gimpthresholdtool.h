@@ -123,10 +123,10 @@ modifier|*
 name|threshold
 decl_stmt|;
 comment|/*  dialog  */
-DECL|member|hist
+DECL|member|histogram
 name|GimpHistogram
 modifier|*
-name|hist
+name|histogram
 decl_stmt|;
 DECL|member|histogram_box
 name|GimpHistogramBox

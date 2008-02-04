@@ -88,6 +88,10 @@ DECL|struct|_GimpHistogram
 struct|struct
 name|_GimpHistogram
 block|{
+DECL|member|ref_count
+name|gint
+name|ref_count
+decl_stmt|;
 DECL|member|n_channels
 name|gint
 name|n_channels
@@ -193,6 +197,12 @@ argument_list|(
 name|GimpHistogram
 argument_list|)
 decl_stmt|;
+name|histogram
+operator|->
+name|ref_count
+operator|=
+literal|1
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|ENABLE_MP
@@ -213,9 +223,40 @@ block|}
 end_function
 
 begin_function
+name|GimpHistogram
+modifier|*
+DECL|function|gimp_histogram_ref (GimpHistogram * histogram)
+name|gimp_histogram_ref
+parameter_list|(
+name|GimpHistogram
+modifier|*
+name|histogram
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|histogram
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|histogram
+operator|->
+name|ref_count
+operator|++
+expr_stmt|;
+return|return
+name|histogram
+return|;
+block|}
+end_function
+
+begin_function
 name|void
-DECL|function|gimp_histogram_free (GimpHistogram * histogram)
-name|gimp_histogram_free
+DECL|function|gimp_histogram_unref (GimpHistogram * histogram)
+name|gimp_histogram_unref
 parameter_list|(
 name|GimpHistogram
 modifier|*
@@ -229,6 +270,20 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|histogram
+operator|->
+name|ref_count
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|histogram
+operator|->
+name|ref_count
+operator|==
+literal|0
+condition|)
+block|{
 name|gimp_histogram_free_values
 argument_list|(
 name|histogram
@@ -241,6 +296,7 @@ argument_list|,
 name|histogram
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -273,7 +273,7 @@ argument_list|(
 name|lut
 argument_list|)
 expr_stmt|;
-name|gimp_histogram_free
+name|gimp_histogram_unref
 argument_list|(
 name|hist
 argument_list|)

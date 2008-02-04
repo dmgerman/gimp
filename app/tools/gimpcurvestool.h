@@ -112,11 +112,6 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/* dialog */
-DECL|member|hist
-name|GimpHistogram
-modifier|*
-name|hist
-decl_stmt|;
 DECL|member|col_value
 name|gint
 name|col_value

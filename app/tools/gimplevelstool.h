@@ -123,20 +123,20 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/* dialog */
-DECL|member|hist
+DECL|member|histogram
 name|GimpHistogram
 modifier|*
-name|hist
+name|histogram
 decl_stmt|;
 DECL|member|channel_menu
 name|GtkWidget
 modifier|*
 name|channel_menu
 decl_stmt|;
-DECL|member|hist_view
+DECL|member|histogram_view
 name|GtkWidget
 modifier|*
-name|hist_view
+name|histogram_view
 decl_stmt|;
 DECL|member|input_bar
 name|GtkWidget
