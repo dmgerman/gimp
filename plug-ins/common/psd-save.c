@@ -5230,14 +5230,6 @@ name|drawableID
 argument_list|)
 decl_stmt|;
 name|gint32
-name|maskID
-init|=
-name|gimp_layer_get_mask
-argument_list|(
-name|drawableID
-argument_list|)
-decl_stmt|;
-name|gint32
 name|height
 init|=
 name|drawable
@@ -5746,6 +5738,22 @@ block|}
 comment|/* Write layer mask, as last channel, id -2 */
 if|if
 condition|(
+name|gimp_drawable_is_layer
+argument_list|(
+name|drawableID
+argument_list|)
+condition|)
+block|{
+name|gint32
+name|maskID
+init|=
+name|gimp_layer_get_mask
+argument_list|(
+name|drawableID
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
 name|maskID
 operator|!=
 operator|-
@@ -6101,6 +6109,7 @@ argument_list|(
 name|mdrawable
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|gimp_drawable_detach
 argument_list|(
