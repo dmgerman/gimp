@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"print-page-setup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"print-draw-page.h"
 end_include
 
@@ -693,6 +699,11 @@ argument_list|,
 name|orig_image_ID
 argument_list|)
 expr_stmt|;
+name|print_page_setup_load
+argument_list|(
+name|operation
+argument_list|)
+expr_stmt|;
 comment|/* fill in the PrintData struct */
 name|data
 operator|.
@@ -968,6 +979,10 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
+name|GtkPrintOperation
+modifier|*
+name|operation
+decl_stmt|;
 name|gimp_ui_init
 argument_list|(
 name|PLUG_IN_BINARY
@@ -975,13 +990,24 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|operation
+operator|=
+name|gtk_print_operation_new
+argument_list|()
+expr_stmt|;
+name|print_page_setup_dialog
 argument_list|(
-literal|"Page Setup is not yet implemented"
+name|operation
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|operation
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: notify the print procedure about the changed page setup */
 return|return
-name|GIMP_PDB_EXECUTION_ERROR
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 end_function
