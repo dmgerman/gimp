@@ -4230,7 +4230,7 @@ decl_stmt|;
 name|gint
 name|dx
 decl_stmt|;
-name|gchar
+name|gint
 name|xdir
 decl_stmt|;
 name|gint
