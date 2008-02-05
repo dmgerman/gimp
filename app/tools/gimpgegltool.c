@@ -289,7 +289,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"GEGL Tool: Use an Abritrary GEGL Operation"
+literal|"GEGL Tool: Use an arbitrary GEGL operation"
 argument_list|)
 argument_list|,
 name|N_
