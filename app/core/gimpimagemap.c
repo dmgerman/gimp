@@ -120,9 +120,42 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: gegl_node_get_pad() or something similar needs to be public
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_function_decl
+name|gpointer
+name|gegl_node_get_pad
+parameter_list|(
+name|GeglNode
+modifier|*
+name|self
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|pad_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_enum
 enum|enum
-DECL|enum|__anon29a3d2320103
+DECL|enum|__anon2bc2a0420103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1739,7 +1772,7 @@ argument_list|()
 expr_stmt|;
 if|if
 condition|(
-name|gegl_node_find_property
+name|gegl_node_get_pad
 argument_list|(
 name|image_map
 operator|->
@@ -1749,6 +1782,13 @@ literal|"input"
 argument_list|)
 condition|)
 block|{
+name|g_printerr
+argument_list|(
+literal|"%s: found input property\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
 name|image_map
 operator|->
 name|input
