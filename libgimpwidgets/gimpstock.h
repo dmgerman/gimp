@@ -918,6 +918,11 @@ define|#
 directive|define
 name|GIMP_STOCK_VIDEO
 value|"gimp-video"
+DECL|macro|GIMP_STOCK_GEGL
+define|#
+directive|define
+name|GIMP_STOCK_GEGL
+value|"gimp-gegl"
 DECL|macro|GIMP_STOCK_SHAPE_CIRCLE
 define|#
 directive|define

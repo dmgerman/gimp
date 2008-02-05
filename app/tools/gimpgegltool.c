@@ -270,7 +270,7 @@ argument_list|,
 literal|"foo"
 argument_list|,
 comment|/* GIMP_HELP_TOOL_GEGL, */
-name|GIMP_STOCK_WILBER_EEK
+name|GIMP_STOCK_GEGL
 argument_list|,
 name|data
 argument_list|)
