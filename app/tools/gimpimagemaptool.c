@@ -3064,6 +3064,12 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image_map_tool
+operator|->
+name|config
+condition|)
 name|gimp_image_map_tool_add_recent
 argument_list|(
 name|image_map_tool
