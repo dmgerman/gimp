@@ -338,6 +338,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* temp hack for the gegl tool */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_image_map_tool_create_map
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

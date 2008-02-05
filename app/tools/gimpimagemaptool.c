@@ -389,18 +389,6 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_map_tool_create_map
-parameter_list|(
-name|GimpImageMapTool
-modifier|*
-name|im_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_image_map_tool_flush
 parameter_list|(
 name|GimpImageMap
@@ -2436,7 +2424,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_image_map_tool_create_map (GimpImageMapTool * tool)
 name|gimp_image_map_tool_create_map
@@ -2449,7 +2436,20 @@ block|{
 name|Gimp
 modifier|*
 name|gimp
-init|=
+decl_stmt|;
+name|gboolean
+name|use_gegl
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE_MAP_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp
+operator|=
 name|GIMP_TOOL
 argument_list|(
 name|tool
@@ -2458,10 +2458,7 @@ operator|->
 name|tool_info
 operator|->
 name|gimp
-decl_stmt|;
-name|gboolean
-name|use_gegl
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|tool
