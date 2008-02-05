@@ -239,7 +239,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec9d770103
+DECL|enum|__anon29fe11970103
 block|{
 DECL|enumerator|ENCAPSULATION_UUENCODE
 name|ENCAPSULATION_UUENCODE
@@ -277,7 +277,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec9d770208
+DECL|struct|__anon29fe11970208
 block|{
 DECL|member|receipt
 name|gchar
@@ -692,7 +692,7 @@ literal|"1995-1997"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Mail Image..."
+literal|"Send by E_mail..."
 argument_list|)
 argument_list|,
 literal|"RGB*, GRAY*, INDEXED*"
@@ -1675,7 +1675,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Send as Mail"
+literal|"Send by Email"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
