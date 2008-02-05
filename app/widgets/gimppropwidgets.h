@@ -202,6 +202,29 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  A view on all of an object's properties  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_table_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+name|GType
+name|owner_type
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
