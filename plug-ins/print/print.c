@@ -450,7 +450,7 @@ literal|"2008"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Page Set_up ..."
+literal|"Page Set_up"
 argument_list|)
 argument_list|,
 literal|"*"
