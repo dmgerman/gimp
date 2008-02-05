@@ -1488,7 +1488,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d0748e0108
+DECL|struct|__anon287b7d4e0108
 block|{
 DECL|member|config
 name|GObject
@@ -2533,6 +2533,13 @@ name|name
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|label
+operator|=
+name|g_param_spec_get_nick
+argument_list|(
+name|pspec
 argument_list|)
 expr_stmt|;
 block|}
