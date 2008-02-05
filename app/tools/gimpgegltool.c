@@ -24,16 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gegl-plugin.h>
-end_include
-
-begin_comment
-comment|/* temp hack for color pspec */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<gtk/gtk.h>
 end_include
 
