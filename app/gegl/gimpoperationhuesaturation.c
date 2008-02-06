@@ -439,12 +439,6 @@ name|out_buf
 decl_stmt|;
 name|gfloat
 name|overlap
-init|=
-name|config
-operator|->
-name|overlap
-operator|/
-literal|2.0
 decl_stmt|;
 if|if
 condition|(
@@ -454,6 +448,14 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|overlap
+operator|=
+name|config
+operator|->
+name|overlap
+operator|/
+literal|2.0
+expr_stmt|;
 while|while
 condition|(
 name|samples
