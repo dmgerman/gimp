@@ -155,7 +155,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8c2b20103
+DECL|enum|__anon2a0fc17e0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1881,8 +1881,18 @@ name|operation
 argument_list|,
 literal|"input"
 argument_list|)
+operator|&&
+name|gegl_node_get_pad
+argument_list|(
+name|image_map
+operator|->
+name|operation
+argument_list|,
+literal|"output"
+argument_list|)
 condition|)
 block|{
+comment|/*  if there are input and output pads we probably have a                *  filter OP, connect it on both ends.                */
 name|gegl_node_link_many
 argument_list|(
 name|image_map
@@ -1905,8 +1915,20 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|gegl_node_get_pad
+argument_list|(
+name|image_map
+operator|->
+name|operation
+argument_list|,
+literal|"output"
+argument_list|)
+condition|)
 block|{
+comment|/*  if there is only an output pad we probably have a                *  source OP, blend its result on top of the original                *  pixels.                */
 name|GeglNode
 modifier|*
 name|over
@@ -1954,6 +1976,27 @@ argument_list|,
 name|over
 argument_list|,
 literal|"aux"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+comment|/* otherwise we just construct a silly nop pipleline                */
+name|gegl_node_link_many
+argument_list|(
+name|image_map
+operator|->
+name|input
+argument_list|,
+name|image_map
+operator|->
+name|shift
+argument_list|,
+name|image_map
+operator|->
+name|output
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
