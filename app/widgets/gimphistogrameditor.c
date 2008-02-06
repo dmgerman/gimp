@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/pixel-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
