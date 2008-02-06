@@ -243,12 +243,6 @@ name|out_buf
 decl_stmt|;
 name|gfloat
 name|levels
-init|=
-name|config
-operator|->
-name|levels
-operator|-
-literal|1.0
 decl_stmt|;
 if|if
 condition|(
@@ -258,6 +252,14 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|levels
+operator|=
+name|config
+operator|->
+name|levels
+operator|-
+literal|1.0
+expr_stmt|;
 while|while
 condition|(
 name|samples
