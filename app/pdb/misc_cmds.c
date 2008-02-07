@@ -34,13 +34,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppdb.h"
+file|"base/base-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpprocedure.h"
+file|"core/gimp.h"
 end_include
 
 begin_include
@@ -52,13 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base-utils.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"gimpprocedure.h"
 end_include
 
 begin_include

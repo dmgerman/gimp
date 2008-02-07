@@ -28,24 +28,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppdb.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpparamspecs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -64,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpparamspecs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"plug-in/gimpplugin-cleanup.h"
 end_include
 
@@ -77,6 +65,18 @@ begin_include
 include|#
 directive|include
 file|"plug-in/gimppluginmanager.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpprocedure.h"
 end_include
 
 begin_include

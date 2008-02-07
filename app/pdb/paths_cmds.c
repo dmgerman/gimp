@@ -40,30 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppdb.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpprocedure.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpparamspecs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpchannel-select.h"
 end_include
 
@@ -82,13 +58,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpstrokedesc.h"
+file|"core/gimpparamspecs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimp-intl.h"
+file|"core/gimpstrokedesc.h"
 end_include
 
 begin_include
@@ -124,7 +100,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"internal_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_function
