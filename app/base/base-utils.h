@@ -17,6 +17,15 @@ name|__BASE_H__
 end_define
 
 begin_function_decl
+name|GPid
+name|get_pid
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|get_number_of_processors
 parameter_list|(

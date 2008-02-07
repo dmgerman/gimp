@@ -86,20 +86,6 @@ directive|include
 file|"libgimpbase/gimpwin32-io.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|<process.h>
-end_include
-
-begin_define
-DECL|macro|getpid
-define|#
-directive|define
-name|getpid
-value|_getpid
-end_define
-
 begin_endif
 endif|#
 directive|endif
@@ -152,6 +138,12 @@ end_endif
 begin_include
 include|#
 directive|include
+file|"base-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile.h"
 end_include
 
@@ -182,7 +174,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a44264b0103
+DECL|enum|__anon2a3f74750103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -732,7 +724,7 @@ operator|(
 name|unsigned
 name|long
 operator|)
-name|getpid
+name|get_pid
 argument_list|()
 argument_list|)
 expr_stmt|;

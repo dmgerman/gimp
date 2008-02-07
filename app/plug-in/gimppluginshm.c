@@ -199,6 +199,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/tile.h"
 end_include
 
@@ -577,7 +583,7 @@ decl_stmt|;
 comment|/* Our shared memory id will be our process ID */
 name|pid
 operator|=
-name|getpid
+name|get_pid
 argument_list|()
 expr_stmt|;
 comment|/* From the id, derive the file map name */

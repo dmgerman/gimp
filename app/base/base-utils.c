@@ -52,6 +52,12 @@ directive|include
 file|<windows.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<process.h>
+end_include
+
 begin_endif
 endif|#
 directive|endif
@@ -74,6 +80,21 @@ end_define
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+name|GPid
+DECL|function|get_pid (void)
+name|get_pid
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|getpid
+argument_list|()
+return|;
+block|}
+end_function
 
 begin_function
 name|gint
