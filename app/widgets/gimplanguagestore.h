@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0de7840103
+DECL|enum|__anon29aec5550103
 block|{
 DECL|enumerator|GIMP_LANGUAGE_STORE_LANGUAGE
 name|GIMP_LANGUAGE_STORE_LANGUAGE
@@ -148,6 +148,27 @@ name|gimp_language_store_new
 parameter_list|(
 name|gboolean
 name|translations
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_language_store_add
+parameter_list|(
+name|GimpLanguageStore
+modifier|*
+name|store
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|lang
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|code
 parameter_list|)
 function_decl|;
 end_function_decl
