@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6eb62c0103
+DECL|enum|__anon29383e240103
 block|{
 DECL|enumerator|TIPS_START
 name|TIPS_START
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6eb62c0203
+DECL|enum|__anon29383e240203
 block|{
 DECL|enumerator|TIPS_LOCALE_NONE
 name|TIPS_LOCALE_NONE
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6eb62c0308
+DECL|struct|__anon29383e240308
 block|{
 DECL|member|state
 name|TipsParserState
@@ -1038,7 +1038,9 @@ name|TIPS_START
 case|:
 name|g_warning
 argument_list|(
-literal|"tips_parser: This shouldn't happen.\n"
+literal|"%s: shouldn't get here"
+argument_list|,
+name|G_STRLOC
 argument_list|)
 expr_stmt|;
 break|break;
