@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0d79ae0103
+DECL|enum|__anon2b52aa2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1502,6 +1502,9 @@ name|curve
 argument_list|,
 name|j
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|index
 index|[
 name|i
@@ -1509,7 +1512,12 @@ index|]
 index|[
 name|j
 index|]
+operator|/
+literal|255.0
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|value
 index|[
 name|i
@@ -1517,6 +1525,8 @@ index|]
 index|[
 name|j
 index|]
+operator|/
+literal|255.0
 argument_list|)
 expr_stmt|;
 name|gimp_data_thaw
@@ -1563,11 +1573,6 @@ name|fp
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|,
-name|j
-decl_stmt|;
-name|gint32
-name|index
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1620,6 +1625,9 @@ index|[
 name|i
 index|]
 decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
 if|if
 condition|(
 name|curve
@@ -1644,15 +1652,16 @@ name|j
 operator|++
 control|)
 block|{
+name|gint32
 name|index
-operator|=
+init|=
 name|CLAMP0255
 argument_list|(
 name|j
 operator|*
 literal|32
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|curve
 operator|->
 name|points
@@ -1665,7 +1674,12 @@ index|[
 literal|0
 index|]
 operator|=
+operator|(
+name|gdouble
+operator|)
 name|index
+operator|/
+literal|255.0
 expr_stmt|;
 name|curve
 operator|->
@@ -1707,6 +1721,10 @@ name|file
 argument_list|,
 literal|"%d %d "
 argument_list|,
+call|(
+name|gint
+call|)
+argument_list|(
 name|curve
 operator|->
 name|points
@@ -1716,7 +1734,14 @@ index|]
 index|[
 literal|0
 index|]
+operator|*
+literal|255.999
+argument_list|)
 argument_list|,
+call|(
+name|gint
+call|)
+argument_list|(
 name|curve
 operator|->
 name|points
@@ -1726,6 +1751,9 @@ index|]
 index|[
 literal|1
 index|]
+operator|*
+literal|255.999
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|fprintf
