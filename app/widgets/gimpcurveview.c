@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae7d2e0103
+DECL|enum|__anon2947dac30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -527,7 +527,7 @@ operator|->
 name|xpos
 operator|=
 operator|-
-literal|1
+literal|1.0
 expr_stmt|;
 name|view
 operator|->
@@ -1824,7 +1824,7 @@ name|view
 operator|->
 name|xpos
 operator|>=
-literal|0
+literal|0.0
 condition|)
 block|{
 name|gint
@@ -1869,8 +1869,6 @@ operator|*
 name|view
 operator|->
 name|xpos
-operator|/
-literal|256.0
 argument_list|)
 argument_list|,
 name|border
@@ -1892,8 +1890,6 @@ operator|*
 name|view
 operator|->
 name|xpos
-operator|/
-literal|256.0
 argument_list|)
 argument_list|,
 name|border
@@ -1920,9 +1916,16 @@ argument_list|)
 argument_list|,
 literal|"x:%d"
 argument_list|,
+call|(
+name|gint
+call|)
+argument_list|(
 name|view
 operator|->
 name|xpos
+operator|*
+literal|255.999
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1974,7 +1977,7 @@ name|view
 operator|->
 name|xpos
 operator|<
-literal|127
+literal|0.5
 condition|)
 name|layout_x
 operator|=
@@ -2004,8 +2007,6 @@ operator|*
 name|view
 operator|->
 name|xpos
-operator|/
-literal|256.0
 operator|+
 name|layout_x
 argument_list|,
@@ -3912,14 +3913,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_curve_view_set_xpos (GimpCurveView * view,gint x)
+DECL|function|gimp_curve_view_set_xpos (GimpCurveView * view,gdouble x)
 name|gimp_curve_view_set_xpos
 parameter_list|(
 name|GimpCurveView
 modifier|*
 name|view
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|)
 block|{

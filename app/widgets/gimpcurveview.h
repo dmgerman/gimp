@@ -149,7 +149,7 @@ name|GdkCursorType
 name|cursor_type
 decl_stmt|;
 DECL|member|xpos
-name|gint
+name|gdouble
 name|xpos
 decl_stmt|;
 DECL|member|xpos_layout
@@ -260,7 +260,7 @@ name|GimpCurveView
 modifier|*
 name|view
 parameter_list|,
-name|gint
+name|gdouble
 name|x
 parameter_list|)
 function_decl|;

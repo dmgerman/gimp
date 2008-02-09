@@ -112,9 +112,9 @@ modifier|*
 name|lut
 decl_stmt|;
 comment|/* dialog */
-DECL|member|col_value
-name|gint
-name|col_value
+DECL|member|picked_color
+name|gdouble
+name|picked_color
 index|[
 literal|5
 index|]
