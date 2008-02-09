@@ -158,11 +158,11 @@ modifier|*
 name|xpos_layout
 decl_stmt|;
 DECL|member|cursor_x
-name|gint
+name|gdouble
 name|cursor_x
 decl_stmt|;
 DECL|member|cursor_y
-name|gint
+name|gdouble
 name|cursor_y
 decl_stmt|;
 DECL|member|cursor_layout
