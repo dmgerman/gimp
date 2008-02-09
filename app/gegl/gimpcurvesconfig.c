@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b52aa2c0103
+DECL|enum|__anon2b32a39b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1670,9 +1670,8 @@ name|j
 operator|*
 literal|2
 index|]
-index|[
-literal|0
-index|]
+operator|.
+name|x
 operator|=
 operator|(
 name|gdouble
@@ -1689,9 +1688,8 @@ name|j
 operator|*
 literal|2
 index|]
-index|[
-literal|1
-index|]
+operator|.
+name|y
 operator|=
 name|curve
 operator|->
@@ -1731,9 +1729,8 @@ name|points
 index|[
 name|j
 index|]
-index|[
-literal|0
-index|]
+operator|.
+name|x
 operator|*
 literal|255.999
 argument_list|)
@@ -1748,9 +1745,8 @@ name|points
 index|[
 name|j
 index|]
-index|[
-literal|1
-index|]
+operator|.
+name|y
 operator|*
 literal|255.999
 argument_list|)

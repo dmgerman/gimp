@@ -22,6 +22,12 @@ directive|include
 file|"gimpdata.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpmath/gimpvector.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_CURVE_NUM_POINTS
 define|#
@@ -121,13 +127,10 @@ name|GimpCurveType
 name|curve_type
 decl_stmt|;
 DECL|member|points
-name|gdouble
+name|GimpVector2
 name|points
 index|[
 name|GIMP_CURVE_NUM_POINTS
-index|]
-index|[
-literal|2
 index|]
 decl_stmt|;
 DECL|member|curve
