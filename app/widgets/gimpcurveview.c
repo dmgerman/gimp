@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b17f30103
+DECL|enum|__anon2a8c06660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1358,13 +1358,6 @@ index|[
 literal|0
 index|]
 expr_stmt|;
-if|if
-condition|(
-name|x
-operator|<
-literal|0.0
-condition|)
-return|return;
 name|y
 operator|=
 literal|1.0
@@ -1381,6 +1374,18 @@ index|[
 literal|1
 index|]
 expr_stmt|;
+if|if
+condition|(
+name|x
+operator|<
+literal|0.0
+condition|)
+return|return;
+DECL|macro|RADIUS
+define|#
+directive|define
+name|RADIUS
+value|3
 name|cairo_move_to
 argument_list|(
 name|cr
@@ -1394,7 +1399,7 @@ name|width
 operator|*
 name|x
 operator|+
-literal|3
+name|RADIUS
 argument_list|,
 name|border
 operator|+
@@ -1428,7 +1433,7 @@ name|height
 operator|*
 name|y
 argument_list|,
-literal|3
+name|RADIUS
 argument_list|,
 literal|0
 argument_list|,
