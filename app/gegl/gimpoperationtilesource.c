@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fd18920103
+DECL|enum|__anon2a0e2bb40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -147,7 +147,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|GeglRectangle
-name|gimp_operation_tile_source_get_defined_region
+name|gimp_operation_tile_source_get_bounding_box
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -270,13 +270,13 @@ name|gimp_operation_tile_source_prepare
 expr_stmt|;
 name|operation_class
 operator|->
-name|get_defined_region
+name|get_bounding_box
 operator|=
-name|gimp_operation_tile_source_get_defined_region
+name|gimp_operation_tile_source_get_bounding_box
 expr_stmt|;
 name|operation_class
 operator|->
-name|adjust_result_region
+name|get_cached_region
 operator|=
 name|NULL
 expr_stmt|;
@@ -648,8 +648,8 @@ end_function
 begin_function
 specifier|static
 name|GeglRectangle
-DECL|function|gimp_operation_tile_source_get_defined_region (GeglOperation * operation)
-name|gimp_operation_tile_source_get_defined_region
+DECL|function|gimp_operation_tile_source_get_bounding_box (GeglOperation * operation)
+name|gimp_operation_tile_source_get_bounding_box
 parameter_list|(
 name|GeglOperation
 modifier|*
