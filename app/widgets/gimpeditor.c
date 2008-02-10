@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a2de2a0103
+DECL|enum|__anon2bd512580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1899,6 +1899,16 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GTK_RELIEF_NONE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|image
@@ -2107,7 +2117,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a2de2a0208
+DECL|struct|__anon2bd512580208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2440,6 +2450,16 @@ name|button
 operator|=
 name|gimp_button_new
 argument_list|()
+expr_stmt|;
+name|gtk_button_set_relief
+argument_list|(
+name|GTK_BUTTON
+argument_list|(
+name|button
+argument_list|)
+argument_list|,
+name|GTK_RELIEF_NONE
+argument_list|)
 expr_stmt|;
 block|}
 name|g_object_get
