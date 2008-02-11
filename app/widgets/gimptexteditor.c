@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6772d50103
+DECL|enum|__anon290283c40103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -795,6 +795,18 @@ name|view
 operator|=
 name|gtk_text_view_new
 argument_list|()
+expr_stmt|;
+name|gtk_text_view_set_wrap_mode
+argument_list|(
+name|GTK_TEXT_VIEW
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|)
+argument_list|,
+name|GTK_WRAP_WORD_CHAR
+argument_list|)
 expr_stmt|;
 name|gtk_container_add
 argument_list|(
