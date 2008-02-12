@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpImageEditor
 name|parent_instance
 decl_stmt|;
+DECL|member|preview
+name|GtkWidget
+modifier|*
+name|preview
+decl_stmt|;
 DECL|member|col_index
 name|gint
 name|col_index
@@ -110,11 +115,6 @@ decl_stmt|;
 DECL|member|dnd_col_index
 name|gint
 name|dnd_col_index
-decl_stmt|;
-DECL|member|preview
-name|GtkWidget
-modifier|*
-name|preview
 decl_stmt|;
 DECL|member|xn
 name|gint
@@ -127,6 +127,11 @@ decl_stmt|;
 DECL|member|cellsize
 name|gint
 name|cellsize
+decl_stmt|;
+DECL|member|layout
+name|PangoLayout
+modifier|*
+name|layout
 decl_stmt|;
 DECL|member|edit_button
 name|GtkWidget
