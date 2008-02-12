@@ -137,6 +137,18 @@ name|name
 operator|=
 literal|"gimp-threshold"
 expr_stmt|;
+name|operation_class
+operator|->
+name|categories
+operator|=
+literal|"color"
+expr_stmt|;
+name|operation_class
+operator|->
+name|description
+operator|=
+literal|"GIMP Threshold operation"
+expr_stmt|;
 name|point_class
 operator|->
 name|process

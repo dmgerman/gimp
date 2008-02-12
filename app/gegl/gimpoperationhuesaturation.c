@@ -143,6 +143,18 @@ name|name
 operator|=
 literal|"gimp-hue-saturation"
 expr_stmt|;
+name|operation_class
+operator|->
+name|categories
+operator|=
+literal|"color"
+expr_stmt|;
+name|operation_class
+operator|->
+name|description
+operator|=
+literal|"GIMP Hue-Saturation operation"
+expr_stmt|;
 name|point_class
 operator|->
 name|process

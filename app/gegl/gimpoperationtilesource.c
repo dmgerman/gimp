@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d62ebe0103
+DECL|enum|__anon2a1a271c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -257,6 +257,18 @@ operator|->
 name|name
 operator|=
 literal|"gimp-tilemanager-source"
+expr_stmt|;
+name|operation_class
+operator|->
+name|categories
+operator|=
+literal|"input"
+expr_stmt|;
+name|operation_class
+operator|->
+name|description
+operator|=
+literal|"GIMP TileManager source"
 expr_stmt|;
 name|operation_class
 operator|->
