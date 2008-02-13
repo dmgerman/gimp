@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290058950103
+DECL|enum|__anon2c1170100103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2022,8 +2022,8 @@ name|widget
 argument_list|,
 name|_
 argument_list|(
-literal|"Colormap is only useful with "
-literal|"indexed images."
+literal|"Only indexed images have "
+literal|"a colormap."
 argument_list|)
 argument_list|)
 expr_stmt|;
