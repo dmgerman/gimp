@@ -708,7 +708,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c865ac50108
+DECL|struct|__anon27f8ebda0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -869,7 +869,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c865ac50208
+DECL|struct|__anon27f8ebda0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1272,7 +1272,7 @@ name|ERODE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Shrink darker areas of the image"
+literal|"Shrink lighter areas of the image"
 argument_list|)
 argument_list|,
 literal|"Erode image"
@@ -1310,7 +1310,7 @@ name|DILATE_PROC
 argument_list|,
 name|N_
 argument_list|(
-literal|"Grow darker areas of the image"
+literal|"Grow lighter areas of the image"
 argument_list|)
 argument_list|,
 literal|"Dilate image"
@@ -4022,7 +4022,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c865ac50308
+DECL|struct|__anon27f8ebda0308
 block|{
 DECL|member|min_modified
 name|gshort
