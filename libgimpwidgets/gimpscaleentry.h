@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpscaleentry.h  * Copyright (C) 2000 Michael Natterer<mitch@gimp.org>,  * 2008 Bill Skaggs<weskaggs@primate.ucdavis.edu>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpscaleentry.h  * Copyright (C) 2000 Michael Natterer<mitch@gimp.org>,  *               2008 Bill Skaggs<weskaggs@primate.ucdavis.edu>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
@@ -16,7 +16,8 @@ directive|define
 name|__GIMP_SCALE_ENTRY_H__
 end_define
 
-begin_define
+begin_function_decl
+name|G_BEGIN_DECLS
 DECL|macro|GIMP_SCALE_ENTRY_LABEL (adj)
 define|#
 directive|define
@@ -26,9 +27,6 @@ name|adj
 parameter_list|)
 define|\
 value|(g_object_get_data (G_OBJECT (adj), "label"))
-end_define
-
-begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SCALE (adj)
 define|#
 directive|define
@@ -38,9 +36,6 @@ name|adj
 parameter_list|)
 define|\
 value|(g_object_get_data (G_OBJECT (adj), "scale"))
-end_define
-
-begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SCALE_ADJ (adj)
 define|#
 directive|define
@@ -50,9 +45,6 @@ name|adj
 parameter_list|)
 define|\
 value|gtk_range_get_adjustment \         (GTK_RANGE (g_object_get_data (G_OBJECT (adj), "scale")))
-end_define
-
-begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON (adj)
 define|#
 directive|define
@@ -62,9 +54,6 @@ name|adj
 parameter_list|)
 define|\
 value|(g_object_get_data (G_OBJECT (adj), "spinbutton"))
-end_define
-
-begin_define
 DECL|macro|GIMP_SCALE_ENTRY_SPINBUTTON_ADJ (adj)
 define|#
 directive|define
@@ -74,9 +63,6 @@ name|adj
 parameter_list|)
 define|\
 value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (adj), "spinbutton")))
-end_define
-
-begin_function_decl
 name|GtkObject
 modifier|*
 name|gimp_scale_entry_new
