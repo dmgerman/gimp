@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279496640103
+DECL|enum|__anon2bf5fdc10103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +77,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279496640203
+DECL|enum|__anon2bf5fdc10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279496640303
+DECL|enum|__anon2bf5fdc10303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279496640408
+DECL|struct|__anon2bf5fdc10408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2364,6 +2364,18 @@ operator|->
 name|keyval
 operator|!=
 name|GDK_Return
+operator|&&
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_KP_Enter
+operator|&&
+name|kevent
+operator|->
+name|keyval
+operator|!=
+name|GDK_ISO_Enter
 condition|)
 break|break;
 comment|/* If parsing was done due to widgets focus being lost, we only change          * to user-override mode if the values differ from the default ones. If          * Return was pressed however, we always switch to user-override mode.          */

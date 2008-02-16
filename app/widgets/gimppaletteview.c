@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289a59cb0103
+DECL|enum|__anon2a2ee6150103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -1093,6 +1093,12 @@ name|kevent
 operator|->
 name|keyval
 operator|==
+name|GDK_KP_Space
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
 name|GDK_Return
 operator|||
 name|kevent
@@ -1100,6 +1106,12 @@ operator|->
 name|keyval
 operator|==
 name|GDK_KP_Enter
+operator|||
+name|kevent
+operator|->
+name|keyval
+operator|==
+name|GDK_ISO_Enter
 operator|)
 condition|)
 block|{

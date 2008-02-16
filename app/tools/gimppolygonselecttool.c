@@ -1440,10 +1440,13 @@ name|TRUE
 expr_stmt|;
 break|break;
 case|case
+name|GDK_Return
+case|:
+case|case
 name|GDK_KP_Enter
 case|:
 case|case
-name|GDK_Return
+name|GDK_ISO_Enter
 case|:
 name|gimp_polygon_select_tool_commit
 argument_list|(

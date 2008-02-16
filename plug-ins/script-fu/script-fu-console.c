@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3a98ee0108
+DECL|struct|__anon29e2a6150108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -157,7 +157,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3a98ee0203
+DECL|enum|__anon29e2a6150203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2318,6 +2318,12 @@ condition|)
 block|{
 case|case
 name|GDK_Return
+case|:
+case|case
+name|GDK_KP_Enter
+case|:
+case|case
+name|GDK_ISO_Enter
 case|:
 if|if
 condition|(

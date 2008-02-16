@@ -2127,10 +2127,13 @@ name|keyval
 condition|)
 block|{
 case|case
+name|GDK_Return
+case|:
+case|case
 name|GDK_KP_Enter
 case|:
 case|case
-name|GDK_Return
+name|GDK_ISO_Enter
 case|:
 name|gimp_transform_tool_response
 argument_list|(

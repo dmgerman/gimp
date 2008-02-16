@@ -3031,10 +3031,13 @@ name|keyval
 condition|)
 block|{
 case|case
+name|GDK_Return
+case|:
+case|case
 name|GDK_KP_Enter
 case|:
 case|case
-name|GDK_Return
+name|GDK_ISO_Enter
 case|:
 name|gimp_vector_tool_to_selection_extended
 argument_list|(

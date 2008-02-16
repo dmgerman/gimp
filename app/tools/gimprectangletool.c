@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd2e95a0103
+DECL|enum|__anon27c439be0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd2e95a0203
+DECL|enum|__anon27c439be0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd2e95a0303
+DECL|enum|__anon27c439be0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -4438,10 +4438,13 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
+name|GDK_Return
+case|:
+case|case
 name|GDK_KP_Enter
 case|:
 case|case
-name|GDK_Return
+name|GDK_ISO_Enter
 case|:
 if|if
 condition|(

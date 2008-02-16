@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290cdbee0108
+DECL|struct|__anon2ad481a60108
 block|{
 DECL|member|width
 name|gint
@@ -1534,10 +1534,13 @@ name|keyval
 condition|)
 block|{
 case|case
+name|GDK_Return
+case|:
+case|case
 name|GDK_KP_Enter
 case|:
 case|case
-name|GDK_Return
+name|GDK_ISO_Enter
 case|:
 name|gimp_foreground_select_tool_apply
 argument_list|(
