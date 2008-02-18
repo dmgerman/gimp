@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -36,7 +36,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/base.h"
+file|"base/tile-swap.h"
 end_include
 
 begin_include
@@ -91,9 +91,6 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|gboolean
-name|kill_it
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -375,18 +372,19 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  * The purpose of this handler is to exit GIMP cleanly when the batch  * procedure calls the gimp-exit procedure. Without this callback, the  * message "batch command experienced an execution error" would appear  * and gimp would hang forever.  */
+end_comment
+
 begin_function
 specifier|static
 name|gboolean
-DECL|function|batch_exit_after_callback (Gimp * gimp,gboolean kill_it)
+DECL|function|batch_exit_after_callback (Gimp * gimp)
 name|batch_exit_after_callback
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|gboolean
-name|kill_it
 parameter_list|)
 block|{
 if|if
@@ -397,13 +395,14 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: %s\n"
-argument_list|,
-name|G_STRLOC
+literal|"EXIT: batch_exit_after_callback\n"
 argument_list|)
 expr_stmt|;
-comment|/*  make sure that the swap file is removed before we quit */
-name|base_exit
+name|gegl_exit
+argument_list|()
+expr_stmt|;
+comment|/*  make sure that the swap files are removed before we quit */
+name|tile_swap_exit
 argument_list|()
 expr_stmt|;
 name|exit
