@@ -128,10 +128,10 @@ name|GtkWidget
 modifier|*
 name|operation_combo
 decl_stmt|;
-DECL|member|options_box
+DECL|member|options_frame
 name|GtkWidget
 modifier|*
-name|options_box
+name|options_frame
 decl_stmt|;
 DECL|member|options_table
 name|GtkWidget
