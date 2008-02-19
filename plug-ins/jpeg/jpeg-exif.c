@@ -569,7 +569,7 @@ name|exif_data
 operator|->
 name|ifd
 index|[
-name|EXIF_IFD_0
+name|EXIF_IFD_EXIF
 index|]
 argument_list|,
 name|EXIF_TAG_PIXEL_X_DIMENSION
@@ -606,7 +606,7 @@ name|exif_data
 operator|->
 name|ifd
 index|[
-name|EXIF_IFD_0
+name|EXIF_IFD_EXIF
 index|]
 argument_list|,
 name|EXIF_TAG_PIXEL_Y_DIMENSION
