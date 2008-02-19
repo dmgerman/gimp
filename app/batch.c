@@ -395,7 +395,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: batch_exit_after_callback\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gegl_exit

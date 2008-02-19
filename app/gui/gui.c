@@ -1387,7 +1387,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gui_initialize_after_callback\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|#
@@ -1518,7 +1520,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gui_restore_callback\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gui_vtable_init
@@ -1818,7 +1822,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gui_restore_after_callback\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gimp
@@ -2208,7 +2214,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: gui_exit_callback\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -2381,7 +2389,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: gui_exit_after_callback\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func

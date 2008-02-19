@@ -303,7 +303,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956f87c0103
+DECL|enum|__anon27bb8c200103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1092,7 +1092,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: gimp_dispose\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 if|if
@@ -1188,7 +1190,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: gimp_finalize\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gimp_contexts_exit
@@ -2221,7 +2225,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gimp_real_initialize\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|status_callback
@@ -2571,7 +2577,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gimp_real_restore\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_manager_restore
@@ -2619,7 +2627,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: gimp_real_exit\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_manager_exit
@@ -3259,7 +3269,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gimp_load_config\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 comment|/*  this needs to be done before gimprc loading because gimprc can    *  use user defined units    */
@@ -3393,7 +3405,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gimp_initialize\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
@@ -3455,7 +3469,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"INIT: gimp_restore\n"
+literal|"INIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 comment|/*  initialize  the global parasite table  */
@@ -3736,7 +3752,9 @@ name|be_verbose
 condition|)
 name|g_print
 argument_list|(
-literal|"EXIT: gimp_exit\n"
+literal|"EXIT: %s\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
