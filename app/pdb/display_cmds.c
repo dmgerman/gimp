@@ -277,10 +277,12 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
 block|}
 name|return_vals
 operator|=
