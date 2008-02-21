@@ -129,6 +129,10 @@ DECL|member|dragging
 name|gboolean
 name|dragging
 decl_stmt|;
+DECL|member|inside
+name|gboolean
+name|inside
+decl_stmt|;
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
