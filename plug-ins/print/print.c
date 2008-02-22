@@ -1403,11 +1403,16 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|draw_page_cairo
+name|print_draw_page
 argument_list|(
 name|context
 argument_list|,
 name|data
+argument_list|)
+expr_stmt|;
+name|gimp_progress_update
+argument_list|(
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}

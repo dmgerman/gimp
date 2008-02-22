@@ -5,7 +5,7 @@ end_comment
 
 begin_function_decl
 name|gboolean
-name|draw_page_cairo
+name|print_draw_page
 parameter_list|(
 name|GtkPrintContext
 modifier|*
