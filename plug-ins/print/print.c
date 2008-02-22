@@ -726,6 +726,8 @@ name|NULL
 argument_list|,
 name|GIMP_EXPORT_CAN_HANDLE_RGB
 operator||
+name|GIMP_EXPORT_CAN_HANDLE_GRAY
+operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 argument_list|)
 expr_stmt|;
