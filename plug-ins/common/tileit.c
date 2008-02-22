@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d7ecd0108
+DECL|struct|__anon2c65fa9f0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289d7ecd0203
+DECL|enum|__anon2c65fa9f0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d7ecd0308
+DECL|struct|__anon2c65fa9f0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -584,7 +584,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d7ecd0408
+DECL|struct|__anon2c65fa9f0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -987,10 +987,10 @@ operator|&
 name|sel_y1
 argument_list|,
 operator|&
-name|sel_x2
+name|sel_width
 argument_list|,
 operator|&
-name|sel_y2
+name|sel_height
 argument_list|)
 condition|)
 block|{
@@ -1004,17 +1004,17 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|sel_width
-operator|=
 name|sel_x2
-operator|-
-name|sel_x1
-expr_stmt|;
-name|sel_height
 operator|=
+name|sel_x1
+operator|+
+name|sel_width
+expr_stmt|;
 name|sel_y2
-operator|-
+operator|=
 name|sel_y1
+operator|+
+name|sel_height
 expr_stmt|;
 comment|/* Calculate preview size */
 if|if

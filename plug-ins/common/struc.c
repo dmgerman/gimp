@@ -40883,7 +40883,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29584cca0103
+DECL|enum|__anon2ad979310103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40903,7 +40903,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29584cca0208
+DECL|struct|__anon2ad979310208
 block|{
 DECL|member|direction
 name|gint
@@ -42137,25 +42137,24 @@ operator|&
 name|y1
 argument_list|,
 operator|&
-name|x2
+name|width
 argument_list|,
 operator|&
-name|y2
+name|height
 argument_list|)
 condition|)
 return|return;
-comment|/* Get the size of the input image. (This will/must be the same        *  as the size of the output image.        */
-name|width
-operator|=
 name|x2
-operator|-
-name|x1
-expr_stmt|;
-name|height
 operator|=
+name|x1
+operator|+
+name|width
+expr_stmt|;
 name|y2
-operator|-
+operator|=
 name|y1
+operator|+
+name|height
 expr_stmt|;
 block|}
 name|bytes
