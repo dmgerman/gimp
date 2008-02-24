@@ -461,7 +461,7 @@ argument_list|(
 literal|"Copy _Visible"
 argument_list|)
 block|,
-literal|""
+literal|"<control><shift>C"
 block|,
 name|N_
 argument_list|(
@@ -536,7 +536,7 @@ argument_list|(
 literal|"Paste as New"
 argument_list|)
 block|,
-name|NULL
+literal|"<control><shift>V"
 block|,
 name|N_
 argument_list|(
@@ -586,7 +586,7 @@ argument_list|(
 literal|"Cu_t Named..."
 argument_list|)
 block|,
-literal|"<control><shift>X"
+literal|""
 block|,
 name|N_
 argument_list|(
@@ -611,7 +611,7 @@ argument_list|(
 literal|"_Copy Named..."
 argument_list|)
 block|,
-literal|"<control><shift>C"
+literal|""
 block|,
 name|N_
 argument_list|(
@@ -662,7 +662,7 @@ argument_list|(
 literal|"_Paste Named..."
 argument_list|)
 block|,
-literal|"<control><shift>V"
+literal|""
 block|,
 name|N_
 argument_list|(
