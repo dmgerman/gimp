@@ -33,6 +33,14 @@ directive|include
 file|"print-utils.h"
 end_include
 
+begin_define
+DECL|macro|PRINT_PAGE_SETUP_NAME
+define|#
+directive|define
+name|PRINT_PAGE_SETUP_NAME
+value|"print-page-setup"
+end_define
+
 begin_function
 name|void
 DECL|function|print_page_setup_dialog (GtkPrintOperation * operation)
@@ -128,7 +136,7 @@ name|print_utils_key_file_load_from_parasite
 argument_list|(
 name|image_ID
 argument_list|,
-literal|"print-page-setup"
+name|PRINT_PAGE_SETUP_NAME
 argument_list|)
 expr_stmt|;
 if|if
@@ -140,7 +148,7 @@ name|key_file
 operator|=
 name|print_utils_key_file_load_from_rcfile
 argument_list|(
-literal|"print-page-setup"
+name|PRINT_PAGE_SETUP_NAME
 argument_list|)
 expr_stmt|;
 if|if
@@ -152,22 +160,15 @@ name|GtkPageSetup
 modifier|*
 name|setup
 decl_stmt|;
-name|GError
-modifier|*
-name|error
-init|=
-name|NULL
-decl_stmt|;
 name|setup
 operator|=
 name|gtk_page_setup_new_from_key_file
 argument_list|(
 name|key_file
 argument_list|,
-name|NULL
+name|PRINT_PAGE_SETUP_NAME
 argument_list|,
-operator|&
-name|error
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -185,23 +186,6 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|setup
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_warning
-argument_list|(
-literal|"unable to read page setup from key file: %s"
-argument_list|,
-name|error
-operator|->
-name|message
-argument_list|)
-expr_stmt|;
-name|g_error_free
-argument_list|(
-name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -261,7 +245,7 @@ name|setup
 argument_list|,
 name|key_file
 argument_list|,
-name|NULL
+name|PRINT_PAGE_SETUP_NAME
 argument_list|)
 expr_stmt|;
 name|print_utils_key_file_save_as_parasite
@@ -270,14 +254,14 @@ name|key_file
 argument_list|,
 name|image_ID
 argument_list|,
-literal|"print-page-setup"
+name|PRINT_PAGE_SETUP_NAME
 argument_list|)
 expr_stmt|;
 name|print_utils_key_file_save_as_rcfile
 argument_list|(
 name|key_file
 argument_list|,
-literal|"print-page-setup"
+name|PRINT_PAGE_SETUP_NAME
 argument_list|)
 expr_stmt|;
 name|g_key_file_free

@@ -55,6 +55,14 @@ name|PRINT_SETTINGS_MINOR_VERSION
 value|4
 end_define
 
+begin_define
+DECL|macro|PRINT_SETTINGS_NAME
+define|#
+directive|define
+name|PRINT_SETTINGS_NAME
+value|"print-settings"
+end_define
+
 begin_function_decl
 specifier|static
 name|GKeyFile
@@ -229,7 +237,7 @@ name|print_utils_key_file_save_as_rcfile
 argument_list|(
 name|key_file
 argument_list|,
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|)
 expr_stmt|;
 comment|/* image setup */
@@ -342,7 +350,7 @@ name|data
 operator|->
 name|image_id
 argument_list|,
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|)
 expr_stmt|;
 block|}
@@ -473,7 +481,7 @@ name|g_key_file_set_value
 argument_list|(
 name|key_file
 argument_list|,
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|,
 name|key
 argument_list|,
@@ -500,12 +508,14 @@ block|{
 name|GKeyFile
 modifier|*
 name|key_file
-init|=
+decl_stmt|;
+name|key_file
+operator|=
 name|print_utils_key_file_load_from_rcfile
 argument_list|(
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|key_file
@@ -557,7 +567,7 @@ name|print_utils_key_file_load_from_parasite
 argument_list|(
 name|image_ID
 argument_list|,
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|)
 expr_stmt|;
 if|if
@@ -647,7 +657,7 @@ name|g_key_file_get_keys
 argument_list|(
 name|key_file
 argument_list|,
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|,
 operator|&
 name|n_keys
@@ -687,7 +697,7 @@ name|g_key_file_get_value
 argument_list|(
 name|key_file
 argument_list|,
-literal|"print-settings"
+name|PRINT_SETTINGS_NAME
 argument_list|,
 name|keys
 index|[

@@ -57,7 +57,7 @@ argument_list|(
 name|gimp_directory
 argument_list|()
 argument_list|,
-literal|"print-settings"
+name|basename
 argument_list|,
 name|NULL
 argument_list|)
