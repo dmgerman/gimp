@@ -1401,9 +1401,9 @@ name|gimp_progress_end
 argument_list|()
 expr_stmt|;
 comment|/* generate events to solve the problems described in bug #466928 */
-name|g_timeout_add
+name|g_timeout_add_seconds
 argument_list|(
-literal|1000
+literal|1
 argument_list|,
 operator|(
 name|GSourceFunc
