@@ -65,7 +65,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|save_print_settings_resource_file
+name|print_settings_save_resource_file
 parameter_list|(
 name|GKeyFile
 modifier|*
@@ -77,7 +77,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|save_print_settings_as_parasite
+name|print_settings_save_as_parasite
 parameter_list|(
 name|GKeyFile
 modifier|*
@@ -92,7 +92,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|add_print_setting_to_key_file
+name|print_settings_add_to_key_file
 parameter_list|(
 specifier|const
 name|gchar
@@ -136,7 +136,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|load_print_settings_from_key_file
+name|print_settings_load_from_key_file
 parameter_list|(
 name|PrintData
 modifier|*
@@ -151,9 +151,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GKeyFile
-modifier|*
-name|check_version
+name|gboolean
+name|print_settings_check_version
 parameter_list|(
 name|GKeyFile
 modifier|*
@@ -168,8 +167,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|load_print_settings (PrintData * data)
-name|load_print_settings
+DECL|function|print_settings_load (PrintData * data)
+name|print_settings_load
 parameter_list|(
 name|PrintData
 modifier|*
@@ -202,7 +201,7 @@ condition|(
 name|key_file
 condition|)
 block|{
-name|load_print_settings_from_key_file
+name|print_settings_load_from_key_file
 argument_list|(
 name|data
 argument_list|,
@@ -230,8 +229,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|save_print_settings (PrintData * data)
-name|save_print_settings
+DECL|function|print_settings_save (PrintData * data)
+name|print_settings_save
 parameter_list|(
 name|PrintData
 modifier|*
@@ -241,15 +240,13 @@ block|{
 name|GKeyFile
 modifier|*
 name|key_file
-decl_stmt|;
-name|key_file
-operator|=
+init|=
 name|print_settings_key_file_from_settings
 argument_list|(
 name|data
 argument_list|)
-expr_stmt|;
-name|save_print_settings_resource_file
+decl_stmt|;
+name|print_settings_save_resource_file
 argument_list|(
 name|key_file
 argument_list|)
@@ -356,7 +353,7 @@ operator|->
 name|use_full_page
 argument_list|)
 expr_stmt|;
-name|save_print_settings_as_parasite
+name|print_settings_save_as_parasite
 argument_list|(
 name|key_file
 argument_list|,
@@ -455,7 +452,7 @@ name|gtk_print_settings_foreach
 argument_list|(
 name|settings
 argument_list|,
-name|add_print_setting_to_key_file
+name|print_settings_add_to_key_file
 argument_list|,
 name|key_file
 argument_list|)
@@ -473,8 +470,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|save_print_settings_resource_file (GKeyFile * settings_key_file)
-name|save_print_settings_resource_file
+DECL|function|print_settings_save_resource_file (GKeyFile * settings_key_file)
+name|print_settings_save_resource_file
 parameter_list|(
 name|GKeyFile
 modifier|*
@@ -513,7 +510,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|error
+operator|!
+name|contents
 condition|)
 block|{
 name|g_warning
@@ -600,8 +598,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|save_print_settings_as_parasite (GKeyFile * settings_key_file,gint32 image_ID)
-name|save_print_settings_as_parasite
+DECL|function|print_settings_save_as_parasite (GKeyFile * settings_key_file,gint32 image_ID)
+name|print_settings_save_as_parasite
 parameter_list|(
 name|GKeyFile
 modifier|*
@@ -687,8 +685,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|add_print_setting_to_key_file (const gchar * key,const gchar * value,gpointer data)
-name|add_print_setting_to_key_file
+DECL|function|print_settings_add_to_key_file (const gchar * key,const gchar * value,gpointer data)
+name|print_settings_add_to_key_file
 parameter_list|(
 specifier|const
 name|gchar
@@ -798,11 +796,26 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-return|return
-name|check_version
+if|if
+condition|(
+operator|!
+name|print_settings_check_version
 argument_list|(
 name|key_file
 argument_list|)
+condition|)
+block|{
+name|g_key_file_free
+argument_list|(
+name|key_file
+argument_list|)
+expr_stmt|;
+return|return
+name|NULL
+return|;
+block|}
+return|return
+name|key_file
 return|;
 block|}
 end_function
@@ -898,11 +911,26 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
-return|return
-name|check_version
+if|if
+condition|(
+operator|!
+name|print_settings_check_version
 argument_list|(
 name|key_file
 argument_list|)
+condition|)
+block|{
+name|g_key_file_free
+argument_list|(
+name|key_file
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+return|return
+name|key_file
 return|;
 block|}
 end_function
@@ -910,8 +938,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|load_print_settings_from_key_file (PrintData * data,GKeyFile * key_file)
-name|load_print_settings_from_key_file
+DECL|function|print_settings_load_from_key_file (PrintData * data,GKeyFile * key_file)
+name|print_settings_load_from_key_file
 parameter_list|(
 name|PrintData
 modifier|*
@@ -1264,10 +1292,9 @@ end_function
 
 begin_function
 specifier|static
-name|GKeyFile
-modifier|*
-DECL|function|check_version (GKeyFile * key_file)
-name|check_version
+name|gboolean
+DECL|function|print_settings_check_version (GKeyFile * key_file)
+name|print_settings_check_version
 parameter_list|(
 name|GKeyFile
 modifier|*
@@ -1283,9 +1310,6 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|key_file
-operator|||
-operator|!
 name|g_key_file_has_group
 argument_list|(
 name|key_file
@@ -1294,7 +1318,7 @@ literal|"meta"
 argument_list|)
 condition|)
 return|return
-name|NULL
+name|FALSE
 return|;
 name|major_version
 operator|=
@@ -1316,7 +1340,7 @@ operator|!=
 name|PRINT_SETTINGS_MAJOR_VERSION
 condition|)
 return|return
-name|NULL
+name|FALSE
 return|;
 name|minor_version
 operator|=
@@ -1338,10 +1362,10 @@ operator|!=
 name|PRINT_SETTINGS_MINOR_VERSION
 condition|)
 return|return
-name|NULL
+name|FALSE
 return|;
 return|return
-name|key_file
+name|TRUE
 return|;
 block|}
 end_function

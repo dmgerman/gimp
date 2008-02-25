@@ -865,7 +865,7 @@ operator|.
 name|yres
 argument_list|)
 expr_stmt|;
-name|load_print_settings
+name|print_settings_load
 argument_list|(
 operator|&
 name|data
@@ -968,7 +968,7 @@ literal|"end-print"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|save_print_settings
+name|print_settings_save
 argument_list|)
 argument_list|,
 operator|&

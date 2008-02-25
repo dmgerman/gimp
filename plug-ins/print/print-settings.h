@@ -5,7 +5,7 @@ end_comment
 
 begin_function_decl
 name|gboolean
-name|load_print_settings
+name|print_settings_load
 parameter_list|(
 name|PrintData
 modifier|*
@@ -16,7 +16,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|save_print_settings
+name|print_settings_save
 parameter_list|(
 name|PrintData
 modifier|*
