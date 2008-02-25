@@ -1130,6 +1130,8 @@ expr_stmt|;
 name|print_page_setup_save
 argument_list|(
 name|operation
+argument_list|,
+name|image_ID
 argument_list|)
 expr_stmt|;
 name|g_object_unref
