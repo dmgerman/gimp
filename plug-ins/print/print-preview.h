@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_PRINT_PREVIEW_H__
+name|__PRINT_PREVIEW_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_PRINT_PREVIEW_H__
+DECL|macro|__PRINT_PREVIEW_H__
 define|#
 directive|define
-name|__GIMP_PRINT_PREVIEW_H__
+name|__PRINT_PREVIEW_H__
 end_define
 
 begin_macro
@@ -21,89 +21,89 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_define
-DECL|macro|GIMP_TYPE_PRINT_PREVIEW
+DECL|macro|PRINT_TYPE_PREVIEW
 define|#
 directive|define
-name|GIMP_TYPE_PRINT_PREVIEW
-value|(gimp_print_preview_get_type ())
+name|PRINT_TYPE_PREVIEW
+value|(print_preview_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_PRINT_PREVIEW (obj)
+DECL|macro|PRINT_PREVIEW (obj)
 define|#
 directive|define
-name|GIMP_PRINT_PREVIEW
+name|PRINT_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_PRINT_PREVIEW, GimpPrintPreview))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), PRINT_TYPE_PREVIEW, PrintPreview))
 end_define
 
 begin_define
-DECL|macro|GIMP_PRINT_PREVIEW_CLASS (klass)
+DECL|macro|PRINT_PREVIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_PRINT_PREVIEW_CLASS
+name|PRINT_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_PRINT_PREVIEW, GimpPrintPreviewClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), PRINT_TYPE_PREVIEW, PrintPreviewClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PRINT_PREVIEW (obj)
+DECL|macro|PRINT_IS_PREVIEW (obj)
 define|#
 directive|define
-name|GIMP_IS_PRINT_PREVIEW
+name|PRINT_IS_PREVIEW
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_PRINT_PREVIEW))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), PRINT_TYPE_PREVIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_PRINT_PREVIEW_CLASS (klass)
+DECL|macro|PRINT_IS_PREVIEW_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_PRINT_PREVIEW_CLASS
+name|PRINT_IS_PREVIEW_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_PRINT_PREVIEW))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), PRINT_TYPE_PREVIEW))
 end_define
 
 begin_define
-DECL|macro|GIMP_PRINT_PREVIEW_GET_CLASS (obj)
+DECL|macro|PRINT_PREVIEW_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_PRINT_PREVIEW_GET_CLASS
+name|PRINT_PREVIEW_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PRINT_PREVIEW, GimpPrintPreviewClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), PRINT_TYPE_PREVIEW, PrintPreviewClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpPrintPreview
+DECL|typedef|PrintPreview
 typedef|typedef
 name|struct
-name|_GimpPrintPreview
-name|GimpPrintPreview
+name|_PrintPreview
+name|PrintPreview
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpPrintPreviewClass
+DECL|typedef|PrintPreviewClass
 typedef|typedef
 name|struct
-name|_GimpPrintPreviewClass
-name|GimpPrintPreviewClass
+name|_PrintPreviewClass
+name|PrintPreviewClass
 typedef|;
 end_typedef
 
 begin_decl_stmt
 name|GType
-name|gimp_print_preview_get_type
+name|print_preview_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_print_preview_new
+name|print_preview_new
 parameter_list|(
 name|GtkPageSetup
 modifier|*
@@ -128,9 +128,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_print_preview_set_image_dpi
+name|print_preview_set_image_dpi
 parameter_list|(
-name|GimpPrintPreview
+name|PrintPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -145,9 +145,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_print_preview_set_page_setup
+name|print_preview_set_page_setup
 parameter_list|(
-name|GimpPrintPreview
+name|PrintPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -160,9 +160,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_print_preview_set_image_offsets
+name|print_preview_set_image_offsets
 parameter_list|(
-name|GimpPrintPreview
+name|PrintPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -177,9 +177,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_print_preview_set_image_offsets_max
+name|print_preview_set_image_offsets_max
 parameter_list|(
-name|GimpPrintPreview
+name|PrintPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -194,9 +194,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_print_preview_set_use_full_page
+name|print_preview_set_use_full_page
 parameter_list|(
-name|GimpPrintPreview
+name|PrintPreview
 modifier|*
 name|preview
 parameter_list|,
@@ -216,7 +216,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_PRINT_PREVIEW_H__ */
+comment|/* __PRINT_PREVIEW_H__ */
 end_comment
 
 end_unit
