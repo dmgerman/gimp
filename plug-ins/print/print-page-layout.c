@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e4dbf40108
+DECL|struct|__anon2af293920108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e4dbf40203
+DECL|enum|__anon2af293920203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -722,18 +722,6 @@ operator|->
 name|use_full_page
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
-argument_list|(
-name|info
-operator|.
-name|preview
-argument_list|,
-literal|200
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
@@ -799,14 +787,6 @@ return|;
 block|}
 end_function
 
-begin_define
-DECL|macro|SB_WIDTH
-define|#
-directive|define
-name|SB_WIDTH
-value|8
-end_define
-
 begin_function
 specifier|static
 name|void
@@ -829,6 +809,12 @@ argument_list|(
 name|operation
 argument_list|)
 expr_stmt|;
+name|print_size_info_set_page_setup
+argument_list|(
+operator|&
+name|info
+argument_list|)
+expr_stmt|;
 name|print_preview_set_page_setup
 argument_list|(
 name|PRINT_PREVIEW
@@ -841,14 +827,16 @@ argument_list|,
 name|setup
 argument_list|)
 expr_stmt|;
-name|print_size_info_set_page_setup
-argument_list|(
-operator|&
-name|info
-argument_list|)
-expr_stmt|;
 block|}
 end_function
+
+begin_define
+DECL|macro|SB_WIDTH
+define|#
+directive|define
+name|SB_WIDTH
+value|8
+end_define
 
 begin_function
 specifier|static
