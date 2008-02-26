@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad684870103
+DECL|enum|__anon292d59d70103
 block|{
 DECL|enumerator|CENTER_NONE
 name|CENTER_NONE
@@ -36,7 +36,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad684870208
+DECL|struct|__anon292d59d70208
 block|{
 DECL|member|num_pages
 name|gint
@@ -86,10 +86,6 @@ DECL|member|operation
 name|GtkPrintOperation
 modifier|*
 name|operation
-decl_stmt|;
-DECL|member|orientation
-name|GtkPageOrientation
-name|orientation
 decl_stmt|;
 DECL|typedef|PrintData
 block|}

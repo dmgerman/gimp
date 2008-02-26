@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2945c9950108
+DECL|struct|__anon29e3ad870108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2945c9950203
+DECL|enum|__anon29e3ad870203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -4349,7 +4349,9 @@ name|size_entry
 argument_list|,
 name|WIDTH
 argument_list|,
-literal|0.0
+name|page_width
+operator|/
+literal|100.0
 argument_list|,
 name|x
 argument_list|)
@@ -4362,7 +4364,9 @@ name|size_entry
 argument_list|,
 name|HEIGHT
 argument_list|,
-literal|0.0
+name|page_height
+operator|/
+literal|100.0
 argument_list|,
 name|y
 argument_list|)
@@ -4461,16 +4465,6 @@ argument_list|,
 name|y
 argument_list|,
 name|GIMP_MAX_RESOLUTION
-argument_list|)
-expr_stmt|;
-comment|/* FIXME: is this still needed at all? */
-name|data
-operator|->
-name|orientation
-operator|=
-name|gtk_page_setup_get_orientation
-argument_list|(
-name|setup
 argument_list|)
 expr_stmt|;
 block|}
