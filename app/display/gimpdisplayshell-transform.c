@@ -974,12 +974,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_points:  * @shell:       a #GimpDisplayShell  * @points:      array of x, y coordinate pairs  * @coords:      returns the corresponding display coordinates  * @n_points:    number of points  * @use_offsets: if %TRUE, the source coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_points:  * @shell:       a #GimpDisplayShell  * @points:      array of GimpVectors2 coordinate pairs  * @coords:      returns the corresponding display coordinates  * @n_points:    number of points  * @use_offsets: if %TRUE, the source coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_points (GimpDisplayShell * shell,const gdouble * points,GdkPoint * coords,gint n_points,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_points (GimpDisplayShell * shell,const GimpVector2 * points,GdkPoint * coords,gint n_points,gboolean use_offsets)
 name|gimp_display_shell_transform_points
 parameter_list|(
 name|GimpDisplayShell
@@ -987,7 +987,7 @@ modifier|*
 name|shell
 parameter_list|,
 specifier|const
-name|gdouble
+name|GimpVector2
 modifier|*
 name|points
 parameter_list|,
@@ -1078,9 +1078,9 @@ init|=
 name|points
 index|[
 name|i
-operator|*
-literal|2
 index|]
+operator|.
+name|x
 operator|+
 name|offset_x
 decl_stmt|;
@@ -1090,11 +1090,9 @@ init|=
 name|points
 index|[
 name|i
-operator|*
-literal|2
-operator|+
-literal|1
 index|]
+operator|.
+name|y
 operator|+
 name|offset_y
 decl_stmt|;

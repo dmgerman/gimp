@@ -3701,7 +3701,7 @@ modifier|*
 name|curve
 parameter_list|)
 block|{
-name|gdouble
+name|GimpVector2
 modifier|*
 name|points
 decl_stmt|;
@@ -3734,10 +3734,8 @@ name|points
 operator|=
 name|g_new
 argument_list|(
-name|gdouble
+name|GimpVector2
 argument_list|,
-literal|2
-operator|*
 name|len
 argument_list|)
 expr_stmt|;
@@ -3778,9 +3776,9 @@ decl_stmt|;
 name|points
 index|[
 name|i
-operator|*
-literal|2
 index|]
+operator|.
+name|x
 operator|=
 operator|(
 name|coords
@@ -3791,11 +3789,9 @@ expr_stmt|;
 name|points
 index|[
 name|i
-operator|*
-literal|2
-operator|+
-literal|1
 index|]
+operator|.
+name|y
 operator|=
 operator|(
 name|coords

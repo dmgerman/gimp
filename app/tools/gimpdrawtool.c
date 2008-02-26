@@ -6425,7 +6425,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const gdouble * points,gint n_points,gboolean filled,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled,gboolean use_offsets)
 name|gimp_draw_tool_draw_lines
 parameter_list|(
 name|GimpDrawTool
@@ -6433,7 +6433,7 @@ modifier|*
 name|draw_tool
 parameter_list|,
 specifier|const
-name|gdouble
+name|GimpVector2
 modifier|*
 name|points
 parameter_list|,
@@ -6465,6 +6465,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|points
+operator|==
+name|NULL
+operator|||
 name|n_points
 operator|==
 literal|0

@@ -1084,11 +1084,6 @@ name|gimp_draw_tool_draw_lines
 argument_list|(
 name|draw_tool
 argument_list|,
-operator|(
-specifier|const
-name|gdouble
-operator|*
-operator|)
 name|free_sel
 operator|->
 name|points

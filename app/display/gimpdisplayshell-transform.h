@@ -178,7 +178,7 @@ modifier|*
 name|shell
 parameter_list|,
 specifier|const
-name|gdouble
+name|GimpVector2
 modifier|*
 name|points
 parameter_list|,

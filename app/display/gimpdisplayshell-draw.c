@@ -1403,11 +1403,6 @@ name|gimp_display_shell_transform_points
 argument_list|(
 name|shell
 argument_list|,
-operator|(
-specifier|const
-name|gdouble
-operator|*
-operator|)
 name|points
 argument_list|,
 name|coords
