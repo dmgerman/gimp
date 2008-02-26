@@ -11,6 +11,11 @@ parameter_list|(
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|)
 function_decl|;
 end_function_decl

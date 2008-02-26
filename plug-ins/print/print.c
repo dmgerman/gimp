@@ -1479,6 +1479,8 @@ return|return
 name|print_page_layout_gui
 argument_list|(
 name|data
+argument_list|,
+name|PRINT_PROC_NAME
 argument_list|)
 return|;
 block|}

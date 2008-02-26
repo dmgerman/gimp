@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af293920108
+DECL|struct|__anon2945c9950108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af293920203
+DECL|enum|__anon2945c9950203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -358,12 +358,17 @@ end_decl_stmt
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|print_page_layout_gui (PrintData * data)
+DECL|function|print_page_layout_gui (PrintData * data,const gchar * help_id)
 name|print_page_layout_gui
 parameter_list|(
 name|PrintData
 modifier|*
 name|data
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|help_id
 parameter_list|)
 block|{
 name|GtkWidget
@@ -779,6 +784,17 @@ argument_list|,
 name|main_hbox
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|gimp_help_connect
+argument_list|(
+name|main_hbox
+argument_list|,
+name|gimp_standard_help_func
+argument_list|,
+name|help_id
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 return|return
