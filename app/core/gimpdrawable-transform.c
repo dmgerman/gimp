@@ -2550,7 +2550,7 @@ name|orig_tiles
 argument_list|,
 name|matrix
 argument_list|,
-name|GIMP_TRANSFORM_FORWARD
+name|direction
 argument_list|,
 name|interpolation_type
 argument_list|,
