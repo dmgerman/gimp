@@ -1287,6 +1287,15 @@ argument_list|(
 literal|"<Image>"
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|image_managers
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|display
 operator|=
 name|gimp_display_new
