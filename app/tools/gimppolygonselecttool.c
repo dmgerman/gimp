@@ -716,7 +716,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-name|GIMP_TOOL_CURSOR_FREE_SELECT
+name|GIMP_TOOL_CURSOR_POLYGON_SELECT
 argument_list|)
 expr_stmt|;
 name|poly_sel_tool
