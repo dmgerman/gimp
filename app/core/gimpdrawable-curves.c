@@ -258,12 +258,22 @@ name|curve
 argument_list|)
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: create a curves object with the right number of points
+endif|#
+directive|endif
 comment|/*  unset the last point  */
 name|gimp_curve_set_point
 argument_list|(
 name|curve
 argument_list|,
-name|GIMP_CURVE_NUM_POINTS
+name|curve
+operator|->
+name|n_points
 operator|-
 literal|1
 argument_list|,
@@ -272,6 +282,19 @@ literal|1
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|n_points
+operator|=
+name|MIN
+argument_list|(
+name|n_points
+operator|/
+literal|2
+argument_list|,
+name|curve
+operator|->
+name|n_points
 argument_list|)
 expr_stmt|;
 for|for
@@ -283,8 +306,6 @@ init|;
 name|i
 operator|<
 name|n_points
-operator|/
-literal|2
 condition|;
 name|i
 operator|++

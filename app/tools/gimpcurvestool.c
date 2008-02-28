@@ -3093,6 +3093,11 @@ name|gimp_curve_get_uchar
 argument_list|(
 name|curve
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|r
+argument_list|)
+argument_list|,
 name|r
 argument_list|)
 expr_stmt|;
@@ -3131,6 +3136,11 @@ index|[
 name|GIMP_HISTOGRAM_RED
 index|]
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|r
+argument_list|)
+argument_list|,
 name|r
 argument_list|)
 expr_stmt|;
@@ -3143,6 +3153,11 @@ index|[
 name|GIMP_HISTOGRAM_GREEN
 index|]
 argument_list|,
+sizeof|sizeof
+argument_list|(
+name|g
+argument_list|)
+argument_list|,
 name|g
 argument_list|)
 expr_stmt|;
@@ -3154,6 +3169,11 @@ name|curve
 index|[
 name|GIMP_HISTOGRAM_BLUE
 index|]
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|b
+argument_list|)
 argument_list|,
 name|b
 argument_list|)
