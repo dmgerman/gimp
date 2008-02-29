@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GTK+ Integration for the Mac OS X Menubar.  *  * Copyright (C) 2007 Pioneer Research Center USA, Inc.  *  * For further information, see:  * http://developer.imendio.com/projects/gtk-macosx/menubar  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* GTK+ Integration for the Mac OS X Menubar.  *  * Copyright (C) 2007 Pioneer Research Center USA, Inc.  * Copyright (C) 2007 Imendio AB  *  * For further information, see:  * http://developer.imendio.com/projects/gtk-macosx/menubar  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; version 2.1  * of the License.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -40,7 +40,7 @@ file|"ige-mac-menu.h"
 end_include
 
 begin_comment
-comment|/* TODO  *  * - Sync adding/removing/reordering items  * - Create on demand? (can this be done with gtk+? ie fill in menu      items when the menu is opened)  * - Figure out what to do per app/window...  *  */
+comment|/* TODO  *  * - Adding a standard Window menu (Minimize etc)?  * - Sync reordering items? Does that work now?  * - Create on demand? (can this be done with gtk+? ie fill in menu      items when the menu is opened)  * - Figure out what to do per app/window...  *  */
 end_comment
 
 begin_define
@@ -274,11 +274,17 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279857e20108
+DECL|struct|__anon2c09bdcd0108
 block|{
 DECL|member|menu
 name|MenuRef
 name|menu
+decl_stmt|;
+DECL|member|toplevel
+name|guint
+name|toplevel
+range|:
+literal|1
 decl_stmt|;
 DECL|typedef|CarbonMenu
 block|}
@@ -365,7 +371,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|carbon_menu_connect (GtkWidget * menu,MenuRef menuRef)
+DECL|function|carbon_menu_connect (GtkWidget * menu,MenuRef menuRef,gboolean toplevel)
 name|carbon_menu_connect
 parameter_list|(
 name|GtkWidget
@@ -374,6 +380,9 @@ name|menu
 parameter_list|,
 name|MenuRef
 name|menuRef
+parameter_list|,
+name|gboolean
+name|toplevel
 parameter_list|)
 block|{
 name|CarbonMenu
@@ -420,6 +429,12 @@ name|menu
 operator|=
 name|menuRef
 expr_stmt|;
+name|carbon_menu
+operator|->
+name|toplevel
+operator|=
+name|toplevel
+expr_stmt|;
 block|}
 end_function
 
@@ -430,7 +445,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279857e20208
+DECL|struct|__anon2c09bdcd0208
 block|{
 DECL|member|menu
 name|MenuRef
@@ -1922,6 +1937,12 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+specifier|static
+name|gboolean
+name|is_setup
+init|=
+name|FALSE
+decl_stmt|;
 name|EventHandlerUPP
 name|menu_event_handler_upp
 decl_stmt|;
@@ -1959,6 +1980,11 @@ name|kEventMenuClosed
 block|}
 block|}
 decl_stmt|;
+if|if
+condition|(
+name|is_setup
+condition|)
+return|return;
 comment|/* FIXME: We might have to install one per window? */
 name|menu_event_handler_upp
 operator|=
@@ -1994,6 +2020,10 @@ comment|/* FIXME: Remove the handler with: */
 block|RemoveEventHandler(menu_event_handler_ref);   DisposeEventHandlerUPP(menu_event_handler_upp);
 endif|#
 directive|endif
+name|is_setup
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -2051,6 +2081,8 @@ name|menu_shell
 argument_list|)
 argument_list|,
 name|carbon_menu
+argument_list|,
+name|toplevel
 argument_list|)
 expr_stmt|;
 name|children
@@ -2408,6 +2440,16 @@ literal|0
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|emission_hook_count
+specifier|static
+name|gint
+name|emission_hook_count
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|gboolean
@@ -2533,12 +2575,7 @@ name|menu
 argument_list|,
 name|carbon_menu
 operator|->
-name|menu
-operator|==
-operator|(
-name|MenuRef
-operator|)
-name|data
+name|toplevel
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2566,6 +2603,16 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|emission_hook_count
+operator|--
+expr_stmt|;
+if|if
+condition|(
+name|emission_hook_count
+operator|>
+literal|0
+condition|)
+return|return;
 name|g_signal_remove_emission_hook
 argument_list|(
 name|g_signal_lookup
@@ -2577,6 +2624,10 @@ argument_list|)
 argument_list|,
 name|emission_hook_id
 argument_list|)
+expr_stmt|;
+name|emission_hook_id
+operator|=
+literal|0
 expr_stmt|;
 block|}
 end_function
@@ -2595,11 +2646,12 @@ modifier|*
 name|menu_shell
 parameter_list|)
 block|{
+name|CarbonMenu
+modifier|*
+name|current_menu
+decl_stmt|;
 name|MenuRef
 name|carbon_menubar
-decl_stmt|;
-name|guint
-name|hook_id
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2635,6 +2687,30 @@ argument_list|(
 literal|"CarbonMenuItem"
 argument_list|)
 expr_stmt|;
+name|current_menu
+operator|=
+name|carbon_menu_get
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|menu_shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|current_menu
+condition|)
+block|{
+name|SetRootMenu
+argument_list|(
+name|current_menu
+operator|->
+name|menu
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|CreateNewMenu
 argument_list|(
 literal|0
@@ -2655,6 +2731,13 @@ expr_stmt|;
 name|setup_menu_event_handler
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+name|emission_hook_id
+operator|==
+literal|0
+condition|)
+block|{
 name|emission_hook_id
 operator|=
 name|g_signal_add_emission_hook
@@ -2670,10 +2753,14 @@ literal|0
 argument_list|,
 name|parent_set_emission_hook
 argument_list|,
-name|carbon_menubar
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
+expr_stmt|;
+block|}
+name|emission_hook_count
+operator|++
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -2726,6 +2813,9 @@ argument_list|(
 name|menu_item
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|setup_menu_event_handler
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
@@ -2890,6 +2980,9 @@ argument_list|(
 name|menu_item
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|setup_menu_event_handler
+argument_list|()
 expr_stmt|;
 if|if
 condition|(
