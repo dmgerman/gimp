@@ -326,7 +326,7 @@ DECL|macro|DEFAULT_EVENT_SMOOTHING
 define|#
 directive|define
 name|DEFAULT_EVENT_SMOOTHING
-value|0.7
+value|0.98
 end_define
 
 begin_define

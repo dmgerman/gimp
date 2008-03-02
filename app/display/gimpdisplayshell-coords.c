@@ -783,7 +783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_eval_event:  * @shell:  * @coords:  * @inertia_factor:  * @time:  *  * This function evaluates the event to decide if the change is  * big enough to need handling and returns FALSE, if change is less  * than one image pixel or when smoothed event distance covers less  * than one pixel taking a whole lot of load off any draw tools that  * have no use for these sub-pixel events anyway. If the event is  * seen fit at first look, it is evaluated for speed and smoothed.  * Due to lousy time resolution of events pretty strong smoothing is  * applied to timestamps for sensible speed result. This function is  * also ideal for other event adjustment like pressure curve or  * calculating other derived dynamics factors like angular velocity  * calculation from tilt values, to allow for even more dynamic  * brushes. Calculated distance to last event is stored in GimpCoords  * because its a sideproduct of velocity calculation and is currently  * calculated in each tool. If they were to use this distance, more  * resouces on recalculating the same value would be saved.  *  * Return value:  **/
+comment|/**  * gimp_display_shell_eval_event:  * @shell:  * @coords:  * @inertia_factor:  * @time:  *  * This function evaluates the event to decide if the change is  * big enough to need handling and returns FALSE, if change is less  * than set filter level taking a whole lot of load off any draw tools  * that have no use for these events anyway. If the event is  * seen fit at first look, it is evaluated for speed and smoothed.  * Due to lousy time resolution of events pretty strong smoothing is  * applied to timestamps for sensible speed result. This function is  * also ideal for other event adjustment like pressure curve or  * calculating other derived dynamics factors like angular velocity  * calculation from tilt values, to allow for even more dynamic  * brushes. Calculated distance to last event is stored in GimpCoords  * because its a sideproduct of velocity calculation and is currently  * calculated in each tool. If they were to use this distance, more  * resouces on recalculating the same value would be saved.  *  * Return value:  **/
 end_comment
 
 begin_function
@@ -823,6 +823,61 @@ decl_stmt|;
 name|gdouble
 name|dist
 decl_stmt|;
+name|gdouble
+name|filter
+decl_stmt|;
+name|gdouble
+name|inertia
+decl_stmt|;
+comment|/* Event filtering& smoothing causes problems with cursor tracking    * when zoomed above screen resolution so we need to supress it.    */
+if|if
+condition|(
+name|shell
+operator|->
+name|scale_x
+operator|>
+literal|1.0
+operator|||
+name|shell
+operator|->
+name|scale_y
+operator|>
+literal|1.0
+condition|)
+block|{
+name|filter
+operator|=
+name|filter_treshhold
+operator|/
+operator|(
+name|MAX
+argument_list|(
+name|shell
+operator|->
+name|scale_x
+argument_list|,
+name|shell
+operator|->
+name|scale_y
+argument_list|)
+operator|)
+expr_stmt|;
+name|inertia
+operator|=
+literal|0.0
+expr_stmt|;
+block|}
+else|else
+block|{
+name|filter
+operator|=
+name|filter_treshhold
+expr_stmt|;
+name|inertia
+operator|=
+name|inertia_factor
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|shell
@@ -896,14 +951,14 @@ argument_list|(
 name|dx
 argument_list|)
 operator|<
-name|filter_treshhold
+name|filter
 operator|&&
 name|fabs
 argument_list|(
 name|dy
 argument_list|)
 operator|<
-name|filter_treshhold
+name|filter
 condition|)
 return|return
 name|FALSE
@@ -1047,7 +1102,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|inertia_factor
+name|inertia
 operator|>
 literal|0
 operator|&&
@@ -1067,7 +1122,7 @@ name|SQR
 argument_list|(
 literal|20
 operator|*
-name|inertia_factor
+name|inertia
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -1132,7 +1187,7 @@ argument_list|(
 name|sin_old
 argument_list|)
 operator|*
-name|inertia_factor
+name|inertia
 operator|+
 name|asin
 argument_list|(
@@ -1142,7 +1197,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|inertia_factor
+name|inertia
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1179,7 +1234,7 @@ argument_list|(
 name|cos_old
 argument_list|)
 operator|*
-name|inertia_factor
+name|inertia
 operator|+
 name|acos
 argument_list|(
@@ -1189,7 +1244,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|inertia_factor
+name|inertia
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1425,7 +1480,7 @@ name|distance
 operator|-
 name|dist
 argument_list|,
-name|inertia_factor
+name|inertia
 argument_list|)
 expr_stmt|;
 endif|#
