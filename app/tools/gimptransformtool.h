@@ -210,7 +210,7 @@ name|tx1
 decl_stmt|,
 name|ty1
 decl_stmt|;
-comment|/*  transformed coords                */
+comment|/*  transformed handle coords         */
 DECL|member|tx2
 DECL|member|ty2
 name|gdouble
