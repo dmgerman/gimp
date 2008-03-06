@@ -136,6 +136,10 @@ DECL|member|preview_type
 name|GimpTransformPreviewType
 name|preview_type
 decl_stmt|;
+DECL|member|preview_opacity
+name|gdouble
+name|preview_opacity
+decl_stmt|;
 DECL|member|grid_type
 name|GimpTransformGridType
 name|grid_type
