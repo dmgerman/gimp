@@ -220,6 +220,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpStroke
+modifier|*
+name|gimp_pdb_get_vectors_stroke
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|,
+name|gint
+name|stroke_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
