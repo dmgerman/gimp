@@ -429,7 +429,7 @@ literal|"tools-color-average-radius-minimum"
 block|,
 name|GIMP_STOCK_TOOL_COLOR_PICKER
 block|,
-literal|"M Color Picker Radius"
+literal|"Minimize Color Picker Radius"
 block|,
 name|NULL
 block|,
@@ -447,7 +447,7 @@ literal|"tools-color-average-radius-maximum"
 block|,
 name|GIMP_STOCK_TOOL_COLOR_PICKER
 block|,
-literal|"Maximum Color Picker Radius"
+literal|"Maximize Color Picker Radius"
 block|,
 name|NULL
 block|,
@@ -567,7 +567,7 @@ literal|"tools-paint-brush-scale-minimum"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"M Brush Scale"
+literal|"Minimize Brush Scale"
 block|,
 name|NULL
 block|,
@@ -585,7 +585,7 @@ literal|"tools-paint-brush-scale-maximum"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Maximum Brush Scale"
+literal|"Maximize Brush Scale"
 block|,
 name|NULL
 block|,
@@ -705,7 +705,7 @@ literal|"tools-ink-blob-size-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"M Ink Blob Size"
+literal|"Minimize Ink Blob Size"
 block|,
 name|NULL
 block|,
@@ -723,7 +723,7 @@ literal|"tools-ink-blob-size-maximum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"Maximum Ink Blob Size"
+literal|"Maximize Ink Blob Size"
 block|,
 name|NULL
 block|,
@@ -843,7 +843,7 @@ literal|"tools-ink-blob-aspect-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"M Ink Blob Aspect"
+literal|"Minimize Ink Blob Aspect"
 block|,
 name|NULL
 block|,
@@ -861,7 +861,7 @@ literal|"tools-ink-blob-aspect-maximum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"Maximum Ink Blob Aspect"
+literal|"Maximize Ink Blob Aspect"
 block|,
 name|NULL
 block|,
@@ -981,7 +981,7 @@ literal|"tools-ink-blob-angle-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"M Ink Blob Angle"
+literal|"Minimize Ink Blob Angle"
 block|,
 name|NULL
 block|,
@@ -999,7 +999,7 @@ literal|"tools-ink-blob-angle-maximum"
 block|,
 name|GIMP_STOCK_TOOL_INK
 block|,
-literal|"Maximum Ink Blob Angle"
+literal|"Maximize Ink Blob Angle"
 block|,
 name|NULL
 block|,
@@ -1119,7 +1119,7 @@ literal|"tools-foreground-select-brush-size-minimum"
 block|,
 name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 block|,
-literal|"M Foreground Select Brush Size"
+literal|"Minimize Foreground Select Brush Size"
 block|,
 name|NULL
 block|,
@@ -1137,7 +1137,7 @@ literal|"tools-foreground-select-brush-size-maximum"
 block|,
 name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 block|,
-literal|"Maximum Foreground Select Brush Size"
+literal|"Maximize Foreground Select Brush Size"
 block|,
 name|NULL
 block|,
@@ -1210,6 +1210,144 @@ block|,
 name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
 block|,
 literal|"Increase Foreground Select Brush Size More"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SKIP_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|, }
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|tools_transform_preview_opacity_actions
+specifier|static
+specifier|const
+name|GimpEnumActionEntry
+name|tools_transform_preview_opacity_actions
+index|[]
+init|=
+block|{
+block|{
+literal|"tools-transform-preview-opacity-set"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Set Transform Tool Preview Opacity"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SET
+block|,
+name|TRUE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-transform-preview-opacity-minimum"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Minimize Transform Tool Preview Opacity"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_FIRST
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-transform-preview-opacity-maximum"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Maximize Transform Tool Preview Opacity"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_LAST
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-transform-preview-opacity-decrease"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Decrease Transform Tool Preview Opacity"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-transform-preview-opacity-increase"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Increase Transform Tool Preview Opacity"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_NEXT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-transform-preview-opacity-decrease-skip"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Decrease Transform Tool Preview Opacity More"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SKIP_PREVIOUS
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-transform-preview-opacity-increase-skip"
+block|,
+name|GIMP_STOCK_TOOL_PERSPECTIVE
+block|,
+literal|"Increase Transform Tool Preview Opacity More"
 block|,
 name|NULL
 block|,
@@ -2158,6 +2296,23 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|tools_fg_select_brush_size_cmd_callback
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_action_group_add_enum_actions
+argument_list|(
+name|group
+argument_list|,
+name|tools_transform_preview_opacity_actions
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|tools_transform_preview_opacity_actions
+argument_list|)
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|tools_transform_preview_opacity_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
