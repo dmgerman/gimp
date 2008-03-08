@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c439be0103
+DECL|enum|__anon2c6461a00103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c439be0203
+DECL|enum|__anon2c6461a00203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27c439be0303
+DECL|enum|__anon2c6461a00303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -357,7 +357,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/* Integer coordinats of upper left corner and size. We must    * calculate this separately from the gdouble ones because sometimes    * we don't want to affect the integer size (e.g. when moving the    * rectangle), but that will be the case if we always calculate the    * integer coordinates based on rounded values of the gdouble    * coordinates even if the gdouble width remains constant.    */
+comment|/* Integer coordinats of upper left corner and size. We must    * calculate this separately from the gdouble ones because sometimes    * we don't want to affect the integer size (e.g. when moving the    * rectangle), but that will be the case if we always calculate the    * integer coordinates based on rounded values of the gdouble    * coordinates even if the gdouble width remains constant.    *    * TODO: Change the internal double-representation of the rectangle    * to x,y width,height instead of x1,y1 x2,y2. That way we don't    * need to keep a separate representation of the integer version of    * the rectangle; rounding width an height will yield consistant    * results and not depend on position of the rectangle.    */
 DECL|member|x1_int
 DECL|member|y1_int
 name|gint
