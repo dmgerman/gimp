@@ -548,7 +548,7 @@ name|gimp_free_select_tool_register
 block|,
 name|gimp_ellipse_select_tool_register
 block|,
-name|gimp_rect_select_tool_register
+name|gimp_rectangle_select_tool_register
 block|}
 decl_stmt|;
 name|GList

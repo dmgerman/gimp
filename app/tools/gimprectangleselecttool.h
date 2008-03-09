@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_RECT_SELECT_TOOL_H__
+name|__GIMP_RECTANGLE_SELECT_TOOL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_RECT_SELECT_TOOL_H__
+DECL|macro|__GIMP_RECTANGLE_SELECT_TOOL_H__
 define|#
 directive|define
-name|__GIMP_RECT_SELECT_TOOL_H__
+name|__GIMP_RECTANGLE_SELECT_TOOL_H__
 end_define
 
 begin_include
@@ -23,101 +23,101 @@ file|"gimpselectiontool.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_RECT_SELECT_TOOL
+DECL|macro|GIMP_TYPE_RECTANGLE_SELECT_TOOL
 define|#
 directive|define
-name|GIMP_TYPE_RECT_SELECT_TOOL
-value|(gimp_rect_select_tool_get_type ())
+name|GIMP_TYPE_RECTANGLE_SELECT_TOOL
+value|(gimp_rectangle_select_tool_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_TOOL (obj)
+DECL|macro|GIMP_RECTANGLE_SELECT_TOOL (obj)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_RECT_SELECT_TOOL, GimpRectSelectTool))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_RECTANGLE_SELECT_TOOL, GimpRectangleSelectTool))
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_TOOL_CLASS (klass)
+DECL|macro|GIMP_RECTANGLE_SELECT_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_TOOL_CLASS
+name|GIMP_RECTANGLE_SELECT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_RECT_SELECT_TOOL, GimpRectSelectToolClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_RECTANGLE_SELECT_TOOL, GimpRectangleSelectToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_RECT_SELECT_TOOL (obj)
+DECL|macro|GIMP_IS_RECTANGLE_SELECT_TOOL (obj)
 define|#
 directive|define
-name|GIMP_IS_RECT_SELECT_TOOL
+name|GIMP_IS_RECTANGLE_SELECT_TOOL
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_RECT_SELECT_TOOL))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_RECTANGLE_SELECT_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_RECT_SELECT_TOOL_CLASS (klass)
+DECL|macro|GIMP_IS_RECTANGLE_SELECT_TOOL_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_RECT_SELECT_TOOL_CLASS
+name|GIMP_IS_RECTANGLE_SELECT_TOOL_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_RECT_SELECT_TOOL))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_RECTANGLE_SELECT_TOOL))
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_TOOL_GET_CLASS (obj)
+DECL|macro|GIMP_RECTANGLE_SELECT_TOOL_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_TOOL_GET_CLASS
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_RECT_SELECT_TOOL, GimpRectSelectToolClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_RECTANGLE_SELECT_TOOL, GimpRectangleSelectToolClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_TOOL_GET_OPTIONS (t)
+DECL|macro|GIMP_RECTANGLE_SELECT_TOOL_GET_OPTIONS (t)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_TOOL_GET_OPTIONS
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_OPTIONS
 parameter_list|(
 name|t
 parameter_list|)
-value|(GIMP_RECT_SELECT_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
+value|(GIMP_RECTANGLE_SELECT_OPTIONS (gimp_tool_get_options (GIMP_TOOL (t))))
 end_define
 
 begin_typedef
-DECL|typedef|GimpRectSelectTool
+DECL|typedef|GimpRectangleSelectTool
 typedef|typedef
 name|struct
-name|_GimpRectSelectTool
-name|GimpRectSelectTool
+name|_GimpRectangleSelectTool
+name|GimpRectangleSelectTool
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpRectSelectToolClass
+DECL|typedef|GimpRectangleSelectToolClass
 typedef|typedef
 name|struct
-name|_GimpRectSelectToolClass
-name|GimpRectSelectToolClass
+name|_GimpRectangleSelectToolClass
+name|GimpRectangleSelectToolClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpRectSelectTool
+DECL|struct|_GimpRectangleSelectTool
 struct|struct
-name|_GimpRectSelectTool
+name|_GimpRectangleSelectTool
 block|{
 DECL|member|parent_instance
 name|GimpSelectionTool
@@ -132,9 +132,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpRectSelectToolClass
+DECL|struct|_GimpRectangleSelectToolClass
 struct|struct
-name|_GimpRectSelectToolClass
+name|_GimpRectangleSelectToolClass
 block|{
 DECL|member|parent_class
 name|GimpSelectionToolClass
@@ -147,7 +147,7 @@ modifier|*
 name|select
 function_decl|)
 parameter_list|(
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_select
 parameter_list|,
@@ -173,7 +173,7 @@ end_struct
 
 begin_function_decl
 name|void
-name|gimp_rect_select_tool_register
+name|gimp_rectangle_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
@@ -186,7 +186,7 @@ end_function_decl
 
 begin_decl_stmt
 name|GType
-name|gimp_rect_select_tool_get_type
+name|gimp_rectangle_select_tool_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -200,7 +200,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_RECT_SELECT_TOOL_H__  */
+comment|/*  __GIMP_RECTANGLE_SELECT_TOOL_H__  */
 end_comment
 
 end_unit

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_RECT_SELECT_OPTIONS_H__
+name|__GIMP_RECTANGLE_SELECT_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_RECT_SELECT_OPTIONS_H__
+DECL|macro|__GIMP_RECTANGLE_SELECT_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_RECT_SELECT_OPTIONS_H__
+name|__GIMP_RECTANGLE_SELECT_OPTIONS_H__
 end_define
 
 begin_include
@@ -23,90 +23,90 @@ file|"gimpselectionoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_RECT_SELECT_OPTIONS
+DECL|macro|GIMP_TYPE_RECTANGLE_SELECT_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_RECT_SELECT_OPTIONS
-value|(gimp_rect_select_options_get_type ())
+name|GIMP_TYPE_RECTANGLE_SELECT_OPTIONS
+value|(gimp_rectangle_select_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_OPTIONS (obj)
+DECL|macro|GIMP_RECTANGLE_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_OPTIONS
+name|GIMP_RECTANGLE_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_RECT_SELECT_OPTIONS, GimpRectSelectOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_RECTANGLE_SELECT_OPTIONS, GimpRectangleSelectOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_RECTANGLE_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_OPTIONS_CLASS
+name|GIMP_RECTANGLE_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_RECT_SELECT_OPTIONS, GimpRectSelectOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_RECTANGLE_SELECT_OPTIONS, GimpRectangleSelectOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_RECT_SELECT_OPTIONS (obj)
+DECL|macro|GIMP_IS_RECTANGLE_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_RECT_SELECT_OPTIONS
+name|GIMP_IS_RECTANGLE_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_RECT_SELECT_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_RECTANGLE_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_RECT_SELECT_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_RECTANGLE_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_RECT_SELECT_OPTIONS_CLASS
+name|GIMP_IS_RECTANGLE_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_RECT_SELECT_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_RECTANGLE_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_RECTANGLE_SELECT_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_OPTIONS_GET_CLASS
+name|GIMP_RECTANGLE_SELECT_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_RECT_SELECT_OPTIONS, GimpRectSelectOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_RECTANGLE_SELECT_OPTIONS, GimpRectangleSelectOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpRectSelectOptions
+DECL|typedef|GimpRectangleSelectOptions
 typedef|typedef
 name|struct
-name|_GimpRectSelectOptions
-name|GimpRectSelectOptions
+name|_GimpRectangleSelectOptions
+name|GimpRectangleSelectOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpRectSelectOptionsClass
+DECL|typedef|GimpRectangleSelectOptionsClass
 typedef|typedef
 name|struct
 name|_GimpToolOptionsClass
-name|GimpRectSelectOptionsClass
+name|GimpRectangleSelectOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpRectSelectOptions
+DECL|struct|_GimpRectangleSelectOptions
 struct|struct
-name|_GimpRectSelectOptions
+name|_GimpRectangleSelectOptions
 block|{
 DECL|member|parent_instence
 name|GimpSelectionOptions
@@ -126,7 +126,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_rect_select_options_get_type
+name|gimp_rectangle_select_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -137,7 +137,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_rect_select_options_gui
+name|gimp_rectangle_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -152,7 +152,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __GIMP_RECT_SELECT_OPTIONS_H__ */
+comment|/* __GIMP_RECTANGLE_SELECT_OPTIONS_H__ */
 end_comment
 
 end_unit

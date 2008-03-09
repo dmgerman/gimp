@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd17eda0103
+DECL|enum|__anon279e2d880103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -95,7 +95,7 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_options_set_property
+name|gimp_rectangle_select_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -119,7 +119,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_options_get_property
+name|gimp_rectangle_select_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -140,12 +140,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpRectSelectOptions,gimp_rect_select_options,GIMP_TYPE_SELECTION_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpRectangleSelectOptions,gimp_rectangle_select_options,GIMP_TYPE_SELECTION_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-argument|GimpRectSelectOptions
+argument|GimpRectangleSelectOptions
 argument_list|,
-argument|gimp_rect_select_options
+argument|gimp_rectangle_select_options
 argument_list|,
 argument|GIMP_TYPE_SELECTION_OPTIONS
 argument_list|,
@@ -156,9 +156,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_rect_select_options_class_init
+name|gimp_rectangle_select_options_class_init
 parameter_list|(
-name|GimpRectSelectOptionsClass
+name|GimpRectangleSelectOptionsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -176,13 +176,13 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_rect_select_options_set_property
+name|gimp_rectangle_select_options_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_rect_select_options_get_property
+name|gimp_rectangle_select_options_get_property
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -229,10 +229,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_options_init (GimpRectSelectOptions * options)
-name|gimp_rect_select_options_init
+DECL|function|gimp_rectangle_select_options_init (GimpRectangleSelectOptions * options)
+name|gimp_rectangle_select_options_init
 parameter_list|(
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|options
 parameter_list|)
@@ -242,8 +242,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_rect_select_options_set_property
+DECL|function|gimp_rectangle_select_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_rectangle_select_options_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -262,11 +262,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|options
 init|=
-name|GIMP_RECT_SELECT_OPTIONS
+name|GIMP_RECTANGLE_SELECT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -322,8 +322,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_rect_select_options_get_property
+DECL|function|gimp_rectangle_select_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_rectangle_select_options_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -341,11 +341,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|options
 init|=
-name|GIMP_RECT_SELECT_OPTIONS
+name|GIMP_RECTANGLE_SELECT_OPTIONS
 argument_list|(
 name|object
 argument_list|)
@@ -401,8 +401,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_rect_select_options_gui (GimpToolOptions * tool_options)
-name|gimp_rect_select_options_gui
+DECL|function|gimp_rectangle_select_options_gui (GimpToolOptions * tool_options)
+name|gimp_rectangle_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -436,7 +436,7 @@ name|tool_info
 operator|->
 name|tool_type
 operator|==
-name|GIMP_TYPE_RECT_SELECT_TOOL
+name|GIMP_TYPE_RECTANGLE_SELECT_TOOL
 condition|)
 block|{
 name|GtkWidget
@@ -538,7 +538,7 @@ argument_list|)
 operator|->
 name|antialias_toggle
 argument_list|,
-name|GIMP_RECT_SELECT_OPTIONS
+name|GIMP_RECTANGLE_SELECT_OPTIONS
 argument_list|(
 name|tool_options
 argument_list|)

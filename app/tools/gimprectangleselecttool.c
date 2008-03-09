@@ -190,10 +190,10 @@ file|"gimp-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|GimpRectSelectToolPrivate
+DECL|struct|GimpRectangleSelectToolPrivate
 typedef|typedef
 struct|struct
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 block|{
 DECL|member|operation
 name|GimpChannelOps
@@ -236,28 +236,28 @@ DECL|member|press_y
 name|gdouble
 name|press_y
 decl_stmt|;
-DECL|typedef|GimpRectSelectToolPrivate
+DECL|typedef|GimpRectangleSelectToolPrivate
 block|}
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 typedef|;
 end_typedef
 
 begin_define
-DECL|macro|GIMP_RECT_SELECT_TOOL_GET_PRIVATE (obj)
+DECL|macro|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE (obj)
 define|#
 directive|define
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 parameter_list|(
 name|obj
 parameter_list|)
 define|\
-value|((GimpRectSelectToolPrivate *) ((GimpRectSelectTool *) (obj))->priv)
+value|((GimpRectangleSelectToolPrivate *) ((GimpRectangleSelectTool *) (obj))->priv)
 end_define
 
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_rectangle_tool_iface_init
+name|gimp_rectangle_select_tool_rectangle_tool_iface_init
 parameter_list|(
 name|GimpRectangleToolInterface
 modifier|*
@@ -270,7 +270,7 @@ begin_function_decl
 specifier|static
 name|GObject
 modifier|*
-name|gimp_rect_select_tool_constructor
+name|gimp_rectangle_select_tool_constructor
 parameter_list|(
 name|GType
 name|type
@@ -288,7 +288,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_control
+name|gimp_rectangle_select_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -307,7 +307,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_button_press
+name|gimp_rectangle_select_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -333,7 +333,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_button_release
+name|gimp_rectangle_select_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -362,7 +362,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_active_modifier_key
+name|gimp_rectangle_select_tool_active_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -387,7 +387,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rect_select_tool_key_press
+name|gimp_rectangle_select_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -407,7 +407,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_oper_update
+name|gimp_rectangle_select_tool_oper_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -433,7 +433,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_cursor_update
+name|gimp_rectangle_select_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -456,7 +456,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_draw
+name|gimp_rectangle_select_tool_draw
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -468,7 +468,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rect_select_tool_select
+name|gimp_rectangle_select_tool_select
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -492,7 +492,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rect_select_tool_execute
+name|gimp_rectangle_select_tool_execute
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -516,7 +516,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_cancel
+name|gimp_rectangle_select_tool_cancel
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -528,7 +528,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rect_select_tool_rectangle_changed
+name|gimp_rectangle_select_tool_rectangle_changed
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -540,9 +540,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_real_select
+name|gimp_rectangle_select_tool_real_select
 parameter_list|(
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|,
@@ -567,9 +567,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_update_option_defaults
+name|gimp_rectangle_select_tool_update_option_defaults
 parameter_list|(
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|,
@@ -582,9 +582,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rect_select_tool_round_corners_notify
+name|gimp_rectangle_select_tool_round_corners_notify
 parameter_list|(
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|options
 parameter_list|,
@@ -592,7 +592,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|)
@@ -600,16 +600,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpRectSelectTool,gimp_rect_select_tool,GIMP_TYPE_SELECTION_TOOL,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_TOOL,gimp_rect_select_tool_rectangle_tool_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpRectangleSelectTool,gimp_rectangle_select_tool,GIMP_TYPE_SELECTION_TOOL,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_TOOL,gimp_rectangle_select_tool_rectangle_tool_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-argument|GimpRectSelectTool
+argument|GimpRectangleSelectTool
 argument_list|,
-argument|gimp_rect_select_tool
+argument|gimp_rectangle_select_tool
 argument_list|,
 argument|GIMP_TYPE_SELECTION_TOOL
 argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_TOOL,                                                 gimp_rect_select_tool_rectangle_tool_iface_init)
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_TOOL,                                                 gimp_rectangle_select_tool_rectangle_tool_iface_init)
 argument_list|)
 end_macro
 
@@ -618,12 +618,12 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_rect_select_tool_parent_class
+value|gimp_rectangle_select_tool_parent_class
 end_define
 
 begin_function
 name|void
-name|gimp_rect_select_tool_register
+name|gimp_rectangle_select_tool_register
 parameter_list|(
 name|GimpToolRegisterCallback
 name|callback
@@ -637,11 +637,11 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|GIMP_TYPE_RECT_SELECT_TOOL
+name|GIMP_TYPE_RECTANGLE_SELECT_TOOL
 argument_list|,
-name|GIMP_TYPE_RECT_SELECT_OPTIONS
+name|GIMP_TYPE_RECTANGLE_SELECT_OPTIONS
 argument_list|,
-name|gimp_rect_select_options_gui
+name|gimp_rectangle_select_options_gui
 argument_list|,
 literal|0
 argument_list|,
@@ -679,10 +679,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_class_init (GimpRectSelectToolClass * klass)
-name|gimp_rect_select_tool_class_init
+DECL|function|gimp_rectangle_select_tool_class_init (GimpRectangleSelectToolClass * klass)
+name|gimp_rectangle_select_tool_class_init
 parameter_list|(
-name|GimpRectSelectToolClass
+name|GimpRectangleSelectToolClass
 modifier|*
 name|klass
 parameter_list|)
@@ -720,7 +720,7 @@ name|klass
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -728,7 +728,7 @@ name|object_class
 operator|->
 name|constructor
 operator|=
-name|gimp_rect_select_tool_constructor
+name|gimp_rectangle_select_tool_constructor
 expr_stmt|;
 name|object_class
 operator|->
@@ -751,19 +751,19 @@ name|tool_class
 operator|->
 name|control
 operator|=
-name|gimp_rect_select_tool_control
+name|gimp_rectangle_select_tool_control
 expr_stmt|;
 name|tool_class
 operator|->
 name|button_press
 operator|=
-name|gimp_rect_select_tool_button_press
+name|gimp_rectangle_select_tool_button_press
 expr_stmt|;
 name|tool_class
 operator|->
 name|button_release
 operator|=
-name|gimp_rect_select_tool_button_release
+name|gimp_rectangle_select_tool_button_release
 expr_stmt|;
 name|tool_class
 operator|->
@@ -775,37 +775,37 @@ name|tool_class
 operator|->
 name|key_press
 operator|=
-name|gimp_rect_select_tool_key_press
+name|gimp_rectangle_select_tool_key_press
 expr_stmt|;
 name|tool_class
 operator|->
 name|active_modifier_key
 operator|=
-name|gimp_rect_select_tool_active_modifier_key
+name|gimp_rectangle_select_tool_active_modifier_key
 expr_stmt|;
 name|tool_class
 operator|->
 name|oper_update
 operator|=
-name|gimp_rect_select_tool_oper_update
+name|gimp_rectangle_select_tool_oper_update
 expr_stmt|;
 name|tool_class
 operator|->
 name|cursor_update
 operator|=
-name|gimp_rect_select_tool_cursor_update
+name|gimp_rectangle_select_tool_cursor_update
 expr_stmt|;
 name|draw_tool_class
 operator|->
 name|draw
 operator|=
-name|gimp_rect_select_tool_draw
+name|gimp_rectangle_select_tool_draw
 expr_stmt|;
 name|klass
 operator|->
 name|select
 operator|=
-name|gimp_rect_select_tool_real_select
+name|gimp_rectangle_select_tool_real_select
 expr_stmt|;
 block|}
 end_function
@@ -813,8 +813,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_rectangle_tool_iface_init (GimpRectangleToolInterface * iface)
-name|gimp_rect_select_tool_rectangle_tool_iface_init
+DECL|function|gimp_rectangle_select_tool_rectangle_tool_iface_init (GimpRectangleToolInterface * iface)
+name|gimp_rectangle_select_tool_rectangle_tool_iface_init
 parameter_list|(
 name|GimpRectangleToolInterface
 modifier|*
@@ -825,19 +825,19 @@ name|iface
 operator|->
 name|execute
 operator|=
-name|gimp_rect_select_tool_execute
+name|gimp_rectangle_select_tool_execute
 expr_stmt|;
 name|iface
 operator|->
 name|cancel
 operator|=
-name|gimp_rect_select_tool_cancel
+name|gimp_rectangle_select_tool_cancel
 expr_stmt|;
 name|iface
 operator|->
 name|rectangle_changed
 operator|=
-name|gimp_rect_select_tool_rectangle_changed
+name|gimp_rectangle_select_tool_rectangle_changed
 expr_stmt|;
 block|}
 end_function
@@ -845,10 +845,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_init (GimpRectSelectTool * rect_sel_tool)
-name|gimp_rect_select_tool_init
+DECL|function|gimp_rectangle_select_tool_init (GimpRectangleSelectTool * rect_sel_tool)
+name|gimp_rectangle_select_tool_init
 parameter_list|(
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|)
@@ -862,7 +862,7 @@ argument_list|(
 name|rect_sel_tool
 argument_list|)
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -882,14 +882,14 @@ name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|,
-name|GIMP_TYPE_RECT_SELECT_TOOL
+name|GIMP_TYPE_RECTANGLE_SELECT_TOOL
 argument_list|,
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -954,8 +954,8 @@ begin_function
 specifier|static
 name|GObject
 modifier|*
-DECL|function|gimp_rect_select_tool_constructor (GType type,guint n_params,GObjectConstructParam * params)
-name|gimp_rect_select_tool_constructor
+DECL|function|gimp_rectangle_select_tool_constructor (GType type,guint n_params,GObjectConstructParam * params)
+name|gimp_rectangle_select_tool_constructor
 parameter_list|(
 name|GType
 name|type
@@ -972,15 +972,15 @@ name|GObject
 modifier|*
 name|object
 decl_stmt|;
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|options
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -1007,21 +1007,21 @@ argument_list|)
 expr_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
 name|options
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_OPTIONS
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_OPTIONS
 argument_list|(
 name|rect_sel_tool
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -1050,7 +1050,7 @@ literal|"notify::round-corners"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_rect_select_tool_round_corners_notify
+name|gimp_rectangle_select_tool_round_corners_notify
 argument_list|)
 argument_list|,
 name|object
@@ -1066,7 +1066,7 @@ literal|"notify::corner-radius"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_rect_select_tool_round_corners_notify
+name|gimp_rectangle_select_tool_round_corners_notify
 argument_list|)
 argument_list|,
 name|object
@@ -1074,12 +1074,9 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_rect_select_tool_update_option_defaults
+name|gimp_rectangle_select_tool_update_option_defaults
 argument_list|(
-name|GIMP_RECT_SELECT_TOOL
-argument_list|(
-name|object
-argument_list|)
+name|rect_sel_tool
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1093,8 +1090,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
-name|gimp_rect_select_tool_control
+DECL|function|gimp_rectangle_select_tool_control (GimpTool * tool,GimpToolAction action,GimpDisplay * display)
+name|gimp_rectangle_select_tool_control
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1137,32 +1134,32 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_draw (GimpDrawTool * draw_tool)
-name|gimp_rect_select_tool_draw
+DECL|function|gimp_rectangle_select_tool_draw (GimpDrawTool * draw_tool)
+name|gimp_rectangle_select_tool_draw
 parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
 parameter_list|)
 block|{
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -1373,8 +1370,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
-name|gimp_rect_select_tool_button_press
+DECL|function|gimp_rectangle_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+name|gimp_rectangle_select_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1399,7 +1396,7 @@ name|GimpRectangleTool
 modifier|*
 name|rectangle
 decl_stmt|;
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
@@ -1407,7 +1404,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -1423,7 +1420,7 @@ argument_list|)
 expr_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|tool
 argument_list|)
@@ -1439,7 +1436,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -1751,8 +1748,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
-name|gimp_rect_select_tool_button_release
+DECL|function|gimp_rectangle_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
+name|gimp_rectangle_select_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -1776,24 +1773,24 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -1963,7 +1960,7 @@ name|redo
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_rect_select_tool_update_option_defaults
+name|gimp_rectangle_select_tool_update_option_defaults
 argument_list|(
 name|rect_sel_tool
 argument_list|,
@@ -1976,8 +1973,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_active_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
-name|gimp_rect_select_tool_active_modifier_key
+DECL|function|gimp_rectangle_select_tool_active_modifier_key (GimpTool * tool,GdkModifierType key,gboolean press,GdkModifierType state,GimpDisplay * display)
+name|gimp_rectangle_select_tool_active_modifier_key
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -2034,8 +2031,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rect_select_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
-name|gimp_rect_select_tool_key_press
+DECL|function|gimp_rectangle_select_tool_key_press (GimpTool * tool,GdkEventKey * kevent,GimpDisplay * display)
+name|gimp_rectangle_select_tool_key_press
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -2077,8 +2074,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
-name|gimp_rect_select_tool_oper_update
+DECL|function|gimp_rectangle_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
+name|gimp_rectangle_select_tool_oper_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -2174,8 +2171,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
-name|gimp_rect_select_tool_cursor_update
+DECL|function|gimp_rectangle_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
+name|gimp_rectangle_select_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
@@ -2246,8 +2243,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rect_select_tool_select (GimpRectangleTool * rectangle,gint x,gint y,gint w,gint h)
-name|gimp_rect_select_tool_select
+DECL|function|gimp_rectangle_select_tool_select (GimpRectangleTool * rectangle,gint x,gint y,gint w,gint h)
+name|gimp_rectangle_select_tool_select
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -2270,7 +2267,7 @@ name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
@@ -2282,7 +2279,7 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -2301,7 +2298,7 @@ argument_list|)
 expr_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|rectangle
 argument_list|)
@@ -2315,7 +2312,7 @@ argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -2399,7 +2396,7 @@ if|if
 condition|(
 name|rectangle_exists
 condition|)
-name|GIMP_RECT_SELECT_TOOL_GET_CLASS
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_CLASS
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -2428,10 +2425,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_real_select (GimpRectSelectTool * rect_sel_tool,GimpChannelOps operation,gint x,gint y,gint w,gint h)
-name|gimp_rect_select_tool_real_select
+DECL|function|gimp_rectangle_select_tool_real_select (GimpRectangleSelectTool * rect_sel_tool,GimpChannelOps operation,gint x,gint y,gint w,gint h)
+name|gimp_rectangle_select_tool_real_select
 parameter_list|(
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|,
@@ -2469,7 +2466,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|rect_select_options
 decl_stmt|;
@@ -2479,7 +2476,7 @@ name|channel
 decl_stmt|;
 name|rect_select_options
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_OPTIONS
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
 argument_list|)
@@ -2603,16 +2600,16 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rect_select_tool_update_option_defaults:  * @crop_tool:  * @ignore_pending: %TRUE to ignore any pending crop rectangle.  *  * Sets the default Fixed: Aspect ratio and Fixed: Size option  * properties.  */
+comment|/**  * gimp_rectangle_select_tool_update_option_defaults:  * @crop_tool:  * @ignore_pending: %TRUE to ignore any pending crop rectangle.  *  * Sets the default Fixed: Aspect ratio and Fixed: Size option  * properties.  */
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_update_option_defaults (GimpRectSelectTool * rect_sel_tool,gboolean ignore_pending)
-name|gimp_rect_select_tool_update_option_defaults
+DECL|function|gimp_rectangle_select_tool_update_option_defaults (GimpRectangleSelectTool * rect_sel_tool,gboolean ignore_pending)
+name|gimp_rectangle_select_tool_update_option_defaults
 parameter_list|(
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|,
@@ -2740,8 +2737,8 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rect_select_tool_execute (GimpRectangleTool * rectangle,gint x,gint y,gint w,gint h)
-name|gimp_rect_select_tool_execute
+DECL|function|gimp_rectangle_select_tool_execute (GimpRectangleTool * rectangle,gint x,gint y,gint w,gint h)
+name|gimp_rectangle_select_tool_execute
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -2760,24 +2757,24 @@ name|gint
 name|h
 parameter_list|)
 block|{
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|rectangle
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -2993,7 +2990,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_rect_select_tool_update_option_defaults
+name|gimp_rectangle_select_tool_update_option_defaults
 argument_list|(
 name|rect_sel_tool
 argument_list|,
@@ -3022,8 +3019,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_cancel (GimpRectangleTool * rectangle)
-name|gimp_rect_select_tool_cancel
+DECL|function|gimp_rectangle_select_tool_cancel (GimpRectangleTool * rectangle)
+name|gimp_rectangle_select_tool_cancel
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -3034,11 +3031,11 @@ name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -3051,14 +3048,14 @@ argument_list|)
 expr_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|rectangle
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -3154,8 +3151,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rect_select_tool_rectangle_changed (GimpRectangleTool * rectangle)
-name|gimp_rect_select_tool_rectangle_changed
+DECL|function|gimp_rectangle_select_tool_rectangle_changed (GimpRectangleTool * rectangle)
+name|gimp_rectangle_select_tool_rectangle_changed
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -3166,11 +3163,11 @@ name|GimpTool
 modifier|*
 name|tool
 decl_stmt|;
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 decl_stmt|;
-name|GimpRectSelectToolPrivate
+name|GimpRectangleSelectToolPrivate
 modifier|*
 name|priv
 decl_stmt|;
@@ -3183,14 +3180,14 @@ argument_list|)
 expr_stmt|;
 name|rect_sel_tool
 operator|=
-name|GIMP_RECT_SELECT_TOOL
+name|GIMP_RECTANGLE_SELECT_TOOL
 argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -3305,7 +3302,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_rect_select_tool_select
+name|gimp_rectangle_select_tool_select
 argument_list|(
 name|rectangle
 argument_list|,
@@ -3401,10 +3398,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rect_select_tool_round_corners_notify (GimpRectSelectOptions * options,GParamSpec * pspec,GimpRectSelectTool * rect_sel_tool)
-name|gimp_rect_select_tool_round_corners_notify
+DECL|function|gimp_rectangle_select_tool_round_corners_notify (GimpRectangleSelectOptions * options,GParamSpec * pspec,GimpRectangleSelectTool * rect_sel_tool)
+name|gimp_rectangle_select_tool_round_corners_notify
 parameter_list|(
-name|GimpRectSelectOptions
+name|GimpRectangleSelectOptions
 modifier|*
 name|options
 parameter_list|,
@@ -3412,7 +3409,7 @@ name|GParamSpec
 modifier|*
 name|pspec
 parameter_list|,
-name|GimpRectSelectTool
+name|GimpRectangleSelectTool
 modifier|*
 name|rect_sel_tool
 parameter_list|)
@@ -3420,32 +3417,28 @@ block|{
 name|GimpDrawTool
 modifier|*
 name|draw_tool
-decl_stmt|;
-name|GimpRectangleTool
-modifier|*
-name|rect_tool
-decl_stmt|;
-name|GimpRectSelectToolPrivate
-modifier|*
-name|priv
-decl_stmt|;
-name|draw_tool
-operator|=
+init|=
 name|GIMP_DRAW_TOOL
 argument_list|(
 name|rect_sel_tool
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpRectangleTool
+modifier|*
 name|rect_tool
-operator|=
+init|=
 name|GIMP_RECTANGLE_TOOL
 argument_list|(
 name|rect_sel_tool
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+name|GimpRectangleSelectToolPrivate
+modifier|*
+name|priv
+decl_stmt|;
 name|priv
 operator|=
-name|GIMP_RECT_SELECT_TOOL_GET_PRIVATE
+name|GIMP_RECTANGLE_SELECT_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_sel_tool
 argument_list|)
@@ -3471,7 +3464,7 @@ name|options
 operator|->
 name|corner_radius
 expr_stmt|;
-name|gimp_rect_select_tool_rectangle_changed
+name|gimp_rectangle_select_tool_rectangle_changed
 argument_list|(
 name|rect_tool
 argument_list|)
