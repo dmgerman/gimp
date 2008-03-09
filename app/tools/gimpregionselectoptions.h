@@ -6,133 +6,127 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_SELECTION_OPTIONS_H__
+name|__GIMP_REGION_SELECT_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_SELECTION_OPTIONS_H__
+DECL|macro|__GIMP_REGION_SELECT_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_SELECTION_OPTIONS_H__
+name|__GIMP_REGION_SELECT_OPTIONS_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"core/gimptooloptions.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_SELECTION_OPTIONS
+DECL|macro|GIMP_TYPE_REGION_SELECT_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_SELECTION_OPTIONS
-value|(gimp_selection_options_get_type ())
+name|GIMP_TYPE_REGION_SELECT_OPTIONS
+value|(gimp_region_select_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_OPTIONS (obj)
+DECL|macro|GIMP_REGION_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_SELECTION_OPTIONS
+name|GIMP_REGION_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_REGION_SELECT_OPTIONS, GimpRegionSelectOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_REGION_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_SELECTION_OPTIONS_CLASS
+name|GIMP_REGION_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_REGION_SELECT_OPTIONS, GimpRegionSelectOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SELECTION_OPTIONS (obj)
+DECL|macro|GIMP_IS_REGION_SELECT_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_SELECTION_OPTIONS
+name|GIMP_IS_REGION_SELECT_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SELECTION_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_REGION_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SELECTION_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_REGION_SELECT_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_SELECTION_OPTIONS_CLASS
+name|GIMP_IS_REGION_SELECT_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SELECTION_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_REGION_SELECT_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_REGION_SELECT_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_SELECTION_OPTIONS_GET_CLASS
+name|GIMP_REGION_SELECT_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_REGION_SELECT_OPTIONS, GimpRegionSelectOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpSelectionOptions
+DECL|typedef|GimpRegionSelectOptions
 typedef|typedef
 name|struct
-name|_GimpSelectionOptions
-name|GimpSelectionOptions
+name|_GimpRegionSelectOptions
+name|GimpRegionSelectOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpSelectionOptionsClass
+DECL|typedef|GimpRegionSelectOptionsClass
 typedef|typedef
 name|struct
 name|_GimpToolOptionsClass
-name|GimpSelectionOptionsClass
+name|GimpRegionSelectOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpSelectionOptions
+DECL|struct|_GimpRegionSelectOptions
 struct|struct
-name|_GimpSelectionOptions
+name|_GimpRegionSelectOptions
 block|{
 DECL|member|parent_instance
-name|GimpToolOptions
+name|GimpSelectionOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|operation
-name|GimpChannelOps
-name|operation
-decl_stmt|;
-DECL|member|antialias
+DECL|member|select_transparent
 name|gboolean
-name|antialias
+name|select_transparent
 decl_stmt|;
-DECL|member|feather
+DECL|member|sample_merged
 name|gboolean
-name|feather
+name|sample_merged
 decl_stmt|;
-DECL|member|feather_radius
+DECL|member|threshold
 name|gdouble
-name|feather_radius
+name|threshold
 decl_stmt|;
-comment|/*  options gui  */
-DECL|member|antialias_toggle
-name|GtkWidget
-modifier|*
-name|antialias_toggle
+DECL|member|select_criterion
+name|GimpSelectCriterion
+name|select_criterion
 decl_stmt|;
 block|}
 struct|;
@@ -140,7 +134,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_selection_options_get_type
+name|gimp_region_select_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -151,7 +145,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_selection_options_gui
+name|gimp_region_select_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -166,7 +160,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_SELECTION_OPTIONS_H__  */
+comment|/*  __GIMP_REGION_SELECT_OPTIONS_H__  */
 end_comment
 
 end_unit

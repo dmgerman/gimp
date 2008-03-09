@@ -148,13 +148,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpiscissorstool.h"
+file|"gimpiscissorsoptions.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpselectionoptions.h"
+file|"gimpiscissorstool.h"
 end_include
 
 begin_include
@@ -1148,9 +1148,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_ISCISSORS_TOOL
 argument_list|,
-name|GIMP_TYPE_SELECTION_OPTIONS
+name|GIMP_TYPE_ISCISSORS_OPTIONS
 argument_list|,
-name|gimp_selection_options_gui
+name|gimp_iscissors_options_gui
 argument_list|,
 literal|0
 argument_list|,
@@ -1737,11 +1737,11 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpSelectionOptions
+name|GimpIscissorsOptions
 modifier|*
 name|options
 init|=
-name|GIMP_SELECTION_TOOL_GET_OPTIONS
+name|GIMP_ISCISSORS_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
 argument_list|)
@@ -2376,11 +2376,11 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpSelectionOptions
+name|GimpIscissorsOptions
 modifier|*
 name|options
 init|=
-name|GIMP_SELECTION_TOOL_GET_OPTIONS
+name|GIMP_ISCISSORS_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
 argument_list|)
@@ -2822,11 +2822,11 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|GimpSelectionOptions
+name|GimpIscissorsOptions
 modifier|*
 name|options
 init|=
-name|GIMP_SELECTION_TOOL_GET_OPTIONS
+name|GIMP_ISCISSORS_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
 argument_list|)

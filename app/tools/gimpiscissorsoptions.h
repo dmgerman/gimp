@@ -6,133 +6,115 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_SELECTION_OPTIONS_H__
+name|__GIMP_ISCISSORS_OPTIONS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_SELECTION_OPTIONS_H__
+DECL|macro|__GIMP_ISCISSORS_OPTIONS_H__
 define|#
 directive|define
-name|__GIMP_SELECTION_OPTIONS_H__
+name|__GIMP_ISCISSORS_OPTIONS_H__
 end_define
 
 begin_include
 include|#
 directive|include
-file|"core/gimptooloptions.h"
+file|"gimpselectionoptions.h"
 end_include
 
 begin_define
-DECL|macro|GIMP_TYPE_SELECTION_OPTIONS
+DECL|macro|GIMP_TYPE_ISCISSORS_OPTIONS
 define|#
 directive|define
-name|GIMP_TYPE_SELECTION_OPTIONS
-value|(gimp_selection_options_get_type ())
+name|GIMP_TYPE_ISCISSORS_OPTIONS
+value|(gimp_iscissors_options_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_OPTIONS (obj)
+DECL|macro|GIMP_ISCISSORS_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_SELECTION_OPTIONS
+name|GIMP_ISCISSORS_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_ISCISSORS_OPTIONS, GimpIscissorsOptions))
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_ISCISSORS_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_SELECTION_OPTIONS_CLASS
+name|GIMP_ISCISSORS_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_ISCISSORS_OPTIONS, GimpIscissorsOptionsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SELECTION_OPTIONS (obj)
+DECL|macro|GIMP_IS_ISCISSORS_OPTIONS (obj)
 define|#
 directive|define
-name|GIMP_IS_SELECTION_OPTIONS
+name|GIMP_IS_ISCISSORS_OPTIONS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_SELECTION_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_ISCISSORS_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_SELECTION_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_ISCISSORS_OPTIONS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_SELECTION_OPTIONS_CLASS
+name|GIMP_IS_ISCISSORS_OPTIONS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_SELECTION_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_ISCISSORS_OPTIONS))
 end_define
 
 begin_define
-DECL|macro|GIMP_SELECTION_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_ISCISSORS_OPTIONS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_SELECTION_OPTIONS_GET_CLASS
+name|GIMP_ISCISSORS_OPTIONS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_SELECTION_OPTIONS, GimpSelectionOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_ISCISSORS_OPTIONS, GimpIscissorsOptionsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpSelectionOptions
+DECL|typedef|GimpIscissorsOptions
 typedef|typedef
 name|struct
-name|_GimpSelectionOptions
-name|GimpSelectionOptions
+name|_GimpIscissorsOptions
+name|GimpIscissorsOptions
 typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpSelectionOptionsClass
+DECL|typedef|GimpIscissorsOptionsClass
 typedef|typedef
 name|struct
 name|_GimpToolOptionsClass
-name|GimpSelectionOptionsClass
+name|GimpIscissorsOptionsClass
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpSelectionOptions
+DECL|struct|_GimpIscissorsOptions
 struct|struct
-name|_GimpSelectionOptions
+name|_GimpIscissorsOptions
 block|{
 DECL|member|parent_instance
-name|GimpToolOptions
+name|GimpSelectionOptions
 name|parent_instance
 decl_stmt|;
-DECL|member|operation
-name|GimpChannelOps
-name|operation
-decl_stmt|;
-DECL|member|antialias
+DECL|member|interactive
 name|gboolean
-name|antialias
-decl_stmt|;
-DECL|member|feather
-name|gboolean
-name|feather
-decl_stmt|;
-DECL|member|feather_radius
-name|gdouble
-name|feather_radius
-decl_stmt|;
-comment|/*  options gui  */
-DECL|member|antialias_toggle
-name|GtkWidget
-modifier|*
-name|antialias_toggle
+name|interactive
 decl_stmt|;
 block|}
 struct|;
@@ -140,7 +122,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_selection_options_get_type
+name|gimp_iscissors_options_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -151,7 +133,7 @@ end_decl_stmt
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_selection_options_gui
+name|gimp_iscissors_options_gui
 parameter_list|(
 name|GimpToolOptions
 modifier|*
@@ -166,7 +148,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_SELECTION_OPTIONS_H__  */
+comment|/*  __GIMP_ISCISSORS_OPTIONS_H__  */
 end_comment
 
 end_unit

@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpselectionoptions.h"
+file|"gimpregionselectoptions.h"
 end_include
 
 begin_include
@@ -136,9 +136,9 @@ call|)
 argument_list|(
 name|GIMP_TYPE_FUZZY_SELECT_TOOL
 argument_list|,
-name|GIMP_TYPE_SELECTION_OPTIONS
+name|GIMP_TYPE_REGION_SELECT_OPTIONS
 argument_list|,
-name|gimp_selection_options_gui
+name|gimp_region_select_options_gui
 argument_list|,
 literal|0
 argument_list|,
@@ -272,9 +272,18 @@ argument_list|)
 decl_stmt|;
 name|GimpSelectionOptions
 modifier|*
-name|options
+name|sel_options
 init|=
 name|GIMP_SELECTION_TOOL_GET_OPTIONS
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
+name|GimpRegionSelectOptions
+modifier|*
+name|options
+init|=
+name|GIMP_REGION_SELECT_TOOL_GET_OPTIONS
 argument_list|(
 name|tool
 argument_list|)
@@ -358,7 +367,7 @@ name|options
 operator|->
 name|sample_merged
 argument_list|,
-name|options
+name|sel_options
 operator|->
 name|antialias
 argument_list|,
