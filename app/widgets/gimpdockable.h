@@ -296,6 +296,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_dockable_get_drag_widget
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dockable_set_context
 parameter_list|(
