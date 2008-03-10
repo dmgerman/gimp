@@ -1074,9 +1074,7 @@ block|{
 name|Blob
 modifier|*
 name|blob
-decl_stmt|;
-name|blob
-operator|=
+init|=
 name|ink_pen_ellipse
 argument_list|(
 name|options
@@ -1119,7 +1117,7 @@ name|velocity
 operator|*
 literal|100
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|blob_union
 operator|=
 name|blob_convex_union
@@ -1873,7 +1871,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon279f22f30103
+DECL|enum|__anon2794a1fd0103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START
