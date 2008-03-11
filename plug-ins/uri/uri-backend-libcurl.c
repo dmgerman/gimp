@@ -335,7 +335,7 @@ name|gimp_progress_set_text_printf
 argument_list|(
 name|_
 argument_list|(
-literal|"Downloading %s of image data..."
+literal|"Downloading %s of image data"
 argument_list|)
 argument_list|,
 name|memsize

@@ -482,7 +482,7 @@ name|dest_uri
 argument_list|,
 name|_
 argument_list|(
-literal|"Downloading %s of image data..."
+literal|"Downloading %s of image data"
 argument_list|)
 argument_list|,
 name|_
@@ -556,7 +556,7 @@ name|uri
 argument_list|,
 name|_
 argument_list|(
-literal|"Uploading %s of image data..."
+literal|"Uploading %s of image data"
 argument_list|)
 argument_list|,
 name|_
@@ -1276,7 +1276,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289456d80108
+DECL|struct|__anon2c6d84490108
 block|{
 DECL|member|in_args
 specifier|const
