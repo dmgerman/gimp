@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * URI plug-in, GIO backend  * Copyright (C) 2008  Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c64b4b0103
+DECL|enum|__anon2c524b250103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -54,10 +54,6 @@ block|}
 name|Mode
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  local function prototypes  */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -96,10 +92,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*  private variables  */
-end_comment
-
 begin_decl_stmt
 DECL|variable|supported_protocols
 specifier|static
@@ -110,10 +102,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_comment
-comment|/*  public functions  */
-end_comment
 
 begin_function
 name|gboolean
@@ -279,23 +267,24 @@ block|{
 name|gchar
 modifier|*
 name|dest_uri
-decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
-name|dest_uri
-operator|=
+init|=
 name|g_filename_to_uri
 argument_list|(
 name|tmpname
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+if|if
+condition|(
+name|dest_uri
+condition|)
+block|{
+name|gboolean
 name|success
-operator|=
+init|=
 name|copy_uri
 argument_list|(
 name|uri
@@ -306,7 +295,7 @@ name|DOWNLOAD
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 name|dest_uri
@@ -314,6 +303,10 @@ argument_list|)
 expr_stmt|;
 return|return
 name|success
+return|;
+block|}
+return|return
+name|FALSE
 return|;
 block|}
 end_function
@@ -345,23 +338,24 @@ block|{
 name|gchar
 modifier|*
 name|src_uri
-decl_stmt|;
-name|gboolean
-name|success
-decl_stmt|;
-name|src_uri
-operator|=
+init|=
 name|g_filename_to_uri
 argument_list|(
 name|tmpname
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|error
 argument_list|)
-expr_stmt|;
+decl_stmt|;
+if|if
+condition|(
+name|src_uri
+condition|)
+block|{
+name|gboolean
 name|success
-operator|=
+init|=
 name|copy_uri
 argument_list|(
 name|src_uri
@@ -372,7 +366,7 @@ name|UPLOAD
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|g_free
 argument_list|(
 name|src_uri
@@ -380,6 +374,10 @@ argument_list|)
 expr_stmt|;
 return|return
 name|success
+return|;
+block|}
+return|return
+name|FALSE
 return|;
 block|}
 end_function
@@ -697,6 +695,9 @@ block|{
 name|GVfs
 modifier|*
 name|vfs
+init|=
+name|g_vfs_get_default
+argument_list|()
 decl_stmt|;
 name|GFile
 modifier|*
@@ -714,6 +715,30 @@ operator|=
 name|g_vfs_get_default
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|g_vfs_is_active
+argument_list|(
+name|vfs
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"Initialization of GVfs failed"
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|src_file
 operator|=
 name|g_vfs_get_file_for_uri
