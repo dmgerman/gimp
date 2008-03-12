@@ -400,7 +400,7 @@ literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
-literal|"1995-1997"
+literal|"1995-2008"
 argument_list|,
 name|N_
 argument_list|(
@@ -466,11 +466,11 @@ argument_list|,
 name|uri_backend_get_save_help
 argument_list|()
 argument_list|,
-literal|"Michael Natterer"
+literal|"Michael Natterer, Sven Neumann"
 argument_list|,
 literal|"Michael Natterer"
 argument_list|,
-literal|"2005"
+literal|"2005-2008"
 argument_list|,
 name|N_
 argument_list|(
