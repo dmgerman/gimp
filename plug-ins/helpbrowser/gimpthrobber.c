@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2125850103
+DECL|enum|__anon28b2a7e30103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2125850203
+DECL|enum|__anon28b2a7e30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -654,6 +654,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
@@ -662,11 +664,12 @@ name|priv
 operator|->
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 condition|)
 name|gtk_widget_destroy
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
@@ -675,8 +678,7 @@ name|priv
 operator|->
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

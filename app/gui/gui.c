@@ -2640,14 +2640,15 @@ name|device_status
 decl_stmt|;
 name|device_status
 operator|=
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|session_info
 operator|->
 name|widget
 argument_list|)
-operator|->
-name|child
+argument_list|)
 expr_stmt|;
 name|gimp_device_status_update
 argument_list|(

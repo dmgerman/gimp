@@ -1875,8 +1875,12 @@ block|{
 name|GtkImage
 modifier|*
 name|gtk_image
-init|=
+decl_stmt|;
+name|gtk_image
+operator|=
 name|GTK_IMAGE
+argument_list|(
+name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
@@ -1884,10 +1888,9 @@ name|shell
 operator|->
 name|quick_mask_button
 argument_list|)
-operator|->
-name|child
 argument_list|)
-decl_stmt|;
+argument_list|)
+expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|shell

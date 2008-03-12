@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1423080103
+DECL|enum|__anon2a363dab0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -581,9 +581,10 @@ if|if
 condition|(
 name|dockbook
 operator|==
+name|gtk_paned_get_child2
+argument_list|(
 name|paned
-operator|->
-name|child2
+argument_list|)
 condition|)
 name|g_signal_connect_after
 argument_list|(

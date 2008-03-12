@@ -121,12 +121,13 @@ name|layout
 operator|=
 name|GTK_CELL_LAYOUT
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|combo
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_cell_layout_clear

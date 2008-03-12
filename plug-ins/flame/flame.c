@@ -139,7 +139,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon27a033580108
+DECL|struct|__anon28b7bd020108
 block|{
 DECL|member|randomize
 name|gint
@@ -3477,12 +3477,13 @@ name|gtk_misc_set_padding
 argument_list|(
 name|GTK_MISC
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 literal|2

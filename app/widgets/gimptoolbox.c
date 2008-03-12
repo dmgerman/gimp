@@ -2137,12 +2137,13 @@ name|image
 operator|=
 name|GTK_IMAGE
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|tool_button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_image_get_stock

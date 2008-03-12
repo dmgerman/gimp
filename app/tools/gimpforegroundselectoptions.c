@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab54cd70103
+DECL|enum|__anon29636a1b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -991,12 +991,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|frame
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 name|inner_frame

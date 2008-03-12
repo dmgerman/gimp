@@ -111,7 +111,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dac2d60103
+DECL|enum|__anon28d736e10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1618,12 +1618,13 @@ name|color_area
 operator|=
 name|GIMP_COLOR_AREA
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_color_area_get_color

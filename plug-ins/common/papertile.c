@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cfd9920103
+DECL|enum|__anon2967af700103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cfd9920203
+DECL|enum|__anon2967af700203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -196,7 +196,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29cfd9920308
+DECL|struct|__anon2967af700308
 block|{
 DECL|member|params
 name|PluginParams
@@ -216,7 +216,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon29cfd9920408
+DECL|struct|__anon2967af700408
 block|{
 DECL|member|x0
 name|gint
@@ -597,7 +597,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29cfd9920508
+DECL|struct|__anon2967af700508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject
@@ -2032,12 +2032,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|frame
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 name|color_button

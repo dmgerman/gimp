@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2a6150108
+DECL|struct|__anon2b6650f10108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -157,7 +157,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e2a6150203
+DECL|enum|__anon2b6650f10203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -1034,12 +1034,13 @@ name|gtk_misc_set_padding
 argument_list|(
 name|GTK_MISC
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 literal|2

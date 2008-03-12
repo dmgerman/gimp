@@ -1164,12 +1164,13 @@ name|gimp_data_editor_set_data
 argument_list|(
 name|GIMP_DATA_EDITOR
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|dockable
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 name|data

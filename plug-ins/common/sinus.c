@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b58fd20108
+DECL|struct|__anon2a0fef000108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b58fd20208
+DECL|struct|__anon2a0fef000208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b58fd20308
+DECL|struct|__anon2a0fef000308
 block|{
 DECL|member|width
 name|gint
@@ -4428,12 +4428,13 @@ argument_list|)
 expr_stmt|;
 name|vbox
 operator|=
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|frame
 argument_list|)
-operator|->
-name|child
+argument_list|)
 expr_stmt|;
 name|hbox
 operator|=

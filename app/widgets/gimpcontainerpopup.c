@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9765c20103
+DECL|enum|__anon2bcf0a140103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1935,6 +1935,10 @@ name|GtkWidget
 modifier|*
 name|scrolled_win
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|viewport
+decl_stmt|;
 name|gint
 name|viewport_width
 decl_stmt|;
@@ -1959,14 +1963,19 @@ argument_list|)
 operator|->
 name|scrolled_win
 expr_stmt|;
-name|viewport_width
+name|viewport
 operator|=
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|scrolled_win
 argument_list|)
-operator|->
-name|child
+argument_list|)
+expr_stmt|;
+name|viewport_width
+operator|=
+name|viewport
 operator|->
 name|allocation
 operator|.

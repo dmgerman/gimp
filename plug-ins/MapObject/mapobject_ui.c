@@ -7387,12 +7387,13 @@ name|gtk_misc_set_padding
 argument_list|(
 name|GTK_MISC
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 literal|2

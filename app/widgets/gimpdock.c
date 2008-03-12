@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f28a100103
+DECL|enum|__anon2c4ad75a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f28a100203
+DECL|enum|__anon2c4ad75a0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2420,22 +2420,24 @@ literal|0
 condition|)
 name|other_book
 operator|=
+name|gtk_paned_get_child2
+argument_list|(
 name|GTK_PANED
 argument_list|(
 name|parent
 argument_list|)
-operator|->
-name|child2
+argument_list|)
 expr_stmt|;
 else|else
 name|other_book
 operator|=
+name|gtk_paned_get_child1
+argument_list|(
 name|GTK_PANED
 argument_list|(
 name|parent
 argument_list|)
-operator|->
-name|child1
+argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(

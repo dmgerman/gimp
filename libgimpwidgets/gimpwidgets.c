@@ -1465,12 +1465,13 @@ name|gtk_misc_set_padding
 argument_list|(
 name|GTK_MISC
 argument_list|(
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 argument_list|)
 argument_list|,
 literal|2
@@ -1676,7 +1677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be5814a0108
+DECL|struct|__anon2bfe56da0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

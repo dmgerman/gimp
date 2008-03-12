@@ -897,12 +897,13 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
+name|gtk_bin_get_child
+argument_list|(
 name|GTK_BIN
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|child
+argument_list|)
 expr_stmt|;
 name|signal_name
 operator|=

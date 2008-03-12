@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29354e4f0103
+DECL|enum|__anon27de28f00103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -238,9 +238,10 @@ argument_list|(
 name|dockbook
 argument_list|)
 operator|==
+name|gtk_paned_get_child2
+argument_list|(
 name|paned
-operator|->
-name|child2
+argument_list|)
 condition|)
 block|{
 name|gimp_config_writer_open
