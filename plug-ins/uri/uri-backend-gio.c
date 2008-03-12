@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288733290103
+DECL|enum|__anon2a9c256c0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -1332,6 +1332,11 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|operation
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2089,6 +2094,11 @@ argument_list|(
 name|dialog
 argument_list|)
 expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|operation
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -2157,6 +2167,11 @@ name|GTK_WIDGET
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|operation
 argument_list|)
 expr_stmt|;
 block|}
@@ -2368,6 +2383,11 @@ name|GTK_WIDGET
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_ref
+argument_list|(
+name|operation
 argument_list|)
 expr_stmt|;
 block|}
