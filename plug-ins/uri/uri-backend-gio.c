@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9c256c0103
+DECL|enum|__anon2c4dcd6b0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -1298,6 +1298,16 @@ name|text
 argument_list|)
 expr_stmt|;
 block|}
+name|g_mount_operation_set_password_save
+argument_list|(
+name|G_MOUNT_OPERATION
+argument_list|(
+name|operation
+argument_list|)
+argument_list|,
+name|G_PASSWORD_SAVE_NEVER
+argument_list|)
+expr_stmt|;
 name|g_mount_operation_reply
 argument_list|(
 name|G_MOUNT_OPERATION
@@ -1463,7 +1473,10 @@ name|GTK_STOCK_CANCEL
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
-name|GTK_STOCK_OK
+name|_
+argument_list|(
+literal|"_Log In"
+argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
 argument_list|,
@@ -2062,6 +2075,15 @@ name|mount
 operator|->
 name|password_entry
 expr_stmt|;
+if|if
+condition|(
+name|flags
+operator|&
+name|G_ASK_PASSWORD_SAVING_SUPPORTED
+condition|)
+block|{
+comment|/* FIXME: add check buttons for this */
+block|}
 block|}
 else|else
 block|{
