@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d9cf600103
+DECL|enum|__anon2770ed3e0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -1338,10 +1338,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|mount_operation_anon_toggled (GtkWidget * button,MountOperation * operation)
+DECL|function|mount_operation_anon_toggled (GtkToggleButton * button,MountOperation * operation)
 name|mount_operation_anon_toggled
 parameter_list|(
-name|GtkWidget
+name|GtkToggleButton
 modifier|*
 name|button
 parameter_list|,
@@ -1356,30 +1356,19 @@ name|operation
 operator|->
 name|username_entry
 condition|)
-block|{
-name|gboolean
-name|active
-decl_stmt|;
-name|active
-operator|=
-name|gtk_toggle_button_get_active
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|button
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|operation
 operator|->
 name|username_entry
 argument_list|,
-name|active
+operator|!
+name|gtk_toggle_button_get_active
+argument_list|(
+name|button
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
