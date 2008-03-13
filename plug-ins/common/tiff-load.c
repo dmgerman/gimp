@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1aa660108
+DECL|struct|__anon28959daa0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1aa660208
+DECL|struct|__anon28959daa0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d1aa660308
+DECL|struct|__anon28959daa0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -2718,9 +2718,7 @@ block|{
 name|gchar
 modifier|*
 name|fname
-decl_stmt|;
-name|fname
-operator|=
+init|=
 name|g_strdup_printf
 argument_list|(
 literal|"%s-%d"
@@ -2729,7 +2727,7 @@ name|filename
 argument_list|,
 name|ilayer
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gimp_image_set_filename
 argument_list|(
 name|image
@@ -2755,17 +2753,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-elseif|else
-if|if
-condition|(
-name|pages
-operator|->
-name|o_pages
-operator|==
-name|pages
-operator|->
-name|n_pages
-condition|)
+else|else
 block|{
 name|gimp_image_set_filename
 argument_list|(
