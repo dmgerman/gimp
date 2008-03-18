@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e5e44c0103
+DECL|enum|__anon2b8cef420103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -504,7 +504,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e5e44c0208
+DECL|struct|__anon2b8cef420208
 block|{
 DECL|member|mode
 name|Mode
@@ -554,6 +554,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|progress
+operator|->
+name|last_time
+operator|.
+name|tv_sec
+operator|&&
 operator|(
 operator|(
 name|now
@@ -881,9 +887,6 @@ block|{
 name|GVfs
 modifier|*
 name|vfs
-init|=
-name|g_vfs_get_default
-argument_list|()
 decl_stmt|;
 name|GFile
 modifier|*
