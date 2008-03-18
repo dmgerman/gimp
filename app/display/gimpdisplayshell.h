@@ -655,6 +655,11 @@ name|GimpDisplayOptions
 modifier|*
 name|fullscreen_options
 decl_stmt|;
+DECL|member|no_image_options
+name|GimpDisplayOptions
+modifier|*
+name|no_image_options
+decl_stmt|;
 comment|/*  the state of gimp_display_shell_tool_events()  */
 DECL|member|space_pressed
 name|gboolean

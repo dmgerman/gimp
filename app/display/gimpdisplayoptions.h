@@ -33,6 +33,14 @@ value|(gimp_display_options_fullscreen_get_type ())
 end_define
 
 begin_define
+DECL|macro|GIMP_TYPE_DISPLAY_OPTIONS_NO_IMAGE
+define|#
+directive|define
+name|GIMP_TYPE_DISPLAY_OPTIONS_NO_IMAGE
+value|(gimp_display_options_no_image_get_type ())
+end_define
+
+begin_define
 DECL|macro|GIMP_DISPLAY_OPTIONS (obj)
 define|#
 directive|define
@@ -185,6 +193,16 @@ end_decl_stmt
 begin_decl_stmt
 name|GType
 name|gimp_display_options_fullscreen_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+name|GType
+name|gimp_display_options_no_image_get_type
 argument_list|(
 name|void
 argument_list|)

@@ -210,6 +210,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-appearance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-scale.h"
 end_include
 
@@ -1375,6 +1381,16 @@ argument_list|,
 name|GIMP_ZOOM_TO
 argument_list|,
 name|scale
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

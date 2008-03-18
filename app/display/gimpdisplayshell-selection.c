@@ -813,6 +813,12 @@ condition|(
 name|shell
 operator|->
 name|selection
+operator|&&
+name|shell
+operator|->
+name|display
+operator|->
+name|image
 condition|)
 block|{
 name|Selection
@@ -884,6 +890,12 @@ condition|(
 name|shell
 operator|->
 name|selection
+operator|&&
+name|shell
+operator|->
+name|display
+operator|->
+name|image
 condition|)
 block|{
 name|Selection

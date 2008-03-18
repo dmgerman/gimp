@@ -287,7 +287,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9638df0103
+DECL|enum|__anon292e29200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -300,7 +300,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9638df0203
+DECL|enum|__anon292e29200203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1314,6 +1314,17 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|->
+name|no_image_options
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_DISPLAY_OPTIONS_NO_IMAGE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
 name|space_pressed
 operator|=
 name|FALSE
@@ -1579,6 +1590,19 @@ argument_list|(
 name|shell
 operator|->
 name|fullscreen_options
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|no_image_options
+condition|)
+name|g_object_unref
+argument_list|(
+name|shell
+operator|->
+name|no_image_options
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
