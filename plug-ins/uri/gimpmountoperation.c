@@ -174,7 +174,7 @@ expr_stmt|;
 end_expr_stmt
 
 begin_enum
-DECL|enum|__anon27916bc00103
+DECL|enum|__anon28f0406d0103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -1696,6 +1696,18 @@ argument_list|(
 name|dialog
 argument_list|,
 name|GTK_RESPONSE_OK
+argument_list|)
+expr_stmt|;
+name|gtk_dialog_set_alternative_button_order
+argument_list|(
+name|dialog
+argument_list|,
+name|GTK_RESPONSE_OK
+argument_list|,
+name|GTK_RESPONSE_CANCEL
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/* Build contents */
