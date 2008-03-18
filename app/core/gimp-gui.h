@@ -237,6 +237,10 @@ modifier|*
 name|display_create
 function_decl|)
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image

@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3594080103
+DECL|enum|__anon2b4d9f540103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3594080203
+DECL|enum|__anon2b4d9f540203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -7288,6 +7288,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
 name|gimp_context_real_set_image
 argument_list|(
 name|context
@@ -7300,6 +7305,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_object_notify
 argument_list|(

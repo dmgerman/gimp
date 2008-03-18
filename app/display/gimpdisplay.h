@@ -107,31 +107,42 @@ DECL|member|ID
 name|gint
 name|ID
 decl_stmt|;
-comment|/*  unique identifier for this display     */
+comment|/*  unique identifier for this display  */
+DECL|member|gimp
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
+comment|/*  global gimp instance                */
+DECL|member|config
+name|GimpDisplayConfig
+modifier|*
+name|config
+decl_stmt|;
 DECL|member|image
 name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-comment|/*  pointer to the associated image        */
+comment|/*  pointer to the associated image     */
 DECL|member|instance
 name|gint
 name|instance
 decl_stmt|;
-comment|/*  the instance # of this display as      */
-comment|/*  taken from the image at creation       */
+comment|/*  the instance # of this display as   */
+comment|/*  taken from the image at creation    */
 DECL|member|shell
 name|GtkWidget
 modifier|*
 name|shell
 decl_stmt|;
-comment|/*  shell widget for this display          */
+comment|/*  shell widget for this display       */
 DECL|member|update_areas
 name|GSList
 modifier|*
 name|update_areas
 decl_stmt|;
-comment|/*  Update areas list                      */
+comment|/*  Update areas list                   */
 block|}
 struct|;
 end_struct
@@ -164,6 +175,10 @@ name|GimpDisplay
 modifier|*
 name|gimp_display_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -224,7 +239,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_reconnect
+name|gimp_display_set_image
 parameter_list|(
 name|GimpDisplay
 modifier|*

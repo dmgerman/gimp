@@ -117,6 +117,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_set_cursor (GimpDisplayShell * shell,GimpCursorType cursor_type,GimpToolCursorType tool_cursor,GimpCursorModifier modifier)
@@ -669,6 +673,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
@@ -692,10 +700,6 @@ name|gboolean
 name|always_install
 parameter_list|)
 block|{
-name|GimpDisplayConfig
-modifier|*
-name|config
-decl_stmt|;
 name|GimpCursorFormat
 name|cursor_format
 decl_stmt|;
@@ -705,21 +709,6 @@ name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|config
-operator|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
-operator|->
-name|config
 argument_list|)
 expr_stmt|;
 if|if
@@ -735,6 +724,10 @@ condition|)
 block|{
 switch|switch
 condition|(
+name|shell
+operator|->
+name|display
+operator|->
 name|config
 operator|->
 name|cursor_mode
@@ -796,6 +789,10 @@ name|cursor_format
 operator|=
 name|GIMP_GUI_CONFIG
 argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
 name|config
 argument_list|)
 operator|->

@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a9b30c0108
+DECL|struct|__anon2b6450420108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -250,7 +250,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_setup:  * @shell:        the #GimpDisplayShell  *  * Prepares the display for drawing the image at current scale and offset.  * This preparation involves, for example, setting up scrollbars and rulers.  **/
+comment|/**  * gimp_display_shell_scale_setup:  * @shell: the #GimpDisplayShell  *  * Prepares the display for drawing the image at current scale and offset.  * This preparation involves, for example, setting up scrollbars and rulers.  **/
 end_comment
 
 begin_function
@@ -263,6 +263,10 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|GtkRuler
 modifier|*
 name|hruler
@@ -297,14 +301,23 @@ operator|->
 name|display
 condition|)
 return|return;
-name|image_width
+name|image
 operator|=
-name|gimp_image_get_width
-argument_list|(
 name|shell
 operator|->
 name|display
 operator|->
+name|image
+expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
+name|image_width
+operator|=
+name|gimp_image_get_width
+argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
@@ -312,10 +325,6 @@ name|image_height
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -337,6 +346,30 @@ argument_list|,
 name|image_height
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|image_width
+operator|=
+name|shell
+operator|->
+name|disp_width
+expr_stmt|;
+name|image_height
+operator|=
+name|shell
+operator|->
+name|disp_height
+expr_stmt|;
+name|sx
+operator|=
+name|image_width
+expr_stmt|;
+name|sy
+operator|=
+name|image_height
+expr_stmt|;
+block|}
 name|shell
 operator|->
 name|hsbdata
@@ -485,6 +518,11 @@ name|lower
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
 name|hruler
 operator|->
 name|upper
@@ -523,12 +561,38 @@ name|image_height
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|hruler
+operator|->
+name|upper
+operator|=
+name|image_width
+expr_stmt|;
+name|hruler
+operator|->
+name|max_size
+operator|=
+name|MAX
+argument_list|(
+name|image_width
+argument_list|,
+name|image_height
+argument_list|)
+expr_stmt|;
+block|}
 name|vruler
 operator|->
 name|lower
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
 name|vruler
 operator|->
 name|upper
@@ -567,8 +631,31 @@ name|image_height
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|vruler
+operator|->
+name|upper
+operator|=
+name|image_height
+expr_stmt|;
+name|vruler
+operator|->
+name|max_size
+operator|=
+name|MAX
+argument_list|(
+name|image_width
+argument_list|,
+name|image_height
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
+name|image
+operator|&&
 name|sx
 operator|<
 name|shell
@@ -637,7 +724,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|image
+condition|)
 block|{
 name|shell
 operator|->
@@ -692,8 +783,19 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|shell
+operator|->
+name|disp_xoffset
+operator|=
+literal|0
+expr_stmt|;
+block|}
 if|if
 condition|(
+name|image
+operator|&&
 name|sy
 operator|<
 name|shell
@@ -762,7 +864,11 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-else|else
+elseif|else
+if|if
+condition|(
+name|image
+condition|)
 block|{
 name|shell
 operator|->
@@ -815,6 +921,15 @@ operator|->
 name|offset_y
 argument_list|)
 argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|shell
+operator|->
+name|disp_yoffset
+operator|=
+literal|0
 expr_stmt|;
 block|}
 name|gtk_widget_queue_draw
@@ -911,7 +1026,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_can_revert:  * @shell:     the #GimpDisplayShell  *  * Return value: %TRUE if a previous display scale exists, otherwise %FALSE.  **/
+comment|/**  * gimp_display_shell_scale_can_revert:  * @shell: the #GimpDisplayShell  *  * Return value: %TRUE if a previous display scale exists, otherwise %FALSE.  **/
 end_comment
 
 begin_function
@@ -980,18 +1095,6 @@ operator|->
 name|dot_for_dot
 condition|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-init|=
-name|shell
-operator|->
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
-decl_stmt|;
 comment|/* freeze the active tool */
 name|gimp_display_shell_pause
 argument_list|(
@@ -1013,12 +1116,11 @@ name|gimp_display_shell_scale_resize
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|gimp
+name|shell
+operator|->
+name|display
 operator|->
 name|config
-argument_list|)
 operator|->
 name|resize_windows_on_zoom
 argument_list|,
@@ -1203,10 +1305,6 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|GimpDisplayConfig
-modifier|*
-name|config
-decl_stmt|;
 name|gdouble
 name|current
 decl_stmt|;
@@ -1288,21 +1386,6 @@ name|offset_y
 operator|*=
 name|scale
 expr_stmt|;
-name|config
-operator|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
-operator|->
-name|config
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_scale_by_values
 argument_list|(
 name|shell
@@ -1317,6 +1400,10 @@ name|offset_y
 operator|-
 name|y
 argument_list|,
+name|shell
+operator|->
+name|display
+operator|->
 name|config
 operator|->
 name|resize_windows_on_zoom
@@ -1326,7 +1413,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_fit_in:  * @shell:     the #GimpDisplayShell  *  * Sets the scale such that the entire image precisely fits in the display  * area.  **/
+comment|/**  * gimp_display_shell_scale_fit_in:  * @shell: the #GimpDisplayShell  *  * Sets the scale such that the entire image precisely fits in the display  * area.  **/
 end_comment
 
 begin_function
@@ -1476,7 +1563,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_fill:  * @shell:     the #GimpDisplayShell  *  * Sets the scale such that the entire display area is precisely filled by the  * image.  **/
+comment|/**  * gimp_display_shell_scale_fill:  * @shell: the #GimpDisplayShell  *  * Sets the scale such that the entire display area is precisely filled by the  * image.  **/
 end_comment
 
 begin_function
@@ -1626,7 +1713,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_by_values:  * @shell:          the #GimpDisplayShell  * @scale:          the new scale  * @offset_x:       the new X offset  * @offset_y:       the new Y offset  * @resize_window:  whether the display window should be resized  *  * Directly sets the image scale and image offsets used by the display. If  * @resize_window is %TRUE then the display window is resized to better  * accomodate the image, see gimp_display_shell_shrink_wrap().  **/
+comment|/**  * gimp_display_shell_scale_by_values:  * @shell:         the #GimpDisplayShell  * @scale:         the new scale  * @offset_x:      the new X offset  * @offset_y:      the new Y offset  * @resize_window: whether the display window should be resized  *  * Directly sets the image scale and image offsets used by the display. If  * @resize_window is %TRUE then the display window is resized to better  * accomodate the image, see gimp_display_shell_shrink_wrap().  **/
 end_comment
 
 begin_function
@@ -1791,7 +1878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_shrink_wrap:  * @shell:          the #GimpDisplayShell  *  * Convenience function with the same functionality as  * gimp_display_shell_scale_resize(@shell, TRUE, TRUE).  **/
+comment|/**  * gimp_display_shell_scale_shrink_wrap:  * @shell: the #GimpDisplayShell  *  * Convenience function with the same functionality as  * gimp_display_shell_scale_resize(@shell, TRUE, TRUE).  **/
 end_comment
 
 begin_function
@@ -1844,10 +1931,6 @@ name|gboolean
 name|redisplay
 parameter_list|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -1855,16 +1938,6 @@ argument_list|(
 name|shell
 argument_list|)
 argument_list|)
-expr_stmt|;
-name|gimp
-operator|=
-name|shell
-operator|->
-name|display
-operator|->
-name|image
-operator|->
-name|gimp
 expr_stmt|;
 comment|/* freeze the active tool */
 name|gimp_display_shell_pause
@@ -1917,7 +1990,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_dialog:  * @shell:          the #GimpDisplayShell  *  * Constructs and displays a dialog allowing the user to enter a custom display  * scale.  **/
+comment|/**  * gimp_display_shell_scale_dialog:  * @shell: the #GimpDisplayShell  *  * Constructs and displays a dialog allowing the user to enter a custom display  * scale.  **/
 end_comment
 
 begin_function
@@ -2067,7 +2140,9 @@ argument_list|)
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
-name|image
+name|shell
+operator|->
+name|display
 operator|->
 name|gimp
 argument_list|)
@@ -3052,16 +3127,6 @@ name|gdouble
 name|len
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|shell
-operator|->
-name|display
-operator|->
-name|image
-decl_stmt|;
 name|gdouble
 name|xres
 decl_stmt|;
@@ -3084,6 +3149,10 @@ name|len
 return|;
 name|gimp_image_get_resolution
 argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
 name|image
 argument_list|,
 operator|&
@@ -3111,7 +3180,9 @@ name|len
 operator|*
 name|_gimp_unit_get_factor
 argument_list|(
-name|image
+name|shell
+operator|->
+name|display
 operator|->
 name|gimp
 argument_list|,

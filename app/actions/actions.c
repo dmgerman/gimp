@@ -1130,8 +1130,6 @@ operator|)
 name|data
 operator|)
 operator|->
-name|image
-operator|->
 name|gimp
 return|;
 elseif|else
@@ -1297,8 +1295,6 @@ operator|*
 operator|)
 name|data
 operator|)
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)

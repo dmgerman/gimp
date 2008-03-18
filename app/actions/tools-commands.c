@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimp-tools.h"
 end_include
 
@@ -297,6 +303,10 @@ expr_stmt|;
 if|if
 condition|(
 name|display
+operator|&&
+name|display
+operator|->
+name|image
 condition|)
 name|tool_manager_initialize_active
 argument_list|(

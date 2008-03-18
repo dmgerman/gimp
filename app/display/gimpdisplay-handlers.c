@@ -474,7 +474,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_message
 argument_list|(
-name|image
+name|display
 operator|->
 name|gimp
 argument_list|,

@@ -1162,6 +1162,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|image
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
@@ -1185,6 +1189,8 @@ name|gui
 operator|.
 name|display_create
 argument_list|(
+name|gimp
+argument_list|,
 name|image
 argument_list|,
 name|unit

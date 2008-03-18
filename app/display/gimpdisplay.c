@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -113,13 +119,16 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7403d50103
+DECL|enum|__anon29d2a5090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
 DECL|enumerator|PROP_ID
 name|PROP_ID
+block|,
+DECL|enumerator|PROP_GIMP
+name|PROP_GIMP
 block|,
 DECL|enumerator|PROP_IMAGE
 name|PROP_IMAGE
@@ -473,6 +482,28 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
+name|PROP_GIMP
+argument_list|,
+name|g_param_spec_object
+argument_list|(
+literal|"gimp"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_TYPE_GIMP
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT_ONLY
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
 name|PROP_IMAGE
 argument_list|,
 name|g_param_spec_object
@@ -528,6 +559,12 @@ operator|->
 name|ID
 operator|=
 literal|0
+expr_stmt|;
+name|display
+operator|->
+name|gimp
+operator|=
+name|NULL
 expr_stmt|;
 name|display
 operator|->
@@ -675,6 +712,33 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|PROP_GIMP
+case|:
+name|display
+operator|->
+name|gimp
+operator|=
+name|g_value_get_object
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+comment|/* don't ref the gimp */
+name|display
+operator|->
+name|config
+operator|=
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_IMAGE
 case|:
 case|case
@@ -745,6 +809,19 @@ argument_list|,
 name|display
 operator|->
 name|ID
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_GIMP
+case|:
+name|g_value_set_object
+argument_list|(
+name|value
+argument_list|,
+name|display
+operator|->
+name|gimp
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1243,9 +1320,13 @@ end_comment
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
+DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
 name|gimp_display_new
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -1274,6 +1355,20 @@ name|ID
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|image
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
@@ -1285,8 +1380,6 @@ expr_stmt|;
 comment|/*  If there isn't an interface, never create a display  */
 if|if
 condition|(
-name|image
-operator|->
 name|gimp
 operator|->
 name|no_interface
@@ -1298,8 +1391,6 @@ do|do
 block|{
 name|ID
 operator|=
-name|image
-operator|->
 name|gimp
 operator|->
 name|next_display_ID
@@ -1307,16 +1398,12 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
-name|image
-operator|->
 name|gimp
 operator|->
 name|next_display_ID
 operator|==
 name|G_MAXINT
 condition|)
-name|image
-operator|->
 name|gimp
 operator|->
 name|next_display_ID
@@ -1328,8 +1415,6 @@ do|while
 condition|(
 name|gimp_display_get_by_ID
 argument_list|(
-name|image
-operator|->
 name|gimp
 argument_list|,
 name|ID
@@ -1346,10 +1431,18 @@ literal|"id"
 argument_list|,
 name|ID
 argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  refs the image  */
+if|if
+condition|(
+name|image
+condition|)
 name|gimp_display_connect
 argument_list|(
 name|display
@@ -1406,8 +1499,6 @@ expr_stmt|;
 comment|/* add the display to the list */
 name|gimp_container_add
 argument_list|(
-name|image
-operator|->
 name|gimp
 operator|->
 name|displays
@@ -1451,8 +1542,6 @@ name|gimp_container_remove
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 operator|->
 name|displays
@@ -1463,18 +1552,12 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  stop any active tool  */
-name|tool_manager_control_active
+comment|/*  unrefs the image  */
+name|gimp_display_set_image
 argument_list|(
 name|display
-operator|->
-name|image
-operator|->
-name|gimp
 argument_list|,
-name|GIMP_TOOL_ACTION_HALT
-argument_list|,
-name|display
+name|NULL
 argument_list|)
 expr_stmt|;
 name|active_tool
@@ -1482,8 +1565,6 @@ operator|=
 name|tool_manager_get_active
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)
@@ -1501,8 +1582,6 @@ condition|)
 name|tool_manager_focus_display_active
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1551,12 +1630,6 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  unrefs the image  */
-name|gimp_display_disconnect
-argument_list|(
-name|display
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|display
@@ -1673,8 +1746,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_reconnect (GimpDisplay * display,GimpImage * image)
-name|gimp_display_reconnect
+DECL|function|gimp_display_set_image (GimpDisplay * display,GimpImage * image)
+name|gimp_display_set_image
 parameter_list|(
 name|GimpDisplay
 modifier|*
@@ -1688,6 +1761,8 @@ block|{
 name|GimpImage
 modifier|*
 name|old_image
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1699,18 +1774,27 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|image
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|display
+operator|->
+name|image
+condition|)
+block|{
 comment|/*  stop any active tool  */
 name|tool_manager_control_active
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,
@@ -1743,6 +1827,11 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|image
+condition|)
 name|gimp_display_connect
 argument_list|(
 name|display
@@ -1750,11 +1839,19 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|old_image
+condition|)
 name|g_object_unref
 argument_list|(
 name|old_image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
 name|gimp_display_shell_reconnect
 argument_list|(
 name|GIMP_DISPLAY_SHELL

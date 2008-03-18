@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -106,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276017440108
+DECL|struct|__anon2c6ed5a50108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -478,8 +472,6 @@ name|tool_manager_get_active
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 decl_stmt|;
@@ -577,8 +569,6 @@ block|}
 name|tool_manager_motion_active
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,

@@ -1053,6 +1053,10 @@ decl_stmt|;
 if|if
 condition|(
 name|display
+operator|&&
+name|display
+operator|->
+name|image
 condition|)
 name|edit_paste
 argument_list|(

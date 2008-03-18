@@ -890,14 +890,11 @@ name|w
 expr_stmt|;
 switch|switch
 condition|(
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|image
+name|shell
 operator|->
-name|gimp
+name|display
 operator|->
 name|config
-argument_list|)
 operator|->
 name|zoom_quality
 condition|)

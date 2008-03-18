@@ -554,8 +554,6 @@ name|shell
 operator|->
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;

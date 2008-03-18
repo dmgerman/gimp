@@ -1342,8 +1342,6 @@ name|shell
 operator|->
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 decl_stmt|;
 name|GimpDisplayConfig
@@ -2672,6 +2670,12 @@ operator|->
 name|dot_for_dot
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|renderer
+operator|->
+name|viewable
+condition|)
 name|gimp_navigation_view_set_marker
 argument_list|(
 name|GIMP_NAVIGATION_VIEW

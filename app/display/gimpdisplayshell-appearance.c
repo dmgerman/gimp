@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-callbacks.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
@@ -188,7 +182,7 @@ parameter_list|(
 name|shell
 parameter_list|)
 define|\
-value|((shell)->display == \    gimp_context_get_display (gimp_get_user_context \                              ((shell)->display->image->gimp)))
+value|((shell)->display == \    gimp_context_get_display (gimp_get_user_context \                              ((shell)->display->gimp)))
 end_define
 
 begin_function

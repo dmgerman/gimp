@@ -129,6 +129,10 @@ condition|(
 name|display
 operator|->
 name|image
+operator|&&
+name|display
+operator|->
+name|image
 operator|->
 name|dirty
 condition|)
@@ -719,7 +723,7 @@ name|image
 operator|==
 name|old
 condition|)
-name|gimp_display_reconnect
+name|gimp_display_set_image
 argument_list|(
 name|display
 argument_list|,
