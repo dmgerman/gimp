@@ -287,7 +287,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6b76e0103
+DECL|enum|__anon2773e6650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -300,7 +300,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f6b76e0203
+DECL|enum|__anon2773e6650203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3575,6 +3575,8 @@ name|canvas
 operator|=
 name|gimp_canvas_new
 argument_list|(
+name|GIMP_DISPLAY_CONFIG
+argument_list|(
 name|shell
 operator|->
 name|display
@@ -3582,6 +3584,9 @@ operator|->
 name|image
 operator|->
 name|gimp
+operator|->
+name|config
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_selection_init
