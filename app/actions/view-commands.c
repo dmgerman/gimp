@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-close.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplayshell-filter-dialog.h"
 end_include
 
