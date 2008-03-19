@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8cef420103
+DECL|enum|__anon2c08cf4c0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -504,7 +504,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8cef420208
+DECL|struct|__anon2c08cf4c0208
 block|{
 DECL|member|mode
 name|Mode
@@ -1050,10 +1050,8 @@ name|NULL
 argument_list|,
 name|uri_progress_callback
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
-name|mode
-argument_list|)
+operator|&
+name|progress
 argument_list|,
 name|error
 argument_list|)
