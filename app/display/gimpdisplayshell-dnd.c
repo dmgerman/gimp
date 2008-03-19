@@ -453,6 +453,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_uri_list
@@ -465,6 +467,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER
@@ -479,6 +483,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK
@@ -493,6 +499,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_CHANNEL
@@ -507,6 +515,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_VECTORS
@@ -521,6 +531,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_PATTERN
@@ -535,6 +547,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GIMP_TYPE_BUFFER
@@ -549,6 +563,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_color
@@ -561,6 +577,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_svg
@@ -573,6 +591,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_component
@@ -585,6 +605,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|gimp_display_shell_drop_pixbuf

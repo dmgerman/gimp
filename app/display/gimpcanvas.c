@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a960af00103
+DECL|enum|__anon2bb6f4d10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3018,7 +3018,7 @@ name|blue
 operator|/
 literal|65535.0
 argument_list|,
-literal|0.1
+literal|0.2
 argument_list|)
 expr_stmt|;
 name|pango_cairo_show_layout

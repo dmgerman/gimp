@@ -1387,7 +1387,7 @@ name|cr
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 comment|/*  If the call to gimp_display_shell_pause() would cause a redraw,    *  we need to make sure that no XOR drawing happens on areas that    *  have already been cleared by the windowing system.    */
@@ -1634,7 +1634,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
