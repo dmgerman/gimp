@@ -293,7 +293,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6225860103
+DECL|enum|__anon290cf12f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6225860203
+DECL|enum|__anon290cf12f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4740,6 +4740,17 @@ expr_stmt|;
 name|gimp_display_shell_scaled
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_set_cursor
+argument_list|(
+name|shell
+argument_list|,
+name|GIMP_CURSOR_MOUSE
+argument_list|,
+name|GIMP_TOOL_CURSOR_NONE
+argument_list|,
+name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 name|gimp_statusbar_empty
