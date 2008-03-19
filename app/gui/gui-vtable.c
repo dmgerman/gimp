@@ -1350,6 +1350,12 @@ condition|(
 name|display
 condition|)
 block|{
+name|gint
+name|display_width
+decl_stmt|;
+name|gint
+name|display_height
+decl_stmt|;
 name|gimp_display_set_image
 argument_list|(
 name|display
@@ -1369,7 +1375,7 @@ argument_list|,
 name|unit
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale
+name|gimp_display_shell_set_initial_scale
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
@@ -1378,9 +1384,13 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-name|GIMP_ZOOM_TO
-argument_list|,
 name|scale
+argument_list|,
+operator|&
+name|display_width
+argument_list|,
+operator|&
+name|display_height
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_appearance_update
