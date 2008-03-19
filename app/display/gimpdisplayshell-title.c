@@ -116,7 +116,7 @@ DECL|macro|MAX_TITLE_BUF
 define|#
 directive|define
 name|MAX_TITLE_BUF
-value|256
+value|512
 end_define
 
 begin_function_decl
