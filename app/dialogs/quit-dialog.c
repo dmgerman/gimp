@@ -805,6 +805,8 @@ else|else
 name|gimp_displays_delete
 argument_list|(
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

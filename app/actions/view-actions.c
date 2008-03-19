@@ -2122,7 +2122,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"view-close"
 argument_list|,
-name|display
+name|image
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
