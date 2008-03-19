@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -582,10 +588,7 @@ name|title_len
 argument_list|,
 name|i
 argument_list|,
-name|_
-argument_list|(
-literal|"GIMP - Drop Files"
-argument_list|)
+name|GIMP_NAME
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1697,19 +1700,38 @@ name|format
 operator|++
 expr_stmt|;
 block|}
-name|title
-index|[
-name|MIN
-argument_list|(
+if|if
+condition|(
 name|i
+condition|)
+comment|/* U+2013 EN DASH */
+name|i
+operator|+=
+name|g_strlcpy
+argument_list|(
+name|title
+operator|+
+name|i
+argument_list|,
+literal|" \342\200\223 "
 argument_list|,
 name|title_len
 operator|-
-literal|1
+name|i
 argument_list|)
-index|]
-operator|=
-literal|'\0'
+expr_stmt|;
+name|g_strlcpy
+argument_list|(
+name|title
+operator|+
+name|i
+argument_list|,
+name|GIMP_ACRONYM
+argument_list|,
+name|title_len
+operator|-
+name|i
+argument_list|)
 expr_stmt|;
 block|}
 end_function

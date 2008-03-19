@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2a5090103
+DECL|enum|__anon2be3d9df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1853,6 +1853,17 @@ condition|(
 name|image
 condition|)
 name|gimp_display_shell_reconnect
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|gimp_display_shell_update_icon
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
