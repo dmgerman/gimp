@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2f3a350103
+DECL|enum|__anon2b9b652b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -750,21 +750,6 @@ argument_list|,
 literal|"show-scrollbars"
 argument_list|,
 name|SHOW_SCROLLBARS_BLURB
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_SHOW_STATUSBAR
-argument_list|,
-literal|"show-statusbar"
-argument_list|,
-name|SHOW_STATUSBAR_BLURB
 argument_list|,
 name|FALSE
 argument_list|,
