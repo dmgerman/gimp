@@ -293,7 +293,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa0d920103
+DECL|enum|__anon2c6215c70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfa0d920203
+DECL|enum|__anon2c6215c70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4742,6 +4742,16 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_statusbar_empty
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_appearance_update
 argument_list|(
 name|shell
@@ -4825,6 +4835,16 @@ name|display_width
 argument_list|,
 operator|&
 name|display_height
+argument_list|)
+expr_stmt|;
+name|gimp_statusbar_fill
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_appearance_update

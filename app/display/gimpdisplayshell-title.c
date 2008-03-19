@@ -403,7 +403,10 @@ literal|"title"
 argument_list|,
 literal|"%s"
 argument_list|,
-literal|""
+name|_
+argument_list|(
+literal|" "
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
