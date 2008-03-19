@@ -397,6 +397,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_pango_layout_set_weight
+parameter_list|(
+name|PangoLayout
+modifier|*
+name|layout
+parameter_list|,
+name|PangoWeight
+name|weight
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
