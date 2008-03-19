@@ -3384,7 +3384,6 @@ name|src1
 index|[
 name|alpha
 index|]
-operator|)
 condition|?
 name|src1
 index|[
@@ -3403,6 +3402,7 @@ name|src1
 index|[
 name|alpha
 index|]
+operator|)
 operator|)
 expr_stmt|;
 block|}
@@ -6029,7 +6029,6 @@ name|affect
 index|[
 name|b
 index|]
-operator|)
 condition|?
 name|INT_BLEND
 argument_list|(
@@ -6052,6 +6051,7 @@ name|src1
 index|[
 name|b
 index|]
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -6124,7 +6124,6 @@ name|affect
 index|[
 name|b
 index|]
-operator|)
 condition|?
 name|INT_BLEND
 argument_list|(
@@ -6147,6 +6146,7 @@ name|src1
 index|[
 name|b
 index|]
+operator|)
 expr_stmt|;
 if|if
 condition|(
