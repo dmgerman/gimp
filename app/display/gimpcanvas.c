@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb6f4d10103
+DECL|enum|__anon2c54b3b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2927,12 +2927,15 @@ argument_list|)
 expr_stmt|;
 name|factor
 operator|=
+literal|4.0
+operator|/
+literal|5.0
+operator|*
 name|MIN
 argument_list|(
-literal|2.0
-operator|/
-literal|3.0
-operator|*
+operator|(
+name|gdouble
+operator|)
 name|widget
 operator|->
 name|allocation
@@ -2941,10 +2944,9 @@ name|width
 operator|/
 name|width
 argument_list|,
-literal|2.0
-operator|/
-literal|3.0
-operator|*
+operator|(
+name|gdouble
+operator|)
 name|widget
 operator|->
 name|allocation
