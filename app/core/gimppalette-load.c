@@ -697,6 +697,13 @@ literal|0
 index|]
 operator|!=
 literal|'#'
+operator|&&
+name|str
+index|[
+literal|0
+index|]
+operator|!=
+literal|'\n'
 condition|)
 block|{
 name|tok
