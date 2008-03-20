@@ -311,6 +311,20 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|gimp_exit
+argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
