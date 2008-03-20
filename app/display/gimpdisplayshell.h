@@ -526,6 +526,11 @@ name|guint
 name|icon_idle_id
 decl_stmt|;
 comment|/*  ID of the idle-function            */
+DECL|member|fill_idle_id
+name|guint
+name|fill_idle_id
+decl_stmt|;
+comment|/*  display_shell_fill() idle ID       */
 DECL|member|cursor_format
 name|GimpCursorFormat
 name|cursor_format
