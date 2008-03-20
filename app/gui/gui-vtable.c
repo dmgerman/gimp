@@ -468,7 +468,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpDisplay
+modifier|*
 name|gui_get_empty_display
 parameter_list|(
 name|Gimp
@@ -1461,7 +1462,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
+name|GimpDisplay
+modifier|*
 DECL|function|gui_get_empty_display (Gimp * gimp)
 name|gui_get_empty_display
 parameter_list|(
