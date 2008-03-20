@@ -2537,7 +2537,10 @@ name|GIMP_TYPE_TOOLBOX
 argument_list|,
 literal|"title"
 argument_list|,
-name|GIMP_ACRONYM
+name|_
+argument_list|(
+literal|"Toolbox"
+argument_list|)
 argument_list|,
 literal|"context"
 argument_list|,
