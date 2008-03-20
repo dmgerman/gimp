@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c08cf4c0103
+DECL|enum|__anon2c61561a0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -449,6 +449,8 @@ operator|=
 literal|0
 init|;
 name|schemes
+operator|&&
+name|schemes
 index|[
 name|i
 index|]
@@ -504,7 +506,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08cf4c0208
+DECL|struct|__anon2c61561a0208
 block|{
 DECL|member|mode
 name|Mode
