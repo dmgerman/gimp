@@ -2178,6 +2178,18 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+comment|/*  create the empty display  */
+name|gimp_create_display
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_UNIT_PIXEL
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
