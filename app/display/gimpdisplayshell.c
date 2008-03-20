@@ -293,7 +293,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbbc9cb0103
+DECL|enum|__anon2ad5abd80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +306,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbbc9cb0203
+DECL|enum|__anon2ad5abd80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2687,7 +2687,18 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DISPLAY_SHELL
 argument_list|,
-comment|/* "gravity", GDK_GRAVITY_CENTER, */
+literal|"window-position"
+argument_list|,
+operator|(
+name|display
+operator|->
+name|image
+condition|?
+name|GTK_WIN_POS_MOUSE
+else|:
+name|GTK_WIN_POS_CENTER
+operator|)
+argument_list|,
 literal|"unit"
 argument_list|,
 name|unit

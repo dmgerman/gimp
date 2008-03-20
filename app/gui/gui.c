@@ -2159,6 +2159,23 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+comment|/*  create the empty display  */
+name|gimp_create_display
+argument_list|(
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_UNIT_PIXEL
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|gui_dbus_service_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gui_config
@@ -2172,23 +2189,6 @@ argument_list|)
 expr_stmt|;
 name|dialogs_show_toolbox
 argument_list|()
-expr_stmt|;
-name|gui_dbus_service_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-comment|/*  create the empty display  */
-name|gimp_create_display
-argument_list|(
-name|gimp
-argument_list|,
-name|NULL
-argument_list|,
-name|GIMP_UNIT_PIXEL
-argument_list|,
-literal|1.0
-argument_list|)
 expr_stmt|;
 block|}
 end_function
