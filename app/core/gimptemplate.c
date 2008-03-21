@@ -96,7 +96,7 @@ DECL|macro|DEFAULT_IMAGE_WIDTH
 define|#
 directive|define
 name|DEFAULT_IMAGE_WIDTH
-value|377
+value|610
 end_define
 
 begin_define
@@ -104,7 +104,7 @@ DECL|macro|DEFAULT_IMAGE_HEIGHT
 define|#
 directive|define
 name|DEFAULT_IMAGE_HEIGHT
-value|233
+value|377
 end_define
 
 begin_else
@@ -117,7 +117,7 @@ DECL|macro|DEFAULT_IMAGE_WIDTH
 define|#
 directive|define
 name|DEFAULT_IMAGE_WIDTH
-value|420
+value|600
 end_define
 
 begin_define
@@ -125,7 +125,7 @@ DECL|macro|DEFAULT_IMAGE_HEIGHT
 define|#
 directive|define
 name|DEFAULT_IMAGE_HEIGHT
-value|300
+value|480
 end_define
 
 begin_endif
@@ -143,7 +143,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd962590103
+DECL|enum|__anon2acd81610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
