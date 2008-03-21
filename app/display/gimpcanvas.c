@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54b3b40103
+DECL|enum|__anon29a42b910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2880,6 +2880,9 @@ decl_stmt|;
 name|gdouble
 name|factor
 decl_stmt|;
+name|gdouble
+name|opacity
+decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2998,6 +3001,19 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
+name|opacity
+operator|=
+name|CLAMP
+argument_list|(
+literal|1.0
+operator|/
+name|factor
+argument_list|,
+literal|0.10
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|cairo_set_source_rgba
 argument_list|(
 name|cr
@@ -3020,7 +3036,7 @@ name|blue
 operator|/
 literal|65535.0
 argument_list|,
-literal|0.2
+name|opacity
 argument_list|)
 expr_stmt|;
 name|pango_cairo_show_layout
