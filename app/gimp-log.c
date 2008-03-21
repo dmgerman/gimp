@@ -90,6 +90,12 @@ name|GIMP_LOG_DIALOG_FACTORY
 block|}
 block|,
 block|{
+literal|"menus"
+block|,
+name|GIMP_LOG_MENUS
+block|}
+block|,
+block|{
 literal|"save-dialog"
 block|,
 name|GIMP_LOG_SAVE_DIALOG

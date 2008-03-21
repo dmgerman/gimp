@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -840,12 +846,21 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|g_print ("%s: %s\n", G_STRFUNC,                    gimp_object_get_name (GIMP_OBJECT (procedure)));
-endif|#
-directive|endif
+name|GIMP_LOG
+argument_list|(
+name|MENUS
+argument_list|,
+literal|"register procedure: %s"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -946,12 +961,21 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|g_print ("%s: %s\n", G_STRFUNC,                    gimp_object_get_name (GIMP_OBJECT (procedure)));
-endif|#
-directive|endif
+name|GIMP_LOG
+argument_list|(
+name|MENUS
+argument_list|,
+literal|"unregister procedure: %s"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -1067,12 +1091,23 @@ modifier|*
 name|manager
 parameter_list|)
 block|{
-if|#
-directive|if
-literal|0
-block|g_print ("%s: %s (%s)\n", G_STRFUNC,            gimp_object_get_name (GIMP_OBJECT (plug_in_proc)), menu_path);
-endif|#
-directive|endif
+name|GIMP_LOG
+argument_list|(
+name|MENUS
+argument_list|,
+literal|"menu path added: %s (%s)"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|plug_in_proc
+argument_list|)
+argument_list|)
+argument_list|,
+name|menu_path
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|g_str_has_prefix
@@ -1687,12 +1722,22 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-if|#
-directive|if
-literal|0
-block|g_print ("adding menu item for '%s' (@ %s)\n",            GIMP_OBJECT (proc)->name, action_path);
-endif|#
-directive|endif
+name|GIMP_LOG
+argument_list|(
+name|MENUS
+argument_list|,
+literal|"adding menu item for '%s' (@ %s)"
+argument_list|,
+name|GIMP_OBJECT
+argument_list|(
+name|proc
+argument_list|)
+operator|->
+name|name
+argument_list|,
+name|action_path
+argument_list|)
+expr_stmt|;
 name|gtk_ui_manager_add_ui
 argument_list|(
 name|GTK_UI_MANAGER
@@ -2043,12 +2088,19 @@ name|action_path
 argument_list|)
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|g_print ("adding menu '%s' at path '%s' for action '%s'\n",                        menu_item_name, action_path, menu_path);
-endif|#
-directive|endif
+name|GIMP_LOG
+argument_list|(
+name|MENUS
+argument_list|,
+literal|"adding menu '%s' at path '%s' for action '%s'"
+argument_list|,
+name|menu_item_name
+argument_list|,
+name|action_path
+argument_list|,
+name|menu_path
+argument_list|)
+expr_stmt|;
 name|gtk_ui_manager_add_ui
 argument_list|(
 name|GTK_UI_MANAGER
