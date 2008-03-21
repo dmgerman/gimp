@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimptemplate.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -293,7 +299,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d774000103
+DECL|enum|__anon29a257950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -306,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d774000203
+DECL|enum|__anon29a257950203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2687,18 +2693,6 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DISPLAY_SHELL
 argument_list|,
-literal|"window-position"
-argument_list|,
-operator|(
-name|display
-operator|->
-name|image
-condition|?
-name|GTK_WIN_POS_MOUSE
-else|:
-name|GTK_WIN_POS_CENTER
-operator|)
-argument_list|,
 literal|"unit"
 argument_list|,
 name|unit
@@ -2748,11 +2742,11 @@ else|else
 block|{
 name|image_width
 operator|=
-literal|640
+name|GIMP_DEFAULT_IMAGE_WIDTH
 expr_stmt|;
 name|image_height
 operator|=
-literal|480
+name|GIMP_DEFAULT_IMAGE_HEIGHT
 expr_stmt|;
 block|}
 name|shell
