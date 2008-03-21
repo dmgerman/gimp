@@ -313,15 +313,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_exit
+comment|/* Activate the action instead of simply calling gimp_exit(), so        * the quit action's sensitivity is taken into account.        */
+name|gimp_ui_manager_activate_action
 argument_list|(
 name|shell
 operator|->
-name|display
-operator|->
-name|gimp
+name|menubar_manager
 argument_list|,
-name|FALSE
+literal|"file"
+argument_list|,
+literal|"file-quit"
 argument_list|)
 expr_stmt|;
 block|}
