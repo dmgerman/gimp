@@ -72,9 +72,6 @@ name|menu_path_mappings
 index|[]
 init|=
 block|{
-ifndef|#
-directive|ifndef
-name|ENABLE_TOOLBOX_MENU
 block|{
 literal|"<Toolbox>/Xtns"
 block|,
@@ -87,9 +84,6 @@ block|,
 literal|"<Image>/Help"
 block|}
 block|,
-endif|#
-directive|endif
-comment|/* ENABLE_TOOLBOX_MENU */
 block|{
 name|NULL
 block|,

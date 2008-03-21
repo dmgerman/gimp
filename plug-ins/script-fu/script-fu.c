@@ -904,7 +904,7 @@ block|}
 decl_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Help"
+literal|"<Image>/Help"
 argument_list|,
 name|N_
 argument_list|(
@@ -914,7 +914,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Help"
+literal|"<Image>/Help"
 argument_list|,
 name|N_
 argument_list|(

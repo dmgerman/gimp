@@ -136,12 +136,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"toolbox-menu.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -306,6 +300,8 @@ literal|"file"
 argument_list|,
 literal|"context"
 argument_list|,
+literal|"debug"
+argument_list|,
 literal|"help"
 argument_list|,
 literal|"edit"
@@ -365,8 +361,6 @@ literal|"file"
 argument_list|,
 literal|"context"
 argument_list|,
-literal|"debug"
-argument_list|,
 literal|"help"
 argument_list|,
 literal|"edit"
@@ -392,12 +386,6 @@ argument_list|,
 literal|"quick-mask"
 argument_list|,
 name|NULL
-argument_list|,
-literal|"/toolbox-menubar"
-argument_list|,
-literal|"toolbox-menu.xml"
-argument_list|,
-name|toolbox_menu_setup
 argument_list|,
 name|NULL
 argument_list|)
