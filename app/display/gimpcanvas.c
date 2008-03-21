@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a42b910103
+DECL|enum|__anon29929a800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3005,11 +3005,11 @@ name|opacity
 operator|=
 name|CLAMP
 argument_list|(
-literal|1.0
+literal|0.5
 operator|/
 name|factor
 argument_list|,
-literal|0.10
+literal|0.1
 argument_list|,
 literal|1.0
 argument_list|)
