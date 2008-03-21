@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27866e910103
+DECL|enum|__anon2b43a2260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27866e910203
+DECL|enum|__anon2b43a2260203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -587,9 +587,19 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
+specifier|static
+name|gint
+name|dock_ID
+init|=
+literal|1
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|separator
+decl_stmt|;
+name|gchar
+modifier|*
+name|name
 decl_stmt|;
 name|dock
 operator|->
@@ -608,6 +618,39 @@ operator|->
 name|dockbooks
 operator|=
 name|NULL
+expr_stmt|;
+name|dock
+operator|->
+name|ID
+operator|=
+name|dock_ID
+operator|++
+expr_stmt|;
+name|name
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"gimp-dock-%d"
+argument_list|,
+name|dock
+operator|->
+name|ID
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_name
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
 expr_stmt|;
 name|gtk_window_set_role
 argument_list|(
@@ -1528,7 +1571,7 @@ argument_list|)
 expr_stmt|;
 name|font_size
 operator|=
-literal|0.8
+name|PANGO_SCALE_SMALL
 operator|*
 name|font_size
 expr_stmt|;
@@ -1559,9 +1602,16 @@ literal|"style \"gimp-dock-style\""
 literal|"{"
 literal|"  font_name = \"%s\""
 literal|"}"
-literal|"widget_class \"<GimpDock>.*\" style \"gimp-dock-style\""
+literal|"widget \"gimp-dock-%d.*\" style \"gimp-dock-style\""
 argument_list|,
 name|font_str
+argument_list|,
+name|GIMP_DOCK
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|ID
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -128,6 +128,11 @@ name|GList
 modifier|*
 name|dockbooks
 decl_stmt|;
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
+comment|/* for themeing */
 block|}
 struct|;
 end_struct
