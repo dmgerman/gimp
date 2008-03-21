@@ -2663,7 +2663,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288d3ba80108
+DECL|struct|__anon2b891a020108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3483,7 +3483,7 @@ block|,
 block|{
 name|GIMP_STOCK_GEGL
 block|,
-name|stock_gegl_24
+name|stock_gegl_22
 block|}
 block|}
 struct|;
@@ -3493,7 +3493,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288d3ba80208
+DECL|struct|__anon2b891a020208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4409,7 +4409,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288d3ba80308
+DECL|struct|__anon2b891a020308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4506,7 +4506,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288d3ba80408
+DECL|struct|__anon2b891a020408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4651,7 +4651,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon288d3ba80508
+DECL|struct|__anon2b891a020508
 block|{
 DECL|member|stock_id
 specifier|const
