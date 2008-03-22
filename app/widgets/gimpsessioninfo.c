@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275765f80103
+DECL|enum|__anon29a317200103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1839,13 +1839,6 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|geom
-argument_list|)
-expr_stmt|;
 name|gtk_window_parse_geometry
 argument_list|(
 name|GTK_WINDOW
