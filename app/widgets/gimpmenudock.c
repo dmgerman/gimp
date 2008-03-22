@@ -122,7 +122,7 @@ DECL|macro|DEFAULT_MINIMAL_WIDTH
 define|#
 directive|define
 name|DEFAULT_MINIMAL_WIDTH
-value|250
+value|200
 end_define
 
 begin_define

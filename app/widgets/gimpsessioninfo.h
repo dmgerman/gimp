@@ -37,6 +37,14 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
+DECL|member|right_align
+name|gboolean
+name|right_align
+decl_stmt|;
+DECL|member|bottom_align
+name|gboolean
+name|bottom_align
+decl_stmt|;
 comment|/*  only valid while restoring and saving the session  */
 DECL|member|open
 name|gboolean
