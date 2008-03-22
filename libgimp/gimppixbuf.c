@@ -434,7 +434,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_pixbuf:  * @image_ID: The RGB image to which to add the layer.  * @name: The layer name.  * @pixbuf: A GdkPixbuf.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  * @progress_start: start of progress  * @progress_end: end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * @gimp_progress_update() will be called for. You have to call  * @gimp_progress_init() beforehand.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_layer_new_from_pixbuf:  * @image_ID: The RGB image to which to add the layer.  * @name: The layer name.  * @pixbuf: A GdkPixbuf.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  * @progress_start: start of progress  * @progress_end: end of progress  *  * Create a new layer from a %GdkPixbuf.  *  * This procedure creates a new layer from the given %GdkPixbuf.  The  * image has to be an RGB image and just like with gimp_layer_new()  * you will still need to add the layer to it.  *  * If you pass @progress_end> @progress_start to this function,  * gimp_progress_update() will be called for. You have to call  * gimp_progress_init() beforehand then.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
