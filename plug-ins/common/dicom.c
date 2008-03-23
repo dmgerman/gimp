@@ -2126,7 +2126,7 @@ decl_stmt|;
 name|guint16
 name|max
 init|=
-literal|0
+literal|1
 decl_stmt|;
 if|if
 condition|(
@@ -2138,10 +2138,6 @@ literal|16
 condition|)
 block|{
 comment|/* Reorder the buffer and look for max */
-name|max
-operator|=
-literal|0
-expr_stmt|;
 for|for
 control|(
 name|pix_idx
@@ -2315,7 +2311,7 @@ call|(
 name|guint8
 call|)
 argument_list|(
-literal|255.0
+literal|255.999
 operator|*
 call|(
 name|gdouble
