@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29373ee00103
+DECL|enum|__anon2a0933670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29373ee00203
+DECL|enum|__anon2a0933670203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2747,6 +2747,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpDisplayOptions
+modifier|*
+name|options
+decl_stmt|;
 name|GimpColorDisplayStack
 modifier|*
 name|filter
@@ -2874,6 +2878,12 @@ operator|->
 name|image
 condition|)
 block|{
+name|options
+operator|=
+name|shell
+operator|->
+name|options
+expr_stmt|;
 name|image_width
 operator|=
 name|gimp_image_get_width
@@ -2899,6 +2909,12 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|options
+operator|=
+name|shell
+operator|->
+name|no_image_options
+expr_stmt|;
 name|image_width
 operator|=
 name|GIMP_DEFAULT_IMAGE_WIDTH
@@ -3208,8 +3224,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|shell
-operator|->
 name|options
 operator|->
 name|show_menubar
@@ -4658,8 +4672,6 @@ expr_stmt|;
 comment|/*  show everything  *******************************************************/
 if|if
 condition|(
-name|shell
-operator|->
 name|options
 operator|->
 name|show_rulers
@@ -4699,8 +4711,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|shell
-operator|->
 name|options
 operator|->
 name|show_scrollbars
@@ -4744,8 +4754,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|shell
-operator|->
 name|options
 operator|->
 name|show_statusbar
