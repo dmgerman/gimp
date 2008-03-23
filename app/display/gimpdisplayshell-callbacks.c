@@ -1366,6 +1366,10 @@ argument_list|,
 name|eevent
 argument_list|)
 expr_stmt|;
+comment|/* Return TRUE here to avoid redrawing the image when it gets the        * keyboard focus.        */
+return|return
+name|TRUE
+return|;
 block|}
 else|else
 block|{
@@ -1376,10 +1380,11 @@ argument_list|,
 name|eevent
 argument_list|)
 expr_stmt|;
-block|}
+comment|/* Return FALSE here so that the drag indicator is drawn around        * the empty canvas during DND operations.        */
 return|return
 name|FALSE
 return|;
+block|}
 block|}
 end_function
 
