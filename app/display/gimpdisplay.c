@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c6b67d0103
+DECL|enum|__anon275ce3570103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1320,7 +1320,7 @@ end_comment
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager)
+DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * display_factory)
 name|gimp_display_new
 parameter_list|(
 name|Gimp
@@ -1344,6 +1344,10 @@ parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
+parameter_list|,
+name|GimpDialogFactory
+modifier|*
+name|display_factory
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -1466,6 +1470,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|popup_manager
+argument_list|,
+name|display_factory
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

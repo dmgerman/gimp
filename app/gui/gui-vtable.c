@@ -222,6 +222,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gui-message.h"
 end_include
 
@@ -1374,6 +1380,8 @@ argument_list|,
 name|image_managers
 operator|->
 name|data
+argument_list|,
+name|global_display_factory
 argument_list|)
 expr_stmt|;
 block|}

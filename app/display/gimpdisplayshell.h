@@ -286,6 +286,11 @@ name|GimpUIManager
 modifier|*
 name|popup_manager
 decl_stmt|;
+DECL|member|display_factory
+name|GimpDialogFactory
+modifier|*
+name|display_factory
+decl_stmt|;
 DECL|member|monitor_xres
 name|gdouble
 name|monitor_xres
@@ -814,6 +819,10 @@ parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
+parameter_list|,
+name|GimpDialogFactory
+modifier|*
+name|display_factory
 parameter_list|)
 function_decl|;
 end_function_decl

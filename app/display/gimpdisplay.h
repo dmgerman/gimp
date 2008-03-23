@@ -196,6 +196,10 @@ parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
+parameter_list|,
+name|GimpDialogFactory
+modifier|*
+name|display_factory
 parameter_list|)
 function_decl|;
 end_function_decl
