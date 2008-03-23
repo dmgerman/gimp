@@ -1518,7 +1518,7 @@ name|gimp_dialog_factory_register_entry
 argument_list|(
 name|global_display_factory
 argument_list|,
-literal|"gimp-no-image-window"
+literal|"gimp-empty-image-window"
 argument_list|,
 name|NULL
 argument_list|,

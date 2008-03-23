@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d0ace0103
+DECL|enum|__anon2b6669a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon273d0ace0203
+DECL|enum|__anon2b6669a80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4798,7 +4798,7 @@ name|shell
 operator|->
 name|display_factory
 argument_list|,
-literal|"gimp-no-image-window"
+literal|"gimp-empty-image-window"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -4989,7 +4989,7 @@ name|shell
 operator|->
 name|display_factory
 argument_list|,
-literal|"gimp-no-image-window"
+literal|"gimp-empty-image-window"
 argument_list|)
 expr_stmt|;
 if|if
@@ -5041,7 +5041,7 @@ name|shell
 operator|->
 name|display_factory
 argument_list|,
-literal|"gimp-no-image-window"
+literal|"gimp-empty-image-window"
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
