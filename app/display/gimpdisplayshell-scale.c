@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c525bc30108
+DECL|struct|__anon2bbc75930108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1974,10 +1974,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|resize_window
-condition|)
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
