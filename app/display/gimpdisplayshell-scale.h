@@ -155,6 +155,9 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|grow_only
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -171,7 +174,7 @@ name|gboolean
 name|resize_window
 parameter_list|,
 name|gboolean
-name|redisplay
+name|grow_only
 parameter_list|)
 function_decl|;
 end_function_decl

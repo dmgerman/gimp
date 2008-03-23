@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8d2f440103
+DECL|enum|__anon273d0ace0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8d2f440203
+DECL|enum|__anon273d0ace0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5167,6 +5167,8 @@ expr_stmt|;
 name|gimp_display_shell_scale_shrink_wrap
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_window_present
@@ -7165,12 +7167,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_shrink_wrap (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_shrink_wrap (GimpDisplayShell * shell,gboolean grow_only)
 name|gimp_display_shell_shrink_wrap
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|grow_only
 parameter_list|)
 block|{
 name|GtkWidget
@@ -7504,6 +7509,60 @@ name|requisition
 operator|.
 name|width
 expr_stmt|;
+name|width
+operator|=
+name|width
+operator|+
+name|border_x
+expr_stmt|;
+name|height
+operator|=
+name|height
+operator|+
+name|border_y
+expr_stmt|;
+if|if
+condition|(
+name|grow_only
+condition|)
+block|{
+if|if
+condition|(
+name|width
+operator|<
+name|widget
+operator|->
+name|allocation
+operator|.
+name|width
+condition|)
+name|width
+operator|=
+name|widget
+operator|->
+name|allocation
+operator|.
+name|width
+expr_stmt|;
+if|if
+condition|(
+name|height
+operator|<
+name|widget
+operator|->
+name|allocation
+operator|.
+name|height
+condition|)
+name|height
+operator|=
+name|widget
+operator|->
+name|allocation
+operator|.
+name|height
+expr_stmt|;
+block|}
 name|gtk_window_resize
 argument_list|(
 name|GTK_WINDOW
@@ -7512,12 +7571,8 @@ name|shell
 argument_list|)
 argument_list|,
 name|width
-operator|+
-name|border_x
 argument_list|,
 name|height
-operator|+
-name|border_y
 argument_list|)
 expr_stmt|;
 block|}

@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda6caa0108
+DECL|struct|__anon2c525bc30108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1124,7 +1124,7 @@ name|config
 operator|->
 name|resize_windows_on_zoom
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* re-enable the active tool */
@@ -1865,7 +1865,7 @@ name|shell
 argument_list|,
 name|resize_window
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* re-enable the active tool */
@@ -1878,17 +1878,20 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_shrink_wrap:  * @shell: the #GimpDisplayShell  *  * Convenience function with the same functionality as  * gimp_display_shell_scale_resize(@shell, TRUE, TRUE).  **/
+comment|/**  * gimp_display_shell_scale_shrink_wrap:  * @shell: the #GimpDisplayShell  *  * Convenience function with the same functionality as  * gimp_display_shell_scale_resize(@shell, TRUE, grow_only).  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_shrink_wrap (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_scale_shrink_wrap (GimpDisplayShell * shell,gboolean grow_only)
 name|gimp_display_shell_scale_shrink_wrap
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|grow_only
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1905,7 +1908,7 @@ name|shell
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+name|grow_only
 argument_list|)
 expr_stmt|;
 block|}
@@ -1917,7 +1920,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_resize (GimpDisplayShell * shell,gboolean resize_window,gboolean redisplay)
+DECL|function|gimp_display_shell_scale_resize (GimpDisplayShell * shell,gboolean resize_window,gboolean grow_only)
 name|gimp_display_shell_scale_resize
 parameter_list|(
 name|GimpDisplayShell
@@ -1928,7 +1931,7 @@ name|gboolean
 name|resize_window
 parameter_list|,
 name|gboolean
-name|redisplay
+name|grow_only
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1952,6 +1955,8 @@ condition|)
 name|gimp_display_shell_shrink_wrap
 argument_list|(
 name|shell
+argument_list|,
+name|grow_only
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scroll_clamp_offsets
@@ -1972,8 +1977,6 @@ expr_stmt|;
 if|if
 condition|(
 name|resize_window
-operator|||
-name|redisplay
 condition|)
 name|gimp_display_shell_expose_full
 argument_list|(

@@ -1791,7 +1791,7 @@ name|config
 operator|->
 name|resize_windows_on_resize
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
