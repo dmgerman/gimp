@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6669a80103
+DECL|enum|__anon29373ee00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6669a80203
+DECL|enum|__anon29373ee00203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2392,6 +2392,9 @@ decl_stmt|;
 name|GtkRequisition
 name|statusbar_req
 decl_stmt|;
+name|GdkGeometry
+name|geometry
+decl_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -2424,13 +2427,43 @@ operator|&
 name|statusbar_req
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-comment|/*  this doesn't work  */
-block|gtk_widget_set_size_request (widget, -1,                                menubar_req.height + statusbar_req.height);
-endif|#
-directive|endif
+name|geometry
+operator|.
+name|min_width
+operator|=
+name|statusbar_req
+operator|.
+name|width
+expr_stmt|;
+name|geometry
+operator|.
+name|min_height
+operator|=
+name|statusbar_req
+operator|.
+name|height
+operator|+
+name|menubar_req
+operator|.
+name|height
+operator|+
+literal|1
+expr_stmt|;
+name|gtk_window_set_geometry_hints
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+operator|&
+name|geometry
+argument_list|,
+name|GDK_HINT_MIN_SIZE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
