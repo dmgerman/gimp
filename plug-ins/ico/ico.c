@@ -34,19 +34,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"main.h"
+file|"ico.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"icoload.h"
+file|"ico-load.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"icosave.h"
+file|"ico-save.h"
 end_include
 
 begin_include

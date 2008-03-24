@@ -28,19 +28,19 @@ end_comment
 begin_include
 include|#
 directive|include
-file|"main.h"
+file|"ico.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"icodialog.h"
+file|"ico-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"icosave.h"
+file|"ico-save.h"
 end_include
 
 begin_include
@@ -141,7 +141,7 @@ argument_list|(
 literal|"Save as Windows Icon"
 argument_list|)
 argument_list|,
-literal|"winicon"
+literal|"ico"
 argument_list|,
 name|NULL
 argument_list|,
