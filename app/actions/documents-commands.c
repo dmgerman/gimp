@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-documents.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -156,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299e3c100108
+DECL|struct|__anon299010d20108
 block|{
 DECL|member|name
 specifier|const
@@ -648,11 +642,51 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|GimpContext
+modifier|*
+name|context
+decl_stmt|;
+name|GimpImagefile
+modifier|*
+name|imagefile
+decl_stmt|;
+name|context
+operator|=
+name|gimp_container_view_get_context
+argument_list|(
+name|editor
+operator|->
+name|view
+argument_list|)
+expr_stmt|;
+name|imagefile
+operator|=
+name|gimp_context_get_imagefile
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 name|gimp_container_view_remove_active
 argument_list|(
 name|editor
 operator|->
 name|view
+argument_list|)
+expr_stmt|;
+name|gtk_recent_manager_remove_item
+argument_list|(
+name|gtk_recent_manager_get_default
+argument_list|()
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|imagefile
+argument_list|)
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -780,8 +814,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Remove all entries from the "
-literal|"document history?"
+literal|"Clear the Recent Documents list?"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -797,7 +830,8 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Clearing the document history will permanently "
-literal|"remove all currently listed entries."
+literal|"remove all items from the recent documents "
+literal|"list in all applications."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -838,9 +872,10 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_documents_save
+name|gtk_recent_manager_purge_items
 argument_list|(
-name|gimp
+name|gtk_recent_manager_get_default
+argument_list|()
 argument_list|,
 operator|&
 name|error

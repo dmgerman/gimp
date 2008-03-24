@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c97a210103
+DECL|enum|__anon28a03fe10103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -672,6 +672,45 @@ expr_stmt|;
 return|return
 name|imagefile
 return|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|gimp_imagefile_set_mime_type (GimpImagefile * imagefile,const gchar * mime_type)
+name|gimp_imagefile_set_mime_type
+parameter_list|(
+name|GimpImagefile
+modifier|*
+name|imagefile
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|mime_type
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGEFILE
+argument_list|(
+name|imagefile
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|imagefile
+operator|->
+name|thumbnail
+argument_list|,
+literal|"image-mimetype"
+argument_list|,
+name|mime_type
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
