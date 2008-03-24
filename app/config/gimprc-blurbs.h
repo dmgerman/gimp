@@ -682,7 +682,7 @@ define|#
 directive|define
 name|SAVE_DOCUMENT_HISTORY_BLURB
 define|\
-value|N_("Add all opened and saved files to the document history on disk.")
+value|N_("Keep a permanent record of all opened and saved files in the Recent " \    "Documents list.")
 end_define
 
 begin_define
