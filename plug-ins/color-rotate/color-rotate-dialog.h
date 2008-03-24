@@ -25,7 +25,7 @@ end_comment
 
 begin_function_decl
 name|gboolean
-name|rcm_dialog
+name|color_rotate_dialog
 parameter_list|(
 name|void
 parameter_list|)

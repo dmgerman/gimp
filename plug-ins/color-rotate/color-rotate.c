@@ -28,25 +28,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm.h"
+file|"color-rotate.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_misc.h"
+file|"color-rotate-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_dialog.h"
+file|"color-rotate-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_callback.h"
+file|"color-rotate-callbacks.h"
 end_include
 
 begin_include
@@ -102,7 +102,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|rcm
+name|color_rotate
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -378,7 +378,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|rcm_dialog
+name|color_rotate_dialog
 argument_list|()
 condition|)
 block|{
@@ -408,7 +408,7 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-name|rcm
+name|color_rotate
 argument_list|(
 name|Current
 operator|.
@@ -468,8 +468,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|rcm_row (const guchar * src_row,guchar * dest_row,gint row,gint row_width,gint bytes)
-name|rcm_row
+DECL|function|color_rotate_row (const guchar * src_row,guchar * dest_row,gint row,gint row_width,gint bytes)
+name|color_rotate_row
 parameter_list|(
 specifier|const
 name|guchar
@@ -840,8 +840,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|rcm (GimpDrawable * drawable)
-name|rcm
+DECL|function|color_rotate (GimpDrawable * drawable)
+name|color_rotate
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -1019,7 +1019,7 @@ name|x1
 operator|)
 argument_list|)
 expr_stmt|;
-name|rcm_row
+name|color_rotate_row
 argument_list|(
 name|src_row
 argument_list|,

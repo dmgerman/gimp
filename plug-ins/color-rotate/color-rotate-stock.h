@@ -6,51 +6,51 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__RCM_STOCK_H__
+name|__COLOR_ROTATE_STOCK_H__
 end_ifndef
 
 begin_define
-DECL|macro|__RCM_STOCK_H__
+DECL|macro|__COLOR_ROTATE_STOCK_H__
 define|#
 directive|define
-name|__RCM_STOCK_H__
+name|__COLOR_ROTATE_STOCK_H__
 end_define
 
 begin_define
-DECL|macro|STOCK_COLORMAP_SWITCH_CLOCKWISE
+DECL|macro|STOCK_COLOR_ROTATE_SWITCH_CLOCKWISE
 define|#
 directive|define
-name|STOCK_COLORMAP_SWITCH_CLOCKWISE
-value|"rcm_cw"
+name|STOCK_COLOR_ROTATE_SWITCH_CLOCKWISE
+value|"color_rotate_cw"
 end_define
 
 begin_define
-DECL|macro|STOCK_COLORMAP_SWITCH_COUNTERCLOCKWISE
+DECL|macro|STOCK_COLOR_ROTATE_SWITCH_COUNTERCLOCKWISE
 define|#
 directive|define
-name|STOCK_COLORMAP_SWITCH_COUNTERCLOCKWISE
-value|"rcm_ccw"
+name|STOCK_COLOR_ROTATE_SWITCH_COUNTERCLOCKWISE
+value|"color_rotate_ccw"
 end_define
 
 begin_define
-DECL|macro|STOCK_COLORMAP_CHANGE_ORDER
+DECL|macro|STOCK_COLOR_ROTATE_CHANGE_ORDER
 define|#
 directive|define
-name|STOCK_COLORMAP_CHANGE_ORDER
-value|"rcm_a_b"
+name|STOCK_COLOR_ROTATE_CHANGE_ORDER
+value|"color_rotate_a_b"
 end_define
 
 begin_define
-DECL|macro|STOCK_COLORMAP_SELECT_ALL
+DECL|macro|STOCK_COLOR_ROTATE_SELECT_ALL
 define|#
 directive|define
-name|STOCK_COLORMAP_SELECT_ALL
-value|"rcm_360"
+name|STOCK_COLOR_ROTATE_SELECT_ALL
+value|"color_rotate_360"
 end_define
 
 begin_function_decl
 name|void
-name|rcm_stock_init
+name|color_rotate_stock_init
 parameter_list|(
 name|void
 parameter_list|)
@@ -63,7 +63,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __RCM_STOCK_H__ */
+comment|/* __COLOR_ROTATE_STOCK_H__ */
 end_comment
 
 end_unit

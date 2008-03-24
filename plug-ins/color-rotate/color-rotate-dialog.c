@@ -28,43 +28,43 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm.h"
+file|"color-rotate.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_misc.h"
+file|"color-rotate-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_gdk.h"
+file|"color-rotate-draw.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_callback.h"
+file|"color-rotate-callbacks.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_dialog.h"
+file|"color-rotate-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_stock.h"
+file|"color-rotate-stock.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"images/rcm-stock-pixbufs.h"
+file|"images/color-rotate-stock-pixbufs.h"
 end_include
 
 begin_include
@@ -1079,9 +1079,9 @@ name|cw_ccw
 operator|>
 literal|0
 condition|?
-name|STOCK_COLORMAP_SWITCH_CLOCKWISE
+name|STOCK_COLOR_ROTATE_SWITCH_CLOCKWISE
 else|:
-name|STOCK_COLORMAP_SWITCH_COUNTERCLOCKWISE
+name|STOCK_COLOR_ROTATE_SWITCH_COUNTERCLOCKWISE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1159,7 +1159,7 @@ name|button
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|STOCK_COLORMAP_CHANGE_ORDER
+name|STOCK_COLOR_ROTATE_CHANGE_ORDER
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1231,7 +1231,7 @@ name|button
 operator|=
 name|gtk_button_new_from_stock
 argument_list|(
-name|STOCK_COLORMAP_SELECT_ALL
+name|STOCK_COLOR_ROTATE_SELECT_ALL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3410,8 +3410,8 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|rcm_dialog (void)
-name|rcm_dialog
+DECL|function|color_rotate_dialog (void)
+name|color_rotate_dialog
 parameter_list|(
 name|void
 parameter_list|)
@@ -3453,7 +3453,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|rcm_stock_init
+name|color_rotate_stock_init
 argument_list|()
 expr_stmt|;
 name|dialog

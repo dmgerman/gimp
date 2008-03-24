@@ -28,43 +28,43 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm.h"
+file|"color-rotate.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_misc.h"
+file|"color-rotate-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_gdk.h"
+file|"color-rotate-draw.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_dialog.h"
+file|"color-rotate-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_callback.h"
+file|"color-rotate-callbacks.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_stock.h"
+file|"color-rotate-stock.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"images/rcm-stock-pixbufs.h"
+file|"images/color-rotate-stock-pixbufs.h"
 end_include
 
 begin_comment
@@ -208,7 +208,7 @@ name|cw_ccw
 operator|*
 literal|0.001
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|circle
 operator|->
@@ -286,9 +286,9 @@ operator|>
 literal|0
 operator|)
 condition|?
-name|STOCK_COLORMAP_SWITCH_CLOCKWISE
+name|STOCK_COLOR_ROTATE_SWITCH_CLOCKWISE
 else|:
-name|STOCK_COLORMAP_SWITCH_COUNTERCLOCKWISE
+name|STOCK_COLOR_ROTATE_SWITCH_COUNTERCLOCKWISE
 argument_list|,
 literal|"use_stock"
 argument_list|,
@@ -349,7 +349,7 @@ operator|->
 name|beta
 argument_list|)
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|circle
 operator|->
@@ -1422,7 +1422,7 @@ operator|==
 name|VIRGIN
 condition|)
 block|{
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|widget
 operator|->
@@ -1631,7 +1631,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|widget
 operator|->
@@ -1758,7 +1758,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|widget
 operator|->
@@ -1983,7 +1983,7 @@ block|}
 else|else
 block|{
 comment|/* this should be erasing entire angle */
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|widget
 operator|->
@@ -2062,7 +2062,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|widget
 operator|->
@@ -2174,7 +2174,7 @@ operator|==
 name|VIRGIN
 condition|)
 block|{
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|widget
 operator|->
@@ -2195,7 +2195,7 @@ operator|->
 name|satur
 argument_list|)
 expr_stmt|;
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 argument_list|(
 name|widget
 operator|->
@@ -2334,7 +2334,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|widget
 operator|->
@@ -2355,7 +2355,7 @@ operator|->
 name|satur
 argument_list|)
 expr_stmt|;
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 argument_list|(
 name|circle
 operator|->
@@ -2458,7 +2458,7 @@ name|action_flag
 operator|==
 name|DRAGING
 condition|)
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|widget
 operator|->
@@ -2566,7 +2566,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 argument_list|(
 name|circle
 operator|->
@@ -2596,7 +2596,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|widget
 operator|->
@@ -2693,7 +2693,7 @@ name|satur
 operator|=
 literal|1
 expr_stmt|;
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|widget
 operator|->
@@ -2828,7 +2828,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|circle
 operator|->
@@ -2919,7 +2919,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 argument_list|(
 name|circle
 operator|->
@@ -3008,7 +3008,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|circle
 operator|->
@@ -3033,7 +3033,7 @@ operator|->
 name|satur
 argument_list|)
 expr_stmt|;
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 argument_list|(
 name|circle
 operator|->
@@ -3113,7 +3113,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 argument_list|(
 name|circle
 operator|->
@@ -3138,7 +3138,7 @@ operator|->
 name|satur
 argument_list|)
 expr_stmt|;
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 argument_list|(
 name|circle
 operator|->
@@ -3209,7 +3209,7 @@ operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 argument_list|(
 name|circle
 operator|->

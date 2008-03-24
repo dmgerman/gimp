@@ -28,25 +28,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm.h"
+file|"color-rotate.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_misc.h"
+file|"color-rotate-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_dialog.h"
+file|"color-rotate-dialog.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_gdk.h"
+file|"color-rotate-draw.h"
 end_include
 
 begin_comment
@@ -67,8 +67,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|rcm_draw_little_circle (GdkWindow * window,GdkGC * color,gfloat hue,gfloat satur)
-name|rcm_draw_little_circle
+DECL|function|color_rotate_draw_little_circle (GdkWindow * window,GdkGC * color,gfloat hue,gfloat satur)
+name|color_rotate_draw_little_circle
 parameter_list|(
 name|GdkWindow
 modifier|*
@@ -152,8 +152,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|rcm_draw_large_circle (GdkWindow * window,GdkGC * color,gfloat gray_sat)
-name|rcm_draw_large_circle
+DECL|function|color_rotate_draw_large_circle (GdkWindow * window,GdkGC * color,gfloat gray_sat)
+name|color_rotate_draw_large_circle
 parameter_list|(
 name|GdkWindow
 modifier|*
@@ -260,8 +260,8 @@ end_define
 
 begin_function
 name|void
-DECL|function|rcm_draw_arrows (GdkWindow * window,GdkGC * color,RcmAngle * angle)
-name|rcm_draw_arrows
+DECL|function|color_rotate_draw_arrows (GdkWindow * window,GdkGC * color,RcmAngle * angle)
+name|color_rotate_draw_arrows
 parameter_list|(
 name|GdkWindow
 modifier|*

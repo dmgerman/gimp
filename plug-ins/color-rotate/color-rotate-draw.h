@@ -105,7 +105,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|rcm_draw_little_circle
+name|color_rotate_draw_little_circle
 parameter_list|(
 name|GdkWindow
 modifier|*
@@ -126,7 +126,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|rcm_draw_large_circle
+name|color_rotate_draw_large_circle
 parameter_list|(
 name|GdkWindow
 modifier|*
@@ -144,7 +144,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|rcm_draw_arrows
+name|color_rotate_draw_arrows
 parameter_list|(
 name|GdkWindow
 modifier|*

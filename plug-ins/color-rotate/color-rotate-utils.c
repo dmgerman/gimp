@@ -28,19 +28,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"rcm.h"
+file|"color-rotate.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_misc.h"
+file|"color-rotate-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"rcm_gdk.h"
+file|"color-rotate-draw.h"
 end_include
 
 begin_function
