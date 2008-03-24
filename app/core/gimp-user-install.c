@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimp-user-install.c  * Copyright (C) 2000-2006 Michael Natterer and Sven Neumann  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimp-user-install.c  * Copyright (C) 2000-2008 Michael Natterer and Sven Neumann  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -164,7 +164,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d947c70103
+DECL|enum|__anon28be9a1c0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -183,7 +183,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28d947c70208
+DECL|struct|__anon28be9a1c0208
 block|{
 DECL|member|name
 specifier|const
@@ -1931,6 +1931,15 @@ block|{
 comment|/*  skip these files for all old versions  */
 if|if
 condition|(
+name|strcmp
+argument_list|(
+name|basename
+argument_list|,
+literal|"documents"
+argument_list|)
+operator|==
+literal|0
+operator|||
 name|g_str_has_prefix
 argument_list|(
 name|basename
@@ -1938,33 +1947,39 @@ argument_list|,
 literal|"gimpswap."
 argument_list|)
 operator|||
-name|g_str_has_prefix
+name|strcmp
 argument_list|(
 name|basename
 argument_list|,
 literal|"pluginrc"
 argument_list|)
+operator|==
+literal|0
 operator|||
-name|g_str_has_prefix
+name|strcmp
 argument_list|(
 name|basename
 argument_list|,
 literal|"themerc"
 argument_list|)
+operator|==
+literal|0
 operator|||
-name|g_str_has_prefix
+name|strcmp
 argument_list|(
 name|basename
 argument_list|,
 literal|"toolrc"
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 goto|goto
 name|next_file
 goto|;
 block|}
-comment|/*  skip menurc for gimp 2.0 since the format has changed  */
+comment|/*  skip menurc for gimp 2.0 as the format has changed  */
 if|if
 condition|(
 name|install
@@ -1973,12 +1988,14 @@ name|old_minor
 operator|==
 literal|0
 operator|&&
-name|g_str_has_prefix
+name|strcmp
 argument_list|(
 name|basename
 argument_list|,
 literal|"menurc"
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 goto|goto
