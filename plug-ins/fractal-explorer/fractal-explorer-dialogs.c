@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"FractalExplorer.h"
+file|"fractal-explorer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"Dialogs.h"
+file|"fractal-explorer-dialogs.h"
 end_include
 
 begin_include
@@ -2026,7 +2026,7 @@ name|i
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"fractalexplorer"
+literal|"fractal-explorer"
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2166,7 +2166,7 @@ name|gimp_dialog_new
 argument_list|(
 literal|"Fractal Explorer"
 argument_list|,
-literal|"fractalexplorer"
+literal|"fractal-explorer"
 argument_list|,
 name|NULL
 argument_list|,
