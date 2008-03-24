@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"../Lighting/images/stock-pixbufs.h"
+file|"../lighting/images/stock-pixbufs.h"
 end_include
 
 begin_decl_stmt
