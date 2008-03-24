@@ -585,9 +585,9 @@ literal|"Loads a thumbnail from a JPEG image"
 argument_list|,
 literal|"Loads a thumbnail from a JPEG image (only if it exists)"
 argument_list|,
-literal|"S. Mukund<muks@mukund.org>, Sven Neumann<sven@gimp.org>"
+literal|"Mukund Sivaraman<muks@mukund.org>, Sven Neumann<sven@gimp.org>"
 argument_list|,
-literal|"S. Mukund<muks@mukund.org>, Sven Neumann<sven@gimp.org>"
+literal|"Mukund Sivaraman<muks@mukund.org>, Sven Neumann<sven@gimp.org>"
 argument_list|,
 literal|"November 15, 2004"
 argument_list|,
