@@ -256,7 +256,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3861fb0103
+DECL|enum|__anon2b785a5b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2486,10 +2486,6 @@ name|g_object_set
 argument_list|(
 name|thumbnail
 argument_list|,
-literal|"image-mimetype"
-argument_list|,
-name|NULL
-argument_list|,
 literal|"image-width"
 argument_list|,
 literal|0
@@ -2546,6 +2542,13 @@ expr_stmt|;
 name|gimp_thumbnail_reset_info
 argument_list|(
 name|thumbnail
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|thumbnail
+operator|->
+name|image_mimetype
 argument_list|)
 expr_stmt|;
 name|thumbnail
