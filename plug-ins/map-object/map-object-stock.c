@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"mapobject_stock.h"
+file|"map-object-stock.h"
 end_include
 
 begin_include

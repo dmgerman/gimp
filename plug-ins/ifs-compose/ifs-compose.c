@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"ifscompose.h"
+file|"ifs-compose.h"
 end_include
 
 begin_include
@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ff18610103
+DECL|enum|__anon29357a910103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ff18610203
+DECL|enum|__anon29357a910203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610308
+DECL|struct|__anon29357a910308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -180,7 +180,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon27ff1861040a
+DECL|union|__anon29357a91040a
 block|{
 DECL|member|d
 name|gdouble
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610508
+DECL|struct|__anon29357a910508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610608
+DECL|struct|__anon29357a910608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610708
+DECL|struct|__anon29357a910708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610808
+DECL|struct|__anon29357a910808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -373,7 +373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610908
+DECL|struct|__anon29357a910908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ff18610a08
+DECL|struct|__anon29357a910a08
 block|{
 DECL|member|run
 name|gboolean

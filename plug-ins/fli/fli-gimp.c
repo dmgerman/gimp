@@ -84,7 +84,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"gfli"
+value|"fli"
 end_define
 
 begin_function_decl

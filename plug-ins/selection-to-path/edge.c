@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sel2path.h"
+file|"selection-to-path.h"
 end_include
 
 begin_include
@@ -40,7 +40,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc176430103
+DECL|enum|__anon2b8b0d280103
 block|{
 DECL|enumerator|north
 DECL|enumerator|northwest

@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sel2path.h"
+file|"selection-to-path.h"
 end_include
 
 begin_include

@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"ifscompose.h"
+file|"ifs-compose.h"
 end_include
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acd086d0108
+DECL|struct|__anon2a20e01e0108
 block|{
 DECL|member|point
 name|GdkPoint

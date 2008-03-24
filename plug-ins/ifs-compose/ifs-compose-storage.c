@@ -34,11 +34,11 @@ end_include
 begin_include
 include|#
 directive|include
-file|"ifscompose.h"
+file|"ifs-compose.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2c4d253b0103
+DECL|enum|__anon2b9549d40103
 enum|enum
 block|{
 DECL|enumerator|TOKEN_INVALID
@@ -124,7 +124,7 @@ end_enum
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c4d253b0208
+DECL|struct|__anon2b9549d40208
 block|{
 DECL|member|name
 name|gchar

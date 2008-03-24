@@ -32,25 +32,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lighting_main.h"
+file|"lighting-main.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"lighting_image.h"
+file|"lighting-image.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"lighting_preview.h"
+file|"lighting-preview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"lighting_ui.h"
+file|"lighting-ui.h"
 end_include
 
 begin_decl_stmt

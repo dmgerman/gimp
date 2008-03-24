@@ -44,25 +44,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"mapobject_main.h"
+file|"map-object-main.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_image.h"
+file|"map-object-image.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_shade.h"
+file|"map-object-shade.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_apply.h"
+file|"map-object-apply.h"
 end_include
 
 begin_include

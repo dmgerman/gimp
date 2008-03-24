@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_typedef
-DECL|struct|__anon296daf8f0108
+DECL|struct|__anon291223810108
 typedef|typedef
 struct|struct
 block|{
@@ -34,7 +34,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296daf8f0208
+DECL|struct|__anon291223810208
 typedef|typedef
 struct|struct
 block|{
@@ -55,7 +55,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296daf8f0308
+DECL|struct|__anon291223810308
 typedef|typedef
 struct|struct
 block|{
@@ -75,7 +75,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296daf8f0408
+DECL|struct|__anon291223810408
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296daf8f0508
+DECL|struct|__anon291223810508
 block|{
 DECL|member|num_elements
 name|gint
@@ -192,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon296daf8f0608
+DECL|struct|__anon291223810608
 typedef|typedef
 struct|struct
 block|{

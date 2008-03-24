@@ -37,10 +37,6 @@ directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
-begin_empty
-empty|#
-end_empty
-
 begin_include
 include|#
 directive|include
@@ -74,7 +70,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sel2path.h"
+file|"selection-to-path.h"
 end_include
 
 begin_include

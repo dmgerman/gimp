@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"lighting_stock.h"
+file|"lighting-stock.h"
 end_include
 
 begin_include

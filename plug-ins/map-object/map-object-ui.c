@@ -38,37 +38,37 @@ end_include
 begin_include
 include|#
 directive|include
-file|"mapobject_ui.h"
+file|"map-object-ui.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_image.h"
+file|"map-object-image.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_apply.h"
+file|"map-object-apply.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_preview.h"
+file|"map-object-preview.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_main.h"
+file|"map-object-main.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"mapobject_stock.h"
+file|"map-object-stock.h"
 end_include
 
 begin_include
@@ -7107,7 +7107,7 @@ name|FALSE
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"MapObject"
+literal|"map-object"
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7121,7 +7121,7 @@ argument_list|(
 literal|"Map to Object"
 argument_list|)
 argument_list|,
-literal|"MapObject"
+literal|"map-object"
 argument_list|,
 name|NULL
 argument_list|,
