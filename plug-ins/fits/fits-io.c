@@ -370,7 +370,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fitsrw.h"
+file|"fits-io.h"
 end_include
 
 begin_comment

@@ -1,74 +1,115 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  *   SGI image file format library definitions.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  * Revision History:  *  *   see ChangeLog  */
+comment|/*  *   SGI image file format library definitions.  *  *   Copyright 1997-1998 Michael Sweet (mike@easysw.com)  *  *   This program is free software; you can redistribute it and/or modify it  *   under the terms of the GNU General Public License as published by the Free  *   Software Foundation; either version 2 of the License, or (at your option)  *   any later version.  *  *   This program is distributed in the hope that it will be useful, but  *   WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY  *   or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License  *   for more details.  *  *   You should have received a copy of the GNU General Public License  *   along with this program; if not, write to the Free Software  *   Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|_SGI_H_
+name|__SGI_LIB_H__
 end_ifndef
 
 begin_define
-DECL|macro|_SGI_H_
+DECL|macro|__SGI_LIB_H__
 define|#
 directive|define
-name|_SGI_H_
+name|__SGI_LIB_H__
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__cplusplus
-end_ifdef
+begin_macro
+name|G_BEGIN_DECLS
+end_macro
 
-begin_extern
-extern|extern
-literal|"C"
-block|{
-endif|#
-directive|endif
+begin_comment
 comment|/*  * Constants...  */
+end_comment
+
+begin_define
 DECL|macro|SGI_MAGIC
 define|#
 directive|define
 name|SGI_MAGIC
 value|474
+end_define
+
+begin_comment
+DECL|macro|SGI_MAGIC
 comment|/* Magic number in image file */
+end_comment
+
+begin_define
 DECL|macro|SGI_READ
 define|#
 directive|define
 name|SGI_READ
 value|0
+end_define
+
+begin_comment
+DECL|macro|SGI_READ
 comment|/* Read from an SGI image file */
+end_comment
+
+begin_define
 DECL|macro|SGI_WRITE
 define|#
 directive|define
 name|SGI_WRITE
 value|1
+end_define
+
+begin_comment
+DECL|macro|SGI_WRITE
 comment|/* Write to an SGI image file */
+end_comment
+
+begin_define
 DECL|macro|SGI_COMP_NONE
 define|#
 directive|define
 name|SGI_COMP_NONE
 value|0
+end_define
+
+begin_comment
+DECL|macro|SGI_COMP_NONE
 comment|/* No compression */
+end_comment
+
+begin_define
 DECL|macro|SGI_COMP_RLE
 define|#
 directive|define
 name|SGI_COMP_RLE
 value|1
+end_define
+
+begin_comment
+DECL|macro|SGI_COMP_RLE
 comment|/* Run-length encoding */
+end_comment
+
+begin_define
 DECL|macro|SGI_COMP_ARLE
 define|#
 directive|define
 name|SGI_COMP_ARLE
 value|2
+end_define
+
+begin_comment
+DECL|macro|SGI_COMP_ARLE
 comment|/* Agressive run-length encoding */
+end_comment
+
+begin_comment
 comment|/*  * Image structure...  */
+end_comment
+
+begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290017e60108
+DECL|struct|__anon29c005140108
 block|{
 DECL|member|file
 name|FILE
@@ -148,7 +189,13 @@ DECL|typedef|sgi_t
 block|}
 name|sgi_t
 typedef|;
+end_typedef
+
+begin_comment
 comment|/*  * Prototypes...  */
+end_comment
+
+begin_function_decl
 specifier|extern
 name|int
 name|sgiClose
@@ -158,6 +205,9 @@ modifier|*
 name|sgip
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|extern
 name|int
 name|sgiGetRow
@@ -178,6 +228,9 @@ name|int
 name|z
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|extern
 name|sgi_t
 modifier|*
@@ -206,6 +259,9 @@ name|int
 name|zsize
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|extern
 name|sgi_t
 modifier|*
@@ -234,6 +290,9 @@ name|int
 name|zsize
 parameter_list|)
 function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|extern
 name|int
 name|sgiPutRow
@@ -254,16 +313,11 @@ name|int
 name|z
 parameter_list|)
 function_decl|;
-ifdef|#
-directive|ifdef
-name|__cplusplus
-block|}
-end_extern
+end_function_decl
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_macro
+name|G_END_DECLS
+end_macro
 
 begin_endif
 endif|#
@@ -271,11 +325,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* !_SGI_H_ */
-end_comment
-
-begin_comment
-comment|/*  * End of "$Id$".  */
+comment|/* !__SGI_LIB_H__ */
 end_comment
 
 end_unit

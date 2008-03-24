@@ -24,13 +24,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<glib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib/gstdio.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"sgi.h"
+file|"sgi-lib.h"
 end_include
 
 begin_comment
@@ -3954,10 +3960,6 @@ operator|)
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/*  * End of "$Id$".  */
-end_comment
 
 end_unit
 

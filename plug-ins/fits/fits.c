@@ -46,7 +46,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"fitsrw.h"
+file|"fits-io.h"
 end_include
 
 begin_include
@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289152fa0108
+DECL|struct|__anon2c3efd2c0108
 block|{
 DECL|member|replace
 name|gint

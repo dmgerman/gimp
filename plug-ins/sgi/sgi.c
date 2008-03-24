@@ -30,12 +30,8 @@ end_include
 begin_include
 include|#
 directive|include
-file|"sgi.h"
+file|"sgi-lib.h"
 end_include
-
-begin_comment
-comment|/* SGI image library definitions */
-end_comment
 
 begin_include
 include|#
