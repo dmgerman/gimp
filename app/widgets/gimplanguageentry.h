@@ -110,6 +110,11 @@ DECL|member|parent_instance
 name|GtkEntry
 name|parent_instance
 decl_stmt|;
+DECL|member|store
+name|GtkListStore
+modifier|*
+name|store
+decl_stmt|;
 block|}
 struct|;
 end_struct
