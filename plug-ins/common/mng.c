@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b911ea60103
+DECL|enum|__anon2bc12ea90103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b911ea60203
+DECL|enum|__anon2bc12ea90203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -1874,6 +1874,7 @@ operator||
 name|MNG_SIMPLICITY_COMPLEXFEATURES
 operator|)
 expr_stmt|;
+comment|/* JNG and delta-PNG chunks exist */
 name|mng_simplicity_profile
 operator||=
 operator|(
@@ -1882,7 +1883,6 @@ operator||
 name|MNG_SIMPLICITY_DELTAPNG
 operator|)
 expr_stmt|;
-comment|/* JNG and delta-PNG chunks exist */
 for|for
 control|(
 name|i
@@ -1907,26 +1907,26 @@ index|]
 argument_list|)
 condition|)
 block|{
+comment|/* internal transparency exists */
 name|mng_simplicity_profile
 operator||=
 name|MNG_SIMPLICITY_TRANSPARENCY
 expr_stmt|;
-comment|/* internal transparency exists */
+comment|/* validity of following flags */
 name|mng_simplicity_profile
 operator||=
 literal|0x00000040
 expr_stmt|;
-comment|/* validity of following */
+comment|/* semi-transparency exists */
 name|mng_simplicity_profile
 operator||=
 literal|0x00000100
 expr_stmt|;
-comment|/* semi-transparency exists */
+comment|/* background transparency should happen */
 name|mng_simplicity_profile
 operator||=
 literal|0x00000080
 expr_stmt|;
-comment|/* background transparency should happen */
 break|break;
 block|}
 name|userdata
@@ -2393,7 +2393,7 @@ if|#
 directive|if
 literal|0
 comment|/* how do we get this to work? */
-block|if (mng_data.bkgd)         {                 GimpRGB bgcolor;                 guchar red, green, blue;                  gimp_context_get_background(&bgcolor);                 gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);                  if ((ret = mng_putchunk_back(handle, red, green, blue,                                              MNG_BACKGROUNDCOLOR_MANDATORY,                                              0, MNG_BACKGROUNDIMAGE_NOTILE)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_back() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  if ((ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0,                                              gimp_rgb_luminance_uchar(&bgcolor),                                              red, green, blue)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         }
+block|if (mng_data.bkgd)         {                 GimpRGB bgcolor;                 guchar red, green, blue;                  gimp_context_get_background(&bgcolor);                 gimp_rgb_get_uchar(&bgcolor,&red,&green,&blue);                  ret = mng_putchunk_back(handle, red, green, blue,                                         MNG_BACKGROUNDCOLOR_MANDATORY,                                         0, MNG_BACKGROUNDIMAGE_NOTILE);                 if (MNG_NOERROR != ret)                 {                         g_warning("Unable to mng_putchunk_back() "                                   "in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  ret = mng_putchunk_bkgd(handle, MNG_FALSE, 2, 0,                                         gimp_rgb_luminance_uchar(&bgcolor),                                         red, green, blue);                 if (MNG_NOERROR != ret)                 {                         g_warning("Unable to mng_putchunk_bkgd() "                                   "in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         }
 endif|#
 directive|endif
 if|if
@@ -2403,9 +2403,6 @@ operator|.
 name|gama
 condition|)
 block|{
-if|if
-condition|(
-operator|(
 name|ret
 operator|=
 name|mng_putchunk_gama
@@ -2425,9 +2422,12 @@ operator|*
 literal|100000
 operator|)
 argument_list|)
-operator|)
-operator|!=
+expr_stmt|;
+if|if
+condition|(
 name|MNG_NOERROR
+operator|!=
+name|ret
 condition|)
 block|{
 name|g_warning
@@ -2462,7 +2462,7 @@ if|#
 directive|if
 literal|0
 comment|/* how do we get this to work? */
-block|if (mng_data.phys)         {                 gimp_image_get_resolution(original_image_id,&xres,&yres);                  if ((ret = mng_putchunk_phyg(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_phyg() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }                  if ((ret = mng_putchunk_phys(handle, MNG_FALSE, (mng_uint32) (xres * 39.37), (mng_uint32) (yres * 39.37), 1)) != MNG_NOERROR)                 {                         g_warning("Unable to mng_putchunk_phys() in mng_save_image()");                         mng_cleanup(&handle);                         fclose(userdata->fp);                         g_free(userdata);                         return 0;                 }         }
+block|if (mng_data.phys)     {       gimp_image_get_resolution(original_image_id,&xres,&yres);       ret = mng_putchunk_phyg (handle, MNG_FALSE,                                (mng_uint32) (xres * 39.37),                                (mng_uint32) (yres * 39.37), 1);       if (MNG_NOERROR != ret)         {           g_warning("Unable to mng_putchunk_phyg() in mng_save_image()");           mng_cleanup(&handle);           fclose(userdata->fp);           g_free(userdata);           return 0;         }        ret = mng_putchunk_phys (handle, MNG_FALSE,                                (mng_uint32) (xres * 39.37),                                (mng_uint32) (yres * 39.37), 1);       if (MNG_NOERROR != ret)         {           g_warning("Unable to mng_putchunk_phys() in mng_save_image()");           mng_cleanup(&handle);           fclose(userdata->fp);           g_free(userdata);           return 0;         }     }
 endif|#
 directive|endif
 if|if
@@ -4076,7 +4076,6 @@ name|k
 index|]
 operator|=
 operator|(
-operator|(
 name|fixed
 index|[
 name|k
@@ -4100,7 +4099,6 @@ index|]
 index|]
 else|:
 literal|0
-operator|)
 expr_stmt|;
 block|}
 block|}
@@ -4752,15 +4750,13 @@ literal|0
 condition|)
 block|{
 comment|/* if this frame's palette is the same as the global palette,                  write a 0-color palette chunk */
-if|if
-condition|(
-operator|(
 name|ret
 operator|=
 name|mng_putchunk_plte
 argument_list|(
 name|handle
 argument_list|,
+operator|(
 name|layer_has_unique_palette
 condition|?
 operator|(
@@ -4770,6 +4766,7 @@ literal|3
 operator|)
 else|:
 literal|0
+operator|)
 argument_list|,
 operator|(
 name|mng_palette8e
@@ -4777,9 +4774,12 @@ operator|*
 operator|)
 name|chunkbuffer
 argument_list|)
-operator|)
-operator|!=
+expr_stmt|;
+if|if
+condition|(
 name|MNG_NOERROR
+operator|!=
+name|ret
 condition|)
 block|{
 name|g_warning
@@ -4825,9 +4825,6 @@ operator|==
 literal|0
 condition|)
 block|{
-if|if
-condition|(
-operator|(
 name|ret
 operator|=
 name|mng_putchunk_trns
@@ -4864,9 +4861,12 @@ operator|*
 operator|)
 name|chunkbuffer
 argument_list|)
-operator|)
-operator|!=
+expr_stmt|;
+if|if
+condition|(
 name|MNG_NOERROR
+operator|!=
+name|ret
 condition|)
 block|{
 name|g_warning
