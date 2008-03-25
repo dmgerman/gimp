@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0933670103
+DECL|enum|__anon2758ea9d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0933670203
+DECL|enum|__anon2758ea9d0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2854,6 +2854,17 @@ literal|"unit"
 argument_list|,
 name|unit
 argument_list|,
+comment|/* The window position will be overridden by the                          * dialog factory, it is only really used on first                          * startup.                          */
+name|display
+operator|->
+name|image
+condition|?
+name|NULL
+else|:
+literal|"window-position"
+argument_list|,
+name|GTK_WIN_POS_CENTER
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2871,8 +2882,6 @@ name|display_factory
 expr_stmt|;
 if|if
 condition|(
-name|shell
-operator|->
 name|display
 operator|->
 name|image
@@ -2888,8 +2897,6 @@ name|image_width
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|shell
-operator|->
 name|display
 operator|->
 name|image
@@ -2899,8 +2906,6 @@ name|image_height
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|shell
-operator|->
 name|display
 operator|->
 name|image
@@ -2928,8 +2933,6 @@ name|shell
 operator|->
 name|dot_for_dot
 operator|=
-name|shell
-operator|->
 name|display
 operator|->
 name|config
@@ -2940,8 +2943,6 @@ name|gimp_config_sync
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|shell
-operator|->
 name|display
 operator|->
 name|config
@@ -2963,8 +2964,6 @@ name|gimp_config_sync
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|shell
-operator|->
 name|display
 operator|->
 name|config
@@ -2994,8 +2993,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|shell
-operator|->
 name|display
 operator|->
 name|config
@@ -3025,8 +3022,6 @@ name|shell
 operator|->
 name|monitor_xres
 operator|=
-name|shell
-operator|->
 name|display
 operator|->
 name|config
@@ -3037,8 +3032,6 @@ name|shell
 operator|->
 name|monitor_yres
 operator|=
-name|shell
-operator|->
 name|display
 operator|->
 name|config
@@ -3049,8 +3042,6 @@ block|}
 comment|/* adjust the initial scale -- so that window fits on screen. */
 if|if
 condition|(
-name|shell
-operator|->
 name|display
 operator|->
 name|image
@@ -4776,14 +4767,11 @@ name|gimp_display_shell_filter_new
 argument_list|(
 name|shell
 argument_list|,
-name|GIMP_CORE_CONFIG
-argument_list|(
-name|shell
-operator|->
 name|display
 operator|->
+name|gimp
+operator|->
 name|config
-argument_list|)
 operator|->
 name|color_management
 argument_list|)
@@ -4808,8 +4796,6 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|shell
-operator|->
 name|display
 operator|->
 name|image
@@ -4835,8 +4821,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|shell
-operator|->
 name|display_factory
 argument_list|,
 literal|"gimp-empty-image-window"
