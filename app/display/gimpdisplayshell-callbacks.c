@@ -322,7 +322,7 @@ DECL|macro|DEFAULT_EVENT_FILTER
 define|#
 directive|define
 name|DEFAULT_EVENT_FILTER
-value|0.5
+value|0.50
 end_define
 
 begin_comment
