@@ -1829,6 +1829,10 @@ operator|->
 name|config
 argument_list|)
 decl_stmt|;
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
 if|if
 condition|(
 name|gimp
@@ -2175,6 +2179,10 @@ name|gimp
 argument_list|)
 expr_stmt|;
 comment|/*  create the empty display  */
+name|display
+operator|=
+name|GIMP_DISPLAY
+argument_list|(
 name|gimp_create_display
 argument_list|(
 name|gimp
@@ -2184,6 +2192,7 @@ argument_list|,
 name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gui_dbus_service_init
@@ -2204,6 +2213,17 @@ argument_list|)
 expr_stmt|;
 name|dialogs_show_toolbox
 argument_list|()
+expr_stmt|;
+comment|/*  move keyboard focus to the display  */
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function

@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43a2260103
+DECL|enum|__anon293441d40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -131,7 +131,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43a2260203
+DECL|enum|__anon293441d40203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -670,6 +670,16 @@ name|dock
 argument_list|)
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_focus_on_map
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|dock
