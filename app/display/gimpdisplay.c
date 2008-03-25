@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-icon.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275ce3570103
+DECL|enum|__anon28ec5f1d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1869,7 +1875,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_display_shell_update_icon
+name|gimp_display_shell_icon_update
 argument_list|(
 name|GIMP_DISPLAY_SHELL
 argument_list|(
