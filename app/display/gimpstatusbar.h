@@ -475,6 +475,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_statusbar_peek
+parameter_list|(
+name|GimpStatusbar
+modifier|*
+name|statusbar
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_statusbar_pop
 parameter_list|(

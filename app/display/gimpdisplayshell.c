@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaae5f40103
+DECL|enum|__anon276ca2f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaae5f40203
+DECL|enum|__anon276ca2f60203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2436,6 +2436,21 @@ name|fullscreen
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+name|event
+operator|->
+name|changed_mask
+operator|&
+name|GDK_WINDOW_STATE_ICONIFIED
+condition|)
+block|{
+name|gimp_display_shell_progress_window_state_changed
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|FALSE
