@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce766d0103
+DECL|enum|__anon2af0092c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ce766d0203
+DECL|enum|__anon2af0092c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1543,7 +1543,7 @@ literal|"window-state-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_events
+name|gimp_display_shell_window_state_event
 argument_list|)
 argument_list|,
 name|shell
