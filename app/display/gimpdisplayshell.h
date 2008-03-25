@@ -312,17 +312,17 @@ DECL|member|other_scale
 name|gdouble
 name|other_scale
 decl_stmt|;
-comment|/*  scale factor entered in Zoom->Other     */
+comment|/*  scale factor entered in Zoom->Other*/
 DECL|member|dot_for_dot
 name|gboolean
 name|dot_for_dot
 decl_stmt|;
-comment|/*  is monitor resolution being ignored?    */
+comment|/*  ignore monitor resolution          */
 DECL|member|offset_x
 name|gint
 name|offset_x
 decl_stmt|;
-comment|/*  offset of display image into raw image  */
+comment|/*  offset of display image            */
 DECL|member|offset_y
 name|gint
 name|offset_y
@@ -560,12 +560,11 @@ DECL|member|override_cursor
 name|GimpCursorType
 name|override_cursor
 decl_stmt|;
-comment|/*  Overriding cursor                  */
+comment|/*  Overriding cursor                 */
 DECL|member|using_override_cursor
 name|gboolean
 name|using_override_cursor
 decl_stmt|;
-comment|/*  is the cursor overridden?      */
 DECL|member|draw_cursor
 name|gboolean
 name|draw_cursor
@@ -733,7 +732,7 @@ DECL|member|last_coords
 name|GimpCoords
 name|last_coords
 decl_stmt|;
-comment|/* last motion event */
+comment|/* last motion event                   */
 block|}
 struct|;
 end_struct
