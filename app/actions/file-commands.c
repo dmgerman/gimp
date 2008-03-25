@@ -483,8 +483,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_last_opened_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|file_last_opened_cmd_callback
+DECL|function|file_open_recent_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|file_open_recent_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -551,6 +551,14 @@ condition|(
 name|imagefile
 condition|)
 block|{
+name|GimpDisplay
+modifier|*
+name|display
+decl_stmt|;
+name|GimpProgress
+modifier|*
+name|progress
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -564,6 +572,26 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+name|return_if_no_display
+argument_list|(
+name|display
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
+name|progress
+operator|=
+name|display
+operator|->
+name|image
+condition|?
+name|NULL
+else|:
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 name|image
 operator|=
 name|file_open_with_display
@@ -575,7 +603,7 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
-name|NULL
+name|progress
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -621,7 +649,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|display
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,

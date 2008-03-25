@@ -731,7 +731,7 @@ name|n_entries
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|file_last_opened_cmd_callback
+name|file_open_recent_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;
