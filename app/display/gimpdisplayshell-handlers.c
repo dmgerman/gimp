@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-icon.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -2802,7 +2808,7 @@ name|icon_idle_id
 operator|=
 literal|0
 expr_stmt|;
-name|gimp_display_shell_update_icon
+name|gimp_display_shell_icon_update
 argument_list|(
 name|shell
 argument_list|)
