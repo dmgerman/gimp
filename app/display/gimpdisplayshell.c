@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29570b310103
+DECL|enum|__anon2ad24bee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29570b310203
+DECL|enum|__anon2ad24bee0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5012,7 +5012,7 @@ name|canvas
 argument_list|,
 name|_
 argument_list|(
-literal|"Drop image files here to open them."
+literal|"Drop image files here to open them"
 argument_list|)
 argument_list|,
 name|NULL
@@ -5347,7 +5347,7 @@ name|canvas
 argument_list|,
 name|_
 argument_list|(
-literal|"Drop files to open them."
+literal|"Drop image files here to open them"
 argument_list|)
 argument_list|,
 name|NULL
