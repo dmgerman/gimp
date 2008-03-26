@@ -6710,7 +6710,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The psd file format does not support images that are more than 30000 pixels wide or tall."
+literal|"Unable to save '%s'.  The PSD file format does not support images that are more than 30,000 pixels wide or tall."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -6777,7 +6777,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The psd file format does not support images with layers that are more than 30000 pixels wide or tall."
+literal|"Unable to save '%s'.  The PSD file format does not support images with layers that are more than 30,000 pixels wide or tall."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8

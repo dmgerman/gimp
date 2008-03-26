@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40c3a20103
+DECL|enum|__anon2a1e50420103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40c3a20208
+DECL|struct|__anon2a1e50420208
 block|{
 DECL|member|interlace
 name|gint
@@ -251,6 +251,11 @@ specifier|static
 name|gboolean
 name|sanity_check
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
 name|gint32
 name|image_ID
 parameter_list|)
@@ -590,15 +595,6 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
-name|gint32
-name|drawable_ID
-decl_stmt|;
-name|gint32
-name|orig_image_ID
-decl_stmt|;
 name|GimpExportReturn
 name|export
 init|=
@@ -660,6 +656,20 @@ operator|==
 literal|0
 condition|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
+name|gint32
+name|image_ID
+decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
+name|gint32
+name|orig_image_ID
+decl_stmt|;
 name|image_ID
 operator|=
 name|orig_image_ID
@@ -683,6 +693,17 @@ operator|.
 name|data
 operator|.
 name|d_int32
+expr_stmt|;
+name|filename
+operator|=
+name|param
+index|[
+literal|3
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
 expr_stmt|;
 comment|/*  eventually export the image */
 switch|switch
@@ -754,6 +775,8 @@ if|if
 condition|(
 name|sanity_check
 argument_list|(
+name|filename
+argument_list|,
 name|image_ID
 argument_list|)
 condition|)
@@ -2108,9 +2131,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|sanity_check (gint32 image_ID)
+DECL|function|sanity_check (const gchar * filename,gint32 image_ID)
 name|sanity_check
 parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|,
 name|gint32
 name|image_ID
 parameter_list|)
@@ -2160,11 +2188,13 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"The GIF format does not support images larger "
-literal|"than %d x %d pixels."
+literal|"Unable to save '%s'.  The GIF file format does not support images that are more than %d pixels wide or tall."
 argument_list|)
 argument_list|,
-name|G_MAXUSHORT
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
 argument_list|,
 name|G_MAXUSHORT
 argument_list|)
