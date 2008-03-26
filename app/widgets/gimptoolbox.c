@@ -2669,6 +2669,8 @@ argument_list|,
 name|button_requisition
 operator|.
 name|height
+operator|*
+name|PANGO_SCALE_SMALL
 argument_list|)
 expr_stmt|;
 name|border_width
