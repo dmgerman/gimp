@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpImageDock
 name|parent_instance
 decl_stmt|;
+DECL|member|vbox
+name|GtkWidget
+modifier|*
+name|vbox
+decl_stmt|;
 DECL|member|header
 name|GtkWidget
 modifier|*

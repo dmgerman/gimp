@@ -816,10 +816,6 @@ name|GtkWidget
 modifier|*
 name|main_vbox
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
-decl_stmt|;
 name|GdkDisplay
 modifier|*
 name|display
@@ -892,6 +888,8 @@ argument_list|)
 operator|->
 name|main_vbox
 expr_stmt|;
+name|toolbox
+operator|->
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -908,6 +906,8 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
+name|toolbox
+operator|->
 name|vbox
 argument_list|,
 name|FALSE
@@ -924,6 +924,8 @@ argument_list|(
 name|main_vbox
 argument_list|)
 argument_list|,
+name|toolbox
+operator|->
 name|vbox
 argument_list|,
 literal|0
@@ -931,6 +933,8 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|toolbox
+operator|->
 name|vbox
 argument_list|)
 expr_stmt|;
@@ -959,6 +963,8 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|toolbox
+operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -978,6 +984,20 @@ argument_list|(
 name|toolbox
 operator|->
 name|header
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|toolbox
+operator|->
+name|header
+argument_list|,
+name|_
+argument_list|(
+literal|"Drop image files here to open them"
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|toolbox
@@ -1031,6 +1051,8 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|toolbox
+operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -1103,6 +1125,8 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|toolbox
+operator|->
 name|vbox
 argument_list|)
 argument_list|,
@@ -1438,6 +1462,8 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|toolbox
+operator|->
 name|vbox
 argument_list|)
 argument_list|,

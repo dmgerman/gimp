@@ -321,23 +321,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_dnd_uri_list_dest_add
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|toolbox
-argument_list|)
-argument_list|,
-name|gimp_toolbox_drop_uri_list
-argument_list|,
-name|dock
-operator|->
-name|context
-argument_list|)
-expr_stmt|;
-name|gimp_dnd_uri_list_dest_add
-argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|gimp_toolbox_drop_uri_list
 argument_list|,
@@ -350,7 +336,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|,
@@ -365,7 +351,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|GIMP_TYPE_LAYER_MASK
 argument_list|,
@@ -380,7 +366,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|GIMP_TYPE_CHANNEL
 argument_list|,
@@ -395,7 +381,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|GIMP_TYPE_TOOL_INFO
 argument_list|,
@@ -410,7 +396,7 @@ name|gimp_dnd_viewable_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|GIMP_TYPE_BUFFER
 argument_list|,
@@ -425,7 +411,7 @@ name|gimp_dnd_component_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|gimp_toolbox_drop_component
 argument_list|,
@@ -438,7 +424,7 @@ name|gimp_dnd_pixbuf_dest_add
 argument_list|(
 name|toolbox
 operator|->
-name|tool_wbox
+name|vbox
 argument_list|,
 name|gimp_toolbox_drop_pixbuf
 argument_list|,
