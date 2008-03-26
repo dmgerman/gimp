@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3de900103
+DECL|enum|__anon288e81a80103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf3de900203
+DECL|enum|__anon288e81a80203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6670,7 +6670,9 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Parameter 'compression_level' passed to file-mng-save() must be in the range 0 - 9; Clamping it to the default value of 6."
+literal|"Parameter 'compression_level' passed to "
+literal|"file-mng-save() must be in the range 0 - 9; "
+literal|"Clamping it to the default value of 6."
 argument_list|)
 expr_stmt|;
 name|mng_data
@@ -6711,7 +6713,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Parameter 'quality' passed to file-mng-save() must be in the range 0.00 - 1.00; Clamping it to the default value of 0.75."
+literal|"Parameter 'quality' passed to "
+literal|"file-mng-save() must be in the range "
+literal|"0.00 - 1.00; Clamping it to the "
+literal|"default value of 0.75."
 argument_list|)
 expr_stmt|;
 name|mng_data
@@ -6752,7 +6757,10 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Parameter 'smoothing' passed to file-mng-save() must be in the range 0.00 - 1.00; Clamping it to the default value of 0.00."
+literal|"Parameter 'smoothing' passed to "
+literal|"file-mng-save() must be in the "
+literal|"range 0.00 - 1.00; Clamping it to "
+literal|"the default value of 0.00."
 argument_list|)
 expr_stmt|;
 name|mng_data
@@ -6783,7 +6791,8 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Parameter 'default_chunks' passed to file-mng-save() must be in the range 0 - 2."
+literal|"Parameter 'default_chunks' passed to "
+literal|"file-mng-save() must be in the range 0 - 2."
 argument_list|)
 expr_stmt|;
 name|values
@@ -6819,7 +6828,8 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Parameter 'default_dispose' passed to file-mng-save() must be in the range 0 - 1."
+literal|"Parameter 'default_dispose' passed to "
+literal|"file-mng-save() must be in the range 0 - 1."
 argument_list|)
 expr_stmt|;
 name|values
