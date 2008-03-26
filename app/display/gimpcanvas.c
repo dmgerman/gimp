@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290c52a80103
+DECL|enum|__anon2b0e84650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3221,6 +3221,11 @@ expr_stmt|;
 name|cairo_fill
 argument_list|(
 name|cr
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|pixbuf
 argument_list|)
 expr_stmt|;
 block|}
