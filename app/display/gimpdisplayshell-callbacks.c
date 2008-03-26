@@ -168,12 +168,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcursor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdevices.h"
 end_include
 
@@ -920,18 +914,6 @@ name|gimp_display_shell_vscrollbar_update
 argument_list|)
 argument_list|,
 name|shell
-argument_list|)
-expr_stmt|;
-comment|/*  set the initial cursor  */
-name|gimp_display_shell_set_cursor
-argument_list|(
-name|shell
-argument_list|,
-name|GDK_TOP_LEFT_ARROW
-argument_list|,
-name|GIMP_TOOL_CURSOR_NONE
-argument_list|,
-name|GIMP_CURSOR_MODIFIER_NONE
 argument_list|)
 expr_stmt|;
 comment|/*  allow shrinking  */
