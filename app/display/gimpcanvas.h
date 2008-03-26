@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c52e77e0103
+DECL|enum|__anon2906503c0103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -194,11 +194,6 @@ DECL|member|layout
 name|PangoLayout
 modifier|*
 name|layout
-decl_stmt|;
-DECL|member|drop_zone_layout
-name|PangoLayout
-modifier|*
-name|drop_zone_layout
 decl_stmt|;
 block|}
 struct|;

@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296485760103
+DECL|enum|__anon2c1c822d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296485760203
+DECL|enum|__anon2c1c822d0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5004,6 +5004,20 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|_
+argument_list|(
+literal|"Drop files to open them."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_display_shell_title_init
 argument_list|(
@@ -5325,6 +5339,20 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|_
+argument_list|(
+literal|"Drop files to open them."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
@@ -5485,6 +5513,17 @@ expr_stmt|;
 name|gimp_display_shell_appearance_update
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|shell
