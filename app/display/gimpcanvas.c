@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af923b60103
+DECL|enum|__anon2746fcc90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2969,7 +2969,7 @@ literal|2
 expr_stmt|;
 name|wilber_height
 operator|=
-name|cairo_image_surface_get_width
+name|cairo_image_surface_get_height
 argument_list|(
 name|wilber
 argument_list|)
