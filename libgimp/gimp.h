@@ -1101,6 +1101,16 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+name|guint32
+name|gimp_user_time
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 specifier|const
 name|gchar
 modifier|*

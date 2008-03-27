@@ -832,6 +832,17 @@ name|monitor_number
 operator|=
 name|monitor
 expr_stmt|;
+name|config
+operator|.
+name|timestamp
+operator|=
+name|gimp_get_user_time
+argument_list|(
+name|manager
+operator|->
+name|gimp
+argument_list|)
+expr_stmt|;
 name|proc_run
 operator|.
 name|name

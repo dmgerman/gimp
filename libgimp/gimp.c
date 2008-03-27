@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2887a3080103
+DECL|enum|__anon2b3d65050103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -895,6 +895,16 @@ DECL|variable|_monitor_number
 specifier|static
 name|gint
 name|_monitor_number
+init|=
+literal|0
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|_timestamp
+specifier|static
+name|guint32
+name|_timestamp
 init|=
 literal|0
 decl_stmt|;
@@ -4058,7 +4068,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  * This is a constant value given at plug-in configuration time.  *  * Return value: the display name  **/
+comment|/**  * gimp_display_name:  *  * Returns the display to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the display name  **/
 end_comment
 
 begin_function
@@ -4096,6 +4106,24 @@ parameter_list|)
 block|{
 return|return
 name|_monitor_number
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently. Plug-in authors  * do not have to care about this. This is a constant value given at  * plug-in configuration time.  *  * Return value: timestamp for plug-in window  **/
+end_comment
+
+begin_function
+name|guint32
+DECL|function|gimp_user_time (void)
+name|gimp_user_time
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|_timestamp
 return|;
 block|}
 end_function
@@ -5424,6 +5452,12 @@ operator|=
 name|config
 operator|->
 name|monitor_number
+expr_stmt|;
+name|_timestamp
+operator|=
+name|config
+operator|->
+name|timestamp
 expr_stmt|;
 if|if
 condition|(
