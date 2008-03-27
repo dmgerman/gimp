@@ -1915,12 +1915,39 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"'%s' has a larger image size than GIMP can handle."
+literal|"'%s' has a larger image size (%d x %d) than GIMP can handle."
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
+expr_stmt|;
+name|gimp_quit
+argument_list|()
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|samples_per_pixel
+operator|>
+literal|3
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"'%s' has samples per pixel of %d which GIMP cannot handle."
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|samples_per_pixel
 argument_list|)
 expr_stmt|;
 name|gimp_quit
@@ -2218,7 +2245,7 @@ operator|*
 operator|)
 name|pix_buffer
 decl_stmt|;
-name|gint
+name|gulong
 name|pix_idx
 decl_stmt|;
 if|if
@@ -2253,7 +2280,7 @@ index|[
 name|pix_idx
 index|]
 operator|=
-name|GUINT16_SWAP_LE_BE
+name|g_htons
 argument_list|(
 name|buf16
 index|[
