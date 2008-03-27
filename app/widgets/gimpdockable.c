@@ -3740,6 +3740,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_window_set_position
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock
+argument_list|)
+argument_list|,
+name|GTK_WIN_POS_MOUSE
+argument_list|)
+expr_stmt|;
 name|gimp_dock_setup
 argument_list|(
 name|GIMP_DOCK
