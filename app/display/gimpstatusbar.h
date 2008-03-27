@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkhbox.h>
+file|<gtk/gtkstatusbar.h>
 end_include
 
 begin_macro
@@ -116,7 +116,7 @@ struct|struct
 name|_GimpStatusbar
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkStatusbar
 name|parent_instance
 decl_stmt|;
 DECL|member|shell
@@ -165,11 +165,6 @@ index|[
 name|CURSOR_FORMAT_LENGTH
 index|]
 decl_stmt|;
-DECL|member|cursor_frame
-name|GtkWidget
-modifier|*
-name|cursor_frame
-decl_stmt|;
 DECL|member|cursor_label
 name|GtkWidget
 modifier|*
@@ -217,7 +212,7 @@ struct|struct
 name|_GimpStatusbarClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkStatusbarClass
 name|parent_class
 decl_stmt|;
 block|}

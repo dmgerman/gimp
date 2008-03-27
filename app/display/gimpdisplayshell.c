@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad24bee0103
+DECL|enum|__anon2bddbe210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad24bee0203
+DECL|enum|__anon2bddbe210203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3326,7 +3326,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
