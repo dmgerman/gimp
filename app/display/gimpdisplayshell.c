@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddbe210103
+DECL|enum|__anon2a0f50720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddbe210203
+DECL|enum|__anon2a0f50720203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2616,8 +2616,6 @@ operator|+=
 name|requisition
 operator|.
 name|height
-operator|+
-literal|1
 expr_stmt|;
 block|}
 name|gtk_window_set_geometry_hints
