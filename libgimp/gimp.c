@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3d65050103
+DECL|enum|__anon2be5f6c20103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3826,7 +3826,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_width:  *  * Returns the tile width GIMP is using. This is a constant value  * given at plug-in configuration time.  *  * Return value: the tile_width  **/
+comment|/**  * gimp_tile_width:  *  * Returns the tile width GIMP is using.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the tile_width  **/
 end_comment
 
 begin_function
@@ -3844,7 +3844,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tile_height:  *  * Returns the tile height GIMP is using. This is a constant value  * given at plug-in configuration time.  *  * Return value: the tile_height  **/
+comment|/**  * gimp_tile_height:  *  * Returns the tile height GIMP is using.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the tile_height  **/
 end_comment
 
 begin_function
@@ -3862,7 +3862,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shm_ID:  *  * Returns the shared memory ID used for passing tile data between the GIMP  * core and the plug-in. This is a constant value  * given at plug-in configuration time.  *  * Return value: the shared memory ID  **/
+comment|/**  * gimp_shm_ID:  *  * Returns the shared memory ID used for passing tile data between the  * GIMP core and the plug-in.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the shared memory ID  **/
 end_comment
 
 begin_function
@@ -3880,7 +3880,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_shm_addr:  *  * Returns the address of the shared memory segment used for passing  * tile data between the GIMP core and the plug-in. This is a constant  * value given at plug-in configuration time.  *  * Return value: the shared memory address  **/
+comment|/**  * gimp_shm_addr:  *  * Returns the address of the shared memory segment used for passing  * tile data between the GIMP core and the plug-in.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the shared memory address  **/
 end_comment
 
 begin_function
@@ -3899,7 +3899,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gamma:  *  * Returns the global gamma value GIMP and all its plug-ins should  * use. This is a constant value given at plug-in configuration time.  *  * NOTE: This function will always return 2.2, the gamma value for  * sRGB. There's currently no way to change this and all operations  * should assume that pixel data is in the sRGB colorspace.  *  * Return value: the gamma value  **/
+comment|/**  * gimp_gamma:  *  * Returns the global gamma value GIMP and all its plug-ins should  * use.  *  * This is a constant value given at plug-in configuration time.  *  * NOTE: This function will always return 2.2, the gamma value for  * sRGB. There's currently no way to change this and all operations  * should assume that pixel data is in the sRGB colorspace.  *  * Return value: the gamma value  **/
 end_comment
 
 begin_function
@@ -3917,7 +3917,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_cmap:  *  * Returns whether or not the plug-in should allocate an own colormap  * when running on an 8 bit display. This is a constant value given at  * plug-in configuration time.  *  * See also: gimp_min_colors()  *  * Return value: the install_cmap boolean  **/
+comment|/**  * gimp_install_cmap:  *  * Returns whether or not the plug-in should allocate an own colormap  * when running on an 8 bit display. See also: gimp_min_colors().  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the install_cmap boolean  **/
 end_comment
 
 begin_function
@@ -3935,7 +3935,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_min_colors:  *  * Returns the minimum number of colors to use when allocating an own  * colormap on 8 bit displays. This is a constant value given at  * plug-in configuration time.  *  * See also: gimp_install_cmap()  *  * Return value: the minimum number of colors to allocate  **/
+comment|/**  * gimp_min_colors:  *  * Returns the minimum number of colors to use when allocating an own  * colormap on 8 bit displays.  *  * This is a constant value given at plug-in configuration time.  *  * See also: gimp_install_cmap()  *  * Return value: the minimum number of colors to allocate  **/
 end_comment
 
 begin_function
@@ -3953,7 +3953,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_show_tool_tips:  *  * Returns whether or not the plug-in should show tool-tips. This is a  * constant value given at plug-in configuration time.  *  * Return value: the show_tool_tips boolean  **/
+comment|/**  * gimp_show_tool_tips:  *  * Returns whether or not the plug-in should show tool-tips.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_tool_tips boolean  **/
 end_comment
 
 begin_function
@@ -3971,7 +3971,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * Return value: the show_help_button boolean  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_show_help_button:  *  * Returns whether or not GimpDialog should automatically add a help  * button if help_func and help_id are given.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the show_help_button boolean  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -3989,7 +3989,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_size value  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_check_size:  *  * Returns the size of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_size value  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -4007,7 +4007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_type value  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_check_type:  *  * Returns the type of the checkerboard to be used in previews.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the check_type value  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -4025,7 +4025,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from. This is a  * constant value given at plug-in configuration time.  *  * Return value: the default display ID  **/
+comment|/**  * gimp_default_display:  *  * Returns the default display ID. This corresponds to the display the  * running procedure's menu entry was invoked from.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the default display ID  **/
 end_comment
 
 begin_function
@@ -4043,7 +4043,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_wm_class:  *  * Returns the window manager class to be used for plug-in windows.  * This is a constant value given at plug-in configuration time.  *  * Return value: the window manager class  **/
+comment|/**  * gimp_wm_class:  *  * Returns the window manager class to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the window manager class  **/
 end_comment
 
 begin_function
@@ -4093,7 +4093,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_monitor_number:  *  * Returns the monitor number to be used for plug-in windows.  * This is a constant value given at plug-in configuration time.  *  * Return value: the monitor number  **/
+comment|/**  * gimp_monitor_number:  *  * Returns the monitor number to be used for plug-in windows.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the monitor number  **/
 end_comment
 
 begin_function
@@ -4111,7 +4111,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently. Plug-in authors  * do not have to care about this. This is a constant value given at  * plug-in configuration time.  *  * Return value: timestamp for plug-in window  **/
+comment|/**  * gimp_user_time:  *  * Returns the timestamp of the user interaction that should be set on  * the plug-in window. This is handled transparently, plug-in authors  * do not have to care about it.  *  * This is a constant value given at plug-in configuration time.  *  * Return value: timestamp for plug-in window  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
