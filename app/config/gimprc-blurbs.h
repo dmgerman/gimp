@@ -821,15 +821,6 @@ value|N_("When enabled, the sample points are visible by default. This can also 
 end_define
 
 begin_define
-DECL|macro|SHOW_TIPS_BLURB
-define|#
-directive|define
-name|SHOW_TIPS_BLURB
-define|\
-value|N_("Enable displaying a handy GIMP tip on startup.")
-end_define
-
-begin_define
 DECL|macro|SHOW_TOOLTIPS_BLURB
 define|#
 directive|define
