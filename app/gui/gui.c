@@ -939,6 +939,12 @@ name|the_gui_gimp
 operator|=
 name|gimp
 expr_stmt|;
+comment|/*  disable automatic startup notification  */
+name|gtk_window_set_auto_startup_notification
+argument_list|(
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gimp_dnd_init
 argument_list|(
 name|gimp
@@ -1428,12 +1434,10 @@ block|{
 name|gchar
 modifier|*
 name|display
-decl_stmt|;
-name|display
-operator|=
+init|=
 name|gdk_get_display
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 name|gimp_environ_table_add
 argument_list|(
 name|gimp
@@ -2224,6 +2228,10 @@ operator|->
 name|shell
 argument_list|)
 argument_list|)
+expr_stmt|;
+comment|/*  indicate that the application has finished loading  */
+name|gdk_notify_startup_complete
+argument_list|()
 expr_stmt|;
 block|}
 end_function
