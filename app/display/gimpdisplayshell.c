@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f50720103
+DECL|enum|__anon2c84bc530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f50720203
+DECL|enum|__anon2c84bc530203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2578,6 +2578,12 @@ argument_list|)
 expr_stmt|;
 name|geometry
 operator|.
+name|min_height
+operator|=
+literal|23
+expr_stmt|;
+name|geometry
+operator|.
 name|min_width
 operator|=
 name|requisition
@@ -2587,7 +2593,7 @@ expr_stmt|;
 name|geometry
 operator|.
 name|min_height
-operator|=
+operator|+=
 name|requisition
 operator|.
 name|height
