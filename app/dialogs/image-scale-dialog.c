@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9e526a0108
+DECL|struct|__anon27eaed1c0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -805,7 +805,7 @@ name|size
 decl_stmt|;
 name|size
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|new_memsize
 argument_list|)
@@ -835,7 +835,7 @@ argument_list|)
 expr_stmt|;
 name|size
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|max_memsize
 argument_list|)

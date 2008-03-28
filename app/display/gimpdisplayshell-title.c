@@ -1178,7 +1178,7 @@ name|str
 decl_stmt|;
 name|str
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|gimp_object_get_memsize
 argument_list|(

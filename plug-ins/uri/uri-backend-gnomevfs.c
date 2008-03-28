@@ -953,7 +953,7 @@ return|;
 block|}
 name|memsize
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|file_size
 argument_list|)
@@ -1023,7 +1023,7 @@ condition|)
 block|{
 name|memsize
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 sizeof|sizeof
 argument_list|(
@@ -1150,7 +1150,7 @@ else|else
 block|{
 name|memsize
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|bytes_read
 argument_list|)
@@ -1199,7 +1199,7 @@ condition|)
 block|{
 name|memsize
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|chunk_read
 argument_list|)
@@ -1276,7 +1276,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d84490108
+DECL|struct|__anon28e280a20108
 block|{
 DECL|member|in_args
 specifier|const

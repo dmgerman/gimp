@@ -3137,7 +3137,7 @@ name|text
 decl_stmt|;
 name|size
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|thumb
 operator|->

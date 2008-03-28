@@ -1114,7 +1114,7 @@ condition|)
 block|{
 name|memsize
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|size
 argument_list|)
@@ -1247,7 +1247,7 @@ else|else
 block|{
 name|memsize
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|kilobytes
 operator|*

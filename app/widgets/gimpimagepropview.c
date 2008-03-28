@@ -148,7 +148,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f1d9d0103
+DECL|enum|__anon2abdb4ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1257,7 +1257,7 @@ name|gchar
 modifier|*
 name|str
 init|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|gimp_object_get_memsize
 argument_list|(
@@ -1421,7 +1421,7 @@ name|gchar
 modifier|*
 name|str
 init|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|buf
 operator|.
@@ -1638,7 +1638,7 @@ index|]
 decl_stmt|;
 name|str
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|gimp_object_get_memsize
 argument_list|(

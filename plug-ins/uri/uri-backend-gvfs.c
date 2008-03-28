@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2796c2870103
+DECL|enum|__anon2974ae1d0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -506,7 +506,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2796c2870208
+DECL|struct|__anon2974ae1d0208
 block|{
 DECL|member|mode
 name|Mode
@@ -617,7 +617,7 @@ name|gchar
 modifier|*
 name|done
 init|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|current_num_bytes
 argument_list|)
@@ -626,7 +626,7 @@ name|gchar
 modifier|*
 name|total
 init|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|total_num_bytes
 argument_list|)
@@ -703,7 +703,7 @@ name|gchar
 modifier|*
 name|done
 init|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|current_num_bytes
 argument_list|)

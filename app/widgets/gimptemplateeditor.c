@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2786730a0103
+DECL|enum|__anon276175b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3393,7 +3393,7 @@ directive|ifdef
 name|ENABLE_MEMSIZE_LABEL
 name|text
 operator|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|template
 operator|->

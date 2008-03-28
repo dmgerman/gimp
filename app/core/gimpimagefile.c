@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295bfab20103
+DECL|enum|__anon2b39f1590103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -2077,7 +2077,7 @@ name|gchar
 modifier|*
 name|size
 init|=
-name|gimp_memsize_to_string
+name|g_format_size_for_display
 argument_list|(
 name|thumbnail
 operator|->
