@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0e764c0103
+DECL|enum|__anon2a4316440103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -194,7 +194,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_help_enable_tooltips:  *  * This function calls gtk_tooltips_enable().  **/
+comment|/**  * gimp_help_enable_tooltips:  *  * Enable tooltips to be shown in the GIMP user interface.  *  * As a plug-in author, you don't need to care about this as this  * function is called for you from gimp_ui_init(). This ensures that  * the user setting from the GIMP preferences dialog is respected in  * all plug-in dialogs.  **/
 end_comment
 
 begin_function
@@ -224,7 +224,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_help_disable_tooltips:  *  * This function calls gtk_tooltips_disable().  **/
+comment|/**  * gimp_help_disable_tooltips:  *  * Disable tooltips to be shown in the GIMP user interface.  *  * As a plug-in author, you don't need to care about this as this  * function is called for you from gimp_ui_init(). This ensures that  * the user setting from the GIMP preferences dialog is respected in  * all plug-in dialogs.  **/
 end_comment
 
 begin_function
