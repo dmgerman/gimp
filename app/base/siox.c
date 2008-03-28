@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c91010108
+DECL|struct|__anon2c4a49520108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c91010208
+DECL|struct|__anon2c4a49520208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -5362,7 +5362,7 @@ name|g_return_if_fail
 argument_list|(
 name|state
 operator|!=
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail

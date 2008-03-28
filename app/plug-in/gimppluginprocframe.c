@@ -669,7 +669,7 @@ name|return_vals
 operator|->
 name|values
 operator|=
-literal|0
+name|NULL
 expr_stmt|;
 name|proc_frame
 operator|->

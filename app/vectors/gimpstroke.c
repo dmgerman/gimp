@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3558d20103
+DECL|enum|__anon27a9f4df0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2779,6 +2779,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_stroke_real_point_is_movable (GimpStroke * stroke,GimpAnchor * predec,gdouble position)
 name|gimp_stroke_real_point_is_movable
@@ -2856,6 +2857,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_stroke_real_point_move_relative (GimpStroke * stroke,GimpAnchor * predec,gdouble position,const GimpCoords * deltacoord,GimpAnchorFeatureType feature)
 name|gimp_stroke_real_point_move_relative
@@ -2943,6 +2945,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_stroke_real_point_move_absolute (GimpStroke * stroke,GimpAnchor * predec,gdouble position,const GimpCoords * coord,GimpAnchorFeatureType feature)
 name|gimp_stroke_real_point_move_absolute
@@ -3311,6 +3314,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|gimp_stroke_real_anchor_is_insertable (GimpStroke * stroke,GimpAnchor * predec,gdouble position)
 name|gimp_stroke_real_anchor_is_insertable
@@ -3401,6 +3405,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GimpAnchor
 modifier|*
 DECL|function|gimp_stroke_real_anchor_insert (GimpStroke * stroke,GimpAnchor * predec,gdouble position)
@@ -4125,6 +4130,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|GimpStroke
 modifier|*
 DECL|function|gimp_stroke_real_duplicate (const GimpStroke * stroke)

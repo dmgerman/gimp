@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcc19c0103
+DECL|enum|__anon275f5c2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3099,12 +3099,8 @@ name|gint
 name|i
 decl_stmt|;
 name|gint
+modifier|*
 name|points
-index|[
-name|curve
-operator|->
-name|n_points
-index|]
 decl_stmt|;
 name|gint
 name|num_pts
@@ -3130,6 +3126,17 @@ operator|>
 literal|0
 condition|)
 return|return;
+name|points
+operator|=
+name|g_newa
+argument_list|(
+name|gint
+argument_list|,
+name|curve
+operator|->
+name|n_points
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|curve

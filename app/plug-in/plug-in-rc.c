@@ -247,7 +247,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f18840103
+DECL|enum|__anon27db45d90103
 block|{
 DECL|enumerator|PROTOCOL_VERSION
 name|PROTOCOL_VERSION
@@ -352,7 +352,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -361,7 +361,7 @@ name|filename
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -375,7 +375,7 @@ name|error
 operator|==
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|scanner

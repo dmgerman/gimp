@@ -1741,6 +1741,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_perspective_clone_tool_recalc (GimpPerspectiveCloneTool * clone_tool,GimpDisplay * display)
 name|gimp_perspective_clone_tool_recalc
