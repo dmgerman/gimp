@@ -47,15 +47,20 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|title
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|format
 parameter_list|,
 modifier|...
 parameter_list|)
 function_decl|G_GNUC_PRINTF
 parameter_list|(
-function_decl|1
-operator|,
 function_decl|2
+operator|,
+function_decl|3
 end_function_decl
 
 begin_empty_stmt
