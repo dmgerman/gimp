@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a28753c0103
+DECL|enum|__anon29b763f90103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -1186,6 +1186,10 @@ argument_list|,
 name|PANGO_ATTR_STYLE
 argument_list|,
 name|PANGO_STYLE_ITALIC
+argument_list|,
+name|PANGO_ATTR_SCALE
+argument_list|,
+name|PANGO_SCALE_SMALL
 argument_list|,
 operator|-
 literal|1
