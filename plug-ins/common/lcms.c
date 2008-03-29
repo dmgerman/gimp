@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be731890103
+DECL|enum|__anon298fb3110103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be731890203
+DECL|enum|__anon298fb3110203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +180,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be731890308
+DECL|struct|__anon298fb3110308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +202,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be731890408
+DECL|struct|__anon298fb3110408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -2950,14 +2950,12 @@ argument_list|(
 name|G_CHECKSUM_MD5
 argument_list|)
 decl_stmt|;
-name|gsize
-name|length
-decl_stmt|;
 name|g_checksum_update
 argument_list|(
 name|md5
 argument_list|,
 operator|(
+specifier|const
 name|guchar
 operator|*
 operator|)
@@ -2976,6 +2974,10 @@ name|icHeader
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|len
+operator|=
+literal|16
+expr_stmt|;
 name|g_checksum_get_digest
 argument_list|(
 name|md5
@@ -2983,7 +2985,7 @@ argument_list|,
 name|digest
 argument_list|,
 operator|&
-name|length
+name|len
 argument_list|)
 expr_stmt|;
 name|g_checksum_free
