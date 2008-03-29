@@ -422,15 +422,6 @@ block|{
 name|gint
 name|height
 decl_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class

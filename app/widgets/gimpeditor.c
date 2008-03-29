@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ce23380103
+DECL|enum|__anon2b0281a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1275,15 +1275,6 @@ decl_stmt|;
 name|gint
 name|content_spacing
 decl_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -2171,7 +2162,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ce23380208
+DECL|struct|__anon2b0281a30208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

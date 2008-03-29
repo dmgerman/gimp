@@ -155,7 +155,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c26fdbf0103
+DECL|enum|__anon29d8cfdf0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -919,15 +919,6 @@ decl_stmt|;
 name|gint
 name|tab_border
 decl_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class

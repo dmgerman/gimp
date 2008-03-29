@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab322cc0103
+DECL|enum|__anon28829d120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1476,15 +1476,6 @@ decl_stmt|;
 name|gint
 name|content_spacing
 decl_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class

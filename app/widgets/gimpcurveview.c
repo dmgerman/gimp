@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3955bc0103
+DECL|enum|__anon2b3998750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -893,15 +893,6 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|style_set
-condition|)
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
