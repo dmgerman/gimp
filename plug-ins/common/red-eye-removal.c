@@ -210,19 +210,11 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|threshold
+specifier|static
 name|gint
 name|threshold
 init|=
 literal|50
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|preview_toggle
-name|gboolean
-name|preview_toggle
-init|=
-name|TRUE
 decl_stmt|;
 end_decl_stmt
 

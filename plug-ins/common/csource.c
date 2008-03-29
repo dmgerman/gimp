@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292a087c0108
+DECL|struct|__anon2a1c230d0108
 block|{
 DECL|member|file_name
 name|gchar
@@ -208,6 +208,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|config
+specifier|static
 name|Config
 name|config
 init|=

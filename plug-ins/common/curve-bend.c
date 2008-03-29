@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4719f0108
+DECL|struct|__anon29622a120108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4719f0208
+DECL|struct|__anon29622a120208
 block|{
 DECL|member|y
 name|gint32
@@ -4738,6 +4738,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_copy_points (BenderDialog * cd,int outline,int xy,int argc,gdouble * floatarray)
 name|p_copy_points
@@ -4831,6 +4832,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_copy_yval (BenderDialog * cd,int outline,int argc,guint8 * int8array)
 name|p_copy_yval
@@ -13233,6 +13235,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_put_mix_pixel (t_GDRW * gdrw,gint32 x,gint32 y,guchar * color,gint32 nb_curvy,gint32 nb2_curvy,gint32 curvy)
 name|p_put_mix_pixel
@@ -13585,6 +13588,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|p_create_pv_image (GimpDrawable * src_drawable,gint32 * layer_id)
 name|p_create_pv_image
@@ -14129,6 +14133,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|p_bender_calculate_iter_curve (BenderDialog * cd,gint32 xmax,gint32 ymax)
 name|p_bender_calculate_iter_curve
@@ -16167,6 +16172,7 @@ comment|/* =====================================================================
 end_comment
 
 begin_function
+specifier|static
 name|gint32
 DECL|function|p_main_bend (BenderDialog * cd,GimpDrawable * original_drawable,gint work_on_copy)
 name|p_main_bend

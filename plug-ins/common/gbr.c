@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ecbc220108
+DECL|struct|__anon296245710108
 block|{
 DECL|member|description
 name|gchar
@@ -314,6 +314,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|info
+specifier|static
 name|BrushInfo
 name|info
 init|=
@@ -1995,7 +1996,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29ecbc22020a
+DECL|union|__anon29624571020a
 block|{
 DECL|member|u
 name|guint16

@@ -790,7 +790,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8a314f0108
+DECL|struct|__anon2b42a7890108
 block|{
 DECL|member|Width
 name|unsigned
@@ -840,7 +840,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8a314f0208
+DECL|struct|__anon2b42a7890208
 block|{
 DECL|member|transparent
 name|int
@@ -2461,6 +2461,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|ZeroDataBlock
+specifier|static
 name|int
 name|ZeroDataBlock
 init|=

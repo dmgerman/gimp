@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1e50420103
+DECL|enum|__anon296b45840103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e50420208
+DECL|struct|__anon296b45840208
 block|{
 DECL|member|interlace
 name|gint
@@ -321,6 +321,7 @@ end_ifdef
 
 begin_decl_stmt
 DECL|variable|comment_parasite
+specifier|static
 name|GimpParasite
 modifier|*
 name|comment_parasite

@@ -331,7 +331,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fdcbc50103
+DECL|enum|__anon290e0d340103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fdcbc50208
+DECL|struct|__anon290e0d340208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -1276,7 +1276,7 @@ decl_stmt|;
 name|GC
 name|x_gc
 init|=
-name|None
+name|NULL
 decl_stmt|;
 name|Cursor
 name|x_cursor
@@ -2366,7 +2366,7 @@ if|if
 condition|(
 name|x_gc
 operator|!=
-name|None
+name|NULL
 condition|)
 name|XFreeGC
 argument_list|(

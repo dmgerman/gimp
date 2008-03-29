@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d6d9e0108
+DECL|struct|__anon2952ef110108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289d6d9e0203
+DECL|enum|__anon2952ef110203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289d6d9e0303
+DECL|enum|__anon2952ef110303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon289d6d9e0408
+DECL|struct|__anon2952ef110408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -181,6 +181,7 @@ index|]
 decl_stmt|;
 DECL|variable|mode
 block|}
+decl|static
 name|mode
 index|[
 literal|2

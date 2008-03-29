@@ -6652,6 +6652,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
 DECL|function|save_image (const gchar * filename,gint32 image_id)
 name|save_image

@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298adbd60108
+DECL|struct|__anon2bd5964f0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298adbd60203
+DECL|enum|__anon2bd5964f0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298adbd60308
+DECL|struct|__anon2bd5964f0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -556,6 +556,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|exp_call
+specifier|static
 name|Exp_Call
 name|exp_call
 init|=
@@ -584,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298adbd60408
+DECL|struct|__anon2bd5964f0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -604,6 +605,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|res_call
+specifier|static
 name|Reset_Call
 name|res_call
 init|=

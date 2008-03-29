@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b689ff90108
+DECL|struct|__anon2bbce8060108
 block|{
 DECL|member|hwidth
 name|gint
@@ -302,6 +302,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|grid_cfg
+specifier|static
 name|Config
 name|grid_cfg
 init|=

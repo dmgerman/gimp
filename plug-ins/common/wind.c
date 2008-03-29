@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efb2b30103
+DECL|enum|__anon27d430c50103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efb2b30203
+DECL|enum|__anon27d430c50203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efb2b30303
+DECL|enum|__anon27d430c50303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -484,6 +484,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|config
+specifier|static
 name|config_t
 name|config
 init|=

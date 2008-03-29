@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e81a80103
+DECL|enum|__anon29aad1170103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e81a80203
+DECL|enum|__anon29aad1170203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -342,6 +342,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|mng_data
+specifier|static
 name|struct
 name|mng_data_t
 name|mng_data
@@ -1996,7 +1997,7 @@ name|myalloc
 argument_list|,
 name|myfree
 argument_list|,
-name|MNG_NULL
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2953,7 +2954,7 @@ name|layer_rows
 argument_list|,
 literal|0
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 operator|!=
 name|MNG_NOERROR

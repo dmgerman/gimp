@@ -63,6 +63,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|PLUG_IN_PROC
+specifier|static
 name|gchar
 modifier|*
 name|PLUG_IN_PROC
@@ -80,6 +81,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|RNDM_NAME
+specifier|static
 name|gchar
 modifier|*
 name|RNDM_NAME
@@ -146,6 +148,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|rndm_type
+specifier|static
 name|gint
 name|rndm_type
 init|=
@@ -165,7 +168,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293833810108
+DECL|struct|__anon2af780830108
 block|{
 DECL|member|rndm_pct
 name|gdouble

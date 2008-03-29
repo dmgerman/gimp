@@ -1584,6 +1584,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gboolean
 DECL|function|glob_fnmatch (const gchar * pattern,const gchar * string)
 name|glob_fnmatch

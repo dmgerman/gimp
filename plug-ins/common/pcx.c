@@ -938,6 +938,7 @@ end_function
 
 begin_decl_stmt
 DECL|variable|mono
+specifier|static
 name|guchar
 name|mono
 index|[
@@ -963,7 +964,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2abbe1a80108
+DECL|struct|__anon2ae7a5810108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1040,7 +1041,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2abbe1a80208
+DECL|struct|__anon2ae7a5810208
 specifier|static
 struct|struct
 block|{

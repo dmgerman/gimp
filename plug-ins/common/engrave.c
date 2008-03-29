@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c0d420108
+DECL|struct|__anon2babf1920108
 block|{
 DECL|member|height
 name|gint
@@ -1165,7 +1165,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0c0d420208
+DECL|struct|__anon2babf1920208
 block|{
 DECL|member|x
 DECL|member|y
@@ -1194,6 +1194,7 @@ end_typedef
 
 begin_decl_stmt
 DECL|variable|area
+specifier|static
 name|PixelArea
 name|area
 decl_stmt|;

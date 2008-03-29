@@ -65,6 +65,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|pattern_width
+specifier|static
 specifier|const
 name|gint
 name|pattern_width
@@ -96,6 +97,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pattern_height
+specifier|static
 specifier|const
 name|gint
 name|pattern_height
@@ -127,6 +129,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pattern_name
+specifier|static
 specifier|const
 name|gchar
 modifier|*
@@ -186,6 +189,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|pattern
+specifier|static
 specifier|const
 name|gint
 name|pattern
@@ -882,6 +886,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|preview_raw
+specifier|static
 specifier|const
 name|guchar
 name|preview_raw
@@ -60900,7 +60905,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c121e960108
+DECL|struct|__anon29a9ff660108
 block|{
 DECL|member|pattern_number
 name|gint

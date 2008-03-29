@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fef000108
+DECL|struct|__anon2b3039660108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fef000208
+DECL|struct|__anon2b3039660208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0fef000308
+DECL|struct|__anon2b3039660308
 block|{
 DECL|member|width
 name|gint
@@ -3356,6 +3356,7 @@ comment|/*****************************************/
 end_comment
 
 begin_function
+specifier|static
 name|gint
 DECL|function|sinus_dialog (void)
 name|sinus_dialog
@@ -5191,6 +5192,7 @@ comment|/******************************************************************/
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|sinus_do_preview (GtkWidget * widget)
 name|sinus_do_preview
