@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1913ef0103
+DECL|enum|__anon29e76f090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2074,7 +2074,7 @@ literal|0
 argument_list|,
 literal|"color-profile"
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|token
