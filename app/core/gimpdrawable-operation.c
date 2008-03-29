@@ -39,11 +39,22 @@ directive|include
 file|"gimpprogress.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
 begin_warning
 warning|#
 directive|warning
 warning|FIXME: gegl_node_add_child() is not public API
 end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 specifier|extern
@@ -238,9 +249,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
 warning|#
 directive|warning
 warning|FIXME: gegl_node_add_child() is not public API
+endif|#
+directive|endif
 name|gegl_node_add_child
 argument_list|(
 name|gegl
