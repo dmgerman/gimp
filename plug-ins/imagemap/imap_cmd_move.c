@@ -65,6 +65,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|move_command_class
+specifier|static
 name|CommandClass_t
 name|move_command_class
 init|=
@@ -83,7 +84,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon293d8f840108
+DECL|struct|__anon2920a5350108
 typedef|typedef
 struct|struct
 block|{

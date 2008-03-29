@@ -40,7 +40,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8b0d280103
+DECL|enum|__anon27d3c5550103
 block|{
 DECL|enumerator|north
 DECL|enumerator|northwest
@@ -425,6 +425,7 @@ comment|/* We check to see if the edge EDGE of the pixel at position ROW and COL
 end_comment
 
 begin_function
+specifier|static
 name|boolean
 DECL|function|is_outline_edge (edge_type edge,unsigned row,unsigned col)
 name|is_outline_edge

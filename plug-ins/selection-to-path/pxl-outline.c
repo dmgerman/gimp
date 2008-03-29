@@ -687,6 +687,7 @@ comment|/* Return an empty list of pixels.  */
 end_comment
 
 begin_function
+specifier|static
 name|pixel_outline_type
 DECL|function|new_pixel_outline (void)
 name|new_pixel_outline
@@ -791,6 +792,7 @@ comment|/* We are given an (X,Y) in Cartesian coordinates, and the edge of the p
 end_comment
 
 begin_function
+specifier|static
 name|void
 DECL|function|append_coordinate (pixel_outline_type * o,int x,int y,edge_type edge)
 name|append_coordinate

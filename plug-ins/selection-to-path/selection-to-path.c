@@ -260,6 +260,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|selection_rgn
+specifier|static
 name|GimpPixelRgn
 name|selection_rgn
 decl_stmt|;
@@ -267,6 +268,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|retVal
+specifier|static
 name|gboolean
 name|retVal
 init|=

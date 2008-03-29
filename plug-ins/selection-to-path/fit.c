@@ -200,6 +200,7 @@ end_comment
 
 begin_decl_stmt
 DECL|variable|filter_secondary_surround
+specifier|static
 name|unsigned
 name|filter_secondary_surround
 init|=

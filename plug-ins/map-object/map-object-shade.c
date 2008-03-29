@@ -64,6 +64,7 @@ DECL|variable|bx1
 DECL|variable|by1
 DECL|variable|bx2
 DECL|variable|by2
+specifier|static
 name|gdouble
 name|bx1
 decl_stmt|,
@@ -85,7 +86,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c621a110108
+DECL|struct|__anon2b89ad1a0108
 block|{
 DECL|member|u
 DECL|member|v

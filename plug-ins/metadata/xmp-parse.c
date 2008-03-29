@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3c14250103
+DECL|enum|__anon299326720103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3c14250208
+DECL|struct|__anon299326720208
 block|{
 DECL|member|depth
 name|gint
@@ -4408,7 +4408,7 @@ name|context
 argument_list|,
 name|XMP_PTYPE_ALT_THUMBS
 argument_list|,
-literal|0
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)

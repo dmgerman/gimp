@@ -587,7 +587,7 @@ name|key_file
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|NULL
 return|;
 block|}
 return|return

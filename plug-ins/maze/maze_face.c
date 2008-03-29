@@ -133,7 +133,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d9d4580108
+DECL|struct|__anon273cda880108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -181,6 +181,7 @@ end_define
 
 begin_decl_stmt
 DECL|variable|buffer
+specifier|static
 name|gchar
 name|buffer
 index|[

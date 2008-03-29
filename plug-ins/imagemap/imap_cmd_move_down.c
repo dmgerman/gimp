@@ -41,6 +41,7 @@ end_function_decl
 
 begin_decl_stmt
 DECL|variable|move_down_command_class
+specifier|static
 name|CommandClass_t
 name|move_down_command_class
 init|=
@@ -60,7 +61,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon293690600108
+DECL|struct|__anon2a17eddf0108
 typedef|typedef
 struct|struct
 block|{

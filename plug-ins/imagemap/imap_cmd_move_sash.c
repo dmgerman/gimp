@@ -43,6 +43,7 @@ end_expr_stmt
 
 begin_decl_stmt
 DECL|variable|move_sash_command_class
+specifier|static
 name|CommandClass_t
 name|move_sash_command_class
 init|=
@@ -61,7 +62,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29f9a4260108
+DECL|struct|__anon2792de190108
 typedef|typedef
 struct|struct
 block|{

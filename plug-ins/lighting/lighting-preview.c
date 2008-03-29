@@ -82,6 +82,7 @@ end_define
 begin_decl_stmt
 DECL|variable|handle_xpos
 DECL|variable|handle_ypos
+specifier|static
 name|gint
 name|handle_xpos
 init|=

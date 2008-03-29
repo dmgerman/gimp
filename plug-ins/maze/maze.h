@@ -91,7 +91,7 @@ value|"maze"
 end_define
 
 begin_typedef
-DECL|enum|__anon2920f6ed0103
+DECL|enum|__anon290a3e1a0103
 typedef|typedef
 enum|enum
 block|{
@@ -107,7 +107,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2920f6ed0208
+DECL|struct|__anon290a3e1a0208
 typedef|typedef
 struct|struct
 block|{
@@ -169,6 +169,30 @@ name|MASKED
 block|}
 enum|;
 end_enum
+
+begin_decl_stmt
+specifier|extern
+name|MazeValues
+name|mvals
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|guint
+name|sel_w
+decl_stmt|,
+name|sel_h
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|GRand
+modifier|*
+name|gr
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 name|void

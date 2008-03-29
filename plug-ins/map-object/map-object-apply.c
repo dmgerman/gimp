@@ -98,14 +98,19 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|rotmat
-DECL|variable|a
-DECL|variable|b
 name|gfloat
 name|rotmat
 index|[
 literal|16
 index|]
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|a
+DECL|variable|b
+specifier|static
+name|gfloat
 name|a
 index|[
 literal|16

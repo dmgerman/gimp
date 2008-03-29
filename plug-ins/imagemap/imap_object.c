@@ -51,27 +51,8 @@ directive|include
 file|"imap_string.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|Object_t
-modifier|*
-name|object_factory_create_object
-parameter_list|(
-name|ObjectFactory_t
-modifier|*
-name|factory
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_typedef
-DECL|struct|__anon2931aa570108
+DECL|struct|__anon2878b9ae0108
 typedef|typedef
 struct|struct
 block|{
@@ -2000,6 +1981,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|Object_t
 modifier|*
 DECL|function|object_factory_create_object (ObjectFactory_t * factory,gint x,gint y)
