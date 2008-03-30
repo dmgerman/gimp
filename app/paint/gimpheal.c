@@ -1655,15 +1655,6 @@ argument_list|(
 name|source_core
 argument_list|)
 decl_stmt|;
-name|GimpBrushCore
-modifier|*
-name|brush_core
-init|=
-name|GIMP_BRUSH_CORE
-argument_list|(
-name|source_core
-argument_list|)
-decl_stmt|;
 name|GimpContext
 modifier|*
 name|context
@@ -1701,7 +1692,10 @@ name|mask_buf
 operator|=
 name|gimp_brush_core_get_brush_mask
 argument_list|(
-name|brush_core
+name|GIMP_BRUSH_CORE
+argument_list|(
+name|source_core
+argument_list|)
 argument_list|,
 name|GIMP_BRUSH_HARD
 argument_list|)
@@ -2093,47 +2087,6 @@ operator|)
 condition|)
 block|{
 comment|/* this generally means that the source point has hit the edge of the          layer, so it is not an error and we should not complain, just          don't do anything */
-name|g_print
-argument_list|(
-literal|"shape mismatch in gimpheal\n"
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"src width = %d\n"
-argument_list|,
-name|srcPR
-operator|->
-name|w
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"src height = %d\n"
-argument_list|,
-name|srcPR
-operator|->
-name|h
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"mask width = %d\n"
-argument_list|,
-name|mask_buf
-operator|->
-name|width
-argument_list|)
-expr_stmt|;
-name|g_print
-argument_list|(
-literal|"mask height = %d\n"
-argument_list|,
-name|mask_buf
-operator|->
-name|height
-argument_list|)
-expr_stmt|;
 name|temp_buf_free
 argument_list|(
 name|src
