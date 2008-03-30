@@ -767,6 +767,11 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|grid
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 name|xcf_progress_update
