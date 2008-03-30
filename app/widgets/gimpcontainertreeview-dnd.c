@@ -1117,6 +1117,13 @@ if|if
 condition|(
 name|src_viewable
 condition|)
+block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+comment|/* XXX: Make GimpContainerTreeViewClass::drop_viewable()            * return success?            */
 name|tree_view_class
 operator|->
 name|drop_viewable
@@ -1130,7 +1137,20 @@ argument_list|,
 name|drop_pos
 argument_list|)
 expr_stmt|;
+name|gtk_drag_finish
+argument_list|(
+name|context
+argument_list|,
+name|success
+argument_list|,
+name|FALSE
+argument_list|,
+name|time
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|gtk_drag_get_data
 argument_list|(
 name|widget
@@ -1142,6 +1162,7 @@ argument_list|,
 name|time
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
