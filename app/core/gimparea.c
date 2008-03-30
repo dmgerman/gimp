@@ -432,7 +432,7 @@ argument_list|)
 expr_stmt|;
 name|g_slist_free
 argument_list|(
-name|list
+name|areas
 argument_list|)
 expr_stmt|;
 block|}
