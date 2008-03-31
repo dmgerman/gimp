@@ -28,7 +28,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"maze.h"
+file|"maze-utils.h"
 end_include
 
 begin_comment
@@ -256,30 +256,6 @@ begin_comment
 comment|/* Further optimizations that could be made...  *  Currently, the row buffer is re-filled with every call.  However,  *  plug-ins such as maze and checkerboard only use two colors, and  *  for the most part, have rows of the same size with every call.  *  We could keep a row of each color on hand so we wouldn't have to  *  re-fill it every time...  */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|"config.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimp/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"maze.h"
-end_include
-
 begin_function
 name|void
 DECL|function|drawbox (GimpPixelRgn * dest_rgn,guint x,guint y,guint w,guint h,guint8 clr[4])
@@ -347,7 +323,7 @@ argument_list|)
 operator|-
 name|x_min
 decl_stmt|;
-comment|/* The maximum [xy] value is that of the far end of the box, or       * the edge of the region, whichever comes first. */
+comment|/* The maximum [xy] value is that of the far end of the box, or    * the edge of the region, whichever comes first. */
 specifier|const
 name|guint
 name|y_max

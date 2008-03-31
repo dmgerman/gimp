@@ -36,7 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimp/gimpui.h"
+file|"maze.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"maze-algorithms.h"
 end_include
 
 begin_include
@@ -44,110 +50,6 @@ include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"maze.h"
-end_include
-
-begin_decl_stmt
-specifier|extern
-name|MazeValues
-name|mvals
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|GRand
-modifier|*
-name|gr
-decl_stmt|;
-end_decl_stmt
-
-begin_function_decl
-name|void
-name|mazegen
-parameter_list|(
-name|gint
-name|pos
-parameter_list|,
-name|gchar
-modifier|*
-name|maz
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|rnd
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|mazegen_tileable
-parameter_list|(
-name|gint
-name|pos
-parameter_list|,
-name|gchar
-modifier|*
-name|maz
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|rnd
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|prim
-parameter_list|(
-name|gint
-name|pos
-parameter_list|,
-name|gchar
-modifier|*
-name|maz
-parameter_list|,
-name|guint
-name|x
-parameter_list|,
-name|guint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|prim_tileable
-parameter_list|(
-name|gchar
-modifier|*
-name|maz
-parameter_list|,
-name|guint
-name|x
-parameter_list|,
-name|guint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_define
 DECL|macro|ABSMOD (A,B)
@@ -159,7 +61,7 @@ name|A
 parameter_list|,
 name|B
 parameter_list|)
-value|( ((A)< 0) ? (((B) + (A)) % (B)) : ((A) % (B)) )
+value|(((A)< 0) ? (((B) + (A)) % (B)) : ((A) % (B)))
 end_define
 
 begin_comment
@@ -384,13 +286,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|mazegen (gint pos,gchar * maz,gint x,gint y,gint rnd)
+DECL|function|mazegen (gint pos,guchar * maz,gint x,gint y,gint rnd)
 name|mazegen
 parameter_list|(
 name|gint
 name|pos
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|maz
 parameter_list|,
@@ -413,7 +315,8 @@ name|gint
 name|c
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|j
 init|=
 literal|1
@@ -543,8 +446,8 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* Note if all bits are 0, d is false, we don't do this 	   while loop, we don't call ourselves again, so this branch            is done.  */
-comment|/* I see what this loop does (more or less), but I don't know 	   _why_ it does it this way...  I also haven't figured out exactly 	   which values of multiple will work and which won't.  */
+comment|/* Note if all bits are 0, d is false, we don't do this          while loop, we don't call ourselves again, so this branch          is done.  */
+comment|/* I see what this loop does (more or less), but I don't know          _why_ it does it this way...  I also haven't figured out exactly          which values of multiple will work and which won't.  */
 do|do
 block|{
 name|rnd
@@ -610,7 +513,6 @@ condition|(
 name|i
 condition|)
 block|{
-comment|/* This is simple enough. */
 case|case
 literal|0
 case|:
@@ -711,8 +613,6 @@ name|rnd
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* End while(d=...) Loop */
-comment|/* This routine is quite quick, even for rather large mazes.        For that reason, it doesn't need a progress bar. */
 return|return;
 block|}
 end_function
@@ -723,13 +623,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|mazegen_tileable (gint pos,gchar * maz,gint x,gint y,gint rnd)
+DECL|function|mazegen_tileable (gint pos,guchar * maz,gint x,gint y,gint rnd)
 name|mazegen_tileable
 parameter_list|(
 name|gint
 name|pos
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|maz
 parameter_list|,
@@ -752,7 +652,8 @@ name|gint
 name|c
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|gint
 name|npos
 init|=
 literal|2
@@ -832,8 +733,8 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* Note if all bits are 0, d is false, we don't do this 	   while loop, we don't call ourselves again, so this branch            is done.  */
-comment|/* I see what this loop does (more or less), but I don't know 	   _why_ it does it this way...  I also haven't figured out exactly 	   which values of multiple will work and which won't.  */
+comment|/* Note if all bits are 0, d is false, we don't do this          while loop, we don't call ourselves again, so this branch          is done.  */
+comment|/* I see what this loop does (more or less), but I don't know          _why_ it does it this way...  I also haven't figured out exactly          which values of multiple will work and which won't.  */
 do|do
 block|{
 name|rnd
@@ -899,7 +800,6 @@ condition|(
 name|i
 condition|)
 block|{
-comment|/* This is simple enough. */
 case|case
 literal|0
 case|:
@@ -1036,22 +936,9 @@ name|rnd
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* End while(d=...) Loop */
 return|return;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static void print_glist(gpointer data, gpointer user_data) {      g_print("%d ",(guint)data); }
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* This function (as well as prim_tileable) make use of the somewhat    unclean practice of storing ints as pointers.  I've been informed    that this may cause problems with 64-bit stuff.  However, hopefully    it will be okay, since the only values stored are positive.  If it    does break, let me know, and I'll go cry in a corner for a while    before I get up the strength to re-code it. */
@@ -1059,13 +946,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|prim (gint pos,gchar * maz,guint x,guint y)
+DECL|function|prim (gint pos,guchar * maz,guint x,guint y)
 name|prim
 parameter_list|(
 name|gint
 name|pos
 parameter_list|,
-name|gchar
+name|guchar
 modifier|*
 name|maz
 parameter_list|,
@@ -1099,7 +986,8 @@ name|guint
 name|progress
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|guint
 name|max_progress
 decl_stmt|;
 name|char
@@ -1151,7 +1039,7 @@ index|]
 operator|=
 name|IN
 expr_stmt|;
-comment|/* For now, repeating everything four times seems manageable.  But when 	Gimp is extended to drawings in n-dimensional space instead of 2D,         this will require a bit of a re-write. */
+comment|/* For now, repeating everything four times seems manageable.  But when      Gimp is extended to drawings in n-dimensional space instead of 2D,      this will require a bit of a re-write. */
 comment|/* Add frontier. */
 name|up
 operator|=
@@ -1348,7 +1236,7 @@ index|]
 operator|=
 name|IN
 expr_stmt|;
-comment|/* If the cell has any neighbors in OUT, remove them from              OUT and place them in FRONTIER. */
+comment|/* If the cell has any neighbors in OUT, remove them from          OUT and place them in FRONTIER. */
 name|up
 operator|=
 name|CELL_UP
@@ -1428,7 +1316,7 @@ literal|1
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 block|}
 if|if
@@ -1480,7 +1368,7 @@ literal|2
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 block|}
 if|if
@@ -1532,7 +1420,7 @@ literal|4
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 block|}
 if|if
@@ -1584,10 +1472,10 @@ literal|8
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 block|}
-comment|/* The cell is guaranteed to have at least one neighbor in 	     IN (otherwise it would not have been in FRONTIER); pick 	     one such neighbor at random and connect it to the new 	     cell (ie knock out a wall).  */
+comment|/* The cell is guaranteed to have at least one neighbor in          IN (otherwise it would not have been in FRONTIER); pick          one such neighbor at random and connect it to the new          cell (ie knock out a wall).  */
 if|if
 condition|(
 operator|!
@@ -1794,7 +1682,6 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* while front_cells */
 name|g_slist_free
 argument_list|(
 name|front_cells
@@ -1803,16 +1690,12 @@ expr_stmt|;
 block|}
 end_function
 
-begin_comment
-comment|/* prim */
-end_comment
-
 begin_function
 name|void
-DECL|function|prim_tileable (gchar * maz,guint x,guint y)
+DECL|function|prim_tileable (guchar * maz,guint x,guint y)
 name|prim_tileable
 parameter_list|(
-name|gchar
+name|guchar
 modifier|*
 name|maz
 parameter_list|,
@@ -1847,7 +1730,8 @@ name|guint
 name|progress
 init|=
 literal|0
-decl_stmt|,
+decl_stmt|;
+name|guint
 name|max_progress
 decl_stmt|;
 name|char
@@ -2087,7 +1971,7 @@ index|]
 operator|=
 name|IN
 expr_stmt|;
-comment|/* If the cell has any neighbors in OUT, remove them from              OUT and place them in FRONTIER. */
+comment|/* If the cell has any neighbors in OUT, remove them from          OUT and place them in FRONTIER. */
 name|up
 operator|=
 name|CELL_UP_TILEABLE
@@ -2160,7 +2044,7 @@ literal|1
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 switch|switch
 condition|(
@@ -2204,7 +2088,7 @@ literal|2
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 switch|switch
 condition|(
@@ -2248,7 +2132,7 @@ literal|4
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
 switch|switch
 condition|(
@@ -2292,9 +2176,9 @@ literal|8
 expr_stmt|;
 break|break;
 default|default:
-empty_stmt|;
+break|break;
 block|}
-comment|/* The cell is guaranteed to have at least one neighbor in 	     IN (otherwise it would not have been in FRONTIER); pick 	     one such neighbor at random and connect it to the new 	     cell (ie knock out a wall).  */
+comment|/* The cell is guaranteed to have at least one neighbor in          IN (otherwise it would not have been in FRONTIER); pick          one such neighbor at random and connect it to the new          cell (ie knock out a wall).  */
 if|if
 condition|(
 operator|!
@@ -2501,7 +2385,6 @@ name|max_progress
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* while front_cells */
 name|g_slist_free
 argument_list|(
 name|front_cells

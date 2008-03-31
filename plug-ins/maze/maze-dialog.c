@@ -44,6 +44,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"maze-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -133,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273cda880108
+DECL|struct|__anon2c7317b30108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -190,14 +196,17 @@ index|]
 decl_stmt|;
 end_decl_stmt
 
-begin_function_decl
-name|gboolean
-name|maze_dialog
-parameter_list|(
-name|void
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|/* Looking back, it would probably have been easier to completely  * re-write the whole entry/scale thing to work with the divbox stuff.  * It would undoubtably be cleaner code.  But since I already *had*  * the entry/scale routines, I was under the (somewhat mistaken)  * impression that it would be easier to work with them... */
+end_comment
+
+begin_comment
+comment|/* Now, it goes like this:     To update entscale (width) when div_entry changes:      entscale_int_new has been slightly modified to return a pointer to       its entry widget.      This is fed to divbox_new as a "friend", which is in turn fed to       the div_entry_callback routine.  And that's not really so bad,       except...      Oh, well, maybe it isn't so bad.  We can play with our friend's       userdata to block his callbacks so we don't get feedback loops,       that works nicely enough.     To update div_entry when entscale (width) changes:      The entry/scale setup graciously provides for callbacks.  However,       this means we need to know about div_entry when we set up       entry/scale, which we don't...  Chicken and egg problem.  So we       set up a pointer to where div_entry will be, and pass this       through to divbox_new when it happens.      We need to block signal handlers for div_entry this time.  We       happen to know that div_entry's callback data is our old       "friend", so we pull our friend out from where we stuck him in       the entry's userdata...  Hopefully that does it.  */
+end_comment
+
+begin_comment
+comment|/* Questions:       Gosh that was dumb.  Is there a way to        signal_handler_block_by_name?      That would make life so much nicer.           You could pass the handler_id around and use          gtk_signal_handler_block ().   (Sven) */
+end_comment
 
 begin_function_decl
 specifier|static
@@ -211,18 +220,6 @@ name|message
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* Looking back, it would probably have been easier to completely  * re-write the whole entry/scale thing to work with the divbox stuff.  * It would undoubtably be cleaner code.  But since I already *had*  * the entry/scale routines, I was under the (somewhat mistaken)  * impression that it would be easier to work with them... */
-end_comment
-
-begin_comment
-comment|/* Now, it goes like this:     To update entscale (width) when div_entry changes:      entscale_int_new has been slightly modified to return a pointer to       its entry widget.      This is fed to divbox_new as a "friend", which is in turn fed to       the div_entry_callback routine.  And that's not really so bad,       except...      Oh, well, maybe it isn't so bad.  We can play with our friend's       userdata to block his callbacks so we don't get feedback loops,       that works nicely enough.     To update div_entry when entscale (width) changes:      The entry/scale setup graciously provides for callbacks.  However,       this means we need to know about div_entry when we set up       entry/scale, which we don't...  Chicken and egg problem.  So we       set up a pointer to where div_entry will be, and pass this       through to divbox_new when it happens.      We need to block signal handlers for div_entry this time.  We       happen to know that div_entry's callback data is our old       "friend", so we pull our friend out from where we stuck him in       the entry's userdata...  Hopefully that does it.  */
-end_comment
-
-begin_comment
-comment|/* Questions:       Gosh that was dumb.  Is there a way to        signal_handler_block_by_name?      That would make life so much nicer.           You could pass the handler_id around and use          gtk_signal_handler_block ().   (Sven) */
-end_comment
 
 begin_function_decl
 specifier|static
@@ -293,18 +290,6 @@ name|div_entry
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static void div_buttonl_callback (GtkObject *object); static void div_buttonr_callback (GtkObject *object);
-endif|#
-directive|endif
-end_endif
 
 begin_comment
 comment|/* entscale stuff begin */
@@ -399,22 +384,6 @@ comment|/* entscale stuff end */
 end_comment
 
 begin_decl_stmt
-specifier|extern
-name|MazeValues
-name|mvals
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-specifier|extern
-name|guint
-name|sel_w
-decl_stmt|,
-name|sel_h
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|msg_label
 specifier|static
 name|GtkWidget
@@ -496,7 +465,7 @@ name|gimp_dialog_new
 argument_list|(
 name|_
 argument_list|(
-name|MAZE_TITLE
+literal|"Maze"
 argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY

@@ -16,22 +16,6 @@ directive|define
 name|__MAZE_H__
 end_define
 
-begin_define
-DECL|macro|MAZE_TITLE
-define|#
-directive|define
-name|MAZE_TITLE
-value|N_("Maze")
-end_define
-
-begin_define
-DECL|macro|HELP_OPENS_NEW_WINDOW
-define|#
-directive|define
-name|HELP_OPENS_NEW_WINDOW
-value|FALSE
-end_define
-
 begin_comment
 comment|/* The "divbox" really should look and act more like a spinbutton.   This flag is a small step in the direction toward the former, the   latter leaves much to be desired. */
 end_comment
@@ -68,12 +52,6 @@ name|MAZE_ALPHA_THRESHOLD
 value|127
 end_define
 
-begin_include
-include|#
-directive|include
-file|"glib.h"
-end_include
-
 begin_define
 DECL|macro|PLUG_IN_PROC
 define|#
@@ -91,7 +69,7 @@ value|"maze"
 end_define
 
 begin_typedef
-DECL|enum|__anon290a3e1a0103
+DECL|enum|__anon2c5135de0103
 typedef|typedef
 enum|enum
 block|{
@@ -107,7 +85,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon290a3e1a0208
+DECL|struct|__anon2c5135de0208
 typedef|typedef
 struct|struct
 block|{
@@ -181,7 +159,12 @@ begin_decl_stmt
 specifier|extern
 name|guint
 name|sel_w
-decl_stmt|,
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|guint
 name|sel_h
 decl_stmt|;
 end_decl_stmt
@@ -193,54 +176,6 @@ modifier|*
 name|gr
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|void
-name|get_colors
-parameter_list|(
-name|GimpDrawable
-modifier|*
-name|drawable
-parameter_list|,
-name|guint8
-modifier|*
-name|fg
-parameter_list|,
-name|guint8
-modifier|*
-name|bg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|drawbox
-parameter_list|(
-name|GimpPixelRgn
-modifier|*
-name|dest_rgn
-parameter_list|,
-name|guint
-name|x
-parameter_list|,
-name|guint
-name|y
-parameter_list|,
-name|guint
-name|w
-parameter_list|,
-name|guint
-name|h
-parameter_list|,
-name|guint8
-name|clr
-index|[
-literal|4
-index|]
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_endif
 endif|#
