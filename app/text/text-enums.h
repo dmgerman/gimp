@@ -38,7 +38,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5605380103
+DECL|enum|__anon2be11a8d0103
 block|{
 DECL|enumerator|GIMP_TEXT_BOX_DYNAMIC
 name|GIMP_TEXT_BOX_DYNAMIC
@@ -48,88 +48,6 @@ name|GIMP_TEXT_BOX_FIXED
 DECL|typedef|GimpTextBoxMode
 block|}
 name|GimpTextBoxMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_TEXT_DIRECTION
-define|#
-directive|define
-name|GIMP_TYPE_TEXT_DIRECTION
-value|(gimp_text_direction_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_text_direction_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5605380203
-block|{
-DECL|enumerator|GIMP_TEXT_DIRECTION_LTR
-name|GIMP_TEXT_DIRECTION_LTR
-block|,
-comment|/*< desc="From left to right">*/
-DECL|enumerator|GIMP_TEXT_DIRECTION_RTL
-name|GIMP_TEXT_DIRECTION_RTL
-comment|/*< desc="From right to left">*/
-DECL|typedef|GimpTextDirection
-block|}
-name|GimpTextDirection
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_TEXT_JUSTIFICATION
-define|#
-directive|define
-name|GIMP_TYPE_TEXT_JUSTIFICATION
-value|(gimp_text_justification_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_text_justification_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5605380303
-block|{
-DECL|enumerator|GIMP_TEXT_JUSTIFY_LEFT
-name|GIMP_TEXT_JUSTIFY_LEFT
-block|,
-comment|/*< desc="Left justified">*/
-DECL|enumerator|GIMP_TEXT_JUSTIFY_RIGHT
-name|GIMP_TEXT_JUSTIFY_RIGHT
-block|,
-comment|/*< desc="Right justified">*/
-DECL|enumerator|GIMP_TEXT_JUSTIFY_CENTER
-name|GIMP_TEXT_JUSTIFY_CENTER
-block|,
-comment|/*< desc="Centered">*/
-DECL|enumerator|GIMP_TEXT_JUSTIFY_FILL
-name|GIMP_TEXT_JUSTIFY_FILL
-comment|/*< desc="Filled">*/
-DECL|typedef|GimpTextJustification
-block|}
-name|GimpTextJustification
 typedef|;
 end_typedef
 
@@ -155,7 +73,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon2b5605380403
+DECL|enum|__anon2be11a8d0203
 block|{
 DECL|enumerator|GIMP_TEXT_OUTLINE_NONE
 name|GIMP_TEXT_OUTLINE_NONE
