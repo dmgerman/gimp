@@ -178,12 +178,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppdberror.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -191,6 +185,12 @@ begin_include
 include|#
 directive|include
 file|"gimppdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppdberror.h"
 end_include
 
 begin_include

@@ -52,13 +52,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppdberror.h"
+file|"gimppdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppdb.h"
+file|"gimppdberror.h"
 end_include
 
 begin_include
