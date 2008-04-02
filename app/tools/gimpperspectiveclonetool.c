@@ -1176,7 +1176,7 @@ break|break;
 case|case
 name|GIMP_TOOL_ACTION_RESUME
 case|:
-comment|/* only in the case that Mode: Modify Poligon is set " */
+comment|/* only in the case that "Modify Polygon" mode is set " */
 name|gimp_perspective_clone_tool_bounds
 argument_list|(
 name|clone_tool
@@ -3704,16 +3704,11 @@ expr_stmt|;
 comment|/* radio buttons to set if you are modifying perspe plane or painting */
 name|mode
 operator|=
-name|gimp_prop_enum_radio_frame_new
+name|gimp_prop_enum_radio_box_new
 argument_list|(
 name|config
 argument_list|,
 literal|"clone-mode"
-argument_list|,
-name|_
-argument_list|(
-literal|"Mode"
-argument_list|)
 argument_list|,
 literal|0
 argument_list|,

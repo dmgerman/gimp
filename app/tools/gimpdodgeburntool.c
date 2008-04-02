@@ -784,7 +784,7 @@ literal|"mode"
 argument_list|,
 name|_
 argument_list|(
-literal|"Mode"
+literal|"Range"
 argument_list|)
 argument_list|,
 literal|0
