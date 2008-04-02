@@ -221,6 +221,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_pdb_layer_is_text_layer
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpStroke
 modifier|*
 name|gimp_pdb_get_vectors_stroke
