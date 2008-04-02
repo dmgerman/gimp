@@ -200,7 +200,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a text layer.  *  * This procedure returns TRUE if the specified drawable is a text  * layer.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: GIMP 2008  */
+comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a text layer.  *  * This procedure returns TRUE if the specified drawable is a text  * layer.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function
