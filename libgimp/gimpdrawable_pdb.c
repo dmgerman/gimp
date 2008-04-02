@@ -122,7 +122,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer.  *  * This procedure returns TRUE if the specified drawable is a layer.  *  * Returns: TRUE if the drawable is a layer.  */
+comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer.  *  * This procedure returns TRUE if the specified drawable is a layer.  *  * Returns: TRUE if the drawable is a layer, FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -200,7 +200,85 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer mask.  *  * This procedure returns TRUE if the specified drawable is a layer  * mask.  *  * Returns: TRUE if the drawable is a layer mask.  */
+comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a text layer.  *  * This procedure returns TRUE if the specified drawable is a text  * layer.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: GIMP 2008  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_is_text_layer (gint32 drawable_ID)
+name|gimp_drawable_is_text_layer
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|text_layer
+init|=
+name|FALSE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-drawable-is-text-layer"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_DRAWABLE
+argument_list|,
+name|drawable_ID
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|text_layer
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|text_layer
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer mask.  *  * This procedure returns TRUE if the specified drawable is a layer  * mask.  *  * Returns: TRUE if the drawable is a layer mask, FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -278,7 +356,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a channel.  *  * This procedure returns TRUE if the specified drawable is a channel.  *  * Returns: TRUE if the drawable is a channel.  */
+comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a channel.  *  * This procedure returns TRUE if the specified drawable is a channel.  *  * Returns: TRUE if the drawable is a channel, FALSE otherwise.  */
 end_comment
 
 begin_function
