@@ -262,10 +262,8 @@ argument_list|)
 expr_stmt|;
 name|help_root
 operator|=
-name|g_build_path
+name|g_build_filename
 argument_list|(
-name|G_DIR_SEPARATOR_S
-argument_list|,
 name|gimp_data_directory
 argument_list|()
 argument_list|,
@@ -326,6 +324,9 @@ return|return
 name|EXIT_FAILURE
 return|;
 block|}
+name|g_type_init
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|help_base
@@ -354,8 +355,6 @@ argument_list|(
 name|GIMP_HELP_DEFAULT_DOMAIN
 argument_list|,
 name|uri
-argument_list|,
-name|help_root
 argument_list|)
 expr_stmt|;
 name|g_free

@@ -129,11 +129,6 @@ specifier|const
 name|gchar
 modifier|*
 name|domain_uri
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain_root
 parameter_list|)
 function_decl|;
 end_function_decl

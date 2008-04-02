@@ -31,11 +31,6 @@ name|gchar
 modifier|*
 name|help_uri
 decl_stmt|;
-DECL|member|help_root
-name|gchar
-modifier|*
-name|help_root
-decl_stmt|;
 DECL|member|help_locales
 name|GHashTable
 modifier|*
@@ -59,11 +54,6 @@ specifier|const
 name|gchar
 modifier|*
 name|domain_uri
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain_root
 parameter_list|)
 function_decl|;
 end_function_decl

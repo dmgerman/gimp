@@ -198,8 +198,6 @@ argument_list|(
 name|GIMP_HELP_DEFAULT_DOMAIN
 argument_list|,
 name|default_domain_uri
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 for|for
@@ -215,7 +213,6 @@ condition|;
 name|i
 operator|++
 control|)
-block|{
 name|gimp_help_register_domain
 argument_list|(
 name|domain_names
@@ -227,11 +224,8 @@ name|domain_uris
 index|[
 name|i
 index|]
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|default_domain_uri
@@ -271,7 +265,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_help_register_domain (const gchar * domain_name,const gchar * domain_uri,const gchar * domain_root)
+DECL|function|gimp_help_register_domain (const gchar * domain_name,const gchar * domain_uri)
 name|gimp_help_register_domain
 parameter_list|(
 specifier|const
@@ -283,11 +277,6 @@ specifier|const
 name|gchar
 modifier|*
 name|domain_uri
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|domain_root
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -353,8 +342,6 @@ argument_list|(
 name|domain_name
 argument_list|,
 name|domain_uri
-argument_list|,
-name|domain_root
 argument_list|)
 argument_list|)
 expr_stmt|;
