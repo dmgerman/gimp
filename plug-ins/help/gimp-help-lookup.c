@@ -162,7 +162,7 @@ block|,
 operator|&
 name|help_base
 block|,
-literal|"Speficies base URI"
+literal|"Specifies base URI"
 block|,
 literal|"URI"
 block|}
@@ -179,7 +179,7 @@ block|,
 operator|&
 name|help_root
 block|,
-literal|"Speficies root directory for index files"
+literal|"Specifies root directory for index files"
 block|,
 literal|"DIR"
 block|}
