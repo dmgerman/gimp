@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_define
@@ -109,7 +109,7 @@ struct|struct
 name|_GimpTextTool
 block|{
 DECL|member|parent_instance
-name|GimpTool
+name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
 DECL|member|proxy
@@ -165,6 +165,14 @@ name|GtkWidget
 modifier|*
 name|confirm_dialog
 decl_stmt|;
+DECL|member|handle_rectangle_changed
+name|gboolean
+name|handle_rectangle_changed
+decl_stmt|;
+DECL|member|text_box_fixed
+name|gboolean
+name|text_box_fixed
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -175,7 +183,7 @@ struct|struct
 name|_GimpTextToolClass
 block|{
 DECL|member|parent_class
-name|GimpToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
 block|}

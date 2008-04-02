@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7202b80103
+DECL|enum|__anon2c74e7a70103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7202b80203
+DECL|enum|__anon2c74e7a70203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7202b80303
+DECL|enum|__anon2c74e7a70303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -13846,6 +13846,31 @@ name|coord_y_input
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_rectangle_tool_rectangle_is_narrow:  *  * Returns TRUE if the handles are being shown outside the  * rectangle, FALSE if they are inside  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_rectangle_tool_rectangle_is_narrow (GimpRectangleTool * rect_tool)
+name|gimp_rectangle_tool_rectangle_is_narrow
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rect_tool
+parameter_list|)
+block|{
+return|return
+name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
+argument_list|(
+name|rect_tool
+argument_list|)
+operator|->
+name|narrow_mode
+return|;
 block|}
 end_function
 

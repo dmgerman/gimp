@@ -120,15 +120,25 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimprectangleoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a308e450103
+DECL|enum|__anon2aa27e360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
+init|=
+name|GIMP_RECTANGLE_OPTIONS_PROP_LAST
+operator|+
+literal|1
 block|,
 DECL|enumerator|PROP_FONT_SIZE
 name|PROP_FONT_SIZE
@@ -300,14 +310,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTextOptions,gimp_text_options,GIMP_TYPE_TOOL_OPTIONS)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpTextOptions,gimp_text_options,GIMP_TYPE_TOOL_OPTIONS,G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,NULL))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpTextOptions
 argument_list|,
 argument|gimp_text_options
 argument_list|,
 argument|GIMP_TYPE_TOOL_OPTIONS
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_RECTANGLE_OPTIONS,                                                 NULL)
 argument_list|)
 end_macro
 
@@ -601,6 +613,11 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_options_install_properties
+argument_list|(
+name|object_class
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -842,11 +859,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|G_OBJECT_WARN_INVALID_PROPERTY_ID
+name|gimp_rectangle_options_get_property
 argument_list|(
 name|object
 argument_list|,
 name|property_id
+argument_list|,
+name|value
 argument_list|,
 name|pspec
 argument_list|)
@@ -1070,11 +1089,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|G_OBJECT_WARN_INVALID_PROPERTY_ID
+name|gimp_rectangle_options_set_property
 argument_list|(
 name|object
 argument_list|,
 name|property_id
+argument_list|,
+name|value
 argument_list|,
 name|pspec
 argument_list|)
