@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpparamspecs.h"
 end_include
 
@@ -47,6 +53,12 @@ begin_include
 include|#
 directive|include
 file|"gimppdb.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppdberror.h"
 end_include
 
 begin_include
@@ -65,6 +77,12 @@ begin_include
 include|#
 directive|include
 file|"internal_procs.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_function
@@ -516,10 +534,42 @@ condition|(
 operator|!
 name|pal
 condition|)
+block|{
 name|success
 operator|=
 name|FALSE
 expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|pal
+operator|->
+name|n_colors
+operator|>
+literal|256
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"Cannot convert to a palette "
+literal|"with more than 256 colors."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 break|break;
 default|default:
 break|break;
