@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DOMAIN_H__
+name|__GIMP_HELP_DOMAIN_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DOMAIN_H__
+DECL|macro|__GIMP_HELP_DOMAIN_H__
 define|#
 directive|define
-name|__DOMAIN_H__
+name|__GIMP_HELP_DOMAIN_H__
 end_define
 
 begin_struct
@@ -131,7 +131,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* ! __DOMAIN_H__ */
+comment|/* ! __GIMP_HELP_DOMAIN_H__ */
 end_comment
 
 end_unit
