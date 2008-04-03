@@ -321,7 +321,7 @@ name|error
 argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
-name|GIMP_PDB_EXECUTION_ERROR
+name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
