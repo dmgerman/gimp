@@ -3544,12 +3544,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Clear the selection as if we had cut the pixels  */
-if|if
-condition|(
-operator|!
-name|cut_image
-condition|)
+comment|/*  Clear the selection  */
 name|gimp_channel_clear
 argument_list|(
 name|selection
