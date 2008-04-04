@@ -118,6 +118,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text/gimptextlayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppdb.h"
 end_include
 
