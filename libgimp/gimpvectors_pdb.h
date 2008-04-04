@@ -49,6 +49,19 @@ end_function_decl
 
 begin_function_decl
 name|gint32
+name|gimp_vectors_new_from_text_layer
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|layer_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
 name|gimp_vectors_get_image
 parameter_list|(
 name|gint32
