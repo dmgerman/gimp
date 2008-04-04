@@ -1516,10 +1516,13 @@ name|CONVERSION_WARNINGS
 condition|)
 name|g_message
 argument_list|(
+name|_
+argument_list|(
 literal|"Warning:\n"
 literal|"The image you are loading has 16 bits per channel. GIMP "
 literal|"can only handle 8 bit, so it will be converted for you. "
 literal|"Information will be lost because of this conversion."
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -7819,7 +7822,8 @@ condition|)
 name|g_message
 argument_list|(
 literal|"Warning\n"
-literal|"Layer mask partly lies outside layer boundry. The mask will be "
+literal|"The layer mask is partly outside the "
+literal|"layer boundary. The mask will be "
 literal|"cropped which may result in data loss."
 argument_list|)
 expr_stmt|;
@@ -9810,6 +9814,7 @@ block|{
 specifier|static
 name|gchar
 modifier|*
+specifier|const
 name|psd_color_mode_names
 index|[]
 init|=
@@ -9852,14 +9857,12 @@ name|mode
 operator|<=
 name|PSD_LAB
 condition|)
-block|{
 return|return
 name|psd_color_mode_names
 index|[
 name|mode
 index|]
 return|;
-block|}
 name|g_free
 argument_list|(
 name|err_name
