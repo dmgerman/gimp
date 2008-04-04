@@ -64,7 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"pdb/internal_procs.h"
+file|"pdb/internal-procs.h"
 end_include
 
 begin_include
@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c985640103
+DECL|enum|__anon29654ca90103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
