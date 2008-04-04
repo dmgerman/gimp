@@ -1498,8 +1498,8 @@ name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
-literal|"Image '%s' (%d) is of type %s, "
-literal|"but an image of type %s is expected"
+literal|"Image '%s' (%d) is of type '%s', "
+literal|"but an image of type '%s' is expected"
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -1603,7 +1603,7 @@ name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
-literal|"Image '%s' (%d) is already of type %s"
+literal|"Image '%s' (%d) is already of type '%s'"
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
