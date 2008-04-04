@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2af16ab40103
+DECL|enum|__anon2baa32950103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af16ab40208
+DECL|struct|__anon2baa32950208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af16ab40308
+DECL|struct|__anon2baa32950308
 block|{
 DECL|member|used_count
 name|signed
@@ -17234,19 +17234,19 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_convert_set_dither_matrix (gint width,gint height,const guchar * source)
+DECL|function|gimp_image_convert_set_dither_matrix (const guchar * matrix,gint width,gint height)
 name|gimp_image_convert_set_dither_matrix
 parameter_list|(
+specifier|const
+name|guchar
+modifier|*
+name|matrix
+parameter_list|,
 name|gint
 name|width
 parameter_list|,
 name|gint
 name|height
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|source
 parameter_list|)
 block|{
 name|gint
@@ -17255,10 +17255,10 @@ decl_stmt|;
 name|gint
 name|y
 decl_stmt|;
-comment|/* if source is invalid, restore the default matrix */
+comment|/* if matrix is invalid, restore the default matrix */
 if|if
 condition|(
-name|source
+name|matrix
 operator|==
 name|NULL
 operator|||
@@ -17271,16 +17271,14 @@ operator|==
 literal|0
 condition|)
 block|{
-name|source
+name|matrix
 operator|=
 operator|(
+specifier|const
 name|guchar
 operator|*
 operator|)
-operator|(
-operator|&
 name|DM_ORIGINAL
-operator|)
 expr_stmt|;
 name|width
 operator|=
@@ -17349,7 +17347,7 @@ index|[
 name|y
 index|]
 operator|=
-name|source
+name|matrix
 index|[
 operator|(
 operator|(
