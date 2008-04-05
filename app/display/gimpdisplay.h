@@ -216,6 +216,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_display_close
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_display_get_ID
 parameter_list|(

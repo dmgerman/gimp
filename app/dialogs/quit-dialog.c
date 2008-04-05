@@ -802,11 +802,9 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_displays_delete
+name|gimp_displays_close
 argument_list|(
 name|gimp
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

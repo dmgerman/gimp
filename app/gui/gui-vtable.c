@@ -1616,7 +1616,7 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|gimp_display_delete
+name|gimp_display_close
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(

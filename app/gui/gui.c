@@ -2350,8 +2350,6 @@ expr_stmt|;
 name|gimp_displays_delete
 argument_list|(
 name|gimp
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_tools_save

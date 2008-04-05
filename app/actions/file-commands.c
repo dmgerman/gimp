@@ -1110,7 +1110,7 @@ operator|->
 name|dirty
 condition|)
 block|{
-name|gimp_display_delete
+name|gimp_display_close
 argument_list|(
 name|display
 argument_list|)
@@ -1503,11 +1503,9 @@ name|gimp
 argument_list|)
 condition|)
 block|{
-name|gimp_displays_delete
+name|gimp_displays_close
 argument_list|(
 name|gimp
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

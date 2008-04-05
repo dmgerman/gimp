@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ec5f1d0103
+DECL|enum|__anon2c4dcf960103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1527,6 +1527,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_display_delete:  * @display:  *  * Closes the display and removes it from the display list. You should  * not call this function directly, use gimp_display_close() instead.  */
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_delete (GimpDisplay * display)
@@ -1647,6 +1651,59 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_close:  * @display:  *  * Closes the display. If this is the last display, it will remain  * open, but without an image.  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_display_close (GimpDisplay * display)
+name|gimp_display_close
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_container_num_children
+argument_list|(
+name|display
+operator|->
+name|gimp
+operator|->
+name|displays
+argument_list|)
+operator|>
+literal|1
+condition|)
+block|{
+name|gimp_display_delete
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|gimp_display_empty
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

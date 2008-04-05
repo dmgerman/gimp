@@ -543,7 +543,7 @@ name|image
 operator|->
 name|dirty
 condition|)
-name|gimp_display_delete
+name|gimp_display_close
 argument_list|(
 name|display
 argument_list|)
