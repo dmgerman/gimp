@@ -146,7 +146,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1170100103
+DECL|enum|__anon2b2927750103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -2394,7 +2394,7 @@ condition|(
 name|j
 operator|*
 name|cellsize
-operator|>
+operator|<
 name|width
 condition|)
 name|memset
