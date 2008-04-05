@@ -89,12 +89,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -146,7 +140,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2927750103
+DECL|enum|__anon2b411bac0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
