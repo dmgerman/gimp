@@ -97,6 +97,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_procedural_db_proc_exists
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|procedure_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_GNUC_INTERNAL
 name|gboolean
 name|_gimp_procedural_db_proc_info
