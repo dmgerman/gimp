@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d3df30108
+DECL|struct|__anon2974dc450108
 block|{
 union|union
-DECL|union|__anon277d3df3020a
+DECL|union|__anon2974dc45020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d3df30308
+DECL|struct|__anon2974dc450308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d3df30408
+DECL|struct|__anon2974dc450408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277d3df30508
+DECL|struct|__anon2974dc450508
 block|{
 DECL|member|width
 DECL|member|height
@@ -2959,9 +2959,8 @@ condition|)
 block|{
 if|if
 condition|(
-literal|0
-operator|==
-name|gimp_drawable_bpp
+operator|!
+name|gimp_drawable_is_valid
 argument_list|(
 name|inputs
 index|[
@@ -3052,9 +3051,8 @@ condition|)
 block|{
 if|if
 condition|(
-literal|0
-operator|==
-name|gimp_drawable_bpp
+operator|!
+name|gimp_drawable_is_valid
 argument_list|(
 name|inputs
 index|[
@@ -3583,9 +3581,8 @@ name|source_layer_ID
 expr_stmt|;
 if|if
 condition|(
-literal|0
-operator|==
-name|gimp_drawable_bpp
+operator|!
+name|gimp_drawable_is_valid
 argument_list|(
 name|layer_ID_dst
 argument_list|)
