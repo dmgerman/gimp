@@ -847,7 +847,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"lighttype"
 block|,
-literal|"Type of lightsource (0=point,1=directional,3=none)"
+literal|"Type of lightsource (0=point,1=directional,2=none)"
 block|}
 block|,
 block|{
