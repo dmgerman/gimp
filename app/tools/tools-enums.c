@@ -506,7 +506,7 @@ block|{
 block|{
 name|GIMP_RECTANGLE_PRECISION_INT
 block|,
-literal|"Integer precision"
+literal|"GIMP_RECTANGLE_PRECISION_INT"
 block|,
 name|NULL
 block|}
@@ -514,7 +514,7 @@ block|,
 block|{
 name|GIMP_RECTANGLE_PRECISION_DOUBLE
 block|,
-literal|"Double precision"
+literal|"GIMP_RECTANGLE_PRECISION_DOUBLE"
 block|,
 name|NULL
 block|}
