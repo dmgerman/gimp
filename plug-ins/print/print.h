@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d59d70103
+DECL|enum|__anon27aaa68c0103
 block|{
 DECL|enumerator|CENTER_NONE
 name|CENTER_NONE
@@ -36,12 +36,8 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292d59d70208
+DECL|struct|__anon27aaa68c0208
 block|{
-DECL|member|num_pages
-name|gint
-name|num_pages
-decl_stmt|;
 DECL|member|image_id
 name|gint32
 name|image_id

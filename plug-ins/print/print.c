@@ -771,6 +771,13 @@ operator|=
 name|gtk_print_operation_new
 argument_list|()
 expr_stmt|;
+name|gtk_print_operation_set_n_pages
+argument_list|(
+name|operation
+argument_list|,
+literal|1
+argument_list|)
+expr_stmt|;
 name|print_operation_set_name
 argument_list|(
 name|operation
@@ -786,12 +793,6 @@ name|orig_image_ID
 argument_list|)
 expr_stmt|;
 comment|/* fill in the PrintData struct */
-name|data
-operator|.
-name|num_pages
-operator|=
-literal|1
-expr_stmt|;
 name|data
 operator|.
 name|image_id
@@ -1332,15 +1333,6 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|gtk_print_operation_set_n_pages
-argument_list|(
-name|operation
-argument_list|,
-name|data
-operator|->
-name|num_pages
-argument_list|)
-expr_stmt|;
 name|gtk_print_operation_set_use_full_page
 argument_list|(
 name|operation
