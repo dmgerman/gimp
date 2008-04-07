@@ -1017,16 +1017,6 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_force_narrow
-argument_list|(
-name|GIMP_RECTANGLE_TOOL
-argument_list|(
-name|object
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|text_tool
 operator|=
 name|GIMP_TEXT_TOOL

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a697810103
+DECL|enum|__anon274ecf900103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a697810203
+DECL|enum|__anon274ecf900203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a697810303
+DECL|enum|__anon274ecf900303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -419,12 +419,7 @@ DECL|member|narrow_mode
 name|gboolean
 name|narrow_mode
 decl_stmt|;
-comment|/* Whether to force the rectangle to always be in narrow mode.  This    * parameter is especially useful for the text tool, where interior    * handles would interfere with the text.    */
-DECL|member|force_narrow
-name|gboolean
-name|force_narrow
-decl_stmt|;
-comment|/* For what scale the handle sizes is calculated. We must cache this so that    * we can differentiate between when the tool is resumed because of zoom level    * just has changed or because the highlight has just been updated.    */
+comment|/* For what scale the handle sizes is calculated. We must cache this    * so that we can differentiate between when the tool is resumed    * because of zoom level just has changed or because the highlight    * has just been updated.    */
 DECL|member|scale_x_used_for_handle_size_calculations
 name|gdouble
 name|scale_x_used_for_handle_size_calculations
@@ -2933,14 +2928,6 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|private
-operator|->
-name|force_narrow
-condition|)
-block|{
 comment|/* Created rectangles should not be started in narrow-mode*/
 name|private
 operator|->
@@ -2948,7 +2935,6 @@ name|narrow_mode
 operator|=
 name|FALSE
 expr_stmt|;
-block|}
 comment|/* If the rectangle is being modified we want the center on        * fixed_center to be at the center of the currently existing        * rectangle, otherwise we want the point where the user clicked        * to be the center on fixed_center.        */
 name|private
 operator|->
@@ -6404,14 +6390,6 @@ operator|&
 name|visible_rectangle_height
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|private
-operator|->
-name|force_narrow
-condition|)
-block|{
 comment|/* Determine if we are in narrow-mode or not. */
 name|private
 operator|->
@@ -6427,7 +6405,6 @@ operator|<
 name|NARROW_MODE_THRESHOLD
 operator|)
 expr_stmt|;
-block|}
 block|}
 if|if
 condition|(
@@ -13904,64 +13881,6 @@ operator|=
 name|coord_y_input
 expr_stmt|;
 break|break;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_rectangle_tool_set_always_narrow:  *  * Makes sure that the rectangle is always shown with handles  * outside.  Mainly intended for use in the text tool, where  * handles inside interfere with the text.  If this function  * is called while a rectangle is being shown, the draw tool  * must first be paused.  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_rectangle_tool_set_force_narrow (GimpRectangleTool * rect_tool,gboolean force_narrow)
-name|gimp_rectangle_tool_set_force_narrow
-parameter_list|(
-name|GimpRectangleTool
-modifier|*
-name|rect_tool
-parameter_list|,
-name|gboolean
-name|force_narrow
-parameter_list|)
-block|{
-name|GimpRectangleToolPrivate
-modifier|*
-name|private
-decl_stmt|;
-name|private
-operator|=
-name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
-argument_list|(
-name|rect_tool
-argument_list|)
-expr_stmt|;
-name|private
-operator|->
-name|force_narrow
-operator|=
-name|force_narrow
-condition|?
-name|TRUE
-else|:
-name|FALSE
-expr_stmt|;
-if|if
-condition|(
-name|force_narrow
-operator|&&
-operator|!
-name|private
-operator|->
-name|narrow_mode
-condition|)
-block|{
-name|private
-operator|->
-name|narrow_mode
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 block|}
 end_function
