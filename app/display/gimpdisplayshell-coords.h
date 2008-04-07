@@ -138,9 +138,6 @@ parameter_list|,
 name|gdouble
 name|inertia_factor
 parameter_list|,
-name|gdouble
-name|filter_threshhold
-parameter_list|,
 name|guint32
 name|time
 parameter_list|)

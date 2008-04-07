@@ -788,7 +788,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_eval_event (GimpDisplayShell * shell,GimpCoords * coords,gdouble inertia_factor,gdouble filter_treshhold,guint32 time)
+DECL|function|gimp_display_shell_eval_event (GimpDisplayShell * shell,GimpCoords * coords,gdouble inertia_factor,guint32 time)
 name|gimp_display_shell_eval_event
 parameter_list|(
 name|GimpDisplayShell
@@ -801,9 +801,6 @@ name|coords
 parameter_list|,
 name|gdouble
 name|inertia_factor
-parameter_list|,
-name|gdouble
-name|filter_treshhold
 parameter_list|,
 name|guint32
 name|time
@@ -823,13 +820,27 @@ decl_stmt|;
 name|gdouble
 name|dist
 decl_stmt|;
+comment|/* Ensure that events are filtered below screen resolution */
 name|gdouble
 name|filter
+init|=
+name|MIN
+argument_list|(
+name|shell
+operator|->
+name|scale_x
+argument_list|,
+name|shell
+operator|->
+name|scale_y
+argument_list|)
+operator|/
+literal|2.0
 decl_stmt|;
 name|gdouble
 name|inertia
 decl_stmt|;
-comment|/* Event filtering& smoothing causes problems with cursor tracking    * when zoomed above screen resolution so we need to supress it.    */
+comment|/* Smoothing causes problems with cursor tracking    * when zoomed above screen resolution so we need to supress it.    */
 if|if
 condition|(
 name|shell
@@ -845,23 +856,6 @@ operator|>
 literal|1.0
 condition|)
 block|{
-name|filter
-operator|=
-name|filter_treshhold
-operator|/
-operator|(
-name|MAX
-argument_list|(
-name|shell
-operator|->
-name|scale_x
-argument_list|,
-name|shell
-operator|->
-name|scale_y
-argument_list|)
-operator|)
-expr_stmt|;
 name|inertia
 operator|=
 literal|0.0
@@ -869,10 +863,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|filter
-operator|=
-name|filter_treshhold
-expr_stmt|;
 name|inertia
 operator|=
 name|inertia_factor

@@ -545,6 +545,13 @@ argument_list|(
 literal|"%s to pick a color"
 argument_list|)
 expr_stmt|;
+comment|/*  Paint tools benefit most from strong smoothing on coordinates  */
+name|tool
+operator|->
+name|max_coord_smooth
+operator|=
+literal|0.98
+expr_stmt|;
 name|paint_tool
 operator|->
 name|core

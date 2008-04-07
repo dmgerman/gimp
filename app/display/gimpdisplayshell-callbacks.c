@@ -303,22 +303,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|DEFAULT_EVENT_SMOOTHING
-define|#
-directive|define
-name|DEFAULT_EVENT_SMOOTHING
-value|0.98
-end_define
-
-begin_define
-DECL|macro|DEFAULT_EVENT_FILTER
-define|#
-directive|define
-name|DEFAULT_EVENT_FILTER
-value|0.50
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -4083,9 +4067,9 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-name|DEFAULT_EVENT_SMOOTHING
-argument_list|,
-name|DEFAULT_EVENT_FILTER
+name|active_tool
+operator|->
+name|max_coord_smooth
 argument_list|,
 name|history_events
 index|[
@@ -4148,9 +4132,9 @@ argument_list|,
 operator|&
 name|image_coords
 argument_list|,
-name|DEFAULT_EVENT_SMOOTHING
-argument_list|,
-name|DEFAULT_EVENT_FILTER
+name|active_tool
+operator|->
+name|max_coord_smooth
 argument_list|,
 name|time
 argument_list|)
@@ -4207,8 +4191,6 @@ operator|&
 name|image_coords
 argument_list|,
 literal|0.0
-argument_list|,
-name|DEFAULT_EVENT_FILTER
 argument_list|,
 name|time
 argument_list|)
