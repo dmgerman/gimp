@@ -104,7 +104,7 @@ name|GIMP_STOCK_IMAGE
 block|,
 name|N_
 argument_list|(
-literal|"_Create Image from Template..."
+literal|"_Create Image from Template"
 argument_list|)
 block|,
 literal|""
