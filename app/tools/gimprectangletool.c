@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b88ad50103
+DECL|enum|__anon28a697810103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b88ad50203
+DECL|enum|__anon28a697810203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b88ad50303
+DECL|enum|__anon28a697810303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -1542,21 +1542,7 @@ modifier|*
 name|rect_tool
 parameter_list|)
 block|{
-name|GimpRectangleToolPrivate
-modifier|*
-name|private
-init|=
-name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
-argument_list|(
-name|rect_tool
-argument_list|)
-decl_stmt|;
-name|private
-operator|->
-name|force_narrow
-operator|=
-name|FALSE
-expr_stmt|;
+comment|/* No need to initialize anything yet. */
 block|}
 end_function
 
@@ -2756,14 +2742,20 @@ name|draw_tool
 argument_list|)
 condition|)
 block|{
-name|gimp_display_shell_set_highlight
-argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
+name|GtkWidget
+modifier|*
+name|shell
+init|=
 name|draw_tool
 operator|->
 name|display
 operator|->
+name|shell
+decl_stmt|;
+name|gimp_display_shell_set_highlight
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|shell
 argument_list|)
 argument_list|,
@@ -2957,7 +2949,7 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
-comment|/* If the rectangle is being modified we want the center on fixed_center to be        * at the center of the currently existing rectangle, otherwise we want the        * point where the user clicked to be the center on fixed_center.        */
+comment|/* If the rectangle is being modified we want the center on        * fixed_center to be at the center of the currently existing        * rectangle, otherwise we want the point where the user clicked        * to be the center on fixed_center.        */
 name|private
 operator|->
 name|center_x_on_fixed_center
@@ -2970,7 +2962,7 @@ name|center_y_on_fixed_center
 operator|=
 name|snapped_y
 expr_stmt|;
-comment|/* When the user toggles modifier keys, we want to keep track of what        * coordinates the "other side" should have. If we are creating a rectangle,        * use the current mouse coordinates as the coordinate of the "other side",        * otherwise use the immidiate "other side" for that.        */
+comment|/* When the user toggles modifier keys, we want to keep track of        * what coordinates the "other side" should have. If we are        * creating a rectangle, use the current mouse coordinates as        * the coordinate of the "other side", otherwise use the        * immidiate "other side" for that.        */
 name|private
 operator|->
 name|other_side_x
@@ -6847,13 +6839,19 @@ operator|->
 name|fixed_width_entry
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|entry
+init|=
+name|options_private
+operator|->
+name|fixed_width_entry
+decl_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|fixed_width_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -6867,9 +6865,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|fixed_width_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -6892,13 +6888,19 @@ operator|->
 name|fixed_height_entry
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|entry
+init|=
+name|options_private
+operator|->
+name|fixed_height_entry
+decl_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|fixed_height_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -6912,9 +6914,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|fixed_height_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -6937,13 +6937,19 @@ operator|->
 name|x_entry
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|entry
+init|=
+name|options_private
+operator|->
+name|x_entry
+decl_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|x_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -6957,9 +6963,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|x_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -6982,13 +6986,19 @@ operator|->
 name|y_entry
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|entry
+init|=
+name|options_private
+operator|->
+name|y_entry
+decl_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|y_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -7002,9 +7012,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|y_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -7027,13 +7035,19 @@ operator|->
 name|width_entry
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|entry
+init|=
+name|options_private
+operator|->
+name|width_entry
+decl_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|width_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -7047,9 +7061,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|width_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -7072,13 +7084,19 @@ operator|->
 name|height_entry
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|entry
+init|=
+name|options_private
+operator|->
+name|height_entry
+decl_stmt|;
 name|gimp_size_entry_set_resolution
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|height_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -7092,9 +7110,7 @@ name|gimp_size_entry_set_size
 argument_list|(
 name|GIMP_SIZE_ENTRY
 argument_list|(
-name|options_private
-operator|->
-name|height_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -7187,8 +7203,10 @@ operator|->
 name|display
 condition|)
 block|{
-name|gimp_display_shell_set_highlight
-argument_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|tool
@@ -7197,20 +7215,17 @@ name|display
 operator|->
 name|shell
 argument_list|)
+decl_stmt|;
+name|gimp_display_shell_set_highlight
+argument_list|(
+name|shell
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|tool
-operator|->
-name|display
-operator|->
 name|shell
-argument_list|)
 argument_list|,
 name|gimp_rectangle_tool_shell_scrolled
 argument_list|,
@@ -7343,7 +7358,8 @@ name|gdouble
 name|pub_x1
 decl_stmt|,
 name|pub_y1
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|pub_x2
 decl_stmt|,
 name|pub_y2
@@ -7485,7 +7501,8 @@ name|gdouble
 name|pub_x1
 decl_stmt|,
 name|pub_y1
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|pub_x2
 decl_stmt|,
 name|pub_y2
@@ -9845,7 +9862,8 @@ name|gdouble
 name|pub_x1
 decl_stmt|,
 name|pub_y1
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|pub_x2
 decl_stmt|,
 name|pub_y2
@@ -10367,7 +10385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_coord:  * @param:     A #GimpRectangleTool.  * @coord_x:   X of coord.  * @coord_y:   Y of coord.  *  * Adjust the rectangle to the new position specified by passed coordinate,  * taking fixed_center into account, which means it expands the rectagle around  * the center point.  */
+comment|/**  * gimp_rectangle_tool_apply_coord:  * @param:     A #GimpRectangleTool.  * @coord_x:   X of coord.  * @coord_y:   Y of coord.  *  * Adjust the rectangle to the new position specified by passed  * coordinate, taking fixed_center into account, which means it  * expands the rectagle around the center point.  */
 end_comment
 
 begin_function
@@ -10983,7 +11001,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_clamp_width:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps rectangle inside specified bounds, providing information of where  * clamping was done. Can also clamp symmetrically.  */
+comment|/**  * gimp_rectangle_tool_clamp_width:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps rectangle inside specified bounds, providing information of  * where clamping was done. Can also clamp symmetrically.  */
 end_comment
 
 begin_function
@@ -11033,7 +11051,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_clamp_width:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps height of rectangle. Set symmetrically to true when using for  * fixed_center:ed rectangles, since that will clamp symmetrically which is just  * what is needed.  *  * When this function constrains, it puts what it constrains in  * @constraint. This information is essential when an aspect ratio is to be  * applied.  */
+comment|/**  * gimp_rectangle_tool_clamp_width:  * @rect_tool:      A #GimpRectangleTool.  * @clamped_sides:  Where to put contrainment information.  * @constraint:     Constraint to use.  * @symmetrically:  Whether or not to clamp symmetrically.  *  * Clamps height of rectangle. Set symmetrically to true when using  * for fixed_center:ed rectangles, since that will clamp symmetrically  * which is just what is needed.  *  * When this function constrains, it puts what it constrains in  * @constraint. This information is essential when an aspect ratio is  * to be applied.  */
 end_comment
 
 begin_function
@@ -11593,7 +11611,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_keep_inside_vertically:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * If the rectangle is outside of the given constraint vertically, move it  * inside. If it is too big to fit inside, make it just as big as the width  * limit.  */
+comment|/**  * gimp_rectangle_tool_keep_inside_vertically:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  *  * If the rectangle is outside of the given constraint vertically,  * move it inside. If it is too big to fit inside, make it just as big  * as the width limit.  */
 end_comment
 
 begin_function
@@ -11748,7 +11766,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_fixed_width:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @width:  *  * Makes the rectangle have a fixed_width, following the constrainment rules  * of fixed widths as well. Please refer to the rectangle tools spec.  */
+comment|/**  * gimp_rectangle_tool_apply_fixed_width:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @width:  *  * Makes the rectangle have a fixed_width, following the constrainment  * rules of fixed widths as well. Please refer to the rectangle tools  * spec.  */
 end_comment
 
 begin_function
@@ -11887,7 +11905,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_fixed_height:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @height:  *  * Makes the rectangle have a fixed_height, following the constrainment rules  * of fixed heights as well. Please refer to the rectangle tools spec.  */
+comment|/**  * gimp_rectangle_tool_apply_fixed_height:  * @rect_tool:      A #GimpRectangleTool.  * @constraint:     Constraint to use.  * @height:  *  * Makes the rectangle have a fixed_height, following the  * constrainment rules of fixed heights as well. Please refer to the  * rectangle tools spec.  */
 end_comment
 
 begin_function
@@ -11956,7 +11974,7 @@ case|:
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_TOP
 case|:
-comment|/* We always want to center around fixed_center here, since we want the        * anchor point to be directly on the opposite side.        */
+comment|/* We always want to center around fixed_center here, since we        * want the anchor point to be directly on the opposite side.        */
 name|private
 operator|->
 name|y1
@@ -11989,7 +12007,7 @@ case|:
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_BOTTOM
 case|:
-comment|/* We always want to center around fixed_center here, since we want the        * anchor point to be directly on the opposite side.        */
+comment|/* We always want to center around fixed_center here, since we        * want the anchor point to be directly on the opposite side.        */
 name|private
 operator|->
 name|y1
@@ -12026,7 +12044,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_apply_aspect:  * @rect_tool:      A #GimpRectangleTool.  * @aspect:         The desired aspect.  * @clamped_sides:  Bitfield of sides that have been clamped.  *  * Adjust the rectangle to the desired aspect.  *  * Sometimes, a side must not be moved outwards, for example if a the RIGHT side  * has been clamped previously, we must not move the RIGHT side to the right,  * since that would violate the constraint again. The clamped_sides bitfield  * keeps track of sides that have previously been clamped.  *  * If fixed_center is used, the function adjusts the aspect by symmetrically  * adjusting the left and right, or top and bottom side.  */
+comment|/**  * gimp_rectangle_tool_apply_aspect:  * @rect_tool:      A #GimpRectangleTool.  * @aspect:         The desired aspect.  * @clamped_sides:  Bitfield of sides that have been clamped.  *  * Adjust the rectangle to the desired aspect.  *  * Sometimes, a side must not be moved outwards, for example if a the  * RIGHT side has been clamped previously, we must not move the RIGHT  * side to the right, since that would violate the constraint  * again. The clamped_sides bitfield keeps track of sides that have  * previously been clamped.  *  * If fixed_center is used, the function adjusts the aspect by  * symmetrically adjusting the left and right, or top and bottom side.  */
 end_comment
 
 begin_function
@@ -12145,7 +12163,7 @@ operator|>
 name|aspect
 condition|)
 block|{
-comment|/* We prefer to use top and bottom (since that will make the cursor            * remain on the rectangle edge), unless that is what the user has            * grabbed.            */
+comment|/* We prefer to use top and bottom (since that will make the            * cursor remain on the rectangle edge), unless that is what            * the user has grabbed.            */
 switch|switch
 condition|(
 name|private
@@ -12218,7 +12236,7 @@ block|}
 else|else
 comment|/* (current_aspect< aspect) */
 block|{
-comment|/* We prefer to use left and right (since that will make the cursor            * remain on the rectangle edge), unless that is what the user has            * grabbed.            */
+comment|/* We prefer to use left and right (since that will make the            * cursor remain on the rectangle edge), unless that is what            * the user has grabbed.            */
 switch|switch
 condition|(
 name|private
@@ -12297,7 +12315,7 @@ operator|>
 name|aspect
 condition|)
 block|{
-comment|/* We can safely pick LEFT or RIGHT, since using those sides will make the        * rectangle smaller, so we don't need to check for clamped_sides. We may        * only use TOP and BOTTOM if not those sides have been clamped, since        * using them will make the rectangle bigger.        */
+comment|/* We can safely pick LEFT or RIGHT, since using those sides        * will make the rectangle smaller, so we don't need to check        * for clamped_sides. We may only use TOP and BOTTOM if not        * those sides have been clamped, since using them will make the        * rectangle bigger.        */
 switch|switch
 condition|(
 name|private
@@ -12527,7 +12545,7 @@ block|}
 else|else
 comment|/* (current_aspect< aspect) */
 block|{
-comment|/* We can safely pick TOP or BOTTOM, since using those sides will make the        * rectangle smaller, so we don't need to check for clamped_sides. We may        * only use LEFT and RIGHT if not those sides have been clamped, since        * using them will make the rectangle bigger.        */
+comment|/* We can safely pick TOP or BOTTOM, since using those sides        * will make the rectangle smaller, so we don't need to check        * for clamped_sides. We may only use LEFT and RIGHT if not        * those sides have been clamped, since using them will make the        * rectangle bigger.        */
 switch|switch
 condition|(
 name|private
@@ -12754,7 +12772,7 @@ expr_stmt|;
 break|break;
 block|}
 block|}
-comment|/* We now know what side(s) we should resize, so now we just solve the    * aspect equation for that side(s).    */
+comment|/* We now know what side(s) we should resize, so now we just solve    * the aspect equation for that side(s).    */
 switch|switch
 condition|(
 name|side_to_resize
@@ -12903,7 +12921,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_update_with_coord:  * @rect_tool:      A #GimpRectangleTool.  * @new_x:          New X-coordinate in the context of the current function.  * @new_y:          New Y-coordinate in the context of the current function.  *  * The core rectangle adjustment function. It updates the rectangle for the  * passed cursor coordinate, taking current function and tool options into  * account.  It also updates the current private->function if necessary.  */
+comment|/**  * gimp_rectangle_tool_update_with_coord:  * @rect_tool:      A #GimpRectangleTool.  * @new_x:          New X-coordinate in the context of the current function.  * @new_y:          New Y-coordinate in the context of the current function.  *  * The core rectangle adjustment function. It updates the rectangle  * for the passed cursor coordinate, taking current function and tool  * options into account.  It also updates the current  * private->function if necessary.  */
 end_comment
 
 begin_function
@@ -12926,12 +12944,14 @@ block|{
 name|GimpRectangleToolPrivate
 modifier|*
 name|private
-init|=
+decl_stmt|;
+name|private
+operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_tool
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 comment|/* Move the corner or edge the user currently has grabbed. */
 name|gimp_rectangle_tool_apply_coord
 argument_list|(
@@ -13487,7 +13507,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_handle_general_clamping:  * @rect_tool: A #GimpRectangleTool.  *  * Make sure that contraints are applied to the rectangle, either by manually  * doing it, or by looking at the rectangle tool options and concluding it will  * be done later.  */
+comment|/**  * gimp_rectangle_tool_handle_general_clamping:  * @rect_tool: A #GimpRectangleTool.  *  * Make sure that contraints are applied to the rectangle, either by  * manually doing it, or by looking at the rectangle tool options and  * concluding it will be done later.  */
 end_comment
 
 begin_function
@@ -13908,12 +13928,14 @@ block|{
 name|GimpRectangleToolPrivate
 modifier|*
 name|private
-init|=
+decl_stmt|;
+name|private
+operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
 argument_list|(
 name|rect_tool
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|private
 operator|->
 name|force_narrow
