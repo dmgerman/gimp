@@ -50,13 +50,13 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"neon"
+value|"edge-neon"
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1ea2c0108
+DECL|struct|__anon2c7193e80108
 block|{
 DECL|member|radius
 name|gdouble
@@ -366,11 +366,11 @@ name|gchar
 modifier|*
 name|help_string
 init|=
-literal|"This filter works in a manner similar to the edge"
-literal|"plug-in, but uses the first derivative of the gaussian"
-literal|"operator to achieve resolution independence. The IIR"
-literal|"method of calculating the effect is utilized to keep"
-literal|"the processing time constant between large and small"
+literal|"This filter works in a manner similar to the edge "
+literal|"plug-in, but uses the first derivative of the gaussian "
+literal|"operator to achieve resolution independence. The IIR "
+literal|"method of calculating the effect is utilized to keep "
+literal|"the processing time constant between large and small "
 literal|"standard deviations."
 decl_stmt|;
 name|gimp_install_procedure
