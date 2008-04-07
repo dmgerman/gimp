@@ -149,8 +149,7 @@ name|g_print
 argument_list|(
 name|_
 argument_list|(
-literal|"using %s, "
-literal|"compiled against version %s, running against version %s"
+literal|"using %s version %s (compiled against version %s)"
 argument_list|)
 argument_list|,
 name|package
