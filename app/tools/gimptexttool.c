@@ -1017,6 +1017,16 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_set_force_narrow
+argument_list|(
+name|GIMP_RECTANGLE_TOOL
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|text_tool
 operator|=
 name|GIMP_TEXT_TOOL
@@ -1374,10 +1384,16 @@ expr_stmt|;
 comment|/* bail out now if the rectangle is narrow and the button      press is outside the layer */
 if|if
 condition|(
-name|gimp_rectangle_tool_rectangle_is_narrow
+name|text_tool
+operator|->
+name|layer
+operator|&&
+name|gimp_rectangle_tool_get_function
 argument_list|(
 name|rect_tool
 argument_list|)
+operator|!=
+name|GIMP_RECTANGLE_TOOL_CREATING
 condition|)
 block|{
 name|GimpItem
@@ -5251,6 +5267,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|text_tool
+operator|->
+name|text_box_fixed
+operator|=
+name|TRUE
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -5258,12 +5280,6 @@ name|text
 condition|)
 block|{
 comment|/*            * we can't set properties for the text layer, because            * it isn't created until some text has been inserted,            * so we need to make a special note that will remind            * us what to do when we actually create the layer            */
-name|text_tool
-operator|->
-name|text_box_fixed
-operator|=
-name|TRUE
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -5474,6 +5490,13 @@ name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_rectangle_tool_set_function
+argument_list|(
+name|rect_tool
+argument_list|,
+name|GIMP_RECTANGLE_TOOL_CREATING
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|rect_tool
@@ -5501,11 +5524,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_set_function
+comment|/*    * kludge to force handle sizes to update.  This call may be    * harmful if this function is ever moved out of the text tool code.    */
+name|gimp_rectangle_tool_set_constraint
 argument_list|(
 name|rect_tool
 argument_list|,
-name|GIMP_RECTANGLE_TOOL_MOVING
+name|GIMP_RECTANGLE_CONSTRAIN_NONE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
