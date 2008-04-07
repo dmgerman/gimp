@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974dc450108
+DECL|struct|__anon291108090108
 block|{
 union|union
-DECL|union|__anon2974dc45020a
+DECL|union|__anon29110809020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974dc450308
+DECL|struct|__anon291108090308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974dc450408
+DECL|struct|__anon291108090408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974dc450508
+DECL|struct|__anon291108090508
 block|{
 DECL|member|width
 DECL|member|height
@@ -3321,10 +3321,10 @@ condition|)
 block|{
 name|gint32
 modifier|*
-name|g32
+name|layers
 decl_stmt|;
 comment|/* Get first layer of image */
-name|g32
+name|layers
 operator|=
 name|gimp_image_get_layers
 argument_list|(
@@ -3343,11 +3343,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|(
-name|g32
-operator|==
-name|NULL
-operator|)
+operator|!
+name|layers
 operator|||
 operator|(
 name|num_layers
@@ -3377,7 +3374,7 @@ index|]
 operator|=
 name|gimp_drawable_get
 argument_list|(
-name|g32
+name|layers
 index|[
 literal|0
 index|]
@@ -3385,7 +3382,7 @@ argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|g32
+name|layers
 argument_list|)
 expr_stmt|;
 block|}
@@ -3475,12 +3472,10 @@ comment|/* Get pixel region */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
-operator|(
 name|pixel_rgn_src
 index|[
 name|j
 index|]
-operator|)
 argument_list|,
 name|drawable_src
 index|[
