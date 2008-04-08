@@ -73,6 +73,12 @@ index|[]
 init|=
 block|{
 block|{
+literal|"<Toolbox>/Xtns/Languages"
+block|,
+literal|"<Image>/Filters/Languages"
+block|}
+block|,
+block|{
 literal|"<Toolbox>/Xtns"
 block|,
 literal|"<Image>/Xtns"
