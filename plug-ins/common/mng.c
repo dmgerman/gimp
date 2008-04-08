@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aad1170103
+DECL|enum|__anon2a34ed8c0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aad1170203
+DECL|enum|__anon2a34ed8c0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -669,9 +669,6 @@ name|ptr
 operator|=
 name|g_try_malloc
 argument_list|(
-operator|(
-name|gulong
-operator|)
 name|size
 argument_list|)
 expr_stmt|;
