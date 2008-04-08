@@ -79,6 +79,12 @@ literal|"<Image>/Filters/Languages"
 block|}
 block|,
 block|{
+literal|"<Toolbox>/Xtns/Extensions"
+block|,
+literal|"<Image>/Filters/Extensions"
+block|}
+block|,
+block|{
 literal|"<Toolbox>/Xtns"
 block|,
 literal|"<Image>/Xtns"
