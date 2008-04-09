@@ -299,7 +299,7 @@ name|GIMP_PDB_COLOR
 block|,
 literal|"borderaverage"
 block|,
-literal|"Sends the average color of the specified border to the Toolbox foreground."
+literal|"The average color of the specified border."
 block|}
 block|,   }
 decl_stmt|;
@@ -711,7 +711,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29f616f40108
+DECL|struct|__anon2c2a42e00108
 typedef|typedef
 struct|struct
 block|{
