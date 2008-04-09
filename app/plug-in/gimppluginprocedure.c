@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9428120103
+DECL|enum|__anon2c2986960103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2169,6 +2169,8 @@ operator|=
 name|plug_in_menu_path_map
 argument_list|(
 name|menu_path
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|proc

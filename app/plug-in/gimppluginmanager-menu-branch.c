@@ -216,6 +216,8 @@ operator|=
 name|plug_in_menu_path_map
 argument_list|(
 name|menu_path
+argument_list|,
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|branch

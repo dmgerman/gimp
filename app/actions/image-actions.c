@@ -141,17 +141,6 @@ name|GIMP_HELP_IMAGE_WINDOW
 block|}
 block|,
 block|{
-literal|"extensions-menu"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"_Xtns"
-argument_list|)
-block|}
-block|,
-block|{
 literal|"image-menu"
 block|,
 name|NULL

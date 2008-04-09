@@ -25,6 +25,11 @@ specifier|const
 name|gchar
 modifier|*
 name|menu_path
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|menu_label
 parameter_list|)
 function_decl|;
 end_function_decl

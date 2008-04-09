@@ -205,6 +205,17 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"file-new-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Ne_w"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"file-open-recent-menu"
 block|,
 name|NULL
@@ -212,17 +223,6 @@ block|,
 name|N_
 argument_list|(
 literal|"Open _Recent"
-argument_list|)
-block|}
-block|,
-block|{
-literal|"file-acquire-menu"
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Acq_uire"
 argument_list|)
 block|}
 block|,
