@@ -5143,7 +5143,7 @@ name|GIMP_UNDO_FS_RIGOR
 block|,
 name|N_
 argument_list|(
-literal|"Create floating selection"
+literal|"Rigor floating selection"
 argument_list|)
 block|,
 name|NULL
@@ -5154,7 +5154,7 @@ name|GIMP_UNDO_FS_RELAX
 block|,
 name|N_
 argument_list|(
-literal|"Remove floating selection"
+literal|"Relax floating selection"
 argument_list|)
 block|,
 name|NULL
@@ -5231,7 +5231,7 @@ name|GIMP_UNDO_CANT
 block|,
 name|N_
 argument_list|(
-literal|"EEK: can't undo"
+literal|"Not undoable"
 argument_list|)
 block|,
 name|NULL
