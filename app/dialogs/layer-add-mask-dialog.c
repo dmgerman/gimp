@@ -510,7 +510,7 @@ name|channel
 operator|=
 name|GIMP_CHANNEL
 argument_list|(
-name|gimp_container_get_child_by_index
+name|gimp_container_get_first_child
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -520,8 +520,6 @@ operator|->
 name|image
 operator|->
 name|channels
-argument_list|,
-literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -1316,13 +1316,11 @@ condition|)
 block|{
 name|display
 operator|=
-name|gimp_container_get_child_by_index
+name|gimp_container_get_first_child
 argument_list|(
 name|gimp
 operator|->
 name|displays
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 if|if

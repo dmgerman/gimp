@@ -2362,20 +2362,13 @@ name|image
 operator|=
 name|GIMP_IMAGE
 argument_list|(
-name|gimp_container_get_child_by_index
+name|gimp_container_get_first_child
 argument_list|(
 name|image_container
-argument_list|,
-literal|0
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-condition|)
-block|{
-comment|/*  this invokes this function recursively but we don't enter            *  the if() branch the second time            */
+comment|/*  this invokes this function recursively but we don't enter        *  the if() branch the second time        */
 name|gimp_context_set_image
 argument_list|(
 name|context
@@ -2383,7 +2376,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*  stop the emission of the original signal (the emission of            *  the recursive signal is finished)            */
+comment|/*  stop the emission of the original signal (the emission of        *  the recursive signal is finished)        */
 name|g_signal_stop_emission_by_name
 argument_list|(
 name|context
@@ -2391,7 +2384,6 @@ argument_list|,
 literal|"image-changed"
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 elseif|else
 if|if
