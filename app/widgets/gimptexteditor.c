@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f85ea0103
+DECL|enum|__anon2af6f29c0103
 block|{
 DECL|enumerator|TEXT_CHANGED
 name|TEXT_CHANGED
@@ -554,22 +554,6 @@ condition|(
 name|toolbar
 condition|)
 block|{
-name|GtkToolItem
-modifier|*
-name|item
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|hbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|label
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|entry
-decl_stmt|;
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -596,6 +580,28 @@ argument_list|(
 name|toolbar
 argument_list|)
 expr_stmt|;
+comment|/*  language entry, disabled until it works  */
+if|if
+condition|(
+name|FALSE
+condition|)
+block|{
+name|GtkToolItem
+modifier|*
+name|item
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|hbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|entry
+decl_stmt|;
 name|item
 operator|=
 name|gtk_tool_item_new
@@ -720,6 +726,7 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|scrolled_window
 operator|=
@@ -882,7 +889,7 @@ name|editor
 operator|->
 name|view
 argument_list|,
-literal|150
+literal|200
 argument_list|,
 literal|64
 argument_list|)
