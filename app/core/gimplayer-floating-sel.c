@@ -349,7 +349,7 @@ literal|"Remove Floating Selection"
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  store the affected area from the drawable in the backing store  */
+comment|/*  restore the affected area in the drawable from the backing store  */
 name|floating_sel_relax
 argument_list|(
 name|layer

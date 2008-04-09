@@ -5143,7 +5143,7 @@ name|GIMP_UNDO_FS_RIGOR
 block|,
 name|N_
 argument_list|(
-literal|"FS rigor"
+literal|"Create floating selection"
 argument_list|)
 block|,
 name|NULL
@@ -5154,7 +5154,7 @@ name|GIMP_UNDO_FS_RELAX
 block|,
 name|N_
 argument_list|(
-literal|"FS relax"
+literal|"Remove floating selection"
 argument_list|)
 block|,
 name|NULL
