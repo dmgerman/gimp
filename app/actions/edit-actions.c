@@ -533,7 +533,7 @@ name|GIMP_STOCK_PASTE_AS_NEW
 block|,
 name|N_
 argument_list|(
-literal|"From Clipboard"
+literal|"From _Clipboard"
 argument_list|)
 block|,
 literal|"<control><shift>V"
