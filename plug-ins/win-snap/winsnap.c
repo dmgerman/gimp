@@ -343,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d732c80108
+DECL|struct|__anon2c850d840108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon27d732c80208
+DECL|struct|__anon2c850d840208
 typedef|typedef
 struct|struct
 block|{
@@ -3489,7 +3489,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"<Image>/File/Acquire"
+literal|"<Image>/File/New/Acquire"
 argument_list|)
 expr_stmt|;
 block|}

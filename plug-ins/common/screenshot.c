@@ -331,7 +331,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon290e0d340103
+DECL|enum|__anon29c8724c0103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e0d340208
+DECL|struct|__anon29c8724c0208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -703,9 +703,9 @@ argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
-literal|"1998 - 2007"
+literal|"1998 - 2008"
 argument_list|,
-literal|"v1.0 (2007/05)"
+literal|"v1.1 (2008/04)"
 argument_list|,
 name|N_
 argument_list|(
@@ -735,7 +735,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/File/Acquire"
+literal|"<Image>/File/New/Acquire"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register

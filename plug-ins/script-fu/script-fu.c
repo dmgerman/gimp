@@ -380,7 +380,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug-in-script-fu-console"
 argument_list|,
-literal|"<Toolbox>/Xtns/Languages/Script-Fu"
+literal|"<Image>/Filters/Languages/Script-Fu"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -459,7 +459,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"plug-in-script-fu-server"
 argument_list|,
-literal|"<Toolbox>/Xtns/Languages/Script-Fu"
+literal|"<Image>/Filters/Languages/Script-Fu"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
@@ -924,7 +924,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Languages"
+literal|"<Image>/Filters/Languages"
 argument_list|,
 name|N_
 argument_list|(
@@ -934,37 +934,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns"
-argument_list|,
-name|N_
-argument_list|(
-literal|"_Buttons"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Toolbox>/Xtns"
-argument_list|,
-name|N_
-argument_list|(
-literal|"_Logos"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Toolbox>/Xtns"
-argument_list|,
-name|N_
-argument_list|(
-literal|"_Patterns"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Toolbox>/Xtns/Languages/Script-Fu"
+literal|"<Image>/Filters/Languages/Script-Fu"
 argument_list|,
 name|N_
 argument_list|(
@@ -974,17 +944,37 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns"
+literal|"<Image>/File/New"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Utilities"
+literal|"_Buttons"
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns"
+literal|"<Image>/File/New"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Logos"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/File/New"
+argument_list|,
+name|N_
+argument_list|(
+literal|"_Patterns"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_branch_register
+argument_list|(
+literal|"<Image>/File/New"
 argument_list|,
 name|N_
 argument_list|(
@@ -994,7 +984,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Web Page Themes"
+literal|"<Image>/File/New/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -1004,7 +994,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Web Page Themes"
+literal|"<Image>/File/New/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -1014,7 +1004,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Toolbox>/Xtns/Web Page Themes"
+literal|"<Image>/File/New/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -1076,7 +1066,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 literal|"script-fu-refresh"
 argument_list|,
-literal|"<Toolbox>/Xtns/Languages/Script-Fu"
+literal|"<Image>/Filters/Languages/Script-Fu"
 argument_list|)
 expr_stmt|;
 block|}
