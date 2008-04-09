@@ -427,9 +427,7 @@ expr_stmt|;
 block|}
 name|g_printerr
 argument_list|(
-literal|"%s: mapped %s to %s\n"
-argument_list|,
-name|G_STRFUNC
+literal|" mapped '%s' to '%s'\n"
 argument_list|,
 name|orig
 argument_list|,
