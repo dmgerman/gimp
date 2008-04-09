@@ -432,6 +432,17 @@ argument_list|)
 block|}
 block|,
 block|{
+literal|"plug-in-decor-menu"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"_Decor"
+argument_list|)
+block|}
+block|,
+block|{
 literal|"plug-in-map-menu"
 block|,
 name|NULL
