@@ -185,7 +185,7 @@ literal|"<Toolbox>/Xtns"
 block|,
 name|NULL
 block|,
-literal|"<Image>/Xtns"
+literal|"<Image>/Filters/Extensions"
 block|}
 block|,
 block|{
