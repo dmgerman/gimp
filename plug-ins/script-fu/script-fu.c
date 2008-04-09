@@ -958,16 +958,6 @@ literal|"<Toolbox>/Xtns"
 argument_list|,
 name|N_
 argument_list|(
-literal|"_Misc"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_plugin_menu_branch_register
-argument_list|(
-literal|"<Toolbox>/Xtns"
-argument_list|,
-name|N_
-argument_list|(
 literal|"_Patterns"
 argument_list|)
 argument_list|)

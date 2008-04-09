@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e0b2200108
+DECL|struct|__anon2c2d01670108
 block|{
 DECL|member|script
 name|SFScript
@@ -6745,7 +6745,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon29e0b2200208
+DECL|struct|__anon2c2d01670208
 block|{
 DECL|member|old
 specifier|const
