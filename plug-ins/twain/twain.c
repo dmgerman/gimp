@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c88a4050108
+DECL|struct|__anon2988e7790108
 typedef|typedef
 struct|struct
 block|{
@@ -987,7 +987,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_D_NAME
 argument_list|,
-literal|"<Image>/File/Acquire"
+literal|"<Image>/File/New/Acquire"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1033,7 +1033,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_R_NAME
 argument_list|,
-literal|"<Image>/File/Acquire"
+literal|"<Image>/File/New/Acquire"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1079,7 +1079,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_NAME
 argument_list|,
-literal|"<Image>/File/Acquire"
+literal|"<Image>/File/New/Acquire"
 argument_list|)
 expr_stmt|;
 block|}
@@ -1387,7 +1387,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c88a4050208
+DECL|struct|__anon2988e7790208
 typedef|typedef
 struct|struct
 block|{
