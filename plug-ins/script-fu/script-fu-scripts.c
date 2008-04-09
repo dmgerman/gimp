@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5978690108
+DECL|struct|__anon29e0b2200108
 block|{
 DECL|member|script
 name|SFScript
@@ -436,6 +436,7 @@ name|GEnumValue
 modifier|*
 name|enum_value
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|val
@@ -481,7 +482,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Too few arguments to script-fu-register"
+name|_
+argument_list|(
+literal|"Too few arguments to 'script-fu-register' call"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1120,6 +1124,10 @@ operator|->
 name|NIL
 condition|)
 block|{
+name|gchar
+modifier|*
+name|type_name
+decl_stmt|;
 switch|switch
 condition|(
 name|script
@@ -3726,7 +3734,7 @@ argument_list|,
 literal|"Gimp"
 argument_list|)
 condition|)
-name|val
+name|type_name
 operator|=
 name|g_strdup
 argument_list|(
@@ -3734,7 +3742,7 @@ name|val
 argument_list|)
 expr_stmt|;
 else|else
-name|val
+name|type_name
 operator|=
 name|g_strconcat
 argument_list|(
@@ -3749,7 +3757,7 @@ name|enum_type
 operator|=
 name|g_type_from_name
 argument_list|(
-name|val
+name|type_name
 argument_list|)
 expr_stmt|;
 if|if
@@ -3763,7 +3771,7 @@ condition|)
 block|{
 name|g_free
 argument_list|(
-name|val
+name|type_name
 argument_list|)
 expr_stmt|;
 return|return
@@ -3788,7 +3796,7 @@ name|sfa_enum
 operator|.
 name|type_name
 operator|=
-name|val
+name|type_name
 expr_stmt|;
 name|option_list
 operator|=
@@ -6737,7 +6745,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2c5978690208
+DECL|struct|__anon29e0b2200208
 block|{
 DECL|member|old
 specifier|const
