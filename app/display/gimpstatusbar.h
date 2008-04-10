@@ -146,10 +146,14 @@ DECL|member|temp_timeout_id
 name|guint
 name|temp_timeout_id
 decl_stmt|;
-DECL|member|temp_spaces
+DECL|member|icon_width
+name|gint
+name|icon_width
+decl_stmt|;
+DECL|member|icon_spaces
 name|gchar
 modifier|*
-name|temp_spaces
+name|icon_spaces
 decl_stmt|;
 DECL|member|cursor_format_str
 name|gchar

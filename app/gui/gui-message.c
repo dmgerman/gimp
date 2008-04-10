@@ -669,8 +669,17 @@ name|handler
 argument_list|)
 condition|)
 block|{
+comment|/* If there's already an error dialog associated with this        * progress, then continue without trying gimp_progress_message().        */
 if|if
 condition|(
+operator|!
+name|g_object_get_data
+argument_list|(
+name|handler
+argument_list|,
+literal|"gimp-error-dialog"
+argument_list|)
+operator|&&
 name|gimp_progress_message
 argument_list|(
 name|GIMP_PROGRESS
