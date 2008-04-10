@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d01670108
+DECL|struct|__anon2c5ea27c0108
 block|{
 DECL|member|script
 name|SFScript
@@ -2565,9 +2565,12 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-comment|/* Replace POSIX slashes with Win32 backslashes. This                    * is just so script-fus can be written with only                    * POSIX directory separators.                    */
-name|val
-operator|=
+block|{
+comment|/* Replace POSIX slashes with Win32 backslashes. This                      * is just so script-fus can be written with only                      * POSIX directory separators.                      */
+name|gchar
+modifier|*
+name|filename
+init|=
 name|script
 operator|->
 name|arg_defaults
@@ -2578,28 +2581,29 @@ operator|.
 name|sfa_file
 operator|.
 name|filename
-expr_stmt|;
+decl_stmt|;
 while|while
 condition|(
 operator|*
-name|val
+name|filename
 condition|)
 block|{
 if|if
 condition|(
 operator|*
-name|val
+name|filename
 operator|==
 literal|'/'
 condition|)
 operator|*
-name|val
+name|filename
 operator|=
 name|G_DIR_SEPARATOR
 expr_stmt|;
-name|val
+name|filename
 operator|++
 expr_stmt|;
+block|}
 block|}
 endif|#
 directive|endif
@@ -6745,7 +6749,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2c2d01670208
+DECL|struct|__anon2c5ea27c0208
 block|{
 DECL|member|old
 specifier|const
