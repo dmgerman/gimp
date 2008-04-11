@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8674f10103
+DECL|enum|__anon27f16e4f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8674f10203
+DECL|enum|__anon27f16e4f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5198,6 +5198,14 @@ operator|->
 name|image
 operator|==
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_window_unfullscreen
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  get the NIW size before adding the display to the dialog factory    *  so the window's current size doesn't affect the stored session    *  info entry.    */
