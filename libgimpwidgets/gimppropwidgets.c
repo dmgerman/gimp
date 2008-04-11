@@ -8617,7 +8617,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-literal|4
+literal|2
 argument_list|)
 expr_stmt|;
 name|set_param_spec
