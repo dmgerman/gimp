@@ -230,6 +230,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|menubar
+condition|)
 name|gtk_widget_set_name
 argument_list|(
 name|GTK_WIDGET
