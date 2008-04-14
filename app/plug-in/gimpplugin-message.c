@@ -892,7 +892,7 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"requested invalid drawable (killing)"
+literal|"tried writing to invalid drawable %d (killing)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -908,6 +908,67 @@ name|plug_in
 operator|->
 name|prog
 argument_list|)
+argument_list|,
+name|tile_info
+operator|->
+name|drawable_ID
+argument_list|)
+expr_stmt|;
+name|gimp_plug_in_close
+argument_list|(
+name|plug_in
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+elseif|else
+if|if
+condition|(
+name|gimp_item_is_removed
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"tried writing to drawable %d which was removed "
+literal|"from the image (killing)"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in
+operator|->
+name|prog
+argument_list|)
+argument_list|,
+name|tile_info
+operator|->
+name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1150,7 +1211,7 @@ argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
-literal|"requested invalid drawable (killing)"
+literal|"tried reading from invalid drawable %d (killing)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
@@ -1166,6 +1227,67 @@ name|plug_in
 operator|->
 name|prog
 argument_list|)
+argument_list|,
+name|tile_req
+operator|->
+name|drawable_ID
+argument_list|)
+expr_stmt|;
+name|gimp_plug_in_close
+argument_list|(
+name|plug_in
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+elseif|else
+if|if
+condition|(
+name|gimp_item_is_removed
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"Plug-In \"%s\"\n(%s)\n\n"
+literal|"tried reading from drawable %d which was removed "
+literal|"from the image (killing)"
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in
+operator|->
+name|prog
+argument_list|)
+argument_list|,
+name|tile_req
+operator|->
+name|drawable_ID
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
