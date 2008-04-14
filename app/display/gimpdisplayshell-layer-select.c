@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c71b2c0108
+DECL|struct|__anon2a17823c0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -266,14 +266,11 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-name|GIMP_CORE_CONFIG
-argument_list|(
-name|shell
+name|image
 operator|->
-name|display
+name|gimp
 operator|->
 name|config
-argument_list|)
 operator|->
 name|layer_preview_size
 argument_list|)
