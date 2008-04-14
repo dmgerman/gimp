@@ -2758,6 +2758,8 @@ argument_list|)
 argument_list|,
 literal|"menu-tooltip"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"%s"
 argument_list|,
 name|tooltip
