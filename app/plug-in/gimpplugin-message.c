@@ -148,7 +148,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_plug_in_handle_tile_req
+name|gimp_plug_in_handle_tile_request
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -156,7 +156,7 @@ name|plug_in
 parameter_list|,
 name|GPTileReq
 modifier|*
-name|tile_req
+name|request
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -368,7 +368,7 @@ break|break;
 case|case
 name|GP_TILE_REQ
 case|:
-name|gimp_plug_in_handle_tile_req
+name|gimp_plug_in_handle_tile_request
 argument_list|(
 name|plug_in
 argument_list|,
@@ -619,8 +619,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_handle_tile_req (GimpPlugIn * plug_in,GPTileReq * tile_req)
-name|gimp_plug_in_handle_tile_req
+DECL|function|gimp_plug_in_handle_tile_request (GimpPlugIn * plug_in,GPTileReq * request)
+name|gimp_plug_in_handle_tile_request
 parameter_list|(
 name|GimpPlugIn
 modifier|*
@@ -628,7 +628,7 @@ name|plug_in
 parameter_list|,
 name|GPTileReq
 modifier|*
-name|tile_req
+name|request
 parameter_list|)
 block|{
 name|GPTileData
@@ -655,14 +655,14 @@ name|tile
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|tile_req
+name|request
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tile_req
+name|request
 operator|->
 name|drawable_ID
 operator|==
@@ -756,7 +756,7 @@ name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"plug_in_handle_tile_req: ERROR"
+literal|"plug_in_handle_tile_request: ERROR"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -796,7 +796,7 @@ name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"plug_in_handle_tile_req: ERROR"
+literal|"plug_in_handle_tile_request: ERROR"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1154,7 +1154,7 @@ name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"plug_in_handle_tile_req: ERROR"
+literal|"plug_in_handle_tile_request: ERROR"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1184,7 +1184,7 @@ name|manager
 operator|->
 name|gimp
 argument_list|,
-name|tile_req
+name|request
 operator|->
 name|drawable_ID
 argument_list|)
@@ -1228,7 +1228,7 @@ operator|->
 name|prog
 argument_list|)
 argument_list|,
-name|tile_req
+name|request
 operator|->
 name|drawable_ID
 argument_list|)
@@ -1285,7 +1285,7 @@ operator|->
 name|prog
 argument_list|)
 argument_list|,
-name|tile_req
+name|request
 operator|->
 name|drawable_ID
 argument_list|)
@@ -1301,7 +1301,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|tile_req
+name|request
 operator|->
 name|shadow
 condition|)
@@ -1326,7 +1326,7 @@ name|tile_manager_get
 argument_list|(
 name|tm
 argument_list|,
-name|tile_req
+name|request
 operator|->
 name|tile_num
 argument_list|,
@@ -1385,7 +1385,7 @@ name|tile_data
 operator|.
 name|drawable_ID
 operator|=
-name|tile_req
+name|request
 operator|->
 name|drawable_ID
 expr_stmt|;
@@ -1393,7 +1393,7 @@ name|tile_data
 operator|.
 name|tile_num
 operator|=
-name|tile_req
+name|request
 operator|->
 name|tile_num
 expr_stmt|;
@@ -1401,7 +1401,7 @@ name|tile_data
 operator|.
 name|shadow
 operator|=
-name|tile_req
+name|request
 operator|->
 name|shadow
 expr_stmt|;
@@ -1520,7 +1520,7 @@ name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"plug_in_handle_tile_req: ERROR"
+literal|"plug_in_handle_tile_request: ERROR"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
@@ -1567,7 +1567,7 @@ name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"plug_in_handle_tile_req: ERROR"
+literal|"plug_in_handle_tile_request: ERROR"
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
