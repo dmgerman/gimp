@@ -118,7 +118,7 @@ file|"gimp-intl.h"
 end_include
 
 begin_comment
-comment|/* maximal width of the string holding the cursor-coordinates for  * the status line  */
+comment|/*  maximal width of the string holding the cursor-coordinates  */
 end_comment
 
 begin_define
@@ -128,6 +128,22 @@ directive|define
 name|CURSOR_LEN
 value|256
 end_define
+
+begin_comment
+comment|/*  spacing between the icon and the statusbar label            */
+end_comment
+
+begin_define
+DECL|macro|ICON_SPACING
+define|#
+directive|define
+name|ICON_SPACING
+value|2
+end_define
+
+begin_comment
+comment|/*  timeout (in milliseconds) for temporary statusbar messages  */
+end_comment
 
 begin_define
 DECL|macro|MESSAGE_TIMEOUT
@@ -2319,15 +2335,24 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|handle_msg
-operator|=
-operator|(
 name|width
+operator|+=
+name|ICON_SPACING
 operator|+
 name|gdk_pixbuf_get_width
 argument_list|(
 name|pixbuf
 argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|pixbuf
+argument_list|)
+expr_stmt|;
+name|handle_msg
+operator|=
+operator|(
+name|width
 operator|<
 name|label
 operator|->
@@ -2335,11 +2360,6 @@ name|allocation
 operator|.
 name|width
 operator|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|pixbuf
-argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -2579,7 +2599,7 @@ operator|->
 name|icon
 argument_list|)
 operator|+
-literal|2
+name|ICON_SPACING
 operator|)
 expr_stmt|;
 name|rect
