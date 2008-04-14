@@ -370,6 +370,8 @@ argument_list|)
 argument_list|,
 literal|"title"
 argument_list|,
+name|NULL
+argument_list|,
 literal|"%s"
 argument_list|,
 name|title
@@ -401,7 +403,9 @@ argument_list|)
 argument_list|,
 literal|"title"
 argument_list|,
-literal|""
+name|NULL
+argument_list|,
+literal|" "
 argument_list|)
 expr_stmt|;
 block|}

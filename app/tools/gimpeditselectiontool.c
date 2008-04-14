@@ -649,6 +649,12 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_EDIT_SELECTION_TOOL
 argument_list|,
+literal|"tool-info"
+argument_list|,
+name|parent_tool
+operator|->
+name|tool_info
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

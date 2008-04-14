@@ -815,12 +815,6 @@ argument_list|(
 literal|"8888, 8888"
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gimp_label_set_attributes (GTK_LABEL (statusbar->cursor_label),                              PANGO_ATTR_SCALE,  PANGO_SCALE_SMALL,                              -1);
-endif|#
-directive|endif
 name|gtk_misc_set_alignment
 argument_list|(
 name|GTK_MISC
@@ -2448,10 +2442,9 @@ modifier|*
 name|statusbar
 parameter_list|)
 block|{
-specifier|const
-name|gchar
+name|GimpStatusbarMsg
 modifier|*
-name|text
+name|msg
 init|=
 name|NULL
 decl_stmt|;
@@ -2462,16 +2455,14 @@ operator|->
 name|messages
 condition|)
 block|{
-name|GimpStatusbarMsg
-modifier|*
 name|msg
-init|=
+operator|=
 name|statusbar
 operator|->
 name|messages
 operator|->
 name|data
-decl_stmt|;
+expr_stmt|;
 comment|/*  only allow progress messages while the progress is active  */
 if|if
 condition|(
@@ -2500,20 +2491,18 @@ name|context_id
 condition|)
 return|return;
 block|}
-name|text
-operator|=
-name|msg
-operator|->
-name|text
-expr_stmt|;
 block|}
 if|if
 condition|(
-name|text
+name|msg
 operator|&&
-name|statusbar
+name|msg
 operator|->
-name|temp_timeout_id
+name|stock_id
+operator|&&
+name|msg
+operator|->
+name|text
 condition|)
 block|{
 name|gchar
@@ -2526,6 +2515,8 @@ name|statusbar
 operator|->
 name|icon_spaces
 argument_list|,
+name|msg
+operator|->
 name|text
 argument_list|,
 name|NULL
@@ -2550,8 +2541,14 @@ name|gimp_statusbar_set_text
 argument_list|(
 name|statusbar
 argument_list|,
+name|msg
+operator|&&
+name|msg
+operator|->
 name|text
 condition|?
+name|msg
+operator|->
 name|text
 else|:
 literal|""
@@ -2820,7 +2817,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push (GimpStatusbar * statusbar,const gchar * context,const gchar * format,...)
+DECL|function|gimp_statusbar_push (GimpStatusbar * statusbar,const gchar * context,const gchar * stock_id,const gchar * format,...)
 name|gimp_statusbar_push
 parameter_list|(
 name|GimpStatusbar
@@ -2831,6 +2828,11 @@ specifier|const
 name|gchar
 modifier|*
 name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -2878,6 +2880,8 @@ name|statusbar
 argument_list|,
 name|context
 argument_list|,
+name|stock_id
+argument_list|,
 name|format
 argument_list|,
 name|args
@@ -2893,7 +2897,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_valist (GimpStatusbar * statusbar,const gchar * context,const gchar * format,va_list args)
+DECL|function|gimp_statusbar_push_valist (GimpStatusbar * statusbar,const gchar * context,const gchar * stock_id,const gchar * format,va_list args)
 name|gimp_statusbar_push_valist
 parameter_list|(
 name|GimpStatusbar
@@ -2904,6 +2908,11 @@ specifier|const
 name|gchar
 modifier|*
 name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -3068,7 +3077,7 @@ block|}
 block|}
 name|msg
 operator|=
-name|g_slice_new0
+name|g_slice_new
 argument_list|(
 name|GimpStatusbarMsg
 argument_list|)
@@ -3078,6 +3087,15 @@ operator|->
 name|context_id
 operator|=
 name|context_id
+expr_stmt|;
+name|msg
+operator|->
+name|stock_id
+operator|=
+name|g_strdup
+argument_list|(
+name|stock_id
+argument_list|)
 expr_stmt|;
 name|msg
 operator|->
@@ -3130,7 +3148,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_coords (GimpStatusbar * statusbar,const gchar * context,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help)
+DECL|function|gimp_statusbar_push_coords (GimpStatusbar * statusbar,const gchar * context,const gchar * stock_id,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help)
 name|gimp_statusbar_push_coords
 parameter_list|(
 name|GimpStatusbar
@@ -3141,6 +3159,11 @@ specifier|const
 name|gchar
 modifier|*
 name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -3220,6 +3243,8 @@ argument_list|(
 name|statusbar
 argument_list|,
 name|context
+argument_list|,
+name|stock_id
 argument_list|,
 name|statusbar
 operator|->
@@ -3295,6 +3320,8 @@ name|statusbar
 argument_list|,
 name|context
 argument_list|,
+name|stock_id
+argument_list|,
 name|statusbar
 operator|->
 name|cursor_format_str
@@ -3324,7 +3351,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_length (GimpStatusbar * statusbar,const gchar * context,const gchar * title,GimpOrientationType axis,gdouble value,const gchar * help)
+DECL|function|gimp_statusbar_push_length (GimpStatusbar * statusbar,const gchar * context,const gchar * stock_id,const gchar * title,GimpOrientationType axis,gdouble value,const gchar * help)
 name|gimp_statusbar_push_length
 parameter_list|(
 name|GimpStatusbar
@@ -3335,6 +3362,11 @@ specifier|const
 name|gchar
 modifier|*
 name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -3402,6 +3434,8 @@ argument_list|(
 name|statusbar
 argument_list|,
 name|context
+argument_list|,
+name|stock_id
 argument_list|,
 name|statusbar
 operator|->
@@ -3497,6 +3531,8 @@ name|statusbar
 argument_list|,
 name|context
 argument_list|,
+name|stock_id
+argument_list|,
 name|statusbar
 operator|->
 name|length_format_str
@@ -3518,7 +3554,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_replace (GimpStatusbar * statusbar,const gchar * context,const gchar * format,...)
+DECL|function|gimp_statusbar_replace (GimpStatusbar * statusbar,const gchar * context,const gchar * stock_id,const gchar * format,...)
 name|gimp_statusbar_replace
 parameter_list|(
 name|GimpStatusbar
@@ -3529,6 +3565,11 @@ specifier|const
 name|gchar
 modifier|*
 name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -3576,6 +3617,8 @@ name|statusbar
 argument_list|,
 name|context
 argument_list|,
+name|stock_id
+argument_list|,
 name|format
 argument_list|,
 name|args
@@ -3591,7 +3634,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_replace_valist (GimpStatusbar * statusbar,const gchar * context,const gchar * format,va_list args)
+DECL|function|gimp_statusbar_replace_valist (GimpStatusbar * statusbar,const gchar * context,const gchar * stock_id,const gchar * format,va_list args)
 name|gimp_statusbar_replace_valist
 parameter_list|(
 name|GimpStatusbar
@@ -3602,6 +3645,11 @@ specifier|const
 name|gchar
 modifier|*
 name|context
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
 parameter_list|,
 specifier|const
 name|gchar
@@ -3704,6 +3752,22 @@ name|g_free
 argument_list|(
 name|msg
 operator|->
+name|stock_id
+argument_list|)
+expr_stmt|;
+name|msg
+operator|->
+name|stock_id
+operator|=
+name|g_strdup
+argument_list|(
+name|stock_id
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|msg
+operator|->
 name|text
 argument_list|)
 expr_stmt|;
@@ -3731,7 +3795,7 @@ block|}
 block|}
 name|msg
 operator|=
-name|g_slice_new0
+name|g_slice_new
 argument_list|(
 name|GimpStatusbarMsg
 argument_list|)
@@ -3741,6 +3805,15 @@ operator|->
 name|context_id
 operator|=
 name|context_id
+expr_stmt|;
+name|msg
+operator|->
+name|stock_id
+operator|=
+name|g_strdup
+argument_list|(
+name|stock_id
+argument_list|)
 expr_stmt|;
 name|msg
 operator|->
