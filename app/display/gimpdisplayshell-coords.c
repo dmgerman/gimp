@@ -806,9 +806,6 @@ name|guint32
 name|time
 parameter_list|)
 block|{
-name|gdouble
-name|inertia
-decl_stmt|;
 comment|/* Smoothing causes problems with cursor tracking    * when zoomed above screen resolution so we need to supress it.    */
 if|if
 condition|(
@@ -825,16 +822,9 @@ operator|>
 literal|1.0
 condition|)
 block|{
-name|inertia
+name|inertia_factor
 operator|=
 literal|0.0
-expr_stmt|;
-block|}
-else|else
-block|{
-name|inertia
-operator|=
-name|inertia_factor
 expr_stmt|;
 block|}
 if|if
@@ -1091,7 +1081,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|inertia
+name|inertia_factor
 operator|>
 literal|0
 operator|&&
@@ -1111,7 +1101,7 @@ name|SQR
 argument_list|(
 literal|20
 operator|*
-name|inertia
+name|inertia_factor
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -1176,7 +1166,7 @@ argument_list|(
 name|sin_old
 argument_list|)
 operator|*
-name|inertia
+name|inertia_factor
 operator|+
 name|asin
 argument_list|(
@@ -1186,7 +1176,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|inertia
+name|inertia_factor
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1223,7 +1213,7 @@ argument_list|(
 name|cos_old
 argument_list|)
 operator|*
-name|inertia
+name|inertia_factor
 operator|+
 name|acos
 argument_list|(
@@ -1233,7 +1223,7 @@ operator|*
 operator|(
 literal|1
 operator|-
-name|inertia
+name|inertia_factor
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1469,7 +1459,7 @@ name|distance
 operator|-
 name|dist
 argument_list|,
-name|inertia
+name|inertia_factor
 argument_list|)
 expr_stmt|;
 endif|#
