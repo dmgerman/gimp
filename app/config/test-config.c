@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpconfig/gimpconfig.h"
 end_include
 
@@ -90,6 +96,16 @@ name|value
 parameter_list|,
 name|gpointer
 name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|units_init
+parameter_list|(
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -197,6 +213,9 @@ expr_stmt|;
 block|}
 block|}
 name|g_type_init
+argument_list|()
+expr_stmt|;
+name|units_init
 argument_list|()
 expr_stmt|;
 name|g_print
@@ -930,15 +949,16 @@ block|}
 end_function
 
 begin_comment
-comment|/* some dummy funcs so we can properly link this beast */
+comment|/* minimal dummy units implementation  */
 end_comment
 
 begin_function
+specifier|static
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_unit_get_identifier (GimpUnit unit)
-name|gimp_unit_get_identifier
+DECL|function|unit_get_identifier (GimpUnit unit)
+name|unit_get_identifier
 parameter_list|(
 name|GimpUnit
 name|unit
@@ -988,9 +1008,10 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|gint
-DECL|function|gimp_unit_get_number_of_units (void)
-name|gimp_unit_get_number_of_units
+DECL|function|unit_get_number_of_units (void)
+name|unit_get_number_of_units
 parameter_list|(
 name|void
 parameter_list|)
@@ -998,6 +1019,39 @@ block|{
 return|return
 name|GIMP_UNIT_END
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|units_init (void)
+name|units_init
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpUnitVtable
+name|vtable
+decl_stmt|;
+name|vtable
+operator|.
+name|unit_get_number_of_units
+operator|=
+name|unit_get_number_of_units
+expr_stmt|;
+name|vtable
+operator|.
+name|unit_get_identifier
+operator|=
+name|unit_get_identifier
+expr_stmt|;
+name|gimp_base_init
+argument_list|(
+operator|&
+name|vtable
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
