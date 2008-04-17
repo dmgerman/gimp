@@ -455,7 +455,11 @@ if|if
 condition|(
 name|proc_frame
 operator|->
-name|cleanups
+name|image_cleanups
+operator|||
+name|proc_frame
+operator|->
+name|item_cleanups
 condition|)
 name|gimp_plug_in_cleanup
 argument_list|(

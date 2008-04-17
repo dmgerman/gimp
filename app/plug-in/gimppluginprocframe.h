@@ -64,10 +64,15 @@ name|gulong
 name|progress_cancel_id
 decl_stmt|;
 comment|/*  lists of things to clean up on dispose  */
-DECL|member|cleanups
+DECL|member|image_cleanups
 name|GList
 modifier|*
-name|cleanups
+name|image_cleanups
+decl_stmt|;
+DECL|member|item_cleanups
+name|GList
+modifier|*
+name|item_cleanups
 decl_stmt|;
 block|}
 struct|;
