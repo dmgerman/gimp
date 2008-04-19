@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20103
+DECL|enum|__anon2b9f10a40103
 typedef|typedef
 enum|enum
 block|{
@@ -185,7 +185,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20203
+DECL|enum|__anon2b9f10a40203
 typedef|typedef
 enum|enum
 block|{
@@ -225,7 +225,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20303
+DECL|enum|__anon2b9f10a40303
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +257,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20403
+DECL|enum|__anon2b9f10a40403
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +285,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20503
+DECL|enum|__anon2b9f10a40503
 typedef|typedef
 enum|enum
 block|{
@@ -313,7 +313,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20603
+DECL|enum|__anon2b9f10a40603
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +335,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20703
+DECL|enum|__anon2b9f10a40703
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +371,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20803
+DECL|enum|__anon2b9f10a40803
 typedef|typedef
 enum|enum
 block|{
@@ -391,7 +391,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20903
+DECL|enum|__anon2b9f10a40903
 typedef|typedef
 enum|enum
 block|{
@@ -439,7 +439,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20a03
+DECL|enum|__anon2b9f10a40a03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +463,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20b03
+DECL|enum|__anon2b9f10a40b03
 typedef|typedef
 enum|enum
 block|{
@@ -524,7 +524,7 @@ comment|/* The following have been reverse engineered.  * If a new version of th
 end_comment
 
 begin_typedef
-DECL|enum|__anon27b4f3d20c03
+DECL|enum|__anon2b9f10a40c03
 typedef|typedef
 enum|enum
 block|{
@@ -597,7 +597,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4f3d20d08
+DECL|struct|__anon2b9f10a40d08
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +750,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b4f3d20e08
+DECL|struct|__anon2b9f10a40e08
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -916,7 +916,7 @@ comment|/* Removed until Saving is implemented -- njl195@zepler.org */
 if|#
 directive|if
 literal|0
-block|gimp_install_procedure (SAVE_PROC,                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in " 			  "Paint Shop Pro's native PSP format. " 			  "Vector layers aren't handled. Saving isn't " 			  "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"), 			  "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_register_save_handler (SAVE_PROC, "psp,tub", "");
+block|gimp_install_procedure (SAVE_PROC,                           "saves images in the Paint Shop Pro PSP file format",                           "This plug-in loads and saves images in "                           "Paint Shop Pro's native PSP format. "                           "Vector layers aren't handled. Saving isn't "                           "yet implemented.",                           "Tor Lillqvist",                           "Tor Lillqvist",                           "1999",                           N_("Paint Shop Pro image"),                           "RGB*, GRAY*, INDEXED*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (save_args), 0,                           save_args, NULL);    gimp_register_save_handler (SAVE_PROC, "psp,tub", "");
 endif|#
 directive|endif
 block|}
