@@ -24,9 +24,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpContext
+name|GimpProgress
 modifier|*
-name|context
+name|progress
 parameter_list|,
 name|gint32
 name|channel
@@ -57,9 +57,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpContext
+name|GimpProgress
 modifier|*
-name|context
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl

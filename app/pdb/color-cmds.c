@@ -505,7 +505,7 @@ name|gimp_drawable_levels
 argument_list|(
 name|drawable
 argument_list|,
-name|context
+name|progress
 argument_list|,
 name|channel
 argument_list|,
@@ -625,7 +625,7 @@ name|gimp_drawable_levels_stretch
 argument_list|(
 name|drawable
 argument_list|,
-name|context
+name|progress
 argument_list|)
 expr_stmt|;
 block|}
@@ -733,7 +733,7 @@ name|gimp_drawable_levels_stretch
 argument_list|(
 name|drawable
 argument_list|,
-name|context
+name|progress
 argument_list|)
 expr_stmt|;
 block|}
