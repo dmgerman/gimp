@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40103
+DECL|enum|__anon2c38e8600103
 typedef|typedef
 enum|enum
 block|{
@@ -173,7 +173,72 @@ block|,
 comment|/* Extended Data Block (main) */
 DECL|enumerator|PSP_TUBE_BLOCK
 name|PSP_TUBE_BLOCK
+block|,
 comment|/* Picture Tube Data Block (main) */
+DECL|enumerator|PSP_ADJUSTMENT_EXTENSION_BLOCK
+name|PSP_ADJUSTMENT_EXTENSION_BLOCK
+block|,
+comment|/* Adjustment Layer Extension Block (sub) (since PSP6)*/
+DECL|enumerator|PSP_VECTOR_EXTENSION_BLOCK
+name|PSP_VECTOR_EXTENSION_BLOCK
+block|,
+comment|/* Vector Layer Extension Block (sub) (since PSP6) */
+DECL|enumerator|PSP_SHAPE_BLOCK
+name|PSP_SHAPE_BLOCK
+block|,
+comment|/* Vector Shape Block (sub) (since PSP6) */
+DECL|enumerator|PSP_PAINTSTYLE_BLOCK
+name|PSP_PAINTSTYLE_BLOCK
+block|,
+comment|/* Paint Style Block (sub) (since PSP6) */
+DECL|enumerator|PSP_COMPOSITE_IMAGE_BANK_BLOCK
+name|PSP_COMPOSITE_IMAGE_BANK_BLOCK
+block|,
+comment|/* Composite Image Bank (main) (since PSP6) */
+DECL|enumerator|PSP_COMPOSITE_ATTRIBUTES_BLOCK
+name|PSP_COMPOSITE_ATTRIBUTES_BLOCK
+block|,
+comment|/* Composite Image Attributes (sub) (since PSP6) */
+DECL|enumerator|PSP_JPEG_BLOCK
+name|PSP_JPEG_BLOCK
+block|,
+comment|/* JPEG Image Block (sub) (since PSP6) */
+DECL|enumerator|PSP_LINESTYLE_BLOCK
+name|PSP_LINESTYLE_BLOCK
+block|,
+comment|/* Line Style Block (sub) (since PSP7) */
+DECL|enumerator|PSP_TABLE_BANK_BLOCK
+name|PSP_TABLE_BANK_BLOCK
+block|,
+comment|/* Table Bank Block (main) (since PSP7) */
+DECL|enumerator|PSP_TABLE_BLOCK
+name|PSP_TABLE_BLOCK
+block|,
+comment|/* Table Block (sub) (since PSP7) */
+DECL|enumerator|PSP_PAPER_BLOCK
+name|PSP_PAPER_BLOCK
+block|,
+comment|/* Vector Table Paper Block (sub) (since PSP7) */
+DECL|enumerator|PSP_PATTERN_BLOCK
+name|PSP_PATTERN_BLOCK
+block|,
+comment|/* Vector Table Pattern Block (sub) (since PSP7) */
+DECL|enumerator|PSP_GRADIENT_BLOCK
+name|PSP_GRADIENT_BLOCK
+block|,
+comment|/* Vector Table Gradient Block (not used) (since PSP8) */
+DECL|enumerator|PSP_GROUP_EXTENSION_BLOCK
+name|PSP_GROUP_EXTENSION_BLOCK
+block|,
+comment|/* Group Layer Block (sub) (since PSP8) */
+DECL|enumerator|PSP_MASK_EXTENSION_BLOCK
+name|PSP_MASK_EXTENSION_BLOCK
+block|,
+comment|/* Mask Layer Block (sub) (since PSP8) */
+DECL|enumerator|PSP_BRUSH_BLOCK
+name|PSP_BRUSH_BLOCK
+block|,
+comment|/* Brush Data Block (main) (since PSP8) */
 DECL|typedef|PSPBlockID
 block|}
 name|PSPBlockID
@@ -185,7 +250,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40203
+DECL|enum|__anon2c38e8600203
 typedef|typedef
 enum|enum
 block|{
@@ -213,10 +278,849 @@ block|,
 comment|/* Alpha channel mask bitmap */
 DECL|enumerator|PSP_DIB_THUMBNAIL
 name|PSP_DIB_THUMBNAIL
+block|,
 comment|/* Thumbnail bitmap */
+DECL|enumerator|PSP_DIB_THUMBNAIL_TRANS_MASK
+name|PSP_DIB_THUMBNAIL_TRANS_MASK
+block|,
+comment|/* Thumbnail transparency mask (since PSP6) */
+DECL|enumerator|PSP_DIB_ADJUSTMENT_LAYER
+name|PSP_DIB_ADJUSTMENT_LAYER
+block|,
+comment|/* Adjustment layer bitmap (since PSP6) */
+DECL|enumerator|PSP_DIB_COMPOSITE
+name|PSP_DIB_COMPOSITE
+block|,
+comment|/* Composite image bitmap (since PSP6) */
+DECL|enumerator|PSP_DIB_COMPOSITE_TRANS_MASK
+name|PSP_DIB_COMPOSITE_TRANS_MASK
+block|,
+comment|/* Composite image transparency (since PSP6) */
+DECL|enumerator|PSP_DIB_PAPER
+name|PSP_DIB_PAPER
+block|,
+comment|/* Paper bitmap (since PSP7) */
+DECL|enumerator|PSP_DIB_PATTERN
+name|PSP_DIB_PATTERN
+block|,
+comment|/* Pattern bitmap (since PSP7) */
+DECL|enumerator|PSP_DIB_PATTERN_TRANS_MASK
+name|PSP_DIB_PATTERN_TRANS_MASK
+block|,
+comment|/* Pattern transparency mask (since PSP7) */
 DECL|typedef|PSPDIBType
 block|}
 name|PSPDIBType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Type of image in the composite image bank block. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600303
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|PSP_IMAGE_COMPOSITE
+name|PSP_IMAGE_COMPOSITE
+init|=
+literal|0
+block|,
+comment|/* Composite Image */
+DECL|enumerator|PSP_IMAGE_THUMBNAIL
+name|PSP_IMAGE_THUMBNAIL
+block|,
+comment|/* Thumbnail Image */
+DECL|typedef|PSPCompositeImageType
+block|}
+name|PSPCompositeImageType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Graphic contents flags. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600403
+typedef|typedef
+enum|enum
+block|{
+comment|/* Layer types */
+DECL|enumerator|keGCRasterLayers
+name|keGCRasterLayers
+init|=
+literal|0x00000001
+block|,
+comment|/* At least one raster layer */
+DECL|enumerator|keGCVectorLayers
+name|keGCVectorLayers
+init|=
+literal|0x00000002
+block|,
+comment|/* At least one vector layer */
+DECL|enumerator|keGCAdjustmentLayers
+name|keGCAdjustmentLayers
+init|=
+literal|0x00000004
+block|,
+comment|/* At least one adjustment layer */
+comment|/* Additional attributes */
+DECL|enumerator|keGCThumbnail
+name|keGCThumbnail
+init|=
+literal|0x01000000
+block|,
+comment|/* Has a thumbnail */
+DECL|enumerator|keGCThumbnailTransparency
+name|keGCThumbnailTransparency
+init|=
+literal|0x02000000
+block|,
+comment|/* Thumbnail transp. */
+DECL|enumerator|keGCComposite
+name|keGCComposite
+init|=
+literal|0x04000000
+block|,
+comment|/* Has a composite image */
+DECL|enumerator|keGCCompositeTransparency
+name|keGCCompositeTransparency
+init|=
+literal|0x08000000
+block|,
+comment|/* Composite transp. */
+DECL|enumerator|keGCFlatImage
+name|keGCFlatImage
+init|=
+literal|0x10000000
+block|,
+comment|/* Just a background */
+DECL|enumerator|keGCSelection
+name|keGCSelection
+init|=
+literal|0x20000000
+block|,
+comment|/* Has a selection */
+DECL|enumerator|keGCFloatingSelectionLayer
+name|keGCFloatingSelectionLayer
+init|=
+literal|0x40000000
+block|,
+comment|/* Has float. selection */
+DECL|enumerator|keGCAlphaChannels
+name|keGCAlphaChannels
+init|=
+literal|0x80000000
+block|,
+comment|/* Has alpha channel(s) */
+DECL|typedef|PSPGraphicContents
+block|}
+name|PSPGraphicContents
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Character style flags. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600503
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keStyleItalic
+name|keStyleItalic
+init|=
+literal|0x00000001
+block|,
+comment|/* Italic property bit */
+DECL|enumerator|keStyleStruck
+name|keStyleStruck
+init|=
+literal|0x00000002
+block|,
+comment|/* StrikeÂ­out property bit */
+DECL|enumerator|keStyleUnderlined
+name|keStyleUnderlined
+init|=
+literal|0x00000004
+block|,
+comment|/* Underlined property bit */
+DECL|enumerator|keStyleWarped
+name|keStyleWarped
+init|=
+literal|0x00000008
+block|,
+comment|/* Warped property bit (since PSP8) */
+DECL|enumerator|keStyleAntiAliased
+name|keStyleAntiAliased
+init|=
+literal|0x00000010
+block|,
+comment|/* AntiÂ­aliased property bit (since PSP8) */
+DECL|typedef|PSPCharacterProperties
+block|}
+name|PSPCharacterProperties
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Table type. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600603
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keTTUndefined
+name|keTTUndefined
+init|=
+literal|0
+block|,
+comment|/* Undefined table type */
+DECL|enumerator|keTTGradientTable
+name|keTTGradientTable
+block|,
+comment|/* Gradient table type */
+DECL|enumerator|keTTPaperTable
+name|keTTPaperTable
+block|,
+comment|/* Paper table type */
+DECL|enumerator|keTTPatternTable
+name|keTTPatternTable
+comment|/* Pattern table type */
+DECL|typedef|PSPTableType
+block|}
+name|PSPTableType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Layer flags. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600703
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keVisibleFlag
+name|keVisibleFlag
+init|=
+literal|0x00000001
+block|,
+comment|/* Layer is visible */
+DECL|enumerator|keMaskPresenceFlag
+name|keMaskPresenceFlag
+init|=
+literal|0x00000002
+block|,
+comment|/* Layer has a mask */
+DECL|typedef|PSPLayerProperties
+block|}
+name|PSPLayerProperties
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Shape property flags. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600803
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keShapeAntiAliased
+name|keShapeAntiAliased
+init|=
+literal|0x00000001
+block|,
+comment|/* Shape is antiÂ­aliased */
+DECL|enumerator|keShapeSelected
+name|keShapeSelected
+init|=
+literal|0x00000002
+block|,
+comment|/* Shape is selected */
+DECL|enumerator|keShapeVisible
+name|keShapeVisible
+init|=
+literal|0x00000004
+block|,
+comment|/* Shape is visible */
+DECL|typedef|PSPShapeProperties
+block|}
+name|PSPShapeProperties
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Polyline node type flags. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600903
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keNodeUnconstrained
+name|keNodeUnconstrained
+init|=
+literal|0x0000
+block|,
+comment|/* Default node type */
+DECL|enumerator|keNodeSmooth
+name|keNodeSmooth
+init|=
+literal|0x0001
+block|,
+comment|/* Node is smooth */
+DECL|enumerator|keNodeSymmetric
+name|keNodeSymmetric
+init|=
+literal|0x0002
+block|,
+comment|/* Node is symmetric */
+DECL|enumerator|keNodeAligned
+name|keNodeAligned
+init|=
+literal|0x0004
+block|,
+comment|/* Node is aligned */
+DECL|enumerator|keNodeActive
+name|keNodeActive
+init|=
+literal|0x0008
+block|,
+comment|/* Node is active */
+DECL|enumerator|keNodeLocked
+name|keNodeLocked
+init|=
+literal|0x0010
+block|,
+comment|/* Node is locked */
+DECL|enumerator|keNodeSelected
+name|keNodeSelected
+init|=
+literal|0x0020
+block|,
+comment|/* Node is selected */
+DECL|enumerator|keNodeVisible
+name|keNodeVisible
+init|=
+literal|0x0040
+block|,
+comment|/* Node is visible */
+DECL|enumerator|keNodeClosed
+name|keNodeClosed
+init|=
+literal|0x0080
+block|,
+comment|/* Node is closed */
+comment|/* TODO: This might be a thinko in the spec document only or in the image    *       format itself. Need to investigate that later    */
+DECL|enumerator|keNodeLockedPSP6
+name|keNodeLockedPSP6
+init|=
+literal|0x0016
+block|,
+comment|/* Node is locked */
+DECL|enumerator|keNodeSelectedPSP6
+name|keNodeSelectedPSP6
+init|=
+literal|0x0032
+block|,
+comment|/* Node is selected */
+DECL|enumerator|keNodeVisiblePSP6
+name|keNodeVisiblePSP6
+init|=
+literal|0x0064
+block|,
+comment|/* Node is visible */
+DECL|enumerator|keNodeClosedPSP6
+name|keNodeClosedPSP6
+init|=
+literal|0x0128
+block|,
+comment|/* Node is closed */
+DECL|typedef|PSPPolylineNodeTypes
+block|}
+name|PSPPolylineNodeTypes
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Blend modes. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600a03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|PSP_BLEND_NORMAL
+name|PSP_BLEND_NORMAL
+block|,
+DECL|enumerator|PSP_BLEND_DARKEN
+name|PSP_BLEND_DARKEN
+block|,
+DECL|enumerator|PSP_BLEND_LIGHTEN
+name|PSP_BLEND_LIGHTEN
+block|,
+DECL|enumerator|PSP_BLEND_HUE
+name|PSP_BLEND_HUE
+block|,
+DECL|enumerator|PSP_BLEND_SATURATION
+name|PSP_BLEND_SATURATION
+block|,
+DECL|enumerator|PSP_BLEND_COLOR
+name|PSP_BLEND_COLOR
+block|,
+DECL|enumerator|PSP_BLEND_LUMINOSITY
+name|PSP_BLEND_LUMINOSITY
+block|,
+DECL|enumerator|PSP_BLEND_MULTIPLY
+name|PSP_BLEND_MULTIPLY
+block|,
+DECL|enumerator|PSP_BLEND_SCREEN
+name|PSP_BLEND_SCREEN
+block|,
+DECL|enumerator|PSP_BLEND_DISSOLVE
+name|PSP_BLEND_DISSOLVE
+block|,
+DECL|enumerator|PSP_BLEND_OVERLAY
+name|PSP_BLEND_OVERLAY
+block|,
+DECL|enumerator|PSP_BLEND_HARD_LIGHT
+name|PSP_BLEND_HARD_LIGHT
+block|,
+DECL|enumerator|PSP_BLEND_SOFT_LIGHT
+name|PSP_BLEND_SOFT_LIGHT
+block|,
+DECL|enumerator|PSP_BLEND_DIFFERENCE
+name|PSP_BLEND_DIFFERENCE
+block|,
+DECL|enumerator|PSP_BLEND_DODGE
+name|PSP_BLEND_DODGE
+block|,
+DECL|enumerator|PSP_BLEND_BURN
+name|PSP_BLEND_BURN
+block|,
+DECL|enumerator|PSP_BLEND_EXCLUSION
+name|PSP_BLEND_EXCLUSION
+block|,
+DECL|enumerator|PSP_BLEND_TRUE_HUE
+name|PSP_BLEND_TRUE_HUE
+block|,
+comment|/* since PSP8 */
+DECL|enumerator|PSP_BLEND_TRUE_SATURATION
+name|PSP_BLEND_TRUE_SATURATION
+block|,
+comment|/* since PSP8 */
+DECL|enumerator|PSP_BLEND_TRUE_COLOR
+name|PSP_BLEND_TRUE_COLOR
+block|,
+comment|/* since PSP8 */
+DECL|enumerator|PSP_BLEND_TRUE_LIGHTNESS
+name|PSP_BLEND_TRUE_LIGHTNESS
+block|,
+comment|/* since PSP8 */
+DECL|enumerator|PSP_BLEND_ADJUST
+name|PSP_BLEND_ADJUST
+init|=
+literal|255
+block|, }
+DECL|typedef|PSPBlendModes
+name|PSPBlendModes
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Adjustment layer types. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600b03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keAdjNone
+name|keAdjNone
+init|=
+literal|0
+block|,
+comment|/* Undefined adjustment layer type */
+DECL|enumerator|keAdjLevel
+name|keAdjLevel
+block|,
+comment|/* Level adjustment */
+DECL|enumerator|keAdjCurve
+name|keAdjCurve
+block|,
+comment|/* Curve adjustment */
+DECL|enumerator|keAdjBrightContrast
+name|keAdjBrightContrast
+block|,
+comment|/* BrightnessÂ­contrast adjustment */
+DECL|enumerator|keAdjColorBal
+name|keAdjColorBal
+block|,
+comment|/* Color balance adjustment */
+DECL|enumerator|keAdjHSL
+name|keAdjHSL
+block|,
+comment|/* HSL adjustment */
+DECL|enumerator|keAdjChannelMixer
+name|keAdjChannelMixer
+block|,
+comment|/* Channel mixer adjustment */
+DECL|enumerator|keAdjInvert
+name|keAdjInvert
+block|,
+comment|/* Invert adjustment */
+DECL|enumerator|keAdjThreshold
+name|keAdjThreshold
+block|,
+comment|/* Threshold adjustment */
+DECL|enumerator|keAdjPoster
+name|keAdjPoster
+comment|/* Posterize adjustment */
+DECL|typedef|PSPAdjustmentLayerType
+block|}
+name|PSPAdjustmentLayerType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Vector shape types. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600c03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keVSTUnknown
+name|keVSTUnknown
+init|=
+literal|0
+block|,
+comment|/* Undefined vector type */
+DECL|enumerator|keVSTText
+name|keVSTText
+block|,
+comment|/* Shape represents lines of text */
+DECL|enumerator|keVSTPolyline
+name|keVSTPolyline
+block|,
+comment|/* Shape represents a multiple segment line */
+DECL|enumerator|keVSTEllipse
+name|keVSTEllipse
+block|,
+comment|/* Shape represents an ellipse (or circle) */
+DECL|enumerator|keVSTPolygon
+name|keVSTPolygon
+block|,
+comment|/* Shape represents a closed polygon */
+DECL|enumerator|keVSTGroup
+name|keVSTGroup
+block|,
+comment|/* Shape represents a group shape (since PSP7) */
+DECL|typedef|PSPVectorShapeType
+block|}
+name|PSPVectorShapeType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Text element types. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600d03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keTextElemUnknown
+name|keTextElemUnknown
+init|=
+literal|0
+block|,
+comment|/* Undefined text element type */
+DECL|enumerator|keTextElemChar
+name|keTextElemChar
+block|,
+comment|/* A single character code */
+DECL|enumerator|keTextElemCharStyle
+name|keTextElemCharStyle
+block|,
+comment|/* A character style change */
+DECL|enumerator|keTextElemLineStyle
+name|keTextElemLineStyle
+comment|/* A line style change */
+DECL|typedef|PSPTextElementType
+block|}
+name|PSPTextElementType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Text alignment types. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600e03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keTextAlignmentLeft
+name|keTextAlignmentLeft
+init|=
+literal|0
+block|,
+comment|/* Left text alignment */
+DECL|enumerator|keTextAlignmentCenter
+name|keTextAlignmentCenter
+block|,
+comment|/* Center text alignment */
+DECL|enumerator|keTextAlignmentRight
+name|keTextAlignmentRight
+comment|/* Right text alignment */
+DECL|typedef|PSPTextAlignment
+block|}
+name|PSPTextAlignment
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Paint style types. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8600f03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keStyleNone
+name|keStyleNone
+init|=
+literal|0x0000
+block|,
+comment|/* No paint style info applies */
+DECL|enumerator|keStyleColor
+name|keStyleColor
+init|=
+literal|0x0001
+block|,
+comment|/* Color paint style info */
+DECL|enumerator|keStyleGradient
+name|keStyleGradient
+init|=
+literal|0x0002
+block|,
+comment|/* Gradient paint style info */
+DECL|enumerator|keStylePattern
+name|keStylePattern
+init|=
+literal|0x0004
+block|,
+comment|/* Pattern paint style info (since PSP7) */
+DECL|enumerator|keStylePaper
+name|keStylePaper
+init|=
+literal|0x0008
+block|,
+comment|/* Paper paint style info (since PSP7) */
+DECL|enumerator|keStylePen
+name|keStylePen
+init|=
+literal|0x0010
+block|,
+comment|/* Organic pen paint style info (since PSP7) */
+DECL|typedef|PSPPaintStyleType
+block|}
+name|PSPPaintStyleType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Gradient type. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601003
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keSGTLinear
+name|keSGTLinear
+init|=
+literal|0
+block|,
+comment|/* Linera gradient type */
+DECL|enumerator|keSGTRadial
+name|keSGTRadial
+block|,
+comment|/* Radial gradient type */
+DECL|enumerator|keSGTRectangular
+name|keSGTRectangular
+block|,
+comment|/* Rectangulat gradient type */
+DECL|enumerator|keSGTSunburst
+name|keSGTSunburst
+comment|/* Sunburst gradient type */
+DECL|typedef|PSPStyleGradientType
+block|}
+name|PSPStyleGradientType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601103
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keSCTCapFlat
+name|keSCTCapFlat
+init|=
+literal|0
+block|,
+comment|/* Flat cap type (was round in psp6) */
+DECL|enumerator|keSCTCapRound
+name|keSCTCapRound
+block|,
+comment|/* Round cap type (was square in psp6) */
+DECL|enumerator|keSCTCapSquare
+name|keSCTCapSquare
+block|,
+comment|/* Square cap type (was flat in psp6) */
+DECL|enumerator|keSCTCapArrow
+name|keSCTCapArrow
+block|,
+comment|/* Arrow cap type */
+DECL|enumerator|keSCTCapCadArrow
+name|keSCTCapCadArrow
+block|,
+comment|/* Cad arrow cap type */
+DECL|enumerator|keSCTCapCurvedTipArrow
+name|keSCTCapCurvedTipArrow
+block|,
+comment|/* Curved tip arrow cap type */
+DECL|enumerator|keSCTCapRingBaseArrow
+name|keSCTCapRingBaseArrow
+block|,
+comment|/* Ring base arrow cap type */
+DECL|enumerator|keSCTCapFluerDelis
+name|keSCTCapFluerDelis
+block|,
+comment|/* Fluer deLis cap type */
+DECL|enumerator|keSCTCapFootball
+name|keSCTCapFootball
+block|,
+comment|/* Football cap type */
+DECL|enumerator|keSCTCapXr71Arrow
+name|keSCTCapXr71Arrow
+block|,
+comment|/* Xr71 arrow cap type */
+DECL|enumerator|keSCTCapLilly
+name|keSCTCapLilly
+block|,
+comment|/* Lilly cap type */
+DECL|enumerator|keSCTCapPinapple
+name|keSCTCapPinapple
+block|,
+comment|/* Pinapple cap type */
+DECL|enumerator|keSCTCapBall
+name|keSCTCapBall
+block|,
+comment|/* Ball cap type */
+DECL|enumerator|keSCTCapTulip
+name|keSCTCapTulip
+comment|/* Tulip cap type */
+DECL|typedef|PSPStyleCapType
+block|}
+name|PSPStyleCapType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Paint Style Join Type. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601203
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keSJTJoinMiter
+name|keSJTJoinMiter
+init|=
+literal|0
+block|,
+DECL|enumerator|keSJTJoinRound
+name|keSJTJoinRound
+block|,
+DECL|enumerator|keSJTJoinBevel
+name|keSJTJoinBevel
+DECL|typedef|PSPStyleJoinType
+block|}
+name|PSPStyleJoinType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Organic pen type. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601303
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keSPTOrganicPenNone
+name|keSPTOrganicPenNone
+init|=
+literal|0
+block|,
+comment|/* Undefined pen type */
+DECL|enumerator|keSPTOrganicPenMesh
+name|keSPTOrganicPenMesh
+block|,
+comment|/* Mesh pen type */
+DECL|enumerator|keSPTOrganicPenSand
+name|keSPTOrganicPenSand
+block|,
+comment|/* Sand pen type */
+DECL|enumerator|keSPTOrganicPenCurlicues
+name|keSPTOrganicPenCurlicues
+block|,
+comment|/* Curlicues pen type */
+DECL|enumerator|keSPTOrganicPenRays
+name|keSPTOrganicPenRays
+block|,
+comment|/* Rays pen type */
+DECL|enumerator|keSPTOrganicPenRipple
+name|keSPTOrganicPenRipple
+block|,
+comment|/* Ripple pen type */
+DECL|enumerator|keSPTOrganicPenWave
+name|keSPTOrganicPenWave
+block|,
+comment|/* Wave pen type */
+DECL|enumerator|keSPTOrganicPen
+name|keSPTOrganicPen
+comment|/* Generic pen type */
+DECL|typedef|PSPStylePenType
+block|}
+name|PSPStylePenType
 typedef|;
 end_typedef
 
@@ -225,7 +1129,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40303
+DECL|enum|__anon2c38e8601403
 typedef|typedef
 enum|enum
 block|{
@@ -257,7 +1161,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40403
+DECL|enum|__anon2c38e8601503
 typedef|typedef
 enum|enum
 block|{
@@ -285,7 +1189,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40503
+DECL|enum|__anon2c38e8601603
 typedef|typedef
 enum|enum
 block|{
@@ -301,7 +1205,11 @@ block|,
 comment|/* RLE compression */
 DECL|enumerator|PSP_COMP_LZ77
 name|PSP_COMP_LZ77
+block|,
 comment|/* LZ77 compression */
+DECL|enumerator|PSP_COMP_JPEG
+name|PSP_COMP_JPEG
+comment|/* JPEG compression (only used by thumbnail and composite image) (since PSP6) */
 DECL|typedef|PSPCompression
 block|}
 name|PSPCompression
@@ -313,7 +1221,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40603
+DECL|enum|__anon2c38e8601703
 typedef|typedef
 enum|enum
 block|{
@@ -335,7 +1243,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40703
+DECL|enum|__anon2c38e8601803
 typedef|typedef
 enum|enum
 block|{
@@ -371,7 +1279,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40803
+DECL|enum|__anon2c38e8601903
 typedef|typedef
 enum|enum
 block|{
@@ -379,7 +1287,20 @@ DECL|enumerator|PSP_XDATA_TRNS_INDEX
 name|PSP_XDATA_TRNS_INDEX
 init|=
 literal|0
+block|,
 comment|/* Transparency index field */
+DECL|enumerator|PSP_XDATA_GRID
+name|PSP_XDATA_GRID
+block|,
+comment|/* Image grid information (since PSP7) */
+DECL|enumerator|PSP_XDATA_GUIDE
+name|PSP_XDATA_GUIDE
+block|,
+comment|/* Image guide information (since PSP7) */
+DECL|enumerator|PSP_XDATA_EXIF
+name|PSP_XDATA_EXIF
+block|,
+comment|/* Image EXIF information (since PSP8) */
 DECL|typedef|PSPExtendedDataID
 block|}
 name|PSPExtendedDataID
@@ -391,7 +1312,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40903
+DECL|enum|__anon2c38e8601a03
 typedef|typedef
 enum|enum
 block|{
@@ -435,11 +1356,61 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/* Grid units type. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601b03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keGridUnitsPixels
+name|keGridUnitsPixels
+init|=
+literal|0
+block|,
+comment|/* Grid units is pixels */
+DECL|enumerator|keGridUnitsInches
+name|keGridUnitsInches
+block|,
+comment|/* Grid units is inches */
+DECL|enumerator|keGridUnitsCentimeters
+name|keGridUnitsCentimeters
+comment|/* Grid units is centimeters */
+DECL|typedef|PSPGridUnitsType
+block|}
+name|PSPGridUnitsType
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Guide orientation type. (since PSP7)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601c03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keHorizontalGuide
+name|keHorizontalGuide
+init|=
+literal|0
+block|,
+DECL|enumerator|keVerticalGuide
+name|keVerticalGuide
+DECL|typedef|PSPGuideOrientationType
+block|}
+name|PSPGuideOrientationType
+typedef|;
+end_typedef
+
+begin_comment
 comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40a03
+DECL|enum|__anon2c38e8601d03
 typedef|typedef
 enum|enum
 block|{
@@ -463,7 +1434,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2b9f10a40b03
+DECL|enum|__anon2c38e8601e03
 typedef|typedef
 enum|enum
 block|{
@@ -476,9 +1447,49 @@ comment|/* Normal layer */
 DECL|enumerator|PSP_LAYER_FLOATING_SELECTION
 name|PSP_LAYER_FLOATING_SELECTION
 comment|/* Floating selection layer */
-DECL|typedef|PSPLayerType
+DECL|typedef|PSPLayerTypePSP5
 block|}
-name|PSPLayerType
+name|PSPLayerTypePSP5
+typedef|;
+end_typedef
+
+begin_comment
+comment|/* Layer types. (since PSP6)  */
+end_comment
+
+begin_typedef
+DECL|enum|__anon2c38e8601f03
+typedef|typedef
+enum|enum
+block|{
+DECL|enumerator|keGLTUndefined
+name|keGLTUndefined
+init|=
+literal|0
+block|,
+comment|/* Undefined layer type */
+DECL|enumerator|keGLTRaster
+name|keGLTRaster
+block|,
+comment|/* Standard raster layer */
+DECL|enumerator|keGLTFloatingRasterSelection
+name|keGLTFloatingRasterSelection
+block|,
+comment|/* Floating selection (raster layer) */
+DECL|enumerator|keGLTVector
+name|keGLTVector
+block|,
+comment|/* Vector layer */
+DECL|enumerator|keGLTAdjustment
+name|keGLTAdjustment
+block|,
+comment|/* Adjustment layer */
+DECL|enumerator|keGLTMask
+name|keGLTMask
+comment|/* Mask layer (since PSP8) */
+DECL|typedef|PSPLayerTypePSP6
+block|}
+name|PSPLayerTypePSP6
 typedef|;
 end_typedef
 
@@ -520,84 +1531,13 @@ comment|/* End of cut&paste from psp spec */
 end_comment
 
 begin_comment
-comment|/* The following have been reverse engineered.  * If a new version of the spec becomes available,  * change to use the type and constant names from it.  */
-end_comment
-
-begin_typedef
-DECL|enum|__anon2b9f10a40c03
-typedef|typedef
-enum|enum
-block|{
-DECL|enumerator|PSP_BLEND_NORMAL
-name|PSP_BLEND_NORMAL
-init|=
-literal|0
-block|,
-DECL|enumerator|PSP_BLEND_DARKEN
-name|PSP_BLEND_DARKEN
-block|,
-DECL|enumerator|PSP_BLEND_LIGHTEN
-name|PSP_BLEND_LIGHTEN
-block|,
-DECL|enumerator|PSP_BLEND_HUE
-name|PSP_BLEND_HUE
-block|,
-DECL|enumerator|PSP_BLEND_SATURATION
-name|PSP_BLEND_SATURATION
-block|,
-DECL|enumerator|PSP_BLEND_COLOR
-name|PSP_BLEND_COLOR
-block|,
-DECL|enumerator|PSP_BLEND_LUMINANCE
-name|PSP_BLEND_LUMINANCE
-block|,
-DECL|enumerator|PSP_BLEND_MULTIPLY
-name|PSP_BLEND_MULTIPLY
-block|,
-DECL|enumerator|PSP_BLEND_SCREEN
-name|PSP_BLEND_SCREEN
-block|,
-DECL|enumerator|PSP_BLEND_DISSOLVE
-name|PSP_BLEND_DISSOLVE
-block|,
-DECL|enumerator|PSP_BLEND_OVERLAY
-name|PSP_BLEND_OVERLAY
-block|,
-DECL|enumerator|PSP_BLEND_HARD_LIGHT
-name|PSP_BLEND_HARD_LIGHT
-block|,
-DECL|enumerator|PSP_BLEND_SOFT_LIGHT
-name|PSP_BLEND_SOFT_LIGHT
-block|,
-DECL|enumerator|PSP_BLEND_DIFFERENCE
-name|PSP_BLEND_DIFFERENCE
-block|,
-DECL|enumerator|PSP_BLEND_DODGE
-name|PSP_BLEND_DODGE
-block|,
-DECL|enumerator|PSP_BLEND_BURN
-name|PSP_BLEND_BURN
-block|,
-DECL|enumerator|PSP_BLEND_EXCLUSION
-name|PSP_BLEND_EXCLUSION
-DECL|typedef|PSPLayerBlendModes
-block|}
-name|PSPLayerBlendModes
-typedef|;
-end_typedef
-
-begin_comment
-comment|/* End of reverse engineered types */
-end_comment
-
-begin_comment
 comment|/* We store the various PSP data in own structures.  * We cannot use structs intended to be direct copies of the file block  * headers because of struct alignment issues.  */
 end_comment
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f10a40d08
+DECL|struct|__anon2c38e8602008
 block|{
 DECL|member|width
 DECL|member|height
@@ -750,7 +1690,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9f10a40e08
+DECL|struct|__anon2c38e8602108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -905,7 +1845,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"psp,tub"
+literal|"psp,tub,pspimage"
 argument_list|,
 literal|""
 argument_list|,
@@ -1117,6 +2057,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* This helper method is used to get the name of the block for the known block  * types. The enum PSPBlockID must cover the input values.  */
+end_comment
+
 begin_function
 specifier|static
 name|gchar
@@ -1158,7 +2102,21 @@ block|,
 literal|"EXTENDED_DATA"
 block|,
 literal|"TUBE"
-block|}
+block|,
+literal|"ADJUSTMENT_EXTENSION"
+block|,
+literal|"VECTOR_EXTENSION_BLOCK"
+block|,
+literal|"SHAPE_BLOCK"
+block|,
+literal|"PAINTSTYLE_BLOCK"
+block|,
+literal|"COMPOSITE_IMAGE_BANK_BLOCK"
+block|,
+literal|"COMPOSITE_ATTRIBUTES_BLOCK"
+block|,
+literal|"JPEG_BLOCK"
+block|,   }
 decl_stmt|;
 specifier|static
 name|gchar
@@ -1175,7 +2133,7 @@ literal|0
 operator|&&
 name|id
 operator|<=
-name|PSP_TUBE_BLOCK
+name|PSP_JPEG_BLOCK
 condition|)
 return|return
 name|block_names
@@ -1202,6 +2160,10 @@ name|err_name
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* This helper method is used during loading. It verifies the block we are  * reading has a valid header. Fills the variables init_len and total_len  */
+end_comment
 
 begin_function
 specifier|static
@@ -1425,6 +2387,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* Read the PSP_IMAGE_BLOCK */
+end_comment
+
 begin_function
 specifier|static
 name|gint
@@ -1455,6 +2421,12 @@ decl_stmt|;
 name|guint64
 name|res
 decl_stmt|;
+name|gchar
+name|graphics_content
+index|[
+literal|4
+index|]
+decl_stmt|;
 if|if
 condition|(
 name|init_len
@@ -1482,6 +2454,8 @@ name|psp_ver_major
 operator|>=
 literal|4
 condition|)
+block|{
+comment|/* TODO: This causes the chunk size to be ignored. Better verify if it is        *       valid since it might create read offset problems with the        *       "expansion field" (which follows after the "graphics content" and        *       is of unkown size).        */
 name|fseek
 argument_list|(
 name|f
@@ -1491,6 +2465,7 @@ argument_list|,
 name|SEEK_CUR
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|fread
@@ -1664,6 +2639,25 @@ name|f
 argument_list|)
 operator|<
 literal|1
+operator|||
+operator|(
+name|psp_ver_major
+operator|>=
+literal|4
+operator|&&
+name|fread
+argument_list|(
+name|graphics_content
+argument_list|,
+literal|4
+argument_list|,
+literal|1
+argument_list|,
+name|f
+argument_list|)
+operator|<
+literal|1
+operator|)
 condition|)
 block|{
 name|g_message
@@ -1878,6 +2872,147 @@ return|return
 operator|-
 literal|1
 return|;
+block|}
+return|return
+literal|0
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gint
+DECL|function|read_extended_data_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
+name|read_extended_data_block
+parameter_list|(
+name|FILE
+modifier|*
+name|f
+parameter_list|,
+name|gint
+name|image_ID
+parameter_list|,
+name|guint
+name|total_len
+parameter_list|,
+name|PSPimage
+modifier|*
+name|ia
+parameter_list|)
+block|{
+name|long
+name|data_start
+decl_stmt|;
+name|guchar
+name|buf
+index|[
+literal|4
+index|]
+decl_stmt|;
+name|guint16
+name|keyword
+decl_stmt|;
+name|guint32
+name|length
+decl_stmt|;
+name|data_start
+operator|=
+name|ftell
+argument_list|(
+name|f
+argument_list|)
+expr_stmt|;
+while|while
+condition|(
+name|ftell
+argument_list|(
+name|f
+argument_list|)
+operator|<
+name|data_start
+operator|+
+name|total_len
+condition|)
+block|{
+if|if
+condition|(
+name|fread
+argument_list|(
+name|buf
+argument_list|,
+literal|4
+argument_list|,
+literal|1
+argument_list|,
+name|f
+argument_list|)
+operator|<
+literal|1
+operator|||
+name|fread
+argument_list|(
+operator|&
+name|keyword
+argument_list|,
+literal|2
+argument_list|,
+literal|1
+argument_list|,
+name|f
+argument_list|)
+operator|<
+literal|1
+operator|||
+name|fread
+argument_list|(
+operator|&
+name|length
+argument_list|,
+literal|4
+argument_list|,
+literal|1
+argument_list|,
+name|f
+argument_list|)
+operator|<
+literal|1
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Error reading extended data chunk"
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+if|if
+condition|(
+name|memcmp
+argument_list|(
+name|buf
+argument_list|,
+literal|"~FL\0"
+argument_list|,
+literal|4
+argument_list|)
+operator|!=
+literal|0
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"Invalid extended data chunk header"
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+comment|/* TODO Read keyword and assign it to PSPExtendedDataID */
 block|}
 return|return
 literal|0
@@ -2540,10 +3675,10 @@ end_function
 begin_function
 specifier|static
 name|GimpLayerModeEffects
-DECL|function|gimp_layer_mode_from_psp_blend_mode (PSPLayerBlendModes mode)
+DECL|function|gimp_layer_mode_from_psp_blend_mode (PSPBlendModes mode)
 name|gimp_layer_mode_from_psp_blend_mode
 parameter_list|(
-name|PSPLayerBlendModes
+name|PSPBlendModes
 name|mode
 parameter_list|)
 block|{
@@ -2589,7 +3724,7 @@ return|return
 name|GIMP_COLOR_MODE
 return|;
 case|case
-name|PSP_BLEND_LUMINANCE
+name|PSP_BLEND_LUMINOSITY
 case|:
 return|return
 name|GIMP_VALUE_MODE
@@ -2622,12 +3757,14 @@ return|;
 case|case
 name|PSP_BLEND_HARD_LIGHT
 case|:
+return|return
+name|GIMP_HARDLIGHT_MODE
+return|;
 case|case
 name|PSP_BLEND_SOFT_LIGHT
 case|:
 return|return
-operator|-
-literal|1
+name|GIMP_SOFTLIGHT_MODE
 return|;
 case|case
 name|PSP_BLEND_DIFFERENCE
@@ -2638,11 +3775,57 @@ return|;
 case|case
 name|PSP_BLEND_DODGE
 case|:
+return|return
+name|GIMP_DODGE_MODE
+return|;
 case|case
 name|PSP_BLEND_BURN
 case|:
+return|return
+name|GIMP_BURN_MODE
+return|;
 case|case
 name|PSP_BLEND_EXCLUSION
+case|:
+return|return
+operator|-
+literal|1
+return|;
+comment|/* ??? */
+case|case
+name|PSP_BLEND_ADJUST
+case|:
+return|return
+operator|-
+literal|1
+return|;
+comment|/* ??? */
+case|case
+name|PSP_BLEND_TRUE_HUE
+case|:
+return|return
+operator|-
+literal|1
+return|;
+comment|/* ??? */
+case|case
+name|PSP_BLEND_TRUE_SATURATION
+case|:
+return|return
+operator|-
+literal|1
+return|;
+comment|/* ??? */
+case|case
+name|PSP_BLEND_TRUE_COLOR
+case|:
+return|return
+operator|-
+literal|1
+return|;
+comment|/* ??? */
+case|case
+name|PSP_BLEND_TRUE_LIGHTNESS
 case|:
 return|return
 operator|-
@@ -2661,10 +3844,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|blend_mode_name (PSPLayerBlendModes mode)
+DECL|function|blend_mode_name (PSPBlendModes mode)
 name|blend_mode_name
 parameter_list|(
-name|PSPLayerBlendModes
+name|PSPBlendModes
 name|mode
 parameter_list|)
 block|{
@@ -2687,7 +3870,7 @@ literal|"SATURATION"
 block|,
 literal|"COLOR"
 block|,
-literal|"LUMINANCE"
+literal|"LUMINOSITY"
 block|,
 literal|"MULTIPLY"
 block|,
@@ -2717,6 +3900,7 @@ name|err_name
 init|=
 name|NULL
 decl_stmt|;
+comment|/* TODO: what about PSP_BLEND_ADJUST? */
 if|if
 condition|(
 name|mode
@@ -5926,6 +7110,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/* The main function for loading PSP-images  */
+end_comment
+
 begin_function
 specifier|static
 name|gint32
@@ -6034,7 +7222,7 @@ operator|-
 literal|1
 return|;
 block|}
-comment|/* Read thePSP File Header */
+comment|/* Read the PSP File Header and determine file version */
 if|if
 condition|(
 name|fread
@@ -6150,31 +7338,32 @@ block|}
 elseif|else
 if|if
 condition|(
+operator|(
 name|psp_ver_major
 operator|==
 literal|3
-condition|)
-empty_stmt|;
-comment|/* OK */
-elseif|else
-if|if
-condition|(
+operator|)
+operator|||
+operator|(
 name|psp_ver_major
 operator|==
 literal|4
-operator|&&
-name|psp_ver_minor
+operator|)
+operator|||
+operator|(
+name|psp_ver_major
 operator|==
-literal|0
+literal|5
+operator|)
+operator|||
+operator|(
+name|psp_ver_major
+operator|==
+literal|6
+operator|)
 condition|)
-name|g_message
-argument_list|(
-literal|"Warning: PSP file format version "
-literal|"4.0. Support for this format version "
-literal|"is based on reverse engineering, "
-literal|"as no documentation has been made available"
-argument_list|)
-expr_stmt|;
+empty_stmt|;
+comment|/* OK */
 else|else
 block|{
 name|g_message
@@ -6499,6 +7688,11 @@ name|error
 goto|;
 break|break;
 case|case
+name|PSP_COMPOSITE_IMAGE_BANK_BLOCK
+case|:
+break|break;
+comment|/* Not yet implemented */
+case|case
 name|PSP_LAYER_BLOCK
 case|:
 case|case
@@ -6506,6 +7700,24 @@ name|PSP_CHANNEL_BLOCK
 case|:
 case|case
 name|PSP_ALPHA_CHANNEL_BLOCK
+case|:
+case|case
+name|PSP_ADJUSTMENT_EXTENSION_BLOCK
+case|:
+case|case
+name|PSP_VECTOR_EXTENSION_BLOCK
+case|:
+case|case
+name|PSP_SHAPE_BLOCK
+case|:
+case|case
+name|PSP_PAINTSTYLE_BLOCK
+case|:
+case|case
+name|PSP_COMPOSITE_ATTRIBUTES_BLOCK
+case|:
+case|case
+name|PSP_JPEG_BLOCK
 case|:
 name|g_message
 argument_list|(
