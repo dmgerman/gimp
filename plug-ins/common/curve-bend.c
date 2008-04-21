@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29622a120108
+DECL|struct|__anon29a45dce0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29622a120208
+DECL|struct|__anon29a45dce0208
 block|{
 DECL|member|y
 name|gint32
@@ -3163,7 +3163,7 @@ name|p_copy_yval
 argument_list|(
 name|cd
 argument_list|,
-name|OUTLINE_UPPER
+name|OUTLINE_LOWER
 argument_list|,
 name|param
 index|[
