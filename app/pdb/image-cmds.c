@@ -1327,13 +1327,7 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
-name|gimp_image_free_shadow_tiles
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-block|}
+block|{     }
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
@@ -11206,17 +11200,17 @@ name|procedure
 argument_list|,
 literal|"gimp-image-free-shadow"
 argument_list|,
-literal|"Free the specified image's shadow data (if it exists)."
+literal|"This procedure is deprecated! Use 'gimp-drawable-free-shadow' instead."
 argument_list|,
-literal|"This procedure is intended as a memory saving device. If any shadow memory has been allocated, it will be freed automatically on a call to 'gimp-image-delete'."
+literal|"This procedure is deprecated! Use 'gimp-drawable-free-shadow' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-drawable-free-shadow"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

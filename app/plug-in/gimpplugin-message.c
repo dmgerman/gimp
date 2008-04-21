@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-shadow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimppdb.h"
 end_include
 
@@ -85,6 +91,12 @@ begin_include
 include|#
 directive|include
 file|"gimpplugin.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpplugin-cleanup.h"
 end_include
 
 begin_include
@@ -986,6 +998,7 @@ name|tile_info
 operator|->
 name|shadow
 condition|)
+block|{
 name|tm
 operator|=
 name|gimp_drawable_get_shadow_tiles
@@ -993,7 +1006,16 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_plug_in_cleanup_add_shadow
+argument_list|(
+name|plug_in
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|tm
 operator|=
 name|gimp_drawable_get_tiles
@@ -1001,6 +1023,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|tile
 operator|=
 name|tile_manager_get
@@ -1305,6 +1328,7 @@ name|request
 operator|->
 name|shadow
 condition|)
+block|{
 name|tm
 operator|=
 name|gimp_drawable_get_shadow_tiles
@@ -1312,7 +1336,16 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|gimp_plug_in_cleanup_add_shadow
+argument_list|(
+name|plug_in
+argument_list|,
+name|drawable
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|tm
 operator|=
 name|gimp_drawable_get_tiles
@@ -1320,6 +1353,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|tile
 operator|=
 name|tile_manager_get

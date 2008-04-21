@@ -94,6 +94,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-shadow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -801,7 +807,7 @@ argument_list|(
 name|lut
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_merge_shadow
+name|gimp_drawable_merge_shadow_tiles
 argument_list|(
 name|drawable
 argument_list|,
@@ -811,6 +817,11 @@ name|_
 argument_list|(
 literal|"Curves"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_free_shadow_tiles
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update

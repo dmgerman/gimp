@@ -2374,7 +2374,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_merge_shadow:  * @drawable_ID: The drawable.  * @undo: Push merge to undo stack?  *  * Merge the shadow buffer with the specified drawable.  *  * This procedure combines the contents of the image's shadow buffer  * (for temporary processing) with the specified drawable. The 'undo'  * parameter specifies whether to add an undo step for the operation.  * Requesting no undo is useful for such applications as 'auto-apply'.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_merge_shadow:  * @drawable_ID: The drawable.  * @undo: Push merge to undo stack?  *  * Merge the shadow buffer with the specified drawable.  *  * This procedure combines the contents of the drawable's shadow buffer  * (for temporary processing) with the specified drawable. The 'undo'  * parameter specifies whether to add an undo step for the operation.  * Requesting no undo is useful for such applications as 'auto-apply'.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2417,6 +2417,73 @@ argument_list|,
 name|GIMP_PDB_INT32
 argument_list|,
 name|undo
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_free_shadow (gint32 drawable_ID)
+name|gimp_drawable_free_shadow
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-drawable-free-shadow"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_DRAWABLE
+argument_list|,
+name|drawable_ID
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

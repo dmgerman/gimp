@@ -25,6 +25,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_IMAGE_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpimage_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
@@ -694,7 +712,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * Free the specified image's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically on a call  * to gimp_image_delete().  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * This procedure is deprecated! Use gimp_drawable_free_shadow()  * instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

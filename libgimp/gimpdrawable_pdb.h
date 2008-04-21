@@ -390,6 +390,16 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_drawable_free_shadow
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_drawable_update
 parameter_list|(
 name|gint32

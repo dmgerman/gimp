@@ -70,13 +70,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-hue-saturation.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable-operation.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-hue-saturation.h"
+file|"gimpdrawable-shadow.h"
 end_include
 
 begin_include
@@ -359,7 +365,7 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_merge_shadow
+name|gimp_drawable_merge_shadow_tiles
 argument_list|(
 name|drawable
 argument_list|,
@@ -369,6 +375,11 @@ name|_
 argument_list|(
 literal|"Hue_Saturation"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_free_shadow_tiles
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update

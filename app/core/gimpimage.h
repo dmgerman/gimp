@@ -324,12 +324,6 @@ name|GimpTattoo
 name|tattoo_state
 decl_stmt|;
 comment|/*  the last used tattoo         */
-DECL|member|shadow
-name|TileManager
-modifier|*
-name|shadow
-decl_stmt|;
-comment|/*  shadow buffer tiles          */
 DECL|member|projection
 name|GimpProjection
 modifier|*
@@ -1817,42 +1811,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|new_buf
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/*  shadow tiles  */
-end_comment
-
-begin_function_decl
-name|TileManager
-modifier|*
-name|gimp_image_get_shadow_tiles
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|gint
-name|width
-parameter_list|,
-name|gint
-name|height
-parameter_list|,
-name|gint
-name|bpp
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_image_free_shadow_tiles
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
 parameter_list|)
 function_decl|;
 end_function_decl

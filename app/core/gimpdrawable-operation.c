@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-shadow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprogress.h"
 end_include
 
@@ -249,14 +255,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: gegl_node_add_child() is not public API
-endif|#
-directive|endif
 name|gegl_node_add_child
 argument_list|(
 name|gegl
@@ -324,13 +322,18 @@ argument_list|(
 name|processor
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_merge_shadow
+name|gimp_drawable_merge_shadow_tiles
 argument_list|(
 name|drawable
 argument_list|,
 name|TRUE
 argument_list|,
 name|undo_desc
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_free_shadow_tiles
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update

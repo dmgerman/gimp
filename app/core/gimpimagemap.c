@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-shadow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -155,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0fc17e0103
+DECL|enum|__anon289160d90103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -855,6 +861,13 @@ operator|->
 name|drawable
 condition|)
 block|{
+name|gimp_drawable_free_shadow_tiles
+argument_list|(
+name|image_map
+operator|->
+name|drawable
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|image_map
@@ -2711,10 +2724,6 @@ modifier|*
 name|image_map
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -2781,18 +2790,6 @@ return|return
 name|FALSE
 return|;
 block|}
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|image_map
-operator|->
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|image_map
@@ -3001,9 +2998,12 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|image
+name|gimp_drawable_get_shadow_tiles
+argument_list|(
+name|image_map
 operator|->
-name|shadow
+name|drawable
+argument_list|)
 argument_list|,
 name|x
 argument_list|,
@@ -3137,10 +3137,6 @@ modifier|*
 name|image_map
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
@@ -3153,18 +3149,6 @@ literal|0
 block|g_print ("%s: rect = { %d, %d, %d, %d }\n",            G_STRFUNC, extent->x, extent->y, extent->width, extent->height);
 endif|#
 directive|endif
-name|image
-operator|=
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|image_map
-operator|->
-name|drawable
-argument_list|)
-argument_list|)
-expr_stmt|;
 comment|/* Reset to initial drawable conditions. */
 name|pixel_region_init
 argument_list|(
@@ -3248,9 +3232,12 @@ argument_list|(
 operator|&
 name|srcPR
 argument_list|,
-name|image
+name|gimp_drawable_get_shadow_tiles
+argument_list|(
+name|image_map
 operator|->
-name|shadow
+name|drawable
+argument_list|)
 argument_list|,
 name|extent
 operator|->
