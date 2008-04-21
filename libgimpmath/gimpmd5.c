@@ -85,6 +85,11 @@ name|g_checksum_update
 argument_list|(
 name|checksum
 argument_list|,
+operator|(
+specifier|const
+name|guchar
+operator|*
+operator|)
 name|buffer
 argument_list|,
 name|buffer_size
@@ -94,11 +99,6 @@ name|g_checksum_get_digest
 argument_list|(
 name|checksum
 argument_list|,
-operator|(
-specifier|const
-name|guchar
-operator|*
-operator|)
 name|digest
 argument_list|,
 operator|&
