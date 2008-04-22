@@ -1400,6 +1400,17 @@ name|width
 init|=
 literal|0
 decl_stmt|;
+name|gint
+name|padding
+init|=
+literal|2
+operator|*
+name|widget
+operator|->
+name|style
+operator|->
+name|ythickness
+decl_stmt|;
 comment|/*  also consider the children which can be invisible  */
 name|gtk_widget_size_request
 argument_list|(
@@ -1427,6 +1438,8 @@ name|requisition
 operator|->
 name|height
 argument_list|,
+name|padding
+operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1458,6 +1471,8 @@ name|requisition
 operator|->
 name|height
 argument_list|,
+name|padding
+operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1489,6 +1504,8 @@ name|requisition
 operator|->
 name|height
 argument_list|,
+name|padding
+operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1514,6 +1531,8 @@ name|requisition
 operator|->
 name|height
 argument_list|,
+name|padding
+operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1539,6 +1558,8 @@ name|requisition
 operator|->
 name|height
 argument_list|,
+name|padding
+operator|+
 name|child_requisition
 operator|.
 name|height
