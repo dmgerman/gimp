@@ -2707,13 +2707,10 @@ name|window_actions_update
 argument_list|(
 name|group
 argument_list|,
-name|display
-condition|?
-name|display
-operator|->
+name|GTK_WIDGET
+argument_list|(
 name|shell
-else|:
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
