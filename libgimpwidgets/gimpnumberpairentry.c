@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5fdc10103
+DECL|enum|__anon276a152f0103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +77,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5fdc10203
+DECL|enum|__anon276a152f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf5fdc10303
+DECL|enum|__anon276a152f0303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5fdc10408
+DECL|struct|__anon276a152f0408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2091,7 +2091,13 @@ block|{
 name|PangoContext
 modifier|*
 name|context
-init|=
+decl_stmt|;
+name|PangoFontDescription
+modifier|*
+name|font_desc
+decl_stmt|;
+name|context
+operator|=
 name|gtk_widget_get_pango_context
 argument_list|(
 name|GTK_WIDGET
@@ -2099,17 +2105,21 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|)
-decl_stmt|;
+expr_stmt|;
+name|font_desc
+operator|=
+name|pango_context_get_font_description
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
 name|rc_style
 operator|->
 name|font_desc
 operator|=
 name|pango_font_description_copy
 argument_list|(
-name|pango_context_get_font_description
-argument_list|(
-name|context
-argument_list|)
+name|font_desc
 argument_list|)
 expr_stmt|;
 block|}
