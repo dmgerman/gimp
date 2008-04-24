@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ecf900103
+DECL|enum|__anon273b43b80103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274ecf900203
+DECL|enum|__anon273b43b80203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274ecf900303
+DECL|enum|__anon273b43b80303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -285,6 +285,19 @@ DECL|typedef|SideToResize
 name|SideToResize
 typedef|;
 end_typedef
+
+begin_define
+DECL|macro|FEQUAL (a,b)
+define|#
+directive|define
+name|FEQUAL
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|)
+value|(fabs ((a) - (b))< 0.0001)
+end_define
 
 begin_define
 DECL|macro|GIMP_RECTANGLE_TOOL_GET_PRIVATE (obj)
@@ -7843,14 +7856,19 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|FEQUAL
+argument_list|(
 name|private
 operator|->
 name|x1
-operator|!=
+argument_list|,
 name|options_private
 operator|->
 name|x
+argument_list|)
 condition|)
+block|{
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
 name|rect_tool
@@ -7866,6 +7884,7 @@ operator|->
 name|y1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -7883,14 +7902,19 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
+name|FEQUAL
+argument_list|(
 name|private
 operator|->
 name|y1
-operator|!=
+argument_list|,
 name|options_private
 operator|->
 name|y
+argument_list|)
 condition|)
+block|{
 name|gimp_rectangle_tool_synthesize_motion
 argument_list|(
 name|rect_tool
@@ -7906,6 +7930,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 elseif|else
 if|if
@@ -7927,6 +7952,9 @@ name|x2
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|FEQUAL
+argument_list|(
 name|private
 operator|->
 name|x2
@@ -7934,10 +7962,11 @@ operator|-
 name|private
 operator|->
 name|x1
-operator|!=
+argument_list|,
 name|options_private
 operator|->
 name|width
+argument_list|)
 condition|)
 block|{
 if|if
@@ -8008,6 +8037,9 @@ name|y2
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|FEQUAL
+argument_list|(
 name|private
 operator|->
 name|y2
@@ -8015,10 +8047,11 @@ operator|-
 name|private
 operator|->
 name|y1
-operator|!=
+argument_list|,
 name|options_private
 operator|->
 name|height
+argument_list|)
 condition|)
 block|{
 if|if
@@ -8131,17 +8164,23 @@ name|active_modifier_state
 operator|==
 literal|0
 operator|&&
+name|FEQUAL
+argument_list|(
 name|options_private
 operator|->
 name|desired_fixed_size_width
-operator|==
+argument_list|,
 name|height
+argument_list|)
 operator|&&
+name|FEQUAL
+argument_list|(
 name|options_private
 operator|->
 name|desired_fixed_size_height
-operator|==
+argument_list|,
 name|width
+argument_list|)
 condition|)
 block|{
 name|gdouble
