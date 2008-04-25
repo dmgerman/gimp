@@ -2110,6 +2110,11 @@ argument_list|,
 name|mask_buf
 argument_list|)
 expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|src
+argument_list|)
+expr_stmt|;
 comment|/* reinitialize tempPR */
 name|pixel_region_init_temp_buf
 argument_list|(
@@ -2138,6 +2143,11 @@ name|tempPR
 argument_list|,
 operator|&
 name|destPR
+argument_list|)
+expr_stmt|;
+name|temp_buf_free
+argument_list|(
+name|temp
 argument_list|)
 expr_stmt|;
 comment|/* check the brush pressure */
@@ -2187,16 +2197,6 @@ name|paint_options
 argument_list|)
 argument_list|,
 name|GIMP_PAINT_INCREMENTAL
-argument_list|)
-expr_stmt|;
-name|temp_buf_free
-argument_list|(
-name|src
-argument_list|)
-expr_stmt|;
-name|temp_buf_free
-argument_list|(
-name|temp
 argument_list|)
 expr_stmt|;
 block|}

@@ -231,7 +231,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ed4ba0103
+DECL|enum|__anon2ae1c3e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2304,6 +2304,16 @@ name|GimpJitterOptions
 modifier|*
 name|jitter_options
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_PAINT_OPTIONS
+argument_list|(
+name|paint_options
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|)
+expr_stmt|;
 name|jitter_options
 operator|=
 name|paint_options

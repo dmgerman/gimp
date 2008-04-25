@@ -378,12 +378,6 @@ operator|==
 literal|0.0
 condition|)
 return|return;
-name|paint_appl_mode
-operator|=
-name|paint_options
-operator|->
-name|application_mode
-expr_stmt|;
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -401,6 +395,12 @@ operator|!
 name|area
 condition|)
 return|return;
+name|paint_appl_mode
+operator|=
+name|paint_options
+operator|->
+name|application_mode
+expr_stmt|;
 comment|/* optionally take the color from the current gradient */
 if|if
 condition|(

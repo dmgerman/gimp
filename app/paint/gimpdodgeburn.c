@@ -923,6 +923,11 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|temp_data
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|pressure_options
@@ -967,11 +972,6 @@ name|paint_options
 argument_list|)
 argument_list|,
 name|GIMP_PAINT_CONSTANT
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|temp_data
 argument_list|)
 expr_stmt|;
 block|}
