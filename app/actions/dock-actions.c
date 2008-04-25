@@ -119,7 +119,7 @@ argument_list|(
 literal|"Close Dock"
 argument_list|)
 block|,
-literal|"<control>W"
+name|NULL
 block|,
 name|NULL
 block|,
