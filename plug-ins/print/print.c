@@ -439,8 +439,8 @@ argument_list|(
 literal|"Adjust page size and orientation for printing"
 argument_list|)
 argument_list|,
-literal|"Adjust page size and orientation for printing for "
-literal|"printing the image using the GTK+ Print API."
+literal|"Adjust page size and orientation for printing the "
+literal|"image using the GTK+ Print API."
 argument_list|,
 literal|"Bill Skaggs, Sven Neumann, Stefan RÃ¶llin"
 argument_list|,
