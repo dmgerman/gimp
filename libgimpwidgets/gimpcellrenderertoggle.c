@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a7f910103
+DECL|enum|__anon28feaabc0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a7f910203
+DECL|enum|__anon28feaabc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -466,14 +466,12 @@ block|{
 name|GimpCellRendererToggle
 modifier|*
 name|toggle
-decl_stmt|;
-name|toggle
-operator|=
+init|=
 name|GIMP_CELL_RENDERER_TOGGLE
 argument_list|(
 name|object
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|toggle
