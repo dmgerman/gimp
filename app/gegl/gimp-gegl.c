@@ -95,13 +95,6 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|gegl_init
-argument_list|(
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_COLOR_BALANCE
