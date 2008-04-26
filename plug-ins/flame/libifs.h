@@ -61,7 +61,7 @@ DECL|macro|NVARS
 define|#
 directive|define
 name|NVARS
-value|7
+value|29
 end_define
 
 begin_define
@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292634f00108
+DECL|struct|__anon2b73eff60108
 typedef|typedef
 struct|struct
 block|{
@@ -124,7 +124,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon292634f00208
+DECL|struct|__anon2b73eff60208
 typedef|typedef
 struct|struct
 block|{
