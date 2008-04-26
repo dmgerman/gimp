@@ -890,10 +890,10 @@ modifier|*
 name|ops
 decl_stmt|;
 name|guint
-name|children
+name|n_ops
 decl_stmt|;
 name|gint
-name|no
+name|i
 decl_stmt|;
 if|if
 condition|(
@@ -917,10 +917,10 @@ argument_list|(
 name|type
 argument_list|,
 operator|&
-name|children
+name|n_ops
 argument_list|)
 expr_stmt|;
-comment|/* only add classes which have a name, this avoids     * the abstract base classes    */
+comment|/* only add classes which have a name, this avoids    * the abstract base classes    */
 if|if
 condition|(
 name|GEGL_OPERATION_CLASS
@@ -929,8 +929,6 @@ name|klass
 argument_list|)
 operator|->
 name|name
-operator|!=
-name|NULL
 condition|)
 name|classes
 operator|=
@@ -943,15 +941,15 @@ argument_list|)
 expr_stmt|;
 for|for
 control|(
-name|no
+name|i
 operator|=
 literal|0
 init|;
-name|no
+name|i
 operator|<
-name|children
+name|n_ops
 condition|;
-name|no
+name|i
 operator|++
 control|)
 name|classes
@@ -960,7 +958,7 @@ name|gimp_get_subtype_classes
 argument_list|(
 name|ops
 index|[
-name|no
+name|i
 index|]
 argument_list|,
 name|classes
@@ -983,8 +981,8 @@ end_function
 
 begin_function
 specifier|static
-DECL|function|gimp_gegl_tool_compare_operation_names (GeglOperationClass * a,GeglOperationClass * b)
 name|gint
+DECL|function|gimp_gegl_tool_compare_operation_names (GeglOperationClass * a,GeglOperationClass * b)
 name|gimp_gegl_tool_compare_operation_names
 parameter_list|(
 name|GeglOperationClass
@@ -1024,8 +1022,6 @@ block|{
 name|GList
 modifier|*
 name|opclasses
-init|=
-name|NULL
 decl_stmt|;
 name|opclasses
 operator|=
@@ -1053,10 +1049,6 @@ name|opclasses
 return|;
 block|}
 end_function
-
-begin_comment
-comment|/**/
-end_comment
 
 begin_comment
 comment|/*****************/
