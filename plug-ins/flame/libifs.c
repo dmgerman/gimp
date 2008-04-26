@@ -9181,7 +9181,7 @@ condition|)
 block|{
 name|l
 operator|=
-name|random
+name|rand
 argument_list|()
 expr_stmt|;
 name|n
@@ -9220,7 +9220,7 @@ parameter_list|)
 block|{
 return|return
 operator|(
-name|random
+name|rand
 argument_list|()
 operator|&
 literal|0xfffffff
