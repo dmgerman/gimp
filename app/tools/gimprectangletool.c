@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273b43b80103
+DECL|enum|__anon2adf88bd0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273b43b80203
+DECL|enum|__anon2adf88bd0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon273b43b80303
+DECL|enum|__anon2adf88bd0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -7843,7 +7843,6 @@ condition|)
 return|return;
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -7852,10 +7851,9 @@ name|name
 argument_list|,
 literal|"x"
 argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+operator|==
+literal|0
+operator|&&
 operator|!
 name|FEQUAL
 argument_list|(
@@ -7885,11 +7883,9 @@ name|y1
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 elseif|else
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -7898,10 +7894,9 @@ name|name
 argument_list|,
 literal|"y"
 argument_list|)
-condition|)
-block|{
-if|if
-condition|(
+operator|==
+literal|0
+operator|&&
 operator|!
 name|FEQUAL
 argument_list|(
@@ -7931,11 +7926,9 @@ name|y
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 elseif|else
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -7944,14 +7937,9 @@ name|name
 argument_list|,
 literal|"width"
 argument_list|)
-condition|)
-block|{
-comment|/* Calculate x2, y2 that will create a rectangle of given width, for the        * current options.        */
-name|gdouble
-name|x2
-decl_stmt|;
-if|if
-condition|(
+operator|==
+literal|0
+operator|&&
 operator|!
 name|FEQUAL
 argument_list|(
@@ -7969,6 +7957,10 @@ name|width
 argument_list|)
 condition|)
 block|{
+comment|/* Calculate x2, y2 that will create a rectangle of given width, for the        * current options.        */
+name|gdouble
+name|x2
+decl_stmt|;
 if|if
 condition|(
 name|options_private
@@ -8016,11 +8008,9 @@ name|y2
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 elseif|else
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -8029,14 +8019,9 @@ name|name
 argument_list|,
 literal|"height"
 argument_list|)
-condition|)
-block|{
-comment|/* Calculate x2, y2 that will create a rectangle of given height, for the        * current options.        */
-name|gdouble
-name|y2
-decl_stmt|;
-if|if
-condition|(
+operator|==
+literal|0
+operator|&&
 operator|!
 name|FEQUAL
 argument_list|(
@@ -8054,6 +8039,10 @@ name|height
 argument_list|)
 condition|)
 block|{
+comment|/* Calculate x2, y2 that will create a rectangle of given height, for the        * current options.        */
+name|gdouble
+name|y2
+decl_stmt|;
 if|if
 condition|(
 name|options_private
@@ -8101,11 +8090,9 @@ name|y2
 argument_list|)
 expr_stmt|;
 block|}
-block|}
 elseif|else
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -8114,6 +8101,8 @@ name|name
 argument_list|,
 literal|"desired-fixed-size-width"
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 comment|/* We are only interested in when width and height swaps, so        * it's enough to only check e.g. for width.        */
@@ -8240,7 +8229,6 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -8249,6 +8237,8 @@ name|name
 argument_list|,
 literal|"aspect-numerator"
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 comment|/* We are only interested in when numerator and denominator        * swaps, so it's enough to only check e.g. for numerator.        */
@@ -8427,7 +8417,6 @@ block|}
 elseif|else
 if|if
 condition|(
-operator|!
 name|strcmp
 argument_list|(
 name|pspec
@@ -8436,6 +8425,8 @@ name|name
 argument_list|,
 literal|"highlight"
 argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|gimp_rectangle_tool_update_highlight
