@@ -6490,9 +6490,9 @@ literal|"Flip the specified drawable either vertically or horizontally."
 argument_list|,
 literal|"This procedure flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. If auto_center is set to TRUE, the flip is around the selection's center. Otherwise, the coordinate of the axis needs to be specified. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -6677,9 +6677,9 @@ literal|"Flip the specified drawable around a given line."
 argument_list|,
 literal|"This procedure flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. The axis to flip around is specified by specifying two points from that line. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable. The clip results parameter specifies wheter current selection will affect the transform."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -6960,9 +6960,9 @@ literal|"Flip the specified drawable around a given line."
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-flip' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -7181,9 +7181,9 @@ literal|"Perform a possibly non-affine transformation on the specified drawable,
 argument_list|,
 literal|"This procedure performs a possibly non-affine transformation on the specified drawable by allowing the corners of the original bounding box to be arbitrarily remapped to any values. The specified drawable is remapped if no selection exists. However, if a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then remapped as specified. The return value is the ID of the remapped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and remapped drawable. The 4 coordinates specify the new locations of each corner of the original bounding box. By specifying these values, any affine transformation (rotation, scaling, translation) can be affected. Additionally, these values can be specified such that the resulting transformed drawable will appear to have been projected via a perspective transform."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -7558,9 +7558,9 @@ literal|"Perform a possibly non-affine transformation on the specified drawable,
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-perspective' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -7873,9 +7873,9 @@ literal|"Rotate the specified drawable about given coordinates through the speci
 argument_list|,
 literal|"This function rotates the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and rotated drawable."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -8066,9 +8066,9 @@ literal|"Rotate the specified drawable about given coordinates through the speci
 argument_list|,
 literal|"This function rotates the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and rotated drawable."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -8344,9 +8344,9 @@ literal|"Rotate the specified drawable about given coordinates through the speci
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-rotate' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -8560,9 +8560,9 @@ literal|"Scale the specified drawable with extra parameters"
 argument_list|,
 literal|"This procedure scales the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then scaled by the specified amount. The return value is the ID of the scaled drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and scaled drawable."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -8845,9 +8845,9 @@ literal|"Scale the specified drawable with extra parameters"
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-scale' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -9068,9 +9068,9 @@ literal|"Shear the specified drawable about its center by the specified magnitud
 argument_list|,
 literal|"This procedure shears the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then sheard by the specified amount. The return value is the ID of the sheard drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and sheard drawable. The shear type parameter indicates whether the shear will be applied horizontally or vertically. The magnitude can be either positive or negative and indicates the extent (in pixels) to shear by."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -9319,9 +9319,9 @@ literal|"Shear the specified drawable about its center by the specified magnitud
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-shear' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -9508,9 +9508,9 @@ literal|"Transform the specified drawable in 2d, with extra parameters."
 argument_list|,
 literal|"This procedure transforms the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The transformation is done by scaling the image by the x and y scale factors about the point (source_x, source_y), then rotating around the same point, then translating that point to the new position (dest_x, dest_y). The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and transformed drawable."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -9862,9 +9862,9 @@ literal|"Transform the specified drawable in 2d, with extra parameters."
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-2d' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -10154,9 +10154,9 @@ literal|"Transform the specified drawable in 2d, with extra parameters."
 argument_list|,
 literal|"This procedure transforms the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The transformation is done by assembling a 3x3 matrix from the coefficients passed. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and transformed drawable."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
@@ -10554,9 +10554,9 @@ literal|"Transform the specified drawable in 2d, with extra parameters."
 argument_list|,
 literal|"This procedure is a variant of 'gimp-drawable-transform-matrix' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,

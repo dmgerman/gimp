@@ -8481,9 +8481,9 @@ literal|"rotates the given stroke."
 argument_list|,
 literal|"Rotates the given stroke around given center by angle (in degrees)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2006"
 argument_list|,
@@ -8643,9 +8643,9 @@ literal|"flips the given stroke."
 argument_list|,
 literal|"Rotates the given stroke around given center by angle (in degrees)."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2006"
 argument_list|,
@@ -8794,9 +8794,9 @@ literal|"flips the given stroke about an arbitrary axis."
 argument_list|,
 literal|"Flips the given stroke about an arbitrary axis. Axis is defined by two coordinates in the image (in pixels), through which the flipping axis passes."
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
-literal|"Jo\xc3\xa3o S. O. Bueno Calligaris"
+literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2006"
 argument_list|,
