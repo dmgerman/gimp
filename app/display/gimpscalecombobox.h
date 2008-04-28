@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkcombobox.h>
+file|<gtk/gtkcomboboxentry.h>
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpScaleComboBoxClass
 block|{
 DECL|member|parent_instance
-name|GtkComboBoxClass
+name|GtkComboBoxEntryClass
 name|parent_instance
 decl_stmt|;
 block|}
@@ -113,7 +113,7 @@ struct|struct
 name|_GimpScaleComboBox
 block|{
 DECL|member|parent_instance
-name|GtkComboBox
+name|GtkComboBoxEntry
 name|parent_instance
 decl_stmt|;
 DECL|member|last_path
