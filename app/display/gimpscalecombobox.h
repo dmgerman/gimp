@@ -116,6 +116,10 @@ DECL|member|parent_instance
 name|GtkComboBoxEntry
 name|parent_instance
 decl_stmt|;
+DECL|member|scale
+name|gdouble
+name|scale
+decl_stmt|;
 DECL|member|last_path
 name|GtkTreePath
 modifier|*
