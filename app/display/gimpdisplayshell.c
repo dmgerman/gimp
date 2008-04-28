@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f2af90103
+DECL|enum|__anon27b35b640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4f2af90203
+DECL|enum|__anon27b35b640203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -619,7 +619,7 @@ argument|GimpDisplayShell
 argument_list|,
 argument|gimp_display_shell
 argument_list|,
-argument|GTK_TYPE_WINDOW
+argument|GIMP_TYPE_WINDOW
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)
 argument_list|)

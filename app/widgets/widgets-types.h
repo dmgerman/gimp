@@ -1051,6 +1051,15 @@ name|GimpUnitComboBox
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpWindow
+typedef|typedef
+name|struct
+name|_GimpWindow
+name|GimpWindow
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  views  */
 end_comment

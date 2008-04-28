@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkwindow.h>
+file|"widgets/gimpwindow.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpDock
 block|{
 DECL|member|parent_instance
-name|GtkWindow
+name|GimpWindow
 name|parent_instance
 decl_stmt|;
 DECL|member|dialog_factory
@@ -143,7 +143,7 @@ struct|struct
 name|_GimpDockClass
 block|{
 DECL|member|parent_class
-name|GtkWindowClass
+name|GimpWindowClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */

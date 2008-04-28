@@ -19,13 +19,13 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkwindow.h>
+file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpwidgets/gimpwidgets.h"
+file|"widgets/gimpwindow.h"
 end_include
 
 begin_comment
@@ -268,7 +268,7 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GtkWindow
+name|GimpWindow
 name|parent_instance
 decl_stmt|;
 DECL|member|display
@@ -743,7 +743,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GtkWindowClass
+name|GimpWindowClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled
