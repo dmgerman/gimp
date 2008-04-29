@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b35b640103
+DECL|enum|__anon2949becd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b35b640203
+DECL|enum|__anon2949becd0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4940,6 +4940,7 @@ argument_list|(
 name|main_vbox
 argument_list|)
 expr_stmt|;
+comment|/*  add display filter for color management  */
 name|filter
 operator|=
 name|gimp_display_shell_filter_new

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpmarshal.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpscalecombobox.h"
 end_include
 
@@ -55,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af34fba0103
+DECL|enum|__anon2aeba8630103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -68,6 +74,19 @@ name|PERSISTENT
 block|,
 DECL|enumerator|NUM_COLUMNS
 name|NUM_COLUMNS
+block|}
+enum|;
+end_enum
+
+begin_enum
+enum|enum
+DECL|enum|__anon2aeba8630203
+block|{
+DECL|enumerator|ENTRY_ACTIVATED
+name|ENTRY_ACTIVATED
+block|,
+DECL|enumerator|LAST_SIGNAL
+name|LAST_SIGNAL
 block|}
 enum|;
 end_enum
@@ -151,7 +170,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpScaleComboBox,gimp_scale_combo_box,GTK_TYPE_COMBO_BOX_ENTRY)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpScaleComboBox
@@ -170,9 +188,24 @@ name|parent_class
 value|gimp_scale_combo_box_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+name|guint
+name|scale_combo_box_signals
+index|[
+name|LAST_SIGNAL
+index|]
+init|=
+block|{
+literal|0
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_scale_combo_box_class_init (GimpScaleComboBoxClass * klass)
 name|gimp_scale_combo_box_class_init
 parameter_list|(
 name|GimpScaleComboBoxClass
@@ -198,6 +231,40 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|scale_combo_box_signals
+index|[
+name|ENTRY_ACTIVATED
+index|]
+operator|=
+name|g_signal_new
+argument_list|(
+literal|"entry-activated"
+argument_list|,
+name|G_TYPE_FROM_CLASS
+argument_list|(
+name|klass
+argument_list|)
+argument_list|,
+name|G_SIGNAL_RUN_FIRST
+argument_list|,
+name|G_STRUCT_OFFSET
+argument_list|(
+name|GimpScaleComboBoxClass
+argument_list|,
+name|entry_activated
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|gimp_marshal_VOID__VOID
+argument_list|,
+name|G_TYPE_NONE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -209,6 +276,12 @@ operator|->
 name|style_set
 operator|=
 name|gimp_scale_combo_box_style_set
+expr_stmt|;
+name|klass
+operator|->
+name|entry_activated
+operator|=
+name|NULL
 expr_stmt|;
 name|gtk_widget_class_install_style_property
 argument_list|(
@@ -1081,7 +1154,7 @@ name|gtk_widget_error_bell
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|combo_box
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1095,6 +1168,18 @@ name|scale
 argument_list|)
 expr_stmt|;
 block|}
+name|g_signal_emit
+argument_list|(
+name|combo_box
+argument_list|,
+name|scale_combo_box_signals
+index|[
+name|ENTRY_ACTIVATED
+index|]
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
