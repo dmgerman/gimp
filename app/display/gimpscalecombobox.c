@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af83fa70103
+DECL|enum|__anon2a8b9bef0103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af83fa70203
+DECL|enum|__anon2a8b9bef0203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -1277,6 +1277,38 @@ name|ENTRY_ACTIVATED
 index|]
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+if|if
+condition|(
+name|event
+operator|->
+name|keyval
+operator|==
+name|GDK_Tab
+operator|||
+name|event
+operator|->
+name|keyval
+operator|==
+name|GDK_KP_Tab
+operator|||
+name|event
+operator|->
+name|keyval
+operator|==
+name|GDK_ISO_Left_Tab
+condition|)
+block|{
+name|gimp_scale_combo_box_entry_activate
+argument_list|(
+name|entry
+argument_list|,
+name|combo_box
 argument_list|)
 expr_stmt|;
 return|return
