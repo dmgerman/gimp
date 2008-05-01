@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb89770103
+DECL|enum|__anon2af3b6a40103
 block|{
 DECL|enumerator|RECTANGLE_CHANGED
 name|RECTANGLE_CHANGED
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb89770203
+DECL|enum|__anon2af3b6a40203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bb89770303
+DECL|enum|__anon2af3b6a40303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3868,6 +3868,9 @@ name|GimpRectangleToolPrivate
 modifier|*
 name|private
 decl_stmt|;
+name|gboolean
+name|button1_down
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_RECTANGLE_TOOL
@@ -3910,6 +3913,12 @@ name|GIMP_RECTANGLE_OPTIONS_GET_PRIVATE
 argument_list|(
 name|options
 argument_list|)
+expr_stmt|;
+name|button1_down
+operator|=
+name|state
+operator|&
+name|GDK_BUTTON1_MASK
 expr_stmt|;
 name|gimp_draw_tool_pause
 argument_list|(
@@ -3959,9 +3968,7 @@ expr_stmt|;
 comment|/* Only change the shape if the mouse is still down (i.e. the user is        * still editing the rectangle.        */
 if|if
 condition|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
+name|button1_down
 condition|)
 block|{
 if|if
@@ -4067,9 +4074,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|state
-operator|&
-name|GDK_BUTTON1_MASK
+name|button1_down
 condition|)
 block|{
 comment|/* If we are leaving fixed_center mode we want to set the            * "other side" where it should be. Don't do anything if we            * came here by a mouse-click though, since then the user            * has confirmed the shape and we don't want to modify it            * afterwards.            */
