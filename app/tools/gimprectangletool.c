@@ -149,10 +149,10 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af3b6a40103
+DECL|enum|__anon292ad17c0103
 block|{
-DECL|enumerator|RECTANGLE_CHANGED
-name|RECTANGLE_CHANGED
+DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
+name|RECTANGLE_CHANGE_COMPLETE
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af3b6a40203
+DECL|enum|__anon292ad17c0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2af3b6a40303
+DECL|enum|__anon292ad17c0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -603,7 +603,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -1238,12 +1238,12 @@ condition|)
 block|{
 name|gimp_rectangle_tool_signals
 index|[
-name|RECTANGLE_CHANGED
+name|RECTANGLE_CHANGE_COMPLETE
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"rectangle-changed"
+literal|"rectangle-change-complete"
 argument_list|,
 name|G_TYPE_FROM_INTERFACE
 argument_list|(
@@ -1256,7 +1256,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpRectangleToolInterface
 argument_list|,
-name|rectangle_changed
+name|rectangle_change_complete
 argument_list|)
 argument_list|,
 name|NULL
@@ -1416,7 +1416,7 @@ name|NULL
 expr_stmt|;
 name|iface
 operator|->
-name|rectangle_changed
+name|rectangle_change_complete
 operator|=
 name|NULL
 expr_stmt|;
@@ -1692,7 +1692,7 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|tool
 argument_list|)
@@ -3173,7 +3173,7 @@ block|{
 case|case
 name|GIMP_BUTTON_RELEASE_NORMAL
 case|:
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -4012,7 +4012,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -4065,7 +4065,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -4096,7 +4096,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -4861,7 +4861,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -7743,7 +7743,7 @@ name|rect_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)
@@ -8588,8 +8588,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_rectangle_changed (GimpRectangleTool * rect_tool)
-name|gimp_rectangle_tool_rectangle_changed
+DECL|function|gimp_rectangle_tool_rectangle_change_complete (GimpRectangleTool * rect_tool)
+name|gimp_rectangle_tool_rectangle_change_complete
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -8602,7 +8602,7 @@ name|rect_tool
 argument_list|,
 name|gimp_rectangle_tool_signals
 index|[
-name|RECTANGLE_CHANGED
+name|RECTANGLE_CHANGE_COMPLETE
 index|]
 argument_list|,
 literal|0
@@ -8878,7 +8878,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_rectangle_changed
+name|gimp_rectangle_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)

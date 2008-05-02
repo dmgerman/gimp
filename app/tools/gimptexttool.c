@@ -615,7 +615,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_text_tool_rectangle_changed
+name|gimp_text_tool_rectangle_change_complete
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -867,9 +867,9 @@ name|NULL
 expr_stmt|;
 name|iface
 operator|->
-name|rectangle_changed
+name|rectangle_change_complete
 operator|=
-name|gimp_text_tool_rectangle_changed
+name|gimp_text_tool_rectangle_change_complete
 expr_stmt|;
 block|}
 end_function
@@ -959,7 +959,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1607,7 +1607,7 @@ value|20
 end_define
 
 begin_comment
-comment|/*  * Here is what we want to do:  * 1) If the user clicked on an existing text layer, and no rectangle  *    yet exists there, we want to create one with the right shape.  * 2) If the user has modified the rectangle for an existing text layer,  *    we want to change its shape accordingly.  We do this by falling  *    through to code that causes the "rectangle-changed" signal to  *    be emitted.  * 3) If the rectangle that has been swept out is too small, we want to  *    use dynamic text.  * 4) Otherwise, we want to use the new rectangle that the user has  *    created as our text box.  This again is done by causing  *    "rectangle-changed" to be emitted.  */
+comment|/*  * Here is what we want to do:  * 1) If the user clicked on an existing text layer, and no rectangle  *    yet exists there, we want to create one with the right shape.  * 2) If the user has modified the rectangle for an existing text layer,  *    we want to change its shape accordingly.  We do this by falling  *    through to code that causes the "rectangle-change-complete" signal  *    to be emitted.  * 3) If the rectangle that has been swept out is too small, we want to  *    use dynamic text.  * 4) Otherwise, we want to use the new rectangle that the user has  *    created as our text box.  This again is done by causing  *    "rectangle-change-complete" to be emitted.  */
 end_comment
 
 begin_function
@@ -1729,7 +1729,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1747,7 +1747,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1793,7 +1793,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1819,7 +1819,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -2591,7 +2591,7 @@ argument_list|)
 decl_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
@@ -2609,7 +2609,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3148,7 +3148,7 @@ condition|)
 block|{
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
@@ -3167,7 +3167,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -3762,7 +3762,7 @@ else|else
 block|{
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
@@ -3781,7 +3781,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -4610,7 +4610,7 @@ condition|)
 block|{
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
@@ -4628,7 +4628,7 @@ argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 operator|=
 name|TRUE
 expr_stmt|;
@@ -5177,8 +5177,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_text_tool_rectangle_changed (GimpRectangleTool * rect_tool)
-name|gimp_text_tool_rectangle_changed
+DECL|function|gimp_text_tool_rectangle_change_complete (GimpRectangleTool * rect_tool)
+name|gimp_text_tool_rectangle_change_complete
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -5227,7 +5227,7 @@ if|if
 condition|(
 name|text_tool
 operator|->
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 condition|)
 block|{
 name|g_object_get

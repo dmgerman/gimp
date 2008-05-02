@@ -528,7 +528,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_rectangle_select_tool_rectangle_changed
+name|gimp_rectangle_select_tool_rectangle_change_complete
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -835,9 +835,9 @@ name|gimp_rectangle_select_tool_cancel
 expr_stmt|;
 name|iface
 operator|->
-name|rectangle_changed
+name|rectangle_change_complete
 operator|=
-name|gimp_rectangle_select_tool_rectangle_changed
+name|gimp_rectangle_select_tool_rectangle_change_complete
 expr_stmt|;
 block|}
 end_function
@@ -3151,8 +3151,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_select_tool_rectangle_changed (GimpRectangleTool * rectangle)
-name|gimp_rectangle_select_tool_rectangle_changed
+DECL|function|gimp_rectangle_select_tool_rectangle_change_complete (GimpRectangleTool * rectangle)
+name|gimp_rectangle_select_tool_rectangle_change_complete
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
@@ -3464,7 +3464,7 @@ name|options
 operator|->
 name|corner_radius
 expr_stmt|;
-name|gimp_rectangle_select_tool_rectangle_changed
+name|gimp_rectangle_select_tool_rectangle_change_complete
 argument_list|(
 name|rect_tool
 argument_list|)

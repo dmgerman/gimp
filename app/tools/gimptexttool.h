@@ -165,9 +165,9 @@ name|GtkWidget
 modifier|*
 name|confirm_dialog
 decl_stmt|;
-DECL|member|handle_rectangle_changed
+DECL|member|handle_rectangle_change_complete
 name|gboolean
-name|handle_rectangle_changed
+name|handle_rectangle_change_complete
 decl_stmt|;
 DECL|member|text_box_fixed
 name|gboolean
