@@ -486,9 +486,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
-name|GimpContext
+name|GimpDisplay
 modifier|*
-name|context
+name|display
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -503,9 +503,9 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|return_if_no_context
+name|return_if_no_display
 argument_list|(
-name|context
+name|display
 argument_list|,
 name|data
 argument_list|)
@@ -551,7 +551,10 @@ name|gimp_drawable_levels_stretch
 argument_list|(
 name|drawable
 argument_list|,
-name|context
+name|GIMP_PROGRESS
+argument_list|(
+name|display
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
