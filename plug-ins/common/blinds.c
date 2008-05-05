@@ -66,7 +66,7 @@ DECL|macro|MAX_FANS
 define|#
 directive|define
 name|MAX_FANS
-value|10
+value|100
 end_define
 
 begin_define
