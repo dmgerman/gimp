@@ -550,7 +550,7 @@ name|tool
 operator|->
 name|max_coord_smooth
 operator|=
-literal|0.98
+literal|0.80
 expr_stmt|;
 name|paint_tool
 operator|->

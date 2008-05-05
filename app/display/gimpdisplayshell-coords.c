@@ -1079,6 +1079,17 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* High speed -> less smooth*/
+name|inertia_factor
+operator|*=
+operator|(
+literal|1
+operator|-
+name|coords
+operator|->
+name|velocity
+operator|)
+expr_stmt|;
 if|if
 condition|(
 name|inertia_factor
