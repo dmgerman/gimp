@@ -879,6 +879,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gdouble
 DECL|function|gimp_hsl_value (gdouble n1,gdouble n2,gdouble hue)
 name|gimp_hsl_value
@@ -2979,6 +2980,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|gint
 DECL|function|gimp_hsl_value_int (gdouble n1,gdouble n2,gdouble hue)
 name|gimp_hsl_value_int

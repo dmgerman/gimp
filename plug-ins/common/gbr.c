@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296245710108
+DECL|struct|__anon294f18990108
 block|{
 DECL|member|description
 name|gchar
@@ -456,9 +456,9 @@ name|gimp_install_procedure
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"Loads GIMP brushes (1 or 4 bpp and old .gpb format)"
+literal|"Loads GIMP brushes"
 argument_list|,
-literal|"FIXME: write help"
+literal|"Loads GIMP brushes (1 or 4 bpp and old .gpb format)"
 argument_list|,
 literal|"Tim Newsome, Jens Lautenbacher, Sven Neumann"
 argument_list|,
@@ -526,9 +526,9 @@ name|gimp_install_procedure
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"saves files in the .gbr file format"
+literal|"Saves files in the GIMP brush file format"
 argument_list|,
-literal|"Yeah!"
+literal|"Saves files in the GIMP brush file format"
 argument_list|,
 literal|"Tim Newsome, Jens Lautenbacher, Sven Neumann"
 argument_list|,
@@ -1996,7 +1996,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29624571020a
+DECL|union|__anon294f1899020a
 block|{
 DECL|member|u
 name|guint16
