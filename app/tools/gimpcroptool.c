@@ -334,17 +334,17 @@ specifier|static
 name|void
 name|gimp_crop_tool_image_changed
 parameter_list|(
-name|GimpContext
+name|GimpCropTool
 modifier|*
-name|gimp_context
+name|crop_tool
 parameter_list|,
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpCropTool
+name|GimpContext
 modifier|*
-name|crop_tool
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -723,7 +723,7 @@ argument_list|)
 argument_list|,
 name|crop_tool
 argument_list|,
-literal|0
+name|G_CONNECT_SWAPPED
 argument_list|)
 expr_stmt|;
 name|options
@@ -1424,20 +1424,20 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_crop_tool_image_changed (GimpContext * gimp_context,GimpImage * image,GimpCropTool * crop_tool)
+DECL|function|gimp_crop_tool_image_changed (GimpCropTool * crop_tool,GimpImage * image,GimpContext * context)
 name|gimp_crop_tool_image_changed
 parameter_list|(
-name|GimpContext
+name|GimpCropTool
 modifier|*
-name|gimp_context
+name|crop_tool
 parameter_list|,
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|GimpCropTool
+name|GimpContext
 modifier|*
-name|crop_tool
+name|context
 parameter_list|)
 block|{
 name|gimp_crop_tool_update_option_defaults
