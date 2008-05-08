@@ -76,27 +76,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_scan_convert_add_points
-parameter_list|(
-name|GimpScanConvert
-modifier|*
-name|sc
-parameter_list|,
-name|guint
-name|n_points
-parameter_list|,
-name|GimpVector2
-modifier|*
-name|points
-parameter_list|,
-name|gboolean
-name|new_polygon
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_scan_convert_add_polyline
 parameter_list|(
 name|GimpScanConvert
