@@ -726,12 +726,6 @@ block|}
 case|case
 name|GDK_BUTTON_PRESS
 case|:
-name|gtk_widget_grab_focus
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
-comment|/* fall through */
 case|case
 name|GDK_SCROLL
 case|:
@@ -2503,6 +2497,20 @@ decl_stmt|;
 name|GdkEventMask
 name|event_mask
 decl_stmt|;
+comment|/*  focus the widget if it isn't; if the toplevel window          *  already has focus, this will generate a FOCUS_IN on the          *  canvas immediately, therefore we do this before logging          *  the BUTTON_PRESS.          */
+if|if
+condition|(
+operator|!
+name|GTK_WIDGET_HAS_FOCUS
+argument_list|(
+name|canvas
+argument_list|)
+condition|)
+name|gtk_widget_grab_focus
+argument_list|(
+name|canvas
+argument_list|)
+expr_stmt|;
 name|GIMP_LOG
 argument_list|(
 name|TOOL_EVENTS
@@ -2516,6 +2524,7 @@ operator|->
 name|button
 argument_list|)
 expr_stmt|;
+comment|/*  if the toplevel window didn't have focus, the above          *  gtk_widget_grab_focus() didn't set the canvas' HAS_FOCUS          *  flags, so check for it here again.          *          *  this happens in "click to focus" mode.          */
 if|if
 condition|(
 operator|!
@@ -2525,7 +2534,7 @@ name|canvas
 argument_list|)
 condition|)
 block|{
-comment|/*  in "click to focus" mode, the BUTTON_PRESS arrives before              *  FOCUS_IN, so we have to update the tool's modifier state here              */
+comment|/*  do the things a FOCUS_IN event would do and set a flag              *  preventing it from doing the same.              */
 name|gimp_display_shell_update_focus
 argument_list|(
 name|shell
@@ -2972,14 +2981,14 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|return_val
-operator|=
-name|TRUE
-expr_stmt|;
 break|break;
 default|default:
 break|break;
 block|}
+name|return_val
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 break|break;
 case|case
@@ -3180,6 +3189,10 @@ break|break;
 default|default:
 break|break;
 block|}
+name|return_val
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 break|break;
 case|case
@@ -4226,6 +4239,10 @@ operator|=
 name|time
 expr_stmt|;
 block|}
+name|return_val
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 break|break;
 case|case
