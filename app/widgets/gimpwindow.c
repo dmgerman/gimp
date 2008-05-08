@@ -138,8 +138,6 @@ comment|/* we're overriding the GtkWindow implementation here to give    * the f
 comment|/* text widgets get all key events first */
 if|if
 condition|(
-name|G_UNLIKELY
-argument_list|(
 name|GTK_IS_EDITABLE
 argument_list|(
 name|focus
@@ -148,7 +146,6 @@ operator|||
 name|GTK_IS_TEXT_VIEW
 argument_list|(
 name|focus
-argument_list|)
 argument_list|)
 condition|)
 name|handled

@@ -726,6 +726,12 @@ block|}
 case|case
 name|GDK_BUTTON_PRESS
 case|:
+name|gtk_widget_grab_focus
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+comment|/* fall through */
 case|case
 name|GDK_SCROLL
 case|:
