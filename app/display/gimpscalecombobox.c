@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8b9bef0103
+DECL|enum|__anon275f08270103
 block|{
 DECL|enumerator|SCALE
 name|SCALE
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8b9bef0203
+DECL|enum|__anon275f08270203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -364,6 +364,19 @@ decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
+name|GtkBorder
+name|border
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|}
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -448,6 +461,11 @@ argument_list|,
 literal|"truncate-multiline"
 argument_list|,
 name|TRUE
+argument_list|,
+literal|"inner-border"
+argument_list|,
+operator|&
+name|border
 argument_list|,
 name|NULL
 argument_list|)
