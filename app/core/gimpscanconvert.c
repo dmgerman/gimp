@@ -141,37 +141,6 @@ end_comment
 
 begin_function_decl
 specifier|static
-name|void
-name|gimp_scan_convert_render_internal
-parameter_list|(
-name|GimpScanConvert
-modifier|*
-name|sc
-parameter_list|,
-name|TileManager
-modifier|*
-name|tile_manager
-parameter_list|,
-name|gint
-name|off_x
-parameter_list|,
-name|gint
-name|off_y
-parameter_list|,
-name|gboolean
-name|replace
-parameter_list|,
-name|gboolean
-name|antialias
-parameter_list|,
-name|guchar
-name|value
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 name|gint
 name|gimp_cairo_stride_for_width
 parameter_list|(
@@ -1007,7 +976,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_render:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @antialias:    whether to apply antialiasiing  *  * Actually renders the @sc to a mask. This function expects a tile  * manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @antialias:    whether to apply antialiasiing  *  * This is a wrapper around gimp_scan_convert_render_full() that replaces the  * content of the @tile_manager with a rendered form of the path passed in.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1033,21 +1002,7 @@ name|gboolean
 name|antialias
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|sc
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|tile_manager
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_scan_convert_render_internal
+name|gimp_scan_convert_render_full
 argument_list|(
 name|sc
 argument_list|,
@@ -1068,7 +1023,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_render_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * A variant of gimp_scan_convert_render() that doesn't do  * antialiasing but gives control over the value that should be used  * for pixels covered by the scan conversion . Uncovered pixels are  * set to zero.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * This is a wrapper around gimp_scan_convert_render_full() that doesn't do  * antialiasing but gives control over the value that should be used for pixels  * covered by the scan conversion. Uncovered pixels are set to zero.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1094,21 +1049,7 @@ name|guchar
 name|value
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|sc
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|tile_manager
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_scan_convert_render_internal
+name|gimp_scan_convert_render_full
 argument_list|(
 name|sc
 argument_list|,
@@ -1129,7 +1070,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_compose:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  *  * This is a variant of gimp_scan_convert_render() that composes the  * (aliased) scan conversion with the content of the @tile_manager.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_compose:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  *  * This is a wrapper around of gimp_scan_convert_render_full() that composes  * the (aliased) scan conversion on top of the content of the @tile_manager.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1152,21 +1093,7 @@ name|gint
 name|off_y
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|sc
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|tile_manager
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_scan_convert_render_internal
+name|gimp_scan_convert_render_full
 argument_list|(
 name|sc
 argument_list|,
@@ -1187,7 +1114,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_compose_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * This is a variant of gimp_scan_convert_render() that composes the  * (aliased) scan conversion with the content of the @tile_manager.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_compose_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * This is a wrapper around gimp_scan_convert_render_full() that  * composes the (aliased) scan conversion with value @value on top of the  * content of the @tile_manager.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1213,21 +1140,7 @@ name|gint
 name|value
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|sc
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|tile_manager
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_scan_convert_render_internal
+name|gimp_scan_convert_render_full
 argument_list|(
 name|sc
 argument_list|,
@@ -1247,11 +1160,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_scan_convert_render_full:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @replace:      if true the original content of the @tile_manager gets destroyed  * @antialias:    if true the rendering happens antialiased  * @value:        value to use for covered pixels  *  * This function renders the area described by the path to the @tile_manager,  * taking the offset @off_x and @off_y in the tilemanager into account.  * The rendering can happen antialiased and be rendered on top of existing  * content or replacing it completely. The @value specifies the opacity value  * to be used for the objects in the @sc.  *  * This function expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+end_comment
+
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_scan_convert_render_internal (GimpScanConvert * sc,TileManager * tile_manager,gint off_x,gint off_y,gboolean replace,gboolean antialias,guchar value)
-name|gimp_scan_convert_render_internal
+DECL|function|gimp_scan_convert_render_full (GimpScanConvert * sc,TileManager * tile_manager,gint off_x,gint off_y,gboolean replace,gboolean antialias,guchar value)
+name|gimp_scan_convert_render_full
 parameter_list|(
 name|GimpScanConvert
 modifier|*
@@ -1304,6 +1220,20 @@ decl_stmt|;
 name|cairo_path_t
 name|path
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|sc
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|tile_manager
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|x
 operator|=
 literal|0
@@ -1677,6 +1607,15 @@ condition|?
 name|CAIRO_ANTIALIAS_GRAY
 else|:
 name|CAIRO_ANTIALIAS_NONE
+argument_list|)
+expr_stmt|;
+name|cairo_set_miter_limit
+argument_list|(
+name|cr
+argument_list|,
+name|sc
+operator|->
+name|miter
 argument_list|)
 expr_stmt|;
 if|if
