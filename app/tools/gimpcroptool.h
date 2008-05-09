@@ -123,6 +123,11 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
+DECL|member|current_image
+name|GimpImage
+modifier|*
+name|current_image
+decl_stmt|;
 block|}
 struct|;
 end_struct
