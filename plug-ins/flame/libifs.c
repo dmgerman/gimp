@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*     flame - cosmic recursive fractal flames     Copyright (C) 1992  Scott Draves<spot@cs.cmu.edu>      This program is free software; you can redistribute it and/or modify     it under the terms of the GNU General Public License as published by     the Free Software Foundation; either version 2 of the License, or     (at your option) any later version.      This program is distributed in the hope that it will be useful,     but WITHOUT ANY WARRANTY; without even the implied warranty of     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the     GNU General Public License for more details.      You should have received a copy of the GNU General Public License     along with this program; if not, write to the Free Software     Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. */
+comment|/*    flame - cosmic recursive fractal flames    Copyright (C) 1992  Scott Draves<spot@cs.cmu.edu>     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2 of the License, or    (at your option) any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -70,32 +70,24 @@ comment|/*  * run the function system described by CP forward N generations.  * 
 end_comment
 
 begin_function
-DECL|function|iterate (cp,n,fuse,points)
 name|void
+DECL|function|iterate (control_point * cp,int n,int fuse,point * points)
 name|iterate
 parameter_list|(
-name|cp
-parameter_list|,
-name|n
-parameter_list|,
-name|fuse
-parameter_list|,
-name|points
-parameter_list|)
 name|control_point
 modifier|*
 name|cp
-decl_stmt|;
+parameter_list|,
 name|int
 name|n
-decl_stmt|;
+parameter_list|,
 name|int
 name|fuse
-decl_stmt|;
+parameter_list|,
 name|point
 modifier|*
 name|points
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -167,7 +159,7 @@ index|[
 literal|2
 index|]
 expr_stmt|;
-comment|/*     * first, set up xform, which is an array that converts a uniform random     * variable into one with the distribution dictated by the density     * fields     */
+comment|/*    * first, set up xform, which is an array that converts a uniform random    * variable into one with the distribution dictated by the density    * fields    */
 name|dr
 operator|=
 literal|0.0
@@ -284,6 +276,7 @@ name|i
 operator|++
 control|)
 block|{
+comment|/* FIXME: the following is supported only by gcc and c99 */
 name|int
 name|fn
 init|=
@@ -3286,12 +3279,6 @@ index|]
 expr_stmt|;
 block|}
 block|}
-if|#
-directive|if
-literal|0
-block|if ((count_large> 10 || count_nan> 10)&& !getenv("PVM_ARCH"))       fprintf(stderr, "large = %d nan = %d\n", count_large, count_nan);
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -3300,43 +3287,37 @@ comment|/* args must be non-overlapping */
 end_comment
 
 begin_function
-DECL|function|mult_matrix (s1,s2,d)
 name|void
+DECL|function|mult_matrix (double s1[2][2],double s2[2][2],double d[2][2])
 name|mult_matrix
 parameter_list|(
+name|double
 name|s1
+index|[
+literal|2
+index|]
+index|[
+literal|2
+index|]
 parameter_list|,
+name|double
 name|s2
+index|[
+literal|2
+index|]
+index|[
+literal|2
+index|]
 parameter_list|,
+name|double
 name|d
+index|[
+literal|2
+index|]
+index|[
+literal|2
+index|]
 parameter_list|)
-name|double
-name|s1
-index|[
-literal|2
-index|]
-index|[
-literal|2
-index|]
-decl_stmt|;
-name|double
-name|s2
-index|[
-literal|2
-index|]
-index|[
-literal|2
-index|]
-decl_stmt|;
-name|double
-name|d
-index|[
-literal|2
-index|]
-index|[
-literal|2
-index|]
-decl_stmt|;
 block|{
 name|d
 index|[
@@ -3502,13 +3483,11 @@ block|}
 end_function
 
 begin_function
-DECL|function|det_matrix (s)
 specifier|static
+DECL|function|det_matrix (double s[2][2])
 name|double
 name|det_matrix
 parameter_list|(
-name|s
-parameter_list|)
 name|double
 name|s
 index|[
@@ -3517,7 +3496,7 @@ index|]
 index|[
 literal|2
 index|]
-decl_stmt|;
+parameter_list|)
 block|{
 return|return
 name|s
@@ -3555,124 +3534,36 @@ return|;
 block|}
 end_function
 
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|static void flip_matrix(m, h)    double m[2][2];    int h; {    double s, t;    if (h) {
-comment|/* flip on horizontal axis */
-end_comment
-
-begin_comment
-unit|s = m[0][0];       t = m[0][1];       m[0][0] = m[1][0];       m[0][1] = m[1][1];       m[1][0] = s;       m[1][1] = t;    } else {
-comment|/* flip on vertical axis */
-end_comment
-
-begin_endif
-unit|s = m[0][0];       t = m[1][0];       m[0][0] = m[0][1];       m[1][0] = m[1][1];       m[0][1] = s;       m[1][1] = t;    } }  static void transpose_matrix(m)    double m[2][2]; {    double t;    t = m[0][1];    m[0][1] = m[1][0];    m[1][0] = t; }
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-unit|static void choose_evector(m, r, v)    double m[3][2], r;    double v[2]; {    double b = m[0][1];    double d = m[1][1];    double x = r - d;    if (b> EPS) {       v[0] = x;       v[1] = b;    } else if (b< -EPS) {       v[0] = -x;       v[1] = -b;    } else {
-comment|/* XXX */
-end_comment
-
-begin_comment
-unit|v[0] = 1.0;       v[1] = 0.0;    } }
-comment|/* diagonalize the linear part of a 3x2 matrix.  the evalues are returned    in r as either reals on the diagonal, or a complex pair.  the evectors    are returned as a change of coords matrix.  does not handle shearing    transforms.    */
-end_comment
-
-begin_comment
-unit|static void diagonalize_matrix(m, r, v)    double m[3][2];    double r[2][2];    double v[2][2]; {    double b, c, d;    double m00, m10, m01, m11;    m00 = m[0][0];    m10 = m[1][0];    m01 = m[0][1];    m11 = m[1][1];    b = -m00 - m11;    c = (m00 * m11) - (m01 * m10);    d = b * b - 4 * c;
-comment|/* should use better formula, see numerical recipes */
-end_comment
-
-begin_comment
-unit|if (d> EPS) {       double r0 = (-b + sqrt(d)) / 2.0;       double r1 = (-b - sqrt(d)) / 2.0;       r[0][0] = r0;       r[1][1] = r1;       r[0][1] = 0.0;       r[1][0] = 0.0;        choose_evector(m, r0, v + 0);       choose_evector(m, r1, v + 1);    } else if (d< -EPS) {       double uu = -b / 2.0;       double vv = sqrt(-d) / 2.0;       double w1r, w1i, w2r, w2i;       r[0][0] = uu;       r[0][1] = vv;       r[1][0] = -vv;       r[1][1] = uu;        if (m01> EPS) { 	 w1r = uu - m11; 	 w1i = vv; 	 w2r = m01; 	 w2i = 0.0;       } else if (m01< -EPS) { 	 w1r = m11 - uu; 	 w1i = -vv; 	 w2r = -m01; 	 w2i = 0.0;       } else {
-comment|/* XXX */
-end_comment
-
-begin_comment
-unit|w1r = 0.0; 	 w1i = 1.0; 	 w2r = 1.0; 	 w2i = 0.0;       }       v[0][0] = w1i;       v[0][1] = w2i;       v[1][0] = w1r;       v[1][1] = w2r;     } else {       double rr = -b / 2.0;       r[0][0] = rr;       r[1][1] = rr;       r[0][1] = 0.0;       r[1][0] = 0.0;        v[0][0] = 1.0;       v[0][1] = 0.0;       v[1][0] = 0.0;       v[1][1] = 1.0;    }
-comment|/* order the values so that the evector matrix has is positively       oriented.  this is so that evectors never have to cross when we       interpolate them. it might mean that the values cross zero when they       wouldn't have otherwise (if they had different signs) but this is the       lesser of two evils */
-end_comment
-
-begin_comment
-unit|if (det_matrix(v)< 0.0) {       flip_matrix(v, 1);       flip_matrix(r, 0);       flip_matrix(r, 1);    } }   static void undiagonalize_matrix(r, v, m)    double r[2][2];    double v[2][2];    double m[3][2]; {    double v_inv[2][2];    double t1[2][2];    double t2[2][2];    double t;
-comment|/* the unfortunate truth is that given we are using row vectors       the evectors should be stacked horizontally, but the complex       interpolation functions only work on rows, so we fix things here */
-end_comment
-
-begin_comment
-unit|transpose_matrix(v);    mult_matrix(r, v, t1);     t = 1.0 / det_matrix(v);    v_inv[0][0] = t * v[1][1];    v_inv[1][1] = t * v[0][0];    v_inv[1][0] = t * -v[1][0];    v_inv[0][1] = t * -v[0][1];     mult_matrix(v_inv, t1, t2);
-comment|/* the unforunate truth is that i have no idea why this is needed. sigh. */
-end_comment
-
-begin_comment
-unit|transpose_matrix(t2);
-comment|/* switch v back to how it was */
-end_comment
-
-begin_endif
-unit|transpose_matrix(v);     m[0][0] = t2[0][0];    m[0][1] = t2[0][1];    m[1][0] = t2[1][0];    m[1][1] = t2[1][1]; }
-endif|#
-directive|endif
-end_endif
-
 begin_function
-DECL|function|interpolate_angle (t,s,v1,v2,v3,tie,cross)
 specifier|static
 name|void
+DECL|function|interpolate_angle (double t,double s,double * v1,double * v2,double * v3,int tie,int cross)
 name|interpolate_angle
 parameter_list|(
-name|t
-parameter_list|,
-name|s
-parameter_list|,
-name|v1
-parameter_list|,
-name|v2
-parameter_list|,
-name|v3
-parameter_list|,
-name|tie
-parameter_list|,
-name|cross
-parameter_list|)
 name|double
 name|t
-decl_stmt|,
+parameter_list|,
+name|double
 name|s
-decl_stmt|;
+parameter_list|,
 name|double
 modifier|*
 name|v1
-decl_stmt|,
-decl|*
+parameter_list|,
+name|double
+modifier|*
 name|v2
-decl_stmt|,
+parameter_list|,
+name|double
 modifier|*
 name|v3
-decl_stmt|;
-end_function
-
-begin_decl_stmt
+parameter_list|,
 name|int
 name|tie
-decl_stmt|;
-end_decl_stmt
-
-begin_block
+parameter_list|,
+name|int
+name|cross
+parameter_list|)
 block|{
 name|double
 name|x
@@ -3832,67 +3723,41 @@ operator|*
 name|y
 expr_stmt|;
 block|}
-end_block
+end_function
 
-begin_decl_stmt
-DECL|function|interpolate_complex (t,s,r1,r2,r3,flip,tie,cross)
+begin_function
 specifier|static
 name|void
+DECL|function|interpolate_complex (double t,double s,double * r1,double * r2,double * r3,int flip,int tie,int cross)
 name|interpolate_complex
-argument_list|(
-name|t
-argument_list|,
-name|s
-argument_list|,
-name|r1
-argument_list|,
-name|r2
-argument_list|,
-name|r3
-argument_list|,
-name|flip
-argument_list|,
-name|tie
-argument_list|,
-name|cross
-argument_list|)
+parameter_list|(
 name|double
 name|t
-decl_stmt|,
-name|s
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
+parameter_list|,
 name|double
+name|s
+parameter_list|,
+name|double
+modifier|*
 name|r1
-index|[
-literal|2
-index|]
-decl_stmt|,
+parameter_list|,
+name|double
+modifier|*
 name|r2
-index|[
-literal|2
-index|]
-decl_stmt|,
+parameter_list|,
+name|double
+modifier|*
 name|r3
-index|[
-literal|2
-index|]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
+parameter_list|,
 name|int
 name|flip
-decl_stmt|,
+parameter_list|,
+name|int
 name|tie
-decl_stmt|,
+parameter_list|,
+name|int
 name|cross
-decl_stmt|;
-end_decl_stmt
-
-begin_block
+parameter_list|)
 block|{
 name|double
 name|c1
@@ -4216,22 +4081,17 @@ index|]
 expr_stmt|;
 block|}
 block|}
-end_block
+end_function
 
-begin_decl_stmt
-DECL|function|interpolate_matrix (t,m1,m2,m3)
+begin_function
 specifier|static
 name|void
+DECL|function|interpolate_matrix (double t,double m1[3][2],double m2[3][2],double m3[3][2])
 name|interpolate_matrix
-argument_list|(
+parameter_list|(
+name|double
 name|t
-argument_list|,
-name|m1
-argument_list|,
-name|m2
-argument_list|,
-name|m3
-argument_list|)
+parameter_list|,
 name|double
 name|m1
 index|[
@@ -4240,7 +4100,8 @@ index|]
 index|[
 literal|2
 index|]
-decl_stmt|,
+parameter_list|,
+name|double
 name|m2
 index|[
 literal|3
@@ -4248,7 +4109,8 @@ index|]
 index|[
 literal|2
 index|]
-decl_stmt|,
+parameter_list|,
+name|double
 name|m3
 index|[
 literal|3
@@ -4256,16 +4118,7 @@ index|]
 index|[
 literal|2
 index|]
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-name|double
-name|t
-decl_stmt|;
-end_decl_stmt
-
-begin_block
+parameter_list|)
 block|{
 name|double
 name|s
@@ -4274,33 +4127,38 @@ literal|1.0
 operator|-
 name|t
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|double r1[2][2], r2[2][2], r3[2][2];    double v1[2][2], v2[2][2], v3[2][2];    diagonalize_matrix(m1, r1, v1);    diagonalize_matrix(m2, r2, v2);
-comment|/* handle the evectors */
-block|interpolate_complex(t, s, v1 + 0, v2 + 0, v3 + 0, 0, 0, 0);    interpolate_complex(t, s, v1 + 1, v2 + 1, v3 + 1, 0, 0, 1);
-comment|/* handle the evalues */
-block|interpolate_complex(t, s, r1 + 0, r2 + 0, r3 + 0, 0, 0, 0);    interpolate_complex(t, s, r1 + 1, r2 + 1, r3 + 1, 1, 1, 0);     undiagonalize_matrix(r3, v3, m3);
-endif|#
-directive|endif
 name|interpolate_complex
 argument_list|(
 name|t
 argument_list|,
 name|s
 argument_list|,
+operator|&
 name|m1
-operator|+
+index|[
 literal|0
+index|]
+index|[
+literal|0
+index|]
 argument_list|,
+operator|&
 name|m2
-operator|+
+index|[
 literal|0
+index|]
+index|[
+literal|0
+index|]
 argument_list|,
+operator|&
 name|m3
-operator|+
+index|[
 literal|0
+index|]
+index|[
+literal|0
+index|]
 argument_list|,
 literal|0
 argument_list|,
@@ -4315,17 +4173,32 @@ name|t
 argument_list|,
 name|s
 argument_list|,
+operator|&
 name|m1
-operator|+
+index|[
 literal|1
+index|]
+index|[
+literal|0
+index|]
 argument_list|,
+operator|&
 name|m2
-operator|+
+index|[
 literal|1
+index|]
+index|[
+literal|0
+index|]
 argument_list|,
+operator|&
 name|m3
-operator|+
+index|[
 literal|1
+index|]
+index|[
+literal|0
+index|]
 argument_list|,
 literal|1
 argument_list|,
@@ -4392,7 +4265,7 @@ literal|1
 index|]
 expr_stmt|;
 block|}
-end_block
+end_function
 
 begin_define
 DECL|macro|INTERP (x)
@@ -4410,32 +4283,24 @@ comment|/*  * create a control point that interpolates between the control point
 end_comment
 
 begin_function
-DECL|function|interpolate (cps,ncps,time,result)
 name|void
+DECL|function|interpolate (control_point cps[],int ncps,double time,control_point * result)
 name|interpolate
 parameter_list|(
-name|cps
-parameter_list|,
-name|ncps
-parameter_list|,
-name|time
-parameter_list|,
-name|result
-parameter_list|)
 name|control_point
 name|cps
 index|[]
-decl_stmt|;
+parameter_list|,
 name|int
 name|ncps
-decl_stmt|;
+parameter_list|,
 name|double
 name|time
-decl_stmt|;
+parameter_list|,
 name|control_point
 modifier|*
 name|result
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -4455,9 +4320,9 @@ name|t
 decl_stmt|;
 if|if
 condition|(
-literal|1
-operator|==
 name|ncps
+operator|==
+literal|1
 condition|)
 block|{
 operator|*
@@ -4821,12 +4686,6 @@ define|#
 directive|define
 name|bright_peak
 value|2.0
-if|#
-directive|if
-literal|0
-block|if (d0< 0.5) 	   result->cmap[i][j] *= 1.0 + bright_peak * d0; 	 else 	   result->cmap[i][j] *= 1.0 + bright_peak * d1;
-else|#
-directive|else
 name|result
 operator|->
 name|cmap
@@ -4855,8 +4714,6 @@ operator|*
 literal|1.0
 operator|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 block|}
 block|}
@@ -5547,30 +5404,24 @@ comment|/*  * split a string passed in ss into tokens on whitespace.  * # commen
 end_comment
 
 begin_function
-DECL|function|tokenize (ss,argv,argc)
 name|void
+DECL|function|tokenize (char ** ss,char * argv[],int * argc)
 name|tokenize
 parameter_list|(
-name|ss
-parameter_list|,
-name|argv
-parameter_list|,
-name|argc
-parameter_list|)
 name|char
 modifier|*
 modifier|*
 name|ss
-decl_stmt|;
+parameter_list|,
 name|char
 modifier|*
 name|argv
 index|[]
-decl_stmt|;
+parameter_list|,
 name|int
 modifier|*
 name|argc
-decl_stmt|;
+parameter_list|)
 block|{
 name|char
 modifier|*
@@ -5612,9 +5463,9 @@ literal|0
 case|:
 if|if
 condition|(
-literal|'#'
-operator|==
 name|c
+operator|==
+literal|'#'
 condition|)
 name|state
 operator|=
@@ -5671,9 +5522,9 @@ literal|2
 case|:
 if|if
 condition|(
-literal|'\n'
-operator|==
 name|c
+operator|==
+literal|'\n'
 condition|)
 name|state
 operator|=
@@ -5705,25 +5556,21 @@ block|}
 end_function
 
 begin_function
-DECL|function|compare_xforms (a,b)
 specifier|static
 name|int
+DECL|function|compare_xforms (const void * va,const void * vb)
 name|compare_xforms
 parameter_list|(
-name|a
-parameter_list|,
-name|b
-parameter_list|)
-name|xform
+specifier|const
+name|void
 modifier|*
-name|a
-decl_stmt|,
-decl|*
-name|b
-decl_stmt|;
-end_function
-
-begin_block
+name|va
+parameter_list|,
+specifier|const
+name|void
+modifier|*
+name|vb
+parameter_list|)
 block|{
 name|double
 name|aa
@@ -5747,6 +5594,20 @@ name|double
 name|ad
 decl_stmt|,
 name|bd
+decl_stmt|;
+specifier|const
+name|xform
+modifier|*
+name|a
+init|=
+name|va
+decl_stmt|;
+specifier|const
+name|xform
+modifier|*
+name|b
+init|=
+name|vb
 decl_stmt|;
 name|aa
 index|[
@@ -5929,7 +5790,7 @@ return|return
 literal|0
 return|;
 block|}
-end_block
+end_function
 
 begin_define
 DECL|macro|MAXARGS
@@ -5957,23 +5818,19 @@ comment|/*  * given a pointer to a string SS, fill fields of a control point CP.
 end_comment
 
 begin_function
-DECL|function|parse_control_point (ss,cp)
 name|void
+DECL|function|parse_control_point (char ** ss,control_point * cp)
 name|parse_control_point
 parameter_list|(
-name|ss
-parameter_list|,
-name|cp
-parameter_list|)
 name|char
 modifier|*
 modifier|*
 name|ss
-decl_stmt|;
+parameter_list|,
 name|control_point
 modifier|*
 name|cp
-decl_stmt|;
+parameter_list|)
 block|{
 name|char
 modifier|*
@@ -7055,24 +6912,21 @@ block|}
 end_function
 
 begin_function
-DECL|function|print_control_point (f,cp,quote)
 name|void
+DECL|function|print_control_point (FILE * f,control_point * cp,int quote)
 name|print_control_point
 parameter_list|(
-name|f
-parameter_list|,
-name|cp
-parameter_list|,
-name|quote
-parameter_list|)
 name|FILE
 modifier|*
 name|f
-decl_stmt|;
+parameter_list|,
 name|control_point
 modifier|*
 name|cp
-decl_stmt|;
+parameter_list|,
+name|int
+name|quote
+parameter_list|)
 block|{
 name|int
 name|i
@@ -7104,12 +6958,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|-
-literal|1
-operator|!=
 name|cp
 operator|->
 name|cmap_index
+operator|!=
+operator|-
+literal|1
 condition|)
 name|fprintf
 argument_list|(
@@ -7406,8 +7260,8 @@ comment|/* returns a uniform variable from 0 to 1 */
 end_comment
 
 begin_function
-DECL|function|random_uniform01 (void)
 name|double
+DECL|function|random_uniform01 (void)
 name|random_uniform01
 parameter_list|(
 name|void
@@ -7473,9 +7327,9 @@ name|v2
 decl_stmt|;
 if|if
 condition|(
-literal|0
-operator|==
 name|iset
+operator|==
+literal|0
 condition|)
 block|{
 do|do
@@ -7639,21 +7493,17 @@ value|((v)[g_random_int_range (0, vlen(v))])
 end_define
 
 begin_function
-DECL|function|random_control_point (cp,ivar)
 name|void
+DECL|function|random_control_point (control_point * cp,int ivar)
 name|random_control_point
 parameter_list|(
-name|cp
-parameter_list|,
-name|ivar
-parameter_list|)
 name|control_point
 modifier|*
 name|cp
-decl_stmt|;
+parameter_list|,
 name|int
 name|ivar
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -7993,33 +7843,25 @@ comment|/*  * find a 2d bounding box that does not enclose eps of the fractal de
 end_comment
 
 begin_function
-DECL|function|estimate_bounding_box (cp,eps,bmin,bmax)
 name|void
+DECL|function|estimate_bounding_box (control_point * cp,double eps,double * bmin,double * bmax)
 name|estimate_bounding_box
 parameter_list|(
-name|cp
-parameter_list|,
-name|eps
-parameter_list|,
-name|bmin
-parameter_list|,
-name|bmax
-parameter_list|)
 name|control_point
 modifier|*
 name|cp
-decl_stmt|;
+parameter_list|,
 name|double
 name|eps
-decl_stmt|;
+parameter_list|,
 name|double
 modifier|*
 name|bmin
-decl_stmt|;
+parameter_list|,
 name|double
 modifier|*
 name|bmax
-decl_stmt|;
+parameter_list|)
 block|{
 name|int
 name|i
@@ -8065,10 +7907,6 @@ name|point
 modifier|*
 name|points
 init|=
-operator|(
-name|point
-operator|*
-operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
@@ -8605,9 +8443,7 @@ index|]
 operator|/
 literal|2.0
 expr_stmt|;
-comment|/*       fprintf(stderr, "%g %g %g %g\n", bmin[0], bmin[1], bmax[0], bmax[1]);       */
 block|}
-comment|/*    fprintf(stderr, "%g %g %g %g\n", min[0], min[1], max[0], max[1]);    */
 block|}
 end_function
 
@@ -8615,40 +8451,25 @@ begin_comment
 comment|/* use hill climberer to find smooth ordering of control points    this is untested */
 end_comment
 
-begin_decl_stmt
-DECL|function|sort_control_points (cps,ncps,metric)
+begin_function
 name|void
+DECL|function|sort_control_points (control_point * cps,int ncps,double (* metric)())
 name|sort_control_points
-argument_list|(
-name|cps
-argument_list|,
-name|ncps
-argument_list|,
-name|metric
-argument_list|)
+parameter_list|(
 name|control_point
 modifier|*
 name|cps
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
+parameter_list|,
 name|int
 name|ncps
-decl_stmt|;
-end_decl_stmt
-
-begin_function_decl
+parameter_list|,
 name|double
 function_decl|(
 modifier|*
 name|metric
 function_decl|)
 parameter_list|()
-function_decl|;
-end_function_decl
-
-begin_block
+parameter_list|)
 block|{
 name|int
 name|niter
@@ -8883,31 +8704,25 @@ expr_stmt|;
 block|}
 block|}
 block|}
-end_block
+end_function
 
 begin_comment
 comment|/* this has serious flaws in it */
 end_comment
 
 begin_function
-DECL|function|standard_metric (cp1,cp2)
 name|double
+DECL|function|standard_metric (control_point * cp1,control_point * cp2)
 name|standard_metric
 parameter_list|(
-name|cp1
-parameter_list|,
-name|cp2
-parameter_list|)
 name|control_point
 modifier|*
 name|cp1
-decl_stmt|,
-decl|*
+parameter_list|,
+name|control_point
+modifier|*
 name|cp2
-decl_stmt|;
-end_function
-
-begin_block
+parameter_list|)
 block|{
 name|int
 name|i
@@ -9073,90 +8888,12 @@ return|return
 name|dist
 return|;
 block|}
-end_block
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|static void stat_matrix(f, m)    FILE *f;    double m[3][2]; {    double r[2][2];    double v[2][2];    double a;     diagonalize_matrix(m, r, v);    fprintf(f, "entries = % 10f % 10f % 10f % 10f\n", 	   m[0][0], m[0][1], m[1][0], m[1][1]);    fprintf(f, "evalues  = % 10f % 10f % 10f % 10f\n", 	   r[0][0], r[0][1], r[1][0], r[1][1]);    fprintf(f, "evectors = % 10f % 10f % 10f % 10f\n", 	   v[0][0], v[0][1], v[1][0], v[1][1]);    a = (v[0][0] * v[1][0] + v[0][1] * v[1][1]) /       sqrt((v[0][0] * v[0][0] + v[0][1] * v[0][1]) * 	   (v[1][0] * v[1][0] + v[1][1] * v[1][1]));    fprintf(f, "theta = %g det = %g\n", a, 	   m[0][0] * m[1][1] - m[0][1] * m[1][0]); }
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_if
-unit|main() {
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|double m1[3][2] = {-0.633344, -0.269064, 0.0676171, 0.590923, 0, 0};    double m2[3][2] = {-0.844863, 0.0270297, -0.905294, 0.413218, 0, 0};
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|double m1[3][2] = {-0.347001, -0.15219, 0.927161, 0.908305, 0, 0};    double m2[3][2] = {-0.577884, 0.653803, 0.664982, -0.734136, 0, 0};
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|double m1[3][2] = {1, 0, 0, 1, 0, 0};    double m2[3][2] = {0, -1, 1, 0, 0, 0};
-endif|#
-directive|endif
-end_endif
-
-begin_if
-if|#
-directive|if
-literal|1
-end_if
-
-begin_endif
-unit|double m1[3][2] = {1, 0, 0, 1, 0, 0};    double m2[3][2] = {-1, 0, 0, -1, 0, 0};
-endif|#
-directive|endif
-end_endif
-
-begin_comment
-unit|double m3[3][2];    double t;    int i = 0;     for (t = 0.0; t<= 1.0; t += 1.0/15.0) {       int x, y;       fprintf(stderr, "%g--\n", t);       interpolate_matrix(t, m1, m2, m3);
-comment|/*       stat_matrix(stderr, m3); */
-end_comment
-
-begin_endif
-unit|x = (i % 4) * 100 + 100;       y = (i / 4) * 100 + 100;       printf("newpath ");       printf("%d %d %d %d %d arc ", x, y, 30, 0, 360);       printf("%d %d moveto ", x, y);       printf("%g %g rlineto ", m3[0][0] * 30, m3[0][1] * 30);       printf("%d %d moveto ", x, y);       printf("%g %g rlineto ", m3[1][0] * 30, m3[1][1] * 30);       printf("stroke \n");       printf("newpath ");       printf("%g %g %d %d %d arc ", x + m3[0][0] * 30, y + m3[0][1] * 30, 3, 0, 360);       printf("stroke \n");       i++;    } }
-endif|#
-directive|endif
-end_endif
+end_function
 
 begin_function
-DECL|function|flam3_random_bit (void)
 specifier|static
 name|int
+DECL|function|flam3_random_bit (void)
 name|flam3_random_bit
 parameter_list|(
 name|void
@@ -9174,9 +8911,9 @@ name|l
 decl_stmt|;
 if|if
 condition|(
-literal|0
-operator|==
 name|n
+operator|==
+literal|0
 condition|)
 block|{
 name|l
@@ -9210,9 +8947,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|flam3_random01 (void)
 specifier|static
 name|double
+DECL|function|flam3_random01 (void)
 name|flam3_random01
 parameter_list|(
 name|void

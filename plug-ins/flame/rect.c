@@ -165,22 +165,18 @@ comment|/* sum of entries of vector to 1 */
 end_comment
 
 begin_function
-DECL|function|normalize_vector (v,n)
 specifier|static
 name|void
+DECL|function|normalize_vector (double * v,int n)
 name|normalize_vector
 parameter_list|(
-name|v
-parameter_list|,
-name|n
-parameter_list|)
 name|double
 modifier|*
 name|v
-decl_stmt|;
+parameter_list|,
 name|int
 name|n
-decl_stmt|;
+parameter_list|)
 block|{
 name|double
 name|t
@@ -240,48 +236,34 @@ block|}
 end_function
 
 begin_function
-DECL|function|render_rectangle (spec,out,out_width,field,nchan,progress)
 name|void
+DECL|function|render_rectangle (frame_spec * spec,unsigned char * out,int out_width,int field,int nchan,int progress (double))
 name|render_rectangle
 parameter_list|(
-name|spec
-parameter_list|,
-name|out
-parameter_list|,
-name|out_width
-parameter_list|,
-name|field
-parameter_list|,
-name|nchan
-parameter_list|,
-name|progress
-parameter_list|)
 name|frame_spec
 modifier|*
 name|spec
-decl_stmt|;
+parameter_list|,
 name|unsigned
 name|char
 modifier|*
 name|out
-decl_stmt|;
+parameter_list|,
 name|int
 name|out_width
-decl_stmt|;
+parameter_list|,
 name|int
 name|field
-decl_stmt|;
+parameter_list|,
 name|int
 name|nchan
-decl_stmt|;
-function|int progress
+parameter_list|,
+name|int
+name|progress
 parameter_list|(
 name|double
 parameter_list|)
-function|;
-end_function
-
-begin_block
+parameter_list|)
 block|{
 name|int
 name|i
@@ -486,10 +468,6 @@ operator|++
 expr_stmt|;
 name|filter
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
@@ -614,10 +592,6 @@ expr_stmt|;
 block|}
 name|temporal_filter
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
@@ -630,10 +604,6 @@ argument_list|)
 expr_stmt|;
 name|temporal_deltas
 operator|=
-operator|(
-name|double
-operator|*
-operator|)
 name|malloc
 argument_list|(
 sizeof|sizeof
@@ -740,13 +710,7 @@ operator|=
 literal|0.0
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-block|for (j = 0; j< nbatches; j++)       fprintf(stderr, "%4f %4f\n", temporal_deltas[j], temporal_filter[j]);    fprintf(stderr, "\n");
-endif|#
-directive|endif
-comment|/* the number of additional rows of buckets we put at the edge so       that the filter doesn't go off the edge */
+comment|/* the number of additional rows of buckets we put at the edge so      that the filter doesn't go off the edge */
 name|gutter_width
 operator|=
 operator|(
@@ -847,10 +811,6 @@ argument_list|)
 expr_stmt|;
 name|last_block
 operator|=
-operator|(
-name|char
-operator|*
-operator|)
 name|malloc
 argument_list|(
 name|memory_rqd
@@ -858,9 +818,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|NULL
-operator|==
 name|last_block
+operator|==
+name|NULL
 condition|)
 block|{
 name|fprintf
@@ -878,7 +838,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* else fprintf(stderr, "render_rectangle: mallocked %dMb.\n", Mb); */
 name|last_block_size
 operator|=
 name|memory_rqd
@@ -2020,7 +1979,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*     * filter the accumulation buffer down into the image     */
+comment|/*    * filter the accumulation buffer down into the image    */
 if|if
 condition|(
 literal|1
@@ -2268,6 +2227,7 @@ literal|3
 index|]
 expr_stmt|;
 block|}
+comment|/* FIXME: we should probably use glib facilities to make                * this code readable                */
 name|p
 operator|=
 name|out
@@ -2503,7 +2463,7 @@ name|filter
 argument_list|)
 expr_stmt|;
 block|}
-end_block
+end_function
 
 end_unit
 

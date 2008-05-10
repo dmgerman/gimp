@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*    flame - cosmic recursive fractal flames    Copyright (C) 1992  Scott Draves<spot@cs.cmu.edu>     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2 of the License, or    (at your option) any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. */
+comment|/*    flame - cosmic recursive fractal flames    Copyright (C) 1992  Scott Draves<spot@cs.cmu.edu>     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2 of the License, or    (at your option) any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -2091,7 +2091,7 @@ literal|89
 block|,
 literal|56
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* sky-flesh */
 block|{
@@ -4142,7 +4142,7 @@ literal|152
 block|,
 literal|113
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* blue-bather */
 block|{
@@ -6193,7 +6193,7 @@ literal|116
 block|,
 literal|103
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* no-name */
 block|{
@@ -8244,7 +8244,7 @@ literal|105
 block|,
 literal|71
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* pillows */
 block|{
@@ -10295,7 +10295,7 @@ literal|11
 block|,
 literal|11
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* mauve-splat */
 block|{
@@ -12346,7 +12346,7 @@ literal|34
 block|,
 literal|37
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* facial-treescape 6 */
 block|{
@@ -14397,7 +14397,7 @@ literal|57
 block|,
 literal|36
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* fasion-bug */
 block|{
@@ -16448,7 +16448,7 @@ literal|27
 block|,
 literal|32
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* leafy-face */
 block|{
@@ -18499,7 +18499,7 @@ literal|95
 block|,
 literal|83
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* mouldy-sun */
 block|{
@@ -20550,7 +20550,7 @@ literal|208
 block|,
 literal|169
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* sunny-harvest */
 block|{
@@ -22601,7 +22601,7 @@ literal|55
 block|,
 literal|31
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* peach-tree */
 block|{
@@ -24652,7 +24652,7 @@ literal|52
 block|,
 literal|9
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* fire-dragon */
 block|{
@@ -26703,7 +26703,7 @@ literal|0
 block|,
 literal|0
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* ice-dragon */
 block|{
@@ -28754,7 +28754,7 @@ literal|193
 block|,
 literal|197
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* german-landscape */
 block|{
@@ -30805,7 +30805,7 @@ literal|178
 block|,
 literal|187
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* no-name */
 block|{
@@ -32856,7 +32856,7 @@ literal|157
 block|,
 literal|113
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* living-mud-bomb */
 block|{
@@ -34907,7 +34907,7 @@ literal|47
 block|,
 literal|16
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* cars */
 block|{
@@ -36958,7 +36958,7 @@ literal|123
 block|,
 literal|85
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* unhealthy-tan */
 block|{
@@ -39009,7 +39009,7 @@ literal|108
 block|,
 literal|78
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* daffodil */
 block|{
@@ -41060,7 +41060,7 @@ literal|22
 block|,
 literal|17
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* rose */
 block|{
@@ -43111,7 +43111,7 @@ literal|23
 block|,
 literal|28
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* healthy-skin */
 block|{
@@ -45162,7 +45162,7 @@ literal|140
 block|,
 literal|103
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* orange */
 block|{
@@ -47213,7 +47213,7 @@ literal|172
 block|,
 literal|209
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* white-ivy */
 block|{
@@ -49264,7 +49264,7 @@ literal|124
 block|,
 literal|28
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* summer-makeup */
 block|{
@@ -51315,7 +51315,7 @@ literal|119
 block|,
 literal|75
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* glow-buzz */
 block|{
@@ -53366,7 +53366,7 @@ literal|68
 block|,
 literal|47
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* deep-water */
 block|{
@@ -55417,7 +55417,7 @@ literal|16
 block|,
 literal|18
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* afternoon-beach */
 block|{
@@ -57468,7 +57468,7 @@ literal|201
 block|,
 literal|132
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* dim-beach */
 block|{
@@ -59519,7 +59519,7 @@ literal|182
 block|,
 literal|160
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* cloudy-brick */
 block|{
@@ -61570,7 +61570,7 @@ literal|161
 block|,
 literal|160
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* burning-wood */
 block|{
@@ -63621,7 +63621,7 @@ literal|27
 block|,
 literal|37
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* aquatic-garden */
 block|{
@@ -65672,7 +65672,7 @@ literal|52
 block|,
 literal|56
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* no-name */
 block|{
@@ -67723,7 +67723,7 @@ literal|36
 block|,
 literal|37
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* fall-quilt */
 block|{
@@ -69774,7 +69774,7 @@ literal|120
 block|,
 literal|37
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* night-blue-sky */
 block|{
@@ -71825,7 +71825,7 @@ literal|4
 block|,
 literal|9
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* shadow-iris */
 block|{
@@ -73876,7 +73876,7 @@ literal|28
 block|,
 literal|37
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* solid-sky */
 block|{
@@ -75927,7 +75927,7 @@ literal|155
 block|,
 literal|188
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* misty-field */
 block|{
@@ -77978,7 +77978,7 @@ literal|161
 block|,
 literal|198
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* wooden-highlight */
 block|{
@@ -80029,7 +80029,7 @@ literal|76
 block|,
 literal|28
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* jet-tundra */
 block|{
@@ -82080,7 +82080,7 @@ literal|68
 block|,
 literal|56
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* pastel-lime */
 block|{
@@ -84131,7 +84131,7 @@ literal|97
 block|,
 literal|56
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* hell */
 block|{
@@ -86182,7 +86182,7 @@ literal|22
 block|,
 literal|0
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* indian-coast */
 block|{
@@ -88233,7 +88233,7 @@ literal|77
 block|,
 literal|56
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* dentist-decor */
 block|{
@@ -90284,7 +90284,7 @@ literal|68
 block|,
 literal|75
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* greenland */
 block|{
@@ -92335,7 +92335,7 @@ literal|141
 block|,
 literal|169
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* purple-dress */
 block|{
@@ -94386,7 +94386,7 @@ literal|84
 block|,
 literal|123
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* no-name */
 block|{
@@ -96437,7 +96437,7 @@ literal|44
 block|,
 literal|28
 block|}
-block|,  }
+block|,   }
 block|,
 comment|/* spring-flora */
 block|{
@@ -98488,7 +98488,7 @@ literal|67
 block|,
 literal|39
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* andi */
 block|{
@@ -100539,7 +100539,7 @@ literal|128
 block|,
 literal|100
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gig-o835 */
 block|{
@@ -102590,7 +102590,7 @@ literal|121
 block|,
 literal|122
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* rie02 */
 block|{
@@ -104641,7 +104641,7 @@ literal|125
 block|,
 literal|113
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* rie05 */
 block|{
@@ -106692,7 +106692,7 @@ literal|206
 block|,
 literal|122
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* rie11 */
 block|{
@@ -108743,7 +108743,7 @@ literal|16
 block|,
 literal|9
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* etretat.ppm */
 block|{
@@ -110794,7 +110794,7 @@ literal|99
 block|,
 literal|83
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* the-hollow-needle-at-etretat.ppm */
 block|{
@@ -112845,7 +112845,7 @@ literal|145
 block|,
 literal|128
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* rouen-cathedral-sunset.ppm */
 block|{
@@ -114896,7 +114896,7 @@ literal|158
 block|,
 literal|170
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* the-houses-of-parliament.ppm */
 block|{
@@ -116947,7 +116947,7 @@ literal|89
 block|,
 literal|101
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* starry-night.ppm */
 block|{
@@ -118998,7 +118998,7 @@ literal|93
 block|,
 literal|57
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* water-lilies-sunset.ppm */
 block|{
@@ -121049,7 +121049,7 @@ literal|102
 block|,
 literal|75
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gogh.chambre-arles.ppm*/
 block|{
@@ -123100,7 +123100,7 @@ literal|32
 block|,
 literal|5
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gogh.entrance.ppm*/
 block|{
@@ -125151,7 +125151,7 @@ literal|31
 block|,
 literal|17
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gogh.the-night-cafe.ppm*/
 block|{
@@ -127202,7 +127202,7 @@ literal|45
 block|,
 literal|33
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gogh.vegetable-montmartre.ppm*/
 block|{
@@ -129253,7 +129253,7 @@ literal|51
 block|,
 literal|30
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* matisse.bonheur-vivre.ppm*/
 block|{
@@ -131304,7 +131304,7 @@ literal|58
 block|,
 literal|48
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* matisse.flowers.ppm*/
 block|{
@@ -133355,7 +133355,7 @@ literal|54
 block|,
 literal|65
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* matisse.lecon-musique.ppm*/
 block|{
@@ -135406,7 +135406,7 @@ literal|50
 block|,
 literal|45
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* modigliani.nude-caryatid.ppm*/
 block|{
@@ -137457,7 +137457,7 @@ literal|62
 block|,
 literal|55
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* braque.instruments.ppm*/
 block|{
@@ -139508,7 +139508,7 @@ literal|12
 block|,
 literal|1
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* calcoast09.ppm*/
 block|{
@@ -141559,7 +141559,7 @@ literal|33
 block|,
 literal|53
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* dodge102.ppm*/
 block|{
@@ -143610,7 +143610,7 @@ literal|31
 block|,
 literal|31
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* ernst.anti-pope.ppm*/
 block|{
@@ -145661,7 +145661,7 @@ literal|41
 block|,
 literal|53
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* ernst.ubu-imperator.ppm*/
 block|{
@@ -147712,7 +147712,7 @@ literal|25
 block|,
 literal|3
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* fighting-forms.ppm*/
 block|{
@@ -149763,7 +149763,7 @@ literal|50
 block|,
 literal|9
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* fog25.ppm*/
 block|{
@@ -151814,7 +151814,7 @@ literal|67
 block|,
 literal|44
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* geyser27.ppm*/
 block|{
@@ -153865,7 +153865,7 @@ literal|0
 block|,
 literal|0
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gris.josette.ppm*/
 block|{
@@ -155916,7 +155916,7 @@ literal|90
 block|,
 literal|80
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* gris.landscape-ceret.ppm*/
 block|{
@@ -157967,7 +157967,7 @@ literal|42
 block|,
 literal|38
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* kandinsky.comp-9.ppm*/
 block|{
@@ -160018,7 +160018,7 @@ literal|32
 block|,
 literal|40
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* kandinsky.yellow-red-blue.ppm*/
 block|{
@@ -162069,7 +162069,7 @@ literal|2
 block|,
 literal|11
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* klee.insula-dulcamara.ppm*/
 block|{
@@ -164120,7 +164120,7 @@ literal|16
 block|,
 literal|7
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* nile.ppm*/
 block|{
@@ -166171,7 +166171,7 @@ literal|60
 block|,
 literal|100
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* picasso.jfille-chevre.ppm*/
 block|{
@@ -168222,7 +168222,7 @@ literal|1
 block|,
 literal|3
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* pollock.lavender-mist.ppm*/
 block|{
@@ -170273,7 +170273,7 @@ literal|19
 block|,
 literal|13
 block|}
-block|, }
+block|,   }
 block|,
 comment|/* yngpaint.ppm*/
 block|{
@@ -172324,14 +172324,14 @@ literal|3
 block|,
 literal|5
 block|}
+block|,   }
 block|, }
-block|,  }
 decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|get_cmap (int n,clrmap c,int cmap_len)
 name|int
+DECL|function|get_cmap (int n,clrmap c,int cmap_len)
 name|get_cmap
 parameter_list|(
 name|int
@@ -172351,9 +172351,9 @@ name|j
 decl_stmt|;
 if|if
 condition|(
-name|cmap_random
-operator|==
 name|n
+operator|==
+name|cmap_random
 condition|)
 name|n
 operator|=
@@ -172448,22 +172448,18 @@ comment|/* rgb 0 - 1,    h 0 - 6, s 0 - 1, v 0 - 1 */
 end_comment
 
 begin_function
-DECL|function|rgb2hsv (rgb,hsv)
 name|void
+DECL|function|rgb2hsv (gdouble * rgb,gdouble * hsv)
 name|rgb2hsv
 parameter_list|(
+name|gdouble
+modifier|*
 name|rgb
 parameter_list|,
+name|gdouble
+modifier|*
 name|hsv
 parameter_list|)
-name|double
-modifier|*
-name|rgb
-decl_stmt|;
-name|double
-modifier|*
-name|hsv
-decl_stmt|;
 block|{
 name|double
 name|rd
@@ -172518,41 +172514,25 @@ name|rd
 operator|>=
 name|gd
 condition|)
-block|{
-if|if
-condition|(
+name|max
+operator|=
+name|MAX
+argument_list|(
 name|rd
-operator|>=
+argument_list|,
 name|bd
-condition|)
-name|max
-operator|=
-name|rd
+argument_list|)
 expr_stmt|;
 else|else
 name|max
 operator|=
-name|bd
-expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
+name|MAX
+argument_list|(
 name|gd
-operator|>=
+argument_list|,
 name|bd
-condition|)
-name|max
-operator|=
-name|gd
+argument_list|)
 expr_stmt|;
-else|else
-name|max
-operator|=
-name|bd
-expr_stmt|;
-block|}
 comment|/* compute minimum of rd,gd,bd */
 if|if
 condition|(
@@ -172560,41 +172540,25 @@ name|rd
 operator|<=
 name|gd
 condition|)
-block|{
-if|if
-condition|(
+name|min
+operator|=
+name|MIN
+argument_list|(
 name|rd
-operator|<=
+argument_list|,
 name|bd
-condition|)
-name|min
-operator|=
-name|rd
+argument_list|)
 expr_stmt|;
 else|else
 name|min
 operator|=
-name|bd
-expr_stmt|;
-block|}
-else|else
-block|{
-if|if
-condition|(
+name|MIN
+argument_list|(
 name|gd
-operator|<=
+argument_list|,
 name|bd
-condition|)
-name|min
-operator|=
-name|gd
+argument_list|)
 expr_stmt|;
-else|else
-name|min
-operator|=
-name|bd
-expr_stmt|;
-block|}
 name|del
 operator|=
 name|max
@@ -172613,9 +172577,7 @@ literal|0.0
 condition|)
 name|s
 operator|=
-operator|(
 name|del
-operator|)
 operator|/
 name|max
 expr_stmt|;
@@ -172747,22 +172709,18 @@ comment|/* h 0 - 6, s 0 - 1, v 0 - 1    rgb 0 - 1 */
 end_comment
 
 begin_function
-DECL|function|hsv2rgb (hsv,rgb)
 name|void
+DECL|function|hsv2rgb (double * hsv,double * rgb)
 name|hsv2rgb
 parameter_list|(
+name|double
+modifier|*
 name|hsv
 parameter_list|,
+name|double
+modifier|*
 name|rgb
 parameter_list|)
-name|double
-modifier|*
-name|hsv
-decl_stmt|;
-name|double
-modifier|*
-name|rgb
-decl_stmt|;
 block|{
 name|double
 name|h
@@ -173026,18 +172984,6 @@ name|bd
 expr_stmt|;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_endif
-unit|void cmap2image(int n, FILE *f) {    int i;     fprintf(f, "P3\n16 16\n# cmap %d\n255\n", n);    for (i = 0; i< 256; i++)       fprintf(f, "%d %d %d ", 	      the_cmaps[n][i][0], 	      the_cmaps[n][i][1], 	      the_cmaps[n][i][2]);    fprintf(f, "\n"); }  void main(int argc, char **argv) {    int n = atoi(argv[1]);    cmap2image(n, stdout); }
-endif|#
-directive|endif
-end_endif
 
 end_unit
 

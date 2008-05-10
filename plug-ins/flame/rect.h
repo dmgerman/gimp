@@ -22,7 +22,7 @@ value|256
 end_define
 
 begin_typedef
-DECL|struct|__anon2bb913560108
+DECL|struct|__anon297f02310108
 typedef|typedef
 struct|struct
 block|{
