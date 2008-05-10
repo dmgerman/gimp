@@ -186,13 +186,13 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"windows-new-dock-menu"
+literal|"windows-docks-menu"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Create New Doc_k"
+literal|"Doc_ks"
 argument_list|)
 block|}
 block|,
