@@ -116,6 +116,10 @@ DECL|member|sort_func
 name|GCompareFunc
 name|sort_func
 decl_stmt|;
+DECL|member|append
+name|gboolean
+name|append
+decl_stmt|;
 block|}
 struct|;
 end_struct
