@@ -62,7 +62,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"gtm"
+value|"html-table"
 end_define
 
 begin_comment
@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fad3730108
+DECL|struct|__anon29a8b8f70108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -103,11 +103,11 @@ literal|256
 index|]
 decl_stmt|;
 DECL|member|fulldoc
-name|gint
+name|gboolean
 name|fulldoc
 decl_stmt|;
 DECL|member|caption
-name|gint
+name|gboolean
 name|caption
 decl_stmt|;
 DECL|member|border
@@ -115,11 +115,11 @@ name|gint
 name|border
 decl_stmt|;
 DECL|member|spantags
-name|gint
+name|gboolean
 name|spantags
 decl_stmt|;
 DECL|member|tdcomp
-name|gint
+name|gboolean
 name|tdcomp
 decl_stmt|;
 DECL|member|cellpadding
@@ -159,19 +159,19 @@ comment|/* cell width text */
 literal|""
 block|,
 comment|/* cell height text */
-literal|1
+name|TRUE
 block|,
 comment|/* fulldoc */
-literal|0
+name|FALSE
 block|,
 comment|/* caption */
 literal|2
 block|,
 comment|/* border */
-literal|0
+name|FALSE
 block|,
 comment|/* spantags */
-literal|0
+name|FALSE
 block|,
 comment|/* tdcomp */
 literal|4
@@ -2992,6 +2992,7 @@ name|buf2
 parameter_list|)
 block|{
 return|return
+operator|(
 name|buffer
 index|[
 literal|0
@@ -3021,6 +3022,7 @@ name|buf2
 index|[
 literal|2
 index|]
+operator|)
 return|;
 block|}
 end_function
