@@ -4223,7 +4223,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_RESPONSE_OK
+name|GTK_RESPONSE_ACCEPT
 case|:
 name|gimp_text_tool_connect
 argument_list|(
@@ -4234,6 +4234,25 @@ argument_list|,
 name|layer
 operator|->
 name|text
+argument_list|)
+expr_stmt|;
+comment|/*  cause the text layer to be rerendered  */
+if|if
+condition|(
+name|text_tool
+operator|->
+name|proxy
+condition|)
+name|g_object_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|text_tool
+operator|->
+name|proxy
+argument_list|)
+argument_list|,
+literal|"text"
 argument_list|)
 expr_stmt|;
 name|gimp_text_tool_editor
@@ -4350,13 +4369,12 @@ name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|tool
-operator|->
-name|tool_info
-operator|->
-name|help_id
+name|NULL
 argument_list|,
-name|GTK_STOCK_NEW
+name|_
+argument_list|(
+literal|"Create _New Layer"
+argument_list|)
 argument_list|,
 name|RESPONSE_NEW
 argument_list|,
@@ -4366,7 +4384,7 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|GTK_STOCK_EDIT
 argument_list|,
-name|GTK_RESPONSE_OK
+name|GTK_RESPONSE_ACCEPT
 argument_list|,
 name|NULL
 argument_list|)
