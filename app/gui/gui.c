@@ -270,7 +270,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"actions/dialogs-commands.h"
+file|"actions/windows-commands.h"
 end_include
 
 begin_include
@@ -2168,7 +2168,7 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|dialogs_show_toolbox
+name|windows_show_toolbox
 argument_list|()
 expr_stmt|;
 comment|/*  move keyboard focus to the display  */
@@ -2973,7 +2973,7 @@ argument_list|(
 name|displays
 argument_list|)
 condition|)
-name|dialogs_show_toolbox
+name|windows_show_toolbox
 argument_list|()
 expr_stmt|;
 block|}

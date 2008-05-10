@@ -6,57 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__DIALOGS_COMMANDS_H__
+name|__WINDOWS_COMMANDS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__DIALOGS_COMMANDS_H__
+DECL|macro|__WINDOWS_COMMANDS_H__
 define|#
 directive|define
-name|__DIALOGS_COMMANDS_H__
+name|__WINDOWS_COMMANDS_H__
 end_define
 
 begin_function_decl
 name|void
-name|dialogs_create_toplevel_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|dialogs_create_dockable_cmd_callback
-parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|value
-parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|dialogs_create_lc_cmd_callback
+name|windows_show_toolbox_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -70,7 +32,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_create_data_cmd_callback
+name|windows_show_display_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -84,14 +46,9 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|dialogs_create_stuff_cmd_callback
+name|windows_show_toolbox
 parameter_list|(
-name|GtkAction
-modifier|*
-name|action
-parameter_list|,
-name|gpointer
-name|data
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -102,7 +59,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __DIALOGS_COMMANDS_H__ */
+comment|/* __WINDOWS_COMMANDS_H__ */
 end_comment
 
 end_unit

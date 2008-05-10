@@ -354,6 +354,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"windows-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -921,6 +927,21 @@ block|,
 name|view_actions_setup
 block|,
 name|view_actions_update
+block|}
+block|,
+block|{
+literal|"windows"
+block|,
+name|N_
+argument_list|(
+literal|"Windows"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|windows_actions_setup
+block|,
+name|windows_actions_update
 block|}
 block|}
 decl_stmt|;

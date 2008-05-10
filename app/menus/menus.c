@@ -324,6 +324,8 @@ literal|"tools"
 argument_list|,
 literal|"dialogs"
 argument_list|,
+literal|"windows"
+argument_list|,
 literal|"plug-in"
 argument_list|,
 literal|"quick-mask"
@@ -379,6 +381,8 @@ literal|"vectors"
 argument_list|,
 literal|"tools"
 argument_list|,
+literal|"windows"
+argument_list|,
 literal|"dialogs"
 argument_list|,
 literal|"plug-in"
@@ -415,6 +419,8 @@ argument_list|,
 literal|"vectors"
 argument_list|,
 literal|"tools"
+argument_list|,
+literal|"windows"
 argument_list|,
 literal|"dialogs"
 argument_list|,
