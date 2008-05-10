@@ -3133,6 +3133,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_rectangle_select_tool_update_option_defaults
+argument_list|(
+name|rect_sel_tool
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|undo
