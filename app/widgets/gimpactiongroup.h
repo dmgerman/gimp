@@ -816,7 +816,7 @@ modifier|*
 name|action_name
 parameter_list|,
 name|gboolean
-name|is_important
+name|hide_empty
 parameter_list|)
 function_decl|;
 end_function_decl
