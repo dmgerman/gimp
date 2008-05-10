@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d5e8f30103
+DECL|enum|__anon295122760103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -76,6 +76,13 @@ init|=
 literal|1
 operator|<<
 literal|7
+block|,
+DECL|enumerator|GIMP_LOG_SHADOW_TILES
+name|GIMP_LOG_SHADOW_TILES
+init|=
+literal|1
+operator|<<
+literal|8
 DECL|typedef|GimpLogFlags
 block|}
 name|GimpLogFlags
@@ -281,6 +288,14 @@ define|#
 directive|define
 name|IMAGE_SCALE
 value|GIMP_LOG_IMAGE_SCALE
+end_define
+
+begin_define
+DECL|macro|SHADOW_TILES
+define|#
+directive|define
+name|SHADOW_TILES
+value|GIMP_LOG_SHADOW_TILES
 end_define
 
 begin_if

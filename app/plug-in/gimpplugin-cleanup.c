@@ -87,6 +87,12 @@ directive|include
 file|"gimppluginprocedure.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_typedef
 DECL|typedef|GimpPlugInCleanupImage
 typedef|typedef
@@ -1248,12 +1254,37 @@ operator|->
 name|shadow_tiles
 condition|)
 block|{
-if|#
-directive|if
-literal|0
-block|GimpProcedure *proc = proc_frame->procedure;        g_printerr ("Plug-In '%s' didn't free shadow tiles of drawable '%s'.\n",                   gimp_plug_in_procedure_get_label (GIMP_PLUG_IN_PROCEDURE (proc)),                   gimp_object_get_name (GIMP_OBJECT (item)));
-endif|#
-directive|endif
+name|GimpProcedure
+modifier|*
+name|proc
+init|=
+name|proc_frame
+operator|->
+name|procedure
+decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|SHADOW_TILES
+argument_list|,
+literal|"Freeing shadow tiles of drawable '%s' on behalf of '%s'."
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_plug_in_procedure_get_label
+argument_list|(
+name|GIMP_PLUG_IN_PROCEDURE
+argument_list|(
+name|proc
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_free_shadow_tiles
 argument_list|(
 name|GIMP_DRAWABLE

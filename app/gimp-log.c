@@ -106,6 +106,12 @@ literal|"image-scale"
 block|,
 name|GIMP_LOG_IMAGE_SCALE
 block|}
+block|,
+block|{
+literal|"shadow-tiles"
+block|,
+name|GIMP_LOG_SHADOW_TILES
+block|}
 block|}
 decl_stmt|;
 name|gimp_log_flags
