@@ -682,9 +682,6 @@ case|:
 case|case
 name|GDK_BackSpace
 case|:
-case|case
-name|GDK_Delete
-case|:
 break|break;
 case|case
 name|GDK_Escape
@@ -4396,9 +4393,6 @@ name|GDK_ISO_Enter
 case|:
 case|case
 name|GDK_BackSpace
-case|:
-case|case
-name|GDK_Delete
 case|:
 case|case
 name|GDK_Escape

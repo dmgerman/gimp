@@ -2175,9 +2175,6 @@ return|return
 name|TRUE
 return|;
 case|case
-name|GDK_Delete
-case|:
-case|case
 name|GDK_BackSpace
 case|:
 name|gimp_transform_tool_response
