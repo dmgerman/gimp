@@ -40,6 +40,18 @@ file|"gimpdisplayshell-coords.h"
 end_include
 
 begin_comment
+comment|/* Velocity unit is screen pixels per millisecond we pass to tools as 1. */
+end_comment
+
+begin_define
+DECL|macro|VELOCITY_UNIT
+define|#
+directive|define
+name|VELOCITY_UNIT
+value|3.0
+end_define
+
+begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -1020,14 +1032,35 @@ expr_stmt|;
 block|}
 else|else
 block|{
+comment|/* We need to calculate the velocity in screen coordinates            * for human interaction            */
+name|gdouble
+name|screen_distance
+init|=
+operator|(
+name|coords
+operator|->
+name|distance
+operator|*
+name|MIN
+argument_list|(
+name|shell
+operator|->
+name|scale_x
+argument_list|,
+name|shell
+operator|->
+name|scale_y
+argument_list|)
+operator|)
+decl_stmt|;
+comment|/* Calculate raw valocity */
 name|coords
 operator|->
 name|velocity
 operator|=
 operator|(
-name|coords
-operator|->
-name|distance
+operator|(
+name|screen_distance
 operator|/
 operator|(
 name|gdouble
@@ -1037,9 +1070,10 @@ operator|->
 name|delta_time
 operator|)
 operator|/
-literal|10
+name|VELOCITY_UNIT
+operator|)
 expr_stmt|;
-comment|/* A little smooth on this too, feels better in tools this way. */
+comment|/* Adding velocity dependent smooth, feels better in tools this way. */
 name|coords
 operator|->
 name|velocity
@@ -1054,14 +1088,28 @@ operator|*
 operator|(
 literal|1
 operator|-
+name|MIN
+argument_list|(
 name|SMOOTH_FACTOR
+argument_list|,
+name|coords
+operator|->
+name|velocity
+argument_list|)
 operator|)
 operator|+
 name|coords
 operator|->
 name|velocity
 operator|*
+name|MIN
+argument_list|(
 name|SMOOTH_FACTOR
+argument_list|,
+name|coords
+operator|->
+name|velocity
+argument_list|)
 operator|)
 expr_stmt|;
 comment|/* Speed needs upper limit */
