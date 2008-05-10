@@ -78,7 +78,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e6950108
+DECL|struct|__anon2c3ab6540108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -112,7 +112,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e6950208
+DECL|struct|__anon2c3ab6540208
 block|{
 DECL|member|n_pages
 name|gint
@@ -663,7 +663,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c53e6950303
+DECL|enum|__anon2c3ab6540303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -2466,6 +2466,19 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/* XXX: Remove conditional when we depend on poppler 0.8.0, but also    * add configure check to make sure POPPLER_WITH_GDK is enabled!    */
+ifdef|#
+directive|ifdef
+name|POPPLER_WITH_GDK
+name|pixbuf
+operator|=
+name|poppler_page_get_thumbnail_pixbuf
+argument_list|(
+name|page
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|pixbuf
 operator|=
 name|poppler_page_get_thumbnail
@@ -2473,6 +2486,8 @@ argument_list|(
 name|page
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 if|if
 condition|(
 operator|!
@@ -2570,7 +2585,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e6950408
+DECL|struct|__anon2c3ab6540408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2595,7 +2610,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c53e6950508
+DECL|struct|__anon2c3ab6540508
 block|{
 DECL|member|selector
 name|GimpPageSelector
