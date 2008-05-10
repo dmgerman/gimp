@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c122a0d0103
+DECL|enum|__anon2a0d1bb30103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2872,10 +2872,9 @@ name|renderer
 operator|->
 name|height
 decl_stmt|;
-name|cairo_translate
-argument_list|(
-name|cr
-argument_list|,
+name|gint
+name|offset_x
+init|=
 name|area
 operator|->
 name|x
@@ -2889,7 +2888,10 @@ name|width
 operator|)
 operator|/
 literal|2
-argument_list|,
+decl_stmt|;
+name|gint
+name|offset_y
+init|=
 name|area
 operator|->
 name|y
@@ -2903,6 +2905,14 @@ name|height
 operator|)
 operator|/
 literal|2
+decl_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|cairo_rectangle
@@ -2982,6 +2992,17 @@ expr_stmt|;
 name|cairo_fill
 argument_list|(
 name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+operator|-
+name|offset_x
+argument_list|,
+operator|-
+name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
