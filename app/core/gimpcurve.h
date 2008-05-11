@@ -341,7 +341,7 @@ modifier|*
 name|curve
 parameter_list|,
 name|gdouble
-name|x
+name|value
 parameter_list|)
 function_decl|;
 end_function_decl

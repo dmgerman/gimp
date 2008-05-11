@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f5c2c0103
+DECL|enum|__anon2b79b2590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2858,7 +2858,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_curve_map (GimpCurve * curve,gdouble x)
+DECL|function|gimp_curve_map (GimpCurve * curve,gdouble value)
 name|gimp_curve_map
 parameter_list|(
 name|GimpCurve
@@ -2866,12 +2866,9 @@ modifier|*
 name|curve
 parameter_list|,
 name|gdouble
-name|x
+name|value
 parameter_list|)
 block|{
-name|gdouble
-name|value
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CURVE
@@ -2884,31 +2881,29 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|x
+name|value
 operator|<
 literal|0.0
 condition|)
 block|{
-name|value
-operator|=
+return|return
 name|curve
 operator|->
 name|samples
 index|[
 literal|0
 index|]
-expr_stmt|;
+return|;
 block|}
 elseif|else
 if|if
 condition|(
-name|x
+name|value
 operator|>=
 literal|1.0
 condition|)
 block|{
-name|value
-operator|=
+return|return
 name|curve
 operator|->
 name|samples
@@ -2919,7 +2914,7 @@ name|n_samples
 operator|-
 literal|1
 index|]
-expr_stmt|;
+return|;
 block|}
 else|else
 comment|/* interpolate the curve */
@@ -2929,7 +2924,7 @@ name|index
 init|=
 name|floor
 argument_list|(
-name|x
+name|value
 operator|*
 call|(
 name|gdouble
@@ -2946,7 +2941,7 @@ decl_stmt|;
 name|gdouble
 name|f
 init|=
-name|x
+name|value
 operator|*
 call|(
 name|gdouble
@@ -2961,9 +2956,7 @@ argument_list|)
 operator|-
 name|index
 decl_stmt|;
-name|value
-operator|=
-operator|(
+return|return
 operator|(
 literal|1.0
 operator|-
@@ -2987,12 +2980,8 @@ name|index
 operator|+
 literal|1
 index|]
-operator|)
-expr_stmt|;
-block|}
-return|return
-name|value
 return|;
+block|}
 block|}
 end_function
 
