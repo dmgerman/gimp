@@ -1046,6 +1046,17 @@ argument_list|,
 name|action_name
 argument_list|)
 expr_stmt|;
+name|g_object_set
+argument_list|(
+name|action
+argument_list|,
+literal|"ellipsize"
+argument_list|,
+name|PANGO_ELLIPSIZE_END
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT

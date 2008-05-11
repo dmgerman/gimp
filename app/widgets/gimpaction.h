@@ -118,6 +118,10 @@ name|GimpViewable
 modifier|*
 name|viewable
 decl_stmt|;
+DECL|member|ellipsize
+name|PangoEllipsizeMode
+name|ellipsize
+decl_stmt|;
 block|}
 struct|;
 end_struct
