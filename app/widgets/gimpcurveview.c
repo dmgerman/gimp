@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcurve-map.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpmarshal.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a066ac20103
+DECL|enum|__anon293d71560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
