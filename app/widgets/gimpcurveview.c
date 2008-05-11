@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3998750103
+DECL|enum|__anon2a066ac20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1609,7 +1609,7 @@ name|y
 operator|=
 literal|1.0
 operator|-
-name|gimp_curve_map
+name|gimp_curve_map_value
 argument_list|(
 name|view
 operator|->
@@ -1668,7 +1668,7 @@ name|y
 operator|=
 literal|1.0
 operator|-
-name|gimp_curve_map
+name|gimp_curve_map_value
 argument_list|(
 name|view
 operator|->

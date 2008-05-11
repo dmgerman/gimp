@@ -1129,7 +1129,7 @@ name|closest
 argument_list|,
 name|value
 argument_list|,
-name|gimp_curve_map
+name|gimp_curve_map_value
 argument_list|(
 name|curve
 argument_list|,
@@ -1216,7 +1216,7 @@ name|closest
 argument_list|,
 name|value
 argument_list|,
-name|gimp_curve_map
+name|gimp_curve_map_value
 argument_list|(
 name|curve
 argument_list|,
