@@ -488,7 +488,7 @@ argument_list|(
 name|_
 argument_list|(
 literal|"Web browser not specified.\n"
-literal|"Please specify a web browser using the Preferences Dialog."
+literal|"Please specify a web browser using the Preferences dialog."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -571,7 +571,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not parse specified web browser command:\n%s"
+literal|"Could not parse the web browser command specified in the "
+literal|"Preferences dialog:\n\n%s"
 argument_list|)
 argument_list|,
 name|error
@@ -620,7 +621,8 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Could not execute specified web browser:\n%s"
+literal|"Could not execute the web browser specified in the "
+literal|"Preferences dialog:\n\n%s"
 argument_list|)
 argument_list|,
 name|error
