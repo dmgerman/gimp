@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd4c540103
+DECL|enum|__anon290b3b920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1374,9 +1374,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image
-operator|&&
-operator|(
 name|GIMP_IS_VIEW
 argument_list|(
 name|image
@@ -1386,7 +1383,6 @@ name|GIMP_IS_COLOR_AREA
 argument_list|(
 name|image
 argument_list|)
-operator|)
 condition|)
 block|{
 name|gtk_image_menu_item_set_image
