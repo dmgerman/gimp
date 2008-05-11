@@ -116,6 +116,41 @@ end_function
 
 begin_function
 name|void
+DECL|function|windows_show_dock_cmd_callback (GtkAction * action,gpointer data)
+name|windows_show_dock_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GtkWindow
+modifier|*
+name|dock
+init|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|action
+argument_list|)
+argument_list|,
+literal|"dock"
+argument_list|)
+decl_stmt|;
+name|gtk_window_present
+argument_list|(
+name|dock
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|windows_show_toolbox (void)
 name|windows_show_toolbox
 parameter_list|(
