@@ -1960,13 +1960,6 @@ name|redo
 operator|=
 name|NULL
 expr_stmt|;
-name|gimp_rectangle_select_tool_update_option_defaults
-argument_list|(
-name|rect_sel_tool
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -3392,6 +3385,13 @@ argument_list|(
 name|tool
 operator|->
 name|control
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_rectangle_select_tool_update_option_defaults
+argument_list|(
+name|rect_sel_tool
 argument_list|,
 name|FALSE
 argument_list|)

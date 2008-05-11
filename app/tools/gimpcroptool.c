@@ -373,6 +373,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_crop_tool_rectangle_change_complete
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rect_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_expr_stmt
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
@@ -600,6 +612,12 @@ operator|->
 name|cancel
 operator|=
 name|gimp_crop_tool_cancel
+expr_stmt|;
+name|iface
+operator|->
+name|rectangle_change_complete
+operator|=
+name|gimp_crop_tool_rectangle_change_complete
 expr_stmt|;
 block|}
 end_function
@@ -1000,16 +1018,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_crop_tool_update_option_defaults
-argument_list|(
-name|GIMP_CROP_TOOL
-argument_list|(
-name|tool
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1245,6 +1253,37 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_crop_tool_rectangle_change_complete:  * @rectangle:  *  * Returns:   **/
+end_comment
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_crop_tool_rectangle_change_complete (GimpRectangleTool * rectangle)
+name|gimp_crop_tool_rectangle_change_complete
+parameter_list|(
+name|GimpRectangleTool
+modifier|*
+name|rectangle
+parameter_list|)
+block|{
+name|gimp_crop_tool_update_option_defaults
+argument_list|(
+name|GIMP_CROP_TOOL
+argument_list|(
+name|rectangle
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_crop_tool_update_option_defaults:  * @crop_tool:  * @ignore_pending: %TRUE to ignore any pending crop rectangle.  *  * Sets the default Fixed: Aspect ratio and Fixed: Size option  * properties.  */
 end_comment
 
@@ -1448,13 +1487,6 @@ name|gimp_crop_tool_get_constraint
 argument_list|(
 name|crop_tool
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_crop_tool_update_option_defaults
-argument_list|(
-name|crop_tool
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
