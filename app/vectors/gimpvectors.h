@@ -353,7 +353,7 @@ name|ret_coords
 parameter_list|)
 function_decl|;
 DECL|member|make_bezier
-name|GimpVectors
+name|GimpBezierDesc
 modifier|*
 function_decl|(
 modifier|*
@@ -815,11 +815,11 @@ comment|/* usually overloaded */
 end_comment
 
 begin_comment
-comment|/* creates a bezier approximation. */
+comment|/* creates a bezier representation. */
 end_comment
 
 begin_function_decl
-name|GimpVectors
+name|GimpBezierDesc
 modifier|*
 name|gimp_vectors_make_bezier
 parameter_list|(

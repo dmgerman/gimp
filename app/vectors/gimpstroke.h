@@ -746,7 +746,7 @@ name|stroke
 parameter_list|)
 function_decl|;
 DECL|member|make_bezier
-name|GimpStroke
+name|GimpBezierDesc
 modifier|*
 function_decl|(
 modifier|*
@@ -933,19 +933,6 @@ parameter_list|,
 name|gboolean
 modifier|*
 name|ret_closed
-parameter_list|)
-function_decl|;
-DECL|member|art_stroke
-name|void
-function_decl|(
-modifier|*
-name|art_stroke
-function_decl|)
-parameter_list|(
-specifier|const
-name|GimpStroke
-modifier|*
-name|stroke
 parameter_list|)
 function_decl|;
 block|}
@@ -1594,7 +1581,7 @@ comment|/* creates a bezier approximation. */
 end_comment
 
 begin_function_decl
-name|GimpStroke
+name|GimpBezierDesc
 modifier|*
 name|gimp_stroke_make_bezier
 parameter_list|(
