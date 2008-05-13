@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c012eb30103
+DECL|enum|__anon2b0af4d70103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -388,9 +388,10 @@ name|dialog_name
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SESSION_INFO
+argument_list|(
 name|info
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1341,9 +1342,10 @@ name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SESSION_INFO
+argument_list|(
 name|info
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -1712,9 +1714,10 @@ name|use_size
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SESSION_INFO
+argument_list|(
 name|info
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -2044,9 +2047,10 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
+name|GIMP_IS_SESSION_INFO
+argument_list|(
 name|info
-operator|!=
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
