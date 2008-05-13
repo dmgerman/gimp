@@ -246,6 +246,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpCurvesConfig
+modifier|*
+name|gimp_levels_config_to_curves_config
+parameter_list|(
+name|GimpLevelsConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_levels_config_load_cruft
 parameter_list|(
