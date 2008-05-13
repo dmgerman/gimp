@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab9bc7a0103
+DECL|enum|__anon2c63e9520103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -720,7 +720,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|gimp_session_info_free
+name|g_object_unref
 argument_list|,
 name|NULL
 argument_list|)
@@ -3651,7 +3651,7 @@ argument_list|,
 name|session_info
 argument_list|)
 expr_stmt|;
-name|gimp_session_info_free
+name|g_object_unref
 argument_list|(
 name|session_info
 argument_list|)
