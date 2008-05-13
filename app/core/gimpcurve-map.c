@@ -64,6 +64,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|curve
+operator|->
+name|identity
+condition|)
+block|{
+return|return
+name|value
+return|;
+block|}
+if|if
+condition|(
 name|value
 operator|<
 literal|0.0

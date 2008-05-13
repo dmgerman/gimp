@@ -131,6 +131,11 @@ name|gdouble
 modifier|*
 name|samples
 decl_stmt|;
+DECL|member|identity
+name|gboolean
+name|identity
+decl_stmt|;
+comment|/* whether the curve is an identiy mapping */
 block|}
 struct|;
 end_struct
@@ -328,6 +333,17 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_curve_is_identity
+parameter_list|(
+name|GimpCurve
+modifier|*
+name|curve
 parameter_list|)
 function_decl|;
 end_function_decl

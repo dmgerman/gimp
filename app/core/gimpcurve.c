@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27deb70a0103
+DECL|enum|__anon2a9bb1fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -647,7 +647,14 @@ name|GimpCurve
 modifier|*
 name|curve
 parameter_list|)
-block|{ }
+block|{
+name|curve
+operator|->
+name|identity
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1182,12 +1189,24 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|gimp_curve_calculate
-argument_list|(
+name|GimpCurve
+modifier|*
+name|curve
+init|=
 name|GIMP_CURVE
 argument_list|(
 name|data
 argument_list|)
+decl_stmt|;
+name|curve
+operator|->
+name|identity
+operator|=
+name|FALSE
+expr_stmt|;
+name|gimp_curve_calculate
+argument_list|(
+name|curve
 argument_list|)
 expr_stmt|;
 name|GIMP_DATA_CLASS
@@ -1594,6 +1613,12 @@ argument_list|(
 name|curve
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|curve
+operator|->
+name|identity
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 end_function
@@ -2856,6 +2881,38 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_curve_is_identity:  * @curve: a #GimpCurve object  *  * If this function returns %TRUE, then the curve maps each value to  * itself. If it returns %FALSE, then this assumption can not be made.  *  * Return value: %TRUE if the curve is an identity mapping, %FALSE otherwise.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_curve_is_identity (GimpCurve * curve)
+name|gimp_curve_is_identity
+parameter_list|(
+name|GimpCurve
+modifier|*
+name|curve
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CURVE
+argument_list|(
+name|curve
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|curve
+operator|->
+name|identity
+return|;
+block|}
+end_function
+
 begin_function
 name|void
 DECL|function|gimp_curve_get_uchar (GimpCurve * curve,gint n_samples,guchar * samples)
@@ -2956,11 +3013,11 @@ name|curve
 parameter_list|)
 block|{
 name|gint
-name|i
-decl_stmt|;
-name|gint
 modifier|*
 name|points
+decl_stmt|;
+name|gint
+name|i
 decl_stmt|;
 name|gint
 name|num_pts
@@ -3177,6 +3234,15 @@ operator|=
 name|point
 operator|.
 name|y
+expr_stmt|;
+block|}
+else|else
+block|{
+name|curve
+operator|->
+name|identity
+operator|=
+name|TRUE
 expr_stmt|;
 block|}
 for|for
