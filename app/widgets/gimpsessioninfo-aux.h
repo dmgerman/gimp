@@ -105,9 +105,9 @@ name|GimpConfigWriter
 modifier|*
 name|writer
 parameter_list|,
-name|GtkWidget
+name|GList
 modifier|*
-name|widget
+name|aux_info
 parameter_list|)
 function_decl|;
 end_function_decl

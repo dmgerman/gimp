@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63e9520103
+DECL|enum|__anon2be42dcb0103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -4669,6 +4669,17 @@ name|session_managed
 operator|)
 condition|)
 continue|continue;
+if|if
+condition|(
+name|info
+operator|->
+name|widget
+condition|)
+name|gimp_session_info_get_info
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
 name|gimp_session_info_serialize
 argument_list|(
 name|writer
@@ -4681,6 +4692,17 @@ name|factory
 argument_list|)
 operator|->
 name|name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|info
+operator|->
+name|widget
+condition|)
+name|gimp_session_info_clear_info
+argument_list|(
+name|info
 argument_list|)
 expr_stmt|;
 block|}
@@ -4740,6 +4762,7 @@ name|info
 operator|->
 name|open
 condition|)
+block|{
 name|gimp_session_info_restore
 argument_list|(
 name|info
@@ -4747,6 +4770,12 @@ argument_list|,
 name|factory
 argument_list|)
 expr_stmt|;
+name|gimp_session_info_clear_info
+argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
