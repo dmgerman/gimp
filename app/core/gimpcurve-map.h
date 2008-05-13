@@ -36,7 +36,7 @@ name|gimp_curve_map_pixels
 parameter_list|(
 name|GimpCurve
 modifier|*
-name|curve_all
+name|curve_colors
 parameter_list|,
 name|GimpCurve
 modifier|*
