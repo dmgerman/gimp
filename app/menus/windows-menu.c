@@ -808,7 +808,7 @@ name|action_path
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"%s/Windows/Docks/Docks"
+literal|"%s/Windows/Docks"
 argument_list|,
 name|ui_path
 argument_list|)
