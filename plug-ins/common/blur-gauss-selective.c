@@ -106,7 +106,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29813eb90108
+DECL|struct|__anon2c87fba70108
 block|{
 DECL|member|radius
 name|gdouble
