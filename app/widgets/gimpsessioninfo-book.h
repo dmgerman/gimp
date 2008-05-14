@@ -29,11 +29,6 @@ DECL|member|current_page
 name|gint
 name|current_page
 decl_stmt|;
-DECL|member|widget
-name|GtkWidget
-modifier|*
-name|widget
-decl_stmt|;
 comment|/*  list of GimpSessionInfoDockable  */
 DECL|member|dockables
 name|GList
@@ -112,7 +107,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpDockbook
+modifier|*
 name|gimp_session_info_book_restore
 parameter_list|(
 name|GimpSessionInfoBook
