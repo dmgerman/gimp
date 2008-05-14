@@ -260,7 +260,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Recent Doc_ks"
+literal|"_Recently Closed Docks"
 argument_list|)
 block|}
 block|,
