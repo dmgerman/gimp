@@ -127,19 +127,6 @@ value|(GIMP_RGB_LUMINANCE (PIX[0], PIX[1], PIX[2]) + 0.5)
 end_define
 
 begin_define
-DECL|macro|OFFSETOF (t,f)
-define|#
-directive|define
-name|OFFSETOF
-parameter_list|(
-name|t
-parameter_list|,
-name|f
-parameter_list|)
-value|((int) ((char*)&((t*) 0)->f))
-end_define
-
-begin_define
 DECL|macro|RESPONSE_RESCAN
 define|#
 directive|define
@@ -365,7 +352,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd353740103
+DECL|enum|__anon278217c10103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -392,7 +379,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd353740203
+DECL|enum|__anon278217c10203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -413,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740308
+DECL|struct|__anon278217c10308
 block|{
 DECL|member|name
 name|gchar
@@ -554,7 +541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740408
+DECL|struct|__anon278217c10408
 block|{
 DECL|member|fp
 name|FILE
@@ -574,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd353740503
+DECL|enum|__anon278217c10503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -602,7 +589,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740608
+DECL|struct|__anon278217c10608
 block|{
 DECL|member|init
 name|gint
@@ -624,7 +611,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bd353740708
+DECL|struct|__anon278217c10708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -703,7 +690,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740808
+DECL|struct|__anon278217c10808
 block|{
 DECL|member|init
 name|gint
@@ -773,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740908
+DECL|struct|__anon278217c10908
 block|{
 DECL|member|x0
 name|gdouble
@@ -800,7 +787,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740a08
+DECL|struct|__anon278217c10a08
 block|{
 DECL|member|init
 name|gint
@@ -970,7 +957,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740b08
+DECL|struct|__anon278217c10b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -997,7 +984,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740c08
+DECL|struct|__anon278217c10c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1238,7 +1225,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740d08
+DECL|struct|__anon278217c10d08
 block|{
 DECL|member|tag
 name|gint
@@ -1315,7 +1302,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd353740e08
+DECL|struct|__anon278217c10e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8515,9 +8502,9 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-DECL|struct|__anon2bd353740f08
 specifier|static
 struct|struct
+DECL|struct|__anon278217c10f08
 block|{
 DECL|member|values
 name|guchar
@@ -8548,14 +8535,14 @@ name|calc
 operator|.
 name|glow_radial
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
 name|glow_radial
 argument_list|)
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8571,7 +8558,7 @@ name|calc
 operator|.
 name|glow_angular
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8589,7 +8576,7 @@ name|calc
 operator|.
 name|glow_angular_size
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8607,14 +8594,14 @@ name|calc
 operator|.
 name|rays_radial
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
 name|rays_radial
 argument_list|)
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8630,7 +8617,7 @@ name|calc
 operator|.
 name|rays_angular
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8648,7 +8635,7 @@ name|calc
 operator|.
 name|rays_angular_size
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8666,14 +8653,14 @@ name|calc
 operator|.
 name|sflare_radial
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
 name|sflare_radial
 argument_list|)
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8689,7 +8676,7 @@ name|calc
 operator|.
 name|sflare_sizefac
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8707,7 +8694,7 @@ name|calc
 operator|.
 name|sflare_probability
 block|,
-name|OFFSETOF
+name|G_STRUCT_OFFSET
 argument_list|(
 name|GFlare
 argument_list|,
@@ -8718,7 +8705,7 @@ literal|0
 block|,
 name|TRUE
 block|}
-block|,   }
+block|}
 struct|;
 name|GFlare
 modifier|*
@@ -14477,7 +14464,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2bd353741008
+DECL|struct|__anon278217c11008
 block|{
 DECL|member|label
 specifier|const
