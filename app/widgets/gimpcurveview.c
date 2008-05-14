@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d71560103
+DECL|enum|__anon2c877f4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2858,6 +2858,9 @@ decl_stmt|;
 name|gdouble
 name|y
 decl_stmt|;
+name|gdouble
+name|point_x
+decl_stmt|;
 name|gint
 name|closest_point
 decl_stmt|;
@@ -2977,9 +2980,6 @@ name|curve
 argument_list|)
 condition|)
 block|{
-name|gdouble
-name|point_x
-decl_stmt|;
 case|case
 name|GIMP_CURVE_SMOOTH
 case|:
@@ -2999,7 +2999,7 @@ argument_list|,
 name|closest_point
 argument_list|,
 operator|&
-name|x
+name|point_x
 argument_list|,
 name|NULL
 argument_list|)
