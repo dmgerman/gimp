@@ -11490,7 +11490,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b6709bc0103
+DECL|enum|__anon2aed5fda0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -18260,6 +18260,33 @@ argument_list|)
 condition|)
 block|{
 comment|/* named let */
+if|if
+condition|(
+operator|!
+name|is_pair
+argument_list|(
+name|cadr
+argument_list|(
+name|sc
+operator|->
+name|code
+argument_list|)
+argument_list|)
+condition|)
+name|Error_1
+argument_list|(
+name|sc
+argument_list|,
+literal|"Bad syntax of binding spec in let :"
+argument_list|,
+name|car
+argument_list|(
+name|sc
+operator|->
+name|code
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|x
@@ -28344,7 +28371,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b6709bc0208
+DECL|struct|__anon2aed5fda0208
 specifier|static
 struct|struct
 block|{
@@ -28579,7 +28606,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b6709bc0308
+DECL|struct|__anon2aed5fda0308
 typedef|typedef
 struct|struct
 block|{
