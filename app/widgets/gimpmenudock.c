@@ -2128,7 +2128,7 @@ name|g_string_append
 argument_list|(
 name|title
 argument_list|,
-literal|" | "
+literal|" - "
 argument_list|)
 expr_stmt|;
 block|}

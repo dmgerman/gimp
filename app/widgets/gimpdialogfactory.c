@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdialogfactory.c  * Copyright (C) 2001 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpdialogfactory.c  * Copyright (C) 2001-2008 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -25,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"libgimpconfig/gimpconfig.h"
 end_include
 
 begin_include
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be42dcb0103
+DECL|enum|__anon2c2529220103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -3204,6 +3210,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|entry
 operator|&&
 name|entry
@@ -3211,6 +3218,12 @@ operator|->
 name|session_managed
 operator|&&
 name|toplevel
+operator|)
+operator|||
+name|GIMP_IS_DOCK
+argument_list|(
+name|dialog
+argument_list|)
 condition|)
 name|g_signal_connect_object
 argument_list|(
@@ -4490,8 +4503,16 @@ condition|(
 operator|!
 name|dialog_factory
 operator|||
+operator|(
 operator|!
 name|entry
+operator|&&
+operator|!
+name|GIMP_IS_DOCK
+argument_list|(
+name|dialog
+argument_list|)
+operator|)
 condition|)
 block|{
 name|g_warning
@@ -4571,8 +4592,12 @@ literal|"updated session info for \"%s\" from window geometry "
 literal|"(x=%d y=%d  %dx%d)"
 argument_list|,
 name|entry
+condition|?
+name|entry
 operator|->
 name|identifier
+else|:
+literal|"dock"
 argument_list|,
 name|session_info
 operator|->
@@ -4680,18 +4705,63 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-name|gimp_session_info_serialize
+name|gimp_config_writer_open
 argument_list|(
 name|writer
 argument_list|,
-name|info
+literal|"session-info"
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
 name|GIMP_OBJECT
 argument_list|(
 name|factory
 argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_string
+argument_list|(
+name|writer
+argument_list|,
+name|info
 operator|->
-name|name
+name|toplevel_entry
+condition|?
+name|info
+operator|->
+name|toplevel_entry
+operator|->
+name|identifier
+else|:
+literal|"dock"
+argument_list|)
+expr_stmt|;
+name|GIMP_CONFIG_GET_INTERFACE
+argument_list|(
+name|info
+argument_list|)
+operator|->
+name|serialize
+argument_list|(
+name|GIMP_CONFIG
+argument_list|(
+name|info
+argument_list|)
+argument_list|,
+name|writer
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_config_writer_close
+argument_list|(
+name|writer
 argument_list|)
 expr_stmt|;
 if|if

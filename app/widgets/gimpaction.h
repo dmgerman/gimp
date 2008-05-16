@@ -122,6 +122,10 @@ DECL|member|ellipsize
 name|PangoEllipsizeMode
 name|ellipsize
 decl_stmt|;
+DECL|member|max_width_chars
+name|gint
+name|max_width_chars
+decl_stmt|;
 block|}
 struct|;
 end_struct
