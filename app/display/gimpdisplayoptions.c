@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b652b0103
+DECL|enum|__anon296e47b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -324,7 +324,7 @@ literal|"show-rulers"
 argument_list|,
 name|SHOW_RULERS_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
