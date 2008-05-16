@@ -1785,6 +1785,14 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_list_reverse
+argument_list|(
+name|GIMP_LIST
+argument_list|(
+name|global_recent_docks
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
