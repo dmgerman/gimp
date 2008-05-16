@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help plug-in  * Copyright (C) 1999-2004 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Henrik Brix Andersen<brix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help plug-in  * Copyright (C) 1999-2008 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Henrik Brix Andersen<brix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
@@ -23,6 +23,12 @@ begin_include
 include|#
 directive|include
 file|<glib-object.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<gio/gio.h>
 end_include
 
 begin_include
@@ -86,6 +92,10 @@ parameter_list|,
 name|GimpHelpLocale
 modifier|*
 name|locale
+parameter_list|,
+name|GimpHelpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GError
 modifier|*
@@ -240,7 +250,7 @@ end_function
 begin_function
 name|GimpHelpLocale
 modifier|*
-DECL|function|gimp_help_domain_lookup_locale (GimpHelpDomain * domain,const gchar * locale_id)
+DECL|function|gimp_help_domain_lookup_locale (GimpHelpDomain * domain,const gchar * locale_id,GimpHelpProgress * progress)
 name|gimp_help_domain_lookup_locale
 parameter_list|(
 name|GimpHelpDomain
@@ -251,6 +261,10 @@ specifier|const
 name|gchar
 modifier|*
 name|locale_id
+parameter_list|,
+name|GimpHelpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 name|GimpHelpLocale
@@ -329,6 +343,8 @@ name|domain
 argument_list|,
 name|locale
 argument_list|,
+name|progress
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -341,7 +357,7 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_help_domain_map (GimpHelpDomain * domain,GList * help_locales,const gchar * help_id,GimpHelpLocale ** ret_locale,gboolean * fatal_error)
+DECL|function|gimp_help_domain_map (GimpHelpDomain * domain,GList * help_locales,const gchar * help_id,GimpHelpProgress * progress,GimpHelpLocale ** ret_locale,gboolean * fatal_error)
 name|gimp_help_domain_map
 parameter_list|(
 name|GimpHelpDomain
@@ -356,6 +372,10 @@ specifier|const
 name|gchar
 modifier|*
 name|help_id
+parameter_list|,
+name|GimpHelpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GimpHelpLocale
 modifier|*
@@ -453,6 +473,8 @@ operator|)
 name|list
 operator|->
 name|data
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 name|ref
@@ -498,6 +520,8 @@ operator|)
 name|list
 operator|->
 name|data
+argument_list|,
+name|progress
 argument_list|)
 expr_stmt|;
 name|ref
@@ -570,6 +594,8 @@ argument_list|(
 name|domain
 argument_list|,
 name|GIMP_HELP_DEFAULT_LOCALE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -581,27 +607,30 @@ name|domain
 argument_list|,
 name|locale
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|error
 argument_list|)
 condition|)
 block|{
-if|if
+switch|switch
 condition|(
 name|error
 operator|->
 name|code
-operator|==
-name|G_FILE_ERROR_NOENT
 condition|)
 block|{
+case|case
+name|G_IO_ERROR_NOT_FOUND
+case|:
 name|g_message
 argument_list|(
 literal|"%s\n\n%s"
 argument_list|,
 name|_
 argument_list|(
-literal|"The GIMP help files are not found."
+literal|"The GIMP user manual is not available."
 argument_list|)
 argument_list|,
 name|_
@@ -611,16 +640,19 @@ literal|"the online user manual at http://docs.gimp.org/."
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
+break|break;
+case|case
+name|G_IO_ERROR_CANCELLED
+case|:
+break|break;
+default|default:
 name|g_message
 argument_list|(
 literal|"%s\n\n%s\n\n%s"
 argument_list|,
 name|_
 argument_list|(
-literal|"There is a problem with the GIMP help files."
+literal|"There is a problem with the GIMP user manual."
 argument_list|)
 argument_list|,
 name|error
@@ -633,6 +665,7 @@ literal|"Please check your installation."
 argument_list|)
 argument_list|)
 expr_stmt|;
+break|break;
 block|}
 name|g_error_free
 argument_list|(
@@ -676,7 +709,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|domain_locale_parse (GimpHelpDomain * domain,GimpHelpLocale * locale,GError ** error)
+DECL|function|domain_locale_parse (GimpHelpDomain * domain,GimpHelpLocale * locale,GimpHelpProgress * progress,GError ** error)
 name|domain_locale_parse
 parameter_list|(
 name|GimpHelpDomain
@@ -686,6 +719,10 @@ parameter_list|,
 name|GimpHelpLocale
 modifier|*
 name|locale
+parameter_list|,
+name|GimpHelpProgress
+modifier|*
+name|progress
 parameter_list|,
 name|GError
 modifier|*
@@ -758,6 +795,8 @@ argument_list|,
 name|domain
 operator|->
 name|help_domain
+argument_list|,
+name|progress
 argument_list|,
 name|error
 argument_list|)

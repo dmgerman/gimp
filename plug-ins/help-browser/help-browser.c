@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help Browser  * Copyright (C) 1999-2004 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Henrik Brix Andersen<brix@gimp.org>  *  * Some code& ideas stolen from the GNOME help browser.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help Browser  * Copyright (C) 1999-2008 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Henrik Brix Andersen<brix@gimp.org>  *  * Some code& ideas taken from the GNOME help browser.  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -246,10 +246,10 @@ name|gimp_install_procedure
 argument_list|(
 name|GIMP_HELP_BROWSER_EXT_PROC
 argument_list|,
-literal|"Browse the GIMP help pages"
+literal|"Browse the GIMP user manual"
 argument_list|,
 literal|"A small and simple HTML browser optimized for "
-literal|"browsing the GIMP help pages."
+literal|"browsing the GIMP user manual."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>, "
 literal|"Michael Natterer<mitch@gimp.org>"
@@ -257,7 +257,7 @@ literal|"Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
 literal|"Sven Neumann, Michael Natterer& Henrik Brix Andersen"
 argument_list|,
-literal|"1999-2004"
+literal|"1999-2008"
 argument_list|,
 name|NULL
 argument_list|,
@@ -552,7 +552,7 @@ literal|"Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
 literal|"Sven Neumann, Michael Natterer& Henrik Brix Andersen"
 argument_list|,
-literal|"1999-2004"
+literal|"1999-2008"
 argument_list|,
 name|NULL
 argument_list|,
@@ -804,6 +804,8 @@ argument_list|,
 name|locales
 argument_list|,
 name|help_id
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|locale

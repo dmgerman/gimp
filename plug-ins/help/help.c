@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help plug-in  * Copyright (C) 1999-2004 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Henrik Brix Andersen<brix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * The GIMP Help plug-in  * Copyright (C) 1999-2008 Sven Neumann<sven@gimp.org>  *                         Michael Natterer<mitch@gimp.org>  *                         Henrik Brix Andersen<brix@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f9324f0108
+DECL|struct|__anon2bbfe4560108
 block|{
 DECL|member|procedure
 name|gchar
@@ -325,7 +325,7 @@ literal|"Henrik Brix Andersen<brix@gimp.org>"
 argument_list|,
 literal|"Sven Neumann, Michael Natterer& Henrik Brix Andersen"
 argument_list|,
-literal|"1999-2004"
+literal|"1999-2008"
 argument_list|,
 name|NULL
 argument_list|,
@@ -602,7 +602,7 @@ literal|"Henrik Brix Andersen<brix@gimp.org"
 argument_list|,
 literal|"Sven Neumann, Michael Natterer& Henrik Brix Andersen"
 argument_list|,
-literal|"1999-2004"
+literal|"1999-2008"
 argument_list|,
 name|NULL
 argument_list|,
@@ -1019,13 +1019,6 @@ block|{
 name|GList
 modifier|*
 name|locales
-init|=
-name|gimp_help_parse_locales
-argument_list|(
-name|idle_help
-operator|->
-name|help_locales
-argument_list|)
 decl_stmt|;
 name|gchar
 modifier|*
@@ -1034,6 +1027,15 @@ decl_stmt|;
 name|gboolean
 name|fatal_error
 decl_stmt|;
+name|locales
+operator|=
+name|gimp_help_parse_locales
+argument_list|(
+name|idle_help
+operator|->
+name|help_locales
+argument_list|)
+expr_stmt|;
 name|full_uri
 operator|=
 name|gimp_help_domain_map
@@ -1045,6 +1047,8 @@ argument_list|,
 name|idle_help
 operator|->
 name|help_id
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
