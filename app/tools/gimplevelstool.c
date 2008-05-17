@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-constructors.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -3694,17 +3700,9 @@ argument_list|)
 expr_stmt|;
 name|button
 operator|=
-name|gtk_button_new_from_stock
+name|gimp_stock_button_new
 argument_list|(
 name|GIMP_STOCK_TOOL_LEVELS
-argument_list|)
-expr_stmt|;
-name|gtk_button_set_label
-argument_list|(
-name|GTK_BUTTON
-argument_list|(
-name|button
-argument_list|)
 argument_list|,
 name|_
 argument_list|(
