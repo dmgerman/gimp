@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d54b5d0103
+DECL|enum|__anon289cca370103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -265,7 +265,7 @@ modifier|*
 name|timer
 decl_stmt|;
 DECL|member|pixel_count
-name|gulong
+name|guint64
 name|pixel_count
 decl_stmt|;
 block|}
@@ -2277,7 +2277,14 @@ name|pixel_count
 operator|=
 literal|0
 expr_stmt|;
-name|g_timer_reset
+name|g_timer_start
+argument_list|(
+name|image_map
+operator|->
+name|timer
+argument_list|)
+expr_stmt|;
+name|g_timer_stop
 argument_list|(
 name|image_map
 operator|->
