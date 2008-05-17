@@ -807,12 +807,13 @@ begin_function
 specifier|static
 name|RcmCircle
 modifier|*
-DECL|function|rcm_create_one_circle (gint height,gchar * label_content)
+DECL|function|rcm_create_one_circle (gint height,const gchar * label_content)
 name|rcm_create_one_circle
 parameter_list|(
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label_content

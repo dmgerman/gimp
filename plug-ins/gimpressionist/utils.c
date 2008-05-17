@@ -1466,7 +1466,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|create_radio_button (GtkWidget * box,int orient_type,void (* callback)(GtkWidget * wg,void * d),gchar * label,gchar * help_string,GSList ** radio_group,GtkWidget ** buttons_array)
+DECL|function|create_radio_button (GtkWidget * box,int orient_type,void (* callback)(GtkWidget * wg,void * d),const gchar * label,const gchar * help_string,GSList ** radio_group,GtkWidget ** buttons_array)
 name|create_radio_button
 parameter_list|(
 name|GtkWidget
@@ -1491,10 +1491,12 @@ modifier|*
 name|d
 parameter_list|)
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_string

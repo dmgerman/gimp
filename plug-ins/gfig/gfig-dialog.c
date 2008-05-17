@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277b82f70108
+DECL|struct|__anon29f454720108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -7646,9 +7646,10 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|num_sides_widget (gchar * d_title,gint * num_sides,gint * which_way,gint adj_min,gint adj_max)
+DECL|function|num_sides_widget (const gchar * d_title,gint * num_sides,gint * which_way,gint adj_min,gint adj_max)
 name|num_sides_widget
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|d_title

@@ -47,7 +47,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c804e4f0108
+DECL|struct|__anon2abd7e3e0108
 block|{
 DECL|member|gridspacing
 name|gint
@@ -102,7 +102,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c804e4f0208
+DECL|struct|__anon2abd7e3e0208
 block|{
 DECL|member|type
 name|SelectionType
@@ -310,7 +310,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c804e4f0308
+DECL|struct|__anon2abd7e3e0308
 block|{
 DECL|member|opts
 name|GfigOpts
@@ -505,7 +505,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c804e4f0408
+DECL|struct|__anon2abd7e3e0408
 block|{
 DECL|member|debug_styles
 name|gboolean
@@ -759,6 +759,7 @@ name|GtkWidget
 modifier|*
 name|num_sides_widget
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|d_title

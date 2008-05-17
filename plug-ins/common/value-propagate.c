@@ -289,6 +289,7 @@ name|GtkWidget
 modifier|*
 name|table
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -708,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d34c980108
+DECL|struct|__anon2b6213150108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -869,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d34c980208
+DECL|struct|__anon2b6213150208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4022,7 +4023,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d34c980308
+DECL|struct|__anon2b6213150308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -6797,13 +6798,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gtk_table_add_toggle (GtkWidget * table,gchar * name,gint x1,gint x2,gint y,GCallback update,gint * value)
+DECL|function|gtk_table_add_toggle (GtkWidget * table,const gchar * name,gint x1,gint x2,gint y,GCallback update,gint * value)
 name|gtk_table_add_toggle
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|table
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

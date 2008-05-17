@@ -240,7 +240,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|create_orientradio_button (GtkWidget * box,int orient_type,gchar * label,gchar * help_string,GSList ** radio_group)
+DECL|function|create_orientradio_button (GtkWidget * box,int orient_type,const gchar * label,const gchar * help_string,GSList ** radio_group)
 name|create_orientradio_button
 parameter_list|(
 name|GtkWidget
@@ -250,10 +250,12 @@ parameter_list|,
 name|int
 name|orient_type
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_string

@@ -94,7 +94,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon27da23e30108
+DECL|struct|__anon2af360010108
 typedef|typedef
 struct|struct
 block|{
@@ -1771,13 +1771,14 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|create_tab (GtkWidget * notebook,gchar * label,gint rows,gint cols)
+DECL|function|create_tab (GtkWidget * notebook,const gchar * label,gint rows,gint cols)
 name|create_tab
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|notebook
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label

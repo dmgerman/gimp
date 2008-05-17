@@ -532,7 +532,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|create_general_button (GtkWidget * box,int idx,gchar * label,gchar * help_string,GSList ** radio_group)
+DECL|function|create_general_button (GtkWidget * box,int idx,const gchar * label,const gchar * help_string,GSList ** radio_group)
 name|create_general_button
 parameter_list|(
 name|GtkWidget
@@ -542,10 +542,12 @@ parameter_list|,
 name|int
 name|idx
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_string

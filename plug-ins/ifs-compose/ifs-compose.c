@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29357a910103
+DECL|enum|__anon29b021d30103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29357a910203
+DECL|enum|__anon29b021d30203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910308
+DECL|struct|__anon29b021d30308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -180,7 +180,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29357a91040a
+DECL|union|__anon29b021d3040a
 block|{
 DECL|member|d
 name|gdouble
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910508
+DECL|struct|__anon29b021d30508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910608
+DECL|struct|__anon29b021d30608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910708
+DECL|struct|__anon29b021d30708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910808
+DECL|struct|__anon29b021d30808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -373,7 +373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910908
+DECL|struct|__anon29b021d30908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29357a910a08
+DECL|struct|__anon29b021d30a08
 block|{
 DECL|member|run
 name|gboolean
@@ -911,6 +911,7 @@ name|ColorMap
 modifier|*
 name|color_map_create
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -10291,9 +10292,10 @@ begin_function
 specifier|static
 name|ColorMap
 modifier|*
-DECL|function|color_map_create (gchar * name,GimpRGB * orig_color,GimpRGB * data,gboolean fixed_point)
+DECL|function|color_map_create (const gchar * name,GimpRGB * orig_color,GimpRGB * data,gboolean fixed_point)
 name|color_map_create
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|name

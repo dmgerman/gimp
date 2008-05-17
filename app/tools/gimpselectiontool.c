@@ -816,6 +816,7 @@ condition|(
 name|proximity
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|status
@@ -1096,6 +1097,10 @@ name|free_status
 condition|)
 name|g_free
 argument_list|(
+operator|(
+name|gchar
+operator|*
+operator|)
 name|status
 argument_list|)
 expr_stmt|;

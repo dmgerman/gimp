@@ -154,7 +154,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292a08080108
+DECL|struct|__anon2b7963de0108
 block|{
 DECL|member|orient_num
 name|int
@@ -736,10 +736,12 @@ modifier|*
 name|d
 parameter_list|)
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|label
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|help_string

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b39f1590103
+DECL|enum|__anon276959ab0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1977,6 +1977,10 @@ name|imagefile
 operator|->
 name|description
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|_
 argument_list|(
 literal|"Folder"
@@ -1996,6 +2000,10 @@ name|imagefile
 operator|->
 name|description
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|)
 name|_
 argument_list|(
 literal|"Special File"

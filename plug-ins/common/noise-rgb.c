@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84113f0108
+DECL|struct|__anon28f7f39a0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84113f0208
+DECL|struct|__anon28f7f39a0208
 block|{
 DECL|member|channels
 name|gint
@@ -1542,7 +1542,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|noisify_add_channel (GtkWidget * table,gint channel,gchar * name,GimpDrawable * drawable,GtkWidget * preview)
+DECL|function|noisify_add_channel (GtkWidget * table,gint channel,const gchar * name,GimpDrawable * drawable,GtkWidget * preview)
 name|noisify_add_channel
 parameter_list|(
 name|GtkWidget
@@ -1552,6 +1552,7 @@ parameter_list|,
 name|gint
 name|channel
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1679,7 +1680,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|noisify_add_alpha_channel (GtkWidget * table,gint channel,gchar * name,GimpDrawable * drawable,GtkWidget * preview)
+DECL|function|noisify_add_alpha_channel (GtkWidget * table,gint channel,const gchar * name,GimpDrawable * drawable,GtkWidget * preview)
 name|noisify_add_alpha_channel
 parameter_list|(
 name|GtkWidget
@@ -1689,6 +1690,7 @@ parameter_list|,
 name|gint
 name|channel
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

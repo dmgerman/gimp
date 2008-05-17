@@ -352,7 +352,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278217c10103
+DECL|enum|__anon295800200103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -379,7 +379,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278217c10203
+DECL|enum|__anon295800200203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10308
+DECL|struct|__anon295800200308
 block|{
 DECL|member|name
 name|gchar
@@ -541,7 +541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10408
+DECL|struct|__anon295800200408
 block|{
 DECL|member|fp
 name|FILE
@@ -561,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278217c10503
+DECL|enum|__anon295800200503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -589,7 +589,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10608
+DECL|struct|__anon295800200608
 block|{
 DECL|member|init
 name|gint
@@ -611,7 +611,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon278217c10708
+DECL|struct|__anon295800200708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -690,7 +690,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10808
+DECL|struct|__anon295800200808
 block|{
 DECL|member|init
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10908
+DECL|struct|__anon295800200908
 block|{
 DECL|member|x0
 name|gdouble
@@ -787,7 +787,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10a08
+DECL|struct|__anon295800200a08
 block|{
 DECL|member|init
 name|gint
@@ -957,7 +957,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10b08
+DECL|struct|__anon295800200b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -984,7 +984,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10c08
+DECL|struct|__anon295800200c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1225,7 +1225,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10d08
+DECL|struct|__anon295800200d08
 block|{
 DECL|member|tag
 name|gint
@@ -1302,7 +1302,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278217c10e08
+DECL|struct|__anon295800200e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -3328,6 +3328,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|caption
@@ -8504,7 +8505,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon278217c10f08
+DECL|struct|__anon295800200f08
 block|{
 DECL|member|values
 name|guchar
@@ -14464,7 +14465,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon278217c11008
+DECL|struct|__anon295800201008
 block|{
 DECL|member|label
 specifier|const
@@ -19798,7 +19799,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|ed_put_gradient_menu (GtkWidget * table,gint x,gint y,gchar * caption,GradientMenu * gm)
+DECL|function|ed_put_gradient_menu (GtkWidget * table,gint x,gint y,const gchar * caption,GradientMenu * gm)
 name|ed_put_gradient_menu
 parameter_list|(
 name|GtkWidget
@@ -19811,6 +19812,7 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|caption
