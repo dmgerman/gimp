@@ -866,7 +866,7 @@ name|entry
 operator|.
 name|help_id
 operator|=
-name|NULL
+name|GIMP_HELP_WINDOWS_SHOW_IMAGE_WINDOW
 expr_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
@@ -1133,7 +1133,7 @@ name|entry
 operator|.
 name|help_id
 operator|=
-name|NULL
+name|GIMP_HELP_WINDOWS_SHOW_DOCK
 expr_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
@@ -1521,7 +1521,7 @@ name|entry
 operator|.
 name|help_id
 operator|=
-name|NULL
+name|GIMP_HELP_WINDOWS_OPEN_RECENT_DOCK
 expr_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
