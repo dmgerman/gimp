@@ -153,6 +153,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpLevelsConfig
+modifier|*
+name|gimp_brightness_contrast_config_to_levels_config
+parameter_list|(
+name|GimpBrightnessContrastConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

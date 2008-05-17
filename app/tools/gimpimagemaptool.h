@@ -353,6 +353,26 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_map_tool_edit_as
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|new_tool_id
+parameter_list|,
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
