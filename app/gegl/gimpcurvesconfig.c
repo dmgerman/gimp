@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290d461b0103
+DECL|enum|__anon29200ee50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -748,6 +748,14 @@ name|src_curve
 operator|->
 name|n_samples
 argument_list|)
+expr_stmt|;
+name|dest_curve
+operator|->
+name|identity
+operator|=
+name|src_curve
+operator|->
+name|identity
 expr_stmt|;
 block|}
 block|}
