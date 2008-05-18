@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b280c450103
+DECL|enum|__anon2c837e4e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2210,7 +2210,7 @@ operator|->
 name|dash_length
 argument_list|)
 decl_stmt|;
-name|gimp_stroke_options_set_dash_pattern
+name|gimp_stroke_options_take_dash_pattern
 argument_list|(
 name|editor
 operator|->

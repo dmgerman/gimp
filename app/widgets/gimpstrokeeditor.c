@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277121140103
+DECL|enum|__anon2ae153a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1811,7 +1811,7 @@ operator|!=
 name|GIMP_DASH_CUSTOM
 condition|)
 block|{
-name|gimp_stroke_options_set_dash_pattern
+name|gimp_stroke_options_take_dash_pattern
 argument_list|(
 name|options
 argument_list|,

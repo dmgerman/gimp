@@ -184,7 +184,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_stroke_options_set_dash_pattern
+name|gimp_stroke_options_take_dash_pattern
 parameter_list|(
 name|GimpStrokeOptions
 modifier|*

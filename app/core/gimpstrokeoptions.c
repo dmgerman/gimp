@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2986b3660103
+DECL|enum|__anon28bf4d8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2986b3660203
+DECL|enum|__anon28bf4d8a0203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -630,7 +630,7 @@ argument_list|(
 name|value_array
 argument_list|)
 expr_stmt|;
-name|gimp_stroke_options_set_dash_pattern
+name|gimp_stroke_options_take_dash_pattern
 argument_list|(
 name|options
 argument_list|,
@@ -838,13 +838,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_stroke_options_set_dash_pattern:  * @options: a #GimpStrokeOptions object  * @preset: a value out of the #GimpDashPreset enum  * @pattern: a #GArray or %NULL if @preset is not %GIMP_DASH_CUSTOM  *  * Sets the dash pattern. Either a @preset is passed and @pattern is  * %NULL or @preset is %GIMP_DASH_CUSTOM and @pattern is the #GArray  * to use as the dash pattern. Note that this function takes ownership  * of the passed pattern.  */
+comment|/**  * gimp_stroke_options_take_dash_pattern:  * @options: a #GimpStrokeOptions object  * @preset: a value out of the #GimpDashPreset enum  * @pattern: a #GArray or %NULL if @preset is not %GIMP_DASH_CUSTOM  *  * Sets the dash pattern. Either a @preset is passed and @pattern is  * %NULL or @preset is %GIMP_DASH_CUSTOM and @pattern is the #GArray  * to use as the dash pattern. Note that this function takes ownership  * of the passed pattern.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_stroke_options_set_dash_pattern (GimpStrokeOptions * options,GimpDashPreset preset,GArray * pattern)
-name|gimp_stroke_options_set_dash_pattern
+DECL|function|gimp_stroke_options_take_dash_pattern (GimpStrokeOptions * options,GimpDashPreset preset,GArray * pattern)
+name|gimp_stroke_options_take_dash_pattern
 parameter_list|(
 name|GimpStrokeOptions
 modifier|*
