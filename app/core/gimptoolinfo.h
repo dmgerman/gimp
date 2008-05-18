@@ -289,6 +289,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_tool_info_build_options_filename
+parameter_list|(
+name|GimpToolInfo
+modifier|*
+name|tool_info
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|suffix
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
