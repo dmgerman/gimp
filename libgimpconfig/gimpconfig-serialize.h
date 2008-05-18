@@ -69,6 +69,26 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_config_serialize_property_by_name
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|prop_name
+parameter_list|,
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_config_serialize_value
 parameter_list|(
 specifier|const

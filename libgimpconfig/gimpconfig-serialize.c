@@ -909,6 +909,66 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_config_serialize_property_by_name:  * @config:    a #GimpConfig.  * @prop_name: the property's name.  * @writer:    a #GimpConfigWriter.  *  * This function serializes a single object property to the @writer.  *  * Returns: %TRUE if serialization succeeded, %FALSE otherwise  *  * Since: GIMP 2.6  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_config_serialize_property_by_name (GimpConfig * config,const gchar * prop_name,GimpConfigWriter * writer)
+name|gimp_config_serialize_property_by_name
+parameter_list|(
+name|GimpConfig
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|prop_name
+parameter_list|,
+name|GimpConfigWriter
+modifier|*
+name|writer
+parameter_list|)
+block|{
+name|GParamSpec
+modifier|*
+name|pspec
+decl_stmt|;
+name|pspec
+operator|=
+name|g_object_class_find_property
+argument_list|(
+name|G_OBJECT_GET_CLASS
+argument_list|(
+name|config
+argument_list|)
+argument_list|,
+name|prop_name
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|pspec
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+name|gimp_config_serialize_property
+argument_list|(
+name|config
+argument_list|,
+name|pspec
+argument_list|,
+name|writer
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_config_serialize_value:  * @value: a #GValue.  * @str: a #Gstring.  * @escaped: whether to escape string values.  *  * This utility function appends a string representation of #GValue to @str.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
