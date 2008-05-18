@@ -11490,7 +11490,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2aed5fda0103
+DECL|enum|__anon2c8498680103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -14000,23 +14000,6 @@ argument_list|(
 name|USE_OBJECT_LIST
 argument_list|)
 end_if
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: Update hash_fn() to handle UTF-8 coded keys
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_function
 DECL|function|hash_fn (const char * key,int table_size)
@@ -28371,7 +28354,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2aed5fda0208
+DECL|struct|__anon2c8498680208
 specifier|static
 struct|struct
 block|{
@@ -28606,7 +28589,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2aed5fda0308
+DECL|struct|__anon2c8498680308
 typedef|typedef
 struct|struct
 block|{
