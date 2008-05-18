@@ -189,6 +189,10 @@ DECL|member|last_scale_height
 name|gint
 name|last_scale_height
 decl_stmt|;
+DECL|member|last_scale
+name|gdouble
+name|last_scale
+decl_stmt|;
 DECL|member|scale_pixmap
 name|TempBuf
 modifier|*
