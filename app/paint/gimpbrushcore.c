@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27985e420103
+DECL|enum|__anon27df9e8d0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -765,6 +765,12 @@ operator|->
 name|last_scale_height
 operator|=
 literal|0
+expr_stmt|;
+name|core
+operator|->
+name|last_scale
+operator|=
+literal|1.0
 expr_stmt|;
 name|core
 operator|->
@@ -6061,14 +6067,6 @@ name|core
 operator|->
 name|scale_brush
 operator|&&
-name|core
-operator|->
-name|last_scale
-operator|==
-name|core
-operator|->
-name|scale
-operator|&&
 name|brush
 operator|->
 name|mask
@@ -6088,6 +6086,14 @@ operator|==
 name|core
 operator|->
 name|last_scale_height
+operator|&&
+name|core
+operator|->
+name|scale
+operator|==
+name|core
+operator|->
+name|last_scale
 condition|)
 block|{
 return|return
