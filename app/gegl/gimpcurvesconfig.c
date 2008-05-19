@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf7c73b0103
+DECL|enum|__anon27c40a7e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1701,7 +1701,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_curves_config_save_cruft (GimpCurvesConfig * config,gpointer fp)
+DECL|function|gimp_curves_config_save_cruft (GimpCurvesConfig * config,gpointer fp,GError ** error)
 name|gimp_curves_config_save_cruft
 parameter_list|(
 name|GimpCurvesConfig
@@ -1710,6 +1710,11 @@ name|config
 parameter_list|,
 name|gpointer
 name|fp
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -1735,6 +1740,20 @@ name|g_return_val_if_fail
 argument_list|(
 name|file
 operator|!=
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
 name|NULL
 argument_list|,
 name|FALSE
