@@ -1713,7 +1713,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_set_show_mask:  * @layer_ID: The layer.  * @show_mask: The new layer's show mask setting.  *  * Set the show mask setting of the specified layer.  *  * This procedure sets the specified layer's show mask setting. This  * controls whether the layer's mask is currently affecting the alpha  * channel. If there is no layer mask, this function will return an  * error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_layer_set_show_mask:  * @layer_ID: The layer.  * @show_mask: The new layer's show mask setting.  *  * Set the show mask setting of the specified layer.  *  * This procedure sets the specified layer's show mask setting. This  * controls whether the layer or its mask is visible. TRUE indicates  * that the mask should be visible. If there is no layer mask, this  * function will return an error.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

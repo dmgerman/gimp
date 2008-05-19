@@ -6031,7 +6031,7 @@ literal|"gimp-layer-set-show-mask"
 argument_list|,
 literal|"Set the show mask setting of the specified layer."
 argument_list|,
-literal|"This procedure sets the specified layer's show mask setting. This controls whether the layer's mask is currently affecting the alpha channel. If there is no layer mask, this function will return an error."
+literal|"This procedure sets the specified layer's show mask setting. This controls whether the layer or its mask is visible. TRUE indicates that the mask should be visible. If there is no layer mask, this function will return an error."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
