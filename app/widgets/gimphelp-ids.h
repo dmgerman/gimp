@@ -3161,6 +3161,14 @@ value|"gimp-dock-tab-close"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DOCK_TAB_LOCK
+define|#
+directive|define
+name|GIMP_HELP_DOCK_TAB_LOCK
+value|"gimp-dock-tab-lock"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_DOCK_TAB_MENU
 define|#
 directive|define

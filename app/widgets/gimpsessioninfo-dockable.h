@@ -26,6 +26,10 @@ name|gchar
 modifier|*
 name|identifier
 decl_stmt|;
+DECL|member|locked
+name|gboolean
+name|locked
+decl_stmt|;
 DECL|member|tab_style
 name|GimpTabStyle
 name|tab_style
