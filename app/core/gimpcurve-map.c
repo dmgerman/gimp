@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a65350103
+DECL|enum|__anon2986eb040103
 block|{
 DECL|enumerator|CURVE_NONE
 name|CURVE_NONE
@@ -359,6 +359,8 @@ name|dest
 argument_list|,
 name|src
 argument_list|,
+name|samples
+operator|*
 literal|4
 operator|*
 sizeof|sizeof
