@@ -4765,6 +4765,19 @@ operator|>=
 literal|0
 condition|)
 block|{
+name|gboolean
+name|apply
+init|=
+name|gimp_layer_get_apply_mask
+argument_list|(
+name|PSDImageData
+operator|.
+name|lLayers
+index|[
+name|i
+index|]
+argument_list|)
+decl_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
@@ -4830,7 +4843,7 @@ name|fd
 argument_list|,
 literal|0
 argument_list|,
-literal|"lmask default color"
+literal|"Layer mask default color"
 argument_list|)
 expr_stmt|;
 name|flags
@@ -4838,37 +4851,31 @@ operator|=
 operator|(
 literal|1
 operator||
-comment|/* relative */
+comment|/* position relative to layer */
 operator|(
-name|gimp_layer_get_apply_mask
-argument_list|(
-name|PSDImageData
-operator|.
-name|lLayers
-index|[
-name|i
-index|]
-argument_list|)
-operator|<<
+name|apply
+condition|?
+literal|0
+else|:
 literal|1
 operator|)
+operator|<<
+literal|1
 operator||
-comment|/* disabled?*/
-operator|(
+comment|/* layer mask disabled        */
 literal|0
 operator|<<
 literal|2
 operator|)
-comment|/* invert   */
-operator|)
 expr_stmt|;
+comment|/* invert layer mask          */
 name|write_gchar
 argument_list|(
 name|fd
 argument_list|,
 name|flags
 argument_list|,
-literal|"layer mask flags"
+literal|"Layer mask flags"
 argument_list|)
 expr_stmt|;
 name|write_gint16
