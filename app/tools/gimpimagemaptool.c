@@ -2290,6 +2290,11 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|config
+argument_list|)
+expr_stmt|;
 block|}
 name|now
 operator|=
