@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -79,6 +85,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimagemap.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpimagemapconfig.h"
 end_include
 
 begin_include
@@ -722,7 +734,22 @@ name|gimp_list_new
 argument_list|(
 name|GIMP_TYPE_VIEWABLE
 argument_list|,
-name|FALSE
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_list_set_sort_func
+argument_list|(
+name|GIMP_LIST
+argument_list|(
+name|klass
+operator|->
+name|recent_settings
+argument_list|)
+argument_list|,
+operator|(
+name|GCompareFunc
+operator|)
+name|gimp_image_map_config_compare
 argument_list|)
 expr_stmt|;
 block|}

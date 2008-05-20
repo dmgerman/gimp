@@ -654,6 +654,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpImageMapConfig
+typedef|typedef
+name|struct
+name|_GimpImageMapConfig
+name|GimpImageMapConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpInterpreterDB
 typedef|typedef
 name|struct

@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpviewable.h"
+file|"core/gimpimagemapconfig.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpPosterizeConfig
 block|{
 DECL|member|parent_instance
-name|GimpViewable
+name|GimpImageMapConfig
 name|parent_instance
 decl_stmt|;
 DECL|member|levels
@@ -117,7 +117,7 @@ struct|struct
 name|_GimpPosterizeConfigClass
 block|{
 DECL|member|parent_class
-name|GimpViewableClass
+name|GimpImageMapConfigClass
 name|parent_class
 decl_stmt|;
 block|}

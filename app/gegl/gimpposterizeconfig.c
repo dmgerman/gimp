@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c42c0940103
+DECL|enum|__anon2bbf4d750103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,14 +94,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpPosterizeConfig,gimp_posterize_config,GIMP_TYPE_VIEWABLE,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpPosterizeConfig,gimp_posterize_config,GIMP_TYPE_IMAGE_MAP_CONFIG,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpPosterizeConfig
 argument_list|,
 argument|gimp_posterize_config
 argument_list|,
-argument|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_IMAGE_MAP_CONFIG
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)

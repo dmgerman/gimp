@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c40a7e0103
+DECL|enum|__anon27d969130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -277,14 +277,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCurvesConfig,gimp_curves_config,GIMP_TYPE_VIEWABLE,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_curves_config_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpCurvesConfig,gimp_curves_config,GIMP_TYPE_IMAGE_MAP_CONFIG,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,gimp_curves_config_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpCurvesConfig
 argument_list|,
 argument|gimp_curves_config
 argument_list|,
-argument|GIMP_TYPE_VIEWABLE
+argument|GIMP_TYPE_IMAGE_MAP_CONFIG
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,                                                 gimp_curves_config_iface_init)
 argument_list|)
