@@ -3709,7 +3709,7 @@ name|GIMP_STOCK_TOOL_CURVES
 argument_list|,
 name|_
 argument_list|(
-literal|"Edit this Settings as Curves"
+literal|"Edit these Settings as Curves"
 argument_list|)
 argument_list|)
 expr_stmt|;
