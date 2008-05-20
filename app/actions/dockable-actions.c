@@ -482,7 +482,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Protect this tab from being dragged with the mouse pointer"
+argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(

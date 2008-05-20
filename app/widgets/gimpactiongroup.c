@@ -72,7 +72,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpradioaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstringaction.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimptoggleaction.h"
 end_include
 
 begin_include
@@ -83,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abeb7430103
+DECL|enum|__anon27de32630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1461,7 +1473,7 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_toggle_action_new
+name|gimp_toggle_action_new
 argument_list|(
 name|entries
 index|[
@@ -1725,7 +1737,7 @@ argument_list|)
 expr_stmt|;
 name|action
 operator|=
-name|gtk_radio_action_new
+name|gimp_radio_action_new
 argument_list|(
 name|entries
 index|[
