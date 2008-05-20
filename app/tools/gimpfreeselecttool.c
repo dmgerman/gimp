@@ -110,7 +110,7 @@ DECL|macro|HANDLE_SIZE
 define|#
 directive|define
 name|HANDLE_SIZE
-value|10
+value|12
 end_define
 
 begin_define
