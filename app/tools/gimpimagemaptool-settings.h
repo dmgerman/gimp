@@ -18,7 +18,18 @@ end_define
 
 begin_function_decl
 name|gboolean
-name|gimp_image_map_tool_dialog_add_settings
+name|gimp_image_map_tool_add_settings_gui
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_map_tool_add_recent_settings
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
