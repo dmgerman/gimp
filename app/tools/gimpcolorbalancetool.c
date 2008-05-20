@@ -442,6 +442,48 @@ argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
+name|settings_name
+operator|=
+literal|"color-balance"
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Load Color Balance Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Load color balance settings from file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Save Color Balance Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Save color balance settings to file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
 name|get_operation
 operator|=
 name|gimp_color_balance_tool_get_operation

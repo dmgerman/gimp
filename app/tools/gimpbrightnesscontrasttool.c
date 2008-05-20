@@ -503,6 +503,48 @@ argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
+name|settings_name
+operator|=
+literal|"brightness-contrast"
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Load Brightness-Contrast settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Load brightness-contrast settings from file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Save Brightness-Contrast settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Save brightness-contrast settings to file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
 name|get_operation
 operator|=
 name|gimp_brightness_contrast_tool_get_operation

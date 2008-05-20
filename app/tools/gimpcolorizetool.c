@@ -390,6 +390,48 @@ argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
+name|settings_name
+operator|=
+literal|"colorize"
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Load Colorize Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Load colorize settings from file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Save Colorsize Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Save colorize settings to file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
 name|get_operation
 operator|=
 name|gimp_colorize_tool_get_operation

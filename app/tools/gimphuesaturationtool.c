@@ -484,6 +484,48 @@ argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
+name|settings_name
+operator|=
+literal|"hue-saturation"
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Load Hue-Saturation Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Load hue-saturation settings from file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Save Hue-Saturation Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Save hue-saturation settings to file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
 name|get_operation
 operator|=
 name|gimp_hue_saturation_tool_get_operation
@@ -943,7 +985,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b758d1b0108
+DECL|struct|__anon2ac30ae40108
 block|{
 DECL|member|label
 specifier|const

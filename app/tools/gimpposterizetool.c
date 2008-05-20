@@ -360,6 +360,48 @@ argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
+name|settings_name
+operator|=
+literal|"posterize"
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Load Posterize Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|load_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Load posterize settings from file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_dialog_title
+operator|=
+name|_
+argument_list|(
+literal|"Save Posterize Settings"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
+name|save_button_tip
+operator|=
+name|_
+argument_list|(
+literal|"Save posterize settings to file"
+argument_list|)
+expr_stmt|;
+name|im_tool_class
+operator|->
 name|get_operation
 operator|=
 name|gimp_posterize_tool_get_operation
