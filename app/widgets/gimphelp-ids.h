@@ -1001,14 +1001,6 @@ value|"gimp-layer-lower-to-bottom"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_LAYER_DESATURATE
-define|#
-directive|define
-name|GIMP_HELP_LAYER_DESATURATE
-value|"gimp-layer-desaturate"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_LAYER_INVERT
 define|#
 directive|define
@@ -1702,6 +1694,14 @@ define|#
 directive|define
 name|GIMP_HELP_TOOL_CURVES
 value|"gimp-tool-curves"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_TOOL_DESATURATE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_DESATURATE
+value|"gimp-tool-desaturate"
 end_define
 
 begin_define

@@ -206,6 +206,15 @@ argument_list|)
 block|,
 name|FOREIGN
 argument_list|(
+literal|"gimp-color-balance-tool-dialog"
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+block|,
+name|FOREIGN
+argument_list|(
 literal|"gimp-color-picker-tool-dialog"
 argument_list|,
 name|TRUE
@@ -242,7 +251,7 @@ argument_list|)
 block|,
 name|FOREIGN
 argument_list|(
-literal|"gimp-color-balance-tool-dialog"
+literal|"gimp-desaturate-tool-dialog"
 argument_list|,
 name|TRUE
 argument_list|,

@@ -19,13 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gegl-plugin.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<operation/gegl-operation-point-filter.h>
+file|"gimpoperationpointfilter.h"
 end_include
 
 begin_define
@@ -84,12 +78,8 @@ struct|struct
 name|_GimpOperationDesaturate
 block|{
 DECL|member|parent_instance
-name|GeglOperationPointFilter
+name|GimpOperationPointFilter
 name|parent_instance
-decl_stmt|;
-DECL|member|mode
-name|GimpDesaturateMode
-name|mode
 decl_stmt|;
 block|}
 struct|;
@@ -101,7 +91,7 @@ struct|struct
 name|_GimpOperationDesaturateClass
 block|{
 DECL|member|parent_class
-name|GeglOperationPointFilterClass
+name|GimpOperationPointFilterClass
 name|parent_class
 decl_stmt|;
 block|}

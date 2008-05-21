@@ -97,31 +97,6 @@ index|[]
 init|=
 block|{
 block|{
-literal|"drawable-desaturate"
-block|,
-name|GIMP_STOCK_CONVERT_GRAYSCALE
-block|,
-name|N_
-argument_list|(
-literal|"_Desaturate..."
-argument_list|)
-block|,
-name|NULL
-block|,
-name|N_
-argument_list|(
-literal|"Turn colors into shades of gray"
-argument_list|)
-block|,
-name|G_CALLBACK
-argument_list|(
-name|drawable_desaturate_cmd_callback
-argument_list|)
-block|,
-name|GIMP_HELP_LAYER_DESATURATE
-block|}
-block|,
-block|{
 literal|"drawable-equalize"
 block|,
 name|NULL
@@ -676,15 +651,6 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
-name|SET_SENSITIVE
-argument_list|(
-literal|"drawable-desaturate"
-argument_list|,
-name|drawable
-operator|&&
-name|is_rgb
-argument_list|)
-expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"drawable-equalize"

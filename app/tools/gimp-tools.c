@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdesaturatetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdodgeburntool.h"
 end_include
 
@@ -476,6 +482,8 @@ block|,
 name|gimp_hue_saturation_tool_register
 block|,
 name|gimp_color_balance_tool_register
+block|,
+name|gimp_desaturate_tool_register
 block|,
 comment|/*  paint tools  */
 name|gimp_dodge_burn_tool_register

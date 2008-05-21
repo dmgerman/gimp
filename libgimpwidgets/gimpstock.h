@@ -1045,6 +1045,11 @@ define|#
 directive|define
 name|GIMP_STOCK_PATTERN
 value|GIMP_STOCK_TOOL_BUCKET_FILL
+DECL|macro|GIMP_STOCK_TOOL_DESATURATE
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_DESATURATE
+value|GIMP_STOCK_CONVERT_GRAYSCALE
 name|void
 name|gimp_stock_init
 parameter_list|(
