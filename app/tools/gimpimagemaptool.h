@@ -153,15 +153,20 @@ name|GtkWidget
 modifier|*
 name|main_vbox
 decl_stmt|;
-DECL|member|load_button
+DECL|member|favorites_menu
 name|GtkWidget
 modifier|*
-name|load_button
+name|favorites_menu
 decl_stmt|;
-DECL|member|save_button
+DECL|member|load_item
 name|GtkWidget
 modifier|*
-name|save_button
+name|load_item
+decl_stmt|;
+DECL|member|save_item
+name|GtkWidget
+modifier|*
+name|save_item
 decl_stmt|;
 comment|/* settings file dialog */
 DECL|member|settings_dialog
