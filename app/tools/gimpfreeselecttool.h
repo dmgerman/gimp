@@ -118,78 +118,6 @@ DECL|member|parent_instance
 name|GimpSelectionTool
 name|parent_instance
 decl_stmt|;
-comment|/* Index of grabbed segment index. */
-DECL|member|grabbed_segment_index
-name|gint
-name|grabbed_segment_index
-decl_stmt|;
-DECL|member|button1_down
-name|gboolean
-name|button1_down
-decl_stmt|;
-comment|/* We need to keep track of a number of points when we move a    * segment vertex    */
-DECL|member|saved_points_lower_segment
-name|GimpVector2
-modifier|*
-name|saved_points_lower_segment
-decl_stmt|;
-DECL|member|saved_points_higher_segment
-name|GimpVector2
-modifier|*
-name|saved_points_higher_segment
-decl_stmt|;
-DECL|member|n_saved_points_lower_segment
-name|gint
-name|n_saved_points_lower_segment
-decl_stmt|;
-DECL|member|n_saved_points_higher_segment
-name|gint
-name|n_saved_points_higher_segment
-decl_stmt|;
-comment|/* Keeps track wether or not a modification of the polygon has been    * made between _button_press and _button_release    */
-DECL|member|polygon_modified
-name|gboolean
-name|polygon_modified
-decl_stmt|;
-comment|/* Point which is used to draw the polygon but which is not part of    * it yet    */
-DECL|member|pending_point
-name|GimpVector2
-name|pending_point
-decl_stmt|;
-DECL|member|show_pending_point
-name|gboolean
-name|show_pending_point
-decl_stmt|;
-comment|/* The points of the polygon */
-DECL|member|points
-name|GimpVector2
-modifier|*
-name|points
-decl_stmt|;
-DECL|member|max_n_points
-name|gint
-name|max_n_points
-decl_stmt|;
-comment|/* The number of points actually in use */
-DECL|member|n_points
-name|gint
-name|n_points
-decl_stmt|;
-comment|/* Any int array containing the indices for the points in the    * polygon that connects different segments together    */
-DECL|member|segment_indices
-name|gint
-modifier|*
-name|segment_indices
-decl_stmt|;
-DECL|member|max_n_segment_indices
-name|gint
-name|max_n_segment_indices
-decl_stmt|;
-comment|/* The number of segment indices actually in use */
-DECL|member|n_segment_indices
-name|gint
-name|n_segment_indices
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -258,6 +186,27 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_free_select_get_points
+parameter_list|(
+name|GimpFreeSelectTool
+modifier|*
+name|free_sel
+parameter_list|,
+specifier|const
+name|GimpVector2
+modifier|*
+modifier|*
+name|points
+parameter_list|,
+name|gint
+modifier|*
+name|n_points
 parameter_list|)
 function_decl|;
 end_function_decl
