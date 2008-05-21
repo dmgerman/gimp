@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7546f80103
+DECL|enum|__anon2c36fa7c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -155,11 +155,19 @@ name|get_property
 operator|=
 name|gimp_desaturate_config_get_property
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|__GNUC__
+warning|#
+directive|warning
+warning|FIXME: change string when a desaturate icon gets added
+endif|#
+directive|endif
 name|viewable_class
 operator|->
 name|default_stock_id
 operator|=
-literal|"gimp-tool-desaturate"
+literal|"gimp-convert-grayscale"
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_ENUM
 argument_list|(
