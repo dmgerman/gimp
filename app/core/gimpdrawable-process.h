@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DRAWABLE_DESATURATE_H__
+name|__GIMP_DRAWABLE_PROCESS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DRAWABLE_DESATURATE_H__
+DECL|macro|__GIMP_DRAWABLE_PROCESS_H__
 define|#
 directive|define
-name|__GIMP_DRAWABLE_DESATURATE_H__
+name|__GIMP_DRAWABLE_PROCESS_H__
 end_define
 
 begin_function_decl
 name|void
-name|gimp_drawable_desaturate
+name|gimp_drawable_process
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -28,8 +28,16 @@ name|GimpProgress
 modifier|*
 name|progress
 parameter_list|,
-name|GimpDesaturateMode
-name|mode
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|PixelProcessorFunc
+name|func
+parameter_list|,
+name|gpointer
+name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -40,7 +48,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DRAWABLE_DESATURATE_H__  */
+comment|/*  __GIMP_DRAWABLE_PROCESS_H__  */
 end_comment
 
 end_unit
