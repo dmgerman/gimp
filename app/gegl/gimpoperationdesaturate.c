@@ -247,6 +247,14 @@ name|dest
 init|=
 name|out_buf
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|config
+condition|)
+return|return
+name|FALSE
+return|;
 switch|switch
 condition|(
 name|config
