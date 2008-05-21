@@ -101,10 +101,11 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|desaturate_region (GimpDesaturateMode mode,PixelRegion * srcPR,PixelRegion * destPR)
+DECL|function|desaturate_region (GimpDesaturateMode * mode,PixelRegion * srcPR,PixelRegion * destPR)
 name|desaturate_region
 parameter_list|(
 name|GimpDesaturateMode
+modifier|*
 name|mode
 parameter_list|,
 name|PixelRegion
@@ -116,6 +117,13 @@ modifier|*
 name|destPR
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|mode
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|srcPR
@@ -144,6 +152,7 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
+operator|*
 name|mode
 condition|)
 block|{

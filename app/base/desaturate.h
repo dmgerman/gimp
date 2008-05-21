@@ -21,6 +21,7 @@ name|void
 name|desaturate_region
 parameter_list|(
 name|GimpDesaturateMode
+modifier|*
 name|mode
 parameter_list|,
 name|PixelRegion

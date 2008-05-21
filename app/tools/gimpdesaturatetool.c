@@ -48,13 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/gimplut.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"base/lut-funcs.h"
+file|"base/desaturate.h"
 end_include
 
 begin_include
@@ -396,7 +390,35 @@ name|GimpDesaturateTool
 modifier|*
 name|desaturate_tool
 parameter_list|)
-block|{ }
+block|{
+name|GimpImageMapTool
+modifier|*
+name|im_tool
+init|=
+name|GIMP_IMAGE_MAP_TOOL
+argument_list|(
+name|desaturate_tool
+argument_list|)
+decl_stmt|;
+name|im_tool
+operator|->
+name|apply_func
+operator|=
+operator|(
+name|GimpImageMapApplyFunc
+operator|)
+name|desaturate_region
+expr_stmt|;
+name|im_tool
+operator|->
+name|apply_data
+operator|=
+operator|&
+name|desaturate_tool
+operator|->
+name|mode
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -644,7 +666,27 @@ name|GimpImageMapTool
 modifier|*
 name|image_map_tool
 parameter_list|)
-block|{ }
+block|{
+name|GimpDesaturateTool
+modifier|*
+name|desaturate_tool
+init|=
+name|GIMP_DESATURATE_TOOL
+argument_list|(
+name|image_map_tool
+argument_list|)
+decl_stmt|;
+name|desaturate_tool
+operator|->
+name|mode
+operator|=
+name|desaturate_tool
+operator|->
+name|config
+operator|->
+name|mode
+expr_stmt|;
+block|}
 end_function
 
 begin_comment

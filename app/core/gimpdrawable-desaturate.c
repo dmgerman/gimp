@@ -310,10 +310,8 @@ name|PixelProcessorFunc
 operator|)
 name|desaturate_region
 argument_list|,
-name|GINT_TO_POINTER
-argument_list|(
+operator|&
 name|mode
-argument_list|)
 argument_list|,
 literal|2
 argument_list|,
