@@ -270,7 +270,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6172ed0108
+DECL|struct|__anon278068620108
 block|{
 DECL|member|cinfo
 name|struct
@@ -346,7 +346,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6172ed0208
+DECL|struct|__anon278068620208
 block|{
 DECL|member|run
 name|gboolean
@@ -3624,7 +3624,7 @@ name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Show _preview in image window"
+literal|"Sho_w preview in image window"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3923,7 +3923,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"_Smoothing:"
+literal|"S_moothing:"
 argument_list|)
 argument_list|,
 literal|100
@@ -4123,11 +4123,11 @@ name|use_restart_markers
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use restart markers"
+literal|"Use _restart markers"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4234,11 +4234,11 @@ name|optimize
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Optimize"
+literal|"_Optimize"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4322,11 +4322,11 @@ name|progressive
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Progressive"
+literal|"_Progressive"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4413,11 +4413,11 @@ name|save_exif
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save EXIF data"
+literal|"Save _EXIF data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4512,11 +4512,11 @@ name|save_thumbnail
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save thumbnail"
+literal|"Save _thumbnail"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4604,11 +4604,11 @@ name|save_xmp
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Save XMP data"
+literal|"Save _XMP data"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4688,11 +4688,11 @@ name|use_orig_quality
 operator|=
 name|toggle
 operator|=
-name|gtk_check_button_new_with_label
+name|gtk_check_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Use quality settings from original "
+literal|"_Use quality settings from original "
 literal|"image"
 argument_list|)
 argument_list|)
@@ -4829,11 +4829,11 @@ expr_stmt|;
 comment|/* Subsampling */
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Subsampling:"
+literal|"Su_bsampling:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4952,6 +4952,16 @@ argument_list|(
 name|combo
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|combo
+argument_list|)
+expr_stmt|;
 name|gimp_int_combo_box_connect
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -5021,11 +5031,11 @@ block|}
 comment|/* DCT method */
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"DCT method:"
+literal|"_DCT method:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5146,6 +5156,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|combo
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
@@ -5477,7 +5497,7 @@ name|gtk_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"S_ave Defaults"
+literal|"Sa_ve Defaults"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6471,7 +6491,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6172ed0308
+DECL|struct|__anon278068620308
 block|{
 DECL|member|pub
 name|struct
