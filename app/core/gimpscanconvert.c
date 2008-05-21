@@ -371,7 +371,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scan_convert_add_polyline (GimpScanConvert * sc,guint n_points,GimpVector2 * points,gboolean closed)
+DECL|function|gimp_scan_convert_add_polyline (GimpScanConvert * sc,guint n_points,const GimpVector2 * points,gboolean closed)
 name|gimp_scan_convert_add_polyline
 parameter_list|(
 name|GimpScanConvert
@@ -381,6 +381,7 @@ parameter_list|,
 name|guint
 name|n_points
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|points

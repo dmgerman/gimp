@@ -85,6 +85,7 @@ parameter_list|,
 name|guint
 name|n_points
 parameter_list|,
+specifier|const
 name|GimpVector2
 modifier|*
 name|points
