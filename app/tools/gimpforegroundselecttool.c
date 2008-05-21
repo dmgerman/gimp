@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1991c40108
+DECL|struct|__anon2c87e94b0108
 block|{
 DECL|member|width
 name|gint
@@ -1287,7 +1287,7 @@ name|status
 operator|=
 name|_
 argument_list|(
-literal|"Draw a rough circle around the object to extract"
+literal|"Rougly outline the object to extract"
 argument_list|)
 expr_stmt|;
 break|break;
