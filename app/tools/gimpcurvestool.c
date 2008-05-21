@@ -1847,10 +1847,6 @@ name|label
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|bbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
