@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-process.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable-shadow.h"
 end_include
 
@@ -76,11 +82,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|PixelRegion
-name|srcPR
-decl_stmt|,
-name|destPR
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -121,6 +122,31 @@ name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_drawable_mask_intersect
+argument_list|(
+name|drawable
+argument_list|,
+operator|&
+name|x
+argument_list|,
+operator|&
+name|y
+argument_list|,
+operator|&
+name|width
+argument_list|,
+operator|&
+name|height
+argument_list|)
+condition|)
+block|{
+name|PixelRegion
+name|srcPR
+decl_stmt|,
+name|destPR
+decl_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -205,6 +231,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
