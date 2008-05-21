@@ -2217,11 +2217,6 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_free_select_tool_halt
-argument_list|(
-name|fst
-argument_list|)
-expr_stmt|;
 name|gimp_image_flush
 argument_list|(
 name|display
@@ -3857,6 +3852,11 @@ operator|->
 name|feather_radius
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_free_select_tool_halt
+argument_list|(
+name|fst
 argument_list|)
 expr_stmt|;
 block|}
