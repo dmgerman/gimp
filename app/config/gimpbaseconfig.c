@@ -53,6 +53,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base-types.h"
+end_include
+
+begin_comment
+comment|/* eek */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"base/base-utils.h"
 end_include
 
@@ -82,7 +92,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f8f85d0103
+DECL|enum|__anon2c0314eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -33,12 +33,6 @@ directive|include
 file|"base/lut-funcs.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"base/pixel-processor.h"
-end_include
-
 begin_comment
 comment|/* temp */
 end_comment

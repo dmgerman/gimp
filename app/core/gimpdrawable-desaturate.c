@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"base/pixel-processor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gegl/gimpdesaturateconfig.h"
 end_include
 

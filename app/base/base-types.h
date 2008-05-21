@@ -325,6 +325,20 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_typedef
+DECL|typedef|PixelProcessorFunc
+typedef|typedef
+name|void
+function_decl|(
+modifier|*
+name|PixelProcessorFunc
+function_decl|)
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_typedef
+
 begin_endif
 endif|#
 directive|endif
