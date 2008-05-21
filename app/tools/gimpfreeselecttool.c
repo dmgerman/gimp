@@ -2804,7 +2804,7 @@ name|status_text
 operator|=
 name|_
 argument_list|(
-literal|"Click-Drag creates free segment, Click creates polygonal segment"
+literal|"Click-Drag adds a free segment, Click adds a polygonal segment"
 argument_list|)
 expr_stmt|;
 block|}
