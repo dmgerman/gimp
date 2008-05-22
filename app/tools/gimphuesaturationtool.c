@@ -490,38 +490,20 @@ literal|"hue-saturation"
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|load_dialog_title
+name|import_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Load Hue-Saturation Settings"
+literal|"Import Hue-Saturation Settings"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|load_button_tip
+name|export_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Load hue-saturation settings from file"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|save_dialog_title
-operator|=
-name|_
-argument_list|(
-literal|"Save Hue-Saturation Settings"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|save_button_tip
-operator|=
-name|_
-argument_list|(
-literal|"Save hue-saturation settings to file"
+literal|"Export Hue-Saturation Settings"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
@@ -985,7 +967,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2ac30ae40108
+DECL|struct|__anon29fa5b500108
 block|{
 DECL|member|label
 specifier|const

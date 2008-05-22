@@ -238,7 +238,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_map_tool_load_activate
+name|gimp_image_map_tool_import_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -254,7 +254,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_map_tool_save_activate
+name|gimp_image_map_tool_export_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -310,7 +310,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_map_tool_settings_load
+name|gimp_image_map_tool_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -327,7 +327,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_map_tool_settings_save
+name|gimp_image_map_tool_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -344,6 +344,99 @@ end_function_decl
 begin_comment
 comment|/*  public functions  */
 end_comment
+
+begin_function
+specifier|static
+name|GtkWidget
+modifier|*
+DECL|function|gimp_image_map_tool_menu_item_add (GimpImageMapTool * image_map_tool,const gchar * stock_id,const gchar * label,GCallback callback)
+name|gimp_image_map_tool_menu_item_add
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|image_map_tool
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|label
+parameter_list|,
+name|GCallback
+name|callback
+parameter_list|)
+block|{
+name|GtkWidget
+modifier|*
+name|item
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|image
+decl_stmt|;
+name|item
+operator|=
+name|gtk_image_menu_item_new_with_mnemonic
+argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|stock_id
+argument_list|,
+name|GTK_ICON_SIZE_MENU
+argument_list|)
+expr_stmt|;
+name|gtk_image_menu_item_set_image
+argument_list|(
+name|GTK_IMAGE_MENU_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|gtk_menu_shell_append
+argument_list|(
+name|GTK_MENU_SHELL
+argument_list|(
+name|image_map_tool
+operator|->
+name|favorites_menu
+argument_list|)
+argument_list|,
+name|item
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|item
+argument_list|,
+literal|"activate"
+argument_list|,
+name|callback
+argument_list|,
+name|image_map_tool
+argument_list|)
+expr_stmt|;
+return|return
+name|item
+return|;
+block|}
+end_function
 
 begin_function
 name|gboolean
@@ -382,10 +475,6 @@ decl_stmt|;
 name|GtkWidget
 modifier|*
 name|arrow
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|item
 decl_stmt|;
 name|klass
 operator|=
@@ -453,11 +542,11 @@ argument_list|)
 expr_stmt|;
 name|label
 operator|=
-name|gtk_label_new
+name|gtk_label_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
-literal|"Recent Settings:"
+literal|"Pre_sets:"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -534,6 +623,16 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|combo
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
 name|combo
 argument_list|)
 expr_stmt|;
@@ -644,7 +743,7 @@ argument_list|,
 name|image_map_tool
 argument_list|)
 expr_stmt|;
-comment|/*  The load/save hbox  */
+comment|/*  Favorites menu  */
 name|image_map_tool
 operator|->
 name|favorites_menu
@@ -666,141 +765,63 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|item
-operator|=
-name|gtk_image_menu_item_new_with_mnemonic
-argument_list|(
-name|_
-argument_list|(
-literal|"Save to _Favorites"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_menu_shell_append
-argument_list|(
-name|GTK_MENU_SHELL
+name|gimp_image_map_tool_menu_item_add
 argument_list|(
 name|image_map_tool
-operator|->
-name|favorites_menu
-argument_list|)
 argument_list|,
-name|item
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|item
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|item
+name|GTK_STOCK_ADD
 argument_list|,
-literal|"activate"
+name|_
+argument_list|(
+literal|"Save Settings to _Favorites"
+argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_image_map_tool_favorite_activate
 argument_list|)
-argument_list|,
-name|image_map_tool
 argument_list|)
 expr_stmt|;
 name|image_map_tool
 operator|->
-name|load_item
+name|import_item
 operator|=
-name|gtk_image_menu_item_new_from_stock
+name|gimp_image_map_tool_menu_item_add
 argument_list|(
+name|image_map_tool
+argument_list|,
 name|GTK_STOCK_OPEN
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_menu_shell_append
+name|_
 argument_list|(
-name|GTK_MENU_SHELL
-argument_list|(
-name|image_map_tool
-operator|->
-name|favorites_menu
+literal|"_Import Settings from File"
 argument_list|)
-argument_list|,
-name|image_map_tool
-operator|->
-name|load_item
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|image_map_tool
-operator|->
-name|load_item
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|image_map_tool
-operator|->
-name|load_item
-argument_list|,
-literal|"activate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_map_tool_load_activate
+name|gimp_image_map_tool_import_activate
 argument_list|)
-argument_list|,
-name|image_map_tool
 argument_list|)
 expr_stmt|;
 name|image_map_tool
 operator|->
-name|save_item
+name|export_item
 operator|=
-name|gtk_image_menu_item_new_from_stock
+name|gimp_image_map_tool_menu_item_add
 argument_list|(
+name|image_map_tool
+argument_list|,
 name|GTK_STOCK_SAVE
 argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_menu_shell_append
+name|_
 argument_list|(
-name|GTK_MENU_SHELL
-argument_list|(
-name|image_map_tool
-operator|->
-name|favorites_menu
+literal|"_Export Settings to File"
 argument_list|)
-argument_list|,
-name|image_map_tool
-operator|->
-name|save_item
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|image_map_tool
-operator|->
-name|save_item
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|image_map_tool
-operator|->
-name|save_item
-argument_list|,
-literal|"activate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_map_tool_save_activate
+name|gimp_image_map_tool_export_activate
 argument_list|)
-argument_list|,
-name|image_map_tool
 argument_list|)
 expr_stmt|;
 return|return
@@ -979,8 +1000,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_load (GimpImageMapTool * tool,const gchar * filename,GError ** error)
-name|gimp_image_map_tool_real_settings_load
+DECL|function|gimp_image_map_tool_real_settings_import (GimpImageMapTool * tool,const gchar * filename,GError ** error)
+name|gimp_image_map_tool_real_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -1049,8 +1070,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_map_tool_real_settings_save (GimpImageMapTool * tool,const gchar * filename,GError ** error)
-name|gimp_image_map_tool_real_settings_save
+DECL|function|gimp_image_map_tool_real_settings_export (GimpImageMapTool * tool,const gchar * filename,GError ** error)
+name|gimp_image_map_tool_real_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -1835,8 +1856,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_tool_load_activate (GtkWidget * widget,GimpImageMapTool * tool)
-name|gimp_image_map_tool_load_activate
+DECL|function|gimp_image_map_tool_import_activate (GtkWidget * widget,GimpImageMapTool * tool)
+name|gimp_image_map_tool_import_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1862,7 +1883,7 @@ name|tool
 argument_list|,
 name|klass
 operator|->
-name|load_dialog_title
+name|import_dialog_title
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1873,8 +1894,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_map_tool_save_activate (GtkWidget * widget,GimpImageMapTool * tool)
-name|gimp_image_map_tool_save_activate
+DECL|function|gimp_image_map_tool_export_activate (GtkWidget * widget,GimpImageMapTool * tool)
+name|gimp_image_map_tool_export_activate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1900,7 +1921,7 @@ name|tool
 argument_list|,
 name|klass
 operator|->
-name|save_dialog_title
+name|export_dialog_title
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1969,7 +1990,7 @@ if|if
 condition|(
 name|save
 condition|)
-name|gimp_image_map_tool_settings_save
+name|gimp_image_map_tool_settings_export
 argument_list|(
 name|tool
 argument_list|,
@@ -1977,7 +1998,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_map_tool_settings_load
+name|gimp_image_map_tool_settings_import
 argument_list|(
 name|tool
 argument_list|,
@@ -1998,7 +2019,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|tool
 operator|->
-name|load_item
+name|import_item
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2008,7 +2029,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|tool
 operator|->
-name|save_item
+name|export_item
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2105,7 +2126,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|tool
 operator|->
-name|load_item
+name|import_item
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2115,7 +2136,7 @@ name|gtk_widget_set_sensitive
 argument_list|(
 name|tool
 operator|->
-name|save_item
+name|export_item
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2187,7 +2208,7 @@ argument_list|(
 name|chooser
 argument_list|)
 argument_list|,
-literal|"gimp-load-save-settings"
+literal|"gimp-import-export-settings"
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_position
@@ -2466,8 +2487,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_load (GimpImageMapTool * tool,const gchar * filename)
-name|gimp_image_map_tool_settings_load
+DECL|function|gimp_image_map_tool_settings_import (GimpImageMapTool * tool,const gchar * filename)
+name|gimp_image_map_tool_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -2498,7 +2519,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|tool_class
 operator|->
-name|settings_load
+name|settings_import
 operator|!=
 name|NULL
 argument_list|,
@@ -2510,7 +2531,7 @@ condition|(
 operator|!
 name|tool_class
 operator|->
-name|settings_load
+name|settings_import
 argument_list|(
 name|tool
 argument_list|,
@@ -2584,8 +2605,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_map_tool_settings_save (GimpImageMapTool * tool,const gchar * filename)
-name|gimp_image_map_tool_settings_save
+DECL|function|gimp_image_map_tool_settings_export (GimpImageMapTool * tool,const gchar * filename)
+name|gimp_image_map_tool_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -2620,7 +2641,7 @@ name|g_return_val_if_fail
 argument_list|(
 name|tool_class
 operator|->
-name|settings_save
+name|settings_export
 operator|!=
 name|NULL
 argument_list|,
@@ -2632,7 +2653,7 @@ condition|(
 operator|!
 name|tool_class
 operator|->
-name|settings_save
+name|settings_export
 argument_list|(
 name|tool
 argument_list|,

@@ -40,7 +40,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_map_tool_real_settings_load
+name|gimp_image_map_tool_real_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -61,7 +61,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_map_tool_real_settings_save
+name|gimp_image_map_tool_real_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*

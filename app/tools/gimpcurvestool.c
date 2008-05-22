@@ -389,7 +389,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_curves_tool_settings_load
+name|gimp_curves_tool_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -411,7 +411,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_curves_tool_settings_save
+name|gimp_curves_tool_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -695,38 +695,20 @@ literal|"curves"
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|load_dialog_title
+name|import_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Load Curves"
+literal|"Import Curves"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|load_button_tip
+name|export_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Load curves settings from file"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|save_dialog_title
-operator|=
-name|_
-argument_list|(
-literal|"Save Curves"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|save_button_tip
-operator|=
-name|_
-argument_list|(
-literal|"Save curves settings to file"
+literal|"Export Curves"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
@@ -755,15 +737,15 @@ name|gimp_curves_tool_reset
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|settings_load
+name|settings_import
 operator|=
-name|gimp_curves_tool_settings_load
+name|gimp_curves_tool_settings_import
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|settings_save
+name|settings_export
 operator|=
-name|gimp_curves_tool_settings_save
+name|gimp_curves_tool_settings_export
 expr_stmt|;
 block|}
 end_function
@@ -2820,8 +2802,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curves_tool_settings_load (GimpImageMapTool * image_map_tool,const gchar * filename,GError ** error)
-name|gimp_curves_tool_settings_load
+DECL|function|gimp_curves_tool_settings_import (GimpImageMapTool * image_map_tool,const gchar * filename,GError ** error)
+name|gimp_curves_tool_settings_import
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
@@ -2927,8 +2909,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_curves_tool_settings_save (GimpImageMapTool * image_map_tool,const gchar * filename,GError ** error)
-name|gimp_curves_tool_settings_save
+DECL|function|gimp_curves_tool_settings_export (GimpImageMapTool * image_map_tool,const gchar * filename,GError ** error)
+name|gimp_curves_tool_settings_export
 parameter_list|(
 name|GimpImageMapTool
 modifier|*

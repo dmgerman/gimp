@@ -366,38 +366,20 @@ literal|"posterize"
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|load_dialog_title
+name|import_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Load Posterize Settings"
+literal|"Import Posterize Settings"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|load_button_tip
+name|export_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Load posterize settings from file"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|save_dialog_title
-operator|=
-name|_
-argument_list|(
-literal|"Save Posterize Settings"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|save_button_tip
-operator|=
-name|_
-argument_list|(
-literal|"Save posterize settings to file"
+literal|"Export Posterize Settings"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
