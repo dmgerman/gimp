@@ -233,16 +233,16 @@ name|gimp_drawable_apply_operation
 argument_list|(
 name|drawable
 argument_list|,
-name|node
-argument_list|,
-name|TRUE
-argument_list|,
 name|progress
 argument_list|,
 name|_
 argument_list|(
 literal|"Color Balance"
 argument_list|)
+argument_list|,
+name|node
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|g_object_unref

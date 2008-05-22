@@ -24,13 +24,6 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GeglNode
-modifier|*
-name|operation
-parameter_list|,
-name|gboolean
-name|linear
-parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
@@ -39,6 +32,13 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GeglNode
+modifier|*
+name|operation
+parameter_list|,
+name|gboolean
+name|linear
 parameter_list|)
 function_decl|;
 end_function_decl

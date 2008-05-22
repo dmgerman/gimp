@@ -81,19 +81,12 @@ end_function_decl
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_operation (GimpDrawable * drawable,GeglNode * operation,gboolean linear,GimpProgress * progress,const gchar * undo_desc)
+DECL|function|gimp_drawable_apply_operation (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,gboolean linear)
 name|gimp_drawable_apply_operation
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|GeglNode
-modifier|*
-name|operation
-parameter_list|,
-name|gboolean
-name|linear
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -103,6 +96,13 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|GeglNode
+modifier|*
+name|operation
+parameter_list|,
+name|gboolean
+name|linear
 parameter_list|)
 block|{
 name|GeglNode
@@ -148,14 +148,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GEGL_IS_NODE
-argument_list|(
-name|operation
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
 name|progress
 operator|==
 name|NULL
@@ -171,6 +163,14 @@ argument_list|(
 name|undo_desc
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GEGL_IS_NODE
+argument_list|(
+name|operation
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

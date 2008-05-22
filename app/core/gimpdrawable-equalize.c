@@ -138,7 +138,7 @@ argument_list|(
 name|hist
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_process
+name|gimp_drawable_process_lut
 argument_list|(
 name|drawable
 argument_list|,
@@ -148,11 +148,6 @@ name|_
 argument_list|(
 literal|"Equalize"
 argument_list|)
-argument_list|,
-operator|(
-name|PixelProcessorFunc
-operator|)
-name|gimp_lut_process
 argument_list|,
 name|lut
 argument_list|)
