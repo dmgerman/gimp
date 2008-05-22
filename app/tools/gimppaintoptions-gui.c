@@ -167,7 +167,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|tool_has_pressure_dynamics
+name|tool_has_hardness_dynamics
 parameter_list|(
 name|GType
 name|tool_type
@@ -886,7 +886,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tool_has_pressure_dynamics
+name|tool_has_hardness_dynamics
 argument_list|(
 name|tool_type
 argument_list|)
@@ -901,7 +901,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Pressure"
+literal|"Hardness"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1634,8 +1634,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|tool_has_pressure_dynamics (GType tool_type)
-name|tool_has_pressure_dynamics
+DECL|function|tool_has_hardness_dynamics (GType tool_type)
+name|tool_has_hardness_dynamics
 parameter_list|(
 name|GType
 name|tool_type
@@ -1910,7 +1910,6 @@ name|column
 init|=
 literal|1
 decl_stmt|;
-comment|/*  the opacity toggle  */
 if|if
 condition|(
 name|tool_has_opacity_dynamics
@@ -1957,10 +1956,9 @@ name|column
 operator|++
 expr_stmt|;
 block|}
-comment|/*  the pressure toggle  */
 if|if
 condition|(
-name|tool_has_pressure_dynamics
+name|tool_has_hardness_dynamics
 argument_list|(
 name|tool_type
 argument_list|)
@@ -2004,7 +2002,6 @@ name|column
 operator|++
 expr_stmt|;
 block|}
-comment|/*  the rate toggle */
 if|if
 condition|(
 name|tool_has_rate_dynamics
@@ -2051,7 +2048,6 @@ name|column
 operator|++
 expr_stmt|;
 block|}
-comment|/*  the size toggle  */
 if|if
 condition|(
 name|tool_has_size_dynamics
@@ -2120,7 +2116,6 @@ name|column
 operator|++
 expr_stmt|;
 block|}
-comment|/*  the color toggle  */
 if|if
 condition|(
 name|tool_has_color_dynamics
@@ -2209,7 +2204,6 @@ name|column
 init|=
 literal|1
 decl_stmt|;
-comment|/*  the opacity toggle  */
 if|if
 condition|(
 name|tool_has_opacity_dynamics
@@ -2233,10 +2227,9 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the pressure toggle  */
 if|if
 condition|(
-name|tool_has_pressure_dynamics
+name|tool_has_hardness_dynamics
 argument_list|(
 name|tool_type
 argument_list|)
@@ -2257,7 +2250,6 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the rate toggle */
 if|if
 condition|(
 name|tool_has_rate_dynamics
@@ -2281,7 +2273,6 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the size toggle  */
 if|if
 condition|(
 name|tool_has_size_dynamics
@@ -2305,7 +2296,6 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the color toggle  */
 if|if
 condition|(
 name|tool_has_color_dynamics
@@ -2371,7 +2361,6 @@ name|column
 init|=
 literal|1
 decl_stmt|;
-comment|/*  the opacity toggle  */
 if|if
 condition|(
 name|tool_has_opacity_dynamics
@@ -2395,10 +2384,9 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the pressure toggle  */
 if|if
 condition|(
-name|tool_has_pressure_dynamics
+name|tool_has_hardness_dynamics
 argument_list|(
 name|tool_type
 argument_list|)
@@ -2419,7 +2407,6 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the rate toggle */
 if|if
 condition|(
 name|tool_has_rate_dynamics
@@ -2443,7 +2430,6 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the size toggle  */
 if|if
 condition|(
 name|tool_has_size_dynamics
@@ -2467,7 +2453,6 @@ name|row
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  the color toggle  */
 if|if
 condition|(
 name|tool_has_color_dynamics
