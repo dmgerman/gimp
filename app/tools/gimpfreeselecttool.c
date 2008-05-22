@@ -3411,8 +3411,9 @@ argument_list|,
 name|GIMP_CURSOR_MODIFIER_MOVE
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
+else|else
+block|{
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -3429,6 +3430,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
