@@ -862,8 +862,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_get_segment (GimpFreeSelectTool * fst,GimpVector2 ** points,gint * n_points,gint segment_start,gint segment_end)
-name|gimp_free_select_get_segment
+DECL|function|gimp_free_select_tool_get_segment (GimpFreeSelectTool * fst,GimpVector2 ** points,gint * n_points,gint segment_start,gint segment_end)
+name|gimp_free_select_tool_get_segment
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
@@ -2279,7 +2279,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gimp_free_select_get_segment
+name|gimp_free_select_tool_get_segment
 argument_list|(
 name|fst
 argument_list|,
@@ -2345,7 +2345,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_free_select_get_segment
+name|gimp_free_select_tool_get_segment
 argument_list|(
 name|fst
 argument_list|,
@@ -2672,7 +2672,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gimp_free_select_get_segment
+name|gimp_free_select_tool_get_segment
 argument_list|(
 name|fst
 argument_list|,
@@ -2723,7 +2723,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_free_select_get_segment
+name|gimp_free_select_tool_get_segment
 argument_list|(
 name|fst
 argument_list|,
@@ -2881,7 +2881,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gimp_free_select_get_segment
+name|gimp_free_select_tool_get_segment
 argument_list|(
 name|fst
 argument_list|,
@@ -2943,7 +2943,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_free_select_get_segment
+name|gimp_free_select_tool_get_segment
 argument_list|(
 name|fst
 argument_list|,
@@ -4232,8 +4232,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_free_select_get_points (GimpFreeSelectTool * fst,const GimpVector2 ** points,gint * n_points)
-name|gimp_free_select_get_points
+DECL|function|gimp_free_select_tool_get_points (GimpFreeSelectTool * fst,const GimpVector2 ** points,gint * n_points)
+name|gimp_free_select_tool_get_points
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*

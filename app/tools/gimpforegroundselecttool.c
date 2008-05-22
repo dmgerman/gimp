@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87e94b0108
+DECL|struct|__anon2938876c0108
 block|{
 DECL|member|width
 name|gint
@@ -2603,7 +2603,7 @@ operator|=
 name|gimp_scan_convert_new
 argument_list|()
 expr_stmt|;
-name|gimp_free_select_get_points
+name|gimp_free_select_tool_get_points
 argument_list|(
 name|free_sel
 argument_list|,

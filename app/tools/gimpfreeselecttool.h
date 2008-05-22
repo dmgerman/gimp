@@ -192,7 +192,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_free_select_get_points
+name|gimp_free_select_tool_get_points
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
