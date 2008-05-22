@@ -91,10 +91,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpCurve
-modifier|*
-name|curve
-decl_stmt|;
 name|FILE
 modifier|*
 name|file
