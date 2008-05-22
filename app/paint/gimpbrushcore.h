@@ -383,6 +383,9 @@ parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
+name|gdouble
+name|dynamic_hardness
+parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
 parameter_list|)
@@ -409,6 +412,9 @@ name|image_opacity
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
+parameter_list|,
+name|gdouble
+name|dynamic_hardness
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
@@ -449,6 +455,9 @@ name|core
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
+parameter_list|,
+name|gdouble
+name|dynamic_hardness
 parameter_list|)
 function_decl|;
 end_function_decl

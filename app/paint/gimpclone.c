@@ -606,6 +606,9 @@ name|pattern
 init|=
 name|NULL
 decl_stmt|;
+name|gdouble
+name|hardness
+decl_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
@@ -889,6 +892,22 @@ operator|->
 name|use_pressure
 argument_list|)
 expr_stmt|;
+name|hardness
+operator|=
+name|gimp_paint_options_get_dynamic_hardness
+argument_list|(
+name|paint_options
+argument_list|,
+operator|&
+name|paint_core
+operator|->
+name|cur_coords
+argument_list|,
+name|paint_core
+operator|->
+name|use_pressure
+argument_list|)
+expr_stmt|;
 name|gimp_brush_core_paste_canvas
 argument_list|(
 name|GIMP_BRUSH_CORE
@@ -919,6 +938,8 @@ name|gimp_paint_options_get_brush_mode
 argument_list|(
 name|paint_options
 argument_list|)
+argument_list|,
+name|hardness
 argument_list|,
 comment|/* In fixed mode, paint incremental so the                                  * individual brushes are properly applied                                  * on top of each other.                                  * Otherwise the stuff we paint is seamless                                  * and we don't need intermediate masking.                                  */
 name|source_options

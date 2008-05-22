@@ -843,6 +843,8 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
+literal|1.0
+argument_list|,
 name|GIMP_PAINT_INCREMENTAL
 argument_list|)
 expr_stmt|;

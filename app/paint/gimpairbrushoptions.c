@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292366830103
+DECL|enum|__anon27a85eb60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -64,6 +64,9 @@ name|PROP_PRESSURE
 block|,
 DECL|enumerator|PROP_VELOCITY_SIZE
 name|PROP_VELOCITY_SIZE
+block|,
+DECL|enumerator|PROP_VELOCITY_HARDNESS
+name|PROP_VELOCITY_HARDNESS
 block|}
 enum|;
 end_enum
@@ -196,7 +199,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-comment|/* override velocity size because its unavaliable to the airbrush */
+comment|/* override velocity size because its unnatural as a default for airbrush */
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -208,6 +211,22 @@ argument_list|,
 name|NULL
 argument_list|,
 name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
+expr_stmt|;
+comment|/* override velocity hardness to default to a true, because that is natural for airbrush */
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_VELOCITY_HARDNESS
+argument_list|,
+literal|"velocity-hardness"
+argument_list|,
+name|NULL
+argument_list|,
+name|TRUE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -309,6 +328,24 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_VELOCITY_HARDNESS
+case|:
+name|GIMP_PAINT_OPTIONS
+argument_list|(
+name|options
+argument_list|)
+operator|->
+name|velocity_options
+operator|->
+name|hardness
+operator|=
+name|g_value_get_boolean
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -401,6 +438,24 @@ operator|->
 name|velocity_options
 operator|->
 name|size
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|PROP_VELOCITY_HARDNESS
+case|:
+name|g_value_set_boolean
+argument_list|(
+name|value
+argument_list|,
+name|GIMP_PAINT_OPTIONS
+argument_list|(
+name|options
+argument_list|)
+operator|->
+name|velocity_options
+operator|->
+name|hardness
 argument_list|)
 expr_stmt|;
 break|break;

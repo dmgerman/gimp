@@ -853,7 +853,7 @@ name|coords
 operator|->
 name|velocity
 operator|=
-literal|100
+literal|1.0
 expr_stmt|;
 name|coords
 operator|->
@@ -1005,6 +1005,17 @@ name|SQR
 argument_list|(
 name|dy
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|coords
+operator|->
+name|random
+operator|=
+name|g_random_double_range
+argument_list|(
+literal|0.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/* If even smoothed time resolution does not allow to guess for speed,        * use last velocity.        */

@@ -1010,6 +1010,10 @@ DECL|member|velocity
 name|gdouble
 name|velocity
 decl_stmt|;
+DECL|member|random
+name|gdouble
+name|random
+decl_stmt|;
 block|}
 struct|;
 end_struct

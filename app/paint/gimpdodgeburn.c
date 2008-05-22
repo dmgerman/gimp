@@ -595,6 +595,9 @@ decl_stmt|;
 name|gdouble
 name|opacity
 decl_stmt|;
+name|gdouble
+name|hardness
+decl_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
@@ -936,6 +939,22 @@ operator|->
 name|use_pressure
 argument_list|)
 expr_stmt|;
+name|hardness
+operator|=
+name|gimp_paint_options_get_dynamic_hardness
+argument_list|(
+name|paint_options
+argument_list|,
+operator|&
+name|paint_core
+operator|->
+name|cur_coords
+argument_list|,
+name|paint_core
+operator|->
+name|use_pressure
+argument_list|)
+expr_stmt|;
 comment|/* Replace the newly dodgedburned area (canvas_buf) to the image */
 name|gimp_brush_core_replace_canvas
 argument_list|(
@@ -962,6 +981,8 @@ name|gimp_paint_options_get_brush_mode
 argument_list|(
 name|paint_options
 argument_list|)
+argument_list|,
+name|hardness
 argument_list|,
 name|GIMP_PAINT_CONSTANT
 argument_list|)
