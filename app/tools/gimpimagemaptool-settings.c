@@ -773,7 +773,7 @@ name|GTK_STOCK_ADD
 argument_list|,
 name|_
 argument_list|(
-literal|"Save Settings to _Favorites"
+literal|"Add Settings to _Favorites"
 argument_list|)
 argument_list|,
 name|G_CALLBACK
