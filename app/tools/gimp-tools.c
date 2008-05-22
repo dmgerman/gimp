@@ -580,6 +580,9 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_tool_options_create_folder
+argument_list|()
+expr_stmt|;
 name|tool_manager_init
 argument_list|(
 name|gimp

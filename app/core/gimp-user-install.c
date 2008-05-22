@@ -164,7 +164,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28be9a1c0103
+DECL|enum|__anon2bd5e2df0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -183,7 +183,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon28be9a1c0208
+DECL|struct|__anon2bd5e2df0208
 block|{
 DECL|member|name
 specifier|const
@@ -287,12 +287,6 @@ block|}
 block|,
 block|{
 literal|"tmp"
-block|,
-name|USER_INSTALL_MKDIR
-block|}
-block|,
-block|{
-literal|"tool-options"
 block|,
 name|USER_INSTALL_MKDIR
 block|}
