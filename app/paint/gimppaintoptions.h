@@ -89,10 +89,6 @@ DECL|struct|_GimpPressureOptions
 struct|struct
 name|_GimpPressureOptions
 block|{
-DECL|member|expanded
-name|gboolean
-name|expanded
-decl_stmt|;
 DECL|member|opacity
 name|gboolean
 name|opacity
@@ -126,10 +122,6 @@ DECL|struct|_GimpVelocityOptions
 struct|struct
 name|_GimpVelocityOptions
 block|{
-DECL|member|expanded
-name|gboolean
-name|expanded
-decl_stmt|;
 DECL|member|opacity
 name|gboolean
 name|opacity
@@ -163,10 +155,6 @@ DECL|struct|_GimpRandomOptions
 struct|struct
 name|_GimpRandomOptions
 block|{
-DECL|member|expanded
-name|gboolean
-name|expanded
-decl_stmt|;
 DECL|member|opacity
 name|gboolean
 name|opacity
@@ -379,6 +367,10 @@ decl_stmt|;
 DECL|member|hard
 name|gboolean
 name|hard
+decl_stmt|;
+DECL|member|dynamics_expanded
+name|gboolean
+name|dynamics_expanded
 decl_stmt|;
 DECL|member|pressure_options
 name|GimpPressureOptions
