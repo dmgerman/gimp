@@ -2749,6 +2749,16 @@ argument_list|(
 name|combo
 argument_list|)
 expr_stmt|;
+name|gtk_label_set_mnemonic_widget
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|label
+argument_list|)
+argument_list|,
+name|combo
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
