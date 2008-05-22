@@ -11490,7 +11490,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ad6c0d80103
+DECL|enum|__anon2a41a2500103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -18276,6 +18276,48 @@ name|x
 argument_list|)
 control|)
 block|{
+if|if
+condition|(
+operator|!
+name|is_pair
+argument_list|(
+name|x
+argument_list|)
+condition|)
+name|Error_1
+argument_list|(
+name|sc
+argument_list|,
+literal|"Bad syntax of binding in let :"
+argument_list|,
+name|x
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|is_list
+argument_list|(
+name|sc
+argument_list|,
+name|car
+argument_list|(
+name|x
+argument_list|)
+argument_list|)
+condition|)
+name|Error_1
+argument_list|(
+name|sc
+argument_list|,
+literal|"Bad syntax of binding in let :"
+argument_list|,
+name|car
+argument_list|(
+name|x
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|sc
 operator|->
 name|args
@@ -23502,7 +23544,7 @@ operator|==
 name|slow
 condition|)
 block|{
-comment|/* the fast pointer has looped back around and caught up                            with the slow pointer, hence the structure is circular,                            not of finite length, and therefore not a list */
+comment|/* the fast pointer has looped back around and caught up                with the slow pointer, hence the structure is circular,                not of finite length, and therefore not a list */
 return|return
 literal|0
 return|;
@@ -23624,7 +23666,7 @@ operator|==
 name|slow
 condition|)
 block|{
-comment|/* the fast pointer has looped back around and caught up                            with the slow pointer, hence the structure is circular,                            not of finite length, and therefore not a list */
+comment|/* the fast pointer has looped back around and caught up                with the slow pointer, hence the structure is circular,                not of finite length, and therefore not a list */
 return|return
 operator|-
 literal|1
@@ -28327,7 +28369,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ad6c0d80208
+DECL|struct|__anon2a41a2500208
 specifier|static
 struct|struct
 block|{
@@ -28562,7 +28604,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ad6c0d80308
+DECL|struct|__anon2a41a2500308
 typedef|typedef
 struct|struct
 block|{
