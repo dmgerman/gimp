@@ -1278,9 +1278,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image_map_tool
+name|klass
 operator|->
-name|config
+name|settings_name
 condition|)
 name|gimp_image_map_tool_add_settings_gui
 argument_list|(

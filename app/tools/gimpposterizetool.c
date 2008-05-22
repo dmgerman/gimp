@@ -360,30 +360,6 @@ argument_list|)
 expr_stmt|;
 name|im_tool_class
 operator|->
-name|settings_name
-operator|=
-literal|"posterize"
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|import_dialog_title
-operator|=
-name|_
-argument_list|(
-literal|"Import Posterize Settings"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
-name|export_dialog_title
-operator|=
-name|_
-argument_list|(
-literal|"Export Posterize Settings"
-argument_list|)
-expr_stmt|;
-name|im_tool_class
-operator|->
 name|get_operation
 operator|=
 name|gimp_posterize_tool_get_operation
