@@ -227,6 +227,11 @@ DECL|member|n_segment_indices
 name|gint
 name|n_segment_indices
 decl_stmt|;
+comment|/* The selection operation active when the tool was started */
+DECL|member|operation_at_start
+name|GimpChannelOps
+name|operation_at_start
+decl_stmt|;
 DECL|typedef|Private
 block|}
 name|Private
@@ -1775,6 +1780,24 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpSelectionOptions
+modifier|*
+name|options
+init|=
+name|GIMP_SELECTION_TOOL_GET_OPTIONS
+argument_list|(
+name|fst
+argument_list|)
+decl_stmt|;
+name|Private
+modifier|*
+name|priv
+init|=
+name|GET_PRIVATE
+argument_list|(
+name|fst
+argument_list|)
+decl_stmt|;
 name|gimp_free_select_tool_halt
 argument_list|(
 name|fst
@@ -1799,6 +1822,15 @@ name|draw_tool
 argument_list|,
 name|display
 argument_list|)
+expr_stmt|;
+comment|/* We want to apply the selection operation that was current when    * the tool was started, so we save this information */
+name|priv
+operator|->
+name|operation_at_start
+operator|=
+name|options
+operator|->
+name|operation
 expr_stmt|;
 name|gimp_selection_tool_start_edit
 argument_list|(
@@ -4167,9 +4199,9 @@ name|priv
 operator|->
 name|points
 argument_list|,
-name|options
+name|priv
 operator|->
-name|operation
+name|operation_at_start
 argument_list|,
 name|options
 operator|->
