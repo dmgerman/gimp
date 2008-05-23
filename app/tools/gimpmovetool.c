@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -469,9 +475,11 @@ literal|0
 argument_list|,
 literal|"gimp-move-tool"
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"tool|Move"
+literal|"tool"
+argument_list|,
+literal|"Move"
 argument_list|)
 argument_list|,
 name|_

@@ -377,9 +377,11 @@ name|tr_tool
 operator|->
 name|undo_desc
 operator|=
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Scale"
+literal|"command"
+argument_list|,
+literal|"Scale"
 argument_list|)
 expr_stmt|;
 name|tr_tool

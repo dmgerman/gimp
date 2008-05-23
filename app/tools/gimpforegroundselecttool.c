@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2938876c0108
+DECL|struct|__anon278f4d9a0108
 block|{
 DECL|member|width
 name|gint
@@ -3078,9 +3078,11 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Foreground Select"
+literal|"command"
+argument_list|,
+literal|"Foreground Select"
 argument_list|)
 argument_list|,
 name|fg_select

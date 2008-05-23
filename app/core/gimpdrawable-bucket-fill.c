@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -1167,9 +1173,11 @@ name|bufPR
 argument_list|,
 name|TRUE
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Bucket Fill"
+literal|"command"
+argument_list|,
+literal|"Bucket Fill"
 argument_list|)
 argument_list|,
 name|opacity

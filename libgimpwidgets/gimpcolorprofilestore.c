@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae1b290103
+DECL|enum|__anon28e6ee6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -849,9 +849,11 @@ name|label
 condition|)
 name|label
 operator|=
-name|Q_
+name|C_
 argument_list|(
-literal|"profile|None"
+literal|"profile"
+argument_list|,
+literal|"None"
 argument_list|)
 expr_stmt|;
 name|gimp_color_profile_store_get_separator

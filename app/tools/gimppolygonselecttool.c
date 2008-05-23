@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -2089,9 +2095,11 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Polygon Select"
+literal|"command"
+argument_list|,
+literal|"Polygon Select"
 argument_list|)
 argument_list|,
 name|poly_sel_tool

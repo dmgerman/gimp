@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -2694,9 +2700,11 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Flip"
+literal|"command"
+argument_list|,
+literal|"Flip"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2992,9 +3000,11 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Rotate"
+literal|"command"
+argument_list|,
+literal|"Rotate"
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -4465,9 +4465,11 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Free Select"
+literal|"command"
+argument_list|,
+literal|"Free Select"
 argument_list|)
 argument_list|,
 name|priv

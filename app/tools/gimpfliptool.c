@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -379,9 +385,11 @@ name|tr_tool
 operator|->
 name|undo_desc
 operator|=
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Flip"
+literal|"command"
+argument_list|,
+literal|"Flip"
 argument_list|)
 expr_stmt|;
 block|}

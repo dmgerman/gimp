@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f454720108
+DECL|struct|__anon27f23fd40108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -2466,9 +2466,11 @@ name|toggle
 operator|=
 name|gtk_check_button_new_with_label
 argument_list|(
-name|Q_
+name|C_
 argument_list|(
-literal|"checkbutton|Snap to grid"
+literal|"checkbutton"
+argument_list|,
+literal|"Snap to grid"
 argument_list|)
 argument_list|)
 expr_stmt|;

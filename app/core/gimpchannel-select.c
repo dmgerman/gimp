@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -149,9 +155,11 @@ name|gimp_channel_push_undo
 argument_list|(
 name|channel
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Rectangle Select"
+literal|"command"
+argument_list|,
+literal|"Rectangle Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -352,9 +360,11 @@ name|gimp_channel_push_undo
 argument_list|(
 name|channel
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Ellipse Select"
+literal|"command"
+argument_list|,
+literal|"Ellipse Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -565,9 +575,11 @@ name|gimp_channel_push_undo
 argument_list|(
 name|channel
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Rounded Rectangle Select"
+literal|"command"
+argument_list|,
+literal|"Rounded Rectangle Select"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2010,9 +2022,11 @@ name|gimp_channel_select_channel
 argument_list|(
 name|channel
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Fuzzy Select"
+literal|"command"
+argument_list|,
+literal|"Fuzzy Select"
 argument_list|)
 argument_list|,
 name|add_on
@@ -2190,9 +2204,11 @@ name|gimp_channel_select_channel
 argument_list|(
 name|channel
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"command|Select by Color"
+literal|"command"
+argument_list|,
+literal|"Select by Color"
 argument_list|)
 argument_list|,
 name|add_on

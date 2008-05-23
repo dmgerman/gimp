@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -102,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eaed1c0108
+DECL|struct|__anon2c6268870108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -364,9 +370,11 @@ argument_list|)
 argument_list|,
 name|context
 argument_list|,
-name|Q_
+name|C_
 argument_list|(
-literal|"dialog-title|Scale Image"
+literal|"dialog-title"
+argument_list|,
+literal|"Scale Image"
 argument_list|)
 argument_list|,
 literal|"gimp-image-scale"
