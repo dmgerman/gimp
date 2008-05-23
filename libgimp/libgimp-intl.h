@@ -58,7 +58,20 @@ name|Q_
 parameter_list|(
 name|String
 parameter_list|)
-value|g_strip_context ((String), dgettext (GETTEXT_PACKAGE "-libgimp", String))
+value|g_dpgettext (GETTEXT_PACKAGE "-libgimp", String, 0)
+end_define
+
+begin_define
+DECL|macro|C_ (Context,String)
+define|#
+directive|define
+name|C_
+parameter_list|(
+name|Context
+parameter_list|,
+name|String
+parameter_list|)
+value|g_dpgettext (GETTEXT_PACKAGE "-libgimp", Context "\004" String, strlen (Context) + 1)
 end_define
 
 begin_undef

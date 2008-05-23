@@ -50,6 +50,30 @@ parameter_list|)
 value|dgettext (GETTEXT_PACKAGE "-python", String)
 end_define
 
+begin_define
+DECL|macro|Q_ (String)
+define|#
+directive|define
+name|Q_
+parameter_list|(
+name|String
+parameter_list|)
+value|g_dpgettext (GETTEXT_PACKAGE "-python", String, 0)
+end_define
+
+begin_define
+DECL|macro|C_ (Context,String)
+define|#
+directive|define
+name|C_
+parameter_list|(
+name|Context
+parameter_list|,
+name|String
+parameter_list|)
+value|g_dpgettext (GETTEXT_PACKAGE "-python", Context "\004" String, strlen (Context) + 1)
+end_define
+
 begin_undef
 undef|#
 directive|undef
