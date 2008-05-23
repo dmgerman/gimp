@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_INT_STORE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkliststore.h>
-end_include
-
 begin_macro
 name|G_BEGIN_DECLS
 end_macro
@@ -29,7 +23,7 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b41814d0103
+DECL|enum|__anon28a8493e0103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE

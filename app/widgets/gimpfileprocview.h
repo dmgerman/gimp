@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_FILE_PROC_VIEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtktreeview.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_FILE_PROC_VIEW
 define|#

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_UI_MANAGER_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkuimanager.h>
-end_include
-
 begin_typedef
 DECL|typedef|GimpUIManagerUIEntry
 typedef|typedef

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_CONTAINER_COMBO_BOX_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkcombobox.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_COMBO_BOX
 define|#

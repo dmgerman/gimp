@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_CONTROLLER_EDITOR_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkvbox.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTROLLER_EDITOR
 define|#

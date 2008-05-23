@@ -27,11 +27,24 @@ directive|include
 file|<libgimp/gimpui.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_SINGLE_INCLUDES
+end_undef
+
 begin_include
 include|#
 directive|include
 file|<poppler.h>
 end_include
+
+begin_define
+DECL|macro|GTK_DISABLE_SINGLE_INCLUDES
+define|#
+directive|define
+name|GTK_DISABLE_SINGLE_INCLUDES
+end_define
 
 begin_include
 include|#
@@ -78,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ab6540108
+DECL|struct|__anon288bf5f20108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -112,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ab6540208
+DECL|struct|__anon288bf5f20208
 block|{
 DECL|member|n_pages
 name|gint
@@ -663,7 +676,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3ab6540303
+DECL|enum|__anon288bf5f20303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -2585,7 +2598,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ab6540408
+DECL|struct|__anon288bf5f20408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2610,7 +2623,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3ab6540508
+DECL|struct|__anon288bf5f20508
 block|{
 DECL|member|selector
 name|GimpPageSelector

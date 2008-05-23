@@ -16,15 +16,9 @@ directive|define
 name|__GIMP_ACTION_VIEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtktreeview.h>
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon2c8573390103
+DECL|enum|__anon2c6699cc0103
 block|{
 DECL|enumerator|GIMP_ACTION_VIEW_COLUMN_ACTION
 name|GIMP_ACTION_VIEW_COLUMN_ACTION

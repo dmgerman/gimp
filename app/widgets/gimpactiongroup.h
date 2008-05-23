@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_ACTION_GROUP_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkactiongroup.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_ACTION_GROUP
 define|#

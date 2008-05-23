@@ -16,16 +16,10 @@ directive|define
 name|__GIMP_CANVAS_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkdrawingarea.h>
-end_include
-
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2906503c0103
+DECL|enum|__anon2946bf680103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK

@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_CONTAINER_POPUP_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkwindow.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_POPUP
 define|#

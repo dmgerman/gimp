@@ -20,12 +20,6 @@ directive|define
 name|__GIMP_COLOR_SCALE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkscale.h>
-end_include
-
 begin_macro
 name|G_BEGIN_DECLS
 end_macro

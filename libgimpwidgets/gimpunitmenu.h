@@ -41,17 +41,6 @@ directive|define
 name|GTK_DISABLE_DEPRECATED
 end_define
 
-begin_else
-else|#
-directive|else
-end_else
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtkoptionmenu.h>
-end_include
-
 begin_endif
 endif|#
 directive|endif

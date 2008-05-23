@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_HANDLE_BAR_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkmisc.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_HANDLE_BAR
 define|#

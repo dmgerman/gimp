@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_IMAGE_PROP_VIEW_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtktable.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE_PROP_VIEW
 define|#

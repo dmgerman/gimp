@@ -20,12 +20,6 @@ directive|define
 name|__GIMP_CHAIN_BUTTON_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtktable.h>
-end_include
-
 begin_macro
 name|G_BEGIN_DECLS
 end_macro

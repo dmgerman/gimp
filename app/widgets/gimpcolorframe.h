@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_COLOR_FRAME_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkframe.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_COLOR_FRAME_ROWS
 define|#

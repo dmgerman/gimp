@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|<gtk/gtkcontainer.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_macro

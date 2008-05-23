@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<gtk/gtkiconfactory.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpstock.h"
 end_include
 
@@ -2663,7 +2657,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b891a020108
+DECL|struct|__anon2c0a676c0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3493,7 +3487,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b891a020208
+DECL|struct|__anon2c0a676c0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4409,7 +4403,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b891a020308
+DECL|struct|__anon2c0a676c0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4506,7 +4500,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b891a020408
+DECL|struct|__anon2c0a676c0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4651,7 +4645,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b891a020508
+DECL|struct|__anon2c0a676c0508
 block|{
 DECL|member|stock_id
 specifier|const

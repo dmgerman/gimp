@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_CELL_RENDERER_VIEWABLE_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkcellrenderer.h>
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CELL_RENDERER_VIEWABLE
 define|#

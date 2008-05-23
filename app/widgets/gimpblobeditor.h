@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_BLOB_EDITOR_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtk/gtkdrawingarea.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_BLOB_EDITOR
 define|#

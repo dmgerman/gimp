@@ -16,15 +16,9 @@ directive|define
 name|__GIMP_CONTAINER_ENTRY_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|<gtk/gtkentry.h>
-end_include
-
 begin_enum
 enum|enum
-DECL|enum|__anon290785e30103
+DECL|enum|__anon27eb60f00103
 block|{
 DECL|enumerator|GIMP_CONTAINER_ENTRY_COLUMN_RENDERER
 name|GIMP_CONTAINER_ENTRY_COLUMN_RENDERER
