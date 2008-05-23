@@ -1809,7 +1809,7 @@ name|gimp_query_string_box
 argument_list|(
 name|_
 argument_list|(
-literal|"Save Settings to Favorites"
+literal|"Add Settings to Favorites"
 argument_list|)
 argument_list|,
 name|tool
@@ -1820,10 +1820,9 @@ name|gimp_standard_help_func
 argument_list|,
 name|NULL
 argument_list|,
-comment|/*GIMP_HELP_TOOL_OPTIONS_DIALOG, */
 name|_
 argument_list|(
-literal|"Enter a name for the saved settings"
+literal|"Enter a name for the settings"
 argument_list|)
 argument_list|,
 name|_
