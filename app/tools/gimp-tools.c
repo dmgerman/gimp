@@ -300,12 +300,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppolygonselecttool.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpposterizetool.h"
 end_include
 
@@ -549,8 +543,6 @@ block|,
 name|gimp_by_color_select_tool_register
 block|,
 name|gimp_fuzzy_select_tool_register
-block|,
-name|gimp_polygon_select_tool_register
 block|,
 name|gimp_free_select_tool_register
 block|,
