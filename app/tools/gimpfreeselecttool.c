@@ -4095,7 +4095,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-comment|/* No need to be clever, we can cleanup even if no move was done */
 if|if
 condition|(
 name|priv
