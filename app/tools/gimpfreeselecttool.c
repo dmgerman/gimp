@@ -2869,7 +2869,7 @@ argument_list|)
 decl_stmt|;
 name|GimpVector2
 modifier|*
-name|source
+name|dest
 decl_stmt|;
 name|gint
 name|n_points
@@ -2900,7 +2900,7 @@ argument_list|(
 name|fst
 argument_list|,
 operator|&
-name|source
+name|dest
 argument_list|,
 operator|&
 name|n_points
@@ -2918,7 +2918,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-name|source
+name|dest
 argument_list|,
 name|priv
 operator|->
@@ -2951,7 +2951,7 @@ argument_list|(
 name|fst
 argument_list|,
 operator|&
-name|source
+name|dest
 argument_list|,
 operator|&
 name|n_points
@@ -2969,7 +2969,7 @@ argument_list|)
 expr_stmt|;
 name|memcpy
 argument_list|(
-name|source
+name|dest
 argument_list|,
 name|priv
 operator|->
