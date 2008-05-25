@@ -258,6 +258,11 @@ DECL|member|constrain_angle
 name|gboolean
 name|constrain_angle
 decl_stmt|;
+comment|/* Wether or not to supress handles (so that new segments can be    * created immediately after an existing segment vertex.    */
+DECL|member|supress_handles
+name|gboolean
+name|supress_handles
+decl_stmt|;
 comment|/* Last _oper_update coords */
 DECL|member|last_coords
 name|GimpVector2
@@ -868,6 +873,12 @@ name|FALSE
 expr_stmt|;
 name|priv
 operator|->
+name|supress_handles
+operator|=
+name|FALSE
+expr_stmt|;
+name|priv
+operator|->
 name|last_click_time
 operator|=
 name|NO_CLICK_TIME_AVAILABLE
@@ -1378,9 +1389,16 @@ name|double_click_distance
 expr_stmt|;
 block|}
 return|return
+operator|(
+operator|!
+name|priv
+operator|->
+name|supress_handles
+operator|&&
 name|dist
 operator|<
 name|POINT_GRAB_THRESHOLD_SQ
+operator|)
 operator|||
 name|double_click
 return|;
@@ -1390,8 +1408,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_select_closest_segment_point (GimpFreeSelectTool * fst,GimpDisplay * display,GimpCoords * coords)
-name|gimp_free_select_tool_select_closest_segment_point
+DECL|function|gimp_free_select_tool_handle_segment_selection (GimpFreeSelectTool * fst,GimpDisplay * display,GimpCoords * coords)
+name|gimp_free_select_tool_handle_segment_selection
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
@@ -1447,6 +1465,11 @@ operator|->
 name|display
 operator|!=
 name|NULL
+operator|&&
+operator|!
+name|priv
+operator|->
+name|supress_handles
 condition|)
 block|{
 for|for
@@ -3688,7 +3711,7 @@ decl_stmt|;
 name|gboolean
 name|hovering_first_point
 decl_stmt|;
-name|gimp_free_select_tool_select_closest_segment_point
+name|gimp_free_select_tool_handle_segment_selection
 argument_list|(
 name|fst
 argument_list|,
@@ -4629,6 +4652,15 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+init|=
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+decl_stmt|;
 name|Private
 modifier|*
 name|priv
@@ -4638,6 +4670,11 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|gimp_draw_tool_pause
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 name|priv
 operator|->
 name|constrain_angle
@@ -4649,6 +4686,23 @@ condition|?
 name|TRUE
 else|:
 name|FALSE
+expr_stmt|;
+name|priv
+operator|->
+name|supress_handles
+operator|=
+name|state
+operator|&
+name|GDK_SHIFT_MASK
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|gimp_draw_tool_resume
+argument_list|(
+name|draw_tool
+argument_list|)
 expr_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
@@ -4741,6 +4795,11 @@ operator|!
 name|priv
 operator|->
 name|button1_down
+operator|&&
+operator|!
+name|priv
+operator|->
+name|supress_handles
 condition|)
 block|{
 name|gint
