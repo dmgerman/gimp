@@ -182,6 +182,7 @@ DECL|member|grabbed_segment_index
 name|gint
 name|grabbed_segment_index
 decl_stmt|;
+comment|/* Wether or not button 1 is down. */
 DECL|member|button1_down
 name|gboolean
 name|button1_down
@@ -254,6 +255,7 @@ DECL|member|operation_at_start
 name|GimpChannelOps
 name|operation_at_start
 decl_stmt|;
+comment|/* Wether or not to constrain the angle for newly created polygonal    * segments.    */
 DECL|member|constrain_angle
 name|gboolean
 name|constrain_angle
