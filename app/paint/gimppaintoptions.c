@@ -327,7 +327,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f7ac000103
+DECL|enum|__anon2bdcaf730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1271,7 +1271,7 @@ name|pressure_options
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpPressureOptions
+name|GimpDynamicOptions
 argument_list|)
 expr_stmt|;
 name|options
@@ -1280,7 +1280,7 @@ name|velocity_options
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpVelocityOptions
+name|GimpDynamicOptions
 argument_list|)
 expr_stmt|;
 name|options
@@ -1289,7 +1289,7 @@ name|random_options
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpRandomOptions
+name|GimpDynamicOptions
 argument_list|)
 expr_stmt|;
 name|options
@@ -1357,7 +1357,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpPressureOptions
+name|GimpDynamicOptions
 argument_list|,
 name|options
 operator|->
@@ -1366,7 +1366,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpVelocityOptions
+name|GimpDynamicOptions
 argument_list|,
 name|options
 operator|->
@@ -1375,7 +1375,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpRandomOptions
+name|GimpDynamicOptions
 argument_list|,
 name|options
 operator|->
@@ -1454,7 +1454,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpPressureOptions
+name|GimpDynamicOptions
 modifier|*
 name|pressure_options
 init|=
@@ -1462,7 +1462,7 @@ name|options
 operator|->
 name|pressure_options
 decl_stmt|;
-name|GimpVelocityOptions
+name|GimpDynamicOptions
 modifier|*
 name|velocity_options
 init|=
@@ -1470,7 +1470,7 @@ name|options
 operator|->
 name|velocity_options
 decl_stmt|;
-name|GimpRandomOptions
+name|GimpDynamicOptions
 modifier|*
 name|random_options
 init|=
@@ -2064,7 +2064,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpPressureOptions
+name|GimpDynamicOptions
 modifier|*
 name|pressure_options
 init|=
@@ -2072,7 +2072,7 @@ name|options
 operator|->
 name|pressure_options
 decl_stmt|;
-name|GimpVelocityOptions
+name|GimpDynamicOptions
 modifier|*
 name|velocity_options
 init|=
@@ -2080,7 +2080,7 @@ name|options
 operator|->
 name|velocity_options
 decl_stmt|;
-name|GimpRandomOptions
+name|GimpDynamicOptions
 modifier|*
 name|random_options
 init|=

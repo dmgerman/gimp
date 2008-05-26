@@ -213,10 +213,6 @@ specifier|static
 name|void
 name|pressure_options_gui
 parameter_list|(
-name|GimpPressureOptions
-modifier|*
-name|pressure
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -244,10 +240,6 @@ specifier|static
 name|void
 name|velocity_options_gui
 parameter_list|(
-name|GimpVelocityOptions
-modifier|*
-name|velocity
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -270,10 +262,6 @@ specifier|static
 name|void
 name|random_options_gui
 parameter_list|(
-name|GimpRandomOptions
-modifier|*
-name|random
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -297,10 +285,6 @@ name|GtkWidget
 modifier|*
 name|fade_options_gui
 parameter_list|(
-name|GimpFadeOptions
-modifier|*
-name|fade
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -317,10 +301,6 @@ name|GtkWidget
 modifier|*
 name|gradient_options_gui
 parameter_list|(
-name|GimpGradientOptions
-modifier|*
-name|gradient
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -341,10 +321,6 @@ name|GtkWidget
 modifier|*
 name|jitter_options_gui
 parameter_list|(
-name|GimpJitterOptions
-modifier|*
-name|jitter
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -1191,10 +1167,6 @@ expr_stmt|;
 name|pressure_options_gui
 argument_list|(
 name|options
-operator|->
-name|pressure_options
-argument_list|,
-name|options
 argument_list|,
 name|tool_type
 argument_list|,
@@ -1211,10 +1183,6 @@ expr_stmt|;
 name|velocity_options_gui
 argument_list|(
 name|options
-operator|->
-name|velocity_options
-argument_list|,
-name|options
 argument_list|,
 name|tool_type
 argument_list|,
@@ -1228,10 +1196,6 @@ argument_list|)
 expr_stmt|;
 name|random_options_gui
 argument_list|(
-name|options
-operator|->
-name|random_options
-argument_list|,
 name|options
 argument_list|,
 name|tool_type
@@ -1363,10 +1327,6 @@ operator|=
 name|fade_options_gui
 argument_list|(
 name|options
-operator|->
-name|fade_options
-argument_list|,
-name|options
 argument_list|,
 name|tool_type
 argument_list|)
@@ -1402,10 +1362,6 @@ name|frame
 operator|=
 name|jitter_options_gui
 argument_list|(
-name|options
-operator|->
-name|jitter_options
-argument_list|,
 name|options
 argument_list|,
 name|tool_type
@@ -1566,10 +1522,6 @@ name|frame
 operator|=
 name|gradient_options_gui
 argument_list|(
-name|options
-operator|->
-name|gradient_options
-argument_list|,
 name|options
 argument_list|,
 name|tool_type
@@ -1994,13 +1946,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|pressure_options_gui (GimpPressureOptions * pressure,GimpPaintOptions * paint_options,GType tool_type,GtkTable * table,gint row,GtkWidget * labels[])
+DECL|function|pressure_options_gui (GimpPaintOptions * paint_options,GType tool_type,GtkTable * table,gint row,GtkWidget * labels[])
 name|pressure_options_gui
 parameter_list|(
-name|GimpPressureOptions
-modifier|*
-name|pressure
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -2297,13 +2245,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|velocity_options_gui (GimpVelocityOptions * velocity,GimpPaintOptions * paint_options,GType tool_type,GtkTable * table,gint row)
+DECL|function|velocity_options_gui (GimpPaintOptions * paint_options,GType tool_type,GtkTable * table,gint row)
 name|velocity_options_gui
 parameter_list|(
-name|GimpVelocityOptions
-modifier|*
-name|velocity
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -2454,13 +2398,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|random_options_gui (GimpRandomOptions * random,GimpPaintOptions * paint_options,GType tool_type,GtkTable * table,gint row)
+DECL|function|random_options_gui (GimpPaintOptions * paint_options,GType tool_type,GtkTable * table,gint row)
 name|random_options_gui
 parameter_list|(
-name|GimpRandomOptions
-modifier|*
-name|random
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -2612,13 +2552,9 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|fade_options_gui (GimpFadeOptions * fade,GimpPaintOptions * paint_options,GType tool_type)
+DECL|function|fade_options_gui (GimpPaintOptions * paint_options,GType tool_type)
 name|fade_options_gui
 parameter_list|(
-name|GimpFadeOptions
-modifier|*
-name|fade
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -2836,13 +2772,9 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|jitter_options_gui (GimpJitterOptions * jitter,GimpPaintOptions * paint_options,GType tool_type)
+DECL|function|jitter_options_gui (GimpPaintOptions * paint_options,GType tool_type)
 name|jitter_options_gui
 parameter_list|(
-name|GimpJitterOptions
-modifier|*
-name|jitter
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -2963,13 +2895,9 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gradient_options_gui (GimpGradientOptions * gradient,GimpPaintOptions * paint_options,GType tool_type,GtkWidget * incremental_toggle)
+DECL|function|gradient_options_gui (GimpPaintOptions * paint_options,GType tool_type,GtkWidget * incremental_toggle)
 name|gradient_options_gui
 parameter_list|(
-name|GimpGradientOptions
-modifier|*
-name|gradient
-parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
@@ -3087,7 +3015,9 @@ argument_list|(
 name|incremental_toggle
 argument_list|,
 operator|!
-name|gradient
+name|paint_options
+operator|->
+name|gradient_options
 operator|->
 name|use_gradient
 argument_list|)
