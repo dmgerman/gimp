@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949becd0103
+DECL|enum|__anon296914090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2949becd0203
+DECL|enum|__anon296914090203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3839,7 +3839,7 @@ name|shell
 operator|->
 name|hrule
 operator|=
-name|gtk_hruler_new
+name|gimp_hruler_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_set_events
@@ -3913,7 +3913,7 @@ name|shell
 operator|->
 name|vrule
 operator|=
-name|gtk_vruler_new
+name|gimp_vruler_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_set_events

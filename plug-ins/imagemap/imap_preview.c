@@ -2038,7 +2038,7 @@ modifier|*
 name|ruler
 parameter_list|)
 block|{
-name|gtk_ruler_set_range
+name|gimp_ruler_set_range
 argument_list|(
 name|ruler
 argument_list|,
@@ -2399,7 +2399,7 @@ name|hruler
 operator|=
 name|ruler
 operator|=
-name|gtk_hruler_new
+name|gimp_hruler_new
 argument_list|()
 expr_stmt|;
 name|g_signal_connect_swapped
@@ -2463,7 +2463,7 @@ name|vruler
 operator|=
 name|ruler
 operator|=
-name|gtk_vruler_new
+name|gimp_vruler_new
 argument_list|()
 expr_stmt|;
 name|g_signal_connect_swapped

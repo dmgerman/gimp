@@ -361,6 +361,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpRuler
+typedef|typedef
+name|struct
+name|_GimpRuler
+name|GimpRuler
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpScrolledPreview
 typedef|typedef
 name|struct

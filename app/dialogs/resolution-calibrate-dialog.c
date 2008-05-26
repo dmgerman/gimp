@@ -379,7 +379,7 @@ expr_stmt|;
 block|}
 name|ruler
 operator|=
-name|gtk_hruler_new
+name|gimp_hruler_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -391,9 +391,9 @@ argument_list|,
 literal|32
 argument_list|)
 expr_stmt|;
-name|gtk_ruler_set_range
+name|gimp_ruler_set_range
 argument_list|(
-name|GTK_RULER
+name|GIMP_RULER
 argument_list|(
 name|ruler
 argument_list|)
@@ -440,7 +440,7 @@ argument_list|)
 expr_stmt|;
 name|ruler
 operator|=
-name|gtk_vruler_new
+name|gimp_vruler_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_set_size_request
@@ -452,9 +452,9 @@ argument_list|,
 name|ruler_height
 argument_list|)
 expr_stmt|;
-name|gtk_ruler_set_range
+name|gimp_ruler_set_range
 argument_list|(
-name|GTK_RULER
+name|GIMP_RULER
 argument_list|(
 name|ruler
 argument_list|)
