@@ -130,13 +130,13 @@ modifier|*
 name|gimp_scale_button_new
 parameter_list|(
 name|gdouble
+name|value
+parameter_list|,
+name|gdouble
 name|min
 parameter_list|,
 name|gdouble
 name|max
-parameter_list|,
-name|gdouble
-name|step
 parameter_list|)
 function_decl|;
 end_function_decl
