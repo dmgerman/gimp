@@ -49,7 +49,6 @@ end_function_decl
 
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpScaleButton,gimp_scale_button,GTK_TYPE_SCALE_BUTTON)
-DECL|function|G_DEFINE_TYPE (GimpScaleButton,gimp_scale_button,GTK_TYPE_SCALE_BUTTON)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpScaleButton
@@ -75,7 +74,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_scale_button_init (GimpScaleButton * button)
 DECL|function|gimp_scale_button_init (GimpScaleButton * button)
 name|gimp_scale_button_init
 parameter_list|(
@@ -118,7 +116,6 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_scale_button_image_expose (GtkWidget * widget,GdkEventExpose * event,GimpScaleButton * button)
 DECL|function|gimp_scale_button_image_expose (GtkWidget * widget,GdkEventExpose * event,GimpScaleButton * button)
 name|gimp_scale_button_image_expose
 parameter_list|(
@@ -410,15 +407,46 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
+DECL|function|gimp_scale_button_new (gdouble min,gdouble max,gdouble step)
 name|gimp_scale_button_new
 parameter_list|(
-name|void
+name|gdouble
+name|min
+parameter_list|,
+name|gdouble
+name|max
+parameter_list|,
+name|gdouble
+name|step
 parameter_list|)
 block|{
+name|GtkObject
+modifier|*
+name|adj
+init|=
+name|gtk_adjustment_new
+argument_list|(
+name|min
+argument_list|,
+name|min
+argument_list|,
+name|max
+argument_list|,
+name|step
+argument_list|,
+name|step
+argument_list|,
+literal|0
+argument_list|)
+decl_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_SCALE_BUTTON
+argument_list|,
+literal|"adjustment"
+argument_list|,
+name|adj
 argument_list|,
 name|NULL
 argument_list|)
