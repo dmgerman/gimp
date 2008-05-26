@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d969130103
+DECL|enum|__anon29431eea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1009,7 +1009,7 @@ parameter_list|)
 block|{
 name|GimpCurvesConfig
 modifier|*
-name|a_config
+name|config_a
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
@@ -1018,7 +1018,7 @@ argument_list|)
 decl_stmt|;
 name|GimpCurvesConfig
 modifier|*
-name|b_config
+name|config_b
 init|=
 name|GIMP_CURVES_CONFIG
 argument_list|(
@@ -1044,9 +1044,9 @@ control|)
 block|{
 name|GimpCurve
 modifier|*
-name|a_curve
+name|curve_a
 init|=
-name|a_config
+name|config_a
 operator|->
 name|curve
 index|[
@@ -1055,9 +1055,9 @@ index|]
 decl_stmt|;
 name|GimpCurve
 modifier|*
-name|b_curve
+name|curve_b
 init|=
-name|b_config
+name|config_b
 operator|->
 name|curve
 index|[
@@ -1066,9 +1066,9 @@ index|]
 decl_stmt|;
 if|if
 condition|(
-name|a_curve
+name|curve_a
 operator|&&
-name|b_curve
+name|curve_b
 condition|)
 block|{
 if|if
@@ -1078,12 +1078,12 @@ name|gimp_config_is_equal_to
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|a_curve
+name|curve_a
 argument_list|)
 argument_list|,
 name|GIMP_CONFIG
 argument_list|(
-name|b_curve
+name|curve_b
 argument_list|)
 argument_list|)
 condition|)
@@ -1094,9 +1094,9 @@ block|}
 elseif|else
 if|if
 condition|(
-name|a_curve
+name|curve_a
 operator|||
-name|b_curve
+name|curve_b
 condition|)
 block|{
 return|return
