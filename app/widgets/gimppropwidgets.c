@@ -1106,6 +1106,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|gdouble
+name|value
+parameter_list|,
 name|GObject
 modifier|*
 name|config
@@ -1317,12 +1320,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_prop_scale_button_callback (GtkWidget * button,GObject * config)
+DECL|function|gimp_prop_scale_button_callback (GtkWidget * button,gdouble value,GObject * config)
 name|gimp_prop_scale_button_callback
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|button
+parameter_list|,
+name|gdouble
+name|value
 parameter_list|,
 name|GObject
 modifier|*
@@ -1332,9 +1338,6 @@ block|{
 name|GParamSpec
 modifier|*
 name|param_spec
-decl_stmt|;
-name|gdouble
-name|value
 decl_stmt|;
 name|param_spec
 operator|=
@@ -1352,16 +1355,6 @@ operator|!
 name|param_spec
 condition|)
 return|return;
-name|value
-operator|=
-name|gtk_scale_button_get_value
-argument_list|(
-name|GTK_SCALE_BUTTON
-argument_list|(
-name|button
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|config
@@ -1379,7 +1372,6 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-operator|&
 name|value
 argument_list|,
 name|NULL
@@ -1873,7 +1865,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c5381f0108
+DECL|struct|__anon2b83fb970108
 block|{
 DECL|member|config
 name|GObject
