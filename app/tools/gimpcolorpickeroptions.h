@@ -116,11 +116,6 @@ DECL|member|pick_mode
 name|GimpColorPickMode
 name|pick_mode
 decl_stmt|;
-DECL|member|add_to_palette
-name|gboolean
-name|add_to_palette
-decl_stmt|;
-comment|/* unused */
 DECL|member|use_info_window
 name|gboolean
 name|use_info_window
