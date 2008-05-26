@@ -998,6 +998,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpScaleButton
+typedef|typedef
+name|struct
+name|_GimpScaleButton
+name|GimpScaleButton
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSizeBox
 typedef|typedef
 name|struct
