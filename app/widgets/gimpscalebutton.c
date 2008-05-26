@@ -476,6 +476,10 @@ literal|"adjustment"
 argument_list|,
 name|adj
 argument_list|,
+literal|"size"
+argument_list|,
+name|GTK_ICON_SIZE_MENU
+argument_list|,
 name|NULL
 argument_list|)
 return|;
