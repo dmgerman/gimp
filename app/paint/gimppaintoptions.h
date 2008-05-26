@@ -95,6 +95,10 @@ DECL|member|color
 name|gboolean
 name|color
 decl_stmt|;
+DECL|member|prescale
+name|gdouble
+name|prescale
+decl_stmt|;
 block|}
 struct|;
 end_struct
