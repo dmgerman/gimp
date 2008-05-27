@@ -44,7 +44,7 @@ DECL|macro|RULER_HEIGHT
 define|#
 directive|define
 name|RULER_HEIGHT
-value|14
+value|13
 end_define
 
 begin_define
@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af287b90108
+DECL|struct|__anon275b2ddd0108
 block|{
 DECL|member|xsrc
 name|gint
@@ -421,6 +421,7 @@ argument_list|(
 name|ruler
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpRulerMetric
 modifier|*
 name|metric
@@ -466,9 +467,6 @@ name|gint
 name|scale
 decl_stmt|;
 comment|/* Number of units per major unit */
-name|gdouble
-name|subd_incr
-decl_stmt|;
 name|gdouble
 name|start
 decl_stmt|,
@@ -844,8 +842,10 @@ name|i
 operator|--
 control|)
 block|{
+name|gdouble
 name|subd_incr
-operator|=
+init|=
+operator|(
 operator|(
 name|gdouble
 operator|)
@@ -865,7 +865,8 @@ name|subdivide
 index|[
 name|i
 index|]
-expr_stmt|;
+operator|)
+decl_stmt|;
 if|if
 condition|(
 name|subd_incr

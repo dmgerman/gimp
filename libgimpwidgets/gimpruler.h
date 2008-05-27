@@ -198,11 +198,13 @@ struct|struct
 name|_GimpRulerMetric
 block|{
 DECL|member|metric_name
+specifier|const
 name|gchar
 modifier|*
 name|metric_name
 decl_stmt|;
 DECL|member|abbrev
+specifier|const
 name|gchar
 modifier|*
 name|abbrev
@@ -352,6 +354,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+specifier|const
 name|GimpRulerMetric
 modifier|*
 name|_gimp_ruler_get_metric

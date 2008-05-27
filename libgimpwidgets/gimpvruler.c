@@ -44,7 +44,7 @@ DECL|macro|RULER_WIDTH
 define|#
 directive|define
 name|RULER_WIDTH
-value|14
+value|13
 end_define
 
 begin_define
@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e390d90108
+DECL|struct|__anon2c0a38b10108
 block|{
 DECL|member|xsrc
 name|gint
@@ -421,6 +421,7 @@ argument_list|(
 name|ruler
 argument_list|)
 decl_stmt|;
+specifier|const
 name|GimpRulerMetric
 modifier|*
 name|metric
@@ -468,9 +469,6 @@ name|gint
 name|scale
 decl_stmt|;
 comment|/* Number of units per major unit */
-name|gdouble
-name|subd_incr
-decl_stmt|;
 name|gdouble
 name|start
 decl_stmt|,
@@ -846,8 +844,10 @@ name|i
 operator|--
 control|)
 block|{
+name|gdouble
 name|subd_incr
-operator|=
+init|=
+operator|(
 operator|(
 name|gdouble
 operator|)
@@ -867,7 +867,8 @@ name|subdivide
 index|[
 name|i
 index|]
-expr_stmt|;
+operator|)
+decl_stmt|;
 if|if
 condition|(
 name|subd_incr

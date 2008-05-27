@@ -34,7 +34,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af8408c0108
+DECL|struct|__anon2c3665b70108
 block|{
 DECL|member|backing_store
 name|GdkPixmap
@@ -79,7 +79,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af8408c0203
+DECL|enum|__anon2c3665b70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,6 +222,7 @@ DECL|variable|ruler_metrics
 specifier|static
 specifier|const
 name|GimpRulerMetric
+specifier|const
 name|ruler_metrics
 index|[]
 init|=
@@ -351,7 +352,7 @@ block|,
 literal|100
 block|}
 block|}
-block|, }
+block|}
 decl_stmt|;
 end_decl_stmt
 
@@ -1489,6 +1490,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|GimpRulerMetric
 modifier|*
 DECL|function|_gimp_ruler_get_metric (GimpRuler * ruler)
