@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a1376d0108
+DECL|struct|__anon28e390d90108
 block|{
 DECL|member|xsrc
 name|gint
@@ -542,7 +542,7 @@ name|ythickness
 expr_stmt|;
 name|layout
 operator|=
-name|gtk_widget_create_pango_layout
+name|_gimp_ruler_create_pango_layout
 argument_list|(
 name|widget
 argument_list|,

@@ -364,6 +364,24 @@ name|G_GNUC_INTERNAL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+name|PangoLayout
+modifier|*
+name|_gimp_ruler_create_pango_layout
+argument_list|(
+name|GtkWidget
+operator|*
+name|widget
+argument_list|,
+specifier|const
+name|gchar
+operator|*
+name|text
+argument_list|)
+name|G_GNUC_INTERNAL
+decl_stmt|;
+end_decl_stmt
+
 begin_macro
 name|G_END_DECLS
 end_macro
