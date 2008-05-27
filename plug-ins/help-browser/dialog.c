@@ -51,11 +51,24 @@ directive|include
 file|<gtk/gtk.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GDK_PIXBUF_DISABLE_SINGLE_INCLUDES
+end_undef
+
 begin_include
 include|#
 directive|include
 file|<libgtkhtml/gtkhtml.h>
 end_include
+
+begin_define
+DECL|macro|GDK_PIXBUF_DISABLE_SINGLE_INCLUDES
+define|#
+directive|define
+name|GDK_PIXBUF_DISABLE_SINGLE_INCLUDES
+end_define
 
 begin_include
 include|#
@@ -170,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3344710108
+DECL|struct|__anon2b9fdc9d0108
 block|{
 DECL|member|width
 name|gint
@@ -196,7 +209,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3344710203
+DECL|enum|__anon2b9fdc9d0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
