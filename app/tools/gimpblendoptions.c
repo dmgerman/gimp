@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpviewablebox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpblendoptions.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d518260103
+DECL|enum|__anon2b98e2e10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -692,6 +698,54 @@ name|vbox
 argument_list|)
 argument_list|,
 name|GIMP_PAINT_OPTIONS_TABLE_KEY
+argument_list|)
+expr_stmt|;
+comment|/*  the gradient  */
+name|button
+operator|=
+name|gimp_prop_gradient_box_new
+argument_list|(
+name|NULL
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|tool_options
+argument_list|)
+argument_list|,
+literal|2
+argument_list|,
+literal|"gradient-view-type"
+argument_list|,
+literal|"gradient-view-size"
+argument_list|,
+literal|"gradient-reverse"
+argument_list|)
+expr_stmt|;
+name|gimp_table_attach_aligned
+argument_list|(
+name|GTK_TABLE
+argument_list|(
+name|table
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+literal|2
+argument_list|,
+name|_
+argument_list|(
+literal|"Gradient:"
+argument_list|)
+argument_list|,
+literal|0.0
+argument_list|,
+literal|0.5
+argument_list|,
+name|button
+argument_list|,
+literal|2
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  the offset scale  */
