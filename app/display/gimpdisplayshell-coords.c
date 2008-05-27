@@ -1123,7 +1123,7 @@ name|velocity
 argument_list|)
 operator|)
 expr_stmt|;
-comment|/* Speed needs upper limit but allowing it to be 1.0 is no good in tools*/
+comment|/* Speed needs upper limit */
 name|coords
 operator|->
 name|velocity
@@ -1134,7 +1134,7 @@ name|coords
 operator|->
 name|velocity
 argument_list|,
-literal|0.9999
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
