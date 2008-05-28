@@ -55,19 +55,11 @@ name|MINIMUM_INCR
 value|5
 end_define
 
-begin_define
-DECL|macro|MAXIMUM_SUBDIVIDE
-define|#
-directive|define
-name|MAXIMUM_SUBDIVIDE
-value|5
-end_define
-
 begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bdb02d00108
+DECL|struct|__anon2911e9300108
 block|{
 DECL|member|ruler_scale
 name|gdouble
@@ -83,7 +75,6 @@ index|[
 literal|5
 index|]
 decl_stmt|;
-comment|/* five possible modes of subdivision */
 DECL|variable|ruler_metric
 block|}
 name|ruler_metric
@@ -141,7 +132,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdb02d00208
+DECL|struct|__anon2911e9300208
 block|{
 DECL|member|xsrc
 name|gint
@@ -394,9 +385,6 @@ decl_stmt|;
 name|gdouble
 name|upper
 decl_stmt|;
-name|gdouble
-name|position
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|;
@@ -541,6 +529,9 @@ name|pos
 decl_stmt|;
 name|gdouble
 name|max_size
+decl_stmt|;
+name|GimpUnit
+name|unit
 decl_stmt|;
 name|PangoLayout
 modifier|*
@@ -854,6 +845,13 @@ argument_list|)
 operator|-
 literal|1
 expr_stmt|;
+name|unit
+operator|=
+name|gimp_ruler_get_unit
+argument_list|(
+name|ruler
+argument_list|)
+expr_stmt|;
 comment|/* drawing starts here */
 name|length
 operator|=
@@ -863,7 +861,12 @@ for|for
 control|(
 name|i
 operator|=
-name|MAXIMUM_SUBDIVIDE
+name|G_N_ELEMENTS
+argument_list|(
+name|ruler_metric
+operator|.
+name|subdivide
+argument_list|)
 operator|-
 literal|1
 init|;
@@ -877,7 +880,29 @@ control|)
 block|{
 name|gdouble
 name|subd_incr
-init|=
+decl_stmt|;
+comment|/* hack to get proper subdivisions at full pixels */
+if|if
+condition|(
+name|unit
+operator|==
+name|GIMP_UNIT_PIXEL
+operator|&&
+name|scale
+operator|==
+literal|1
+operator|&&
+name|i
+operator|==
+literal|1
+condition|)
+name|subd_incr
+operator|=
+literal|1.0
+expr_stmt|;
+else|else
+name|subd_incr
+operator|=
 operator|(
 operator|(
 name|gdouble
@@ -899,7 +924,7 @@ index|[
 name|i
 index|]
 operator|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|subd_incr
@@ -910,6 +935,18 @@ name|increment
 argument_list|)
 operator|<=
 name|MINIMUM_INCR
+condition|)
+continue|continue;
+comment|/* don't subdivide pixels */
+if|if
+condition|(
+name|unit
+operator|==
+name|GIMP_UNIT_PIXEL
+operator|&&
+name|subd_incr
+operator|<
+literal|1.0
 condition|)
 continue|continue;
 comment|/* Calculate the length of the tickmarks. Make sure that        * this length increases for each set of ticks        */
