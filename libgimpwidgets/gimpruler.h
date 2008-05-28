@@ -218,7 +218,7 @@ DECL|member|ruler_scale
 name|gdouble
 name|ruler_scale
 index|[
-literal|10
+literal|16
 index|]
 decl_stmt|;
 DECL|member|subdivide
