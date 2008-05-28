@@ -2054,11 +2054,9 @@ name|adj
 operator|->
 name|page_size
 argument_list|,
-name|G_MAXDOUBLE
-argument_list|,
 name|adj
 operator|->
-name|page_size
+name|upper
 argument_list|)
 expr_stmt|;
 block|}

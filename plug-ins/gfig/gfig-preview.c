@@ -402,8 +402,6 @@ literal|0
 argument_list|,
 name|preview_width
 argument_list|,
-literal|0
-argument_list|,
 name|PREVIEW_SIZE
 argument_list|)
 expr_stmt|;
@@ -477,8 +475,6 @@ argument_list|,
 literal|0
 argument_list|,
 name|preview_height
-argument_list|,
-literal|0
 argument_list|,
 name|PREVIEW_SIZE
 argument_list|)
