@@ -106,7 +106,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87fba70108
+DECL|struct|__anon27baaf8d0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -1788,6 +1788,10 @@ operator|)
 name|rowfact
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|fr
+condition|)
 name|dest
 index|[
 name|dix
