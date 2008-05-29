@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3db25b0103
+DECL|enum|__anon279139800103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3db25b0203
+DECL|enum|__anon279139800203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3db25b0303
+DECL|enum|__anon279139800303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3592,6 +3592,25 @@ name|h
 operator|>
 literal|0.0
 condition|)
+block|{
+name|gchar
+modifier|*
+name|aspect_text
+decl_stmt|;
+name|aspect_text
+operator|=
+name|g_strdup_printf
+argument_list|(
+literal|"  %.2f"
+argument_list|,
+name|w
+operator|/
+operator|(
+name|gdouble
+operator|)
+name|h
+argument_list|)
+expr_stmt|;
 name|gimp_tool_push_status_coords
 argument_list|(
 name|tool
@@ -3609,9 +3628,15 @@ literal|" Ã "
 argument_list|,
 name|h
 argument_list|,
-name|NULL
+name|aspect_text
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|aspect_text
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
