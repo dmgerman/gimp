@@ -460,11 +460,6 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_PERSPECTIVE_CLONE
 value|"gimp-tool-perspective-clone"
-DECL|macro|GIMP_STOCK_TOOL_POLYGON_SELECT
-define|#
-directive|define
-name|GIMP_STOCK_TOOL_POLYGON_SELECT
-value|"gimp-tool-polygon-select"
 DECL|macro|GIMP_STOCK_TOOL_POSTERIZE
 define|#
 directive|define

@@ -59,7 +59,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2911e9300108
+DECL|struct|__anon2b7a53ec0108
 block|{
 DECL|member|ruler_scale
 name|gdouble
@@ -132,7 +132,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2911e9300208
+DECL|struct|__anon2b7a53ec0208
 block|{
 DECL|member|xsrc
 name|gint
@@ -334,6 +334,10 @@ name|RULER_HEIGHT
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_hruler_new:  *  * Creates a new horizontal ruler.  *  * Return value: a new #GimpHRuler widget.  *  * Since: GIMP 2.8  **/
+end_comment
 
 begin_function
 name|GtkWidget

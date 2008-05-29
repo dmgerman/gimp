@@ -59,7 +59,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27d1955f0108
+DECL|struct|__anon297dedbc0108
 block|{
 DECL|member|ruler_scale
 name|gdouble
@@ -132,7 +132,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d1955f0208
+DECL|struct|__anon297dedbc0208
 block|{
 DECL|member|xsrc
 name|gint
@@ -334,6 +334,10 @@ literal|1
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * gimp_vruler_new:  *  * Creates a new vertical ruler.  *  * Return value: a new #GimpVRuler widget.  *  * Since: GIMP 2.8  **/
+end_comment
 
 begin_function
 name|GtkWidget
