@@ -2026,14 +2026,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|scroll_adj_changed (GtkAdjustment * adj,GtkRuler * ruler)
+DECL|function|scroll_adj_changed (GtkAdjustment * adj,GimpRuler * ruler)
 name|scroll_adj_changed
 parameter_list|(
 name|GtkAdjustment
 modifier|*
 name|adj
 parameter_list|,
-name|GtkRuler
+name|GimpRuler
 modifier|*
 name|ruler
 parameter_list|)
