@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * module-dialog.c  * (C) 1999 Austin Donnelly<austin@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * module-dialog.c  * (C) 1999 Austin Donnelly<austin@gimp.org>  * (C) 2008 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f22530103
+DECL|enum|__anon2919dafd0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f22530203
+DECL|enum|__anon2919dafd0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298f22530308
+DECL|struct|__anon2919dafd0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -140,6 +140,11 @@ DECL|member|list
 name|GtkListStore
 modifier|*
 name|list
+decl_stmt|;
+DECL|member|hint
+name|GtkWidget
+modifier|*
+name|hint
 decl_stmt|;
 DECL|member|table
 name|GtkWidget
@@ -509,6 +514,50 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox
+argument_list|)
+expr_stmt|;
+name|dialog
+operator|->
+name|hint
+operator|=
+name|gimp_hint_box_new
+argument_list|(
+name|_
+argument_list|(
+literal|"You will have to restart GIMP "
+literal|"for the changes to take effect."
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|vbox
+argument_list|)
+argument_list|,
+name|dialog
+operator|->
+name|hint
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp
+operator|->
+name|write_modulerc
+condition|)
+name|gtk_widget_show
+argument_list|(
+name|dialog
+operator|->
+name|hint
 argument_list|)
 expr_stmt|;
 name|listbox
@@ -1345,6 +1394,13 @@ operator|->
 name|write_modulerc
 operator|=
 name|TRUE
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|dialog
+operator|->
+name|hint
+argument_list|)
 expr_stmt|;
 block|}
 block|}
