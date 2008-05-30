@@ -667,7 +667,7 @@ name|GTK_STOCK_EXECUTE
 block|,
 name|N_
 argument_list|(
-literal|"_Module Manager"
+literal|"_Modules"
 argument_list|)
 block|,
 name|NULL
