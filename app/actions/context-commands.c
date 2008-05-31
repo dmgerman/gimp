@@ -516,6 +516,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|1.0
 operator|/
 literal|255.0
 argument_list|,
@@ -593,6 +595,8 @@ operator|.
 name|g
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -678,6 +682,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|1.0
 operator|/
 literal|255.0
 argument_list|,
@@ -755,6 +761,8 @@ operator|.
 name|r
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -840,6 +848,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|1.0
 operator|/
 literal|255.0
 argument_list|,
@@ -917,6 +927,8 @@ operator|.
 name|b
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1010,6 +1022,8 @@ operator|.
 name|h
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1115,6 +1129,8 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|,
+literal|1.0
+argument_list|,
 literal|0.01
 argument_list|,
 literal|0.01
@@ -1215,6 +1231,8 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|,
+literal|1.0
+argument_list|,
 literal|0.01
 argument_list|,
 literal|0.01
@@ -1312,6 +1330,8 @@ operator|.
 name|h
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -1417,6 +1437,8 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|,
+literal|1.0
+argument_list|,
 literal|0.01
 argument_list|,
 literal|0.01
@@ -1517,6 +1539,8 @@ literal|0.0
 argument_list|,
 literal|1.0
 argument_list|,
+literal|1.0
+argument_list|,
 literal|0.01
 argument_list|,
 literal|0.01
@@ -1593,6 +1617,8 @@ name|context
 argument_list|)
 argument_list|,
 name|GIMP_OPACITY_TRANSPARENT
+argument_list|,
+name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
@@ -1681,6 +1707,8 @@ name|paint_modes
 argument_list|)
 operator|-
 literal|1
+argument_list|,
+literal|0
 argument_list|,
 literal|0.0
 argument_list|,
@@ -2053,6 +2081,8 @@ literal|1.0
 argument_list|,
 literal|5000.0
 argument_list|,
+literal|20.0
+argument_list|,
 literal|1.0
 argument_list|,
 literal|5.0
@@ -2283,6 +2313,8 @@ name|min_radius
 argument_list|,
 literal|4000.0
 argument_list|,
+name|min_radius
+argument_list|,
 literal|0.1
 argument_list|,
 literal|1.0
@@ -2392,6 +2424,8 @@ literal|2.0
 argument_list|,
 literal|20.0
 argument_list|,
+literal|2.0
+argument_list|,
 literal|0.0
 argument_list|,
 literal|1.0
@@ -2498,6 +2532,8 @@ argument_list|,
 name|hardness
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
@@ -2609,6 +2645,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|20.0
+argument_list|,
+literal|1.0
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2740,6 +2778,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|180.0
+argument_list|,
+literal|0.0
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2930,6 +2970,8 @@ argument_list|,
 literal|0
 argument_list|,
 name|max
+argument_list|,
+literal|0
 argument_list|,
 literal|0
 argument_list|,

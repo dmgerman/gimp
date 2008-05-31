@@ -118,6 +118,9 @@ name|gdouble
 name|max
 parameter_list|,
 name|gdouble
+name|def
+parameter_list|,
+name|gdouble
 name|small_inc
 parameter_list|,
 name|gdouble

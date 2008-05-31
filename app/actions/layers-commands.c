@@ -3349,6 +3349,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|1.0
 operator|/
 literal|255.0
 argument_list|,
@@ -3486,6 +3488,8 @@ name|layer_modes
 argument_list|)
 operator|-
 literal|1
+argument_list|,
+literal|0
 argument_list|,
 literal|0.0
 argument_list|,

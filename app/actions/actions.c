@@ -1775,7 +1775,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|action_select_value (GimpActionSelectType select_type,gdouble value,gdouble min,gdouble max,gdouble small_inc,gdouble inc,gdouble skip_inc,gdouble delta_factor,gboolean wrap)
+DECL|function|action_select_value (GimpActionSelectType select_type,gdouble value,gdouble min,gdouble max,gdouble def,gdouble small_inc,gdouble inc,gdouble skip_inc,gdouble delta_factor,gboolean wrap)
 name|action_select_value
 parameter_list|(
 name|GimpActionSelectType
@@ -1789,6 +1789,9 @@ name|min
 parameter_list|,
 name|gdouble
 name|max
+parameter_list|,
+name|gdouble
+name|def
 parameter_list|,
 name|gdouble
 name|small_inc
@@ -1811,6 +1814,14 @@ condition|(
 name|select_type
 condition|)
 block|{
+case|case
+name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
+case|:
+name|value
+operator|=
+name|def
+expr_stmt|;
+break|break;
 case|case
 name|GIMP_ACTION_SELECT_FIRST
 case|:
@@ -2116,6 +2127,13 @@ argument_list|)
 operator|->
 name|maximum
 argument_list|,
+name|G_PARAM_SPEC_DOUBLE
+argument_list|(
+name|pspec
+argument_list|)
+operator|->
+name|default_value
+argument_list|,
 name|small_inc
 argument_list|,
 name|inc
@@ -2184,6 +2202,13 @@ name|pspec
 argument_list|)
 operator|->
 name|maximum
+argument_list|,
+name|G_PARAM_SPEC_INT
+argument_list|(
+name|pspec
+argument_list|)
+operator|->
+name|default_value
 argument_list|,
 name|small_inc
 argument_list|,
