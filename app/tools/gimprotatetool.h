@@ -117,6 +117,11 @@ name|GtkObject
 modifier|*
 name|angle_adj
 decl_stmt|;
+DECL|member|angle_spin_button
+name|GtkWidget
+modifier|*
+name|angle_spin_button
+decl_stmt|;
 DECL|member|sizeentry
 name|GtkWidget
 modifier|*
