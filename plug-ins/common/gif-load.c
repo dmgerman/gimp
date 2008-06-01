@@ -790,7 +790,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b42a7890108
+DECL|struct|__anon27dd18560108
 block|{
 DECL|member|Width
 name|unsigned
@@ -840,7 +840,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b42a7890208
+DECL|struct|__anon27dd18560208
 block|{
 DECL|member|transparent
 name|int
@@ -2625,7 +2625,7 @@ return|return
 literal|0
 return|;
 block|}
-if|if
+while|while
 condition|(
 operator|(
 name|curbit
