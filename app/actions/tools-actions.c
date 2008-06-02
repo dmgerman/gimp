@@ -425,6 +425,24 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"tools-color-average-set-to-default"
+block|,
+name|GIMP_STOCK_TOOL_COLOR_PICKER
+block|,
+literal|"Set Color Picker Radius To Default Value"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"tools-color-average-radius-minimum"
 block|,
 name|GIMP_STOCK_TOOL_COLOR_PICKER
@@ -558,6 +576,24 @@ block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
 name|TRUE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-paint-brush-scale-set-to-default"
+block|,
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+block|,
+literal|"Set Brush Scale To Default Value"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -839,6 +875,24 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"tools-ink-blob-aspect-set-to-default"
+block|,
+name|GIMP_STOCK_TOOL_INK
+block|,
+literal|"Set Ink Blob Aspect To Default Value"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
+block|,
+name|FALSE
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"tools-ink-blob-aspect-minimum"
 block|,
 name|GIMP_STOCK_TOOL_INK
@@ -1110,6 +1164,24 @@ block|,
 name|GIMP_ACTION_SELECT_SET
 block|,
 name|TRUE
+block|,
+name|NULL
+block|}
+block|,
+block|{
+literal|"tools-foreground-select-brush-size-set-to-default"
+block|,
+name|GIMP_STOCK_TOOL_FOREGROUND_SELECT
+block|,
+literal|"Set Foreground Select Brush Size to Default Value"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|GIMP_ACTION_SELECT_SET_TO_DEFAULT
+block|,
+name|FALSE
 block|,
 name|NULL
 block|}
@@ -1395,7 +1467,7 @@ literal|"tools-value-1-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 1 To Default"
+literal|"Set Value 1 To Default Value"
 block|,
 name|NULL
 block|,
@@ -1551,9 +1623,9 @@ literal|"tools-value-2-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 2 To Default"
+literal|"Set Value 2 To Default Value"
 block|,
-name|NULL
+literal|"backslash"
 block|,
 name|NULL
 block|,
@@ -1707,7 +1779,7 @@ literal|"tools-value-3-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 3 To Default"
+literal|"Set Value 3 To Default Value"
 block|,
 name|NULL
 block|,
@@ -1863,7 +1935,7 @@ literal|"tools-value-4-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-literal|"Set Value 4 To Default"
+literal|"Set Value 4 To Default Value"
 block|,
 name|NULL
 block|,
