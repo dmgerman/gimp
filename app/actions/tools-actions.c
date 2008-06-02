@@ -1435,6 +1435,10 @@ block|, }
 decl_stmt|;
 end_decl_stmt
 
+begin_comment
+comment|/* tools-value-1 is effectively used to control  * opacity of the active tool  */
+end_comment
+
 begin_decl_stmt
 DECL|variable|tools_value_1_actions
 specifier|static
@@ -1590,6 +1594,10 @@ block|}
 block|, }
 decl_stmt|;
 end_decl_stmt
+
+begin_comment
+comment|/* tools-value-2 is effectively used to control  * the tip size of the active tool  */
+end_comment
 
 begin_decl_stmt
 DECL|variable|tools_value_2_actions
