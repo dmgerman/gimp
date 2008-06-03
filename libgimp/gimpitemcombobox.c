@@ -70,7 +70,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b91ad90103
+DECL|enum|__anon2bc3f5630103
 block|{
 DECL|enumerator|DRAWABLE_COMBO_BOX
 name|DRAWABLE_COMBO_BOX
@@ -522,7 +522,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * channels. See gimp_drawable_combo_box() for more info.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_channel_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * channels. See gimp_drawable_combo_box_new() for more information.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -629,7 +629,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box() for more info.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_layer_combo_box_new:  * @constraint: a #GimpDrawableConstraintFunc or %NULL  * @data:       a pointer that is passed to @constraint  *  * Creates a new #GimpIntComboBox filled with all currently opened  * layers. See gimp_drawable_combo_box_new() for more information.  *  * Return value: a new #GimpIntComboBox.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
