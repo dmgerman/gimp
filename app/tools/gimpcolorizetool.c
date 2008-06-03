@@ -107,6 +107,14 @@ name|SLIDER_WIDTH
 value|200
 end_define
 
+begin_define
+DECL|macro|SPINNER_WIDTH
+define|#
+directive|define
+name|SPINNER_WIDTH
+value|4
+end_define
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -816,6 +824,10 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|main_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|table
 decl_stmt|;
 name|GtkWidget
@@ -834,6 +846,13 @@ name|GtkObject
 modifier|*
 name|data
 decl_stmt|;
+name|main_vbox
+operator|=
+name|gimp_image_map_tool_dialog_get_vbox
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_frame_new
@@ -848,8 +867,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|image_map_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -874,7 +891,7 @@ name|gtk_vbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|4
+literal|6
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -965,8 +982,7 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-operator|-
-literal|1
+name|SPINNER_WIDTH
 argument_list|,
 name|col_tool
 operator|->
@@ -1058,8 +1074,7 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-operator|-
-literal|1
+name|SPINNER_WIDTH
 argument_list|,
 name|col_tool
 operator|->
@@ -1151,8 +1166,7 @@ argument_list|)
 argument_list|,
 name|SLIDER_WIDTH
 argument_list|,
-operator|-
-literal|1
+name|SPINNER_WIDTH
 argument_list|,
 name|col_tool
 operator|->

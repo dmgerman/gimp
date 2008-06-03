@@ -1090,6 +1090,14 @@ name|GtkCellRenderer
 modifier|*
 name|cell
 decl_stmt|;
+name|GtkSizeGroup
+modifier|*
+name|label_group
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|main_vbox
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|hbox
@@ -1110,6 +1118,20 @@ name|GList
 modifier|*
 name|iter
 decl_stmt|;
+name|main_vbox
+operator|=
+name|gimp_image_map_tool_dialog_get_vbox
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
+name|label_group
+operator|=
+name|gimp_image_map_tool_dialog_get_label_group
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
 comment|/*  The operation combo box  */
 name|hbox
 operator|=
@@ -1124,8 +1146,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|image_map_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -1171,6 +1191,13 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|label_group
+argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
@@ -1409,8 +1436,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|image_map_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,

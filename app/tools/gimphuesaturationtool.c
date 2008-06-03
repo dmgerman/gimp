@@ -918,6 +918,10 @@ name|config
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|main_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|vbox
 decl_stmt|;
 name|GtkWidget
@@ -967,7 +971,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon29fa5b500108
+DECL|struct|__anon2b1e6ea60108
 block|{
 DECL|member|label
 specifier|const
@@ -1143,6 +1147,13 @@ literal|2
 block|}
 block|}
 struct|;
+name|main_vbox
+operator|=
+name|gimp_image_map_tool_dialog_get_vbox
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_frame_new
@@ -1157,8 +1168,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|image_map_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -1840,8 +1849,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|image_map_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,

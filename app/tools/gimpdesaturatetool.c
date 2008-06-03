@@ -681,8 +681,19 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|main_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|frame
 decl_stmt|;
+name|main_vbox
+operator|=
+name|gimp_image_map_tool_dialog_get_vbox
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
 comment|/*  The table containing sliders  */
 name|frame
 operator|=
@@ -715,8 +726,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|image_map_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,

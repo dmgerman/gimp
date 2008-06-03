@@ -1141,12 +1141,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_balance_tool_dialog (GimpImageMapTool * im_tool)
+DECL|function|gimp_color_balance_tool_dialog (GimpImageMapTool * image_map_tool)
 name|gimp_color_balance_tool_dialog
 parameter_list|(
 name|GimpImageMapTool
 modifier|*
-name|im_tool
+name|image_map_tool
 parameter_list|)
 block|{
 name|GimpColorBalanceTool
@@ -1155,7 +1155,7 @@ name|cb_tool
 init|=
 name|GIMP_COLOR_BALANCE_TOOL
 argument_list|(
-name|im_tool
+name|image_map_tool
 argument_list|)
 decl_stmt|;
 name|GimpColorBalanceConfig
@@ -1165,6 +1165,10 @@ init|=
 name|cb_tool
 operator|->
 name|config
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|main_vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1186,6 +1190,13 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
+name|main_vbox
+operator|=
+name|gimp_image_map_tool_dialog_get_vbox
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
 name|frame
 operator|=
 name|gimp_enum_radio_frame_new
@@ -1231,8 +1242,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|im_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -1264,8 +1273,6 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|im_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -1609,8 +1616,6 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|im_tool
-operator|->
 name|main_vbox
 argument_list|)
 argument_list|,

@@ -168,6 +168,11 @@ name|GtkWidget
 modifier|*
 name|export_item
 decl_stmt|;
+DECL|member|label_group
+name|GtkSizeGroup
+modifier|*
+name|label_group
+decl_stmt|;
 comment|/* settings file dialog */
 DECL|member|settings_dialog
 name|GtkWidget
@@ -371,6 +376,34 @@ parameter_list|,
 name|GimpConfig
 modifier|*
 name|config
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/* accessors for derived classes */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_image_map_tool_dialog_get_vbox
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GtkSizeGroup
+modifier|*
+name|gimp_image_map_tool_dialog_get_label_group
+parameter_list|(
+name|GimpImageMapTool
+modifier|*
+name|tool
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -960,7 +960,7 @@ name|GIMP_HISTOGRAM_SCALE_LINEAR
 block|,
 name|N_
 argument_list|(
-literal|"Linear"
+literal|"Linear histogram"
 argument_list|)
 block|,
 name|NULL
@@ -971,7 +971,7 @@ name|GIMP_HISTOGRAM_SCALE_LOGARITHMIC
 block|,
 name|N_
 argument_list|(
-literal|"Logarithmic"
+literal|"Logarithmic histogram"
 argument_list|)
 block|,
 name|NULL

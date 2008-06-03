@@ -1807,13 +1807,17 @@ name|GtkListStore
 modifier|*
 name|store
 decl_stmt|;
-name|GtkWidget
+name|GtkSizeGroup
 modifier|*
-name|vbox
+name|label_group
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|vbox2
+name|main_vbox
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -1847,11 +1851,19 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|vbox
-operator|=
-name|image_map_tool
-operator|->
 name|main_vbox
+operator|=
+name|gimp_image_map_tool_dialog_get_vbox
+argument_list|(
+name|image_map_tool
+argument_list|)
+expr_stmt|;
+name|label_group
+operator|=
+name|gimp_image_map_tool_dialog_get_label_group
+argument_list|(
+name|image_map_tool
+argument_list|)
 expr_stmt|;
 comment|/*  The combo box for selecting channels  */
 name|hbox
@@ -1867,7 +1879,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
 name|hbox
@@ -1912,6 +1924,13 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|label
+argument_list|)
+expr_stmt|;
+name|gtk_size_group_add_widget
+argument_list|(
+name|label_group
+argument_list|,
 name|label
 argument_list|)
 expr_stmt|;
@@ -2143,7 +2162,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
 name|table
@@ -2156,7 +2175,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 comment|/*  The left color bar  */
-name|vbox2
+name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
@@ -2172,7 +2191,7 @@ argument_list|(
 name|table
 argument_list|)
 argument_list|,
-name|vbox2
+name|vbox
 argument_list|,
 literal|0
 argument_list|,
@@ -2195,7 +2214,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 expr_stmt|;
 name|frame
@@ -2219,7 +2238,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|frame
@@ -2506,7 +2525,7 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
-name|vbox2
+name|vbox
 operator|=
 name|gtk_vbox_new
 argument_list|(
@@ -2522,12 +2541,12 @@ argument_list|(
 name|frame
 argument_list|)
 argument_list|,
-name|vbox2
+name|vbox
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 expr_stmt|;
 name|tool
@@ -2557,7 +2576,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|tool
@@ -2589,7 +2608,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox2
+name|vbox
 argument_list|)
 argument_list|,
 name|bar
@@ -2624,7 +2643,7 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|main_vbox
 argument_list|)
 argument_list|,
 name|hbox
