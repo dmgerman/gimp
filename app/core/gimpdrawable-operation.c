@@ -207,19 +207,7 @@ operator|=
 name|gegl_node_new
 argument_list|()
 expr_stmt|;
-comment|/* If the dont-cache property exist on the node object, we set it to    * false causing children of the node to not do any caching either,    * unless explicitly re-enabled.    */
-if|if
-condition|(
-name|g_object_class_find_property
-argument_list|(
-name|G_OBJECT_GET_CLASS
-argument_list|(
-name|gegl
-argument_list|)
-argument_list|,
-literal|"dont-cache"
-argument_list|)
-condition|)
+comment|/* Disable caching on all children of the node unless explicitly re-enabled.    */
 name|g_object_set
 argument_list|(
 name|gegl
