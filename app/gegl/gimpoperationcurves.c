@@ -76,6 +76,10 @@ name|out_buf
 parameter_list|,
 name|glong
 name|samples
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|roi
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -214,7 +218,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_curves_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples)
+DECL|function|gimp_operation_curves_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,GeglRectangle * roi)
 name|gimp_operation_curves_process
 parameter_list|(
 name|GeglOperation
@@ -231,6 +235,10 @@ name|out_buf
 parameter_list|,
 name|glong
 name|samples
+parameter_list|,
+name|GeglRectangle
+modifier|*
+name|roi
 parameter_list|)
 block|{
 name|GimpOperationPointFilter
