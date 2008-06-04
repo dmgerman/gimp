@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-gegl.h"
 end_include
 
@@ -95,6 +101,22 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|g_object_set
+argument_list|(
+name|gegl_config
+argument_list|()
+argument_list|,
+literal|"tile-width"
+argument_list|,
+name|TILE_WIDTH
+argument_list|,
+literal|"tile-height"
+argument_list|,
+name|TILE_HEIGHT
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_COLOR_BALANCE
