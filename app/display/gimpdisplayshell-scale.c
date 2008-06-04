@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd70850108
+DECL|struct|__anon29ac8b7e0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1909,7 +1909,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_resize:  * @shell:          the #GimpDisplayShell  * @resize_window:  whether the display window should be resized  * @redisplay:      whether the display window should be redrawn  *  * Function commonly called after a change in display scale to make the changes  * visible to the user. If @resize_window is %TRUE then the display window is  * resized to accomodate the display image as per  * gimp_display_shell_shrink_wrap().  **/
+comment|/**  * gimp_display_shell_scale_resize:  * @shell:          the #GimpDisplayShell  * @resize_window:  whether the display window should be resized  * @grow_only:      whether shrinking of the window is allowed or not  *  * Function commonly called after a change in display scale to make the changes  * visible to the user. If @resize_window is %TRUE then the display window is  * resized to accomodate the display image as per  * gimp_display_shell_shrink_wrap().  **/
 end_comment
 
 begin_function

@@ -53,6 +53,28 @@ value|(G_TYPE_CHECK_CLASS_CAST ((klass),  GIMP_TYPE_OPERATION_DESATURATE, GimpOp
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_OPERATION_DESATURATE (obj)
+define|#
+directive|define
+name|GIMP_IS_OPERATION_DESATURATE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_OPERATION_DESATURATE))
+end_define
+
+begin_define
+DECL|macro|GIMP_IS_OPERATION_DESATURATE_CLASS (klass)
+define|#
+directive|define
+name|GIMP_IS_OPERATION_DESATURATE_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass),  GIMP_TYPE_OPERATION_DESATURATE))
+end_define
+
+begin_define
 DECL|macro|GIMP_OPERATION_DESATURATE_GET_CLASS (obj)
 define|#
 directive|define

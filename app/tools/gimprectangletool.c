@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279139800103
+DECL|enum|__anon2bdf00a70103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279139800203
+DECL|enum|__anon2bdf00a70203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279139800303
+DECL|enum|__anon2bdf00a70303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -13757,7 +13757,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rectangle_tool_get_public_rect:  * @rect_tool:  * @pub_x1:  * @pub_y1:  * @pub_x2:  * @pub_y2:  *  * Returns the rectangle as it appears to be publicly (based on  * integer or double precision-mode.  **/
+comment|/**  * gimp_rectangle_tool_get_public_rect:  * @rect_tool:  * @pub_x1:  * @pub_y1:  * @pub_x2:  * @pub_y2:  *  * This function returns the rectangle as it appears to be publicly  * (based on integer or double precision-mode).  **/
 end_comment
 
 begin_function
