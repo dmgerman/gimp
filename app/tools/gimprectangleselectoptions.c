@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279e2d880103
+DECL|enum|__anon2b75ab8a0103
 block|{
 DECL|enumerator|PROP_ROUND_CORNERS
 name|PROP_ROUND_CORNERS
@@ -183,6 +183,22 @@ operator|->
 name|get_property
 operator|=
 name|gimp_rectangle_select_options_get_property
+expr_stmt|;
+comment|/* The 'highlight' property is defined here because we want different    * default values for the Crop and the Rectangle Select tools.    */
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
+argument_list|,
+literal|"highlight"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -612,20 +628,6 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|vbox_rectangle
-argument_list|)
-expr_stmt|;
-name|g_object_set
-argument_list|(
-name|GIMP_RECTANGLE_OPTIONS
-argument_list|(
-name|tool_options
-argument_list|)
-argument_list|,
-literal|"highlight"
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
