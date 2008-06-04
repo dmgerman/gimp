@@ -272,19 +272,6 @@ literal|"Red eye threshold in percent"
 block|}
 block|}
 decl_stmt|;
-name|gimp_set_data
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|,
-operator|&
-name|threshold
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|threshold
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
 name|PLUG_IN_PROC
@@ -346,7 +333,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|dialog (gint32 image_id,GimpDrawable * drawable,gint * current_threshold)
+DECL|function|dialog (gint32 image_id,GimpDrawable * drawable)
 name|dialog
 parameter_list|(
 name|gint32
@@ -355,10 +342,6 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|,
-name|gint
-modifier|*
-name|current_threshold
 parameter_list|)
 block|{
 name|GtkWidget
@@ -773,9 +756,6 @@ init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
 name|gint32
-name|threshold
-decl_stmt|;
-name|gint32
 name|image_ID
 decl_stmt|;
 name|run_mode
@@ -862,46 +842,18 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|strncmp
-argument_list|(
-name|name
-argument_list|,
-name|PLUG_IN_PROC
-argument_list|,
-name|strlen
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|)
-argument_list|)
-operator|==
-literal|0
-condition|)
-block|{
-if|if
-condition|(
 operator|!
 name|dialog
 argument_list|(
 name|image_ID
 argument_list|,
 name|drawable
-argument_list|,
-operator|&
-name|threshold
 argument_list|)
 condition|)
 name|status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
-block|}
-else|else
-block|{
-name|threshold
-operator|=
-literal|50
-expr_stmt|;
-block|}
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -918,7 +870,7 @@ break|break;
 default|default:
 break|break;
 block|}
-comment|/*  Make sure that the drawable is RGB color.    *  Greyscale images don't have the red eye effect. */
+comment|/*  Make sure that the drawable is RGB color.  */
 if|if
 condition|(
 name|status
@@ -947,28 +899,12 @@ condition|)
 name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
-comment|/* if we ran in auto mode don't reset the threshold */
 if|if
 condition|(
 name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
-operator|&&
-name|strncmp
-argument_list|(
-name|name
-argument_list|,
-name|PLUG_IN_PROC
-argument_list|,
-name|strlen
-argument_list|(
-name|PLUG_IN_PROC
-argument_list|)
-argument_list|)
-operator|==
-literal|0
 condition|)
-block|{
 name|gimp_set_data
 argument_list|(
 name|PLUG_IN_PROC
@@ -982,7 +918,6 @@ name|threshold
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -1248,12 +1183,12 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -1417,7 +1352,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|redeye_inner_loop (const guchar * src,guchar * dest,gint width,gint height,gint bpp,gboolean has_alpha,int rowstride)
+DECL|function|redeye_inner_loop (const guchar * src,guchar * dest,gint width,gint height,gint bpp,gboolean has_alpha,gint rowstride)
 name|redeye_inner_loop
 parameter_list|(
 specifier|const
@@ -1441,7 +1376,7 @@ parameter_list|,
 name|gboolean
 name|has_alpha
 parameter_list|,
-name|int
+name|gint
 name|rowstride
 parameter_list|)
 block|{
