@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a85eb60103
+DECL|enum|__anon2a119fe00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,7 +199,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-comment|/* override velocity size because its unnatural as a default for airbrush */
+comment|/* override velocity-size because its unnatural as a default for airbrush */
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -215,7 +215,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-comment|/* override velocity hardness to default to a true, because that is natural for airbrush */
+comment|/* override velocity-hardness to default to a true,    * because that is natural for airbrush    */
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
