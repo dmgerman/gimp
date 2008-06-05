@@ -374,6 +374,28 @@ name|GIMP_HELP_BRUSH_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-brush-editor"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Brush Editor"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Open the brush editor"
+argument_list|)
+block|,
+literal|"gimp-brush-editor"
+block|,
+name|GIMP_HELP_BRUSH_EDIT
+block|}
+block|,
+block|{
 literal|"dialogs-patterns"
 block|,
 name|GIMP_STOCK_PATTERN
@@ -418,6 +440,28 @@ name|GIMP_HELP_GRADIENT_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-gradient-editor"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Gradient Editor"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Open the gradient editor"
+argument_list|)
+block|,
+literal|"gimp-gradient-editor"
+block|,
+name|GIMP_HELP_GRADIENT_EDIT
+block|}
+block|,
+block|{
 literal|"dialogs-palettes"
 block|,
 name|GIMP_STOCK_PALETTE
@@ -437,6 +481,28 @@ block|,
 literal|"gimp-palette-list|gimp-palette-grid"
 block|,
 name|GIMP_HELP_PALETTE_DIALOG
+block|}
+block|,
+block|{
+literal|"dialogs-palette-editor"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Palette Editor"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Open the palette editor"
+argument_list|)
+block|,
+literal|"gimp-palette-editor"
+block|,
+name|GIMP_HELP_PALETTE_EDIT
 block|}
 block|,
 block|{
