@@ -54,13 +54,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-utils.h"
+file|"core/gimpparamspecs.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpparamspecs.h"
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimp-utils.h"
 end_include
 
 begin_include
@@ -135,6 +141,11 @@ DECL|member|gimp
 name|Gimp
 modifier|*
 name|gimp
+decl_stmt|;
+DECL|member|progress
+name|GimpProgress
+modifier|*
+name|progress
 decl_stmt|;
 DECL|member|help_domain
 name|gchar
@@ -219,6 +230,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -261,12 +276,16 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_help_show (Gimp * gimp,const gchar * help_domain,const gchar * help_id)
+DECL|function|gimp_help_show (Gimp * gimp,GimpProgress * progress,const gchar * help_domain,const gchar * help_id)
 name|gimp_help_show
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -288,6 +307,18 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -321,6 +352,12 @@ operator|->
 name|gimp
 operator|=
 name|gimp
+expr_stmt|;
+name|idle_help
+operator|->
+name|progress
+operator|=
+name|progress
 expr_stmt|;
 if|if
 condition|(
@@ -513,6 +550,10 @@ argument_list|(
 name|idle_help
 operator|->
 name|gimp
+argument_list|,
+name|idle_help
+operator|->
+name|progress
 argument_list|,
 name|procedure_name
 argument_list|,
@@ -1031,12 +1072,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_call (Gimp * gimp,const gchar * procedure_name,const gchar * help_domain,const gchar * help_locales,const gchar * help_id)
+DECL|function|gimp_help_call (Gimp * gimp,GimpProgress * progress,const gchar * procedure_name,const gchar * help_domain,const gchar * help_locales,const gchar * help_id)
 name|gimp_help_call
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -1125,7 +1170,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|progress
 argument_list|,
 operator|&
 name|error
@@ -1343,7 +1388,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|progress
 argument_list|,
 name|args
 argument_list|,
@@ -1452,7 +1497,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-name|NULL
+name|progress
 argument_list|,
 operator|&
 name|error

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f91ac70103
+DECL|enum|__anon28e822720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f91ac70203
+DECL|enum|__anon28e822720203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2165,7 +2165,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f91ac70308
+DECL|struct|__anon28e822720308
 block|{
 DECL|member|x
 name|guint
@@ -3705,16 +3705,14 @@ block|{
 name|GtkWidget
 modifier|*
 name|menu_item
-decl_stmt|;
-name|menu_item
-operator|=
+init|=
 name|GTK_MENU_SHELL
 argument_list|(
 name|widget
 argument_list|)
 operator|->
 name|active_menu_item
-expr_stmt|;
+decl_stmt|;
 comment|/*  first, get the help page from the item...        */
 if|if
 condition|(
@@ -3962,6 +3960,8 @@ argument_list|(
 name|manager
 operator|->
 name|gimp
+argument_list|,
+name|NULL
 argument_list|,
 name|help_domain
 argument_list|,

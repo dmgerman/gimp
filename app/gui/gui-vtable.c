@@ -345,6 +345,10 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1042,12 +1046,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gui_help (Gimp * gimp,const gchar * help_domain,const gchar * help_id)
+DECL|function|gui_help (Gimp * gimp,GimpProgress * progress,const gchar * help_domain,const gchar * help_id)
 name|gui_help
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -1063,6 +1071,8 @@ block|{
 name|gimp_help_show
 argument_list|(
 name|gimp
+argument_list|,
+name|progress
 argument_list|,
 name|help_domain
 argument_list|,

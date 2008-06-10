@@ -761,12 +761,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_help (Gimp * gimp,const gchar * help_domain,const gchar * help_id)
+DECL|function|gimp_help (Gimp * gimp,GimpProgress * progress,const gchar * help_domain,const gchar * help_id)
 name|gimp_help
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -787,6 +791,18 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_PROGRESS
+argument_list|(
+name|progress
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp
@@ -802,6 +818,8 @@ operator|.
 name|help
 argument_list|(
 name|gimp
+argument_list|,
+name|progress
 argument_list|,
 name|help_domain
 argument_list|,

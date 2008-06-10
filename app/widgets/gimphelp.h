@@ -17,7 +17,7 @@ name|__GIMP_HELP_H__
 end_define
 
 begin_comment
-comment|/*  the main help function  *  *  there should be no need to use it in the common case  */
+comment|/*  the main help function  *  *  there should be no need to use it directly  */
 end_comment
 
 begin_function_decl
@@ -27,6 +27,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar

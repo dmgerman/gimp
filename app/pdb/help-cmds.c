@@ -193,6 +193,8 @@ name|gimp_help
 argument_list|(
 name|gimp
 argument_list|,
+name|progress
+argument_list|,
 name|help_domain
 argument_list|,
 name|help_id
