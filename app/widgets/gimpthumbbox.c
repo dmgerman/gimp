@@ -1950,9 +1950,8 @@ name|box
 operator|->
 name|info
 argument_list|,
-name|progress_requisition
-operator|.
-name|width
+operator|-
+literal|1
 argument_list|,
 name|info_requisition
 operator|.
