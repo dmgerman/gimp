@@ -1991,7 +1991,7 @@ name|SIGKILL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Wait for the process to exit. This will happen        *  immediately if it was just killed.        */
+comment|/* Wait for the process to exit. This will happen        * immediately if it was just killed.        */
 name|waitpid
 argument_list|(
 name|plug_in
