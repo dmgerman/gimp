@@ -65,6 +65,7 @@ parameter_list|,
 name|glong
 name|samples
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
@@ -341,7 +342,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_levels_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,GeglRectangle * roi)
+DECL|function|gimp_operation_levels_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,const GeglRectangle * roi)
 name|gimp_operation_levels_process
 parameter_list|(
 name|GeglOperation
@@ -359,6 +360,7 @@ parameter_list|,
 name|glong
 name|samples
 parameter_list|,
+specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
