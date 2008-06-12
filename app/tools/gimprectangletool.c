@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf00a70103
+DECL|enum|__anon274b4c110103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -215,7 +215,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf00a70203
+DECL|enum|__anon274b4c110203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +258,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdf00a70303
+DECL|enum|__anon274b4c110303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3601,7 +3601,7 @@ name|aspect_text
 operator|=
 name|g_strdup_printf
 argument_list|(
-literal|"  %.2f"
+literal|"  (1:%.2f)"
 argument_list|,
 name|w
 operator|/
