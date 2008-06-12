@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b049700103
+DECL|enum|__anon2b2f32240103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b049700203
+DECL|enum|__anon2b2f32240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -765,7 +765,7 @@ name|priv
 operator|->
 name|stock_id
 argument_list|,
-name|GTK_ICON_SIZE_BUTTON
+name|GTK_ICON_SIZE_DND
 argument_list|)
 expr_stmt|;
 block|}

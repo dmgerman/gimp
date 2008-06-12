@@ -1004,6 +1004,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TEXTURE
 value|"gimp-texture"
+DECL|macro|GIMP_STOCK_USER_MANUAL
+define|#
+directive|define
+name|GIMP_STOCK_USER_MANUAL
+value|"gimp-user-manual"
 comment|/*  missing icons:  */
 DECL|macro|GIMP_STOCK_BRUSH
 define|#
