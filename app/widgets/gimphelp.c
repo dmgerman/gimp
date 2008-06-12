@@ -1329,11 +1329,9 @@ comment|/*  FIXME: error msg  */
 return|return;
 name|n_domains
 operator|=
-name|gimp_plug_in_manager_get_help_domains
+name|gimp_help_get_help_domains
 argument_list|(
 name|gimp
-operator|->
-name|plug_in_manager
 argument_list|,
 operator|&
 name|help_domains
