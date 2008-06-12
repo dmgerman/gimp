@@ -202,6 +202,15 @@ name|gchar
 modifier|*
 name|web_browser
 decl_stmt|;
+DECL|member|user_manual_online
+name|gboolean
+name|user_manual_online
+decl_stmt|;
+DECL|member|user_manual_online_uri
+name|gchar
+modifier|*
+name|user_manual_online_uri
+decl_stmt|;
 DECL|member|toolbox_window_hint
 name|GimpWindowHint
 name|toolbox_window_hint

@@ -1043,6 +1043,24 @@ value|N_("When enabled, pressing F1 will open the help browser.")
 end_define
 
 begin_define
+DECL|macro|USER_MANUAL_ONLINE_BLURB
+define|#
+directive|define
+name|USER_MANUAL_ONLINE_BLURB
+define|\
+value|N_("When enabled, the online user manual will be used by the help system. " \    "Otherwise the locally installed copy is used.")
+end_define
+
+begin_define
+DECL|macro|USER_MANUAL_ONLINE_URI_BLURB
+define|#
+directive|define
+name|USER_MANUAL_ONLINE_URI_BLURB
+define|\
+value|"The location of the online user manual. This is used if " \ "'user-manual-online' is enabled."
+end_define
+
+begin_define
 DECL|macro|WEB_BROWSER_BLURB
 define|#
 directive|define
