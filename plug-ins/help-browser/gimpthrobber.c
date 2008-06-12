@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2a7e30103
+DECL|enum|__anon27b049700103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b2a7e30203
+DECL|enum|__anon27b049700203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -616,6 +616,9 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
+name|GtkToolbarStyle
+name|style
+decl_stmt|;
 if|if
 condition|(
 name|button
@@ -681,12 +684,16 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|style
+operator|=
 name|gtk_tool_item_get_toolbar_style
 argument_list|(
 name|tool_item
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|style
 operator|==
 name|GTK_TOOLBAR_TEXT
 condition|)
@@ -702,6 +709,28 @@ operator|->
 name|stock_id
 argument_list|,
 name|GTK_ICON_SIZE_MENU
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|style
+operator|==
+name|GTK_TOOLBAR_ICONS
+condition|)
+block|{
+name|image
+operator|=
+name|gtk_image_new_from_stock
+argument_list|(
+name|button
+operator|->
+name|priv
+operator|->
+name|stock_id
+argument_list|,
+name|GTK_ICON_SIZE_LARGE_TOOLBAR
 argument_list|)
 expr_stmt|;
 block|}

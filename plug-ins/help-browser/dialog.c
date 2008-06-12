@@ -170,7 +170,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29308ccd0108
+DECL|struct|__anon279048e20108
 block|{
 DECL|member|width
 name|gint
@@ -196,7 +196,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29308ccd0203
+DECL|enum|__anon279048e20203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -287,7 +287,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|index_callback
+name|home_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -2275,9 +2275,9 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"index"
+literal|"home"
 block|,
-name|GTK_STOCK_INDEX
+name|GTK_STOCK_HOME
 block|,
 name|NULL
 block|,
@@ -2290,7 +2290,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-argument|index_callback
+argument|home_callback
 argument_list|)
 block|}
 block|,
@@ -2526,7 +2526,7 @@ literal|"<ui>"
 literal|"<toolbar name=\"help-browser-toolbar\">"
 literal|"<toolitem action=\"reload\" />"
 literal|"<toolitem action=\"stop\" />"
-literal|"<toolitem action=\"index\" />"
+literal|"<toolitem action=\"home\" />"
 literal|"<separator name=\"space\" />"
 literal|"<toolitem action=\"website\" />"
 literal|"</toolbar>"
@@ -2573,7 +2573,7 @@ literal|"<menuitem action=\"forward\" />"
 literal|"<menuitem action=\"reload\" />"
 literal|"<menuitem action=\"stop\" />"
 literal|"<separator />"
-literal|"<menuitem action=\"index\" />"
+literal|"<menuitem action=\"home\" />"
 literal|"<menuitem action=\"copy-location\" />"
 ifdef|#
 directive|ifdef
@@ -2725,8 +2725,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|index_callback (GtkAction * action,gpointer data)
-name|index_callback
+DECL|function|home_callback (GtkAction * action,gpointer data)
+name|home_callback
 parameter_list|(
 name|GtkAction
 modifier|*
