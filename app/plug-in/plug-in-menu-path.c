@@ -197,6 +197,14 @@ literal|"<Image>/Help"
 block|}
 block|,
 block|{
+literal|"<Toolbox>/File/Acquire"
+block|,
+name|NULL
+block|,
+literal|"<Image>/File/New/Acquire"
+block|}
+block|,
+block|{
 literal|"<Image>/File/Acquire"
 block|,
 name|NULL
