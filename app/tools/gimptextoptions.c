@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fc84eb0103
+DECL|enum|__anon2a0b62650103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -353,6 +353,22 @@ operator|->
 name|get_property
 operator|=
 name|gimp_text_options_get_property
+expr_stmt|;
+comment|/* The 'highlight' property is defined here because we want different    * default values for the Crop, Text and the Rectangle Select tools.    */
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|GIMP_RECTANGLE_OPTIONS_PROP_HIGHLIGHT
+argument_list|,
+literal|"highlight"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_STATIC_STRINGS
+argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT
 argument_list|(
