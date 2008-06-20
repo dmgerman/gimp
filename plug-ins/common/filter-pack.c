@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe1f850108
+DECL|struct|__anon291001d60108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe1f850208
+DECL|struct|__anon291001d60208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bfe1f850303
+DECL|enum|__anon291001d60303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfe1f850403
+DECL|enum|__anon291001d60403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfe1f850503
+DECL|enum|__anon291001d60503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfe1f850603
+DECL|enum|__anon291001d60603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bfe1f850703
+DECL|enum|__anon291001d60703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe1f850808
+DECL|struct|__anon291001d60808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe1f850908
+DECL|struct|__anon291001d60908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe1f850a08
+DECL|struct|__anon291001d60a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -863,7 +863,7 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|func
 parameter_list|,
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bfe1f850b08
+DECL|struct|__anon291001d60b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3702,7 +3702,7 @@ argument_list|(
 literal|"_Hue"
 argument_list|)
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|fp_show_hide_frame
 argument_list|)
@@ -3727,7 +3727,7 @@ argument_list|(
 literal|"_Saturation"
 argument_list|)
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|fp_show_hide_frame
 argument_list|)
@@ -3752,7 +3752,7 @@ argument_list|(
 literal|"_Value"
 argument_list|)
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|fp_show_hide_frame
 argument_list|)
@@ -3777,7 +3777,7 @@ argument_list|(
 literal|"A_dvanced"
 argument_list|)
 argument_list|,
-name|GTK_SIGNAL_FUNC
+name|G_CALLBACK
 argument_list|(
 name|fp_show_hide_frame
 argument_list|)
@@ -4787,7 +4787,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|fp_frames_checkbutton_in_box (GtkWidget * vbox,const gchar * label,GtkSignalFunc function,GtkWidget * frame,gboolean clicked)
+DECL|function|fp_frames_checkbutton_in_box (GtkWidget * vbox,const gchar * label,GCallback function,GtkWidget * frame,gboolean clicked)
 name|fp_frames_checkbutton_in_box
 parameter_list|(
 name|GtkWidget
@@ -4799,7 +4799,7 @@ name|gchar
 modifier|*
 name|label
 parameter_list|,
-name|GtkSignalFunc
+name|GCallback
 name|function
 parameter_list|,
 name|GtkWidget
@@ -4863,10 +4863,7 @@ name|button
 argument_list|,
 literal|"clicked"
 argument_list|,
-name|G_CALLBACK
-argument_list|(
 name|function
-argument_list|)
 argument_list|,
 name|frame
 argument_list|)

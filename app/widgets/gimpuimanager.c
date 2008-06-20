@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e822720103
+DECL|enum|__anon2760a5500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e822720203
+DECL|enum|__anon2760a5500203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2165,7 +2165,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e822720308
+DECL|struct|__anon2760a5500308
 block|{
 DECL|member|x
 name|guint
@@ -2204,7 +2204,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_ui_manager_ui_popup (GimpUIManager * manager,const gchar * ui_path,GtkWidget * parent,GimpMenuPositionFunc position_func,gpointer position_data,GtkDestroyNotify popdown_func,gpointer popdown_data)
+DECL|function|gimp_ui_manager_ui_popup (GimpUIManager * manager,const gchar * ui_path,GtkWidget * parent,GimpMenuPositionFunc position_func,gpointer position_data,GDestroyNotify popdown_func,gpointer popdown_data)
 name|gimp_ui_manager_ui_popup
 parameter_list|(
 name|GimpUIManager
@@ -2226,7 +2226,7 @@ parameter_list|,
 name|gpointer
 name|position_data
 parameter_list|,
-name|GtkDestroyNotify
+name|GDestroyNotify
 name|popdown_func
 parameter_list|,
 name|gpointer

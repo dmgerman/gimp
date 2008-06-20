@@ -23,7 +23,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f32240103
+DECL|enum|__anon27fa28040103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -36,7 +36,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f32240203
+DECL|enum|__anon27fa28040203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -255,7 +255,7 @@ name|void
 parameter_list|)
 block|{
 specifier|static
-name|GtkType
+name|GType
 name|type
 init|=
 literal|0

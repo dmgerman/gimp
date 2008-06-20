@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b264ef00103
+DECL|enum|__anon29c8c6f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5064,7 +5064,7 @@ argument_list|,
 name|dockable
 argument_list|,
 operator|(
-name|GtkDestroyNotify
+name|GDestroyNotify
 operator|)
 name|gimp_dockable_menu_end
 argument_list|,

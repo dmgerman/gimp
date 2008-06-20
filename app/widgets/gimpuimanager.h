@@ -380,7 +380,7 @@ parameter_list|,
 name|gpointer
 name|position_data
 parameter_list|,
-name|GtkDestroyNotify
+name|GDestroyNotify
 name|popdown_func
 parameter_list|,
 name|gpointer

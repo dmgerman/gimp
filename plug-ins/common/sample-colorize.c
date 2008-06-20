@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c704f050108
+DECL|struct|__anon2c89c64d0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c704f050208
+DECL|struct|__anon2c89c64d0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c704f050308
+DECL|struct|__anon2c89c64d0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c704f050408
+DECL|struct|__anon2c89c64d0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c704f050508
+DECL|struct|__anon2c89c64d0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6707,10 +6707,10 @@ name|check_button
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|smp_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|g_di
@@ -6768,10 +6768,10 @@ name|check_button
 argument_list|,
 literal|"toggled"
 argument_list|,
-operator|(
-name|GtkSignalFunc
-operator|)
+name|G_CALLBACK
+argument_list|(
 name|smp_toggle_callback
+argument_list|)
 argument_list|,
 operator|&
 name|g_di
