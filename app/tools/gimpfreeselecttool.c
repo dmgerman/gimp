@@ -198,14 +198,6 @@ name|GimpVector2
 modifier|*
 name|saved_points_higher_segment
 decl_stmt|;
-DECL|member|n_saved_points_lower_segment
-name|gint
-name|n_saved_points_lower_segment
-decl_stmt|;
-DECL|member|n_saved_points_higher_segment
-name|gint
-name|n_saved_points_higher_segment
-decl_stmt|;
 comment|/* Keeps track wether or not a modification of the polygon has been    * made between _button_press and _button_release    */
 DECL|member|polygon_modified
 name|gboolean
@@ -806,18 +798,6 @@ operator|->
 name|saved_points_higher_segment
 operator|=
 name|NULL
-expr_stmt|;
-name|priv
-operator|->
-name|n_saved_points_lower_segment
-operator|=
-literal|0
-expr_stmt|;
-name|priv
-operator|->
-name|n_saved_points_higher_segment
-operator|=
-literal|0
 expr_stmt|;
 name|priv
 operator|->
