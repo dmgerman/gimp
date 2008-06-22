@@ -1016,6 +1016,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSettingsEditor
+typedef|typedef
+name|struct
+name|_GimpSettingsEditor
+name|GimpSettingsEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSizeBox
 typedef|typedef
 name|struct

@@ -117,6 +117,11 @@ name|GtkWidget
 modifier|*
 name|export_item
 decl_stmt|;
+DECL|member|editor_dialog
+name|GtkWidget
+modifier|*
+name|editor_dialog
+decl_stmt|;
 DECL|member|gimp
 name|Gimp
 modifier|*
