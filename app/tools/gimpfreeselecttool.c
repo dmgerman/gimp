@@ -5012,10 +5012,10 @@ condition|(
 name|tool
 operator|->
 name|display
-operator|!=
+operator|==
 name|display
 condition|)
-return|return;
+block|{
 name|gimp_draw_tool_pause
 argument_list|(
 name|draw_tool
@@ -5050,6 +5050,7 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
+block|}
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
