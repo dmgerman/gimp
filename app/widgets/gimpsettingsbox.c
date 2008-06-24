@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8496e0103
+DECL|enum|__anon2b1744f70103
 block|{
 DECL|enumerator|IMPORT
 name|IMPORT
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b8496e0203
+DECL|enum|__anon2b1744f70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1850,21 +1850,13 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: dont use magic model column
-endif|#
-directive|endif
 name|gtk_tree_model_get
 argument_list|(
 name|model
 argument_list|,
 name|iter
 argument_list|,
-literal|1
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
 argument_list|,
 operator|&
 name|name

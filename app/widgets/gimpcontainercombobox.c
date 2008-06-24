@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a240a070103
+DECL|enum|__anon299a3a360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -82,22 +82,6 @@ init|=
 name|GIMP_CONTAINER_VIEW_PROP_LAST
 operator|+
 literal|1
-block|}
-enum|;
-end_enum
-
-begin_enum
-enum|enum
-DECL|enum|__anon2a240a070203
-block|{
-DECL|enumerator|COLUMN_RENDERER
-name|COLUMN_RENDERER
-block|,
-DECL|enumerator|COLUMN_NAME
-name|COLUMN_NAME
-block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
 block|}
 enum|;
 end_enum
@@ -543,7 +527,7 @@ name|store
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|GIMP_CONTAINER_COMBO_BOX_N_COLUMNS
 argument_list|,
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,
@@ -597,7 +581,7 @@ name|cell
 argument_list|,
 literal|"renderer"
 argument_list|,
-name|COLUMN_RENDERER
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
 argument_list|,
 name|NULL
 argument_list|)
@@ -630,7 +614,7 @@ name|cell
 argument_list|,
 literal|"text"
 argument_list|,
-name|COLUMN_NAME
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
 argument_list|,
 name|NULL
 argument_list|)
@@ -1056,11 +1040,11 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|COLUMN_RENDERER
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
 argument_list|,
 name|renderer
 argument_list|,
-name|COLUMN_NAME
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
 argument_list|,
 name|name
 argument_list|,
@@ -1168,7 +1152,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|COLUMN_RENDERER
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -1683,7 +1667,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|COLUMN_NAME
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
 argument_list|,
 name|name
 argument_list|,
@@ -1913,7 +1897,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|COLUMN_RENDERER
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -2002,7 +1986,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|COLUMN_RENDERER
+name|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
