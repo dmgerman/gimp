@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27afb8be0103
+DECL|enum|__anon2b3268630103
 block|{
 DECL|enumerator|IMPORT
 name|IMPORT
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27afb8be0203
+DECL|enum|__anon2b3268630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2460,7 +2460,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-literal|6
+literal|12
 argument_list|)
 expr_stmt|;
 name|gtk_container_add

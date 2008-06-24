@@ -122,6 +122,16 @@ name|GtkWidget
 modifier|*
 name|view
 decl_stmt|;
+DECL|member|import_button
+name|GtkWidget
+modifier|*
+name|import_button
+decl_stmt|;
+DECL|member|export_button
+name|GtkWidget
+modifier|*
+name|export_button
+decl_stmt|;
 DECL|member|delete_button
 name|GtkWidget
 modifier|*
