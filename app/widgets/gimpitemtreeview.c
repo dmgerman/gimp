@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e04b20103
+DECL|enum|__anon2b8d4dd60103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3595,6 +3595,11 @@ argument_list|(
 name|name
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|gimp_message
 argument_list|(
 name|view
@@ -3623,6 +3628,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_object_unref
 argument_list|(
