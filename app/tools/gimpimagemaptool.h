@@ -163,12 +163,6 @@ name|GtkSizeGroup
 modifier|*
 name|label_group
 decl_stmt|;
-comment|/* settings file dialog */
-DECL|member|settings_dialog
-name|GtkWidget
-modifier|*
-name|settings_dialog
-decl_stmt|;
 block|}
 struct|;
 end_struct

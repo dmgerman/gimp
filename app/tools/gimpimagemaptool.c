@@ -850,12 +850,6 @@ name|label_group
 operator|=
 name|NULL
 expr_stmt|;
-name|image_map_tool
-operator|->
-name|settings_dialog
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 
