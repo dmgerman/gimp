@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2974ae1d0103
+DECL|enum|__anon29c51a710103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -506,7 +506,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2974ae1d0208
+DECL|struct|__anon29c51a710208
 block|{
 DECL|member|mode
 name|Mode
@@ -676,8 +676,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_progress_update
 argument_list|(
+operator|(
+name|gdouble
+operator|)
 name|current_num_bytes
 operator|/
+operator|(
+name|gdouble
+operator|)
 name|total_num_bytes
 argument_list|)
 expr_stmt|;
