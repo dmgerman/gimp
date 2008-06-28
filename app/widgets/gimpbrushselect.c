@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b450bf00103
+DECL|enum|__anon2778308c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -649,6 +649,8 @@ expr_stmt|;
 comment|/*  Create the frame and the table for the options  */
 name|table
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|GIMP_BRUSH_FACTORY_VIEW
 argument_list|(
 name|dialog
@@ -657,8 +659,7 @@ name|view
 argument_list|)
 operator|->
 name|spacing_scale
-operator|->
-name|parent
+argument_list|)
 expr_stmt|;
 name|gtk_table_set_col_spacings
 argument_list|(

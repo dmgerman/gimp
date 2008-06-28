@@ -377,6 +377,15 @@ modifier|*
 name|button
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GtkAdjustment
 modifier|*
 name|adj
@@ -625,8 +634,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|fg
@@ -679,8 +686,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|fg

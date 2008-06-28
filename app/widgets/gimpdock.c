@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5385650103
+DECL|enum|__anon2b045f550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5385650203
+DECL|enum|__anon2b045f550203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1944,9 +1944,10 @@ argument_list|)
 expr_stmt|;
 name|parent
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|old_book
-operator|->
-name|parent
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1969,9 +1970,10 @@ name|grandparent
 decl_stmt|;
 name|grandparent
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|parent
-operator|->
-name|parent
+argument_list|)
 expr_stmt|;
 name|old_book
 operator|=
@@ -2323,18 +2325,20 @@ name|grandparent
 decl_stmt|;
 name|parent
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|dockbook
 argument_list|)
-operator|->
-name|parent
+argument_list|)
 expr_stmt|;
 name|grandparent
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|parent
-operator|->
-name|parent
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

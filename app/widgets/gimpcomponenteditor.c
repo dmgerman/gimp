@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299b9f210103
+DECL|enum|__anon28fb165b0103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -1159,6 +1159,10 @@ name|GtkWidget
 modifier|*
 name|tree_widget
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|tree_style
+decl_stmt|;
 name|GtkIconSize
 name|icon_size
 decl_stmt|;
@@ -1196,6 +1200,13 @@ operator|->
 name|view
 argument_list|)
 expr_stmt|;
+name|tree_style
+operator|=
+name|gtk_widget_get_style
+argument_list|(
+name|tree_widget
+argument_list|)
+expr_stmt|;
 name|icon_size
 operator|=
 name|gimp_get_icon_size
@@ -1210,9 +1221,7 @@ name|view_size
 operator|-
 literal|2
 operator|*
-name|tree_widget
-operator|->
-name|style
+name|tree_style
 operator|->
 name|xthickness
 argument_list|,
@@ -1220,9 +1229,7 @@ name|view_size
 operator|-
 literal|2
 operator|*
-name|tree_widget
-operator|->
-name|style
+name|tree_style
 operator|->
 name|ythickness
 argument_list|)

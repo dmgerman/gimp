@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2ee6150103
+DECL|enum|__anon27a373ca0103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -658,6 +658,15 @@ name|GimpViewRendererPalette
 modifier|*
 name|renderer
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -776,8 +785,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|fg
@@ -806,8 +813,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|fg

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287a93ab0103
+DECL|enum|__anon28fe0c020103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -1544,11 +1544,18 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 operator|*
 name|x
 operator|+=
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -1556,8 +1563,6 @@ expr_stmt|;
 operator|*
 name|y
 operator|+=
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
@@ -3196,6 +3201,15 @@ condition|(
 name|stock_id
 condition|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|tree_widget
+argument_list|)
+decl_stmt|;
 name|icon_size
 operator|=
 name|gimp_get_icon_size
@@ -3210,8 +3224,6 @@ name|view_size
 operator|-
 literal|2
 operator|*
-name|tree_widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -3220,8 +3232,6 @@ name|view_size
 operator|-
 literal|2
 operator|*
-name|tree_widget
-operator|->
 name|style
 operator|->
 name|ythickness

@@ -173,6 +173,15 @@ modifier|*
 name|area
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
@@ -204,8 +213,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|white
@@ -367,8 +374,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|black

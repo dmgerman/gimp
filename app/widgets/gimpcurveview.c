@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c877f4a0103
+DECL|enum|__anon2a1238790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1461,9 +1461,10 @@ name|GtkStyle
 modifier|*
 name|style
 init|=
+name|gtk_widget_get_style
+argument_list|(
 name|widget
-operator|->
-name|style
+argument_list|)
 decl_stmt|;
 name|cairo_t
 modifier|*

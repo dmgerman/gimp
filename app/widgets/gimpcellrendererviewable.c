@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf031520103
+DECL|enum|__anon2796407f0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf031520203
+DECL|enum|__anon2796407f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -419,14 +419,16 @@ modifier|*
 name|cellviewable
 parameter_list|)
 block|{
-name|GTK_CELL_RENDERER
+name|g_object_set
 argument_list|(
 name|cellviewable
-argument_list|)
-operator|->
-name|mode
-operator|=
+argument_list|,
+literal|"mode"
+argument_list|,
 name|GTK_CELL_RENDERER_MODE_ACTIVATABLE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 block|}
 end_function

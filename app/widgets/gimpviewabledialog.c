@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2980a3c10103
+DECL|enum|__anon29663d350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1331,6 +1331,10 @@ condition|(
 name|viewable
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|box
+decl_stmt|;
 name|g_signal_connect_object
 argument_list|(
 name|viewable
@@ -1350,6 +1354,15 @@ argument_list|,
 name|dialog
 argument_list|,
 literal|0
+argument_list|)
+expr_stmt|;
+name|box
+operator|=
+name|gtk_widget_get_parent
+argument_list|(
+name|dialog
+operator|->
+name|icon
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -1373,11 +1386,7 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
-operator|->
-name|icon
-operator|->
-name|parent
+name|box
 argument_list|)
 argument_list|,
 name|dialog

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2977bec00103
+DECL|enum|__anon2a4dd3a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1112,6 +1112,15 @@ operator|->
 name|has_number
 condition|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -1144,8 +1153,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|light

@@ -55,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288b4c700103
+DECL|enum|__anon29fe99850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -920,6 +920,9 @@ block|{
 name|GtkRequisition
 name|child_requisition
 decl_stmt|;
+name|gint
+name|border_width
+decl_stmt|;
 name|gtk_widget_size_request
 argument_list|(
 name|box
@@ -928,6 +931,16 @@ name|image
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|)
+expr_stmt|;
+name|border_width
+operator|=
+name|gtk_container_get_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|requisition
@@ -956,11 +969,6 @@ name|height
 operator|+
 literal|2
 operator|*
-name|GTK_CONTAINER
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|border_width
 argument_list|)
 expr_stmt|;
@@ -1034,6 +1042,9 @@ name|GtkAllocation
 name|child_allocation
 decl_stmt|;
 name|gint
+name|border_width
+decl_stmt|;
+name|gint
 name|height
 decl_stmt|;
 name|gtk_widget_size_request
@@ -1046,6 +1057,13 @@ operator|&
 name|child_requisition
 argument_list|)
 expr_stmt|;
+name|border_width
+operator|=
+name|gtk_container_get_border_width
+argument_list|(
+name|container
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
 name|MIN
@@ -1056,8 +1074,6 @@ name|width
 operator|-
 literal|2
 operator|*
-name|container
-operator|->
 name|border_width
 argument_list|,
 name|child_requisition
@@ -1084,8 +1100,6 @@ name|height
 operator|-
 literal|2
 operator|*
-name|container
-operator|->
 name|border_width
 expr_stmt|;
 name|height
@@ -1110,8 +1124,6 @@ name|allocation
 operator|->
 name|width
 operator|-
-name|container
-operator|->
 name|border_width
 operator|-
 name|child_requisition
@@ -1128,8 +1140,6 @@ name|allocation
 operator|->
 name|x
 operator|+
-name|container
-operator|->
 name|border_width
 expr_stmt|;
 name|child_allocation
@@ -1140,8 +1150,6 @@ name|allocation
 operator|->
 name|y
 operator|+
-name|container
-operator|->
 name|border_width
 expr_stmt|;
 name|child_allocation

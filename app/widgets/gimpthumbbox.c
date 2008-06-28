@@ -733,6 +733,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|ebox
@@ -758,8 +767,6 @@ argument_list|,
 name|GTK_STATE_NORMAL
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|base
@@ -777,8 +784,6 @@ argument_list|,
 name|GTK_STATE_INSENSITIVE
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|base
@@ -804,8 +809,6 @@ argument_list|,
 name|GTK_STATE_NORMAL
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|base
@@ -821,8 +824,6 @@ argument_list|,
 name|GTK_STATE_INSENSITIVE
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|base

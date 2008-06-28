@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6900ed0103
+DECL|enum|__anon2c1c9f910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6900ed0203
+DECL|enum|__anon2c1c9f910203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b6900ed0303
+DECL|enum|__anon2c1c9f910303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -1085,6 +1085,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|,
@@ -1428,8 +1437,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -1460,8 +1467,6 @@ expr_stmt|;
 block|}
 name|gtk_paint_shadow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|widget
@@ -1529,8 +1534,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -1553,8 +1556,6 @@ expr_stmt|;
 block|}
 name|gtk_paint_shadow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|widget

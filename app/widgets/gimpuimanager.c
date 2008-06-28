@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760a5500103
+DECL|enum|__anon29a0e17e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2760a5500203
+DECL|enum|__anon29a0e17e0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2165,7 +2165,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2760a5500308
+DECL|struct|__anon29a0e17e0308
 block|{
 DECL|member|x
 name|guint
@@ -3432,6 +3432,10 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|menu
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|submenu
 decl_stmt|;
 name|g_signal_handlers_disconnect_by_func
@@ -3443,13 +3447,18 @@ argument_list|,
 name|manager
 argument_list|)
 expr_stmt|;
+name|menu
+operator|=
+name|gtk_widget_get_parent
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GTK_IS_MENU_SHELL
 argument_list|(
-name|widget
-operator|->
-name|parent
+name|menu
 argument_list|)
 condition|)
 block|{
@@ -3480,9 +3489,7 @@ name|g_object_get_qdata
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|widget
-operator|->
-name|parent
+name|menu
 argument_list|)
 argument_list|,
 name|quark_key_press_connected
@@ -3492,9 +3499,7 @@ condition|)
 block|{
 name|g_signal_connect
 argument_list|(
-name|widget
-operator|->
-name|parent
+name|menu
 argument_list|,
 literal|"key-press-event"
 argument_list|,
@@ -3510,9 +3515,7 @@ name|g_object_set_qdata
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|widget
-operator|->
-name|parent
+name|menu
 argument_list|)
 argument_list|,
 name|quark_key_press_connected
@@ -3816,9 +3819,10 @@ condition|)
 break|break;
 name|widget
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|menu_item
-operator|->
-name|parent
+argument_list|)
 expr_stmt|;
 if|if
 condition|(

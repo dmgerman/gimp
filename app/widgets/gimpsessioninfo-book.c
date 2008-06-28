@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da973e0103
+DECL|enum|__anon2bbb4c860103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -626,6 +626,10 @@ name|GimpSessionInfoBook
 modifier|*
 name|info
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|parent
+decl_stmt|;
 name|GList
 modifier|*
 name|children
@@ -649,15 +653,20 @@ operator|=
 name|gimp_session_info_book_new
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-name|GTK_IS_VPANED
+name|parent
+operator|=
+name|gtk_widget_get_parent
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|dockbook
 argument_list|)
-operator|->
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GTK_IS_VPANED
+argument_list|(
 name|parent
 argument_list|)
 condition|)
@@ -668,11 +677,6 @@ name|paned
 init|=
 name|GTK_PANED
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|dockbook
-argument_list|)
-operator|->
 name|parent
 argument_list|)
 decl_stmt|;

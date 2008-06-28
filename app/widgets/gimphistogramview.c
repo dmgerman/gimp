@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b680fb30103
+DECL|enum|__anon278eac550103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b680fb30203
+DECL|enum|__anon278eac550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1031,6 +1031,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|;
@@ -1182,8 +1191,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|base_gc
@@ -1217,8 +1224,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|dark_gc
@@ -1285,8 +1290,6 @@ argument_list|)
 expr_stmt|;
 name|gc_in
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|text_gc
@@ -1296,8 +1299,6 @@ index|]
 expr_stmt|;
 name|gc_out
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|text_gc
@@ -1307,8 +1308,6 @@ index|]
 expr_stmt|;
 name|bg_gc_in
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|mid_gc
@@ -1318,8 +1317,6 @@ index|]
 expr_stmt|;
 name|bg_gc_out
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|mid_gc
@@ -1551,8 +1548,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|dark_gc
@@ -1593,8 +1588,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|base_gc
@@ -1653,8 +1646,6 @@ name|GIMP_HISTOGRAM_RED
 operator|+
 name|c
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|black_gc

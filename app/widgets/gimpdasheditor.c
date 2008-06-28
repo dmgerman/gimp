@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c837e4e0103
+DECL|enum|__anon2acefdc60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -923,6 +923,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -968,8 +977,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|base
@@ -1104,8 +1111,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|text_aa
@@ -1179,8 +1184,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|text
@@ -1252,8 +1255,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|text_aa
@@ -1510,8 +1511,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|text_aa

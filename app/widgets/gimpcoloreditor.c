@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901e37f0103
+DECL|enum|__anon276098500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2446,12 +2446,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|GtkWidget

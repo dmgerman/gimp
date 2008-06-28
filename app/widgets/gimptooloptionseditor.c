@@ -1625,9 +1625,10 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gtk_widget_get_parent
+argument_list|(
 name|options_gui
-operator|->
-name|parent
+argument_list|)
 condition|)
 name|gtk_box_pack_start
 argument_list|(

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b9dd950103
+DECL|enum|__anon2a3ba5150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -751,6 +751,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -854,8 +863,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -894,8 +901,6 @@ expr_stmt|;
 block|}
 name|gtk_paint_shadow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|widget
@@ -955,8 +960,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -987,8 +990,6 @@ expr_stmt|;
 block|}
 name|gtk_paint_shadow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|widget

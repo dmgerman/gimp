@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae153a70103
+DECL|enum|__anon27dde0a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1676,6 +1676,15 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GtkAllocation
 modifier|*
 name|alloc
@@ -1705,8 +1714,6 @@ literal|3
 decl_stmt|;
 name|gtk_paint_arrow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|widget

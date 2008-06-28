@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276175b60103
+DECL|enum|__anon2c8800f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3115,12 +3115,13 @@ name|editor
 operator|->
 name|block_aspect
 operator|&&
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|GimpTemplate

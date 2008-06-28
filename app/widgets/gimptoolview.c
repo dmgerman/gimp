@@ -583,6 +583,15 @@ argument_list|(
 name|tree_view
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|tree_style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|tree_widget
+argument_list|)
+decl_stmt|;
 name|GtkTreeViewColumn
 modifier|*
 name|column
@@ -634,9 +643,7 @@ name|view_size
 operator|-
 literal|2
 operator|*
-name|tree_widget
-operator|->
-name|style
+name|tree_style
 operator|->
 name|xthickness
 argument_list|,
@@ -644,9 +651,7 @@ name|view_size
 operator|-
 literal|2
 operator|*
-name|tree_widget
-operator|->
-name|style
+name|tree_style
 operator|->
 name|ythickness
 argument_list|)

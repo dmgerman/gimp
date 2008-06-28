@@ -560,11 +560,12 @@ operator|->
 name|view
 argument_list|)
 argument_list|,
+name|gtk_widget_get_parent
+argument_list|(
 name|factory_view
 operator|->
 name|spacing_scale
-operator|->
-name|parent
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

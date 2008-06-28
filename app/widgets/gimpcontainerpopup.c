@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf0a140103
+DECL|enum|__anon27a163b60103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2445,12 +2445,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|GimpViewType

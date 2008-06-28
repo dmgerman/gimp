@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon273cc90b0103
+DECL|enum|__anon293830270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -704,6 +704,15 @@ argument_list|(
 name|cell
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GtkStateType
 name|state
 decl_stmt|;
@@ -929,8 +938,6 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|style
 operator|->
 name|text

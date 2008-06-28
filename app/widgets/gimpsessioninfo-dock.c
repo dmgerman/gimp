@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ebd9b80103
+DECL|enum|__anon2b28f4e40103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -624,6 +624,10 @@ name|GtkWidget
 modifier|*
 name|dockbook
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|parent
+decl_stmt|;
 name|dockbook
 operator|=
 name|GTK_WIDGET
@@ -636,12 +640,17 @@ name|dock
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|parent
+operator|=
+name|gtk_widget_get_parent
+argument_list|(
+name|dockbook
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GTK_IS_VPANED
 argument_list|(
-name|dockbook
-operator|->
 name|parent
 argument_list|)
 condition|)
@@ -652,8 +661,6 @@ name|paned
 init|=
 name|GTK_PANED
 argument_list|(
-name|dockbook
-operator|->
 name|parent
 argument_list|)
 decl_stmt|;
