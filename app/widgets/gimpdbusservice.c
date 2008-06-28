@@ -18,13 +18,19 @@ end_if
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<dbus/dbus-glib.h>
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"widgets-types.h"
 end_include
 
 begin_include
@@ -54,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpuimanager.c"
+file|"gimpuimanager.h"
 end_include
 
 begin_function_decl
