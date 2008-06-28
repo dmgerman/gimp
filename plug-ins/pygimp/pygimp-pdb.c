@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9497630108
+DECL|struct|__anon292522100108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b9497630208
+DECL|struct|__anon292522100208
 typedef|typedef
 struct|struct
 block|{
@@ -4571,7 +4571,7 @@ condition|(
 name|kwargs
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|len
 decl_stmt|,
 name|pos

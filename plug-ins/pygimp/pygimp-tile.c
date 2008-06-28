@@ -676,7 +676,7 @@ name|tile
 operator|->
 name|bpp
 decl_stmt|;
-name|long
+name|Py_ssize_t
 name|x
 decl_stmt|,
 name|y
@@ -880,7 +880,7 @@ name|bpp
 decl_stmt|,
 name|i
 decl_stmt|;
-name|long
+name|Py_ssize_t
 name|x
 decl_stmt|,
 name|y
@@ -1416,7 +1416,7 @@ modifier|*
 name|args
 parameter_list|)
 block|{
-name|int
+name|Py_ssize_t
 name|x
 decl_stmt|,
 name|y
@@ -1707,7 +1707,7 @@ decl_stmt|,
 modifier|*
 name|y
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|x1
 decl_stmt|,
 name|y1
@@ -2484,7 +2484,7 @@ name|guchar
 modifier|*
 name|buf
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|len
 decl_stmt|,
 name|x1

@@ -2750,7 +2750,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -5413,7 +5413,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -8042,7 +8042,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -10681,7 +10681,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
