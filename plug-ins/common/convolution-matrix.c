@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8aa1540103
+DECL|enum|__anon29fa315a0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aa1540208
+DECL|struct|__anon29fa315a0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -862,7 +862,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b8aa1540308
+DECL|struct|__anon29fa315a0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -3983,12 +3983,13 @@ block|{
 name|gint
 name|val
 init|=
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 decl_stmt|;
 operator|*
 name|data

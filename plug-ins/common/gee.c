@@ -1032,14 +1032,22 @@ argument_list|(
 name|drawing_area
 argument_list|)
 condition|)
+block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|drawing_area
+argument_list|)
+decl_stmt|;
 name|gdk_draw_rgb_32_image
 argument_list|(
 name|drawing_area
 operator|->
 name|window
 argument_list|,
-name|drawing_area
-operator|->
 name|style
 operator|->
 name|white_gc
@@ -1061,6 +1069,7 @@ operator|*
 literal|4
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

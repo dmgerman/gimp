@@ -1896,6 +1896,10 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+decl_stmt|;
 name|int
 name|i
 decl_stmt|;
@@ -1940,6 +1944,13 @@ name|drawing_area
 argument_list|)
 condition|)
 return|return;
+name|style
+operator|=
+name|gtk_widget_get_style
+argument_list|(
+name|drawing_area
+argument_list|)
+expr_stmt|;
 name|pixels
 operator|=
 name|width
@@ -2093,8 +2104,6 @@ name|drawing_area
 operator|->
 name|window
 argument_list|,
-name|drawing_area
-operator|->
 name|style
 operator|->
 name|white_gc
@@ -2326,8 +2335,6 @@ name|drawing_area
 operator|->
 name|window
 argument_list|,
-name|drawing_area
-operator|->
 name|style
 operator|->
 name|white_gc

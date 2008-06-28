@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299e23580108
+DECL|struct|__anon2b0e9b910108
 block|{
 DECL|member|xcenter
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299e23580208
+DECL|struct|__anon2b0e9b910208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2089,6 +2089,15 @@ name|preview
 operator|->
 name|area
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|prvw
+argument_list|)
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|,
@@ -2109,8 +2118,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_gc_set_function
 argument_list|(
-name|prvw
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -2136,8 +2143,6 @@ name|prvw
 operator|->
 name|window
 argument_list|,
-name|prvw
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -2163,8 +2168,6 @@ name|prvw
 operator|->
 name|window
 argument_list|,
-name|prvw
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -2191,8 +2194,6 @@ name|prvw
 operator|->
 name|window
 argument_list|,
-name|prvw
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -2218,8 +2219,6 @@ name|prvw
 operator|->
 name|window
 argument_list|,
-name|prvw
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -2265,8 +2264,6 @@ name|TRUE
 expr_stmt|;
 name|gdk_gc_set_function
 argument_list|(
-name|prvw
-operator|->
 name|style
 operator|->
 name|black_gc

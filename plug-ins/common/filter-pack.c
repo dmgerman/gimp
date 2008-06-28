@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291001d60108
+DECL|struct|__anon2ba58c330108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291001d60208
+DECL|struct|__anon2ba58c330208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon291001d60303
+DECL|enum|__anon2ba58c330303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon291001d60403
+DECL|enum|__anon2ba58c330403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291001d60503
+DECL|enum|__anon2ba58c330503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291001d60603
+DECL|enum|__anon2ba58c330603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291001d60703
+DECL|enum|__anon2ba58c330703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291001d60808
+DECL|struct|__anon2ba58c330808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291001d60908
+DECL|struct|__anon2ba58c330908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291001d60a08
+DECL|struct|__anon2ba58c330a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291001d60b08
+DECL|struct|__anon2ba58c330b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3523,12 +3523,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|fp_refresh_previews
@@ -4439,12 +4440,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|fp_refresh_previews
@@ -4589,12 +4591,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|fp_redraw_all_windows
@@ -5268,12 +5271,13 @@ condition|)
 return|return;
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|button
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 if|if
@@ -7907,6 +7911,17 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|AW
+operator|.
+name|aliasing_graph
+argument_list|)
+decl_stmt|;
 name|draw_slider
 argument_list|(
 name|AW
@@ -7915,18 +7930,10 @@ name|aliasing_graph
 operator|->
 name|window
 argument_list|,
-name|AW
-operator|.
-name|aliasing_graph
-operator|->
 name|style
 operator|->
 name|black_gc
 argument_list|,
-name|AW
-operator|.
-name|aliasing_graph
-operator|->
 name|style
 operator|->
 name|dark_gc
@@ -7950,18 +7957,10 @@ name|aliasing_graph
 operator|->
 name|window
 argument_list|,
-name|AW
-operator|.
-name|aliasing_graph
-operator|->
 name|style
 operator|->
 name|black_gc
 argument_list|,
-name|AW
-operator|.
-name|aliasing_graph
-operator|->
 name|style
 operator|->
 name|dark_gc
@@ -7985,18 +7984,10 @@ name|aliasing_graph
 operator|->
 name|window
 argument_list|,
-name|AW
-operator|.
-name|aliasing_graph
-operator|->
 name|style
 operator|->
 name|black_gc
 argument_list|,
-name|AW
-operator|.
-name|aliasing_graph
-operator|->
 name|style
 operator|->
 name|dark_gc

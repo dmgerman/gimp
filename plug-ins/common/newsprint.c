@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720108
+DECL|struct|__anon2af251480108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720208
+DECL|struct|__anon2af251480208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720308
+DECL|struct|__anon2af251480308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720408
+DECL|struct|__anon2af251480408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720508
+DECL|struct|__anon2af251480508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720608
+DECL|struct|__anon2af251480608
 block|{
 DECL|member|name
 specifier|const
@@ -6567,6 +6567,17 @@ condition|(
 name|st
 condition|)
 block|{
+name|gboolean
+name|active
+init|=
+name|gtk_toggle_button_get_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+decl_stmt|;
 comment|/* the CMYK widget looks after the black pullout widget */
 if|if
 condition|(
@@ -6581,11 +6592,6 @@ name|st
 operator|->
 name|pull_table
 argument_list|,
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 argument_list|)
 expr_stmt|;
@@ -6594,11 +6600,6 @@ comment|/* if we're not activate, then there's nothing more to do */
 if|if
 condition|(
 operator|!
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-operator|->
 name|active
 condition|)
 return|return;
@@ -7060,7 +7061,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d67c720708
+DECL|struct|__anon2af251480708
 block|{
 DECL|member|index
 name|gint
