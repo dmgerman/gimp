@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288248ee0103
+DECL|enum|__anon2a0f11b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2822,6 +2822,15 @@ argument_list|(
 name|canvas
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gdouble
 name|wilber_width
 decl_stmt|;
@@ -2963,8 +2972,6 @@ name|cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg
@@ -2978,8 +2985,6 @@ name|red
 operator|/
 literal|65535.0
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg
@@ -2993,8 +2998,6 @@ name|green
 operator|/
 literal|65535.0
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg

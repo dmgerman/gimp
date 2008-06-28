@@ -3974,14 +3974,15 @@ name|layer
 argument_list|,
 literal|"auto-rename"
 argument_list|,
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|dialog
 operator|->
 name|rename_toggle
 argument_list|)
-operator|->
-name|active
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

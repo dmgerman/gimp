@@ -1805,12 +1805,13 @@ argument_list|)
 expr_stmt|;
 name|from_gdk
 operator|=
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -9272,7 +9273,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27ca0a060108
+DECL|struct|__anon2c1081a50108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10439,7 +10440,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ca0a060208
+DECL|struct|__anon2c1081a50208
 block|{
 DECL|member|label
 specifier|const
@@ -11599,7 +11600,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ca0a060308
+DECL|struct|__anon2c1081a50308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11754,7 +11755,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ca0a060408
+DECL|struct|__anon2c1081a50408
 block|{
 DECL|member|tree_label
 specifier|const

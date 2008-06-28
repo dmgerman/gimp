@@ -1177,12 +1177,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 operator|&&
 name|gimp_drawable_is_text_layer
 argument_list|(

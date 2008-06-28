@@ -857,6 +857,15 @@ name|gint
 name|click_y
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GimpNavigationEditor
 modifier|*
 name|editor
@@ -1100,8 +1109,6 @@ operator|)
 operator|-
 literal|2
 operator|*
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -1130,8 +1137,6 @@ operator|)
 operator|-
 literal|2
 operator|*
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
@@ -1163,8 +1168,6 @@ name|width
 operator|-
 literal|4
 operator|*
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -1196,8 +1199,6 @@ name|height
 operator|-
 literal|4
 operator|*
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
