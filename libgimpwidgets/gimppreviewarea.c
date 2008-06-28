@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1ab1440103
+DECL|enum|__anon29e54f160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -942,6 +942,15 @@ name|render
 argument_list|)
 condition|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|x
 init|=
@@ -988,8 +997,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc

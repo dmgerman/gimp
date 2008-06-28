@@ -137,7 +137,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon29592e6a0103
+DECL|enum|__anon2c74430c0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29592e6a0203
+DECL|enum|__anon2c74430c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1808,6 +1808,15 @@ name|y
 operator|++
 control|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|guchar
 modifier|*
 name|buf
@@ -1832,8 +1841,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc

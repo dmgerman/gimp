@@ -1948,6 +1948,15 @@ name|gpointer
 name|any_ID
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|parent
+init|=
+name|gtk_widget_get_parent
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GimpMenuCallback
 name|callback
 decl_stmt|;
@@ -1963,8 +1972,6 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|widget
-operator|->
 name|parent
 argument_list|)
 argument_list|,
@@ -1977,8 +1984,6 @@ name|g_object_get_data
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|widget
-operator|->
 name|parent
 argument_list|)
 argument_list|,

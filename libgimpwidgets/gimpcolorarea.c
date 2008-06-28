@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b972c540103
+DECL|enum|__anon2a4591890103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b972c540203
+DECL|enum|__anon2a4591890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1165,6 +1165,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|guchar
 modifier|*
 name|buf
@@ -1226,8 +1235,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -1289,8 +1296,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -1713,6 +1718,10 @@ modifier|*
 name|color
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+decl_stmt|;
 name|guint
 name|x
 decl_stmt|,
@@ -1776,6 +1785,13 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|style
+operator|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|type
@@ -1826,8 +1842,6 @@ index|[
 literal|0
 index|]
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|bg
@@ -1844,8 +1858,6 @@ index|[
 literal|1
 index|]
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|bg
@@ -1862,8 +1874,6 @@ index|[
 literal|2
 index|]
 operator|=
-name|widget
-operator|->
 name|style
 operator|->
 name|bg

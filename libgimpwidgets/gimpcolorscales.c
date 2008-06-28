@@ -1531,12 +1531,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|gint

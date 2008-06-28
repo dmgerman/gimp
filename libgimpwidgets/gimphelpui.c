@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b763f90103
+DECL|enum|__anon2b05f5b40103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -765,9 +765,10 @@ name|widget
 condition|;
 name|widget
 operator|=
+name|gtk_widget_get_parent
+argument_list|(
 name|widget
-operator|->
-name|parent
+argument_list|)
 control|)
 block|{
 name|help_id

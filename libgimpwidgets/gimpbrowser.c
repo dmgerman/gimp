@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3a20250103
+DECL|enum|__anon293d2b390103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -740,11 +740,12 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_widget_get_parent
+argument_list|(
 name|browser
 operator|->
 name|search_entry
-operator|->
-name|parent
+argument_list|)
 argument_list|)
 argument_list|,
 name|combo

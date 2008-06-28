@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon286d96990103
+DECL|enum|__anon275685490103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1587,6 +1587,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GdkPixbuf
 modifier|*
 name|pixbuf
@@ -1734,8 +1743,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -1767,8 +1774,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -1793,8 +1798,6 @@ else|else
 block|{
 name|gtk_paint_shadow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|widget
@@ -2076,8 +2079,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|black_gc

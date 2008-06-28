@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28feaabc0103
+DECL|enum|__anon27dfbc560103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +56,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28feaabc0203
+DECL|enum|__anon27dfbc560203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -760,6 +760,15 @@ argument_list|(
 name|cell
 argument_list|)
 decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|calc_width
 decl_stmt|;
@@ -850,8 +859,6 @@ name|xpad
 operator|*
 literal|2
 operator|+
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -873,8 +880,6 @@ name|ypad
 operator|*
 literal|2
 operator|+
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
@@ -1035,6 +1040,15 @@ init|=
 name|GIMP_CELL_RENDERER_TOGGLE
 argument_list|(
 name|cell
+argument_list|)
+decl_stmt|;
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
 argument_list|)
 decl_stmt|;
 name|GdkRectangle
@@ -1248,8 +1262,6 @@ operator|)
 condition|)
 name|gtk_paint_shadow
 argument_list|(
-name|widget
-operator|->
 name|style
 argument_list|,
 name|window
@@ -1295,8 +1307,6 @@ name|toggle_rect
 operator|.
 name|x
 operator|+=
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -1305,8 +1315,6 @@ name|toggle_rect
 operator|.
 name|y
 operator|+=
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
@@ -1315,8 +1323,6 @@ name|toggle_rect
 operator|.
 name|width
 operator|-=
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -1327,8 +1333,6 @@ name|toggle_rect
 operator|.
 name|height
 operator|-=
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
@@ -1353,8 +1357,6 @@ name|gdk_draw_pixbuf
 argument_list|(
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|black_gc

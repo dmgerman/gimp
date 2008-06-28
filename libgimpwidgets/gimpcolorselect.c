@@ -86,7 +86,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45dcef0103
+DECL|enum|__anon2c34d8df0103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +137,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a45dcef0203
+DECL|enum|__anon2c34d8df0203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -1843,12 +1843,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 block|{
 name|GimpColorSelector

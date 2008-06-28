@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27695b400103
+DECL|enum|__anon296293ec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27695b400203
+DECL|enum|__anon296293ec0203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -1818,9 +1818,10 @@ expr_stmt|;
 block|}
 name|gtk_paint_polygon
 argument_list|(
+name|gtk_widget_get_style
+argument_list|(
 name|widget
-operator|->
-name|style
+argument_list|)
 argument_list|,
 name|widget
 operator|->

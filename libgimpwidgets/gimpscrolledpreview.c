@@ -58,7 +58,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2cbd210108
+DECL|struct|__anon2c4852d40108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -2463,6 +2463,15 @@ operator|==
 literal|1
 condition|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|outer
@@ -2832,8 +2841,6 @@ name|x
 operator|-
 literal|2
 operator|*
-name|widget
-operator|->
 name|style
 operator|->
 name|xthickness
@@ -2842,8 +2849,6 @@ name|y
 operator|-
 literal|2
 operator|*
-name|widget
-operator|->
 name|style
 operator|->
 name|ythickness
