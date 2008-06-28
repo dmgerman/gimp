@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpenv.h"
+file|"libgimpbase/gimpbase.h"
 end_include
 
 begin_include
@@ -60,7 +60,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b2bafe0103
+DECL|enum|__anon2c1d26db0103
 block|{
 DECL|enumerator|ISO_CODES_START
 name|ISO_CODES_START
@@ -82,7 +82,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b2bafe0208
+DECL|struct|__anon2c1d26db0208
 block|{
 DECL|member|state
 name|IsoCodesParserState
