@@ -431,6 +431,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_container_tree_view_connect_name_edited
+parameter_list|(
+name|GimpContainerTreeView
+modifier|*
+name|tree_view
+parameter_list|,
+name|GCallback
+name|callback
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
