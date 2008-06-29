@@ -343,7 +343,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c850d840108
+DECL|struct|__anon294918310108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +390,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c850d840208
+DECL|struct|__anon294918310208
 typedef|typedef
 struct|struct
 block|{
@@ -2680,12 +2680,13 @@ name|radio_button
 decl_stmt|;
 if|if
 condition|(
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 condition|)
 operator|*
 name|toggle_val

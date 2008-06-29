@@ -166,7 +166,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (from == 0)     {       n = numsmvect;       vec = smvector;       smstrexp = GTK_ADJUSTMENT(smstrexpadjust)->value;       voronoi = GTK_TOGGLE_BUTTON(size_voronoi)->active;     }   else     {       n = pcvals.num_size_vectors;       vec = pcvals.size_vectors;       smstrexp = pcvals.size_strength_exponent;       voronoi = pcvals.size_voronoi;     }
+block|if (from == 0)     {       n = numsmvect;       vec = smvector;       smstrexp = gtk_adjustment_get_value (GTK_ADJUSTMENT (smstrexpadjust));       voronoi = gtk_toggle_button_get_active (GTK_TOGGLE_BUTTON (size_voronoi));     }   else     {       n = pcvals.num_size_vectors;       vec = pcvals.size_vectors;       smstrexp = pcvals.size_strength_exponent;       voronoi = pcvals.size_voronoi;     }
 endif|#
 directive|endif
 if|if

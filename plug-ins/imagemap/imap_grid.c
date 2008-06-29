@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2be3defb0103
+DECL|enum|__anon28f377f90103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2be3defb0208
+DECL|struct|__anon28f377f90208
 typedef|typedef
 struct|struct
 block|{
@@ -2180,6 +2180,7 @@ name|grid_type
 operator|==
 name|GRID_LINES
 condition|)
+block|{
 name|draw_lines
 argument_list|(
 name|preview
@@ -2193,15 +2194,24 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|preview
+argument_list|)
+decl_stmt|;
 name|draw_crosses
 argument_list|(
 name|preview
 operator|->
 name|window
 argument_list|,
-name|preview
-operator|->
 name|style
 operator|->
 name|black_gc
@@ -2211,6 +2221,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function

@@ -122,7 +122,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b021d30103
+DECL|enum|__anon2b2b1ff60103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -142,7 +142,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b021d30203
+DECL|enum|__anon2b2b1ff60203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -158,7 +158,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30308
+DECL|struct|__anon2b2b1ff60308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -180,7 +180,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29b021d3040a
+DECL|union|__anon2b2b1ff6040a
 block|{
 DECL|member|d
 name|gdouble
@@ -205,7 +205,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30508
+DECL|struct|__anon2b2b1ff60508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -235,7 +235,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30608
+DECL|struct|__anon2b2b1ff60608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -270,7 +270,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30708
+DECL|struct|__anon2b2b1ff60708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30808
+DECL|struct|__anon2b2b1ff60808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -373,7 +373,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30908
+DECL|struct|__anon2b2b1ff60908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b021d30a08
+DECL|struct|__anon2b2b1ff60a08
 block|{
 DECL|member|run
 name|gboolean
@@ -7745,6 +7745,15 @@ modifier|*
 name|event
 parameter_list|)
 block|{
+name|GtkStyle
+modifier|*
+name|style
+init|=
+name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|PangoLayout
 modifier|*
 name|layout
@@ -7800,8 +7809,6 @@ name|ifsDesign
 operator|->
 name|pixmap
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|bg_gc
@@ -7869,8 +7876,6 @@ name|ifsDesign
 operator|->
 name|pixmap
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -7899,8 +7904,6 @@ name|ifsDesign
 operator|->
 name|pixmap
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -7976,8 +7979,6 @@ name|ifsDesign
 operator|->
 name|pixmap
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -8006,8 +8007,6 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|widget
-operator|->
 name|style
 operator|->
 name|fg_gc
@@ -10856,12 +10855,13 @@ name|v
 operator|.
 name|simple_color
 operator|=
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|active
+argument_list|)
 expr_stmt|;
 name|ifsD
 operator|->

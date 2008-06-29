@@ -169,12 +169,13 @@ name|pcvals
 operator|.
 name|placement_center
 operator|=
+name|gtk_toggle_button_get_active
+argument_list|(
 name|GTK_TOGGLE_BUTTON
 argument_list|(
 name|placement_center
 argument_list|)
-operator|->
-name|active
+argument_list|)
 expr_stmt|;
 block|}
 end_function
