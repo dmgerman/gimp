@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2778308c0103
+DECL|enum|__anon29ccf0db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1378,9 +1378,10 @@ argument_list|)
 operator|->
 name|context
 argument_list|,
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 operator|/
 literal|100.0
 argument_list|)
@@ -1454,14 +1455,20 @@ modifier|*
 name|select
 parameter_list|)
 block|{
+name|gdouble
+name|value
+init|=
+name|gtk_adjustment_get_value
+argument_list|(
+name|adjustment
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|select
 operator|->
 name|spacing
 operator|!=
-name|adjustment
-operator|->
 name|value
 condition|)
 block|{
@@ -1469,8 +1476,6 @@ name|select
 operator|->
 name|spacing
 operator|=
-name|adjustment
-operator|->
 name|value
 expr_stmt|;
 name|gimp_pdb_dialog_run_callback

@@ -865,9 +865,10 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 operator|/
 literal|100.0
 argument_list|)

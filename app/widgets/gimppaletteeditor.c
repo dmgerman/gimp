@@ -3605,9 +3605,10 @@ name|palette
 argument_list|,
 name|ROUND
 argument_list|(
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

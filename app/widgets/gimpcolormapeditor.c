@@ -140,7 +140,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b411bac0103
+DECL|enum|__anon290045d70103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -3980,15 +3980,22 @@ name|image
 argument_list|)
 condition|)
 block|{
+name|gint
+name|index
+init|=
+name|ROUND
+argument_list|(
+name|gtk_adjustment_get_value
+argument_list|(
+name|adjustment
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|gimp_colormap_editor_set_index
 argument_list|(
 name|editor
 argument_list|,
-name|adjustment
-operator|->
-name|value
-operator|+
-literal|0.5
+name|index
 argument_list|,
 name|NULL
 argument_list|)

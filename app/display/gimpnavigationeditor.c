@@ -2254,9 +2254,10 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
@@ -2351,9 +2352,10 @@ name|pow
 argument_list|(
 literal|2.0
 argument_list|,
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
