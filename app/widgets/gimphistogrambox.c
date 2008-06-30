@@ -1011,7 +1011,7 @@ name|ROUND
 argument_list|(
 name|gtk_adjustment_get_value
 argument_list|(
-name|value
+name|adjustment
 argument_list|)
 argument_list|)
 decl_stmt|;
