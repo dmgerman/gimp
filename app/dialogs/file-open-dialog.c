@@ -553,6 +553,16 @@ name|open_dialog
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|gimp_file_dialog_set_sensitive
+argument_list|(
+name|dialog
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 name|g_slist_foreach
 argument_list|(
 name|uris
