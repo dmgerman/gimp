@@ -41,6 +41,49 @@ directive|include
 file|"pygimp-api.h"
 end_include
 
+begin_if
+if|#
+directive|if
+name|PY_VERSION_HEX
+operator|<
+literal|0x02050000
+operator|&&
+operator|!
+name|defined
+argument_list|(
+name|PY_SSIZE_T_MIN
+argument_list|)
+end_if
+
+begin_typedef
+DECL|typedef|Py_ssize_t
+typedef|typedef
+name|int
+name|Py_ssize_t
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|PY_SSIZE_T_MAX
+define|#
+directive|define
+name|PY_SSIZE_T_MAX
+value|INT_MAX
+end_define
+
+begin_define
+DECL|macro|PY_SSIZE_T_MIN
+define|#
+directive|define
+name|PY_SSIZE_T_MIN
+value|INT_MIN
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_decl_stmt
 name|G_BEGIN_DECLS
 specifier|extern
@@ -337,7 +380,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2746abd40108
+DECL|struct|__anon2bbc42d80108
 typedef|typedef
 struct|struct
 block|{
@@ -394,7 +437,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2746abd40208
+DECL|struct|__anon2bbc42d80208
 typedef|typedef
 struct|struct
 block|{
@@ -464,7 +507,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2746abd40308
+DECL|struct|__anon2bbc42d80308
 typedef|typedef
 struct|struct
 block|{
@@ -554,7 +597,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2746abd40408
+DECL|struct|__anon2bbc42d80408
 typedef|typedef
 struct|struct
 block|{

@@ -6178,10 +6178,11 @@ name|self
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_image_is_valid
+argument_list|(
 name|ID
-operator|==
-operator|-
-literal|1
+argument_list|)
 condition|)
 block|{
 name|Py_INCREF

@@ -13,6 +13,12 @@ end_define
 begin_include
 include|#
 directive|include
+file|"pygimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pygimpcolor.h"
 end_include
 
@@ -2223,7 +2229,7 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|int
+name|Py_ssize_t
 DECL|function|rgb_length (PyObject * self)
 name|rgb_length
 parameter_list|(
@@ -2242,14 +2248,14 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|rgb_getitem (PyObject * self,int pos)
+DECL|function|rgb_getitem (PyObject * self,Py_ssize_t pos)
 name|rgb_getitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|)
 block|{
@@ -2378,14 +2384,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|rgb_setitem (PyObject * self,int pos,PyObject * value)
+DECL|function|rgb_setitem (PyObject * self,Py_ssize_t pos,PyObject * value)
 name|rgb_setitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|,
 name|PyObject
@@ -2499,17 +2505,17 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|rgb_slice (PyObject * self,int start,int end)
+DECL|function|rgb_slice (PyObject * self,Py_ssize_t start,Py_ssize_t end)
 name|rgb_slice
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|start
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|end
 parameter_list|)
 block|{
@@ -2517,7 +2523,7 @@ name|PyTupleObject
 modifier|*
 name|ret
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|i
 decl_stmt|;
 if|if
@@ -2618,9 +2624,6 @@ name|PySequenceMethods
 name|rgb_as_sequence
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|rgb_length
 block|,
 operator|(
@@ -2628,29 +2631,14 @@ name|binaryfunc
 operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 name|rgb_getitem
 block|,
-operator|(
-name|intintargfunc
-operator|)
 name|rgb_slice
 block|,
-operator|(
-name|intobjargproc
-operator|)
 name|rgb_setitem
 block|,
-operator|(
-name|intintobjargproc
-operator|)
 literal|0
 block|,
 operator|(
@@ -2750,7 +2738,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -3038,9 +3026,6 @@ name|PyMappingMethods
 name|rgb_as_mapping
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|rgb_length
 block|,
 operator|(
@@ -4868,7 +4853,7 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|int
+name|Py_ssize_t
 DECL|function|hsv_length (PyObject * self)
 name|hsv_length
 parameter_list|(
@@ -4887,14 +4872,14 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|hsv_getitem (PyObject * self,int pos)
+DECL|function|hsv_getitem (PyObject * self,Py_ssize_t pos)
 name|hsv_getitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|)
 block|{
@@ -5162,17 +5147,17 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|hsv_slice (PyObject * self,int start,int end)
+DECL|function|hsv_slice (PyObject * self,Py_ssize_t start,Py_ssize_t end)
 name|hsv_slice
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|start
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|end
 parameter_list|)
 block|{
@@ -5180,7 +5165,7 @@ name|PyTupleObject
 modifier|*
 name|ret
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|i
 decl_stmt|;
 if|if
@@ -5281,9 +5266,6 @@ name|PySequenceMethods
 name|hsv_as_sequence
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|hsv_length
 block|,
 operator|(
@@ -5291,29 +5273,14 @@ name|binaryfunc
 operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 name|hsv_getitem
 block|,
-operator|(
-name|intintargfunc
-operator|)
 name|hsv_slice
 block|,
-operator|(
-name|intobjargproc
-operator|)
 name|hsv_setitem
 block|,
-operator|(
-name|intintobjargproc
-operator|)
 literal|0
 block|,
 operator|(
@@ -5413,7 +5380,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -5701,9 +5668,6 @@ name|PyMappingMethods
 name|hsv_as_mapping
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|hsv_length
 block|,
 operator|(
@@ -7497,7 +7461,7 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|int
+name|Py_ssize_t
 DECL|function|hsl_length (PyObject * self)
 name|hsl_length
 parameter_list|(
@@ -7516,14 +7480,14 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|hsl_getitem (PyObject * self,int pos)
+DECL|function|hsl_getitem (PyObject * self,Py_ssize_t pos)
 name|hsl_getitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|)
 block|{
@@ -7791,17 +7755,17 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|hsl_slice (PyObject * self,int start,int end)
+DECL|function|hsl_slice (PyObject * self,Py_ssize_t start,Py_ssize_t end)
 name|hsl_slice
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|start
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|end
 parameter_list|)
 block|{
@@ -7809,7 +7773,7 @@ name|PyTupleObject
 modifier|*
 name|ret
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|i
 decl_stmt|;
 if|if
@@ -7910,9 +7874,6 @@ name|PySequenceMethods
 name|hsl_as_sequence
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|hsl_length
 block|,
 operator|(
@@ -7920,29 +7881,14 @@ name|binaryfunc
 operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 name|hsl_getitem
 block|,
-operator|(
-name|intintargfunc
-operator|)
 name|hsl_slice
 block|,
-operator|(
-name|intobjargproc
-operator|)
 name|hsl_setitem
 block|,
-operator|(
-name|intintobjargproc
-operator|)
 literal|0
 block|,
 operator|(
@@ -8042,7 +7988,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -8330,9 +8276,6 @@ name|PyMappingMethods
 name|hsl_as_mapping
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|hsl_length
 block|,
 operator|(
@@ -10131,7 +10074,7 @@ end_decl_stmt
 
 begin_function
 specifier|static
-name|int
+name|Py_ssize_t
 DECL|function|cmyk_length (PyObject * self)
 name|cmyk_length
 parameter_list|(
@@ -10150,14 +10093,14 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|cmyk_getitem (PyObject * self,int pos)
+DECL|function|cmyk_getitem (PyObject * self,Py_ssize_t pos)
 name|cmyk_getitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|)
 block|{
@@ -10430,17 +10373,17 @@ begin_function
 specifier|static
 name|PyObject
 modifier|*
-DECL|function|cmyk_slice (PyObject * self,int start,int end)
+DECL|function|cmyk_slice (PyObject * self,Py_ssize_t start,Py_ssize_t end)
 name|cmyk_slice
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|start
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|end
 parameter_list|)
 block|{
@@ -10448,7 +10391,7 @@ name|PyTupleObject
 modifier|*
 name|ret
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|i
 decl_stmt|;
 if|if
@@ -10549,9 +10492,6 @@ name|PySequenceMethods
 name|cmyk_as_sequence
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|cmyk_length
 block|,
 operator|(
@@ -10559,29 +10499,14 @@ name|binaryfunc
 operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 literal|0
 block|,
-operator|(
-name|intargfunc
-operator|)
 name|cmyk_getitem
 block|,
-operator|(
-name|intintargfunc
-operator|)
 name|cmyk_slice
 block|,
-operator|(
-name|intobjargproc
-operator|)
 name|cmyk_setitem
 block|,
-operator|(
-name|intintobjargproc
-operator|)
 literal|0
 block|,
 operator|(
@@ -10681,7 +10606,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|int
+name|Py_ssize_t
 name|start
 decl_stmt|,
 name|stop
@@ -10998,9 +10923,6 @@ name|PyMappingMethods
 name|cmyk_as_mapping
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|cmyk_length
 block|,
 operator|(

@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon27a7745c0108
+DECL|struct|__anon2abda7a80108
 typedef|typedef
 struct|struct
 block|{
@@ -4768,10 +4768,11 @@ name|self
 decl_stmt|;
 if|if
 condition|(
+operator|!
+name|gimp_vectors_is_valid
+argument_list|(
 name|ID
-operator|==
-operator|-
-literal|1
+argument_list|)
 condition|)
 block|{
 name|Py_INCREF

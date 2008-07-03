@@ -620,23 +620,35 @@ end_function
 
 begin_function
 specifier|static
-name|int
-DECL|function|tile_length (PyGimpTile * self)
+name|Py_ssize_t
+DECL|function|tile_length (PyObject * self)
 name|tile_length
 parameter_list|(
-name|PyGimpTile
+name|PyObject
 modifier|*
 name|self
 parameter_list|)
 block|{
 return|return
+operator|(
+operator|(
+name|PyGimpTile
+operator|*
+operator|)
 name|self
+operator|)
 operator|->
 name|tile
 operator|->
 name|ewidth
 operator|*
+operator|(
+operator|(
+name|PyGimpTile
+operator|*
+operator|)
 name|self
+operator|)
 operator|->
 name|tile
 operator|->
@@ -1172,9 +1184,6 @@ name|PyMappingMethods
 name|tile_as_mapping
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|tile_length
 block|,
 comment|/*length*/
@@ -1643,11 +1652,11 @@ end_comment
 
 begin_function
 specifier|static
-name|int
-DECL|function|pr_length (PyGimpPixelRgn * self)
+name|Py_ssize_t
+DECL|function|pr_length (PyObject * self)
 name|pr_length
 parameter_list|(
-name|PyGimpPixelRgn
+name|PyObject
 modifier|*
 name|self
 parameter_list|)
@@ -1707,7 +1716,7 @@ decl_stmt|,
 modifier|*
 name|y
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|x1
 decl_stmt|,
 name|y1
@@ -2484,7 +2493,7 @@ name|guchar
 modifier|*
 name|buf
 decl_stmt|;
-name|int
+name|Py_ssize_t
 name|len
 decl_stmt|,
 name|x1
@@ -3229,9 +3238,6 @@ name|PyMappingMethods
 name|pr_as_mapping
 init|=
 block|{
-operator|(
-name|inquiry
-operator|)
 name|pr_length
 block|,
 comment|/*mp_length*/
