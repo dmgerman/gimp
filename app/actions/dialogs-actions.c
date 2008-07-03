@@ -762,7 +762,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Show the tip of the day"
+literal|"Show some helpful tips on using GIMP"
 argument_list|)
 block|,
 literal|"gimp-tips-dialog"
