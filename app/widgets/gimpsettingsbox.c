@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1947c50103
+DECL|enum|__anon27cc11a40103
 block|{
 DECL|enumerator|IMPORT
 name|IMPORT
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1947c50203
+DECL|enum|__anon27cc11a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1071,7 +1071,7 @@ name|button
 argument_list|,
 name|_
 argument_list|(
-literal|"Add settings to favorites."
+literal|"Add settings to favorites"
 argument_list|)
 argument_list|,
 name|NULL

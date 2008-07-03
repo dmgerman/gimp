@@ -1048,7 +1048,7 @@ define|#
 directive|define
 name|USER_MANUAL_ONLINE_BLURB
 define|\
-value|N_("When enabled, the online user manual will be used by the help system. " \    "Otherwise the locally installed copy is used.")
+value|"When enabled, the online user manual will be used by the help system. " \ "Otherwise the locally installed copy is used."
 end_define
 
 begin_define
