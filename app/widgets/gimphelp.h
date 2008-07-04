@@ -52,7 +52,7 @@ end_comment
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_help_get_manual_location
+name|gimp_help_get_user_manual_location
 parameter_list|(
 name|void
 parameter_list|)

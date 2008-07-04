@@ -7796,7 +7796,7 @@ argument_list|)
 expr_stmt|;
 name|dir
 operator|=
-name|gimp_help_get_manual_location
+name|gimp_help_get_user_manual_location
 argument_list|()
 expr_stmt|;
 if|if
@@ -9493,7 +9493,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c6e39260108
+DECL|struct|__anon2be6807c0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10660,7 +10660,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6e39260208
+DECL|struct|__anon2be6807c0208
 block|{
 DECL|member|label
 specifier|const
@@ -11820,7 +11820,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6e39260308
+DECL|struct|__anon2be6807c0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11975,7 +11975,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c6e39260408
+DECL|struct|__anon2be6807c0408
 block|{
 DECL|member|tree_label
 specifier|const

@@ -481,8 +481,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_help_get_manual_location (void)
-name|gimp_help_get_manual_location
+DECL|function|gimp_help_get_user_manual_location (void)
+name|gimp_help_get_user_manual_location
 parameter_list|(
 name|void
 parameter_list|)
@@ -969,7 +969,8 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not start the GIMP help browser plug-in."
+literal|"Could not start the GIMP help browser "
+literal|"plug-in."
 argument_list|)
 argument_list|,
 name|NULL
@@ -1841,7 +1842,7 @@ argument_list|)
 return|;
 name|dir
 operator|=
-name|gimp_help_get_manual_location
+name|gimp_help_get_user_manual_location
 argument_list|()
 expr_stmt|;
 name|uri
