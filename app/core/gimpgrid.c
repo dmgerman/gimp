@@ -63,7 +63,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b76353b0103
+DECL|enum|__anon2bf8953c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -239,7 +239,7 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_GRID_STYLE
 argument_list|,
-name|GIMP_GRID_INTERSECTIONS
+name|GIMP_GRID_SOLID
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -304,7 +304,7 @@ literal|1.0
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|32.0
+literal|10.0
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -326,7 +326,7 @@ literal|1.0
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|32.0
+literal|10.0
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
