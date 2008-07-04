@@ -36,7 +36,7 @@ name|gchar
 modifier|*
 name|parent
 decl_stmt|;
-comment|/* eek */
+comment|/*  extra fields used by the help-browser  */
 DECL|member|children
 name|GList
 modifier|*

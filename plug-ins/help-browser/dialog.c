@@ -161,10 +161,18 @@ name|GIMP_HELP_BROWSER_DIALOG_DATA
 value|"gimp-help-browser-dialog"
 end_define
 
+begin_define
+DECL|macro|GIMP_HELP_BROWSER_INDEX_MAX_DEPTH
+define|#
+directive|define
+name|GIMP_HELP_BROWSER_INDEX_MAX_DEPTH
+value|4
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4df70a0108
+DECL|struct|__anon2782aa720108
 block|{
 DECL|member|width
 name|gint
@@ -194,7 +202,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4df70a0203
+DECL|enum|__anon2782aa720203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1698,6 +1706,7 @@ if|if
 condition|(
 name|parent
 condition|)
+block|{
 name|parent
 operator|->
 name|children
@@ -1711,6 +1720,7 @@ argument_list|,
 name|item
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
@@ -1744,24 +1754,18 @@ name|gconstpointer
 name|b
 parameter_list|)
 block|{
+specifier|const
 name|GimpHelpItem
 modifier|*
 name|item_a
 init|=
-operator|(
-name|GimpHelpItem
-operator|*
-operator|)
 name|a
 decl_stmt|;
+specifier|const
 name|GimpHelpItem
 modifier|*
 name|item_b
 init|=
-operator|(
-name|GimpHelpItem
-operator|*
-operator|)
 name|b
 decl_stmt|;
 if|if
@@ -1801,7 +1805,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_child (GtkTreeStore * store,GimpHelpDomain * domain,GimpHelpLocale * locale,GtkTreeIter * parent,GimpHelpItem * item)
+DECL|function|add_child (GtkTreeStore * store,GimpHelpDomain * domain,GimpHelpLocale * locale,GtkTreeIter * parent,GimpHelpItem * item,gint depth)
 name|add_child
 parameter_list|(
 name|GtkTreeStore
@@ -1823,6 +1827,9 @@ parameter_list|,
 name|GimpHelpItem
 modifier|*
 name|item
+parameter_list|,
+name|gint
+name|depth
 parameter_list|)
 block|{
 name|GtkTreeIter
@@ -1903,6 +1910,15 @@ name|iter
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|depth
+operator|+
+literal|1
+operator|==
+name|GIMP_HELP_BROWSER_INDEX_MAX_DEPTH
+condition|)
+return|return;
 name|item
 operator|->
 name|children
@@ -1954,6 +1970,10 @@ operator|&
 name|iter
 argument_list|,
 name|item
+argument_list|,
+name|depth
+operator|+
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
@@ -2118,6 +2138,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|item
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
