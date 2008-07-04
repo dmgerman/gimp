@@ -478,6 +478,29 @@ block|}
 block|}
 end_function
 
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_help_get_manual_location (void)
+name|gimp_help_get_manual_location
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|g_build_filename
+argument_list|(
+name|gimp_data_directory
+argument_list|()
+argument_list|,
+literal|"help"
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -1818,15 +1841,8 @@ argument_list|)
 return|;
 name|dir
 operator|=
-name|g_build_filename
-argument_list|(
-name|gimp_data_directory
+name|gimp_help_get_manual_location
 argument_list|()
-argument_list|,
-literal|"help"
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|uri
 operator|=

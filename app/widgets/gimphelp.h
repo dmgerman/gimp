@@ -45,6 +45,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  returns the folder where the user manual should be installed  */
+end_comment
+
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_help_get_manual_location
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
