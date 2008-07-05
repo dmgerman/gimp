@@ -46,15 +46,16 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  returns the folder where the user manual should be installed  */
+comment|/*  checks if the user manual is installed locally  */
 end_comment
 
 begin_function_decl
-name|gchar
-modifier|*
-name|gimp_help_get_user_manual_location
+name|gboolean
+name|gimp_help_user_manual_is_installed
 parameter_list|(
-name|void
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
