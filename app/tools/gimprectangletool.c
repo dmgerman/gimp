@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d3cb750103
+DECL|enum|__anon27e499050103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -223,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d3cb750203
+DECL|enum|__anon27e499050203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -266,7 +266,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d3cb750303
+DECL|enum|__anon27e499050303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5492,22 +5492,18 @@ name|gimp_draw_tool_draw_cross_by_anchor
 argument_list|(
 name|draw_tool
 argument_list|,
+operator|(
 name|pub_x1
 operator|+
-operator|(
 name|pub_x2
-operator|-
-name|pub_x1
 operator|)
 operator|/
 literal|2.0
 argument_list|,
+operator|(
 name|pub_y1
 operator|+
-operator|(
 name|pub_y2
-operator|-
-name|pub_y1
 operator|)
 operator|/
 literal|2.0

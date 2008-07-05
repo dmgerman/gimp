@@ -1765,12 +1765,10 @@ name|edit_select
 operator|->
 name|center_x
 operator|=
+operator|(
 name|x1
 operator|+
-operator|(
 name|x2
-operator|-
-name|x1
 operator|)
 operator|/
 literal|2.0
@@ -1779,12 +1777,10 @@ name|edit_select
 operator|->
 name|center_y
 operator|=
+operator|(
 name|y1
 operator|+
-operator|(
 name|y2
-operator|-
-name|y1
 operator|)
 operator|/
 literal|2.0
