@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1916450103
+DECL|enum|__anon27d3cb750103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -205,6 +205,14 @@ value|45
 end_define
 
 begin_define
+DECL|macro|CENTER_CROSS_SIZE
+define|#
+directive|define
+name|CENTER_CROSS_SIZE
+value|6
+end_define
+
+begin_define
 DECL|macro|SQRT5
 define|#
 directive|define
@@ -215,7 +223,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1916450203
+DECL|enum|__anon27d3cb750203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -258,7 +266,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1916450303
+DECL|enum|__anon27d3cb750303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5478,8 +5486,47 @@ operator|->
 name|control
 argument_list|)
 condition|)
+block|{
+comment|/* Mark the center because we snap to it */
+name|gimp_draw_tool_draw_cross_by_anchor
+argument_list|(
+name|draw_tool
+argument_list|,
+name|pub_x1
+operator|+
+operator|(
+name|pub_x2
+operator|-
+name|pub_x1
+operator|)
+operator|/
+literal|2.0
+argument_list|,
+name|pub_y1
+operator|+
+operator|(
+name|pub_y2
+operator|-
+name|pub_y1
+operator|)
+operator|/
+literal|2.0
+argument_list|,
+name|CENTER_CROSS_SIZE
+argument_list|,
+name|CENTER_CROSS_SIZE
+argument_list|,
+name|GTK_ANCHOR_CENTER
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 break|break;
-comment|/* else fallthrough */
+block|}
+else|else
+block|{
+comment|/* Fallthrough */
+block|}
 case|case
 name|GIMP_RECTANGLE_TOOL_DEAD
 case|:
