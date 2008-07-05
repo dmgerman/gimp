@@ -270,11 +270,11 @@ name|image
 condition|)
 block|{
 name|gint
-name|sx
+name|sw
 decl_stmt|,
-name|sy
+name|sh
 decl_stmt|;
-name|sx
+name|sw
 operator|=
 name|SCALEX
 argument_list|(
@@ -290,7 +290,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|sy
+name|sh
 operator|=
 name|SCALEY
 argument_list|(
@@ -320,7 +320,7 @@ literal|0
 argument_list|,
 name|MAX
 argument_list|(
-name|sx
+name|sw
 operator|-
 name|shell
 operator|->
@@ -344,7 +344,7 @@ literal|0
 argument_list|,
 name|MAX
 argument_list|(
-name|sy
+name|sh
 operator|-
 name|shell
 operator|->
