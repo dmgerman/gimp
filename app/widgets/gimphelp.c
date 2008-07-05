@@ -610,13 +610,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|path
-argument_list|)
-expr_stmt|;
 name|found
 operator|=
 name|g_file_test
