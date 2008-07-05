@@ -518,6 +518,17 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/*  if GIMP2_HELP_URI is set, assume that the manual can be found there  */
+if|if
+condition|(
+name|g_getenv
+argument_list|(
+literal|"GIMP2_HELP_URI"
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
 name|basedir
 operator|=
 name|gimp_help_get_user_manual_basedir
