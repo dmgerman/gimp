@@ -211,6 +211,134 @@ name|ARROW_VELOCITY
 value|25
 end_define
 
+begin_typedef
+DECL|struct|_GimpEditSelectionTool
+typedef|typedef
+struct|struct
+name|_GimpEditSelectionTool
+block|{
+DECL|member|parent_instance
+name|GimpDrawTool
+name|parent_instance
+decl_stmt|;
+DECL|member|origx
+DECL|member|origy
+name|gint
+name|origx
+decl_stmt|,
+name|origy
+decl_stmt|;
+comment|/*  Last x and y coords               */
+DECL|member|cumlx
+DECL|member|cumly
+name|gint
+name|cumlx
+decl_stmt|,
+name|cumly
+decl_stmt|;
+comment|/*  Cumulative changes to x and yed   */
+DECL|member|x
+DECL|member|y
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
+comment|/*  Current x and y coords            */
+DECL|member|num_segs_in
+name|gint
+name|num_segs_in
+decl_stmt|;
+comment|/*  Num seg in selection boundary     */
+DECL|member|num_segs_out
+name|gint
+name|num_segs_out
+decl_stmt|;
+comment|/*  Num seg in selection boundary     */
+DECL|member|segs_in
+name|BoundSeg
+modifier|*
+name|segs_in
+decl_stmt|;
+comment|/*  Pointer to the channel sel. segs  */
+DECL|member|segs_out
+name|BoundSeg
+modifier|*
+name|segs_out
+decl_stmt|;
+comment|/*  Pointer to the channel sel. segs  */
+DECL|member|x1
+DECL|member|y1
+name|gint
+name|x1
+decl_stmt|,
+name|y1
+decl_stmt|;
+comment|/*  Bounding box of selection mask    */
+DECL|member|x2
+DECL|member|y2
+name|gint
+name|x2
+decl_stmt|,
+name|y2
+decl_stmt|;
+DECL|member|edit_mode
+name|GimpTranslateMode
+name|edit_mode
+decl_stmt|;
+comment|/*  Translate the mask or layer?      */
+DECL|member|first_move
+name|gboolean
+name|first_move
+decl_stmt|;
+comment|/*  Don't push undos after the first  */
+DECL|member|propagate_release
+name|gboolean
+name|propagate_release
+decl_stmt|;
+DECL|member|constrain
+name|gboolean
+name|constrain
+decl_stmt|;
+comment|/*  Constrain the movement            */
+DECL|member|start_x
+DECL|member|start_y
+name|gdouble
+name|start_x
+decl_stmt|,
+name|start_y
+decl_stmt|;
+comment|/*  Coords when button was pressed    */
+DECL|member|last_x
+DECL|member|last_y
+name|gdouble
+name|last_x
+decl_stmt|,
+name|last_y
+decl_stmt|;
+comment|/*  Previous coords sent to _motion   */
+DECL|typedef|GimpEditSelectionTool
+block|}
+name|GimpEditSelectionTool
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|struct|_GimpEditSelectionToolClass
+typedef|typedef
+struct|struct
+name|_GimpEditSelectionToolClass
+block|{
+DECL|member|parent_class
+name|GimpDrawToolClass
+name|parent_class
+decl_stmt|;
+DECL|typedef|GimpEditSelectionToolClass
+block|}
+name|GimpEditSelectionToolClass
+typedef|;
+end_typedef
+
 begin_function_decl
 specifier|static
 name|void
