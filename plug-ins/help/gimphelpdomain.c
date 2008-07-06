@@ -624,6 +624,28 @@ block|{
 case|case
 name|G_IO_ERROR_NOT_FOUND
 case|:
+if|if
+condition|(
+name|domain
+operator|->
+name|help_domain
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"The help pages for '%s' are not available."
+argument_list|)
+argument_list|,
+name|domain
+operator|->
+name|help_domain
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|g_message
 argument_list|(
 literal|"%s\n\n%s"
@@ -635,8 +657,29 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Please install the additional help package or use "
-literal|"the online user manual at http://docs.gimp.org/."
+literal|"Please install the additional help package "
+literal|"or use the online user manual at "
+literal|"http://docs.gimp.org/."
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+break|break;
+case|case
+name|G_IO_ERROR_NOT_SUPPORTED
+case|:
+name|g_message
+argument_list|(
+literal|"%s\n\n%s"
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|,
+name|_
+argument_list|(
+literal|"Perhaps you are missing GIO backends and need "
+literal|"to install GVFS?"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -648,21 +691,9 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
-literal|"%s\n\n%s\n\n%s"
-argument_list|,
-name|_
-argument_list|(
-literal|"There is a problem with the GIMP user manual."
-argument_list|)
-argument_list|,
 name|error
 operator|->
 name|message
-argument_list|,
-name|_
-argument_list|(
-literal|"Please check your installation."
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
