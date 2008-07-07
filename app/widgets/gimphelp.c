@@ -2283,7 +2283,7 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Use online version"
+literal|"Use _Online Version"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_ACCEPT
