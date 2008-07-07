@@ -2379,7 +2379,7 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"You can either install the additional help "
+literal|"You may either install the additional help "
 literal|"package or change your preferences to use "
 literal|"the online version."
 argument_list|)
