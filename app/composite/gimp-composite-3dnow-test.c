@@ -60,6 +60,7 @@ file|"gimp-composite-3dnow.h"
 end_include
 
 begin_function
+specifier|static
 name|int
 DECL|function|gimp_composite_3dnow_test (int iterations,int n_pixels)
 name|gimp_composite_3dnow_test

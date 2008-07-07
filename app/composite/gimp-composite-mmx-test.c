@@ -60,6 +60,7 @@ file|"gimp-composite-mmx.h"
 end_include
 
 begin_function
+specifier|static
 name|int
 DECL|function|gimp_composite_mmx_test (int iterations,int n_pixels)
 name|gimp_composite_mmx_test
