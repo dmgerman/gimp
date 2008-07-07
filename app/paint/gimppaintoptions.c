@@ -351,7 +351,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c5a2d10103
+DECL|enum|__anon2ad6d2200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4555,19 +4555,19 @@ name|paint_options
 operator|->
 name|pressure_options
 operator|->
-name|rate
+name|hardness
 operator|||
 name|paint_options
 operator|->
 name|velocity_options
 operator|->
-name|rate
+name|hardness
 operator|||
 name|paint_options
 operator|->
 name|random_options
 operator|->
-name|rate
+name|hardness
 condition|)
 block|{
 name|gdouble
