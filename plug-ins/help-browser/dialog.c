@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2756df2c0108
+DECL|struct|__anon28d361270108
 block|{
 DECL|member|width
 name|gint
@@ -202,7 +202,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756df2c0203
+DECL|enum|__anon28d361270203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2243,6 +2243,8 @@ decl_stmt|;
 name|GtkTreeIter
 modifier|*
 name|iter
+init|=
+name|NULL
 decl_stmt|;
 name|selection
 operator|=
@@ -2254,6 +2256,10 @@ name|tree_view
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|uri
+condition|)
 name|iter
 operator|=
 name|g_hash_table_lookup
@@ -4230,6 +4236,14 @@ argument_list|)
 expr_stmt|;
 name|update_actions
 argument_list|()
+expr_stmt|;
+name|select_index
+argument_list|(
+name|webkit_web_frame_get_uri
+argument_list|(
+name|frame
+argument_list|)
+argument_list|)
 expr_stmt|;
 block|}
 end_function
