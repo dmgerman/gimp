@@ -7691,17 +7691,6 @@ name|METH_NOARGS
 block|}
 block|,
 block|{
-literal|"get_foreground"
-block|,
-operator|(
-name|PyCFunction
-operator|)
-name|pygimp_get_foreground
-block|,
-name|METH_NOARGS
-block|}
-block|,
-block|{
 literal|"get_background"
 block|,
 operator|(
