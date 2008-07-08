@@ -172,7 +172,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274acec10108
+DECL|struct|__anon27e4e0930108
 block|{
 DECL|member|width
 name|gint
@@ -202,7 +202,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon274acec10203
+DECL|enum|__anon27e4e0930203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3391,11 +3391,6 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-if|if
-condition|(
-name|item
-condition|)
-block|{
 name|GtkWidget
 modifier|*
 name|menu_item
@@ -3455,7 +3450,6 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_list_free
 argument_list|(
