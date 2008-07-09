@@ -164,7 +164,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd5e2df0103
+DECL|enum|__anon2c2f158b0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -183,7 +183,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bd5e2df0208
+DECL|struct|__anon2c2f158b0208
 block|{
 DECL|member|name
 specifier|const
@@ -815,6 +815,11 @@ argument_list|,
 name|G_FILE_TEST_IS_DIR
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|migrate
+condition|)
+block|{
 ifdef|#
 directive|ifdef
 name|GIMP_UNSTABLE
@@ -827,11 +832,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-if|if
-condition|(
-name|migrate
-condition|)
-block|{
 name|install
 operator|->
 name|old_major
