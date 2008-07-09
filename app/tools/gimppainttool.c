@@ -1827,6 +1827,14 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+comment|/*  don't paint while the Shift key is pressed for line drawing  */
+if|if
+condition|(
+name|paint_tool
+operator|->
+name|draw_line
+condition|)
+return|return;
 name|gimp_draw_tool_pause
 argument_list|(
 name|GIMP_DRAW_TOOL
