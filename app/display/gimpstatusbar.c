@@ -2279,17 +2279,22 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
-init|=
-name|gimp_get_message_stock_id
-argument_list|(
-name|severity
-argument_list|)
 decl_stmt|;
 name|gboolean
 name|handle_msg
 init|=
 name|FALSE
 decl_stmt|;
+comment|/*  don't accept a message if we are already displaying one  */
+if|if
+condition|(
+name|statusbar
+operator|->
+name|temp_timeout_id
+condition|)
+return|return
+name|FALSE
+return|;
 comment|/*  we can only handle short one-liners  */
 name|layout
 operator|=
@@ -2298,6 +2303,13 @@ argument_list|(
 name|label
 argument_list|,
 name|message
+argument_list|)
+expr_stmt|;
+name|stock_id
+operator|=
+name|gimp_get_message_stock_id
+argument_list|(
+name|severity
 argument_list|)
 expr_stmt|;
 if|if
