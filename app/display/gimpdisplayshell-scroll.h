@@ -17,7 +17,7 @@ name|__GIMP_DISPLAY_SHELL_SCROLL_H__
 end_define
 
 begin_function_decl
-name|gboolean
+name|void
 name|gimp_display_shell_scroll
 parameter_list|(
 name|GimpDisplayShell

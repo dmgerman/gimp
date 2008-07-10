@@ -70,7 +70,7 @@ file|"gimpdisplayshell-scroll.h"
 end_include
 
 begin_function
-name|gboolean
+name|void
 DECL|function|gimp_display_shell_scroll (GimpDisplayShell * shell,gint x_offset,gint y_offset)
 name|gimp_display_shell_scroll
 parameter_list|(
@@ -91,14 +91,12 @@ decl_stmt|;
 name|gint
 name|old_y
 decl_stmt|;
-name|g_return_val_if_fail
+name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
 argument_list|(
 name|shell
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|old_x
@@ -232,13 +230,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
-return|return
-name|FALSE
-return|;
 block|}
 end_function
 
