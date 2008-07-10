@@ -843,7 +843,7 @@ literal|"dynamics-expanded"
 argument_list|,
 name|_
 argument_list|(
-literal|"Dynamics sensitivity"
+literal|"Brush Dynamics"
 argument_list|)
 argument_list|)
 expr_stmt|;
