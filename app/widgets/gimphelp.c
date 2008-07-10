@@ -214,6 +214,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -226,6 +230,10 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -778,6 +786,10 @@ argument_list|(
 name|idle_help
 operator|->
 name|gimp
+argument_list|,
+name|idle_help
+operator|->
+name|progress
 argument_list|)
 condition|)
 name|procedure_name
@@ -885,12 +897,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_help_browser (Gimp * gimp)
+DECL|function|gimp_help_browser (Gimp * gimp,GimpProgress * progress)
 name|gimp_help_browser
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|)
 block|{
 specifier|static
@@ -984,20 +1000,24 @@ name|gimp_help_browser_error
 argument_list|(
 name|gimp
 argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
-literal|"Help browser not found"
+literal|"Help browser is missing"
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not find GIMP help browser."
+literal|"The GIMP help browser is not available."
 argument_list|)
 argument_list|,
 name|_
 argument_list|(
 literal|"The GIMP help browser plug-in appears "
-literal|"to be missing from your installation."
+literal|"to be missing from your installation. "
+literal|"You may instead use the web browser "
+literal|"for reading the help pages."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1140,7 +1160,10 @@ name|gimp_message
 argument_list|(
 name|gimp
 argument_list|,
-name|NULL
+name|G_OBJECT
+argument_list|(
+name|progress
+argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
@@ -1180,6 +1203,8 @@ name|gimp_help_browser_error
 argument_list|(
 name|gimp
 argument_list|,
+name|progress
+argument_list|,
 name|_
 argument_list|(
 literal|"Help browser doesn't start"
@@ -1215,12 +1240,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_help_browser_error (Gimp * gimp,const gchar * title,const gchar * primary,const gchar * text)
+DECL|function|gimp_help_browser_error (Gimp * gimp,GimpProgress * progress,const gchar * title,const gchar * primary,const gchar * text)
 name|gimp_help_browser_error
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
 parameter_list|,
 specifier|const
 name|gchar
@@ -1248,7 +1277,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|title
 argument_list|,
-name|GIMP_STOCK_WARNING
+name|GIMP_STOCK_USER_MANUAL
 argument_list|,
 name|NULL
 argument_list|,
@@ -1264,7 +1293,7 @@ name|GTK_RESPONSE_CANCEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Use _web browser instead"
+literal|"Use _Web Browser"
 argument_list|)
 argument_list|,
 name|GTK_RESPONSE_OK
@@ -1287,6 +1316,34 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|progress
+condition|)
+block|{
+name|guint32
+name|window
+init|=
+name|gimp_progress_get_window
+argument_list|(
+name|progress
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|window
+condition|)
+name|gimp_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
+block|}
 name|gimp_message_box_set_primary_text
 argument_list|(
 name|GIMP_MESSAGE_DIALOG
