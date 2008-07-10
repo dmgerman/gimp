@@ -24,11 +24,11 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|gint
-name|x_offset
+name|gdouble
+name|x_offset_into_image
 parameter_list|,
-name|gint
-name|y_offset
+name|gdouble
+name|y_offset_into_image
 parameter_list|)
 function_decl|;
 end_function_decl
