@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon292522100108
+DECL|struct|__anon28d97a370108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon292522100208
+DECL|struct|__anon28d97a370208
 typedef|typedef
 struct|struct
 block|{
@@ -2753,6 +2753,27 @@ break|break;
 case|case
 name|GIMP_PDB_DISPLAY
 case|:
+if|if
+condition|(
+name|item
+operator|==
+name|Py_None
+condition|)
+block|{
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_display
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+break|break;
+block|}
 name|check
 argument_list|(
 operator|!
