@@ -469,7 +469,7 @@ end_function
 begin_function
 name|GimpDataFactory
 modifier|*
-DECL|function|gimp_data_factory_new (Gimp * gimp,GType data_type,const gchar * path_property_name,const gchar * writable_property_name,const GimpDataFactoryLoaderEntry * loader_entries,gint n_loader_entries,GimpDataNewFunc new_func,GimpDataGetStandardFunc standard_func)
+DECL|function|gimp_data_factory_new (Gimp * gimp,GType data_type,const gchar * path_property_name,const gchar * writable_property_name,const GimpDataFactoryLoaderEntry * loader_entries,gint n_loader_entries,GimpDataNewFunc new_func,GimpDataGetStandardFunc get_standard_func)
 name|gimp_data_factory_new
 parameter_list|(
 name|Gimp
@@ -501,7 +501,7 @@ name|GimpDataNewFunc
 name|new_func
 parameter_list|,
 name|GimpDataGetStandardFunc
-name|standard_func
+name|get_standard_func
 parameter_list|)
 block|{
 name|GimpDataFactory
@@ -647,7 +647,7 @@ name|factory
 operator|->
 name|data_get_standard_func
 operator|=
-name|standard_func
+name|get_standard_func
 expr_stmt|;
 return|return
 name|factory
@@ -745,7 +745,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba60d930108
+DECL|struct|__anon27677fcc0108
 block|{
 DECL|member|factory
 name|GimpDataFactory

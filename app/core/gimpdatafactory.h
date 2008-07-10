@@ -290,7 +290,7 @@ name|GimpDataNewFunc
 name|new_func
 parameter_list|,
 name|GimpDataGetStandardFunc
-name|standard_func
+name|get_standard_func
 parameter_list|)
 function_decl|;
 end_function_decl
