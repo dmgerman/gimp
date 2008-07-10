@@ -502,11 +502,7 @@ argument_list|)
 argument_list|)
 condition|)
 break|break;
-comment|/* else fallthrough */
-case|case
-name|GIMP_MESSAGE_INFO
-case|:
-comment|/* info messages go to the statusbar, no matter if it's visible or not */
+else|else
 return|return
 name|gimp_progress_message
 argument_list|(
@@ -525,6 +521,31 @@ name|domain
 argument_list|,
 name|message
 argument_list|)
+return|;
+case|case
+name|GIMP_MESSAGE_INFO
+case|:
+comment|/* info messages go to the statusbar;        * if they are not handled there, they are swallowed        */
+name|gimp_progress_message
+argument_list|(
+name|GIMP_PROGRESS
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|gimp
+argument_list|,
+name|severity
+argument_list|,
+name|domain
+argument_list|,
+name|message
+argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
 return|;
 block|}
 return|return
