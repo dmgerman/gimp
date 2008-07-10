@@ -604,7 +604,7 @@ argument_list|,
 operator|(
 name|GCompareFunc
 operator|)
-name|gimp_data_name_compare
+name|gimp_data_compare
 argument_list|)
 expr_stmt|;
 name|factory
@@ -745,7 +745,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27677fcc0108
+DECL|struct|__anon2aaab2720108
 block|{
 DECL|member|factory
 name|GimpDataFactory

@@ -111,7 +111,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0f6d70103
+DECL|enum|__anon29e133cd0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0f6d70203
+DECL|enum|__anon29e133cd0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2537,13 +2537,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_name_compare:  * @data1: a #GimpData object.  * @data2: another #GimpData object.  *  * Compares the names of the two objects for use in sorting; see  * gimp_object_name_collate() for the method.  Objects marked as  * "internal" are considered to come before any objects that are not.  *  * Return value: -1 if @data1 compares before @data2,  *                0 if they compare equal,  *                1 if @data1 compares after @data2.  **/
+comment|/**  * gimp_data_compare:  * @data1: a #GimpData object.  * @data2: another #GimpData object.  *  * Compares two data objects for use in sorting. Objects marked as  * "internal" come first, then user-writable objects, then system data  * files. In these three groups, the objects are sorted alphabetically  * by name, using gimp_object_name_collate().  *  * Return value: -1 if @data1 compares before @data2,  *                0 if they compare equal,  *                1 if @data1 compares after @data2.  **/
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_data_name_compare (GimpData * data1,GimpData * data2)
-name|gimp_data_name_compare
+DECL|function|gimp_data_compare (GimpData * data1,GimpData * data2)
+name|gimp_data_compare
 parameter_list|(
 name|GimpData
 modifier|*
@@ -2569,6 +2569,27 @@ return|return
 name|data1
 operator|->
 name|internal
+condition|?
+operator|-
+literal|1
+else|:
+literal|1
+return|;
+comment|/*  keep user-writable objects about system resource files  */
+if|if
+condition|(
+name|data1
+operator|->
+name|writable
+operator|!=
+name|data2
+operator|->
+name|writable
+condition|)
+return|return
+name|data1
+operator|->
+name|writable
 condition|?
 operator|-
 literal|1
