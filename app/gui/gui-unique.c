@@ -202,6 +202,12 @@ name|HAVE_DBUS_GLIB
 name|gui_dbus_service_exit
 argument_list|()
 expr_stmt|;
+elif|#
+directive|elif
+name|HAVE_DBUS_GLIB
+name|gui_unique_win32_exit
+argument_list|()
+expr_stmt|;
 endif|#
 directive|endif
 block|}
