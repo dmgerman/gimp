@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-scroll.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
