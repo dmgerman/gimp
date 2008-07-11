@@ -381,7 +381,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8ca080108
+DECL|struct|__anon2b29fc6a0108
 block|{
 DECL|member|name
 name|gchar
@@ -421,8 +421,6 @@ init|=
 name|g_slice_new
 argument_list|(
 name|IdleOpenData
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
 name|data
