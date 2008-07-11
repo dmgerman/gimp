@@ -126,7 +126,6 @@ end_endif
 begin_function
 name|gboolean
 DECL|function|gimp_unique_open (const gchar ** filenames,gboolean as_new)
-DECL|function|gimp_unique_open (const gchar ** filenames,gboolean as_new)
 name|gimp_unique_open
 parameter_list|(
 specifier|const
@@ -176,7 +175,6 @@ specifier|static
 name|gchar
 modifier|*
 DECL|function|gimp_unique_filename_to_uri (const gchar * filename,const gchar * cwd,GError ** error)
-DECL|function|gimp_unique_filename_to_uri (const gchar * filename,const gchar * cwd,GError ** error)
 name|gimp_unique_filename_to_uri
 parameter_list|(
 specifier|const
@@ -223,6 +221,7 @@ elseif|else
 if|if
 condition|(
 operator|!
+operator|*
 name|error
 condition|)
 block|{
@@ -295,7 +294,6 @@ end_if
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_unique_dbus_open (const gchar ** filenames,gboolean as_new)
 DECL|function|gimp_unique_dbus_open (const gchar ** filenames,gboolean as_new)
 name|gimp_unique_dbus_open
 parameter_list|(
@@ -588,7 +586,6 @@ begin_function
 specifier|static
 name|gboolean
 DECL|function|gimp_unique_win32_open (const gchar ** filenames,gboolean as_new)
-DECL|function|gimp_unique_win32_open (const gchar ** filenames,gboolean as_new)
 name|gimp_unique_win32_open
 parameter_list|(
 specifier|const
@@ -751,6 +748,7 @@ endif|#
 directive|endif
 return|return
 name|FALSE
+return|;
 block|}
 end_function
 
