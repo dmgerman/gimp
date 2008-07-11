@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"global.h"
 end_include
 
@@ -888,7 +882,7 @@ literal|"left"
 expr_stmt|;
 break|break;
 default|default:
-name|printf
+name|g_printerr
 argument_list|(
 literal|"append_coordinate: Bad edge (%d)"
 argument_list|,
