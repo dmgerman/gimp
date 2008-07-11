@@ -15,6 +15,23 @@ directive|include
 file|<glib-object.h>
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<windows.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_if
 if|#
 directive|if
@@ -456,9 +473,6 @@ parameter_list|)
 block|{
 name|WNDCLASSW
 name|wc
-decl_stmt|;
-name|HWND
-name|window_handle
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
