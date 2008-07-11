@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<cairo/cairo.h>
+file|<cairo.h>
 end_include
 
 begin_include
@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297b3ea70103
+DECL|enum|__anon2757dbd40103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
