@@ -49,23 +49,6 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifndef
-ifndef|#
-directive|ifndef
-name|GIMP_CONSOLE_COMPILATION
-end_ifndef
-
-begin_include
-include|#
-directive|include
-file|<gdk/gdk.h>
-end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_include
 include|#
 directive|include
@@ -82,12 +65,6 @@ begin_include
 include|#
 directive|include
 file|"unique.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp-intl.h"
 end_include
 
 begin_if
@@ -109,9 +86,6 @@ name|filenames
 parameter_list|,
 name|gboolean
 name|as_new
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -140,9 +114,6 @@ name|filenames
 parameter_list|,
 name|gboolean
 name|as_new
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -154,8 +125,8 @@ end_endif
 
 begin_function
 name|gboolean
-DECL|function|gimp_unique_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
-DECL|function|gimp_unique_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
+DECL|function|gimp_unique_open (const gchar ** filenames,gboolean as_new)
+DECL|function|gimp_unique_open (const gchar ** filenames,gboolean as_new)
 name|gimp_unique_open
 parameter_list|(
 specifier|const
@@ -166,9 +137,6 @@ name|filenames
 parameter_list|,
 name|gboolean
 name|as_new
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|)
 block|{
 ifdef|#
@@ -180,8 +148,6 @@ argument_list|(
 name|filenames
 argument_list|,
 name|as_new
-argument_list|,
-name|be_verbose
 argument_list|)
 return|;
 elif|#
@@ -193,8 +159,6 @@ argument_list|(
 name|filenames
 argument_list|,
 name|as_new
-argument_list|,
-name|be_verbose
 argument_list|)
 return|;
 else|#
@@ -216,8 +180,8 @@ end_if
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_unique_dbus_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
-DECL|function|gimp_unique_dbus_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
+DECL|function|gimp_unique_dbus_open (const gchar ** filenames,gboolean as_new)
+DECL|function|gimp_unique_dbus_open (const gchar ** filenames,gboolean as_new)
 name|gimp_unique_dbus_open
 parameter_list|(
 specifier|const
@@ -228,9 +192,6 @@ name|filenames
 parameter_list|,
 name|gboolean
 name|as_new
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|)
 block|{
 ifndef|#
@@ -537,23 +498,6 @@ condition|(
 name|success
 condition|)
 block|{
-if|if
-condition|(
-name|be_verbose
-condition|)
-name|g_print
-argument_list|(
-literal|"%s\n"
-argument_list|,
-name|_
-argument_list|(
-literal|"Another GIMP instance is already running."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdk_notify_startup_complete
-argument_list|()
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -620,8 +564,8 @@ end_ifdef
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_unique_win32_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
-DECL|function|gimp_unique_win32_open (const gchar ** filenames,gboolean as_new,gboolean be_verbose)
+DECL|function|gimp_unique_win32_open (const gchar ** filenames,gboolean as_new)
+DECL|function|gimp_unique_win32_open (const gchar ** filenames,gboolean as_new)
 name|gimp_unique_win32_open
 parameter_list|(
 specifier|const
@@ -632,9 +576,6 @@ name|filenames
 parameter_list|,
 name|gboolean
 name|as_new
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|)
 block|{
 ifndef|#

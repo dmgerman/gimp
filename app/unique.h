@@ -28,9 +28,6 @@ name|filenames
 parameter_list|,
 name|gboolean
 name|as_new
-parameter_list|,
-name|gboolean
-name|be_verbose
 parameter_list|)
 function_decl|;
 end_function_decl
