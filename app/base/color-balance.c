@@ -308,7 +308,7 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-comment|/*  Set the transfer arrays  (for speed)  */
+comment|/*  Prepare the transfer arrays  (for speed)  */
 name|cyan_red_transfer
 index|[
 name|GIMP_SHADOWS
@@ -517,6 +517,7 @@ name|i
 expr_stmt|;
 name|r_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|cyan_red
@@ -531,6 +532,7 @@ index|]
 index|[
 name|r_n
 index|]
+operator|)
 expr_stmt|;
 name|r_n
 operator|=
@@ -541,6 +543,7 @@ argument_list|)
 expr_stmt|;
 name|r_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|cyan_red
@@ -555,6 +558,7 @@ index|]
 index|[
 name|r_n
 index|]
+operator|)
 expr_stmt|;
 name|r_n
 operator|=
@@ -565,6 +569,7 @@ argument_list|)
 expr_stmt|;
 name|r_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|cyan_red
@@ -579,6 +584,7 @@ index|]
 index|[
 name|r_n
 index|]
+operator|)
 expr_stmt|;
 name|r_n
 operator|=
@@ -589,6 +595,7 @@ argument_list|)
 expr_stmt|;
 name|g_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|magenta_green
@@ -603,6 +610,7 @@ index|]
 index|[
 name|g_n
 index|]
+operator|)
 expr_stmt|;
 name|g_n
 operator|=
@@ -613,6 +621,7 @@ argument_list|)
 expr_stmt|;
 name|g_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|magenta_green
@@ -627,6 +636,7 @@ index|]
 index|[
 name|g_n
 index|]
+operator|)
 expr_stmt|;
 name|g_n
 operator|=
@@ -637,6 +647,7 @@ argument_list|)
 expr_stmt|;
 name|g_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|magenta_green
@@ -651,6 +662,7 @@ index|]
 index|[
 name|g_n
 index|]
+operator|)
 expr_stmt|;
 name|g_n
 operator|=
@@ -661,6 +673,7 @@ argument_list|)
 expr_stmt|;
 name|b_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|yellow_blue
@@ -675,6 +688,7 @@ index|]
 index|[
 name|b_n
 index|]
+operator|)
 expr_stmt|;
 name|b_n
 operator|=
@@ -685,6 +699,7 @@ argument_list|)
 expr_stmt|;
 name|b_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|yellow_blue
@@ -699,6 +714,7 @@ index|]
 index|[
 name|b_n
 index|]
+operator|)
 expr_stmt|;
 name|b_n
 operator|=
@@ -709,6 +725,7 @@ argument_list|)
 expr_stmt|;
 name|b_n
 operator|+=
+operator|(
 name|cb
 operator|->
 name|yellow_blue
@@ -723,6 +740,7 @@ index|]
 index|[
 name|b_n
 index|]
+operator|)
 expr_stmt|;
 name|b_n
 operator|=
