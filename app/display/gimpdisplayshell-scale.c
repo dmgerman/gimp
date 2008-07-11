@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294116190108
+DECL|struct|__anon29aa36970108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -846,12 +846,6 @@ name|unit
 argument_list|)
 expr_stmt|;
 block|}
-if|#
-directive|if
-literal|0
-block|g_printerr ("offset_x:     %d\n"               "offset_y:     %d\n"               "disp_width:   %d\n"               "disp_height:  %d\n"               "disp_xoffset: %d\n"               "disp_yoffset: %d\n\n",               shell->offset_x, shell->offset_y,               shell->disp_width, shell->disp_height,               shell->disp_xoffset, shell->disp_yoffset);
-endif|#
-directive|endif
 block|}
 end_function
 
