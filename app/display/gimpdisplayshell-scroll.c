@@ -445,9 +445,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_scaled_viewport (GimpDisplayShell * shell,gint * x,gint * y,gint * w,gint * h)
+DECL|function|gimp_display_shell_get_scaled_viewport (const GimpDisplayShell * shell,gint * x,gint * y,gint * w,gint * h)
 name|gimp_display_shell_get_scaled_viewport
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -469,6 +470,14 @@ modifier|*
 name|h
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|x
@@ -532,9 +541,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_viewport (GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
+DECL|function|gimp_display_shell_get_viewport (const GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
 name|gimp_display_shell_get_viewport
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -556,6 +566,14 @@ modifier|*
 name|h
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|x
@@ -625,9 +643,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_scaled_image_viewport_offset (GimpDisplayShell * shell,gint * x,gint * y)
+DECL|function|gimp_display_shell_get_scaled_image_viewport_offset (const GimpDisplayShell * shell,gint * x,gint * y)
 name|gimp_display_shell_get_scaled_image_viewport_offset
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -641,6 +660,14 @@ modifier|*
 name|y
 parameter_list|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|x
