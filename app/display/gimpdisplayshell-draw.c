@@ -2337,7 +2337,7 @@ argument_list|(
 name|tiles
 argument_list|)
 expr_stmt|;
-comment|/*  the image's size in display coordinates  */
+comment|/*  the size and position of the image viewport coordinates  */
 name|sx
 operator|=
 name|shell
@@ -2358,7 +2358,6 @@ name|shell
 operator|->
 name|offset_y
 expr_stmt|;
-comment|/* SCALE[XY] with pyramid level taken into account. */
 name|sw
 operator|=
 name|PROJ_ROUND
