@@ -75,6 +75,10 @@ directive|include
 file|"gimpdisplayshell-scroll.h"
 end_include
 
+begin_comment
+comment|/**  * gimp_display_shell_center_around_image_coordinate:  * @shell:  * @image_x:  * @image_y:  *  * Center the viewport around the passed image coordinate  *  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_center_around_image_coordinate (GimpDisplayShell * shell,gdouble image_x,gdouble image_y)
