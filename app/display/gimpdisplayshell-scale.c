@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b388b1c0108
+DECL|struct|__anon2c4c237e0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -268,9 +268,9 @@ modifier|*
 name|image
 decl_stmt|;
 name|gfloat
-name|sx
+name|sw
 decl_stmt|,
-name|sy
+name|sh
 decl_stmt|;
 name|gint
 name|image_width
@@ -327,7 +327,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|sx
+name|sw
 operator|=
 name|SCALEX
 argument_list|(
@@ -336,7 +336,7 @@ argument_list|,
 name|image_width
 argument_list|)
 expr_stmt|;
-name|sy
+name|sh
 operator|=
 name|SCALEY
 argument_list|(
@@ -360,11 +360,11 @@ name|shell
 operator|->
 name|disp_height
 expr_stmt|;
-name|sx
+name|sw
 operator|=
 name|image_width
 expr_stmt|;
-name|sy
+name|sh
 operator|=
 name|image_height
 expr_stmt|;
@@ -394,7 +394,7 @@ name|hsbdata
 operator|->
 name|upper
 operator|=
-name|sx
+name|sw
 expr_stmt|;
 name|shell
 operator|->
@@ -404,7 +404,7 @@ name|page_size
 operator|=
 name|MIN
 argument_list|(
-name|sx
+name|sw
 argument_list|,
 name|shell
 operator|->
@@ -447,7 +447,7 @@ name|vsbdata
 operator|->
 name|upper
 operator|=
-name|sy
+name|sh
 expr_stmt|;
 name|shell
 operator|->
@@ -457,7 +457,7 @@ name|page_size
 operator|=
 name|MIN
 argument_list|(
-name|sy
+name|sh
 argument_list|,
 name|shell
 operator|->
