@@ -18,17 +18,17 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scroll
+name|gimp_display_shell_center_around_image_coordinate
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
 name|gdouble
-name|x_offset_into_image
+name|image_x
 parameter_list|,
 name|gdouble
-name|y_offset_into_image
+name|image_y
 parameter_list|)
 function_decl|;
 end_function_decl
