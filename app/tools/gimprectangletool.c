@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae89da60103
+DECL|enum|__anon288fd1d60103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae89da60203
+DECL|enum|__anon288fd1d60203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae89da60303
+DECL|enum|__anon288fd1d60303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -6741,6 +6741,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 return|return
+operator|(
 name|shell
 operator|->
 name|scale_x
@@ -6756,6 +6757,7 @@ operator|!=
 name|private
 operator|->
 name|scale_y_used_for_handle_size_calculations
+operator|)
 return|;
 block|}
 end_function
@@ -7721,9 +7723,7 @@ operator|->
 name|control
 argument_list|)
 condition|)
-block|{
 return|return;
-block|}
 name|private
 operator|=
 name|GIMP_RECTANGLE_TOOL_GET_PRIVATE
@@ -9167,6 +9167,7 @@ literal|0
 operator|)
 expr_stmt|;
 return|return
+operator|(
 name|coord
 operator|->
 name|x
@@ -9190,6 +9191,7 @@ operator|->
 name|y
 operator|>
 name|y2_b
+operator|)
 return|;
 block|}
 end_function
