@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ff46550103
+DECL|enum|__anon2af84c160103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -328,11 +328,15 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__DOUBLE_DOUBLE
+name|gimp_marshal_VOID__DOUBLE_DOUBLE_DOUBLE_DOUBLE
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|2
+literal|4
+argument_list|,
+name|G_TYPE_DOUBLE
+argument_list|,
+name|G_TYPE_DOUBLE
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -1019,6 +1023,14 @@ argument_list|,
 name|x
 argument_list|,
 name|y
+argument_list|,
+name|nav_view
+operator|->
+name|width
+argument_list|,
+name|nav_view
+operator|->
+name|height
 argument_list|)
 expr_stmt|;
 block|}

@@ -237,6 +237,12 @@ parameter_list|,
 name|gdouble
 name|y
 parameter_list|,
+name|gdouble
+name|width
+parameter_list|,
+name|gdouble
+name|height
+parameter_list|,
 name|GimpNavigationEditor
 modifier|*
 name|editor
@@ -2060,7 +2066,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_marker_changed (GimpNavigationView * view,gdouble x,gdouble y,GimpNavigationEditor * editor)
+DECL|function|gimp_navigation_editor_marker_changed (GimpNavigationView * view,gdouble x,gdouble y,gdouble width,gdouble height,GimpNavigationEditor * editor)
 name|gimp_navigation_editor_marker_changed
 parameter_list|(
 name|GimpNavigationView
@@ -2072,6 +2078,12 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|,
+name|gdouble
+name|width
+parameter_list|,
+name|gdouble
+name|height
 parameter_list|,
 name|GimpNavigationEditor
 modifier|*
