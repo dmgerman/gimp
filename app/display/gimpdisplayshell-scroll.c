@@ -607,7 +607,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in image coordinates  *  * TODO: Handle when the viewport is zoomed out  *  **/
+comment|/**  * gimp_display_shell_get_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in image coordinates  *  **/
 end_comment
 
 begin_function
