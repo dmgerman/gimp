@@ -646,6 +646,8 @@ operator|=
 literal|0
 init|;
 name|filenames
+operator|&&
+name|filenames
 index|[
 name|i
 index|]
