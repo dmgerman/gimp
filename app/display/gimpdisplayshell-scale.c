@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279005360108
+DECL|struct|__anon2c06dac30108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1383,6 +1383,10 @@ expr_stmt|;
 name|gimp_display_shell_center_image
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1538,23 +1542,33 @@ expr_stmt|;
 name|gimp_display_shell_center_image
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_center_image:  * @shell:  *  * Centers the image in the display shell.  *  **/
+comment|/**  * gimp_display_shell_center_image:  * @shell:  * @horizontally:  * @vertically:  *  * Centers the image in the display shell on the desired axes.  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_center_image (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_center_image (GimpDisplayShell * shell,gboolean horizontally,gboolean vertically)
 name|gimp_display_shell_center_image
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+name|horizontally
+parameter_list|,
+name|gboolean
+name|vertically
 parameter_list|)
 block|{
 name|gint
@@ -1583,6 +1597,18 @@ operator|->
 name|display
 condition|)
 return|return;
+name|target_offset_x
+operator|=
+name|shell
+operator|->
+name|offset_x
+expr_stmt|;
+name|target_offset_y
+operator|=
+name|shell
+operator|->
+name|offset_y
+expr_stmt|;
 name|gimp_display_shell_get_scaled_image_size
 argument_list|(
 name|shell
@@ -1596,6 +1622,11 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|horizontally
+condition|)
+block|{
+if|if
+condition|(
 name|sw
 operator|<
 name|shell
@@ -1632,6 +1663,12 @@ operator|/
 literal|2
 expr_stmt|;
 block|}
+block|}
+if|if
+condition|(
+name|vertically
+condition|)
+block|{
 if|if
 condition|(
 name|sh
@@ -1669,6 +1706,7 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
+block|}
 block|}
 comment|/* Note that we can't use gimp_display_shell_scroll_private() here    * because that would expose the image twice, causing unwanted    * flicker.    */
 name|gimp_display_shell_scale_by_values
