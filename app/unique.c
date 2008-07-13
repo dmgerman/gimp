@@ -170,6 +170,12 @@ directive|endif
 block|}
 end_function
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_CONSOLE_COMPILATION
+end_ifndef
+
 begin_function
 specifier|static
 name|gchar
@@ -285,6 +291,11 @@ return|;
 block|}
 end_function
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_if
 if|#
 directive|if
@@ -313,7 +324,7 @@ name|GIMP_CONSOLE_COMPILATION
 comment|/*  for the DBus service names  */
 include|#
 directive|include
-file|"widgets/gimpdbusservice.h"
+file|"gui/gimpdbusservice.h"
 name|DBusGConnection
 modifier|*
 name|connection

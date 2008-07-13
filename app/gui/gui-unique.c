@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gtk/gtk.h>
 end_include
 
 begin_ifdef
@@ -65,7 +65,7 @@ end_endif
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"gui/gui-types.h"
 end_include
 
 begin_include
@@ -77,7 +77,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdbusservice.h"
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdbusservice.h"
 end_include
 
 begin_include
@@ -381,7 +393,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d15b430108
+DECL|struct|__anon2be3b6c70108
 block|{
 DECL|member|name
 name|gchar
@@ -517,30 +529,31 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* raise the toolbox */
-specifier|const
-name|GList
+comment|/*  raise the first display  */
+name|GimpObject
 modifier|*
-name|managers
-init|=
-name|gimp_ui_managers_from_name
-argument_list|(
-literal|"<Image>"
-argument_list|)
+name|display
 decl_stmt|;
-if|if
-condition|(
-name|managers
-condition|)
-name|gimp_ui_manager_activate_action
+name|display
+operator|=
+name|gimp_container_get_first_child
 argument_list|(
-name|managers
+name|unique_gimp
 operator|->
-name|data
-argument_list|,
-literal|"dialogs"
-argument_list|,
-literal|"dialogs-toolbox"
+name|displays
+argument_list|)
+expr_stmt|;
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|GIMP_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+operator|->
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
