@@ -129,6 +129,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|BORDER_PEN_WIDTH
+define|#
+directive|define
+name|BORDER_PEN_WIDTH
+value|3
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -1087,11 +1095,6 @@ operator|&
 name|y_org
 argument_list|)
 expr_stmt|;
-DECL|macro|BORDER_PEN_WIDTH
-define|#
-directive|define
-name|BORDER_PEN_WIDTH
-value|3
 name|x
 operator|=
 operator|(
@@ -1264,9 +1267,6 @@ operator|-
 name|BORDER_PEN_WIDTH
 operator|)
 expr_stmt|;
-undef|#
-directive|undef
-name|BORDER_PEN_WIDTH
 name|gimp_navigation_view_grab_pointer
 argument_list|(
 name|view
