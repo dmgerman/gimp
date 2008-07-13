@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b72cf6b0103
+DECL|enum|__anon2b9a5f9f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b72cf6b0203
+DECL|enum|__anon2b9a5f9f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5525,12 +5525,6 @@ name|gdouble
 name|scale
 parameter_list|)
 block|{
-name|gint
-name|display_width
-decl_stmt|;
-name|gint
-name|display_height
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -5582,11 +5576,9 @@ name|shell
 argument_list|,
 name|scale
 argument_list|,
-operator|&
-name|display_width
+name|NULL
 argument_list|,
-operator|&
-name|display_height
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_changed
