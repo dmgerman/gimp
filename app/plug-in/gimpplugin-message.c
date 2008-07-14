@@ -2644,6 +2644,17 @@ operator|.
 name|type
 operator|==
 name|GIMP_PDB_STRINGARRAY
+operator|||
+name|proc_install
+operator|->
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|type
+operator|==
+name|GIMP_PDB_COLORARRAY
 operator|)
 operator|&&
 name|proc_install

@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be5f6c20103
+DECL|enum|__anon2aaf64550103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -2632,9 +2632,6 @@ case|case
 name|GIMP_PDB_SELECTION
 case|:
 case|case
-name|GIMP_PDB_BOUNDARY
-case|:
-case|case
 name|GIMP_PDB_VECTORS
 case|:
 case|case
@@ -2786,6 +2783,9 @@ expr_stmt|;
 break|break;
 case|case
 name|GIMP_PDB_COLOR
+case|:
+case|case
+name|GIMP_PDB_COLORARRAY
 case|:
 operator|(
 name|void
@@ -3261,7 +3261,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_BOUNDARY
+name|GIMP_PDB_COLORARRAY
 case|:
 name|params
 index|[
@@ -3270,13 +3270,14 @@ index|]
 operator|.
 name|data
 operator|.
-name|d_boundary
+name|d_colorarray
 operator|=
 name|va_arg
 argument_list|(
 name|args
 argument_list|,
-name|gint32
+name|GimpRGB
+operator|*
 argument_list|)
 expr_stmt|;
 break|break;

@@ -456,6 +456,11 @@ modifier|*
 modifier|*
 name|d_stringarray
 decl_stmt|;
+DECL|member|d_colorarray
+name|GimpRGB
+modifier|*
+name|d_colorarray
+decl_stmt|;
 DECL|member|d_color
 name|GimpRGB
 name|d_color
