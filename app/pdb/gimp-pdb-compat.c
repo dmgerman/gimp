@@ -768,8 +768,9 @@ operator|!
 name|pdb_type_quark
 condition|)
 block|{
+specifier|const
 struct|struct
-DECL|struct|__anon279f21280108
+DECL|struct|__anon2b8161760108
 block|{
 DECL|member|g_type
 name|GType
@@ -839,6 +840,12 @@ name|GIMP_PDB_STRING
 block|}
 block|,
 block|{
+name|GIMP_TYPE_RGB
+block|,
+name|GIMP_PDB_COLOR
+block|}
+block|,
+block|{
 name|GIMP_TYPE_INT32_ARRAY
 block|,
 name|GIMP_PDB_INT32ARRAY
@@ -869,9 +876,9 @@ name|GIMP_PDB_STRINGARRAY
 block|}
 block|,
 block|{
-name|GIMP_TYPE_RGB
+name|GIMP_TYPE_COLOR_ARRAY
 block|,
-name|GIMP_PDB_COLOR
+name|GIMP_PDB_COLORARRAY
 block|}
 block|,
 block|{
@@ -1077,7 +1084,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon279f21280208
+DECL|struct|__anon2b8161760208
 block|{
 DECL|member|old_name
 specifier|const
