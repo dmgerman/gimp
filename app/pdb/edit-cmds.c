@@ -3576,7 +3576,7 @@ literal|"gimp-edit-cut"
 argument_list|,
 literal|"Cut from the specified drawable."
 argument_list|,
-literal|"If there is a selection in the image, then the area specified by the selection is cut from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable will be removed and its contents stored in the internal GIMP edit buffer."
+literal|"If there is a selection in the image, then the area specified by the selection is cut from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable will be removed and its contents stored in the internal GIMP edit buffer. This procedure will fail if the selected area lies completely outside the bounds of the current drawable and there is nothing to copy from."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3619,7 +3619,7 @@ literal|"non-empty"
 argument_list|,
 literal|"non empty"
 argument_list|,
-literal|"TRUE if the cut was successful, FALSE if the selection contained only transparent pixels"
+literal|"TRUE if the cut was successful, FALSE if there was nothing to copy from"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3665,7 +3665,7 @@ literal|"gimp-edit-copy"
 argument_list|,
 literal|"Copy from the specified drawable."
 argument_list|,
-literal|"If there is a selection in the image, then the area specified by the selection is copied from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable's contents will be stored in the internal GIMP edit buffer."
+literal|"If there is a selection in the image, then the area specified by the selection is copied from the specified drawable and placed in an internal GIMP edit buffer. It can subsequently be retrieved using the 'gimp-edit-paste' command. If there is no selection, then the specified drawable's contents will be stored in the internal GIMP edit buffer. This procedure will fail if the selected area lies completely outside the bounds of the current drawable and there is nothing to copy from."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -3708,7 +3708,7 @@ literal|"non-empty"
 argument_list|,
 literal|"non empty"
 argument_list|,
-literal|"TRUE if the copy was successful, FALSE if the selection contained only transparent pixels"
+literal|"TRUE if the cut was successful, FALSE if there was nothing to copy from"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -3797,7 +3797,7 @@ literal|"non-empty"
 argument_list|,
 literal|"non empty"
 argument_list|,
-literal|"TRUE if the copy was successful, FALSE if the selection contained only transparent pixels"
+literal|"TRUE if the copy was successful"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4092,7 +4092,7 @@ literal|"real-name"
 argument_list|,
 literal|"real name"
 argument_list|,
-literal|"The real name given to the buffer, or NULL if the selection contained only transparent pixels"
+literal|"The real name given to the buffer, or NULL if the cut failed"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4211,7 +4211,7 @@ literal|"real-name"
 argument_list|,
 literal|"real name"
 argument_list|,
-literal|"The real name given to the buffer, or NULL if the selection contained only transparent pixels"
+literal|"The real name given to the buffer, or NULL if the copy failed"
 argument_list|,
 name|FALSE
 argument_list|,
@@ -4330,7 +4330,7 @@ literal|"real-name"
 argument_list|,
 literal|"real name"
 argument_list|,
-literal|"The real name given to the buffer, or NULL if the selection contained only transparent pixels"
+literal|"The real name given to the buffer, or NULL if the copy failed"
 argument_list|,
 name|FALSE
 argument_list|,
