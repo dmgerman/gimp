@@ -196,7 +196,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-up-shift-control-alt"
+literal|"cursor-up-shift-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -211,7 +211,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-up-control-alt"
+literal|"cursor-up-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -226,7 +226,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-up-shift-alt"
+literal|"cursor-up-shift-alt"
 block|,
 name|N_
 argument_list|(
@@ -241,7 +241,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-up-shift-control"
+literal|"cursor-up-shift-control"
 block|,
 name|N_
 argument_list|(
@@ -254,7 +254,7 @@ name|GDK_Up
 block|,
 name|GDK_MOD1_MASK
 block|,
-literal|"key-up-alt"
+literal|"cursor-up-alt"
 block|,
 name|N_
 argument_list|(
@@ -267,7 +267,7 @@ name|GDK_Up
 block|,
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-up-control"
+literal|"cursor-up-control"
 block|,
 name|N_
 argument_list|(
@@ -280,7 +280,7 @@ name|GDK_Up
 block|,
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-up-shift"
+literal|"cursor-up-shift"
 block|,
 name|N_
 argument_list|(
@@ -293,7 +293,7 @@ name|GDK_Up
 block|,
 literal|0
 block|,
-literal|"key-up"
+literal|"cursor-up"
 block|,
 name|N_
 argument_list|(
@@ -310,7 +310,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-down-shift-control-alt"
+literal|"cursor-down-shift-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -325,7 +325,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-down-control-alt"
+literal|"cursor-down-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -340,7 +340,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-down-shift-alt"
+literal|"cursor-down-shift-alt"
 block|,
 name|N_
 argument_list|(
@@ -355,7 +355,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-down-shift-control"
+literal|"cursor-down-shift-control"
 block|,
 name|N_
 argument_list|(
@@ -368,7 +368,7 @@ name|GDK_Down
 block|,
 name|GDK_MOD1_MASK
 block|,
-literal|"key-down-alt"
+literal|"cursor-down-alt"
 block|,
 name|N_
 argument_list|(
@@ -381,7 +381,7 @@ name|GDK_Down
 block|,
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-down-control"
+literal|"cursor-down-control"
 block|,
 name|N_
 argument_list|(
@@ -394,7 +394,7 @@ name|GDK_Down
 block|,
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-down-shift"
+literal|"cursor-down-shift"
 block|,
 name|N_
 argument_list|(
@@ -407,7 +407,7 @@ name|GDK_Down
 block|,
 literal|0
 block|,
-literal|"key-down"
+literal|"cursor-down"
 block|,
 name|N_
 argument_list|(
@@ -424,7 +424,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-left-shift-control-alt"
+literal|"cursor-left-shift-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -439,7 +439,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-left-control-alt"
+literal|"cursor-left-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -454,7 +454,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-left-shift-alt"
+literal|"cursor-left-shift-alt"
 block|,
 name|N_
 argument_list|(
@@ -469,7 +469,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-left-shift-control"
+literal|"cursor-left-shift-control"
 block|,
 name|N_
 argument_list|(
@@ -482,7 +482,7 @@ name|GDK_Left
 block|,
 name|GDK_MOD1_MASK
 block|,
-literal|"key-left-alt"
+literal|"cursor-left-alt"
 block|,
 name|N_
 argument_list|(
@@ -495,7 +495,7 @@ name|GDK_Left
 block|,
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-left-control"
+literal|"cursor-left-control"
 block|,
 name|N_
 argument_list|(
@@ -508,7 +508,7 @@ name|GDK_Left
 block|,
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-left-shift"
+literal|"cursor-left-shift"
 block|,
 name|N_
 argument_list|(
@@ -521,7 +521,7 @@ name|GDK_Left
 block|,
 literal|0
 block|,
-literal|"key-left"
+literal|"cursor-left"
 block|,
 name|N_
 argument_list|(
@@ -538,7 +538,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-right-shift-control-alt"
+literal|"cursor-right-shift-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -553,7 +553,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-right-control-alt"
+literal|"cursor-right-control-alt"
 block|,
 name|N_
 argument_list|(
@@ -568,7 +568,7 @@ name|GDK_MOD1_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-right-shift-alt"
+literal|"cursor-right-shift-alt"
 block|,
 name|N_
 argument_list|(
@@ -583,7 +583,7 @@ name|GDK_CONTROL_MASK
 operator||
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-right-shift-control"
+literal|"cursor-right-shift-control"
 block|,
 name|N_
 argument_list|(
@@ -596,7 +596,7 @@ name|GDK_Right
 block|,
 name|GDK_MOD1_MASK
 block|,
-literal|"key-right-alt"
+literal|"cursor-right-alt"
 block|,
 name|N_
 argument_list|(
@@ -609,7 +609,7 @@ name|GDK_Right
 block|,
 name|GDK_CONTROL_MASK
 block|,
-literal|"key-right-control"
+literal|"cursor-right-control"
 block|,
 name|N_
 argument_list|(
@@ -622,7 +622,7 @@ name|GDK_Right
 block|,
 name|GDK_SHIFT_MASK
 block|,
-literal|"key-right-shift"
+literal|"cursor-right-shift"
 block|,
 name|N_
 argument_list|(
@@ -635,7 +635,7 @@ name|GDK_Right
 block|,
 literal|0
 block|,
-literal|"key-right"
+literal|"cursor-right"
 block|,
 name|N_
 argument_list|(
