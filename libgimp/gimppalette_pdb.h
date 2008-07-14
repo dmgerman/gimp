@@ -107,6 +107,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpRGB
+modifier|*
+name|gimp_palette_get_colors
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|,
+name|gint
+modifier|*
+name|num_colors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_palette_get_columns
 parameter_list|(
