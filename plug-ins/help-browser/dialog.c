@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ea4b000108
+DECL|struct|__anon2c65f00e0108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea4b000203
+DECL|enum|__anon2c65f00e0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -4584,8 +4584,10 @@ name|button
 operator|=
 name|gtk_button_new_with_mnemonic
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"search hit"
+argument_list|,
 literal|"_Previous"
 argument_list|)
 argument_list|)
@@ -4654,8 +4656,10 @@ name|button
 operator|=
 name|gtk_button_new_with_mnemonic
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"search hit"
+argument_list|,
 literal|"_Next"
 argument_list|)
 argument_list|)
