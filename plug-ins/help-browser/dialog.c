@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a1fa5e0108
+DECL|struct|__anon29ea4b000108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a1fa5e0203
+DECL|enum|__anon29ea4b000203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -2637,7 +2637,7 @@ literal|"<control>F"
 block|,
 name|N_
 argument_list|(
-literal|"Find Text in current page"
+literal|"Find text in current page"
 argument_list|)
 block|,
 name|G_CALLBACK
