@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e72db0108
+DECL|struct|__anon29a1fa5e0108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e72db0203
+DECL|enum|__anon29a1fa5e0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
