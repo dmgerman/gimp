@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d95ccc0103
+DECL|enum|__anon27fcfbba0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1535,10 +1535,6 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
-argument_list|,
-name|paint_core
-operator|->
-name|use_pressure
 argument_list|,
 name|GIMP_BRUSH_CORE_GET_CLASS
 argument_list|(
@@ -3157,7 +3153,6 @@ argument_list|)
 operator|->
 name|handles_scaling_brush
 condition|)
-block|{
 name|core
 operator|->
 name|scale
@@ -3171,14 +3166,9 @@ name|paint_core
 operator|->
 name|cur_coords
 argument_list|,
-name|paint_core
-operator|->
-name|use_pressure
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* else use scale from start(), we don't support on-the-fly scaling */
 name|gimp_brush_scale_size
 argument_list|(

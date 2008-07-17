@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34d44a0103
+DECL|enum|__anon29f9c7670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -611,12 +611,6 @@ operator|->
 name|y2
 operator|=
 literal|0
-expr_stmt|;
-name|core
-operator|->
-name|use_pressure
-operator|=
-name|FALSE
 expr_stmt|;
 name|core
 operator|->

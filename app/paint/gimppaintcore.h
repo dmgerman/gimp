@@ -166,11 +166,6 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  undo extents in image coords        */
-DECL|member|use_pressure
-name|gboolean
-name|use_pressure
-decl_stmt|;
-comment|/*  look at coords->pressure            */
 DECL|member|use_saved_proj
 name|gboolean
 name|use_saved_proj

@@ -466,9 +466,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -485,9 +482,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|,
 name|gboolean
 name|use_dynamics
@@ -507,9 +501,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -526,9 +517,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -545,9 +533,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 function_decl|;
 end_function_decl

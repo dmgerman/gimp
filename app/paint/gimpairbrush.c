@@ -491,10 +491,6 @@ operator|&
 name|paint_core
 operator|->
 name|cur_coords
-argument_list|,
-name|paint_core
-operator|->
-name|use_pressure
 argument_list|)
 expr_stmt|;
 name|timeout

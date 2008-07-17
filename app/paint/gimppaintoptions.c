@@ -351,7 +351,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad6d2200103
+DECL|enum|__anon2b8e77fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3776,7 +3776,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_dynamic_opacity (GimpPaintOptions * paint_options,const GimpCoords * coords,gboolean use_pressure)
+DECL|function|gimp_paint_options_get_dynamic_opacity (GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_paint_options_get_dynamic_opacity
 parameter_list|(
 name|GimpPaintOptions
@@ -3787,9 +3787,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 block|{
 name|gdouble
@@ -3862,8 +3859,6 @@ operator|->
 name|pressure_options
 operator|->
 name|opacity
-operator|&&
-name|use_pressure
 condition|)
 name|pressure
 operator|=
@@ -3945,7 +3940,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_dynamic_size (GimpPaintOptions * paint_options,const GimpCoords * coords,gboolean use_pressure,gboolean use_dynamics)
+DECL|function|gimp_paint_options_get_dynamic_size (GimpPaintOptions * paint_options,const GimpCoords * coords,gboolean use_dynamics)
 name|gimp_paint_options_get_dynamic_size
 parameter_list|(
 name|GimpPaintOptions
@@ -3956,9 +3951,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|,
 name|gboolean
 name|use_dynamics
@@ -3999,8 +3991,6 @@ operator|->
 name|pressure_options
 operator|->
 name|size
-operator|&&
-name|use_pressure
 condition|)
 block|{
 name|pressure
@@ -4018,8 +4008,6 @@ operator|->
 name|pressure_options
 operator|->
 name|inverse_size
-operator|&&
-name|use_pressure
 condition|)
 block|{
 name|pressure
@@ -4175,7 +4163,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_dynamic_rate (GimpPaintOptions * paint_options,const GimpCoords * coords,gboolean use_pressure)
+DECL|function|gimp_paint_options_get_dynamic_rate (GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_paint_options_get_dynamic_rate
 parameter_list|(
 name|GimpPaintOptions
@@ -4186,9 +4174,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 block|{
 name|gdouble
@@ -4261,8 +4246,6 @@ operator|->
 name|pressure_options
 operator|->
 name|rate
-operator|&&
-name|use_pressure
 condition|)
 name|pressure
 operator|=
@@ -4344,7 +4327,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_dynamic_color (GimpPaintOptions * paint_options,const GimpCoords * coords,gboolean use_pressure)
+DECL|function|gimp_paint_options_get_dynamic_color (GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_paint_options_get_dynamic_color
 parameter_list|(
 name|GimpPaintOptions
@@ -4355,9 +4338,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 block|{
 name|gdouble
@@ -4430,8 +4410,6 @@ operator|->
 name|pressure_options
 operator|->
 name|color
-operator|&&
-name|use_pressure
 condition|)
 name|pressure
 operator|=
@@ -4509,7 +4487,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_paint_options_get_dynamic_hardness (GimpPaintOptions * paint_options,const GimpCoords * coords,gboolean use_pressure)
+DECL|function|gimp_paint_options_get_dynamic_hardness (GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_paint_options_get_dynamic_hardness
 parameter_list|(
 name|GimpPaintOptions
@@ -4520,9 +4498,6 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
-parameter_list|,
-name|gboolean
-name|use_pressure
 parameter_list|)
 block|{
 name|gdouble
@@ -4595,8 +4570,6 @@ operator|->
 name|pressure_options
 operator|->
 name|hardness
-operator|&&
-name|use_pressure
 condition|)
 name|pressure
 operator|=

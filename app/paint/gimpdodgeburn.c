@@ -933,10 +933,6 @@ operator|&
 name|paint_core
 operator|->
 name|cur_coords
-argument_list|,
-name|paint_core
-operator|->
-name|use_pressure
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -949,10 +945,6 @@ operator|&
 name|paint_core
 operator|->
 name|cur_coords
-argument_list|,
-name|paint_core
-operator|->
-name|use_pressure
 argument_list|)
 expr_stmt|;
 comment|/* Replace the newly dodgedburned area (canvas_buf) to the image */
