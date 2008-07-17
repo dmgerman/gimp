@@ -417,7 +417,7 @@ name|export_dialog_title
 operator|=
 name|_
 argument_list|(
-literal|"Export Colorsize Settings"
+literal|"Export Colorize Settings"
 argument_list|)
 expr_stmt|;
 name|im_tool_class
