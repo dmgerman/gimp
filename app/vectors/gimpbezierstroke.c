@@ -990,7 +990,8 @@ block|{
 name|GList
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list2
 decl_stmt|;
@@ -1094,7 +1095,8 @@ block|{
 name|GList
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list2
 decl_stmt|;
@@ -1278,10 +1280,12 @@ block|{
 name|GList
 modifier|*
 name|segment_start
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list2
 decl_stmt|;
@@ -1824,7 +1828,8 @@ decl_stmt|;
 name|GList
 modifier|*
 name|segment_start
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list
 decl_stmt|;
@@ -2127,7 +2132,8 @@ decl_stmt|;
 name|GList
 modifier|*
 name|segment_start
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list
 decl_stmt|;
@@ -2353,7 +2359,8 @@ block|{
 name|GList
 modifier|*
 name|start
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|end
 decl_stmt|;
@@ -2684,7 +2691,8 @@ decl_stmt|;
 name|GimpAnchor
 modifier|*
 name|segment_start
-decl_stmt|,
+decl_stmt|;
+name|GimpAnchor
 modifier|*
 name|segment_end
 init|=
@@ -3699,7 +3707,8 @@ decl_stmt|;
 name|GimpAnchor
 modifier|*
 name|segment_start
-decl_stmt|,
+decl_stmt|;
+name|GimpAnchor
 modifier|*
 name|segment_end
 init|=
@@ -4104,7 +4113,8 @@ block|{
 name|GArray
 modifier|*
 name|ret_coords
-decl_stmt|,
+decl_stmt|;
+name|GArray
 modifier|*
 name|ret_params
 decl_stmt|;
@@ -4122,7 +4132,8 @@ name|min_dist
 init|=
 operator|-
 literal|1
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|dist
 decl_stmt|,
 name|length2
@@ -5507,7 +5518,8 @@ block|{
 name|GList
 modifier|*
 name|list1
-decl_stmt|,
+decl_stmt|;
+name|GList
 modifier|*
 name|list2
 decl_stmt|;
@@ -6389,7 +6401,8 @@ block|{
 name|GArray
 modifier|*
 name|points
-decl_stmt|,
+decl_stmt|;
+name|GArray
 modifier|*
 name|cmd_array
 decl_stmt|;
