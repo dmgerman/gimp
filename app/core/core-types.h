@@ -133,11 +133,19 @@ value|0.5
 end_define
 
 begin_define
+DECL|macro|GIMP_COORDS_DEFAULT_VELOCITY
+define|#
+directive|define
+name|GIMP_COORDS_DEFAULT_VELOCITY
+value|0.0
+end_define
+
+begin_define
 DECL|macro|GIMP_COORDS_DEFAULT_VALUES
 define|#
 directive|define
 name|GIMP_COORDS_DEFAULT_VALUES
-value|{ 0.0, 0.0, \                                       GIMP_COORDS_DEFAULT_PRESSURE, \                                       GIMP_COORDS_DEFAULT_TILT,     \                                       GIMP_COORDS_DEFAULT_TILT,     \                                       GIMP_COORDS_DEFAULT_WHEEL }
+value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         0.0, 0.0, 0.0, 0.0,           \                                         GIMP_COORDS_DEFAULT_VELOCITY, \                                         0.0 }
 end_define
 
 begin_comment
