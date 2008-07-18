@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c425b0103
+DECL|enum|__anon29f4f1c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c425b0203
+DECL|enum|__anon29f4f1c00203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1432,6 +1432,36 @@ operator|->
 name|button_press_before_focus
 operator|=
 name|FALSE
+expr_stmt|;
+name|shell
+operator|->
+name|last_motion_time
+operator|=
+literal|0
+expr_stmt|;
+name|shell
+operator|->
+name|last_motion_delta_x
+operator|=
+literal|0.0
+expr_stmt|;
+name|shell
+operator|->
+name|last_motion_delta_y
+operator|=
+literal|0.0
+expr_stmt|;
+name|shell
+operator|->
+name|last_motion_distance
+operator|=
+literal|0.0
+expr_stmt|;
+name|shell
+operator|->
+name|last_motion_delta_time
+operator|=
+literal|0.0
 expr_stmt|;
 name|shell
 operator|->

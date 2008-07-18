@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fcfbba0103
+DECL|enum|__anon2b947ecf0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -2798,19 +2798,6 @@ name|p
 operator|*
 name|delta_velocity
 operator|)
-expr_stmt|;
-name|paint_core
-operator|->
-name|cur_coords
-operator|.
-name|random
-operator|=
-name|g_random_double_range
-argument_list|(
-literal|0.0
-argument_list|,
-literal|1.0
-argument_list|)
 expr_stmt|;
 if|if
 condition|(

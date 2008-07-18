@@ -145,7 +145,7 @@ DECL|macro|GIMP_COORDS_DEFAULT_VALUES
 define|#
 directive|define
 name|GIMP_COORDS_DEFAULT_VALUES
-value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         0.0, 0.0, 0.0, 0.0,           \                                         GIMP_COORDS_DEFAULT_VELOCITY, \                                         0.0 }
+value|{ 0.0, 0.0, \                                         GIMP_COORDS_DEFAULT_PRESSURE, \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_TILT,     \                                         GIMP_COORDS_DEFAULT_WHEEL,    \                                         GIMP_COORDS_DEFAULT_VELOCITY }
 end_define
 
 begin_comment
@@ -998,29 +998,9 @@ DECL|member|wheel
 name|gdouble
 name|wheel
 decl_stmt|;
-DECL|member|delta_time
-name|gdouble
-name|delta_time
-decl_stmt|;
-DECL|member|delta_x
-name|gdouble
-name|delta_x
-decl_stmt|;
-DECL|member|delta_y
-name|gdouble
-name|delta_y
-decl_stmt|;
-DECL|member|distance
-name|gdouble
-name|distance
-decl_stmt|;
 DECL|member|velocity
 name|gdouble
 name|velocity
-decl_stmt|;
-DECL|member|random
-name|gdouble
-name|random
 decl_stmt|;
 block|}
 struct|;
