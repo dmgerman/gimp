@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f4f1c00103
+DECL|enum|__anon29c4aeb10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f4f1c00203
+DECL|enum|__anon29c4aeb10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1435,6 +1435,18 @@ name|FALSE
 expr_stmt|;
 name|shell
 operator|->
+name|highlight
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
+name|mask
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
 name|last_motion_time
 operator|=
 literal|0
@@ -1462,18 +1474,6 @@ operator|->
 name|last_motion_delta_time
 operator|=
 literal|0.0
-expr_stmt|;
-name|shell
-operator|->
-name|highlight
-operator|=
-name|NULL
-expr_stmt|;
-name|shell
-operator|->
-name|mask
-operator|=
-name|NULL
 expr_stmt|;
 name|gtk_window_set_role
 argument_list|(

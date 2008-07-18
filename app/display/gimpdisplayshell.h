@@ -692,6 +692,30 @@ DECL|member|button_press_before_focus
 name|gboolean
 name|button_press_before_focus
 decl_stmt|;
+DECL|member|highlight
+name|GdkRectangle
+modifier|*
+name|highlight
+decl_stmt|;
+comment|/* in image coordinates, can be NULL   */
+DECL|member|mask
+name|GimpDrawable
+modifier|*
+name|mask
+decl_stmt|;
+DECL|member|mask_color
+name|GimpChannelType
+name|mask_color
+decl_stmt|;
+DECL|member|scroll_info
+name|gpointer
+name|scroll_info
+decl_stmt|;
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
+decl_stmt|;
+comment|/* last motion event                   */
 DECL|member|last_motion_time
 name|guint32
 name|last_motion_time
@@ -717,30 +741,6 @@ DECL|member|last_motion_distance
 name|gdouble
 name|last_motion_distance
 decl_stmt|;
-DECL|member|highlight
-name|GdkRectangle
-modifier|*
-name|highlight
-decl_stmt|;
-comment|/* in image coordinates, can be NULL   */
-DECL|member|mask
-name|GimpDrawable
-modifier|*
-name|mask
-decl_stmt|;
-DECL|member|mask_color
-name|GimpChannelType
-name|mask_color
-decl_stmt|;
-DECL|member|scroll_info
-name|gpointer
-name|scroll_info
-decl_stmt|;
-DECL|member|last_coords
-name|GimpCoords
-name|last_coords
-decl_stmt|;
-comment|/* last motion event                   */
 block|}
 struct|;
 end_struct
