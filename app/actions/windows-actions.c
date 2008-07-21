@@ -1320,7 +1320,9 @@ decl_stmt|;
 name|gchar
 modifier|*
 name|action_name
-init|=
+decl_stmt|;
+name|action_name
+operator|=
 name|g_strdup_printf
 argument_list|(
 literal|"windows-dock-%04d"
@@ -1329,7 +1331,7 @@ name|dock
 operator|->
 name|ID
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|action
 operator|=
 name|gtk_action_group_get_action
@@ -1339,6 +1341,11 @@ argument_list|(
 name|group
 argument_list|)
 argument_list|,
+name|action_name
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|action_name
 argument_list|)
 expr_stmt|;
