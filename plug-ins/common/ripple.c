@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c14dc50108
+DECL|struct|__anon2ae94fa30108
 block|{
 DECL|member|period
 name|gint
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon28c14dc50208
+DECL|struct|__anon2ae94fa30208
 typedef|typedef
 struct|struct
 block|{
@@ -2180,7 +2180,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2188,6 +2188,12 @@ name|main_vbox
 argument_list|)
 argument_list|,
 name|preview
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

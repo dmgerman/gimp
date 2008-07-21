@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293828d70108
+DECL|struct|__anon2b09c8b70108
 block|{
 DECL|member|npts
 name|gint
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293828d70208
+DECL|struct|__anon2b09c8b70208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1073,7 +1073,7 @@ operator|.
 name|preview
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -1081,6 +1081,12 @@ name|main_vbox
 argument_list|)
 argument_list|,
 name|preview
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

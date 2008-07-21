@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bf54dc0103
+DECL|enum|__anon2c1bdbc40103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf54dc0208
+DECL|struct|__anon2c1bdbc40208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bf54dc0308
+DECL|struct|__anon2c1bdbc40308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -2378,7 +2378,7 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2386,6 +2386,12 @@ name|main_vbox
 argument_list|)
 argument_list|,
 name|preview
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

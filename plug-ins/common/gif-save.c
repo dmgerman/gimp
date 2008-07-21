@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b45840103
+DECL|enum|__anon27427b010103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296b45840208
+DECL|struct|__anon27427b010208
 block|{
 DECL|member|interlace
 name|gint
@@ -4196,7 +4196,7 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -4204,6 +4204,12 @@ name|hbox
 argument_list|)
 argument_list|,
 name|scrolled_window
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
