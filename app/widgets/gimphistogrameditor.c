@@ -1253,6 +1253,7 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|editor
@@ -1308,7 +1309,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|GIMP_IMAGE_EDITOR_CLASS
 argument_list|(
