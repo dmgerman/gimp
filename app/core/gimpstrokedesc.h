@@ -122,6 +122,10 @@ name|GimpPaintInfo
 modifier|*
 name|paint_info
 decl_stmt|;
+DECL|member|emulate_dynamics
+name|gboolean
+name|emulate_dynamics
+decl_stmt|;
 DECL|member|paint_options
 name|GimpPaintOptions
 modifier|*
