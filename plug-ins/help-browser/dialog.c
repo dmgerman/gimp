@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a42b840108
+DECL|struct|__anon2bcf2cd70108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a42b840203
+DECL|enum|__anon2bcf2cd70203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -3699,10 +3699,6 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|menu_item
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -3715,13 +3711,20 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|title
+condition|)
+block|{
+name|GtkWidget
+modifier|*
 name|menu_item
-operator|=
+init|=
 name|gtk_menu_item_new_with_label
 argument_list|(
 name|title
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|gtk_menu_shell_append
 argument_list|(
 name|GTK_MENU_SHELL
@@ -3758,6 +3761,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_list_free
 argument_list|(
