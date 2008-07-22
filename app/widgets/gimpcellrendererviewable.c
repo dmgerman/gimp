@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796407f0103
+DECL|enum|__anon27b8329e0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2796407f0203
+DECL|enum|__anon27b8329e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -595,18 +595,12 @@ block|{
 name|GimpViewRenderer
 modifier|*
 name|renderer
-decl_stmt|;
-name|renderer
-operator|=
-operator|(
-name|GimpViewRenderer
-operator|*
-operator|)
+init|=
 name|g_value_dup_object
 argument_list|(
 name|value
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|cell
