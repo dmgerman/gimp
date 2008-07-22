@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae9eabe0103
+DECL|enum|__anon2922f3b20103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -993,6 +993,15 @@ name|sample_point
 operator|->
 name|y
 expr_stmt|;
+name|gimp_tool_control_set_scroll_lock
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_selection_control
 argument_list|(
 name|shell
@@ -1206,6 +1215,15 @@ argument_list|(
 name|tool
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_scroll_lock
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_stop
@@ -3183,6 +3201,15 @@ argument_list|(
 name|tool
 operator|->
 name|control
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_scroll_lock
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
