@@ -50,6 +50,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpHistogram
+modifier|*
+name|gimp_histogram_duplicate
+parameter_list|(
+name|GimpHistogram
+modifier|*
+name|histogram
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_histogram_calculate
 parameter_list|(
