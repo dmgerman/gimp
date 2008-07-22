@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a3f7d40103
+DECL|enum|__anon2c09faf10103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -494,6 +494,11 @@ name|NULL
 operator|)
 expr_stmt|;
 block|}
+name|g_free
+argument_list|(
+name|entry_name
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_CONFIG_GET_INTERFACE
