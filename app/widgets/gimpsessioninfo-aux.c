@@ -345,6 +345,13 @@ operator|&
 name|value
 argument_list|)
 expr_stmt|;
+name|g_string_free
+argument_list|(
+name|str
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
