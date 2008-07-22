@@ -8360,11 +8360,7 @@ modifier|*
 name|ellips
 parameter_list|)
 block|{
-name|gdouble
-name|phi_s
-decl_stmt|,
-name|phi_e
-decl_stmt|;
+specifier|const
 name|GimpCoords
 name|template
 init|=
@@ -8383,6 +8379,11 @@ literal|1.0
 operator|)
 operator|/
 literal|3.0
+decl_stmt|;
+name|gdouble
+name|phi_s
+decl_stmt|,
+name|phi_e
 decl_stmt|;
 name|gdouble
 name|y
