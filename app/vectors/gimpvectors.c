@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757dbd40103
+DECL|enum|__anon2a3519480103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -2323,6 +2323,10 @@ argument_list|,
 name|stroke_desc
 operator|->
 name|paint_options
+argument_list|,
+name|stroke_desc
+operator|->
+name|emulate_dynamics
 argument_list|,
 name|vectors
 argument_list|,

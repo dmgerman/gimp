@@ -101,6 +101,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+name|gboolean
+name|emulate_dynamics
+parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
