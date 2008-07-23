@@ -63,6 +63,9 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+name|gboolean
+name|emulate_dynamics
+parameter_list|,
 specifier|const
 name|BoundSeg
 modifier|*

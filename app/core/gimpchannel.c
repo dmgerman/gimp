@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9603c0103
+DECL|enum|__anon292ba1c20103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3342,6 +3342,10 @@ argument_list|,
 name|stroke_desc
 operator|->
 name|paint_options
+argument_list|,
+name|stroke_desc
+operator|->
+name|emulate_dynamics
 argument_list|,
 name|segs_in
 argument_list|,
