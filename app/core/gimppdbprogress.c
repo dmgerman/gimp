@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b8a280103
+DECL|enum|__anon2a20d8c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -919,12 +919,9 @@ name|progress
 operator|->
 name|pdb
 operator|=
-name|GIMP_PDB
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -948,12 +945,9 @@ name|progress
 operator|->
 name|context
 operator|=
-name|GIMP_CONTEXT
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

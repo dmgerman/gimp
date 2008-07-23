@@ -351,7 +351,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3bd33b0103
+DECL|enum|__anon2931e96a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1613,10 +1613,6 @@ name|options
 operator|->
 name|paint_info
 operator|=
-operator|(
-name|GimpPaintInfo
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value

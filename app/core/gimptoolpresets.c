@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0bb860103
+DECL|enum|__anon2afd44a30103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab0bb860203
+DECL|enum|__anon2afd44a30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -485,12 +485,9 @@ name|presets
 operator|->
 name|tool_info
 operator|=
-name|GIMP_TOOL_INFO
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

@@ -93,7 +93,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292327390103
+DECL|enum|__anon2910aa710103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -773,12 +773,9 @@ name|action
 operator|->
 name|context
 operator|=
-name|GIMP_CONTEXT
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -832,12 +829,9 @@ name|action
 operator|->
 name|viewable
 operator|=
-name|GIMP_VIEWABLE
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|set_proxy

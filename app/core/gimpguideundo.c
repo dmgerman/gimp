@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298057720103
+DECL|enum|__anon2acbc8170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -405,10 +405,6 @@ name|guide_undo
 operator|->
 name|guide
 operator|=
-operator|(
-name|GimpGuide
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value

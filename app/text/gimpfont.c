@@ -120,7 +120,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon297780d40103
+DECL|enum|__anon2bd2c9ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -569,10 +569,6 @@ name|font
 operator|->
 name|pango_context
 operator|=
-operator|(
-name|PangoContext
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value
@@ -1422,7 +1418,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon297780d40208
+DECL|struct|__anon2bd2c9ac0208
 block|{
 DECL|member|script
 specifier|const

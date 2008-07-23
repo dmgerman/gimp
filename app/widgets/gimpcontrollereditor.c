@@ -102,7 +102,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27afe6f30103
+DECL|enum|__anon299f915f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -118,7 +118,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27afe6f30203
+DECL|enum|__anon299f915f0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1867,12 +1867,9 @@ name|editor
 operator|->
 name|info
 operator|=
-name|GIMP_CONTROLLER_INFO
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1883,12 +1880,9 @@ name|editor
 operator|->
 name|context
 operator|=
-name|GIMP_CONTEXT
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

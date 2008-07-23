@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0beff0103
+DECL|enum|__anon292574d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -717,10 +717,6 @@ name|desc
 operator|->
 name|paint_info
 operator|=
-operator|(
-name|GimpPaintInfo
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value
@@ -760,10 +756,6 @@ name|desc
 operator|->
 name|paint_options
 operator|=
-operator|(
-name|GimpPaintOptions
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value
