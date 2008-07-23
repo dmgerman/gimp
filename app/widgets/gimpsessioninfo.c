@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28afb3b60103
+DECL|enum|__anon2b95b8b00103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1870,6 +1870,11 @@ operator|->
 name|window
 condition|)
 block|{
+name|gint
+name|x
+decl_stmt|,
+name|y
+decl_stmt|;
 name|gdk_window_get_root_origin
 argument_list|(
 name|info
@@ -1879,13 +1884,32 @@ operator|->
 name|window
 argument_list|,
 operator|&
-name|info
-operator|->
 name|x
 argument_list|,
 operator|&
+name|y
+argument_list|)
+expr_stmt|;
+comment|/* Don't write negative values to the sessionrc, they are        * interpreted as relative to the right, respective bottom edge        * of the screen.        */
 name|info
 operator|->
+name|x
+operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
+name|x
+argument_list|)
+expr_stmt|;
+name|info
+operator|->
+name|y
+operator|=
+name|MAX
+argument_list|(
+literal|0
+argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
