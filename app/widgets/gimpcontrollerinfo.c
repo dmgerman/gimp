@@ -72,7 +72,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf8bd40103
+DECL|enum|__anon27f731490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf8bd40203
+DECL|enum|__anon27f731490203
 block|{
 DECL|enumerator|EVENT_MAPPED
 name|EVENT_MAPPED
@@ -685,12 +685,9 @@ name|info
 operator|->
 name|controller
 operator|=
-name|GIMP_CONTROLLER
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -700,6 +697,10 @@ operator|->
 name|controller
 condition|)
 block|{
+name|GimpControllerClass
+modifier|*
+name|controller_class
+decl_stmt|;
 name|g_signal_connect_object
 argument_list|(
 name|info
@@ -721,6 +722,15 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|controller_class
+operator|=
+name|GIMP_CONTROLLER_GET_CLASS
+argument_list|(
+name|info
+operator|->
+name|controller
+argument_list|)
+expr_stmt|;
 name|gimp_viewable_set_stock_id
 argument_list|(
 name|GIMP_VIEWABLE
@@ -728,12 +738,7 @@ argument_list|(
 name|info
 argument_list|)
 argument_list|,
-name|GIMP_CONTROLLER_GET_CLASS
-argument_list|(
-name|info
-operator|->
-name|controller
-argument_list|)
+name|controller_class
 operator|->
 name|stock_id
 argument_list|)

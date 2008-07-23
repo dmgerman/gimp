@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc18d50103
+DECL|enum|__anon2b8d84a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc18d50203
+DECL|enum|__anon2b8d84a10203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1619,12 +1619,9 @@ name|list
 operator|->
 name|gimp
 operator|=
-name|GIMP
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

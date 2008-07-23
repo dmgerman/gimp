@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acaaf390103
+DECL|enum|__anon294083260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -887,12 +887,9 @@ name|dialog
 operator|->
 name|pdb
 operator|=
-name|GIMP_PDB
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -903,12 +900,9 @@ name|dialog
 operator|->
 name|caller_context
 operator|=
-name|GIMP_CONTEXT
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -972,10 +966,6 @@ name|dialog
 operator|->
 name|menu_factory
 operator|=
-operator|(
-name|GimpMenuFactory
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value

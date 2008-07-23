@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8800f60103
+DECL|enum|__anon27cca8fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2490,12 +2490,9 @@ name|editor
 operator|->
 name|template
 operator|=
-name|GIMP_TEMPLATE
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

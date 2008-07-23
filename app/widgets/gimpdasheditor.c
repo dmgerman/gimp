@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acefdc60103
+DECL|enum|__anon287af8f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -649,12 +649,9 @@ name|editor
 operator|->
 name|stroke_options
 operator|=
-name|GIMP_STROKE_OPTIONS
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object

@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0281a30103
+DECL|enum|__anon2b7627190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -914,10 +914,6 @@ name|editor
 operator|->
 name|menu_factory
 operator|=
-operator|(
-name|GimpMenuFactory
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value
@@ -2162,7 +2158,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0281a30208
+DECL|struct|__anon2b7627190208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dde0a10103
+DECL|enum|__anon2bdd6c4b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -398,12 +398,9 @@ name|editor
 operator|->
 name|options
 operator|=
-name|GIMP_STROKE_OPTIONS
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274bcee00103
+DECL|enum|__anon2b836f870103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274bcee00203
+DECL|enum|__anon2b836f870203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -498,12 +498,9 @@ name|action
 operator|->
 name|procedure
 operator|=
-name|GIMP_PLUG_IN_PROCEDURE
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

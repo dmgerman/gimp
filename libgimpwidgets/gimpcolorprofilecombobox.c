@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29368a0d0103
+DECL|enum|__anon2af1622c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -58,7 +58,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29368a0d0208
+DECL|struct|__anon2af1622c0208
 block|{
 DECL|member|last_path
 name|GtkTreePath
@@ -506,10 +506,6 @@ name|combo_box
 operator|->
 name|dialog
 operator|=
-operator|(
-name|GtkWidget
-operator|*
-operator|)
 name|g_value_dup_object
 argument_list|(
 name|value

@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b045f550103
+DECL|enum|__anon2b3382130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -149,7 +149,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b045f550203
+DECL|enum|__anon2b3382130203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -921,12 +921,9 @@ name|dock
 operator|->
 name|context
 operator|=
-name|GIMP_CONTEXT
-argument_list|(
 name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
