@@ -281,7 +281,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c7722f0103
+DECL|enum|__anon29214e6b0103
 block|{
 DECL|enumerator|LOCALE_START
 name|LOCALE_START
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c7722f0208
+DECL|struct|__anon29214e6b0208
 block|{
 DECL|member|file
 name|GFile
@@ -729,7 +729,7 @@ directive|ifdef
 name|GIMP_HELP_DEBUG
 name|g_printerr
 argument_list|(
-literal|"help (%s): parsing '%s' for locale \"%s\"\n"
+literal|"help (%s): parsing '%s' for \"%s\"\n"
 argument_list|,
 name|locale
 operator|->
