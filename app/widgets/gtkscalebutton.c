@@ -180,7 +180,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c530efb0103
+DECL|enum|__anon2962721c0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -199,7 +199,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c530efb0203
+DECL|enum|__anon2962721c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5022,6 +5022,28 @@ end_function
 begin_comment
 comment|/*  * Scale stuff.  */
 end_comment
+
+begin_decl_stmt
+specifier|static
+name|GType
+name|gtk_scale_button_hscale_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|static
+name|GType
+name|gtk_scale_button_vscale_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
 
 begin_define
 DECL|macro|GTK_TYPE_SCALE_BUTTON_VSCALE
