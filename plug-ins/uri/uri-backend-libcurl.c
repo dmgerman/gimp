@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<curl/curl.h>
 end_include
 
@@ -31,6 +25,12 @@ begin_include
 include|#
 directive|include
 file|<curl/easy.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
 end_include
 
 begin_include
@@ -434,7 +434,7 @@ condition|(
 operator|(
 name|out_file
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|tmpname
 argument_list|,
