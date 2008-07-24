@@ -73,7 +73,7 @@ modifier|*
 name|coords
 parameter_list|,
 name|gint
-name|len
+name|length
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1430,7 +1430,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paint_core_stroke_emulate_dynamics (GimpCoords * coords,gint len)
+DECL|function|gimp_paint_core_stroke_emulate_dynamics (GimpCoords * coords,gint length)
 name|gimp_paint_core_stroke_emulate_dynamics
 parameter_list|(
 name|GimpCoords
@@ -1438,27 +1438,27 @@ modifier|*
 name|coords
 parameter_list|,
 name|gint
-name|len
+name|length
 parameter_list|)
 block|{
 specifier|const
 name|gint
-name|pressure_length
+name|ramp_length
 init|=
-name|len
+name|length
 operator|/
 literal|3
 decl_stmt|;
 comment|/* Calculate and create pressure ramp parameters */
 if|if
 condition|(
-name|pressure_length
+name|ramp_length
 operator|>
 literal|0
 condition|)
 block|{
 name|gdouble
-name|step
+name|slope
 init|=
 literal|1.0
 operator|/
@@ -1466,7 +1466,7 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|pressure_length
+name|ramp_length
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1481,7 +1481,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|pressure_length
+name|ramp_length
 condition|;
 name|i
 operator|++
@@ -1496,7 +1496,7 @@ name|pressure
 operator|=
 name|i
 operator|*
-name|step
+name|slope
 expr_stmt|;
 block|}
 comment|/* Calculate pressure end ramp */
@@ -1504,13 +1504,13 @@ for|for
 control|(
 name|i
 operator|=
-name|len
+name|length
 operator|-
-name|pressure_length
+name|ramp_length
 init|;
 name|i
 operator|<
-name|len
+name|length
 condition|;
 name|i
 operator|++
@@ -1529,30 +1529,30 @@ operator|(
 name|i
 operator|-
 operator|(
-name|len
+name|length
 operator|-
-name|pressure_length
+name|ramp_length
 operator|)
 operator|)
 operator|*
-name|step
+name|slope
 expr_stmt|;
 block|}
 block|}
 comment|/* Calculate and create velocity ramp parameters */
 if|if
 condition|(
-name|len
+name|length
 operator|>
 literal|0
 condition|)
 block|{
 name|gdouble
-name|step
+name|slope
 init|=
 literal|1.0
 operator|/
-name|len
+name|length
 decl_stmt|;
 name|gint
 name|i
@@ -1566,7 +1566,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|len
+name|length
 condition|;
 name|i
 operator|++
@@ -1581,7 +1581,7 @@ name|velocity
 operator|=
 name|i
 operator|*
-name|step
+name|slope
 expr_stmt|;
 block|}
 block|}
