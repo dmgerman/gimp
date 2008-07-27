@@ -554,6 +554,22 @@ argument_list|(
 name|fontmap
 argument_list|)
 expr_stmt|;
+comment|/*  Workaround for bug #143542 (PangoFT2Fontmap leak),    *  see also bug #148997 (Text layer rendering leaks font file descriptor):    *    *  Calling pango_ft2_font_map_substitute_changed() causes the    *  font_map cache to be flushed, thereby removing the circular    *  reference that causes the leak.    */
+name|g_object_weak_ref
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+operator|(
+name|GWeakNotify
+operator|)
+name|pango_ft2_font_map_substitute_changed
+argument_list|,
+name|fontmap
+argument_list|)
+expr_stmt|;
 name|layout
 operator|=
 name|pango_layout_new
