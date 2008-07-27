@@ -274,7 +274,7 @@ name|baseline
 decl_stmt|;
 name|line
 operator|=
-name|pango_layout_iter_get_line
+name|pango_layout_iter_get_line_readonly
 argument_list|(
 name|iter
 argument_list|)
