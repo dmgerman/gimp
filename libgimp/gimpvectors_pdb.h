@@ -62,6 +62,16 @@ end_function_decl
 
 begin_function_decl
 name|gint32
+name|gimp_vectors_copy
+parameter_list|(
+name|gint32
+name|vectors_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
 name|gimp_vectors_get_image
 parameter_list|(
 name|gint32
