@@ -3467,6 +3467,16 @@ argument_list|)
 argument_list|,
 name|error
 argument_list|)
+operator|&&
+name|gimp_pdb_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+name|error
+argument_list|)
 condition|)
 block|{
 name|GimpStrokeDesc
