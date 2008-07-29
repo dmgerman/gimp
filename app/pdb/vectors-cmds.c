@@ -6853,9 +6853,9 @@ literal|"Copy a vectors object."
 argument_list|,
 literal|"This procedure copies the specified vectors object and returns the copy."
 argument_list|,
-literal|"Simon Budig"
+literal|"Barak Itkin<lightningismyname@gmail.com>"
 argument_list|,
-literal|"Simon Budig"
+literal|"Barak Itkin"
 argument_list|,
 literal|"2008"
 argument_list|,
