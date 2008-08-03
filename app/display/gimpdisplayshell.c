@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4aeb10103
+DECL|enum|__anon2b644f6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4aeb10203
+DECL|enum|__anon2b644f6c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5000,6 +5000,12 @@ name|image
 condition|)
 block|{
 name|gimp_display_shell_connect
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+comment|/* after connecting to the image we want to center it */
+name|gimp_display_shell_center_image_on_next_size_allocate
 argument_list|(
 name|shell
 argument_list|)
