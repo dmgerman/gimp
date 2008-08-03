@@ -144,6 +144,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_center_image_on_next_size_allocate
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_scale_by_values
 parameter_list|(
 name|GimpDisplayShell

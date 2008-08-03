@@ -279,7 +279,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_image_size (GimpImage * image,const gchar * undo_desc)
+DECL|function|gimp_image_undo_push_image_size (GimpImage * image,const gchar * undo_desc,gdouble previous_origin_x,gdouble previous_origin_y)
 name|gimp_image_undo_push_image_size
 parameter_list|(
 name|GimpImage
@@ -290,6 +290,12 @@ specifier|const
 name|gchar
 modifier|*
 name|undo_desc
+parameter_list|,
+name|gdouble
+name|previous_origin_x
+parameter_list|,
+name|gdouble
+name|previous_origin_y
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -316,6 +322,14 @@ argument_list|,
 name|GIMP_DIRTY_IMAGE
 operator||
 name|GIMP_DIRTY_IMAGE_SIZE
+argument_list|,
+literal|"previous-origin-x"
+argument_list|,
+name|previous_origin_x
+argument_list|,
+literal|"previous-origin-y"
+argument_list|,
+name|previous_origin_y
 argument_list|,
 name|NULL
 argument_list|)

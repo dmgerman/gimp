@@ -115,6 +115,14 @@ DECL|member|height
 name|gint
 name|height
 decl_stmt|;
+DECL|member|previous_origin_x
+name|gdouble
+name|previous_origin_x
+decl_stmt|;
+DECL|member|previous_origin_y
+name|gdouble
+name|previous_origin_y
+decl_stmt|;
 DECL|member|xresolution
 name|gdouble
 name|xresolution

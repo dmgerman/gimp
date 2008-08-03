@@ -35,6 +35,14 @@ DECL|member|size_changed
 name|gboolean
 name|size_changed
 decl_stmt|;
+DECL|member|previous_origin_x
+name|gdouble
+name|previous_origin_x
+decl_stmt|;
+DECL|member|previous_origin_y
+name|gdouble
+name|previous_origin_y
+decl_stmt|;
 DECL|member|resolution_changed
 name|gboolean
 name|resolution_changed

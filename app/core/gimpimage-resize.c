@@ -347,6 +347,12 @@ argument_list|(
 name|image
 argument_list|,
 name|NULL
+argument_list|,
+operator|-
+name|offset_x
+argument_list|,
+operator|-
+name|offset_y
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new width and height  */
@@ -910,12 +916,13 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_viewable_size_changed
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_image_emit_size_changed_signals
 argument_list|(
 name|image
-argument_list|)
+argument_list|,
+name|offset_x
+argument_list|,
+name|offset_y
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
