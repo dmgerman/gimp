@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2988b7d30103
+DECL|enum|__anon2790695d0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2988b7d30208
+DECL|struct|__anon2790695d0208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -4715,8 +4715,10 @@ name|mbvals
 operator|.
 name|mblur_type
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"blur-type"
+argument_list|,
 literal|"_Linear"
 argument_list|)
 argument_list|,
@@ -4724,8 +4726,10 @@ name|MBLUR_LINEAR
 argument_list|,
 name|NULL
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"blur-type"
+argument_list|,
 literal|"_Radial"
 argument_list|)
 argument_list|,
@@ -4733,8 +4737,10 @@ name|MBLUR_RADIAL
 argument_list|,
 name|NULL
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"blur-type"
+argument_list|,
 literal|"_Zoom"
 argument_list|)
 argument_list|,
