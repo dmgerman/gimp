@@ -30,10 +30,15 @@ DECL|struct|_GimpTip
 struct|struct
 name|_GimpTip
 block|{
-DECL|member|thetip
+DECL|member|text
 name|gchar
 modifier|*
-name|thetip
+name|text
+decl_stmt|;
+DECL|member|help_id
+name|gchar
+modifier|*
+name|help_id
 decl_stmt|;
 block|}
 struct|;
