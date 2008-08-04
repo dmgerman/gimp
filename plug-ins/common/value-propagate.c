@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a035ae0108
+DECL|struct|__anon2c6ecaa00108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a035ae0208
+DECL|struct|__anon2c6ecaa00208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -3361,6 +3361,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|inline
 name|int
 DECL|function|value_difference_check (guchar * pos1,guchar * pos2,gint ch)
 name|value_difference_check
@@ -3482,6 +3483,17 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
+switch|switch
+condition|(
+name|dtype
+condition|)
+block|{
+case|case
+name|GIMP_RGB_IMAGE
+case|:
+case|case
+name|GIMP_RGBA_IMAGE
+case|:
 if|if
 condition|(
 operator|*
@@ -3504,15 +3516,14 @@ literal|1
 argument_list|)
 expr_stmt|;
 operator|*
+operator|*
 operator|(
 name|float
 operator|*
-operator|)
 operator|*
+operator|)
 name|tmp
 operator|=
-name|sqrt
-argument_list|(
 name|channel_mask
 index|[
 literal|0
@@ -3557,8 +3568,18 @@ name|here
 index|[
 literal|2
 index|]
-argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_GRAYA_IMAGE
+case|:
+case|case
+name|GIMP_GRAY_IMAGE
+case|:
+break|break;
+default|default:
+break|break;
+block|}
 block|}
 end_function
 
@@ -3607,8 +3628,6 @@ name|GIMP_RGBA_IMAGE
 case|:
 name|v_here
 operator|=
-name|sqrt
-argument_list|(
 name|channel_mask
 index|[
 literal|0
@@ -3653,7 +3672,6 @@ name|here
 index|[
 literal|2
 index|]
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -3764,6 +3782,17 @@ modifier|*
 name|tmp
 parameter_list|)
 block|{
+switch|switch
+condition|(
+name|dtype
+condition|)
+block|{
+case|case
+name|GIMP_RGB_IMAGE
+case|:
+case|case
+name|GIMP_RGBA_IMAGE
+case|:
 if|if
 condition|(
 operator|*
@@ -3786,15 +3815,15 @@ literal|1
 argument_list|)
 expr_stmt|;
 operator|*
+operator|*
 operator|(
 name|float
 operator|*
-operator|)
 operator|*
+operator|)
 name|tmp
 operator|=
-name|sqrt
-argument_list|(
+operator|(
 name|channel_mask
 index|[
 literal|0
@@ -3839,8 +3868,19 @@ name|here
 index|[
 literal|2
 index|]
-argument_list|)
+operator|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_GRAYA_IMAGE
+case|:
+case|case
+name|GIMP_GRAY_IMAGE
+case|:
+break|break;
+default|default:
+break|break;
+block|}
 block|}
 end_function
 
@@ -3889,8 +3929,7 @@ name|GIMP_RGBA_IMAGE
 case|:
 name|v_here
 operator|=
-name|sqrt
-argument_list|(
+operator|(
 name|channel_mask
 index|[
 literal|0
@@ -3935,7 +3974,7 @@ name|here
 index|[
 literal|2
 index|]
-argument_list|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -4023,7 +4062,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a035ae0308
+DECL|struct|__anon2c6ecaa00308
 block|{
 DECL|member|min_modified
 name|gshort
@@ -4175,8 +4214,7 @@ name|data
 operator|->
 name|original_value
 operator|=
-name|sqrt
-argument_list|(
+operator|(
 name|channel_mask
 index|[
 literal|0
@@ -4221,7 +4259,7 @@ name|here
 index|[
 literal|2
 index|]
-argument_list|)
+operator|)
 expr_stmt|;
 break|break;
 case|case
@@ -4323,8 +4361,7 @@ name|GIMP_RGBA_IMAGE
 case|:
 name|v_here
 operator|=
-name|sqrt
-argument_list|(
+operator|(
 name|channel_mask
 index|[
 literal|0
@@ -4369,7 +4406,7 @@ name|here
 index|[
 literal|2
 index|]
-argument_list|)
+operator|)
 expr_stmt|;
 if|if
 condition|(
