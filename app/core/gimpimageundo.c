@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279278d00103
+DECL|enum|__anon27d565250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ name|object_class
 argument_list|,
 name|PROP_PREVIOUS_ORIGIN_X
 argument_list|,
-name|g_param_spec_double
+name|g_param_spec_int
 argument_list|(
 literal|"previous-origin-x"
 argument_list|,
@@ -339,11 +339,11 @@ argument_list|,
 name|NULL
 argument_list|,
 operator|-
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|0.0
+literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -355,7 +355,7 @@ name|object_class
 argument_list|,
 name|PROP_PREVIOUS_ORIGIN_Y
 argument_list|,
-name|g_param_spec_double
+name|g_param_spec_int
 argument_list|(
 literal|"previous-origin-y"
 argument_list|,
@@ -364,11 +364,11 @@ argument_list|,
 name|NULL
 argument_list|,
 operator|-
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-name|G_MAXDOUBLE
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
-literal|0.0
+literal|0
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -697,7 +697,7 @@ name|image_undo
 operator|->
 name|previous_origin_x
 operator|=
-name|g_value_get_double
+name|g_value_get_int
 argument_list|(
 name|value
 argument_list|)
@@ -710,7 +710,7 @@ name|image_undo
 operator|->
 name|previous_origin_y
 operator|=
-name|g_value_get_double
+name|g_value_get_int
 argument_list|(
 name|value
 argument_list|)
@@ -814,7 +814,7 @@ block|{
 case|case
 name|PROP_PREVIOUS_ORIGIN_X
 case|:
-name|g_value_set_double
+name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,
@@ -827,7 +827,7 @@ break|break;
 case|case
 name|PROP_PREVIOUS_ORIGIN_Y
 case|:
-name|g_value_set_double
+name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,
@@ -1095,10 +1095,10 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gdouble
+name|gint
 name|previous_origin_x
 decl_stmt|;
-name|gdouble
+name|gint
 name|previous_origin_y
 decl_stmt|;
 name|width

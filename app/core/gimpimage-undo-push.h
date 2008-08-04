@@ -51,10 +51,10 @@ name|gchar
 modifier|*
 name|undo_desc
 parameter_list|,
-name|gdouble
+name|gint
 name|previous_origin_x
 parameter_list|,
-name|gdouble
+name|gint
 name|previous_origin_y
 parameter_list|)
 function_decl|;

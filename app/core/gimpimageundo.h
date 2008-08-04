@@ -116,11 +116,11 @@ name|gint
 name|height
 decl_stmt|;
 DECL|member|previous_origin_x
-name|gdouble
+name|gint
 name|previous_origin_x
 decl_stmt|;
 DECL|member|previous_origin_y
-name|gdouble
+name|gint
 name|previous_origin_y
 decl_stmt|;
 DECL|member|xresolution

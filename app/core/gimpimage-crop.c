@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2944d1a10103
+DECL|enum|__anon279176410103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1105,7 +1105,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_emit_size_changed_signals
+name|gimp_image_size_changed_detailed
 argument_list|(
 name|image
 argument_list|,

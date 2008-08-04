@@ -916,7 +916,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_emit_size_changed_signals
+name|gimp_image_size_changed_detailed
 argument_list|(
 name|image
 argument_list|,

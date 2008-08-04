@@ -46,23 +46,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_handle_size_changed_detailed
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gdouble
-name|previous_origin_x
-parameter_list|,
-name|gdouble
-name|previous_origin_y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_get_scaled_viewport
 parameter_list|(
 specifier|const

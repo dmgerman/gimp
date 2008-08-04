@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66f8110103
+DECL|enum|__anon28db788f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66f8110203
+DECL|enum|__anon28db788f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -594,6 +594,24 @@ name|gchar
 modifier|*
 modifier|*
 name|tooltip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_image_real_size_changed_detailed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+name|previous_origin_x
+parameter_list|,
+name|gint
+name|previous_origin_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1404,15 +1422,15 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__DOUBLE_DOUBLE
+name|gimp_marshal_VOID__INT_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|2
 argument_list|,
-name|G_TYPE_DOUBLE
+name|G_TYPE_INT
 argument_list|,
-name|G_TYPE_DOUBLE
+name|G_TYPE_INT
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -2147,7 +2165,31 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
+name|resolution_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
 name|size_changed_detailed
+operator|=
+name|gimp_image_real_size_changed_detailed
+expr_stmt|;
+name|klass
+operator|->
+name|unit_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|quick_mask_changed
+operator|=
+name|NULL
+expr_stmt|;
+name|klass
+operator|->
+name|selection_control
 operator|=
 name|NULL
 expr_stmt|;
@@ -4742,6 +4784,34 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_image_real_size_changed_detailed (GimpImage * image,gint previous_origin_x,gint previous_origin_y)
+name|gimp_image_real_size_changed_detailed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gint
+name|previous_origin_x
+parameter_list|,
+name|gint
+name|previous_origin_y
+parameter_list|)
+block|{
+name|gimp_viewable_size_changed
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
 DECL|function|gimp_image_real_colormap_changed (GimpImage * image,gint color_index)
 name|gimp_image_real_colormap_changed
 parameter_list|(
@@ -6144,13 +6214,13 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_emit_size_changed_signals
+name|gimp_image_size_changed_detailed
 argument_list|(
 name|image
 argument_list|,
-literal|0.0
+literal|0
 argument_list|,
-literal|0.0
+literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -7440,22 +7510,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_size_changed_detailed:  * @image:  * @previous_origin_x:  * @previous_origin_y:  *  * Emits the size-changed-detailed signal that is typically used to adjust the  * position of the image in the display shell on various operations,  * e.g. crop.  *  **/
+comment|/**  * gimp_image_size_changed_detailed:  * @image:  * @previous_origin_x:  * @previous_origin_y:  *  * Emits the size-changed-detailed signal that is typically used to adjust the  * position of the image in the display shell on various operations,  * e.g. crop.  *  * This function makes sure that GimpViewable::size-changed is also emitted.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_size_changed_detailed (GimpImage * image,gdouble previous_origin_x,gdouble previous_origin_y)
+DECL|function|gimp_image_size_changed_detailed (GimpImage * image,gint previous_origin_x,gint previous_origin_y)
 name|gimp_image_size_changed_detailed
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
 parameter_list|,
-name|gdouble
+name|gint
 name|previous_origin_x
 parameter_list|,
-name|gdouble
+name|gint
 name|previous_origin_y
 parameter_list|)
 block|{
@@ -7604,44 +7674,6 @@ name|QUICK_MASK_CHANGED
 index|]
 argument_list|,
 literal|0
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_image_emit_size_changed_signals (GimpImage * image,gdouble previous_origin_x,gdouble previous_origin_y)
-name|gimp_image_emit_size_changed_signals
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|gdouble
-name|previous_origin_x
-parameter_list|,
-name|gdouble
-name|previous_origin_y
-parameter_list|)
-block|{
-comment|/* Emit GimpViewable::size-changed */
-name|gimp_viewable_size_changed
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* Then emit basically the same signal but with more    * details. Clients can choose what signal of these two to listen to    * depending on how much info they need.    */
-name|gimp_image_size_changed_detailed
-argument_list|(
-name|image
-argument_list|,
-name|previous_origin_x
-argument_list|,
-name|previous_origin_y
 argument_list|)
 expr_stmt|;
 block|}
