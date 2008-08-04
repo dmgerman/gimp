@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bf69d0103
+DECL|enum|__anon2c66f8110103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bf69d0203
+DECL|enum|__anon2c66f8110203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7611,7 +7611,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_emit_size_changed_signals (GimpImage * image,gdouble previous_offset_x,gdouble previous_offset_y)
+DECL|function|gimp_image_emit_size_changed_signals (GimpImage * image,gdouble previous_origin_x,gdouble previous_origin_y)
 name|gimp_image_emit_size_changed_signals
 parameter_list|(
 name|GimpImage
@@ -7619,10 +7619,10 @@ modifier|*
 name|image
 parameter_list|,
 name|gdouble
-name|previous_offset_x
+name|previous_origin_x
 parameter_list|,
 name|gdouble
-name|previous_offset_y
+name|previous_origin_y
 parameter_list|)
 block|{
 comment|/* Emit GimpViewable::size-changed */
@@ -7639,9 +7639,9 @@ name|gimp_image_size_changed_detailed
 argument_list|(
 name|image
 argument_list|,
-name|previous_offset_x
+name|previous_origin_x
 argument_list|,
-name|previous_offset_y
+name|previous_origin_y
 argument_list|)
 expr_stmt|;
 block|}

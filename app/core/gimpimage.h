@@ -1578,10 +1578,10 @@ modifier|*
 name|image
 parameter_list|,
 name|gdouble
-name|previous_offset_x
+name|previous_origin_x
 parameter_list|,
 name|gdouble
-name|previous_offset_y
+name|previous_origin_y
 parameter_list|)
 function_decl|;
 end_function_decl
