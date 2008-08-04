@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc8d860103
+DECL|enum|__anon2af9e10b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -492,6 +492,8 @@ condition|(
 name|b
 operator|->
 name|time
+operator|>
+literal|0
 condition|)
 block|{
 return|return
