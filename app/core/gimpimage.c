@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db788f0103
+DECL|enum|__anon2bee30060103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db788f0203
+DECL|enum|__anon2bee30060203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4798,6 +4798,7 @@ name|gint
 name|previous_origin_y
 parameter_list|)
 block|{
+comment|/* Whenever GimpImage::size-changed-detailed is emitted, so is    * GimpViewable::size-changed. Clients choose what signal to listen    * to depending on how much info they need.    */
 name|gimp_viewable_size_changed
 argument_list|(
 name|GIMP_VIEWABLE
