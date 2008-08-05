@@ -139,6 +139,16 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
+DECL|member|queue
+name|GQueue
+modifier|*
+name|queue
+decl_stmt|;
+DECL|member|source
+name|GSource
+modifier|*
+name|source
+decl_stmt|;
 block|}
 struct|;
 end_struct
