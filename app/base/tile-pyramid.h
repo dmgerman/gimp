@@ -16,6 +16,10 @@ directive|define
 name|__TILE_PYRAMID_H__
 end_define
 
+begin_comment
+comment|/* Creates a new tile pyramid with the specified size for the  *  toplevel. The toplevel size is used to compute the number of  *  levels and their size. Each level is 1/2 the width and height of  *  the level above it.  *  * The toplevel is level 0. The smallest level in the hierarchy  *  is "nlevels - 1". That level will be smaller than TILE_WIDTH x  *  TILE_HEIGHT  */
+end_comment
+
 begin_function_decl
 name|TilePyramid
 modifier|*
