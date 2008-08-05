@@ -739,10 +739,10 @@ name|h
 parameter_list|)
 block|{
 name|gint
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 decl_stmt|;
 name|gint
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -752,15 +752,15 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_get_scaled_image_viewport_offset
+name|gimp_display_shell_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
 operator|&
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 argument_list|,
 operator|&
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 argument_list|)
 expr_stmt|;
 if|if
@@ -771,7 +771,7 @@ operator|*
 name|x
 operator|=
 operator|-
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 expr_stmt|;
 if|if
 condition|(
@@ -781,7 +781,7 @@ operator|*
 name|y
 operator|=
 operator|-
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 expr_stmt|;
 if|if
 condition|(
@@ -911,13 +911,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_scaled_image_viewport_offset:  * @shell:  * @x:  * @y:  *  * Gets the scaled image offset in viewport coordinates  *  **/
+comment|/**  * gimp_display_shell_get_scaled_viewport_offset:  * @shell:  * @x:  * @y:  *  * Gets the scaled image offset in viewport coordinates  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_scaled_image_viewport_offset (const GimpDisplayShell * shell,gint * x,gint * y)
-name|gimp_display_shell_get_scaled_image_viewport_offset
+DECL|function|gimp_display_shell_get_scaled_viewport_offset (const GimpDisplayShell * shell,gint * x,gint * y)
+name|gimp_display_shell_get_scaled_viewport_offset
 parameter_list|(
 specifier|const
 name|GimpDisplayShell

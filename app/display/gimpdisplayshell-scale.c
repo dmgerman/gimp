@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297307300108
+DECL|struct|__anon29c988530108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -488,10 +488,10 @@ name|gdouble
 name|vertical_max_size
 decl_stmt|;
 name|gint
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 decl_stmt|;
 name|gint
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 decl_stmt|;
 comment|/* Initialize values */
 name|horizontal_lower
@@ -606,15 +606,15 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Adjust due to scrolling */
-name|gimp_display_shell_get_scaled_image_viewport_offset
+name|gimp_display_shell_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
 operator|&
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 argument_list|,
 operator|&
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 argument_list|)
 expr_stmt|;
 name|horizontal_lower
@@ -632,7 +632,7 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -651,7 +651,7 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|scaled_image_viewport_offset_x
+name|scaled_viewport_offset_x
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -670,7 +670,7 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -689,7 +689,7 @@ argument_list|,
 operator|(
 name|gdouble
 operator|)
-name|scaled_image_viewport_offset_y
+name|scaled_viewport_offset_y
 argument_list|)
 argument_list|)
 expr_stmt|;

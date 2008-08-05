@@ -102,7 +102,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_get_scaled_image_viewport_offset
+name|gimp_display_shell_get_scaled_viewport_offset
 parameter_list|(
 specifier|const
 name|GimpDisplayShell

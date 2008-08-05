@@ -2192,7 +2192,7 @@ operator|->
 name|image
 condition|)
 return|return;
-name|gimp_display_shell_get_scaled_image_viewport_offset
+name|gimp_display_shell_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
