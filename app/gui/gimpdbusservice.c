@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpDBusService  * Copyright (C) 2007 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpDBusService  * Copyright (C) 2007, 2008 Sven Neumann<sven@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -72,13 +72,8 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279153900108
+DECL|struct|__anon2a1ff7f80108
 block|{
-DECL|member|gimp
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 DECL|member|uri
 name|gchar
 modifier|*
@@ -699,17 +694,6 @@ argument_list|)
 decl_stmt|;
 name|data
 operator|->
-name|gimp
-operator|=
-name|g_object_ref
-argument_list|(
-name|service
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
-name|data
-operator|->
 name|uri
 operator|=
 name|g_strdup
@@ -740,13 +724,6 @@ modifier|*
 name|data
 parameter_list|)
 block|{
-name|g_object_unref
-argument_list|(
-name|data
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
 name|g_free
 argument_list|(
 name|data
@@ -767,12 +744,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dbus_service_open_idle (GQueue * queue)
+DECL|function|gimp_dbus_service_open_idle (GimpDBusService * service)
 name|gimp_dbus_service_open_idle
 parameter_list|(
-name|GQueue
+name|GimpDBusService
 modifier|*
-name|queue
+name|service
 parameter_list|)
 block|{
 name|OpenData
@@ -781,6 +758,8 @@ name|data
 init|=
 name|g_queue_pop_tail
 argument_list|(
+name|service
+operator|->
 name|queue
 argument_list|)
 decl_stmt|;
@@ -791,7 +770,7 @@ condition|)
 block|{
 name|file_open_from_command_line
 argument_list|(
-name|data
+name|service
 operator|->
 name|gimp
 argument_list|,
@@ -813,6 +792,12 @@ return|return
 name|TRUE
 return|;
 block|}
+name|service
+operator|->
+name|source
+operator|=
+name|NULL
+expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -881,8 +866,6 @@ operator|)
 name|gimp_dbus_service_open_idle
 argument_list|,
 name|service
-operator|->
-name|queue
 argument_list|,
 name|NULL
 argument_list|)
