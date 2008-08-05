@@ -1438,6 +1438,21 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+name|shell
+operator|->
+name|hsbdata
+operator|->
+name|step_increment
+operator|=
+name|MAX
+argument_list|(
+name|shell
+operator|->
+name|scale_x
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1586,6 +1601,21 @@ literal|2
 argument_list|)
 expr_stmt|;
 block|}
+name|shell
+operator|->
+name|vsbdata
+operator|->
+name|step_increment
+operator|=
+name|MAX
+argument_list|(
+name|shell
+operator|->
+name|scale_y
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
