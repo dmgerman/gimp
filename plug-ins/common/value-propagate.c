@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ecaa00108
+DECL|struct|__anon2bac0b750108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ecaa00208
+DECL|struct|__anon2bac0b750208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -2901,7 +2901,7 @@ operator|(
 operator|(
 name|y
 operator|%
-literal|5
+literal|16
 operator|)
 operator|==
 literal|0
@@ -4062,7 +4062,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6ecaa00308
+DECL|struct|__anon2bac0b750308
 block|{
 DECL|member|min_modified
 name|gshort
