@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0992420103
+DECL|enum|__anon293cb0120103
 block|{
 DECL|enumerator|RESPONSE_PREVIOUS
 name|RESPONSE_PREVIOUS
@@ -874,6 +874,7 @@ name|gtk_link_button_new_with_label
 argument_list|(
 literal|"http://docs.gimp.org/"
 argument_list|,
+comment|/*  a link to the related section in the user manual  */
 name|_
 argument_list|(
 literal|"Learn more"
