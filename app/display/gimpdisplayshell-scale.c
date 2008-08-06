@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9bbca50108
+DECL|struct|__anon28b8ca5f0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1742,13 +1742,7 @@ name|target_offset_x
 argument_list|,
 name|target_offset_y
 argument_list|,
-name|shell
-operator|->
-name|display
-operator|->
-name|config
-operator|->
-name|resize_windows_on_zoom
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
