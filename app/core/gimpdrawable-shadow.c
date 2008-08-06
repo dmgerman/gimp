@@ -45,12 +45,6 @@ directive|include
 file|"gimpdrawable-shadow.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
 begin_function
 name|TileManager
 modifier|*
