@@ -1289,6 +1289,28 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+if|#
+directive|if
+name|defined
+argument_list|(
+name|__GNUC__
+argument_list|)
+operator|&&
+name|defined
+argument_list|(
+name|_WIN64
+argument_list|)
+comment|/* mingw-w64, at least the unstable build from late July 2008,    * starts subsystem:windows programs in main(), but passes them    * bogus argc and argv. __argc and __argv are OK, though, so just    * use them.    */
+name|argc
+operator|=
+name|__argc
+expr_stmt|;
+name|argv
+operator|=
+name|__argv
+expr_stmt|;
+endif|#
+directive|endif
 name|g_thread_init
 argument_list|(
 name|NULL
@@ -1807,7 +1829,7 @@ name|G_OS_WIN32
 end_ifdef
 
 begin_comment
-comment|/* In case we build this as a windowed application. Well, we do. */
+comment|/* Provide WinMain in case we build GIMP as a subsystem:windows  * application. Well, we do. When built with mingw, though, user code  * execution still starts in main() in that case. So WinMain() gets  * used on MSVC builds only.  */
 end_comment
 
 begin_ifdef
