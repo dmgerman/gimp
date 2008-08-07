@@ -849,6 +849,14 @@ value|"gimp-layer-new"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_NEW_FROM_VISIBLE
+define|#
+directive|define
+name|GIMP_HELP_LAYER_NEW_FROM_VISIBLE
+value|"gimp-layer-new-from-visible"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_DUPLICATE
 define|#
 directive|define

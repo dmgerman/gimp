@@ -465,7 +465,7 @@ literal|"<control><shift>C"
 block|,
 name|N_
 argument_list|(
-literal|"Copy the selected region to the clipboard"
+literal|"Copy what is visible in the the selected region"
 argument_list|)
 block|,
 name|G_CALLBACK

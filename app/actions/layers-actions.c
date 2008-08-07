@@ -327,13 +327,38 @@ name|GIMP_HELP_LAYER_NEW
 block|}
 block|,
 block|{
+literal|"layers-new-from-visible"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"New from Visible"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Create a new layer from what is visible in this image"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|layers_new_from_visible_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_LAYER_NEW_FROM_VISIBLE
+block|}
+block|,
+block|{
 literal|"layers-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
 name|N_
 argument_list|(
-literal|"D_uplicate Layer"
+literal|"Duplicate Layer"
 argument_list|)
 block|,
 literal|"<control><shift>D"
@@ -2112,6 +2137,13 @@ expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"layers-new-last-values"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
+name|SET_SENSITIVE
+argument_list|(
+literal|"layers-new-from-visible"
 argument_list|,
 name|image
 argument_list|)
