@@ -55,6 +55,24 @@ end_function_decl
 
 begin_function_decl
 name|gint32
+name|gimp_layer_new_from_visible
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|dest_image_ID
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint32
 name|gimp_layer_new_from_drawable
 parameter_list|(
 name|gint32
