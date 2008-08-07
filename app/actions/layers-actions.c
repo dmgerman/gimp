@@ -333,7 +333,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"New from Visible"
+literal|"New from _Visible"
 argument_list|)
 block|,
 name|NULL
