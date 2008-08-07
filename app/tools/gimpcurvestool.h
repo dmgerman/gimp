@@ -190,7 +190,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __CURVES_H__  */
+comment|/*  __GIMP_CURVES_TOOL_H__  */
 end_comment
 
 end_unit
