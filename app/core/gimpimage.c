@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee30060103
+DECL|enum|__anon29fa2c610103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bee30060203
+DECL|enum|__anon29fa2c610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10016,6 +10016,40 @@ name|val
 expr_stmt|;
 return|return
 name|retval
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/*  projection  */
+end_comment
+
+begin_function
+name|GimpProjection
+modifier|*
+DECL|function|gimp_image_get_projection (const GimpImage * image)
+name|gimp_image_get_projection
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|image
+operator|->
+name|projection
 return|;
 block|}
 end_function

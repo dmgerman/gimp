@@ -1964,6 +1964,23 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  projection  */
+end_comment
+
+begin_function_decl
+name|GimpProjection
+modifier|*
+name|gimp_image_get_projection
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  layers / channels / vectors  */
 end_comment
 

@@ -1030,13 +1030,14 @@ argument_list|)
 expr_stmt|;
 name|proj
 operator|=
+name|gimp_image_get_projection
+argument_list|(
 name|shell
 operator|->
 name|display
 operator|->
 name|image
-operator|->
-name|projection
+argument_list|)
 expr_stmt|;
 name|level
 operator|=

@@ -829,9 +829,10 @@ name|image
 expr_stmt|;
 name|projection
 operator|=
+name|gimp_image_get_projection
+argument_list|(
 name|image
-operator|->
-name|projection
+argument_list|)
 expr_stmt|;
 name|gimp_display_shell_get_render_start_offset
 argument_list|(

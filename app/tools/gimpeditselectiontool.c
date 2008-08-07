@@ -2753,11 +2753,12 @@ expr_stmt|;
 block|}
 name|gimp_projection_flush
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
 name|display
 operator|->
 name|image
-operator|->
-name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tool_pop_status

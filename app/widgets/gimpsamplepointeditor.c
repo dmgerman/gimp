@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d498f0103
+DECL|enum|__anon2ac0ff8b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1080,11 +1080,12 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
 name|image_editor
 operator|->
 name|image
-operator|->
-name|projection
+argument_list|)
 argument_list|,
 name|gimp_sample_point_editor_proj_update
 argument_list|,
@@ -1153,9 +1154,10 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
 name|image
-operator|->
-name|projection
+argument_list|)
 argument_list|,
 literal|"update"
 argument_list|,
