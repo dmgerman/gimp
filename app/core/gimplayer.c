@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2887c3c80103
+DECL|enum|__anon29a3f8090103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2887c3c80203
+DECL|enum|__anon29a3f8090203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
