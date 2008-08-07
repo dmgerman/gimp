@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d07ad90103
+DECL|enum|__anon29ae1b180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -702,11 +702,12 @@ argument_list|(
 operator|&
 name|bufferPR
 argument_list|,
+name|gimp_buffer_get_tiles
+argument_list|(
 name|gimp
 operator|->
 name|global_buffer
-operator|->
-name|tiles
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

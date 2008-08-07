@@ -1283,9 +1283,10 @@ name|layer
 operator|=
 name|gimp_layer_new_from_tiles
 argument_list|(
+name|gimp_buffer_get_tiles
+argument_list|(
 name|buffer
-operator|->
-name|tiles
+argument_list|)
 argument_list|,
 name|image
 argument_list|,

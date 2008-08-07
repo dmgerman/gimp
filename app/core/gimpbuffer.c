@@ -1285,5 +1285,35 @@ return|;
 block|}
 end_function
 
+begin_function
+name|TileManager
+modifier|*
+DECL|function|gimp_buffer_get_tiles (const GimpBuffer * buffer)
+name|gimp_buffer_get_tiles
+parameter_list|(
+specifier|const
+name|GimpBuffer
+modifier|*
+name|buffer
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|buffer
+operator|->
+name|tiles
+return|;
+block|}
+end_function
+
 end_unit
 

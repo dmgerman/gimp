@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279f1fbb0103
+DECL|enum|__anon2ae7ea150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -657,11 +657,12 @@ name|TileManager
 modifier|*
 name|tiles
 init|=
+name|gimp_buffer_get_tiles
+argument_list|(
 name|gimp
 operator|->
 name|global_buffer
-operator|->
-name|tiles
+argument_list|)
 decl_stmt|;
 name|GimpImageType
 name|type

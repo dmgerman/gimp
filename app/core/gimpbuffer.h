@@ -220,6 +220,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_buffer_get_tiles
+parameter_list|(
+specifier|const
+name|GimpBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
