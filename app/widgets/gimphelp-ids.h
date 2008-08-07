@@ -241,6 +241,14 @@ value|"gimp-edit-paste-as-new"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
+define|#
+directive|define
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
+value|"gimp-edit-paste-as-new-layer"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_EDIT_CLEAR
 define|#
 directive|define

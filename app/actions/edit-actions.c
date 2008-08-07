@@ -577,6 +577,31 @@ name|GIMP_HELP_EDIT_PASTE_AS_NEW
 block|}
 block|,
 block|{
+literal|"edit-paste-as-new-layer"
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"New _Layer"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|N_
+argument_list|(
+literal|"Create a new layer from the content of the clipboard"
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|edit_paste_as_new_layer_cmd_callback
+argument_list|)
+block|,
+name|GIMP_HELP_EDIT_PASTE_AS_NEW_LAYER
+block|}
+block|,
+block|{
 literal|"edit-named-cut"
 block|,
 name|GTK_STOCK_CUT
@@ -1353,6 +1378,13 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/*             "edit-paste" is always enabled  */
+name|SET_SENSITIVE
+argument_list|(
+literal|"edit-paste-as-new-layer"
+argument_list|,
+name|image
+argument_list|)
+expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
 literal|"edit-paste-into"
