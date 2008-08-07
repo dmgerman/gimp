@@ -195,6 +195,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -233,6 +234,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -271,6 +273,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -309,6 +312,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -347,6 +351,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -396,6 +401,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -499,6 +505,7 @@ specifier|inline
 name|void
 name|gaussan_lanczos2
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -545,6 +552,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -558,18 +566,22 @@ specifier|inline
 name|void
 name|pixel_average
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|p1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|p2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|p3
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|p4
@@ -578,6 +590,7 @@ name|guchar
 modifier|*
 name|p
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|)
@@ -590,10 +603,12 @@ specifier|inline
 name|void
 name|gaussan_decimate
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|,
@@ -673,21 +688,26 @@ specifier|inline
 name|gdouble
 name|lanczos3_mul_alpha
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|x_kernel
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|y_kernel
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|,
+specifier|const
 name|gint
 name|byte
 parameter_list|)
@@ -700,21 +720,26 @@ specifier|inline
 name|gdouble
 name|lanczos3_mul
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|x_kernel
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|y_kernel
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|,
+specifier|const
 name|gint
 name|byte
 parameter_list|)
@@ -2454,7 +2479,7 @@ decl_stmt|;
 name|guchar
 name|pixel
 index|[
-name|dst_bpp
+literal|4
 index|]
 decl_stmt|;
 name|gfloat
@@ -2827,11 +2852,9 @@ control|)
 block|{
 name|yfrac
 operator|=
-operator|(
 name|y
 operator|/
 name|scaley
-operator|)
 expr_stmt|;
 name|sy0
 operator|=
@@ -2882,11 +2905,9 @@ control|)
 block|{
 name|xfrac
 operator|=
-operator|(
 name|x
 operator|/
 name|scalex
-operator|)
 expr_stmt|;
 name|sx0
 operator|=
@@ -3177,21 +3198,25 @@ begin_function
 specifier|static
 name|void
 specifier|inline
-DECL|function|pixel_average (guchar * p1,guchar * p2,guchar * p3,guchar * p4,guchar * p,gint bytes)
+DECL|function|pixel_average (const guchar * p1,const guchar * p2,const guchar * p3,const guchar * p4,guchar * p,const gint bytes)
 name|pixel_average
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|p1
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|p2
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|p3
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|p4
@@ -3200,6 +3225,7 @@ name|guchar
 modifier|*
 name|p
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|)
@@ -3733,7 +3759,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|decimate_gauss (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,gfloat * kernel_lookup)
+DECL|function|decimate_gauss (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,const gfloat * kernel_lookup)
 name|decimate_gauss
 parameter_list|(
 name|TileManager
@@ -3762,6 +3788,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -3794,25 +3821,25 @@ decl_stmt|;
 name|guchar
 name|pixel1
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel2
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel3
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel4
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
@@ -3820,7 +3847,7 @@ name|pixels
 index|[
 literal|16
 operator|*
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|gint
@@ -4044,13 +4071,15 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gaussan_decimate (guchar * pixels,gint bytes,guchar * pixel)
+DECL|function|gaussan_decimate (const guchar * pixels,const gint bytes,guchar * pixel)
 name|gaussan_decimate
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|,
@@ -4059,6 +4088,7 @@ modifier|*
 name|pixel
 parameter_list|)
 block|{
+specifier|const
 name|guchar
 modifier|*
 name|p
@@ -4792,7 +4822,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|decimate_lanczos2 (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,gfloat * kernel_lookup)
+DECL|function|decimate_lanczos2 (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,const gfloat * kernel_lookup)
 name|decimate_lanczos2
 parameter_list|(
 name|TileManager
@@ -4821,6 +4851,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -4853,25 +4884,25 @@ decl_stmt|;
 name|guchar
 name|pixel1
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel2
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel3
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel4
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
@@ -4879,7 +4910,7 @@ name|pixels
 index|[
 literal|36
 operator|*
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|gint
@@ -5103,9 +5134,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gaussan_lanczos2 (guchar * pixels,gint bytes,guchar * pixel)
+DECL|function|gaussan_lanczos2 (const guchar * pixels,gint bytes,guchar * pixel)
 name|gaussan_lanczos2
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
@@ -5119,6 +5151,7 @@ name|pixel
 parameter_list|)
 block|{
 comment|/*    *   Filter source taken from document:    *   www.worldserver.com/turk/computergraphics/ResamplingFilters.pdf    *    *   Filters for Common Resampling Tasks    *    *   Ken Turkowski, Apple computer    *    */
+specifier|const
 name|guchar
 modifier|*
 name|p
@@ -6848,7 +6881,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|decimate_average (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,gfloat * kernel_lookup)
+DECL|function|decimate_average (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,const gfloat * kernel_lookup)
 name|decimate_average
 parameter_list|(
 name|TileManager
@@ -6877,41 +6910,34 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
 parameter_list|)
 block|{
-name|gint
-name|src_bpp
-init|=
-name|tile_manager_bpp
-argument_list|(
-name|srcTM
-argument_list|)
-decl_stmt|;
 name|guchar
 name|pixel1
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel2
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel3
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|pixel4
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|read_pixel_data_1
@@ -6970,7 +6996,10 @@ name|pixel4
 argument_list|,
 name|pixel
 argument_list|,
-name|src_bpp
+name|tile_manager_bpp
+argument_list|(
+name|srcTM
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7225,7 +7254,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|interpolate_nearest (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,gfloat * kernel_lookup)
+DECL|function|interpolate_nearest (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * pixel,const gfloat * kernel_lookup)
 name|interpolate_nearest
 parameter_list|(
 name|TileManager
@@ -7254,6 +7283,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -7370,7 +7400,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|interpolate_bilinear (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * p,gfloat * kernel_lookup)
+DECL|function|interpolate_bilinear (TileManager * srcTM,gint x0,gint y0,gint x1,gint y1,gdouble xfrac,gdouble yfrac,guchar * p,const gfloat * kernel_lookup)
 name|interpolate_bilinear
 parameter_list|(
 name|TileManager
@@ -7399,6 +7429,7 @@ name|guchar
 modifier|*
 name|p
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -7415,25 +7446,25 @@ decl_stmt|;
 name|guchar
 name|p1
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|p2
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|p3
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|guchar
 name|p4
 index|[
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|gint
@@ -7998,7 +8029,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|interpolate_cubic (TileManager * srcTM,gint x1,gint y1,gint x2,gint y2,gdouble xfrac,gdouble yfrac,guchar * p,gfloat * kernel_lookup)
+DECL|function|interpolate_cubic (TileManager * srcTM,gint x1,gint y1,gint x2,gint y2,gdouble xfrac,gdouble yfrac,guchar * p,const gfloat * kernel_lookup)
 name|interpolate_cubic
 parameter_list|(
 name|TileManager
@@ -8027,6 +8058,7 @@ name|guchar
 modifier|*
 name|p
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -8077,7 +8109,7 @@ name|ps
 index|[
 literal|16
 operator|*
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|gdouble
@@ -9361,45 +9393,52 @@ begin_function
 specifier|static
 name|gdouble
 specifier|inline
-DECL|function|lanczos3_mul_alpha (guchar * pixels,gdouble * x_kernel,gdouble * y_kernel,gint bytes,gint byte)
+DECL|function|lanczos3_mul_alpha (const guchar * pixels,const gdouble * x_kernel,const gdouble * y_kernel,const gint bytes,const gint byte)
 name|lanczos3_mul_alpha
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|x_kernel
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|y_kernel
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|,
+specifier|const
 name|gint
 name|byte
 parameter_list|)
 block|{
-name|gdouble
-name|sum
-init|=
-literal|0.0
-decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|p
 init|=
 name|pixels
 decl_stmt|;
+specifier|const
 name|guchar
 name|alpha
 init|=
 name|bytes
 operator|-
 literal|1
+decl_stmt|;
+name|gdouble
+name|sum
+init|=
+literal|0.0
 decl_stmt|;
 name|gint
 name|x
@@ -9483,38 +9522,44 @@ begin_function
 specifier|static
 name|gdouble
 specifier|inline
-DECL|function|lanczos3_mul (guchar * pixels,gdouble * x_kernel,gdouble * y_kernel,gint bytes,gint byte)
+DECL|function|lanczos3_mul (const guchar * pixels,const gdouble * x_kernel,const gdouble * y_kernel,const gint bytes,const gint byte)
 name|lanczos3_mul
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|pixels
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|x_kernel
 parameter_list|,
+specifier|const
 name|gdouble
 modifier|*
 name|y_kernel
 parameter_list|,
+specifier|const
 name|gint
 name|bytes
 parameter_list|,
+specifier|const
 name|gint
 name|byte
 parameter_list|)
 block|{
-name|gdouble
-name|sum
-init|=
-literal|0.0
-decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|p
 init|=
 name|pixels
+decl_stmt|;
+name|gdouble
+name|sum
+init|=
+literal|0.0
 decl_stmt|;
 name|gint
 name|x
@@ -9592,7 +9637,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|interpolate_lanczos3 (TileManager * srcTM,gint x1,gint y1,gint x2,gint y2,gdouble xfrac,gdouble yfrac,guchar * pixel,gfloat * kernel_lookup)
+DECL|function|interpolate_lanczos3 (TileManager * srcTM,gint x1,gint y1,gint x2,gint y2,gdouble xfrac,gdouble yfrac,guchar * pixel,const gfloat * kernel_lookup)
 name|interpolate_lanczos3
 parameter_list|(
 name|TileManager
@@ -9621,6 +9666,7 @@ name|guchar
 modifier|*
 name|pixel
 parameter_list|,
+specifier|const
 name|gfloat
 modifier|*
 name|kernel_lookup
@@ -9692,7 +9738,7 @@ name|pixels
 index|[
 literal|36
 operator|*
-name|src_bpp
+literal|4
 index|]
 decl_stmt|;
 name|gdouble
