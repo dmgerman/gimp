@@ -1297,7 +1297,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Clibboard"
+literal|"Clipboard"
 argument_list|)
 argument_list|,
 name|GIMP_OPACITY_OPAQUE
