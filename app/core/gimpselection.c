@@ -3205,14 +3205,6 @@ block|}
 else|else
 block|{
 comment|/*  Otherwise, do a straight copy  */
-if|if
-condition|(
-name|GIMP_IS_DRAWABLE
-argument_list|(
-name|pickable
-argument_list|)
-condition|)
-block|{
 name|copy_region
 argument_list|(
 operator|&
@@ -3222,20 +3214,6 @@ operator|&
 name|destPR
 argument_list|)
 expr_stmt|;
-block|}
-else|else
-block|{
-comment|/*  There's a bug that shows up when shared tiles are                *  invalidated. So we don't copy-on-write from the                *  projection.                */
-name|copy_region_nocow
-argument_list|(
-operator|&
-name|srcPR
-argument_list|,
-operator|&
-name|destPR
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 comment|/*  If we're cutting, remove either the layer (or floating selection),        *  the layer mask, or the channel        */
 if|if

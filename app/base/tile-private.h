@@ -137,12 +137,12 @@ name|Tile
 modifier|*
 name|next
 decl_stmt|;
+comment|/* List pointers for the tile cache lists */
 DECL|member|prev
 name|Tile
 modifier|*
 name|prev
 decl_stmt|;
-comment|/* List pointers for the tile cache lists */
 DECL|member|listhead
 name|gpointer
 name|listhead
