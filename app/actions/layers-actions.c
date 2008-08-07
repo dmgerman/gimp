@@ -358,7 +358,7 @@ name|GIMP_STOCK_DUPLICATE
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate Layer"
+literal|"D_uplicate Layer"
 argument_list|)
 block|,
 literal|"<control><shift>D"
