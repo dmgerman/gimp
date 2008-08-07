@@ -1354,9 +1354,9 @@ argument_list|)
 argument_list|,
 name|image
 argument_list|,
-name|gimp_projection_get_image_type
+name|gimp_image_base_type_with_alpha
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|,
 name|_

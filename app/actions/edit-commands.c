@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage-undo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpprojection.h"
 end_include
 
 begin_include
@@ -1275,16 +1275,7 @@ condition|(
 name|buffer
 condition|)
 block|{
-name|GimpProjection
-modifier|*
-name|projection
-init|=
-name|gimp_image_get_projection
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
-name|GimpImage
+name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
@@ -1292,16 +1283,15 @@ name|layer
 operator|=
 name|gimp_layer_new_from_tiles
 argument_list|(
-name|gimp_projection_get_tiles
-argument_list|(
-name|projection
-argument_list|)
+name|buffer
+operator|->
+name|tiles
 argument_list|,
 name|image
 argument_list|,
-name|gimp_projection_get_image_type
+name|gimp_image_base_type_with_alpha
 argument_list|(
-name|projection
+name|image
 argument_list|)
 argument_list|,
 name|_
