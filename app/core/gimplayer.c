@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3480d30103
+DECL|enum|__anon2b2af7650103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3480d30203
+DECL|enum|__anon2b2af7650203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4343,15 +4343,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|name
-operator|!=
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -4452,15 +4443,6 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|dest_image
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|name
-operator|!=
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -4584,15 +4566,6 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|dest_image
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|name
-operator|!=
-name|NULL
 argument_list|,
 name|NULL
 argument_list|)
