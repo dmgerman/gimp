@@ -851,7 +851,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * tile_pyramid_get_memsize:  * @pyramid:   a #TilePyramid  *  * Return value: size of memory allocated for the @pyramid  **/
+comment|/**  * tile_pyramid_get_memsize:  * @pyramid: a #TilePyramid  *  * Return value: size of memory allocated for the @pyramid  **/
 end_comment
 
 begin_function
