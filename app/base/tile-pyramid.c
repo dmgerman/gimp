@@ -921,10 +921,6 @@ block|}
 end_function
 
 begin_comment
-comment|/*  private functions  */
-end_comment
-
-begin_comment
 comment|/* This function make sure that levels are allocated up to the level  * it returns. The return value may be smaller than the level that  * was actually requested.  */
 end_comment
 
@@ -1118,7 +1114,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This method is used to validate a pyramid tile from the base level.  * It needs to pre-multiply the alpha channel because upper levels are  * pre-multiplied.  */
+comment|/* This method is used to validate a pyramid tile from four tiles on  * the base level.  It needs to pre-multiply the alpha channel because  * upper levels are pre-multiplied.  */
 end_comment
 
 begin_function
@@ -1372,7 +1368,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Average the src tile to one quarter of the destination tile.  * The source tile doesn't have pre-multiplied alpha, but the  * destination tile does.  */
+comment|/* Average the src tile to one quarter of the destination tile.  The  * source tile doesn't have pre-multiplied alpha, but the destination  * tile does.  */
 end_comment
 
 begin_function
