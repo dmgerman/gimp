@@ -258,6 +258,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-draw.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-filter.h"
 end_include
 
@@ -317,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c6a4c10103
+DECL|enum|__anon287b67e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c6a4c10203
+DECL|enum|__anon287b67e60203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5485,7 +5491,7 @@ decl_stmt|;
 name|gboolean
 name|center_vertically
 decl_stmt|;
-name|gimp_display_shell_get_scaled_image_size
+name|gimp_display_shell_draw_get_scaled_image_size
 argument_list|(
 name|shell
 argument_list|,

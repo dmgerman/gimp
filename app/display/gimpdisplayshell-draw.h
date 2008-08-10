@@ -18,6 +18,26 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_display_shell_draw_get_scaled_image_size
+parameter_list|(
+specifier|const
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gint
+modifier|*
+name|w
+parameter_list|,
+name|gint
+modifier|*
+name|h
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_draw_guide
 parameter_list|(
 specifier|const
