@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b644f6c0103
+DECL|enum|__anon28c6a4c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -330,7 +330,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b644f6c0203
+DECL|enum|__anon28c6a4c10203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5005,7 +5005,7 @@ name|shell
 argument_list|)
 expr_stmt|;
 comment|/* after connecting to the image we want to center it */
-name|gimp_display_shell_center_image_on_next_size_allocate
+name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
 argument_list|)
@@ -5513,7 +5513,7 @@ name|shell
 operator|->
 name|disp_height
 expr_stmt|;
-name|gimp_display_shell_center_image
+name|gimp_display_shell_scroll_center_image
 argument_list|(
 name|shell
 argument_list|,

@@ -2017,7 +2017,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_center_image_on_next_size_allocate
+name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
 argument_list|)
