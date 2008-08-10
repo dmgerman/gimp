@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

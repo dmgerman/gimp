@@ -1780,7 +1780,7 @@ operator|->
 name|dot_for_dot
 condition|)
 block|{
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)
@@ -2558,7 +2558,7 @@ operator|->
 name|dot_for_dot
 condition|)
 block|{
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)

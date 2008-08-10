@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fafbfa0108
+DECL|struct|__anon2b68a1e60108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -250,13 +250,13 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_setup:  * @shell: the #GimpDisplayShell  *  * Prepares the display for drawing the image at current scale and offset.  * This preparation involves, for example, setting up scrollbars and rulers.  **/
+comment|/**  * gimp_display_shell_update_scrollbars_and_rulers:  * @shell: the #GimpDisplayShell  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_setup (GimpDisplayShell * shell)
-name|gimp_display_shell_scale_setup
+DECL|function|gimp_display_shell_update_scrollbars_and_rulers (GimpDisplayShell * shell)
+name|gimp_display_shell_update_scrollbars_and_rulers
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -1784,7 +1784,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)

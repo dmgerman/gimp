@@ -1198,7 +1198,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)

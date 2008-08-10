@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b67e60103
+DECL|enum|__anon27c210e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287b67e60203
+DECL|enum|__anon27c210e60203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5162,7 +5162,7 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)
@@ -5352,7 +5352,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)
@@ -6010,7 +6010,7 @@ name|unit
 operator|=
 name|unit
 expr_stmt|;
-name|gimp_display_shell_scale_setup
+name|gimp_display_shell_update_scrollbars_and_rulers
 argument_list|(
 name|shell
 argument_list|)
