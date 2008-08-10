@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3493e20103
+DECL|enum|__anon2a95f8de0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3493e20203
+DECL|enum|__anon2a95f8de0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3493e20303
+DECL|enum|__anon2a95f8de0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -6425,7 +6425,7 @@ name|w2
 decl_stmt|,
 name|h2
 decl_stmt|;
-name|gimp_display_shell_get_scaled_viewport
+name|gimp_display_shell_scroll_get_scaled_viewport
 argument_list|(
 name|shell
 argument_list|,
