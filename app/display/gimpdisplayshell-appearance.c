@@ -421,9 +421,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_fullscreen (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_fullscreen (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_fullscreen
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -557,9 +558,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_menubar (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_menubar (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_menubar
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -769,9 +771,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_rulers (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_rulers (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_rulers
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1032,9 +1035,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_scrollbars (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_scrollbars (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_scrollbars
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1150,9 +1154,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_statusbar (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_statusbar (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_statusbar
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1264,9 +1269,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_selection (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_selection (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_selection
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1378,9 +1384,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_layer (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_layer (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_layer
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1439,9 +1446,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_transform (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_transform (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_transform
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1566,9 +1574,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_guides (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_guides (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_guides
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1696,9 +1705,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_grid (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_grid (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_grid
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1826,9 +1836,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_show_sample_points (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_show_sample_points (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_show_sample_points
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1930,9 +1941,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_snap_to_grid (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_snap_to_grid (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_snap_to_grid
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2031,9 +2043,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_snap_to_guides (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_snap_to_guides (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_snap_to_guides
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2132,9 +2145,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_snap_to_canvas (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_snap_to_canvas (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_snap_to_canvas
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2233,9 +2247,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_display_shell_get_snap_to_vectors (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_get_snap_to_vectors (const GimpDisplayShell * shell)
 name|gimp_display_shell_get_snap_to_vectors
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2462,9 +2477,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_padding (GimpDisplayShell * shell,GimpCanvasPaddingMode * padding_mode,GimpRGB * padding_color)
+DECL|function|gimp_display_shell_get_padding (const GimpDisplayShell * shell,GimpCanvasPaddingMode * padding_mode,GimpRGB * padding_color)
 name|gimp_display_shell_get_padding
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell

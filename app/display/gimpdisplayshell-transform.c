@@ -75,9 +75,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_coordinate (GimpDisplayShell * shell,GimpCoords * image_coords,GimpCoords * display_coords)
+DECL|function|gimp_display_shell_transform_coordinate (const GimpDisplayShell * shell,GimpCoords * image_coords,GimpCoords * display_coords)
 name|gimp_display_shell_transform_coordinate
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -183,9 +184,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_coordinate (GimpDisplayShell * shell,GimpCoords * display_coords,GimpCoords * image_coords)
+DECL|function|gimp_display_shell_untransform_coordinate (const GimpDisplayShell * shell,GimpCoords * display_coords,GimpCoords * image_coords)
 name|gimp_display_shell_untransform_coordinate
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -285,9 +287,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_xy (GimpDisplayShell * shell,gdouble x,gdouble y,gint * nx,gint * ny,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_xy (const GimpDisplayShell * shell,gdouble x,gdouble y,gint * nx,gint * ny,gboolean use_offsets)
 name|gimp_display_shell_transform_xy
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -484,9 +487,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_xy (GimpDisplayShell * shell,gint x,gint y,gint * nx,gint * ny,gboolean round,gboolean use_offsets)
+DECL|function|gimp_display_shell_untransform_xy (const GimpDisplayShell * shell,gint x,gint y,gint * nx,gint * ny,gboolean round,gboolean use_offsets)
 name|gimp_display_shell_untransform_xy
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -709,9 +713,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_xy_f (GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_xy_f (const GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
 name|gimp_display_shell_transform_xy_f
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -855,9 +860,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_xy_f (GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
+DECL|function|gimp_display_shell_untransform_xy_f (const GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
 name|gimp_display_shell_untransform_xy_f
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1003,9 +1009,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_points (GimpDisplayShell * shell,const GimpVector2 * points,GdkPoint * coords,gint n_points,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_points (const GimpDisplayShell * shell,const GimpVector2 * points,GdkPoint * coords,gint n_points,gboolean use_offsets)
 name|gimp_display_shell_transform_points
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1213,9 +1220,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_coords (GimpDisplayShell * shell,const GimpCoords * image_coords,GdkPoint * disp_coords,gint n_coords,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_coords (const GimpDisplayShell * shell,const GimpCoords * image_coords,GdkPoint * disp_coords,gint n_coords,gboolean use_offsets)
 name|gimp_display_shell_transform_coords
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1423,9 +1431,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_segments (GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_segments (const GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs,gboolean use_offsets)
 name|gimp_display_shell_transform_segments
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1725,9 +1734,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_viewport (GimpDisplayShell * shell,gint * x,gint * y,gint * width,gint * height)
+DECL|function|gimp_display_shell_untransform_viewport (const GimpDisplayShell * shell,gint * x,gint * y,gint * width,gint * height)
 name|gimp_display_shell_untransform_viewport
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell

@@ -20,6 +20,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_guide
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -38,6 +39,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_guides
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -94,6 +96,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_sample_point
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -112,6 +115,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_sample_points
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -123,6 +127,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_vector
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -138,6 +143,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_vectors
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -149,6 +155,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_cursor
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -160,6 +167,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_draw_area
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell

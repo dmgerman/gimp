@@ -20,6 +20,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_coordinate
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -39,6 +40,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_coordinate
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -58,6 +60,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_xy
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -86,6 +89,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_xy
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -117,6 +121,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_xy_f
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -145,6 +150,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_xy_f
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -173,6 +179,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_points
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -199,6 +206,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_coords
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -225,6 +233,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_transform_segments
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -251,6 +260,7 @@ begin_function_decl
 name|void
 name|gimp_display_shell_untransform_viewport
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell

@@ -206,9 +206,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_guide (GimpDisplayShell * shell,GimpGuide * guide,gboolean active)
+DECL|function|gimp_display_shell_draw_guide (const GimpDisplayShell * shell,GimpGuide * guide,gboolean active)
 name|gimp_display_shell_draw_guide
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -389,9 +390,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_guides (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_draw_guides (const GimpDisplayShell * shell)
 name|gimp_display_shell_draw_guides
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1435,9 +1437,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_sample_point (GimpDisplayShell * shell,GimpSamplePoint * sample_point,gboolean active)
+DECL|function|gimp_display_shell_draw_sample_point (const GimpDisplayShell * shell,GimpSamplePoint * sample_point,gboolean active)
 name|gimp_display_shell_draw_sample_point
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1779,9 +1782,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_sample_points (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_draw_sample_points (const GimpDisplayShell * shell)
 name|gimp_display_shell_draw_sample_points
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1854,9 +1858,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_vector (GimpDisplayShell * shell,GimpVectors * vectors)
+DECL|function|gimp_display_shell_draw_vector (const GimpDisplayShell * shell,GimpVectors * vectors)
 name|gimp_display_shell_draw_vector
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2009,9 +2014,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_vectors (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_draw_vectors (const GimpDisplayShell * shell)
 name|gimp_display_shell_draw_vectors
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2099,9 +2105,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_cursor (GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_draw_cursor (const GimpDisplayShell * shell)
 name|gimp_display_shell_draw_cursor
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2144,9 +2151,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_area (GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
+DECL|function|gimp_display_shell_draw_area (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
 name|gimp_display_shell_draw_area
 parameter_list|(
+specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
