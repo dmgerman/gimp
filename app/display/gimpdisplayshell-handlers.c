@@ -2045,17 +2045,9 @@ argument_list|,
 name|previous_origin_y
 argument_list|)
 decl_stmt|;
-comment|/* Note that we can't use gimp_display_shell_scroll() here        * because that would expose the image twice, causing unwanted        * flicker.        */
-name|gimp_display_shell_scale_by_values
+name|gimp_display_shell_scroll_set_offset
 argument_list|(
 name|shell
-argument_list|,
-name|gimp_zoom_model_get_factor
-argument_list|(
-name|shell
-operator|->
-name|zoom
-argument_list|)
 argument_list|,
 name|shell
 operator|->
@@ -2068,8 +2060,6 @@ operator|->
 name|offset_y
 operator|+
 name|scaled_previous_origin_y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
