@@ -842,6 +842,13 @@ operator|!
 name|shell
 operator|->
 name|display
+operator|||
+operator|!
+name|shell
+operator|->
+name|display
+operator|->
+name|image
 condition|)
 return|return;
 name|target_offset_x

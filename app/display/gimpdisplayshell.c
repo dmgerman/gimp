@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c210e60103
+DECL|enum|__anon27ed060f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c210e60203
+DECL|enum|__anon27ed060f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7787,6 +7787,12 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|)
+expr_stmt|;
+comment|/* A wrap always means that we should center the image too */
+name|gimp_display_shell_scroll_center_image_on_next_size_allocate
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
