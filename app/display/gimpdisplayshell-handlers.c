@@ -2045,7 +2045,7 @@ argument_list|,
 name|previous_origin_y
 argument_list|)
 decl_stmt|;
-comment|/* Note that we can't use gimp_display_shell_scroll_private() here        * because that would expose the image twice, causing unwanted        * flicker.        */
+comment|/* Note that we can't use gimp_display_shell_scroll() here        * because that would expose the image twice, causing unwanted        * flicker.        */
 name|gimp_display_shell_scale_by_values
 argument_list|(
 name|shell

@@ -258,12 +258,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -3922,7 +3916,7 @@ operator|->
 name|scrolling
 condition|)
 block|{
-name|gimp_display_shell_scroll_private
+name|gimp_display_shell_scroll
 argument_list|(
 name|shell
 argument_list|,
@@ -5831,7 +5825,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_scroll_private
+name|gimp_display_shell_scroll
 argument_list|(
 name|shell
 argument_list|,
@@ -5865,7 +5859,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_scroll_private
+name|gimp_display_shell_scroll
 argument_list|(
 name|shell
 argument_list|,

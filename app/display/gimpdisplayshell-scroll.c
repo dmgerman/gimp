@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -189,7 +183,7 @@ name|shell
 operator|->
 name|offset_y
 expr_stmt|;
-name|gimp_display_shell_scroll_private
+name|gimp_display_shell_scroll
 argument_list|(
 name|shell
 argument_list|,
@@ -203,8 +197,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scroll_private (GimpDisplayShell * shell,gint x_offset,gint y_offset)
-name|gimp_display_shell_scroll_private
+DECL|function|gimp_display_shell_scroll (GimpDisplayShell * shell,gint x_offset,gint y_offset)
+name|gimp_display_shell_scroll
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -818,7 +812,7 @@ operator|/
 literal|2
 expr_stmt|;
 block|}
-comment|/* Note that we can't use gimp_display_shell_scroll_private() here    * because that would expose the image twice, causing unwanted    * flicker.    */
+comment|/* Note that we can't use gimp_display_shell_scroll() here    * because that would expose the image twice, causing unwanted    * flicker.    */
 name|gimp_display_shell_scale_by_values
 argument_list|(
 name|shell

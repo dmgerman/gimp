@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-scroll.h"
 end_include
 
@@ -106,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c516730108
+DECL|struct|__anon2c6ed5a50108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -487,7 +481,7 @@ name|time
 operator|+=
 name|AUTOSCROLL_DT
 expr_stmt|;
-name|gimp_display_shell_scroll_private
+name|gimp_display_shell_scroll
 argument_list|(
 name|shell
 argument_list|,

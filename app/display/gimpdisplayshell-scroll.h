@@ -35,6 +35,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_display_shell_scroll
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gint
+name|x_offset
+parameter_list|,
+name|gint
+name|y_offset
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_scroll_clamp_offsets
 parameter_list|(
 name|GimpDisplayShell

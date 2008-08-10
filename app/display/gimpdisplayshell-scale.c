@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -149,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f810e10108
+DECL|struct|__anon28c409970108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
