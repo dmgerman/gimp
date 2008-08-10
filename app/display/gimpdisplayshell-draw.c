@@ -2192,7 +2192,7 @@ operator|->
 name|image
 condition|)
 return|return;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -2448,7 +2448,7 @@ argument_list|,
 name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_get_disp_offset
+name|gimp_display_shell_scroll_get_disp_offset
 argument_list|(
 name|shell
 argument_list|,

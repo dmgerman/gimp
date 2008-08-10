@@ -151,7 +151,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -233,7 +233,7 @@ operator|=
 operator|*
 name|display_coords
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -431,7 +431,7 @@ name|shell
 operator|->
 name|y_dest_inc
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -591,7 +591,7 @@ name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -807,7 +807,7 @@ name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -953,7 +953,7 @@ name|offset_y
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1150,7 +1150,7 @@ name|shell
 operator|->
 name|y_dest_inc
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1360,7 +1360,7 @@ name|shell
 operator|->
 name|y_dest_inc
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1632,7 +1632,7 @@ name|shell
 operator|->
 name|y_dest_inc
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,

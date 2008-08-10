@@ -5938,7 +5938,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_display_shell_setup_hscrollbar_with_value
+name|gimp_display_shell_scroll_setup_hscrollbar
 argument_list|(
 name|shell
 argument_list|,
@@ -6012,7 +6012,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_display_shell_setup_vscrollbar_with_value
+name|gimp_display_shell_scroll_setup_vscrollbar
 argument_list|(
 name|shell
 argument_list|,

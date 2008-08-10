@@ -2119,7 +2119,7 @@ name|editor
 operator|->
 name|shell
 decl_stmt|;
-name|gimp_display_shell_center_around_image_coordinate
+name|gimp_display_shell_scroll_center_image_coordinate
 argument_list|(
 name|shell
 argument_list|,
@@ -2713,7 +2713,7 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
-name|gimp_display_shell_get_viewport
+name|gimp_display_shell_scroll_get_viewport
 argument_list|(
 name|shell
 argument_list|,

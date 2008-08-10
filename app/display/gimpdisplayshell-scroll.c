@@ -102,13 +102,13 @@ value|0.5
 end_define
 
 begin_comment
-comment|/**  * gimp_display_shell_center_around_image_coordinate:  * @shell:  * @image_x:  * @image_y:  *  * Center the viewport around the passed image coordinate  *  **/
+comment|/**  * gimp_display_shell_scroll_center_image_coordinate:  * @shell:  * @image_x:  * @image_y:  *  * Center the viewport around the passed image coordinate  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_center_around_image_coordinate (GimpDisplayShell * shell,gdouble image_x,gdouble image_y)
-name|gimp_display_shell_center_around_image_coordinate
+DECL|function|gimp_display_shell_scroll_center_image_coordinate (GimpDisplayShell * shell,gdouble image_x,gdouble image_y)
+name|gimp_display_shell_scroll_center_image_coordinate
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -916,13 +916,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_scaled_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in screen coordinates, with origin at (0, 0) in  * the image  *  **/
+comment|/**  * gimp_display_shell_scroll_get_scaled_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in screen coordinates, with origin at (0, 0) in  * the image  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_scaled_viewport (const GimpDisplayShell * shell,gint * x,gint * y,gint * w,gint * h)
-name|gimp_display_shell_get_scaled_viewport
+DECL|function|gimp_display_shell_scroll_get_scaled_viewport (const GimpDisplayShell * shell,gint * x,gint * y,gint * w,gint * h)
+name|gimp_display_shell_scroll_get_scaled_viewport
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -960,7 +960,7 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1017,13 +1017,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in image coordinates  *  **/
+comment|/**  * gimp_display_shell_scroll_get_viewport:  * @shell:  * @x:  * @y:  * @w:  * @h:  *  * Gets the viewport in image coordinates  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_viewport (const GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
-name|gimp_display_shell_get_viewport
+DECL|function|gimp_display_shell_scroll_get_viewport (const GimpDisplayShell * shell,gdouble * x,gdouble * y,gdouble * w,gdouble * h)
+name|gimp_display_shell_scroll_get_viewport
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -1119,13 +1119,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_scaled_viewport_offset:  * @shell:  * @x:  * @y:  *  * Gets the scaled image offset in viewport coordinates  *  **/
+comment|/**  * gimp_display_shell_scroll_get_scaled_viewport_offset:  * @shell:  * @x:  * @y:  *  * Gets the scaled image offset in viewport coordinates  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_scaled_viewport_offset (const GimpDisplayShell * shell,gint * x,gint * y)
-name|gimp_display_shell_get_scaled_viewport_offset
+DECL|function|gimp_display_shell_scroll_get_scaled_viewport_offset (const GimpDisplayShell * shell,gint * x,gint * y)
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -1339,13 +1339,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_disp_offset:  * @shell:  * @disp_xoffset:  * @disp_yoffset:  *  * In viewport coordinates, get the offset of where to start rendering  * the scaled image.  *  **/
+comment|/**  * gimp_display_shell_scroll_get_disp_offset:  * @shell:  * @disp_xoffset:  * @disp_yoffset:  *  * In viewport coordinates, get the offset of where to start rendering  * the scaled image.  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_disp_offset (const GimpDisplayShell * shell,gint * disp_xoffset,gint * disp_yoffset)
-name|gimp_display_shell_get_disp_offset
+DECL|function|gimp_display_shell_scroll_get_disp_offset (const GimpDisplayShell * shell,gint * disp_xoffset,gint * disp_yoffset)
+name|gimp_display_shell_scroll_get_disp_offset
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -1437,13 +1437,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_get_render_start_offset:  * @shell:  * @offset_x:  * @offset_y:  *  * Get the offset into the scaled image that we should start render  * from  *  **/
+comment|/**  * gimp_display_shell_scroll_get_render_start_offset:  * @shell:  * @offset_x:  * @offset_y:  *  * Get the offset into the scaled image that we should start render  * from  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_get_render_start_offset (const GimpDisplayShell * shell,gint * offset_x,gint * offset_y)
-name|gimp_display_shell_get_render_start_offset
+DECL|function|gimp_display_shell_scroll_get_render_start_offset (const GimpDisplayShell * shell,gint * offset_x,gint * offset_y)
+name|gimp_display_shell_scroll_get_render_start_offset
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
@@ -1503,13 +1503,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_setup_hscrollbar_with_value:  * @shell:  * @value:  *  * Setup the limits of the horizontal scrollbar  *  **/
+comment|/**  * gimp_display_shell_scroll_setup_hscrollbar:  * @shell:  * @value:  *  * Setup the limits of the horizontal scrollbar  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_setup_hscrollbar_with_value (GimpDisplayShell * shell,gdouble value)
-name|gimp_display_shell_setup_hscrollbar_with_value
+DECL|function|gimp_display_shell_scroll_setup_hscrollbar (GimpDisplayShell * shell,gdouble value)
+name|gimp_display_shell_scroll_setup_hscrollbar
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -1666,13 +1666,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_setup_vscrollbar_with_value:  * @shell:  * @value:  *  * Setup the limits of the vertical scrollbar  *  **/
+comment|/**  * gimp_display_shell_scroll_setup_vscrollbar:  * @shell:  * @value:  *  * Setup the limits of the vertical scrollbar  *  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_setup_vscrollbar_with_value (GimpDisplayShell * shell,gdouble value)
-name|gimp_display_shell_setup_vscrollbar_with_value
+DECL|function|gimp_display_shell_scroll_setup_vscrollbar (GimpDisplayShell * shell,gdouble value)
+name|gimp_display_shell_scroll_setup_vscrollbar
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

@@ -834,7 +834,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_get_render_start_offset
+name|gimp_display_shell_scroll_get_render_start_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1146,7 +1146,7 @@ name|offset_x
 decl_stmt|,
 name|offset_y
 decl_stmt|;
-name|gimp_display_shell_get_disp_offset
+name|gimp_display_shell_scroll_get_disp_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1157,7 +1157,7 @@ operator|&
 name|disp_yoffset
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_get_render_start_offset
+name|gimp_display_shell_scroll_get_render_start_offset
 argument_list|(
 name|shell
 argument_list|,
@@ -1270,7 +1270,7 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
-name|gimp_display_shell_get_render_start_offset
+name|gimp_display_shell_scroll_get_render_start_offset
 argument_list|(
 name|shell
 argument_list|,

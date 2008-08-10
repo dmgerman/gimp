@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e9c88d0108
+DECL|struct|__anon28f810e10108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -402,7 +402,7 @@ name|disp_width
 operator|/
 literal|2
 expr_stmt|;
-name|gimp_display_shell_setup_hscrollbar_with_value
+name|gimp_display_shell_scroll_setup_hscrollbar
 argument_list|(
 name|shell
 argument_list|,
@@ -451,7 +451,7 @@ name|disp_height
 operator|/
 literal|2
 expr_stmt|;
-name|gimp_display_shell_setup_vscrollbar_with_value
+name|gimp_display_shell_scroll_setup_vscrollbar
 argument_list|(
 name|shell
 argument_list|,
@@ -606,7 +606,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/* Adjust due to scrolling */
-name|gimp_display_shell_get_scaled_viewport_offset
+name|gimp_display_shell_scroll_get_scaled_viewport_offset
 argument_list|(
 name|shell
 argument_list|,
