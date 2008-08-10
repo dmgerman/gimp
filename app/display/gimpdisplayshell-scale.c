@@ -116,7 +116,7 @@ DECL|macro|SCALE_TIMEOUT
 define|#
 directive|define
 name|SCALE_TIMEOUT
-value|1
+value|2
 end_define
 
 begin_define
@@ -143,7 +143,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68a1e60108
+DECL|struct|__anon2ac4cdaa0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1533,29 +1533,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_by_values:  * @shell:         the #GimpDisplayShell  * @scale:         the new scale  * @offset_x:      the new X offset  * @offset_y:      the new Y offset  * @resize_window: whether the display window should be resized  *  * Directly sets the image scale and image offsets used by the display. If  * @resize_window is %TRUE then the display window is resized to better  * accomodate the image, see gimp_display_shell_shrink_wrap().  **/
+comment|/**  * gimp_display_shell_scale_handle_zoom_revert:  * @shell:  *  * Handle the updating of the Revert Zoom variables.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale_by_values (GimpDisplayShell * shell,gdouble scale,gint offset_x,gint offset_y,gboolean resize_window)
-name|gimp_display_shell_scale_by_values
+DECL|function|gimp_display_shell_scale_handle_zoom_revert (GimpDisplayShell * shell)
+name|gimp_display_shell_scale_handle_zoom_revert
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|gdouble
-name|scale
-parameter_list|,
-name|gint
-name|offset_x
-parameter_list|,
-name|gint
-name|offset_y
-parameter_list|,
-name|gboolean
-name|resize_window
 parameter_list|)
 block|{
 name|guint
@@ -1569,35 +1557,6 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Abort early if the values are all setup already. We don't    *  want to inadvertently resize the window (bug #164281).    */
-if|if
-condition|(
-name|SCALE_EQUALS
-argument_list|(
-name|gimp_zoom_model_get_factor
-argument_list|(
-name|shell
-operator|->
-name|zoom
-argument_list|)
-argument_list|,
-name|scale
-argument_list|)
-operator|&&
-name|shell
-operator|->
-name|offset_x
-operator|==
-name|offset_x
-operator|&&
-name|shell
-operator|->
-name|offset_y
-operator|==
-name|offset_y
-condition|)
-return|return;
-comment|/* remember the current scale and offsets to allow reverting the scaling */
 name|now
 operator|=
 name|time
@@ -1612,7 +1571,7 @@ operator|-
 name|shell
 operator|->
 name|last_scale_time
-operator|>
+operator|>=
 name|SCALE_TIMEOUT
 condition|)
 block|{
@@ -1649,6 +1608,76 @@ operator|->
 name|last_scale_time
 operator|=
 name|now
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_shell_scale_by_values:  * @shell:         the #GimpDisplayShell  * @scale:         the new scale  * @offset_x:      the new X offset  * @offset_y:      the new Y offset  * @resize_window: whether the display window should be resized  *  * Directly sets the image scale and image offsets used by the display. If  * @resize_window is %TRUE then the display window is resized to better  * accomodate the image, see gimp_display_shell_shrink_wrap().  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_display_shell_scale_by_values (GimpDisplayShell * shell,gdouble scale,gint offset_x,gint offset_y,gboolean resize_window)
+name|gimp_display_shell_scale_by_values
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|scale
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
+parameter_list|,
+name|gboolean
+name|resize_window
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  Abort early if the values are all setup already. We don't    *  want to inadvertently resize the window (bug #164281).    */
+if|if
+condition|(
+name|SCALE_EQUALS
+argument_list|(
+name|gimp_zoom_model_get_factor
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|)
+argument_list|,
+name|scale
+argument_list|)
+operator|&&
+name|shell
+operator|->
+name|offset_x
+operator|==
+name|offset_x
+operator|&&
+name|shell
+operator|->
+name|offset_y
+operator|==
+name|offset_y
+condition|)
+return|return;
+name|gimp_display_shell_scale_handle_zoom_revert
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 comment|/* freeze the active tool */
 name|gimp_display_shell_pause
