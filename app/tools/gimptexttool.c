@@ -2545,9 +2545,6 @@ expr_stmt|;
 comment|/* we need to redraw the rectangle if it is visible and the shape of      the layer has changed, because of an undo for example. */
 if|if
 condition|(
-operator|(
-literal|0
-operator|==
 name|strcmp
 argument_list|(
 name|pspec
@@ -2555,12 +2552,10 @@ operator|->
 name|name
 argument_list|,
 literal|"box-width"
-argument_list|)
-operator|)
-operator|||
-operator|(
-literal|0
 operator|==
+literal|0
+argument_list|)
+operator|||
 name|strcmp
 argument_list|(
 name|pspec
@@ -2568,16 +2563,15 @@ operator|->
 name|name
 argument_list|,
 literal|"box-height"
+operator|==
+literal|0
 argument_list|)
-operator|)
 operator|||
-operator|(
 name|text
 operator|->
 name|box_mode
 operator|==
 name|GIMP_TEXT_BOX_DYNAMIC
-operator|)
 condition|)
 block|{
 name|GimpRectangleTool
