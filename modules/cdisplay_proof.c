@@ -19,33 +19,11 @@ begin_comment
 comment|/* lcms.h uses the "inline" keyword */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS_LCMS_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<lcms/lcms.h>
-end_include
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_include
 include|#
 directive|include
 file|<lcms.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -204,7 +182,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be038f70103
+DECL|enum|__anon2888678f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

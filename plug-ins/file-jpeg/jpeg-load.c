@@ -72,33 +72,11 @@ directive|ifdef
 name|HAVE_LCMS
 end_ifdef
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS_LCMS_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<lcms/lcms.h>
-end_include
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_include
 include|#
 directive|include
 file|<lcms.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_endif
 endif|#
@@ -1899,7 +1877,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1f451d0108
+DECL|struct|__anon273adfe40108
 block|{
 DECL|member|pub
 name|struct

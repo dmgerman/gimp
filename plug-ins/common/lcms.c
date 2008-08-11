@@ -25,33 +25,11 @@ begin_comment
 comment|/* lcms.h uses the "inline" keyword */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS_LCMS_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<lcms/lcms.h>
-end_include
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_include
 include|#
 directive|include
 file|<lcms.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -129,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298fb3110103
+DECL|enum|__anon292ff10a0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -151,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298fb3110203
+DECL|enum|__anon292ff10a0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -180,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298fb3110308
+DECL|struct|__anon292ff10a0308
 block|{
 DECL|member|name
 specifier|const
@@ -202,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298fb3110408
+DECL|struct|__anon292ff10a0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent

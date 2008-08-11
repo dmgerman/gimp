@@ -50,33 +50,11 @@ endif|#
 directive|endif
 end_endif
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|HAVE_LCMS_LCMS_H
-end_ifdef
-
-begin_include
-include|#
-directive|include
-file|<lcms/lcms.h>
-end_include
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_include
 include|#
 directive|include
 file|<lcms.h>
 end_include
-
-begin_endif
-endif|#
-directive|endif
-end_endif
 
 begin_include
 include|#
@@ -1844,7 +1822,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28bd25e20108
+DECL|struct|__anon28ef3f8f0108
 block|{
 DECL|member|data
 name|guchar
@@ -1863,7 +1841,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28bd25e20203
+DECL|enum|__anon28ef3f8f0203
 block|{
 DECL|enumerator|openReadSpool
 name|openReadSpool
