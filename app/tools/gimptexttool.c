@@ -5448,7 +5448,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-operator|(
 name|display
 operator|->
 name|image
@@ -5456,7 +5455,6 @@ operator|==
 name|item
 operator|->
 name|image
-operator|)
 argument_list|)
 expr_stmt|;
 name|width
