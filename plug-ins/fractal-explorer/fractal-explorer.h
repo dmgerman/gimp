@@ -73,11 +73,19 @@ value|256
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-fractalexplorer"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"fractal-explorer"
 end_define
 
 begin_define
@@ -98,7 +106,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277047a70103
+DECL|enum|__anon2bad156a0103
 block|{
 DECL|enumerator|SINUS
 name|SINUS
@@ -114,7 +122,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277047a70203
+DECL|enum|__anon2bad156a0203
 block|{
 DECL|enumerator|TYPE_MANDELBROT
 name|TYPE_MANDELBROT
@@ -156,7 +164,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277047a70308
+DECL|struct|__anon2bad156a0308
 block|{
 DECL|member|fractaltype
 name|gint
@@ -255,7 +263,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277047a70408
+DECL|struct|__anon2bad156a0408
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -284,7 +292,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277047a70508
+DECL|struct|__anon2bad156a0508
 block|{
 DECL|member|r
 DECL|member|g
@@ -327,7 +335,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277047a70608
+DECL|struct|__anon2bad156a0608
 block|{
 DECL|member|text
 name|GtkWidget

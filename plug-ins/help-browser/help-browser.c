@@ -69,6 +69,14 @@ name|GIMP_HELP_BROWSER_TEMP_EXT_PROC
 value|"extension-gimp-help-browser-temp"
 end_define
 
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"help-browser"
+end_define
+
 begin_comment
 comment|/*  forward declarations  */
 end_comment
@@ -486,7 +494,9 @@ name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 name|browser_dialog_open
-argument_list|()
+argument_list|(
+name|PLUG_IN_BINARY
+argument_list|)
 expr_stmt|;
 name|temp_proc_install
 argument_list|()

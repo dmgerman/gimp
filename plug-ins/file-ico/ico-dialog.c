@@ -141,7 +141,7 @@ argument_list|(
 literal|"Save as Windows Icon"
 argument_list|)
 argument_list|,
-literal|"ico"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,

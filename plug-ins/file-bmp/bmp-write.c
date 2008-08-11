@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae989750103
+DECL|enum|__anon2c38edc50103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ae989750208
+DECL|struct|__anon2c38edc50208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -4118,7 +4118,7 @@ argument_list|(
 literal|"Save as BMP"
 argument_list|)
 argument_list|,
-literal|"bmp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,

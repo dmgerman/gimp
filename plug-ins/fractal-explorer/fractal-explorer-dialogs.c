@@ -2026,7 +2026,7 @@ name|i
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"fractal-explorer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2166,7 +2166,7 @@ name|gimp_dialog_new
 argument_list|(
 literal|"Fractal Explorer"
 argument_list|,
-literal|"fractal-explorer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2174,7 +2174,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

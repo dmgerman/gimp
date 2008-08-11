@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcf2cd70108
+DECL|struct|__anon28fe9c4b0108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcf2cd70203
+DECL|enum|__anon28fe9c4b0203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -773,10 +773,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|browser_dialog_open (void)
+DECL|function|browser_dialog_open (const gchar * plug_in_binary)
 name|browser_dialog_open
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|plug_in_binary
 parameter_list|)
 block|{
 name|GtkWidget
@@ -832,7 +835,7 @@ block|}
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"helpbrowser"
+name|plug_in_binary
 argument_list|,
 name|TRUE
 argument_list|)
@@ -873,7 +876,7 @@ argument_list|(
 name|window
 argument_list|)
 argument_list|,
-literal|"help-browser"
+name|plug_in_binary
 argument_list|)
 expr_stmt|;
 name|gtk_window_set_default_size

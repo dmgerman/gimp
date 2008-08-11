@@ -103,6 +103,14 @@ value|"August 1998"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"depth-merge"
+end_define
+
+begin_define
 DECL|macro|PREVIEW_SIZE
 define|#
 directive|define
@@ -3718,7 +3726,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"depthmerge"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3738,7 +3746,7 @@ argument_list|(
 literal|"Depth Merge"
 argument_list|)
 argument_list|,
-literal|"depthmerge"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,

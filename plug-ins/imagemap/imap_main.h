@@ -34,8 +34,24 @@ directive|include
 file|"imap_preferences.h"
 end_include
 
+begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-imagemap"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"imagemap"
+end_define
+
 begin_typedef
-DECL|enum|__anon2b33e9b00103
+DECL|enum|__anon2b3d4bdc0103
 DECL|enumerator|NCSA
 DECL|enumerator|CERN
 DECL|enumerator|CSIM
@@ -54,7 +70,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2b33e9b00208
+DECL|struct|__anon2b3d4bdc0208
 typedef|typedef
 struct|struct
 block|{

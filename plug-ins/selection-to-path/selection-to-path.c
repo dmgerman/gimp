@@ -80,6 +80,14 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"selection-to-path"
+end_define
+
+begin_define
 DECL|macro|RESPONSE_RESET
 define|#
 directive|define
@@ -1220,7 +1228,7 @@ name|FALSE
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"sel2path"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1234,7 +1242,7 @@ argument_list|(
 literal|"Selection to Path Advanced Settings"
 argument_list|)
 argument_list|,
-literal|"sel2path"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,

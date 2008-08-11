@@ -43,10 +43,10 @@ comment|/* Defines */
 end_comment
 
 begin_define
-DECL|macro|PLUG_IN_NAME
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 value|"plug-in-gimpressionist"
 end_define
 
@@ -56,6 +56,14 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v1.0, November 2003"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"gimpressionist"
 end_define
 
 begin_define
@@ -154,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7963de0108
+DECL|struct|__anon2767131c0108
 block|{
 DECL|member|orient_num
 name|int

@@ -74,10 +74,10 @@ value|"plug_in_winsnap"
 end_define
 
 begin_define
-DECL|macro|HELP_ID
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|HELP_ID
+name|PLUG_IN_PROC
 value|"plug-in-winsnap"
 end_define
 
@@ -119,6 +119,14 @@ define|#
 directive|define
 name|PLUG_IN_VERSION
 value|"v0.70 (07/16/1999)"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"win-snap"
 end_define
 
 begin_comment
@@ -343,7 +351,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon294918310108
+DECL|struct|__anon2bd0d1e50108
 typedef|typedef
 struct|struct
 block|{
@@ -390,7 +398,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon294918310208
+DECL|struct|__anon2bd0d1e50208
 typedef|typedef
 struct|struct
 block|{
@@ -2813,7 +2821,7 @@ expr_stmt|;
 comment|/* Init GTK  */
 name|gimp_ui_init
 argument_list|(
-literal|"winsnap"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2825,7 +2833,7 @@ name|gimp_dialog_new
 argument_list|(
 name|PLUG_IN_PRINT_NAME
 argument_list|,
-literal|"winsnap"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -2833,7 +2841,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|HELP_ID
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,
@@ -3453,7 +3461,7 @@ decl_stmt|;
 comment|/* the installation of the plugin */
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -3488,7 +3496,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/File/New/Acquire"
 argument_list|)
@@ -3617,7 +3625,7 @@ expr_stmt|;
 comment|/* Get the data from last run */
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|winsnapvals
@@ -3710,7 +3718,7 @@ block|{
 comment|/* Store variable states for next run */
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|winsnapvals

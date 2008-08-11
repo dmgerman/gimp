@@ -21,6 +21,22 @@ comment|/* ================= */
 end_comment
 
 begin_define
+DECL|macro|PLUG_IN_PROC
+define|#
+directive|define
+name|PLUG_IN_PROC
+value|"plug-in-map-object"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"map-object"
+end_define
+
+begin_define
 DECL|macro|TILE_CACHE_SIZE
 define|#
 directive|define
@@ -39,7 +55,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274eaa600103
+DECL|enum|__anon27a12c3f0103
 block|{
 DECL|enumerator|POINT_LIGHT
 name|POINT_LIGHT
@@ -58,7 +74,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon274eaa600203
+DECL|enum|__anon27a12c3f0203
 block|{
 DECL|enumerator|MAP_PLANE
 name|MAP_PLANE
@@ -88,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274eaa600308
+DECL|struct|__anon27a12c3f0308
 block|{
 DECL|member|ambient_int
 name|gdouble
@@ -123,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274eaa600408
+DECL|struct|__anon27a12c3f0408
 block|{
 DECL|member|type
 name|LightType
@@ -154,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274eaa600508
+DECL|struct|__anon27a12c3f0508
 block|{
 DECL|member|viewpoint
 DECL|member|firstaxis

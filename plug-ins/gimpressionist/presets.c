@@ -3269,7 +3269,7 @@ argument_list|(
 literal|"Save Current"
 argument_list|)
 argument_list|,
-literal|"gimpressionist"
+name|PLUG_IN_BINARY
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(
@@ -3280,7 +3280,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

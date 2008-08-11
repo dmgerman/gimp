@@ -883,7 +883,7 @@ name|response
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"file-ico"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)

@@ -305,17 +305,16 @@ name|gimp_dialog_new
 argument_list|(
 name|title
 argument_list|,
-literal|"imagemap"
+name|PLUG_IN_BINARY
 argument_list|,
 name|get_dialog
 argument_list|()
 argument_list|,
 literal|0
 argument_list|,
-comment|/* gimp_standard_help_func,                                       "plug-in-imagemap", */
 name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)

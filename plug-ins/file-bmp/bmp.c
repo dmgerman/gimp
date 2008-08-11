@@ -775,7 +775,7 @@ name|TRUE
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"file-bmp"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)

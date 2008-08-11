@@ -314,7 +314,7 @@ block|,   }
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -352,7 +352,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
@@ -374,7 +374,7 @@ argument_list|()
 expr_stmt|;
 name|gimp_get_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pcvals
@@ -671,7 +671,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-name|PLUG_IN_NAME
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|pcvals

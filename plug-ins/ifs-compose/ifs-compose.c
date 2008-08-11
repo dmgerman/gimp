@@ -104,25 +104,33 @@ value|24
 end_define
 
 begin_define
-DECL|macro|IFSCOMPOSE_PARASITE
+DECL|macro|PLUG_IN_PARASITE
 define|#
 directive|define
-name|IFSCOMPOSE_PARASITE
+name|PLUG_IN_PARASITE
 value|"ifscompose-parasite"
 end_define
 
 begin_define
-DECL|macro|IFSCOMPOSE_PROC
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 value|"plug-in-ifscompose"
+end_define
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"ifs-compose"
 end_define
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2b1ff60103
+DECL|enum|__anon27c6dd4c0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -142,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b2b1ff60203
+DECL|enum|__anon27c6dd4c0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -158,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60308
+DECL|struct|__anon27c6dd4c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -180,7 +188,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2b2b1ff6040a
+DECL|union|__anon27c6dd4c040a
 block|{
 DECL|member|d
 name|gdouble
@@ -205,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60508
+DECL|struct|__anon27c6dd4c0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -235,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60608
+DECL|struct|__anon27c6dd4c0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -270,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60708
+DECL|struct|__anon27c6dd4c0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -306,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60808
+DECL|struct|__anon27c6dd4c0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -373,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60908
+DECL|struct|__anon27c6dd4c0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -522,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2b1ff60a08
+DECL|struct|__anon27c6dd4c0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -1455,7 +1463,7 @@ literal|0
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -1500,7 +1508,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Render/Nature"
 argument_list|)
@@ -1656,7 +1664,7 @@ name|drawable
 operator|->
 name|drawable_id
 argument_list|,
-name|IFSCOMPOSE_PARASITE
+name|PLUG_IN_PARASITE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1697,7 +1705,7 @@ name|length
 init|=
 name|gimp_get_data_size
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|)
 decl_stmt|;
 if|if
@@ -1720,7 +1728,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_get_data
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|data
 argument_list|)
@@ -1778,7 +1786,7 @@ name|length
 init|=
 name|gimp_get_data_size
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|)
 decl_stmt|;
 if|if
@@ -1801,7 +1809,7 @@ argument_list|)
 decl_stmt|;
 name|gimp_get_data
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|data
 argument_list|)
@@ -1923,7 +1931,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_set_data
 argument_list|(
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|str
 argument_list|,
@@ -1939,7 +1947,7 @@ name|parasite
 operator|=
 name|gimp_parasite_new
 argument_list|(
-name|IFSCOMPOSE_PARASITE
+name|PLUG_IN_PARASITE
 argument_list|,
 name|GIMP_PARASITE_PERSISTENT
 operator||
@@ -4018,7 +4026,7 @@ name|design_height
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"ifscompose"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4032,7 +4040,7 @@ argument_list|(
 literal|"IFS Fractal"
 argument_list|)
 argument_list|,
-literal|"ifscompose"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -4040,7 +4048,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|IFSCOMPOSE_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_OPEN
 argument_list|,
@@ -5882,15 +5890,15 @@ argument_list|(
 literal|"IFS Fractal Render Options"
 argument_list|)
 argument_list|,
-literal|"ifscompose"
+name|PLUG_IN_BINARY
 argument_list|,
 name|parent
 argument_list|,
 literal|0
 argument_list|,
-name|NULL
+name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CLOSE
 argument_list|,

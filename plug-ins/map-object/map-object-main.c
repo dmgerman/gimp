@@ -63,14 +63,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_define
-DECL|macro|PLUG_IN_PROC
-define|#
-directive|define
-name|PLUG_IN_PROC
-value|"plug-in-map-object"
-end_define
-
 begin_comment
 comment|/* Global variables */
 end_comment

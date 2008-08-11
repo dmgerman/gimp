@@ -20,7 +20,10 @@ begin_function_decl
 name|void
 name|browser_dialog_open
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|plug_in_binary
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__MAIN_H__
+name|__ICO_H__
 end_ifndef
 
 begin_define
-DECL|macro|__MAIN_H__
+DECL|macro|__ICO_H__
 define|#
 directive|define
-name|__MAIN_H__
+name|__ICO_H__
 end_define
 
 begin_ifdef
@@ -53,6 +53,14 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"file-ico"
+end_define
 
 begin_define
 DECL|macro|ICO_PNG_MAGIC
@@ -332,7 +340,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* __MAIN_H__ */
+comment|/* __ICO_H__ */
 end_comment
 
 end_unit

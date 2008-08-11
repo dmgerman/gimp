@@ -66,6 +66,14 @@ value|"plug-in-flame"
 end_define
 
 begin_define
+DECL|macro|PLUG_IN_BINARY
+define|#
+directive|define
+name|PLUG_IN_BINARY
+value|"flame"
+end_define
+
+begin_define
 DECL|macro|VARIATION_SAME
 define|#
 directive|define
@@ -139,7 +147,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon29ed093b0108
+DECL|struct|__anon28f5f1670108
 block|{
 DECL|member|randomize
 name|gint
@@ -2943,7 +2951,7 @@ argument_list|(
 literal|"Edit Flame"
 argument_list|)
 argument_list|,
-literal|"flame"
+name|PLUG_IN_BINARY
 argument_list|,
 name|parent
 argument_list|,
@@ -4570,7 +4578,7 @@ name|run
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"flame"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -4584,7 +4592,7 @@ argument_list|(
 literal|"Flame"
 argument_list|)
 argument_list|,
-literal|"flame"
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,

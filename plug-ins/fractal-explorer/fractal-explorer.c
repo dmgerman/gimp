@@ -115,14 +115,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_define
-DECL|macro|PLUG_IN_PROC
-define|#
-directive|define
-name|PLUG_IN_PROC
-value|"plug-in-fractalexplorer"
-end_define
-
 begin_comment
 comment|/**********************************************************************   Global variables  *********************************************************************/
 end_comment
@@ -4727,7 +4719,7 @@ argument_list|(
 literal|"Rescan for Fractals"
 argument_list|)
 argument_list|,
-literal|"fractalexplorer"
+name|PLUG_IN_BINARY
 argument_list|,
 name|gtk_widget_get_toplevel
 argument_list|(
@@ -4740,7 +4732,7 @@ name|GTK_DIALOG_DESTROY_WITH_PARENT
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|NULL
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

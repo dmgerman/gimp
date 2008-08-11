@@ -40,26 +40,26 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_define
-DECL|macro|OILIFY_PROC
+DECL|macro|PLUG_IN_PROC
 define|#
 directive|define
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 value|"plug-in-oilify"
 end_define
 
 begin_define
-DECL|macro|OILIFY_ENHANCED_PROC
+DECL|macro|PLUG_IN_ENHANCED_PROC
 define|#
 directive|define
-name|OILIFY_ENHANCED_PROC
+name|PLUG_IN_ENHANCED_PROC
 value|"plug-in-oilify-enhanced"
 end_define
 
 begin_define
-DECL|macro|OILIFY_BINARY
+DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
-name|OILIFY_BINARY
+name|PLUG_IN_BINARY
 value|"oilify"
 end_define
 
@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf027360108
+DECL|struct|__anon2bf089f70108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -398,7 +398,7 @@ block|}
 decl_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -437,14 +437,14 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_register
 argument_list|(
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|,
 literal|"<Image>/Filters/Artistic"
 argument_list|)
 expr_stmt|;
 name|gimp_install_procedure
 argument_list|(
-name|OILIFY_ENHANCED_PROC
+name|PLUG_IN_ENHANCED_PROC
 argument_list|,
 name|N_
 argument_list|(
@@ -608,7 +608,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|ovals
@@ -636,7 +636,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|)
 condition|)
 block|{
@@ -693,7 +693,7 @@ name|strcmp
 argument_list|(
 name|name
 argument_list|,
-name|OILIFY_ENHANCED_PROC
+name|PLUG_IN_ENHANCED_PROC
 argument_list|)
 condition|)
 block|{
@@ -883,7 +883,7 @@ case|:
 comment|/*  Possibly retrieve data  */
 name|gimp_get_data
 argument_list|(
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|ovals
@@ -952,7 +952,7 @@ name|GIMP_RUN_INTERACTIVE
 condition|)
 name|gimp_set_data
 argument_list|(
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|,
 operator|&
 name|ovals
@@ -3149,7 +3149,7 @@ name|MODE_RGB
 expr_stmt|;
 name|gimp_ui_init
 argument_list|(
-name|OILIFY_BINARY
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
@@ -3163,7 +3163,7 @@ argument_list|(
 literal|"Oilify"
 argument_list|)
 argument_list|,
-name|OILIFY_BINARY
+name|PLUG_IN_BINARY
 argument_list|,
 name|NULL
 argument_list|,
@@ -3171,7 +3171,7 @@ literal|0
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|OILIFY_PROC
+name|PLUG_IN_PROC
 argument_list|,
 name|GTK_STOCK_CANCEL
 argument_list|,

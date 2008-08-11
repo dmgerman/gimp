@@ -211,14 +211,6 @@ parameter_list|)
 value|((x) / _zoom_factor)
 end_define
 
-begin_define
-DECL|macro|PLUG_IN_PROC
-define|#
-directive|define
-name|PLUG_IN_PROC
-value|"plug-in-imagemap"
-end_define
-
 begin_function_decl
 specifier|static
 name|gint
@@ -5645,7 +5637,7 @@ name|menu
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
-literal|"imagemap"
+name|PLUG_IN_BINARY
 argument_list|,
 name|TRUE
 argument_list|)
@@ -5688,7 +5680,7 @@ name|dlg
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-literal|"plug-in-imagemap"
+name|PLUG_IN_PROC
 argument_list|,
 name|NULL
 argument_list|)

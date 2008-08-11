@@ -826,7 +826,7 @@ name|GIMP_RUN_WITH_LAST_VALS
 case|:
 name|gimp_ui_init
 argument_list|(
-literal|"CEL"
+name|PLUG_IN_BINARY
 argument_list|,
 name|FALSE
 argument_list|)
