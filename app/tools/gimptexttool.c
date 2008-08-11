@@ -2552,9 +2552,9 @@ operator|->
 name|name
 argument_list|,
 literal|"box-width"
+argument_list|)
 operator|==
 literal|0
-argument_list|)
 operator|||
 name|strcmp
 argument_list|(
@@ -2563,9 +2563,9 @@ operator|->
 name|name
 argument_list|,
 literal|"box-height"
+argument_list|)
 operator|==
 literal|0
-argument_list|)
 operator|||
 name|text
 operator|->
