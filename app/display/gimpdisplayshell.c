@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8bdd200103
+DECL|enum|__anon298a8f350103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8bdd200203
+DECL|enum|__anon298a8f350203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5336,30 +5336,6 @@ argument_list|(
 name|shell
 argument_list|,
 name|GIMP_SELECTION_OFF
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scale
-argument_list|(
-name|shell
-argument_list|,
-name|GIMP_ZOOM_TO
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scroll_clamp_offsets
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_update_scrollbars_and_rulers
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scaled
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_unset_cursor
