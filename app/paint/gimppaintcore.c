@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a23cffb0103
+DECL|enum|__anon2b864f770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1459,17 +1459,12 @@ decl_stmt|;
 name|TileManager
 modifier|*
 name|tiles
-decl_stmt|;
-name|tiles
-operator|=
-name|gimp_pickable_get_tiles
-argument_list|(
-name|GIMP_PICKABLE
+init|=
+name|gimp_projection_get_tiles
 argument_list|(
 name|projection
 argument_list|)
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|core
 operator|->
 name|saved_proj_tiles
