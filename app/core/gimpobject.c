@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68a9e40103
+DECL|enum|__anon279493df0103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b68a9e40203
+DECL|enum|__anon279493df0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -632,7 +632,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_set_name:  * @object: a #GimpObject  * @name: the @object's new name  *  * Sets the @object's name. Takes care of freeing the old name and  * emitting the "name_changed" signal if the old and new name differ.  **/
+comment|/**  * gimp_object_set_name:  * @object: a #GimpObject  * @name: the @object's new name  *  * Sets the @object's name. Takes care of freeing the old name and  * emitting the ::name_changed signal if the old and new name differ.  **/
 end_comment
 
 begin_function
@@ -980,7 +980,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_name_changed:  * @object: a #GimpObject  *  * Causes the "name-changed" signal to be emitted.  **/
+comment|/**  * gimp_object_name_changed:  * @object: a #GimpObject  *  * Causes the ::name-changed signal to be emitted.  **/
 end_comment
 
 begin_function
@@ -1017,7 +1017,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_object_name_free:  * @object: a #GimpObject  *  * Frees the name of @object and sets the name pointer to %NULL. Also  * takes care of the normalized name that the object might be caching.  *  * In general you should be using gimp_object_set_name() instead. But  * if you ever need to free the object name but don't want the  * "name-changed" signal to be emitted, then use this function. Never  * ever free the object name directly!  **/
+comment|/**  * gimp_object_name_free:  * @object: a #GimpObject  *  * Frees the name of @object and sets the name pointer to %NULL. Also  * takes care of the normalized name that the object might be caching.  *  * In general you should be using gimp_object_set_name() instead. But  * if you ever need to free the object name but don't want the  * ::name-changed signal to be emitted, then use this function. Never  * ever free the object name directly!  **/
 end_comment
 
 begin_function

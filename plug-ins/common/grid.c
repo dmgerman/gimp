@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbce8060108
+DECL|struct|__anon2b0ae5f90108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3672,7 +3672,7 @@ argument_list|(
 name|chain_button
 argument_list|)
 expr_stmt|;
-comment|/* connect to the 'value_changed' signal because we have to take care    * of keeping the entries in sync when the chainbutton is active    */
+comment|/* connect to the 'value-changed' signal because we have to take care    * of keeping the entries in sync when the chainbutton is active    */
 name|g_signal_connect
 argument_list|(
 name|width
@@ -4055,7 +4055,7 @@ argument_list|(
 name|chain_button
 argument_list|)
 expr_stmt|;
-comment|/* connect to the 'value_changed' and "unit_changed" signals because    * we have to take care of keeping the entries in sync when the    * chainbutton is active    */
+comment|/* connect to the 'value-changed' and "unit-changed" signals because    * we have to take care of keeping the entries in sync when the    * chainbutton is active    */
 name|g_signal_connect
 argument_list|(
 name|space
@@ -4074,7 +4074,7 @@ name|g_signal_connect
 argument_list|(
 name|space
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4506,7 +4506,7 @@ argument_list|(
 name|chain_button
 argument_list|)
 expr_stmt|;
-comment|/* connect to the 'value_changed' and "unit_changed" signals because    * we have to take care of keeping the entries in sync when the    * chainbutton is active    */
+comment|/* connect to the 'value-changed' and "unit-changed" signals because    * we have to take care of keeping the entries in sync when the    * chainbutton is active    */
 name|g_signal_connect
 argument_list|(
 name|offset
@@ -4525,7 +4525,7 @@ name|g_signal_connect
 argument_list|(
 name|offset
 argument_list|,
-literal|"unit_changed"
+literal|"unit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

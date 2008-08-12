@@ -5735,7 +5735,7 @@ name|g_signal_connect
 argument_list|(
 name|dlg
 argument_list|,
-literal|"key_release_event"
+literal|"key-release-event"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

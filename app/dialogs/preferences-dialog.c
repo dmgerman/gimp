@@ -2107,7 +2107,7 @@ name|g_signal_connect
 argument_list|(
 name|input_dialog
 argument_list|,
-literal|"enable_device"
+literal|"enable-device"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2121,7 +2121,7 @@ name|g_signal_connect
 argument_list|(
 name|input_dialog
 argument_list|,
-literal|"disable_device"
+literal|"disable-device"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -9462,7 +9462,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b0437260108
+DECL|struct|__anon2949b53d0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10629,7 +10629,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b0437260208
+DECL|struct|__anon2949b53d0208
 block|{
 DECL|member|label
 specifier|const
@@ -11789,7 +11789,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b0437260308
+DECL|struct|__anon2949b53d0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11944,7 +11944,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b0437260408
+DECL|struct|__anon2949b53d0408
 block|{
 DECL|member|tree_label
 specifier|const

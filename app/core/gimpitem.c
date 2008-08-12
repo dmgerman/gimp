@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e137fc0103
+DECL|enum|__anon2b05f9860103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e137fc0203
+DECL|enum|__anon2b05f9860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2271,7 +2271,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_rename:  * @item:     The #GimpItem to rename.  * @new_name: The new name to give the item.  * @error:    Return location for error message.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the "name_changed" signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
+comment|/**  * gimp_item_rename:  * @item:     The #GimpItem to rename.  * @new_name: The new name to give the item.  * @error:    Return location for error message.  *  * This function assigns a new name to the item, if the desired name is  * different from the name it already has, and pushes an entry onto the  * undo stack for the item's image.  If @new_name is NULL or empty, the  * default name for the item's class is used.  If the name is changed,  * the GimpObject::name-changed signal is emitted for the item.  *  * Returns: %TRUE if the @item could be renamed, %FALSE otherwise.  */
 end_comment
 
 begin_function

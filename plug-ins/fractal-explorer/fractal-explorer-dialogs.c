@@ -6139,7 +6139,7 @@ name|g_signal_connect
 argument_list|(
 name|cmap_preview
 argument_list|,
-literal|"size_allocate"
+literal|"size-allocate"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

@@ -4388,7 +4388,7 @@ name|g_signal_connect
 argument_list|(
 name|view
 argument_list|,
-literal|"row_activated"
+literal|"row-activated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

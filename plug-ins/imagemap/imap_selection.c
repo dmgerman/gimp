@@ -2274,7 +2274,7 @@ name|g_signal_connect
 argument_list|(
 name|list
 argument_list|,
-literal|"drag_data_received"
+literal|"drag-data-received"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
