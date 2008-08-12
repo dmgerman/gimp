@@ -1795,12 +1795,18 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+comment|/* Only do the background histogram if the histogram is visible.        * This is a workaround for the fact that recalculating the        * histogram is expensive and that it is only validated when it        * is shown. So don't slow down painting by doing something that        * is not even seen by the user.        */
 if|if
 condition|(
 operator|!
 name|editor
 operator|->
 name|bg_histogram
+operator|&&
+name|GTK_WIDGET_DRAWABLE
+argument_list|(
+name|editor
+argument_list|)
 condition|)
 block|{
 if|if
