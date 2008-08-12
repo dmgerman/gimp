@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b5edb90108
+DECL|struct|__anon2c47dff50108
 block|{
 DECL|member|name
 name|gchar
@@ -146,7 +146,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b5edb90203
+DECL|enum|__anon2c47dff50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
