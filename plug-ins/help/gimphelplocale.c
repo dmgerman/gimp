@@ -281,7 +281,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292e643c0103
+DECL|enum|__anon288c1c910103
 block|{
 DECL|enumerator|LOCALE_START
 name|LOCALE_START
@@ -306,7 +306,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e643c0208
+DECL|struct|__anon288c1c910208
 block|{
 DECL|member|file
 name|GFile
@@ -817,9 +817,31 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|info
 condition|)
 block|{
+name|locale_set_error
+argument_list|(
+name|error
+argument_list|,
+name|_
+argument_list|(
+literal|"Could not open '%s' for reading: %s"
+argument_list|)
+argument_list|,
+name|file
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
 name|size
 operator|=
 name|g_file_info_get_size
@@ -832,7 +854,6 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|stream
 operator|=
