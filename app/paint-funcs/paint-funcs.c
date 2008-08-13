@@ -6072,6 +6072,14 @@ name|opacity
 decl_stmt|;
 name|ratio
 operator|=
+name|ratio
+operator|/
+literal|255
+operator|*
+name|src2_alpha
+expr_stmt|;
+name|ratio
+operator|=
 name|INT_DIV
 argument_list|(
 name|ratio
