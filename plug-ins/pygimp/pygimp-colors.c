@@ -3327,6 +3327,7 @@ decl_stmt|;
 name|reprfunc
 name|repr
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|prefix
@@ -5969,6 +5970,7 @@ decl_stmt|;
 name|reprfunc
 name|repr
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|prefix
@@ -8577,6 +8579,7 @@ decl_stmt|;
 name|reprfunc
 name|repr
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|prefix
@@ -11242,6 +11245,7 @@ decl_stmt|;
 name|reprfunc
 name|repr
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|prefix
