@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a8f350103
+DECL|enum|__anon2c8406300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a8f350203
+DECL|enum|__anon2c8406300203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2913,6 +2913,55 @@ return|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_display_shell_zoom_button_callback (GimpDisplayShell * shell,GtkWidget * zoom_button)
+name|gimp_display_shell_zoom_button_callback
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|zoom_button
+parameter_list|)
+block|{
+name|shell
+operator|->
+name|zoom_on_resize
+operator|=
+name|gtk_toggle_button_get_active
+argument_list|(
+name|GTK_TOGGLE_BUTTON
+argument_list|(
+name|zoom_button
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|zoom_on_resize
+operator|&&
+name|gimp_display_shell_scale_image_is_within_viewport
+argument_list|(
+name|shell
+argument_list|)
+condition|)
+block|{
+comment|/* Implicitly make a View -> Fit Image in Window */
+name|gimp_display_shell_scale_fit_in
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -4381,7 +4430,7 @@ argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_ZOOM_FOLLOW_BUTTON
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_swapped
 argument_list|(
 name|shell
 operator|->
@@ -4391,13 +4440,10 @@ literal|"toggled"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_toggle_button_update
+name|gimp_display_shell_zoom_button_callback
 argument_list|)
 argument_list|,
-operator|&
 name|shell
-operator|->
-name|zoom_on_resize
 argument_list|)
 expr_stmt|;
 comment|/*  create the contents of the lower_hbox  *********************************/
