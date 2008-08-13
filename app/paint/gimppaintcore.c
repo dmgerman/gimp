@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppaintcore.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b864f770103
+DECL|enum|__anon2bb0fa970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
