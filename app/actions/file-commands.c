@@ -1071,6 +1071,25 @@ comment|/* fall thru */
 block|}
 else|else
 block|{
+name|gimp_message
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_INFO
+argument_list|,
+name|_
+argument_list|(
+literal|"No changes need to be saved"
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|saved
 operator|=
 name|TRUE
