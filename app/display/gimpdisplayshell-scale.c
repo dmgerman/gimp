@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3d77a70108
+DECL|struct|__anon2bc138e20108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -246,6 +246,9 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gdouble
+name|new_scale
 parameter_list|,
 name|gint
 modifier|*
@@ -1137,6 +1140,8 @@ block|{
 name|gimp_display_shell_scale_get_zoom_focus
 argument_list|(
 name|shell
+argument_list|,
+name|real_new_scale
 argument_list|,
 operator|&
 name|x
@@ -3168,18 +3173,21 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale_get_zoom_focus:  * @shell:  * @x:  * @y:  *  * Calculates the viewport coordinate to focus on when zooming.  **/
+comment|/**  * gimp_display_shell_scale_get_zoom_focus:  * @shell:  * @new_scale:  * @x:  * @y:  *  * Calculates the viewport coordinate to focus on when zooming.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gint * x,gint * y)
+DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gint * x,gint * y)
 name|gimp_display_shell_scale_get_zoom_focus
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gdouble
+name|new_scale
 parameter_list|,
 name|gint
 modifier|*
@@ -3194,6 +3202,72 @@ name|GdkEvent
 modifier|*
 name|event
 decl_stmt|;
+name|gdouble
+name|current_scale
+init|=
+name|gimp_zoom_model_get_factor
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|new_scale
+operator|<
+name|current_scale
+operator|&&
+name|gimp_display_shell_scale_image_is_within_viewport
+argument_list|(
+name|shell
+argument_list|)
+condition|)
+block|{
+comment|/* If the image is within the viewport and we are zooming out, put        * the zoom focus in the center of the image        */
+name|gint
+name|sw
+decl_stmt|,
+name|sh
+decl_stmt|;
+name|gimp_display_shell_draw_get_scaled_image_size
+argument_list|(
+name|shell
+argument_list|,
+operator|&
+name|sw
+argument_list|,
+operator|&
+name|sh
+argument_list|)
+expr_stmt|;
+operator|*
+name|x
+operator|=
+operator|-
+name|shell
+operator|->
+name|offset_x
+operator|+
+name|sw
+operator|/
+literal|2
+expr_stmt|;
+operator|*
+name|y
+operator|=
+operator|-
+name|shell
+operator|->
+name|offset_y
+operator|+
+name|sh
+operator|/
+literal|2
+expr_stmt|;
+block|}
+else|else
+block|{
 operator|*
 name|x
 operator|=
@@ -3212,7 +3286,7 @@ name|disp_height
 operator|/
 literal|2
 expr_stmt|;
-comment|/*  Center on the mouse position instead of the display center if    *  one of the following conditions are fulfilled and pointer is    *  within the canvas:    *    *   (1) there's no current event (the action was triggered by an    *       input controller)    *   (2) the event originates from the canvas (a scroll event)    *   (3) the event originates from the shell (a key press event)    *    *  Basically the only situation where we don't want to center on    *  mouse position is if the action is being called from a menu.    */
+comment|/*  Center on the mouse position instead of the display center if        *  one of the following conditions are fulfilled and pointer is        *  within the canvas:        *        *   (1) there's no current event (the action was triggered by an        *       input controller)        *   (2) the event originates from the canvas (a scroll event)        *   (3) the event originates from the shell (a key press event)        *        *  Basically the only situation where we don't want to center on        *  mouse position is if the action is being called from a menu.        */
 name|event
 operator|=
 name|gtk_get_current_event
@@ -3295,6 +3369,7 @@ name|y
 operator|=
 name|canvas_pointer_y
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
