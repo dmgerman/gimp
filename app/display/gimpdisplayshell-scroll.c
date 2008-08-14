@@ -871,6 +871,14 @@ operator|->
 name|display
 operator|->
 name|image
+operator|||
+operator|(
+operator|!
+name|vertically
+operator|&&
+operator|!
+name|horizontally
+operator|)
 condition|)
 return|return;
 name|target_offset_x
