@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ebfda70108
+DECL|struct|__anon27c2486c0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -249,6 +249,9 @@ name|shell
 parameter_list|,
 name|gdouble
 name|new_scale
+parameter_list|,
+name|gdouble
+name|current_scale
 parameter_list|,
 name|gint
 modifier|*
@@ -1047,7 +1050,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|gimp_display_shell_scale_image_starts_to_fit (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gboolean * vertically,gboolean * horizontally)
 name|gimp_display_shell_scale_image_starts_to_fit
 parameter_list|(
@@ -1070,6 +1073,32 @@ modifier|*
 name|horizontally
 parameter_list|)
 block|{
+name|gboolean
+name|vertically_dummy
+decl_stmt|;
+name|gboolean
+name|horizontally_dummy
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|vertically
+condition|)
+name|vertically
+operator|=
+operator|&
+name|vertically_dummy
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|horizontally
+condition|)
+name|horizontally
+operator|=
+operator|&
+name|horizontally_dummy
+expr_stmt|;
 comment|/* The image can only start to fit if we zoom out */
 if|if
 condition|(
@@ -1160,6 +1189,55 @@ operator|->
 name|disp_height
 expr_stmt|;
 block|}
+return|return
+operator|*
+name|vertically
+operator|&&
+operator|*
+name|horizontally
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_display_shell_scale_image_stops_to_fit (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gboolean * vertically,gboolean * horizontally)
+name|gimp_display_shell_scale_image_stops_to_fit
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|gdouble
+name|new_scale
+parameter_list|,
+name|gdouble
+name|current_scale
+parameter_list|,
+name|gboolean
+modifier|*
+name|vertically
+parameter_list|,
+name|gboolean
+modifier|*
+name|horizontally
+parameter_list|)
+block|{
+return|return
+name|gimp_display_shell_scale_image_starts_to_fit
+argument_list|(
+name|shell
+argument_list|,
+name|current_scale
+argument_list|,
+name|new_scale
+argument_list|,
+name|vertically
+argument_list|,
+name|horizontally
+argument_list|)
+return|;
 block|}
 end_function
 
@@ -1281,6 +1359,8 @@ argument_list|(
 name|shell
 argument_list|,
 name|real_new_scale
+argument_list|,
+name|current_scale
 argument_list|,
 operator|&
 name|x
@@ -3426,7 +3506,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gint * x,gint * y)
+DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gint * x,gint * y)
 name|gimp_display_shell_scale_get_zoom_focus
 parameter_list|(
 name|GimpDisplayShell
@@ -3435,6 +3515,9 @@ name|shell
 parameter_list|,
 name|gdouble
 name|new_scale
+parameter_list|,
+name|gdouble
+name|current_scale
 parameter_list|,
 name|gint
 modifier|*
@@ -3455,9 +3538,22 @@ name|gimp_display_shell_scale_image_is_within_viewport
 argument_list|(
 name|shell
 argument_list|)
+operator|&&
+operator|!
+name|gimp_display_shell_scale_image_stops_to_fit
+argument_list|(
+name|shell
+argument_list|,
+name|new_scale
+argument_list|,
+name|current_scale
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
 condition|)
 block|{
-comment|/* If the image is within the viewport and we are zooming out, put        * the zoom focus in the center of the image        */
 name|gint
 name|sw
 decl_stmt|,
