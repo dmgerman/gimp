@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7701560108
+DECL|struct|__anon2a10a5350108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1721,12 +1721,7 @@ argument_list|,
 name|grow_only
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_scroll_clamp_offsets
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_update_scrollbars_and_rulers
+name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
 argument_list|)

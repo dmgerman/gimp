@@ -1256,12 +1256,7 @@ name|center_vertically
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_display_shell_scroll_clamp_offsets
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_update_scrollbars_and_rulers
+name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
 argument_list|)

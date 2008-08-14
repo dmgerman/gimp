@@ -422,12 +422,7 @@ name|offset_y
 operator|=
 name|offset_y
 expr_stmt|;
-name|gimp_display_shell_scroll_clamp_offsets
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_update_scrollbars_and_rulers
+name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
 argument_list|)
@@ -795,6 +790,33 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_display_shell_scroll_clamp_and_update:  * @shell:  *  * Helper function for calling two functions that are commonly called  * in pairs.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_display_shell_scroll_clamp_and_update (GimpDisplayShell * shell)
+name|gimp_display_shell_scroll_clamp_and_update
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|gimp_display_shell_scroll_clamp_offsets
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_update_scrollbars_and_rulers
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
