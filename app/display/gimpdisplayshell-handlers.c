@@ -2553,7 +2553,7 @@ operator|->
 name|dot_for_dot
 condition|)
 block|{
-name|gimp_display_shell_update_scrollbars_and_rulers
+name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
 argument_list|)
