@@ -2282,7 +2282,9 @@ name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
 argument_list|,
-literal|"plug_in_handle_proc_run: ERROR"
+literal|"%s: ERROR"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 name|gimp_plug_in_close
