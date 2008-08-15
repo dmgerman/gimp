@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b3899f0108
+DECL|struct|__anon28d11cb60108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1242,7 +1242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function calls gimp_display_shell_scale_to(). It tries to be  * smart whether to use the position of the mouse pointer or the  * center of the display as coordinates.  **/
+comment|/**  * gimp_display_shell_scale:  * @shell:     the #GimpDisplayShell  * @zoom_type: whether to zoom in, our or to a specific scale  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * This function figures out the context of the zoom and behaves  * appropriatley thereafter.  *  **/
 end_comment
 
 begin_function
@@ -1333,6 +1333,39 @@ name|current_scale
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|shell
+operator|->
+name|display
+operator|->
+name|config
+operator|->
+name|resize_windows_on_zoom
+condition|)
+block|{
+comment|/* If the window is resized on zoom, simply do the zoom and            * get things rolling            */
+name|gimp_zoom_model_zoom
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|,
+name|GIMP_ZOOM_TO
+argument_list|,
+name|real_new_scale
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_shrink_wrap
+argument_list|(
+name|shell
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gboolean
 name|vertically
 decl_stmt|;
@@ -1380,7 +1413,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-comment|/* If an image axis started to fit due to zooming out, center on        * that axis in the display shell        */
+comment|/* If an image axis started to fit due to zooming out, center on            * that axis in the display shell            */
 name|gimp_display_shell_scroll_center_image
 argument_list|(
 name|shell
@@ -1390,6 +1423,7 @@ argument_list|,
 name|horizontally
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
