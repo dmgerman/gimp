@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b83557a0103
+DECL|enum|__anon2a2972ce0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83557a0208
+DECL|struct|__anon2a2972ce0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83557a0308
+DECL|struct|__anon2a2972ce0308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83557a0408
+DECL|struct|__anon2a2972ce0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83557a0508
+DECL|struct|__anon2a2972ce0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1786,17 +1786,13 @@ name|nparams
 operator|!=
 literal|15
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-block|{
+break|break;
+block|}
 name|mvals
 operator|.
 name|tile_size
@@ -1971,14 +1967,8 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-block|}
 if|if
 condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-operator|&&
-operator|(
 name|mvals
 operator|.
 name|tile_type
@@ -1990,19 +1980,7 @@ operator|.
 name|tile_type
 operator|>
 name|TRIANGLES
-operator|)
-condition|)
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-operator|&&
-operator|(
+operator|||
 name|mvals
 operator|.
 name|tile_surface
@@ -2014,19 +1992,7 @@ operator|.
 name|tile_surface
 operator|>
 name|ROUGH
-operator|)
-condition|)
-name|status
-operator|=
-name|GIMP_PDB_CALLING_ERROR
-expr_stmt|;
-if|if
-condition|(
-name|status
-operator|==
-name|GIMP_PDB_SUCCESS
-operator|&&
-operator|(
+operator|||
 name|mvals
 operator|.
 name|grout_color
@@ -2038,12 +2004,13 @@ operator|.
 name|grout_color
 operator|>
 name|FG_BG
-operator|)
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 break|break;
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
@@ -8455,16 +8422,11 @@ operator|)
 expr_stmt|;
 name|frac_size
 operator|=
-call|(
-name|gint
-call|)
-argument_list|(
 name|size
 operator|*
 name|mvals
 operator|.
 name|color_variation
-argument_list|)
 expr_stmt|;
 name|count
 operator|=
@@ -10111,13 +10073,13 @@ condition|)
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|count
 operator|++
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|size
 argument_list|)
@@ -10145,11 +10107,13 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|gimp_progress_update
 argument_list|(
 literal|1.0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -10365,6 +10329,7 @@ literal|0.5
 operator|&&
 name|allow_split
 condition|)
+block|{
 name|split_poly
 argument_list|(
 name|poly
@@ -10388,8 +10353,10 @@ argument_list|,
 name|dest
 argument_list|)
 expr_stmt|;
-comment|/*  Otherwise, render the original polygon    */
+block|}
 else|else
+block|{
+comment|/*  Otherwise, render the original polygon  */
 name|render_poly
 argument_list|(
 name|poly
@@ -10411,6 +10378,7 @@ argument_list|,
 name|dest
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -10456,7 +10424,8 @@ name|gdouble
 name|cx
 init|=
 literal|0.0
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|cy
 init|=
 literal|0.0
@@ -10608,7 +10577,8 @@ name|gdouble
 name|cx
 init|=
 literal|0.0
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|cy
 init|=
 literal|0.0
@@ -11317,7 +11287,9 @@ name|side2
 operator|<
 literal|0.0
 condition|)
+block|{
 return|return;
+block|}
 comment|/*  If both points are non-clipped, set point  */
 elseif|else
 if|if
@@ -13023,7 +12995,6 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
-comment|/* begin loop */
 if|if
 condition|(
 name|poly_npts
@@ -13168,7 +13139,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* end loop */
 name|polygon_extents
 argument_list|(
 name|poly
@@ -13289,7 +13259,6 @@ operator|*
 name|supersample
 expr_stmt|;
 block|}
-comment|/* begin loop */
 if|if
 condition|(
 name|poly_npts
@@ -13472,7 +13441,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* end loop */
 name|gimp_pixel_rgn_init
 argument_list|(
 operator|&
