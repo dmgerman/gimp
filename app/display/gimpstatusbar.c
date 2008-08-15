@@ -2285,12 +2285,18 @@ name|handle_msg
 init|=
 name|FALSE
 decl_stmt|;
-comment|/*  don't accept a message if we are already displaying one  */
+comment|/*  don't accept a message if we are already displaying a more severe one  */
 if|if
 condition|(
 name|statusbar
 operator|->
 name|temp_timeout_id
+operator|&&
+name|statusbar
+operator|->
+name|temp_severity
+operator|>
+name|severity
 condition|)
 return|return
 name|FALSE
@@ -2416,6 +2422,8 @@ condition|)
 name|gimp_statusbar_push_temp
 argument_list|(
 name|statusbar
+argument_list|,
+name|severity
 argument_list|,
 name|stock_id
 argument_list|,
@@ -4352,12 +4360,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_temp (GimpStatusbar * statusbar,const gchar * stock_id,const gchar * format,...)
+DECL|function|gimp_statusbar_push_temp (GimpStatusbar * statusbar,GimpMessageSeverity severity,const gchar * stock_id,const gchar * format,...)
 name|gimp_statusbar_push_temp
 parameter_list|(
 name|GimpStatusbar
 modifier|*
 name|statusbar
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -4375,21 +4386,6 @@ block|{
 name|va_list
 name|args
 decl_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_STATUSBAR
-argument_list|(
-name|statusbar
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|format
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
 name|va_start
 argument_list|(
 name|args
@@ -4400,6 +4396,8 @@ expr_stmt|;
 name|gimp_statusbar_push_temp_valist
 argument_list|(
 name|statusbar
+argument_list|,
+name|severity
 argument_list|,
 name|stock_id
 argument_list|,
@@ -4418,12 +4416,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_statusbar_push_temp_valist (GimpStatusbar * statusbar,const gchar * stock_id,const gchar * format,va_list args)
+DECL|function|gimp_statusbar_push_temp_valist (GimpStatusbar * statusbar,GimpMessageSeverity severity,const gchar * stock_id,const gchar * format,va_list args)
 name|gimp_statusbar_push_temp_valist
 parameter_list|(
 name|GimpStatusbar
 modifier|*
 name|statusbar
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
@@ -4459,11 +4460,32 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|severity
+operator|<=
+name|GIMP_MESSAGE_WARNING
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|format
 operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  don't accept a message if we are already displaying a more severe one  */
+if|if
+condition|(
+name|statusbar
+operator|->
+name|temp_timeout_id
+operator|&&
+name|statusbar
+operator|->
+name|temp_severity
+operator|>
+name|severity
+condition|)
+return|return;
 name|message
 operator|=
 name|gimp_statusbar_vprintf
@@ -4501,6 +4523,12 @@ name|gimp_statusbar_temp_timeout
 argument_list|,
 name|statusbar
 argument_list|)
+expr_stmt|;
+name|statusbar
+operator|->
+name|temp_severity
+operator|=
+name|severity
 expr_stmt|;
 if|if
 condition|(

@@ -145,6 +145,10 @@ DECL|member|temp_timeout_id
 name|guint
 name|temp_timeout_id
 decl_stmt|;
+DECL|member|temp_severity
+name|GimpMessageSeverity
+name|temp_severity
+decl_stmt|;
 DECL|member|cursor_format_str
 name|gchar
 name|cursor_format_str
@@ -535,6 +539,9 @@ name|GimpStatusbar
 modifier|*
 name|statusbar
 parameter_list|,
+name|GimpMessageSeverity
+name|severity
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -549,9 +556,9 @@ modifier|...
 parameter_list|)
 function_decl|G_GNUC_PRINTF
 parameter_list|(
-function_decl|3
-operator|,
 function_decl|4
+operator|,
+function_decl|5
 end_function_decl
 
 begin_empty_stmt
@@ -566,6 +573,9 @@ parameter_list|(
 name|GimpStatusbar
 modifier|*
 name|statusbar
+parameter_list|,
+name|GimpMessageSeverity
+name|severity
 parameter_list|,
 specifier|const
 name|gchar
