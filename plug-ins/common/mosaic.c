@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b69ae350103
+DECL|enum|__anon2b83557a0103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69ae350208
+DECL|struct|__anon2b83557a0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69ae350308
+DECL|struct|__anon2b83557a0308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69ae350408
+DECL|struct|__anon2b83557a0408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b69ae350508
+DECL|struct|__anon2b83557a0508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -11533,6 +11533,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|polygon_add_point
 argument_list|(
 name|poly_new
@@ -11562,6 +11563,7 @@ literal|1
 index|]
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
@@ -15468,14 +15470,13 @@ operator|++
 expr_stmt|;
 block|}
 else|else
-name|g_print
+block|{
+name|g_warning
 argument_list|(
-name|_
-argument_list|(
-literal|"Unable to add additional point.\n"
-argument_list|)
+literal|"can't add more points"
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
