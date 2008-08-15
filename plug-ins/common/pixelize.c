@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963d8910108
+DECL|struct|__anon2b6673530108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963d8910208
+DECL|struct|__anon2b6673530208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2037,12 +2037,12 @@ expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
@@ -2360,12 +2360,12 @@ expr_stmt|;
 name|gimp_progress_update
 argument_list|(
 operator|(
-name|double
+name|gdouble
 operator|)
 name|progress
 operator|/
 operator|(
-name|double
+name|gdouble
 operator|)
 name|max_progress
 argument_list|)
