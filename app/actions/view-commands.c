@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-scale-dialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-scroll.h"
 end_include
 
