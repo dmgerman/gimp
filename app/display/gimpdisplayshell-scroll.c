@@ -104,7 +104,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e41400108
+DECL|struct|__anon29ec4fea0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1035,7 +1035,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scroll_center_image_on_next_size_allocate (GimpDisplayShell * shell,gboolean vertically,gboolean horizontally)
+DECL|function|gimp_display_shell_scroll_center_image_on_next_size_allocate (GimpDisplayShell * shell,gboolean horizontally,gboolean vertically)
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 parameter_list|(
 name|GimpDisplayShell
@@ -1043,10 +1043,10 @@ modifier|*
 name|shell
 parameter_list|,
 name|gboolean
-name|vertically
+name|horizontally
 parameter_list|,
 name|gboolean
-name|horizontally
+name|vertically
 parameter_list|)
 block|{
 name|SizeAllocateCallbackData
