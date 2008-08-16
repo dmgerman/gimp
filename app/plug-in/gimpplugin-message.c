@@ -2208,7 +2208,7 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB calling error for procedure '%s':\n"
+literal|"Calling error for procedure '%s':\n"
 literal|"%s"
 argument_list|)
 argument_list|,
@@ -2241,7 +2241,7 @@ name|GIMP_MESSAGE_ERROR
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB execution error for procedure '%s':\n"
+literal|"Execution error for procedure '%s':\n"
 literal|"%s"
 argument_list|)
 argument_list|,
