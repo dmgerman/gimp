@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d11cb60108
+DECL|struct|__anon278a97f50108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1655,7 +1655,7 @@ operator|&&
 name|shell
 operator|->
 name|offset_x
-operator|>
+operator|>=
 name|sw
 operator|-
 name|shell
@@ -1665,7 +1665,7 @@ operator|&&
 name|shell
 operator|->
 name|offset_y
-operator|>
+operator|>=
 name|sh
 operator|-
 name|shell
