@@ -2365,6 +2365,17 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* Handle if only the offset of wrong */
+name|gimp_display_shell_scroll_center_image
+argument_list|(
+name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/* Handle if the display shell canvas is wrong */
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
