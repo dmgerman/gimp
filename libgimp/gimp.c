@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2a10cd0103
+DECL|enum|__anon292de9370103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3872,6 +3872,7 @@ condition|(
 name|pdb_error_status
 condition|)
 block|{
+comment|/*  procedure executed successfully  */
 case|case
 name|GIMP_PDB_SUCCESS
 case|:
@@ -3881,6 +3882,7 @@ argument_list|(
 literal|"success"
 argument_list|)
 return|;
+comment|/*  procedure execution failed       */
 case|case
 name|GIMP_PDB_EXECUTION_ERROR
 case|:
@@ -3890,6 +3892,7 @@ argument_list|(
 literal|"execution error"
 argument_list|)
 return|;
+comment|/*  procedure called incorrectly     */
 case|case
 name|GIMP_PDB_CALLING_ERROR
 case|:
@@ -3899,6 +3902,7 @@ argument_list|(
 literal|"calling error"
 argument_list|)
 return|;
+comment|/*  procedure cancelled              */
 case|case
 name|GIMP_PDB_CANCEL
 case|:
