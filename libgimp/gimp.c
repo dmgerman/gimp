@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292de9370103
+DECL|enum|__anon298ea4f80103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3842,7 +3842,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_pdb_error:  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus ligimp  * stores the error message and makes it available with this  * function. A successful procedure call unsets the error message again.  *  * The returned string is owned by libgimp and must not be freed or  * modified.  *  * Return value: the error message  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_get_pdb_error:  *  * Retrieves the error message from the last procedure call.  *  * If a procedure call fails, then it might pass an error message with  * the return values. Plug-ins that are using the libgimp C wrappers  * don't access the procedure return values directly. Thus ligimp  * stores the error message and makes it available with this  * function. The next procedure call unsets the error message again.  *  * The returned string is owned by libgimp and must not be freed or  * modified.  *  * Return value: the error message  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -3872,40 +3872,40 @@ condition|(
 name|pdb_error_status
 condition|)
 block|{
-comment|/*  procedure executed successfully  */
 case|case
 name|GIMP_PDB_SUCCESS
 case|:
+comment|/*  procedure executed successfully  */
 return|return
 name|_
 argument_list|(
 literal|"success"
 argument_list|)
 return|;
-comment|/*  procedure execution failed       */
 case|case
 name|GIMP_PDB_EXECUTION_ERROR
 case|:
+comment|/*  procedure execution failed       */
 return|return
 name|_
 argument_list|(
 literal|"execution error"
 argument_list|)
 return|;
-comment|/*  procedure called incorrectly     */
 case|case
 name|GIMP_PDB_CALLING_ERROR
 case|:
+comment|/*  procedure called incorrectly     */
 return|return
 name|_
 argument_list|(
 literal|"calling error"
 argument_list|)
 return|;
-comment|/*  procedure cancelled              */
 case|case
 name|GIMP_PDB_CANCEL
 case|:
+comment|/*  procedure execution cancelled    */
 return|return
 name|_
 argument_list|(
