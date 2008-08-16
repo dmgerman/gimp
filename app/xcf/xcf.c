@@ -1223,6 +1223,13 @@ argument_list|(
 name|procedure
 argument_list|,
 name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1611,6 +1618,13 @@ argument_list|(
 name|procedure
 argument_list|,
 name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy

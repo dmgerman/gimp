@@ -215,6 +215,13 @@ argument_list|(
 name|procedure
 argument_list|,
 name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -356,6 +363,13 @@ argument_list|(
 name|procedure
 argument_list|,
 name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -425,6 +439,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_take_string
@@ -501,6 +517,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_set_int
@@ -599,6 +617,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_set_double
@@ -694,6 +714,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_take_string
@@ -782,6 +804,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_take_string
@@ -866,6 +890,8 @@ argument_list|(
 name|procedure
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_value_take_string

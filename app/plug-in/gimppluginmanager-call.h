@@ -111,9 +111,6 @@ parameter_list|,
 name|gboolean
 name|synchronous
 parameter_list|,
-name|gboolean
-name|destroy_return_vals
-parameter_list|,
 name|GimpObject
 modifier|*
 name|display

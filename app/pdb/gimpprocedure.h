@@ -504,6 +504,11 @@ name|procedure
 parameter_list|,
 name|gboolean
 name|success
+parameter_list|,
+specifier|const
+name|GError
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

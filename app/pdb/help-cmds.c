@@ -207,6 +207,13 @@ argument_list|(
 name|procedure
 argument_list|,
 name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
 argument_list|)
 return|;
 block|}

@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291ce1120103
+DECL|enum|__anon28c562d20103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1218,23 +1218,24 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_set_error
+name|GError
+modifier|*
+name|pdb_error
+init|=
+name|g_error_new
 argument_list|(
-name|error
-argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
 name|GIMP_PDB_PROCEDURE_NOT_FOUND
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB calling error:\n"
 literal|"Procedure '%s' not found"
 argument_list|)
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -1242,15 +1243,15 @@ argument_list|(
 name|NULL
 argument_list|,
 name|FALSE
+argument_list|,
+name|pdb_error
 argument_list|)
 expr_stmt|;
-name|g_value_set_enum
+name|g_propagate_error
 argument_list|(
-name|return_vals
-operator|->
-name|values
+name|error
 argument_list|,
-name|GIMP_PDB_CALLING_ERROR
+name|pdb_error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1482,28 +1483,28 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|procedure
-operator|==
-name|NULL
 condition|)
 block|{
-name|g_set_error
+name|GError
+modifier|*
+name|pdb_error
+init|=
+name|g_error_new
 argument_list|(
-name|error
-argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
 name|GIMP_PDB_PROCEDURE_NOT_FOUND
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB calling error:\n"
 literal|"Procedure '%s' not found"
 argument_list|)
 argument_list|,
 name|name
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
@@ -1511,15 +1512,15 @@ argument_list|(
 name|NULL
 argument_list|,
 name|FALSE
+argument_list|,
+name|pdb_error
 argument_list|)
 expr_stmt|;
-name|g_value_set_enum
+name|g_propagate_error
 argument_list|(
-name|return_vals
-operator|->
-name|values
+name|error
 argument_list|,
-name|GIMP_PDB_CALLING_ERROR
+name|pdb_error
 argument_list|)
 expr_stmt|;
 return|return
@@ -1605,6 +1606,10 @@ name|value
 argument_list|)
 condition|)
 block|{
+name|GError
+modifier|*
+name|pdb_error
+decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -1633,18 +1638,19 @@ argument_list|(
 name|args
 argument_list|)
 expr_stmt|;
-name|g_set_error
+name|pdb_error
+operator|=
+name|g_error_new
 argument_list|(
-name|error
-argument_list|,
 name|GIMP_PDB_ERROR
 argument_list|,
 name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
-literal|"PDB calling error for procedure '%s':\n"
-literal|"Argument #%d type mismatch (expected %s, got %s)"
+literal|"Procedure '%s' called with wrong "
+literal|"type for argument #%d "
+literal|"(expected %s, got %s)"
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -1671,15 +1677,15 @@ argument_list|(
 name|procedure
 argument_list|,
 name|FALSE
+argument_list|,
+name|pdb_error
 argument_list|)
 expr_stmt|;
-name|g_value_set_enum
+name|g_propagate_error
 argument_list|(
-name|return_vals
-operator|->
-name|values
+name|error
 argument_list|,
-name|GIMP_PDB_CALLING_ERROR
+name|pdb_error
 argument_list|)
 expr_stmt|;
 name|va_end
@@ -1708,6 +1714,21 @@ condition|(
 name|error_msg
 condition|)
 block|{
+name|GError
+modifier|*
+name|pdb_error
+init|=
+name|g_error_new
+argument_list|(
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_INTERNAL_ERROR
+argument_list|,
+literal|"%s"
+argument_list|,
+name|error_msg
+argument_list|)
+decl_stmt|;
 name|g_warning
 argument_list|(
 literal|"%s: %s"
@@ -1734,15 +1755,15 @@ argument_list|(
 name|procedure
 argument_list|,
 name|FALSE
+argument_list|,
+name|pdb_error
 argument_list|)
 expr_stmt|;
-name|g_value_set_enum
+name|g_propagate_error
 argument_list|(
-name|return_vals
-operator|->
-name|values
+name|error
 argument_list|,
-name|GIMP_PDB_CALLING_ERROR
+name|pdb_error
 argument_list|)
 expr_stmt|;
 name|va_end

@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"pdb/gimppdberror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpplugin.h"
 end_include
 
@@ -61,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimppluginprocedure.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
 end_include
 
 begin_comment
@@ -629,7 +641,9 @@ name|proc_frame
 operator|->
 name|procedure
 argument_list|,
-name|FALSE
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Copy all of the arguments we can. */
@@ -701,16 +715,54 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* Just return a dummy set of values. */
+name|GimpProcedure
+modifier|*
+name|procedure
+init|=
+name|proc_frame
+operator|->
+name|procedure
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+decl_stmt|;
+name|error
+operator|=
+name|g_error_new
+argument_list|(
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_INVALID_RETURN_VALUE
+argument_list|,
+name|_
+argument_list|(
+literal|"Procedure '%s' returned no return values"
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_procedure_get_return_values
 argument_list|(
-name|proc_frame
-operator|->
 name|procedure
 argument_list|,
 name|FALSE
+argument_list|,
+name|error
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
 argument_list|)
 expr_stmt|;
 block|}
