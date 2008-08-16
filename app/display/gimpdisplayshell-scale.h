@@ -120,6 +120,14 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|gboolean
+modifier|*
+name|horizontally
+parameter_list|,
+name|gboolean
+modifier|*
+name|vertically
 parameter_list|)
 function_decl|;
 end_function_decl

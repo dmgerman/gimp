@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af7aebe0103
+DECL|enum|__anon2a0789af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af7aebe0203
+DECL|enum|__anon2a0789af0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2949,6 +2949,10 @@ operator|&&
 name|gimp_display_shell_scale_image_is_within_viewport
 argument_list|(
 name|shell
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
 argument_list|)
 condition|)
 block|{
