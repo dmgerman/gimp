@@ -6011,7 +6011,7 @@ argument_list|,
 operator|&
 name|vectors_list
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -6319,7 +6319,7 @@ argument_list|,
 operator|&
 name|vectors_list
 argument_list|,
-name|NULL
+name|error
 argument_list|)
 expr_stmt|;
 if|if
