@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2babff0b0103
+DECL|enum|__anon293fbad30103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1649,7 +1649,7 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Procedure '%s' has been called with a "
-literal|"wrong type for argument #%d."
+literal|"wrong type for argument #%d. "
 literal|"Expected %s, got %s."
 argument_list|)
 argument_list|,
