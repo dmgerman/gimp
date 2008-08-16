@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bffe75c0103
+DECL|enum|__anon2b19ef990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1205,7 +1205,7 @@ name|value
 argument_list|,
 name|text
 operator|->
-name|unit
+name|box_unit
 argument_list|)
 expr_stmt|;
 break|break;
