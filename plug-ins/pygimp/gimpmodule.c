@@ -6975,11 +6975,14 @@ operator|!
 name|success
 condition|)
 block|{
-name|PyErr_SetString
+name|PyErr_Format
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"Vectors import failed"
+literal|"Vectors import failed: %s"
+argument_list|,
+name|gimp_get_pdb_error
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -7129,11 +7132,14 @@ operator|!
 name|success
 condition|)
 block|{
-name|PyErr_SetString
+name|PyErr_Format
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"Vectors import failed"
+literal|"Vectors import failed: %s"
+argument_list|,
+name|gimp_get_pdb_error
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
