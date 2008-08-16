@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c562d20103
+DECL|enum|__anon2babff0b0103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1648,9 +1648,9 @@ name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
-literal|"Procedure '%s' called with wrong "
-literal|"type for argument #%d "
-literal|"(expected %s, got %s)"
+literal|"Procedure '%s' has been called with a "
+literal|"wrong type for argument #%d."
+literal|"Expected %s, got %s."
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
