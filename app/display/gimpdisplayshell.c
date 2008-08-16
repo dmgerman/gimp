@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295187a80103
+DECL|enum|__anon296cb47e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295187a80203
+DECL|enum|__anon296cb47e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2496,6 +2496,10 @@ comment|/* If the image fits within the display shell canvas on a given        *
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
+argument_list|,
+name|center_horizontally
+argument_list|,
+name|center_vertically
 argument_list|)
 expr_stmt|;
 block|}
@@ -5235,6 +5239,10 @@ comment|/* After connecting to the image we want to center it. Since we        *
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5807,6 +5815,10 @@ comment|/* A size-allocate will always occur because the scrollbars will    * be
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|shell
