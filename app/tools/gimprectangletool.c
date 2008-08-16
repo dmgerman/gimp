@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a95f8de0103
+DECL|enum|__anon28da6ffe0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a95f8de0203
+DECL|enum|__anon28da6ffe0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a95f8de0303
+DECL|enum|__anon28da6ffe0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -326,18 +326,9 @@ value|(gimp_rectangle_tool_get_private (GIMP_RECTANGLE_TOOL (obj)))
 end_define
 
 begin_typedef
-DECL|typedef|GimpRectangleToolPrivate
 typedef|typedef
-name|struct
-name|_GimpRectangleToolPrivate
-name|GimpRectangleToolPrivate
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpRectangleToolPrivate
 struct|struct
-name|_GimpRectangleToolPrivate
+DECL|struct|__anon28da6ffe0408
 block|{
 comment|/* The following members are "constants", that is, variables that are setup    * during gimp_rectangle_tool_button_press and then only read.    */
 comment|/*    * Wether or not the rectangle currently being rubber-banded was    * created from scatch.    */
@@ -481,9 +472,11 @@ DECL|member|guide
 name|GimpRectangleGuide
 name|guide
 decl_stmt|;
+DECL|typedef|GimpRectangleToolPrivate
 block|}
-struct|;
-end_struct
+name|GimpRectangleToolPrivate
+typedef|;
+end_typedef
 
 begin_function_decl
 specifier|static

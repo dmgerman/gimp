@@ -168,14 +168,13 @@ parameter_list|(
 name|fst
 parameter_list|)
 define|\
-value|(G_TYPE_INSTANCE_GET_PRIVATE ((fst), GIMP_TYPE_FREE_SELECT_TOOL, Private))
+value|(G_TYPE_INSTANCE_GET_PRIVATE ((fst), \     GIMP_TYPE_FREE_SELECT_TOOL, GimpFreeSelectToolPrivate))
 end_define
 
 begin_typedef
-DECL|struct|_Private
 typedef|typedef
 struct|struct
-name|_Private
+DECL|struct|__anon2ab2b0230108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -279,9 +278,9 @@ DECL|member|last_click_coord
 name|GimpCoords
 name|last_click_coord
 decl_stmt|;
-DECL|typedef|Private
+DECL|typedef|GimpFreeSelectToolPrivate
 block|}
-name|Private
+name|GimpFreeSelectToolPrivate
 typedef|;
 end_typedef
 
@@ -751,7 +750,7 @@ name|klass
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|Private
+name|GimpFreeSelectToolPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -778,7 +777,7 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -939,7 +938,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1015,7 +1014,7 @@ name|gint
 name|segment_end
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1084,7 +1083,7 @@ name|gint
 name|segment_index
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1149,7 +1148,7 @@ modifier|*
 name|start_point_y
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1255,7 +1254,7 @@ modifier|*
 name|coords
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1418,6 +1417,7 @@ expr_stmt|;
 block|}
 return|return
 operator|(
+operator|(
 operator|!
 name|priv
 operator|->
@@ -1429,6 +1429,7 @@ name|POINT_GRAB_THRESHOLD_SQ
 operator|)
 operator|||
 name|double_click
+operator|)
 return|;
 block|}
 end_function
@@ -1452,7 +1453,7 @@ modifier|*
 name|coords
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1635,7 +1636,7 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1716,7 +1717,7 @@ modifier|*
 name|fst
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1759,7 +1760,7 @@ name|GdkModifierType
 name|state
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1794,7 +1795,7 @@ modifier|*
 name|fst
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1870,7 +1871,7 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -1965,7 +1966,7 @@ name|gint
 name|index
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -2042,7 +2043,7 @@ modifier|*
 name|fst
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -2107,7 +2108,7 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -2556,7 +2557,7 @@ name|gdouble
 name|new_y
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -2798,7 +2799,7 @@ modifier|*
 name|fst
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -2837,7 +2838,7 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -2884,7 +2885,7 @@ modifier|*
 name|fst
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -3063,7 +3064,7 @@ modifier|*
 name|display
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -3316,7 +3317,7 @@ modifier|*
 name|fst
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -3670,7 +3671,7 @@ name|gdouble
 name|new_y
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -3868,7 +3869,7 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -4078,7 +4079,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -4486,7 +4487,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -4667,7 +4668,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -4807,7 +4808,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -4998,7 +4999,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -5105,7 +5106,7 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -5215,7 +5216,7 @@ argument_list|(
 name|draw_tool
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -5291,12 +5292,12 @@ name|i
 operator|++
 control|)
 block|{
-name|gdouble
-name|dist
-decl_stmt|;
 name|GimpVector2
 modifier|*
 name|point
+decl_stmt|;
+name|gdouble
+name|dist
 decl_stmt|;
 name|point
 operator|=
@@ -5453,7 +5454,7 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
@@ -5537,7 +5538,7 @@ modifier|*
 name|n_points
 parameter_list|)
 block|{
-name|Private
+name|GimpFreeSelectToolPrivate
 modifier|*
 name|priv
 init|=
