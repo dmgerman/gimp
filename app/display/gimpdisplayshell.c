@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aab08c30103
+DECL|enum|__anon295187a80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aab08c30203
+DECL|enum|__anon295187a80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2479,7 +2479,7 @@ expr_stmt|;
 name|center_horizontally
 operator|=
 name|sw
-operator|<
+operator|<=
 name|shell
 operator|->
 name|disp_width
@@ -2487,12 +2487,12 @@ expr_stmt|;
 name|center_vertically
 operator|=
 name|sh
-operator|<
+operator|<=
 name|shell
 operator|->
 name|disp_height
 expr_stmt|;
-comment|/* If the image fits within the display shell canvas on a        * given axis, center the image on that axis.        */
+comment|/* If the image fits within the display shell canvas on a given        * axis, center the image on that axis. We know that the canvas        * will get a size-allocate if we get here.        */
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
@@ -5231,7 +5231,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* after connecting to the image we want to center it */
+comment|/* After connecting to the image we want to center it. Since we        * not even finnished creating the display shell, we can safely        * assume we will get a size-allocate later.        */
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
@@ -5803,6 +5803,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* A size-allocate will always occur because the scrollbars will    * become visible forcing the canvas to become smaller    */
 name|gimp_display_shell_scroll_center_image_on_next_size_allocate
 argument_list|(
 name|shell
@@ -7860,13 +7861,17 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-comment|/* A wrap always means that we should center the image too */
-name|gimp_display_shell_scroll_center_image_on_next_size_allocate
+block|}
+comment|/* A wrap always means that we should center the image too. If the    * window changes size another center will be done in    * GimpDisplayShell::configure_event().    */
+name|gimp_display_shell_scroll_center_image
 argument_list|(
 name|shell
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
