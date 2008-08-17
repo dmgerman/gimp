@@ -1082,6 +1082,7 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
+comment|/* FIXMEEEEE!!! */
 comment|/*  multiply the zoom_factor with the ratio of the new and            *  old canvas diagonals            */
 name|scale
 operator|*=
@@ -1193,12 +1194,20 @@ name|allocation
 operator|->
 name|height
 expr_stmt|;
-comment|/* When we size-allocate due to resize of the top level window,        * we want some additional logic        */
+comment|/* When we size-allocate due to resize of the top level window,        * we want some additional logic. Don't apply it on        * zoom_on_resize though.        */
 if|if
 condition|(
 name|shell
 operator|->
 name|size_allocate_from_configure_event
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|zoom_on_resize
 condition|)
 block|{
 name|gint
@@ -1249,6 +1258,7 @@ argument_list|,
 name|center_vertically
 argument_list|)
 expr_stmt|;
+block|}
 name|shell
 operator|->
 name|size_allocate_from_configure_event
