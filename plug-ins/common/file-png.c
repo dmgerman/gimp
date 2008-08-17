@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c986500108
+DECL|struct|__anon2963e80e0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c986500208
+DECL|struct|__anon2963e80e0208
 block|{
 DECL|member|run
 name|gboolean
@@ -314,6 +314,11 @@ name|filename
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -336,6 +341,11 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1002,6 +1012,12 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
@@ -1074,6 +1090,9 @@ argument_list|,
 name|run_mode
 operator|==
 name|GIMP_RUN_INTERACTIVE
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1116,6 +1135,39 @@ name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
 block|}
 block|}
 elseif|else
@@ -1496,10 +1548,12 @@ name|compression_level
 operator|>
 literal|9
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 block|}
 block|}
 break|break;
@@ -1544,6 +1598,9 @@ argument_list|,
 name|drawable_ID
 argument_list|,
 name|orig_image_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -1567,6 +1624,39 @@ name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
 block|}
 block|}
 if|if
@@ -2105,7 +2195,7 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,gboolean interactive)
+DECL|function|load_image (const gchar * filename,gboolean interactive,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -2115,6 +2205,11 @@ name|filename
 parameter_list|,
 name|gboolean
 name|interactive
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|int
@@ -2246,8 +2341,14 @@ name|jmpbuf
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Error while reading '%s'. File corrupted?"
@@ -2286,8 +2387,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -2620,8 +2730,14 @@ expr_stmt|;
 break|break;
 default|default:
 comment|/* Aie! Unknown type */
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Unknown color model in PNG file '%s'."
@@ -2661,14 +2777,23 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Could not create new image for '%s'"
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"Could not create new image for '%s': %s"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
 name|filename
 argument_list|)
+argument_list|,
+name|gimp_get_pdb_error
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -4029,9 +4154,7 @@ name|drawable
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|image
-operator|)
 return|;
 block|}
 end_function
@@ -4043,7 +4166,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -4059,6 +4182,11 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -4363,8 +4491,14 @@ name|jmpbuf
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Error while saving '%s'. Could not save image."
@@ -4412,8 +4546,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
@@ -4662,9 +4805,20 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|g_message
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
+name|_
 argument_list|(
 literal|"Image type can't be saved as PNG"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
