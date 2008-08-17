@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cb47e0103
+DECL|enum|__anon2b19c09f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296cb47e0203
+DECL|enum|__anon2b19c09f0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1388,6 +1388,12 @@ name|FALSE
 expr_stmt|;
 name|shell
 operator|->
+name|size_allocate_from_configure_event
+operator|=
+name|FALSE
+expr_stmt|;
+name|shell
+operator|->
 name|options
 operator|=
 name|g_object_new
@@ -2425,7 +2431,7 @@ argument_list|,
 name|cevent
 argument_list|)
 expr_stmt|;
-comment|/* Only run this stuff if the size changed */
+comment|/* If the window size has changed, make sure additoinal logic is run    * on size-allocate    */
 if|if
 condition|(
 name|shell
@@ -2453,54 +2459,11 @@ name|current_height
 operator|)
 condition|)
 block|{
-name|gint
-name|sw
-decl_stmt|;
-name|gint
-name|sh
-decl_stmt|;
-name|gboolean
-name|center_horizontally
-decl_stmt|;
-name|gboolean
-name|center_vertically
-decl_stmt|;
-name|gimp_display_shell_draw_get_scaled_image_size
-argument_list|(
-name|shell
-argument_list|,
-operator|&
-name|sw
-argument_list|,
-operator|&
-name|sh
-argument_list|)
-expr_stmt|;
-name|center_horizontally
-operator|=
-name|sw
-operator|<=
 name|shell
 operator|->
-name|disp_width
-expr_stmt|;
-name|center_vertically
+name|size_allocate_from_configure_event
 operator|=
-name|sh
-operator|<=
-name|shell
-operator|->
-name|disp_height
-expr_stmt|;
-comment|/* If the image fits within the display shell canvas on a given        * axis, center the image on that axis. We know that the canvas        * will get a size-allocate if we get here.        */
-name|gimp_display_shell_scroll_center_image_on_next_size_allocate
-argument_list|(
-name|shell
-argument_list|,
-name|center_horizontally
-argument_list|,
-name|center_vertically
-argument_list|)
+name|TRUE
 expr_stmt|;
 block|}
 return|return
