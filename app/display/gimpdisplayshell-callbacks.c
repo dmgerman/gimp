@@ -1200,10 +1200,7 @@ condition|(
 name|shell
 operator|->
 name|size_allocate_from_configure_event
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 operator|!
 name|shell
 operator|->
@@ -1264,7 +1261,7 @@ argument_list|,
 name|center_vertically
 argument_list|)
 expr_stmt|;
-comment|/* This is basically the best we can do before we get an                * API for storing the image offset at the start of an                * image window resize using the mouse                */
+comment|/* This is basically the best we can do before we get an            * API for storing the image offset at the start of an            * image window resize using the mouse            */
 name|target_offset_x
 operator|=
 name|shell
@@ -1323,13 +1320,6 @@ name|target_offset_y
 argument_list|)
 expr_stmt|;
 block|}
-name|shell
-operator|->
-name|size_allocate_from_configure_event
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
 name|gimp_display_shell_scroll_clamp_and_update
 argument_list|(
 name|shell
@@ -1339,6 +1329,13 @@ name|gimp_display_shell_scaled
 argument_list|(
 name|shell
 argument_list|)
+expr_stmt|;
+comment|/* Reset */
+name|shell
+operator|->
+name|size_allocate_from_configure_event
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 block|}
