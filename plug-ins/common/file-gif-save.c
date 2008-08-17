@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ab4fe0103
+DECL|enum|__anon29afde730103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295ab4fe0208
+DECL|struct|__anon29afde730208
 block|{
 DECL|member|interlace
 name|gint
@@ -1016,10 +1016,7 @@ condition|(
 name|status
 operator|==
 name|GIMP_PDB_EXECUTION_ERROR
-condition|)
-block|{
-if|if
-condition|(
+operator|&&
 name|error
 condition|)
 block|{
@@ -1050,7 +1047,6 @@ name|error
 operator|->
 name|message
 expr_stmt|;
-block|}
 block|}
 block|}
 name|values
