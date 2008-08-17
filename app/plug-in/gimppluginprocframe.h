@@ -166,7 +166,7 @@ end_function_decl
 begin_function_decl
 name|GValueArray
 modifier|*
-name|gimp_plug_in_proc_frame_get_return_vals
+name|gimp_plug_in_proc_frame_get_return_values
 parameter_list|(
 name|GimpPlugInProcFrame
 modifier|*

@@ -1175,7 +1175,7 @@ name|NULL
 expr_stmt|;
 name|return_vals
 operator|=
-name|gimp_plug_in_proc_frame_get_return_vals
+name|gimp_plug_in_proc_frame_get_return_values
 argument_list|(
 name|proc_frame
 argument_list|)
@@ -1459,7 +1459,7 @@ expr_stmt|;
 comment|/*  main_loop is quit and proc_frame is popped in        *  gimp_plug_in_handle_temp_proc_return()        */
 name|return_vals
 operator|=
-name|gimp_plug_in_proc_frame_get_return_vals
+name|gimp_plug_in_proc_frame_get_return_values
 argument_list|(
 name|proc_frame
 argument_list|)

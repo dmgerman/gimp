@@ -578,8 +578,8 @@ end_function
 begin_function
 name|GValueArray
 modifier|*
-DECL|function|gimp_plug_in_proc_frame_get_return_vals (GimpPlugInProcFrame * proc_frame)
-name|gimp_plug_in_proc_frame_get_return_vals
+DECL|function|gimp_plug_in_proc_frame_get_return_values (GimpPlugInProcFrame * proc_frame)
+name|gimp_plug_in_proc_frame_get_return_values
 parameter_list|(
 name|GimpPlugInProcFrame
 modifier|*
