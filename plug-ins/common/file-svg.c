@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29649cf00108
+DECL|struct|__anon279f302c0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1083,7 +1083,8 @@ name|load_image
 argument_list|(
 name|filename
 argument_list|,
-name|NULL
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if

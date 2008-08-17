@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963e80e0108
+DECL|struct|__anon287eb7550108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2963e80e0208
+DECL|struct|__anon287eb7550208
 block|{
 DECL|member|run
 name|gboolean
@@ -4813,12 +4813,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"%s"
-argument_list|,
-name|_
-argument_list|(
 literal|"Image type can't be saved as PNG"
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return

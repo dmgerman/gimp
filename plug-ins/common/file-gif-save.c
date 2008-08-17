@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fa5c770103
+DECL|enum|__anon295ab4fe0103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa5c770208
+DECL|struct|__anon295ab4fe0208
 block|{
 DECL|member|interlace
 name|gint
@@ -226,7 +226,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 specifier|const
@@ -242,13 +242,18 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|gboolean
+name|GimpPDBStatusType
 name|sanity_check
 parameter_list|(
 specifier|const
@@ -258,6 +263,11 @@ name|filename
 parameter_list|,
 name|gint32
 name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -601,6 +611,12 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -772,14 +788,23 @@ break|break;
 default|default:
 break|break;
 block|}
-if|if
-condition|(
+name|status
+operator|=
 name|sanity_check
 argument_list|(
 name|filename
 argument_list|,
 name|image_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
 condition|)
 block|{
 switch|switch
@@ -945,6 +970,9 @@ argument_list|,
 name|drawable_ID
 argument_list|,
 name|orig_image_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -972,14 +1000,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-else|else
-comment|/* Some layers were out of bounds and the user wishes           to abort.  */
-block|{
-name|status
-operator|=
-name|GIMP_PDB_CANCEL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|export
@@ -991,6 +1011,47 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_EXECUTION_ERROR
+condition|)
+block|{
+if|if
+condition|(
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
+block|}
 block|}
 name|values
 index|[
@@ -2131,8 +2192,8 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|sanity_check (const gchar * filename,gint32 image_ID)
+name|GimpPDBStatusType
+DECL|function|sanity_check (const gchar * filename,gint32 image_ID,GError ** error)
 name|sanity_check
 parameter_list|(
 specifier|const
@@ -2142,6 +2203,11 @@ name|filename
 parameter_list|,
 name|gint32
 name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint32
@@ -2185,11 +2251,19 @@ operator|>
 name|G_MAXUSHORT
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The GIF file format does not support images that are more than %d pixels wide or tall."
+literal|"Unable to save '%s'.  "
+literal|"The GIF file format does not support images that are "
+literal|"more than %d pixels wide or tall."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2201,7 +2275,7 @@ name|G_MAXUSHORT
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|GIMP_PDB_EXECUTION_ERROR
 return|;
 block|}
 comment|/*** Iterate through the layers to make sure they're all ***/
@@ -2291,7 +2365,7 @@ name|layers
 argument_list|)
 expr_stmt|;
 comment|/* Image has illegal bounds - ask the user what it wants to do */
-comment|/* Do the crop if we can't talk to the user, or if we asked            * the user and they said yes. */
+comment|/* Do the crop if we can't talk to the user, or if we asked            * the user and they said yes.            */
 if|if
 condition|(
 operator|(
@@ -2318,13 +2392,13 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 else|else
 block|{
 return|return
-name|FALSE
+name|GIMP_PDB_CANCEL
 return|;
 block|}
 block|}
@@ -2335,15 +2409,15 @@ name|layers
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|GIMP_PDB_SUCCESS
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID)
+name|gboolean
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -2359,6 +2433,11 @@ name|drawable_ID
 parameter_list|,
 name|gint32
 name|orig_image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -2933,8 +3012,17 @@ operator|!
 name|outfile
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
