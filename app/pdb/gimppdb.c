@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293fbad30103
+DECL|enum|__anon2bc36a4a0103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -1718,13 +1718,11 @@ name|GError
 modifier|*
 name|pdb_error
 init|=
-name|g_error_new
+name|g_error_new_literal
 argument_list|(
 name|GIMP_PDB_ERROR
 argument_list|,
 name|GIMP_PDB_INTERNAL_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error_msg
 argument_list|)
