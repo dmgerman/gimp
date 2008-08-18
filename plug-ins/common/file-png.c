@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15df750108
+DECL|struct|__anon27c665ab0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c15df750208
+DECL|struct|__anon27c665ab0208
 block|{
 DECL|member|run
 name|gboolean
@@ -2318,9 +2318,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
