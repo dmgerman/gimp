@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e66c9f0103
+DECL|enum|__anon2c3cdf130103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e66c9f0203
+DECL|enum|__anon2c3cdf130203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -593,13 +593,18 @@ name|drawable_id
 parameter_list|,
 name|gint32
 name|original_image_id
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|mng_save_dialog
 parameter_list|(
 name|gint32
@@ -1755,7 +1760,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|mng_save_image (const gchar * filename,gint32 image_id,gint32 drawable_id,gint32 original_image_id)
+DECL|function|mng_save_image (const gchar * filename,gint32 image_id,gint32 drawable_id,gint32 original_image_id,GError ** error)
 name|mng_save_image
 parameter_list|(
 specifier|const
@@ -1771,6 +1776,11 @@ name|drawable_id
 parameter_list|,
 name|gint32
 name|original_image_id
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gboolean
@@ -1959,8 +1969,17 @@ operator|->
 name|fp
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
@@ -2248,7 +2267,7 @@ if|#
 directive|if
 literal|0
 comment|/* how do we get this to work? */
-block|if (mng_data.bkgd)     {       GimpRGB bgcolor;       guchar red, green, blue;        gimp_context_get_background (&bgcolor);       gimp_rgb_get_uchar (&bgcolor,&red,&green,&blue);        if (mng_putchunk_back (handle, red, green, blue,                              MNG_BACKGROUNDCOLOR_MANDATORY,                              0, MNG_BACKGROUNDIMAGE_NOTILE) != MNG_NOERROR)         {           g_warning("Unable to mng_putchunk_back() in mng_save_image()");           goto err3;         }        if (mng_putchunk_bkgd (handle, MNG_FALSE, 2, 0,                              gimp_rgb_luminance_uchar (&bgcolor),                              red, green, blue) != MNG_NOERROR)         {           g_warning("Unable to mng_putchunk_bkgd() in mng_save_image()");           goto err3;         }     }
+block|if (mng_data.bkgd)     {       GimpRGB bgcolor;       guchar red, green, blue;        gimp_context_get_background (&bgcolor);       gimp_rgb_get_uchar (&bgcolor,&red,&green,&blue);        if (mng_putchunk_back (handle, red, green, blue,                              MNG_BACKGROUNDCOLOR_MANDATORY,                              0, MNG_BACKGROUNDIMAGE_NOTILE) != MNG_NOERROR)         {           g_warning ("Unable to mng_putchunk_back() in mng_save_image()");           goto err3;         }        if (mng_putchunk_bkgd (handle, MNG_FALSE, 2, 0,                              gimp_rgb_luminance_uchar (&bgcolor),                              red, green, blue) != MNG_NOERROR)         {           g_warning ("Unable to mng_putchunk_bkgd() in mng_save_image()");           goto err3;         }     }
 endif|#
 directive|endif
 if|if
@@ -2295,7 +2314,7 @@ if|#
 directive|if
 literal|0
 comment|/* how do we get this to work? */
-block|if (mng_data.phys)     {       gimp_image_get_resolution(original_image_id,&xres,&yres);        if (mng_putchunk_phyg (handle, MNG_FALSE,                              (mng_uint32) (xres * 39.37),                              (mng_uint32) (yres * 39.37), 1) != MNG_NOERROR)         {           g_warning("Unable to mng_putchunk_phyg() in mng_save_image()");           goto err3;         }        if (mng_putchunk_phys (handle, MNG_FALSE,                              (mng_uint32) (xres * 39.37),                              (mng_uint32) (yres * 39.37), 1) != MNG_NOERROR)         {           g_warning("Unable to mng_putchunk_phys() in mng_save_image()");           goto err3;         }     }
+block|if (mng_data.phys)     {       gimp_image_get_resolution(original_image_id,&xres,&yres);        if (mng_putchunk_phyg (handle, MNG_FALSE,                              (mng_uint32) (xres * 39.37),                              (mng_uint32) (yres * 39.37), 1) != MNG_NOERROR)         {           g_warning ("Unable to mng_putchunk_phyg() in mng_save_image()");           goto err3;         }        if (mng_putchunk_phys (handle, MNG_FALSE,                              (mng_uint32) (xres * 39.37),                              (mng_uint32) (yres * 39.37), 1) != MNG_NOERROR)         {           g_warning ("Unable to mng_putchunk_phys() in mng_save_image()");           goto err3;         }     }
 endif|#
 directive|endif
 if|if
@@ -3066,8 +3085,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
@@ -3859,8 +3887,17 @@ operator|==
 name|infile
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -4528,7 +4565,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|mng_save_dialog (gint32 image_id)
 name|mng_save_dialog
 parameter_list|(
@@ -6240,7 +6277,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|INIT_I18N
@@ -6290,22 +6327,7 @@ condition|)
 block|{
 name|GimpRunMode
 name|run_mode
-decl_stmt|;
-name|gint32
-name|image_id
-decl_stmt|,
-name|original_image_id
-decl_stmt|;
-name|gint32
-name|drawable_id
-decl_stmt|;
-name|GimpExportReturn
-name|export
 init|=
-name|GIMP_EXPORT_IGNORE
-decl_stmt|;
-name|run_mode
-operator|=
 name|param
 index|[
 literal|0
@@ -6314,11 +6336,10 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
+decl_stmt|;
+name|gint32
 name|image_id
-operator|=
-name|original_image_id
-operator|=
+init|=
 name|param
 index|[
 literal|1
@@ -6327,9 +6348,15 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
+decl_stmt|;
+name|gint32
+name|original_image_id
+init|=
+name|image_id
+decl_stmt|;
+name|gint32
 name|drawable_id
-operator|=
+init|=
 name|param
 index|[
 literal|2
@@ -6338,7 +6365,12 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
+decl_stmt|;
+name|GimpExportReturn
+name|export
+init|=
+name|GIMP_EXPORT_IGNORE
+decl_stmt|;
 if|if
 condition|(
 operator|(
@@ -6401,6 +6433,7 @@ name|export
 operator|==
 name|GIMP_EXPORT_CANCEL
 condition|)
+block|{
 name|values
 index|[
 literal|0
@@ -6412,20 +6445,17 @@ name|d_status
 operator|=
 name|GIMP_PDB_CANCEL
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
-operator|(
 name|export
 operator|==
 name|GIMP_EXPORT_IGNORE
-operator|)
 operator|||
-operator|(
 name|export
 operator|==
 name|GIMP_EXPORT_EXPORT
-operator|)
 condition|)
 block|{
 if|if
@@ -6858,6 +6888,12 @@ operator|==
 name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|mng_save_image
@@ -6876,8 +6912,12 @@ argument_list|,
 name|drawable_id
 argument_list|,
 name|original_image_id
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
+block|{
 name|gimp_set_data
 argument_list|(
 name|SAVE_PROC
@@ -6891,7 +6931,9 @@ name|mng_data
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|values
 index|[
 literal|0
@@ -6903,6 +6945,40 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
+block|}
 block|}
 if|if
 condition|(
@@ -6918,6 +6994,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
+block|{
 name|values
 index|[
 literal|0
@@ -6927,8 +7004,9 @@ name|data
 operator|.
 name|d_status
 operator|=
-name|GIMP_PDB_EXECUTION_ERROR
+name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
+block|}
 block|}
 end_function
 
