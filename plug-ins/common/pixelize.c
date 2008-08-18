@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6673530108
+DECL|struct|__anon2bde47b40108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6673530208
+DECL|struct|__anon2bde47b40208
 block|{
 DECL|member|x
 DECL|member|y
@@ -467,7 +467,7 @@ literal|"Simplify image into an array of solid-colored squares"
 argument_list|)
 argument_list|,
 literal|"Pixelize the contents of the specified drawable "
-literal|"with speficied pixelizing width."
+literal|"with specified pixelizing width."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis, Tracy Scott, "
 literal|"(ported to 1.0 by) Eiichi Takamori"
