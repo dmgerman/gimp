@@ -248,9 +248,11 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"%s"
 argument_list|,
 literal|"Could not initialize GnomeVFS"
 argument_list|)
@@ -877,9 +879,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -925,9 +927,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -1035,9 +1037,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -1208,9 +1210,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -1276,7 +1278,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e280a20108
+DECL|struct|__anon2c595fd60108
 block|{
 DECL|member|in_args
 specifier|const

@@ -129,9 +129,11 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"%s"
 argument_list|,
 name|_
 argument_list|(
@@ -449,13 +451,26 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not open output file for writing"
+literal|"Could not open '%s' for writing: %s"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|,
+name|g_strerror
+argument_list|(
+name|errno
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -573,9 +588,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -625,9 +640,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -698,11 +713,11 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
-literal|"EEK! uri_backend_save_image() should not have been called!"
+literal|"not implemented"
 argument_list|)
 expr_stmt|;
 return|return

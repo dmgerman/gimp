@@ -249,10 +249,10 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
-argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,,
 literal|"pipe() failed: %s"
 argument_list|,
 name|g_strerror
@@ -289,10 +289,10 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
-argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,,
 literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
@@ -413,22 +413,6 @@ argument_list|,
 name|tmpname
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|"exec() failed: wget: %s"
-argument_list|,
-name|g_strerror
-argument_list|(
-name|errno
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|_exit
@@ -574,9 +558,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -643,9 +627,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -716,9 +700,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -810,9 +794,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -837,9 +821,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -917,9 +901,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -955,9 +939,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -999,9 +983,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 literal|"Could not parse wget's file length message"
 argument_list|)
@@ -1334,9 +1318,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 literal|"wget exited before finishing downloading URI\n'%s'"
 argument_list|,
@@ -1382,11 +1366,11 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
-literal|"EEK"
+literal|"not implemented"
 argument_list|)
 expr_stmt|;
 return|return

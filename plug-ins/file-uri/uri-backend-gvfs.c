@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28de83360103
+DECL|enum|__anon28b1ba6e0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -506,7 +506,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de83360208
+DECL|struct|__anon28b1ba6e0208
 block|{
 DECL|member|mode
 name|Mode
@@ -932,9 +932,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|G_FILE_ERROR_FAILED
 argument_list|,
 literal|"Initialization of GVfs failed"
 argument_list|)
