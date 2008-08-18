@@ -965,6 +965,12 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+comment|/*  We handle PDB errors by forwarding them to the caller in    *  our return values.    */
+name|gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|GIMP_PDB_ERROR_HANDLER_PLUGIN
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i

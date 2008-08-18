@@ -679,6 +679,12 @@ expr_stmt|;
 block|}
 return|return;
 block|}
+comment|/*  We handle PDB errors by forwarding them to the caller in    *  our return values.    */
+name|gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|GIMP_PDB_ERROR_HANDLER_PLUGIN
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!

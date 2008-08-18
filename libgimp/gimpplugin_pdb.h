@@ -114,6 +114,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_plugin_set_pdb_error_handler
+parameter_list|(
+name|GimpPDBErrorHandler
+name|handler
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpPDBErrorHandler
+name|gimp_plugin_get_pdb_error_handler
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
