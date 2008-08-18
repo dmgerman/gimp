@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27700c500108
+DECL|struct|__anon2b5f44720108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27700c500208
+DECL|struct|__anon2b5f44720208
 block|{
 DECL|member|ID
 name|gint32
@@ -289,6 +289,11 @@ name|drawable
 parameter_list|,
 name|gint32
 name|orig_image
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -654,6 +659,12 @@ name|GimpExportReturn
 name|export
 init|=
 name|GIMP_EXPORT_CANCEL
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
 decl_stmt|;
 name|run_mode
 operator|=
@@ -1172,6 +1183,9 @@ argument_list|,
 name|drawable
 argument_list|,
 name|orig_image
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -1215,6 +1229,43 @@ block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
 expr_stmt|;
 block|}
 name|values
@@ -2468,7 +2519,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image,gint32 layer,gint32 orig_image)
+DECL|function|save_image (const gchar * filename,gint32 image,gint32 layer,gint32 orig_image,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -2484,8 +2535,14 @@ name|layer
 parameter_list|,
 name|gint32
 name|orig_image
+parameter_list|,
+comment|/* the export function might have */
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
-comment|/* the export function might have created a duplicate */
+comment|/* created a duplicate            */
 block|{
 name|TIFF
 modifier|*
@@ -2691,8 +2748,17 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
@@ -3105,8 +3171,16 @@ break|break;
 case|case
 name|GIMP_INDEXEDA_IMAGE
 case|:
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"%s"
+argument_list|,
 literal|"TIFF save cannot handle indexed images with alpha channel."
 argument_list|)
 expr_stmt|;

@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922f06e0108
+DECL|struct|__anon277f69bd0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922f06e0208
+DECL|struct|__anon277f69bd0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2922f06e0308
+DECL|struct|__anon277f69bd0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -294,6 +294,11 @@ parameter_list|,
 name|TiffSelectedPages
 modifier|*
 name|pages
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -880,6 +885,12 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|gint32
 name|image
 decl_stmt|;
@@ -996,8 +1007,18 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+operator|&
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -1234,6 +1255,9 @@ name|tif
 argument_list|,
 operator|&
 name|pages
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1322,6 +1346,43 @@ block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
 expr_stmt|;
 block|}
 name|values
@@ -1944,7 +2005,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename,TIFF * tif,TiffSelectedPages * pages)
+DECL|function|load_image (const gchar * filename,TIFF * tif,TiffSelectedPages * pages,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -1959,6 +2020,11 @@ parameter_list|,
 name|TiffSelectedPages
 modifier|*
 name|pages
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gushort
@@ -2741,7 +2807,10 @@ condition|)
 block|{
 name|g_message
 argument_list|(
-literal|"Could not create a new image"
+literal|"Could not create a new image: %s"
+argument_list|,
+name|gimp_get_pdb_error
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
