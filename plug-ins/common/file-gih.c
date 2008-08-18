@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon288cbb2d0108
+DECL|struct|__anon2797507b0108
 block|{
 DECL|member|spacing
 name|guint
@@ -236,6 +236,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|selection_modes
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|selection_modes
@@ -270,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288cbb2d0208
+DECL|struct|__anon2797507b0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -414,6 +415,11 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -480,6 +486,11 @@ name|orig_image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -914,6 +925,12 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -982,6 +999,9 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1255,6 +1275,7 @@ name|gihparams
 operator|.
 name|ncells
 operator|=
+operator|(
 name|num_useable_layers
 operator|*
 name|gihparams
@@ -1264,6 +1285,7 @@ operator|*
 name|gihparams
 operator|.
 name|cols
+operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -1641,6 +1663,9 @@ argument_list|,
 name|orig_image_ID
 argument_list|,
 name|drawable_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -1683,6 +1708,43 @@ block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
 expr_stmt|;
 block|}
 name|values
@@ -2714,13 +2776,18 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|gih_load_image (const gchar * filename)
+DECL|function|gih_load_image (const gchar * filename,GError ** error)
 name|gih_load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -2779,8 +2846,17 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -3054,8 +3130,16 @@ name|image_ID
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Couldn't load one brush in the pipe, giving up."
@@ -5941,7 +6025,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gih_save_image (const gchar * filename,gint32 image_ID,gint32 orig_image_ID,gint32 drawable_ID)
+DECL|function|gih_save_image (const gchar * filename,gint32 image_ID,gint32 orig_image_ID,gint32 drawable_ID,GError ** error)
 name|gih_save_image
 parameter_list|(
 specifier|const
@@ -5957,6 +6041,11 @@ name|orig_image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpDrawable
@@ -6082,8 +6171,17 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"

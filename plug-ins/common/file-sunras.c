@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf67c730108
+DECL|struct|__anon29911c610108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf67c730208
+DECL|struct|__anon29911c610208
 block|{
 DECL|member|val
 name|gint
@@ -287,13 +287,18 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 specifier|const
@@ -306,6 +311,11 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -812,7 +822,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf67c730308
+DECL|struct|__anon29911c610308
 block|{
 DECL|member|rle
 name|gboolean
@@ -1134,6 +1144,12 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|l_run_mode
 operator|=
 name|run_mode
@@ -1204,6 +1220,9 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -1454,6 +1473,9 @@ argument_list|,
 name|image_ID
 argument_list|,
 name|drawable_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -1499,6 +1521,43 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -1516,13 +1575,18 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename)
+DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint32
@@ -1556,8 +1620,17 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -1601,8 +1674,14 @@ operator|!=
 name|RAS_MAGIC
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' as SUN-raster-file"
@@ -1645,8 +1724,16 @@ literal|5
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"The type of this SUN-rasterfile is not supported"
@@ -2168,8 +2255,8 @@ end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
+name|gboolean
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -2182,6 +2269,11 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -2191,7 +2283,7 @@ decl_stmt|;
 name|GimpImageType
 name|drawable_type
 decl_stmt|;
-name|gint
+name|gboolean
 name|retval
 decl_stmt|;
 name|drawable_type
@@ -2269,8 +2361,17 @@ operator|!
 name|ofp
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
