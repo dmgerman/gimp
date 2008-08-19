@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c38edc50103
+DECL|enum|__anon2ae2ac610103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c38edc50208
+DECL|struct|__anon2ae2ac610208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -511,7 +511,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|WriteBMP (const gchar * filename,gint32 image,gint32 drawable_ID)
+DECL|function|WriteBMP (const gchar * filename,gint32 image,gint32 drawable_ID,GError ** error)
 name|WriteBMP
 parameter_list|(
 specifier|const
@@ -524,6 +524,11 @@ name|image
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -1111,8 +1116,17 @@ operator|!
 name|outfile
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"

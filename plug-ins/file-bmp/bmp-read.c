@@ -148,6 +148,11 @@ specifier|const
 name|Bitmap_Channel
 modifier|*
 name|masks
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -582,13 +587,18 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|ReadBMP (const gchar * name)
+DECL|function|ReadBMP (const gchar * name,GError ** error)
 name|ReadBMP
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -656,8 +666,17 @@ operator|!
 name|fd
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -769,8 +788,14 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"'%s' is not a valid BMP file"
@@ -813,8 +838,14 @@ literal|12
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"'%s' is not a valid BMP file"
@@ -844,8 +875,14 @@ literal|2
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"'%s' is not a valid BMP file"
@@ -876,8 +913,14 @@ literal|12
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"'%s' is not a valid BMP file"
@@ -960,8 +1003,14 @@ literal|4
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"'%s' is not a valid BMP file"
@@ -1015,8 +1064,14 @@ literal|8
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error reading BMP file header from '%s'"
@@ -1200,8 +1255,14 @@ literal|36
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error reading BMP file header from '%s'"
@@ -1437,8 +1498,14 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error reading BMP file header from '%s'"
@@ -1937,8 +2004,14 @@ literal|4
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error reading BMP file header from '%s'"
@@ -2185,8 +2258,14 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error reading BMP file header from '%s'"
@@ -2278,11 +2357,17 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Error reading BMP file header from '%s'"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2305,8 +2390,14 @@ operator|<
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"'%s' is not a valid BMP file"
@@ -2332,11 +2423,17 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Error reading BMP file header from '%s'"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2359,11 +2456,17 @@ operator|>
 literal|256
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Error reading BMP file header from '%s'"
+literal|"'%s' is not a valid BMP file"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2527,6 +2630,8 @@ argument_list|,
 name|Grey
 argument_list|,
 name|masks
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -2612,7 +2717,7 @@ end_function
 begin_function
 specifier|static
 name|gint32
-DECL|function|ReadImage (FILE * fd,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean grey,const Bitmap_Channel * masks)
+DECL|function|ReadImage (FILE * fd,gint width,gint height,guchar cmap[256][3],gint ncols,gint bpp,gint compression,gint rowbytes,gboolean grey,const Bitmap_Channel * masks,GError ** error)
 name|ReadImage
 parameter_list|(
 name|FILE
@@ -2653,6 +2758,11 @@ specifier|const
 name|Bitmap_Channel
 modifier|*
 name|masks
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|guchar
@@ -2780,8 +2890,16 @@ operator|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Unrecognized or invalid BMP compression format."
