@@ -202,10 +202,6 @@ name|GList
 modifier|*
 name|temp_proc_frames
 decl_stmt|;
-DECL|member|error_handler
-name|GimpPDBErrorHandler
-name|error_handler
-decl_stmt|;
 DECL|member|plug_in_def
 name|GimpPlugInDef
 modifier|*

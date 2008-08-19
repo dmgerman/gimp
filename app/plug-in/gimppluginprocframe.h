@@ -63,6 +63,10 @@ DECL|member|progress_cancel_id
 name|gulong
 name|progress_cancel_id
 decl_stmt|;
+DECL|member|error_handler
+name|GimpPDBErrorHandler
+name|error_handler
+decl_stmt|;
 comment|/*  lists of things to clean up on dispose  */
 DECL|member|image_cleanups
 name|GList

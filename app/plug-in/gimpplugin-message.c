@@ -1773,16 +1773,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_plug_in_handle_proc_error (GimpPlugIn * plug_in,GimpProgress * progress,const gchar * name,const GError * error)
+DECL|function|gimp_plug_in_handle_proc_error (GimpPlugIn * plug_in,GimpPlugInProcFrame * proc_frame,const gchar * name,const GError * error)
 name|gimp_plug_in_handle_proc_error
 parameter_list|(
 name|GimpPlugIn
 modifier|*
 name|plug_in
 parameter_list|,
-name|GimpProgress
+name|GimpPlugInProcFrame
 modifier|*
-name|progress
+name|proc_frame
 parameter_list|,
 specifier|const
 name|gchar
@@ -1797,10 +1797,9 @@ parameter_list|)
 block|{
 switch|switch
 condition|(
-name|gimp_plug_in_get_error_handler
-argument_list|(
-name|plug_in
-argument_list|)
+name|proc_frame
+operator|->
+name|error_handler
 condition|)
 block|{
 case|case
@@ -1825,6 +1824,8 @@ name|gimp
 argument_list|,
 name|G_OBJECT
 argument_list|(
+name|proc_frame
+operator|->
 name|progress
 argument_list|)
 argument_list|,
@@ -1856,6 +1857,8 @@ name|gimp
 argument_list|,
 name|G_OBJECT
 argument_list|(
+name|proc_frame
+operator|->
 name|progress
 argument_list|)
 argument_list|,
@@ -2300,8 +2303,6 @@ argument_list|(
 name|plug_in
 argument_list|,
 name|proc_frame
-operator|->
-name|progress
 argument_list|,
 name|canonical
 argument_list|,

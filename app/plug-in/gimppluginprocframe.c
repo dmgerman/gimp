@@ -288,6 +288,12 @@ name|progress_cancel_id
 operator|=
 literal|0
 expr_stmt|;
+name|proc_frame
+operator|->
+name|error_handler
+operator|=
+name|GIMP_PDB_ERROR_HANDLER_INTERNAL
+expr_stmt|;
 if|if
 condition|(
 name|progress
