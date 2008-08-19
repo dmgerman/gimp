@@ -1279,6 +1279,7 @@ argument_list|,
 literal|"render"
 argument_list|)
 condition|)
+block|{
 name|gtk_list_store_insert_with_values
 argument_list|(
 name|store
@@ -1298,6 +1299,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_list_free
 argument_list|(
