@@ -289,6 +289,10 @@ argument_list|)
 condition|)
 block|{
 case|case
+name|PANGO_ALIGN_LEFT
+case|:
+break|break;
+case|case
 name|PANGO_ALIGN_RIGHT
 case|:
 name|x
