@@ -705,6 +705,11 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gimp_image_flush
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|image
