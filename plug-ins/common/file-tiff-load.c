@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f69bd0108
+DECL|struct|__anon292e70120108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f69bd0208
+DECL|struct|__anon292e70120208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f69bd0308
+DECL|struct|__anon292e70120308
 block|{
 DECL|member|o_pages
 name|gint
@@ -1089,8 +1089,15 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+operator|&
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"TIFF '%s' does not contain any directories"

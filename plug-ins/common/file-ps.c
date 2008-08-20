@@ -288,7 +288,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e56f060108
+DECL|struct|__anon2c1aced10108
 block|{
 DECL|member|resolution
 name|guint
@@ -397,7 +397,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e56f060208
+DECL|struct|__anon2c1aced10208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1016,7 +1016,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e56f060308
+DECL|struct|__anon2c1aced10308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1885,7 +1885,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e56f060408
+DECL|struct|__anon2c1aced10408
 block|{
 DECL|member|eol
 name|long
@@ -4331,11 +4331,17 @@ operator|!
 name|ifp
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
 name|_
 argument_list|(
-literal|"Could not interpret '%s'"
+literal|"Could not interpret Postscript file '%s'"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -4912,8 +4918,14 @@ name|drawable_ID
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"PostScript save cannot handle images with alpha channels"
