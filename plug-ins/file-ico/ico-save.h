@@ -30,6 +30,11 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|run_mode
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -38,6 +43,7 @@ begin_function_decl
 name|gboolean
 name|ico_cmap_contains_black
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|cmap

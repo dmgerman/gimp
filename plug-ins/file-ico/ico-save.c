@@ -1282,9 +1282,10 @@ begin_function
 specifier|static
 name|guint32
 modifier|*
-DECL|function|ico_create_palette (guchar * cmap,gint num_colors,gint num_colors_used,gint * black_slot)
+DECL|function|ico_create_palette (const guchar * cmap,gint num_colors,gint num_colors_used,gint * black_slot)
 name|ico_create_palette
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -1554,9 +1555,10 @@ begin_function
 specifier|static
 name|GHashTable
 modifier|*
-DECL|function|ico_create_color_to_palette_map (guint32 * palette,gint num_colors)
+DECL|function|ico_create_color_to_palette_map (const guint32 * palette,gint num_colors)
 name|ico_create_color_to_palette_map
 parameter_list|(
+specifier|const
 name|guint32
 modifier|*
 name|palette
@@ -1595,18 +1597,13 @@ name|i
 operator|++
 control|)
 block|{
-name|gint
-modifier|*
-name|color
-decl_stmt|,
-modifier|*
-name|slot
-decl_stmt|;
+specifier|const
 name|guint8
 modifier|*
 name|pixel
 init|=
 operator|(
+specifier|const
 name|guint8
 operator|*
 operator|)
@@ -1615,6 +1612,14 @@ name|palette
 index|[
 name|i
 index|]
+decl_stmt|;
+name|gint
+modifier|*
+name|color
+decl_stmt|;
+name|gint
+modifier|*
+name|slot
 decl_stmt|;
 name|color
 operator|=
@@ -2220,9 +2225,10 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|ico_cmap_contains_black (guchar * cmap,gint num_colors)
+DECL|function|ico_cmap_contains_black (const guchar * cmap,gint num_colors)
 name|ico_cmap_contains_black
 parameter_list|(
+specifier|const
 name|guchar
 modifier|*
 name|cmap
@@ -4543,7 +4549,7 @@ end_function
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|ico_save_image (const gchar * filename,gint32 image,gint32 run_mode)
+DECL|function|ico_save_image (const gchar * filename,gint32 image,gint32 run_mode,GError ** error)
 name|ico_save_image
 parameter_list|(
 specifier|const
@@ -4556,6 +4562,11 @@ name|image
 parameter_list|,
 name|gint32
 name|run_mode
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -4651,8 +4662,17 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"

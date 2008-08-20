@@ -3225,13 +3225,18 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|ico_load_image (const gchar * filename)
+DECL|function|ico_load_image (const gchar * filename,GError ** error)
 name|ico_load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -3294,8 +3299,17 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -3567,7 +3581,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|ico_load_thumbnail_image (const gchar * filename,gint * width,gint * height)
+DECL|function|ico_load_thumbnail_image (const gchar * filename,gint * width,gint * height,GError ** error)
 name|ico_load_thumbnail_image
 parameter_list|(
 specifier|const
@@ -3582,6 +3596,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -3655,8 +3674,17 @@ operator|!
 name|fp
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
