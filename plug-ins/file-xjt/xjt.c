@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10103
+DECL|enum|__anon27bca0050103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -473,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10203
+DECL|enum|__anon27bca0050203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10303
+DECL|enum|__anon27bca0050303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -563,7 +563,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10403
+DECL|enum|__anon27bca0050403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -585,7 +585,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10503
+DECL|enum|__anon27bca0050503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -605,7 +605,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10603
+DECL|enum|__anon27bca0050603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -640,7 +640,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c774a10703
+DECL|enum|__anon27bca0050703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -765,7 +765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10808
+DECL|struct|__anon27bca0050808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -801,7 +801,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10908
+DECL|struct|__anon27bca0050908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -850,7 +850,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10a08
+DECL|struct|__anon27bca0050a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -887,7 +887,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10b08
+DECL|struct|__anon27bca0050b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -937,7 +937,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10c08
+DECL|struct|__anon27bca0050c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -1011,7 +1011,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10d08
+DECL|struct|__anon27bca0050d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1096,7 +1096,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10e08
+DECL|struct|__anon27bca0050e08
 block|{
 DECL|member|position
 name|gint32
@@ -1120,7 +1120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c774a10f08
+DECL|struct|__anon27bca0050f08
 block|{
 DECL|member|version
 name|gchar
@@ -1782,6 +1782,11 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1801,6 +1806,11 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2239,9 +2249,16 @@ decl_stmt|;
 name|gint32
 name|image_ID
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|l_env
+decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
 decl_stmt|;
 name|g_pid
 operator|=
@@ -2355,6 +2372,9 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -2609,6 +2629,9 @@ operator|.
 name|data
 operator|.
 name|d_int32
+argument_list|,
+operator|&
+name|error
 argument_list|)
 operator|<
 literal|0
@@ -2643,6 +2666,43 @@ block|{
 name|status
 operator|=
 name|GIMP_PDB_CALLING_ERROR
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
 expr_stmt|;
 block|}
 name|values
@@ -7275,7 +7335,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_xjt_image (const gchar * filename,gint32 image_id,gint32 drawable_id)
+DECL|function|save_xjt_image (const gchar * filename,gint32 image_id,gint32 drawable_id,GError ** error)
 name|save_xjt_image
 parameter_list|(
 specifier|const
@@ -7288,6 +7348,11 @@ name|image_id
 parameter_list|,
 name|gint32
 name|drawable_id
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|int
@@ -7509,8 +7574,17 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not create working folder '%s': %s"
@@ -7548,8 +7622,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
@@ -13622,13 +13705,18 @@ begin_function
 specifier|static
 name|t_image_props
 modifier|*
-DECL|function|p_load_prop_file (const gchar * prop_filename)
+DECL|function|p_load_prop_file (const gchar * prop_filename,GError ** error)
 name|p_load_prop_file
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|prop_filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint32
@@ -13694,8 +13782,14 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error: Could not read XJT property file '%s'."
@@ -13718,8 +13812,14 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Error: XJT property file '%s' is empty."
@@ -14009,13 +14109,18 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_xjt_image (const gchar * filename)
+DECL|function|load_xjt_image (const gchar * filename,GError ** error)
 name|load_xjt_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|int
@@ -14188,8 +14293,17 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not create working folder '%s': %s"
@@ -14421,6 +14535,8 @@ operator|=
 name|p_load_prop_file
 argument_list|(
 name|l_prop_file
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 if|if
