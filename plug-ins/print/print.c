@@ -1059,9 +1059,16 @@ name|GtkPrintOperation
 modifier|*
 name|operation
 decl_stmt|;
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
 name|gchar
 modifier|*
 name|name
+decl_stmt|;
+name|gint
+name|n_return_vals
 decl_stmt|;
 name|gimp_ui_init
 argument_list|(
@@ -1107,22 +1114,12 @@ argument_list|(
 name|image_ID
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: This code has a race condition. The best solution    *        would be to catch the error somehow (see bug #344818).    */
-if|if
-condition|(
-name|gimp_procedural_db_proc_exists
+comment|/* we don't want the core to show an error message if the    * temporary procedure does not exist    */
+name|gimp_plugin_set_pdb_error_handler
 argument_list|(
-name|name
+name|GIMP_PDB_ERROR_HANDLER_PLUGIN
 argument_list|)
-condition|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|n_return_vals
-decl_stmt|;
+expr_stmt|;
 name|return_vals
 operator|=
 name|gimp_run_procedure
@@ -1146,7 +1143,6 @@ argument_list|,
 name|n_return_vals
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|name
