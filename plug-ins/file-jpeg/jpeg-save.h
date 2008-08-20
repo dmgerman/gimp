@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c24a1f80108
+DECL|struct|__anon2c86a4650108
 block|{
 DECL|member|quality
 name|gdouble
@@ -107,6 +107,11 @@ name|orig_image_ID
 parameter_list|,
 name|gboolean
 name|preview
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl

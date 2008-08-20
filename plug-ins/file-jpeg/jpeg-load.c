@@ -217,7 +217,7 @@ end_decl_stmt
 
 begin_function
 name|gint32
-DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview)
+DECL|function|load_image (const gchar * filename,GimpRunMode runmode,gboolean preview,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
@@ -230,6 +230,11 @@ name|runmode
 parameter_list|,
 name|gboolean
 name|preview
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -363,8 +368,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -1877,7 +1891,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon273adfe40108
+DECL|struct|__anon2bafaf460108
 block|{
 DECL|member|pub
 name|struct
@@ -2051,7 +2065,7 @@ end_function
 
 begin_function
 name|gint32
-DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height)
+DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height,GError ** error)
 name|load_thumbnail_image
 parameter_list|(
 specifier|const
@@ -2066,6 +2080,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint32
@@ -2889,8 +2908,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"

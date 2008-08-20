@@ -128,19 +128,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"jpeg-settings.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"jpeg-icc.h"
 end_include
 
 begin_include
 include|#
 directive|include
+file|"jpeg-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"jpeg-save.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"jpeg-settings.h"
 end_include
 
 begin_define
@@ -270,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975b7ca0108
+DECL|struct|__anon2b5faceb0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -346,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975b7ca0208
+DECL|struct|__anon2b5faceb0208
 block|{
 DECL|member|run
 name|gboolean
@@ -896,6 +902,8 @@ argument_list|,
 name|GIMP_RUN_NONINTERACTIVE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1127,7 +1135,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean preview)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,gint32 orig_image_ID,gboolean preview,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -1146,6 +1154,11 @@ name|orig_image_ID
 parameter_list|,
 name|gboolean
 name|preview
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpPixelRgn
@@ -1354,8 +1367,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
@@ -3095,6 +3117,8 @@ argument_list|,
 name|orig_image_ID_global
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -6498,7 +6522,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2975b7ca0308
+DECL|struct|__anon2b5faceb0308
 block|{
 DECL|member|pub
 name|struct
