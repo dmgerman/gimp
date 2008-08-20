@@ -420,13 +420,18 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|load_image (const gchar * filename)
+DECL|function|load_image (const gchar * filename,GError ** load_error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|load_error
 parameter_list|)
 block|{
 name|FILE
@@ -505,8 +510,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|load_error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -934,11 +948,17 @@ condition|(
 name|error
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|load_error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Error loading PSD file:\n\n%s"
+literal|"Error loading PSD file: %s"
 argument_list|)
 argument_list|,
 name|error

@@ -178,7 +178,7 @@ end_comment
 
 begin_function
 name|gint32
-DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height)
+DECL|function|load_thumbnail_image (const gchar * filename,gint * width,gint * height,GError ** load_error)
 name|load_thumbnail_image
 parameter_list|(
 specifier|const
@@ -193,6 +193,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|load_error
 parameter_list|)
 block|{
 name|FILE
@@ -266,8 +271,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|load_error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading: %s"
@@ -500,6 +514,35 @@ return|;
 comment|/* ----- Process load errors ----- */
 name|load_error
 label|:
+if|if
+condition|(
+name|error
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|load_error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"Error loading PSD file: %s"
+argument_list|)
+argument_list|,
+name|error
+operator|->
+name|message
+argument_list|)
+expr_stmt|;
+name|g_error_free
+argument_list|(
+name|error
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* Delete partially loaded image */
 if|if
 condition|(

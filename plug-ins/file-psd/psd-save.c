@@ -395,6 +395,11 @@ name|filename
 parameter_list|,
 name|gint32
 name|image_id
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -767,6 +772,12 @@ decl_stmt|;
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -949,8 +960,12 @@ operator|.
 name|d_string
 argument_list|,
 name|image_id
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
+block|{
 name|values
 index|[
 literal|0
@@ -962,7 +977,9 @@ name|d_status
 operator|=
 name|GIMP_PDB_SUCCESS
 expr_stmt|;
+block|}
 else|else
+block|{
 name|values
 index|[
 literal|0
@@ -974,6 +991,40 @@ name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+if|if
+condition|(
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
+block|}
 if|if
 condition|(
 name|export
@@ -1360,6 +1411,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|write_gint16
 argument_list|(
 name|fd
@@ -1369,6 +1421,7 @@ argument_list|,
 name|why
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* If total length (length byte + content) is not a multiple of PADDING,      add zeros to pad it.  */
 name|len
 operator|++
@@ -6661,7 +6714,7 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (const gchar * filename,gint32 image_id)
+DECL|function|save_image (const gchar * filename,gint32 image_id,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -6671,6 +6724,11 @@ name|filename
 parameter_list|,
 name|gint32
 name|image_id
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|FILE
@@ -6714,11 +6772,19 @@ operator|>
 literal|30000
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The PSD file format does not support images that are more than 30,000 pixels wide or tall."
+literal|"Unable to save '%s'.  The PSD file format does not "
+literal|"support images that are more than 30,000 pixels wide "
+literal|"or tall."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -6781,11 +6847,19 @@ operator|>
 literal|30000
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Unable to save '%s'.  The PSD file format does not support images with layers that are more than 30,000 pixels wide or tall."
+literal|"Unable to save '%s'.  The PSD file format does not "
+literal|"support images with layers that are more than 30,000 "
+literal|"pixels wide or tall."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -6825,8 +6899,17 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing: %s"
