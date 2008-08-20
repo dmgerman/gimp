@@ -109,7 +109,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c005140108
+DECL|struct|__anon28dbc1680108
 block|{
 DECL|member|file
 name|FILE
@@ -236,6 +236,7 @@ name|sgi_t
 modifier|*
 name|sgiOpen
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename

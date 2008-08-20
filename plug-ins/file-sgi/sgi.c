@@ -128,6 +128,11 @@ specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -147,6 +152,11 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -481,6 +491,12 @@ name|export
 init|=
 name|GIMP_EXPORT_CANCEL
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -549,6 +565,9 @@ operator|.
 name|data
 operator|.
 name|d_string
+argument_list|,
+operator|&
+name|error
 argument_list|)
 expr_stmt|;
 if|if
@@ -807,6 +826,9 @@ argument_list|,
 name|image_ID
 argument_list|,
 name|drawable_ID
+argument_list|,
+operator|&
+name|error
 argument_list|)
 condition|)
 block|{
@@ -851,6 +873,43 @@ operator|=
 name|GIMP_PDB_CALLING_ERROR
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -872,17 +931,21 @@ end_comment
 begin_function
 specifier|static
 name|gint32
-DECL|function|load_image (const gchar * filename)
+DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|filename
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
-comment|/* I - File to load */
 block|{
-name|int
+name|gint
 name|i
 decl_stmt|,
 comment|/* Looping var */
@@ -953,10 +1016,6 @@ name|sgip
 operator|=
 name|sgiOpen
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|filename
 argument_list|,
 name|SGI_READ
@@ -979,8 +1038,14 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for reading."
@@ -1115,9 +1180,18 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
-literal|"Could not allocate new image"
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+literal|"Could not allocate new image: %s"
+argument_list|,
+name|gimp_get_pdb_error
+argument_list|()
 argument_list|)
 expr_stmt|;
 return|return
@@ -1626,7 +1700,7 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
+DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,GError ** error)
 name|save_image
 parameter_list|(
 specifier|const
@@ -1639,6 +1713,11 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|drawable_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -1790,10 +1869,6 @@ name|sgip
 operator|=
 name|sgiOpen
 argument_list|(
-operator|(
-name|char
-operator|*
-operator|)
 name|filename
 argument_list|,
 name|SGI_WRITE
@@ -1820,8 +1895,14 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
 literal|"Could not open '%s' for writing."

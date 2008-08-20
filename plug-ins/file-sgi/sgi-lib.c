@@ -709,9 +709,10 @@ end_comment
 begin_function
 name|sgi_t
 modifier|*
-DECL|function|sgiOpen (char * filename,int mode,int comp,int bpp,int xsize,int ysize,int zsize)
+DECL|function|sgiOpen (const char * filename,int mode,int comp,int bpp,int xsize,int ysize,int zsize)
 name|sgiOpen
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|filename
