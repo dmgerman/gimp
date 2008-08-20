@@ -1576,11 +1576,21 @@ name|i
 decl_stmt|;
 name|hash
 operator|=
-name|g_hash_table_new
+name|g_hash_table_new_full
 argument_list|(
 name|g_int_hash
 argument_list|,
 name|g_int_equal
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
 argument_list|)
 expr_stmt|;
 for|for
@@ -1681,40 +1691,6 @@ block|}
 return|return
 name|hash
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|ico_free_hash_item (gpointer data1,gpointer data2,gpointer data3)
-name|ico_free_hash_item
-parameter_list|(
-name|gpointer
-name|data1
-parameter_list|,
-name|gpointer
-name|data2
-parameter_list|,
-name|gpointer
-name|data3
-parameter_list|)
-block|{
-name|g_free
-argument_list|(
-name|data1
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|data2
-argument_list|)
-expr_stmt|;
-comment|/* Shut up warnings: */
-name|data3
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 
@@ -3567,7 +3543,7 @@ operator|*
 operator|)
 name|buffer
 expr_stmt|;
-comment|/* Set up colormap and andmap when necessary: */
+comment|/* Set up colormap and and_map when necessary: */
 if|if
 condition|(
 name|header
@@ -4373,22 +4349,11 @@ if|if
 condition|(
 name|color_to_slot
 condition|)
-block|{
-name|g_hash_table_foreach
-argument_list|(
-name|color_to_slot
-argument_list|,
-name|ico_free_hash_item
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|g_hash_table_destroy
 argument_list|(
 name|color_to_slot
 argument_list|)
 expr_stmt|;
-block|}
 name|g_free
 argument_list|(
 name|palette
