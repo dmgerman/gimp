@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28893cc20103
+DECL|enum|__anon2b01d4630103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28893cc20203
+DECL|enum|__anon2b01d4630203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28893cc20303
+DECL|enum|__anon2b01d4630303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28893cc20403
+DECL|enum|__anon2b01d4630403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28893cc20508
+DECL|struct|__anon2b01d4630508
 block|{
 DECL|member|h_style
 name|gint
@@ -440,7 +440,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|GimpPDBStatusType
@@ -534,12 +534,32 @@ operator|<
 literal|2
 condition|)
 block|{
-name|g_message
-argument_list|(
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
 name|_
 argument_list|(
 literal|"There are not enough layers to align."
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return;

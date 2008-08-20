@@ -352,7 +352,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295800200103
+DECL|enum|__anon28af1ff20103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -379,7 +379,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295800200203
+DECL|enum|__anon28af1ff20203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200308
+DECL|struct|__anon28af1ff20308
 block|{
 DECL|member|name
 name|gchar
@@ -541,7 +541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200408
+DECL|struct|__anon28af1ff20408
 block|{
 DECL|member|fp
 name|FILE
@@ -561,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon295800200503
+DECL|enum|__anon28af1ff20503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -589,7 +589,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200608
+DECL|struct|__anon28af1ff20608
 block|{
 DECL|member|init
 name|gint
@@ -611,7 +611,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon295800200708
+DECL|struct|__anon28af1ff20708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -690,7 +690,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200808
+DECL|struct|__anon28af1ff20808
 block|{
 DECL|member|init
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200908
+DECL|struct|__anon28af1ff20908
 block|{
 DECL|member|x0
 name|gdouble
@@ -787,7 +787,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200a08
+DECL|struct|__anon28af1ff20a08
 block|{
 DECL|member|init
 name|gint
@@ -957,7 +957,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200b08
+DECL|struct|__anon28af1ff20b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -984,7 +984,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200c08
+DECL|struct|__anon28af1ff20c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1225,7 +1225,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200d08
+DECL|struct|__anon28af1ff20d08
 block|{
 DECL|member|tag
 name|gint
@@ -1302,7 +1302,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295800200e08
+DECL|struct|__anon28af1ff20e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -4036,7 +4036,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|GimpRunMode
@@ -4602,17 +4602,37 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_message
-argument_list|(
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
 name|_
 argument_list|(
 literal|"Cannot operate on indexed color images."
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|status
-operator|=
-name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 block|}
 block|}
@@ -8505,7 +8525,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon295800200f08
+DECL|struct|__anon28af1ff20f08
 block|{
 DECL|member|values
 name|guchar
@@ -14465,7 +14485,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon295800201008
+DECL|struct|__anon28af1ff21008
 block|{
 DECL|member|label
 specifier|const

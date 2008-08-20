@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad544630108
+DECL|struct|__anon2934f8990108
 block|{
 DECL|member|horizontal
 name|gboolean
@@ -413,7 +413,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|GimpDrawable
@@ -686,10 +686,37 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* g_message ("Cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|_
+argument_list|(
+literal|"Cannot operate on indexed color images."
+argument_list|)
 expr_stmt|;
 block|}
 name|gimp_drawable_detach

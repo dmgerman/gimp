@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde47b40108
+DECL|struct|__anon2b4923680108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bde47b40208
+DECL|struct|__anon2b4923680208
 block|{
 DECL|member|x
 DECL|member|y
@@ -574,7 +574,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|GimpDrawable
@@ -902,10 +902,37 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* g_message ("pixelize: cannot operate on indexed color images"); */
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|_
+argument_list|(
+literal|"Cannot operate on indexed color images."
+argument_list|)
 expr_stmt|;
 block|}
 block|}
