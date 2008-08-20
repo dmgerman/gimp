@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d82e090103
+DECL|enum|__anon295a3e420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3523,7 +3523,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_push_status_coords (GimpTool * tool,GimpDisplay * display,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help)
+DECL|function|gimp_tool_push_status_coords (GimpTool * tool,GimpDisplay * display,GimpCursorPrecision precision,const gchar * title,gdouble x,const gchar * separator,gdouble y,const gchar * help)
 name|gimp_tool_push_status_coords
 parameter_list|(
 name|GimpTool
@@ -3533,6 +3533,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
+parameter_list|,
+name|GimpCursorPrecision
+name|precision
 parameter_list|,
 specifier|const
 name|gchar
@@ -3617,6 +3620,8 @@ name|tool
 argument_list|)
 argument_list|,
 name|stock_id
+argument_list|,
+name|precision
 argument_list|,
 name|title
 argument_list|,

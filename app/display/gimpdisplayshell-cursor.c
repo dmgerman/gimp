@@ -350,12 +350,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_update_cursor (GimpDisplayShell * shell,gint display_x,gint display_y,gint image_x,gint image_y)
+DECL|function|gimp_display_shell_update_cursor (GimpDisplayShell * shell,GimpCursorPrecision precision,gint display_x,gint display_y,gdouble image_x,gdouble image_y)
 name|gimp_display_shell_update_cursor
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|GimpCursorPrecision
+name|precision
 parameter_list|,
 name|gint
 name|display_x
@@ -363,10 +366,10 @@ parameter_list|,
 name|gint
 name|display_y
 parameter_list|,
-name|gint
+name|gdouble
 name|image_x
 parameter_list|,
-name|gint
+name|gdouble
 name|image_y
 parameter_list|)
 block|{
@@ -506,6 +509,8 @@ name|shell
 operator|->
 name|statusbar
 argument_list|)
+argument_list|,
+name|precision
 argument_list|,
 name|image_x
 argument_list|,

@@ -117,7 +117,7 @@ DECL|member|preserve
 name|gboolean
 name|preserve
 decl_stmt|;
-comment|/*  Preserve this tool across       *                                           *  drawable changes                */
+comment|/*  Preserve this tool across       *                                             *  drawable changes                */
 DECL|member|scroll_lock
 name|gboolean
 name|scroll_lock
@@ -127,7 +127,7 @@ DECL|member|handle_empty_image
 name|gboolean
 name|handle_empty_image
 decl_stmt|;
-comment|/*  invoke the tool on images       *                                           *  without active drawable         */
+comment|/*  invoke the tool on images       *                                             *  without active drawable         */
 DECL|member|wants_click
 name|gboolean
 name|wants_click
@@ -137,12 +137,12 @@ DECL|member|dirty_mask
 name|GimpDirtyMask
 name|dirty_mask
 decl_stmt|;
-comment|/*  if preserve is FALSE, cancel    *                                           *  the tool on these events        */
+comment|/*  if preserve is FALSE, cancel    *                                             *  the tool on these events        */
 DECL|member|motion_mode
 name|GimpMotionMode
 name|motion_mode
 decl_stmt|;
-comment|/*  how to process motion events    *                                           *  before they go to the tool      */
+comment|/*  how to process motion events    *                                             *  before they go to the tool      */
 DECL|member|auto_snap_to
 name|gboolean
 name|auto_snap_to
@@ -163,6 +163,10 @@ decl_stmt|;
 DECL|member|snap_height
 name|gint
 name|snap_height
+decl_stmt|;
+DECL|member|precision
+name|GimpCursorPrecision
+name|precision
 decl_stmt|;
 DECL|member|toggled
 name|gboolean
@@ -536,6 +540,31 @@ parameter_list|,
 name|gint
 modifier|*
 name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_tool_control_set_precision
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
+parameter_list|,
+name|GimpCursorPrecision
+name|precision
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpCursorPrecision
+name|gimp_tool_control_get_precision
+parameter_list|(
+name|GimpToolControl
+modifier|*
+name|control
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da6ffe0103
+DECL|enum|__anon28ffc79b0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28da6ffe0203
+DECL|enum|__anon28ffc79b0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28da6ffe0303
+DECL|enum|__anon28ffc79b0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -328,7 +328,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da6ffe0408
+DECL|struct|__anon28ffc79b0408
 block|{
 comment|/* The following members are "constants", that is, variables that are setup    * during gimp_rectangle_tool_button_press and then only read.    */
 comment|/*    * Wether or not the rectangle currently being rubber-banded was    * created from scatch.    */
@@ -3624,6 +3624,8 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
+name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
+argument_list|,
 name|_
 argument_list|(
 literal|"Rectangle: "
@@ -6854,6 +6856,8 @@ argument_list|,
 name|tool
 operator|->
 name|display
+argument_list|,
+name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 argument_list|,
 name|_
 argument_list|(

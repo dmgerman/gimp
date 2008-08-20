@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab2b0230108
+DECL|struct|__anon2c2b47250108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -802,6 +802,15 @@ operator|->
 name|control
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_SUBPIXEL
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor

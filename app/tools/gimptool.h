@@ -798,6 +798,9 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
+name|GimpCursorPrecision
+name|precision
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

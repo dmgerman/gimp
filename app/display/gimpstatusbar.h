@@ -156,6 +156,13 @@ index|[
 name|CURSOR_FORMAT_LENGTH
 index|]
 decl_stmt|;
+DECL|member|cursor_format_str_f
+name|gchar
+name|cursor_format_str_f
+index|[
+name|CURSOR_FORMAT_LENGTH
+index|]
+decl_stmt|;
 DECL|member|length_format_str
 name|gchar
 name|length_format_str
@@ -369,6 +376,9 @@ specifier|const
 name|gchar
 modifier|*
 name|stock_id
+parameter_list|,
+name|GimpCursorPrecision
+name|precision
 parameter_list|,
 specifier|const
 name|gchar
@@ -611,6 +621,9 @@ parameter_list|(
 name|GimpStatusbar
 modifier|*
 name|statusbar
+parameter_list|,
+name|GimpCursorPrecision
+name|precision
 parameter_list|,
 name|gdouble
 name|x

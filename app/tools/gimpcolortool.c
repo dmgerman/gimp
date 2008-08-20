@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2922f3b20103
+DECL|enum|__anon2c0c23640103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1025,6 +1025,13 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
+name|gimp_tool_control_get_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+argument_list|,
 name|_
 argument_list|(
 literal|"Move Sample Point: "
@@ -1765,6 +1772,13 @@ argument_list|(
 name|tool
 argument_list|,
 name|display
+argument_list|,
+name|gimp_tool_control_get_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
 argument_list|,
 name|color_tool
 operator|->
