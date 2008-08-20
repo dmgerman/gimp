@@ -101,10 +101,18 @@ name|OVERPAN_FACTOR
 value|0.5
 end_define
 
+begin_define
+DECL|macro|MINIUM_STEP_AMOUNT
+define|#
+directive|define
+name|MINIUM_STEP_AMOUNT
+value|1.0
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ec4fea0108
+DECL|struct|__anon2b0b31600108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1693,7 +1701,7 @@ name|shell
 operator|->
 name|scale_x
 argument_list|,
-literal|1.0
+name|MINIUM_STEP_AMOUNT
 argument_list|)
 expr_stmt|;
 block|}
@@ -1856,7 +1864,7 @@ name|shell
 operator|->
 name|scale_y
 argument_list|,
-literal|1.0
+name|MINIUM_STEP_AMOUNT
 argument_list|)
 expr_stmt|;
 block|}
