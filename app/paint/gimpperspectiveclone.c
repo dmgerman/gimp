@@ -272,6 +272,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_perspective_clone_get_matrix
+parameter_list|(
+name|GimpPerspectiveClone
+modifier|*
+name|clone
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|matrix
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpPerspectiveClone,gimp_perspective_clone,GIMP_TYPE_CLONE)
 name|G_DEFINE_TYPE
@@ -1762,6 +1778,71 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_perspective_clone_set_transform (GimpPerspectiveClone * clone,GimpMatrix3 * transform)
+name|gimp_perspective_clone_set_transform
+parameter_list|(
+name|GimpPerspectiveClone
+modifier|*
+name|clone
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PERSPECTIVE_CLONE
+argument_list|(
+name|clone
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|transform
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|clone
+operator|->
+name|transform
+operator|=
+operator|*
+name|transform
+expr_stmt|;
+name|clone
+operator|->
+name|transform_inv
+operator|=
+name|clone
+operator|->
+name|transform
+expr_stmt|;
+name|gimp_matrix3_invert
+argument_list|(
+operator|&
+name|clone
+operator|->
+name|transform_inv
+argument_list|)
+expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("%f\t%f\t%f\n%f\t%f\t%f\n%f\t%f\t%f\n\n",               clone->transform.coeff[0][0],               clone->transform.coeff[0][1],               clone->transform.coeff[0][2],               clone->transform.coeff[1][0],               clone->transform.coeff[1][1],               clone->transform.coeff[1][2],               clone->transform.coeff[2][0],               clone->transform.coeff[2][1],               clone->transform.coeff[2][2]);
+endif|#
+directive|endif
+block|}
+end_function
+
 begin_function
 name|void
 DECL|function|gimp_perspective_clone_get_source_point (GimpPerspectiveClone * clone,gdouble x,gdouble y,gdouble * newx,gdouble * newy)
@@ -1791,6 +1872,28 @@ name|temp_x
 decl_stmt|,
 name|temp_y
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_PERSPECTIVE_CLONE
+argument_list|(
+name|clone
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|newx
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|newy
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_matrix3_transform_point
 argument_list|(
 operator|&
@@ -1858,7 +1961,12 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_perspective_clone_get_matrix (GimpPerspectiveClone * clone,GimpMatrix3 * matrix)
 name|gimp_perspective_clone_get_matrix
