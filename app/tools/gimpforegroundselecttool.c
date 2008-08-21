@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278f4d9a0108
+DECL|struct|__anon2c5ae9e40108
 block|{
 DECL|member|width
 name|gint
@@ -760,6 +760,15 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_DIRTY_IMAGE_SIZE
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_tool_cursor
