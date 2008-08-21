@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"script-fu-eval.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"script-fu-interface.h"
 end_include
 

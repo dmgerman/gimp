@@ -6,19 +6,19 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCRIPT_FU_TEXT_CONSOLE_H__
+name|__SCRIPT_FU_EVAL_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCRIPT_FU_TEXT_CONSOLE_H__
+DECL|macro|__SCRIPT_FU_EVAL_H__
 define|#
 directive|define
-name|__SCRIPT_FU_TEXT_CONSOLE_H__
+name|__SCRIPT_FU_EVAL_H__
 end_define
 
 begin_function_decl
 name|void
-name|script_fu_text_console_run
+name|script_fu_eval_run
 parameter_list|(
 specifier|const
 name|gchar
@@ -51,7 +51,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCRIPT_FU_TEXT_CONSOLE_H__  */
+comment|/*  __SCRIPT_FU_EVAL_H__  */
 end_comment
 
 end_unit

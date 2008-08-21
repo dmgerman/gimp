@@ -45,42 +45,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|script_fu_eval_run
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|,
-name|gint
-name|nparams
-parameter_list|,
-specifier|const
-name|GimpParam
-modifier|*
-name|params
-parameter_list|,
-name|gint
-modifier|*
-name|nreturn_vals
-parameter_list|,
-name|GimpParam
-modifier|*
-modifier|*
-name|return_vals
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCRIPT_FU_CONSOLE__  */
+comment|/*  __SCRIPT_FU_CONSOLE_H__  */
 end_comment
 
 end_unit
