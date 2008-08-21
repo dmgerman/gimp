@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946bf680103
+DECL|enum|__anon2908d0710103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -160,7 +160,7 @@ struct|struct
 name|_GimpCanvas
 block|{
 DECL|member|parent_instance
-name|GtkDrawingArea
+name|GtkContainer
 name|parent_instance
 decl_stmt|;
 DECL|member|config
@@ -199,7 +199,7 @@ struct|struct
 name|_GimpCanvasClass
 block|{
 DECL|member|parent_class
-name|GtkDrawingAreaClass
+name|GtkContainerClass
 name|parent_class
 decl_stmt|;
 block|}
