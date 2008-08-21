@@ -1882,7 +1882,7 @@ break|break;
 case|case
 name|GIMP_PDB_ERROR_HANDLER_PLUGIN
 case|:
-comment|/*  the plug-in is responsible for this error  */
+comment|/*  the plug-in is responsible for handling this error  */
 break|break;
 block|}
 block|}

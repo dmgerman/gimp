@@ -1220,6 +1220,12 @@ modifier|*
 name|args
 parameter_list|)
 block|{
+name|GValueArray
+modifier|*
+name|return_vals
+init|=
+name|NULL
+decl_stmt|;
 name|GimpPlugIn
 modifier|*
 name|plug_in
@@ -1291,10 +1297,6 @@ block|{
 name|GimpPlugInProcFrame
 modifier|*
 name|proc_frame
-decl_stmt|;
-name|GValueArray
-modifier|*
-name|return_vals
 decl_stmt|;
 name|GPProcRun
 name|proc_run
@@ -1476,27 +1478,10 @@ argument_list|(
 name|plug_in
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|return_vals
 return|;
-block|}
-else|else
-block|{
-comment|/*  can we actually ever get here?  */
-return|return
-name|gimp_procedure_get_return_values
-argument_list|(
-name|GIMP_PROCEDURE
-argument_list|(
-name|procedure
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|,
-name|NULL
-argument_list|)
-return|;
-block|}
 block|}
 end_function
 
