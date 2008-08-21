@@ -17,7 +17,7 @@ name|__SCRIPT_FU_INTERFACE_H__
 end_define
 
 begin_function_decl
-name|void
+name|GimpPDBStatusType
 name|script_fu_interface
 parameter_list|(
 name|SFScript

@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e8d5ff0108
+DECL|struct|__anon28b30fb10108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -403,8 +403,18 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|sf_interface
-comment|/*  there can only be at most one                                               interactive interface  */
+comment|/*  there can only be at most                                                  *  oneinteractive interface                                                  */
 end_comment
+
+begin_decl_stmt
+DECL|variable|sf_status
+specifier|static
+name|GimpPDBStatusType
+name|sf_status
+init|=
+name|GIMP_PDB_SUCCESS
+decl_stmt|;
+end_decl_stmt
 
 begin_comment
 comment|/*  *  Function definitions  */
@@ -592,7 +602,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|GimpPDBStatusType
 DECL|function|script_fu_interface (SFScript * script,gint start_arg)
 name|script_fu_interface
 parameter_list|(
@@ -687,13 +697,17 @@ argument_list|(
 name|message
 argument_list|)
 expr_stmt|;
-return|return;
+return|return
+name|GIMP_PDB_CANCEL
+return|;
 block|}
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|script
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -717,6 +731,10 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+name|sf_status
+operator|=
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
 name|sf_interface
 operator|=
 name|g_slice_new0
@@ -2774,6 +2792,9 @@ expr_stmt|;
 name|gtk_main
 argument_list|()
 expr_stmt|;
+return|return
+name|sf_status
+return|;
 block|}
 end_function
 
@@ -3307,8 +3328,19 @@ argument_list|(
 name|script
 argument_list|)
 expr_stmt|;
-comment|/* fallthru */
+name|gtk_widget_destroy
+argument_list|(
+name|sf_interface
+operator|->
+name|dialog
+argument_list|)
+expr_stmt|;
+break|break;
 default|default:
+name|sf_status
+operator|=
+name|GIMP_PDB_CANCEL
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|sf_interface
@@ -3936,7 +3968,7 @@ name|output
 operator|=
 name|g_string_new
 argument_list|(
-literal|""
+name|NULL
 argument_list|)
 expr_stmt|;
 name|ts_register_output_func
