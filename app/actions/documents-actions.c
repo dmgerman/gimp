@@ -81,7 +81,7 @@ block|{
 block|{
 literal|"documents-popup"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open-recent"
 block|,
 name|N_
 argument_list|(
@@ -125,7 +125,7 @@ block|,
 block|{
 literal|"documents-raise-or-open"
 block|,
-name|GTK_STOCK_OPEN
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -150,7 +150,7 @@ block|,
 block|{
 literal|"documents-file-open-dialog"
 block|,
-name|GTK_STOCK_OPEN
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -275,7 +275,7 @@ block|,
 block|{
 literal|"documents-reload-previews"
 block|,
-name|GTK_STOCK_REFRESH
+name|NULL
 block|,
 name|N_
 argument_list|(
@@ -300,7 +300,7 @@ block|,
 block|{
 literal|"documents-remove-dangling"
 block|,
-name|GTK_STOCK_REFRESH
+name|NULL
 block|,
 name|N_
 argument_list|(

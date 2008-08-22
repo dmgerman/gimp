@@ -574,7 +574,7 @@ block|,
 block|{
 literal|"dialogs-document-history"
 block|,
-name|GTK_STOCK_OPEN
+literal|"document-open-recent"
 block|,
 name|N_
 argument_list|(

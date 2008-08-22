@@ -899,7 +899,7 @@ argument_list|(
 literal|"Document History"
 argument_list|)
 argument_list|,
-name|GTK_STOCK_OPEN
+literal|"document-open-recent"
 argument_list|,
 name|GIMP_HELP_DOCUMENT_DIALOG
 argument_list|,
