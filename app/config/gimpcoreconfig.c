@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon298975dd0103
+DECL|enum|__anon2a8f39fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1331,9 +1331,9 @@ literal|"use-gegl"
 argument_list|,
 literal|"Use GEGL"
 argument_list|,
-literal|"Use GEGL"
+name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
