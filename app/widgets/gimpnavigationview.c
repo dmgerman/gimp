@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2768a5000103
+DECL|enum|__anon2c2d01fb0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1126,7 +1126,7 @@ name|GDK_BUTTON_MOTION_MASK
 operator||
 name|GDK_EXTENSION_EVENTS_ALL
 argument_list|,
-name|window
+name|NULL
 argument_list|,
 name|cursor
 argument_list|,
