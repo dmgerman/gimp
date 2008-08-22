@@ -201,7 +201,7 @@ name|gimp_navigation_editor_set_shell
 parameter_list|(
 name|GimpNavigationEditor
 modifier|*
-name|view
+name|editor
 parameter_list|,
 name|GimpDisplayShell
 modifier|*
