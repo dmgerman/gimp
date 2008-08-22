@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon289cca370103
+DECL|enum|__anon28d4e84c0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -626,6 +626,9 @@ name|idle_id
 operator|=
 literal|0
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
 name|image_map
 operator|->
 name|timer
@@ -633,6 +636,16 @@ operator|=
 name|g_timer_new
 argument_list|()
 expr_stmt|;
+else|#
+directive|else
+name|image_map
+operator|->
+name|timer
+operator|=
+name|NULL
+expr_stmt|;
+endif|#
+directive|endif
 name|image_map
 operator|->
 name|pixel_count
