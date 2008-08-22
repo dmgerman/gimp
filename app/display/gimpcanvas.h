@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292ee7aa0103
+DECL|enum|__anon2770013b0103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -80,6 +80,14 @@ define|#
 directive|define
 name|GIMP_CANVAS_NUM_STIPPLES
 value|8
+end_define
+
+begin_define
+DECL|macro|GIMP_CANVAS_EVENT_MASK
+define|#
+directive|define
+name|GIMP_CANVAS_EVENT_MASK
+value|(GDK_EXPOSURE_MASK            | \                                   GDK_POINTER_MOTION_MASK      |  \                                   GDK_POINTER_MOTION_HINT_MASK |  \                                   GDK_BUTTON_PRESS_MASK        |  \                                   GDK_BUTTON_RELEASE_MASK      |  \                                   GDK_STRUCTURE_MASK           |  \                                   GDK_ENTER_NOTIFY_MASK        |  \                                   GDK_LEAVE_NOTIFY_MASK        |  \                                   GDK_FOCUS_CHANGE_MASK        |  \                                   GDK_KEY_PRESS_MASK           |  \                                   GDK_KEY_RELEASE_MASK         |  \                                   GDK_PROXIMITY_OUT_MASK)
 end_define
 
 begin_define
