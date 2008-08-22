@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvas.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -112,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2877ac740108
+DECL|struct|__anon29029f2e0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -345,31 +351,20 @@ name|offset_y
 operator|+=
 name|y_offset
 expr_stmt|;
-name|gdk_window_scroll
+name|gimp_canvas_scroll
+argument_list|(
+name|GIMP_CANVAS
 argument_list|(
 name|shell
 operator|->
 name|canvas
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|-
 name|x_offset
 argument_list|,
 operator|-
 name|y_offset
-argument_list|)
-expr_stmt|;
-comment|/*  Make sure expose events are processed before scrolling again  */
-name|gdk_window_process_updates
-argument_list|(
-name|shell
-operator|->
-name|canvas
-operator|->
-name|window
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Update scrollbars and rulers  */
