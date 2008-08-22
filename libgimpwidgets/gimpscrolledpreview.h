@@ -142,6 +142,7 @@ name|GdkGC
 modifier|*
 name|nav_gc
 decl_stmt|;
+comment|/* unused */
 comment|/*< private>*/
 DECL|member|priv
 name|gpointer
