@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1b5b840108
+DECL|struct|__anon2ba588330108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2a1b5b840208
+DECL|struct|__anon2ba588330208
 typedef|typedef
 struct|struct
 block|{
@@ -3965,6 +3965,7 @@ condition|)
 block|{
 if|if
 condition|(
+operator|!
 name|strcmp
 argument_list|(
 name|attr_name
