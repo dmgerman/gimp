@@ -58,24 +58,16 @@ file|"gimpviewrenderer.h"
 end_include
 
 begin_define
-DECL|macro|OUTER_BORDER_PEN_WIDTH
+DECL|macro|BORDER_WIDTH
 define|#
 directive|define
-name|OUTER_BORDER_PEN_WIDTH
+name|BORDER_WIDTH
 value|2
-end_define
-
-begin_define
-DECL|macro|INNER_BORDER_PEN_WIDTH
-define|#
-directive|define
-name|INNER_BORDER_PEN_WIDTH
-value|1
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae603b90103
+DECL|enum|__anon299bb6cf0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -2040,7 +2032,7 @@ name|cairo_set_line_width
 argument_list|(
 name|cr
 argument_list|,
-literal|2
+name|BORDER_WIDTH
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
