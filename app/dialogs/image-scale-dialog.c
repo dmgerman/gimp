@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299192a90108
+DECL|struct|__anon2ad288260108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -975,6 +975,13 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
+name|gtk_widget_hide
+argument_list|(
+name|dialog
+operator|->
+name|dialog
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|->
 name|callback
