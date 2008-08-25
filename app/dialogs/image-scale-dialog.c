@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6268870108
+DECL|struct|__anon299192a90108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -602,7 +602,11 @@ break|break;
 case|case
 name|GIMP_IMAGE_SCALE_OK
 case|:
-comment|/* If all is well, return directly after scaling image. */
+name|gtk_widget_hide
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|->
 name|callback
