@@ -152,6 +152,26 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/*  tile_data_pointer() as a macro so that it can be inlined  */
+end_comment
+
+begin_define
+DECL|macro|TILE_DATA_POINTER (tile,x,y)
+define|#
+directive|define
+name|TILE_DATA_POINTER
+parameter_list|(
+name|tile
+parameter_list|,
+name|x
+parameter_list|,
+name|y
+parameter_list|)
+define|\
+value|((tile)->data + \    (((y) % TILE_HEIGHT) * (tile)->ewidth + ((x) % TILE_WIDTH)) * (tile)->bpp)
+end_define
+
 begin_endif
 endif|#
 directive|endif
