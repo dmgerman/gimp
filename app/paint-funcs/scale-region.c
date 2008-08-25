@@ -1219,12 +1219,7 @@ name|levely
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|interpolation
-operator|!=
-name|GIMP_INTERPOLATION_NONE
-condition|)
+comment|/* determine scaling levels */
 name|scale_determine_levels
 argument_list|(
 name|srcPR
@@ -1942,12 +1937,7 @@ name|levely
 init|=
 literal|0
 decl_stmt|;
-if|if
-condition|(
-name|interpolation
-operator|!=
-name|GIMP_INTERPOLATION_NONE
-condition|)
+comment|/* determine scaling levels */
 name|scale_determine_levels
 argument_list|(
 name|srcPR
