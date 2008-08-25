@@ -3250,29 +3250,7 @@ modifier|*
 name|buffer
 parameter_list|)
 block|{
-if|if
-condition|(
-name|x
-operator|>=
-literal|0
-operator|&&
-name|y
-operator|>=
-literal|0
-operator|&&
-name|x
-operator|<
-name|tm
-operator|->
-name|width
-operator|&&
-name|y
-operator|<
-name|tm
-operator|->
-name|height
-condition|)
-block|{
+specifier|const
 name|gint
 name|num
 init|=
@@ -3285,6 +3263,13 @@ argument_list|,
 name|y
 argument_list|)
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|num
+operator|>=
+literal|0
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|num
@@ -3327,7 +3312,7 @@ name|cached_tile
 operator|=
 name|NULL
 expr_stmt|;
-comment|/*  use a temporary variable instead of assigning to            *  tm->cached_tile directly to make sure tm->cached_num            *  and tm->cached_tile are always in a consistent state.            *  (the requested tile might be invalid and needs to be            *  validated, which would call tile_manager_get() recursively,            *  which in turn would clear the cached tile) See bug #472770.            */
+comment|/*  use a temporary variable instead of assigning to        *  tm->cached_tile directly to make sure tm->cached_num        *  and tm->cached_tile are always in a consistent state.        *  (the requested tile might be invalid and needs to be        *  validated, which would call tile_manager_get() recursively,        *  which in turn would clear the cached tile) See bug #472770.        */
 name|tile
 operator|=
 name|tile_manager_get
@@ -3354,12 +3339,6 @@ operator|=
 name|tile
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|tm
-operator|->
-name|cached_tile
-condition|)
 block|{
 specifier|const
 name|guchar
@@ -3428,7 +3407,6 @@ operator|*
 name|src
 operator|++
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}
