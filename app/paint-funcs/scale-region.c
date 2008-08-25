@@ -4002,7 +4002,9 @@ decl_stmt|;
 name|guchar
 name|pixels
 index|[
-literal|16
+literal|4
+operator|*
+literal|4
 operator|*
 literal|4
 index|]
@@ -5003,7 +5005,9 @@ decl_stmt|;
 name|guchar
 name|pixels
 index|[
-literal|36
+literal|6
+operator|*
+literal|6
 operator|*
 literal|4
 index|]
@@ -9875,7 +9879,9 @@ decl_stmt|;
 name|guchar
 name|pixels
 index|[
-literal|36
+literal|6
+operator|*
+literal|6
 operator|*
 literal|4
 index|]
