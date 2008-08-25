@@ -79,6 +79,52 @@ end_define
 begin_function_decl
 specifier|static
 name|void
+name|scale_determine_levels
+parameter_list|(
+name|PixelRegion
+modifier|*
+name|srcPR
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|dstPR
+parameter_list|,
+name|gint
+modifier|*
+name|levelx
+parameter_list|,
+name|gint
+modifier|*
+name|levely
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gint
+name|scale_determine_progress
+parameter_list|(
+name|PixelRegion
+modifier|*
+name|srcPR
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|dstPR
+parameter_list|,
+name|gint
+name|levelx
+parameter_list|,
+name|gint
+name|levely
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|scale_region_buffer
 parameter_list|(
 name|PixelRegion
@@ -475,52 +521,6 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
-name|determine_levels
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|dstPR
-parameter_list|,
-name|gint
-modifier|*
-name|levelx
-parameter_list|,
-name|gint
-modifier|*
-name|levely
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gint
-name|determine_progress
-parameter_list|(
-name|PixelRegion
-modifier|*
-name|srcPR
-parameter_list|,
-name|PixelRegion
-modifier|*
-name|dstPR
-parameter_list|,
-name|gint
-name|levelx
-parameter_list|,
-name|gint
-name|levely
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
 specifier|inline
 name|void
 name|gaussan_lanczos2
@@ -767,8 +767,8 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|determine_levels (PixelRegion * srcPR,PixelRegion * dstPR,gint * levelx,gint * levely)
-name|determine_levels
+DECL|function|scale_determine_levels (PixelRegion * srcPR,PixelRegion * dstPR,gint * levelx,gint * levely)
+name|scale_determine_levels
 parameter_list|(
 name|PixelRegion
 modifier|*
@@ -923,11 +923,15 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/* This function calculates the number of tiles that are written in  * one scale operation. This number is used as the max_progress  * parameter in calls to GimpProgressFunc.  */
+end_comment
+
 begin_function
 specifier|static
 name|gint
-DECL|function|determine_progress (PixelRegion * srcPR,PixelRegion * dstPR,gint levelx,gint levely)
-name|determine_progress
+DECL|function|scale_determine_progress (PixelRegion * srcPR,PixelRegion * dstPR,gint levelx,gint levely)
+name|scale_determine_progress
 parameter_list|(
 name|PixelRegion
 modifier|*
@@ -963,6 +967,7 @@ name|tiles
 init|=
 literal|0
 decl_stmt|;
+comment|/*  The logic here should be kept in sync with scale_region_buffer().  */
 while|while
 condition|(
 name|levelx
@@ -1215,7 +1220,7 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* determine scaling levels */
-name|determine_levels
+name|scale_determine_levels
 argument_list|(
 name|srcPR
 argument_list|,
@@ -1230,7 +1235,7 @@ argument_list|)
 expr_stmt|;
 name|max_progress
 operator|=
-name|determine_progress
+name|scale_determine_progress
 argument_list|(
 name|srcPR
 argument_list|,
@@ -1933,7 +1938,7 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* determine scaling levels */
-name|determine_levels
+name|scale_determine_levels
 argument_list|(
 name|srcPR
 argument_list|,
@@ -1948,7 +1953,7 @@ argument_list|)
 expr_stmt|;
 name|max_progress
 operator|=
-name|determine_progress
+name|scale_determine_progress
 argument_list|(
 name|srcPR
 argument_list|,
@@ -9945,7 +9950,8 @@ name|x_kernel
 index|[
 literal|6
 index|]
-decl_stmt|,
+decl_stmt|;
+name|gdouble
 name|y_kernel
 index|[
 literal|6
