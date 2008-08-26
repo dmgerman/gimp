@@ -235,6 +235,12 @@ block|{
 name|Colorize
 name|cruft
 decl_stmt|;
+name|colorize_init
+argument_list|(
+operator|&
+name|cruft
+argument_list|)
+expr_stmt|;
 name|gimp_colorize_config_to_cruft
 argument_list|(
 name|config
