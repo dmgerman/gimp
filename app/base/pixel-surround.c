@@ -171,7 +171,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * pixel_surround_new:  * @tiles:  tile manager  * @width:  width of surround region  * @height: height of surround region  * @bg:     color to use for pixels that are not covered by the tile manager  *  * Return value: a new #PixelSurround.  */
+comment|/**  * pixel_surround_new:  * @tiles:  tile manager  * @width:  width of surround region  * @height: height of surround region  * @mode:   how to deal with pixels that are not covered by the tile manager  *  * PixelSurround provides you a contiguous read-only view of the area  * surrounding a pixel. It is an efficient pixel access strategy for  * interpolation algorithms.  *  * Return value: a new #PixelSurround.  */
 end_comment
 
 begin_function
@@ -336,6 +336,10 @@ name|surround
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * pixel_surround_set_bg:  * @surround: a #PixelSurround  * @bg:       background color  *  * This sets the color that the #PixelSurround uses when in  * %PIXEL_SURROUND_BACKGROUND mode for pixels that are not covered by  * the tile manager.  */
+end_comment
 
 begin_function
 name|void
@@ -767,7 +771,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f79e2b0103
+DECL|enum|__anon27bc58eb0103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
