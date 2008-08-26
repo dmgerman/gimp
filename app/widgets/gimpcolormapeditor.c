@@ -140,7 +140,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290045d70103
+DECL|enum|__anon2a99e89a0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -975,7 +975,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|,
 literal|1.0
 argument_list|,

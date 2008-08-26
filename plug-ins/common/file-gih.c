@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2797507b0108
+DECL|struct|__anon2c06259a0108
 block|{
 DECL|member|spacing
 name|guint
@@ -271,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2797507b0208
+DECL|struct|__anon2c06259a0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -4109,7 +4109,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -4263,7 +4263,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -4410,7 +4410,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -4580,7 +4580,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -4979,7 +4979,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -5089,7 +5089,7 @@ literal|1
 argument_list|,
 literal|1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,

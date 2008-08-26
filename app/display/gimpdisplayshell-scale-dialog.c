@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b164e790108
+DECL|struct|__anon29d73b720108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -641,7 +641,7 @@ literal|1
 argument_list|,
 literal|8
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -726,7 +726,7 @@ literal|1
 argument_list|,
 literal|8
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,

@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0567b50108
+DECL|struct|__anon28b63e560108
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -860,7 +860,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,

@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29aec8490108
+DECL|struct|__anon28c68ffa0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -2696,7 +2696,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,
@@ -3062,7 +3062,7 @@ literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|0.01
 argument_list|,
@@ -3216,7 +3216,7 @@ literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|0.01
 argument_list|,

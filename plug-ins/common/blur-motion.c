@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2790695d0103
+DECL|enum|__anon2769d14e0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790695d0208
+DECL|struct|__anon2769d14e0208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -4959,7 +4959,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,

@@ -1677,7 +1677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bfe56da0108
+DECL|struct|__anon2b169e3b0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2255,7 +2255,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|1
+literal|0
 argument_list|,
 literal|1
 argument_list|,
