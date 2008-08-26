@@ -6685,9 +6685,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -6795,9 +6792,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -6812,9 +6806,6 @@ index|[
 literal|1
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|alphasum
@@ -6892,9 +6883,6 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -7017,9 +7005,6 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -7035,9 +7020,6 @@ index|[
 literal|3
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|alphasum
@@ -7421,9 +7403,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -7779,9 +7758,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -7796,9 +7772,6 @@ index|[
 literal|1
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|alphasum
@@ -7994,9 +7967,6 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -8399,9 +8369,6 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -8417,9 +8384,6 @@ index|[
 literal|3
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|alphasum
@@ -8990,9 +8954,6 @@ index|]
 operator|=
 name|CLAMP
 argument_list|(
-operator|(
-name|gint
-operator|)
 name|sum
 argument_list|,
 literal|0
