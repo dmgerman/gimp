@@ -9854,9 +9854,6 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
