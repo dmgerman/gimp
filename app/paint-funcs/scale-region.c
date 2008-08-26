@@ -140,15 +140,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|dstPR
-parameter_list|,
-name|GimpInterpolationType
-name|interpolation
-parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -222,9 +213,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|dstPR
-parameter_list|,
-name|GimpInterpolationType
-name|interpolation
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -861,17 +849,25 @@ operator|!=
 name|NULL
 condition|)
 block|{
+name|g_return_if_fail
+argument_list|(
+name|interpolation
+operator|==
+name|GIMP_INTERPOLATION_LINEAR
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|progress_callback
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 name|scale_region_buffer
 argument_list|(
 name|srcPR
 argument_list|,
 name|dstPR
-argument_list|,
-name|interpolation
-argument_list|,
-name|progress_callback
-argument_list|,
-name|progress_data
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1139,7 +1135,7 @@ name|tiles
 init|=
 literal|0
 decl_stmt|;
-comment|/*  The logic here should be kept in sync with scale_region_buffer().  */
+comment|/*  The logic here should be kept in sync with scale_region_tile().  */
 while|while
 condition|(
 name|levelx
@@ -1328,7 +1324,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|scale_region_buffer (PixelRegion * srcPR,PixelRegion * dstPR,GimpInterpolationType interpolation,GimpProgressFunc progress_callback,gpointer progress_data)
+DECL|function|scale_region_buffer (PixelRegion * srcPR,PixelRegion * dstPR)
 name|scale_region_buffer
 parameter_list|(
 name|PixelRegion
@@ -1338,15 +1334,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|dstPR
-parameter_list|,
-name|GimpInterpolationType
-name|interpolation
-parameter_list|,
-name|GimpProgressFunc
-name|progress_callback
-parameter_list|,
-name|gpointer
-name|progress_data
 parameter_list|)
 block|{
 name|PixelRegion
@@ -1354,6 +1341,14 @@ name|tmpPR0
 decl_stmt|;
 name|PixelRegion
 name|tmpPR1
+decl_stmt|;
+specifier|const
+name|gint
+name|bytes
+init|=
+name|srcPR
+operator|->
+name|bytes
 decl_stmt|;
 name|gint
 name|width
@@ -1368,18 +1363,6 @@ init|=
 name|srcPR
 operator|->
 name|h
-decl_stmt|;
-name|gint
-name|bytes
-init|=
-name|srcPR
-operator|->
-name|bytes
-decl_stmt|;
-name|gint
-name|max_progress
-init|=
-literal|0
 decl_stmt|;
 name|gint
 name|levelx
@@ -1402,19 +1385,6 @@ operator|&
 name|levelx
 argument_list|,
 operator|&
-name|levely
-argument_list|)
-expr_stmt|;
-name|max_progress
-operator|=
-name|scale_determine_progress
-argument_list|(
-name|srcPR
-argument_list|,
-name|dstPR
-argument_list|,
-name|levelx
-argument_list|,
 name|levely
 argument_list|)
 expr_stmt|;
@@ -1508,8 +1478,6 @@ name|tmpPR0
 argument_list|,
 operator|&
 name|tmpPR1
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1599,8 +1567,6 @@ name|tmpPR0
 argument_list|,
 operator|&
 name|tmpPR1
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1687,8 +1653,6 @@ name|tmpPR0
 argument_list|,
 operator|&
 name|tmpPR1
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1783,8 +1747,6 @@ name|tmpPR0
 argument_list|,
 operator|&
 name|tmpPR1
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1874,8 +1836,6 @@ name|tmpPR0
 argument_list|,
 operator|&
 name|tmpPR1
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1962,8 +1922,6 @@ name|tmpPR0
 argument_list|,
 operator|&
 name|tmpPR1
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2007,8 +1965,6 @@ operator|&
 name|tmpPR0
 argument_list|,
 name|dstPR
-argument_list|,
-name|interpolation
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -10018,7 +9974,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|scale_pr (PixelRegion * srcPR,PixelRegion * dstPR,GimpInterpolationType interpolation)
+DECL|function|scale_pr (PixelRegion * srcPR,PixelRegion * dstPR)
 name|scale_pr
 parameter_list|(
 name|PixelRegion
@@ -10028,9 +9984,6 @@ parameter_list|,
 name|PixelRegion
 modifier|*
 name|dstPR
-parameter_list|,
-name|GimpInterpolationType
-name|interpolation
 parameter_list|)
 block|{
 specifier|const
@@ -10260,23 +10213,6 @@ name|xfrac
 operator|-
 name|sx0
 expr_stmt|;
-switch|switch
-condition|(
-name|interpolation
-condition|)
-block|{
-case|case
-name|GIMP_INTERPOLATION_NONE
-case|:
-case|case
-name|GIMP_INTERPOLATION_LINEAR
-case|:
-case|case
-name|GIMP_INTERPOLATION_CUBIC
-case|:
-case|case
-name|GIMP_INTERPOLATION_LANCZOS
-case|:
 if|if
 condition|(
 name|decimate
@@ -10319,8 +10255,6 @@ argument_list|,
 name|pixel
 argument_list|)
 expr_stmt|;
-block|}
-break|break;
 block|}
 name|pixel
 operator|+=
@@ -10645,9 +10579,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -10755,9 +10686,6 @@ index|[
 literal|0
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -10772,9 +10700,6 @@ index|[
 literal|1
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|alphasum
@@ -10977,9 +10902,6 @@ index|[
 name|b
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|sum
@@ -10995,9 +10917,6 @@ index|[
 literal|3
 index|]
 operator|=
-operator|(
-name|guchar
-operator|)
 name|CLAMP
 argument_list|(
 name|alphasum
