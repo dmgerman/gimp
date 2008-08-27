@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa765c0103
+DECL|enum|__anon299cb4050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa765c0203
+DECL|enum|__anon299cb4050203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fa765c0308
+DECL|struct|__anon299cb4050308
 block|{
 DECL|member|x
 name|guint
@@ -3741,6 +3741,11 @@ if|if
 condition|(
 operator|!
 name|menu_item
+operator|&&
+name|GTK_IS_MENU
+argument_list|(
+name|widget
+argument_list|)
 condition|)
 block|{
 name|GdkWindow
