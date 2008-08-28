@@ -123,6 +123,14 @@ DECL|member|previous_origin_y
 name|gint
 name|previous_origin_y
 decl_stmt|;
+DECL|member|previous_width
+name|gint
+name|previous_width
+decl_stmt|;
+DECL|member|previous_height
+name|gint
+name|previous_height
+decl_stmt|;
 DECL|member|xresolution
 name|gdouble
 name|xresolution

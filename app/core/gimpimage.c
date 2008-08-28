@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa2c610103
+DECL|enum|__anon2ad16e730103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fa2c610203
+DECL|enum|__anon2ad16e730203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -612,6 +612,12 @@ name|previous_origin_x
 parameter_list|,
 name|gint
 name|previous_origin_y
+parameter_list|,
+name|gint
+name|previous_width
+parameter_list|,
+name|gint
+name|previous_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1422,11 +1428,15 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT_INT
+name|gimp_marshal_VOID__INT_INT_INT_INT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|2
+literal|4
+argument_list|,
+name|G_TYPE_INT
+argument_list|,
+name|G_TYPE_INT
 argument_list|,
 name|G_TYPE_INT
 argument_list|,
@@ -4784,7 +4794,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_real_size_changed_detailed (GimpImage * image,gint previous_origin_x,gint previous_origin_y)
+DECL|function|gimp_image_real_size_changed_detailed (GimpImage * image,gint previous_origin_x,gint previous_origin_y,gint previous_width,gint previous_height)
 name|gimp_image_real_size_changed_detailed
 parameter_list|(
 name|GimpImage
@@ -4796,6 +4806,12 @@ name|previous_origin_x
 parameter_list|,
 name|gint
 name|previous_origin_y
+parameter_list|,
+name|gint
+name|previous_width
+parameter_list|,
+name|gint
+name|previous_height
 parameter_list|)
 block|{
 comment|/* Whenever GimpImage::size-changed-detailed is emitted, so is    * GimpViewable::size-changed. Clients choose what signal to listen    * to depending on how much info they need.    */
@@ -6222,6 +6238,16 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+name|gimp_image_get_width
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|gimp_image_get_height
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -7516,7 +7542,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_image_size_changed_detailed (GimpImage * image,gint previous_origin_x,gint previous_origin_y)
+DECL|function|gimp_image_size_changed_detailed (GimpImage * image,gint previous_origin_x,gint previous_origin_y,gint previous_width,gint previous_height)
 name|gimp_image_size_changed_detailed
 parameter_list|(
 name|GimpImage
@@ -7528,6 +7554,12 @@ name|previous_origin_x
 parameter_list|,
 name|gint
 name|previous_origin_y
+parameter_list|,
+name|gint
+name|previous_width
+parameter_list|,
+name|gint
+name|previous_height
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -7552,6 +7584,10 @@ argument_list|,
 name|previous_origin_x
 argument_list|,
 name|previous_origin_y
+argument_list|,
+name|previous_width
+argument_list|,
+name|previous_height
 argument_list|)
 expr_stmt|;
 block|}

@@ -353,6 +353,10 @@ name|offset_x
 argument_list|,
 operator|-
 name|offset_y
+argument_list|,
+name|new_width
+argument_list|,
+name|new_height
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new width and height  */
@@ -923,6 +927,10 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|old_width
+argument_list|,
+name|old_height
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify

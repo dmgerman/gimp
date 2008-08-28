@@ -659,6 +659,12 @@ name|previous_origin_x
 parameter_list|,
 name|gint
 name|previous_origin_y
+parameter_list|,
+name|gint
+name|previous_width
+parameter_list|,
+name|gint
+name|previous_height
 parameter_list|)
 function_decl|;
 DECL|member|unit_changed
@@ -1565,6 +1571,12 @@ name|previous_origin_x
 parameter_list|,
 name|gint
 name|previous_origin_y
+parameter_list|,
+name|gint
+name|previous_width
+parameter_list|,
+name|gint
+name|previous_height
 parameter_list|)
 function_decl|;
 end_function_decl

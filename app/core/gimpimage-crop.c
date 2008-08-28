@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon279176410103
+DECL|enum|__anon2c42675e0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -282,6 +282,11 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|gint
+name|previous_width
+decl_stmt|,
+name|previous_height
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -296,6 +301,20 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|previous_width
+operator|=
+name|gimp_image_get_width
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+name|previous_height
+operator|=
+name|gimp_image_get_height
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 name|width
@@ -450,6 +469,10 @@ argument_list|,
 name|x1
 argument_list|,
 name|y1
+argument_list|,
+name|width
+argument_list|,
+name|height
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new width and height  */
@@ -1114,6 +1137,10 @@ name|x1
 argument_list|,
 operator|-
 name|y1
+argument_list|,
+name|previous_width
+argument_list|,
+name|previous_height
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify

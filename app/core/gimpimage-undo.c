@@ -1335,6 +1335,14 @@ argument_list|,
 name|accum
 operator|.
 name|previous_origin_y
+argument_list|,
+name|accum
+operator|.
+name|previous_width
+argument_list|,
+name|accum
+operator|.
+name|previous_height
 argument_list|)
 expr_stmt|;
 if|if
