@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffc79b0103
+DECL|enum|__anon2a50cc820103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ffc79b0203
+DECL|enum|__anon2a50cc820203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ffc79b0303
+DECL|enum|__anon2a50cc820303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -326,12 +326,21 @@ value|(gimp_rectangle_tool_get_private (GIMP_RECTANGLE_TOOL (obj)))
 end_define
 
 begin_typedef
+DECL|typedef|GimpRectangleToolPrivate
 typedef|typedef
+name|struct
+name|_GimpRectangleToolPrivate
+name|GimpRectangleToolPrivate
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpRectangleToolPrivate
 struct|struct
-DECL|struct|__anon28ffc79b0408
+name|_GimpRectangleToolPrivate
 block|{
 comment|/* The following members are "constants", that is, variables that are setup    * during gimp_rectangle_tool_button_press and then only read.    */
-comment|/*    * Wether or not the rectangle currently being rubber-banded was    * created from scatch.    */
+comment|/* Wether or not the rectangle currently being rubber-banded was    * created from scatch.    */
 DECL|member|is_new
 name|gboolean
 name|is_new
@@ -472,11 +481,9 @@ DECL|member|guide
 name|GimpRectangleGuide
 name|guide
 decl_stmt|;
-DECL|typedef|GimpRectangleToolPrivate
 block|}
-name|GimpRectangleToolPrivate
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static
@@ -3689,6 +3696,7 @@ condition|)
 block|{
 name|function
 operator|=
+operator|(
 name|dy
 operator|<
 literal|0
@@ -3696,6 +3704,7 @@ condition|?
 name|GIMP_RECTANGLE_TOOL_RESIZING_UPPER_LEFT
 else|:
 name|GIMP_RECTANGLE_TOOL_RESIZING_LOWER_LEFT
+operator|)
 expr_stmt|;
 block|}
 elseif|else
@@ -3708,6 +3717,7 @@ condition|)
 block|{
 name|function
 operator|=
+operator|(
 name|dy
 operator|<
 literal|0
@@ -3715,6 +3725,7 @@ condition|?
 name|GIMP_RECTANGLE_TOOL_RESIZING_UPPER_RIGHT
 else|:
 name|GIMP_RECTANGLE_TOOL_RESIZING_LOWER_RIGHT
+operator|)
 expr_stmt|;
 block|}
 elseif|else
@@ -3727,6 +3738,7 @@ condition|)
 block|{
 name|function
 operator|=
+operator|(
 name|dx
 operator|<
 literal|0
@@ -3734,6 +3746,7 @@ condition|?
 name|GIMP_RECTANGLE_TOOL_RESIZING_UPPER_LEFT
 else|:
 name|GIMP_RECTANGLE_TOOL_RESIZING_UPPER_RIGHT
+operator|)
 expr_stmt|;
 block|}
 elseif|else
@@ -3746,6 +3759,7 @@ condition|)
 block|{
 name|function
 operator|=
+operator|(
 name|dx
 operator|<
 literal|0
@@ -3753,6 +3767,7 @@ condition|?
 name|GIMP_RECTANGLE_TOOL_RESIZING_LOWER_LEFT
 else|:
 name|GIMP_RECTANGLE_TOOL_RESIZING_LOWER_RIGHT
+operator|)
 expr_stmt|;
 block|}
 name|gimp_rectangle_tool_set_function
