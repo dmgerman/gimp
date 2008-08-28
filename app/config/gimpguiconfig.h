@@ -170,6 +170,10 @@ DECL|member|toolbox_image_area
 name|gboolean
 name|toolbox_image_area
 decl_stmt|;
+DECL|member|toolbox_wilber
+name|gboolean
+name|toolbox_wilber
+decl_stmt|;
 DECL|member|theme_path
 name|gchar
 modifier|*

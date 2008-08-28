@@ -951,7 +951,8 @@ DECL|macro|TOOLBOX_COLOR_AREA_BLURB
 define|#
 directive|define
 name|TOOLBOX_COLOR_AREA_BLURB
-value|NULL
+define|\
+value|N_("Show the current foreground and background colors in the toolbox.")
 end_define
 
 begin_define
@@ -959,7 +960,8 @@ DECL|macro|TOOLBOX_FOO_AREA_BLURB
 define|#
 directive|define
 name|TOOLBOX_FOO_AREA_BLURB
-value|NULL
+define|\
+value|N_("Show the currently selected brush, pattern and gradient in the toolbox.")
 end_define
 
 begin_define
@@ -967,7 +969,17 @@ DECL|macro|TOOLBOX_IMAGE_AREA_BLURB
 define|#
 directive|define
 name|TOOLBOX_IMAGE_AREA_BLURB
-value|NULL
+define|\
+value|N_("Show the currently active image in the toolbox.")
+end_define
+
+begin_define
+DECL|macro|TOOLBOX_WILBER_BLURB
+define|#
+directive|define
+name|TOOLBOX_WILBER_BLURB
+define|\
+value|"Show the GIMP mascot at the top of the toolbox."
 end_define
 
 begin_define
