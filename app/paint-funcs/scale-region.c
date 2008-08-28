@@ -1214,7 +1214,7 @@ literal|0
 condition|)
 block|{
 name|width
-operator|<<=
+operator|>>=
 literal|1
 expr_stmt|;
 name|levelx
@@ -1238,7 +1238,7 @@ literal|0
 condition|)
 block|{
 name|height
-operator|<<=
+operator|>>=
 literal|1
 expr_stmt|;
 name|levely
@@ -1691,7 +1691,7 @@ literal|0
 condition|)
 block|{
 name|width
-operator|<<=
+operator|>>=
 literal|1
 expr_stmt|;
 name|tmpTM
@@ -1752,7 +1752,7 @@ literal|0
 condition|)
 block|{
 name|height
-operator|<<=
+operator|>>=
 literal|1
 expr_stmt|;
 name|tmpTM
