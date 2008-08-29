@@ -4281,9 +4281,10 @@ block|{
 name|gdouble
 name|opacity
 init|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 operator|/
 literal|100.0
 decl_stmt|;
@@ -4592,11 +4593,12 @@ argument_list|)
 operator|*
 literal|100.0
 operator|!=
+name|gtk_adjustment_get_value
+argument_list|(
 name|view
 operator|->
 name|opacity_adjustment
-operator|->
-name|value
+argument_list|)
 condition|)
 block|{
 name|BLOCK

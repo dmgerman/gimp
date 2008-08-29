@@ -185,9 +185,10 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|other_adj
 argument_list|,
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
@@ -312,9 +313,10 @@ name|value
 operator|=
 name|exp
 argument_list|(
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
