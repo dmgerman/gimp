@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e54f160103
+DECL|enum|__anon2c89a1910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -839,6 +839,11 @@ block|{
 name|GimpPreviewArea
 modifier|*
 name|area
+init|=
+name|GIMP_PREVIEW_AREA
+argument_list|(
+name|widget
+argument_list|)
 decl_stmt|;
 name|GdkRectangle
 name|rect
@@ -846,23 +851,6 @@ decl_stmt|;
 name|GdkRectangle
 name|render
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_PREVIEW_AREA
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|area
-operator|=
-name|GIMP_PREVIEW_AREA
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
