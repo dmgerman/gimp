@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27745eaa0103
+DECL|enum|__anon2c52cf410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27745eaa0208
+DECL|struct|__anon2c52cf410208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -150,7 +150,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27745eaa0308
+DECL|struct|__anon2c52cf410308
 block|{
 DECL|member|ruler_scale
 name|gdouble
@@ -1158,7 +1158,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vruler_new:  * @orientation: the ruler's orientation.  *  * Creates a new ruler.  *  * Return value: a new #GimpRuler widget.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_ruler_new:  * @orientation: the ruler's orientation.  *  * Creates a new ruler.  *  * Return value: a new #GimpRuler widget.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
