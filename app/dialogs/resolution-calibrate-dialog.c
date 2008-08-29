@@ -379,8 +379,10 @@ expr_stmt|;
 block|}
 name|ruler
 operator|=
-name|gimp_hruler_new
-argument_list|()
+name|gimp_ruler_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
@@ -438,8 +440,10 @@ argument_list|)
 expr_stmt|;
 name|ruler
 operator|=
-name|gimp_vruler_new
-argument_list|()
+name|gimp_ruler_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(

@@ -2397,8 +2397,10 @@ name|hruler
 operator|=
 name|ruler
 operator|=
-name|gimp_hruler_new
-argument_list|()
+name|gimp_ruler_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
@@ -2461,8 +2463,10 @@ name|vruler
 operator|=
 name|ruler
 operator|=
-name|gimp_vruler_new
-argument_list|()
+name|gimp_ruler_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(

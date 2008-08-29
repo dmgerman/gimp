@@ -193,12 +193,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpwidgets/gimphruler.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimpwidgets/gimpintcombobox.h>
 end_include
 
@@ -314,12 +308,6 @@ begin_include
 include|#
 directive|include
 file|<libgimpwidgets/gimpunitmenu.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpwidgets/gimpvruler.h>
 end_include
 
 begin_include

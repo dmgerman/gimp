@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950af1a0103
+DECL|enum|__anon29400a860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950af1a0203
+DECL|enum|__anon29400a860203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4065,8 +4065,10 @@ name|shell
 operator|->
 name|hrule
 operator|=
-name|gimp_hruler_new
-argument_list|()
+name|gimp_ruler_new
+argument_list|(
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
 argument_list|(
@@ -4139,8 +4141,10 @@ name|shell
 operator|->
 name|vrule
 operator|=
-name|gimp_vruler_new
-argument_list|()
+name|gimp_ruler_new
+argument_list|(
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
 argument_list|(
