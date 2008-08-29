@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa95a5b0103
+DECL|enum|__anon27745eaa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa95a5b0208
+DECL|struct|__anon27745eaa0208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -150,7 +150,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2aa95a5b0308
+DECL|struct|__anon27745eaa0308
 block|{
 DECL|member|ruler_scale
 name|gdouble
@@ -657,6 +657,15 @@ modifier|*
 name|ruler
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|widget
+init|=
+name|GTK_WIDGET
+argument_list|(
+name|ruler
+argument_list|)
+decl_stmt|;
 name|GimpRulerPrivate
 modifier|*
 name|priv
