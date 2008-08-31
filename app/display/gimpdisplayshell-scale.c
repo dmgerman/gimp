@@ -2109,9 +2109,6 @@ decl_stmt|;
 name|gint
 name|screen_height
 decl_stmt|;
-name|gdouble
-name|new_scale
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -2170,6 +2167,18 @@ argument_list|)
 operator|*
 literal|0.75
 expr_stmt|;
+comment|/* We need to zoom before we use SCALE[XY] */
+name|gimp_zoom_model_zoom
+argument_list|(
+name|shell
+operator|->
+name|zoom
+argument_list|,
+name|GIMP_ZOOM_TO
+argument_list|,
+name|scale
+argument_list|)
+expr_stmt|;
 name|shell_width
 operator|=
 name|SCALEX
@@ -2186,17 +2195,6 @@ argument_list|(
 name|shell
 argument_list|,
 name|image_height
-argument_list|)
-expr_stmt|;
-name|gimp_zoom_model_zoom
-argument_list|(
-name|shell
-operator|->
-name|zoom
-argument_list|,
-name|GIMP_ZOOM_TO
-argument_list|,
-name|scale
 argument_list|)
 expr_stmt|;
 if|if
@@ -2222,6 +2220,9 @@ operator|>
 name|screen_height
 condition|)
 block|{
+name|gdouble
+name|new_scale
+decl_stmt|;
 name|gdouble
 name|current
 init|=
