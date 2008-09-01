@@ -1148,7 +1148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_projection_initialize:  * @proj: A #GimpProjection.  * @x:  * @y:  * @w:  * @h:  *  * This function determines whether a visible layer with combine mode Normal  * provides complete coverage over the specified area.  If not, the projection  * is initialized to transparent black.  */
+comment|/**  * gimp_projection_initialize:  * @proj: A #GimpProjection.  * @x:  * @y:  * @w:  * @h:  *  * This function determines whether a visible layer with combine mode  * Normal provides complete coverage over the specified area.  If not,  * the projection is initialized to transparent black.  */
 end_comment
 
 begin_function
@@ -1243,6 +1243,15 @@ operator|!
 name|gimp_drawable_has_alpha
 argument_list|(
 name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+operator|&&
+operator|!
+name|gimp_layer_get_mask
+argument_list|(
+name|GIMP_LAYER
 argument_list|(
 name|item
 argument_list|)
