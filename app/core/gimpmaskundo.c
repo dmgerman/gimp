@@ -596,11 +596,6 @@ name|y2
 argument_list|)
 condition|)
 block|{
-name|guchar
-name|empty
-init|=
-literal|0
-decl_stmt|;
 name|new_tiles
 operator|=
 name|tile_manager_new
@@ -703,13 +698,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|color_region
+name|clear_region
 argument_list|(
 operator|&
 name|srcPR
-argument_list|,
-operator|&
-name|empty
 argument_list|)
 expr_stmt|;
 block|}

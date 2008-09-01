@@ -1271,22 +1271,6 @@ name|GimpLayer
 modifier|*
 name|bottom_layer
 decl_stmt|;
-name|guchar
-name|bg
-index|[
-literal|4
-index|]
-init|=
-block|{
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|,
-literal|0
-block|}
-decl_stmt|;
 name|GimpImageType
 name|type
 decl_stmt|;
@@ -1778,6 +1762,22 @@ operator|==
 name|GIMP_INDEXED_IMAGE
 condition|)
 block|{
+name|guchar
+name|bg
+index|[
+literal|4
+index|]
+init|=
+block|{
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|,
+literal|0
+block|}
+decl_stmt|;
 name|type
 operator|=
 name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE
@@ -1992,7 +1992,7 @@ name|offset_y
 operator|=
 name|y1
 expr_stmt|;
-comment|/*  Set the layer to transparent  */
+comment|/*  clear the layer  */
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -2025,13 +2025,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  set the region to 0's  */
-name|color_region
+name|clear_region
 argument_list|(
 operator|&
 name|src1PR
-argument_list|,
-name|bg
 argument_list|)
 expr_stmt|;
 comment|/*  Find the index in the layer list of the bottom layer--we need this        *  in order to add the final, merged layer to the layer list correctly        */

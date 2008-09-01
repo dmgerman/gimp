@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d460800103
+DECL|enum|__anon28d55e8b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2325,11 +2325,6 @@ name|srcPR
 decl_stmt|,
 name|destPR
 decl_stmt|;
-name|guchar
-name|empty
-init|=
-name|TRANSPARENT_OPACITY
-decl_stmt|;
 name|gint
 name|x1
 decl_stmt|,
@@ -2619,13 +2614,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|color_region
+name|clear_region
 argument_list|(
 operator|&
 name|srcPR
-argument_list|,
-operator|&
-name|empty
 argument_list|)
 expr_stmt|;
 if|if
@@ -5539,11 +5531,6 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|guchar
-name|bg
-init|=
-name|TRANSPARENT_OPACITY
-decl_stmt|;
 if|if
 condition|(
 name|push_undo
@@ -5634,13 +5621,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|color_region
+name|clear_region
 argument_list|(
 operator|&
 name|maskPR
-argument_list|,
-operator|&
-name|bg
 argument_list|)
 expr_stmt|;
 block|}
@@ -5683,13 +5667,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|color_region
+name|clear_region
 argument_list|(
 operator|&
 name|maskPR
-argument_list|,
-operator|&
-name|bg
 argument_list|)
 expr_stmt|;
 block|}
@@ -5790,11 +5771,6 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
-name|guchar
-name|bg
-init|=
-name|OPAQUE_OPACITY
-decl_stmt|;
 if|if
 condition|(
 name|push_undo
@@ -5857,13 +5833,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|color_region
+name|clear_region
 argument_list|(
 operator|&
 name|maskPR
-argument_list|,
-operator|&
-name|bg
 argument_list|)
 expr_stmt|;
 comment|/*  we know the bounds  */
