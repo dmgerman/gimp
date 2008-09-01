@@ -472,10 +472,7 @@ name|shm_handle
 operator|=
 name|CreateFileMapping
 argument_list|(
-operator|(
-name|HANDLE
-operator|)
-literal|0xFFFFFFFF
+name|INVALID_FILE_HANDLE
 argument_list|,
 name|NULL
 argument_list|,
