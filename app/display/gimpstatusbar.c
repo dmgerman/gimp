@@ -1414,9 +1414,10 @@ name|padding
 init|=
 literal|2
 operator|*
+name|gtk_widget_get_style
+argument_list|(
 name|widget
-operator|->
-name|style
+argument_list|)
 operator|->
 name|ythickness
 decl_stmt|;
@@ -5330,9 +5331,10 @@ name|widget
 operator|->
 name|window
 argument_list|,
+name|gtk_widget_get_style
+argument_list|(
 name|widget
-operator|->
-name|style
+argument_list|)
 operator|->
 name|black_gc
 argument_list|,
