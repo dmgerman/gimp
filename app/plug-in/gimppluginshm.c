@@ -181,6 +181,25 @@ name|USE_WIN32_SHM
 value|1
 end_define
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|INVALID_FILE_HANDLE
+end_ifndef
+
+begin_define
+DECL|macro|INVALID_FILE_HANDLE
+define|#
+directive|define
+name|INVALID_FILE_HANDLE
+value|((HANDLE) 0xFFFFFFFF)
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_endif
 endif|#
 directive|endif
