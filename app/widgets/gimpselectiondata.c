@@ -337,8 +337,6 @@ name|strlen
 argument_list|(
 name|vals
 argument_list|)
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1419,8 +1417,6 @@ name|strlen
 argument_list|(
 name|str
 argument_list|)
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1605,8 +1601,6 @@ name|strlen
 argument_list|(
 name|str
 argument_list|)
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1819,8 +1813,6 @@ name|strlen
 argument_list|(
 name|str
 argument_list|)
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2013,8 +2005,6 @@ name|strlen
 argument_list|(
 name|str
 argument_list|)
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|g_free
