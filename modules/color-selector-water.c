@@ -1929,25 +1929,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|event
-operator|->
-name|is_hint
-condition|)
-name|gdk_device_get_state
+comment|/* Ask for more motion events in case the event was a hint */
+name|gdk_event_request_motions
 argument_list|(
 name|event
-operator|->
-name|device
-argument_list|,
-name|event
-operator|->
-name|window
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return

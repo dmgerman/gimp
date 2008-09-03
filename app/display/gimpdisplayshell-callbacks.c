@@ -3977,27 +3977,12 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* Ask for the pointer position, but ignore it except for cursor          * handling, so motion events sync with the button press/release events          */
-if|if
-condition|(
-name|mevent
-operator|->
-name|is_hint
-condition|)
-block|{
-name|gimp_display_shell_get_device_coords
+comment|/* Ask for more motion events in case the event was a hint */
+name|gdk_event_request_motions
 argument_list|(
-name|shell
-argument_list|,
 name|mevent
-operator|->
-name|device
-argument_list|,
-operator|&
-name|display_coords
 argument_list|)
 expr_stmt|;
-block|}
 name|update_sw_cursor
 operator|=
 name|TRUE
