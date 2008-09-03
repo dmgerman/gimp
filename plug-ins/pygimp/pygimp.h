@@ -79,6 +79,17 @@ name|PY_SSIZE_T_MIN
 value|INT_MIN
 end_define
 
+begin_define
+DECL|macro|PyInt_AsSsize_t (o)
+define|#
+directive|define
+name|PyInt_AsSsize_t
+parameter_list|(
+name|o
+parameter_list|)
+value|PyInt_AsLong(o)
+end_define
+
 begin_endif
 endif|#
 directive|endif
@@ -380,7 +391,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bbc42d80108
+DECL|struct|__anon29e595b70108
 typedef|typedef
 struct|struct
 block|{
@@ -437,7 +448,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bbc42d80208
+DECL|struct|__anon29e595b70208
 typedef|typedef
 struct|struct
 block|{
@@ -507,7 +518,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2bbc42d80308
+DECL|struct|__anon29e595b70308
 typedef|typedef
 struct|struct
 block|{
@@ -597,7 +608,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2bbc42d80408
+DECL|struct|__anon29e595b70408
 typedef|typedef
 struct|struct
 block|{
