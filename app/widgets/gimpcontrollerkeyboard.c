@@ -88,6 +88,7 @@ modifier|*
 name|name
 decl_stmt|;
 DECL|member|blurb
+specifier|const
 name|gchar
 modifier|*
 name|blurb
