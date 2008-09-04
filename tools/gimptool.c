@@ -207,7 +207,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon29ff692d0108
+DECL|struct|__anon291427b30108
 specifier|static
 struct|struct
 block|{
@@ -339,14 +339,16 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|win32_command (gchar * command)
+DECL|function|win32_command (const gchar * command)
 name|win32_command
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|command
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|comspec
@@ -363,7 +365,7 @@ name|comspec
 condition|)
 name|comspec
 operator|=
-literal|"command.com"
+literal|"cmd.exe"
 expr_stmt|;
 return|return
 name|g_strdup_printf
@@ -883,6 +885,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|expand_and_munge (const gchar * value)
@@ -894,6 +897,11 @@ modifier|*
 name|value
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|retval
+decl_stmt|;
 if|if
 condition|(
 name|starts_with_dir
@@ -903,7 +911,7 @@ argument_list|,
 literal|"${prefix}"
 argument_list|)
 condition|)
-name|value
+name|retval
 operator|=
 name|g_strconcat
 argument_list|(
@@ -929,7 +937,7 @@ argument_list|,
 literal|"${exec_prefix}"
 argument_list|)
 condition|)
-name|value
+name|retval
 operator|=
 name|g_strconcat
 argument_list|(
@@ -945,16 +953,24 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+else|else
+name|retval
+operator|=
+name|g_strdup
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|starts_with_dir
 argument_list|(
-name|value
+name|retval
 argument_list|,
 name|EXEC_PREFIX
 argument_list|)
 condition|)
-name|value
+name|retval
 operator|=
 name|g_strconcat
 argument_list|(
@@ -963,7 +979,7 @@ argument_list|(
 literal|'/'
 argument_list|)
 argument_list|,
-name|value
+name|retval
 operator|+
 name|strlen
 argument_list|(
@@ -977,12 +993,12 @@ if|if
 condition|(
 name|starts_with_dir
 argument_list|(
-name|value
+name|retval
 argument_list|,
 name|PREFIX
 argument_list|)
 condition|)
-name|value
+name|retval
 operator|=
 name|g_strconcat
 argument_list|(
@@ -991,7 +1007,7 @@ argument_list|(
 literal|'/'
 argument_list|)
 argument_list|,
-name|value
+name|retval
 operator|+
 name|strlen
 argument_list|(
@@ -1002,7 +1018,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|value
+name|retval
 return|;
 block|}
 end_function
@@ -1510,6 +1526,7 @@ name|gchar
 modifier|*
 name|cmd
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|dest_dir
