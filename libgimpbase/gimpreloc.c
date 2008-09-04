@@ -1289,6 +1289,7 @@ name|GimpBinrelocInitError
 name|errcode
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|error_message
