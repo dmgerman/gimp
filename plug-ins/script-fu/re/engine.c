@@ -6023,7 +6023,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   - at - print current situation  == #ifdef REDEBUG  == static void at(struct match *m, char *title, char *start, char *stop, \  ==						sopno startst, sopno stopst);  == #endif  */
+comment|/*  - at - print current situation  == #ifdef REDEBUG  == static void at(struct match *m, char *title, char *start, char *stop, \  ==						sopno startst, sopno stopst);  == #endif  */
 end_comment
 
 begin_function

@@ -5147,7 +5147,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon28c8a0da0103
+DECL|enum|__anon2794b7770103
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{

@@ -180,7 +180,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2962721c0103
+DECL|enum|__anon27cc3aa90103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -199,7 +199,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2962721c0203
+DECL|enum|__anon27cc3aa90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29400a860103
+DECL|enum|__anon2769dd500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29400a860203
+DECL|enum|__anon2769dd500203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

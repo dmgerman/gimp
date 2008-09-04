@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc08370103
+DECL|enum|__anon28926f7e0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27bc08370203
+DECL|enum|__anon28926f7e0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc08370308
+DECL|struct|__anon28926f7e0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bc08370408
+DECL|struct|__anon28926f7e0408
 block|{
 DECL|member|fp
 name|FILE

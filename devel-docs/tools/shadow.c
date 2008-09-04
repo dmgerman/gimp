@@ -36,7 +36,7 @@ value|0.75
 end_define
 
 begin_typedef
-DECL|struct|__anon28e783800108
+DECL|struct|__anon2c9529bc0108
 typedef|typedef
 struct|struct
 block|{

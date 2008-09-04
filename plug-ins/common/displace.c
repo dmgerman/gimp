@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3e8f560103
+DECL|enum|__anon2a409fbd0103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3e8f560208
+DECL|struct|__anon2a409fbd0208
 block|{
 DECL|member|amount_x
 name|gdouble

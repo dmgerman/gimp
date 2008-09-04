@@ -619,7 +619,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon27c475c10103
+DECL|enum|__anon2a1fefa40103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -6597,7 +6597,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon27c475c10203
+DECL|enum|__anon2a1fefa40203
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{

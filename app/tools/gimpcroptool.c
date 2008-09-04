@@ -1293,7 +1293,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_crop_tool_rectangle_change_complete:  * @rectangle:  *  * Returns:   **/
+comment|/**  * gimp_crop_tool_rectangle_change_complete:  * @rectangle:  *  * Returns:  **/
 end_comment
 
 begin_function
