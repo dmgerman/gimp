@@ -735,29 +735,32 @@ name|GIMP_ACTION_VIEW_NUM_COLUMNS
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
-comment|/* COLUMN_VISIBLE       */
+comment|/* COLUMN_VISIBLE        */
 name|GTK_TYPE_ACTION
 argument_list|,
-comment|/* COLUMN_ACTION        */
+comment|/* COLUMN_ACTION         */
 name|G_TYPE_STRING
 argument_list|,
-comment|/* COLUMN_STOCK_ID      */
+comment|/* COLUMN_STOCK_ID       */
 name|G_TYPE_STRING
 argument_list|,
-comment|/* COLUMN_LABEL         */
+comment|/* COLUMN_LABEL          */
 name|G_TYPE_STRING
 argument_list|,
-comment|/* COLUMN_NAME          */
+comment|/* COLUMN_LABEL_CASEFOLD */
+name|G_TYPE_STRING
+argument_list|,
+comment|/* COLUMN_NAME           */
 name|G_TYPE_UINT
 argument_list|,
-comment|/* COLUMN_ACCEL_KEY     */
+comment|/* COLUMN_ACCEL_KEY      */
 name|GDK_TYPE_MODIFIER_TYPE
 argument_list|,
-comment|/* COLUMN_ACCEL_MASK    */
+comment|/* COLUMN_ACCEL_MASK     */
 name|G_TYPE_CLOSURE
 argument_list|)
 expr_stmt|;
-comment|/* COLUMN_ACCEL_CLOSURE */
+comment|/* COLUMN_ACCEL_CLOSURE  */
 name|accel_group
 operator|=
 name|gtk_ui_manager_get_accel_group
@@ -908,6 +911,10 @@ name|label
 decl_stmt|;
 name|gchar
 modifier|*
+name|label_casefold
+decl_stmt|;
+name|gchar
+modifier|*
 name|tmp
 decl_stmt|;
 name|guint
@@ -1008,6 +1015,16 @@ name|name
 argument_list|)
 expr_stmt|;
 block|}
+name|label_casefold
+operator|=
+name|g_utf8_casefold
+argument_list|(
+name|label
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|show_shortcuts
@@ -1104,6 +1121,10 @@ name|GIMP_ACTION_VIEW_COLUMN_LABEL
 argument_list|,
 name|label
 argument_list|,
+name|GIMP_ACTION_VIEW_COLUMN_LABEL_CASEFOLD
+argument_list|,
+name|label_casefold
+argument_list|,
 name|GIMP_ACTION_VIEW_COLUMN_NAME
 argument_list|,
 name|name
@@ -1132,6 +1153,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|label
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|label_casefold
 argument_list|)
 expr_stmt|;
 if|if
@@ -1662,9 +1688,22 @@ name|view
 operator|->
 name|filter
 operator|=
-name|g_strdup
+name|NULL
+expr_stmt|;
+if|if
+condition|(
+name|filter
+condition|)
+name|view
+operator|->
+name|filter
+operator|=
+name|g_utf8_casefold
 argument_list|(
 name|filter
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 for|for
@@ -1758,7 +1797,7 @@ argument_list|,
 operator|&
 name|child_iter
 argument_list|,
-name|GIMP_ACTION_VIEW_COLUMN_LABEL
+name|GIMP_ACTION_VIEW_COLUMN_LABEL_CASEFOLD
 argument_list|,
 operator|&
 name|label
@@ -1774,6 +1813,10 @@ argument_list|)
 expr_stmt|;
 name|visible
 operator|=
+name|label
+operator|&&
+name|name
+operator|&&
 operator|(
 name|strstr
 argument_list|(
@@ -2163,7 +2206,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon278af7b10108
+DECL|struct|__anon2a9a4b180108
 block|{
 DECL|member|manager
 name|GimpUIManager
