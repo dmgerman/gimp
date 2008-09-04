@@ -69,18 +69,10 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|exec_prefix
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|exec_prefix
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|env_cc
-specifier|static
-name|gchar
-modifier|*
-name|env_cc
 decl_stmt|;
 end_decl_stmt
 
@@ -95,8 +87,19 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
+DECL|variable|env_cc
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|env_cc
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
 DECL|variable|env_cflags
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|env_cflags
@@ -106,6 +109,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|env_ldflags
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|env_ldflags
@@ -115,6 +119,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|env_libs
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|env_libs
@@ -202,7 +207,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon27dbead60108
+DECL|struct|__anon29ff692d0108
 specifier|static
 struct|struct
 block|{
@@ -213,6 +218,7 @@ modifier|*
 name|option
 decl_stmt|;
 DECL|member|value
+specifier|const
 name|gchar
 modifier|*
 name|value
@@ -380,13 +386,15 @@ end_endif
 begin_function
 specifier|static
 name|gboolean
-DECL|function|starts_with_dir (gchar * string,gchar * test)
+DECL|function|starts_with_dir (const gchar * string,const gchar * test)
 name|starts_with_dir
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|string
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|test
@@ -423,13 +431,15 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|one_line_output (gchar * program,gchar * args)
+DECL|function|one_line_output (const gchar * program,const gchar * args)
 name|one_line_output
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|program
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|args
@@ -617,9 +627,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|pkg_config (gchar * args)
+DECL|function|pkg_config (const gchar * args)
 name|pkg_config
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|args
@@ -655,6 +666,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|get_runtime_prefix (gchar slash)
@@ -826,6 +838,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|get_exec_prefix (gchar slash)
@@ -872,9 +885,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|expand_and_munge (gchar * value)
+DECL|function|expand_and_munge (const gchar * value)
 name|expand_and_munge
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|value
@@ -1468,21 +1482,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_build_2 (gchar * cflags,gchar * libs,gchar * install_dir,gchar * what)
+DECL|function|do_build_2 (const gchar * cflags,const gchar * libs,const gchar * install_dir,const gchar * what)
 name|do_build_2
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|cflags
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|libs
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|install_dir
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|what
@@ -1496,6 +1514,7 @@ name|gchar
 modifier|*
 name|dest_dir
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|output_flag
@@ -1504,12 +1523,14 @@ name|gchar
 modifier|*
 name|dest_exe
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|here_comes_linker_flags
 init|=
 literal|""
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|windows_subsystem_flag
