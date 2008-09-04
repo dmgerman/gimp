@@ -17,7 +17,7 @@ name|__BASE_H__
 end_define
 
 begin_function_decl
-name|GPid
+name|gint
 name|get_pid
 parameter_list|(
 name|void

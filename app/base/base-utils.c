@@ -82,7 +82,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
-name|GPid
+name|gint
 DECL|function|get_pid (void)
 name|get_pid
 parameter_list|(
@@ -90,6 +90,9 @@ name|void
 parameter_list|)
 block|{
 return|return
+operator|(
+name|gint
+operator|)
 name|getpid
 argument_list|()
 return|;
