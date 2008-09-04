@@ -141,6 +141,10 @@ name|hbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|entrybox
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|label
 decl_stmt|;
 name|GtkWidget
@@ -317,6 +321,36 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
+name|entrybox
+operator|=
+name|gtk_hbox_new
+argument_list|(
+name|FALSE
+argument_list|,
+literal|2
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|hbox
+argument_list|)
+argument_list|,
+name|entrybox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|entrybox
+argument_list|)
+expr_stmt|;
 name|entry
 operator|=
 name|gtk_entry_new
@@ -326,7 +360,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|entrybox
 argument_list|)
 argument_list|,
 name|entry
@@ -379,7 +413,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|hbox
+name|entrybox
 argument_list|)
 argument_list|,
 name|button
@@ -589,7 +623,7 @@ literal|"save-accels"
 argument_list|,
 name|_
 argument_list|(
-literal|"_Save keyboard shortcuts on exit"
+literal|"S_ave keyboard shortcuts on exit"
 argument_list|)
 argument_list|)
 expr_stmt|;
