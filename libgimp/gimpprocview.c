@@ -65,6 +65,7 @@ name|GtkWidget
 modifier|*
 name|gimp_proc_view_create_params
 parameter_list|(
+specifier|const
 name|GimpParamDef
 modifier|*
 name|params
@@ -94,7 +95,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_proc_view_new (const gchar * name,const gchar * menu_path,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,GimpPDBProcType type,gint n_params,gint n_return_vals,GimpParamDef * params,GimpParamDef * return_vals)
+DECL|function|gimp_proc_view_new (const gchar * name,const gchar * menu_path,const gchar * blurb,const gchar * help,const gchar * author,const gchar * copyright,const gchar * date,GimpPDBProcType type,gint n_params,gint n_return_vals,const GimpParamDef * params,const GimpParamDef * return_vals)
 name|gimp_proc_view_new
 parameter_list|(
 specifier|const
@@ -141,10 +142,12 @@ parameter_list|,
 name|gint
 name|n_return_vals
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
@@ -1175,9 +1178,10 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_proc_view_create_params (GimpParamDef * params,gint n_params,GtkSizeGroup * name_group,GtkSizeGroup * type_group,GtkSizeGroup * desc_group)
+DECL|function|gimp_proc_view_create_params (const GimpParamDef * params,gint n_params,GtkSizeGroup * name_group,GtkSizeGroup * type_group,GtkSizeGroup * desc_group)
 name|gimp_proc_view_create_params
 parameter_list|(
+specifier|const
 name|GimpParamDef
 modifier|*
 name|params

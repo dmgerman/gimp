@@ -67,10 +67,12 @@ parameter_list|,
 name|gint
 name|n_return_vals
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|params
 parameter_list|,
+specifier|const
 name|GimpParamDef
 modifier|*
 name|return_vals
