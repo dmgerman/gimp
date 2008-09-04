@@ -114,11 +114,13 @@ name|gint
 name|value
 decl_stmt|;
 DECL|member|value_desc
+specifier|const
 name|gchar
 modifier|*
 name|value_desc
 decl_stmt|;
 DECL|member|value_help
+specifier|const
 name|gchar
 modifier|*
 name|value_help
@@ -137,11 +139,13 @@ name|guint
 name|value
 decl_stmt|;
 DECL|member|value_desc
+specifier|const
 name|gchar
 modifier|*
 name|value_desc
 decl_stmt|;
 DECL|member|value_help
+specifier|const
 name|gchar
 modifier|*
 name|value_help
