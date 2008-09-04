@@ -70,6 +70,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -95,6 +96,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -119,6 +121,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -143,6 +146,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -157,7 +161,7 @@ end_function_decl
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_read_parameter_string (gchar ** text,gint nitems,gchar * name,gchar ** style_entry)
+DECL|function|gfig_read_parameter_string (gchar ** text,gint nitems,const gchar * name,gchar ** style_entry)
 name|gfig_read_parameter_string
 parameter_list|(
 name|gchar
@@ -168,6 +172,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -292,7 +297,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_read_parameter_int (gchar ** text,gint nitems,gchar * name,gint * style_entry)
+DECL|function|gfig_read_parameter_int (gchar ** text,gint nitems,const gchar * name,gint * style_entry)
 name|gfig_read_parameter_int
 parameter_list|(
 name|gchar
@@ -303,6 +308,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -419,7 +425,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_read_parameter_double (gchar ** text,gint nitems,gchar * name,gdouble * style_entry)
+DECL|function|gfig_read_parameter_double (gchar ** text,gint nitems,const gchar * name,gdouble * style_entry)
 name|gfig_read_parameter_double
 parameter_list|(
 name|gchar
@@ -430,6 +436,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -553,7 +560,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gfig_read_parameter_gimp_rgb (gchar ** text,gint nitems,gchar * name,GimpRGB * style_entry)
+DECL|function|gfig_read_parameter_gimp_rgb (gchar ** text,gint nitems,const gchar * name,GimpRGB * style_entry)
 name|gfig_read_parameter_gimp_rgb
 parameter_list|(
 name|gchar
@@ -564,6 +571,7 @@ parameter_list|,
 name|gint
 name|nitems
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|name

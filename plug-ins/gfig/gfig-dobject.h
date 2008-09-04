@@ -88,7 +88,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3a49580108
+DECL|struct|__anon27cbf4740108
 block|{
 DECL|member|type
 name|DobjType
@@ -96,6 +96,7 @@ name|type
 decl_stmt|;
 comment|/* the object type for this class */
 DECL|member|name
+specifier|const
 name|gchar
 modifier|*
 name|name
