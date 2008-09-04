@@ -18,8 +18,11 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6699cc0103
+DECL|enum|__anon2892a4170103
 block|{
+DECL|enumerator|GIMP_ACTION_VIEW_COLUMN_VISIBLE
+name|GIMP_ACTION_VIEW_COLUMN_VISIBLE
+block|,
 DECL|enumerator|GIMP_ACTION_VIEW_COLUMN_ACTION
 name|GIMP_ACTION_VIEW_COLUMN_ACTION
 block|,
@@ -137,6 +140,11 @@ DECL|member|show_shortcuts
 name|gboolean
 name|show_shortcuts
 decl_stmt|;
+DECL|member|filter
+name|gchar
+modifier|*
+name|filter
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -180,6 +188,22 @@ name|select_action
 parameter_list|,
 name|gboolean
 name|show_shortcuts
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_action_view_set_filter
+parameter_list|(
+name|GimpActionView
+modifier|*
+name|view
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filter
 parameter_list|)
 function_decl|;
 end_function_decl
