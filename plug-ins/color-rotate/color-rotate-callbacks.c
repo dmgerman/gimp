@@ -117,6 +117,7 @@ block|}
 end_function
 
 begin_function
+specifier|const
 name|gchar
 modifier|*
 DECL|function|rcm_units_string (gint units)
@@ -1417,14 +1418,14 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|rcm_expose_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
+DECL|function|rcm_expose_event (GtkWidget * widget,GdkEventExpose * event,RcmCircle * circle)
 name|rcm_expose_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventExpose
 modifier|*
 name|event
 parameter_list|,
@@ -1475,14 +1476,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|rcm_button_press_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
+DECL|function|rcm_button_press_event (GtkWidget * widget,GdkEventButton * event,RcmCircle * circle)
 name|rcm_button_press_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -1502,10 +1503,6 @@ name|float
 modifier|*
 name|beta
 decl_stmt|;
-name|GdkEventButton
-modifier|*
-name|bevent
-decl_stmt|;
 name|alpha
 operator|=
 operator|&
@@ -1523,14 +1520,6 @@ operator|->
 name|angle
 operator|->
 name|beta
-expr_stmt|;
-name|bevent
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
 expr_stmt|;
 name|circle
 operator|->
@@ -1546,11 +1535,11 @@ name|arctg
 argument_list|(
 name|CENTER
 operator|-
-name|bevent
+name|event
 operator|->
 name|y
 argument_list|,
-name|bevent
+name|event
 operator|->
 name|x
 operator|-
@@ -1571,7 +1560,7 @@ name|sqrt
 argument_list|(
 name|SQR
 argument_list|(
-name|bevent
+name|event
 operator|->
 name|y
 operator|-
@@ -1580,7 +1569,7 @@ argument_list|)
 operator|+
 name|SQR
 argument_list|(
-name|bevent
+name|event
 operator|->
 name|x
 operator|-
@@ -1760,14 +1749,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|rcm_release_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
+DECL|function|rcm_release_event (GtkWidget * widget,GdkEventButton * event,RcmCircle * circle)
 name|rcm_release_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -1840,14 +1829,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|rcm_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmCircle * circle)
+DECL|function|rcm_motion_notify_event (GtkWidget * widget,GdkEventMotion * event,RcmCircle * circle)
 name|rcm_motion_notify_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventMotion
 modifier|*
 name|event
 parameter_list|,
@@ -1856,11 +1845,6 @@ modifier|*
 name|circle
 parameter_list|)
 block|{
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
 name|gfloat
 name|clicked_angle
 decl_stmt|,
@@ -1948,21 +1932,6 @@ argument_list|,
 name|GDK_GC_FUNCTION
 argument_list|)
 expr_stmt|;
-name|gdk_window_get_pointer
-argument_list|(
-name|widget
-operator|->
-name|window
-argument_list|,
-operator|&
-name|x
-argument_list|,
-operator|&
-name|y
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|clicked_angle
 operator|=
 name|angle_mod_2PI
@@ -1971,8 +1940,12 @@ name|arctg
 argument_list|(
 name|CENTER
 operator|-
+name|event
+operator|->
 name|y
 argument_list|,
+name|event
+operator|->
 name|x
 operator|-
 name|CENTER
@@ -2178,6 +2151,11 @@ name|after
 argument_list|)
 expr_stmt|;
 block|}
+name|gdk_event_request_motions
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -2190,14 +2168,14 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|rcm_gray_expose_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
+DECL|function|rcm_gray_expose_event (GtkWidget * widget,GdkEventExpose * event,RcmGray * circle)
 name|rcm_gray_expose_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventExpose
 modifier|*
 name|event
 parameter_list|,
@@ -2267,14 +2245,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|rcm_gray_button_press_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
+DECL|function|rcm_gray_button_press_event (GtkWidget * widget,GdkEventButton * event,RcmGray * circle)
 name|rcm_gray_button_press_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -2292,26 +2270,14 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|GdkEventButton
-modifier|*
-name|bevent
-decl_stmt|;
 name|int
 name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|bevent
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
-expr_stmt|;
 name|x
 operator|=
-name|bevent
+name|event
 operator|->
 name|x
 operator|-
@@ -2323,7 +2289,7 @@ name|y
 operator|=
 name|GRAY_CENTER
 operator|-
-name|bevent
+name|event
 operator|->
 name|y
 operator|+
@@ -2488,14 +2454,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|rcm_gray_release_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
+DECL|function|rcm_gray_release_event (GtkWidget * widget,GdkEventButton * event,RcmGray * circle)
 name|rcm_gray_release_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -2565,14 +2531,14 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|rcm_gray_motion_notify_event (GtkWidget * widget,GdkEvent * event,RcmGray * circle)
+DECL|function|rcm_gray_motion_notify_event (GtkWidget * widget,GdkEventMotion * event,RcmGray * circle)
 name|rcm_gray_motion_notify_event
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventMotion
 modifier|*
 name|event
 parameter_list|,
@@ -2685,23 +2651,10 @@ argument_list|)
 expr_stmt|;
 comment|/* erase */
 block|}
-name|gdk_window_get_pointer
-argument_list|(
-name|widget
-operator|->
-name|window
-argument_list|,
-operator|&
-name|x
-argument_list|,
-operator|&
-name|y
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|x
 operator|=
+name|event
+operator|->
 name|x
 operator|-
 name|GRAY_CENTER
@@ -2712,6 +2665,8 @@ name|y
 operator|=
 name|GRAY_CENTER
 operator|-
+name|event
+operator|->
 name|y
 operator|+
 name|LITTLE_RADIUS
@@ -2830,6 +2785,11 @@ operator|->
 name|after
 argument_list|)
 expr_stmt|;
+name|gdk_event_request_motions
+argument_list|(
+name|event
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -2842,23 +2802,18 @@ end_comment
 
 begin_function
 name|void
-DECL|function|rcm_set_alpha (GtkWidget * entry,gpointer data)
+DECL|function|rcm_set_alpha (GtkWidget * entry,RcmCircle * circle)
 name|rcm_set_alpha
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|RcmCircle
 modifier|*
 name|circle
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkStyle
 modifier|*
 name|style
@@ -2940,23 +2895,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|rcm_set_beta (GtkWidget * entry,gpointer data)
+DECL|function|rcm_set_beta (GtkWidget * entry,RcmCircle * circle)
 name|rcm_set_beta
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|RcmCircle
 modifier|*
 name|circle
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkStyle
 modifier|*
 name|style
@@ -3038,23 +2988,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|rcm_set_hue (GtkWidget * entry,gpointer data)
+DECL|function|rcm_set_hue (GtkWidget * entry,RcmGray * circle)
 name|rcm_set_hue
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|RcmGray
 modifier|*
 name|circle
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkStyle
 modifier|*
 name|style
@@ -3155,23 +3100,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|rcm_set_satur (GtkWidget * entry,gpointer data)
+DECL|function|rcm_set_satur (GtkWidget * entry,RcmGray * circle)
 name|rcm_set_satur
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|RcmGray
 modifier|*
 name|circle
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkStyle
 modifier|*
 name|style
@@ -3263,23 +3203,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|rcm_set_gray_sat (GtkWidget * entry,gpointer data)
+DECL|function|rcm_set_gray_sat (GtkWidget * entry,RcmGray * circle)
 name|rcm_set_gray_sat
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
-parameter_list|)
-block|{
 name|RcmGray
 modifier|*
 name|circle
-init|=
-name|data
-decl_stmt|;
+parameter_list|)
+block|{
 name|GtkStyle
 modifier|*
 name|style

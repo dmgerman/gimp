@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affb8a80108
+DECL|struct|__anon27c97b030108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affb8a80208
+DECL|struct|__anon27c97b030208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2affb8a80303
+DECL|enum|__anon27c97b030303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2affb8a80403
+DECL|enum|__anon27c97b030403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2affb8a80503
+DECL|enum|__anon27c97b030503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2affb8a80603
+DECL|enum|__anon27c97b030603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2affb8a80703
+DECL|enum|__anon27c97b030703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affb8a80808
+DECL|struct|__anon27c97b030808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affb8a80908
+DECL|struct|__anon27c97b030908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2affb8a80a08
+DECL|struct|__anon27c97b030a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2affb8a80b08
+DECL|struct|__anon27c97b030b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -8264,19 +8264,11 @@ operator|*
 operator|)
 name|event
 expr_stmt|;
-name|gdk_window_get_pointer
-argument_list|(
-name|widget
-operator|->
-name|window
-argument_list|,
-operator|&
 name|x
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
+operator|=
+name|mevent
+operator|->
+name|x
 expr_stmt|;
 if|if
 condition|(
@@ -8333,6 +8325,11 @@ name|aliasing_preview
 argument_list|)
 expr_stmt|;
 block|}
+name|gdk_event_request_motions
+argument_list|(
+name|mevent
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 break|break;

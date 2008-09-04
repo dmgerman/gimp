@@ -22,6 +22,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|const
 name|gchar
 modifier|*
 name|rcm_units_string
@@ -53,24 +54,6 @@ name|gchar
 modifier|*
 modifier|*
 name|pixmap_data
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/* Ok Button */
-end_comment
-
-begin_function_decl
-name|void
-name|rcm_ok_callback
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|gpointer
-name|data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -252,7 +235,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventExpose
 modifier|*
 name|event
 parameter_list|,
@@ -271,7 +254,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -290,7 +273,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -309,7 +292,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventMotion
 modifier|*
 name|event
 parameter_list|,
@@ -332,7 +315,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventExpose
 modifier|*
 name|event
 parameter_list|,
@@ -351,7 +334,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -370,7 +353,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventButton
 modifier|*
 name|event
 parameter_list|,
@@ -389,7 +372,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEvent
+name|GdkEventMotion
 modifier|*
 name|event
 parameter_list|,
@@ -412,8 +395,9 @@ name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|RcmCircle
+modifier|*
+name|circle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -426,8 +410,9 @@ name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|RcmCircle
+modifier|*
+name|circle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -440,8 +425,9 @@ name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|RcmGray
+modifier|*
+name|circle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -454,8 +440,9 @@ name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|RcmGray
+modifier|*
+name|circle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -468,8 +455,9 @@ name|GtkWidget
 modifier|*
 name|entry
 parameter_list|,
-name|gpointer
-name|data
+name|RcmGray
+modifier|*
+name|circle
 parameter_list|)
 function_decl|;
 end_function_decl
