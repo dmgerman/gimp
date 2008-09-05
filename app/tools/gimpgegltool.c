@@ -883,6 +883,10 @@ name|blacklist
 index|[]
 init|=
 block|{
+literal|"convert-format"
+block|,
+literal|"gimp-"
+block|,
 literal|"introspect"
 block|}
 decl_stmt|;
@@ -908,7 +912,7 @@ control|)
 block|{
 if|if
 condition|(
-name|strcmp
+name|g_str_has_prefix
 argument_list|(
 name|name
 argument_list|,
@@ -917,8 +921,6 @@ index|[
 name|i
 index|]
 argument_list|)
-operator|==
-literal|0
 condition|)
 return|return
 name|TRUE
@@ -2701,15 +2703,6 @@ condition|(
 name|copy
 condition|)
 block|{
-name|g_print
-argument_list|(
-literal|"installing property: %s\n"
-argument_list|,
-name|copy
-operator|->
-name|name
-argument_list|)
-expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|klass
