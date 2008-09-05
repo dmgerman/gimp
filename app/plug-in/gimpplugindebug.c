@@ -332,7 +332,7 @@ begin_function
 name|gchar
 modifier|*
 modifier|*
-DECL|function|gimp_plug_in_debug_argv (GimpPlugInDebug * debug,const gchar * name,GimpDebugWrapFlag flag,gchar ** args)
+DECL|function|gimp_plug_in_debug_argv (GimpPlugInDebug * debug,const gchar * name,GimpDebugWrapFlag flag,const gchar ** args)
 name|gimp_plug_in_debug_argv
 parameter_list|(
 name|GimpPlugInDebug
@@ -347,6 +347,7 @@ parameter_list|,
 name|GimpDebugWrapFlag
 name|flag
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
@@ -474,6 +475,11 @@ for|for
 control|(
 name|arg
 operator|=
+operator|(
+name|gchar
+operator|*
+operator|*
+operator|)
 name|args
 init|;
 operator|*

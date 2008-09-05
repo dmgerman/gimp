@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8880760103
+DECL|enum|__anon2be23af10103
 block|{
 DECL|enumerator|GIMP_DEBUG_WRAP_QUERY
 name|GIMP_DEBUG_WRAP_QUERY
@@ -91,6 +91,7 @@ parameter_list|,
 name|GimpDebugWrapFlag
 name|flag
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 modifier|*
