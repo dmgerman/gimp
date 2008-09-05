@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a50cc820103
+DECL|enum|__anon2c2922cd0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -229,7 +229,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a50cc820203
+DECL|enum|__anon2c2922cd0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -272,7 +272,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a50cc820303
+DECL|enum|__anon2c2922cd0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3631,7 +3631,7 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
+name|GIMP_CURSOR_PRECISION_PIXEL_BORDER
 argument_list|,
 name|_
 argument_list|(
@@ -6872,7 +6872,7 @@ name|tool
 operator|->
 name|display
 argument_list|,
-name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
+name|GIMP_CURSOR_PRECISION_PIXEL_BORDER
 argument_list|,
 name|_
 argument_list|(
