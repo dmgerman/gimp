@@ -466,6 +466,7 @@ specifier|static
 name|void
 name|fits_set_error
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|errmsg
@@ -2100,11 +2101,12 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|fits_set_error (char * errmsg)
+DECL|function|fits_set_error (const char * errmsg)
 specifier|static
 name|void
 name|fits_set_error
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|errmsg
@@ -3082,7 +3084,7 @@ comment|/***********************************************************************
 end_comment
 
 begin_function
-DECL|function|fits_add_card (FITS_HDU_LIST * hdulist,char * card)
+DECL|function|fits_add_card (FITS_HDU_LIST * hdulist,const char * card)
 name|int
 name|fits_add_card
 parameter_list|(
@@ -3090,6 +3092,7 @@ name|FITS_HDU_LIST
 modifier|*
 name|hdulist
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|card

@@ -204,7 +204,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon294f89290103
+DECL|enum|__anon297d307f0103
 typedef|typedef
 enum|enum
 block|{
@@ -245,7 +245,7 @@ comment|/* How to transform FITS pixel values */
 end_comment
 
 begin_typedef
-DECL|struct|__anon294f89290208
+DECL|struct|__anon297d307f0208
 typedef|typedef
 struct|struct
 block|{
@@ -282,7 +282,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|union|__anon294f8929030a
+DECL|union|__anon297d307f030a
 typedef|typedef
 union|union
 block|{
@@ -406,7 +406,7 @@ index|[
 name|FITS_CARD_SIZE
 index|]
 decl_stmt|;
-DECL|struct|__anon294f89290408
+DECL|struct|__anon297d307f0408
 struct|struct
 block|{
 DECL|member|nan_value
@@ -567,7 +567,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon294f89290508
+DECL|struct|__anon297d307f0508
 typedef|typedef
 struct|struct
 block|{
@@ -667,6 +667,7 @@ name|FITS_HDU_LIST
 modifier|*
 name|hdulist
 parameter_list|,
+specifier|const
 name|char
 modifier|*
 name|card
