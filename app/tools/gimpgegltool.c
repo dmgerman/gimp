@@ -888,6 +888,8 @@ block|,
 literal|"gimp-"
 block|,
 literal|"introspect"
+block|,
+literal|"stress"
 block|}
 decl_stmt|;
 name|gint
