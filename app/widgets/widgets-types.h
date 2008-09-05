@@ -773,6 +773,15 @@ comment|/*  misc widgets  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpActionEditor
+typedef|typedef
+name|struct
+name|_GimpActionEditor
+name|GimpActionEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpActionView
 typedef|typedef
 name|struct
