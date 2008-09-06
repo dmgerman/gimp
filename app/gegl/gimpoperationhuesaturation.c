@@ -712,15 +712,15 @@ name|use_secondary_hue
 condition|)
 block|{
 name|gdouble
-name|mapped_primary
+name|mapped_primary_hue
 decl_stmt|;
 name|gdouble
-name|mapped_secondary
+name|mapped_secondary_hue
 decl_stmt|;
 name|gdouble
 name|diff
 decl_stmt|;
-name|mapped_primary
+name|mapped_primary_hue
 operator|=
 name|map_hue
 argument_list|(
@@ -733,7 +733,7 @@ operator|.
 name|h
 argument_list|)
 expr_stmt|;
-name|mapped_secondary
+name|mapped_secondary_hue
 operator|=
 name|map_hue
 argument_list|(
@@ -750,9 +750,9 @@ comment|// Find nearest hue on the circle between primary and
 comment|// secondary hue
 name|diff
 operator|=
-name|mapped_primary
+name|mapped_primary_hue
 operator|-
-name|mapped_secondary
+name|mapped_secondary_hue
 expr_stmt|;
 if|if
 condition|(
@@ -762,7 +762,7 @@ operator|-
 literal|0.5
 condition|)
 block|{
-name|mapped_secondary
+name|mapped_secondary_hue
 operator|-=
 literal|1.0
 expr_stmt|;
@@ -775,7 +775,7 @@ operator|>=
 literal|0.5
 condition|)
 block|{
-name|mapped_secondary
+name|mapped_secondary_hue
 operator|+=
 literal|1.0
 expr_stmt|;
@@ -784,11 +784,11 @@ name|hsl
 operator|.
 name|h
 operator|=
-name|mapped_primary
+name|mapped_primary_hue
 operator|*
 name|primary_intensity
 operator|+
-name|mapped_secondary
+name|mapped_secondary_hue
 operator|*
 name|secondary_intensity
 expr_stmt|;
