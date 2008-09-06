@@ -746,8 +746,7 @@ operator|.
 name|h
 argument_list|)
 expr_stmt|;
-comment|// Find nearest hue on the circle between primary and
-comment|// secondary hue
+comment|/* Find nearest hue on the circle between primary and            * secondary hue            */
 name|diff
 operator|=
 name|mapped_primary_hue
@@ -784,6 +783,7 @@ name|hsl
 operator|.
 name|h
 operator|=
+operator|(
 name|mapped_primary_hue
 operator|*
 name|primary_intensity
@@ -791,11 +791,13 @@ operator|+
 name|mapped_secondary_hue
 operator|*
 name|secondary_intensity
+operator|)
 expr_stmt|;
 name|hsl
 operator|.
 name|s
 operator|=
+operator|(
 name|map_saturation
 argument_list|(
 name|config
@@ -821,11 +823,13 @@ name|s
 argument_list|)
 operator|*
 name|secondary_intensity
+operator|)
 expr_stmt|;
 name|hsl
 operator|.
 name|l
 operator|=
+operator|(
 name|map_lightness
 argument_list|(
 name|config
@@ -851,6 +855,7 @@ name|l
 argument_list|)
 operator|*
 name|secondary_intensity
+operator|)
 expr_stmt|;
 block|}
 else|else
