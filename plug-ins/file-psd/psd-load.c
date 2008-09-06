@@ -6792,6 +6792,7 @@ comment|/* ? */
 case|case
 name|PSD_COMP_ZIP_PRED
 case|:
+default|default:
 name|g_set_error
 argument_list|(
 name|error
