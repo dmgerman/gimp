@@ -8552,7 +8552,7 @@ argument_list|(
 operator|&
 name|comp_mode
 argument_list|,
-literal|2
+name|COMP_MODE_SIZE
 argument_list|,
 literal|1
 argument_list|,
