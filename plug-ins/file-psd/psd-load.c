@@ -69,6 +69,14 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
+begin_define
+DECL|macro|COMP_MODE_SIZE
+define|#
+directive|define
+name|COMP_MODE_SIZE
+value|sizeof(guint16)
+end_define
+
 begin_comment
 comment|/*  Local function prototypes  */
 end_comment
@@ -5648,9 +5656,6 @@ modifier|*
 name|pixels
 decl_stmt|;
 name|guint16
-name|comp_mode
-decl_stmt|;
-name|guint16
 name|alpha_chn
 decl_stmt|;
 name|guint16
@@ -6464,6 +6469,27 @@ operator|->
 name|rows
 argument_list|)
 expr_stmt|;
+comment|/* Only read channel data if there is more data than                * what compression method that is used                */
+if|if
+condition|(
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|chn_info
+index|[
+name|cidx
+index|]
+operator|.
+name|data_len
+operator|>
+name|COMP_MODE_SIZE
+condition|)
+block|{
+name|guint16
+name|comp_mode
+decl_stmt|;
 if|if
 condition|(
 name|fread
@@ -6471,7 +6497,7 @@ argument_list|(
 operator|&
 name|comp_mode
 argument_list|,
-literal|2
+name|COMP_MODE_SIZE
 argument_list|,
 literal|1
 argument_list|,
@@ -6516,25 +6542,6 @@ argument_list|,
 name|comp_mode
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|lyr_a
-index|[
-name|lidx
-index|]
-operator|->
-name|chn_info
-index|[
-name|cidx
-index|]
-operator|.
-name|data_len
-operator|-
-literal|2
-operator|>
-literal|0
-condition|)
-block|{
 switch|switch
 condition|(
 name|comp_mode
