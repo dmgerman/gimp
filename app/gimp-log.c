@@ -112,6 +112,12 @@ literal|"shadow-tiles"
 block|,
 name|GIMP_LOG_SHADOW_TILES
 block|}
+block|,
+block|{
+literal|"scale"
+block|,
+name|GIMP_LOG_SCALE
+block|}
 block|}
 decl_stmt|;
 name|gimp_log_flags
