@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d55e8b0103
+DECL|enum|__anon29307a7b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -5771,6 +5771,11 @@ block|{
 name|PixelRegion
 name|maskPR
 decl_stmt|;
+name|guchar
+name|bg
+init|=
+name|OPAQUE_OPACITY
+decl_stmt|;
 if|if
 condition|(
 name|push_undo
@@ -5833,10 +5838,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|clear_region
+name|color_region
 argument_list|(
 operator|&
 name|maskPR
+argument_list|,
+operator|&
+name|bg
 argument_list|)
 expr_stmt|;
 comment|/*  we know the bounds  */
