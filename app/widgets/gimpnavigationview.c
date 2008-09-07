@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279768660103
+DECL|enum|__anon29d1e2cd0103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -2117,12 +2117,13 @@ argument_list|(
 name|nav_view
 argument_list|)
 expr_stmt|;
-comment|/* Marker changed, invalidate */
-name|gimp_view_renderer_invalidate
+comment|/* Marker changed, redraw */
+name|gtk_widget_queue_draw
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|view
-operator|->
-name|renderer
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
