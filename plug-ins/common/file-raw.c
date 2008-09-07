@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28926f7e0103
+DECL|enum|__anon2c82723c0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28926f7e0203
+DECL|enum|__anon2c82723c0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28926f7e0308
+DECL|struct|__anon2c82723c0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28926f7e0408
+DECL|struct|__anon2c82723c0408
 block|{
 DECL|member|fp
 name|FILE
@@ -4569,12 +4569,12 @@ modifier|*
 name|adj
 decl_stmt|;
 name|gint32
-name|size
+name|file_size
 decl_stmt|;
 name|gboolean
 name|run
 decl_stmt|;
-name|size
+name|file_size
 operator|=
 name|get_file_info
 argument_list|(
@@ -4971,7 +4971,7 @@ name|file_offset
 argument_list|,
 literal|0
 argument_list|,
-name|size
+name|file_size
 argument_list|,
 literal|1
 argument_list|,
@@ -5050,7 +5050,7 @@ name|image_width
 argument_list|,
 literal|1
 argument_list|,
-literal|4096
+name|file_size
 argument_list|,
 literal|1
 argument_list|,
@@ -5129,7 +5129,7 @@ name|image_height
 argument_list|,
 literal|1
 argument_list|,
-literal|4096
+name|file_size
 argument_list|,
 literal|1
 argument_list|,
