@@ -686,6 +686,9 @@ argument_list|,
 name|GIMP_CONTEXT_FOREGROUND_MASK
 operator||
 name|GIMP_CONTEXT_FONT_MASK
+operator||
+name|GIMP_CONTEXT_PALETTE_MASK
+comment|/* for the color popup's palette tab */
 argument_list|,
 literal|"gimp-text-tool"
 argument_list|,
