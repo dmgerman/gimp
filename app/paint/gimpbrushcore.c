@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b947ecf0103
+DECL|enum|__anon2c62c8730103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -368,6 +368,21 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gdouble
+name|gimp_brush_core_clamp_brush_scale
+parameter_list|(
+name|GimpBrushCore
+modifier|*
+name|core
+parameter_list|,
+name|gdouble
+name|scale
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3156,7 +3171,19 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* else use scale from start(), we don't support on-the-fly scaling */
+name|core
+operator|->
+name|scale
+operator|=
+name|gimp_brush_core_clamp_brush_scale
+argument_list|(
+name|core
+argument_list|,
+name|core
+operator|->
+name|scale
+argument_list|)
+expr_stmt|;
 name|gimp_brush_scale_size
 argument_list|(
 name|core
@@ -3596,6 +3623,16 @@ name|scale
 operator|>
 literal|0.0
 condition|)
+block|{
+name|scale
+operator|=
+name|gimp_brush_core_clamp_brush_scale
+argument_list|(
+name|core
+argument_list|,
+name|scale
+argument_list|)
+expr_stmt|;
 name|mask
 operator|=
 name|gimp_brush_scale_mask
@@ -3607,6 +3644,7 @@ argument_list|,
 name|scale
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|mask
@@ -5798,6 +5836,56 @@ end_function
 
 begin_function
 specifier|static
+name|gdouble
+DECL|function|gimp_brush_core_clamp_brush_scale (GimpBrushCore * core,gdouble scale)
+name|gimp_brush_core_clamp_brush_scale
+parameter_list|(
+name|GimpBrushCore
+modifier|*
+name|core
+parameter_list|,
+name|gdouble
+name|scale
+parameter_list|)
+block|{
+name|TempBuf
+modifier|*
+name|mask
+init|=
+name|core
+operator|->
+name|main_brush
+operator|->
+name|mask
+decl_stmt|;
+comment|/* ensure that the final brush mask remains>= 0.5 pixel along both axes */
+return|return
+name|MAX
+argument_list|(
+literal|0.5
+operator|/
+operator|(
+name|gfloat
+operator|)
+name|MIN
+argument_list|(
+name|mask
+operator|->
+name|width
+argument_list|,
+name|mask
+operator|->
+name|height
+argument_list|)
+argument_list|,
+name|scale
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|TempBuf
 modifier|*
 DECL|function|gimp_brush_core_scale_mask (GimpBrushCore * core,GimpBrush * brush)
@@ -5829,6 +5917,7 @@ condition|)
 return|return
 name|NULL
 return|;
+comment|/* Should never happen now, with scale clamping. */
 if|if
 condition|(
 name|core
