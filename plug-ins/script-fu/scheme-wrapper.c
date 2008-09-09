@@ -2964,9 +2964,6 @@ name|gint
 name|i
 decl_stmt|;
 name|gint
-name|j
-decl_stmt|;
-name|gint
 name|success
 init|=
 name|TRUE
@@ -2980,16 +2977,6 @@ init|=
 name|sc
 operator|->
 name|NIL
-decl_stmt|;
-name|gchar
-modifier|*
-name|string
-decl_stmt|;
-name|gint32
-name|n_elements
-decl_stmt|;
-name|pointer
-name|vector
 decl_stmt|;
 if|#
 directive|if
@@ -3133,7 +3120,9 @@ block|}
 decl_stmt|;
 name|g_printerr
 argument_list|(
-literal|"\nIn script_fu_marshal_procedure_call ()\n"
+literal|"\nIn %s()\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 endif|#
@@ -3217,11 +3206,6 @@ argument_list|,
 name|proc_name
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
-if|#
-directive|if
-name|DEBUG_MARSHALL
 name|g_printerr
 argument_list|(
 literal|"  parms rcvd: %d\n"
@@ -3517,6 +3501,15 @@ name|i
 operator|++
 control|)
 block|{
+name|gint32
+name|n_elements
+decl_stmt|;
+name|pointer
+name|vector
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
 name|a
 operator|=
 name|sc
@@ -6967,10 +6960,10 @@ if|if
 condition|(
 name|success
 condition|)
+block|{
 if|#
 directive|if
 name|DEBUG_MARSHALL
-block|{
 name|g_printerr
 argument_list|(
 literal|"    calling %s..."
@@ -7002,9 +6995,9 @@ argument_list|(
 literal|"  done.\n"
 argument_list|)
 expr_stmt|;
-block|}
 endif|#
 directive|endif
+block|}
 else|else
 block|{
 if|#
@@ -7215,6 +7208,14 @@ operator|--
 name|i
 control|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|string
+decl_stmt|;
+name|gint
+name|j
+decl_stmt|;
 if|#
 directive|if
 name|DEBUG_MARSHALL
