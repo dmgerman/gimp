@@ -187,6 +187,16 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|proxy_window
+specifier|static
+name|HWND
+name|proxy_window
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif
@@ -399,7 +409,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5ff950108
+DECL|struct|__anon2b6ed03f0108
 block|{
 DECL|member|name
 name|gchar
@@ -786,6 +796,8 @@ operator|&
 name|wc
 argument_list|)
 expr_stmt|;
+name|proxy_window
+operator|=
 name|CreateWindowExW
 argument_list|(
 literal|0
@@ -838,6 +850,11 @@ expr_stmt|;
 name|unique_gimp
 operator|=
 name|NULL
+expr_stmt|;
+name|DestroyWindow
+argument_list|(
+name|proxy_window
+argument_list|)
 expr_stmt|;
 block|}
 end_function
