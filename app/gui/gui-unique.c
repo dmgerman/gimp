@@ -148,6 +148,12 @@ directive|ifdef
 name|G_OS_WIN32
 end_ifdef
 
+begin_include
+include|#
+directive|include
+file|"file/file-open.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|void
@@ -225,16 +231,16 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-if|#
-directive|if
-name|HAVE_DBUS_GLIB
-name|gui_dbus_service_exit
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+name|gui_unique_win32_exit
 argument_list|()
 expr_stmt|;
 elif|#
 directive|elif
 name|HAVE_DBUS_GLIB
-name|gui_unique_win32_exit
+name|gui_dbus_service_exit
 argument_list|()
 expr_stmt|;
 endif|#
@@ -393,7 +399,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3b6c70108
+DECL|struct|__anon2bd5ff950108
 block|{
 DECL|member|name
 name|gchar
@@ -564,6 +570,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|LRESULT
 name|CALLBACK
 DECL|function|gui_unique_win32_message_handler (HWND hWnd,UINT uMsg,WPARAM wParam,LPARAM lParam)
