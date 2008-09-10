@@ -98,12 +98,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"re/re.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"script-fu-types.h"
 end_include
 
@@ -117,6 +111,12 @@ begin_include
 include|#
 directive|include
 file|"script-fu-interface.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"script-fu-regex.h"
 end_include
 
 begin_include
