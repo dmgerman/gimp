@@ -57,23 +57,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|script_fu_error_msg
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|command
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|msg
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gchar
 modifier|*
 name|script_fu_strescape

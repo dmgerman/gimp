@@ -108,9 +108,19 @@ expr_stmt|;
 name|ts_print_welcome
 argument_list|()
 expr_stmt|;
+name|gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|GIMP_PDB_ERROR_HANDLER_PLUGIN
+argument_list|)
+expr_stmt|;
 comment|/*  Run the interface  */
 name|ts_interpret_stdin
 argument_list|()
+expr_stmt|;
+name|gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|GIMP_PDB_ERROR_HANDLER_INTERNAL
+argument_list|)
 expr_stmt|;
 name|values
 index|[

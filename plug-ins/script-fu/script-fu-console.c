@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1740ea0108
+DECL|struct|__anon2a44f2f80108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1740ea0203
+DECL|enum|__anon2a44f2f80203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2494,6 +2494,11 @@ argument_list|,
 name|output
 argument_list|)
 expr_stmt|;
+name|gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|GIMP_PDB_ERROR_HANDLER_PLUGIN
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|ts_interpret_string
@@ -2540,6 +2545,11 @@ name|console
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_plugin_set_pdb_error_handler
+argument_list|(
+name|GIMP_PDB_ERROR_HANDLER_INTERNAL
+argument_list|)
+expr_stmt|;
 name|g_string_free
 argument_list|(
 name|output

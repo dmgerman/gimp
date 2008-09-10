@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b30fb10108
+DECL|struct|__anon29e92dae0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3985,8 +3985,13 @@ argument_list|(
 name|command
 argument_list|)
 condition|)
-name|script_fu_error_msg
+name|g_message
 argument_list|(
+name|_
+argument_list|(
+literal|"Error while executing\n%s\n\n%s"
+argument_list|)
+argument_list|,
 name|command
 argument_list|,
 name|output
