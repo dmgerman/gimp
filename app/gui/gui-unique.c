@@ -409,7 +409,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6ed03f0108
+DECL|struct|__anon2bae14890108
 block|{
 DECL|member|name
 name|gchar
