@@ -1155,7 +1155,7 @@ expr_stmt|;
 comment|/*  Switch to byte parsing wget's output...  */
 while|while
 condition|(
-literal|1
+name|TRUE
 condition|)
 block|{
 name|dot
