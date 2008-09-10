@@ -363,7 +363,7 @@ block|}
 end_function
 
 begin_define
-DECL|macro|SELECT_COLOR_CMD_CALLBACK (name,fgbg,usec,usep)
+DECL|macro|SELECT_COLOR_CMD_CALLBACK (name,fgbg,use_colormap,use_palette)
 define|#
 directive|define
 name|SELECT_COLOR_CMD_CALLBACK
@@ -372,12 +372,12 @@ name|name
 parameter_list|,
 name|fgbg
 parameter_list|,
-name|usec
+name|use_colormap
 parameter_list|,
-name|usep
+name|use_palette
 parameter_list|)
 define|\
-value|void \ context_##name##_##fgbg##ground_cmd_callback (GtkAction *action, \                                               gint       value, \                                               gpointer   data) \ { \   GimpContext *context; \   GimpRGB      color; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, usec, usep); \   gimp_context_set_##fgbg##ground (context,&color); \ }
+value|void \ context_##name##_##fgbg##ground_cmd_callback (GtkAction *action, \                                               gint       value, \                                               gpointer   data) \ { \   GimpContext *context; \   GimpRGB      color; \   return_if_no_context (context, data); \ \   gimp_context_get_##fgbg##ground (context,&color); \   context_select_color ((GimpActionSelectType) value,&color, \                         use_colormap, use_palette); \   gimp_context_set_##fgbg##ground (context,&color); \ }
 end_define
 
 begin_macro

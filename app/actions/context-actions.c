@@ -342,7 +342,7 @@ literal|"context-palette-foreground-set"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color Set"
+literal|"Foreground Palette Color Set"
 block|,
 name|NULL
 block|,
@@ -360,7 +360,7 @@ literal|"context-palette-foreground-first"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color First"
+literal|"Foreground Palette Color First"
 block|,
 name|NULL
 block|,
@@ -378,7 +378,7 @@ literal|"context-palette-foreground-last"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color Last"
+literal|"Foreground Palette Color Last"
 block|,
 name|NULL
 block|,
@@ -396,7 +396,7 @@ literal|"context-palette-foreground-previous"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color Previous"
+literal|"Foreground Palette Color Previous"
 block|,
 name|NULL
 block|,
@@ -414,7 +414,7 @@ literal|"context-palette-foreground-next"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color Next"
+literal|"Foreground Palette Color Next"
 block|,
 name|NULL
 block|,
@@ -432,7 +432,7 @@ literal|"context-palette-foreground-previous-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color Skip Back"
+literal|"Foreground Palette Color Skip Back"
 block|,
 name|NULL
 block|,
@@ -450,7 +450,7 @@ literal|"context-palette-foreground-next-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Palette color Skip Forward"
+literal|"Foreground Palette Color Skip Forward"
 block|,
 name|NULL
 block|,
@@ -479,7 +479,7 @@ literal|"context-palette-background-set"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color Set"
+literal|"Background Palette Color Set"
 block|,
 name|NULL
 block|,
@@ -497,7 +497,7 @@ literal|"context-palette-background-first"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color First"
+literal|"Background Palette Color First"
 block|,
 name|NULL
 block|,
@@ -515,7 +515,7 @@ literal|"context-palette-background-last"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color Last"
+literal|"Background Palette Color Last"
 block|,
 name|NULL
 block|,
@@ -533,7 +533,7 @@ literal|"context-palette-background-previous"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color Previous"
+literal|"Background Palette Color Previous"
 block|,
 name|NULL
 block|,
@@ -551,7 +551,7 @@ literal|"context-palette-background-next"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color Next"
+literal|"Background Palette Color Next"
 block|,
 name|NULL
 block|,
@@ -569,7 +569,7 @@ literal|"context-palette-background-previous-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color Skip Back"
+literal|"Background Palette Color Skip Back"
 block|,
 name|NULL
 block|,
@@ -587,7 +587,7 @@ literal|"context-palette-background-next-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Palette color Skip ahead"
+literal|"Background Palette Color Skip Forward"
 block|,
 name|NULL
 block|,
@@ -616,7 +616,7 @@ literal|"context-colormap-foreground-set"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color Set"
+literal|"Foreground Colormap Color Set"
 block|,
 name|NULL
 block|,
@@ -634,7 +634,7 @@ literal|"context-colormap-foreground-first"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color First"
+literal|"Foreground Colormap Color First"
 block|,
 name|NULL
 block|,
@@ -652,7 +652,7 @@ literal|"context-colormap-foreground-last"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color Last"
+literal|"Foreground Colormap Color Last"
 block|,
 name|NULL
 block|,
@@ -670,7 +670,7 @@ literal|"context-colormap-foreground-previous"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color Previous"
+literal|"Foreground Colormap Color Previous"
 block|,
 name|NULL
 block|,
@@ -688,7 +688,7 @@ literal|"context-colormap-foreground-next"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color Next"
+literal|"Foreground Colormap Color Next"
 block|,
 name|NULL
 block|,
@@ -706,7 +706,7 @@ literal|"context-colormap-foreground-previous-skip"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color Skip Back"
+literal|"Foreground Colormap Color Skip Back"
 block|,
 name|NULL
 block|,
@@ -724,7 +724,7 @@ literal|"context-colormap-foreground-next-skip"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Foreground Colormap color Skip Forward"
+literal|"Foreground Colormap Color Skip Forward"
 block|,
 name|NULL
 block|,
@@ -753,7 +753,7 @@ literal|"context-colormap-background-set"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color Set"
+literal|"Background Colormap Color Set"
 block|,
 name|NULL
 block|,
@@ -771,7 +771,7 @@ literal|"context-colormap-background-first"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color First"
+literal|"Background Colormap Color First"
 block|,
 name|NULL
 block|,
@@ -789,7 +789,7 @@ literal|"context-colormap-background-last"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color Last"
+literal|"Background Colormap Color Last"
 block|,
 name|NULL
 block|,
@@ -807,7 +807,7 @@ literal|"context-colormap-background-previous"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color Previous"
+literal|"Background Colormap Color Previous"
 block|,
 name|NULL
 block|,
@@ -825,7 +825,7 @@ literal|"context-colormap-background-next"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color Next"
+literal|"Background Colormap Color Next"
 block|,
 name|NULL
 block|,
@@ -843,7 +843,7 @@ literal|"context-colormap-background-previous-skip"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color Skip Back"
+literal|"Background Colormap Color Skip Back"
 block|,
 name|NULL
 block|,
@@ -861,7 +861,7 @@ literal|"context-colormap-background-next-skip"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-literal|"Background Colormap color Skip ahead"
+literal|"Background Colormap Color Skip Forward"
 block|,
 name|NULL
 block|,
@@ -890,7 +890,7 @@ literal|"context-swatch-foreground-set"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color Set"
+literal|"Foreground Swatch Color Set"
 block|,
 name|NULL
 block|,
@@ -908,7 +908,7 @@ literal|"context-swatch-foreground-first"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color First"
+literal|"Foreground Swatch Color First"
 block|,
 name|NULL
 block|,
@@ -926,7 +926,7 @@ literal|"context-swatch-foreground-last"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color Last"
+literal|"Foreground Swatch Color Last"
 block|,
 name|NULL
 block|,
@@ -944,7 +944,7 @@ literal|"context-swatch-foreground-previous"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color Previous"
+literal|"Foreground Swatch Color Previous"
 block|,
 literal|"9"
 block|,
@@ -962,7 +962,7 @@ literal|"context-swatch-foreground-next"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color Next"
+literal|"Foreground Swatch Color Next"
 block|,
 literal|"0"
 block|,
@@ -980,7 +980,7 @@ literal|"context-swatch-foreground-previous-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color Skip Back"
+literal|"Foreground Swatch Color Skip Back"
 block|,
 name|NULL
 block|,
@@ -998,7 +998,7 @@ literal|"context-swatch-foreground-next-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Foreground Swatch color Skip Forward"
+literal|"Foreground Swatch Color Skip Forward"
 block|,
 name|NULL
 block|,
@@ -1027,7 +1027,7 @@ literal|"context-swatch-background-set"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color Set"
+literal|"Background Swatch Color Set"
 block|,
 name|NULL
 block|,
@@ -1045,7 +1045,7 @@ literal|"context-swatch-background-first"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color First"
+literal|"Background Swatch Color First"
 block|,
 name|NULL
 block|,
@@ -1063,7 +1063,7 @@ literal|"context-swatch-background-last"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color Last"
+literal|"Background Swatch Color Last"
 block|,
 name|NULL
 block|,
@@ -1081,7 +1081,7 @@ literal|"context-swatch-background-previous"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color Previous"
+literal|"Background Swatch Color Previous"
 block|,
 name|NULL
 block|,
@@ -1099,7 +1099,7 @@ literal|"context-swatch-background-next"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color Next"
+literal|"Background Swatch Color Next"
 block|,
 name|NULL
 block|,
@@ -1117,7 +1117,7 @@ literal|"context-swatch-background-previous-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color Skip Back"
+literal|"Background Swatch Color Skip Back"
 block|,
 name|NULL
 block|,
@@ -1135,7 +1135,7 @@ literal|"context-swatch-background-next-skip"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-literal|"Background Swatch color Skip ahead"
+literal|"Background Swatch Color Skip Forward"
 block|,
 name|NULL
 block|,
@@ -4573,7 +4573,7 @@ literal|"context-brush-angle-decrease-skip"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-literal|"Rotate Right 15 degrees"
+literal|"Rotate Right 15Â°"
 block|,
 name|NULL
 block|,
@@ -4591,7 +4591,7 @@ literal|"context-brush-angle-increase-skip"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-literal|"Rotate Left 15 degrees"
+literal|"Rotate Left 15Â°"
 block|,
 name|NULL
 block|,
