@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b87c820108
+DECL|struct|__anon2a46f8090108
 block|{
 DECL|member|script
 name|SFScript
@@ -4374,6 +4374,17 @@ name|error
 argument_list|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|display_name
+init|=
+name|g_filename_display_name
+argument_list|(
+name|file_data
+operator|->
+name|filename
+argument_list|)
+decl_stmt|;
 name|g_message
 argument_list|(
 name|_
@@ -4381,9 +4392,7 @@ argument_list|(
 literal|"Error while loading\n\"%s\"\n\n%s"
 argument_list|)
 argument_list|,
-name|file_data
-operator|->
-name|filename
+name|display_name
 argument_list|,
 name|error
 operator|->
@@ -4394,6 +4403,11 @@ name|g_clear_error
 argument_list|(
 operator|&
 name|error
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|display_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -6821,7 +6835,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon27b87c820208
+DECL|struct|__anon2a46f8090208
 block|{
 DECL|member|old
 specifier|const
