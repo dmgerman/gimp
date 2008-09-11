@@ -570,6 +570,7 @@ name|GString
 modifier|*
 name|str
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|p
