@@ -65,7 +65,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d89ae10108
+DECL|struct|__anon289f81260108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -76,11 +76,13 @@ name|ExportFunc
 name|alt_action
 decl_stmt|;
 DECL|member|reason
+specifier|const
 name|gchar
 modifier|*
 name|reason
 decl_stmt|;
 DECL|member|possibilities
+specifier|const
 name|gchar
 modifier|*
 name|possibilities
