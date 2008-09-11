@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8a98510108
+DECL|struct|__anon27b87c820108
 block|{
 DECL|member|script
 name|SFScript
@@ -4264,13 +4264,15 @@ name|command
 argument_list|)
 condition|)
 block|{
-name|g_set_error_literal
+name|g_set_error
 argument_list|(
 name|error
 argument_list|,
 literal|0
 argument_list|,
 literal|0
+argument_list|,
+literal|"%s"
 argument_list|,
 name|output
 operator|->
@@ -6819,7 +6821,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2c8a98510208
+DECL|struct|__anon27b87c820208
 block|{
 DECL|member|old
 specifier|const
