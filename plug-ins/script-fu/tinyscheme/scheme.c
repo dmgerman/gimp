@@ -11490,7 +11490,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2a41a2500103
+DECL|enum|__anon2a98655d0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -28369,7 +28369,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2a41a2500208
+DECL|struct|__anon2a98655d0208
 specifier|static
 struct|struct
 block|{
@@ -28604,7 +28604,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2a41a2500308
+DECL|struct|__anon2a98655d0308
 typedef|typedef
 struct|struct
 block|{
@@ -31378,9 +31378,19 @@ name|sc
 operator|->
 name|NIL
 decl_stmt|;
-name|dump_stack_reset
+name|s_save
 argument_list|(
 name|sc
+argument_list|,
+name|OP_QUIT
+argument_list|,
+name|sc
+operator|->
+name|NIL
+argument_list|,
+name|sc
+operator|->
+name|NIL
 argument_list|)
 expr_stmt|;
 name|sc
@@ -31442,9 +31452,19 @@ name|pointer
 name|args
 parameter_list|)
 block|{
-name|dump_stack_reset
+name|s_save
 argument_list|(
 name|sc
+argument_list|,
+name|OP_QUIT
+argument_list|,
+name|sc
+operator|->
+name|NIL
+argument_list|,
+name|sc
+operator|->
+name|NIL
 argument_list|)
 expr_stmt|;
 name|sc
@@ -31661,12 +31681,37 @@ condition|)
 block|{
 name|printf
 argument_list|(
-literal|"Usage: %s [-? |<file1><file2> ... | -1<file><arg1><arg2> ...]\n\tUse - as filename for stdin.\n"
-argument_list|,
-name|argv
-index|[
-literal|0
-index|]
+literal|"Usage: tinyscheme -?\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"or:    tinyscheme [<file1><file2> ...]\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"followed by\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"          -1<file> [<arg1><arg2> ...]\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"          -c<Scheme commands> [<arg1><arg2> ...]\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"assuming that the executable is named tinyscheme.\n"
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"Use - as filename for stdin.\n"
 argument_list|)
 expr_stmt|;
 return|return
