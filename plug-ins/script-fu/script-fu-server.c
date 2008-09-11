@@ -419,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea5e7d0108
+DECL|struct|__anon2bb7b0230108
 block|{
 DECL|member|command
 name|gchar
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ea5e7d0208
+DECL|struct|__anon2bb7b0230208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -800,7 +800,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|set_run_mode_constant
+name|ts_set_run_mode
 argument_list|(
 name|run_mode
 argument_list|)

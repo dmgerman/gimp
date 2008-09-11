@@ -588,7 +588,7 @@ name|param
 operator|!=
 name|NULL
 condition|)
-name|set_run_mode_constant
+name|ts_set_run_mode
 argument_list|(
 operator|(
 name|GimpRunMode

@@ -106,7 +106,7 @@ name|data
 operator|.
 name|d_int32
 expr_stmt|;
-name|set_run_mode_constant
+name|ts_set_run_mode
 argument_list|(
 name|run_mode
 argument_list|)

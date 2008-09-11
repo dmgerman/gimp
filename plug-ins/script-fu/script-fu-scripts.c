@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a46f8090108
+DECL|struct|__anon277232350108
 block|{
 DECL|member|script
 name|SFScript
@@ -5234,7 +5234,7 @@ name|data
 operator|.
 name|d_int32
 decl_stmt|;
-name|set_run_mode_constant
+name|ts_set_run_mode
 argument_list|(
 name|run_mode
 argument_list|)
@@ -6835,7 +6835,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2a46f8090208
+DECL|struct|__anon277232350208
 block|{
 DECL|member|old
 specifier|const
