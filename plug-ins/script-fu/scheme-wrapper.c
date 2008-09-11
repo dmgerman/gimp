@@ -390,15 +390,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/* The following constants are deprecated. They are */
-end_comment
-
-begin_comment
-comment|/* included to keep backwards compatability with    */
-end_comment
-
-begin_comment
-comment|/* older scripts used with version 2.0 of GIMP.     */
+comment|/* The following constants are deprecated. They are  * included to keep backwards compatability with  * older scripts used with version 2.0 of GIMP.  */
 end_comment
 
 begin_decl_stmt
@@ -1133,7 +1125,7 @@ operator|&
 name|sc
 argument_list|)
 expr_stmt|;
-name|init_re
+name|script_fu_regex_init
 argument_list|(
 operator|&
 name|sc
