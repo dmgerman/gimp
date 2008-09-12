@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d243160103
+DECL|enum|__anon2c89c1c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -298,6 +298,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|gimp_curve_get_extension
@@ -1762,6 +1763,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_curve_get_extension (GimpData * data)

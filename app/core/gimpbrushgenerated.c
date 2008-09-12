@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e7bf600103
+DECL|enum|__anon27e557db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -158,6 +158,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|gimp_brush_generated_get_extension
@@ -985,6 +986,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_brush_generated_get_extension (GimpData * data)

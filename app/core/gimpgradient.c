@@ -188,6 +188,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|gimp_gradient_get_extension
@@ -1178,6 +1179,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_gradient_get_extension (GimpData * data)

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dc2d3b0103
+DECL|enum|__anon29baabe50103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dc2d3b0203
+DECL|enum|__anon29baabe50203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -233,6 +233,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|gimp_brush_get_extension
@@ -1382,6 +1383,7 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 DECL|function|gimp_brush_get_extension (GimpData * data)
