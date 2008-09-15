@@ -6781,12 +6781,6 @@ argument_list|)
 argument_list|,
 name|error
 argument_list|)
-operator|&&
-operator|!
-name|gimp_layer_get_mask
-argument_list|(
-name|layer
-argument_list|)
 condition|)
 name|success
 operator|=
@@ -6798,6 +6792,8 @@ argument_list|,
 name|mask
 argument_list|,
 name|TRUE
+argument_list|,
+name|error
 argument_list|)
 operator|==
 name|mask

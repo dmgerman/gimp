@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2af7650103
+DECL|enum|__anon28b7239b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2af7650203
+DECL|enum|__anon28b7239b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2410,6 +2410,8 @@ name|mask
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -4951,7 +4953,7 @@ end_function
 begin_function
 name|GimpLayerMask
 modifier|*
-DECL|function|gimp_layer_add_mask (GimpLayer * layer,GimpLayerMask * mask,gboolean push_undo)
+DECL|function|gimp_layer_add_mask (GimpLayer * layer,GimpLayerMask * mask,gboolean push_undo,GError ** error)
 name|gimp_layer_add_mask
 parameter_list|(
 name|GimpLayer
@@ -4964,6 +4966,11 @@ name|mask
 parameter_list|,
 name|gboolean
 name|push_undo
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|GimpImage
@@ -4986,6 +4993,20 @@ name|GIMP_IS_LAYER_MASK
 argument_list|(
 name|mask
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -5017,32 +5038,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-name|image
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Cannot add layer mask to layer "
-literal|"which is not part of an image."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|NULL
-return|;
-block|}
-if|if
-condition|(
 name|layer
 operator|->
 name|mask
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Unable to add a layer mask since "
@@ -5093,8 +5101,14 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot add layer mask of different "

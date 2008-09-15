@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275aa9800103
+DECL|enum|__anon28a591a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -704,6 +704,8 @@ operator|->
 name|layer_mask
 argument_list|,
 name|FALSE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|GIMP_ITEM
