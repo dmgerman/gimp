@@ -4330,6 +4330,8 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -4440,6 +4442,8 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -5208,6 +5212,8 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -5318,6 +5324,8 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -5866,6 +5874,8 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -5976,6 +5986,8 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -13945,7 +13957,7 @@ literal|"gimp-image-raise-layer"
 argument_list|,
 literal|"Raise the specified layer in the image's layer stack"
 argument_list|,
-literal|"This procedure raises the specified layer one step in the existing layer stack. It will not move the layer if there is no layer above it."
+literal|"This procedure raises the specified layer one step in the existing layer stack. The procecure call will fail if there is no layer above it."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14038,7 +14050,7 @@ literal|"gimp-image-lower-layer"
 argument_list|,
 literal|"Lower the specified layer in the image's layer stack"
 argument_list|,
-literal|"This procedure lowers the specified layer one step in the existing layer stack. It will not move the layer if there is no layer below it."
+literal|"This procedure lowers the specified layer one step in the existing layer stack. The procecure call will fail if there is no layer below it."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14640,7 +14652,7 @@ literal|"gimp-image-raise-channel"
 argument_list|,
 literal|"Raise the specified channel in the image's channel stack"
 argument_list|,
-literal|"This procedure raises the specified channel one step in the existing channel stack. It will not move the channel if there is no channel above it."
+literal|"This procedure raises the specified channel one step in the existing channel stack. The procecure call will fail if there is no channel above it."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -14733,7 +14745,7 @@ literal|"gimp-image-lower-channel"
 argument_list|,
 literal|"Lower the specified channel in the image's channel stack"
 argument_list|,
-literal|"This procedure lowers the specified channel one step in the existing channel stack. It will not move the channel if there is no channel below it."
+literal|"This procedure lowers the specified channel one step in the existing channel stack. The procecure call will fail if there is no channel below it."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -15149,7 +15161,7 @@ literal|"gimp-image-raise-vectors"
 argument_list|,
 literal|"Raise the specified vectors in the image's vectors stack"
 argument_list|,
-literal|"This procedure raises the specified vectors one step in the existing vectors stack. It will not move the vectors if there is no vectors above it."
+literal|"This procedure raises the specified vectors one step in the existing vectors stack. The procecure call will fail if there is no vectors above it."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -15242,7 +15254,7 @@ literal|"gimp-image-lower-vectors"
 argument_list|,
 literal|"Lower the specified vectors in the image's vectors stack"
 argument_list|,
-literal|"This procedure lowers the specified vectors one step in the existing vectors stack. It will not move the vectors if there is no vectors below it."
+literal|"This procedure lowers the specified vectors one step in the existing vectors stack. The procecure call will fail if there is no vectors below it."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,

@@ -2403,7 +2403,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_layer:  * @image_ID: The image.  * @layer_ID: The layer to raise.  *  * Raise the specified layer in the image's layer stack  *  * This procedure raises the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer above  * it.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_layer:  * @image_ID: The image.  * @layer_ID: The layer to raise.  *  * Raise the specified layer in the image's layer stack  *  * This procedure raises the specified layer one step in the existing  * layer stack. The procecure call will fail if there is no layer above  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2477,7 +2477,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_layer:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_layer:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Lower the specified layer in the image's layer stack  *  * This procedure lowers the specified layer one step in the existing  * layer stack. The procecure call will fail if there is no layer below  * it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2939,7 +2939,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_channel:  * @image_ID: The image.  * @channel_ID: The channel to raise.  *  * Raise the specified channel in the image's channel stack  *  * This procedure raises the specified channel one step in the existing  * channel stack. It will not move the channel if there is no channel  * above it.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_channel:  * @image_ID: The image.  * @channel_ID: The channel to raise.  *  * Raise the specified channel in the image's channel stack  *  * This procedure raises the specified channel one step in the existing  * channel stack. The procecure call will fail if there is no channel  * above it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3013,7 +3013,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @channel_ID: The channel to lower.  *  * Lower the specified channel in the image's channel stack  *  * This procedure lowers the specified channel one step in the existing  * channel stack. It will not move the channel if there is no channel  * below it.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @channel_ID: The channel to lower.  *  * Lower the specified channel in the image's channel stack  *  * This procedure lowers the specified channel one step in the existing  * channel stack. The procecure call will fail if there is no channel  * below it.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -3327,7 +3327,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise.  *  * Raise the specified vectors in the image's vectors stack  *  * This procedure raises the specified vectors one step in the existing  * vectors stack. It will not move the vectors if there is no vectors  * above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_raise_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise.  *  * Raise the specified vectors in the image's vectors stack  *  * This procedure raises the specified vectors one step in the existing  * vectors stack. The procecure call will fail if there is no vectors  * above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3401,7 +3401,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower.  *  * Lower the specified vectors in the image's vectors stack  *  * This procedure lowers the specified vectors one step in the existing  * vectors stack. It will not move the vectors if there is no vectors  * below it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_lower_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower.  *  * Lower the specified vectors in the image's vectors stack  *  * This procedure lowers the specified vectors one step in the existing  * vectors stack. The procecure call will fail if there is no vectors  * below it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

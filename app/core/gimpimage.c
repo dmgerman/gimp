@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad16e730103
+DECL|enum|__anon2a59541a0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad16e730203
+DECL|enum|__anon2a59541a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12417,7 +12417,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_raise_layer (GimpImage * image,GimpLayer * layer)
+DECL|function|gimp_image_raise_layer (GimpImage * image,GimpLayer * layer,GError ** error)
 name|gimp_image_raise_layer
 parameter_list|(
 name|GimpImage
@@ -12427,6 +12427,11 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -12452,6 +12457,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|index
 operator|=
 name|gimp_container_get_child_index
@@ -12473,8 +12492,16 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Layer cannot be raised higher."
@@ -12509,7 +12536,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_lower_layer (GimpImage * image,GimpLayer * layer)
+DECL|function|gimp_image_lower_layer (GimpImage * image,GimpLayer * layer,GError ** error)
 name|gimp_image_lower_layer
 parameter_list|(
 name|GimpImage
@@ -12519,6 +12546,11 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -12540,6 +12572,20 @@ name|GIMP_IS_LAYER
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -12572,8 +12618,16 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Layer cannot be lowered more."
@@ -13387,7 +13441,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_raise_channel (GimpImage * image,GimpChannel * channel)
+DECL|function|gimp_image_raise_channel (GimpImage * image,GimpChannel * channel,GError ** error)
 name|gimp_image_raise_channel
 parameter_list|(
 name|GimpImage
@@ -13397,6 +13451,11 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -13422,6 +13481,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|index
 operator|=
 name|gimp_container_get_child_index
@@ -13443,8 +13516,16 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Channel cannot be raised higher."
@@ -13491,9 +13572,6 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
-name|gint
-name|index
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -13514,39 +13592,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|index
-operator|=
-name|gimp_container_get_child_index
-argument_list|(
-name|image
-operator|->
-name|channels
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|index
-operator|==
-literal|0
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Channel is already on top."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 return|return
 name|gimp_image_position_channel
 argument_list|(
@@ -13569,7 +13614,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_lower_channel (GimpImage * image,GimpChannel * channel)
+DECL|function|gimp_image_lower_channel (GimpImage * image,GimpChannel * channel,GError ** error)
 name|gimp_image_lower_channel
 parameter_list|(
 name|GimpImage
@@ -13579,6 +13624,11 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -13600,6 +13650,20 @@ name|GIMP_IS_CHANNEL
 argument_list|(
 name|channel
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -13632,8 +13696,16 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Channel cannot be lowered more."
@@ -13681,9 +13753,6 @@ name|channel
 parameter_list|)
 block|{
 name|gint
-name|index
-decl_stmt|;
-name|gint
 name|length
 decl_stmt|;
 name|g_return_val_if_fail
@@ -13706,20 +13775,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|index
-operator|=
-name|gimp_container_get_child_index
-argument_list|(
-name|image
-operator|->
-name|channels
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|channel
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|length
 operator|=
 name|gimp_container_num_children
@@ -13729,27 +13784,6 @@ operator|->
 name|channels
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|index
-operator|==
-name|length
-operator|-
-literal|1
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Channel is already on the bottom."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 return|return
 name|gimp_image_position_channel
 argument_list|(
@@ -14380,7 +14414,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_raise_vectors (GimpImage * image,GimpVectors * vectors)
+DECL|function|gimp_image_raise_vectors (GimpImage * image,GimpVectors * vectors,GError ** error)
 name|gimp_image_raise_vectors
 parameter_list|(
 name|GimpImage
@@ -14390,6 +14424,11 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -14415,6 +14454,20 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|index
 operator|=
 name|gimp_container_get_child_index
@@ -14436,8 +14489,16 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Path cannot be raised higher."
@@ -14484,9 +14545,6 @@ modifier|*
 name|vectors
 parameter_list|)
 block|{
-name|gint
-name|index
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -14507,39 +14565,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|index
-operator|=
-name|gimp_container_get_child_index
-argument_list|(
-name|image
-operator|->
-name|vectors
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|index
-operator|==
-literal|0
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Path is already on top."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 return|return
 name|gimp_image_position_vectors
 argument_list|(
@@ -14562,7 +14587,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_lower_vectors (GimpImage * image,GimpVectors * vectors)
+DECL|function|gimp_image_lower_vectors (GimpImage * image,GimpVectors * vectors,GError ** error)
 name|gimp_image_lower_vectors
 parameter_list|(
 name|GimpImage
@@ -14572,6 +14597,11 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
 parameter_list|)
 block|{
 name|gint
@@ -14593,6 +14623,20 @@ name|GIMP_IS_VECTORS
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|error
+operator|==
+name|NULL
+operator|||
+operator|*
+name|error
+operator|==
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -14625,8 +14669,16 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Path cannot be lowered more."
@@ -14674,9 +14726,6 @@ name|vectors
 parameter_list|)
 block|{
 name|gint
-name|index
-decl_stmt|;
-name|gint
 name|length
 decl_stmt|;
 name|g_return_val_if_fail
@@ -14699,20 +14748,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|index
-operator|=
-name|gimp_container_get_child_index
-argument_list|(
-name|image
-operator|->
-name|vectors
-argument_list|,
-name|GIMP_OBJECT
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|length
 operator|=
 name|gimp_container_num_children
@@ -14722,27 +14757,6 @@ operator|->
 name|vectors
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|index
-operator|==
-name|length
-operator|-
-literal|1
-condition|)
-block|{
-name|g_message
-argument_list|(
-name|_
-argument_list|(
-literal|"Path is already on the bottom."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 return|return
 name|gimp_image_position_vectors
 argument_list|(

@@ -676,6 +676,8 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -766,6 +768,8 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
