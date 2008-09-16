@@ -472,7 +472,8 @@ argument_list|(
 literal|"Context"
 argument_list|)
 block|,
-name|NULL
+name|GIMP_STOCK_TOOL_OPTIONS
+comment|/* well... */
 block|,
 name|context_actions_setup
 block|,

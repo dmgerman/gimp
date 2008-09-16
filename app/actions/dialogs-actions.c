@@ -376,7 +376,7 @@ block|,
 block|{
 literal|"dialogs-brush-editor"
 block|,
-name|NULL
+name|GIMP_STOCK_BRUSH
 block|,
 name|N_
 argument_list|(
@@ -442,7 +442,7 @@ block|,
 block|{
 literal|"dialogs-gradient-editor"
 block|,
-name|NULL
+name|GIMP_STOCK_GRADIENT
 block|,
 name|N_
 argument_list|(
@@ -486,7 +486,7 @@ block|,
 block|{
 literal|"dialogs-palette-editor"
 block|,
-name|NULL
+name|GIMP_STOCK_PALETTE
 block|,
 name|N_
 argument_list|(
