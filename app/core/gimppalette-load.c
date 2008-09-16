@@ -727,7 +727,6 @@ name|tok
 argument_list|)
 expr_stmt|;
 else|else
-comment|/* maybe we should just abort? */
 name|g_message
 argument_list|(
 name|_
@@ -769,7 +768,7 @@ name|g_message
 argument_list|(
 name|_
 argument_list|(
-literal|"Reading palette '%s': "
+literal|"Reading palette file '%s': "
 literal|"Missing GREEN component in line %d."
 argument_list|)
 argument_list|,
