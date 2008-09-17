@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2952ef110108
+DECL|struct|__anon28f89c920108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2952ef110203
+DECL|enum|__anon28f89c920203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2952ef110303
+DECL|enum|__anon28f89c920303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2952ef110408
+DECL|struct|__anon28f89c920408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -406,7 +406,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|pluginCore
 parameter_list|(
 name|piArgs
@@ -418,8 +418,8 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
-name|pluginCoreIA
+name|gboolean
+name|plugin_dialog
 parameter_list|(
 name|piArgs
 modifier|*
@@ -483,7 +483,7 @@ name|x
 parameter_list|,
 name|m
 parameter_list|)
-value|pow(x, mode[m].gamma)
+value|pow(x,       mode[m].gamma)
 end_define
 
 begin_comment
@@ -715,9 +715,6 @@ argument_list|(
 operator|&
 name|args
 argument_list|,
-operator|(
-name|int
-operator|)
 literal|0
 argument_list|,
 sizeof|sizeof
@@ -834,14 +831,21 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|pluginCoreIA
+name|plugin_dialog
 argument_list|(
 operator|&
 name|args
 argument_list|)
-operator|==
-operator|-
-literal|1
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|pluginCore
+argument_list|(
+operator|&
+name|args
+argument_list|)
 condition|)
 block|{
 name|rvals
@@ -854,6 +858,21 @@ operator|.
 name|d_status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|rvals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|=
+name|GIMP_PDB_CANCEL
 expr_stmt|;
 block|}
 name|gimp_set_data
@@ -935,14 +954,12 @@ name|d_int32
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|pluginCore
 argument_list|(
 operator|&
 name|args
 argument_list|)
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 name|rvals
@@ -965,14 +982,12 @@ case|:
 comment|/* XXX: add code here for last-values running */
 if|if
 condition|(
+operator|!
 name|pluginCore
 argument_list|(
 operator|&
 name|args
 argument_list|)
-operator|==
-operator|-
-literal|1
 condition|)
 block|{
 name|rvals
@@ -994,7 +1009,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|pluginCore (piArgs * argp)
 name|pluginCore
 parameter_list|(
@@ -1017,10 +1032,10 @@ name|srcPr
 decl_stmt|,
 name|dstPr
 decl_stmt|;
-name|gint
-name|retval
+name|gboolean
+name|success
 init|=
-literal|0
+name|TRUE
 decl_stmt|;
 name|gint
 name|nl
@@ -1029,8 +1044,6 @@ literal|0
 decl_stmt|;
 name|gint
 name|y
-decl_stmt|,
-name|x
 decl_stmt|,
 name|i
 decl_stmt|;
@@ -1165,6 +1178,7 @@ index|[
 literal|40
 index|]
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|mode_names
@@ -1176,6 +1190,7 @@ block|,
 literal|"pal"
 block|,       }
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|action_names
@@ -1452,6 +1467,9 @@ name|y
 operator|++
 control|)
 block|{
+name|gint
+name|x
+decl_stmt|;
 if|if
 condition|(
 name|y
@@ -2304,16 +2322,16 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 return|return
-name|retval
+name|success
 return|;
 block|}
 end_function
 
 begin_function
 specifier|static
-name|gint
-DECL|function|pluginCoreIA (piArgs * argp)
-name|pluginCoreIA
+name|gboolean
+DECL|function|plugin_dialog (piArgs * argp)
+name|plugin_dialog
 parameter_list|(
 name|piArgs
 modifier|*
@@ -2699,20 +2717,8 @@ argument_list|(
 name|dlg
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+return|return
 name|run
-condition|)
-return|return
-name|pluginCore
-argument_list|(
-name|argp
-argument_list|)
-return|;
-else|else
-return|return
-operator|-
-literal|1
 return|;
 block|}
 end_function

@@ -353,7 +353,7 @@ comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
 end_comment
 
 begin_endif
-unit|static void      comment_entry_callback  (GtkWidget    *widget,                                           gpointer      data);
+unit|static void      comment_entry_callback  (GtkWidget        *widget,                                           gpointer          data);
 endif|#
 directive|endif
 end_endif
@@ -2364,13 +2364,14 @@ end_comment
 begin_function
 specifier|static
 name|gint
-DECL|function|match (FILE * fp,gchar * s)
+DECL|function|match (FILE * fp,const gchar * s)
 name|match
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|s
@@ -2622,7 +2623,7 @@ end_function
 
 begin_function
 specifier|static
-name|gint
+name|gint32
 DECL|function|load_image (const gchar * filename,GError ** error)
 name|load_image
 parameter_list|(
@@ -3724,6 +3725,7 @@ decl_stmt|,
 modifier|*
 name|cmap
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|intfmt

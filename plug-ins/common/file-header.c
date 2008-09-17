@@ -101,7 +101,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|save_image
 parameter_list|(
 specifier|const
@@ -301,17 +301,6 @@ name|status
 init|=
 name|GIMP_PDB_SUCCESS
 decl_stmt|;
-name|gint32
-name|image_ID
-decl_stmt|;
-name|gint32
-name|drawable_ID
-decl_stmt|;
-name|GimpExportReturn
-name|export
-init|=
-name|GIMP_EXPORT_CANCEL
-decl_stmt|;
 name|run_mode
 operator|=
 name|param
@@ -368,6 +357,17 @@ operator|==
 literal|0
 condition|)
 block|{
+name|gint32
+name|image_ID
+decl_stmt|;
+name|gint32
+name|drawable_ID
+decl_stmt|;
+name|GimpExportReturn
+name|export
+init|=
+name|GIMP_EXPORT_CANCEL
+decl_stmt|;
 name|image_ID
 operator|=
 name|param
@@ -512,7 +512,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID)
 name|save_image
 parameter_list|(
@@ -551,18 +551,21 @@ name|b
 decl_stmt|,
 name|c
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|backslash
 init|=
 literal|"\\\\"
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|quote
 init|=
 literal|"\\\""
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|newline
@@ -706,7 +709,11 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"#define HEADER_PIXEL(data,pixel) {\\\n  pixel[0] = (((data[0] - 33)<< 2) | ((data[1] - 33)>> 4)); \\\n  pixel[1] = ((((data[1] - 33)& 0xF)<< 4) | ((data[2] - 33)>> 2)); \\\n  pixel[2] = ((((data[2] - 33)& 0x3)<< 6) | ((data[3] - 33))); \\\n  data += 4; \\\n}\n"
+literal|"#define HEADER_PIXEL(data,pixel) {\\\n"
+literal|"pixel[0] = (((data[0] - 33)<< 2) | ((data[1] - 33)>> 4)); \\\n"
+literal|"pixel[1] = ((((data[1] - 33)& 0xF)<< 4) | ((data[2] - 33)>> 2)); \\\n"
+literal|"pixel[2] = ((((data[2] - 33)& 0x3)<< 6) | ((data[3] - 33))); \\\n"
+literal|"data += 4; \\\n}\n"
 argument_list|)
 expr_stmt|;
 name|fprintf
@@ -912,6 +919,7 @@ condition|;
 name|b
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|buf
@@ -967,6 +975,7 @@ argument_list|,
 name|fp
 argument_list|)
 expr_stmt|;
+block|}
 name|c
 operator|++
 expr_stmt|;
@@ -1010,7 +1019,11 @@ name|fprintf
 argument_list|(
 name|fp
 argument_list|,
-literal|"#define HEADER_PIXEL(data,pixel) {\\\n  pixel[0] = header_data_cmap[(unsigned char)data[0]][0]; \\\n  pixel[1] = header_data_cmap[(unsigned char)data[0]][1]; \\\n  pixel[2] = header_data_cmap[(unsigned char)data[0]][2]; \\\n  data ++; }\n\n"
+literal|"#define HEADER_PIXEL(data,pixel) {\\\n"
+literal|"pixel[0] = header_data_cmap[(unsigned char)data[0]][0]; \\\n"
+literal|"pixel[1] = header_data_cmap[(unsigned char)data[0]][1]; \\\n"
+literal|"pixel[2] = header_data_cmap[(unsigned char)data[0]][2]; \\\n"
+literal|"data ++; }\n\n"
 argument_list|)
 expr_stmt|;
 comment|/* save colormap */
@@ -1339,7 +1352,6 @@ return|return
 name|FALSE
 return|;
 block|}
-comment|/* switch (drawable_type) */
 name|fclose
 argument_list|(
 name|fp
