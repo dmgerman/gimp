@@ -2347,11 +2347,6 @@ name|layer
 parameter_list|,
 name|gint
 name|position
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2516,11 +2511,6 @@ name|channel
 parameter_list|,
 name|gint
 name|position
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2650,11 +2640,6 @@ name|vectors
 parameter_list|,
 name|gint
 name|position
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 function_decl|;
 end_function_decl

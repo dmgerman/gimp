@@ -228,6 +228,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpImage
+modifier|*
+name|dest_image
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

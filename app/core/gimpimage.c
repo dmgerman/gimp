@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1a2580103
+DECL|enum|__anon279eeadf0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1a2580203
+DECL|enum|__anon279eeadf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11421,7 +11421,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_layer (GimpImage * image,GimpLayer * layer,gint position,GError ** error)
+DECL|function|gimp_image_add_layer (GimpImage * image,GimpLayer * layer,gint position)
 name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
@@ -11434,11 +11434,6 @@ name|layer
 parameter_list|,
 name|gint
 name|position
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 block|{
 name|GimpLayer
@@ -11484,20 +11479,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|error
-operator|==
-name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -11505,28 +11486,12 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|)
-operator|!=
+operator|==
 name|image
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-name|error
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"Attempting to add layer to wrong image."
-argument_list|)
+name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 name|floating_sel
 operator|=
 name|gimp_image_floating_sel
@@ -11534,35 +11499,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|floating_sel
-operator|&&
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|layer
-argument_list|)
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-name|error
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"Trying to add floating layer to image which alyready "
-literal|"has a floating selection."
-argument_list|)
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 name|active_layer
 operator|=
 name|gimp_image_get_active_layer
@@ -12397,8 +12333,6 @@ name|new_item
 argument_list|)
 argument_list|,
 name|position
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|position
@@ -12989,7 +12923,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,gint position,GError ** error)
+DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,gint position)
 name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
@@ -13002,11 +12936,6 @@ name|channel
 parameter_list|,
 name|gint
 name|position
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 block|{
 name|GimpChannel
@@ -13045,20 +12974,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|error
-operator|==
-name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -13066,28 +12981,12 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|)
-operator|!=
+operator|==
 name|image
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-name|error
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"Attempting to add channel to wrong image."
-argument_list|)
+name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 name|active_channel
 operator|=
 name|gimp_image_get_active_channel
@@ -14015,7 +13914,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_vectors (GimpImage * image,GimpVectors * vectors,gint position,GError ** error)
+DECL|function|gimp_image_add_vectors (GimpImage * image,GimpVectors * vectors,gint position)
 name|gimp_image_add_vectors
 parameter_list|(
 name|GimpImage
@@ -14028,11 +13927,6 @@ name|vectors
 parameter_list|,
 name|gint
 name|position
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
 parameter_list|)
 block|{
 name|GimpVectors
@@ -14071,20 +13965,6 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|error
-operator|==
-name|NULL
-operator|||
-operator|*
-name|error
-operator|==
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -14092,28 +13972,12 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|)
-operator|!=
+operator|==
 name|image
-condition|)
-block|{
-name|g_set_error
-argument_list|(
-name|error
 argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-name|_
-argument_list|(
-literal|"Attempting to add vectors to wrong image."
-argument_list|)
+name|FALSE
 argument_list|)
 expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
 name|active_vectors
 operator|=
 name|gimp_image_get_active_vectors

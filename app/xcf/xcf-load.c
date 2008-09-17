@@ -879,8 +879,6 @@ name|image
 operator|->
 name|layers
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
@@ -1001,8 +999,6 @@ name|image
 operator|->
 name|channels
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* restore the saved position so we'll be ready to        *  read the next offset.        */
@@ -6839,8 +6835,6 @@ name|image
 operator|->
 name|vectors
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return
@@ -7765,8 +7759,6 @@ name|image
 operator|->
 name|vectors
 argument_list|)
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 return|return

@@ -1300,8 +1300,6 @@ argument_list|,
 name|vectors
 argument_list|,
 literal|0
-argument_list|,
-name|error
 argument_list|)
 expr_stmt|;
 else|else

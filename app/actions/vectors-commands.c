@@ -731,8 +731,6 @@ name|new_vectors
 argument_list|,
 operator|-
 literal|1
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -987,8 +985,6 @@ name|new_vectors
 argument_list|,
 operator|-
 literal|1
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2434,8 +2430,6 @@ name|new_vectors
 argument_list|,
 operator|-
 literal|1
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

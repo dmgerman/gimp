@@ -2459,6 +2459,14 @@ argument_list|(
 name|mask
 argument_list|)
 argument_list|,
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|,
 name|error
 argument_list|)
 condition|)

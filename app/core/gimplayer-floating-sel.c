@@ -280,8 +280,6 @@ argument_list|,
 name|layer
 argument_list|,
 literal|0
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  store the affected area from the drawable in the backing store  */

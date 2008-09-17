@@ -3892,6 +3892,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|image
+argument_list|,
 name|error
 argument_list|)
 operator|&&
@@ -3929,8 +3931,6 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
-argument_list|,
-name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -4794,6 +4794,8 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
+name|image
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -4813,8 +4815,6 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
-argument_list|,
-name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -5458,6 +5458,8 @@ argument_list|(
 name|vectors
 argument_list|)
 argument_list|,
+name|image
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -5477,8 +5479,6 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
-argument_list|,
-name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -6796,6 +6796,8 @@ name|GIMP_ITEM
 argument_list|(
 name|mask
 argument_list|)
+argument_list|,
+name|image
 argument_list|,
 name|error
 argument_list|)

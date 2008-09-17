@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0e2d510108
+DECL|struct|__anon2c0691ba0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0e2d510208
+DECL|struct|__anon2c0691ba0208
 block|{
 DECL|member|id
 name|gchar
@@ -1263,8 +1263,6 @@ argument_list|,
 name|vectors
 argument_list|,
 name|position
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_vectors_freeze
@@ -6034,7 +6032,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0e2d510308
+DECL|struct|__anon2c0691ba0308
 block|{
 DECL|member|strokes
 name|GList

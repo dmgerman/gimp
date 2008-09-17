@@ -527,8 +527,6 @@ name|new_layer
 argument_list|,
 name|count
 operator|++
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -648,8 +646,6 @@ name|new_channel
 argument_list|,
 name|count
 operator|++
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -751,8 +747,6 @@ name|new_vectors
 argument_list|,
 name|count
 operator|++
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
