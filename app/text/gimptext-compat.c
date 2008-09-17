@@ -414,13 +414,14 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/*  If the drawable is NULL, create a new layer  */
 if|if
 condition|(
 name|drawable
 operator|==
 name|NULL
 condition|)
+block|{
+comment|/*  If the drawable is NULL, create a new layer  */
 name|gimp_image_add_layer
 argument_list|(
 name|image
@@ -429,10 +430,14 @@ name|layer
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  Otherwise, instantiate the text as the new floating selection */
+block|}
 else|else
+block|{
+comment|/*  Otherwise, instantiate the text as the new floating selection */
 name|floating_sel_attach
 argument_list|(
 name|layer
@@ -440,6 +445,7 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(

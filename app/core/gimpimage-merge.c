@@ -1116,6 +1116,8 @@ argument_list|,
 name|target_vectors
 argument_list|,
 name|pos
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
@@ -2531,6 +2533,8 @@ argument_list|,
 name|merge_layer
 argument_list|,
 name|position
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2553,6 +2557,8 @@ operator|-
 name|position
 operator|+
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -891,6 +891,8 @@ argument_list|,
 name|new_item
 argument_list|,
 name|index
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -1096,6 +1098,8 @@ name|new_item
 argument_list|)
 argument_list|,
 name|index
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -1359,6 +1363,8 @@ name|new_channel
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

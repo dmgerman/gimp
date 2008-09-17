@@ -3929,6 +3929,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -4811,6 +4813,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}
@@ -5473,6 +5477,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 block|}

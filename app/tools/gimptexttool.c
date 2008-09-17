@@ -3271,6 +3271,8 @@ name|vectors
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -3390,6 +3392,8 @@ name|vectors
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_vectors
@@ -3637,6 +3641,8 @@ name|layer
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

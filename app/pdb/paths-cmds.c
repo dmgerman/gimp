@@ -1291,6 +1291,8 @@ if|if
 condition|(
 name|vectors
 condition|)
+name|success
+operator|=
 name|gimp_image_add_vectors
 argument_list|(
 name|image
@@ -1298,6 +1300,8 @@ argument_list|,
 name|vectors
 argument_list|,
 literal|0
+argument_list|,
+name|error
 argument_list|)
 expr_stmt|;
 else|else
