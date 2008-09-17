@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e92dae0108
+DECL|struct|__anon29ab1a820108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -403,7 +403,7 @@ end_decl_stmt
 
 begin_comment
 DECL|variable|sf_interface
-comment|/*  there can only be at most                                                  *  oneinteractive interface                                                  */
+comment|/*  there can only be at most                                                  *  one interactive interface                                                  */
 end_comment
 
 begin_decl_stmt
