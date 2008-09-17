@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29757e630103
+DECL|enum|__anon27724bfd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -587,6 +587,7 @@ name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 operator|(
+operator|-
 name|brightness
 operator|*
 name|slant
@@ -643,6 +644,7 @@ name|GIMP_HISTOGRAM_VALUE
 index|]
 operator|=
 operator|(
+operator|-
 name|brightness
 operator|*
 name|slant
