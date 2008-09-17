@@ -97,7 +97,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_colormap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
+comment|/**  * gimp_image_get_colormap:  * @image_ID:   The image.  * @num_colors: Returns the number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
 end_comment
 
 begin_function
@@ -131,6 +131,10 @@ operator|&
 name|num_bytes
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|num_colors
+condition|)
 operator|*
 name|num_colors
 operator|=
