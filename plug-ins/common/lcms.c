@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbf3a40103
+DECL|enum|__anon2c83b2ab0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dbf3a40203
+DECL|enum|__anon2c83b2ab0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbf3a40308
+DECL|struct|__anon2c83b2ab0308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dbf3a40408
+DECL|struct|__anon2c83b2ab0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -1903,8 +1903,8 @@ label|:
 if|if
 condition|(
 name|run_mode
-operator|==
-name|GIMP_RUN_INTERACTIVE
+operator|!=
+name|GIMP_RUN_NONINTERACTIVE
 condition|)
 name|gimp_displays_flush
 argument_list|()
