@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7fd1f40108
+DECL|struct|__anon2a23027e0108
 block|{
 DECL|member|replace
 name|gint
@@ -2992,6 +2992,7 @@ literal|0
 decl_stmt|;
 comment|/* The CTYPE3-card may not be FITS-conforming */
 specifier|static
+specifier|const
 name|char
 modifier|*
 name|ctype3_card

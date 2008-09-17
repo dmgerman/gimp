@@ -594,13 +594,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|default_dialog_set_label (DefaultDialog_t * dialog,gchar * text)
+DECL|function|default_dialog_set_label (DefaultDialog_t * dialog,const gchar * text)
 name|default_dialog_set_label
 parameter_list|(
 name|DefaultDialog_t
 modifier|*
 name|dialog
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text

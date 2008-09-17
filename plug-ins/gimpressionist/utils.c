@@ -903,9 +903,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|readdirintolist_real (char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(gchar * dir,gchar * filename,void * context),void * context)
+DECL|function|readdirintolist_real (const char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(const gchar * dir,gchar * filename,void * context),void * context)
 name|readdirintolist_real
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|subdir
@@ -928,6 +929,7 @@ modifier|*
 name|get_object_name_cb
 function_decl|)
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dir
@@ -1317,9 +1319,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|readdirintolist_extended (char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(gchar * dir,gchar * filename,void * context),void * context)
+DECL|function|readdirintolist_extended (const char * subdir,GtkWidget * view,char * selected,gboolean with_filename_column,gchar * (* get_object_name_cb)(const gchar * dir,gchar * filename,void * context),void * context)
 name|readdirintolist_extended
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|subdir
@@ -1342,6 +1345,7 @@ modifier|*
 name|get_object_name_cb
 function_decl|)
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dir
@@ -1425,9 +1429,10 @@ end_function
 
 begin_function
 name|void
-DECL|function|readdirintolist (char * subdir,GtkWidget * view,char * selected)
+DECL|function|readdirintolist (const char * subdir,GtkWidget * view,char * selected)
 name|readdirintolist
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|subdir

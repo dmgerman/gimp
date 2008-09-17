@@ -379,6 +379,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|factory_defaults
 specifier|static
+specifier|const
 name|char
 modifier|*
 name|factory_defaults
@@ -543,9 +544,10 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|get_object_name (gchar * dir,gchar * filename,void * context)
+DECL|function|get_object_name (const gchar * dir,gchar * filename,void * context)
 name|get_object_name
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dir

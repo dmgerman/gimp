@@ -6356,6 +6356,7 @@ name|gint
 name|i
 decl_stmt|;
 specifier|static
+specifier|const
 name|gchar
 modifier|*
 name|labels

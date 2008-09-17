@@ -172,6 +172,7 @@ struct|struct
 name|ObjectClass_t
 block|{
 DECL|member|name
+specifier|const
 name|gchar
 modifier|*
 name|name
@@ -1010,7 +1011,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon29da4ede0108
+DECL|struct|__anon2c6cb5f10108
 typedef|typedef
 struct|struct
 block|{
@@ -1114,7 +1115,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon29da4ede0208
+DECL|struct|__anon2c6cb5f10208
 typedef|typedef
 struct|struct
 block|{

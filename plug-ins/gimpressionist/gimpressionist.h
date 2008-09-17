@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2767131c0108
+DECL|struct|__anon2bd5871f0108
 block|{
 DECL|member|orient_num
 name|int
@@ -511,6 +511,7 @@ begin_function_decl
 name|void
 name|readdirintolist
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|subdir
@@ -530,6 +531,7 @@ begin_function_decl
 name|void
 name|readdirintolist_extended
 parameter_list|(
+specifier|const
 name|char
 modifier|*
 name|subdir
@@ -552,6 +554,7 @@ modifier|*
 name|get_object_name_cb
 function_decl|)
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dir

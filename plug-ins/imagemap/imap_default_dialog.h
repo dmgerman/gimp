@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a321fb00108
+DECL|struct|__anon2c0af4000108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -244,6 +244,7 @@ name|DefaultDialog_t
 modifier|*
 name|dialog
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|text
