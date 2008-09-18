@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b5d5d70108
+DECL|struct|__anon273975e50108
 block|{
 DECL|member|script
 name|SFScript
@@ -3848,7 +3848,16 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|2
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
 index|]
 operator|.
 name|data
@@ -3916,7 +3925,16 @@ literal|2
 expr_stmt|;
 name|values
 index|[
-literal|2
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
 index|]
 operator|.
 name|data
@@ -4101,7 +4119,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon28b5d5d70208
+DECL|struct|__anon273975e50208
 block|{
 DECL|member|old
 specifier|const
