@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74e64f0103
+DECL|enum|__anon2ae2c7280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2431,7 +2431,12 @@ index|]
 decl_stmt|;
 name|gdouble
 name|delta_in
-init|=
+decl_stmt|;
+name|gdouble
+name|delta_out
+decl_stmt|;
+name|delta_in
+operator|=
 name|config
 operator|->
 name|high_input
@@ -2445,10 +2450,9 @@ name|low_input
 index|[
 name|channel
 index|]
-decl_stmt|;
-name|gdouble
+expr_stmt|;
 name|delta_out
-init|=
+operator|=
 name|config
 operator|->
 name|high_output
@@ -2462,7 +2466,7 @@ name|low_output
 index|[
 name|channel
 index|]
-decl_stmt|;
+expr_stmt|;
 name|gimp_curve_set_point
 argument_list|(
 name|curve
