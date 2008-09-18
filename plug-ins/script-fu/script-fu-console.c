@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a44f2f80108
+DECL|struct|__anon29135a360108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a44f2f80203
+DECL|enum|__anon29135a360203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2484,7 +2484,7 @@ name|output
 operator|=
 name|g_string_new
 argument_list|(
-literal|""
+name|NULL
 argument_list|)
 expr_stmt|;
 name|ts_register_output_func

@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998282d0108
+DECL|struct|__anon28b5d5d70108
 block|{
 DECL|member|script
 name|SFScript
@@ -3235,11 +3235,6 @@ block|{
 name|GString
 modifier|*
 name|output
-init|=
-name|g_string_new
-argument_list|(
-literal|""
-argument_list|)
 decl_stmt|;
 name|gboolean
 name|success
@@ -3250,7 +3245,7 @@ name|output
 operator|=
 name|g_string_new
 argument_list|(
-literal|""
+name|NULL
 argument_list|)
 expr_stmt|;
 name|ts_register_output_func
@@ -4106,7 +4101,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2998282d0208
+DECL|struct|__anon28b5d5d70208
 block|{
 DECL|member|old
 specifier|const

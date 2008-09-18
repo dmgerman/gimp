@@ -419,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7b0230108
+DECL|struct|__anon2c0179790108
 block|{
 DECL|member|command
 name|gchar
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb7b0230208
+DECL|struct|__anon2c0179790208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -1674,7 +1674,7 @@ name|response
 operator|=
 name|g_string_new
 argument_list|(
-literal|""
+name|NULL
 argument_list|)
 expr_stmt|;
 name|ts_register_output_func
