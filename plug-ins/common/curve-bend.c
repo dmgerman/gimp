@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288128f10108
+DECL|struct|__anon2b1bf9130108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288128f10208
+DECL|struct|__anon2b1bf9130208
 block|{
 DECL|member|y
 name|gint32
@@ -2444,11 +2444,11 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|gint32
-name|l_bent_layer_id
+name|GError
+modifier|*
+name|error
 init|=
-operator|-
-literal|1
+name|NULL
 decl_stmt|;
 comment|/* Get the runmode from the in-parameters */
 name|GimpRunMode
@@ -2712,7 +2712,7 @@ argument_list|,
 name|current_step
 argument_list|)
 expr_stmt|;
-comment|/* note: iteration of curve and points arrays would not give useful results.                *       (there might be different number of points in the from/to bender values )                *       the iteration is done later, (see p_bender_calculate_iter_curve)                *       when the curve is calculated.                */
+comment|/* note: iteration of curve and points arrays would not                *       give useful results.  (there might be different                *       number of points in the from/to bender values )                *       the iteration is done later, (see                *       p_bender_calculate_iter_curve) when the curve                *       is calculated.                */
 name|bval
 operator|.
 name|total_steps
@@ -2799,11 +2799,21 @@ name|l_layer_id
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+operator|&
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
-literal|"Can operate on layers only (but was called on channel or mask)."
+literal|"Can operate on layers only "
+literal|"(but was called on channel or mask)."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2827,8 +2837,17 @@ operator|>=
 literal|0
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+operator|&
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot operate on layers with masks."
@@ -2858,8 +2877,17 @@ literal|0
 condition|)
 block|{
 comment|/* could not float the selection because selection rectangle        * is completely empty return GIMP_PDB_EXECUTION_ERROR        */
-name|g_message
+name|g_set_error
 argument_list|(
+operator|&
+name|error
+argument_list|,
+literal|0
+argument_list|,
+literal|0
+argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"Cannot operate on empty selections."
@@ -3260,6 +3288,9 @@ operator|->
 name|run
 condition|)
 block|{
+name|gint32
+name|l_bent_layer_id
+decl_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|l_image_id
@@ -3299,6 +3330,18 @@ name|cd
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* return the id of handled layer */
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+operator|=
+name|l_bent_layer_id
+expr_stmt|;
 block|}
 else|else
 block|{
@@ -3317,6 +3360,43 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|status
+operator|!=
+name|GIMP_PDB_SUCCESS
+operator|&&
+name|error
+condition|)
+block|{
+operator|*
+name|nreturn_vals
+operator|=
+literal|2
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|type
+operator|=
+name|GIMP_PDB_STRING
+expr_stmt|;
+name|values
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+operator|=
+name|error
+operator|->
+name|message
+expr_stmt|;
+block|}
 name|values
 index|[
 literal|0
@@ -3328,18 +3408,6 @@ name|d_status
 operator|=
 name|status
 expr_stmt|;
-name|values
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-operator|=
-name|l_bent_layer_id
-expr_stmt|;
-comment|/* return the id of handled layer */
 block|}
 end_function
 
