@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c89c1c20103
+DECL|enum|__anon277500720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4370,7 +4370,7 @@ index|]
 operator|.
 name|y
 expr_stmt|;
-comment|/*    * the x values of the inner control points are fixed at    * x1 = 1/3*x0 + 2/3*x3   and  x2 = 2/3*x0 + 1/3*x3    * this ensures that the x values increase linearily with the    * parameter t and enables us to skip the calculation of the x    * values altogehter - just calculate y(t) evenly spaced.    */
+comment|/*    * the x values of the inner control points are fixed at    * x1 = 2/3*x0 + 1/3*x3   and  x2 = 1/3*x0 + 2/3*x3    * this ensures that the x values increase linearily with the    * parameter t and enables us to skip the calculation of the x    * values altogehter - just calculate y(t) evenly spaced.    */
 name|dx
 operator|=
 name|x3
