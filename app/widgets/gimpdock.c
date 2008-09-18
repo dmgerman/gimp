@@ -141,7 +141,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998356d0103
+DECL|enum|__anon289201c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2998356d0203
+DECL|enum|__anon289201c90203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1310,6 +1310,11 @@ argument_list|,
 operator|&
 name|default_height
 argument_list|,
+literal|"font-scale"
+argument_list|,
+operator|&
+name|font_scale
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -1324,18 +1329,6 @@ operator|-
 literal|1
 argument_list|,
 name|default_height
-argument_list|)
-expr_stmt|;
-name|gtk_widget_style_get
-argument_list|(
-name|widget
-argument_list|,
-literal|"font-scale"
-argument_list|,
-operator|&
-name|font_scale
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -1450,6 +1443,27 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|rc_string
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+condition|)
+name|gtk_widget_reset_rc_styles
+argument_list|(
+name|gtk_bin_get_child
+argument_list|(
+name|GTK_BIN
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
