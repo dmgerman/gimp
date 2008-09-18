@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1fd2a00108
+DECL|struct|__anon2b433a5f0108
 block|{
 DECL|member|script
 name|SFScript
@@ -1990,7 +1990,7 @@ name|filename
 init|=
 name|arg
 operator|->
-name|default_values
+name|default_value
 operator|.
 name|sfa_file
 operator|.
@@ -5320,7 +5320,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2b1fd2a00208
+DECL|struct|__anon2b433a5f0208
 block|{
 DECL|member|old
 specifier|const
