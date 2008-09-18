@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2010b40103
+DECL|enum|__anon2baf216b0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -688,6 +688,7 @@ operator|+=
 name|gimp_string_get_memsize
 argument_list|(
 operator|(
+specifier|const
 name|gchar
 operator|*
 operator|)
