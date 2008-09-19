@@ -931,7 +931,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Destroy the an array of GimpParamDef's. This is useful for  *  destroying the return values returned by a call to  *  'gimp_query_procedure'.  */
+comment|/* Destroy the an array of GimpParamDef's. This is useful for  *  destroying the return values returned by a call to  *  'gimp_procedural_db_proc_info'.  */
 end_comment
 
 begin_function_decl

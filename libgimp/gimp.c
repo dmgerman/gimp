@@ -414,7 +414,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2761fb9c0103
+DECL|enum|__anon2a1df2540103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -3790,7 +3790,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_destroy_paramdefs:  * @paramdefs: the #GimpParamDef array to destroy  * @n_params:  the number of elements in the array  *  * Destroys a #GimpParamDef array as returned by gimp_query_procedure()  **/
+comment|/**  * gimp_destroy_paramdefs:  * @paramdefs: the #GimpParamDef array to destroy  * @n_params:  the number of elements in the array  *  * Destroys a #GimpParamDef array as returned by  * gimp_procedural_db_proc_info().  **/
 end_comment
 
 begin_function
