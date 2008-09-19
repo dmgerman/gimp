@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279678b80108
+DECL|struct|__anon29b54e770108
 block|{
 DECL|member|script
 name|SFScript
@@ -3404,8 +3404,14 @@ literal|2
 index|]
 init|=
 block|{
+block|{
 literal|0
 block|, }
+block|,
+block|{
+literal|0
+block|, }
+block|}
 decl_stmt|;
 name|GimpPDBStatusType
 name|status
@@ -3932,7 +3938,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon279678b80208
+DECL|struct|__anon29b54e770208
 block|{
 DECL|member|old
 specifier|const
