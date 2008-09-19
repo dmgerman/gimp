@@ -331,7 +331,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c8724c0103
+DECL|enum|__anon27a87ee50103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8724c0208
+DECL|struct|__anon27a87ee50208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -735,7 +735,7 @@ name|gimp_plugin_menu_register
 argument_list|(
 name|PLUG_IN_PROC
 argument_list|,
-literal|"<Image>/File/New/Acquire"
+literal|"<Image>/File/Create/Acquire"
 argument_list|)
 expr_stmt|;
 name|gimp_plugin_icon_register

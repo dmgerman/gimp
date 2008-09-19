@@ -105,7 +105,7 @@ literal|"<Toolbox>/Xtns/Buttons"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Buttons"
+literal|"<Image>/File/Create/Buttons"
 block|}
 block|,
 block|{
@@ -113,7 +113,7 @@ literal|"<Toolbox>/Xtns/Logos"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Logos"
+literal|"<Image>/File/Create/Logos"
 block|}
 block|,
 block|{
@@ -121,7 +121,7 @@ literal|"<Toolbox>/Xtns/Misc"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Misc"
+literal|"<Image>/File/Create/Misc"
 block|}
 block|,
 block|{
@@ -129,7 +129,7 @@ literal|"<Toolbox>/Xtns/Patterns"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Patterns"
+literal|"<Image>/File/Create/Patterns"
 block|}
 block|,
 block|{
@@ -137,7 +137,7 @@ literal|"<Toolbox>/Xtns/Web Page Themes"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Web Page Themes"
+literal|"<Image>/File/Create/Web Page Themes"
 block|}
 block|,
 block|{
@@ -145,7 +145,7 @@ literal|"<Toolbox>/Xtns"
 block|,
 literal|"Buttons"
 block|,
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 block|}
 block|,
 block|{
@@ -153,7 +153,7 @@ literal|"<Toolbox>/Xtns"
 block|,
 literal|"Logos"
 block|,
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 block|}
 block|,
 block|{
@@ -161,7 +161,7 @@ literal|"<Toolbox>/Xtns"
 block|,
 literal|"Misc"
 block|,
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 block|}
 block|,
 block|{
@@ -169,7 +169,7 @@ literal|"<Toolbox>/Xtns"
 block|,
 literal|"Patterns"
 block|,
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 block|}
 block|,
 block|{
@@ -177,7 +177,7 @@ literal|"<Toolbox>/Xtns"
 block|,
 literal|"Web Page Themes"
 block|,
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 block|}
 block|,
 block|{
@@ -201,7 +201,7 @@ literal|"<Toolbox>/File/Acquire"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Acquire"
+literal|"<Image>/File/Create/Acquire"
 block|}
 block|,
 block|{
@@ -209,7 +209,15 @@ literal|"<Image>/File/Acquire"
 block|,
 name|NULL
 block|,
-literal|"<Image>/File/New/Acquire"
+literal|"<Image>/File/Create/Acquire"
+block|}
+block|,
+block|{
+literal|"<Image>/File/New"
+block|,
+name|NULL
+block|,
+literal|"<Image>/File/Create"
 block|}
 block|,
 block|{

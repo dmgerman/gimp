@@ -950,7 +950,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 argument_list|,
 name|N_
 argument_list|(
@@ -960,7 +960,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 argument_list|,
 name|N_
 argument_list|(
@@ -970,7 +970,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 argument_list|,
 name|N_
 argument_list|(
@@ -980,7 +980,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New"
+literal|"<Image>/File/Create"
 argument_list|,
 name|N_
 argument_list|(
@@ -990,7 +990,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New/Web Page Themes"
+literal|"<Image>/File/Create/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -1000,7 +1000,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New/Web Page Themes"
+literal|"<Image>/File/Create/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(
@@ -1010,7 +1010,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_plugin_menu_branch_register
 argument_list|(
-literal|"<Image>/File/New/Web Page Themes"
+literal|"<Image>/File/Create/Web Page Themes"
 argument_list|,
 name|N_
 argument_list|(

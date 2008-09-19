@@ -205,13 +205,13 @@ argument_list|)
 block|}
 block|,
 block|{
-literal|"file-new-menu"
+literal|"file-create-menu"
 block|,
 name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Ne_w"
+literal|"Create"
 argument_list|)
 block|}
 block|,
