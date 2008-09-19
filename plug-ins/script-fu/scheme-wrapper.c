@@ -271,7 +271,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3e5b20108
+DECL|struct|__anon27dd33ab0108
 block|{
 DECL|member|name
 specifier|const
@@ -2292,52 +2292,11 @@ modifier|*
 modifier|*
 name|proc_list
 decl_stmt|;
-name|gchar
-modifier|*
-name|proc_blurb
-decl_stmt|;
-name|gchar
-modifier|*
-name|proc_help
-decl_stmt|;
-name|gchar
-modifier|*
-name|proc_author
-decl_stmt|;
-name|gchar
-modifier|*
-name|proc_copyright
-decl_stmt|;
-name|gchar
-modifier|*
-name|proc_date
-decl_stmt|;
-name|GimpPDBProcType
-name|proc_type
-decl_stmt|;
-name|gint
-name|nparams
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|GimpParamDef
-modifier|*
-name|params
-decl_stmt|;
-name|GimpParamDef
-modifier|*
-name|return_vals
-decl_stmt|;
 name|gint
 name|num_procs
 decl_stmt|;
 name|gint
 name|i
-decl_stmt|;
-name|gchar
-modifier|*
-name|buff
 decl_stmt|;
 name|pointer
 name|symbol
@@ -2634,6 +2593,43 @@ name|i
 operator|++
 control|)
 block|{
+name|gchar
+modifier|*
+name|proc_blurb
+decl_stmt|;
+name|gchar
+modifier|*
+name|proc_help
+decl_stmt|;
+name|gchar
+modifier|*
+name|proc_author
+decl_stmt|;
+name|gchar
+modifier|*
+name|proc_copyright
+decl_stmt|;
+name|gchar
+modifier|*
+name|proc_date
+decl_stmt|;
+name|GimpPDBProcType
+name|proc_type
+decl_stmt|;
+name|gint
+name|n_params
+decl_stmt|;
+name|gint
+name|n_return_vals
+decl_stmt|;
+name|GimpParamDef
+modifier|*
+name|params
+decl_stmt|;
+name|GimpParamDef
+modifier|*
+name|return_vals
+decl_stmt|;
 comment|/*  lookup the procedure  */
 if|if
 condition|(
@@ -2663,10 +2659,10 @@ operator|&
 name|proc_type
 argument_list|,
 operator|&
-name|nparams
+name|n_params
 argument_list|,
 operator|&
-name|nreturn_vals
+name|n_return_vals
 argument_list|,
 operator|&
 name|params
@@ -2676,10 +2672,14 @@ name|return_vals
 argument_list|)
 condition|)
 block|{
+name|gchar
+modifier|*
+name|buff
+decl_stmt|;
 comment|/* Build a define that will call the foreign function.            * The Scheme statement was suggested by Simon Budig.            */
 if|if
 condition|(
-name|nparams
+name|n_params
 operator|==
 literal|0
 condition|)
@@ -2771,14 +2771,14 @@ name|gimp_destroy_paramdefs
 argument_list|(
 name|params
 argument_list|,
-name|nparams
+name|n_params
 argument_list|)
 expr_stmt|;
 name|gimp_destroy_paramdefs
 argument_list|(
 name|return_vals
 argument_list|,
-name|nreturn_vals
+name|n_return_vals
 argument_list|)
 expr_stmt|;
 block|}
@@ -2920,9 +2920,6 @@ name|gint
 name|success
 init|=
 name|TRUE
-decl_stmt|;
-name|pointer
-name|intermediate_val
 decl_stmt|;
 name|pointer
 name|return_val
@@ -6489,8 +6486,11 @@ condition|(
 name|success
 condition|)
 block|{
+name|pointer
+name|temp_val
+decl_stmt|;
 comment|/* parasite->name */
-name|intermediate_val
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -6516,7 +6516,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 condition|)
@@ -6550,7 +6550,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6576,7 +6576,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* parasite->flags */
-name|intermediate_val
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -6584,7 +6584,7 @@ name|vptr
 operator|->
 name|pair_cdr
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 expr_stmt|;
 if|if
@@ -6602,7 +6602,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 condition|)
@@ -6636,7 +6636,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6662,7 +6662,7 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* parasite->data */
-name|intermediate_val
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -6670,7 +6670,7 @@ name|vptr
 operator|->
 name|pair_cdr
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 expr_stmt|;
 if|if
@@ -6688,7 +6688,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 condition|)
@@ -6722,7 +6722,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6749,7 +6749,7 @@ name|vptr
 operator|->
 name|pair_car
 argument_list|(
-name|intermediate_val
+name|temp_val
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7537,7 +7537,6 @@ break|break;
 case|case
 name|GIMP_PDB_INT32ARRAY
 case|:
-comment|/*  integer arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint32
 name|num_int32s
@@ -7651,7 +7650,6 @@ break|break;
 case|case
 name|GIMP_PDB_INT16ARRAY
 case|:
-comment|/*  integer arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint32
 name|num_int16s
@@ -7765,7 +7763,6 @@ break|break;
 case|case
 name|GIMP_PDB_INT8ARRAY
 case|:
-comment|/*  integer arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint32
 name|num_int8s
@@ -7879,7 +7876,6 @@ break|break;
 case|case
 name|GIMP_PDB_FLOATARRAY
 case|:
-comment|/*  float arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint32
 name|num_floats
@@ -7993,7 +7989,6 @@ break|break;
 case|case
 name|GIMP_PDB_STRINGARRAY
 case|:
-comment|/*  string arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint
 name|num_strings
@@ -8107,7 +8102,7 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
-comment|/* hook the current list into return_val, so that it                      * inherits the set_safe_foreign()-protection.                      * May be removed when tinyscheme fixes the GC issue                      * with foreign functions */
+comment|/* hook the current list into return_val, so that it                      * inherits the set_safe_foreign()-protection.                      * May be removed when tinyscheme fixes the GC issue                      * with foreign functions                      */
 name|sc
 operator|->
 name|vptr
@@ -8133,6 +8128,9 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
+name|gpointer
+name|temp_val
+decl_stmt|;
 name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
@@ -8157,7 +8155,7 @@ operator|&
 name|b
 argument_list|)
 expr_stmt|;
-name|intermediate_val
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -8233,7 +8231,7 @@ name|cons
 argument_list|(
 name|sc
 argument_list|,
-name|intermediate_val
+name|temp_val
 argument_list|,
 name|return_val
 argument_list|)
@@ -8250,7 +8248,6 @@ block|}
 case|case
 name|GIMP_PDB_COLORARRAY
 case|:
-comment|/*  color arrays are always implemented such that the previous                *  return value contains the number of strings in the array                */
 block|{
 name|gint32
 name|num_colors
@@ -8340,6 +8337,9 @@ name|g
 decl_stmt|,
 name|b
 decl_stmt|;
+name|pointer
+name|temp_val
+decl_stmt|;
 name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
@@ -8358,7 +8358,7 @@ operator|&
 name|b
 argument_list|)
 expr_stmt|;
-name|intermediate_val
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -8434,7 +8434,7 @@ name|cons
 argument_list|(
 name|sc
 argument_list|,
-name|intermediate_val
+name|temp_val
 argument_list|,
 name|return_val
 argument_list|)
@@ -8461,6 +8461,9 @@ decl_stmt|,
 name|w
 decl_stmt|,
 name|h
+decl_stmt|;
+name|pointer
+name|temp_val
 decl_stmt|;
 name|x
 operator|=
@@ -8522,7 +8525,7 @@ name|d_region
 operator|.
 name|height
 expr_stmt|;
-name|intermediate_val
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -8618,7 +8621,7 @@ name|cons
 argument_list|(
 name|sc
 argument_list|,
-name|intermediate_val
+name|temp_val
 argument_list|,
 name|return_val
 argument_list|)
@@ -8654,6 +8657,7 @@ name|name
 operator|==
 name|NULL
 condition|)
+block|{
 name|return_val
 operator|=
 name|foreign_error
@@ -8665,10 +8669,30 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
-comment|/* don't move the mk_foo() calls outside this function call,                      * otherwise they might be garbage collected away!  */
-name|intermediate_val
+name|GimpParasite
+modifier|*
+name|p
+init|=
+operator|&
+name|values
+index|[
+name|i
+operator|+
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_parasite
+decl_stmt|;
+name|pointer
+name|temp_val
+decl_stmt|;
+comment|/* don't move the mk_foo() calls outside this function call,                      * otherwise they might be garbage collected away!                      */
+name|temp_val
 operator|=
 name|sc
 operator|->
@@ -8686,17 +8710,8 @@ name|mk_string
 argument_list|(
 name|sc
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|name
 argument_list|)
 argument_list|,
@@ -8716,17 +8731,8 @@ name|mk_integer
 argument_list|(
 name|sc
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|flags
 argument_list|)
 argument_list|,
@@ -8746,30 +8752,12 @@ name|mk_counted_string
 argument_list|(
 name|sc
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|data
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|size
 argument_list|)
 argument_list|,
@@ -8790,7 +8778,7 @@ name|cons
 argument_list|(
 name|sc
 argument_list|,
-name|intermediate_val
+name|temp_val
 argument_list|,
 name|return_val
 argument_list|)
@@ -8809,17 +8797,8 @@ name|g_printerr
 argument_list|(
 literal|"      name '%s'\n"
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|name
 argument_list|)
 expr_stmt|;
@@ -8827,17 +8806,8 @@ name|g_printerr
 argument_list|(
 literal|"      flags %d"
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|flags
 argument_list|)
 expr_stmt|;
@@ -8845,17 +8815,8 @@ name|g_printerr
 argument_list|(
 literal|", size %d\n"
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|size
 argument_list|)
 expr_stmt|;
@@ -8863,34 +8824,16 @@ name|g_printerr
 argument_list|(
 literal|"      data '%.*s'\n"
 argument_list|,
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|size
 argument_list|,
 operator|(
-name|char
+name|gchar
 operator|*
 operator|)
-name|values
-index|[
-name|i
-operator|+
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_parasite
-operator|.
+name|p
+operator|->
 name|data
 argument_list|)
 expr_stmt|;
@@ -8935,8 +8878,7 @@ case|:
 comment|/*  should we do something here?  */
 break|break;
 block|}
-comment|/* If we have no return value(s) from PDB call, return */
-comment|/* either TRUE or FALSE to indicate if call succeeded. */
+comment|/* If we have no return value(s) from PDB call, return    * either TRUE or FALSE to indicate if call succeeded.    */
 if|if
 condition|(
 name|return_val
