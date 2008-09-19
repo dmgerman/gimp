@@ -271,7 +271,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c855c140108
+DECL|struct|__anon2be3e5b20108
 block|{
 DECL|member|name
 specifier|const
@@ -2910,7 +2910,7 @@ decl_stmt|;
 name|gchar
 name|error_str
 index|[
-literal|256
+literal|1024
 index|]
 decl_stmt|;
 name|gint
