@@ -94,7 +94,7 @@ end_comment
 begin_function
 name|SFScript
 modifier|*
-DECL|function|script_fu_script_new (const gchar * name,const gchar * menu_path,const gchar * blurb,const gchar * author,const gchar * copyright,const gchar * date,const gchar * image_types,gint n_args)
+DECL|function|script_fu_script_new (const gchar * name,const gchar * menu_label,const gchar * blurb,const gchar * author,const gchar * copyright,const gchar * date,const gchar * image_types,gint n_args)
 name|script_fu_script_new
 parameter_list|(
 specifier|const
@@ -105,7 +105,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 parameter_list|,
 specifier|const
 name|gchar
@@ -158,11 +158,11 @@ argument_list|)
 expr_stmt|;
 name|script
 operator|->
-name|menu_path
+name|menu_label
 operator|=
 name|g_strdup
 argument_list|(
-name|menu_path
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|script
@@ -273,7 +273,7 @@ name|g_free
 argument_list|(
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -629,7 +629,7 @@ block|{
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 init|=
 name|NULL
 decl_stmt|;
@@ -661,7 +661,7 @@ name|strncmp
 argument_list|(
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|,
 literal|"<None>"
 argument_list|,
@@ -670,11 +670,11 @@ argument_list|)
 operator|!=
 literal|0
 condition|)
-name|menu_path
+name|menu_label
 operator|=
 name|script
 operator|->
-name|menu_path
+name|menu_label
 expr_stmt|;
 name|args
 operator|=
@@ -1069,7 +1069,7 @@ name|script
 operator|->
 name|date
 argument_list|,
-name|menu_path
+name|menu_label
 argument_list|,
 name|script
 operator|->
@@ -1164,7 +1164,7 @@ name|gettext
 argument_list|(
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 argument_list|)
 expr_stmt|;

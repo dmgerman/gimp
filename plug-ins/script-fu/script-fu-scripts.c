@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4158080108
+DECL|struct|__anon28e6e3a20108
 block|{
 DECL|member|script
 name|SFScript
@@ -447,7 +447,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|menu_path
+name|menu_label
 decl_stmt|;
 specifier|const
 name|gchar
@@ -473,10 +473,6 @@ specifier|const
 name|gchar
 modifier|*
 name|image_types
-decl_stmt|;
-name|gchar
-modifier|*
-name|mapped
 decl_stmt|;
 name|gint
 name|n_args
@@ -545,8 +541,8 @@ argument_list|(
 name|a
 argument_list|)
 expr_stmt|;
-comment|/*  Find the script menu_path  */
-name|menu_path
+comment|/*  Find the script menu_label  */
+name|menu_label
 operator|=
 name|sc
 operator|->
@@ -781,7 +777,7 @@ name|script_fu_script_new
 argument_list|(
 name|name
 argument_list|,
-name|menu_path
+name|menu_label
 argument_list|,
 name|blurb
 argument_list|,
@@ -2741,15 +2737,29 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|script
+operator|->
+name|menu_label
+index|[
+literal|0
+index|]
+operator|==
+literal|'<'
+condition|)
+block|{
+name|gchar
+modifier|*
 name|mapped
-operator|=
+init|=
 name|script_fu_menu_map
 argument_list|(
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|mapped
@@ -2759,15 +2769,16 @@ name|g_free
 argument_list|(
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 expr_stmt|;
 name|script
 operator|->
-name|menu_path
+name|menu_label
 operator|=
 name|mapped
 expr_stmt|;
+block|}
 block|}
 block|{
 specifier|const
@@ -2779,7 +2790,7 @@ name|gettext
 argument_list|(
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 decl_stmt|;
 name|GList
@@ -3994,7 +4005,7 @@ block|{
 comment|/*  for backward compatibility, we fiddle with some menu paths  */
 specifier|const
 struct|struct
-DECL|struct|__anon2c4158080208
+DECL|struct|__anon28e6e3a20208
 block|{
 DECL|member|old
 specifier|const
@@ -4218,13 +4229,13 @@ name|menu_a
 operator|->
 name|script
 operator|->
-name|menu_path
+name|menu_label
 operator|&&
 name|menu_b
 operator|->
 name|script
 operator|->
-name|menu_path
+name|menu_label
 condition|)
 block|{
 name|retval
@@ -4237,7 +4248,7 @@ name|menu_a
 operator|->
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 argument_list|,
 name|gettext
@@ -4246,7 +4257,7 @@ name|menu_b
 operator|->
 name|script
 operator|->
-name|menu_path
+name|menu_label
 argument_list|)
 argument_list|)
 expr_stmt|;
