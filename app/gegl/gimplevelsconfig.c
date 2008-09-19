@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b143a7e0103
+DECL|enum|__anon296d47d70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2449,6 +2449,35 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+comment|/* clear the points set by default */
+name|gimp_curve_set_point
+argument_list|(
+name|curve
+argument_list|,
+literal|0
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|gimp_curve_set_point
+argument_list|(
+name|curve
+argument_list|,
+name|n_points
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 name|delta_in
 operator|=
 name|config
