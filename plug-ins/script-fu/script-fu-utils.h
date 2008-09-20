@@ -6,52 +6,25 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__SCRIPT_FU_SCRIPTS_H__
+name|__SCRIPT_FU_UTILS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__SCRIPT_FU_SCRIPTS_H__
+DECL|macro|__SCRIPT_FU_UTILS_H__
 define|#
 directive|define
-name|__SCRIPT_FU_SCRIPTS_H__
+name|__SCRIPT_FU_UTILS_H__
 end_define
 
 begin_function_decl
-name|void
-name|script_fu_find_scripts
+name|gchar
+modifier|*
+name|script_fu_strescape
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|path
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|pointer
-name|script_fu_add_script
-parameter_list|(
-name|scheme
-modifier|*
-name|sc
-parameter_list|,
-name|pointer
-name|a
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|pointer
-name|script_fu_add_menu
-parameter_list|(
-name|scheme
-modifier|*
-name|sc
-parameter_list|,
-name|pointer
-name|a
+name|source
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -62,7 +35,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __SCRIPT_FU_SCRIPTS__  */
+comment|/*  __SCRIPT_FU_UTILS__  */
 end_comment
 
 end_unit
