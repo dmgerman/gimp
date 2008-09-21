@@ -3345,14 +3345,6 @@ value|"gimp-unit-dialog"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_WINDOWS_SHOW_IMAGE_WINDOW
-define|#
-directive|define
-name|GIMP_HELP_WINDOWS_SHOW_IMAGE_WINDOW
-value|"gimp-windows-show-image-window"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_WINDOWS_SHOW_DOCK
 define|#
 directive|define
