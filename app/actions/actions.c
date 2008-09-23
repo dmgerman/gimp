@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"context-actions.h"
 end_include
 
@@ -462,6 +468,21 @@ block|,
 name|colormap_actions_setup
 block|,
 name|colormap_actions_update
+block|}
+block|,
+block|{
+literal|"config"
+block|,
+name|N_
+argument_list|(
+literal|"Configuration"
+argument_list|)
+block|,
+name|GTK_STOCK_PREFERENCES
+block|,
+name|config_actions_setup
+block|,
+name|config_actions_update
 block|}
 block|,
 block|{
