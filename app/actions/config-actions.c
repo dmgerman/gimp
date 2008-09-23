@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -170,6 +164,22 @@ name|config_toggle_actions
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|config_actions_use_gegl_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|group
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|group
+argument_list|)
+expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
 name|group
@@ -205,32 +215,7 @@ parameter_list|,
 name|gpointer
 name|data
 parameter_list|)
-block|{
-DECL|macro|SET_ACTIVE (action,condition)
-define|#
-directive|define
-name|SET_ACTIVE
-parameter_list|(
-name|action
-parameter_list|,
-name|condition
-parameter_list|)
-define|\
-value|gimp_action_group_set_action_active (group, action, (condition) != 0)
-name|SET_ACTIVE
-argument_list|(
-literal|"config-use-gegl"
-argument_list|,
-name|group
-operator|->
-name|gimp
-operator|->
-name|config
-operator|->
-name|use_gegl
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 end_unit
