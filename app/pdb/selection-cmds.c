@@ -3655,7 +3655,7 @@ literal|"gimp-selection-layer-alpha"
 argument_list|,
 literal|"Transfer the specified layer's alpha channel to the selection mask."
 argument_list|,
-literal|"This procedure requires a layer with an alpha channel. The alpha channel information is used to create a selection mask such that for any pixel in the image defined in the specified layer, that layer pixel's alpha value is transferred to the selection mask. If the layer is undefined at a particular image pixel, the associated selection mask value is set to 0."
+literal|"The alpha channel information is used to create a selection mask such that for any pixel in the image defined in the specified layer, that layer pixel's alpha value is transferred to the selection mask. If the layer is undefined at a particular image pixel, the associated selection mask value is set to 0. A layer without an alpha channel is considered opaque."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

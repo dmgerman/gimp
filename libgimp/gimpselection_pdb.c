@@ -1106,7 +1106,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Transfer the specified layer's alpha channel to the selection mask.  *  * This procedure requires a layer with an alpha channel. The alpha  * channel information is used to create a selection mask such that for  * any pixel in the image defined in the specified layer, that layer  * pixel's alpha value is transferred to the selection mask. If the  * layer is undefined at a particular image pixel, the associated  * selection mask value is set to 0.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Transfer the specified layer's alpha channel to the selection mask.  *  * The alpha channel information is used to create a selection mask  * such that for any pixel in the image defined in the specified layer,  * that layer pixel's alpha value is transferred to the selection mask.  * If the layer is undefined at a particular image pixel, the  * associated selection mask value is set to 0. A layer without an  * alpha channel is considered opaque.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
