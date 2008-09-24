@@ -3028,6 +3028,9 @@ argument_list|(
 name|rectangle
 argument_list|)
 decl_stmt|;
+name|GimpChannelOps
+name|operation
+decl_stmt|;
 comment|/* prevent this change from halting the tool */
 name|gimp_tool_control_set_preserve
 argument_list|(
@@ -3038,7 +3041,25 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* otherwise clear the selection */
+comment|/* We can conceptually think of a click outside of the            * selection as adding a 0px selection. Behave intuitivly            * for the current selection mode            */
+name|operation
+operator|=
+name|gimp_rectangle_select_tool_get_operation
+argument_list|(
+name|rect_sel_tool
+argument_list|)
+expr_stmt|;
+switch|switch
+condition|(
+name|operation
+condition|)
+block|{
+case|case
+name|GIMP_CHANNEL_OP_REPLACE
+case|:
+case|case
+name|GIMP_CHANNEL_OP_INTERSECT
+case|:
 name|gimp_channel_clear
 argument_list|(
 name|selection
@@ -3053,6 +3074,17 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_CHANNEL_OP_ADD
+case|:
+case|case
+name|GIMP_CHANNEL_OP_SUBTRACT
+case|:
+default|default:
+comment|/* Do nothing */
+break|break;
+block|}
 name|gimp_tool_control_set_preserve
 argument_list|(
 name|tool
