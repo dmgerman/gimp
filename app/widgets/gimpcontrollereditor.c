@@ -108,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c28a3670103
+DECL|enum|__anon28f8dbdd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c28a3670203
+DECL|enum|__anon28f8dbdd0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -3467,7 +3467,7 @@ name|gimp_controller_editor_sel_changed
 argument_list|(
 name|editor
 operator|->
-name|edit_sel
+name|sel
 argument_list|,
 name|editor
 argument_list|)
