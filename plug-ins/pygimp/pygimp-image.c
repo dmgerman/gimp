@@ -20,6 +20,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -2193,7 +2199,7 @@ name|PyErr_Format
 argument_list|(
 name|pygimp_error
 argument_list|,
-literal|"could not free shadow on image (ID %d)"
+literal|"could not free shadow tiles on image (ID %d)"
 argument_list|,
 name|self
 operator|->
