@@ -941,7 +941,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image to the specified extents.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. All channels  * within the image are scaled according to the specified parameters;  * this includes the image selection mask. All layers within the image  * are repositioned according to the specified offsets.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image using the default interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. The default interpolation method  * is used.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1022,7 +1022,95 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_crop:  * @image_ID: The image.  * @new_width: New image width: (0< new_width<= width).  * @new_height: New image height: (0< new_height<= height).  * @offx: x offset: (0<= offx<= (width - new_width)).  * @offy: y offset: (0<= offy<= (height - new_height)).  *  * Crop the image to the specified extents.  *  * This procedure crops the image so that it's new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. All channels  * and layers within the image are cropped to the new image extents;  * this includes the image selection mask. If any parameters are out of  * range, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_scale_full:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @interpolation: Type of interpolation.  *  * Scale the image using a specific interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. This procedure allows you to  * specify the interpolation method explicitly.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_scale_full (gint32 image_ID,gint new_width,gint new_height,GimpInterpolationType interpolation)
+name|gimp_image_scale_full
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+name|new_width
+parameter_list|,
+name|gint
+name|new_height
+parameter_list|,
+name|GimpInterpolationType
+name|interpolation
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-image-scale-full"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_IMAGE
+argument_list|,
+name|image_ID
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|new_width
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|new_height
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|interpolation
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_crop:  * @image_ID: The image.  * @new_width: New image width: (0< new_width<= width).  * @new_height: New image height: (0< new_height<= height).  * @offx: X offset: (0<= offx<= (width - new_width)).  * @offy: Y offset: (0<= offy<= (height - new_height)).  *  * Crop the image to the specified extents.  *  * This procedure crops the image so that it's new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. All channels  * and layers within the image are cropped to the new image extents;  * this includes the image selection mask. If any parameters are out of  * range, an error is returned.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
