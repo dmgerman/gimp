@@ -11908,7 +11908,7 @@ literal|"gimp-image-resize"
 argument_list|,
 literal|"Resize the image to the specified extents."
 argument_list|,
-literal|"This procedure resizes the image so that it's new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous image's content. No bounds checking is currently provided, so don't supply parameters that are out of bounds. All channels within the image are resized according to the specified parameters; this includes the image selection mask. All layers within the image are repositioned according to the specified offsets."
+literal|"This procedure resizes the image so that it's new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous image's content. All channels within the image are resized according to the specified parameters; this includes the image selection mask. All layers within the image are repositioned according to the specified offsets."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -12138,7 +12138,7 @@ literal|"gimp-image-scale"
 argument_list|,
 literal|"Scale the image to the specified extents."
 argument_list|,
-literal|"This procedure scales the image so that its new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous image's content. No bounds checking is currently provided, so don't supply parameters that are out of bounds. All channels within the image are scaled according to the specified parameters; this includes the image selection mask. All layers within the image are repositioned according to the specified offsets."
+literal|"This procedure scales the image so that its new width and height are equal to the supplied parameters. Offsets are also provided which describe the position of the previous image's content. All channels within the image are scaled according to the specified parameters; this includes the image selection mask. All layers within the image are repositioned according to the specified offsets."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -13850,7 +13850,7 @@ literal|"gimp-image-get-layer-position"
 argument_list|,
 literal|"Returns the position of the layer in the layer stack."
 argument_list|,
-literal|"This procedure determines the positioin of the specified layer in the images layer stack. If the layer doesn't exist in the image, an error is returned."
+literal|"This procedure determines the position of the specified layer in the images layer stack. If the layer doesn't exist in the image, an error is returned."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -14545,7 +14545,7 @@ literal|"gimp-image-get-channel-position"
 argument_list|,
 literal|"Returns the position of the channel in the channel stack."
 argument_list|,
-literal|"This procedure determines the positioin of the specified channel in the images channel stack. If the channel doesn't exist in the image, an error is returned."
+literal|"This procedure determines the position of the specified channel in the images channel stack. If the channel doesn't exist in the image, an error is returned."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -15054,7 +15054,7 @@ literal|"gimp-image-get-vectors-position"
 argument_list|,
 literal|"Returns the position of the vectors object in the vectors objects stack."
 argument_list|,
-literal|"This procedure determines the positioin of the specified vectors object in the images vectors object stack. If the vectors object doesn't exist in the image, an error is returned."
+literal|"This procedure determines the position of the specified vectors object in the images vectors object stack. If the vectors object doesn't exist in the image, an error is returned."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,

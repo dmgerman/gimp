@@ -779,7 +779,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_resize:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @offx: x offset between upper left corner of old and new images: (new - old).  * @offy: y offset between upper left corner of old and new images: (new - old).  *  * Resize the image to the specified extents.  *  * This procedure resizes the image so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous image's content. No  * bounds checking is currently provided, so don't supply parameters  * that are out of bounds. All channels within the image are resized  * according to the specified parameters; this includes the image  * selection mask. All layers within the image are repositioned  * according to the specified offsets.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_resize:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @offx: x offset between upper left corner of old and new images: (new - old).  * @offy: y offset between upper left corner of old and new images: (new - old).  *  * Resize the image to the specified extents.  *  * This procedure resizes the image so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous image's content. All  * channels within the image are resized according to the specified  * parameters; this includes the image selection mask. All layers  * within the image are repositioned according to the specified  * offsets.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -941,7 +941,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image to the specified extents.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. No bounds  * checking is currently provided, so don't supply parameters that are  * out of bounds. All channels within the image are scaled according to  * the specified parameters; this includes the image selection mask.  * All layers within the image are repositioned according to the  * specified offsets.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image to the specified extents.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. All channels  * within the image are scaled according to the specified parameters;  * this includes the image selection mask. All layers within the image  * are repositioned according to the specified offsets.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2318,7 +2318,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Returns the position of the layer in the layer stack.  *  * This procedure determines the positioin of the specified layer in  * the images layer stack. If the layer doesn't exist in the image, an  * error is returned.  *  * Returns: The position of the layer in the layer stack.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Returns the position of the layer in the layer stack.  *  * This procedure determines the position of the specified layer in the  * images layer stack. If the layer doesn't exist in the image, an  * error is returned.  *  * Returns: The position of the layer in the layer stack.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -2854,7 +2854,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Returns the position of the channel in the channel stack.  *  * This procedure determines the positioin of the specified channel in  * the images channel stack. If the channel doesn't exist in the image,  * an error is returned.  *  * Returns: The position of the channel in the channel stack.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Returns the position of the channel in the channel stack.  *  * This procedure determines the position of the specified channel in  * the images channel stack. If the channel doesn't exist in the image,  * an error is returned.  *  * Returns: The position of the channel in the channel stack.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3242,7 +3242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Returns the position of the vectors object in the vectors objects  * stack.  *  * This procedure determines the positioin of the specified vectors  * object in the images vectors object stack. If the vectors object  * doesn't exist in the image, an error is returned.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Returns the position of the vectors object in the vectors objects  * stack.  *  * This procedure determines the position of the specified vectors  * object in the images vectors object stack. If the vectors object  * doesn't exist in the image, an error is returned.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
