@@ -206,7 +206,7 @@ DECL|macro|DEFAULT_SUBSMP
 define|#
 directive|define
 name|DEFAULT_SUBSMP
-value|0
+value|JPEG_SUPSAMPLING_2x2_1x1_1x1
 end_define
 
 begin_define
@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b5a8a0108
+DECL|struct|__anon2ae9cf7f0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b5a8a0208
+DECL|struct|__anon2ae9cf7f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -1183,6 +1183,9 @@ name|struct
 name|my_error_mgr
 name|jerr
 decl_stmt|;
+name|JpegSubsampling
+name|subsampling
+decl_stmt|;
 name|FILE
 modifier|*
 specifier|volatile
@@ -1208,9 +1211,6 @@ name|s
 decl_stmt|;
 name|gboolean
 name|has_alpha
-decl_stmt|;
-name|gint
-name|subsampling
 decl_stmt|;
 name|gint
 name|rowstride
@@ -1627,6 +1627,7 @@ name|optimize
 expr_stmt|;
 name|subsampling
 operator|=
+operator|(
 name|gimp_drawable_is_rgb
 argument_list|(
 name|drawable_ID
@@ -1636,7 +1637,8 @@ name|jsvals
 operator|.
 name|subsmp
 else|:
-literal|2
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+operator|)
 expr_stmt|;
 comment|/*  smoothing is not supported with nonstandard sampling ratios  */
 if|if
@@ -1684,7 +1686,7 @@ name|subsampling
 condition|)
 block|{
 case|case
-literal|0
+name|JPEG_SUPSAMPLING_2x2_1x1_1x1
 case|:
 default|default:
 name|cinfo
@@ -1755,7 +1757,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-literal|1
+name|JPEG_SUPSAMPLING_2x1_1x1_1x1
 case|:
 name|cinfo
 operator|.
@@ -1825,7 +1827,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-literal|2
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 case|:
 name|cinfo
 operator|.
@@ -1895,7 +1897,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-literal|3
+name|JPEG_SUPSAMPLING_1x2_1x1_1x1
 case|:
 name|cinfo
 operator|.
@@ -4923,28 +4925,28 @@ argument_list|(
 literal|"1x1,1x1,1x1 (best quality)"
 argument_list|)
 argument_list|,
-literal|2
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
 literal|"2x1,1x1,1x1 (4:2:2)"
 argument_list|)
 argument_list|,
-literal|1
+name|JPEG_SUPSAMPLING_2x1_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
 literal|"1x2,1x1,1x1"
 argument_list|)
 argument_list|,
-literal|3
+name|JPEG_SUPSAMPLING_1x2_1x1_1x1
 argument_list|,
 name|_
 argument_list|(
 literal|"2x2,1x1,1x1 (smallest file)"
 argument_list|)
 argument_list|,
-literal|0
+name|JPEG_SUPSAMPLING_2x2_1x1_1x1
 argument_list|,
 name|NULL
 argument_list|)
@@ -5008,7 +5010,7 @@ name|jsvals
 operator|.
 name|subsmp
 else|:
-literal|2
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -5748,6 +5750,9 @@ decl_stmt|;
 name|gint
 name|num_fields
 decl_stmt|;
+name|gint
+name|subsampling
+decl_stmt|;
 name|jsvals
 operator|.
 name|quality
@@ -5910,9 +5915,7 @@ operator|.
 name|progressive
 argument_list|,
 operator|&
-name|tmpvals
-operator|.
-name|subsmp
+name|subsampling
 argument_list|,
 operator|&
 name|tmpvals
@@ -5949,6 +5952,12 @@ name|tmpvals
 operator|.
 name|save_xmp
 argument_list|)
+expr_stmt|;
+name|tmpvals
+operator|.
+name|subsmp
+operator|=
+name|subsampling
 expr_stmt|;
 if|if
 condition|(
@@ -6012,6 +6021,9 @@ name|jsvals
 operator|.
 name|progressive
 argument_list|,
+operator|(
+name|gint
+operator|)
 name|jsvals
 operator|.
 name|subsmp
@@ -6351,6 +6363,9 @@ modifier|*
 name|entry
 parameter_list|)
 block|{
+name|gint
+name|value
+decl_stmt|;
 name|gimp_int_combo_box_get_active
 argument_list|(
 name|GIMP_INT_COMBO_BOX
@@ -6359,10 +6374,14 @@ name|combo
 argument_list|)
 argument_list|,
 operator|&
+name|value
+argument_list|)
+expr_stmt|;
 name|jsvals
 operator|.
 name|subsmp
-argument_list|)
+operator|=
+name|value
 expr_stmt|;
 comment|/*  smoothing is not supported with nonstandard sampling ratios  */
 name|gimp_scale_entry_set_sensitive
@@ -6373,13 +6392,13 @@ name|jsvals
 operator|.
 name|subsmp
 operator|!=
-literal|1
+name|JPEG_SUPSAMPLING_2x1_1x1_1x1
 operator|&&
 name|jsvals
 operator|.
 name|subsmp
 operator|!=
-literal|3
+name|JPEG_SUPSAMPLING_1x2_1x1_1x1
 argument_list|)
 expr_stmt|;
 name|make_preview
@@ -6564,7 +6583,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b5a8a0308
+DECL|struct|__anon2ae9cf7f0308
 block|{
 DECL|member|pub
 name|struct

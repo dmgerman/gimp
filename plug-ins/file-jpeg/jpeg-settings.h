@@ -29,7 +29,7 @@ name|gint
 modifier|*
 name|quality
 parameter_list|,
-name|gint
+name|JpegSubsampling
 modifier|*
 name|subsmp
 parameter_list|,

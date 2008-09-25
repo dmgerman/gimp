@@ -218,7 +218,7 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|orig_subsmp
-name|gint
+name|JpegSubsampling
 name|orig_subsmp
 decl_stmt|;
 end_decl_stmt
@@ -808,7 +808,7 @@ literal|0
 expr_stmt|;
 name|orig_subsmp
 operator|=
-literal|0
+name|JPEG_SUPSAMPLING_2x2_1x1_1x1
 expr_stmt|;
 name|num_quant_tables
 operator|=
@@ -1765,18 +1765,18 @@ if|if
 condition|(
 name|orig_subsmp
 operator|==
-literal|2
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 operator|||
 operator|(
 name|orig_subsmp
 operator|>
-literal|0
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 operator|&&
 name|jsvals
 operator|.
 name|subsmp
 operator|==
-literal|0
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 operator|)
 condition|)
 name|jsvals

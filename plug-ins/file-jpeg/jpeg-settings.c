@@ -22,6 +22,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<setjmp.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib/gstdio.h>
 end_include
 
@@ -30,6 +36,27 @@ include|#
 directive|include
 file|<jpeglib.h>
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|<libexif/exif-data.h>
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* HAVE_EXIF */
+end_comment
 
 begin_include
 include|#
@@ -41,6 +68,12 @@ begin_include
 include|#
 directive|include
 file|"libgimp/stdplugins-intl.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"jpeg.h"
 end_include
 
 begin_include
@@ -404,7 +437,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|jpeg_restore_original_settings (gint32 image_ID,gint * quality,gint * subsmp,gint * num_quant_tables)
+DECL|function|jpeg_restore_original_settings (gint32 image_ID,gint * quality,JpegSubsampling * subsmp,gint * num_quant_tables)
 name|jpeg_restore_original_settings
 parameter_list|(
 name|gint32
@@ -414,7 +447,7 @@ name|gint
 modifier|*
 name|quality
 parameter_list|,
-name|gint
+name|JpegSubsampling
 modifier|*
 name|subsmp
 parameter_list|,
@@ -716,7 +749,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-literal|2
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
 expr_stmt|;
 elseif|else
 if|if
@@ -738,7 +771,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-literal|1
+name|JPEG_SUPSAMPLING_2x1_1x1_1x1
 expr_stmt|;
 elseif|else
 if|if
@@ -760,7 +793,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-literal|3
+name|JPEG_SUPSAMPLING_1x2_1x1_1x1
 expr_stmt|;
 elseif|else
 if|if
@@ -782,7 +815,7 @@ condition|)
 operator|*
 name|subsmp
 operator|=
-literal|0
+name|JPEG_SUPSAMPLING_2x2_1x1_1x1
 expr_stmt|;
 block|}
 block|}

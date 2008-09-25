@@ -90,6 +90,38 @@ name|my_error_ptr
 typedef|;
 end_typedef
 
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27afe7db0103
+block|{
+DECL|enumerator|JPEG_SUPSAMPLING_2x2_1x1_1x1
+name|JPEG_SUPSAMPLING_2x2_1x1_1x1
+init|=
+literal|0
+block|,
+comment|/* smallest file */
+DECL|enumerator|JPEG_SUPSAMPLING_2x1_1x1_1x1
+name|JPEG_SUPSAMPLING_2x1_1x1_1x1
+init|=
+literal|1
+block|,
+comment|/* 4:2:2         */
+DECL|enumerator|JPEG_SUPSAMPLING_1x1_1x1_1x1
+name|JPEG_SUPSAMPLING_1x1_1x1_1x1
+init|=
+literal|2
+block|,
+DECL|enumerator|JPEG_SUPSAMPLING_1x2_1x1_1x1
+name|JPEG_SUPSAMPLING_1x2_1x1_1x1
+init|=
+literal|3
+DECL|typedef|JpegSubsampling
+block|}
+name|JpegSubsampling
+typedef|;
+end_typedef
+
 begin_decl_stmt
 specifier|extern
 name|gint32
@@ -158,7 +190,7 @@ end_decl_stmt
 
 begin_decl_stmt
 specifier|extern
-name|gint
+name|JpegSubsampling
 name|orig_subsmp
 decl_stmt|;
 end_decl_stmt
