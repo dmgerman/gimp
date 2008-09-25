@@ -744,6 +744,11 @@ operator|*
 name|num_colors
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|colors
+argument_list|)
+expr_stmt|;
 block|}
 name|surface
 operator|=
@@ -1012,11 +1017,6 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
-name|g_free
-argument_list|(
-name|cmap
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
