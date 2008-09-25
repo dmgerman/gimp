@@ -215,6 +215,7 @@ operator|&
 name|rgb
 argument_list|)
 expr_stmt|;
+comment|/*  this used to read i * rgb.r,g,b in GIMP 2.4, but this produced        *  darkened results, multiplying with 255 is correct and preserves        *  the lightness unless modified with the slider.        */
 name|colorize
 operator|->
 name|final_red_lookup
@@ -222,7 +223,7 @@ index|[
 name|i
 index|]
 operator|=
-name|i
+literal|255.0
 operator|*
 name|rgb
 operator|.
@@ -235,7 +236,7 @@ index|[
 name|i
 index|]
 operator|=
-name|i
+literal|255.0
 operator|*
 name|rgb
 operator|.
@@ -248,7 +249,7 @@ index|[
 name|i
 index|]
 operator|=
-name|i
+literal|255.0
 operator|*
 name|rgb
 operator|.
