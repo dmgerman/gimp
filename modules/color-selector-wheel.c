@@ -57,6 +57,23 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GNUC__
+end_ifdef
+
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: remove hacks here as soon as we depend on GTK 2.14
+end_warning
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -329,7 +346,7 @@ name|colorsel_wheel_size_request
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|hsv
+name|dont_use
 parameter_list|,
 name|GtkRequisition
 modifier|*
@@ -579,6 +596,7 @@ literal|7
 argument_list|)
 condition|)
 block|{
+comment|/*  for old versions of GtkHSV, we pack the thing into an alignment        *  and force the alignment to have a small requisition, because        *  it will be smart enough to deal with a larger allocation        */
 name|GtkWidget
 modifier|*
 name|alignment
@@ -609,6 +627,20 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|alignment
+argument_list|)
+expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|alignment
+argument_list|,
+literal|"size-request"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|colorsel_wheel_size_request
+argument_list|)
+argument_list|,
+name|wheel
 argument_list|)
 expr_stmt|;
 name|frame
@@ -642,6 +674,20 @@ operator|->
 name|hsv
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gtk_check_version
+argument_list|(
+literal|2
+argument_list|,
+literal|13
+argument_list|,
+literal|7
+argument_list|)
+condition|)
+block|{
+comment|/*  for new versions of GtkHSV we don't need above alignment hack,        *  because it is smart enough by itself to cope with a larger        *  allocation than it requested        */
 name|g_signal_connect
 argument_list|(
 name|wheel
@@ -658,6 +704,7 @@ argument_list|,
 name|wheel
 argument_list|)
 expr_stmt|;
+block|}
 name|g_signal_connect
 argument_list|(
 name|wheel
@@ -844,12 +891,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|colorsel_wheel_size_request (GtkWidget * hsv,GtkRequisition * requisition,ColorselWheel * wheel)
+DECL|function|colorsel_wheel_size_request (GtkWidget * dont_use,GtkRequisition * requisition,ColorselWheel * wheel)
 name|colorsel_wheel_size_request
 parameter_list|(
 name|GtkWidget
 modifier|*
-name|hsv
+name|dont_use
 parameter_list|,
 name|GtkRequisition
 modifier|*
@@ -868,6 +915,8 @@ name|focus_padding
 decl_stmt|;
 name|gtk_widget_style_get
 argument_list|(
+name|wheel
+operator|->
 name|hsv
 argument_list|,
 literal|"focus-line-width"
