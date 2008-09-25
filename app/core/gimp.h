@@ -155,6 +155,11 @@ name|GimpGui
 name|gui
 decl_stmt|;
 comment|/* gui vtable */
+DECL|member|restored
+name|gboolean
+name|restored
+decl_stmt|;
+comment|/* becomes TRUE in gimp_restore() */
 DECL|member|busy
 name|gint
 name|busy
@@ -497,6 +502,17 @@ name|gimp
 parameter_list|,
 name|GimpInitStatusFunc
 name|status_callback
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_is_restored
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -845,6 +845,15 @@ argument_list|(
 name|abort_message
 argument_list|)
 expr_stmt|;
+name|the_gui_gimp
+operator|=
+name|gimp
+expr_stmt|;
+name|gui_unique_init
+argument_list|(
+name|gimp
+argument_list|)
+expr_stmt|;
 name|gimp_widgets_init
 argument_list|(
 name|gui_help_func
@@ -860,10 +869,6 @@ name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_COLOR_SELECT
 argument_list|)
-expr_stmt|;
-name|the_gui_gimp
-operator|=
-name|gimp
 expr_stmt|;
 comment|/*  disable automatic startup notification  */
 name|gtk_window_set_auto_startup_notification
@@ -2078,11 +2083,6 @@ name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gui_unique_init
-argument_list|(
-name|gimp
 argument_list|)
 expr_stmt|;
 if|if

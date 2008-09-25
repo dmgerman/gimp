@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274fc07a0103
+DECL|enum|__anon2b2c1f530103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -755,6 +755,12 @@ operator|->
 name|pdb_compat_mode
 operator|=
 name|GIMP_PDB_COMPAT_OFF
+expr_stmt|;
+name|gimp
+operator|->
+name|restored
+operator|=
+name|FALSE
 expr_stmt|;
 name|gimp_gui_init
 argument_list|(
@@ -2602,6 +2608,12 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
+name|restored
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -3618,6 +3630,38 @@ argument_list|,
 name|status_callback
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_is_restored:  * @gimp: a #Gimp object  *  * Return value: %TRUE if GIMP is completely started, %FALSE otherwise.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_is_restored (Gimp * gimp)
+name|gimp_is_restored
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp
+operator|->
+name|restored
+return|;
 block|}
 end_function
 

@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d8c3d60108
+DECL|struct|__anon2baaccd60108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -1059,7 +1059,7 @@ argument_list|,
 name|percentage
 argument_list|)
 expr_stmt|;
-while|while
+if|if
 condition|(
 name|gtk_events_pending
 argument_list|()

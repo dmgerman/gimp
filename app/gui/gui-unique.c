@@ -409,7 +409,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae14890108
+DECL|struct|__anon277322ac0108
 block|{
 DECL|member|name
 name|gchar
@@ -522,6 +522,18 @@ modifier|*
 name|data
 parameter_list|)
 block|{
+comment|/*  We want to be called again later in case that GIMP is not fully    *  started yet.    */
+if|if
+condition|(
+operator|!
+name|gimp_is_restored
+argument_list|(
+name|unique_gimp
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
 if|if
 condition|(
 name|data
@@ -681,6 +693,13 @@ name|source
 operator|=
 name|g_idle_source_new
 argument_list|()
+expr_stmt|;
+name|g_source_set_priority
+argument_list|(
+name|source
+argument_list|,
+name|G_PRIORITY_LOW
+argument_list|)
 expr_stmt|;
 name|g_source_set_closure
 argument_list|(
