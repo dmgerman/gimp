@@ -108,6 +108,16 @@ name|GtkHSV
 typedef|;
 end_typedef
 
+begin_decl_stmt
+name|GType
+name|gtk_hsv_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_function_decl
 name|GtkWidget
 modifier|*
