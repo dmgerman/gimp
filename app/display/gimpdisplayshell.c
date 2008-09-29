@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2769dd500103
+DECL|enum|__anon2b14dd6c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -336,7 +336,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2769dd500203
+DECL|enum|__anon2b14dd6c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3314,6 +3314,7 @@ name|shell
 operator|->
 name|no_image_options
 expr_stmt|;
+comment|/*        * These values are arbitrary. The width is determined by the        * menubar and the height is chosen to give a window aspect        * ratio of roughly 3:1 (as requested by the UI team).        */
 name|image_width
 operator|=
 name|GIMP_DEFAULT_IMAGE_WIDTH
@@ -3321,6 +3322,8 @@ expr_stmt|;
 name|image_height
 operator|=
 name|GIMP_DEFAULT_IMAGE_HEIGHT
+operator|/
+literal|3
 expr_stmt|;
 block|}
 name|shell
