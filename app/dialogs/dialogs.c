@@ -1285,6 +1285,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|NULL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|global_toolbox_factory
@@ -1301,6 +1303,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|dialogs_toolbox_get
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_set_constructor
@@ -1324,6 +1328,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|dialogs_dock_new
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_set_constructor
@@ -1347,6 +1353,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|NULL
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 for|for

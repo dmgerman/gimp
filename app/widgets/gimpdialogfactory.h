@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be0afb60103
+DECL|enum|__anon27d12c290103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -276,6 +276,10 @@ name|GList
 modifier|*
 name|open_dialogs
 decl_stmt|;
+DECL|member|toggle_visibility
+name|gboolean
+name|toggle_visibility
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -360,6 +364,9 @@ name|menu_factory
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_dock_func
+parameter_list|,
+name|gboolean
+name|toggle_visibility
 parameter_list|)
 function_decl|;
 end_function_decl

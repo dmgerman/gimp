@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be5aa1c0103
+DECL|enum|__anon298a6a0d0103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -593,6 +593,12 @@ name|open_dialogs
 operator|=
 name|NULL
 expr_stmt|;
+name|factory
+operator|->
+name|toggle_visibility
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 
@@ -930,7 +936,7 @@ end_function
 begin_function
 name|GimpDialogFactory
 modifier|*
-DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpMenuFactory * menu_factory,GimpDialogNewFunc new_dock_func)
+DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpMenuFactory * menu_factory,GimpDialogNewFunc new_dock_func,gboolean toggle_visibility)
 name|gimp_dialog_factory_new
 parameter_list|(
 specifier|const
@@ -948,6 +954,9 @@ name|menu_factory
 parameter_list|,
 name|GimpDialogNewFunc
 name|new_dock_func
+parameter_list|,
+name|gboolean
+name|toggle_visibility
 parameter_list|)
 block|{
 name|GimpDialogFactory
@@ -1086,6 +1095,12 @@ operator|->
 name|new_dock_func
 operator|=
 name|new_dock_func
+expr_stmt|;
+name|factory
+operator|->
+name|toggle_visibility
+operator|=
+name|toggle_visibility
 expr_stmt|;
 return|return
 name|factory
@@ -4937,6 +4952,14 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|factory
+operator|->
+name|toggle_visibility
+condition|)
+return|return;
 for|for
 control|(
 name|list
