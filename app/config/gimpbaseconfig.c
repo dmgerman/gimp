@@ -92,7 +92,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dc23890103
+DECL|enum|__anon28ef4a700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,6 +108,10 @@ name|PROP_NUM_PROCESSORS
 block|,
 DECL|enumerator|PROP_TILE_CACHE_SIZE
 name|PROP_TILE_CACHE_SIZE
+block|,
+comment|/* ignored, only for backward compatibility: */
+DECL|enumerator|PROP_STINGY_MEMORY_USE
+name|PROP_STINGY_MEMORY_USE
 block|}
 enum|;
 end_enum
@@ -335,6 +339,22 @@ operator||
 name|GIMP_CONFIG_PARAM_CONFIRM
 argument_list|)
 expr_stmt|;
+comment|/*  only for backward compatibility:  */
+name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_STINGY_MEMORY_USE
+argument_list|,
+literal|"stingy-memory-use"
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_CONFIG_PARAM_IGNORE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -501,6 +521,11 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_STINGY_MEMORY_USE
+case|:
+comment|/* ignored */
+break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -603,6 +628,11 @@ operator|->
 name|tile_cache_size
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|PROP_STINGY_MEMORY_USE
+case|:
+comment|/* ignored */
 break|break;
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
