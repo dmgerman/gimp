@@ -1814,7 +1814,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon29fb4b800108
+DECL|struct|__anon286e02e80108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -4063,7 +4063,7 @@ name|attr
 operator|=
 name|pango_attr_weight_new
 argument_list|(
-name|PANGO_WEIGHT_SEMIBOLD
+name|weight
 argument_list|)
 expr_stmt|;
 name|attr
