@@ -399,6 +399,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_pango_layout_set_scale
+parameter_list|(
+name|PangoLayout
+modifier|*
+name|layout
+parameter_list|,
+name|double
+name|scale
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_pango_layout_set_weight
 parameter_list|(
 name|PangoLayout

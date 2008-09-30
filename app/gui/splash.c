@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2baaccd60108
+DECL|struct|__anon29793c2b0108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -616,6 +616,15 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
+name|gimp_pango_layout_set_weight
+argument_list|(
+name|splash
+operator|->
+name|upper
+argument_list|,
+name|PANGO_WEIGHT_SEMIBOLD
+argument_list|)
+expr_stmt|;
 name|splash
 operator|->
 name|lower
@@ -629,13 +638,13 @@ argument_list|,
 literal|""
 argument_list|)
 expr_stmt|;
-name|gimp_pango_layout_set_weight
+name|gimp_pango_layout_set_scale
 argument_list|(
 name|splash
 operator|->
-name|upper
+name|lower
 argument_list|,
-name|PANGO_WEIGHT_BOLD
+name|PANGO_SCALE_SMALL
 argument_list|)
 expr_stmt|;
 comment|/*  this sets the initial layout positions  */
