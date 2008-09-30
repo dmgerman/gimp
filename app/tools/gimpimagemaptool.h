@@ -129,6 +129,11 @@ name|GObject
 modifier|*
 name|config
 decl_stmt|;
+DECL|member|default_config
+name|GObject
+modifier|*
+name|default_config
+decl_stmt|;
 DECL|member|apply_func
 name|GimpImageMapApplyFunc
 name|apply_func
