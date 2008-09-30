@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29793c2b0108
+DECL|struct|__anon28b546240108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -614,15 +614,6 @@ operator|->
 name|area
 argument_list|,
 literal|""
-argument_list|)
-expr_stmt|;
-name|gimp_pango_layout_set_weight
-argument_list|(
-name|splash
-operator|->
-name|upper
-argument_list|,
-name|PANGO_WEIGHT_SEMIBOLD
 argument_list|)
 expr_stmt|;
 name|splash
