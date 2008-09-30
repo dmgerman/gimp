@@ -134,7 +134,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290dce480108
+DECL|struct|__anon2a0f3f2e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1026,6 +1026,24 @@ operator|->
 name|template
 operator|->
 name|comment
+argument_list|)
+expr_stmt|;
+comment|/*  make sure the resolution values are copied first (see bug #546924)  */
+name|gimp_config_sync
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|template
+argument_list|)
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|dialog
+operator|->
+name|template
+argument_list|)
+argument_list|,
+name|GIMP_TEMPLATE_PARAM_COPY_FIRST
 argument_list|)
 expr_stmt|;
 name|gimp_config_sync

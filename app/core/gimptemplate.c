@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4d7fb0103
+DECL|enum|__anon28d4c2c00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -361,6 +361,8 @@ argument_list|,
 name|DEFAULT_RESOLUTION
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_TEMPLATE_PARAM_COPY_FIRST
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_RESOLUTION
@@ -379,6 +381,8 @@ argument_list|,
 name|DEFAULT_RESOLUTION
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
+operator||
+name|GIMP_TEMPLATE_PARAM_COPY_FIRST
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UNIT

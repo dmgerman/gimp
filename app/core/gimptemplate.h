@@ -22,6 +22,14 @@ directive|include
 file|"gimpviewable.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_TEMPLATE_PARAM_COPY_FIRST
+define|#
+directive|define
+name|GIMP_TEMPLATE_PARAM_COPY_FIRST
+value|(1<< (8 + G_PARAM_USER_SHIFT))
+end_define
+
 begin_comment
 comment|/*  The default image aspect ratio is the golden mean. We use  *  two adjacent fibonacci numbers for the unstable series and  *  some less odd values for the stable version.  */
 end_comment

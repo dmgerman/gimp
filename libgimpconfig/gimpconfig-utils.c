@@ -643,7 +643,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* we use the internal versions here for a number of reasons:    *  - it saves a g_list_reverse()    *  - it avoids duplicated parameter checks    *  - it makes GimpTemplateEditor work (resolution is set before size)    */
+comment|/* we use the internal versions here for a number of reasons:    *  - it saves a g_list_reverse()    *  - it avoids duplicated parameter checks    */
 if|if
 condition|(
 name|G_TYPE_FROM_INSTANCE
