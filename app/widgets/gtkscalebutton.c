@@ -13,12 +13,23 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_WIN32
+end_ifndef
+
 begin_define
 DECL|macro|_GNU_SOURCE
 define|#
 directive|define
 name|_GNU_SOURCE
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -180,7 +191,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc3aa90103
+DECL|enum|__anon276f91550103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -199,7 +210,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc3aa90203
+DECL|enum|__anon276f91550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
