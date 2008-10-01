@@ -9,12 +9,23 @@ directive|include
 file|"config.h"
 end_include
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|_WIN32
+end_ifndef
+
 begin_define
 DECL|macro|_GNU_SOURCE
 define|#
 directive|define
 name|_GNU_SOURCE
 end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
