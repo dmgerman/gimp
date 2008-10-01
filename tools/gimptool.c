@@ -28,6 +28,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<sys/stat.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<glib.h>
 end_include
 
@@ -36,6 +42,23 @@ include|#
 directive|include
 file|"libgimpbase/gimpversion.h"
 end_include
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|G_OS_WIN32
+end_ifdef
+
+begin_include
+include|#
+directive|include
+file|"libgimpbase/gimpwin32-io.h"
+end_include
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_decl_stmt
 DECL|variable|silent
@@ -207,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon291427b30108
+DECL|struct|__anon2b639b000108
 specifier|static
 struct|struct
 block|{
@@ -1802,10 +1825,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_build (char * what)
+DECL|function|do_build (const gchar * what)
 name|do_build
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -1829,10 +1853,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_build_noui (char * what)
+DECL|function|do_build_noui (const gchar * what)
 name|do_build_noui
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -1856,10 +1881,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_build_nogimpui (char * what)
+DECL|function|do_build_nogimpui (const gchar * what)
 name|do_build_nogimpui
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -1928,10 +1954,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install (char * what)
+DECL|function|do_install (const gchar * what)
 name|do_install
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -1958,10 +1985,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_noui (char * what)
+DECL|function|do_install_noui (const gchar * what)
 name|do_install_noui
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -1988,10 +2016,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_nogimpui (char * what)
+DECL|function|do_install_nogimpui (const gchar * what)
 name|do_install_nogimpui
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2065,10 +2094,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_admin (char * what)
+DECL|function|do_install_admin (const gchar * what)
 name|do_install_admin
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2095,10 +2125,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_admin_noui (char * what)
+DECL|function|do_install_admin_noui (const gchar * what)
 name|do_install_admin_noui
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2125,10 +2156,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_admin_nogimpui (char * what)
+DECL|function|do_install_admin_nogimpui (const gchar * what)
 name|do_install_admin_nogimpui
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2155,18 +2187,39 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_bin_2 (gchar * dir,gchar * what)
+DECL|function|do_install_bin_2 (const gchar * dir,const gchar * what)
 name|do_install_bin_2
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dir
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|what
 parameter_list|)
 block|{
+name|g_mkdir_with_parents
+argument_list|(
+name|dir
+argument_list|,
+name|S_IRUSR
+operator||
+name|S_IXUSR
+operator||
+name|S_IWUSR
+operator||
+name|S_IRGRP
+operator||
+name|S_IXGRP
+operator||
+name|S_IROTH
+operator||
+name|S_IXOTH
+argument_list|)
+expr_stmt|;
 name|maybe_run
 argument_list|(
 name|g_strconcat
@@ -2191,10 +2244,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_bin (char * what)
+DECL|function|do_install_bin (const gchar * what)
 name|do_install_bin
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2215,10 +2269,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_admin_bin (char * what)
+DECL|function|do_install_admin_bin (const gchar * what)
 name|do_install_admin_bin
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2239,13 +2294,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_uninstall (gchar * dir,gchar * what)
+DECL|function|do_uninstall (const gchar * dir,const gchar * what)
 name|do_uninstall
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|dir
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|what
@@ -2274,11 +2331,13 @@ end_function
 
 begin_function
 specifier|static
+specifier|const
 name|gchar
 modifier|*
-DECL|function|maybe_append_exe (gchar * what)
+DECL|function|maybe_append_exe (const gchar * what)
 name|maybe_append_exe
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|what
@@ -2332,10 +2391,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_uninstall_bin (char * what)
+DECL|function|do_uninstall_bin (const gchar * what)
 name|do_uninstall_bin
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2359,10 +2419,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_uninstall_admin_bin (char * what)
+DECL|function|do_uninstall_admin_bin (const gchar * what)
 name|do_uninstall_admin_bin
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2438,10 +2499,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_script (char * what)
+DECL|function|do_install_script (const gchar * what)
 name|do_install_script
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2522,10 +2584,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_install_admin_script (char * what)
+DECL|function|do_install_admin_script (const gchar * what)
 name|do_install_admin_script
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2546,10 +2609,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_uninstall_script (char * what)
+DECL|function|do_uninstall_script (const gchar * what)
 name|do_uninstall_script
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
@@ -2570,10 +2634,11 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|do_uninstall_admin_script (char * what)
+DECL|function|do_uninstall_admin_script (const gchar * what)
 name|do_uninstall_admin_script
 parameter_list|(
-name|char
+specifier|const
+name|gchar
 modifier|*
 name|what
 parameter_list|)
