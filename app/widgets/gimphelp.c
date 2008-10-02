@@ -1973,8 +1973,10 @@ operator|+
 literal|1
 argument_list|)
 expr_stmt|;
+operator|(
 operator|*
 name|domain_names
+operator|)
 index|[
 literal|0
 index|]
@@ -1984,8 +1986,10 @@ argument_list|(
 literal|"http://www.gimp.org/help"
 argument_list|)
 expr_stmt|;
+operator|(
 operator|*
 name|domain_uris
+operator|)
 index|[
 literal|0
 index|]
@@ -2009,8 +2013,10 @@ name|i
 operator|++
 control|)
 block|{
+operator|(
 operator|*
 name|domain_names
+operator|)
 index|[
 name|i
 operator|+
@@ -2022,8 +2028,10 @@ index|[
 name|i
 index|]
 expr_stmt|;
+operator|(
 operator|*
 name|domain_uris
+operator|)
 index|[
 name|i
 operator|+
