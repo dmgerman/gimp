@@ -252,7 +252,7 @@ argument_list|,
 name|G_FILE_ERROR
 argument_list|,
 name|G_FILE_ERROR_FAILED
-argument_list|,,
+argument_list|,
 literal|"pipe() failed: %s"
 argument_list|,
 name|g_strerror
@@ -292,7 +292,7 @@ argument_list|,
 name|G_FILE_ERROR
 argument_list|,
 name|G_FILE_ERROR_FAILED
-argument_list|,,
+argument_list|,
 literal|"fork() failed: %s"
 argument_list|,
 name|g_strerror
