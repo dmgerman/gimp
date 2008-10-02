@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c26ec670103
+DECL|enum|__anon2bf84f780103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c26ec670203
+DECL|enum|__anon2bf84f780203
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c26ec670303
+DECL|enum|__anon2bf84f780303
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c26ec670403
+DECL|enum|__anon2bf84f780403
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -205,7 +205,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c26ec670503
+DECL|enum|__anon2bf84f780503
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW
@@ -217,6 +217,46 @@ comment|/*< desc="quality|High">*/
 DECL|typedef|GimpZoomQuality
 block|}
 name|GimpZoomQuality
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_ZOOM_FOCUS
+define|#
+directive|define
+name|GIMP_TYPE_ZOOM_FOCUS
+value|(gimp_zoom_focus_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_zoom_focus_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2bf84f780603
+block|{
+DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
+block|,
+comment|/* Make a best guess                       */
+DECL|enumerator|GIMP_ZOOM_FOCUS_POINTER
+name|GIMP_ZOOM_FOCUS_POINTER
+block|,
+comment|/* Use the mouse cursor (if within canvas) */
+DECL|enumerator|GIMP_ZOOM_FOCUS_IMAGE_CENTER
+name|GIMP_ZOOM_FOCUS_IMAGE_CENTER
+comment|/* Use the image center                    */
+DECL|typedef|GimpZoomFocus
+block|}
+name|GimpZoomFocus
 typedef|;
 end_typedef
 

@@ -98,6 +98,9 @@ name|zoom_type
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|GimpZoomFocus
+name|zoom_focus
 parameter_list|)
 function_decl|;
 end_function_decl

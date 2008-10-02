@@ -458,6 +458,8 @@ argument_list|,
 name|GIMP_ZOOM_OUT_MAX
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -471,6 +473,8 @@ argument_list|,
 name|GIMP_ZOOM_IN_MAX
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -484,6 +488,8 @@ argument_list|,
 name|GIMP_ZOOM_OUT
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -497,6 +503,8 @@ argument_list|,
 name|GIMP_ZOOM_IN
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -510,6 +518,8 @@ argument_list|,
 name|GIMP_ZOOM_OUT_MORE
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -523,6 +533,8 @@ argument_list|,
 name|GIMP_ZOOM_IN_MORE
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -590,6 +602,8 @@ argument_list|,
 name|GIMP_ZOOM_TO
 argument_list|,
 name|scale
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 break|break;
@@ -688,6 +702,8 @@ operator|)
 name|value
 operator|/
 literal|10000
+argument_list|,
+name|GIMP_ZOOM_FOCUS_IMAGE_CENTER
 argument_list|)
 expr_stmt|;
 block|}

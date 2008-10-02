@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d73b720108
+DECL|struct|__anon2ae98f410108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -1004,6 +1004,8 @@ argument_list|,
 name|scale
 operator|/
 literal|100.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 block|}

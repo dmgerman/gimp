@@ -229,6 +229,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|y
+parameter_list|,
+name|GimpZoomFocus
+name|zoom_focus
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1007,7 +1010,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_scale (GimpDisplayShell * shell,GimpZoomType zoom_type,gdouble new_scale)
+DECL|function|gimp_display_shell_scale (GimpDisplayShell * shell,GimpZoomType zoom_type,gdouble new_scale,GimpZoomFocus zoom_focus)
 name|gimp_display_shell_scale
 parameter_list|(
 name|GimpDisplayShell
@@ -1019,6 +1022,9 @@ name|zoom_type
 parameter_list|,
 name|gdouble
 name|new_scale
+parameter_list|,
+name|GimpZoomFocus
+name|zoom_focus
 parameter_list|)
 block|{
 name|gint
@@ -1151,6 +1157,8 @@ name|x
 argument_list|,
 operator|&
 name|y
+argument_list|,
+name|zoom_focus
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scale_to
@@ -1358,6 +1366,8 @@ argument_list|,
 name|GIMP_ZOOM_TO
 argument_list|,
 name|zoom_factor
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scroll_center_image
@@ -1650,6 +1660,8 @@ argument_list|,
 name|GIMP_ZOOM_TO
 argument_list|,
 name|zoom_factor
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_scroll_center_image
@@ -2782,7 +2794,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gint * x,gint * y)
+DECL|function|gimp_display_shell_scale_get_zoom_focus (GimpDisplayShell * shell,gdouble new_scale,gdouble current_scale,gint * x,gint * y,GimpZoomFocus zoom_focus)
 name|gimp_display_shell_scale_get_zoom_focus
 parameter_list|(
 name|GimpDisplayShell
@@ -2802,6 +2814,9 @@ parameter_list|,
 name|gint
 modifier|*
 name|y
+parameter_list|,
+name|GimpZoomFocus
+name|zoom_focus
 parameter_list|)
 block|{
 name|gint
@@ -2974,6 +2989,43 @@ expr_stmt|;
 block|}
 block|}
 comment|/* Decide which one to use for each axis */
+switch|switch
+condition|(
+name|zoom_focus
+condition|)
+block|{
+case|case
+name|GIMP_ZOOM_FOCUS_POINTER
+case|:
+operator|*
+name|x
+operator|=
+name|other_x
+expr_stmt|;
+operator|*
+name|y
+operator|=
+name|other_y
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ZOOM_FOCUS_IMAGE_CENTER
+case|:
+operator|*
+name|x
+operator|=
+name|image_center_x
+expr_stmt|;
+operator|*
+name|y
+operator|=
+name|image_center_y
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
+case|:
+default|default:
 block|{
 name|gboolean
 name|within_horizontally
@@ -3035,6 +3087,8 @@ name|image_center_y
 else|:
 name|other_y
 expr_stmt|;
+block|}
+break|break;
 block|}
 block|}
 end_function

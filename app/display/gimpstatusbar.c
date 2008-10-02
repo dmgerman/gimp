@@ -5890,6 +5890,8 @@ name|gimp_scale_combo_box_get_scale
 argument_list|(
 name|combo
 argument_list|)
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 block|}

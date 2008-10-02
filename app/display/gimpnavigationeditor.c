@@ -2208,6 +2208,8 @@ argument_list|,
 name|direction
 argument_list|,
 literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 block|}
@@ -2396,6 +2398,8 @@ argument_list|(
 name|adj
 argument_list|)
 argument_list|)
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 block|}
