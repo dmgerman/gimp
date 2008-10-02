@@ -890,6 +890,8 @@ block|,
 literal|"introspect"
 block|,
 literal|"stress"
+block|,
+literal|"text"
 block|}
 decl_stmt|;
 name|gint
