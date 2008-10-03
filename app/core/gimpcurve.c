@@ -18,6 +18,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_comment
+comment|/* memcmp */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|<glib-object.h>
 end_include
 
@@ -65,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b67d5310103
+DECL|enum|__anon27bc9d840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
