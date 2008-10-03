@@ -432,7 +432,7 @@ literal|32
 condition|)
 block|{
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|err
 decl_stmt|;
@@ -586,7 +586,7 @@ block|}
 name|g_message
 argument_list|(
 operator|(
-literal|"Failed to open the url '%s'\n%s"
+literal|"Failed to open '%s': %s"
 operator|)
 argument_list|,
 name|url
@@ -594,7 +594,6 @@ argument_list|,
 name|err
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: end of currently intentionaly untranslated */
 return|return
 name|FALSE
 return|;
