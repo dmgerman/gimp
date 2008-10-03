@@ -402,11 +402,9 @@ block|{
 ifdef|#
 directive|ifdef
 name|G_OS_WIN32
-return|return
-operator|(
-operator|(
-name|gint
-operator|)
+name|HINSTANCE
+name|hinst
+init|=
 name|ShellExecute
 argument_list|(
 name|GetDesktopWindow
@@ -422,9 +420,187 @@ name|NULL
 argument_list|,
 name|SW_SHOW
 argument_list|)
-operator|>
-literal|32
+decl_stmt|;
+if|if
+condition|(
+operator|(
+name|gint
 operator|)
+name|hinst
+operator|<=
+literal|32
+condition|)
+block|{
+specifier|const
+name|char
+modifier|*
+name|err
+decl_stmt|;
+comment|/* FIXME: should be translated when 2.6 got it's own branch */
+switch|switch
+condition|(
+operator|(
+name|gint
+operator|)
+name|hinst
+condition|)
+block|{
+case|case
+literal|0
+case|:
+name|err
+operator|=
+operator|(
+literal|"The operating system is out of memory or resources."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|ERROR_FILE_NOT_FOUND
+case|:
+name|err
+operator|=
+operator|(
+literal|"The specified file was not found."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|ERROR_PATH_NOT_FOUND
+case|:
+name|err
+operator|=
+operator|(
+literal|"The specified path was not found."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|ERROR_BAD_FORMAT
+case|:
+name|err
+operator|=
+operator|(
+literal|"The .exe file is invalid (non-Microsoft Win32 .exe or error in .exe image)."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_ACCESSDENIED
+case|:
+name|err
+operator|=
+operator|(
+literal|"The operating system denied access to the specified file."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_ASSOCINCOMPLETE
+case|:
+name|err
+operator|=
+operator|(
+literal|"The file name association is incomplete or invalid."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_DDEBUSY
+case|:
+name|err
+operator|=
+operator|(
+literal|"DDE transaction busy"
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_DDEFAIL
+case|:
+name|err
+operator|=
+operator|(
+literal|"The DDE transaction failed."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_DDETIMEOUT
+case|:
+name|err
+operator|=
+operator|(
+literal|"The DDE transaction timed out."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_DLLNOTFOUND
+case|:
+name|err
+operator|=
+operator|(
+literal|"The specified DLL was not found."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_NOASSOC
+case|:
+name|err
+operator|=
+operator|(
+literal|"There is no application associated with the given file name extension."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_OOM
+case|:
+name|err
+operator|=
+operator|(
+literal|"There was not enough memory to complete the operation."
+operator|)
+expr_stmt|;
+break|break;
+case|case
+name|SE_ERR_SHARE
+case|:
+name|err
+operator|=
+operator|(
+literal|"A sharing violation occurred."
+operator|)
+expr_stmt|;
+break|break;
+default|default :
+name|err
+operator|=
+operator|(
+literal|"Unknown Windows error."
+operator|)
+expr_stmt|;
+block|}
+name|g_message
+argument_list|(
+operator|(
+literal|"Failed to open the url '%s'\n%s"
+operator|)
+argument_list|,
+name|url
+argument_list|,
+name|err
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: end of currently intentionaly untranslated */
+return|return
+name|FALSE
+return|;
+block|}
+return|return
+name|TRUE
 return|;
 else|#
 directive|else
