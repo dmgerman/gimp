@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<errno.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<curl/curl.h>
 end_include
 
@@ -465,7 +471,7 @@ argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
-name|filename
+name|tmpname
 argument_list|)
 argument_list|,
 name|g_strerror
