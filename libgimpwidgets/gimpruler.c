@@ -50,7 +50,7 @@ DECL|macro|DEFAULT_RULER_FONT_SCALE
 define|#
 directive|define
 name|DEFAULT_RULER_FONT_SCALE
-value|PANGO_SCALE_X_SMALL
+value|PANGO_SCALE_SMALL
 end_define
 
 begin_define
@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290057080103
+DECL|enum|__anon2c6e2bc10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -104,7 +104,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290057080208
+DECL|struct|__anon2c6e2bc10208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -162,7 +162,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon290057080308
+DECL|struct|__anon2c6e2bc10308
 block|{
 DECL|member|ruler_scale
 specifier|const
