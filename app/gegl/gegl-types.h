@@ -22,12 +22,6 @@ directive|include
 file|"core/core-types.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gegl/gegl-types.h"
-end_include
-
 begin_comment
 comment|/*  operations  */
 end_comment
