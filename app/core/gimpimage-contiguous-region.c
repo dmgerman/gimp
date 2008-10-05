@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287fe3d50108
+DECL|struct|__anon2c639c000108
 block|{
 DECL|member|image
 name|GimpImage
@@ -236,7 +236,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|find_contiguous_segment
 parameter_list|(
 name|GimpImage
@@ -1963,7 +1963,7 @@ end_function
 
 begin_function
 specifier|static
-name|int
+name|gboolean
 DECL|function|find_contiguous_segment (GimpImage * image,const guchar * col,PixelRegion * src,PixelRegion * mask,gint width,gint bytes,GimpImageType src_type,gboolean has_alpha,gboolean select_transparent,GimpSelectCriterion select_criterion,gboolean antialias,gint threshold,gint initial,gint * start,gint * end)
 name|find_contiguous_segment
 parameter_list|(
@@ -2735,7 +2735,6 @@ specifier|const
 name|guchar
 operator|*
 operator|)
-operator|(
 name|tile_data_pointer
 argument_list|(
 name|tile
@@ -2744,7 +2743,6 @@ name|x
 argument_list|,
 name|y
 argument_list|)
-operator|)
 expr_stmt|;
 name|tile_release
 argument_list|(
