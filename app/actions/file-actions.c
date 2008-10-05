@@ -1013,13 +1013,6 @@ define|\
 value|gimp_action_group_set_action_sensitive (group, action, (condition) != 0)
 name|SET_SENSITIVE
 argument_list|(
-literal|"file-open-as-layers"
-argument_list|,
-name|image
-argument_list|)
-expr_stmt|;
-name|SET_SENSITIVE
-argument_list|(
 literal|"file-save"
 argument_list|,
 name|image

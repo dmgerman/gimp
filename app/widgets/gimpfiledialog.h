@@ -111,6 +111,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+DECL|member|open_as_layers
+name|gboolean
+name|open_as_layers
+decl_stmt|;
 DECL|member|save_a_copy
 name|gboolean
 name|save_a_copy
@@ -249,7 +253,25 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_file_dialog_set_image
+name|gimp_file_dialog_set_open_image
+parameter_list|(
+name|GimpFileDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gboolean
+name|open_as_layers
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_file_dialog_set_save_image
 parameter_list|(
 name|GimpFileDialog
 modifier|*
