@@ -835,13 +835,6 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|GTimer
-modifier|*
-name|timer
-init|=
-name|g_timer_new
-argument_list|()
-decl_stmt|;
 name|scale_region_tile
 argument_list|(
 name|srcPR
@@ -853,23 +846,6 @@ argument_list|,
 name|progress_callback
 argument_list|,
 name|progress_data
-argument_list|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"scale: %g sec\n"
-argument_list|,
-name|g_timer_elapsed
-argument_list|(
-name|timer
-argument_list|,
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_timer_destroy
-argument_list|(
-name|timer
 argument_list|)
 expr_stmt|;
 return|return;
