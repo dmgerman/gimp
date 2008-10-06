@@ -205,6 +205,14 @@ literal|"<Image>/File/Create/Acquire"
 block|}
 block|,
 block|{
+literal|"<Toolbox>"
+block|,
+name|NULL
+block|,
+literal|"<Image>"
+block|}
+block|,
+block|{
 literal|"<Image>/File/Acquire"
 block|,
 name|NULL
