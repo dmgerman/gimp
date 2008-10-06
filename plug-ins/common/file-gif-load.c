@@ -839,7 +839,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27f153430108
+DECL|struct|__anon28c06fe90108
 block|{
 DECL|member|Width
 name|guint
@@ -883,7 +883,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27f153430208
+DECL|struct|__anon28c06fe90208
 block|{
 DECL|member|transparent
 name|gint
@@ -2723,16 +2723,11 @@ name|curbit
 operator|>=
 name|lastbit
 condition|)
-block|{
 name|g_message
 argument_list|(
 literal|"Ran off the end of my bits"
 argument_list|)
 expr_stmt|;
-name|gimp_quit
-argument_list|()
-expr_stmt|;
-block|}
 return|return
 operator|-
 literal|1
