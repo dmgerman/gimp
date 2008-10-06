@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon279eeadf0103
+DECL|enum|__anon2c3dbc030103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279eeadf0203
+DECL|enum|__anon2c3dbc030203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11527,34 +11527,6 @@ argument_list|,
 name|active_layer
 argument_list|)
 expr_stmt|;
-name|gimp_item_set_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-argument_list|,
-name|image
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|layer
-operator|->
-name|mask
-condition|)
-name|gimp_item_set_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer
-operator|->
-name|mask
-argument_list|)
-argument_list|,
-name|image
-argument_list|)
-expr_stmt|;
 comment|/*  If the layer is a floating selection, set the ID  */
 if|if
 condition|(
@@ -13008,16 +12980,6 @@ argument_list|,
 name|active_channel
 argument_list|)
 expr_stmt|;
-name|gimp_item_set_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|channel
-argument_list|)
-argument_list|,
-name|image
-argument_list|)
-expr_stmt|;
 comment|/*  add the layer to the list at the specified position  */
 if|if
 condition|(
@@ -13997,16 +13959,6 @@ argument_list|,
 name|vectors
 argument_list|,
 name|active_vectors
-argument_list|)
-expr_stmt|;
-name|gimp_item_set_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
-name|image
 argument_list|)
 expr_stmt|;
 comment|/*  add the layer to the list at the specified position  */

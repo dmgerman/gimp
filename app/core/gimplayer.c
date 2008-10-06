@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7239b0103
+DECL|enum|__anon2957c67d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -177,7 +177,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b7239b0203
+DECL|enum|__anon2957c67d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4992,6 +4992,27 @@ argument_list|(
 name|GIMP_IS_LAYER_MASK
 argument_list|(
 name|mask
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+operator|==
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|mask
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
