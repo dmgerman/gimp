@@ -92,16 +92,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
-DECL|variable|initialize
-specifier|static
-name|gboolean
-name|initialize
-init|=
-name|TRUE
-decl_stmt|;
-end_decl_stmt
-
 begin_typedef
 DECL|struct|_TileList
 typedef|typedef
@@ -216,27 +206,28 @@ end_ifdef
 begin_decl_stmt
 DECL|variable|tile_cache_mutex
 specifier|static
-name|GStaticMutex
+name|GMutex
+modifier|*
 name|tile_cache_mutex
 init|=
-name|G_STATIC_MUTEX_INIT
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
 begin_define
-DECL|macro|CACHE_LOCK
+DECL|macro|TILE_CACHE_LOCK
 define|#
 directive|define
-name|CACHE_LOCK
-value|g_static_mutex_lock (&tile_cache_mutex)
+name|TILE_CACHE_LOCK
+value|g_mutex_lock (tile_cache_mutex)
 end_define
 
 begin_define
-DECL|macro|CACHE_UNLOCK
+DECL|macro|TILE_CACHE_UNLOCK
 define|#
 directive|define
-name|CACHE_UNLOCK
-value|g_static_mutex_unlock (&tile_cache_mutex)
+name|TILE_CACHE_UNLOCK
+value|g_mutex_unlock (tile_cache_mutex)
 end_define
 
 begin_else
@@ -245,26 +236,26 @@ directive|else
 end_else
 
 begin_define
-DECL|macro|CACHE_LOCK
+DECL|macro|TILE_CACHE_LOCK
 define|#
 directive|define
-name|CACHE_LOCK
+name|TILE_CACHE_LOCK
 end_define
 
 begin_comment
-DECL|macro|CACHE_LOCK
+DECL|macro|TILE_CACHE_LOCK
 comment|/* nothing */
 end_comment
 
 begin_define
-DECL|macro|CACHE_UNLOCK
+DECL|macro|TILE_CACHE_UNLOCK
 define|#
 directive|define
-name|CACHE_UNLOCK
+name|TILE_CACHE_UNLOCK
 end_define
 
 begin_comment
-DECL|macro|CACHE_UNLOCK
+DECL|macro|TILE_CACHE_UNLOCK
 comment|/* nothing */
 end_comment
 
@@ -282,15 +273,23 @@ name|gulong
 name|tile_cache_size
 parameter_list|)
 block|{
-if|if
-condition|(
-name|initialize
-condition|)
-block|{
-name|initialize
-operator|=
-name|FALSE
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+name|g_return_if_fail
+argument_list|(
+name|tile_cache_mutex
+operator|==
+name|NULL
+argument_list|)
 expr_stmt|;
+name|tile_cache_mutex
+operator|=
+name|g_mutex_new
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 name|clean_list
 operator|.
 name|first
@@ -315,7 +314,6 @@ name|max_cache_size
 operator|=
 name|tile_cache_size
 expr_stmt|;
-block|}
 block|}
 end_function
 
@@ -360,6 +358,20 @@ argument_list|(
 literal|0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|ENABLE_MP
+name|g_mutex_free
+argument_list|(
+name|tile_cache_mutex
+argument_list|)
+expr_stmt|;
+name|tile_cache_mutex
+operator|=
+name|NULL
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 
@@ -381,7 +393,7 @@ name|TileList
 modifier|*
 name|newlist
 decl_stmt|;
-name|CACHE_LOCK
+name|TILE_CACHE_LOCK
 expr_stmt|;
 if|if
 condition|(
@@ -639,7 +651,7 @@ block|}
 block|}
 name|out
 label|:
-name|CACHE_UNLOCK
+name|TILE_CACHE_UNLOCK
 expr_stmt|;
 block|}
 end_function
@@ -654,14 +666,14 @@ modifier|*
 name|tile
 parameter_list|)
 block|{
-name|CACHE_LOCK
+name|TILE_CACHE_LOCK
 expr_stmt|;
 name|tile_cache_flush_internal
 argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-name|CACHE_UNLOCK
+name|TILE_CACHE_UNLOCK
 expr_stmt|;
 block|}
 end_function
@@ -675,7 +687,7 @@ name|gulong
 name|cache_size
 parameter_list|)
 block|{
-name|CACHE_LOCK
+name|TILE_CACHE_LOCK
 expr_stmt|;
 name|max_cache_size
 operator|=
@@ -696,7 +708,7 @@ argument_list|()
 condition|)
 break|break;
 block|}
-name|CACHE_UNLOCK
+name|TILE_CACHE_UNLOCK
 expr_stmt|;
 block|}
 end_function
@@ -935,7 +947,7 @@ return|return
 name|FALSE
 return|;
 block|}
-name|CACHE_LOCK
+name|TILE_CACHE_LOCK
 expr_stmt|;
 if|if
 condition|(
@@ -1037,7 +1049,7 @@ operator|->
 name|size
 expr_stmt|;
 block|}
-name|CACHE_UNLOCK
+name|TILE_CACHE_UNLOCK
 expr_stmt|;
 return|return
 name|TRUE
