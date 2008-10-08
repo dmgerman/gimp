@@ -5656,9 +5656,6 @@ modifier|*
 name|pixels
 decl_stmt|;
 name|guint16
-name|comp_mode
-decl_stmt|;
-name|guint16
 name|alpha_chn
 decl_stmt|;
 name|guint16
@@ -6165,6 +6162,11 @@ operator|++
 name|cidx
 control|)
 block|{
+name|guint16
+name|comp_mode
+init|=
+name|PSD_COMP_RAW
+decl_stmt|;
 comment|/* Allocate channel record */
 name|lyr_chn
 index|[
