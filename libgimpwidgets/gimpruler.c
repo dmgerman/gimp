@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279206c10103
+DECL|enum|__anon2b5ee67d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279206c10208
+DECL|struct|__anon2b5ee67d0208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -159,7 +159,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon279206c10308
+DECL|struct|__anon2b5ee67d0308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -849,7 +849,6 @@ block|{
 case|case
 name|PROP_ORIENTATION
 case|:
-block|{
 name|priv
 operator|->
 name|orientation
@@ -867,7 +866,6 @@ name|ruler
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 name|PROP_UNIT
