@@ -5656,6 +5656,9 @@ modifier|*
 name|pixels
 decl_stmt|;
 name|guint16
+name|comp_mode
+decl_stmt|;
+name|guint16
 name|alpha_chn
 decl_stmt|;
 name|guint16
@@ -6469,7 +6472,7 @@ operator|->
 name|rows
 argument_list|)
 expr_stmt|;
-comment|/* Only read channel data if there is more data than                * what compression method that is used                */
+comment|/* Only read channel data if there is any channel                * data. Note that the channel data can contain a                * compression method but no actual data.                */
 if|if
 condition|(
 name|lyr_a
@@ -6483,13 +6486,10 @@ name|cidx
 index|]
 operator|.
 name|data_len
-operator|>
+operator|>=
 name|COMP_MODE_SIZE
 condition|)
 block|{
-name|guint16
-name|comp_mode
-decl_stmt|;
 if|if
 condition|(
 name|fread
@@ -6542,6 +6542,24 @@ argument_list|,
 name|comp_mode
 argument_list|)
 expr_stmt|;
+block|}
+if|if
+condition|(
+name|lyr_a
+index|[
+name|lidx
+index|]
+operator|->
+name|chn_info
+index|[
+name|cidx
+index|]
+operator|.
+name|data_len
+operator|>
+name|COMP_MODE_SIZE
+condition|)
+block|{
 switch|switch
 condition|(
 name|comp_mode
