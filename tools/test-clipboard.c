@@ -413,7 +413,7 @@ block|,
 operator|&
 name|option_paste_filename
 block|,
-literal|"Paste clipoard into<file>"
+literal|"Paste clipoard into<file> ('-' pastes to STDOUT)"
 block|,
 literal|"<file>"
 block|}
