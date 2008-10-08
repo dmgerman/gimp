@@ -9244,6 +9244,13 @@ operator|=
 literal|1
 expr_stmt|;
 comment|/* Free "Transparency" channel name */
+if|if
+condition|(
+name|img_a
+operator|->
+name|alpha_names
+condition|)
+block|{
 name|alpha_name
 operator|=
 name|g_ptr_array_index
@@ -9264,6 +9271,7 @@ argument_list|(
 name|alpha_name
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 name|offset
