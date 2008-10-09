@@ -144,6 +144,11 @@ name|GtkWidget
 modifier|*
 name|curve_type
 decl_stmt|;
+comment|/* export dialog */
+DECL|member|export_old_format
+name|gboolean
+name|export_old_format
+decl_stmt|;
 block|}
 struct|;
 end_struct
