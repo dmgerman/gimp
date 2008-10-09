@@ -330,6 +330,12 @@ modifier|*
 name|projection
 decl_stmt|;
 comment|/*  projection layers& channels */
+DECL|member|graph
+name|GeglNode
+modifier|*
+name|graph
+decl_stmt|;
+comment|/*  GEGL projection graph        */
 DECL|member|guides
 name|GList
 modifier|*

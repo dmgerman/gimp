@@ -115,6 +115,11 @@ modifier|*
 name|shadow
 decl_stmt|;
 comment|/* shadow buffer tiles            */
+DECL|member|source_node
+name|GeglNode
+modifier|*
+name|source_node
+decl_stmt|;
 DECL|member|bytes
 name|gint
 name|bytes
@@ -697,6 +702,18 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GeglNode
+modifier|*
+name|gimp_drawable_get_source_node
+parameter_list|(
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

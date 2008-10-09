@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9505460103
+DECL|enum|__anon29b5a6c40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9505460203
+DECL|enum|__anon29b5a6c40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3775,6 +3775,27 @@ expr_stmt|;
 name|image
 operator|->
 name|projection
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|image
+operator|->
+name|graph
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|image
+operator|->
+name|graph
+argument_list|)
+expr_stmt|;
+name|image
+operator|->
+name|graph
 operator|=
 name|NULL
 expr_stmt|;
