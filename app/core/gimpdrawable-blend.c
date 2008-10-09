@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881ecde0108
+DECL|struct|__anon2a9557280108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2881ecde0208
+DECL|struct|__anon2a9557280208
 block|{
 DECL|member|PR
 name|PixelRegion

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a04ba010103
+DECL|enum|__anon295889b80103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a04ba010203
+DECL|enum|__anon295889b80203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

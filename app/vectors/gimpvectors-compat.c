@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad869b80103
+DECL|enum|__anon28b27a350103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR

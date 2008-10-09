@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -43,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdrawable.h"
 end_include
 
 begin_include

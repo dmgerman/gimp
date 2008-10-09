@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c639c000108
+DECL|struct|__anon28b596340108
 block|{
 DECL|member|image
 name|GimpImage

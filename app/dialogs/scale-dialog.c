@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -92,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2a0020108
+DECL|struct|__anon298e580c0108
 block|{
 DECL|member|viewable
 name|GimpViewable

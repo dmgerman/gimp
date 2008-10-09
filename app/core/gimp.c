@@ -22,7 +22,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c1f530103
+DECL|enum|__anon27f16cf80103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

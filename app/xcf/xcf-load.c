@@ -21,14 +21,10 @@ directive|include
 file|<string.h>
 end_include
 
-begin_comment
-comment|/* strcmp, memcmp */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include

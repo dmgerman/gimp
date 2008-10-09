@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f60b9e0103
+DECL|enum|__anon2b56e10b0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE

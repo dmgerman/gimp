@@ -21,14 +21,10 @@ directive|include
 file|<string.h>
 end_include
 
-begin_comment
-comment|/* strcpy, strlen */
-end_comment
-
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -6691,7 +6687,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c48b4ea0108
+DECL|struct|__anon279eac300108
 block|{
 DECL|member|info
 name|XcfInfo

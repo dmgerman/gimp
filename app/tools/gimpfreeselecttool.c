@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -174,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2b47250108
+DECL|struct|__anon2ad369670108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index

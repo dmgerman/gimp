@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a43580108
+DECL|struct|__anon2bf5fcf40108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +216,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a43580208
+DECL|struct|__anon2bf5fcf40208
 block|{
 DECL|member|id
 name|gchar
@@ -6034,7 +6034,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277a43580308
+DECL|struct|__anon2bf5fcf40308
 block|{
 DECL|member|strokes
 name|GList
