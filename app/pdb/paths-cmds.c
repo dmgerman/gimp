@@ -641,6 +641,10 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -1300,6 +1304,8 @@ argument_list|,
 name|vectors
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 else|else

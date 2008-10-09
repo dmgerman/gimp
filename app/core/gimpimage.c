@@ -288,7 +288,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3dbc030103
+DECL|enum|__anon27b52b9c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +379,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3dbc030203
+DECL|enum|__anon27b52b9c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11421,7 +11421,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_layer (GimpImage * image,GimpLayer * layer,gint position)
+DECL|function|gimp_image_add_layer (GimpImage * image,GimpLayer * layer,gint position,gboolean push_undo)
 name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
@@ -11434,6 +11434,9 @@ name|layer
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpLayer
@@ -11469,9 +11472,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_object_is_floating
+operator|!
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -11513,6 +11520,10 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_layer_add
 argument_list|(
 name|image
@@ -11527,7 +11538,7 @@ argument_list|,
 name|active_layer
 argument_list|)
 expr_stmt|;
-comment|/*  If the layer is a floating selection, set the ID  */
+comment|/*  If the layer is a floating selection, set the fs pointer  */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel
@@ -11649,10 +11660,13 @@ argument_list|(
 name|image
 argument_list|)
 condition|)
-name|gimp_image_alpha_changed
-argument_list|(
 name|image
-argument_list|)
+operator|->
+name|flush_accum
+operator|.
+name|alpha_changed
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -11674,7 +11688,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_remove_layer (GimpImage * image,GimpLayer * layer)
+DECL|function|gimp_image_remove_layer (GimpImage * image,GimpLayer * layer,gboolean push_undo,GimpLayer * new_active)
 name|gimp_image_remove_layer
 parameter_list|(
 name|GimpImage
@@ -11684,6 +11698,13 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|new_active
 parameter_list|)
 block|{
 name|GimpLayer
@@ -11743,6 +11764,23 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|push_undo
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"%s() was called from an undo function while the layer "
+literal|"had a floating selection. Please report this at "
+literal|"http://www.gimp.org/bugs/"
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -11796,6 +11834,10 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_layer_remove
 argument_list|(
 name|image
@@ -11892,6 +11934,17 @@ operator|==
 name|active_layer
 condition|)
 block|{
+if|if
+condition|(
+name|new_active
+condition|)
+block|{
+name|active_layer
+operator|=
+name|new_active
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|image
@@ -11994,10 +12047,13 @@ argument_list|(
 name|image
 argument_list|)
 condition|)
-name|gimp_image_alpha_changed
-argument_list|(
 name|image
-argument_list|)
+operator|->
+name|flush_accum
+operator|.
+name|alpha_changed
+operator|=
+name|TRUE
 expr_stmt|;
 if|if
 condition|(
@@ -12305,6 +12361,8 @@ name|new_item
 argument_list|)
 argument_list|,
 name|position
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|position
@@ -12895,7 +12953,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,gint position)
+DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,gint position,gboolean push_undo)
 name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
@@ -12908,6 +12966,9 @@ name|channel
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpChannel
@@ -12936,9 +12997,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_object_is_floating
+operator|!
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|channel
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -12966,6 +13031,10 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_channel_add
 argument_list|(
 name|image
@@ -13074,7 +13143,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_remove_channel (GimpImage * image,GimpChannel * channel)
+DECL|function|gimp_image_remove_channel (GimpImage * image,GimpChannel * channel,gboolean push_undo,GimpChannel * new_active)
 name|gimp_image_remove_channel
 parameter_list|(
 name|GimpImage
@@ -13084,6 +13153,13 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
+name|GimpChannel
+modifier|*
+name|new_active
 parameter_list|)
 block|{
 name|GimpChannel
@@ -13140,6 +13216,23 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|push_undo
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"%s() was called from an undo function while the channel "
+literal|"had a floating selection. Please report this at "
+literal|"http://www.gimp.org/bugs/"
+argument_list|,
+name|G_STRFUNC
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -13186,6 +13279,10 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_channel_remove
 argument_list|(
 name|image
@@ -13234,6 +13331,18 @@ operator|==
 name|active_channel
 condition|)
 block|{
+if|if
+condition|(
+name|new_active
+condition|)
+block|{
+name|active_channel
+operator|=
+name|new_active
+expr_stmt|;
+block|}
+else|else
+block|{
 name|gint
 name|n_children
 init|=
@@ -13279,6 +13388,19 @@ argument_list|,
 name|index
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|active_channel
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+name|active_channel
+condition|)
 name|gimp_image_set_active_channel
 argument_list|(
 name|image
@@ -13286,15 +13408,12 @@ argument_list|,
 name|active_channel
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|gimp_image_unset_active_channel
 argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|g_object_unref
 argument_list|(
@@ -13876,7 +13995,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_vectors (GimpImage * image,GimpVectors * vectors,gint position)
+DECL|function|gimp_image_add_vectors (GimpImage * image,GimpVectors * vectors,gint position,gboolean push_undo)
 name|gimp_image_add_vectors
 parameter_list|(
 name|GimpImage
@@ -13889,6 +14008,9 @@ name|vectors
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpVectors
@@ -13917,9 +14039,13 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|g_object_is_floating
+operator|!
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|vectors
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -13947,6 +14073,10 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_vectors_add
 argument_list|(
 name|image
@@ -14055,7 +14185,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_remove_vectors (GimpImage * image,GimpVectors * vectors)
+DECL|function|gimp_image_remove_vectors (GimpImage * image,GimpVectors * vectors,gboolean push_undo,GimpVectors * new_active)
 name|gimp_image_remove_vectors
 parameter_list|(
 name|GimpImage
@@ -14065,6 +14195,13 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|new_active
 parameter_list|)
 block|{
 name|GimpVectors
@@ -14126,6 +14263,10 @@ name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_vectors_remove
 argument_list|(
 name|image
@@ -14173,6 +14314,18 @@ name|vectors
 operator|==
 name|active_vectors
 condition|)
+block|{
+if|if
+condition|(
+name|new_active
+condition|)
+block|{
+name|active_vectors
+operator|=
+name|new_active
+expr_stmt|;
+block|}
+else|else
 block|{
 name|gint
 name|n_children
@@ -14226,6 +14379,7 @@ name|active_vectors
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 name|gimp_image_set_active_vectors
 argument_list|(

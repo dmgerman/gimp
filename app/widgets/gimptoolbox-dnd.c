@@ -969,6 +969,8 @@ argument_list|,
 name|new_layer
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
@@ -1343,6 +1345,8 @@ argument_list|,
 name|new_layer
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable
@@ -1529,6 +1533,8 @@ argument_list|,
 name|new_layer
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable

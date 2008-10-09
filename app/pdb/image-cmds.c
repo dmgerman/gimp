@@ -4155,6 +4155,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -4283,6 +4285,10 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -5039,6 +5045,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5167,6 +5175,10 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else
@@ -5703,6 +5715,8 @@ argument_list|,
 operator|-
 literal|1
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5831,6 +5845,10 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 else|else

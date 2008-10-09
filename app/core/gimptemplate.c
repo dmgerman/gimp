@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4c2c00103
+DECL|enum|__anon27b999e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1556,6 +1556,8 @@ argument_list|,
 name|layer
 argument_list|,
 literal|0
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_enable

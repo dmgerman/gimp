@@ -365,6 +365,8 @@ argument_list|,
 name|mask
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
@@ -450,6 +452,10 @@ argument_list|(
 name|image
 argument_list|,
 name|mask
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

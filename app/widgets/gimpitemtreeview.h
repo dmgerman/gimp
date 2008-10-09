@@ -128,6 +128,9 @@ name|item
 parameter_list|,
 name|gint
 name|index
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_typedef
@@ -148,6 +151,13 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
+name|GimpItem
+modifier|*
+name|new_active
 parameter_list|)
 function_decl|;
 end_typedef

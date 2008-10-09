@@ -2501,6 +2501,8 @@ name|new_channel
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 return|return
@@ -3261,6 +3263,10 @@ name|GIMP_LAYER
 argument_list|(
 name|pickable
 argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -3306,6 +3312,10 @@ name|GIMP_CHANNEL
 argument_list|(
 name|pickable
 argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

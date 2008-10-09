@@ -1289,6 +1289,8 @@ name|new_layer
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
@@ -1377,6 +1379,8 @@ name|layer
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -1722,6 +1726,8 @@ name|new_layer
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -1884,6 +1890,10 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2039,6 +2049,8 @@ name|vectors
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_vectors
@@ -2163,6 +2175,8 @@ name|new_vectors
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_vectors
@@ -3886,6 +3900,8 @@ name|layer
 argument_list|,
 operator|-
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

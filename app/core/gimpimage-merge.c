@@ -433,6 +433,10 @@ argument_list|,
 name|list
 operator|->
 name|data
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end
@@ -1050,6 +1054,10 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|cur_item
@@ -1084,6 +1092,10 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|cur_item
@@ -1116,6 +1128,8 @@ argument_list|,
 name|target_vectors
 argument_list|,
 name|pos
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy
@@ -2464,6 +2478,10 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|reverse_list
@@ -2521,6 +2539,10 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -2531,6 +2553,8 @@ argument_list|,
 name|merge_layer
 argument_list|,
 name|position
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2553,6 +2577,8 @@ operator|-
 name|position
 operator|+
 literal|1
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
