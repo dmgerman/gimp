@@ -164,7 +164,7 @@ end_struct
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2f158b0103
+DECL|enum|__anon29aaabed0103
 block|{
 DECL|enumerator|USER_INSTALL_MKDIR
 name|USER_INSTALL_MKDIR
@@ -183,7 +183,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c2f158b0208
+DECL|struct|__anon29aaabed0208
 block|{
 DECL|member|name
 specifier|const
@@ -781,7 +781,12 @@ for|for
 control|(
 name|i
 operator|=
-literal|4
+operator|(
+name|GIMP_MINOR_VERSION
+operator|&
+operator|~
+literal|1
+operator|)
 init|;
 name|i
 operator|>=
