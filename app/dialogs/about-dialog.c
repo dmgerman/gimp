@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c446010108
+DECL|struct|__anon2b9fecd40108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -840,8 +840,17 @@ argument_list|()
 argument_list|,
 literal|"images"
 argument_list|,
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+literal|"gimp-devel-logo.png"
+argument_list|,
+else|#
+directive|else
 literal|"gimp-logo.png"
 argument_list|,
+endif|#
+directive|endif
 name|NULL
 argument_list|)
 expr_stmt|;
