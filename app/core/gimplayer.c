@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d73f80103
+DECL|enum|__anon297bf7a20103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279d73f80203
+DECL|enum|__anon297bf7a20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3096,12 +3096,18 @@ name|shift_node
 argument_list|,
 literal|"x"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|item
 operator|->
 name|offset_x
 argument_list|,
 literal|"y"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|item
 operator|->
 name|offset_y
@@ -6692,6 +6698,24 @@ name|GeglNode
 modifier|*
 name|source
 decl_stmt|;
+name|gegl_node_disconnect
+argument_list|(
+name|layer
+operator|->
+name|mask_node
+argument_list|,
+literal|"input"
+argument_list|)
+expr_stmt|;
+name|gegl_node_disconnect
+argument_list|(
+name|layer
+operator|->
+name|mask_node
+argument_list|,
+literal|"aux"
+argument_list|)
+expr_stmt|;
 name|gegl_node_remove_child
 argument_list|(
 name|layer
@@ -7945,10 +7969,16 @@ literal|"shift"
 argument_list|,
 literal|"x"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|off_x
 argument_list|,
 literal|"y"
 argument_list|,
+operator|(
+name|gdouble
+operator|)
 name|off_y
 argument_list|,
 name|NULL
@@ -8239,7 +8269,7 @@ name|layer
 operator|->
 name|opacity_node
 argument_list|,
-literal|"opacity"
+literal|"value"
 argument_list|,
 name|layer
 operator|->
