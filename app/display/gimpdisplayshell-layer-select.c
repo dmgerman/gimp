@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08d9650108
+DECL|struct|__anon29fbd7720108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -890,17 +890,11 @@ literal|0
 expr_stmt|;
 name|next_layer
 operator|=
-operator|(
-name|GimpLayer
-operator|*
-operator|)
-name|gimp_container_get_child_by_index
+name|gimp_image_get_layer_by_index
 argument_list|(
 name|layer_select
 operator|->
 name|image
-operator|->
-name|layers
 argument_list|,
 name|index
 argument_list|)
