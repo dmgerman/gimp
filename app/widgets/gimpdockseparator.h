@@ -112,6 +112,10 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
+DECL|member|anchor
+name|GtkAnchorType
+name|anchor
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -147,6 +151,9 @@ parameter_list|(
 name|GimpDock
 modifier|*
 name|dock
+parameter_list|,
+name|GtkAnchorType
+name|anchor
 parameter_list|)
 function_decl|;
 end_function_decl

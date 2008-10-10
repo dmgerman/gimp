@@ -141,7 +141,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289201c90103
+DECL|enum|__anon2b9c3c7a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289201c90203
+DECL|enum|__anon2b9c3c7a0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -775,6 +775,8 @@ operator|=
 name|gimp_dock_separator_new
 argument_list|(
 name|dock
+argument_list|,
+name|GTK_ANCHOR_NORTH
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1933,6 +1935,8 @@ operator|=
 name|gimp_dock_separator_new
 argument_list|(
 name|dock
+argument_list|,
+name|GTK_ANCHOR_SOUTH
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
