@@ -151,7 +151,7 @@ name|mode_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b2d2d160108
+DECL|struct|__anon2b288acc0108
 block|{
 DECL|member|backing_store
 name|TileManager
@@ -527,18 +527,6 @@ name|gboolean
 name|gimp_layer_is_floating_sel
 parameter_list|(
 specifier|const
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|GeglNode
-modifier|*
-name|gimp_layer_get_node
-parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
