@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawablestack.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpgrid.h"
 end_include
 
@@ -288,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aa838d0103
+DECL|enum|__anon2bca87260103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -379,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aa838d0203
+DECL|enum|__anon2bca87260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2642,22 +2648,18 @@ name|image
 operator|->
 name|layers
 operator|=
-name|gimp_list_new
+name|gimp_drawable_stack_new
 argument_list|(
 name|GIMP_TYPE_LAYER
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|image
 operator|->
 name|channels
 operator|=
-name|gimp_list_new
+name|gimp_drawable_stack_new
 argument_list|(
 name|GIMP_TYPE_CHANNEL
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|image

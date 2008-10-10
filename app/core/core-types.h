@@ -229,6 +229,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDrawableStack
+typedef|typedef
+name|struct
+name|_GimpDrawableStack
+name|GimpDrawableStack
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpToolPresets
 typedef|typedef
 name|struct
