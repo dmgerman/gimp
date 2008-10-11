@@ -793,6 +793,9 @@ name|dockbook
 decl_stmt|;
 name|gint
 name|index
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|g_object_set_data
 argument_list|(
