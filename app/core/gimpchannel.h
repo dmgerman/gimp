@@ -114,6 +114,31 @@ name|show_masked
 decl_stmt|;
 comment|/*  Show masked areas--as          */
 comment|/*  opposed to selected areas      */
+DECL|member|node
+name|GeglNode
+modifier|*
+name|node
+decl_stmt|;
+DECL|member|color_node
+name|GeglNode
+modifier|*
+name|color_node
+decl_stmt|;
+DECL|member|invert_node
+name|GeglNode
+modifier|*
+name|invert_node
+decl_stmt|;
+DECL|member|mask_node
+name|GeglNode
+modifier|*
+name|mask_node
+decl_stmt|;
+DECL|member|mode_node
+name|GeglNode
+modifier|*
+name|mode_node
+decl_stmt|;
 comment|/*  Selection mask variables  */
 DECL|member|boundary_known
 name|gboolean
