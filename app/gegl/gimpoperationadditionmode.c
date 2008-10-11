@@ -197,6 +197,11 @@ name|src
 index|[
 name|RED_PIX
 index|]
+operator|+
+name|aux
+index|[
+name|RED_PIX
+index|]
 expr_stmt|;
 name|dest
 index|[
@@ -204,6 +209,11 @@ name|GREEN_PIX
 index|]
 operator|=
 name|src
+index|[
+name|GREEN_PIX
+index|]
+operator|+
+name|aux
 index|[
 name|GREEN_PIX
 index|]
@@ -214,6 +224,11 @@ name|BLUE_PIX
 index|]
 operator|=
 name|src
+index|[
+name|BLUE_PIX
+index|]
+operator|+
+name|aux
 index|[
 name|BLUE_PIX
 index|]
