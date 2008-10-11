@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a323f5e0103
+DECL|enum|__anon2a4107be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -958,6 +958,18 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
+name|GIMP_CONTAINER_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|add
+argument_list|(
+name|container
+argument_list|,
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1013,6 +1025,18 @@ argument_list|(
 name|list
 operator|->
 name|list
+argument_list|,
+name|object
+argument_list|)
+expr_stmt|;
+name|GIMP_CONTAINER_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|remove
+argument_list|(
+name|container
 argument_list|,
 name|object
 argument_list|)
