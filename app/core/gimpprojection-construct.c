@@ -388,7 +388,9 @@ expr_stmt|;
 comment|/*  call functions which process the list of layers and    *  the list of channels    */
 if|if
 condition|(
-name|FALSE
+name|proj
+operator|->
+name|use_gegl
 condition|)
 block|{
 name|gimp_projection_construct_gegl

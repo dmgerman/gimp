@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprojection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpactiongroup.h"
 end_include
 
@@ -906,6 +912,27 @@ block|,
 name|FALSE
 block|,
 name|GIMP_HELP_VIEW_FULLSCREEN
+block|}
+block|,
+block|{
+literal|"view-use-gegl"
+block|,
+name|GIMP_STOCK_GEGL
+block|,
+literal|"Use GEGL"
+block|,
+name|NULL
+block|,
+literal|"Use GEGL to create this window's projection"
+block|,
+name|G_CALLBACK
+argument_list|(
+name|view_use_gegl_cmd_callback
+argument_list|)
+block|,
+name|FALSE
+block|,
+name|NULL
 block|}
 block|}
 decl_stmt|;
@@ -2696,6 +2723,21 @@ argument_list|,
 name|display
 operator|&&
 name|fullscreen
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"view-use-gegl"
+argument_list|,
+name|image
+operator|&&
+name|display
+operator|->
+name|image
+operator|->
+name|projection
+operator|->
+name|use_gegl
 argument_list|)
 expr_stmt|;
 if|if
