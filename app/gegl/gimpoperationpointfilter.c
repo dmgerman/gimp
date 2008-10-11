@@ -40,8 +40,8 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationPointFilter,gimp_operation_point_filter,GEGL_TYPE_OPERATION_POINT_FILTER)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_ABSTRACT_TYPE (GimpOperationPointFilter,gimp_operation_point_filter,GEGL_TYPE_OPERATION_POINT_FILTER)
+name|G_DEFINE_ABSTRACT_TYPE
 argument_list|(
 argument|GimpOperationPointFilter
 argument_list|,
