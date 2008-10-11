@@ -231,7 +231,7 @@ case|case
 name|GIMP_SCREEN_MODE
 case|:
 return|return
-literal|"gimp-screen_mode"
+literal|"gimp-screen-mode"
 return|;
 case|case
 name|GIMP_OVERLAY_MODE
