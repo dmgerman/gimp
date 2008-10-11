@@ -213,156 +213,134 @@ case|case
 name|GIMP_DISSOLVE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-dissolve-mode"
 return|;
-comment|/* "gimp-dissolve-mode" */
 case|case
 name|GIMP_BEHIND_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-behind-mode"
 return|;
-comment|/* "gimp-behind-mode" */
 case|case
 name|GIMP_MULTIPLY_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-multiply-mode"
 return|;
-comment|/* "gimp-multiply-mode" */
 case|case
 name|GIMP_SCREEN_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-screen_mode"
 return|;
-comment|/* "gimp-screen_mode" */
 case|case
 name|GIMP_OVERLAY_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-overlay-mode"
 return|;
-comment|/* "gimp-overlay-mode" */
 case|case
 name|GIMP_DIFFERENCE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-difference-mode"
 return|;
-comment|/* "gimp-difference-mode" */
 case|case
 name|GIMP_ADDITION_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-addition-mode"
 return|;
-comment|/* "gimp-addition-mode" */
 case|case
 name|GIMP_SUBTRACT_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-subtract-mode"
 return|;
-comment|/* "gimp-subtract-mode" */
 case|case
 name|GIMP_DARKEN_ONLY_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-darken-mode"
 return|;
-comment|/* "gimp-darken-mode" */
 case|case
 name|GIMP_LIGHTEN_ONLY_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-lighten-mode"
 return|;
-comment|/* "gimp-lighten-mode" */
 case|case
 name|GIMP_HUE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-hue-mode"
 return|;
-comment|/* "gimp-hue-mode" */
 case|case
 name|GIMP_SATURATION_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-saturation-mode"
 return|;
-comment|/* "gimp-saturation-mode" */
 case|case
 name|GIMP_COLOR_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-color-mode"
 return|;
-comment|/* "gimp-color-mode" */
 case|case
 name|GIMP_VALUE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-value-mode"
 return|;
-comment|/* "gimp-value-mode" */
 case|case
 name|GIMP_DIVIDE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-divide-mode"
 return|;
-comment|/* "gimp-divide-mode" */
 case|case
 name|GIMP_DODGE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-dodge-mode"
 return|;
-comment|/* "gimp-dodge-mode" */
 case|case
 name|GIMP_BURN_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-burn-mode"
 return|;
-comment|/* "gimp-burn-mode" */
 case|case
 name|GIMP_HARDLIGHT_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-hardlight-mode"
 return|;
-comment|/* "gimp-hardlight-mode" */
 case|case
 name|GIMP_SOFTLIGHT_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-softlight-mode"
 return|;
-comment|/* "gimp-softlight-mode" */
 case|case
 name|GIMP_GRAIN_EXTRACT_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-grain-extract-mode"
 return|;
-comment|/* "gimp-grain-extract-mode" */
 case|case
 name|GIMP_GRAIN_MERGE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-grain-merge-mode"
 return|;
-comment|/* "gimp-grain-merge-mode" */
 case|case
 name|GIMP_COLOR_ERASE_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gimp-color-erase-mode"
 return|;
-comment|/* "gimp-color-erase-mode" */
 default|default:
 break|break;
 block|}
