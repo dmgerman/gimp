@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbbc9a00103
+DECL|enum|__anon2ad62a4e0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbbc9a00203
+DECL|enum|__anon2ad62a4e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2334,16 +2334,6 @@ name|GeglNode
 modifier|*
 name|output
 decl_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_LAYER
-argument_list|(
-name|layer
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|layer
@@ -2366,10 +2356,7 @@ name|source
 operator|=
 name|gimp_drawable_get_source_node
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|layer
-argument_list|)
+name|drawable
 argument_list|)
 expr_stmt|;
 name|gegl_node_add_child
