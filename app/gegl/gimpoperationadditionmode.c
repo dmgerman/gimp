@@ -60,14 +60,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationAdditionMode,gimp_operation_addition_mode,GIMP_TYPE_OPERATION_POINT_COMPOSER)
+DECL|function|G_DEFINE_TYPE (GimpOperationAdditionMode,gimp_operation_addition_mode,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationAdditionMode
 argument_list|,
 argument|gimp_operation_addition_mode
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_COMPOSER
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 
@@ -90,11 +90,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GeglOperationPointComposerClass
+name|GimpOperationLayerModeClass
 modifier|*
-name|point_class
+name|mode_class
 init|=
-name|GEGL_OPERATION_POINT_COMPOSER_CLASS
+name|GIMP_OPERATION_LAYER_MODE_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -111,7 +111,7 @@ name|description
 operator|=
 literal|"GIMP addition mode operation"
 expr_stmt|;
-name|point_class
+name|mode_class
 operator|->
 name|process
 operator|=
@@ -188,8 +188,24 @@ name|samples
 operator|--
 condition|)
 block|{
-if|if 1       dest[RED_PIX]   = src[RED_PIX]   + aux[RED_PIX]
-empty_stmt|;
+if|#
+directive|if
+literal|1
+name|dest
+index|[
+name|RED_PIX
+index|]
+operator|=
+name|src
+index|[
+name|RED_PIX
+index|]
+operator|+
+name|aux
+index|[
+name|RED_PIX
+index|]
+expr_stmt|;
 name|dest
 index|[
 name|GREEN_PIX

@@ -126,11 +126,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationPointComposer
+DECL|typedef|GimpOperationLayerMode
 typedef|typedef
 name|struct
-name|_GimpOperationPointComposer
-name|GimpOperationPointComposer
+name|_GimpOperationLayerMode
+name|GimpOperationLayerMode
 typedef|;
 end_typedef
 

@@ -60,14 +60,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationSaturationMode,gimp_operation_saturation_mode,GIMP_TYPE_OPERATION_POINT_COMPOSER)
+DECL|function|G_DEFINE_TYPE (GimpOperationSaturationMode,gimp_operation_saturation_mode,GIMP_TYPE_OPERATION_LAYER_MODE)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpOperationSaturationMode
 argument_list|,
 argument|gimp_operation_saturation_mode
 argument_list|,
-argument|GIMP_TYPE_OPERATION_POINT_COMPOSER
+argument|GIMP_TYPE_OPERATION_LAYER_MODE
 argument_list|)
 end_macro
 
@@ -90,11 +90,11 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GeglOperationPointComposerClass
+name|GimpOperationLayerModeClass
 modifier|*
-name|point_class
+name|mode_class
 init|=
-name|GEGL_OPERATION_POINT_COMPOSER_CLASS
+name|GIMP_OPERATION_LAYER_MODE_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -111,7 +111,7 @@ name|description
 operator|=
 literal|"GIMP saturation mode operation"
 expr_stmt|;
-name|point_class
+name|mode_class
 operator|->
 name|process
 operator|=
