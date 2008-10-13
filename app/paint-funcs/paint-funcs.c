@@ -90,16 +90,20 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-funcs-generic.h"
+file|"layer-modes.h"
 end_include
 
-begin_define
-DECL|macro|RANDOM_SEED
-define|#
-directive|define
-name|RANDOM_SEED
-value|314159265
-end_define
+begin_include
+include|#
+directive|include
+file|"paint-funcs-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"paint-funcs-generic.h"
+end_include
 
 begin_define
 DECL|macro|EPSILON
@@ -1036,88 +1040,8 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-name|GRand
-modifier|*
-name|gr
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-comment|/*  generate a table of random seeds  */
-name|gr
-operator|=
-name|g_rand_new_with_seed
-argument_list|(
-name|RANDOM_SEED
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|RANDOM_TABLE_SIZE
-condition|;
-name|i
-operator|++
-control|)
-name|random_table
-index|[
-name|i
-index|]
-operator|=
-name|g_rand_int
-argument_list|(
-name|gr
-argument_list|)
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-literal|256
-condition|;
-name|i
-operator|++
-control|)
-name|add_lut
-index|[
-name|i
-index|]
-operator|=
-name|i
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|256
-init|;
-name|i
-operator|<=
-literal|510
-condition|;
-name|i
-operator|++
-control|)
-name|add_lut
-index|[
-name|i
-index|]
-operator|=
-literal|255
-expr_stmt|;
-name|g_rand_free
-argument_list|(
-name|gr
-argument_list|)
+name|layer_modes_setup
+argument_list|()
 expr_stmt|;
 block|}
 end_function
@@ -3049,14 +2973,6 @@ block|}
 block|}
 end_function
 
-begin_comment
-comment|/*orig #define alphify(src2_alpha,new_alpha) \         if (new_alpha == 0 || src2_alpha == 0)                                                        \           {                                                                                        \             for (b = 0; b< alpha; b++)                                                                \               dest[b] = src1 [b];                                                                \           }                                                                                        \         else if (src2_alpha == new_alpha){                                                        \           for (b = 0; b< alpha; b++)                                                                \             dest [b] = affect [b] ? src2 [b] : src1 [b];                                        \         } else {                                                                                \           ratio = (float) src2_alpha / new_alpha;                                                \           compl_ratio = 1.0 - ratio;                                                                \                                                                                                   \           for (b = 0; b< alpha; b++)                                                                \             dest[b] = affect[b] ?                                                                \               (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];        \         }*/
-end_comment
-
-begin_comment
-comment|/*shortened #define alphify(src2_alpha,new_alpha) \         if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             if (src2_alpha == new_alpha){                                                        \               for (b = 0; b< alpha; b++)                                                        \               dest [b] = affect [b] ? src2 [b] : src1 [b];                                        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               for (b = 0; b< alpha; b++)                                                        \                 dest[b] = affect[b] ?                                                                \                   (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\             }                                                                                   \           }*/
-end_comment
-
 begin_define
 DECL|macro|alphify (src2_alpha,new_alpha)
 define|#
@@ -3070,10 +2986,6 @@ parameter_list|)
 define|\
 value|if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             b = alpha; \             if (src2_alpha == new_alpha){                                                        \               do { \               b--; dest [b] = affect [b] ? src2 [b] : src1 [b];} while (b);        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               do { b--; \                 dest[b] = affect[b] ?                                                                \                   (guchar) (src2[b] * ratio + src1[b] * compl_ratio + EPSILON) : src1[b];\                    } while (b); \             }    \           }
 end_define
-
-begin_comment
-comment|/*special #define alphify4(src2_alpha,new_alpha) \         if (src2_alpha != 0&& new_alpha != 0)                                                        \           {                                                                                        \             if (src2_alpha == new_alpha){                                                        \               dest [0] = affect [0] ? src2 [0] : src1 [0];                                        \               dest [1] = affect [1] ? src2 [1] : src1 [1];                                        \               dest [2] = affect [2] ? src2 [2] : src1 [2];                                        \             } else {                                                                                \               ratio = (float) src2_alpha / new_alpha;                                                \               compl_ratio = 1.0 - ratio;                                                        \                                                                                                   \               dest[0] = affect[0] ?                                                                \                 (guchar) (src2[0] * ratio + src1[0] * compl_ratio + EPSILON) : src1[0];  \               dest[1] = affect[1] ?                                                                \                 (guchar) (src2[1] * ratio + src1[1] * compl_ratio + EPSILON) : src1[1];  \               dest[2] = affect[2] ?                                                                \                 (guchar) (src2[2] * ratio + src1[2] * compl_ratio + EPSILON) : src1[2];  \             }                                                                                   \           }*/
-end_comment
 
 begin_function
 name|void
