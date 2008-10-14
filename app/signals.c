@@ -80,7 +80,7 @@ block|{
 ifndef|#
 directive|ifndef
 name|G_OS_WIN32
-comment|/* No use catching these on Win32, the user won't get any    * stack trace from glib anyhow. It's better to let Windows inform    * about the program error, and offer debugging (if the user    * has installed MSVC or some other compiler that knows how to    * install itself as a handler for program errors).    */
+comment|/* No use catching these on Win32, the user won't get any stack    * trace from glib anyhow. It's better to let Windows inform about    * the program error, and offer debugging (if the user has installed    * MSVC or some other compiler that knows how to install itself as a    * handler for program errors).    */
 comment|/* Handle fatal signals */
 comment|/* these are handled by gimp_terminate() */
 name|gimp_signal_private
@@ -186,7 +186,7 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-comment|/* G_OS_WIN32 */
+comment|/* ! G_OS_WIN32 */
 block|}
 end_function
 
