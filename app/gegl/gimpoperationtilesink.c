@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a761ac0103
+DECL|enum|__anon27c6223e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a761ac0203
+DECL|enum|__anon27c6223e0203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -646,9 +646,6 @@ decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
-name|guint
-name|bpp
-decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
@@ -662,34 +659,20 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|bpp
+name|format
 operator|=
+name|gimp_bpp_to_babl_format
+argument_list|(
 name|tile_manager_bpp
 argument_list|(
 name|self
 operator|->
 name|tile_manager
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
+argument_list|,
 name|self
 operator|->
 name|linear
-condition|)
-name|format
-operator|=
-name|gimp_bpp_to_babl_format_linear
-argument_list|(
-name|bpp
-argument_list|)
-expr_stmt|;
-else|else
-name|format
-operator|=
-name|gimp_bpp_to_babl_format
-argument_list|(
-name|bpp
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
