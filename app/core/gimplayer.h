@@ -124,11 +124,6 @@ modifier|*
 name|mask
 decl_stmt|;
 comment|/*  possible layer mask        */
-DECL|member|node
-name|GeglNode
-modifier|*
-name|node
-decl_stmt|;
 DECL|member|mask_node
 name|GeglNode
 modifier|*
@@ -144,14 +139,9 @@ name|GeglNode
 modifier|*
 name|opacity_node
 decl_stmt|;
-DECL|member|mode_node
-name|GeglNode
-modifier|*
-name|mode_node
-decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2b288acc0108
+DECL|struct|__anon2b6791340108
 block|{
 DECL|member|backing_store
 name|TileManager
