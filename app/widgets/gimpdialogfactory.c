@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a6a0d0103
+DECL|enum|__anon274ec0fd0103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -3148,6 +3148,17 @@ argument_list|,
 name|info
 operator|->
 name|widget
+argument_list|)
+expr_stmt|;
+comment|/*  let new docks appear at the pointer position  */
+name|gtk_window_set_position
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
 comment|/*  if we create a new session info, we never call            *  gimp_session_info_set_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
