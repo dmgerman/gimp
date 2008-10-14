@@ -177,7 +177,7 @@ case|case
 name|GIMP_NORMAL_MODE
 case|:
 return|return
-literal|"normal"
+literal|"gegl:normal"
 return|;
 case|case
 name|GIMP_DISSOLVE_MODE
@@ -333,7 +333,7 @@ default|default:
 break|break;
 block|}
 return|return
-literal|"normal"
+literal|"gegl:normal"
 return|;
 block|}
 end_function

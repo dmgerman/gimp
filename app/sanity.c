@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<fontconfig/fontconfig.h>
 end_include
 
@@ -945,7 +939,7 @@ DECL|macro|GEGL_REQUIRED_MICRO
 define|#
 directive|define
 name|GEGL_REQUIRED_MICRO
-value|18
+value|21
 name|gegl_get_version
 argument_list|(
 operator|&

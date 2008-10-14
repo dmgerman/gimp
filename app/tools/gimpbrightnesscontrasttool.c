@@ -828,7 +828,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"brightness-contrast"
+literal|"gegl:brightness-contrast"
 argument_list|,
 name|NULL
 argument_list|)

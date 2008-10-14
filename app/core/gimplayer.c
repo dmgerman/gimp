@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26612f0103
+DECL|enum|__anon2acd4c1b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26612f0203
+DECL|enum|__anon2acd4c1b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2354,7 +2354,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"opacity"
+literal|"gegl:opacity"
 argument_list|,
 name|NULL
 argument_list|)
@@ -2410,7 +2410,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"shift"
+literal|"gegl:shift"
 argument_list|,
 literal|"x"
 argument_list|,
@@ -2474,7 +2474,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"opacity"
+literal|"gegl:opacity"
 argument_list|,
 literal|"value"
 argument_list|,
@@ -5623,7 +5623,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"opacity"
+literal|"gegl:opacity"
 argument_list|,
 name|NULL
 argument_list|)

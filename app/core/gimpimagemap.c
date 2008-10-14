@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4e84c0103
+DECL|enum|__anon2959c4f10103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1852,20 +1852,6 @@ operator|=
 name|gegl_node_new
 argument_list|()
 expr_stmt|;
-if|if
-condition|(
-name|g_object_class_find_property
-argument_list|(
-name|G_OBJECT_GET_CLASS
-argument_list|(
-name|image_map
-operator|->
-name|gegl
-argument_list|)
-argument_list|,
-literal|"dont-cache"
-argument_list|)
-condition|)
 name|g_object_set
 argument_list|(
 name|image_map
@@ -1908,7 +1894,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"shift"
+literal|"gegl:shift"
 argument_list|,
 name|NULL
 argument_list|)
@@ -2050,7 +2036,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"over"
+literal|"gegl:over"
 argument_list|,
 name|NULL
 argument_list|)

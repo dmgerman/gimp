@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b553ede0103
+DECL|enum|__anon2754d3fd0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3902,7 +3902,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"color"
+literal|"gegl:color"
 argument_list|,
 literal|"value"
 argument_list|,
@@ -3926,7 +3926,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"opacity"
+literal|"gegl:opacity"
 argument_list|,
 name|NULL
 argument_list|)
@@ -3956,7 +3956,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"invert"
+literal|"gegl:invert"
 argument_list|,
 name|NULL
 argument_list|)

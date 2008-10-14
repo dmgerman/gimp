@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9581810103
+DECL|enum|__anon29d7643f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9581810203
+DECL|enum|__anon29d7643f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10247,7 +10247,7 @@ name|graph
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"normal"
+literal|"gegl:normal"
 argument_list|,
 name|NULL
 argument_list|)
