@@ -2866,6 +2866,17 @@ operator|->
 name|operation
 argument_list|)
 decl_stmt|;
+name|g_strcanon
+argument_list|(
+argument|type_name
+argument_list|,
+argument|G_CSET_DIGITS
+literal|"-"
+argument|G_CSET_a_2_z G_CSET_A_2_Z
+argument_list|,
+literal|'-'
+argument_list|)
+empty_stmt|;
 name|config_type
 operator|=
 name|g_type_register_static
