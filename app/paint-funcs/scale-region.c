@@ -2209,6 +2209,8 @@ init|=
 name|y
 operator|/
 name|scaley
+operator|+
+literal|0.5
 decl_stmt|;
 name|gint
 name|sy0
@@ -2249,6 +2251,8 @@ init|=
 name|x
 operator|/
 name|scalex
+operator|+
+literal|0.5
 decl_stmt|;
 name|gint
 name|sx0
