@@ -1511,6 +1511,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|len
+operator|==
+literal|0
+condition|)
+return|return;
+if|if
+condition|(
 name|fwrite
 argument_list|(
 name|buf
@@ -1525,14 +1532,15 @@ operator|==
 literal|0
 condition|)
 block|{
-name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
-literal|" Function: xfwrite: Error while writing '%s'\n"
+literal|"%s: Error while writing '%s'\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|why
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
@@ -1606,14 +1614,15 @@ operator|==
 literal|0
 condition|)
 block|{
-name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
-literal|" Function: write_gchar: Error while writing '%s'\n"
+literal|"%s: Error while writing '%s'\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|why
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
@@ -1697,14 +1706,15 @@ operator|==
 literal|0
 condition|)
 block|{
-name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
-literal|" Function: write_gint16: Error while writing '%s'\n"
+literal|"%s: Error while writing '%s'\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|why
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
@@ -1802,14 +1812,15 @@ operator|==
 literal|0
 condition|)
 block|{
-name|IFDBG
-name|printf
+name|g_printerr
 argument_list|(
-literal|" Function: write_gint32: Error while writing '%s'\n"
+literal|"%s: Error while writing '%s'\n"
+argument_list|,
+name|G_STRFUNC
 argument_list|,
 name|why
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_quit
 argument_list|()
 expr_stmt|;
@@ -2319,7 +2330,8 @@ expr_stmt|;
 name|IFDBG
 name|printf
 argument_list|(
-literal|"PSD Save: gimpBaseType value is %d, can't convert to PSD mode"
+literal|"PSD Save: gimpBaseType value is %d, "
+literal|"can't convert to PSD mode"
 argument_list|,
 name|gimpBaseType
 argument_list|)
