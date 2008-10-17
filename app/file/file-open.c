@@ -1477,6 +1477,16 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+comment|/*  announce that we opened this image  */
+name|gimp_image_opened
+argument_list|(
+name|image
+operator|->
+name|gimp
+argument_list|,
+name|uri
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|image

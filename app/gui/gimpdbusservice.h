@@ -162,6 +162,24 @@ DECL|member|parent_class
 name|GObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|opened
+name|void
+function_decl|(
+modifier|*
+name|opened
+function_decl|)
+parameter_list|(
+name|GimpDBusService
+modifier|*
+name|service
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
