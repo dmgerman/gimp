@@ -17,7 +17,7 @@ name|_IMAP_STATUSBAR_H
 end_define
 
 begin_typedef
-DECL|struct|__anon2bfa5a960108
+DECL|struct|__anon2b811bea0108
 typedef|typedef
 struct|struct
 block|{
@@ -90,8 +90,17 @@ name|format
 parameter_list|,
 modifier|...
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|2
+operator|,
+function_decl|3
 end_function_decl
+
+begin_empty_stmt
+unit|)
+empty_stmt|;
+end_empty_stmt
 
 begin_function_decl
 name|void

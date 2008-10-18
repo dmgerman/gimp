@@ -157,7 +157,12 @@ modifier|*
 parameter_list|,
 modifier|...
 parameter_list|)
-function_decl|;
+function_decl|G_GNUC_PRINTF
+parameter_list|(
+function_decl|2
+operator|,
+function_decl|3
+typedef|);
 end_typedef
 
 begin_struct_decl
@@ -1011,7 +1016,7 @@ value|((obj)->class->get_stock_icon_name())
 end_define
 
 begin_typedef
-DECL|struct|__anon2c6cb5f10108
+DECL|struct|__anon290f1a150108
 typedef|typedef
 struct|struct
 block|{
@@ -1115,7 +1120,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2c6cb5f10208
+DECL|struct|__anon290f1a150208
 typedef|typedef
 struct|struct
 block|{
