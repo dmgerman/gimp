@@ -300,17 +300,17 @@ name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|src
 index|[
-name|RED_PIX
+name|RED
 index|]
 argument_list|,
 name|src
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 argument_list|,
 name|src
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 argument_list|)
 decl_stmt|;
@@ -389,7 +389,7 @@ expr_stmt|;
 comment|/*  the code in base/colorize.c would multiply r,b,g with lum,        *  but this is a bug since it should multiply with 255. We        *  don't repeat this bug here (this is the reason why the gegl        *  colorize is brighter than the legacy one).        */
 name|dest
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|=
 name|rgb
@@ -399,7 +399,7 @@ expr_stmt|;
 comment|/* * lum; */
 name|dest
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|=
 name|rgb
@@ -409,7 +409,7 @@ expr_stmt|;
 comment|/* * lum; */
 name|dest
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|=
 name|rgb
@@ -420,12 +420,12 @@ comment|/* * lum */
 empty_stmt|;
 name|dest
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 operator|=
 name|src
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 expr_stmt|;
 name|src

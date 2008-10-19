@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2754d3fd0103
+DECL|enum|__anon2c70263d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3553,14 +3553,14 @@ block|{
 comment|/*  Make sure that the alpha channel is not valid.  */
 name|active
 index|[
-name|GRAY_PIX
+name|GRAY
 index|]
 operator|=
 name|TRUE
 expr_stmt|;
 name|active
 index|[
-name|ALPHA_G_PIX
+name|ALPHA_G
 index|]
 operator|=
 name|FALSE

@@ -1368,7 +1368,7 @@ if|if
 condition|(
 name|s
 index|[
-name|ALPHA_I_PIX
+name|ALPHA_I
 index|]
 operator|&
 literal|0x80
@@ -1376,7 +1376,7 @@ condition|)
 block|{
 name|r
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|+=
 name|cmap
@@ -1389,7 +1389,7 @@ name|tot_frac
 expr_stmt|;
 name|r
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|+=
 name|cmap
@@ -1402,7 +1402,7 @@ name|tot_frac
 expr_stmt|;
 name|r
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|+=
 name|cmap
@@ -1415,7 +1415,7 @@ name|tot_frac
 expr_stmt|;
 name|r
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 operator|+=
 name|tot_frac
@@ -1427,7 +1427,7 @@ else|else
 block|{
 name|r
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|+=
 name|cmap
@@ -1440,7 +1440,7 @@ name|tot_frac
 expr_stmt|;
 name|r
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|+=
 name|cmap
@@ -1453,7 +1453,7 @@ name|tot_frac
 expr_stmt|;
 name|r
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|+=
 name|cmap

@@ -527,7 +527,7 @@ name|r
 operator|=
 name|src
 index|[
-name|RED_PIX
+name|RED
 index|]
 expr_stmt|;
 name|rgb
@@ -536,7 +536,7 @@ name|g
 operator|=
 name|src
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 expr_stmt|;
 name|rgb
@@ -545,7 +545,7 @@ name|b
 operator|=
 name|src
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 expr_stmt|;
 name|gimp_rgb_to_hsl
@@ -917,7 +917,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|=
 name|rgb
@@ -926,7 +926,7 @@ name|r
 expr_stmt|;
 name|dest
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|=
 name|rgb
@@ -935,7 +935,7 @@ name|g
 expr_stmt|;
 name|dest
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|=
 name|rgb
@@ -944,12 +944,12 @@ name|b
 expr_stmt|;
 name|dest
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 operator|=
 name|src
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 expr_stmt|;
 name|src

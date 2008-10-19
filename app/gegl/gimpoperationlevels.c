@@ -539,7 +539,7 @@ if|if
 condition|(
 name|channel
 operator|!=
-name|ALPHA_PIX
+name|ALPHA
 condition|)
 name|value
 operator|=

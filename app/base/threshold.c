@@ -169,12 +169,12 @@ name|MAX
 argument_list|(
 name|s
 index|[
-name|RED_PIX
+name|RED
 index|]
 argument_list|,
 name|s
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 argument_list|)
 expr_stmt|;
@@ -186,7 +186,7 @@ name|value
 argument_list|,
 name|s
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 argument_list|)
 expr_stmt|;
@@ -218,7 +218,7 @@ operator|=
 operator|(
 name|s
 index|[
-name|GRAY_PIX
+name|GRAY
 index|]
 operator|>=
 name|tr
@@ -227,7 +227,7 @@ name|low_threshold
 operator|&&
 name|s
 index|[
-name|GRAY_PIX
+name|GRAY
 index|]
 operator|<=
 name|tr

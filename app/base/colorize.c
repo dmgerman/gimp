@@ -371,7 +371,7 @@ name|lum_red_lookup
 index|[
 name|s
 index|[
-name|RED_PIX
+name|RED
 index|]
 index|]
 operator|+
@@ -381,7 +381,7 @@ name|lum_green_lookup
 index|[
 name|s
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 index|]
 operator|+
@@ -391,7 +391,7 @@ name|lum_blue_lookup
 index|[
 name|s
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 index|]
 operator|)
@@ -470,7 +470,7 @@ expr_stmt|;
 block|}
 name|d
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|=
 name|colorize
@@ -482,7 +482,7 @@ index|]
 expr_stmt|;
 name|d
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|=
 name|colorize
@@ -494,7 +494,7 @@ index|]
 expr_stmt|;
 name|d
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|=
 name|colorize
@@ -510,12 +510,12 @@ name|alpha
 condition|)
 name|d
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 operator|=
 name|s
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 expr_stmt|;
 name|s

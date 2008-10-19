@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1a6570103
+DECL|enum|__anon2b88f99f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -5401,25 +5401,25 @@ argument_list|,
 operator|&
 name|tmp
 index|[
-name|RED_PIX
+name|RED
 index|]
 argument_list|,
 operator|&
 name|tmp
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 argument_list|,
 operator|&
 name|tmp
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 argument_list|,
 operator|&
 name|tmp
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 argument_list|)
 expr_stmt|;
@@ -5455,7 +5455,7 @@ index|]
 operator|=
 name|tmp
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 expr_stmt|;
 else|else

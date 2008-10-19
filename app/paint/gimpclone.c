@@ -1038,7 +1038,7 @@ index|]
 operator|=
 name|rgba
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 expr_stmt|;
 name|s

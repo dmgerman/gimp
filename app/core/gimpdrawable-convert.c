@@ -304,7 +304,7 @@ control|)
 block|{
 name|d
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|=
 operator|*
@@ -312,7 +312,7 @@ name|s
 expr_stmt|;
 name|d
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|=
 operator|*
@@ -320,7 +320,7 @@ name|s
 expr_stmt|;
 name|d
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|=
 operator|*
@@ -453,7 +453,7 @@ literal|3
 expr_stmt|;
 name|d
 index|[
-name|RED_PIX
+name|RED
 index|]
 operator|=
 name|cmap
@@ -465,7 +465,7 @@ index|]
 expr_stmt|;
 name|d
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 operator|=
 name|cmap
@@ -477,7 +477,7 @@ index|]
 expr_stmt|;
 name|d
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 operator|=
 name|cmap
@@ -784,17 +784,17 @@ name|GIMP_RGB_LUMINANCE
 argument_list|(
 name|s
 index|[
-name|RED_PIX
+name|RED
 index|]
 argument_list|,
 name|s
 index|[
-name|GREEN_PIX
+name|GREEN
 index|]
 argument_list|,
 name|s
 index|[
-name|BLUE_PIX
+name|BLUE
 index|]
 argument_list|)
 operator|+

@@ -1375,7 +1375,7 @@ if|if
 condition|(
 name|rgba
 index|[
-name|ALPHA_PIX
+name|ALPHA
 index|]
 condition|)
 block|{
