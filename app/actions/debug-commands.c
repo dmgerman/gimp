@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -682,7 +688,15 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
-literal|"Validation of entire projection took %.0f ms\n"
+literal|"Validation of the entire %d-layered projection took %.0f ms\n"
+argument_list|,
+name|gimp_container_num_children
+argument_list|(
+name|gimp_image_get_layers
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|,
 literal|1000
 operator|*
