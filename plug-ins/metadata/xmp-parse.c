@@ -1,10 +1,4 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
-begin_include
-include|#
-directive|include
-file|<stdio.h>
-end_include
-
 begin_comment
 comment|/* xmp-parse.c - simple parser for XMP metadata  *  * Copyright (C) 2004-2007, RaphaÃ«l Quinet<raphael@gimp.org>  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
 end_comment
@@ -127,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299326720103
+DECL|enum|__anon27dcab3e0103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -221,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299326720208
+DECL|struct|__anon27dcab3e0208
 block|{
 DECL|member|depth
 name|gint
@@ -365,8 +359,9 @@ begin_decl_stmt
 DECL|variable|state_names
 specifier|static
 specifier|const
-name|char
+name|gchar
 modifier|*
+specifier|const
 name|state_names
 index|[]
 init|=
