@@ -121,7 +121,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27dcab3e0103
+DECL|enum|__anon2a3264960103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -215,7 +215,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dcab3e0208
+DECL|struct|__anon2a3264960208
 block|{
 DECL|member|depth
 name|gint
@@ -1075,11 +1075,9 @@ return|return;
 block|}
 name|ns
 operator|=
-name|g_new
+name|g_slice_new0
 argument_list|(
 name|XMLNameSpace
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|ns
@@ -1272,6 +1270,13 @@ argument_list|(
 name|ns
 operator|->
 name|prefix
+argument_list|)
+expr_stmt|;
+name|g_slice_free
+argument_list|(
+name|XMLNameSpace
+argument_list|,
+name|ns
 argument_list|)
 expr_stmt|;
 name|context
@@ -4857,7 +4862,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * xmp_parse_context_new:  * @parser: a #XMPParser  * @flags: one or more #XMPParseFlags  * @user_data: user data to pass to #GMarkupParser functions  * @user_data_dnotify: user data destroy notifier called when the parse context is freed  *  * Creates a new XMP parse context.  A parse context is used to parse  * documents.  You can feed any number of documents containing XMP  * metadata into a context, as long as no errors occur; once an error  * occurs, the parse context can't continue to parse text (you have to  * free it and create a new parse context).  *  * Return value: a new #XMPParseContext  **/
+comment|/**  * xmp_parse_context_new:  * @parser: a #XMPParser  * @flags: one or more #XMPParseFlags  * @user_data: user data to pass to #GMarkupParser functions  * @user_data_dnotify: user data destroy notifier called when the  * parse context is freed  *  * Creates a new XMP parse context.  A parse context is used to parse  * documents.  You can feed any number of documents containing XMP  * metadata into a context, as long as no errors occur; once an error  * occurs, the parse context can't continue to parse text (you have to  * free it and create a new parse context).  *  * Return value: a new #XMPParseContext  **/
 end_comment
 
 begin_function
@@ -4896,11 +4901,9 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|g_new
+name|g_slice_new0
 argument_list|(
 name|XMPParseContext
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|context
@@ -5154,8 +5157,10 @@ operator|->
 name|property
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|XMPParseContext
+argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
