@@ -151,7 +151,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"debug-dump-projection-benchmarking"
+literal|"debug-benchmark-projection"
 block|,
 name|NULL
 block|,
@@ -163,7 +163,7 @@ name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
-name|debug_dump_projection_benchmarking_cmd_callback
+name|debug_benchmark_projection_cmd_callback
 argument_list|)
 block|,
 name|NULL

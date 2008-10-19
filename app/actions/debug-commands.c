@@ -510,8 +510,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|debug_dump_projection_benchmarking_cmd_callback (GtkAction * action,gpointer data)
-name|debug_dump_projection_benchmarking_cmd_callback
+DECL|function|debug_benchmark_projection_cmd_callback (GtkAction * action,gpointer data)
+name|debug_benchmark_projection_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

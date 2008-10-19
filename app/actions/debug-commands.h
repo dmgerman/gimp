@@ -99,7 +99,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|debug_dump_projection_benchmarking_cmd_callback
+name|debug_benchmark_projection_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
