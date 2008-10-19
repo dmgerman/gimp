@@ -149,6 +149,25 @@ argument_list|)
 block|,
 name|NULL
 block|}
+block|,
+block|{
+literal|"debug-dump-projection-benchmarking"
+block|,
+name|NULL
+block|,
+literal|"Dump Projection Benchmarking"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|debug_dump_projection_benchmarking_cmd_callback
+argument_list|)
+block|,
+name|NULL
+block|}
 block|}
 decl_stmt|;
 end_decl_stmt
