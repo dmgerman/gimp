@@ -53,11 +53,7 @@ file|"config/config-types.h"
 end_include
 
 begin_comment
-comment|/*  magic constants  */
-end_comment
-
-begin_comment
-comment|/* FIXME: Remove magic constants! */
+comment|/* convenient defines */
 end_comment
 
 begin_define
