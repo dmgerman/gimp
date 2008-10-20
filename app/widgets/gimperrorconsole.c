@@ -236,6 +236,10 @@ name|text_buffer
 argument_list|,
 literal|"title"
 argument_list|,
+literal|"scale"
+argument_list|,
+name|PANGO_SCALE_LARGE
+argument_list|,
 literal|"weight"
 argument_list|,
 name|PANGO_WEIGHT_BOLD
@@ -250,10 +254,6 @@ operator|->
 name|text_buffer
 argument_list|,
 literal|"message"
-argument_list|,
-literal|"scale"
-argument_list|,
-name|PANGO_SCALE_SMALL
 argument_list|,
 name|NULL
 argument_list|)
@@ -762,7 +762,7 @@ argument_list|(
 name|severity
 argument_list|)
 argument_list|,
-name|GTK_ICON_SIZE_MENU
+name|GTK_ICON_SIZE_BUTTON
 argument_list|,
 name|NULL
 argument_list|)
