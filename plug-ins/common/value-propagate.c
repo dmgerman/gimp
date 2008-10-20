@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac0b750108
+DECL|struct|__anon28ef93ef0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac0b750208
+DECL|struct|__anon28ef93ef0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -4062,7 +4062,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bac0b750308
+DECL|struct|__anon28ef93ef0308
 block|{
 DECL|member|min_modified
 name|gshort

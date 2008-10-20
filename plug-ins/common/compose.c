@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291108090108
+DECL|struct|__anon2992d5c70108
 block|{
 union|union
-DECL|union|__anon29110809020a
+DECL|union|__anon2992d5c7020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291108090308
+DECL|struct|__anon2992d5c70308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291108090408
+DECL|struct|__anon2992d5c70408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291108090508
+DECL|struct|__anon2992d5c70508
 block|{
 DECL|member|width
 DECL|member|height

@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c68ffa0108
+DECL|struct|__anon295746ff0108
 block|{
 DECL|member|resolution
 name|gdouble

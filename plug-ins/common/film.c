@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc20ae0108
+DECL|struct|__anon2ba697d20108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc20ae0208
+DECL|struct|__anon2ba697d20208
 block|{
 DECL|member|advanced_adj
 name|GtkObject

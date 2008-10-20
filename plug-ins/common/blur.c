@@ -981,7 +981,7 @@ operator|!
 name|has_alpha
 condition|)
 block|{
-comment|/* 	       *  If no alpha channel, 	       *   or if there is one and this is it... 	       */
+comment|/*                *  If no alpha channel,                *   or if there is one and this is it...                */
 operator|*
 name|d
 operator|++
@@ -1083,7 +1083,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* 	       *  otherwise we have an alpha channel, 	       *   but this is a color channel 	       */
+comment|/*                *  otherwise we have an alpha channel,                *   but this is a color channel                */
 operator|*
 name|d
 operator|++

@@ -113,7 +113,7 @@ DECL|member|maxval
 name|gint
 name|maxval
 decl_stmt|;
-comment|/* For 16 and 24 bit image files, the max 				    value which we need to normalize to    */
+comment|/* For 16 and 24 bit image files, the max                                     value which we need to normalize to    */
 DECL|member|samples_per_pixel
 name|gint
 name|samples_per_pixel
@@ -1460,7 +1460,7 @@ literal|0x0002ffff
 operator|&&
 name|implicit_encoding
 operator|)
-comment|/* This heuristics isn't used if we are doing implicit 	     encoding according to the value representation... */
+comment|/* This heuristics isn't used if we are doing implicit              encoding according to the value representation... */
 operator|||
 operator|(
 operator|(
@@ -1492,7 +1492,7 @@ index|]
 operator|>
 literal|'Z'
 operator|)
-comment|/* I found this in one of Ednas images. It seems like a 	     bug... 	  */
+comment|/* I found this in one of Ednas images. It seems like a              bug...           */
 operator|&&
 operator|!
 operator|(
@@ -1511,7 +1511,7 @@ operator|)
 operator|)
 condition|)
 block|{
-comment|/* Look up type from the dictionary. At the time we dont 	     support this option... */
+comment|/* Look up type from the dictionary. At the time we dont              support this option... */
 name|gchar
 name|element_length_chars
 index|[

@@ -168,7 +168,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af780830108
+DECL|struct|__anon2a40756c0108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -874,7 +874,7 @@ condition|(
 name|run_mode
 condition|)
 block|{
-comment|/* 	   *  If we're running interactively, pop up the dialog box. 	   */
+comment|/*            *  If we're running interactively, pop up the dialog box.            */
 case|case
 name|GIMP_RUN_INTERACTIVE
 case|:
@@ -902,7 +902,7 @@ condition|)
 comment|/* return on Cancel */
 return|return;
 break|break;
-comment|/* 	   *  If we're not interactive (probably scripting), we 	   *  get the parameters from the param[] array, since 	   *  we don't use the dialog box.  Make sure they all 	   *  parameters have legitimate values. 	   */
+comment|/*            *  If we're not interactive (probably scripting), we            *  get the parameters from the param[] array, since            *  we don't use the dialog box.  Make sure they all            *  parameters have legitimate values.            */
 case|case
 name|GIMP_RUN_NONINTERACTIVE
 case|:
@@ -1049,7 +1049,7 @@ expr_stmt|;
 block|}
 block|}
 break|break;
-comment|/* 	   *  If we're running with the last set of values, get those values. 	   */
+comment|/*            *  If we're running with the last set of values, get those values.            */
 case|case
 name|GIMP_RUN_WITH_LAST_VALS
 case|:
@@ -1080,7 +1080,7 @@ name|g_random_int
 argument_list|()
 expr_stmt|;
 break|break;
-comment|/* 	   *  Hopefully we never get here! 	   */
+comment|/*            *  Hopefully we never get here!            */
 default|default:
 break|break;
 block|}
@@ -1106,7 +1106,7 @@ index|]
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* 	   *  Initialize the g_rand() function seed 	   */
+comment|/*            *  Initialize the g_rand() function seed            */
 name|g_rand_set_seed
 argument_list|(
 name|gr
@@ -1123,7 +1123,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* 	   *  If we ran interactively (even repeating) update the display. 	   */
+comment|/*            *  If we ran interactively (even repeating) update the display.            */
 if|if
 condition|(
 name|run_mode
@@ -1135,7 +1135,7 @@ name|gimp_displays_flush
 argument_list|()
 expr_stmt|;
 block|}
-comment|/* 	   *  If we use the dialog popup, set the data for future use. 	   */
+comment|/*            *  If we use the dialog popup, set the data for future use.            */
 if|if
 condition|(
 name|run_mode
@@ -1858,7 +1858,7 @@ condition|(
 name|rndm_type
 condition|)
 block|{
-comment|/* 		       *  HURL 		       *      Just assign a random value. 		       */
+comment|/*                        *  HURL                        *      Just assign a random value.                        */
 case|case
 name|RNDM_HURL
 case|:
@@ -1889,7 +1889,7 @@ literal|256
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/* 		       *  PICK 		       *      pick at random from a neighboring pixel. 		       */
+comment|/*                        *  PICK                        *      pick at random from a neighboring pixel.                        */
 case|case
 name|RNDM_PICK
 case|:
@@ -2090,7 +2090,7 @@ break|break;
 block|}
 block|}
 break|break;
-comment|/* 		       *  SLUR 		       *      80% chance it's from directly above, 		       *      10% from above left, 		       *      10% from above right. 		       */
+comment|/*                        *  SLUR                        *      80% chance it's from directly above,                        *      10% from above left,                        *      10% from above right.                        */
 case|case
 name|RNDM_SLUR
 case|:
@@ -2186,7 +2186,7 @@ block|}
 block|}
 break|break;
 block|}
-comment|/*                    *  Otherwise, this pixel was not selected for randomization, 		   *  so use the current value. 		   */
+comment|/*                    *  Otherwise, this pixel was not selected for randomization,                    *  so use the current value.                    */
 block|}
 else|else
 block|{
@@ -2221,7 +2221,7 @@ index|]
 expr_stmt|;
 block|}
 block|}
-comment|/* 	   *  Save the modified row, shuffle the row pointers, and every 	   *  so often, update the progress meter. 	   */
+comment|/*            *  Save the modified row, shuffle the row pointers, and every            *  so often, update the progress meter.            */
 name|gimp_pixel_rgn_set_row
 argument_list|(
 name|dp

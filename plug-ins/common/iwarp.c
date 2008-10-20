@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1e50890103
+DECL|enum|__anon29928f850103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e50890208
+DECL|struct|__anon29928f850208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1e50890308
+DECL|struct|__anon29928f850308
 block|{
 DECL|member|deform_area_radius
 name|gint

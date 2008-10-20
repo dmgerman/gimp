@@ -1,10 +1,10 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Pixelize plug-in (ported to GIMP v1.0)  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.seikyou.ne.jp>  * original pixelize.c for GIMP 0.54 by Tracy Scott  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	 See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * Pixelize plug-in (ported to GIMP v1.0)  * Copyright (C) 1997 Eiichi Takamori<taka@ma1.seikyou.ne.jp>  * original pixelize.c for GIMP 0.54 by Tracy Scott  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_comment
-comment|/*  * version 1.04  * This version requires GIMP v0.99.10 or above.  *  * This plug-in "pixelizes" the image.  *  *	Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *	http://ha1.seikyou.ne.jp/home/taka/gimp/  *  * Changes from version 1.03 to version 1.04:  * - Added gtk_rc_parse  * - Added entry with scale  * - Fixed bug that large pixelwidth>=64 sometimes caused core dump  *  * Changes from gimp-0.99.9/plug-ins/pixelize.c to version 1.03:  * - Fixed comments and help strings  * - Fixed `RGB, GRAY' to `RGB*, GRAY*'  * - Fixed procedure db name `pixelize' to `plug_in_pixelize'  *  * Differences from Tracy Scott's original `pixelize' plug-in:  *  * - Algorithm is modified to work around with the tile management.  *   The way of pixelizing is switched by the value of pixelwidth.  If  *   pixelwidth is greater than (or equal to) tile width, then this  *   plug-in makes GimpPixelRgn with that width and proceeds. Otherwise,  *   it makes the region named `PixelArea', whose size is smaller than  *   tile width and is multiply of pixel width, and acts onto it.  */
+comment|/*  * version 1.04  * This version requires GIMP v0.99.10 or above.  *  * This plug-in "pixelizes" the image.  *  *      Eiichi Takamori<taka@ma1.seikyou.ne.jp>  *      http://ha1.seikyou.ne.jp/home/taka/gimp/  *  * Changes from version 1.03 to version 1.04:  * - Added gtk_rc_parse  * - Added entry with scale  * - Fixed bug that large pixelwidth>=64 sometimes caused core dump  *  * Changes from gimp-0.99.9/plug-ins/pixelize.c to version 1.03:  * - Fixed comments and help strings  * - Fixed `RGB, GRAY' to `RGB*, GRAY*'  * - Fixed procedure db name `pixelize' to `plug_in_pixelize'  *  * Differences from Tracy Scott's original `pixelize' plug-in:  *  * - Algorithm is modified to work around with the tile management.  *   The way of pixelizing is switched by the value of pixelwidth.  If  *   pixelwidth is greater than (or equal to) tile width, then this  *   plug-in makes GimpPixelRgn with that width and proceeds. Otherwise,  *   it makes the region named `PixelArea', whose size is smaller than  *   tile width and is multiply of pixel width, and acts onto it.  */
 end_comment
 
 begin_comment
@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4923680108
+DECL|struct|__anon2c498a7f0108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4923680208
+DECL|struct|__anon2c498a7f0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -2425,7 +2425,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  update the blurred region	 */
+comment|/*  update the blurred region      */
 name|gimp_drawable_flush
 argument_list|(
 name|drawable
@@ -2931,7 +2931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*   This function acts on one PixelArea.	Since there were so many   nested FORs in pixelize_small(), I put a few of them here...   */
+comment|/*   This function acts on one PixelArea.  Since there were so many   nested FORs in pixelize_small(), I put a few of them here...   */
 end_comment
 
 begin_function

@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3bda950103
+DECL|enum|__anon2b5db6920103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3bda950208
+DECL|struct|__anon2b5db6920208
 block|{
 DECL|member|title
 specifier|const

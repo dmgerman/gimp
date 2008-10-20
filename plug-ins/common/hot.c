@@ -4,15 +4,15 @@ comment|/*  * GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Sp
 end_comment
 
 begin_comment
-comment|/*  * hot.c - Scan an image for pixels with RGB values that will give  *	"unsafe" values of chrominance signal or composite signal  *	amplitude when encoded into an NTSC or PAL colour signal.  *	(This happens for certain high-intensity high-saturation colours  *	that are rare in real scenes, but can easily be present  *	in synthetic images.)  *  * 	Such pixels can be flagged so the user may then choose other  *	colours.  Or, the offending pixels can be made "safe"  *	in a manner that preserves hue.  *  *	There are two reasonable ways to make a pixel "safe":  *	We can reduce its intensity (luminance) while leaving  *	hue and saturation the same.  Or, we can reduce saturation  *	while leaving hue and luminance the same.  A #define selects  *	which strategy to use.  *  * Note to the user: You must add your own read_pixel() and write_pixel()  *	routines.  You may have to modify pix_decode() and pix_encode().  *	MAXPIX, WID, and HGT are likely to need modification.  */
+comment|/*  * hot.c - Scan an image for pixels with RGB values that will give  *      "unsafe" values of chrominance signal or composite signal  *      amplitude when encoded into an NTSC or PAL colour signal.  *      (This happens for certain high-intensity high-saturation colours  *      that are rare in real scenes, but can easily be present  *      in synthetic images.)  *  *      Such pixels can be flagged so the user may then choose other  *      colours.  Or, the offending pixels can be made "safe"  *      in a manner that preserves hue.  *  *      There are two reasonable ways to make a pixel "safe":  *      We can reduce its intensity (luminance) while leaving  *      hue and saturation the same.  Or, we can reduce saturation  *      while leaving hue and luminance the same.  A #define selects  *      which strategy to use.  *  * Note to the user: You must add your own read_pixel() and write_pixel()  *      routines.  You may have to modify pix_decode() and pix_encode().  *      MAXPIX, WID, and HGT are likely to need modification.  */
 end_comment
 
 begin_comment
-comment|/*  * Originally written as "ikNTSC.c" by Alan Wm Paeth,  *	University of Waterloo, August, 1985  * Updated by Dave Martindale, Imax Systems Corp., December 1990  */
+comment|/*  * Originally written as "ikNTSC.c" by Alan Wm Paeth,  *      University of Waterloo, August, 1985  * Updated by Dave Martindale, Imax Systems Corp., December 1990  */
 end_comment
 
 begin_comment
-comment|/*  * Compile time options:  *  *  * CHROMA_LIM is the limit (in IRE units) of the overall  *	chrominance amplitude; it should be 50 or perhaps  *	very slightly higher.  *  * COMPOS_LIM is the maximum amplitude (in IRE units) allowed for  *	the composite signal.  A value of 100 is the maximum  *	monochrome white, and is always safe.  120 is the absolute  *	limit for NTSC broadcasting, since the transmitter's carrier  *	goes to zero with 120 IRE input signal.  Generally, 110  *	is a good compromise - it allows somewhat brighter colours  *	than 100, while staying safely away from the hard limit.  */
+comment|/*  * Compile time options:  *  *  * CHROMA_LIM is the limit (in IRE units) of the overall  *      chrominance amplitude; it should be 50 or perhaps  *      very slightly higher.  *  * COMPOS_LIM is the maximum amplitude (in IRE units) allowed for  *      the composite signal.  A value of 100 is the maximum  *      monochrome white, and is always safe.  120 is the absolute  *      limit for NTSC broadcasting, since the transmitter's carrier  *      goes to zero with 120 IRE input signal.  Generally, 110  *      is a good compromise - it allows somewhat brighter colours  *      than 100, while staying safely away from the hard limit.  */
 end_comment
 
 begin_include
@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f89c920108
+DECL|struct|__anon2b5479520108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f89c920203
+DECL|enum|__anon2b5479520203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28f89c920303
+DECL|enum|__anon2b5479520303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon28f89c920408
+DECL|struct|__anon2b5479520408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -487,7 +487,7 @@ value|pow(x,       mode[m].gamma)
 end_define
 
 begin_comment
-comment|/*  * pix_decode: decode an integer pixel value into a floating-point  *	intensity in the range [0, 1].  *  * pix_encode: encode a floating-point intensity into an integer  *	pixel value.  *  * The code given here assumes simple linear encoding; you must change  * these routines if you use a different pixel encoding technique.  */
+comment|/*  * pix_decode: decode an integer pixel value into a floating-point  *      intensity in the range [0, 1].  *  * pix_encode: encode a floating-point intensity into an integer  *      pixel value.  *  * The code given here assumes simple linear encoding; you must change  * these routines if you use a different pixel encoding technique.  */
 end_comment
 
 begin_define
@@ -1604,7 +1604,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* 		   * Optimization: cache the last-computed hot pixel. 		   */
+comment|/*                    * Optimization: cache the last-computed hot pixel.                    */
 if|if
 condition|(
 name|r
@@ -1789,7 +1789,7 @@ name|prev_b
 operator|=
 name|b
 expr_stmt|;
-comment|/* 		       * Get Y and chroma amplitudes in floating point. 		       * 		       * If your C library doesn't have hypot(), just use 		       * hypot(a,b) = sqrt(a*a, b*b); 		       * 		       * Then extract linear (un-gamma-corrected) 		       * floating-point pixel RGB values. 		       */
+comment|/*                        * Get Y and chroma amplitudes in floating point.                        *                        * If your C library doesn't have hypot(), just use                        * hypot(a,b) = sqrt(a*a, b*b);                        *                        * Then extract linear (un-gamma-corrected)                        * floating-point pixel RGB values.                        */
 name|fy
 operator|=
 operator|(
@@ -1857,7 +1857,7 @@ argument_list|(
 name|b
 argument_list|)
 expr_stmt|;
-comment|/* 		       * Reducing overall pixel intensity by scaling R, 		       * G, and B reduces Y, I, and Q by the same factor. 		       * This changes luminance but not saturation, since 		       * saturation is determined by the chroma/luminance 		       * ratio. 		       * 		       * On the other hand, by linearly interpolating 		       * between the original pixel value and a grey 		       * pixel with the same luminance (R=G=B=Y), we 		       * change saturation without affecting luminance. 		       */
+comment|/*                        * Reducing overall pixel intensity by scaling R,                        * G, and B reduces Y, I, and Q by the same factor.                        * This changes luminance but not saturation, since                        * saturation is determined by the chroma/luminance                        * ratio.                        *                        * On the other hand, by linearly interpolating                        * between the original pixel value and a grey                        * pixel with the same luminance (R=G=B=Y), we                        * change saturation without affecting luminance.                        */
 if|if
 condition|(
 name|argp
@@ -1867,7 +1867,7 @@ operator|==
 name|ACT_LREDUX
 condition|)
 block|{
-comment|/* 			   * Calculate a scale factor that will bring the pixel 			   * within both chroma and composite limits, if we scale 			   * luminance and chroma simultaneously. 			   * 			   * The calculated chrominance reduction applies 			   * to the gamma-corrected RGB values that are 			   * the input to the RGB-to-YIQ operation. 			   * Multiplying the original un-gamma-corrected 			   * pixel values by the scaling factor raised to 			   * the "gamma" power is equivalent, and avoids 			   * calling gc() and inv_gc() three times each.  */
+comment|/*                            * Calculate a scale factor that will bring the pixel                            * within both chroma and composite limits, if we scale                            * luminance and chroma simultaneously.                            *                            * The calculated chrominance reduction applies                            * to the gamma-corrected RGB values that are                            * the input to the RGB-to-YIQ operation.                            * Multiplying the original un-gamma-corrected                            * pixel values by the scaling factor raised to                            * the "gamma" power is equivalent, and avoids                            * calling gc() and inv_gc() three times each.  */
 name|scale
 operator|=
 name|chroma_lim
@@ -1950,7 +1950,7 @@ block|}
 else|else
 block|{
 comment|/* ACT_SREDUX hopefully */
-comment|/* 			   * Calculate a scale factor that will bring the 			   * pixel within both chroma and composite 			   * limits, if we scale chroma while leaving 			   * luminance unchanged. 			   * 			   * We have to interpolate gamma-corrected RGB 			   * values, so we must convert from linear to 			   * gamma-corrected before interpolation and then 			   * back to linear afterwards. 			   */
+comment|/*                            * Calculate a scale factor that will bring the                            * pixel within both chroma and composite                            * limits, if we scale chroma while leaving                            * luminance unchanged.                            *                            * We have to interpolate gamma-corrected RGB                            * values, so we must convert from linear to                            * gamma-corrected before interpolation and then                            * back to linear afterwards.                            */
 name|scale
 operator|=
 name|chroma_lim
@@ -3290,7 +3290,7 @@ index|[
 name|b
 index|]
 expr_stmt|;
-comment|/*    * Check to see if the chrominance vector is too long or the    * composite waveform amplitude is too large.    *    * Chrominance is too large if    *    *	sqrt(i^2, q^2)>  chroma_lim.    *    * The composite signal amplitude is too large if    *    *	y + sqrt(i^2, q^2)>  compos_lim.    *    * We avoid doing the sqrt by checking    *    *	i^2 + q^2>  chroma_lim^2    * and    *	y + sqrt(i^2 + q^2)>  compos_lim    *	sqrt(i^2 + q^2)>  compos_lim - y    *	i^2 + q^2>  (compos_lim - y)^2    *    */
+comment|/*    * Check to see if the chrominance vector is too long or the    * composite waveform amplitude is too large.    *    * Chrominance is too large if    *    *    sqrt(i^2, q^2)>  chroma_lim.    *    * The composite signal amplitude is too large if    *    *    y + sqrt(i^2, q^2)>  compos_lim.    *    * We avoid doing the sqrt by checking    *    *    i^2 + q^2>  chroma_lim^2    * and    *    y + sqrt(i^2 + q^2)>  compos_lim    *    sqrt(i^2 + q^2)>  compos_lim - y    *    i^2 + q^2>  (compos_lim - y)^2    *    */
 name|c2
 operator|=
 operator|(

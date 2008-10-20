@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4688040108
+DECL|struct|__anon2a531c970108
 block|{
 DECL|member|threshold
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4688040208
+DECL|struct|__anon2a531c970208
 block|{
 DECL|member|r
 name|guchar

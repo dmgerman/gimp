@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7637d0108
+DECL|struct|__anon2b16277e0108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7637d0208
+DECL|struct|__anon2b16277e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -639,7 +639,7 @@ comment|/* Run the main function */
 name|rotate
 argument_list|()
 expr_stmt|;
-comment|/* If run mode is interactive, flush displays, else (script) don't 	 do it, as the screen updates would make the scripts slow */
+comment|/* If run mode is interactive, flush displays, else (script) don't          do it, as the screen updates would make the scripts slow */
 if|if
 condition|(
 name|run_mode

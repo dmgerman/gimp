@@ -2242,7 +2242,7 @@ name|i
 operator|++
 control|)
 block|{
-comment|/*preview_data1[i] = (preview_data1[i]*2 + 		    seed_data[i]) /3;*/
+comment|/*preview_data1[i] = (preview_data1[i]*2 +                     seed_data[i]) /3;*/
 comment|/* mod'd version of the below for a 'deeper' mix */
 name|prevwords
 index|[
@@ -2288,8 +2288,8 @@ operator|&
 literal|0x3f3f3f3f
 operator|)
 expr_stmt|;
-comment|/* This is from Raph L... it should be a fast 50%/50% 		     blend, though I don't know if 50%/50% is as nice as 		     the old ratio. */
-comment|/* 		    prevwords[i] = 		    ((prevwords[i]>> 1)& 0x7f7f7f7f) + 		    ((seedwords[i]>> 1)& 0x7f7f7f7f) + 		    (prevwords[i]& seedwords[i]& 0x01010101); */
+comment|/* This is from Raph L... it should be a fast 50%/50%                      blend, though I don't know if 50%/50% is as nice as                      the old ratio. */
+comment|/*                     prevwords[i] =                     ((prevwords[i]>> 1)& 0x7f7f7f7f) +                     ((seedwords[i]>> 1)& 0x7f7f7f7f) +                     (prevwords[i]& seedwords[i]& 0x01010101); */
 block|}
 block|}
 block|}
@@ -2514,8 +2514,8 @@ operator|&
 literal|0x3f3f3f3f
 operator|)
 expr_stmt|;
-comment|/* This is from Raph L... it should be a fast 50%/50% 		     blend, though I don't know if 50%/50% is as nice as 		     the old ratio. */
-comment|/* 		    prevwords[i] = 		    ((prevwords[i]>> 1)& 0x7f7f7f7f) + 		    ((seedwords[i]>> 1)& 0x7f7f7f7f) + 		    (prevwords[i]& seedwords[i]& 0x01010101); */
+comment|/* This is from Raph L... it should be a fast 50%/50%                      blend, though I don't know if 50%/50% is as nice as                      the old ratio. */
+comment|/*                     prevwords[i] =                     ((prevwords[i]>> 1)& 0x7f7f7f7f) +                     ((seedwords[i]>> 1)& 0x7f7f7f7f) +                     (prevwords[i]& seedwords[i]& 0x01010101); */
 block|}
 block|}
 block|}

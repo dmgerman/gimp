@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae94fa30108
+DECL|struct|__anon28acf9e70108
 block|{
 DECL|member|period
 name|gint
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2ae94fa30208
+DECL|struct|__anon28acf9e70208
 typedef|typedef
 struct|struct
 block|{

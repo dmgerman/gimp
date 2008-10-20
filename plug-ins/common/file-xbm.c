@@ -4877,7 +4877,7 @@ if|#
 directive|if
 literal|0
 comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
-block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1, 			     _("Comment:"), 0.0, 0.5, 			     entry, 1, TRUE);   g_signal_connect (entry, "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
+block|entry = gtk_entry_new ();   gtk_entry_set_max_length (GTK_ENTRY (entry), MAX_COMMENT);   gtk_widget_set_size_request (entry, 240, -1);   gtk_entry_set_text (GTK_ENTRY (entry), xsvals.comment);   gimp_table_attach_aligned (GTK_TABLE (table), 0, 1,                              _("Comment:"), 0.0, 0.5,                              entry, 1, TRUE);   g_signal_connect (entry, "changed",                     G_CALLBACK (comment_entry_callback),                     NULL);
 endif|#
 directive|endif
 comment|/* hotspot toggle */
@@ -5454,7 +5454,7 @@ comment|/* DISABLED - see http://bugzilla.gnome.org/show_bug.cgi?id=82763 */
 end_comment
 
 begin_endif
-unit|static void comment_entry_callback (GtkWidget *widget, 			gpointer   data) {   memset (xsvals.comment, 0, sizeof (xsvals.comment));   strncpy (xsvals.comment, 	   gtk_entry_get_text (GTK_ENTRY (widget)), MAX_COMMENT); }
+unit|static void comment_entry_callback (GtkWidget *widget,                         gpointer   data) {   memset (xsvals.comment, 0, sizeof (xsvals.comment));   strncpy (xsvals.comment,            gtk_entry_get_text (GTK_ENTRY (widget)), MAX_COMMENT); }
 endif|#
 directive|endif
 end_endif

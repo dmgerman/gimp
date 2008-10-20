@@ -969,7 +969,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b776b90108
+DECL|struct|__anon2b0bb8a50108
 block|{
 DECL|member|type
 specifier|const
@@ -1682,7 +1682,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b776b90208
+DECL|struct|__anon2b0bb8a50208
 block|{
 DECL|member|extract_type
 name|gchar

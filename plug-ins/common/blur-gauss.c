@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae745410103
+DECL|enum|__anon29c5b39b0103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae745410208
+DECL|struct|__anon29c5b39b0208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -5472,7 +5472,7 @@ operator|/
 literal|4
 condition|)
 block|{
-comment|/* encoded_rle is only fastest if there are a lot of 		   * repeating pixels 		   */
+comment|/* encoded_rle is only fastest if there are a lot of                    * repeating pixels                    */
 name|do_encoded_lre
 argument_list|(
 name|rle
@@ -5951,7 +5951,7 @@ operator|/
 literal|4
 condition|)
 block|{
-comment|/* encoded_rle is only fastest if there are a lot of 		   * repeating pixels 		   */
+comment|/* encoded_rle is only fastest if there are a lot of                    * repeating pixels                    */
 name|do_encoded_lre
 argument_list|(
 name|rle

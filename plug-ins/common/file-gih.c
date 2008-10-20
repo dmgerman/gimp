@@ -4,7 +4,7 @@ comment|/* Plug-in to load and save .gih (GIMP Brush Pipe) files.  *  * Copyrigh
 end_comment
 
 begin_comment
-comment|/* Example of how to call file_gih_save from script-fu:    (let ((ranks (cons-array 1 'byte)))     (aset ranks 0 12)     (file-gih-save 1 		   img 		   drawable 		   "foo.gih" 		   "foo.gih" 		   100 		   "test brush" 		   125 		   125 		   3 		   4 		   1 		   ranks 		   1 		   '("random")))   */
+comment|/* Example of how to call file_gih_save from script-fu:    (let ((ranks (cons-array 1 'byte)))     (aset ranks 0 12)     (file-gih-save 1                    img                    drawable                    "foo.gih"                    "foo.gih"                    100                    "test brush"                    125                    125                    3                    4                    1                    ranks                    1                    '("random")))   */
 end_comment
 
 begin_include
@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c4f82880108
+DECL|struct|__anon28f600120108
 block|{
 DECL|member|spacing
 name|guint
@@ -271,7 +271,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4f82880208
+DECL|struct|__anon28f600120208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2179,7 +2179,7 @@ block|{
 name|PatternHeader
 name|ph
 decl_stmt|;
-comment|/*  For backwards-compatibility, check if a pattern follows. 	  The obsolete .gpb format did it this way.  */
+comment|/*  For backwards-compatibility, check if a pattern follows.           The obsolete .gpb format did it this way.  */
 if|if
 condition|(
 name|read
@@ -6427,7 +6427,7 @@ operator|.
 name|rows
 operator|)
 expr_stmt|;
-comment|/* Assume layer is offset to positive direction in x and y. 	   * That's reasonable, as otherwise all of the layer 	   * won't be visible. 	   * thisy and thisx are in the drawable's coordinate space. 	   */
+comment|/* Assume layer is offset to positive direction in x and y.            * That's reasonable, as otherwise all of the layer            * won't be visible.            * thisy and thisx are in the drawable's coordinate space.            */
 name|thisy
 operator|=
 name|MAX

@@ -1213,7 +1213,7 @@ expr_stmt|;
 block|}
 block|}
 block|}
-comment|/* If the pattern ends with wildcards, we have a 	     * guaranteed match unless there is a dir separator 	     * in the remainder of the string. 	     */
+comment|/* If the pattern ends with wildcards, we have a              * guaranteed match unless there is a dir separator              * in the remainder of the string.              */
 if|if
 condition|(
 name|c

@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b31bb1e0108
+DECL|struct|__anon2c5fced40108
 block|{
 DECL|member|captiontxt
 name|gchar

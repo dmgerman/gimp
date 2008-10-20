@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3ea4a60108
+DECL|struct|__anon2b9b723c0108
 block|{
 DECL|member|description
 name|gchar
@@ -2075,7 +2075,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b3ea4a6020a
+DECL|union|__anon2b9b723c020a
 block|{
 DECL|member|u
 name|guint16

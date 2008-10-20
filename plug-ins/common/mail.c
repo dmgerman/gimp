@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277f58c70108
+DECL|struct|__anon2c78bbde0108
 block|{
 DECL|member|filename
 name|gchar

@@ -988,7 +988,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7439a10108
+DECL|struct|__anon295903dc0108
 block|{
 DECL|member|vhi
 name|gdouble

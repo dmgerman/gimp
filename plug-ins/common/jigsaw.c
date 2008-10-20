@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f0a0940103
+DECL|enum|__anon28f892100103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f0a0940203
+DECL|enum|__anon28f892100203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
