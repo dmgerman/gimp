@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d7a2440103
+DECL|enum|__anon2b53eb7b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1833,7 +1833,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|GEGL_IS_PARAM_SPEC_PATH
+name|GEGL_IS_PARAM_SPEC_FILE_PATH
 argument_list|(
 name|pspec
 argument_list|)
