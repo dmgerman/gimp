@@ -1155,6 +1155,11 @@ argument_list|,
 name|scale
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_scaled
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|offset_x
@@ -1321,11 +1326,6 @@ argument_list|)
 expr_stmt|;
 block|}
 name|gimp_display_shell_scroll_clamp_and_update
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scaled
 argument_list|(
 name|shell
 argument_list|)

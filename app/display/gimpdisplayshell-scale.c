@@ -1136,6 +1136,11 @@ argument_list|,
 name|real_new_scale
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_scaled
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_shrink_wrap
 argument_list|(
 name|shell
