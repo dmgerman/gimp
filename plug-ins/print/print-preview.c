@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b876560103
+DECL|enum|__anon27cc3b4c0103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1616,6 +1616,14 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|event
+operator|->
+name|mode
+operator|==
+name|GDK_CROSSING_NORMAL
+condition|)
 name|print_preview_set_inside
 argument_list|(
 name|preview
