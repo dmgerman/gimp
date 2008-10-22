@@ -6744,6 +6744,22 @@ name|projection
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+if|if
+condition|(
+name|gimp_drawable_has_alpha
+argument_list|(
+name|projection
+argument_list|)
+condition|)
+name|gimp_layer_flatten
+argument_list|(
+name|projection
+argument_list|)
+expr_stmt|;
+comment|/* PSDs don't support transparency information in indexed images*/
+block|}
 return|return
 name|projection
 return|;
