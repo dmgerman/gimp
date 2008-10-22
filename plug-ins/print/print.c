@@ -919,7 +919,7 @@ name|gtk_print_operation_set_unit
 argument_list|(
 name|operation
 argument_list|,
-name|GTK_UNIT_POINTS
+name|GTK_UNIT_PIXEL
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
