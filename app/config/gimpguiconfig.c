@@ -93,7 +93,7 @@ end_define
 begin_elif
 elif|#
 directive|elif
-name|HAVE_CARBON
+name|PLATFORM_OSX
 end_elif
 
 begin_define
@@ -124,7 +124,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbf0710103
+DECL|enum|__anon2b39fb620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
