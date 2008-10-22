@@ -518,6 +518,7 @@ operator|->
 name|progress
 argument_list|)
 condition|)
+block|{
 name|gimp_progress_end
 argument_list|(
 name|proc_frame
@@ -525,6 +526,7 @@ operator|->
 name|progress
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|proc_frame

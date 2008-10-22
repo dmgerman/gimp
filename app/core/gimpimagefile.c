@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad164a30103
+DECL|enum|__anon2bae51000103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
