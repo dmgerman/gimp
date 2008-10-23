@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292574d80103
+DECL|enum|__anon293963b90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1091,7 +1091,6 @@ if|if
 condition|(
 name|context
 condition|)
-block|{
 name|paint_info
 operator|=
 name|gimp_context_get_paint_info
@@ -1111,7 +1110,6 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-block|}
 name|desc
 operator|=
 name|g_object_new
