@@ -104,7 +104,7 @@ name|GimpContext
 name|parent_instance
 decl_stmt|;
 DECL|member|style
-name|GimpStrokeStyle
+name|GimpFillStyle
 name|style
 decl_stmt|;
 DECL|member|antialias

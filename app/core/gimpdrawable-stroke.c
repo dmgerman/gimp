@@ -1187,7 +1187,7 @@ name|style
 condition|)
 block|{
 case|case
-name|GIMP_STROKE_STYLE_SOLID
+name|GIMP_FILL_STYLE_SOLID
 case|:
 block|{
 name|guchar
@@ -1275,7 +1275,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GIMP_STROKE_STYLE_PATTERN
+name|GIMP_FILL_STYLE_PATTERN
 case|:
 block|{
 name|GimpPattern

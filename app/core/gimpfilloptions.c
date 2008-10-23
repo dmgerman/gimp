@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275001680103
+DECL|enum|__anon278079530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -155,9 +155,9 @@ literal|"style"
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_STROKE_STYLE
+name|GIMP_TYPE_FILL_STYLE
 argument_list|,
-name|GIMP_STROKE_STYLE_SOLID
+name|GIMP_FILL_STYLE_SOLID
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
