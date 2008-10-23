@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpcontext.h"
+file|"gimpfilloptions.h"
 end_include
 
 begin_define
@@ -100,12 +100,8 @@ struct|struct
 name|_GimpStrokeOptions
 block|{
 DECL|member|parent_instance
-name|GimpContext
+name|GimpFillOptions
 name|parent_instance
-decl_stmt|;
-DECL|member|style
-name|GimpStrokeStyle
-name|style
 decl_stmt|;
 DECL|member|width
 name|gdouble
@@ -127,10 +123,6 @@ DECL|member|miter_limit
 name|gdouble
 name|miter_limit
 decl_stmt|;
-DECL|member|antialias
-name|gboolean
-name|antialias
-decl_stmt|;
 DECL|member|dash_offset
 name|gdouble
 name|dash_offset
@@ -150,7 +142,7 @@ struct|struct
 name|_GimpStrokeOptionsClass
 block|{
 DECL|member|parent_class
-name|GimpContextClass
+name|GimpFillOptionsClass
 name|parent_class
 decl_stmt|;
 DECL|member|dash_info_changed
@@ -206,7 +198,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_STROKE_OPTIONS_H__  */
+comment|/* __GIMP_STROKE_OPTIONS_H__ */
 end_comment
 
 end_unit

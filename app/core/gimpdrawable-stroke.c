@@ -1114,7 +1114,10 @@ name|y
 operator|+
 name|off_y
 argument_list|,
+name|GIMP_FILL_OPTIONS
+argument_list|(
 name|options
+argument_list|)
 operator|->
 name|antialias
 argument_list|)
@@ -1175,7 +1178,10 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
+name|GIMP_FILL_OPTIONS
+argument_list|(
 name|options
+argument_list|)
 operator|->
 name|style
 condition|)

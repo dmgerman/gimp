@@ -260,6 +260,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFillOptions
+typedef|typedef
+name|struct
+name|_GimpFillOptions
+name|GimpFillOptions
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpStrokeOptions
 typedef|typedef
 name|struct
