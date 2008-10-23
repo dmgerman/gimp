@@ -191,7 +191,8 @@ block|{
 if|#
 directive|if
 literal|1
-comment|// Best so far (maybe even correct?)
+comment|// Wrong, for alpha compositing consistency all layers should
+comment|// affect alpha in the same way independent of layer mode
 name|out
 index|[
 name|RED
@@ -264,6 +265,79 @@ index|]
 expr_stmt|;
 else|#
 directive|else
+comment|// A very nice combination of correctness and speed for
+comment|// premultiplied data without any of the issues the previous
+comment|// versions had
+name|out
+index|[
+name|RED
+index|]
+operator|=
+name|in
+index|[
+name|RED
+index|]
+operator|+
+name|layer
+index|[
+name|RED
+index|]
+expr_stmt|;
+name|out
+index|[
+name|GREEN
+index|]
+operator|=
+name|in
+index|[
+name|GREEN
+index|]
+operator|+
+name|layer
+index|[
+name|GREEN
+index|]
+expr_stmt|;
+name|out
+index|[
+name|BLUE
+index|]
+operator|=
+name|in
+index|[
+name|BLUE
+index|]
+operator|+
+name|layer
+index|[
+name|BLUE
+index|]
+expr_stmt|;
+name|out
+index|[
+name|ALPHA
+index|]
+operator|=
+name|in
+index|[
+name|ALPHA
+index|]
+operator|+
+name|layer
+index|[
+name|ALPHA
+index|]
+operator|-
+name|in
+index|[
+name|ALPHA
+index|]
+operator|*
+name|layer
+index|[
+name|ALPHA
+index|]
+expr_stmt|;
 comment|// Wrong, doesn't take layer opacity of Addition-mode layer into
 comment|// account
 name|out
