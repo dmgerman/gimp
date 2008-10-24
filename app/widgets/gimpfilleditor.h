@@ -102,6 +102,10 @@ name|GimpFillOptions
 modifier|*
 name|options
 decl_stmt|;
+DECL|member|edit_context
+name|gboolean
+name|edit_context
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -137,6 +141,9 @@ parameter_list|(
 name|GimpFillOptions
 modifier|*
 name|options
+parameter_list|,
+name|gboolean
+name|edit_context
 parameter_list|)
 function_decl|;
 end_function_decl

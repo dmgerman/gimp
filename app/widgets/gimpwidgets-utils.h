@@ -92,6 +92,24 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_enum_radio_box_add
+parameter_list|(
+name|GtkBox
+modifier|*
+name|box
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|gint
+name|enum_value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_enum_radio_frame_add
 parameter_list|(
 name|GtkFrame

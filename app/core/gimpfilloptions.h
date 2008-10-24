@@ -111,6 +111,14 @@ DECL|member|antialias
 name|gboolean
 name|antialias
 decl_stmt|;
+DECL|member|pattern_view_type
+name|GimpViewType
+name|pattern_view_type
+decl_stmt|;
+DECL|member|pattern_view_size
+name|GimpViewSize
+name|pattern_view_size
+decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294584d70103
+DECL|enum|__anon2913b80b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1519,7 +1519,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_stroke_editor_new (GimpStrokeOptions * options,gdouble resolution)
+DECL|function|gimp_stroke_editor_new (GimpStrokeOptions * options,gdouble resolution,gboolean edit_context)
 name|gimp_stroke_editor_new
 parameter_list|(
 name|GimpStrokeOptions
@@ -1528,6 +1528,9 @@ name|options
 parameter_list|,
 name|gdouble
 name|resolution
+parameter_list|,
+name|gboolean
+name|edit_context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1552,6 +1555,14 @@ argument_list|,
 literal|"resolution"
 argument_list|,
 name|resolution
+argument_list|,
+literal|"edit-context"
+argument_list|,
+name|edit_context
+condition|?
+name|TRUE
+else|:
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|)

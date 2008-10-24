@@ -145,6 +145,9 @@ name|options
 parameter_list|,
 name|gdouble
 name|resolution
+parameter_list|,
+name|gboolean
+name|edit_context
 parameter_list|)
 function_decl|;
 end_function_decl
