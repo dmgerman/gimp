@@ -64,7 +64,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpstrokedesc.h"
+file|"core/gimpstrokeoptions.h"
 end_include
 
 begin_include
@@ -1421,11 +1421,11 @@ operator|&&
 name|drawable
 condition|)
 block|{
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|desc
+name|options
 init|=
-name|gimp_stroke_desc_new
+name|gimp_stroke_options_new
 argument_list|(
 name|gimp
 argument_list|,
@@ -1434,7 +1434,7 @@ argument_list|)
 decl_stmt|;
 name|g_object_set
 argument_list|(
-name|desc
+name|options
 argument_list|,
 literal|"method"
 argument_list|,
@@ -1456,7 +1456,7 @@ name|drawable
 argument_list|,
 name|context
 argument_list|,
-name|desc
+name|options
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1467,7 +1467,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|desc
+name|options
 argument_list|)
 expr_stmt|;
 block|}

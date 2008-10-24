@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpstrokedesc.h"
+file|"core/gimpstrokeoptions.h"
 end_include
 
 begin_include
@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297df6e20103
+DECL|enum|__anon2c70b0d80103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -412,9 +412,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|stroke_desc
+name|stroke_options
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -2215,7 +2215,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeDesc * stroke_desc,GimpProgress * progress,GError ** error)
+DECL|function|gimp_vectors_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeOptions * stroke_options,GimpProgress * progress,GError ** error)
 name|gimp_vectors_stroke
 parameter_list|(
 name|GimpItem
@@ -2226,9 +2226,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|stroke_desc
+name|stroke_options
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -2267,7 +2267,7 @@ name|TRUE
 return|;
 switch|switch
 condition|(
-name|stroke_desc
+name|stroke_options
 operator|->
 name|method
 condition|)
@@ -2279,8 +2279,6 @@ name|gimp_drawable_stroke_vectors
 argument_list|(
 name|drawable
 argument_list|,
-name|stroke_desc
-operator|->
 name|stroke_options
 argument_list|,
 name|vectors
@@ -2295,16 +2293,28 @@ case|case
 name|GIMP_STROKE_METHOD_PAINT_CORE
 case|:
 block|{
+name|GimpPaintInfo
+modifier|*
+name|paint_info
+decl_stmt|;
 name|GimpPaintCore
 modifier|*
 name|core
 decl_stmt|;
+name|paint_info
+operator|=
+name|gimp_context_get_paint_info
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|stroke_options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|core
 operator|=
 name|g_object_new
 argument_list|(
-name|stroke_desc
-operator|->
 name|paint_info
 operator|->
 name|paint_type
@@ -2320,11 +2330,11 @@ name|core
 argument_list|,
 name|drawable
 argument_list|,
-name|stroke_desc
+name|stroke_options
 operator|->
 name|paint_options
 argument_list|,
-name|stroke_desc
+name|stroke_options
 operator|->
 name|emulate_dynamics
 argument_list|,

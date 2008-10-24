@@ -733,15 +733,6 @@ name|GimpSubProgress
 typedef|;
 end_typedef
 
-begin_typedef
-DECL|typedef|GimpStrokeDesc
-typedef|typedef
-name|struct
-name|_GimpStrokeDesc
-name|GimpStrokeDesc
-typedef|;
-end_typedef
-
 begin_comment
 comment|/* typedef struct _GimpTemplate     GimpTemplate; in config-types.h */
 end_comment

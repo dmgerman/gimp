@@ -463,9 +463,9 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|stroke_desc
+name|stroke_options
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -970,9 +970,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|stroke_desc
+name|stroke_options
 parameter_list|,
 name|gboolean
 name|use_default_values

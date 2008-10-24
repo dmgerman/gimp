@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpstrokedesc.h"
+file|"gimpstrokeoptions.h"
 end_include
 
 begin_include
@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7b2d70103
+DECL|enum|__anon2a53f3970103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7b2d70203
+DECL|enum|__anon2a53f3970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3737,7 +3737,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeDesc * stroke_desc,gboolean use_default_values,GimpProgress * progress,GError ** error)
+DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeOptions * stroke_options,gboolean use_default_values,GimpProgress * progress,GError ** error)
 name|gimp_item_stroke
 parameter_list|(
 name|GimpItem
@@ -3752,9 +3752,9 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|stroke_desc
+name|stroke_options
 parameter_list|,
 name|gboolean
 name|use_default_values
@@ -3833,9 +3833,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_STROKE_DESC
+name|GIMP_IS_STROKE_OPTIONS
 argument_list|(
-name|stroke_desc
+name|stroke_options
 argument_list|)
 argument_list|,
 name|FALSE
@@ -3892,9 +3892,9 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|gimp_stroke_desc_prepare
+name|gimp_stroke_options_prepare
 argument_list|(
-name|stroke_desc
+name|stroke_options
 argument_list|,
 name|context
 argument_list|,
@@ -3922,7 +3922,7 @@ name|item
 argument_list|,
 name|drawable
 argument_list|,
-name|stroke_desc
+name|stroke_options
 argument_list|,
 name|progress
 argument_list|,
@@ -3934,9 +3934,9 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_stroke_desc_finish
+name|gimp_stroke_options_finish
 argument_list|(
-name|stroke_desc
+name|stroke_options
 argument_list|)
 expr_stmt|;
 block|}

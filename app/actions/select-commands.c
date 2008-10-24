@@ -72,7 +72,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpstrokedesc.h"
+file|"core/gimpstrokeoptions.h"
 end_include
 
 begin_include
@@ -1438,9 +1438,9 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-name|GimpStrokeDesc
+name|GimpStrokeOptions
 modifier|*
-name|desc
+name|options
 decl_stmt|;
 name|GError
 modifier|*
@@ -1503,7 +1503,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|desc
+name|options
 operator|=
 name|g_object_get_data
 argument_list|(
@@ -1514,22 +1514,22 @@ operator|->
 name|gimp
 argument_list|)
 argument_list|,
-literal|"saved-stroke-desc"
+literal|"saved-stroke-options"
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|desc
+name|options
 condition|)
 name|g_object_ref
 argument_list|(
-name|desc
+name|options
 argument_list|)
 expr_stmt|;
 else|else
-name|desc
+name|options
 operator|=
-name|gimp_stroke_desc_new
+name|gimp_stroke_options_new
 argument_list|(
 name|image
 operator|->
@@ -1555,7 +1555,7 @@ name|drawable
 argument_list|,
 name|context
 argument_list|,
-name|desc
+name|options
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1601,7 +1601,7 @@ expr_stmt|;
 block|}
 name|g_object_unref
 argument_list|(
-name|desc
+name|options
 argument_list|)
 expr_stmt|;
 block|}
