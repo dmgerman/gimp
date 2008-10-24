@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9e3780103
+DECL|enum|__anon29229f880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d9e3780203
+DECL|enum|__anon29229f880203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2647,13 +2647,13 @@ argument_list|)
 operator|==
 literal|0
 condition|)
-name|gimp_dialog_factories_hide
+name|gimp_dialog_factories_hide_with_display
 argument_list|()
 expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_dialog_factories_show
+name|gimp_dialog_factories_show_with_display
 argument_list|()
 expr_stmt|;
 block|}
