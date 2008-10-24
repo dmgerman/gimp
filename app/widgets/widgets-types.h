@@ -899,6 +899,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFillEditor
+typedef|typedef
+name|struct
+name|_GimpFillEditor
+name|GimpFillEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGridEditor
 typedef|typedef
 name|struct

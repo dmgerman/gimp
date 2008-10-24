@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_STROKE_EDITOR_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpfilleditor.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_STROKE_EDITOR
 define|#
@@ -94,13 +100,8 @@ struct|struct
 name|_GimpStrokeEditor
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GimpFillEditor
 name|parent_instance
-decl_stmt|;
-DECL|member|options
-name|GimpStrokeOptions
-modifier|*
-name|options
 decl_stmt|;
 DECL|member|resolution
 name|gdouble
@@ -116,7 +117,7 @@ struct|struct
 name|_GimpStrokeEditorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GimpFillEditorClass
 name|parent_class
 decl_stmt|;
 block|}
@@ -154,7 +155,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_STROKE_EDITOR_H__  */
+comment|/* __GIMP_STROKE_EDITOR_H__ */
 end_comment
 
 end_unit
