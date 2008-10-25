@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b35d70103
+DECL|enum|__anon299e4eb90103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2b35d70203
+DECL|enum|__anon299e4eb90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2513,7 +2513,7 @@ name|mode_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:layer-mode"
+literal|"gimp:point-layer-mode"
 argument_list|,
 literal|"blend-mode"
 argument_list|,
@@ -8417,7 +8417,7 @@ name|mode_node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp:layer-mode"
+literal|"gimp:point-layer-mode"
 argument_list|,
 literal|"blend-mode"
 argument_list|,

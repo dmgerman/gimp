@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad570ad0103
+DECL|enum|__anon2adc31ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -226,13 +226,13 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp:layer-mode"
+literal|"gimp:point-layer-mode"
 expr_stmt|;
 name|operation_class
 operator|->
 name|description
 operator|=
-literal|"GIMP layer mode operation"
+literal|"GIMP point layer mode operation"
 expr_stmt|;
 name|operation_class
 operator|->
