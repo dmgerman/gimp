@@ -91,7 +91,7 @@ end_decl_stmt
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * strokes,gint n_strokes,GError ** error)
+DECL|function|gimp_paint_core_stroke (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * strokes,gint n_strokes,gboolean push_undo,GError ** error)
 name|gimp_paint_core_stroke
 parameter_list|(
 name|GimpPaintCore
@@ -112,6 +112,9 @@ name|strokes
 parameter_list|,
 name|gint
 name|n_strokes
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GError
 modifier|*
@@ -314,6 +317,8 @@ argument_list|(
 name|core
 argument_list|,
 name|drawable
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_cleanup
@@ -333,7 +338,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke_boundary (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gboolean emulate_dynamics,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,GError ** error)
+DECL|function|gimp_paint_core_stroke_boundary (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gboolean emulate_dynamics,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo,GError ** error)
 name|gimp_paint_core_stroke_boundary
 parameter_list|(
 name|GimpPaintCore
@@ -364,6 +369,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GError
 modifier|*
@@ -956,6 +964,8 @@ argument_list|(
 name|core
 argument_list|,
 name|drawable
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_cleanup
@@ -982,7 +992,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_stroke_vectors (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gboolean emulate_dynamics,GimpVectors * vectors,GError ** error)
+DECL|function|gimp_paint_core_stroke_vectors (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gboolean emulate_dynamics,GimpVectors * vectors,gboolean push_undo,GError ** error)
 name|gimp_paint_core_stroke_vectors
 parameter_list|(
 name|GimpPaintCore
@@ -1003,6 +1013,9 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GError
 modifier|*
@@ -1435,6 +1448,8 @@ argument_list|(
 name|core
 argument_list|,
 name|drawable
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_paint_core_cleanup

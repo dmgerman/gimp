@@ -3453,6 +3453,8 @@ name|options
 argument_list|,
 name|TRUE
 argument_list|,
+name|TRUE
+argument_list|,
 name|progress
 argument_list|,
 name|error
@@ -3631,6 +3633,8 @@ argument_list|,
 name|context
 argument_list|,
 name|options
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,

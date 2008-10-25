@@ -467,6 +467,9 @@ name|GimpStrokeOptions
 modifier|*
 name|stroke_options
 parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
 name|GimpProgress
 modifier|*
 name|progress
@@ -976,6 +979,9 @@ name|stroke_options
 parameter_list|,
 name|gboolean
 name|use_default_values
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GimpProgress
 modifier|*

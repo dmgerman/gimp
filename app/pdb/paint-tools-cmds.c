@@ -295,6 +295,8 @@ name|coords
 argument_list|,
 name|n_strokes
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 expr_stmt|;

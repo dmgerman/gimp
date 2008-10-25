@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53f3970103
+DECL|enum|__anon27a16a1f0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a53f3970203
+DECL|enum|__anon27a16a1f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3737,7 +3737,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeOptions * stroke_options,gboolean use_default_values,GimpProgress * progress,GError ** error)
+DECL|function|gimp_item_stroke (GimpItem * item,GimpDrawable * drawable,GimpContext * context,GimpStrokeOptions * stroke_options,gboolean use_default_values,gboolean push_undo,GimpProgress * progress,GError ** error)
 name|gimp_item_stroke
 parameter_list|(
 name|GimpItem
@@ -3758,6 +3758,9 @@ name|stroke_options
 parameter_list|,
 name|gboolean
 name|use_default_values
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -3901,6 +3904,10 @@ argument_list|,
 name|use_default_values
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -3924,11 +3931,17 @@ name|drawable
 argument_list|,
 name|stroke_options
 argument_list|,
+name|push_undo
+argument_list|,
 name|progress
 argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_group_end
 argument_list|(
 name|image

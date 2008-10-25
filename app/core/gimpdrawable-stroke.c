@@ -155,6 +155,9 @@ parameter_list|,
 name|GimpScanConvert
 modifier|*
 name|scan_convert
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -165,7 +168,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_drawable_stroke_boundary (GimpDrawable * drawable,GimpStrokeOptions * options,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y)
+DECL|function|gimp_drawable_stroke_boundary (GimpDrawable * drawable,GimpStrokeOptions * options,const BoundSeg * bound_segs,gint n_bound_segs,gint offset_x,gint offset_y,gboolean push_undo)
 name|gimp_drawable_stroke_boundary
 parameter_list|(
 name|GimpDrawable
@@ -189,6 +192,9 @@ name|offset_x
 parameter_list|,
 name|gint
 name|offset_y
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpScanConvert
@@ -545,6 +551,8 @@ argument_list|,
 name|options
 argument_list|,
 name|scan_convert
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free
@@ -557,7 +565,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_stroke_vectors (GimpDrawable * drawable,GimpStrokeOptions * options,GimpVectors * vectors)
+DECL|function|gimp_drawable_stroke_vectors (GimpDrawable * drawable,GimpStrokeOptions * options,GimpVectors * vectors,gboolean push_undo)
 name|gimp_drawable_stroke_vectors
 parameter_list|(
 name|GimpDrawable
@@ -571,6 +579,9 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpScanConvert
@@ -795,6 +806,8 @@ argument_list|,
 name|options
 argument_list|,
 name|scan_convert
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|gimp_scan_convert_free
@@ -812,7 +825,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_stroke_scan_convert (GimpDrawable * drawable,GimpStrokeOptions * options,GimpScanConvert * scan_convert)
+DECL|function|gimp_drawable_stroke_scan_convert (GimpDrawable * drawable,GimpStrokeOptions * options,GimpScanConvert * scan_convert,gboolean push_undo)
 name|gimp_drawable_stroke_scan_convert
 parameter_list|(
 name|GimpDrawable
@@ -826,6 +839,9 @@ parameter_list|,
 name|GimpScanConvert
 modifier|*
 name|scan_convert
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpContext
@@ -1368,7 +1384,7 @@ argument_list|,
 operator|&
 name|basePR
 argument_list|,
-name|TRUE
+name|push_undo
 argument_list|,
 name|_
 argument_list|(

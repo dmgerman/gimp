@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4e78370103
+DECL|enum|__anon28d6f8660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1591,7 +1591,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_finish (GimpPaintCore * core,GimpDrawable * drawable)
+DECL|function|gimp_paint_core_finish (GimpPaintCore * core,GimpDrawable * drawable,gboolean push_undo)
 name|gimp_paint_core_finish
 parameter_list|(
 name|GimpPaintCore
@@ -1601,6 +1601,9 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImage
@@ -1668,6 +1671,11 @@ name|y1
 operator|)
 condition|)
 return|return;
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -1722,6 +1730,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_image_undo_group_end
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 name|tile_manager_unref
 argument_list|(
 name|core
@@ -1734,11 +1748,6 @@ operator|->
 name|undo_tiles
 operator|=
 name|NULL
-expr_stmt|;
-name|gimp_image_undo_group_end
-argument_list|(
-name|image
-argument_list|)
 expr_stmt|;
 if|if
 condition|(

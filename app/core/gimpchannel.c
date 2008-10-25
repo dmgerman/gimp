@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4627120103
+DECL|enum|__anon2932dfe10103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -523,6 +523,9 @@ parameter_list|,
 name|GimpStrokeOptions
 modifier|*
 name|stroke_options
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -3290,7 +3293,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeOptions * stroke_options,GimpProgress * progress,GError ** error)
+DECL|function|gimp_channel_stroke (GimpItem * item,GimpDrawable * drawable,GimpStrokeOptions * stroke_options,gboolean push_undo,GimpProgress * progress,GError ** error)
 name|gimp_channel_stroke
 parameter_list|(
 name|GimpItem
@@ -3304,6 +3307,9 @@ parameter_list|,
 name|GimpStrokeOptions
 modifier|*
 name|stroke_options
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -3434,6 +3440,8 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 name|retval
@@ -3497,6 +3505,8 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|,
+name|push_undo
 argument_list|,
 name|error
 argument_list|)

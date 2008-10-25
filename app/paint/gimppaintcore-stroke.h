@@ -39,6 +39,9 @@ parameter_list|,
 name|gint
 name|n_strokes
 parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -80,6 +83,9 @@ parameter_list|,
 name|gint
 name|offset_y
 parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
@@ -110,6 +116,9 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 name|GError
 modifier|*

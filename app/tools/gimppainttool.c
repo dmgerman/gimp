@@ -1677,6 +1677,8 @@ argument_list|(
 name|core
 argument_list|,
 name|drawable
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
