@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<babl/babl.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gegl.h>
 end_include
 
@@ -26,6 +32,18 @@ include|#
 directive|include
 file|"gimpoperationlayermode.h"
 end_include
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_operation_layer_mode_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -105,6 +123,12 @@ name|categories
 operator|=
 literal|"compositors"
 expr_stmt|;
+name|operation_class
+operator|->
+name|prepare
+operator|=
+name|gimp_operation_layer_mode_prepare
+expr_stmt|;
 name|point_class
 operator|->
 name|process
@@ -125,6 +149,56 @@ modifier|*
 name|self
 parameter_list|)
 block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_operation_layer_mode_prepare (GeglOperation * operation)
+name|gimp_operation_layer_mode_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+block|{
+name|Babl
+modifier|*
+name|format
+init|=
+name|babl_format
+argument_list|(
+literal|"RaGaBaA float"
+argument_list|)
+decl_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|,
+name|format
+argument_list|)
+expr_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"output"
+argument_list|,
+name|format
+argument_list|)
+expr_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"aux"
+argument_list|,
+name|format
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
