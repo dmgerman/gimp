@@ -96,7 +96,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationlayermode.h"
+file|"gimpoperationpointlayermode.h"
 end_include
 
 begin_function
@@ -175,7 +175,7 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_LAYER_MODE
+name|GIMP_TYPE_OPERATION_POINT_LAYER_MODE
 argument_list|)
 expr_stmt|;
 block|}

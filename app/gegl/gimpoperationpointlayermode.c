@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationpointcomposer.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationpointcomposer.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  * Copyright (C) 2008 Martin Nordholts<martinn@svn.gnome.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -12,13 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<babl/babl.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gegl.h>
+file|<gegl-plugin.h>
 end_include
 
 begin_include
@@ -30,12 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationlayermode.h"
+file|"gimpoperationpointlayermode.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea81210103
+DECL|enum|__anon2ad570ad0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -46,19 +40,10 @@ block|}
 enum|;
 end_enum
 
-begin_typedef
-DECL|typedef|GimpOperationLayerModeClass
-typedef|typedef
-name|struct
-name|_GimpOperationLayerModeClass
-name|GimpOperationLayerModeClass
-typedef|;
-end_typedef
-
 begin_struct
-DECL|struct|_GimpOperationLayerModeClass
+DECL|struct|_GimpOperationPointLayerModeClass
 struct|struct
-name|_GimpOperationLayerModeClass
+name|_GimpOperationPointLayerModeClass
 block|{
 DECL|member|parent_class
 name|GeglOperationPointComposerClass
@@ -69,9 +54,9 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|_GimpOperationLayerMode
+DECL|struct|_GimpOperationPointLayerMode
 struct|struct
-name|_GimpOperationLayerMode
+name|_GimpOperationPointLayerMode
 block|{
 DECL|member|parent_instance
 name|GeglOperationPointComposer
@@ -88,7 +73,7 @@ end_struct
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_layer_mode_set_property
+name|gimp_operation_point_layer_mode_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -112,7 +97,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_layer_mode_get_property
+name|gimp_operation_point_layer_mode_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -135,7 +120,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_layer_mode_prepare
+name|gimp_operation_point_layer_mode_prepare
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -147,7 +132,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_layer_mode_process
+name|gimp_operation_point_layer_mode_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -177,12 +162,12 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationLayerMode,gimp_operation_layer_mode,GEGL_TYPE_OPERATION_POINT_COMPOSER)
+DECL|function|G_DEFINE_TYPE (GimpOperationPointLayerMode,gimp_operation_point_layer_mode,GEGL_TYPE_OPERATION_POINT_COMPOSER)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationLayerMode
+argument|GimpOperationPointLayerMode
 argument_list|,
-argument|gimp_operation_layer_mode
+argument|gimp_operation_point_layer_mode
 argument_list|,
 argument|GEGL_TYPE_OPERATION_POINT_COMPOSER
 argument_list|)
@@ -191,9 +176,9 @@ end_macro
 begin_function
 specifier|static
 name|void
-name|gimp_operation_layer_mode_class_init
+name|gimp_operation_point_layer_mode_class_init
 parameter_list|(
-name|GimpOperationLayerModeClass
+name|GimpOperationPointLayerModeClass
 modifier|*
 name|klass
 parameter_list|)
@@ -229,13 +214,13 @@ name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_operation_layer_mode_set_property
+name|gimp_operation_point_layer_mode_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_operation_layer_mode_get_property
+name|gimp_operation_point_layer_mode_get_property
 expr_stmt|;
 name|operation_class
 operator|->
@@ -259,13 +244,13 @@ name|operation_class
 operator|->
 name|prepare
 operator|=
-name|gimp_operation_layer_mode_prepare
+name|gimp_operation_point_layer_mode_prepare
 expr_stmt|;
 name|point_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_layer_mode_process
+name|gimp_operation_point_layer_mode_process
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -295,10 +280,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_layer_mode_init (GimpOperationLayerMode * self)
-name|gimp_operation_layer_mode_init
+DECL|function|gimp_operation_point_layer_mode_init (GimpOperationPointLayerMode * self)
+name|gimp_operation_point_layer_mode_init
 parameter_list|(
-name|GimpOperationLayerMode
+name|GimpOperationPointLayerMode
 modifier|*
 name|self
 parameter_list|)
@@ -308,8 +293,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_layer_mode_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_operation_layer_mode_set_property
+DECL|function|gimp_operation_point_layer_mode_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_operation_point_layer_mode_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -328,11 +313,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpOperationLayerMode
+name|GimpOperationPointLayerMode
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_LAYER_MODE
+name|GIMP_OPERATION_POINT_LAYER_MODE
 argument_list|(
 name|object
 argument_list|)
@@ -373,8 +358,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_layer_mode_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_operation_layer_mode_get_property
+DECL|function|gimp_operation_point_layer_mode_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_operation_point_layer_mode_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -392,11 +377,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpOperationLayerMode
+name|GimpOperationPointLayerMode
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_LAYER_MODE
+name|GIMP_OPERATION_POINT_LAYER_MODE
 argument_list|(
 name|object
 argument_list|)
@@ -437,8 +422,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_layer_mode_prepare (GeglOperation * operation)
-name|gimp_operation_layer_mode_prepare
+DECL|function|gimp_operation_point_layer_mode_prepare (GeglOperation * operation)
+name|gimp_operation_point_layer_mode_prepare
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -487,8 +472,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_layer_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi)
-name|gimp_operation_layer_mode_process
+DECL|function|gimp_operation_point_layer_mode_process (GeglOperation * operation,void * in_buf,void * aux_buf,void * out_buf,glong samples,const GeglRectangle * roi)
+name|gimp_operation_point_layer_mode_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -515,11 +500,11 @@ modifier|*
 name|roi
 parameter_list|)
 block|{
-name|GimpOperationLayerMode
+name|GimpOperationPointLayerMode
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_LAYER_MODE
+name|GIMP_OPERATION_POINT_LAYER_MODE
 argument_list|(
 name|operation
 argument_list|)
