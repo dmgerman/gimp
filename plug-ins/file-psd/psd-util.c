@@ -2493,6 +2493,23 @@ name|g_ascii_strncasecmp
 argument_list|(
 name|psd_mode
 argument_list|,
+literal|"lddg"
+argument_list|,
+literal|4
+argument_list|)
+operator|==
+literal|0
+condition|)
+comment|/* Linear Dodge (cs2) */
+return|return
+name|GIMP_ADDITION_MODE
+return|;
+if|if
+condition|(
+name|g_ascii_strncasecmp
+argument_list|(
+name|psd_mode
+argument_list|,
 literal|"scrn"
 argument_list|,
 literal|4

@@ -1145,6 +1145,17 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_ADDITION_MODE
+case|:
+name|strcpy
+argument_list|(
+name|psdMode
+argument_list|,
+literal|"lddg"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|GIMP_MULTIPLY_MODE
 case|:
 name|strcpy
