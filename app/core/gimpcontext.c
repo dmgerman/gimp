@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon295889b80103
+DECL|enum|__anon2b37b8650103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295889b80203
+DECL|enum|__anon2b37b8650203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -5495,6 +5495,12 @@ block|{
 comment|/*  copy from parent if the changed property is undefined  */
 if|if
 condition|(
+name|pspec
+operator|->
+name|owner_type
+operator|==
+name|GIMP_TYPE_CONTEXT
+operator|&&
 operator|!
 operator|(
 operator|(
@@ -5510,6 +5516,7 @@ operator|->
 name|defined_props
 operator|)
 condition|)
+block|{
 name|gimp_context_copy_property
 argument_list|(
 name|parent
@@ -5521,6 +5528,7 @@ operator|->
 name|param_id
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
