@@ -1430,6 +1430,8 @@ argument_list|(
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|TRUE
 argument_list|)
 decl_stmt|;
 name|g_object_set

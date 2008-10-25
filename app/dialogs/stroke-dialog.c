@@ -311,6 +311,8 @@ operator|->
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|saved_options
@@ -1294,6 +1296,8 @@ operator|->
 name|gimp
 argument_list|,
 name|context
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_config_sync

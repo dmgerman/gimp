@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpfilloptions.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6026be0103
+DECL|enum|__anon28cc4c630103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -459,6 +465,46 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|GimpFillOptions
+modifier|*
+DECL|function|gimp_fill_options_new (Gimp * gimp)
+name|gimp_fill_options_new
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_FILL_OPTIONS
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
+argument_list|,
+name|NULL
+argument_list|)
+return|;
 block|}
 end_function
 

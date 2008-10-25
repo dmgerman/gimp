@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a56830103
+DECL|enum|__anon2c3fd9980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7a56830203
+DECL|enum|__anon2c3fd9980203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -257,6 +257,17 @@ value|gimp_stroke_options_parent_class
 end_define
 
 begin_decl_stmt
+specifier|static
+name|GimpConfigInterface
+modifier|*
+name|parent_config_iface
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|stroke_options_signals
 specifier|static
 name|guint
 name|stroke_options_signals
@@ -584,6 +595,25 @@ operator|*
 operator|)
 name|iface
 decl_stmt|;
+name|parent_config_iface
+operator|=
+name|g_type_interface_peek_parent
+argument_list|(
+name|config_iface
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|parent_config_iface
+condition|)
+name|parent_config_iface
+operator|=
+name|g_type_default_interface_peek
+argument_list|(
+name|GIMP_TYPE_CONFIG
+argument_list|)
+expr_stmt|;
 name|config_iface
 operator|->
 name|duplicate
@@ -1098,18 +1128,13 @@ name|new_options
 decl_stmt|;
 name|new_options
 operator|=
-name|gimp_stroke_options_new
+name|GIMP_STROKE_OPTIONS
 argument_list|(
-name|GIMP_CONTEXT
-argument_list|(
-name|options
-argument_list|)
+name|parent_config_iface
 operator|->
-name|gimp
-argument_list|,
-name|GIMP_CONTEXT
+name|duplicate
 argument_list|(
-name|options
+name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1169,7 +1194,7 @@ end_comment
 begin_function
 name|GimpStrokeOptions
 modifier|*
-DECL|function|gimp_stroke_options_new (Gimp * gimp,GimpContext * context)
+DECL|function|gimp_stroke_options_new (Gimp * gimp,GimpContext * context,gboolean use_context_color)
 name|gimp_stroke_options_new
 parameter_list|(
 name|Gimp
@@ -1179,6 +1204,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|gboolean
+name|use_context_color
 parameter_list|)
 block|{
 name|GimpPaintInfo
@@ -1211,6 +1239,19 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|use_context_color
+operator|==
+name|FALSE
+operator|||
+name|context
+operator|!=
+name|NULL
 argument_list|,
 name|NULL
 argument_list|)
@@ -1255,6 +1296,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|use_context_color
+condition|)
+block|{
 name|gimp_context_define_properties
 argument_list|(
 name|GIMP_CONTEXT
@@ -1269,10 +1315,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|context
-condition|)
 name|gimp_context_set_parent
 argument_list|(
 name|GIMP_CONTEXT
@@ -1283,6 +1325,7 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|options
 return|;

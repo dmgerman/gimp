@@ -201,6 +201,9 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|gboolean
+name|use_context_color
 parameter_list|)
 function_decl|;
 end_function_decl
