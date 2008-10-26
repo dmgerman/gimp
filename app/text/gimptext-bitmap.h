@@ -27,10 +27,11 @@ parameter_list|,
 name|PangoGlyph
 name|glyph
 parameter_list|,
-name|FT_Int32
-name|flags
+name|cairo_font_options_t
+modifier|*
+name|options
 parameter_list|,
-name|FT_Matrix
+name|cairo_matrix_t
 modifier|*
 name|trafo
 parameter_list|,
@@ -40,9 +41,9 @@ parameter_list|,
 name|gint
 name|y
 parameter_list|,
-name|FT_Bitmap
+name|cairo_t
 modifier|*
-name|bitmap
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl

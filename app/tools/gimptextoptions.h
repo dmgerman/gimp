@@ -165,16 +165,15 @@ DECL|member|font_view_size
 name|GimpViewSize
 name|font_view_size
 decl_stmt|;
+DECL|member|use_editor
+name|gboolean
+name|use_editor
+decl_stmt|;
 comment|/*  options gui  */
 DECL|member|size_entry
 name|GtkWidget
 modifier|*
 name|size_entry
-decl_stmt|;
-DECL|member|to_vectors_button
-name|GtkWidget
-modifier|*
-name|to_vectors_button
 decl_stmt|;
 DECL|member|along_vectors_button
 name|GtkWidget
@@ -243,6 +242,10 @@ specifier|const
 name|gchar
 modifier|*
 name|title
+parameter_list|,
+name|GtkTextBuffer
+modifier|*
+name|text_buffer
 parameter_list|)
 function_decl|;
 end_function_decl

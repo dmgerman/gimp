@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6438e0103
+DECL|enum|__anon296579ee0103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -42,10 +42,13 @@ block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_PRECISION
 name|GIMP_RECTANGLE_TOOL_PROP_PRECISION
 block|,
+DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_NARROW_MODE
+name|GIMP_RECTANGLE_TOOL_PROP_NARROW_MODE
+block|,
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_LAST
 name|GIMP_RECTANGLE_TOOL_PROP_LAST
 init|=
-name|GIMP_RECTANGLE_TOOL_PROP_PRECISION
+name|GIMP_RECTANGLE_TOOL_PROP_NARROW_MODE
 DECL|typedef|GimpRectangleToolProp
 block|}
 name|GimpRectangleToolProp
@@ -55,7 +58,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6438e0203
+DECL|enum|__anon296579ee0203
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_INACTIVE
 name|GIMP_RECTANGLE_TOOL_INACTIVE

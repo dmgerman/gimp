@@ -342,6 +342,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"text-tool-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tool-options-actions.h"
 end_include
 
@@ -880,6 +886,21 @@ block|,
 name|templates_actions_setup
 block|,
 name|templates_actions_update
+block|}
+block|,
+block|{
+literal|"text-tool"
+block|,
+name|N_
+argument_list|(
+literal|"Text Tool"
+argument_list|)
+block|,
+name|GTK_STOCK_EDIT
+block|,
+name|text_tool_actions_setup
+block|,
+name|text_tool_actions_update
 block|}
 block|,
 block|{

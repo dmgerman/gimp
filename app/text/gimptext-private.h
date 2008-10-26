@@ -17,7 +17,7 @@ name|__GIMP_TEXT_LAYOUT_PRIVATE_H__
 end_define
 
 begin_comment
-comment|/*  The purpose of this extra header file is to hide any Pango or  *  FreeType types from the rest of the gimp core.  */
+comment|/*  The purpose of this extra header file is to hide any Pango or  *  Cairo types from the rest of the gimp core.  */
 end_comment
 
 begin_struct
@@ -84,10 +84,11 @@ parameter_list|,
 name|PangoGlyph
 name|glyph
 parameter_list|,
-name|FT_Int32
-name|load_flags
+name|cairo_font_options_t
+modifier|*
+name|options
 parameter_list|,
-name|FT_Matrix
+name|cairo_matrix_t
 modifier|*
 name|tranform
 parameter_list|,

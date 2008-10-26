@@ -162,6 +162,10 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
+parameter_list|,
+name|GtkTextBuffer
+modifier|*
+name|text_buffer
 parameter_list|)
 function_decl|;
 end_function_decl
