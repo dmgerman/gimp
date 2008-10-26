@@ -118,12 +118,12 @@ parameter_list|,
 name|expr
 parameter_list|)
 define|\
-value|case (mode):                    \           for (c = RED; c< ALPHA; c++) \             {                           \               expr;                     \             }                           \          break;
+value|case (mode):                    \           for (c = RED; c< ALPHA; c++) \             {                           \               expr;                     \             }                           \           break;
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1783ca0103
+DECL|enum|__anon29d7a85e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -934,36 +934,34 @@ literal|1
 argument|- layA);             }
 argument_list|)
 empty_stmt|;
-comment|/* To be more mathematically correct we would have to either            * adjust the formula for the resulting opacity or adapt the            * other channels to the change in opacity. Compare to the            * 'plus' compositing operation in SVG 1.2.            *            * Since this doesn't matter for completely opaque layers, and            * since consistency in how the alpha channel of layers is            * interpreted is more important than mathematically correct            * results, we don't bother.            */
+comment|/* Custom SVG 1.2:            *            * if Dc + Sc>= 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc + Sc            */
 name|BLEND
 argument_list|(
-name|GIMP_ADDITION_MODE
+argument|GIMP_ADDITION_MODE
 argument_list|,
-name|outC
-operator|=
-name|inC
-operator|+
-name|layC
+argument|if (layC * inA + inC * layA>= layA * inA)             {               outC = layA * inA + layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA);             }           else             {               outC = inC + layC;             }
 argument_list|)
-expr_stmt|;
-comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc - Sc */
+empty_stmt|;
+comment|/* Custom SVG 1.2:            *            * if Dc - Sc<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = Dc - Sc            */
 name|BLEND
 argument_list|(
-name|GIMP_SUBTRACT_MODE
+argument|GIMP_SUBTRACT_MODE
 argument_list|,
-name|outC
-operator|=
-name|inC
-operator|+
-name|layC
-operator|-
+argument|if (inC * layA - layC * inA<=
+literal|0
+argument|)             {               outC = layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA);             }           else             {               outC = inC + layC -
 literal|2
-operator|*
-name|layC
-operator|*
-name|inA
+argument|* layC * inA;             }
 argument_list|)
-expr_stmt|;
+empty_stmt|;
 comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc - Sc + 0.5 */
 name|BLEND
 argument_list|(
