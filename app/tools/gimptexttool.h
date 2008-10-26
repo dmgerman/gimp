@@ -209,6 +209,10 @@ DECL|member|text_cursor_changing
 name|gboolean
 name|text_cursor_changing
 decl_stmt|;
+DECL|member|x_pos
+name|gint
+name|x_pos
+decl_stmt|;
 DECL|member|layout
 name|GimpTextLayout
 modifier|*
