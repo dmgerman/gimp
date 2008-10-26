@@ -520,7 +520,7 @@ name|display
 operator|->
 name|shell
 argument_list|,
-name|GDK_SELECTION_PRIMARY
+name|GDK_SELECTION_CLIPBOARD
 argument_list|)
 expr_stmt|;
 name|clip

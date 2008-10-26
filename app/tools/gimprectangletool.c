@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb036ca0103
+DECL|enum|__anon2c4198210103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb036ca0203
+DECL|enum|__anon2c4198210203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bb036ca0303
+DECL|enum|__anon2c4198210303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -3021,7 +3021,7 @@ argument_list|(
 name|rect_tool
 argument_list|)
 expr_stmt|;
-comment|/* Created rectangles should not be started in narrow-mode*/
+comment|/* Created rectangles should not be started in narrow-mode */
 name|private
 operator|->
 name|narrow_mode
