@@ -760,7 +760,7 @@ name|CAIRO_ANTIALIAS_NONE
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/*    * commented because there's no real autohint support in cairo like    * there is in ft2    *    * if (text->autohint)    *   cairo_font_options_set_hint_style (flags, CAIRO_HINT_STYLE_DEFAULT);    */
+comment|/*    * FIXME:    *    * The autohint property can't be supported any longer, but we    * should expose the cairo_hint_style_t enum.    */
 name|cairo_font_options_set_hint_style
 argument_list|(
 name|flags
