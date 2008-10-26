@@ -276,6 +276,9 @@ parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
+parameter_list|,
+name|gboolean
+name|backspace
 parameter_list|)
 function_decl|;
 end_function_decl

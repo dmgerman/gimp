@@ -236,6 +236,9 @@ condition|)
 name|gimp_text_tool_delete_text
 argument_list|(
 name|text_tool
+argument_list|,
+name|TRUE
+comment|/* unused */
 argument_list|)
 expr_stmt|;
 block|}
@@ -492,6 +495,9 @@ expr_stmt|;
 name|gimp_text_tool_delete_text
 argument_list|(
 name|text_tool
+argument_list|,
+name|TRUE
+comment|/* unused */
 argument_list|)
 expr_stmt|;
 block|}
