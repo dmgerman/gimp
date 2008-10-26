@@ -123,7 +123,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d7a85e0103
+DECL|enum|__anon274888100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -824,19 +824,19 @@ argument|GIMP_OVERLAY_MODE
 argument_list|,
 argument|if (
 literal|2
-argument|* inC< inA)             {               outC =
+argument|* inC< inA)             outC =
 literal|2
 argument|* layC * inC + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = layA * inA -
+argument|- layA);           else             outC = layA * inA -
 literal|2
 argument|* (inA - inC) * (layA - layC) + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }
+argument|- layA)
 argument_list|)
 empty_stmt|;
 comment|/* SVG 1.2 color-dodge */
@@ -844,17 +844,17 @@ name|BLEND
 argument_list|(
 argument|GIMP_DODGE_MODE
 argument_list|,
-argument|if (layC * inA + inC * layA>= layA * inA)             {               outC = layA * inA + layC * (
+argument|if (layC * inA + inC * layA>= layA * inA)             outC = layA * inA + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = inC * layA / (
+argument|- layA);           else             outC = inC * layA / (
 literal|1
 argument|- layC / layA) + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }
+argument|- layA)
 argument_list|)
 empty_stmt|;
 comment|/* SVG 1.2 color-burn */
@@ -862,15 +862,15 @@ name|BLEND
 argument_list|(
 argument|GIMP_BURN_MODE
 argument_list|,
-argument|if (layC * inA + inC * layA<= layA * inA)             {               outC = layC * (
+argument|if (layC * inA + inC * layA<= layA * inA)             outC = layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = layA * (layC * inA + inC * layA - layA * inA) / layC + layC * (
+argument|- layA);           else             outC = layA * (layC * inA + inC * layA - layA * inA) / layC + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }
+argument|- layA)
 argument_list|)
 empty_stmt|;
 comment|/* SVG 1.2 hard-light */
@@ -880,19 +880,19 @@ argument|GIMP_HARDLIGHT_MODE
 argument_list|,
 argument|if (
 literal|2
-argument|* layC< layA)             {               outC =
+argument|* layC< layA)             outC =
 literal|2
 argument|* layC * inC + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = layA * inA -
+argument|- layA);           else             outC = layA * inA -
 literal|2
 argument|* (inA - inC) * (layA - layC) + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }
+argument|- layA)
 argument_list|)
 empty_stmt|;
 comment|/* SVG 1.2 soft-light */
@@ -903,7 +903,7 @@ argument|GIMP_SOFTLIGHT_MODE
 argument_list|,
 argument|if (
 literal|2
-argument|* layC< layA)             {               outC = inC * (layA - (
+argument|* layC< layA)             outC = inC * (layA - (
 literal|1
 argument|- inC / inA) * (
 literal|2
@@ -911,9 +911,9 @@ argument|* layC - layA)) + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else if (
+argument|- layA);           else if (
 literal|8
-argument|* inC<= inA)             {               outC = inC * (layA - (
+argument|* inC<= inA)             outC = inC * (layA - (
 literal|1
 argument|- inC / inA) * (
 literal|2
@@ -925,13 +925,13 @@ argument|* inC / inA)) + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = (inC * layA + (sqrt (inC / inA) * inA - inC) * (
+argument|- layA);           else             outC = (inC * layA + (sqrt (inC / inA) * inA - inC) * (
 literal|2
 argument|* layC - layA)) + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }
+argument|- layA)
 argument_list|)
 empty_stmt|;
 comment|/* Custom SVG 1.2:            *            * if Dc + Sc>= 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc + Sc            */
@@ -939,11 +939,11 @@ name|BLEND
 argument_list|(
 argument|GIMP_ADDITION_MODE
 argument_list|,
-argument|if (layC * inA + inC * layA>= layA * inA)             {               outC = layA * inA + layC * (
+argument|if (layC * inA + inC * layA>= layA * inA)             outC = layA * inA + layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = inC + layC;             }
+argument|- layA);           else             outC = inC + layC
 argument_list|)
 empty_stmt|;
 comment|/* Custom SVG 1.2:            *            * if Dc - Sc<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = Dc - Sc            */
@@ -953,13 +953,13 @@ argument|GIMP_SUBTRACT_MODE
 argument_list|,
 argument|if (inC * layA - layC * inA<=
 literal|0
-argument|)             {               outC = layC * (
+argument|)             outC = layC * (
 literal|1
 argument|- inA) + inC * (
 literal|1
-argument|- layA);             }           else             {               outC = inC + layC -
+argument|- layA);           else             outC = inC + layC -
 literal|2
-argument|* layC * inA;             }
+argument|* layC * inA
 argument_list|)
 empty_stmt|;
 comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc - Sc + 0.5 */
