@@ -60,20 +60,68 @@ value|ALPHA
 end_define
 
 begin_define
-DECL|macro|EACH_CHANNEL (expr)
+DECL|macro|inC
 define|#
 directive|define
-name|EACH_CHANNEL
+name|inC
+value|in[c]
+end_define
+
+begin_define
+DECL|macro|inA
+define|#
+directive|define
+name|inA
+value|in[A]
+end_define
+
+begin_define
+DECL|macro|layC
+define|#
+directive|define
+name|layC
+value|lay[c]
+end_define
+
+begin_define
+DECL|macro|layA
+define|#
+directive|define
+name|layA
+value|lay[A]
+end_define
+
+begin_define
+DECL|macro|outC
+define|#
+directive|define
+name|outC
+value|out[c]
+end_define
+
+begin_define
+DECL|macro|outA
+define|#
+directive|define
+name|outA
+value|out[A]
+end_define
+
+begin_define
+DECL|macro|EXPAND (expr)
+define|#
+directive|define
+name|EXPAND
 parameter_list|(
 name|expr
 parameter_list|)
 define|\
-value|for (c = RED; c< ALPHA; c++) \     {                           \       expr;                     \     }
+value|for (c = RED; c< ALPHA; c++) \           {                           \             expr;                     \           }
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a566f610103
+DECL|enum|__anon2c585e2b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -596,30 +644,18 @@ case|case
 name|GIMP_NORMAL_MODE
 case|:
 comment|/* Porter-Duff A over B */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|+
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
 operator|(
 literal|1
 operator|-
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -628,30 +664,18 @@ case|case
 name|GIMP_BEHIND_MODE
 case|:
 comment|/* Porter-Duff B over A */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
 operator|(
 literal|1
 operator|-
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -660,49 +684,28 @@ case|case
 name|GIMP_MULTIPLY_MODE
 case|:
 comment|/* SVG 1.2 multiply */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
 operator|(
 literal|1
 operator|-
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|)
 operator|+
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
 operator|(
 literal|1
 operator|-
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -711,32 +714,17 @@ case|case
 name|GIMP_SCREEN_MODE
 case|:
 comment|/* SVG 1.2 screen */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|+
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|-
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|c
-index|]
+name|inC
 argument_list|)
 expr_stmt|;
 break|break;
@@ -744,23 +732,23 @@ case|case
 name|GIMP_OVERLAY_MODE
 case|:
 comment|/* SVG 1.2 overlay */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
 argument|if (
 literal|2
-argument|* in[c]< in[A])                           out[c] =
+argument|* inC< inA)                     outC =
 literal|2
-argument|* lay[c] * in[c] + lay[c] * (
+argument|* layC * inC + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A]);                         else                           out[c] = lay[A] * in[A] -
+argument|- layA);                   else                     outC = layA * inA -
 literal|2
-argument|* (in[A] - in[c]) * (lay[A] - lay[c]) + lay[c] * (
+argument|* (inA - inC) * (layA - layC) + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A])
+argument|- layA)
 argument_list|)
 empty_stmt|;
 break|break;
@@ -768,46 +756,25 @@ case|case
 name|GIMP_DIFFERENCE_MODE
 case|:
 comment|/* SVG 1.2 difference */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|-
 literal|2
 operator|*
 name|MIN
 argument_list|(
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 argument_list|,
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -816,62 +783,35 @@ case|case
 name|GIMP_DARKEN_ONLY_MODE
 case|:
 comment|/* SVG 1.2 darken */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
 name|MIN
 argument_list|(
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 argument_list|,
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 argument_list|)
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
 operator|(
 literal|1
 operator|-
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|)
 operator|+
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
 operator|(
 literal|1
 operator|-
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -880,62 +820,35 @@ case|case
 name|GIMP_LIGHTEN_ONLY_MODE
 case|:
 comment|/* SVG 1.2 lighten */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
 name|MAX
 argument_list|(
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 argument_list|,
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 argument_list|)
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
 operator|(
 literal|1
 operator|-
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|)
 operator|+
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
 operator|(
 literal|1
 operator|-
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -944,19 +857,19 @@ case|case
 name|GIMP_DODGE_MODE
 case|:
 comment|/* SVG 1.2 color-dodge */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-argument|if (lay[c] * in[A] + in[c] * lay[A]>= lay[A] * in[A])                           out[c] = lay[A] * in[A] + lay[c] * (
+argument|if (layC * inA + inC * layA>= layA * inA)                     outC = layA * inA + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A]);                         else                           out[c] = in[c] * lay[A] / (
+argument|- layA);                   else                     outC = inC * layA / (
 literal|1
-argument|- lay[c] / lay[A]) + lay[c] * (
+argument|- layC / layA) + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A])
+argument|- layA)
 argument_list|)
 empty_stmt|;
 break|break;
@@ -964,17 +877,17 @@ case|case
 name|GIMP_BURN_MODE
 case|:
 comment|/* SVG 1.2 color-burn */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-argument|if (lay[c] * in[A] + in[c] * lay[A]<= lay[A] * in[A])                           out[c] = lay[c] * (
+argument|if (layC * inA + inC * layA<= layA * inA)                     outC = layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A]);                         else                           out[c] = lay[A] * (lay[c] * in[A] + in[c] * lay[A] - lay[A] * in[A])/lay[c] + lay[c] * (
+argument|- layA);                   else                     outC = layA * (layC * inA + inC * layA - layA * inA) / layC + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A])
+argument|- layA)
 argument_list|)
 empty_stmt|;
 break|break;
@@ -982,23 +895,23 @@ case|case
 name|GIMP_HARDLIGHT_MODE
 case|:
 comment|/* SVG 1.2 hard-light */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
 argument|if (
 literal|2
-argument|* lay[c]< lay[A])                           out[c] =
+argument|* layC< layA)                     outC =
 literal|2
-argument|* lay[c] * in[c] + lay[c] * (
+argument|* layC * inC + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A]);                         else                           out[c] = lay[A] * in[A] -
+argument|- layA);                   else                     outC = layA * inA -
 literal|2
-argument|* (in[A] - in[c]) * (lay[A] - lay[c]) + lay[c] * (
+argument|* (inA - inC) * (layA - layC) + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A])
+argument|- layA)
 argument_list|)
 empty_stmt|;
 break|break;
@@ -1007,39 +920,39 @@ name|GIMP_SOFTLIGHT_MODE
 case|:
 comment|/* SVG 1.2 soft-light */
 comment|/* XXX: Why is the result so different from legacy Soft Light? */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
 argument|if (
 literal|2
-argument|* lay[c]< lay[A])                           out[c] = in[c] * (lay[A] - (
+argument|* layC< layA)                     outC = inC * (layA - (
 literal|1
-argument|- in[c]/in[A]) * (
+argument|- inC/inA) * (
 literal|2
-argument|* lay[c] - lay[A])) + lay[c] * (
+argument|* layC - layA)) + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A]);                         else if (
+argument|- layA);                   else if (
 literal|8
-argument|* in[c]<= in[A])                           out[c] = in[c] * (lay[A] - (
+argument|* inC<= inA)                     outC = inC * (layA - (
 literal|1
-argument|- in[c]/in[A]) * (
+argument|- inC/inA) * (
 literal|2
-argument|* lay[c] - lay[A]) * (
+argument|* layC - layA) * (
 literal|3
 argument|-
 literal|8
-argument|* in[c]/in[A])) + lay[c] * (
+argument|* inC / inA)) + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A]);                         else                           out[c] = (in[c] * lay[A] + (sqrt (in[c] / in[A]) * in[A] - in[c]) * (
+argument|- layA);                   else                     outC = (inC * layA + (sqrt (inC / inA) * inA - inC) * (
 literal|2
-argument|* lay[c] - lay[A])) + lay[c] * (
+argument|* layC - layA)) + layC * (
 literal|1
-argument|- in[A]) + in[c] * (
+argument|- inA) + inC * (
 literal|1
-argument|- lay[A])
+argument|- layA)
 argument_list|)
 empty_stmt|;
 break|break;
@@ -1047,22 +960,13 @@ case|case
 name|GIMP_ADDITION_MODE
 case|:
 comment|/* To be more mathematically correct we would have to either            * adjust the formula for the resulting opacity or adapt the            * other channels to the change in opacity. Compare to the            * 'plus' compositing operation in SVG 1.2.            *            * Since this doesn't matter for completely opaque layers, and            * since consistency in how the alpha channel of layers is            * interpreted is more important than mathematically correct            * results, we don't bother.            */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1070,34 +974,19 @@ case|case
 name|GIMP_SUBTRACT_MODE
 case|:
 comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc - Sc */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|-
 literal|2
 operator|*
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1105,46 +994,25 @@ case|case
 name|GIMP_GRAIN_EXTRACT_MODE
 case|:
 comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc - Sc + 0.5 */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|-
 literal|2
 operator|*
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|+
 literal|0.5
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1152,34 +1020,19 @@ case|case
 name|GIMP_GRAIN_MERGE_MODE
 case|:
 comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc + Sc - 0.5 */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|-
 literal|0.5
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1187,59 +1040,32 @@ case|case
 name|GIMP_DIVIDE_MODE
 case|:
 comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc / Sc */
-name|EACH_CHANNEL
+name|EXPAND
 argument_list|(
-name|out
-index|[
-name|c
-index|]
+name|outC
 operator|=
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|*
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|/
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|+
-name|lay
-index|[
-name|c
-index|]
+name|layC
 operator|*
 operator|(
 literal|1
 operator|-
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|)
 operator|+
-name|in
-index|[
-name|c
-index|]
+name|inC
 operator|*
 operator|(
 literal|1
 operator|-
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|)
 argument_list|)
 expr_stmt|;
@@ -1287,30 +1113,15 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Alpha is treated the same */
-name|out
-index|[
-name|A
-index|]
+name|outA
 operator|=
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|+
-name|in
-index|[
-name|A
-index|]
+name|inA
 operator|-
-name|lay
-index|[
-name|A
-index|]
+name|layA
 operator|*
-name|in
-index|[
-name|A
-index|]
+name|inA
 expr_stmt|;
 name|in
 operator|+=
