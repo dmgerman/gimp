@@ -123,7 +123,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274888100103
+DECL|enum|__anon29c659de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -962,80 +962,72 @@ literal|2
 argument|* layC * inA
 argument_list|)
 empty_stmt|;
-comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc - Sc + 0.5 */
+comment|/* Custom SVG 1.2:            *            * if Dc - Sc + 0.5>= 1            *   f(Sc, Dc) = 1            * otherwise if Dc - Sc + 0.5<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = f(Sc, Dc) = Dc - Sc + 0.5            */
 name|BLEND
 argument_list|(
-name|GIMP_GRAIN_EXTRACT_MODE
+argument|GIMP_GRAIN_EXTRACT_MODE
 argument_list|,
-name|outC
-operator|=
-name|inC
-operator|+
-name|layC
-operator|-
+argument|if (inC * layA - layC * inA +
+literal|0.5
+argument|* layA * inA>= layA * inA)             outC = layA * inA + layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA);           else if (inC * layA - layC * inA +
+literal|0.5
+argument|* layA * inA<=
+literal|0
+argument|)             outC = layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA);           else             outC = inC + layC -
 literal|2
-operator|*
-name|layC
-operator|*
-name|inA
-operator|+
+argument|* layC * inA +
 literal|0.5
-operator|*
-name|inA
-operator|*
-name|layA
+argument|* inA * layA
 argument_list|)
-expr_stmt|;
-comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc + Sc - 0.5 */
+empty_stmt|;
+comment|/* Custom SVG 1.2:            *            * if Dc + Sc - 0.5>= 1            *   f(Sc, Dc) = 1            * otherwise if Dc + Sc - 0.5<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = f(Sc, Dc) = Dc + Sc - 0.5            */
 name|BLEND
 argument_list|(
-name|GIMP_GRAIN_MERGE_MODE
+argument|GIMP_GRAIN_MERGE_MODE
 argument_list|,
-name|outC
-operator|=
-name|inC
-operator|+
-name|layC
-operator|-
+argument|if (inC * layA + layC * inA -
 literal|0.5
-operator|*
-name|inA
-operator|*
-name|layA
+argument|* layA * inA>= layA * inA)             outC = layA * inA + layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA);           else if (inC * layA + layC * inA -
+literal|0.5
+argument|* layA * inA<=
+literal|0
+argument|)             outC = layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA);           else             outC = inC + layC -
+literal|0.5
+argument|* inA * layA
 argument_list|)
-expr_stmt|;
-comment|/* Derieved from SVG 1.2 formulas, f(Sc, Dc) = Dc / Sc */
+empty_stmt|;
+comment|/* Custom SVG 1.2:            *            * if Dc / Sc> 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc / Sc            */
 name|BLEND
 argument_list|(
-name|GIMP_DIVIDE_MODE
+argument|GIMP_DIVIDE_MODE
 argument_list|,
-name|outC
-operator|=
-name|inC
-operator|*
-name|layA
-operator|*
-name|layA
-operator|/
-name|layC
-operator|+
-name|layC
-operator|*
-operator|(
+argument|if (in[c] / lay[c]> in[A] / lay[A])             outC = layA * inA + layC * (
 literal|1
-operator|-
-name|inA
-operator|)
-operator|+
-name|inC
-operator|*
-operator|(
+argument|- inA) + inC * (
 literal|1
-operator|-
-name|layA
-operator|)
+argument|- layA);           else             outC = inC * layA * layA / layC + layC * (
+literal|1
+argument|- inA) + inC * (
+literal|1
+argument|- layA)
 argument_list|)
-expr_stmt|;
+empty_stmt|;
 case|case
 name|GIMP_HUE_MODE
 case|:
