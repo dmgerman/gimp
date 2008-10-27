@@ -115,7 +115,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Text Tool Popup"
+literal|"Text Tool Menu"
 argument_list|)
 block|,
 name|NULL
@@ -134,7 +134,7 @@ name|GTK_STOCK_CUT
 block|,
 name|N_
 argument_list|(
-literal|"Cut"
+literal|"Cu_t"
 argument_list|)
 block|,
 name|NULL
@@ -156,7 +156,7 @@ name|GTK_STOCK_COPY
 block|,
 name|N_
 argument_list|(
-literal|"Copy"
+literal|"_Copy"
 argument_list|)
 block|,
 name|NULL
@@ -178,7 +178,7 @@ name|GTK_STOCK_PASTE
 block|,
 name|N_
 argument_list|(
-literal|"Paste"
+literal|"_Paste"
 argument_list|)
 block|,
 name|NULL
@@ -200,7 +200,7 @@ name|GTK_STOCK_DELETE
 block|,
 name|N_
 argument_list|(
-literal|"Delete selected"
+literal|"_Delete"
 argument_list|)
 block|,
 name|NULL
@@ -222,15 +222,12 @@ name|GTK_STOCK_OPEN
 block|,
 name|N_
 argument_list|(
-literal|"Open"
+literal|"_Open text file..."
 argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
-argument_list|(
-literal|"Load text from file"
-argument_list|)
+name|NULL
 block|,
 name|G_CALLBACK
 argument_list|(
@@ -247,7 +244,7 @@ name|GTK_STOCK_CLEAR
 block|,
 name|N_
 argument_list|(
-literal|"Clear"
+literal|"Cl_ear"
 argument_list|)
 block|,
 literal|""
@@ -272,7 +269,7 @@ name|GIMP_STOCK_PATH
 block|,
 name|N_
 argument_list|(
-literal|"Path from Text"
+literal|"_Path from Text"
 argument_list|)
 block|,
 literal|""
@@ -297,7 +294,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Input Methods"
+literal|"Input _Methods"
 argument_list|)
 block|,
 name|NULL
@@ -328,15 +325,12 @@ name|GIMP_STOCK_TEXT_DIR_LTR
 block|,
 name|N_
 argument_list|(
-literal|"LTR"
-argument_list|)
-block|,
-literal|""
-block|,
-name|N_
-argument_list|(
 literal|"From left to right"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
 block|,
 name|GIMP_TEXT_DIRECTION_LTR
 block|,
@@ -350,15 +344,12 @@ name|GIMP_STOCK_TEXT_DIR_RTL
 block|,
 name|N_
 argument_list|(
-literal|"RTL"
-argument_list|)
-block|,
-literal|""
-block|,
-name|N_
-argument_list|(
 literal|"From right to left"
 argument_list|)
+block|,
+name|NULL
+block|,
+name|NULL
 block|,
 name|GIMP_TEXT_DIRECTION_RTL
 block|,
@@ -415,7 +406,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * The following code is written on the assumption that this is for a context  * menu, activated by right-clicking in a text layer.  Therefore, the tool  * must have a display.  If for any reason the code is adapted to a different  * situation, some existence testing will need to be added.  */
+comment|/*  * The following code is written on the assumption that this is for a  * context menu, activated by right-clicking in a text layer.  * Therefore, the tool must have a display.  If for any reason the  * code is adapted to a different situation, some existence testing  * will need to be added.  */
 end_comment
 
 begin_function
