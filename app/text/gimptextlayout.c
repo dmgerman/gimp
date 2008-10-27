@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<cairo.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<pango/pangocairo.h>
 end_include
 
@@ -1365,7 +1359,7 @@ name|pango_cairo_font_map_set_resolution
 argument_list|(
 name|fontmap
 argument_list|,
-name|xres
+name|yres
 argument_list|)
 expr_stmt|;
 name|context
