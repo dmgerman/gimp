@@ -171,11 +171,6 @@ name|GtkWidget
 modifier|*
 name|size_entry
 decl_stmt|;
-DECL|member|along_vectors_button
-name|GtkWidget
-modifier|*
-name|along_vectors_button
-decl_stmt|;
 block|}
 struct|;
 end_struct

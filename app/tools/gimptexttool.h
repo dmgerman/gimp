@@ -274,6 +274,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_text_tool_get_has_text_selection
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_text_tool_delete_text
 parameter_list|(
@@ -327,8 +338,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_text_tool_get_has_text_selection
+name|void
+name|gimp_text_tool_create_vectors
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -339,7 +350,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_tool_create_vectors
+name|gimp_text_tool_create_vectors_warped
 parameter_list|(
 name|GimpTextTool
 modifier|*

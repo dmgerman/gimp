@@ -102,7 +102,21 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|text_tool_path_from_text_callback
+name|text_tool_path_from_text_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|text_tool_text_along_path_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

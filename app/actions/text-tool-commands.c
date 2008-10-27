@@ -557,8 +557,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_path_from_text_callback (GtkAction * action,gpointer data)
-name|text_tool_path_from_text_callback
+DECL|function|text_tool_path_from_text_cmd_callback (GtkAction * action,gpointer data)
+name|text_tool_path_from_text_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -578,6 +578,36 @@ name|data
 argument_list|)
 decl_stmt|;
 name|gimp_text_tool_create_vectors
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
+DECL|function|text_tool_text_along_path_cmd_callback (GtkAction * action,gpointer data)
+name|text_tool_text_along_path_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+block|{
+name|GimpTextTool
+modifier|*
+name|text_tool
+init|=
+name|GIMP_TEXT_TOOL
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
+name|gimp_text_tool_create_vectors_warped
 argument_list|(
 name|text_tool
 argument_list|)
