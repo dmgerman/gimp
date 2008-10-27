@@ -102,7 +102,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|text_tool_path_from_text_cmd_callback
+name|text_tool_text_to_path_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

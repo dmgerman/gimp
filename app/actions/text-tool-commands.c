@@ -557,8 +557,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|text_tool_path_from_text_cmd_callback (GtkAction * action,gpointer data)
-name|text_tool_path_from_text_cmd_callback
+DECL|function|text_tool_text_to_path_cmd_callback (GtkAction * action,gpointer data)
+name|text_tool_text_to_path_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

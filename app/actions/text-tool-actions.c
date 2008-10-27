@@ -263,7 +263,7 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"text-tool-path-from-text"
+literal|"text-tool-text-to-path"
 block|,
 name|GIMP_STOCK_PATH
 block|,
@@ -281,7 +281,7 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|text_tool_path_from_text_cmd_callback
+name|text_tool_text_to_path_cmd_callback
 argument_list|)
 block|,
 name|NULL
@@ -634,7 +634,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"text-tool-path-from-text"
+literal|"text-tool-text-to-path"
 argument_list|,
 name|text_layer
 argument_list|)
