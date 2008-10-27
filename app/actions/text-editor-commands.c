@@ -527,7 +527,7 @@ name|filename
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_widget_destroy
+name|gtk_widget_hide
 argument_list|(
 name|dialog
 argument_list|)
