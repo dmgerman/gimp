@@ -108,22 +108,20 @@ value|out[A]
 end_define
 
 begin_define
-DECL|macro|BLEND (mode,expr)
+DECL|macro|EACH_CHANNEL (expr)
 define|#
 directive|define
-name|BLEND
+name|EACH_CHANNEL
 parameter_list|(
-name|mode
-parameter_list|,
 name|expr
 parameter_list|)
 define|\
-value|case (mode):                    \           for (c = RED; c< ALPHA; c++) \             {                           \               expr;                     \             }                           \           break;
+value|for (c = RED; c< ALPHA; c++) \           {                           \             expr;                     \           }
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c659de0103
+DECL|enum|__anon2c4f96500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -642,11 +640,12 @@ operator|->
 name|blend_mode
 condition|)
 block|{
-comment|/* Porter-Duff A over B */
-name|BLEND
-argument_list|(
+case|case
 name|GIMP_NORMAL_MODE
-argument_list|,
+case|:
+comment|/* Porter-Duff A over B */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|layC
@@ -660,11 +659,13 @@ name|layA
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* Porter-Duff B over A */
-name|BLEND
-argument_list|(
+break|break;
+case|case
 name|GIMP_BEHIND_MODE
-argument_list|,
+case|:
+comment|/* Porter-Duff B over A */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|inC
@@ -678,11 +679,13 @@ name|inA
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* SVG 1.2 multiply */
-name|BLEND
-argument_list|(
+break|break;
+case|case
 name|GIMP_MULTIPLY_MODE
-argument_list|,
+case|:
+comment|/* SVG 1.2 multiply */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|layC
@@ -706,11 +709,13 @@ name|layA
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* SVG 1.2 screen */
-name|BLEND
-argument_list|(
+break|break;
+case|case
 name|GIMP_SCREEN_MODE
-argument_list|,
+case|:
+comment|/* SVG 1.2 screen */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|layC
@@ -722,11 +727,13 @@ operator|*
 name|inC
 argument_list|)
 expr_stmt|;
-comment|/* SVG 1.2 difference */
-name|BLEND
-argument_list|(
+break|break;
+case|case
 name|GIMP_DIFFERENCE_MODE
-argument_list|,
+case|:
+comment|/* SVG 1.2 difference */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|inC
@@ -747,11 +754,13 @@ name|layA
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* SVG 1.2 darken */
-name|BLEND
-argument_list|(
+break|break;
+case|case
 name|GIMP_DARKEN_ONLY_MODE
-argument_list|,
+case|:
+comment|/* SVG 1.2 darken */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|MIN
@@ -782,11 +791,13 @@ name|layA
 operator|)
 argument_list|)
 expr_stmt|;
-comment|/* SVG 1.2 lighten */
-name|BLEND
-argument_list|(
+break|break;
+case|case
 name|GIMP_LIGHTEN_ONLY_MODE
-argument_list|,
+case|:
+comment|/* SVG 1.2 lighten */
+name|EACH_CHANNEL
+argument_list|(
 name|outC
 operator|=
 name|MAX
@@ -817,11 +828,13 @@ name|layA
 operator|)
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_OVERLAY_MODE
+case|:
 comment|/* SVG 1.2 overlay */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_OVERLAY_MODE
-argument_list|,
 argument|if (
 literal|2
 argument|* inC< inA)             outC =
@@ -839,11 +852,13 @@ literal|1
 argument|- layA)
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_DODGE_MODE
+case|:
 comment|/* SVG 1.2 color-dodge */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_DODGE_MODE
-argument_list|,
 argument|if (layC * inA + inC * layA>= layA * inA)             outC = layA * inA + layC * (
 literal|1
 argument|- inA) + inC * (
@@ -857,11 +872,13 @@ literal|1
 argument|- layA)
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_BURN_MODE
+case|:
 comment|/* SVG 1.2 color-burn */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_BURN_MODE
-argument_list|,
 argument|if (layC * inA + inC * layA<= layA * inA)             outC = layC * (
 literal|1
 argument|- inA) + inC * (
@@ -873,11 +890,13 @@ literal|1
 argument|- layA)
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_HARDLIGHT_MODE
+case|:
 comment|/* SVG 1.2 hard-light */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_HARDLIGHT_MODE
-argument_list|,
 argument|if (
 literal|2
 argument|* layC< layA)             outC =
@@ -895,12 +914,14 @@ literal|1
 argument|- layA)
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_SOFTLIGHT_MODE
+case|:
 comment|/* SVG 1.2 soft-light */
 comment|/* XXX: Why is the result so different from legacy Soft Light? */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_SOFTLIGHT_MODE
-argument_list|,
 argument|if (
 literal|2
 argument|* layC< layA)             outC = inC * (layA - (
@@ -934,11 +955,13 @@ literal|1
 argument|- layA)
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_ADDITION_MODE
+case|:
 comment|/* Custom SVG 1.2:            *            * if Dc + Sc>= 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc + Sc            */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_ADDITION_MODE
-argument_list|,
 argument|if (layC * inA + inC * layA>= layA * inA)             outC = layA * inA + layC * (
 literal|1
 argument|- inA) + inC * (
@@ -946,11 +969,13 @@ literal|1
 argument|- layA);           else             outC = inC + layC
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_SUBTRACT_MODE
+case|:
 comment|/* Custom SVG 1.2:            *            * if Dc - Sc<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = Dc - Sc            */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_SUBTRACT_MODE
-argument_list|,
 argument|if (inC * layA - layC * inA<=
 literal|0
 argument|)             outC = layC * (
@@ -962,11 +987,13 @@ literal|2
 argument|* layC * inA
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_GRAIN_EXTRACT_MODE
+case|:
 comment|/* Custom SVG 1.2:            *            * if Dc - Sc + 0.5>= 1            *   f(Sc, Dc) = 1            * otherwise if Dc - Sc + 0.5<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = f(Sc, Dc) = Dc - Sc + 0.5            */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_GRAIN_EXTRACT_MODE
-argument_list|,
 argument|if (inC * layA - layC * inA +
 literal|0.5
 argument|* layA * inA>= layA * inA)             outC = layA * inA + layC * (
@@ -988,11 +1015,13 @@ literal|0.5
 argument|* inA * layA
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_GRAIN_MERGE_MODE
+case|:
 comment|/* Custom SVG 1.2:            *            * if Dc + Sc - 0.5>= 1            *   f(Sc, Dc) = 1            * otherwise if Dc + Sc - 0.5<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = f(Sc, Dc) = Dc + Sc - 0.5            */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_GRAIN_MERGE_MODE
-argument_list|,
 argument|if (inC * layA + layC * inA -
 literal|0.5
 argument|* layA * inA>= layA * inA)             outC = layA * inA + layC * (
@@ -1012,11 +1041,13 @@ literal|0.5
 argument|* inA * layA
 argument_list|)
 empty_stmt|;
+break|break;
+case|case
+name|GIMP_DIVIDE_MODE
+case|:
 comment|/* Custom SVG 1.2:            *            * if Dc / Sc> 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc / Sc            */
-name|BLEND
+name|EACH_CHANNEL
 argument_list|(
-argument|GIMP_DIVIDE_MODE
-argument_list|,
 argument|if (in[c] / lay[c]> in[A] / lay[A])             outC = layA * inA + layC * (
 literal|1
 argument|- inA) + inC * (
@@ -1028,6 +1059,7 @@ literal|1
 argument|- layA)
 argument_list|)
 empty_stmt|;
+break|break;
 case|case
 name|GIMP_HUE_MODE
 case|:
