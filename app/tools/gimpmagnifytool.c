@@ -817,15 +817,17 @@ operator|==
 name|GIMP_BUTTON_RELEASE_NO_MOTION
 condition|)
 block|{
-name|new_scale
-operator|=
-name|gimp_zoom_model_zoom_step
+name|gimp_display_shell_scale
 argument_list|(
+name|shell
+argument_list|,
 name|options
 operator|->
 name|zoom_type
 argument_list|,
-name|current_scale
+literal|0.0
+argument_list|,
+name|GIMP_ZOOM_FOCUS_BEST_GUESS
 argument_list|)
 expr_stmt|;
 block|}
@@ -922,7 +924,6 @@ name|current_scale
 operator|*
 name|factor
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|new_scale
@@ -969,7 +970,7 @@ block|{
 case|case
 name|GIMP_ZOOM_IN
 case|:
-comment|/*  move the center of the rectangle to the center of the                *  viewport:                *                *  new_offset = center of rectangle in new scale screen coords                *               including offset                *               -                *               center of viewport in screen coords without                *               offset                */
+comment|/*  move the center of the rectangle to the center of the                    *  viewport:                    *                    *  new_offset = center of rectangle in new scale screen coords                    *               including offset                    *               -                    *               center of viewport in screen coords without                    *               offset                    */
 name|offset_x
 operator|=
 name|RINT
@@ -1038,7 +1039,7 @@ break|break;
 case|case
 name|GIMP_ZOOM_OUT
 case|:
-comment|/*  move the center of the viewport to the center of the                *  rectangle:                *                *  new_offset = center of viewport in new scale screen coords                *               including offset                *               -                *               center of rectangle in screen coords without                *               offset                */
+comment|/*  move the center of the viewport to the center of the                    *  rectangle:                    *                    *  new_offset = center of viewport in new scale screen coords                    *               including offset                    *               -                    *               center of rectangle in screen coords without                    *               offset                    */
 name|offset_x
 operator|=
 name|RINT
@@ -1154,6 +1155,7 @@ operator|->
 name|auto_resize
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
