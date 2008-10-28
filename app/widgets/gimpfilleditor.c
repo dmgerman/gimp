@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c0bcf60103
+DECL|enum|__anon2a98a12f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -470,6 +470,8 @@ argument_list|,
 name|color_button
 argument_list|,
 name|GIMP_FILL_STYLE_SOLID
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|pattern_box
@@ -502,6 +504,8 @@ argument_list|,
 name|pattern_box
 argument_list|,
 name|GIMP_FILL_STYLE_PATTERN
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

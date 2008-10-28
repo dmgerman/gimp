@@ -474,6 +474,8 @@ argument_list|,
 name|combo
 argument_list|,
 name|GIMP_ADD_CHANNEL_MASK
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

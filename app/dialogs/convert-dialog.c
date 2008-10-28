@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2968dd640108
+DECL|struct|__anon2a10e7210108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -773,6 +773,8 @@ argument_list|,
 name|hbox
 argument_list|,
 name|GIMP_MAKE_PALETTE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -920,6 +922,8 @@ argument_list|,
 name|palette_box
 argument_list|,
 name|GIMP_CUSTOM_PALETTE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

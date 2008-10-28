@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f3ad90103
+DECL|enum|__anon2b1861b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -856,6 +856,8 @@ argument_list|,
 name|hbox
 argument_list|,
 name|GIMP_PATTERN_BUCKET_FILL
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/*  fill selection  */

@@ -411,6 +411,8 @@ argument_list|,
 name|button
 argument_list|,
 name|GIMP_IMAGE_CLONE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|hbox
@@ -441,6 +443,8 @@ argument_list|,
 name|hbox
 argument_list|,
 name|GIMP_PATTERN_CLONE
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|table

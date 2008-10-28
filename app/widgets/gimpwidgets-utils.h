@@ -104,6 +104,9 @@ name|widget
 parameter_list|,
 name|gint
 name|enum_value
+parameter_list|,
+name|gboolean
+name|below
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -122,6 +125,9 @@ name|widget
 parameter_list|,
 name|gint
 name|enum_value
+parameter_list|,
+name|gboolean
+name|below
 parameter_list|)
 function_decl|;
 end_function_decl
