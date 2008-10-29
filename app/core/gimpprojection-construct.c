@@ -1402,6 +1402,16 @@ argument_list|)
 operator|==
 name|GIMP_NORMAL_MODE
 operator|&&
+name|gimp_layer_get_opacity
+argument_list|(
+name|GIMP_LAYER
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+operator|==
+name|GIMP_OPACITY_OPAQUE
+operator|&&
 operator|(
 name|off_x
 operator|<=
