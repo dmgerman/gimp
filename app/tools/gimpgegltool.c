@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b53eb7b0103
+DECL|enum|__anon29e80f0a0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -2934,7 +2934,6 @@ operator|!
 name|config_type
 condition|)
 block|{
-specifier|const
 name|GTypeInfo
 name|info
 init|=

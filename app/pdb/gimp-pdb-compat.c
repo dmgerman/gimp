@@ -768,9 +768,8 @@ operator|!
 name|pdb_type_quark
 condition|)
 block|{
-specifier|const
 struct|struct
-DECL|struct|__anon2b8161760108
+DECL|struct|__anon2c9a29e90108
 block|{
 DECL|member|g_type
 name|GType
@@ -1084,7 +1083,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b8161760208
+DECL|struct|__anon2c9a29e90208
 block|{
 DECL|member|old_name
 specifier|const
