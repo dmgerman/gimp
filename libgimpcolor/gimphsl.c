@@ -114,5 +114,56 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  HSL functions  */
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_hsl_set (GimpHSL * hsl,gdouble h,gdouble s,gdouble l)
+name|gimp_hsl_set
+parameter_list|(
+name|GimpHSL
+modifier|*
+name|hsl
+parameter_list|,
+name|gdouble
+name|h
+parameter_list|,
+name|gdouble
+name|s
+parameter_list|,
+name|gdouble
+name|l
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|hsl
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|hsl
+operator|->
+name|h
+operator|=
+name|h
+expr_stmt|;
+name|hsl
+operator|->
+name|s
+operator|=
+name|s
+expr_stmt|;
+name|hsl
+operator|->
+name|l
+operator|=
+name|l
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

@@ -34,6 +34,26 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_hsl_set
+parameter_list|(
+name|GimpHSL
+modifier|*
+name|hsl
+parameter_list|,
+name|gdouble
+name|h
+parameter_list|,
+name|gdouble
+name|s
+parameter_list|,
+name|gdouble
+name|l
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
