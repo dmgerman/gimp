@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29808ee40103
+DECL|enum|__anon2757d03d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1095,6 +1095,13 @@ argument_list|(
 name|operation
 argument_list|)
 decl_stmt|;
+name|GimpLayerModeEffects
+name|blend_mode
+init|=
+name|self
+operator|->
+name|blend_mode
+decl_stmt|;
 name|gfloat
 modifier|*
 name|in
@@ -1148,8 +1155,6 @@ block|}
 decl_stmt|;
 if|if
 condition|(
-name|self
-operator|->
 name|blend_mode
 operator|==
 name|GIMP_DISSOLVE_MODE
@@ -1167,8 +1172,6 @@ condition|)
 block|{
 switch|switch
 condition|(
-name|self
-operator|->
 name|blend_mode
 condition|)
 block|{
@@ -1604,8 +1607,6 @@ case|:
 comment|/* Custom SVG 1.2:            *            * f(Sc, Dc) = New color depending on mode            */
 name|gimp_operation_point_layer_mode_get_new_color_hsv
 argument_list|(
-name|self
-operator|->
 name|blend_mode
 argument_list|,
 name|in
@@ -1649,8 +1650,6 @@ case|:
 comment|/* Custom SVG 1.2:            *            * f(Sc, Dc) = New color            */
 name|gimp_operation_point_layer_mode_get_new_color_hsl
 argument_list|(
-name|self
-operator|->
 name|blend_mode
 argument_list|,
 name|in
