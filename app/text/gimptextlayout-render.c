@@ -69,10 +69,6 @@ directive|include
 file|"gimptextlayout-render.h"
 end_include
 
-begin_comment
-comment|/*  This file duplicates quite a lot of code from pangoft2.c.  *  At some point all this should be folded back into Pango.  */
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
