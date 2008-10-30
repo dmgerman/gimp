@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationpointcomposer.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  * Copyright (C) 2008 Martin Nordholts<martinn@svn.gnome.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationpointlayermode.c  * Copyright (C) 2008 Michael Natterer<mitch@gimp.org>  * Copyright (C) 2008 Martin Nordholts<martinn@svn.gnome.org>  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
 end_comment
 
 begin_include
@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06370b0103
+DECL|enum|__anon29808ee40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1116,6 +1116,17 @@ init|=
 name|out_buf
 decl_stmt|;
 comment|/* resulting composite */
+name|GRand
+modifier|*
+name|rand
+init|=
+name|NULL
+decl_stmt|;
+name|glong
+name|sample
+init|=
+name|samples
+decl_stmt|;
 name|gint
 name|c
 init|=
@@ -1135,9 +1146,22 @@ block|,
 literal|0.0
 block|}
 decl_stmt|;
+if|if
+condition|(
+name|self
+operator|->
+name|blend_mode
+operator|==
+name|GIMP_DISSOLVE_MODE
+condition|)
+name|rand
+operator|=
+name|g_rand_new
+argument_list|()
+expr_stmt|;
 while|while
 condition|(
-name|samples
+name|sample
 operator|--
 condition|)
 block|{
@@ -1681,8 +1705,90 @@ break|break;
 case|case
 name|GIMP_DISSOLVE_MODE
 case|:
-comment|/* Not a point filter and cannot be implemented here */
-comment|/* g_assert_not_reached (); */
+comment|/* We need a deterministic result from Dissolve so let the            * seed depend on the pixel position (modulo 1024)            */
+name|g_rand_set_seed
+argument_list|(
+name|rand
+argument_list|,
+operator|(
+name|roi
+operator|->
+name|x
+operator|+
+name|sample
+operator|-
+operator|(
+name|sample
+operator|/
+name|roi
+operator|->
+name|width
+operator|)
+operator|*
+name|roi
+operator|->
+name|width
+operator|)
+operator|%
+literal|1024
+operator|*
+operator|(
+name|roi
+operator|->
+name|y
+operator|+
+name|sample
+operator|/
+name|roi
+operator|->
+name|width
+operator|)
+operator|%
+literal|1024
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|layA
+operator|*
+name|G_MAXUINT32
+operator|>=
+name|g_rand_int
+argument_list|(
+name|rand
+argument_list|)
+condition|)
+block|{
+name|EACH_CHANNEL
+argument_list|(
+name|outC
+operator|=
+name|layC
+operator|/
+name|layA
+argument_list|)
+expr_stmt|;
+comment|/* Use general outA calculation */
+name|layA
+operator|=
+literal|1.0
+expr_stmt|;
+block|}
+else|else
+block|{
+name|EACH_CHANNEL
+argument_list|(
+name|outC
+operator|=
+name|inC
+argument_list|)
+expr_stmt|;
+comment|/* Use general outA calculation */
+name|layA
+operator|=
+literal|0.0
+expr_stmt|;
+block|}
 break|break;
 default|default:
 name|g_error
@@ -1716,6 +1822,15 @@ operator|+=
 literal|4
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|rand
+condition|)
+name|g_rand_free
+argument_list|(
+name|rand
+argument_list|)
+expr_stmt|;
 return|return
 name|TRUE
 return|;
