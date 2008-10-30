@@ -4742,6 +4742,8 @@ name|control
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
 name|tool_manager_key_press_active
 argument_list|(
 name|gimp
@@ -4750,11 +4752,13 @@ name|kevent
 argument_list|,
 name|display
 argument_list|)
-expr_stmt|;
-comment|/* FIXME: need to do some of the stuff below, like                  * calling oper_update()                  */
+condition|)
+block|{
+comment|/* FIXME: need to do some of the stuff below, like                      * calling oper_update()                      */
 return|return
 name|TRUE
 return|;
+block|}
 block|}
 switch|switch
 condition|(
