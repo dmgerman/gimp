@@ -18,16 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<pango/pangoft2.h>
-end_include
-
-begin_comment
-comment|/* PangoFT2 is assumed, so we should have this in our cflags */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<fontconfig/fontconfig.h>
 end_include
 

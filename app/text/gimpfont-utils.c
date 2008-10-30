@@ -18,13 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<pango/pangoft2.h>
+file|<pango/pango.h>
 end_include
 
 begin_include
