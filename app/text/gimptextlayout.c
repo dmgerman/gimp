@@ -24,13 +24,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"text-types.h"
+file|"libgimpmath/gimpmath.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
+file|"text-types.h"
 end_include
 
 begin_include
