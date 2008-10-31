@@ -7120,11 +7120,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
-specifier|inline
 name|void
-DECL|function|color_erase_helper (GimpRGB * src,const GimpRGB * color)
-name|color_erase_helper
+DECL|function|paint_funcs_color_erase_helper (GimpRGB * src,const GimpRGB * color)
+name|paint_funcs_color_erase_helper
 parameter_list|(
 name|GimpRGB
 modifier|*
@@ -7733,7 +7731,7 @@ argument_list|,
 name|src2_alpha
 argument_list|)
 expr_stmt|;
-name|color_erase_helper
+name|paint_funcs_color_erase_helper
 argument_list|(
 operator|&
 name|color
@@ -7828,7 +7826,7 @@ argument_list|,
 name|src2_alpha
 argument_list|)
 expr_stmt|;
-name|color_erase_helper
+name|paint_funcs_color_erase_helper
 argument_list|(
 operator|&
 name|color

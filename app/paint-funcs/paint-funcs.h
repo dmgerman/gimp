@@ -1130,6 +1130,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|paint_funcs_color_erase_helper
+parameter_list|(
+name|GimpRGB
+modifier|*
+name|src
+parameter_list|,
+specifier|const
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  extract information from intensity pixels based on  *  a mask.  */
 end_comment
