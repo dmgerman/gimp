@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -729,10 +735,6 @@ operator|==
 name|GTK_RESPONSE_OK
 condition|)
 block|{
-name|GtkTextBuffer
-modifier|*
-name|buffer
-decl_stmt|;
 name|gchar
 modifier|*
 name|filename
