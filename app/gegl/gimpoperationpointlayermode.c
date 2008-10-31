@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2757d03d0103
+DECL|enum|__anon2ae35ca80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1710,6 +1710,7 @@ argument_list|(
 name|rand
 argument_list|,
 operator|(
+operator|(
 name|roi
 operator|->
 name|x
@@ -1730,7 +1731,9 @@ name|width
 operator|)
 operator|%
 literal|1024
+operator|)
 operator|*
+operator|(
 operator|(
 name|roi
 operator|->
@@ -1744,6 +1747,7 @@ name|width
 operator|)
 operator|%
 literal|1024
+operator|)
 argument_list|)
 expr_stmt|;
 if|if
