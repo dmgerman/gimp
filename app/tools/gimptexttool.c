@@ -2972,7 +2972,8 @@ name|TRUE
 decl_stmt|;
 if|if
 condition|(
-operator|!
+name|display
+operator|!=
 name|tool
 operator|->
 name|display
