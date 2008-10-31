@@ -24,7 +24,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<pango/pangoft2.h>
+file|<pango/pangocairo.h>
 end_include
 
 begin_include
@@ -79,10 +79,6 @@ ifdef|#
 directive|ifdef
 name|USE_FONTCONFIG_DIRECTLY
 end_ifdef
-
-begin_comment
-comment|/* PangoFT2 is assumed, so we should have this in our cflags */
-end_comment
 
 begin_include
 include|#
@@ -282,7 +278,7 @@ modifier|*
 name|list
 parameter_list|)
 block|{
-name|PangoFontMap
+name|PangoCairoFontMap
 modifier|*
 name|fontmap
 decl_stmt|;
@@ -377,19 +373,15 @@ expr_stmt|;
 block|}
 name|fontmap
 operator|=
-name|pango_ft2_font_map_new
-argument_list|()
-expr_stmt|;
-name|pango_ft2_font_map_set_resolution
+name|PANGO_CAIRO_FONT_MAP
 argument_list|(
-name|PANGO_FT2_FONT_MAP
+name|pango_cairo_font_map_new
+argument_list|()
+argument_list|)
+expr_stmt|;
+name|pango_cairo_font_map_set_resolution
 argument_list|(
 name|fontmap
-argument_list|)
-argument_list|,
-name|list
-operator|->
-name|xresolution
 argument_list|,
 name|list
 operator|->
@@ -398,12 +390,9 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|pango_ft2_font_map_create_context
-argument_list|(
-name|PANGO_FT2_FONT_MAP
+name|pango_cairo_font_map_create_context
 argument_list|(
 name|fontmap
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
@@ -423,7 +412,10 @@ name|gimp_font_list_load_names
 argument_list|(
 name|list
 argument_list|,
+name|PANGO_FONT_MAP
+argument_list|(
 name|fontmap
+argument_list|)
 argument_list|,
 name|context
 argument_list|)
