@@ -136,21 +136,6 @@ struct|;
 end_struct
 
 begin_comment
-comment|/* private functions */
-end_comment
-
-begin_function_decl
-specifier|static
-name|gint
-name|gimp_cairo_stride_for_width
-parameter_list|(
-name|gint
-name|width
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  public functions  */
 end_comment
 
@@ -1024,7 +1009,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_render_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * This is a wrapper around gimp_scan_convert_render_full() that doesn't do  * antialiasing but gives control over the value that should be used for pixels  * covered by the scan conversion. Uncovered pixels are set to zero.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render_value:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @value:        value to use for covered pixels  *  * This is a wrapper around gimp_scan_convert_render_full() that  * doesn't do antialiasing but gives control over the value that  * should be used for pixels covered by the scan conversion. Uncovered  * pixels are set to zero.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1162,7 +1147,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scan_convert_render_full:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @replace:      if true the original content of the @tile_manager gets destroyed  * @antialias:    if true the rendering happens antialiased  * @value:        value to use for covered pixels  *  * This function renders the area described by the path to the @tile_manager,  * taking the offset @off_x and @off_y in the tilemanager into account.  * The rendering can happen antialiased and be rendered on top of existing  * content or replacing it completely. The @value specifies the opacity value  * to be used for the objects in the @sc.  *  * This function expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
+comment|/**  * gimp_scan_convert_render_full:  * @sc:           a #GimpScanConvert context  * @tile_manager: the #TileManager to render to  * @off_x:        horizontal offset into the @tile_manager  * @off_y:        vertical offset into the @tile_manager  * @replace:      if true the original content of the @tile_manager gets  *                destroyed  * @antialias:    if true the rendering happens antialiased  * @value:        value to use for covered pixels  *  * This function renders the area described by the path to the @tile_manager,  * taking the offset @off_x and @off_y in the tilemanager into account.  * The rendering can happen antialiased and be rendered on top of existing  * content or replacing it completely. The @value specifies the opacity value  * to be used for the objects in the @sc.  *  * This function expects a tile manager of depth 1.  *  * You cannot add additional polygons after this command.  */
 end_comment
 
 begin_function
@@ -1396,18 +1381,13 @@ name|stride
 decl_stmt|;
 name|stride
 operator|=
-name|gimp_cairo_stride_for_width
+name|cairo_format_stride_for_width
 argument_list|(
+name|CAIRO_FORMAT_A8
+argument_list|,
 name|maskPR
 operator|.
 name|w
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|stride
-operator|>
-literal|0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1817,57 +1797,6 @@ expr_stmt|;
 block|}
 block|}
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|gimp_cairo_stride_for_width (gint width)
-name|gimp_cairo_stride_for_width
-parameter_list|(
-name|gint
-name|width
-parameter_list|)
-block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|use cairo_format_stride_for_width() as soon as we depend on cairo 1.6
-endif|#
-directive|endif
-if|#
-directive|if
-literal|0
-block|return cairo_format_stride_for_width (CAIRO_FORMAT_A8, width);
-endif|#
-directive|endif
-DECL|macro|CAIRO_STRIDE_ALIGNMENT
-define|#
-directive|define
-name|CAIRO_STRIDE_ALIGNMENT
-value|(sizeof (guint32))
-DECL|macro|CAIRO_STRIDE_FOR_WIDTH_BPP (w,bpp)
-define|#
-directive|define
-name|CAIRO_STRIDE_FOR_WIDTH_BPP
-parameter_list|(
-name|w
-parameter_list|,
-name|bpp
-parameter_list|)
-define|\
-value|(((bpp)*(w)+7)/8 + CAIRO_STRIDE_ALIGNMENT-1)& ~(CAIRO_STRIDE_ALIGNMENT-1)
-return|return
-name|CAIRO_STRIDE_FOR_WIDTH_BPP
-argument_list|(
-name|width
-argument_list|,
-literal|8
-argument_list|)
-return|;
 block|}
 end_function
 
