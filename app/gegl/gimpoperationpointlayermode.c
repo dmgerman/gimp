@@ -72,7 +72,7 @@ DECL|macro|R
 define|#
 directive|define
 name|R
-value|RED
+value|(RED)
 end_define
 
 begin_define
@@ -80,7 +80,7 @@ DECL|macro|G
 define|#
 directive|define
 name|G
-value|GREEN
+value|(GREEN)
 end_define
 
 begin_define
@@ -88,7 +88,7 @@ DECL|macro|B
 define|#
 directive|define
 name|B
-value|BLUE
+value|(BLUE)
 end_define
 
 begin_define
@@ -96,15 +96,7 @@ DECL|macro|A
 define|#
 directive|define
 name|A
-value|ALPHA
-end_define
-
-begin_define
-DECL|macro|inCa
-define|#
-directive|define
-name|inCa
-value|in[c]
+value|(ALPHA)
 end_define
 
 begin_define
@@ -112,15 +104,23 @@ DECL|macro|inA
 define|#
 directive|define
 name|inA
-value|in[A]
+value|(in[A])
 end_define
 
 begin_define
-DECL|macro|layCa
+DECL|macro|inCa
 define|#
 directive|define
-name|layCa
-value|lay[c]
+name|inCa
+value|(in[c])
+end_define
+
+begin_define
+DECL|macro|inC
+define|#
+directive|define
+name|inC
+value|(in[A]  ? in[c]  / in[A]  : 0.0)
 end_define
 
 begin_define
@@ -128,7 +128,23 @@ DECL|macro|layA
 define|#
 directive|define
 name|layA
-value|lay[A]
+value|(lay[A])
+end_define
+
+begin_define
+DECL|macro|layCa
+define|#
+directive|define
+name|layCa
+value|(lay[c])
+end_define
+
+begin_define
+DECL|macro|layC
+define|#
+directive|define
+name|layC
+value|(lay[A] ? lay[c] / lay[A] : 0.0)
 end_define
 
 begin_define
@@ -136,7 +152,7 @@ DECL|macro|outCa
 define|#
 directive|define
 name|outCa
-value|out[c]
+value|(out[c])
 end_define
 
 begin_define
@@ -144,7 +160,15 @@ DECL|macro|outA
 define|#
 directive|define
 name|outA
-value|out[A]
+value|(out[A])
+end_define
+
+begin_define
+DECL|macro|outC
+define|#
+directive|define
+name|outC
+value|(out[A] ? out[c] / out[A] : 0.0)
 end_define
 
 begin_define
@@ -152,7 +176,7 @@ DECL|macro|newCa
 define|#
 directive|define
 name|newCa
-value|new[c]
+value|(new[c])
 end_define
 
 begin_define
@@ -169,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291bb6e80103
+DECL|enum|__anon2a05602f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1504,11 +1528,7 @@ name|EACH_CHANNEL
 argument_list|(
 name|outCa
 operator|=
-operator|(
-name|inCa
-operator|/
-name|inA
-operator|)
+name|inC
 operator|*
 name|outA
 argument_list|)
@@ -1546,9 +1566,7 @@ name|EACH_CHANNEL
 argument_list|(
 name|outCa
 operator|=
-name|inCa
-operator|/
-name|inA
+name|inC
 operator|*
 name|outA
 argument_list|)
@@ -1652,9 +1670,7 @@ name|EACH_CHANNEL
 argument_list|(
 name|outCa
 operator|=
-name|layCa
-operator|/
-name|layA
+name|layC
 argument_list|)
 expr_stmt|;
 block|}
@@ -1898,7 +1914,7 @@ argument|- inA) + inCa * (
 literal|1
 argument|- layA);           else             outCa = inCa * layA / (
 literal|1
-argument|- layCa / layA) + layCa * (
+argument|- layC) + layCa * (
 literal|1
 argument|- inA) + inCa * (
 literal|1
@@ -1959,7 +1975,7 @@ argument|if (
 literal|2
 argument|* layCa< layA)             outCa = inCa * (layA - (
 literal|1
-argument|- inCa / inA) * (
+argument|- inC) * (
 literal|2
 argument|* layCa - layA)) + layCa * (
 literal|1
@@ -1969,17 +1985,17 @@ argument|- layA);           else if (
 literal|8
 argument|* inCa<= inA)             outCa = inCa * (layA - (
 literal|1
-argument|- inCa / inA) * (
+argument|- inC) * (
 literal|2
 argument|* layCa - layA) * (
 literal|3
 argument|-
 literal|8
-argument|* inCa / inA)) + layCa * (
+argument|* inC)) + layCa * (
 literal|1
 argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outCa = (inCa * layA + (sqrt (inCa / inA) * inA - inCa) * (
+argument|- layA);           else             outCa = (inCa * layA + (sqrt (inC) * inA - inCa) * (
 literal|2
 argument|* layCa - layA)) + layCa * (
 literal|1
@@ -2081,7 +2097,9 @@ case|:
 comment|/* Custom SVG 1.2:            *            * if Dc / Sc> 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc / Sc            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (in[c] / lay[c]> in[A] / lay[A])             outCa = layA * inA + layCa * (
+argument|if (layA ==
+literal|0.0
+argument||| inCa / layCa> inA / layA)             outCa = layA * inA + layCa * (
 literal|1
 argument|- inA) + inCa * (
 literal|1
