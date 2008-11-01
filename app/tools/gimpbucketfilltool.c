@@ -112,6 +112,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -166,6 +167,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -375,13 +377,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
+DECL|function|gimp_bucket_fill_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_bucket_fill_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -740,13 +743,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_bucket_fill_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_bucket_fill_tool_cursor_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_bucket_fill_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

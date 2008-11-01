@@ -975,13 +975,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_button_press_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|tool_manager_button_press_active (Gimp * gimp,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_button_press_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1044,13 +1045,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_button_release_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|tool_manager_button_release_active (Gimp * gimp,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_button_release_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1113,13 +1115,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_motion_active (Gimp * gimp,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|tool_manager_motion_active (Gimp * gimp,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_motion_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1416,13 +1419,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_oper_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
+DECL|function|tool_manager_oper_update_active (Gimp * gimp,const GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|tool_manager_oper_update_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1485,13 +1489,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_cursor_update_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
+DECL|function|tool_manager_cursor_update_active (Gimp * gimp,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|tool_manager_cursor_update_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1550,13 +1555,14 @@ end_function
 begin_function
 name|GimpUIManager
 modifier|*
-DECL|function|tool_manager_get_popup_active (Gimp * gimp,GimpCoords * coords,GdkModifierType state,GimpDisplay * display,const gchar ** ui_path)
+DECL|function|tool_manager_get_popup_active (Gimp * gimp,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display,const gchar ** ui_path)
 name|tool_manager_get_popup_active
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

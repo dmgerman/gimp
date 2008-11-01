@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0680b60103
+DECL|enum|__anon295bc5230103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0680b60203
+DECL|enum|__anon295bc5230203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0680b60303
+DECL|enum|__anon295bc5230303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -653,6 +653,7 @@ name|GimpRectangleTool
 modifier|*
 name|rect_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -669,6 +670,7 @@ name|GimpRectangleTool
 modifier|*
 name|rect_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -838,6 +840,7 @@ name|GimpRectangleTool
 modifier|*
 name|rect_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -2867,13 +2870,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -3303,13 +3307,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_rectangle_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -3585,13 +3590,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_motion (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_motion
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -5160,13 +5166,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_oper_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_rectangle_tool_oper_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -5438,13 +5445,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_rectangle_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_rectangle_tool_cursor_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_rectangle_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -9256,13 +9264,14 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_coord_outside (GimpRectangleTool * rect_tool,GimpCoords * coord)
+DECL|function|gimp_rectangle_tool_coord_outside (GimpRectangleTool * rect_tool,const GimpCoords * coord)
 name|gimp_rectangle_tool_coord_outside
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rect_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coord
@@ -9450,13 +9459,14 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_coord_on_handle (GimpRectangleTool * rect_tool,GimpCoords * coords,GtkAnchorType anchor)
+DECL|function|gimp_rectangle_tool_coord_on_handle (GimpRectangleTool * rect_tool,const GimpCoords * coords,GtkAnchorType anchor)
 name|gimp_rectangle_tool_coord_on_handle
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rect_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -11030,13 +11040,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_rectangle_tool_setup_snap_offsets (GimpRectangleTool * rect_tool,GimpCoords * coords)
+DECL|function|gimp_rectangle_tool_setup_snap_offsets (GimpRectangleTool * rect_tool,const GimpCoords * coords)
 name|gimp_rectangle_tool_setup_snap_offsets
 parameter_list|(
 name|GimpRectangleTool
 modifier|*
 name|rect_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

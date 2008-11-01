@@ -176,6 +176,7 @@ name|GimpSelectionTool
 modifier|*
 name|sel_tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

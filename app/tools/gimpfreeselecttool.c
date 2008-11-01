@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad369670108
+DECL|struct|__anon2bf7de020108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -330,6 +330,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -356,6 +357,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -379,6 +381,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -405,6 +408,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -434,6 +438,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1250,7 +1255,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_free_select_tool_should_close (GimpFreeSelectTool * fst,GimpDisplay * display,guint32 time,GimpCoords * coords)
+DECL|function|gimp_free_select_tool_should_close (GimpFreeSelectTool * fst,GimpDisplay * display,guint32 time,const GimpCoords * coords)
 name|gimp_free_select_tool_should_close
 parameter_list|(
 name|GimpFreeSelectTool
@@ -1264,6 +1269,7 @@ parameter_list|,
 name|guint32
 name|time
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1452,7 +1458,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_handle_segment_selection (GimpFreeSelectTool * fst,GimpDisplay * display,GimpCoords * coords)
+DECL|function|gimp_free_select_tool_handle_segment_selection (GimpFreeSelectTool * fst,GimpDisplay * display,const GimpCoords * coords)
 name|gimp_free_select_tool_handle_segment_selection
 parameter_list|(
 name|GimpFreeSelectTool
@@ -1463,6 +1469,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -2080,13 +2087,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_start (GimpFreeSelectTool * fst,GimpCoords * coords,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_start (GimpFreeSelectTool * fst,const GimpCoords * coords,GimpDisplay * display)
 name|gimp_free_select_tool_start
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
 name|fst
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -3060,13 +3068,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_handle_click (GimpFreeSelectTool * fst,GimpCoords * coords,guint32 time,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_handle_click (GimpFreeSelectTool * fst,const GimpCoords * coords,guint32 time,GimpDisplay * display)
 name|gimp_free_select_tool_handle_click
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
 name|fst
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -3182,13 +3191,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_handle_normal_release (GimpFreeSelectTool * fst,GimpCoords * coords,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_handle_normal_release (GimpFreeSelectTool * fst,const GimpCoords * coords,GimpDisplay * display)
 name|gimp_free_select_tool_handle_normal_release
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
 name|fst
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -3576,13 +3586,14 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_free_select_tool_delegate_button_press (GimpFreeSelectTool * fst,GimpCoords * coords,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_delegate_button_press (GimpFreeSelectTool * fst,const GimpCoords * coords,GimpDisplay * display)
 name|gimp_free_select_tool_delegate_button_press
 parameter_list|(
 name|GimpFreeSelectTool
 modifier|*
 name|fst
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -3856,7 +3867,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_status_update (GimpFreeSelectTool * fst,GimpDisplay * display,GimpCoords * coords,gboolean proximity)
+DECL|function|gimp_free_select_tool_status_update (GimpFreeSelectTool * fst,GimpDisplay * display,const GimpCoords * coords,gboolean proximity)
 name|gimp_free_select_tool_status_update
 parameter_list|(
 name|GimpFreeSelectTool
@@ -3867,6 +3878,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -4063,13 +4075,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_oper_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_free_select_tool_oper_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -4341,13 +4354,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_cursor_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_free_select_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -4462,13 +4476,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_free_select_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -4649,13 +4664,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_free_select_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -4792,13 +4808,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_motion (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_free_select_tool_motion
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

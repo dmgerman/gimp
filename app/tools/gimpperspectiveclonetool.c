@@ -246,6 +246,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -272,6 +273,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -301,6 +303,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -327,6 +330,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -350,6 +354,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1285,13 +1290,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_button_press (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_perspective_clone_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_perspective_clone_tool_button_press
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1540,13 +1546,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
+DECL|function|gimp_perspective_clone_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_perspective_clone_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1858,13 +1865,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_perspective_clone_tool_motion (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_perspective_clone_tool_motion
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -2214,13 +2222,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_cursor_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_perspective_clone_tool_cursor_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,GimpDisplay * display)
 name|gimp_perspective_clone_tool_cursor_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -2484,13 +2493,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_tool_oper_update (GimpTool * tool,GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
+DECL|function|gimp_perspective_clone_tool_oper_update (GimpTool * tool,const GimpCoords * coords,GdkModifierType state,gboolean proximity,GimpDisplay * display)
 name|gimp_perspective_clone_tool_oper_update
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

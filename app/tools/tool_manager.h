@@ -132,6 +132,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -157,6 +158,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -182,6 +184,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -277,6 +280,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -302,6 +306,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -325,6 +330,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

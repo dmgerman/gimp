@@ -284,6 +284,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -310,6 +311,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -339,6 +341,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -435,6 +438,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -461,6 +465,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -485,6 +490,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -601,6 +607,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -626,6 +633,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -651,6 +659,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -746,6 +755,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -771,6 +781,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -794,6 +805,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

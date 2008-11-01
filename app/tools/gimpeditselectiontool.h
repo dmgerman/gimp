@@ -96,6 +96,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a7c83b0103
+DECL|enum|__anon2be3836c0103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_PROP_0
 name|GIMP_RECTANGLE_TOOL_PROP_0
@@ -58,7 +58,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a7c83b0203
+DECL|enum|__anon2be3836c0203
 block|{
 DECL|enumerator|GIMP_RECTANGLE_TOOL_INACTIVE
 name|GIMP_RECTANGLE_TOOL_INACTIVE
@@ -295,6 +295,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -320,6 +321,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -348,6 +350,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -416,6 +419,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -441,6 +445,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

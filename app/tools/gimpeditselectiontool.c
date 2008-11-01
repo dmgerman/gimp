@@ -377,6 +377,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -406,6 +407,7 @@ name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -739,7 +741,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_edit_selection_tool_start (GimpTool * parent_tool,GimpDisplay * display,GimpCoords * coords,GimpTranslateMode edit_mode,gboolean propagate_release)
+DECL|function|gimp_edit_selection_tool_start (GimpTool * parent_tool,GimpDisplay * display,const GimpCoords * coords,GimpTranslateMode edit_mode,gboolean propagate_release)
 name|gimp_edit_selection_tool_start
 parameter_list|(
 name|GimpTool
@@ -750,6 +752,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1882,13 +1885,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_button_release (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
+DECL|function|gimp_edit_selection_tool_button_release (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonReleaseType release_type,GimpDisplay * display)
 name|gimp_edit_selection_tool_button_release
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -2825,13 +2829,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_edit_selection_tool_motion (GimpTool * tool,GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_edit_selection_tool_motion (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
 name|gimp_edit_selection_tool_motion
 parameter_list|(
 name|GimpTool
 modifier|*
 name|tool
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
