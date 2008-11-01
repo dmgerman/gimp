@@ -193,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a05602f0103
+DECL|enum|__anon2bd5c6d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1968,7 +1968,7 @@ case|case
 name|GIMP_SOFTLIGHT_MODE
 case|:
 comment|/* SVG 1.2 soft-light */
-comment|/* XXX: Why is the result so different from legacy Soft Light? */
+comment|/* FIXME: This exactly like in the SVG 1.2 draft but it is            * buggy and we need sort this out            */
 name|EACH_CHANNEL
 argument_list|(
 argument|if (
