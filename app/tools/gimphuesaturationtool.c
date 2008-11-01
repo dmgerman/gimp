@@ -776,7 +776,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-hue-saturation"
+literal|"gimp:hue-saturation"
 argument_list|,
 name|NULL
 argument_list|)
@@ -971,7 +971,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2a0c777e0108
+DECL|struct|__anon2b9d90190108
 block|{
 DECL|member|label
 specifier|const

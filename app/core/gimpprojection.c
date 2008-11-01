@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b94f5530103
+DECL|enum|__anon27dfd63f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1392,7 +1392,7 @@ name|graph
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-tilemanager-sink"
+literal|"gimp:tilemanager-sink"
 argument_list|,
 literal|"tile-manager"
 argument_list|,

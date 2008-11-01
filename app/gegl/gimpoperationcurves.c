@@ -158,7 +158,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-curves"
+literal|"gimp:curves"
 expr_stmt|;
 name|operation_class
 operator|->

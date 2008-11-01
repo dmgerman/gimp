@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54d33b0103
+DECL|enum|__anon2be343180103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b54d33b0203
+DECL|enum|__anon2be343180203
 block|{
 DECL|enumerator|DATA_WRITTEN
 name|DATA_WRITTEN
@@ -301,7 +301,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-tilemanager-sink"
+literal|"gimp:tilemanager-sink"
 expr_stmt|;
 name|operation_class
 operator|->

@@ -146,7 +146,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-levels"
+literal|"gimp:levels"
 expr_stmt|;
 name|operation_class
 operator|->

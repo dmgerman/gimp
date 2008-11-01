@@ -140,7 +140,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-colorize"
+literal|"gimp:colorize"
 expr_stmt|;
 name|operation_class
 operator|->

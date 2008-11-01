@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2959c4f10103
+DECL|enum|__anon27df94f50103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1877,7 +1877,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-tilemanager-source"
+literal|"gimp:tilemanager-source"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1922,7 +1922,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-tilemanager-sink"
+literal|"gimp:tilemanager-sink"
 argument_list|,
 name|NULL
 argument_list|)

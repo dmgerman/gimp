@@ -140,7 +140,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-threshold"
+literal|"gimp:threshold"
 expr_stmt|;
 name|operation_class
 operator|->

@@ -206,7 +206,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-hue-saturation"
+literal|"gimp:hue-saturation"
 argument_list|,
 name|NULL
 argument_list|)

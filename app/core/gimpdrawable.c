@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b88f99f0103
+DECL|enum|__anon2c37c9cb0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4873,7 +4873,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-tilemanager-source"
+literal|"gimp:tilemanager-source"
 argument_list|,
 name|NULL
 argument_list|)

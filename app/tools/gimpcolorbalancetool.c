@@ -734,7 +734,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-color-balance"
+literal|"gimp:color-balance"
 argument_list|,
 name|NULL
 argument_list|)

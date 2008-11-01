@@ -146,7 +146,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-color-balance"
+literal|"gimp:color-balance"
 expr_stmt|;
 name|operation_class
 operator|->

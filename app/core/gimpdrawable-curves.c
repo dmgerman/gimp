@@ -612,7 +612,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-curves"
+literal|"gimp:curves"
 argument_list|,
 name|NULL
 argument_list|)

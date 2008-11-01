@@ -645,7 +645,7 @@ name|GEGL_TYPE_NODE
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-posterize"
+literal|"gimp:posterize"
 argument_list|,
 name|NULL
 argument_list|)

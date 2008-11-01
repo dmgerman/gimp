@@ -227,7 +227,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-tilemanager-source"
+literal|"gimp:tilemanager-source"
 argument_list|,
 literal|"tile-manager"
 argument_list|,
@@ -251,7 +251,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gimp-tilemanager-sink"
+literal|"gimp:tilemanager-sink"
 argument_list|,
 literal|"tile-manager"
 argument_list|,

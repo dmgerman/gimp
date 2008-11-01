@@ -146,7 +146,7 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp-posterize"
+literal|"gimp:posterize"
 expr_stmt|;
 name|operation_class
 operator|->
