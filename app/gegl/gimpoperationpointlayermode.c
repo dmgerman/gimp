@@ -100,10 +100,10 @@ value|ALPHA
 end_define
 
 begin_define
-DECL|macro|inC
+DECL|macro|inCa
 define|#
 directive|define
-name|inC
+name|inCa
 value|in[c]
 end_define
 
@@ -116,10 +116,10 @@ value|in[A]
 end_define
 
 begin_define
-DECL|macro|layC
+DECL|macro|layCa
 define|#
 directive|define
-name|layC
+name|layCa
 value|lay[c]
 end_define
 
@@ -132,10 +132,10 @@ value|lay[A]
 end_define
 
 begin_define
-DECL|macro|outC
+DECL|macro|outCa
 define|#
 directive|define
-name|outC
+name|outCa
 value|out[c]
 end_define
 
@@ -148,10 +148,10 @@ value|out[A]
 end_define
 
 begin_define
-DECL|macro|newC
+DECL|macro|newCa
 define|#
 directive|define
-name|newC
+name|newCa
 value|new[c]
 end_define
 
@@ -169,7 +169,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9608f0103
+DECL|enum|__anon291bb6e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1496,16 +1496,16 @@ literal|0.0
 condition|)
 name|EACH_CHANNEL
 argument_list|(
-argument|outC =
+argument|outCa =
 literal|0.0
 argument_list|)
 else|else
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
 operator|(
-name|inC
+name|inCa
 operator|/
 name|inA
 operator|)
@@ -1538,15 +1538,15 @@ literal|0.0
 condition|)
 name|EACH_CHANNEL
 argument_list|(
-argument|outC =
+argument|outCa =
 literal|0.0
 argument_list|)
 else|else
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|inC
+name|inCa
 operator|/
 name|inA
 operator|*
@@ -1578,9 +1578,9 @@ name|layA
 expr_stmt|;
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|layC
+name|layCa
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1650,9 +1650,9 @@ literal|1.0
 expr_stmt|;
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|layC
+name|layCa
 operator|/
 name|layA
 argument_list|)
@@ -1666,9 +1666,9 @@ name|inA
 expr_stmt|;
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|inC
+name|inCa
 argument_list|)
 expr_stmt|;
 block|}
@@ -1679,11 +1679,11 @@ case|:
 comment|/* Porter-Duff A over B */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|layC
+name|layCa
 operator|+
-name|inC
+name|inCa
 operator|*
 operator|(
 literal|1
@@ -1699,11 +1699,11 @@ case|:
 comment|/* Porter-Duff B over A */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|inC
+name|inCa
 operator|+
-name|layC
+name|layCa
 operator|*
 operator|(
 literal|1
@@ -1719,13 +1719,13 @@ case|:
 comment|/* SVG 1.2 multiply */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|layC
+name|layCa
 operator|*
-name|inC
+name|inCa
 operator|+
-name|layC
+name|layCa
 operator|*
 operator|(
 literal|1
@@ -1733,7 +1733,7 @@ operator|-
 name|inA
 operator|)
 operator|+
-name|inC
+name|inCa
 operator|*
 operator|(
 literal|1
@@ -1749,15 +1749,15 @@ case|:
 comment|/* SVG 1.2 screen */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|layC
+name|layCa
 operator|+
-name|inC
+name|inCa
 operator|-
-name|layC
+name|layCa
 operator|*
-name|inC
+name|inCa
 argument_list|)
 expr_stmt|;
 break|break;
@@ -1767,21 +1767,21 @@ case|:
 comment|/* SVG 1.2 difference */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|inC
+name|inCa
 operator|+
-name|layC
+name|layCa
 operator|-
 literal|2
 operator|*
 name|MIN
 argument_list|(
-name|layC
+name|layCa
 operator|*
 name|inA
 argument_list|,
-name|inC
+name|inCa
 operator|*
 name|layA
 argument_list|)
@@ -1794,20 +1794,20 @@ case|:
 comment|/* SVG 1.2 darken */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
 name|MIN
 argument_list|(
-name|layC
+name|layCa
 operator|*
 name|inA
 argument_list|,
-name|inC
+name|inCa
 operator|*
 name|layA
 argument_list|)
 operator|+
-name|layC
+name|layCa
 operator|*
 operator|(
 literal|1
@@ -1815,7 +1815,7 @@ operator|-
 name|inA
 operator|)
 operator|+
-name|inC
+name|inCa
 operator|*
 operator|(
 literal|1
@@ -1831,20 +1831,20 @@ case|:
 comment|/* SVG 1.2 lighten */
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
 name|MAX
 argument_list|(
-name|layC
+name|layCa
 operator|*
 name|inA
 argument_list|,
-name|inC
+name|inCa
 operator|*
 name|layA
 argument_list|)
 operator|+
-name|layC
+name|layCa
 operator|*
 operator|(
 literal|1
@@ -1852,7 +1852,7 @@ operator|-
 name|inA
 operator|)
 operator|+
-name|inC
+name|inCa
 operator|*
 operator|(
 literal|1
@@ -1870,17 +1870,17 @@ name|EACH_CHANNEL
 argument_list|(
 argument|if (
 literal|2
-argument|* inC< inA)             outC =
+argument|* inCa< inA)             outCa =
 literal|2
-argument|* layC * inC + layC * (
+argument|* layCa * inCa + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = layA * inA -
+argument|- layA);           else             outCa = layA * inA -
 literal|2
-argument|* (inA - inC) * (layA - layC) + layC * (
+argument|* (inA - inCa) * (layA - layCa) + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA)
 argument_list|)
@@ -1892,15 +1892,15 @@ case|:
 comment|/* SVG 1.2 color-dodge */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (layC * inA + inC * layA>= layA * inA)             outC = layA * inA + layC * (
+argument|if (layCa * inA + inCa * layA>= layA * inA)             outCa = layA * inA + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = inC * layA / (
+argument|- layA);           else             outCa = inCa * layA / (
 literal|1
-argument|- layC / layA) + layC * (
+argument|- layCa / layA) + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA)
 argument_list|)
@@ -1912,13 +1912,13 @@ case|:
 comment|/* SVG 1.2 color-burn */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (layC * inA + inC * layA<= layA * inA)             outC = layC * (
+argument|if (layCa * inA + inCa * layA<= layA * inA)             outCa = layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = layA * (layC * inA + inC * layA - layA * inA) / layC + layC * (
+argument|- layA);           else             outCa = layA * (layCa * inA + inCa * layA - layA * inA) / layCa + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA)
 argument_list|)
@@ -1932,17 +1932,17 @@ name|EACH_CHANNEL
 argument_list|(
 argument|if (
 literal|2
-argument|* layC< layA)             outC =
+argument|* layCa< layA)             outCa =
 literal|2
-argument|* layC * inC + layC * (
+argument|* layCa * inCa + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = layA * inA -
+argument|- layA);           else             outCa = layA * inA -
 literal|2
-argument|* (inA - inC) * (layA - layC) + layC * (
+argument|* (inA - inCa) * (layA - layCa) + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA)
 argument_list|)
@@ -1957,33 +1957,33 @@ name|EACH_CHANNEL
 argument_list|(
 argument|if (
 literal|2
-argument|* layC< layA)             outC = inC * (layA - (
+argument|* layCa< layA)             outCa = inCa * (layA - (
 literal|1
-argument|- inC / inA) * (
+argument|- inCa / inA) * (
 literal|2
-argument|* layC - layA)) + layC * (
+argument|* layCa - layA)) + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA);           else if (
 literal|8
-argument|* inC<= inA)             outC = inC * (layA - (
+argument|* inCa<= inA)             outCa = inCa * (layA - (
 literal|1
-argument|- inC / inA) * (
+argument|- inCa / inA) * (
 literal|2
-argument|* layC - layA) * (
+argument|* layCa - layA) * (
 literal|3
 argument|-
 literal|8
-argument|* inC / inA)) + layC * (
+argument|* inCa / inA)) + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = (inC * layA + (sqrt (inC / inA) * inA - inC) * (
+argument|- layA);           else             outCa = (inCa * layA + (sqrt (inCa / inA) * inA - inCa) * (
 literal|2
-argument|* layC - layA)) + layC * (
+argument|* layCa - layA)) + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA)
 argument_list|)
@@ -1995,11 +1995,11 @@ case|:
 comment|/* Custom SVG 1.2:            *            * if Dc + Sc>= 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc + Sc            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (layC * inA + inC * layA>= layA * inA)             outC = layA * inA + layC * (
+argument|if (layCa * inA + inCa * layA>= layA * inA)             outCa = layA * inA + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = inC + layC
+argument|- layA);           else             outCa = inCa + layCa
 argument_list|)
 empty_stmt|;
 break|break;
@@ -2009,15 +2009,15 @@ case|:
 comment|/* Custom SVG 1.2:            *            * if Dc - Sc<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = Dc - Sc            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (inC * layA - layC * inA<=
+argument|if (inCa * layA - layCa * inA<=
 literal|0
-argument|)             outC = layC * (
+argument|)             outCa = layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = inC + layC -
+argument|- layA);           else             outCa = inCa + layCa -
 literal|2
-argument|* layC * inA
+argument|* layCa * inA
 argument_list|)
 empty_stmt|;
 break|break;
@@ -2027,23 +2027,23 @@ case|:
 comment|/* Custom SVG 1.2:            *            * if Dc - Sc + 0.5>= 1            *   f(Sc, Dc) = 1            * otherwise if Dc - Sc + 0.5<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = f(Sc, Dc) = Dc - Sc + 0.5            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (inC * layA - layC * inA +
+argument|if (inCa * layA - layCa * inA +
 literal|0.5
-argument|* layA * inA>= layA * inA)             outC = layA * inA + layC * (
+argument|* layA * inA>= layA * inA)             outCa = layA * inA + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else if (inC * layA - layC * inA +
+argument|- layA);           else if (inCa * layA - layCa * inA +
 literal|0.5
 argument|* layA * inA<=
 literal|0
-argument|)             outC = layC * (
+argument|)             outCa = layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = inC + layC -
+argument|- layA);           else             outCa = inCa + layCa -
 literal|2
-argument|* layC * inA +
+argument|* layCa * inA +
 literal|0.5
 argument|* inA * layA
 argument_list|)
@@ -2055,21 +2055,21 @@ case|:
 comment|/* Custom SVG 1.2:            *            * if Dc + Sc - 0.5>= 1            *   f(Sc, Dc) = 1            * otherwise if Dc + Sc - 0.5<= 0            *   f(Sc, Dc) = 0            * otherwise            *   f(Sc, Dc) = f(Sc, Dc) = Dc + Sc - 0.5            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (inC * layA + layC * inA -
+argument|if (inCa * layA + layCa * inA -
 literal|0.5
-argument|* layA * inA>= layA * inA)             outC = layA * inA + layC * (
+argument|* layA * inA>= layA * inA)             outCa = layA * inA + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else if (inC * layA + layC * inA -
+argument|- layA);           else if (inCa * layA + layCa * inA -
 literal|0.5
 argument|* layA * inA<=
 literal|0
-argument|)             outC = layC * (
+argument|)             outCa = layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = inC + layC -
+argument|- layA);           else             outCa = inCa + layCa -
 literal|0.5
 argument|* inA * layA
 argument_list|)
@@ -2081,13 +2081,13 @@ case|:
 comment|/* Custom SVG 1.2:            *            * if Dc / Sc> 1            *   f(Sc, Dc) = 1            * otherwise            *   f(Sc, Dc) = Dc / Sc            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (in[c] / lay[c]> in[A] / lay[A])             outC = layA * inA + layC * (
+argument|if (in[c] / lay[c]> in[A] / lay[A])             outCa = layA * inA + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
-argument|- layA);           else             outC = inC * layA * layA / layC + layC * (
+argument|- layA);           else             outCa = inCa * layA * layA / layCa + layCa * (
 literal|1
-argument|- inA) + inC * (
+argument|- inA) + inCa * (
 literal|1
 argument|- layA)
 argument_list|)
@@ -2116,15 +2116,15 @@ argument_list|)
 expr_stmt|;
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|newC
+name|newCa
 operator|*
 name|layA
 operator|*
 name|inA
 operator|+
-name|layC
+name|layCa
 operator|*
 operator|(
 literal|1
@@ -2132,7 +2132,7 @@ operator|-
 name|inA
 operator|)
 operator|+
-name|inC
+name|inCa
 operator|*
 operator|(
 literal|1
@@ -2159,15 +2159,15 @@ argument_list|)
 expr_stmt|;
 name|EACH_CHANNEL
 argument_list|(
-name|outC
+name|outCa
 operator|=
-name|newC
+name|newCa
 operator|*
 name|layA
 operator|*
 name|inA
 operator|+
-name|layC
+name|layCa
 operator|*
 operator|(
 literal|1
@@ -2175,7 +2175,7 @@ operator|-
 name|inA
 operator|)
 operator|+
-name|inC
+name|inCa
 operator|*
 operator|(
 literal|1
