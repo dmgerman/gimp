@@ -118,6 +118,10 @@ begin_comment
 comment|/*  HSL functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_hsl_set:  * @hsl:  * @h:  * @s:  * @l:  *  * Since: GIMP 2.8  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_hsl_set (GimpHSL * hsl,gdouble h,gdouble s,gdouble l)
