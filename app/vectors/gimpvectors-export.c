@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpunit.h"
 end_include
 
@@ -529,14 +523,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_vectors_iter
 argument_list|(
 name|image
-operator|->
-name|vectors
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;
@@ -546,6 +536,7 @@ name|list
 operator|->
 name|next
 control|)
+block|{
 name|gimp_vectors_export_path
 argument_list|(
 name|GIMP_VECTORS
@@ -558,6 +549,7 @@ argument_list|,
 name|str
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_string_append
 argument_list|(

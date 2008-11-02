@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"text/gimptextlayer.h"
 end_include
 
@@ -2029,14 +2023,10 @@ name|list
 operator|=
 name|g_list_find
 argument_list|(
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 argument_list|,
 name|layer
 argument_list|)

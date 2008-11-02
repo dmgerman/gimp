@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable.h"
 end_include
 
@@ -121,12 +127,6 @@ begin_include
 include|#
 directive|include
 file|"gimpimage-undo-push.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimplist.h"
 end_include
 
 begin_include
@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c2e0e4b0103
+DECL|enum|__anon28e605dc0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e0e4b0208
+DECL|struct|__anon28e605dc0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2e0e4b0308
+DECL|struct|__anon28e605dc0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2962,16 +2962,14 @@ argument_list|)
 expr_stmt|;
 name|n_layers
 operator|=
-name|g_list_length
+name|gimp_container_num_children
 argument_list|(
-name|GIMP_LIST
+name|GIMP_CONTAINER
 argument_list|(
 name|image
 operator|->
 name|layers
 argument_list|)
-operator|->
-name|list
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3170,14 +3168,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 operator|,
 name|nth_layer
 operator|=
@@ -3467,14 +3461,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 operator|,
 name|nth_layer
 operator|=
@@ -3834,14 +3824,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;

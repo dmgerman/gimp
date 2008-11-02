@@ -30,12 +30,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpanchor.h"
 end_include
 
@@ -59,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b27a350103
+DECL|enum|__anon2977d9070103
 block|{
 DECL|enumerator|GIMP_VECTORS_COMPAT_ANCHOR
 name|GIMP_VECTORS_COMPAT_ANCHOR
@@ -416,14 +410,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_vectors_iter
 argument_list|(
 name|image
-operator|->
-name|vectors
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;

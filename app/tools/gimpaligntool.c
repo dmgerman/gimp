@@ -90,12 +90,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"vectors/gimpvectors.h"
 end_include
 
@@ -1736,14 +1730,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;
@@ -5109,14 +5099,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;

@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppickable.h"
 end_include
 
@@ -120,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e24fa90103
+DECL|enum|__anon2924fa3f0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -496,14 +490,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_channel_iter
 argument_list|(
 name|image
-operator|->
-name|channels
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;
@@ -548,14 +538,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_vectors_iter
 argument_list|(
 name|image
-operator|->
-name|vectors
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;
@@ -622,14 +608,10 @@ expr_stmt|;
 comment|/*  crop all layers  */
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_image_get_layer_iter
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
-operator|->
-name|list
 expr_stmt|;
 while|while
 condition|(

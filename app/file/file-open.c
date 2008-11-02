@@ -1685,15 +1685,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
-argument_list|(
-name|gimp_image_get_layers
+name|gimp_image_get_layer_iter
 argument_list|(
 name|new_image
 argument_list|)
-argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;
