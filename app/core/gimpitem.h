@@ -740,6 +740,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_item_set_offsets
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+name|offset_x
+parameter_list|,
+name|gint
+name|offset_y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_item_translate
 parameter_list|(
 name|GimpItem

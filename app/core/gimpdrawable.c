@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cf52fb0103
+DECL|enum|__anon2be3c0d70103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3188,17 +3188,14 @@ argument_list|(
 name|type
 argument_list|)
 expr_stmt|;
+name|gimp_item_set_offsets
+argument_list|(
 name|item
-operator|->
+argument_list|,
 name|offset_x
-operator|=
-name|offset_x
-expr_stmt|;
-name|item
-operator|->
+argument_list|,
 name|offset_y
-operator|=
-name|offset_y
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
