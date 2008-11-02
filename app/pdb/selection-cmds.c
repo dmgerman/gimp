@@ -1954,7 +1954,7 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2244,7 +2244,7 @@ name|channel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

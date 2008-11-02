@@ -1135,7 +1135,7 @@ operator|->
 name|viewable
 argument_list|)
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2019,7 +2019,7 @@ operator|->
 name|text
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2602,7 +2602,7 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3126,7 +3126,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

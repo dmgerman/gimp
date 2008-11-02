@@ -1666,7 +1666,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2004,7 +2004,7 @@ condition|(
 operator|!
 name|sample_merged
 condition|)
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2186,7 +2186,7 @@ condition|(
 operator|!
 name|sample_merged
 condition|)
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

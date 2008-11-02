@@ -986,7 +986,7 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|active_item
 argument_list|,
@@ -1487,7 +1487,7 @@ name|x4
 decl_stmt|,
 name|y4
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -2346,7 +2346,7 @@ operator|->
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|active_item
 argument_list|,
@@ -3079,7 +3079,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|active_item
 argument_list|,
@@ -3277,7 +3277,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|active_item
 argument_list|,
@@ -3372,7 +3372,7 @@ name|x4
 decl_stmt|,
 name|y4
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

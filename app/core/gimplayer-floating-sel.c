@@ -1071,7 +1071,7 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  What this function does is save the specified area of the    *  drawable that this floating selection obscures.  We do this so    *  that it will be possible to subsequently restore the drawable's area    */
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1415,7 +1415,7 @@ argument_list|)
 expr_stmt|;
 comment|/*  What this function does is "uncover" the specified area in the    *  drawable that this floating selection obscures.  We do this so    *  that either the floating selection can be removed or it can be    *  translated    */
 comment|/*  Find the minimum area we need to uncover -- in image space  */
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2030,7 +2030,7 @@ decl_stmt|,
 name|y2
 decl_stmt|;
 comment|/*  Find the minimum area we need to composite -- in image space  */
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2476,7 +2476,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

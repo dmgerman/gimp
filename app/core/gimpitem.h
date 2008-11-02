@@ -720,7 +720,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_offsets
+name|gimp_item_get_offset
 parameter_list|(
 specifier|const
 name|GimpItem
@@ -740,7 +740,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_item_set_offsets
+name|gimp_item_set_offset
 parameter_list|(
 name|GimpItem
 modifier|*

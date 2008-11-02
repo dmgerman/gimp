@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2924fa3f0103
+DECL|enum|__anon29fb96fd0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -363,7 +363,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -667,7 +667,7 @@ name|lx2
 decl_stmt|,
 name|ly2
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

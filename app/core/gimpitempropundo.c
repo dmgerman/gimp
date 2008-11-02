@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b760f90103
+DECL|enum|__anon289319c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -405,7 +405,7 @@ break|break;
 case|case
 name|GIMP_UNDO_ITEM_DISPLACE
 case|:
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -805,7 +805,7 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

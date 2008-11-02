@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be3c0d70103
+DECL|enum|__anon2933eb9f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2421,7 +2421,7 @@ name|old_off_x
 decl_stmt|,
 name|old_off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -2563,7 +2563,7 @@ name|old_off_x
 decl_stmt|,
 name|old_off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -2716,7 +2716,7 @@ name|old_off_x
 decl_stmt|,
 name|old_off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -4543,7 +4543,7 @@ name|push_undo
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5751,7 +5751,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -6027,7 +6027,7 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

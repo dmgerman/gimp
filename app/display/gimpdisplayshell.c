@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29229f880103
+DECL|enum|__anon2b1cd5210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29229f880203
+DECL|enum|__anon2b1cd5210203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6570,7 +6570,7 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

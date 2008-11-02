@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2df4bd0103
+DECL|enum|__anon2798098e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1395,7 +1395,7 @@ name|src_image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

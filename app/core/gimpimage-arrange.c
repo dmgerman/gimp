@@ -844,7 +844,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -1010,7 +1010,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

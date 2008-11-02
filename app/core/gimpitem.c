@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2923c9d80103
+DECL|enum|__anon2c3973740103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2923c9d80203
+DECL|enum|__anon2c3973740203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2716,13 +2716,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_offsets:  * @item:     The #GimpItem to check.  * @offset_x: Return location for the item's X offset.  * @offset_y: Return location for the item's Y offset.  *  * Reveals the X and Y offsets of the item.  */
+comment|/**  * gimp_item_get_offsets:  * @item:     The #GimpItem to check.  * @offset_x: Return location for the item's X offset.  * @offset_y: Return location for the item's Y offset.  *  * Reveals the X and Y offsets of the item.  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_item_offsets (const GimpItem * item,gint * offset_x,gint * offset_y)
-name|gimp_item_offsets
+DECL|function|gimp_item_get_offset (const GimpItem * item,gint * offset_x,gint * offset_y)
+name|gimp_item_get_offset
 parameter_list|(
 specifier|const
 name|GimpItem
@@ -2773,8 +2773,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_set_offsets (GimpItem * item,gint offset_x,gint offset_y)
-name|gimp_item_set_offsets
+DECL|function|gimp_item_set_offset (GimpItem * item,gint offset_x,gint offset_y)
+name|gimp_item_set_offset
 parameter_list|(
 name|GimpItem
 modifier|*

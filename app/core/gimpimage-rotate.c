@@ -690,7 +690,7 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -959,7 +959,7 @@ name|GIMP_ROTATE_180
 case|:
 return|return;
 block|}
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

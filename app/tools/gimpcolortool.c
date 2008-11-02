@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af00d7c0103
+DECL|enum|__anon29527c520103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1071,7 +1071,7 @@ decl_stmt|,
 name|off_y
 decl_stmt|;
 comment|/*  Keep the coordinates of the target  */
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1838,7 +1838,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28e605dc0103
+DECL|enum|__anon2acddc930103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e605dc0208
+DECL|struct|__anon2acddc930208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e605dc0308
+DECL|struct|__anon2acddc930308
 block|{
 DECL|member|used_count
 name|signed
@@ -4422,7 +4422,7 @@ name|layer
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -10681,7 +10681,7 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -11133,7 +11133,7 @@ decl_stmt|;
 name|gpointer
 name|pr
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -11868,7 +11868,7 @@ name|quantobj
 operator|->
 name|n_layers
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -12484,7 +12484,7 @@ name|quantobj
 operator|->
 name|n_layers
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -13510,7 +13510,7 @@ name|offsetx
 decl_stmt|,
 name|offsety
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -14376,7 +14376,7 @@ name|quantobj
 operator|->
 name|index_used_count
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -15608,7 +15608,7 @@ name|quantobj
 operator|->
 name|n_layers
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

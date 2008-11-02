@@ -228,7 +228,7 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  get the layer offsets  */
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
@@ -935,7 +935,7 @@ expr_stmt|;
 return|return;
 block|}
 comment|/*  get the layer offsets  */
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,

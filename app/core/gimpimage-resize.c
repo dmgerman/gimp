@@ -564,7 +564,7 @@ decl_stmt|;
 name|gint
 name|old_offset_y
 decl_stmt|;
-name|gimp_item_offsets
+name|gimp_item_get_offset
 argument_list|(
 name|item
 argument_list|,
