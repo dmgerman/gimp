@@ -162,6 +162,12 @@ modifier|*
 name|node
 decl_stmt|;
 comment|/*  the GEGL node to plug                                             into the graph           */
+DECL|member|offset_node
+name|GeglNode
+modifier|*
+name|offset_node
+decl_stmt|;
+comment|/*  the offset as a node     */
 block|}
 struct|;
 end_struct
@@ -1018,6 +1024,18 @@ begin_function_decl
 name|GeglNode
 modifier|*
 name|gimp_item_get_node
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GeglNode
+modifier|*
+name|gimp_item_get_offset_node
 parameter_list|(
 name|GimpItem
 modifier|*
