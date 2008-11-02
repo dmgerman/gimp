@@ -379,25 +379,9 @@ modifier|*
 name|layer_stack
 decl_stmt|;
 comment|/*  the layers in MRU order      */
-DECL|member|layer_update_handler
-name|GQuark
-name|layer_update_handler
-decl_stmt|;
-DECL|member|layer_visible_handler
-name|GQuark
-name|layer_visible_handler
-decl_stmt|;
 DECL|member|layer_alpha_handler
 name|GQuark
 name|layer_alpha_handler
-decl_stmt|;
-DECL|member|channel_update_handler
-name|GQuark
-name|channel_update_handler
-decl_stmt|;
-DECL|member|channel_visible_handler
-name|GQuark
-name|channel_visible_handler
 decl_stmt|;
 DECL|member|channel_name_changed_handler
 name|GQuark
