@@ -156,6 +156,12 @@ name|gboolean
 name|removed
 decl_stmt|;
 comment|/*  removed from the image?  */
+DECL|member|node
+name|GeglNode
+modifier|*
+name|node
+decl_stmt|;
+comment|/*  the GEGL node to plug                                             into the graph           */
 block|}
 struct|;
 end_struct
@@ -478,6 +484,19 @@ name|GError
 modifier|*
 modifier|*
 name|error
+parameter_list|)
+function_decl|;
+DECL|member|get_node
+name|GeglNode
+modifier|*
+function_decl|(
+modifier|*
+name|get_node
+function_decl|)
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 DECL|member|default_name
@@ -991,6 +1010,18 @@ name|GError
 modifier|*
 modifier|*
 name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GeglNode
+modifier|*
+name|gimp_item_get_node
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl

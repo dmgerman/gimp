@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299e4eb90103
+DECL|enum|__anon2c525b2b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299e4eb90203
+DECL|enum|__anon2c525b2b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -747,9 +747,9 @@ name|GeglNode
 modifier|*
 name|gimp_layer_get_node
 parameter_list|(
-name|GimpDrawable
+name|GimpItem
 modifier|*
-name|drawable
+name|item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1175,6 +1175,12 @@ name|gimp_layer_transform
 expr_stmt|;
 name|item_class
 operator|->
+name|get_node
+operator|=
+name|gimp_layer_get_node
+expr_stmt|;
+name|item_class
+operator|->
 name|default_name
 operator|=
 name|_
@@ -1268,12 +1274,6 @@ operator|->
 name|set_tiles
 operator|=
 name|gimp_layer_set_tiles
-expr_stmt|;
-name|drawable_class
-operator|->
-name|get_node
-operator|=
-name|gimp_layer_get_node
 expr_stmt|;
 name|klass
 operator|->
@@ -2261,21 +2261,30 @@ begin_function
 specifier|static
 name|GeglNode
 modifier|*
-DECL|function|gimp_layer_get_node (GimpDrawable * drawable)
+DECL|function|gimp_layer_get_node (GimpItem * item)
 name|gimp_layer_get_node
 parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
 name|GimpDrawable
 modifier|*
 name|drawable
-parameter_list|)
-block|{
+init|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
 init|=
 name|GIMP_LAYER
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 decl_stmt|;
 name|GeglNode
@@ -2297,14 +2306,14 @@ name|off_y
 decl_stmt|;
 name|node
 operator|=
-name|GIMP_DRAWABLE_CLASS
+name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
 name|get_node
 argument_list|(
-name|drawable
+name|item
 argument_list|)
 expr_stmt|;
 name|source
@@ -5606,9 +5615,9 @@ name|mask
 decl_stmt|;
 name|node
 operator|=
-name|gimp_drawable_get_node
+name|gimp_item_get_node
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
@@ -7000,9 +7009,9 @@ name|source
 decl_stmt|;
 name|node
 operator|=
-name|gimp_drawable_get_node
+name|gimp_item_get_node
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
