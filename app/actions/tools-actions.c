@@ -42,13 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
+file|"core/gimpcontext.h"
 end_include
 
 begin_include
@@ -2574,16 +2574,12 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_get_tool_info_iter
 argument_list|(
 name|group
 operator|->
 name|gimp
-operator|->
-name|tool_info_list
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;

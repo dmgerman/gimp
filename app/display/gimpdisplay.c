@@ -60,13 +60,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"core/gimpcontainer.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
+file|"core/gimpimage.h"
 end_include
 
 begin_include
@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3d548a0103
+DECL|enum|__anon292aa3080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1774,14 +1774,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_get_display_iter
 argument_list|(
 name|gimp
-operator|->
-name|displays
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;

@@ -368,16 +368,12 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_get_display_iter
 argument_list|(
 name|manager
 operator|->
 name|gimp
-operator|->
-name|displays
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;

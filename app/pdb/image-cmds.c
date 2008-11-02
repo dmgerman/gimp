@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontainer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -143,12 +149,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplist.h"
 end_include
 
 begin_include
@@ -451,14 +451,10 @@ name|GList
 modifier|*
 name|list
 init|=
-name|GIMP_LIST
+name|gimp_get_image_iter
 argument_list|(
 name|gimp
-operator|->
-name|images
 argument_list|)
-operator|->
-name|list
 decl_stmt|;
 name|num_images
 operator|=

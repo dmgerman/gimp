@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimptoolinfo.h"
 end_include
 
@@ -883,14 +877,10 @@ for|for
 control|(
 name|list
 operator|=
-name|GIMP_LIST
+name|gimp_get_tool_info_iter
 argument_list|(
 name|gimp
-operator|->
-name|tool_info_list
 argument_list|)
-operator|->
-name|list
 init|;
 name|list
 condition|;
