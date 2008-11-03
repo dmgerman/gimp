@@ -24,11 +24,12 @@ name|GimpTextLayout
 modifier|*
 name|layout
 parameter_list|,
-name|GimpTextRenderFunc
-name|render_func
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|,
-name|gpointer
-name|render_data
+name|gboolean
+name|path
 parameter_list|)
 function_decl|;
 end_function_decl

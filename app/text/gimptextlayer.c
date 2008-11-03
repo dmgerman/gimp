@@ -108,18 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptext-bitmap.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptext-private.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimptextlayer.h"
 end_include
 
@@ -149,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b692db90103
+DECL|enum|__anon2c082b190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2445,12 +2433,9 @@ name|gimp_text_layout_render
 argument_list|(
 name|layout
 argument_list|,
-operator|(
-name|GimpTextRenderFunc
-operator|)
-name|gimp_text_render_bitmap
-argument_list|,
 name|cr
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|mask
