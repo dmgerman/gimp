@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299c19170103
+DECL|enum|__anon2b692db90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2182,6 +2182,11 @@ argument_list|,
 name|NULL
 argument_list|,
 name|new_tiles
+argument_list|,
+name|gimp_drawable_type
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

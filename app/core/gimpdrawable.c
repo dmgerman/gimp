@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e94f60103
+DECL|enum|__anon29bf9fc30103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4488,7 +4488,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles)
+DECL|function|gimp_drawable_set_tiles (GimpDrawable * drawable,gboolean push_undo,const gchar * undo_desc,TileManager * tiles,GimpImageType type)
 name|gimp_drawable_set_tiles
 parameter_list|(
 name|GimpDrawable
@@ -4506,6 +4506,9 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+name|GimpImageType
+name|type
 parameter_list|)
 block|{
 name|gint
@@ -4567,10 +4570,7 @@ name|undo_desc
 argument_list|,
 name|tiles
 argument_list|,
-name|gimp_drawable_type
-argument_list|(
-name|drawable
-argument_list|)
+name|type
 argument_list|,
 name|offset_x
 argument_list|,

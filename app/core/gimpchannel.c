@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288193510103
+DECL|enum|__anon28d551a80103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2079,7 +2079,7 @@ argument_list|,
 name|old_base_type
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_tiles_full
+name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
 argument_list|,
@@ -2090,14 +2090,6 @@ argument_list|,
 name|new_tiles
 argument_list|,
 name|new_type
-argument_list|,
-name|item
-operator|->
-name|offset_x
-argument_list|,
-name|item
-operator|->
-name|offset_y
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

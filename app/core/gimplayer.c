@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29582f310103
+DECL|enum|__anon2ad6579b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29582f310203
+DECL|enum|__anon2ad6579b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2944,7 +2944,7 @@ expr_stmt|;
 block|}
 break|break;
 block|}
-name|gimp_drawable_set_tiles_full
+name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
 argument_list|,
@@ -2955,20 +2955,6 @@ argument_list|,
 name|new_tiles
 argument_list|,
 name|new_type
-argument_list|,
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|offset_x
-argument_list|,
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|offset_y
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref
@@ -7019,7 +7005,7 @@ name|destPR
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new tiles  */
-name|gimp_drawable_set_tiles_full
+name|gimp_drawable_set_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7042,14 +7028,6 @@ argument_list|,
 name|new_tiles
 argument_list|,
 name|new_type
-argument_list|,
-name|item
-operator|->
-name|offset_x
-argument_list|,
-name|item
-operator|->
-name|offset_y
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref
@@ -7253,7 +7231,7 @@ name|bg
 argument_list|)
 expr_stmt|;
 comment|/*  Set the new tiles  */
-name|gimp_drawable_set_tiles_full
+name|gimp_drawable_set_tiles
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -7276,14 +7254,6 @@ argument_list|,
 name|new_tiles
 argument_list|,
 name|new_type
-argument_list|,
-name|item
-operator|->
-name|offset_x
-argument_list|,
-name|item
-operator|->
-name|offset_y
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

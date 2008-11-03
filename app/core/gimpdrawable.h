@@ -675,6 +675,9 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|tiles
+parameter_list|,
+name|GimpImageType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
