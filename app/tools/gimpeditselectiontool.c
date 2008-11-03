@@ -228,7 +228,7 @@ DECL|macro|CENTER_CROSS_SIZE
 define|#
 directive|define
 name|CENTER_CROSS_SIZE
-value|6
+value|7
 end_define
 
 begin_typedef
@@ -592,6 +592,15 @@ operator|->
 name|control
 argument_list|,
 name|GIMP_MOTION_MODE_COMPRESS
+argument_list|)
+expr_stmt|;
+name|gimp_tool_control_set_precision
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|GIMP_CURSOR_PRECISION_PIXEL_BORDER
 argument_list|)
 expr_stmt|;
 name|edit_selection_tool
