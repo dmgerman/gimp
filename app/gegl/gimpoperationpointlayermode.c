@@ -193,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5c6d80103
+DECL|enum|__anon2ae0cdf20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1967,43 +1967,48 @@ break|break;
 case|case
 name|GIMP_SOFTLIGHT_MODE
 case|:
-comment|/* SVG 1.2 soft-light */
-comment|/* FIXME: This exactly like in the SVG 1.2 draft but it is            * buggy and we need sort this out            */
+comment|/* Custom SVG 1.2:            *            * f(Sc, Dc) = Dc * (Dc + (2 * Sc * (1 - Dc)))            */
 name|EACH_CHANNEL
 argument_list|(
-argument|if (
+name|outCa
+operator|=
+name|inCa
+operator|*
+operator|(
+name|layA
+operator|*
+name|inC
+operator|+
+operator|(
 literal|2
-argument|* layCa< layA)             outCa = inCa * (layA - (
+operator|*
+name|layCa
+operator|*
+operator|(
 literal|1
-argument|- inC) * (
-literal|2
-argument|* layCa - layA)) + layCa * (
+operator|-
+name|inC
+operator|)
+operator|)
+operator|)
+operator|+
+name|layCa
+operator|*
+operator|(
 literal|1
-argument|- inA) + inCa * (
+operator|-
+name|inA
+operator|)
+operator|+
+name|inCa
+operator|*
+operator|(
 literal|1
-argument|- layA);           else if (
-literal|8
-argument|* inCa<= inA)             outCa = inCa * (layA - (
-literal|1
-argument|- inC) * (
-literal|2
-argument|* layCa - layA) * (
-literal|3
-argument|-
-literal|8
-argument|* inC)) + layCa * (
-literal|1
-argument|- inA) + inCa * (
-literal|1
-argument|- layA);           else             outCa = (inCa * layA + (sqrt (inC) * inA - inCa) * (
-literal|2
-argument|* layCa - layA)) + layCa * (
-literal|1
-argument|- inA) + inCa * (
-literal|1
-argument|- layA)
+operator|-
+name|layA
+operator|)
 argument_list|)
-empty_stmt|;
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_ADDITION_MODE
