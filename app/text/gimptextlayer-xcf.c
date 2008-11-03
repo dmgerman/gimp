@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19e95d0103
+DECL|enum|__anon28ebeb7b0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -523,6 +523,12 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|gint
+name|offset_x
+decl_stmt|;
+name|gint
+name|offset_y
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_LAYER
@@ -702,13 +708,18 @@ name|layer
 argument_list|)
 argument_list|,
 operator|&
-name|item
-operator|->
 name|offset_x
 argument_list|,
 operator|&
+name|offset_y
+argument_list|)
+expr_stmt|;
+name|gimp_item_set_offset
+argument_list|(
 name|item
-operator|->
+argument_list|,
+name|offset_x
+argument_list|,
 name|offset_y
 argument_list|)
 expr_stmt|;

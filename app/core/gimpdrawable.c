@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf9fc30103
+DECL|enum|__anon299d551a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1672,6 +1672,23 @@ decl_stmt|;
 name|PixelRegion
 name|destPR
 decl_stmt|;
+name|gint
+name|offset_x
+decl_stmt|;
+name|gint
+name|offset_y
+decl_stmt|;
+name|gimp_item_get_offset
+argument_list|(
+name|item
+argument_list|,
+operator|&
+name|offset_x
+argument_list|,
+operator|&
+name|offset_y
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_configure
 argument_list|(
 name|new_drawable
@@ -1681,12 +1698,8 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|item
-operator|->
 name|offset_x
 argument_list|,
-name|item
-operator|->
 name|offset_y
 argument_list|,
 name|gimp_item_get_width

@@ -372,23 +372,17 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set the layer offsets  */
+name|gimp_item_set_offset
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|offset_x
-operator|=
+argument_list|,
 name|text_x
-expr_stmt|;
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-operator|->
-name|offset_y
-operator|=
+argument_list|,
 name|text_y
+argument_list|)
 expr_stmt|;
 comment|/*  If there is a selection mask clear it--    *  this might not always be desired, but in general,    *  it seems like the correct behavior.    */
 if|if
