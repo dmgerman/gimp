@@ -717,7 +717,7 @@ argument_list|)
 expr_stmt|;
 name|dwidth
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -727,7 +727,7 @@ argument_list|)
 expr_stmt|;
 name|dheight
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1871,7 +1871,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab193710103
+DECL|enum|__anon27b117f10103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

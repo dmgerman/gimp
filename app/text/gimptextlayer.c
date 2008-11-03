@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274cf7940103
+DECL|enum|__anon299c19170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2144,14 +2144,14 @@ operator|&&
 operator|(
 name|width
 operator|!=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 operator|||
 name|height
 operator|!=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2406,14 +2406,14 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

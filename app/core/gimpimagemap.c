@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df94f50103
+DECL|enum|__anon29c54a870103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1163,7 +1163,7 @@ literal|0
 operator|&&
 name|x
 operator|<
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1174,7 +1174,7 @@ literal|0
 operator|&&
 name|y
 operator|<
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

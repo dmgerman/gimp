@@ -87,7 +87,7 @@ block|{
 if|if
 condition|(
 operator|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -101,7 +101,7 @@ argument_list|)
 operator|)
 operator|||
 operator|(
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -149,12 +149,12 @@ name|shadow
 operator|=
 name|tile_manager_new
 argument_list|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

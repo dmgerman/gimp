@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a2e8950103
+DECL|enum|__anon288193510103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2054,12 +2054,12 @@ name|new_tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2138,12 +2138,12 @@ name|new_tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2168,12 +2168,12 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2192,12 +2192,12 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2283,14 +2283,14 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 operator|!=
 name|width
 operator|||
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2459,7 +2459,7 @@ operator|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2480,7 +2480,7 @@ operator|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2501,7 +2501,7 @@ operator|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2522,7 +2522,7 @@ operator|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2650,7 +2650,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2658,7 +2658,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2785,7 +2785,7 @@ name|channel
 operator|->
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2797,7 +2797,7 @@ name|channel
 operator|->
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4228,7 +4228,7 @@ literal|0
 operator|||
 name|x
 operator|>=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4242,7 +4242,7 @@ literal|0
 operator|||
 name|y
 operator|>=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4523,7 +4523,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4531,7 +4531,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4769,7 +4769,7 @@ block|}
 comment|/*  go through and calculate the bounds  */
 name|tx1
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4779,7 +4779,7 @@ argument_list|)
 expr_stmt|;
 name|ty1
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4812,7 +4812,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4820,7 +4820,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5125,7 +5125,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5144,7 +5144,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5157,7 +5157,7 @@ if|if
 condition|(
 name|tx1
 operator|==
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5167,7 +5167,7 @@ argument_list|)
 operator|&&
 name|ty1
 operator|==
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5198,7 +5198,7 @@ name|channel
 operator|->
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5210,7 +5210,7 @@ name|channel
 operator|->
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5349,7 +5349,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5357,7 +5357,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5531,7 +5531,7 @@ name|channel
 operator|->
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5543,7 +5543,7 @@ name|channel
 operator|->
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5622,7 +5622,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5630,7 +5630,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5668,7 +5668,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5676,7 +5676,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5751,7 +5751,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5759,7 +5759,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5816,7 +5816,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5824,7 +5824,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5975,7 +5975,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5983,7 +5983,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6030,7 +6030,7 @@ name|channel
 operator|->
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6042,7 +6042,7 @@ name|channel
 operator|->
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6061,7 +6061,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6069,7 +6069,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6146,7 +6146,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6154,7 +6154,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6203,7 +6203,7 @@ name|channel
 operator|->
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6215,7 +6215,7 @@ name|channel
 operator|->
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6234,7 +6234,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6242,7 +6242,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6338,7 +6338,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6346,7 +6346,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6401,7 +6401,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6409,7 +6409,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6523,7 +6523,7 @@ name|x2
 operator|+
 name|radius_x
 operator|>
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6533,7 +6533,7 @@ argument_list|)
 condition|)
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6569,7 +6569,7 @@ name|y2
 operator|+
 name|radius_y
 operator|>
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6579,7 +6579,7 @@ argument_list|)
 condition|)
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6676,7 +6676,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6684,7 +6684,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6851,7 +6851,7 @@ name|x2
 operator|+
 name|radius_x
 operator|<
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6868,7 +6868,7 @@ expr_stmt|;
 else|else
 name|x2
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6882,7 +6882,7 @@ name|y2
 operator|+
 name|radius_y
 operator|<
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6899,7 +6899,7 @@ expr_stmt|;
 else|else
 name|y2
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6992,7 +6992,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7000,7 +7000,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7146,7 +7146,7 @@ if|if
 condition|(
 name|x2
 operator|<
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7161,7 +7161,7 @@ if|if
 condition|(
 name|y2
 operator|<
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7258,7 +7258,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7266,7 +7266,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7500,7 +7500,7 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7510,7 +7510,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7966,7 +7966,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -7974,7 +7974,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -8239,7 +8239,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -8247,7 +8247,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -8434,7 +8434,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -8442,7 +8442,7 @@ name|channel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

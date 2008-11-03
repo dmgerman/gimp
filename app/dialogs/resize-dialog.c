@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc2b8c0108
+DECL|struct|__anon2c2ae6740108
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -487,14 +487,14 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

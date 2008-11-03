@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b596340108
+DECL|struct|__anon2c289ab70108
 block|{
 DECL|member|image
 name|GimpImage
@@ -543,7 +543,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -551,7 +551,7 @@ name|mask
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

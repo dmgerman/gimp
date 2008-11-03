@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a07cee60103
+DECL|enum|__anon2b786f930103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a07cee60203
+DECL|enum|__anon2b786f930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1562,12 +1562,12 @@ name|item
 operator|->
 name|offset_y
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2613,13 +2613,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_width:  * @item: The #GimpItem to check.  *  * Returns: The width of the item.  */
+comment|/**  * gimp_item_get_width:  * @item: The #GimpItem to check.  *  * Returns: The width of the item.  */
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_item_width (const GimpItem * item)
-name|gimp_item_width
+DECL|function|gimp_item_get_width (const GimpItem * item)
+name|gimp_item_get_width
 parameter_list|(
 specifier|const
 name|GimpItem
@@ -2647,13 +2647,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_height:  * @item: The #GimpItem to check.  *  * Returns: The height of the item.  */
+comment|/**  * gimp_item_get_height:  * @item: The #GimpItem to check.  *  * Returns: The height of the item.  */
 end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_item_height (const GimpItem * item)
-name|gimp_item_height
+DECL|function|gimp_item_get_height (const GimpItem * item)
+name|gimp_item_get_height
 parameter_list|(
 specifier|const
 name|GimpItem
@@ -2982,7 +2982,7 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -2997,7 +2997,7 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -3271,7 +3271,7 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -3286,7 +3286,7 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -3419,7 +3419,7 @@ name|offset_x
 operator|+
 operator|(
 operator|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -3440,7 +3440,7 @@ name|offset_y
 operator|+
 operator|(
 operator|(
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -3477,7 +3477,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -3506,7 +3506,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -5428,7 +5428,7 @@ name|GIMP_ITEM_SET_IMAGE_SIZED
 case|:
 return|return
 operator|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -5440,7 +5440,7 @@ operator|->
 name|image
 argument_list|)
 operator|&&
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

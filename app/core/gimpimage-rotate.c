@@ -922,7 +922,7 @@ argument_list|)
 operator|-
 name|off_y
 operator|-
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -948,7 +948,7 @@ argument_list|)
 operator|-
 name|off_x
 operator|-
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2948be8a0103
+DECL|enum|__anon299d293b0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3244,7 +3244,7 @@ operator|)
 expr_stmt|;
 name|drawable_width
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -3254,7 +3254,7 @@ argument_list|)
 expr_stmt|;
 name|drawable_height
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299891250108
+DECL|struct|__anon2b973ca70108
 block|{
 DECL|member|width
 name|gint
@@ -2207,7 +2207,7 @@ name|width
 operator|/
 literal|2
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2228,7 +2228,7 @@ name|height
 operator|/
 literal|2
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

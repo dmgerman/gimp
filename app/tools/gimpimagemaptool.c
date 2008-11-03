@@ -1853,12 +1853,12 @@ name|off_x
 argument_list|,
 name|off_y
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

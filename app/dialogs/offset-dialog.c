@@ -136,7 +136,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c97a600108
+DECL|struct|__anon2bad8ac70108
 block|{
 DECL|member|context
 name|GimpContext
@@ -928,12 +928,12 @@ argument_list|,
 literal|0
 argument_list|,
 operator|-
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -951,12 +951,12 @@ argument_list|,
 literal|1
 argument_list|,
 operator|-
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -975,7 +975,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -994,7 +994,7 @@ literal|1
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -1362,7 +1362,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1381,7 +1381,7 @@ argument_list|)
 argument_list|,
 literal|1
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

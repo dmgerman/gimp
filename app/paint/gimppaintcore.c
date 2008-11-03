@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a393360103
+DECL|enum|__anon2a1fa2400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1401,12 +1401,12 @@ name|undo_tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -1514,12 +1514,12 @@ name|canvas_tiles
 operator|=
 name|tile_manager_new
 argument_list|(
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -2543,7 +2543,7 @@ argument_list|)
 expr_stmt|;
 name|drawable_width
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2553,7 +2553,7 @@ argument_list|)
 expr_stmt|;
 name|drawable_height
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

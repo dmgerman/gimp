@@ -1014,7 +1014,7 @@ name|item
 operator|->
 name|offset_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1025,7 +1025,7 @@ name|item
 operator|->
 name|offset_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -1088,7 +1088,7 @@ name|item
 operator|->
 name|offset_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1104,7 +1104,7 @@ name|item
 operator|->
 name|offset_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

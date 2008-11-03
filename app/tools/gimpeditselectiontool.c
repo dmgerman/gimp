@@ -1407,7 +1407,7 @@ name|x2
 operator|=
 name|x1
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|active_item
 argument_list|)
@@ -1416,7 +1416,7 @@ name|y2
 operator|=
 name|y1
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|active_item
 argument_list|)
@@ -1502,7 +1502,7 @@ name|x4
 operator|=
 name|x3
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1511,7 +1511,7 @@ name|y4
 operator|=
 name|y3
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -3192,12 +3192,12 @@ name|cumly
 operator|+
 name|off_y
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|active_item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|active_item
 argument_list|)
@@ -3292,7 +3292,7 @@ name|x2
 operator|=
 name|x1
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|active_item
 argument_list|)
@@ -3301,7 +3301,7 @@ name|y2
 operator|=
 name|y1
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|active_item
 argument_list|)
@@ -3387,7 +3387,7 @@ name|x4
 operator|=
 name|x3
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -3396,7 +3396,7 @@ name|y4
 operator|=
 name|y3
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

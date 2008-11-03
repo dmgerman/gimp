@@ -294,7 +294,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1404d0103
+DECL|enum|__anon2ac60c7f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1404d0203
+DECL|enum|__anon2ac60c7f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6523,7 +6523,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6531,7 +6531,7 @@ name|floating_sel
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -12194,7 +12194,7 @@ name|layers_width
 argument_list|,
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -12210,7 +12210,7 @@ name|layers_height
 argument_list|,
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
@@ -15088,7 +15088,7 @@ literal|0
 operator|&&
 name|d_x
 operator|<
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -15099,7 +15099,7 @@ literal|0
 operator|&&
 name|d_y
 operator|<
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

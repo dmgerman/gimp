@@ -4743,7 +4743,7 @@ block|}
 comment|/* write out the width, height and image type information for the layer */
 name|value
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4763,7 +4763,7 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5103,7 +5103,7 @@ block|}
 comment|/* write out the width and height information for the channel */
 name|value
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5123,7 +5123,7 @@ argument_list|)
 expr_stmt|;
 name|value
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -6675,7 +6675,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299cfe8e0108
+DECL|struct|__anon2786863f0108
 block|{
 DECL|member|info
 name|XcfInfo

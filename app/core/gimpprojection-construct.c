@@ -362,7 +362,7 @@ directive|if
 literal|0
 block|GimpImage *image = proj->image;    if ((gimp_container_num_children (image->layers) == 1))
 comment|/* a single layer */
-block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_image_get_layer_by_index (image, 0));        if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_width (GIMP_ITEM (layer))  == image->width)&&           (gimp_item_height (GIMP_ITEM (layer)) == image->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_get_offset (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR, gimp_drawable_get_tiles (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             }         }     }
+block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_image_get_layer_by_index (image, 0));        if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_get_width  (GIMP_ITEM (layer)) == image->width)&&           (gimp_item_get_height (GIMP_ITEM (layer)) == image->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_get_offset (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR, gimp_drawable_get_tiles (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR, gimp_projection_get_tiles (proj),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             }         }     }
 endif|#
 directive|endif
 comment|/*  First, determine if the projection image needs to be    *  initialized--this is the case when there are no visible    *  layers that cover the entire canvas--either because layers    *  are offset or only a floating selection is visible    */
@@ -763,7 +763,7 @@ name|CLAMP
 argument_list|(
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -784,7 +784,7 @@ name|CLAMP
 argument_list|(
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1409,7 +1409,7 @@ operator|&&
 operator|(
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1422,7 +1422,7 @@ operator|&&
 operator|(
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

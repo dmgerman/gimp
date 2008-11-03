@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6881410103
+DECL|enum|__anon2a1fb6880103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1633,12 +1633,12 @@ name|offset_x
 argument_list|,
 name|offset_y
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

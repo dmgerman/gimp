@@ -1656,7 +1656,7 @@ condition|)
 block|{
 name|width
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1778,7 +1778,7 @@ condition|)
 block|{
 name|height
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4230,7 +4230,7 @@ if|if
 condition|(
 name|x_coord
 operator|<
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4240,7 +4240,7 @@ argument_list|)
 operator|&&
 name|y_coord
 operator|<
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4539,7 +4539,7 @@ if|if
 condition|(
 name|x_coord
 operator|<
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -4549,7 +4549,7 @@ argument_list|)
 operator|&&
 name|y_coord
 operator|<
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5110,7 +5110,7 @@ expr_stmt|;
 comment|/* Adjust the width/height ratio */
 name|dwidth
 operator|=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5120,7 +5120,7 @@ argument_list|)
 expr_stmt|;
 name|dheight
 operator|=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5562,7 +5562,7 @@ operator|+
 name|src_width
 operator|)
 operator|<=
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -5576,7 +5576,7 @@ operator|+
 name|src_height
 operator|)
 operator|<=
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

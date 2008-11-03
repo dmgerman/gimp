@@ -696,7 +696,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_item_width
+name|gimp_item_get_width
 parameter_list|(
 specifier|const
 name|GimpItem
@@ -708,7 +708,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_item_height
+name|gimp_item_get_height
 parameter_list|(
 specifier|const
 name|GimpItem

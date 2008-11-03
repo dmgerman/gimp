@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a7d4920103
+DECL|enum|__anon2c4e3f5e0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1635,7 +1635,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|item
 argument_list|)
@@ -1648,7 +1648,7 @@ operator|/
 operator|(
 name|gdouble
 operator|)
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)

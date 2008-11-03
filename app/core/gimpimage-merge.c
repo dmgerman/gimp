@@ -1427,7 +1427,7 @@ name|x2
 operator|=
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1439,7 +1439,7 @@ name|y2
 operator|=
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1475,7 +1475,7 @@ condition|(
 operator|(
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1491,7 +1491,7 @@ operator|=
 operator|(
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1505,7 +1505,7 @@ condition|(
 operator|(
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1521,7 +1521,7 @@ operator|=
 operator|(
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1620,7 +1620,7 @@ name|x2
 operator|=
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -1632,7 +1632,7 @@ name|y2
 operator|=
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2215,7 +2215,7 @@ name|CLAMP
 argument_list|(
 name|off_x
 operator|+
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2234,7 +2234,7 @@ name|CLAMP
 argument_list|(
 name|off_y
 operator|+
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2602,7 +2602,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|gimp_item_width
+name|gimp_item_get_width
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2610,7 +2610,7 @@ name|merge_layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|gimp_item_height
+name|gimp_item_get_height
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
