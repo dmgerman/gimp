@@ -142,8 +142,11 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|type
+argument_list|)
 condition|)
 block|{
 name|type
@@ -301,8 +304,11 @@ literal|0
 decl_stmt|;
 if|if
 condition|(
+name|G_UNLIKELY
+argument_list|(
 operator|!
 name|type
+argument_list|)
 condition|)
 block|{
 name|type
