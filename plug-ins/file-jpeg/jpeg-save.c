@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4455340108
+DECL|struct|__anon2b0f214f0108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4455340208
+DECL|struct|__anon2b0f214f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -841,10 +841,8 @@ name|stat
 name|buf
 decl_stmt|;
 name|gchar
-name|temp
-index|[
-literal|128
-index|]
+modifier|*
+name|text
 decl_stmt|;
 name|g_stat
 argument_list|(
@@ -856,30 +854,21 @@ operator|&
 name|buf
 argument_list|)
 expr_stmt|;
-name|g_snprintf
+name|text
+operator|=
+name|g_strdup_printf
 argument_list|(
-name|temp
-argument_list|,
-sizeof|sizeof
-argument_list|(
-name|temp
-argument_list|)
-argument_list|,
 name|_
 argument_list|(
-literal|"File size: %02.01f kB"
+literal|"File size: %s"
 argument_list|)
 argument_list|,
-call|(
-name|gdouble
-call|)
+name|g_format_size_for_display
 argument_list|(
 name|buf
 operator|.
 name|st_size
 argument_list|)
-operator|/
-literal|1024.0
 argument_list|)
 expr_stmt|;
 name|gtk_label_set_text
@@ -889,7 +878,12 @@ argument_list|(
 name|preview_size
 argument_list|)
 argument_list|,
-name|temp
+name|text
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|text
 argument_list|)
 expr_stmt|;
 comment|/* and load the preview */
@@ -6559,7 +6553,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4455340308
+DECL|struct|__anon2b0f214f0308
 block|{
 DECL|member|pub
 name|struct
