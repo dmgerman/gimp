@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab487fa0103
+DECL|enum|__anon27dfd63f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1471,6 +1471,11 @@ name|pyramid
 operator|=
 name|tile_pyramid_new
 argument_list|(
+name|gimp_projection_get_image_type
+argument_list|(
+name|proj
+argument_list|)
+argument_list|,
 name|gimp_image_get_width
 argument_list|(
 name|proj
@@ -1483,11 +1488,6 @@ argument_list|(
 name|proj
 operator|->
 name|image
-argument_list|)
-argument_list|,
-name|gimp_projection_get_bytes
-argument_list|(
-name|proj
 argument_list|)
 argument_list|)
 expr_stmt|;
