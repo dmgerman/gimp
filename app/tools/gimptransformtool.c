@@ -5180,7 +5180,7 @@ operator|!
 name|active_item
 condition|)
 block|{
-name|gimp_tool_message
+name|gimp_tool_message_literal
 argument_list|(
 name|tool
 argument_list|,

@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299d293b0103
+DECL|enum|__anon2b413b0e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1523,7 +1523,7 @@ operator|->
 name|main_brush
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

@@ -891,36 +891,22 @@ literal|"do-quit"
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|text
-decl_stmt|;
-name|text
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|ngettext
-argument_list|(
-literal|"There is one image with unsaved changes:"
-argument_list|,
-literal|"There are %d images with unsaved changes:"
-argument_list|,
-name|num_images
-argument_list|)
-argument_list|,
-name|num_images
-argument_list|)
-expr_stmt|;
 name|gimp_message_box_set_primary_text
 argument_list|(
 name|box
 argument_list|,
-name|text
-argument_list|)
-expr_stmt|;
-name|g_free
+name|ngettext
 argument_list|(
-name|text
+literal|"There is one image with "
+literal|"unsaved changes:"
+argument_list|,
+literal|"There are %d images with "
+literal|"unsaved changes:"
+argument_list|,
+name|num_images
+argument_list|)
+argument_list|,
+name|num_images
 argument_list|)
 expr_stmt|;
 if|if

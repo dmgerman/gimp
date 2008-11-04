@@ -638,7 +638,8 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"\n\n========================================\n"
+literal|"\n\n"
+literal|"========================================\n"
 literal|"UI Manager: %s\n"
 literal|"========================================\n\n"
 argument_list|,

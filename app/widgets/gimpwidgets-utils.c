@@ -1989,7 +1989,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28c09ec90108
+DECL|struct|__anon28d766c20108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3288,7 +3288,7 @@ operator|!
 name|file
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -3573,7 +3573,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -3687,7 +3687,7 @@ argument_list|(
 name|fd
 argument_list|)
 expr_stmt|;
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

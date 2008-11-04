@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eec9e80103
+DECL|enum|__anon296770170103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eec9e80203
+DECL|enum|__anon296770170203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1906,7 +1906,7 @@ name|code
 operator|!=
 name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 condition|)
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|box
 operator|->
@@ -1915,8 +1915,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->
@@ -2011,7 +2009,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|box
 operator|->
@@ -2020,8 +2018,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

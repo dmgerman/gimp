@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2798098e0103
+DECL|enum|__anon2c60fa200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -808,7 +808,7 @@ operator|->
 name|src_drawable
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

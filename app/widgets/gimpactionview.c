@@ -2362,7 +2362,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5719be0108
+DECL|struct|__anon2c2d6f5f0108
 block|{
 DECL|member|manager
 name|GimpUIManager
@@ -2439,7 +2439,7 @@ name|TRUE
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|confirm_data
 operator|->
@@ -2936,7 +2936,7 @@ operator|!
 name|accel_key
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|view
 operator|->
@@ -3165,7 +3165,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|view
 operator|->
@@ -3254,7 +3254,7 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|view
 operator|->

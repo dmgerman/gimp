@@ -1114,7 +1114,7 @@ condition|)
 goto|goto
 name|hard_error
 goto|;
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -1144,7 +1144,7 @@ name|image
 return|;
 name|hard_error
 label|:
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -1265,7 +1265,7 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -1471,7 +1471,7 @@ argument_list|,
 literal|"Unknown compression type: %d"
 argument_list|,
 operator|(
-name|int
+name|gint
 operator|)
 name|compression
 argument_list|)
@@ -1607,7 +1607,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -1794,7 +1794,7 @@ operator|>
 name|GIMP_MAX_RESOLUTION
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -1928,7 +1928,7 @@ name|base
 operator|!=
 name|prop_size
 condition|)
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -1991,7 +1991,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -2989,7 +2989,7 @@ name|base
 operator|!=
 name|prop_size
 condition|)
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -3630,7 +3630,7 @@ name|base
 operator|!=
 name|prop_size
 condition|)
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->
@@ -5223,7 +5223,7 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|info
 operator|->

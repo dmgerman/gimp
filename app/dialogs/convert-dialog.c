@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a10e7210108
+DECL|struct|__anon2bb0846d0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1366,7 +1366,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|dialog
 operator|->

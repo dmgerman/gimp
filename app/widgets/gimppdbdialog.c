@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294083260103
+DECL|enum|__anon2a09cbbb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1323,7 +1323,7 @@ condition|(
 name|error
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|dialog
 operator|->
@@ -1337,8 +1337,6 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

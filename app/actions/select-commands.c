@@ -502,7 +502,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -514,8 +514,6 @@ name|widget
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->
@@ -1351,7 +1349,7 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -1482,7 +1480,7 @@ operator|!
 name|drawable
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -1570,7 +1568,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

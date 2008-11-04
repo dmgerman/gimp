@@ -624,6 +624,8 @@ argument_list|(
 name|box
 argument_list|)
 argument_list|,
+literal|"%s"
+argument_list|,
 name|domain
 argument_list|)
 expr_stmt|;

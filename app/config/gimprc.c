@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4cd4e0103
+DECL|enum|__anon2b42e93d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -963,6 +963,8 @@ name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 condition|)
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message
@@ -1025,6 +1027,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message
@@ -1839,6 +1843,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message

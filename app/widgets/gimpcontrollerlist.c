@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d84a10103
+DECL|enum|__anon27930b080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d84a10203
+DECL|enum|__anon27930b080203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2223,7 +2223,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|list
 operator|->
@@ -2266,7 +2266,7 @@ operator|!=
 name|NULL
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|list
 operator|->
@@ -2367,13 +2367,10 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
-name|primary
-decl_stmt|;
-name|gchar
-modifier|*
-name|secondary
+name|name
 decl_stmt|;
 DECL|macro|RESPONSE_DISABLE
 define|#
@@ -2440,15 +2437,8 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|primary
+name|name
 operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Remove Controller '%s'?"
-argument_list|)
-argument_list|,
 name|gimp_object_get_name
 argument_list|(
 name|GIMP_OBJECT
@@ -2456,21 +2446,6 @@ argument_list|(
 name|list
 operator|->
 name|dest_info
-argument_list|)
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|secondary
-operator|=
-name|g_strdup_printf
-argument_list|(
-name|_
-argument_list|(
-literal|"Removing this controller from the list of "
-literal|"active controllers will permanently delete "
-literal|"all event mappings you have configured.\n\n"
-literal|"Selecting \"Disable Controller\" will disable "
-literal|"the controller without removing it."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2483,7 +2458,12 @@ argument_list|)
 operator|->
 name|box
 argument_list|,
-name|primary
+name|_
+argument_list|(
+literal|"Remove Controller '%s'?"
+argument_list|)
+argument_list|,
+name|name
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_text
@@ -2495,17 +2475,16 @@ argument_list|)
 operator|->
 name|box
 argument_list|,
-name|secondary
-argument_list|)
-expr_stmt|;
-name|g_free
+literal|"%s"
+argument_list|,
+name|_
 argument_list|(
-name|primary
+literal|"Removing this controller from the list of "
+literal|"active controllers will permanently delete "
+literal|"all event mappings you have configured.\n\n"
+literal|"Selecting \"Disable Controller\" will disable "
+literal|"the controller without removing it."
 argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|secondary
 argument_list|)
 expr_stmt|;
 switch|switch

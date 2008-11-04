@@ -5634,6 +5634,8 @@ name|type
 argument_list|,
 name|GTK_BUTTONS_OK
 argument_list|,
+literal|"%s"
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
@@ -9462,7 +9464,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2949b53d0108
+DECL|struct|__anon2950c1af0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10629,7 +10631,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2949b53d0208
+DECL|struct|__anon2950c1af0208
 block|{
 DECL|member|label
 specifier|const
@@ -11789,7 +11791,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2949b53d0308
+DECL|struct|__anon2950c1af0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11944,7 +11946,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2949b53d0408
+DECL|struct|__anon2950c1af0408
 block|{
 DECL|member|tree_label
 specifier|const

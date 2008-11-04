@@ -48,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a77d190108
+DECL|struct|__anon2b0ac1020108
 block|{
 DECL|member|filter
 name|GimpObjectFilterFunc
@@ -499,6 +499,8 @@ else|else
 block|{
 name|g_warning
 argument_list|(
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message

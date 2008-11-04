@@ -258,7 +258,7 @@ operator|!
 name|non_empty
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -268,8 +268,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|my_error
 operator|->
@@ -454,7 +452,7 @@ operator|!
 name|non_empty
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -464,8 +462,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|my_error
 operator|->
@@ -623,7 +619,7 @@ operator|!
 name|non_empty
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -633,8 +629,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|my_error
 operator|->
@@ -1164,7 +1158,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -1174,8 +1168,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|my_error
 operator|->
@@ -1392,7 +1384,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -1402,8 +1394,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|my_error
 operator|->
@@ -1593,7 +1583,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -1603,8 +1593,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|my_error
 operator|->

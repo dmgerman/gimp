@@ -427,45 +427,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_fatal_error (const gchar * fmt,...)
+DECL|function|gimp_fatal_error (const gchar * message)
 name|gimp_fatal_error
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|fmt
-parameter_list|,
-modifier|...
+name|message
 parameter_list|)
 block|{
-name|va_list
-name|args
-decl_stmt|;
-name|gchar
-modifier|*
-name|message
-decl_stmt|;
-name|va_start
-argument_list|(
-name|args
-argument_list|,
-name|fmt
-argument_list|)
-expr_stmt|;
-name|message
-operator|=
-name|g_strdup_vprintf
-argument_list|(
-name|fmt
-argument_list|,
-name|args
-argument_list|)
-expr_stmt|;
-name|va_end
-argument_list|(
-name|args
-argument_list|)
-expr_stmt|;
 name|gimp_eek
 argument_list|(
 literal|"fatal error"
@@ -480,45 +450,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_terminate (const gchar * fmt,...)
+DECL|function|gimp_terminate (const gchar * message)
 name|gimp_terminate
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
-name|fmt
-parameter_list|,
-modifier|...
+name|message
 parameter_list|)
 block|{
-name|va_list
-name|args
-decl_stmt|;
-name|gchar
-modifier|*
-name|message
-decl_stmt|;
-name|va_start
-argument_list|(
-name|args
-argument_list|,
-name|fmt
-argument_list|)
-expr_stmt|;
-name|message
-operator|=
-name|g_strdup_vprintf
-argument_list|(
-name|fmt
-argument_list|,
-name|args
-argument_list|)
-expr_stmt|;
-name|va_end
-argument_list|(
-name|args
-argument_list|)
-expr_stmt|;
 name|gimp_eek
 argument_list|(
 literal|"terminated"

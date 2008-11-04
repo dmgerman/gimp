@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a91e80103
+DECL|enum|__anon29a25bd90103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3570,7 +3570,7 @@ condition|(
 name|error
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|view
 operator|->
@@ -3584,8 +3584,6 @@ name|view
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

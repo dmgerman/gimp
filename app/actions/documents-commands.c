@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b8c6e60108
+DECL|struct|__anon2c6528410108
 block|{
 DECL|member|name
 specifier|const
@@ -905,7 +905,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
@@ -915,8 +915,6 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

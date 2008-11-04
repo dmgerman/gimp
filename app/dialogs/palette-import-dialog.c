@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c81488f0103
+DECL|enum|__anon2c17525d0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c81488f0208
+DECL|struct|__anon2c17525d0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3824,7 +3824,7 @@ operator|!
 name|palette
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|dialog
 operator|->
@@ -3840,8 +3840,6 @@ name|dialog
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

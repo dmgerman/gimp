@@ -690,7 +690,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -971,7 +971,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon2b9d90190108
+DECL|struct|__anon2b65d1230108
 block|{
 DECL|member|label
 specifier|const

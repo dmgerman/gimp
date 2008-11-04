@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae51000103
+DECL|enum|__anon2b556bde0103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -1118,7 +1118,7 @@ operator|!
 name|success
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|imagefile
 operator|->
@@ -1130,8 +1130,6 @@ name|progress
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->
@@ -1490,7 +1488,7 @@ operator|!
 name|success
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|imagefile
 operator|->
@@ -1499,8 +1497,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

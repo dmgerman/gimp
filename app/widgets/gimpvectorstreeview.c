@@ -955,7 +955,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -967,8 +967,6 @@ name|tree_view
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

@@ -96,7 +96,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baf216b0103
+DECL|enum|__anon2946c2a10103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2881,6 +2881,8 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
+literal|"%s\n"
+argument_list|,
 name|error
 operator|->
 name|message

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbf5250103
+DECL|enum|__anon2c15b6830103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -183,7 +183,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fbf5250203
+DECL|enum|__anon2c15b6830203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3077,7 +3077,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -3087,8 +3087,9 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot create a new layer from the floating selection "
-literal|"because it belongs to a layer mask or channel."
+literal|"Cannot create a new layer from the floating "
+literal|"selection because it belongs to a layer mask "
+literal|"or channel."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5352,7 +5353,7 @@ operator|->
 name|mask
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -5410,7 +5411,7 @@ argument_list|)
 operator|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

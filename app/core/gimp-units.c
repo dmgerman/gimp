@@ -148,7 +148,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28feb23b0103
+DECL|enum|__anon27ebb1510103
 block|{
 DECL|enumerator|UNIT_INFO
 name|UNIT_INFO
@@ -533,15 +533,13 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->
@@ -905,15 +903,13 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|gimp
 argument_list|,
 name|NULL
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

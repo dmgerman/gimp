@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e80f0a0103
+DECL|enum|__anon2b2bc7e80103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -563,7 +563,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

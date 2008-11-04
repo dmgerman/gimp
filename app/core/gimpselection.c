@@ -1231,7 +1231,7 @@ literal|0
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -2818,7 +2818,7 @@ operator|)
 operator|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -3561,7 +3561,7 @@ name|y2
 operator|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -3571,8 +3571,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot float selection because the selected region "
-literal|"is empty."
+literal|"Cannot float selection because the selected "
+literal|"region is empty."
 argument_list|)
 argument_list|)
 expr_stmt|;

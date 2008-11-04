@@ -666,7 +666,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

@@ -979,7 +979,7 @@ break|break;
 case|case
 name|GIMP_PDB_CANCEL
 case|:
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -1086,7 +1086,7 @@ comment|/* fall thru */
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -1330,7 +1330,7 @@ operator|!
 name|uri
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

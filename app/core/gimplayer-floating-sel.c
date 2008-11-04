@@ -754,7 +754,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -764,8 +764,9 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot create a new layer from the floating selection "
-literal|"because it belongs to a layer mask or channel."
+literal|"Cannot create a new layer from the floating "
+literal|"selection because it belongs to a layer mask "
+literal|"or channel."
 argument_list|)
 argument_list|)
 expr_stmt|;

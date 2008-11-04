@@ -99,7 +99,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d47d70103
+DECL|enum|__anon2b0179890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2811,7 +2811,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -3081,7 +3081,7 @@ name|TRUE
 return|;
 name|error
 label|:
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

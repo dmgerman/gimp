@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c082b190103
+DECL|enum|__anon2af76f430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2076,7 +2076,7 @@ name|fonts
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

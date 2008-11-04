@@ -234,7 +234,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abc3a230108
+DECL|struct|__anon2aaae04b0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -677,7 +677,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -1576,7 +1576,7 @@ name|y2
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c1103a0103
+DECL|enum|__anon28a46b880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2587,7 +2587,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|editor
 operator|->
@@ -2601,8 +2601,6 @@ name|editor
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_ERROR
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->

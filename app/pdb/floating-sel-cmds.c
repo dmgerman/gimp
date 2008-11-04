@@ -164,7 +164,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -282,7 +282,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -404,7 +404,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -414,8 +414,8 @@ name|GIMP_PDB_INVALID_ARGUMENT
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot convert this layer to a normal layer because "
-literal|"it is not a floating selection."
+literal|"Cannot convert this layer to a normal layer "
+literal|"because it is not a floating selection."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -665,7 +665,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -801,7 +801,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

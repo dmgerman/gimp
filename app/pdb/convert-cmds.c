@@ -578,7 +578,7 @@ operator|>
 name|MAXNUMCOLORS
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

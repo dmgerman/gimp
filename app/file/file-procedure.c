@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae0c1f50103
+DECL|enum|__anon2af8516d0103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -491,7 +491,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -588,7 +588,7 @@ argument_list|(
 name|ifp
 argument_list|)
 condition|)
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -662,7 +662,7 @@ name|error
 operator|==
 name|NULL
 condition|)
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,

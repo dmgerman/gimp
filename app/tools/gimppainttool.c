@@ -1300,7 +1300,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_tool_message
+name|gimp_tool_message_literal
 argument_list|(
 name|tool
 argument_list|,
@@ -2665,6 +2665,8 @@ argument_list|(
 name|tool
 argument_list|,
 name|display
+argument_list|,
+literal|"%s"
 argument_list|,
 name|status
 argument_list|)

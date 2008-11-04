@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b973ca70108
+DECL|struct|__anon2c6dfa880108
 block|{
 DECL|member|width
 name|gint
@@ -1330,6 +1330,8 @@ argument_list|(
 name|tool
 argument_list|,
 name|display
+argument_list|,
+literal|"%s"
 argument_list|,
 name|status
 argument_list|)

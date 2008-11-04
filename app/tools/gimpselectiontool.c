@@ -1097,6 +1097,8 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
+literal|"%s"
+argument_list|,
 name|status
 argument_list|)
 expr_stmt|;

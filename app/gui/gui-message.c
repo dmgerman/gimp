@@ -773,6 +773,8 @@ name|type
 argument_list|,
 name|GTK_BUTTONS_OK
 argument_list|,
+literal|"%s"
+argument_list|,
 name|message
 argument_list|)
 expr_stmt|;

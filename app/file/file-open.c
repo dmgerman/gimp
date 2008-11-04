@@ -490,7 +490,7 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -525,7 +525,7 @@ argument_list|(
 name|filename
 argument_list|)
 expr_stmt|;
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -1833,7 +1833,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -2427,7 +2427,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -2451,7 +2451,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

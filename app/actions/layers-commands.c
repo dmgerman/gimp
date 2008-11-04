@@ -883,7 +883,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -1075,7 +1075,7 @@ name|error
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -2584,7 +2584,7 @@ name|y2
 argument_list|)
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->
@@ -4040,7 +4040,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|dialog
 operator|->
@@ -4054,8 +4054,6 @@ name|widget
 argument_list|)
 argument_list|,
 name|GIMP_MESSAGE_WARNING
-argument_list|,
-literal|"%s"
 argument_list|,
 name|error
 operator|->
@@ -4180,7 +4178,7 @@ operator|->
 name|channel
 condition|)
 block|{
-name|gimp_message
+name|gimp_message_literal
 argument_list|(
 name|image
 operator|->

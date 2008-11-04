@@ -708,7 +708,7 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -718,7 +718,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Brightness-Contrast does not operate on indexed layers."
+literal|"Brightness-Contrast does not operate "
+literal|"on indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;

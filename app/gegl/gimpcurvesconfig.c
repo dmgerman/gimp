@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f4ad6c0103
+DECL|enum|__anon27f6bdb40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1418,7 +1418,7 @@ operator|!=
 literal|0
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
@@ -1504,7 +1504,7 @@ argument_list|(
 literal|"fields != 2"
 argument_list|)
 expr_stmt|;
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
