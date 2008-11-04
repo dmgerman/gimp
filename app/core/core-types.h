@@ -770,6 +770,20 @@ comment|/* dummy typedef */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpProjectable
+typedef|typedef
+name|struct
+name|_GimpProjectable
+name|GimpProjectable
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpProjectable
+comment|/* dummy typedef */
+end_comment
+
+begin_typedef
 DECL|typedef|GimpTagged
 typedef|typedef
 name|struct

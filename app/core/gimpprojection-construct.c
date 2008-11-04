@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpprojectable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprojection.h"
 end_include
 
@@ -366,7 +372,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|GimpImage *image = proj->image;    if ((gimp_container_num_children (image->layers) == 1))
+block|GimpImage *image = gimp_projectable_get_image (proj->projectable);    if ((gimp_container_num_children (image->layers) == 1))
 comment|/* a single layer */
 block|{       GimpDrawable *layer;        layer = GIMP_DRAWABLE (gimp_image_get_layer_by_index (image, 0));        if (gimp_drawable_has_alpha (layer)&&           (gimp_item_get_visible (GIMP_ITEM (layer)))&&           (gimp_item_get_width  (GIMP_ITEM (layer)) == image->width)&&           (gimp_item_get_height (GIMP_ITEM (layer)) == image->height)&&           (! gimp_drawable_is_indexed (layer))&&           (gimp_layer_get_opacity (GIMP_LAYER (layer)) == GIMP_OPACITY_OPAQUE))         {           gint xoff;           gint yoff;            gimp_item_get_offset (GIMP_ITEM (layer),&xoff,&yoff);            if (xoff == 0&& yoff == 0)             {               PixelRegion srcPR, destPR;                g_printerr ("cow-projection!");                pixel_region_init (&srcPR,                                  gimp_drawable_get_tiles (layer),                                  x, y, w,h, FALSE);               pixel_region_init (&destPR,                                  gimp_pickable_get_tiles (GIMP_PICKABLE (proj)),                                  x, y, w,h, TRUE);                copy_region (&srcPR,&destPR);                proj->construct_flag = TRUE;                gimp_projection_construct_channels (proj, x, y, w, h);                return;             }         }     }
 endif|#
@@ -565,6 +571,17 @@ name|gint
 name|h
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -600,8 +617,6 @@ name|layer
 operator|=
 name|gimp_image_floating_sel
 argument_list|(
-name|proj
-operator|->
 name|image
 argument_list|)
 operator|)
@@ -631,8 +646,6 @@ name|list
 operator|=
 name|gimp_image_get_layer_iter
 argument_list|(
-name|proj
-operator|->
 name|image
 argument_list|)
 init|;
@@ -1117,6 +1130,17 @@ name|gint
 name|h
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1134,8 +1158,6 @@ name|list
 operator|=
 name|gimp_image_get_channel_iter
 argument_list|(
-name|proj
-operator|->
 name|image
 argument_list|)
 init|;
@@ -1307,6 +1329,17 @@ name|gint
 name|h
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1322,8 +1355,6 @@ name|list
 operator|=
 name|gimp_image_get_layer_iter
 argument_list|(
-name|proj
-operator|->
 name|image
 argument_list|)
 init|;
@@ -1522,6 +1553,17 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|proj
@@ -1553,8 +1595,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1587,8 +1627,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1627,6 +1665,17 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|proj
@@ -1658,8 +1707,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1692,8 +1739,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1732,6 +1777,17 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 specifier|const
 name|guchar
 modifier|*
@@ -1739,8 +1795,6 @@ name|colormap
 init|=
 name|gimp_image_get_colormap
 argument_list|(
-name|proj
-operator|->
 name|image
 argument_list|)
 decl_stmt|;
@@ -1782,8 +1836,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1816,8 +1868,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1856,6 +1906,17 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_projectable_get_image
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|)
+decl_stmt|;
 specifier|const
 name|guchar
 modifier|*
@@ -1863,8 +1924,6 @@ name|colormap
 init|=
 name|gimp_image_get_colormap
 argument_list|(
-name|proj
-operator|->
 name|image
 argument_list|)
 decl_stmt|;
@@ -1906,8 +1965,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible
@@ -1940,8 +1997,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|proj
-operator|->
 name|image
 operator|->
 name|visible

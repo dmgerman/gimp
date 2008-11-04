@@ -155,10 +155,10 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|image
-name|GimpImage
+DECL|member|projectable
+name|GimpProjectable
 modifier|*
-name|image
+name|projectable
 decl_stmt|;
 DECL|member|pyramid
 name|TilePyramid
@@ -218,7 +218,7 @@ function_decl|)
 parameter_list|(
 name|GimpProjection
 modifier|*
-name|image
+name|proj
 parameter_list|,
 name|gboolean
 name|now
@@ -255,9 +255,9 @@ name|GimpProjection
 modifier|*
 name|gimp_projection_new
 parameter_list|(
-name|GimpImage
+name|GimpProjectable
 modifier|*
-name|image
+name|projectable
 parameter_list|)
 function_decl|;
 end_function_decl
