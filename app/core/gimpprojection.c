@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbc7cd80103
+DECL|enum|__anon2a2fd4aa0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1048,14 +1048,11 @@ name|invalidate_preview
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_projectable_invalidate_preview
 argument_list|(
 name|proj
 operator|->
 name|projectable
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2132,14 +2129,11 @@ name|invalidate_preview
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_projectable_invalidate_preview
 argument_list|(
 name|proj
 operator|->
 name|projectable
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2617,14 +2611,11 @@ name|invalidate_preview
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_projectable_invalidate_preview
 argument_list|(
 name|proj
 operator|->
 name|projectable
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

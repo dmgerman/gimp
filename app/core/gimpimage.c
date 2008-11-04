@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b364fd0103
+DECL|enum|__anon2adf61ed0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b364fd0203
+DECL|enum|__anon2adf61ed0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2360,6 +2360,23 @@ operator|->
 name|get_graph
 operator|=
 name|gimp_image_get_graph
+expr_stmt|;
+name|iface
+operator|->
+name|invalidate_preview
+operator|=
+operator|(
+name|void
+argument_list|(
+operator|*
+argument_list|)
+argument_list|(
+name|GimpProjectable
+operator|*
+name|p
+argument_list|)
+operator|)
+name|gimp_viewable_invalidate_preview
 expr_stmt|;
 block|}
 end_function
