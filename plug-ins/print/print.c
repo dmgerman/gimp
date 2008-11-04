@@ -1264,6 +1264,8 @@ name|GTK_MESSAGE_ERROR
 argument_list|,
 name|GTK_BUTTONS_OK
 argument_list|,
+literal|"%s"
+argument_list|,
 name|_
 argument_list|(
 literal|"An error occurred while trying to print:"
@@ -1276,6 +1278,8 @@ name|GTK_MESSAGE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|,
+literal|"%s"
 argument_list|,
 name|message
 argument_list|)

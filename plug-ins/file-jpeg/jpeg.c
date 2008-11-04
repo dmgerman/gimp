@@ -2155,6 +2155,8 @@ argument_list|)
 expr_stmt|;
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|buffer
 argument_list|)
 expr_stmt|;

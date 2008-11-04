@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae2ac610103
+DECL|enum|__anon2bd1e78c0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ae2ac610208
+DECL|struct|__anon2bd1e78c0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -463,6 +463,8 @@ name|GTK_MESSAGE_WARNING
 argument_list|,
 name|GTK_BUTTONS_OK_CANCEL
 argument_list|,
+literal|"%s"
+argument_list|,
 name|primary
 argument_list|)
 expr_stmt|;
@@ -472,6 +474,8 @@ name|GTK_MESSAGE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|,
+literal|"%s"
 argument_list|,
 name|secondary
 argument_list|)

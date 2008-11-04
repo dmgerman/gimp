@@ -691,6 +691,8 @@ break|break;
 default|default:
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message

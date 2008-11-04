@@ -650,6 +650,8 @@ argument_list|)
 expr_stmt|;
 name|g_print
 argument_list|(
+literal|"%s\n"
+argument_list|,
 name|gtk_ui_manager_get_ui
 argument_list|(
 name|managers

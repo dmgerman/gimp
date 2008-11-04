@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c78bbde0108
+DECL|struct|__anon2978e4780108
 block|{
 DECL|member|filename
 name|gchar
@@ -1237,6 +1237,8 @@ condition|)
 block|{
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|error
 operator|->
 name|message

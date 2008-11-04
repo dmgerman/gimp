@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a23027e0108
+DECL|struct|__anon298c13720108
 block|{
 DECL|member|replace
 name|gint
@@ -4788,6 +4788,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|msg
@@ -4806,6 +4807,8 @@ name|NULL
 condition|)
 name|g_message
 argument_list|(
+literal|"%s"
+argument_list|,
 name|msg
 argument_list|)
 expr_stmt|;

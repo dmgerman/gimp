@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2597fe0103
+DECL|enum|__anon2bb871390103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2597fe0203
+DECL|enum|__anon2bb871390203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0308
+DECL|struct|__anon2bb871390308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -188,7 +188,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2c2597fe040a
+DECL|union|__anon2bb87139040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0508
+DECL|struct|__anon2bb871390508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0608
+DECL|struct|__anon2bb871390608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0708
+DECL|struct|__anon2bb871390708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0808
+DECL|struct|__anon2bb871390808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0908
+DECL|struct|__anon2bb871390908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2597fe0a08
+DECL|struct|__anon2bb871390a08
 block|{
 DECL|member|run
 name|gboolean
@@ -12059,6 +12059,8 @@ argument_list|,
 name|type
 argument_list|,
 name|GTK_BUTTONS_OK
+argument_list|,
+literal|"%s"
 argument_list|,
 name|message
 argument_list|)
