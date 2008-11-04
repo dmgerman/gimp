@@ -96,6 +96,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprojection.h"
 end_include
 
@@ -1008,9 +1014,12 @@ block|}
 comment|/* Currently, only RGBA and GRAYA projection types are used. */
 name|type
 operator|=
-name|gimp_projection_get_image_type
+name|gimp_pickable_get_image_type
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 switch|switch

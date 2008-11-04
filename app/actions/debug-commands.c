@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimppickable.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpprojection.h"
 end_include
 
@@ -269,9 +275,12 @@ argument_list|)
 expr_stmt|;
 name|tiles
 operator|=
-name|gimp_projection_get_tiles
+name|gimp_pickable_get_tiles
+argument_list|(
+name|GIMP_PICKABLE
 argument_list|(
 name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|timer

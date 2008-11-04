@@ -126,7 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpprojection.h"
+file|"core/gimppickable.h"
 end_include
 
 begin_include
@@ -1333,9 +1333,9 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
-name|GimpProjection
+name|GimpPickable
 modifier|*
-name|projection
+name|pickable
 decl_stmt|;
 name|return_if_no_image
 argument_list|(
@@ -1344,20 +1344,23 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|projection
+name|pickable
 operator|=
+name|GIMP_PICKABLE
+argument_list|(
 name|gimp_image_get_projection
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new_from_tiles
 argument_list|(
-name|gimp_projection_get_tiles
+name|gimp_pickable_get_tiles
 argument_list|(
-name|projection
+name|pickable
 argument_list|)
 argument_list|,
 name|image
