@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf61ed0103
+DECL|enum|__anon2778befb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf61ed0203
+DECL|enum|__anon2778befb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,6 +645,18 @@ name|gchar
 modifier|*
 modifier|*
 name|tooltip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_image_real_mode_changed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2038,7 +2050,7 @@ name|klass
 operator|->
 name|mode_changed
 operator|=
-name|NULL
+name|gimp_image_real_mode_changed
 expr_stmt|;
 name|klass
 operator|->
@@ -4539,6 +4551,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_projectable_structure_changed
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -4632,6 +4652,28 @@ expr_stmt|;
 return|return
 name|retval
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_image_real_mode_changed (GimpImage * image)
+name|gimp_image_real_mode_changed
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|gimp_projectable_structure_changed
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

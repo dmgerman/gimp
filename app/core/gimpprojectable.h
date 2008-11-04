@@ -115,6 +115,18 @@ name|gboolean
 name|invalidate_preview
 parameter_list|)
 function_decl|;
+DECL|member|structure_changed
+name|void
+function_decl|(
+modifier|*
+name|structure_changed
+function_decl|)
+parameter_list|(
+name|GimpProjectable
+modifier|*
+name|projectable
+parameter_list|)
+function_decl|;
 comment|/*  virtual functions  */
 DECL|member|get_image
 name|GimpImage
@@ -201,6 +213,17 @@ name|projectable
 parameter_list|,
 name|gboolean
 name|preview_invalidated
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_projectable_structure_changed
+parameter_list|(
+name|GimpProjectable
+modifier|*
+name|projectable
 parameter_list|)
 function_decl|;
 end_function_decl
