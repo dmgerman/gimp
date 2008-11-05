@@ -2887,18 +2887,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_invalidate_layer_previews
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_image_invalidate_channel_previews
+name|gimp_image_invalidate_previews
 parameter_list|(
 name|GimpImage
 modifier|*

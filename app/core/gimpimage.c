@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf0c6290103
+DECL|enum|__anon2c660bb30103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf0c6290203
+DECL|enum|__anon2c660bb30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3225,10 +3225,12 @@ literal|"notify::transparency-type"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_invalidate_layer_previews
+name|gimp_drawable_stack_invalidate_previews
 argument_list|)
 argument_list|,
 name|image
+operator|->
+name|layers
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -3241,10 +3243,12 @@ literal|"notify::transparency-size"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_invalidate_layer_previews
+name|gimp_drawable_stack_invalidate_previews
 argument_list|)
 argument_list|,
 name|image
+operator|->
+name|layers
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -4855,9 +4859,14 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_invalidate_layer_previews
+name|gimp_drawable_stack_invalidate_previews
+argument_list|(
+name|GIMP_DRAWABLE_STACK
 argument_list|(
 name|image
+operator|->
+name|layers
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -15408,8 +15417,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_invalidate_layer_previews (GimpImage * image)
-name|gimp_image_invalidate_layer_previews
+DECL|function|gimp_image_invalidate_previews (GimpImage * image)
+name|gimp_image_invalidate_previews
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -15424,53 +15433,24 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_container_foreach
+name|gimp_drawable_stack_invalidate_previews
+argument_list|(
+name|GIMP_DRAWABLE_STACK
 argument_list|(
 name|image
 operator|->
 name|layers
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_viewable_invalidate_preview
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_image_invalidate_channel_previews (GimpImage * image)
-name|gimp_image_invalidate_channel_previews
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_IMAGE
-argument_list|(
-name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_container_foreach
+name|gimp_drawable_stack_invalidate_previews
+argument_list|(
+name|GIMP_DRAWABLE_STACK
 argument_list|(
 name|image
 operator|->
 name|channels
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_viewable_invalidate_preview
-argument_list|,
-name|NULL
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

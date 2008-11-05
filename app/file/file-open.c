@@ -2159,12 +2159,7 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/* same for drawable previews */
-name|gimp_image_invalidate_layer_previews
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
-name|gimp_image_invalidate_channel_previews
+name|gimp_image_invalidate_previews
 argument_list|(
 name|image
 argument_list|)
