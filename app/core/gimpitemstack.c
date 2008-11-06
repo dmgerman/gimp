@@ -363,5 +363,41 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_item_stack_invalidate_previews (GimpItemStack * stack)
+name|gimp_item_stack_invalidate_previews
+parameter_list|(
+name|GimpItemStack
+modifier|*
+name|stack
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_ITEM_STACK
+argument_list|(
+name|stack
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_container_foreach
+argument_list|(
+name|GIMP_CONTAINER
+argument_list|(
+name|stack
+argument_list|)
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_viewable_invalidate_preview
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 

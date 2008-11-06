@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e46b10103
+DECL|enum|__anon2afb9d240103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e46b10203
+DECL|enum|__anon2afb9d240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3223,7 +3223,7 @@ literal|"notify::transparency-type"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_drawable_stack_invalidate_previews
+name|gimp_item_stack_invalidate_previews
 argument_list|)
 argument_list|,
 name|image
@@ -3241,7 +3241,7 @@ literal|"notify::transparency-size"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_drawable_stack_invalidate_previews
+name|gimp_item_stack_invalidate_previews
 argument_list|)
 argument_list|,
 name|image
@@ -4857,9 +4857,9 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_stack_invalidate_previews
+name|gimp_item_stack_invalidate_previews
 argument_list|(
-name|GIMP_DRAWABLE_STACK
+name|GIMP_ITEM_STACK
 argument_list|(
 name|image
 operator|->
@@ -15384,9 +15384,9 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_stack_invalidate_previews
+name|gimp_item_stack_invalidate_previews
 argument_list|(
-name|GIMP_DRAWABLE_STACK
+name|GIMP_ITEM_STACK
 argument_list|(
 name|image
 operator|->
@@ -15394,9 +15394,9 @@ name|layers
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_stack_invalidate_previews
+name|gimp_item_stack_invalidate_previews
 argument_list|(
-name|GIMP_DRAWABLE_STACK
+name|GIMP_ITEM_STACK
 argument_list|(
 name|image
 operator|->

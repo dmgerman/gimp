@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2268cd0103
+DECL|enum|__anon2c09f6200103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1121,42 +1121,6 @@ name|stack
 operator|->
 name|graph
 return|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_drawable_stack_invalidate_previews (GimpDrawableStack * stack)
-name|gimp_drawable_stack_invalidate_previews
-parameter_list|(
-name|GimpDrawableStack
-modifier|*
-name|stack
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DRAWABLE_STACK
-argument_list|(
-name|stack
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_container_foreach
-argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
-name|stack
-argument_list|)
-argument_list|,
-operator|(
-name|GFunc
-operator|)
-name|gimp_viewable_invalidate_preview
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
