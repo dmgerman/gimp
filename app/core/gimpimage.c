@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b30f60103
+DECL|enum|__anon2b8e46b10103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9b30f60203
+DECL|enum|__anon2b8e46b10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2653,11 +2653,9 @@ name|image
 operator|->
 name|vectors
 operator|=
-name|gimp_list_new
+name|gimp_item_stack_new
 argument_list|(
 name|GIMP_TYPE_VECTORS
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|image
@@ -11833,11 +11831,6 @@ name|layers
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_ref_sink
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|image
@@ -11850,11 +11843,6 @@ name|layer
 argument_list|)
 argument_list|,
 name|position
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  notify the layers dialog of the currently active layer  */
@@ -13244,11 +13232,6 @@ name|channels
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_ref_sink
-argument_list|(
-name|channel
-argument_list|)
-expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|image
@@ -13261,11 +13244,6 @@ name|channel
 argument_list|)
 argument_list|,
 name|position
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|channel
 argument_list|)
 expr_stmt|;
 comment|/*  notify this image of the currently active channel  */
@@ -14213,11 +14191,6 @@ name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_object_ref_sink
-argument_list|(
-name|vectors
-argument_list|)
-expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|image
@@ -14230,11 +14203,6 @@ name|vectors
 argument_list|)
 argument_list|,
 name|position
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|vectors
 argument_list|)
 expr_stmt|;
 comment|/*  notify this image of the currently active vectors  */

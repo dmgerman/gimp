@@ -238,6 +238,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpItemStack
+typedef|typedef
+name|struct
+name|_GimpItemStack
+name|GimpItemStack
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpToolPresets
 typedef|typedef
 name|struct

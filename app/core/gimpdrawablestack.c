@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fca3260103
+DECL|enum|__anon2a2268cd0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -311,7 +311,7 @@ argument|GimpDrawableStack
 argument_list|,
 argument|gimp_drawable_stack
 argument_list|,
-argument|GIMP_TYPE_LIST
+argument|GIMP_TYPE_ITEM_STACK
 argument_list|)
 end_macro
 

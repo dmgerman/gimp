@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimplist.h"
+file|"gimpitemstack.h"
 end_include
 
 begin_define
@@ -89,7 +89,7 @@ struct|struct
 name|_GimpDrawableStack
 block|{
 DECL|member|parent_instance
-name|GimpList
+name|GimpItemStack
 name|parent_instance
 decl_stmt|;
 DECL|member|graph
@@ -107,7 +107,7 @@ struct|struct
 name|_GimpDrawableStackClass
 block|{
 DECL|member|parent_class
-name|GimpListClass
+name|GimpItemStackClass
 name|parent_class
 decl_stmt|;
 DECL|member|update
