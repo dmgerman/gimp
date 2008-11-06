@@ -87,8 +87,10 @@ block|{
 block|{
 name|GIMP_ACTIVE_COLOR_FOREGROUND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"active-color"
+argument_list|,
 literal|"Foreground"
 argument_list|)
 block|,
@@ -98,8 +100,10 @@ block|,
 block|{
 name|GIMP_ACTIVE_COLOR_BACKGROUND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"active-color"
+argument_list|,
 literal|"Background"
 argument_list|)
 block|,
@@ -137,6 +141,13 @@ argument_list|(
 literal|"GimpActiveColor"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"active-color"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -265,6 +276,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-dialog-state"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -345,8 +363,10 @@ block|{
 block|{
 name|GIMP_COLOR_FRAME_MODE_PIXEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-frame-mode"
+argument_list|,
 literal|"Pixel"
 argument_list|)
 block|,
@@ -356,8 +376,10 @@ block|,
 block|{
 name|GIMP_COLOR_FRAME_MODE_RGB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-frame-mode"
+argument_list|,
 literal|"RGB"
 argument_list|)
 block|,
@@ -367,8 +389,10 @@ block|,
 block|{
 name|GIMP_COLOR_FRAME_MODE_HSV
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-frame-mode"
+argument_list|,
 literal|"HSV"
 argument_list|)
 block|,
@@ -378,8 +402,10 @@ block|,
 block|{
 name|GIMP_COLOR_FRAME_MODE_CMYK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-frame-mode"
+argument_list|,
 literal|"CMYK"
 argument_list|)
 block|,
@@ -417,6 +443,13 @@ argument_list|(
 literal|"GimpColorFrameMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-frame-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -499,8 +532,10 @@ block|{
 block|{
 name|GIMP_COLOR_PICK_MODE_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-pick-mode"
+argument_list|,
 literal|"Pick only"
 argument_list|)
 block|,
@@ -510,8 +545,10 @@ block|,
 block|{
 name|GIMP_COLOR_PICK_MODE_FOREGROUND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-pick-mode"
+argument_list|,
 literal|"Set foreground color"
 argument_list|)
 block|,
@@ -521,8 +558,10 @@ block|,
 block|{
 name|GIMP_COLOR_PICK_MODE_BACKGROUND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-pick-mode"
+argument_list|,
 literal|"Set background color"
 argument_list|)
 block|,
@@ -532,8 +571,10 @@ block|,
 block|{
 name|GIMP_COLOR_PICK_MODE_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-pick-mode"
+argument_list|,
 literal|"Add to palette"
 argument_list|)
 block|,
@@ -571,6 +612,13 @@ argument_list|(
 literal|"GimpColorPickMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-pick-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -683,6 +731,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-pick-state"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -747,8 +802,10 @@ block|{
 block|{
 name|GIMP_CURSOR_FORMAT_BITMAP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-format"
+argument_list|,
 literal|"Black& white"
 argument_list|)
 block|,
@@ -758,8 +815,10 @@ block|,
 block|{
 name|GIMP_CURSOR_FORMAT_PIXBUF
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-format"
+argument_list|,
 literal|"Fancy"
 argument_list|)
 block|,
@@ -797,6 +856,13 @@ argument_list|(
 literal|"GimpCursorFormat"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"cursor-format"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -863,8 +929,10 @@ block|{
 block|{
 name|GIMP_HELP_BROWSER_GIMP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-browser-type"
+argument_list|,
 literal|"GIMP help browser"
 argument_list|)
 block|,
@@ -874,8 +942,10 @@ block|,
 block|{
 name|GIMP_HELP_BROWSER_WEB_BROWSER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-browser-type"
+argument_list|,
 literal|"Web browser"
 argument_list|)
 block|,
@@ -913,6 +983,13 @@ argument_list|(
 literal|"GimpHelpBrowserType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"help-browser-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -979,8 +1056,10 @@ block|{
 block|{
 name|GIMP_HISTOGRAM_SCALE_LINEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"histogram-scale"
+argument_list|,
 literal|"Linear histogram"
 argument_list|)
 block|,
@@ -990,8 +1069,10 @@ block|,
 block|{
 name|GIMP_HISTOGRAM_SCALE_LOGARITHMIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"histogram-scale"
+argument_list|,
 literal|"Logarithmic histogram"
 argument_list|)
 block|,
@@ -1029,6 +1110,13 @@ argument_list|(
 literal|"GimpHistogramScale"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"histogram-scale"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1143,8 +1231,10 @@ block|{
 block|{
 name|GIMP_TAB_STYLE_ICON
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Icon"
 argument_list|)
 block|,
@@ -1154,8 +1244,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_PREVIEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Current status"
 argument_list|)
 block|,
@@ -1165,8 +1257,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_NAME
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Text"
 argument_list|)
 block|,
@@ -1176,8 +1270,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_BLURB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Description"
 argument_list|)
 block|,
@@ -1187,8 +1283,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_ICON_NAME
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Icon& text"
 argument_list|)
 block|,
@@ -1198,8 +1296,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_ICON_BLURB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Icon& desc"
 argument_list|)
 block|,
@@ -1209,8 +1309,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_PREVIEW_NAME
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Status& text"
 argument_list|)
 block|,
@@ -1220,8 +1322,10 @@ block|,
 block|{
 name|GIMP_TAB_STYLE_PREVIEW_BLURB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Status& desc"
 argument_list|)
 block|,
@@ -1259,6 +1363,13 @@ argument_list|(
 literal|"GimpTabStyle"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"tab-style"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1333,8 +1444,10 @@ block|{
 block|{
 name|GIMP_WINDOW_HINT_NORMAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"window-hint"
+argument_list|,
 literal|"Normal window"
 argument_list|)
 block|,
@@ -1344,8 +1457,10 @@ block|,
 block|{
 name|GIMP_WINDOW_HINT_UTILITY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"window-hint"
+argument_list|,
 literal|"Utility window"
 argument_list|)
 block|,
@@ -1355,8 +1470,10 @@ block|,
 block|{
 name|GIMP_WINDOW_HINT_KEEP_ABOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"window-hint"
+argument_list|,
 literal|"Keep above"
 argument_list|)
 block|,
@@ -1394,6 +1511,13 @@ argument_list|(
 literal|"GimpWindowHint"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"window-hint"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

@@ -112,28 +112,6 @@ parameter_list|)
 value|dngettext (GETTEXT_PACKAGE "-libgimp", String1, String2, number)
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|gettext_noop
-end_ifdef
-
-begin_define
-DECL|macro|N_ (String)
-define|#
-directive|define
-name|N_
-parameter_list|(
-name|String
-parameter_list|)
-value|gettext_noop (String)
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
 begin_define
 DECL|macro|N_ (String)
 define|#
@@ -145,10 +123,18 @@ parameter_list|)
 value|(String)
 end_define
 
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_define
+DECL|macro|NC_ (Context,String)
+define|#
+directive|define
+name|NC_
+parameter_list|(
+name|Context
+parameter_list|,
+name|String
+parameter_list|)
+value|(String)
+end_define
 
 begin_endif
 endif|#

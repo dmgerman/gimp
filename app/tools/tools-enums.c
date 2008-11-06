@@ -171,6 +171,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"button-release-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -251,8 +258,10 @@ block|{
 block|{
 name|GIMP_RECTANGLE_GUIDE_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-guide"
+argument_list|,
 literal|"No guides"
 argument_list|)
 block|,
@@ -262,8 +271,10 @@ block|,
 block|{
 name|GIMP_RECTANGLE_GUIDE_CENTER_LINES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-guide"
+argument_list|,
 literal|"Center lines"
 argument_list|)
 block|,
@@ -273,8 +284,10 @@ block|,
 block|{
 name|GIMP_RECTANGLE_GUIDE_THIRDS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-guide"
+argument_list|,
 literal|"Rule of thirds"
 argument_list|)
 block|,
@@ -284,8 +297,10 @@ block|,
 block|{
 name|GIMP_RECTANGLE_GUIDE_GOLDEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-guide"
+argument_list|,
 literal|"Golden sections"
 argument_list|)
 block|,
@@ -323,6 +338,13 @@ argument_list|(
 literal|"GimpRectangleGuide"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"rectangle-guide"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -451,6 +473,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"rectangle-constraint"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -561,6 +590,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"rectangle-precision"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -641,8 +677,10 @@ block|{
 block|{
 name|GIMP_RECTANGLE_TOOL_FIXED_ASPECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-tool-fixed-rule"
+argument_list|,
 literal|"Aspect ratio"
 argument_list|)
 block|,
@@ -652,8 +690,10 @@ block|,
 block|{
 name|GIMP_RECTANGLE_TOOL_FIXED_WIDTH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-tool-fixed-rule"
+argument_list|,
 literal|"Width"
 argument_list|)
 block|,
@@ -663,8 +703,10 @@ block|,
 block|{
 name|GIMP_RECTANGLE_TOOL_FIXED_HEIGHT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-tool-fixed-rule"
+argument_list|,
 literal|"Height"
 argument_list|)
 block|,
@@ -674,8 +716,10 @@ block|,
 block|{
 name|GIMP_RECTANGLE_TOOL_FIXED_SIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rectangle-tool-fixed-rule"
+argument_list|,
 literal|"Size"
 argument_list|)
 block|,
@@ -713,6 +757,13 @@ argument_list|(
 literal|"GimpRectangleToolFixedRule"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"rectangle-tool-fixed-rule"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -787,8 +838,10 @@ block|{
 block|{
 name|GIMP_RECT_SELECT_MODE_FREE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rect-select-mode"
+argument_list|,
 literal|"Free select"
 argument_list|)
 block|,
@@ -798,8 +851,10 @@ block|,
 block|{
 name|GIMP_RECT_SELECT_MODE_FIXED_SIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rect-select-mode"
+argument_list|,
 literal|"Fixed size"
 argument_list|)
 block|,
@@ -809,8 +864,10 @@ block|,
 block|{
 name|GIMP_RECT_SELECT_MODE_FIXED_RATIO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"rect-select-mode"
+argument_list|,
 literal|"Fixed aspect ratio"
 argument_list|)
 block|,
@@ -848,6 +905,13 @@ argument_list|(
 literal|"GimpRectSelectMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"rect-select-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -922,8 +986,10 @@ block|{
 block|{
 name|GIMP_TRANSFORM_TYPE_LAYER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-type"
+argument_list|,
 literal|"Layer"
 argument_list|)
 block|,
@@ -933,8 +999,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_TYPE_SELECTION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-type"
+argument_list|,
 literal|"Selection"
 argument_list|)
 block|,
@@ -944,8 +1012,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_TYPE_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-type"
+argument_list|,
 literal|"Path"
 argument_list|)
 block|,
@@ -983,6 +1053,13 @@ argument_list|(
 literal|"GimpTransformType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"transform-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1065,8 +1142,10 @@ block|{
 block|{
 name|GIMP_TRANSFORM_PREVIEW_TYPE_OUTLINE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-preview-type"
+argument_list|,
 literal|"Outline"
 argument_list|)
 block|,
@@ -1076,8 +1155,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_PREVIEW_TYPE_GRID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-preview-type"
+argument_list|,
 literal|"Grid"
 argument_list|)
 block|,
@@ -1087,8 +1168,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-preview-type"
+argument_list|,
 literal|"Image"
 argument_list|)
 block|,
@@ -1098,8 +1181,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_PREVIEW_TYPE_IMAGE_GRID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-preview-type"
+argument_list|,
 literal|"Image + Grid"
 argument_list|)
 block|,
@@ -1137,6 +1222,13 @@ argument_list|(
 literal|"GimpTransformPreviewType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"transform-preview-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1203,8 +1295,10 @@ block|{
 block|{
 name|GIMP_TRANSFORM_GRID_TYPE_N_LINES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-grid-type"
+argument_list|,
 literal|"Number of grid lines"
 argument_list|)
 block|,
@@ -1214,8 +1308,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_GRID_TYPE_SPACING
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-grid-type"
+argument_list|,
 literal|"Grid line spacing"
 argument_list|)
 block|,
@@ -1253,6 +1349,13 @@ argument_list|(
 literal|"GimpTransformGridType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"transform-grid-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1327,8 +1430,10 @@ block|{
 block|{
 name|GIMP_VECTOR_MODE_DESIGN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vector-mode"
+argument_list|,
 literal|"Design"
 argument_list|)
 block|,
@@ -1338,8 +1443,10 @@ block|,
 block|{
 name|GIMP_VECTOR_MODE_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vector-mode"
+argument_list|,
 literal|"Edit"
 argument_list|)
 block|,
@@ -1349,8 +1456,10 @@ block|,
 block|{
 name|GIMP_VECTOR_MODE_MOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vector-mode"
+argument_list|,
 literal|"Move"
 argument_list|)
 block|,
@@ -1388,6 +1497,13 @@ argument_list|(
 literal|"GimpVectorMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"vector-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

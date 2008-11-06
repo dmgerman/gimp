@@ -197,6 +197,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"plug-in-image-type"
+argument_list|)
+expr_stmt|;
 name|gimp_flags_set_value_descriptions
 argument_list|(
 name|type
@@ -337,6 +344,13 @@ argument_list|(
 literal|"GimpPlugInCallMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"plug-in-call-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

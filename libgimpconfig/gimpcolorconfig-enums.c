@@ -95,8 +95,10 @@ block|{
 block|{
 name|GIMP_COLOR_MANAGEMENT_OFF
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-management-mode"
+argument_list|,
 literal|"No color management"
 argument_list|)
 block|,
@@ -106,8 +108,10 @@ block|,
 block|{
 name|GIMP_COLOR_MANAGEMENT_DISPLAY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-management-mode"
+argument_list|,
 literal|"Color managed display"
 argument_list|)
 block|,
@@ -117,8 +121,10 @@ block|,
 block|{
 name|GIMP_COLOR_MANAGEMENT_SOFTPROOF
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-management-mode"
+argument_list|,
 literal|"Print simulation"
 argument_list|)
 block|,
@@ -164,6 +170,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-management-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -246,8 +259,10 @@ block|{
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_PERCEPTUAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-rendering-intent"
+argument_list|,
 literal|"Perceptual"
 argument_list|)
 block|,
@@ -257,8 +272,10 @@ block|,
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_RELATIVE_COLORIMETRIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-rendering-intent"
+argument_list|,
 literal|"Relative colorimetric"
 argument_list|)
 block|,
@@ -268,9 +285,11 @@ block|,
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_SATURATION
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"intent|Saturation"
+literal|"color-rendering-intent"
+argument_list|,
+literal|"Saturation"
 argument_list|)
 block|,
 name|NULL
@@ -279,8 +298,10 @@ block|,
 block|{
 name|GIMP_COLOR_RENDERING_INTENT_ABSOLUTE_COLORIMETRIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-rendering-intent"
+argument_list|,
 literal|"Absolute colorimetric"
 argument_list|)
 block|,
@@ -326,6 +347,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-rendering-intent"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

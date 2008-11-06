@@ -1133,18 +1133,54 @@ condition|(
 name|value_desc
 condition|)
 block|{
-operator|*
-name|value_desc
-operator|=
-operator|(
-operator|(
+if|if
+condition|(
 name|enum_desc
 operator|&&
 name|enum_desc
 operator|->
 name|value_desc
-operator|)
-condition|?
+condition|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|context
+decl_stmt|;
+name|context
+operator|=
+name|gimp_type_get_translation_context
+argument_list|(
+name|enum_type
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|context
+condition|)
+comment|/*  the new way, using NC_()    */
+operator|*
+name|value_desc
+operator|=
+name|g_dpgettext2
+argument_list|(
+name|gimp_type_get_translation_domain
+argument_list|(
+name|enum_type
+argument_list|)
+argument_list|,
+name|context
+argument_list|,
+name|enum_desc
+operator|->
+name|value_desc
+argument_list|)
+expr_stmt|;
+else|else
+comment|/*  for backward compatibility  */
+operator|*
+name|value_desc
+operator|=
 name|g_strip_context
 argument_list|(
 name|enum_desc
@@ -1163,15 +1199,22 @@ operator|->
 name|value_desc
 argument_list|)
 argument_list|)
-else|:
-name|NULL
-operator|)
 expr_stmt|;
+block|}
+else|else
+block|{
+operator|*
+name|value_desc
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
 name|value_help
 condition|)
+block|{
 operator|*
 name|value_help
 operator|=
@@ -1181,7 +1224,7 @@ name|enum_desc
 operator|&&
 name|enum_desc
 operator|->
-name|value_desc
+name|value_help
 operator|)
 condition|?
 name|dgettext
@@ -1200,6 +1243,7 @@ name|NULL
 operator|)
 expr_stmt|;
 block|}
+block|}
 name|success
 operator|=
 name|TRUE
@@ -1217,7 +1261,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_enum_value_get_desc:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated desc for a given @enum_value.  *  * Return value: the translated desc of the enum value  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_enum_value_get_desc:  * @enum_class: a #GEnumClass  * @enum_value: a #GEnumValue from @enum_class  *  * Retrieves the translated description for a given @enum_value.  *  * Return value: the translated description of the enum value  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1267,6 +1311,41 @@ name|enum_desc
 operator|->
 name|value_desc
 condition|)
+block|{
+specifier|const
+name|gchar
+modifier|*
+name|context
+decl_stmt|;
+name|context
+operator|=
+name|gimp_type_get_translation_context
+argument_list|(
+name|type
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|context
+condition|)
+comment|/*  the new way, using NC_()    */
+return|return
+name|g_dpgettext2
+argument_list|(
+name|gimp_type_get_translation_domain
+argument_list|(
+name|type
+argument_list|)
+argument_list|,
+name|context
+argument_list|,
+name|enum_desc
+operator|->
+name|value_desc
+argument_list|)
+return|;
+else|else
+comment|/*  for backward compatibility  */
 return|return
 name|g_strip_context
 argument_list|(
@@ -1287,6 +1366,7 @@ name|value_desc
 argument_list|)
 argument_list|)
 return|;
+block|}
 return|return
 name|enum_value
 operator|->
@@ -1647,7 +1727,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_flags_value_get_desc:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated desc for a given @flags_value.  *  * Return value: the translated desc of the flags value  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_flags_value_get_desc:  * @flags_class: a #GFlagsClass  * @flags_value: a #GFlagsValue from @flags_class  *  * Retrieves the translated description for a given @flags_value.  *  * Return value: the translated description of the flags value  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

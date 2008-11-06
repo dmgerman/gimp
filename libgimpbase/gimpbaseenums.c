@@ -127,8 +127,10 @@ block|{
 block|{
 name|GIMP_ADD_WHITE_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"_White (full opacity)"
 argument_list|)
 block|,
@@ -138,8 +140,10 @@ block|,
 block|{
 name|GIMP_ADD_BLACK_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"_Black (full transparency)"
 argument_list|)
 block|,
@@ -149,8 +153,10 @@ block|,
 block|{
 name|GIMP_ADD_ALPHA_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"Layer's _alpha channel"
 argument_list|)
 block|,
@@ -160,8 +166,10 @@ block|,
 block|{
 name|GIMP_ADD_ALPHA_TRANSFER_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"_Transfer layer's alpha channel"
 argument_list|)
 block|,
@@ -171,8 +179,10 @@ block|,
 block|{
 name|GIMP_ADD_SELECTION_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"_Selection"
 argument_list|)
 block|,
@@ -182,8 +192,10 @@ block|,
 block|{
 name|GIMP_ADD_COPY_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"_Grayscale copy of layer"
 argument_list|)
 block|,
@@ -193,8 +205,10 @@ block|,
 block|{
 name|GIMP_ADD_CHANNEL_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"add-mask-type"
+argument_list|,
 literal|"C_hannel"
 argument_list|)
 block|,
@@ -240,6 +254,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"add-mask-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -322,8 +343,10 @@ block|{
 block|{
 name|GIMP_FG_BG_RGB_MODE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"blend-mode"
+argument_list|,
 literal|"FG to BG (RGB)"
 argument_list|)
 block|,
@@ -333,8 +356,10 @@ block|,
 block|{
 name|GIMP_FG_BG_HSV_MODE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"blend-mode"
+argument_list|,
 literal|"FG to BG (HSV)"
 argument_list|)
 block|,
@@ -344,8 +369,10 @@ block|,
 block|{
 name|GIMP_FG_TRANSPARENT_MODE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"blend-mode"
+argument_list|,
 literal|"FG to transparent"
 argument_list|)
 block|,
@@ -355,8 +382,10 @@ block|,
 block|{
 name|GIMP_CUSTOM_MODE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"blend-mode"
+argument_list|,
 literal|"Custom gradient"
 argument_list|)
 block|,
@@ -402,6 +431,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"blend-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -476,8 +512,10 @@ block|{
 block|{
 name|GIMP_FG_BUCKET_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"bucket-fill-mode"
+argument_list|,
 literal|"FG color fill"
 argument_list|)
 block|,
@@ -487,8 +525,10 @@ block|,
 block|{
 name|GIMP_BG_BUCKET_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"bucket-fill-mode"
+argument_list|,
 literal|"BG color fill"
 argument_list|)
 block|,
@@ -498,8 +538,10 @@ block|,
 block|{
 name|GIMP_PATTERN_BUCKET_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"bucket-fill-mode"
+argument_list|,
 literal|"Pattern fill"
 argument_list|)
 block|,
@@ -545,6 +587,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"bucket-fill-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -627,8 +676,10 @@ block|{
 block|{
 name|GIMP_CHANNEL_OP_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-ops"
+argument_list|,
 literal|"Add to the current selection"
 argument_list|)
 block|,
@@ -638,8 +689,10 @@ block|,
 block|{
 name|GIMP_CHANNEL_OP_SUBTRACT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-ops"
+argument_list|,
 literal|"Subtract from the current selection"
 argument_list|)
 block|,
@@ -649,8 +702,10 @@ block|,
 block|{
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-ops"
+argument_list|,
 literal|"Replace the current selection"
 argument_list|)
 block|,
@@ -660,8 +715,10 @@ block|,
 block|{
 name|GIMP_CHANNEL_OP_INTERSECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-ops"
+argument_list|,
 literal|"Intersect with the current selection"
 argument_list|)
 block|,
@@ -707,6 +764,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"channel-ops"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -805,8 +869,10 @@ block|{
 block|{
 name|GIMP_RED_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-type"
+argument_list|,
 literal|"Red"
 argument_list|)
 block|,
@@ -816,8 +882,10 @@ block|,
 block|{
 name|GIMP_GREEN_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-type"
+argument_list|,
 literal|"Green"
 argument_list|)
 block|,
@@ -827,8 +895,10 @@ block|,
 block|{
 name|GIMP_BLUE_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-type"
+argument_list|,
 literal|"Blue"
 argument_list|)
 block|,
@@ -838,8 +908,10 @@ block|,
 block|{
 name|GIMP_GRAY_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-type"
+argument_list|,
 literal|"Gray"
 argument_list|)
 block|,
@@ -849,8 +921,10 @@ block|,
 block|{
 name|GIMP_INDEXED_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-type"
+argument_list|,
 literal|"Indexed"
 argument_list|)
 block|,
@@ -860,8 +934,10 @@ block|,
 block|{
 name|GIMP_ALPHA_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channel-type"
+argument_list|,
 literal|"Alpha"
 argument_list|)
 block|,
@@ -907,6 +983,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"channel-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -981,8 +1064,10 @@ block|{
 block|{
 name|GIMP_CHECK_SIZE_SMALL_CHECKS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-size"
+argument_list|,
 literal|"Small"
 argument_list|)
 block|,
@@ -992,8 +1077,10 @@ block|,
 block|{
 name|GIMP_CHECK_SIZE_MEDIUM_CHECKS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-size"
+argument_list|,
 literal|"Medium"
 argument_list|)
 block|,
@@ -1003,8 +1090,10 @@ block|,
 block|{
 name|GIMP_CHECK_SIZE_LARGE_CHECKS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-size"
+argument_list|,
 literal|"Large"
 argument_list|)
 block|,
@@ -1050,6 +1139,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"check-size"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1148,8 +1244,10 @@ block|{
 block|{
 name|GIMP_CHECK_TYPE_LIGHT_CHECKS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-type"
+argument_list|,
 literal|"Light checks"
 argument_list|)
 block|,
@@ -1159,8 +1257,10 @@ block|,
 block|{
 name|GIMP_CHECK_TYPE_GRAY_CHECKS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-type"
+argument_list|,
 literal|"Mid-tone checks"
 argument_list|)
 block|,
@@ -1170,8 +1270,10 @@ block|,
 block|{
 name|GIMP_CHECK_TYPE_DARK_CHECKS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-type"
+argument_list|,
 literal|"Dark checks"
 argument_list|)
 block|,
@@ -1181,8 +1283,10 @@ block|,
 block|{
 name|GIMP_CHECK_TYPE_WHITE_ONLY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-type"
+argument_list|,
 literal|"White only"
 argument_list|)
 block|,
@@ -1192,8 +1296,10 @@ block|,
 block|{
 name|GIMP_CHECK_TYPE_GRAY_ONLY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-type"
+argument_list|,
 literal|"Gray only"
 argument_list|)
 block|,
@@ -1203,8 +1309,10 @@ block|,
 block|{
 name|GIMP_CHECK_TYPE_BLACK_ONLY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"check-type"
+argument_list|,
 literal|"Black only"
 argument_list|)
 block|,
@@ -1250,6 +1358,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"check-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1316,8 +1431,10 @@ block|{
 block|{
 name|GIMP_IMAGE_CLONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"clone-type"
+argument_list|,
 literal|"Image"
 argument_list|)
 block|,
@@ -1327,8 +1444,10 @@ block|,
 block|{
 name|GIMP_PATTERN_CLONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"clone-type"
+argument_list|,
 literal|"Pattern"
 argument_list|)
 block|,
@@ -1374,6 +1493,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"clone-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1448,8 +1574,10 @@ block|{
 block|{
 name|GIMP_DESATURATE_LIGHTNESS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"desaturate-mode"
+argument_list|,
 literal|"Lightness"
 argument_list|)
 block|,
@@ -1459,8 +1587,10 @@ block|,
 block|{
 name|GIMP_DESATURATE_LUMINOSITY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"desaturate-mode"
+argument_list|,
 literal|"Luminosity"
 argument_list|)
 block|,
@@ -1470,8 +1600,10 @@ block|,
 block|{
 name|GIMP_DESATURATE_AVERAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"desaturate-mode"
+argument_list|,
 literal|"Average"
 argument_list|)
 block|,
@@ -1517,6 +1649,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"desaturate-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1583,8 +1722,10 @@ block|{
 block|{
 name|GIMP_DODGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dodge-burn-type"
+argument_list|,
 literal|"Dodge"
 argument_list|)
 block|,
@@ -1594,8 +1735,10 @@ block|,
 block|{
 name|GIMP_BURN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dodge-burn-type"
+argument_list|,
 literal|"Burn"
 argument_list|)
 block|,
@@ -1641,6 +1784,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"dodge-burn-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1743,6 +1893,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"foreground-extract-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1881,9 +2038,11 @@ block|{
 block|{
 name|GIMP_GRADIENT_LINEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"gradient|Linear"
+literal|"gradient-type"
+argument_list|,
+literal|"Linear"
 argument_list|)
 block|,
 name|NULL
@@ -1892,8 +2051,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_BILINEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Bi-linear"
 argument_list|)
 block|,
@@ -1903,8 +2064,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_RADIAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Radial"
 argument_list|)
 block|,
@@ -1914,8 +2077,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_SQUARE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Square"
 argument_list|)
 block|,
@@ -1925,8 +2090,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_CONICAL_SYMMETRIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Conical (sym)"
 argument_list|)
 block|,
@@ -1936,8 +2103,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_CONICAL_ASYMMETRIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Conical (asym)"
 argument_list|)
 block|,
@@ -1947,8 +2116,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_SHAPEBURST_ANGULAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Shaped (angular)"
 argument_list|)
 block|,
@@ -1958,8 +2129,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_SHAPEBURST_SPHERICAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Shaped (spherical)"
 argument_list|)
 block|,
@@ -1969,8 +2142,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_SHAPEBURST_DIMPLED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Shaped (dimpled)"
 argument_list|)
 block|,
@@ -1980,8 +2155,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_SPIRAL_CLOCKWISE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Spiral (cw)"
 argument_list|)
 block|,
@@ -1991,8 +2168,10 @@ block|,
 block|{
 name|GIMP_GRADIENT_SPIRAL_ANTICLOCKWISE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-type"
+argument_list|,
 literal|"Spiral (ccw)"
 argument_list|)
 block|,
@@ -2038,6 +2217,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"gradient-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2128,8 +2314,10 @@ block|{
 block|{
 name|GIMP_GRID_DOTS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"grid-style"
+argument_list|,
 literal|"Intersections (dots)"
 argument_list|)
 block|,
@@ -2139,8 +2327,10 @@ block|,
 block|{
 name|GIMP_GRID_INTERSECTIONS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"grid-style"
+argument_list|,
 literal|"Intersections (crosshairs)"
 argument_list|)
 block|,
@@ -2150,8 +2340,10 @@ block|,
 block|{
 name|GIMP_GRID_ON_OFF_DASH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"grid-style"
+argument_list|,
 literal|"Dashed"
 argument_list|)
 block|,
@@ -2161,8 +2353,10 @@ block|,
 block|{
 name|GIMP_GRID_DOUBLE_DASH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"grid-style"
+argument_list|,
 literal|"Double dashed"
 argument_list|)
 block|,
@@ -2172,8 +2366,10 @@ block|,
 block|{
 name|GIMP_GRID_SOLID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"grid-style"
+argument_list|,
 literal|"Solid"
 argument_list|)
 block|,
@@ -2219,6 +2415,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"grid-style"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2293,8 +2496,10 @@ block|{
 block|{
 name|GIMP_ICON_TYPE_STOCK_ID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"icon-type"
+argument_list|,
 literal|"Stock ID"
 argument_list|)
 block|,
@@ -2304,8 +2509,10 @@ block|,
 block|{
 name|GIMP_ICON_TYPE_INLINE_PIXBUF
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"icon-type"
+argument_list|,
 literal|"Inline pixbuf"
 argument_list|)
 block|,
@@ -2315,8 +2522,10 @@ block|,
 block|{
 name|GIMP_ICON_TYPE_IMAGE_FILE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"icon-type"
+argument_list|,
 literal|"Image file"
 argument_list|)
 block|,
@@ -2362,6 +2571,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"icon-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2436,8 +2652,10 @@ block|{
 block|{
 name|GIMP_RGB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-base-type"
+argument_list|,
 literal|"RGB color"
 argument_list|)
 block|,
@@ -2447,8 +2665,10 @@ block|,
 block|{
 name|GIMP_GRAY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-base-type"
+argument_list|,
 literal|"Grayscale"
 argument_list|)
 block|,
@@ -2458,8 +2678,10 @@ block|,
 block|{
 name|GIMP_INDEXED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-base-type"
+argument_list|,
 literal|"Indexed color"
 argument_list|)
 block|,
@@ -2505,6 +2727,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"image-base-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2603,8 +2832,10 @@ block|{
 block|{
 name|GIMP_RGB_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-type"
+argument_list|,
 literal|"RGB"
 argument_list|)
 block|,
@@ -2614,8 +2845,10 @@ block|,
 block|{
 name|GIMP_RGBA_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-type"
+argument_list|,
 literal|"RGB-alpha"
 argument_list|)
 block|,
@@ -2625,8 +2858,10 @@ block|,
 block|{
 name|GIMP_GRAY_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-type"
+argument_list|,
 literal|"Grayscale"
 argument_list|)
 block|,
@@ -2636,8 +2871,10 @@ block|,
 block|{
 name|GIMP_GRAYA_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-type"
+argument_list|,
 literal|"Grayscale-alpha"
 argument_list|)
 block|,
@@ -2647,8 +2884,10 @@ block|,
 block|{
 name|GIMP_INDEXED_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-type"
+argument_list|,
 literal|"Indexed"
 argument_list|)
 block|,
@@ -2658,8 +2897,10 @@ block|,
 block|{
 name|GIMP_INDEXEDA_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-type"
+argument_list|,
 literal|"Indexed-alpha"
 argument_list|)
 block|,
@@ -2705,6 +2946,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"image-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2787,9 +3035,11 @@ block|{
 block|{
 name|GIMP_INTERPOLATION_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"interpolation|None"
+literal|"interpolation-type"
+argument_list|,
+literal|"None"
 argument_list|)
 block|,
 name|NULL
@@ -2798,9 +3048,11 @@ block|,
 block|{
 name|GIMP_INTERPOLATION_LINEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"interpolation|Linear"
+literal|"interpolation-type"
+argument_list|,
+literal|"Linear"
 argument_list|)
 block|,
 name|NULL
@@ -2809,8 +3061,10 @@ block|,
 block|{
 name|GIMP_INTERPOLATION_CUBIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"interpolation-type"
+argument_list|,
 literal|"Cubic"
 argument_list|)
 block|,
@@ -2820,8 +3074,10 @@ block|,
 block|{
 name|GIMP_INTERPOLATION_LANCZOS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"interpolation-type"
+argument_list|,
 literal|"Sinc (Lanczos3)"
 argument_list|)
 block|,
@@ -2867,6 +3123,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"interpolation-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2933,8 +3196,10 @@ block|{
 block|{
 name|GIMP_PAINT_CONSTANT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"paint-application-mode"
+argument_list|,
 literal|"Constant"
 argument_list|)
 block|,
@@ -2944,8 +3209,10 @@ block|,
 block|{
 name|GIMP_PAINT_INCREMENTAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"paint-application-mode"
+argument_list|,
 literal|"Incremental"
 argument_list|)
 block|,
@@ -2991,6 +3258,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"paint-application-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3065,9 +3339,11 @@ block|{
 block|{
 name|GIMP_REPEAT_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"repeat|None"
+literal|"repeat-mode"
+argument_list|,
+literal|"None"
 argument_list|)
 block|,
 name|NULL
@@ -3076,8 +3352,10 @@ block|,
 block|{
 name|GIMP_REPEAT_SAWTOOTH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"repeat-mode"
+argument_list|,
 literal|"Sawtooth wave"
 argument_list|)
 block|,
@@ -3087,8 +3365,10 @@ block|,
 block|{
 name|GIMP_REPEAT_TRIANGULAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"repeat-mode"
+argument_list|,
 literal|"Triangular wave"
 argument_list|)
 block|,
@@ -3134,6 +3414,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"repeat-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3208,8 +3495,10 @@ block|{
 block|{
 name|GIMP_RUN_INTERACTIVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"run-mode"
+argument_list|,
 literal|"Run interactively"
 argument_list|)
 block|,
@@ -3219,8 +3508,10 @@ block|,
 block|{
 name|GIMP_RUN_NONINTERACTIVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"run-mode"
+argument_list|,
 literal|"Run non-interactively"
 argument_list|)
 block|,
@@ -3230,8 +3521,10 @@ block|,
 block|{
 name|GIMP_RUN_WITH_LAST_VALS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"run-mode"
+argument_list|,
 literal|"Run with last used values"
 argument_list|)
 block|,
@@ -3277,6 +3570,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"run-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3343,8 +3643,10 @@ block|{
 block|{
 name|GIMP_PIXELS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"size-type"
+argument_list|,
 literal|"Pixels"
 argument_list|)
 block|,
@@ -3354,8 +3656,10 @@ block|,
 block|{
 name|GIMP_POINTS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"size-type"
+argument_list|,
 literal|"Points"
 argument_list|)
 block|,
@@ -3401,6 +3705,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"size-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3475,8 +3786,10 @@ block|{
 block|{
 name|GIMP_SHADOWS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transfer-mode"
+argument_list|,
 literal|"Shadows"
 argument_list|)
 block|,
@@ -3486,8 +3799,10 @@ block|,
 block|{
 name|GIMP_MIDTONES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transfer-mode"
+argument_list|,
 literal|"Midtones"
 argument_list|)
 block|,
@@ -3497,8 +3812,10 @@ block|,
 block|{
 name|GIMP_HIGHLIGHTS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transfer-mode"
+argument_list|,
 literal|"Highlights"
 argument_list|)
 block|,
@@ -3544,6 +3861,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"transfer-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3610,8 +3934,10 @@ block|{
 block|{
 name|GIMP_TRANSFORM_FORWARD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-direction"
+argument_list|,
 literal|"Normal (Forward)"
 argument_list|)
 block|,
@@ -3621,8 +3947,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_BACKWARD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-direction"
+argument_list|,
 literal|"Corrective (Backward)"
 argument_list|)
 block|,
@@ -3668,6 +3996,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"transform-direction"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3750,8 +4085,10 @@ block|{
 block|{
 name|GIMP_TRANSFORM_RESIZE_ADJUST
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-resize"
+argument_list|,
 literal|"Adjust"
 argument_list|)
 block|,
@@ -3761,8 +4098,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_RESIZE_CLIP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-resize"
+argument_list|,
 literal|"Clip"
 argument_list|)
 block|,
@@ -3772,8 +4111,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_RESIZE_CROP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-resize"
+argument_list|,
 literal|"Crop to result"
 argument_list|)
 block|,
@@ -3783,8 +4124,10 @@ block|,
 block|{
 name|GIMP_TRANSFORM_RESIZE_CROP_WITH_ASPECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"transform-resize"
+argument_list|,
 literal|"Crop with aspect"
 argument_list|)
 block|,
@@ -3830,6 +4173,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"transform-resize"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -4286,6 +4636,13 @@ name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"pdb-arg-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -4404,6 +4761,13 @@ name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"pdb-error-handler"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -4484,8 +4848,10 @@ block|{
 block|{
 name|GIMP_INTERNAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"pdb-proc-type"
+argument_list|,
 literal|"Internal GIMP procedure"
 argument_list|)
 block|,
@@ -4495,8 +4861,10 @@ block|,
 block|{
 name|GIMP_PLUGIN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"pdb-proc-type"
+argument_list|,
 literal|"GIMP Plug-In"
 argument_list|)
 block|,
@@ -4506,8 +4874,10 @@ block|,
 block|{
 name|GIMP_EXTENSION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"pdb-proc-type"
+argument_list|,
 literal|"GIMP Extension"
 argument_list|)
 block|,
@@ -4517,8 +4887,10 @@ block|,
 block|{
 name|GIMP_TEMPORARY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"pdb-proc-type"
+argument_list|,
 literal|"Temporary Procedure"
 argument_list|)
 block|,
@@ -4564,6 +4936,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"pdb-proc-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -4732,6 +5111,13 @@ name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"pdb-status-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -4866,6 +5252,13 @@ name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"message-handler-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -4998,6 +5391,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"stack-trace-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -5182,6 +5582,13 @@ name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"progress-command"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -5246,8 +5653,10 @@ block|{
 block|{
 name|GIMP_TEXT_DIRECTION_LTR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-direction"
+argument_list|,
 literal|"From left to right"
 argument_list|)
 block|,
@@ -5257,8 +5666,10 @@ block|,
 block|{
 name|GIMP_TEXT_DIRECTION_RTL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-direction"
+argument_list|,
 literal|"From right to left"
 argument_list|)
 block|,
@@ -5304,6 +5715,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"text-direction"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -5386,9 +5804,11 @@ block|{
 block|{
 name|GIMP_TEXT_HINT_STYLE_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"hinting|None"
+literal|"text-hint-style"
+argument_list|,
+literal|"None"
 argument_list|)
 block|,
 name|NULL
@@ -5397,9 +5817,11 @@ block|,
 block|{
 name|GIMP_TEXT_HINT_STYLE_SLIGHT
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"hinting|Slight"
+literal|"text-hint-style"
+argument_list|,
+literal|"Slight"
 argument_list|)
 block|,
 name|NULL
@@ -5408,9 +5830,11 @@ block|,
 block|{
 name|GIMP_TEXT_HINT_STYLE_MEDIUM
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"hinting|Medium"
+literal|"text-hint-style"
+argument_list|,
+literal|"Medium"
 argument_list|)
 block|,
 name|NULL
@@ -5419,9 +5843,11 @@ block|,
 block|{
 name|GIMP_TEXT_HINT_STYLE_FULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"hinting|Full"
+literal|"text-hint-style"
+argument_list|,
+literal|"Full"
 argument_list|)
 block|,
 name|NULL
@@ -5466,6 +5892,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"text-hint-style"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -5548,8 +5981,10 @@ block|{
 block|{
 name|GIMP_TEXT_JUSTIFY_LEFT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-justification"
+argument_list|,
 literal|"Left justified"
 argument_list|)
 block|,
@@ -5559,8 +5994,10 @@ block|,
 block|{
 name|GIMP_TEXT_JUSTIFY_RIGHT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-justification"
+argument_list|,
 literal|"Right justified"
 argument_list|)
 block|,
@@ -5570,8 +6007,10 @@ block|,
 block|{
 name|GIMP_TEXT_JUSTIFY_CENTER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-justification"
+argument_list|,
 literal|"Centered"
 argument_list|)
 block|,
@@ -5581,8 +6020,10 @@ block|,
 block|{
 name|GIMP_TEXT_JUSTIFY_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-justification"
+argument_list|,
 literal|"Filled"
 argument_list|)
 block|,
@@ -5628,6 +6069,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"text-justification"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -5844,6 +6292,13 @@ name|GETTEXT_PACKAGE
 literal|"-libgimp"
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"user-directory"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -5944,6 +6399,13 @@ name|type
 argument_list|,
 name|GETTEXT_PACKAGE
 literal|"-libgimp"
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"vectors-stroke-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

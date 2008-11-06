@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf84f780103
+DECL|enum|__anon29f609250103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf84f780203
+DECL|enum|__anon29f609250203
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf84f780303
+DECL|enum|__anon29f609250303
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf84f780403
+DECL|enum|__anon29f609250403
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -205,15 +205,15 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf84f780503
+DECL|enum|__anon29f609250503
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW
 block|,
-comment|/*< desc="quality|Low">*/
+comment|/*< desc="Low">*/
 DECL|enumerator|GIMP_ZOOM_QUALITY_HIGH
 name|GIMP_ZOOM_QUALITY_HIGH
-comment|/*< desc="quality|High">*/
+comment|/*< desc="High">*/
 DECL|typedef|GimpZoomQuality
 block|}
 name|GimpZoomQuality
@@ -241,7 +241,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf84f780603
+DECL|enum|__anon29f609250603
 block|{
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
 name|GIMP_ZOOM_FOCUS_BEST_GUESS

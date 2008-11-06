@@ -95,8 +95,10 @@ block|{
 block|{
 name|GIMP_CURSOR_MODE_TOOL_ICON
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-mode"
+argument_list|,
 literal|"Tool icon"
 argument_list|)
 block|,
@@ -106,8 +108,10 @@ block|,
 block|{
 name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-mode"
+argument_list|,
 literal|"Tool icon with crosshair"
 argument_list|)
 block|,
@@ -117,8 +121,10 @@ block|,
 block|{
 name|GIMP_CURSOR_MODE_CROSSHAIR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-mode"
+argument_list|,
 literal|"Crosshair only"
 argument_list|)
 block|,
@@ -156,6 +162,13 @@ argument_list|(
 literal|"GimpCursorMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"cursor-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -284,6 +297,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"cursor-precision"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -364,8 +384,10 @@ block|{
 block|{
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"canvas-padding-mode"
+argument_list|,
 literal|"From theme"
 argument_list|)
 block|,
@@ -375,8 +397,10 @@ block|,
 block|{
 name|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"canvas-padding-mode"
+argument_list|,
 literal|"Light check color"
 argument_list|)
 block|,
@@ -386,8 +410,10 @@ block|,
 block|{
 name|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"canvas-padding-mode"
+argument_list|,
 literal|"Dark check color"
 argument_list|)
 block|,
@@ -397,8 +423,10 @@ block|,
 block|{
 name|GIMP_CANVAS_PADDING_MODE_CUSTOM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"canvas-padding-mode"
+argument_list|,
 literal|"Custom color"
 argument_list|)
 block|,
@@ -436,6 +464,13 @@ argument_list|(
 literal|"GimpCanvasPaddingMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"canvas-padding-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -510,8 +545,10 @@ block|{
 block|{
 name|GIMP_SPACE_BAR_ACTION_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"space-bar-action"
+argument_list|,
 literal|"No action"
 argument_list|)
 block|,
@@ -521,8 +558,10 @@ block|,
 block|{
 name|GIMP_SPACE_BAR_ACTION_PAN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"space-bar-action"
+argument_list|,
 literal|"Pan view"
 argument_list|)
 block|,
@@ -532,8 +571,10 @@ block|,
 block|{
 name|GIMP_SPACE_BAR_ACTION_MOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"space-bar-action"
+argument_list|,
 literal|"Switch to Move tool"
 argument_list|)
 block|,
@@ -571,6 +612,13 @@ argument_list|(
 literal|"GimpSpaceBarAction"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"space-bar-action"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -637,9 +685,11 @@ block|{
 block|{
 name|GIMP_ZOOM_QUALITY_LOW
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"quality|Low"
+literal|"zoom-quality"
+argument_list|,
+literal|"Low"
 argument_list|)
 block|,
 name|NULL
@@ -648,9 +698,11 @@ block|,
 block|{
 name|GIMP_ZOOM_QUALITY_HIGH
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"quality|High"
+literal|"zoom-quality"
+argument_list|,
+literal|"High"
 argument_list|)
 block|,
 name|NULL
@@ -687,6 +739,13 @@ argument_list|(
 literal|"GimpZoomQuality"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"zoom-quality"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -813,6 +872,13 @@ argument_list|(
 literal|"GimpZoomFocus"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"zoom-focus"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

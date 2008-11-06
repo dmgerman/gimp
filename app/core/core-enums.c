@@ -133,6 +133,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"container-policy"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -213,8 +220,10 @@ block|{
 block|{
 name|GIMP_NO_DITHER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-dither-type"
+argument_list|,
 literal|"None"
 argument_list|)
 block|,
@@ -224,8 +233,10 @@ block|,
 block|{
 name|GIMP_FS_DITHER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-dither-type"
+argument_list|,
 literal|"Floyd-Steinberg (normal)"
 argument_list|)
 block|,
@@ -235,8 +246,10 @@ block|,
 block|{
 name|GIMP_FSLOWBLEED_DITHER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-dither-type"
+argument_list|,
 literal|"Floyd-Steinberg (reduced color bleeding)"
 argument_list|)
 block|,
@@ -246,8 +259,10 @@ block|,
 block|{
 name|GIMP_FIXED_DITHER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-dither-type"
+argument_list|,
 literal|"Positioned"
 argument_list|)
 block|,
@@ -285,6 +300,13 @@ argument_list|(
 literal|"GimpConvertDitherType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"convert-dither-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -367,8 +389,10 @@ block|{
 block|{
 name|GIMP_MAKE_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-palette-type"
+argument_list|,
 literal|"Generate optimum palette"
 argument_list|)
 block|,
@@ -378,8 +402,10 @@ block|,
 block|{
 name|GIMP_WEB_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-palette-type"
+argument_list|,
 literal|"Use web-optimized palette"
 argument_list|)
 block|,
@@ -389,8 +415,10 @@ block|,
 block|{
 name|GIMP_MONO_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-palette-type"
+argument_list|,
 literal|"Use black and white (1-bit) palette"
 argument_list|)
 block|,
@@ -400,8 +428,10 @@ block|,
 block|{
 name|GIMP_CUSTOM_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"convert-palette-type"
+argument_list|,
 literal|"Use custom palette"
 argument_list|)
 block|,
@@ -439,6 +469,13 @@ argument_list|(
 literal|"GimpConvertPaletteType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"convert-palette-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -677,6 +714,13 @@ argument_list|(
 literal|"GimpGravityType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"gravity-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -949,6 +993,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"alignment-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -1045,8 +1096,10 @@ block|{
 block|{
 name|GIMP_ALIGN_REFERENCE_FIRST
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"align-reference-type"
+argument_list|,
 literal|"First item"
 argument_list|)
 block|,
@@ -1056,8 +1109,10 @@ block|,
 block|{
 name|GIMP_ALIGN_REFERENCE_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"align-reference-type"
+argument_list|,
 literal|"Image"
 argument_list|)
 block|,
@@ -1067,8 +1122,10 @@ block|,
 block|{
 name|GIMP_ALIGN_REFERENCE_SELECTION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"align-reference-type"
+argument_list|,
 literal|"Selection"
 argument_list|)
 block|,
@@ -1078,8 +1135,10 @@ block|,
 block|{
 name|GIMP_ALIGN_REFERENCE_ACTIVE_LAYER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"align-reference-type"
+argument_list|,
 literal|"Active layer"
 argument_list|)
 block|,
@@ -1089,8 +1148,10 @@ block|,
 block|{
 name|GIMP_ALIGN_REFERENCE_ACTIVE_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"align-reference-type"
+argument_list|,
 literal|"Active channel"
 argument_list|)
 block|,
@@ -1100,8 +1161,10 @@ block|,
 block|{
 name|GIMP_ALIGN_REFERENCE_ACTIVE_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"align-reference-type"
+argument_list|,
 literal|"Active path"
 argument_list|)
 block|,
@@ -1139,6 +1202,13 @@ argument_list|(
 literal|"GimpAlignReferenceType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"align-reference-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1237,8 +1307,10 @@ block|{
 block|{
 name|GIMP_FOREGROUND_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-type"
+argument_list|,
 literal|"Foreground color"
 argument_list|)
 block|,
@@ -1248,8 +1320,10 @@ block|,
 block|{
 name|GIMP_BACKGROUND_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-type"
+argument_list|,
 literal|"Background color"
 argument_list|)
 block|,
@@ -1259,8 +1333,10 @@ block|,
 block|{
 name|GIMP_WHITE_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-type"
+argument_list|,
 literal|"White"
 argument_list|)
 block|,
@@ -1270,8 +1346,10 @@ block|,
 block|{
 name|GIMP_TRANSPARENT_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-type"
+argument_list|,
 literal|"Transparency"
 argument_list|)
 block|,
@@ -1281,8 +1359,10 @@ block|,
 block|{
 name|GIMP_PATTERN_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-type"
+argument_list|,
 literal|"Pattern"
 argument_list|)
 block|,
@@ -1292,8 +1372,10 @@ block|,
 block|{
 name|GIMP_NO_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-type"
+argument_list|,
 literal|"None"
 argument_list|)
 block|,
@@ -1331,6 +1413,13 @@ argument_list|(
 literal|"GimpFillType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"fill-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1397,8 +1486,10 @@ block|{
 block|{
 name|GIMP_FILL_STYLE_SOLID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-style"
+argument_list|,
 literal|"Solid color"
 argument_list|)
 block|,
@@ -1408,8 +1499,10 @@ block|,
 block|{
 name|GIMP_FILL_STYLE_PATTERN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fill-style"
+argument_list|,
 literal|"Pattern"
 argument_list|)
 block|,
@@ -1447,6 +1540,13 @@ argument_list|(
 literal|"GimpFillStyle"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"fill-style"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1513,8 +1613,10 @@ block|{
 block|{
 name|GIMP_STROKE_METHOD_LIBART
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"stroke-method"
+argument_list|,
 literal|"Stroke line"
 argument_list|)
 block|,
@@ -1524,8 +1626,10 @@ block|,
 block|{
 name|GIMP_STROKE_METHOD_PAINT_CORE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"stroke-method"
+argument_list|,
 literal|"Stroke with a paint tool"
 argument_list|)
 block|,
@@ -1563,6 +1667,13 @@ argument_list|(
 literal|"GimpStrokeMethod"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"stroke-method"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1637,8 +1748,10 @@ block|{
 block|{
 name|GIMP_JOIN_MITER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"join-style"
+argument_list|,
 literal|"Miter"
 argument_list|)
 block|,
@@ -1648,8 +1761,10 @@ block|,
 block|{
 name|GIMP_JOIN_ROUND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"join-style"
+argument_list|,
 literal|"Round"
 argument_list|)
 block|,
@@ -1659,8 +1774,10 @@ block|,
 block|{
 name|GIMP_JOIN_BEVEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"join-style"
+argument_list|,
 literal|"Bevel"
 argument_list|)
 block|,
@@ -1698,6 +1815,13 @@ argument_list|(
 literal|"GimpJoinStyle"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"join-style"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1772,8 +1896,10 @@ block|{
 block|{
 name|GIMP_CAP_BUTT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cap-style"
+argument_list|,
 literal|"Butt"
 argument_list|)
 block|,
@@ -1783,8 +1909,10 @@ block|,
 block|{
 name|GIMP_CAP_ROUND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cap-style"
+argument_list|,
 literal|"Round"
 argument_list|)
 block|,
@@ -1794,8 +1922,10 @@ block|,
 block|{
 name|GIMP_CAP_SQUARE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cap-style"
+argument_list|,
 literal|"Square"
 argument_list|)
 block|,
@@ -1833,6 +1963,13 @@ argument_list|(
 literal|"GimpCapStyle"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"cap-style"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -1971,8 +2108,10 @@ block|{
 block|{
 name|GIMP_DASH_CUSTOM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Custom"
 argument_list|)
 block|,
@@ -1982,8 +2121,10 @@ block|,
 block|{
 name|GIMP_DASH_LINE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Line"
 argument_list|)
 block|,
@@ -1993,8 +2134,10 @@ block|,
 block|{
 name|GIMP_DASH_LONG_DASH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Long dashes"
 argument_list|)
 block|,
@@ -2004,8 +2147,10 @@ block|,
 block|{
 name|GIMP_DASH_MEDIUM_DASH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Medium dashes"
 argument_list|)
 block|,
@@ -2015,8 +2160,10 @@ block|,
 block|{
 name|GIMP_DASH_SHORT_DASH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Short dashes"
 argument_list|)
 block|,
@@ -2026,8 +2173,10 @@ block|,
 block|{
 name|GIMP_DASH_SPARSE_DOTS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Sparse dots"
 argument_list|)
 block|,
@@ -2037,8 +2186,10 @@ block|,
 block|{
 name|GIMP_DASH_NORMAL_DOTS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Normal dots"
 argument_list|)
 block|,
@@ -2048,8 +2199,10 @@ block|,
 block|{
 name|GIMP_DASH_DENSE_DOTS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Dense dots"
 argument_list|)
 block|,
@@ -2059,8 +2212,10 @@ block|,
 block|{
 name|GIMP_DASH_STIPPLES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Stipples"
 argument_list|)
 block|,
@@ -2070,8 +2225,10 @@ block|,
 block|{
 name|GIMP_DASH_DASH_DOT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Dash, dot"
 argument_list|)
 block|,
@@ -2081,8 +2238,10 @@ block|,
 block|{
 name|GIMP_DASH_DASH_DOT_DOT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dash-preset"
+argument_list|,
 literal|"Dash, dot, dot"
 argument_list|)
 block|,
@@ -2120,6 +2279,13 @@ argument_list|(
 literal|"GimpDashPreset"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"dash-preset"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2194,8 +2360,10 @@ block|{
 block|{
 name|GIMP_BRUSH_GENERATED_CIRCLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brush-generated-shape"
+argument_list|,
 literal|"Circle"
 argument_list|)
 block|,
@@ -2205,8 +2373,10 @@ block|,
 block|{
 name|GIMP_BRUSH_GENERATED_SQUARE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brush-generated-shape"
+argument_list|,
 literal|"Square"
 argument_list|)
 block|,
@@ -2216,8 +2386,10 @@ block|,
 block|{
 name|GIMP_BRUSH_GENERATED_DIAMOND
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brush-generated-shape"
+argument_list|,
 literal|"Diamond"
 argument_list|)
 block|,
@@ -2255,6 +2427,13 @@ argument_list|(
 literal|"GimpBrushGeneratedShape"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"brush-generated-shape"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2329,8 +2508,10 @@ block|{
 block|{
 name|GIMP_ORIENTATION_HORIZONTAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"orientation-type"
+argument_list|,
 literal|"Horizontal"
 argument_list|)
 block|,
@@ -2340,8 +2521,10 @@ block|,
 block|{
 name|GIMP_ORIENTATION_VERTICAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"orientation-type"
+argument_list|,
 literal|"Vertical"
 argument_list|)
 block|,
@@ -2351,8 +2534,10 @@ block|,
 block|{
 name|GIMP_ORIENTATION_UNKNOWN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"orientation-type"
+argument_list|,
 literal|"Unknown"
 argument_list|)
 block|,
@@ -2390,6 +2575,13 @@ argument_list|(
 literal|"GimpOrientationType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"orientation-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2480,8 +2672,10 @@ block|{
 block|{
 name|GIMP_ITEM_SET_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"item-set"
+argument_list|,
 literal|"None"
 argument_list|)
 block|,
@@ -2491,8 +2685,10 @@ block|,
 block|{
 name|GIMP_ITEM_SET_ALL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"item-set"
+argument_list|,
 literal|"All layers"
 argument_list|)
 block|,
@@ -2502,8 +2698,10 @@ block|,
 block|{
 name|GIMP_ITEM_SET_IMAGE_SIZED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"item-set"
+argument_list|,
 literal|"Image-sized layers"
 argument_list|)
 block|,
@@ -2513,8 +2711,10 @@ block|,
 block|{
 name|GIMP_ITEM_SET_VISIBLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"item-set"
+argument_list|,
 literal|"All visible layers"
 argument_list|)
 block|,
@@ -2524,8 +2724,10 @@ block|,
 block|{
 name|GIMP_ITEM_SET_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"item-set"
+argument_list|,
 literal|"All linked layers"
 argument_list|)
 block|,
@@ -2563,6 +2765,13 @@ argument_list|(
 literal|"GimpItemSet"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"item-set"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -2691,6 +2900,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"rotation-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -2811,8 +3027,10 @@ block|{
 block|{
 name|GIMP_VIEW_SIZE_TINY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Tiny"
 argument_list|)
 block|,
@@ -2822,8 +3040,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_EXTRA_SMALL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Very small"
 argument_list|)
 block|,
@@ -2833,8 +3053,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_SMALL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Small"
 argument_list|)
 block|,
@@ -2844,8 +3066,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_MEDIUM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Medium"
 argument_list|)
 block|,
@@ -2855,8 +3079,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_LARGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Large"
 argument_list|)
 block|,
@@ -2866,8 +3092,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_EXTRA_LARGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Very large"
 argument_list|)
 block|,
@@ -2877,8 +3105,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_HUGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Huge"
 argument_list|)
 block|,
@@ -2888,8 +3118,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_ENORMOUS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Enormous"
 argument_list|)
 block|,
@@ -2899,8 +3131,10 @@ block|,
 block|{
 name|GIMP_VIEW_SIZE_GIGANTIC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-size"
+argument_list|,
 literal|"Gigantic"
 argument_list|)
 block|,
@@ -2938,6 +3172,13 @@ argument_list|(
 literal|"GimpViewSize"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"view-size"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3004,8 +3245,10 @@ block|{
 block|{
 name|GIMP_VIEW_TYPE_LIST
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-type"
+argument_list|,
 literal|"View as list"
 argument_list|)
 block|,
@@ -3015,8 +3258,10 @@ block|,
 block|{
 name|GIMP_VIEW_TYPE_GRID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-type"
+argument_list|,
 literal|"View as grid"
 argument_list|)
 block|,
@@ -3054,6 +3299,13 @@ argument_list|(
 literal|"GimpViewType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"view-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3230,6 +3482,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"selection-control"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -3302,8 +3561,10 @@ block|{
 block|{
 name|GIMP_THUMBNAIL_SIZE_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"thumbnail-size"
+argument_list|,
 literal|"No thumbnails"
 argument_list|)
 block|,
@@ -3313,8 +3574,10 @@ block|,
 block|{
 name|GIMP_THUMBNAIL_SIZE_NORMAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"thumbnail-size"
+argument_list|,
 literal|"Normal (128x128)"
 argument_list|)
 block|,
@@ -3324,8 +3587,10 @@ block|,
 block|{
 name|GIMP_THUMBNAIL_SIZE_LARGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"thumbnail-size"
+argument_list|,
 literal|"Large (256x256)"
 argument_list|)
 block|,
@@ -3363,6 +3628,13 @@ argument_list|(
 literal|"GimpThumbnailSize"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"thumbnail-size"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3473,6 +3745,13 @@ argument_list|(
 literal|"GimpUndoMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"undo-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -3679,6 +3958,13 @@ argument_list|(
 literal|"GimpUndoEvent"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"undo-event"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -4393,8 +4679,10 @@ block|{
 block|{
 name|GIMP_UNDO_GROUP_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"<<invalid>>"
 argument_list|)
 block|,
@@ -4404,8 +4692,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_SCALE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale image"
 argument_list|)
 block|,
@@ -4415,8 +4705,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize image"
 argument_list|)
 block|,
@@ -4426,8 +4718,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_FLIP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip image"
 argument_list|)
 block|,
@@ -4437,8 +4731,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_ROTATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate image"
 argument_list|)
 block|,
@@ -4448,8 +4744,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_CROP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Crop image"
 argument_list|)
 block|,
@@ -4459,8 +4757,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_CONVERT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Convert image"
 argument_list|)
 block|,
@@ -4470,8 +4770,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_ITEM_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove item"
 argument_list|)
 block|,
@@ -4481,8 +4783,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge layers"
 argument_list|)
 block|,
@@ -4492,8 +4796,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_VECTORS_MERGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge paths"
 argument_list|)
 block|,
@@ -4503,8 +4809,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Quick Mask"
 argument_list|)
 block|,
@@ -4514,8 +4822,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_IMAGE_GRID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Grid"
 argument_list|)
 block|,
@@ -4525,8 +4835,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_GUIDE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Guide"
 argument_list|)
 block|,
@@ -4536,8 +4848,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_SAMPLE_POINT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Sample Point"
 argument_list|)
 block|,
@@ -4547,8 +4861,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_DRAWABLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Layer/Channel"
 argument_list|)
 block|,
@@ -4558,8 +4874,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_DRAWABLE_MOD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Layer/Channel modification"
 argument_list|)
 block|,
@@ -4569,8 +4887,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Selection mask"
 argument_list|)
 block|,
@@ -4580,8 +4900,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_ITEM_VISIBILITY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Item visibility"
 argument_list|)
 block|,
@@ -4591,8 +4913,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_ITEM_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Link/Unlink item"
 argument_list|)
 block|,
@@ -4602,8 +4926,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_ITEM_PROPERTIES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Item properties"
 argument_list|)
 block|,
@@ -4613,8 +4939,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move item"
 argument_list|)
 block|,
@@ -4624,8 +4952,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_ITEM_SCALE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale item"
 argument_list|)
 block|,
@@ -4635,8 +4965,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_ITEM_RESIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize item"
 argument_list|)
 block|,
@@ -4646,8 +4978,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_LAYER_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add layer"
 argument_list|)
 block|,
@@ -4657,8 +4991,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_LAYER_ADD_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add layer mask"
 argument_list|)
 block|,
@@ -4668,8 +5004,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_LAYER_APPLY_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Apply layer mask"
 argument_list|)
 block|,
@@ -4679,8 +5017,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_FS_TO_LAYER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Floating selection to layer"
 argument_list|)
 block|,
@@ -4690,8 +5030,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_FS_FLOAT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Float selection"
 argument_list|)
 block|,
@@ -4701,8 +5043,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_FS_ANCHOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Anchor floating selection"
 argument_list|)
 block|,
@@ -4712,8 +5056,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_FS_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove floating selection"
 argument_list|)
 block|,
@@ -4723,8 +5069,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Paste"
 argument_list|)
 block|,
@@ -4734,8 +5082,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_EDIT_CUT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Cut"
 argument_list|)
 block|,
@@ -4745,8 +5095,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_TEXT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Text"
 argument_list|)
 block|,
@@ -4756,8 +5108,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_TRANSFORM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform"
 argument_list|)
 block|,
@@ -4767,8 +5121,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_PAINT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Paint"
 argument_list|)
 block|,
@@ -4778,8 +5134,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_PARASITE_ATTACH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Attach parasite"
 argument_list|)
 block|,
@@ -4789,8 +5147,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_PARASITE_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove parasite"
 argument_list|)
 block|,
@@ -4800,8 +5160,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_VECTORS_IMPORT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Import paths"
 argument_list|)
 block|,
@@ -4811,8 +5173,10 @@ block|,
 block|{
 name|GIMP_UNDO_GROUP_MISC
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Plug-In"
 argument_list|)
 block|,
@@ -4822,8 +5186,10 @@ block|,
 block|{
 name|GIMP_UNDO_IMAGE_TYPE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Image type"
 argument_list|)
 block|,
@@ -4833,8 +5199,10 @@ block|,
 block|{
 name|GIMP_UNDO_IMAGE_SIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Image size"
 argument_list|)
 block|,
@@ -4844,8 +5212,10 @@ block|,
 block|{
 name|GIMP_UNDO_IMAGE_RESOLUTION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Image resolution change"
 argument_list|)
 block|,
@@ -4855,8 +5225,10 @@ block|,
 block|{
 name|GIMP_UNDO_IMAGE_GRID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Grid"
 argument_list|)
 block|,
@@ -4866,8 +5238,10 @@ block|,
 block|{
 name|GIMP_UNDO_IMAGE_COLORMAP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Change indexed palette"
 argument_list|)
 block|,
@@ -4877,8 +5251,10 @@ block|,
 block|{
 name|GIMP_UNDO_GUIDE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Guide"
 argument_list|)
 block|,
@@ -4888,8 +5264,10 @@ block|,
 block|{
 name|GIMP_UNDO_SAMPLE_POINT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Sample Point"
 argument_list|)
 block|,
@@ -4899,8 +5277,10 @@ block|,
 block|{
 name|GIMP_UNDO_DRAWABLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Layer/Channel"
 argument_list|)
 block|,
@@ -4910,8 +5290,10 @@ block|,
 block|{
 name|GIMP_UNDO_DRAWABLE_MOD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Layer/Channel modification"
 argument_list|)
 block|,
@@ -4921,8 +5303,10 @@ block|,
 block|{
 name|GIMP_UNDO_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Selection mask"
 argument_list|)
 block|,
@@ -4932,8 +5316,10 @@ block|,
 block|{
 name|GIMP_UNDO_ITEM_RENAME
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rename item"
 argument_list|)
 block|,
@@ -4943,8 +5329,10 @@ block|,
 block|{
 name|GIMP_UNDO_ITEM_DISPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move item"
 argument_list|)
 block|,
@@ -4954,8 +5342,10 @@ block|,
 block|{
 name|GIMP_UNDO_ITEM_VISIBILITY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Item visibility"
 argument_list|)
 block|,
@@ -4965,8 +5355,10 @@ block|,
 block|{
 name|GIMP_UNDO_ITEM_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Link/Unlink item"
 argument_list|)
 block|,
@@ -4976,8 +5368,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"New layer"
 argument_list|)
 block|,
@@ -4987,8 +5381,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Delete layer"
 argument_list|)
 block|,
@@ -4998,8 +5394,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_REPOSITION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Reposition layer"
 argument_list|)
 block|,
@@ -5009,8 +5407,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_MODE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Set layer mode"
 argument_list|)
 block|,
@@ -5020,8 +5420,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_OPACITY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Set layer opacity"
 argument_list|)
 block|,
@@ -5031,8 +5433,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_LOCK_ALPHA
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lock/Unlock alpha channel"
 argument_list|)
 block|,
@@ -5042,8 +5446,10 @@ block|,
 block|{
 name|GIMP_UNDO_TEXT_LAYER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Text layer"
 argument_list|)
 block|,
@@ -5053,8 +5459,10 @@ block|,
 block|{
 name|GIMP_UNDO_TEXT_LAYER_MODIFIED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Text layer modification"
 argument_list|)
 block|,
@@ -5064,8 +5472,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_MASK_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add layer mask"
 argument_list|)
 block|,
@@ -5075,8 +5485,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_MASK_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Delete layer mask"
 argument_list|)
 block|,
@@ -5086,8 +5498,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_MASK_APPLY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Apply layer mask"
 argument_list|)
 block|,
@@ -5097,8 +5511,10 @@ block|,
 block|{
 name|GIMP_UNDO_LAYER_MASK_SHOW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Show layer mask"
 argument_list|)
 block|,
@@ -5108,8 +5524,10 @@ block|,
 block|{
 name|GIMP_UNDO_CHANNEL_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"New channel"
 argument_list|)
 block|,
@@ -5119,8 +5537,10 @@ block|,
 block|{
 name|GIMP_UNDO_CHANNEL_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Delete channel"
 argument_list|)
 block|,
@@ -5130,8 +5550,10 @@ block|,
 block|{
 name|GIMP_UNDO_CHANNEL_REPOSITION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Reposition channel"
 argument_list|)
 block|,
@@ -5141,8 +5563,10 @@ block|,
 block|{
 name|GIMP_UNDO_CHANNEL_COLOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Channel color"
 argument_list|)
 block|,
@@ -5152,8 +5576,10 @@ block|,
 block|{
 name|GIMP_UNDO_VECTORS_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"New path"
 argument_list|)
 block|,
@@ -5163,8 +5589,10 @@ block|,
 block|{
 name|GIMP_UNDO_VECTORS_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Delete path"
 argument_list|)
 block|,
@@ -5174,8 +5602,10 @@ block|,
 block|{
 name|GIMP_UNDO_VECTORS_MOD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Path modification"
 argument_list|)
 block|,
@@ -5185,8 +5615,10 @@ block|,
 block|{
 name|GIMP_UNDO_VECTORS_REPOSITION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Reposition path"
 argument_list|)
 block|,
@@ -5196,8 +5628,10 @@ block|,
 block|{
 name|GIMP_UNDO_FS_TO_LAYER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Floating selection to layer"
 argument_list|)
 block|,
@@ -5207,8 +5641,10 @@ block|,
 block|{
 name|GIMP_UNDO_FS_RIGOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rigor floating selection"
 argument_list|)
 block|,
@@ -5218,8 +5654,10 @@ block|,
 block|{
 name|GIMP_UNDO_FS_RELAX
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Relax floating selection"
 argument_list|)
 block|,
@@ -5229,8 +5667,10 @@ block|,
 block|{
 name|GIMP_UNDO_TRANSFORM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform"
 argument_list|)
 block|,
@@ -5240,8 +5680,10 @@ block|,
 block|{
 name|GIMP_UNDO_PAINT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Paint"
 argument_list|)
 block|,
@@ -5251,8 +5693,10 @@ block|,
 block|{
 name|GIMP_UNDO_INK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Ink"
 argument_list|)
 block|,
@@ -5262,8 +5706,10 @@ block|,
 block|{
 name|GIMP_UNDO_FOREGROUND_SELECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Select foreground"
 argument_list|)
 block|,
@@ -5273,8 +5719,10 @@ block|,
 block|{
 name|GIMP_UNDO_PARASITE_ATTACH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Attach parasite"
 argument_list|)
 block|,
@@ -5284,8 +5732,10 @@ block|,
 block|{
 name|GIMP_UNDO_PARASITE_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove parasite"
 argument_list|)
 block|,
@@ -5295,8 +5745,10 @@ block|,
 block|{
 name|GIMP_UNDO_CANT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Not undoable"
 argument_list|)
 block|,
@@ -5334,6 +5786,13 @@ argument_list|(
 literal|"GimpUndoType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"undo-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -5590,6 +6049,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"dirty-mask"
+argument_list|)
+expr_stmt|;
 name|gimp_flags_set_value_descriptions
 argument_list|(
 name|type
@@ -5698,6 +6164,13 @@ argument_list|(
 literal|"GimpOffsetType"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"offset-type"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -5858,6 +6331,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"gradient-color"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -6016,6 +6496,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"gradient-segment-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -6142,6 +6629,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"gradient-segment-color"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -6250,6 +6744,13 @@ argument_list|(
 literal|"GimpMaskApplyMode"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"mask-apply-mode"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -6394,6 +6895,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"merge-type"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -6498,8 +7006,10 @@ block|{
 block|{
 name|GIMP_SELECT_CRITERION_COMPOSITE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Composite"
 argument_list|)
 block|,
@@ -6509,8 +7019,10 @@ block|,
 block|{
 name|GIMP_SELECT_CRITERION_R
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Red"
 argument_list|)
 block|,
@@ -6520,8 +7032,10 @@ block|,
 block|{
 name|GIMP_SELECT_CRITERION_G
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Green"
 argument_list|)
 block|,
@@ -6531,8 +7045,10 @@ block|,
 block|{
 name|GIMP_SELECT_CRITERION_B
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Blue"
 argument_list|)
 block|,
@@ -6542,8 +7058,10 @@ block|,
 block|{
 name|GIMP_SELECT_CRITERION_H
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Hue"
 argument_list|)
 block|,
@@ -6553,8 +7071,10 @@ block|,
 block|{
 name|GIMP_SELECT_CRITERION_S
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Saturation"
 argument_list|)
 block|,
@@ -6564,8 +7084,10 @@ block|,
 block|{
 name|GIMP_SELECT_CRITERION_V
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-criterion"
+argument_list|,
 literal|"Value"
 argument_list|)
 block|,
@@ -6603,6 +7125,13 @@ argument_list|(
 literal|"GimpSelectCriterion"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"select-criterion"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -6677,8 +7206,10 @@ block|{
 block|{
 name|GIMP_MESSAGE_INFO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"message-severity"
+argument_list|,
 literal|"Message"
 argument_list|)
 block|,
@@ -6688,8 +7219,10 @@ block|,
 block|{
 name|GIMP_MESSAGE_WARNING
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"message-severity"
+argument_list|,
 literal|"Warning"
 argument_list|)
 block|,
@@ -6699,8 +7232,10 @@ block|,
 block|{
 name|GIMP_MESSAGE_ERROR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"message-severity"
+argument_list|,
 literal|"Error"
 argument_list|)
 block|,
@@ -6738,6 +7273,13 @@ argument_list|(
 literal|"GimpMessageSeverity"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"message-severity"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
@@ -6812,8 +7354,10 @@ block|{
 block|{
 name|GIMP_COLOR_PROFILE_POLICY_ASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-profile-policy"
+argument_list|,
 literal|"Ask what to do"
 argument_list|)
 block|,
@@ -6823,8 +7367,10 @@ block|,
 block|{
 name|GIMP_COLOR_PROFILE_POLICY_KEEP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-profile-policy"
+argument_list|,
 literal|"Keep embedded profile"
 argument_list|)
 block|,
@@ -6834,8 +7380,10 @@ block|,
 block|{
 name|GIMP_COLOR_PROFILE_POLICY_CONVERT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"color-profile-policy"
+argument_list|,
 literal|"Convert to RGB workspace"
 argument_list|)
 block|,
@@ -6873,6 +7421,13 @@ argument_list|(
 literal|"GimpColorProfilePolicy"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"color-profile-policy"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions

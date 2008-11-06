@@ -133,6 +133,13 @@ argument_list|,
 name|values
 argument_list|)
 expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"text-box-mode"
+argument_list|)
+expr_stmt|;
 name|gimp_enum_set_value_descriptions
 argument_list|(
 name|type
@@ -257,6 +264,13 @@ argument_list|(
 literal|"GimpTextOutline"
 argument_list|,
 name|values
+argument_list|)
+expr_stmt|;
+name|gimp_type_set_translation_context
+argument_list|(
+name|type
+argument_list|,
+literal|"text-outline"
 argument_list|)
 expr_stmt|;
 name|gimp_enum_set_value_descriptions
