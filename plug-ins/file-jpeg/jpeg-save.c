@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2aae1a0108
+DECL|struct|__anon28b759090108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2aae1a0208
+DECL|struct|__anon28b759090208
 block|{
 DECL|member|run
 name|gboolean
@@ -6566,7 +6566,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2aae1a0308
+DECL|struct|__anon28b759090308
 block|{
 DECL|member|pub
 name|struct
