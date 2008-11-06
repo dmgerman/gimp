@@ -1684,7 +1684,7 @@ argument_list|)
 operator|<
 literal|0
 condition|)
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 operator|&
 name|writer
