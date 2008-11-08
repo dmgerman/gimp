@@ -150,6 +150,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpchannel-project.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontext.h"
 end_include
 
@@ -191,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f9e380103
+DECL|enum|__anon288ed8ce0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1317,6 +1323,12 @@ operator|->
 name|replace_region
 operator|=
 name|gimp_channel_replace_region
+expr_stmt|;
+name|drawable_class
+operator|->
+name|project_region
+operator|=
+name|gimp_channel_project_region
 expr_stmt|;
 name|drawable_class
 operator|->
