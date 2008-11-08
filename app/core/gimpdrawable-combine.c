@@ -71,7 +71,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_real_apply_region (GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
+DECL|function|gimp_drawable_real_apply_region (GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
 name|gimp_drawable_real_apply_region
 parameter_list|(
 name|GimpDrawable
@@ -99,6 +99,10 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|src1_tiles
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|destPR
 parameter_list|,
 name|gint
 name|x
@@ -151,7 +155,7 @@ decl_stmt|;
 name|PixelRegion
 name|src1PR
 decl_stmt|,
-name|destPR
+name|my_destPR
 decl_stmt|;
 name|CombinationMode
 name|operation
@@ -538,11 +542,12 @@ expr_stmt|;
 block|}
 block|}
 comment|/* configure the pixel regions */
-comment|/* If an alternative to using the drawable's data as src1 was provided...    */
+comment|/* check if an alternative to using the drawable's data as src1 was    * provided...    */
 if|if
 condition|(
 name|src1_tiles
 condition|)
+block|{
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -565,7 +570,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
 else|else
+block|{
 name|pixel_region_init
 argument_list|(
 operator|&
@@ -591,10 +598,18 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+block|}
+comment|/* check if an alternative to using the drawable's data as dest was    * provided...    */
+if|if
+condition|(
+operator|!
+name|destPR
+condition|)
+block|{
 name|pixel_region_init
 argument_list|(
 operator|&
-name|destPR
+name|my_destPR
 argument_list|,
 name|gimp_drawable_get_tiles
 argument_list|(
@@ -616,6 +631,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|destPR
+operator|=
+operator|&
+name|my_destPR
+expr_stmt|;
+block|}
 name|pixel_region_resize
 argument_list|(
 name|src2PR
@@ -696,7 +717,6 @@ name|src1PR
 argument_list|,
 name|src2PR
 argument_list|,
-operator|&
 name|destPR
 argument_list|,
 operator|&
@@ -725,7 +745,6 @@ name|src1PR
 argument_list|,
 name|src2PR
 argument_list|,
-operator|&
 name|destPR
 argument_list|,
 name|NULL

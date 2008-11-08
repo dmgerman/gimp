@@ -2307,6 +2307,8 @@ argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|undo
 operator|->
 name|x
@@ -2845,6 +2847,8 @@ argument_list|,
 name|opacity
 argument_list|,
 name|paint_mode
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,

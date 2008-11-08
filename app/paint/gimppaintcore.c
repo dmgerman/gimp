@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6ddd5a0103
+DECL|enum|__anon28cbf4b60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3580,6 +3580,8 @@ argument_list|,
 name|alt
 argument_list|,
 comment|/*  specify an alternative src1  */
+name|NULL
+argument_list|,
 name|core
 operator|->
 name|canvas_buf

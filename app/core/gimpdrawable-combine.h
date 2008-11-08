@@ -50,6 +50,10 @@ name|TileManager
 modifier|*
 name|src1_tiles
 parameter_list|,
+name|PixelRegion
+modifier|*
+name|destPR
+parameter_list|,
 name|gint
 name|x
 parameter_list|,

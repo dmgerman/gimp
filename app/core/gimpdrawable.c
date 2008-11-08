@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb09e130103
+DECL|enum|__anon29e2e08b0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4278,7 +4278,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_apply_region (GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,gint x,gint y)
+DECL|function|gimp_drawable_apply_region (GimpDrawable * drawable,PixelRegion * src2PR,gboolean push_undo,const gchar * undo_desc,gdouble opacity,GimpLayerModeEffects mode,TileManager * src1_tiles,PixelRegion * destPR,gint x,gint y)
 name|gimp_drawable_apply_region
 parameter_list|(
 name|GimpDrawable
@@ -4306,6 +4306,10 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|src1_tiles
+parameter_list|,
+name|PixelRegion
+modifier|*
+name|destPR
 parameter_list|,
 name|gint
 name|x
@@ -4360,6 +4364,8 @@ argument_list|,
 name|mode
 argument_list|,
 name|src1_tiles
+argument_list|,
+name|destPR
 argument_list|,
 name|x
 argument_list|,

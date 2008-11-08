@@ -1186,6 +1186,8 @@ name|paint_mode
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|x1
 argument_list|,
 name|y1

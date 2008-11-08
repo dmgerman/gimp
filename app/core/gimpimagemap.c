@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c54a870103
+DECL|enum|__anon2761775d0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -3226,6 +3226,8 @@ name|GIMP_REPLACE_MODE
 argument_list|,
 name|NULL
 argument_list|,
+name|NULL
+argument_list|,
 name|x
 argument_list|,
 name|y
@@ -3523,6 +3525,8 @@ argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_REPLACE_MODE
+argument_list|,
+name|NULL
 argument_list|,
 name|NULL
 argument_list|,
