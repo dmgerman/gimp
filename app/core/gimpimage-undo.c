@@ -1905,9 +1905,6 @@ case|:
 case|case
 name|GIMP_UNDO_GROUP_FS_ANCHOR
 case|:
-case|case
-name|GIMP_UNDO_GROUP_FS_REMOVE
-case|:
 return|return
 name|GIMP_DIRTY_IMAGE_STRUCTURE
 return|;

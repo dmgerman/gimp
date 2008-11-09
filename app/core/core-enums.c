@@ -4229,14 +4229,6 @@ literal|"group-fs-anchor"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_GROUP_FS_REMOVE
-block|,
-literal|"GIMP_UNDO_GROUP_FS_REMOVE"
-block|,
-literal|"group-fs-remove"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 block|,
 literal|"GIMP_UNDO_GROUP_EDIT_PASTE"
@@ -5032,19 +5024,6 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Anchor floating selection"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_UNDO_GROUP_FS_REMOVE
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Remove floating selection"
 argument_list|)
 block|,
 name|NULL

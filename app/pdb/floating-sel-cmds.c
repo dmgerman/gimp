@@ -34,6 +34,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayer-floating-sel.h"
 end_include
 
@@ -156,9 +162,21 @@ name|floating_sel
 argument_list|)
 condition|)
 block|{
-name|floating_sel_remove
+name|gimp_image_remove_layer
+argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|floating_sel
+argument_list|)
+argument_list|)
+argument_list|,
+name|floating_sel
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

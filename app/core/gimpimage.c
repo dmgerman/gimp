@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon277dd4d60103
+DECL|enum|__anon2c89757f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277dd4d60203
+DECL|enum|__anon2c89757f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11838,6 +11838,11 @@ name|undo_group
 init|=
 name|FALSE
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -11913,12 +11918,18 @@ name|undo_group
 operator|=
 name|TRUE
 expr_stmt|;
-name|floating_sel_remove
+name|gimp_image_remove_layer
 argument_list|(
+name|image
+argument_list|,
 name|gimp_image_floating_sel
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -11952,16 +11963,49 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|image
+operator|->
+name|floating_sel
+operator|==
+name|layer
+condition|)
+block|{
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Remove Floating Selection"
+argument_list|)
+expr_stmt|;
+comment|/*  Invalidate the preview of the obscured drawable.  We do this here        *  because it will not be done until the floating selection is removed,        *  at which point the obscured drawable's preview will not be declared        *  invalid.        */
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|undo_desc
+operator|=
+name|_
+argument_list|(
+literal|"Remove Layer"
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|push_undo
 condition|)
 name|gimp_image_undo_push_layer_remove
 argument_list|(
 name|image
 argument_list|,
-name|_
-argument_list|(
-literal|"Remove Layer"
-argument_list|)
+name|undo_desc
 argument_list|,
 name|layer
 argument_list|,
@@ -13282,12 +13326,18 @@ name|undo_group
 operator|=
 name|TRUE
 expr_stmt|;
-name|floating_sel_remove
+name|gimp_image_remove_layer
 argument_list|(
+name|image
+argument_list|,
 name|gimp_image_floating_sel
 argument_list|(
 name|image
 argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
