@@ -183,15 +183,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCursorView
-typedef|typedef
-name|struct
-name|_GimpCursorView
-name|GimpCursorView
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDeviceStatus
 typedef|typedef
 name|struct
