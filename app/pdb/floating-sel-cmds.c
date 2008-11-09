@@ -646,46 +646,7 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
-if|if
-condition|(
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|floating_sel
-argument_list|)
-condition|)
-block|{
-name|floating_sel_rigor
-argument_list|(
-name|floating_sel
-argument_list|,
-name|undo
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_set_error_literal
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_PDB_ERROR
-argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
-argument_list|,
-name|_
-argument_list|(
-literal|"Cannot rigor this layer because "
-literal|"it is not a floating selection."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-block|}
+block|{     }
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
@@ -782,46 +743,7 @@ if|if
 condition|(
 name|success
 condition|)
-block|{
-if|if
-condition|(
-name|gimp_layer_is_floating_sel
-argument_list|(
-name|floating_sel
-argument_list|)
-condition|)
-block|{
-name|floating_sel_relax
-argument_list|(
-name|floating_sel
-argument_list|,
-name|undo
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|g_set_error_literal
-argument_list|(
-name|error
-argument_list|,
-name|GIMP_PDB_ERROR
-argument_list|,
-name|GIMP_PDB_INVALID_ARGUMENT
-argument_list|,
-name|_
-argument_list|(
-literal|"Cannot relax this layer because "
-literal|"it is not a floating selection."
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|FALSE
-expr_stmt|;
-block|}
-block|}
+block|{     }
 return|return
 name|gimp_procedure_get_return_values
 argument_list|(
@@ -1184,17 +1106,17 @@ name|procedure
 argument_list|,
 literal|"gimp-floating-sel-rigor"
 argument_list|,
-literal|"Rigor the floating selection."
+literal|"This procedure is deprecated!"
 argument_list|,
-literal|"This procedure rigors the floating selection."
+literal|"This procedure is deprecated!"
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"NONE"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -1273,17 +1195,17 @@ name|procedure
 argument_list|,
 literal|"gimp-floating-sel-relax"
 argument_list|,
-literal|"Relax the floating selection."
+literal|"This procedure is deprecated!"
 argument_list|,
-literal|"This procedure relaxes the floating selection."
+literal|"This procedure is deprecated!"
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"NONE"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

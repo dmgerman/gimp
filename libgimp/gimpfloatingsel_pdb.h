@@ -65,6 +65,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_floating_sel_rigor
@@ -90,6 +96,15 @@ name|undo
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_macro
 name|G_END_DECLS

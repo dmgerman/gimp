@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2adfe6f40103
+DECL|enum|__anon2c9bd39a0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adfe6f40208
+DECL|struct|__anon2c9bd39a0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2adfe6f40308
+DECL|struct|__anon2c9bd39a0308
 block|{
 DECL|member|used_count
 name|signed
@@ -3028,23 +3028,6 @@ argument_list|,
 name|undo_desc
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_image_floating_sel
-argument_list|(
-name|image
-argument_list|)
-condition|)
-name|floating_sel_relax
-argument_list|(
-name|gimp_image_floating_sel
-argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 comment|/*  Push the image type to the stack  */
 name|gimp_image_undo_push_image_type
 argument_list|(
@@ -4027,23 +4010,6 @@ operator|->
 name|delete_func
 argument_list|(
 name|quantobj
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_image_floating_sel
-argument_list|(
-name|image
-argument_list|)
-condition|)
-name|floating_sel_rigor
-argument_list|(
-name|gimp_image_floating_sel
-argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_undo_group_end

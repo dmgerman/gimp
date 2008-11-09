@@ -131,25 +131,14 @@ name|opacity_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon29b17a870108
+DECL|struct|__anon28709a3d0108
 block|{
-DECL|member|backing_store
-name|TileManager
-modifier|*
-name|backing_store
-decl_stmt|;
-comment|/*  for obscured regions           */
 DECL|member|drawable
 name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
 comment|/*  floating sel is attached to    */
-DECL|member|initial
-name|gboolean
-name|initial
-decl_stmt|;
-comment|/*  is fs composited yet?          */
 DECL|member|boundary_known
 name|gboolean
 name|boundary_known

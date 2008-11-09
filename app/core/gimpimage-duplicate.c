@@ -342,13 +342,6 @@ condition|(
 name|floating_layer
 condition|)
 block|{
-name|floating_sel_relax
-argument_list|(
-name|floating_layer
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|floating_sel_drawable
 operator|=
 name|floating_layer

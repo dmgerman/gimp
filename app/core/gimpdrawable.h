@@ -736,6 +736,11 @@ name|width
 parameter_list|,
 name|gint
 name|height
+parameter_list|,
+name|TileManager
+modifier|*
+modifier|*
+name|temp_tiles
 parameter_list|)
 function_decl|;
 end_function_decl

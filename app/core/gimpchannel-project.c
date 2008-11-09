@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"paint-funcs/paint-funcs.h"
 end_include
 
@@ -92,6 +98,10 @@ decl_stmt|;
 name|PixelRegion
 name|srcPR
 decl_stmt|;
+name|TileManager
+modifier|*
+name|temp_tiles
+decl_stmt|;
 name|guchar
 name|col
 index|[
@@ -144,6 +154,9 @@ argument_list|,
 name|width
 argument_list|,
 name|height
+argument_list|,
+operator|&
+name|temp_tiles
 argument_list|)
 expr_stmt|;
 if|if
@@ -215,6 +228,15 @@ operator|)
 argument_list|)
 expr_stmt|;
 block|}
+if|if
+condition|(
+name|temp_tiles
+condition|)
+name|tile_manager_unref
+argument_list|(
+name|temp_tiles
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

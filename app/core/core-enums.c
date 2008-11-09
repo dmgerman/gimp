@@ -4589,22 +4589,6 @@ literal|"fs-to-layer"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_FS_RIGOR
-block|,
-literal|"GIMP_UNDO_FS_RIGOR"
-block|,
-literal|"fs-rigor"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_FS_RELAX
-block|,
-literal|"GIMP_UNDO_FS_RELAX"
-block|,
-literal|"fs-relax"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_TRANSFORM
 block|,
 literal|"GIMP_UNDO_TRANSFORM"
@@ -5633,32 +5617,6 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Floating selection to layer"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_UNDO_FS_RIGOR
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Rigor floating selection"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_UNDO_FS_RELAX
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Relax floating selection"
 argument_list|)
 block|,
 name|NULL

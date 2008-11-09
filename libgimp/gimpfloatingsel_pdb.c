@@ -19,6 +19,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_FLOATING_SEL_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpfloatingsel_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * gimp_floating_sel_remove:  * @floating_sel_ID: The floating selection.  *  * Remove the specified floating selection from its associated  * drawable.  *  * This procedure removes the floating selection completely, without  * any side effects. The associated drawable is then set to active.  *  * Returns: TRUE on success.  */
 end_comment
@@ -295,7 +313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Rigor the floating selection.  *  * This procedure rigors the floating selection.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -369,7 +387,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Relax the floating selection.  *  * This procedure relaxes the floating selection.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb204af0103
+DECL|enum|__anon277dd4d60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +385,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb204af0203
+DECL|enum|__anon277dd4d60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6851,17 +6851,6 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|floating_sel
-condition|)
-name|floating_sel_relax
-argument_list|(
-name|floating_sel
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|image
 operator|->
 name|active
@@ -6879,14 +6868,6 @@ if|if
 condition|(
 name|floating_sel
 condition|)
-block|{
-name|floating_sel_rigor
-argument_list|(
-name|floating_sel
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_update
 argument_list|(
 name|GIMP_DRAWABLE
@@ -6915,7 +6896,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 comment|/*  If there is an active channel and we mess with the components,        *  the active channel gets unset...        */
 name|gimp_image_unset_active_channel
 argument_list|(
