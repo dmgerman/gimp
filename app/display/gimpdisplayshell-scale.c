@@ -704,6 +704,11 @@ operator|&
 name|scaled_viewport_offset_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+block|{
 name|horizontal_lower
 operator|-=
 name|img2real
@@ -780,6 +785,7 @@ name|scaled_viewport_offset_y
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* Finally setup the actual rulers */
 name|gimp_ruler_set_range
 argument_list|(
