@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcursorview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -73,6 +67,12 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplay.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcursorview.h"
 end_include
 
 begin_include

@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcursorview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -49,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpcursorview.h"
 end_include
 
 begin_include

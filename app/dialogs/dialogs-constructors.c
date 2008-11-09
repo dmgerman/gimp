@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcursorview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdataeditor.h"
 end_include
 
@@ -265,6 +259,12 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpvectorstreeview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpcursorview.h"
 end_include
 
 begin_include
