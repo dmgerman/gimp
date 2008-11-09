@@ -653,8 +653,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_navigation_editor_context_changed (GimpContext * context,GimpDisplay * display,GimpNavigationEditor * editor)
-name|gimp_navigation_editor_context_changed
+DECL|function|gimp_navigation_editor_display_changed (GimpContext * context,GimpDisplay * display,GimpNavigationEditor * editor)
+name|gimp_navigation_editor_display_changed
 parameter_list|(
 name|GimpContext
 modifier|*
@@ -728,12 +728,6 @@ name|display
 init|=
 name|NULL
 decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-init|=
-name|NULL
-decl_stmt|;
 if|if
 condition|(
 name|editor
@@ -747,7 +741,7 @@ name|editor
 operator|->
 name|context
 argument_list|,
-name|gimp_navigation_editor_context_changed
+name|gimp_navigation_editor_display_changed
 argument_list|,
 name|editor
 argument_list|)
@@ -761,6 +755,8 @@ name|context
 expr_stmt|;
 if|if
 condition|(
+name|editor
+operator|->
 name|context
 condition|)
 block|{
@@ -772,7 +768,7 @@ literal|"display-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_navigation_editor_context_changed
+name|gimp_navigation_editor_display_changed
 argument_list|)
 argument_list|,
 name|editor
@@ -800,24 +796,15 @@ argument_list|,
 name|context
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|display
-condition|)
-name|shell
-operator|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|display
-operator|->
-name|shell
-argument_list|)
-expr_stmt|;
-name|gimp_navigation_editor_set_shell
+name|gimp_navigation_editor_display_changed
 argument_list|(
 name|editor
+operator|->
+name|context
 argument_list|,
-name|shell
+name|display
+argument_list|,
+name|editor
 argument_list|)
 expr_stmt|;
 block|}
