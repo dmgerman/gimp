@@ -138,12 +138,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppalette.h"
 end_include
 
@@ -407,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c9bd39a0103
+DECL|enum|__anon295a34030103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1442,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9bd39a0208
+DECL|struct|__anon295a34030208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1685,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9bd39a0308
+DECL|struct|__anon295a34030308
 block|{
 DECL|member|used_count
 name|signed

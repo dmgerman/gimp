@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppickable.h"
 end_include
 

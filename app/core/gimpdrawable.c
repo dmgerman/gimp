@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplayer-floating-sel.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -173,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6396040103
+DECL|enum|__anon2c6e252a0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
