@@ -1372,8 +1372,12 @@ argument_list|,
 name|GIMP_MESSAGE_WARNING
 argument_list|,
 name|error
+condition|?
+name|error
 operator|->
 name|message
+else|:
+literal|"NULL"
 argument_list|)
 expr_stmt|;
 name|g_clear_error
