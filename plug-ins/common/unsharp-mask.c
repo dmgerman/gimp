@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43b4a10108
+DECL|struct|__anon2b02b8530108
 block|{
 DECL|member|radius
 name|gdouble
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43b4a10208
+DECL|struct|__anon2b02b8530208
 block|{
 DECL|member|run
 name|gboolean
@@ -1835,7 +1835,7 @@ name|show_progress
 operator|&&
 name|row
 operator|%
-literal|8
+literal|16
 operator|==
 literal|0
 condition|)
@@ -1922,7 +1922,7 @@ name|show_progress
 operator|&&
 name|col
 operator|%
-literal|8
+literal|16
 operator|==
 literal|0
 condition|)
@@ -2108,7 +2108,7 @@ name|show_progress
 operator|&&
 name|row
 operator|%
-literal|8
+literal|16
 operator|==
 literal|0
 condition|)
