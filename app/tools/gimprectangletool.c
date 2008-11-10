@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f821c0103
+DECL|enum|__anon2baacf350103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5f821c0203
+DECL|enum|__anon2baacf350203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c5f821c0303
+DECL|enum|__anon2baacf350303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -317,6 +317,19 @@ parameter_list|,
 name|b
 parameter_list|)
 value|(fabs ((a) - (b))< 0.0001)
+end_define
+
+begin_define
+DECL|macro|PIXEL_FEQUAL (a,b)
+define|#
+directive|define
+name|PIXEL_FEQUAL
+parameter_list|(
+name|a
+parameter_list|,
+name|b
+parameter_list|)
+value|(fabs ((a) - (b))< 0.5)
 end_define
 
 begin_define
@@ -8218,7 +8231,7 @@ operator|==
 literal|0
 operator|&&
 operator|!
-name|FEQUAL
+name|PIXEL_FEQUAL
 argument_list|(
 name|private
 operator|->
@@ -8261,7 +8274,7 @@ operator|==
 literal|0
 operator|&&
 operator|!
-name|FEQUAL
+name|PIXEL_FEQUAL
 argument_list|(
 name|private
 operator|->
@@ -8304,7 +8317,7 @@ operator|==
 literal|0
 operator|&&
 operator|!
-name|FEQUAL
+name|PIXEL_FEQUAL
 argument_list|(
 name|private
 operator|->
@@ -8386,7 +8399,7 @@ operator|==
 literal|0
 operator|&&
 operator|!
-name|FEQUAL
+name|PIXEL_FEQUAL
 argument_list|(
 name|private
 operator|->
