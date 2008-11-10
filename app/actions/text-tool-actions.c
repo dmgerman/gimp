@@ -313,7 +313,7 @@ name|GIMP_STOCK_PATH
 block|,
 name|N_
 argument_list|(
-literal|"Text along Path"
+literal|"Text _along Path"
 argument_list|)
 block|,
 literal|""
