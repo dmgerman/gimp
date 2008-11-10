@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-colormap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdrawable-preview.h"
 end_include
 
@@ -560,9 +554,9 @@ name|gimp_drawable_indexed_preview
 argument_list|(
 name|drawable
 argument_list|,
-name|gimp_image_get_colormap
+name|gimp_drawable_get_colormap
 argument_list|(
-name|image
+name|drawable
 argument_list|)
 argument_list|,
 name|src_x

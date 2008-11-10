@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpimage-colormap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimplayer.h"
 end_include
 
@@ -327,9 +321,9 @@ name|GIMP_INDEXED_IMAGE
 case|:
 name|colormap
 operator|=
-name|gimp_image_get_colormap
+name|gimp_drawable_get_colormap
 argument_list|(
-name|image
+name|drawable
 argument_list|)
 operator|,
 name|initial_mode
@@ -346,9 +340,9 @@ name|GIMP_INDEXEDA_IMAGE
 case|:
 name|colormap
 operator|=
-name|gimp_image_get_colormap
+name|gimp_drawable_get_colormap
 argument_list|(
-name|image
+name|drawable
 argument_list|)
 operator|,
 name|initial_mode
