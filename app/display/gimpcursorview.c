@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e5db7b0103
+DECL|enum|__anon297473080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3346,7 +3346,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_cursor_view_update_cursor (GimpCursorView * view,GimpImage * image,GimpUnit unit,gdouble x,gdouble y)
+DECL|function|gimp_cursor_view_update_cursor (GimpCursorView * view,GimpImage * image,GimpUnit shell_unit,gdouble x,gdouble y)
 name|gimp_cursor_view_update_cursor
 parameter_list|(
 name|GimpCursorView
@@ -3358,7 +3358,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpUnit
-name|unit
+name|shell_unit
 parameter_list|,
 name|gdouble
 name|x
@@ -3367,6 +3367,11 @@ name|gdouble
 name|y
 parameter_list|)
 block|{
+name|GimpUnit
+name|unit
+init|=
+name|shell_unit
+decl_stmt|;
 name|gboolean
 name|in_image
 decl_stmt|;
@@ -3726,6 +3731,16 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Show the selection info from the image under the cursor if any */
+name|gimp_cursor_view_update_selection_info
+argument_list|(
+name|view
+argument_list|,
+name|image
+argument_list|,
+name|shell_unit
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -3825,6 +3840,20 @@ name|view
 operator|->
 name|color_frame_2
 argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/* Start showing selection info from the active image again */
+name|gimp_cursor_view_update_selection_info
+argument_list|(
+name|view
+argument_list|,
+name|view
+operator|->
+name|image
+argument_list|,
+name|view
+operator|->
+name|unit
 argument_list|)
 expr_stmt|;
 block|}

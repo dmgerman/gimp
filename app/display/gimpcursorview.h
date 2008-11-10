@@ -148,7 +148,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpUnit
-name|unit
+name|shell_unit
 parameter_list|,
 name|gdouble
 name|x
