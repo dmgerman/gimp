@@ -499,7 +499,7 @@ name|gimp_curve_set_curve_type
 argument_list|(
 name|curve
 argument_list|,
-name|GIMP_CURVE_SMOOTH
+name|GIMP_CURVE_FREE
 argument_list|)
 expr_stmt|;
 for|for
