@@ -110,6 +110,14 @@ name|gint
 modifier|*
 name|image_height
 parameter_list|,
+name|GimpImageType
+modifier|*
+name|type
+parameter_list|,
+name|gint
+modifier|*
+name|num_layers
+parameter_list|,
 name|GError
 modifier|*
 modifier|*
