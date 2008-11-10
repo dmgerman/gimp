@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62fb600103
+DECL|enum|__anon29d8f18c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -857,6 +857,27 @@ expr_stmt|;
 name|proj
 operator|->
 name|sink_node
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|proj
+operator|->
+name|processor
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|proj
+operator|->
+name|processor
+argument_list|)
+expr_stmt|;
+name|proj
+operator|->
+name|processor
 operator|=
 name|NULL
 expr_stmt|;

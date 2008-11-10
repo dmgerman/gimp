@@ -175,6 +175,11 @@ name|GeglNode
 modifier|*
 name|sink_node
 decl_stmt|;
+DECL|member|processor
+name|GeglProcessor
+modifier|*
+name|processor
+decl_stmt|;
 DECL|member|update_areas
 name|GSList
 modifier|*
