@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2936ee900103
+DECL|enum|__anon29e5db7b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1462,6 +1462,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
+comment|/* Width */
 name|_
 argument_list|(
 literal|"W"
@@ -1517,6 +1518,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
+comment|/* Height */
 name|_
 argument_list|(
 literal|"H"
