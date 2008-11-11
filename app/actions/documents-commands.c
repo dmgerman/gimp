@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6528410108
+DECL|struct|__anon2bde688a0108
 block|{
 DECL|member|name
 specifier|const
@@ -892,9 +892,6 @@ operator|->
 name|documents
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
 name|gtk_recent_manager_purge_items
 argument_list|(
 name|gtk_recent_manager_get_default
@@ -903,6 +900,10 @@ argument_list|,
 operator|&
 name|error
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|error
 condition|)
 block|{
 name|gimp_message_literal
