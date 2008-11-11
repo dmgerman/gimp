@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c558e190103
+DECL|enum|__anon2b0e0df00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c558e190203
+DECL|enum|__anon2b0e0df00203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2765,6 +2765,9 @@ decl_stmt|;
 name|GdkGeometry
 name|geometry
 decl_stmt|;
+name|GdkWindowHints
+name|geometry_mask
+decl_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -2835,6 +2838,24 @@ operator|.
 name|height
 expr_stmt|;
 block|}
+name|geometry_mask
+operator|=
+name|GDK_HINT_MIN_SIZE
+expr_stmt|;
+comment|/*  Only set user pos on the empty display because it gets a pos    *  set by gimp. All other displays should be placed by the window    *  manager. See http://bugzilla.gnome.org/show_bug.cgi?id=559580    */
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|display
+operator|->
+name|image
+condition|)
+name|geometry_mask
+operator||=
+name|GDK_HINT_USER_POS
+expr_stmt|;
 name|gtk_window_set_geometry_hints
 argument_list|(
 name|GTK_WINDOW
@@ -2847,9 +2868,7 @@ argument_list|,
 operator|&
 name|geometry
 argument_list|,
-name|GDK_HINT_MIN_SIZE
-operator||
-name|GDK_HINT_USER_POS
+name|geometry_mask
 argument_list|)
 expr_stmt|;
 block|}
