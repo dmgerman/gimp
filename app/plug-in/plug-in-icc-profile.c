@@ -681,9 +681,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -712,9 +712,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -939,9 +939,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -970,9 +970,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 name|_
 argument_list|(
