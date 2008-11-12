@@ -1505,9 +1505,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PDB_ERROR
 argument_list|,
-literal|0
+name|GIMP_PDB_FAILED
 argument_list|,
 name|g_value_get_string
 argument_list|(

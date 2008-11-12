@@ -19,8 +19,15 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bf23bf0103
+DECL|enum|__anon2c37a9340103
 block|{
+DECL|enumerator|GIMP_PDB_FAILED
+name|GIMP_PDB_FAILED
+block|,
+comment|/* generic error condition */
+DECL|enumerator|GIMP_PDB_CANCELLED
+name|GIMP_PDB_CANCELLED
+block|,
 DECL|enumerator|GIMP_PDB_PROCEDURE_NOT_FOUND
 name|GIMP_PDB_PROCEDURE_NOT_FOUND
 block|,
@@ -29,9 +36,6 @@ name|GIMP_PDB_INVALID_ARGUMENT
 block|,
 DECL|enumerator|GIMP_PDB_INVALID_RETURN_VALUE
 name|GIMP_PDB_INVALID_RETURN_VALUE
-block|,
-DECL|enumerator|GIMP_PDB_CANCELLED
-name|GIMP_PDB_CANCELLED
 block|,
 DECL|enumerator|GIMP_PDB_INTERNAL_ERROR
 name|GIMP_PDB_INTERNAL_ERROR

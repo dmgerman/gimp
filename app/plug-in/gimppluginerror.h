@@ -19,8 +19,12 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a20d9090103
+DECL|enum|__anon2a2b77210103
 block|{
+DECL|enumerator|GIMP_PLUG_IN_FAILED
+name|GIMP_PLUG_IN_FAILED
+block|,
+comment|/* generic error condition */
 DECL|enumerator|GIMP_PLUG_IN_EXECUTION_FAILED
 name|GIMP_PLUG_IN_EXECUTION_FAILED
 block|,

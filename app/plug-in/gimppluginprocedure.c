@@ -79,6 +79,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppluginerror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimppluginprocedure.h"
 end_include
 
@@ -96,7 +102,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2946c2a10103
+DECL|enum|__anon2937c6a40103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -1524,9 +1530,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\"\n"
@@ -2154,9 +2160,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n"
 literal|"attempted to install procedure \"%s\" "
@@ -2279,9 +2285,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_ERROR
 argument_list|,
-literal|0
+name|GIMP_PLUG_IN_FAILED
 argument_list|,
 literal|"Plug-In \"%s\"\n(%s)\n\n"
 literal|"attempted to install %s procedure \"%s\" "
