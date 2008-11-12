@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-undo-push.h"
 end_include
 
@@ -167,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0c87b0103
+DECL|enum|__anon2bbe0aab0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -189,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b0c87b0203
+DECL|enum|__anon2bbe0aab0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2903,9 +2909,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -5151,9 +5157,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -5209,9 +5215,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

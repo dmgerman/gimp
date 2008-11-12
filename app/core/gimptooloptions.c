@@ -92,6 +92,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolinfo.h"
 end_include
 
@@ -109,7 +115,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288dca030103
+DECL|enum|__anon2af902940103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -829,9 +835,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

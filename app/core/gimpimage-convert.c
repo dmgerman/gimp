@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -401,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon295a34030103
+DECL|enum|__anon2b67670a0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1442,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a34030208
+DECL|struct|__anon2b67670a0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1685,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295a34030308
+DECL|struct|__anon2b67670a0308
 block|{
 DECL|member|used_count
 name|signed
@@ -2928,9 +2934,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -96,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5fcf40108
+DECL|struct|__anon28b6cd3a0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -216,7 +222,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5fcf40208
+DECL|struct|__anon28b6cd3a0208
 block|{
 DECL|member|id
 name|gchar
@@ -1375,9 +1381,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -1391,13 +1397,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -6034,7 +6040,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf5fcf40308
+DECL|struct|__anon28b6cd3a0308
 block|{
 DECL|member|strokes
 name|GList

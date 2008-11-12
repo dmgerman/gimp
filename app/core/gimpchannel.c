@@ -120,6 +120,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage.h"
 end_include
 
@@ -197,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c96792e0103
+DECL|enum|__anon27de777d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3391,9 +3397,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

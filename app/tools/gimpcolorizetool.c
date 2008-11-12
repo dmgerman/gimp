@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -596,13 +602,13 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

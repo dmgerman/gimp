@@ -1270,9 +1270,12 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
 argument_list|,
 name|_
 argument_list|(

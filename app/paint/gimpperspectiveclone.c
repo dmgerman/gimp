@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -599,13 +605,14 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Perspective Clone does not operate on indexed layers."
+literal|"Perspective Clone does not operate on "
+literal|"indexed layers."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpguide.h"
 end_include
 
@@ -300,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c89757f0103
+DECL|enum|__anon27bc11b60103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -385,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c89757f0203
+DECL|enum|__anon27bc11b60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12625,9 +12631,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -12749,9 +12755,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -13590,9 +13596,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -13768,9 +13774,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -14472,9 +14478,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
@@ -14650,9 +14656,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

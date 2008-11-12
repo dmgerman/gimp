@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimperror.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c60fa200103
+DECL|enum|__anon2b14e14b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -812,9 +818,9 @@ name|g_set_error_literal
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_ERROR
 argument_list|,
-literal|0
+name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(

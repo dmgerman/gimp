@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5617a70103
+DECL|enum|__anon275dd8230103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -1011,9 +1011,12 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|G_FILE_ERROR
 argument_list|,
-literal|0
+name|g_file_error_from_errno
+argument_list|(
+name|errno
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
