@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpconfig-error.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpconfig-path.h"
 end_include
 
@@ -954,9 +960,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_CONFIG_ERROR
 argument_list|,
-literal|0
+name|GIMP_CONFIG_ERROR_PARSE
 argument_list|,
 name|_
 argument_list|(
