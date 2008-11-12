@@ -110,7 +110,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1514a40103
+DECL|enum|__anon2c4f4ba90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2818,9 +2818,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::EnumObjects failed: %s"
 argument_list|,
@@ -3033,9 +3033,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::EnumObjects failed: %s"
 argument_list|,
@@ -4766,9 +4766,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"CreateEvent failed: %s"
 argument_list|,
@@ -4883,9 +4883,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::GetParameters failed: %s"
 argument_list|,
@@ -5418,9 +5418,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::SetDataFormat failed: %s"
 argument_list|,
@@ -5459,9 +5459,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::SetEventNotification failed: %s"
 argument_list|,
@@ -5496,9 +5496,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::Acquire failed: %s"
 argument_list|,
@@ -5543,9 +5543,9 @@ name|g_set_error
 argument_list|(
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInputDevice8::GetDeviceState failed: %s"
 argument_list|,

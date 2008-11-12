@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e93a7b0103
+DECL|enum|__anon2a30f9670103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1263,6 +1263,27 @@ argument_list|,
 name|name
 argument_list|,
 name|const_static_values
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_module_error_quark:  *  * This function is never called directly. Use GIMP_MODULE_ERROR() instead.  *  * Return value: the #GQuark that defines the GIMP module error domain.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|GQuark
+DECL|function|gimp_module_error_quark (void)
+name|gimp_module_error_quark
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|g_quark_from_static_string
+argument_list|(
+literal|"gimp-module-error-quark"
 argument_list|)
 return|;
 block|}

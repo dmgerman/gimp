@@ -27,6 +27,12 @@ directive|include
 file|"gimpinputdevicestore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"libgimpmodule/gimpmodule.h"
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -53,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e275af0103
+DECL|enum|__anon2b9614150103
 block|{
 DECL|enumerator|COLUMN_UDI
 name|COLUMN_UDI
@@ -69,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e275af0203
+DECL|enum|__anon2b9614150203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -82,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e275af0303
+DECL|enum|__anon2b9614150303
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -641,16 +647,16 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 operator|&
 name|store
 operator|->
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"Unable to connect to hald"
 argument_list|)

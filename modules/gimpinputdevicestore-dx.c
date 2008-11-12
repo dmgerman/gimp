@@ -89,12 +89,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpmodule/gimpmodule.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpinputdevicestore.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ac8720103
+DECL|enum|__anon2aad71520103
 block|{
 DECL|enumerator|COLUMN_GUID
 name|COLUMN_GUID
@@ -113,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ac8720203
+DECL|enum|__anon2aad71520203
 block|{
 DECL|enumerator|DEVICE_ADDED
 name|DEVICE_ADDED
@@ -743,16 +749,16 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 operator|&
 name|store
 operator|->
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"Could not create aux window"
 argument_list|)
@@ -773,16 +779,16 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 operator|&
 name|store
 operator|->
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"Could not load dinput8.dll"
 argument_list|)
@@ -808,16 +814,16 @@ operator|==
 name|NULL
 condition|)
 block|{
-name|g_set_error
+name|g_set_error_literal
 argument_list|(
 operator|&
 name|store
 operator|->
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"Could not find DirectInput8Create in dinput8.dll"
 argument_list|)
@@ -865,9 +871,9 @@ name|store
 operator|->
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"DirectInput8Create failed: %s"
 argument_list|,
@@ -911,9 +917,9 @@ name|store
 operator|->
 name|error
 argument_list|,
-literal|0
+name|GIMP_MODULE_ERROR
 argument_list|,
-literal|0
+name|GIMP_MODULE_FAILED
 argument_list|,
 literal|"IDirectInput8::EnumDevices failed: %s"
 argument_list|,

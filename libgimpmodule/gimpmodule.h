@@ -53,7 +53,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b4d43380103
+DECL|enum|__anon2b08ad060103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
@@ -73,6 +73,38 @@ comment|/* there are no instances allocated of                                  
 DECL|typedef|GimpModuleState
 block|}
 name|GimpModuleState
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_MODULE_ERROR
+define|#
+directive|define
+name|GIMP_MODULE_ERROR
+value|(gimp_module_error_quark ())
+end_define
+
+begin_decl_stmt
+name|GQuark
+name|gimp_module_error_quark
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon2b08ad060203
+block|{
+DECL|enumerator|GIMP_MODULE_FAILED
+name|GIMP_MODULE_FAILED
+comment|/* generic error condition */
+DECL|typedef|GimpModuleError
+block|}
+name|GimpModuleError
 typedef|;
 end_typedef
 
