@@ -235,10 +235,6 @@ name|MIN_HANDLE_SIZE
 value|6
 end_define
 
-begin_comment
-comment|/*  local function prototypes  */
-end_comment
-
 begin_function_decl
 specifier|static
 name|GObject
