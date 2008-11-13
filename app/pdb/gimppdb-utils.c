@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/file-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"text/gimptextlayer.h"
 end_include
 
@@ -1593,6 +1599,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -1629,6 +1639,16 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|name
+operator|=
+name|file_utils_uri_display_basename
+argument_list|(
+name|gimp_image_get_uri
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -1643,13 +1663,7 @@ literal|"Image '%s' (%d) is of type '%s', "
 literal|"but an image of type '%s' is expected"
 argument_list|)
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
+name|name
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
@@ -1672,6 +1686,11 @@ name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
 name|type
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 return|return
@@ -1698,6 +1717,10 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -1734,6 +1757,16 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|name
+operator|=
+name|file_utils_uri_display_basename
+argument_list|(
+name|gimp_image_get_uri
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_set_error
 argument_list|(
 name|error
@@ -1747,13 +1780,7 @@ argument_list|(
 literal|"Image '%s' (%d) is already of type '%s'"
 argument_list|)
 argument_list|,
-name|gimp_object_get_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
+name|name
 argument_list|,
 name|gimp_image_get_ID
 argument_list|(
@@ -1766,6 +1793,11 @@ name|GIMP_TYPE_IMAGE_BASE_TYPE
 argument_list|,
 name|type
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|name
 argument_list|)
 expr_stmt|;
 return|return
