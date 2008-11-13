@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpeditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpmenufactory.h"
 end_include
 
@@ -149,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297473080103
+DECL|enum|__anon2c03241a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -161,9 +155,9 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_GimpCursorView
+DECL|struct|_GimpCursorViewPriv
 struct|struct
-name|_GimpCursorView
+name|_GimpCursorViewPriv
 block|{
 DECL|member|parent_instance
 name|GimpEditor
@@ -256,19 +250,6 @@ decl_stmt|;
 DECL|member|unit
 name|GimpUnit
 name|unit
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpCursorViewClass
-struct|struct
-name|_GimpCursorViewClass
-block|{
-DECL|member|parent_class
-name|GimpEditorClass
-name|parent_class
 decl_stmt|;
 block|}
 struct|;
@@ -632,6 +613,16 @@ name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpCursorViewPriv
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -663,11 +654,28 @@ name|content_spacing
 decl_stmt|;
 name|view
 operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|view
+argument_list|,
+name|GIMP_TYPE_CURSOR_VIEW
+argument_list|,
+name|GimpCursorViewPriv
+argument_list|)
+expr_stmt|;
+name|view
+operator|->
+name|priv
+operator|->
 name|sample_merged
 operator|=
 name|TRUE
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|context
 operator|=
@@ -675,17 +683,23 @@ name|NULL
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|shell
 operator|=
 name|NULL
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 operator|=
 name|NULL
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|unit
 operator|=
@@ -709,6 +723,8 @@ expr_stmt|;
 comment|/* cursor information */
 name|view
 operator|->
+name|priv
+operator|->
 name|coord_hbox
 operator|=
 name|gtk_hbox_new
@@ -727,6 +743,8 @@ argument_list|)
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|coord_hbox
 argument_list|,
 name|FALSE
@@ -740,10 +758,14 @@ name|gtk_widget_show
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|coord_hbox
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_hbox
 operator|=
@@ -763,6 +785,8 @@ argument_list|)
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_hbox
 argument_list|,
 name|FALSE
@@ -775,6 +799,8 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_hbox
 argument_list|)
@@ -795,6 +821,8 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|coord_hbox
 argument_list|)
@@ -861,6 +889,8 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|pixel_x_label
 operator|=
 name|gtk_label_new
@@ -876,6 +906,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_x_label
 argument_list|)
@@ -907,6 +939,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|pixel_x_label
 argument_list|,
 literal|1
@@ -915,6 +949,8 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_y_label
 operator|=
@@ -931,6 +967,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_y_label
 argument_list|)
@@ -961,6 +999,8 @@ argument_list|,
 literal|0.5
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_y_label
 argument_list|,
@@ -986,6 +1026,8 @@ name|GTK_BOX
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|coord_hbox
 argument_list|)
 argument_list|,
@@ -1051,6 +1093,8 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|unit_x_label
 operator|=
 name|gtk_label_new
@@ -1066,6 +1110,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|unit_x_label
 argument_list|)
@@ -1097,6 +1143,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|unit_x_label
 argument_list|,
 literal|1
@@ -1105,6 +1153,8 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|unit_y_label
 operator|=
@@ -1121,6 +1171,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|unit_y_label
 argument_list|)
@@ -1152,6 +1204,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|unit_y_label
 argument_list|,
 literal|1
@@ -1175,6 +1229,8 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_hbox
 argument_list|)
@@ -1241,6 +1297,8 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_x_label
 operator|=
 name|gtk_label_new
@@ -1256,6 +1314,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_x_label
 argument_list|)
@@ -1287,6 +1347,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_x_label
 argument_list|,
 literal|1
@@ -1295,6 +1357,8 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_y_label
 operator|=
@@ -1311,6 +1375,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_y_label
 argument_list|)
@@ -1342,6 +1408,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_y_label
 argument_list|,
 literal|1
@@ -1361,6 +1429,8 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_hbox
 argument_list|)
@@ -1427,6 +1497,8 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_width_label
 operator|=
 name|gtk_label_new
@@ -1442,6 +1514,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_width_label
 argument_list|)
@@ -1474,6 +1548,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_width_label
 argument_list|,
 literal|1
@@ -1482,6 +1558,8 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_height_label
 operator|=
@@ -1498,6 +1576,8 @@ argument_list|(
 name|GTK_MISC
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_height_label
 argument_list|)
@@ -1530,6 +1610,8 @@ literal|0.5
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_height_label
 argument_list|,
 literal|1
@@ -1539,6 +1621,8 @@ argument_list|)
 expr_stmt|;
 comment|/* color information */
 name|view
+operator|->
+name|priv
 operator|->
 name|color_hbox
 operator|=
@@ -1558,6 +1642,8 @@ argument_list|)
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|color_hbox
 argument_list|,
 name|FALSE
@@ -1571,10 +1657,14 @@ name|gtk_widget_show
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_hbox
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_1
 operator|=
@@ -1586,6 +1676,8 @@ argument_list|(
 name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_1
 argument_list|)
@@ -1599,10 +1691,14 @@ name|GTK_BOX
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_hbox
 argument_list|)
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_1
 argument_list|,
@@ -1617,10 +1713,14 @@ name|gtk_widget_show
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_frame_1
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 operator|=
@@ -1632,6 +1732,8 @@ argument_list|(
 name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|)
@@ -1645,10 +1747,14 @@ name|GTK_BOX
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_hbox
 argument_list|)
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|,
@@ -1662,6 +1768,8 @@ expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|)
@@ -1801,6 +1909,8 @@ name|PROP_SAMPLE_MERGED
 case|:
 name|view
 operator|->
+name|priv
+operator|->
 name|sample_merged
 operator|=
 name|g_value_get_boolean
@@ -1868,6 +1978,8 @@ argument_list|(
 name|value
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|sample_merged
 argument_list|)
@@ -1987,6 +2099,8 @@ name|frame
 operator|=
 name|view
 operator|->
+name|priv
+operator|->
 name|color_frame_1
 expr_stmt|;
 elseif|else
@@ -2005,6 +2119,8 @@ condition|)
 name|frame
 operator|=
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 expr_stmt|;
@@ -2113,6 +2229,8 @@ name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_frame_1
 argument_list|)
 operator|->
@@ -2157,6 +2275,8 @@ argument_list|,
 name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|)
@@ -2431,6 +2551,8 @@ name|GTK_BOX
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|coord_hbox
 argument_list|)
 argument_list|,
@@ -2443,6 +2565,8 @@ name|GTK_BOX
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_hbox
 argument_list|)
 argument_list|,
@@ -2454,6 +2578,8 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_hbox
 argument_list|)
@@ -2504,12 +2630,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|context
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|context
 argument_list|,
@@ -2522,6 +2652,8 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|context
 argument_list|,
 name|gimp_cursor_view_image_changed
@@ -2532,6 +2664,8 @@ expr_stmt|;
 block|}
 name|view
 operator|->
+name|priv
+operator|->
 name|context
 operator|=
 name|context
@@ -2540,12 +2674,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|context
 condition|)
 block|{
 name|g_signal_connect_swapped
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|context
 argument_list|,
@@ -2562,6 +2700,8 @@ expr_stmt|;
 name|g_signal_connect_swapped
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|context
 argument_list|,
@@ -2598,6 +2738,8 @@ name|display
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|context
 argument_list|)
 expr_stmt|;
@@ -2608,6 +2750,8 @@ argument_list|,
 name|image
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|context
 argument_list|)
@@ -2648,6 +2792,8 @@ name|image
 operator|==
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 condition|)
 return|return;
@@ -2655,12 +2801,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|image
 argument_list|,
@@ -2672,6 +2822,8 @@ expr_stmt|;
 block|}
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 operator|=
 name|image
@@ -2680,12 +2832,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 condition|)
 block|{
 name|g_signal_connect_swapped
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|image
 argument_list|,
@@ -2705,6 +2861,8 @@ argument_list|(
 name|view
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|image
 argument_list|)
@@ -2733,9 +2891,13 @@ name|view
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|unit
 argument_list|)
@@ -2785,12 +2947,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|shell
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|shell
 argument_list|,
@@ -2802,6 +2968,8 @@ expr_stmt|;
 block|}
 name|view
 operator|->
+name|priv
+operator|->
 name|shell
 operator|=
 name|shell
@@ -2810,12 +2978,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|shell
 condition|)
 block|{
 name|g_signal_connect_swapped
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|shell
 argument_list|,
@@ -2837,6 +3009,8 @@ argument_list|,
 name|NULL
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|shell
 argument_list|)
@@ -2885,6 +3059,8 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|unit
 operator|!=
 name|new_unit
@@ -2896,12 +3072,16 @@ name|view
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 argument_list|,
 name|new_unit
 argument_list|)
 expr_stmt|;
 name|view
+operator|->
+name|priv
 operator|->
 name|unit
 operator|=
@@ -3047,6 +3227,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_x_label
 argument_list|)
 argument_list|,
@@ -3076,6 +3258,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_y_label
 argument_list|)
@@ -3107,6 +3291,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_width_label
 argument_list|)
 argument_list|,
@@ -3137,6 +3323,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_height_label
 argument_list|)
 argument_list|,
@@ -3151,6 +3339,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_x_label
 argument_list|)
@@ -3167,6 +3357,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_y_label
 argument_list|)
 argument_list|,
@@ -3182,6 +3374,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|selection_width_label
 argument_list|)
 argument_list|,
@@ -3196,6 +3390,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|selection_height_label
 argument_list|)
@@ -3291,12 +3487,16 @@ if|if
 condition|(
 name|view
 operator|->
+name|priv
+operator|->
 name|sample_merged
 operator|!=
 name|sample_merged
 condition|)
 block|{
 name|view
+operator|->
+name|priv
 operator|->
 name|sample_merged
 operator|=
@@ -3338,6 +3538,8 @@ argument_list|)
 expr_stmt|;
 return|return
 name|view
+operator|->
+name|priv
 operator|->
 name|sample_merged
 return|;
@@ -3488,6 +3690,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|pixel_x_label
 argument_list|)
 argument_list|,
@@ -3497,6 +3701,8 @@ expr_stmt|;
 name|gimp_cursor_view_set_label_italic
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_x_label
 argument_list|,
@@ -3530,6 +3736,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|pixel_y_label
 argument_list|)
 argument_list|,
@@ -3539,6 +3747,8 @@ expr_stmt|;
 name|gimp_cursor_view_set_label_italic
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_y_label
 argument_list|,
@@ -3572,6 +3782,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|unit_x_label
 argument_list|)
 argument_list|,
@@ -3581,6 +3793,8 @@ expr_stmt|;
 name|gimp_cursor_view_set_label_italic
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|unit_x_label
 argument_list|,
@@ -3614,6 +3828,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|unit_y_label
 argument_list|)
 argument_list|,
@@ -3623,6 +3839,8 @@ expr_stmt|;
 name|gimp_cursor_view_set_label_italic
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|unit_y_label
 argument_list|,
@@ -3656,6 +3874,8 @@ argument_list|)
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|sample_merged
 argument_list|,
 name|FALSE
@@ -3679,6 +3899,8 @@ name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_frame_1
 argument_list|)
 argument_list|,
@@ -3695,6 +3917,8 @@ argument_list|(
 name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|)
@@ -3716,6 +3940,8 @@ name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_frame_1
 argument_list|)
 argument_list|)
@@ -3725,6 +3951,8 @@ argument_list|(
 name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|)
@@ -3768,6 +3996,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|pixel_x_label
 argument_list|)
 argument_list|,
@@ -3782,6 +4012,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|pixel_y_label
 argument_list|)
@@ -3798,6 +4030,8 @@ name|GTK_LABEL
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|unit_x_label
 argument_list|)
 argument_list|,
@@ -3812,6 +4046,8 @@ argument_list|(
 name|GTK_LABEL
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|unit_y_label
 argument_list|)
@@ -3828,6 +4064,8 @@ name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|color_frame_1
 argument_list|)
 argument_list|)
@@ -3837,6 +4075,8 @@ argument_list|(
 name|GIMP_COLOR_FRAME
 argument_list|(
 name|view
+operator|->
+name|priv
 operator|->
 name|color_frame_2
 argument_list|)
@@ -3849,9 +4089,13 @@ name|view
 argument_list|,
 name|view
 operator|->
+name|priv
+operator|->
 name|image
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|unit
 argument_list|)
