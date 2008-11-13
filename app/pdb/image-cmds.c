@@ -3454,17 +3454,11 @@ name|floating_sel
 condition|)
 name|drawable
 operator|=
-name|GIMP_DRAWABLE
-argument_list|(
-name|GIMP_LAYER
-argument_list|(
 name|floating_sel
-argument_list|)
 operator|->
 name|fs
 operator|.
 name|drawable
-argument_list|)
 expr_stmt|;
 else|else
 name|drawable
