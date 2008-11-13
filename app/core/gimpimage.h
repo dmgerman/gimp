@@ -255,6 +255,12 @@ modifier|*
 name|save_proc
 decl_stmt|;
 comment|/*  last save procedure used     */
+DECL|member|display_name
+name|gchar
+modifier|*
+name|display_name
+decl_stmt|;
+comment|/*  display basename             */
 DECL|member|width
 DECL|member|height
 name|gint
@@ -1026,6 +1032,19 @@ modifier|*
 name|gimp_image_get_filename
 parameter_list|(
 specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_image_get_display_name
+parameter_list|(
 name|GimpImage
 modifier|*
 name|image

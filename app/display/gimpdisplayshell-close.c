@@ -406,10 +406,6 @@ name|source
 decl_stmt|;
 name|gchar
 modifier|*
-name|name
-decl_stmt|;
-name|gchar
-modifier|*
 name|title
 decl_stmt|;
 if|if
@@ -431,16 +427,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|name
-operator|=
-name|file_utils_uri_display_basename
-argument_list|(
-name|gimp_image_get_uri
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|title
 operator|=
 name|g_strdup_printf
@@ -450,12 +436,10 @@ argument_list|(
 literal|"Close %s"
 argument_list|)
 argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_image_get_display_name
 argument_list|(
-name|name
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|shell
@@ -724,20 +708,6 @@ name|box
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|name
-decl_stmt|;
-name|name
-operator|=
-name|file_utils_uri_display_basename
-argument_list|(
-name|gimp_image_get_uri
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|window
@@ -754,7 +724,10 @@ argument_list|(
 literal|"Close %s"
 argument_list|)
 argument_list|,
-name|name
+name|gimp_image_get_display_name
+argument_list|(
+name|image
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gtk_window_set_title
@@ -783,12 +756,10 @@ literal|"Save the changes to image '%s' "
 literal|"before closing?"
 argument_list|)
 argument_list|,
-name|name
-argument_list|)
-expr_stmt|;
-name|g_free
+name|gimp_image_get_display_name
 argument_list|(
-name|name
+name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

@@ -676,29 +676,18 @@ break|break;
 case|case
 literal|'f'
 case|:
-comment|/* pruned filename */
+comment|/* base filename */
 block|{
 specifier|const
 name|gchar
 modifier|*
-name|uri
+name|name
 init|=
-name|gimp_image_get_uri
+name|gimp_image_get_display_name
 argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|gchar
-modifier|*
-name|basename
-decl_stmt|;
-name|basename
-operator|=
-name|file_utils_uri_display_basename
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
 name|i
 operator|+=
 name|print
@@ -711,12 +700,7 @@ name|i
 argument_list|,
 literal|"%s"
 argument_list|,
-name|basename
-argument_list|)
-expr_stmt|;
-name|g_free
-argument_list|(
-name|basename
+name|name
 argument_list|)
 expr_stmt|;
 block|}
