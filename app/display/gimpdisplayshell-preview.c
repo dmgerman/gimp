@@ -1428,11 +1428,6 @@ decl_stmt|,
 name|dheight
 decl_stmt|;
 comment|/* dimensions of dest               */
-name|GdkPixbuf
-modifier|*
-name|area
-decl_stmt|;
-comment|/* quad sized area with dest pixels */
 name|gint
 name|c
 decl_stmt|;
@@ -1724,6 +1719,21 @@ name|dheight
 operator|-
 literal|1
 expr_stmt|;
+if|if
+condition|(
+name|minx
+operator|<=
+name|maxx
+operator|&&
+name|miny
+operator|<=
+name|maxy
+condition|)
+block|{
+name|GdkPixbuf
+modifier|*
+name|area
+decl_stmt|;
 name|area
 operator|=
 name|gdk_pixbuf_new
@@ -1817,6 +1827,7 @@ argument_list|(
 name|area
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
