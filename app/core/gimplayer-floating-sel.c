@@ -530,11 +530,12 @@ name|drawable
 operator|=
 name|NULL
 expr_stmt|;
+name|gimp_image_set_floating_selection
+argument_list|(
 name|image
-operator|->
-name|floating_sel
-operator|=
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
 name|gimp_item_set_visible
 argument_list|(
@@ -587,11 +588,6 @@ name|gimp_item_get_height
 argument_list|(
 name|item
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_image_floating_selection_changed
-argument_list|(
-name|image
 argument_list|)
 expr_stmt|;
 return|return
