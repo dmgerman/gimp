@@ -1851,7 +1851,7 @@ if|if
 condition|(
 name|layer
 operator|==
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -6646,7 +6646,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d290b60108
+DECL|struct|__anon288be5230108
 block|{
 DECL|member|info
 name|XcfInfo

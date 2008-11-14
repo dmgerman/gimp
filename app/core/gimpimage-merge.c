@@ -263,7 +263,7 @@ expr_stmt|;
 comment|/* if there's a floating selection, anchor it */
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -271,9 +271,10 @@ condition|)
 block|{
 name|floating_sel_anchor
 argument_list|(
+name|gimp_image_get_floating_selection
+argument_list|(
 name|image
-operator|->
-name|floating_sel
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|had_floating_sel
@@ -531,16 +532,17 @@ expr_stmt|;
 comment|/* if there's a floating selection, anchor it */
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
 condition|)
 name|floating_sel_anchor
 argument_list|(
+name|gimp_image_get_floating_selection
+argument_list|(
 name|image
-operator|->
-name|floating_sel
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

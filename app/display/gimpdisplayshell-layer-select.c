@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fbd7720108
+DECL|struct|__anon2c0721fc0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -814,7 +814,7 @@ return|return;
 comment|/*  If there is a floating selection, allow no advancement  */
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|layer_select
 operator|->

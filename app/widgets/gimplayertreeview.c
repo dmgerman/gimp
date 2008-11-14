@@ -2867,7 +2867,7 @@ name|image
 decl_stmt|;
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|dest_image
 argument_list|)
@@ -3746,7 +3746,7 @@ name|iter
 decl_stmt|;
 name|floating_sel
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)

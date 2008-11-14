@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4310010103
+DECL|enum|__anon2b8b82340103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4310010203
+DECL|enum|__anon2b8b82340203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6649,8 +6649,8 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_floating_sel (const GimpImage * image)
-name|gimp_image_floating_sel
+DECL|function|gimp_image_get_floating_selection (const GimpImage * image)
+name|gimp_image_get_floating_selection
 parameter_list|(
 specifier|const
 name|GimpImage
@@ -6930,7 +6930,7 @@ name|GimpLayer
 modifier|*
 name|floating_sel
 init|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -10523,7 +10523,7 @@ argument_list|)
 expr_stmt|;
 name|floating_sel
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -10706,7 +10706,7 @@ if|if
 condition|(
 name|channel
 operator|&&
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -11717,7 +11717,7 @@ argument_list|)
 expr_stmt|;
 name|floating_sel
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -12006,7 +12006,7 @@ name|gimp_image_remove_layer
 argument_list|(
 name|image
 argument_list|,
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -12047,9 +12047,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_image_get_floating_selection
+argument_list|(
 name|image
-operator|->
-name|floating_sel
+argument_list|)
 operator|==
 name|layer
 condition|)
@@ -12145,9 +12146,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_image_get_floating_selection
+argument_list|(
 name|image
-operator|->
-name|floating_sel
+argument_list|)
 operator|==
 name|layer
 condition|)
@@ -13414,7 +13416,7 @@ name|gimp_image_remove_layer
 argument_list|(
 name|image
 argument_list|,
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)

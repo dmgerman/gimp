@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6e252a0103
+DECL|enum|__anon29fb02ad0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -4514,7 +4514,7 @@ name|GimpLayer
 modifier|*
 name|fs
 init|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -6954,7 +6954,7 @@ argument_list|)
 expr_stmt|;
 name|floating_sel
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)

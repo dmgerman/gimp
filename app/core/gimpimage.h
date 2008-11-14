@@ -1260,7 +1260,7 @@ end_function_decl
 begin_function_decl
 name|GimpLayer
 modifier|*
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 parameter_list|(
 specifier|const
 name|GimpImage

@@ -1191,7 +1191,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|display
 operator|->
@@ -1210,7 +1210,7 @@ name|move
 operator|->
 name|floating_layer
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|display
 operator|->
@@ -3015,7 +3015,7 @@ block|{
 comment|/*  if there is a floating selection, and this aint it...  */
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|display
 operator|->

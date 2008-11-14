@@ -332,7 +332,7 @@ expr_stmt|;
 comment|/*  Copy floating layer  */
 name|floating_layer
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -470,9 +470,10 @@ name|new_layer
 expr_stmt|;
 if|if
 condition|(
+name|gimp_image_get_floating_selection
+argument_list|(
 name|image
-operator|->
-name|floating_sel
+argument_list|)
 operator|==
 name|layer
 condition|)

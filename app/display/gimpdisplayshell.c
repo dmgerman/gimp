@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e0df00103
+DECL|enum|__anon2b4c0b020103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0e0df00203
+DECL|enum|__anon2b4c0b020203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6572,7 +6572,7 @@ condition|(
 operator|(
 name|layer
 operator|=
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|shell
 operator|->

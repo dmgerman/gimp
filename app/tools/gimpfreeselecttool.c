@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29896e940108
+DECL|struct|__anon28eae40c0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -3100,7 +3100,7 @@ decl_stmt|;
 comment|/*  If there is a floating selection, anchor it  */
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|display
 operator|->
@@ -3110,7 +3110,7 @@ condition|)
 block|{
 name|floating_sel_anchor
 argument_list|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|display
 operator|->

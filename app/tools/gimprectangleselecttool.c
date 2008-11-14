@@ -2909,7 +2909,7 @@ name|pressy
 decl_stmt|;
 if|if
 condition|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
@@ -2917,7 +2917,7 @@ condition|)
 block|{
 name|floating_sel_anchor
 argument_list|(
-name|gimp_image_floating_sel
+name|gimp_image_get_floating_selection
 argument_list|(
 name|image
 argument_list|)
