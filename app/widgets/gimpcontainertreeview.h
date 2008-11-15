@@ -94,6 +94,15 @@ name|GimpContainerTreeViewClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpContainerTreeViewPriv
+typedef|typedef
+name|struct
+name|_GimpContainerTreeViewPriv
+name|GimpContainerTreeViewPriv
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpContainerTreeView
 struct|struct
@@ -136,11 +145,6 @@ name|GtkTreeView
 modifier|*
 name|view
 decl_stmt|;
-DECL|member|selection
-name|GtkTreeSelection
-modifier|*
-name|selection
-decl_stmt|;
 DECL|member|main_column
 name|GtkTreeViewColumn
 modifier|*
@@ -150,11 +154,6 @@ DECL|member|renderer_cell
 name|GtkCellRenderer
 modifier|*
 name|renderer_cell
-decl_stmt|;
-DECL|member|name_cell
-name|GtkCellRenderer
-modifier|*
-name|name_cell
 decl_stmt|;
 DECL|member|toggle_cells
 name|GList
@@ -166,11 +165,6 @@ name|GList
 modifier|*
 name|renderer_cells
 decl_stmt|;
-DECL|member|editable_cells
-name|GList
-modifier|*
-name|editable_cells
-decl_stmt|;
 DECL|member|dnd_drop_to_empty
 name|gboolean
 name|dnd_drop_to_empty
@@ -181,22 +175,10 @@ modifier|*
 name|dnd_gimp
 decl_stmt|;
 comment|/* eek */
-DECL|member|dnd_renderer
-name|GimpViewRenderer
+DECL|member|priv
+name|GimpContainerTreeViewPriv
 modifier|*
-name|dnd_renderer
-decl_stmt|;
-DECL|member|scroll_timeout_id
-name|guint
-name|scroll_timeout_id
-decl_stmt|;
-DECL|member|scroll_timeout_interval
-name|guint
-name|scroll_timeout_interval
-decl_stmt|;
-DECL|member|scroll_dir
-name|GdkScrollDirection
-name|scroll_dir
+name|priv
 decl_stmt|;
 block|}
 struct|;

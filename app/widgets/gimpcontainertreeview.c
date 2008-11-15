@@ -72,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainertreeview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpcontainertreeview-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainerview.h"
 end_include
 
@@ -95,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5d34750103
+DECL|enum|__anon275639020103
 block|{
 DECL|enumerator|COLUMN_RENDERER
 name|COLUMN_RENDERER
@@ -593,6 +605,16 @@ name|drop_pixbuf
 operator|=
 name|NULL
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpContainerTreeViewPriv
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -700,6 +722,19 @@ argument_list|(
 name|tree_view
 argument_list|)
 decl_stmt|;
+name|tree_view
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|tree_view
+argument_list|,
+name|GIMP_TYPE_CONTAINER_TREE_VIEW
+argument_list|,
+name|GimpContainerTreeViewPriv
+argument_list|)
+expr_stmt|;
 name|tree_view
 operator|->
 name|n_model_columns
@@ -1011,6 +1046,8 @@ argument_list|)
 expr_stmt|;
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|name_cell
 operator|=
 name|gtk_cell_renderer_text_new
@@ -1019,6 +1056,8 @@ expr_stmt|;
 name|g_object_set
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 argument_list|,
@@ -1037,6 +1076,8 @@ name|main_column
 argument_list|,
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|name_cell
 argument_list|,
 name|FALSE
@@ -1049,6 +1090,8 @@ operator|->
 name|main_column
 argument_list|,
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 argument_list|,
@@ -1066,6 +1109,8 @@ expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 argument_list|,
@@ -1096,6 +1141,8 @@ argument_list|)
 expr_stmt|;
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|selection
 operator|=
 name|gtk_tree_view_get_selection
@@ -1108,6 +1155,8 @@ expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|selection
 argument_list|,
@@ -1273,6 +1322,8 @@ if|if
 condition|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|editable_cells
 condition|)
 block|{
@@ -1280,10 +1331,14 @@ name|g_list_free
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|editable_cells
 argument_list|)
 expr_stmt|;
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|editable_cells
 operator|=
@@ -1327,6 +1382,8 @@ if|if
 condition|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|scroll_timeout_id
 condition|)
 block|{
@@ -1334,10 +1391,14 @@ name|g_source_remove
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|scroll_timeout_id
 argument_list|)
 expr_stmt|;
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|scroll_timeout_id
 operator|=
@@ -1445,6 +1506,8 @@ condition|(
 name|gtk_tree_selection_get_selected
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|selection
 argument_list|,
@@ -1781,6 +1844,8 @@ name|g_object_set
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|name_cell
 argument_list|,
 literal|"mode"
@@ -1801,14 +1866,20 @@ name|g_list_find
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|editable_cells
 argument_list|,
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 argument_list|)
 condition|)
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|editable_cells
 operator|=
@@ -1816,9 +1887,13 @@ name|g_list_prepend
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|editable_cells
 argument_list|,
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 argument_list|)
@@ -1826,6 +1901,8 @@ expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 argument_list|,
@@ -2596,6 +2673,8 @@ name|gtk_tree_selection_get_selected
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|selection
 argument_list|,
 name|NULL
@@ -3016,6 +3095,8 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|selection
 argument_list|,
 name|gimp_container_tree_view_selection_changed
@@ -3039,6 +3120,8 @@ expr_stmt|;
 name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|selection
 argument_list|,
@@ -3075,6 +3158,8 @@ block|{
 name|gtk_tree_selection_unselect_all
 argument_list|(
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|selection
 argument_list|)
@@ -3451,6 +3536,8 @@ name|gtk_tree_selection_get_selected
 argument_list|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|selection
 argument_list|,
 name|NULL
@@ -3806,6 +3893,8 @@ name|path
 decl_stmt|;
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|dnd_renderer
 operator|=
 name|NULL
@@ -3911,6 +4000,8 @@ literal|1
 argument_list|)
 expr_stmt|;
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|dnd_renderer
 operator|=
@@ -4022,6 +4113,8 @@ argument_list|(
 name|widget
 argument_list|,
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|editable_cells
 argument_list|,
@@ -4217,6 +4310,8 @@ condition|(
 name|edit_cell
 operator|==
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|name_cell
 condition|)
@@ -4730,10 +4825,14 @@ if|if
 condition|(
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|dnd_renderer
 condition|)
 return|return
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|dnd_renderer
 operator|->
@@ -4774,6 +4873,8 @@ modifier|*
 name|renderer
 init|=
 name|tree_view
+operator|->
+name|priv
 operator|->
 name|dnd_renderer
 decl_stmt|;
