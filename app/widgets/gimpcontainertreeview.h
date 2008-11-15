@@ -171,10 +171,6 @@ name|GList
 modifier|*
 name|editable_cells
 decl_stmt|;
-DECL|member|invalidate_preview_handler_id
-name|GQuark
-name|invalidate_preview_handler_id
-decl_stmt|;
 DECL|member|dnd_drop_to_empty
 name|gboolean
 name|dnd_drop_to_empty
