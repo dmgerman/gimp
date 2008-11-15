@@ -71,7 +71,7 @@ literal|"debug-menu"
 block|,
 name|NULL
 block|,
-literal|"D_ebug"
+literal|"_Debug"
 block|}
 block|,
 block|{
@@ -98,7 +98,7 @@ literal|"debug-benchmark-projection"
 block|,
 name|NULL
 block|,
-literal|"Benchmark Projection"
+literal|"Benchmark _Projection"
 block|,
 name|NULL
 block|,
