@@ -265,6 +265,7 @@ DECL|member|parent_instance
 name|GimpWindow
 name|parent_instance
 decl_stmt|;
+comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
 DECL|member|display
 name|GimpDisplay
 modifier|*
@@ -285,104 +286,21 @@ name|GimpDialogFactory
 modifier|*
 name|display_factory
 decl_stmt|;
-DECL|member|monitor_xres
-name|gdouble
-name|monitor_xres
-decl_stmt|;
-DECL|member|monitor_yres
-name|gdouble
-name|monitor_yres
-decl_stmt|;
-DECL|member|unit
-name|GimpUnit
-name|unit
-decl_stmt|;
-DECL|member|zoom
-name|GimpZoomModel
+DECL|member|options
+name|GimpDisplayOptions
 modifier|*
-name|zoom
+name|options
 decl_stmt|;
-DECL|member|other_scale
-name|gdouble
-name|other_scale
+DECL|member|fullscreen_options
+name|GimpDisplayOptions
+modifier|*
+name|fullscreen_options
 decl_stmt|;
-comment|/*  scale factor entered in Zoom->Other*/
-DECL|member|dot_for_dot
-name|gboolean
-name|dot_for_dot
+DECL|member|no_image_options
+name|GimpDisplayOptions
+modifier|*
+name|no_image_options
 decl_stmt|;
-comment|/*  ignore monitor resolution          */
-DECL|member|offset_x
-name|gint
-name|offset_x
-decl_stmt|;
-comment|/*  offset of display image            */
-DECL|member|offset_y
-name|gint
-name|offset_y
-decl_stmt|;
-DECL|member|scale_x
-name|gdouble
-name|scale_x
-decl_stmt|;
-comment|/*  horizontal scale factor            */
-DECL|member|scale_y
-name|gdouble
-name|scale_y
-decl_stmt|;
-comment|/*  vertical scale factor              */
-DECL|member|x_src_dec
-name|gint
-name|x_src_dec
-decl_stmt|;
-comment|/*  increments for the bresenham style */
-DECL|member|y_src_dec
-name|gint
-name|y_src_dec
-decl_stmt|;
-comment|/*  image --> display transformation   */
-DECL|member|x_dest_inc
-name|gint
-name|x_dest_inc
-decl_stmt|;
-DECL|member|y_dest_inc
-name|gint
-name|y_dest_inc
-decl_stmt|;
-DECL|member|last_scale
-name|gdouble
-name|last_scale
-decl_stmt|;
-comment|/*  scale used when reverting zoom     */
-DECL|member|last_scale_time
-name|guint
-name|last_scale_time
-decl_stmt|;
-comment|/*  time when last_scale was set       */
-DECL|member|last_offset_x
-name|gint
-name|last_offset_x
-decl_stmt|;
-comment|/*  offsets used when reverting zoom   */
-DECL|member|last_offset_y
-name|gint
-name|last_offset_y
-decl_stmt|;
-DECL|member|disp_width
-name|gint
-name|disp_width
-decl_stmt|;
-comment|/*  width of drawing area              */
-DECL|member|disp_height
-name|gint
-name|disp_height
-decl_stmt|;
-comment|/*  height of drawing area             */
-DECL|member|proximity
-name|gboolean
-name|proximity
-decl_stmt|;
-comment|/*  is a device in proximity           */
 DECL|member|snap_to_guides
 name|gboolean
 name|snap_to_guides
@@ -403,6 +321,137 @@ name|gboolean
 name|snap_to_vectors
 decl_stmt|;
 comment|/*  should the active path be snapped  */
+comment|/* --- cacheline 3 boundary (192 bytes) --- */
+DECL|member|unit
+name|GimpUnit
+name|unit
+decl_stmt|;
+DECL|member|offset_x
+name|gint
+name|offset_x
+decl_stmt|;
+comment|/*  offset of display image            */
+DECL|member|offset_y
+name|gint
+name|offset_y
+decl_stmt|;
+DECL|member|scale_x
+name|gdouble
+name|scale_x
+decl_stmt|;
+comment|/*  horizontal scale factor            */
+DECL|member|scale_y
+name|gdouble
+name|scale_y
+decl_stmt|;
+comment|/*  vertical scale factor              */
+DECL|member|monitor_xres
+name|gdouble
+name|monitor_xres
+decl_stmt|;
+DECL|member|monitor_yres
+name|gdouble
+name|monitor_yres
+decl_stmt|;
+DECL|member|dot_for_dot
+name|gboolean
+name|dot_for_dot
+decl_stmt|;
+comment|/*  ignore monitor resolution          */
+DECL|member|x_src_dec
+name|gint
+name|x_src_dec
+decl_stmt|;
+comment|/*  increments for the bresenham style */
+DECL|member|y_src_dec
+name|gint
+name|y_src_dec
+decl_stmt|;
+comment|/*  image --> display transformation   */
+DECL|member|x_dest_inc
+name|gint
+name|x_dest_inc
+decl_stmt|;
+DECL|member|y_dest_inc
+name|gint
+name|y_dest_inc
+decl_stmt|;
+comment|/* --- cacheline 4 boundary (256 bytes) --- */
+DECL|member|zoom
+name|GimpZoomModel
+modifier|*
+name|zoom
+decl_stmt|;
+DECL|member|last_scale
+name|gdouble
+name|last_scale
+decl_stmt|;
+comment|/*  scale used when reverting zoom     */
+DECL|member|last_scale_time
+name|guint
+name|last_scale_time
+decl_stmt|;
+comment|/*  time when last_scale was set       */
+DECL|member|last_offset_x
+name|gint
+name|last_offset_x
+decl_stmt|;
+comment|/*  offsets used when reverting zoom   */
+DECL|member|last_offset_y
+name|gint
+name|last_offset_y
+decl_stmt|;
+DECL|member|last_motion_time
+name|guint32
+name|last_motion_time
+decl_stmt|;
+comment|/*  previous time of a forwarded motion event  */
+DECL|member|last_read_motion_time
+name|guint32
+name|last_read_motion_time
+decl_stmt|;
+DECL|member|last_motion_delta_time
+name|gdouble
+name|last_motion_delta_time
+decl_stmt|;
+DECL|member|last_motion_delta_x
+name|gdouble
+name|last_motion_delta_x
+decl_stmt|;
+DECL|member|last_motion_delta_y
+name|gdouble
+name|last_motion_delta_y
+decl_stmt|;
+DECL|member|last_motion_distance
+name|gdouble
+name|last_motion_distance
+decl_stmt|;
+comment|/* --- cacheline 5 boundary (320 bytes) --- */
+DECL|member|last_coords
+name|GimpCoords
+name|last_coords
+decl_stmt|;
+comment|/* last motion event                   */
+DECL|member|other_scale
+name|gdouble
+name|other_scale
+decl_stmt|;
+comment|/*  scale factor entered in Zoom->Other*/
+DECL|member|disp_width
+name|gint
+name|disp_width
+decl_stmt|;
+comment|/*  width of drawing area              */
+DECL|member|disp_height
+name|gint
+name|disp_height
+decl_stmt|;
+comment|/*  height of drawing area             */
+DECL|member|proximity
+name|gboolean
+name|proximity
+decl_stmt|;
+comment|/*  is a device in proximity           */
 DECL|member|selection
 name|Selection
 modifier|*
@@ -644,21 +693,6 @@ DECL|member|size_allocate_from_configure_event
 name|gboolean
 name|size_allocate_from_configure_event
 decl_stmt|;
-DECL|member|options
-name|GimpDisplayOptions
-modifier|*
-name|options
-decl_stmt|;
-DECL|member|fullscreen_options
-name|GimpDisplayOptions
-modifier|*
-name|fullscreen_options
-decl_stmt|;
-DECL|member|no_image_options
-name|GimpDisplayOptions
-modifier|*
-name|no_image_options
-decl_stmt|;
 comment|/*  the state of gimp_display_shell_tool_events()  */
 DECL|member|space_pressed
 name|gboolean
@@ -686,6 +720,10 @@ DECL|member|scroll_start_y
 name|gint
 name|scroll_start_y
 decl_stmt|;
+DECL|member|scroll_info
+name|gpointer
+name|scroll_info
+decl_stmt|;
 DECL|member|button_press_before_focus
 name|gboolean
 name|button_press_before_focus
@@ -704,40 +742,6 @@ decl_stmt|;
 DECL|member|mask_color
 name|GimpChannelType
 name|mask_color
-decl_stmt|;
-DECL|member|scroll_info
-name|gpointer
-name|scroll_info
-decl_stmt|;
-DECL|member|last_coords
-name|GimpCoords
-name|last_coords
-decl_stmt|;
-comment|/* last motion event                   */
-DECL|member|last_motion_time
-name|guint32
-name|last_motion_time
-decl_stmt|;
-comment|/*  previous time of a forwarded motion event  */
-DECL|member|last_read_motion_time
-name|guint32
-name|last_read_motion_time
-decl_stmt|;
-DECL|member|last_motion_delta_time
-name|gdouble
-name|last_motion_delta_time
-decl_stmt|;
-DECL|member|last_motion_delta_x
-name|gdouble
-name|last_motion_delta_x
-decl_stmt|;
-DECL|member|last_motion_delta_y
-name|gdouble
-name|last_motion_delta_y
-decl_stmt|;
-DECL|member|last_motion_distance
-name|gdouble
-name|last_motion_distance
 decl_stmt|;
 block|}
 struct|;
