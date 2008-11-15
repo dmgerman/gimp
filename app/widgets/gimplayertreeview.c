@@ -3784,9 +3784,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_name_attributes
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|layer_view
 operator|->
@@ -3858,9 +3856,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_name_attributes
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(
@@ -5202,9 +5198,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|layer_renderer
@@ -5793,9 +5787,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_name_attributes
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(

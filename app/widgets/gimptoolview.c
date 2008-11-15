@@ -945,15 +945,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerTreeView
-modifier|*
-name|tree_view
-init|=
-name|GIMP_CONTAINER_TREE_VIEW
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 name|GimpViewRenderer
 modifier|*
 name|renderer
@@ -967,9 +958,7 @@ name|tree_model
 argument_list|,
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -1090,9 +1079,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer

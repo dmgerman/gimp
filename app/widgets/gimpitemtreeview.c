@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a25bd90103
+DECL|enum|__anon29f765960103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3446,9 +3446,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -3550,9 +3548,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_name
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
 argument_list|,
 name|name
 argument_list|,
@@ -4083,9 +4079,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -4191,9 +4185,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer

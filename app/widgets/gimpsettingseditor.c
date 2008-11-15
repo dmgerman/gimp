@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a786680103
+DECL|enum|__anon2af58fd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1036,15 +1036,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerTreeView
-modifier|*
-name|view
-init|=
-name|GIMP_CONTAINER_TREE_VIEW
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 name|gchar
 modifier|*
 name|name
@@ -1057,9 +1048,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|view
-operator|->
-name|model_column_name
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
 argument_list|,
 operator|&
 name|name
@@ -1411,9 +1400,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_renderer
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -1552,9 +1539,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|tree_view
-operator|->
-name|model_column_name
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
 argument_list|,
 name|name
 argument_list|,
