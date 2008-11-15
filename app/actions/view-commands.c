@@ -715,7 +715,7 @@ name|value
 operator|/
 literal|10000
 argument_list|,
-name|GIMP_ZOOM_FOCUS_IMAGE_CENTER
+name|GIMP_ZOOM_FOCUS_RETAIN_CENTERING_ELSE_BEST_GUESS
 argument_list|)
 expr_stmt|;
 block|}

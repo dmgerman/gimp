@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f609250103
+DECL|enum|__anon279d6d2a0103
 block|{
 DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
 name|GIMP_CURSOR_MODE_TOOL_ICON
@@ -77,7 +77,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f609250203
+DECL|enum|__anon279d6d2a0203
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -114,7 +114,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f609250303
+DECL|enum|__anon279d6d2a0303
 block|{
 DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
 name|GIMP_CANVAS_PADDING_MODE_DEFAULT
@@ -165,7 +165,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f609250403
+DECL|enum|__anon279d6d2a0403
 block|{
 DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
 name|GIMP_SPACE_BAR_ACTION_NONE
@@ -205,7 +205,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f609250503
+DECL|enum|__anon279d6d2a0503
 block|{
 DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
 name|GIMP_ZOOM_QUALITY_LOW
@@ -241,19 +241,23 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f609250603
+DECL|enum|__anon279d6d2a0603
 block|{
+comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
 name|GIMP_ZOOM_FOCUS_BEST_GUESS
 block|,
-comment|/* Make a best guess                       */
+comment|/* Use the mouse cursor (if within canvas) */
 DECL|enumerator|GIMP_ZOOM_FOCUS_POINTER
 name|GIMP_ZOOM_FOCUS_POINTER
 block|,
-comment|/* Use the mouse cursor (if within canvas) */
+comment|/* Use the image center */
 DECL|enumerator|GIMP_ZOOM_FOCUS_IMAGE_CENTER
 name|GIMP_ZOOM_FOCUS_IMAGE_CENTER
-comment|/* Use the image center                    */
+block|,
+comment|/* If the image is centered, retain the centering. Else use    * _BEST_GUESS    */
+DECL|enumerator|GIMP_ZOOM_FOCUS_RETAIN_CENTERING_ELSE_BEST_GUESS
+name|GIMP_ZOOM_FOCUS_RETAIN_CENTERING_ELSE_BEST_GUESS
 DECL|typedef|GimpZoomFocus
 block|}
 name|GimpZoomFocus
