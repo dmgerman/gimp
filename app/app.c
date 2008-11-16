@@ -576,7 +576,9 @@ name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 name|gimp_gegl_init
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 ifndef|#
 directive|ifndef
