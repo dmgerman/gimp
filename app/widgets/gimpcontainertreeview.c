@@ -720,7 +720,7 @@ name|tree_view
 operator|->
 name|n_model_columns
 operator|=
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_LAST
+name|GIMP_CONTAINER_TREE_VIEW_N_COLUMNS
 expr_stmt|;
 name|tree_view
 operator|->

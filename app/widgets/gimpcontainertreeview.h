@@ -22,6 +22,25 @@ directive|include
 file|"gimpcontainerbox.h"
 end_include
 
+begin_enum
+enum|enum
+DECL|enum|__anon28eff5940103
+block|{
+DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+block|,
+DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+block|,
+DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+block|,
+DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_N_COLUMNS
+name|GIMP_CONTAINER_TREE_VIEW_N_COLUMNS
+block|}
+enum|;
+end_enum
+
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_TREE_VIEW
 define|#
