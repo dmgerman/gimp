@@ -41,6 +41,16 @@ name|GimpViewRenderer
 modifier|*
 name|dnd_renderer
 decl_stmt|;
+DECL|member|toggle_cells
+name|GList
+modifier|*
+name|toggle_cells
+decl_stmt|;
+DECL|member|renderer_cells
+name|GList
+modifier|*
+name|renderer_cells
+decl_stmt|;
 DECL|member|scroll_timeout_id
 name|guint
 name|scroll_timeout_id

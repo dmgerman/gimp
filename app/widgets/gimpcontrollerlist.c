@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3181ce0103
+DECL|enum|__anon28d502f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3181ce0203
+DECL|enum|__anon28d502f20203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1250,7 +1250,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_tree_view_column_set_title
+name|gimp_container_tree_view_set_main_column_title
 argument_list|(
 name|GIMP_CONTAINER_TREE_VIEW
 argument_list|(
@@ -1258,8 +1258,6 @@ name|list
 operator|->
 name|dest
 argument_list|)
-operator|->
-name|main_column
 argument_list|,
 name|_
 argument_list|(

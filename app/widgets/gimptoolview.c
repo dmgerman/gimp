@@ -689,15 +689,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tree_view
-operator|->
-name|toggle_cells
-operator|=
-name|g_list_prepend
+name|gimp_container_tree_view_prepend_toggle_cell_renderer
 argument_list|(
 name|tree_view
-operator|->
-name|toggle_cells
 argument_list|,
 name|eye_cell
 argument_list|)

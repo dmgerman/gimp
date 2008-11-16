@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f21d0d0103
+DECL|enum|__anon2a04c6d50103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1234,15 +1234,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tree_view
-operator|->
-name|toggle_cells
-operator|=
-name|g_list_prepend
+name|gimp_container_tree_view_prepend_toggle_cell_renderer
 argument_list|(
 name|tree_view
-operator|->
-name|toggle_cells
 argument_list|,
 name|item_view
 operator|->
@@ -1318,15 +1312,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|tree_view
-operator|->
-name|toggle_cells
-operator|=
-name|g_list_prepend
+name|gimp_container_tree_view_prepend_toggle_cell_renderer
 argument_list|(
 name|tree_view
-operator|->
-name|toggle_cells
 argument_list|,
 name|item_view
 operator|->
