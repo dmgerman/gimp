@@ -496,7 +496,7 @@ name|store
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|GIMP_CONTAINER_ENTRY_NUM_COLUMNS
+name|GIMP_CONTAINER_ENTRY_N_COLUMNS
 argument_list|,
 name|GIMP_TYPE_VIEW_RENDERER
 argument_list|,

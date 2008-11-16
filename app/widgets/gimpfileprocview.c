@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295803290103
+DECL|enum|__anon2c811e890103
 block|{
 DECL|enumerator|COLUMN_PROC
 name|COLUMN_PROC
@@ -73,15 +73,15 @@ block|,
 DECL|enumerator|COLUMN_HELP_ID
 name|COLUMN_HELP_ID
 block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
+DECL|enumerator|N_COLUMNS
+name|N_COLUMNS
 block|}
 enum|;
 end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295803290203
+DECL|enum|__anon2c811e890203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -365,7 +365,7 @@ name|store
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|GIMP_TYPE_PLUG_IN_PROCEDURE
 argument_list|,

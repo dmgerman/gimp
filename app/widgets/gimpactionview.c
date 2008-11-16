@@ -747,7 +747,7 @@ name|store
 operator|=
 name|gtk_tree_store_new
 argument_list|(
-name|GIMP_ACTION_VIEW_NUM_COLUMNS
+name|GIMP_ACTION_VIEW_N_COLUMNS
 argument_list|,
 name|G_TYPE_BOOLEAN
 argument_list|,
@@ -2362,7 +2362,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2d6f5f0108
+DECL|struct|__anon28e5c0d10108
 block|{
 DECL|member|manager
 name|GimpUIManager

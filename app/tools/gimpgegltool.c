@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f66d10103
+DECL|enum|__anon27729e7b0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -130,8 +130,8 @@ block|,
 DECL|enumerator|COLUMN_STOCK_ID
 name|COLUMN_STOCK_ID
 block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
+DECL|enumerator|N_COLUMNS
+name|N_COLUMNS
 block|}
 enum|;
 end_enum
@@ -1298,7 +1298,7 @@ name|store
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

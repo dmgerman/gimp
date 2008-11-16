@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b20f13d0103
+DECL|enum|__anon2c850e300103
 block|{
 DECL|enumerator|COLUMN_CHANNEL
 name|COLUMN_CHANNEL
@@ -115,8 +115,8 @@ block|,
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
 block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
+DECL|enumerator|N_COLUMNS
+name|N_COLUMNS
 block|}
 enum|;
 end_enum
@@ -490,7 +490,7 @@ name|list
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|G_TYPE_INT
 argument_list|,

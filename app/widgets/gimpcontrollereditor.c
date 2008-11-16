@@ -108,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f8dbdd0103
+DECL|enum|__anon286da4a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f8dbdd0203
+DECL|enum|__anon286da4a30203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -138,8 +138,8 @@ block|,
 DECL|enumerator|COLUMN_ACTION
 name|COLUMN_ACTION
 block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
+DECL|enumerator|N_COLUMNS
+name|N_COLUMNS
 block|}
 enum|;
 end_enum
@@ -1210,7 +1210,7 @@ name|store
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

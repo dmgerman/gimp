@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2919dafd0103
+DECL|enum|__anon2bb168560103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -90,15 +90,15 @@ block|,
 DECL|enumerator|COLUMN_MODULE
 name|COLUMN_MODULE
 block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
+DECL|enumerator|N_COLUMNS
+name|N_COLUMNS
 block|}
 enum|;
 end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2919dafd0203
+DECL|enum|__anon2bb168560203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -115,8 +115,8 @@ block|,
 DECL|enumerator|INFO_LOCATION
 name|INFO_LOCATION
 block|,
-DECL|enumerator|NUM_INFOS
-name|NUM_INFOS
+DECL|enumerator|N_INFOS
+name|N_INFOS
 block|}
 enum|;
 end_enum
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2919dafd0308
+DECL|struct|__anon2bb168560308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -156,7 +156,7 @@ name|GtkWidget
 modifier|*
 name|label
 index|[
-name|NUM_INFOS
+name|N_INFOS
 index|]
 decl_stmt|;
 DECL|member|error_box
@@ -627,7 +627,7 @@ name|list
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
@@ -779,7 +779,7 @@ name|gtk_table_new
 argument_list|(
 literal|2
 argument_list|,
-name|NUM_INFOS
+name|N_INFOS
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1728,7 +1728,7 @@ name|gchar
 modifier|*
 name|text
 index|[
-name|NUM_INFOS
+name|N_INFOS
 index|]
 init|=
 block|{
@@ -1847,7 +1847,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|NUM_INFOS
+name|N_INFOS
 condition|;
 name|i
 operator|++
@@ -2000,7 +2000,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|NUM_INFOS
+name|N_INFOS
 condition|;
 name|i
 operator|++

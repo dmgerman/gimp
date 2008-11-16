@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947d8600103
+DECL|enum|__anon2af7b10f0103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -88,8 +88,8 @@ block|,
 DECL|enumerator|COLUMN_TEXT
 name|COLUMN_TEXT
 block|,
-DECL|enumerator|NUM_COLUMNS
-name|NUM_COLUMNS
+DECL|enumerator|N_COLUMNS
+name|N_COLUMNS
 block|}
 enum|;
 end_enum
@@ -1009,7 +1009,7 @@ name|aspect_history
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
@@ -1024,7 +1024,7 @@ name|size_history
 operator|=
 name|gtk_list_store_new
 argument_list|(
-name|NUM_COLUMNS
+name|N_COLUMNS
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,
