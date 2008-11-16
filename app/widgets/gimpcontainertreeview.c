@@ -1774,6 +1774,38 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_container_tree_view_set_dnd_drop_to_empty (GimpContainerTreeView * tree_view,gboolean dnd_drop_to_empty)
+name|gimp_container_tree_view_set_dnd_drop_to_empty
+parameter_list|(
+name|GimpContainerTreeView
+modifier|*
+name|tree_view
+parameter_list|,
+name|gboolean
+name|dnd_drop_to_empty
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTAINER_TREE_VIEW
+argument_list|(
+name|tree_view
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|tree_view
+operator|->
+name|priv
+operator|->
+name|dnd_drop_to_empty
+operator|=
+name|dnd_drop_to_empty
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_container_tree_view_connect_name_edited (GimpContainerTreeView * tree_view,GCallback callback,gpointer data)
 name|gimp_container_tree_view_connect_name_edited
 parameter_list|(

@@ -425,6 +425,8 @@ name|dest_viewable
 operator|||
 name|tree_view
 operator|->
+name|priv
+operator|->
 name|dnd_drop_to_empty
 condition|)
 block|{

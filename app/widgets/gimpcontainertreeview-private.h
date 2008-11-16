@@ -53,6 +53,10 @@ DECL|member|scroll_dir
 name|GdkScrollDirection
 name|scroll_dir
 decl_stmt|;
+DECL|member|dnd_drop_to_empty
+name|gboolean
+name|dnd_drop_to_empty
+decl_stmt|;
 block|}
 struct|;
 end_struct

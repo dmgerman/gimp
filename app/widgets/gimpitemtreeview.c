@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f765960103
+DECL|enum|__anon29f21d0d0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1055,11 +1055,12 @@ operator|->
 name|n_model_columns
 operator|++
 expr_stmt|;
+name|gimp_container_tree_view_set_dnd_drop_to_empty
+argument_list|(
 name|tree_view
-operator|->
-name|dnd_drop_to_empty
-operator|=
+argument_list|,
 name|TRUE
+argument_list|)
 expr_stmt|;
 name|view
 operator|->
