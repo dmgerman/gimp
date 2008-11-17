@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d50eb60103
+DECL|enum|__anon28003eed0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1540,15 +1540,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|GIMP_ITEM_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|visibility_changed
-condition|)
 name|GIMP_ITEM_CLASS
 argument_list|(
 name|parent_class
