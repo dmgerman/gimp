@@ -24,12 +24,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 
@@ -43,18 +37,6 @@ begin_include
 include|#
 directive|include
 file|"base/pixel-region.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"paint-funcs/paint-funcs.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp.h"
 end_include
 
 begin_include
@@ -250,7 +232,7 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  set the drawable and allocate a backing store  */
+comment|/*  set the drawable  */
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
@@ -260,13 +242,12 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_layer_set_floating_sel_drawable
+argument_list|(
 name|layer
-operator|->
-name|fs
-operator|.
+argument_list|,
 name|drawable
-operator|=
-name|drawable
+argument_list|)
 expr_stmt|;
 comment|/*  add the layer to the image  */
 name|gimp_image_add_layer
@@ -296,10 +277,6 @@ block|{
 name|GimpImage
 modifier|*
 name|image
-decl_stmt|;
-name|GimpDrawable
-modifier|*
-name|drawable
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -345,14 +322,6 @@ name|floating_sel_composite
 argument_list|(
 name|layer
 argument_list|)
-expr_stmt|;
-name|drawable
-operator|=
-name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
 expr_stmt|;
 comment|/*  remove the floating selection  */
 name|gimp_image_remove_layer
@@ -522,13 +491,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Set pointers  */
+name|gimp_layer_set_floating_sel_drawable
+argument_list|(
 name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
-operator|=
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
 name|gimp_image_set_floating_selection
 argument_list|(

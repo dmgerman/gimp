@@ -131,7 +131,7 @@ name|opacity_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28709a3d0108
+DECL|struct|__anon29b297c50108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -487,6 +487,21 @@ specifier|const
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_layer_set_floating_sel_drawable
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|,
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -359,15 +359,14 @@ name|floating_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_layer_set_floating_sel_drawable
+argument_list|(
 name|floating_layer
-operator|->
-name|fs
-operator|.
-name|drawable
-operator|=
+argument_list|,
 name|floating_sel_undo
 operator|->
 name|drawable
+argument_list|)
 expr_stmt|;
 name|gimp_image_set_active_layer
 argument_list|(
@@ -418,13 +417,12 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  update the pointers  */
+name|gimp_layer_set_floating_sel_drawable
+argument_list|(
 name|floating_layer
-operator|->
-name|fs
-operator|.
-name|drawable
-operator|=
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
 name|gimp_image_set_floating_selection
 argument_list|(
