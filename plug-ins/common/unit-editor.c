@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5db6920103
+DECL|enum|__anon2c6018590103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5db6920208
+DECL|struct|__anon2c6018590208
 block|{
 DECL|member|title
 specifier|const
@@ -364,7 +364,7 @@ argument_list|)
 block|,
 name|N_
 argument_list|(
-literal|"The unit's symbol if it has one (e.g. \"'\" "
+literal|"The unit's symbol if it has one (e.g. \" "
 literal|"for inches). The unit's abbreviation is used "
 literal|"if doesn't have a symbol."
 argument_list|)
