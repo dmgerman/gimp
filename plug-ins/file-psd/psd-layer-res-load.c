@@ -436,9 +436,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gint
-name|pad
-decl_stmt|;
 comment|/* Set file position to start of layer resource data block */
 if|if
 condition|(
@@ -941,26 +938,6 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* Layer blocks are null padded to even length */
-if|if
-condition|(
-name|res_a
-operator|->
-name|data_len
-operator|%
-literal|2
-operator|==
-literal|0
-condition|)
-name|pad
-operator|=
-literal|0
-expr_stmt|;
-else|else
-name|pad
-operator|=
-literal|1
-expr_stmt|;
 comment|/* Set file position to end of layer resource block */
 if|if
 condition|(
@@ -975,8 +952,6 @@ operator|+
 name|res_a
 operator|->
 name|data_len
-operator|+
-name|pad
 argument_list|,
 name|SEEK_SET
 argument_list|)
