@@ -59,14 +59,6 @@ DECL|member|unit_changed
 name|gboolean
 name|unit_changed
 decl_stmt|;
-DECL|member|quick_mask_changed
-name|gboolean
-name|quick_mask_changed
-decl_stmt|;
-DECL|member|alpha_changed
-name|gboolean
-name|alpha_changed
-decl_stmt|;
 block|}
 struct|;
 end_struct

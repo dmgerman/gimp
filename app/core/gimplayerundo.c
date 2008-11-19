@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8299ca0103
+DECL|enum|__anon2c2fb93e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -642,9 +642,6 @@ operator|->
 name|item
 argument_list|)
 decl_stmt|;
-name|gboolean
-name|old_has_alpha
-decl_stmt|;
 name|GIMP_UNDO_CLASS
 argument_list|(
 name|parent_class
@@ -657,15 +654,6 @@ argument_list|,
 name|undo_mode
 argument_list|,
 name|accum
-argument_list|)
-expr_stmt|;
-name|old_has_alpha
-operator|=
-name|gimp_image_has_alpha
-argument_list|(
-name|undo
-operator|->
-name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -793,23 +781,6 @@ name|FALSE
 expr_stmt|;
 block|}
 block|}
-if|if
-condition|(
-name|old_has_alpha
-operator|!=
-name|gimp_image_has_alpha
-argument_list|(
-name|undo
-operator|->
-name|image
-argument_list|)
-condition|)
-name|accum
-operator|->
-name|alpha_changed
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 end_function
 
