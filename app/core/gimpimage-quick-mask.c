@@ -505,13 +505,9 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
-operator|(
 name|image
 operator|->
 name|quick_mask_state
-operator|!=
-literal|0
-operator|)
 return|;
 block|}
 end_function
