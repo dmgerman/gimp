@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299a3a360103
+DECL|enum|__anon2989c23a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1459,9 +1459,10 @@ literal|1
 operator|||
 name|new_index
 operator|==
+name|gimp_container_get_n_children
+argument_list|(
 name|container
-operator|->
-name|num_children
+argument_list|)
 operator|-
 literal|1
 condition|)

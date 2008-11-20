@@ -204,9 +204,10 @@ name|gimp_context_get_by_type
 argument_list|(
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -237,9 +238,10 @@ name|gimp_context_set_by_type
 argument_list|(
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|new
 argument_list|)

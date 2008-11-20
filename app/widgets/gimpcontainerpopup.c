@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a163b60103
+DECL|enum|__anon2988d5d80103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -1092,11 +1092,12 @@ name|popup
 operator|->
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|popup
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_by_type
@@ -1105,11 +1106,12 @@ name|popup
 operator|->
 name|orig_context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|popup
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|object
 argument_list|)
@@ -1465,9 +1467,10 @@ name|context
 argument_list|,
 name|gimp_context_type_to_signal_name
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 argument_list|,
 name|G_CALLBACK

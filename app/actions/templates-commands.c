@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a220030108
+DECL|struct|__anon2779f1cf0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -552,9 +552,10 @@ name|gimp_context_set_by_type
 argument_list|(
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -1167,11 +1168,12 @@ name|delete_data
 operator|->
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|delete_data
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|new_active
 argument_list|)

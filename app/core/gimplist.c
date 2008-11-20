@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296295290103
+DECL|enum|__anon2c8e82aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1093,9 +1093,10 @@ literal|1
 operator|||
 name|new_index
 operator|==
+name|gimp_container_get_n_children
+argument_list|(
 name|container
-operator|->
-name|num_children
+argument_list|)
 operator|-
 literal|1
 condition|)
@@ -1621,12 +1622,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_container_get_n_children
+argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
 name|list
 argument_list|)
-operator|->
-name|num_children
+argument_list|)
 operator|>
 literal|1
 condition|)
@@ -1761,12 +1763,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_container_get_n_children
+argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
 name|list
 argument_list|)
-operator|->
-name|num_children
+argument_list|)
 operator|>
 literal|1
 condition|)

@@ -722,9 +722,10 @@ name|gimp_context_get_by_type
 argument_list|(
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gimp_container_editor_select_item

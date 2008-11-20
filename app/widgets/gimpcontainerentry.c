@@ -1159,9 +1159,10 @@ literal|1
 operator|||
 name|new_index
 operator|==
+name|gimp_container_get_n_children
+argument_list|(
 name|container
-operator|->
-name|num_children
+argument_list|)
 operator|-
 literal|1
 condition|)

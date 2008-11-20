@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6225e70103
+DECL|enum|__anon2b9965480103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -1154,9 +1154,10 @@ name|index
 argument_list|,
 literal|0
 argument_list|,
+name|gimp_container_get_n_children
+argument_list|(
 name|container
-operator|->
-name|num_children
+argument_list|)
 operator|-
 literal|1
 argument_list|)
@@ -1185,9 +1186,10 @@ while|while
 condition|(
 name|index
 operator|>=
+name|gimp_container_get_n_children
+argument_list|(
 name|container
-operator|->
-name|num_children
+argument_list|)
 condition|)
 name|index
 operator|-=
@@ -1320,9 +1322,10 @@ literal|0
 condition|?
 literal|0
 else|:
+name|gimp_container_get_n_children
+argument_list|(
 name|container
-operator|->
-name|num_children
+argument_list|)
 operator|-
 literal|1
 expr_stmt|;

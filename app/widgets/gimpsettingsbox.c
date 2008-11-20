@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297aecbc0103
+DECL|enum|__anon288389d20103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297aecbc0203
+DECL|enum|__anon288389d20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1757,9 +1757,10 @@ name|sep
 init|=
 name|g_object_new
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

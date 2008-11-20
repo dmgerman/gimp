@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bd60a0103
+DECL|enum|__anon2b3f7af30103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -1191,9 +1191,10 @@ name|g_return_if_fail
 argument_list|(
 name|g_type_is_a
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_VIEWABLE
 argument_list|)
@@ -1360,11 +1361,12 @@ block|{
 name|GType
 name|children_type
 init|=
+name|gimp_container_get_children_type
+argument_list|(
 name|private
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1437,11 +1439,12 @@ block|{
 name|GType
 name|children_type
 init|=
+name|gimp_container_get_children_type
+argument_list|(
 name|private
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 decl_stmt|;
 name|GimpViewableClass
 modifier|*
@@ -1838,11 +1841,12 @@ block|{
 name|GType
 name|children_type
 init|=
+name|gimp_container_get_children_type
+argument_list|(
 name|private
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1936,11 +1940,12 @@ block|{
 name|GType
 name|children_type
 init|=
+name|gimp_container_get_children_type
+argument_list|(
 name|private
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
@@ -2870,11 +2875,12 @@ block|{
 name|GType
 name|children_type
 init|=
+name|gimp_container_get_children_type
+argument_list|(
 name|private
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
@@ -2926,7 +2932,7 @@ directive|if
 literal|0
 block|if (success&& private->container&& private->context)     {       GimpContext *context;
 comment|/*  ref and remember the context because private->context may        *  become NULL by calling gimp_context_set_by_type()        */
-block|context = g_object_ref (private->context);        g_signal_handlers_block_by_func (context,                                        gimp_container_view_context_changed,                                        view);        gimp_context_set_by_type (context,                                 private->container->children_type,                                 GIMP_OBJECT (viewable));        g_signal_handlers_unblock_by_func (context,                                          gimp_container_view_context_changed,                                          view);        g_object_unref (context);     }
+block|context = g_object_ref (private->context);        g_signal_handlers_block_by_func (context,                                        gimp_container_view_context_changed,                                        view);        gimp_context_set_by_type (context,                                 gimp_container_get_children_type (private->container),                                 GIMP_OBJECT (viewable));        g_signal_handlers_unblock_by_func (context,                                          gimp_container_view_context_changed,                                          view);        g_object_unref (context);     }
 endif|#
 directive|endif
 return|return
@@ -3824,11 +3830,12 @@ block|{
 name|GType
 name|children_type
 init|=
+name|gimp_container_get_children_type
+argument_list|(
 name|private
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar

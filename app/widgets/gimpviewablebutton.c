@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2911f5f80103
+DECL|enum|__anon28e36f560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -666,11 +666,12 @@ name|button
 operator|->
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|button
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|index
@@ -792,11 +793,12 @@ name|button
 operator|->
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|button
 operator|->
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|object
 argument_list|)
@@ -1196,9 +1198,10 @@ name|prop_name
 operator|=
 name|gimp_context_type_to_prop_name
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|button

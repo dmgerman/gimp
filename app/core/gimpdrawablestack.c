@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c09f6200103
+DECL|enum|__anon2c5c79ea0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -507,9 +507,10 @@ name|g_assert
 argument_list|(
 name|g_type_is_a
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_DRAWABLE
 argument_list|)

@@ -679,9 +679,10 @@ name|prop_name
 operator|=
 name|gimp_context_type_to_prop_name
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|preview

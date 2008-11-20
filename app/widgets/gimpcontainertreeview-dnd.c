@@ -1700,9 +1700,10 @@ argument_list|(
 name|src_viewable
 argument_list|)
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1843,9 +1844,10 @@ argument_list|(
 name|src_viewable
 argument_list|)
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 condition|)
 operator|*

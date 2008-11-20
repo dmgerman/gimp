@@ -223,9 +223,10 @@ name|g_assert
 argument_list|(
 name|g_type_is_a
 argument_list|(
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_ITEM
 argument_list|)

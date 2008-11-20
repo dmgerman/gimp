@@ -258,7 +258,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c026540108
+DECL|struct|__anon29e5fdb40108
 block|{
 DECL|member|func
 name|GimpMemsizeFunc
@@ -2041,9 +2041,10 @@ name|gimp_context_get_by_type
 argument_list|(
 name|context
 argument_list|,
+name|gimp_container_get_children_type
+argument_list|(
 name|container
-operator|->
-name|children_type
+argument_list|)
 argument_list|)
 condition|)
 block|{
