@@ -94,6 +94,15 @@ name|GimpContainerClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpContainerPriv
+typedef|typedef
+name|struct
+name|_GimpContainerPriv
+name|GimpContainerPriv
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpContainer
 struct|struct
@@ -116,15 +125,10 @@ DECL|member|num_children
 name|gint
 name|num_children
 decl_stmt|;
-comment|/*  private  */
-DECL|member|handlers
-name|GList
+DECL|member|priv
+name|GimpContainerPriv
 modifier|*
-name|handlers
-decl_stmt|;
-DECL|member|freeze_count
-name|gint
-name|freeze_count
+name|priv
 decl_stmt|;
 block|}
 struct|;
