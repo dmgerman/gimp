@@ -645,7 +645,7 @@ name|index
 operator|+
 literal|1
 operator|<
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -725,7 +725,7 @@ name|tool_info_list
 expr_stmt|;
 name|index
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)

@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6566830103
+DECL|enum|__anon290e52b00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6566830203
+DECL|enum|__anon290e52b00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5295,7 +5295,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -6619,7 +6619,7 @@ expr_stmt|;
 return|return
 operator|(
 operator|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -11899,7 +11899,7 @@ name|MIN
 argument_list|(
 name|position
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -12289,7 +12289,7 @@ block|{
 name|gint
 name|n_children
 init|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -12898,7 +12898,7 @@ if|if
 condition|(
 name|index
 operator|==
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -13041,7 +13041,7 @@ argument_list|)
 expr_stmt|;
 name|length
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -13146,7 +13146,7 @@ name|FALSE
 return|;
 name|num_layers
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -13345,7 +13345,7 @@ name|MIN
 argument_list|(
 name|position
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -13592,7 +13592,7 @@ block|{
 name|gint
 name|n_children
 init|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -13917,7 +13917,7 @@ if|if
 condition|(
 name|index
 operator|==
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14006,7 +14006,7 @@ argument_list|)
 expr_stmt|;
 name|length
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14111,7 +14111,7 @@ name|FALSE
 return|;
 name|num_channels
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14310,7 +14310,7 @@ name|MIN
 argument_list|(
 name|position
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14493,7 +14493,7 @@ block|{
 name|gint
 name|n_children
 init|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14799,7 +14799,7 @@ if|if
 condition|(
 name|index
 operator|==
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14888,7 +14888,7 @@ argument_list|)
 expr_stmt|;
 name|length
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -14993,7 +14993,7 @@ name|FALSE
 return|;
 name|num_vectors
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->

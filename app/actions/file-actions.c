@@ -1124,7 +1124,7 @@ name|last_opened_size
 decl_stmt|;
 name|num_documents
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1399,7 +1399,7 @@ decl_stmt|;
 name|gint
 name|n_displays
 init|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)

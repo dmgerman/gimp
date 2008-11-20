@@ -339,7 +339,7 @@ end_decl_stmt
 
 begin_function_decl
 name|GType
-name|gimp_container_children_type
+name|gimp_container_get_children_type
 parameter_list|(
 specifier|const
 name|GimpContainer
@@ -351,7 +351,7 @@ end_function_decl
 
 begin_function_decl
 name|GimpContainerPolicy
-name|gimp_container_policy
+name|gimp_container_get_policy
 parameter_list|(
 specifier|const
 name|GimpContainer
@@ -363,7 +363,7 @@ end_function_decl
 
 begin_function_decl
 name|gint
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 parameter_list|(
 specifier|const
 name|GimpContainer

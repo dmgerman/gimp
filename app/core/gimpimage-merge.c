@@ -2046,7 +2046,7 @@ name|data
 expr_stmt|;
 name|position
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -2555,7 +2555,7 @@ name|image
 argument_list|,
 name|merge_layer
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->

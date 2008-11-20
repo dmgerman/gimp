@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d502f20103
+DECL|enum|__anon299206550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d502f20203
+DECL|enum|__anon299206550203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2969,7 +2969,7 @@ if|if
 condition|(
 name|index
 operator|<
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)

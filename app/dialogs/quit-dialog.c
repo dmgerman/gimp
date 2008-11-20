@@ -532,7 +532,7 @@ name|rows
 operator|=
 name|CLAMP
 argument_list|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|images
 argument_list|)
@@ -833,7 +833,7 @@ block|{
 name|gint
 name|num_images
 init|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|images
 argument_list|)

@@ -1215,7 +1215,7 @@ name|i
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -1232,7 +1232,7 @@ block|{
 name|gint
 name|num
 init|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->

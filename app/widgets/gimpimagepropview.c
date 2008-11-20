@@ -154,7 +154,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b65d9480103
+DECL|enum|__anon27f1650d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2208,7 +2208,7 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -2240,7 +2240,7 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -2272,7 +2272,7 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->

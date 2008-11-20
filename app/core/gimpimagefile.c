@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3367680103
+DECL|enum|__anon28be98360103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -3168,7 +3168,7 @@ name|value_desc
 argument_list|,
 literal|"image-num-layers"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->

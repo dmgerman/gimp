@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292aa3080103
+DECL|enum|__anon287d9d5d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1684,7 +1684,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|display
 operator|->

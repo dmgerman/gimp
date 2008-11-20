@@ -1461,7 +1461,7 @@ name|g_printerr
 argument_list|(
 literal|"undo_steps: %d    undo_bytes: %ld\n"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1485,7 +1485,7 @@ directive|endif
 comment|/*  keep at least min_undo_levels undo steps  */
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1510,7 +1510,7 @@ name|undo_size
 operator|)
 operator|||
 operator|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1539,7 +1539,7 @@ name|g_printerr
 argument_list|(
 literal|"freed one step: undo_steps: %d    undo_bytes: %ld\n"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1576,7 +1576,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1616,7 +1616,7 @@ name|g_printerr
 argument_list|(
 literal|"redo_steps: %d    redo_bytes: %ld\n"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1647,7 +1647,7 @@ condition|)
 return|return;
 while|while
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)
@@ -1675,7 +1675,7 @@ name|g_printerr
 argument_list|(
 literal|"freed one step: redo_steps: %d    redo_bytes: %ld\n"
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)

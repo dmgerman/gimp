@@ -497,7 +497,7 @@ name|i
 decl_stmt|;
 name|n_children
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|presets
 argument_list|)

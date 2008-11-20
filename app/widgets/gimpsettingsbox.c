@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296770170103
+DECL|enum|__anon297aecbc0103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296770170203
+DECL|enum|__anon297aecbc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -908,7 +908,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|box
 operator|->

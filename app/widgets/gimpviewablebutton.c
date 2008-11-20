@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2bca4f0103
+DECL|enum|__anon2911f5f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -702,7 +702,7 @@ name|index
 decl_stmt|;
 name|n_children
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|button
 operator|->

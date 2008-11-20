@@ -94,7 +94,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d50f900103
+DECL|enum|__anon2acb34380103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d50f900203
+DECL|enum|__anon2acb34380203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d50f900308
+DECL|struct|__anon2acb34380308
 block|{
 DECL|member|signame
 name|gchar
@@ -1242,7 +1242,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d50f900408
+DECL|struct|__anon2acb34380408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1872,8 +1872,8 @@ end_function
 
 begin_function
 name|GType
-DECL|function|gimp_container_children_type (const GimpContainer * container)
-name|gimp_container_children_type
+DECL|function|gimp_container_get_children_type (const GimpContainer * container)
+name|gimp_container_get_children_type
 parameter_list|(
 specifier|const
 name|GimpContainer
@@ -1901,8 +1901,8 @@ end_function
 
 begin_function
 name|GimpContainerPolicy
-DECL|function|gimp_container_policy (const GimpContainer * container)
-name|gimp_container_policy
+DECL|function|gimp_container_get_policy (const GimpContainer * container)
+name|gimp_container_get_policy
 parameter_list|(
 specifier|const
 name|GimpContainer
@@ -1930,8 +1930,8 @@ end_function
 
 begin_function
 name|gint
-DECL|function|gimp_container_num_children (const GimpContainer * container)
-name|gimp_container_num_children
+DECL|function|gimp_container_get_n_children (const GimpContainer * container)
+name|gimp_container_get_n_children
 parameter_list|(
 specifier|const
 name|GimpContainer
@@ -3386,7 +3386,7 @@ expr_stmt|;
 operator|*
 name|length
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|container
 argument_list|)

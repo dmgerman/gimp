@@ -538,7 +538,7 @@ argument_list|)
 expr_stmt|;
 name|num_entries
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|gimp
 operator|->

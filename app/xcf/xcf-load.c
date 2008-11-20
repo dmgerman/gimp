@@ -869,7 +869,7 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -991,7 +991,7 @@ name|image
 argument_list|,
 name|channel
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -6825,7 +6825,7 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -7745,7 +7745,7 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->

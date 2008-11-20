@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4107be0103
+DECL|enum|__anon296295290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -759,7 +759,7 @@ decl_stmt|;
 name|memsize
 operator|+=
 operator|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
@@ -775,7 +775,7 @@ operator|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_container_policy
+name|gimp_container_get_policy
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(

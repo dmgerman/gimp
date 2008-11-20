@@ -787,7 +787,7 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|stack
 operator|->

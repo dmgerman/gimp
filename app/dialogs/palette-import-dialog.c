@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b739710103
+DECL|enum|__anon2741fbd20103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b739710208
+DECL|struct|__anon2741fbd20208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3443,7 +3443,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|dialog
 operator|->

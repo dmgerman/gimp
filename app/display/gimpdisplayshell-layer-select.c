@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0721fc0108
+DECL|struct|__anon2b93dca40108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -859,7 +859,7 @@ literal|0
 condition|)
 name|index
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|layer_select
 operator|->
@@ -875,7 +875,7 @@ if|if
 condition|(
 name|index
 operator|>=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|layer_select
 operator|->

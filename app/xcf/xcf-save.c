@@ -959,7 +959,7 @@ operator|=
 operator|(
 name|guint
 operator|)
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -971,7 +971,7 @@ operator|=
 operator|(
 name|guint
 operator|)
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -1592,7 +1592,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -6646,7 +6646,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288be5230108
+DECL|struct|__anon2b37a8950108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -6826,7 +6826,7 @@ decl_stmt|;
 comment|/* Write out the following:-    *    * last_selected_row (gint)    * number_of_paths (gint)    *    * then each path:-    */
 name|num_paths
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
@@ -7258,7 +7258,7 @@ argument_list|)
 expr_stmt|;
 name|num_paths
 operator|=
-name|gimp_container_num_children
+name|gimp_container_get_n_children
 argument_list|(
 name|image
 operator|->
