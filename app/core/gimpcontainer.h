@@ -112,19 +112,6 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-comment|/*  public, read-only  */
-DECL|member|children_type
-name|GType
-name|children_type
-decl_stmt|;
-DECL|member|policy
-name|GimpContainerPolicy
-name|policy
-decl_stmt|;
-DECL|member|num_children
-name|gint
-name|num_children
-decl_stmt|;
 DECL|member|priv
 name|GimpContainerPriv
 modifier|*

@@ -94,7 +94,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acb34380103
+DECL|enum|__anon2bd0f3290103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acb34380203
+DECL|enum|__anon2bd0f3290203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb34380308
+DECL|struct|__anon2bd0f3290308
 block|{
 DECL|member|signame
 name|gchar
@@ -167,6 +167,18 @@ DECL|struct|_GimpContainerPriv
 struct|struct
 name|_GimpContainerPriv
 block|{
+DECL|member|children_type
+name|GType
+name|children_type
+decl_stmt|;
+DECL|member|policy
+name|GimpContainerPolicy
+name|policy
+decl_stmt|;
+DECL|member|n_children
+name|gint
+name|n_children
+decl_stmt|;
 DECL|member|handlers
 name|GList
 modifier|*
@@ -818,11 +830,15 @@ literal|0
 expr_stmt|;
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 operator|=
 name|G_TYPE_NONE
 expr_stmt|;
 name|container
+operator|->
+name|priv
 operator|->
 name|policy
 operator|=
@@ -830,7 +846,9 @@ name|GIMP_CONTAINER_POLICY_STRONG
 expr_stmt|;
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|=
 literal|0
 expr_stmt|;
@@ -895,6 +913,8 @@ if|if
 condition|(
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 operator|!=
 name|G_TYPE_NONE
@@ -906,11 +926,15 @@ name|g_type_class_peek
 argument_list|(
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|container
+operator|->
+name|priv
 operator|->
 name|children_type
 operator|=
@@ -972,6 +996,8 @@ name|PROP_CHILDREN_TYPE
 case|:
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 operator|=
 name|g_value_get_gtype
@@ -983,6 +1009,8 @@ name|g_type_class_ref
 argument_list|(
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 argument_list|)
 expr_stmt|;
@@ -991,6 +1019,8 @@ case|case
 name|PROP_POLICY
 case|:
 name|container
+operator|->
+name|priv
 operator|->
 name|policy
 operator|=
@@ -1060,6 +1090,8 @@ name|value
 argument_list|,
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 argument_list|)
 expr_stmt|;
@@ -1072,6 +1104,8 @@ argument_list|(
 name|value
 argument_list|,
 name|container
+operator|->
+name|priv
 operator|->
 name|policy
 argument_list|)
@@ -1210,7 +1244,9 @@ parameter_list|)
 block|{
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|++
 expr_stmt|;
 block|}
@@ -1233,7 +1269,9 @@ parameter_list|)
 block|{
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|--
 expr_stmt|;
 block|}
@@ -1242,7 +1280,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb34380408
+DECL|struct|__anon2bd0f3290408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1596,6 +1634,8 @@ name|type
 argument_list|,
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 argument_list|)
 condition|)
@@ -1615,6 +1655,8 @@ argument_list|,
 name|g_type_name
 argument_list|(
 name|container
+operator|->
+name|priv
 operator|->
 name|children_type
 argument_list|)
@@ -1795,6 +1837,8 @@ if|if
 condition|(
 name|container
 operator|->
+name|priv
+operator|->
 name|policy
 operator|==
 name|GIMP_CONTAINER_POLICY_STRONG
@@ -1894,6 +1938,8 @@ expr_stmt|;
 return|return
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 return|;
 block|}
@@ -1922,6 +1968,8 @@ argument_list|)
 expr_stmt|;
 return|return
 name|container
+operator|->
+name|priv
 operator|->
 name|policy
 return|;
@@ -1952,7 +2000,9 @@ expr_stmt|;
 return|return
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 return|;
 block|}
 end_function
@@ -2004,6 +2054,8 @@ argument_list|(
 name|object
 argument_list|,
 name|container
+operator|->
+name|priv
 operator|->
 name|children_type
 argument_list|)
@@ -2108,6 +2160,8 @@ switch|switch
 condition|(
 name|container
 operator|->
+name|priv
+operator|->
 name|policy
 condition|)
 block|{
@@ -2143,7 +2197,9 @@ name|n_children
 operator|=
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
@@ -2165,7 +2221,9 @@ name|n_children
 operator|==
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 condition|)
 block|{
 name|g_warning
@@ -2178,7 +2236,9 @@ argument_list|)
 expr_stmt|;
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|++
 expr_stmt|;
 block|}
@@ -2235,6 +2295,8 @@ argument_list|(
 name|object
 argument_list|,
 name|container
+operator|->
+name|priv
 operator|->
 name|children_type
 argument_list|)
@@ -2348,7 +2410,9 @@ name|n_children
 operator|=
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
@@ -2370,7 +2434,9 @@ name|n_children
 operator|==
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 condition|)
 block|{
 name|g_warning
@@ -2383,13 +2449,17 @@ argument_list|)
 expr_stmt|;
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|--
 expr_stmt|;
 block|}
 switch|switch
 condition|(
 name|container
+operator|->
+name|priv
 operator|->
 name|policy
 condition|)
@@ -2467,6 +2537,8 @@ name|object
 argument_list|,
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 argument_list|)
 argument_list|,
@@ -2484,7 +2556,9 @@ name|index
 operator|<=
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2585,6 +2659,8 @@ name|object
 argument_list|,
 name|container
 operator|->
+name|priv
+operator|->
 name|children_type
 argument_list|)
 argument_list|,
@@ -2602,7 +2678,9 @@ name|new_index
 operator|<
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2637,7 +2715,9 @@ if|if
 condition|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|==
 literal|1
 condition|)
@@ -2836,7 +2916,9 @@ if|if
 condition|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|>
 literal|0
 condition|)
@@ -2890,7 +2972,9 @@ return|return
 operator|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|==
 literal|0
 operator|)
@@ -2927,7 +3011,9 @@ if|if
 condition|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|<
 literal|1
 condition|)
@@ -2986,7 +3072,9 @@ if|if
 condition|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|>
 literal|0
 condition|)
@@ -3093,7 +3181,9 @@ name|index
 operator|>=
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 condition|)
 return|return
 name|NULL
@@ -3144,7 +3234,9 @@ if|if
 condition|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|>
 literal|0
 condition|)
@@ -3197,7 +3289,9 @@ if|if
 condition|(
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|>
 literal|0
 condition|)
@@ -3213,7 +3307,9 @@ name|container
 argument_list|,
 name|container
 operator|->
-name|num_children
+name|priv
+operator|->
+name|n_children
 operator|-
 literal|1
 argument_list|)
@@ -3268,6 +3364,8 @@ argument_list|(
 name|object
 argument_list|,
 name|container
+operator|->
+name|priv
 operator|->
 name|children_type
 argument_list|)
@@ -3570,6 +3668,8 @@ argument_list|(
 name|signame
 argument_list|,
 name|container
+operator|->
+name|priv
 operator|->
 name|children_type
 argument_list|)
