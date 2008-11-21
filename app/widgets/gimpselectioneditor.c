@@ -102,7 +102,7 @@ end_ifdef
 begin_warning
 warning|#
 directive|warning
-warning|#include "tools/tools-types.h"
+warning|FIXME: #include "tools/tools-types.h"
 end_warning
 
 begin_endif
