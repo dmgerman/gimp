@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28bf80960103
+DECL|enum|__anon292ed0510103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -133,7 +133,7 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
-comment|/*  The display we are drawing to (may be                                *  a different one than tool->display)                                */
+comment|/*  The display we are drawing to (may be                                  *  a different one than tool->display)                                  */
 DECL|member|paused_count
 name|gint
 name|paused_count
@@ -144,18 +144,6 @@ name|gboolean
 name|is_drawn
 decl_stmt|;
 comment|/*  is the stuff we draw currently visible */
-DECL|member|vectors
-name|GList
-modifier|*
-name|vectors
-decl_stmt|;
-comment|/*  GimpVectors to render                  */
-DECL|member|transform
-name|GimpMatrix3
-modifier|*
-name|transform
-decl_stmt|;
-comment|/*  Transformation matrix of the vectors   */
 block|}
 struct|;
 end_struct
