@@ -59,6 +59,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight

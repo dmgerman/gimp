@@ -722,6 +722,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight
@@ -772,7 +773,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_render (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h,GdkRectangle * highlight)
+DECL|function|gimp_display_shell_render (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h,const GdkRectangle * highlight)
 name|gimp_display_shell_render
 parameter_list|(
 specifier|const
@@ -792,6 +793,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight
@@ -1249,7 +1251,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_render_highlight (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h,GdkRectangle * highlight)
+DECL|function|gimp_display_shell_render_highlight (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h,const GdkRectangle * highlight)
 name|gimp_display_shell_render_highlight
 parameter_list|(
 specifier|const
@@ -1269,6 +1271,7 @@ parameter_list|,
 name|gint
 name|h
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|highlight
