@@ -439,9 +439,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_selection_load
 argument_list|(
+name|GIMP_SELECTION
+argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 argument_list|,
 name|mask

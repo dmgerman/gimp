@@ -859,9 +859,12 @@ name|layer
 operator|=
 name|gimp_selection_float
 argument_list|(
+name|GIMP_SELECTION
+argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 argument_list|,
 name|drawable
@@ -2091,9 +2094,12 @@ name|channel
 operator|=
 name|gimp_selection_save
 argument_list|(
+name|GIMP_SELECTION
+argument_list|(
 name|gimp_image_get_mask
 argument_list|(
 name|image
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

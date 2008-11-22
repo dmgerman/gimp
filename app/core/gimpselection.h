@@ -178,7 +178,7 @@ begin_function_decl
 name|void
 name|gimp_selection_load
 parameter_list|(
-name|GimpChannel
+name|GimpSelection
 modifier|*
 name|selection
 parameter_list|,
@@ -194,7 +194,7 @@ name|GimpChannel
 modifier|*
 name|gimp_selection_save
 parameter_list|(
-name|GimpChannel
+name|GimpSelection
 modifier|*
 name|selection
 parameter_list|)
@@ -206,7 +206,7 @@ name|TileManager
 modifier|*
 name|gimp_selection_extract
 parameter_list|(
-name|GimpChannel
+name|GimpSelection
 modifier|*
 name|selection
 parameter_list|,
@@ -240,7 +240,7 @@ name|GimpLayer
 modifier|*
 name|gimp_selection_float
 parameter_list|(
-name|GimpChannel
+name|GimpSelection
 modifier|*
 name|selection
 parameter_list|,
