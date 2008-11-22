@@ -589,8 +589,6 @@ literal|"Per-user configuration file\n"
 literal|"\n"
 literal|".SH \"SEE ALSO\"\n"
 literal|".BR gimp (1),\n"
-literal|".BR gimptool (1),\n"
-literal|".BR gimp\\-remote (1)\n"
 decl_stmt|;
 end_decl_stmt
 
