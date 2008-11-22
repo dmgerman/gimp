@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b1ba6e0103
+DECL|enum|__anon28d6341b0103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -506,7 +506,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1ba6e0208
+DECL|struct|__anon28d6341b0208
 block|{
 DECL|member|mode
 name|Mode
@@ -983,7 +983,7 @@ name|src_file
 argument_list|,
 name|dest_file
 argument_list|,
-literal|0
+name|G_FILE_COPY_OVERWRITE
 argument_list|,
 name|NULL
 argument_list|,
