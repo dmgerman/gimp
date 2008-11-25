@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec30300103
+DECL|enum|__anon2c08919a0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29ec30300203
+DECL|enum|__anon2c08919a0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec30300303
+DECL|enum|__anon2c08919a0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -1292,6 +1292,21 @@ expr_stmt|;
 name|gimp_browser_show_message
 argument_list|(
 name|browser
+argument_list|,
+name|_
+argument_list|(
+literal|"No matches"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_label_set_text
+argument_list|(
+name|GTK_LABEL
+argument_list|(
+name|browser
+operator|->
+name|count_label
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
