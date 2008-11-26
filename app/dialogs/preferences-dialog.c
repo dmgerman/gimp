@@ -1759,6 +1759,23 @@ if|if
 condition|(
 name|template
 condition|)
+block|{
+comment|/*  make sure the resolution values are copied first (see bug #546924)  */
+name|gimp_config_sync
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|template
+argument_list|)
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|edit_template
+argument_list|)
+argument_list|,
+name|GIMP_TEMPLATE_PARAM_COPY_FIRST
+argument_list|)
+expr_stmt|;
 name|gimp_config_sync
 argument_list|(
 name|G_OBJECT
@@ -1774,6 +1791,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -9464,7 +9482,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2950c1af0108
+DECL|struct|__anon2bbd323e0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10631,7 +10649,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2950c1af0208
+DECL|struct|__anon2bbd323e0208
 block|{
 DECL|member|label
 specifier|const
@@ -11791,7 +11809,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2950c1af0308
+DECL|struct|__anon2bbd323e0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11946,7 +11964,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2950c1af0408
+DECL|struct|__anon2bbd323e0408
 block|{
 DECL|member|tree_label
 specifier|const
