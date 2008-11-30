@@ -23,12 +23,12 @@ end_macro
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2bd53d0103
+DECL|enum|__anon29d786cf0103
 block|{
 DECL|enumerator|GIMP_WIDGETS_PARSE_ERROR
 name|GIMP_WIDGETS_PARSE_ERROR
-block|, }
 DECL|typedef|GimpWidgetsError
+block|}
 name|GimpWidgetsError
 typedef|;
 end_typedef
