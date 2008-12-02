@@ -554,7 +554,7 @@ name|strcmp
 argument_list|(
 name|group
 argument_list|,
-literal|"Desktop Entry"
+name|G_KEY_FILE_DESKTOP_GROUP
 argument_list|)
 operator|!=
 literal|0
@@ -570,7 +570,7 @@ name|file
 argument_list|,
 name|group
 argument_list|,
-literal|"Type"
+name|G_KEY_FILE_DESKTOP_KEY_TYPE
 argument_list|,
 operator|&
 name|error
@@ -585,7 +585,7 @@ name|strcmp
 argument_list|(
 name|value
 argument_list|,
-literal|"Link"
+name|G_KEY_FILE_DESKTOP_TYPE_LINK
 argument_list|)
 operator|!=
 literal|0
@@ -606,7 +606,7 @@ name|file
 argument_list|,
 name|group
 argument_list|,
-literal|"URL"
+name|G_KEY_FILE_DESKTOP_KEY_URL
 argument_list|,
 operator|&
 name|error
