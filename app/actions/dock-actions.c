@@ -95,8 +95,10 @@ literal|"dock-move-to-screen-menu"
 block|,
 name|GIMP_STOCK_MOVE_TO_SCREEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dock-action"
+argument_list|,
 literal|"M_ove to Screen"
 argument_list|)
 block|,
@@ -114,8 +116,10 @@ literal|"dock-close"
 block|,
 name|GTK_STOCK_CLOSE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dock-action"
+argument_list|,
 literal|"Close Dock"
 argument_list|)
 block|,
@@ -136,8 +140,10 @@ literal|"dock-open-display"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dock-action"
+argument_list|,
 literal|"_Open Display..."
 argument_list|)
 block|,
@@ -173,8 +179,10 @@ literal|"dock-show-image-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dock-action"
+argument_list|,
 literal|"_Show Image Selection"
 argument_list|)
 block|,
@@ -197,8 +205,10 @@ literal|"dock-auto-follow-active"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dock-action"
+argument_list|,
 literal|"Auto _Follow Active Image"
 argument_list|)
 block|,
@@ -233,6 +243,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"dock-action"
+argument_list|,
 name|dock_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -244,6 +256,8 @@ expr_stmt|;
 name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"dock-action"
 argument_list|,
 name|dock_toggle_actions
 argument_list|,

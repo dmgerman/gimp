@@ -89,8 +89,10 @@ literal|"patterns-popup"
 block|,
 name|GIMP_STOCK_PATTERN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Patterns Menu"
 argument_list|)
 block|,
@@ -108,8 +110,10 @@ literal|"patterns-open-as-image"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"_Open Pattern as Image"
 argument_list|)
 block|,
@@ -133,8 +137,10 @@ literal|"patterns-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"_New Pattern"
 argument_list|)
 block|,
@@ -142,7 +148,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New pattern"
+literal|"Create a new pattern"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -158,8 +164,10 @@ literal|"patterns-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"D_uplicate Pattern"
 argument_list|)
 block|,
@@ -167,7 +175,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate pattern"
+literal|"Duplicate this pattern"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -183,8 +191,10 @@ literal|"patterns-copy-location"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Copy Pattern _Location"
 argument_list|)
 block|,
@@ -208,8 +218,10 @@ literal|"patterns-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"_Delete Pattern"
 argument_list|)
 block|,
@@ -217,7 +229,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete pattern"
+literal|"Delete this pattern"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -233,8 +245,10 @@ literal|"patterns-refresh"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"_Refresh Patterns"
 argument_list|)
 block|,
@@ -270,8 +284,10 @@ literal|"patterns-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"_Edit Pattern..."
 argument_list|)
 block|,
@@ -304,6 +320,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"patterns-action"
+argument_list|,
 name|patterns_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -315,6 +333,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"patterns-action"
 argument_list|,
 name|patterns_edit_actions
 argument_list|,

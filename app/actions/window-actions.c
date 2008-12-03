@@ -691,6 +691,8 @@ name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|entries
 argument_list|,
 name|n_screens

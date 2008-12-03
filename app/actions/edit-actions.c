@@ -209,8 +209,10 @@ literal|"edit-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Edit"
 argument_list|)
 block|}
@@ -220,8 +222,10 @@ literal|"edit-paste-as-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Paste as"
 argument_list|)
 block|}
@@ -231,8 +235,10 @@ literal|"edit-buffer-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Buffer"
 argument_list|)
 block|}
@@ -242,8 +248,10 @@ literal|"undo-popup"
 block|,
 name|GTK_STOCK_UNDO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Undo History Menu"
 argument_list|)
 block|,
@@ -261,8 +269,10 @@ literal|"edit-undo"
 block|,
 name|GTK_STOCK_UNDO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Undo"
 argument_list|)
 block|,
@@ -286,8 +296,10 @@ literal|"edit-redo"
 block|,
 name|GTK_STOCK_REDO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Redo"
 argument_list|)
 block|,
@@ -311,8 +323,10 @@ literal|"edit-strong-undo"
 block|,
 name|GTK_STOCK_UNDO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Strong Undo"
 argument_list|)
 block|,
@@ -336,8 +350,10 @@ literal|"edit-strong-redo"
 block|,
 name|GTK_STOCK_REDO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Strong Redo"
 argument_list|)
 block|,
@@ -361,8 +377,10 @@ literal|"edit-undo-clear"
 block|,
 name|GTK_STOCK_CLEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Clear Undo History"
 argument_list|)
 block|,
@@ -386,8 +404,10 @@ literal|"edit-fade"
 block|,
 name|GTK_STOCK_UNDO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Fade..."
 argument_list|)
 block|,
@@ -411,8 +431,10 @@ literal|"edit-cut"
 block|,
 name|GTK_STOCK_CUT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Cu_t"
 argument_list|)
 block|,
@@ -436,8 +458,10 @@ literal|"edit-copy"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Copy"
 argument_list|)
 block|,
@@ -462,8 +486,10 @@ block|,
 name|NULL
 block|,
 comment|/* GIMP_STOCK_COPY_VISIBLE, */
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Copy _Visible"
 argument_list|)
 block|,
@@ -487,8 +513,10 @@ literal|"edit-paste"
 block|,
 name|GTK_STOCK_PASTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Paste"
 argument_list|)
 block|,
@@ -512,8 +540,10 @@ literal|"edit-paste-into"
 block|,
 name|GIMP_STOCK_PASTE_INTO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Paste _Into"
 argument_list|)
 block|,
@@ -537,8 +567,10 @@ literal|"edit-paste-as-new"
 block|,
 name|GIMP_STOCK_PASTE_AS_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"From _Clipboard"
 argument_list|)
 block|,
@@ -562,8 +594,10 @@ literal|"edit-paste-as-new-short"
 block|,
 name|GIMP_STOCK_PASTE_AS_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_New Image"
 argument_list|)
 block|,
@@ -587,8 +621,10 @@ literal|"edit-paste-as-new-layer"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"New _Layer"
 argument_list|)
 block|,
@@ -612,8 +648,10 @@ literal|"edit-named-cut"
 block|,
 name|GTK_STOCK_CUT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Cu_t Named..."
 argument_list|)
 block|,
@@ -637,8 +675,10 @@ literal|"edit-named-copy"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Copy Named..."
 argument_list|)
 block|,
@@ -663,8 +703,10 @@ block|,
 name|NULL
 block|,
 comment|/* GIMP_STOCK_COPY_VISIBLE, */
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Copy _Visible Named..."
 argument_list|)
 block|,
@@ -688,8 +730,10 @@ literal|"edit-named-paste"
 block|,
 name|GTK_STOCK_PASTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"_Paste Named..."
 argument_list|)
 block|,
@@ -713,8 +757,10 @@ literal|"edit-clear"
 block|,
 name|GTK_STOCK_CLEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Cl_ear"
 argument_list|)
 block|,
@@ -750,8 +796,10 @@ literal|"edit-fill-fg"
 block|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Fill with _FG Color"
 argument_list|)
 block|,
@@ -774,8 +822,10 @@ literal|"edit-fill-bg"
 block|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Fill with B_G Color"
 argument_list|)
 block|,
@@ -798,8 +848,10 @@ literal|"edit-fill-pattern"
 block|,
 name|GIMP_STOCK_TOOL_BUCKET_FILL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Fill with P_attern"
 argument_list|)
 block|,
@@ -856,6 +908,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"edit-action"
+argument_list|,
 name|edit_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -867,6 +921,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"edit-action"
 argument_list|,
 name|edit_fill_actions
 argument_list|,

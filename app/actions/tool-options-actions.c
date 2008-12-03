@@ -137,8 +137,10 @@ literal|"tool-options-popup"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"Tool Options Menu"
 argument_list|)
 block|,
@@ -156,8 +158,10 @@ literal|"tool-options-save-menu"
 block|,
 name|GTK_STOCK_SAVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"_Save Options To"
 argument_list|)
 block|,
@@ -175,8 +179,10 @@ literal|"tool-options-restore-menu"
 block|,
 name|GTK_STOCK_REVERT_TO_SAVED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"_Restore Options From"
 argument_list|)
 block|,
@@ -194,8 +200,10 @@ literal|"tool-options-rename-menu"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"Re_name Saved Options"
 argument_list|)
 block|,
@@ -213,8 +221,10 @@ literal|"tool-options-delete-menu"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"_Delete Saved Options"
 argument_list|)
 block|,
@@ -232,8 +242,10 @@ literal|"tool-options-save-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"_New Entry..."
 argument_list|)
 block|,
@@ -254,15 +266,19 @@ literal|"tool-options-reset"
 block|,
 name|GIMP_STOCK_RESET
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"R_eset Tool Options"
 argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"Reset to default values"
 argument_list|)
 block|,
@@ -279,8 +295,10 @@ literal|"tool-options-reset-all"
 block|,
 name|GIMP_STOCK_RESET
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"Reset _all Tool Options"
 argument_list|)
 block|,
@@ -347,6 +365,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"tool-options-action"
 argument_list|,
 name|tool_options_actions
 argument_list|,
@@ -796,6 +816,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|entry

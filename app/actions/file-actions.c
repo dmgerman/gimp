@@ -204,8 +204,10 @@ literal|"file-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"_File"
 argument_list|)
 block|}
@@ -215,8 +217,10 @@ literal|"file-create-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Create"
 argument_list|)
 block|}
@@ -226,8 +230,10 @@ literal|"file-open-recent-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Open _Recent"
 argument_list|)
 block|}
@@ -237,8 +243,10 @@ literal|"file-open"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"_Open..."
 argument_list|)
 block|,
@@ -262,8 +270,10 @@ literal|"file-open-as-layers"
 block|,
 name|GIMP_STOCK_LAYER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Op_en as Layers..."
 argument_list|)
 block|,
@@ -287,8 +297,10 @@ literal|"file-open-location"
 block|,
 name|GIMP_STOCK_WEB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Open _Location..."
 argument_list|)
 block|,
@@ -312,8 +324,10 @@ literal|"file-save-as-template"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save as _Template..."
 argument_list|)
 block|,
@@ -337,8 +351,10 @@ literal|"file-revert"
 block|,
 name|GTK_STOCK_REVERT_TO_SAVED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Re_vert"
 argument_list|)
 block|,
@@ -362,8 +378,10 @@ literal|"file-close-all"
 block|,
 name|GTK_STOCK_CLOSE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Close all"
 argument_list|)
 block|,
@@ -387,8 +405,10 @@ literal|"file-quit"
 block|,
 name|GTK_STOCK_QUIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"_Quit"
 argument_list|)
 block|,
@@ -424,8 +444,10 @@ literal|"file-save"
 block|,
 name|GTK_STOCK_SAVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"_Save"
 argument_list|)
 block|,
@@ -448,8 +470,10 @@ literal|"file-save-as"
 block|,
 name|GTK_STOCK_SAVE_AS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save _As..."
 argument_list|)
 block|,
@@ -472,8 +496,10 @@ literal|"file-save-a-copy"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save a Cop_y..."
 argument_list|)
 block|,
@@ -496,8 +522,10 @@ literal|"file-save-and-close"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save and Close..."
 argument_list|)
 block|,
@@ -542,6 +570,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"file-action"
+argument_list|,
 name|file_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -553,6 +583,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"file-action"
 argument_list|,
 name|file_save_actions
 argument_list|,
@@ -721,6 +753,8 @@ block|}
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|entries
 argument_list|,

@@ -101,8 +101,10 @@ literal|"colormap-popup"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"Colormap Menu"
 argument_list|)
 block|,
@@ -120,8 +122,10 @@ literal|"colormap-edit-color"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"_Edit Color..."
 argument_list|)
 block|,
@@ -129,7 +133,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Edit color"
+literal|"Edit this color"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -157,8 +161,10 @@ literal|"colormap-add-color-from-fg"
 block|,
 name|GTK_STOCK_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"_Add Color from FG"
 argument_list|)
 block|,
@@ -181,8 +187,10 @@ literal|"colormap-add-color-from-bg"
 block|,
 name|GTK_STOCK_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"_Add Color from BG"
 argument_list|)
 block|,
@@ -217,6 +225,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"colormap-action"
+argument_list|,
 name|colormap_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -228,6 +238,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"colormap-action"
 argument_list|,
 name|colormap_add_color_actions
 argument_list|,

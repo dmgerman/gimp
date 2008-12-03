@@ -83,8 +83,10 @@ literal|"templates-popup"
 block|,
 name|GIMP_STOCK_TEMPLATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"Templates Menu"
 argument_list|)
 block|,
@@ -102,8 +104,10 @@ literal|"templates-create-image"
 block|,
 name|GIMP_STOCK_IMAGE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"_Create Image from Template"
 argument_list|)
 block|,
@@ -127,8 +131,10 @@ literal|"templates-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"_New Template..."
 argument_list|)
 block|,
@@ -152,8 +158,10 @@ literal|"templates-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"D_uplicate Template..."
 argument_list|)
 block|,
@@ -161,7 +169,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate the selected template"
+literal|"Duplicate this template"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -177,8 +185,10 @@ literal|"templates-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"_Edit Template..."
 argument_list|)
 block|,
@@ -186,7 +196,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Edit the selected template"
+literal|"Edit this template"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -202,8 +212,10 @@ literal|"templates-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"_Delete Template"
 argument_list|)
 block|,
@@ -211,7 +223,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete the selected template"
+literal|"Delete this template"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -238,6 +250,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"templates-action"
 argument_list|,
 name|templates_actions
 argument_list|,

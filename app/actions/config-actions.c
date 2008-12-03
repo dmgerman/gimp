@@ -71,8 +71,10 @@ literal|"config-use-gegl"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"config-action"
+argument_list|,
 literal|"Use _GEGL"
 argument_list|)
 block|,
@@ -155,6 +157,8 @@ block|{
 name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"config-action"
 argument_list|,
 name|config_toggle_actions
 argument_list|,

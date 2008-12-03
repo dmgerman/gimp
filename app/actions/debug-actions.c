@@ -195,6 +195,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|debug_actions
 argument_list|,
 name|G_N_ELEMENTS

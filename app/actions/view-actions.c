@@ -225,8 +225,10 @@ literal|"view-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_View"
 argument_list|)
 block|}
@@ -236,8 +238,10 @@ literal|"view-zoom-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_Zoom"
 argument_list|)
 block|}
@@ -247,8 +251,10 @@ literal|"view-padding-color-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_Padding Color"
 argument_list|)
 block|}
@@ -258,8 +264,10 @@ literal|"view-move-to-screen-menu"
 block|,
 name|GIMP_STOCK_MOVE_TO_SCREEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Move to Screen"
 argument_list|)
 block|,
@@ -277,8 +285,10 @@ literal|"view-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_New View"
 argument_list|)
 block|,
@@ -302,8 +312,10 @@ literal|"view-close"
 block|,
 name|GTK_STOCK_CLOSE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_Close"
 argument_list|)
 block|,
@@ -327,8 +339,10 @@ literal|"view-zoom-fit-in"
 block|,
 name|GTK_STOCK_ZOOM_FIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_Fit Image in Window"
 argument_list|)
 block|,
@@ -352,8 +366,10 @@ literal|"view-zoom-fill"
 block|,
 name|GTK_STOCK_ZOOM_FIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Fi_ll Window"
 argument_list|)
 block|,
@@ -377,8 +393,10 @@ literal|"view-zoom-revert"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Re_vert Zoom"
 argument_list|)
 block|,
@@ -402,8 +420,10 @@ literal|"view-navigation-window"
 block|,
 name|GIMP_STOCK_NAVIGATION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Na_vigation Window"
 argument_list|)
 block|,
@@ -427,8 +447,10 @@ literal|"view-display-filters"
 block|,
 name|GIMP_STOCK_DISPLAY_FILTER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Display _Filters..."
 argument_list|)
 block|,
@@ -452,8 +474,10 @@ literal|"view-shrink-wrap"
 block|,
 name|GTK_STOCK_ZOOM_FIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Shrink _Wrap"
 argument_list|)
 block|,
@@ -477,8 +501,10 @@ literal|"view-open-display"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_Open Display..."
 argument_list|)
 block|,
@@ -514,8 +540,10 @@ literal|"view-dot-for-dot"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"_Dot for Dot"
 argument_list|)
 block|,
@@ -541,8 +569,10 @@ literal|"view-show-selection"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show _Selection"
 argument_list|)
 block|,
@@ -568,8 +598,10 @@ literal|"view-show-layer-boundary"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show _Layer Boundary"
 argument_list|)
 block|,
@@ -595,8 +627,10 @@ literal|"view-show-guides"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show _Guides"
 argument_list|)
 block|,
@@ -622,8 +656,10 @@ literal|"view-show-grid"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"S_how Grid"
 argument_list|)
 block|,
@@ -649,8 +685,10 @@ literal|"view-show-sample-points"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show Sample Points"
 argument_list|)
 block|,
@@ -676,8 +714,10 @@ literal|"view-snap-to-guides"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Sn_ap to Guides"
 argument_list|)
 block|,
@@ -703,8 +743,10 @@ literal|"view-snap-to-grid"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Sna_p to Grid"
 argument_list|)
 block|,
@@ -730,8 +772,10 @@ literal|"view-snap-to-canvas"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Snap to _Canvas Edges"
 argument_list|)
 block|,
@@ -757,8 +801,10 @@ literal|"view-snap-to-vectors"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Snap t_o Active Path"
 argument_list|)
 block|,
@@ -784,8 +830,10 @@ literal|"view-show-menubar"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show _Menubar"
 argument_list|)
 block|,
@@ -811,8 +859,10 @@ literal|"view-show-rulers"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show R_ulers"
 argument_list|)
 block|,
@@ -838,8 +888,10 @@ literal|"view-show-scrollbars"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show Scroll_bars"
 argument_list|)
 block|,
@@ -865,8 +917,10 @@ literal|"view-show-statusbar"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show S_tatusbar"
 argument_list|)
 block|,
@@ -892,8 +946,10 @@ literal|"view-fullscreen"
 block|,
 name|GTK_STOCK_FULLSCREEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Fullscr_een"
 argument_list|)
 block|,
@@ -1006,8 +1062,10 @@ literal|"view-zoom-out"
 block|,
 name|GTK_STOCK_ZOOM_OUT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom _Out"
 argument_list|)
 block|,
@@ -1030,8 +1088,10 @@ literal|"view-zoom-in"
 block|,
 name|GTK_STOCK_ZOOM_IN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom _In"
 argument_list|)
 block|,
@@ -1054,8 +1114,10 @@ literal|"view-zoom-out-accel"
 block|,
 name|GIMP_STOCK_CHAR_PICKER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom Out"
 argument_list|)
 block|,
@@ -1078,8 +1140,10 @@ literal|"view-zoom-in-accel"
 block|,
 name|GIMP_STOCK_CHAR_PICKER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom In"
 argument_list|)
 block|,
@@ -1150,8 +1214,10 @@ literal|"view-zoom-16-1"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"1_6:1  (1600%)"
 argument_list|)
 block|,
@@ -1172,8 +1238,10 @@ literal|"view-zoom-8-1"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"_8:1  (800%)"
 argument_list|)
 block|,
@@ -1194,8 +1262,10 @@ literal|"view-zoom-4-1"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"_4:1  (400%)"
 argument_list|)
 block|,
@@ -1216,8 +1286,10 @@ literal|"view-zoom-2-1"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"_2:1  (200%)"
 argument_list|)
 block|,
@@ -1238,8 +1310,10 @@ literal|"view-zoom-1-1"
 block|,
 name|GTK_STOCK_ZOOM_100
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"_1:1  (100%)"
 argument_list|)
 block|,
@@ -1260,8 +1334,10 @@ literal|"view-zoom-1-2"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"1:_2  (50%)"
 argument_list|)
 block|,
@@ -1282,8 +1358,10 @@ literal|"view-zoom-1-4"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"1:_4  (25%)"
 argument_list|)
 block|,
@@ -1304,8 +1382,10 @@ literal|"view-zoom-1-8"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"1:_8  (12.5%)"
 argument_list|)
 block|,
@@ -1326,8 +1406,10 @@ literal|"view-zoom-1-16"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"1:1_6  (6.25%)"
 argument_list|)
 block|,
@@ -1348,8 +1430,10 @@ literal|"view-zoom-other"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Othe_r..."
 argument_list|)
 block|,
@@ -1382,8 +1466,10 @@ literal|"view-padding-color-theme"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"From _Theme"
 argument_list|)
 block|,
@@ -1406,8 +1492,10 @@ literal|"view-padding-color-light-check"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"_Light Check Color"
 argument_list|)
 block|,
@@ -1430,8 +1518,10 @@ literal|"view-padding-color-dark-check"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"_Dark Check Color"
 argument_list|)
 block|,
@@ -1454,8 +1544,10 @@ literal|"view-padding-color-custom"
 block|,
 name|GTK_STOCK_SELECT_COLOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"Select _Custom Color..."
 argument_list|)
 block|,
@@ -1478,8 +1570,10 @@ literal|"view-padding-color-prefs"
 block|,
 name|GIMP_STOCK_RESET
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"As in _Preferences"
 argument_list|)
 block|,
@@ -1794,6 +1888,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"view-action"
+argument_list|,
 name|view_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1806,6 +1902,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"view-action"
+argument_list|,
 name|view_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1817,6 +1915,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"view-zoom-action"
 argument_list|,
 name|view_zoom_actions
 argument_list|,
@@ -1834,6 +1934,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"view-zoom-action"
 argument_list|,
 name|view_zoom_explicit_actions
 argument_list|,
@@ -1856,6 +1958,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"view-padding-color"
+argument_list|,
 name|view_padding_color_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1873,6 +1977,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|view_scroll_horizontal_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1889,6 +1995,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|view_scroll_vertical_actions
 argument_list|,

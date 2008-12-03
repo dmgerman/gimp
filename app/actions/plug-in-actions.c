@@ -321,8 +321,10 @@ literal|"plug-in-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Filte_rs"
 argument_list|)
 block|}
@@ -332,8 +334,10 @@ literal|"plug-in-recent-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Recently Used"
 argument_list|)
 block|}
@@ -343,8 +347,10 @@ literal|"plug-in-blur-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Blur"
 argument_list|)
 block|}
@@ -354,8 +360,10 @@ literal|"plug-in-noise-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Noise"
 argument_list|)
 block|}
@@ -365,8 +373,10 @@ literal|"plug-in-edge-detect-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Edge-De_tect"
 argument_list|)
 block|}
@@ -376,8 +386,10 @@ literal|"plug-in-enhance-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"En_hance"
 argument_list|)
 block|}
@@ -387,8 +399,10 @@ literal|"plug-in-combine-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"C_ombine"
 argument_list|)
 block|}
@@ -398,8 +412,10 @@ literal|"plug-in-generic-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Generic"
 argument_list|)
 block|}
@@ -409,8 +425,10 @@ literal|"plug-in-light-shadow-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Light and Shadow"
 argument_list|)
 block|}
@@ -420,8 +438,10 @@ literal|"plug-in-distorts-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Distorts"
 argument_list|)
 block|}
@@ -431,8 +451,10 @@ literal|"plug-in-artistic-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Artistic"
 argument_list|)
 block|}
@@ -442,8 +464,10 @@ literal|"plug-in-decor-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Decor"
 argument_list|)
 block|}
@@ -453,8 +477,10 @@ literal|"plug-in-map-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Map"
 argument_list|)
 block|}
@@ -464,8 +490,10 @@ literal|"plug-in-render-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Render"
 argument_list|)
 block|}
@@ -475,8 +503,10 @@ literal|"plug-in-render-clouds-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Clouds"
 argument_list|)
 block|}
@@ -486,8 +516,10 @@ literal|"plug-in-render-nature-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Nature"
 argument_list|)
 block|}
@@ -497,8 +529,10 @@ literal|"plug-in-render-pattern-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Pattern"
 argument_list|)
 block|}
@@ -508,8 +542,10 @@ literal|"plug-in-web-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"_Web"
 argument_list|)
 block|}
@@ -519,8 +555,10 @@ literal|"plug-in-animation-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"An_imation"
 argument_list|)
 block|}
@@ -530,8 +568,10 @@ literal|"plug-in-reset-all"
 block|,
 name|GIMP_STOCK_RESET
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Reset all _Filters"
 argument_list|)
 block|,
@@ -567,8 +607,10 @@ literal|"plug-in-repeat"
 block|,
 name|GTK_STOCK_EXECUTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Re_peat Last"
 argument_list|)
 block|,
@@ -591,8 +633,10 @@ literal|"plug-in-reshow"
 block|,
 name|GIMP_STOCK_RESHOW_FILTER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"R_e-Show Last"
 argument_list|)
 block|,
@@ -655,6 +699,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"plug-in-action"
+argument_list|,
 name|plug_in_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -666,6 +712,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"plug-in-action"
 argument_list|,
 name|plug_in_repeat_actions
 argument_list|,

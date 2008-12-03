@@ -101,8 +101,10 @@ literal|"selection-popup"
 block|,
 name|GIMP_STOCK_TOOL_RECT_SELECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Selection Editor Menu"
 argument_list|)
 block|,
@@ -120,8 +122,10 @@ literal|"select-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Select"
 argument_list|)
 block|}
@@ -131,9 +135,11 @@ literal|"select-all"
 block|,
 name|GIMP_STOCK_SELECTION_ALL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"select|_All"
+literal|"select-action"
+argument_list|,
+literal|"_All"
 argument_list|)
 block|,
 literal|"<control>A"
@@ -156,9 +162,11 @@ literal|"select-none"
 block|,
 name|GIMP_STOCK_SELECTION_NONE
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"select|_None"
+literal|"select-action"
+argument_list|,
+literal|"_None"
 argument_list|)
 block|,
 literal|"<control><shift>A"
@@ -181,8 +189,10 @@ literal|"select-invert"
 block|,
 name|GIMP_STOCK_INVERT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Invert"
 argument_list|)
 block|,
@@ -206,8 +216,10 @@ literal|"select-float"
 block|,
 name|GIMP_STOCK_FLOATING_SELECTION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Float"
 argument_list|)
 block|,
@@ -231,8 +243,10 @@ literal|"select-feather"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Fea_ther..."
 argument_list|)
 block|,
@@ -256,8 +270,10 @@ literal|"select-sharpen"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Sharpen"
 argument_list|)
 block|,
@@ -281,8 +297,10 @@ literal|"select-shrink"
 block|,
 name|GIMP_STOCK_SELECTION_SHRINK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"S_hrink..."
 argument_list|)
 block|,
@@ -306,8 +324,10 @@ literal|"select-grow"
 block|,
 name|GIMP_STOCK_SELECTION_GROW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Grow..."
 argument_list|)
 block|,
@@ -331,8 +351,10 @@ literal|"select-border"
 block|,
 name|GIMP_STOCK_SELECTION_BORDER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Bo_rder..."
 argument_list|)
 block|,
@@ -356,8 +378,10 @@ literal|"select-save"
 block|,
 name|GIMP_STOCK_SELECTION_TO_CHANNEL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Save to _Channel"
 argument_list|)
 block|,
@@ -381,8 +405,10 @@ literal|"select-stroke"
 block|,
 name|GIMP_STOCK_SELECTION_STROKE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Stroke Selection..."
 argument_list|)
 block|,
@@ -406,8 +432,10 @@ literal|"select-stroke-last-values"
 block|,
 name|GIMP_STOCK_SELECTION_STROKE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"_Stroke Selection"
 argument_list|)
 block|,
@@ -442,6 +470,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"select-action"
 argument_list|,
 name|select_actions
 argument_list|,

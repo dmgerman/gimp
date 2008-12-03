@@ -107,8 +107,10 @@ literal|"tools-popup"
 block|,
 name|GIMP_STOCK_TOOLS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"Tools Menu"
 argument_list|)
 block|,
@@ -126,8 +128,10 @@ literal|"tools-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Tools"
 argument_list|)
 block|}
@@ -137,8 +141,10 @@ literal|"tools-select-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Selection Tools"
 argument_list|)
 block|}
@@ -148,8 +154,10 @@ literal|"tools-paint-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Paint Tools"
 argument_list|)
 block|}
@@ -159,8 +167,10 @@ literal|"tools-transform-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Transform Tools"
 argument_list|)
 block|}
@@ -170,8 +180,10 @@ literal|"tools-color-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Color Tools"
 argument_list|)
 block|}
@@ -181,8 +193,10 @@ literal|"tools-raise"
 block|,
 name|GTK_STOCK_GO_UP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"R_aise Tool"
 argument_list|)
 block|,
@@ -206,8 +220,10 @@ literal|"tools-raise-to-top"
 block|,
 name|GTK_STOCK_GOTO_TOP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"Ra_ise to Top"
 argument_list|)
 block|,
@@ -231,8 +247,10 @@ literal|"tools-lower"
 block|,
 name|GTK_STOCK_GO_DOWN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"L_ower Tool"
 argument_list|)
 block|,
@@ -256,8 +274,10 @@ literal|"tools-lower-to-bottom"
 block|,
 name|GTK_STOCK_GOTO_BOTTOM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"Lo_wer to Bottom"
 argument_list|)
 block|,
@@ -281,8 +301,10 @@ literal|"tools-reset"
 block|,
 name|GIMP_STOCK_RESET
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Reset Order& Visibility"
 argument_list|)
 block|,
@@ -318,8 +340,10 @@ literal|"tools-visibility"
 block|,
 name|GIMP_STOCK_VISIBLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Show in Toolbox"
 argument_list|)
 block|,
@@ -355,8 +379,10 @@ literal|"tools-by-color-select-short"
 block|,
 name|GIMP_STOCK_TOOL_BY_COLOR_SELECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_By Color"
 argument_list|)
 block|,
@@ -377,8 +403,10 @@ literal|"tools-rotate-arbitrary"
 block|,
 name|GIMP_STOCK_TOOL_ROTATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"_Arbitrary Rotation..."
 argument_list|)
 block|,
@@ -2293,6 +2321,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"tools-action"
+argument_list|,
 name|tools_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2305,6 +2335,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"tools-action"
+argument_list|,
 name|tools_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2316,6 +2348,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"tools-action"
 argument_list|,
 name|tools_alternative_actions
 argument_list|,
@@ -2353,6 +2387,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_color_average_radius_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2369,6 +2405,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|tools_paint_brush_scale_actions
 argument_list|,
@@ -2387,6 +2425,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_ink_blob_size_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2403,6 +2443,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|tools_ink_blob_aspect_actions
 argument_list|,
@@ -2421,6 +2463,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_ink_blob_angle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2437,6 +2481,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|tools_foreground_select_brush_size_actions
 argument_list|,
@@ -2455,6 +2501,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_transform_preview_opacity_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2471,6 +2519,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|tools_value_1_actions
 argument_list|,
@@ -2489,6 +2539,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_value_2_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2505,6 +2557,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|tools_value_3_actions
 argument_list|,
@@ -2523,6 +2577,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_value_4_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2540,6 +2596,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|tools_object_1_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -2556,6 +2614,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|tools_object_2_actions
 argument_list|,
@@ -2736,6 +2796,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|entry

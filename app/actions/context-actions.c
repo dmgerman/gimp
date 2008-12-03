@@ -105,8 +105,10 @@ literal|"context-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Context"
 argument_list|)
 block|}
@@ -116,8 +118,10 @@ literal|"context-colors-menu"
 block|,
 name|GIMP_STOCK_DEFAULT_COLORS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Colors"
 argument_list|)
 block|}
@@ -127,8 +131,10 @@ literal|"context-opacity-menu"
 block|,
 name|GIMP_STOCK_TRANSPARENCY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Opacity"
 argument_list|)
 block|}
@@ -138,8 +144,10 @@ literal|"context-paint-mode-menu"
 block|,
 name|GIMP_STOCK_TOOL_PENCIL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"Paint _Mode"
 argument_list|)
 block|}
@@ -149,8 +157,10 @@ literal|"context-tool-menu"
 block|,
 name|GIMP_STOCK_TOOLS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Tool"
 argument_list|)
 block|}
@@ -160,8 +170,10 @@ literal|"context-brush-menu"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Brush"
 argument_list|)
 block|}
@@ -171,8 +183,10 @@ literal|"context-pattern-menu"
 block|,
 name|GIMP_STOCK_PATTERN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Pattern"
 argument_list|)
 block|}
@@ -182,8 +196,10 @@ literal|"context-palette-menu"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Palette"
 argument_list|)
 block|}
@@ -193,8 +209,10 @@ literal|"context-gradient-menu"
 block|,
 name|GIMP_STOCK_GRADIENT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Gradient"
 argument_list|)
 block|}
@@ -204,8 +222,10 @@ literal|"context-font-menu"
 block|,
 name|GIMP_STOCK_FONT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Font"
 argument_list|)
 block|}
@@ -215,8 +235,10 @@ literal|"context-brush-shape-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Shape"
 argument_list|)
 block|}
@@ -226,8 +248,10 @@ literal|"context-brush-radius-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Radius"
 argument_list|)
 block|}
@@ -237,8 +261,10 @@ literal|"context-brush-spikes-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"S_pikes"
 argument_list|)
 block|}
@@ -248,8 +274,10 @@ literal|"context-brush-hardness-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Hardness"
 argument_list|)
 block|}
@@ -259,8 +287,10 @@ literal|"context-brush-aspect-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Aspect"
 argument_list|)
 block|}
@@ -270,8 +300,10 @@ literal|"context-brush-angle-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"A_ngle"
 argument_list|)
 block|}
@@ -281,8 +313,10 @@ literal|"context-colors-default"
 block|,
 name|GIMP_STOCK_DEFAULT_COLORS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"_Default Colors"
 argument_list|)
 block|,
@@ -306,8 +340,10 @@ literal|"context-colors-swap"
 block|,
 name|GIMP_STOCK_SWAP_COLORS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"S_wap Colors"
 argument_list|)
 block|,
@@ -4621,6 +4657,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"context-action"
+argument_list|,
 name|context_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4632,6 +4670,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_palette_foreground_actions
 argument_list|,
@@ -4650,6 +4690,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_palette_background_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4666,6 +4708,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_colormap_foreground_actions
 argument_list|,
@@ -4684,6 +4728,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_colormap_background_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4700,6 +4746,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_swatch_foreground_actions
 argument_list|,
@@ -4718,6 +4766,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_swatch_background_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4734,6 +4784,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_foreground_red_actions
 argument_list|,
@@ -4752,6 +4804,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_foreground_green_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4768,6 +4822,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_foreground_blue_actions
 argument_list|,
@@ -4786,6 +4842,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_foreground_hue_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4802,6 +4860,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_foreground_saturation_actions
 argument_list|,
@@ -4820,6 +4880,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_foreground_value_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4836,6 +4898,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_background_red_actions
 argument_list|,
@@ -4854,6 +4918,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_background_green_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4870,6 +4936,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_background_blue_actions
 argument_list|,
@@ -4888,6 +4956,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_background_hue_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4904,6 +4974,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_background_saturation_actions
 argument_list|,
@@ -4922,6 +4994,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_background_value_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4938,6 +5012,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_opacity_actions
 argument_list|,
@@ -4956,6 +5032,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_paint_mode_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -4972,6 +5050,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_tool_select_actions
 argument_list|,
@@ -4990,6 +5070,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_brush_select_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -5006,6 +5088,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_pattern_select_actions
 argument_list|,
@@ -5024,6 +5108,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_palette_select_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -5040,6 +5126,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_gradient_select_actions
 argument_list|,
@@ -5058,6 +5146,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_font_select_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -5074,6 +5164,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_brush_spacing_actions
 argument_list|,
@@ -5092,6 +5184,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_brush_shape_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -5108,6 +5202,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_brush_radius_actions
 argument_list|,
@@ -5126,6 +5222,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_brush_spikes_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -5142,6 +5240,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_brush_hardness_actions
 argument_list|,
@@ -5160,6 +5260,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|context_brush_aspect_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -5176,6 +5278,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|context_brush_angle_actions
 argument_list|,

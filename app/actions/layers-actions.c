@@ -113,8 +113,10 @@ literal|"layers-popup"
 block|,
 name|GIMP_STOCK_LAYERS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Layers Menu"
 argument_list|)
 block|,
@@ -132,8 +134,10 @@ literal|"layers-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Layer"
 argument_list|)
 block|}
@@ -143,8 +147,10 @@ literal|"layers-stack-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Stac_k"
 argument_list|)
 block|}
@@ -154,8 +160,10 @@ literal|"layers-text-to-selection-menu"
 block|,
 name|GIMP_STOCK_TOOL_TEXT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Te_xt to Selection"
 argument_list|)
 block|}
@@ -165,8 +173,10 @@ literal|"layers-mask-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Mask"
 argument_list|)
 block|}
@@ -176,8 +186,10 @@ literal|"layers-transparency-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Tr_ansparency"
 argument_list|)
 block|}
@@ -187,8 +199,10 @@ literal|"layers-transform-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Transform"
 argument_list|)
 block|}
@@ -198,8 +212,10 @@ literal|"layers-properties-menu"
 block|,
 name|GTK_STOCK_PROPERTIES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Properties"
 argument_list|)
 block|}
@@ -209,8 +225,10 @@ literal|"layers-opacity-menu"
 block|,
 name|GIMP_STOCK_TRANSPARENCY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Opacity"
 argument_list|)
 block|}
@@ -220,8 +238,10 @@ literal|"layers-mode-menu"
 block|,
 name|GIMP_STOCK_TOOL_PENCIL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Layer _Mode"
 argument_list|)
 block|}
@@ -231,8 +251,10 @@ literal|"layers-text-tool"
 block|,
 name|GIMP_STOCK_TOOL_TEXT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Te_xt Tool"
 argument_list|)
 block|,
@@ -256,8 +278,10 @@ literal|"layers-edit-attributes"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Edit Layer Attributes..."
 argument_list|)
 block|,
@@ -281,8 +305,10 @@ literal|"layers-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_New Layer..."
 argument_list|)
 block|,
@@ -306,8 +332,10 @@ literal|"layers-new-last-values"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_New Layer"
 argument_list|)
 block|,
@@ -331,8 +359,10 @@ literal|"layers-new-from-visible"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"New from _Visible"
 argument_list|)
 block|,
@@ -356,8 +386,10 @@ literal|"layers-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"D_uplicate Layer"
 argument_list|)
 block|,
@@ -381,8 +413,10 @@ literal|"layers-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Delete Layer"
 argument_list|)
 block|,
@@ -406,8 +440,10 @@ literal|"layers-raise"
 block|,
 name|GTK_STOCK_GO_UP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Raise Layer"
 argument_list|)
 block|,
@@ -431,8 +467,10 @@ literal|"layers-raise-to-top"
 block|,
 name|GTK_STOCK_GOTO_TOP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Layer to _Top"
 argument_list|)
 block|,
@@ -456,8 +494,10 @@ literal|"layers-lower"
 block|,
 name|GTK_STOCK_GO_DOWN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Lower Layer"
 argument_list|)
 block|,
@@ -481,8 +521,10 @@ literal|"layers-lower-to-bottom"
 block|,
 name|GTK_STOCK_GOTO_BOTTOM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Layer to _Bottom"
 argument_list|)
 block|,
@@ -506,8 +548,10 @@ literal|"layers-anchor"
 block|,
 name|GIMP_STOCK_ANCHOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Anchor Layer"
 argument_list|)
 block|,
@@ -531,8 +575,10 @@ literal|"layers-merge-down"
 block|,
 name|GIMP_STOCK_MERGE_DOWN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Merge Do_wn"
 argument_list|)
 block|,
@@ -556,8 +602,10 @@ literal|"layers-merge-layers"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Merge _Visible Layers..."
 argument_list|)
 block|,
@@ -581,8 +629,10 @@ literal|"layers-flatten-image"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Flatten Image"
 argument_list|)
 block|,
@@ -606,8 +656,10 @@ literal|"layers-text-discard"
 block|,
 name|GIMP_STOCK_TOOL_TEXT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Discard Text Information"
 argument_list|)
 block|,
@@ -631,8 +683,10 @@ literal|"layers-text-to-vectors"
 block|,
 name|GIMP_STOCK_TOOL_TEXT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Text to _Path"
 argument_list|)
 block|,
@@ -656,8 +710,10 @@ literal|"layers-text-along-vectors"
 block|,
 name|GIMP_STOCK_TOOL_TEXT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Text alon_g Path"
 argument_list|)
 block|,
@@ -681,8 +737,10 @@ literal|"layers-resize"
 block|,
 name|GIMP_STOCK_RESIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Layer B_oundary Size..."
 argument_list|)
 block|,
@@ -706,8 +764,10 @@ literal|"layers-resize-to-image"
 block|,
 name|GIMP_STOCK_LAYER_TO_IMAGESIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Layer to _Image Size"
 argument_list|)
 block|,
@@ -731,8 +791,10 @@ literal|"layers-scale"
 block|,
 name|GIMP_STOCK_SCALE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Scale Layer..."
 argument_list|)
 block|,
@@ -756,8 +818,10 @@ literal|"layers-crop"
 block|,
 name|GIMP_STOCK_TOOL_CROP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Crop to Selection"
 argument_list|)
 block|,
@@ -781,8 +845,10 @@ literal|"layers-mask-add"
 block|,
 name|GIMP_STOCK_LAYER_MASK
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add La_yer Mask..."
 argument_list|)
 block|,
@@ -806,8 +872,10 @@ literal|"layers-alpha-add"
 block|,
 name|GIMP_STOCK_TRANSPARENCY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add Alpha C_hannel"
 argument_list|)
 block|,
@@ -831,8 +899,10 @@ literal|"layers-alpha-remove"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Remove Alpha Channel"
 argument_list|)
 block|,
@@ -868,8 +938,10 @@ literal|"layers-lock-alpha"
 block|,
 name|GIMP_STOCK_TRANSPARENCY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Lock Alph_a Channel"
 argument_list|)
 block|,
@@ -895,8 +967,10 @@ literal|"layers-mask-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Edit Layer Mask"
 argument_list|)
 block|,
@@ -922,8 +996,10 @@ literal|"layers-mask-show"
 block|,
 name|GIMP_STOCK_VISIBLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"S_how Layer Mask"
 argument_list|)
 block|,
@@ -946,8 +1022,10 @@ literal|"layers-mask-disable"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Disable Layer Mask"
 argument_list|)
 block|,
@@ -985,8 +1063,10 @@ literal|"layers-mask-apply"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Apply Layer _Mask"
 argument_list|)
 block|,
@@ -1009,8 +1089,10 @@ literal|"layers-mask-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Delete Layer Mas_k"
 argument_list|)
 block|,
@@ -1045,8 +1127,10 @@ literal|"layers-mask-selection-replace"
 block|,
 name|GIMP_STOCK_SELECTION_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Mask to Selection"
 argument_list|)
 block|,
@@ -1069,8 +1153,10 @@ literal|"layers-mask-selection-add"
 block|,
 name|GIMP_STOCK_SELECTION_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Add to Selection"
 argument_list|)
 block|,
@@ -1093,8 +1179,10 @@ literal|"layers-mask-selection-subtract"
 block|,
 name|GIMP_STOCK_SELECTION_SUBTRACT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Subtract from Selection"
 argument_list|)
 block|,
@@ -1117,8 +1205,10 @@ literal|"layers-mask-selection-intersect"
 block|,
 name|GIMP_STOCK_SELECTION_INTERSECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Intersect with Selection"
 argument_list|)
 block|,
@@ -1153,8 +1243,10 @@ literal|"layers-alpha-selection-replace"
 block|,
 name|GIMP_STOCK_SELECTION_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Al_pha to Selection"
 argument_list|)
 block|,
@@ -1177,8 +1269,10 @@ literal|"layers-alpha-selection-add"
 block|,
 name|GIMP_STOCK_SELECTION_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"A_dd to Selection"
 argument_list|)
 block|,
@@ -1201,8 +1295,10 @@ literal|"layers-alpha-selection-subtract"
 block|,
 name|GIMP_STOCK_SELECTION_SUBTRACT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Subtract from Selection"
 argument_list|)
 block|,
@@ -1225,8 +1321,10 @@ literal|"layers-alpha-selection-intersect"
 block|,
 name|GIMP_STOCK_SELECTION_INTERSECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Intersect with Selection"
 argument_list|)
 block|,
@@ -1261,8 +1359,10 @@ literal|"layers-text-selection-replace"
 block|,
 name|GIMP_STOCK_SELECTION_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Text to Selection"
 argument_list|)
 block|,
@@ -1285,8 +1385,10 @@ literal|"layers-text-selection-add"
 block|,
 name|GIMP_STOCK_SELECTION_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"A_dd to Selection"
 argument_list|)
 block|,
@@ -1309,8 +1411,10 @@ literal|"layers-text-selection-subtract"
 block|,
 name|GIMP_STOCK_SELECTION_SUBTRACT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Subtract from Selection"
 argument_list|)
 block|,
@@ -1333,8 +1437,10 @@ literal|"layers-text-selection-intersect"
 block|,
 name|GIMP_STOCK_SELECTION_INTERSECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_Intersect with Selection"
 argument_list|)
 block|,
@@ -1369,8 +1475,10 @@ literal|"layers-select-top"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select _Top Layer"
 argument_list|)
 block|,
@@ -1393,8 +1501,10 @@ literal|"layers-select-bottom"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select _Bottom Layer"
 argument_list|)
 block|,
@@ -1417,8 +1527,10 @@ literal|"layers-select-previous"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select _Previous Layer"
 argument_list|)
 block|,
@@ -1441,8 +1553,10 @@ literal|"layers-select-next"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select _Next Layer"
 argument_list|)
 block|,
@@ -1477,10 +1591,7 @@ literal|"layers-opacity-set"
 block|,
 name|GIMP_STOCK_TRANSPARENCY
 block|,
-name|N_
-argument_list|(
 literal|"Set Opacity"
-argument_list|)
 block|,
 name|NULL
 block|,
@@ -1702,6 +1813,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"layers-action"
+argument_list|,
 name|layers_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1714,6 +1827,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"layers-action"
+argument_list|,
 name|layers_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1725,6 +1840,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"layers-action"
 argument_list|,
 name|layers_mask_apply_actions
 argument_list|,
@@ -1743,6 +1860,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"layers-action"
+argument_list|,
 name|layers_mask_to_selection_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1760,6 +1879,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"layers-action"
+argument_list|,
 name|layers_alpha_to_selection_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1776,6 +1897,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"layers-action"
 argument_list|,
 name|layers_text_to_selection_actions
 argument_list|,
@@ -1794,6 +1917,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"layers-action"
+argument_list|,
 name|layers_select_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1811,6 +1936,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 name|layers_opacity_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1827,6 +1954,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|layers_mode_actions
 argument_list|,

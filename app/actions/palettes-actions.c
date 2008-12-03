@@ -95,8 +95,10 @@ literal|"palettes-popup"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Palettes Menu"
 argument_list|)
 block|,
@@ -114,8 +116,10 @@ literal|"palettes-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"_New Palette"
 argument_list|)
 block|,
@@ -123,7 +127,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New palette"
+literal|"Create a new palette"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -139,8 +143,10 @@ literal|"palettes-import"
 block|,
 name|GTK_STOCK_CONVERT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"_Import Palette..."
 argument_list|)
 block|,
@@ -164,8 +170,10 @@ literal|"palettes-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"D_uplicate Palette"
 argument_list|)
 block|,
@@ -173,7 +181,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate palette"
+literal|"Duplicate this palette"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -189,8 +197,10 @@ literal|"palettes-merge"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"_Merge Palettes..."
 argument_list|)
 block|,
@@ -214,8 +224,10 @@ literal|"palettes-copy-location"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Copy Palette _Location"
 argument_list|)
 block|,
@@ -239,8 +251,10 @@ literal|"palettes-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"_Delete Palette"
 argument_list|)
 block|,
@@ -248,7 +262,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete palette"
+literal|"Delete this palette"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -264,8 +278,10 @@ literal|"palettes-refresh"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"_Refresh Palettes"
 argument_list|)
 block|,
@@ -301,8 +317,10 @@ literal|"palettes-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"_Edit Palette..."
 argument_list|)
 block|,
@@ -335,6 +353,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"palettes-action"
+argument_list|,
 name|palettes_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -346,6 +366,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"palettes-action"
 argument_list|,
 name|palettes_edit_actions
 argument_list|,

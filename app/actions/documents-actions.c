@@ -83,8 +83,10 @@ literal|"documents-popup"
 block|,
 literal|"document-open-recent"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Documents Menu"
 argument_list|)
 block|,
@@ -102,8 +104,10 @@ literal|"documents-open"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"_Open Image"
 argument_list|)
 block|,
@@ -127,8 +131,10 @@ literal|"documents-raise-or-open"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"_Raise or Open Image"
 argument_list|)
 block|,
@@ -152,8 +158,10 @@ literal|"documents-file-open-dialog"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"File Open _Dialog"
 argument_list|)
 block|,
@@ -177,8 +185,10 @@ literal|"documents-copy-location"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Copy Image _Location"
 argument_list|)
 block|,
@@ -202,8 +212,10 @@ literal|"documents-remove"
 block|,
 name|GTK_STOCK_REMOVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Remove _Entry"
 argument_list|)
 block|,
@@ -227,8 +239,10 @@ literal|"documents-clear"
 block|,
 name|GTK_STOCK_CLEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"_Clear History"
 argument_list|)
 block|,
@@ -252,8 +266,10 @@ literal|"documents-recreate-preview"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Recreate _Preview"
 argument_list|)
 block|,
@@ -277,8 +293,10 @@ literal|"documents-reload-previews"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Reload _all Previews"
 argument_list|)
 block|,
@@ -302,8 +320,10 @@ literal|"documents-remove-dangling"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Remove Dangling E_ntries"
 argument_list|)
 block|,
@@ -338,6 +358,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"documents-action"
 argument_list|,
 name|documents_actions
 argument_list|,

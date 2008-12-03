@@ -89,8 +89,10 @@ literal|"brush-editor-popup"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brush-editor-action"
+argument_list|,
 literal|"Brush Editor Menu"
 argument_list|)
 block|,
@@ -120,8 +122,10 @@ literal|"brush-editor-edit-active"
 block|,
 name|GIMP_STOCK_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brush-editor-action"
+argument_list|,
 literal|"Edit Active Brush"
 argument_list|)
 block|,
@@ -156,6 +160,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"brush-editor-action"
+argument_list|,
 name|brush_editor_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -167,6 +173,8 @@ expr_stmt|;
 name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"brush-editor-action"
 argument_list|,
 name|brush_editor_toggle_actions
 argument_list|,

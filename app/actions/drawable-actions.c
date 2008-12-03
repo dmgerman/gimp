@@ -107,8 +107,10 @@ literal|"drawable-equalize"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"_Equalize"
 argument_list|)
 block|,
@@ -132,8 +134,10 @@ literal|"drawable-invert"
 block|,
 name|GIMP_STOCK_INVERT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"In_vert"
 argument_list|)
 block|,
@@ -157,8 +161,10 @@ literal|"drawable-levels-stretch"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"_White Balance"
 argument_list|)
 block|,
@@ -182,8 +188,10 @@ literal|"drawable-offset"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"_Offset..."
 argument_list|)
 block|,
@@ -219,8 +227,10 @@ literal|"drawable-linked"
 block|,
 name|GIMP_STOCK_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"_Linked"
 argument_list|)
 block|,
@@ -246,8 +256,10 @@ literal|"drawable-visible"
 block|,
 name|GIMP_STOCK_VISIBLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"_Visible"
 argument_list|)
 block|,
@@ -285,8 +297,10 @@ literal|"drawable-flip-horizontal"
 block|,
 name|GIMP_STOCK_FLIP_HORIZONTAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Flip _Horizontally"
 argument_list|)
 block|,
@@ -309,8 +323,10 @@ literal|"drawable-flip-vertical"
 block|,
 name|GIMP_STOCK_FLIP_VERTICAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Flip _Vertically"
 argument_list|)
 block|,
@@ -345,8 +361,10 @@ literal|"drawable-rotate-90"
 block|,
 name|GIMP_STOCK_ROTATE_90
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Rotate 90Â° _clockwise"
 argument_list|)
 block|,
@@ -369,8 +387,10 @@ literal|"drawable-rotate-180"
 block|,
 name|GIMP_STOCK_ROTATE_180
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Rotate _180Â°"
 argument_list|)
 block|,
@@ -393,8 +413,10 @@ literal|"drawable-rotate-270"
 block|,
 name|GIMP_STOCK_ROTATE_270
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Rotate 90Â° counter-clock_wise"
 argument_list|)
 block|,
@@ -429,6 +451,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"drawable-action"
+argument_list|,
 name|drawable_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -441,6 +465,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"drawable-action"
+argument_list|,
 name|drawable_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -452,6 +478,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"drawable-action"
 argument_list|,
 name|drawable_flip_actions
 argument_list|,
@@ -469,6 +497,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"drawable-action"
 argument_list|,
 name|drawable_rotate_actions
 argument_list|,

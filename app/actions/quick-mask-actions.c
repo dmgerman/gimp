@@ -89,8 +89,10 @@ literal|"quick-mask-popup"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"quick-mask-action"
+argument_list|,
 literal|"Quick Mask Menu"
 argument_list|)
 block|,
@@ -108,8 +110,10 @@ literal|"quick-mask-configure"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"quick-mask-action"
+argument_list|,
 literal|"_Configure Color and Opacity..."
 argument_list|)
 block|,
@@ -142,8 +146,10 @@ literal|"quick-mask-toggle"
 block|,
 name|GIMP_STOCK_QUICK_MASK_ON
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"quick-mask-action"
+argument_list|,
 literal|"Toggle _Quick Mask"
 argument_list|)
 block|,
@@ -181,8 +187,10 @@ literal|"quick-mask-invert-on"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"quick-mask-action"
+argument_list|,
 literal|"Mask _Selected Areas"
 argument_list|)
 block|,
@@ -200,8 +208,10 @@ literal|"quick-mask-invert-off"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"quick-mask-action"
+argument_list|,
 literal|"Mask _Unselected Areas"
 argument_list|)
 block|,
@@ -231,6 +241,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"quick-mask-action"
+argument_list|,
 name|quick_mask_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -243,6 +255,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"quick-mask-action"
+argument_list|,
 name|quick_mask_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -254,6 +268,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"quick-mask-action"
 argument_list|,
 name|quick_mask_invert_actions
 argument_list|,

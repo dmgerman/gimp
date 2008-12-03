@@ -77,8 +77,10 @@ literal|"cursor-info-popup"
 block|,
 name|GIMP_STOCK_CURSOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-info-action"
+argument_list|,
 literal|"Pointer Information Menu"
 argument_list|)
 block|,
@@ -108,8 +110,10 @@ literal|"cursor-info-sample-merged"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"cursor-info-action"
+argument_list|,
 literal|"_Sample Merged"
 argument_list|)
 block|,
@@ -117,7 +121,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Sample Merged"
+literal|"Use the composite color of all visible layers"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -147,6 +151,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"cursor-info-action"
+argument_list|,
 name|cursor_info_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -158,6 +164,8 @@ expr_stmt|;
 name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"cursor-info-action"
 argument_list|,
 name|cursor_info_toggle_actions
 argument_list|,

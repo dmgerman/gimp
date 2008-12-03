@@ -89,8 +89,10 @@ literal|"brushes-popup"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Brushes Menu"
 argument_list|)
 block|,
@@ -108,8 +110,10 @@ literal|"brushes-open-as-image"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"_Open Brush as Image"
 argument_list|)
 block|,
@@ -133,8 +137,10 @@ literal|"brushes-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"_New Brush"
 argument_list|)
 block|,
@@ -142,7 +148,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New brush"
+literal|"Create a new brush"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -158,8 +164,10 @@ literal|"brushes-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"D_uplicate Brush"
 argument_list|)
 block|,
@@ -167,7 +175,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate brush"
+literal|"Duplicate this brush"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -183,8 +191,10 @@ literal|"brushes-copy-location"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Copy Brush _Location"
 argument_list|)
 block|,
@@ -208,8 +218,10 @@ literal|"brushes-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"_Delete Brush"
 argument_list|)
 block|,
@@ -217,7 +229,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete brush"
+literal|"Delete this brush"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -233,8 +245,10 @@ literal|"brushes-refresh"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"_Refresh Brushes"
 argument_list|)
 block|,
@@ -270,8 +284,10 @@ literal|"brushes-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"_Edit Brush..."
 argument_list|)
 block|,
@@ -304,6 +320,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"brushes-action"
+argument_list|,
 name|brushes_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -315,6 +333,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"brushes-action"
 argument_list|,
 name|brushes_edit_actions
 argument_list|,

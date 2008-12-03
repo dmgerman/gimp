@@ -113,8 +113,10 @@ literal|"image-menubar"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Image Menu"
 argument_list|)
 block|,
@@ -132,8 +134,10 @@ literal|"image-popup"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Image Menu"
 argument_list|)
 block|,
@@ -151,8 +155,10 @@ literal|"image-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Image"
 argument_list|)
 block|}
@@ -162,8 +168,10 @@ literal|"image-mode-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Mode"
 argument_list|)
 block|}
@@ -173,8 +181,10 @@ literal|"image-transform-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Transform"
 argument_list|)
 block|}
@@ -184,8 +194,10 @@ literal|"image-guides-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Guides"
 argument_list|)
 block|}
@@ -195,8 +207,10 @@ literal|"colors-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Colors"
 argument_list|)
 block|}
@@ -206,8 +220,10 @@ literal|"colors-info-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"I_nfo"
 argument_list|)
 block|}
@@ -217,8 +233,10 @@ literal|"colors-auto-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Auto"
 argument_list|)
 block|}
@@ -228,8 +246,10 @@ literal|"colors-map-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Map"
 argument_list|)
 block|}
@@ -239,8 +259,10 @@ literal|"colors-components-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"C_omponents"
 argument_list|)
 block|}
@@ -250,8 +272,10 @@ literal|"image-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_New..."
 argument_list|)
 block|,
@@ -275,8 +299,10 @@ literal|"image-resize"
 block|,
 name|GIMP_STOCK_RESIZE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Can_vas Size..."
 argument_list|)
 block|,
@@ -300,8 +326,10 @@ literal|"image-resize-to-layers"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"F_it Canvas to Layers"
 argument_list|)
 block|,
@@ -325,8 +353,10 @@ literal|"image-resize-to-selection"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"F_it Canvas to Selection"
 argument_list|)
 block|,
@@ -350,8 +380,10 @@ literal|"image-print-size"
 block|,
 name|GIMP_STOCK_PRINT_RESOLUTION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Print Size..."
 argument_list|)
 block|,
@@ -375,8 +407,10 @@ literal|"image-scale"
 block|,
 name|GIMP_STOCK_SCALE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Scale Image..."
 argument_list|)
 block|,
@@ -400,8 +434,10 @@ literal|"image-crop"
 block|,
 name|GIMP_STOCK_TOOL_CROP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Crop to Selection"
 argument_list|)
 block|,
@@ -425,8 +461,10 @@ literal|"image-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Duplicate"
 argument_list|)
 block|,
@@ -450,8 +488,10 @@ literal|"image-merge-layers"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Merge Visible _Layers..."
 argument_list|)
 block|,
@@ -475,8 +515,10 @@ literal|"image-flatten"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"_Flatten Image"
 argument_list|)
 block|,
@@ -500,8 +542,10 @@ literal|"image-configure-grid"
 block|,
 name|GIMP_STOCK_GRID
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Configure G_rid..."
 argument_list|)
 block|,
@@ -525,8 +569,10 @@ literal|"image-properties"
 block|,
 name|GTK_STOCK_INFO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Image Pr_operties"
 argument_list|)
 block|,
@@ -562,8 +608,10 @@ literal|"image-convert-rgb"
 block|,
 name|GIMP_STOCK_CONVERT_RGB
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-convert-action"
+argument_list|,
 literal|"_RGB"
 argument_list|)
 block|,
@@ -584,8 +632,10 @@ literal|"image-convert-grayscale"
 block|,
 name|GIMP_STOCK_CONVERT_GRAYSCALE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-convert-action"
+argument_list|,
 literal|"_Grayscale"
 argument_list|)
 block|,
@@ -606,8 +656,10 @@ literal|"image-convert-indexed"
 block|,
 name|GIMP_STOCK_CONVERT_INDEXED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-convert-action"
+argument_list|,
 literal|"_Indexed..."
 argument_list|)
 block|,
@@ -640,8 +692,10 @@ literal|"image-flip-horizontal"
 block|,
 name|GIMP_STOCK_FLIP_HORIZONTAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Flip _Horizontally"
 argument_list|)
 block|,
@@ -664,8 +718,10 @@ literal|"image-flip-vertical"
 block|,
 name|GIMP_STOCK_FLIP_VERTICAL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Flip _Vertically"
 argument_list|)
 block|,
@@ -700,8 +756,10 @@ literal|"image-rotate-90"
 block|,
 name|GIMP_STOCK_ROTATE_90
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Rotate 90Â° _clockwise"
 argument_list|)
 block|,
@@ -724,8 +782,10 @@ literal|"image-rotate-180"
 block|,
 name|GIMP_STOCK_ROTATE_180
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Rotate _180Â°"
 argument_list|)
 block|,
@@ -748,8 +808,10 @@ literal|"image-rotate-270"
 block|,
 name|GIMP_STOCK_ROTATE_270
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Rotate 90Â° counter-clock_wise"
 argument_list|)
 block|,
@@ -784,6 +846,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"image-action"
+argument_list|,
 name|image_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -795,6 +859,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"image-convert-action"
 argument_list|,
 name|image_convert_actions
 argument_list|,
@@ -817,6 +883,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"image-action"
+argument_list|,
 name|image_flip_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -833,6 +901,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"image-action"
 argument_list|,
 name|image_rotate_actions
 argument_list|,

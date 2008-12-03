@@ -107,8 +107,10 @@ literal|"gradient-editor-popup"
 block|,
 name|GIMP_STOCK_GRADIENT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Gradient Editor Menu"
 argument_list|)
 block|,
@@ -126,8 +128,10 @@ literal|"gradient-editor-left-color-type"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Left Color Type"
 argument_list|)
 block|}
@@ -137,8 +141,10 @@ literal|"gradient-editor-load-left-color"
 block|,
 name|GTK_STOCK_REVERT_TO_SAVED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Load Left Color From"
 argument_list|)
 block|}
@@ -148,8 +154,10 @@ literal|"gradient-editor-save-left-color"
 block|,
 name|GTK_STOCK_SAVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Save Left Color To"
 argument_list|)
 block|}
@@ -159,8 +167,10 @@ literal|"gradient-editor-right-color-type"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Right Color Type"
 argument_list|)
 block|}
@@ -170,8 +180,10 @@ literal|"gradient-editor-load-right-color"
 block|,
 name|GTK_STOCK_REVERT_TO_SAVED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Load Right Color Fr_om"
 argument_list|)
 block|}
@@ -181,8 +193,10 @@ literal|"gradient-editor-save-right-color"
 block|,
 name|GTK_STOCK_SAVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Sa_ve Right Color To"
 argument_list|)
 block|}
@@ -208,8 +222,10 @@ literal|"gradient-editor-left-color"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"L_eft Endpoint's Color..."
 argument_list|)
 block|,
@@ -230,8 +246,10 @@ literal|"gradient-editor-right-color"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"R_ight Endpoint's Color..."
 argument_list|)
 block|,
@@ -385,8 +403,10 @@ literal|"gradient-editor-blend-color"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Ble_nd Endpoints' Colors"
 argument_list|)
 block|,
@@ -407,8 +427,10 @@ literal|"gradient-editor-blend-opacity"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Blend Endpoints' Opacit_y"
 argument_list|)
 block|,
@@ -441,8 +463,10 @@ literal|"gradient-editor-edit-active"
 block|,
 name|GIMP_STOCK_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"Edit Active Gradient"
 argument_list|)
 block|,
@@ -533,8 +557,10 @@ literal|"gradient-editor-load-left-left-neighbor"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Left Neighbor's Right Endpoint"
 argument_list|)
 block|,
@@ -554,8 +580,10 @@ literal|"gradient-editor-load-left-right-endpoint"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Right Endpoint"
 argument_list|)
 block|,
@@ -575,8 +603,10 @@ literal|"gradient-editor-load-left-fg"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Foreground Color"
 argument_list|)
 block|,
@@ -596,8 +626,10 @@ literal|"gradient-editor-load-left-bg"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Background Color"
 argument_list|)
 block|,
@@ -800,8 +832,10 @@ literal|"gradient-editor-load-right-right-neighbor"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Right Neighbor's Left Endpoint"
 argument_list|)
 block|,
@@ -821,8 +855,10 @@ literal|"gradient-editor-load-right-left-endpoint"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Left Endpoint"
 argument_list|)
 block|,
@@ -842,8 +878,10 @@ literal|"gradient-editor-load-right-fg"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Foreground Color"
 argument_list|)
 block|,
@@ -863,8 +901,10 @@ literal|"gradient-editor-load-right-bg"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-action"
+argument_list|,
 literal|"_Background Color"
 argument_list|)
 block|,
@@ -1091,8 +1131,10 @@ literal|"gradient-editor-left-color-fixed"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"_Fixed"
 argument_list|)
 block|,
@@ -1110,8 +1152,10 @@ literal|"gradient-editor-left-color-foreground"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"F_oreground Color"
 argument_list|)
 block|,
@@ -1129,8 +1173,10 @@ literal|"gradient-editor-left-color-foreground-transparent"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"Fo_reground Color (Transparent)"
 argument_list|)
 block|,
@@ -1148,8 +1194,10 @@ literal|"gradient-editor-left-color-background"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"_Background Color"
 argument_list|)
 block|,
@@ -1167,8 +1215,10 @@ literal|"gradient-editor-left-color-background-transparent"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"B_ackground Color (Transparent)"
 argument_list|)
 block|,
@@ -1198,8 +1248,10 @@ literal|"gradient-editor-right-color-fixed"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"_Fixed"
 argument_list|)
 block|,
@@ -1217,8 +1269,10 @@ literal|"gradient-editor-right-color-foreground"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"F_oreground Color"
 argument_list|)
 block|,
@@ -1236,8 +1290,10 @@ literal|"gradient-editor-right-color-foreground-transparent"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"Fo_reground Color (Transparent)"
 argument_list|)
 block|,
@@ -1255,8 +1311,10 @@ literal|"gradient-editor-right-color-background"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"_Background Color"
 argument_list|)
 block|,
@@ -1274,8 +1332,10 @@ literal|"gradient-editor-right-color-background-transparent"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-color-type"
+argument_list|,
 literal|"B_ackground Color (Transparent)"
 argument_list|)
 block|,
@@ -1305,8 +1365,10 @@ literal|"gradient-editor-blending-linear"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-blending"
+argument_list|,
 literal|"_Linear"
 argument_list|)
 block|,
@@ -1324,8 +1386,10 @@ literal|"gradient-editor-blending-curved"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-blending"
+argument_list|,
 literal|"_Curved"
 argument_list|)
 block|,
@@ -1343,8 +1407,10 @@ literal|"gradient-editor-blending-sine"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-blending"
+argument_list|,
 literal|"_Sinusoidal"
 argument_list|)
 block|,
@@ -1362,8 +1428,10 @@ literal|"gradient-editor-blending-sphere-increasing"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-blending"
+argument_list|,
 literal|"Spherical (i_ncreasing)"
 argument_list|)
 block|,
@@ -1381,8 +1449,10 @@ literal|"gradient-editor-blending-sphere-decreasing"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-blending"
+argument_list|,
 literal|"Spherical (_decreasing)"
 argument_list|)
 block|,
@@ -1400,8 +1470,10 @@ literal|"gradient-editor-blending-varies"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-blending"
+argument_list|,
 literal|"(Varies)"
 argument_list|)
 block|,
@@ -1432,8 +1504,10 @@ literal|"gradient-editor-coloring-rgb"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-coloring"
+argument_list|,
 literal|"_RGB"
 argument_list|)
 block|,
@@ -1451,8 +1525,10 @@ literal|"gradient-editor-coloring-hsv-ccw"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-coloring"
+argument_list|,
 literal|"HSV (_counter-clockwise hue)"
 argument_list|)
 block|,
@@ -1470,8 +1546,10 @@ literal|"gradient-editor-coloring-hsv-cw"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-coloring"
+argument_list|,
 literal|"HSV (clockwise _hue)"
 argument_list|)
 block|,
@@ -1489,8 +1567,10 @@ literal|"gradient-editor-coloring-varies"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradient-editor-coloring"
+argument_list|,
 literal|"(Varies)"
 argument_list|)
 block|,
@@ -1605,6 +1685,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradient-editor-action"
+argument_list|,
 name|gradient_editor_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1617,6 +1699,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradient-editor-action"
+argument_list|,
 name|gradient_editor_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1628,6 +1712,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"gradient-editor-action"
 argument_list|,
 name|gradient_editor_load_left_actions
 argument_list|,
@@ -1646,6 +1732,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradient-editor-action"
+argument_list|,
 name|gradient_editor_save_left_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1662,6 +1750,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"gradient-editor-action"
 argument_list|,
 name|gradient_editor_load_right_actions
 argument_list|,
@@ -1680,6 +1770,8 @@ name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradient-editor-action"
+argument_list|,
 name|gradient_editor_save_right_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1696,6 +1788,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"gradient-editor-color-type"
 argument_list|,
 name|gradient_editor_left_color_type_actions
 argument_list|,
@@ -1718,6 +1812,8 @@ name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradient-editor-color-type"
+argument_list|,
 name|gradient_editor_right_color_type_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1738,6 +1834,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"gradient-editor-blending"
 argument_list|,
 name|gradient_editor_blending_actions
 argument_list|,
@@ -1760,6 +1858,8 @@ name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradient-editor-coloring"
+argument_list|,
 name|gradient_editor_coloring_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -1780,6 +1880,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|gradient_editor_zoom_actions
 argument_list|,

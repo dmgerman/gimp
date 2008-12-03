@@ -113,8 +113,10 @@ literal|"text-tool-popup"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Text Tool Menu"
 argument_list|)
 block|,
@@ -132,8 +134,10 @@ literal|"text-tool-input-methods-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Input _Methods"
 argument_list|)
 block|,
@@ -151,8 +155,10 @@ literal|"text-tool-cut"
 block|,
 name|GTK_STOCK_CUT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Cu_t"
 argument_list|)
 block|,
@@ -173,8 +179,10 @@ literal|"text-tool-copy"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"_Copy"
 argument_list|)
 block|,
@@ -195,8 +203,10 @@ literal|"text-tool-paste"
 block|,
 name|GTK_STOCK_PASTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"_Paste"
 argument_list|)
 block|,
@@ -217,8 +227,10 @@ literal|"text-tool-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"_Delete"
 argument_list|)
 block|,
@@ -239,8 +251,10 @@ literal|"text-tool-load"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"_Open text file..."
 argument_list|)
 block|,
@@ -261,8 +275,10 @@ literal|"text-tool-clear"
 block|,
 name|GTK_STOCK_CLEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Cl_ear"
 argument_list|)
 block|,
@@ -286,8 +302,10 @@ literal|"text-tool-text-to-path"
 block|,
 name|GIMP_STOCK_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"_Path from Text"
 argument_list|)
 block|,
@@ -311,8 +329,10 @@ literal|"text-tool-text-along-path"
 block|,
 name|GIMP_STOCK_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Text _along Path"
 argument_list|)
 block|,
@@ -348,8 +368,10 @@ literal|"text-tool-direction-ltr"
 block|,
 name|GIMP_STOCK_TEXT_DIR_LTR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"From left to right"
 argument_list|)
 block|,
@@ -367,8 +389,10 @@ literal|"text-tool-direction-rtl"
 block|,
 name|GIMP_STOCK_TEXT_DIR_RTL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"From right to left"
 argument_list|)
 block|,
@@ -398,6 +422,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"text-tool-action"
+argument_list|,
 name|text_tool_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -409,6 +435,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"text-tool-action"
 argument_list|,
 name|text_tool_direction_actions
 argument_list|,

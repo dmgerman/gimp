@@ -95,8 +95,10 @@ literal|"gradients-popup"
 block|,
 name|GIMP_STOCK_GRADIENT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Gradients Menu"
 argument_list|)
 block|,
@@ -114,8 +116,10 @@ literal|"gradients-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"_New Gradient"
 argument_list|)
 block|,
@@ -123,7 +127,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New gradient"
+literal|"Create a new gradient"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -139,8 +143,10 @@ literal|"gradients-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"D_uplicate Gradient"
 argument_list|)
 block|,
@@ -148,7 +154,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate gradient"
+literal|"Duplicate this gradient"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -164,8 +170,10 @@ literal|"gradients-copy-location"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Copy Gradient _Location"
 argument_list|)
 block|,
@@ -189,8 +197,10 @@ literal|"gradients-save-as-pov"
 block|,
 name|GTK_STOCK_SAVE_AS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Save as _POV-Ray..."
 argument_list|)
 block|,
@@ -214,8 +224,10 @@ literal|"gradients-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"_Delete Gradient"
 argument_list|)
 block|,
@@ -223,7 +235,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete gradient"
+literal|"Delete this gradient"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -239,8 +251,10 @@ literal|"gradients-refresh"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"_Refresh Gradients"
 argument_list|)
 block|,
@@ -276,8 +290,10 @@ literal|"gradients-edit"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"_Edit Gradient..."
 argument_list|)
 block|,
@@ -310,6 +326,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"gradients-action"
+argument_list|,
 name|gradients_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -321,6 +339,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"gradients-action"
 argument_list|,
 name|gradients_edit_actions
 argument_list|,

@@ -89,8 +89,10 @@ literal|"fonts-popup"
 block|,
 name|GIMP_STOCK_FONT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fonts-action"
+argument_list|,
 literal|"Fonts Menu"
 argument_list|)
 block|,
@@ -108,8 +110,10 @@ literal|"fonts-refresh"
 block|,
 name|GTK_STOCK_REFRESH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"fonts-action"
+argument_list|,
 literal|"_Rescan Font List"
 argument_list|)
 block|,
@@ -144,6 +148,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"fonts-action"
 argument_list|,
 name|fonts_actions
 argument_list|,

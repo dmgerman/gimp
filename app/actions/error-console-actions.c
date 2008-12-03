@@ -77,8 +77,10 @@ literal|"error-console-popup"
 block|,
 name|GIMP_STOCK_WARNING
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"error-console-action"
+argument_list|,
 literal|"Error Console Menu"
 argument_list|)
 block|,
@@ -96,8 +98,10 @@ literal|"error-console-clear"
 block|,
 name|GTK_STOCK_CLEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"error-console-action"
+argument_list|,
 literal|"_Clear"
 argument_list|)
 block|,
@@ -121,8 +125,10 @@ literal|"error-console-select-all"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"error-console-action"
+argument_list|,
 literal|"Select _All"
 argument_list|)
 block|,
@@ -158,8 +164,10 @@ literal|"error-console-save-all"
 block|,
 name|GTK_STOCK_SAVE_AS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"error-console-action"
+argument_list|,
 literal|"_Save Error Log to File..."
 argument_list|)
 block|,
@@ -182,8 +190,10 @@ literal|"error-console-save-selection"
 block|,
 name|GTK_STOCK_SAVE_AS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"error-console-action"
+argument_list|,
 literal|"Save S_election to File..."
 argument_list|)
 block|,
@@ -218,6 +228,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"error-console-action"
+argument_list|,
 name|error_console_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -229,6 +241,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"error-console-action"
 argument_list|,
 name|error_console_save_actions
 argument_list|,

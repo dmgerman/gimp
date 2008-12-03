@@ -83,8 +83,10 @@ literal|"buffers-popup"
 block|,
 name|GIMP_STOCK_BUFFER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"Buffers Menu"
 argument_list|)
 block|,
@@ -102,8 +104,10 @@ literal|"buffers-paste"
 block|,
 name|GTK_STOCK_PASTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"_Paste Buffer"
 argument_list|)
 block|,
@@ -127,8 +131,10 @@ literal|"buffers-paste-into"
 block|,
 name|GIMP_STOCK_PASTE_INTO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"Paste Buffer _Into"
 argument_list|)
 block|,
@@ -152,8 +158,10 @@ literal|"buffers-paste-as-new"
 block|,
 name|GIMP_STOCK_PASTE_AS_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"Paste Buffer as _New"
 argument_list|)
 block|,
@@ -177,8 +185,10 @@ literal|"buffers-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"_Delete Buffer"
 argument_list|)
 block|,
@@ -213,6 +223,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"buffers-action"
 argument_list|,
 name|buffers_actions
 argument_list|,

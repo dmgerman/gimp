@@ -101,8 +101,10 @@ literal|"vectors-popup"
 block|,
 name|GIMP_STOCK_PATHS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Paths Menu"
 argument_list|)
 block|,
@@ -120,8 +122,10 @@ literal|"vectors-path-tool"
 block|,
 name|GIMP_STOCK_TOOL_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Path _Tool"
 argument_list|)
 block|,
@@ -142,8 +146,10 @@ literal|"vectors-edit-attributes"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Edit Path Attributes..."
 argument_list|)
 block|,
@@ -167,8 +173,10 @@ literal|"vectors-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_New Path..."
 argument_list|)
 block|,
@@ -176,7 +184,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New path..."
+literal|"Create a new path..."
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -192,16 +200,18 @@ literal|"vectors-new-last-values"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"_New Path"
+literal|"vectors-action"
+argument_list|,
+literal|"_New Path with last values"
 argument_list|)
 block|,
 literal|""
 block|,
 name|N_
 argument_list|(
-literal|"New path with last values"
+literal|"Create a new path with last values"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -217,8 +227,10 @@ literal|"vectors-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"D_uplicate Path"
 argument_list|)
 block|,
@@ -226,7 +238,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Duplicate path"
+literal|"Duplicate this path"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -242,8 +254,10 @@ literal|"vectors-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Delete Path"
 argument_list|)
 block|,
@@ -251,7 +265,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete path"
+literal|"Delete this path"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -267,8 +281,10 @@ literal|"vectors-merge-visible"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Merge _Visible Paths"
 argument_list|)
 block|,
@@ -289,8 +305,10 @@ literal|"vectors-raise"
 block|,
 name|GTK_STOCK_GO_UP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Raise Path"
 argument_list|)
 block|,
@@ -314,8 +332,10 @@ literal|"vectors-raise-to-top"
 block|,
 name|GTK_STOCK_GOTO_TOP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Raise Path to _Top"
 argument_list|)
 block|,
@@ -339,8 +359,10 @@ literal|"vectors-lower"
 block|,
 name|GTK_STOCK_GO_DOWN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Lower Path"
 argument_list|)
 block|,
@@ -364,8 +386,10 @@ literal|"vectors-lower-to-bottom"
 block|,
 name|GTK_STOCK_GOTO_BOTTOM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Lower Path to _Bottom"
 argument_list|)
 block|,
@@ -389,8 +413,10 @@ literal|"vectors-stroke"
 block|,
 name|GIMP_STOCK_PATH_STROKE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Stro_ke Path..."
 argument_list|)
 block|,
@@ -414,8 +440,10 @@ literal|"vectors-stroke-last-values"
 block|,
 name|GIMP_STOCK_PATH_STROKE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Stro_ke Path"
 argument_list|)
 block|,
@@ -439,8 +467,10 @@ literal|"vectors-copy"
 block|,
 name|GTK_STOCK_COPY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Co_py Path"
 argument_list|)
 block|,
@@ -461,8 +491,10 @@ literal|"vectors-paste"
 block|,
 name|GTK_STOCK_PASTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Paste Pat_h"
 argument_list|)
 block|,
@@ -483,8 +515,10 @@ literal|"vectors-export"
 block|,
 name|GTK_STOCK_SAVE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"E_xport Path..."
 argument_list|)
 block|,
@@ -505,8 +539,10 @@ literal|"vectors-import"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"I_mport Path..."
 argument_list|)
 block|,
@@ -539,8 +575,10 @@ literal|"vectors-visible"
 block|,
 name|GIMP_STOCK_VISIBLE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Visible"
 argument_list|)
 block|,
@@ -563,8 +601,10 @@ literal|"vectors-linked"
 block|,
 name|GIMP_STOCK_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Linked"
 argument_list|)
 block|,
@@ -599,8 +639,10 @@ literal|"vectors-selection-replace"
 block|,
 name|GIMP_STOCK_SELECTION_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Path to Sele_ction"
 argument_list|)
 block|,
@@ -623,14 +665,19 @@ literal|"vectors-selection-from-vectors"
 block|,
 name|GIMP_STOCK_SELECTION_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Fr_om Path"
 argument_list|)
 block|,
 literal|"<shift>V"
 block|,
-name|NULL
+name|N_
+argument_list|(
+literal|"Replace selection with path"
+argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
 block|,
@@ -644,8 +691,10 @@ literal|"vectors-selection-add"
 block|,
 name|GIMP_STOCK_SELECTION_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Add to Selection"
 argument_list|)
 block|,
@@ -653,7 +702,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Add"
+literal|"Add path to selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
@@ -668,8 +717,10 @@ literal|"vectors-selection-subtract"
 block|,
 name|GIMP_STOCK_SELECTION_SUBTRACT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Subtract from Selection"
 argument_list|)
 block|,
@@ -677,7 +728,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Subtract"
+literal|"Subtract path from selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
@@ -692,8 +743,10 @@ literal|"vectors-selection-intersect"
 block|,
 name|GIMP_STOCK_SELECTION_INTERSECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"_Intersect with Selection"
 argument_list|)
 block|,
@@ -701,7 +754,7 @@ name|NULL
 block|,
 name|N_
 argument_list|(
-literal|"Intersect"
+literal|"Intersect path with selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
@@ -728,8 +781,10 @@ literal|"vectors-selection-to-vectors"
 block|,
 name|GIMP_STOCK_SELECTION_TO_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Selecti_on to Path"
 argument_list|)
 block|,
@@ -752,8 +807,10 @@ literal|"vectors-selection-to-vectors-short"
 block|,
 name|GIMP_STOCK_SELECTION_TO_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"To _Path"
 argument_list|)
 block|,
@@ -776,8 +833,10 @@ literal|"vectors-selection-to-vectors-advanced"
 block|,
 name|GIMP_STOCK_SELECTION_TO_PATH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Selection to Path (_Advanced)"
 argument_list|)
 block|,
@@ -812,6 +871,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"vectors-action"
+argument_list|,
 name|vectors_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -824,6 +885,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"vectors-action"
+argument_list|,
 name|vectors_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -835,6 +898,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"vectors-action"
 argument_list|,
 name|vectors_to_selection_actions
 argument_list|,
@@ -852,6 +917,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"vectors-action"
 argument_list|,
 name|vectors_selection_to_vectors_actions
 argument_list|,

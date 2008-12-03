@@ -70,8 +70,10 @@ literal|"dialogs-tool-options"
 block|,
 name|GIMP_STOCK_TOOL_OPTIONS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Tool _Options"
 argument_list|)
 block|,
@@ -92,8 +94,10 @@ literal|"dialogs-device-status"
 block|,
 name|GIMP_STOCK_DEVICE_STATUS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Device Status"
 argument_list|)
 block|,
@@ -114,8 +118,10 @@ literal|"dialogs-layers"
 block|,
 name|GIMP_STOCK_LAYERS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Layers"
 argument_list|)
 block|,
@@ -136,8 +142,10 @@ literal|"dialogs-channels"
 block|,
 name|GIMP_STOCK_CHANNELS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Channels"
 argument_list|)
 block|,
@@ -158,8 +166,10 @@ literal|"dialogs-vectors"
 block|,
 name|GIMP_STOCK_PATHS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Paths"
 argument_list|)
 block|,
@@ -180,8 +190,10 @@ literal|"dialogs-indexed-palette"
 block|,
 name|GIMP_STOCK_COLORMAP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Color_map"
 argument_list|)
 block|,
@@ -202,8 +214,10 @@ literal|"dialogs-histogram"
 block|,
 name|GIMP_STOCK_HISTOGRAM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Histogra_m"
 argument_list|)
 block|,
@@ -224,8 +238,10 @@ literal|"dialogs-selection-editor"
 block|,
 name|GIMP_STOCK_TOOL_RECT_SELECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Selection Editor"
 argument_list|)
 block|,
@@ -246,8 +262,10 @@ literal|"dialogs-navigation"
 block|,
 name|GIMP_STOCK_NAVIGATION
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Na_vigation"
 argument_list|)
 block|,
@@ -268,8 +286,10 @@ literal|"dialogs-undo-history"
 block|,
 name|GIMP_STOCK_UNDO_HISTORY
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Undo _History"
 argument_list|)
 block|,
@@ -290,8 +310,10 @@ literal|"dialogs-cursor"
 block|,
 name|GIMP_STOCK_CURSOR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Pointer"
 argument_list|)
 block|,
@@ -312,8 +334,10 @@ literal|"dialogs-sample-points"
 block|,
 name|GIMP_STOCK_SAMPLE_POINT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Sample Points"
 argument_list|)
 block|,
@@ -334,8 +358,10 @@ literal|"dialogs-colors"
 block|,
 name|GIMP_STOCK_DEFAULT_COLORS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Colo_rs"
 argument_list|)
 block|,
@@ -356,8 +382,10 @@ literal|"dialogs-brushes"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Brushes"
 argument_list|)
 block|,
@@ -378,8 +406,10 @@ literal|"dialogs-brush-editor"
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Brush Editor"
 argument_list|)
 block|,
@@ -400,8 +430,10 @@ literal|"dialogs-patterns"
 block|,
 name|GIMP_STOCK_PATTERN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"P_atterns"
 argument_list|)
 block|,
@@ -422,8 +454,10 @@ literal|"dialogs-gradients"
 block|,
 name|GIMP_STOCK_GRADIENT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Gradients"
 argument_list|)
 block|,
@@ -444,8 +478,10 @@ literal|"dialogs-gradient-editor"
 block|,
 name|GIMP_STOCK_GRADIENT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Gradient Editor"
 argument_list|)
 block|,
@@ -466,8 +502,10 @@ literal|"dialogs-palettes"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Pal_ettes"
 argument_list|)
 block|,
@@ -488,8 +526,10 @@ literal|"dialogs-palette-editor"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Palette Editor"
 argument_list|)
 block|,
@@ -510,8 +550,10 @@ literal|"dialogs-fonts"
 block|,
 name|GIMP_STOCK_FONT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Fonts"
 argument_list|)
 block|,
@@ -532,8 +574,10 @@ literal|"dialogs-buffers"
 block|,
 name|GIMP_STOCK_BUFFER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"B_uffers"
 argument_list|)
 block|,
@@ -554,8 +598,10 @@ literal|"dialogs-images"
 block|,
 name|GIMP_STOCK_IMAGES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Images"
 argument_list|)
 block|,
@@ -576,8 +622,10 @@ literal|"dialogs-document-history"
 block|,
 literal|"document-open-recent"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Document Histor_y"
 argument_list|)
 block|,
@@ -598,8 +646,10 @@ literal|"dialogs-templates"
 block|,
 name|GIMP_STOCK_TEMPLATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Templates"
 argument_list|)
 block|,
@@ -620,8 +670,10 @@ literal|"dialogs-tools"
 block|,
 name|GIMP_STOCK_TOOLS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"T_ools"
 argument_list|)
 block|,
@@ -642,8 +694,10 @@ literal|"dialogs-error-console"
 block|,
 name|GIMP_STOCK_WARNING
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Error Co_nsole"
 argument_list|)
 block|,
@@ -687,8 +741,10 @@ literal|"dialogs-preferences"
 block|,
 name|GTK_STOCK_PREFERENCES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Preferences"
 argument_list|)
 block|,
@@ -709,8 +765,10 @@ literal|"dialogs-keyboard-shortcuts"
 block|,
 name|GIMP_STOCK_CHAR_PICKER
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Keyboard Shortcuts"
 argument_list|)
 block|,
@@ -731,8 +789,10 @@ literal|"dialogs-module-dialog"
 block|,
 name|GTK_STOCK_EXECUTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Modules"
 argument_list|)
 block|,
@@ -753,8 +813,10 @@ literal|"dialogs-tips"
 block|,
 name|GIMP_STOCK_INFO
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_Tip of the Day"
 argument_list|)
 block|,
@@ -775,8 +837,10 @@ literal|"dialogs-about"
 block|,
 name|GTK_STOCK_ABOUT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"_About"
 argument_list|)
 block|,
@@ -809,6 +873,8 @@ name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"dialogs-action"
+argument_list|,
 name|dialogs_dockable_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -825,6 +891,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"dialogs-action"
 argument_list|,
 name|dialogs_toplevel_actions
 argument_list|,

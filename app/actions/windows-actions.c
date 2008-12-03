@@ -293,8 +293,10 @@ literal|"windows-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"windows-action"
+argument_list|,
 literal|"_Windows"
 argument_list|)
 block|}
@@ -304,8 +306,10 @@ literal|"windows-docks-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"windows-action"
+argument_list|,
 literal|"_Recently Closed Docks"
 argument_list|)
 block|}
@@ -315,8 +319,10 @@ literal|"windows-dialogs-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"windows-action"
+argument_list|,
 literal|"_Dockable Dialogs"
 argument_list|)
 block|}
@@ -326,8 +332,10 @@ literal|"windows-show-toolbox"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"windows-action"
+argument_list|,
 literal|"Tool_box"
 argument_list|)
 block|,
@@ -366,6 +374,8 @@ decl_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"windows-action"
 argument_list|,
 name|windows_actions
 argument_list|,
@@ -874,6 +884,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+name|NULL
+argument_list|,
 operator|&
 name|entry
 argument_list|,
@@ -1140,6 +1152,8 @@ expr_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|entry
@@ -1535,6 +1549,8 @@ expr_stmt|;
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 operator|&
 name|entry

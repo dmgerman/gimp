@@ -95,8 +95,10 @@ literal|"images-popup"
 block|,
 name|GIMP_STOCK_IMAGES
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"Images Menu"
 argument_list|)
 block|,
@@ -114,8 +116,10 @@ literal|"images-raise-views"
 block|,
 name|GTK_STOCK_GOTO_TOP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"_Raise Views"
 argument_list|)
 block|,
@@ -139,8 +143,10 @@ literal|"images-new-view"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"_New View"
 argument_list|)
 block|,
@@ -164,8 +170,10 @@ literal|"images-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"_Delete Image"
 argument_list|)
 block|,
@@ -202,6 +210,8 @@ argument_list|(
 name|group
 argument_list|,
 name|images_actions
+argument_list|,
+literal|"images-action"
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(

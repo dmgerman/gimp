@@ -93,8 +93,10 @@ literal|"text-editor-load"
 block|,
 name|GTK_STOCK_OPEN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"Open"
 argument_list|)
 block|,
@@ -118,8 +120,10 @@ literal|"text-editor-clear"
 block|,
 name|GTK_STOCK_CLEAR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"Clear"
 argument_list|)
 block|,
@@ -155,8 +159,10 @@ literal|"text-editor-direction-ltr"
 block|,
 name|GIMP_STOCK_TEXT_DIR_LTR
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"LTR"
 argument_list|)
 block|,
@@ -177,8 +183,10 @@ literal|"text-editor-direction-rtl"
 block|,
 name|GIMP_STOCK_TEXT_DIR_RTL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"RTL"
 argument_list|)
 block|,
@@ -211,6 +219,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"text-editor-action"
+argument_list|,
 name|text_editor_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -222,6 +232,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"text-editor-action"
 argument_list|,
 name|text_editor_direction_actions
 argument_list|,

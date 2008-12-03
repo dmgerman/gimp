@@ -125,8 +125,10 @@ literal|"dockable-popup"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"Dialogs Menu"
 argument_list|)
 block|,
@@ -152,8 +154,10 @@ literal|"dockable-add-tab-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"_Add Tab"
 argument_list|)
 block|}
@@ -163,8 +167,10 @@ literal|"dockable-preview-size-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"_Preview Size"
 argument_list|)
 block|}
@@ -174,8 +180,10 @@ literal|"dockable-tab-style-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"_Tab Style"
 argument_list|)
 block|}
@@ -185,8 +193,10 @@ literal|"dockable-close-tab"
 block|,
 name|GTK_STOCK_CLOSE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"_Close Tab"
 argument_list|)
 block|,
@@ -207,8 +217,10 @@ literal|"dockable-detach-tab"
 block|,
 name|GIMP_STOCK_DETACH
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"_Detach Tab"
 argument_list|)
 block|,
@@ -272,8 +284,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"tiny"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"_Tiny"
 argument_list|)
 argument_list|,
@@ -284,8 +298,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"extra-small"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"E_xtra Small"
 argument_list|)
 argument_list|,
@@ -296,8 +312,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"small"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"_Small"
 argument_list|)
 argument_list|,
@@ -308,8 +326,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"medium"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"_Medium"
 argument_list|)
 argument_list|,
@@ -320,8 +340,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"large"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"_Large"
 argument_list|)
 argument_list|,
@@ -332,8 +354,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"extra-large"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"Ex_tra Large"
 argument_list|)
 argument_list|,
@@ -344,8 +368,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"huge"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"_Huge"
 argument_list|)
 argument_list|,
@@ -356,8 +382,10 @@ name|VIEW_SIZE
 argument_list|(
 literal|"enormous"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"preview-size"
+argument_list|,
 literal|"_Enormous"
 argument_list|)
 argument_list|,
@@ -368,7 +396,9 @@ name|VIEW_SIZE
 argument_list|(
 literal|"gigantic"
 argument_list|,
-argument|N_(
+argument|NC_(
+literal|"preview-size"
+argument|,
 literal|"_Gigantic"
 argument|)
 argument_list|,
@@ -391,8 +421,10 @@ name|TAB_STYLE
 argument_list|(
 literal|"icon"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"_Icon"
 argument_list|)
 argument_list|,
@@ -403,8 +435,10 @@ name|TAB_STYLE
 argument_list|(
 literal|"preview"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"Current _Status"
 argument_list|)
 argument_list|,
@@ -415,8 +449,10 @@ name|TAB_STYLE
 argument_list|(
 literal|"name"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"_Text"
 argument_list|)
 argument_list|,
@@ -427,8 +463,10 @@ name|TAB_STYLE
 argument_list|(
 literal|"icon-name"
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tab-style"
+argument_list|,
 literal|"I_con& Text"
 argument_list|)
 argument_list|,
@@ -439,7 +477,9 @@ name|TAB_STYLE
 argument_list|(
 literal|"preview-name"
 argument_list|,
-argument|N_(
+argument|NC_(
+literal|"tab-style"
+argument|,
 literal|"St_atus& Text"
 argument|)
 argument_list|,
@@ -475,8 +515,10 @@ literal|"dockable-lock-tab"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"Loc_k Tab to Dock"
 argument_list|)
 block|,
@@ -502,8 +544,10 @@ literal|"dockable-show-button-bar"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"Show _Button Bar"
 argument_list|)
 block|,
@@ -538,8 +582,10 @@ literal|"dockable-view-type-list"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"View as _List"
 argument_list|)
 block|,
@@ -557,8 +603,10 @@ literal|"dockable-view-type-grid"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"View as _Grid"
 argument_list|)
 block|,
@@ -588,6 +636,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"dockable-action"
+argument_list|,
 name|dockable_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -600,6 +650,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"dockable-action"
+argument_list|,
 name|dockable_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -611,6 +663,8 @@ expr_stmt|;
 name|gimp_action_group_add_string_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"dialogs-action"
 argument_list|,
 name|dialogs_dockable_actions
 argument_list|,
@@ -625,6 +679,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"preview-size"
 argument_list|,
 name|dockable_view_size_actions
 argument_list|,
@@ -647,6 +703,8 @@ name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"tab-style"
+argument_list|,
 name|dockable_tab_style_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -667,6 +725,8 @@ expr_stmt|;
 name|gimp_action_group_add_radio_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"dockable-action"
 argument_list|,
 name|dockable_view_type_actions
 argument_list|,

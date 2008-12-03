@@ -71,8 +71,10 @@ literal|"help-menu"
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-action"
+argument_list|,
 literal|"_Help"
 argument_list|)
 block|}
@@ -82,8 +84,10 @@ literal|"help-help"
 block|,
 name|GTK_STOCK_HELP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-action"
+argument_list|,
 literal|"_Help"
 argument_list|)
 block|,
@@ -107,8 +111,10 @@ literal|"help-context-help"
 block|,
 name|GTK_STOCK_HELP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-action"
+argument_list|,
 literal|"_Context Help"
 argument_list|)
 block|,
@@ -143,6 +149,8 @@ block|{
 name|gimp_action_group_add_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"help-action"
 argument_list|,
 name|help_actions
 argument_list|,

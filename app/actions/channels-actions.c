@@ -95,8 +95,10 @@ literal|"channels-popup"
 block|,
 name|GIMP_STOCK_CHANNELS
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Channels Menu"
 argument_list|)
 block|,
@@ -114,8 +116,10 @@ literal|"channels-edit-attributes"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Edit Channel Attributes..."
 argument_list|)
 block|,
@@ -139,8 +143,10 @@ literal|"channels-new"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_New Channel..."
 argument_list|)
 block|,
@@ -164,8 +170,10 @@ literal|"channels-new-last-values"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_New Channel"
 argument_list|)
 block|,
@@ -189,8 +197,10 @@ literal|"channels-duplicate"
 block|,
 name|GIMP_STOCK_DUPLICATE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"D_uplicate Channel"
 argument_list|)
 block|,
@@ -214,8 +224,10 @@ literal|"channels-delete"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Delete Channel"
 argument_list|)
 block|,
@@ -239,8 +251,10 @@ literal|"channels-raise"
 block|,
 name|GTK_STOCK_GO_UP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Raise Channel"
 argument_list|)
 block|,
@@ -264,8 +278,10 @@ literal|"channels-raise-to-top"
 block|,
 name|GTK_STOCK_GOTO_TOP
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Raise Channel to _Top"
 argument_list|)
 block|,
@@ -289,8 +305,10 @@ literal|"channels-lower"
 block|,
 name|GTK_STOCK_GO_DOWN
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Lower Channel"
 argument_list|)
 block|,
@@ -314,8 +332,10 @@ literal|"channels-lower-to-bottom"
 block|,
 name|GTK_STOCK_GOTO_BOTTOM
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Lower Channel to _Bottom"
 argument_list|)
 block|,
@@ -351,8 +371,10 @@ literal|"channels-selection-replace"
 block|,
 name|GIMP_STOCK_SELECTION_REPLACE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Channel to Sele_ction"
 argument_list|)
 block|,
@@ -375,8 +397,10 @@ literal|"channels-selection-add"
 block|,
 name|GIMP_STOCK_SELECTION_ADD
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Add to Selection"
 argument_list|)
 block|,
@@ -399,8 +423,10 @@ literal|"channels-selection-subtract"
 block|,
 name|GIMP_STOCK_SELECTION_SUBTRACT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Subtract from Selection"
 argument_list|)
 block|,
@@ -423,8 +449,10 @@ literal|"channels-selection-intersect"
 block|,
 name|GIMP_STOCK_SELECTION_INTERSECT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"_Intersect with Selection"
 argument_list|)
 block|,
@@ -459,6 +487,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"channels-action"
+argument_list|,
 name|channels_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -470,6 +500,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"channels-action"
 argument_list|,
 name|channels_to_selection_actions
 argument_list|,

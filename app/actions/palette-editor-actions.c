@@ -95,8 +95,10 @@ literal|"palette-editor-popup"
 block|,
 name|GIMP_STOCK_PALETTE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palette-editor-action"
+argument_list|,
 literal|"Palette Editor Menu"
 argument_list|)
 block|,
@@ -114,8 +116,10 @@ literal|"palette-editor-edit-color"
 block|,
 name|GTK_STOCK_EDIT
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palette-editor-action"
+argument_list|,
 literal|"_Edit Color..."
 argument_list|)
 block|,
@@ -123,7 +127,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Edit color"
+literal|"Edit this color"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -139,8 +143,10 @@ literal|"palette-editor-delete-color"
 block|,
 name|GTK_STOCK_DELETE
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palette-editor-action"
+argument_list|,
 literal|"_Delete Color"
 argument_list|)
 block|,
@@ -148,7 +154,7 @@ literal|""
 block|,
 name|N_
 argument_list|(
-literal|"Delete color"
+literal|"Delete this color"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -176,8 +182,10 @@ literal|"palette-editor-edit-active"
 block|,
 name|GIMP_STOCK_LINKED
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palette-editor-action"
+argument_list|,
 literal|"Edit Active Palette"
 argument_list|)
 block|,
@@ -212,8 +220,10 @@ literal|"palette-editor-new-color-fg"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palette-editor-action"
+argument_list|,
 literal|"New Color from _FG"
 argument_list|)
 block|,
@@ -236,8 +246,10 @@ literal|"palette-editor-new-color-bg"
 block|,
 name|GTK_STOCK_NEW
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palette-editor-action"
+argument_list|,
 literal|"New Color from _BG"
 argument_list|)
 block|,
@@ -356,6 +368,8 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"palette-editor-action"
+argument_list|,
 name|palette_editor_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -368,6 +382,8 @@ name|gimp_action_group_add_toggle_actions
 argument_list|(
 name|group
 argument_list|,
+literal|"palette-editor-action"
+argument_list|,
 name|palette_editor_toggle_actions
 argument_list|,
 name|G_N_ELEMENTS
@@ -379,6 +395,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+literal|"palette-editor-action"
 argument_list|,
 name|palette_editor_new_actions
 argument_list|,
@@ -396,6 +414,8 @@ expr_stmt|;
 name|gimp_action_group_add_enum_actions
 argument_list|(
 name|group
+argument_list|,
+name|NULL
 argument_list|,
 name|palette_editor_zoom_actions
 argument_list|,
