@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274bcd580103
+DECL|enum|__anon2b4c2a260103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274bcd580203
+DECL|enum|__anon2b4c2a260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4669,7 +4669,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:shift"
+literal|"gegl:translate"
 argument_list|,
 literal|"x"
 argument_list|,
