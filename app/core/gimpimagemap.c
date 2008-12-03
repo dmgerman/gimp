@@ -161,7 +161,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761775d0103
+DECL|enum|__anon2772ddca0103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -235,10 +235,10 @@ name|GeglNode
 modifier|*
 name|input
 decl_stmt|;
-DECL|member|shift
+DECL|member|translate
 name|GeglNode
 modifier|*
-name|shift
+name|translate
 decl_stmt|;
 DECL|member|operation
 name|GeglNode
@@ -870,7 +870,7 @@ name|NULL
 expr_stmt|;
 name|image_map
 operator|->
-name|shift
+name|translate
 operator|=
 name|NULL
 expr_stmt|;
@@ -1884,7 +1884,7 @@ argument_list|)
 expr_stmt|;
 name|image_map
 operator|->
-name|shift
+name|translate
 operator|=
 name|gegl_node_new_child
 argument_list|(
@@ -1894,7 +1894,7 @@ name|gegl
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:shift"
+literal|"gegl:translate"
 argument_list|,
 name|NULL
 argument_list|)
@@ -1996,7 +1996,7 @@ name|input
 argument_list|,
 name|image_map
 operator|->
-name|shift
+name|translate
 argument_list|,
 name|image_map
 operator|->
@@ -2049,7 +2049,7 @@ name|input
 argument_list|,
 name|image_map
 operator|->
-name|shift
+name|translate
 argument_list|,
 name|over
 argument_list|,
@@ -2085,7 +2085,7 @@ name|input
 argument_list|,
 name|image_map
 operator|->
-name|shift
+name|translate
 argument_list|,
 name|image_map
 operator|->
@@ -2119,7 +2119,7 @@ name|gegl_node_set
 argument_list|(
 name|image_map
 operator|->
-name|shift
+name|translate
 argument_list|,
 literal|"x"
 argument_list|,
