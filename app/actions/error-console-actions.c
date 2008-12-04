@@ -107,8 +107,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"error-console-action"
+argument_list|,
 literal|"Clear error console"
 argument_list|)
 block|,
@@ -134,9 +136,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Select all errors"
+literal|"error-console-action"
+argument_list|,
+literal|"Select all error messages"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -173,9 +177,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Save error log"
+literal|"error-console-action"
+argument_list|,
+literal|"Write all error mesaages to a file"
 argument_list|)
 block|,
 name|FALSE
@@ -199,9 +205,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Save selection"
+literal|"error-console-action"
+argument_list|,
+literal|"Write the selected error messages to a file"
 argument_list|)
 block|,
 name|TRUE

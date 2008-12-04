@@ -155,9 +155,11 @@ argument_list|)
 block|,
 literal|"<shift>Q"
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Toggle Quick Mask"
+literal|"quick-mask-action"
+argument_list|,
+literal|"Toggle Quick Mask on/off"
 argument_list|)
 block|,
 name|G_CALLBACK

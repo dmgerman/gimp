@@ -79,8 +79,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the tool options dialog"
 argument_list|)
 block|,
@@ -103,8 +105,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the device status dialog"
 argument_list|)
 block|,
@@ -127,8 +131,10 @@ argument_list|)
 block|,
 literal|"<control>L"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the layers dialog"
 argument_list|)
 block|,
@@ -151,8 +157,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the channels dialog"
 argument_list|)
 block|,
@@ -175,8 +183,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the paths dialog"
 argument_list|)
 block|,
@@ -199,8 +209,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the colormap dialog"
 argument_list|)
 block|,
@@ -223,8 +235,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the histogram dialog"
 argument_list|)
 block|,
@@ -247,8 +261,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the selection editor"
 argument_list|)
 block|,
@@ -271,8 +287,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the display navigation dialog"
 argument_list|)
 block|,
@@ -295,8 +313,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the undo history dialog"
 argument_list|)
 block|,
@@ -319,8 +339,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the pointer information dialog"
 argument_list|)
 block|,
@@ -343,8 +365,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the sample points dialog"
 argument_list|)
 block|,
@@ -367,8 +391,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the FG/BG color dialog"
 argument_list|)
 block|,
@@ -391,8 +417,10 @@ argument_list|)
 block|,
 literal|"<control><shift>B"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the brushes dialog"
 argument_list|)
 block|,
@@ -415,8 +443,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the brush editor"
 argument_list|)
 block|,
@@ -439,8 +469,10 @@ argument_list|)
 block|,
 literal|"<control><shift>P"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the patterns dialog"
 argument_list|)
 block|,
@@ -463,8 +495,10 @@ argument_list|)
 block|,
 literal|"<control>G"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the gradients dialog"
 argument_list|)
 block|,
@@ -487,8 +521,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the gradient editor"
 argument_list|)
 block|,
@@ -511,8 +547,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the palettes dialog"
 argument_list|)
 block|,
@@ -535,8 +573,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the palette editor"
 argument_list|)
 block|,
@@ -559,8 +599,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the fonts dialog"
 argument_list|)
 block|,
@@ -583,8 +625,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the named buffers dialog"
 argument_list|)
 block|,
@@ -607,8 +651,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the images dialog"
 argument_list|)
 block|,
@@ -631,8 +677,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the document history dialog"
 argument_list|)
 block|,
@@ -655,8 +703,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the image templates dialog"
 argument_list|)
 block|,
@@ -679,8 +729,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the tools dialog"
 argument_list|)
 block|,
@@ -703,8 +755,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the error console"
 argument_list|)
 block|,
@@ -750,8 +804,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the preferences dialog"
 argument_list|)
 block|,
@@ -774,8 +830,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the keyboard shortcuts editor"
 argument_list|)
 block|,
@@ -798,8 +856,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Open the module manager dialog"
 argument_list|)
 block|,
@@ -822,8 +882,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"Show some helpful tips on using GIMP"
 argument_list|)
 block|,
@@ -846,8 +908,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dialogs-action"
+argument_list|,
 literal|"About GIMP"
 argument_list|)
 block|,

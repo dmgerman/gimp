@@ -202,9 +202,11 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Raise tool"
+literal|"tools-action"
+argument_list|,
+literal|"Raise this tool"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -229,9 +231,11 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Raise tool to top"
+literal|"tools-action"
+argument_list|,
+literal|"Raise this tool to the top"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -256,9 +260,11 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Lower tool"
+literal|"tools-action"
+argument_list|,
+literal|"Lower this tool"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -283,9 +289,11 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Lower tool to bottom"
+literal|"tools-action"
+argument_list|,
+literal|"Lower this tool to the bottom"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -310,8 +318,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"Reset tool order and visibility"
 argument_list|)
 block|,
@@ -388,8 +398,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"Select regions with similar colors"
 argument_list|)
 block|,
@@ -412,8 +424,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tools-action"
+argument_list|,
 literal|"Rotate by an arbitrary angle"
 argument_list|)
 block|,

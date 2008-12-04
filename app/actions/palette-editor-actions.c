@@ -125,9 +125,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Edit this color"
+literal|"palette-editor-action"
+argument_list|,
+literal|"Edit this entry"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -152,9 +154,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Delete this color"
+literal|"palette-editor-action"
+argument_list|,
+literal|"Delete this entry"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -229,9 +233,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"New color from foreground color"
+literal|"palette-editor-action"
+argument_list|,
+literal|"Create a new entry from the foreground color"
 argument_list|)
 block|,
 name|FALSE
@@ -255,9 +261,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"New color from background color"
+literal|"palette-editor-action"
+argument_list|,
+literal|"Create a new entry from the background color"
 argument_list|)
 block|,
 name|TRUE

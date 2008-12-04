@@ -131,8 +131,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"Edit this color"
 argument_list|)
 block|,
@@ -170,8 +172,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"Add current foreground color"
 argument_list|)
 block|,
@@ -196,8 +200,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"colormap-action"
+argument_list|,
 literal|"Add current background color"
 argument_list|)
 block|,

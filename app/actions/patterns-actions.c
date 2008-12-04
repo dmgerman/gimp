@@ -119,9 +119,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Open pattern as image"
+literal|"patterns-action"
+argument_list|,
+literal|"Open this pattern as an image"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -146,8 +148,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Create a new pattern"
 argument_list|)
 block|,
@@ -173,8 +177,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Duplicate this pattern"
 argument_list|)
 block|,
@@ -200,8 +206,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Copy pattern file location to clipboard"
 argument_list|)
 block|,
@@ -227,8 +235,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Delete this pattern"
 argument_list|)
 block|,
@@ -254,8 +264,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Refresh patterns"
 argument_list|)
 block|,
@@ -293,8 +305,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"patterns-action"
+argument_list|,
 literal|"Edit pattern"
 argument_list|)
 block|,

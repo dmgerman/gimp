@@ -278,8 +278,10 @@ argument_list|)
 block|,
 literal|"<control>Z"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Undo the last operation"
 argument_list|)
 block|,
@@ -305,8 +307,10 @@ argument_list|)
 block|,
 literal|"<control>Y"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Redo the last operation that was undone"
 argument_list|)
 block|,
@@ -332,8 +336,10 @@ argument_list|)
 block|,
 literal|"<control><shift>Z"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Undo the last operation, skipping visibility changes"
 argument_list|)
 block|,
@@ -359,8 +365,10 @@ argument_list|)
 block|,
 literal|"<control><shift>Y"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Redo the last operation that was undone, skipping visibility changes"
 argument_list|)
 block|,
@@ -386,8 +394,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Remove all operations from the undo history"
 argument_list|)
 block|,
@@ -413,8 +423,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Modify paint mode and opacity of the last pixel manipulation"
 argument_list|)
 block|,
@@ -440,8 +452,10 @@ argument_list|)
 block|,
 literal|"<control>X"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Move the selected pixels to the clipboard"
 argument_list|)
 block|,
@@ -467,8 +481,10 @@ argument_list|)
 block|,
 literal|"<control>C"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Copy the selected pixels to the clipboard"
 argument_list|)
 block|,
@@ -495,8 +511,10 @@ argument_list|)
 block|,
 literal|"<control><shift>C"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Copy what is visible in the selected region"
 argument_list|)
 block|,
@@ -522,8 +540,10 @@ argument_list|)
 block|,
 literal|"<control>V"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Paste the content of the clipboard"
 argument_list|)
 block|,
@@ -549,8 +569,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Paste the content of the clipboard into the current selection"
 argument_list|)
 block|,
@@ -576,8 +598,10 @@ argument_list|)
 block|,
 literal|"<control><shift>V"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Create a new image from the content of the clipboard"
 argument_list|)
 block|,
@@ -603,8 +627,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Create a new image from the content of the clipboard"
 argument_list|)
 block|,
@@ -630,8 +656,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Create a new layer from the content of the clipboard"
 argument_list|)
 block|,
@@ -657,8 +685,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Move the selected pixels to a named buffer"
 argument_list|)
 block|,
@@ -684,8 +714,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Copy the selected pixels to a named buffer"
 argument_list|)
 block|,
@@ -712,8 +744,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Copy the selected region to a named buffer"
 argument_list|)
 block|,
@@ -739,8 +773,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Paste the content of a named buffer"
 argument_list|)
 block|,
@@ -766,8 +802,10 @@ argument_list|)
 block|,
 literal|"Delete"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Clear the selected pixels"
 argument_list|)
 block|,
@@ -805,8 +843,10 @@ argument_list|)
 block|,
 literal|"<control>comma"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Fill the selection using the foreground color"
 argument_list|)
 block|,
@@ -831,8 +871,10 @@ argument_list|)
 block|,
 literal|"<control>period"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Fill the selection using the background color"
 argument_list|)
 block|,
@@ -857,8 +899,10 @@ argument_list|)
 block|,
 literal|"<control>semicolon"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"edit-action"
+argument_list|,
 literal|"Fill the selection using the active pattern"
 argument_list|)
 block|,

@@ -125,8 +125,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Create a new gradient"
 argument_list|)
 block|,
@@ -152,8 +154,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Duplicate this gradient"
 argument_list|)
 block|,
@@ -179,8 +183,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Copy gradient file location to clipboard"
 argument_list|)
 block|,
@@ -206,8 +212,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Save gradient as POV-Ray"
 argument_list|)
 block|,
@@ -233,8 +241,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Delete this gradient"
 argument_list|)
 block|,
@@ -260,8 +270,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Refresh gradients"
 argument_list|)
 block|,
@@ -299,8 +311,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"gradients-action"
+argument_list|,
 literal|"Edit gradient"
 argument_list|)
 block|,

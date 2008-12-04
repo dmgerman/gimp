@@ -119,9 +119,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Rescan font list"
+literal|"fonts-action"
+argument_list|,
+literal|"Rescan the installed fonts"
 argument_list|)
 block|,
 name|G_CALLBACK

@@ -125,8 +125,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"Raise this image's displays"
 argument_list|)
 block|,
@@ -152,8 +154,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"Create a new display for this image"
 argument_list|)
 block|,
@@ -179,8 +183,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"images-action"
+argument_list|,
 literal|"Delete this image"
 argument_list|)
 block|,

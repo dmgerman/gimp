@@ -102,8 +102,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"Load text from file"
 argument_list|)
 block|,
@@ -129,8 +131,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"Clear all text"
 argument_list|)
 block|,
@@ -168,8 +172,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"From left to right"
 argument_list|)
 block|,
@@ -192,8 +198,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-editor-action"
+argument_list|,
 literal|"From right to left"
 argument_list|)
 block|,

@@ -341,8 +341,10 @@ argument_list|)
 block|,
 literal|"<control>B"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"windows-action"
+argument_list|,
 literal|"Raise the toolbox"
 argument_list|)
 block|,

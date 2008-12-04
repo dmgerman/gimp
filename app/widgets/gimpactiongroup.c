@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b582de10103
+DECL|enum|__anon2bce920a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1189,7 +1189,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_actions (GimpActionGroup * group,const gchar * label_context,const GimpActionEntry * entries,guint n_entries)
+DECL|function|gimp_action_group_add_actions (GimpActionGroup * group,const gchar * msg_context,const GimpActionEntry * entries,guint n_entries)
 name|gimp_action_group_add_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1199,7 +1199,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpActionEntry
@@ -1247,6 +1247,8 @@ specifier|const
 name|gchar
 modifier|*
 name|tooltip
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -1266,8 +1268,9 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|label_context
+name|msg_context
 condition|)
+block|{
 name|label
 operator|=
 operator|(
@@ -1278,7 +1281,7 @@ name|g_dpgettext2
 argument_list|(
 name|NULL
 argument_list|,
-name|label_context
+name|msg_context
 argument_list|,
 name|entries
 index|[
@@ -1288,7 +1291,34 @@ operator|.
 name|label
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+condition|)
+name|tooltip
+operator|=
+name|g_dpgettext2
+argument_list|(
+name|NULL
+argument_list|,
+name|msg_context
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|label
 operator|=
 name|gettext
@@ -1313,6 +1343,7 @@ operator|.
 name|tooltip
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -1454,7 +1485,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_toggle_actions (GimpActionGroup * group,const gchar * label_context,const GimpToggleActionEntry * entries,guint n_entries)
+DECL|function|gimp_action_group_add_toggle_actions (GimpActionGroup * group,const gchar * msg_context,const GimpToggleActionEntry * entries,guint n_entries)
 name|gimp_action_group_add_toggle_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1464,7 +1495,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpToggleActionEntry
@@ -1512,6 +1543,8 @@ specifier|const
 name|gchar
 modifier|*
 name|tooltip
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -1531,8 +1564,9 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|label_context
+name|msg_context
 condition|)
+block|{
 name|label
 operator|=
 operator|(
@@ -1543,7 +1577,7 @@ name|g_dpgettext2
 argument_list|(
 name|NULL
 argument_list|,
-name|label_context
+name|msg_context
 argument_list|,
 name|entries
 index|[
@@ -1553,7 +1587,34 @@ operator|.
 name|label
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+condition|)
+name|tooltip
+operator|=
+name|g_dpgettext2
+argument_list|(
+name|NULL
+argument_list|,
+name|msg_context
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|label
 operator|=
 name|gettext
@@ -1578,6 +1639,7 @@ operator|.
 name|tooltip
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -1732,7 +1794,7 @@ end_function
 begin_function
 name|GSList
 modifier|*
-DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,const gchar * label_context,const GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GCallback callback)
+DECL|function|gimp_action_group_add_radio_actions (GimpActionGroup * group,const gchar * msg_context,const GimpRadioActionEntry * entries,guint n_entries,GSList * radio_group,gint value,GCallback callback)
 name|gimp_action_group_add_radio_actions
 parameter_list|(
 name|GimpActionGroup
@@ -1742,7 +1804,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpRadioActionEntry
@@ -1808,6 +1870,8 @@ specifier|const
 name|gchar
 modifier|*
 name|tooltip
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -1827,8 +1891,9 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|label_context
+name|msg_context
 condition|)
+block|{
 name|label
 operator|=
 operator|(
@@ -1839,7 +1904,7 @@ name|g_dpgettext2
 argument_list|(
 name|NULL
 argument_list|,
-name|label_context
+name|msg_context
 argument_list|,
 name|entries
 index|[
@@ -1849,7 +1914,34 @@ operator|.
 name|label
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+condition|)
+name|tooltip
+operator|=
+name|g_dpgettext2
+argument_list|(
+name|NULL
+argument_list|,
+name|msg_context
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|label
 operator|=
 name|gettext
@@ -1874,6 +1966,7 @@ operator|.
 name|tooltip
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -2062,7 +2155,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,const gchar * label_context,const GimpEnumActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_enum_actions (GimpActionGroup * group,const gchar * msg_context,const GimpEnumActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_enum_actions
 parameter_list|(
 name|GimpActionGroup
@@ -2072,7 +2165,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpEnumActionEntry
@@ -2123,6 +2216,8 @@ specifier|const
 name|gchar
 modifier|*
 name|tooltip
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -2142,8 +2237,9 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|label_context
+name|msg_context
 condition|)
+block|{
 name|label
 operator|=
 operator|(
@@ -2154,7 +2250,7 @@ name|g_dpgettext2
 argument_list|(
 name|NULL
 argument_list|,
-name|label_context
+name|msg_context
 argument_list|,
 name|entries
 index|[
@@ -2164,7 +2260,34 @@ operator|.
 name|label
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+condition|)
+name|tooltip
+operator|=
+name|g_dpgettext2
+argument_list|(
+name|NULL
+argument_list|,
+name|msg_context
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|label
 operator|=
 name|gettext
@@ -2189,6 +2312,7 @@ operator|.
 name|tooltip
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!
@@ -2334,7 +2458,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,const gchar * label_context,const GimpStringActionEntry * entries,guint n_entries,GCallback callback)
+DECL|function|gimp_action_group_add_string_actions (GimpActionGroup * group,const gchar * msg_context,const GimpStringActionEntry * entries,guint n_entries,GCallback callback)
 name|gimp_action_group_add_string_actions
 parameter_list|(
 name|GimpActionGroup
@@ -2344,7 +2468,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpStringActionEntry
@@ -2395,6 +2519,8 @@ specifier|const
 name|gchar
 modifier|*
 name|tooltip
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -2414,8 +2540,9 @@ condition|)
 continue|continue;
 if|if
 condition|(
-name|label_context
+name|msg_context
 condition|)
+block|{
 name|label
 operator|=
 operator|(
@@ -2426,7 +2553,7 @@ name|g_dpgettext2
 argument_list|(
 name|NULL
 argument_list|,
-name|label_context
+name|msg_context
 argument_list|,
 name|entries
 index|[
@@ -2436,7 +2563,34 @@ operator|.
 name|label
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+condition|)
+name|tooltip
+operator|=
+name|g_dpgettext2
+argument_list|(
+name|NULL
+argument_list|,
+name|msg_context
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
+name|tooltip
+argument_list|)
+expr_stmt|;
+block|}
 else|else
+block|{
 name|label
 operator|=
 name|gettext
@@ -2461,6 +2615,7 @@ operator|.
 name|tooltip
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 operator|!

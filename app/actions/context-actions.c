@@ -322,8 +322,10 @@ argument_list|)
 block|,
 literal|"D"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"Set foreground color to black, background color to white"
 argument_list|)
 block|,
@@ -349,8 +351,10 @@ argument_list|)
 block|,
 literal|"X"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"context-action"
+argument_list|,
 literal|"Exchange foreground and background colors"
 argument_list|)
 block|,

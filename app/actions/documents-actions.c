@@ -113,8 +113,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Open the selected entry"
 argument_list|)
 block|,
@@ -140,8 +142,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Raise window if already open"
 argument_list|)
 block|,
@@ -167,8 +171,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Open image dialog"
 argument_list|)
 block|,
@@ -194,8 +200,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Copy image location to clipboard"
 argument_list|)
 block|,
@@ -221,8 +229,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Remove the selected entry"
 argument_list|)
 block|,
@@ -248,8 +258,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Clear the entire document history"
 argument_list|)
 block|,
@@ -275,8 +287,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Recreate preview"
 argument_list|)
 block|,
@@ -302,8 +316,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"documents-action"
+argument_list|,
 literal|"Reload all previews"
 argument_list|)
 block|,
@@ -329,9 +345,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Remove dangling entries"
+literal|"documents-action"
+argument_list|,
+literal|"Remove entries for which the corresponding file is not available"
 argument_list|)
 block|,
 name|G_CALLBACK

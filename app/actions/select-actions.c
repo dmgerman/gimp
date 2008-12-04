@@ -144,8 +144,10 @@ argument_list|)
 block|,
 literal|"<control>A"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Select everything"
 argument_list|)
 block|,
@@ -171,8 +173,10 @@ argument_list|)
 block|,
 literal|"<control><shift>A"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Dismiss the selection"
 argument_list|)
 block|,
@@ -198,8 +202,10 @@ argument_list|)
 block|,
 literal|"<control>I"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Invert the selection"
 argument_list|)
 block|,
@@ -225,8 +231,10 @@ argument_list|)
 block|,
 literal|"<control><shift>L"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Create a floating selection"
 argument_list|)
 block|,
@@ -252,8 +260,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Blur the selection border so that it fades out smoothly"
 argument_list|)
 block|,
@@ -279,8 +289,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Remove fuzzyness from the selection"
 argument_list|)
 block|,
@@ -306,8 +318,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Contract the selection"
 argument_list|)
 block|,
@@ -333,8 +347,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Enlarge the selection"
 argument_list|)
 block|,
@@ -360,8 +376,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Replace the selection by its border"
 argument_list|)
 block|,
@@ -387,8 +405,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Save the selection to a channel"
 argument_list|)
 block|,
@@ -414,8 +434,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Paint along the selection outline"
 argument_list|)
 block|,
@@ -441,8 +463,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"select-action"
+argument_list|,
 literal|"Stroke the selection with last used values"
 argument_list|)
 block|,

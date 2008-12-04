@@ -402,6 +402,7 @@ end_comment
 begin_decl_stmt
 DECL|variable|action_groups
 specifier|static
+specifier|const
 name|GimpActionFactoryEntry
 name|action_groups
 index|[]

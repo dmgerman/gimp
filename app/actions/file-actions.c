@@ -252,8 +252,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Open an image file"
 argument_list|)
 block|,
@@ -279,8 +281,10 @@ argument_list|)
 block|,
 literal|"<control><alt>O"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Open an image file as layers"
 argument_list|)
 block|,
@@ -306,8 +310,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Open an image file from a specified location"
 argument_list|)
 block|,
@@ -333,8 +339,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Create a new template from this image"
 argument_list|)
 block|,
@@ -360,8 +368,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Reload the image file from disk"
 argument_list|)
 block|,
@@ -387,8 +397,10 @@ argument_list|)
 block|,
 literal|"<shift><control>W"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Close all opened images"
 argument_list|)
 block|,
@@ -414,8 +426,10 @@ argument_list|)
 block|,
 literal|"<control>Q"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Quit the GNU Image Manipulation Program"
 argument_list|)
 block|,
@@ -453,8 +467,10 @@ argument_list|)
 block|,
 literal|"<control>S"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save this image"
 argument_list|)
 block|,
@@ -479,8 +495,10 @@ argument_list|)
 block|,
 literal|"<control><shift>S"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save this image with a different name"
 argument_list|)
 block|,
@@ -505,8 +523,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save this image with a different name, but keep its current name"
 argument_list|)
 block|,
@@ -531,8 +551,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"file-action"
+argument_list|,
 literal|"Save this image and close its window"
 argument_list|)
 block|,

@@ -524,8 +524,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dockable-action"
+argument_list|,
 literal|"Protect this tab from being dragged with the mouse pointer"
 argument_list|)
 block|,

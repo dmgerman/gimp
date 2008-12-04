@@ -577,8 +577,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Reset all plug-ins to their default settings"
 argument_list|)
 block|,
@@ -616,8 +618,10 @@ argument_list|)
 block|,
 literal|"<control>F"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Rerun the last used plug-in using the same settings"
 argument_list|)
 block|,
@@ -642,8 +646,10 @@ argument_list|)
 block|,
 literal|"<control><shift>F"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"plug-in-action"
+argument_list|,
 literal|"Show the last used plug-in dialog again"
 argument_list|)
 block|,

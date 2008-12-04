@@ -260,8 +260,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Activate the text tool on this text layer"
 argument_list|)
 block|,
@@ -287,8 +289,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Edit the layer's name"
 argument_list|)
 block|,
@@ -314,8 +318,10 @@ argument_list|)
 block|,
 literal|"<control><shift>N"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Create a new layer and add it to the image"
 argument_list|)
 block|,
@@ -341,8 +347,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Create a new layer with last used values"
 argument_list|)
 block|,
@@ -368,8 +376,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Create a new layer from what is visible in this image"
 argument_list|)
 block|,
@@ -395,8 +405,10 @@ argument_list|)
 block|,
 literal|"<control><shift>D"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Create a duplicate of the layer and add it to the image"
 argument_list|)
 block|,
@@ -422,8 +434,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Delete this layer"
 argument_list|)
 block|,
@@ -449,8 +463,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Raise this layer one step in the layer stack"
 argument_list|)
 block|,
@@ -476,8 +492,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Move this layer to the top of the layer stack"
 argument_list|)
 block|,
@@ -503,8 +521,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Lower this layer one step in the layer stack"
 argument_list|)
 block|,
@@ -530,8 +550,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Move this layer to the bottom of the layer stack"
 argument_list|)
 block|,
@@ -557,8 +579,10 @@ argument_list|)
 block|,
 literal|"<control>H"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Anchor the floating layer"
 argument_list|)
 block|,
@@ -584,8 +608,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Merge this layer with the one below it"
 argument_list|)
 block|,
@@ -611,8 +637,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Merge all visible layers into one layer"
 argument_list|)
 block|,
@@ -638,8 +666,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Merge all layers into one and remove transparency"
 argument_list|)
 block|,
@@ -665,8 +695,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Turn this text layer into a normal layer"
 argument_list|)
 block|,
@@ -692,8 +724,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Create a path from this text layer"
 argument_list|)
 block|,
@@ -719,8 +753,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Warp this layer's text along the current path"
 argument_list|)
 block|,
@@ -746,8 +782,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Adjust the layer dimensions"
 argument_list|)
 block|,
@@ -773,8 +811,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Resize the layer to the size of the image"
 argument_list|)
 block|,
@@ -800,8 +840,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Change the size of the layer content"
 argument_list|)
 block|,
@@ -827,8 +869,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Crop the layer to the extents of the selection"
 argument_list|)
 block|,
@@ -854,8 +898,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add a mask that allows non-destructive editing of transparency"
 argument_list|)
 block|,
@@ -881,8 +927,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add transparency information to the layer"
 argument_list|)
 block|,
@@ -908,8 +956,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Remove transparency information from the layer"
 argument_list|)
 block|,
@@ -947,8 +997,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Keep transparency information on this layer from being modified"
 argument_list|)
 block|,
@@ -976,8 +1028,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Work on the layer mask"
 argument_list|)
 block|,
@@ -1031,8 +1085,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Dismiss the effect of the layer mask"
 argument_list|)
 block|,
@@ -1072,8 +1128,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Apply the effect of the layer mask and remove it"
 argument_list|)
 block|,
@@ -1098,8 +1156,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Remove the layer mask and its effect"
 argument_list|)
 block|,
@@ -1136,8 +1196,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Replace the selection with the layer mask"
 argument_list|)
 block|,
@@ -1162,8 +1224,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add the layer mask to the current selection"
 argument_list|)
 block|,
@@ -1188,8 +1252,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Subtract the layer mask from the current selection"
 argument_list|)
 block|,
@@ -1214,8 +1280,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Intersect the layer mask with the current selection"
 argument_list|)
 block|,
@@ -1252,8 +1320,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Replace the selection with the layer's alpha channel"
 argument_list|)
 block|,
@@ -1278,8 +1348,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add the layer's alpha channel to the current selection"
 argument_list|)
 block|,
@@ -1304,8 +1376,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Subtract the layer's alpha channel from the current selection"
 argument_list|)
 block|,
@@ -1330,8 +1404,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Intersect the layer's alpha channel with the current selection"
 argument_list|)
 block|,
@@ -1368,8 +1444,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Replace the selection with the text layer's outline"
 argument_list|)
 block|,
@@ -1394,8 +1472,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Add the text layer's outline to the current selection"
 argument_list|)
 block|,
@@ -1420,8 +1500,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Subtract the text layer's outline from the current selection"
 argument_list|)
 block|,
@@ -1446,8 +1528,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Intersect the text layer's outline with the current selection"
 argument_list|)
 block|,
@@ -1484,8 +1568,10 @@ argument_list|)
 block|,
 literal|"Home"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select the topmost layer"
 argument_list|)
 block|,
@@ -1510,8 +1596,10 @@ argument_list|)
 block|,
 literal|"End"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select the bottommost layer"
 argument_list|)
 block|,
@@ -1536,8 +1624,10 @@ argument_list|)
 block|,
 literal|"Prior"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select the layer above the current layer"
 argument_list|)
 block|,
@@ -1562,8 +1652,10 @@ argument_list|)
 block|,
 literal|"Next"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"Select the layer below the current layer"
 argument_list|)
 block|,

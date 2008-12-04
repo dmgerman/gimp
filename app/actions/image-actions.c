@@ -281,8 +281,10 @@ argument_list|)
 block|,
 literal|"<control>N"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Create a new image"
 argument_list|)
 block|,
@@ -308,8 +310,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Adjust the image dimensions"
 argument_list|)
 block|,
@@ -335,8 +339,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Resize the image to enclose all layers"
 argument_list|)
 block|,
@@ -362,8 +368,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Resize the image to the extents of the selection"
 argument_list|)
 block|,
@@ -389,8 +397,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Adjust the print resolution"
 argument_list|)
 block|,
@@ -416,8 +426,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Change the size of the image content"
 argument_list|)
 block|,
@@ -443,8 +455,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Crop the image to the extents of the selection"
 argument_list|)
 block|,
@@ -470,8 +484,10 @@ argument_list|)
 block|,
 literal|"<control>D"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Create a duplicate of this image"
 argument_list|)
 block|,
@@ -497,8 +513,10 @@ argument_list|)
 block|,
 literal|"<control>M"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Merge all visible layers into one layer"
 argument_list|)
 block|,
@@ -524,8 +542,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Merge all layers into one and remove transparency"
 argument_list|)
 block|,
@@ -551,8 +571,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Configure the grid for this image"
 argument_list|)
 block|,
@@ -578,8 +600,10 @@ argument_list|)
 block|,
 literal|"<alt>Return"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Display information about this image"
 argument_list|)
 block|,
@@ -617,8 +641,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-convert-action"
+argument_list|,
 literal|"Convert the image to the RGB colorspace"
 argument_list|)
 block|,
@@ -641,8 +667,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-convert-action"
+argument_list|,
 literal|"Convert the image to grayscale"
 argument_list|)
 block|,
@@ -665,8 +693,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-convert-action"
+argument_list|,
 literal|"Convert the image to indexed colors"
 argument_list|)
 block|,
@@ -701,8 +731,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Flip image horizontally"
 argument_list|)
 block|,
@@ -727,8 +759,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Flip image vertically"
 argument_list|)
 block|,
@@ -765,8 +799,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Rotate the image 90 degrees to the right"
 argument_list|)
 block|,
@@ -791,8 +827,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Turn the image upside-down"
 argument_list|)
 block|,
@@ -817,8 +855,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"image-action"
+argument_list|,
 literal|"Rotate the image 90 degrees to the left"
 argument_list|)
 block|,

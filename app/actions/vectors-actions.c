@@ -155,8 +155,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Edit path attributes"
 argument_list|)
 block|,
@@ -182,8 +184,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Create a new path..."
 argument_list|)
 block|,
@@ -209,9 +213,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Create a new path with last values"
+literal|"vectors-action"
+argument_list|,
+literal|"Create a new path with last used values"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -236,8 +242,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Duplicate this path"
 argument_list|)
 block|,
@@ -263,8 +271,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Delete this path"
 argument_list|)
 block|,
@@ -314,9 +324,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Raise path"
+literal|"vectors-action"
+argument_list|,
+literal|"Raise this path"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -341,9 +353,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Raise path to top"
+literal|"vectors-action"
+argument_list|,
+literal|"Raise this path to the top"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -368,9 +382,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Lower path"
+literal|"vectors-action"
+argument_list|,
+literal|"Lower this path"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -395,9 +411,11 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Lower path to bottom"
+literal|"vectors-action"
+argument_list|,
+literal|"Lower this path to the bottom"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -422,8 +440,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Paint along the path"
 argument_list|)
 block|,
@@ -449,8 +469,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Paint along the path with last values"
 argument_list|)
 block|,
@@ -648,8 +670,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Path to selection"
 argument_list|)
 block|,
@@ -674,8 +698,10 @@ argument_list|)
 block|,
 literal|"<shift>V"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Replace selection with path"
 argument_list|)
 block|,
@@ -700,8 +726,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Add path to selection"
 argument_list|)
 block|,
@@ -726,8 +754,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Subtract path from selection"
 argument_list|)
 block|,
@@ -752,8 +782,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Intersect path with selection"
 argument_list|)
 block|,
@@ -790,8 +822,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Selection to path"
 argument_list|)
 block|,
@@ -816,8 +850,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Selection to path"
 argument_list|)
 block|,
@@ -842,8 +878,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"vectors-action"
+argument_list|,
 literal|"Advanced options"
 argument_list|)
 block|,

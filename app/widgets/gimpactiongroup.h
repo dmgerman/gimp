@@ -535,7 +535,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpActionEntry
@@ -559,7 +559,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpToggleActionEntry
@@ -584,7 +584,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpRadioActionEntry
@@ -618,7 +618,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpEnumActionEntry
@@ -645,7 +645,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|label_context
+name|msg_context
 parameter_list|,
 specifier|const
 name|GimpStringActionEntry

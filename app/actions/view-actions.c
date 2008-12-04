@@ -294,8 +294,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Create another view on this image"
 argument_list|)
 block|,
@@ -321,8 +323,10 @@ argument_list|)
 block|,
 literal|"<control>W"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Close this image window"
 argument_list|)
 block|,
@@ -348,8 +352,10 @@ argument_list|)
 block|,
 literal|"<control><shift>E"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Adjust the zoom ratio so that the image becomes fully visible"
 argument_list|)
 block|,
@@ -375,8 +381,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Adjust the zoom ratio so that the entire window is used"
 argument_list|)
 block|,
@@ -402,8 +410,10 @@ argument_list|)
 block|,
 literal|"grave"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Restore the previous zoom level"
 argument_list|)
 block|,
@@ -429,8 +439,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show an overview window for this image"
 argument_list|)
 block|,
@@ -456,8 +468,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Configure filters applied to this view"
 argument_list|)
 block|,
@@ -483,8 +497,10 @@ argument_list|)
 block|,
 literal|"<control>E"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Reduce the image window to the size of the image display"
 argument_list|)
 block|,
@@ -510,8 +526,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Connect to another display"
 argument_list|)
 block|,
@@ -549,8 +567,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"A pixel on the screen represents an image pixel"
 argument_list|)
 block|,
@@ -578,8 +598,10 @@ argument_list|)
 block|,
 literal|"<control>T"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Display the selection outline"
 argument_list|)
 block|,
@@ -607,8 +629,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Draw a border around the active layer"
 argument_list|)
 block|,
@@ -636,8 +660,10 @@ argument_list|)
 block|,
 literal|"<control><shift>T"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Display the image's guides"
 argument_list|)
 block|,
@@ -665,8 +691,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Display the image's grid"
 argument_list|)
 block|,
@@ -694,8 +722,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Display the image's color sample points"
 argument_list|)
 block|,
@@ -723,8 +753,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Tool operations snap to guides"
 argument_list|)
 block|,
@@ -752,8 +784,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Tool operations snap to the grid"
 argument_list|)
 block|,
@@ -781,8 +815,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Tool operations snap to the canvas edges"
 argument_list|)
 block|,
@@ -810,8 +846,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Tool operations snap to the active path"
 argument_list|)
 block|,
@@ -839,8 +877,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show this window's menubar"
 argument_list|)
 block|,
@@ -868,8 +908,10 @@ argument_list|)
 block|,
 literal|"<control><shift>R"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show this window's rulers"
 argument_list|)
 block|,
@@ -897,8 +939,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show this window's scrollbars"
 argument_list|)
 block|,
@@ -926,8 +970,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Show this window's statusbar"
 argument_list|)
 block|,
@@ -955,8 +1001,10 @@ argument_list|)
 block|,
 literal|"F11"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Toggle fullscreen view"
 argument_list|)
 block|,
@@ -1071,8 +1119,10 @@ argument_list|)
 block|,
 literal|"minus"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom out"
 argument_list|)
 block|,
@@ -1097,8 +1147,10 @@ argument_list|)
 block|,
 literal|"plus"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom in"
 argument_list|)
 block|,
@@ -1123,8 +1175,10 @@ argument_list|)
 block|,
 literal|"KP_Subtract"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom out"
 argument_list|)
 block|,
@@ -1149,8 +1203,10 @@ argument_list|)
 block|,
 literal|"KP_Add"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-action"
+argument_list|,
 literal|"Zoom in"
 argument_list|)
 block|,
@@ -1223,8 +1279,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 16:1"
 argument_list|)
 block|,
@@ -1247,8 +1305,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 8:1"
 argument_list|)
 block|,
@@ -1271,8 +1331,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 4:1"
 argument_list|)
 block|,
@@ -1295,8 +1357,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 2:1"
 argument_list|)
 block|,
@@ -1319,8 +1383,10 @@ argument_list|)
 block|,
 literal|"1"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 1:1"
 argument_list|)
 block|,
@@ -1343,8 +1409,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 1:2"
 argument_list|)
 block|,
@@ -1367,8 +1435,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 1:4"
 argument_list|)
 block|,
@@ -1391,8 +1461,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 1:8"
 argument_list|)
 block|,
@@ -1415,8 +1487,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Zoom 1:16"
 argument_list|)
 block|,
@@ -1439,8 +1513,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-zoom-action"
+argument_list|,
 literal|"Set a custom zoom factor"
 argument_list|)
 block|,
@@ -1475,8 +1551,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"Use the current theme's background color"
 argument_list|)
 block|,
@@ -1501,8 +1579,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"Use the light check color"
 argument_list|)
 block|,
@@ -1527,8 +1607,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"Use the dark check color"
 argument_list|)
 block|,
@@ -1553,8 +1635,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"Use an arbitrary color"
 argument_list|)
 block|,
@@ -1579,8 +1663,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"view-padding-color"
+argument_list|,
 literal|"Reset padding color to what's configured in preferences"
 argument_list|)
 block|,

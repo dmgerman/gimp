@@ -93,8 +93,10 @@ argument_list|)
 block|,
 literal|"F1"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-action"
+argument_list|,
 literal|"Open the GIMP user manual"
 argument_list|)
 block|,
@@ -120,8 +122,10 @@ argument_list|)
 block|,
 literal|"<shift>F1"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"help-action"
+argument_list|,
 literal|"Show the help for a specific user interface item"
 argument_list|)
 block|,

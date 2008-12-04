@@ -149,8 +149,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"dock-action"
+argument_list|,
 literal|"Connect to another display"
 argument_list|)
 block|,

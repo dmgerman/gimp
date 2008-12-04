@@ -304,8 +304,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"tool-options-action"
+argument_list|,
 literal|"Reset all tool options"
 argument_list|)
 block|,

@@ -113,8 +113,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"Create a new image from the selected template"
 argument_list|)
 block|,
@@ -140,8 +142,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"Create a new template"
 argument_list|)
 block|,
@@ -167,8 +171,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"Duplicate this template"
 argument_list|)
 block|,
@@ -194,8 +200,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"Edit this template"
 argument_list|)
 block|,
@@ -221,8 +229,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"templates-action"
+argument_list|,
 literal|"Delete this template"
 argument_list|)
 block|,

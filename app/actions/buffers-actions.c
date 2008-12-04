@@ -113,8 +113,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"Paste the selected buffer"
 argument_list|)
 block|,
@@ -140,8 +142,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"Paste the selected buffer into the selection"
 argument_list|)
 block|,
@@ -167,9 +171,11 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Paste the selected buffer as new image"
+literal|"buffers-action"
+argument_list|,
+literal|"Paste the selected buffer as a new image"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -194,8 +200,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"buffers-action"
+argument_list|,
 literal|"Delete the selected buffer"
 argument_list|)
 block|,

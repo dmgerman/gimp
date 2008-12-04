@@ -119,8 +119,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"sample-points-action"
+argument_list|,
 literal|"Use the composite color of all visible layers"
 argument_list|)
 block|,

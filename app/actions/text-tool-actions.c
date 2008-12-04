@@ -284,8 +284,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Clear all text"
 argument_list|)
 block|,
@@ -311,8 +313,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Create a path from the outlines of the current text"
 argument_list|)
 block|,
@@ -338,8 +342,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"text-tool-action"
+argument_list|,
 literal|"Bend the text along the currently active path"
 argument_list|)
 block|,

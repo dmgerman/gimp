@@ -80,8 +80,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"config-action"
+argument_list|,
 literal|"If possible, use GEGL for image processing"
 argument_list|)
 block|,

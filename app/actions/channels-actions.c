@@ -125,8 +125,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Edit the channel's name, color and opacity"
 argument_list|)
 block|,
@@ -152,8 +154,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Create a new channel"
 argument_list|)
 block|,
@@ -179,8 +183,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Create a new channel with last used values"
 argument_list|)
 block|,
@@ -206,8 +212,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Create a duplicate of this channel and add it to the image"
 argument_list|)
 block|,
@@ -233,8 +241,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Delete this channel"
 argument_list|)
 block|,
@@ -260,8 +270,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Raise this channel one step in the channel stack"
 argument_list|)
 block|,
@@ -287,8 +299,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Raise this channel to the top of the channel stack"
 argument_list|)
 block|,
@@ -314,8 +328,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Lower this channel one step in the channel stack"
 argument_list|)
 block|,
@@ -341,8 +357,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Lower this channel to the bottom of the channel stack"
 argument_list|)
 block|,
@@ -380,8 +398,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Replace the selection with this channel"
 argument_list|)
 block|,
@@ -406,8 +426,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Add this channel to the current selection"
 argument_list|)
 block|,
@@ -432,8 +454,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Subtract this channel from the current selection"
 argument_list|)
 block|,
@@ -458,8 +482,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"channels-action"
+argument_list|,
 literal|"Intersect this channel with the current selection"
 argument_list|)
 block|,

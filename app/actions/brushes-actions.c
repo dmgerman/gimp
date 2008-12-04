@@ -119,8 +119,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Open brush as image"
 argument_list|)
 block|,
@@ -146,8 +148,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Create a new brush"
 argument_list|)
 block|,
@@ -173,8 +177,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Duplicate this brush"
 argument_list|)
 block|,
@@ -200,8 +206,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Copy brush file location to clipboard"
 argument_list|)
 block|,
@@ -227,8 +235,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Delete this brush"
 argument_list|)
 block|,
@@ -254,8 +264,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"brushes-action"
+argument_list|,
 literal|"Refresh brushes"
 argument_list|)
 block|,
@@ -293,9 +305,11 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
-literal|"Edit brush"
+literal|"brushes-action"
+argument_list|,
+literal|"Edit this brush"
 argument_list|)
 block|,
 literal|"gimp-brush-editor"

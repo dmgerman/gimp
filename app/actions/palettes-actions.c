@@ -125,8 +125,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Create a new palette"
 argument_list|)
 block|,
@@ -152,8 +154,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Import palette"
 argument_list|)
 block|,
@@ -179,8 +183,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Duplicate this palette"
 argument_list|)
 block|,
@@ -206,8 +212,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Merge palettes"
 argument_list|)
 block|,
@@ -233,8 +241,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Copy palette file location to clipboard"
 argument_list|)
 block|,
@@ -260,8 +270,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Delete this palette"
 argument_list|)
 block|,
@@ -287,8 +299,10 @@ argument_list|)
 block|,
 literal|""
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Refresh palettes"
 argument_list|)
 block|,
@@ -326,8 +340,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"palettes-action"
+argument_list|,
 literal|"Edit palette"
 argument_list|)
 block|,

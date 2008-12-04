@@ -116,8 +116,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Automatic contrast enhancement"
 argument_list|)
 block|,
@@ -143,8 +145,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Invert the colors"
 argument_list|)
 block|,
@@ -170,8 +174,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Automatic white balance correction"
 argument_list|)
 block|,
@@ -197,8 +203,10 @@ argument_list|)
 block|,
 literal|"<control><shift>O"
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Shift the pixels, optionally wrapping them at the borders"
 argument_list|)
 block|,
@@ -236,8 +244,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Toggle the linked state"
 argument_list|)
 block|,
@@ -265,8 +275,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Toggle visibility"
 argument_list|)
 block|,
@@ -306,8 +318,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Flip horizontally"
 argument_list|)
 block|,
@@ -332,8 +346,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Flip vertically"
 argument_list|)
 block|,
@@ -370,8 +386,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Rotate 90 degrees to the right"
 argument_list|)
 block|,
@@ -396,8 +414,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Turn upside-down"
 argument_list|)
 block|,
@@ -422,8 +442,10 @@ argument_list|)
 block|,
 name|NULL
 block|,
-name|N_
+name|NC_
 argument_list|(
+literal|"drawable-action"
+argument_list|,
 literal|"Rotate 90 degrees to the left"
 argument_list|)
 block|,
