@@ -78,18 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainerview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdatafactoryview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainergridview.h"
 end_include
 
@@ -102,19 +90,31 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainerview.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdatafactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdnd.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpviewrenderer.h"
+file|"gimpuimanager.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpuimanager.h"
+file|"gimpviewrenderer.h"
 end_include
 
 begin_include

@@ -148,25 +148,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrush.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpbrush-load.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpbrushgenerated-load.h"
+file|"gimpbrush.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"gimpbrushclipboard.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpbrushgenerated-load.h"
 end_include
 
 begin_include
@@ -202,13 +202,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpgradient.h"
+file|"gimpgradient-load.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpgradient-load.h"
+file|"gimpgradient.h"
 end_include
 
 begin_include
@@ -238,19 +238,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppalette.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppalette-load.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimppattern.h"
+file|"gimppalette.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpparasitelist.h"
 end_include
 
 begin_include
@@ -262,13 +262,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimppatternclipboard.h"
+file|"gimppattern.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpparasitelist.h"
+file|"gimppatternclipboard.h"
 end_include
 
 begin_include
@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adf27e80103
+DECL|enum|__anon2b9487ce0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
