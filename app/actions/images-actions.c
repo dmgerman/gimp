@@ -215,9 +215,9 @@ name|gimp_action_group_add_actions
 argument_list|(
 name|group
 argument_list|,
-name|images_actions
-argument_list|,
 literal|"images-action"
+argument_list|,
+name|images_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
