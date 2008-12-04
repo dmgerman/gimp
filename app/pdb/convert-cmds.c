@@ -836,7 +836,7 @@ literal|"gimp-image-convert-rgb"
 argument_list|,
 literal|"Convert specified image to RGB color"
 argument_list|,
-literal|"This procedure converts the specified image to RGB color. This process requires an image in RGB or Indexed color mode. No image content is lost in this process aside from the colormap for an indexed image."
+literal|"This procedure converts the specified image to RGB color. This process requires an image in Grayscale or Indexed color mode. No image content is lost in this process aside from the colormap for an indexed image."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
