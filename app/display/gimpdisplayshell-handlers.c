@@ -2223,6 +2223,12 @@ argument_list|,
 name|vertically
 argument_list|)
 expr_stmt|;
+comment|/* The above calls might not lead to a call to        * gimp_display_shell_scroll_clamp_and_update() in all cases we        * need it to be called, so simply call it explicitly here at        * the end        */
+name|gimp_display_shell_scroll_clamp_and_update
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
