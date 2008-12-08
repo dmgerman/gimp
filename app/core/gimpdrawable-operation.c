@@ -45,40 +45,6 @@ directive|include
 file|"gimpprogress.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: gegl_node_add_child() is not public API
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_function_decl
-specifier|extern
-name|GeglNode
-modifier|*
-name|gegl_node_add_child
-parameter_list|(
-name|GeglNode
-modifier|*
-name|self
-parameter_list|,
-name|GeglNode
-modifier|*
-name|child
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 name|void
 DECL|function|gimp_drawable_apply_operation (GimpDrawable * drawable,GimpProgress * progress,const gchar * undo_desc,GeglNode * operation,gboolean linear)

@@ -102,39 +102,6 @@ end_ifdef
 begin_warning
 warning|#
 directive|warning
-warning|FIXME: gegl_node_add_child() needs to be public
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_function_decl
-name|GeglNode
-modifier|*
-name|gegl_node_add_child
-parameter_list|(
-name|GeglNode
-modifier|*
-name|self
-parameter_list|,
-name|GeglNode
-modifier|*
-name|child
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
 warning|FIXME: gegl_node_get_pad() or something similar needs to be public
 end_warning
 
@@ -161,7 +128,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2772ddca0103
+DECL|enum|__anon2943a7370103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH

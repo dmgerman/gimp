@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e52b00103
+DECL|enum|__anon2a1af9a40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290e52b00203
+DECL|enum|__anon2a1af9a40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -413,39 +413,6 @@ name|PROP_BASE_TYPE
 block|}
 enum|;
 end_enum
-
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: gegl_node_add_child() needs to be public
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
-begin_function_decl
-name|GeglNode
-modifier|*
-name|gegl_node_add_child
-parameter_list|(
-name|GeglNode
-modifier|*
-name|self
-parameter_list|,
-name|GeglNode
-modifier|*
-name|child
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_comment
 comment|/*  local function prototypes  */
