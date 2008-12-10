@@ -139,7 +139,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fb57280108
+DECL|struct|__anon2bbe1f370108
 block|{
 DECL|member|name
 specifier|const
@@ -1651,7 +1651,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts<ulink  * url="http://www.w3.org/TR/SVG/types.html">SVG 1.0 color keywords</ulink>.  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has  *               been set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_rgb_parse_name:  * @rgb:  a #GimpRGB struct used to return the parsed color  * @name: a color name (in UTF-8 encoding)  * @len:  the length of @name, in bytes. or -1 if @name is nul-terminated  *  * Attempts to parse a color name. This function accepts<ulink  * url="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG 1.0  * color keywords</ulink>.  *  * This function does not touch the alpha component of @rgb.  *  * Return value: %TRUE if @name was parsed successfully and @rgb has  *               been set, %FALSE otherwise  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
