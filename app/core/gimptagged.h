@@ -195,7 +195,7 @@ end_function_decl
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_tagged_get_get_tags
+name|gimp_tagged_get_tags
 parameter_list|(
 name|GimpTagged
 modifier|*

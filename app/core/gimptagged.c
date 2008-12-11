@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3c697e0103
+DECL|enum|__anon28a5d5190103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -354,8 +354,8 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_tagged_get_get_tags (GimpTagged * tagged)
-name|gimp_tagged_get_get_tags
+DECL|function|gimp_tagged_get_tags (GimpTagged * tagged)
+name|gimp_tagged_get_tags
 parameter_list|(
 name|GimpTagged
 modifier|*
