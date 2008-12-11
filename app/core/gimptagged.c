@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b619240103
+DECL|enum|__anon2b2f8f490103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -236,14 +236,13 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_tagged_add_tag (GimpTagged * tagged,const GimpTag tag)
+DECL|function|gimp_tagged_add_tag (GimpTagged * tagged,GimpTag tag)
 name|gimp_tagged_add_tag
 parameter_list|(
 name|GimpTagged
 modifier|*
 name|tagged
 parameter_list|,
-specifier|const
 name|GimpTag
 name|tag
 parameter_list|)
