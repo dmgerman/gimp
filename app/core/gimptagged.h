@@ -88,6 +88,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -103,6 +104,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -119,6 +121,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -134,6 +137,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -199,6 +203,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -213,6 +218,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;

@@ -100,6 +100,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptag.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptagged.h"
 end_include
 
@@ -111,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e133cd0103
+DECL|enum|__anon2aac18890103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -124,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e133cd0203
+DECL|enum|__anon2aac18890203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -300,6 +306,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -315,6 +322,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 function_decl|;
@@ -1263,7 +1271,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_data_add_tag (GimpTagged * tagged,GimpTag tag)
+DECL|function|gimp_data_add_tag (GimpTagged * tagged,GimpTag * tag)
 name|gimp_data_add_tag
 parameter_list|(
 name|GimpTagged
@@ -1271,6 +1279,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 block|{
@@ -1305,9 +1314,10 @@ name|next
 control|)
 block|{
 name|GimpTag
+modifier|*
 name|this
 init|=
-name|GPOINTER_TO_UINT
+name|GIMP_TAG
 argument_list|(
 name|list
 operator|->
@@ -1316,14 +1326,22 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|this
-operator|==
+name|gimp_tag_equals
+argument_list|(
 name|tag
+argument_list|,
+name|this
+argument_list|)
 condition|)
 return|return
 name|FALSE
 return|;
 block|}
+name|g_object_ref
+argument_list|(
+name|tag
+argument_list|)
+expr_stmt|;
 name|data
 operator|->
 name|tags
@@ -1334,10 +1352,7 @@ name|data
 operator|->
 name|tags
 argument_list|,
-name|GUINT_TO_POINTER
-argument_list|(
 name|tag
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -1349,7 +1364,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_data_remove_tag (GimpTagged * tagged,GimpTag tag)
+DECL|function|gimp_data_remove_tag (GimpTagged * tagged,GimpTag * tag)
 name|gimp_data_remove_tag
 parameter_list|(
 name|GimpTagged
@@ -1357,6 +1372,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 block|{
@@ -1391,9 +1407,10 @@ name|next
 control|)
 block|{
 name|GimpTag
+modifier|*
 name|this
 init|=
-name|GPOINTER_TO_UINT
+name|GIMP_TAG
 argument_list|(
 name|list
 operator|->
@@ -1402,9 +1419,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|this
-operator|==
+name|gimp_tag_equals
+argument_list|(
 name|tag
+argument_list|,
+name|this
+argument_list|)
 condition|)
 block|{
 name|data
@@ -1418,6 +1438,11 @@ operator|->
 name|tags
 argument_list|,
 name|list
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|tag
 argument_list|)
 expr_stmt|;
 return|return

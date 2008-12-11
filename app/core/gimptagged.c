@@ -30,12 +30,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptag.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptagged.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f8f490103
+DECL|enum|__anon2c3527410103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -180,13 +186,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_TAG
 argument_list|)
 expr_stmt|;
 name|gimp_tagged_signals
@@ -213,13 +219,13 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__INT
+name|g_cclosure_marshal_VOID__OBJECT
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|G_TYPE_INT
+name|GIMP_TYPE_TAG
 argument_list|)
 expr_stmt|;
 name|initialized
@@ -236,7 +242,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_tagged_add_tag (GimpTagged * tagged,GimpTag tag)
+DECL|function|gimp_tagged_add_tag (GimpTagged * tagged,GimpTag * tag)
 name|gimp_tagged_add_tag
 parameter_list|(
 name|GimpTagged
@@ -244,6 +250,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 block|{
@@ -294,7 +301,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_tagged_remove_tag (GimpTagged * tagged,GimpTag tag)
+DECL|function|gimp_tagged_remove_tag (GimpTagged * tagged,GimpTag * tag)
 name|gimp_tagged_remove_tag
 parameter_list|(
 name|GimpTagged
@@ -302,6 +309,7 @@ modifier|*
 name|tagged
 parameter_list|,
 name|GimpTag
+modifier|*
 name|tag
 parameter_list|)
 block|{

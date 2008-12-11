@@ -738,6 +738,15 @@ name|GimpSubProgress
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTag
+typedef|typedef
+name|struct
+name|_GimpTag
+name|GimpTag
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  interfaces  */
 end_comment
@@ -863,40 +872,6 @@ name|guint32
 name|GimpTattoo
 typedef|;
 end_typedef
-
-begin_comment
-comment|/*  tags  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpTag
-typedef|typedef
-name|GQuark
-name|GimpTag
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|gimp_tag_new (name)
-define|#
-directive|define
-name|gimp_tag_new
-parameter_list|(
-name|name
-parameter_list|)
-value|g_quark_from_string (name)
-end_define
-
-begin_define
-DECL|macro|gimp_tag_get_name (tag)
-define|#
-directive|define
-name|gimp_tag_get_name
-parameter_list|(
-name|tag
-parameter_list|)
-value|g_quark_to_string (name)
-end_define
 
 begin_comment
 comment|/*  functions  */
