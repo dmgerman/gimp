@@ -657,10 +657,6 @@ name|GimpEnvironTable
 typedef|;
 end_typedef
 
-begin_comment
-comment|/* typedef struct _GimpGrid         GimpGrid; in config-types.h */
-end_comment
-
 begin_typedef
 DECL|typedef|GimpGuide
 typedef|typedef
@@ -741,10 +737,6 @@ name|_GimpSubProgress
 name|GimpSubProgress
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* typedef struct _GimpTemplate     GimpTemplate; in config-types.h */
-end_comment
 
 begin_comment
 comment|/*  interfaces  */
