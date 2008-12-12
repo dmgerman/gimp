@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac18890103
+DECL|enum|__anon296904850103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aac18890203
+DECL|enum|__anon296904850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -790,6 +790,12 @@ name|tags
 operator|=
 name|NULL
 expr_stmt|;
+name|data
+operator|->
+name|identifier
+operator|=
+name|NULL
+expr_stmt|;
 comment|/*  look at the passed class pointer, not at GIMP_DATA_GET_CLASS(data)    *  here, because the latter is always GimpDataClass itself    */
 if|if
 condition|(
@@ -923,6 +929,27 @@ expr_stmt|;
 name|data
 operator|->
 name|tags
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|data
+operator|->
+name|identifier
+condition|)
+block|{
+name|g_free
+argument_list|(
+name|data
+operator|->
+name|identifier
+argument_list|)
+expr_stmt|;
+name|data
+operator|->
+name|identifier
 operator|=
 name|NULL
 expr_stmt|;
@@ -2498,17 +2525,22 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_make_internal:  * @data: a #GimpData object.  *  * Mark @data as "internal" to Gimp, which means that it will not be  * saved to disk.  Note that if you do this, later calls to  * gimp_data_save() and gimp_data_delete_from_disk() will  * automatically return successfully without giving any warning.  **/
+comment|/**  * gimp_data_make_internal:  * @data: a #GimpData object.  *  * Mark @data as "internal" to Gimp, which means that it will not be  * saved to disk.  Note that if you do this, later calls to  * gimp_data_save() and gimp_data_delete_from_disk() will  * automatically return successfully without giving any warning.  *  * The identifier name shall be an untranslated globally unique string  * that identifies the internal object across sessions.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_data_make_internal (GimpData * data)
+DECL|function|gimp_data_make_internal (GimpData * data,const gchar * identifier)
 name|gimp_data_make_internal
 parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifier
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2540,6 +2572,15 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+name|data
+operator|->
+name|identifier
+operator|=
+name|g_strdup
+argument_list|(
+name|identifier
+argument_list|)
+expr_stmt|;
 name|data
 operator|->
 name|internal

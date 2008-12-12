@@ -35,7 +35,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b981640103
+DECL|enum|__anon291a68a50103
 block|{
 DECL|enumerator|GIMP_DATA_ERROR_OPEN
 name|GIMP_DATA_ERROR_OPEN
@@ -179,6 +179,12 @@ decl_stmt|;
 DECL|member|mtime
 name|time_t
 name|mtime
+decl_stmt|;
+comment|/* Identifies the GimpData object across sessions. Used when there    * is not a filename associated with the object.    */
+DECL|member|identifier
+name|gchar
+modifier|*
+name|identifier
 decl_stmt|;
 DECL|member|tags
 name|GList
@@ -418,6 +424,11 @@ parameter_list|(
 name|GimpData
 modifier|*
 name|data
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifier
 parameter_list|)
 function_decl|;
 end_function_decl

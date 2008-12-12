@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29baabe50103
+DECL|enum|__anon2ac159550103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29baabe50203
+DECL|enum|__anon2ac159550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1535,6 +1535,8 @@ expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
 name|standard_brush
+argument_list|,
+literal|"gimp-brush-standard"
 argument_list|)
 expr_stmt|;
 comment|/*  set ref_count to 2 --> never swap the standard brush  */

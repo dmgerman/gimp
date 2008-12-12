@@ -893,6 +893,8 @@ expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
 name|standard_pattern
+argument_list|,
+literal|"gimp-pattern-standard"
 argument_list|)
 expr_stmt|;
 comment|/*  set ref_count to 2 --> never swap the standard pattern  */

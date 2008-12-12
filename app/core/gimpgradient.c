@@ -1163,6 +1163,8 @@ expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
 name|standard_gradient
+argument_list|,
+literal|"gimp-gradient-standard"
 argument_list|)
 expr_stmt|;
 name|g_object_ref

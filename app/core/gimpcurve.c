@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c8d0410103
+DECL|enum|__anon2a96a3a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2194,6 +2194,8 @@ expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
 name|standard_curve
+argument_list|,
+literal|"gimp-curve-standard"
 argument_list|)
 expr_stmt|;
 name|g_object_ref

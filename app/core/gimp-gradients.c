@@ -284,6 +284,8 @@ name|GIMP_DATA
 argument_list|(
 name|gradient
 argument_list|)
+argument_list|,
+name|id
 argument_list|)
 expr_stmt|;
 name|gradient

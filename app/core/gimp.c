@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9487ce0103
+DECL|enum|__anon275529100103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2498,6 +2498,8 @@ name|GIMP_DATA
 argument_list|(
 name|clipboard_brush
 argument_list|)
+argument_list|,
+literal|"gimp-brush-clipboard"
 argument_list|)
 expr_stmt|;
 name|gimp_container_add
@@ -2533,6 +2535,8 @@ name|GIMP_DATA
 argument_list|(
 name|clipboard_pattern
 argument_list|)
+argument_list|,
+literal|"gimp-pattern-clipboard"
 argument_list|)
 expr_stmt|;
 name|gimp_container_add
