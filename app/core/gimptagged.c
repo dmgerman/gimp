@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3527410103
+DECL|enum|__anon2b323ccf0103
 block|{
 DECL|enumerator|TAG_ADDED
 name|TAG_ADDED
@@ -394,7 +394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tagged_get_identifier:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns an identifier string which uniquely identifies the tagged  * object. Two different objects must have unique identifiers but may  * have the same checksum (which will be the case if one object is a  * copy of the other).  *  * Return value: a newly allocated string containing unique identifier  * of the object. It must be freed using #g_free.  **/
+comment|/**  * gimp_tagged_get_identifier:  * @tagged: an object that implements the %GimpTagged interface  *  * Returns an identifier string which uniquely identifies the tagged  * object. Two different objects must have unique identifiers but may  * have the same checksum (which will be the case if one object is a  * copy of the other). The identifier must be the same across  * sessions, so for example an instance pointer cannot be used as an  * identifier.  *  * Return value: a newly allocated string containing unique identifier  * of the object. It must be freed using #g_free.  **/
 end_comment
 
 begin_function
