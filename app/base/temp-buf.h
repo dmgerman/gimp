@@ -235,6 +235,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gsize
+name|temp_buf_get_data_size
+parameter_list|(
+name|TempBuf
+modifier|*
+name|buf
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|guchar
 modifier|*
 name|temp_buf_data_clear

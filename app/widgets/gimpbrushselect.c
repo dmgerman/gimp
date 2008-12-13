@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b55dfc0103
+DECL|enum|__anon27b2457a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1102,23 +1102,12 @@ operator|->
 name|mask
 argument_list|)
 argument_list|,
+name|temp_buf_get_data_size
+argument_list|(
 name|brush
 operator|->
 name|mask
-operator|->
-name|width
-operator|*
-name|brush
-operator|->
-name|mask
-operator|->
-name|height
-operator|*
-name|brush
-operator|->
-name|mask
-operator|->
-name|bytes
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|)
