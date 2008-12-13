@@ -658,7 +658,7 @@ name|read
 argument_list|(
 name|fd
 argument_list|,
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->
@@ -972,7 +972,7 @@ argument_list|)
 expr_stmt|;
 name|buf_data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->

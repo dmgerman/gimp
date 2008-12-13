@@ -470,7 +470,7 @@ name|OPAQUE_OPACITY
 expr_stmt|;
 name|color_pixels
 argument_list|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|area
 argument_list|)
@@ -559,7 +559,7 @@ name|OPAQUE_OPACITY
 expr_stmt|;
 name|color_pixels
 argument_list|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|area
 argument_list|)

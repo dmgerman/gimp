@@ -1531,7 +1531,7 @@ name|guchar
 modifier|*
 name|mask
 init|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|mask_buf
 argument_list|)

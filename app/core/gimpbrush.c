@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac159550103
+DECL|enum|__anon2bd616850103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -84,7 +84,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac159550203
+DECL|enum|__anon2bd616850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1153,14 +1153,14 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|mask_buf
 argument_list|)
 expr_stmt|;
 name|buf
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|return_buf
 argument_list|)
@@ -1174,7 +1174,7 @@ name|guchar
 modifier|*
 name|pixmap
 init|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pixmap_buf
 argument_list|)

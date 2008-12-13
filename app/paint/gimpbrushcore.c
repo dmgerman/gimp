@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8bf05f0103
+DECL|enum|__anon2769272e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4727,7 +4727,7 @@ name|dest
 expr_stmt|;
 name|m
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|mask
 argument_list|)
@@ -4821,7 +4821,7 @@ block|}
 comment|/* store the accum buffer into the destination mask */
 name|d
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -4912,7 +4912,7 @@ condition|)
 block|{
 name|d
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -5406,14 +5406,14 @@ comment|/* FANCY_PRESSURE */
 comment|/* Now convert the brush */
 name|source
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|subsample_mask
 argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|core
 operator|->
@@ -5754,7 +5754,7 @@ name|dest
 expr_stmt|;
 name|m
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush_mask
 argument_list|)
@@ -5762,7 +5762,7 @@ expr_stmt|;
 name|d
 operator|=
 operator|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -6845,7 +6845,7 @@ comment|/* Point to the approriate scanline */
 name|b
 operator|=
 operator|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pixmap_mask
 argument_list|)
@@ -6880,7 +6880,7 @@ comment|/*  ditto, except for the brush mask, so we can pre-multiply the        
 name|mask
 operator|=
 operator|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush_mask
 argument_list|)

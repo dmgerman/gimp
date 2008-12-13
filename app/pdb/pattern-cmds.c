@@ -440,7 +440,7 @@ name|color_bytes
 operator|=
 name|g_memdup
 argument_list|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->

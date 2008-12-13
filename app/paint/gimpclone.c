@@ -1152,7 +1152,7 @@ expr_stmt|;
 comment|/*  Get a pointer to the appropriate scanline of the pattern buffer  */
 name|pat
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pattern
 operator|->

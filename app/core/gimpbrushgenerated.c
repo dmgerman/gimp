@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e557db0103
+DECL|enum|__anon290ad8cc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1733,7 +1733,7 @@ argument_list|)
 expr_stmt|;
 name|centerp
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|mask
 argument_list|)

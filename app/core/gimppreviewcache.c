@@ -44,7 +44,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c10fbbb0108
+DECL|struct|__anon276e563f0108
 block|{
 DECL|member|buf
 name|TempBuf
@@ -872,7 +872,7 @@ literal|0.0
 expr_stmt|;
 name|src_data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pn
 operator|.
@@ -881,7 +881,7 @@ argument_list|)
 expr_stmt|;
 name|dest_data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|preview
 argument_list|)

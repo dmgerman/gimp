@@ -47,7 +47,7 @@ name|guchar
 modifier|*
 name|data
 decl_stmt|;
-comment|/*  The data buffer. Do never access this field                             directly, use temp_buf_data() instead !!       */
+comment|/*  The data buffer. Do never access this field                             directly, use temp_buf_get_data() instead !!   */
 block|}
 struct|;
 end_struct
@@ -225,7 +225,7 @@ end_function_decl
 begin_function_decl
 name|guchar
 modifier|*
-name|temp_buf_data
+name|temp_buf_get_data
 parameter_list|(
 name|TempBuf
 modifier|*

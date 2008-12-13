@@ -486,7 +486,7 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|new
 argument_list|)
@@ -788,12 +788,12 @@ else|else
 block|{
 name|memcpy
 argument_list|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
 argument_list|,
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|src
 argument_list|)
@@ -1049,14 +1049,14 @@ argument_list|)
 expr_stmt|;
 name|src_data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|src
 argument_list|)
 expr_stmt|;
 name|dest_data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest
 argument_list|)
@@ -1598,7 +1598,7 @@ literal|2
 case|:
 name|data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)
@@ -1657,7 +1657,7 @@ literal|4
 case|:
 name|data
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)
@@ -1805,8 +1805,8 @@ end_function
 begin_function
 name|guchar
 modifier|*
-DECL|function|temp_buf_data (TempBuf * buf)
-name|temp_buf_data
+DECL|function|temp_buf_get_data (TempBuf * buf)
+name|temp_buf_get_data
 parameter_list|(
 name|TempBuf
 modifier|*
@@ -1933,14 +1933,14 @@ name|num_pixels
 decl_stmt|;
 name|src
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|src_buf
 argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest_buf
 argument_list|)
@@ -2099,14 +2099,14 @@ name|num_pixels
 decl_stmt|;
 name|src
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|src_buf
 argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|dest_buf
 argument_list|)

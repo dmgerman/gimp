@@ -689,7 +689,7 @@ comment|/*  Get a pointer to the appropriate scanline of the pattern buffer  */
 name|pat
 operator|=
 operator|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pattern
 argument_list|)

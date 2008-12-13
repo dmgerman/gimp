@@ -867,7 +867,7 @@ name|cell_size
 expr_stmt|;
 name|buf
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)

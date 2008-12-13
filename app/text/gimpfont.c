@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64f9dc0103
+DECL|enum|__anon295ad2c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1081,7 +1081,7 @@ name|surface
 operator|=
 name|cairo_image_surface_create_for_data
 argument_list|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -1391,7 +1391,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c64f9dc0208
+DECL|struct|__anon295ad2c40208
 block|{
 DECL|member|script
 specifier|const

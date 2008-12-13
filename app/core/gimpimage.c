@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1af9a40103
+DECL|enum|__anon27aaa8550103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1af9a40203
+DECL|enum|__anon27aaa8550203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -9252,14 +9252,14 @@ argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|ret_buf
 argument_list|)

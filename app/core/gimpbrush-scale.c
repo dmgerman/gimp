@@ -579,14 +579,14 @@ expr_stmt|;
 comment|/*  get the data  */
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|scale_brush
 argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush_mask
 argument_list|)
@@ -1253,14 +1253,14 @@ expr_stmt|;
 comment|/*  get the data  */
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|scale_brush
 argument_list|)
 expr_stmt|;
 name|src
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|pixmap
 argument_list|)

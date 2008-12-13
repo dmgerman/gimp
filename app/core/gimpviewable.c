@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7918680103
+DECL|enum|__anon27685e0d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7918680203
+DECL|enum|__anon27685e0d0203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1318,7 +1318,7 @@ name|gdk_pixbuf_new_from_data
 argument_list|(
 name|g_memdup
 argument_list|(
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|temp_buf
 argument_list|)
@@ -2727,7 +2727,7 @@ argument_list|)
 expr_stmt|;
 name|dest
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|buf
 argument_list|)

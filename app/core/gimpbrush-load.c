@@ -1247,7 +1247,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
@@ -1389,7 +1389,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2c617f0b010a
+DECL|union|__anon2b8d7e5b010a
 block|{
 DECL|member|u
 name|guint16
@@ -1516,7 +1516,7 @@ argument_list|)
 expr_stmt|;
 name|pixmap
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
@@ -2755,7 +2755,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
@@ -3202,7 +3202,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|temp_buf_data
+name|temp_buf_get_data
 argument_list|(
 name|brush
 operator|->
