@@ -20,7 +20,7 @@ file|"gimp.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_plugin_domain_register:  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: The absolute path to the compiled message catalog (may be NULL).  *  * Registers a textdomain for localisation.  *  * This procedure adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the gimp-std-plugins domain as that is used by default.  * If the compiled message catalog is not in the standard location, you  * may specify an absolute path to another location. This procedure can  * only be called in the query function of a plug-in and it has to be  * called before any procedure is installed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_domain_register:  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: The absolute path to the compiled message catalog (may be NULL).  *  * Registers a textdomain for localisation.  *  * This procedure adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another location. This  * procedure can only be called in the query function of a plug-in and  * it has to be called before any procedure is installed.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -98,7 +98,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure changes the help rootdir for the plug-in which calls  * it. All subsequent calls of gimp_help() from this plug-in will be  * interpreted relative to this rootdir.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

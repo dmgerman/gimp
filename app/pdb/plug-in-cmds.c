@@ -1769,7 +1769,7 @@ literal|"gimp-plugin-domain-register"
 argument_list|,
 literal|"Registers a textdomain for localisation."
 argument_list|,
-literal|"This procedure adds a textdomain to the list of domains Gimp searches for strings when translating its menu entries. There is no need to call this function for plug-ins that have their strings included in the gimp-std-plugins domain as that is used by default. If the compiled message catalog is not in the standard location, you may specify an absolute path to another location. This procedure can only be called in the query function of a plug-in and it has to be called before any procedure is installed."
+literal|"This procedure adds a textdomain to the list of domains Gimp searches for strings when translating its menu entries. There is no need to call this function for plug-ins that have their strings included in the 'gimp-std-plugins' domain as that is used by default. If the compiled message catalog is not in the standard location, you may specify an absolute path to another location. This procedure can only be called in the query function of a plug-in and it has to be called before any procedure is installed."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -1868,7 +1868,7 @@ literal|"gimp-plugin-help-register"
 argument_list|,
 literal|"Register a help path for a plug-in."
 argument_list|,
-literal|"This procedure changes the help rootdir for the plug-in which calls it. All subsequent calls of 'gimp-help' from this plug-in will be interpreted relative to this rootdir."
+literal|"This procedure registers user documentation for the calling plug-in with the GIMP help system. The domain_uri parameter points to the root directory where the plug-in help is installed. For each supported language there should be a file called 'gimp-help.xml' that maps the help IDs to the actual help files."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
