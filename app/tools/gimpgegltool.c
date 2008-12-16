@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27729e7b0103
+DECL|enum|__anon2ad2aa3f0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -913,8 +913,6 @@ block|,
 literal|"gegl:text"
 block|,
 literal|"gegl:introspect"
-block|,
-literal|"gegl:stress"
 block|,
 literal|"gimp-"
 block|}
