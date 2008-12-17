@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c665ab0108
+DECL|struct|__anon27917a3d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c665ab0208
+DECL|struct|__anon27917a3d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3317,6 +3317,18 @@ name|channels
 operator|*
 name|i
 expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|1
+operator|+
+name|drawable
+operator|->
+name|width
+operator|/
+name|gimp_tile_width
+argument_list|()
+argument_list|)
+expr_stmt|;
 comment|/* Install our own error handler to handle incomplete PNG files better */
 name|error_data
 operator|.
@@ -5373,6 +5385,18 @@ name|guchar
 operator|*
 argument_list|,
 name|tile_height
+argument_list|)
+expr_stmt|;
+name|gimp_tile_cache_ntiles
+argument_list|(
+literal|1
+operator|+
+name|drawable
+operator|->
+name|width
+operator|/
+name|gimp_tile_width
+argument_list|()
 argument_list|)
 expr_stmt|;
 for|for
