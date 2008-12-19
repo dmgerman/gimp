@@ -297,7 +297,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275529100103
+DECL|enum|__anon27ce4ee50103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2504,11 +2504,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
 name|brush_factory
-operator|->
-name|container
+argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
@@ -2541,11 +2542,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
 name|pattern_factory
-operator|->
-name|container
+argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

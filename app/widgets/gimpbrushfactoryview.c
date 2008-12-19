@@ -580,9 +580,10 @@ name|spacing_changed_handler_id
 operator|=
 name|gimp_container_add_handler
 argument_list|(
+name|gimp_data_factory_get_container
+argument_list|(
 name|factory
-operator|->
-name|container
+argument_list|)
 argument_list|,
 literal|"spacing-changed"
 argument_list|,

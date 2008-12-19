@@ -227,11 +227,12 @@ name|gradient_list
 operator|=
 name|gimp_container_get_filtered_name_array
 argument_list|(
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
 name|gradient_factory
-operator|->
-name|container
+argument_list|)
 argument_list|,
 name|filter
 argument_list|,

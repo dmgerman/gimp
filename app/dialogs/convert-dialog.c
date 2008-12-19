@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0846d0108
+DECL|struct|__anon2af9cb2a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1517,11 +1517,12 @@ name|container
 operator|=
 name|gimp_container_filter
 argument_list|(
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
 name|palette_factory
-operator|->
-name|container
+argument_list|)
 argument_list|,
 name|convert_dialog_palette_filter
 argument_list|,

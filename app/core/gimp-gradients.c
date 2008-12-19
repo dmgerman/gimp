@@ -306,11 +306,12 @@ name|GIMP_GRADIENT_COLOR_BACKGROUND
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
+name|gimp_data_factory_get_container
+argument_list|(
 name|gimp
 operator|->
 name|gradient_factory
-operator|->
-name|container
+argument_list|)
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
