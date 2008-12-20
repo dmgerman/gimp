@@ -229,6 +229,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpFilteredContainer
+typedef|typedef
+name|struct
+name|_GimpFilteredContainer
+name|GimpFilteredContainer
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpItemStack
 typedef|typedef
 name|struct
@@ -417,6 +426,15 @@ typedef|typedef
 name|struct
 name|_GimpPatternClipboard
 name|GimpPatternClipboard
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTagCache
+typedef|typedef
+name|struct
+name|_GimpTagCache
+name|GimpTagCache
 typedef|;
 end_typedef
 

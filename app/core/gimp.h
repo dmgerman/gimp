@@ -281,6 +281,11 @@ name|GimpDataFactory
 modifier|*
 name|palette_factory
 decl_stmt|;
+DECL|member|tag_cache
+name|GimpTagCache
+modifier|*
+name|tag_cache
+decl_stmt|;
 DECL|member|pdb
 name|GimpPDB
 modifier|*

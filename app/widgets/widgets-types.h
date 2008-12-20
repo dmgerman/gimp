@@ -827,6 +827,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpComboTagEntry
+typedef|typedef
+name|struct
+name|_GimpComboTagEntry
+name|GimpComboTagEntry
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpControllerEditor
 typedef|typedef
 name|struct
@@ -1048,6 +1057,24 @@ typedef|typedef
 name|struct
 name|_GimpStrokeEditor
 name|GimpStrokeEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTagEntry
+typedef|typedef
+name|struct
+name|_GimpTagEntry
+name|GimpTagEntry
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTagPopup
+typedef|typedef
+name|struct
+name|_GimpTagPopup
+name|GimpTagPopup
 typedef|;
 end_typedef
 
