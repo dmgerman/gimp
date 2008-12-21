@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c72e2350103
+DECL|enum|__anon2b24083a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1740,6 +1740,11 @@ name|error
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|error
+condition|)
+block|{
 name|gimp_tool_message_literal
 argument_list|(
 name|tool
@@ -1757,6 +1762,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
