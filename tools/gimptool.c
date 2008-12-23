@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2b639b000108
+DECL|struct|__anon2b425ee20108
 specifier|static
 struct|struct
 block|{
@@ -351,6 +351,18 @@ block|}
 block|}
 struct|;
 end_struct
+
+begin_decl_stmt
+specifier|static
+name|void
+name|usage
+argument_list|(
+name|int
+name|exit_status
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_ifdef
 ifdef|#
