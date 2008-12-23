@@ -83,17 +83,18 @@ name|BATCH_DEFAULT_EVAL_PROC
 value|"plug-in-script-fu-eval"
 end_define
 
-begin_function_decl
+begin_decl_stmt
 specifier|static
-name|gboolean
+name|void
 name|batch_exit_after_callback
-parameter_list|(
+argument_list|(
 name|Gimp
-modifier|*
+operator|*
 name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+name|G_GNUC_NORETURN
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -378,7 +379,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|batch_exit_after_callback (Gimp * gimp)
 name|batch_exit_after_callback
 parameter_list|(
@@ -412,9 +413,6 @@ argument_list|(
 name|EXIT_SUCCESS
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
