@@ -129,6 +129,25 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_struct
+DECL|struct|_GimpChannelTreeViewPriv
+struct|struct
+name|_GimpChannelTreeViewPriv
+block|{
+DECL|member|component_editor
+name|GtkWidget
+modifier|*
+name|component_editor
+decl_stmt|;
+DECL|member|toselection_button
+name|GtkWidget
+modifier|*
+name|toselection_button
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
 begin_function_decl
 specifier|static
 name|void
@@ -503,6 +522,16 @@ argument_list|(
 literal|"Reorder Channel"
 argument_list|)
 expr_stmt|;
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpChannelTreeViewPriv
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -549,7 +578,37 @@ name|GimpChannelTreeView
 modifier|*
 name|view
 parameter_list|)
-block|{ }
+block|{
+name|view
+operator|->
+name|priv
+operator|=
+name|G_TYPE_INSTANCE_GET_PRIVATE
+argument_list|(
+name|view
+argument_list|,
+name|GIMP_TYPE_CHANNEL_TREE_VIEW
+argument_list|,
+name|GimpChannelTreeViewPriv
+argument_list|)
+expr_stmt|;
+name|view
+operator|->
+name|priv
+operator|->
+name|component_editor
+operator|=
+name|NULL
+expr_stmt|;
+name|view
+operator|->
+name|priv
+operator|->
+name|toselection_button
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -671,6 +730,8 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|->
+name|priv
+operator|->
 name|toselection_button
 operator|=
 name|gimp_editor_add_action_button
@@ -712,6 +773,8 @@ name|GTK_BUTTON
 argument_list|(
 name|view
 operator|->
+name|priv
+operator|->
 name|toselection_button
 argument_list|)
 argument_list|,
@@ -731,6 +794,8 @@ name|button_box
 argument_list|)
 argument_list|,
 name|view
+operator|->
+name|priv
 operator|->
 name|toselection_button
 argument_list|,
@@ -1161,6 +1226,8 @@ condition|(
 operator|!
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 condition|)
 block|{
@@ -1187,6 +1254,8 @@ argument_list|)
 expr_stmt|;
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 operator|=
 name|gimp_component_editor_new
@@ -1207,6 +1276,8 @@ name|GIMP_DOCKED
 argument_list|(
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 argument_list|)
 argument_list|,
@@ -1224,6 +1295,8 @@ name|item_view
 argument_list|)
 argument_list|,
 name|channel_view
+operator|->
+name|priv
 operator|->
 name|component_editor
 argument_list|,
@@ -1243,6 +1316,8 @@ argument_list|)
 argument_list|,
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 argument_list|,
 literal|0
@@ -1258,6 +1333,8 @@ name|gtk_widget_hide
 argument_list|(
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 argument_list|)
 expr_stmt|;
@@ -1266,6 +1343,8 @@ argument_list|(
 name|GIMP_IMAGE_EDITOR
 argument_list|(
 name|channel_view
+operator|->
+name|priv
 operator|->
 name|component_editor
 argument_list|)
@@ -1295,6 +1374,8 @@ condition|)
 name|gtk_widget_show
 argument_list|(
 name|channel_view
+operator|->
+name|priv
 operator|->
 name|component_editor
 argument_list|)
@@ -1439,6 +1520,8 @@ if|if
 condition|(
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 condition|)
 name|gimp_docked_set_context
@@ -1446,6 +1529,8 @@ argument_list|(
 name|GIMP_DOCKED
 argument_list|(
 name|channel_view
+operator|->
+name|priv
 operator|->
 name|component_editor
 argument_list|)
@@ -1499,6 +1584,8 @@ if|if
 condition|(
 name|channel_view
 operator|->
+name|priv
+operator|->
 name|component_editor
 condition|)
 name|gimp_component_editor_set_view_size
@@ -1506,6 +1593,8 @@ argument_list|(
 name|GIMP_COMPONENT_EDITOR
 argument_list|(
 name|channel_view
+operator|->
+name|priv
 operator|->
 name|component_editor
 argument_list|)

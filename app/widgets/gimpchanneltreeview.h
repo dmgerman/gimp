@@ -94,6 +94,15 @@ name|GimpChannelTreeViewClass
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpChannelTreeViewPriv
+typedef|typedef
+name|struct
+name|_GimpChannelTreeViewPriv
+name|GimpChannelTreeViewPriv
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpChannelTreeView
 struct|struct
@@ -103,15 +112,10 @@ DECL|member|parent_instance
 name|GimpDrawableTreeView
 name|parent_instance
 decl_stmt|;
-DECL|member|component_editor
-name|GtkWidget
+DECL|member|priv
+name|GimpChannelTreeViewPriv
 modifier|*
-name|component_editor
-decl_stmt|;
-DECL|member|toselection_button
-name|GtkWidget
-modifier|*
-name|toselection_button
+name|priv
 decl_stmt|;
 block|}
 struct|;
