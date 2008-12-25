@@ -560,12 +560,13 @@ expr_stmt|;
 comment|/*  hide basically useless edit button  */
 name|gtk_widget_hide
 argument_list|(
+name|gimp_item_tree_view_get_edit_button
+argument_list|(
 name|GIMP_ITEM_TREE_VIEW
 argument_list|(
 name|view
 argument_list|)
-operator|->
-name|edit_button
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -868,9 +869,10 @@ name|GimpImage
 modifier|*
 name|image
 init|=
+name|gimp_item_tree_view_get_image
+argument_list|(
 name|view
-operator|->
-name|image
+argument_list|)
 decl_stmt|;
 name|gint
 name|index
@@ -1072,9 +1074,10 @@ name|GimpImage
 modifier|*
 name|image
 init|=
+name|gimp_item_tree_view_get_image
+argument_list|(
 name|view
-operator|->
-name|image
+argument_list|)
 decl_stmt|;
 name|GimpItem
 modifier|*
