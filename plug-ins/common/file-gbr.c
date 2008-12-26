@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9b723c0108
+DECL|struct|__anon2c0be3850108
 block|{
 DECL|member|description
 name|gchar
@@ -551,7 +551,7 @@ argument_list|(
 literal|"GIMP brush"
 argument_list|)
 argument_list|,
-literal|"RGB, RGBA, GRAY"
+literal|"RGB*, GRAY*"
 argument_list|,
 name|GIMP_PLUGIN
 argument_list|,
@@ -2075,7 +2075,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2b9b723c020a
+DECL|union|__anon2c0be385020a
 block|{
 DECL|member|u
 name|guint16
@@ -2458,6 +2458,9 @@ break|break;
 case|case
 name|GIMP_GRAY_IMAGE
 case|:
+case|case
+name|GIMP_GRAYA_IMAGE
+case|:
 name|bpp
 operator|=
 literal|1
@@ -2813,6 +2816,40 @@ index|]
 expr_stmt|;
 break|break;
 case|case
+literal|2
+case|:
+comment|/*  invert and drop alpha channel  */
+for|for
+control|(
+name|x
+operator|=
+literal|0
+init|;
+name|x
+operator|<
+name|drawable
+operator|->
+name|width
+condition|;
+name|x
+operator|++
+control|)
+name|buffer
+index|[
+name|x
+index|]
+operator|=
+literal|255
+operator|-
+name|buffer
+index|[
+literal|2
+operator|*
+name|x
+index|]
+expr_stmt|;
+break|break;
+case|case
 literal|3
 case|:
 comment|/*  add alpha channel  */
@@ -2957,6 +2994,11 @@ block|}
 name|g_free
 argument_list|(
 name|buffer
+argument_list|)
+expr_stmt|;
+name|gimp_drawable_detach
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|close
