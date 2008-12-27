@@ -771,7 +771,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bc58eb0103
+DECL|enum|__anon2c9c4a100103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
