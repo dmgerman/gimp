@@ -160,12 +160,13 @@ if|if
 condition|(
 name|gimp_use_gegl
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
-operator|->
-name|image
+argument_list|)
 operator|->
 name|gimp
 argument_list|)

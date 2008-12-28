@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ebeb7b0103
+DECL|enum|__anon27c9b36e0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -600,15 +600,17 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Set image before tatoo so that the explicitly set tatoo overrides    * the one implicitly set when setting the image    */
+name|gimp_item_set_image
+argument_list|(
 name|item
-operator|->
-name|image
-operator|=
+argument_list|,
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -637,9 +639,10 @@ argument_list|)
 expr_stmt|;
 name|g_hash_table_replace
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 operator|->
 name|gimp
 operator|->

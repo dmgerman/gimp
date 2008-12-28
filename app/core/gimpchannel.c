@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1dbba0103
+DECL|enum|__anon2b324ad70103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1797,16 +1797,18 @@ return|return
 operator|(
 name|GIMP_IS_IMAGE
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 operator|->
 name|channels
 argument_list|,

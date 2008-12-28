@@ -148,9 +148,10 @@ operator|)
 operator|/
 name|gimp_image_get_width
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|yscale
@@ -164,9 +165,10 @@ operator|)
 operator|/
 name|gimp_image_get_height
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|temp_buf

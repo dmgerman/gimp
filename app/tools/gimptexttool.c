@@ -8666,9 +8666,10 @@ name|display
 operator|->
 name|image
 operator|!=
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 condition|)
 block|{
 name|GList
@@ -8714,9 +8715,10 @@ name|display
 operator|->
 name|image
 operator|==
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 condition|)
 block|{
 name|gimp_context_set_display

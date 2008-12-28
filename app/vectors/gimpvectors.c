@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4e3f5e0103
+DECL|enum|__anon2c5e93ac0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1267,16 +1267,18 @@ return|return
 operator|(
 name|GIMP_IS_IMAGE
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 operator|->
 name|vectors
 argument_list|,

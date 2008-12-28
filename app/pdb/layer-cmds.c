@@ -2302,12 +2302,13 @@ name|channel
 operator|=
 name|gimp_image_get_active_channel
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

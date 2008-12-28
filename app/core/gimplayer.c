@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b58319d0103
+DECL|enum|__anon2b638f2b0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b58319d0203
+DECL|enum|__anon2b638f2b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2363,16 +2363,18 @@ return|return
 operator|(
 name|GIMP_IS_IMAGE
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
 name|item
-operator|->
-name|image
+argument_list|)
 operator|->
 name|layers
 argument_list|,
