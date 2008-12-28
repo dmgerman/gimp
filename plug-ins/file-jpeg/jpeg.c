@@ -1927,7 +1927,14 @@ name|image_ID
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* pw - now we need to change the defaults to be whatever        * was used to save this image.  Dump the old parasites        * and add new ones. */
+if|if
+condition|(
+name|status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+block|{
+comment|/* pw - now we need to change the defaults to be whatever            * was used to save this image.  Dump the old parasites            * and add new ones. */
 name|gimp_image_parasite_detach
 argument_list|(
 name|orig_image_ID
@@ -2012,6 +2019,7 @@ argument_list|(
 name|parasite
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{
