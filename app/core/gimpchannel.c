@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b324ad70103
+DECL|enum|__anon29a0cece0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2211,13 +2211,15 @@ name|new_tiles
 argument_list|,
 name|GIMP_GRAY_IMAGE
 argument_list|,
+name|gimp_item_get_offset_x
+argument_list|(
 name|item
-operator|->
-name|offset_x
+argument_list|)
 argument_list|,
+name|gimp_item_get_offset_y
+argument_list|(
 name|item
-operator|->
-name|offset_y
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|tile_manager_unref

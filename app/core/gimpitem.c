@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c2a260103
+DECL|enum|__anon28a766210103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c2a260203
+DECL|enum|__anon28a766210203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3038,6 +3038,62 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_item_get_offset_x (GimpItem * item)
+name|gimp_item_get_offset_x
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|item
+operator|->
+name|offset_x
+return|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_item_get_offset_y (GimpItem * item)
+name|gimp_item_get_offset_y
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+return|return
+name|item
+operator|->
+name|offset_y
+return|;
 block|}
 end_function
 
