@@ -6,7 +6,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27aaa68c0103
+DECL|enum|__anon2bb9bfbf0103
 block|{
 DECL|enumerator|CENTER_NONE
 name|CENTER_NONE
@@ -36,7 +36,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aaa68c0208
+DECL|struct|__anon2bb9bfbf0208
 block|{
 DECL|member|image_id
 name|gint32
@@ -77,6 +77,10 @@ decl_stmt|;
 DECL|member|use_full_page
 name|gboolean
 name|use_full_page
+decl_stmt|;
+DECL|member|draw_crop_marks
+name|gboolean
+name|draw_crop_marks
 decl_stmt|;
 DECL|member|operation
 name|GtkPrintOperation

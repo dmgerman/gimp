@@ -388,7 +388,7 @@ literal|"Bill Skaggs, Sven Neumann, Stefan RÃ¶llin"
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
-literal|"2006, 2007"
+literal|"2006 - 2008"
 argument_list|,
 name|N_
 argument_list|(
@@ -885,6 +885,12 @@ expr_stmt|;
 name|data
 operator|.
 name|use_full_page
+operator|=
+name|FALSE
+expr_stmt|;
+name|data
+operator|.
+name|draw_crop_marks
 operator|=
 name|FALSE
 expr_stmt|;
