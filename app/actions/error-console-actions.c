@@ -181,7 +181,7 @@ name|NC_
 argument_list|(
 literal|"error-console-action"
 argument_list|,
-literal|"Write all error mesaages to a file"
+literal|"Write all error messages to a file"
 argument_list|)
 block|,
 name|FALSE
