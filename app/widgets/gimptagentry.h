@@ -79,43 +79,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_TAG_ENTRY, GimpTagEntryClass))
 end_define
 
-begin_define
-DECL|macro|GIMP_TYPE_TAG_ENTRY_MODE
-define|#
-directive|define
-name|GIMP_TYPE_TAG_ENTRY_MODE
-value|(gimp_tag_entry_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_tag_entry_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2c0b12160103
-block|{
-DECL|enumerator|GIMP_TAG_ENTRY_MODE_QUERY
-name|GIMP_TAG_ENTRY_MODE_QUERY
-block|,
-comment|/*< desc="Query">*/
-DECL|enumerator|GIMP_TAG_ENTRY_MODE_ASSIGN
-name|GIMP_TAG_ENTRY_MODE_ASSIGN
-block|,
-comment|/*< desc="Assign">*/
-DECL|typedef|GimpTagEntryMode
-block|}
-name|GimpTagEntryMode
-typedef|;
-end_typedef
-
 begin_typedef
 DECL|typedef|GimpTagEntryClass
 typedef|typedef
@@ -134,10 +97,10 @@ DECL|member|parent_instance
 name|GtkEntry
 name|parent_instance
 decl_stmt|;
-DECL|member|filtered_container
+DECL|member|container
 name|GimpFilteredContainer
 modifier|*
-name|filtered_container
+name|container
 decl_stmt|;
 comment|/* mask describes the meaning of each char in GimpTagEntry.    * It is maintained automatically on insert-text and delete-text    * events. If manual mask modification is desired, then    * suppress_mask_update must be increased before calling any    * function changing entry contents.    * Meaning of mask chars:    * u - undefined / unknown (just typed unparsed text)    * t - tag    * s - separator    * w - whitespace.    */
 DECL|member|mask
@@ -221,7 +184,7 @@ name|gimp_tag_entry_new
 parameter_list|(
 name|GimpFilteredContainer
 modifier|*
-name|tagged_container
+name|container
 parameter_list|,
 name|GimpTagEntryMode
 name|mode
@@ -235,7 +198,7 @@ name|gimp_tag_entry_set_selected_items
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|GList
 modifier|*
@@ -263,7 +226,7 @@ name|gimp_tag_entry_set_tag_string
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 specifier|const
 name|gchar

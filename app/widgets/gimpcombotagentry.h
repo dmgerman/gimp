@@ -108,11 +108,6 @@ name|GtkWidget
 modifier|*
 name|popup
 decl_stmt|;
-DECL|member|filtered_container
-name|GimpFilteredContainer
-modifier|*
-name|filtered_container
-decl_stmt|;
 DECL|member|focus_width
 name|gint
 name|focus_width
@@ -174,7 +169,7 @@ name|gimp_combo_tag_entry_new
 parameter_list|(
 name|GimpFilteredContainer
 modifier|*
-name|filtered_container
+name|container
 parameter_list|,
 name|GimpTagEntryMode
 name|mode

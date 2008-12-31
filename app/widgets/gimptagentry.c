@@ -112,10 +112,9 @@ value|20
 end_define
 
 begin_typedef
-DECL|enum|GimpTagSearchDir_
 typedef|typedef
 enum|enum
-name|GimpTagSearchDir_
+DECL|enum|__anon2b3eb2f30103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -133,16 +132,16 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c75770103
+DECL|enum|__anon2b3eb2f30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
 block|,
-DECL|enumerator|PROP_FILTERED_CONTAINER
-name|PROP_FILTERED_CONTAINER
+DECL|enumerator|PROP_CONTAINER
+name|PROP_CONTAINER
 block|,
-DECL|enumerator|PROP_TAG_ENTRY_MODE
-name|PROP_TAG_ENTRY_MODE
+DECL|enumerator|PROP_MODE
+name|PROP_MODE
 block|, }
 enum|;
 end_enum
@@ -214,9 +213,6 @@ parameter_list|(
 name|GtkEntry
 modifier|*
 name|entry
-parameter_list|,
-name|gpointer
-name|unused
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,9 +225,6 @@ parameter_list|(
 name|GtkEntry
 modifier|*
 name|entry
-parameter_list|,
-name|gpointer
-name|unused
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -255,9 +248,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|position
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -276,9 +266,6 @@ name|start_pos
 parameter_list|,
 name|gint
 name|end_pos
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -295,9 +282,6 @@ parameter_list|,
 name|GdkEventFocus
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -314,9 +298,6 @@ parameter_list|,
 name|GdkEventFocus
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -336,7 +317,7 @@ name|object
 parameter_list|,
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -369,9 +350,6 @@ parameter_list|,
 name|GdkEventKey
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -395,7 +373,7 @@ name|gimp_tag_entry_assign_tags
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -423,7 +401,7 @@ name|gimp_tag_entry_load_selection
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gboolean
 name|sort
@@ -452,7 +430,7 @@ name|gimp_tag_entry_get_completion_candidates
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gchar
 modifier|*
@@ -474,7 +452,7 @@ name|gimp_tag_entry_get_completion_string
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|GList
 modifier|*
@@ -494,7 +472,7 @@ name|gimp_tag_entry_auto_complete
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -526,9 +504,6 @@ parameter_list|,
 name|GdkEventExpose
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -556,7 +531,7 @@ name|gimp_tag_entry_commit_tags
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -568,7 +543,7 @@ name|gimp_tag_entry_commit_source_func
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -601,7 +576,7 @@ name|gimp_tag_entry_try_select_jellybean
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -613,7 +588,7 @@ name|gimp_tag_entry_add_to_recent
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 specifier|const
 name|gchar
@@ -633,7 +608,7 @@ name|gimp_tag_entry_next_tag
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gboolean
 name|select
@@ -648,7 +623,7 @@ name|gimp_tag_entry_previous_tag
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gboolean
 name|select
@@ -663,7 +638,7 @@ name|gimp_tag_entry_select_for_deletion
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|GimpTagSearchDir
 name|search_dir
@@ -678,123 +653,10 @@ name|gimp_tag_entry_strip_extra_whitespace
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_function
-name|GType
-DECL|function|gimp_tag_entry_mode_get_type (void)
-name|gimp_tag_entry_mode_get_type
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-specifier|static
-specifier|const
-name|GEnumValue
-name|values
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_TAG_ENTRY_MODE_QUERY
-block|,
-literal|"GIMP_TAG_ENTRY_MODE_QUERY"
-block|,
-literal|"query"
-block|}
-block|,
-block|{
-name|GIMP_TAG_ENTRY_MODE_ASSIGN
-block|,
-literal|"GIMP_TAG_ENTRY_MODE_ASSIGN"
-block|,
-literal|"assign"
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
-specifier|static
-specifier|const
-name|GimpEnumDesc
-name|descs
-index|[]
-init|=
-block|{
-block|{
-name|GIMP_TAG_ENTRY_MODE_QUERY
-block|,
-name|N_
-argument_list|(
-literal|"Query"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_TAG_ENTRY_MODE_ASSIGN
-block|,
-name|N_
-argument_list|(
-literal|"Assign"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-literal|0
-block|,
-name|NULL
-block|,
-name|NULL
-block|}
-block|}
-decl_stmt|;
-specifier|static
-name|GType
-name|type
-init|=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-operator|!
-name|type
-condition|)
-block|{
-name|type
-operator|=
-name|g_enum_register_static
-argument_list|(
-literal|"GimpTagEntryMode"
-argument_list|,
-name|values
-argument_list|)
-expr_stmt|;
-name|gimp_enum_set_value_descriptions
-argument_list|(
-name|type
-argument_list|,
-name|descs
-argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|type
-return|;
-block|}
-end_function
 
 begin_expr_stmt
 name|G_DEFINE_TYPE
@@ -873,11 +735,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_FILTERED_CONTAINER
+name|PROP_CONTAINER
 argument_list|,
 name|g_param_spec_object
 argument_list|(
-literal|"filtered-container"
+literal|"container"
 argument_list|,
 operator|(
 literal|"Filtered container"
@@ -901,11 +763,11 @@ name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_TAG_ENTRY_MODE
+name|PROP_MODE
 argument_list|,
 name|g_param_spec_enum
 argument_list|(
-literal|"tag-entry-mode"
+literal|"mode"
 argument_list|,
 operator|(
 literal|"Working mode"
@@ -943,7 +805,7 @@ parameter_list|)
 block|{
 name|entry
 operator|->
-name|filtered_container
+name|container
 operator|=
 name|NULL
 expr_stmt|;
@@ -1115,7 +977,7 @@ parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 init|=
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -1124,19 +986,19 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|selected_items
 condition|)
 block|{
 name|g_list_free
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|selected_items
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|selected_items
 operator|=
@@ -1145,14 +1007,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 condition|)
 block|{
 name|g_list_foreach
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -1166,12 +1028,12 @@ argument_list|)
 expr_stmt|;
 name|g_list_free
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
@@ -1180,53 +1042,53 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 condition|)
 block|{
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|,
 name|gimp_tag_entry_container_changed
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 operator|=
 name|NULL
 expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 condition|)
 block|{
 name|g_string_free
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|=
@@ -1271,7 +1133,7 @@ parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 init|=
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -1284,11 +1146,11 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_FILTERED_CONTAINER
+name|PROP_CONTAINER
 case|:
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 operator|=
 name|g_value_get_object
 argument_list|(
@@ -1299,24 +1161,24 @@ name|g_assert
 argument_list|(
 name|GIMP_IS_FILTERED_CONTAINER
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_ref
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|,
 literal|"add"
 argument_list|,
@@ -1325,14 +1187,14 @@ argument_list|(
 name|gimp_tag_entry_container_changed
 argument_list|)
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|,
 literal|"remove"
 argument_list|,
@@ -1341,14 +1203,14 @@ argument_list|(
 name|gimp_tag_entry_container_changed
 argument_list|)
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_TAG_ENTRY_MODE
+name|PROP_MODE
 case|:
-name|tag_entry
+name|entry
 operator|->
 name|mode
 operator|=
@@ -1359,7 +1221,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_tag_entry_toggle_desc
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1404,7 +1266,7 @@ parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 init|=
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -1417,26 +1279,26 @@ name|property_id
 condition|)
 block|{
 case|case
-name|PROP_FILTERED_CONTAINER
+name|PROP_CONTAINER
 case|:
 name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|tag_entry
+name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_TAG_ENTRY_MODE
+name|PROP_MODE
 case|:
 name|g_value_set_enum
 argument_list|(
 name|value
 argument_list|,
-name|tag_entry
+name|entry
 operator|->
 name|mode
 argument_list|)
@@ -1458,58 +1320,47 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_new:  * @filtered_container: a #GimpFilteredContainer object  * @mode:               #GimpTagEntryMode to work in.  *  * #GimpTagEntry is a widget which can query and assign tags to tagged objects.  * When operating in query mode, @filtered_container is kept up to date with  * tags selected. When operating in assignment mode, tags are assigned to  * objects selected and visible in @filtered_container.  *  * Return value: a new GimpTagEntry widget.  **/
+comment|/**  * gimp_tag_entry_new:  * @container: a #GimpFilteredContainer object  * @mode:      #GimpTagEntryMode to work in.  *  * #GimpTagEntry is a widget which can query and assign tags to tagged objects.  * When operating in query mode, @container is kept up to date with  * tags selected. When operating in assignment mode, tags are assigned to  * objects selected and visible in @container.  *  * Return value: a new GimpTagEntry widget.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tag_entry_new (GimpFilteredContainer * filtered_container,GimpTagEntryMode mode)
+DECL|function|gimp_tag_entry_new (GimpFilteredContainer * container,GimpTagEntryMode mode)
 name|gimp_tag_entry_new
 parameter_list|(
 name|GimpFilteredContainer
 modifier|*
-name|filtered_container
+name|container
 parameter_list|,
 name|GimpTagEntryMode
 name|mode
 parameter_list|)
 block|{
-name|GimpTagEntry
-modifier|*
-name|entry
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_FILTERED_CONTAINER
 argument_list|(
-name|filtered_container
+name|container
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|entry
-operator|=
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_TAG_ENTRY
-argument_list|,
-literal|"filtered-container"
-argument_list|,
-name|filtered_container
-argument_list|,
-literal|"tag-entry-mode"
-argument_list|,
-name|mode
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GTK_WIDGET
+name|g_object_new
 argument_list|(
-name|entry
+name|GIMP_TYPE_TAG_ENTRY
+argument_list|,
+literal|"container"
+argument_list|,
+name|container
+argument_list|,
+literal|"mode"
+argument_list|,
+name|mode
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 block|}
@@ -1518,20 +1369,22 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_activate (GtkEntry * entry,gpointer unused)
+DECL|function|gimp_tag_entry_activate (GtkEntry * entry)
 name|gimp_tag_entry_activate
 parameter_list|(
 name|GtkEntry
 modifier|*
 name|entry
-parameter_list|,
-name|gpointer
-name|unused
 parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
 name|tag_entry
+init|=
+name|GIMP_TAG_ENTRY
+argument_list|(
+name|entry
+argument_list|)
 decl_stmt|;
 name|gint
 name|selection_start
@@ -1543,13 +1396,6 @@ name|GList
 modifier|*
 name|iterator
 decl_stmt|;
-name|tag_entry
-operator|=
-name|GIMP_TAG_ENTRY
-argument_list|(
-name|entry
-argument_list|)
-expr_stmt|;
 name|gimp_tag_entry_toggle_desc
 argument_list|(
 name|tag_entry
@@ -1617,7 +1463,7 @@ name|GIMP_CONTAINER
 argument_list|(
 name|tag_entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -1656,17 +1502,17 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_entry_set_tag_string:  * @tag_entry:  a #GimpTagEntry object.  * @tag_string: string of tags, separated by any terminal punctuation  *              character.  *  * Sets tags from @tag_string to @tag_entry. Given tags do not need to  * be valid as they can be fixed or dropped automatically. Depending on  * selected #GimpTagEntryMode, appropriate action is peformed.  **/
+comment|/**  * gimp_tag_entry_set_tag_string:  * @entry:      a #GimpTagEntry object.  * @tag_string: string of tags, separated by any terminal punctuation  *              character.  *  * Sets tags from @tag_string to @tag_entry. Given tags do not need to  * be valid as they can be fixed or dropped automatically. Depending on  * selected #GimpTagEntryMode, appropriate action is peformed.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_tag_entry_set_tag_string (GimpTagEntry * tag_entry,const gchar * tag_string)
+DECL|function|gimp_tag_entry_set_tag_string (GimpTagEntry * entry,const gchar * tag_string)
 name|gimp_tag_entry_set_tag_string
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 specifier|const
 name|gchar
@@ -1678,11 +1524,11 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_TAG_ENTRY
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|++
@@ -1691,7 +1537,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|tag_string
@@ -1701,26 +1547,26 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|--
 expr_stmt|;
 name|gimp_tag_entry_commit_tags
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mode
 operator|==
@@ -1729,7 +1575,7 @@ condition|)
 block|{
 name|gimp_tag_entry_assign_tags
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -1739,15 +1585,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_changed (GtkEntry * entry,gpointer unused)
+DECL|function|gimp_tag_entry_changed (GtkEntry * entry)
 name|gimp_tag_entry_changed
 parameter_list|(
 name|GtkEntry
 modifier|*
 name|entry
-parameter_list|,
-name|gpointer
-name|unused
 parameter_list|)
 block|{
 name|GimpTagEntry
@@ -1854,10 +1697,7 @@ name|GSourceFunc
 operator|)
 name|gimp_tag_entry_query_tag
 argument_list|,
-name|GIMP_TAG_ENTRY
-argument_list|(
 name|entry
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1867,7 +1707,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_insert_text (GtkEditable * editable,gchar * new_text,gint text_length,gint * position,gpointer user_data)
+DECL|function|gimp_tag_entry_insert_text (GtkEditable * editable,gchar * new_text,gint text_length,gint * position)
 name|gimp_tag_entry_insert_text
 parameter_list|(
 name|GtkEditable
@@ -1884,14 +1724,11 @@ parameter_list|,
 name|gint
 modifier|*
 name|position
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 init|=
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -1943,13 +1780,13 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 condition|)
 block|{
 comment|/* suppress tag queries until auto completion runs */
-name|tag_entry
+name|entry
 operator|->
 name|suppress_tag_query
 operator|++
@@ -1976,7 +1813,7 @@ literal|0
 index|]
 operator|=
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -1990,7 +1827,7 @@ index|]
 operator|==
 literal|'t'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2012,7 +1849,7 @@ literal|1
 index|]
 operator|=
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2024,7 +1861,7 @@ index|]
 operator|==
 literal|'t'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2077,7 +1914,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|&&
@@ -2086,7 +1923,7 @@ name|position
 operator|>
 literal|0
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2110,14 +1947,14 @@ block|{
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 condition|)
 block|{
 name|g_string_insert_c
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -2186,7 +2023,7 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|&&
@@ -2197,13 +2034,13 @@ operator|&&
 operator|*
 name|position
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|len
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2225,14 +2062,14 @@ block|{
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 condition|)
 block|{
 name|g_string_insert_c
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -2306,7 +2143,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 condition|)
@@ -2327,7 +2164,7 @@ control|)
 block|{
 name|g_string_insert_c
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -2344,12 +2181,12 @@ block|}
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 condition|)
 block|{
-name|tag_entry
+name|entry
 operator|->
 name|tab_completion_index
 operator|=
@@ -2373,7 +2210,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_delete_text (GtkEditable * editable,gint start_pos,gint end_pos,gpointer user_data)
+DECL|function|gimp_tag_entry_delete_text (GtkEditable * editable,gint start_pos,gint end_pos)
 name|gimp_tag_entry_delete_text
 parameter_list|(
 name|GtkEditable
@@ -2385,14 +2222,11 @@ name|start_pos
 parameter_list|,
 name|gint
 name|end_pos
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 init|=
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -2402,7 +2236,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 condition|)
@@ -2423,7 +2257,7 @@ operator|>
 name|start_pos
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2436,7 +2270,7 @@ index|]
 operator|==
 literal|'t'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2455,14 +2289,14 @@ while|while
 condition|(
 name|end_pos
 operator|<=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|len
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -2492,14 +2326,14 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 condition|)
 block|{
 name|g_string_erase
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -2533,14 +2367,14 @@ block|{
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 condition|)
 block|{
 name|g_string_erase
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -2696,7 +2530,7 @@ name|GIMP_FILTERED_CONTAINER
 argument_list|(
 name|entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|,
 name|query_list
@@ -2749,6 +2583,15 @@ modifier|*
 name|tag_entry
 parameter_list|)
 block|{
+name|GtkEntry
+modifier|*
+name|entry
+init|=
+name|GTK_ENTRY
+argument_list|(
+name|tag_entry
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|completion_prefix
@@ -2759,6 +2602,8 @@ name|completion_candidates
 decl_stmt|;
 name|gint
 name|candidate_count
+init|=
+literal|0
 decl_stmt|;
 name|gchar
 modifier|*
@@ -2774,10 +2619,6 @@ name|start_position
 decl_stmt|;
 name|gint
 name|end_position
-decl_stmt|;
-name|GtkEntry
-modifier|*
-name|entry
 decl_stmt|;
 name|tag_entry
 operator|->
@@ -2811,13 +2652,6 @@ name|tag_entry
 argument_list|)
 expr_stmt|;
 block|}
-name|entry
-operator|=
-name|GTK_ENTRY
-argument_list|(
-name|tag_entry
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|tag_entry
@@ -2955,10 +2789,6 @@ name|candidate_count
 expr_stmt|;
 name|the_chosen_one
 operator|=
-operator|(
-name|GimpTag
-operator|*
-operator|)
 name|g_list_nth_data
 argument_list|(
 name|completion_candidates
@@ -3707,7 +3537,7 @@ name|GIMP_CONTAINER
 argument_list|(
 name|tag_entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -4247,7 +4077,7 @@ name|g_hash_table_get_keys
 argument_list|(
 name|tag_entry
 operator|->
-name|filtered_container
+name|container
 operator|->
 name|tag_ref_counts
 argument_list|)
@@ -4764,7 +4594,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_focus_in (GtkWidget * widget,GdkEventFocus * event,gpointer user_data)
+DECL|function|gimp_tag_entry_focus_in (GtkWidget * widget,GdkEventFocus * event)
 name|gimp_tag_entry_focus_in
 parameter_list|(
 name|GtkWidget
@@ -4774,9 +4604,6 @@ parameter_list|,
 name|GdkEventFocus
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|gimp_tag_entry_toggle_desc
@@ -4798,7 +4625,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_focus_out (GtkWidget * widget,GdkEventFocus * event,gpointer user_data)
+DECL|function|gimp_tag_entry_focus_out (GtkWidget * widget,GdkEventFocus * event)
 name|gimp_tag_entry_focus_out
 parameter_list|(
 name|GtkWidget
@@ -4808,9 +4635,6 @@ parameter_list|,
 name|GdkEventFocus
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GimpTagEntry
@@ -4945,7 +4769,7 @@ name|GIMP_CONTAINER
 argument_list|(
 name|tag_entry
 operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|,
 name|GIMP_OBJECT
@@ -5142,7 +4966,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_expose (GtkWidget * widget,GdkEventExpose * event,gpointer user_data)
+DECL|function|gimp_tag_entry_expose (GtkWidget * widget,GdkEventExpose * event)
 name|gimp_tag_entry_expose
 parameter_list|(
 name|GtkWidget
@@ -5152,9 +4976,6 @@ parameter_list|,
 name|GdkEventExpose
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GimpTagEntry
@@ -5475,7 +5296,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_key_press (GtkWidget * widget,GdkEventKey * event,gpointer user_data)
+DECL|function|gimp_tag_entry_key_press (GtkWidget * widget,GdkEventKey * event)
 name|gimp_tag_entry_key_press
 parameter_list|(
 name|GtkWidget
@@ -5485,14 +5306,11 @@ parameter_list|,
 name|GdkEventKey
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 init|=
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -5526,7 +5344,7 @@ name|GSourceFunc
 operator|)
 name|gimp_tag_entry_commit_source_func
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 return|return
@@ -5544,12 +5362,12 @@ case|case
 name|GDK_Tab
 case|:
 block|{
-name|tag_entry
+name|entry
 operator|->
 name|tab_completion_index
 operator|++
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|suppress_tag_query
 operator|++
@@ -5561,7 +5379,7 @@ name|GSourceFunc
 operator|)
 name|gimp_tag_entry_auto_complete
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -5573,7 +5391,7 @@ name|GDK_Return
 case|:
 name|gimp_tag_entry_commit_tags
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5582,7 +5400,7 @@ name|GDK_Left
 case|:
 name|gimp_tag_entry_previous_tag
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 operator|(
 name|event
@@ -5605,7 +5423,7 @@ name|GDK_Right
 case|:
 name|gimp_tag_entry_next_tag
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 operator|(
 name|event
@@ -5637,7 +5455,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -5651,7 +5469,7 @@ if|if
 condition|(
 name|gimp_tag_entry_select_jellybean
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|selection_start
 argument_list|,
@@ -5669,11 +5487,12 @@ else|else
 block|{
 name|gimp_tag_entry_select_for_deletion
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|TAG_SEARCH_LEFT
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: need to remove idle handler in dispose */
 name|g_idle_add
 argument_list|(
 operator|(
@@ -5681,7 +5500,7 @@ name|GSourceFunc
 operator|)
 name|gimp_tag_entry_strip_extra_whitespace
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -5701,7 +5520,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -5715,7 +5534,7 @@ if|if
 condition|(
 name|gimp_tag_entry_select_jellybean
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|selection_start
 argument_list|,
@@ -5733,11 +5552,12 @@ else|else
 block|{
 name|gimp_tag_entry_select_for_deletion
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|TAG_SEARCH_RIGHT
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: need to remove idle handler in dispose */
 name|g_idle_add
 argument_list|(
 operator|(
@@ -5745,7 +5565,7 @@ name|GSourceFunc
 operator|)
 name|gimp_tag_entry_strip_extra_whitespace
 argument_list|,
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -5759,7 +5579,7 @@ name|GDK_Down
 case|:
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|!=
@@ -5782,14 +5602,14 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_tag_entry_add_to_recent
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|very_recent_item
 argument_list|,
@@ -5818,33 +5638,33 @@ operator|*
 operator|)
 name|g_list_first
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|)
 operator|->
 name|data
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_remove
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
 name|recent_item
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_append
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -5862,33 +5682,33 @@ operator|*
 operator|)
 name|g_list_last
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|)
 operator|->
 name|data
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_remove
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
 name|recent_item
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_prepend
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -5904,14 +5724,14 @@ operator|*
 operator|)
 name|g_list_first
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|)
 operator|->
 name|data
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|++
@@ -5920,7 +5740,7 @@ name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|recent_item
@@ -5930,14 +5750,14 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|--
@@ -5979,6 +5799,7 @@ operator|==
 literal|1
 condition|)
 block|{
+comment|/* FIXME: need to remove idle handler in dispose */
 name|g_idle_add
 argument_list|(
 operator|(
@@ -6009,12 +5830,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_try_select_jellybean (GimpTagEntry * tag_entry)
+DECL|function|gimp_tag_entry_try_select_jellybean (GimpTagEntry * entry)
 name|gimp_tag_entry_try_select_jellybean
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 block|{
 name|gint
@@ -6030,7 +5851,7 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -6043,7 +5864,7 @@ name|gtk_entry_get_text
 argument_list|(
 name|GTK_ENTRY
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 argument_list|,
@@ -6066,7 +5887,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -6078,7 +5899,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_tag_entry_select_jellybean
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|,
 name|selection_start
 argument_list|,
@@ -6096,12 +5917,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_select_jellybean (GimpTagEntry * tag_entry,gint selection_start,gint selection_end,GimpTagSearchDir search_dir)
+DECL|function|gimp_tag_entry_select_jellybean (GimpTagEntry * entry,gint selection_start,gint selection_end,GimpTagSearchDir search_dir)
 name|gimp_tag_entry_select_jellybean
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gint
 name|selection_start
@@ -6122,7 +5943,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6137,7 +5958,7 @@ if|if
 condition|(
 name|selection_start
 operator|>=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6146,7 +5967,7 @@ condition|)
 block|{
 name|selection_start
 operator|=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6161,7 +5982,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6192,7 +6013,7 @@ name|selection_start
 operator|>
 literal|0
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6215,7 +6036,7 @@ operator|>
 literal|0
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6230,7 +6051,7 @@ literal|'w'
 operator|)
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6267,7 +6088,7 @@ name|selection_start
 operator|>
 literal|0
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6278,7 +6099,7 @@ index|]
 operator|==
 literal|'t'
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6299,7 +6120,7 @@ block|}
 if|if
 condition|(
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6310,7 +6131,7 @@ index|]
 operator|==
 literal|'w'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6330,7 +6151,7 @@ block|{
 while|while
 condition|(
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6341,7 +6162,7 @@ index|]
 operator|==
 literal|'w'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6386,7 +6207,7 @@ block|{
 if|if
 condition|(
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6397,7 +6218,7 @@ index|]
 operator|==
 literal|'w'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6411,7 +6232,7 @@ operator|)
 operator|&&
 name|selection_start
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6423,7 +6244,7 @@ block|{
 while|while
 condition|(
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6434,7 +6255,7 @@ index|]
 operator|==
 literal|'w'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6448,7 +6269,7 @@ operator|)
 operator|&&
 name|selection_start
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6476,7 +6297,7 @@ if|if
 condition|(
 name|selection_start
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6498,7 +6319,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -6510,7 +6331,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6529,7 +6350,7 @@ operator|>
 literal|0
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6556,7 +6377,7 @@ operator|>
 name|selection_start
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6575,14 +6396,14 @@ while|while
 condition|(
 name|selection_end
 operator|<=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|len
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6612,7 +6433,7 @@ name|selection_start
 operator|==
 literal|1
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6628,7 +6449,7 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_end
@@ -6651,7 +6472,7 @@ name|prev_selection_end
 operator|)
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -6679,7 +6500,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_end
@@ -6694,7 +6515,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_start
@@ -6719,12 +6540,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_add_to_recent (GimpTagEntry * tag_entry,const gchar * tags_string,gboolean to_front)
+DECL|function|gimp_tag_entry_add_to_recent (GimpTagEntry * entry,const gchar * tags_string,gboolean to_front)
 name|gimp_tag_entry_add_to_recent
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 specifier|const
 name|gchar
@@ -6754,7 +6575,7 @@ name|stripped_length
 decl_stmt|;
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mode
 operator|==
@@ -6807,7 +6628,7 @@ if|if
 condition|(
 name|g_list_length
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|)
@@ -6825,20 +6646,20 @@ operator|*
 operator|)
 name|g_list_last
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|)
 operator|->
 name|data
 decl_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_remove
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -6855,7 +6676,7 @@ for|for
 control|(
 name|tags_iterator
 operator|=
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 init|;
@@ -6888,13 +6709,13 @@ name|tags_iterator
 operator|->
 name|data
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_remove
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -6923,13 +6744,13 @@ condition|(
 name|to_front
 condition|)
 block|{
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_prepend
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -6939,13 +6760,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 operator|=
 name|g_list_append
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|recent_list
 argument_list|,
@@ -6973,7 +6794,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/* IMPORTANT: use only one of Unicode terminal punctuation chars.    * http://unicode.org/review/pr-23.html */
+comment|/* Seperator for tags    * IMPORTANT: use only one of Unicode terminal punctuation chars.    * http://unicode.org/review/pr-23.html    */
 return|return
 name|_
 argument_list|(
@@ -7366,12 +7187,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_commit_tags (GimpTagEntry * tag_entry)
+DECL|function|gimp_tag_entry_commit_tags (GimpTagEntry * entry)
 name|gimp_tag_entry_commit_tags
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 block|{
 name|gint
@@ -7401,7 +7222,7 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7419,7 +7240,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7431,7 +7252,7 @@ control|)
 block|{
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7464,7 +7285,7 @@ operator|++
 init|;
 name|i
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7476,7 +7297,7 @@ control|)
 block|{
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7526,7 +7347,7 @@ name|gtk_editable_get_chars
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|region_start
@@ -7556,7 +7377,7 @@ name|mask
 operator|=
 name|g_string_new_len
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7583,7 +7404,7 @@ name|region_start
 operator|>
 literal|0
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7632,13 +7453,13 @@ if|if
 condition|(
 name|region_end
 operator|<=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|len
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7707,12 +7528,12 @@ operator|-
 name|length_before
 expr_stmt|;
 block|}
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|++
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 operator|++
@@ -7721,7 +7542,7 @@ name|gtk_editable_delete_text
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|region_start
@@ -7737,7 +7558,7 @@ name|gtk_editable_insert_text
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|tags
@@ -7752,19 +7573,19 @@ operator|&
 name|position
 argument_list|)
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|suppress_mask_update
 operator|--
 expr_stmt|;
-name|tag_entry
+name|entry
 operator|->
 name|internal_operation
 operator|--
 expr_stmt|;
 name|g_string_erase
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -7777,7 +7598,7 @@ argument_list|)
 expr_stmt|;
 name|g_string_insert_len
 argument_list|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 argument_list|,
@@ -7817,7 +7638,7 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|cursor_position
@@ -7825,7 +7646,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_tag_entry_strip_extra_whitespace
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 expr_stmt|;
 block|}
@@ -7834,20 +7655,17 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_commit_source_func (GimpTagEntry * tag_entry)
+DECL|function|gimp_tag_entry_commit_source_func (GimpTagEntry * entry)
 name|gimp_tag_entry_commit_source_func
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 block|{
 name|gimp_tag_entry_commit_tags
 argument_list|(
-name|GIMP_TAG_ENTRY
-argument_list|(
-name|tag_entry
-argument_list|)
+name|entry
 argument_list|)
 expr_stmt|;
 return|return
@@ -7859,12 +7677,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_next_tag (GimpTagEntry * tag_entry,gboolean select)
+DECL|function|gimp_tag_entry_next_tag (GimpTagEntry * entry,gboolean select)
 name|gimp_tag_entry_next_tag
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gboolean
 name|select
@@ -7877,13 +7695,13 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7899,14 +7717,14 @@ while|while
 condition|(
 name|position
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|len
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7925,7 +7743,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7947,7 +7765,7 @@ if|if
 condition|(
 name|position
 operator|<
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -7978,7 +7796,7 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -7986,7 +7804,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -8007,7 +7825,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_start
@@ -8028,7 +7846,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_end
@@ -8044,7 +7862,7 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|position
@@ -8057,12 +7875,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_previous_tag (GimpTagEntry * tag_entry,gboolean select)
+DECL|function|gimp_tag_entry_previous_tag (GimpTagEntry * entry,gboolean select)
 name|gimp_tag_entry_previous_tag
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|gboolean
 name|select
@@ -8075,7 +7893,7 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 decl_stmt|;
@@ -8085,7 +7903,7 @@ name|position
 operator|>=
 literal|1
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8114,7 +7932,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8135,7 +7953,7 @@ operator|>
 literal|0
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8152,7 +7970,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8199,7 +8017,7 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -8207,7 +8025,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -8228,7 +8046,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_end
@@ -8249,7 +8067,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|selection_start
@@ -8265,7 +8083,7 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|position
@@ -8278,12 +8096,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_entry_select_for_deletion (GimpTagEntry * tag_entry,GimpTagSearchDir search_dir)
+DECL|function|gimp_tag_entry_select_for_deletion (GimpTagEntry * entry,GimpTagSearchDir search_dir)
 name|gimp_tag_entry_select_for_deletion
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|,
 name|GimpTagSearchDir
 name|search_dir
@@ -8300,7 +8118,7 @@ name|gtk_editable_get_selection_bounds
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 operator|&
@@ -8317,7 +8135,7 @@ operator|>
 literal|0
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8343,7 +8161,7 @@ operator|>
 name|start_pos
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8356,7 +8174,7 @@ index|]
 operator|==
 literal|'t'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8375,14 +8193,14 @@ while|while
 condition|(
 name|end_pos
 operator|<=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|len
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8407,7 +8225,7 @@ name|start_pos
 operator|<
 name|end_pos
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8429,7 +8247,7 @@ name|start_pos
 operator|<
 name|end_pos
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8459,7 +8277,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|end_pos
@@ -8480,7 +8298,7 @@ operator|==
 name|TAG_SEARCH_RIGHT
 operator|&&
 operator|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8493,7 +8311,7 @@ index|]
 operator|==
 literal|'t'
 operator|||
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8512,7 +8330,7 @@ name|gtk_editable_select_region
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|start_pos
@@ -8527,12 +8345,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_entry_strip_extra_whitespace (GimpTagEntry * tag_entry)
+DECL|function|gimp_tag_entry_strip_extra_whitespace (GimpTagEntry * entry)
 name|gimp_tag_entry_strip_extra_whitespace
 parameter_list|(
 name|GimpTagEntry
 modifier|*
-name|tag_entry
+name|entry
 parameter_list|)
 block|{
 name|gint
@@ -8547,14 +8365,14 @@ name|gtk_editable_get_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* strip whitespace in front */
 while|while
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8562,7 +8380,7 @@ name|len
 operator|>
 literal|0
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8578,7 +8396,7 @@ name|gtk_editable_delete_text
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 literal|0
@@ -8590,7 +8408,7 @@ block|}
 comment|/* strip whitespace in back */
 while|while
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8598,13 +8416,13 @@ name|len
 operator|>
 literal|1
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|str
 index|[
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8615,13 +8433,13 @@ index|]
 operator|==
 literal|'w'
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
 name|str
 index|[
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8637,10 +8455,10 @@ name|gtk_editable_delete_text
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8648,7 +8466,7 @@ name|len
 operator|-
 literal|1
 argument_list|,
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8659,7 +8477,7 @@ if|if
 condition|(
 name|position
 operator|==
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8676,7 +8494,7 @@ for|for
 control|(
 name|i
 operator|=
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8694,7 +8512,7 @@ control|)
 block|{
 if|if
 condition|(
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8705,7 +8523,7 @@ index|]
 operator|==
 literal|'w'
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8723,7 +8541,7 @@ name|gtk_editable_delete_text
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|i
@@ -8751,7 +8569,7 @@ if|if
 condition|(
 name|position
 operator|==
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8759,7 +8577,7 @@ name|len
 operator|-
 literal|1
 operator|&&
-name|tag_entry
+name|entry
 operator|->
 name|mask
 operator|->
@@ -8779,7 +8597,7 @@ name|gtk_editable_set_position
 argument_list|(
 name|GTK_EDITABLE
 argument_list|(
-name|tag_entry
+name|entry
 argument_list|)
 argument_list|,
 name|position

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a587b7b0103
+DECL|enum|__anon27f8c92c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -153,6 +153,28 @@ directive|define
 name|GIMP_TAG_POPUP_MARGIN
 value|5
 end_define
+
+begin_struct
+DECL|struct|_PopupTagData
+struct|struct
+name|_PopupTagData
+block|{
+DECL|member|tag
+name|GimpTag
+modifier|*
+name|tag
+decl_stmt|;
+DECL|member|bounds
+name|GdkRectangle
+name|bounds
+decl_stmt|;
+DECL|member|state
+name|GtkStateType
+name|state
+decl_stmt|;
+block|}
+struct|;
+end_struct
 
 begin_function_decl
 specifier|static
@@ -247,7 +269,7 @@ name|event
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -267,7 +289,7 @@ name|event
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -284,9 +306,6 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -306,7 +325,7 @@ name|event
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -318,7 +337,7 @@ name|gimp_tag_popup_toggle_tag
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|PopupTagData
 modifier|*
@@ -338,7 +357,7 @@ name|tagged
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -350,7 +369,7 @@ name|gimp_tag_popup_layout_tags
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gint
 name|width
@@ -365,7 +384,7 @@ name|gimp_tag_popup_do_timeout_scroll
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gboolean
 name|touchscreen_mode
@@ -391,7 +410,7 @@ name|gimp_tag_popup_remove_scroll_timeout
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -414,7 +433,7 @@ name|gimp_tag_popup_start_scrolling
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -426,7 +445,7 @@ name|gimp_tag_popup_stop_scrolling
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -438,7 +457,7 @@ name|gimp_tag_popup_scroll_by
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gint
 name|step
@@ -453,7 +472,7 @@ name|gimp_tag_popup_handle_scrolling
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gint
 name|x
@@ -477,7 +496,7 @@ name|gimp_tag_popup_button_scroll
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -521,7 +540,7 @@ name|get_arrows_sensitive_area
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|GdkRectangle
 modifier|*
@@ -626,12 +645,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_init (GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_init (GimpTagPopup * popup)
 name|gimp_tag_popup_init
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{ }
 end_function
@@ -661,6 +680,10 @@ decl_stmt|;
 name|GimpTagPopup
 modifier|*
 name|popup
+decl_stmt|;
+name|GimpFilteredContainer
+modifier|*
+name|container
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -967,13 +990,20 @@ argument_list|(
 name|current_tags
 argument_list|)
 expr_stmt|;
-name|tag_hash
+name|container
 operator|=
+name|GIMP_TAG_ENTRY
+argument_list|(
 name|popup
 operator|->
 name|combo_entry
+argument_list|)
 operator|->
-name|filtered_container
+name|container
+expr_stmt|;
+name|tag_hash
+operator|=
+name|container
 operator|->
 name|tag_ref_counts
 expr_stmt|;
@@ -1200,11 +1230,7 @@ name|gimp_container_foreach
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|popup
-operator|->
-name|combo_entry
-operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|,
 operator|(
@@ -1752,7 +1778,7 @@ parameter_list|)
 block|{
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 init|=
 name|GIMP_TAG_POPUP
 argument_list|(
@@ -1761,24 +1787,24 @@ argument_list|)
 decl_stmt|;
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 operator|=
@@ -1787,19 +1813,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|layout
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|layout
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|layout
 operator|=
@@ -1808,19 +1834,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|context
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|context
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|context
 operator|=
@@ -1829,14 +1855,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 condition|)
 block|{
 name|g_list_foreach
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 argument_list|,
@@ -1850,12 +1876,12 @@ argument_list|)
 expr_stmt|;
 name|g_list_free
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 operator|=
@@ -1864,12 +1890,12 @@ expr_stmt|;
 block|}
 name|g_free
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 operator|=
@@ -2027,7 +2053,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_popup_new:  * @combo_entry:        #GimpComboTagEntry which is owner of the popup  *                      window.  *  * Tag popup widget is only useful for for #GimpComboTagEntry and  * should not be used elsewhere.  *  * Return value: a newly created #GimpTagPopup widget.  **/
+comment|/**  * gimp_tag_popup_new:  * @combo_entry: #GimpComboTagEntry which is owner of the popup window.  *  * Tag popup widget is only useful for for #GimpComboTagEntry and  * should not be used elsewhere.  *  * Return value: a newly created #GimpTagPopup widget.  **/
 end_comment
 
 begin_function
@@ -2071,7 +2097,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_tag_popup_show:  * @tag_popup:        an instance of #GimpTagPopup  *  * Show tag popup widget. If mouse grab cannot be obtained for widget,  * it is destroyed.  **/
+comment|/**  * gimp_tag_popup_show:  * @tag_popup:  an instance of #GimpTagPopup  *  * Show tag popup widget. If mouse grab cannot be obtained for widget,  * it is destroyed.  **/
 end_comment
 
 begin_function
@@ -2173,12 +2199,12 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_tag_popup_layout_tags (GimpTagPopup * tag_popup,gint width)
+DECL|function|gimp_tag_popup_layout_tags (GimpTagPopup * popup,gint width)
 name|gimp_tag_popup_layout_tags
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gint
 name|width
@@ -2220,13 +2246,13 @@ name|font_metrics
 operator|=
 name|pango_context_get_metrics
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|context
 argument_list|,
 name|pango_context_get_font_description
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|context
 argument_list|)
@@ -2274,7 +2300,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -2284,13 +2310,13 @@ control|)
 block|{
 name|pango_layout_set_text
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|layout
 argument_list|,
 name|gimp_tag_get_name
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2306,12 +2332,12 @@ argument_list|)
 expr_stmt|;
 name|pango_layout_get_size
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|layout
 argument_list|,
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2323,7 +2349,7 @@ operator|.
 name|width
 argument_list|,
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2335,7 +2361,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2348,7 +2374,7 @@ name|width
 operator|/=
 name|PANGO_SCALE
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2363,7 +2389,7 @@ name|PANGO_SCALE
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2385,7 +2411,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2449,13 +2475,13 @@ name|line_height
 operator|+
 literal|2
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 operator|=
 name|g_list_append
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 argument_list|,
@@ -2474,7 +2500,7 @@ operator|+
 literal|2
 expr_stmt|;
 block|}
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2487,7 +2513,7 @@ name|x
 operator|=
 name|x
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2502,7 +2528,7 @@ name|y
 expr_stmt|;
 name|x
 operator|+=
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2520,7 +2546,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 operator|>
@@ -2583,13 +2609,13 @@ name|line_height
 operator|+
 literal|2
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 operator|=
 name|g_list_append
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 argument_list|,
@@ -2603,7 +2629,7 @@ name|gtk_widget_get_direction
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 operator|==
@@ -2622,7 +2648,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -2635,7 +2661,7 @@ modifier|*
 name|tag_data
 init|=
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -2667,7 +2693,7 @@ for|for
 control|(
 name|iterator
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 init|;
@@ -2726,7 +2752,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_popup_border_expose (GtkWidget * widget,GdkEventExpose * event,GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_border_expose (GtkWidget * widget,GdkEventExpose * event,GimpTagPopup * popup)
 name|gimp_tag_popup_border_expose
 parameter_list|(
 name|GtkWidget
@@ -2739,7 +2765,7 @@ name|event
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 name|GdkGC
@@ -2783,7 +2809,7 @@ argument_list|)
 expr_stmt|;
 name|get_arrows_visible_area
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|&
 name|border
@@ -2852,7 +2878,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|arrows_visible
 condition|)
@@ -2867,7 +2893,7 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 argument_list|,
@@ -2909,7 +2935,7 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 argument_list|,
@@ -2968,7 +2994,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|arrows_visible
 condition|)
@@ -2983,7 +3009,7 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 argument_list|,
@@ -3025,7 +3051,7 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 argument_list|,
@@ -3098,7 +3124,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_popup_border_event (GtkWidget * widget,GdkEvent * event,gpointer user_data)
+DECL|function|gimp_tag_popup_border_event (GtkWidget * widget,GdkEvent * event)
 name|gimp_tag_popup_border_event
 parameter_list|(
 name|GtkWidget
@@ -3108,14 +3134,11 @@ parameter_list|,
 name|GdkEvent
 modifier|*
 name|event
-parameter_list|,
-name|gpointer
-name|user_data
 parameter_list|)
 block|{
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 init|=
 name|GIMP_TAG_POPUP
 argument_list|(
@@ -3161,7 +3184,7 @@ name|window
 operator|&&
 name|gimp_tag_popup_button_scroll
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|button_event
 argument_list|)
@@ -3192,7 +3215,7 @@ name|button_event
 operator|->
 name|window
 operator|!=
-name|tag_popup
+name|popup
 operator|->
 name|drawing_area
 operator|->
@@ -3315,7 +3338,7 @@ name|allocation
 operator|.
 name|y
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|ignore_button_release
 operator|=
@@ -3323,13 +3346,13 @@ name|FALSE
 expr_stmt|;
 name|gimp_tag_popup_handle_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|x
 argument_list|,
 name|y
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|==
@@ -3349,7 +3372,7 @@ operator|==
 name|GDK_BUTTON_RELEASE
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|single_select_disabled
 operator|=
@@ -3372,13 +3395,13 @@ operator|->
 name|window
 operator|&&
 operator|!
-name|tag_popup
+name|popup
 operator|->
 name|ignore_button_release
 operator|&&
 name|gimp_tag_popup_button_scroll
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|(
 name|GdkEventButton
@@ -3438,7 +3461,7 @@ name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3478,7 +3501,7 @@ name|GDK_SCROLL_DOWN
 case|:
 name|gimp_tag_popup_scroll_by
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|MENU_SCROLL_STEP2
 argument_list|)
@@ -3494,7 +3517,7 @@ name|GDK_SCROLL_UP
 case|:
 name|gimp_tag_popup_scroll_by
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|-
 name|MENU_SCROLL_STEP2
@@ -3514,7 +3537,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_popup_list_expose (GtkWidget * widget,GdkEventExpose * event,GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_list_expose (GtkWidget * widget,GdkEventExpose * event,GimpTagPopup * popup)
 name|gimp_tag_popup_list_expose
 parameter_list|(
 name|GtkWidget
@@ -3527,7 +3550,7 @@ name|event
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 name|GdkGC
@@ -3602,7 +3625,7 @@ argument_list|(
 name|gc
 argument_list|,
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 operator|->
@@ -3630,7 +3653,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -3640,13 +3663,13 @@ control|)
 block|{
 name|pango_layout_set_text
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|layout
 argument_list|,
 name|gimp_tag_get_name
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3662,7 +3685,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3678,7 +3701,7 @@ name|attributes
 operator|=
 name|pango_attr_list_copy
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 operator|->
@@ -3689,7 +3712,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3705,7 +3728,7 @@ name|attributes
 operator|=
 name|pango_attr_list_copy
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 operator|->
@@ -3719,7 +3742,7 @@ name|attributes
 operator|=
 name|pango_attr_list_copy
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 operator|->
@@ -3730,18 +3753,18 @@ block|}
 if|if
 condition|(
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
 name|i
 index|]
 operator|==
-name|tag_popup
+name|popup
 operator|->
 name|prelight
 operator|&&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3770,7 +3793,7 @@ expr_stmt|;
 block|}
 name|pango_layout_set_attributes
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|layout
 argument_list|,
@@ -3784,7 +3807,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3806,7 +3829,7 @@ name|gc
 argument_list|,
 name|FALSE
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3819,7 +3842,7 @@ name|x
 operator|-
 literal|1
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3830,13 +3853,13 @@ name|bounds
 operator|.
 name|y
 operator|-
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 operator|+
 literal|1
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3849,7 +3872,7 @@ name|width
 operator|+
 literal|2
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3868,12 +3891,12 @@ name|pango_renderer_draw_layout
 argument_list|(
 name|renderer
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|layout
 argument_list|,
 operator|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3888,7 +3911,7 @@ operator|*
 name|PANGO_SCALE
 argument_list|,
 operator|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3899,7 +3922,7 @@ name|bounds
 operator|.
 name|y
 operator|-
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 operator|)
@@ -3910,18 +3933,18 @@ expr_stmt|;
 if|if
 condition|(
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
 name|i
 index|]
 operator|==
-name|tag_popup
+name|popup
 operator|->
 name|prelight
 operator|&&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3933,7 +3956,7 @@ operator|!=
 name|GTK_STATE_INSENSITIVE
 operator|&&
 operator|!
-name|tag_popup
+name|popup
 operator|->
 name|single_select_disabled
 condition|)
@@ -3948,7 +3971,7 @@ name|widget
 operator|->
 name|window
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3966,7 +3989,7 @@ name|widget
 argument_list|,
 name|NULL
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3977,7 +4000,7 @@ name|bounds
 operator|.
 name|x
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -3988,11 +4011,11 @@ name|bounds
 operator|.
 name|y
 operator|-
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4003,7 +4026,7 @@ name|bounds
 operator|.
 name|width
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4051,7 +4074,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_popup_list_event (GtkWidget * widget,GdkEvent * event,GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_list_event (GtkWidget * widget,GdkEvent * event,GimpTagPopup * popup)
 name|gimp_tag_popup_list_event
 parameter_list|(
 name|GtkWidget
@@ -4064,7 +4087,7 @@ name|event
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 if|if
@@ -4097,7 +4120,7 @@ name|GimpTag
 modifier|*
 name|tag
 decl_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|single_select_disabled
 operator|=
@@ -4125,7 +4148,7 @@ name|y
 expr_stmt|;
 name|y
 operator|+=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 expr_stmt|;
@@ -4137,7 +4160,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -4148,7 +4171,7 @@ block|{
 name|bounds
 operator|=
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4194,7 +4217,7 @@ condition|)
 block|{
 name|tag
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4205,10 +4228,10 @@ name|tag
 expr_stmt|;
 name|gimp_tag_popup_toggle_tag
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4228,7 +4251,7 @@ if|if
 condition|(
 name|i
 operator|==
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|)
@@ -4241,7 +4264,7 @@ for|for
 control|(
 name|iterator
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|close_rectangles
 init|;
@@ -4304,7 +4327,7 @@ name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4344,7 +4367,7 @@ name|PopupTagData
 modifier|*
 name|previous_prelight
 init|=
-name|tag_popup
+name|popup
 operator|->
 name|prelight
 decl_stmt|;
@@ -4370,11 +4393,11 @@ name|y
 expr_stmt|;
 name|y
 operator|+=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|prelight
 operator|=
@@ -4388,7 +4411,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -4399,7 +4422,7 @@ block|{
 name|bounds
 operator|=
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4443,12 +4466,12 @@ operator|->
 name|height
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|prelight
 operator|=
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4462,7 +4485,7 @@ if|if
 condition|(
 name|previous_prelight
 operator|!=
-name|tag_popup
+name|popup
 operator|->
 name|prelight
 condition|)
@@ -4484,7 +4507,7 @@ operator|==
 name|GDK_BUTTON_RELEASE
 operator|&&
 operator|!
-name|tag_popup
+name|popup
 operator|->
 name|single_select_disabled
 condition|)
@@ -4510,7 +4533,7 @@ name|GimpTag
 modifier|*
 name|tag
 decl_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|single_select_disabled
 operator|=
@@ -4538,7 +4561,7 @@ name|y
 expr_stmt|;
 name|y
 operator|+=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 expr_stmt|;
@@ -4550,7 +4573,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -4561,7 +4584,7 @@ block|{
 name|bounds
 operator|=
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4607,7 +4630,7 @@ condition|)
 block|{
 name|tag
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4618,10 +4641,10 @@ name|tag
 expr_stmt|;
 name|gimp_tag_popup_toggle_tag
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|&
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4633,7 +4656,7 @@ name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4650,12 +4673,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_toggle_tag (GimpTagPopup * tag_popup,PopupTagData * tag_data)
+DECL|function|gimp_tag_popup_toggle_tag (GimpTagPopup * popup,PopupTagData * tag_data)
 name|gimp_tag_popup_toggle_tag
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|PopupTagData
 modifier|*
@@ -4739,7 +4762,7 @@ name|gimp_tag_entry_parse_tags
 argument_list|(
 name|GIMP_TAG_ENTRY
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 argument_list|)
@@ -4871,7 +4894,7 @@ name|gimp_tag_entry_set_tag_string
 argument_list|(
 name|GIMP_TAG_ENTRY
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 argument_list|)
@@ -4897,7 +4920,7 @@ if|if
 condition|(
 name|GIMP_TAG_ENTRY
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|combo_entry
 argument_list|)
@@ -4907,6 +4930,21 @@ operator|==
 name|GIMP_TAG_ENTRY_MODE_QUERY
 condition|)
 block|{
+name|GimpFilteredContainer
+modifier|*
+name|container
+decl_stmt|;
+name|container
+operator|=
+name|GIMP_TAG_ENTRY
+argument_list|(
+name|popup
+operator|->
+name|combo_entry
+argument_list|)
+operator|->
+name|container
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -4915,7 +4953,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 condition|;
@@ -4925,7 +4963,7 @@ control|)
 block|{
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4937,7 +4975,7 @@ operator|!=
 name|GTK_STATE_SELECTED
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 index|[
@@ -4954,11 +4992,7 @@ name|gimp_container_foreach
 argument_list|(
 name|GIMP_CONTAINER
 argument_list|(
-name|tag_popup
-operator|->
-name|combo_entry
-operator|->
-name|filtered_container
+name|container
 argument_list|)
 argument_list|,
 operator|(
@@ -4966,7 +5000,7 @@ name|GFunc
 operator|)
 name|gimp_tag_popup_check_can_toggle
 argument_list|,
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -5026,7 +5060,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_check_can_toggle (GimpTagged * tagged,GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_check_can_toggle (GimpTagged * tagged,GimpTagPopup * popup)
 name|gimp_tag_popup_check_can_toggle
 parameter_list|(
 name|GimpTagged
@@ -5035,7 +5069,7 @@ name|tagged
 parameter_list|,
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 name|GList
@@ -5090,11 +5124,11 @@ argument_list|(
 operator|&
 name|search_key
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_data
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|tag_count
 argument_list|,
@@ -5144,26 +5178,24 @@ parameter_list|)
 block|{
 name|GimpTagPopup
 modifier|*
-name|tag_popup
-decl_stmt|;
-name|gboolean
-name|touchscreen_mode
-decl_stmt|;
-name|tag_popup
-operator|=
+name|popup
+init|=
 operator|(
 name|GimpTagPopup
 operator|*
 operator|)
 name|data
-expr_stmt|;
+decl_stmt|;
+name|gboolean
+name|touchscreen_mode
+decl_stmt|;
 name|g_object_get
 argument_list|(
 name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 argument_list|,
@@ -5177,7 +5209,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_tag_popup_do_timeout_scroll
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|touchscreen_mode
 argument_list|)
@@ -5191,29 +5223,29 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_remove_scroll_timeout (GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_remove_scroll_timeout (GimpTagPopup * popup)
 name|gimp_tag_popup_remove_scroll_timeout
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 condition|)
 block|{
 name|g_source_remove
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|=
@@ -5235,7 +5267,7 @@ parameter_list|)
 block|{
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 decl_stmt|;
 name|guint
 name|timeout
@@ -5243,7 +5275,7 @@ decl_stmt|;
 name|gboolean
 name|touchscreen_mode
 decl_stmt|;
-name|tag_popup
+name|popup
 operator|=
 operator|(
 name|GimpTagPopup
@@ -5259,7 +5291,7 @@ name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 argument_list|,
@@ -5278,17 +5310,17 @@ argument_list|)
 expr_stmt|;
 name|gimp_tag_popup_do_timeout_scroll
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|touchscreen_mode
 argument_list|)
 expr_stmt|;
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|=
@@ -5298,7 +5330,7 @@ name|timeout
 argument_list|,
 name|gimp_tag_popup_scroll_timeout
 argument_list|,
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 return|return
@@ -5310,12 +5342,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_start_scrolling (GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_start_scrolling (GimpTagPopup * popup)
 name|gimp_tag_popup_start_scrolling
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 name|guint
@@ -5330,7 +5362,7 @@ name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 argument_list|,
@@ -5349,12 +5381,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_tag_popup_do_timeout_scroll
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|touchscreen_mode
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|=
@@ -5364,7 +5396,7 @@ name|timeout
 argument_list|,
 name|gimp_tag_popup_scroll_timeout_initial
 argument_list|,
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -5373,12 +5405,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_stop_scrolling (GimpTagPopup * tag_popup)
+DECL|function|gimp_tag_popup_stop_scrolling (GimpTagPopup * popup)
 name|gimp_tag_popup_stop_scrolling
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|)
 block|{
 name|gboolean
@@ -5386,7 +5418,7 @@ name|touchscreen_mode
 decl_stmt|;
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 name|g_object_get
@@ -5395,7 +5427,7 @@ name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 argument_list|,
@@ -5413,13 +5445,13 @@ operator|!
 name|touchscreen_mode
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 operator|=
 name|FALSE
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 operator|=
@@ -5432,12 +5464,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_scroll_by (GimpTagPopup * tag_popup,gint step)
+DECL|function|gimp_tag_popup_scroll_by (GimpTagPopup * popup,gint step)
 name|gimp_tag_popup_scroll_by
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gint
 name|step
@@ -5446,7 +5478,7 @@ block|{
 name|gint
 name|new_scroll_y
 init|=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 operator|+
@@ -5465,7 +5497,7 @@ literal|0
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 operator|!=
@@ -5474,19 +5506,19 @@ condition|)
 block|{
 name|gimp_tag_popup_stop_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 operator|=
@@ -5495,11 +5527,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 condition|?
@@ -5512,14 +5544,14 @@ if|if
 condition|(
 name|new_scroll_y
 operator|>=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_height
 condition|)
 block|{
 name|new_scroll_y
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_height
 operator|-
@@ -5527,7 +5559,7 @@ literal|1
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 operator|!=
@@ -5536,19 +5568,19 @@ condition|)
 block|{
 name|gimp_tag_popup_stop_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 name|gtk_widget_queue_draw
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 operator|=
@@ -5557,11 +5589,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 operator|=
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 condition|?
@@ -5574,12 +5606,12 @@ if|if
 condition|(
 name|new_scroll_y
 operator|!=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|scroll_y
 operator|=
@@ -5587,7 +5619,7 @@ name|new_scroll_y
 expr_stmt|;
 name|gdk_window_scroll
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|drawing_area
 operator|->
@@ -5606,12 +5638,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_do_timeout_scroll (GimpTagPopup * tag_popup,gboolean touchscreen_mode)
+DECL|function|gimp_tag_popup_do_timeout_scroll (GimpTagPopup * popup,gboolean touchscreen_mode)
 name|gimp_tag_popup_do_timeout_scroll
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gboolean
 name|touchscreen_mode
@@ -5619,9 +5651,9 @@ parameter_list|)
 block|{
 name|gimp_tag_popup_scroll_by
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
-name|tag_popup
+name|popup
 operator|->
 name|scroll_step
 argument_list|)
@@ -5632,12 +5664,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tag_popup_handle_scrolling (GimpTagPopup * tag_popup,gint x,gint y,gboolean enter,gboolean motion)
+DECL|function|gimp_tag_popup_handle_scrolling (GimpTagPopup * popup,gint x,gint y,gboolean enter,gboolean motion)
 name|gimp_tag_popup_handle_scrolling
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|gint
 name|x
@@ -5672,7 +5704,7 @@ name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 argument_list|,
@@ -5687,7 +5719,7 @@ expr_stmt|;
 comment|/*  upper arrow handling  */
 name|get_arrows_sensitive_area
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|&
 name|rect
@@ -5701,7 +5733,7 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|arrows_visible
 operator|&&
@@ -5755,7 +5787,7 @@ if|if
 condition|(
 name|touchscreen_mode
 condition|)
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 operator|=
@@ -5763,7 +5795,7 @@ name|in_arrow
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 operator|!=
@@ -5777,7 +5809,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|arrows_visible
 condition|)
@@ -5791,14 +5823,14 @@ if|if
 condition|(
 name|enter
 operator|&&
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 condition|)
 block|{
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|==
@@ -5807,10 +5839,10 @@ condition|)
 block|{
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|scroll_step
 operator|=
@@ -5827,7 +5859,7 @@ block|{
 comment|/* Only do stuff on click. */
 name|gimp_tag_popup_start_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 name|arrow_pressed
@@ -5853,7 +5885,7 @@ condition|)
 block|{
 name|gimp_tag_popup_stop_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -5881,11 +5913,11 @@ name|in_arrow
 operator|&&
 operator|(
 operator|!
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 operator|||
-name|tag_popup
+name|popup
 operator|->
 name|scroll_fast
 operator|!=
@@ -5893,13 +5925,13 @@ name|scroll_fast
 operator|)
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 operator|=
 name|TRUE
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|scroll_fast
 operator|=
@@ -5907,10 +5939,10 @@ name|scroll_fast
 expr_stmt|;
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|scroll_step
 operator|=
@@ -5922,7 +5954,7 @@ else|:
 operator|-
 name|MENU_SCROLL_STEP1
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|=
@@ -5936,7 +5968,7 @@ name|MENU_SCROLL_TIMEOUT1
 argument_list|,
 name|gimp_tag_popup_scroll_timeout
 argument_list|,
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -5949,14 +5981,14 @@ operator|&&
 operator|!
 name|in_arrow
 operator|&&
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 condition|)
 block|{
 name|gimp_tag_popup_stop_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -5965,7 +5997,7 @@ block|}
 comment|/*  gimp_tag_popup_start_scrolling() might have hit the top of the        *  tag_popup, so check if the button isn't insensitive before        *  changing it to something else.        */
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 operator|!=
@@ -5988,7 +6020,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 condition|)
@@ -6000,12 +6032,12 @@ if|if
 condition|(
 name|arrow_state
 operator|!=
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_state
 operator|=
@@ -6015,7 +6047,7 @@ name|gdk_window_invalidate_rect
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 operator|->
 name|window
@@ -6032,7 +6064,7 @@ block|}
 comment|/*  lower arrow handling  */
 name|get_arrows_sensitive_area
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|NULL
 argument_list|,
@@ -6046,7 +6078,7 @@ name|FALSE
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|arrows_visible
 operator|&&
@@ -6100,7 +6132,7 @@ if|if
 condition|(
 name|touchscreen_mode
 condition|)
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 operator|=
@@ -6108,7 +6140,7 @@ name|in_arrow
 expr_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 operator|!=
@@ -6122,7 +6154,7 @@ name|FALSE
 decl_stmt|;
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|arrows_visible
 condition|)
@@ -6136,14 +6168,14 @@ if|if
 condition|(
 name|enter
 operator|&&
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 condition|)
 block|{
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|==
@@ -6152,10 +6184,10 @@ condition|)
 block|{
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|scroll_step
 operator|=
@@ -6171,7 +6203,7 @@ block|{
 comment|/* Only do stuff on click. */
 name|gimp_tag_popup_start_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 name|arrow_pressed
@@ -6197,7 +6229,7 @@ condition|)
 block|{
 name|gimp_tag_popup_stop_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -6229,11 +6261,11 @@ name|in_arrow
 operator|&&
 operator|(
 operator|!
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 operator|||
-name|tag_popup
+name|popup
 operator|->
 name|scroll_fast
 operator|!=
@@ -6241,13 +6273,13 @@ name|scroll_fast
 operator|)
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 operator|=
 name|TRUE
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|scroll_fast
 operator|=
@@ -6255,10 +6287,10 @@ name|scroll_fast
 expr_stmt|;
 name|gimp_tag_popup_remove_scroll_timeout
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|scroll_step
 operator|=
@@ -6268,7 +6300,7 @@ name|MENU_SCROLL_STEP2
 else|:
 name|MENU_SCROLL_STEP1
 expr_stmt|;
-name|tag_popup
+name|popup
 operator|->
 name|timeout_id
 operator|=
@@ -6282,7 +6314,7 @@ name|MENU_SCROLL_TIMEOUT1
 argument_list|,
 name|gimp_tag_popup_scroll_timeout
 argument_list|,
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
@@ -6295,23 +6327,23 @@ operator|&&
 operator|!
 name|in_arrow
 operator|&&
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 condition|)
 block|{
 name|gimp_tag_popup_stop_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 expr_stmt|;
 block|}
 block|}
 block|}
-comment|/*  gimp_tag_popup_start_scrolling() might have hit the bottom of the        *  tag_popup, so check if the button isn't insensitive before        *  changing it to something else.        */
+comment|/*  gimp_tag_popup_start_scrolling() might have hit the bottom of the        *  popup, so check if the button isn't insensitive before        *  changing it to something else.        */
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 operator|!=
@@ -6334,7 +6366,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 condition|)
@@ -6346,12 +6378,12 @@ if|if
 condition|(
 name|arrow_state
 operator|!=
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 condition|)
 block|{
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_state
 operator|=
@@ -6361,7 +6393,7 @@ name|gdk_window_invalidate_rect
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 operator|->
 name|window
@@ -6381,12 +6413,12 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tag_popup_button_scroll (GimpTagPopup * tag_popup,GdkEventButton * event)
+DECL|function|gimp_tag_popup_button_scroll (GimpTagPopup * popup,GdkEventButton * event)
 name|gimp_tag_popup_button_scroll
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|GdkEventButton
 modifier|*
@@ -6395,11 +6427,11 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|tag_popup
+name|popup
 operator|->
 name|upper_arrow_prelight
 operator|||
-name|tag_popup
+name|popup
 operator|->
 name|lower_arrow_prelight
 condition|)
@@ -6413,7 +6445,7 @@ name|gtk_widget_get_settings
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|)
 argument_list|)
 argument_list|,
@@ -6431,7 +6463,7 @@ name|touchscreen_mode
 condition|)
 name|gimp_tag_popup_handle_scrolling
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 name|event
 operator|->
@@ -6463,12 +6495,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_arrows_visible_area (GimpTagPopup * tag_popup,GdkRectangle * border,GdkRectangle * upper,GdkRectangle * lower,gint * arrow_space)
+DECL|function|get_arrows_visible_area (GimpTagPopup * popup,GdkRectangle * border,GdkRectangle * upper,GdkRectangle * lower,gint * arrow_space)
 name|get_arrows_visible_area
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|GdkRectangle
 modifier|*
@@ -6493,7 +6525,7 @@ name|widget
 init|=
 name|GTK_WIDGET
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|alignment
 argument_list|)
@@ -6501,7 +6533,7 @@ decl_stmt|;
 name|gint
 name|scroll_arrow_height
 init|=
-name|tag_popup
+name|popup
 operator|->
 name|scroll_arrow_height
 decl_stmt|;
@@ -6521,7 +6553,7 @@ name|gtk_alignment_get_padding
 argument_list|(
 name|GTK_ALIGNMENT
 argument_list|(
-name|tag_popup
+name|popup
 operator|->
 name|alignment
 argument_list|)
@@ -6635,12 +6667,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|get_arrows_sensitive_area (GimpTagPopup * tag_popup,GdkRectangle * upper,GdkRectangle * lower)
+DECL|function|get_arrows_sensitive_area (GimpTagPopup * popup,GdkRectangle * upper,GdkRectangle * lower)
 name|get_arrows_sensitive_area
 parameter_list|(
 name|GimpTagPopup
 modifier|*
-name|tag_popup
+name|popup
 parameter_list|,
 name|GdkRectangle
 modifier|*
@@ -6665,7 +6697,7 @@ name|tmp_arrow_space
 decl_stmt|;
 name|get_arrows_visible_area
 argument_list|(
-name|tag_popup
+name|popup
 argument_list|,
 operator|&
 name|tmp_border

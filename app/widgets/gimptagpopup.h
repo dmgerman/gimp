@@ -78,25 +78,10 @@ typedef|;
 end_typedef
 
 begin_typedef
-typedef|typedef
-struct|struct
-DECL|struct|__anon296b42140108
-block|{
-DECL|member|tag
-name|GimpTag
-modifier|*
-name|tag
-decl_stmt|;
-DECL|member|bounds
-name|GdkRectangle
-name|bounds
-decl_stmt|;
-DECL|member|state
-name|GtkStateType
-name|state
-decl_stmt|;
 DECL|typedef|PopupTagData
-block|}
+typedef|typedef
+name|struct
+name|_PopupTagData
 name|PopupTagData
 typedef|;
 end_typedef
@@ -240,7 +225,7 @@ name|gimp_tag_popup_new
 parameter_list|(
 name|GimpComboTagEntry
 modifier|*
-name|combo_entry
+name|entry
 parameter_list|)
 function_decl|;
 end_function_decl
