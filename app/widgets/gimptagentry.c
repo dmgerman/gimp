@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3eb2f30103
+DECL|enum|__anon289c7dc60103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3eb2f30203
+DECL|enum|__anon289c7dc60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -753,9 +753,7 @@ name|GIMP_TYPE_FILTERED_CONTAINER
 argument_list|,
 name|G_PARAM_CONSTRUCT_ONLY
 operator||
-name|G_PARAM_WRITABLE
-operator||
-name|G_PARAM_READABLE
+name|G_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -783,9 +781,7 @@ name|GIMP_TAG_ENTRY_MODE_QUERY
 argument_list|,
 name|G_PARAM_CONSTRUCT_ONLY
 operator||
-name|G_PARAM_WRITABLE
-operator||
-name|G_PARAM_READABLE
+name|G_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1152,26 +1148,9 @@ name|entry
 operator|->
 name|container
 operator|=
-name|g_value_get_object
+name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
-expr_stmt|;
-name|g_assert
-argument_list|(
-name|GIMP_IS_FILTERED_CONTAINER
-argument_list|(
-name|entry
-operator|->
-name|container
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_ref
-argument_list|(
-name|entry
-operator|->
-name|container
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
