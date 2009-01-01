@@ -168,12 +168,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpcanvas.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
