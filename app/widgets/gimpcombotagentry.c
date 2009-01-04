@@ -517,7 +517,7 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|GIMP_TAG_ENTRY
 argument_list|(
@@ -534,6 +534,8 @@ name|gimp_combo_tag_entry_tag_count_changed
 argument_list|)
 argument_list|,
 name|entry
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
