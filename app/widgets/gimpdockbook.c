@@ -161,7 +161,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b5cb710103
+DECL|enum|__anon2957ee290103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1398,11 +1398,12 @@ name|gimp_dockable_get_tab_widget
 argument_list|(
 name|dockable
 argument_list|,
+name|gimp_dock_get_context
+argument_list|(
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|context
+argument_list|)
 argument_list|,
 name|GIMP_TAB_STYLE_ICON_BLURB
 argument_list|,
@@ -1483,11 +1484,12 @@ name|gimp_dockable_set_context
 argument_list|(
 name|dockable
 argument_list|,
+name|gimp_dock_get_context
+argument_list|(
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -1725,11 +1727,12 @@ name|gimp_dockable_get_tab_widget
 argument_list|(
 name|dockable
 argument_list|,
+name|gimp_dock_get_context
+argument_list|(
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|context
+argument_list|)
 argument_list|,
 name|dockable
 operator|->

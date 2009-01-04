@@ -999,11 +999,12 @@ if|if
 condition|(
 name|gimp_dialog_factory_find_entry
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|dialog_factory
+argument_list|)
 argument_list|,
 name|identifier
 argument_list|)
@@ -1025,11 +1026,12 @@ if|if
 condition|(
 name|gimp_dialog_factory_find_entry
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|dialog_factory
+argument_list|)
 argument_list|,
 name|identifier
 argument_list|)
@@ -1085,11 +1087,12 @@ name|n_books
 operator|=
 name|g_list_length
 argument_list|(
+name|gimp_dock_get_dockbooks
+argument_list|(
 name|dockbook
 operator|->
 name|dock
-operator|->
-name|dockbooks
+argument_list|)
 argument_list|)
 expr_stmt|;
 DECL|macro|SET_ACTIVE (action,active)

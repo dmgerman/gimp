@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf199ac0103
+DECL|enum|__anon2bd5af720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4110,9 +4110,10 @@ name|dock
 operator|=
 name|gimp_dialog_factory_dock_new
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|src_dock
-operator|->
-name|dialog_factory
+argument_list|)
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -4147,12 +4148,13 @@ name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|GIMP_DOCK
 argument_list|(
 name|dock
 argument_list|)
-operator|->
-name|dialog_factory
+argument_list|)
 operator|->
 name|menu_factory
 argument_list|)

@@ -861,9 +861,10 @@ name|n_books
 operator|=
 name|g_list_length
 argument_list|(
+name|gimp_dock_get_dockbooks
+argument_list|(
 name|dock
-operator|->
-name|dockbooks
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|children
@@ -923,9 +924,10 @@ name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|dock
-operator|->
-name|dialog_factory
+argument_list|)
 operator|->
 name|menu_factory
 argument_list|)

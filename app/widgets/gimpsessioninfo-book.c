@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbb4c860103
+DECL|enum|__anon2a8b6da70103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -835,9 +835,10 @@ name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|dock
-operator|->
-name|dialog_factory
+argument_list|)
 operator|->
 name|menu_factory
 argument_list|)

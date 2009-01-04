@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e62410103
+DECL|enum|__anon2baa7e850103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_LOCKED
 name|SESSION_INFO_DOCKABLE_LOCKED
@@ -1010,9 +1010,10 @@ name|dockable
 operator|=
 name|gimp_dialog_factory_dockable_new
 argument_list|(
+name|gimp_dock_get_dialog_factory
+argument_list|(
 name|dock
-operator|->
-name|dialog_factory
+argument_list|)
 argument_list|,
 name|dock
 argument_list|,

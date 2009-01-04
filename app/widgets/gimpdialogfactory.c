@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ac834b0103
+DECL|enum|__anon2796b5290103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ac834b0203
+DECL|enum|__anon2796b5290203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -1893,12 +1893,13 @@ name|factory
 argument_list|,
 name|entry
 argument_list|,
+name|gimp_dock_get_context
+argument_list|(
 name|GIMP_DOCK
 argument_list|(
 name|dock
 argument_list|)
-operator|->
-name|context
+argument_list|)
 argument_list|,
 name|view_size
 argument_list|)
@@ -2540,9 +2541,10 @@ name|dock
 argument_list|)
 argument_list|)
 argument_list|,
+name|gimp_dock_get_context
+argument_list|(
 name|dock
-operator|->
-name|context
+argument_list|)
 argument_list|,
 name|identifier
 argument_list|,

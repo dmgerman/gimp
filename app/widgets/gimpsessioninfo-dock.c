@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b28f4e40103
+DECL|enum|__anon2ac1ecba0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -384,9 +384,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_dock_get_dockbooks
+argument_list|(
 name|dock
-operator|->
-name|dockbooks
+argument_list|)
 init|;
 name|list
 condition|;
