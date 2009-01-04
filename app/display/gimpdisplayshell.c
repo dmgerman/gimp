@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7164ab0103
+DECL|enum|__anon292a018e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7164ab0203
+DECL|enum|__anon292a018e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7516,9 +7516,9 @@ decl_stmt|,
 name|max_auto_height
 decl_stmt|;
 name|gint
-name|border_x
+name|border_width
 decl_stmt|,
-name|border_y
+name|border_height
 decl_stmt|;
 name|gboolean
 name|resize
@@ -7621,7 +7621,7 @@ name|shell
 operator|->
 name|disp_height
 expr_stmt|;
-name|border_x
+name|border_width
 operator|=
 name|widget
 operator|->
@@ -7631,7 +7631,7 @@ name|width
 operator|-
 name|disp_width
 expr_stmt|;
-name|border_y
+name|border_height
 operator|=
 name|widget
 operator|->
@@ -7648,7 +7648,7 @@ name|rect
 operator|.
 name|width
 operator|-
-name|border_x
+name|border_width
 operator|)
 operator|*
 literal|0.75
@@ -7660,7 +7660,7 @@ name|rect
 operator|.
 name|height
 operator|-
-name|border_y
+name|border_height
 operator|)
 operator|*
 literal|0.75
@@ -7672,7 +7672,7 @@ operator|(
 operator|(
 name|width
 operator|+
-name|border_x
+name|border_width
 operator|)
 operator|<
 name|rect
@@ -7682,7 +7682,7 @@ operator|||
 operator|(
 name|height
 operator|+
-name|border_y
+name|border_height
 operator|)
 operator|<
 name|rect
@@ -7707,7 +7707,7 @@ operator|(
 operator|(
 name|width
 operator|+
-name|border_x
+name|border_width
 operator|)
 operator|<
 name|rect
@@ -7725,7 +7725,7 @@ operator|(
 operator|(
 name|height
 operator|+
-name|border_y
+name|border_height
 operator|)
 operator|<
 name|rect
@@ -7821,13 +7821,13 @@ name|width
 operator|=
 name|width
 operator|+
-name|border_x
+name|border_width
 expr_stmt|;
 name|height
 operator|=
 name|height
 operator|+
-name|border_y
+name|border_height
 expr_stmt|;
 if|if
 condition|(
