@@ -876,6 +876,7 @@ name|tool
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* This line of code is evil because it relies on that the 'options'    * object is fully constructed before we get here, which is not    * guaranteed    */
 name|container
 operator|=
 name|GTK_CONTAINER
@@ -888,6 +889,11 @@ literal|"controls-container"
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|container
+condition|)
+block|{
 name|align_tool
 operator|->
 name|controls
@@ -913,6 +919,7 @@ operator|->
 name|controls
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|object
 return|;
@@ -1888,6 +1895,17 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
+if|if
+condition|(
+name|align_tool
+operator|->
+name|button
+index|[
+name|i
+index|]
+condition|)
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|align_tool
@@ -1906,6 +1924,8 @@ name|NULL
 operator|)
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 name|align_tool
 operator|->
 name|x1
