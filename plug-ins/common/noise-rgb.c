@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f7f39a0108
+DECL|struct|__anon27cca9f90108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f7f39a0208
+DECL|struct|__anon27cca9f90208
 block|{
 DECL|member|channels
 name|gint
@@ -1165,7 +1165,7 @@ name|gr
 init|=
 name|data
 decl_stmt|;
-name|gint
+name|gdouble
 name|noise
 init|=
 literal|0
@@ -1219,10 +1219,6 @@ operator|)
 condition|)
 name|noise
 operator|=
-call|(
-name|gint
-call|)
-argument_list|(
 name|nvals
 operator|.
 name|noise
@@ -1236,7 +1232,6 @@ name|gr
 argument_list|)
 operator|*
 literal|127
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1283,6 +1278,8 @@ operator|/
 literal|127.0
 operator|)
 operator|)
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
@@ -1290,12 +1287,19 @@ else|else
 block|{
 name|p
 operator|=
+call|(
+name|gint
+call|)
+argument_list|(
 name|src
 index|[
 name|b
 index|]
 operator|+
 name|noise
+operator|+
+literal|0.5
+argument_list|)
 expr_stmt|;
 block|}
 name|dest
