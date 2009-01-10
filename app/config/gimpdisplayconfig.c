@@ -95,7 +95,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c79501a0103
+DECL|enum|__anon298a59dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -417,7 +417,7 @@ name|MARCHING_ANTS_SPEED_BLURB
 argument_list|,
 literal|10
 argument_list|,
-literal|1000
+literal|10000
 argument_list|,
 name|DEFAULT_MARCHING_ANTS_SPEED
 argument_list|,
