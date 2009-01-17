@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60108
+DECL|struct|__anon29ac68dd0108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60208
+DECL|struct|__anon29ac68dd0208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60308
+DECL|struct|__anon29ac68dd0308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60408
+DECL|struct|__anon29ac68dd0408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60508
+DECL|struct|__anon29ac68dd0508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60608
+DECL|struct|__anon29ac68dd0608
 block|{
 DECL|member|name
 specifier|const
@@ -1723,7 +1723,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"colorspace"
 block|,
-literal|"separate to 0:RGB, 1:CMYK, 2:Luminance"
+literal|"separate to 0:Grayscale, 1:RGB, 2:CMYK, 3:Luminance"
 block|}
 block|,
 block|{
@@ -7067,7 +7067,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e468f60708
+DECL|struct|__anon29ac68dd0708
 block|{
 DECL|member|index
 name|gint
