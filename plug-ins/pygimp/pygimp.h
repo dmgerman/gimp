@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* -*- Mode: C; c-basic-offset: 4 -*-     Gimp-Python - allows the writing of Gimp plugins in Python.     Copyright (C) 1997-2002  James Henstridge<james@daa.com.au>      This program is free software; you can redistribute it and/or modify     it under the terms of the GNU General Public License as published by     the Free Software Foundation; either version 2 of the License, or     (at your option) any later version.      This program is distributed in the hope that it will be useful,     but WITHOUT ANY WARRANTY; without even the implied warranty of     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the     GNU General Public License for more details.      You should have received a copy of the GNU General Public License     along with this program; if not, write to the Free Software     Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.  */
+comment|/* -*- Mode: C; c-basic-offset: 4 -*-  * Gimp-Python - allows the writing of Gimp plugins in Python.  * Copyright (C) 1997-2002  James Henstridge<james@daa.com.au>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -391,7 +391,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon29e595b70108
+DECL|struct|__anon2c2d8bf40108
 typedef|typedef
 struct|struct
 block|{
@@ -448,7 +448,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon29e595b70208
+DECL|struct|__anon2c2d8bf40208
 typedef|typedef
 struct|struct
 block|{
@@ -518,7 +518,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon29e595b70308
+DECL|struct|__anon2c2d8bf40308
 typedef|typedef
 struct|struct
 block|{
@@ -608,7 +608,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon29e595b70408
+DECL|struct|__anon2c2d8bf40408
 typedef|typedef
 struct|struct
 block|{

@@ -4,7 +4,7 @@ comment|/* xjt.c  *  * XJT (JPEG-TAR fileformat) loading and saving file filter 
 end_comment
 
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -273,7 +273,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0103
+DECL|enum|__anon293456360103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -473,7 +473,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0203
+DECL|enum|__anon293456360203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -533,7 +533,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0303
+DECL|enum|__anon293456360303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -563,7 +563,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0403
+DECL|enum|__anon293456360403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -585,7 +585,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0503
+DECL|enum|__anon293456360503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -605,7 +605,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0603
+DECL|enum|__anon293456360603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -640,7 +640,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a94c0703
+DECL|enum|__anon293456360703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -765,7 +765,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0808
+DECL|struct|__anon293456360808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -801,7 +801,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0908
+DECL|struct|__anon293456360908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -850,7 +850,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0a08
+DECL|struct|__anon293456360a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -887,7 +887,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0b08
+DECL|struct|__anon293456360b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -937,7 +937,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0c08
+DECL|struct|__anon293456360c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -1011,7 +1011,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0d08
+DECL|struct|__anon293456360d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1096,7 +1096,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0e08
+DECL|struct|__anon293456360e08
 block|{
 DECL|member|position
 name|gint32
@@ -1120,7 +1120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a94c0f08
+DECL|struct|__anon293456360f08
 block|{
 DECL|member|version
 name|gchar

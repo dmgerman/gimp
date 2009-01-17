@@ -4,7 +4,7 @@ comment|/* A Bison parser, made by GNU Bison 2.3.  */
 end_comment
 
 begin_comment
-comment|/* Skeleton implementation for Bison's Yacc-like parsers in C     Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006    Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301, USA.  */
+comment|/* Skeleton implementation for Bison's Yacc-like parsers in C     Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006    Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 3, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_comment
@@ -319,7 +319,7 @@ file|"imap_cern.y"
 end_line
 
 begin_comment
-comment|/*  * This is a plug-in for GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_include
@@ -520,7 +520,7 @@ union|union
 name|YYSTYPE
 line|#
 directive|line
-number|47
+number|46
 file|"imap_cern.y"
 block|{
 DECL|member|val
@@ -540,7 +540,7 @@ block|}
 comment|/* Line 187 of yacc.c.  */
 line|#
 directive|line
-number|180
+number|179
 file|"y.tab.c"
 DECL|typedef|YYSTYPE
 name|YYSTYPE
@@ -592,7 +592,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|193
+number|192
 file|"y.tab.c"
 end_line
 
@@ -2667,13 +2667,15 @@ init|=
 block|{
 literal|0
 block|,
-literal|60
+literal|59
 block|,
-literal|60
+literal|59
+block|,
+literal|62
 block|,
 literal|63
 block|,
-literal|64
+literal|66
 block|,
 literal|67
 block|,
@@ -2683,35 +2685,33 @@ literal|69
 block|,
 literal|70
 block|,
-literal|71
+literal|73
 block|,
-literal|74
+literal|82
 block|,
-literal|83
+literal|95
 block|,
-literal|96
+literal|107
 block|,
-literal|108
+literal|107
 block|,
-literal|108
+literal|115
 block|,
 literal|116
 block|,
-literal|117
+literal|121
 block|,
-literal|122
+literal|130
 block|,
 literal|131
 block|,
 literal|132
 block|,
-literal|133
+literal|135
 block|,
-literal|136
+literal|141
 block|,
-literal|142
-block|,
-literal|150
+literal|149
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -5147,7 +5147,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon2794b7770103
+DECL|enum|__anon2b79f6f80103
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{
@@ -6550,7 +6550,7 @@ literal|10
 case|:
 line|#
 directive|line
-number|75
+number|74
 file|"imap_cern.y"
 block|{
 name|MapInfo_t
@@ -6608,7 +6608,7 @@ literal|11
 case|:
 line|#
 directive|line
-number|84
+number|83
 file|"imap_cern.y"
 block|{
 name|gint
@@ -6768,7 +6768,7 @@ literal|12
 case|:
 line|#
 directive|line
-number|97
+number|96
 file|"imap_cern.y"
 block|{
 name|gint
@@ -6895,7 +6895,7 @@ literal|13
 case|:
 line|#
 directive|line
-number|108
+number|107
 file|"imap_cern.y"
 block|{
 name|current_object
@@ -6912,7 +6912,7 @@ literal|14
 case|:
 line|#
 directive|line
-number|109
+number|108
 file|"imap_cern.y"
 block|{
 name|object_set_url
@@ -6965,7 +6965,7 @@ literal|16
 case|:
 line|#
 directive|line
-number|118
+number|117
 file|"imap_cern.y"
 block|{ 		}
 break|break;
@@ -6974,7 +6974,7 @@ literal|17
 case|:
 line|#
 directive|line
-number|123
+number|122
 file|"imap_cern.y"
 block|{
 name|Polygon_t
@@ -7052,7 +7052,7 @@ literal|21
 case|:
 line|#
 directive|line
-number|137
+number|136
 file|"imap_cern.y"
 block|{
 name|g_free
@@ -7080,7 +7080,7 @@ literal|22
 case|:
 line|#
 directive|line
-number|143
+number|142
 file|"imap_cern.y"
 block|{
 name|MapInfo_t
@@ -7138,7 +7138,7 @@ literal|23
 case|:
 line|#
 directive|line
-number|151
+number|150
 file|"imap_cern.y"
 block|{
 name|MapInfo_t
@@ -7213,7 +7213,7 @@ break|break;
 comment|/* Line 1267 of yacc.c.  */
 line|#
 directive|line
-number|1510
+number|1509
 file|"y.tab.c"
 default|default:
 break|break;
@@ -7857,7 +7857,7 @@ end_decl_stmt
 begin_line
 line|#
 directive|line
-number|163
+number|162
 file|"imap_cern.y"
 end_line
 

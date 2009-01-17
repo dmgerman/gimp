@@ -4,7 +4,7 @@ comment|/* A Bison parser, made by GNU Bison 2.3.  */
 end_comment
 
 begin_comment
-comment|/* Skeleton implementation for Bison's Yacc-like parsers in C     Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006    Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301, USA.  */
+comment|/* Skeleton implementation for Bison's Yacc-like parsers in C     Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006    Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 3, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_comment
@@ -527,7 +527,7 @@ file|"imap_csim.y"
 end_line
 
 begin_comment
-comment|/*  * This is a plug-in for GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-2005 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_include
@@ -619,7 +619,7 @@ function_decl|;
 end_function_decl
 
 begin_enum
-DECL|enum|__anon2a1fefa40103
+DECL|enum|__anon2ab40aaf0103
 DECL|enumerator|UNDEFINED
 DECL|enumerator|RECTANGLE
 DECL|enumerator|CIRCLE
@@ -765,7 +765,7 @@ union|union
 name|YYSTYPE
 line|#
 directive|line
-number|49
+number|48
 file|"imap_csim.y"
 block|{
 DECL|member|val
@@ -785,7 +785,7 @@ block|}
 comment|/* Line 187 of yacc.c.  */
 line|#
 directive|line
-number|214
+number|213
 file|"y.tab.c"
 DECL|typedef|YYSTYPE
 name|YYSTYPE
@@ -837,7 +837,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|227
+number|226
 file|"y.tab.c"
 end_line
 
@@ -3210,15 +3210,17 @@ init|=
 block|{
 literal|0
 block|,
-literal|66
+literal|65
 block|,
-literal|66
+literal|65
 block|,
-literal|69
+literal|68
+block|,
+literal|75
 block|,
 literal|76
 block|,
-literal|77
+literal|79
 block|,
 literal|80
 block|,
@@ -3228,47 +3230,47 @@ literal|82
 block|,
 literal|83
 block|,
-literal|84
+literal|86
 block|,
-literal|87
+literal|92
 block|,
-literal|93
+literal|98
 block|,
-literal|99
+literal|102
 block|,
-literal|103
+literal|109
 block|,
-literal|110
+literal|116
 block|,
 literal|117
 block|,
-literal|118
+literal|120
 block|,
 literal|121
 block|,
 literal|122
 block|,
-literal|123
+literal|125
 block|,
-literal|126
+literal|131
 block|,
-literal|132
+literal|138
 block|,
-literal|139
+literal|149
 block|,
 literal|150
 block|,
-literal|151
+literal|153
 block|,
-literal|154
+literal|160
 block|,
 literal|161
 block|,
-literal|162
+literal|164
 block|,
 literal|165
 block|,
-literal|166
+literal|168
 block|,
 literal|169
 block|,
@@ -3288,33 +3290,31 @@ literal|176
 block|,
 literal|177
 block|,
-literal|178
+literal|180
 block|,
-literal|181
+literal|198
 block|,
-literal|199
+literal|258
 block|,
-literal|259
+literal|269
 block|,
-literal|270
+literal|274
 block|,
 literal|275
 block|,
-literal|276
+literal|281
 block|,
-literal|282
+literal|288
 block|,
-literal|289
+literal|295
 block|,
-literal|296
+literal|302
 block|,
-literal|303
+literal|309
 block|,
-literal|310
+literal|316
 block|,
-literal|317
-block|,
-literal|324
+literal|323
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -6597,7 +6597,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon2a1fefa40203
+DECL|enum|__anon2ab40aaf0203
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{
@@ -8000,7 +8000,7 @@ literal|3
 case|:
 line|#
 directive|line
-number|70
+number|69
 file|"imap_csim.y"
 block|{
 name|g_strreplace
@@ -8051,7 +8051,7 @@ literal|8
 case|:
 line|#
 directive|line
-number|82
+number|81
 file|"imap_csim.y"
 block|{}
 break|break;
@@ -8060,7 +8060,7 @@ literal|9
 case|:
 line|#
 directive|line
-number|83
+number|82
 file|"imap_csim.y"
 block|{
 name|g_free
@@ -8088,7 +8088,7 @@ literal|10
 case|:
 line|#
 directive|line
-number|84
+number|83
 file|"imap_csim.y"
 block|{
 name|g_free
@@ -8116,7 +8116,7 @@ literal|11
 case|:
 line|#
 directive|line
-number|88
+number|87
 file|"imap_csim.y"
 block|{
 name|_map_info
@@ -8145,7 +8145,7 @@ literal|12
 case|:
 line|#
 directive|line
-number|94
+number|93
 file|"imap_csim.y"
 block|{
 name|_map_info
@@ -8174,7 +8174,7 @@ literal|13
 case|:
 line|#
 directive|line
-number|100
+number|99
 file|"imap_csim.y"
 block|{
 operator|(
@@ -8208,7 +8208,7 @@ literal|14
 case|:
 line|#
 directive|line
-number|104
+number|103
 file|"imap_csim.y"
 block|{
 operator|(
@@ -8265,7 +8265,7 @@ literal|15
 case|:
 line|#
 directive|line
-number|111
+number|110
 file|"imap_csim.y"
 block|{
 name|g_strreplace
@@ -8316,7 +8316,7 @@ literal|21
 case|:
 line|#
 directive|line
-number|127
+number|126
 file|"imap_csim.y"
 block|{
 name|g_free
@@ -8344,7 +8344,7 @@ literal|22
 case|:
 line|#
 directive|line
-number|133
+number|132
 file|"imap_csim.y"
 block|{
 name|g_strreplace
@@ -8395,7 +8395,7 @@ literal|23
 case|:
 line|#
 directive|line
-number|140
+number|139
 file|"imap_csim.y"
 block|{
 name|gchar
@@ -8465,7 +8465,7 @@ literal|26
 case|:
 line|#
 directive|line
-number|155
+number|154
 file|"imap_csim.y"
 block|{
 if|if
@@ -8486,7 +8486,7 @@ literal|41
 case|:
 line|#
 directive|line
-number|182
+number|181
 file|"imap_csim.y"
 block|{
 if|if
@@ -8664,7 +8664,7 @@ literal|42
 case|:
 line|#
 directive|line
-number|200
+number|199
 file|"imap_csim.y"
 block|{
 name|char
@@ -9106,7 +9106,7 @@ literal|43
 case|:
 line|#
 directive|line
-number|260
+number|259
 file|"imap_csim.y"
 block|{
 if|if
@@ -9188,7 +9188,7 @@ literal|44
 case|:
 line|#
 directive|line
-number|271
+number|270
 file|"imap_csim.y"
 block|{ 		}
 break|break;
@@ -9197,7 +9197,7 @@ literal|46
 case|:
 line|#
 directive|line
-number|277
+number|276
 file|"imap_csim.y"
 block|{
 name|g_free
@@ -9225,7 +9225,7 @@ literal|47
 case|:
 line|#
 directive|line
-number|283
+number|282
 file|"imap_csim.y"
 block|{
 name|object_set_comment
@@ -9273,7 +9273,7 @@ literal|48
 case|:
 line|#
 directive|line
-number|290
+number|289
 file|"imap_csim.y"
 block|{
 name|object_set_target
@@ -9321,7 +9321,7 @@ literal|49
 case|:
 line|#
 directive|line
-number|297
+number|296
 file|"imap_csim.y"
 block|{
 name|object_set_mouse_over
@@ -9369,7 +9369,7 @@ literal|50
 case|:
 line|#
 directive|line
-number|304
+number|303
 file|"imap_csim.y"
 block|{
 name|object_set_mouse_out
@@ -9417,7 +9417,7 @@ literal|51
 case|:
 line|#
 directive|line
-number|311
+number|310
 file|"imap_csim.y"
 block|{
 name|object_set_focus
@@ -9465,7 +9465,7 @@ literal|52
 case|:
 line|#
 directive|line
-number|318
+number|317
 file|"imap_csim.y"
 block|{
 name|object_set_blur
@@ -9511,7 +9511,7 @@ break|break;
 comment|/* Line 1267 of yacc.c.  */
 line|#
 directive|line
-number|1758
+number|1757
 file|"y.tab.c"
 default|default:
 break|break;
@@ -10155,7 +10155,7 @@ end_decl_stmt
 begin_line
 line|#
 directive|line
-number|327
+number|326
 file|"imap_csim.y"
 end_line
 

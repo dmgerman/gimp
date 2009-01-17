@@ -276,7 +276,7 @@ comment|/*                                                                      
 end_comment
 
 begin_comment
-comment|/* This program is free software; you can redistribute it and/or modify       */
+comment|/* This program is free software: you can redistribute it and/or modify       */
 end_comment
 
 begin_comment
@@ -284,7 +284,7 @@ comment|/* it under the terms of the GNU General Public License as published by 
 end_comment
 
 begin_comment
-comment|/* the Free Software Foundation; either version 2 of the License, or          */
+comment|/* the Free Software Foundation; either version 3 of the License, or          */
 end_comment
 
 begin_comment
@@ -320,11 +320,7 @@ comment|/* You should have received a copy of the GNU General Public License    
 end_comment
 
 begin_comment
-comment|/* along with this program; if not, write to the Free Software                */
-end_comment
-
-begin_comment
-comment|/* Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. */
+comment|/* along with this program.  If not, see<http://www.gnu.org/licenses/>.      */
 end_comment
 
 begin_comment

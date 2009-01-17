@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*============================================================================*    Paper Tile 1.0  -- A GIMP PLUG-IN    Copyright (C) 1997-1999 Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>    This program  is  free software;  you can redistribute it  and/or  modify it   under the terms of the GNU Public License as published  by the Free Software   Foundation;  either version 2 of the License,  or (at your option) any later   version.    This program is distributed in the hope that it will be useful,  but WITHOUT   ANY WARRANTY;  without  even  the  implied  warranty  of MERCHANTABILITY  or   FITNESS  FOR  A PARTICULAR PURPOSE.  See the GNU General Public License  for   more details.    You should have received a copy of the GNU General Public License along with   this program; if not, write to the Free Software Foundation, Inc.,   59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.   *===========================================================================*/
+comment|/*============================================================================*    Paper Tile 1.0  -- A GIMP PLUG-IN    Copyright (C) 1997-1999 Hirotsuna Mizuno<s1041150@u-aizu.ac.jp>    This program  is  free software:  you can redistribute it  and/or  modify it   under the terms of the GNU Public License as published  by the Free Software   Foundation;  either version 3 of the License,  or (at your option) any later   version.    This program is distributed in the hope that it will be useful,  but WITHOUT   ANY WARRANTY;  without  even  the  implied  warranty  of MERCHANTABILITY  or   FITNESS  FOR  A PARTICULAR PURPOSE.  See the GNU General Public License  for   more details.    You should have received a copy of the GNU General Public License along with   this program; if not, see<http://www.gnu.org/licenses/>.   *===========================================================================*/
 end_comment
 
 begin_include
@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e2f3340103
+DECL|enum|__anon28b6f3560103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e2f3340203
+DECL|enum|__anon28b6f3560203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -196,7 +196,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e2f3340308
+DECL|struct|__anon28b6f3560308
 block|{
 DECL|member|params
 name|PluginParams
@@ -216,7 +216,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28e2f3340408
+DECL|struct|__anon28b6f3560408
 block|{
 DECL|member|x0
 name|gint
@@ -597,7 +597,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28e2f3340508
+DECL|struct|__anon28b6f3560508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject

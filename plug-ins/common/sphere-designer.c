@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/*  * GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  */
+comment|/*  * GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_comment
@@ -214,7 +214,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abcd41c0103
+DECL|enum|__anon2893a3ae0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -239,7 +239,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abcd41c0203
+DECL|enum|__anon2893a3ae0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -288,7 +288,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abcd41c0303
+DECL|enum|__anon2893a3ae0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -304,7 +304,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abcd41c0403
+DECL|enum|__anon2893a3ae0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -314,7 +314,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abcd41c0503
+DECL|enum|__anon2893a3ae0503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -367,7 +367,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0608
+DECL|struct|__anon2893a3ae0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -390,7 +390,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0708
+DECL|struct|__anon2893a3ae0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -419,7 +419,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0808
+DECL|struct|__anon2893a3ae0808
 block|{
 DECL|member|majtype
 name|gint
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0908
+DECL|struct|__anon2893a3ae0908
 block|{
 DECL|member|type
 name|gshort
@@ -541,7 +541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0a08
+DECL|struct|__anon2893a3ae0a08
 block|{
 DECL|member|type
 name|gshort
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0b08
+DECL|struct|__anon2893a3ae0b08
 block|{
 DECL|member|com
 name|common
@@ -607,7 +607,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0c08
+DECL|struct|__anon2893a3ae0c08
 block|{
 DECL|member|com
 name|common
@@ -633,7 +633,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0d08
+DECL|struct|__anon2893a3ae0d08
 block|{
 DECL|member|com
 name|common
@@ -656,7 +656,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0e08
+DECL|struct|__anon2893a3ae0e08
 block|{
 DECL|member|com
 name|common
@@ -681,7 +681,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c0f08
+DECL|struct|__anon2893a3ae0f08
 block|{
 DECL|member|com
 name|common
@@ -704,7 +704,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c1008
+DECL|struct|__anon2893a3ae1008
 block|{
 DECL|member|com
 name|common
@@ -727,7 +727,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2abcd41c1108
+DECL|struct|__anon2893a3ae1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -753,7 +753,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2abcd41c120a
+DECL|union|__anon2893a3ae120a
 block|{
 DECL|member|com
 name|common

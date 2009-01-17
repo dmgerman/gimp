@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcompat.h  * Compatibility defines to ease migration from the GIMP-1.2 API  *  * This library is free software; you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 2 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library; if not, write to the  * Free Software Foundation, Inc., 59 Temple Place - Suite 330,  * Boston, MA 02111-1307, USA.  */
+comment|/* LIBGIMP - The GIMP Library  * Copyright (C) 1995-1997 Peter Mattis and Spencer Kimball  *  * gimpcompat.h  * Compatibility defines to ease migration from the GIMP-1.2 API  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -437,7 +437,7 @@ directive|define
 name|GIMP_IS_FILE_SELECTION
 value|GIMP_IS_FILE_ENTRY
 name|enum
-DECL|enum|__anon2c3d71080103
+DECL|enum|__anon2772b6ae0103
 type|{
 DECL|enumerator|GIMP_WHITE_MASK
 name|GIMP_WHITE_MASK
@@ -469,7 +469,7 @@ end_decl_stmt
 begin_enum
 unit|};
 enum|enum
-DECL|enum|__anon2c3d71080203
+DECL|enum|__anon2772b6ae0203
 block|{
 DECL|enumerator|GIMP_ADD
 name|GIMP_ADD
@@ -496,7 +496,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080303
+DECL|enum|__anon2772b6ae0303
 block|{
 DECL|enumerator|GIMP_FG_BG_RGB
 name|GIMP_FG_BG_RGB
@@ -523,7 +523,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080403
+DECL|enum|__anon2772b6ae0403
 block|{
 DECL|enumerator|GIMP_FG_IMAGE_FILL
 name|GIMP_FG_IMAGE_FILL
@@ -550,7 +550,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080503
+DECL|enum|__anon2772b6ae0503
 block|{
 DECL|enumerator|GIMP_APPLY
 name|GIMP_APPLY
@@ -567,7 +567,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080603
+DECL|enum|__anon2772b6ae0603
 block|{
 DECL|enumerator|GIMP_HARD
 name|GIMP_HARD
@@ -584,7 +584,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080703
+DECL|enum|__anon2772b6ae0703
 block|{
 DECL|enumerator|GIMP_CONTINUOUS
 name|GIMP_CONTINUOUS
@@ -601,7 +601,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080803
+DECL|enum|__anon2772b6ae0803
 block|{
 DECL|enumerator|GIMP_HORIZONTAL
 name|GIMP_HORIZONTAL
@@ -623,7 +623,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080903
+DECL|enum|__anon2772b6ae0903
 block|{
 DECL|enumerator|GIMP_LINEAR
 name|GIMP_LINEAR
@@ -685,7 +685,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d71080a03
+DECL|enum|__anon2772b6ae0a03
 block|{
 DECL|enumerator|GIMP_VALUE_LUT
 name|GIMP_VALUE_LUT

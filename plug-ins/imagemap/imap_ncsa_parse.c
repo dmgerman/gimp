@@ -4,7 +4,7 @@ comment|/* A Bison parser, made by GNU Bison 2.3.  */
 end_comment
 
 begin_comment
-comment|/* Skeleton implementation for Bison's Yacc-like parsers in C     Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006    Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 2, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301, USA.  */
+comment|/* Skeleton implementation for Bison's Yacc-like parsers in C     Copyright (C) 1984, 1989, 1990, 2000, 2001, 2002, 2003, 2004, 2005, 2006    Free Software Foundation, Inc.     This program is free software; you can redistribute it and/or modify    it under the terms of the GNU General Public License as published by    the Free Software Foundation; either version 3, or (at your option)    any later version.     This program is distributed in the hope that it will be useful,    but WITHOUT ANY WARRANTY; without even the implied warranty of    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the    GNU General Public License for more details.     You should have received a copy of the GNU General Public License    along with this program; if not, write to the Free Software    Foundation, Inc., 51 Franklin Street, Fifth Floor,    Boston, MA 02110-1301, USA.  */
 end_comment
 
 begin_comment
@@ -332,7 +332,7 @@ file|"imap_ncsa.y"
 end_line
 
 begin_comment
-comment|/*  * This is a plug-in for GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software; you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 2 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program; if not, write to the Free Software  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.  *  */
+comment|/*  * This is a plug-in for GIMP.  *  * Generates clickable image maps.  *  * Copyright (C) 1998-1999 Maurits Rijk  lpeek.mrijk@consunet.nl  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  *  */
 end_comment
 
 begin_include
@@ -533,7 +533,7 @@ union|union
 name|YYSTYPE
 line|#
 directive|line
-number|46
+number|45
 file|"imap_ncsa.y"
 block|{
 DECL|member|val
@@ -553,7 +553,7 @@ block|}
 comment|/* Line 187 of yacc.c.  */
 line|#
 directive|line
-number|181
+number|180
 file|"y.tab.c"
 DECL|typedef|YYSTYPE
 name|YYSTYPE
@@ -605,7 +605,7 @@ end_comment
 begin_line
 line|#
 directive|line
-number|194
+number|193
 file|"y.tab.c"
 end_line
 
@@ -2702,13 +2702,15 @@ init|=
 block|{
 literal|0
 block|,
-literal|59
+literal|58
 block|,
-literal|59
+literal|58
+block|,
+literal|61
 block|,
 literal|62
 block|,
-literal|63
+literal|65
 block|,
 literal|66
 block|,
@@ -2716,19 +2718,19 @@ literal|67
 block|,
 literal|68
 block|,
-literal|69
+literal|71
 block|,
-literal|72
+literal|77
 block|,
-literal|78
+literal|85
 block|,
-literal|86
+literal|93
 block|,
-literal|94
+literal|105
 block|,
 literal|106
 block|,
-literal|107
+literal|109
 block|,
 literal|110
 block|,
@@ -2738,23 +2740,21 @@ literal|112
 block|,
 literal|113
 block|,
-literal|114
+literal|116
 block|,
-literal|117
+literal|125
 block|,
-literal|126
+literal|138
 block|,
-literal|139
+literal|150
 block|,
-literal|151
+literal|150
 block|,
-literal|151
+literal|158
 block|,
 literal|159
 block|,
-literal|160
-block|,
-literal|165
+literal|164
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -5193,7 +5193,7 @@ name|yysize_overflow
 init|=
 literal|0
 decl_stmt|;
-DECL|enum|__anon2955a7cd0103
+DECL|enum|__anon2943c8c90103
 DECL|enumerator|YYERROR_VERBOSE_ARGS_MAXIMUM
 enum|enum
 block|{
@@ -6596,7 +6596,7 @@ literal|9
 case|:
 line|#
 directive|line
-number|73
+number|72
 file|"imap_ncsa.y"
 block|{
 name|g_free
@@ -6624,7 +6624,7 @@ literal|10
 case|:
 line|#
 directive|line
-number|79
+number|78
 file|"imap_ncsa.y"
 block|{
 name|MapInfo_t
@@ -6682,7 +6682,7 @@ literal|11
 case|:
 line|#
 directive|line
-number|87
+number|86
 file|"imap_ncsa.y"
 block|{
 name|MapInfo_t
@@ -6740,7 +6740,7 @@ literal|12
 case|:
 line|#
 directive|line
-number|95
+number|94
 file|"imap_ncsa.y"
 block|{
 name|MapInfo_t
@@ -6817,7 +6817,7 @@ literal|20
 case|:
 line|#
 directive|line
-number|118
+number|117
 file|"imap_ncsa.y"
 block|{
 name|MapInfo_t
@@ -6875,7 +6875,7 @@ literal|21
 case|:
 line|#
 directive|line
-number|127
+number|126
 file|"imap_ncsa.y"
 block|{
 name|gint
@@ -7035,7 +7035,7 @@ literal|22
 case|:
 line|#
 directive|line
-number|140
+number|139
 file|"imap_ncsa.y"
 block|{
 name|gint
@@ -7180,7 +7180,7 @@ literal|23
 case|:
 line|#
 directive|line
-number|151
+number|150
 file|"imap_ncsa.y"
 block|{
 name|current_object
@@ -7197,7 +7197,7 @@ literal|24
 case|:
 line|#
 directive|line
-number|152
+number|151
 file|"imap_ncsa.y"
 block|{
 name|object_set_url
@@ -7250,7 +7250,7 @@ literal|26
 case|:
 line|#
 directive|line
-number|161
+number|160
 file|"imap_ncsa.y"
 block|{ 		}
 break|break;
@@ -7259,7 +7259,7 @@ literal|27
 case|:
 line|#
 directive|line
-number|166
+number|165
 file|"imap_ncsa.y"
 block|{
 name|Polygon_t
@@ -7335,7 +7335,7 @@ break|break;
 comment|/* Line 1267 of yacc.c.  */
 line|#
 directive|line
-number|1518
+number|1517
 file|"y.tab.c"
 default|default:
 break|break;
@@ -7979,7 +7979,7 @@ end_decl_stmt
 begin_line
 line|#
 directive|line
-number|174
+number|173
 file|"imap_ncsa.y"
 end_line
 
