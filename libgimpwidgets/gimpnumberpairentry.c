@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8d3940103
+DECL|enum|__anon2c14d1be0103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +77,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8d3940203
+DECL|enum|__anon2c14d1be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e8d3940303
+DECL|enum|__anon2c14d1be0303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -143,7 +143,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8d3940408
+DECL|struct|__anon2c14d1be0408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number
@@ -2447,30 +2447,17 @@ case|case
 name|PARSE_VALID
 case|:
 block|{
-name|gdouble
-name|default_left_value
-decl_stmt|;
-name|gdouble
-name|default_right_value
-decl_stmt|;
-name|gimp_number_pair_entry_get_default_values
-argument_list|(
-name|entry
-argument_list|,
-operator|&
-name|default_left_value
-argument_list|,
-operator|&
-name|default_right_value
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
-name|default_left_value
+name|priv
+operator|->
+name|left_number
 operator|!=
 name|left_value
 operator|||
-name|default_right_value
+name|priv
+operator|->
+name|right_number
 operator|!=
 name|right_value
 operator|||
