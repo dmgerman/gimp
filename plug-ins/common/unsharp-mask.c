@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299993650108
+DECL|struct|__anon2b84f5210108
 block|{
 DECL|member|radius
 name|gdouble
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299993650208
+DECL|struct|__anon2b84f5210208
 block|{
 DECL|member|run
 name|gboolean
@@ -460,7 +460,7 @@ literal|"Winston Chang<winstonc@cs.wisc.edu>"
 argument_list|,
 literal|"Winston Chang"
 argument_list|,
-literal|"1999"
+literal|"1999-2009"
 argument_list|,
 name|N_
 argument_list|(
@@ -876,18 +876,18 @@ specifier|const
 name|gint
 name|box_width
 parameter_list|,
-comment|/* Width of the kernel */
+comment|/* Width of the kernel           */
 specifier|const
 name|gint
 name|even_offset
 parameter_list|,
-comment|/* If even width,                                            offset to left or right */
+comment|/* If even width,                                              offset to left or right       */
 specifier|const
 name|guchar
 modifier|*
 name|src
 parameter_list|,
-comment|/* Pointer to source buffer */
+comment|/* Pointer to source buffer      */
 name|guchar
 modifier|*
 name|dest
@@ -897,12 +897,12 @@ specifier|const
 name|gint
 name|len
 parameter_list|,
-comment|/* Length of buffer, in pixels */
+comment|/* Length of buffer, in pixels   */
 specifier|const
 name|gint
 name|bpp
 parameter_list|)
-comment|/* Bytes per pixel */
+comment|/* Bytes per pixel               */
 block|{
 name|gint
 name|i
@@ -910,11 +910,11 @@ decl_stmt|;
 name|gint
 name|lead
 decl_stmt|;
-comment|/* This marks the leading edge of the kernel */
+comment|/* This marks the leading edge of the kernel              */
 name|gint
 name|output
 decl_stmt|;
-comment|/* This marks the center of ther kernel      */
+comment|/* This marks the center of ther kernel                   */
 name|gint
 name|trail
 decl_stmt|;
@@ -925,7 +925,7 @@ index|[
 name|bpp
 index|]
 decl_stmt|;
-comment|/* Accumulator for each channel */
+comment|/* Accumulator for each channel                           */
 comment|/* The algorithm differs for even and odd-sized kernels.    * With the output at the center,    * If odd, the kernel might look like this: 0011100    * If even, the kernel will either be centered on the boundary between    * the output and its left neighbor, or on the boundary between the    * output and its right neighbor, depending on even_lr.    * So it might be 0111100 or 0011110, where output is on the center    * of these arrays.    */
 name|lead
 operator|=
@@ -1991,7 +1991,7 @@ name|cmatrix
 init|=
 name|NULL
 decl_stmt|;
-comment|/* Convolution matrix (for gaussian) */
+comment|/* Convolution matrix (for gaussian)     */
 name|gint
 name|cmatrix_length
 init|=
@@ -2002,7 +2002,7 @@ name|row
 decl_stmt|,
 name|col
 decl_stmt|;
-comment|/* Row,column counter */
+comment|/* Row, column counters                  */
 specifier|const
 name|gint
 name|threshold
@@ -2014,7 +2014,7 @@ decl_stmt|;
 name|gboolean
 name|box_blur
 decl_stmt|;
-comment|/* If we want to use a three pass box blur                            * instead of a gaussian blur                            */
+comment|/* If we want to use a three pass box                                      blur instead of a gaussian blur       */
 name|gint
 name|box_width
 init|=
@@ -2970,7 +2970,7 @@ operator|-
 name|i
 index|]
 expr_stmt|;
-comment|/* find center val -- calculate an odd number of quanta to make it symmetric,    * even if the center point is weighted slightly higher than others. */
+comment|/* find center val -- calculate an odd number of quanta to make it    * symmetric, even if the center point is weighted slightly higher    * than others.    */
 name|sum
 operator|=
 literal|0
