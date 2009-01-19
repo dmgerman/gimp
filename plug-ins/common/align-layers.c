@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acc2760103
+DECL|enum|__anon2b0a256b0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acc2760203
+DECL|enum|__anon2b0a256b0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acc2760303
+DECL|enum|__anon2b0a256b0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29acc2760403
+DECL|enum|__anon2b0a256b0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29acc2760508
+DECL|struct|__anon2b0a256b0508
 block|{
 DECL|member|h_style
 name|gint
@@ -323,7 +323,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

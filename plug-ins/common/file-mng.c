@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a52a510103
+DECL|enum|__anon2c4138ca0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a52a510203
+DECL|enum|__anon2c4138ca0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6056,7 +6056,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

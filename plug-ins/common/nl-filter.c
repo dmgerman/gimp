@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294a49e50108
+DECL|struct|__anon2b68877b0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -79,7 +79,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294a49e50203
+DECL|enum|__anon2b68877b0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -284,7 +284,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

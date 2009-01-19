@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29c6ba4f0108
+DECL|struct|__anon2c118b200108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c6ba4f0208
+DECL|struct|__anon2c118b200208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -547,7 +547,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -676,7 +676,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

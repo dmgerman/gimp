@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efd2070108
+DECL|struct|__anon29a51e840108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -215,7 +215,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

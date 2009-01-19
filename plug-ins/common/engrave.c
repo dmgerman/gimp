@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286fec3f0108
+DECL|struct|__anon28be8ad60108
 block|{
 DECL|member|height
 name|gint
@@ -272,7 +272,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -1171,7 +1171,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286fec3f0208
+DECL|struct|__anon28be8ad60208
 block|{
 DECL|member|x
 DECL|member|y

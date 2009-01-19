@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c6041580103
+DECL|enum|__anon27ab2c9a0103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6041580208
+DECL|struct|__anon27ab2c9a0208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -239,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6041580308
+DECL|struct|__anon27ab2c9a0308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -2230,7 +2230,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

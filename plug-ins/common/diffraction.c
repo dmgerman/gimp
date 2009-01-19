@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a34c9180108
+DECL|struct|__anon295773b90108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a34c9180208
+DECL|struct|__anon295773b90208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -520,7 +520,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -1123,7 +1123,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2a34c9180308
+DECL|struct|__anon295773b90308
 typedef|typedef
 struct|struct
 block|{

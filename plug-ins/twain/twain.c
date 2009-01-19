@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af0fbf10108
+DECL|struct|__anon2c0358e20108
 typedef|typedef
 struct|struct
 block|{
@@ -890,7 +890,7 @@ DECL|macro|IN_ARGS
 define|#
 directive|define
 name|IN_ARGS
-value|{ GIMP_PDB_INT32, "run-mode", "Interactive, non-interactive" }
+value|{ GIMP_PDB_INT32, "run-mode", "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }
 end_define
 
 begin_define
@@ -1387,7 +1387,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2af0fbf10208
+DECL|struct|__anon2c0358e20208
 typedef|typedef
 struct|struct
 block|{

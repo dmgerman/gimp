@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9bcdaa0108
+DECL|struct|__anon2b0aee000108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9bcdaa0208
+DECL|struct|__anon2b0aee000208
 block|{
 DECL|member|ID
 name|gint32
@@ -472,7 +472,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" },\     { GIMP_PDB_IMAGE,    "image",        "Input image" },\     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },\     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },\     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },\     { GIMP_PDB_INT32,    "compression",  "Compression type: { NONE (0), LZW (1), PACKBITS (2), DEFLATE (3), JPEG (4), CCITT G3 Fax (5), CCITT G4 Fax (6) }" }
+value|{ GIMP_PDB_INT32,    "run-mode",     "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" },\     { GIMP_PDB_IMAGE,    "image",        "Input image" },\     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save" },\     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in" },\     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in" },\     { GIMP_PDB_INT32,    "compression",  "Compression type: { NONE (0), LZW (1), PACKBITS (2), DEFLATE (3), JPEG (4), CCITT G3 Fax (5), CCITT G4 Fax (6) }" }
 specifier|static
 specifier|const
 name|GimpParamDef

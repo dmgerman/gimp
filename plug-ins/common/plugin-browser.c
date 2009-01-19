@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c51fab40103
+DECL|enum|__anon2c0c06810103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c51fab40203
+DECL|enum|__anon2c0c06810203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51fab40308
+DECL|struct|__anon2c0c06810308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c51fab40408
+DECL|struct|__anon2c0c06810408
 block|{
 DECL|member|menu
 name|gchar
@@ -404,7 +404,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, [non-interactive]"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|}
 decl_stmt|;

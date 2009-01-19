@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e70120108
+DECL|struct|__anon27ca90dc0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e70120208
+DECL|struct|__anon27ca90dc0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292e70120308
+DECL|struct|__anon27ca90dc0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -749,7 +749,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

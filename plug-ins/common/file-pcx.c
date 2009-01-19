@@ -390,7 +390,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -438,7 +438,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -1023,7 +1023,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28a6b08e0108
+DECL|struct|__anon291021090108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1100,7 +1100,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon28a6b08e0208
+DECL|struct|__anon291021090208
 specifier|static
 struct|struct
 block|{

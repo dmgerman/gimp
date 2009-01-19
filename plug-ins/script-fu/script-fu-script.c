@@ -720,7 +720,7 @@ index|]
 operator|.
 name|description
 operator|=
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 expr_stmt|;
 for|for
 control|(

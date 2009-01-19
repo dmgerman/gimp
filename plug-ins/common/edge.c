@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f032dc0103
+DECL|enum|__anon290914ba0103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -117,7 +117,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f032dc0208
+DECL|struct|__anon290914ba0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -384,7 +384,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

@@ -156,7 +156,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/* FIXME: uncomment when these are working   static const GimpParamDef editor_args[] =   {     { GIMP_PDB_INT32,       "run-mode",  "Interactive, non-interactive" },     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_DRAWABLE,    "drawable",  "Input drawable (unused)"      }   }; */
+comment|/* FIXME: uncomment when these are working   static const GimpParamDef editor_args[] =   {     { GIMP_PDB_INT32,       "run-mode",  "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" },     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_DRAWABLE,    "drawable",  "Input drawable (unused)"      }   }; */
 specifier|static
 specifier|const
 name|GimpParamDef

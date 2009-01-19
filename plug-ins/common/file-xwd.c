@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4f24a0108
+DECL|struct|__anon2bed19630108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4f24a0208
+DECL|struct|__anon2bed19630208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -296,7 +296,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4f24a0308
+DECL|struct|__anon2bed19630308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a4f24a0408
+DECL|struct|__anon2bed19630408
 block|{
 DECL|member|npixel
 name|gint
@@ -904,7 +904,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -952,7 +952,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

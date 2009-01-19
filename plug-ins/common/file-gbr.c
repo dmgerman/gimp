@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2783d3990108
+DECL|struct|__anon2a2999190108
 block|{
 DECL|member|description
 name|gchar
@@ -362,7 +362,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -410,7 +410,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -2075,7 +2075,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2783d399020a
+DECL|union|__anon2a299919020a
 block|{
 DECL|member|u
 name|guint16

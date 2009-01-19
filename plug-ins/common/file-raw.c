@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2916c72b0103
+DECL|enum|__anon28d4703b0103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2916c72b0203
+DECL|enum|__anon28d4703b0203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2916c72b0308
+DECL|struct|__anon28d4703b0308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -221,7 +221,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2916c72b0408
+DECL|struct|__anon28d4703b0408
 block|{
 DECL|member|fp
 name|FILE
@@ -630,7 +630,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|,
 block|{
@@ -678,7 +678,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

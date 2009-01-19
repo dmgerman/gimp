@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96e2f0108
+DECL|struct|__anon2bda420a0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e96e2f0208
+DECL|struct|__anon2bda420a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -560,7 +560,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -601,7 +601,7 @@ define|#
 directive|define
 name|COMMON_SAVE_ARGS
 define|\
-value|{ GIMP_PDB_INT32,    "run-mode",     "Interactive, non-interactive" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save"             }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in"}, \     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in"}
+value|{ GIMP_PDB_INT32,    "run-mode",     "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" }, \     { GIMP_PDB_IMAGE,    "image",        "Input image"                  }, \     { GIMP_PDB_DRAWABLE, "drawable",     "Drawable to save"             }, \     { GIMP_PDB_STRING,   "filename",     "The name of the file to save the image in"}, \     { GIMP_PDB_STRING,   "raw-filename", "The name of the file to save the image in"}
 DECL|macro|OLD_CONFIG_ARGS
 define|#
 directive|define

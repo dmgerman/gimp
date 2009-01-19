@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8761070108
+DECL|struct|__anon27a551bc0108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -230,7 +230,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -677,7 +677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8761070208
+DECL|struct|__anon27a551bc0208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

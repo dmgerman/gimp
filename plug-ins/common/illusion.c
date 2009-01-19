@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9db01b0108
+DECL|struct|__anon289399340108
 block|{
 DECL|member|division
 name|gint32
@@ -227,7 +227,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"interactive / non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -235,7 +235,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"input image"
+literal|"Input image"
 block|}
 block|,
 block|{
@@ -243,7 +243,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"input drawable"
+literal|"Input drawable"
 block|}
 block|,
 block|{
@@ -251,7 +251,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"division"
 block|,
-literal|"the number of divisions"
+literal|"The number of divisions"
 block|}
 block|,
 block|{
@@ -259,7 +259,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"illusion type (0=type1, 1=type2)"
+literal|"Illusion type (0=type1, 1=type2)"
 block|}
 block|}
 decl_stmt|;
@@ -625,7 +625,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b9db01b0208
+DECL|struct|__anon289399340208
 typedef|typedef
 struct|struct
 block|{

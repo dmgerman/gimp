@@ -184,7 +184,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2aaeb8ac0103
+DECL|enum|__anon279615ab0103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -204,7 +204,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaeb8ac0208
+DECL|struct|__anon279615ab0208
 block|{
 DECL|member|x1
 name|gdouble
@@ -287,7 +287,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"interactive / non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -295,7 +295,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"input image (not used)"
+literal|"Input image (unused)"
 block|}
 block|,
 block|{
@@ -303,7 +303,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"input drawable"
+literal|"Input drawable"
 block|}
 block|,
 block|{
@@ -343,7 +343,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"depth"
 block|,
-literal|"trace depth"
+literal|"Trace depth"
 block|}
 block|,
 block|{
@@ -351,7 +351,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"outside-type"
 block|,
-literal|"outside type"
+literal|"Outside type"
 literal|"(0=WRAP/1=TRANS/2=BLACK/3=WHITE)"
 block|}
 block|}
@@ -411,7 +411,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaeb8ac0308
+DECL|struct|__anon279615ab0308
 block|{
 DECL|member|x1
 name|gint
@@ -454,7 +454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaeb8ac0408
+DECL|struct|__anon279615ab0408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaeb8ac0508
+DECL|struct|__anon279615ab0508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2914,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aaeb8ac0608
+DECL|struct|__anon279615ab0608
 block|{
 DECL|member|preview
 name|GtkWidget

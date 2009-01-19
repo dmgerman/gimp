@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6f3560103
+DECL|enum|__anon2c63d4120103
 block|{
 DECL|enumerator|BACKGROUND_TYPE_TRANSPARENT
 name|BACKGROUND_TYPE_TRANSPARENT
@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6f3560203
+DECL|enum|__anon2c63d4120203
 block|{
 DECL|enumerator|FRACTIONAL_TYPE_BACKGROUND
 name|FRACTIONAL_TYPE_BACKGROUND
@@ -196,7 +196,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b6f3560308
+DECL|struct|__anon2c63d4120308
 block|{
 DECL|member|params
 name|PluginParams
@@ -216,7 +216,7 @@ name|gboolean
 name|drawable_has_alpha
 decl_stmt|;
 struct|struct
-DECL|struct|__anon28b6f3560408
+DECL|struct|__anon2c63d4120408
 block|{
 DECL|member|x0
 name|gint
@@ -597,7 +597,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b6f3560508
+DECL|struct|__anon2c63d4120508
 block|{
 DECL|member|tile_width_adj
 name|GtkObject
@@ -4652,7 +4652,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"run mode"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -4660,7 +4660,7 @@ name|GIMP_PDB_IMAGE
 block|,
 literal|"image"
 block|,
-literal|"input image"
+literal|"Input image"
 block|}
 block|,
 block|{
@@ -4668,7 +4668,7 @@ name|GIMP_PDB_DRAWABLE
 block|,
 literal|"drawable"
 block|,
-literal|"input drawable"
+literal|"Input drawable"
 block|}
 block|,
 block|{
@@ -4676,7 +4676,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tile-size"
 block|,
-literal|"tile size (pixels)"
+literal|"Tile size (pixels)"
 block|}
 block|,
 block|{
@@ -4684,7 +4684,7 @@ name|GIMP_PDB_FLOAT
 block|,
 literal|"move-max"
 block|,
-literal|"max move rate (%)"
+literal|"Max move rate (%)"
 block|}
 block|,
 block|{
@@ -4700,7 +4700,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"wrap-around"
 block|,
-literal|"wrap around (bool)"
+literal|"Wrap around (bool)"
 block|}
 block|,
 block|{
@@ -4708,7 +4708,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"centering"
 block|,
-literal|"centering (bool)"
+literal|"Centering (bool)"
 block|}
 block|,
 block|{
@@ -4724,7 +4724,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"background-color"
 block|,
-literal|"background color (for bg-type 5)"
+literal|"Background color (for bg-type 5)"
 block|}
 block|,
 block|{
@@ -4732,7 +4732,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"background-alpha"
 block|,
-literal|"opacity (for bg-type 5)"
+literal|"Opacity (for bg-type 5)"
 block|}
 block|}
 decl_stmt|;

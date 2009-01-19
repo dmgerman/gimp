@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2944f5a80103
+DECL|enum|__anon2a2463b00103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2944f5a80208
+DECL|struct|__anon2a2463b00208
 block|{
 DECL|member|title
 specifier|const
@@ -501,7 +501,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|}
 decl_stmt|;

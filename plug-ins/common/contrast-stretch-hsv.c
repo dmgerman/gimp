@@ -145,7 +145,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -442,7 +442,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon294ea03e0108
+DECL|struct|__anon29a10cd40108
 typedef|typedef
 struct|struct
 block|{

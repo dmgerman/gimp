@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c9455340103
+DECL|enum|__anon288e8c930103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c9455340208
+DECL|struct|__anon288e8c930208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -741,7 +741,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

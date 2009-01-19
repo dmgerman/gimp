@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f4e7d0108
+DECL|struct|__anon2c8646c40108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a0f4e7d0203
+DECL|enum|__anon2c8646c40203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f4e7d0308
+DECL|struct|__anon2c8646c40308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f4e7d0408
+DECL|struct|__anon2c8646c40408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -766,7 +766,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

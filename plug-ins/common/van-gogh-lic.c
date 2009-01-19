@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c09a5750103
+DECL|enum|__anon2afcfc8b0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c09a5750208
+DECL|struct|__anon2afcfc8b0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -3844,7 +3844,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|,
 block|{

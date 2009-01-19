@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8e8200108
+DECL|struct|__anon2af95bd30108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8e8200208
+DECL|struct|__anon2af95bd30208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -1161,7 +1161,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -4062,7 +4062,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c8e8200308
+DECL|struct|__anon2af95bd30308
 block|{
 DECL|member|min_modified
 name|gshort

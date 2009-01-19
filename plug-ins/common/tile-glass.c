@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29127e6c0108
+DECL|struct|__anon293316370108
 block|{
 DECL|member|xblock
 name|gint
@@ -84,7 +84,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29127e6c0208
+DECL|struct|__anon293316370208
 block|{
 DECL|member|gval
 name|GlassValues
@@ -287,7 +287,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2c9c90108
+DECL|struct|__anon29f311f70108
 block|{
 DECL|member|radius
 name|gdouble
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be2c9c90208
+DECL|struct|__anon29f311f70208
 block|{
 DECL|member|run
 name|gboolean
@@ -396,7 +396,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

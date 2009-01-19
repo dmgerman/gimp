@@ -187,7 +187,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -236,7 +236,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Non-interactive"
+literal|"The run mode { RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -1649,7 +1649,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275461860103
+DECL|enum|__anon29c1b0a70103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

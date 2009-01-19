@@ -230,7 +230,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, [non-interactive]"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|}
 decl_stmt|;
@@ -246,7 +246,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, [non-interactive]"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|}
 decl_stmt|;
@@ -262,7 +262,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"[Interactive], non-interactive"
+literal|"The run mode { RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -286,7 +286,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"[Interactive], non-interactive"
+literal|"The run mode { RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a11f06c0108
+DECL|struct|__anon2980aeb70108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a11f06c0208
+DECL|struct|__anon2980aeb70208
 block|{
 DECL|member|y
 name|gint32
@@ -2060,7 +2060,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -2244,7 +2244,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"non-interactive"
+literal|"The run mode { RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

@@ -545,7 +545,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|,
 block|{

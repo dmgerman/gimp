@@ -72,7 +72,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2770902e0108
+DECL|struct|__anon286dcd0d0108
 block|{
 DECL|member|captiontxt
 name|gchar
@@ -385,7 +385,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|,
 block|{

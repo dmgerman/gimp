@@ -147,7 +147,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bb66a220108
+DECL|struct|__anon298c17970108
 block|{
 DECL|member|randomize
 name|gint
@@ -525,7 +525,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{

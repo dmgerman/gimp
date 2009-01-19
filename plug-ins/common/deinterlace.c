@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1a20b10103
+DECL|enum|__anon29c187560103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1a20b10208
+DECL|struct|__anon29c187560208
 block|{
 DECL|member|evenness
 name|gint
@@ -205,7 +205,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"Interactive, non-interactive"
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
