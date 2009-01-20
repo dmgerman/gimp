@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon293f094b0103
+DECL|enum|__anon27d9d4e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -610,7 +610,7 @@ name|operation
 argument_list|,
 literal|"output"
 argument_list|,
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"RaGaBaA float"
 argument_list|)

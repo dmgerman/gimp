@@ -72,7 +72,7 @@ case|case
 literal|1
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"Y u8"
 argument_list|)
@@ -81,7 +81,7 @@ case|case
 literal|2
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"YA u8"
 argument_list|)
@@ -90,7 +90,7 @@ case|case
 literal|3
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"RGB u8"
 argument_list|)
@@ -99,7 +99,7 @@ case|case
 literal|4
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"RGBA u8"
 argument_list|)
@@ -117,7 +117,7 @@ case|case
 literal|1
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"Y' u8"
 argument_list|)
@@ -126,7 +126,7 @@ case|case
 literal|2
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"Y'A u8"
 argument_list|)
@@ -135,7 +135,7 @@ case|case
 literal|3
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"R'G'B' u8"
 argument_list|)
@@ -144,7 +144,7 @@ case|case
 literal|4
 case|:
 return|return
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"R'G'B'A u8"
 argument_list|)

@@ -193,7 +193,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af997000103
+DECL|enum|__anon293599f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -647,7 +647,7 @@ name|Babl
 modifier|*
 name|format
 init|=
-name|babl_format_from_name
+name|babl_format
 argument_list|(
 literal|"RaGaBaA float"
 argument_list|)
