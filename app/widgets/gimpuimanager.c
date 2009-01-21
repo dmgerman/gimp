@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad47500103
+DECL|enum|__anon2ae5e84f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad47500203
+DECL|enum|__anon2ae5e84f0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ad47500308
+DECL|struct|__anon2ae5e84f0308
 block|{
 DECL|member|x
 name|guint
@@ -2897,8 +2897,8 @@ name|message
 argument_list|,
 name|_
 argument_list|(
-literal|"Plase make sure the menu XML files are correctly "
-literal|"installed."
+literal|"Please make sure the menu XML files are "
+literal|"correctly installed."
 argument_list|)
 argument_list|)
 expr_stmt|;
