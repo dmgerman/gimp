@@ -139,7 +139,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28de18260108
+DECL|struct|__anon27679c660108
 block|{
 DECL|member|name
 specifier|const
@@ -1490,7 +1490,7 @@ block|,
 block|{
 literal|"slategray"
 block|,
-literal|119
+literal|112
 block|,
 literal|128
 block|,
@@ -1500,7 +1500,7 @@ block|,
 block|{
 literal|"slategrey"
 block|,
-literal|119
+literal|112
 block|,
 literal|128
 block|,
