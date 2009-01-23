@@ -139,7 +139,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27679c660108
+DECL|struct|__anon28a03c7e0108
 block|{
 DECL|member|name
 specifier|const
@@ -412,7 +412,7 @@ literal|"darkgoldenrod"
 block|,
 literal|184
 block|,
-literal|132
+literal|134
 block|,
 literal|11
 block|}
@@ -642,7 +642,7 @@ literal|"floralwhite"
 block|,
 literal|255
 block|,
-literal|255
+literal|250
 block|,
 literal|240
 block|}
@@ -1344,7 +1344,7 @@ literal|221
 block|,
 literal|160
 block|,
-literal|203
+literal|221
 block|}
 block|,
 block|{
@@ -1512,7 +1512,7 @@ literal|"snow"
 block|,
 literal|255
 block|,
-literal|255
+literal|250
 block|,
 literal|250
 block|}
