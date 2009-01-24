@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae5e84f0103
+DECL|enum|__anon2a1f934d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae5e84f0203
+DECL|enum|__anon2a1f934d0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae5e84f0308
+DECL|struct|__anon2a1f934d0308
 block|{
 DECL|member|x
 name|guint
@@ -3605,14 +3605,9 @@ name|GtkAction
 modifier|*
 name|action
 init|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|gtk_widget_get_action
 argument_list|(
 name|widget
-argument_list|)
-argument_list|,
-literal|"gtk-action"
 argument_list|)
 decl_stmt|;
 if|if
