@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c86d240103
+DECL|enum|__anon296af88c0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c86d240203
+DECL|enum|__anon296af88c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -15101,7 +15101,6 @@ default|default:
 return|return
 literal|"unkown"
 return|;
-break|break;
 block|}
 block|}
 end_function
