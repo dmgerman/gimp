@@ -677,6 +677,14 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
+name|dest
+condition|)
+return|return
+name|NULL
+return|;
+if|if
+condition|(
 name|src
 operator|->
 name|bytes
