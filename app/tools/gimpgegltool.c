@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ace86540103
+DECL|enum|__anon296b3a880103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -2274,22 +2274,22 @@ decl_stmt|;
 name|GimpRGB
 name|gimp_color
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|r
 init|=
 literal|0.0
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|g
 init|=
 literal|0.0
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|b
 init|=
 literal|0.0
 decl_stmt|;
-name|gfloat
+name|gdouble
 name|a
 init|=
 literal|1.0
