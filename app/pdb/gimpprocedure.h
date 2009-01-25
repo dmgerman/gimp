@@ -521,6 +521,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpProcedure
+modifier|*
+name|gimp_procedure_create_override
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|GimpMarshalFunc
+name|new_marshal_func
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GValueArray
 modifier|*
 name|gimp_procedure_execute
