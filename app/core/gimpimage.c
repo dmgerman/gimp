@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b065bce0103
+DECL|enum|__anon2b14bf230103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b065bce0203
+DECL|enum|__anon2b14bf230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11914,11 +11914,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_attach_floating_sel
 argument_list|(
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 argument_list|,
 name|layer
 argument_list|)
@@ -12123,11 +12122,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_detach_floating_sel
 argument_list|(
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 argument_list|,
 name|layer
 argument_list|)

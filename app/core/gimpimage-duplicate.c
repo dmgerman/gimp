@@ -846,11 +846,10 @@ block|{
 operator|*
 name|floating_sel_drawable
 operator|=
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|floating_selection
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 expr_stmt|;
 block|}
 for|for

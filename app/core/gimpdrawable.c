@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29defa3c0103
+DECL|enum|__anon28b76f1d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -7623,11 +7623,10 @@ return|return
 operator|(
 name|floating_sel
 operator|&&
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|floating_sel
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 operator|==
 name|drawable
 operator|)

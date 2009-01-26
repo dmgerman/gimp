@@ -1861,11 +1861,10 @@ name|info
 operator|->
 name|floating_sel_drawable
 operator|=
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|layer
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 expr_stmt|;
 name|xcf_check_error
 argument_list|(
@@ -6646,7 +6645,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05f9230108
+DECL|struct|__anon29bfc1370108
 block|{
 DECL|member|info
 name|XcfInfo

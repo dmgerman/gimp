@@ -3454,11 +3454,10 @@ name|floating_sel
 condition|)
 name|drawable
 operator|=
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|floating_sel
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 expr_stmt|;
 else|else
 name|drawable

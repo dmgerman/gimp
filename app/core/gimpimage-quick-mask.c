@@ -421,11 +421,10 @@ if|if
 condition|(
 name|floating_sel
 operator|&&
+name|gimp_layer_get_floating_sel_drawable
+argument_list|(
 name|floating_sel
-operator|->
-name|fs
-operator|.
-name|drawable
+argument_list|)
 operator|==
 name|GIMP_DRAWABLE
 argument_list|(
