@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29da062a0103
+DECL|enum|__anon2ac055070103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -383,6 +383,28 @@ name|button
 argument_list|)
 operator|->
 name|press_state
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|GTK_BUTTON_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|clicked
+condition|)
+block|{
+name|GTK_BUTTON_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|clicked
+argument_list|(
+name|button
 argument_list|)
 expr_stmt|;
 block|}
