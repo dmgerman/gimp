@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c38b390103
+DECL|enum|__anon2b065bce0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c38b390203
+DECL|enum|__anon2b065bce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11904,6 +11904,7 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
+block|{
 name|gimp_image_set_floating_selection
 argument_list|(
 name|image
@@ -11911,6 +11912,18 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_attach_floating_sel
+argument_list|(
+name|layer
+operator|->
+name|fs
+operator|.
+name|drawable
+argument_list|,
+name|layer
+argument_list|)
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|old_has_alpha
@@ -12095,12 +12108,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_get_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
-name|image
-argument_list|)
-operator|==
 name|layer
+argument_list|)
 condition|)
 block|{
 name|undo_desc
@@ -12110,13 +12121,15 @@ argument_list|(
 literal|"Remove Floating Selection"
 argument_list|)
 expr_stmt|;
-comment|/*  Invalidate the preview of the obscured drawable.  We do this here        *  because it will not be done until the floating selection is removed,        *  at which point the obscured drawable's preview will not be declared        *  invalid.        */
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_drawable_detach_floating_sel
 argument_list|(
 name|layer
-argument_list|)
+operator|->
+name|fs
+operator|.
+name|drawable
+argument_list|,
+name|layer
 argument_list|)
 expr_stmt|;
 block|}

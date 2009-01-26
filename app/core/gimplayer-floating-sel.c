@@ -481,13 +481,15 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  clear the selection  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
+name|gimp_drawable_detach_floating_sel
 argument_list|(
 name|layer
-argument_list|)
+operator|->
+name|fs
+operator|.
+name|drawable
+argument_list|,
+name|layer
 argument_list|)
 expr_stmt|;
 comment|/*  Set pointers  */

@@ -395,16 +395,29 @@ name|floating_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_drawable_attach_floating_sel
+argument_list|(
+name|floating_layer
+operator|->
+name|fs
+operator|.
+name|drawable
+argument_list|,
+name|floating_layer
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
-comment|/*  Update the preview for the underlying drawable  */
-name|gimp_viewable_invalidate_preview
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_drawable_detach_floating_sel
 argument_list|(
 name|floating_layer
-argument_list|)
+operator|->
+name|fs
+operator|.
+name|drawable
+argument_list|,
+name|floating_layer
 argument_list|)
 expr_stmt|;
 comment|/*  clear the selection  */
