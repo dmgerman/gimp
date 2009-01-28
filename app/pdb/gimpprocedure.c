@@ -1454,7 +1454,7 @@ condition|(
 name|return_vals
 condition|)
 block|{
-if|if
+switch|switch
 condition|(
 name|g_value_get_enum
 argument_list|(
@@ -1466,10 +1466,14 @@ index|[
 literal|0
 index|]
 argument_list|)
-operator|!=
-name|GIMP_PDB_SUCCESS
 condition|)
 block|{
+case|case
+name|GIMP_PDB_CALLING_ERROR
+case|:
+case|case
+name|GIMP_PDB_EXECUTION_ERROR
+case|:
 comment|/*  If the error has not already been set, construct one            *  from the error message that is optionally passed with            *  the return values.            */
 if|if
 condition|(
@@ -1523,6 +1527,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+break|break;
+default|default:
+break|break;
 block|}
 block|}
 else|else
