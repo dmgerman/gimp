@@ -1487,9 +1487,10 @@ name|sqrt
 argument_list|(
 literal|1
 operator|-
+name|SQR
+argument_list|(
 name|yi
-operator|*
-name|yi
+argument_list|)
 operator|/
 name|b_sqr
 argument_list|)
@@ -1497,7 +1498,7 @@ expr_stmt|;
 else|else
 name|xdist
 operator|=
-literal|100.0
+literal|1000.0
 expr_stmt|;
 comment|/* anything large will work */
 if|if
@@ -1516,9 +1517,10 @@ name|sqrt
 argument_list|(
 literal|1
 operator|-
+name|SQR
+argument_list|(
 name|xj
-operator|*
-name|xj
+argument_list|)
 operator|/
 name|a_sqr
 argument_list|)
@@ -1526,7 +1528,7 @@ expr_stmt|;
 else|else
 name|ydist
 operator|=
-literal|100.0
+literal|1000.0
 expr_stmt|;
 comment|/* anything large will work */
 name|r
@@ -1643,7 +1645,8 @@ name|last_val
 operator|=
 name|val
 expr_stmt|;
-comment|/*  because we are symetric accross the y axis we can                    *  skip ahead a bit if we are inside. Do this if we                    *  have reached a value of 255 OR if we have passed                    *  the center of the leftmost ellipse.                    */
+block|}
+comment|/*  because we are symetric accross the y axis we can                *  skip ahead a bit if we are inside. Do this if we                *  have reached a value of 255 OR if we have passed                *  the center of the leftmost ellipse.                */
 if|if
 condition|(
 operator|(
@@ -1667,6 +1670,10 @@ operator|/
 literal|2
 condition|)
 block|{
+name|x_start
+operator|=
+name|cur_x
+expr_stmt|;
 name|last_val
 operator|=
 name|val
@@ -1692,7 +1699,6 @@ name|straight_width
 argument_list|)
 operator|)
 expr_stmt|;
-block|}
 block|}
 comment|/* Time to change center? */
 if|if
