@@ -99,9 +99,15 @@ directive|include
 file|"gimp-log.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon29553fd50103
+DECL|enum|__anon2ae0f8fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3421,6 +3427,43 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|G_UNLIKELY
+argument_list|(
+name|gimp_image_is_empty
+argument_list|(
+name|display
+operator|->
+name|image
+argument_list|)
+operator|&&
+operator|!
+name|gimp_tool_control_get_handle_empty_image
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|)
+argument_list|)
+condition|)
+block|{
+name|gimp_tool_replace_status
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+literal|"%s"
+argument_list|,
+name|_
+argument_list|(
+literal|"Can't work on an empty image, "
+literal|"add a layer first"
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
