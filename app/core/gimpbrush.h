@@ -191,11 +191,11 @@ modifier|*
 name|cur_coords
 parameter_list|)
 function_decl|;
-DECL|member|scale_size
+DECL|member|transform_size
 name|void
 function_decl|(
 modifier|*
-name|scale_size
+name|transform_size
 function_decl|)
 parameter_list|(
 name|GimpBrush
@@ -214,12 +214,12 @@ modifier|*
 name|height
 parameter_list|)
 function_decl|;
-DECL|member|scale_mask
+DECL|member|transform_mask
 name|TempBuf
 modifier|*
 function_decl|(
 modifier|*
-name|scale_mask
+name|transform_mask
 function_decl|)
 parameter_list|(
 name|GimpBrush
@@ -230,12 +230,12 @@ name|gdouble
 name|scale
 parameter_list|)
 function_decl|;
-DECL|member|scale_pixmap
+DECL|member|transform_pixmap
 name|TempBuf
 modifier|*
 function_decl|(
 modifier|*
-name|scale_pixmap
+name|transform_pixmap
 function_decl|)
 parameter_list|(
 name|GimpBrush
@@ -336,12 +336,12 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* Gets width and height of a scaled mask of the brush, for provided scale. */
+comment|/* Gets width and height of a transformed mask of the brush, for provided parameters. */
 end_comment
 
 begin_function_decl
 name|void
-name|gimp_brush_scale_size
+name|gimp_brush_transform_size
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -364,7 +364,7 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_brush_scale_mask
+name|gimp_brush_transform_mask
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -379,7 +379,7 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_brush_scale_pixmap
+name|gimp_brush_transform_pixmap
 parameter_list|(
 name|GimpBrush
 modifier|*

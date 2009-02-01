@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrush-scale.h"
+file|"gimpbrush-transform.h"
 end_include
 
 begin_include
@@ -118,8 +118,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_real_scale_size (GimpBrush * brush,gdouble scale,gint * width,gint * height)
-name|gimp_brush_real_scale_size
+DECL|function|gimp_brush_real_transform_size (GimpBrush * brush,gdouble scale,gint * width,gint * height)
+name|gimp_brush_real_transform_size
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -179,8 +179,8 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_real_scale_mask (GimpBrush * brush,gdouble scale)
-name|gimp_brush_real_scale_mask
+DECL|function|gimp_brush_real_transform_mask (GimpBrush * brush,gdouble scale)
+name|gimp_brush_real_transform_mask
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -196,7 +196,7 @@ decl_stmt|;
 name|gint
 name|dest_height
 decl_stmt|;
-name|gimp_brush_scale_size
+name|gimp_brush_transform_size
 argument_list|(
 name|brush
 argument_list|,
@@ -229,7 +229,7 @@ operator|<=
 literal|1.0
 condition|)
 block|{
-comment|/*  Downscaling with brush_scale_mask is much faster than with        *  gimp_brush_scale_buf.        */
+comment|/*  Downscaling with brush_transform_mask is much faster than with        *  gimp_brush_scale_buf.        */
 return|return
 name|gimp_brush_scale_mask_down
 argument_list|(
@@ -261,8 +261,8 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_real_scale_pixmap (GimpBrush * brush,gdouble scale)
-name|gimp_brush_real_scale_pixmap
+DECL|function|gimp_brush_real_transform_pixmap (GimpBrush * brush,gdouble scale)
+name|gimp_brush_real_transform_pixmap
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -278,7 +278,7 @@ decl_stmt|;
 name|gint
 name|dest_height
 decl_stmt|;
-name|gimp_brush_scale_size
+name|gimp_brush_transform_size
 argument_list|(
 name|brush
 argument_list|,

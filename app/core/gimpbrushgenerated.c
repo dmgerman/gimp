@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27844e050103
+DECL|enum|__anon296458460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -186,7 +186,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_generated_scale_size
+name|gimp_brush_generated_transform_size
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -210,7 +210,7 @@ begin_function_decl
 specifier|static
 name|TempBuf
 modifier|*
-name|gimp_brush_generated_scale_mask
+name|gimp_brush_generated_transform_mask
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -410,15 +410,15 @@ name|gimp_brush_generated_duplicate
 expr_stmt|;
 name|brush_class
 operator|->
-name|scale_size
+name|transform_size
 operator|=
-name|gimp_brush_generated_scale_size
+name|gimp_brush_generated_transform_size
 expr_stmt|;
 name|brush_class
 operator|->
-name|scale_mask
+name|transform_mask
 operator|=
-name|gimp_brush_generated_scale_mask
+name|gimp_brush_generated_transform_mask
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
@@ -1065,8 +1065,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_scale_size (GimpBrush * gbrush,gdouble scale,gint * width,gint * height)
-name|gimp_brush_generated_scale_size
+DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale,gint * width,gint * height)
+name|gimp_brush_generated_transform_size
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -1169,8 +1169,8 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_generated_scale_mask (GimpBrush * gbrush,gdouble scale)
-name|gimp_brush_generated_scale_mask
+DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale)
+name|gimp_brush_generated_transform_mask
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -2075,7 +2075,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* This function is shared between gimp_brush_generated_scale_size and  * gimp_brush_generated_calc, therefore we provide a bunch of optional  * pointers for returnvalues.  */
+comment|/* This function is shared between gimp_brush_generated_transform_size and  * gimp_brush_generated_calc, therefore we provide a bunch of optional  * pointers for returnvalues.  */
 end_comment
 
 begin_function

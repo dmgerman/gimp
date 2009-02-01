@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbrush-scale.h"
+file|"gimpbrush-transform.h"
 end_include
 
 begin_include
@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277bfeb40103
+DECL|enum|__anon28c873020103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277bfeb40203
+DECL|enum|__anon28c873020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -507,21 +507,21 @@ name|gimp_brush_real_want_null_motion
 expr_stmt|;
 name|klass
 operator|->
-name|scale_size
+name|transform_size
 operator|=
-name|gimp_brush_real_scale_size
+name|gimp_brush_real_transform_size
 expr_stmt|;
 name|klass
 operator|->
-name|scale_mask
+name|transform_mask
 operator|=
-name|gimp_brush_real_scale_mask
+name|gimp_brush_real_transform_mask
 expr_stmt|;
 name|klass
 operator|->
-name|scale_pixmap
+name|transform_pixmap
 operator|=
-name|gimp_brush_real_scale_pixmap
+name|gimp_brush_real_transform_pixmap
 expr_stmt|;
 name|klass
 operator|->
@@ -1133,7 +1133,7 @@ condition|)
 block|{
 name|mask_buf
 operator|=
-name|gimp_brush_scale_mask
+name|gimp_brush_transform_mask
 argument_list|(
 name|brush
 argument_list|,
@@ -1168,7 +1168,7 @@ name|pixmap_buf
 condition|)
 name|pixmap_buf
 operator|=
-name|gimp_brush_scale_pixmap
+name|gimp_brush_transform_pixmap
 argument_list|(
 name|brush
 argument_list|,
@@ -1917,8 +1917,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_scale_size (GimpBrush * brush,gdouble scale,gint * width,gint * height)
-name|gimp_brush_scale_size
+DECL|function|gimp_brush_transform_size (GimpBrush * brush,gdouble scale,gint * width,gint * height)
+name|gimp_brush_transform_size
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -1997,7 +1997,7 @@ argument_list|(
 name|brush
 argument_list|)
 operator|->
-name|scale_size
+name|transform_size
 argument_list|(
 name|brush
 argument_list|,
@@ -2014,8 +2014,8 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_scale_mask (GimpBrush * brush,gdouble scale)
-name|gimp_brush_scale_mask
+DECL|function|gimp_brush_transform_mask (GimpBrush * brush,gdouble scale)
+name|gimp_brush_transform_mask
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -2066,7 +2066,7 @@ argument_list|(
 name|brush
 argument_list|)
 operator|->
-name|scale_mask
+name|transform_mask
 argument_list|(
 name|brush
 argument_list|,
@@ -2079,8 +2079,8 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_scale_pixmap (GimpBrush * brush,gdouble scale)
-name|gimp_brush_scale_pixmap
+DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,gdouble scale)
+name|gimp_brush_transform_pixmap
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -2142,7 +2142,7 @@ argument_list|(
 name|brush
 argument_list|)
 operator|->
-name|scale_pixmap
+name|transform_pixmap
 argument_list|(
 name|brush
 argument_list|,

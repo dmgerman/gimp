@@ -1352,7 +1352,7 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gimp_brush_scale_size
+name|gimp_brush_transform_size
 argument_list|(
 name|brush_core
 operator|->

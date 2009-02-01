@@ -22,7 +22,7 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_brush_real_scale_size
+name|gimp_brush_real_transform_size
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -45,7 +45,7 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_brush_real_scale_mask
+name|gimp_brush_real_transform_mask
 parameter_list|(
 name|GimpBrush
 modifier|*
@@ -60,7 +60,7 @@ end_function_decl
 begin_function_decl
 name|TempBuf
 modifier|*
-name|gimp_brush_real_scale_pixmap
+name|gimp_brush_real_transform_pixmap
 parameter_list|(
 name|GimpBrush
 modifier|*
