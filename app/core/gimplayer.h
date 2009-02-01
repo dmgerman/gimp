@@ -131,7 +131,7 @@ name|opacity_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon28d8b7b30108
+DECL|struct|__anon2b63befd0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -496,6 +496,7 @@ name|GimpDrawable
 modifier|*
 name|gimp_layer_get_floating_sel_drawable
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer

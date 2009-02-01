@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c944ee00103
+DECL|enum|__anon2c2bcfa40103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c944ee00203
+DECL|enum|__anon2c2bcfa40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7612,9 +7612,10 @@ end_function
 begin_function
 name|GimpDrawable
 modifier|*
-DECL|function|gimp_layer_get_floating_sel_drawable (GimpLayer * layer)
+DECL|function|gimp_layer_get_floating_sel_drawable (const GimpLayer * layer)
 name|gimp_layer_get_floating_sel_drawable
 parameter_list|(
+specifier|const
 name|GimpLayer
 modifier|*
 name|layer
