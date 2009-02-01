@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c75dac0103
+DECL|enum|__anon2bfa0b460103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3042,13 +3042,6 @@ operator|->
 name|tile_source_node
 condition|)
 return|return;
-if|if
-condition|(
-name|drawable
-operator|->
-name|tiles
-condition|)
-block|{
 name|gegl_node_set
 argument_list|(
 name|drawable
@@ -3064,7 +3057,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
