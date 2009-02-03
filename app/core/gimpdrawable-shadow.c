@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdrawable-shadow.h"
 end_include
 
@@ -81,6 +87,8 @@ if|if
 condition|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 condition|)
 block|{
@@ -96,6 +104,8 @@ name|tile_manager_width
 argument_list|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 argument_list|)
 operator|)
@@ -110,6 +120,8 @@ name|tile_manager_height
 argument_list|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 argument_list|)
 operator|)
@@ -122,6 +134,8 @@ operator|!=
 name|tile_manager_bpp
 argument_list|(
 name|drawable
+operator|->
+name|private
 operator|->
 name|shadow
 argument_list|)
@@ -139,11 +153,15 @@ block|{
 return|return
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 return|;
 block|}
 block|}
 name|drawable
+operator|->
+name|private
 operator|->
 name|shadow
 operator|=
@@ -166,6 +184,8 @@ argument_list|)
 expr_stmt|;
 return|return
 name|drawable
+operator|->
+name|private
 operator|->
 name|shadow
 return|;
@@ -194,6 +214,8 @@ if|if
 condition|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 condition|)
 block|{
@@ -201,10 +223,14 @@ name|tile_manager_unref
 argument_list|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 argument_list|)
 expr_stmt|;
 name|drawable
+operator|->
+name|private
 operator|->
 name|shadow
 operator|=
@@ -265,6 +291,8 @@ name|g_return_if_fail
 argument_list|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|shadow
 operator|!=
 name|NULL
@@ -298,6 +326,8 @@ init|=
 name|tile_manager_ref
 argument_list|(
 name|drawable
+operator|->
+name|private
 operator|->
 name|shadow
 argument_list|)

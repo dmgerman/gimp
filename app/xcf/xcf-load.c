@@ -84,8 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpdrawable.h"
+file|"core/gimpdrawable-private.h"
 end_include
+
+begin_comment
+comment|/* eek */
+end_comment
 
 begin_include
 include|#
@@ -3246,6 +3250,8 @@ argument_list|(
 name|mask
 argument_list|)
 operator|->
+name|private
+operator|->
 name|tiles
 argument_list|)
 expr_stmt|;
@@ -3253,6 +3259,8 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|mask
 argument_list|)
+operator|->
+name|private
 operator|->
 name|tiles
 operator|=
@@ -3262,6 +3270,8 @@ operator|*
 name|channel
 argument_list|)
 operator|->
+name|private
+operator|->
 name|tiles
 expr_stmt|;
 name|GIMP_DRAWABLE
@@ -3269,6 +3279,8 @@ argument_list|(
 operator|*
 name|channel
 argument_list|)
+operator|->
+name|private
 operator|->
 name|tiles
 operator|=

@@ -30,6 +30,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdrawable-private.h"
+end_include
+
+begin_comment
+comment|/* eek */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -71,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7f17a90103
+DECL|enum|__anon2b982c0d0103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -758,6 +768,8 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|->
+name|private
+operator|->
 name|tiles
 operator|=
 name|gimp_drawable_get_tiles
@@ -772,6 +784,8 @@ name|GIMP_DRAWABLE
 argument_list|(
 name|layer
 argument_list|)
+operator|->
+name|private
 operator|->
 name|tiles
 operator|=

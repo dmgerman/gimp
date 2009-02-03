@@ -86,6 +86,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DRAWABLE, GimpDrawableClass))
 end_define
 
 begin_typedef
+DECL|typedef|GimpDrawablePrivate
+typedef|typedef
+name|struct
+name|_GimpDrawablePrivate
+name|GimpDrawablePrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDrawableClass
 typedef|typedef
 name|struct
@@ -102,48 +111,6 @@ block|{
 DECL|member|parent_instance
 name|GimpItem
 name|parent_instance
-decl_stmt|;
-DECL|member|tiles
-name|TileManager
-modifier|*
-name|tiles
-decl_stmt|;
-comment|/* tiles for drawable data        */
-DECL|member|shadow
-name|TileManager
-modifier|*
-name|shadow
-decl_stmt|;
-comment|/* shadow buffer tiles            */
-DECL|member|source_node
-name|GeglNode
-modifier|*
-name|source_node
-decl_stmt|;
-DECL|member|tile_source_node
-name|GeglNode
-modifier|*
-name|tile_source_node
-decl_stmt|;
-DECL|member|fs_opacity_node
-name|GeglNode
-modifier|*
-name|fs_opacity_node
-decl_stmt|;
-DECL|member|fs_offset_node
-name|GeglNode
-modifier|*
-name|fs_offset_node
-decl_stmt|;
-DECL|member|fs_mode_node
-name|GeglNode
-modifier|*
-name|fs_mode_node
-decl_stmt|;
-DECL|member|mode_node
-name|GeglNode
-modifier|*
-name|mode_node
 decl_stmt|;
 DECL|member|bytes
 name|gint
@@ -172,6 +139,11 @@ name|gboolean
 name|preview_valid
 decl_stmt|;
 comment|/* is the preview valid?          */
+DECL|member|private
+name|GimpDrawablePrivate
+modifier|*
+name|private
+decl_stmt|;
 block|}
 struct|;
 end_struct
