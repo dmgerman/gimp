@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5cbe300103
+DECL|enum|__anon2b43e1c20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1043,18 +1043,6 @@ name|has_alpha
 operator|=
 name|FALSE
 expr_stmt|;
-name|drawable
-operator|->
-name|preview_cache
-operator|=
-name|NULL
-expr_stmt|;
-name|drawable
-operator|->
-name|preview_valid
-operator|=
-name|FALSE
-expr_stmt|;
 block|}
 end_function
 
@@ -1250,12 +1238,16 @@ if|if
 condition|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_cache
 condition|)
 name|gimp_preview_cache_invalidate
 argument_list|(
 operator|&
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_cache
 argument_list|)
@@ -1333,6 +1325,8 @@ operator|+=
 name|gimp_preview_cache_get_memsize
 argument_list|(
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_cache
 argument_list|)
@@ -1446,6 +1440,8 @@ argument_list|)
 expr_stmt|;
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_valid
 operator|=
 name|FALSE
@@ -1454,12 +1450,16 @@ if|if
 condition|(
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_cache
 condition|)
 name|gimp_preview_cache_invalidate
 argument_list|(
 operator|&
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_cache
 argument_list|)
@@ -4759,11 +4759,15 @@ expr_stmt|;
 comment|/*  preview variables  */
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_cache
 operator|=
 name|NULL
 expr_stmt|;
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_valid
 operator|=

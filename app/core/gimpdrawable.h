@@ -127,18 +127,6 @@ name|gboolean
 name|has_alpha
 decl_stmt|;
 comment|/* drawable has alpha             */
-comment|/*  Preview variables  */
-DECL|member|preview_cache
-name|GSList
-modifier|*
-name|preview_cache
-decl_stmt|;
-comment|/* preview caches of the channel  */
-DECL|member|preview_valid
-name|gboolean
-name|preview_valid
-decl_stmt|;
-comment|/* is the preview valid?          */
 DECL|member|private
 name|GimpDrawablePrivate
 modifier|*

@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimperror.h"
 end_include
 
@@ -1387,6 +1393,8 @@ argument_list|)
 expr_stmt|;
 comment|/*  invalidate the preview  */
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_valid
 operator|=

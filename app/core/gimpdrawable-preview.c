@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdrawable-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -227,6 +233,8 @@ if|if
 condition|(
 operator|!
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_valid
 operator|&&
@@ -627,6 +635,8 @@ condition|(
 operator|!
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_valid
 operator|||
 operator|!
@@ -637,6 +647,8 @@ name|gimp_preview_cache_get
 argument_list|(
 operator|&
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_cache
 argument_list|,
@@ -686,6 +698,8 @@ condition|(
 operator|!
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_valid
 condition|)
 name|gimp_preview_cache_invalidate
@@ -693,10 +707,14 @@ argument_list|(
 operator|&
 name|drawable
 operator|->
+name|private
+operator|->
 name|preview_cache
 argument_list|)
 expr_stmt|;
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_valid
 operator|=
@@ -706,6 +724,8 @@ name|gimp_preview_cache_add
 argument_list|(
 operator|&
 name|drawable
+operator|->
+name|private
 operator|->
 name|preview_cache
 argument_list|,
