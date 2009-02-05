@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296bce1c0103
+DECL|enum|__anon27c21b8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -195,7 +195,10 @@ name|PROP_SIZE
 argument_list|,
 literal|"size"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Ink Blob Size"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -308,7 +311,10 @@ name|PROP_BLOB_ASPECT
 argument_list|,
 literal|"blob-aspect"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Ink Blob Aspect"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
@@ -327,7 +333,10 @@ name|PROP_BLOB_ANGLE
 argument_list|,
 literal|"blob-angle"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Ink Blob Angle"
+argument_list|)
 argument_list|,
 operator|-
 literal|90.0

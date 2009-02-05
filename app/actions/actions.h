@@ -145,6 +145,10 @@ parameter_list|(
 name|GimpActionSelectType
 name|select_type
 parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|,
 name|GObject
 modifier|*
 name|object
