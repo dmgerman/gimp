@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c873020103
+DECL|enum|__anon2a3afe9f0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c873020203
+DECL|enum|__anon2a3afe9f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1138,6 +1138,8 @@ argument_list|(
 name|brush
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1173,6 +1175,8 @@ argument_list|(
 name|brush
 argument_list|,
 name|scale
+argument_list|,
+literal|0.0
 argument_list|)
 expr_stmt|;
 name|mask_width
@@ -1917,7 +1921,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_transform_size (GimpBrush * brush,gdouble scale,gint * width,gint * height)
+DECL|function|gimp_brush_transform_size (GimpBrush * brush,gdouble scale,gdouble angle,gint * width,gint * height)
 name|gimp_brush_transform_size
 parameter_list|(
 name|GimpBrush
@@ -1926,6 +1930,9 @@ name|brush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|,
 name|gint
 modifier|*
@@ -1967,9 +1974,31 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|scale
 operator|==
 literal|1.0
+operator|)
+operator|&&
+operator|(
+operator|(
+name|angle
+operator|==
+literal|0.0
+operator|)
+operator|||
+operator|(
+name|angle
+operator|==
+literal|0.5
+operator|)
+operator|||
+operator|(
+name|angle
+operator|==
+literal|1.0
+operator|)
+operator|)
 condition|)
 block|{
 operator|*
@@ -2003,6 +2032,8 @@ name|brush
 argument_list|,
 name|scale
 argument_list|,
+name|angle
+argument_list|,
 name|width
 argument_list|,
 name|height
@@ -2014,7 +2045,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_transform_mask (GimpBrush * brush,gdouble scale)
+DECL|function|gimp_brush_transform_mask (GimpBrush * brush,gdouble scale,gdouble angle)
 name|gimp_brush_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -2023,6 +2054,9 @@ name|brush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2046,9 +2080,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|scale
 operator|==
 literal|1.0
+operator|)
+operator|&&
+operator|(
+name|angle
+operator|==
+literal|0.0
+operator|)
 condition|)
 return|return
 name|temp_buf_copy
@@ -2071,6 +2113,8 @@ argument_list|(
 name|brush
 argument_list|,
 name|scale
+argument_list|,
+name|angle
 argument_list|)
 return|;
 block|}
@@ -2079,7 +2123,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,gdouble scale)
+DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble angle)
 name|gimp_brush_transform_pixmap
 parameter_list|(
 name|GimpBrush
@@ -2088,6 +2132,9 @@ name|brush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2122,9 +2169,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|(
 name|scale
 operator|==
 literal|1.0
+operator|)
+operator|&&
+operator|(
+name|angle
+operator|==
+literal|0.0
+operator|)
 condition|)
 return|return
 name|temp_buf_copy
@@ -2147,6 +2202,8 @@ argument_list|(
 name|brush
 argument_list|,
 name|scale
+argument_list|,
+name|angle
 argument_list|)
 return|;
 block|}

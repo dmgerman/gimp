@@ -231,7 +231,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_tool_brush_scaled
+name|gimp_brush_tool_brush_transformed
 parameter_list|(
 name|GimpPaintOptions
 modifier|*
@@ -657,7 +657,26 @@ literal|"notify::brush-scale"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_brush_tool_brush_scaled
+name|gimp_brush_tool_brush_transformed
+argument_list|)
+argument_list|,
+name|brush_tool
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_object
+argument_list|(
+name|gimp_tool_get_options
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+literal|"notify::brush-angle"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_brush_tool_brush_transformed
 argument_list|)
 argument_list|,
 name|brush_tool
@@ -1444,8 +1463,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_tool_brush_scaled (GimpPaintOptions * options,GParamSpec * pspec,GimpBrushTool * brush_tool)
-name|gimp_brush_tool_brush_scaled
+DECL|function|gimp_brush_tool_brush_transformed (GimpPaintOptions * options,GParamSpec * pspec,GimpBrushTool * brush_tool)
+name|gimp_brush_tool_brush_transformed
 parameter_list|(
 name|GimpPaintOptions
 modifier|*

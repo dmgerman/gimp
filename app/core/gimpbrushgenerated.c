@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296458460103
+DECL|enum|__anon289572b10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -195,6 +195,9 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
 name|gint
 modifier|*
 name|width
@@ -218,6 +221,9 @@ name|gbrush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1065,7 +1071,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale,gint * width,gint * height)
+DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale,gdouble angle,gint * width,gint * height)
 name|gimp_brush_generated_transform_size
 parameter_list|(
 name|GimpBrush
@@ -1074,6 +1080,9 @@ name|gbrush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|,
 name|gint
 modifier|*
@@ -1125,9 +1134,15 @@ name|brush
 operator|->
 name|aspect_ratio
 argument_list|,
+operator|(
 name|brush
 operator|->
 name|angle
+operator|+
+literal|360
+operator|*
+name|angle
+operator|)
 argument_list|,
 operator|&
 name|half_width
@@ -1169,7 +1184,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale)
+DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble angle)
 name|gimp_brush_generated_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -1178,6 +1193,9 @@ name|gbrush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 block|{
 name|GimpBrushGenerated
@@ -1216,9 +1234,15 @@ name|brush
 operator|->
 name|aspect_ratio
 argument_list|,
+operator|(
 name|brush
 operator|->
 name|angle
+operator|+
+literal|360
+operator|*
+name|angle
+operator|)
 argument_list|,
 name|NULL
 argument_list|,

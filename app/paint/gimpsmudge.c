@@ -307,7 +307,7 @@ name|gimp_smudge_paint
 expr_stmt|;
 name|brush_core_class
 operator|->
-name|handles_scaling_brush
+name|handles_transforming_brush
 operator|=
 name|FALSE
 expr_stmt|;
@@ -1361,6 +1361,10 @@ argument_list|,
 name|brush_core
 operator|->
 name|scale
+argument_list|,
+name|brush_core
+operator|->
+name|angle
 argument_list|,
 operator|&
 name|width

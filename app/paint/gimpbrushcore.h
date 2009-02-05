@@ -145,6 +145,10 @@ DECL|member|scale
 name|gdouble
 name|scale
 decl_stmt|;
+DECL|member|angle
+name|gdouble
+name|angle
+decl_stmt|;
 comment|/*  brush buffers  */
 DECL|member|pressure_brush
 name|TempBuf
@@ -192,6 +196,10 @@ decl_stmt|;
 DECL|member|last_scale
 name|gdouble
 name|last_scale
+decl_stmt|;
+DECL|member|last_angle
+name|gdouble
+name|last_angle
 decl_stmt|;
 DECL|member|transform_pixmap
 name|TempBuf
@@ -295,9 +303,9 @@ name|gboolean
 name|handles_changing_brush
 decl_stmt|;
 comment|/*  Set for tools that don't mind if the brush scales while painting  */
-DECL|member|handles_scaling_brush
+DECL|member|handles_transforming_brush
 name|gboolean
-name|handles_scaling_brush
+name|handles_transforming_brush
 decl_stmt|;
 DECL|member|set_brush
 name|void

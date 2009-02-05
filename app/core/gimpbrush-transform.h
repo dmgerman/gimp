@@ -31,6 +31,9 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
+name|gdouble
+name|angle
+parameter_list|,
 name|gint
 modifier|*
 name|scaled_width
@@ -53,6 +56,9 @@ name|brush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -68,6 +74,9 @@ name|brush
 parameter_list|,
 name|gdouble
 name|scale
+parameter_list|,
+name|gdouble
+name|angle
 parameter_list|)
 function_decl|;
 end_function_decl
