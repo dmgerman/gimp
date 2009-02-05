@@ -153,15 +153,6 @@ comment|/*  base classes  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpItem
-typedef|typedef
-name|struct
-name|_GimpItem
-name|GimpItem
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpObject
 typedef|typedef
 name|struct
@@ -176,6 +167,15 @@ typedef|typedef
 name|struct
 name|_GimpViewable
 name|GimpViewable
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpItem
+typedef|typedef
+name|struct
+name|_GimpItem
+name|GimpItem
 typedef|;
 end_typedef
 
@@ -207,6 +207,15 @@ typedef|typedef
 name|struct
 name|_GimpContainer
 name|GimpContainer
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpList
+typedef|typedef
+name|struct
+name|_GimpList
+name|GimpList
 typedef|;
 end_typedef
 
@@ -243,15 +252,6 @@ typedef|typedef
 name|struct
 name|_GimpItemStack
 name|GimpItemStack
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpList
-typedef|typedef
-name|struct
-name|_GimpList
-name|GimpList
 typedef|;
 end_typedef
 
@@ -331,6 +331,24 @@ comment|/*  data objects  */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpDataFactory
+typedef|typedef
+name|struct
+name|_GimpDataFactory
+name|GimpDataFactory
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpData
+typedef|typedef
+name|struct
+name|_GimpData
+name|GimpData
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpBrush
 typedef|typedef
 name|struct
@@ -372,24 +390,6 @@ typedef|typedef
 name|struct
 name|_GimpCurve
 name|GimpCurve
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpData
-typedef|typedef
-name|struct
-name|_GimpData
-name|GimpData
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDataFactory
-typedef|typedef
-name|struct
-name|_GimpDataFactory
-name|GimpDataFactory
 typedef|;
 end_typedef
 
@@ -443,15 +443,6 @@ comment|/*  drawable objects  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpChannel
-typedef|typedef
-name|struct
-name|_GimpChannel
-name|GimpChannel
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpDrawable
 typedef|typedef
 name|struct
@@ -461,11 +452,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLayer
+DECL|typedef|GimpChannel
 typedef|typedef
 name|struct
-name|_GimpLayer
-name|GimpLayer
+name|_GimpChannel
+name|GimpChannel
 typedef|;
 end_typedef
 
@@ -487,61 +478,25 @@ name|GimpSelection
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpLayer
+typedef|typedef
+name|struct
+name|_GimpLayer
+name|GimpLayer
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  undo objects  */
 end_comment
 
 begin_typedef
-DECL|typedef|GimpChannelPropUndo
+DECL|typedef|GimpUndo
 typedef|typedef
 name|struct
-name|_GimpChannelPropUndo
-name|GimpChannelPropUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpChannelUndo
-typedef|typedef
-name|struct
-name|_GimpChannelUndo
-name|GimpChannelUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDrawableModUndo
-typedef|typedef
-name|struct
-name|_GimpDrawableModUndo
-name|GimpDrawableModUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDrawableUndo
-typedef|typedef
-name|struct
-name|_GimpDrawableUndo
-name|GimpDrawableUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpFloatingSelUndo
-typedef|typedef
-name|struct
-name|_GimpFloatingSelUndo
-name|GimpFloatingSelUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpGuideUndo
-typedef|typedef
-name|struct
-name|_GimpGuideUndo
-name|GimpGuideUndo
+name|_GimpUndo
+name|GimpUndo
 typedef|;
 end_typedef
 
@@ -555,15 +510,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpItemPropUndo
-typedef|typedef
-name|struct
-name|_GimpItemPropUndo
-name|GimpItemPropUndo
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpItemUndo
 typedef|typedef
 name|struct
@@ -573,11 +519,47 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLayerMaskPropUndo
+DECL|typedef|GimpItemPropUndo
 typedef|typedef
 name|struct
-name|_GimpLayerMaskPropUndo
-name|GimpLayerMaskPropUndo
+name|_GimpItemPropUndo
+name|GimpItemPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpChannelUndo
+typedef|typedef
+name|struct
+name|_GimpChannelUndo
+name|GimpChannelUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpChannelPropUndo
+typedef|typedef
+name|struct
+name|_GimpChannelPropUndo
+name|GimpChannelPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDrawableUndo
+typedef|typedef
+name|struct
+name|_GimpDrawableUndo
+name|GimpDrawableUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDrawableModUndo
+typedef|typedef
+name|struct
+name|_GimpDrawableModUndo
+name|GimpDrawableModUndo
 typedef|;
 end_typedef
 
@@ -591,11 +573,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLayerPropUndo
+DECL|typedef|GimpLayerMaskPropUndo
 typedef|typedef
 name|struct
-name|_GimpLayerPropUndo
-name|GimpLayerPropUndo
+name|_GimpLayerMaskPropUndo
+name|GimpLayerMaskPropUndo
 typedef|;
 end_typedef
 
@@ -609,11 +591,29 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpLayerPropUndo
+typedef|typedef
+name|struct
+name|_GimpLayerPropUndo
+name|GimpLayerPropUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMaskUndo
 typedef|typedef
 name|struct
 name|_GimpMaskUndo
 name|GimpMaskUndo
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpGuideUndo
+typedef|typedef
+name|struct
+name|_GimpGuideUndo
+name|GimpGuideUndo
 typedef|;
 end_typedef
 
@@ -627,20 +627,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpUndo
+DECL|typedef|GimpFloatingSelUndo
 typedef|typedef
 name|struct
-name|_GimpUndo
-name|GimpUndo
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpUndoAccumulator
-typedef|typedef
-name|struct
-name|_GimpUndoAccumulator
-name|GimpUndoAccumulator
+name|_GimpFloatingSelUndo
+name|GimpFloatingSelUndo
 typedef|;
 end_typedef
 
@@ -650,6 +641,15 @@ typedef|typedef
 name|struct
 name|_GimpUndoStack
 name|GimpUndoStack
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpUndoAccumulator
+typedef|typedef
+name|struct
+name|_GimpUndoAccumulator
+name|GimpUndoAccumulator
 typedef|;
 end_typedef
 
