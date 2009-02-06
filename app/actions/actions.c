@@ -2288,19 +2288,25 @@ if|if
 condition|(
 name|blurb
 condition|)
+block|{
+comment|/*  value description and new value shown in the status bar  */
 name|action_message
 argument_list|(
 name|display
 argument_list|,
 name|object
 argument_list|,
+name|_
+argument_list|(
 literal|"%s: %.2f"
+argument_list|)
 argument_list|,
 name|blurb
 argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 elseif|else
@@ -2397,19 +2403,25 @@ if|if
 condition|(
 name|blurb
 condition|)
+block|{
+comment|/*  value description and new value shown in the status bar  */
 name|action_message
 argument_list|(
 name|display
 argument_list|,
 name|object
 argument_list|,
+name|_
+argument_list|(
 literal|"%s: %d"
+argument_list|)
 argument_list|,
 name|blurb
 argument_list|,
 name|value
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 else|else
