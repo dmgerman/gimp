@@ -1113,6 +1113,11 @@ name|GimpActionSelectType
 operator|)
 name|value
 argument_list|,
+name|action_data_get_display
+argument_list|(
+name|data
+argument_list|)
+argument_list|,
 name|G_OBJECT
 argument_list|(
 name|tool_info
