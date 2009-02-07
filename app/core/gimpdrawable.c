@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43e1c20103
+DECL|enum|__anon27d35cda0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -7907,6 +7907,15 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+comment|/*  clear the selection  */
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
+argument_list|(
+name|floating_sel
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_sync_source_node
 argument_list|(
 name|drawable
@@ -7995,6 +8004,15 @@ comment|/*  Invalidate the preview of the obscured drawable.  We do this here   
 name|gimp_viewable_invalidate_preview
 argument_list|(
 name|GIMP_VIEWABLE
+argument_list|(
+name|floating_sel
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  clear the selection  */
+name|gimp_drawable_invalidate_boundary
+argument_list|(
+name|GIMP_DRAWABLE
 argument_list|(
 name|floating_sel
 argument_list|)

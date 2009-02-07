@@ -385,15 +385,6 @@ argument_list|,
 name|floating_layer
 argument_list|)
 expr_stmt|;
-comment|/*  clear the selection  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|floating_layer
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_attach_floating_sel
 argument_list|(
 name|gimp_layer_get_floating_sel_drawable
@@ -415,15 +406,6 @@ name|floating_layer
 argument_list|)
 argument_list|,
 name|floating_layer
-argument_list|)
-expr_stmt|;
-comment|/*  clear the selection  */
-name|gimp_drawable_invalidate_boundary
-argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
-name|floating_layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  update the pointers  */
