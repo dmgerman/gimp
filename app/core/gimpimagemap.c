@@ -128,7 +128,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f324a0103
+DECL|enum|__anon2c300f640103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
