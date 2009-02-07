@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29103fe80103
+DECL|enum|__anon2754da790103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -391,7 +391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29103fe80203
+DECL|enum|__anon2754da790203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11896,7 +11896,7 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  If the layer is a floating selection, set the fs pointer  */
+comment|/*  If the layer is a floating selection, attach it to the drawable  */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel
@@ -11904,14 +11904,6 @@ argument_list|(
 name|layer
 argument_list|)
 condition|)
-block|{
-name|gimp_image_set_floating_selection
-argument_list|(
-name|image
-argument_list|,
-name|layer
-argument_list|)
-expr_stmt|;
 name|gimp_drawable_attach_floating_sel
 argument_list|(
 name|gimp_layer_get_floating_sel_drawable
@@ -11922,7 +11914,6 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|old_has_alpha
@@ -12205,22 +12196,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_image_get_floating_selection
+name|gimp_layer_is_floating_sel
 argument_list|(
-name|image
-argument_list|)
-operator|==
 name|layer
+argument_list|)
 condition|)
 block|{
-comment|/*  If this was the floating selection, reset the fs pointer        *  and activate the underlying drawable        */
-name|gimp_image_set_floating_selection
-argument_list|(
-name|image
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+comment|/*  If this was the floating selection, activate the underlying drawable        */
 name|floating_sel_activate_drawable
 argument_list|(
 name|layer

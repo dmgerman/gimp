@@ -490,17 +490,9 @@ argument_list|,
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  Set pointers  */
 name|gimp_layer_set_floating_sel_drawable
 argument_list|(
 name|layer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_floating_selection
-argument_list|(
-name|image
 argument_list|,
 name|NULL
 argument_list|)
