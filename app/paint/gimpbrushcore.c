@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0525f70103
+DECL|enum|__anon27815fb50103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1767,6 +1767,9 @@ decl_stmt|;
 name|gdouble
 name|delta_velocity
 decl_stmt|;
+name|gdouble
+name|temp_direction
+decl_stmt|;
 name|GimpVector2
 name|temp_vec
 decl_stmt|;
@@ -1961,6 +1964,14 @@ operator|->
 name|last_coords
 operator|.
 name|velocity
+expr_stmt|;
+name|temp_direction
+operator|=
+name|paint_core
+operator|->
+name|cur_coords
+operator|.
+name|direction
 expr_stmt|;
 comment|/*  return if there has been no motion  */
 if|if
@@ -2850,6 +2861,14 @@ name|p
 operator|*
 name|delta_velocity
 operator|)
+expr_stmt|;
+name|paint_core
+operator|->
+name|cur_coords
+operator|.
+name|direction
+operator|=
+name|temp_direction
 expr_stmt|;
 if|if
 condition|(

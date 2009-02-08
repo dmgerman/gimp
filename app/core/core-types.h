@@ -1019,6 +1019,10 @@ DECL|member|velocity
 name|gdouble
 name|velocity
 decl_stmt|;
+DECL|member|direction
+name|gdouble
+name|direction
+decl_stmt|;
 block|}
 struct|;
 end_struct
