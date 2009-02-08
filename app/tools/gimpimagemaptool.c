@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpguiconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -2348,6 +2354,19 @@ name|image_map_tool
 operator|->
 name|settings_box
 argument_list|)
+argument_list|,
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|tool
+operator|->
+name|tool_info
+operator|->
+name|gimp
+operator|->
+name|config
+argument_list|)
+operator|->
+name|image_map_tool_max_recent
 argument_list|)
 expr_stmt|;
 block|}

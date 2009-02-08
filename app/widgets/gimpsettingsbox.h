@@ -309,6 +309,9 @@ parameter_list|(
 name|GimpSettingsBox
 modifier|*
 name|box
+parameter_list|,
+name|gint
+name|max_recent
 parameter_list|)
 function_decl|;
 end_function_decl
