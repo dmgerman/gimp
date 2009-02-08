@@ -428,7 +428,7 @@ name|GtkWidget
 modifier|*
 name|dynamics_labels
 index|[
-literal|5
+literal|6
 index|]
 decl_stmt|;
 name|GType
@@ -903,6 +903,7 @@ name|n_dynamics
 operator|++
 expr_stmt|;
 block|}
+comment|/* NB: When adding new dynamics, increase size of the    * dynamics_labels[] array    */
 if|if
 condition|(
 name|n_dynamics
