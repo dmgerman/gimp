@@ -1127,11 +1127,11 @@ argument_list|)
 argument_list|,
 literal|"brush-angle"
 argument_list|,
-literal|0.01
-argument_list|,
 literal|0.1
 argument_list|,
 literal|1.0
+argument_list|,
+literal|15.0
 argument_list|,
 name|TRUE
 argument_list|)
