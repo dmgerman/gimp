@@ -866,6 +866,7 @@ name|gimp_matrix3_rotate
 argument_list|(
 name|matrix
 argument_list|,
+operator|-
 literal|2
 operator|*
 name|G_PI

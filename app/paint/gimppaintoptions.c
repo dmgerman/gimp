@@ -447,7 +447,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27df2e2c0103
+DECL|enum|__anon2b8c1b5a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1992,6 +1992,9 @@ name|options
 operator|->
 name|brush_angle
 operator|=
+operator|-
+literal|1.0
+operator|*
 name|g_value_get_double
 argument_list|(
 name|value
@@ -1999,6 +2002,7 @@ argument_list|)
 operator|/
 literal|360.0
 expr_stmt|;
+comment|/* let's make the angle mathematically correct */
 break|break;
 case|case
 name|PROP_APPLICATION_MODE
@@ -2803,6 +2807,9 @@ name|g_value_set_double
 argument_list|(
 name|value
 argument_list|,
+operator|-
+literal|1.0
+operator|*
 name|options
 operator|->
 name|brush_angle
@@ -2810,6 +2817,7 @@ operator|*
 literal|360.0
 argument_list|)
 expr_stmt|;
+comment|/* mathematically correct -> intuitively correct */
 break|break;
 case|case
 name|PROP_APPLICATION_MODE

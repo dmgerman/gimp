@@ -1170,7 +1170,12 @@ name|direction
 operator|=
 name|atan
 argument_list|(
+operator|(
+operator|-
+literal|1.0
+operator|*
 name|delta_y
+operator|)
 operator|/
 name|delta_x
 argument_list|)
@@ -1184,7 +1189,7 @@ expr_stmt|;
 if|if
 condition|(
 name|delta_x
-operator|>
+operator|<
 literal|0.0
 condition|)
 name|coords
