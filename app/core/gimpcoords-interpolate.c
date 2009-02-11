@@ -1278,7 +1278,7 @@ expr_stmt|;
 if|if
 condition|(
 name|delta_x
-operator|>
+operator|<
 literal|0.0
 condition|)
 name|res_coords
