@@ -43,6 +43,11 @@ name|GeglNode
 modifier|*
 name|tile_source_node
 decl_stmt|;
+DECL|member|fs_crop_node
+name|GeglNode
+modifier|*
+name|fs_crop_node
+decl_stmt|;
 DECL|member|fs_opacity_node
 name|GeglNode
 modifier|*
