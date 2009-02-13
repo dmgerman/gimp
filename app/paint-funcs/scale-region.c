@@ -4101,7 +4101,7 @@ operator|+
 literal|1
 operator|)
 operator|>>
-literal|2
+literal|1
 expr_stmt|;
 name|p
 index|[
