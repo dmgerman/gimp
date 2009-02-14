@@ -1364,6 +1364,10 @@ name|scale
 argument_list|,
 name|brush_core
 operator|->
+name|scale
+argument_list|,
+name|brush_core
+operator|->
 name|angle
 argument_list|,
 operator|&

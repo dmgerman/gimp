@@ -29,7 +29,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -55,7 +58,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -73,7 +79,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle

@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27815fb50103
+DECL|enum|__anon288e5c1b0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3268,6 +3268,10 @@ name|scale
 argument_list|,
 name|core
 operator|->
+name|scale
+argument_list|,
+name|core
+operator|->
 name|angle
 argument_list|,
 operator|&
@@ -3725,6 +3729,8 @@ argument_list|(
 name|core
 operator|->
 name|main_brush
+argument_list|,
+name|scale
 argument_list|,
 name|scale
 argument_list|,
@@ -6038,6 +6044,10 @@ name|scale
 argument_list|,
 name|core
 operator|->
+name|scale
+argument_list|,
+name|core
+operator|->
 name|angle
 argument_list|,
 operator|&
@@ -6164,6 +6174,10 @@ name|scale
 argument_list|,
 name|core
 operator|->
+name|scale
+argument_list|,
+name|core
+operator|->
 name|angle
 argument_list|)
 expr_stmt|;
@@ -6246,6 +6260,10 @@ return|;
 name|gimp_brush_transform_size
 argument_list|(
 name|brush
+argument_list|,
+name|core
+operator|->
+name|scale
 argument_list|,
 name|core
 operator|->
@@ -6356,6 +6374,10 @@ operator|=
 name|gimp_brush_transform_pixmap
 argument_list|(
 name|brush
+argument_list|,
+name|core
+operator|->
+name|scale
 argument_list|,
 name|core
 operator|->

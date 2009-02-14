@@ -59,7 +59,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -110,7 +113,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_real_transform_size (GimpBrush * brush,gdouble scale,gdouble angle,gint * width,gint * height)
+DECL|function|gimp_brush_real_transform_size (GimpBrush * brush,gdouble scale_x,gdouble scale_y,gdouble angle,gint * width,gint * height)
 name|gimp_brush_real_transform_size
 parameter_list|(
 name|GimpBrush
@@ -118,7 +121,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -144,7 +150,9 @@ name|gimp_brush_transform_matrix
 argument_list|(
 name|brush
 argument_list|,
-name|scale
+name|scale_x
+argument_list|,
+name|scale_y
 argument_list|,
 name|angle
 argument_list|,
@@ -176,7 +184,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_real_transform_mask (GimpBrush * brush,gdouble scale,gdouble angle)
+DECL|function|gimp_brush_real_transform_mask (GimpBrush * brush,gdouble scale_x,gdouble scale_y,gdouble angle)
 name|gimp_brush_real_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -184,7 +192,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -227,7 +238,9 @@ name|gimp_brush_transform_matrix
 argument_list|(
 name|brush
 argument_list|,
-name|scale
+name|scale_x
+argument_list|,
+name|scale_y
 argument_list|,
 name|angle
 argument_list|,
@@ -462,7 +475,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_real_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble angle)
+DECL|function|gimp_brush_real_transform_pixmap (GimpBrush * brush,gdouble scale_x,gdouble scale_y,gdouble angle)
 name|gimp_brush_real_transform_pixmap
 parameter_list|(
 name|GimpBrush
@@ -470,7 +483,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -513,7 +529,9 @@ name|gimp_brush_transform_matrix
 argument_list|(
 name|brush
 argument_list|,
-name|scale
+name|scale_x
+argument_list|,
+name|scale_y
 argument_list|,
 name|angle
 argument_list|,
@@ -804,7 +822,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_transform_matrix (GimpBrush * brush,gdouble scale,gdouble angle,GimpMatrix3 * matrix)
+DECL|function|gimp_brush_transform_matrix (GimpBrush * brush,gdouble scale_x,gdouble scale_y,gdouble angle,GimpMatrix3 * matrix)
 name|gimp_brush_transform_matrix
 parameter_list|(
 name|GimpBrush
@@ -812,7 +830,10 @@ modifier|*
 name|brush
 parameter_list|,
 name|gdouble
-name|scale
+name|scale_x
+parameter_list|,
+name|gdouble
+name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
@@ -887,9 +908,9 @@ name|gimp_matrix3_scale
 argument_list|(
 name|matrix
 argument_list|,
-name|scale
+name|scale_x
 argument_list|,
-name|scale
+name|scale_y
 argument_list|)
 expr_stmt|;
 block|}
