@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a002ce0103
+DECL|enum|__anon29668e7e0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a002ce0203
+DECL|enum|__anon29668e7e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1512,6 +1512,11 @@ operator|->
 name|internal_operation
 operator|++
 expr_stmt|;
+name|entry
+operator|->
+name|suppress_tag_query
+operator|++
+expr_stmt|;
 name|gtk_entry_set_text
 argument_list|(
 name|GTK_ENTRY
@@ -1535,6 +1540,11 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|->
+name|suppress_tag_query
+operator|--
+expr_stmt|;
+name|entry
+operator|->
 name|internal_operation
 operator|--
 expr_stmt|;
@@ -1553,6 +1563,22 @@ name|GIMP_TAG_ENTRY_MODE_ASSIGN
 condition|)
 block|{
 name|gimp_tag_entry_assign_tags
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|entry
+operator|->
+name|mode
+operator|==
+name|GIMP_TAG_ENTRY_MODE_QUERY
+condition|)
+block|{
+name|gimp_tag_entry_query_tag
 argument_list|(
 name|entry
 argument_list|)
