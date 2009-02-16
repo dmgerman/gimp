@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad254680103
+DECL|enum|__anon27a002ce0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad254680203
+DECL|enum|__anon27a002ce0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7517,6 +7517,11 @@ operator|->
 name|suppress_mask_update
 operator|++
 expr_stmt|;
+name|entry
+operator|->
+name|suppress_tag_query
+operator|++
+expr_stmt|;
 name|gtk_editable_delete_text
 argument_list|(
 name|GTK_EDITABLE
@@ -7551,6 +7556,11 @@ argument_list|,
 operator|&
 name|position
 argument_list|)
+expr_stmt|;
+name|entry
+operator|->
+name|suppress_tag_query
+operator|--
 expr_stmt|;
 name|entry
 operator|->
@@ -8348,6 +8358,16 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|entry
+operator|->
+name|internal_operation
+operator|++
+expr_stmt|;
+name|entry
+operator|->
+name|suppress_tag_query
+operator|++
+expr_stmt|;
 comment|/* strip whitespace in front */
 while|while
 condition|(
@@ -8581,6 +8601,16 @@ argument_list|)
 argument_list|,
 name|position
 argument_list|)
+expr_stmt|;
+name|entry
+operator|->
+name|suppress_tag_query
+operator|--
+expr_stmt|;
+name|entry
+operator|->
+name|internal_operation
+operator|--
 expr_stmt|;
 return|return
 name|FALSE
