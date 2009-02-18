@@ -315,6 +315,11 @@ name|GimpDynamicOptions
 modifier|*
 name|direction_options
 decl_stmt|;
+DECL|member|tilt_options
+name|GimpDynamicOptions
+modifier|*
+name|tilt_options
+decl_stmt|;
 DECL|member|random_options
 name|GimpDynamicOptions
 modifier|*
