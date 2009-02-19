@@ -256,7 +256,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d85cd80103
+DECL|enum|__anon2a3370e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2886,7 +2886,7 @@ index|[
 name|i
 index|]
 operator|=
-name|g_strdup_printf
+name|g_strdup
 argument_list|(
 name|thumbnail
 operator|->
