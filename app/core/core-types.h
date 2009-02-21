@@ -1030,7 +1030,7 @@ end_struct
 begin_include
 include|#
 directive|include
-file|"gegl/gegl-types.h"
+file|"gegl/gimp-gegl-types.h"
 end_include
 
 begin_include

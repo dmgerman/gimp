@@ -48,7 +48,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gegl-types.h"
+file|"gimp-gegl-types.h"
 end_include
 
 begin_include
@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27845ed80103
+DECL|enum|__anon296e68140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
