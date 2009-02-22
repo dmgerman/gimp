@@ -334,7 +334,7 @@ name|NC_
 argument_list|(
 literal|"image-action"
 argument_list|,
-literal|"F_it Canvas to Layers"
+literal|"Fit Canvas to L_ayers"
 argument_list|)
 block|,
 name|NULL
