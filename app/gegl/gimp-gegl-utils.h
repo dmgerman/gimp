@@ -32,6 +32,18 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|TileManager
+modifier|*
+name|gimp_buffer_to_tiles
+parameter_list|(
+name|GeglBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
