@@ -114,6 +114,25 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"debug-show-image-graph"
+block|,
+name|NULL
+block|,
+literal|"Show Image _Graph"
+block|,
+name|NULL
+block|,
+literal|"Creates a new image showing the GEGL graph of this image"
+block|,
+name|G_CALLBACK
+argument_list|(
+name|debug_show_image_graph_cmd_callback
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"debug-dump-items"
 block|,
 name|NULL

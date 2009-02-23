@@ -111,6 +111,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|debug_show_image_graph_cmd_callback
+parameter_list|(
+name|GtkAction
+modifier|*
+name|action
+parameter_list|,
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
