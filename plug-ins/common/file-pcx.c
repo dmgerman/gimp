@@ -293,6 +293,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -315,6 +316,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -331,6 +333,7 @@ name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -998,6 +1001,7 @@ end_function
 begin_decl_stmt
 DECL|variable|mono
 specifier|static
+specifier|const
 name|guchar
 name|mono
 index|[
@@ -1023,7 +1027,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon291021090108
+DECL|struct|__anon2b3bbaf00108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1100,7 +1104,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon291021090208
+DECL|struct|__anon2b3bbaf00208
 specifier|static
 struct|struct
 block|{
@@ -1114,6 +1118,7 @@ name|address
 decl_stmt|;
 DECL|variable|pcx_header_buf_xlate
 block|}
+decl|const
 name|pcx_header_buf_xlate
 index|[]
 init|=
@@ -1888,12 +1893,10 @@ condition|)
 block|{
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -1940,12 +1943,10 @@ condition|)
 block|{
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -1994,12 +1995,10 @@ condition|)
 block|{
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -2067,12 +2066,10 @@ condition|)
 block|{
 name|dest
 operator|=
-operator|(
-name|guchar
-operator|*
-operator|)
-name|g_malloc
+name|g_new
 argument_list|(
+name|guchar
+argument_list|,
 name|width
 operator|*
 name|height
@@ -3653,7 +3650,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_8 (FILE * fp,gint width,gint height,guchar * buffer)
+DECL|function|save_8 (FILE * fp,gint width,gint height,const guchar * buffer)
 name|save_8
 parameter_list|(
 name|FILE
@@ -3666,6 +3663,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -3721,7 +3719,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|save_24 (FILE * fp,gint width,gint height,guchar * buffer)
+DECL|function|save_24 (FILE * fp,gint width,gint height,const guchar * buffer)
 name|save_24
 parameter_list|(
 name|FILE
@@ -3734,6 +3732,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -3861,13 +3860,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|writeline (FILE * fp,guchar * buffer,gint bytes)
+DECL|function|writeline (FILE * fp,const guchar * buffer,gint bytes)
 name|writeline
 parameter_list|(
 name|FILE
 modifier|*
 name|fp
 parameter_list|,
+specifier|const
 name|guchar
 modifier|*
 name|buffer
@@ -3876,11 +3876,7 @@ name|gint
 name|bytes
 parameter_list|)
 block|{
-name|guchar
-name|value
-decl_stmt|,
-name|count
-decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|finish
@@ -3888,6 +3884,12 @@ init|=
 name|buffer
 operator|+
 name|bytes
+decl_stmt|;
+name|guchar
+name|value
+decl_stmt|;
+name|guchar
+name|count
 decl_stmt|;
 while|while
 condition|(
