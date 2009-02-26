@@ -60,6 +60,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  the configuration changed with respect to the location  *  of the user manual, invalidate the cached information  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_help_user_manual_changed
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
