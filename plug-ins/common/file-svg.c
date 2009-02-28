@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b9798d0108
+DECL|struct|__anon29c5217a0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1214,6 +1214,15 @@ operator|->
 name|message
 expr_stmt|;
 block|}
+name|g_printerr
+argument_list|(
+literal|"%s status: %d\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|status
+argument_list|)
+expr_stmt|;
 name|values
 index|[
 literal|0

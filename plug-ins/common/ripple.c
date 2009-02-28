@@ -128,7 +128,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5c25200108
+DECL|struct|__anon2a368c3e0108
 block|{
 DECL|member|period
 name|gint
@@ -923,7 +923,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon2b5c25200208
+DECL|struct|__anon2a368c3e0208
 typedef|typedef
 struct|struct
 block|{
@@ -977,10 +977,6 @@ name|RippleParam_t
 modifier|*
 name|param
 init|=
-operator|(
-name|RippleParam_t
-operator|*
-operator|)
 name|data
 decl_stmt|;
 name|GimpPixelFetcher
@@ -1071,11 +1067,9 @@ name|height
 expr_stmt|;
 name|yi
 operator|=
-operator|(
 name|yi
 operator|%
 name|height
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -1089,11 +1083,7 @@ name|height
 expr_stmt|;
 name|yi_a
 operator|=
-operator|(
-name|yi
-operator|+
-literal|1
-operator|)
+name|yi_a
 operator|%
 name|height
 expr_stmt|;
@@ -1140,8 +1130,6 @@ operator|=
 name|CLAMP
 argument_list|(
 name|yi_a
-operator|+
-literal|1
 argument_list|,
 literal|0
 argument_list|,
