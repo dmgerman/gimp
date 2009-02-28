@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<glib.h>
 end_include
 
@@ -643,7 +637,7 @@ condition|(
 operator|(
 name|count
 operator|%
-literal|8
+literal|16
 operator|)
 operator|==
 literal|0
@@ -1085,7 +1079,7 @@ condition|(
 operator|(
 name|count
 operator|%
-literal|8
+literal|16
 operator|)
 operator|==
 literal|0
@@ -1322,7 +1316,7 @@ condition|(
 operator|(
 name|count
 operator|%
-literal|8
+literal|16
 operator|)
 operator|==
 literal|0
@@ -1581,7 +1575,7 @@ condition|(
 operator|(
 name|count
 operator|%
-literal|8
+literal|16
 operator|)
 operator|==
 literal|0
