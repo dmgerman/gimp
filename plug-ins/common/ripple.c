@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<string.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -19,12 +25,6 @@ begin_include
 include|#
 directive|include
 file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
 end_include
 
 begin_include
@@ -70,22 +70,6 @@ value|16
 end_define
 
 begin_define
-DECL|macro|HORIZONTAL
-define|#
-directive|define
-name|HORIZONTAL
-value|0
-end_define
-
-begin_define
-DECL|macro|VERTICAL
-define|#
-directive|define
-name|VERTICAL
-value|1
-end_define
-
-begin_define
 DECL|macro|SMEAR
 define|#
 directive|define
@@ -128,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5574d20108
+DECL|struct|__anon27a6a5b70108
 block|{
 DECL|member|period
 name|gint
@@ -139,7 +123,7 @@ name|gint
 name|amplitude
 decl_stmt|;
 DECL|member|orientation
-name|gint
+name|GimpOrientationType
 name|orientation
 decl_stmt|;
 DECL|member|edges
@@ -321,7 +305,7 @@ comment|/* period      */
 literal|5
 block|,
 comment|/* amplitude   */
-name|HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 block|,
 comment|/* orientation */
 name|WRAP
@@ -396,7 +380,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"period"
 block|,
-literal|"period; number of pixels for one wave to complete"
+literal|"Period; number of pixels for one wave to complete"
 block|}
 block|,
 block|{
@@ -404,7 +388,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"amplitude"
 block|,
-literal|"amplitude; maximum displacement of wave"
+literal|"Amplitude; maximum displacement of wave"
 block|}
 block|,
 block|{
@@ -412,7 +396,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"orientation"
 block|,
-literal|"orientation; 0 = Horizontal, 1 = Vertical"
+literal|"Orientation { ORIENTATION-HORIZONTAL (0), ORIENTATION-VERTICAL (1) }"
 block|}
 block|,
 block|{
@@ -420,7 +404,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edges"
 block|,
-literal|"edges; 0 = smear, 1 =  wrap, 2 = blank"
+literal|"Edges; 0 = smear, 1 =  wrap, 2 = blank"
 block|}
 block|,
 block|{
@@ -698,15 +682,14 @@ operator|.
 name|d_int32
 operator|)
 condition|?
-name|VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 else|:
-name|HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 expr_stmt|;
 name|rvals
 operator|.
 name|edges
 operator|=
-operator|(
 name|param
 index|[
 literal|6
@@ -715,7 +698,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-operator|)
 expr_stmt|;
 name|rvals
 operator|.
@@ -925,7 +907,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5574d20208
+DECL|struct|__anon27a6a5b70208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1034,7 +1016,6 @@ name|yi
 operator|+
 literal|1
 expr_stmt|;
-comment|/* Tile the image. */
 if|if
 condition|(
 name|rvals
@@ -1044,6 +1025,7 @@ operator|==
 name|WRAP
 condition|)
 block|{
+comment|/* Tile the image. */
 name|needy
 operator|=
 name|fmod
@@ -1086,7 +1068,6 @@ operator|%
 name|height
 expr_stmt|;
 block|}
-comment|/* Smear out the edges of the image by repeating pixels. */
 elseif|else
 if|if
 condition|(
@@ -1097,6 +1078,7 @@ operator|==
 name|SMEAR
 condition|)
 block|{
+comment|/* Smear out the edges of the image by repeating pixels. */
 name|needy
 operator|=
 name|CLAMP
@@ -1236,7 +1218,6 @@ name|has_alpha
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* antialias */
 else|else
 block|{
 if|if
@@ -1359,7 +1340,6 @@ name|xi
 operator|+
 literal|1
 expr_stmt|;
-comment|/* Tile the image. */
 if|if
 condition|(
 name|rvals
@@ -1369,6 +1349,7 @@ operator|==
 name|WRAP
 condition|)
 block|{
+comment|/* Tile the image. */
 name|needx
 operator|=
 name|fmod
@@ -1417,7 +1398,6 @@ operator|%
 name|width
 expr_stmt|;
 block|}
-comment|/* Smear out the edges of the image by repeating pixels. */
 elseif|else
 if|if
 condition|(
@@ -1428,6 +1408,7 @@ operator|==
 name|SMEAR
 condition|)
 block|{
+comment|/* Smear out the edges of the image by repeating pixels. */
 name|needx
 operator|=
 name|CLAMP
@@ -1567,7 +1548,6 @@ name|has_alpha
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* antialias */
 else|else
 block|{
 if|if
@@ -1716,7 +1696,7 @@ name|rvals
 operator|.
 name|orientation
 operator|==
-name|HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 operator|)
 operator|+
 name|param
@@ -1738,7 +1718,7 @@ name|rvals
 operator|.
 name|orientation
 operator|==
-name|VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 operator|)
 operator|)
 expr_stmt|;
@@ -1850,7 +1830,7 @@ name|rvals
 operator|.
 name|orientation
 operator|==
-name|VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 name|ripple_vertical
 argument_list|(
@@ -1934,7 +1914,7 @@ name|rvals
 operator|.
 name|orientation
 operator|==
-name|VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 condition|?
 name|ripple_vertical
 else|:
@@ -2489,7 +2469,7 @@ argument_list|(
 literal|"_Horizontal"
 argument_list|)
 argument_list|,
-name|HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|,
 operator|&
 name|horizontal
@@ -2499,7 +2479,7 @@ argument_list|(
 literal|"_Vertical"
 argument_list|)
 argument_list|,
-name|VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 argument_list|,
 operator|&
 name|vertical
