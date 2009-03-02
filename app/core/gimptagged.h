@@ -225,6 +225,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_tagged_set_tags
+parameter_list|(
+name|GimpTagged
+modifier|*
+name|tagged
+parameter_list|,
+name|GList
+modifier|*
+name|tags
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GList
 modifier|*
 name|gimp_tagged_get_tags
