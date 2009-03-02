@@ -152,11 +152,9 @@ condition|(
 operator|!
 name|tag_name
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 name|tag
 operator|=
 name|g_object_new
@@ -275,11 +273,9 @@ condition|(
 operator|!
 name|tag_name
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 name|case_folded
 operator|=
 name|g_utf8_casefold
@@ -349,11 +345,9 @@ condition|(
 operator|!
 name|tag_quark
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 name|tag
 operator|=
 name|g_object_new
@@ -568,7 +562,7 @@ end_comment
 
 begin_function
 name|gint
-DECL|function|gimp_tag_compare_with_string (GimpTag * tag,const char * tag_string)
+DECL|function|gimp_tag_compare_with_string (GimpTag * tag,const gchar * tag_string)
 name|gimp_tag_compare_with_string
 parameter_list|(
 name|GimpTag
@@ -576,7 +570,7 @@ modifier|*
 name|tag
 parameter_list|,
 specifier|const
-name|char
+name|gchar
 modifier|*
 name|tag_string
 parameter_list|)
@@ -725,11 +719,9 @@ condition|(
 operator|!
 name|tag
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 name|tag
 operator|=
 name|g_strstrip
