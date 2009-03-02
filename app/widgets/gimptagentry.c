@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29668e7e0103
+DECL|enum|__anon293d712e0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29668e7e0203
+DECL|enum|__anon293d712e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,9 +142,21 @@ name|PROP_CONTAINER
 block|,
 DECL|enumerator|PROP_MODE
 name|PROP_MODE
-block|, }
+block|}
 enum|;
 end_enum
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_tag_entry_dispose
+parameter_list|(
+name|GObject
+modifier|*
+name|object
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -189,18 +201,6 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_tag_entry_dispose
-parameter_list|(
-name|GObject
-modifier|*
-name|object
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -741,13 +741,9 @@ name|g_param_spec_object
 argument_list|(
 literal|"container"
 argument_list|,
-operator|(
 literal|"Filtered container"
-operator|)
 argument_list|,
-operator|(
 literal|"The Filtered container"
-operator|)
 argument_list|,
 name|GIMP_TYPE_FILTERED_CONTAINER
 argument_list|,
@@ -767,13 +763,9 @@ name|g_param_spec_enum
 argument_list|(
 literal|"mode"
 argument_list|,
-operator|(
 literal|"Working mode"
-operator|)
 argument_list|,
-operator|(
 literal|"Mode in which to work."
-operator|)
 argument_list|,
 name|GIMP_TYPE_TAG_ENTRY_MODE
 argument_list|,
@@ -1896,7 +1888,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|editable
 argument_list|,
-literal|"insert_text"
+literal|"insert-text"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2020,7 +2012,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|editable
 argument_list|,
-literal|"insert_text"
+literal|"insert-text"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2141,7 +2133,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|editable
 argument_list|,
-literal|"insert_text"
+literal|"insert-text"
 argument_list|)
 expr_stmt|;
 block|}
@@ -2363,7 +2355,7 @@ name|g_signal_stop_emission_by_name
 argument_list|(
 name|editable
 argument_list|,
-literal|"delete_text"
+literal|"delete-text"
 argument_list|)
 expr_stmt|;
 block|}
@@ -3153,12 +3145,9 @@ name|gimp_tagged_remove_tag
 argument_list|(
 name|tagged
 argument_list|,
-name|GIMP_TAG
-argument_list|(
 name|tags_iterator
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3187,12 +3176,9 @@ name|gimp_tagged_add_tag
 argument_list|(
 name|tagged
 argument_list|,
-name|GIMP_TAG
-argument_list|(
 name|tags_iterator
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -5127,9 +5113,9 @@ argument_list|,
 name|attr_list
 argument_list|)
 expr_stmt|;
-name|GTK_IS_WIDGET
+name|pango_attr_list_unref
 argument_list|(
-name|widget
+name|attr_list
 argument_list|)
 expr_stmt|;
 name|renderer
@@ -5366,7 +5352,6 @@ block|{
 case|case
 name|GDK_Tab
 case|:
-block|{
 name|entry
 operator|->
 name|tab_completion_index
@@ -5387,7 +5372,6 @@ argument_list|,
 name|entry
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|TRUE
 return|;
@@ -6011,7 +5995,6 @@ block|{
 case|case
 name|TAG_SEARCH_NONE
 case|:
-block|{
 if|if
 condition|(
 name|selection_start
@@ -6069,17 +6052,15 @@ literal|'t'
 operator|)
 condition|)
 block|{
-comment|/* between whitespace and tag,                    * should allow to select tag. */
+comment|/* between whitespace and tag,            * should allow to select tag.            */
 name|selection_start
 operator|--
 expr_stmt|;
-block|}
 block|}
 break|break;
 case|case
 name|TAG_SEARCH_LEFT
 case|:
-block|{
 if|if
 condition|(
 name|selection_start
@@ -6196,12 +6177,10 @@ literal|1
 expr_stmt|;
 block|}
 block|}
-block|}
 break|break;
 case|case
 name|TAG_SEARCH_RIGHT
 case|:
-block|{
 if|if
 condition|(
 name|selection_start
@@ -6293,7 +6272,6 @@ name|selection_start
 operator|+
 literal|1
 expr_stmt|;
-block|}
 block|}
 block|}
 break|break;

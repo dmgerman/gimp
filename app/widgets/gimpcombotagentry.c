@@ -986,6 +986,12 @@ block|{
 name|GdkEventButton
 modifier|*
 name|button_event
+init|=
+operator|(
+name|GdkEventButton
+operator|*
+operator|)
+name|event
 decl_stmt|;
 name|gint
 name|x
@@ -996,14 +1002,6 @@ decl_stmt|;
 name|GdkRectangle
 name|arrow_rect
 decl_stmt|;
-name|button_event
-operator|=
-operator|(
-name|GdkEventButton
-operator|*
-operator|)
-name|event
-expr_stmt|;
 name|x
 operator|=
 name|button_event
