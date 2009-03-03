@@ -329,7 +329,7 @@ specifier|const
 name|gint
 name|fraction_bits
 init|=
-literal|8
+literal|12
 decl_stmt|;
 specifier|const
 name|gint
@@ -468,7 +468,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|//3 instead of 1
 name|dest
 operator|=
 name|temp_buf_get_data
@@ -485,6 +484,8 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
+comment|/* prevent disappearance of 1x1 pixel brush at some rotations when scaling< 1 */
+comment|/*   if (src_width == 1&& src_height == 1&& scale_x< 1&& scale_y< 1 )     {       *dest = src[0];       return result;     }*/
 name|gimp_matrix3_transform_point
 argument_list|(
 operator|&
@@ -768,7 +769,6 @@ name|dest
 operator|=
 literal|0
 expr_stmt|;
-comment|/* dest[0] = 0;               dest[1] = 0;               dest[2] = 0;*/
 block|}
 else|else
 comment|/* reverse transformed point hits source pixel */
@@ -1149,7 +1149,7 @@ specifier|const
 name|gint
 name|fraction_bits
 init|=
-literal|8
+literal|12
 decl_stmt|;
 specifier|const
 name|gint
@@ -2001,7 +2001,7 @@ operator|-
 name|center_x
 argument_list|,
 operator|-
-name|center_x
+name|center_y
 argument_list|)
 expr_stmt|;
 name|gimp_matrix3_rotate
