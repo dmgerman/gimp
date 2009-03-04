@@ -18157,7 +18157,7 @@ literal|"gimp-image-get-filename"
 argument_list|,
 literal|"Returns the specified image's filename."
 argument_list|,
-literal|"This procedure returns the specified image's filename in the filesystem encoding. The image has a filename only if it was loaded or has since been saved. Otherwise, this function returns %NULL."
+literal|"This procedure returns the specified image's filename in the filesystem encoding. The image has a filename only if it was loaded from a local filesystem or has since been saved locally. Otherwise, this function returns %NULL."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
