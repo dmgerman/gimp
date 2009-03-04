@@ -5565,7 +5565,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the specified image's name.  *  * Returns: The name.  */
+comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a  * filename, then this is the base name (the last component of the  * path).  *  * Returns: The name.  */
 end_comment
 
 begin_function

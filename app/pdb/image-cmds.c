@@ -10009,34 +10009,13 @@ condition|(
 name|success
 condition|)
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|gimp_image_get_filename
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|filename
-condition|)
-name|name
-operator|=
-name|g_filename_display_basename
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-else|else
 name|name
 operator|=
 name|g_strdup
 argument_list|(
-name|_
+name|gimp_image_get_display_name
 argument_list|(
-literal|"Untitled"
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18368,7 +18347,7 @@ literal|"gimp-image-get-name"
 argument_list|,
 literal|"Returns the specified image's name."
 argument_list|,
-literal|"This procedure returns the specified image's name."
+literal|"This procedure returns the image's name. If the image has a filename, then this is the base name (the last component of the path)."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
