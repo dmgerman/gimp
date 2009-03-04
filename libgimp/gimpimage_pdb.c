@@ -5406,7 +5406,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * from a local filesystem or has since been saved locally. Otherwise,  * this function returns %NULL.  *  * Returns: The filename.  */
+comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * from a local filesystem or has since been saved locally. Otherwise,  * this function returns %NULL. See also gimp_image_get_uri().  *  * Returns: The filename.  */
 end_comment
 
 begin_function
@@ -5565,7 +5565,90 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a  * filename, then this is the base name (the last component of the  * path).  *  * Returns: The name.  */
+comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded from a file or has since  * been saved. Otherwise, this function returns %NULL.  *  * Returns: The URI.  *  * Since: GIMP 2.8  */
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_image_get_uri (gint32 image_ID)
+name|gimp_image_get_uri
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gchar
+modifier|*
+name|uri
+init|=
+name|NULL
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-image-get-uri"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_IMAGE
+argument_list|,
+name|image_ID
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|uri
+operator|=
+name|g_strdup
+argument_list|(
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_string
+argument_list|)
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|uri
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then this is the base name (the last component of the  * path). Otherwise it is the translated string \"Untitled\".  *  * Returns: The name.  */
 end_comment
 
 begin_function
