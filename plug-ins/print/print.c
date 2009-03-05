@@ -478,16 +478,6 @@ argument_list|,
 literal|"<Image>/File/Send"
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-name|GTK_CHECK_VERSION
-argument_list|(
-literal|2
-operator|,
-literal|13
-operator|,
-literal|0
-argument_list|)
 name|gimp_plugin_icon_register
 argument_list|(
 name|PAGE_SETUP_PROC_NAME
@@ -502,8 +492,6 @@ operator|)
 name|GTK_STOCK_PAGE_SETUP
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
