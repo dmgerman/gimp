@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpmountoperation.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"uri-backend.h"
 end_include
 
@@ -54,7 +48,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29499c140103
+DECL|enum|__anon2c59ead00103
 block|{
 DECL|enumerator|DOWNLOAD
 name|DOWNLOAD
@@ -506,7 +500,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29499c140208
+DECL|struct|__anon2c59ead00208
 block|{
 DECL|member|mode
 name|Mode
@@ -822,7 +816,7 @@ name|GMountOperation
 modifier|*
 name|operation
 init|=
-name|gimp_mount_operation_new
+name|gtk_mount_operation_new
 argument_list|(
 name|NULL
 argument_list|)
