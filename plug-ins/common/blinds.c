@@ -69,22 +69,6 @@ name|MAX_FANS
 value|100
 end_define
 
-begin_define
-DECL|macro|HORIZONTAL
-define|#
-directive|define
-name|HORIZONTAL
-value|0
-end_define
-
-begin_define
-DECL|macro|VERTICAL
-define|#
-directive|define
-name|VERTICAL
-value|1
-end_define
-
 begin_comment
 comment|/* Variables set in dialog box */
 end_comment
@@ -104,7 +88,7 @@ name|gint
 name|numsegs
 decl_stmt|;
 DECL|member|orientation
-name|gint
+name|GimpOrientationType
 name|orientation
 decl_stmt|;
 DECL|member|bg_trans
@@ -250,9 +234,8 @@ literal|30
 block|,
 literal|3
 block|,
-name|HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 block|,
-comment|/* orientation */
 name|FALSE
 block|}
 decl_stmt|;
@@ -324,7 +307,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"orientation"
 block|,
-literal|"orientation; 0 = Horizontal, 1 = Vertical"
+literal|"The orientation { ORIENTATION-HORIZONTAL (0), ORIENTATION-VERTICAL (1) }"
 block|}
 block|,
 block|{
@@ -332,7 +315,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"bg-transparent"
 block|,
-literal|"background transparent; FALSE,TRUE"
+literal|"Background transparent { FALSE, TRUE }"
 block|}
 block|}
 decl_stmt|;
@@ -954,7 +937,7 @@ argument_list|(
 literal|"_Horizontal"
 argument_list|)
 argument_list|,
-name|HORIZONTAL
+name|GIMP_ORIENTATION_HORIZONTAL
 argument_list|,
 operator|&
 name|horizontal
@@ -964,7 +947,7 @@ argument_list|(
 literal|"_Vertical"
 argument_list|)
 argument_list|,
-name|VERTICAL
+name|GIMP_ORIENTATION_VERTICAL
 argument_list|,
 operator|&
 name|vertical
@@ -2035,6 +2018,8 @@ condition|(
 name|bvals
 operator|.
 name|orientation
+operator|==
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 block|{
 for|for
@@ -2546,6 +2531,8 @@ condition|(
 name|bvals
 operator|.
 name|orientation
+operator|==
+name|GIMP_ORIENTATION_VERTICAL
 condition|)
 block|{
 for|for
