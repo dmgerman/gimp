@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f934d0103
+DECL|enum|__anon274a3d9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f934d0203
+DECL|enum|__anon274a3d9c0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1f934d0308
+DECL|struct|__anon274a3d9c0308
 block|{
 DECL|member|x
 name|guint
