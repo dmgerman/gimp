@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8756bf0108
+DECL|struct|__anon2ae46b550108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8756bf0208
+DECL|struct|__anon2ae46b550208
 block|{
 DECL|member|run
 name|gboolean
@@ -3070,7 +3070,11 @@ name|data
 argument_list|)
 expr_stmt|;
 comment|/* And we're done! */
-comment|/*gimp_do_progress (1, 1);*/
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -6566,7 +6570,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8756bf0308
+DECL|struct|__anon2ae46b550308
 block|{
 DECL|member|pub
 name|struct

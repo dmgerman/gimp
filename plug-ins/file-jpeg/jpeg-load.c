@@ -1629,11 +1629,18 @@ condition|(
 operator|!
 name|preview
 condition|)
+block|{
+name|gimp_progress_update
+argument_list|(
+literal|1.0
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_image_add_layer
 argument_list|(
 name|image_ID
@@ -1891,7 +1898,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296c685d0108
+DECL|struct|__anon290a8d250108
 block|{
 DECL|member|pub
 name|struct
