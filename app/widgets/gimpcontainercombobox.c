@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf13b720103
+DECL|enum|__anon2b6203f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1943,25 +1943,6 @@ block|{
 name|GtkTreeIter
 name|iter
 decl_stmt|;
-if|if
-condition|(
-name|GTK_COMBO_BOX_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|changed
-condition|)
-name|GTK_COMBO_BOX_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|changed
-argument_list|(
-name|combo_box
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gtk_combo_box_get_active_iter
