@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7912890103
+DECL|enum|__anon2c606c6a0103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -2874,19 +2874,21 @@ condition|)
 block|{
 name|GType
 name|children_type
-init|=
-name|gimp_container_get_children_type
-argument_list|(
-name|private
-operator|->
-name|container
-argument_list|)
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|signal_name
 decl_stmt|;
+name|children_type
+operator|=
+name|gimp_container_get_children_type
+argument_list|(
+name|private
+operator|->
+name|container
+argument_list|)
+expr_stmt|;
 name|signal_name
 operator|=
 name|gimp_context_type_to_signal_name
@@ -2930,9 +2932,9 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|if (success&& private->container&& private->context)     {       GimpContext *context;
+block|if (success&& private->container&& private->context)     {       GimpContext *context;       GType        children_type;
 comment|/*  ref and remember the context because private->context may        *  become NULL by calling gimp_context_set_by_type()        */
-block|context = g_object_ref (private->context);        g_signal_handlers_block_by_func (context,                                        gimp_container_view_context_changed,                                        view);        gimp_context_set_by_type (context,                                 gimp_container_get_children_type (private->container),                                 GIMP_OBJECT (viewable));        g_signal_handlers_unblock_by_func (context,                                          gimp_container_view_context_changed,                                          view);        g_object_unref (context);     }
+block|context       = g_object_ref (private->context);       children_type = gimp_container_get_children_type (private->container);        g_signal_handlers_block_by_func (context,                                        gimp_container_view_context_changed,                                        view);        gimp_context_set_by_type (context, children_type, GIMP_OBJECT (viewable));        g_signal_handlers_unblock_by_func (context,                                          gimp_container_view_context_changed,                                          view);        g_object_unref (context);     }
 endif|#
 directive|endif
 return|return
