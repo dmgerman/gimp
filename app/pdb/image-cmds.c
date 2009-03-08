@@ -14796,7 +14796,7 @@ literal|"gimp-image-add-channel"
 argument_list|,
 literal|"Add the specified channel to the image."
 argument_list|,
-literal|"This procedure adds the specified channel to the image. The position channel is not currently used, so the channel is always inserted at the top of the channel stack."
+literal|"This procedure adds the specified channel to the image at the given position. If the position is specified as -1, then the channel is inserted above the active channel or, if no channel is active, at the top of the channel stack."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

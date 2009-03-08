@@ -2787,7 +2787,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image. The position  * channel is not currently used, so the channel is always inserted at  * the top of the channel stack.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. If the position is specified as -1, then the channel is  * inserted above the active channel or, if no channel is active, at  * the top of the channel stack.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
