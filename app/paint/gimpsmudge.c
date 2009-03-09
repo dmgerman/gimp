@@ -309,7 +309,7 @@ name|brush_core_class
 operator|->
 name|handles_transforming_brush
 operator|=
-name|FALSE
+name|TRUE
 expr_stmt|;
 block|}
 end_function
@@ -1007,7 +1007,7 @@ operator|==
 literal|0.0
 condition|)
 return|return;
-comment|/*  Get the paint area (Smudge won't scale!)  */
+comment|/*  Get the paint area */
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
