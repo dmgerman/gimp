@@ -32,7 +32,7 @@ DECL|macro|PLUG_IN_BINARY
 define|#
 directive|define
 name|PLUG_IN_BINARY
-value|"flie-jpeg"
+value|"file-jpeg"
 end_define
 
 begin_comment
@@ -93,7 +93,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c7a2a00103
+DECL|enum|__anon2c5b95fb0103
 block|{
 DECL|enumerator|JPEG_SUPSAMPLING_2x2_1x1_1x1
 name|JPEG_SUPSAMPLING_2x2_1x1_1x1
