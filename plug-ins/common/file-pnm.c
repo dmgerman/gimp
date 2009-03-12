@@ -305,7 +305,7 @@ DECL|member|fd
 name|gint
 name|fd
 decl_stmt|;
-comment|/* File descriptor */
+comment|/* File descriptor             */
 DECL|member|rowbuf
 name|gchar
 modifier|*
@@ -316,35 +316,35 @@ DECL|member|xres
 name|gint
 name|xres
 decl_stmt|;
-comment|/* X resolution */
+comment|/* X resolution                */
 DECL|member|np
 name|gint
 name|np
 decl_stmt|;
-comment|/* Number of planes */
+comment|/* Number of planes            */
 DECL|member|red
 name|guchar
 modifier|*
 name|red
 decl_stmt|;
-comment|/* Colormap red */
+comment|/* Colormap red                */
 DECL|member|grn
 name|guchar
 modifier|*
 name|grn
 decl_stmt|;
-comment|/* Colormap green */
+comment|/* Colormap green              */
 DECL|member|blu
 name|guchar
 modifier|*
 name|blu
 decl_stmt|;
-comment|/* Colormap blue */
-DECL|member|solid_white
+comment|/* Colormap blue               */
+DECL|member|zero_is_black
 name|gboolean
-name|solid_white
+name|zero_is_black
 decl_stmt|;
-comment|/* image is all white (pbm only) */
+comment|/* index zero is black (PBM only) */
 DECL|typedef|PNMRowInfo
 block|}
 name|PNMRowInfo
@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290f197a0108
+DECL|struct|__anon2ad7fd050108
 block|{
 DECL|member|raw
 name|gint
@@ -3839,13 +3839,6 @@ index|]
 operator|=
 literal|0
 expr_stmt|;
-if|if
-condition|(
-name|ri
-operator|->
-name|solid_white
-condition|)
-continue|continue;
 for|for
 control|(
 name|i
@@ -3876,8 +3869,10 @@ name|data
 index|[
 name|p
 index|]
-operator|==
-literal|0
+operator|!=
+name|ri
+operator|->
+name|zero_is_black
 condition|)
 name|rbcur
 index|[
@@ -4004,16 +3999,14 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|ri
-operator|->
-name|solid_white
-operator|||
 name|data
 index|[
 name|i
 index|]
-operator|!=
-literal|0
+operator|==
+name|ri
+operator|->
+name|zero_is_black
 condition|)
 name|rbcur
 index|[
@@ -5022,7 +5015,7 @@ block|}
 block|}
 name|rowinfo
 operator|.
-name|solid_white
+name|zero_is_black
 operator|=
 name|FALSE
 expr_stmt|;
@@ -5038,7 +5031,7 @@ modifier|*
 name|cmap
 decl_stmt|;
 name|gint
-name|colors
+name|num_colors
 decl_stmt|;
 name|cmap
 operator|=
@@ -5047,7 +5040,7 @@ argument_list|(
 name|image_ID
 argument_list|,
 operator|&
-name|colors
+name|num_colors
 argument_list|)
 expr_stmt|;
 if|if
@@ -5055,25 +5048,95 @@ condition|(
 name|pbm
 condition|)
 block|{
-comment|/*  If we are dealing with an all-white image, then the colormap            *  has one entry only and we can't assume that the first entry            *  is black and the second is white.            */
-if|if
+comment|/*  Test which of the two colors is white and which is black  */
+switch|switch
 condition|(
-name|colors
-operator|==
+name|num_colors
+condition|)
+block|{
+case|case
 literal|1
-operator|&&
+case|:
+name|rowinfo
+operator|.
+name|zero_is_black
+operator|=
+operator|(
+name|GIMP_RGB_LUMINANCE
+argument_list|(
 name|cmap
 index|[
 literal|0
 index|]
-condition|)
-block|{
+argument_list|,
+name|cmap
+index|[
+literal|1
+index|]
+argument_list|,
+name|cmap
+index|[
+literal|2
+index|]
+argument_list|)
+operator|<
+literal|128
+operator|)
+expr_stmt|;
+break|break;
+case|case
+literal|2
+case|:
 name|rowinfo
 operator|.
-name|solid_white
+name|zero_is_black
 operator|=
-name|TRUE
+operator|(
+name|GIMP_RGB_LUMINANCE
+argument_list|(
+name|cmap
+index|[
+literal|0
+index|]
+argument_list|,
+name|cmap
+index|[
+literal|1
+index|]
+argument_list|,
+name|cmap
+index|[
+literal|2
+index|]
+argument_list|)
+operator|<
+name|GIMP_RGB_LUMINANCE
+argument_list|(
+name|cmap
+index|[
+literal|3
+index|]
+argument_list|,
+name|cmap
+index|[
+literal|4
+index|]
+argument_list|,
+name|cmap
+index|[
+literal|5
+index|]
+argument_list|)
+operator|)
 expr_stmt|;
+break|break;
+default|default:
+name|g_warning
+argument_list|(
+literal|"images saved as PBM should be black/white"
+argument_list|)
+expr_stmt|;
+break|break;
 block|}
 block|}
 else|else
@@ -5089,7 +5152,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|colors
+name|num_colors
 condition|;
 name|i
 operator|++
