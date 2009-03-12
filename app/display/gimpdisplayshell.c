@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d52240103
+DECL|enum|__anon2922e4eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d52240203
+DECL|enum|__anon2922e4eb0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6054,6 +6054,34 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|x_src_dec
+operator|<
+literal|1
+condition|)
+name|shell
+operator|->
+name|x_src_dec
+operator|=
+literal|1
+expr_stmt|;
+if|if
+condition|(
+name|shell
+operator|->
+name|y_src_dec
+operator|<
+literal|1
+condition|)
+name|shell
+operator|->
+name|y_src_dec
+operator|=
+literal|1
 expr_stmt|;
 block|}
 else|else
