@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276c960d0103
+DECL|enum|__anon296156810103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276c960d0203
+DECL|enum|__anon296156810203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c960d0308
+DECL|struct|__anon296156810308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276c960d0408
+DECL|struct|__anon296156810408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -1668,6 +1668,11 @@ default|default:
 break|break;
 block|}
 block|}
+name|cmsErrorAction
+argument_list|(
+name|LCMS_ERROR_SHOW
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|proc
