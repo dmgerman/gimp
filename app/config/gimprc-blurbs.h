@@ -200,6 +200,42 @@ value|N_("This is the distance in pixels where Guide and Grid snapping " \    "a
 end_define
 
 begin_define
+DECL|macro|DEFAULT_SNAP_TO_GUIDES_BLURB
+define|#
+directive|define
+name|DEFAULT_SNAP_TO_GUIDES_BLURB
+define|\
+value|"Snap to guides by default in new image windows."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_SNAP_TO_GRID_BLURB
+define|#
+directive|define
+name|DEFAULT_SNAP_TO_GRID_BLURB
+define|\
+value|"Snap to the grid by default in new image windows."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_SNAP_TO_CANVAS_BLURB
+define|#
+directive|define
+name|DEFAULT_SNAP_TO_CANVAS_BLURB
+define|\
+value|"Snap to the canvas edge by default in new image windows."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_SNAP_TO_PATH_BLURB
+define|#
+directive|define
+name|DEFAULT_SNAP_TO_PATH_BLURB
+define|\
+value|"Snap to the active path by default in new image windows."
+end_define
+
+begin_define
 DECL|macro|DEFAULT_THRESHOLD_BLURB
 define|#
 directive|define
