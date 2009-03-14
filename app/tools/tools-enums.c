@@ -240,6 +240,14 @@ literal|"golden"
 block|}
 block|,
 block|{
+name|GIMP_RECTANGLE_GUIDE_DIAGONALS
+block|,
+literal|"GIMP_RECTANGLE_GUIDE_DIAGONALS"
+block|,
+literal|"diagonals"
+block|}
+block|,
+block|{
 literal|0
 block|,
 name|NULL
@@ -302,6 +310,19 @@ argument_list|(
 literal|"rectangle-guide"
 argument_list|,
 literal|"Golden sections"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_RECTANGLE_GUIDE_DIAGONALS
+block|,
+name|NC_
+argument_list|(
+literal|"rectangle-guide"
+argument_list|,
+literal|"Diagonal lines"
 argument_list|)
 block|,
 name|NULL
