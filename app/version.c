@@ -154,9 +154,9 @@ argument_list|)
 argument_list|,
 name|package
 argument_list|,
-name|build_time_version
-argument_list|,
 name|run_time_version
+argument_list|,
+name|build_time_version
 argument_list|)
 expr_stmt|;
 name|g_print
