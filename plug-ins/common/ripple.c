@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6a5b70108
+DECL|struct|__anon2a3d04f60108
 block|{
 DECL|member|period
 name|gint
@@ -907,7 +907,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6a5b70208
+DECL|struct|__anon2a3d04f60208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1292,7 +1292,6 @@ name|param
 operator|->
 name|pft
 decl_stmt|;
-empty_stmt|;
 specifier|const
 name|gint
 name|width

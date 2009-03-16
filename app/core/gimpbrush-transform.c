@@ -292,18 +292,22 @@ decl_stmt|;
 name|gint
 name|src_space_row_start_y
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src_walker
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|pixel_next
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|pixel_below
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|pixel_below_next
@@ -323,6 +327,12 @@ name|src_height_times_int_multiple
 decl_stmt|;
 name|gint
 name|src_width_times_int_multiple
+decl_stmt|;
+name|gint
+name|src_heightm1_times_int_multiple
+decl_stmt|;
+name|gint
+name|src_widthm1_times_int_multiple
 decl_stmt|;
 comment|/*    * tl, tr etc are used because it is easier to visualize top left, top right etc    * corners of the forward transformed source image rectangle.    */
 specifier|const
@@ -484,7 +494,7 @@ operator|->
 name|mask
 argument_list|)
 expr_stmt|;
-comment|/* prevent disappearance of 1x1 pixel brush at some rotations when scaling< 1 */
+comment|/* prevent disappearance of 1x1 pixel brush at some rotations when      scaling< 1 */
 comment|/*   if (src_width == 1&& src_height == 1&& scale_x< 1&& scale_y< 1 )     {       *dest = src[0];       return result;     }*/
 name|gimp_matrix3_transform_point
 argument_list|(
@@ -700,22 +710,18 @@ operator|<<
 name|fraction_bits
 expr_stmt|;
 comment|/* mult by int_multiple */
-specifier|const
-name|gint
 name|src_heightm1_times_int_multiple
-init|=
+operator|=
 name|src_height_times_int_multiple
 operator|-
 name|int_multiple
-decl_stmt|;
-specifier|const
-name|gint
+expr_stmt|;
 name|src_widthm1_times_int_multiple
-init|=
+operator|=
 name|src_width_times_int_multiple
 operator|-
 name|int_multiple
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|y
@@ -1002,7 +1008,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * Transforms the brush pixemap with bilinear interpolation.  *  * The algorithm used is exactly the same as for the brush mask  * (gimp_brush_real_transform_mask) except it accounts for 3 color channels  *  instead of 1 greyscale channel.  *  * Rather than calculating the inverse transform for each point in the  * transformed image, this algorithm uses the inverse transformed corner  * points of the destination image to work out the starting position in the  * source image and the U and V deltas in the source image space.  * It then uses a scan-line approach, looping through rows and colummns  * in the transformed (destination) image while walking along the corresponding  * rows and columns (named U and V) in the source image.  *  * The horizontal in destination space (transform result) is reverse transformed  * into source image space to get U.  * The vertical in destination space (transform result) is reverse transformed  * into source image space to get V.  *  * The strength of this particular algorithm is that calculation work should  * depend more upon the final transformed brush size rather than the input brush size.  *  * There are no floating point calculations in the inner loop for speed.  */
+comment|/*  * Transforms the brush pixmap with bilinear interpolation.  *  * The algorithm used is exactly the same as for the brush mask  * (gimp_brush_real_transform_mask) except it accounts for 3 color channels  *  instead of 1 greyscale channel.  *  * Rather than calculating the inverse transform for each point in the  * transformed image, this algorithm uses the inverse transformed  * corner points of the destination image to work out the starting  * position in the source image and the U and V deltas in the source  * image space.  It then uses a scan-line approach, looping through  * rows and colummns in the transformed (destination) image while  * walking along the corresponding rows and columns (named U and V) in  * the source image.  *  * The horizontal in destination space (transform result) is reverse  * transformed into source image space to get U.  The vertical in  * destination space (transform result) is reverse transformed into  * source image space to get V.  *  * The strength of this particular algorithm is that calculation work  * should depend more upon the final transformed brush size rather  * than the input brush size.  *  * There are no floating point calculations in the inner loop for speed.  */
 end_comment
 
 begin_function
@@ -1112,18 +1118,22 @@ decl_stmt|;
 name|gint
 name|src_space_row_start_y
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|src_walker
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|pixel_next
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|pixel_below
 decl_stmt|;
+specifier|const
 name|guchar
 modifier|*
 name|pixel_below_next
@@ -1143,6 +1153,12 @@ name|src_height_times_int_multiple
 decl_stmt|;
 name|gint
 name|src_width_times_int_multiple
+decl_stmt|;
+name|gint
+name|src_heightm1_times_int_multiple
+decl_stmt|;
+name|gint
+name|src_widthm1_times_int_multiple
 decl_stmt|;
 comment|/*    * tl, tr etc are used because it is easier to visualize top left, top right etc    * corners of the forward transformed source image rectangle.    */
 specifier|const
@@ -1518,22 +1534,18 @@ operator|<<
 name|fraction_bits
 expr_stmt|;
 comment|/* mult by int_multiple */
-specifier|const
-name|gint
 name|src_heightm1_times_int_multiple
-init|=
+operator|=
 name|src_height_times_int_multiple
 operator|-
 name|int_multiple
-decl_stmt|;
-specifier|const
-name|gint
+expr_stmt|;
 name|src_widthm1_times_int_multiple
-init|=
+operator|=
 name|src_width_times_int_multiple
 operator|-
 name|int_multiple
-decl_stmt|;
+expr_stmt|;
 for|for
 control|(
 name|y
