@@ -2148,19 +2148,6 @@ operator|->
 name|tmpname
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-comment|/* win32 rename can't overwrite */
-name|g_unlink
-argument_list|(
-name|writer
-operator|->
-name|filename
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 if|if
 condition|(
 name|g_rename
