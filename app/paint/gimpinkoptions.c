@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c21b8e0103
+DECL|enum|__anon2b0bbe890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -313,7 +313,7 @@ literal|"blob-aspect"
 argument_list|,
 name|_
 argument_list|(
-literal|"Ink Blob Aspect"
+literal|"Ink Blob Aspect Ratio"
 argument_list|)
 argument_list|,
 literal|1.0

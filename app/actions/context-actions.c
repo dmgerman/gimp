@@ -291,7 +291,7 @@ name|NC_
 argument_list|(
 literal|"context-action"
 argument_list|,
-literal|"_Aspect"
+literal|"_Aspect Ratio"
 argument_list|)
 block|}
 block|,
