@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f3f670103
+DECL|enum|__anon29407d3b0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f3f670203
+DECL|enum|__anon29407d3b0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2596,7 +2596,10 @@ index|[
 name|GIMP_CONTEXT_PROP_OPACITY
 index|]
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Opacity"
+argument_list|)
 argument_list|,
 name|GIMP_OPACITY_TRANSPARENT
 argument_list|,
@@ -2618,7 +2621,10 @@ index|[
 name|GIMP_CONTEXT_PROP_PAINT_MODE
 index|]
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Paint Mode"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_LAYER_MODE_EFFECTS
 argument_list|,

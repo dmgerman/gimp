@@ -57,6 +57,12 @@ directive|include
 file|"gimpbrushgenerated-save.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|OVERSAMPLING
 define|#
@@ -67,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1c66680103
+DECL|enum|__anon27c6a7890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -444,7 +450,10 @@ literal|"shape"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Shape"
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_BRUSH_GENERATED_SHAPE
 argument_list|,
@@ -468,7 +477,10 @@ literal|"radius"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Radius"
+argument_list|)
 argument_list|,
 literal|0.1
 argument_list|,
@@ -494,7 +506,10 @@ literal|"spikes"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Spikes"
+argument_list|)
 argument_list|,
 literal|2
 argument_list|,
@@ -520,7 +535,10 @@ literal|"hardness"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Hardness"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,
@@ -546,7 +564,10 @@ literal|"aspect-ratio"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Aspect Ratio"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
@@ -572,7 +593,10 @@ literal|"angle"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Angle"
+argument_list|)
 argument_list|,
 literal|0.0
 argument_list|,

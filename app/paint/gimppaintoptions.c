@@ -69,6 +69,12 @@ directive|include
 file|"gimppaintoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-intl.h"
+end_include
+
 begin_define
 DECL|macro|DEFAULT_BRUSH_SCALE
 define|#
@@ -511,7 +517,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c5a350103
+DECL|enum|__anon29237f4a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -911,7 +917,10 @@ name|PROP_BRUSH_SCALE
 argument_list|,
 literal|"brush-scale"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Scale"
+argument_list|)
 argument_list|,
 literal|0.01
 argument_list|,
@@ -930,7 +939,10 @@ name|PROP_BRUSH_ANGLE
 argument_list|,
 literal|"brush-angle"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Angle"
+argument_list|)
 argument_list|,
 operator|-
 literal|180.0
