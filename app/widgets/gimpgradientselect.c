@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc38ae70103
+DECL|enum|__anon274b9fd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -290,6 +290,10 @@ name|GimpPdbDialog
 modifier|*
 name|dialog
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|content_area
+decl_stmt|;
 name|object
 operator|=
 name|G_OBJECT_CLASS
@@ -391,16 +395,21 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
+name|content_area
+operator|=
+name|gtk_dialog_get_content_area
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|content_area
 argument_list|)
 argument_list|,
 name|dialog

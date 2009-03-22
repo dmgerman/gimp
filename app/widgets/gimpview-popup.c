@@ -889,11 +889,12 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_get_origin
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|popup
 operator|->
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|x

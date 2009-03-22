@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286da2830103
+DECL|enum|__anon2a3b01d90103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -953,9 +953,10 @@ name|event_window
 operator|=
 name|gdk_window_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|attributes
@@ -1718,9 +1719,10 @@ argument_list|)
 operator|->
 name|renderer
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|widget
 argument_list|,

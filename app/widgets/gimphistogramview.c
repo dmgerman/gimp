@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287007780103
+DECL|enum|__anon27698d3d0103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -76,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon287007780203
+DECL|enum|__anon27698d3d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1040,6 +1040,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|;
@@ -1187,8 +1196,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_rectangle
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1220,8 +1227,6 @@ expr_stmt|;
 comment|/*  Draw the outer border  */
 name|gdk_draw_rectangle
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1366,8 +1371,6 @@ index|]
 operator|=
 name|gdk_gc_new_with_values
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 operator|&
@@ -1544,8 +1547,6 @@ condition|)
 block|{
 name|gdk_draw_line
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1584,8 +1585,6 @@ condition|)
 block|{
 name|gdk_draw_line
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1861,6 +1860,18 @@ name|gint
 name|border
 parameter_list|)
 block|{
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|gdouble
 name|value
 init|=
@@ -2090,11 +2101,6 @@ name|bg_gc
 condition|)
 name|gdk_draw_line
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|view
-argument_list|)
-operator|->
 name|window
 argument_list|,
 name|bg_gc
@@ -2124,11 +2130,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_line
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|view
-argument_list|)
-operator|->
 name|window
 argument_list|,
 name|gc
@@ -2203,9 +2204,10 @@ name|width
 decl_stmt|;
 name|gdk_pointer_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

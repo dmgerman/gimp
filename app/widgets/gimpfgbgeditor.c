@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9e6f60103
+DECL|enum|__anon2b98d91a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e9e6f60203
+DECL|enum|__anon2b98d91a0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e9e6f60303
+DECL|enum|__anon2b98d91a0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -1094,6 +1094,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|,
@@ -1201,8 +1210,6 @@ literal|2
 condition|)
 name|gdk_draw_pixbuf
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|NULL
@@ -1296,8 +1303,6 @@ literal|2
 condition|)
 name|gdk_draw_pixbuf
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|NULL
@@ -1433,8 +1438,6 @@ name|gimp_fg_bg_editor_draw_rect
 argument_list|(
 name|editor
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1469,8 +1472,6 @@ name|gtk_paint_shadow
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|GTK_STATE_NORMAL
@@ -1530,8 +1531,6 @@ name|gimp_fg_bg_editor_draw_rect
 argument_list|(
 name|editor
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1558,8 +1557,6 @@ name|gtk_paint_shadow
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|GTK_STATE_NORMAL

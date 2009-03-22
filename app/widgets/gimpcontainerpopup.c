@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0f7000103
+DECL|enum|__anon2b38747c0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -750,9 +750,10 @@ if|if
 condition|(
 name|gdk_pointer_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -776,9 +777,10 @@ if|if
 condition|(
 name|gdk_keyboard_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1602,9 +1604,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_get_origin
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|orig_x

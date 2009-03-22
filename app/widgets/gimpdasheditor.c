@@ -77,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2957fbc20103
+DECL|enum|__anon2c3e525d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -935,9 +935,10 @@ name|cr
 init|=
 name|gdk_cairo_create
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1583,9 +1584,10 @@ condition|)
 block|{
 name|gdk_pointer_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

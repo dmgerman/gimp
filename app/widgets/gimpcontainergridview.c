@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6f00f40103
+DECL|enum|__anon2767bfdc0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -1549,9 +1549,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_get_origin
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|x
 argument_list|,

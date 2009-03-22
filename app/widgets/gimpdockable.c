@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290813480103
+DECL|enum|__anon2ba47ff10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1908,9 +1908,10 @@ name|title_window
 operator|=
 name|gdk_window_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|attributes
@@ -2434,9 +2435,10 @@ name|gtk_paint_box
 argument_list|(
 name|style
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|GTK_STATE_SELECTED
 argument_list|,
@@ -2556,9 +2558,10 @@ name|gtk_paint_layout
 argument_list|(
 name|style
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|(
 name|dockable
@@ -5293,12 +5296,13 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_invalidate_rect
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|dockable
 argument_list|)
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|area

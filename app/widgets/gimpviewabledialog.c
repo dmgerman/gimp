@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40693e0103
+DECL|enum|__anon28e44b1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -375,6 +375,18 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
+name|content_area
+init|=
+name|gtk_dialog_get_content_area
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|frame
 decl_stmt|;
 name|GtkWidget
@@ -406,12 +418,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-operator|->
-name|vbox
+name|content_area
 argument_list|)
 argument_list|,
 name|frame

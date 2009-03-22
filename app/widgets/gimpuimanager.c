@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a3d9c0103
+DECL|enum|__anon2b042f390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274a3d9c0203
+DECL|enum|__anon2b042f390203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274a3d9c0308
+DECL|struct|__anon2b042f390308
 block|{
 DECL|member|x
 name|guint
@@ -3747,14 +3747,15 @@ name|GdkWindow
 modifier|*
 name|window
 init|=
+name|gtk_widget_get_window
+argument_list|(
 name|GTK_MENU
 argument_list|(
 name|widget
 argument_list|)
 operator|->
 name|toplevel
-operator|->
-name|window
+argument_list|)
 decl_stmt|;
 name|gint
 name|x
@@ -4433,9 +4434,10 @@ name|wy
 decl_stmt|;
 name|gdk_window_get_position
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|dest_widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|wx
@@ -4612,9 +4614,10 @@ name|window
 operator|&&
 name|window
 operator|!=
+name|gtk_widget_get_window
+argument_list|(
 name|event_widget
-operator|->
-name|window
+argument_list|)
 condition|)
 block|{
 name|gint

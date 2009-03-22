@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f5b820103
+DECL|enum|__anon28d4bc970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -760,6 +760,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -859,8 +868,6 @@ name|gimp_fg_bg_view_draw_rect
 argument_list|(
 name|view
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -903,8 +910,6 @@ name|gtk_paint_shadow
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|GTK_STATE_NORMAL
@@ -956,8 +961,6 @@ name|gimp_fg_bg_view_draw_rect
 argument_list|(
 name|view
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -992,8 +995,6 @@ name|gtk_paint_shadow
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|GTK_STATE_NORMAL

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795e4830103
+DECL|enum|__anon27efbe860103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1843,6 +1843,10 @@ modifier|*
 name|info
 parameter_list|)
 block|{
+name|GdkWindow
+modifier|*
+name|window
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_SESSION_INFO
@@ -1861,12 +1865,17 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|window
+operator|=
+name|gtk_widget_get_window
+argument_list|(
 name|info
 operator|->
 name|widget
-operator|->
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
 name|window
 condition|)
 block|{
@@ -1877,10 +1886,6 @@ name|y
 decl_stmt|;
 name|gdk_window_get_root_origin
 argument_list|(
-name|info
-operator|->
-name|widget
-operator|->
 name|window
 argument_list|,
 operator|&
@@ -1931,10 +1936,6 @@ name|gdk_drawable_get_size
 argument_list|(
 name|GDK_DRAWABLE
 argument_list|(
-name|info
-operator|->
-name|widget
-operator|->
 name|window
 argument_list|)
 argument_list|,

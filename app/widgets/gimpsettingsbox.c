@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295c86dd0103
+DECL|enum|__anon27cc6c260103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295c86dd0203
+DECL|enum|__anon27cc6c260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2528,6 +2528,10 @@ name|GtkWidget
 modifier|*
 name|editor
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|content_area
+decl_stmt|;
 if|if
 condition|(
 name|box
@@ -2662,9 +2666,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
+name|content_area
+operator|=
+name|gtk_dialog_get_content_area
 argument_list|(
 name|GTK_DIALOG
 argument_list|(
@@ -2672,8 +2676,13 @@ name|box
 operator|->
 name|editor_dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|content_area
 argument_list|)
 argument_list|,
 name|editor

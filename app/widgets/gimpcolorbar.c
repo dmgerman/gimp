@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f821e90103
+DECL|enum|__anon29ab7aa80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -820,9 +820,10 @@ break|break;
 block|}
 name|gdk_draw_rgb_image
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->

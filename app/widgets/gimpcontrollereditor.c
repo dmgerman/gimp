@@ -108,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e616330103
+DECL|enum|__anon29e398410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e616330203
+DECL|enum|__anon29e398410203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -3014,14 +3014,15 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|editor
 operator|->
 name|edit_dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|view

@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a577d0103
+DECL|enum|__anon29b4d70c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1571,9 +1571,10 @@ name|gtk_paint_arrow
 argument_list|(
 name|style
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|widget
 operator|->

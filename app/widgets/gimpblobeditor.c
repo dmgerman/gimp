@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28da7d980103
+DECL|enum|__anon2b3dd7740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -713,9 +713,10 @@ name|cr
 operator|=
 name|gdk_cairo_create
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_blob_editor_draw_blob
