@@ -581,7 +581,8 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"batch command experienced an execution error: %s\n"
+literal|"batch command experienced an execution error:\n"
+literal|"%s\n"
 argument_list|,
 name|error
 operator|->
@@ -608,7 +609,8 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"batch command experienced a calling error: %s\n"
+literal|"batch command experienced a calling error:\n"
+literal|"%s\n"
 argument_list|,
 name|error
 operator|->
