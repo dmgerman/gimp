@@ -2277,9 +2277,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gtk_selection_data_get_length
+argument_list|(
 name|selection_data
-operator|->
-name|length
+argument_list|)
 operator|<=
 literal|0
 condition|)
