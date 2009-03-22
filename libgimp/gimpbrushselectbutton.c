@@ -142,7 +142,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be492690103
+DECL|enum|__anon2b792c930103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be492690203
+DECL|enum|__anon2b792c930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2659,11 +2659,12 @@ expr_stmt|;
 comment|/* decide where to put the popup */
 name|gdk_window_get_origin
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|priv
 operator|->
 name|preview
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|x_org
@@ -2908,32 +2909,37 @@ name|guint
 name|time
 parameter_list|)
 block|{
+name|gint
+name|length
+init|=
+name|gtk_selection_data_get_length
+argument_list|(
+name|selection
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|str
 decl_stmt|;
 if|if
 condition|(
-operator|(
+name|gtk_selection_data_get_format
+argument_list|(
 name|selection
-operator|->
-name|format
+argument_list|)
 operator|!=
 literal|8
-operator|)
 operator|||
-operator|(
-name|selection
-operator|->
 name|length
 operator|<
 literal|1
-operator|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid brush data!"
+literal|"%s: received invalid brush data"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -2947,12 +2953,11 @@ specifier|const
 name|gchar
 operator|*
 operator|)
+name|gtk_selection_data_get_data
+argument_list|(
 name|selection
-operator|->
-name|data
+argument_list|)
 argument_list|,
-name|selection
-operator|->
 name|length
 argument_list|)
 expr_stmt|;

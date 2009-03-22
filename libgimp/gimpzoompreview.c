@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acb30260103
+DECL|enum|__anon2be4516b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb30260208
+DECL|struct|__anon2be4516b0208
 block|{
 DECL|member|update
 name|gboolean
@@ -2436,11 +2436,12 @@ condition|)
 block|{
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|preview
 operator|->
 name|area
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|GIMP_SCROLLED_PREVIEW
 argument_list|(
@@ -2455,11 +2456,12 @@ else|else
 block|{
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|preview
 operator|->
 name|area
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|preview
 operator|->

@@ -103,7 +103,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50b8510103
+DECL|enum|__anon2bd4685f0103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -116,7 +116,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c50b8510203
+DECL|enum|__anon2bd4685f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1217,32 +1217,37 @@ name|guint
 name|time
 parameter_list|)
 block|{
+name|gint
+name|length
+init|=
+name|gtk_selection_data_get_length
+argument_list|(
+name|selection
+argument_list|)
+decl_stmt|;
 name|gchar
 modifier|*
 name|str
 decl_stmt|;
 if|if
 condition|(
-operator|(
+name|gtk_selection_data_get_format
+argument_list|(
 name|selection
-operator|->
-name|format
+argument_list|)
 operator|!=
 literal|8
-operator|)
 operator|||
-operator|(
-name|selection
-operator|->
 name|length
 operator|<
 literal|1
-operator|)
 condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Received invalid palette data!"
+literal|"%s: received invalid palette data"
+argument_list|,
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1256,12 +1261,11 @@ specifier|const
 name|gchar
 operator|*
 operator|)
+name|gtk_selection_data_get_data
+argument_list|(
 name|selection
-operator|->
-name|data
+argument_list|)
 argument_list|,
-name|selection
-operator|->
 name|length
 argument_list|)
 expr_stmt|;
