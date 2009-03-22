@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_SCALE_BUTTON_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gtkscalebutton.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_SCALE_BUTTON
 define|#

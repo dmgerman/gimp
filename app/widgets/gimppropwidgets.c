@@ -21,20 +21,6 @@ directive|include
 file|<stdlib.h>
 end_include
 
-begin_define
-DECL|macro|__GTK_SCALE_BUTTON_H__
-define|#
-directive|define
-name|__GTK_SCALE_BUTTON_H__
-end_define
-
-begin_define
-DECL|macro|__GTK_VOLUME_BUTTON_H__
-define|#
-directive|define
-name|__GTK_VOLUME_BUTTON_H__
-end_define
-
 begin_include
 include|#
 directive|include
@@ -1400,7 +1386,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-name|gimp_gtk_scale_button_set_value
+name|gtk_scale_button_set_value
 argument_list|(
 name|GTK_SCALE_BUTTON
 argument_list|(
@@ -1831,7 +1817,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f660560108
+DECL|struct|__anon2b0cc40b0108
 block|{
 DECL|member|config
 name|GObject

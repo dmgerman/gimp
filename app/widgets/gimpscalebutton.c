@@ -9,20 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_define
-DECL|macro|__GTK_SCALE_BUTTON_H__
-define|#
-directive|define
-name|__GTK_SCALE_BUTTON_H__
-end_define
-
-begin_define
-DECL|macro|__GTK_VOLUME_BUTTON_H__
-define|#
-directive|define
-name|__GTK_VOLUME_BUTTON_H__
-end_define
-
 begin_include
 include|#
 directive|include
@@ -316,7 +302,7 @@ name|upper
 decl_stmt|;
 name|adj
 operator|=
-name|gimp_gtk_scale_button_get_adjustment
+name|gtk_scale_button_get_adjustment
 argument_list|(
 name|GTK_SCALE_BUTTON
 argument_list|(
@@ -460,7 +446,7 @@ literal|2
 expr_stmt|;
 name|adj
 operator|=
-name|gimp_gtk_scale_button_get_adjustment
+name|gtk_scale_button_get_adjustment
 argument_list|(
 name|GTK_SCALE_BUTTON
 argument_list|(
