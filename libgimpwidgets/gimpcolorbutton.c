@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5585240103
+DECL|enum|__anon28f73b500103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5585240203
+DECL|enum|__anon28f73b500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1953,12 +1953,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|selection

@@ -57,7 +57,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5c4c00103
+DECL|enum|__anon2c3747a00103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5c4c00203
+DECL|enum|__anon2c3747a00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +84,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5c4c00308
+DECL|struct|__anon2c3747a00308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -2024,9 +2024,10 @@ condition|)
 block|{
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|toplevel
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|preview
 operator|->
@@ -2035,11 +2036,12 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|preview
 operator|->
 name|area
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|preview
 operator|->
@@ -2070,9 +2072,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|toplevel
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -2121,11 +2124,12 @@ argument_list|)
 condition|)
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|preview
 operator|->
 name|area
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|preview
 operator|->

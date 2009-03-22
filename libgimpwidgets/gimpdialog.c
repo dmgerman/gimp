@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0301120103
+DECL|enum|__anon2a10222e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -489,6 +489,15 @@ argument_list|)
 decl_stmt|;
 name|GtkWidget
 modifier|*
+name|action_area
+init|=
+name|gtk_dialog_get_action_area
+argument_list|(
+name|dialog
+argument_list|)
+decl_stmt|;
+name|GtkWidget
+modifier|*
 name|button
 init|=
 name|gtk_button_new_from_stock
@@ -500,8 +509,6 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|dialog
-operator|->
 name|action_area
 argument_list|)
 argument_list|,
@@ -518,8 +525,6 @@ name|gtk_button_box_set_child_secondary
 argument_list|(
 name|GTK_BUTTON_BOX
 argument_list|(
-name|dialog
-operator|->
 name|action_area
 argument_list|)
 argument_list|,
@@ -868,9 +873,10 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 condition|)
 block|{
 name|GdkEvent
@@ -890,9 +896,10 @@ name|window
 operator|=
 name|g_object_ref
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|event
@@ -985,9 +992,10 @@ name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_action_area
+argument_list|(
 name|dialog
-operator|->
-name|action_area
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1577,7 +1585,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0301120208
+DECL|struct|__anon2a10222e0208
 block|{
 DECL|member|dialog
 name|GtkDialog

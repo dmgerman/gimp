@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a0d940103
+DECL|enum|__anon2940b6990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290a0d940208
+DECL|struct|__anon2940b6990208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -159,7 +159,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon290a0d940308
+DECL|struct|__anon2940b6990308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -1923,9 +1923,10 @@ condition|)
 block|{
 name|gdk_window_move_resize
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|allocation
 operator|->
@@ -2341,9 +2342,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_drawable
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|priv
 operator|->
@@ -3529,9 +3531,10 @@ name|cr
 init|=
 name|gdk_cairo_create
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|gdouble
@@ -3555,9 +3558,10 @@ name|backing_store
 condition|)
 name|gdk_draw_drawable
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
@@ -3924,9 +3928,10 @@ name|backing_store
 operator|=
 name|gdk_pixmap_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|widget
 operator|->
@@ -3958,9 +3963,10 @@ name|non_gr_exp_gc
 operator|=
 name|gdk_gc_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_gc_set_exposures

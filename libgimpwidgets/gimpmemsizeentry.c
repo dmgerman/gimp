@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c87d1050103
+DECL|enum|__anon274a97c10103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -427,59 +427,23 @@ name|shift
 operator|=
 name|shift
 expr_stmt|;
-name|entry
-operator|->
-name|adjustment
-operator|->
-name|value
-operator|=
-name|CAST
-name|entry
-operator|->
-name|value
-operator|>>
-name|shift
-expr_stmt|;
-name|entry
-operator|->
-name|adjustment
-operator|->
-name|lower
-operator|=
-name|CAST
-name|entry
-operator|->
-name|lower
-operator|>>
-name|shift
-expr_stmt|;
-name|entry
-operator|->
-name|adjustment
-operator|->
-name|upper
-operator|=
-name|CAST
-name|entry
-operator|->
-name|upper
-operator|>>
-name|shift
-expr_stmt|;
-name|gtk_adjustment_value_changed
+name|gtk_adjustment_configure
 argument_list|(
-name|entry
-operator|->
-name|adjustment
+argument|entry->adjustment
+argument_list|,
+argument|CAST entry->value>> shift
+argument_list|,
+argument|CAST entry->lower>> shift
+argument_list|,
+argument|CAST entry->upper>> shift
+argument_list|,
+argument|gtk_adjustment_get_step_increment (entry->adjustment)
+argument_list|,
+argument|gtk_adjustment_get_page_increment (entry->adjustment)
+argument_list|,
+argument|gtk_adjustment_get_page_size (entry->adjustment)
 argument_list|)
-expr_stmt|;
-name|gtk_adjustment_changed
-argument_list|(
-name|entry
-operator|->
-name|adjustment
-argument_list|)
-expr_stmt|;
+empty_stmt|;
 block|}
 undef|#
 directive|undef

@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8914300103
+DECL|enum|__anon2b71bd080103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1291,9 +1291,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|cursor
 argument_list|)
@@ -1389,9 +1390,10 @@ name|GDK_BUTTON_PRESS
 case|:
 name|gdk_pointer_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -1596,6 +1598,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GdkPixbuf
 modifier|*
 name|pixbuf
@@ -1739,8 +1750,6 @@ condition|)
 block|{
 name|gdk_draw_pixbuf
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1770,8 +1779,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_rectangle
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1800,8 +1807,6 @@ name|gtk_paint_shadow
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|GTK_STATE_NORMAL
@@ -1984,8 +1989,6 @@ name|gc
 init|=
 name|gdk_gc_new
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|)
 decl_stmt|;
@@ -2026,8 +2029,6 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_rectangle
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|gc
@@ -2075,8 +2076,6 @@ else|else
 block|{
 name|gdk_draw_rectangle
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style

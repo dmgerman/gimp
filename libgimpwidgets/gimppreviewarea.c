@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3e02d00103
+DECL|enum|__anon28ea69140103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -981,9 +981,10 @@ name|rowstride
 decl_stmt|;
 name|gdk_draw_rgb_image_dithalign
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->

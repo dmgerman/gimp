@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8bb8cc0103
+DECL|enum|__anon2b1599170103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -963,9 +963,10 @@ if|if
 condition|(
 name|gdk_keyboard_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,
@@ -986,9 +987,10 @@ if|if
 condition|(
 name|gdk_pointer_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

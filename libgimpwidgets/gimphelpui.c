@@ -42,7 +42,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc0c7d10103
+DECL|enum|__anon2b0c3e5c0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP
@@ -1305,9 +1305,10 @@ name|status
 operator|=
 name|gdk_pointer_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|invisible
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1351,9 +1352,10 @@ if|if
 condition|(
 name|gdk_keyboard_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|invisible
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,

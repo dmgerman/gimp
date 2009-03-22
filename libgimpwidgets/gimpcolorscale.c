@@ -1008,6 +1008,15 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GdkWindow
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GdkRectangle
 name|expose_area
 decl_stmt|;
@@ -1309,8 +1318,6 @@ name|gtk_paint_box
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|sensitive
@@ -1359,8 +1366,6 @@ name|GTK_ORIENTATION_HORIZONTAL
 case|:
 name|gdk_draw_rgb_image_dithalign
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1408,8 +1413,6 @@ name|GTK_ORIENTATION_VERTICAL
 case|:
 name|gdk_draw_rgb_image_dithalign
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|style
@@ -1479,8 +1482,6 @@ name|gtk_paint_focus
 argument_list|(
 name|style
 argument_list|,
-name|widget
-operator|->
 name|window
 argument_list|,
 name|GTK_WIDGET_STATE
@@ -1727,8 +1728,6 @@ operator|++
 control|)
 name|gdk_draw_line
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|gc
@@ -1786,8 +1785,6 @@ operator|++
 control|)
 name|gdk_draw_line
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|gc
@@ -1894,8 +1891,6 @@ operator|--
 control|)
 name|gdk_draw_line
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|gc
@@ -1959,8 +1954,6 @@ operator|++
 control|)
 name|gdk_draw_line
 argument_list|(
-name|widget
-operator|->
 name|window
 argument_list|,
 name|gc

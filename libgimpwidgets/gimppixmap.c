@@ -433,9 +433,10 @@ name|gdk_pixmap
 operator|=
 name|gdk_pixmap_create_from_xpm_d
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|mask

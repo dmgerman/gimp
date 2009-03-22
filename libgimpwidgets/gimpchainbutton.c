@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2926024c0103
+DECL|enum|__anon27ee62a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2926024c0203
+DECL|enum|__anon27ee62a10203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED
@@ -1823,9 +1823,10 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|GTK_STATE_NORMAL
 argument_list|,
