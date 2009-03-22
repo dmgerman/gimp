@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a0c4c50103
+DECL|enum|__anon29fc46690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a0c4c50203
+DECL|enum|__anon29fc46690203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7442,11 +7442,12 @@ condition|)
 block|{
 name|gdk_window_process_updates
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|shell
 operator|->
 name|canvas
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -7726,9 +7727,10 @@ name|gdk_screen_get_monitor_at_window
 argument_list|(
 name|screen
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_screen_get_monitor_geometry
