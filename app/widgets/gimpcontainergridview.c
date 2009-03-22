@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2767bfdc0103
+DECL|enum|__anon2ab05e220103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -2707,9 +2707,10 @@ name|row
 operator|*
 name|item_height
 operator|<
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 condition|)
 block|{
 name|gtk_adjustment_set_value
@@ -2733,13 +2734,17 @@ operator|)
 operator|*
 name|item_height
 operator|>
+operator|(
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 operator|+
+name|gtk_adjustment_get_page_size
+argument_list|(
 name|adj
-operator|->
-name|page_size
+argument_list|)
+operator|)
 condition|)
 block|{
 name|gtk_adjustment_set_value
@@ -2754,9 +2759,10 @@ operator|)
 operator|*
 name|item_height
 operator|-
+name|gtk_adjustment_get_page_size
+argument_list|(
 name|adj
-operator|->
-name|page_size
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
