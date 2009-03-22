@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3275ac0103
+DECL|enum|__anon28ca888d0103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +100,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3275ac0203
+DECL|enum|__anon28ca888d0203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +133,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3275ac0303
+DECL|enum|__anon28ca888d0303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME
@@ -377,6 +377,10 @@ name|GtkTreeSelection
 modifier|*
 name|selection
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|parent
+decl_stmt|;
 name|dialog
 operator|->
 name|browser
@@ -461,12 +465,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|dialog
@@ -686,7 +691,9 @@ argument_list|,
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
+name|parent
+operator|=
+name|gtk_widget_get_parent
 argument_list|(
 name|GIMP_BROWSER
 argument_list|(
@@ -696,9 +703,17 @@ name|browser
 argument_list|)
 operator|->
 name|right_vbox
-operator|->
+argument_list|)
+expr_stmt|;
 name|parent
-operator|->
+operator|=
+name|gtk_widget_get_parent
+argument_list|(
+name|parent
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
 name|parent
 argument_list|,
 name|DBL_WIDTH
