@@ -226,7 +226,7 @@ name|NC_
 argument_list|(
 literal|"edit-action"
 argument_list|,
-literal|"_Paste as"
+literal|"Paste _as"
 argument_list|)
 block|}
 block|,
@@ -894,7 +894,7 @@ name|NC_
 argument_list|(
 literal|"edit-action"
 argument_list|,
-literal|"Fill with P_attern"
+literal|"Fill _with Pattern"
 argument_list|)
 block|,
 literal|"<control>semicolon"
