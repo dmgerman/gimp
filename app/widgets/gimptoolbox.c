@@ -2846,6 +2846,16 @@ operator||
 name|GDK_HINT_USER_POS
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factory_set_has_min_size
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|toolbox
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function

@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc46690103
+DECL|enum|__anon29231c660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fc46690203
+DECL|enum|__anon29231c660203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2965,6 +2965,16 @@ operator|&
 name|geometry
 argument_list|,
 name|geometry_mask
+argument_list|)
+expr_stmt|;
+name|gimp_dialog_factory_set_has_min_size
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
