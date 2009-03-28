@@ -2187,6 +2187,11 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
