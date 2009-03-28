@@ -5683,6 +5683,7 @@ if|if
 condition|(
 name|tool_info
 condition|)
+block|{
 name|gimp_context_set_tool
 argument_list|(
 name|gimp_get_user_context
@@ -5695,6 +5696,19 @@ argument_list|,
 name|tool_info
 argument_list|)
 expr_stmt|;
+comment|/*  make sure the newly created tool has the right state                */
+name|gimp_display_shell_update_focus
+argument_list|(
+name|shell
+argument_list|,
+name|NULL
+argument_list|,
+name|event
+operator|->
+name|state
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 name|active_tool
 operator|=
