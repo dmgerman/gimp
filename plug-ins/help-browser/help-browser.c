@@ -408,6 +408,17 @@ expr_stmt|;
 name|INIT_I18N
 argument_list|()
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|g_thread_supported
+argument_list|()
+condition|)
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|run_mode
