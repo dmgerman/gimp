@@ -369,6 +369,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_text_layer_resize
+parameter_list|(
+name|gint32
+name|layer_ID
+parameter_list|,
+name|gdouble
+name|width
+parameter_list|,
+name|gdouble
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_ifndef
 ifndef|#
 directive|ifndef
