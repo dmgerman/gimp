@@ -230,7 +230,7 @@ name|GIMP_TYPE_FLIP_OPTIONS
 argument_list|,
 name|gimp_flip_options_gui
 argument_list|,
-literal|0
+name|GIMP_CONTEXT_BACKGROUND_MASK
 argument_list|,
 literal|"gimp-flip-tool"
 argument_list|,

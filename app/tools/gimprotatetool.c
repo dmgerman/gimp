@@ -327,7 +327,7 @@ name|GIMP_TYPE_TRANSFORM_OPTIONS
 argument_list|,
 name|gimp_transform_options_gui
 argument_list|,
-literal|0
+name|GIMP_CONTEXT_BACKGROUND_MASK
 argument_list|,
 literal|"gimp-rotate-tool"
 argument_list|,
