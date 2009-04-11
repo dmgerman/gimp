@@ -211,7 +211,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"num-colors"
 block|,
-literal|"Length of `map' argument "
+literal|"Length of 'map' argument "
 literal|"(should be equal to colormap size)"
 block|}
 block|,
@@ -1649,7 +1649,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c1b0a70103
+DECL|enum|__anon29100b1f0103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX

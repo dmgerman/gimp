@@ -486,7 +486,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"Filter type (0 = median, 1 = adaptive, 2 = recursive-median, 3 = recursive-adaptive)"
+literal|"Filter type { MEDIAN (0), ADAPTIVE (1), RECURSIVE-MEDIAN (2), RECURSIVE-ADAPTIVE (3) }"
 block|}
 block|,
 block|{

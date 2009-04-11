@@ -136,7 +136,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2a0d3e0103
+DECL|enum|__anon2c755f670103
 block|{
 DECL|enumerator|MIN_CHANNELS
 name|MIN_CHANNELS
@@ -154,7 +154,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a0d3e0208
+DECL|struct|__anon2c755f670208
 block|{
 DECL|member|max_p
 name|gint
@@ -228,7 +228,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"max-p"
 block|,
-literal|"1 for maximizing, 0 for minimizing"
+literal|"{ MINIMIZE (0), MAXIMIZE (1) }"
 block|}
 block|}
 decl_stmt|;
@@ -523,7 +523,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2a0d3e0308
+DECL|struct|__anon2c755f670308
 block|{
 DECL|member|init_value
 name|gint

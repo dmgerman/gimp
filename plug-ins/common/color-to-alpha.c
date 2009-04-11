@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b26e120108
+DECL|struct|__anon2be63f920108
 block|{
 DECL|member|color
 name|GimpRGB

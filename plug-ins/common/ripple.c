@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d04f60108
+DECL|struct|__anon2b95fcd70108
 block|{
 DECL|member|period
 name|gint
@@ -380,7 +380,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"period"
 block|,
-literal|"Period; number of pixels for one wave to complete"
+literal|"Period: number of pixels for one wave to complete"
 block|}
 block|,
 block|{
@@ -388,7 +388,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"amplitude"
 block|,
-literal|"Amplitude; maximum displacement of wave"
+literal|"Amplitude: maximum displacement of wave"
 block|}
 block|,
 block|{
@@ -404,7 +404,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edges"
 block|,
-literal|"Edges; 0 = smear, 1 =  wrap, 2 = blank"
+literal|"Edges { SMEAR (0), WRAP (1), BLANK (2) }"
 block|}
 block|,
 block|{
@@ -412,7 +412,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"waveform"
 block|,
-literal|"0 = sawtooth, 1 = sine wave"
+literal|"Waveform { SAWTOOTH (0), SINE (1) }"
 block|}
 block|,
 block|{
@@ -420,7 +420,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"antialias"
 block|,
-literal|"antialias; True or False"
+literal|"Antialias { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -428,7 +428,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tile"
 block|,
-literal|"tile; if this is true, the image will retain it's tilability"
+literal|"Tileable { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;
@@ -907,7 +907,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3d04f60208
+DECL|struct|__anon2b95fcd70208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

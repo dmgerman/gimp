@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c11992b0103
+DECL|enum|__anon2c3c2d120103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11992b0208
+DECL|struct|__anon2c3c2d120208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11992b0308
+DECL|struct|__anon2c3c2d120308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11992b0408
+DECL|struct|__anon2c3c2d120408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11992b0508
+DECL|struct|__anon2c3c2d120508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -1549,7 +1549,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tile-type"
 block|,
-literal|"Tile geometry: { SQUARES (0), HEXAGONS (1), OCTAGONS (2), TRIANGLES (3) }"
+literal|"Tile geometry { SQUARES (0), HEXAGONS (1), OCTAGONS (2), TRIANGLES (3) }"
 block|}
 block|,
 block|{
@@ -1557,7 +1557,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tile-surface"
 block|,
-literal|"Surface characteristics: { SMOOTH (0), ROUGH (1) }"
+literal|"Surface characteristics { SMOOTH (0), ROUGH (1) }"
 block|}
 block|,
 block|{
@@ -1565,7 +1565,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"grout-color"
 block|,
-literal|"Grout color (black/white or fore/background): { BW (0), FG_BG (1) }"
+literal|"Grout color (black/white or fore/background) { BW (0), FG-BG (1) }"
 block|}
 block|}
 decl_stmt|;

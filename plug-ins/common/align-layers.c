@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a256b0103
+DECL|enum|__anon2935966b0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a256b0203
+DECL|enum|__anon2935966b0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a256b0303
+DECL|enum|__anon2935966b0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0a256b0403
+DECL|enum|__anon2935966b0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0a256b0508
+DECL|struct|__anon2935966b0508
 block|{
 DECL|member|h_style
 name|gint
@@ -347,7 +347,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"link-after-alignment"
 block|,
-literal|"Link the visible layers after alignment"
+literal|"Link the visible layers after alignment { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -355,7 +355,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"use-bottom"
 block|,
-literal|"use the bottom layer as the base of alignment"
+literal|"use the bottom layer as the base of alignment { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;

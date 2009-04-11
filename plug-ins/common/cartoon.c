@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277fb83d0108
+DECL|struct|__anon28dc58bf0108
 block|{
 DECL|member|mask_radius
 name|gdouble
@@ -348,7 +348,7 @@ block|,
 block|{
 name|GIMP_PDB_FLOAT
 block|,
-literal|"mask_radius"
+literal|"mask-radius"
 block|,
 literal|"Cartoon mask radius (radius of pixel neighborhood)"
 block|}

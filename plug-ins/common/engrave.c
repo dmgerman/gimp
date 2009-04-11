@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be8ad60108
+DECL|struct|__anon2bddfe920108
 block|{
 DECL|member|height
 name|gint
@@ -304,7 +304,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"limit"
 block|,
-literal|"If true, limit line width"
+literal|"Limit line width { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;
@@ -1171,7 +1171,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28be8ad60208
+DECL|struct|__anon2bddfe920208
 block|{
 DECL|member|x
 DECL|member|y

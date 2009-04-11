@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e4d200103
+DECL|enum|__anon278432db0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon297e4d200203
+DECL|enum|__anon278432db0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -1841,7 +1841,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"style"
 block|,
-literal|"The style/shape of the jigsaw puzzle, 0 or 1"
+literal|"The style/shape of the jigsaw puzzle { 0, 1 }"
 block|}
 block|,
 block|{

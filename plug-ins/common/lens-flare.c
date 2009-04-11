@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291fd8b90108
+DECL|struct|__anon291fd3860108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291fd8b90208
+DECL|struct|__anon291fd3860208
 block|{
 DECL|member|drawable
 name|GimpDrawable

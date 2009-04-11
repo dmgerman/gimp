@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29650f170108
+DECL|struct|__anon27a4e7c50108
 block|{
 DECL|member|npts
 name|gint
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29650f170208
+DECL|struct|__anon27a4e7c50208
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -523,7 +523,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"bg-color"
 block|,
-literal|"Background color: { BLACK (0), BG (1) }"
+literal|"Background color { BLACK (0), BG (1) }"
 block|}
 block|}
 decl_stmt|;

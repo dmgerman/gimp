@@ -96,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa6c800108
+DECL|struct|__anon27d3b7930108
 block|{
 DECL|member|pixelwidth
 name|gint
@@ -115,7 +115,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27aa6c800208
+DECL|struct|__anon27d3b7930208
 block|{
 DECL|member|x
 DECL|member|y

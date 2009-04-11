@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0108
+DECL|struct|__anon27bb13260108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0208
+DECL|struct|__anon27bb13260208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0308
+DECL|struct|__anon27bb13260308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0408
+DECL|struct|__anon27bb13260408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0508
+DECL|struct|__anon27bb13260508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0608
+DECL|struct|__anon27bb13260608
 block|{
 DECL|member|name
 specifier|const
@@ -1715,7 +1715,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"cell-width"
 block|,
-literal|"screen cell width, in pixels"
+literal|"Screen cell width in pixels"
 block|}
 block|,
 block|{
@@ -1723,7 +1723,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"colorspace"
 block|,
-literal|"separate to 0:Grayscale, 1:RGB, 2:CMYK, 3:Luminance"
+literal|"Separate to { GRAYSCALE (0), RGB (1), CMYK (2), LUMINANCE (3) }"
 block|}
 block|,
 block|{
@@ -1747,7 +1747,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"gry-spotfn"
 block|,
-literal|"Grey/black spot function (0=dots, 1=lines, 2=diamonds, 3=euclidean dot, 4=PS diamond)"
+literal|"Grey/black spot function { DOTS (0), LINES (1), DIAMONDS (2), EUCLIDIAN-DOT (3), PS-DIAMONDS (4) }"
 block|}
 block|,
 block|{
@@ -1763,7 +1763,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"red-spotfn"
 block|,
-literal|"Red/cyan spot function (values as gry_spotfn)"
+literal|"Red/cyan spot function (values as gry-spotfn)"
 block|}
 block|,
 block|{
@@ -1779,7 +1779,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"grn-spotfn"
 block|,
-literal|"Green/magenta spot function (values as gry_spotfn)"
+literal|"Green/magenta spot function (values as gry-spotfn)"
 block|}
 block|,
 block|{
@@ -1795,7 +1795,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"blu-spotfn"
 block|,
-literal|"Blue/yellow spot function (values as gry_spotfn)"
+literal|"Blue/yellow spot function (values as gry-spotfn)"
 block|}
 block|,
 block|{
@@ -7067,7 +7067,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f8cbbd0708
+DECL|struct|__anon27bb13260708
 block|{
 DECL|member|index
 name|gint

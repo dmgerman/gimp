@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad949a10108
+DECL|struct|__anon29e97a6e0108
 block|{
 DECL|member|inner
 name|gdouble
@@ -407,7 +407,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"normalize"
 block|,
-literal|"True, False"
+literal|"Normalize { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -415,7 +415,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"invert"
 block|,
-literal|"True, False"
+literal|"Invert { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;

@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d973eb0103
+DECL|enum|__anon2946d5fa0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d973eb0208
+DECL|struct|__anon2946d5fa0208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d973eb0308
+DECL|struct|__anon2946d5fa0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -1056,7 +1056,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
+literal|"The run mode { RUN-INTERACTIVE (0) }"
 block|}
 block|,
 block|{

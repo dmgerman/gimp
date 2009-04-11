@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a431e40108
+DECL|struct|__anon2c3e94200108
 block|{
 DECL|member|seed
 name|guint32

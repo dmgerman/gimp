@@ -261,7 +261,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"check-mode"
 block|,
-literal|"Regular or Psychobilly"
+literal|"Check mode { REGULAR (0), PSYCHOBILY (1) }"
 block|}
 block|,
 block|{
@@ -629,7 +629,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295cba220108
+DECL|struct|__anon2747c5090108
 block|{
 DECL|member|fg
 name|guchar

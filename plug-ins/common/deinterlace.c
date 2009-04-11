@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c187560103
+DECL|enum|__anon2bedea370103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c187560208
+DECL|struct|__anon2bedea370208
 block|{
 DECL|member|evenness
 name|gint
@@ -229,7 +229,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"evenodd"
 block|,
-literal|"0 = keep odd, 1 = keep even"
+literal|"Which lines to keep { KEEP-ODD (0), KEEP-EVEN (1) }"
 block|}
 block|}
 decl_stmt|;

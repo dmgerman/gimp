@@ -145,7 +145,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a51e840108
+DECL|struct|__anon27e788d60108
 block|{
 DECL|member|refraction
 name|gdouble
@@ -247,7 +247,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"keep-surroundings"
 block|,
-literal|"Keep lens surroundings"
+literal|"Keep lens surroundings { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -255,7 +255,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"set-background"
 block|,
-literal|"Set lens surroundings to BG value"
+literal|"Set lens surroundings to BG value { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -263,7 +263,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"set-transparent"
 block|,
-literal|"Set lens surroundings transparent"
+literal|"Set lens surroundings transparent { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;

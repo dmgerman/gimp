@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c179ad60108
+DECL|struct|__anon29998ce10108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -320,7 +320,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"Algorithm {RGB (0), INTENSITY (1)}"
+literal|"Algorithm { RGB (0), INTENSITY (1) }"
 block|}
 block|}
 decl_stmt|;
@@ -360,7 +360,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"Algorithm {RGB (0), INTENSITY (1)}"
+literal|"Algorithm { RGB (0), INTENSITY (1) }"
 block|}
 block|,
 block|{

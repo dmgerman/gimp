@@ -84,7 +84,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c75ff930103
+DECL|enum|__anon291cd7480103
 block|{
 DECL|enumerator|BLUR_IIR
 name|BLUR_IIR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c75ff930208
+DECL|struct|__anon291cd7480208
 block|{
 DECL|member|horizontal
 name|gdouble
@@ -480,7 +480,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"method"
 block|,
-literal|"IIR (0) or RLE (1)"
+literal|"Blur method { IIR (0), RLE (1) }"
 block|}
 block|}
 decl_stmt|;

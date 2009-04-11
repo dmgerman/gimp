@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon288e8c930103
+DECL|enum|__anon2be6367c0103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288e8c930208
+DECL|struct|__anon2be6367c0208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -813,7 +813,7 @@ name|GIMP_PDB_INT8
 block|,
 literal|"colormodel"
 block|,
-literal|"Color model (0: RGB_MODEL, 1: HSL_MODEL)"
+literal|"Color model { RGB-MODEL (0), HSL-MODEL (1) }"
 block|}
 block|,
 block|{
@@ -821,7 +821,7 @@ name|GIMP_PDB_INT8
 block|,
 literal|"redmode"
 block|,
-literal|"Red/hue application mode (TRUE, FALSE)"
+literal|"Red/hue application mode { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -829,7 +829,7 @@ name|GIMP_PDB_INT8
 block|,
 literal|"greenmode"
 block|,
-literal|"Green/saturation application mode (TRUE, FALSE)"
+literal|"Green/saturation application mode { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -837,7 +837,7 @@ name|GIMP_PDB_INT8
 block|,
 literal|"bluemode"
 block|,
-literal|"Blue/luminance application mode (TRUE, FALSE)"
+literal|"Blue/luminance application mode { TRUE, FALSE }"
 block|}
 block|,   }
 decl_stmt|;

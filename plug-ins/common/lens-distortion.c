@@ -68,7 +68,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3ec99c0108
+DECL|struct|__anon2a28c5be0108
 block|{
 DECL|member|centre_x
 name|gdouble
@@ -103,7 +103,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3ec99c0208
+DECL|struct|__anon2a28c5be0208
 block|{
 DECL|member|normallise_radius_sq
 name|gdouble

@@ -100,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b315f90108
+DECL|struct|__anon27b36d220108
 block|{
 DECL|member|film_height
 name|gint
@@ -204,7 +204,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b315f90208
+DECL|struct|__anon27b36d220208
 block|{
 DECL|member|advanced_adj
 name|GtkObject
@@ -807,7 +807,7 @@ name|GIMP_PDB_INT32ARRAY
 block|,
 literal|"image-ids"
 block|,
-literal|"num_images image IDs to be used for film"
+literal|"num-images image IDs to be used for film"
 block|}
 block|}
 decl_stmt|;

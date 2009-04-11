@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fccb00108
+DECL|struct|__anon2933e33c0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6fccb00208
+DECL|struct|__anon2933e33c0208
 block|{
 DECL|member|channels
 name|gint

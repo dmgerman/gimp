@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289399340108
+DECL|struct|__anon29145f130108
 block|{
 DECL|member|division
 name|gint32
@@ -259,7 +259,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"Illusion type (0=type1, 1=type2)"
+literal|"Illusion type { TYPE1 (0), TYPE2 (1) }"
 block|}
 block|}
 decl_stmt|;
@@ -625,7 +625,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon289399340208
+DECL|struct|__anon29145f130208
 typedef|typedef
 struct|struct
 block|{

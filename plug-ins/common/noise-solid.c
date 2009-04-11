@@ -105,7 +105,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1c5e540108
+DECL|struct|__anon2c4fdf760108
 block|{
 DECL|member|tilable
 name|gboolean
@@ -451,7 +451,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"tilable"
 block|,
-literal|"Create a tilable output (n=0/y=1)"
+literal|"Create a tilable output { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -459,7 +459,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"turbulent"
 block|,
-literal|"Make a turbulent noise (n=0/y=1)"
+literal|"Make a turbulent noise { TRUE, FALSE }"
 block|}
 block|,
 block|{

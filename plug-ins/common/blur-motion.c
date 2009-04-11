@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c50a6670103
+DECL|enum|__anon29144df60103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c50a6670208
+DECL|struct|__anon29144df60208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -476,7 +476,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"Type of motion blur (0 - linear, 1 - radial, 2 - zoom)"
+literal|"Type of motion blur { LINEAR (0), RADIAL (1), ZOOM (2) }"
 block|}
 block|,
 block|{

@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a551bc0108
+DECL|struct|__anon2c48fa160108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -677,7 +677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a551bc0208
+DECL|struct|__anon2c48fa160208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher

@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a5de550103
+DECL|enum|__anon2c7f29a90103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a5de550203
+DECL|enum|__anon2c7f29a90203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a5de550303
+DECL|enum|__anon2c7f29a90303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -581,7 +581,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"algorithm"
 block|,
-literal|"WIND, BLAST"
+literal|"Algorithm { WIND (0), BLAST (1) }"
 block|}
 block|,
 block|{
@@ -589,7 +589,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edge"
 block|,
-literal|"LEADING, TRAILING, or BOTH"
+literal|"Edge behavior { BOTH (0), LEADING (1), TRAILING (2) }"
 block|}
 block|}
 decl_stmt|;

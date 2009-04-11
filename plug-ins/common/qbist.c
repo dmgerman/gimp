@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27ab2c9a0103
+DECL|enum|__anon28e341e00103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ab2c9a0208
+DECL|struct|__anon28e341e00208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -239,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ab2c9a0308
+DECL|struct|__anon28e341e00308
 block|{
 DECL|member|info
 name|ExpInfo

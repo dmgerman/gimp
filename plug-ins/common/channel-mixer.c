@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2989613d0103
+DECL|enum|__anon2bf7568a0103
 block|{
 DECL|enumerator|CM_RED_CHANNEL
 name|CM_RED_CHANNEL
@@ -91,7 +91,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2989613d0208
+DECL|struct|__anon2bf7568a0208
 block|{
 DECL|member|red_gain
 name|gdouble
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2989613d0308
+DECL|struct|__anon2bf7568a0308
 block|{
 DECL|member|red
 name|CmChannelType
@@ -632,7 +632,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"monochrome"
 block|,
-literal|"Monochrome (TRUE or FALSE)"
+literal|"Monochrome { TRUE, FALSE }"
 block|}
 block|,
 block|{

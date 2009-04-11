@@ -793,7 +793,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c62c70108
+DECL|struct|__anon27458cac0108
 block|{
 DECL|member|lut
 name|guchar

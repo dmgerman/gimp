@@ -39,28 +39,6 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|RCSID
-end_ifdef
-
-begin_decl_stmt
-DECL|variable|rcsid
-specifier|static
-name|gchar
-name|rcsid
-index|[]
-init|=
-literal|"$Id$"
-decl_stmt|;
-end_decl_stmt
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_comment
 comment|/* Some useful macros */
 end_comment
@@ -91,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290914ba0103
+DECL|enum|__anon29dfdc260103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -117,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290914ba0208
+DECL|struct|__anon29dfdc260208
 block|{
 DECL|member|amount
 name|gdouble
@@ -416,7 +394,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"wrapmode"
 block|,
-literal|"Edge detection behavior: { WRAP (0), SMEAR (1), BLACK (2) }"
+literal|"Edge detection behavior { WRAP (0), SMEAR (1), BLACK (2) }"
 block|}
 block|,
 block|{
@@ -424,7 +402,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"edgemode"
 block|,
-literal|"Edge detection algorithm: { SOBEL (0), PREWITT (1), GRADIENT (2), ROBERTS (3),  DIFFERENTIAL (4), LAPLACE (5) }"
+literal|"Edge detection algorithm { SOBEL (0), PREWITT (1), GRADIENT (2), ROBERTS (3), DIFFERENTIAL (4), LAPLACE (5) }"
 block|}
 block|}
 decl_stmt|;

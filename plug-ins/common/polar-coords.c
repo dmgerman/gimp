@@ -101,7 +101,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5ff26b0108
+DECL|struct|__anon2785c38c0108
 block|{
 DECL|member|circle
 name|gdouble
@@ -431,7 +431,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"backwards"
 block|,
-literal|"Map backwards?"
+literal|"Map backwards { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -439,7 +439,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"inverse"
 block|,
-literal|"Map from top?"
+literal|"Map from top { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -447,7 +447,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"polrec"
 block|,
-literal|"Polar to rectangular?"
+literal|"Polar to rectangular { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;

@@ -168,7 +168,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dfa3180108
+DECL|struct|__anon275d21e90108
 block|{
 DECL|member|rndm_pct
 name|gdouble
@@ -423,7 +423,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"randomize"
 block|,
-literal|"Use random seed (TRUE, FALSE)"
+literal|"Use random seed { TRUE, FALSE }"
 block|}
 block|,
 block|{

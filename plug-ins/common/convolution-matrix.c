@@ -156,7 +156,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29cfffc50103
+DECL|enum|__anon2b43474e0103
 block|{
 DECL|enumerator|EXTEND
 name|EXTEND
@@ -381,7 +381,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29cfffc50208
+DECL|struct|__anon2b43474e0208
 block|{
 DECL|member|matrix
 name|gfloat
@@ -862,7 +862,7 @@ end_decl_stmt
 
 begin_struct
 struct|struct
-DECL|struct|__anon29cfffc50308
+DECL|struct|__anon2b43474e0308
 block|{
 DECL|member|matrix
 name|GtkWidget
@@ -1024,7 +1024,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"bmode"
 block|,
-literal|"Mode for treating image borders"
+literal|"Mode for treating image borders { EXTEND (0), WRAP (1), CLEAR (2) }"
 block|}
 block|,   }
 decl_stmt|;

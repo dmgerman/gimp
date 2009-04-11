@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b716bd10108
+DECL|struct|__anon28d9c3440108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b716bd10203
+DECL|enum|__anon28d9c3440203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b716bd10303
+DECL|enum|__anon28d9c3440303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2b716bd10408
+DECL|struct|__anon28d9c3440408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -585,7 +585,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"mode"
 block|,
-literal|"Mode -- NTSC/PAL"
+literal|"Mode { NTSC (0), PAL (1) }"
 block|}
 block|,
 block|{
@@ -601,7 +601,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"new-layer"
 block|,
-literal|"Create a new layer if True"
+literal|"Create a new layer { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;

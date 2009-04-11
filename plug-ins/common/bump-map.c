@@ -87,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1033080103
+DECL|enum|__anon2b77c0af0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1033080203
+DECL|enum|__anon2b77c0af0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1033080308
+DECL|struct|__anon2b77c0af0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1033080408
+DECL|struct|__anon2b77c0af0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1033080508
+DECL|struct|__anon2b77c0af0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -945,7 +945,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"compensate"
 block|,
-literal|"Compensate for darkening"
+literal|"Compensate for darkening { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -953,7 +953,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"invert"
 block|,
-literal|"Invert bumpmap"
+literal|"Invert bumpmap { TRUE, FALSE }"
 block|}
 block|,
 block|{
@@ -961,8 +961,8 @@ name|GIMP_PDB_INT32
 block|,
 literal|"type"
 block|,
-literal|"Type of map (LINEAR (0), "
-literal|"SPHERICAL (1), SINUSOIDAL (2))"
+literal|"Type of map { LINEAR (0), "
+literal|"SPHERICAL (1), SINUSOIDAL (2) }"
 block|}
 block|}
 decl_stmt|;

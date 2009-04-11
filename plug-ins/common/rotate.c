@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beefd1c0108
+DECL|struct|__anon2bbb72a80108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2beefd1c0208
+DECL|struct|__anon2bbb72a80208
 block|{
 DECL|member|ID
 name|gint32
@@ -347,7 +347,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"everything"
 block|,
-literal|"Rotate the whole image? { TRUE, FALSE }"
+literal|"Rotate the whole image { TRUE, FALSE }"
 block|}
 block|}
 decl_stmt|;
