@@ -847,6 +847,17 @@ argument_list|(
 name|projectable
 argument_list|)
 decl_stmt|;
+name|GeglNode
+modifier|*
+name|output_node
+init|=
+name|gegl_node_get_output_proxy
+argument_list|(
+name|image_graph
+argument_list|,
+literal|"output"
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|new_image
@@ -902,7 +913,7 @@ literal|"gegl:introspect"
 argument_list|,
 literal|"node"
 argument_list|,
-name|image_graph
+name|output_node
 argument_list|,
 name|NULL
 argument_list|)
