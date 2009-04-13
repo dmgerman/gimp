@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a4c0c480103
+DECL|enum|__anon2c4fb3cc0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c0c480208
+DECL|struct|__anon2c4fb3cc0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4c0c480308
+DECL|struct|__anon2c4fb3cc0308
 block|{
 DECL|member|used_count
 name|signed
@@ -3998,6 +3998,46 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+break|break;
+block|}
+comment|/* TODO: attach or remove the ICC profile */
+switch|switch
+condition|(
+name|new_type
+condition|)
+block|{
+case|case
+name|GIMP_RGB
+case|:
+case|case
+name|GIMP_INDEXED
+case|:
+if|if
+condition|(
+name|old_type
+operator|==
+name|GIMP_GRAY
+condition|)
+name|gimp_image_parasite_detach
+argument_list|(
+name|image
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
+name|GIMP_GRAY
+case|:
+name|gimp_image_parasite_detach
+argument_list|(
+name|image
+argument_list|,
+literal|"icc-profile"
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
 break|break;
 block|}
 comment|/*  Delete the quantizer object, if there is one */
