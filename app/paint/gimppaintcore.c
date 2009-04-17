@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9b8dbe0103
+DECL|enum|__anon2b3aa0770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,6 +222,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -859,7 +860,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_paint_core_real_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
+DECL|function|gimp_paint_core_real_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GError ** error)
 name|gimp_paint_core_real_start
 parameter_list|(
 name|GimpPaintCore
@@ -874,6 +875,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -1252,7 +1254,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_paint_core_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpCoords * coords,GError ** error)
+DECL|function|gimp_paint_core_start (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GError ** error)
 name|gimp_paint_core_start
 parameter_list|(
 name|GimpPaintCore
@@ -1267,6 +1269,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords

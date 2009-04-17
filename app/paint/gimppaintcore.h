@@ -240,6 +240,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
@@ -449,6 +450,7 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|coords
