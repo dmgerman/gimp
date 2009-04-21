@@ -338,7 +338,7 @@ argument_list|)
 expr_stmt|;
 name|height
 operator|=
-name|gimp_image_width
+name|gimp_image_height
 argument_list|(
 name|self
 operator|->
