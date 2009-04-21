@@ -142,6 +142,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|uri_backend_map_image
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

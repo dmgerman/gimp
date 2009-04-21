@@ -1379,5 +1379,26 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gchar
+modifier|*
+DECL|function|uri_backend_map_image (const gchar * uri,GimpRunMode run_mode)
+name|uri_backend_map_image
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|,
+name|GimpRunMode
+name|run_mode
+parameter_list|)
+block|{
+return|return
+name|NULL
+return|;
+block|}
+end_function
+
 end_unit
 
