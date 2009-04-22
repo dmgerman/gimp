@@ -529,6 +529,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_paint_core_round_line
+parameter_list|(
+name|GimpPaintCore
+modifier|*
+name|core
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
+parameter_list|,
+name|gboolean
+name|constrain_15_degrees
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  protected functions  */
 end_comment
