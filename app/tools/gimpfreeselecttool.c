@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpchannel.h"
 end_include
 
@@ -103,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"gimptoolcontrol.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools-utils.h"
 end_include
 
 begin_include
@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e7ee910108
+DECL|struct|__anon29011e950108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -3785,7 +3785,7 @@ argument_list|,
 name|segment_index
 argument_list|)
 expr_stmt|;
-name|gimp_tool_motion_constrain
+name|gimp_constrain_line
 argument_list|(
 name|start_point_x
 argument_list|,
@@ -3797,7 +3797,7 @@ argument_list|,
 operator|&
 name|new_y
 argument_list|,
-name|GIMP_TOOL_CONSTRAIN_15_DEGREES
+name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|)
 expr_stmt|;
 block|}
@@ -4274,7 +4274,7 @@ operator|&
 name|start_point_y
 argument_list|)
 expr_stmt|;
-name|gimp_tool_motion_constrain
+name|gimp_constrain_line
 argument_list|(
 name|start_point_x
 argument_list|,
@@ -4294,7 +4294,7 @@ name|pending_point
 operator|.
 name|y
 argument_list|,
-name|GIMP_TOOL_CONSTRAIN_15_DEGREES
+name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|)
 expr_stmt|;
 block|}

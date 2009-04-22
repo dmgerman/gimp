@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -187,12 +193,6 @@ begin_include
 include|#
 directive|include
 file|"tool_manager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools-utils.h"
 end_include
 
 begin_include
@@ -2358,7 +2358,7 @@ operator|->
 name|constrain
 condition|)
 block|{
-name|gimp_tool_motion_constrain
+name|gimp_constrain_line
 argument_list|(
 name|edit_select
 operator|->
@@ -2374,7 +2374,7 @@ argument_list|,
 operator|&
 name|new_y
 argument_list|,
-name|GIMP_TOOL_CONSTRAIN_45_DEGREES
+name|GIMP_CONSTRAIN_LINE_45_DEGREES
 argument_list|)
 expr_stmt|;
 block|}

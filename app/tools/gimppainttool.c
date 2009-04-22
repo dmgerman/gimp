@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -127,12 +133,6 @@ begin_include
 include|#
 directive|include
 file|"gimptoolcontrol.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"tools-utils.h"
 end_include
 
 begin_include
@@ -1054,7 +1054,7 @@ name|state
 operator|&
 name|GDK_CONTROL_MASK
 condition|)
-name|gimp_tool_motion_constrain
+name|gimp_constrain_line
 argument_list|(
 name|core
 operator|->
@@ -1082,7 +1082,7 @@ name|cur_coords
 operator|.
 name|y
 argument_list|,
-name|GIMP_TOOL_CONSTRAIN_15_DEGREES
+name|GIMP_CONSTRAIN_LINE_15_DEGREES
 argument_list|)
 expr_stmt|;
 block|}
