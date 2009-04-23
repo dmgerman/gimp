@@ -1023,6 +1023,14 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|GIMP_SAVE_MODE_EXPORT
+case|:
+case|case
+name|GIMP_SAVE_MODE_EXPORT_TO
+case|:
+comment|/* TODO */
+break|break;
 block|}
 if|if
 condition|(
