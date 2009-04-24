@@ -1205,14 +1205,14 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_file_dialog_new (Gimp * gimp,GtkFileChooserAction action,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
+DECL|function|gimp_file_dialog_new (Gimp * gimp,GimpFileChooserAction action,const gchar * title,const gchar * role,const gchar * stock_id,const gchar * help_id)
 name|gimp_file_dialog_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkFileChooserAction
+name|GimpFileChooserAction
 name|action
 parameter_list|,
 specifier|const
@@ -1256,6 +1256,9 @@ name|automatic_help_id
 decl_stmt|;
 name|gboolean
 name|local_only
+decl_stmt|;
+name|GtkFileChooserAction
+name|gtk_action
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1309,8 +1312,12 @@ name|action
 condition|)
 block|{
 case|case
-name|GTK_FILE_CHOOSER_ACTION_OPEN
+name|GIMP_FILE_CHOOSER_ACTION_OPEN
 case|:
+name|gtk_action
+operator|=
+name|GTK_FILE_CHOOSER_ACTION_OPEN
+expr_stmt|;
 name|file_procs
 operator|=
 name|gimp
@@ -1348,8 +1355,12 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_FILE_CHOOSER_ACTION_SAVE
+name|GIMP_FILE_CHOOSER_ACTION_SAVE
 case|:
+name|gtk_action
+operator|=
+name|GTK_FILE_CHOOSER_ACTION_SAVE
+expr_stmt|;
 name|file_procs
 operator|=
 name|gimp
@@ -1412,7 +1423,7 @@ name|role
 argument_list|,
 literal|"action"
 argument_list|,
-name|action
+name|gtk_action
 argument_list|,
 literal|"local-only"
 argument_list|,

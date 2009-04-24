@@ -196,7 +196,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkFileChooserAction
+name|GimpFileChooserAction
 name|action
 parameter_list|,
 specifier|const

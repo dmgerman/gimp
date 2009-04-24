@@ -234,7 +234,7 @@ name|gimp_file_dialog_new
 argument_list|(
 name|gimp
 argument_list|,
-name|GTK_FILE_CHOOSER_ACTION_OPEN
+name|GIMP_FILE_CHOOSER_ACTION_OPEN
 argument_list|,
 name|_
 argument_list|(

@@ -324,7 +324,7 @@ name|gimp_file_dialog_new
 argument_list|(
 name|gimp
 argument_list|,
-name|GTK_FILE_CHOOSER_ACTION_SAVE
+name|GIMP_FILE_CHOOSER_ACTION_SAVE
 argument_list|,
 name|_
 argument_list|(
