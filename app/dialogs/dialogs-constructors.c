@@ -510,6 +510,37 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
+DECL|function|dialogs_file_export_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+name|dialogs_file_export_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|view_size
+parameter_list|)
+block|{
+return|return
+name|file_save_dialog_new
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
 DECL|function|dialogs_preferences_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
 name|dialogs_preferences_get
 parameter_list|(
