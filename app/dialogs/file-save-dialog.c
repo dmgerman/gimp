@@ -203,6 +203,22 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|file_save_dialog_unknown_ext_msg
+parameter_list|(
+name|GimpFileDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|file_save_dialog_use_extension
 parameter_list|(
@@ -1105,24 +1121,11 @@ argument_list|,
 literal|"unable to figure save_proc, bailing out"
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|file_save_dialog_unknown_ext_msg
 argument_list|(
+name|dialog
+argument_list|,
 name|gimp
-argument_list|,
-name|G_OBJECT
-argument_list|(
-name|save_dialog
-argument_list|)
-argument_list|,
-name|GIMP_MESSAGE_WARNING
-argument_list|,
-name|_
-argument_list|(
-literal|"The given filename does not have any known "
-literal|"file extension. Please enter a known file "
-literal|"extension or select a file format from the "
-literal|"file format list."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1202,24 +1205,11 @@ argument_list|,
 literal|"basename has no useful extension, bailing out"
 argument_list|)
 expr_stmt|;
-name|gimp_message
+name|file_save_dialog_unknown_ext_msg
 argument_list|(
+name|dialog
+argument_list|,
 name|gimp
-argument_list|,
-name|G_OBJECT
-argument_list|(
-name|save_dialog
-argument_list|)
-argument_list|,
-name|GIMP_MESSAGE_WARNING
-argument_list|,
-name|_
-argument_list|(
-literal|"The given filename does not have any known "
-literal|"file extension. Please enter a known file "
-literal|"extension or select a file format from the "
-literal|"file format list."
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -1454,6 +1444,44 @@ expr_stmt|;
 return|return
 name|TRUE
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|file_save_dialog_unknown_ext_msg (GimpFileDialog * dialog,Gimp * gimp)
+name|file_save_dialog_unknown_ext_msg
+parameter_list|(
+name|GimpFileDialog
+modifier|*
+name|dialog
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|)
+block|{
+name|gimp_message
+argument_list|(
+name|gimp
+argument_list|,
+name|G_OBJECT
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|GIMP_MESSAGE_WARNING
+argument_list|,
+name|_
+argument_list|(
+literal|"The given filename does not have any known "
+literal|"file extension. Please enter a known file "
+literal|"extension or select a file format from the "
+literal|"file format list."
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
