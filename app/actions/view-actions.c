@@ -350,7 +350,7 @@ argument_list|,
 literal|"_Fit Image in Window"
 argument_list|)
 block|,
-literal|"<control><shift>E"
+name|NULL
 block|,
 name|NC_
 argument_list|(
@@ -495,7 +495,7 @@ argument_list|,
 literal|"Shrink _Wrap"
 argument_list|)
 block|,
-literal|"<control>E"
+name|NULL
 block|,
 name|NC_
 argument_list|(

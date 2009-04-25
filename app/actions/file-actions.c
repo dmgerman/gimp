@@ -583,7 +583,7 @@ argument_list|,
 literal|"Export..."
 argument_list|)
 block|,
-name|NULL
+literal|"<control>E"
 block|,
 name|NC_
 argument_list|(
@@ -611,7 +611,7 @@ argument_list|,
 literal|"Export to"
 argument_list|)
 block|,
-name|NULL
+literal|"<control><shift>E"
 block|,
 name|NC_
 argument_list|(
