@@ -500,6 +500,8 @@ argument_list|(
 name|context
 operator|->
 name|gimp
+argument_list|,
+name|FALSE
 argument_list|)
 return|;
 block|}

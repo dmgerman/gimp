@@ -36,6 +36,14 @@ name|GIMP_FILE_SAVE_LAST_URI_KEY
 value|"gimp-file-save-last-uri"
 end_define
 
+begin_define
+DECL|macro|GIMP_FILE_EXPORT_LAST_URI_KEY
+define|#
+directive|define
+name|GIMP_FILE_EXPORT_LAST_URI_KEY
+value|"gimp-file-export-last-uri"
+end_define
+
 begin_comment
 comment|/* Data keys for GimpImage */
 end_comment

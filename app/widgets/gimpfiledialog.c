@@ -1357,17 +1357,32 @@ break|break;
 case|case
 name|GIMP_FILE_CHOOSER_ACTION_SAVE
 case|:
+case|case
+name|GIMP_FILE_CHOOSER_ACTION_EXPORT
+case|:
 name|gtk_action
 operator|=
 name|GTK_FILE_CHOOSER_ACTION_SAVE
 expr_stmt|;
 name|file_procs
 operator|=
+operator|(
+name|action
+operator|==
+name|GIMP_FILE_CHOOSER_ACTION_SAVE
+condition|?
 name|gimp
 operator|->
 name|plug_in_manager
 operator|->
 name|save_procs
+else|:
+name|gimp
+operator|->
+name|plug_in_manager
+operator|->
+name|export_procs
+operator|)
 expr_stmt|;
 name|automatic
 operator|=
@@ -1933,7 +1948,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_file_dialog_set_save_image (GimpFileDialog * dialog,Gimp * gimp,GimpImage * image,gboolean save_a_copy,gboolean close_after_saving)
+DECL|function|gimp_file_dialog_set_save_image (GimpFileDialog * dialog,Gimp * gimp,GimpImage * image,gboolean save_a_copy,gboolean export,gboolean close_after_saving)
 name|gimp_file_dialog_set_save_image
 parameter_list|(
 name|GimpFileDialog
@@ -1950,6 +1965,9 @@ name|image
 parameter_list|,
 name|gboolean
 name|save_a_copy
+parameter_list|,
+name|gboolean
+name|export
 parameter_list|,
 name|gboolean
 name|close_after_saving
@@ -1997,6 +2015,12 @@ operator|->
 name|save_a_copy
 operator|=
 name|save_a_copy
+expr_stmt|;
+name|dialog
+operator|->
+name|export
+operator|=
+name|export
 expr_stmt|;
 name|dialog
 operator|->

@@ -24,6 +24,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|export
 parameter_list|)
 function_decl|;
 end_function_decl

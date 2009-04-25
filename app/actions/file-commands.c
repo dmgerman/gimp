@@ -1917,6 +1917,8 @@ name|image
 argument_list|,
 name|save_a_copy
 argument_list|,
+name|FALSE
+argument_list|,
 name|close_after_saving
 argument_list|)
 expr_stmt|;
