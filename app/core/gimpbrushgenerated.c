@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c6a7890103
+DECL|enum|__anon29371e1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -199,10 +199,10 @@ modifier|*
 name|gbrush
 parameter_list|,
 name|gdouble
-name|scale_x
+name|scale
 parameter_list|,
 name|gdouble
-name|scale_y
+name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
@@ -229,10 +229,10 @@ modifier|*
 name|gbrush
 parameter_list|,
 name|gdouble
-name|scale_x
+name|scale
 parameter_list|,
 name|gdouble
-name|scale_y
+name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
@@ -1101,7 +1101,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale_x,gdouble scale_y,gdouble angle,gint * width,gint * height)
+DECL|function|gimp_brush_generated_transform_size (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gint * width,gint * height)
 name|gimp_brush_generated_transform_size
 parameter_list|(
 name|GimpBrush
@@ -1109,10 +1109,10 @@ modifier|*
 name|gbrush
 parameter_list|,
 name|gdouble
-name|scale_x
+name|scale
 parameter_list|,
 name|gdouble
-name|scale_y
+name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
@@ -1141,6 +1141,27 @@ decl_stmt|;
 name|gint
 name|half_height
 decl_stmt|;
+comment|/* Since generated brushes are symmetric the dont have intput    * for aspect ratios< 1.0. its same as rotate by 90 degrees and    * 1 / ratio. So we fix the input up for this case.   */
+if|if
+condition|(
+name|aspect_ratio
+operator|<
+literal|1.0
+condition|)
+block|{
+name|aspect_ratio
+operator|=
+literal|1.0
+operator|/
+name|aspect_ratio
+expr_stmt|;
+name|angle
+operator|=
+name|angle
+operator|+
+literal|0.25
+expr_stmt|;
+block|}
 name|gimp_brush_generated_get_half_size
 argument_list|(
 name|brush
@@ -1153,13 +1174,7 @@ name|brush
 operator|->
 name|radius
 operator|*
-operator|(
-name|scale_x
-operator|+
-name|scale_y
-operator|)
-operator|/
-literal|2
+name|scale
 argument_list|,
 name|brush
 operator|->
@@ -1172,10 +1187,8 @@ argument_list|,
 name|brush
 operator|->
 name|aspect_ratio
-operator|*
-name|scale_x
 operator|/
-name|scale_y
+name|aspect_ratio
 argument_list|,
 operator|(
 name|brush
@@ -1227,7 +1240,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale_x,gdouble scale_y,gdouble angle)
+DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle)
 name|gimp_brush_generated_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -1235,10 +1248,10 @@ modifier|*
 name|gbrush
 parameter_list|,
 name|gdouble
-name|scale_x
+name|scale
 parameter_list|,
 name|gdouble
-name|scale_y
+name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
@@ -1253,6 +1266,27 @@ argument_list|(
 name|gbrush
 argument_list|)
 decl_stmt|;
+comment|/* Since generated brushes are symmetric the dont have intput    * for aspect ratios< 1.0. its same as rotate by 90 degrees and    * 1 / ratio. So we fix the input up for this case.   */
+if|if
+condition|(
+name|aspect_ratio
+operator|<
+literal|1.0
+condition|)
+block|{
+name|aspect_ratio
+operator|=
+literal|1.0
+operator|/
+name|aspect_ratio
+expr_stmt|;
+name|angle
+operator|=
+name|angle
+operator|+
+literal|0.25
+expr_stmt|;
+block|}
 return|return
 name|gimp_brush_generated_calc
 argument_list|(
@@ -1266,13 +1300,7 @@ name|brush
 operator|->
 name|radius
 operator|*
-operator|(
-name|scale_x
-operator|+
-name|scale_y
-operator|)
-operator|/
-literal|2
+name|scale
 argument_list|,
 name|brush
 operator|->
@@ -1285,10 +1313,8 @@ argument_list|,
 name|brush
 operator|->
 name|aspect_ratio
-operator|*
-name|scale_x
 operator|/
-name|scale_y
+name|aspect_ratio
 argument_list|,
 operator|(
 name|brush

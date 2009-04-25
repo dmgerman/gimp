@@ -149,6 +149,10 @@ DECL|member|angle
 name|gdouble
 name|angle
 decl_stmt|;
+DECL|member|aspect_ratio
+name|gdouble
+name|aspect_ratio
+decl_stmt|;
 comment|/*  brush buffers  */
 DECL|member|pressure_brush
 name|TempBuf
@@ -200,6 +204,10 @@ decl_stmt|;
 DECL|member|last_angle
 name|gdouble
 name|last_angle
+decl_stmt|;
+DECL|member|last_aspect_ratio
+name|gdouble
+name|last_aspect_ratio
 decl_stmt|;
 DECL|member|transform_pixmap
 name|TempBuf

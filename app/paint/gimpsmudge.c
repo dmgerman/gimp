@@ -1364,7 +1364,7 @@ name|scale
 argument_list|,
 name|brush_core
 operator|->
-name|scale
+name|aspect_ratio
 argument_list|,
 name|brush_core
 operator|->
