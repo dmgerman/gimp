@@ -332,7 +332,7 @@ name|GIMP_HELP_FILE_OPEN_LOCATION
 block|}
 block|,
 block|{
-literal|"file-save-as-template"
+literal|"file-create-template"
 block|,
 name|NULL
 block|,
@@ -340,7 +340,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Save as _Template..."
+literal|"Create _Template..."
 argument_list|)
 block|,
 name|NULL
@@ -354,10 +354,10 @@ argument_list|)
 block|,
 name|G_CALLBACK
 argument_list|(
-name|file_save_template_cmd_callback
+name|file_create_template_cmd_callback
 argument_list|)
 block|,
-name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
+name|GIMP_HELP_FILE_CREATE_TEMPLATE
 block|}
 block|,
 block|{
@@ -1229,7 +1229,7 @@ argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
 argument_list|(
-literal|"file-save-as-template"
+literal|"file-create-template"
 argument_list|,
 name|image
 argument_list|)

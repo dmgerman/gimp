@@ -153,6 +153,19 @@ value|"gimp-file-close-all"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_CREATE_TEMPLATE
+define|#
+directive|define
+name|GIMP_HELP_FILE_CREATE_TEMPLATE
+value|"gimp-file-save-as-template"
+end_define
+
+begin_comment
+DECL|macro|GIMP_HELP_FILE_CREATE_TEMPLATE
+comment|/* Update string along with gimp-help-2 */
+end_comment
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_QUIT
 define|#
 directive|define

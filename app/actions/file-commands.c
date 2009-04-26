@@ -1184,8 +1184,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|file_save_template_cmd_callback (GtkAction * action,gpointer data)
-name|file_save_template_cmd_callback
+DECL|function|file_create_template_cmd_callback (GtkAction * action,gpointer data)
+name|file_create_template_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -1225,7 +1225,7 @@ name|shell
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
-name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
+name|GIMP_HELP_FILE_CREATE_TEMPLATE
 argument_list|,
 name|_
 argument_list|(
