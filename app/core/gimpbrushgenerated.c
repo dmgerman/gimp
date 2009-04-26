@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29371e1c0103
+DECL|enum|__anon27e8c2300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1187,7 +1187,7 @@ argument_list|,
 name|brush
 operator|->
 name|aspect_ratio
-operator|/
+operator|*
 name|aspect_ratio
 argument_list|,
 operator|(
@@ -1313,7 +1313,7 @@ argument_list|,
 name|brush
 operator|->
 name|aspect_ratio
-operator|/
+operator|*
 name|aspect_ratio
 argument_list|,
 operator|(
