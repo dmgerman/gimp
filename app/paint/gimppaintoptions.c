@@ -565,7 +565,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274ef9990103
+DECL|enum|__anon2ad6ccd00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1005,7 +1005,10 @@ name|PROP_BRUSH_ASPECT_RATIO
 argument_list|,
 literal|"brush-aspect-ratio"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Aspect Ratio"
+argument_list|)
 argument_list|,
 literal|0.01
 argument_list|,

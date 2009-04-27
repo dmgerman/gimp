@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde9b140103
+DECL|enum|__anon2a31be6c0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde9b140203
+DECL|enum|__anon2a31be6c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -541,7 +541,10 @@ literal|"spacing"
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Brush Spacing"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,
