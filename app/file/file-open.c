@@ -233,6 +233,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpfile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -2177,7 +2183,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-literal|"gimp-file-open-last-uri"
+name|GIMP_FILE_OPEN_LAST_URI_KEY
 argument_list|,
 name|uri
 argument_list|,

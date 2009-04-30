@@ -185,6 +185,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpfile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -550,7 +556,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-literal|"gimp-file-save-a-copy-uri"
+name|GIMP_FILE_SAVE_A_COPY_URI_KEY
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -586,7 +592,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-literal|"gimp-file-save-a-copy-uri"
+name|GIMP_FILE_SAVE_A_COPY_URI_KEY
 argument_list|,
 name|NULL
 argument_list|)

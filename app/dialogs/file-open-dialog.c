@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/gimpfile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpfiledialog.h"
 end_include
 
@@ -404,7 +410,7 @@ argument_list|(
 name|gimp
 argument_list|)
 argument_list|,
-literal|"gimp-file-open-last-uri"
+name|GIMP_FILE_OPEN_LAST_URI_KEY
 argument_list|,
 name|g_strdup
 argument_list|(

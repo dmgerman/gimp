@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"file/gimpfile.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"pdb/gimppdb.h"
 end_include
 
@@ -1982,7 +1988,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-literal|"gimp-file-save-a-copy-uri"
+name|GIMP_FILE_SAVE_A_COPY_URI_KEY
 argument_list|)
 expr_stmt|;
 if|if
