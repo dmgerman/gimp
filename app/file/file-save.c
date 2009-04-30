@@ -550,7 +550,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-literal|"gimp-image-save-a-copy"
+literal|"gimp-file-save-a-copy-uri"
 argument_list|,
 name|g_strdup
 argument_list|(
@@ -586,7 +586,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-literal|"gimp-image-save-a-copy"
+literal|"gimp-file-save-a-copy-uri"
 argument_list|,
 name|NULL
 argument_list|)
