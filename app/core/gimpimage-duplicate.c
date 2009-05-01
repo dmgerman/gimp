@@ -136,7 +136,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_duplicate_save_folder
+name|gimp_image_duplicate_save_source_uri
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -446,8 +446,8 @@ argument_list|(
 name|new_image
 argument_list|)
 expr_stmt|;
-comment|/*  Store the folder to be used by the save dialog  */
-name|gimp_image_duplicate_save_folder
+comment|/*  Store the source uri to be used by the save dialog  */
+name|gimp_image_duplicate_save_source_uri
 argument_list|(
 name|image
 argument_list|,
@@ -683,8 +683,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_duplicate_save_folder (GimpImage * image,GimpImage * new_image)
-name|gimp_image_duplicate_save_folder
+DECL|function|gimp_image_duplicate_save_source_uri (GimpImage * image,GimpImage * new_image)
+name|gimp_image_duplicate_save_source_uri
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -695,20 +695,6 @@ modifier|*
 name|new_image
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|filename
-init|=
-name|gimp_image_get_filename
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|filename
-condition|)
-block|{
 name|g_object_set_data_full
 argument_list|(
 name|G_OBJECT
@@ -716,11 +702,17 @@ argument_list|(
 name|new_image
 argument_list|)
 argument_list|,
-literal|"gimp-image-dirname"
+literal|"gimp-image-source-uri"
 argument_list|,
-name|g_path_get_dirname
+name|g_strdup
 argument_list|(
-name|filename
+name|gimp_object_get_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|)
 argument_list|,
 operator|(
@@ -729,12 +721,6 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|filename
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
