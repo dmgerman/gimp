@@ -185,7 +185,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpfile.h"
+file|"gimp-file.h"
 end_include
 
 begin_include
