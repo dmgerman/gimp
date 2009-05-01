@@ -1908,12 +1908,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_file_dialog_set_save_image (GimpFileDialog * dialog,GimpImage * image,gboolean save_a_copy,gboolean close_after_saving)
+DECL|function|gimp_file_dialog_set_save_image (GimpFileDialog * dialog,Gimp * gimp,GimpImage * image,gboolean save_a_copy,gboolean close_after_saving)
 name|gimp_file_dialog_set_save_image
 parameter_list|(
 name|GimpFileDialog
 modifier|*
 name|dialog
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|,
 name|GimpImage
 modifier|*
@@ -2175,6 +2179,25 @@ name|dialog
 argument_list|)
 argument_list|,
 name|folder
+argument_list|)
+expr_stmt|;
+else|else
+name|gtk_file_chooser_set_uri
+argument_list|(
+name|GTK_FILE_CHOOSER
+argument_list|(
+name|dialog
+argument_list|)
+argument_list|,
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|GIMP_FILE_SAVE_LAST_URI_KEY
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

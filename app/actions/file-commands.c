@@ -233,6 +233,10 @@ specifier|static
 name|void
 name|file_save_dialog_show
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -776,6 +780,10 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+decl_stmt|;
 name|GimpDisplay
 modifier|*
 name|display
@@ -801,6 +809,13 @@ name|saved
 init|=
 name|FALSE
 decl_stmt|;
+name|return_if_no_gimp
+argument_list|(
+name|gimp
+argument_list|,
+name|data
+argument_list|)
+expr_stmt|;
 name|return_if_no_display
 argument_list|(
 name|display
@@ -980,6 +995,8 @@ name|GIMP_SAVE_MODE_SAVE_AS
 case|:
 name|file_save_dialog_show
 argument_list|(
+name|gimp
+argument_list|,
 name|display
 operator|->
 name|image
@@ -1004,6 +1021,8 @@ name|GIMP_SAVE_MODE_SAVE_A_COPY
 case|:
 name|file_save_dialog_show
 argument_list|(
+name|gimp
+argument_list|,
 name|display
 operator|->
 name|image
@@ -1709,9 +1728,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|file_save_dialog_show (GimpImage * image,GtkWidget * parent,const gchar * title,gboolean save_a_copy,gboolean close_after_saving)
+DECL|function|file_save_dialog_show (Gimp * gimp,GimpImage * image,GtkWidget * parent,const gchar * title,gboolean save_a_copy,gboolean close_after_saving)
 name|file_save_dialog_show
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
@@ -1845,6 +1868,8 @@ name|GIMP_FILE_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
+argument_list|,
+name|gimp
 argument_list|,
 name|image
 argument_list|,
