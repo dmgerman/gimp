@@ -388,10 +388,6 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
-name|GtkWidget
-modifier|*
-name|button
-decl_stmt|;
 name|GimpMessageBox
 modifier|*
 name|box
