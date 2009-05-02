@@ -1709,11 +1709,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-name|g_object_ref
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 name|status
 operator|=
 name|file_save
@@ -1742,11 +1737,6 @@ name|save_a_copy
 argument_list|,
 operator|&
 name|error
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|image
 argument_list|)
 expr_stmt|;
 switch|switch
