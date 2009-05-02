@@ -546,6 +546,27 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
+comment|/* Store the URI of the last successfully saved image */
+name|g_object_set_data_full
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|GIMP_FILE_SAVE_LAST_URI_KEY
+argument_list|,
+name|g_strdup
+argument_list|(
+name|uri
+argument_list|)
+argument_list|,
+operator|(
+name|GDestroyNotify
+operator|)
+name|g_free
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|save_a_copy
