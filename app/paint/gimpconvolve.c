@@ -154,6 +154,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -179,6 +184,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -345,7 +355,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_convolve_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_convolve_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_convolve_paint
 parameter_list|(
 name|GimpPaintCore
@@ -359,6 +369,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -382,6 +397,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 break|break;
@@ -394,7 +411,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_convolve_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_convolve_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_convolve_motion
 parameter_list|(
 name|GimpPaintCore
@@ -408,6 +425,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpConvolve
@@ -543,10 +565,7 @@ name|gimp_paint_options_get_dynamic_rate
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|gimp_convolve_calculate_matrix

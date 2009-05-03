@@ -158,6 +158,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|gdouble
 name|opacity
 parameter_list|,
@@ -494,7 +499,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_clone_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity,GimpPickable * src_pickable,PixelRegion * srcPR,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
+DECL|function|gimp_clone_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gdouble opacity,GimpPickable * src_pickable,PixelRegion * srcPR,gint src_offset_x,gint src_offset_y,TempBuf * paint_area,gint paint_area_offset_x,gint paint_area_offset_y,gint paint_area_width,gint paint_area_height)
 name|gimp_clone_motion
 parameter_list|(
 name|GimpSourceCore
@@ -508,6 +513,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|gdouble
 name|opacity
@@ -890,10 +900,7 @@ name|gimp_paint_options_get_dynamic_opacity
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -902,10 +909,7 @@ name|gimp_paint_options_get_dynamic_hardness
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|gimp_brush_core_paste_canvas

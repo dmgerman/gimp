@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b89ae780103
+DECL|enum|__anon2b8a4e640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -206,6 +206,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -222,7 +227,7 @@ literal|0
 end_if
 
 begin_endif
-unit|static void     gimp_source_core_motion          (GimpSourceCore   *source_core,                                                   GimpDrawable     *drawable,                                                   GimpPaintOptions *paint_options);
+unit|static void     gimp_source_core_motion          (GimpSourceCore   *source_core,                                                   GimpDrawable     *drawable,                                                   GimpPaintOptions *paint_options,                                                   const GimpCoords *coords);
 endif|#
 directive|endif
 end_endif
@@ -876,7 +881,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_source_core_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_source_core_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_source_core_paint
 parameter_list|(
 name|GimpPaintCore
@@ -890,6 +895,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -942,20 +952,16 @@ name|source_core
 operator|->
 name|src_x
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 expr_stmt|;
 name|source_core
 operator|->
 name|src_y
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 expr_stmt|;
 name|source_core
@@ -1014,20 +1020,16 @@ name|source_core
 operator|->
 name|src_x
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 expr_stmt|;
 name|source_core
 operator|->
 name|src_y
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 expr_stmt|;
 name|source_core
@@ -1048,18 +1050,14 @@ name|dest_y
 decl_stmt|;
 name|dest_x
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 expr_stmt|;
 name|dest_y
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 expr_stmt|;
 if|if
@@ -1177,6 +1175,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 block|}
@@ -1244,7 +1244,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_source_core_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_source_core_motion (GimpSourceCore * source_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_source_core_motion
 parameter_list|(
 name|GimpSourceCore
@@ -1258,6 +1258,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpPaintCore
@@ -1536,6 +1541,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|,
 name|opacity
 argument_list|,

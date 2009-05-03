@@ -122,6 +122,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -147,6 +152,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -167,6 +177,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -179,6 +194,11 @@ parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|paint_core
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|gint
 modifier|*
@@ -397,7 +417,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_smudge_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_smudge_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_smudge_paint
 parameter_list|(
 name|GimpPaintCore
@@ -411,6 +431,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -455,6 +480,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 if|if
@@ -470,6 +497,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 break|break;
@@ -513,7 +542,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_smudge_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_smudge_start (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_smudge_start
 parameter_list|(
 name|GimpPaintCore
@@ -527,6 +556,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpSmudge
@@ -604,6 +638,8 @@ comment|/*  adjust the x and y coordinates to the upper left corner of the brush
 name|gimp_smudge_brush_coords
 argument_list|(
 name|paint_core
+argument_list|,
+name|coords
 argument_list|,
 operator|&
 name|x
@@ -685,10 +721,8 @@ argument_list|(
 operator|(
 name|gint
 operator|)
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 argument_list|,
 literal|0
@@ -709,10 +743,8 @@ argument_list|(
 operator|(
 name|gint
 operator|)
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 argument_list|,
 literal|0
@@ -890,7 +922,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_smudge_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_smudge_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_smudge_motion
 parameter_list|(
 name|GimpPaintCore
@@ -904,6 +936,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpSmudge
@@ -1030,6 +1067,8 @@ name|gimp_smudge_brush_coords
 argument_list|(
 name|paint_core
 argument_list|,
+name|coords
+argument_list|,
 operator|&
 name|x
 argument_list|,
@@ -1080,10 +1119,7 @@ name|gimp_paint_options_get_dynamic_rate
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|rate
@@ -1258,10 +1294,7 @@ name|gimp_paint_options_get_dynamic_opacity
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -1270,10 +1303,7 @@ name|gimp_paint_options_get_dynamic_hardness
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|gimp_brush_core_replace_canvas
@@ -1313,12 +1343,17 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_smudge_brush_coords (GimpPaintCore * paint_core,gint * x,gint * y,gint * w,gint * h)
+DECL|function|gimp_smudge_brush_coords (GimpPaintCore * paint_core,const GimpCoords * coords,gint * x,gint * y,gint * w,gint * h)
 name|gimp_smudge_brush_coords
 parameter_list|(
 name|GimpPaintCore
 modifier|*
 name|paint_core
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|gint
 modifier|*
@@ -1384,10 +1419,8 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 operator|-
 name|width
@@ -1402,10 +1435,8 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 operator|-
 name|height

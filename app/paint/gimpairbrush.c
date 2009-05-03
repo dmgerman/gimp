@@ -116,6 +116,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -141,6 +146,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -333,7 +343,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_airbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_airbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -347,6 +357,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -415,6 +430,8 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
+name|coords
+argument_list|,
 name|paint_state
 argument_list|,
 name|time
@@ -452,6 +469,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 if|if
@@ -487,10 +506,7 @@ name|gimp_paint_options_get_dynamic_rate
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|timeout
@@ -557,6 +573,8 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
+name|coords
+argument_list|,
 name|paint_state
 argument_list|,
 name|time
@@ -570,7 +588,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_airbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_airbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_airbrush_motion
 parameter_list|(
 name|GimpPaintCore
@@ -584,6 +602,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpAirbrushOptions
@@ -636,10 +659,8 @@ name|opacity
 operator|*=
 name|GIMP_PAINT_PRESSURE_SCALE
 operator|*
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|pressure
 expr_stmt|;
 if|if
@@ -656,10 +677,8 @@ literal|1
 operator|-
 name|GIMP_PAINT_VELOCITY_SCALE
 operator|*
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|velocity
 argument_list|)
 expr_stmt|;
@@ -686,6 +705,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|,
 name|opacity
 argument_list|)
@@ -728,6 +749,20 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
+name|GimpCoords
+name|coords
+decl_stmt|;
+name|gimp_paint_core_get_current_coords
+argument_list|(
+name|GIMP_PAINT_CORE
+argument_list|(
+name|airbrush
+argument_list|)
+argument_list|,
+operator|&
+name|coords
+argument_list|)
+expr_stmt|;
 name|gimp_airbrush_paint
 argument_list|(
 name|GIMP_PAINT_CORE
@@ -742,6 +777,9 @@ argument_list|,
 name|airbrush
 operator|->
 name|paint_options
+argument_list|,
+operator|&
+name|coords
 argument_list|,
 name|GIMP_PAINT_STATE_MOTION
 argument_list|,

@@ -216,6 +216,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -631,7 +636,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_perspective_clone_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_perspective_clone_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_perspective_clone_paint
 parameter_list|(
 name|GimpPaintCore
@@ -645,6 +650,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -710,20 +720,16 @@ name|source_core
 operator|->
 name|src_x
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 expr_stmt|;
 name|source_core
 operator|->
 name|src_y
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 expr_stmt|;
 comment|/* get source coordinates in front view perspective */
@@ -809,20 +815,16 @@ name|source_core
 operator|->
 name|src_x
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 expr_stmt|;
 name|source_core
 operator|->
 name|src_y
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 expr_stmt|;
 comment|/* get source coordinates in front view perspective */
@@ -870,18 +872,14 @@ name|dest_y
 decl_stmt|;
 name|dest_x
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|x
 expr_stmt|;
 name|dest_y
 operator|=
-name|paint_core
+name|coords
 operator|->
-name|cur_coords
-operator|.
 name|y
 expr_stmt|;
 if|if
@@ -1002,6 +1000,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 block|}

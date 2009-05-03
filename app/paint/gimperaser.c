@@ -92,6 +92,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -117,6 +122,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -229,7 +239,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_eraser_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_eraser_paint
 parameter_list|(
 name|GimpPaintCore
@@ -243,6 +253,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -266,6 +281,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 break|break;
@@ -278,7 +295,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_eraser_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_eraser_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_eraser_motion
 parameter_list|(
 name|GimpPaintCore
@@ -292,6 +309,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpEraserOptions
@@ -434,10 +456,7 @@ name|gimp_paint_options_get_dynamic_opacity
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -446,10 +465,7 @@ name|gimp_paint_options_get_dynamic_hardness
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|gimp_brush_core_paste_canvas

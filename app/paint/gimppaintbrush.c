@@ -116,6 +116,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|GimpPaintState
 name|paint_state
 parameter_list|,
@@ -233,7 +238,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_paintbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,GimpPaintState paint_state,guint32 time)
+DECL|function|gimp_paintbrush_paint (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,GimpPaintState paint_state,guint32 time)
 name|gimp_paintbrush_paint
 parameter_list|(
 name|GimpPaintCore
@@ -247,6 +252,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpPaintState
 name|paint_state
@@ -271,6 +281,8 @@ name|drawable
 argument_list|,
 name|paint_options
 argument_list|,
+name|coords
+argument_list|,
 name|GIMP_OPACITY_OPAQUE
 argument_list|)
 expr_stmt|;
@@ -283,7 +295,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|_gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,gdouble opacity)
+DECL|function|_gimp_paintbrush_motion (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,gdouble opacity)
 name|_gimp_paintbrush_motion
 parameter_list|(
 name|GimpPaintCore
@@ -297,6 +309,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|gdouble
 name|opacity
@@ -405,10 +422,7 @@ name|gimp_paint_options_get_dynamic_color
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 comment|/* optionally take the color from the current gradient */
@@ -586,10 +600,7 @@ name|gimp_paint_options_get_dynamic_opacity
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -598,10 +609,7 @@ name|gimp_paint_options_get_dynamic_hardness
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|paint_core
-operator|->
-name|cur_coords
+name|coords
 argument_list|)
 expr_stmt|;
 comment|/* finally, let the brush core paste the colored area on the canvas */
