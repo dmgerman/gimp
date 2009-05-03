@@ -1703,12 +1703,9 @@ name|status
 operator|=
 name|file_save
 argument_list|(
-name|image
-argument_list|,
-name|gimp_get_user_context
-argument_list|(
 name|gimp
-argument_list|)
+argument_list|,
+name|image
 argument_list|,
 name|progress
 argument_list|,

@@ -200,16 +200,16 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (GimpImage * image,GimpContext * context,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
+DECL|function|file_save (Gimp * gimp,GimpImage * image,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
 name|file_save
 parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|,
 name|GimpProgress
 modifier|*
@@ -259,9 +259,9 @@ name|drawable_ID
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_IMAGE
+name|GIMP_IS_GIMP
 argument_list|(
-name|image
+name|gimp
 argument_list|)
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
@@ -269,9 +269,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
+name|GIMP_IS_IMAGE
 argument_list|(
-name|context
+name|image
 argument_list|)
 argument_list|,
 name|GIMP_PDB_CALLING_ERROR
@@ -474,7 +474,10 @@ name|gimp
 operator|->
 name|pdb
 argument_list|,
-name|context
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
 argument_list|,
 name|progress
 argument_list|,
