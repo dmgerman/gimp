@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b27cec10103
+DECL|enum|__anon29404cc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -204,7 +204,10 @@ name|PROP_AVERAGE_RADIUS
 argument_list|,
 literal|"average-radius"
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Color Picker Average Radius"
+argument_list|)
 argument_list|,
 literal|1.0
 argument_list|,

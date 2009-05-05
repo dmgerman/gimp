@@ -399,38 +399,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_function_decl
-specifier|static
-name|void
-name|action_message
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|,
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|format
-parameter_list|,
-modifier|...
-parameter_list|)
-function_decl|G_GNUC_PRINTF
-parameter_list|(
-function_decl|3
-operator|,
-function_decl|4
-end_function_decl
-
-begin_empty_stmt
-unit|)
-empty_stmt|;
-end_empty_stmt
-
 begin_comment
 comment|/*  global variables  */
 end_comment
@@ -2637,12 +2605,7 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  private functions  */
-end_comment
-
 begin_function
-specifier|static
 name|void
 DECL|function|action_message (GimpDisplay * display,GObject * object,const gchar * format,...)
 name|action_message
@@ -2710,6 +2673,26 @@ argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
 name|tool_info
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|GIMP_IS_VIEWABLE
+argument_list|(
+name|object
+argument_list|)
+condition|)
+block|{
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
