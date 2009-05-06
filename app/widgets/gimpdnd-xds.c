@@ -534,7 +534,7 @@ name|proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 operator|&
 name|error

@@ -45,7 +45,7 @@ name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
-name|save_a_copy
+name|change_saved_state
 parameter_list|,
 name|GError
 modifier|*

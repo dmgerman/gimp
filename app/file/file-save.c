@@ -200,7 +200,7 @@ end_comment
 
 begin_function
 name|GimpPDBStatusType
-DECL|function|file_save (Gimp * gimp,GimpImage * image,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean save_a_copy,GError ** error)
+DECL|function|file_save (Gimp * gimp,GimpImage * image,GimpProgress * progress,const gchar * uri,GimpPlugInProcedure * file_proc,GimpRunMode run_mode,gboolean change_saved_state,GError ** error)
 name|file_save
 parameter_list|(
 name|Gimp
@@ -228,7 +228,7 @@ name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
-name|save_a_copy
+name|change_saved_state
 parameter_list|,
 name|GError
 modifier|*
@@ -548,8 +548,7 @@ name|imagefile
 decl_stmt|;
 if|if
 condition|(
-operator|!
-name|save_a_copy
+name|change_saved_state
 condition|)
 block|{
 name|gimp_image_set_uri
