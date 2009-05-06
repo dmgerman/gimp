@@ -937,7 +937,7 @@ name|save_proc
 argument_list|,
 name|GIMP_RUN_WITH_LAST_VALS
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)

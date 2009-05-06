@@ -490,6 +490,7 @@ name|save_proc
 argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
+operator|!
 name|dialog
 operator|->
 name|save_a_copy
@@ -1687,7 +1688,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean save_a_copy,gboolean verbose_cancel)
+DECL|function|file_save_dialog_save_image (GimpProgress * progress,Gimp * gimp,GimpImage * image,const gchar * uri,GimpPlugInProcedure * save_proc,GimpRunMode run_mode,gboolean change_saved_state,gboolean verbose_cancel)
 name|file_save_dialog_save_image
 parameter_list|(
 name|GimpProgress
@@ -1715,7 +1716,7 @@ name|GimpRunMode
 name|run_mode
 parameter_list|,
 name|gboolean
-name|save_a_copy
+name|change_saved_state
 parameter_list|,
 name|gboolean
 name|verbose_cancel
@@ -1786,8 +1787,7 @@ name|save_proc
 argument_list|,
 name|run_mode
 argument_list|,
-operator|!
-name|save_a_copy
+name|change_saved_state
 argument_list|,
 operator|&
 name|error
