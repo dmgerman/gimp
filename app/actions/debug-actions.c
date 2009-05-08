@@ -171,6 +171,25 @@ name|NULL
 block|}
 block|,
 block|{
+literal|"debug-dump-keyboard-shortcuts"
+block|,
+name|NULL
+block|,
+literal|"Dump _Keyboard Shortcuts"
+block|,
+name|NULL
+block|,
+name|NULL
+block|,
+name|G_CALLBACK
+argument_list|(
+name|debug_dump_keyboard_shortcuts_cmd_callback
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
 literal|"debug-dump-attached-data"
 block|,
 name|NULL
