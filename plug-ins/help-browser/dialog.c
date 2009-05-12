@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b3d0e70108
+DECL|struct|__anon29bf42470108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b3d0e70203
+DECL|enum|__anon29bf42470203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1499,9 +1499,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-name|HAVE_WEBKIT_ZOOM_API
 name|webkit_web_view_set_zoom_level
 argument_list|(
 name|WEBKIT_WEB_VIEW
@@ -1514,8 +1511,6 @@ operator|.
 name|zoom
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|g_signal_connect
 argument_list|(
 name|view
@@ -3078,14 +3073,9 @@ literal|"<menuitem action=\"show-index\" />"
 literal|"<separator />"
 literal|"<menuitem action=\"find\" />"
 literal|"<menuitem action=\"find-again\" />"
-ifdef|#
-directive|ifdef
-name|HAVE_WEBKIT_ZOOM_API
 literal|"<separator />"
 literal|"<menuitem action=\"zoom-in\" />"
 literal|"<menuitem action=\"zoom-out\" />"
-endif|#
-directive|endif
 literal|"<separator />"
 literal|"<menuitem action=\"close\" />"
 literal|"</popup>"
@@ -3629,9 +3619,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|HAVE_WEBKIT_ZOOM_API
 name|webkit_web_view_zoom_in
 argument_list|(
 name|WEBKIT_WEB_VIEW
@@ -3640,8 +3627,6 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -3659,9 +3644,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|HAVE_WEBKIT_ZOOM_API
 name|webkit_web_view_zoom_out
 argument_list|(
 name|WEBKIT_WEB_VIEW
@@ -3670,8 +3652,6 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 block|}
 end_function
 
@@ -4321,9 +4301,6 @@ argument_list|(
 name|sidebar
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|HAVE_WEBKIT_ZOOM_API
 name|data
 operator|.
 name|zoom
@@ -4342,16 +4319,6 @@ else|:
 literal|1.0
 operator|)
 expr_stmt|;
-else|#
-directive|else
-name|data
-operator|.
-name|zoom
-operator|=
-literal|1.0
-expr_stmt|;
-endif|#
-directive|endif
 name|gimp_set_data
 argument_list|(
 name|GIMP_HELP_BROWSER_DIALOG_DATA
