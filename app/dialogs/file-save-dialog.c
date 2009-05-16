@@ -226,7 +226,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|file_save_dialog_uri_will_change
+name|file_save_dialog_no_overwrite_confirmation
 parameter_list|(
 name|GimpFileDialog
 modifier|*
@@ -495,7 +495,7 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|file_save_dialog_uri_will_change
+name|file_save_dialog_no_overwrite_confirmation
 argument_list|(
 name|dialog
 argument_list|,
@@ -977,7 +977,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * IMPORTANT: When changing this function, keep  * file_save_dialog_uri_will_change() up to date. It is difficult to  * move logic to a common place due to how the dialog is implemented  * in GTK+ in combination with how we use it.  */
+comment|/*  * IMPORTANT: When changing this function, keep  * file_save_dialog_no_overwrite_confirmation() up to date. It is difficult to  * move logic to a common place due to how the dialog is implemented  * in GTK+ in combination with how we use it.  */
 end_comment
 
 begin_function
@@ -1774,8 +1774,8 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|file_save_dialog_uri_will_change (GimpFileDialog * dialog,Gimp * gimp)
-name|file_save_dialog_uri_will_change
+DECL|function|file_save_dialog_no_overwrite_confirmation (GimpFileDialog * dialog,Gimp * gimp)
+name|file_save_dialog_no_overwrite_confirmation
 parameter_list|(
 name|GimpFileDialog
 modifier|*
@@ -1787,7 +1787,12 @@ name|gimp
 parameter_list|)
 block|{
 name|gboolean
-name|will_change
+name|uri_will_change
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|unknown_ext
 init|=
 name|FALSE
 decl_stmt|;
@@ -1806,6 +1811,12 @@ decl_stmt|;
 name|GimpPlugInProcedure
 modifier|*
 name|basename_proc
+init|=
+name|NULL
+decl_stmt|;
+name|GimpPlugInProcedure
+modifier|*
+name|save_proc
 init|=
 name|NULL
 decl_stmt|;
@@ -1831,22 +1842,29 @@ argument_list|(
 name|uri
 argument_list|)
 expr_stmt|;
+name|save_proc
+operator|=
+name|dialog
+operator|->
+name|file_proc
+expr_stmt|;
 name|basename_proc
 operator|=
 name|file_procedure_find
 argument_list|(
+name|file_save_dialog_get_procs
+argument_list|(
+name|dialog
+argument_list|,
 name|gimp
-operator|->
-name|plug_in_manager
-operator|->
-name|save_procs
+argument_list|)
 argument_list|,
 name|basename
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|will_change
+name|uri_will_change
 operator|=
 operator|(
 operator|!
@@ -1862,16 +1880,22 @@ argument_list|)
 operator|&&
 operator|(
 operator|!
-name|dialog
-operator|->
-name|file_proc
+name|save_proc
 operator|||
-name|dialog
-operator|->
-name|file_proc
+name|save_proc
 operator|->
 name|extensions_list
 operator|)
+operator|)
+expr_stmt|;
+name|unknown_ext
+operator|=
+operator|(
+operator|!
+name|save_proc
+operator|&&
+operator|!
+name|basename_proc
 operator|)
 expr_stmt|;
 name|g_free
@@ -1885,7 +1909,9 @@ name|uri
 argument_list|)
 expr_stmt|;
 return|return
-name|will_change
+name|uri_will_change
+operator|||
+name|unknown_ext
 return|;
 block|}
 end_function
