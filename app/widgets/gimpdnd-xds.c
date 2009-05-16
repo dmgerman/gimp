@@ -370,6 +370,11 @@ name|gchar
 modifier|*
 name|uri
 decl_stmt|;
+name|gboolean
+name|export
+init|=
+name|FALSE
+decl_stmt|;
 name|GError
 modifier|*
 name|error
@@ -485,6 +490,7 @@ condition|(
 operator|!
 name|proc
 condition|)
+block|{
 name|proc
 operator|=
 name|file_procedure_find
@@ -502,6 +508,11 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|export
+operator|=
+name|TRUE
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|proc
@@ -557,6 +568,8 @@ argument_list|,
 name|GIMP_RUN_INTERACTIVE
 argument_list|,
 name|TRUE
+argument_list|,
+name|export
 argument_list|,
 operator|&
 name|error

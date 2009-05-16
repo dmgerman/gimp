@@ -975,6 +975,8 @@ name|GIMP_RUN_WITH_LAST_VALS
 argument_list|,
 name|TRUE
 argument_list|,
+name|FALSE
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1149,6 +1151,8 @@ argument_list|,
 name|GIMP_RUN_WITH_LAST_VALS
 argument_list|,
 name|FALSE
+argument_list|,
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|)

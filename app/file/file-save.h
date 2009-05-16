@@ -47,6 +47,9 @@ parameter_list|,
 name|gboolean
 name|change_saved_state
 parameter_list|,
+name|gboolean
+name|export
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

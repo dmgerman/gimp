@@ -63,6 +63,9 @@ name|gboolean
 name|save_a_copy
 parameter_list|,
 name|gboolean
+name|export
+parameter_list|,
+name|gboolean
 name|verbose_cancel
 parameter_list|)
 function_decl|;
