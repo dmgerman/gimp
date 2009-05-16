@@ -712,7 +712,7 @@ name|data
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* sort the load and save procedures  */
+comment|/* sort the load, save and export procedures  */
 name|manager
 operator|->
 name|load_procs
@@ -737,6 +737,21 @@ argument_list|(
 name|manager
 operator|->
 name|save_procs
+argument_list|,
+name|gimp_plug_in_manager_file_proc_compare
+argument_list|,
+name|manager
+argument_list|)
+expr_stmt|;
+name|manager
+operator|->
+name|export_procs
+operator|=
+name|g_slist_sort_with_data
+argument_list|(
+name|manager
+operator|->
+name|export_procs
 argument_list|,
 name|gimp_plug_in_manager_file_proc_compare
 argument_list|,

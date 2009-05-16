@@ -97,19 +97,35 @@ value|"gimp-file-save-a-copy"
 end_define
 
 begin_define
-DECL|macro|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
-define|#
-directive|define
-name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
-value|"gimp-file-save-as-template"
-end_define
-
-begin_define
 DECL|macro|GIMP_HELP_FILE_SAVE_BY_EXTENSION
 define|#
 directive|define
 name|GIMP_HELP_FILE_SAVE_BY_EXTENSION
 value|"gimp-file-save-by-extension"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_EXPORT
+define|#
+directive|define
+name|GIMP_HELP_FILE_EXPORT
+value|"gimp-file-export"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_EXPORT_TO
+define|#
+directive|define
+name|GIMP_HELP_FILE_EXPORT_TO
+value|"gimp-file-export-to"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
+define|#
+directive|define
+name|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
+value|"gimp-file-save-as-template"
 end_define
 
 begin_define
@@ -135,6 +151,19 @@ directive|define
 name|GIMP_HELP_FILE_CLOSE_ALL
 value|"gimp-file-close-all"
 end_define
+
+begin_define
+DECL|macro|GIMP_HELP_FILE_CREATE_TEMPLATE
+define|#
+directive|define
+name|GIMP_HELP_FILE_CREATE_TEMPLATE
+value|"gimp-file-save-as-template"
+end_define
+
+begin_comment
+DECL|macro|GIMP_HELP_FILE_CREATE_TEMPLATE
+comment|/* Update string along with gimp-help-2 */
+end_comment
 
 begin_define
 DECL|macro|GIMP_HELP_FILE_QUIT

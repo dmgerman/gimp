@@ -94,7 +94,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|file_save_template_cmd_callback
+name|file_create_template_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

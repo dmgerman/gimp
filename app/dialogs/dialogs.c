@@ -464,6 +464,19 @@ argument_list|,
 name|TRUE
 argument_list|)
 block|,
+name|TOPLEVEL
+argument_list|(
+literal|"gimp-file-export-dialog"
+argument_list|,
+name|dialogs_file_export_new
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
 comment|/*  singleton toplevels  */
 name|TOPLEVEL
 argument_list|(

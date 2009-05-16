@@ -119,6 +119,10 @@ DECL|member|save_a_copy
 name|gboolean
 name|save_a_copy
 decl_stmt|;
+DECL|member|export
+name|gboolean
+name|export
+decl_stmt|;
 DECL|member|close_after_saving
 name|gboolean
 name|close_after_saving
@@ -196,7 +200,7 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GtkFileChooserAction
+name|GimpFileChooserAction
 name|action
 parameter_list|,
 specifier|const
@@ -287,6 +291,9 @@ name|image
 parameter_list|,
 name|gboolean
 name|save_a_copy
+parameter_list|,
+name|gboolean
+name|export
 parameter_list|,
 name|gboolean
 name|close_after_saving

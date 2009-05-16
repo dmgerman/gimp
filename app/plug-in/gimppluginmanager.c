@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf69f270103
+DECL|enum|__anon2baec0710103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -493,6 +493,12 @@ name|NULL
 expr_stmt|;
 name|manager
 operator|->
+name|export_procs
+operator|=
+name|NULL
+expr_stmt|;
+name|manager
+operator|->
 name|current_plug_in
 operator|=
 name|NULL
@@ -646,6 +652,27 @@ expr_stmt|;
 name|manager
 operator|->
 name|save_procs
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|manager
+operator|->
+name|export_procs
+condition|)
+block|{
+name|g_slist_free
+argument_list|(
+name|manager
+operator|->
+name|export_procs
+argument_list|)
+expr_stmt|;
+name|manager
+operator|->
+name|export_procs
 operator|=
 name|NULL
 expr_stmt|;
@@ -911,6 +938,17 @@ argument_list|(
 name|manager
 operator|->
 name|save_procs
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
+name|gimp_g_slist_get_memsize
+argument_list|(
+name|manager
+operator|->
+name|export_procs
 argument_list|,
 literal|0
 argument_list|)
@@ -1434,7 +1472,7 @@ name|tmp_proc
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* also remove it from the lists of load and save procs */
+comment|/* also remove it from the lists of load, save and export procs */
 name|manager
 operator|->
 name|load_procs
@@ -1457,6 +1495,19 @@ argument_list|(
 name|manager
 operator|->
 name|save_procs
+argument_list|,
+name|tmp_proc
+argument_list|)
+expr_stmt|;
+name|manager
+operator|->
+name|export_procs
+operator|=
+name|g_slist_remove
+argument_list|(
+name|manager
+operator|->
+name|export_procs
 argument_list|,
 name|tmp_proc
 argument_list|)

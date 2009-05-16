@@ -24,6 +24,9 @@ parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
+parameter_list|,
+name|gboolean
+name|export
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -58,6 +61,9 @@ name|run_mode
 parameter_list|,
 name|gboolean
 name|save_a_copy
+parameter_list|,
+name|gboolean
+name|export
 parameter_list|,
 name|gboolean
 name|verbose_cancel

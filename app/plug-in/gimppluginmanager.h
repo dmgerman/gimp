@@ -121,6 +121,11 @@ name|GSList
 modifier|*
 name|save_procs
 decl_stmt|;
+DECL|member|export_procs
+name|GSList
+modifier|*
+name|export_procs
+decl_stmt|;
 DECL|member|menu_branches
 name|GSList
 modifier|*

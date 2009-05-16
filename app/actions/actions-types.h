@@ -31,7 +31,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f37390103
+DECL|enum|__anon28ee11eb0103
 block|{
 DECL|enumerator|GIMP_ACTION_SELECT_SET
 name|GIMP_ACTION_SELECT_SET
@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292f37390203
+DECL|enum|__anon28ee11eb0203
 block|{
 DECL|enumerator|GIMP_SAVE_MODE_SAVE
 name|GIMP_SAVE_MODE_SAVE
@@ -125,6 +125,12 @@ name|GIMP_SAVE_MODE_SAVE_A_COPY
 block|,
 DECL|enumerator|GIMP_SAVE_MODE_SAVE_AND_CLOSE
 name|GIMP_SAVE_MODE_SAVE_AND_CLOSE
+block|,
+DECL|enumerator|GIMP_SAVE_MODE_EXPORT
+name|GIMP_SAVE_MODE_EXPORT
+block|,
+DECL|enumerator|GIMP_SAVE_MODE_EXPORT_TO
+name|GIMP_SAVE_MODE_EXPORT_TO
 DECL|typedef|GimpSaveMode
 block|}
 name|GimpSaveMode
