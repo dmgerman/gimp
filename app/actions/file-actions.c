@@ -589,7 +589,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Export the image to various file formats such as .png or .jpg"
+literal|"Export the image to various file formats such as PNG or JPEG"
 argument_list|)
 block|,
 name|GIMP_SAVE_MODE_EXPORT
