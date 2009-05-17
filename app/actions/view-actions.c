@@ -350,7 +350,7 @@ argument_list|,
 literal|"_Fit Image in Window"
 argument_list|)
 block|,
-name|NULL
+literal|"<shift><control>R"
 block|,
 name|NC_
 argument_list|(
@@ -495,7 +495,7 @@ argument_list|,
 literal|"Shrink _Wrap"
 argument_list|)
 block|,
-name|NULL
+literal|"<control>R"
 block|,
 name|NC_
 argument_list|(
@@ -1277,7 +1277,7 @@ argument_list|,
 literal|"1_6:1  (1600%)"
 argument_list|)
 block|,
-name|NULL
+literal|"5"
 block|,
 name|NC_
 argument_list|(
@@ -1303,7 +1303,7 @@ argument_list|,
 literal|"_8:1  (800%)"
 argument_list|)
 block|,
-name|NULL
+literal|"4"
 block|,
 name|NC_
 argument_list|(
@@ -1329,7 +1329,7 @@ argument_list|,
 literal|"_4:1  (400%)"
 argument_list|)
 block|,
-name|NULL
+literal|"3"
 block|,
 name|NC_
 argument_list|(
@@ -1355,7 +1355,7 @@ argument_list|,
 literal|"_2:1  (200%)"
 argument_list|)
 block|,
-name|NULL
+literal|"2"
 block|,
 name|NC_
 argument_list|(
@@ -1407,7 +1407,7 @@ argument_list|,
 literal|"1:_2  (50%)"
 argument_list|)
 block|,
-name|NULL
+literal|"<shift>2"
 block|,
 name|NC_
 argument_list|(
@@ -1433,7 +1433,7 @@ argument_list|,
 literal|"1:_4  (25%)"
 argument_list|)
 block|,
-name|NULL
+literal|"<shift>3"
 block|,
 name|NC_
 argument_list|(
@@ -1459,7 +1459,7 @@ argument_list|,
 literal|"1:_8  (12.5%)"
 argument_list|)
 block|,
-name|NULL
+literal|"<shift>4"
 block|,
 name|NC_
 argument_list|(
@@ -1485,7 +1485,7 @@ argument_list|,
 literal|"1:1_6  (6.25%)"
 argument_list|)
 block|,
-name|NULL
+literal|"<shift>5"
 block|,
 name|NC_
 argument_list|(
