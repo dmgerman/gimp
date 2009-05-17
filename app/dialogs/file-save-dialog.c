@@ -871,6 +871,14 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
+comment|/*  make sure the menus are updated with the keys we've just set  */
+name|gimp_image_flush
+argument_list|(
+name|dialog
+operator|->
+name|image
+argument_list|)
+expr_stmt|;
 comment|/* Handle close-after-saing */
 if|if
 condition|(

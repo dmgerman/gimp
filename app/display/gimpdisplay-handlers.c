@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpuimanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -570,51 +564,6 @@ end_function
 
 begin_function
 specifier|static
-name|gboolean
-DECL|function|gimp_display_update_ui_manager_idle (GimpDisplay * display)
-name|gimp_display_update_ui_manager_idle
-parameter_list|(
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|display
-operator|||
-operator|!
-name|display
-operator|->
-name|shell
-condition|)
-return|return
-name|FALSE
-return|;
-comment|/* Update the File/Export to label */
-name|gimp_ui_manager_update
-argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|display
-operator|->
-name|shell
-argument_list|)
-operator|->
-name|menubar_manager
-argument_list|,
-name|display
-argument_list|)
-expr_stmt|;
-return|return
-name|FALSE
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|void
 DECL|function|gimp_display_exported_handler (GimpImage * image,const gchar * uri,GimpDisplay * display)
 name|gimp_display_exported_handler
@@ -677,17 +626,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|filename
-argument_list|)
-expr_stmt|;
-comment|/* Schedule updating of the 'Export to' label */
-name|g_idle_add
-argument_list|(
-operator|(
-name|GSourceFunc
-operator|)
-name|gimp_display_update_ui_manager_idle
-argument_list|,
-name|display
 argument_list|)
 expr_stmt|;
 block|}
