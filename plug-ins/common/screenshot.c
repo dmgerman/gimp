@@ -331,7 +331,7 @@ end_endif
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2880eb1a0103
+DECL|enum|__anon2b1d0f010103
 block|{
 DECL|enumerator|SHOOT_ROOT
 name|SHOOT_ROOT
@@ -350,7 +350,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2880eb1a0208
+DECL|struct|__anon2b1d0f010208
 block|{
 DECL|member|shoot_type
 name|ShootType
@@ -709,7 +709,7 @@ literal|"v1.1 (2008/04)"
 argument_list|,
 name|N_
 argument_list|(
-literal|"From _Screenshot..."
+literal|"_Screenshot..."
 argument_list|)
 argument_list|,
 name|NULL
