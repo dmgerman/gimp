@@ -576,10 +576,9 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-operator|!
 name|export
 condition|)
-name|gimp_image_saved
+name|gimp_image_exported
 argument_list|(
 name|image
 argument_list|,
@@ -587,7 +586,7 @@ name|uri
 argument_list|)
 expr_stmt|;
 else|else
-name|gimp_image_exported
+name|gimp_image_saved
 argument_list|(
 name|image
 argument_list|,
