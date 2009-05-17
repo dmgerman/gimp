@@ -387,6 +387,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|gdouble
 name|brush_opacity
 parameter_list|,
@@ -420,6 +425,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|gdouble
 name|brush_opacity
 parameter_list|,
@@ -450,6 +460,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|TempBuf
 modifier|*
 name|area
@@ -468,6 +483,11 @@ parameter_list|(
 name|GimpBrushCore
 modifier|*
 name|core
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness

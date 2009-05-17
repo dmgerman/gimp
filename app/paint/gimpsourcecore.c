@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a4e640103
+DECL|enum|__anon296d4c890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1448,6 +1448,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 if|if

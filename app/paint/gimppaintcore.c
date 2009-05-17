@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c19de530103
+DECL|enum|__anon2b56ad9e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -370,6 +370,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1049,7 +1054,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_paint_core_real_get_paint_area (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_paint_core_real_get_paint_area (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_paint_core_real_get_paint_area
 parameter_list|(
 name|GimpPaintCore
@@ -1063,6 +1068,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 return|return
@@ -2688,7 +2698,7 @@ end_comment
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_paint_core_get_paint_area (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_paint_core_get_paint_area (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_paint_core_get_paint_area
 parameter_list|(
 name|GimpPaintCore
@@ -2702,6 +2712,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2747,6 +2762,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|coords
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_PAINT_CORE_GET_CLASS
 argument_list|(
@@ -2760,6 +2784,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 return|;
 block|}

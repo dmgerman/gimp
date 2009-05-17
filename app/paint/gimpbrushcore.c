@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a11d20103
+DECL|enum|__anon291b2c530103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -270,6 +270,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3076,7 +3081,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_core_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_brush_core_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_brush_core_get_paint_area
 parameter_list|(
 name|GimpPaintCore
@@ -3090,6 +3095,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpBrushCore
@@ -3100,9 +3110,6 @@ name|GIMP_BRUSH_CORE
 argument_list|(
 name|paint_core
 argument_list|)
-decl_stmt|;
-name|GimpCoords
-name|current_coords
 decl_stmt|;
 name|gint
 name|x
@@ -3128,14 +3135,6 @@ name|brush_width
 decl_stmt|,
 name|brush_height
 decl_stmt|;
-name|gimp_paint_core_get_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|GIMP_BRUSH_CORE_GET_CLASS
@@ -3154,8 +3153,7 @@ name|gimp_paint_options_get_dynamic_size
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|current_coords
+name|coords
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3168,8 +3166,7 @@ name|gimp_paint_options_get_dynamic_angle
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|current_coords
+name|coords
 argument_list|)
 expr_stmt|;
 name|core
@@ -3180,8 +3177,7 @@ name|gimp_paint_options_get_dynamic_aspect_ratio
 argument_list|(
 name|paint_options
 argument_list|,
-operator|&
-name|current_coords
+name|coords
 argument_list|)
 expr_stmt|;
 block|}
@@ -3231,8 +3227,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|)
 operator|-
@@ -3249,8 +3245,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 operator|-
@@ -3828,7 +3824,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness,GimpPaintApplicationMode mode)
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -3838,6 +3834,11 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|gdouble
 name|brush_opacity
@@ -3866,6 +3867,8 @@ name|gimp_brush_core_get_brush_mask
 argument_list|(
 name|core
 argument_list|,
+name|coords
+argument_list|,
 name|brush_hardness
 argument_list|,
 name|dynamic_hardness
@@ -3885,9 +3888,6 @@ argument_list|(
 name|core
 argument_list|)
 decl_stmt|;
-name|GimpCoords
-name|current_coords
-decl_stmt|;
 name|PixelRegion
 name|brush_maskPR
 decl_stmt|;
@@ -3903,14 +3903,6 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
-name|gimp_paint_core_get_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
 name|x
 operator|=
 operator|(
@@ -3918,8 +3910,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|)
 operator|-
@@ -3938,8 +3930,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 operator|-
@@ -4029,7 +4021,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness,GimpPaintApplicationMode mode)
 name|gimp_brush_core_replace_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4039,6 +4031,11 @@ parameter_list|,
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|gdouble
 name|brush_opacity
@@ -4064,6 +4061,8 @@ name|gimp_brush_core_get_brush_mask
 argument_list|(
 name|core
 argument_list|,
+name|coords
+argument_list|,
 name|brush_hardness
 argument_list|,
 name|dynamic_hardness
@@ -4083,9 +4082,6 @@ argument_list|(
 name|core
 argument_list|)
 decl_stmt|;
-name|GimpCoords
-name|current_coords
-decl_stmt|;
 name|PixelRegion
 name|brush_maskPR
 decl_stmt|;
@@ -4101,14 +4097,6 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
-name|gimp_paint_core_get_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
 name|x
 operator|=
 operator|(
@@ -4116,8 +4104,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|)
 operator|-
@@ -4136,8 +4124,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 operator|-
@@ -6414,12 +6402,17 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness)
+DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,const GimpCoords * coords,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness)
 name|gimp_brush_core_get_brush_mask
 parameter_list|(
 name|GimpBrushCore
 modifier|*
 name|core
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|GimpBrushApplicationMode
 name|brush_hardness
@@ -6428,18 +6421,6 @@ name|gdouble
 name|dynamic_hardness
 parameter_list|)
 block|{
-name|GimpPaintCore
-modifier|*
-name|paint_core
-init|=
-name|GIMP_PAINT_CORE
-argument_list|(
-name|core
-argument_list|)
-decl_stmt|;
-name|GimpCoords
-name|current_coords
-decl_stmt|;
 name|TempBuf
 modifier|*
 name|mask
@@ -6463,14 +6444,6 @@ condition|)
 return|return
 name|NULL
 return|;
-name|gimp_paint_core_get_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
 switch|switch
 condition|(
 name|brush_hardness
@@ -6487,12 +6460,12 @@ name|core
 argument_list|,
 name|mask
 argument_list|,
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|,
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 expr_stmt|;
@@ -6508,12 +6481,12 @@ name|core
 argument_list|,
 name|mask
 argument_list|,
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|,
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 expr_stmt|;
@@ -6529,12 +6502,12 @@ name|core
 argument_list|,
 name|mask
 argument_list|,
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|,
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|,
 name|dynamic_hardness
@@ -6564,7 +6537,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,TempBuf * area,GimpBrushApplicationMode mode)
+DECL|function|gimp_brush_core_color_area_with_pixmap (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,TempBuf * area,GimpBrushApplicationMode mode)
 name|gimp_brush_core_color_area_with_pixmap
 parameter_list|(
 name|GimpBrushCore
@@ -6575,6 +6548,11 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|TempBuf
 modifier|*
 name|area
@@ -6583,18 +6561,6 @@ name|GimpBrushApplicationMode
 name|mode
 parameter_list|)
 block|{
-name|GimpPaintCore
-modifier|*
-name|paint_core
-init|=
-name|GIMP_PAINT_CORE
-argument_list|(
-name|core
-argument_list|)
-decl_stmt|;
-name|GimpCoords
-name|current_coords
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -6682,14 +6648,6 @@ operator|!
 name|pixmap_mask
 condition|)
 return|return;
-name|gimp_paint_core_get_current_coords
-argument_list|(
-name|paint_core
-argument_list|,
-operator|&
-name|current_coords
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|mode
@@ -6750,8 +6708,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|)
 operator|-
@@ -6770,8 +6728,8 @@ name|gint
 operator|)
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 operator|-
@@ -6798,15 +6756,15 @@ name|ulx
 operator|+=
 name|ROUND
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|)
 operator|-
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|x
 argument_list|)
 expr_stmt|;
@@ -6824,15 +6782,15 @@ name|uly
 operator|+=
 name|ROUND
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 operator|-
 name|floor
 argument_list|(
-name|current_coords
-operator|.
+name|coords
+operator|->
 name|y
 argument_list|)
 expr_stmt|;

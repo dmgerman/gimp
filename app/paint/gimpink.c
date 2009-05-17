@@ -171,6 +171,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -657,7 +662,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_ink_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options)
+DECL|function|gimp_ink_get_paint_area (GimpPaintCore * paint_core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords)
 name|gimp_ink_get_paint_area
 parameter_list|(
 name|GimpPaintCore
@@ -671,6 +676,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 block|{
 name|GimpInk
@@ -1166,6 +1176,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 name|ink
@@ -1874,7 +1886,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d34ea80103
+DECL|enum|__anon2c8494a50103
 block|{
 DECL|enumerator|ROW_START
 name|ROW_START

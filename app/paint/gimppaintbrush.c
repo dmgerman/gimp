@@ -402,6 +402,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 if|if
@@ -530,6 +532,8 @@ name|brush_core
 argument_list|,
 name|drawable
 argument_list|,
+name|coords
+argument_list|,
 name|area
 argument_list|,
 name|gimp_paint_options_get_brush_mode
@@ -618,6 +622,8 @@ argument_list|(
 name|brush_core
 argument_list|,
 name|drawable
+argument_list|,
+name|coords
 argument_list|,
 name|MIN
 argument_list|(

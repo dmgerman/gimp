@@ -921,6 +921,8 @@ argument_list|)
 argument_list|,
 name|drawable
 argument_list|,
+name|coords
+argument_list|,
 name|MIN
 argument_list|(
 name|opacity

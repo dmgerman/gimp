@@ -1727,6 +1727,8 @@ argument_list|(
 name|source_core
 argument_list|)
 argument_list|,
+name|coords
+argument_list|,
 name|GIMP_BRUSH_HARD
 argument_list|,
 name|hardness
@@ -2200,6 +2202,8 @@ name|paint_core
 argument_list|)
 argument_list|,
 name|drawable
+argument_list|,
+name|coords
 argument_list|,
 name|MIN
 argument_list|(

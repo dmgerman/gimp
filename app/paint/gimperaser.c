@@ -393,6 +393,8 @@ argument_list|,
 name|drawable
 argument_list|,
 name|paint_options
+argument_list|,
+name|coords
 argument_list|)
 expr_stmt|;
 if|if
@@ -476,6 +478,8 @@ name|paint_core
 argument_list|)
 argument_list|,
 name|drawable
+argument_list|,
+name|coords
 argument_list|,
 name|MIN
 argument_list|(

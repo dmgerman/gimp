@@ -376,6 +376,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 DECL|member|push_undo
@@ -634,6 +639,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl
