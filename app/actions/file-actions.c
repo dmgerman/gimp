@@ -1130,6 +1130,7 @@ if|if
 condition|(
 name|image
 condition|)
+block|{
 name|drawable
 operator|=
 name|gimp_image_get_active_drawable
@@ -1139,9 +1140,6 @@ argument_list|)
 expr_stmt|;
 name|export_to
 operator|=
-operator|(
-name|image
-condition|?
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1151,10 +1149,8 @@ argument_list|)
 argument_list|,
 name|GIMP_FILE_EXPORT_TO_URI_KEY
 argument_list|)
-else|:
-name|NULL
-operator|)
 expr_stmt|;
+block|}
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define
