@@ -2439,7 +2439,7 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/* Untitled */
-comment|/* Priority of default type/extension for Export:        *        *   1. Type of last Export        *   2. Type of import source        *   3. Type of latest Export of any document        *   2. .png        */
+comment|/* Priority of default type/extension for Export:        *        *   1. Type of last Export        *   3. Type of latest Export of any document        *   2. .png        */
 name|ext_uri
 operator|=
 name|g_object_get_data
