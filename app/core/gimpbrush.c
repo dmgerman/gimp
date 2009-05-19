@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31be6c0103
+DECL|enum|__anon29c636b40103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31be6c0203
+DECL|enum|__anon29c636b40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -279,13 +279,15 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -299,13 +301,15 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1474,20 +1478,22 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_real_select_brush (GimpBrush * brush,GimpCoords * last_coords,GimpCoords * cur_coords)
+DECL|function|gimp_brush_real_select_brush (GimpBrush * brush,const GimpCoords * last_coords,const GimpCoords * current_coords)
 name|gimp_brush_real_select_brush
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 block|{
 return|return
@@ -1499,20 +1505,22 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_real_want_null_motion (GimpBrush * brush,GimpCoords * last_coords,GimpCoords * cur_coords)
+DECL|function|gimp_brush_real_want_null_motion (GimpBrush * brush,const GimpCoords * last_coords,const GimpCoords * current_coords)
 name|gimp_brush_real_want_null_motion
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 block|{
 return|return
@@ -1800,20 +1808,22 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_select_brush (GimpBrush * brush,GimpCoords * last_coords,GimpCoords * cur_coords)
+DECL|function|gimp_brush_select_brush (GimpBrush * brush,const GimpCoords * last_coords,const GimpCoords * current_coords)
 name|gimp_brush_select_brush
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1837,7 +1847,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|!=
 name|NULL
 argument_list|,
@@ -1856,7 +1866,7 @@ name|brush
 argument_list|,
 name|last_coords
 argument_list|,
-name|cur_coords
+name|current_coords
 argument_list|)
 return|;
 block|}
@@ -1864,20 +1874,22 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_brush_want_null_motion (GimpBrush * brush,GimpCoords * last_coords,GimpCoords * cur_coords)
+DECL|function|gimp_brush_want_null_motion (GimpBrush * brush,const GimpCoords * last_coords,const GimpCoords * current_coords)
 name|gimp_brush_want_null_motion
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1901,7 +1913,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|!=
 name|NULL
 argument_list|,
@@ -1920,7 +1932,7 @@ name|brush
 argument_list|,
 name|last_coords
 argument_list|,
-name|cur_coords
+name|current_coords
 argument_list|)
 return|;
 block|}

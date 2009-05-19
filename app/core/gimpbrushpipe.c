@@ -112,13 +112,15 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -132,13 +134,15 @@ name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -650,20 +654,22 @@ begin_function
 specifier|static
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_pipe_select_brush (GimpBrush * brush,GimpCoords * last_coords,GimpCoords * cur_coords)
+DECL|function|gimp_brush_pipe_select_brush (GimpBrush * brush,const GimpCoords * last_coords,const GimpCoords * current_coords)
 name|gimp_brush_pipe_select_brush
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 block|{
 name|GimpBrushPipe
@@ -798,7 +804,7 @@ name|angle
 operator|=
 name|atan2
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|->
 name|y
 operator|-
@@ -806,7 +812,7 @@ name|last_coords
 operator|->
 name|y
 argument_list|,
-name|cur_coords
+name|current_coords
 operator|->
 name|x
 operator|-
@@ -878,7 +884,7 @@ name|sqrt
 argument_list|(
 name|SQR
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|->
 name|x
 operator|-
@@ -889,7 +895,7 @@ argument_list|)
 operator|+
 name|SQR
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|->
 name|y
 operator|-
@@ -954,7 +960,7 @@ name|ix
 operator|=
 name|RINT
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|->
 name|pressure
 operator|*
@@ -978,7 +984,7 @@ name|ix
 operator|=
 name|RINT
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|->
 name|xtilt
 operator|/
@@ -1009,7 +1015,7 @@ name|ix
 operator|=
 name|RINT
 argument_list|(
-name|cur_coords
+name|current_coords
 operator|->
 name|ytilt
 operator|/
@@ -1129,20 +1135,22 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_brush_pipe_want_null_motion (GimpBrush * brush,GimpCoords * last_coords,GimpCoords * cur_coords)
+DECL|function|gimp_brush_pipe_want_null_motion (GimpBrush * brush,const GimpCoords * last_coords,const GimpCoords * current_coords)
 name|gimp_brush_pipe_want_null_motion
 parameter_list|(
 name|GimpBrush
 modifier|*
 name|brush
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
 name|last_coords
 parameter_list|,
+specifier|const
 name|GimpCoords
 modifier|*
-name|cur_coords
+name|current_coords
 parameter_list|)
 block|{
 name|GimpBrushPipe
