@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2c4fb3cc0103
+DECL|enum|__anon27849c8c0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4fb3cc0208
+DECL|struct|__anon27849c8c0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4fb3cc0308
+DECL|struct|__anon27849c8c0308
 block|{
 DECL|member|used_count
 name|signed
@@ -11622,20 +11622,12 @@ condition|)
 block|{
 if|if
 condition|(
-operator|(
 name|src
 index|[
 name|ALPHA_G
 index|]
-operator|<<
-literal|6
-operator|)
 operator|<
-operator|(
-literal|255
-operator|*
 name|dmval
-operator|)
 condition|)
 name|transparent
 operator|=
@@ -12739,20 +12731,12 @@ condition|)
 block|{
 if|if
 condition|(
-operator|(
 name|src
 index|[
 name|alpha_pix
 index|]
-operator|<<
-literal|6
-operator|)
 operator|<
-operator|(
-literal|255
-operator|*
 name|dmval
-operator|)
 condition|)
 name|transparent
 operator|=
