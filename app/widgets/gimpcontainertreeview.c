@@ -4534,9 +4534,15 @@ if|if
 condition|(
 operator|!
 name|toggled_cell
+operator|&&
+name|bevent
+operator|->
+name|state
+operator|==
+literal|0
 condition|)
-comment|/* ignore double click on toggles */
 block|{
+comment|/* Only activate if we're not in a toggled cell                        * and no modifier keys are pressed                        */
 name|gimp_container_view_item_activated
 argument_list|(
 name|container_view
