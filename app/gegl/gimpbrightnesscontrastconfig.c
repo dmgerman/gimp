@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb22690103
+DECL|enum|__anon2b41475c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -174,7 +174,7 @@ name|viewable_class
 operator|->
 name|default_stock_id
 operator|=
-literal|"gimp-tool-brightness-constrast"
+literal|"gimp-tool-brightness-contrast"
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
