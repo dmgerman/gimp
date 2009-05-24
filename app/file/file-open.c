@@ -800,7 +800,6 @@ argument_list|,
 name|run_mode
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|file_open_file_proc_is_import
@@ -862,6 +861,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|image
