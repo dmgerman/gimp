@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29934eb20103
+DECL|enum|__anon2b53408b0103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -1165,15 +1165,23 @@ modifier|*
 name|browser
 parameter_list|)
 block|{
-if|if
-condition|(
-operator|(
+name|GdkEventButton
+modifier|*
+name|bevent
+init|=
 operator|(
 name|GdkEventButton
 operator|*
 operator|)
 name|event
-operator|)
+decl_stmt|;
+if|if
+condition|(
+name|icon_pos
+operator|==
+name|GTK_ENTRY_ICON_SECONDARY
+operator|&&
+name|bevent
 operator|->
 name|button
 operator|==
