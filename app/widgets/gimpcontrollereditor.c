@@ -108,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e398410103
+DECL|enum|__anon294986d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e398410203
+DECL|enum|__anon294986d60203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1375,6 +1375,7 @@ name|gchar
 modifier|*
 name|event_action
 decl_stmt|;
+specifier|const
 name|gchar
 modifier|*
 name|stock_id
@@ -1434,16 +1435,11 @@ if|if
 condition|(
 name|action
 condition|)
-name|g_object_get
+name|stock_id
+operator|=
+name|gtk_action_get_stock_id
 argument_list|(
 name|action
-argument_list|,
-literal|"stock-id"
-argument_list|,
-operator|&
-name|stock_id
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1480,15 +1476,6 @@ name|event_action
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|stock_id
-condition|)
-name|g_free
-argument_list|(
-name|stock_id
 argument_list|)
 expr_stmt|;
 block|}

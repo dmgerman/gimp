@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba47ff10103
+DECL|enum|__anon27a1e84d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5032,17 +5032,13 @@ name|stock_id
 argument_list|)
 condition|)
 block|{
-name|g_object_set
+name|gtk_action_set_icon_name
 argument_list|(
 name|parent_menu_action
-argument_list|,
-literal|"icon-name"
 argument_list|,
 name|dockable
 operator|->
 name|stock_id
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e1a3fc0103
+DECL|enum|__anon288acae90103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -48,7 +48,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e1a3fc0203
+DECL|enum|__anon288acae90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -565,15 +565,14 @@ argument_list|,
 name|stock_id
 argument_list|)
 condition|)
-name|g_object_set
+name|gtk_action_set_icon_name
+argument_list|(
+name|GTK_ACTION
 argument_list|(
 name|action
-argument_list|,
-literal|"icon-name"
+argument_list|)
 argument_list|,
 name|stock_id
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 block|}

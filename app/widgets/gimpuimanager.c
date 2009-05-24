@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8f2300103
+DECL|enum|__anon2a16d83b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8f2300203
+DECL|enum|__anon2a16d83b0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c8f2300308
+DECL|struct|__anon2a16d83b0308
 block|{
 DECL|member|x
 name|guint
@@ -3618,27 +3618,20 @@ condition|(
 name|action
 condition|)
 block|{
+specifier|const
 name|gchar
 modifier|*
 name|tooltip
-decl_stmt|;
-name|g_object_get
+init|=
+name|gtk_action_get_tooltip
 argument_list|(
 name|action
-argument_list|,
-literal|"tooltip"
-argument_list|,
-operator|&
-name|tooltip
-argument_list|,
-name|NULL
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|tooltip
 condition|)
-block|{
 name|g_signal_emit
 argument_list|(
 name|manager
@@ -3653,12 +3646,6 @@ argument_list|,
 name|tooltip
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|tooltip
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 block|}
 end_function

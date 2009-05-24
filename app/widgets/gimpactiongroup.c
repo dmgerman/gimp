@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c66f5e00103
+DECL|enum|__anon29a15fd20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3402,15 +3402,11 @@ operator|*
 operator|)
 name|label
 expr_stmt|;
-name|g_object_set
+name|gtk_action_set_label
 argument_list|(
 name|action
 argument_list|,
-literal|"label"
-argument_list|,
 name|stripped
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 if|if
