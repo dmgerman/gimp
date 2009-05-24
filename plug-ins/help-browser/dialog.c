@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bf42470108
+DECL|struct|__anon27c721880108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf42470203
+DECL|enum|__anon27c721880203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1038,14 +1038,14 @@ argument_list|,
 literal|"/ui/help-browser-popup/forward"
 argument_list|)
 expr_stmt|;
-name|gtk_action_connect_proxy
+name|gtk_activatable_set_related_action
 argument_list|(
-name|action
-argument_list|,
-name|GTK_WIDGET
+name|GTK_ACTIVATABLE
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|action
 argument_list|)
 expr_stmt|;
 name|g_object_notify
@@ -1103,14 +1103,14 @@ argument_list|,
 literal|"/ui/help-browser-popup/back"
 argument_list|)
 expr_stmt|;
-name|gtk_action_connect_proxy
+name|gtk_activatable_set_related_action
 argument_list|(
-name|action
-argument_list|,
-name|GTK_WIDGET
+name|GTK_ACTIVATABLE
 argument_list|(
 name|item
 argument_list|)
+argument_list|,
+name|action
 argument_list|)
 expr_stmt|;
 name|g_object_notify

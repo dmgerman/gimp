@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294fd0d10103
+DECL|enum|__anon299d6be20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2158,7 +2158,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294fd0d10208
+DECL|struct|__anon299d6be20208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -2579,11 +2579,14 @@ argument_list|(
 name|stock_id
 argument_list|)
 expr_stmt|;
-name|gtk_action_connect_proxy
+name|gtk_activatable_set_related_action
 argument_list|(
-name|action
-argument_list|,
+name|GTK_ACTIVATABLE
+argument_list|(
 name|button
+argument_list|)
+argument_list|,
+name|action
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
