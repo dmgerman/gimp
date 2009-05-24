@@ -1389,15 +1389,11 @@ parameter_list|)
 block|{
 name|GimpColorPickMode
 name|mode
-init|=
-name|GIMP_COLOR_PICK_MODE_NONE
 decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|status
-init|=
-name|NULL
 decl_stmt|;
 name|GIMP_TOOL_CLASS
 argument_list|(
@@ -1463,6 +1459,20 @@ literal|"Click to add control points to all channels"
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|mode
+operator|=
+name|GIMP_COLOR_PICK_MODE_NONE
+expr_stmt|;
+name|status
+operator|=
+name|_
+argument_list|(
+literal|"Click to locate on curve (try Shift, Ctrl)"
+argument_list|)
+expr_stmt|;
+block|}
 name|GIMP_COLOR_TOOL
 argument_list|(
 name|tool
@@ -1474,8 +1484,6 @@ name|mode
 expr_stmt|;
 if|if
 condition|(
-name|status
-operator|&&
 name|proximity
 condition|)
 name|gimp_tool_push_status
