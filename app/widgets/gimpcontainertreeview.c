@@ -4535,11 +4535,23 @@ condition|(
 operator|!
 name|toggled_cell
 operator|&&
+operator|(
+operator|(
 name|bevent
 operator|->
 name|state
+operator|&
+operator|(
+name|GDK_SHIFT_MASK
+operator||
+name|GDK_CONTROL_MASK
+operator||
+name|GDK_MOD1_MASK
+operator|)
+operator|)
 operator|==
 literal|0
+operator|)
 condition|)
 block|{
 comment|/* Only activate if we're not in a toggled cell                        * and no modifier keys are pressed                        */
