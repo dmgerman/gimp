@@ -2333,9 +2333,9 @@ argument_list|,
 literal|"/Tools"
 argument_list|)
 expr_stmt|;
-name|gtk_toolbar_set_orientation
+name|gtk_orientable_set_orientation
 argument_list|(
-name|GTK_TOOLBAR
+name|GTK_ORIENTABLE
 argument_list|(
 name|toolbar
 argument_list|)
@@ -2421,9 +2421,9 @@ argument_list|,
 name|GTK_TOOLBAR_ICONS
 argument_list|)
 expr_stmt|;
-name|gtk_toolbar_set_orientation
+name|gtk_orientable_set_orientation
 argument_list|(
-name|GTK_TOOLBAR
+name|GTK_ORIENTABLE
 argument_list|(
 name|toolbar
 argument_list|)
