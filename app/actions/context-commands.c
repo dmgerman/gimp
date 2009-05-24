@@ -1795,6 +1795,7 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|value_desc
@@ -2292,6 +2293,7 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+specifier|const
 name|char
 modifier|*
 name|value_desc
