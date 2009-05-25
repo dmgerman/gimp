@@ -533,6 +533,11 @@ name|GimpPaintOptions
 modifier|*
 name|paint_options
 parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|,
 name|guint32
 name|time
 parameter_list|)

@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b56ad9e0103
+DECL|enum|__anon279ccfa40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2306,7 +2306,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_paint_core_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,guint32 time)
+DECL|function|gimp_paint_core_interpolate (GimpPaintCore * core,GimpDrawable * drawable,GimpPaintOptions * paint_options,const GimpCoords * coords,guint32 time)
 name|gimp_paint_core_interpolate
 parameter_list|(
 name|GimpPaintCore
@@ -2320,6 +2320,11 @@ parameter_list|,
 name|GimpPaintOptions
 modifier|*
 name|paint_options
+parameter_list|,
+specifier|const
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|,
 name|guint32
 name|time
@@ -2359,6 +2364,20 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|coords
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|core
+operator|->
+name|cur_coords
+operator|=
+operator|*
+name|coords
 expr_stmt|;
 name|GIMP_PAINT_CORE_GET_CLASS
 argument_list|(
