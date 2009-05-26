@@ -135,6 +135,10 @@ DECL|member|interior_focus
 name|gboolean
 name|interior_focus
 decl_stmt|;
+DECL|member|cursor_type
+name|GdkCursorType
+name|cursor_type
+decl_stmt|;
 block|}
 struct|;
 end_struct
