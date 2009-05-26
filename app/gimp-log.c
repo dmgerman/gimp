@@ -120,6 +120,23 @@ name|GIMP_LOG_SCALE
 block|}
 block|}
 decl_stmt|;
+comment|/*  g_parse_debug_string() has special treatment of the string 'help',        *  but we want to use it for the GIMP_LOG_HELP domain        */
+if|if
+condition|(
+name|g_ascii_strcasecmp
+argument_list|(
+name|env_log_val
+argument_list|,
+literal|"help"
+argument_list|)
+operator|==
+literal|0
+condition|)
+name|gimp_log_flags
+operator|=
+name|GIMP_LOG_HELP
+expr_stmt|;
+else|else
 name|gimp_log_flags
 operator|=
 name|g_parse_debug_string
