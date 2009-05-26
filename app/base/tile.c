@@ -66,14 +66,6 @@ comment|/*  #define TILE_DEBUG  */
 end_comment
 
 begin_comment
-comment|/*  Uncomment to enable global counters to profile the tile system. */
-end_comment
-
-begin_comment
-comment|/*  #define TILE_PROFILING */
-end_comment
-
-begin_comment
 comment|/*  This is being used from tile-swap, but just for debugging purposes.  */
 end_comment
 
@@ -125,7 +117,6 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_exist_peak
-specifier|static
 name|gint
 name|tile_exist_peak
 init|=
@@ -135,7 +126,6 @@ end_decl_stmt
 
 begin_decl_stmt
 DECL|variable|tile_exist_count
-specifier|static
 name|gint
 name|tile_exist_count
 init|=
@@ -546,6 +536,14 @@ name|data
 operator|=
 name|NULL
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|TILE_PROFILING
+name|tile_exist_count
+operator|--
+expr_stmt|;
+endif|#
+directive|endif
 block|}
 if|if
 condition|(
@@ -614,9 +612,6 @@ ifdef|#
 directive|ifdef
 name|TILE_PROFILING
 name|tile_count
-operator|--
-expr_stmt|;
-name|tile_exist_count
 operator|--
 expr_stmt|;
 endif|#

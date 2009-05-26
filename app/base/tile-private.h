@@ -16,6 +16,14 @@ directive|define
 name|__TILE_PRIVATE_H__
 end_define
 
+begin_comment
+comment|/*  Uncomment to enable global counters to profile the tile system. */
+end_comment
+
+begin_comment
+comment|/*  #define TILE_PROFILING */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -90,6 +98,39 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* is the tile valid? */
+ifdef|#
+directive|ifdef
+name|TILE_PROFILING
+DECL|member|zorched
+name|guint
+name|zorched
+range|:
+literal|1
+decl_stmt|;
+comment|/* was the tile flushed due to cache pressure 			   [zorched]? */
+DECL|member|zorchout
+name|guint
+name|zorchout
+range|:
+literal|1
+decl_stmt|;
+comment|/* was the tile swapped out due to cache 			   pressure [zorched]? */
+DECL|member|inonce
+name|guint
+name|inonce
+range|:
+literal|1
+decl_stmt|;
+comment|/* has the tile been swapped in at least once? */
+DECL|member|outonce
+name|guint
+name|outonce
+range|:
+literal|1
+decl_stmt|;
+comment|/* has the tile been swapped out at least once? */
+endif|#
+directive|endif
 DECL|member|bpp
 name|guchar
 name|bpp
