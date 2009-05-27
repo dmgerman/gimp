@@ -956,6 +956,12 @@ operator|=
 name|tile
 expr_stmt|;
 block|}
+comment|/* must lock before marking dirty */
+name|tile_lock
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
 name|tile
 operator|->
 name|write_count
@@ -968,11 +974,11 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+else|else
+block|{
 ifdef|#
 directive|ifdef
 name|DEBUG_TILE_MANAGER
-else|else
-block|{
 if|if
 condition|(
 name|G_UNLIKELY
@@ -991,7 +997,6 @@ operator|->
 name|write_count
 argument_list|)
 expr_stmt|;
-block|}
 endif|#
 directive|endif
 name|tile_lock
@@ -999,6 +1004,7 @@ argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 return|return
 name|tile
@@ -1467,7 +1473,7 @@ if|if
 condition|(
 name|tile
 operator|->
-name|listhead
+name|cached
 condition|)
 name|tile_cache_flush
 argument_list|(

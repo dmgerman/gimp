@@ -98,6 +98,13 @@ range|:
 literal|1
 decl_stmt|;
 comment|/* is the tile valid? */
+DECL|member|cached
+name|guint
+name|cached
+range|:
+literal|1
+decl_stmt|;
+comment|/* is the tile cached */
 ifdef|#
 directive|ifdef
 name|TILE_PROFILING
@@ -184,11 +191,6 @@ name|Tile
 modifier|*
 name|prev
 decl_stmt|;
-DECL|member|listhead
-name|gpointer
-name|listhead
-decl_stmt|;
-comment|/* Pointer to the head of the list this tile is on */
 block|}
 struct|;
 end_struct

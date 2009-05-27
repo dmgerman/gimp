@@ -237,20 +237,12 @@ operator|==
 literal|1
 condition|)
 block|{
-if|if
-condition|(
-name|tile
-operator|->
-name|listhead
-condition|)
-block|{
 comment|/* remove from cache, move to main store */
 name|tile_cache_flush
 argument_list|(
 name|tile
 argument_list|)
 expr_stmt|;
-block|}
 ifdef|#
 directive|ifdef
 name|TILE_PROFILING
@@ -573,6 +565,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+comment|/* must flush before deleting swap */
+name|tile_cache_flush
+argument_list|(
+name|tile
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|tile
@@ -590,17 +588,6 @@ name|tile
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|tile
-operator|->
-name|listhead
-condition|)
-name|tile_cache_flush
-argument_list|(
-name|tile
-argument_list|)
-expr_stmt|;
 name|g_slice_free
 argument_list|(
 name|Tile
