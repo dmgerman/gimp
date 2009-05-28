@@ -168,13 +168,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile-cache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bdc65cc0103
+DECL|enum|__anon2b0d51b40103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -1505,6 +1511,9 @@ operator|->
 name|data
 condition|)
 return|return;
+name|tile_cache_suspend_idle_swapper
+argument_list|()
+expr_stmt|;
 ifdef|#
 directive|ifdef
 name|TILE_PROFILING

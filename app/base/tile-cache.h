@@ -47,6 +47,15 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|tile_cache_suspend_idle_swapper
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|tile_cache_insert
 parameter_list|(
 name|Tile
