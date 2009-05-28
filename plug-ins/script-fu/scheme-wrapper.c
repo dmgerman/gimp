@@ -289,7 +289,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aef769b0108
+DECL|struct|__anon29cefa390108
 block|{
 DECL|member|name
 specifier|const
@@ -1377,6 +1377,11 @@ argument_list|,
 name|len
 argument_list|,
 name|string
+argument_list|)
+expr_stmt|;
+name|fflush
+argument_list|(
+name|stdout
 argument_list|)
 expr_stmt|;
 block|}
