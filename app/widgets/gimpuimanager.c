@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16d83b0103
+DECL|enum|__anon295870e50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a16d83b0203
+DECL|enum|__anon295870e50203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a16d83b0308
+DECL|struct|__anon295870e50308
 block|{
 DECL|member|x
 name|guint
@@ -4308,7 +4308,7 @@ block|,
 literal|0
 block|}
 decl_stmt|;
-comment|/* Take (x, y) relative the child's allocation and 	       * recurse. 	       */
+comment|/* Take (x, y) relative the child's allocation and                * recurse.                */
 name|tmp
 operator|.
 name|x
@@ -4363,12 +4363,14 @@ name|child
 expr_stmt|;
 block|}
 else|else
+block|{
 name|child_loc
 operator|->
 name|child
 operator|=
 name|child
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}
