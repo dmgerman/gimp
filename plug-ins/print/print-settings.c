@@ -233,13 +233,6 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|print_utils_key_file_save_as_rcfile
-argument_list|(
-name|key_file
-argument_list|,
-name|PRINT_SETTINGS_NAME
-argument_list|)
-expr_stmt|;
 comment|/* image setup */
 if|if
 condition|(
@@ -367,6 +360,25 @@ name|PRINT_SETTINGS_NAME
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* some settings shouldn't be made persistent on a global level,    * so they are only stored in the image, not in the rcfile    */
+name|g_key_file_remove_key
+argument_list|(
+name|key_file
+argument_list|,
+name|PRINT_SETTINGS_NAME
+argument_list|,
+literal|"n-copies"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|print_utils_key_file_save_as_rcfile
+argument_list|(
+name|key_file
+argument_list|,
+name|PRINT_SETTINGS_NAME
+argument_list|)
+expr_stmt|;
 name|g_key_file_free
 argument_list|(
 name|key_file
