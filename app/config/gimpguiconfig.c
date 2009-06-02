@@ -114,7 +114,7 @@ DECL|macro|DEFAULT_WEB_BROWSER
 define|#
 directive|define
 name|DEFAULT_WEB_BROWSER
-value|"firefox %s"
+value|"xdg-open %s"
 end_define
 
 begin_endif
@@ -124,7 +124,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcaabbf0103
+DECL|enum|__anon2b181b520103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
