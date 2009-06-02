@@ -306,7 +306,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955f0430108
+DECL|struct|__anon2776e52f0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -837,7 +837,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2955f0430208
+DECL|struct|__anon2776e52f0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -3280,30 +3280,6 @@ name|error
 parameter_list|)
 block|{
 comment|/* Return only one frame for thumbnail.    * We select first frame of an animation sequence which nominal size is the    * closest of thumb_size. */
-name|g_return_val_if_fail
-argument_list|(
-name|thumb_width
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|thumb_height
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|thumb_num_layers
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -3388,6 +3364,30 @@ modifier|*
 name|tmppixel
 decl_stmt|;
 comment|/* pixel data (guchar * bpp = guint32) */
+name|g_return_val_if_fail
+argument_list|(
+name|thumb_width
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|thumb_height
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|thumb_num_layers
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
 operator|*
 name|thumb_width
 operator|=
@@ -4638,7 +4638,8 @@ name|tmpwidget
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter the X coordinate of the hotspot. The origin is top left corner."
+literal|"Enter the X coordinate of the hotspot."
+literal|"The origin is top left corner."
 argument_list|)
 argument_list|,
 name|NULL
@@ -4767,7 +4768,8 @@ name|tmpwidget
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter the Y coordinate of the hotspot. The origin is top left corner."
+literal|"Enter the Y coordinate of the hotspot."
+literal|"The origin is top left corner."
 argument_list|)
 argument_list|,
 name|NULL
@@ -4882,9 +4884,11 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Remove the empty borders of all frames.\n"
-literal|"This may fix the problem that some large cursors disorder the "
-literal|"screen as well as reduces the file size.\n"
-literal|"Uncheck if you plan to edit the exported cursor by other programs."
+literal|"This reduces the file size and may fix "
+literal|"the problem that some large cursors disorder "
+literal|"the screen.\n"
+literal|"Uncheck if you plan to edit the exported "
+literal|"cursor using other programs."
 argument_list|)
 argument_list|,
 name|NULL
@@ -4963,13 +4967,14 @@ argument_list|,
 name|_
 argument_list|(
 literal|"Choose the nominal size of frames.\n"
-literal|"If you don't have plans to make multi-sized cursor, "
-literal|"or you have no idea, leave it \"32px\".\n"
-literal|"Nominal size has no relation with the actual size (width or height).\n"
-literal|"It is only used to determine which frame depends on "
-literal|"which animation sequence,"
-literal|"and which sequence is used based on "
-literal|"the value of \"gtk-cursor-theme-size\"."
+literal|"If you don't have plans to make multi-sized "
+literal|"cursor, or you have no idea, leave it \"32px\".\n"
+literal|"Nominal size has no relation with the actual "
+literal|"size (width or height).\n"
+literal|"It is only used to determine which frame depends "
+literal|"on which animation sequence, and which sequence "
+literal|"is used based on the value of "
+literal|"\"gtk-cursor-theme-size\"."
 argument_list|)
 argument_list|,
 name|NULL
@@ -5027,7 +5032,8 @@ name|size_replace
 argument_list|,
 name|_
 argument_list|(
-literal|"_Use this value only for a frame which size is not specified."
+literal|"_Use this value only for a frame which size "
+literal|"is not specified."
 argument_list|)
 argument_list|,
 name|FALSE
@@ -5036,7 +5042,8 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Replace the size of all frames even if it is specified."
+literal|"_Replace the size of all frames even if it "
+literal|"is specified."
 argument_list|)
 argument_list|,
 name|TRUE
@@ -5273,7 +5280,8 @@ name|box
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter time span in milliseconds in which each frame is rendered."
+literal|"Enter time span in milliseconds in which "
+literal|"each frame is rendered."
 argument_list|)
 argument_list|,
 name|NULL
@@ -5331,7 +5339,8 @@ name|delay_replace
 argument_list|,
 name|_
 argument_list|(
-literal|"_Use this value only for a frame which delay is not specified."
+literal|"_Use this value only for a frame which delay "
+literal|"is not specified."
 argument_list|)
 argument_list|,
 name|FALSE
@@ -5340,7 +5349,8 @@ name|NULL
 argument_list|,
 name|_
 argument_list|(
-literal|"_Replace the delay of all frames even if it is specified."
+literal|"_Replace the delay of all frames even if it "
+literal|"is specified."
 argument_list|)
 argument_list|,
 name|TRUE
@@ -6015,16 +6025,16 @@ modifier|*
 name|commentp
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|commentp
-argument_list|)
-expr_stmt|;
 specifier|const
 name|gchar
 modifier|*
 name|text
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|commentp
+argument_list|)
+expr_stmt|;
 name|text
 operator|=
 name|gtk_entry_get_text
@@ -6060,7 +6070,6 @@ argument_list|(
 name|text
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 
@@ -6080,11 +6089,6 @@ modifier|*
 name|commentp
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|commentp
-argument_list|)
-expr_stmt|;
 name|GtkTextIter
 name|start_iter
 decl_stmt|;
@@ -6095,6 +6099,13 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|commentp
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_get_bounds
 argument_list|(
 name|buffer
@@ -6190,7 +6201,6 @@ name|text
 argument_list|)
 expr_stmt|;
 block|}
-return|return;
 block|}
 end_function
 
@@ -7994,7 +8004,7 @@ operator|)
 operator|&
 literal|0xff
 expr_stmt|;
-comment|/* premultiply alpha (see "premultiply_data" function at line 154 of xcursorgen.c) */
+comment|/* premultiply alpha      (see "premultiply_data" function at line 154 of xcursorgen.c) */
 name|red
 operator|=
 name|div_255
@@ -8253,11 +8263,9 @@ name|arraylen
 operator|==
 literal|0
 condition|)
-block|{
 return|return
 name|NULL
 return|;
-block|}
 end_if
 
 begin_expr_stmt
@@ -8336,6 +8344,9 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
+name|gint
+name|i
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|image_ID
@@ -8344,9 +8355,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gint
-name|i
-decl_stmt|;
 for|for
 control|(
 name|i
@@ -8360,7 +8368,6 @@ condition|;
 operator|++
 name|i
 control|)
-block|{
 name|xmcparas
 operator|.
 name|comments
@@ -8378,8 +8385,6 @@ name|i
 index|]
 argument_list|)
 expr_stmt|;
-block|}
-return|return;
 block|}
 end_function
 
@@ -8408,6 +8413,22 @@ modifier|*
 name|pname
 parameter_list|)
 block|{
+name|gboolean
+name|ret
+init|=
+name|FALSE
+decl_stmt|;
+name|gchar
+modifier|*
+name|tmpstring
+decl_stmt|,
+modifier|*
+name|joind
+decl_stmt|;
+name|GimpParasite
+modifier|*
+name|parasite
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|image_ID
@@ -8425,22 +8446,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gboolean
-name|ret
-init|=
-name|FALSE
-decl_stmt|;
-name|gchar
-modifier|*
-name|tmpstring
-decl_stmt|,
-modifier|*
-name|joind
-decl_stmt|;
-name|GimpParasite
-modifier|*
-name|parasite
-decl_stmt|;
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -8586,16 +8591,6 @@ modifier|*
 name|pname
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gchar
 modifier|*
 name|string
@@ -8609,6 +8604,16 @@ decl_stmt|;
 name|glong
 name|length
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|parasite
 operator|=
 name|gimp_image_parasite_find
@@ -8686,7 +8691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * Set hotspot to "hot-spot" parasite which format is common with that of file-xbm.  **/
+comment|/**  * Set hotspot to "hot-spot" parasite which format is common with that  * of file-xbm.  **/
 end_comment
 
 begin_function
@@ -8699,16 +8704,6 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|gboolean
 name|ret
 init|=
@@ -8722,6 +8717,16 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|tmpstr
 operator|=
 name|g_strdup_printf
@@ -8800,6 +8805,12 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
+name|GimpParasite
+modifier|*
+name|parasite
+init|=
+name|NULL
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|image_ID
@@ -8810,12 +8821,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|GimpParasite
-modifier|*
-name|parasite
-init|=
-name|NULL
-decl_stmt|;
 name|DM_XMC
 argument_list|(
 literal|"function: getHotsopt\n"
@@ -8910,26 +8915,6 @@ modifier|*
 name|size_warnp
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|framename
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|sizep
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|delayp
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|re
-argument_list|)
-expr_stmt|;
 name|guint32
 name|size
 init|=
@@ -8958,6 +8943,26 @@ name|info
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|framename
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|sizep
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|delayp
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|re
+argument_list|)
+expr_stmt|;
 name|DM_XMC
 argument_list|(
 literal|"function: set_size_and_delay\tframename=%s\n"
@@ -9127,12 +9132,14 @@ name|size_replace
 operator|==
 name|TRUE
 condition|)
+block|{
 name|size
 operator|=
 name|xmcvals
 operator|.
 name|size
 expr_stmt|;
+block|}
 elseif|else
 if|if
 condition|(
@@ -9220,7 +9227,6 @@ argument_list|,
 name|delay
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 
@@ -9250,29 +9256,15 @@ modifier|*
 name|errorp
 parameter_list|)
 block|{
-comment|/* don't pass 0 for size. */
-name|g_return_val_if_fail
-argument_list|(
-name|size
-operator|>
-literal|0
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|int
-name|i
-decl_stmt|;
-comment|/* loop index */
-DECL|struct|__anon2955f0430308
-DECL|member|size
-DECL|member|count
 specifier|static
 struct|struct
+DECL|struct|__anon2776e52f0308
 block|{
+DECL|member|size
 name|guint32
 name|size
 decl_stmt|;
+DECL|member|count
 name|guint
 name|count
 decl_stmt|;
@@ -9290,6 +9282,20 @@ literal|0
 block|,}
 block|}
 struct|;
+name|int
+name|i
+decl_stmt|;
+comment|/* loop index */
+comment|/* don't pass 0 for size. */
+name|g_return_val_if_fail
+argument_list|(
+name|size
+operator|>
+literal|0
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 comment|/* "count" member of Counter's element means how many time corresponding      "size" is passed to this function. The size member of the last element      of Counter must be 0, so Counter can have MAX_SIZE_NUM elements at most.      This is not a smart way but rather simple than using dynamic method. */
 for|for
 control|(
@@ -9418,11 +9424,6 @@ modifier|*
 name|pr
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|pr
-argument_list|)
-expr_stmt|;
 name|guint
 name|i
 decl_stmt|,
@@ -9451,6 +9452,11 @@ name|guint32
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|pr
+argument_list|)
+expr_stmt|;
 name|DM_XMC
 argument_list|(
 literal|"function:get_cropped_region\n"
@@ -10005,7 +10011,6 @@ argument_list|(
 name|buf
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 end_function
 
@@ -10038,8 +10043,8 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-if|if
-condition|(
+return|return
+operator|(
 operator|(
 name|pix
 operator|>>
@@ -10047,13 +10052,7 @@ literal|24
 operator|)
 operator|!=
 literal|0
-condition|)
-return|return
-name|TRUE
-return|;
-else|else
-return|return
-name|FALSE
+operator|)
 return|;
 block|}
 end_function
@@ -10073,16 +10072,6 @@ name|gint32
 name|image_ID
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|image_ID
-operator|!=
-operator|-
-literal|1
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|GimpParamRegion
 modifier|*
 name|iregion
@@ -10124,6 +10113,16 @@ name|GimpDrawable
 modifier|*
 name|drawable
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|image_ID
+operator|!=
+operator|-
+literal|1
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|layers
 operator|=
 name|gimp_image_get_layers
@@ -10391,11 +10390,6 @@ modifier|*
 name|heightp
 parameter_list|)
 block|{
-name|g_return_if_fail
-argument_list|(
-name|xcIs
-argument_list|)
-expr_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -10412,6 +10406,11 @@ decl_stmt|,
 name|max_yhot
 decl_stmt|;
 comment|/* the maximum value of xhot(yhot) */
+name|g_return_if_fail
+argument_list|(
+name|xcIs
+argument_list|)
+expr_stmt|;
 name|max_xhot
 operator|=
 name|max_yhot
@@ -10565,7 +10564,6 @@ name|dh
 operator|+
 name|max_yhot
 expr_stmt|;
-return|return;
 block|}
 end_function
 
