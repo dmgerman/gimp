@@ -24,12 +24,6 @@ begin_comment
 comment|/*  #define TILE_PROFILING */
 end_comment
 
-begin_include
-include|#
-directive|include
-file|<sys/types.h>
-end_include
-
 begin_typedef
 DECL|typedef|TileLink
 typedef|typedef
@@ -196,11 +190,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/*  tile_data_pointer() as a macro so that it can be inlined  */
-end_comment
-
-begin_comment
-comment|/*  note that (y)& (TILE_HEIGHT-1) is equivalent to (y) % TILE_HEIGHT      for positive power-of-two divisors */
+comment|/*  tile_data_pointer() as a macro so that it can be inlined  *  *  Note that (y)& (TILE_HEIGHT-1) is equivalent to (y) % TILE_HEIGHT  *  for positive power-of-two divisors  */
 end_comment
 
 begin_define
@@ -216,7 +206,7 @@ parameter_list|,
 name|y
 parameter_list|)
 define|\
-value|((tile)->data + \    (((y)& (TILE_HEIGHT-1)) * (tile)->ewidth + ((x)& (TILE_WIDTH-1))) * (tile)->bpp)
+value|((tile)->data + \    (((y)& (TILE_HEIGHT-1)) * \     (tile)->ewidth + ((x)& (TILE_WIDTH-1))) * (tile)->bpp)
 end_define
 
 begin_endif
