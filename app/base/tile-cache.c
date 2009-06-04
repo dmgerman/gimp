@@ -1285,11 +1285,16 @@ operator|->
 name|next
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|TILE_PROFILING
 name|g_printerr
 argument_list|(
 literal|"\nidle swapper -> stopped\n"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|idle_scan_last
 operator|=
 name|NULL
