@@ -180,7 +180,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0d51b40103
+DECL|enum|__anon28addfa70103
 block|{
 DECL|enumerator|SWAP_IN
 name|SWAP_IN
@@ -1062,7 +1062,7 @@ literal|"Total time spent in swap: %f seconds\n\n"
 argument_list|,
 name|tile_total_swapwait_sec
 operator|+
-literal|.000001
+literal|0.000001
 operator|*
 name|tile_total_swapwait_usec
 argument_list|)
@@ -1101,7 +1101,7 @@ literal|"Total interactive swap/cache delay: %f seconds\n\n"
 argument_list|,
 name|tile_total_interactive_sec
 operator|+
-literal|.000001
+literal|0.000001
 operator|*
 name|tile_total_interactive_usec
 argument_list|)
