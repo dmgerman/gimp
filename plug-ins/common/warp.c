@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a6e5e60103
+DECL|enum|__anon297dd9ee0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a6e5e60208
+DECL|struct|__anon297dd9ee0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -7150,13 +7150,25 @@ operator|&
 name|y1
 argument_list|,
 operator|&
-name|x2
+name|width
 argument_list|,
 operator|&
-name|y2
+name|height
 argument_list|)
 condition|)
 return|return;
+name|x2
+operator|=
+name|x1
+operator|+
+name|width
+expr_stmt|;
+name|y2
+operator|=
+name|y1
+operator|+
+name|height
+expr_stmt|;
 name|width
 operator|=
 name|draw

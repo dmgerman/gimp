@@ -709,7 +709,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af95bd30108
+DECL|struct|__anon2bf7adca0108
 block|{
 DECL|member|propagate_mode
 name|gint
@@ -870,7 +870,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af95bd30208
+DECL|struct|__anon2bf7adca0208
 block|{
 DECL|member|applicable_image_type
 name|gint
@@ -2248,7 +2248,7 @@ name|drawable
 operator|->
 name|bpp
 expr_stmt|;
-comment|/* Here I use the algorithm of blur.c . */
+comment|/* Here I use the algorithm of blur.c */
 if|if
 condition|(
 name|preview
@@ -2291,7 +2291,10 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -2304,23 +2307,24 @@ operator|&
 name|begy
 argument_list|,
 operator|&
-name|endx
+name|width
 argument_list|,
 operator|&
-name|endy
-argument_list|)
-expr_stmt|;
-name|width
-operator|=
-name|endx
-operator|-
-name|begx
-expr_stmt|;
 name|height
+argument_list|)
+condition|)
+return|return;
+name|endx
 operator|=
+name|begx
+operator|+
+name|width
+expr_stmt|;
 name|endy
-operator|-
+operator|=
 name|begy
+operator|+
+name|height
 expr_stmt|;
 block|}
 name|gimp_tile_cache_ntiles
@@ -4062,7 +4066,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af95bd30308
+DECL|struct|__anon2bf7adca0308
 block|{
 DECL|member|min_modified
 name|gshort

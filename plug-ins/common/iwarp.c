@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2946d5fa0103
+DECL|enum|__anon2afd26b40103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946d5fa0208
+DECL|struct|__anon2afd26b40208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2946d5fa0308
+DECL|struct|__anon2afd26b40308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -636,7 +636,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|void
+name|gboolean
 name|iwarp_init
 parameter_list|(
 name|void
@@ -4949,7 +4949,7 @@ end_function
 
 begin_function
 specifier|static
-name|void
+name|gboolean
 DECL|function|iwarp_init (void)
 name|iwarp_init
 parameter_list|(
@@ -4959,7 +4959,10 @@ block|{
 name|gint
 name|i
 decl_stmt|;
-name|gimp_drawable_mask_bounds
+if|if
+condition|(
+operator|!
+name|gimp_drawable_mask_intersect
 argument_list|(
 name|drawable
 operator|->
@@ -4972,23 +4975,36 @@ operator|&
 name|yl
 argument_list|,
 operator|&
-name|xh
+name|sel_width
 argument_list|,
 operator|&
-name|yh
+name|sel_height
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Region affected by plug-in is empty"
+argument_list|)
 argument_list|)
 expr_stmt|;
-name|sel_width
-operator|=
+return|return
+name|FALSE
+return|;
+block|}
 name|xh
-operator|-
-name|xl
-expr_stmt|;
-name|sel_height
 operator|=
+name|xl
+operator|+
+name|sel_width
+expr_stmt|;
 name|yh
-operator|-
+operator|=
 name|yl
+operator|+
+name|sel_height
 expr_stmt|;
 name|image_bpp
 operator|=
@@ -5132,6 +5148,9 @@ argument_list|)
 expr_stmt|;
 comment|/*0.7*/
 block|}
+return|return
+name|TRUE
+return|;
 block|}
 end_function
 
@@ -6647,9 +6666,15 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|iwarp_init
 argument_list|()
-expr_stmt|;
+condition|)
+return|return
+name|FALSE
+return|;
 name|dialog
 operator|=
 name|gimp_dialog_new
