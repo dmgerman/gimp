@@ -748,7 +748,7 @@ name|NC_
 argument_list|(
 literal|"edit-action"
 argument_list|,
-literal|"Copy the selected region to a named buffer"
+literal|"Copy what is visible in the selected region to a named buffer"
 argument_list|)
 block|,
 name|G_CALLBACK
