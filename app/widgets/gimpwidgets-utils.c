@@ -1990,7 +1990,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2a2ba25c0108
+DECL|struct|__anon2bd2c9190108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3565,9 +3565,7 @@ name|O_CREAT
 operator||
 name|O_APPEND
 argument_list|,
-name|S_IRUSR
-operator||
-name|S_IWUSR
+literal|0666
 argument_list|)
 expr_stmt|;
 if|if

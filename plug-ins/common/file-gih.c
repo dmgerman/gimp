@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c118b200108
+DECL|struct|__anon29548ae80108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c118b200208
+DECL|struct|__anon29548ae80208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -6171,7 +6171,7 @@ name|O_WRONLY
 operator||
 name|_O_BINARY
 argument_list|,
-literal|0644
+literal|0666
 argument_list|)
 expr_stmt|;
 if|if
