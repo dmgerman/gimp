@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b48c9080103
+DECL|enum|__anon298a87a10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -6454,7 +6454,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_push_undo (GimpDrawable * drawable,const gchar * undo_desc,gint x1,gint y1,gint x2,gint y2,TileManager * tiles,gboolean sparse)
+DECL|function|gimp_drawable_push_undo (GimpDrawable * drawable,const gchar * undo_desc,gint x,gint y,gint width,gint height,TileManager * tiles,gboolean sparse)
 name|gimp_drawable_push_undo
 parameter_list|(
 name|GimpDrawable
@@ -6467,16 +6467,16 @@ modifier|*
 name|undo_desc
 parameter_list|,
 name|gint
-name|x1
+name|x
 parameter_list|,
 name|gint
-name|y1
+name|y
 parameter_list|,
 name|gint
-name|x2
+name|width
 parameter_list|,
 name|gint
-name|y2
+name|height
 parameter_list|,
 name|TileManager
 modifier|*
@@ -6489,16 +6489,6 @@ block|{
 name|GimpItem
 modifier|*
 name|item
-decl_stmt|;
-name|gint
-name|x
-decl_stmt|,
-name|y
-decl_stmt|;
-name|gint
-name|width
-decl_stmt|,
-name|height
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -6571,7 +6561,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_printerr ("gimp_drawable_push_undo (%s, %d, %d, %d, %d)\n",               sparse ? "TRUE" : "FALSE", x1, y1, x2 - x1, y2 - y1);
+block|g_printerr ("gimp_drawable_push_undo (%s, %d, %d, %d, %d)\n",               sparse ? "TRUE" : "FALSE", x, y, width, height);
 endif|#
 directive|endif
 if|if
@@ -6579,17 +6569,13 @@ condition|(
 operator|!
 name|gimp_rectangle_intersect
 argument_list|(
-name|x1
+name|x
 argument_list|,
-name|y1
+name|y
 argument_list|,
-name|x2
-operator|-
-name|x1
+name|width
 argument_list|,
-name|y2
-operator|-
-name|y1
+name|height
 argument_list|,
 literal|0
 argument_list|,
