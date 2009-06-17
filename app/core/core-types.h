@@ -1023,6 +1023,10 @@ DECL|member|direction
 name|gdouble
 name|direction
 decl_stmt|;
+DECL|member|fading
+name|gdouble
+name|fading
+decl_stmt|;
 block|}
 struct|;
 end_struct
