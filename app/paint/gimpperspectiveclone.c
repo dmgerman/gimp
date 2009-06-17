@@ -1535,8 +1535,12 @@ argument_list|,
 name|ymin
 argument_list|,
 name|xmax
+operator|-
+name|xmin
 argument_list|,
 name|ymax
+operator|-
+name|ymin
 argument_list|)
 expr_stmt|;
 else|else
@@ -1556,8 +1560,12 @@ argument_list|,
 name|ymin
 argument_list|,
 name|xmax
+operator|-
+name|xmin
 argument_list|,
 name|ymax
+operator|-
+name|ymin
 argument_list|)
 expr_stmt|;
 name|pixel_region_init_temp_buf
