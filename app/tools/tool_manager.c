@@ -975,7 +975,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|tool_manager_button_press_active (Gimp * gimp,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|tool_manager_button_press_active (Gimp * gimp,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|tool_manager_button_press_active
 parameter_list|(
 name|Gimp
@@ -992,6 +992,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1035,6 +1038,8 @@ argument_list|,
 name|time
 argument_list|,
 name|state
+argument_list|,
+name|press_type
 argument_list|,
 name|display
 argument_list|)

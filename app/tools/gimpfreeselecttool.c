@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29011e950108
+DECL|struct|__anon2791c1ef0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -391,6 +391,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -4478,7 +4481,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_free_select_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_free_select_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|gimp_free_select_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -4495,6 +4498,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*

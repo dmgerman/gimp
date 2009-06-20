@@ -143,6 +143,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonPressType
+name|press_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display

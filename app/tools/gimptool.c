@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae0f8fe0103
+DECL|enum|__anon2a9726f00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -269,6 +269,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -1143,7 +1146,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_real_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_tool_real_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|gimp_tool_real_button_press
 parameter_list|(
 name|GimpTool
@@ -1161,10 +1164,20 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonPressType
+name|press_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
+block|{
+if|if
+condition|(
+name|press_type
+operator|==
+name|GIMP_BUTTON_PRESS_NORMAL
+condition|)
 block|{
 name|tool
 operator|->
@@ -1190,6 +1203,7 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1944,7 +1958,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|gimp_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -1961,6 +1975,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -2005,11 +2022,17 @@ name|time
 argument_list|,
 name|state
 argument_list|,
+name|press_type
+argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|press_type
+operator|==
+name|GIMP_BUTTON_PRESS_NORMAL
+operator|&&
 name|gimp_tool_control_is_active
 argument_list|(
 name|tool

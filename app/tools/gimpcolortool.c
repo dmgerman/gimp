@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291222cf0103
+DECL|enum|__anon2be426bf0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -256,6 +256,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -902,7 +905,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_color_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|gimp_color_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -919,6 +922,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
@@ -960,6 +966,8 @@ argument_list|,
 name|time
 argument_list|,
 name|state
+argument_list|,
+name|press_type
 argument_list|,
 name|display
 argument_list|)

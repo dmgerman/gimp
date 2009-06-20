@@ -249,6 +249,9 @@ parameter_list|,
 name|GdkModifierType
 name|state
 parameter_list|,
+name|GimpButtonPressType
+name|press_type
+parameter_list|,
 name|GimpDisplay
 modifier|*
 name|display
@@ -822,7 +825,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_move_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpDisplay * display)
+DECL|function|gimp_move_tool_button_press (GimpTool * tool,const GimpCoords * coords,guint32 time,GdkModifierType state,GimpButtonPressType press_type,GimpDisplay * display)
 name|gimp_move_tool_button_press
 parameter_list|(
 name|GimpTool
@@ -839,6 +842,9 @@ name|time
 parameter_list|,
 name|GdkModifierType
 name|state
+parameter_list|,
+name|GimpButtonPressType
+name|press_type
 parameter_list|,
 name|GimpDisplay
 modifier|*
