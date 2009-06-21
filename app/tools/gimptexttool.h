@@ -195,9 +195,9 @@ DECL|member|text_box_fixed
 name|gboolean
 name|text_box_fixed
 decl_stmt|;
-DECL|member|text_cursor_changing
+DECL|member|selecting
 name|gboolean
-name|text_cursor_changing
+name|selecting
 decl_stmt|;
 DECL|member|x_pos
 name|gint
