@@ -16,9 +16,13 @@ directive|define
 name|__GIMP_TEXT_TOOL_H__
 end_define
 
-begin_comment
-comment|//#define TEXT_TOOL_HACK 1
-end_comment
+begin_define
+DECL|macro|TEXT_TOOL_HACK
+define|#
+directive|define
+name|TEXT_TOOL_HACK
+value|1
+end_define
 
 begin_include
 include|#
