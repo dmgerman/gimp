@@ -241,7 +241,7 @@ end_ifndef
 
 begin_enum
 enum|enum
-DECL|enum|__anon290cd9ff0103
+DECL|enum|__anon29c4bb3d0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -6032,6 +6032,7 @@ argument_list|(
 operator|&
 name|cursor
 argument_list|,
+operator|-
 name|count
 argument_list|)
 expr_stmt|;
