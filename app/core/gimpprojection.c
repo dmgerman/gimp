@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ae70f30103
+DECL|enum|__anon2772d3ae0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3066,20 +3066,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/*  if we hit the right border, or a valid tile, bail out        */
 if|if
 condition|(
+operator|!
 name|t
-condition|)
-block|{
-if|if
-condition|(
+operator|||
 name|tile_is_valid
 argument_list|(
 name|t
 argument_list|)
 condition|)
 break|break;
-comment|/*  HACK: mark the tile as valid, so locking it with r/w access            *  won't validate it            */
+comment|/*  HACK: mark the tile as valid, so locking it with r/w access        *  won't validate it        */
 name|t
 operator|->
 name|valid
@@ -3121,7 +3120,6 @@ index|]
 operator|=
 name|t
 expr_stmt|;
-block|}
 block|}
 name|gimp_projection_construct
 argument_list|(
