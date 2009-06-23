@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/display-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"display/gimpcanvas.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwindow.h"
 end_include
 
@@ -144,6 +156,11 @@ name|focus
 argument_list|)
 operator|||
 name|GTK_IS_TEXT_VIEW
+argument_list|(
+name|focus
+argument_list|)
+operator|||
+name|GIMP_IS_CANVAS
 argument_list|(
 name|focus
 argument_list|)

@@ -2095,6 +2095,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 block|}
 break|break;
@@ -2130,6 +2133,9 @@ block|{
 name|gimp_dialog_factories_toggle
 argument_list|()
 expr_stmt|;
+return|return
+name|TRUE
+return|;
 block|}
 block|}
 break|break;
@@ -2137,7 +2143,7 @@ default|default:
 break|break;
 block|}
 return|return
-name|TRUE
+name|FALSE
 return|;
 block|}
 end_function
