@@ -241,7 +241,7 @@ end_ifndef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d2e0ec0103
+DECL|enum|__anon29d9d71e0103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -6515,6 +6515,15 @@ operator|>
 literal|0
 condition|)
 block|{
+if|if
+condition|(
+operator|!
+name|gtk_text_iter_ends_line
+argument_list|(
+operator|&
+name|cursor
+argument_list|)
+condition|)
 name|gtk_text_iter_forward_to_line_end
 argument_list|(
 operator|&
