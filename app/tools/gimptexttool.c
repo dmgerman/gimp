@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptextproxy.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -205,12 +211,6 @@ begin_include
 include|#
 directive|include
 file|"gimptextoptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimptextproxy.h"
 end_include
 
 begin_include
