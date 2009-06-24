@@ -246,21 +246,9 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|gtk_text_buffer_get_has_selection
+name|gimp_text_tool_delete_selection
 argument_list|(
 name|text_tool
-operator|->
-name|text_buffer
-argument_list|)
-condition|)
-name|gimp_text_tool_delete_text
-argument_list|(
-name|text_tool
-argument_list|,
-name|TRUE
-comment|/* unused */
 argument_list|)
 expr_stmt|;
 block|}
@@ -550,12 +538,9 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_delete_text
+name|gimp_text_tool_delete_selection
 argument_list|(
 name|text_tool
-argument_list|,
-name|TRUE
-comment|/* unused */
 argument_list|)
 expr_stmt|;
 block|}
