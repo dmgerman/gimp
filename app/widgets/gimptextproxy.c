@@ -45,6 +45,23 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
+name|gimp_text_proxy_insert_at_cursor
+parameter_list|(
+name|GtkTextView
+modifier|*
+name|text_view
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|str
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
 name|gimp_text_proxy_delete_from_cursor
 parameter_list|(
 name|GtkTextView
@@ -147,6 +164,12 @@ name|gimp_text_proxy_move_cursor
 expr_stmt|;
 name|tv_class
 operator|->
+name|insert_at_cursor
+operator|=
+name|gimp_text_proxy_insert_at_cursor
+expr_stmt|;
+name|tv_class
+operator|->
 name|delete_from_cursor
 operator|=
 name|gimp_text_proxy_delete_from_cursor
@@ -209,6 +232,24 @@ name|count
 parameter_list|,
 name|gboolean
 name|extend_selection
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_proxy_insert_at_cursor (GtkTextView * text_view,const gchar * str)
+name|gimp_text_proxy_insert_at_cursor
+parameter_list|(
+name|GtkTextView
+modifier|*
+name|text_view
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|str
 parameter_list|)
 block|{ }
 end_function
