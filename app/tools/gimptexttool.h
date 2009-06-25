@@ -211,6 +211,10 @@ DECL|member|select_lines
 name|gboolean
 name|select_lines
 decl_stmt|;
+DECL|member|overwrite_mode
+name|gboolean
+name|overwrite_mode
+decl_stmt|;
 DECL|member|x_pos
 name|gint
 name|x_pos

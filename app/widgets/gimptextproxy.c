@@ -125,6 +125,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_text_proxy_toggle_overwrite
+parameter_list|(
+name|GtkTextView
+modifier|*
+name|text_view
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpTextProxy,gimp_text_proxy,GTK_TYPE_TEXT_VIEW)
 name|G_DEFINE_TYPE
@@ -197,6 +209,12 @@ operator|->
 name|paste_clipboard
 operator|=
 name|gimp_text_proxy_paste_clipboard
+expr_stmt|;
+name|tv_class
+operator|->
+name|toggle_overwrite
+operator|=
+name|gimp_text_proxy_toggle_overwrite
 expr_stmt|;
 block|}
 end_function
@@ -317,6 +335,19 @@ specifier|static
 name|void
 DECL|function|gimp_text_proxy_paste_clipboard (GtkTextView * text_view)
 name|gimp_text_proxy_paste_clipboard
+parameter_list|(
+name|GtkTextView
+modifier|*
+name|text_view
+parameter_list|)
+block|{ }
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_proxy_toggle_overwrite (GtkTextView * text_view)
+name|gimp_text_proxy_toggle_overwrite
 parameter_list|(
 name|GtkTextView
 modifier|*
