@@ -360,27 +360,6 @@ name|NULL
 argument_list|)
 condition|)
 empty_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: keep the processor around once gegl_processor_set_rectangle() works
-endif|#
-directive|endif
-name|g_object_unref
-argument_list|(
-name|proj
-operator|->
-name|processor
-argument_list|)
-expr_stmt|;
-name|proj
-operator|->
-name|processor
-operator|=
-name|NULL
-expr_stmt|;
 block|}
 end_function
 
