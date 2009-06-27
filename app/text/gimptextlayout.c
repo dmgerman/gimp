@@ -496,6 +496,15 @@ name|yres
 operator|=
 name|yres
 expr_stmt|;
+name|pango_layout_set_wrap
+argument_list|(
+name|layout
+operator|->
+name|layout
+argument_list|,
+name|PANGO_WRAP_WORD_CHAR
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|context
