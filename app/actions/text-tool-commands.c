@@ -152,7 +152,7 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|gimp_text_tool_clipboard_cut
+name|gimp_text_tool_cut_clipboard
 argument_list|(
 name|text_tool
 argument_list|)
@@ -182,11 +182,9 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|gimp_text_tool_clipboard_copy
+name|gimp_text_tool_copy_clipboard
 argument_list|(
 name|text_tool
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -214,11 +212,9 @@ argument_list|(
 name|data
 argument_list|)
 decl_stmt|;
-name|gimp_text_tool_clipboard_paste
+name|gimp_text_tool_paste_clipboard
 argument_list|(
 name|text_tool
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}

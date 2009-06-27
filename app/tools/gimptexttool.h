@@ -314,7 +314,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_tool_clipboard_cut
+name|gimp_text_tool_cut_clipboard
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -325,28 +325,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_tool_clipboard_copy
+name|gimp_text_tool_copy_clipboard
 parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
-parameter_list|,
-name|gboolean
-name|use_clipboard
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_tool_clipboard_paste
+name|gimp_text_tool_paste_clipboard
 parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
-parameter_list|,
-name|gboolean
-name|use_clipboard
 parameter_list|)
 function_decl|;
 end_function_decl
