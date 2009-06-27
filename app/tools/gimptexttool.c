@@ -4192,6 +4192,7 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
+comment|/* Turn on clipping for text-cursor and selections */
 name|g_object_get
 argument_list|(
 name|text_tool
@@ -4219,7 +4220,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* Turn on clipping for text-cursor and selections */
 name|cliprect
 operator|.
 name|x
@@ -4340,8 +4340,16 @@ argument_list|)
 condition|)
 block|{
 comment|/* If the text buffer has no selection, draw the text cursor */
+name|GtkTextBuffer
+modifier|*
+name|buffer
+init|=
+name|text_tool
+operator|->
+name|text_buffer
+decl_stmt|;
 name|gint
-name|cursorx
+name|cursor_index
 decl_stmt|;
 name|GtkTextIter
 name|cursor
@@ -4358,18 +4366,14 @@ name|overwrite_cursor
 decl_stmt|;
 name|gtk_text_buffer_get_iter_at_mark
 argument_list|(
-name|text_tool
-operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 operator|&
 name|cursor
 argument_list|,
 name|gtk_text_buffer_get_insert
 argument_list|(
-name|text_tool
-operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4377,9 +4381,7 @@ name|string
 operator|=
 name|gtk_text_buffer_get_text
 argument_list|(
-name|text_tool
-operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 operator|&
 name|start
@@ -4391,7 +4393,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Using strlen to get the byte index, not the character offset */
-name|cursorx
+name|cursor_index
 operator|=
 name|strlen
 argument_list|(
@@ -4407,7 +4409,7 @@ name|preedit_len
 operator|>
 literal|0
 condition|)
-name|cursorx
+name|cursor_index
 operator|+=
 name|text_tool
 operator|->
@@ -4422,7 +4424,7 @@ name|pango_layout_index_to_pos
 argument_list|(
 name|layout
 argument_list|,
-name|cursorx
+name|cursor_index
 argument_list|,
 operator|&
 name|crect
