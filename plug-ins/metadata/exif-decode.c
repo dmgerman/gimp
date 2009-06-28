@@ -51,18 +51,6 @@ directive|include
 file|"exif-decode.h"
 end_include
 
-begin_comment
-comment|/* prototypes of local functions */
-end_comment
-
-begin_comment
-comment|// static void         exif_iter_content           (XMPModel    *xmp_model,
-end_comment
-
-begin_comment
-comment|//                                                 ExifData    *data);
-end_comment
-
 begin_function_decl
 specifier|static
 name|void
@@ -94,6 +82,10 @@ name|xmp_model
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/**  * xmp_merge_from_exifbuffer:  * @xmp_model: pointer to the #XMPModel in which the results will be stored  * @image_ID: id of the image where the exif data parasite is attached to  * @error: return location for a #GErrror  *  * Load the Exif data, which is attached to the image as a parasite. The  * parsed Exif data is merged into the XMP model.  *  * Return value: %TRUE on success, %FALSE if an error occured during  * reading/writing  *  **/
+end_comment
 
 begin_function
 name|gboolean
@@ -130,14 +122,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
+operator|!
 name|parasite
 condition|)
-block|{
-name|g_warning
-argument_list|(
-literal|"Found parasite, extracting exif"
-argument_list|)
-expr_stmt|;
+return|return
+name|FALSE
+return|;
 name|exif_data
 operator|=
 name|exif_data_new_from_data
@@ -174,15 +164,9 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_printerr
-argument_list|(
-literal|"\nSomething went wrong, when reading from buffer.\n"
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
-block|}
 block|}
 return|return
 name|TRUE
@@ -236,9 +220,36 @@ modifier|*
 name|xmp_model
 parameter_list|)
 block|{
-name|g_printerr
+name|char
+name|value
+index|[
+literal|1024
+index|]
+decl_stmt|;
+name|xmp_model_set_scalar_property
 argument_list|(
-literal|"\nWuff! Wuff!:"
+name|xmp_model
+argument_list|,
+name|XMP_SCHEMA_EXIF
+argument_list|,
+name|exif_tag_get_name
+argument_list|(
+name|entry
+operator|->
+name|tag
+argument_list|)
+argument_list|,
+name|exif_entry_get_value
+argument_list|(
+name|entry
+argument_list|,
+name|value
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|value
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

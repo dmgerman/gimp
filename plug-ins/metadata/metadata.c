@@ -1137,7 +1137,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Metadata parasite seems to be corrupt"
+literal|"\nMetadata parasite seems to be corrupt"
 argument_list|)
 expr_stmt|;
 comment|/* continue anyway, we will attach a clean parasite later */
@@ -1312,10 +1312,17 @@ operator|&
 name|error
 argument_list|)
 condition|)
+block|{
 name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"\nExif to XMP merge failed.\n"
+argument_list|)
+expr_stmt|;
+block|}
 endif|#
 directive|endif
 block|}
