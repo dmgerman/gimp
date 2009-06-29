@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<X11/Xlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<X11/Xcursor/Xcursor.h>
 end_include
 
@@ -306,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2776e52f0108
+DECL|struct|__anon29f575b70108
 block|{
 DECL|member|crop
 name|gboolean
@@ -837,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2776e52f0208
+DECL|struct|__anon29f575b70208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -9258,7 +9264,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2776e52f0308
+DECL|struct|__anon29f575b70308
 block|{
 DECL|member|size
 name|guint32
