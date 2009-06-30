@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac069070103
+DECL|enum|__anon297f64b10103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac069070203
+DECL|enum|__anon297f64b10203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac069070303
+DECL|enum|__anon297f64b10303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -14145,7 +14145,7 @@ name|priv
 operator|->
 name|x1_int
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|priv
 operator|->
@@ -14156,7 +14156,7 @@ name|priv
 operator|->
 name|y1_int
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|priv
 operator|->
@@ -14175,7 +14175,10 @@ name|priv
 operator|->
 name|width_int
 operator|=
-name|ROUND
+operator|(
+name|gint
+operator|)
+name|RINT
 argument_list|(
 name|priv
 operator|->
@@ -14190,7 +14193,10 @@ name|priv
 operator|->
 name|height_int
 operator|=
-name|ROUND
+operator|(
+name|gint
+operator|)
+name|RINT
 argument_list|(
 name|priv
 operator|->
@@ -14384,7 +14390,7 @@ case|:
 operator|*
 name|coord_x_output
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|coord_x_input
 argument_list|)
@@ -14392,7 +14398,7 @@ expr_stmt|;
 operator|*
 name|coord_y_output
 operator|=
-name|ROUND
+name|RINT
 argument_list|(
 name|coord_y_input
 argument_list|)
