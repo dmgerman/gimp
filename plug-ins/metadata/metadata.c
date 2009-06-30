@@ -1083,11 +1083,6 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|g_warning
-argument_list|(
-literal|"Parsing Metadata XMP parasite."
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!

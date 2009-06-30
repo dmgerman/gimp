@@ -51,6 +51,29 @@ directive|include
 file|"exif-decode.h"
 end_include
 
+begin_comment
+comment|/*  local function prototypes  */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|xmp_merge_from_exifbuffer
+parameter_list|(
+name|XMPModel
+modifier|*
+name|xmp_model
+parameter_list|,
+name|gint32
+name|image_ID
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 specifier|static
 name|void
@@ -82,6 +105,10 @@ name|xmp_model
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/* public functions */
+end_comment
 
 begin_comment
 comment|/**  * xmp_merge_from_exifbuffer:  * @xmp_model: pointer to the #XMPModel in which the results will be stored  * @image_ID: id of the image where the exif data parasite is attached to  * @error: return location for a #GErrror  *  * Load the Exif data, which is attached to the image as a parasite. The  * parsed Exif data is merged into the XMP model.  *  * Return value: %TRUE on success, %FALSE if an error occured during  * reading/writing  *  **/
@@ -173,6 +200,10 @@ name|TRUE
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* private functions */
+end_comment
 
 begin_function
 specifier|static
