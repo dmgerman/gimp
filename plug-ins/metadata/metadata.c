@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libexif/exif-data.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
@@ -39,8 +45,20 @@ directive|include
 file|"xmp-encode.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"interface.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"exif-decode.h"
+end_include
+
 begin_comment
-comment|/* FIXME: uncomment when these are working #include "interface.h" #include "exif-decode.h" #include "exif-encode.h" #include "iptc-decode.h" */
+comment|/* FIXME: uncomment when these are working #include "exif-encode.h" #include "iptc-decode.h" */
 end_comment
 
 begin_define
@@ -156,7 +174,38 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
-comment|/* FIXME: uncomment when these are working   static const GimpParamDef editor_args[] =   {     { GIMP_PDB_INT32,       "run-mode",  "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }" },     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_DRAWABLE,    "drawable",  "Input drawable (unused)"      }   }; */
+specifier|static
+specifier|const
+name|GimpParamDef
+name|editor_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"run-mode"
+block|,
+literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
+block|}
+block|,
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image"
+block|}
+block|,
+block|{
+name|GIMP_PDB_DRAWABLE
+block|,
+literal|"drawable"
+block|,
+literal|"Input drawable (unused)"
+block|}
+block|}
+decl_stmt|;
 specifier|static
 specifier|const
 name|GimpParamDef
@@ -213,7 +262,39 @@ literal|"XMP packet"
 block|}
 block|}
 decl_stmt|;
-comment|/* FIXME: uncomment when these are working   static const GimpParamDef decode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  },     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   };    static const GimpParamDef encode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  }   };   static const GimpParamDef encode_exif_return_vals[] =   {     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   }; */
+specifier|static
+specifier|const
+name|GimpParamDef
+name|decode_exif_args
+index|[]
+init|=
+block|{
+block|{
+name|GIMP_PDB_IMAGE
+block|,
+literal|"image"
+block|,
+literal|"Input image"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT32
+block|,
+literal|"exif-size"
+block|,
+literal|"size of the EXIF block"
+block|}
+block|,
+block|{
+name|GIMP_PDB_INT8ARRAY
+block|,
+literal|"exif"
+block|,
+literal|"EXIF block"
+block|}
+block|}
+decl_stmt|;
+comment|/* FIXME: uncomment when these are working   static const GimpParamDef encode_exif_args[] =   {     { GIMP_PDB_IMAGE,       "image",     "Input image"                  }   };   static const GimpParamDef encode_exif_return_vals[] =   {     { GIMP_PDB_INT32,       "exif-size", "size of the EXIF block"       },     { GIMP_PDB_INT8ARRAY,   "exif",      "EXIF block"                   }   }; */
 specifier|static
 specifier|const
 name|GimpParamDef
@@ -479,7 +560,56 @@ literal|"Overwrite existing file: { FALSE (0), TRUE (1) }"
 block|}
 block|}
 decl_stmt|;
-comment|/* FIXME: uncomment when these are working   gimp_install_procedure (EDITOR_PROC, 			  N_("View and edit metadata (EXIF, IPTC, XMP)"),                           "View and edit metadata information attached to the "                           "current image.  This can include EXIF, IPTC and/or "                           "XMP information.  Some or all of this metadata "                           "will be saved in the file, depending on the output "                           "file format.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2004-2005",                           N_("Propert_ies"),                           "RGB*, INDEXED*, GRAY*",                           GIMP_PLUGIN,                           G_N_ELEMENTS (editor_args), 0,                           editor_args, NULL);    gimp_plugin_menu_register (EDITOR_PROC, "<Image>/File/Info");   gimp_plugin_icon_register (EDITOR_PROC, GIMP_ICON_TYPE_STOCK_ID,  */
+name|gimp_install_procedure
+argument_list|(
+name|EDITOR_PROC
+argument_list|,
+name|N_
+argument_list|(
+literal|"View and edit metadata (EXIF, IPTC, XMP)"
+argument_list|)
+argument_list|,
+literal|"View and edit metadata information attached to the "
+literal|"current image.  This can include EXIF, IPTC and/or "
+literal|"XMP information.  Some or all of this metadata "
+literal|"will be saved in the file, depending on the output "
+literal|"file format."
+argument_list|,
+literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
+argument_list|,
+literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
+argument_list|,
+literal|"2004-2005"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Propert_ies"
+argument_list|)
+argument_list|,
+literal|"RGB*, INDEXED*, GRAY*"
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|editor_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|editor_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_plugin_menu_register
+argument_list|(
+name|EDITOR_PROC
+argument_list|,
+literal|"<Image>/File/Info"
+argument_list|)
+expr_stmt|;
+comment|// XXX gimp_plugin_icon_register (EDITOR_PROC, GIMP_ICON_TYPE_STOCK_ID,
 name|gimp_install_procedure
 argument_list|(
 name|DECODE_XMP_PROC
@@ -525,11 +655,11 @@ literal|"Generate an XMP packet from the metadata "
 literal|"information attached to the image.  The new XMP "
 literal|"packet can then be saved into a file."
 argument_list|,
-literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
+literal|"RÃ³man Joost<romanofski@gimp.org>"
 argument_list|,
-literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
+literal|"RÃ³man Joost<romanofski@gimp.org>"
 argument_list|,
-literal|"2005"
+literal|"2008"
 argument_list|,
 name|NULL
 argument_list|,
@@ -552,7 +682,42 @@ argument_list|,
 name|encode_xmp_return_vals
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: uncomment when these are working   gimp_install_procedure (DECODE_EXIF_PROC, 			  "Decode an EXIF block",                           "Parse an EXIF block and merge the results with "                           "any metadata already attached to the image.  This "                           "should be used when an EXIF block is read from an "                           "image file.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (decode_exif_args), 0,                           decode_exif_args, NULL);    gimp_install_procedure (ENCODE_EXIF_PROC, 			  "Encode metadata into an EXIF block",                           "Generate an EXIF block from the metadata "                           "information attached to the image.  The new EXIF "                           "block can then be saved into a file.", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "RaphaÃ«l Quinet<raphael@gimp.org>", 			  "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (encode_exif_args),                           G_N_ELEMENTS (encode_exif_return_vals),                           encode_exif_args, encode_exif_return_vals); */
+name|gimp_install_procedure
+argument_list|(
+name|DECODE_EXIF_PROC
+argument_list|,
+literal|"Decode an EXIF block"
+argument_list|,
+literal|"Parse an EXIF block and merge the results with "
+literal|"any metadata already attached to the image.  This "
+literal|"should be used when an EXIF block is read from an "
+literal|"image file."
+argument_list|,
+literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
+argument_list|,
+literal|"RaphaÃ«l Quinet<raphael@gimp.org>"
+argument_list|,
+literal|"2005"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_PLUGIN
+argument_list|,
+name|G_N_ELEMENTS
+argument_list|(
+name|decode_exif_args
+argument_list|)
+argument_list|,
+literal|0
+argument_list|,
+name|decode_exif_args
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: uncomment when these are working   gimp_install_procedure (ENCODE_EXIF_PROC,                           "Encode metadata into an EXIF block",                           "Generate an EXIF block from the metadata "                           "information attached to the image.  The new EXIF "                           "block can then be saved into a file.",                           "RaphaÃ«l Quinet<raphael@gimp.org>",                           "RaphaÃ«l Quinet<raphael@gimp.org>",                           "2005",                           NULL,                           NULL,                           GIMP_PLUGIN,                           G_N_ELEMENTS (encode_exif_args),                           G_N_ELEMENTS (encode_exif_return_vals),                           encode_exif_args, encode_exif_return_vals); */
 name|gimp_install_procedure
 argument_list|(
 name|GET_PROC
@@ -958,7 +1123,7 @@ argument_list|)
 operator|-
 name|METADATA_MARKER_LEN
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 operator|&
 name|error
@@ -967,7 +1132,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"Metadata parasite seems to be corrupt"
+literal|"\nMetadata parasite seems to be corrupt"
 argument_list|)
 expr_stmt|;
 comment|/* continue anyway, we will attach a clean parasite later */
@@ -1107,6 +1272,54 @@ argument_list|)
 condition|)
 block|{
 comment|/* done below together with the parasite */
+block|}
+elseif|else
+if|if
+condition|(
+operator|!
+name|strcmp
+argument_list|(
+name|name
+argument_list|,
+name|DECODE_EXIF_PROC
+argument_list|)
+condition|)
+block|{
+ifdef|#
+directive|ifdef
+name|HAVE_EXIF
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|xmp_merge_from_exifbuffer
+argument_list|(
+name|xmp_model
+argument_list|,
+name|image_ID
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+name|status
+operator|=
+name|GIMP_PDB_EXECUTION_ERROR
+expr_stmt|;
+name|g_printerr
+argument_list|(
+literal|"\nExif to XMP merge failed.\n"
+argument_list|)
+expr_stmt|;
+block|}
+endif|#
+directive|endif
 block|}
 elseif|else
 if|if
@@ -1473,7 +1686,42 @@ name|EDITOR_PROC
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME: uncomment when these are working       GimpRunMode run_mode;        run_mode = param[0].data.d_int32;       if (run_mode == GIMP_RUN_INTERACTIVE)         {           if (! metadata_dialog (image_ID, xmp_model))             status = GIMP_PDB_CANCEL;         }         */
+name|GimpRunMode
+name|run_mode
+decl_stmt|;
+name|run_mode
+operator|=
+name|param
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+if|if
+condition|(
+name|run_mode
+operator|==
+name|GIMP_RUN_INTERACTIVE
+condition|)
+block|{
+if|if
+condition|(
+operator|!
+name|metadata_dialog
+argument_list|(
+name|image_ID
+argument_list|,
+name|xmp_model
+argument_list|)
+condition|)
+name|status
+operator|=
+name|GIMP_PDB_CANCEL
+expr_stmt|;
+block|}
 name|g_printerr
 argument_list|(
 literal|"Not implemented yet (EDITOR_PROC)\n"
