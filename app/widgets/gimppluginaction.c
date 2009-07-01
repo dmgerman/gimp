@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a18ff0103
+DECL|enum|__anon29d8b47f0103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -54,7 +54,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9a18ff0203
+DECL|enum|__anon29d8b47f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -539,6 +539,13 @@ argument_list|(
 name|action
 argument_list|)
 decl_stmt|;
+comment|/* Not all actions have procedures associated with them, for example    * unused "plug-in-recent-[N]" actions, so check for NULL before we    * invoke the plug-in action    */
+if|if
+condition|(
+name|plug_in_action
+operator|->
+name|procedure
+condition|)
 name|gimp_plug_in_action_selected
 argument_list|(
 name|plug_in_action
