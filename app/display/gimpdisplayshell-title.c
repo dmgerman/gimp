@@ -1790,11 +1790,22 @@ condition|)
 block|{
 name|gchar
 modifier|*
+name|source_no_ext
+init|=
+name|file_utils_uri_with_new_ext
+argument_list|(
+name|source
+argument_list|,
+name|NULL
+argument_list|)
+decl_stmt|;
+name|gchar
+modifier|*
 name|source_basename
 init|=
 name|file_utils_uri_display_basename
 argument_list|(
-name|source
+name|source_no_ext
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1810,13 +1821,11 @@ name|len
 argument_list|,
 name|start
 argument_list|,
-comment|/*  image name and source as shown in the title of                         the image window */
+comment|/*  image import source as shown in the title of                         the image window */
 name|_
 argument_list|(
-literal|"%s (imported from %s)"
+literal|"[%s] (imported)"
 argument_list|)
-argument_list|,
-name|filename
 argument_list|,
 name|source_basename
 argument_list|)
@@ -1824,6 +1833,11 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|source_basename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|source_no_ext
 argument_list|)
 expr_stmt|;
 return|return
