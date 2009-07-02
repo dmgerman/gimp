@@ -806,10 +806,14 @@ name|gchar
 modifier|*
 name|ext_uri_ext
 init|=
+name|ext_uri
+condition|?
 name|file_utils_get_ext_start
 argument_list|(
 name|ext_uri
 argument_list|)
+else|:
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
