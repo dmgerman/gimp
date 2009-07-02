@@ -773,6 +773,21 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
+comment|/* Forget the import source when we save. We interpret a                * save as that the user is not interested in being able                * to quickly export back to the original any longer                */
+name|g_object_set_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|dialog
+operator|->
+name|image
+argument_list|)
+argument_list|,
+name|GIMP_FILE_IMPORT_SOURCE_URI_KEY
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 else|else
 block|{
