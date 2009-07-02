@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon291b2c530103
+DECL|enum|__anon2afb0f2f0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1595,6 +1595,10 @@ argument_list|,
 name|coords
 argument_list|,
 name|TRUE
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 name|core
@@ -1606,6 +1610,10 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 name|core
@@ -1617,6 +1625,10 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 block|}
@@ -3156,6 +3168,10 @@ argument_list|,
 name|coords
 argument_list|,
 name|TRUE
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 name|core
@@ -3167,6 +3183,10 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 name|core
@@ -3178,6 +3198,10 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 block|}

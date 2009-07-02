@@ -459,6 +459,10 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -468,6 +472,10 @@ argument_list|(
 name|paint_options
 argument_list|,
 name|coords
+argument_list|,
+name|paint_core
+operator|->
+name|pixel_dist
 argument_list|)
 expr_stmt|;
 name|gimp_brush_core_paste_canvas

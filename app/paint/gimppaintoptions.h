@@ -333,6 +333,11 @@ name|GimpDynamicOptions
 modifier|*
 name|random_options
 decl_stmt|;
+DECL|member|fading_options
+name|GimpDynamicOptions
+modifier|*
+name|fading_options
+decl_stmt|;
 DECL|member|fade_options
 name|GimpFadeOptions
 modifier|*
@@ -492,6 +497,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -511,6 +519,9 @@ name|coords
 parameter_list|,
 name|gboolean
 name|use_dynamics
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -527,6 +538,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -543,6 +557,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -559,6 +576,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -575,6 +595,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -591,6 +614,9 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|gdouble
+name|pixel_dist
 parameter_list|)
 function_decl|;
 end_function_decl
