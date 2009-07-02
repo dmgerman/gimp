@@ -2173,7 +2173,7 @@ name|dir_uri
 operator|=
 name|docs_uri
 expr_stmt|;
-comment|/* Priority of default basenames for Save:        *        *   1. Last Save a copy-name (applies only to Save a copy)        *   2. Last Save name        *   3. The 'Export to' path        *   3. 'Untitled'        */
+comment|/* Priority of default basenames for Save:        *        *   1. Last Save a copy-name (applies only to Save a copy)        *   2. Last Save name        *   3. Last Export name        *   3. The source image path        *   3. 'Untitled'        */
 if|if
 condition|(
 name|save_a_copy
@@ -2220,6 +2220,23 @@ name|image
 argument_list|)
 argument_list|,
 name|GIMP_FILE_EXPORT_TO_URI_KEY
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|name_uri
+condition|)
+name|name_uri
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|GIMP_FILE_IMPORT_SOURCE_URI_KEY
 argument_list|)
 expr_stmt|;
 if|if
