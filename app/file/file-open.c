@@ -829,27 +829,6 @@ operator|)
 name|g_free
 argument_list|)
 expr_stmt|;
-comment|/* Set 'Export to' target to import source */
-name|g_object_set_data_full
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|GIMP_FILE_EXPORT_TO_URI_KEY
-argument_list|,
-name|g_strdup
-argument_list|(
-name|uri
-argument_list|)
-argument_list|,
-operator|(
-name|GDestroyNotify
-operator|)
-name|g_free
-argument_list|)
-expr_stmt|;
 comment|/* We shall treat this file as an Untitled file */
 name|gimp_object_set_name
 argument_list|(
