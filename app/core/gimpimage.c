@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29236a470103
+DECL|enum|__anon288442df0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29236a470203
+DECL|enum|__anon288442df0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -8303,6 +8303,31 @@ argument_list|,
 name|GIMP_DIRTY_ALL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_is_dirty:  * @image:  *  * Returns: True if the image is dirty, false otherwise.  **/
+end_comment
+
+begin_function
+name|gint
+DECL|function|gimp_image_is_dirty (const GimpImage * image)
+name|gimp_image_is_dirty
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+return|return
+name|image
+operator|->
+name|dirty
+operator|!=
+literal|0
+return|;
 block|}
 end_function
 

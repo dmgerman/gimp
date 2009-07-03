@@ -272,9 +272,10 @@ name|disp_count
 operator|==
 literal|1
 operator|&&
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
+argument_list|)
 operator|&&
 name|shell
 operator|->

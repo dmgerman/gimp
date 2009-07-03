@@ -7656,13 +7656,10 @@ condition|)
 block|{
 name|dirty
 operator|=
-operator|(
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
-operator|!=
-literal|0
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 name|return_vals

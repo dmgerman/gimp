@@ -945,11 +945,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_image_is_dirty
+argument_list|(
 name|display
 operator|->
 name|image
-operator|->
-name|dirty
+argument_list|)
 condition|)
 name|gimp_display_close
 argument_list|(

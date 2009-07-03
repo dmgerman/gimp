@@ -1720,6 +1720,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_image_is_dirty
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  flush this image's displays  */
 end_comment

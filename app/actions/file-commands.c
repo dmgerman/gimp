@@ -890,9 +890,10 @@ comment|/*  Only save if the image has been modified, or if it is new.  */
 if|if
 condition|(
 operator|(
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
+argument_list|)
 operator|||
 operator|!
 name|GIMP_GUI_CONFIG
@@ -1170,11 +1171,12 @@ operator|&&
 name|saved
 operator|&&
 operator|!
+name|gimp_image_is_dirty
+argument_list|(
 name|display
 operator|->
 name|image
-operator|->
-name|dirty
+argument_list|)
 condition|)
 block|{
 name|gimp_display_close

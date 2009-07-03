@@ -1013,9 +1013,10 @@ break|break;
 block|}
 if|if
 condition|(
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
+argument_list|)
 condition|)
 name|title
 index|[
@@ -1065,9 +1066,10 @@ block|}
 if|if
 condition|(
 operator|!
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
+argument_list|)
 condition|)
 name|title
 index|[
@@ -1090,9 +1092,10 @@ case|:
 comment|/* dirty flag (long) */
 if|if
 condition|(
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
+argument_list|)
 condition|)
 name|i
 operator|+=
@@ -1120,9 +1123,10 @@ comment|/* clean flag (long) */
 if|if
 condition|(
 operator|!
+name|gimp_image_is_dirty
+argument_list|(
 name|image
-operator|->
-name|dirty
+argument_list|)
 condition|)
 name|i
 operator|+=
