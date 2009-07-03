@@ -319,6 +319,11 @@ name|gint
 name|undo_freeze_count
 decl_stmt|;
 comment|/*  counts the _freeze's         */
+DECL|member|export_dirty
+name|gint
+name|export_dirty
+decl_stmt|;
+comment|/*  'dirty' but for export       */
 DECL|member|instance_count
 name|gint
 name|instance_count
@@ -1725,6 +1730,29 @@ name|gint
 name|gimp_image_is_dirty
 parameter_list|(
 specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_image_is_export_dirty
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_export_clean_all
+parameter_list|(
 name|GimpImage
 modifier|*
 name|image

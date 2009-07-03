@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon288442df0103
+DECL|enum|__anon2b1c7fd80103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon288442df0203
+DECL|enum|__anon2b1c7fd80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2563,6 +2563,12 @@ operator|->
 name|undo_freeze_count
 operator|=
 literal|0
+expr_stmt|;
+name|image
+operator|->
+name|export_dirty
+operator|=
+literal|1
 expr_stmt|;
 name|image
 operator|->
@@ -8137,6 +8143,11 @@ operator|->
 name|dirty
 operator|++
 expr_stmt|;
+name|image
+operator|->
+name|export_dirty
+operator|++
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -8218,6 +8229,11 @@ expr_stmt|;
 name|image
 operator|->
 name|dirty
+operator|--
+expr_stmt|;
+name|image
+operator|->
+name|export_dirty
 operator|--
 expr_stmt|;
 name|g_signal_emit
@@ -8306,6 +8322,47 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_image_export_clean_all (GimpImage * image)
+name|gimp_image_export_clean_all
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|image
+operator|->
+name|export_dirty
+operator|=
+literal|0
+expr_stmt|;
+name|g_signal_emit
+argument_list|(
+name|image
+argument_list|,
+name|gimp_image_signals
+index|[
+name|CLEAN
+index|]
+argument_list|,
+literal|0
+argument_list|,
+name|GIMP_DIRTY_ALL
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
 comment|/**  * gimp_image_is_dirty:  * @image:  *  * Returns: True if the image is dirty, false otherwise.  **/
 end_comment
@@ -8325,6 +8382,31 @@ return|return
 name|image
 operator|->
 name|dirty
+operator|!=
+literal|0
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_is_export_dirty:  * @image:  *  * Returns: True if the image export is dirty, false otherwise.  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_is_export_dirty (const GimpImage * image)
+name|gimp_image_is_export_dirty
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|)
+block|{
+return|return
+name|image
+operator|->
+name|export_dirty
 operator|!=
 literal|0
 return|;

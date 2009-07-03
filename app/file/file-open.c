@@ -2380,7 +2380,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* set the image to clean  */
+comment|/* Set the image to clean. Note that export dirtiness is not set to    * clean here; we can only consider export clean after the first    * export    */
 name|gimp_image_clean_all
 argument_list|(
 name|image
