@@ -1285,9 +1285,6 @@ name|DECODE_EXIF_PROC
 argument_list|)
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|HAVE_EXIF
 name|GError
 modifier|*
 name|error
@@ -1318,8 +1315,6 @@ literal|"\nExif to XMP merge failed.\n"
 argument_list|)
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 block|}
 elseif|else
 if|if
