@@ -56,25 +56,6 @@ comment|/*  local function prototypes  */
 end_comment
 
 begin_function_decl
-name|gboolean
-name|xmp_merge_from_exifbuffer
-parameter_list|(
-name|XMPModel
-modifier|*
-name|xmp_model
-parameter_list|,
-name|gint32
-name|image_ID
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 specifier|static
 name|void
 name|exif_foreach_content_cb
