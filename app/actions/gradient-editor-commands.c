@@ -3224,7 +3224,7 @@ argument_list|,
 operator|&
 name|editor
 operator|->
-name|control_sel_r
+name|control_sel_l
 operator|->
 name|left_color
 argument_list|,
@@ -3254,7 +3254,7 @@ argument_list|,
 operator|&
 name|editor
 operator|->
-name|control_sel_r
+name|control_sel_l
 operator|->
 name|left_color
 argument_list|,
