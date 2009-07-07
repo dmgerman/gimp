@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f100030103
+DECL|enum|__anon29196a1d0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -4549,6 +4549,12 @@ name|GimpBezierDesc
 argument_list|,
 literal|1
 argument_list|)
+expr_stmt|;
+name|ret_bezdesc
+operator|->
+name|status
+operator|=
+name|CAIRO_STATUS_SUCCESS
 expr_stmt|;
 name|ret_bezdesc
 operator|->
