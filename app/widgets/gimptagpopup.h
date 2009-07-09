@@ -100,6 +100,11 @@ name|GimpComboTagEntry
 modifier|*
 name|combo_entry
 decl_stmt|;
+DECL|member|frame
+name|GtkWidget
+modifier|*
+name|frame
+decl_stmt|;
 DECL|member|alignment
 name|GtkWidget
 modifier|*
