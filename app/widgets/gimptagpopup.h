@@ -105,10 +105,10 @@ name|GtkWidget
 modifier|*
 name|alignment
 decl_stmt|;
-DECL|member|drawing_area
+DECL|member|tag_area
 name|GtkWidget
 modifier|*
-name|drawing_area
+name|tag_area
 decl_stmt|;
 DECL|member|context
 name|PangoContext

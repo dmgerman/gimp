@@ -165,7 +165,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2798f0420103
+DECL|enum|__anon2c4e718a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -691,7 +691,7 @@ name|alignment
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|drawing_area
+name|tag_area
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -859,17 +859,14 @@ argument_list|,
 name|alignment
 argument_list|)
 expr_stmt|;
-name|drawing_area
+name|tag_area
 operator|=
 name|gtk_drawing_area_new
 argument_list|()
 expr_stmt|;
 name|gtk_widget_add_events
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|drawing_area
-argument_list|)
+name|tag_area
 argument_list|,
 name|GDK_BUTTON_PRESS_MASK
 operator||
@@ -885,7 +882,7 @@ argument_list|(
 name|alignment
 argument_list|)
 argument_list|,
-name|drawing_area
+name|tag_area
 argument_list|)
 expr_stmt|;
 name|popup
@@ -896,9 +893,9 @@ name|alignment
 expr_stmt|;
 name|popup
 operator|->
-name|drawing_area
+name|tag_area
 operator|=
-name|drawing_area
+name|tag_area
 expr_stmt|;
 name|popup
 operator|->
@@ -1647,7 +1644,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|drawing_area
+name|tag_area
 operator|->
 name|requisition
 operator|.
@@ -1655,7 +1652,7 @@ name|width
 operator|=
 name|width
 expr_stmt|;
-name|drawing_area
+name|tag_area
 operator|->
 name|requisition
 operator|.
@@ -1733,7 +1730,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|drawing_area
+name|tag_area
 argument_list|,
 literal|"expose-event"
 argument_list|,
@@ -1747,7 +1744,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|drawing_area
+name|tag_area
 argument_list|,
 literal|"event"
 argument_list|,
@@ -3223,7 +3220,7 @@ name|window
 operator|!=
 name|popup
 operator|->
-name|drawing_area
+name|tag_area
 operator|->
 name|window
 operator|&&
@@ -5604,7 +5601,7 @@ name|gdk_window_scroll
 argument_list|(
 name|popup
 operator|->
-name|drawing_area
+name|tag_area
 operator|->
 name|window
 argument_list|,
