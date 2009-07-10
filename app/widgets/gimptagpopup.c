@@ -181,7 +181,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0bcee40103
+DECL|enum|__anon277002190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3123,12 +3123,6 @@ name|allocation
 operator|.
 name|y
 expr_stmt|;
-name|popup
-operator|->
-name|ignore_button_release
-operator|=
-name|FALSE
-expr_stmt|;
 name|gimp_tag_popup_handle_scrolling
 argument_list|(
 name|popup
@@ -3182,11 +3176,6 @@ operator|==
 name|widget
 operator|->
 name|window
-operator|&&
-operator|!
-name|popup
-operator|->
-name|ignore_button_release
 operator|&&
 name|gimp_tag_popup_button_scroll
 argument_list|(
