@@ -1805,6 +1805,11 @@ name|name
 init|=
 name|NULL
 decl_stmt|;
+name|gboolean
+name|is_imported
+init|=
+name|FALSE
+decl_stmt|;
 name|gint
 name|incr
 init|=
@@ -1822,14 +1827,22 @@ argument_list|,
 name|GIMP_FILE_IMPORT_SOURCE_URI_KEY
 argument_list|)
 expr_stmt|;
+comment|/* Note that as soon as the image is saved, it is not considered    * imported any longer (GIMP_FILE_IMPORT_SOURCE_URI_KEY is set to    * NULL)    */
+name|is_imported
+operator|=
+operator|(
+name|source
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
 comment|/* Calculate filename and format */
 if|if
 condition|(
 operator|!
-name|source
+name|is_imported
 condition|)
 block|{
-comment|/* As soon as the image is saved the source is forgotten, so the        * above condition is enough to figure out name and name format        */
 name|name
 operator|=
 name|g_strdup
@@ -1882,11 +1895,12 @@ name|image
 argument_list|)
 condition|)
 block|{
-specifier|const
-name|gchar
-modifier|*
-name|export_to
-init|=
+name|gboolean
+name|is_exported
+decl_stmt|;
+name|is_exported
+operator|=
+operator|(
 name|g_object_get_data
 argument_list|(
 name|G_OBJECT
@@ -1896,10 +1910,13 @@ argument_list|)
 argument_list|,
 name|GIMP_FILE_EXPORT_TO_URI_KEY
 argument_list|)
-decl_stmt|;
+operator|!=
+name|NULL
+operator|)
+expr_stmt|;
 if|if
 condition|(
-name|export_to
+name|is_exported
 condition|)
 name|export_status
 operator|=
@@ -1911,7 +1928,7 @@ expr_stmt|;
 elseif|else
 if|if
 condition|(
-name|source
+name|is_imported
 condition|)
 name|export_status
 operator|=
@@ -1930,7 +1947,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|source
+name|is_imported
 condition|)
 block|{
 name|export_status
