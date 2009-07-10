@@ -181,7 +181,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c6d810103
+DECL|enum|__anon2a3697160103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -712,6 +712,18 @@ operator|=
 name|gtk_frame_new
 argument_list|(
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gtk_frame_set_shadow_type
+argument_list|(
+name|GTK_FRAME
+argument_list|(
+name|popup
+operator|->
+name|frame
+argument_list|)
+argument_list|,
+name|GTK_SHADOW_OUT
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
