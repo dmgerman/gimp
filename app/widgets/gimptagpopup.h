@@ -167,10 +167,6 @@ DECL|member|arrows_visible
 name|gboolean
 name|arrows_visible
 decl_stmt|;
-DECL|member|ignore_button_release
-name|gboolean
-name|ignore_button_release
-decl_stmt|;
 DECL|member|upper_arrow_prelight
 name|gboolean
 name|upper_arrow_prelight
