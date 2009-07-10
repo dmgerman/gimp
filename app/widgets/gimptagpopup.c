@@ -141,6 +141,22 @@ name|GIMP_TAG_POPUP_MARGIN
 value|5
 end_define
 
+begin_define
+DECL|macro|GIMP_TAG_POPUP_SPACING_X
+define|#
+directive|define
+name|GIMP_TAG_POPUP_SPACING_X
+value|3
+end_define
+
+begin_define
+DECL|macro|GIMP_TAG_POPUP_SPACING_Y
+define|#
+directive|define
+name|GIMP_TAG_POPUP_SPACING_Y
+value|2
+end_define
+
 begin_struct
 DECL|struct|_PopupTagData
 struct|struct
@@ -165,7 +181,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon286e8cf70103
+DECL|enum|__anon2a0c6d810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2365,15 +2381,15 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|x
+operator|+
+name|GIMP_TAG_POPUP_SPACING_X
+operator|+
 name|tag_data
 operator|->
 name|bounds
 operator|.
 name|width
-operator|+
-name|x
-operator|+
-literal|3
 operator|+
 name|GIMP_TAG_POPUP_MARGIN
 operator|>
@@ -2388,7 +2404,7 @@ name|y
 operator|+=
 name|line_height
 operator|+
-literal|2
+name|GIMP_TAG_POPUP_SPACING_Y
 expr_stmt|;
 block|}
 name|tag_data
@@ -2433,10 +2449,6 @@ operator|==
 name|GTK_TEXT_DIR_RTL
 condition|)
 block|{
-name|GList
-modifier|*
-name|iterator
-decl_stmt|;
 for|for
 control|(
 name|i
