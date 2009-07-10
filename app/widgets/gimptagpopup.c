@@ -181,7 +181,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon277002190103
+DECL|enum|__anon2a51dc660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3923,9 +3923,7 @@ operator|=
 name|button_event
 operator|->
 name|y
-expr_stmt|;
-name|y
-operator|+=
+operator|+
 name|popup
 operator|->
 name|scroll_y
@@ -4061,9 +4059,7 @@ operator|=
 name|motion_event
 operator|->
 name|y
-expr_stmt|;
-name|y
-operator|+=
+operator|+
 name|popup
 operator|->
 name|scroll_y
@@ -4163,8 +4159,8 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
-break|break;
 block|}
+break|break;
 block|}
 block|}
 block|}
@@ -4219,9 +4215,7 @@ operator|=
 name|button_event
 operator|->
 name|y
-expr_stmt|;
-name|y
-operator|+=
+operator|+
 name|popup
 operator|->
 name|scroll_y
