@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a04cfbc0103
+DECL|enum|__anon2c1a14250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3730,8 +3730,6 @@ name|GIMP_TAG_POPUP_PADDING
 operator|)
 operator|*
 name|PANGO_SCALE
-operator|+
-name|GIMP_TAG_POPUP_PADDING
 argument_list|,
 operator|(
 name|tag_data
@@ -3750,6 +3748,12 @@ operator|*
 name|PANGO_SCALE
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gtk_paint_layout (style, window,                         tag_data->state,                         TRUE,&event->area, widget, NULL,                         tag_data->bounds.x + GIMP_TAG_POPUP_PADDING,                         tag_data->bounds.y - popup->scroll_y +                         GIMP_TAG_POPUP_PADDING,                         popup->layout);
+endif|#
+directive|endif
 if|if
 condition|(
 name|tag_data
