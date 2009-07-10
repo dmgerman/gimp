@@ -139,11 +139,6 @@ DECL|member|tag_count
 name|gint
 name|tag_count
 decl_stmt|;
-DECL|member|close_rectangles
-name|GList
-modifier|*
-name|close_rectangles
-decl_stmt|;
 DECL|member|timeout_id
 name|guint
 name|timeout_id
