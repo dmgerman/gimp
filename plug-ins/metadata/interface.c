@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1f9450108
+DECL|struct|__anon295bf8f50108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac1f9450208
+DECL|struct|__anon295bf8f50208
 block|{
 DECL|member|schema
 specifier|const
@@ -1917,6 +1917,8 @@ argument_list|,
 name|type
 argument_list|,
 name|GTK_BUTTONS_OK
+argument_list|,
+literal|"%s"
 argument_list|,
 name|message
 argument_list|)
