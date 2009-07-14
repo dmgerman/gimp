@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60103
+DECL|enum|__anon2c08576e0103
 typedef|typedef
 enum|enum
 block|{
@@ -250,7 +250,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60203
+DECL|enum|__anon2c08576e0203
 typedef|typedef
 enum|enum
 block|{
@@ -319,7 +319,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60303
+DECL|enum|__anon2c08576e0303
 typedef|typedef
 enum|enum
 block|{
@@ -344,7 +344,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60403
+DECL|enum|__anon2c08576e0403
 typedef|typedef
 enum|enum
 block|{
@@ -427,7 +427,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60503
+DECL|enum|__anon2c08576e0503
 typedef|typedef
 enum|enum
 block|{
@@ -472,7 +472,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60603
+DECL|enum|__anon2c08576e0603
 typedef|typedef
 enum|enum
 block|{
@@ -504,7 +504,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60703
+DECL|enum|__anon2c08576e0703
 typedef|typedef
 enum|enum
 block|{
@@ -531,7 +531,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60803
+DECL|enum|__anon2c08576e0803
 typedef|typedef
 enum|enum
 block|{
@@ -564,7 +564,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60903
+DECL|enum|__anon2c08576e0903
 typedef|typedef
 enum|enum
 block|{
@@ -658,7 +658,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60a03
+DECL|enum|__anon2c08576e0a03
 typedef|typedef
 enum|enum
 block|{
@@ -744,7 +744,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60b03
+DECL|enum|__anon2c08576e0b03
 typedef|typedef
 enum|enum
 block|{
@@ -800,7 +800,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60c03
+DECL|enum|__anon2c08576e0c03
 typedef|typedef
 enum|enum
 block|{
@@ -841,7 +841,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60d03
+DECL|enum|__anon2c08576e0d03
 typedef|typedef
 enum|enum
 block|{
@@ -873,7 +873,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60e03
+DECL|enum|__anon2c08576e0e03
 typedef|typedef
 enum|enum
 block|{
@@ -901,7 +901,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c60f03
+DECL|enum|__anon2c08576e0f03
 typedef|typedef
 enum|enum
 block|{
@@ -952,7 +952,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61003
+DECL|enum|__anon2c08576e1003
 typedef|typedef
 enum|enum
 block|{
@@ -984,7 +984,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61103
+DECL|enum|__anon2c08576e1103
 typedef|typedef
 enum|enum
 block|{
@@ -1056,7 +1056,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61203
+DECL|enum|__anon2c08576e1203
 typedef|typedef
 enum|enum
 block|{
@@ -1081,7 +1081,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61303
+DECL|enum|__anon2c08576e1303
 typedef|typedef
 enum|enum
 block|{
@@ -1129,7 +1129,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61403
+DECL|enum|__anon2c08576e1403
 typedef|typedef
 enum|enum
 block|{
@@ -1161,7 +1161,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61503
+DECL|enum|__anon2c08576e1503
 typedef|typedef
 enum|enum
 block|{
@@ -1189,7 +1189,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61603
+DECL|enum|__anon2c08576e1603
 typedef|typedef
 enum|enum
 block|{
@@ -1221,7 +1221,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61703
+DECL|enum|__anon2c08576e1703
 typedef|typedef
 enum|enum
 block|{
@@ -1243,7 +1243,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61803
+DECL|enum|__anon2c08576e1803
 typedef|typedef
 enum|enum
 block|{
@@ -1279,7 +1279,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61903
+DECL|enum|__anon2c08576e1903
 typedef|typedef
 enum|enum
 block|{
@@ -1312,7 +1312,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61a03
+DECL|enum|__anon2c08576e1a03
 typedef|typedef
 enum|enum
 block|{
@@ -1360,7 +1360,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61b03
+DECL|enum|__anon2c08576e1b03
 typedef|typedef
 enum|enum
 block|{
@@ -1388,7 +1388,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61c03
+DECL|enum|__anon2c08576e1c03
 typedef|typedef
 enum|enum
 block|{
@@ -1410,7 +1410,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61d03
+DECL|enum|__anon2c08576e1d03
 typedef|typedef
 enum|enum
 block|{
@@ -1434,7 +1434,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61e03
+DECL|enum|__anon2c08576e1e03
 typedef|typedef
 enum|enum
 block|{
@@ -1458,7 +1458,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon28e328c61f03
+DECL|enum|__anon2c08576e1f03
 typedef|typedef
 enum|enum
 block|{
@@ -1537,7 +1537,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e328c62008
+DECL|struct|__anon2c08576e2008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1700,7 +1700,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e328c62108
+DECL|struct|__anon2c08576e2108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -2884,147 +2884,6 @@ return|return
 operator|-
 literal|1
 return|;
-block|}
-return|return
-literal|0
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|read_extended_data_block (FILE * f,gint image_ID,guint total_len,PSPimage * ia)
-name|read_extended_data_block
-parameter_list|(
-name|FILE
-modifier|*
-name|f
-parameter_list|,
-name|gint
-name|image_ID
-parameter_list|,
-name|guint
-name|total_len
-parameter_list|,
-name|PSPimage
-modifier|*
-name|ia
-parameter_list|)
-block|{
-name|long
-name|data_start
-decl_stmt|;
-name|guchar
-name|buf
-index|[
-literal|4
-index|]
-decl_stmt|;
-name|guint16
-name|keyword
-decl_stmt|;
-name|guint32
-name|length
-decl_stmt|;
-name|data_start
-operator|=
-name|ftell
-argument_list|(
-name|f
-argument_list|)
-expr_stmt|;
-while|while
-condition|(
-name|ftell
-argument_list|(
-name|f
-argument_list|)
-operator|<
-name|data_start
-operator|+
-name|total_len
-condition|)
-block|{
-if|if
-condition|(
-name|fread
-argument_list|(
-name|buf
-argument_list|,
-literal|4
-argument_list|,
-literal|1
-argument_list|,
-name|f
-argument_list|)
-operator|<
-literal|1
-operator|||
-name|fread
-argument_list|(
-operator|&
-name|keyword
-argument_list|,
-literal|2
-argument_list|,
-literal|1
-argument_list|,
-name|f
-argument_list|)
-operator|<
-literal|1
-operator|||
-name|fread
-argument_list|(
-operator|&
-name|length
-argument_list|,
-literal|4
-argument_list|,
-literal|1
-argument_list|,
-name|f
-argument_list|)
-operator|<
-literal|1
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Error reading extended data chunk"
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-if|if
-condition|(
-name|memcmp
-argument_list|(
-name|buf
-argument_list|,
-literal|"~FL\0"
-argument_list|,
-literal|4
-argument_list|)
-operator|!=
-literal|0
-condition|)
-block|{
-name|g_message
-argument_list|(
-literal|"Invalid extended data chunk header"
-argument_list|)
-expr_stmt|;
-return|return
-operator|-
-literal|1
-return|;
-block|}
-comment|/* TODO Read keyword and assign it to PSPExtendedDataID */
 block|}
 return|return
 literal|0
