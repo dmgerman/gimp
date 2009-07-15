@@ -98,7 +98,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2921a5470108
+DECL|struct|__anon295a09e70108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -559,12 +559,13 @@ expr_stmt|;
 comment|/*  kids, don't try this at home!  */
 name|container
 operator|=
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 expr_stmt|;
 name|children
 operator|=
