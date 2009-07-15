@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2463b00103
+DECL|enum|__anon2bd3f2010103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2463b00208
+DECL|struct|__anon2bd3f2010208
 block|{
 DECL|member|title
 specifier|const
@@ -833,12 +833,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table
@@ -1961,12 +1962,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|toolbar
@@ -2028,12 +2030,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|scrolled_win

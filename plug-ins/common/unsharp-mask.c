@@ -76,7 +76,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f311f70108
+DECL|struct|__anon2991ec4f0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f311f70208
+DECL|struct|__anon2991ec4f0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3434,12 +3434,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

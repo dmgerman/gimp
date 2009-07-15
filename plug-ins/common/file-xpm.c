@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb5e3e0108
+DECL|struct|__anon27ecdcf20108
 block|{
 DECL|member|threshold
 name|gint
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2acb5e3e0208
+DECL|struct|__anon27ecdcf20208
 block|{
 DECL|member|r
 name|guchar
@@ -3272,12 +3272,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

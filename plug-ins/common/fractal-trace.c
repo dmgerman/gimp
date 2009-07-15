@@ -184,7 +184,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon29307ac10103
+DECL|enum|__anon29c533f30103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -204,7 +204,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29307ac10208
+DECL|struct|__anon29c533f30208
 block|{
 DECL|member|x1
 name|gdouble
@@ -411,7 +411,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29307ac10308
+DECL|struct|__anon29c533f30308
 block|{
 DECL|member|x1
 name|gint
@@ -454,7 +454,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29307ac10408
+DECL|struct|__anon29c533f30408
 block|{
 DECL|member|width
 name|gint
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29307ac10508
+DECL|struct|__anon29c533f30508
 block|{
 DECL|member|r
 name|guchar
@@ -2914,7 +2914,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29307ac10608
+DECL|struct|__anon29c533f30608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3943,12 +3943,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|mainbox

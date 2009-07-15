@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299178c40103
+DECL|enum|__anon2a08b9b40103
 block|{
 DECL|enumerator|CURL_COLORS_FG_BG
 name|CURL_COLORS_FG_BG
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299178c40203
+DECL|enum|__anon2a08b9b40203
 block|{
 DECL|enumerator|CURL_ORIENTATION_VERTICAL
 name|CURL_ORIENTATION_VERTICAL
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299178c40303
+DECL|enum|__anon2a08b9b40303
 block|{
 DECL|enumerator|CURL_EDGE_LOWER_RIGHT
 name|CURL_EDGE_LOWER_RIGHT
@@ -209,7 +209,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299178c40408
+DECL|struct|__anon2a08b9b40408
 block|{
 DECL|member|colors
 name|CurlColors
@@ -1625,12 +1625,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|vbox

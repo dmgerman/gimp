@@ -60905,7 +60905,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29fd2c030108
+DECL|struct|__anon2b8ccd5f0108
 block|{
 DECL|member|pattern_number
 name|gint
@@ -62139,12 +62139,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|hbox

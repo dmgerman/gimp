@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e199e00103
+DECL|enum|__anon2a3011c70103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e199e00208
+DECL|struct|__anon2a3011c70208
 block|{
 DECL|member|interlace
 name|gint
@@ -4013,12 +4013,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

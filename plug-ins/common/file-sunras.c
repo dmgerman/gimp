@@ -127,7 +127,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa67e8d0108
+DECL|struct|__anon29da4eff0108
 block|{
 DECL|member|l_ras_magic
 name|L_CARD32
@@ -216,7 +216,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa67e8d0208
+DECL|struct|__anon29da4eff0208
 block|{
 DECL|member|val
 name|gint
@@ -822,7 +822,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa67e8d0308
+DECL|struct|__anon29da4eff0308
 block|{
 DECL|member|rle
 name|gboolean
@@ -8100,12 +8100,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|frame

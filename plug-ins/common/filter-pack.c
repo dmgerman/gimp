@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0da640108
+DECL|struct|__anon2b3229ac0108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0da640208
+DECL|struct|__anon2b3229ac0208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad0da640303
+DECL|enum|__anon2b3229ac0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0da640403
+DECL|enum|__anon2b3229ac0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0da640503
+DECL|enum|__anon2b3229ac0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0da640603
+DECL|enum|__anon2b3229ac0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad0da640703
+DECL|enum|__anon2b3229ac0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0da640808
+DECL|struct|__anon2b3229ac0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0da640908
+DECL|struct|__anon2b3229ac0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0da640a08
+DECL|struct|__anon2b3229ac0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2ad0da640b08
+DECL|struct|__anon2b3229ac0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6418,12 +6418,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

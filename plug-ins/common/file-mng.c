@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4138ca0103
+DECL|enum|__anon2c8b5a200103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4138ca0203
+DECL|enum|__anon2c8b5a200203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -4707,12 +4707,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

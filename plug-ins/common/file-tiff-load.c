@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca90dc0108
+DECL|struct|__anon2c02d3d10108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca90dc0208
+DECL|struct|__anon2c02d3d10208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ca90dc0308
+DECL|struct|__anon2c02d3d10308
 block|{
 DECL|member|o_pages
 name|gint
@@ -1788,12 +1788,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|vbox

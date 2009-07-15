@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c06810103
+DECL|enum|__anon29bdedc40103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c06810203
+DECL|enum|__anon29bdedc40203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c06810308
+DECL|struct|__anon29bdedc40308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c06810408
+DECL|struct|__anon29bdedc40408
 block|{
 DECL|member|menu
 name|gchar
@@ -2239,14 +2239,15 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|browser
 operator|->
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|browser

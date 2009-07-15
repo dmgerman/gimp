@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e341e00103
+DECL|enum|__anon2b0c71130103
 block|{
 DECL|enumerator|PROJECTION
 name|PROJECTION
@@ -200,7 +200,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e341e00208
+DECL|struct|__anon2b0c71130208
 block|{
 DECL|member|transformSequence
 name|TransformType
@@ -239,7 +239,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e341e00308
+DECL|struct|__anon2b0c71130308
 block|{
 DECL|member|info
 name|ExpInfo
@@ -4240,12 +4240,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|vbox

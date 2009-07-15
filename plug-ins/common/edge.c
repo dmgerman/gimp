@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dfdc260103
+DECL|enum|__anon29698a100103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29dfdc260208
+DECL|struct|__anon29698a100208
 block|{
 DECL|member|amount
 name|gdouble
@@ -3172,12 +3172,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

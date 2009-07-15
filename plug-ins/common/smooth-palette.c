@@ -300,7 +300,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b29c9330108
+DECL|struct|__anon289e73dc0108
 block|{
 DECL|member|width
 name|gint
@@ -2177,12 +2177,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|sizeentry

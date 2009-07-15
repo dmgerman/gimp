@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda420a0108
+DECL|struct|__anon288004700108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bda420a0208
+DECL|struct|__anon288004700208
 block|{
 DECL|member|run
 name|gboolean
@@ -6764,12 +6764,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

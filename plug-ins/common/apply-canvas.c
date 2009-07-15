@@ -40883,7 +40883,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aacd7c10103
+DECL|enum|__anon29c3818d0103
 block|{
 DECL|enumerator|TOP_RIGHT
 name|TOP_RIGHT
@@ -40903,7 +40903,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aacd7c10208
+DECL|struct|__anon29c3818d0208
 block|{
 DECL|member|direction
 name|gint
@@ -41644,12 +41644,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

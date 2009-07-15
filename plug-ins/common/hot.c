@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d9c3440108
+DECL|struct|__anon2c0c67d20108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d9c3440203
+DECL|enum|__anon2c0c67d20203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28d9c3440303
+DECL|enum|__anon2c0c67d20303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon28d9c3440408
+DECL|struct|__anon2c0c67d20408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -2444,12 +2444,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|hbox

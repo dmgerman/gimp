@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29144df60103
+DECL|enum|__anon276842cd0103
 block|{
 DECL|enumerator|MBLUR_LINEAR
 name|MBLUR_LINEAR
@@ -100,7 +100,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29144df60208
+DECL|struct|__anon276842cd0208
 block|{
 DECL|member|mblur_type
 name|gint32
@@ -4600,12 +4600,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

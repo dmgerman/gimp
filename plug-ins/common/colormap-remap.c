@@ -1649,7 +1649,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29100b1f0103
+DECL|enum|__anon27a0a6e20103
 block|{
 DECL|enumerator|COLOR_INDEX
 name|COLOR_INDEX
@@ -2453,12 +2453,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|vbox

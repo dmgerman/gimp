@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29548ae80108
+DECL|struct|__anon299ac08e0108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29548ae80208
+DECL|struct|__anon299ac08e0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3986,12 +3986,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

@@ -54,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c9d67b0108
+DECL|struct|__anon2a1661620108
 block|{
 DECL|member|spread_amount_x
 name|gdouble
@@ -677,7 +677,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c9d67b0208
+DECL|struct|__anon2a1661620208
 block|{
 DECL|member|pft
 name|GimpPixelFetcher
@@ -1428,12 +1428,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

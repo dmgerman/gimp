@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d5b4650103
+DECL|enum|__anon2782e1b90103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d5b4650208
+DECL|struct|__anon2782e1b90208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d5b4650308
+DECL|struct|__anon2782e1b90308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d5b4650408
+DECL|struct|__anon2782e1b90408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d5b4650508
+DECL|struct|__anon2782e1b90508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -2715,12 +2715,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

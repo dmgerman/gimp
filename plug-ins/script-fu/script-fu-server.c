@@ -419,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ca4500108
+DECL|struct|__anon28b1e4920108
 block|{
 DECL|member|command
 name|gchar
@@ -443,7 +443,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ca4500208
+DECL|struct|__anon28b1e4920208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -2795,12 +2795,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

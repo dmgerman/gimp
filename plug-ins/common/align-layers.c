@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2935966b0103
+DECL|enum|__anon28afa85d0103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2935966b0203
+DECL|enum|__anon28afa85d0203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2935966b0303
+DECL|enum|__anon28afa85d0303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2935966b0403
+DECL|enum|__anon28afa85d0403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2935966b0508
+DECL|struct|__anon28afa85d0508
 block|{
 DECL|member|h_style
 name|gint
@@ -1648,12 +1648,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

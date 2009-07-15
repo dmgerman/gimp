@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8646c40108
+DECL|struct|__anon2c9547940108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c8646c40203
+DECL|enum|__anon2c9547940203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8646c40308
+DECL|struct|__anon2c9547940308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8646c40408
+DECL|struct|__anon2c9547940408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1402,12 +1402,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

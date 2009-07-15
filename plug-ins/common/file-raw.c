@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3b3f840103
+DECL|enum|__anon2b3a27220103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c3b3f840203
+DECL|enum|__anon2b3a27220203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -184,7 +184,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b3f840308
+DECL|struct|__anon2b3a27220308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3b3f840408
+DECL|struct|__anon2b3a27220408
 block|{
 DECL|member|fp
 name|FILE
@@ -5093,12 +5093,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
@@ -6085,12 +6086,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

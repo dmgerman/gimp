@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ffef30108
+DECL|struct|__anon2c1c809c0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ffef30208
+DECL|struct|__anon2c1c809c0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ffef30308
+DECL|struct|__anon2c1c809c0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ffef30408
+DECL|struct|__anon2c1c809c0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4ffef30508
+DECL|struct|__anon2c1c809c0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -6122,12 +6122,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

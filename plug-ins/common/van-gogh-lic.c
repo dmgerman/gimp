@@ -79,7 +79,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2afcfc8b0103
+DECL|enum|__anon2c4b3f9d0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -127,7 +127,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afcfc8b0208
+DECL|struct|__anon2c4b3f9d0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2993,12 +2993,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|vbox

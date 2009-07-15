@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2933e33c0108
+DECL|struct|__anon29e9f20d0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2933e33c0208
+DECL|struct|__anon29e9f20d0208
 block|{
 DECL|member|channels
 name|gint
@@ -1943,12 +1943,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
