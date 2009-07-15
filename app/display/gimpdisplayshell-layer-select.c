@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791c8000108
+DECL|struct|__anon2c85a0c50108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -315,11 +315,12 @@ argument_list|)
 expr_stmt|;
 name|gdk_keyboard_grab
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|layer_select
 operator|->
 name|shell
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|,

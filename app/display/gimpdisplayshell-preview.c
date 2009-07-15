@@ -1296,14 +1296,12 @@ name|drawable
 argument_list|,
 name|GDK_DRAWABLE
 argument_list|(
-name|GTK_WIDGET
+name|gtk_widget_get_window
 argument_list|(
 name|shell
 operator|->
 name|canvas
 argument_list|)
-operator|->
-name|window
 argument_list|)
 argument_list|,
 name|mask

@@ -797,11 +797,12 @@ argument_list|)
 condition|)
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|shell
 operator|->
 name|canvas
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
