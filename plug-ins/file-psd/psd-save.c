@@ -1439,7 +1439,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|write_gint16
+name|write_gchar
 argument_list|(
 name|fd
 argument_list|,
