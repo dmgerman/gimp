@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288004700108
+DECL|struct|__anon2be350bd0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon288004700208
+DECL|struct|__anon2be350bd0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3608,6 +3608,9 @@ operator|!
 name|comment
 condition|;
 name|i
+operator|++
+operator|,
+name|text
 operator|++
 control|)
 block|{
