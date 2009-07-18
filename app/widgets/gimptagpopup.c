@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c500990103
+DECL|enum|__anon2a2411a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1989,16 +1989,9 @@ name|popup
 operator|->
 name|combo_entry
 operator|=
-name|g_value_get_object
+name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
-expr_stmt|;
-name|g_object_ref
-argument_list|(
-name|popup
-operator|->
-name|combo_entry
 argument_list|)
 expr_stmt|;
 break|break;

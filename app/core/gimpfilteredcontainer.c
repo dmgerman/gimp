@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac017b0103
+DECL|enum|__anon2be6c5670103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bac017b0203
+DECL|enum|__anon2be6c5670203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -834,16 +834,9 @@ name|filtered_container
 operator|->
 name|src_container
 operator|=
-name|g_value_get_object
+name|g_value_dup_object
 argument_list|(
 name|value
-argument_list|)
-expr_stmt|;
-name|g_object_ref
-argument_list|(
-name|filtered_container
-operator|->
-name|src_container
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
