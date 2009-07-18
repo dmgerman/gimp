@@ -6979,23 +6979,6 @@ name|prefs_check_button_add
 argument_list|(
 name|object
 argument_list|,
-literal|"menu-mnemonics"
-argument_list|,
-name|_
-argument_list|(
-literal|"Show menu _mnemonics (access keys)"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
 literal|"can-change-accels"
 argument_list|,
 name|_
@@ -9483,7 +9466,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27692a340108
+DECL|struct|__anon2bf0b0600108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10650,7 +10633,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27692a340208
+DECL|struct|__anon2bf0b0600208
 block|{
 DECL|member|label
 specifier|const
@@ -11810,7 +11793,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27692a340308
+DECL|struct|__anon2bf0b0600308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11965,7 +11948,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27692a340408
+DECL|struct|__anon2bf0b0600408
 block|{
 DECL|member|tree_label
 specifier|const

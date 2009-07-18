@@ -245,15 +245,12 @@ end_function
 begin_function
 name|GimpActionFactory
 modifier|*
-DECL|function|gimp_action_factory_new (Gimp * gimp,gboolean mnemonics)
+DECL|function|gimp_action_factory_new (Gimp * gimp)
 name|gimp_action_factory_new
 parameter_list|(
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|gboolean
-name|mnemonics
 parameter_list|)
 block|{
 name|GimpActionFactory
@@ -284,16 +281,6 @@ operator|->
 name|gimp
 operator|=
 name|gimp
-expr_stmt|;
-name|factory
-operator|->
-name|mnemonics
-operator|=
-name|mnemonics
-condition|?
-name|TRUE
-else|:
-name|FALSE
 expr_stmt|;
 return|return
 name|factory
@@ -538,10 +525,6 @@ argument_list|,
 name|entry
 operator|->
 name|stock_id
-argument_list|,
-name|factory
-operator|->
-name|mnemonics
 argument_list|,
 name|user_data
 argument_list|,
