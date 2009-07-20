@@ -69,6 +69,12 @@ directive|include
 file|"gimpuimanager.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|GObject
@@ -623,6 +629,30 @@ argument_list|,
 name|parent
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"Setting dock '%s' [%p] transient for '%s' [%p]"
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+argument_list|,
+name|dock
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|parent
+argument_list|)
+argument_list|,
+name|parent
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|parent
@@ -763,6 +793,23 @@ name|dock
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"Setting dock '%s' [%p] transient for NULL"
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+argument_list|,
+name|dock
 argument_list|)
 expr_stmt|;
 block|}
