@@ -84,7 +84,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aceb3150108
+DECL|struct|__anon2a3d64120108
 typedef|typedef
 struct|struct
 block|{
@@ -124,7 +124,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2aceb3150208
+DECL|struct|__anon2a3d64120208
 typedef|typedef
 struct|struct
 block|{
@@ -380,28 +380,6 @@ parameter_list|,
 name|double
 modifier|*
 name|bmax
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|extern
-name|void
-name|sort_control_points
-parameter_list|(
-name|control_point
-modifier|*
-name|cps
-parameter_list|,
-name|int
-name|ncps
-parameter_list|,
-name|double
-function_decl|(
-modifier|*
-name|metric
-function_decl|)
-parameter_list|()
 parameter_list|)
 function_decl|;
 end_function_decl
