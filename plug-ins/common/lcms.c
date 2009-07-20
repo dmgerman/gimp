@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8bf76f0103
+DECL|enum|__anon2b67089d0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8bf76f0203
+DECL|enum|__anon2b67089d0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8bf76f0308
+DECL|struct|__anon2b67089d0308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8bf76f0408
+DECL|struct|__anon2b67089d0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -4385,11 +4385,30 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+if|#
+directive|if
+name|GLIB_CHECK_VERSION
+argument_list|(
+literal|2
+operator|,
+literal|21
+operator|,
+literal|3
+argument_list|)
+name|g_mapped_file_unref
+argument_list|(
+name|file
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|g_mapped_file_free
 argument_list|(
 name|file
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|profile
 return|;
