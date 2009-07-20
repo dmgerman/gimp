@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7ebee60103
+DECL|enum|__anon2c26295f0103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7ebee60203
+DECL|enum|__anon2c26295f0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -5136,14 +5136,7 @@ operator|->
 name|widget
 condition|)
 continue|continue;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: implement session info deletion
-endif|#
-directive|endif
+comment|/* FIXME: implement session info deletion */
 block|}
 block|}
 end_function

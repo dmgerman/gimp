@@ -3822,14 +3822,7 @@ argument_list|(
 name|parent
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: fix GtkWrapBox child requisition/allocation instead of hacking badly (bug #162500).
-endif|#
-directive|endif
+comment|/* FIXME: fix GtkWrapBox child requisition/allocation instead of hacking badly (bug #162500). */
 name|gtk_widget_size_request
 argument_list|(
 name|area

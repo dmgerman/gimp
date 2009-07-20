@@ -80,22 +80,9 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|GIMP_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
+end_comment
 
 begin_undef
 undef|#
@@ -273,7 +260,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50103
+DECL|enum|__anon2c716f8f0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -473,7 +460,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50203
+DECL|enum|__anon2c716f8f0203
 block|{
 DECL|enumerator|PTYP_NOT_SUPPORTED
 name|PTYP_NOT_SUPPORTED
@@ -533,7 +520,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50303
+DECL|enum|__anon2c716f8f0303
 block|{
 DECL|enumerator|XJT_IMAGE_PARASITE
 name|XJT_IMAGE_PARASITE
@@ -563,7 +550,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50403
+DECL|enum|__anon2c716f8f0403
 block|{
 DECL|enumerator|XJT_RGB
 name|XJT_RGB
@@ -585,7 +572,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50503
+DECL|enum|__anon2c716f8f0503
 block|{
 DECL|enumerator|XJT_PATHTYPE_UNDEF
 name|XJT_PATHTYPE_UNDEF
@@ -605,7 +592,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50603
+DECL|enum|__anon2c716f8f0603
 block|{
 DECL|enumerator|XJT_UNIT_PIXEL
 name|XJT_UNIT_PIXEL
@@ -640,7 +627,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c250cf50703
+DECL|enum|__anon2c716f8f0703
 block|{
 DECL|enumerator|XJT_NORMAL_MODE
 name|XJT_NORMAL_MODE
@@ -765,7 +752,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50808
+DECL|struct|__anon2c716f8f0808
 block|{
 DECL|member|prop_id
 name|t_proptype
@@ -801,7 +788,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50908
+DECL|struct|__anon2c716f8f0908
 block|{
 DECL|member|int_val1
 name|gint32
@@ -850,7 +837,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50a08
+DECL|struct|__anon2c716f8f0a08
 block|{
 DECL|member|parasite_type
 name|t_parasitetype
@@ -887,7 +874,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50b08
+DECL|struct|__anon2c716f8f0b08
 block|{
 DECL|member|path_type
 name|gint32
@@ -937,7 +924,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50c08
+DECL|struct|__anon2c716f8f0c08
 block|{
 DECL|member|active_channel
 name|gint
@@ -1011,7 +998,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50d08
+DECL|struct|__anon2c716f8f0d08
 block|{
 DECL|member|active_layer
 name|gint
@@ -1096,7 +1083,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50e08
+DECL|struct|__anon2c716f8f0e08
 block|{
 DECL|member|position
 name|gint32
@@ -1120,7 +1107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c250cf50f08
+DECL|struct|__anon2c716f8f0f08
 block|{
 DECL|member|version
 name|gchar

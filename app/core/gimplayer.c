@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2bcfa40103
+DECL|enum|__anon29c02d610103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2bcfa40203
+DECL|enum|__anon29c02d610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3532,14 +3532,7 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: make interpolated transformations work on layers without alpha
-endif|#
-directive|endif
+comment|/* FIXME: make interpolated transformations work on layers without alpha */
 if|if
 condition|(
 name|interpolation_type

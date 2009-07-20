@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cf8270103
+DECL|enum|__anon2c0b0a050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3810,14 +3810,7 @@ name|curve
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|: FIXME: support n_samples != curve->n_samples
-endif|#
-directive|endif
+comment|/* FIXME: support n_samples != curve->n_samples */
 name|g_return_if_fail
 argument_list|(
 name|n_samples

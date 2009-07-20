@@ -147,7 +147,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2aaf6ee20108
+DECL|struct|__anon2bcbcb400108
 block|{
 DECL|member|randomize
 name|gint
@@ -1183,14 +1183,7 @@ name|gdouble
 modifier|*
 name|g
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: "reverse" hardcoded to FALSE.
-endif|#
-directive|endif
+comment|/* FIXME: "reverse" hardcoded to FALSE. */
 name|gimp_gradient_get_uniform_samples
 argument_list|(
 name|name
