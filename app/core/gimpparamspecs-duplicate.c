@@ -51,22 +51,9 @@ directive|include
 file|"gimpparamspecs-duplicate.h"
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: this code is not yet general as it should be (gegl tool only atm)
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* FIXME: this code is not yet general as it should be (gegl tool only atm) */
+end_comment
 
 begin_function
 name|GParamSpec

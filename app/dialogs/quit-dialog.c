@@ -300,14 +300,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: need container of dirty images
-endif|#
-directive|endif
+comment|/* FIXME: need container of dirty images */
 name|images
 operator|=
 name|gimp_displays_get_dirty_images

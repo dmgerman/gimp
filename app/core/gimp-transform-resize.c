@@ -154,7 +154,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1dfa20108
+DECL|struct|__anon2a0e10820108
 block|{
 DECL|member|x
 DECL|member|y
@@ -172,7 +172,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aa1dfa20208
+DECL|struct|__anon2a0e10820208
 block|{
 DECL|member|a
 DECL|member|b
@@ -870,6 +870,11 @@ argument_list|,
 name|y2
 argument_list|)
 expr_stmt|;
+break|break;
+case|case
+name|GIMP_TRANSFORM_RESIZE_CLIP
+case|:
+comment|/* Remove warning about not handling all enum values. We handle        * this case in the beginning of the function        */
 break|break;
 block|}
 comment|/* ensure that resulting rectangle has at least area 1 */

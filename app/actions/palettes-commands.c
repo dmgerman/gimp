@@ -271,14 +271,7 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: reimplement palettes_merge_callback()
-endif|#
-directive|endif
+comment|/* FIXME: reimplement palettes_merge_callback() */
 if|#
 directive|if
 literal|0

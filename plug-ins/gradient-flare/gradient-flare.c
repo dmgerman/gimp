@@ -352,7 +352,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3de7e90103
+DECL|enum|__anon2a33810b0103
 block|{
 DECL|enumerator|GF_NORMAL
 name|GF_NORMAL
@@ -379,7 +379,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3de7e90203
+DECL|enum|__anon2a33810b0203
 block|{
 DECL|enumerator|GF_CIRCLE
 name|GF_CIRCLE
@@ -400,7 +400,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90308
+DECL|struct|__anon2a33810b0308
 block|{
 DECL|member|name
 name|gchar
@@ -541,7 +541,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90408
+DECL|struct|__anon2a33810b0408
 block|{
 DECL|member|fp
 name|FILE
@@ -561,7 +561,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3de7e90503
+DECL|enum|__anon2a33810b0503
 block|{
 DECL|enumerator|PAGE_SETTINGS
 name|PAGE_SETTINGS
@@ -589,7 +589,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90608
+DECL|struct|__anon2a33810b0608
 block|{
 DECL|member|init
 name|gint
@@ -611,7 +611,7 @@ modifier|*
 name|preview
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b3de7e90708
+DECL|struct|__anon2a33810b0708
 block|{
 DECL|member|x0
 DECL|member|y0
@@ -690,7 +690,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90808
+DECL|struct|__anon2a33810b0808
 block|{
 DECL|member|init
 name|gint
@@ -760,7 +760,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90908
+DECL|struct|__anon2a33810b0908
 block|{
 DECL|member|x0
 name|gdouble
@@ -787,7 +787,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90a08
+DECL|struct|__anon2a33810b0a08
 block|{
 DECL|member|init
 name|gint
@@ -957,7 +957,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90b08
+DECL|struct|__anon2a33810b0b08
 block|{
 DECL|member|xcenter
 name|gdouble
@@ -984,7 +984,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90c08
+DECL|struct|__anon2a33810b0c08
 block|{
 DECL|member|is_color
 name|gint
@@ -1225,7 +1225,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90d08
+DECL|struct|__anon2a33810b0d08
 block|{
 DECL|member|tag
 name|gint
@@ -1302,7 +1302,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3de7e90e08
+DECL|struct|__anon2a33810b0e08
 block|{
 DECL|member|xcenter
 name|gint
@@ -8514,7 +8514,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b3de7e90f08
+DECL|struct|__anon2a33810b0f08
 block|{
 DECL|member|values
 name|guchar
@@ -14475,7 +14475,7 @@ name|i
 decl_stmt|;
 specifier|static
 struct|struct
-DECL|struct|__anon2b3de7e91008
+DECL|struct|__anon2a33810b1008
 block|{
 DECL|member|label
 specifier|const
@@ -23671,14 +23671,7 @@ operator|!
 name|found
 condition|)
 block|{
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: "reverse" hardcoded to FALSE.
-endif|#
-directive|endif
+comment|/* FIXME: "reverse" hardcoded to FALSE. */
 name|gradient_get_values_real_external
 argument_list|(
 name|gradient_name

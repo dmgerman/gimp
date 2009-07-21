@@ -252,14 +252,7 @@ name|curve
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: create a curves object with the right number of points
-endif|#
-directive|endif
+comment|/* FIXME: create a curves object with the right number of points */
 comment|/*  unset the last point  */
 name|gimp_curve_set_point
 argument_list|(

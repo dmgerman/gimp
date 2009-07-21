@@ -77,7 +77,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29e8dd690103
+DECL|enum|__anon28fa638f0103
 block|{
 DECL|enumerator|GRADIENT_MODE
 name|GRADIENT_MODE
@@ -622,7 +622,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e8dd690208
+DECL|struct|__anon28fa638f0208
 block|{
 DECL|member|samples
 name|guchar
@@ -953,14 +953,7 @@ operator|=
 name|gimp_context_get_gradient
 argument_list|()
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: "reverse" hardcoded to FALSE.
-endif|#
-directive|endif
+comment|/* FIXME: "reverse" hardcoded to FALSE. */
 name|gimp_gradient_get_uniform_samples
 argument_list|(
 name|gradient_name

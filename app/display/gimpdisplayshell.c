@@ -330,12 +330,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2d9a70103
+DECL|enum|__anon2954b9030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +354,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d2d9a70203
+DECL|enum|__anon2954b9030203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2650,6 +2656,29 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"Display shell '%s' [%p] set fullscreen %s"
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+argument_list|,
+name|widget
+argument_list|,
+name|fullscreen
+condition|?
+literal|"TURE"
+else|:
+literal|"FALSE"
+argument_list|)
+expr_stmt|;
 name|group
 operator|=
 name|gimp_ui_manager_get_action_group
@@ -2729,6 +2758,29 @@ operator|)
 operator|!=
 literal|0
 decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"Display shell '%s' [%p] set %s"
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+argument_list|,
+name|widget
+argument_list|,
+name|iconified
+condition|?
+literal|"iconified"
+else|:
+literal|"uniconified"
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|iconified
@@ -2743,9 +2795,18 @@ argument_list|)
 operator|==
 literal|0
 condition|)
+block|{
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"No displays visible any longer"
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factories_hide_with_display
 argument_list|()
 expr_stmt|;
+block|}
 block|}
 else|else
 block|{

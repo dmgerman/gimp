@@ -15,22 +15,9 @@ directive|include
 file|<string.h>
 end_include
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: #undef GTK_DISABLE_DEPRECATED
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
+end_comment
 
 begin_undef
 undef|#
@@ -146,7 +133,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba645400103
+DECL|enum|__anon29fc9d950103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED

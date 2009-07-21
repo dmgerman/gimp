@@ -517,15 +517,6 @@ value|N_("GIMP will warn the user if an attempt is made to create an image that 
 end_define
 
 begin_define
-DECL|macro|MENU_MNEMONICS_BLURB
-define|#
-directive|define
-name|MENU_MNEMONICS_BLURB
-define|\
-value|N_("When enabled, GIMP will show mnemonics in menus.")
-end_define
-
-begin_define
 DECL|macro|MIN_COLORS_BLURB
 define|#
 directive|define
@@ -899,15 +890,6 @@ directive|define
 name|TEAROFF_MENUS_BLURB
 define|\
 value|N_("When enabled, menus can be torn off.")
-end_define
-
-begin_define
-DECL|macro|TRANSIENT_DOCKS_BLURB
-define|#
-directive|define
-name|TRANSIENT_DOCKS_BLURB
-define|\
-value|N_("When enabled, dock windows (the toolbox and palettes) are set to be " \    "transient to the active image window. Most window managers will " \    "keep the dock windows above the image window then, but it may also " \    "have other effects.")
 end_define
 
 begin_define

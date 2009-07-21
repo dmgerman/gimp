@@ -223,10 +223,6 @@ DECL|member|dock_window_hint
 name|GimpWindowHint
 name|dock_window_hint
 decl_stmt|;
-DECL|member|transient_docks
-name|gboolean
-name|transient_docks
-decl_stmt|;
 DECL|member|cursor_format
 name|GimpCursorFormat
 name|cursor_format

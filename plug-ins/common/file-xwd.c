@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed19630108
+DECL|struct|__anon29c767830108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed19630208
+DECL|struct|__anon29c767830208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -296,7 +296,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed19630308
+DECL|struct|__anon29c767830308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bed19630408
+DECL|struct|__anon29c767830408
 block|{
 DECL|member|npixel
 name|gint
@@ -1343,7 +1343,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-literal|"XWD"
+name|NULL
 argument_list|,
 operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB

@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7ebee60103
+DECL|enum|__anon296dfb280103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7ebee60203
+DECL|enum|__anon296dfb280203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -5136,14 +5136,7 @@ operator|->
 name|widget
 condition|)
 continue|continue;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: implement session info deletion
-endif|#
-directive|endif
+comment|/* FIXME: implement session info deletion */
 block|}
 block|}
 end_function
@@ -5235,6 +5228,23 @@ name|GIMP_DIALOG_VISIBILITY_VISIBLE
 expr_stmt|;
 name|gtk_widget_hide
 argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"Hiding '%s' [%p]"
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+argument_list|,
 name|widget
 argument_list|)
 expr_stmt|;
@@ -5357,6 +5367,23 @@ operator|==
 name|GIMP_DIALOG_VISIBILITY_VISIBLE
 condition|)
 block|{
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"Showing '%s' [%p]"
+argument_list|,
+name|gtk_window_get_title
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+argument_list|,
+name|widget
+argument_list|)
+expr_stmt|;
 comment|/* Don't use gtk_window_present() here, we don't want the                * keyboard focus to move.                */
 name|gtk_widget_show
 argument_list|(

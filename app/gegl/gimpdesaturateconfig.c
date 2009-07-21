@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cbded30103
+DECL|enum|__anon2b2f89450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -155,14 +155,7 @@ name|get_property
 operator|=
 name|gimp_desaturate_config_get_property
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: change string when a desaturate icon gets added
-endif|#
-directive|endif
+comment|/*FIXME: change string when a desaturate icon gets added */
 name|viewable_class
 operator|->
 name|default_stock_id

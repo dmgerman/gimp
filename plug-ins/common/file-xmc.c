@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4b6ed30108
+DECL|struct|__anon2b0288910108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4b6ed30208
+DECL|struct|__anon2b0288910208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1905,7 +1905,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-literal|"XMC"
+name|NULL
 argument_list|,
 operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -4389,60 +4389,16 @@ argument_list|)
 expr_stmt|;
 name|dialog
 operator|=
-name|gimp_dialog_new
+name|gimp_export_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Save as X11 Mouse Cursor"
+literal|"X11 Mouse Cursor"
 argument_list|)
 argument_list|,
-comment|/* title */
 name|PLUG_IN_BINARY
 argument_list|,
-comment|/* role */
-name|NULL
-argument_list|,
-literal|0
-argument_list|,
-comment|/* parent flags */
-name|gimp_standard_help_func
-argument_list|,
-comment|/* help func */
 name|SAVE_PROC
-argument_list|,
-comment|/* help id */
-name|GTK_STOCK_CANCEL
-argument_list|,
-name|GTK_RESPONSE_CANCEL
-argument_list|,
-name|GTK_STOCK_SAVE
-argument_list|,
-name|GTK_RESPONSE_OK
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gtk_dialog_set_alternative_button_order
-argument_list|(
-name|GTK_DIALOG
-argument_list|(
-name|dialog
-argument_list|)
-argument_list|,
-name|GTK_RESPONSE_OK
-argument_list|,
-name|GTK_RESPONSE_CANCEL
-argument_list|,
-operator|-
-literal|1
-argument_list|)
-expr_stmt|;
-name|gimp_window_set_transient
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dialog
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    * parameter settings    */
@@ -4470,12 +4426,9 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|gtk_dialog_get_content_area
-argument_list|(
-name|GTK_DIALOG
+name|gimp_export_dialog_get_content_area
 argument_list|(
 name|dialog
-argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
@@ -9265,7 +9218,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b4b6ed30308
+DECL|struct|__anon2b0288910308
 block|{
 DECL|member|size
 name|guint32

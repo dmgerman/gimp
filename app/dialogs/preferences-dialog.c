@@ -9466,7 +9466,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bf0b0600108
+DECL|struct|__anon297a5b5a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10633,7 +10633,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf0b0600208
+DECL|struct|__anon297a5b5a0208
 block|{
 DECL|member|label
 specifier|const
@@ -11583,29 +11583,6 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|GIMP_UNSTABLE
-name|prefs_check_button_add
-argument_list|(
-name|object
-argument_list|,
-literal|"transient-docks"
-argument_list|,
-name|_
-argument_list|(
-literal|"Toolbox and other docks are transient "
-literal|"to the active image window"
-argument_list|)
-argument_list|,
-name|GTK_BOX
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -11793,7 +11770,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf0b0600308
+DECL|struct|__anon297a5b5a0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11948,7 +11925,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bf0b0600408
+DECL|struct|__anon297a5b5a0408
 block|{
 DECL|member|tree_label
 specifier|const

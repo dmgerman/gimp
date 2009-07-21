@@ -3575,14 +3575,7 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME remove hack as soon as bug #375864 is fixed
-endif|#
-directive|endif
+comment|/* FIXME remove hack as soon as bug #375864 is fixed */
 if|if
 condition|(
 name|GIMP_VALUE_HOLDS_ITEM_ID

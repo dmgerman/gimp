@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295870e50103
+DECL|enum|__anon2c522a2e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295870e50203
+DECL|enum|__anon2c522a2e0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2186,7 +2186,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295870e50308
+DECL|struct|__anon2c522a2e0308
 block|{
 DECL|member|x
 name|guint
@@ -4094,22 +4094,9 @@ begin_comment
 comment|/* Stuff below taken from gtktooltip.c  */
 end_comment
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|__GNUC__
-end_ifdef
-
-begin_warning
-warning|#
-directive|warning
-warning|FIXME: remove this crack as soon as a GTK+ widget_under_pointer() is available
-end_warning
-
-begin_endif
-endif|#
-directive|endif
-end_endif
+begin_comment
+comment|/* FIXME: remove this crack as soon as a GTK+ widget_under_pointer() is available */
+end_comment
 
 begin_struct
 DECL|struct|ChildLocation

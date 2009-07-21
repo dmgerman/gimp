@@ -86,7 +86,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b540e90108
+DECL|struct|__anon27b1556e0108
 block|{
 DECL|member|replace
 name|gint
@@ -961,7 +961,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-literal|"FITS"
+name|NULL
 argument_list|,
 operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB

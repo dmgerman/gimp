@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298a87a10103
+DECL|enum|__anon273980950103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1652,14 +1652,7 @@ literal|"input"
 argument_list|)
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: chain up again when above floating sel special case is gone
-endif|#
-directive|endif
+comment|/* FIXME: chain up again when above floating sel special case is gone */
 return|return;
 block|}
 name|GIMP_ITEM_CLASS
@@ -8139,14 +8132,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack when the floating sel is no layer any longer
-endif|#
-directive|endif
+comment|/* FIXME: remove this hack when the floating sel is no layer any longer */
 name|g_signal_emit_by_name
 argument_list|(
 name|floating_sel
@@ -8215,14 +8201,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|__GNUC__
-warning|#
-directive|warning
-warning|FIXME: remove this hack when the floating sel is no layer any longer
-endif|#
-directive|endif
+comment|/* FIXME: remove this hack when the floating sel is no layer any longer */
 name|g_signal_emit_by_name
 argument_list|(
 name|floating_sel
