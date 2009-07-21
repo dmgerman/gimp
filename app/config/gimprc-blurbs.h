@@ -902,15 +902,6 @@ value|N_("When enabled, menus can be torn off.")
 end_define
 
 begin_define
-DECL|macro|TRANSIENT_DOCKS_BLURB
-define|#
-directive|define
-name|TRANSIENT_DOCKS_BLURB
-define|\
-value|N_("When enabled, dock windows (the toolbox and palettes) are set to be " \    "transient to the active image window. Most window managers will " \    "keep the dock windows above the image window then, but it may also " \    "have other effects.")
-end_define
-
-begin_define
 DECL|macro|CAN_CHANGE_ACCELS_BLURB
 define|#
 directive|define
