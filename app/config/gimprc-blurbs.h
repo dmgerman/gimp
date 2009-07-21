@@ -517,15 +517,6 @@ value|N_("GIMP will warn the user if an attempt is made to create an image that 
 end_define
 
 begin_define
-DECL|macro|MENU_MNEMONICS_BLURB
-define|#
-directive|define
-name|MENU_MNEMONICS_BLURB
-define|\
-value|N_("When enabled, GIMP will show mnemonics in menus.")
-end_define
-
-begin_define
 DECL|macro|MIN_COLORS_BLURB
 define|#
 directive|define

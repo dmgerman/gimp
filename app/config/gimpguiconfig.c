@@ -124,7 +124,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f197360103
+DECL|enum|__anon2ad1c46c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -905,7 +905,7 @@ name|PROP_MENU_MNEMONICS
 argument_list|,
 literal|"menu-mnemonics"
 argument_list|,
-name|MENU_MNEMONICS_BLURB
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
