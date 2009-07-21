@@ -66,7 +66,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptoolview.h"
+file|"gimptooleditor.h"
 end_include
 
 begin_include
