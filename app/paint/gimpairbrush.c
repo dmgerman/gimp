@@ -502,17 +502,11 @@ name|paint_options
 expr_stmt|;
 name|dynamic_rate
 operator|=
-name|gimp_paint_options_get_dynamic_rate
-argument_list|(
-name|paint_options
-argument_list|,
-name|coords
-argument_list|,
-name|paint_core
-operator|->
-name|pixel_dist
-argument_list|)
+literal|1
 expr_stmt|;
+comment|// gimp_paint_options_get_dynamic_rate (paint_options,
+comment|//                       coords,
+comment|//                        paint_core->pixel_dist);
 name|timeout
 operator|=
 literal|10000
@@ -641,28 +635,20 @@ literal|100.0
 expr_stmt|;
 name|saved_pressure
 operator|=
-name|paint_options
-operator|->
-name|pressure_options
-operator|->
-name|hardness
+name|FALSE
 expr_stmt|;
+comment|//paint_options->pressure_options->hardness;
 name|saved_velocity
 operator|=
-name|paint_options
-operator|->
-name|velocity_options
-operator|->
-name|hardness
+name|FALSE
 expr_stmt|;
+comment|//paint_options->velocity_options->hardness;
 if|if
 condition|(
 name|saved_pressure
 condition|)
 name|opacity
 operator|*=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -679,29 +665,13 @@ literal|0.0
 argument_list|,
 literal|1
 operator|-
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
 name|coords
 operator|->
 name|velocity
 argument_list|)
 expr_stmt|;
-name|paint_options
-operator|->
-name|pressure_options
-operator|->
-name|hardness
-operator|=
-name|FALSE
-expr_stmt|;
-name|paint_options
-operator|->
-name|velocity_options
-operator|->
-name|hardness
-operator|=
-name|FALSE
-expr_stmt|;
+comment|//paint_options->pressure_options->hardness = FALSE;
+comment|//paint_options->velocity_options->hardness = FALSE;
 name|_gimp_paintbrush_motion
 argument_list|(
 name|paint_core
@@ -715,22 +685,8 @@ argument_list|,
 name|opacity
 argument_list|)
 expr_stmt|;
-name|paint_options
-operator|->
-name|pressure_options
-operator|->
-name|hardness
-operator|=
-name|saved_pressure
-expr_stmt|;
-name|paint_options
-operator|->
-name|velocity_options
-operator|->
-name|hardness
-operator|=
-name|saved_velocity
-expr_stmt|;
+comment|//paint_options->pressure_options->hardness = saved_pressure;
+comment|//paint_options->velocity_options->hardness = saved_velocity;
 block|}
 end_function
 

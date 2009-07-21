@@ -563,17 +563,9 @@ name|rate
 expr_stmt|;
 name|rate
 operator|*=
-name|gimp_paint_options_get_dynamic_rate
-argument_list|(
-name|paint_options
-argument_list|,
-name|coords
-argument_list|,
-name|paint_core
-operator|->
-name|pixel_dist
-argument_list|)
+literal|1
 expr_stmt|;
+comment|/*gimp_paint_options_get_dynamic_rate (paint_options, coords,                                                paint_core->pixel_dist);*/
 name|gimp_convolve_calculate_matrix
 argument_list|(
 name|convolve

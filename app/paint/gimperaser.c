@@ -454,30 +454,14 @@ argument_list|)
 expr_stmt|;
 name|opacity
 operator|*=
-name|gimp_paint_options_get_dynamic_opacity
-argument_list|(
-name|paint_options
-argument_list|,
-name|coords
-argument_list|,
-name|paint_core
-operator|->
-name|pixel_dist
-argument_list|)
+literal|1
 expr_stmt|;
+comment|/*gimp_paint_options_get_dynamic_opacity (paint_options, coords,                                                      paint_core->pixel_dist);*/
 name|hardness
 operator|=
-name|gimp_paint_options_get_dynamic_hardness
-argument_list|(
-name|paint_options
-argument_list|,
-name|coords
-argument_list|,
-name|paint_core
-operator|->
-name|pixel_dist
-argument_list|)
+literal|1
 expr_stmt|;
+comment|/*gimp_paint_options_get_dynamic_hardness (paint_options, coords,                                                       paint_core->pixel_dist);*/
 name|gimp_brush_core_paste_canvas
 argument_list|(
 name|GIMP_BRUSH_CORE

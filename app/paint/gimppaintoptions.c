@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292de7070103
+DECL|enum|__anon2af9a8d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -617,36 +617,7 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_RANDOM_ASPECT_RATIO
-argument_list|,
-literal|"random-aspect-ratio"
-argument_list|,
-name|NULL
-argument_list|,
-name|DEFAULT_RANDOM_ASPECT_RATIO
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_FADING_ASPECT_RATIO
-argument_list|,
-literal|"fading-aspect-ratio"
-argument_list|,
-name|NULL
-argument_list|,
-name|DEFAULT_FADING_ASPECT_RATIO
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
+comment|/*(object_class, PROP_RANDOM_ASPECT_RATIO,                                     "random-aspect-ratio", NULL,                                     DEFAULT_RANDOM_ASPECT_RATIO,                                     GIMP_PARAM_STATIC_STRINGS);   GIMP_CONFIG_INSTALL_PROP_BOOLEAN (object_class, PROP_FADING_ASPECT_RATIO,                                     "fading-aspect-ratio", NULL,                                     DEFAULT_FADING_ASPECT_RATIO,                                     GIMP_PARAM_STATIC_STRINGS);*/
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class
@@ -1984,8 +1955,7 @@ name|paint_options
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*   if (paint_options->pressure_options->color  ||       paint_options->velocity_options->color  ||       paint_options->direction_options->color ||       paint_options->tilt_options->color      ||       paint_options->random_options->color ||       paint_options->fading_options->color)     {       gimp_gradient_get_color_at (gradient, GIMP_CONTEXT (paint_options),                                   NULL, grad_point,                                   gradient_options->gradient_reverse,                                   color);        return TRUE;     } */
-elseif|else
+comment|/*   if (paint_options->pressure_options->color  ||       paint_options->velocity_options->color  ||       paint_options->direction_options->color ||       paint_options->tilt_options->color      ||       paint_options->random_options->color ||       paint_options->fading_options->color)     {       gimp_gradient_get_color_at (gradient, GIMP_CONTEXT (paint_options),                                   NULL, grad_point,                                   gradient_options->gradient_reverse,                                   color);        return TRUE;     }     else*/
 if|if
 condition|(
 name|gradient_options
@@ -2229,29 +2199,7 @@ condition|)
 return|return
 name|GIMP_BRUSH_HARD
 return|;
-if|if
-condition|(
-name|paint_options
-operator|->
-name|pressure_options
-operator|->
-name|hardness
-operator|||
-name|paint_options
-operator|->
-name|velocity_options
-operator|->
-name|hardness
-operator|||
-name|paint_options
-operator|->
-name|random_options
-operator|->
-name|hardness
-condition|)
-return|return
-name|GIMP_BRUSH_PRESSURE
-return|;
+comment|/*  if (paint_options->pressure_options->hardness ||       paint_options->velocity_options->hardness ||       paint_options->random_options->hardness)     return GIMP_BRUSH_PRESSURE;*/
 return|return
 name|GIMP_BRUSH_SOFT
 return|;
