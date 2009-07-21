@@ -171,7 +171,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bf8f50108
+DECL|struct|__anon2addec6a0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +728,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295bf8f50208
+DECL|struct|__anon2addec6a0208
 block|{
 DECL|member|schema
 specifier|const
@@ -2914,14 +2914,15 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|mgui
 operator|.
 name|dlg
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|notebook

@@ -70,7 +70,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be6367c0103
+DECL|enum|__anon2ba356060103
 block|{
 DECL|enumerator|RGB_MODEL
 name|RGB_MODEL
@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be6367c0208
+DECL|struct|__anon2ba356060208
 block|{
 DECL|member|redfrequency
 name|gdouble
@@ -1918,12 +1918,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

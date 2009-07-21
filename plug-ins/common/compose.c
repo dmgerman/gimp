@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6ab420108
+DECL|struct|__anon27b260cf0108
 block|{
 union|union
-DECL|union|__anon28b6ab42020a
+DECL|union|__anon27b260cf020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6ab420308
+DECL|struct|__anon27b260cf0308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6ab420408
+DECL|struct|__anon27b260cf0408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b6ab420508
+DECL|struct|__anon27b260cf0508
 block|{
 DECL|member|width
 DECL|member|height
@@ -7741,12 +7741,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

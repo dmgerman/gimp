@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7f29a90103
+DECL|enum|__anon28926c390103
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -122,7 +122,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7f29a90203
+DECL|enum|__anon28926c390203
 block|{
 DECL|enumerator|RENDER_WIND
 name|RENDER_WIND
@@ -138,7 +138,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c7f29a90303
+DECL|enum|__anon28926c390303
 block|{
 DECL|enumerator|BOTH
 name|BOTH
@@ -3855,12 +3855,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

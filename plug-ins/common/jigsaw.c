@@ -52,7 +52,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278432db0103
+DECL|enum|__anon29182e5a0103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -68,7 +68,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278432db0203
+DECL|enum|__anon29182e5a0203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -14128,12 +14128,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

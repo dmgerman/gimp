@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af33aa30108
+DECL|struct|__anon28c5f72b0108
 block|{
 DECL|member|description
 name|gchar
@@ -2075,7 +2075,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2af33aa3020a
+DECL|union|__anon28c5f72b020a
 block|{
 DECL|member|u
 name|guint16
@@ -3143,12 +3143,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|table

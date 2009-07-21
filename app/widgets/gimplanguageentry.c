@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ae99a90103
+DECL|enum|__anon2b56677c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -297,15 +297,19 @@ name|entry
 operator|->
 name|store
 argument_list|,
-literal|"text-column"
-argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
-argument_list|,
 literal|"inline-selection"
 argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* Note that we must use this function to set the text column,        * otherwise we won't get a cell renderer for free        */
+name|gtk_entry_completion_set_text_column
+argument_list|(
+name|completion
+argument_list|,
+name|GIMP_LANGUAGE_STORE_LANGUAGE
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_completion

@@ -110,7 +110,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295773b90108
+DECL|struct|__anon2bd311b50108
 block|{
 DECL|member|lam_r
 name|gdouble
@@ -169,7 +169,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295773b90208
+DECL|struct|__anon2bd311b50208
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -1123,7 +1123,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon295773b90308
+DECL|struct|__anon2bd311b50308
 typedef|typedef
 struct|struct
 block|{
@@ -1943,12 +1943,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|hbox

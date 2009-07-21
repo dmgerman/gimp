@@ -351,7 +351,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ae5673f0108
+DECL|struct|__anon2bab8f480108
 typedef|typedef
 struct|struct
 block|{
@@ -398,7 +398,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2ae5673f0208
+DECL|struct|__anon2bab8f480208
 typedef|typedef
 struct|struct
 block|{
@@ -2895,12 +2895,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|vbox

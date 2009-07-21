@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f575b70108
+DECL|struct|__anon2b4b6ed30108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon29f575b70208
+DECL|struct|__anon2b4b6ed30208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -4470,12 +4470,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|frame
@@ -9264,7 +9265,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon29f575b70308
+DECL|struct|__anon2b4b6ed30308
 block|{
 DECL|member|size
 name|guint32

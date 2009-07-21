@@ -289,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297992b10108
+DECL|struct|__anon2bff691d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297992b10208
+DECL|struct|__anon2bff691d0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1031,7 +1031,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297992b10308
+DECL|struct|__anon2bff691d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1900,7 +1900,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297992b10408
+DECL|struct|__anon2bff691d0408
 block|{
 DECL|member|eol
 name|long
@@ -14679,12 +14679,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
@@ -16009,12 +16010,13 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|hbox

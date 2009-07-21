@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a32b64b0103
+DECL|enum|__anon2acd0fef0103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32b64b0203
+DECL|enum|__anon2acd0fef0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4851,9 +4851,10 @@ decl_stmt|;
 comment|/* eeeeeek */
 if|if
 condition|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 operator|==
 name|event
 operator|->
@@ -4978,9 +4979,10 @@ literal|2
 expr_stmt|;
 name|gtk_paint_layout
 argument_list|(
+name|gtk_widget_get_style
+argument_list|(
 name|widget
-operator|->
-name|style
+argument_list|)
 argument_list|,
 name|event
 operator|->

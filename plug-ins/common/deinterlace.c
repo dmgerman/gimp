@@ -45,7 +45,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c53470103
+DECL|enum|__anon29fed1530103
 block|{
 DECL|enumerator|ODD_FIELDS
 name|ODD_FIELDS
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c53470208
+DECL|struct|__anon29fed1530208
 block|{
 DECL|member|evenness
 name|gint
@@ -1365,12 +1365,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox

@@ -87,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b77c0af0103
+DECL|enum|__anon2926211c0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b77c0af0203
+DECL|enum|__anon2926211c0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77c0af0308
+DECL|struct|__anon2926211c0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77c0af0408
+DECL|struct|__anon2926211c0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77c0af0508
+DECL|struct|__anon2926211c0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -3444,12 +3444,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|paned

@@ -140,7 +140,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29145f130108
+DECL|struct|__anon2748ea290108
 block|{
 DECL|member|division
 name|gint32
@@ -625,7 +625,7 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|__anon29145f130208
+DECL|struct|__anon2748ea290208
 typedef|typedef
 struct|struct
 block|{
@@ -1671,12 +1671,13 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
 name|GTK_DIALOG
 argument_list|(
 name|dialog
 argument_list|)
-operator|->
-name|vbox
+argument_list|)
 argument_list|)
 argument_list|,
 name|main_vbox
