@@ -799,7 +799,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-literal|"BMP"
+name|NULL
 argument_list|,
 operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB

@@ -827,7 +827,7 @@ argument_list|,
 operator|&
 name|drawable_ID
 argument_list|,
-literal|"PCX"
+name|NULL
 argument_list|,
 operator|(
 name|GIMP_EXPORT_CAN_HANDLE_RGB
@@ -1027,7 +1027,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3bbaf00108
+DECL|struct|__anon2bb888b10108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1104,7 +1104,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2b3bbaf00208
+DECL|struct|__anon2bb888b10208
 specifier|static
 struct|struct
 block|{
