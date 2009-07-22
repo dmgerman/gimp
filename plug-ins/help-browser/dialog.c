@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27c721880108
+DECL|struct|__anon29c6a2b70108
 block|{
 DECL|member|width
 name|gint
@@ -142,7 +142,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c721880203
+DECL|enum|__anon29c6a2b70203
 block|{
 DECL|enumerator|HISTORY_TITLE
 name|HISTORY_TITLE
@@ -1618,7 +1618,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|webkit_web_view_open
+name|webkit_web_view_load_uri
 argument_list|(
 name|WEBKIT_WEB_VIEW
 argument_list|(

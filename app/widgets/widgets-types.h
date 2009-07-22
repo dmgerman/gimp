@@ -501,11 +501,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpToolView
+DECL|typedef|GimpToolEditor
 typedef|typedef
 name|struct
-name|_GimpToolView
-name|GimpToolView
+name|_GimpToolEditor
+name|GimpToolEditor
 typedef|;
 end_typedef
 
