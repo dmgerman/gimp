@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288d7f320103
+DECL|enum|__anon2c5951fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -200,37 +200,8 @@ name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 comment|/* override velocity-size because its unnatural as a default for airbrush */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_VELOCITY_SIZE
-argument_list|,
-literal|"velocity-size"
-argument_list|,
-name|NULL
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
-comment|/* override velocity-hardness to default to a true,    * because that is natural for airbrush    */
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_VELOCITY_HARDNESS
-argument_list|,
-literal|"velocity-hardness"
-argument_list|,
-name|NULL
-argument_list|,
-name|TRUE
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
-argument_list|)
-expr_stmt|;
+comment|/*  GIMP_CONFIG_INSTALL_PROP_BOOLEAN (object_class, PROP_VELOCITY_SIZE,                                     "velocity-size", NULL,                                     FALSE,                                     GIMP_PARAM_STATIC_STRINGS);    /* override velocity-hardness to default to a true,    * because that is natural for airbrush    */
+comment|/* GIMP_CONFIG_INSTALL_PROP_BOOLEAN (object_class, PROP_VELOCITY_HARDNESS,                                     "velocity-hardness", NULL,                                     TRUE,                                     GIMP_PARAM_STATIC_STRINGS);*/
 block|}
 end_function
 
