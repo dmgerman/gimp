@@ -158,6 +158,12 @@ directive|include
 file|"xmp-encode.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpxmpmodelentry.h"
+end_include
+
 begin_define
 DECL|macro|RESPONSE_IMPORT
 define|#
@@ -177,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0884410108
+DECL|struct|__anon2a2c2d3e0108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -212,8 +218,8 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|value_edited (GtkCellRendererText * cell,const gchar * path_string,const gchar * new_text,gpointer data)
-name|value_edited
+DECL|function|tree_value_edited (GtkCellRendererText * cell,const gchar * path_string,const gchar * new_text,gpointer data)
+name|tree_value_edited
 parameter_list|(
 name|GtkCellRendererText
 modifier|*
@@ -502,7 +508,7 @@ literal|"edited"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|value_edited
+name|tree_value_edited
 argument_list|)
 argument_list|,
 name|model
@@ -734,7 +740,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0884410208
+DECL|struct|__anon2a2c2d3e0208
 block|{
 DECL|member|schema
 specifier|const
@@ -752,6 +758,11 @@ DECL|member|widget_list
 name|GSList
 modifier|*
 name|widget_list
+decl_stmt|;
+DECL|member|mgui
+name|MetadataGui
+modifier|*
+name|mgui
 decl_stmt|;
 DECL|typedef|WidgetXRef
 block|}
@@ -779,17 +790,21 @@ name|xref
 init|=
 name|user_data
 decl_stmt|;
-name|g_print
+name|xmp_model_set_scalar_property
 argument_list|(
-literal|"XMP: %s %p %p %s\n"
+name|xref
+operator|->
+name|mgui
+operator|->
+name|xmp_model
+argument_list|,
+name|xref
+operator|->
+name|schema
 argument_list|,
 name|xref
 operator|->
 name|property_name
-argument_list|,
-name|entry
-argument_list|,
-name|user_data
 argument_list|,
 name|gtk_entry_get_text
 argument_list|(
@@ -797,14 +812,20 @@ name|entry
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME */
+name|update_icons
+argument_list|(
+name|xref
+operator|->
+name|mgui
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|register_entry_xref (GtkWidget * entry,const gchar * schema,const gchar * property_name)
+DECL|function|register_entry_xref (GtkWidget * entry,const gchar * schema,const gchar * property_name,MetadataGui * mgui)
 name|register_entry_xref
 parameter_list|(
 name|GtkWidget
@@ -820,6 +841,10 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
+parameter_list|,
+name|MetadataGui
+modifier|*
+name|mgui
 parameter_list|)
 block|{
 name|WidgetXRef
@@ -857,6 +882,12 @@ name|NULL
 argument_list|,
 name|entry
 argument_list|)
+expr_stmt|;
+name|xref
+operator|->
+name|mgui
+operator|=
+name|mgui
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
@@ -1025,12 +1056,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|add_description_tab (GtkWidget * notebook)
+DECL|function|add_description_tab (GtkWidget * notebook,MetadataGui * mgui)
 name|add_description_tab
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|notebook
+parameter_list|,
+name|MetadataGui
+modifier|*
+name|mgui
 parameter_list|)
 block|{
 name|GtkWidget
@@ -1095,7 +1130,11 @@ argument_list|,
 literal|10
 argument_list|)
 expr_stmt|;
-comment|/* gtk_widget_show (frame); */
+name|gtk_widget_show
+argument_list|(
+name|frame
+argument_list|)
+expr_stmt|;
 name|table
 operator|=
 name|gtk_table_new
@@ -1140,16 +1179,15 @@ expr_stmt|;
 comment|/* gtk_widget_show (table); */
 name|entry
 operator|=
-name|gtk_entry_new
-argument_list|()
-expr_stmt|;
-name|register_entry_xref
+name|gimp_xmp_model_entry_new
 argument_list|(
-name|entry
-argument_list|,
 name|XMP_SCHEMA_DUBLIN_CORE
 argument_list|,
 literal|"title"
+argument_list|,
+name|mgui
+operator|->
+name|xmp_model
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -1181,18 +1219,18 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|=
-name|gtk_entry_new
-argument_list|()
-expr_stmt|;
-name|register_entry_xref
+name|gimp_xmp_model_entry_new
 argument_list|(
-name|entry
-argument_list|,
 name|XMP_SCHEMA_DUBLIN_CORE
 argument_list|,
 literal|"creator"
+argument_list|,
+name|mgui
+operator|->
+name|xmp_model
 argument_list|)
 expr_stmt|;
+comment|//register_entry_xref (entry, XMP_SCHEMA_DUBLIN_CORE, "creator", mgui);
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -1336,6 +1374,8 @@ argument_list|,
 name|XMP_SCHEMA_PHOTOSHOP
 argument_list|,
 literal|"CaptionWriter"
+argument_list|,
+name|mgui
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
@@ -3001,6 +3041,9 @@ comment|/* add the tabs to the notebook */
 name|add_description_tab
 argument_list|(
 name|notebook
+argument_list|,
+operator|&
+name|mgui
 argument_list|)
 expr_stmt|;
 name|add_copyright_tab
