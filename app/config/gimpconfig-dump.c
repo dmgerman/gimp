@@ -588,7 +588,7 @@ literal|".I \\fB$HOME\\fP/@gimpdir@/gimprc\n"
 literal|"Per-user configuration file\n"
 literal|"\n"
 literal|".SH \"SEE ALSO\"\n"
-literal|".BR gimp (1),\n"
+literal|".BR gimp (1)\n"
 decl_stmt|;
 end_decl_stmt
 
@@ -1306,6 +1306,26 @@ name|value_type
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|strcmp
+argument_list|(
+name|blurb
+argument_list|,
+literal|""
+argument_list|)
+operator|==
+literal|0
+condition|)
+return|return
+name|g_strdup_printf
+argument_list|(
+literal|"%s"
+argument_list|,
+name|values
+argument_list|)
+return|;
+else|else
 return|return
 name|g_strdup_printf
 argument_list|(

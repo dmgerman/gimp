@@ -628,7 +628,7 @@ define|#
 directive|define
 name|PERFECT_MOUSE_BLURB
 define|\
-value|N_("When enabled, the X server is queried for the mouse's current position " \    "on each motion event, rather than relying on the position hint.  This " \    "means painting with large brushes should be more accurate, but it may " \    "be slower.  Perversely, on some X servers enabling this option results " \    "in faster painting.")
+value|N_("When enabled, the X server is queried for the mouse's current position " \    "on each motion event, rather than relying on the position hint.  This " \    "means painting with large brushes should be more accurate, but it may " \    "be slower.  Conversely, on some X servers enabling this option results " \    "in faster painting.")
 end_define
 
 begin_define
@@ -1105,7 +1105,7 @@ define|#
 directive|define
 name|WEB_BROWSER_BLURB
 define|\
-value|N_("Sets the external web browser to be used.  This can be an absolute " \    "path or the name of an executable to search for in the user's PATH. " \    "If the command contains '%s' it will be replaced with the URL, else " \    "the URL will be appended to the command with a space separating the " \    "two.")
+value|N_("Sets the external web browser to be used.  This can be an absolute " \    "path or the name of an executable to search for in the user's PATH. " \    "If the command contains '%s' it will be replaced with the URL, otherwise " \    "the URL will be appended to the command with a space separating the " \    "two.")
 end_define
 
 begin_define
