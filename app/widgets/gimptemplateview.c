@@ -838,9 +838,9 @@ argument_list|,
 name|NULL
 argument_list|)
 decl_stmt|;
-name|gtk_list_store_set
+name|gtk_tree_store_set
 argument_list|(
-name|GTK_LIST_STORE
+name|GTK_TREE_STORE
 argument_list|(
 name|tree_view
 operator|->
