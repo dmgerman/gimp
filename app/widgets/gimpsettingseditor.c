@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa71c1b0103
+DECL|enum|__anon2935699c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1527,9 +1527,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_list_store_set
+name|gtk_tree_store_set
 argument_list|(
-name|GTK_LIST_STORE
+name|GTK_TREE_STORE
 argument_list|(
 name|tree_view
 operator|->
