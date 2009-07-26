@@ -4167,7 +4167,7 @@ name|dnd_renderer
 operator|=
 name|renderer
 expr_stmt|;
-name|gtk_tree_view_get_background_area
+name|gtk_tree_view_get_cell_area
 argument_list|(
 name|tree_view
 operator|->
