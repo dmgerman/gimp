@@ -903,6 +903,10 @@ literal|"has-tooltip"
 argument_list|,
 name|TRUE
 argument_list|,
+literal|"show-expanders"
+argument_list|,
+name|FALSE
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
