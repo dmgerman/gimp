@@ -36,13 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xmp-model.h"
+file|"xmp-schemas.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"xmp-schemas.h"
+file|"xmp-model.h"
 end_include
 
 begin_include
