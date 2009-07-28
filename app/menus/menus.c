@@ -752,6 +752,26 @@ name|gimp_menu_factory_manager_register
 argument_list|(
 name|global_menu_factory
 argument_list|,
+literal|"<DynamicsEditor>"
+argument_list|,
+literal|"dynamics-editor"
+argument_list|,
+name|NULL
+argument_list|,
+literal|"/dynamics-editor-popup"
+argument_list|,
+literal|"dynamics-editor-menu.xml"
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* 	   gimp_menu_factory_manager_register (global_menu_factory, "<DynamicsEditor>",                                       "dynamics",                                       NULL,                                       NULL); */
+name|gimp_menu_factory_manager_register
+argument_list|(
+name|global_menu_factory
+argument_list|,
 literal|"<GradientEditor>"
 argument_list|,
 literal|"gradient-editor"

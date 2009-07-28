@@ -456,6 +456,32 @@ name|GIMP_HELP_BRUSH_EDIT
 block|}
 block|,
 block|{
+literal|"dialogs-dynamics-editor"
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Dynamics Editor"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Open the dynamics editor"
+argument_list|)
+block|,
+literal|"gimp-dynamics-editor"
+block|,
+name|GIMP_HELP_BRUSH_EDIT
+block|}
+block|,
+block|{
 literal|"dialogs-patterns"
 block|,
 name|GIMP_STOCK_PATTERN

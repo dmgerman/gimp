@@ -2396,6 +2396,37 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
+DECL|function|dialogs_dynamics_editor_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+name|dialogs_dynamics_editor_get
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|gint
+name|view_size
+parameter_list|)
+block|{
+return|return
+name|gimp_brush_editor_new
+argument_list|(
+name|context
+argument_list|,
+name|factory
+operator|->
+name|menu_factory
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GtkWidget
+modifier|*
 DECL|function|dialogs_gradient_editor_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
 name|dialogs_gradient_editor_get
 parameter_list|(

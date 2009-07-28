@@ -436,6 +436,21 @@ name|brush_editor_actions_update
 block|}
 block|,
 block|{
+literal|"dynamics-editor"
+block|,
+name|N_
+argument_list|(
+literal|"Dynamics Editor"
+argument_list|)
+block|,
+name|GIMP_STOCK_BRUSH
+block|,
+name|brush_editor_actions_setup
+block|,
+name|brush_editor_actions_update
+block|}
+block|,
+block|{
 literal|"brushes"
 block|,
 name|N_
