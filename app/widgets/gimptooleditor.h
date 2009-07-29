@@ -156,6 +156,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_tool_editor_revert_changes
+parameter_list|(
+name|GimpToolEditor
+modifier|*
+name|tool_editor
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

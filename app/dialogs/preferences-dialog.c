@@ -597,6 +597,17 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|tool_editor
+specifier|static
+name|GtkWidget
+modifier|*
+name|tool_editor
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public function  */
 end_comment
@@ -1701,6 +1712,14 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_tool_editor_revert_changes
+argument_list|(
+name|GIMP_TOOL_EDITOR
+argument_list|(
+name|tool_editor
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
@@ -1717,6 +1736,10 @@ name|diff
 argument_list|)
 expr_stmt|;
 block|}
+name|tool_editor
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 comment|/*  enable autosaving again  */
 name|gimp_rc_set_autosave
@@ -8640,12 +8663,7 @@ name|size_group
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* Tool Order */
-block|{
-name|GtkWidget
-modifier|*
-name|tool_view
-decl_stmt|;
+comment|/* Tool Editor */
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -8663,7 +8681,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|tool_view
+name|tool_editor
 operator|=
 name|gimp_tool_editor_new
 argument_list|(
@@ -8692,7 +8710,7 @@ argument_list|(
 name|vbox2
 argument_list|)
 argument_list|,
-name|tool_view
+name|tool_editor
 argument_list|,
 name|TRUE
 argument_list|,
@@ -8703,10 +8721,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|tool_view
+name|tool_editor
 argument_list|)
 expr_stmt|;
-block|}
 comment|/***********************/
 comment|/*  Default New Image  */
 comment|/***********************/
@@ -9539,7 +9556,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27c8e1a70108
+DECL|struct|__anon2a1687780108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10706,7 +10723,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c8e1a70208
+DECL|struct|__anon2a1687780208
 block|{
 DECL|member|label
 specifier|const
@@ -11843,7 +11860,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c8e1a70308
+DECL|struct|__anon2a1687780308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11998,7 +12015,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c8e1a70408
+DECL|struct|__anon2a1687780408
 block|{
 DECL|member|tree_label
 specifier|const
