@@ -458,7 +458,7 @@ block|,
 block|{
 literal|"dialogs-dynamics-editor"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_STOCK_DYNAMICS
 block|,
 name|NC_
 argument_list|(
@@ -478,7 +478,7 @@ argument_list|)
 block|,
 literal|"gimp-dynamics-editor"
 block|,
-name|GIMP_HELP_BRUSH_EDIT
+name|GIMP_HELP_DYNAMICS_EDITOR_DIALOG
 block|}
 block|,
 block|{

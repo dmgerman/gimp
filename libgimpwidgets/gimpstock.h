@@ -1015,6 +1015,11 @@ define|#
 directive|define
 name|GIMP_STOCK_BRUSH
 value|GIMP_STOCK_TOOL_PAINTBRUSH
+DECL|macro|GIMP_STOCK_DYNAMICS
+define|#
+directive|define
+name|GIMP_STOCK_DYNAMICS
+value|GIMP_STOCK_TOOL_PAINTBRUSH
 DECL|macro|GIMP_STOCK_BUFFER
 define|#
 directive|define

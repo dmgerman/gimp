@@ -449,7 +449,7 @@ argument_list|(
 literal|"Dynamics Editor"
 argument_list|)
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_STOCK_DYNAMICS
 block|,
 name|dynamics_editor_actions_setup
 block|,

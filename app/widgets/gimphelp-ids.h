@@ -2134,6 +2134,14 @@ value|"gimp-brush-editor-edit-active"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_DYNAMICS_EDITOR_DIALOG
+define|#
+directive|define
+name|GIMP_HELP_DYNAMICS_EDITOR_DIALOG
+value|"gimp-dynamics-editor-dialog"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PATTERN_DIALOG
 define|#
 directive|define
