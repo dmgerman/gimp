@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c02d610103
+DECL|enum|__anon28a4bea30103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c02d610203
+DECL|enum|__anon28a4bea30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5034,6 +5034,36 @@ end_function
 begin_function
 name|GimpLayerMask
 modifier|*
+DECL|function|gimp_layer_get_mask (const GimpLayer * layer)
+name|gimp_layer_get_mask
+parameter_list|(
+specifier|const
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|layer
+operator|->
+name|mask
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpLayerMask
+modifier|*
 DECL|function|gimp_layer_add_mask (GimpLayer * layer,GimpLayerMask * mask,gboolean push_undo,GError ** error)
 name|gimp_layer_add_mask
 parameter_list|(
@@ -7571,36 +7601,6 @@ end_comment
 begin_comment
 comment|/**********************/
 end_comment
-
-begin_function
-name|GimpLayerMask
-modifier|*
-DECL|function|gimp_layer_get_mask (const GimpLayer * layer)
-name|gimp_layer_get_mask
-parameter_list|(
-specifier|const
-name|GimpLayer
-modifier|*
-name|layer
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_LAYER
-argument_list|(
-name|layer
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|layer
-operator|->
-name|mask
-return|;
-block|}
-end_function
 
 begin_function
 name|GimpDrawable
