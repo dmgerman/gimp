@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dynamics-editor-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"brushes-actions.h"
 end_include
 
@@ -445,9 +451,9 @@ argument_list|)
 block|,
 name|GIMP_STOCK_BRUSH
 block|,
-name|brush_editor_actions_setup
+name|dynamics_editor_actions_setup
 block|,
-name|brush_editor_actions_update
+name|dynamics_editor_actions_update
 block|}
 block|,
 block|{

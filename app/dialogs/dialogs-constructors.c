@@ -69,6 +69,10 @@ directive|include
 file|"widgets/gimpbrusheditor.h"
 end_include
 
+begin_comment
+comment|//#include "widgets/gimpdynamicseditor.h"
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -2411,16 +2415,8 @@ name|gint
 name|view_size
 parameter_list|)
 block|{
-return|return
-name|gimp_brush_editor_new
-argument_list|(
-name|context
-argument_list|,
-name|factory
-operator|->
-name|menu_factory
-argument_list|)
-return|;
+comment|//return gimp_dynamics_editor_new (context,
+comment|//                              factory->menu_factory);
 block|}
 end_function
 
