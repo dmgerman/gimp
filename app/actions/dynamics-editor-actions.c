@@ -87,7 +87,7 @@ block|{
 block|{
 literal|"dynamics-editor-popup"
 block|,
-name|GIMP_STOCK_BRUSH
+name|GIMP_STOCK_DYNAMICS
 block|,
 name|NC_
 argument_list|(
