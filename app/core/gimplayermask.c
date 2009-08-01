@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b6f2cf0103
+DECL|enum|__anon2acc177e0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -361,6 +361,12 @@ operator|->
 name|is_attached
 operator|=
 name|gimp_layer_mask_is_attached
+expr_stmt|;
+name|item_class
+operator|->
+name|get_container
+operator|=
+name|gimp_layer_mask_get_container
 expr_stmt|;
 name|item_class
 operator|->
