@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afa385d0103
+DECL|enum|__anon2c07b4090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -689,13 +689,12 @@ name|vectors_undo
 operator|->
 name|prev_position
 operator|=
-name|gimp_image_get_vectors_index
+name|gimp_item_get_index
 argument_list|(
-name|undo
-operator|->
-name|image
-argument_list|,
+name|GIMP_ITEM
+argument_list|(
 name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors

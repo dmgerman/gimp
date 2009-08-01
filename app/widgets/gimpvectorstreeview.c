@@ -965,11 +965,9 @@ condition|)
 block|{
 name|index
 operator|=
-name|gimp_image_get_vectors_index
+name|gimp_item_get_index
 argument_list|(
-name|image
-argument_list|,
-name|GIMP_VECTORS
+name|GIMP_ITEM
 argument_list|(
 name|dest_viewable
 argument_list|)

@@ -1034,11 +1034,12 @@ argument_list|)
 expr_stmt|;
 name|pos
 operator|=
-name|gimp_image_get_vectors_index
+name|gimp_item_get_index
 argument_list|(
-name|image
-argument_list|,
+name|GIMP_ITEM
+argument_list|(
 name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors
