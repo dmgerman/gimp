@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d94d90103
+DECL|enum|__anon28d98ff40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d94d90203
+DECL|enum|__anon28d98ff40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11632,6 +11632,10 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+name|GimpContainer
+modifier|*
+name|children
+decl_stmt|;
 if|if
 condition|(
 name|gimp_item_get_tattoo
@@ -11644,6 +11648,38 @@ condition|)
 return|return
 name|item
 return|;
+name|children
+operator|=
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|children
+condition|)
+block|{
+name|item
+operator|=
+name|gimp_image_get_item_by_tattoo
+argument_list|(
+name|children
+argument_list|,
+name|tattoo
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|item
+condition|)
+return|return
+name|item
+return|;
+block|}
 block|}
 return|return
 name|NULL
