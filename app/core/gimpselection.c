@@ -143,6 +143,19 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|GimpContainer
+modifier|*
+name|gimp_selection_get_container
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_selection_translate
 parameter_list|(
@@ -640,6 +653,12 @@ name|gimp_selection_is_attached
 expr_stmt|;
 name|item_class
 operator|->
+name|get_container
+operator|=
+name|gimp_selection_get_container
+expr_stmt|;
+name|item_class
+operator|->
 name|translate
 operator|=
 name|gimp_selection_translate
@@ -893,6 +912,24 @@ argument_list|(
 name|item
 argument_list|)
 operator|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpContainer
+modifier|*
+DECL|function|gimp_selection_get_container (GimpItem * item)
+name|gimp_selection_get_container
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+return|return
+name|NULL
 return|;
 block|}
 end_function
