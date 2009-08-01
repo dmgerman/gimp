@@ -347,6 +347,9 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|gpointer
+name|parent_insert_data
+parameter_list|,
 name|gint
 name|index
 parameter_list|)
@@ -2619,7 +2622,7 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|gimp_layer_tree_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
+DECL|function|gimp_layer_tree_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gpointer parent_insert_data,gint index)
 name|gimp_layer_tree_view_insert_item
 parameter_list|(
 name|GimpContainerView
@@ -2629,6 +2632,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index
@@ -2660,6 +2666,8 @@ argument_list|(
 name|view
 argument_list|,
 name|viewable
+argument_list|,
+name|parent_insert_data
 argument_list|,
 name|index
 argument_list|)

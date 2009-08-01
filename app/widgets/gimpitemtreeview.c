@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c04823d0103
+DECL|enum|__anon28f9c9e80103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -388,6 +388,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index
@@ -2610,7 +2613,7 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|gimp_item_tree_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
+DECL|function|gimp_item_tree_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gpointer parent_insert_data,gint index)
 name|gimp_item_tree_view_insert_item
 parameter_list|(
 name|GimpContainerView
@@ -2620,6 +2623,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index
@@ -2665,6 +2671,8 @@ argument_list|(
 name|view
 argument_list|,
 name|viewable
+argument_list|,
+name|parent_insert_data
 argument_list|,
 name|index
 argument_list|)

@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c53daaa0103
+DECL|enum|__anon2c069b6c0103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -213,6 +213,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|object
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index

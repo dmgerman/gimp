@@ -217,6 +217,9 @@ name|GimpViewable
 modifier|*
 name|viewable
 parameter_list|,
+name|gpointer
+name|parent_insert_data
+parameter_list|,
 name|gint
 name|index
 parameter_list|)
@@ -2561,7 +2564,7 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|gimp_container_tree_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
+DECL|function|gimp_container_tree_view_insert_item (GimpContainerView * view,GimpViewable * viewable,gpointer parent_insert_data,gint index)
 name|gimp_container_tree_view_insert_item
 parameter_list|(
 name|GimpContainerView
@@ -2571,6 +2574,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index
@@ -2588,7 +2594,6 @@ decl_stmt|;
 name|GtkTreeIter
 name|iter
 decl_stmt|;
-comment|/* FIXME tree */
 if|if
 condition|(
 name|index
@@ -2608,7 +2613,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|NULL
+name|parent_insert_data
 argument_list|)
 expr_stmt|;
 else|else
@@ -2624,7 +2629,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|NULL
+name|parent_insert_data
 argument_list|,
 name|index
 argument_list|)
