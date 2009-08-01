@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd31e900103
+DECL|enum|__anon275ab1920103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd31e900203
+DECL|enum|__anon275ab1920203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2703,7 +2703,7 @@ name|container
 operator|=
 name|gimp_item_get_container
 argument_list|(
-name|container
+name|item
 argument_list|)
 expr_stmt|;
 if|if
