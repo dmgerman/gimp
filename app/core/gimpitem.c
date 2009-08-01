@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba967980103
+DECL|enum|__anon2ae865f30103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba967980203
+DECL|enum|__anon2ae865f30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2182,6 +2182,10 @@ modifier|*
 name|item
 parameter_list|)
 block|{
+name|GimpContainer
+modifier|*
+name|children
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_ITEM
@@ -2195,6 +2199,32 @@ operator|->
 name|removed
 operator|=
 name|TRUE
+expr_stmt|;
+name|children
+operator|=
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|children
+condition|)
+name|gimp_container_foreach
+argument_list|(
+name|children
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|gimp_item_removed
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
