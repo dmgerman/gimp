@@ -365,6 +365,46 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|gimp_item_stack_invalidate_preview (GimpViewable * viewable)
+name|gimp_item_stack_invalidate_preview
+parameter_list|(
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+block|{
+name|GimpContainer
+modifier|*
+name|children
+init|=
+name|gimp_viewable_get_children
+argument_list|(
+name|viewable
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|children
+condition|)
+name|gimp_item_stack_invalidate_previews
+argument_list|(
+name|GIMP_ITEM_STACK
+argument_list|(
+name|children
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_viewable_invalidate_preview
+argument_list|(
+name|viewable
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_item_stack_invalidate_previews (GimpItemStack * stack)
 name|gimp_item_stack_invalidate_previews
@@ -392,7 +432,7 @@ argument_list|,
 operator|(
 name|GFunc
 operator|)
-name|gimp_viewable_invalidate_preview
+name|gimp_item_stack_invalidate_preview
 argument_list|,
 name|NULL
 argument_list|)
