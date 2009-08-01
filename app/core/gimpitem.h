@@ -633,6 +633,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GList
+modifier|*
+name|gimp_item_get_container_iter
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_item_get_index
 parameter_list|(
