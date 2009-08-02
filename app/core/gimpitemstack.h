@@ -131,6 +131,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_item_stack_get_n_items
+parameter_list|(
+name|GimpItemStack
+modifier|*
+name|stack
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GList
 modifier|*
 name|gimp_item_stack_get_item_list
