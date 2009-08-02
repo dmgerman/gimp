@@ -103,23 +103,19 @@ DECL|member|parent_instance
 name|GimpDataEditor
 name|parent_instance
 decl_stmt|;
-comment|//GtkWidget      *options_vbox;
+DECL|member|options_vbox
+name|GtkWidget
+modifier|*
+name|options_vbox
+decl_stmt|;
 comment|//not sure what to add yet.
 block|}
 struct|;
 end_struct
 
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_paint_options_gui
-parameter_list|(
-name|GimpToolOptions
-modifier|*
-name|tool_options
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|//GtkWidget  * gimp_paint_options_gui (GimpToolOptions *tool_options);
+end_comment
 
 begin_struct
 DECL|struct|_GimpDynamicsEditorClass
