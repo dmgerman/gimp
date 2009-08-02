@@ -154,7 +154,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27910a3f0103
+DECL|enum|__anon2b8b38270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2208,11 +2208,9 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_get_n_children
+name|gimp_image_get_n_layers
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2240,11 +2238,9 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_get_n_children
+name|gimp_image_get_n_channels
 argument_list|(
 name|image
-operator|->
-name|channels
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2272,11 +2268,9 @@ argument_list|)
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_get_n_children
+name|gimp_image_get_n_vectors
 argument_list|(
 name|image
-operator|->
-name|vectors
 argument_list|)
 argument_list|)
 expr_stmt|;

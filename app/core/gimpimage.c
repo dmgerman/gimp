@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d11000103
+DECL|enum|__anon278157880103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d11000203
+DECL|enum|__anon278157880203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6666,11 +6666,9 @@ expr_stmt|;
 return|return
 operator|(
 operator|(
-name|gimp_container_get_n_children
+name|gimp_image_get_n_layers
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
 operator|>
 literal|1

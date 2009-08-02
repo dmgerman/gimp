@@ -1211,11 +1211,9 @@ name|i
 argument_list|,
 literal|"%d"
 argument_list|,
-name|gimp_container_get_n_children
+name|gimp_image_get_n_layers
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1228,11 +1226,9 @@ block|{
 name|gint
 name|num
 init|=
-name|gimp_container_get_n_children
+name|gimp_image_get_n_layers
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
 decl_stmt|;
 name|i
