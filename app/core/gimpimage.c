@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae94940103
+DECL|enum|__anon2aee64610103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bae94940203
+DECL|enum|__anon2aee64610203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6656,11 +6656,14 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimp_image_get_layer_by_index
+name|GIMP_LAYER
+argument_list|(
+name|gimp_container_get_first_child
 argument_list|(
 name|image
-argument_list|,
-literal|0
+operator|->
+name|layers
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
