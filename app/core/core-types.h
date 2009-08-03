@@ -487,6 +487,15 @@ name|GimpLayer
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpGroupLayer
+typedef|typedef
+name|struct
+name|_GimpGroupLayer
+name|GimpGroupLayer
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  undo objects  */
 end_comment
