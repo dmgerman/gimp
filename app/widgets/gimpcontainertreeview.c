@@ -908,7 +908,12 @@ name|TRUE
 argument_list|,
 literal|"show-expanders"
 argument_list|,
-name|FALSE
+name|GIMP_CONTAINER_VIEW_GET_INTERFACE
+argument_list|(
+name|view
+argument_list|)
+operator|->
+name|model_is_tree
 argument_list|,
 name|NULL
 argument_list|)
