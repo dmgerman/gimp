@@ -121,6 +121,14 @@ parameter_list|)
 value|((b) == GIMP_RGB ?                \                                             GIMP_RGB_IMAGE :                 \                                             (b) == GIMP_GRAY ?               \                                             GIMP_GRAY_IMAGE :                \                                             (b) == GIMP_INDEXED ?            \                                             GIMP_INDEXED_IMAGE : -1)
 end_define
 
+begin_define
+DECL|macro|GIMP_IMAGE_ACTIVE_PARENT
+define|#
+directive|define
+name|GIMP_IMAGE_ACTIVE_PARENT
+value|((gpointer) 1)
+end_define
+
 begin_typedef
 DECL|typedef|GimpImageFlushAccumulator
 typedef|typedef
