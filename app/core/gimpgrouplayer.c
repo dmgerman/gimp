@@ -575,6 +575,19 @@ name|child
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_viewable_set_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|new_child
+argument_list|)
+argument_list|,
+name|GIMP_VIEWABLE
+argument_list|(
+name|new_layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_container_insert
 argument_list|(
 name|new_layer
@@ -653,7 +666,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Group Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
