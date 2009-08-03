@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e4f61d0103
+DECL|enum|__anon2c1640650103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -3419,8 +3419,7 @@ name|viewable
 argument_list|,
 name|parent_insert_data
 argument_list|,
-operator|-
-literal|1
+name|index
 argument_list|)
 expr_stmt|;
 name|g_hash_table_insert
