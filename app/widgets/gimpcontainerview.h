@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c069b6c0103
+DECL|enum|__anon2be76ee30103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -309,6 +309,10 @@ comment|/*  the destroy notifier for private->hash_table's values  */
 DECL|member|insert_data_free
 name|GDestroyNotify
 name|insert_data_free
+decl_stmt|;
+DECL|member|model_is_tree
+name|gboolean
+name|model_is_tree
 decl_stmt|;
 block|}
 struct|;
