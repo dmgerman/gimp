@@ -887,11 +887,14 @@ condition|(
 name|new_layers
 condition|)
 block|{
+comment|/* FIXME tree */
 name|gimp_image_add_layers
 argument_list|(
 name|image
 argument_list|,
 name|new_layers
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

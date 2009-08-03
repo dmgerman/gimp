@@ -8897,11 +8897,14 @@ argument_list|,
 name|y1
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -11367,6 +11370,7 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|text_tool
@@ -11374,6 +11378,8 @@ operator|->
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -11489,6 +11495,7 @@ operator|*
 name|box_height
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|text_tool
@@ -11497,19 +11504,12 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
 operator|-
 literal|1
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_active_vectors
-argument_list|(
-name|text_tool
-operator|->
-name|image
-argument_list|,
-name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_item_set_visible

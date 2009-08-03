@@ -729,11 +729,14 @@ literal|"New Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|new_vectors
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -985,11 +988,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|new_vectors
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1905,6 +1911,7 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
+comment|/* FIXME tree */
 if|if
 condition|(
 operator|!
@@ -1919,6 +1926,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -2506,6 +2515,7 @@ argument_list|,
 name|vectors_name
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|options
@@ -2513,6 +2523,8 @@ operator|->
 name|image
 argument_list|,
 name|new_vectors
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -2698,6 +2710,7 @@ argument_list|(
 name|chooser
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 if|if
 condition|(
 name|gimp_vectors_import_file
@@ -2711,6 +2724,8 @@ argument_list|,
 name|vectors_import_merge
 argument_list|,
 name|vectors_import_scale
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

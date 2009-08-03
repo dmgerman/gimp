@@ -488,6 +488,10 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
+name|GimpLayer
+modifier|*
+name|prev_parent
+parameter_list|,
 name|gint
 name|prev_position
 parameter_list|,
@@ -776,6 +780,10 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
+name|GimpChannel
+modifier|*
+name|prev_parent
+parameter_list|,
 name|gint
 name|prev_position
 parameter_list|,
@@ -873,7 +881,11 @@ name|undo_desc
 parameter_list|,
 name|GimpVectors
 modifier|*
-name|channel
+name|vectors
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|prev_parent
 parameter_list|,
 name|gint
 name|prev_position

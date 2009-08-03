@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b277a240103
+DECL|enum|__anon28d559490103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b277a240203
+DECL|enum|__anon28d559490203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11788,7 +11788,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_layer (GimpImage * image,GimpLayer * layer,gint position,gboolean push_undo)
+DECL|function|gimp_image_add_layer (GimpImage * image,GimpLayer * layer,GimpLayer * parent,gint position,gboolean push_undo)
 name|gimp_image_add_layer
 parameter_list|(
 name|GimpImage
@@ -11799,6 +11799,10 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
+name|GimpLayer
+modifier|*
+name|parent
+parameter_list|,
 name|gint
 name|position
 parameter_list|,
@@ -11806,12 +11810,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|parent
-init|=
-name|NULL
-decl_stmt|;
 name|GimpLayer
 modifier|*
 name|active_layer
@@ -12376,6 +12374,8 @@ name|undo_desc
 argument_list|,
 name|layer
 argument_list|,
+name|parent
+argument_list|,
 name|index
 argument_list|,
 name|active_layer
@@ -12602,7 +12602,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_add_layers (GimpImage * image,GList * layers,gint position,gint x,gint y,gint width,gint height,const gchar * undo_desc)
+DECL|function|gimp_image_add_layers (GimpImage * image,GList * layers,GimpLayer * parent,gint position,gint x,gint y,gint width,gint height,const gchar * undo_desc)
 name|gimp_image_add_layers
 parameter_list|(
 name|GimpImage
@@ -12612,6 +12612,10 @@ parameter_list|,
 name|GList
 modifier|*
 name|layers
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -12679,6 +12683,50 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_LAYER
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+operator|==
+name|image
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|position
@@ -12700,17 +12748,52 @@ if|if
 condition|(
 name|active_layer
 condition|)
+block|{
+name|GimpContainer
+modifier|*
+name|container
+decl_stmt|;
+if|if
+condition|(
+name|parent
+condition|)
+name|container
+operator|=
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|parent
+argument_list|)
+argument_list|)
+expr_stmt|;
+else|else
+name|container
+operator|=
+name|image
+operator|->
+name|layers
+expr_stmt|;
 name|position
 operator|=
-name|gimp_item_get_index
+name|gimp_container_get_child_index
 argument_list|(
-name|GIMP_ITEM
+name|container
+argument_list|,
+name|GIMP_OBJECT
 argument_list|(
 name|active_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-else|else
+block|}
+if|if
+condition|(
+name|position
+operator|==
+operator|-
+literal|1
+condition|)
 name|position
 operator|=
 literal|0
@@ -12893,6 +12976,8 @@ name|GIMP_LAYER
 argument_list|(
 name|new_item
 argument_list|)
+argument_list|,
+name|parent
 argument_list|,
 name|position
 argument_list|,
@@ -13448,7 +13533,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,gint position,gboolean push_undo)
+DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,GimpChannel * parent,gint position,gboolean push_undo)
 name|gimp_image_add_channel
 parameter_list|(
 name|GimpImage
@@ -13459,6 +13544,10 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
+name|GimpChannel
+modifier|*
+name|parent
+parameter_list|,
 name|gint
 name|position
 parameter_list|,
@@ -13466,12 +13555,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|GimpVectors
-modifier|*
-name|parent
-init|=
-name|NULL
-decl_stmt|;
 name|GimpChannel
 modifier|*
 name|active_channel
@@ -13912,6 +13995,8 @@ literal|"Remove Channel"
 argument_list|)
 argument_list|,
 name|channel
+argument_list|,
+name|parent
 argument_list|,
 name|index
 argument_list|,
@@ -14593,7 +14678,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_image_add_vectors (GimpImage * image,GimpVectors * vectors,gint position,gboolean push_undo)
+DECL|function|gimp_image_add_vectors (GimpImage * image,GimpVectors * vectors,GimpVectors * parent,gint position,gboolean push_undo)
 name|gimp_image_add_vectors
 parameter_list|(
 name|GimpImage
@@ -14604,6 +14689,10 @@ name|GimpVectors
 modifier|*
 name|vectors
 parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
+parameter_list|,
 name|gint
 name|position
 parameter_list|,
@@ -14611,12 +14700,6 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
-name|GimpVectors
-modifier|*
-name|parent
-init|=
-name|NULL
-decl_stmt|;
 name|GimpVectors
 modifier|*
 name|active_vectors
@@ -14993,6 +15076,8 @@ literal|"Remove Path"
 argument_list|)
 argument_list|,
 name|vectors
+argument_list|,
+name|parent
 argument_list|,
 name|index
 argument_list|,

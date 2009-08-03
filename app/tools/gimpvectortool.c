@@ -1294,6 +1294,7 @@ name|undo_motion
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|display
@@ -1301,6 +1302,8 @@ operator|->
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

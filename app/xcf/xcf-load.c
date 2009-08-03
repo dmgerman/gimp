@@ -873,6 +873,9 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image
@@ -995,6 +998,9 @@ name|image
 argument_list|,
 name|channel
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image
@@ -6842,6 +6848,9 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* can't be a tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image
@@ -7768,6 +7777,9 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image

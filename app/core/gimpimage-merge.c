@@ -1114,11 +1114,14 @@ argument_list|(
 name|merge_list
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|target_vectors
+argument_list|,
+name|NULL
 argument_list|,
 name|pos
 argument_list|,
@@ -2523,11 +2526,14 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|merge_layer
+argument_list|,
+name|NULL
 argument_list|,
 name|position
 argument_list|,
@@ -2538,11 +2544,14 @@ block|}
 else|else
 block|{
 comment|/*  Add the layer to the image  */
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|merge_layer
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_container_get_n_children
 argument_list|(

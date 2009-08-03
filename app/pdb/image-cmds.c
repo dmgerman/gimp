@@ -4117,6 +4117,7 @@ name|error
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_layer
@@ -4124,6 +4125,8 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|,
 name|MAX
 argument_list|(
@@ -5007,6 +5010,7 @@ name|error
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_channel
@@ -5014,6 +5018,8 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|NULL
 argument_list|,
 name|MAX
 argument_list|(
@@ -5677,6 +5683,7 @@ name|error
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_vectors
@@ -5684,6 +5691,8 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|NULL
 argument_list|,
 name|MAX
 argument_list|(

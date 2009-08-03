@@ -1303,6 +1303,8 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|TRUE
@@ -2955,6 +2957,8 @@ argument_list|,
 name|merge
 argument_list|,
 name|scale
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

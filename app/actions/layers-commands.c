@@ -1287,11 +1287,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|new_layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1380,11 +1383,14 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1751,11 +1757,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|new_layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -2061,23 +2070,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
 operator|-
 literal|1
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_active_vectors
-argument_list|(
-name|image
-argument_list|,
-name|vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -2187,23 +2192,19 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|new_vectors
 argument_list|,
+name|NULL
+argument_list|,
 operator|-
 literal|1
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_image_set_active_vectors
-argument_list|(
-name|image
-argument_list|,
-name|new_vectors
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -3910,6 +3911,7 @@ argument_list|,
 name|layer_fill_type
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|dialog
@@ -3917,6 +3919,8 @@ operator|->
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

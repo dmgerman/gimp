@@ -2437,6 +2437,10 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
+name|GimpLayer
+modifier|*
+name|parent
+parameter_list|,
 name|gint
 name|position
 parameter_list|,
@@ -2479,6 +2483,10 @@ parameter_list|,
 name|GList
 modifier|*
 name|layers
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -2610,6 +2618,10 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GimpChannel
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -2749,6 +2761,10 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position

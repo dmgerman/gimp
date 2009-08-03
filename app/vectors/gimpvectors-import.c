@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d02e6a0108
+DECL|struct|__anon298a94c20108
 block|{
 DECL|member|stack
 name|GQueue
@@ -222,7 +222,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d02e6a0208
+DECL|struct|__anon298a94c20208
 block|{
 DECL|member|id
 name|gchar
@@ -267,6 +267,10 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -751,7 +755,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,gint position,GList ** ret_vectors,GError ** error)
+DECL|function|gimp_vectors_import_file (GimpImage * image,const gchar * filename,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
 name|gimp_vectors_import_file
 parameter_list|(
 name|GimpImage
@@ -768,6 +772,10 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -798,6 +806,20 @@ argument_list|(
 name|filename
 operator|!=
 name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_VECTORS
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -845,6 +867,8 @@ name|merge
 argument_list|,
 name|scale
 argument_list|,
+name|parent
+argument_list|,
 name|position
 argument_list|,
 name|ret_vectors
@@ -861,7 +885,7 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_vectors_import_buffer (GimpImage * image,const gchar * buffer,gsize len,gboolean merge,gboolean scale,gint position,GList ** ret_vectors,GError ** error)
+DECL|function|gimp_vectors_import_buffer (GimpImage * image,const gchar * buffer,gsize len,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
 name|gimp_vectors_import_buffer
 parameter_list|(
 name|GimpImage
@@ -882,6 +906,10 @@ parameter_list|,
 name|gboolean
 name|scale
 parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
+parameter_list|,
 name|gint
 name|position
 parameter_list|,
@@ -915,6 +943,20 @@ operator|||
 name|len
 operator|==
 literal|0
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|parent
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_VECTORS
+argument_list|(
+name|parent
+argument_list|)
 argument_list|,
 name|FALSE
 argument_list|)
@@ -962,6 +1004,8 @@ name|merge
 argument_list|,
 name|scale
 argument_list|,
+name|parent
+argument_list|,
 name|position
 argument_list|,
 name|ret_vectors
@@ -975,7 +1019,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_import (GimpImage * image,const gchar * filename,const gchar * str,gsize len,gboolean merge,gboolean scale,gint position,GList ** ret_vectors,GError ** error)
+DECL|function|gimp_vectors_import (GimpImage * image,const gchar * filename,const gchar * str,gsize len,gboolean merge,gboolean scale,GimpVectors * parent,gint position,GList ** ret_vectors,GError ** error)
 name|gimp_vectors_import
 parameter_list|(
 name|GimpImage
@@ -1000,6 +1044,10 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position
@@ -1267,6 +1315,8 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|parent
 argument_list|,
 name|position
 argument_list|,
@@ -6040,7 +6090,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d02e6a0308
+DECL|struct|__anon298a94c20308
 block|{
 DECL|member|strokes
 name|GList

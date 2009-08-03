@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0dc10d0103
+DECL|enum|__anon2b97aff20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1554,6 +1554,8 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|,
 literal|0
 argument_list|,

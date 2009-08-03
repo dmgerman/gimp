@@ -1077,11 +1077,14 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|new_layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1228,11 +1231,14 @@ literal|"Drop New Path"
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|new_vectors
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1333,6 +1339,7 @@ operator|!
 name|image
 condition|)
 return|return;
+comment|/* FIXME tree */
 if|if
 condition|(
 operator|!
@@ -1352,6 +1359,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -1988,11 +1997,14 @@ operator|&
 name|height
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layers
 argument_list|(
 name|image
 argument_list|,
 name|new_layers
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -2384,11 +2396,14 @@ argument_list|,
 name|new_item
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|dest_image
 argument_list|,
 name|new_layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -2659,11 +2674,14 @@ argument_list|,
 name|new_item
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|new_layer
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
