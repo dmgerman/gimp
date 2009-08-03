@@ -482,27 +482,29 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dynamics_editor_new (GimpMenuFactory * menu_factory)
+DECL|function|gimp_dynamics_editor_new (GimpContext * context,GimpMenuFactory * menu_factory)
 name|gimp_dynamics_editor_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
 parameter_list|)
-comment|//gimp_dynamics_editor_new (GimpContext     *context,
-comment|//                          GimpMenuFactory *menu_factory)
 block|{
+comment|//g_return_val_if_fail (GIMP_IS_MENU_FACTORY (menu_factory), NULL);
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_MENU_FACTORY
+name|GIMP_IS_CONTEXT
 argument_list|(
-name|menu_factory
+name|context
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|//g_return_val_if_fail (GIMP_IS_CONTEXT (context), NULL);
 return|return
 name|g_object_new
 argument_list|(
@@ -519,6 +521,25 @@ argument_list|,
 literal|"ui-path"
 argument_list|,
 literal|"/dynamics-editor-popup"
+argument_list|,
+literal|"data-factory"
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|brush_factory
+argument_list|,
+literal|"context"
+argument_list|,
+name|context
+argument_list|,
+literal|"data"
+argument_list|,
+name|gimp_context_get_brush
+argument_list|(
+name|context
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
