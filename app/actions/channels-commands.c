@@ -624,14 +624,13 @@ argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-comment|/* FIXME tree */
 name|gimp_image_add_channel
 argument_list|(
 name|image
 argument_list|,
 name|new_channel
 argument_list|,
-name|NULL
+name|GIMP_IMAGE_ACTIVE_PARENT
 argument_list|,
 operator|-
 literal|1
@@ -987,14 +986,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* FIXME tree */
 name|gimp_image_add_channel
 argument_list|(
 name|image
 argument_list|,
 name|new_channel
 argument_list|,
-name|NULL
+name|GIMP_IMAGE_ACTIVE_PARENT
 argument_list|,
 operator|-
 literal|1
@@ -1361,7 +1359,6 @@ name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* FIXME tree */
 name|gimp_image_add_channel
 argument_list|(
 name|options
@@ -1370,7 +1367,7 @@ name|image
 argument_list|,
 name|new_channel
 argument_list|,
-name|NULL
+name|GIMP_IMAGE_ACTIVE_PARENT
 argument_list|,
 operator|-
 literal|1

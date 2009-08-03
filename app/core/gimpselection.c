@@ -2618,14 +2618,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* FIXME tree */
 name|gimp_image_add_channel
 argument_list|(
 name|image
 argument_list|,
 name|new_channel
 argument_list|,
-name|NULL
+name|GIMP_IMAGE_ACTIVE_PARENT
 argument_list|,
 operator|-
 literal|1
