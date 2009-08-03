@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a94c20108
+DECL|struct|__anon2b89f94e0108
 block|{
 DECL|member|stack
 name|GQueue
@@ -222,7 +222,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a94c20208
+DECL|struct|__anon2b89f94e0208
 block|{
 DECL|member|id
 name|gchar
@@ -816,6 +816,10 @@ name|parent
 operator|==
 name|NULL
 operator|||
+name|parent
+operator|==
+name|GIMP_IMAGE_ACTIVE_PARENT
+operator|||
 name|GIMP_IS_VECTORS
 argument_list|(
 name|parent
@@ -952,6 +956,10 @@ argument_list|(
 name|parent
 operator|==
 name|NULL
+operator|||
+name|parent
+operator|==
+name|GIMP_IMAGE_ACTIVE_PARENT
 operator|||
 name|GIMP_IS_VECTORS
 argument_list|(
@@ -6090,7 +6098,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298a94c20308
+DECL|struct|__anon2b89f94e0308
 block|{
 DECL|member|strokes
 name|GList
