@@ -856,6 +856,12 @@ name|GimpChannel
 modifier|*
 name|new_channel
 decl_stmt|;
+name|GimpChannel
+modifier|*
+name|parent
+init|=
+name|GIMP_IMAGE_ACTIVE_PARENT
+decl_stmt|;
 if|if
 condition|(
 name|GIMP_IS_COMPONENT_EDITOR
@@ -985,6 +991,20 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/*  use the actual parent here, not GIMP_IMAGE_ACTIVE_PARENT because        *  the latter would add a duplicated group inside itself instead of        *  above it        */
+name|parent
+operator|=
+name|GIMP_CHANNEL
+argument_list|(
+name|gimp_viewable_get_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|channel
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_image_add_channel
 argument_list|(
@@ -992,7 +1012,7 @@ name|image
 argument_list|,
 name|new_channel
 argument_list|,
-name|GIMP_IMAGE_ACTIVE_PARENT
+name|parent
 argument_list|,
 operator|-
 literal|1
