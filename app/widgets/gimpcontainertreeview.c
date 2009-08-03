@@ -982,6 +982,17 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|gtk_tree_view_set_expander_column
+argument_list|(
+name|tree_view
+operator|->
+name|view
+argument_list|,
+name|tree_view
+operator|->
+name|main_column
+argument_list|)
+expr_stmt|;
 name|tree_view
 operator|->
 name|renderer_cell
