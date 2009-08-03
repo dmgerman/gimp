@@ -190,10 +190,6 @@ name|GimpPaintInfo
 modifier|*
 name|dynamics_info
 decl_stmt|;
-DECL|member|dynamics_expanded
-name|gboolean
-name|dynamics_expanded
-decl_stmt|;
 DECL|member|pressure_options
 name|GimpDynamicOptions
 modifier|*

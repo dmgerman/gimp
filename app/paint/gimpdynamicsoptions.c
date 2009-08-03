@@ -63,10 +63,6 @@ directive|include
 file|"core/gimppaintinfo.h"
 end_include
 
-begin_comment
-comment|//#include "gimppaintoptions.h"
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -529,7 +525,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aa90a1b0103
+DECL|enum|__anon2baf42230103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -913,21 +909,6 @@ name|GIMP_PARAM_READWRITE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
-argument_list|(
-name|object_class
-argument_list|,
-name|PROP_DYNAMICS_EXPANDED
-argument_list|,
-literal|"dynamics-expanded"
-argument_list|,
-name|NULL
-argument_list|,
-name|DEFAULT_DYNAMICS_EXPANDED
-argument_list|,
-name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
@@ -2040,19 +2021,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_DYNAMICS_EXPANDED
-case|:
-name|options
-operator|->
-name|dynamics_expanded
-operator|=
-name|g_value_get_boolean
-argument_list|(
-name|value
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
 name|PROP_PRESSURE_OPACITY
 case|:
 name|pressure_options
@@ -2864,19 +2832,6 @@ argument_list|,
 name|options
 operator|->
 name|dynamics_info
-argument_list|)
-expr_stmt|;
-break|break;
-case|case
-name|PROP_DYNAMICS_EXPANDED
-case|:
-name|g_value_set_boolean
-argument_list|(
-name|value
-argument_list|,
-name|options
-operator|->
-name|dynamics_expanded
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3760,7 +3715,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* Calculates dynamics mix to be used for same parameter  * (velocity/pressure/direction/tilt/random) mix Needed in may places and tools.  *  * Added one parameter: fading, the 6th driving factor.   * (velocity/pressure/direction/tilt/random/fading)   */
+comment|/* Calculates dynamics mix to be used for same parameter  * (velocity/pressure/direction/tilt/random) mix Needed in may places and tools.  *  * Added one parameter: fading, the 6th driving factor.  * (velocity/pressure/direction/tilt/random/fading)  */
 end_comment
 
 begin_function
