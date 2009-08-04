@@ -50,6 +50,11 @@ name|port_string
 init|=
 literal|2
 block|,
+DECL|enumerator|port_srfi6
+name|port_srfi6
+init|=
+literal|4
+block|,
 DECL|enumerator|port_input
 name|port_input
 init|=
@@ -74,10 +79,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon288ec9b3010a
+DECL|union|__anon2a3e6d99010a
 union|union
 block|{
-DECL|struct|__anon288ec9b30208
+DECL|struct|__anon2a3e6d990208
 struct|struct
 block|{
 DECL|member|file
@@ -93,7 +98,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon288ec9b30308
+DECL|struct|__anon2a3e6d990308
 struct|struct
 block|{
 DECL|member|start
@@ -139,10 +144,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon288ec9b3040a
+DECL|union|__anon2a3e6d99040a
 union|union
 block|{
-DECL|struct|__anon288ec9b30508
+DECL|struct|__anon2a3e6d990508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -171,7 +176,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon288ec9b30608
+DECL|struct|__anon2a3e6d990608
 struct|struct
 block|{
 DECL|member|_car
