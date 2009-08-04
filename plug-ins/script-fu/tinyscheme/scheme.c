@@ -9440,13 +9440,30 @@ name|FILE
 modifier|*
 name|fin
 init|=
+name|NULL
+decl_stmt|;
+if|if
+condition|(
+name|sc
+operator|->
+name|file_i
+operator|==
+name|MAXFIL
+operator|-
+literal|1
+condition|)
+return|return
+literal|0
+return|;
+name|fin
+operator|=
 name|fopen
 argument_list|(
 name|fname
 argument_list|,
 literal|"rb"
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 if|if
 condition|(
 name|fin
@@ -11870,7 +11887,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2967d2320103
+DECL|enum|__anon28c9ccfe0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -29021,7 +29038,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2967d2320208
+DECL|struct|__anon28c9ccfe0208
 specifier|static
 struct|struct
 block|{
@@ -29256,7 +29273,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2967d2320308
+DECL|struct|__anon28c9ccfe0308
 typedef|typedef
 struct|struct
 block|{
