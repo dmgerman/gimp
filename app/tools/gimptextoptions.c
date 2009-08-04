@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c1081f0103
+DECL|enum|__anon291db3b40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -453,7 +453,11 @@ name|PROP_LANGUAGE
 argument_list|,
 literal|"language"
 argument_list|,
-name|NULL
+name|N_
+argument_list|(
+literal|"The text language may have an effect "
+literal|"on the way the text is rendered."
+argument_list|)
 argument_list|,
 operator|(
 specifier|const
