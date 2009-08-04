@@ -1823,7 +1823,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2afa41820108
+DECL|struct|__anon2ae0b9710108
 block|{
 DECL|member|config
 name|GObject
@@ -2783,10 +2783,9 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|// FIXME
-name|gtk_entry_set_text
+name|gimp_language_entry_set_iso_code
 argument_list|(
-name|GTK_ENTRY
+name|GIMP_LANGUAGE_ENTRY
 argument_list|(
 name|entry
 argument_list|)
@@ -2867,7 +2866,7 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|text
+name|code
 decl_stmt|;
 name|param_spec
 operator|=
@@ -2885,12 +2884,11 @@ operator|!
 name|param_spec
 condition|)
 return|return;
-comment|// FIXME
-name|text
+name|code
 operator|=
-name|gtk_entry_get_text
+name|gimp_language_entry_get_iso_code
 argument_list|(
-name|GTK_ENTRY
+name|GIMP_LANGUAGE_ENTRY
 argument_list|(
 name|entry
 argument_list|)
@@ -2913,7 +2911,7 @@ name|param_spec
 operator|->
 name|name
 argument_list|,
-name|text
+name|code
 argument_list|,
 name|NULL
 argument_list|)
@@ -2976,19 +2974,14 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-comment|// FIXME
-name|gtk_entry_set_text
+name|gimp_language_entry_set_iso_code
 argument_list|(
-name|GTK_ENTRY
+name|GIMP_LANGUAGE_ENTRY
 argument_list|(
 name|entry
 argument_list|)
 argument_list|,
 name|value
-condition|?
-name|value
-else|:
-literal|""
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
