@@ -774,6 +774,15 @@ name|GimpTag
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpTreeHandler
+typedef|typedef
+name|struct
+name|_GimpTreeHandler
+name|GimpTreeHandler
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  interfaces  */
 end_comment
