@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291db3b40103
+DECL|enum|__anon2b314c480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2201,6 +2201,10 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/*  Only add the language entry if the iso-codes package is available.  */
+ifdef|#
+directive|ifdef
+name|HAVE_ISO_CODES
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -2322,6 +2326,8 @@ argument_list|(
 name|entry
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|main_vbox
 return|;
