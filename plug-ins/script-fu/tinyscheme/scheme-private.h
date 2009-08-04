@@ -79,10 +79,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2a3e6d99010a
+DECL|union|__anon29db1011010a
 union|union
 block|{
-DECL|struct|__anon2a3e6d990208
+DECL|struct|__anon29db10110208
 struct|struct
 block|{
 DECL|member|file
@@ -98,7 +98,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2a3e6d990308
+DECL|struct|__anon29db10110308
 struct|struct
 block|{
 DECL|member|start
@@ -144,10 +144,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2a3e6d99040a
+DECL|union|__anon29db1011040a
 union|union
 block|{
-DECL|struct|__anon2a3e6d990508
+DECL|struct|__anon29db10110508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -176,7 +176,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2a3e6d990608
+DECL|struct|__anon29db10110608
 struct|struct
 block|{
 DECL|member|_car
@@ -579,7 +579,18 @@ block|}
 enum|;
 end_enum
 
-begin_define
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__cplusplus
+end_ifdef
+
+begin_extern
+extern|extern
+literal|"C"
+block|{
+endif|#
+directive|endif
 DECL|macro|cons (sc,a,b)
 define|#
 directive|define
@@ -592,9 +603,6 @@ parameter_list|,
 name|b
 parameter_list|)
 value|_cons(sc,a,b,0)
-end_define
-
-begin_define
 DECL|macro|immutable_cons (sc,a,b)
 define|#
 directive|define
@@ -607,9 +615,6 @@ parameter_list|,
 name|b
 parameter_list|)
 value|_cons(sc,a,b,1)
-end_define
-
-begin_function_decl
 name|int
 name|is_string
 parameter_list|(
@@ -617,9 +622,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|char
 modifier|*
 name|string_value
@@ -628,9 +630,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_number
 parameter_list|(
@@ -638,9 +637,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|num
 name|nvalue
 parameter_list|(
@@ -648,9 +644,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|long
 name|ivalue
 parameter_list|(
@@ -658,9 +651,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|double
 name|rvalue
 parameter_list|(
@@ -668,9 +658,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_integer
 parameter_list|(
@@ -678,9 +665,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_real
 parameter_list|(
@@ -688,9 +672,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_character
 parameter_list|(
@@ -698,9 +679,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|string_length
 parameter_list|(
@@ -708,9 +686,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gunichar
 name|charvalue
 parameter_list|(
@@ -718,9 +693,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_vector
 parameter_list|(
@@ -728,9 +700,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_port
 parameter_list|(
@@ -738,9 +707,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_pair
 parameter_list|(
@@ -748,9 +714,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|pointer
 name|pair_car
 parameter_list|(
@@ -758,9 +721,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|pointer
 name|pair_cdr
 parameter_list|(
@@ -768,9 +728,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|pointer
 name|set_car
 parameter_list|(
@@ -781,9 +738,6 @@ name|pointer
 name|q
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|pointer
 name|set_cdr
 parameter_list|(
@@ -794,9 +748,6 @@ name|pointer
 name|q
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_symbol
 parameter_list|(
@@ -804,9 +755,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|char
 modifier|*
 name|symname
@@ -815,9 +763,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|char
 modifier|*
 name|symkey
@@ -826,9 +771,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|hasprop
 parameter_list|(
@@ -836,9 +778,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_syntax
 parameter_list|(
@@ -846,9 +785,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_proc
 parameter_list|(
@@ -856,9 +792,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_foreign
 parameter_list|(
@@ -866,9 +799,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|char
 modifier|*
 name|syntaxname
@@ -877,9 +807,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_closure
 parameter_list|(
@@ -887,9 +814,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_macro
 parameter_list|(
@@ -897,9 +821,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|pointer
 name|closure_code
 parameter_list|(
@@ -907,9 +828,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|pointer
 name|closure_env
 parameter_list|(
@@ -917,9 +835,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_continuation
 parameter_list|(
@@ -927,9 +842,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_promise
 parameter_list|(
@@ -937,9 +849,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_environment
 parameter_list|(
@@ -947,9 +856,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|int
 name|is_immutable
 parameter_list|(
@@ -957,9 +863,6 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
-
-begin_function_decl
 name|void
 name|setimmutable
 parameter_list|(
@@ -967,7 +870,16 @@ name|pointer
 name|p
 parameter_list|)
 function_decl|;
-end_function_decl
+ifdef|#
+directive|ifdef
+name|__cplusplus
+block|}
+end_extern
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_endif
 endif|#
