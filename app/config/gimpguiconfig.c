@@ -124,7 +124,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad1c46c0103
+DECL|enum|__anon2c985a1b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -424,7 +424,7 @@ literal|"trust-dirty-flag"
 argument_list|,
 name|TRUST_DIRTY_FLAG_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
