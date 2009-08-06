@@ -95,6 +95,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpItem
+modifier|*
+name|new_parent
+parameter_list|,
 name|gint
 name|new_index
 parameter_list|,

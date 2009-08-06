@@ -505,7 +505,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_layer_reposition
+name|gimp_image_undo_push_layer_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -797,7 +797,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_channel_reposition
+name|gimp_image_undo_push_channel_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -921,7 +921,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_vectors_reposition
+name|gimp_image_undo_push_vectors_reorder
 parameter_list|(
 name|GimpImage
 modifier|*

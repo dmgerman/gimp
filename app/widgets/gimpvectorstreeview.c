@@ -378,7 +378,7 @@ operator|=
 operator|(
 name|GimpReorderItemFunc
 operator|)
-name|gimp_image_position_vectors
+name|gimp_image_reorder_vectors
 expr_stmt|;
 name|iv_class
 operator|->

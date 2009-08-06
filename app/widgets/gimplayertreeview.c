@@ -1016,7 +1016,7 @@ operator|=
 operator|(
 name|GimpReorderItemFunc
 operator|)
-name|gimp_image_position_layer
+name|gimp_image_reorder_layer
 expr_stmt|;
 name|item_view_class
 operator|->

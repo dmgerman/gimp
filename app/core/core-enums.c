@@ -4429,11 +4429,11 @@ literal|"layer-remove"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_LAYER_REPOSITION
+name|GIMP_UNDO_LAYER_REORDER
 block|,
-literal|"GIMP_UNDO_LAYER_REPOSITION"
+literal|"GIMP_UNDO_LAYER_REORDER"
 block|,
-literal|"layer-reposition"
+literal|"layer-reorder"
 block|}
 block|,
 block|{
@@ -4525,11 +4525,11 @@ literal|"channel-remove"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_CHANNEL_REPOSITION
+name|GIMP_UNDO_CHANNEL_REORDER
 block|,
-literal|"GIMP_UNDO_CHANNEL_REPOSITION"
+literal|"GIMP_UNDO_CHANNEL_REORDER"
 block|,
-literal|"channel-reposition"
+literal|"channel-reorder"
 block|}
 block|,
 block|{
@@ -4565,11 +4565,11 @@ literal|"vectors-mod"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_VECTORS_REPOSITION
+name|GIMP_UNDO_VECTORS_REORDER
 block|,
-literal|"GIMP_UNDO_VECTORS_REPOSITION"
+literal|"GIMP_UNDO_VECTORS_REORDER"
 block|,
-literal|"vectors-reposition"
+literal|"vectors-reorder"
 block|}
 block|,
 block|{
@@ -5355,13 +5355,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_LAYER_REPOSITION
+name|GIMP_UNDO_LAYER_REORDER
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Reposition layer"
+literal|"Reorder layer"
 argument_list|)
 block|,
 name|NULL
@@ -5511,13 +5511,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_CHANNEL_REPOSITION
+name|GIMP_UNDO_CHANNEL_REORDER
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Reposition channel"
+literal|"Reorder channel"
 argument_list|)
 block|,
 name|NULL
@@ -5576,13 +5576,13 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_VECTORS_REPOSITION
+name|GIMP_UNDO_VECTORS_REORDER
 block|,
 name|NC_
 argument_list|(
 literal|"undo-type"
 argument_list|,
-literal|"Reposition path"
+literal|"Reorder path"
 argument_list|)
 block|,
 name|NULL

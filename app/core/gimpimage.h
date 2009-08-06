@@ -2591,7 +2591,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_position_layer
+name|gimp_image_reorder_layer
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2600,6 +2600,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|new_parent
 parameter_list|,
 name|gint
 name|new_index
@@ -2734,7 +2738,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_position_channel
+name|gimp_image_reorder_channel
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2743,6 +2747,10 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GimpChannel
+modifier|*
+name|new_parent
 parameter_list|,
 name|gint
 name|new_index
@@ -2877,7 +2885,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_image_position_vectors
+name|gimp_image_reorder_vectors
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -2886,6 +2894,10 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|new_parent
 parameter_list|,
 name|gint
 name|new_index

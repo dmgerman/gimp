@@ -457,7 +457,7 @@ operator|=
 operator|(
 name|GimpReorderItemFunc
 operator|)
-name|gimp_image_position_channel
+name|gimp_image_reorder_channel
 expr_stmt|;
 name|iv_class
 operator|->
