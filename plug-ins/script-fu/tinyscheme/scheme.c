@@ -573,7 +573,7 @@ DECL|macro|prompt
 define|#
 directive|define
 name|prompt
-value|"> "
+value|"ts> "
 end_define
 
 begin_endif
@@ -8114,9 +8114,11 @@ name|gensym_cnt
 operator|++
 control|)
 block|{
-name|sprintf
+name|snprintf
 argument_list|(
 name|name
+argument_list|,
+literal|40
 argument_list|,
 literal|"gensym-%ld"
 argument_list|,
@@ -8611,7 +8613,7 @@ decl_stmt|;
 name|char
 name|tmp
 index|[
-literal|256
+name|STRBUFFSIZE
 index|]
 decl_stmt|;
 if|if
@@ -8659,9 +8661,11 @@ literal|'o'
 condition|)
 block|{
 comment|/* #o (octal) */
-name|sprintf
+name|snprintf
 argument_list|(
 name|tmp
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"0%s"
 argument_list|,
@@ -8734,9 +8738,11 @@ literal|'x'
 condition|)
 block|{
 comment|/* #x (hex) */
-name|sprintf
+name|snprintf
 argument_list|(
 name|tmp
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"0x%s"
 argument_list|,
@@ -8931,7 +8937,7 @@ literal|1
 operator|&&
 name|c1
 operator|<
-literal|256
+name|UCHAR_MAX
 condition|)
 block|{
 name|c
@@ -9573,9 +9579,11 @@ index|[
 literal|80
 index|]
 decl_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|msg
+argument_list|,
+literal|80
 argument_list|,
 literal|"done: %ld cells were recovered.\n"
 argument_list|,
@@ -11991,12 +11999,6 @@ name|len
 init|=
 literal|0
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|while (!is_one_of(delim, (*p++ = inchar(sc))))       ;   if(p==sc->strbuff+2&& p[-2]=='\\') {     *p=0;   } else {     backchar(sc,p[-1]);     *--p = '\0';   }
-else|#
-directive|else
 do|do
 block|{
 name|c_prev
@@ -12075,8 +12077,6 @@ operator|=
 literal|'\0'
 expr_stmt|;
 block|}
-endif|#
-directive|endif
 return|return
 name|sc
 operator|->
@@ -12119,7 +12119,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon29224a570103
+DECL|enum|__anon28dc31d10103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -13422,9 +13422,11 @@ name|sc
 operator|->
 name|strbuff
 expr_stmt|;
-name|strcpy
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#<PORT>"
 argument_list|)
@@ -13453,9 +13455,11 @@ name|l
 argument_list|)
 condition|)
 block|{
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%ld"
 argument_list|,
@@ -13468,16 +13472,11 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|g_ascii_formatd
+name|snprintf
 argument_list|(
 name|p
 argument_list|,
-sizeof|sizeof
-argument_list|(
-name|sc
-operator|->
-name|strbuff
-argument_list|)
+name|STRBUFFSIZE
 argument_list|,
 literal|"%.10g"
 argument_list|,
@@ -13608,9 +13607,11 @@ block|{
 case|case
 literal|' '
 case|:
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#\\space"
 argument_list|)
@@ -13619,9 +13620,11 @@ break|break;
 case|case
 literal|'\n'
 case|:
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#\\newline"
 argument_list|)
@@ -13630,9 +13633,11 @@ break|break;
 case|case
 literal|'\r'
 case|:
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#\\return"
 argument_list|)
@@ -13641,9 +13646,11 @@ break|break;
 case|case
 literal|'\t'
 case|:
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#\\tab"
 argument_list|)
@@ -13660,9 +13667,11 @@ operator|==
 literal|127
 condition|)
 block|{
-name|strcpy
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#\\del"
 argument_list|)
@@ -13677,16 +13686,13 @@ operator|<
 literal|32
 condition|)
 block|{
-name|strcpy
+name|snprintf
 argument_list|(
 name|p
 argument_list|,
-literal|"#\\"
-argument_list|)
-expr_stmt|;
-name|strcat
-argument_list|(
-name|p
+name|STRBUFFSIZE
+argument_list|,
+literal|"#\\%s"
 argument_list|,
 name|charnames
 index|[
@@ -13705,9 +13711,11 @@ operator|<
 literal|32
 condition|)
 block|{
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#\\x%x"
 argument_list|,
@@ -13718,11 +13726,13 @@ break|break;
 block|}
 endif|#
 directive|endif
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
 argument_list|,
-literal|"#\\%c"
+name|STRBUFFSIZE
+argument_list|,
+literal|"#\\x%c"
 argument_list|,
 name|c
 argument_list|)
@@ -13763,9 +13773,11 @@ name|sc
 operator|->
 name|strbuff
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#<%s PROCEDURE %ld>"
 argument_list|,
@@ -13838,9 +13850,11 @@ name|sc
 operator|->
 name|strbuff
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|p
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"#<FOREIGN PROCEDURE %ld>"
 argument_list|,
@@ -19304,11 +19318,13 @@ argument_list|)
 expr_stmt|;
 block|}
 default|default:
-name|sprintf
+name|snprintf
 argument_list|(
 name|sc
 operator|->
 name|strbuff
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%d: illegal operator"
 argument_list|,
@@ -20940,11 +20956,13 @@ name|OP_APPLY
 argument_list|)
 expr_stmt|;
 default|default:
-name|sprintf
+name|snprintf
 argument_list|(
 name|sc
 operator|->
 name|strbuff
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%d: illegal operator"
 argument_list|,
@@ -24045,11 +24063,13 @@ argument_list|)
 expr_stmt|;
 block|}
 default|default:
-name|sprintf
+name|snprintf
 argument_list|(
 name|sc
 operator|->
 name|strbuff
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%d: illegal operator"
 argument_list|,
@@ -25011,11 +25031,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 default|default:
-name|sprintf
+name|snprintf
 argument_list|(
 name|sc
 operator|->
 name|strbuff
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%d: illegal operator"
 argument_list|,
@@ -28768,11 +28790,13 @@ expr_stmt|;
 block|}
 block|}
 default|default:
-name|sprintf
+name|snprintf
 argument_list|(
 name|sc
 operator|->
 name|strbuff
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%d: illegal operator"
 argument_list|,
@@ -29131,11 +29155,13 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 default|default:
-name|sprintf
+name|snprintf
 argument_list|(
 name|sc
 operator|->
 name|strbuff
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%d: illegal operator"
 argument_list|,
@@ -29242,7 +29268,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon29224a570208
+DECL|struct|__anon28dc31d10208
 specifier|static
 struct|struct
 block|{
@@ -29477,7 +29503,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon29224a570308
+DECL|struct|__anon28dc31d10308
 typedef|typedef
 struct|struct
 block|{
@@ -29665,7 +29691,7 @@ comment|/* if built-in function, check arguments */
 name|char
 name|msg
 index|[
-literal|512
+name|STRBUFFSIZE
 index|]
 decl_stmt|;
 name|int
@@ -29699,9 +29725,11 @@ name|ok
 operator|=
 literal|0
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|msg
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%s: needs%s %d argument(s)"
 argument_list|,
@@ -29742,9 +29770,11 @@ name|ok
 operator|=
 literal|0
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|msg
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%s: needs%s %d argument(s)"
 argument_list|,
@@ -29957,9 +29987,11 @@ name|ok
 operator|=
 literal|0
 expr_stmt|;
-name|sprintf
+name|snprintf
 argument_list|(
 name|msg
+argument_list|,
+name|STRBUFFSIZE
 argument_list|,
 literal|"%s: argument %d must be: %s"
 argument_list|,
