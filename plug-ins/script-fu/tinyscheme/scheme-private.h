@@ -79,10 +79,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon29db1011010a
+DECL|union|__anon291c4f40010a
 union|union
 block|{
-DECL|struct|__anon29db10110208
+DECL|struct|__anon291c4f400208
 struct|struct
 block|{
 DECL|member|file
@@ -98,7 +98,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon29db10110308
+DECL|struct|__anon291c4f400308
 struct|struct
 block|{
 DECL|member|start
@@ -144,10 +144,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon29db1011040a
+DECL|union|__anon291c4f40040a
 union|union
 block|{
-DECL|struct|__anon29db10110508
+DECL|struct|__anon291c4f400508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -176,7 +176,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon29db10110608
+DECL|struct|__anon291c4f400608
 struct|struct
 block|{
 DECL|member|_car
@@ -278,11 +278,6 @@ name|pointer
 name|dump
 decl_stmt|;
 comment|/* stack register for next evaluation */
-DECL|member|safe_foreign
-name|pointer
-name|safe_foreign
-decl_stmt|;
-comment|/* register to avoid gc problems */
 DECL|member|foreign_error
 name|pointer
 name|foreign_error
