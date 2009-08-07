@@ -140,23 +140,21 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
-begin_comment
-comment|//GtkWidget * gimp_dynamics_editor_new (GimpMenuFactory *menu_factory)
-end_comment
-
-begin_expr_stmt
+begin_function_decl
+name|GtkWidget
+modifier|*
 name|gimp_dynamics_editor_new
-argument_list|(
+parameter_list|(
 name|GimpContext
-operator|*
+modifier|*
 name|context
-argument_list|,
+parameter_list|,
 name|GimpMenuFactory
-operator|*
+modifier|*
 name|menu_factory
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#

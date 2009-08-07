@@ -494,7 +494,16 @@ modifier|*
 name|menu_factory
 parameter_list|)
 block|{
-comment|//g_return_val_if_fail (GIMP_IS_MENU_FACTORY (menu_factory), NULL);
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_MENU_FACTORY
+argument_list|(
+name|menu_factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_CONTEXT
