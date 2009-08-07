@@ -31,7 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdata.h"
+file|"core/gimpdata.h"
 end_include
 
 begin_typedef

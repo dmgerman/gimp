@@ -525,7 +525,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baf42230103
+DECL|enum|__anon297f861b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -745,17 +745,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
+begin_decl_stmt
 specifier|static
 name|void
+name|gimp_dynamics_options_class_init
+argument_list|(
+name|GimpDynamicsOptionsClass
+operator|*
+name|klass
+argument_list|)
+decl|static
+name|void
 name|gimp_dynamics_options_finalize
-parameter_list|(
+argument_list|(
 name|GObject
-modifier|*
+operator|*
 name|object
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+decl_stmt|;
+end_decl_stmt
 
 begin_function_decl
 specifier|static
@@ -820,23 +828,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/* G_DEFINE_TYPE_WITH_CODE (GimpDynamicsOptions, gimp_dynamics_options, GIMP_TYPE_DATA,                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dynamics_editor_docked_iface_init)) */
+end_comment
+
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDynamicsOptions,gimp_dynamics_options,GIMP_TYPE_DATA,G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,gimp_dynamics_editor_docked_iface_init))
-name|G_DEFINE_TYPE_WITH_CODE
+DECL|function|G_DEFINE_TYPE (GimpDynamicsOptions,gimp_dynamics_options,GIMP_TYPE_DATA)
+name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpDynamicsOptions
 argument_list|,
 argument|gimp_dynamics_options
 argument_list|,
 argument|GIMP_TYPE_DATA
-argument_list|,
-argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_TAGGED,                                                 gimp_dynamics_editor_docked_iface_init)
 argument_list|)
 end_macro
-
-begin_comment
-comment|/* G_DEFINE_TYPE (GimpDynamicsOptions, gimp_dynamics_options,                GIMP_TYPE_DATA) */
-end_comment
 
 begin_define
 DECL|macro|parent_class
@@ -3568,88 +3574,7 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpDynamicsOptions
-modifier|*
-name|options
-init|=
-name|GIMP_DYNAMICS_OPTIONS
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|pspec
-operator|->
-name|param_id
-operator|==
-name|PROP_USE_GRADIENT
-condition|)
-block|{
-if|if
-condition|(
-name|options
-operator|->
-name|gradient_options
-operator|->
-name|use_gradient
-condition|)
-block|{
-name|options
-operator|->
-name|application_mode_save
-operator|=
-name|options
-operator|->
-name|application_mode
-expr_stmt|;
-name|options
-operator|->
-name|application_mode
-operator|=
-name|GIMP_PAINT_INCREMENTAL
-expr_stmt|;
-block|}
-else|else
-block|{
-name|options
-operator|->
-name|application_mode
-operator|=
-name|options
-operator|->
-name|application_mode_save
-expr_stmt|;
-block|}
-name|g_object_notify
-argument_list|(
-name|object
-argument_list|,
-literal|"application-mode"
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|notify
-condition|)
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|notify
-argument_list|(
-name|object
-argument_list|,
-name|pspec
-argument_list|)
-expr_stmt|;
+comment|/*   GimpDynamicsOptions *options = GIMP_DYNAMICS_OPTIONS (object);    if (pspec->param_id == PROP_USE_GRADIENT)     {       if (options->gradient_options->use_gradient)         {           options->application_mode_save = options->application_mode;           options->application_mode      = GIMP_PAINT_INCREMENTAL;         }       else         {           options->application_mode = options->application_mode_save;         }        g_object_notify (object, "application-mode");     }    if (G_OBJECT_CLASS (parent_class)->notify)     G_OBJECT_CLASS (parent_class)->notify (object, pspec); 	 */
 block|}
 end_function
 
