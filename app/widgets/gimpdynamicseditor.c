@@ -3,6 +3,14 @@ begin_comment
 comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
+begin_define
+DECL|macro|DYNAMICS_VIEW_SIZE
+define|#
+directive|define
+name|DYNAMICS_VIEW_SIZE
+value|96
+end_define
+
 begin_include
 include|#
 directive|include
@@ -82,7 +90,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpmenufactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpdynamicseditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpbrush.h"
 end_include
 
 begin_comment
@@ -136,21 +156,13 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dynamics_editor_set_data
-parameter_list|(
-name|GimpDataEditor
-modifier|*
-name|editor
-parameter_list|,
-name|GimpData
-modifier|*
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
+begin_comment
+comment|//static void   gimp_dynamics_editor_set_data       (GimpDataEditor     *editor,
+end_comment
+
+begin_comment
+comment|//                                                   GimpData           *data);
+end_comment
 
 begin_function_decl
 specifier|static
@@ -242,12 +254,7 @@ name|constructor
 operator|=
 name|gimp_dynamics_editor_constructor
 expr_stmt|;
-name|editor_class
-operator|->
-name|set_data
-operator|=
-name|gimp_dynamics_editor_set_data
-expr_stmt|;
+comment|//editor_class->set_data    = gimp_dynamics_editor_set_data;
 name|editor_class
 operator|->
 name|title
@@ -368,6 +375,75 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
+name|data_editor
+operator|->
+name|view
+operator|=
+name|gimp_view_new_full_by_types
+argument_list|(
+name|NULL
+argument_list|,
+name|GIMP_TYPE_VIEW
+argument_list|,
+name|GIMP_TYPE_BRUSH
+argument_list|,
+name|DYNAMICS_VIEW_SIZE
+argument_list|,
+name|DYNAMICS_VIEW_SIZE
+argument_list|,
+literal|0
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
+name|data_editor
+operator|->
+name|view
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+name|DYNAMICS_VIEW_SIZE
+argument_list|)
+expr_stmt|;
+name|gimp_view_set_expand
+argument_list|(
+name|GIMP_VIEW
+argument_list|(
+name|data_editor
+operator|->
+name|view
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_container_add
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|frame
+argument_list|)
+argument_list|,
+name|data_editor
+operator|->
+name|view
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|data_editor
+operator|->
+name|view
+argument_list|)
+expr_stmt|;
+comment|//editor->shape_group = NULL;
 block|}
 end_function
 
