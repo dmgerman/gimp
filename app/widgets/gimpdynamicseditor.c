@@ -82,7 +82,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdynamicseditor.h"
+file|"widgets/gimpdynamicseditor.h"
 end_include
 
 begin_comment
@@ -98,7 +98,7 @@ comment|// needs to be fixed to gimppaintdynamics.h when that works.
 end_comment
 
 begin_comment
-comment|/* #include "paint/gimppaintoptions.h"   #include "core/gimptoolinfo.h"  #include "widgets/gimppropwidgets.h" #include "widgets/gimpviewablebox.h" #include "widgets/gimpwidgets-utils.h"  #include "tools/gimpairbrushtool.h" #include "tools/gimpclonetool.h" #include "tools/gimpconvolvetool.h" #include "tools/gimpdodgeburntool.h" #include "tools/gimperasertool.h" #include "tools/gimphealtool.h" #include "tools/gimpinktool.h" #include "tools/gimppaintoptions-gui.h" #include "tools/gimppenciltool.h" #include "tools/gimpperspectiveclonetool.h" #include "tools/gimpsmudgetool.h" #include "tools/gimptooloptions-gui.h"  */
+comment|/* #include "paint/gimppaintoptions.h"  #include "core/gimptoolinfo.h"  #include "widgets/gimppropwidgets.h" #include "widgets/gimpviewablebox.h" #include "widgets/gimpwidgets-utils.h"  #include "tools/gimpairbrushtool.h" #include "tools/gimpclonetool.h" #include "tools/gimpconvolvetool.h" #include "tools/gimpdodgeburntool.h" #include "tools/gimperasertool.h" #include "tools/gimphealtool.h" #include "tools/gimpinktool.h" #include "tools/gimppaintoptions-gui.h" #include "tools/gimppenciltool.h" #include "tools/gimpperspectiveclonetool.h" #include "tools/gimpsmudgetool.h" #include "tools/gimptooloptions-gui.h"  */
 end_comment
 
 begin_comment
@@ -300,7 +300,7 @@ block|}
 end_function
 
 begin_comment
-comment|/* To do: look at other init for dataeditors  look at how to move gui codes from paintopitons to here */
+comment|/* To do: look at other init for dataeditors look at how to move gui codes from paintopitons to here */
 end_comment
 
 begin_function
@@ -557,7 +557,7 @@ comment|/* static gboolean tool_has_opacity_dynamics (GType tool_type) {   retur
 end_comment
 
 begin_comment
-comment|/* GtkWidget * gimp_paint_options_gui (GimpToolOptions *tool_options) { 	   GObject          *config  = G_OBJECT (tool_options);   GimpPaintOptions *options = GIMP_PAINT_OPTIONS (tool_options);   GtkWidget        *vbox    = gimp_tool_options_gui (tool_options);   GtkWidget        *frame;   GtkWidget        *table;   GtkWidget        *menu;   GtkWidget        *label;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   gint              n_dynamics         = 0;   GtkWidget        *dynamics_labels[7];   GType             tool_type; } */
+comment|/* GtkWidget * gimp_paint_options_gui (GimpToolOptions *tool_options) {    GObject          *config  = G_OBJECT (tool_options);   GimpPaintOptions *options = GIMP_PAINT_OPTIONS (tool_options);   GtkWidget        *vbox    = gimp_tool_options_gui (tool_options);   GtkWidget        *frame;   GtkWidget        *table;   GtkWidget        *menu;   GtkWidget        *label;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   gint              n_dynamics         = 0;   GtkWidget        *dynamics_labels[7];   GType             tool_type; } */
 end_comment
 
 end_unit
