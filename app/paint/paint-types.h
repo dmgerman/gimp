@@ -181,6 +181,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDynamicsOptions
+typedef|typedef
+name|struct
+name|_GimpDynamicsOptions
+name|GimpDynamicsOptions
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpAirbrushOptions
 typedef|typedef
 name|struct
