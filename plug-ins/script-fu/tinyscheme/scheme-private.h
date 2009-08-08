@@ -64,6 +64,11 @@ DECL|enumerator|port_output
 name|port_output
 init|=
 literal|32
+block|,
+DECL|enumerator|port_saw_EOF
+name|port_saw_EOF
+init|=
+literal|64
 block|}
 enum|;
 end_enum
@@ -79,10 +84,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon29b25cdc010a
+DECL|union|__anon2c08d15e010a
 union|union
 block|{
-DECL|struct|__anon29b25cdc0208
+DECL|struct|__anon2c08d15e0208
 struct|struct
 block|{
 DECL|member|file
@@ -98,7 +103,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon29b25cdc0308
+DECL|struct|__anon2c08d15e0308
 struct|struct
 block|{
 DECL|member|start
@@ -144,10 +149,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon29b25cdc040a
+DECL|union|__anon2c08d15e040a
 union|union
 block|{
-DECL|struct|__anon29b25cdc0508
+DECL|struct|__anon2c08d15e0508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -176,7 +181,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon29b25cdc0608
+DECL|struct|__anon2c08d15e0608
 struct|struct
 block|{
 DECL|member|_car
@@ -226,11 +231,6 @@ DECL|member|tracing
 name|int
 name|tracing
 decl_stmt|;
-DECL|member|top_EOF
-name|int
-name|top_EOF
-decl_stmt|;
-comment|/* Have we seen EOF at top level? */
 DECL|macro|CELL_SEGSIZE
 define|#
 directive|define
