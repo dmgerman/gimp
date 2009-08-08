@@ -484,7 +484,6 @@ name|gchar
 modifier|*
 name|err
 decl_stmt|;
-comment|/* FIXME: should be translated when 2.6 got it's own branch */
 switch|switch
 condition|(
 operator|(
@@ -498,9 +497,10 @@ literal|0
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The operating system is out of memory or resources."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -508,9 +508,10 @@ name|ERROR_FILE_NOT_FOUND
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The specified file was not found."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -518,9 +519,10 @@ name|ERROR_PATH_NOT_FOUND
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The specified path was not found."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -528,9 +530,10 @@ name|ERROR_BAD_FORMAT
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The .exe file is invalid (non-Microsoft Win32 .exe or error in .exe image)."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -538,9 +541,10 @@ name|SE_ERR_ACCESSDENIED
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The operating system denied access to the specified file."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -548,9 +552,10 @@ name|SE_ERR_ASSOCINCOMPLETE
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The file name association is incomplete or invalid."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -558,9 +563,10 @@ name|SE_ERR_DDEBUSY
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"DDE transaction busy"
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -568,9 +574,10 @@ name|SE_ERR_DDEFAIL
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The DDE transaction failed."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -578,9 +585,10 @@ name|SE_ERR_DDETIMEOUT
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The DDE transaction timed out."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -588,9 +596,10 @@ name|SE_ERR_DLLNOTFOUND
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"The specified DLL was not found."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -598,9 +607,10 @@ name|SE_ERR_NOASSOC
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"There is no application associated with the given file name extension."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -608,9 +618,10 @@ name|SE_ERR_OOM
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"There was not enough memory to complete the operation."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 case|case
@@ -618,17 +629,19 @@ name|SE_ERR_SHARE
 case|:
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"A sharing violation occurred."
-operator|)
+argument_list|)
 expr_stmt|;
 break|break;
 default|default :
 name|err
 operator|=
-operator|(
+name|_
+argument_list|(
 literal|"Unknown Windows error."
-operator|)
+argument_list|)
 expr_stmt|;
 block|}
 name|g_set_error
@@ -639,9 +652,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-operator|(
+name|_
+argument_list|(
 literal|"Failed to open '%s': %s"
-operator|)
+argument_list|)
 argument_list|,
 name|url
 argument_list|,
