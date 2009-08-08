@@ -1100,15 +1100,6 @@ value|"The location of the online user manual. This is used if " \ "'user-manual
 end_define
 
 begin_define
-DECL|macro|WEB_BROWSER_BLURB
-define|#
-directive|define
-name|WEB_BROWSER_BLURB
-define|\
-value|N_("Sets the external web browser to be used.  This can be an absolute " \    "path or the name of an executable to search for in the user's PATH. " \    "If the command contains '%s' it will be replaced with the URL, otherwise " \    "the URL will be appended to the command with a space separating the " \    "two.")
-end_define
-
-begin_define
 DECL|macro|XOR_COLOR_BLURB
 define|#
 directive|define
