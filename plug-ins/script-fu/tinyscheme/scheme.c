@@ -24,7 +24,7 @@ comment|/* must keep this in mind at all times while making any changes to  */
 end_comment
 
 begin_comment
-comment|/* the routines in this file, or when adding new features.          */
+comment|/* the routines in this file and when adding new features.          */
 end_comment
 
 begin_comment
@@ -3294,6 +3294,18 @@ name|a
 parameter_list|,
 name|pointer
 name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gunichar
+name|basic_inchar
+parameter_list|(
+name|port
+modifier|*
+name|pt
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -11236,11 +11248,7 @@ name|kind
 operator||=
 name|port_saw_EOF
 expr_stmt|;
-name|file_pop
-argument_list|(
-name|sc
-argument_list|)
-expr_stmt|;
+comment|/* file_pop(sc); */
 return|return
 name|EOF
 return|;
@@ -12099,7 +12107,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon28cbf3db0103
+DECL|enum|__anon29edb10a0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -12877,11 +12885,13 @@ operator|)
 operator|==
 literal|'@'
 condition|)
+block|{
 return|return
 operator|(
 name|TOK_ATMARK
 operator|)
 return|;
+block|}
 else|else
 block|{
 name|backchar
@@ -28763,7 +28773,7 @@ name|putstr
 argument_list|(
 name|sc
 argument_list|,
-literal|" )"
+literal|")"
 argument_list|)
 expr_stmt|;
 name|s_return
@@ -29318,7 +29328,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon28cbf3db0208
+DECL|struct|__anon29edb10a0208
 specifier|static
 struct|struct
 block|{
@@ -29553,7 +29563,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon28cbf3db0308
+DECL|struct|__anon29edb10a0308
 typedef|typedef
 struct|struct
 block|{
