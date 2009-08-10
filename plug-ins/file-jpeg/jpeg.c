@@ -1361,8 +1361,8 @@ operator|.
 name|data
 operator|.
 name|d_float
-operator|>
-literal|0.05
+operator|>=
+literal|0.01
 condition|)
 block|{
 name|jsvals
