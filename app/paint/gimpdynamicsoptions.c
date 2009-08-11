@@ -527,7 +527,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c095740103
+DECL|enum|__anon29afe2b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -707,25 +707,29 @@ begin_comment
 comment|/* static gdouble gimp_dynamics_options_get_dynamics_mix (gdouble       mix1,                                                        gdouble       mix1_scale,                                                        gdouble       mix2,                                                        gdouble       mix2_scale,                                                        gdouble       mix3,                                                        gdouble       mix3_scale,                                                        gdouble       mix4,                                                        gdouble       mix4_scale,                                                        gdouble       mix5,                                                        gdouble       mix5_scale,                                                        gdouble       mix6,                                                        gdouble       mix6_scale); */
 end_comment
 
-begin_decl_stmt
+begin_function_decl
 specifier|static
 name|void
 name|gimp_dynamics_options_class_init
-argument_list|(
+parameter_list|(
 name|GimpDynamicsOptionsClass
-operator|*
+modifier|*
 name|klass
-argument_list|)
-decl|static
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_dynamics_options_finalize
-argument_list|(
+parameter_list|(
 name|GObject
-operator|*
+modifier|*
 name|object
-argument_list|)
-decl_stmt|;
-end_decl_stmt
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 specifier|static
@@ -3552,7 +3556,7 @@ name|options
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_DYNAMICS_INFO
+name|GIMP_IS_PAINT_INFO
 argument_list|(
 name|dynamics_info
 argument_list|)

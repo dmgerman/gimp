@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimpdynamicsoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpbrush.h"
 end_include
 
@@ -385,7 +391,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
-name|GIMP_TYPE_BRUSH
+name|GIMP_TYPE_DYNAMICS_OPTIONS
 argument_list|,
 name|DYNAMICS_VIEW_SIZE
 argument_list|,
