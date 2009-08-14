@@ -113,6 +113,11 @@ name|GList
 modifier|*
 name|selected_items
 decl_stmt|;
+DECL|member|common_tags
+name|GList
+modifier|*
+name|common_tags
+decl_stmt|;
 DECL|member|recent_list
 name|GList
 modifier|*
