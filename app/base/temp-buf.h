@@ -268,6 +268,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|temp_buf_dump
+parameter_list|(
+name|TempBuf
+modifier|*
+name|buf
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|filename
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
