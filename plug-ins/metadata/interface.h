@@ -22,12 +22,6 @@ directive|include
 file|<glib.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"xmp-model.h"
-end_include
-
 begin_function_decl
 name|G_BEGIN_DECLS
 name|gboolean

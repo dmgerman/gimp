@@ -12,13 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"xmp-model.h"
+file|<gtk/gtk.h>
 end_include
 
 begin_include
 include|#
 directive|include
 file|"xmp-schemas.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"xmp-model.h"
 end_include
 
 begin_decl_stmt
