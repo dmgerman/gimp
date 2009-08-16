@@ -52,8 +52,8 @@ file|"xmp-model.h"
 end_include
 
 begin_enum
-DECL|enum|__anon2a1d57650103
 enum|enum
+DECL|enum|__anon2c6e47450103
 block|{
 DECL|enumerator|PROPERTY_CHANGED
 name|PROPERTY_CHANGED
@@ -933,7 +933,7 @@ literal|','
 operator|)
 condition|)
 block|{
-name|int
+name|gint
 name|len
 decl_stmt|;
 name|c
@@ -3343,6 +3343,7 @@ end_function
 begin_decl_stmt
 DECL|variable|xmp_parser
 specifier|static
+specifier|const
 name|XMPParser
 name|xmp_parser
 init|=
@@ -3359,7 +3360,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * xmp_model_parse_buffer:  * @xmp_model: pointer to the #XMPModel in which the results will be stored  * @buffer: buffer to be parsed  * @buffer_length: length of the @buffer  * @skip_other_data: if %TRUE, allow arbitrary data before XMP packet marker  * @error: return location for a #GError  *  * Parse a buffer containing XMP metadata and merge the parsed contents into  * the supplied @xmp_model.  If @skip_other_data is %TRUE, then the parser  * will try to find the<?xpacket...?> marker in the buffer, skipping any  * unknown data found before it.  *  * Return value: %TRUE on success, %FALSE if an error was set  *  * (Note: this calls the functions from xmp_parse.c, which will call the  *  functions in this file through the xmp_parser structure defined above.)  **/
+comment|/**  * xmp_model_parse_buffer:  * @xmp_model: pointer to the #XMPModel in which the results will be stored  * @buffer: buffer to be parsed  * @buffer_length: length of the @buffer  * @skip_other_data: if %TRUE, allow arbitrary data before XMP packet marker  * @error: return location for a #GError  *  * Parse a buffer containing XMP metadata and merge the parsed contents into  * the supplied @xmp_model.  If @skip_other_data is %TRUE, then the parser  * will try to find the<?xpacket...?> marker in the buffer, skipping any  * unknown data found before it.  *  * (Note: this calls the functions from xmp_parse.c, which will call the  *  functions in this file through the xmp_parser structure defined above.)  *  * Return value: %TRUE on success, %FALSE if an error was set  **/
 end_comment
 
 begin_function
@@ -3600,7 +3601,8 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * xmp_model_get_scalar_property:  * @xmp_model: pointer to an #XMPModel  * @schema_name: full URI or usual prefix of the schema  * @property_name: name of the property to store  *  * Store a new value for the specified XMP property.  *  * Return value: string representation of the value of that property, or %NULL if the property does not exist  **/
+comment|/**  * xmp_model_get_scalar_property:  * @xmp_model: pointer to an #XMPModel  * @schema_name: full URI or usual prefix of the schema  * @property_name: name of the property to store  *  * Store a new value for the specified XMP property.  *  * Return value: string representation of the value of t
+comment|hat property,  *               or %NULL if the property does not exist  **/
 end_comment
 
 begin_function
@@ -3873,7 +3875,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * xmp_model_set_scalar_property:  * @xmp_model: pointer to an #XMPModel  * @schema_name: full URI or usual prefix of the schema  * @property_name: name of the property to store  * @property_value: value to store  *  * Store a new value for the specified XMP property.  *  * Return value: %TRUE if the property was set, %FALSE if an error occurred (for example, the @schema_name is invalid)  **/
+comment|/**  * xmp_model_set_scalar_property:  * @xmp_model: pointer to an #XMPModel  * @schema_name: full URI or usual prefix of the schema  * @property_name: name of the property to store  * @property_value: value to store  *  * Store a new value for the specified XMP property.  *  * Return value: %TRUE if the property was set, %FALSE if an error  *               occurred (for example, the @schema_name is invalid)  **/
 end_comment
 
 begin_function
@@ -4081,6 +4083,7 @@ name|property
 operator|!=
 name|NULL
 condition|)
+block|{
 name|find_and_remove_property
 argument_list|(
 name|xmp_model
@@ -4091,6 +4094,7 @@ operator|&
 name|iter
 argument_list|)
 expr_stmt|;
+block|}
 else|else
 block|{
 name|property
