@@ -331,7 +331,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon2b337038010a
+DECL|union|__anon2c09473a010a
 union|union
 block|{
 DECL|member|ivalue
@@ -354,7 +354,7 @@ if|#
 directive|if
 operator|!
 name|STANDALONE
-DECL|enum|__anon2b3370380203
+DECL|enum|__anon2c09473a0203
 DECL|enumerator|TS_OUTPUT_NORMAL
 DECL|enumerator|TS_OUTPUT_ERROR
 DECL|typedef|TsOutputType
@@ -1257,7 +1257,7 @@ modifier|*
 name|sc
 parameter_list|,
 name|pointer
-name|a
+name|p
 parameter_list|)
 function_decl|;
 DECL|member|vector_length

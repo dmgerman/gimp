@@ -12016,6 +12016,22 @@ expr_stmt|;
 block|}
 do|while
 condition|(
+operator|(
+name|p
+operator|-
+name|sc
+operator|->
+name|strbuff
+operator|<
+sizeof|sizeof
+argument_list|(
+name|sc
+operator|->
+name|strbuff
+argument_list|)
+operator|)
+operator|&&
+operator|(
 name|c
 operator|&&
 operator|!
@@ -12025,6 +12041,7 @@ name|delim
 argument_list|,
 name|c
 argument_list|)
+operator|)
 condition|)
 do|;
 if|if
@@ -12107,7 +12124,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b3199f60103
+DECL|enum|__anon2bbb87270103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -17539,7 +17556,7 @@ name|print_flag
 operator|=
 literal|1
 expr_stmt|;
-comment|/*         sc->args=cons(sc,sc->code,sc->args);*/
+comment|/*  sc->args=cons(sc,sc->code,sc->args);*/
 name|putstr
 argument_list|(
 name|sc
@@ -24297,7 +24314,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|list_length (scheme * sc,pointer a)
+DECL|function|list_length (scheme * sc,pointer p)
 name|int
 name|list_length
 parameter_list|(
@@ -24306,7 +24323,7 @@ modifier|*
 name|sc
 parameter_list|,
 name|pointer
-name|a
+name|p
 parameter_list|)
 block|{
 name|int
@@ -24323,7 +24340,7 @@ name|slow
 operator|=
 name|fast
 operator|=
-name|a
+name|p
 expr_stmt|;
 while|while
 condition|(
@@ -28199,8 +28216,8 @@ case|case
 name|OP_RDVEC
 case|:
 comment|/*sc->code=cons(sc,mk_proc(sc,OP_VECTOR),sc->value);           s_goto(sc,OP_EVAL); Cannot be quoted*/
-comment|/*x=cons(sc,mk_proc(sc,OP_VECTOR),sc->value);          s_return(sc,x); Cannot be part of pairs*/
-comment|/*sc->code=mk_proc(sc,OP_VECTOR);        sc->args=sc->value;        s_goto(sc,OP_APPLY);*/
+comment|/*x=cons(sc,mk_proc(sc,OP_VECTOR),sc->value);           s_return(sc,x); Cannot be part of pairs*/
+comment|/*sc->code=mk_proc(sc,OP_VECTOR);           sc->args=sc->value;           s_goto(sc,OP_APPLY);*/
 name|sc
 operator|->
 name|args
@@ -29328,7 +29345,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b3199f60208
+DECL|struct|__anon2bbb87270208
 specifier|static
 struct|struct
 block|{
@@ -29563,7 +29580,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b3199f60308
+DECL|struct|__anon2bbb87270308
 typedef|typedef
 struct|struct
 block|{
