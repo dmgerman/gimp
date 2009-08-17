@@ -206,6 +206,9 @@ parameter_list|,
 name|gint
 name|view_border_width
 parameter_list|,
+name|gboolean
+name|multiple_selection
+parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory

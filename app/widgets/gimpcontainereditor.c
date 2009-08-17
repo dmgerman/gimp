@@ -413,7 +413,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
+DECL|function|gimp_container_editor_construct (GimpContainerEditor * editor,GimpViewType view_type,GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width,gboolean multiple_selection,GimpMenuFactory * menu_factory,const gchar * menu_identifier,const gchar * ui_identifier)
 name|gimp_container_editor_construct
 parameter_list|(
 name|GimpContainerEditor
@@ -436,6 +436,9 @@ name|view_size
 parameter_list|,
 name|gint
 name|view_border_width
+parameter_list|,
+name|gboolean
+name|multiple_selection
 parameter_list|,
 name|GimpMenuFactory
 modifier|*
@@ -567,6 +570,8 @@ argument_list|,
 name|view_size
 argument_list|,
 name|view_border_width
+argument_list|,
+name|multiple_selection
 argument_list|)
 argument_list|)
 expr_stmt|;

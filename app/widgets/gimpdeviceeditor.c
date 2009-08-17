@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a11b5e90103
+DECL|enum|__anon2ac1a9b10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -495,6 +495,8 @@ argument_list|,
 name|icon_height
 argument_list|,
 literal|0
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request

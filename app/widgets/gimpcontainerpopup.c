@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3785c0103
+DECL|enum|__anon29b491550103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -2113,6 +2113,8 @@ argument_list|,
 name|popup
 operator|->
 name|view_border_width
+argument_list|,
+name|FALSE
 argument_list|,
 name|NULL
 argument_list|,
