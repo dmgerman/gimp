@@ -12189,7 +12189,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c1535930103
+DECL|enum|__anon29e3c8550103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -26839,8 +26839,6 @@ name|start
 operator|+
 literal|1
 expr_stmt|;
-if|if
-condition|(
 name|str
 operator|=
 name|sc
@@ -26849,6 +26847,12 @@ name|malloc
 argument_list|(
 name|size
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|str
+operator|!=
+name|NULL
 condition|)
 block|{
 name|pointer
@@ -29476,7 +29480,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c1535930208
+DECL|struct|__anon29e3c8550208
 specifier|static
 struct|struct
 block|{
@@ -29711,7 +29715,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c1535930308
+DECL|struct|__anon29e3c8550308
 typedef|typedef
 struct|struct
 block|{
