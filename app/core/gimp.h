@@ -266,6 +266,11 @@ name|GimpDataFactory
 modifier|*
 name|brush_factory
 decl_stmt|;
+DECL|member|dynamics_factory
+name|GimpDataFactory
+modifier|*
+name|dynamics_factory
+decl_stmt|;
 DECL|member|pattern_factory
 name|GimpDataFactory
 modifier|*
