@@ -84,10 +84,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2babe56c010a
+DECL|union|__anon276da613010a
 union|union
 block|{
-DECL|struct|__anon2babe56c0208
+DECL|struct|__anon276da6130208
 struct|struct
 block|{
 DECL|member|file
@@ -103,7 +103,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2babe56c0308
+DECL|struct|__anon276da6130308
 struct|struct
 block|{
 DECL|member|start
@@ -149,10 +149,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2babe56c040a
+DECL|union|__anon276da613040a
 union|union
 block|{
-DECL|struct|__anon2babe56c0508
+DECL|struct|__anon276da6130508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -181,7 +181,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2babe56c0608
+DECL|struct|__anon276da6130608
 struct|struct
 block|{
 DECL|member|_car
@@ -902,6 +902,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* Local variables: c-file-style: "k&r" End: */
+end_comment
 
 end_unit
 

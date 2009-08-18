@@ -331,7 +331,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon2c7f0729010a
+DECL|union|__anon27717e21010a
 union|union
 block|{
 DECL|member|ivalue
@@ -354,7 +354,7 @@ if|#
 directive|if
 operator|!
 name|STANDALONE
-DECL|enum|__anon2c7f07290203
+DECL|enum|__anon27717e210203
 DECL|enumerator|TS_OUTPUT_NORMAL
 DECL|enumerator|TS_OUTPUT_ERROR
 DECL|typedef|TsOutputType
@@ -1647,6 +1647,10 @@ begin_endif
 endif|#
 directive|endif
 end_endif
+
+begin_comment
+comment|/* Local variables: c-file-style: "k&r" End: */
+end_comment
 
 end_unit
 
