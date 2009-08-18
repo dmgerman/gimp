@@ -12132,7 +12132,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2c0c6c430103
+DECL|enum|__anon27dfdfa20103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -17621,6 +17621,20 @@ name|code
 argument_list|)
 condition|)
 block|{
+comment|/* Keep nested calls from GC'ing the arglist */
+name|push_recent_alloc
+argument_list|(
+name|sc
+argument_list|,
+name|sc
+operator|->
+name|args
+argument_list|,
+name|sc
+operator|->
+name|NIL
+argument_list|)
+expr_stmt|;
 name|sc
 operator|->
 name|foreign_error
@@ -29353,7 +29367,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2c0c6c430208
+DECL|struct|__anon27dfdfa20208
 specifier|static
 struct|struct
 block|{
@@ -29588,7 +29602,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2c0c6c430308
+DECL|struct|__anon27dfdfa20308
 typedef|typedef
 struct|struct
 block|{
