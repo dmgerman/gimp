@@ -12189,7 +12189,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon29e3c8550103
+DECL|enum|__anon2b45127a0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -18042,7 +18042,7 @@ case|case
 name|OP_LAMBDA
 case|:
 comment|/* lambda */
-comment|/* If the hook is defined, apply it to sc->code, otherwise 	     set sc->value fall thru */
+comment|/* If the hook is defined, apply it to sc->code, otherwise              set sc->value fall thru */
 block|{
 name|pointer
 name|f
@@ -29480,7 +29480,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon29e3c8550208
+DECL|struct|__anon2b45127a0208
 specifier|static
 struct|struct
 block|{
@@ -29715,7 +29715,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon29e3c8550308
+DECL|struct|__anon2b45127a0308
 typedef|typedef
 struct|struct
 block|{
