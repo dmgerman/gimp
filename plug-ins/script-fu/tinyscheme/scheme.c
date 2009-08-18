@@ -1611,27 +1611,65 @@ return|;
 block|}
 end_function
 
-begin_define
-DECL|macro|is_inport (p)
-define|#
-directive|define
+begin_function
+DECL|function|is_inport (pointer p)
+name|INTERFACE
+name|INLINE
+name|int
 name|is_inport
 parameter_list|(
+name|pointer
 name|p
 parameter_list|)
-value|(type(p)==T_PORT&& p->_object._port->kind&port_input)
-end_define
+block|{
+return|return
+name|is_port
+argument_list|(
+name|p
+argument_list|)
+operator|&&
+name|p
+operator|->
+name|_object
+operator|.
+name|_port
+operator|->
+name|kind
+operator|&
+name|port_input
+return|;
+block|}
+end_function
 
-begin_define
-DECL|macro|is_outport (p)
-define|#
-directive|define
+begin_function
+DECL|function|is_outport (pointer p)
+name|INTERFACE
+name|INLINE
+name|int
 name|is_outport
 parameter_list|(
+name|pointer
 name|p
 parameter_list|)
-value|(type(p)==T_PORT&& p->_object._port->kind&port_output)
-end_define
+block|{
+return|return
+name|is_port
+argument_list|(
+name|p
+argument_list|)
+operator|&&
+name|p
+operator|->
+name|_object
+operator|.
+name|_port
+operator|->
+name|kind
+operator|&
+name|port_output
+return|;
+block|}
+end_function
 
 begin_function
 DECL|function|is_pair (pointer p)
@@ -12151,7 +12189,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ae126930103
+DECL|enum|__anon2ade3e480103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -29315,7 +29353,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ae126930208
+DECL|struct|__anon2ade3e480208
 specifier|static
 struct|struct
 block|{
@@ -29367,15 +29405,15 @@ literal|"port"
 block|}
 block|,
 block|{
-literal|0
+name|is_inport
 block|,
 literal|"input port"
 block|}
 block|,
 block|{
-literal|0
+name|is_outport
 block|,
-literal|"output_port"
+literal|"output port"
 block|}
 block|,
 block|{
@@ -29550,7 +29588,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ae126930308
+DECL|struct|__anon2ade3e480308
 typedef|typedef
 struct|struct
 block|{
@@ -29695,14 +29733,6 @@ name|scheme_opcodes
 name|op
 parameter_list|)
 block|{
-name|int
-name|count
-init|=
-literal|0
-decl_stmt|;
-name|int
-name|old_op
-decl_stmt|;
 name|sc
 operator|->
 name|op
@@ -29909,48 +29939,6 @@ if|if
 condition|(
 name|j
 operator|==
-name|TST_INPORT
-index|[
-literal|0
-index|]
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|is_inport
-argument_list|(
-name|arg
-argument_list|)
-condition|)
-break|break;
-block|}
-elseif|else
-if|if
-condition|(
-name|j
-operator|==
-name|TST_OUTPORT
-index|[
-literal|0
-index|]
-condition|)
-block|{
-if|if
-condition|(
-operator|!
-name|is_outport
-argument_list|(
-name|arg
-argument_list|)
-condition|)
-break|break;
-block|}
-elseif|else
-if|if
-condition|(
-name|j
-operator|==
 name|TST_LIST
 index|[
 literal|0
@@ -30100,12 +30088,6 @@ argument_list|(
 name|sc
 argument_list|)
 expr_stmt|;
-name|old_op
-operator|=
-name|sc
-operator|->
-name|op
-expr_stmt|;
 if|if
 condition|(
 name|pcd
@@ -30146,9 +30128,6 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
-name|count
-operator|++
-expr_stmt|;
 block|}
 block|}
 end_function
