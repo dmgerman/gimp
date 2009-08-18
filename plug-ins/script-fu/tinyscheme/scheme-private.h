@@ -84,10 +84,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon276da613010a
+DECL|union|__anon27f929ab010a
 union|union
 block|{
-DECL|struct|__anon276da6130208
+DECL|struct|__anon27f929ab0208
 struct|struct
 block|{
 DECL|member|file
@@ -103,7 +103,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon276da6130308
+DECL|struct|__anon27f929ab0308
 struct|struct
 block|{
 DECL|member|start
@@ -149,10 +149,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon276da613040a
+DECL|union|__anon27f929ab040a
 union|union
 block|{
-DECL|struct|__anon276da6130508
+DECL|struct|__anon27f929ab0508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -181,7 +181,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon276da6130608
+DECL|struct|__anon27f929ab0608
 struct|struct
 block|{
 DECL|member|_car
@@ -409,6 +409,11 @@ name|pointer
 name|SHARP_HOOK
 decl_stmt|;
 comment|/* *sharp-hook* */
+DECL|member|COMPILE_HOOK
+name|pointer
+name|COMPILE_HOOK
+decl_stmt|;
+comment|/* *compile-hook* */
 DECL|member|free_cell
 name|pointer
 name|free_cell
