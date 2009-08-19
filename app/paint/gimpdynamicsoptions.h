@@ -70,6 +70,10 @@ DECL|member|fade
 name|gboolean
 name|fade
 decl_stmt|;
+DECL|member|fade_length
+name|gdouble
+name|fade_length
+decl_stmt|;
 DECL|member|pressure_curve
 name|GimpCurve
 modifier|*
@@ -268,7 +272,8 @@ name|GimpData
 modifier|*
 name|gimp_dynamics_options_new
 parameter_list|(
-name|GString
+specifier|const
+name|gchar
 modifier|*
 name|name
 parameter_list|)
