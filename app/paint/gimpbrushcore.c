@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4ad6940103
+DECL|enum|__anon289bce320103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -626,7 +626,7 @@ index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"set-brush"
+literal|"set-dynamics"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -708,6 +708,12 @@ operator|->
 name|set_brush
 operator|=
 name|gimp_brush_core_real_set_brush
+expr_stmt|;
+name|klass
+operator|->
+name|set_dynamics
+operator|=
+name|gimp_brush_core_real_set_dynamics
 expr_stmt|;
 block|}
 end_function
@@ -3212,7 +3218,29 @@ name|paint_options
 operator|->
 name|brush_scale
 expr_stmt|;
-comment|/*gimp_paint_options_get_dynamic_size (paint_options, coords,                                                          TRUE,                                                          paint_core->pixel_dist);*/
+if|if
+condition|(
+name|core
+operator|->
+name|dynamics
+condition|)
+block|{
+name|core
+operator|->
+name|scale
+operator|*=
+name|gimp_dynamics_options_get_output_val
+argument_list|(
+name|core
+operator|->
+name|dynamics
+operator|->
+name|size_dynamics
+argument_list|,
+name|coords
+argument_list|)
+expr_stmt|;
+block|}
 name|core
 operator|->
 name|angle

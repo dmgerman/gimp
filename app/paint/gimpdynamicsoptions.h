@@ -16,10 +16,6 @@ directive|define
 name|__GIMP_DYNAMICS_OPTIONS_H__
 end_define
 
-begin_comment
-comment|//#include "core/gimptooloptions.h"
-end_comment
-
 begin_include
 include|#
 directive|include
@@ -286,6 +282,21 @@ modifier|*
 name|gimp_dynamics_get_standard
 parameter_list|(
 name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gdouble
+name|gimp_dynamics_options_get_output_val
+parameter_list|(
+name|GimpDynamicOutputOptions
+modifier|*
+name|output
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
 parameter_list|)
 function_decl|;
 end_function_decl

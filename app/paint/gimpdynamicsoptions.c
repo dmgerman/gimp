@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3323d20103
+DECL|enum|__anon2a0c5f7e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3210,6 +3210,31 @@ expr_stmt|;
 block|}
 return|return
 name|standard_dynamics
+return|;
+block|}
+end_function
+
+begin_function
+name|gdouble
+DECL|function|gimp_dynamics_options_get_output_val (GimpDynamicOutputOptions * output,GimpCoords * coords)
+name|gimp_dynamics_options_get_output_val
+parameter_list|(
+name|GimpDynamicOutputOptions
+modifier|*
+name|output
+parameter_list|,
+name|GimpCoords
+modifier|*
+name|coords
+parameter_list|)
+block|{
+name|printf
+argument_list|(
+literal|"Dynamics queried..."
+argument_list|)
+expr_stmt|;
+return|return
+literal|1
 return|;
 block|}
 end_function
