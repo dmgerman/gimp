@@ -4147,7 +4147,7 @@ name|push_undo
 init|=
 name|TRUE
 decl_stmt|;
-comment|/*  compress opacity undos  */
+comment|/*  compress lock alpha undos  */
 name|undo
 operator|=
 name|gimp_image_undo_can_compress
