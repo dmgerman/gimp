@@ -1299,21 +1299,21 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29407d3b0103
+DECL|enum|__anon2966404b0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
 block|,
 DECL|enumerator|GIMP_CONTEXT_PROP_GIMP
 name|GIMP_CONTEXT_PROP_GIMP
-comment|/*  remaining values are in core-types.h  */
+comment|/*  remaining values are in core-enums.h  (GimpContextPropType)  */
 block|}
 enum|;
 end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29407d3b0203
+DECL|enum|__anon2966404b0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
