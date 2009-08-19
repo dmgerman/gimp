@@ -331,7 +331,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon27717e21010a
+DECL|union|__anon2a3bdc47010a
 union|union
 block|{
 DECL|member|ivalue
@@ -354,7 +354,7 @@ if|#
 directive|if
 operator|!
 name|STANDALONE
-DECL|enum|__anon27717e210203
+DECL|enum|__anon2a3bdc470203
 DECL|enumerator|TS_OUTPUT_NORMAL
 DECL|enumerator|TS_OUTPUT_ERROR
 DECL|typedef|TsOutputType
@@ -1614,6 +1614,18 @@ block|}
 DECL|typedef|scheme_registerable
 name|scheme_registerable
 typedef|;
+name|void
+name|scheme_register_foreign_func
+parameter_list|(
+name|scheme
+modifier|*
+name|sc
+parameter_list|,
+name|scheme_registerable
+modifier|*
+name|sr
+parameter_list|)
+function_decl|;
 name|void
 name|scheme_register_foreign_func_list
 parameter_list|(
