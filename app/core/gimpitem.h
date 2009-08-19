@@ -142,18 +142,24 @@ name|offset_y
 decl_stmt|;
 comment|/*  pixel offset in image    */
 DECL|member|visible
-name|gboolean
+name|guint
 name|visible
+range|:
+literal|1
 decl_stmt|;
 comment|/*  control visibility       */
 DECL|member|linked
-name|gboolean
+name|guint
 name|linked
+range|:
+literal|1
 decl_stmt|;
 comment|/*  control linkage          */
 DECL|member|removed
-name|gboolean
+name|guint
 name|removed
+range|:
+literal|1
 decl_stmt|;
 comment|/*  removed from the image?  */
 DECL|member|node
