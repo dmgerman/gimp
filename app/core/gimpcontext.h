@@ -1214,48 +1214,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/*  brush  */
-end_comment
-
-begin_function_decl
-name|GimpBrush
-modifier|*
-name|gimp_context_get_brush
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_set_brush
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpBrush
-modifier|*
-name|brush
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_context_brush_changed
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/*  dynamics  */
 end_comment
 

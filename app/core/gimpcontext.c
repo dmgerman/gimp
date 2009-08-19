@@ -794,7 +794,7 @@ name|gimp_context_dynamics_removed
 parameter_list|(
 name|GimpContainer
 modifier|*
-name|dynamics_list
+name|container
 parameter_list|,
 name|GimpDynamicsOptions
 modifier|*
@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02717f0103
+DECL|enum|__anon289137480103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c02717f0203
+DECL|enum|__anon289137480203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1619,6 +1619,17 @@ specifier|static
 name|GimpBrush
 modifier|*
 name|standard_brush
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+DECL|variable|standard_dynamics
+specifier|static
+name|GimpDynamicsOptions
+modifier|*
+name|standard_dynamics
 init|=
 name|NULL
 decl_stmt|;
@@ -9985,7 +9996,7 @@ comment|/*  dynamics ***********************************************************
 end_comment
 
 begin_function
-name|GimpBrush
+name|GimpDynamicsOptions
 modifier|*
 DECL|function|gimp_context_get_dynamics (GimpContext * context)
 name|gimp_context_get_dynamics
@@ -10040,7 +10051,7 @@ argument_list|(
 operator|!
 name|dynamics
 operator|||
-name|GIMP_IS_DYNAMICS
+name|GIMP_IS_DYNAMICS_OPTIONS
 argument_list|(
 name|dynamics
 argument_list|)
@@ -10139,14 +10150,15 @@ expr_stmt|;
 block|}
 end_function
 
-begin_function_decl
+begin_function
+DECL|function|gimp_context_dynamics_removed (GimpContainer * container,GimpDynamicsOptions * dynamics,GimpContext * context)
 specifier|static
 name|void
 name|gimp_context_dynamics_removed
 parameter_list|(
 name|GimpContainer
 modifier|*
-name|dynamics_list
+name|container
 parameter_list|,
 name|GimpDynamicsOptions
 modifier|*
@@ -10156,10 +10168,6 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_block
 block|{
 if|if
 condition|(
@@ -10207,9 +10215,10 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-end_block
+end_function
 
-begin_function_decl
+begin_function
+DECL|function|gimp_context_dynamics_list_thaw (GimpContainer * container,GimpContext * context)
 specifier|static
 name|void
 name|gimp_context_dynamics_list_thaw
@@ -10222,12 +10231,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_block
 block|{
-DECL|variable|dynamics
 name|GimpDynamicsOptions
 modifier|*
 name|dynamics
@@ -10257,7 +10261,7 @@ name|dynamics
 argument_list|)
 expr_stmt|;
 block|}
-end_block
+end_function
 
 begin_function
 specifier|static
@@ -10274,7 +10278,19 @@ modifier|*
 name|dynamics
 parameter_list|)
 block|{
-comment|/*  if (! standard_dynamics)     standard_dynamics = GIMP_BRUSH (gimp_dynamics_get_standard ()); */
+if|if
+condition|(
+operator|!
+name|standard_dynamics
+condition|)
+name|standard_dynamics
+operator|=
+name|GIMP_DYNAMICS_OPTIONS
+argument_list|(
+name|gimp_dynamics_get_standard
+argument_list|()
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|context
