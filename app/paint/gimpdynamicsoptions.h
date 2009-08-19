@@ -268,9 +268,9 @@ name|GimpData
 modifier|*
 name|gimp_dynamics_options_new
 parameter_list|(
-name|GimpPaintInfo
+name|GString
 modifier|*
-name|paint_info
+name|name
 parameter_list|)
 function_decl|;
 end_function_decl
