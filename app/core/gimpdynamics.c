@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2bc5310103
+DECL|enum|__anon275f19850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -647,7 +647,9 @@ specifier|static
 name|GimpDynamicsOutput
 modifier|*
 name|gimp_dynamics_output_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -662,10 +664,6 @@ name|dynamics
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|/* G_DEFINE_TYPE_WITH_CODE (GimpDynamics, gimp_dynamics, GIMP_TYPE_DATA,                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dynamics_editor_docked_iface_init)) */
-end_comment
 
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpDynamics,gimp_dynamics,GIMP_TYPE_DATA)
@@ -1512,9 +1510,11 @@ begin_function
 specifier|static
 name|GimpDynamicsOutput
 modifier|*
-DECL|function|gimp_dynamics_output_init ()
+DECL|function|gimp_dynamics_output_init (void)
 name|gimp_dynamics_output_init
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 block|{
 name|GimpDynamicsOutput
 modifier|*
@@ -3103,7 +3103,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_output_val (GimpDynamicsOutput * output,GimpCoords * coords)
+DECL|function|gimp_dynamics_get_output_val (GimpDynamicsOutput * output,GimpCoords coords)
 name|gimp_dynamics_get_output_val
 parameter_list|(
 name|GimpDynamicsOutput
@@ -3111,17 +3111,77 @@ modifier|*
 name|output
 parameter_list|,
 name|GimpCoords
-modifier|*
 name|coords
 parameter_list|)
 block|{
-name|printf
-argument_list|(
-literal|"Dynamics queried...\n"
-argument_list|)
+name|gdouble
+name|total
+init|=
+literal|0.0
+decl_stmt|;
+name|gdouble
+name|factors
+init|=
+literal|0.0
+decl_stmt|;
+name|gdouble
+name|result
+init|=
+literal|1.0
+decl_stmt|;
+if|if
+condition|(
+name|output
+operator|->
+name|pressure
+condition|)
+block|{
+name|total
+operator|+=
+name|coords
+operator|.
+name|pressure
 expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|output
+operator|->
+name|velocity
+condition|)
+block|{
+name|total
+operator|+=
+operator|(
+literal|1.0
+operator|-
+name|coords
+operator|.
+name|velocity
+operator|)
+expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|factors
+operator|>
+literal|0
+condition|)
+name|result
+operator|=
+name|total
+operator|/
+name|factors
+expr_stmt|;
+comment|//printf("Dynamics queried. Result: %f, vel %f, f: %f, t: %f \n", result, coords.velocity, factors, total);
 return|return
-literal|1
+name|result
 return|;
 block|}
 end_function
