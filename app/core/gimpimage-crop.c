@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ac64ceb0103
+DECL|enum|__anon2911fb860103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -294,6 +294,18 @@ argument_list|(
 name|GIMP_IS_CONTEXT
 argument_list|(
 name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|active_layer_only
+operator|==
+name|FALSE
+operator|||
+name|gimp_image_get_active_layer
+argument_list|(
+name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
