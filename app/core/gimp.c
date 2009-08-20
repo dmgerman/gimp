@@ -304,12 +304,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdynamics-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a93bf00103
+DECL|enum|__anon299f051e0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2294,9 +2300,9 @@ init|=
 block|{
 comment|/*TODO: Dynamics need savers and loaders*/
 block|{
-name|gimp_pattern_load
+name|gimp_dynamics_load
 block|,
-name|GIMP_PATTERN_FILE_EXTENSION
+name|GIMP_DYNAMICS_FILE_EXTENSION
 block|,
 name|FALSE
 block|}
