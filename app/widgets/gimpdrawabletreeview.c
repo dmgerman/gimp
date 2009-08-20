@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpwidgets/gimpwidgets.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets-types.h"
 end_include
 
@@ -417,6 +423,21 @@ operator|->
 name|set_image
 operator|=
 name|gimp_drawable_tree_view_set_image
+expr_stmt|;
+name|item_view_class
+operator|->
+name|lock_content_stock_id
+operator|=
+name|GIMP_STOCK_TOOL_PAINTBRUSH
+expr_stmt|;
+name|item_view_class
+operator|->
+name|lock_content_tooltip
+operator|=
+name|_
+argument_list|(
+literal|"Lock pixels"
+argument_list|)
 expr_stmt|;
 block|}
 end_function

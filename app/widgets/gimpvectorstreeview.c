@@ -479,6 +479,21 @@ argument_list|(
 literal|"Reorder path"
 argument_list|)
 expr_stmt|;
+name|iv_class
+operator|->
+name|lock_content_stock_id
+operator|=
+name|GIMP_STOCK_TOOL_PATH
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_content_tooltip
+operator|=
+name|_
+argument_list|(
+literal|"Lock path strokes"
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

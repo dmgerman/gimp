@@ -425,6 +425,25 @@ name|gchar
 modifier|*
 name|reorder_desc
 decl_stmt|;
+comment|/*  lock content button appearance  */
+DECL|member|lock_content_stock_id
+specifier|const
+name|gchar
+modifier|*
+name|lock_content_stock_id
+decl_stmt|;
+DECL|member|lock_content_tooltip
+specifier|const
+name|gchar
+modifier|*
+name|lock_content_tooltip
+decl_stmt|;
+DECL|member|lock_content_help_id
+specifier|const
+name|gchar
+modifier|*
+name|lock_content_help_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
