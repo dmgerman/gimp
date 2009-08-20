@@ -6,21 +6,15 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|__GIMP_DYNAMICS_OPTIONS_H__
+name|__GIMP_DYNAMICS_H__
 end_ifndef
 
 begin_define
-DECL|macro|__GIMP_DYNAMICS_OPTIONS_H__
+DECL|macro|__GIMP_DYNAMICS_H__
 define|#
 directive|define
-name|__GIMP_DYNAMICS_OPTIONS_H__
+name|__GIMP_DYNAMICS_H__
 end_define
-
-begin_include
-include|#
-directive|include
-file|"gimppaintoptions.h"
-end_include
 
 begin_include
 include|#
@@ -28,19 +22,25 @@ directive|include
 file|"core/gimpdata.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpcurve.h"
+end_include
+
 begin_typedef
-DECL|typedef|GimpDynamicOutputOptions
+DECL|typedef|GimpDynamicsOutput
 typedef|typedef
 name|struct
-name|_GimpDynamicOutputOptions
-name|GimpDynamicOutputOptions
+name|_GimpDynamicsOutput
+name|GimpDynamicsOutput
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDynamicOutputOptions
+DECL|struct|_GimpDynamicsOutput
 struct|struct
-name|_GimpDynamicOutputOptions
+name|_GimpDynamicsOutput
 block|{
 DECL|member|pressure
 name|gboolean
@@ -121,118 +121,118 @@ value|1.0
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_DYNAMICS_OPTIONS
+DECL|macro|GIMP_TYPE_DYNAMICS
 define|#
 directive|define
-name|GIMP_TYPE_DYNAMICS_OPTIONS
-value|(gimp_dynamics_options_get_type ())
+name|GIMP_TYPE_DYNAMICS
+value|(gimp_dynamics_get_type ())
 end_define
 
 begin_define
-DECL|macro|GIMP_DYNAMICS_OPTIONS (obj)
+DECL|macro|GIMP_DYNAMICS (obj)
 define|#
 directive|define
-name|GIMP_DYNAMICS_OPTIONS
+name|GIMP_DYNAMICS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DYNAMICS_OPTIONS, GimpDynamicsOptions))
+value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_DYNAMICS, GimpDynamics))
 end_define
 
 begin_define
-DECL|macro|GIMP_DYNAMICS_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_DYNAMICS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_DYNAMICS_OPTIONS_CLASS
+name|GIMP_DYNAMICS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DYNAMICS_OPTIONS, GimpDynamicsOptionsClass))
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_DYNAMICS, GimpDynamicsClass))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DYNAMICS_OPTIONS (obj)
+DECL|macro|GIMP_IS_DYNAMICS (obj)
 define|#
 directive|define
-name|GIMP_IS_DYNAMICS_OPTIONS
+name|GIMP_IS_DYNAMICS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DYNAMICS_OPTIONS))
+value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_DYNAMICS))
 end_define
 
 begin_define
-DECL|macro|GIMP_IS_DYNAMICS_OPTIONS_CLASS (klass)
+DECL|macro|GIMP_IS_DYNAMICS_CLASS (klass)
 define|#
 directive|define
-name|GIMP_IS_DYNAMICS_OPTIONS_CLASS
+name|GIMP_IS_DYNAMICS_CLASS
 parameter_list|(
 name|klass
 parameter_list|)
-value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DYNAMICS_OPTIONS))
+value|(G_TYPE_CHECK_CLASS_TYPE ((klass), GIMP_TYPE_DYNAMICS))
 end_define
 
 begin_define
-DECL|macro|GIMP_DYNAMICS_OPTIONS_GET_CLASS (obj)
+DECL|macro|GIMP_DYNAMICS_GET_CLASS (obj)
 define|#
 directive|define
-name|GIMP_DYNAMICS_OPTIONS_GET_CLASS
+name|GIMP_DYNAMICS_GET_CLASS
 parameter_list|(
 name|obj
 parameter_list|)
-value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DYNAMICS_OPTIONS, GimpDynamicsOptionsClass))
+value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DYNAMICS, GimpDynamicsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDynamicsOptionsClass
+DECL|typedef|GimpDynamics
 typedef|typedef
 name|struct
-name|_GimpDynamicsOptionsClass
-name|GimpDynamicsOptionsClass
+name|_GimpDynamics
+name|GimpDynamics
 typedef|;
 end_typedef
 
 begin_struct
-DECL|struct|_GimpDynamicsOptions
+DECL|struct|_GimpDynamics
 struct|struct
-name|_GimpDynamicsOptions
+name|_GimpDynamics
 block|{
 DECL|member|parent_instance
 name|GimpDataClass
 name|parent_instance
 decl_stmt|;
 DECL|member|opacity_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|opacity_dynamics
 decl_stmt|;
 DECL|member|hardness_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|hardness_dynamics
 decl_stmt|;
 DECL|member|rate_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|rate_dynamics
 decl_stmt|;
 DECL|member|size_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|size_dynamics
 decl_stmt|;
 DECL|member|aspect_ratio_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|aspect_ratio_dynamics
 decl_stmt|;
 DECL|member|color_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|color_dynamics
 decl_stmt|;
 DECL|member|angle_dynamics
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|angle_dynamics
 decl_stmt|;
@@ -240,10 +240,19 @@ block|}
 struct|;
 end_struct
 
+begin_typedef
+DECL|typedef|GimpDynamicsClass
+typedef|typedef
+name|struct
+name|_GimpDynamicsClass
+name|GimpDynamicsClass
+typedef|;
+end_typedef
+
 begin_struct
-DECL|struct|_GimpDynamicsOptionsClass
+DECL|struct|_GimpDynamicsClass
 struct|struct
-name|_GimpDynamicsOptionsClass
+name|_GimpDynamicsClass
 block|{
 DECL|member|parent_instance
 name|GimpDataClass
@@ -255,7 +264,7 @@ end_struct
 
 begin_decl_stmt
 name|GType
-name|gimp_dynamics_options_get_type
+name|gimp_dynamics_get_type
 argument_list|(
 name|void
 argument_list|)
@@ -266,7 +275,7 @@ end_decl_stmt
 begin_function_decl
 name|GimpData
 modifier|*
-name|gimp_dynamics_options_new
+name|gimp_dynamics_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -288,9 +297,9 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_dynamics_options_get_output_val
+name|gimp_dynamics_get_output_val
 parameter_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,

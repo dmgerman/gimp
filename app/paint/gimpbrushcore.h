@@ -22,6 +22,12 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"core/gimpdynamics.h"
+end_include
+
 begin_define
 DECL|macro|BRUSH_CORE_SUBSAMPLE
 define|#
@@ -138,7 +144,7 @@ modifier|*
 name|brush
 decl_stmt|;
 DECL|member|dynamics
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 decl_stmt|;
@@ -347,7 +353,7 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|brush
 parameter_list|)
@@ -389,7 +395,7 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)

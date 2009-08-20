@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdynamics.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpbrushcore.h"
 end_include
 
@@ -108,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdynamicsoptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bce320103
+DECL|enum|__anon27cd52a10103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -313,7 +313,7 @@ name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -652,7 +652,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 argument_list|)
 expr_stmt|;
 name|object_class
@@ -3229,7 +3229,7 @@ name|core
 operator|->
 name|scale
 operator|*=
-name|gimp_dynamics_options_get_output_val
+name|gimp_dynamics_get_output_val
 argument_list|(
 name|core
 operator|->
@@ -3607,14 +3607,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_brush_core_real_set_dynamics (GimpBrushCore * core,GimpDynamicsOptions * dynamics)
+DECL|function|gimp_brush_core_real_set_dynamics (GimpBrushCore * core,GimpDynamics * dynamics)
 name|gimp_brush_core_real_set_dynamics
 parameter_list|(
 name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -3702,14 +3702,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_set_dynamics (GimpBrushCore * core,GimpDynamicsOptions * dynamics)
+DECL|function|gimp_brush_core_set_dynamics (GimpBrushCore * core,GimpDynamics * dynamics)
 name|gimp_brush_core_set_dynamics
 parameter_list|(
 name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -3728,7 +3728,7 @@ name|dynamics
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_DYNAMICS_OPTIONS
+name|GIMP_IS_DYNAMICS
 argument_list|(
 name|dynamics
 argument_list|)

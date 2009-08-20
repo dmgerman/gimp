@@ -298,7 +298,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpdynamicsoptions.h"
+file|"gimpdynamics.h"
 end_include
 
 begin_include
@@ -309,7 +309,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c45bb0103
+DECL|enum|__anon29a93bf00103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2468,7 +2468,7 @@ name|gimp_data_factory_new
 argument_list|(
 name|gimp
 argument_list|,
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 argument_list|,
 literal|"dynamics-path"
 argument_list|,
@@ -2481,7 +2481,7 @@ argument_list|(
 name|dynamics_loader_entries
 argument_list|)
 argument_list|,
-name|gimp_dynamics_options_new
+name|gimp_dynamics_new
 argument_list|,
 name|gimp_dynamics_get_standard
 argument_list|)

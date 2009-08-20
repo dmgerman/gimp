@@ -144,7 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpdynamicsoptions.h"
+file|"gimpdynamics.h"
 end_include
 
 begin_include
@@ -832,7 +832,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fd0e70103
+DECL|enum|__anon2987df1c0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1fd0e70203
+DECL|enum|__anon2987df1c0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -2107,7 +2107,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 argument_list|)
 expr_stmt|;
 name|gimp_context_signals
@@ -2533,7 +2533,7 @@ index|[
 name|GIMP_CONTEXT_PROP_DYNAMICS
 index|]
 operator|=
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 expr_stmt|;
 name|gimp_context_prop_types
 index|[
@@ -2809,7 +2809,7 @@ index|]
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -10109,7 +10109,7 @@ argument_list|(
 operator|!
 name|dynamics
 operator|||
-name|GIMP_IS_DYNAMICS_OPTIONS
+name|GIMP_IS_DYNAMICS
 argument_list|(
 name|dynamics
 argument_list|)
@@ -10324,14 +10324,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_real_set_dynamics (GimpContext * context,GimpDynamicsOptions * dynamics)
+DECL|function|gimp_context_real_set_dynamics (GimpContext * context,GimpDynamics * dynamics)
 name|gimp_context_real_set_dynamics
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -10343,7 +10343,7 @@ name|standard_dynamics
 condition|)
 name|standard_dynamics
 operator|=
-name|GIMP_DYNAMICS_OPTIONS
+name|GIMP_DYNAMICS
 argument_list|(
 name|gimp_dynamics_get_standard
 argument_list|()

@@ -102,7 +102,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/gimpdynamicsoptions.h"
+file|"core/gimpdynamics.h"
 end_include
 
 begin_include
@@ -390,7 +390,7 @@ name|NULL
 argument_list|,
 name|GIMP_TYPE_VIEW
 argument_list|,
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 argument_list|,
 name|DYNAMICS_VIEW_SIZE
 argument_list|,
@@ -635,7 +635,7 @@ argument_list|,
 name|NULL
 argument_list|)
 return|;
-comment|/*   GtkWidget        *vbox;    GtkWidget        *table;   GtkWidget        *menu;   GtkWidget        *label;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   gint              n_dynamics         = 0;   GtkWidget        *dynamics_labels[7];   GType             tool_type;    //tool_type = tool_options->tool_info->tool_type; */
+comment|/*   GtkWidget        *vbox;   GtkWidget        *table;   GtkWidget        *menu;   GtkWidget        *label;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   gint              n_dynamics         = 0;   GtkWidget        *dynamics_labels[7];   GType             tool_type;    //tool_type = tool_options->tool_info->tool_type; */
 block|}
 end_function
 

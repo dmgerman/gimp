@@ -22,6 +22,12 @@ directive|include
 file|"gimpobject.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpdynamics.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_CONTEXT
 define|#
@@ -177,7 +183,7 @@ modifier|*
 name|brush_name
 decl_stmt|;
 DECL|member|dynamics
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 decl_stmt|;

@@ -36,37 +36,37 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint-types.h"
+file|"paint/paint-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
+file|"gimp.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpimage.h"
+file|"gimpimage.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpcurve.h"
+file|"gimpcurve.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpdynamicsoptions.h"
+file|"gimpdynamics.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpdata.h"
+file|"gimpdata.h"
 end_include
 
 begin_include
@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0c5f7e0103
+DECL|enum|__anon27838d300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -558,9 +558,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_class_init
+name|gimp_dynamics_class_init
 parameter_list|(
-name|GimpDynamicsOptionsClass
+name|GimpDynamicsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -570,7 +570,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_finalize
+name|gimp_dynamics_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -582,7 +582,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_notify
+name|gimp_dynamics_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -598,7 +598,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_set_property
+name|gimp_dynamics_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -622,7 +622,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_get_property
+name|gimp_dynamics_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -645,9 +645,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 parameter_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|dynamics
 parameter_list|)
@@ -657,9 +657,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 parameter_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|dynamics
 parameter_list|)
@@ -667,16 +667,16 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* G_DEFINE_TYPE_WITH_CODE (GimpDynamicsOptions, gimp_dynamics_options, GIMP_TYPE_DATA,                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dynamics_editor_docked_iface_init)) */
+comment|/* G_DEFINE_TYPE_WITH_CODE (GimpDynamics, gimp_dynamics, GIMP_TYPE_DATA,                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dynamics_editor_docked_iface_init)) */
 end_comment
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDynamicsOptions,gimp_dynamics_options,GIMP_TYPE_DATA)
+DECL|function|G_DEFINE_TYPE (GimpDynamics,gimp_dynamics,GIMP_TYPE_DATA)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpDynamicsOptions
+argument|GimpDynamics
 argument_list|,
-argument|gimp_dynamics_options
+argument|gimp_dynamics
 argument_list|,
 argument|GIMP_TYPE_DATA
 argument_list|)
@@ -687,15 +687,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_dynamics_options_parent_class
+value|gimp_dynamics_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_dynamics_options_class_init
+name|gimp_dynamics_class_init
 parameter_list|(
-name|GimpDynamicsOptionsClass
+name|GimpDynamicsClass
 modifier|*
 name|klass
 parameter_list|)
@@ -713,25 +713,25 @@ name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_dynamics_options_finalize
+name|gimp_dynamics_finalize
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_dynamics_options_set_property
+name|gimp_dynamics_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_dynamics_options_get_property
+name|gimp_dynamics_get_property
 expr_stmt|;
 name|object_class
 operator|->
 name|notify
 operator|=
-name|gimp_dynamics_options_notify
+name|gimp_dynamics_notify
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -1369,10 +1369,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_init (GimpDynamicsOptions * options)
-name|gimp_dynamics_options_init
+DECL|function|gimp_dynamics_init (GimpDynamics * options)
+name|gimp_dynamics_init
 parameter_list|(
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|options
 parameter_list|)
@@ -1383,10 +1383,10 @@ name|opacity_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1399,10 +1399,10 @@ name|hardness_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1415,10 +1415,10 @@ name|rate_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1431,10 +1431,10 @@ name|size_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1447,10 +1447,10 @@ name|aspect_ratio_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1463,10 +1463,10 @@ name|color_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1479,10 +1479,10 @@ name|angle_dynamics
 operator|=
 name|g_slice_new0
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_init
+name|gimp_dynamics_curves_init
 argument_list|(
 name|options
 operator|->
@@ -1495,24 +1495,24 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_finalize (GObject * object)
-name|gimp_dynamics_options_finalize
+DECL|function|gimp_dynamics_finalize (GObject * object)
+name|gimp_dynamics_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|options
 init|=
-name|GIMP_DYNAMICS_OPTIONS
+name|GIMP_DYNAMICS
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1521,14 +1521,14 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
 name|opacity_dynamics
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1537,14 +1537,14 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
 name|hardness_dynamics
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1553,14 +1553,14 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
 name|rate_dynamics
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1569,14 +1569,14 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
 name|size_dynamics
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1585,14 +1585,14 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
 name|aspect_ratio_dynamics
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1601,14 +1601,14 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
 name|color_dynamics
 argument_list|)
 expr_stmt|;
-name|gimp_dynamics_options_curves_finalize
+name|gimp_dynamics_curves_finalize
 argument_list|(
 name|options
 operator|->
@@ -1617,7 +1617,7 @@ argument_list|)
 expr_stmt|;
 name|g_slice_free
 argument_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 argument_list|,
 name|options
 operator|->
@@ -1640,10 +1640,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_curves_init (GimpDynamicOutputOptions * dynamics)
-name|gimp_dynamics_options_curves_init
+DECL|function|gimp_dynamics_curves_init (GimpDynamicsOutput * dynamics)
+name|gimp_dynamics_curves_init
 parameter_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|dynamics
 parameter_list|)
@@ -1744,10 +1744,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_curves_finalize (GimpDynamicOutputOptions * dynamics)
-name|gimp_dynamics_options_curves_finalize
+DECL|function|gimp_dynamics_curves_finalize (GimpDynamicsOutput * dynamics)
+name|gimp_dynamics_curves_finalize
 parameter_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|dynamics
 parameter_list|)
@@ -1800,8 +1800,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_dynamics_options_set_property
+DECL|function|gimp_dynamics_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_dynamics_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -1820,16 +1820,16 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|options
 init|=
-name|GIMP_DYNAMICS_OPTIONS
+name|GIMP_DYNAMICS
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|opacity_dynamics
 init|=
@@ -1837,7 +1837,7 @@ name|options
 operator|->
 name|opacity_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|hardness_dynamics
 init|=
@@ -1845,7 +1845,7 @@ name|options
 operator|->
 name|hardness_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|rate_dynamics
 init|=
@@ -1853,7 +1853,7 @@ name|options
 operator|->
 name|rate_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|size_dynamics
 init|=
@@ -1861,7 +1861,7 @@ name|options
 operator|->
 name|size_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|aspect_ratio_dynamics
 init|=
@@ -1869,7 +1869,7 @@ name|options
 operator|->
 name|aspect_ratio_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|color_dynamics
 init|=
@@ -1877,7 +1877,7 @@ name|options
 operator|->
 name|color_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|angle_dynamics
 init|=
@@ -2455,8 +2455,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_dynamics_options_get_property
+DECL|function|gimp_dynamics_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_dynamics_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -2474,16 +2474,16 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|options
 init|=
-name|GIMP_DYNAMICS_OPTIONS
+name|GIMP_DYNAMICS
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|opacity_dynamics
 init|=
@@ -2491,7 +2491,7 @@ name|options
 operator|->
 name|opacity_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|hardness_dynamics
 init|=
@@ -2499,7 +2499,7 @@ name|options
 operator|->
 name|hardness_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|rate_dynamics
 init|=
@@ -2507,7 +2507,7 @@ name|options
 operator|->
 name|rate_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|size_dynamics
 init|=
@@ -2515,7 +2515,7 @@ name|options
 operator|->
 name|size_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|aspect_ratio_dynamics
 init|=
@@ -2523,7 +2523,7 @@ name|options
 operator|->
 name|aspect_ratio_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|color_dynamics
 init|=
@@ -2531,7 +2531,7 @@ name|options
 operator|->
 name|color_dynamics
 decl_stmt|;
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|angle_dynamics
 init|=
@@ -3109,8 +3109,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_options_notify (GObject * object,GParamSpec * pspec)
-name|gimp_dynamics_options_notify
+DECL|function|gimp_dynamics_notify (GObject * object,GParamSpec * pspec)
+name|gimp_dynamics_notify
 parameter_list|(
 name|GObject
 modifier|*
@@ -3121,15 +3121,15 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-comment|/*   GimpDynamicsOptions *options = GIMP_DYNAMICS_OPTIONS (object);    if (pspec->param_id == PROP_USE_GRADIENT)     {       if (options->gradient_options->use_gradient)         {           options->application_mode_save = options->application_mode;           options->application_mode      = GIMP_PAINT_INCREMENTAL;         }       else         {           options->application_mode = options->application_mode_save;         }        g_object_notify (object, "application-mode");     }    if (G_OBJECT_CLASS (parent_class)->notify)     G_OBJECT_CLASS (parent_class)->notify (object, pspec);     */
+comment|/*   GimpDynamics *options = GIMP_DYNAMICS (object);    if (pspec->param_id == PROP_USE_GRADIENT)     {       if (options->gradient_options->use_gradient)         {           options->application_mode_save = options->application_mode;           options->application_mode      = GIMP_PAINT_INCREMENTAL;         }       else         {           options->application_mode = options->application_mode_save;         }        g_object_notify (object, "application-mode");     }    if (G_OBJECT_CLASS (parent_class)->notify)     G_OBJECT_CLASS (parent_class)->notify (object, pspec);     */
 block|}
 end_function
 
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_dynamics_options_new (const gchar * name)
-name|gimp_dynamics_options_new
+DECL|function|gimp_dynamics_new (const gchar * name)
+name|gimp_dynamics_new
 parameter_list|(
 specifier|const
 name|gchar
@@ -3137,7 +3137,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|options
 decl_stmt|;
@@ -3145,7 +3145,7 @@ name|options
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_DYNAMICS_OPTIONS
+name|GIMP_TYPE_DYNAMICS
 argument_list|,
 literal|"name"
 argument_list|,
@@ -3184,7 +3184,7 @@ condition|)
 block|{
 name|standard_dynamics
 operator|=
-name|gimp_dynamics_options_new
+name|gimp_dynamics_new
 argument_list|(
 literal|"Standard"
 argument_list|)
@@ -3216,10 +3216,10 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_options_get_output_val (GimpDynamicOutputOptions * output,GimpCoords * coords)
-name|gimp_dynamics_options_get_output_val
+DECL|function|gimp_dynamics_get_output_val (GimpDynamicsOutput * output,GimpCoords * coords)
+name|gimp_dynamics_get_output_val
 parameter_list|(
-name|GimpDynamicOutputOptions
+name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
