@@ -309,7 +309,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a52ec820103
+DECL|enum|__anon2947803d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2293,17 +2293,9 @@ index|[]
 init|=
 block|{
 block|{
-name|gimp_pattern_load
+name|gimp_dynamics_load
 block|,
-name|GIMP_PATTERN_FILE_EXTENSION
-block|,
-name|FALSE
-block|}
-block|,
-block|{
-name|gimp_pattern_load_pixbuf
-block|,
-name|NULL
+name|GIMP_DYNAMICS_FILE_EXTENSION
 block|,
 name|FALSE
 block|}

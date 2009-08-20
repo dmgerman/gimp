@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f758f0103
+DECL|enum|__anon2b1fd0e70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f758f0203
+DECL|enum|__anon2b1fd0e70203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1426,9 +1426,6 @@ block|,
 DECL|enumerator|BRUSH_CHANGED
 name|BRUSH_CHANGED
 block|,
-DECL|enumerator|DYNAMICS_CHANGED
-name|DYNAMICS_CHANGED
-block|,
 DECL|enumerator|PATTERN_CHANGED
 name|PATTERN_CHANGED
 block|,
@@ -1449,6 +1446,9 @@ name|IMAGEFILE_CHANGED
 block|,
 DECL|enumerator|TEMPLATE_CHANGED
 name|TEMPLATE_CHANGED
+block|,
+DECL|enumerator|DYNAMICS_CHANGED
+name|DYNAMICS_CHANGED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -1490,8 +1490,6 @@ literal|"paint-mode"
 block|,
 literal|"brush"
 block|,
-literal|"dynamics"
-block|,
 literal|"pattern"
 block|,
 literal|"gradient"
@@ -1505,6 +1503,8 @@ block|,
 literal|"imagefile"
 block|,
 literal|"template"
+block|,
+literal|"dynamics"
 block|}
 decl_stmt|;
 end_decl_stmt
