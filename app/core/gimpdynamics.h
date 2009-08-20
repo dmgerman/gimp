@@ -304,7 +304,6 @@ modifier|*
 name|output
 parameter_list|,
 name|GimpCoords
-modifier|*
 name|coords
 parameter_list|)
 function_decl|;

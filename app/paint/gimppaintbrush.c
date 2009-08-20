@@ -420,9 +420,18 @@ name|application_mode
 expr_stmt|;
 name|grad_point
 operator|=
-literal|1
+name|gimp_dynamics_get_output_val
+argument_list|(
+name|brush_core
+operator|->
+name|dynamics
+operator|->
+name|color_dynamics
+argument_list|,
+operator|*
+name|coords
+argument_list|)
 expr_stmt|;
-comment|/*gimp_paint_options_get_dynamic_color (paint_options, coords,                                                      paint_core->pixel_dist);*/
 comment|/* optionally take the color from the current gradient */
 if|if
 condition|(
@@ -596,14 +605,32 @@ expr_stmt|;
 block|}
 name|opacity
 operator|*=
-literal|1
+name|gimp_dynamics_get_output_val
+argument_list|(
+name|brush_core
+operator|->
+name|dynamics
+operator|->
+name|opacity_dynamics
+argument_list|,
+operator|*
+name|coords
+argument_list|)
 expr_stmt|;
-comment|/*gimp_paint_options_get_dynamic_opacity (paint_options, coords,                                                      paint_core->pixel_dist);*/
 name|hardness
 operator|=
-literal|1
+name|gimp_dynamics_get_output_val
+argument_list|(
+name|brush_core
+operator|->
+name|dynamics
+operator|->
+name|hardness_dynamics
+argument_list|,
+operator|*
+name|coords
+argument_list|)
 expr_stmt|;
-comment|/* gimp_paint_options_get_dynamic_hardness (paint_options, coords,                                                       paint_core->pixel_dist);*/
 comment|/* finally, let the brush core paste the colored area on the canvas */
 name|gimp_brush_core_paste_canvas
 argument_list|(
