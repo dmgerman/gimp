@@ -630,6 +630,9 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -643,7 +646,12 @@ name|display
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
 name|gimp_image_map_tool_preview
 argument_list|(
 name|GIMP_IMAGE_MAP_TOOL
