@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06df420103
+DECL|enum|__anon299aed250103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -153,7 +153,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06df420203
+DECL|enum|__anon299aed250203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1857,6 +1857,15 @@ operator|->
 name|linked
 operator|=
 name|gimp_item_get_linked
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+name|new_item
+operator|->
+name|lock_content
+operator|=
+name|gimp_item_get_lock_content
 argument_list|(
 name|item
 argument_list|)
