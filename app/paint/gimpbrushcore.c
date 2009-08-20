@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd52a10103
+DECL|enum|__anon276901e80103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1596,6 +1596,18 @@ name|GimpBrush
 modifier|*
 name|brush
 decl_stmt|;
+name|core
+operator|->
+name|dynamics
+operator|=
+name|gimp_context_get_dynamics
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|paint_options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|brush
 operator|=
 name|gimp_context_get_brush
@@ -1666,6 +1678,40 @@ operator|->
 name|brush_scale
 expr_stmt|;
 comment|/* gimp_paint_options_get_dynamic_size (paint_options, coords,                                                          TRUE,                                                          paint_core->pixel_dist);*/
+if|if
+condition|(
+name|core
+operator|->
+name|dynamics
+condition|)
+block|{
+name|core
+operator|->
+name|scale
+operator|*=
+name|gimp_dynamics_get_output_val
+argument_list|(
+name|core
+operator|->
+name|dynamics
+operator|->
+name|size_dynamics
+argument_list|,
+name|coords
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"PAss GO 2\n"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+name|printf
+argument_list|(
+literal|"Go to jail\n"
+argument_list|)
+expr_stmt|;
 name|core
 operator|->
 name|angle
@@ -3238,6 +3284,11 @@ operator|->
 name|size_dynamics
 argument_list|,
 name|coords
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"PAssing go1\n"
 argument_list|)
 expr_stmt|;
 block|}

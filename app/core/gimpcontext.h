@@ -427,7 +427,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -1224,7 +1224,7 @@ comment|/*  dynamics  */
 end_comment
 
 begin_function_decl
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|gimp_context_get_dynamics
 parameter_list|(
@@ -1243,7 +1243,7 @@ name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
