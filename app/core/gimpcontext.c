@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987df1c0103
+DECL|enum|__anon287fc2e50103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2987df1c0203
+DECL|enum|__anon287fc2e50203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -10054,7 +10054,7 @@ comment|/*  dynamics ***********************************************************
 end_comment
 
 begin_function
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 DECL|function|gimp_context_get_dynamics (GimpContext * context)
 name|gimp_context_get_dynamics
@@ -10084,14 +10084,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_context_set_dynamics (GimpContext * context,GimpDynamicsOptions * dynamics)
+DECL|function|gimp_context_set_dynamics (GimpContext * context,GimpDynamics * dynamics)
 name|gimp_context_set_dynamics
 parameter_list|(
 name|GimpContext
 modifier|*
 name|context
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|)
@@ -10294,7 +10294,7 @@ name|GimpDynamicsOptions
 modifier|*
 name|dynamics
 decl_stmt|;
-comment|/*   if (! context->dynamics_name)     context->dynamics_name = g_strdup (context->gimp->config->default_dynamics); */
+comment|/*   if (! context->dynamics_name)     context->dynamics_name = g_strdup (context->gimp->config->default_dynamics);   */
 name|dynamics
 operator|=
 name|gimp_context_find_object
