@@ -309,7 +309,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2947803d0103
+DECL|enum|__anon2c1c45bb0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2292,10 +2292,11 @@ name|dynamics_loader_entries
 index|[]
 init|=
 block|{
+comment|/*TODO: Dynamics need savers and loaders*/
 block|{
-name|gimp_dynamics_load
+name|gimp_pattern_load
 block|,
-name|GIMP_DYNAMICS_FILE_EXTENSION
+name|GIMP_PATTERN_FILE_EXTENSION
 block|,
 name|FALSE
 block|}
