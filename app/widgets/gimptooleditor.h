@@ -145,7 +145,7 @@ name|context
 parameter_list|,
 name|GList
 modifier|*
-name|defualt_tool_order
+name|default_tool_order
 parameter_list|,
 name|gint
 name|view_size
