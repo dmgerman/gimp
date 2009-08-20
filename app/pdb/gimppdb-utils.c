@@ -1237,12 +1237,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_item_is_attached (GimpItem * item,GError ** error)
+DECL|function|gimp_pdb_item_is_attached (GimpItem * item,gboolean writable,GError ** error)
 name|gimp_pdb_item_is_attached
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|gboolean
+name|writable
 parameter_list|,
 name|GError
 modifier|*
@@ -1315,6 +1318,18 @@ return|return
 name|FALSE
 return|;
 block|}
+if|if
+condition|(
+name|writable
+condition|)
+return|return
+name|gimp_pdb_item_is_writable
+argument_list|(
+name|item
+argument_list|,
+name|error
+argument_list|)
+return|;
 return|return
 name|TRUE
 return|;
@@ -1640,6 +1655,8 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)

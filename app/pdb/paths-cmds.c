@@ -1421,6 +1421,16 @@ condition|(
 name|vectors
 operator|&&
 name|drawable
+operator|&&
+name|gimp_pdb_item_is_writable
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|error
+argument_list|)
 condition|)
 block|{
 name|GimpStrokeOptions

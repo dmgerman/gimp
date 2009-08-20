@@ -212,6 +212,9 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|gboolean
+name|writable
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

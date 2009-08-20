@@ -4257,6 +4257,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -5150,6 +5152,8 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
+name|FALSE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -5822,6 +5826,8 @@ name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -7177,6 +7183,10 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|mode
+operator|==
+name|GIMP_MASK_APPLY
 argument_list|,
 name|error
 argument_list|)
