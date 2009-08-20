@@ -2168,6 +2168,11 @@ name|text_layer
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|writable
+init|=
+name|FALSE
+decl_stmt|;
 name|GList
 modifier|*
 name|next
@@ -2273,6 +2278,17 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|writable
+operator|=
+operator|!
+name|gimp_item_get_lock_content
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|layer_list
 operator|=
 name|gimp_item_get_container_iter
@@ -2312,10 +2328,6 @@ name|list
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|layer
-condition|)
 name|text_layer
 operator|=
 name|gimp_drawable_is_text_layer
@@ -2682,7 +2694,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-resize"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 operator|!
 name|ac
@@ -2692,7 +2704,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-resize-to-image"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 operator|!
 name|ac
@@ -2702,7 +2714,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-scale"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 operator|!
 name|ac
@@ -2712,7 +2724,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-crop"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 name|sel
 argument_list|)
@@ -2721,7 +2733,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-alpha-add"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 operator|!
 name|fs
@@ -2734,7 +2746,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-alpha-remove"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 operator|!
 name|fs
@@ -2776,7 +2788,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-mask-apply"
 argument_list|,
-name|layer
+name|writable
 operator|&&
 operator|!
 name|fs

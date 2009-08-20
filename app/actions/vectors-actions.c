@@ -1027,6 +1027,11 @@ name|linked
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|writable
+init|=
+name|FALSE
+decl_stmt|;
 name|GList
 modifier|*
 name|next
@@ -1110,6 +1115,14 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+name|writable
+operator|=
+operator|!
+name|gimp_item_get_lock_content
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 name|vectors_list
 operator|=
 name|gimp_item_get_container_iter
@@ -1174,7 +1187,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-path-tool"
 argument_list|,
-name|vectors
+name|writable
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
