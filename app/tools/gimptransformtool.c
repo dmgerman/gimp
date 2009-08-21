@@ -5156,7 +5156,14 @@ decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
-name|message
+name|null_message
+init|=
+name|NULL
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|locked_message
 init|=
 name|NULL
 decl_stmt|;
@@ -5188,11 +5195,18 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|message
+name|null_message
 operator|=
 name|_
 argument_list|(
 literal|"There is no layer to transform."
+argument_list|)
+expr_stmt|;
+name|locked_message
+operator|=
+name|_
+argument_list|(
+literal|"The active layer's pixels are locked."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5211,10 +5225,14 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* cannot happen, so don't translate this message */
-name|message
+comment|/* cannot happen, so don't translate these messages */
+name|null_message
 operator|=
 literal|"There is no selection to transform."
+expr_stmt|;
+name|locked_message
+operator|=
+literal|"The selection's pixels are locked."
 expr_stmt|;
 break|break;
 case|case
@@ -5232,11 +5250,18 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|message
+name|null_message
 operator|=
 name|_
 argument_list|(
 literal|"There is no path to transform."
+argument_list|)
+expr_stmt|;
+name|locked_message
+operator|=
+name|_
+argument_list|(
+literal|"The active path's strokes are locked."
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5253,7 +5278,36 @@ name|tool
 argument_list|,
 name|display
 argument_list|,
-name|message
+name|null_message
+argument_list|)
+expr_stmt|;
+name|gimp_transform_tool_halt
+argument_list|(
+name|tr_tool
+argument_list|)
+expr_stmt|;
+return|return;
+block|}
+if|if
+condition|(
+name|gimp_item_get_lock_content
+argument_list|(
+name|active_item
+argument_list|)
+condition|)
+block|{
+name|gimp_tool_message_literal
+argument_list|(
+name|tool
+argument_list|,
+name|display
+argument_list|,
+name|locked_message
+argument_list|)
+expr_stmt|;
+name|gimp_transform_tool_halt
+argument_list|(
+name|tr_tool
 argument_list|)
 expr_stmt|;
 return|return;
