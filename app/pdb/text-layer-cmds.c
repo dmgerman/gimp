@@ -453,6 +453,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|FALSE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -610,6 +612,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -738,6 +742,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -896,6 +902,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -1028,6 +1036,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -1220,6 +1230,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -1351,6 +1363,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -1507,6 +1521,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -1634,6 +1650,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -1790,6 +1808,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -1917,6 +1937,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -2073,6 +2095,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -2201,6 +2225,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -2359,6 +2385,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -2486,6 +2514,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -2642,6 +2672,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -2769,6 +2801,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -2925,6 +2959,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -3060,6 +3096,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -3212,6 +3250,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -3340,6 +3380,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -3496,6 +3538,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -3623,6 +3667,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -3779,6 +3825,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -3906,6 +3954,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -4062,6 +4112,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -4213,6 +4265,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -4349,6 +4403,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -4535,6 +4591,8 @@ condition|(
 name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
+argument_list|,
+name|TRUE
 argument_list|,
 name|error
 argument_list|)

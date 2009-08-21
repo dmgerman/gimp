@@ -267,6 +267,9 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
+name|gboolean
+name|writable
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

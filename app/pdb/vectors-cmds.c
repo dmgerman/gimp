@@ -487,6 +487,8 @@ name|gimp_pdb_layer_is_text_layer
 argument_list|(
 name|layer
 argument_list|,
+name|FALSE
+argument_list|,
 name|error
 argument_list|)
 condition|)

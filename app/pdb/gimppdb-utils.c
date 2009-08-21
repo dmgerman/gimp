@@ -1564,12 +1564,15 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_layer_is_text_layer (GimpLayer * layer,GError ** error)
+DECL|function|gimp_pdb_layer_is_text_layer (GimpLayer * layer,gboolean writable,GError ** error)
 name|gimp_pdb_layer_is_text_layer
 parameter_list|(
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|gboolean
+name|writable
 parameter_list|,
 name|GError
 modifier|*
@@ -1656,7 +1659,7 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|FALSE
+name|writable
 argument_list|,
 name|error
 argument_list|)
