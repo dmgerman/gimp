@@ -751,6 +751,18 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+name|tool
+operator|->
+name|display
+operator|=
+name|NULL
+expr_stmt|;
+name|tool
+operator|->
+name|drawable
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
