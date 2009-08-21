@@ -848,5 +848,37 @@ return|;
 block|}
 end_function
 
+begin_function
+name|gboolean
+DECL|function|gimp_plug_in_manager_uri_has_exporter (GimpPlugInManager * manager,const gchar * uri)
+name|gimp_plug_in_manager_uri_has_exporter
+parameter_list|(
+name|GimpPlugInManager
+modifier|*
+name|manager
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|uri
+parameter_list|)
+block|{
+return|return
+name|file_procedure_find
+argument_list|(
+name|manager
+operator|->
+name|export_procs
+argument_list|,
+name|uri
+argument_list|,
+name|NULL
+argument_list|)
+operator|!=
+name|NULL
+return|;
+block|}
+end_function
+
 end_unit
 
