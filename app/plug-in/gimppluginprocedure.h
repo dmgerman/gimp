@@ -510,8 +510,9 @@ name|GimpPlugInProcedure
 modifier|*
 name|proc
 parameter_list|,
-name|GimpImageType
-name|image_type
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 function_decl|;
 end_function_decl

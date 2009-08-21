@@ -18,7 +18,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<glib-object.h>
+file|<gegl.h>
 end_include
 
 begin_include
@@ -49,6 +49,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpdrawable.h"
 end_include
 
 begin_include
@@ -102,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29dfe3bd0103
+DECL|enum|__anon29933bba0103
 block|{
 DECL|enumerator|MENU_PATH_ADDED
 name|MENU_PATH_ADDED
@@ -2978,7 +2984,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_plug_in_procedure_get_sensitive (const GimpPlugInProcedure * proc,GimpImageType image_type)
+DECL|function|gimp_plug_in_procedure_get_sensitive (const GimpPlugInProcedure * proc,GimpDrawable * drawable)
 name|gimp_plug_in_procedure_get_sensitive
 parameter_list|(
 specifier|const
@@ -2986,12 +2992,21 @@ name|GimpPlugInProcedure
 modifier|*
 name|proc
 parameter_list|,
-name|GimpImageType
-name|image_type
+name|GimpDrawable
+modifier|*
+name|drawable
 parameter_list|)
 block|{
+name|GimpImageType
+name|image_type
+init|=
+operator|-
+literal|1
+decl_stmt|;
 name|gboolean
 name|sensitive
+init|=
+name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -3001,6 +3016,31 @@ name|proc
 argument_list|)
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|drawable
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_DRAWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|drawable
+condition|)
+name|image_type
+operator|=
+name|gimp_drawable_type
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3081,10 +3121,6 @@ name|GIMP_PLUG_IN_INDEXEDA_IMAGE
 expr_stmt|;
 break|break;
 default|default:
-name|sensitive
-operator|=
-name|FALSE
-expr_stmt|;
 break|break;
 block|}
 return|return
