@@ -5,7 +5,6 @@ end_comment
 
 begin_define
 DECL|macro|DYNAMICS_VIEW_SIZE
-DECL|macro|DYNAMICS_VIEW_SIZE
 define|#
 directive|define
 name|DYNAMICS_VIEW_SIZE
@@ -113,22 +112,6 @@ file|"core/gimpbrush.h"
 end_include
 
 begin_comment
-comment|//To do:
-end_comment
-
-begin_comment
-comment|// discard unneeded ones.
-end_comment
-
-begin_comment
-comment|// needs to be fixed to gimppaintdynamics.h when that works.
-end_comment
-
-begin_comment
-comment|/* #include "paint/gimppaintoptions.h"  #include "core/gimptoolinfo.h"  #include "widgets/gimppropwidgets.h" #include "widgets/gimpviewablebox.h" #include "widgets/gimpwidgets-utils.h"  #include "tools/gimpairbrushtool.h" #include "tools/gimpclonetool.h" #include "tools/gimpconvolvetool.h" #include "tools/gimpdodgeburntool.h" #include "tools/gimperasertool.h" #include "tools/gimphealtool.h" #include "tools/gimpinktool.h" #include "tools/gimppaintoptions-gui.h" #include "tools/gimppenciltool.h" #include "tools/gimpperspectiveclonetool.h" #include "tools/gimpsmudgetool.h" #include "tools/gimptooloptions-gui.h"  */
-end_comment
-
-begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -187,14 +170,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_comment
-comment|/*dynamics options gui*/
-end_comment
-
-begin_comment
-comment|/* static gboolean    tool_has_opacity_dynamics      (GType       tool_type); static gboolean    tool_has_hardness_dynamics     (GType       tool_type); static gboolean    tool_has_rate_dynamics         (GType       tool_type); static gboolean    tool_has_size_dynamics         (GType       tool_type); static gboolean    tool_has_color_dynamics        (GType       tool_type); static gboolean    tool_has_angle_dynamics        (GType       tool_type); static gboolean    tool_has_aspect_ratio_dynamics (GType       tool_type);  static void        pressure_options_gui  (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row,                                           GtkWidget        *labels[]); static void        velocity_options_gui  (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); static void        direction_options_gui (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); static void        tilt_options_gui      (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); static void        random_options_gui    (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row);  static void        fading_options_gui    (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); */
-end_comment
-
 begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
@@ -209,7 +184,6 @@ argument_list|)
 end_macro
 
 begin_define
-DECL|macro|parent_class
 DECL|macro|parent_class
 define|#
 directive|define
@@ -230,7 +204,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_editor_class_init (GimpDynamicsEditorClass * klass)
 DECL|function|gimp_dynamics_editor_class_init (GimpDynamicsEditorClass * klass)
 name|gimp_dynamics_editor_class_init
 parameter_list|(
@@ -280,7 +253,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_dynamics_editor_docked_iface_init (GimpDockedInterface * iface)
-DECL|function|gimp_dynamics_editor_docked_iface_init (GimpDockedInterface * iface)
 name|gimp_dynamics_editor_docked_iface_init
 parameter_list|(
 name|GimpDockedInterface
@@ -316,6 +288,191 @@ expr_stmt|;
 block|}
 end_function
 
+begin_function
+specifier|static
+name|GObject
+modifier|*
+DECL|function|gimp_dynamics_editor_constructor (GType type,guint n_params,GObjectConstructParam * params)
+name|gimp_dynamics_editor_constructor
+parameter_list|(
+name|GType
+name|type
+parameter_list|,
+name|guint
+name|n_params
+parameter_list|,
+name|GObjectConstructParam
+modifier|*
+name|params
+parameter_list|)
+block|{
+name|GObject
+modifier|*
+name|object
+decl_stmt|;
+name|object
+operator|=
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|constructor
+argument_list|(
+name|type
+argument_list|,
+name|n_params
+argument_list|,
+name|params
+argument_list|)
+expr_stmt|;
+name|gimp_docked_set_show_button_bar
+argument_list|(
+name|GIMP_DOCKED
+argument_list|(
+name|object
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+return|return
+name|object
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_dynamics_editor_set_context (GimpDocked * docked,GimpContext * context)
+name|gimp_dynamics_editor_set_context
+parameter_list|(
+name|GimpDocked
+modifier|*
+name|docked
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+block|{
+name|GimpDataEditor
+modifier|*
+name|data_editor
+init|=
+name|GIMP_DATA_EDITOR
+argument_list|(
+name|docked
+argument_list|)
+decl_stmt|;
+name|parent_docked_iface
+operator|->
+name|set_context
+argument_list|(
+name|docked
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+name|gimp_view_renderer_set_context
+argument_list|(
+name|GIMP_VIEW
+argument_list|(
+name|data_editor
+operator|->
+name|view
+argument_list|)
+operator|->
+name|renderer
+argument_list|,
+name|context
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_dynamics_editor_new (GimpContext * context,GimpMenuFactory * menu_factory)
+name|gimp_dynamics_editor_new
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpMenuFactory
+modifier|*
+name|menu_factory
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_MENU_FACTORY
+argument_list|(
+name|menu_factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_DYNAMICS_EDITOR
+argument_list|,
+literal|"menu-factory"
+argument_list|,
+name|menu_factory
+argument_list|,
+literal|"menu-identifier"
+argument_list|,
+literal|"<DynamicsEditor>"
+argument_list|,
+literal|"ui-path"
+argument_list|,
+literal|"/dynamics-editor-popup"
+argument_list|,
+literal|"data-factory"
+argument_list|,
+name|context
+operator|->
+name|gimp
+operator|->
+name|dynamics_factory
+argument_list|,
+literal|"context"
+argument_list|,
+name|context
+argument_list|,
+literal|"data"
+argument_list|,
+name|gimp_context_get_dynamics
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/* To do: look at other init for dataeditors look at how to move gui codes from paintopitons to here */
 end_comment
@@ -323,7 +480,6 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_editor_init (GimpDynamicsEditor * editor)
 DECL|function|gimp_dynamics_editor_init (GimpDynamicsEditor * editor)
 name|gimp_dynamics_editor_init
 parameter_list|(
@@ -358,8 +514,6 @@ name|n_dynamics
 init|=
 literal|0
 decl_stmt|;
-comment|/*     GtkWidget        *dynamics_labels[7];   GtkWidget      *frame;   GtkWidget      *box;   gint            row = 0;   GtkWidget        *menu;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   GType             tool_type; */
-comment|/*   //add a frame   frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);   gtk_box_pack_start (GTK_BOX (editor), frame, TRUE, TRUE, 0);   gtk_widget_show (frame); */
 name|vbox
 operator|=
 name|gtk_vbox_new
@@ -491,9 +645,6 @@ argument_list|)
 operator|==
 name|GTK_TEXT_DIR_RTL
 decl_stmt|;
-comment|//frame = gimp_prop_expander_new (config, "dynamics-expanded",
-comment|//                                _("Brush Dynamics"));
-comment|/*      gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, FALSE, 0);       gtk_widget_show (frame); */
 name|inner_frame
 operator|=
 name|gimp_frame_new
@@ -886,180 +1037,41 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-comment|/*   //editor->shape_group = NULL;   editor->options_vbox = gtk_table_new (4, 3, FALSE);   gtk_table_set_row_spacings (GTK_TABLE (editor->options_vbox), 2);   gtk_table_set_col_spacings (GTK_TABLE (editor->options_vbox), 2);   gtk_box_pack_start (GTK_BOX (editor), editor->options_vbox, FALSE, FALSE, 0);   gtk_widget_show (editor->options_vbox);    table = gtk_table_new (3, 3, FALSE);   gtk_table_set_col_spacings (GTK_TABLE (table), 2);   gtk_table_set_row_spacings (GTK_TABLE (table), 2);   gtk_box_pack_start (GTK_BOX (editor->options_vbox), table, FALSE, FALSE, 0);   gtk_widget_show (table); */
-comment|/*   g_object_set_data (G_OBJECT (vbox), "set_options", table);    menu  = gimp_prop_paint_mode_menu_new (config, "paint-mode", TRUE, FALSE);   label = gimp_table_attach_aligned (GTK_TABLE (table), 0, table_row++,                                      _("Mode:"), 0.0, 0.5,                                      menu, 2, FALSE);  //  if (tool_type == GIMP_TYPE_ERASER_TOOL     || //      tool_type == GIMP_TYPE_CONVOLVE_TOOL   || //      tool_type == GIMP_TYPE_DODGE_BURN_TOOL || //      tool_type == GIMP_TYPE_SMUDGE_TOOL)     {       gtk_widget_set_sensitive (menu, FALSE);       gtk_widget_set_sensitive (label, FALSE);     }    gimp_prop_opacity_entry_new (config, "opacity",                                GTK_TABLE (table), 0, table_row++,                                _("Opacity:")); */
 block|}
-specifier|static
-name|GObject
-modifier|*
-name|gimp_dynamics_editor_constructor
-parameter_list|(
-name|GType
-name|type
-parameter_list|,
-name|guint
-name|n_params
-parameter_list|,
-name|GObjectConstructParam
-modifier|*
-name|params
-parameter_list|)
-block|{
-name|GObject
-modifier|*
-name|object
-decl_stmt|;
-name|object
-operator|=
-name|G_OBJECT_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|constructor
-argument_list|(
-name|type
-argument_list|,
-name|n_params
-argument_list|,
-name|params
-argument_list|)
-expr_stmt|;
-name|gimp_docked_set_show_button_bar
-argument_list|(
-name|GIMP_DOCKED
-argument_list|(
-name|object
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-return|return
-name|object
-return|;
-block|}
-specifier|static
-name|void
-name|gimp_dynamics_editor_set_context
-parameter_list|(
-name|GimpDocked
-modifier|*
-name|docked
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-block|{
-name|GimpDataEditor
-modifier|*
-name|data_editor
-init|=
-name|GIMP_DATA_EDITOR
-argument_list|(
-name|docked
-argument_list|)
-decl_stmt|;
-name|parent_docked_iface
-operator|->
-name|set_context
-argument_list|(
-name|docked
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
-name|gimp_view_renderer_set_context
-argument_list|(
-name|GIMP_VIEW
-argument_list|(
-name|data_editor
-operator|->
-name|view
-argument_list|)
-operator|->
-name|renderer
-argument_list|,
-name|context
-argument_list|)
-expr_stmt|;
-block|}
-comment|/*  public functions  */
-name|GtkWidget
-modifier|*
-name|gimp_dynamics_editor_new
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|)
-block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_MENU_FACTORY
-argument_list|(
-name|menu_factory
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_CONTEXT
-argument_list|(
-name|context
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-return|return
-name|g_object_new
-argument_list|(
-name|GIMP_TYPE_DYNAMICS_EDITOR
-argument_list|,
-literal|"menu-factory"
-argument_list|,
-name|menu_factory
-argument_list|,
-literal|"menu-identifier"
-argument_list|,
-literal|"<DynamicsEditor>"
-argument_list|,
-literal|"ui-path"
-argument_list|,
-literal|"/dynamics-editor-popup"
-argument_list|,
-literal|"data-factory"
-argument_list|,
-name|context
-operator|->
-name|gimp
-operator|->
-name|dynamics_factory
-argument_list|,
-literal|"context"
-argument_list|,
-name|context
-argument_list|,
-literal|"data"
-argument_list|,
-name|gimp_context_get_dynamics
-argument_list|(
-name|context
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-return|;
 block|}
 end_function
+
+begin_comment
+comment|/*        SCRAPS!           */
+end_comment
+
+begin_comment
+comment|//frame = gimp_prop_expander_new (config, "dynamics-expanded",
+end_comment
+
+begin_comment
+comment|//                                _("Brush Dynamics"));
+end_comment
+
+begin_comment
+comment|/*      gtk_box_pack_start (GTK_BOX (vbox), frame, FALSE, FALSE, 0);       gtk_widget_show (frame); */
+end_comment
+
+begin_comment
+comment|/*   //editor->shape_group = NULL;   editor->options_vbox = gtk_table_new (4, 3, FALSE);   gtk_table_set_row_spacings (GTK_TABLE (editor->options_vbox), 2);   gtk_table_set_col_spacings (GTK_TABLE (editor->options_vbox), 2);   gtk_box_pack_start (GTK_BOX (editor), editor->options_vbox, FALSE, FALSE, 0);   gtk_widget_show (editor->options_vbox);    table = gtk_table_new (3, 3, FALSE);   gtk_table_set_col_spacings (GTK_TABLE (table), 2);   gtk_table_set_row_spacings (GTK_TABLE (table), 2);   gtk_box_pack_start (GTK_BOX (editor->options_vbox), table, FALSE, FALSE, 0);   gtk_widget_show (table); */
+end_comment
+
+begin_comment
+comment|/*   g_object_set_data (G_OBJECT (vbox), "set_options", table);    menu  = gimp_prop_paint_mode_menu_new (config, "paint-mode", TRUE, FALSE);   label = gimp_table_attach_aligned (GTK_TABLE (table), 0, table_row++,                                      _("Mode:"), 0.0, 0.5,                                      menu, 2, FALSE);  //  if (tool_type == GIMP_TYPE_ERASER_TOOL     || //      tool_type == GIMP_TYPE_CONVOLVE_TOOL   || //      tool_type == GIMP_TYPE_DODGE_BURN_TOOL || //      tool_type == GIMP_TYPE_SMUDGE_TOOL)     {       gtk_widget_set_sensitive (menu, FALSE);       gtk_widget_set_sensitive (label, FALSE);     }    gimp_prop_opacity_entry_new (config, "opacity",                                GTK_TABLE (table), 0, table_row++,                                _("Opacity:")); */
+end_comment
+
+begin_comment
+comment|/*   GtkWidget        *dynamics_labels[7];   GtkWidget      *frame;   GtkWidget      *box;   gint            row = 0;   GtkWidget        *menu;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   GType             tool_type; */
+end_comment
+
+begin_comment
+comment|/*   //add a frame   frame = gtk_frame_new (NULL);   gtk_frame_set_shadow_type (GTK_FRAME (frame), GTK_SHADOW_IN);   gtk_box_pack_start (GTK_BOX (editor), frame, TRUE, TRUE, 0);   gtk_widget_show (frame); */
+end_comment
 
 begin_comment
 comment|/*  private functions  */
@@ -1071,6 +1083,30 @@ end_comment
 
 begin_comment
 comment|/* GtkWidget * gimp_paint_options_gui (GimpToolOptions *tool_options) {    GObject          *config  = G_OBJECT (tool_options);   GimpPaintOptions *options = GIMP_PAINT_OPTIONS (tool_options);   GtkWidget        *vbox    = gimp_tool_options_gui (tool_options);   GtkWidget        *frame;   GtkWidget        *table;   GtkWidget        *menu;   GtkWidget        *label;   GtkWidget        *button;   GtkWidget        *incremental_toggle = NULL;   gint              table_row          = 0;   gint              n_dynamics         = 0;   GtkWidget        *dynamics_labels[7];   GType             tool_type; } */
+end_comment
+
+begin_comment
+comment|/*dynamics options gui*/
+end_comment
+
+begin_comment
+comment|/* static gboolean    tool_has_opacity_dynamics      (GType       tool_type); static gboolean    tool_has_hardness_dynamics     (GType       tool_type); static gboolean    tool_has_rate_dynamics         (GType       tool_type); static gboolean    tool_has_size_dynamics         (GType       tool_type); static gboolean    tool_has_color_dynamics        (GType       tool_type); static gboolean    tool_has_angle_dynamics        (GType       tool_type); static gboolean    tool_has_aspect_ratio_dynamics (GType       tool_type);  static void        pressure_options_gui  (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row,                                           GtkWidget        *labels[]); static void        velocity_options_gui  (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); static void        direction_options_gui (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); static void        tilt_options_gui      (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); static void        random_options_gui    (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row);  static void        fading_options_gui    (GimpPaintOptions *paint_options,                                           GType             tool_type,                                           GtkTable         *table,                                           gint              row); */
+end_comment
+
+begin_comment
+comment|//To do:
+end_comment
+
+begin_comment
+comment|// discard unneeded ones.
+end_comment
+
+begin_comment
+comment|// needs to be fixed to gimppaintdynamics.h when that works.
+end_comment
+
+begin_comment
+comment|/* #include "paint/gimppaintoptions.h"  #include "core/gimptoolinfo.h"  #include "widgets/gimppropwidgets.h" #include "widgets/gimpviewablebox.h" #include "widgets/gimpwidgets-utils.h"  #include "tools/gimpairbrushtool.h" #include "tools/gimpclonetool.h" #include "tools/gimpconvolvetool.h" #include "tools/gimpdodgeburntool.h" #include "tools/gimperasertool.h" #include "tools/gimphealtool.h" #include "tools/gimpinktool.h" #include "tools/gimppaintoptions-gui.h" #include "tools/gimppenciltool.h" #include "tools/gimpperspectiveclonetool.h" #include "tools/gimpsmudgetool.h" #include "tools/gimptooloptions-gui.h"  */
 end_comment
 
 end_unit
