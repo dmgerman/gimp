@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3d34cd0103
+DECL|enum|__anon2acc177e0103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -104,6 +104,19 @@ begin_function_decl
 specifier|static
 name|gboolean
 name|gimp_layer_mask_is_attached
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|GimpContainer
+modifier|*
+name|gimp_layer_mask_get_container
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -351,6 +364,12 @@ name|gimp_layer_mask_is_attached
 expr_stmt|;
 name|item_class
 operator|->
+name|get_container
+operator|=
+name|gimp_layer_mask_get_container
+expr_stmt|;
+name|item_class
+operator|->
 name|duplicate
 operator|=
 name|gimp_layer_mask_duplicate
@@ -470,6 +489,24 @@ name|layer
 argument_list|)
 argument_list|)
 operator|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GimpContainer
+modifier|*
+DECL|function|gimp_layer_mask_get_container (GimpItem * item)
+name|gimp_layer_mask_get_container
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+return|return
+name|NULL
 return|;
 block|}
 end_function

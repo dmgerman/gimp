@@ -108,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294986d60103
+DECL|enum|__anon289ad9270103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294986d60203
+DECL|enum|__anon289ad9270203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -1616,24 +1616,12 @@ name|editor
 operator|->
 name|grab_button
 operator|=
-name|gtk_check_button_new_with_mnemonic
+name|gtk_toggle_button_new_with_mnemonic
 argument_list|(
 name|_
 argument_list|(
 literal|"_Grab event"
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_toggle_button_set_mode
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|editor
-operator|->
-name|grab_button
-argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

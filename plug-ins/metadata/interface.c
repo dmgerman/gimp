@@ -131,6 +131,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"xmp-schemas.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"xmp-model.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"interface.h"
 end_include
 
@@ -138,12 +150,6 @@ begin_include
 include|#
 directive|include
 file|"metadata.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"xmp-schemas.h"
 end_include
 
 begin_include
@@ -171,7 +177,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addec6a0108
+DECL|struct|__anon2b0884410108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -728,7 +734,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2addec6a0208
+DECL|struct|__anon2b0884410208
 block|{
 DECL|member|schema
 specifier|const

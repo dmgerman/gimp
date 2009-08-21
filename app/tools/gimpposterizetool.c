@@ -572,6 +572,9 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -585,7 +588,12 @@ name|display
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
 name|gtk_adjustment_set_value
 argument_list|(
 name|posterize_tool

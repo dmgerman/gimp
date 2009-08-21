@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6203f30103
+DECL|enum|__anon2b19b05b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -173,6 +173,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index
@@ -1181,7 +1184,7 @@ end_function
 begin_function
 specifier|static
 name|gpointer
-DECL|function|gimp_container_combo_box_insert_item (GimpContainerView * view,GimpViewable * viewable,gint index)
+DECL|function|gimp_container_combo_box_insert_item (GimpContainerView * view,GimpViewable * viewable,gpointer parent_insert_data,gint index)
 name|gimp_container_combo_box_insert_item
 parameter_list|(
 name|GimpContainerView
@@ -1191,6 +1194,9 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|viewable
+parameter_list|,
+name|gpointer
+name|parent_insert_data
 parameter_list|,
 name|gint
 name|index

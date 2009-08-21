@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac2ed860103
+DECL|enum|__anon2a9b6c9c0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -603,6 +603,7 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -616,9 +617,6 @@ name|display
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function

@@ -360,6 +360,20 @@ name|NULL
 argument_list|)
 condition|)
 empty_stmt|;
+comment|/* FIXME: Reuse it when it can handle dirty rects when painting    * properly    */
+name|g_object_unref
+argument_list|(
+name|proj
+operator|->
+name|processor
+argument_list|)
+expr_stmt|;
+name|proj
+operator|->
+name|processor
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 

@@ -419,6 +419,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpContainer
+modifier|*
+name|gimp_data_factory_get_container_obsolete
+parameter_list|(
+name|GimpDataFactory
+modifier|*
+name|factory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|Gimp
 modifier|*
 name|gimp_data_factory_get_gimp

@@ -5993,6 +5993,7 @@ name|vectors_list
 init|=
 name|NULL
 decl_stmt|;
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_vectors_import_file
@@ -6004,6 +6005,8 @@ argument_list|,
 name|merge
 argument_list|,
 name|scale
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1
@@ -6299,6 +6302,7 @@ name|vectors_list
 init|=
 name|NULL
 decl_stmt|;
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_vectors_import_buffer
@@ -6312,6 +6316,8 @@ argument_list|,
 name|merge
 argument_list|,
 name|scale
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

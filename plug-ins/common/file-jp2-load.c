@@ -786,11 +786,22 @@ operator|!
 name|image
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Couldn't decode image."
+literal|"Couldn't decode '%s'."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -874,11 +885,23 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image type currently not supported."
+literal|"The image '%s' is in grayscale but does not contain "
+literal|"any gray component."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1001,11 +1024,23 @@ operator|-
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image type currently not supported."
+literal|"The image '%s' is in RGB but is missing some of the "
+literal|"components."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1058,12 +1093,107 @@ name|GIMP_RGB_IMAGE
 expr_stmt|;
 block|}
 break|break;
-default|default:
-name|g_message
+case|case
+name|JAS_CLRSPC_FAM_XYZ
+case|:
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image type currently not supported."
+literal|"The image '%s' is in the CIEXYZ color space but there is "
+literal|"no code in place to convert it to RGB."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+case|case
+name|JAS_CLRSPC_FAM_LAB
+case|:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The image '%s' is in the CIELAB color space but there is "
+literal|"no code in place to convert it to RGB."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+case|case
+name|JAS_CLRSPC_FAM_YCBCR
+case|:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The image '%s' is in the YCbCr color space but there is "
+literal|"no code in place to convert it to RGB."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+case|case
+name|JAS_CLRSPC_FAM_UNKNOWN
+case|:
+default|default:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"The image '%s' is in an unkown color space."
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1150,11 +1280,26 @@ name|image
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image type currently not supported."
+literal|"Image component %d of image '%s' did not have the "
+literal|"same size as the image which is currently not "
+literal|"supported."
+argument_list|)
+argument_list|,
+name|i
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1190,11 +1335,25 @@ operator|!=
 literal|1
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image type currently not supported."
+literal|"Image component %d of image '%s' does not have both "
+literal|"a hstep and vstep."
+argument_list|)
+argument_list|,
+name|i
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1216,11 +1375,25 @@ index|]
 argument_list|)
 condition|)
 block|{
-name|g_message
+name|g_set_error
 argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
 name|_
 argument_list|(
-literal|"Image type currently not supported."
+literal|"Image component %d of image '%s' is signed which is "
+literal|"currently not supported by GIMP."
+argument_list|)
+argument_list|,
+name|i
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
 argument_list|)
 argument_list|)
 expr_stmt|;

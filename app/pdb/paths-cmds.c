@@ -1303,6 +1303,8 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|TRUE
@@ -1419,6 +1421,16 @@ condition|(
 name|vectors
 operator|&&
 name|drawable
+operator|&&
+name|gimp_pdb_item_is_writable
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|error
+argument_list|)
 condition|)
 block|{
 name|GimpStrokeOptions
@@ -2955,6 +2967,8 @@ argument_list|,
 name|merge
 argument_list|,
 name|scale
+argument_list|,
+name|NULL
 argument_list|,
 operator|-
 literal|1

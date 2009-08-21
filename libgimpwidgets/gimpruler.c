@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2940b6990103
+DECL|enum|__anon2c5278890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2940b6990208
+DECL|struct|__anon2c5278890208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -159,7 +159,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2940b6990308
+DECL|struct|__anon2c5278890308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -2035,10 +2035,8 @@ operator|==
 name|GTK_ORIENTATION_HORIZONTAL
 condition|)
 block|{
-name|widget
-operator|->
 name|requisition
-operator|.
+operator|->
 name|width
 operator|=
 name|style
@@ -2049,10 +2047,8 @@ literal|2
 operator|+
 literal|1
 expr_stmt|;
-name|widget
-operator|->
 name|requisition
-operator|.
+operator|->
 name|height
 operator|=
 name|style
@@ -2066,10 +2062,8 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|widget
-operator|->
 name|requisition
-operator|.
+operator|->
 name|width
 operator|=
 name|style
@@ -2080,10 +2074,8 @@ literal|2
 operator|+
 name|size
 expr_stmt|;
-name|widget
-operator|->
 name|requisition
-operator|.
+operator|->
 name|height
 operator|=
 name|style

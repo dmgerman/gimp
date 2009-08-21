@@ -35,6 +35,10 @@ parameter_list|,
 name|gboolean
 name|scale
 parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
+parameter_list|,
 name|gint
 name|position
 parameter_list|,
@@ -72,6 +76,10 @@ name|merge
 parameter_list|,
 name|gboolean
 name|scale
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|parent
 parameter_list|,
 name|gint
 name|position

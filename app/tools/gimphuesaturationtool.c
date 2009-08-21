@@ -724,6 +724,7 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -737,9 +738,6 @@ name|display
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function
@@ -977,7 +975,7 @@ name|i
 decl_stmt|;
 specifier|const
 struct|struct
-DECL|struct|__anon29f7ab6f0108
+DECL|struct|__anon27e8fc4b0108
 block|{
 DECL|member|label
 specifier|const

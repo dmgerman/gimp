@@ -983,6 +983,8 @@ name|new_image
 argument_list|,
 name|new_layer
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|TRUE
@@ -1359,6 +1361,8 @@ name|new_image
 argument_list|,
 name|new_layer
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 name|TRUE
@@ -1546,6 +1550,8 @@ argument_list|(
 name|new_image
 argument_list|,
 name|new_layer
+argument_list|,
+name|NULL
 argument_list|,
 literal|0
 argument_list|,

@@ -4117,6 +4117,7 @@ name|error
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_layer
@@ -4124,6 +4125,8 @@ argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+name|NULL
 argument_list|,
 name|MAX
 argument_list|(
@@ -4253,6 +4256,8 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -5007,6 +5012,7 @@ name|error
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_channel
@@ -5014,6 +5020,8 @@ argument_list|(
 name|image
 argument_list|,
 name|channel
+argument_list|,
+name|NULL
 argument_list|,
 name|MAX
 argument_list|(
@@ -5143,6 +5151,8 @@ name|GIMP_ITEM
 argument_list|(
 name|channel
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -5677,6 +5687,7 @@ name|error
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_vectors
@@ -5684,6 +5695,8 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+name|NULL
 argument_list|,
 name|MAX
 argument_list|(
@@ -5813,6 +5826,8 @@ name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|FALSE
 argument_list|,
 name|error
 argument_list|)
@@ -7168,6 +7183,10 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|mode
+operator|==
+name|GIMP_MASK_APPLY
 argument_list|,
 name|error
 argument_list|)

@@ -746,6 +746,7 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+return|return
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -759,9 +760,6 @@ name|display
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
 return|;
 block|}
 end_function

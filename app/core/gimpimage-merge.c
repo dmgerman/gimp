@@ -1034,11 +1034,12 @@ argument_list|)
 expr_stmt|;
 name|pos
 operator|=
-name|gimp_image_get_vectors_index
+name|gimp_item_get_index
 argument_list|(
-name|image
-argument_list|,
+name|GIMP_ITEM
+argument_list|(
 name|vectors
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_vectors
@@ -1113,11 +1114,14 @@ argument_list|(
 name|merge_list
 argument_list|)
 expr_stmt|;
+comment|/* FIXME tree */
 name|gimp_image_add_vectors
 argument_list|(
 name|image
 argument_list|,
 name|target_vectors
+argument_list|,
+name|NULL
 argument_list|,
 name|pos
 argument_list|,
@@ -2522,11 +2526,14 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|merge_layer
+argument_list|,
+name|NULL
 argument_list|,
 name|position
 argument_list|,
@@ -2537,11 +2544,14 @@ block|}
 else|else
 block|{
 comment|/*  Add the layer to the image  */
+comment|/* FIXME tree */
 name|gimp_image_add_layer
 argument_list|(
 name|image
 argument_list|,
 name|merge_layer
+argument_list|,
+name|NULL
 argument_list|,
 name|gimp_container_get_n_children
 argument_list|(

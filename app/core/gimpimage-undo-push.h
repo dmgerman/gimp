@@ -488,6 +488,10 @@ name|GimpLayer
 modifier|*
 name|layer
 parameter_list|,
+name|GimpLayer
+modifier|*
+name|prev_parent
+parameter_list|,
 name|gint
 name|prev_position
 parameter_list|,
@@ -501,7 +505,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_layer_reposition
+name|gimp_image_undo_push_layer_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -776,6 +780,10 @@ name|GimpChannel
 modifier|*
 name|channel
 parameter_list|,
+name|GimpChannel
+modifier|*
+name|prev_parent
+parameter_list|,
 name|gint
 name|prev_position
 parameter_list|,
@@ -789,7 +797,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_channel_reposition
+name|gimp_image_undo_push_channel_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -873,7 +881,11 @@ name|undo_desc
 parameter_list|,
 name|GimpVectors
 modifier|*
-name|channel
+name|vectors
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|prev_parent
 parameter_list|,
 name|gint
 name|prev_position
@@ -909,7 +921,7 @@ end_function_decl
 begin_function_decl
 name|GimpUndo
 modifier|*
-name|gimp_image_undo_push_vectors_reposition
+name|gimp_image_undo_push_vectors_reorder
 parameter_list|(
 name|GimpImage
 modifier|*

@@ -472,6 +472,9 @@ name|config
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|GIMP_TOOL_CLASS
 argument_list|(
 name|parent_class
@@ -485,7 +488,12 @@ name|display
 argument_list|,
 name|error
 argument_list|)
-expr_stmt|;
+condition|)
+block|{
+return|return
+name|FALSE
+return|;
+block|}
 name|gimp_int_radio_group_set_active
 argument_list|(
 name|GTK_RADIO_BUTTON
