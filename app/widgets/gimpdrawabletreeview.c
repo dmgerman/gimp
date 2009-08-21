@@ -780,6 +780,14 @@ if|if
 condition|(
 operator|!
 name|dest_viewable
+operator|||
+name|gimp_item_get_lock_content
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|dest_viewable
+argument_list|)
+argument_list|)
 condition|)
 return|return
 name|FALSE
