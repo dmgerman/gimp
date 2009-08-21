@@ -328,6 +328,9 @@ parameter_list|,
 name|gint
 name|stroke_ID
 parameter_list|,
+name|gboolean
+name|writable
+parameter_list|,
 name|GError
 modifier|*
 modifier|*

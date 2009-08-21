@@ -1924,7 +1924,7 @@ end_function
 begin_function
 name|GimpStroke
 modifier|*
-DECL|function|gimp_pdb_get_vectors_stroke (GimpVectors * vectors,gint stroke_ID,GError ** error)
+DECL|function|gimp_pdb_get_vectors_stroke (GimpVectors * vectors,gint stroke_ID,gboolean writable,GError ** error)
 name|gimp_pdb_get_vectors_stroke
 parameter_list|(
 name|GimpVectors
@@ -1933,6 +1933,9 @@ name|vectors
 parameter_list|,
 name|gint
 name|stroke_ID
+parameter_list|,
+name|gboolean
+name|writable
 parameter_list|,
 name|GError
 modifier|*
@@ -1943,6 +1946,8 @@ block|{
 name|GimpStroke
 modifier|*
 name|stroke
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -1968,6 +1973,22 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|writable
+operator|||
+name|gimp_pdb_item_is_writable
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
+name|error
+argument_list|)
+condition|)
+block|{
 name|stroke
 operator|=
 name|gimp_vectors_stroke_get_by_ID
@@ -1982,7 +2003,6 @@ condition|(
 operator|!
 name|stroke
 condition|)
-block|{
 name|g_set_error
 argument_list|(
 name|error
