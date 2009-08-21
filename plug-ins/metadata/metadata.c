@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp.h>
 end_include
 
@@ -37,6 +43,12 @@ begin_include
 include|#
 directive|include
 file|"metadata.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"xmp-schemas.h"
 end_include
 
 begin_include
@@ -1022,6 +1034,9 @@ operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
 name|INIT_I18N
+argument_list|()
+expr_stmt|;
+name|g_type_init
 argument_list|()
 expr_stmt|;
 if|if

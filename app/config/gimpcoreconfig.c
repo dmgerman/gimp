@@ -74,7 +74,7 @@ DECL|macro|DEFAULT_BRUSH
 define|#
 directive|define
 name|DEFAULT_BRUSH
-value|"Circle (11)"
+value|"Round Fuzzy"
 end_define
 
 begin_define
@@ -119,7 +119,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc89ff50103
+DECL|enum|__anon275ef9be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

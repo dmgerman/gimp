@@ -121,6 +121,14 @@ value|"gimp-file-export-to"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_FILE_OVERWRITE
+define|#
+directive|define
+name|GIMP_HELP_FILE_OVERWRITE
+value|"gimp-file-overwrite"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_FILE_SAVE_AS_TEMPLATE
 define|#
 directive|define

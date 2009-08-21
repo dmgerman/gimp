@@ -1302,6 +1302,8 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|GIMP_IMAGE_ACTIVE_PARENT
+argument_list|,
 operator|-
 literal|1
 argument_list|,

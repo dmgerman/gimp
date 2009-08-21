@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9bfeb80108
+DECL|struct|__anon2a0f2e060108
 block|{
 DECL|member|filename
 name|gchar
@@ -785,16 +785,6 @@ operator|&
 name|mail_info
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|strlen
-argument_list|(
-name|mail_info
-operator|.
-name|filename
-argument_list|)
-condition|)
 block|{
 name|gchar
 modifier|*
@@ -814,7 +804,7 @@ name|gchar
 modifier|*
 name|basename
 init|=
-name|g_path_get_basename
+name|g_filename_display_basename
 argument_list|(
 name|filename
 argument_list|)

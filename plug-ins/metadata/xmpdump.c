@@ -18,7 +18,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"xmp-parse.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"xmp-encode.h"
 end_include
 
 begin_function
@@ -460,6 +472,32 @@ end_decl_stmt
 
 begin_function
 specifier|static
+name|void
+DECL|function|property_changed (XMPModel * tree_model,GtkTreeIter * iter,gpointer user_data)
+name|property_changed
+parameter_list|(
+name|XMPModel
+modifier|*
+name|tree_model
+parameter_list|,
+name|GtkTreeIter
+modifier|*
+name|iter
+parameter_list|,
+name|gpointer
+name|user_data
+parameter_list|)
+block|{
+name|g_print
+argument_list|(
+literal|"Wuff Wuff!\n"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|int
 DECL|function|scan_file (const gchar * filename)
 name|scan_file
@@ -485,6 +523,7 @@ name|XMPParseContext
 modifier|*
 name|context
 decl_stmt|;
+comment|// XMPModel          *xmp_model = xmp_model_new ();
 name|g_print
 argument_list|(
 literal|"\nFile: %s\n"
@@ -552,6 +591,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*    * used for testing the XMPModel    *   g_signal_connect (xmp_model, "property-changed::xmpMM:DocumentID",                     G_CALLBACK (property_changed), NULL);    if (! xmp_model_parse_file (xmp_model, filename,&error))     {       xmp_model_free (xmp_model);       return 1;     }   */
 if|if
 condition|(
 operator|!
@@ -625,6 +665,9 @@ name|g_set_prgname
 argument_list|(
 literal|"xmpdump"
 argument_list|)
+expr_stmt|;
+name|g_type_init
+argument_list|()
 expr_stmt|;
 if|if
 condition|(

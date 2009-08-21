@@ -873,6 +873,9 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image
@@ -995,6 +998,9 @@ name|image
 argument_list|,
 name|channel
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image
@@ -6300,11 +6306,16 @@ argument_list|)
 expr_stmt|;
 name|active_vectors
 operator|=
-name|gimp_image_get_vectors_by_index
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_container_get_child_by_index
 argument_list|(
 name|image
+operator|->
+name|vectors
 argument_list|,
 name|last_selected_row
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -6837,6 +6848,9 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* can't be a tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image
@@ -7013,13 +7027,19 @@ condition|)
 return|return
 name|FALSE
 return|;
+comment|/* FIXME tree */
 name|active_vectors
 operator|=
-name|gimp_image_get_vectors_by_index
+name|GIMP_VECTORS
+argument_list|(
+name|gimp_container_get_child_by_index
 argument_list|(
 name|image
+operator|->
+name|vectors
 argument_list|,
 name|active_index
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -7757,6 +7777,9 @@ name|image
 argument_list|,
 name|vectors
 argument_list|,
+name|NULL
+argument_list|,
+comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
 name|image

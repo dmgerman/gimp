@@ -422,6 +422,8 @@ name|image
 argument_list|,
 name|layer
 argument_list|,
+name|NULL
+argument_list|,
 operator|-
 literal|1
 argument_list|,

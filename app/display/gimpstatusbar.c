@@ -156,7 +156,7 @@ DECL|macro|MESSAGE_TIMEOUT
 define|#
 directive|define
 name|MESSAGE_TIMEOUT
-value|5000
+value|8000
 end_define
 
 begin_typedef

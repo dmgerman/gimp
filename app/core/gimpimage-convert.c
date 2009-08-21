@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon29a109ee0103
+DECL|enum|__anon2b302ee10103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a109ee0208
+DECL|struct|__anon2b302ee10208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a109ee0308
+DECL|struct|__anon2b302ee10308
 block|{
 DECL|member|used_count
 name|signed
@@ -2812,6 +2812,10 @@ name|old_type
 decl_stmt|;
 name|GList
 modifier|*
+name|all_layers
+decl_stmt|;
+name|GList
+modifier|*
 name|list
 decl_stmt|;
 specifier|const
@@ -2960,16 +2964,18 @@ operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
-name|n_layers
+name|all_layers
 operator|=
-name|gimp_container_get_n_children
-argument_list|(
-name|GIMP_CONTAINER
+name|gimp_image_get_layer_list
 argument_list|(
 name|image
-operator|->
-name|layers
 argument_list|)
+expr_stmt|;
+name|n_layers
+operator|=
+name|g_list_length
+argument_list|(
+name|all_layers
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -3151,10 +3157,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimp_image_get_layer_iter
-argument_list|(
-name|image
-argument_list|)
+name|all_layers
 operator|,
 name|nth_layer
 operator|=
@@ -3444,10 +3447,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimp_image_get_layer_iter
-argument_list|(
-name|image
-argument_list|)
+name|all_layers
 operator|,
 name|nth_layer
 operator|=
@@ -3793,10 +3793,7 @@ for|for
 control|(
 name|list
 operator|=
-name|gimp_image_get_layer_iter
-argument_list|(
-name|image
-argument_list|)
+name|all_layers
 init|;
 name|list
 condition|;
@@ -4068,6 +4065,11 @@ name|G_OBJECT
 argument_list|(
 name|image
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_list_free
+argument_list|(
+name|all_layers
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy

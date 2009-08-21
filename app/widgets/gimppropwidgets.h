@@ -224,6 +224,27 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  GParamString  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_prop_language_entry_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  A view on all of an object's properties  */
 end_comment
 

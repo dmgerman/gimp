@@ -1779,7 +1779,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_layer_remove (GimpImage * image,const gchar * undo_desc,GimpLayer * layer,gint prev_position,GimpLayer * prev_layer)
+DECL|function|gimp_image_undo_push_layer_remove (GimpImage * image,const gchar * undo_desc,GimpLayer * layer,GimpLayer * prev_parent,gint prev_position,GimpLayer * prev_layer)
 name|gimp_image_undo_push_layer_remove
 parameter_list|(
 name|GimpImage
@@ -1794,6 +1794,10 @@ parameter_list|,
 name|GimpLayer
 modifier|*
 name|layer
+parameter_list|,
+name|GimpLayer
+modifier|*
+name|prev_parent
 parameter_list|,
 name|gint
 name|prev_position
@@ -1838,6 +1842,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|prev_parent
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_LAYER
+argument_list|(
+name|prev_parent
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|prev_layer
 operator|==
 name|NULL
@@ -1867,6 +1885,10 @@ literal|"item"
 argument_list|,
 name|layer
 argument_list|,
+literal|"prev-parent"
+argument_list|,
+name|prev_parent
+argument_list|,
 literal|"prev-position"
 argument_list|,
 name|prev_position
@@ -1884,8 +1906,8 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_layer_reposition (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
-name|gimp_image_undo_push_layer_reposition
+DECL|function|gimp_image_undo_push_layer_reorder (GimpImage * image,const gchar * undo_desc,GimpLayer * layer)
+name|gimp_image_undo_push_layer_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1941,7 +1963,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_LAYER_PROP_UNDO
 argument_list|,
-name|GIMP_UNDO_LAYER_REPOSITION
+name|GIMP_UNDO_LAYER_REORDER
 argument_list|,
 name|undo_desc
 argument_list|,
@@ -2877,7 +2899,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_channel_remove (GimpImage * image,const gchar * undo_desc,GimpChannel * channel,gint prev_position,GimpChannel * prev_channel)
+DECL|function|gimp_image_undo_push_channel_remove (GimpImage * image,const gchar * undo_desc,GimpChannel * channel,GimpChannel * prev_parent,gint prev_position,GimpChannel * prev_channel)
 name|gimp_image_undo_push_channel_remove
 parameter_list|(
 name|GimpImage
@@ -2892,6 +2914,10 @@ parameter_list|,
 name|GimpChannel
 modifier|*
 name|channel
+parameter_list|,
+name|GimpChannel
+modifier|*
+name|prev_parent
 parameter_list|,
 name|gint
 name|prev_position
@@ -2936,6 +2962,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|prev_parent
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|prev_parent
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|prev_channel
 operator|==
 name|NULL
@@ -2965,6 +3005,10 @@ literal|"item"
 argument_list|,
 name|channel
 argument_list|,
+literal|"prev-parent"
+argument_list|,
+name|prev_parent
+argument_list|,
 literal|"prev-position"
 argument_list|,
 name|prev_position
@@ -2982,8 +3026,8 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_channel_reposition (GimpImage * image,const gchar * undo_desc,GimpChannel * channel)
-name|gimp_image_undo_push_channel_reposition
+DECL|function|gimp_image_undo_push_channel_reorder (GimpImage * image,const gchar * undo_desc,GimpChannel * channel)
+name|gimp_image_undo_push_channel_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -3039,7 +3083,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_CHANNEL_PROP_UNDO
 argument_list|,
-name|GIMP_UNDO_CHANNEL_REPOSITION
+name|GIMP_UNDO_CHANNEL_REORDER
 argument_list|,
 name|undo_desc
 argument_list|,
@@ -3247,7 +3291,7 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_vectors_remove (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors,gint prev_position,GimpVectors * prev_vectors)
+DECL|function|gimp_image_undo_push_vectors_remove (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors,GimpVectors * prev_parent,gint prev_position,GimpVectors * prev_vectors)
 name|gimp_image_undo_push_vectors_remove
 parameter_list|(
 name|GimpImage
@@ -3262,6 +3306,10 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|prev_parent
 parameter_list|,
 name|gint
 name|prev_position
@@ -3306,6 +3354,20 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|prev_parent
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_VECTORS
+argument_list|(
+name|prev_parent
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|prev_vectors
 operator|==
 name|NULL
@@ -3334,6 +3396,10 @@ argument_list|,
 literal|"item"
 argument_list|,
 name|vectors
+argument_list|,
+literal|"prev-parent"
+argument_list|,
+name|prev_parent
 argument_list|,
 literal|"prev-position"
 argument_list|,
@@ -3430,8 +3496,8 @@ end_function
 begin_function
 name|GimpUndo
 modifier|*
-DECL|function|gimp_image_undo_push_vectors_reposition (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors)
-name|gimp_image_undo_push_vectors_reposition
+DECL|function|gimp_image_undo_push_vectors_reorder (GimpImage * image,const gchar * undo_desc,GimpVectors * vectors)
+name|gimp_image_undo_push_vectors_reorder
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -3487,7 +3553,7 @@ name|image
 argument_list|,
 name|GIMP_TYPE_VECTORS_PROP_UNDO
 argument_list|,
-name|GIMP_UNDO_VECTORS_REPOSITION
+name|GIMP_UNDO_VECTORS_REORDER
 argument_list|,
 name|undo_desc
 argument_list|,

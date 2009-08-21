@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpvectorstreeview.c  * Copyright (C) 2001-2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpvectorstreeview.c  * Copyright (C) 2001-2009 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -378,7 +378,7 @@ operator|=
 operator|(
 name|GimpReorderItemFunc
 operator|)
-name|gimp_image_position_vectors
+name|gimp_image_reorder_vectors
 expr_stmt|;
 name|iv_class
 operator|->
@@ -477,6 +477,21 @@ operator|=
 name|_
 argument_list|(
 literal|"Reorder path"
+argument_list|)
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_content_stock_id
+operator|=
+name|GIMP_STOCK_TOOL_PATH
+expr_stmt|;
+name|iv_class
+operator|->
+name|lock_content_tooltip
+operator|=
+name|_
+argument_list|(
+literal|"Lock path strokes"
 argument_list|)
 expr_stmt|;
 block|}
@@ -910,7 +925,7 @@ parameter_list|)
 block|{
 name|GimpItemTreeView
 modifier|*
-name|view
+name|item_view
 init|=
 name|GIMP_ITEM_TREE_VIEW
 argument_list|(
@@ -923,14 +938,15 @@ name|image
 init|=
 name|gimp_item_tree_view_get_image
 argument_list|(
-name|view
+name|item_view
 argument_list|)
+decl_stmt|;
+name|GimpVectors
+modifier|*
+name|parent
 decl_stmt|;
 name|gint
 name|index
-init|=
-operator|-
-literal|1
 decl_stmt|;
 name|GError
 modifier|*
@@ -958,33 +974,25 @@ operator|)
 name|svg_data_len
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|dest_viewable
-condition|)
-block|{
 name|index
 operator|=
-name|gimp_image_get_vectors_index
+name|gimp_item_tree_view_get_drop_index
 argument_list|(
-name|image
+name|item_view
 argument_list|,
-name|GIMP_VECTORS
-argument_list|(
 name|dest_viewable
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
+argument_list|,
 name|drop_pos
-operator|==
-name|GTK_TREE_VIEW_DROP_AFTER
-condition|)
-name|index
-operator|++
+argument_list|,
+operator|(
+name|GimpViewable
+operator|*
+operator|*
+operator|)
+operator|&
+name|parent
+argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -999,6 +1007,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|parent
 argument_list|,
 name|index
 argument_list|,
@@ -1078,6 +1088,8 @@ argument_list|(
 name|image
 argument_list|,
 name|new_vectors
+argument_list|,
+name|GIMP_IMAGE_ACTIVE_PARENT
 argument_list|,
 operator|-
 literal|1

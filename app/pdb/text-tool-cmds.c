@@ -321,6 +321,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|TRUE
+argument_list|,
 name|error
 argument_list|)
 condition|)
@@ -1038,6 +1040,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|TRUE
 argument_list|,
 name|error
 argument_list|)

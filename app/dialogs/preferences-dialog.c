@@ -597,6 +597,17 @@ name|NULL
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|tool_editor
+specifier|static
+name|GtkWidget
+modifier|*
+name|tool_editor
+init|=
+name|NULL
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public function  */
 end_comment
@@ -1701,6 +1712,14 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_tool_editor_revert_changes
+argument_list|(
+name|GIMP_TOOL_EDITOR
+argument_list|(
+name|tool_editor
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_thaw_notify
 argument_list|(
 name|G_OBJECT
@@ -1717,6 +1736,10 @@ name|diff
 argument_list|)
 expr_stmt|;
 block|}
+name|tool_editor
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 comment|/*  enable autosaving again  */
 name|gimp_rc_set_autosave
@@ -8024,69 +8047,6 @@ argument_list|,
 name|size_group
 argument_list|)
 expr_stmt|;
-comment|/*  Web Browser  (unused on win32)  */
-ifndef|#
-directive|ifndef
-name|G_OS_WIN32
-name|vbox2
-operator|=
-name|prefs_frame_new
-argument_list|(
-name|_
-argument_list|(
-literal|"Web Browser"
-argument_list|)
-argument_list|,
-name|GTK_CONTAINER
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-name|table
-operator|=
-name|prefs_table_new
-argument_list|(
-literal|1
-argument_list|,
-name|GTK_CONTAINER
-argument_list|(
-name|vbox2
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|prefs_widget_add_aligned
-argument_list|(
-name|gimp_prop_entry_new
-argument_list|(
-name|object
-argument_list|,
-literal|"web-browser"
-argument_list|,
-literal|0
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"_Web browser to use:"
-argument_list|)
-argument_list|,
-name|GTK_TABLE
-argument_list|(
-name|table
-argument_list|)
-argument_list|,
-literal|0
-argument_list|,
-name|FALSE
-argument_list|,
-name|size_group
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|g_object_unref
 argument_list|(
 name|size_group
@@ -8640,12 +8600,7 @@ name|size_group
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* Tool Order */
-block|{
-name|GtkWidget
-modifier|*
-name|tool_view
-decl_stmt|;
+comment|/* Tool Editor */
 name|vbox2
 operator|=
 name|prefs_frame_new
@@ -8663,7 +8618,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|tool_view
+name|tool_editor
 operator|=
 name|gimp_tool_editor_new
 argument_list|(
@@ -8692,7 +8647,7 @@ argument_list|(
 name|vbox2
 argument_list|)
 argument_list|,
-name|tool_view
+name|tool_editor
 argument_list|,
 name|TRUE
 argument_list|,
@@ -8703,10 +8658,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|tool_view
+name|tool_editor
 argument_list|)
 expr_stmt|;
-block|}
 comment|/***********************/
 comment|/*  Default New Image  */
 comment|/***********************/
@@ -9539,7 +9493,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon27c8e1a70108
+DECL|struct|__anon27c73df10108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10706,7 +10660,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c8e1a70208
+DECL|struct|__anon27c73df10208
 block|{
 DECL|member|label
 specifier|const
@@ -11843,7 +11797,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c8e1a70308
+DECL|struct|__anon27c73df10308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11998,7 +11952,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27c8e1a70408
+DECL|struct|__anon27c73df10408
 block|{
 DECL|member|tree_label
 specifier|const
