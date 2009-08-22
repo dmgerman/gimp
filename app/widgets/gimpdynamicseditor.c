@@ -523,7 +523,6 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-comment|//gtk_box_pack_start (GTK_BOX (editor), vbox, TRUE, TRUE, 0);
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -986,7 +985,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Fading - new:"
+literal|"Fading:"
 argument_list|)
 argument_list|)
 expr_stmt|;
