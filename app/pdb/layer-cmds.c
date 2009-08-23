@@ -3262,6 +3262,13 @@ condition|(
 name|success
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_layer_can_lock_alpha
+argument_list|(
+name|layer
+argument_list|)
+condition|)
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
@@ -3270,6 +3277,11 @@ name|lock_alpha
 argument_list|,
 name|TRUE
 argument_list|)
+expr_stmt|;
+else|else
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
 block|}
 return|return
