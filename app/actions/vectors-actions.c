@@ -1061,6 +1061,11 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|can_lock
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|writable
 init|=
 name|FALSE
@@ -1151,6 +1156,13 @@ expr_stmt|;
 name|locked
 operator|=
 name|gimp_item_get_lock_content
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+name|can_lock
+operator|=
+name|gimp_item_can_lock_content
 argument_list|(
 name|item
 argument_list|)
@@ -1353,7 +1365,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-lock-content"
 argument_list|,
-name|vectors
+name|can_lock
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE

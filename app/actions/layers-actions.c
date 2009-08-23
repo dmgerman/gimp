@@ -2164,6 +2164,11 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|can_lock_alpha
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|text_layer
 init|=
 name|FALSE
@@ -2270,6 +2275,13 @@ expr_stmt|;
 name|lock_alpha
 operator|=
 name|gimp_layer_get_lock_alpha
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
+name|can_lock_alpha
+operator|=
+name|gimp_layer_can_lock_alpha
 argument_list|(
 name|layer
 argument_list|)
@@ -2791,7 +2803,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-lock-alpha"
 argument_list|,
-name|layer
+name|can_lock_alpha
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
