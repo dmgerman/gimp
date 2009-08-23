@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299aed250103
+DECL|enum|__anon29c5fc510103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -153,7 +153,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299aed250203
+DECL|enum|__anon29c5fc510203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6260,6 +6260,46 @@ return|return
 name|item
 operator|->
 name|lock_content
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_item_can_lock_content (const GimpItem * item)
+name|gimp_item_can_lock_content
+parameter_list|(
+specifier|const
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+return|return
+name|TRUE
 return|;
 block|}
 end_function

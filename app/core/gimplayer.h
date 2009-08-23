@@ -131,7 +131,7 @@ name|opacity_node
 decl_stmt|;
 comment|/*  Floating selections  */
 struct|struct
-DECL|struct|__anon2c2d0ad60108
+DECL|struct|__anon27d119680108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -609,6 +609,18 @@ end_function_decl
 begin_function_decl
 name|gboolean
 name|gimp_layer_get_lock_alpha
+parameter_list|(
+specifier|const
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_layer_can_lock_alpha
 parameter_list|(
 specifier|const
 name|GimpLayer
