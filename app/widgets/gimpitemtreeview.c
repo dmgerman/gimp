@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd551cb0103
+DECL|enum|__anon28f4cf100103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -5473,6 +5473,20 @@ name|view
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|view
+operator|->
+name|priv
+operator|->
+name|lock_content_toggle
+argument_list|,
+name|gimp_item_can_lock_content
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
