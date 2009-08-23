@@ -108,14 +108,14 @@ name|GtkWidget
 modifier|*
 name|options_vbox
 decl_stmt|;
-comment|//not sure what to add yet.
+DECL|member|data
+name|GtkAdjustment
+modifier|*
+name|data
+decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_comment
-comment|//GtkWidget  * gimp_paint_options_gui (GimpToolOptions *tool_options);
-end_comment
 
 begin_struct
 DECL|struct|_GimpDynamicsEditorClass
@@ -155,6 +155,10 @@ name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|//GObject *   get_config_value          (GimpDynamics     *options);
+end_comment
 
 begin_endif
 endif|#
