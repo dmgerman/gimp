@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5fc510103
+DECL|enum|__anon2ba00f470103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -153,7 +153,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5fc510203
+DECL|enum|__anon2ba00f470203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6162,6 +6162,14 @@ block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_item_can_lock_content
 argument_list|(
 name|item
 argument_list|)
