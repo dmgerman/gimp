@@ -588,15 +588,6 @@ modifier|*
 name|vbox
 decl_stmt|;
 comment|//GimpDynamics     *options = GIMP_
-name|GObject
-modifier|*
-name|config
-init|=
-name|get_config_value
-argument_list|(
-name|editor
-argument_list|)
-decl_stmt|;
 name|GtkWidget
 modifier|*
 name|table
@@ -616,6 +607,16 @@ name|dynamics_labels
 index|[
 literal|7
 index|]
+decl_stmt|;
+comment|//GObject          *config  = get_config_value (editor);
+name|GObject
+modifier|*
+name|config
+init|=
+name|G_OBJECT
+argument_list|(
+name|editor
+argument_list|)
 decl_stmt|;
 name|vbox
 operator|=
@@ -1325,10 +1326,6 @@ begin_comment
 comment|/*  private functions  */
 end_comment
 
-begin_comment
-comment|/* static gboolean tool_has_opacity_dynamics (GType tool_type) {   return (g_type_is_a (tool_type, GIMP_TYPE_PAINTBRUSH_TOOL) ||           tool_type == GIMP_TYPE_CLONE_TOOL             ||           tool_type == GIMP_TYPE_HEAL_TOOL              ||           tool_type == GIMP_TYPE_PERSPECTIVE_CLONE_TOOL ||           tool_type == GIMP_TYPE_DODGE_BURN_TOOL        ||           tool_type == GIMP_TYPE_ERASER_TOOL); }  static gboolean tool_has_hardness_dynamics (GType tool_type) {   return (tool_type == GIMP_TYPE_AIRBRUSH_TOOL          ||           tool_type == GIMP_TYPE_CLONE_TOOL             ||           tool_type == GIMP_TYPE_HEAL_TOOL              ||           tool_type == GIMP_TYPE_PERSPECTIVE_CLONE_TOOL ||           tool_type == GIMP_TYPE_CONVOLVE_TOOL          ||           tool_type == GIMP_TYPE_ERASER_TOOL            ||           tool_type == GIMP_TYPE_DODGE_BURN_TOOL        ||           tool_type == GIMP_TYPE_PAINTBRUSH_TOOL        ||           tool_type == GIMP_TYPE_SMUDGE_TOOL); }  static gboolean tool_has_rate_dynamics (GType tool_type) {   return (tool_type == GIMP_TYPE_AIRBRUSH_TOOL          ||           tool_type == GIMP_TYPE_CONVOLVE_TOOL          ||           tool_type == GIMP_TYPE_SMUDGE_TOOL); }  static gboolean tool_has_size_dynamics (GType tool_type) {   return (g_type_is_a (tool_type, GIMP_TYPE_PAINTBRUSH_TOOL) ||           tool_type == GIMP_TYPE_CLONE_TOOL             ||           tool_type == GIMP_TYPE_HEAL_TOOL              ||           tool_type == GIMP_TYPE_PERSPECTIVE_CLONE_TOOL ||           tool_type == GIMP_TYPE_CONVOLVE_TOOL          ||           tool_type == GIMP_TYPE_DODGE_BURN_TOOL        ||           tool_type == GIMP_TYPE_ERASER_TOOL); }  static gboolean tool_has_aspect_ratio_dynamics (GType tool_type) {   return (g_type_is_a (tool_type, GIMP_TYPE_PAINTBRUSH_TOOL) ||           tool_type == GIMP_TYPE_CLONE_TOOL             ||           tool_type == GIMP_TYPE_HEAL_TOOL              ||           tool_type == GIMP_TYPE_PERSPECTIVE_CLONE_TOOL ||           tool_type == GIMP_TYPE_CONVOLVE_TOOL          ||           tool_type == GIMP_TYPE_DODGE_BURN_TOOL        ||           tool_type == GIMP_TYPE_ERASER_TOOL); }  static gboolean tool_has_angle_dynamics (GType tool_type) {   return (g_type_is_a (tool_type, GIMP_TYPE_PAINTBRUSH_TOOL)); }  static gboolean tool_has_color_dynamics (GType tool_type) {   return (g_type_is_a (tool_type, GIMP_TYPE_PAINTBRUSH_TOOL)); } */
-end_comment
-
 begin_function
 specifier|static
 name|GtkWidget
@@ -1548,46 +1545,7 @@ name|GtkWidget
 modifier|*
 name|scalebutton
 decl_stmt|;
-comment|//if (tool_has_opacity_dynamics (tool_type))
-block|{
-name|button
-operator|=
-name|dynamics_check_button_new
-argument_list|(
-name|config
-argument_list|,
-literal|"pressure-opacity"
-argument_list|,
-name|table
-argument_list|,
-name|column
-argument_list|,
-name|row
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|button
-argument_list|,
-literal|"size-allocate"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|dynamics_check_button_size_allocate
-argument_list|)
-argument_list|,
-name|labels
-index|[
-name|column
-operator|-
-literal|1
-index|]
-argument_list|)
-expr_stmt|;
-name|column
-operator|++
-expr_stmt|;
-block|}
+comment|/*   //if (tool_has_opacity_dynamics (tool_type))     {       button = dynamics_check_button_new (config, "pressure-opacity",                                           table, column, row);       g_signal_connect (button, "size-allocate",                         G_CALLBACK (dynamics_check_button_size_allocate),                         labels[column - 1]);       column++;     } */
 comment|//if (tool_has_hardness_dynamics (tool_type))
 block|{
 name|button
