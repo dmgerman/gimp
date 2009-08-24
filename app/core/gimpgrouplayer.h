@@ -113,6 +113,16 @@ name|GimpProjection
 modifier|*
 name|projection
 decl_stmt|;
+DECL|member|graph
+name|GeglNode
+modifier|*
+name|graph
+decl_stmt|;
+DECL|member|offset_node
+name|GeglNode
+modifier|*
+name|offset_node
+decl_stmt|;
 block|}
 struct|;
 end_struct
