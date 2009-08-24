@@ -108,10 +108,11 @@ name|GtkWidget
 modifier|*
 name|options_vbox
 decl_stmt|;
-DECL|member|data
-name|GtkAdjustment
+comment|//GtkAdjustment  *data;
+DECL|member|config_data
+name|GObject
 modifier|*
-name|data
+name|config_data
 decl_stmt|;
 block|}
 struct|;
