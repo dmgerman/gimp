@@ -108,7 +108,11 @@ name|GtkWidget
 modifier|*
 name|options_vbox
 decl_stmt|;
-comment|//GtkAdjustment  *data;
+DECL|member|pressure_hardness_data
+name|GtkAdjustment
+modifier|*
+name|pressure_hardness_data
+decl_stmt|;
 DECL|member|config_data
 name|GObject
 modifier|*
