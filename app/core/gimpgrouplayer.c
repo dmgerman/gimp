@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ecb1f80103
+DECL|enum|__anon2ac72a870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2508,6 +2508,23 @@ argument_list|(
 literal|"Group Layer"
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_image_get_projection
+argument_list|(
+name|image
+argument_list|)
+operator|->
+name|use_gegl
+condition|)
+name|group
+operator|->
+name|projection
+operator|->
+name|use_gegl
+operator|=
+name|TRUE
 expr_stmt|;
 return|return
 name|GIMP_LAYER
