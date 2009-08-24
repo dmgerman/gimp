@@ -192,12 +192,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -306,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cce9570103
+DECL|enum|__anon2792d7850103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cce9570203
+DECL|enum|__anon2792d7850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -10620,14 +10614,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_LIST
+name|gimp_item_stack_get_item_iter
+argument_list|(
+name|GIMP_ITEM_STACK
 argument_list|(
 name|image
 operator|->
 name|layers
 argument_list|)
-operator|->
-name|list
+argument_list|)
 return|;
 block|}
 end_function
@@ -10655,14 +10650,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_LIST
+name|gimp_item_stack_get_item_iter
+argument_list|(
+name|GIMP_ITEM_STACK
 argument_list|(
 name|image
 operator|->
 name|channels
 argument_list|)
-operator|->
-name|list
+argument_list|)
 return|;
 block|}
 end_function
@@ -10690,14 +10686,15 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_LIST
+name|gimp_item_stack_get_item_iter
+argument_list|(
+name|GIMP_ITEM_STACK
 argument_list|(
 name|image
 operator|->
 name|vectors
 argument_list|)
-operator|->
-name|list
+argument_list|)
 return|;
 block|}
 end_function
