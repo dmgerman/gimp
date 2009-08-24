@@ -635,6 +635,11 @@ name|writable
 init|=
 name|FALSE
 decl_stmt|;
+name|gboolean
+name|children
+init|=
+name|FALSE
+decl_stmt|;
 name|image
 operator|=
 name|action_data_get_image
@@ -753,6 +758,20 @@ operator|=
 operator|!
 name|locked
 expr_stmt|;
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
+name|children
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 block|}
 DECL|macro|SET_SENSITIVE (action,condition)
@@ -860,6 +879,8 @@ argument_list|(
 literal|"drawable-flip-horizontal"
 argument_list|,
 name|writable
+operator|||
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -867,6 +888,8 @@ argument_list|(
 literal|"drawable-flip-vertical"
 argument_list|,
 name|writable
+operator|||
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -874,6 +897,8 @@ argument_list|(
 literal|"drawable-rotate-90"
 argument_list|,
 name|writable
+operator|||
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -881,6 +906,8 @@ argument_list|(
 literal|"drawable-rotate-180"
 argument_list|,
 name|writable
+operator|||
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -888,6 +915,8 @@ argument_list|(
 literal|"drawable-rotate-270"
 argument_list|,
 name|writable
+operator|||
+name|children
 argument_list|)
 expr_stmt|;
 undef|#
