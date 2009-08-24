@@ -108,6 +108,11 @@ name|GimpContainer
 modifier|*
 name|children
 decl_stmt|;
+DECL|member|projection
+name|GimpProjection
+modifier|*
+name|projection
+decl_stmt|;
 block|}
 struct|;
 end_struct
