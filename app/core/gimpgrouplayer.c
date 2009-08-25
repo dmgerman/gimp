@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac72a870103
+DECL|enum|__anon27c0b0e70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1489,6 +1489,9 @@ name|g_list_next
 argument_list|(
 name|list
 argument_list|)
+operator|,
+name|position
+operator|++
 control|)
 block|{
 name|GimpItem
