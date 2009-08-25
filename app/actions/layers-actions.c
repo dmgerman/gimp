@@ -2792,7 +2792,11 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-crop"
 argument_list|,
+operator|(
 name|writable
+operator|||
+name|children
+operator|)
 operator|&&
 name|sel
 argument_list|)
