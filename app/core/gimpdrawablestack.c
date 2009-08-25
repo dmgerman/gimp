@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892bafb0103
+DECL|enum|__anon2c4cb4710103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -580,6 +580,22 @@ name|stack
 operator|->
 name|graph
 condition|)
+block|{
+name|gegl_node_add_child
+argument_list|(
+name|stack
+operator|->
+name|graph
+argument_list|,
+name|gimp_item_get_node
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|object
+argument_list|)
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_stack_add_node
 argument_list|(
 name|stack
@@ -590,6 +606,7 @@ name|object
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gimp_item_get_visible
