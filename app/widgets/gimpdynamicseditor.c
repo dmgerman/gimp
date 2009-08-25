@@ -5,11 +5,26 @@ end_comment
 
 begin_define
 DECL|macro|DYNAMICS_VIEW_SIZE
-DECL|macro|DYNAMICS_VIEW_SIZE
 define|#
 directive|define
 name|DYNAMICS_VIEW_SIZE
 value|96
+end_define
+
+begin_define
+DECL|macro|DEFAULT_PRESSURE_OPACITY
+define|#
+directive|define
+name|DEFAULT_PRESSURE_OPACITY
+value|TRUE
+end_define
+
+begin_define
+DECL|macro|DEFAULT_PRESSURE_HARDNESS
+define|#
+directive|define
+name|DEFAULT_PRESSURE_HARDNESS
+value|FALSE
 end_define
 
 begin_include
@@ -244,45 +259,49 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_decl_stmt
+begin_function_decl
 specifier|static
 name|void
 name|gimp_dynamics_editor_notify_dynamics
-argument_list|(
+parameter_list|(
 name|GimpDynamics
-operator|*
+modifier|*
 name|options
-argument_list|,
+parameter_list|,
 name|GParamSpec
-operator|*
+modifier|*
 name|pspec
-argument_list|,
+parameter_list|,
 name|GimpDynamicsEditor
-operator|*
+modifier|*
 name|editor
-argument_list|)
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_macro
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
-name|GimpDynamicsEditor
+argument|GimpDynamicsEditor
 argument_list|,
-name|gimp_dynamics_editor
+argument|gimp_dynamics_editor
 argument_list|,
-name|GIMP_TYPE_DATA_EDITOR
+argument|GIMP_TYPE_DATA_EDITOR
 argument_list|,
-name|G_IMPLEMENT_INTERFACE
-argument_list|(
-name|GIMP_TYPE_DOCKED
-argument_list|,
-name|gimp_dynamics_editor_docked_iface_init
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_dynamics_editor_docked_iface_init)
 argument_list|)
-argument_list|)
-DECL|macro|parent_class
+end_macro
+
+begin_define
 DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
 value|gimp_dynamics_editor_parent_class
-decl|static
+end_define
+
+begin_decl_stmt
+specifier|static
 name|GimpDockedInterface
 modifier|*
 name|parent_docked_iface
@@ -294,7 +313,6 @@ end_decl_stmt
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dynamics_editor_class_init (GimpDynamicsEditorClass * klass)
 DECL|function|gimp_dynamics_editor_class_init (GimpDynamicsEditorClass * klass)
 name|gimp_dynamics_editor_class_init
 parameter_list|(
@@ -349,7 +367,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_dynamics_editor_docked_iface_init (GimpDockedInterface * iface)
-DECL|function|gimp_dynamics_editor_docked_iface_init (GimpDockedInterface * iface)
 name|gimp_dynamics_editor_docked_iface_init
 parameter_list|(
 name|GimpDockedInterface
@@ -389,7 +406,6 @@ begin_function
 specifier|static
 name|GObject
 modifier|*
-DECL|function|gimp_dynamics_editor_constructor (GType type,guint n_params,GObjectConstructParam * params)
 DECL|function|gimp_dynamics_editor_constructor (GType type,guint n_params,GObjectConstructParam * params)
 name|gimp_dynamics_editor_constructor
 parameter_list|(
@@ -444,7 +460,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_dynamics_editor_set_data (GimpDataEditor * editor,GimpData * data)
-DECL|function|gimp_dynamics_editor_set_data (GimpDataEditor * editor,GimpData * data)
 name|gimp_dynamics_editor_set_data
 parameter_list|(
 name|GimpDataEditor
@@ -467,15 +482,6 @@ argument_list|)
 decl_stmt|;
 comment|//GimpBrushGeneratedShape  shape        = GIMP_BRUSH_GENERATED_CIRCLE;
 comment|//gdouble                  radius       = 0.0;
-name|GimpDynamics
-modifier|*
-name|options
-decl_stmt|;
-name|GimpDynamicsOutput
-modifier|*
-name|hardness_dynamics
-decl_stmt|;
-comment|//= options->hardness_dynamics;
 name|gboolean
 name|pressure_hardness
 init|=
@@ -592,7 +598,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_dynamics_editor_notify_dynamics (GimpDynamics * options,GParamSpec * pspec,GimpDynamicsEditor * editor)
-DECL|function|gimp_dynamics_editor_notify_dynamics (GimpDynamics * options,GParamSpec * pspec,GimpDynamicsEditor * editor)
 name|gimp_dynamics_editor_notify_dynamics
 parameter_list|(
 name|GimpDynamics
@@ -658,7 +663,6 @@ begin_function
 specifier|static
 name|void
 DECL|function|gimp_dynamics_editor_update_dynamics (GtkAdjustment * adjustment,GimpDynamicsEditor * editor)
-DECL|function|gimp_dynamics_editor_update_dynamics (GtkAdjustment * adjustment,GimpDynamicsEditor * editor)
 name|gimp_dynamics_editor_update_dynamics
 parameter_list|(
 name|GtkAdjustment
@@ -672,7 +676,7 @@ parameter_list|)
 block|{
 name|GimpDynamics
 modifier|*
-name|options
+name|dynamics
 decl_stmt|;
 name|gboolean
 name|pressure_hardness
@@ -692,7 +696,7 @@ name|data
 argument_list|)
 condition|)
 return|return;
-name|options
+name|dynamics
 operator|=
 name|GIMP_DYNAMICS
 argument_list|(
@@ -719,6 +723,7 @@ condition|(
 name|pressure_hardness
 operator|!=
 name|DEFAULT_PRESSURE_HARDNESS
+condition|)
 comment|/*||       spikes   != gimp_brush_generated_get_spikes       (brush) ||       hardness != gimp_brush_generated_get_hardness     (brush) ||       ratio    != gimp_brush_generated_get_aspect_ratio (brush) ||       angle    != gimp_brush_generated_get_angle        (brush) ||       spacing  != gimp_brush_get_spacing                (GIMP_BRUSH (brush)))     */
 block|{
 name|g_signal_handlers_block_by_func
@@ -779,6 +784,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_dynamics_editor_set_context (GimpDocked * docked,GimpContext * context)
 name|gimp_dynamics_editor_set_context
 parameter_list|(
 name|GimpDocked
@@ -832,6 +838,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
+DECL|function|gimp_dynamics_editor_new (GimpContext * context,GimpMenuFactory * menu_factory)
 name|gimp_dynamics_editor_new
 parameter_list|(
 name|GimpContext
@@ -926,6 +933,7 @@ begin_function
 specifier|static
 name|GObject
 modifier|*
+DECL|function|get_config_value (GimpDynamicsEditor * editor)
 name|get_config_value
 parameter_list|(
 name|GimpDynamicsEditor
@@ -961,6 +969,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_dynamics_editor_init (GimpDynamicsEditor * editor)
 name|gimp_dynamics_editor_init
 parameter_list|(
 name|GimpDynamicsEditor
@@ -981,7 +990,6 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-comment|//GimpDynamics     *options = GIMP_
 name|GtkWidget
 modifier|*
 name|table
@@ -1255,23 +1263,6 @@ block|{
 name|GtkWidget
 modifier|*
 name|inner_frame
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|fixed
-decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
-name|gboolean
-name|rtl
-init|=
-name|gtk_widget_get_direction
-argument_list|(
-name|vbox
-argument_list|)
-operator|==
-name|GTK_TEXT_DIR_RTL
 decl_stmt|;
 name|inner_frame
 operator|=
@@ -1692,6 +1683,7 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
+DECL|function|dynamics_check_button_new (GObject * config,const gchar * property_name,GtkTable * table,gint column,gint row)
 name|dynamics_check_button_new
 parameter_list|(
 name|GObject
@@ -1770,6 +1762,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|dynamics_check_button_size_allocate (GtkWidget * toggle,GtkAllocation * allocation,GtkWidget * label)
 name|dynamics_check_button_size_allocate
 parameter_list|(
 name|GtkWidget
@@ -1872,6 +1865,7 @@ end_function
 begin_function
 specifier|static
 name|void
+DECL|function|pressure_options_gui (GObject * config,GtkTable * table,gint row,GtkWidget * labels[])
 name|pressure_options_gui
 parameter_list|(
 name|GObject
