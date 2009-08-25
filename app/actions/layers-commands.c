@@ -1946,6 +1946,8 @@ name|data
 argument_list|)
 argument_list|,
 name|GIMP_EXPAND_AS_NECESSARY
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
