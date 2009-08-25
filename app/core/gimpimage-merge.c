@@ -229,11 +229,6 @@ name|invisible_list
 init|=
 name|NULL
 decl_stmt|;
-name|gboolean
-name|had_floating_sel
-init|=
-name|FALSE
-decl_stmt|;
 name|GimpLayer
 modifier|*
 name|layer
@@ -268,7 +263,6 @@ argument_list|(
 name|image
 argument_list|)
 condition|)
-block|{
 name|floating_sel_anchor
 argument_list|(
 name|gimp_image_get_floating_selection
@@ -277,11 +271,6 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|had_floating_sel
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
 for|for
 control|(
 name|list
