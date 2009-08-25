@@ -2758,7 +2758,11 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-resize"
 argument_list|,
+operator|(
 name|writable
+operator|||
+name|children
+operator|)
 operator|&&
 operator|!
 name|ac
