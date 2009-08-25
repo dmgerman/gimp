@@ -2389,7 +2389,23 @@ operator|->
 name|data
 argument_list|)
 condition|)
+block|{
+comment|/*  next_visible is actually next_visible_and_writable  */
+if|if
+condition|(
+name|gimp_item_get_lock_content
+argument_list|(
+name|next_visible
+operator|->
+name|data
+argument_list|)
+condition|)
+name|next_visible
+operator|=
+name|NULL
+expr_stmt|;
 break|break;
+block|}
 block|}
 block|}
 name|text_layer
@@ -2654,6 +2670,9 @@ name|fs
 operator|&&
 operator|!
 name|ac
+operator|&&
+operator|!
+name|children
 operator|&&
 name|next_visible
 argument_list|)
