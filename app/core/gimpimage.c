@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792d7850103
+DECL|enum|__anon278f451f0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2792d7850203
+DECL|enum|__anon278f451f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -16752,8 +16752,8 @@ end_function
 begin_function
 name|GimpLayer
 modifier|*
-DECL|function|gimp_image_pick_correlate_layer (const GimpImage * image,gint x,gint y)
-name|gimp_image_pick_correlate_layer
+DECL|function|gimp_image_pick_layer (const GimpImage * image,gint x,gint y)
+name|gimp_image_pick_layer
 parameter_list|(
 specifier|const
 name|GimpImage

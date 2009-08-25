@@ -3937,7 +3937,7 @@ condition|)
 block|{
 name|layer
 operator|=
-name|gimp_image_pick_correlate_layer
+name|gimp_image_pick_layer
 argument_list|(
 name|image
 argument_list|,

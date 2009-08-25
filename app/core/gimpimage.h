@@ -2937,7 +2937,7 @@ end_function_decl
 begin_function_decl
 name|GimpLayer
 modifier|*
-name|gimp_image_pick_correlate_layer
+name|gimp_image_pick_layer
 parameter_list|(
 specifier|const
 name|GimpImage
