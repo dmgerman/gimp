@@ -716,6 +716,18 @@ decl_stmt|;
 name|gint
 name|off_y
 decl_stmt|;
+comment|/*  group layers are updated automatically  */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+continue|continue;
 name|gimp_item_get_offset
 argument_list|(
 name|item

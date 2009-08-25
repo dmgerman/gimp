@@ -587,6 +587,18 @@ argument_list|,
 name|progress_steps
 argument_list|)
 expr_stmt|;
+comment|/*  group layers are updated automatically  */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+continue|continue;
 if|if
 condition|(
 operator|!
@@ -1222,6 +1234,18 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+comment|/*  group layers are updated automatically  */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+continue|continue;
 if|if
 condition|(
 operator|!

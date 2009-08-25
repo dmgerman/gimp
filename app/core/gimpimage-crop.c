@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2911fb860103
+DECL|enum|__anon299058f70103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -671,6 +671,18 @@ name|list
 operator|->
 name|data
 expr_stmt|;
+comment|/*  group layers are updated automatically  */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+continue|continue;
 name|gimp_item_translate
 argument_list|(
 name|item
