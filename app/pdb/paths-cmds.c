@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure.h"
 end_include
 
