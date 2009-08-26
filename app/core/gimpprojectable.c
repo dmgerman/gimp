@@ -41,10 +41,10 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4fb5210103
+DECL|enum|__anon2989e8cc0103
 block|{
-DECL|enumerator|UPDATE
-name|UPDATE
+DECL|enumerator|INVALIDATE
+name|INVALIDATE
 block|,
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -183,12 +183,12 @@ condition|)
 block|{
 name|projectable_signals
 index|[
-name|UPDATE
+name|INVALIDATE
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"update"
+literal|"invalidate"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -201,7 +201,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpProjectableInterface
 argument_list|,
-name|update
+name|invalidate
 argument_list|)
 argument_list|,
 name|NULL
@@ -307,8 +307,8 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_projectable_update (GimpProjectable * projectable,gint x,gint y,gint width,gint height)
-name|gimp_projectable_update
+DECL|function|gimp_projectable_invalidate (GimpProjectable * projectable,gint x,gint y,gint width,gint height)
+name|gimp_projectable_invalidate
 parameter_list|(
 name|GimpProjectable
 modifier|*
@@ -341,7 +341,7 @@ name|projectable
 argument_list|,
 name|projectable_signals
 index|[
-name|UPDATE
+name|INVALIDATE
 index|]
 argument_list|,
 literal|0

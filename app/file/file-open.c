@@ -2394,7 +2394,7 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/* make sure the entire projection is properly constructed, because    * load plug-ins are not required to call gimp_drawable_update() or    * anything.    */
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|(
 name|image
 argument_list|,

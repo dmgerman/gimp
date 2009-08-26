@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c5f2f0103
+DECL|enum|__anon2881ba7d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -426,7 +426,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_projection_projectable_update
+name|gimp_projection_projectable_invalidate
 parameter_list|(
 name|GimpProjectable
 modifier|*
@@ -1309,10 +1309,6 @@ name|GimpProjection
 modifier|*
 name|proj
 decl_stmt|;
-name|GClosure
-modifier|*
-name|closure
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_PROJECTABLE
@@ -1338,38 +1334,20 @@ name|projectable
 operator|=
 name|projectable
 expr_stmt|;
-name|closure
-operator|=
-name|g_cclosure_new_object
-argument_list|(
-name|G_CALLBACK
-argument_list|(
-name|gimp_projection_projectable_update
-argument_list|)
-argument_list|,
-name|G_OBJECT
-argument_list|(
-name|proj
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/*  connect the "update" signal by ID so we definitely get the signal    *  of GimpPickable and not the one of GimpDrawable in case of group    *  layers    */
-name|g_signal_connect_closure_by_id
+name|g_signal_connect_object
 argument_list|(
 name|projectable
 argument_list|,
-name|g_signal_lookup
-argument_list|(
-literal|"update"
+literal|"invalidate"
 argument_list|,
-name|GIMP_TYPE_PROJECTABLE
+name|G_CALLBACK
+argument_list|(
+name|gimp_projection_projectable_invalidate
 argument_list|)
 argument_list|,
+name|proj
+argument_list|,
 literal|0
-argument_list|,
-name|closure
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
@@ -3251,8 +3229,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_projection_projectable_update (GimpProjectable * projectable,gint x,gint y,gint w,gint h,GimpProjection * proj)
-name|gimp_projection_projectable_update
+DECL|function|gimp_projection_projectable_invalidate (GimpProjectable * projectable,gint x,gint y,gint w,gint h,GimpProjection * proj)
+name|gimp_projection_projectable_invalidate
 parameter_list|(
 name|GimpProjectable
 modifier|*

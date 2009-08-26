@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299058f70103
+DECL|enum|__anon286c3fe30103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1143,7 +1143,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|(
 name|image
 argument_list|,

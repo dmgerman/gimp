@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f451f0103
+DECL|enum|__anon27a801720103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278f451f0203
+DECL|enum|__anon27a801720203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2655,7 +2655,7 @@ literal|"update"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|)
 argument_list|,
 name|image
@@ -2691,7 +2691,7 @@ literal|"update"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|)
 argument_list|,
 name|image
@@ -3534,7 +3534,7 @@ name|image
 operator|->
 name|layers
 argument_list|,
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|,
 name|image
 argument_list|)
@@ -3556,7 +3556,7 @@ name|image
 operator|->
 name|channels
 argument_list|,
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|,
 name|image
 argument_list|)
@@ -4876,7 +4876,7 @@ name|color_index
 argument_list|)
 expr_stmt|;
 comment|/* A colormap alteration affects the whole image */
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|(
 name|image
 argument_list|,
@@ -7281,7 +7281,7 @@ argument_list|,
 name|channel
 argument_list|)
 expr_stmt|;
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|(
 name|image
 argument_list|,
@@ -7432,8 +7432,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_update (GimpImage * image,gint x,gint y,gint width,gint height)
-name|gimp_image_update
+DECL|function|gimp_image_invalidate (GimpImage * image,gint x,gint y,gint width,gint height)
+name|gimp_image_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -7460,7 +7460,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_projectable_update
+name|gimp_projectable_invalidate
 argument_list|(
 name|GIMP_PROJECTABLE
 argument_list|(

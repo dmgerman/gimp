@@ -2594,7 +2594,7 @@ argument_list|(
 name|layers
 argument_list|)
 expr_stmt|;
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|(
 name|image
 argument_list|,

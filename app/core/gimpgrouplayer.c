@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2161540103
+DECL|enum|__anon2c5f84830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3569,8 +3569,14 @@ modifier|*
 name|group
 parameter_list|)
 block|{
+if|#
+directive|if
+literal|0
+block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (GIMP_OBJECT (group)),               x, y, width, height);
+endif|#
+directive|endif
 comment|/*  the layer stack's update signal speaks in image coordinates,    *  pass to the projection as-is.    */
-name|gimp_projectable_update
+name|gimp_projectable_invalidate
 argument_list|(
 name|GIMP_PROJECTABLE
 argument_list|(
@@ -3630,6 +3636,12 @@ modifier|*
 name|group
 parameter_list|)
 block|{
+if|#
+directive|if
+literal|0
+block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (GIMP_OBJECT (group)),               x, y, width, height);
+endif|#
+directive|endif
 comment|/*  the projection speaks in image coordinates, transform to layer    *  coordinates when emitting our own update signal.    */
 name|gimp_drawable_update
 argument_list|(

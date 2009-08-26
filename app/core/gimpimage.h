@@ -1473,7 +1473,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_update
+name|gimp_image_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*

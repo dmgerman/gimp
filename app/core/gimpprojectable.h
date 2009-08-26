@@ -76,11 +76,11 @@ name|GTypeInterface
 name|base_iface
 decl_stmt|;
 comment|/*  signals  */
-DECL|member|update
+DECL|member|invalidate
 name|void
 function_decl|(
 modifier|*
-name|update
+name|invalidate
 function_decl|)
 parameter_list|(
 name|GimpProjectable
@@ -249,7 +249,7 @@ end_decl_stmt
 
 begin_function_decl
 name|void
-name|gimp_projectable_update
+name|gimp_projectable_invalidate
 parameter_list|(
 name|GimpProjectable
 modifier|*
