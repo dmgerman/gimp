@@ -793,6 +793,23 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_item_set_size
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|gint
+name|width
+parameter_list|,
+name|gint
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_item_get_offset
 parameter_list|(
 specifier|const
