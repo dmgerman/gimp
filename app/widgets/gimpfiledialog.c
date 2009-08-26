@@ -153,6 +153,18 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_comment
+comment|/*  an arbitrary limit to keep the file dialog from becoming too wide  */
+end_comment
+
+begin_define
+DECL|macro|MAX_EXTENSIONS
+define|#
+directive|define
+name|MAX_EXTENSIONS
+value|4
+end_define
+
 begin_struct
 DECL|struct|_GimpFileDialogState
 struct|struct
@@ -3142,12 +3154,6 @@ name|file_proc
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  an arbitrary limit to keep the file dialog from becoming too wide  */
-DECL|macro|MAX_EXTENSIONS
-define|#
-directive|define
-name|MAX_EXTENSIONS
-value|4
 for|for
 control|(
 name|ext
