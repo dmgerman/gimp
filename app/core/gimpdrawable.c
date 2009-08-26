@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291d7bab0103
+DECL|enum|__anon28d02a780103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -6154,6 +6154,14 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
+name|g_object_freeze_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|GIMP_DRAWABLE_GET_CLASS
 argument_list|(
 name|drawable
@@ -6174,6 +6182,14 @@ argument_list|,
 name|offset_x
 argument_list|,
 name|offset_y
+argument_list|)
+expr_stmt|;
+name|g_object_thaw_notify
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|drawable
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_update
