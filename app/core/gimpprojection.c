@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2881ba7d0103
+DECL|enum|__anon27bc99600103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -662,10 +662,6 @@ name|FALSE
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/* sorry for the evil casts */
-end_comment
 
 begin_function
 specifier|static
