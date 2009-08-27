@@ -961,6 +961,17 @@ argument_list|,
 name|GIMP_ITEM_SET_ALL
 argument_list|)
 expr_stmt|;
+name|gimp_image_item_list_filter
+argument_list|(
+name|NULL
+argument_list|,
+name|drawables
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|drawables
 operator|=
 name|g_list_prepend
