@@ -973,7 +973,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5942ee0108
+DECL|struct|__anon29b7553c0108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1468,7 +1468,7 @@ name|gimp_datafiles_read_directories
 argument_list|(
 name|path
 argument_list|,
-name|G_FILE_TEST_EXISTS
+name|G_FILE_TEST_IS_REGULAR
 argument_list|,
 name|gimp_data_factory_load_data
 argument_list|,
@@ -2969,7 +2969,7 @@ name|file_data
 operator|->
 name|filename
 argument_list|,
-name|G_FILE_TEST_EXISTS
+name|G_FILE_TEST_IS_REGULAR
 argument_list|,
 name|gimp_data_factory_load_data
 argument_list|,
@@ -3176,12 +3176,9 @@ name|priv
 operator|->
 name|container
 argument_list|,
-name|GIMP_OBJECT
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
