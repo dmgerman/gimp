@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8da440103
+DECL|enum|__anon276f57620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1362,6 +1362,20 @@ argument_list|(
 name|group
 operator|->
 name|children
+argument_list|)
+argument_list|,
+name|gui_size
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
+name|gimp_object_get_memsize
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|group
+operator|->
+name|projection
 argument_list|)
 argument_list|,
 name|gui_size
