@@ -921,6 +921,11 @@ name|NULL
 return|;
 if|if
 condition|(
+name|remove_children
+condition|)
+block|{
+if|if
+condition|(
 name|exclude
 condition|)
 name|list
@@ -988,6 +993,7 @@ name|prev
 operator|=
 name|l
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
