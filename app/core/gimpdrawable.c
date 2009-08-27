@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d02a780103
+DECL|enum|__anon2beff5730103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
