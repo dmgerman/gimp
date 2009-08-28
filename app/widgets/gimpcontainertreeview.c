@@ -1858,8 +1858,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_tree_view_prepend_toggle_cell_renderer (GimpContainerTreeView * tree_view,GtkCellRenderer * cell_renderer)
-name|gimp_container_tree_view_prepend_toggle_cell_renderer
+DECL|function|gimp_container_tree_view_add_toggle_cell (GimpContainerTreeView * tree_view,GtkCellRenderer * cell)
+name|gimp_container_tree_view_add_toggle_cell
 parameter_list|(
 name|GimpContainerTreeView
 modifier|*
@@ -1867,7 +1867,7 @@ name|tree_view
 parameter_list|,
 name|GtkCellRenderer
 modifier|*
-name|cell_renderer
+name|cell
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1880,9 +1880,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_IS_CELL_RENDERER
+name|GIMP_IS_CELL_RENDERER_TOGGLE
 argument_list|(
-name|cell_renderer
+name|cell
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1900,7 +1900,7 @@ name|priv
 operator|->
 name|toggle_cells
 argument_list|,
-name|cell_renderer
+name|cell
 argument_list|)
 expr_stmt|;
 block|}
@@ -1908,8 +1908,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_tree_view_prepend_cell_renderer (GimpContainerTreeView * tree_view,GtkCellRenderer * cell_renderer)
-name|gimp_container_tree_view_prepend_cell_renderer
+DECL|function|gimp_container_tree_view_add_renderer_cell (GimpContainerTreeView * tree_view,GtkCellRenderer * cell)
+name|gimp_container_tree_view_add_renderer_cell
 parameter_list|(
 name|GimpContainerTreeView
 modifier|*
@@ -1917,7 +1917,7 @@ name|tree_view
 parameter_list|,
 name|GtkCellRenderer
 modifier|*
-name|cell_renderer
+name|cell
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1930,9 +1930,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_IS_CELL_RENDERER
+name|GIMP_IS_CELL_RENDERER_VIEWABLE
 argument_list|(
-name|cell_renderer
+name|cell
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1950,7 +1950,7 @@ name|priv
 operator|->
 name|renderer_cells
 argument_list|,
-name|cell_renderer
+name|cell
 argument_list|)
 expr_stmt|;
 block|}
@@ -3535,7 +3535,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b679b320108
+DECL|struct|__anon2bbf2c5f0108
 block|{
 DECL|member|view_size
 name|gint

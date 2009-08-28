@@ -1123,7 +1123,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_container_tree_view_prepend_toggle_cell_renderer
+name|gimp_container_tree_view_add_toggle_cell
 argument_list|(
 name|tree_view
 argument_list|,

@@ -1747,7 +1747,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_container_tree_view_prepend_cell_renderer
+name|gimp_container_tree_view_add_renderer_cell
 argument_list|(
 name|tree_view
 argument_list|,
@@ -2303,7 +2303,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83dd820108
+DECL|struct|__anon2b9515190108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2697,7 +2697,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b83dd820208
+DECL|struct|__anon2b9515190208
 block|{
 DECL|member|mask_column
 name|gint

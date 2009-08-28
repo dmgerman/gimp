@@ -24,7 +24,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baff2ff0103
+DECL|enum|__anon29ed17630103
 block|{
 DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
@@ -420,7 +420,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_container_tree_view_prepend_toggle_cell_renderer
+name|gimp_container_tree_view_add_toggle_cell
 parameter_list|(
 name|GimpContainerTreeView
 modifier|*
@@ -428,14 +428,14 @@ name|tree_view
 parameter_list|,
 name|GtkCellRenderer
 modifier|*
-name|cell_renderer
+name|cell
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_container_tree_view_prepend_cell_renderer
+name|gimp_container_tree_view_add_renderer_cell
 parameter_list|(
 name|GimpContainerTreeView
 modifier|*
@@ -443,7 +443,7 @@ name|tree_view
 parameter_list|,
 name|GtkCellRenderer
 modifier|*
-name|cell_renderer
+name|cell
 parameter_list|)
 function_decl|;
 end_function_decl
