@@ -3535,7 +3535,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbf2c5f0108
+DECL|struct|__anon2759945a0108
 block|{
 DECL|member|view_size
 name|gint
@@ -4354,12 +4354,6 @@ operator|->
 name|button
 operator|==
 literal|1
-operator|&&
-name|bevent
-operator|->
-name|type
-operator|==
-name|GDK_BUTTON_PRESS
 operator|&&
 name|gtk_tree_model_iter_has_child
 argument_list|(
