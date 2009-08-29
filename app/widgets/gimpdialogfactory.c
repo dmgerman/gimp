@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296dfb280103
+DECL|enum|__anon2b1c7c740103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon296dfb280203
+DECL|enum|__anon2b1c7c740203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -771,12 +771,10 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-operator|->
-name|name
 argument_list|,
 literal|"toolbox"
 argument_list|)
@@ -790,12 +788,13 @@ expr_stmt|;
 else|else
 name|key
 operator|=
-name|GIMP_OBJECT
+operator|(
+name|gpointer
+operator|)
+name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-operator|->
-name|name
 expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
@@ -1073,12 +1072,13 @@ expr_stmt|;
 else|else
 name|key
 operator|=
-name|GIMP_OBJECT
+operator|(
+name|gpointer
+operator|)
+name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-operator|->
-name|name
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(

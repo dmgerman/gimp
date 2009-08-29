@@ -1193,12 +1193,10 @@ name|gimp_action_group_set_action_sensitive
 argument_list|(
 name|group
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|sensitive
 argument_list|)
@@ -1661,12 +1659,10 @@ argument_list|(
 name|group
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|procedure
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 if|if
@@ -1933,12 +1929,10 @@ name|entry
 operator|.
 name|name
 operator|=
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 expr_stmt|;
 name|entry
 operator|.
@@ -1988,7 +1982,7 @@ expr_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("adding plug-in action '%s' (%s)\n",            GIMP_OBJECT (proc)->name, label);
+block|g_print ("adding plug-in action '%s' (%s)\n",            gimp_object_get_name (proc), label);
 endif|#
 directive|endif
 name|gimp_action_group_add_plug_in_actions
@@ -2197,12 +2191,10 @@ argument_list|(
 name|group
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 if|if
@@ -2450,12 +2442,10 @@ argument_list|(
 name|group
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 if|if

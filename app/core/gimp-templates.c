@@ -460,9 +460,10 @@ name|str1
 init|=
 name|g_ascii_strdown
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|object
-operator|->
-name|name
+argument_list|)
 argument_list|,
 operator|-
 literal|1

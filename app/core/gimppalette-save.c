@@ -184,12 +184,10 @@ name|file
 argument_list|,
 literal|"Name: %s\n"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|palette
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|fprintf

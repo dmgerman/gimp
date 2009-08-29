@@ -627,12 +627,10 @@ index|]
 operator|=
 name|g_strdup
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 operator|(

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a22c9980103
+DECL|enum|__anon2a8c51480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4161,12 +4161,10 @@ argument_list|)
 argument_list|,
 literal|"name"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|stroke
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|NULL
 argument_list|)

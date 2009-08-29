@@ -126,7 +126,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2941663d0108
+DECL|struct|__anon2b1cf4ef0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1646,12 +1646,10 @@ name|NULL
 operator|&&
 name|g_ascii_strcasecmp
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|palette
 argument_list|)
-operator|->
-name|name
 argument_list|,
 literal|"Web"
 argument_list|)

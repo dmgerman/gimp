@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c636b40103
+DECL|enum|__anon2c22e7e60103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c636b40203
+DECL|enum|__anon2c22e7e60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1432,12 +1432,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s (%d Ã %d)"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|brush
 operator|->

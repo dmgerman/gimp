@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b0a050103
+DECL|enum|__anon2c94adea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1710,12 +1710,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|curve
 argument_list|)
-operator|->
-name|name
 argument_list|)
 return|;
 block|}

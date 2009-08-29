@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c091f900103
+DECL|enum|__anon2c7888b10103
 block|{
 DECL|enumerator|DISCONNECT
 name|DISCONNECT
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c091f900203
+DECL|enum|__anon2c7888b10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -952,27 +952,32 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_object_get_name (const GimpObject * object)
+DECL|function|gimp_object_get_name (gconstpointer object)
 name|gimp_object_get_name
 parameter_list|(
-specifier|const
-name|GimpObject
-modifier|*
+name|gconstpointer
 name|object
 parameter_list|)
 block|{
+specifier|const
+name|GimpObject
+modifier|*
+name|object_typed
+init|=
+name|object
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_OBJECT
 argument_list|(
-name|object
+name|object_typed
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|object
+name|object_typed
 operator|->
 name|name
 return|;

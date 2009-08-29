@@ -569,12 +569,10 @@ argument_list|(
 literal|"Enter a new name for the saved options"
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|options
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|NULL
 argument_list|,

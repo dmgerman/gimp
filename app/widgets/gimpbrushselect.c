@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28823fc00103
+DECL|enum|__anon2c9d68340103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1143,9 +1143,10 @@ name|callback_name
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
 name|object
-operator|->
-name|name
+argument_list|)
 argument_list|,
 name|G_TYPE_DOUBLE
 argument_list|,

@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a002cdd0108
+DECL|struct|__anon2c056c590108
 block|{
 DECL|member|context
 name|GimpContext
@@ -928,12 +928,10 @@ literal|"template '%s' from the list and "
 literal|"from disk?"
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|template
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

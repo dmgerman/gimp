@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2beff5730103
+DECL|enum|__anon27721a100103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1790,12 +1790,10 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|new_drawable
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|pixel_region_init

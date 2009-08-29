@@ -178,12 +178,10 @@ name|blurb
 argument_list|,
 literal|"role"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|tool_info
 argument_list|)
-operator|->
-name|name
 argument_list|,
 literal|"help-func"
 argument_list|,
@@ -242,12 +240,10 @@ name|identifier
 operator|=
 name|g_strconcat
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|tool_info
 argument_list|)
-operator|->
-name|name
 argument_list|,
 literal|"-dialog"
 argument_list|,

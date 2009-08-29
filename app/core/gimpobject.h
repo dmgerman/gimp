@@ -97,12 +97,12 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
+comment|/*<  private>*/
 DECL|member|name
 name|gchar
 modifier|*
 name|name
 decl_stmt|;
-comment|/*<  private>*/
 DECL|member|normalized
 name|gchar
 modifier|*
@@ -258,9 +258,7 @@ name|gchar
 modifier|*
 name|gimp_object_get_name
 parameter_list|(
-specifier|const
-name|GimpObject
-modifier|*
+name|gconstpointer
 name|object
 parameter_list|)
 function_decl|;

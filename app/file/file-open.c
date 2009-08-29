@@ -615,12 +615,10 @@ name|progress
 argument_list|,
 name|error
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|file_proc
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
@@ -1158,12 +1156,10 @@ name|progress
 argument_list|,
 name|error
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|procedure
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,

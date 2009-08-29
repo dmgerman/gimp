@@ -1283,12 +1283,10 @@ argument_list|,
 name|image
 operator|&&
 operator|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|image
 argument_list|)
-operator|->
-name|name
 operator|||
 name|source
 operator|)

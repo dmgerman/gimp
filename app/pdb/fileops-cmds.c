@@ -364,12 +364,10 @@ name|progress
 argument_list|,
 name|error
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|new_args
 argument_list|)
@@ -1226,12 +1224,10 @@ name|progress
 argument_list|,
 name|error
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|proc
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|new_args
 argument_list|)

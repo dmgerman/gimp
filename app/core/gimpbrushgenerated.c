@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8c2300103
+DECL|enum|__anon2794c5890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1063,12 +1063,10 @@ decl_stmt|;
 return|return
 name|gimp_brush_generated_new
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|brush
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|brush
 operator|->
