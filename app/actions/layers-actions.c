@@ -2390,10 +2390,17 @@ name|data
 argument_list|)
 condition|)
 block|{
-comment|/*  next_visible is actually next_visible_and_writable  */
+comment|/*  next_visible is actually next_visible and                        *  writable not group                        */
 if|if
 condition|(
 name|gimp_item_get_lock_content
+argument_list|(
+name|next_visible
+operator|->
+name|data
+argument_list|)
+operator|||
+name|gimp_viewable_get_children
 argument_list|(
 name|next_visible
 operator|->
@@ -2777,11 +2784,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-resize"
 argument_list|,
-operator|(
 name|writable
-operator|||
-name|children
-operator|)
 operator|&&
 operator|!
 name|ac
@@ -2801,11 +2804,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-scale"
 argument_list|,
-operator|(
 name|writable
-operator|||
-name|children
-operator|)
 operator|&&
 operator|!
 name|ac
@@ -2815,11 +2814,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-crop"
 argument_list|,
-operator|(
 name|writable
-operator|||
-name|children
-operator|)
 operator|&&
 name|sel
 argument_list|)
@@ -2829,6 +2824,9 @@ argument_list|(
 literal|"layers-alpha-add"
 argument_list|,
 name|writable
+operator|&&
+operator|!
+name|children
 operator|&&
 operator|!
 name|fs
@@ -2842,6 +2840,9 @@ argument_list|(
 literal|"layers-alpha-remove"
 argument_list|,
 name|writable
+operator|&&
+operator|!
+name|children
 operator|&&
 operator|!
 name|fs
@@ -2892,6 +2893,9 @@ operator|!
 name|ac
 operator|&&
 name|mask
+operator|&&
+operator|!
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

@@ -803,6 +803,9 @@ argument_list|,
 name|writable
 operator|&&
 operator|!
+name|children
+operator|&&
+operator|!
 name|is_indexed
 argument_list|)
 expr_stmt|;
@@ -811,6 +814,9 @@ argument_list|(
 literal|"drawable-invert"
 argument_list|,
 name|writable
+operator|&&
+operator|!
+name|children
 operator|&&
 operator|!
 name|is_indexed
@@ -822,6 +828,9 @@ literal|"drawable-levels-stretch"
 argument_list|,
 name|writable
 operator|&&
+operator|!
+name|children
+operator|&&
 name|is_rgb
 argument_list|)
 expr_stmt|;
@@ -830,6 +839,9 @@ argument_list|(
 literal|"drawable-offset"
 argument_list|,
 name|writable
+operator|&&
+operator|!
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -879,8 +891,6 @@ argument_list|(
 literal|"drawable-flip-horizontal"
 argument_list|,
 name|writable
-operator|||
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -888,8 +898,6 @@ argument_list|(
 literal|"drawable-flip-vertical"
 argument_list|,
 name|writable
-operator|||
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -897,8 +905,6 @@ argument_list|(
 literal|"drawable-rotate-90"
 argument_list|,
 name|writable
-operator|||
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -906,8 +912,6 @@ argument_list|(
 literal|"drawable-rotate-180"
 argument_list|,
 name|writable
-operator|||
-name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -915,8 +919,6 @@ argument_list|(
 literal|"drawable-rotate-270"
 argument_list|,
 name|writable
-operator|||
-name|children
 argument_list|)
 expr_stmt|;
 undef|#
