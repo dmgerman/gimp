@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6da8230103
+DECL|enum|__anon275f47380103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -105,6 +105,7 @@ specifier|static
 name|gboolean
 name|gimp_layer_mask_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -501,9 +502,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_mask_is_attached (GimpItem * item)
+DECL|function|gimp_layer_mask_is_attached (const GimpItem * item)
 name|gimp_layer_mask_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item

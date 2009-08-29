@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8dee20103
+DECL|enum|__anon2b9f091e0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -153,7 +153,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c8dee20203
+DECL|enum|__anon2b9f091e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2701,9 +2701,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_is_attached (GimpItem * item)
+DECL|function|gimp_item_is_attached (const GimpItem * item)
 name|gimp_item_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item

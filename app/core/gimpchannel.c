@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec0dcd0103
+DECL|enum|__anon290147640103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -277,6 +277,7 @@ specifier|static
 name|gboolean
 name|gimp_channel_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1804,9 +1805,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_channel_is_attached (GimpItem * item)
+DECL|function|gimp_channel_is_attached (const GimpItem * item)
 name|gimp_channel_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item

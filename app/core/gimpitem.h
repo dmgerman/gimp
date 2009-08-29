@@ -251,6 +251,7 @@ modifier|*
 name|is_attached
 function_decl|)
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -651,6 +652,7 @@ begin_function_decl
 name|gboolean
 name|gimp_item_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item

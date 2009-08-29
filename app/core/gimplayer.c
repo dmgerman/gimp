@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b247a0103
+DECL|enum|__anon2c24b7180103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8b247a0203
+DECL|enum|__anon2c24b7180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -376,6 +376,7 @@ specifier|static
 name|gboolean
 name|gimp_layer_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -2370,9 +2371,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_layer_is_attached (GimpItem * item)
+DECL|function|gimp_layer_is_attached (const GimpItem * item)
 name|gimp_layer_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
