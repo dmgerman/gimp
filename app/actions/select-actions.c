@@ -729,6 +729,9 @@ literal|"select-stroke"
 argument_list|,
 name|writable
 operator|&&
+operator|!
+name|children
+operator|&&
 name|sel
 argument_list|)
 expr_stmt|;
@@ -737,6 +740,9 @@ argument_list|(
 literal|"select-stroke-last-values"
 argument_list|,
 name|writable
+operator|&&
+operator|!
+name|children
 operator|&&
 name|sel
 argument_list|)
