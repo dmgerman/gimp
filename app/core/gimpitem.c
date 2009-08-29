@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2914ae970103
+DECL|enum|__anon29b4adf70103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -153,7 +153,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2914ae970203
+DECL|enum|__anon29b4adf70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6412,19 +6412,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_viewable_get_children
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
-name|item
-argument_list|)
-argument_list|)
-condition|)
-return|return
-name|FALSE
-return|;
 return|return
 name|TRUE
 return|;
