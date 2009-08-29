@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c98bd0103
+DECL|enum|__anon28db58be0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2c98bd0203
+DECL|enum|__anon28db58be0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4158,6 +4158,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+comment|/* We never want the empty string as a name, so change empty strings    * to NULL strings (without emitting the "name-changed" signal    * again)    */
 name|name
 operator|=
 name|gimp_object_get_name
@@ -4167,31 +4168,20 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
-operator|(
 name|name
 operator|&&
 name|strlen
 argument_list|(
 name|name
 argument_list|)
-operator|)
+operator|==
+literal|0
 condition|)
-block|{
-name|g_free
+name|gimp_object_name_free
 argument_list|(
 name|object
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
-name|object
-operator|->
-name|name
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 block|}
 end_function
 
