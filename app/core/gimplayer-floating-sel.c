@@ -522,6 +522,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
+comment|/* When the floating selection is converted to/from a normal layer    * it does something resembling a name, so emit the "name-changed"    * signal    */
 name|gimp_object_name_changed
 argument_list|(
 name|GIMP_OBJECT

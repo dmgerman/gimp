@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c899dc80103
+DECL|enum|__anon29be673b0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c899dc80203
+DECL|enum|__anon29be673b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1322,6 +1322,7 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Emit the "name-changed" to signal general dirtiness */
 name|gimp_object_name_changed
 argument_list|(
 name|GIMP_OBJECT
