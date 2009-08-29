@@ -2304,7 +2304,7 @@ expr_stmt|;
 name|writable
 operator|=
 operator|!
-name|gimp_item_get_lock_content
+name|gimp_item_is_content_locked
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
@@ -2390,10 +2390,10 @@ name|data
 argument_list|)
 condition|)
 block|{
-comment|/*  next_visible is actually next_visible and                        *  writable not group                        */
+comment|/*  "next_visible" is actually "next_visible" and                        *  "writable" and "not group"                        */
 if|if
 condition|(
-name|gimp_item_get_lock_content
+name|gimp_item_is_content_locked
 argument_list|(
 name|next_visible
 operator|->

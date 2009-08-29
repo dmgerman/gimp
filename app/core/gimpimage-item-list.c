@@ -1026,7 +1026,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_item_get_lock_content
+name|gimp_item_is_content_locked
 argument_list|(
 name|item
 argument_list|)

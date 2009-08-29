@@ -870,7 +870,7 @@ return|;
 block|}
 if|if
 condition|(
-name|gimp_item_get_lock_content
+name|gimp_item_is_content_locked
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

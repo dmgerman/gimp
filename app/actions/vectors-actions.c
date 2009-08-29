@@ -1170,7 +1170,10 @@ expr_stmt|;
 name|writable
 operator|=
 operator|!
-name|locked
+name|gimp_item_is_content_locked
+argument_list|(
+name|item
+argument_list|)
 expr_stmt|;
 name|vectors_list
 operator|=
