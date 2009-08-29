@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a21bd7d0103
+DECL|enum|__anon2c3758170103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -3547,7 +3547,7 @@ name|gimp_tree_handler_connect
 argument_list|(
 name|container
 argument_list|,
-literal|"lock-alpha-changed"
+literal|"lock-content-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
