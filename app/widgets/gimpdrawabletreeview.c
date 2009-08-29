@@ -788,6 +788,14 @@ argument_list|(
 name|dest_viewable
 argument_list|)
 argument_list|)
+operator|||
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|dest_viewable
+argument_list|)
+argument_list|)
 condition|)
 return|return
 name|FALSE
