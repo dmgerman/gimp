@@ -956,7 +956,7 @@ condition|)
 goto|goto
 name|error
 goto|;
-comment|/* read in the layer */
+comment|/* read in the channel */
 name|channel
 operator|=
 name|xcf_load_channel
