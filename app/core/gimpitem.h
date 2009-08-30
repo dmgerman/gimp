@@ -696,6 +696,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GList
+modifier|*
+name|gimp_item_get_path
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_item_configure
 parameter_list|(
