@@ -789,14 +789,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
 name|GList
 modifier|*
 name|list
@@ -1086,12 +1078,14 @@ name|list
 argument_list|)
 control|)
 block|{
+name|GimpLayer
+modifier|*
 name|layer
-operator|=
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
 comment|/* save the start offset of where we are writing        *  out the next layer.        */
 name|offset
 operator|=
@@ -1218,6 +1212,10 @@ operator|||
 name|have_selection
 condition|)
 block|{
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
 if|if
 condition|(
 name|list
@@ -6738,7 +6736,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af6b3f70108
+DECL|struct|__anon275ff5750108
 block|{
 DECL|member|info
 name|XcfInfo

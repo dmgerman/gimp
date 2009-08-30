@@ -575,14 +575,6 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|layer
-decl_stmt|;
-name|GimpChannel
-modifier|*
-name|channel
-decl_stmt|;
 specifier|const
 name|GimpParasite
 modifier|*
@@ -785,6 +777,10 @@ condition|(
 name|TRUE
 condition|)
 block|{
+name|GimpLayer
+modifier|*
+name|layer
+decl_stmt|;
 comment|/* read in the offset of the next layer */
 name|info
 operator|->
@@ -909,6 +905,10 @@ condition|(
 name|TRUE
 condition|)
 block|{
+name|GimpChannel
+modifier|*
+name|channel
+decl_stmt|;
 comment|/* read in the offset of the next channel */
 name|info
 operator|->
