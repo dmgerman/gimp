@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af54b650103
+DECL|enum|__anon295ace230103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -309,7 +309,7 @@ argument_list|,
 name|text
 argument_list|)
 expr_stmt|;
-comment|/*  let the text layer know what parasite was used to create it  */
+comment|/*  let the text layer knows what parasite was used to create it  */
 name|GIMP_TEXT_LAYER
 argument_list|(
 operator|*
