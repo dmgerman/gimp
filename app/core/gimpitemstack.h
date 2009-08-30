@@ -198,6 +198,26 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpItem
+modifier|*
+name|gimp_item_stack_get_parent_by_path
+parameter_list|(
+name|GimpItemStack
+modifier|*
+name|stack
+parameter_list|,
+name|GList
+modifier|*
+name|path
+parameter_list|,
+name|gint
+modifier|*
+name|index
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_item_stack_invalidate_previews
 parameter_list|(
