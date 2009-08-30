@@ -282,6 +282,7 @@ name|image
 parameter_list|,
 name|GimpLayer
 modifier|*
+modifier|*
 name|layer
 parameter_list|,
 name|gboolean
@@ -2467,7 +2468,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * image,GimpLayer * layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask,guint32 * text_layer_flags)
+DECL|function|xcf_load_layer_props (XcfInfo * info,GimpImage * image,GimpLayer ** layer,gboolean * apply_mask,gboolean * edit_mask,gboolean * show_mask,guint32 * text_layer_flags)
 name|xcf_load_layer_props
 parameter_list|(
 name|XcfInfo
@@ -2479,6 +2480,7 @@ modifier|*
 name|image
 parameter_list|,
 name|GimpLayer
+modifier|*
 modifier|*
 name|layer
 parameter_list|,
@@ -2545,6 +2547,7 @@ name|info
 operator|->
 name|active_layer
 operator|=
+operator|*
 name|layer
 expr_stmt|;
 break|break;
@@ -2555,6 +2558,7 @@ name|info
 operator|->
 name|floating_sel
 operator|=
+operator|*
 name|layer
 expr_stmt|;
 name|info
@@ -2605,6 +2609,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_opacity
 argument_list|(
+operator|*
 name|layer
 argument_list|,
 operator|(
@@ -2650,6 +2655,7 @@ name|gimp_item_set_visible
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+operator|*
 name|layer
 argument_list|)
 argument_list|,
@@ -2691,6 +2697,7 @@ name|gimp_item_set_linked
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+operator|*
 name|layer
 argument_list|)
 argument_list|,
@@ -2732,6 +2739,7 @@ name|gimp_item_set_lock_content
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+operator|*
 name|layer
 argument_list|)
 argument_list|,
@@ -2771,6 +2779,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_lock_alpha
 argument_list|(
+operator|*
 name|layer
 argument_list|,
 name|lock_alpha
@@ -2895,6 +2904,7 @@ name|gimp_item_set_offset
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+operator|*
 name|layer
 argument_list|)
 argument_list|,
@@ -2930,6 +2940,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_layer_set_mode
 argument_list|(
+operator|*
 name|layer
 argument_list|,
 operator|(
@@ -2973,6 +2984,7 @@ name|gimp_item_set_tattoo
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+operator|*
 name|layer
 argument_list|)
 argument_list|,
@@ -3018,6 +3030,7 @@ name|gimp_item_parasite_attach
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
+operator|*
 name|layer
 argument_list|)
 argument_list|,
@@ -4138,6 +4151,7 @@ name|info
 argument_list|,
 name|image
 argument_list|,
+operator|&
 name|layer
 argument_list|,
 operator|&
