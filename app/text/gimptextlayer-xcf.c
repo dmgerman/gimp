@@ -81,7 +81,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ace230103
+DECL|enum|__anon292527590103
 block|{
 DECL|enumerator|TEXT_LAYER_XCF_NONE
 name|TEXT_LAYER_XCF_NONE
@@ -753,6 +753,21 @@ argument_list|(
 name|item
 argument_list|,
 name|gimp_item_get_linked
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_item_set_lock_content
+argument_list|(
+name|item
+argument_list|,
+name|gimp_item_get_lock_content
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
