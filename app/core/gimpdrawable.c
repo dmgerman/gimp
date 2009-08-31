@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ef9efa0103
+DECL|enum|__anon2abe88ad0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -8300,10 +8300,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_fs_update
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
 name|floating_sel
-argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -8400,10 +8397,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_drawable_fs_update
 argument_list|(
-name|GIMP_DRAWABLE
-argument_list|(
 name|floating_sel
-argument_list|)
 argument_list|,
 literal|0
 argument_list|,
