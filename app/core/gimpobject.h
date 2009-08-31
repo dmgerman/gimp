@@ -80,6 +80,15 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_OBJECT, GimpObjectClass))
 end_define
 
 begin_typedef
+DECL|typedef|GimpObjectPrivate
+typedef|typedef
+name|struct
+name|_GimpObjectPrivate
+name|GimpObjectPrivate
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpObjectClass
 typedef|typedef
 name|struct
@@ -97,28 +106,10 @@ DECL|member|parent_instance
 name|GObject
 name|parent_instance
 decl_stmt|;
-comment|/*<  private>*/
-DECL|member|name
-name|gchar
+DECL|member|p
+name|GimpObjectPrivate
 modifier|*
-name|name
-decl_stmt|;
-DECL|member|normalized
-name|gchar
-modifier|*
-name|normalized
-decl_stmt|;
-DECL|member|static_name
-name|guint
-name|static_name
-range|:
-literal|1
-decl_stmt|;
-DECL|member|disconnected
-name|guint
-name|disconnected
-range|:
-literal|1
+name|p
 decl_stmt|;
 block|}
 struct|;
