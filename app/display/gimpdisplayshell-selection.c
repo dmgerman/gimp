@@ -755,6 +755,13 @@ break|break;
 case|case
 name|GIMP_SELECTION_LAYER_ON
 case|:
+if|if
+condition|(
+operator|!
+name|selection
+operator|->
+name|layer_hidden
+condition|)
 name|selection_layer_draw
 argument_list|(
 name|selection
