@@ -2914,27 +2914,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
-name|gimp_image_layer_boundary
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|BoundSeg
-modifier|*
-modifier|*
-name|segs
-parameter_list|,
-name|gint
-modifier|*
-name|n_segs
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpLayer
 modifier|*
 name|gimp_image_pick_layer
