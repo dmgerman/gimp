@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c24b7180103
+DECL|enum|__anon298fa8850103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c24b7180203
+DECL|enum|__anon298fa8850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7351,22 +7351,6 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  Create the four boundary segments that encompass this    *  layer's boundary.    */
-name|new_segs
-operator|=
-name|g_new
-argument_list|(
-name|BoundSeg
-argument_list|,
-literal|4
-argument_list|)
-expr_stmt|;
-operator|*
-name|num_segs
-operator|=
-literal|4
-expr_stmt|;
-comment|/*  if the layer is a floating selection  */
 if|if
 condition|(
 name|gimp_layer_is_floating_sel
@@ -7375,23 +7359,26 @@ name|layer
 argument_list|)
 condition|)
 block|{
-if|if
-condition|(
-name|GIMP_IS_CHANNEL
-argument_list|(
+name|GimpDrawable
+modifier|*
+name|fs_drawable
+decl_stmt|;
+name|fs_drawable
+operator|=
 name|gimp_layer_get_floating_sel_drawable
 argument_list|(
 name|layer
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|GIMP_IS_CHANNEL
+argument_list|(
+name|fs_drawable
 argument_list|)
 condition|)
 block|{
 comment|/*  if the owner drawable is a channel, just return nothing  */
-name|g_free
-argument_list|(
-name|new_segs
-argument_list|)
-expr_stmt|;
 operator|*
 name|num_segs
 operator|=
@@ -7408,14 +7395,26 @@ name|layer
 operator|=
 name|GIMP_LAYER
 argument_list|(
-name|gimp_layer_get_floating_sel_drawable
-argument_list|(
-name|layer
-argument_list|)
+name|fs_drawable
 argument_list|)
 expr_stmt|;
 block|}
 block|}
+comment|/*  Create the four boundary segments that encompass this    *  layer's boundary.    */
+name|new_segs
+operator|=
+name|g_new
+argument_list|(
+name|BoundSeg
+argument_list|,
+literal|4
+argument_list|)
+expr_stmt|;
+operator|*
+name|num_segs
+operator|=
+literal|4
+expr_stmt|;
 name|gimp_item_get_offset
 argument_list|(
 name|item
