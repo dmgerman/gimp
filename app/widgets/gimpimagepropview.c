@@ -154,7 +154,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b38270103
+DECL|enum|__anon2acb781f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1313,10 +1313,7 @@ name|uri
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if

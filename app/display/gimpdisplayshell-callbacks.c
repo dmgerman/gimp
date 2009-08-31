@@ -1734,12 +1734,9 @@ name|space_shaded_tool
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|active_tool
 operator|->
 name|tool_info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_tool

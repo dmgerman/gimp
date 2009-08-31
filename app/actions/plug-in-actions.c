@@ -1562,7 +1562,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_print ("%s: %s\n", G_STRFUNC,                    gimp_object_get_name (GIMP_OBJECT (procedure)));
+block|g_print ("%s: %s\n", G_STRFUNC,                    gimp_object_get_name (procedure));
 endif|#
 directive|endif
 name|plug_in_actions_add_proc
@@ -1647,7 +1647,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: %s\n", G_STRFUNC,                    gimp_object_get_name (GIMP_OBJECT (procedure)));
+block|g_print ("%s: %s\n", G_STRFUNC,                    gimp_object_get_name (procedure));
 endif|#
 directive|endif
 name|action
@@ -1717,7 +1717,7 @@ decl_stmt|;
 if|#
 directive|if
 literal|0
-block|g_print ("%s: %s (%s)\n", G_STRFUNC,            gimp_object_get_name (GIMP_OBJECT (plug_in_proc)), menu_path);
+block|g_print ("%s: %s (%s)\n", G_STRFUNC,            gimp_object_get_name (plug_in_proc), menu_path);
 endif|#
 directive|endif
 name|locale_domain

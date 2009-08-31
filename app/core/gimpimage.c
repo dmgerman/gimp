@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b178df90103
+DECL|enum|__anon286f7d590103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b178df90203
+DECL|enum|__anon286f7d590203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5374,10 +5374,7 @@ name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)
@@ -5421,10 +5418,7 @@ name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)
@@ -5464,10 +5458,7 @@ name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)
@@ -5530,10 +5521,7 @@ name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)
@@ -5900,10 +5888,7 @@ name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -6013,10 +5998,7 @@ name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d1ffd0103
+DECL|enum|__anon2c6011860103
 block|{
 DECL|enumerator|INFO_CHANGED
 name|INFO_CHANGED
@@ -900,10 +900,7 @@ name|thumbnail
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1231,10 +1228,7 @@ name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1290,10 +1284,7 @@ name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -1306,10 +1297,7 @@ name|uri
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|local
-argument_list|)
 argument_list|)
 argument_list|)
 operator|==
@@ -1738,10 +1726,7 @@ condition|(
 operator|!
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 condition|)
 return|return

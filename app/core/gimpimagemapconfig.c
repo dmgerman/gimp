@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298639b60103
+DECL|enum|__anon2aa8977f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -427,10 +427,7 @@ name|name_a
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|a
-argument_list|)
 argument_list|)
 decl_stmt|;
 specifier|const
@@ -440,10 +437,7 @@ name|name_b
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|b
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if

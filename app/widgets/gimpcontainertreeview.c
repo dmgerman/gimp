@@ -3535,7 +3535,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2759945a0108
+DECL|struct|__anon2a17c2570108
 block|{
 DECL|member|view_size
 name|gint
@@ -4731,12 +4731,9 @@ name|real_name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|renderer
 operator|->
 name|viewable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_tree_store_set

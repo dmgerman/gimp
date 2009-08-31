@@ -2525,10 +2525,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|src
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

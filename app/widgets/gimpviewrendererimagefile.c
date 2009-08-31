@@ -560,10 +560,7 @@ condition|(
 operator|!
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 condition|)
 return|return
@@ -593,10 +590,7 @@ name|g_file_new_for_uri
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

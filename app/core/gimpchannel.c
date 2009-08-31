@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290147640103
+DECL|enum|__anon2c1aee100103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1768,10 +1768,7 @@ name|GIMP_IMAGE_QUICK_MASK_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)

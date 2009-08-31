@@ -633,10 +633,7 @@ name|name
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|plug_in
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|GError
@@ -972,10 +969,7 @@ name|name
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|plug_in
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|GError
@@ -1377,10 +1371,7 @@ name|name
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|plug_in
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|GError

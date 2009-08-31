@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1d3890103
+DECL|enum|__anon27592e460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -93,7 +93,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f1d3890203
+DECL|enum|__anon27592e460203
 block|{
 DECL|enumerator|INVALIDATE_PREVIEW
 name|INVALIDATE_PREVIEW
@@ -1413,10 +1413,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|)
 argument_list|)
 return|;

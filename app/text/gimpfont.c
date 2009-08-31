@@ -107,7 +107,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba734b0103
+DECL|enum|__anon278ce8660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -684,10 +684,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|font
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|font_desc
@@ -955,10 +952,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|font
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|DEBUGPRINT
@@ -1391,7 +1385,7 @@ comment|/* This is a table of scripts and corresponding short sample strings    
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27ba734b0208
+DECL|struct|__anon278ce8660208
 block|{
 DECL|member|script
 specifier|const

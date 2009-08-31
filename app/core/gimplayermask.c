@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f47380103
+DECL|enum|__anon29f6ebc30103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -932,10 +932,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

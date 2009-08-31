@@ -708,10 +708,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|image
-argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
@@ -901,10 +898,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -926,12 +920,9 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|layer
 operator|->
 name|mask
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1111,10 +1102,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1263,10 +1251,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

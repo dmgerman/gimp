@@ -1285,10 +1285,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|undo
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1309,10 +1306,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|redo
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1360,10 +1354,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|undo
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

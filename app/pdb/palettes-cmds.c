@@ -377,10 +377,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|palette
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -627,10 +624,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|palette
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

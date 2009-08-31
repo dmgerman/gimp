@@ -1574,10 +1574,7 @@ expr_stmt|;
 return|return
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|buffer
-argument_list|)
 argument_list|)
 return|;
 block|}
@@ -1742,10 +1739,7 @@ expr_stmt|;
 return|return
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|buffer
-argument_list|)
 argument_list|)
 return|;
 block|}
@@ -1885,10 +1879,7 @@ expr_stmt|;
 return|return
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|buffer
-argument_list|)
 argument_list|)
 return|;
 block|}
@@ -2293,10 +2284,7 @@ name|TRUE
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|undo
-argument_list|)
 argument_list|)
 argument_list|,
 name|gimp_context_get_opacity

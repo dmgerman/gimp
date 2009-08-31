@@ -1538,10 +1538,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|child
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1583,10 +1580,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|mask
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -3781,7 +3775,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (GIMP_OBJECT (group)),               x, y, width, height);
+block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (group),               x, y, width, height);
 endif|#
 directive|endif
 comment|/*  the layer stack's update signal speaks in image coordinates,    *  pass to the projection as-is.    */
@@ -3848,7 +3842,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (GIMP_OBJECT (group)),               x, y, width, height);
+block|g_printerr ("%s (%s) %d, %d (%d, %d)\n",               G_STRFUNC, gimp_object_get_name (group),               x, y, width, height);
 endif|#
 directive|endif
 comment|/*  the projection speaks in image coordinates, transform to layer    *  coordinates when emitting our own update signal.    */

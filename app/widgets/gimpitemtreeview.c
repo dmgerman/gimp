@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3758170103
+DECL|enum|__anon2ae53ea90103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -4855,10 +4855,7 @@ name|old_name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|item
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon289d188b0108
+DECL|struct|__anon2ad09a1b0108
 block|{
 DECL|member|name
 specifier|const
@@ -402,10 +402,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|closure
@@ -536,10 +533,7 @@ name|gimp
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 argument_list|,
 name|GTK_WIDGET
@@ -610,10 +604,7 @@ name|gimp
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -671,10 +662,7 @@ name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_recent_manager_remove_item
@@ -1137,10 +1125,7 @@ name|uri
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|gtk_recent_manager_remove_item
@@ -1262,10 +1247,7 @@ name|uri
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|imagefile
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|image
@@ -1372,12 +1354,9 @@ name|uri
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|display
 operator|->
 name|image
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if

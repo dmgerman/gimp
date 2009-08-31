@@ -223,7 +223,7 @@ block|{
 if|#
 directive|if
 literal|0
-block|g_printerr ("%s: invalidating %s\n", G_STRFUNC,               gimp_object_get_name (GIMP_OBJECT (renderer->viewable)));
+block|g_printerr ("%s: invalidating %s\n", G_STRFUNC,               gimp_object_get_name (renderer->viewable));
 endif|#
 directive|endif
 name|gimp_view_renderer_invalidate

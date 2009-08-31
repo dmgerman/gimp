@@ -5021,10 +5021,7 @@ name|string
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|xcf_write_string_check_error
@@ -5361,10 +5358,7 @@ name|string
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|channel
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|xcf_write_string_check_error
@@ -6890,7 +6884,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b43416d0108
+DECL|struct|__anon28cb84960108
 block|{
 DECL|member|info
 name|XcfInfo
@@ -7212,10 +7206,7 @@ operator|*
 operator|)
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|locked
@@ -7604,10 +7595,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|visible

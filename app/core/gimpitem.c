@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca96e30103
+DECL|enum|__anon2b968fbf0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -153,7 +153,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca96e30203
+DECL|enum|__anon2b968fbf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1717,10 +1717,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|item
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3304,10 +3301,7 @@ name|new_name
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|item
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)

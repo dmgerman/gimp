@@ -1299,7 +1299,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e9eb80103
+DECL|enum|__anon28bfa5860103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1313,7 +1313,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2e9eb80203
+DECL|enum|__anon28bfa5860203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -11143,12 +11143,9 @@ name|font
 condition|?
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|context
 operator|->
 name|font
-argument_list|)
 argument_list|)
 else|:
 name|NULL

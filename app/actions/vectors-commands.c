@@ -530,10 +530,7 @@ name|widget
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 argument_list|,
 name|_
@@ -2716,10 +2713,7 @@ name|new_name
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)

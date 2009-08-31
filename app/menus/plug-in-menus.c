@@ -854,10 +854,7 @@ literal|"register procedure: %s"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -969,10 +966,7 @@ literal|"unregister procedure: %s"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1097,10 +1091,7 @@ literal|"menu path added: %s (%s)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|plug_in_proc
-argument_list|)
 argument_list|)
 argument_list|,
 name|menu_path
@@ -1813,12 +1804,9 @@ name|strip
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|entry
 operator|->
 name|proc
-argument_list|)
 argument_list|)
 argument_list|,
 name|NULL

@@ -1512,10 +1512,7 @@ name|label
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry
@@ -1530,10 +1527,7 @@ name|tooltip
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry
