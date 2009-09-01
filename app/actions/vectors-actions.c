@@ -1072,11 +1072,6 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
-name|writable
-init|=
-name|FALSE
-decl_stmt|;
-name|gboolean
 name|dr_writable
 init|=
 name|FALSE
@@ -1179,14 +1174,6 @@ expr_stmt|;
 name|can_lock
 operator|=
 name|gimp_item_can_lock_content
-argument_list|(
-name|item
-argument_list|)
-expr_stmt|;
-name|writable
-operator|=
-operator|!
-name|gimp_item_is_content_locked
 argument_list|(
 name|item
 argument_list|)
@@ -1299,7 +1286,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"vectors-path-tool"
 argument_list|,
-name|writable
+name|vectors
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
