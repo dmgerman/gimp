@@ -300,7 +300,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon286f7d590103
+DECL|enum|__anon29112d930103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -388,7 +388,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon286f7d590203
+DECL|enum|__anon29112d930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4490,15 +4490,6 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|GIMP_VIEWABLE_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|invalidate_preview
-condition|)
 name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|parent_class

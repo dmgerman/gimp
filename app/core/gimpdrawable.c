@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abe88ad0103
+DECL|enum|__anon2756e2bc0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1447,15 +1447,6 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|GIMP_VIEWABLE_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|invalidate_preview
-condition|)
 name|GIMP_VIEWABLE_CLASS
 argument_list|(
 name|parent_class
