@@ -232,7 +232,6 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  set the drawable  */
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|layer
@@ -249,7 +248,6 @@ argument_list|,
 name|drawable
 argument_list|)
 expr_stmt|;
-comment|/*  add the layer to the image  */
 name|gimp_image_add_layer
 argument_list|(
 name|image
@@ -306,7 +304,6 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Start a floating selection anchoring undo  */
 name|gimp_image_undo_group_start
 argument_list|(
 name|image
@@ -325,7 +322,6 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-comment|/*  remove the floating selection  */
 name|gimp_image_remove_layer
 argument_list|(
 name|image
@@ -337,7 +333,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*  end the group undo  */
 name|gimp_image_undo_group_end
 argument_list|(
 name|image
@@ -429,7 +424,7 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
-comment|/*  Check if the floating layer belongs to a channel...  */
+comment|/*  Check if the floating layer belongs to a channel  */
 if|if
 condition|(
 name|GIMP_IS_CHANNEL
@@ -1358,7 +1353,6 @@ operator|&
 name|dr_off_y
 argument_list|)
 expr_stmt|;
-comment|/*  First restore what's behind the image if necessary,    *  then check for visibility    */
 if|if
 condition|(
 name|gimp_item_get_visible
@@ -1498,7 +1492,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  apply the fs with the undo specified by the value        *  passed to this function        */
 name|gimp_drawable_apply_region
 argument_list|(
 name|drawable
