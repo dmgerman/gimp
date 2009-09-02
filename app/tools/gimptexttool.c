@@ -2211,9 +2211,10 @@ literal|0
 operator|||
 name|x
 operator|>=
+name|gimp_item_get_width
+argument_list|(
 name|item
-operator|->
-name|width
+argument_list|)
 operator|||
 name|y
 operator|<
@@ -2221,9 +2222,10 @@ literal|0
 operator|||
 name|y
 operator|>=
+name|gimp_item_get_height
+argument_list|(
 name|item
-operator|->
-name|height
+argument_list|)
 condition|)
 block|{
 name|gimp_draw_tool_resume
