@@ -12189,7 +12189,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2ba6ad350103
+DECL|enum|__anon27e7c5880103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -27991,6 +27991,26 @@ name|sc
 operator|->
 name|tok
 operator|==
+name|TOK_EOF
+condition|)
+block|{
+name|s_return
+argument_list|(
+name|sc
+argument_list|,
+name|sc
+operator|->
+name|EOF_OBJ
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|sc
+operator|->
+name|tok
+operator|==
 name|TOK_RPAREN
 condition|)
 block|{
@@ -29480,7 +29500,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2ba6ad350208
+DECL|struct|__anon27e7c5880208
 specifier|static
 struct|struct
 block|{
@@ -29715,7 +29735,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2ba6ad350308
+DECL|struct|__anon27e7c5880308
 typedef|typedef
 struct|struct
 block|{
