@@ -3709,6 +3709,23 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
+comment|/*  invalidate the entire projection since the poition of            *  the children relative to each other might have changed            *  in a way that happens to leave the group's width and            *  height the same            */
+name|gimp_projectable_invalidate
+argument_list|(
+name|GIMP_PROJECTABLE
+argument_list|(
+name|group
+argument_list|)
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|)
+expr_stmt|;
 block|}
 if|if
 condition|(
