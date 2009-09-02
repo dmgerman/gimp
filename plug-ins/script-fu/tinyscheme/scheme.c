@@ -12189,7 +12189,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2b45127a0103
+DECL|enum|__anon2ba6ad350103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -29480,7 +29480,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2b45127a0208
+DECL|struct|__anon2ba6ad350208
 specifier|static
 struct|struct
 block|{
@@ -29715,7 +29715,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2b45127a0308
+DECL|struct|__anon2ba6ad350308
 typedef|typedef
 struct|struct
 block|{
@@ -32605,6 +32605,7 @@ end_function
 
 begin_function
 DECL|function|save_from_C_call (scheme * sc)
+specifier|static
 name|void
 name|save_from_C_call
 parameter_list|(
@@ -32668,6 +32669,7 @@ end_function
 
 begin_function
 DECL|function|restore_from_C_call (scheme * sc)
+specifier|static
 name|void
 name|restore_from_C_call
 parameter_list|(
