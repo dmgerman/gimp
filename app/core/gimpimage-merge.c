@@ -759,7 +759,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot merge down a group layer."
+literal|"Cannot merge down a layer group."
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -860,7 +860,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot merge down to a group layer."
+literal|"Cannot merge down to a layer group."
 argument_list|)
 argument_list|)
 expr_stmt|;

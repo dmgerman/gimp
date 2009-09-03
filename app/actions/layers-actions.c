@@ -400,7 +400,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"New _Group Layer..."
+literal|"New Layer _Group..."
 argument_list|)
 block|,
 name|NULL
@@ -409,7 +409,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Create a new group layer and add it to the image"
+literal|"Create a new layer group and add it to the image"
 argument_list|)
 block|,
 name|G_CALLBACK

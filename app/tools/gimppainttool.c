@@ -1135,7 +1135,7 @@ name|display
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot paint on group layers."
+literal|"Cannot paint on layer groups."
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -748,7 +748,7 @@ name|default_name
 operator|=
 name|_
 argument_list|(
-literal|"Group Layer"
+literal|"Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -757,7 +757,7 @@ name|rename_desc
 operator|=
 name|_
 argument_list|(
-literal|"Rename Group Layer"
+literal|"Rename Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -766,7 +766,7 @@ name|translate_desc
 operator|=
 name|_
 argument_list|(
-literal|"Move Group Layer"
+literal|"Move Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -775,7 +775,7 @@ name|scale_desc
 operator|=
 name|_
 argument_list|(
-literal|"Scale Group Layer"
+literal|"Scale Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -784,7 +784,7 @@ name|resize_desc
 operator|=
 name|_
 argument_list|(
-literal|"Resize Group Layer"
+literal|"Resize Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -793,7 +793,7 @@ name|flip_desc
 operator|=
 name|_
 argument_list|(
-literal|"Flip Group Layer"
+literal|"Flip Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -802,7 +802,7 @@ name|rotate_desc
 operator|=
 name|_
 argument_list|(
-literal|"Rotate Group Layer"
+literal|"Rotate Layer Group"
 argument_list|)
 expr_stmt|;
 name|item_class
@@ -811,7 +811,7 @@ name|transform_desc
 operator|=
 name|_
 argument_list|(
-literal|"Transform Group Layer"
+literal|"Transform Layer Group"
 argument_list|)
 expr_stmt|;
 name|drawable_class

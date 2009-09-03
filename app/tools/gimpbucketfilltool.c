@@ -481,7 +481,7 @@ name|GIMP_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot modify the pixels of group layers."
+literal|"Cannot modify the pixels of layer groups."
 argument_list|)
 argument_list|)
 expr_stmt|;
