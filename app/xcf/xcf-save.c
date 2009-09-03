@@ -5051,14 +5051,14 @@ argument_list|,
 name|error
 argument_list|)
 expr_stmt|;
-comment|/* save the current position which is where the hierarchy offset    *  will be stored.    */
+comment|/*  save the current position which is where the hierarchy offset    *  will be stored.    */
 name|saved_pos
 operator|=
 name|info
 operator|->
 name|cp
 expr_stmt|;
-comment|/* write out the layer tile hierarchy */
+comment|/*  write out the layer tile hierarchy  */
 name|xcf_check_error
 argument_list|(
 name|xcf_seek_pos
@@ -5121,6 +5121,7 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/*  save the current position which is where the layer mask offset    *  will be stored.    */
 name|saved_pos
 operator|=
 name|info
@@ -6884,7 +6885,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cb84960108
+DECL|struct|__anon2ab283310108
 block|{
 DECL|member|info
 name|XcfInfo
