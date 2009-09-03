@@ -400,7 +400,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"_New Group Layer..."
+literal|"New _Group Layer..."
 argument_list|)
 block|,
 name|NULL
