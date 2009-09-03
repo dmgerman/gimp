@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756e2bc0103
+DECL|enum|__anon28c9cebd0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3274,11 +3274,10 @@ name|tile_source_node
 argument_list|,
 literal|"tile-manager"
 argument_list|,
+name|gimp_drawable_get_tiles
+argument_list|(
 name|drawable
-operator|->
-name|private
-operator|->
-name|tiles
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -5087,11 +5086,10 @@ name|tile_source_node
 argument_list|,
 literal|"tile-manager"
 argument_list|,
+name|gimp_drawable_get_tiles
+argument_list|(
 name|drawable
-operator|->
-name|private
-operator|->
-name|tiles
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -6441,11 +6439,10 @@ literal|"gimp:tilemanager-source"
 argument_list|,
 literal|"tile-manager"
 argument_list|,
+name|gimp_drawable_get_tiles
+argument_list|(
 name|drawable
-operator|->
-name|private
-operator|->
-name|tiles
+argument_list|)
 argument_list|,
 literal|"linear"
 argument_list|,
