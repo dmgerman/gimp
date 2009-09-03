@@ -1436,7 +1436,7 @@ name|priv
 operator|->
 name|lock_alpha_toggle
 operator|=
-name|gtk_check_button_new
+name|gtk_toggle_button_new
 argument_list|()
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2303,7 +2303,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9515190108
+DECL|struct|__anon293160510108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2697,7 +2697,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9515190208
+DECL|struct|__anon293160510208
 block|{
 DECL|member|mask_column
 name|gint

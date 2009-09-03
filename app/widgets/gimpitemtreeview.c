@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae53ea90103
+DECL|enum|__anon27aac55c0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1890,7 +1890,7 @@ name|priv
 operator|->
 name|lock_content_toggle
 operator|=
-name|gtk_check_button_new
+name|gtk_toggle_button_new
 argument_list|()
 expr_stmt|;
 name|gtk_box_pack_start
