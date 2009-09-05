@@ -94,6 +94,10 @@ name|GimpImageDockClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * Adds some GimpImage specific hooks and logic to GimpDock.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpImageDock
 struct|struct

@@ -88,6 +88,10 @@ name|GimpDockSeparatorClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * Separates dockable and acts as drop-targets to allow rearrangements  * of them.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpDockSeparator
 struct|struct

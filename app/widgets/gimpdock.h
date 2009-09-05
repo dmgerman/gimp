@@ -103,6 +103,10 @@ name|GimpDockPriv
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * A top-level window containing GimpDockbooks.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpDock
 struct|struct

@@ -88,6 +88,10 @@ name|GimpDockbookClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * Holds GimpDockables which are presented on different tabs using  * GtkNotebook.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpDockbook
 struct|struct
