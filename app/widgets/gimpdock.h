@@ -95,11 +95,11 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDockPriv
+DECL|typedef|GimpDockPrivate
 typedef|typedef
 name|struct
-name|_GimpDockPriv
-name|GimpDockPriv
+name|_GimpDockPrivate
+name|GimpDockPrivate
 typedef|;
 end_typedef
 
@@ -116,10 +116,10 @@ DECL|member|parent_instance
 name|GimpWindow
 name|parent_instance
 decl_stmt|;
-DECL|member|priv
-name|GimpDockPriv
+DECL|member|p
+name|GimpDockPrivate
 modifier|*
-name|priv
+name|p
 decl_stmt|;
 block|}
 struct|;

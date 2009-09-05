@@ -141,7 +141,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2752c6f80103
+DECL|enum|__anon27d84f1f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2752c6f80203
+DECL|enum|__anon27d84f1f0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -172,9 +172,9 @@ enum|;
 end_enum
 
 begin_struct
-DECL|struct|_GimpDockPriv
+DECL|struct|_GimpDockPrivate
 struct|struct
-name|_GimpDockPriv
+name|_GimpDockPrivate
 block|{
 DECL|member|dialog_factory
 name|GimpDialogFactory
@@ -644,7 +644,7 @@ name|klass
 argument_list|,
 sizeof|sizeof
 argument_list|(
-name|GimpDockPriv
+name|GimpDockPrivate
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -678,7 +678,7 @@ name|name
 decl_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|=
 name|G_TYPE_INSTANCE_GET_PRIVATE
 argument_list|(
@@ -686,12 +686,12 @@ name|dock
 argument_list|,
 name|GIMP_TYPE_DOCK
 argument_list|,
-name|GimpDockPriv
+name|GimpDockPrivate
 argument_list|)
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 operator|=
@@ -699,7 +699,7 @@ name|NULL
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dialog_factory
 operator|=
@@ -707,7 +707,7 @@ name|NULL
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|=
@@ -715,7 +715,7 @@ name|NULL
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|ID
 operator|=
@@ -730,7 +730,7 @@ literal|"gimp-dock-%d"
 argument_list|,
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|ID
 argument_list|)
@@ -782,7 +782,7 @@ argument_list|)
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|main_vbox
 operator|=
@@ -802,7 +802,7 @@ argument_list|)
 argument_list|,
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|main_vbox
 argument_list|)
@@ -811,14 +811,14 @@ name|gtk_widget_show
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|main_vbox
 argument_list|)
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 operator|=
@@ -835,14 +835,14 @@ name|GTK_CONTAINER
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -851,7 +851,7 @@ name|gtk_widget_show
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -871,7 +871,7 @@ name|GTK_BOX
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -952,7 +952,7 @@ name|GIMP_IS_CONTEXT
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 argument_list|)
@@ -964,7 +964,7 @@ name|GIMP_IS_DIALOG_FACTORY
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dialog_factory
 argument_list|)
@@ -976,7 +976,7 @@ name|GIMP_GUI_CONFIG
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 operator|->
@@ -1045,7 +1045,7 @@ name|PROP_CONTEXT
 case|:
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 operator|=
@@ -1060,7 +1060,7 @@ name|PROP_DIALOG_FACTORY
 case|:
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dialog_factory
 operator|=
@@ -1130,7 +1130,7 @@ name|value
 argument_list|,
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 argument_list|)
@@ -1145,7 +1145,7 @@ name|value
 argument_list|,
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dialog_factory
 argument_list|)
@@ -1190,7 +1190,7 @@ while|while
 condition|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 condition|)
@@ -1202,7 +1202,7 @@ name|GIMP_DOCKBOOK
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|->
@@ -1214,7 +1214,7 @@ if|if
 condition|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 condition|)
@@ -1223,14 +1223,14 @@ name|g_object_unref
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 argument_list|)
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 operator|=
@@ -1287,7 +1287,7 @@ name|list
 operator|=
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|,
@@ -1543,7 +1543,7 @@ argument_list|(
 name|widget
 argument_list|)
 operator|->
-name|priv
+name|p
 operator|->
 name|ID
 argument_list|)
@@ -1624,7 +1624,7 @@ if|if
 condition|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|==
@@ -1817,7 +1817,7 @@ expr_stmt|;
 return|return
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|context
 return|;
@@ -1848,7 +1848,7 @@ expr_stmt|;
 return|return
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dialog_factory
 return|;
@@ -1879,7 +1879,7 @@ expr_stmt|;
 return|return
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 return|;
@@ -1910,7 +1910,7 @@ expr_stmt|;
 return|return
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|main_vbox
 return|;
@@ -1941,7 +1941,7 @@ expr_stmt|;
 return|return
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 return|;
@@ -1971,7 +1971,7 @@ expr_stmt|;
 return|return
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|ID
 return|;
@@ -2033,7 +2033,7 @@ name|GIMP_DOCKBOOK
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|->
@@ -2165,7 +2165,7 @@ name|g_list_length
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|)
@@ -2192,7 +2192,7 @@ name|dock
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|=
@@ -2200,7 +2200,7 @@ name|g_list_insert
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|,
@@ -2226,7 +2226,7 @@ name|GTK_BOX
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -2258,7 +2258,7 @@ name|GTK_BOX
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -2304,7 +2304,7 @@ name|g_list_nth_data
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|,
@@ -2320,7 +2320,7 @@ name|g_list_nth_data
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|,
@@ -2589,7 +2589,7 @@ name|g_list_length
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|)
@@ -2600,7 +2600,7 @@ name|g_list_index
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|,
@@ -2615,7 +2615,7 @@ name|NULL
 expr_stmt|;
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 operator|=
@@ -2623,7 +2623,7 @@ name|g_list_remove
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|dockbooks
 argument_list|,
@@ -2658,7 +2658,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -2679,7 +2679,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -2693,7 +2693,7 @@ name|GTK_CONTAINER
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
@@ -2834,7 +2834,7 @@ name|GTK_BOX
 argument_list|(
 name|dock
 operator|->
-name|priv
+name|p
 operator|->
 name|vbox
 argument_list|)
