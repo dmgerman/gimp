@@ -62,7 +62,7 @@ literal|"Unit Tested GIMP"
 argument_list|,
 name|NULL
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|TRUE
 argument_list|,
