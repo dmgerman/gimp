@@ -3264,7 +3264,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Group Layer"
+literal|"Layer Group"
 argument_list|)
 argument_list|)
 expr_stmt|;
