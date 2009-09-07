@@ -142,6 +142,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_item_stack_is_flat
+parameter_list|(
+name|GimpItemStack
+modifier|*
+name|stack
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GList
 modifier|*
 name|gimp_item_stack_get_item_iter
