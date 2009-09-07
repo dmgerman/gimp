@@ -2509,6 +2509,9 @@ argument_list|(
 literal|"layers-new-group"
 argument_list|,
 name|image
+operator|&&
+operator|!
+name|indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
