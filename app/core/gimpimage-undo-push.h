@@ -587,6 +587,52 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  group layer undos  */
+end_comment
+
+begin_function_decl
+name|GimpUndo
+modifier|*
+name|gimp_image_undo_push_group_layer_suspend
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GimpGroupLayer
+modifier|*
+name|group
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpUndo
+modifier|*
+name|gimp_image_undo_push_group_layer_resume
+parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|undo_desc
+parameter_list|,
+name|GimpGroupLayer
+modifier|*
+name|group
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  text layer undos  */
 end_comment
 

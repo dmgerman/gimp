@@ -4461,6 +4461,22 @@ literal|"layer-lock-alpha"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_LAYER_SUSPEND
+block|,
+literal|"GIMP_UNDO_GROUP_LAYER_SUSPEND"
+block|,
+literal|"group-layer-suspend"
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_RESUME
+block|,
+literal|"GIMP_UNDO_GROUP_LAYER_RESUME"
+block|,
+literal|"group-layer-resume"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_TEXT_LAYER
 block|,
 literal|"GIMP_UNDO_TEXT_LAYER"
@@ -5401,6 +5417,32 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Lock/Unlock alpha channel"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_SUSPEND
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Suspend group layer resize"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_RESUME
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Resume group layer resize"
 argument_list|)
 block|,
 name|NULL

@@ -609,6 +609,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpGroupLayerUndo
+typedef|typedef
+name|struct
+name|_GimpGroupLayerUndo
+name|GimpGroupLayerUndo
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpMaskUndo
 typedef|typedef
 name|struct
