@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be61d6d0108
+DECL|struct|__anon2bf843210108
 block|{
 DECL|member|image
 name|GimpImage
@@ -120,8 +120,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function
-DECL|function|main (int argc,char ** argv)
 name|int
+DECL|function|main (int argc,char ** argv)
 name|main
 parameter_list|(
 name|int
