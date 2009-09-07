@@ -21,7 +21,8 @@ name|Gimp
 modifier|*
 name|gimp_init_for_testing
 parameter_list|(
-name|void
+name|gboolean
+name|use_cpu_accel
 parameter_list|)
 function_decl|;
 end_function_decl

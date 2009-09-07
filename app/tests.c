@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"base/base.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"config/gimpbaseconfig.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -46,10 +58,11 @@ end_comment
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_init_for_testing (void)
+DECL|function|gimp_init_for_testing (gboolean use_cpu_accel)
 name|gimp_init_for_testing
 parameter_list|(
-name|void
+name|gboolean
+name|use_cpu_accel
 parameter_list|)
 block|{
 name|Gimp
@@ -91,6 +104,20 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|base_init
+argument_list|(
+name|GIMP_BASE_CONFIG
+argument_list|(
+name|gimp
+operator|->
+name|config
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|,
+name|use_cpu_accel
 argument_list|)
 expr_stmt|;
 return|return

@@ -50,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf843210108
+DECL|struct|__anon27935f900108
 block|{
 DECL|member|image
 name|GimpImage
@@ -133,6 +133,11 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;
@@ -151,7 +156,9 @@ comment|/* We share the same application instance across all tests */
 name|gimp
 operator|=
 name|gimp_init_for_testing
-argument_list|()
+argument_list|(
+name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/* Setup the tests */
 name|g_test_add
