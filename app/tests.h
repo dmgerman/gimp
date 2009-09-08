@@ -27,6 +27,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|Gimp
+modifier|*
+name|gimp_init_for_gui_testing
+parameter_list|(
+name|gboolean
+name|use_cpu_accel
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
