@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d90e5b0103
+DECL|enum|__anon2c616f020103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d90e5b0203
+DECL|enum|__anon2c616f020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4053,11 +4053,19 @@ name|src_type
 argument_list|)
 decl_stmt|;
 name|gboolean
-name|alpha
+name|src_alpha
 init|=
 name|GIMP_IMAGE_TYPE_HAS_ALPHA
 argument_list|(
 name|src_type
+argument_list|)
+decl_stmt|;
+name|gboolean
+name|dest_alpha
+init|=
+name|GIMP_IMAGE_TYPE_HAS_ALPHA
+argument_list|(
+name|dest_type
 argument_list|)
 decl_stmt|;
 name|gpointer
@@ -4163,7 +4171,10 @@ argument_list|,
 name|s
 argument_list|)
 expr_stmt|;
-comment|/*  alpha channel  */
+if|if
+condition|(
+name|dest_alpha
+condition|)
 name|d
 index|[
 name|destPR
@@ -4174,7 +4185,7 @@ literal|1
 index|]
 operator|=
 operator|(
-name|alpha
+name|src_alpha
 condition|?
 name|s
 index|[
