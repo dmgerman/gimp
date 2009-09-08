@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bb184a0103
+DECL|enum|__anon2ba5cad20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bb184a0208
+DECL|struct|__anon2ba5cad20208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bb184a0308
+DECL|struct|__anon2ba5cad20308
 block|{
 DECL|member|records
 name|GArray
@@ -1927,7 +1927,6 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-operator|!
 name|gimp_xml_parser_parse_file
 argument_list|(
 name|xml_parser
@@ -1938,14 +1937,6 @@ operator|&
 name|error
 argument_list|)
 condition|)
-block|{
-name|g_printerr
-argument_list|(
-literal|"Failed to parse tag cache.\n"
-argument_list|)
-expr_stmt|;
-block|}
-else|else
 block|{
 name|cache
 operator|->
@@ -1972,6 +1963,22 @@ operator|.
 name|records
 operator|->
 name|len
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|g_printerr
+argument_list|(
+literal|"Failed to parse tag cache: %s\n"
+argument_list|,
+name|error
+condition|?
+name|error
+operator|->
+name|message
+else|:
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
