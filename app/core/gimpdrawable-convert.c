@@ -87,7 +87,7 @@ decl_stmt|;
 name|GimpImageType
 name|type
 decl_stmt|;
-name|gint
+name|gboolean
 name|has_alpha
 decl_stmt|;
 specifier|const
