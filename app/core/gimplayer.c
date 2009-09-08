@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c616f020103
+DECL|enum|__anon2793f5440103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c616f020203
+DECL|enum|__anon2793f5440203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2235,6 +2235,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_layer_can_lock_alpha
+argument_list|(
+name|new_layer
+argument_list|)
+condition|)
 name|gimp_layer_set_lock_alpha
 argument_list|(
 name|new_layer
