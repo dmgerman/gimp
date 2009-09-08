@@ -27,9 +27,6 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|new_tiles
-parameter_list|,
-name|GimpImageBaseType
-name|old_base_type
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -45,9 +42,6 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|new_tiles
-parameter_list|,
-name|GimpImageBaseType
-name|old_base_type
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -51,9 +51,15 @@ directive|include
 file|"gimpdrawable-convert.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimage.h"
+end_include
+
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_tiles_rgb (GimpDrawable * drawable,TileManager * new_tiles,GimpImageBaseType old_base_type)
+DECL|function|gimp_drawable_convert_tiles_rgb (GimpDrawable * drawable,TileManager * new_tiles)
 name|gimp_drawable_convert_tiles_rgb
 parameter_list|(
 name|GimpDrawable
@@ -63,9 +69,6 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|new_tiles
-parameter_list|,
-name|GimpImageBaseType
-name|old_base_type
 parameter_list|)
 block|{
 name|PixelRegion
@@ -80,6 +83,9 @@ name|col
 decl_stmt|;
 name|gint
 name|offset
+decl_stmt|;
+name|GimpImageType
+name|type
 decl_stmt|;
 name|gint
 name|has_alpha
@@ -120,6 +126,13 @@ argument_list|(
 name|new_tiles
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|type
+operator|=
+name|gimp_drawable_type
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -217,7 +230,10 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|old_base_type
+name|GIMP_IMAGE_TYPE_BASE_TYPE
+argument_list|(
+name|type
+argument_list|)
 condition|)
 block|{
 case|case
@@ -527,7 +543,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_tiles_grayscale (GimpDrawable * drawable,TileManager * new_tiles,GimpImageBaseType old_base_type)
+DECL|function|gimp_drawable_convert_tiles_grayscale (GimpDrawable * drawable,TileManager * new_tiles)
 name|gimp_drawable_convert_tiles_grayscale
 parameter_list|(
 name|GimpDrawable
@@ -537,9 +553,6 @@ parameter_list|,
 name|TileManager
 modifier|*
 name|new_tiles
-parameter_list|,
-name|GimpImageBaseType
-name|old_base_type
 parameter_list|)
 block|{
 name|PixelRegion
@@ -556,6 +569,9 @@ name|gint
 name|offset
 decl_stmt|,
 name|val
+decl_stmt|;
+name|GimpImageType
+name|type
 decl_stmt|;
 name|gboolean
 name|has_alpha
@@ -596,6 +612,13 @@ argument_list|(
 name|new_tiles
 operator|!=
 name|NULL
+argument_list|)
+expr_stmt|;
+name|type
+operator|=
+name|gimp_drawable_type
+argument_list|(
+name|drawable
 argument_list|)
 expr_stmt|;
 name|has_alpha
@@ -693,7 +716,10 @@ argument_list|)
 expr_stmt|;
 switch|switch
 condition|(
-name|old_base_type
+name|GIMP_IMAGE_TYPE_BASE_TYPE
+argument_list|(
+name|type
+argument_list|)
 condition|)
 block|{
 case|case

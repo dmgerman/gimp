@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0f21a50103
+DECL|enum|__anon27dc23f40103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2058,24 +2058,13 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GimpImageBaseType
-name|old_base_type
-decl_stmt|;
-name|old_base_type
-operator|=
-name|GIMP_IMAGE_TYPE_BASE_TYPE
-argument_list|(
-name|gimp_drawable_type
+if|if
+condition|(
+operator|!
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|old_base_type
-operator|!=
-name|GIMP_GRAY
 condition|)
 block|{
 name|TileManager
@@ -2126,8 +2115,6 @@ argument_list|(
 name|drawable
 argument_list|,
 name|new_tiles
-argument_list|,
-name|old_base_type
 argument_list|)
 expr_stmt|;
 name|gimp_drawable_set_tiles

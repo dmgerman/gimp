@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28efbe9d0103
+DECL|enum|__anon29c631970103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28efbe9d0203
+DECL|enum|__anon29c631970203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2424,8 +2424,6 @@ argument_list|(
 name|drawable
 argument_list|,
 name|new_tiles
-argument_list|,
-name|old_base_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -2437,8 +2435,6 @@ argument_list|(
 name|drawable
 argument_list|,
 name|new_tiles
-argument_list|,
-name|old_base_type
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6134,22 +6130,13 @@ name|copy_tiles
 init|=
 name|NULL
 decl_stmt|;
-name|GimpImageType
-name|layer_type
-init|=
-name|gimp_drawable_type
+if|if
+condition|(
+operator|!
+name|gimp_drawable_is_gray
 argument_list|(
 name|drawable
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|GIMP_IMAGE_TYPE_BASE_TYPE
-argument_list|(
-name|layer_type
-argument_list|)
-operator|!=
-name|GIMP_GRAY
 condition|)
 block|{
 name|GimpImageType
@@ -6158,9 +6145,9 @@ decl_stmt|;
 name|copy_type
 operator|=
 operator|(
-name|GIMP_IMAGE_TYPE_HAS_ALPHA
+name|gimp_drawable_has_alpha
 argument_list|(
-name|layer_type
+name|drawable
 argument_list|)
 condition|?
 name|GIMP_GRAYA_IMAGE
@@ -6193,11 +6180,6 @@ argument_list|(
 name|drawable
 argument_list|,
 name|copy_tiles
-argument_list|,
-name|GIMP_IMAGE_TYPE_BASE_TYPE
-argument_list|(
-name|layer_type
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|pixel_region_init
