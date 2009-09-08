@@ -407,7 +407,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2b302ee10103
+DECL|enum|__anon2bb05fb40103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1448,7 +1448,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b302ee10208
+DECL|struct|__anon2bb05fb40208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1691,7 +1691,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b302ee10308
+DECL|struct|__anon2bb05fb40308
 block|{
 DECL|member|used_count
 name|signed
@@ -3539,7 +3539,7 @@ block|{
 case|case
 name|GIMP_RGB
 case|:
-name|gimp_drawable_convert_rgb
+name|gimp_drawable_convert_tiles_rgb
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
@@ -3555,7 +3555,7 @@ break|break;
 case|case
 name|GIMP_GRAY
 case|:
-name|gimp_drawable_convert_grayscale
+name|gimp_drawable_convert_tiles_grayscale
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

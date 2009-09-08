@@ -53,8 +53,8 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_rgb (GimpDrawable * drawable,TileManager * new_tiles,GimpImageBaseType old_base_type)
-name|gimp_drawable_convert_rgb
+DECL|function|gimp_drawable_convert_tiles_rgb (GimpDrawable * drawable,TileManager * new_tiles,GimpImageBaseType old_base_type)
+name|gimp_drawable_convert_tiles_rgb
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -527,8 +527,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_grayscale (GimpDrawable * drawable,TileManager * new_tiles,GimpImageBaseType old_base_type)
-name|gimp_drawable_convert_grayscale
+DECL|function|gimp_drawable_convert_tiles_grayscale (GimpDrawable * drawable,TileManager * new_tiles,GimpImageBaseType old_base_type)
+name|gimp_drawable_convert_tiles_grayscale
 parameter_list|(
 name|GimpDrawable
 modifier|*

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b62d130103
+DECL|enum|__anon28efbe9d0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b62d130203
+DECL|enum|__anon28efbe9d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2419,7 +2419,7 @@ block|{
 case|case
 name|GIMP_RGB
 case|:
-name|gimp_drawable_convert_rgb
+name|gimp_drawable_convert_tiles_rgb
 argument_list|(
 name|drawable
 argument_list|,
@@ -2432,7 +2432,7 @@ break|break;
 case|case
 name|GIMP_GRAY
 case|:
-name|gimp_drawable_convert_grayscale
+name|gimp_drawable_convert_tiles_grayscale
 argument_list|(
 name|drawable
 argument_list|,
@@ -6188,7 +6188,7 @@ name|copy_type
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_convert_grayscale
+name|gimp_drawable_convert_tiles_grayscale
 argument_list|(
 name|drawable
 argument_list|,

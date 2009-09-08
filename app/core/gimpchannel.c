@@ -203,7 +203,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1aee100103
+DECL|enum|__anon2b0f21a50103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2121,7 +2121,7 @@ name|new_type
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_convert_grayscale
+name|gimp_drawable_convert_tiles_grayscale
 argument_list|(
 name|drawable
 argument_list|,

@@ -18,7 +18,7 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_drawable_convert_rgb
+name|gimp_drawable_convert_tiles_rgb
 parameter_list|(
 name|GimpDrawable
 modifier|*
@@ -36,7 +36,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_drawable_convert_grayscale
+name|gimp_drawable_convert_tiles_grayscale
 parameter_list|(
 name|GimpDrawable
 modifier|*
