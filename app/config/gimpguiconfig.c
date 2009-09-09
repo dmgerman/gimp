@@ -76,55 +76,9 @@ define|\
 value|"http://docs.gimp.org/" GIMP_APP_VERSION_STRING
 end_define
 
-begin_ifdef
-ifdef|#
-directive|ifdef
-name|G_OS_WIN32
-end_ifdef
-
-begin_define
-DECL|macro|DEFAULT_WEB_BROWSER
-define|#
-directive|define
-name|DEFAULT_WEB_BROWSER
-value|"not used on Windows"
-end_define
-
-begin_elif
-elif|#
-directive|elif
-name|PLATFORM_OSX
-end_elif
-
-begin_define
-DECL|macro|DEFAULT_WEB_BROWSER
-define|#
-directive|define
-name|DEFAULT_WEB_BROWSER
-value|"open %s"
-end_define
-
-begin_else
-else|#
-directive|else
-end_else
-
-begin_define
-DECL|macro|DEFAULT_WEB_BROWSER
-define|#
-directive|define
-name|DEFAULT_WEB_BROWSER
-value|"xdg-open %s"
-end_define
-
-begin_endif
-endif|#
-directive|endif
-end_endif
-
 begin_enum
 enum|enum
-DECL|enum|__anon2ae436930103
+DECL|enum|__anon27f305760103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -204,9 +158,6 @@ block|,
 DECL|enumerator|PROP_HELP_BROWSER
 name|PROP_HELP_BROWSER
 block|,
-DECL|enumerator|PROP_WEB_BROWSER
-name|PROP_WEB_BROWSER
-block|,
 DECL|enumerator|PROP_USER_MANUAL_ONLINE
 name|PROP_USER_MANUAL_ONLINE
 block|,
@@ -237,7 +188,8 @@ name|PROP_TOOLBOX_WINDOW_HINT
 block|,
 DECL|enumerator|PROP_TRANSIENT_DOCKS
 name|PROP_TRANSIENT_DOCKS
-block|}
+name|PROP_WEB_BROWSER
+block|, }
 enum|;
 end_enum
 
@@ -960,7 +912,7 @@ name|NULL
 argument_list|,
 name|GIMP_CONFIG_PATH_FILE
 argument_list|,
-name|DEFAULT_WEB_BROWSER
+literal|"not used any longer"
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 operator||
