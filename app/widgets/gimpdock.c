@@ -141,7 +141,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d84f1f0103
+DECL|enum|__anon28dca7110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -157,7 +157,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d84f1f0203
+DECL|enum|__anon28dca7110203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -359,7 +359,7 @@ argument|GimpDock
 argument_list|,
 argument|gimp_dock
 argument_list|,
-argument|GIMP_TYPE_WINDOW
+argument|GIMP_TYPE_DOCK_WINDOW
 argument_list|)
 end_macro
 

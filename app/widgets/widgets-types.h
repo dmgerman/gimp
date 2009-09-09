@@ -102,6 +102,15 @@ comment|/* not a dock */
 end_comment
 
 begin_typedef
+DECL|typedef|GimpDockWindow
+typedef|typedef
+name|struct
+name|_GimpDockWindow
+name|GimpDockWindow
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpImageDock
 typedef|typedef
 name|struct
