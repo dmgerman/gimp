@@ -215,10 +215,6 @@ name|gchar
 modifier|*
 name|user_manual_online_uri
 decl_stmt|;
-DECL|member|toolbox_window_hint
-name|GimpWindowHint
-name|toolbox_window_hint
-decl_stmt|;
 DECL|member|dock_window_hint
 name|GimpWindowHint
 name|dock_window_hint

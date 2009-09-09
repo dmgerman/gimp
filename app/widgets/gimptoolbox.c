@@ -913,7 +913,7 @@ argument_list|)
 argument_list|,
 name|config
 operator|->
-name|toolbox_window_hint
+name|dock_window_hint
 argument_list|)
 expr_stmt|;
 name|main_vbox

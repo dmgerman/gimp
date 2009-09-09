@@ -268,7 +268,7 @@ define|#
 directive|define
 name|DOCK_WINDOW_HINT_BLURB
 define|\
-value|N_("The window type hint that is set on dock windows. This may affect " \    "the way your window manager decorates and handles dock windows.")
+value|N_("The window type hint that is set on dock windows and the toolbox " \    "window. This may affect the way your window manager decorates and " \    "handles these windows.")
 end_define
 
 begin_define
@@ -1007,15 +1007,6 @@ directive|define
 name|TOOLBOX_WILBER_BLURB
 define|\
 value|"Show the GIMP mascot at the top of the toolbox."
-end_define
-
-begin_define
-DECL|macro|TOOLBOX_WINDOW_HINT_BLURB
-define|#
-directive|define
-name|TOOLBOX_WINDOW_HINT_BLURB
-define|\
-value|N_("The window type hint that is set on the toolbox. This may affect " \    "how your window manager decorates and handles the toolbox window.")
 end_define
 
 begin_define
