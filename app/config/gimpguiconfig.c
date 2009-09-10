@@ -78,7 +78,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f305760103
+DECL|enum|__anon2c0b6a730103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,8 +188,10 @@ name|PROP_TOOLBOX_WINDOW_HINT
 block|,
 DECL|enumerator|PROP_TRANSIENT_DOCKS
 name|PROP_TRANSIENT_DOCKS
+block|,
+DECL|enumerator|PROP_WEB_BROWSER
 name|PROP_WEB_BROWSER
-block|, }
+block|}
 enum|;
 end_enum
 
