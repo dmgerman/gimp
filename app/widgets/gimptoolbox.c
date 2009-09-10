@@ -2902,6 +2902,10 @@ argument_list|(
 literal|"Toolbox"
 argument_list|)
 argument_list|,
+literal|"gimp-context"
+argument_list|,
+name|context
+argument_list|,
 literal|"context"
 argument_list|,
 name|context

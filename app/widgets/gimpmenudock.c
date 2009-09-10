@@ -1681,6 +1681,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_MENU_DOCK
 argument_list|,
+literal|"gimp-context"
+argument_list|,
+name|context
+argument_list|,
 literal|"context"
 argument_list|,
 name|context
