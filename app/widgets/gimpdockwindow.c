@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276f05cd0103
+DECL|enum|__anon29db32dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -303,6 +303,26 @@ operator|->
 name|context
 operator|=
 name|NULL
+expr_stmt|;
+name|gtk_window_set_resizable
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_focus_on_map
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
 expr_stmt|;
 block|}
 end_function
