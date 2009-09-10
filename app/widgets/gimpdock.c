@@ -129,7 +129,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afd25b10103
+DECL|enum|__anon28eb77070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -145,7 +145,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afd25b10203
+DECL|enum|__anon28eb77070203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -711,16 +711,6 @@ expr_stmt|;
 name|g_free
 argument_list|(
 name|name
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_role
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|dock
-argument_list|)
-argument_list|,
-literal|"gimp-dock"
 argument_list|)
 expr_stmt|;
 name|dock

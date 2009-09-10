@@ -787,16 +787,6 @@ modifier|*
 name|toolbox
 parameter_list|)
 block|{
-name|gtk_window_set_role
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|toolbox
-argument_list|)
-argument_list|,
-literal|"gimp-toolbox"
-argument_list|)
-expr_stmt|;
 name|gimp_help_connect
 argument_list|(
 name|GTK_WIDGET
@@ -2889,6 +2879,10 @@ name|_
 argument_list|(
 literal|"Toolbox"
 argument_list|)
+argument_list|,
+literal|"role"
+argument_list|,
+literal|"gimp-toolbox"
 argument_list|,
 literal|"gimp-context"
 argument_list|,
