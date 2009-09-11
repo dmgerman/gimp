@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdrawable-convert.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimperror.h"
 end_include
 
@@ -203,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd54e320103
+DECL|enum|__anon2b0556bd0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -2067,9 +2061,13 @@ name|drawable
 argument_list|)
 condition|)
 block|{
-name|gimp_drawable_convert_grayscale
+name|gimp_drawable_convert_type
 argument_list|(
 name|drawable
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_GRAY
 argument_list|)
 expr_stmt|;
 block|}
