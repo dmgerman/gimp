@@ -1660,6 +1660,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* Create a separate context per dock so that docks can be bound to    * a specific image and does not necessarily have to follow the    * active image in the user context    */
 name|context
 operator|=
 name|gimp_context_new
