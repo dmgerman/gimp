@@ -161,7 +161,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bda90fb0103
+DECL|enum|__anon2a31a9c90103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1809,16 +1809,15 @@ operator|->
 name|dock
 argument_list|)
 operator|&&
+name|gimp_image_dock_get_ui_manager
+argument_list|(
 name|GIMP_IMAGE_DOCK
 argument_list|(
 name|dockbook
 operator|->
 name|dock
 argument_list|)
-operator|->
-name|ui_manager
-operator|!=
-name|NULL
+argument_list|)
 condition|)
 block|{
 specifier|const
@@ -1851,14 +1850,15 @@ name|group
 operator|=
 name|gimp_ui_manager_get_action_group
 argument_list|(
+name|gimp_image_dock_get_ui_manager
+argument_list|(
 name|GIMP_IMAGE_DOCK
 argument_list|(
 name|dockbook
 operator|->
 name|dock
 argument_list|)
-operator|->
-name|ui_manager
+argument_list|)
 argument_list|,
 literal|"dialogs"
 argument_list|)

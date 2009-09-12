@@ -682,5 +682,34 @@ block|}
 block|}
 end_function
 
+begin_function
+name|GimpUIManager
+modifier|*
+DECL|function|gimp_image_dock_get_ui_manager (GimpImageDock * image_dock)
+name|gimp_image_dock_get_ui_manager
+parameter_list|(
+name|GimpImageDock
+modifier|*
+name|image_dock
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE_DOCK
+argument_list|(
+name|image_dock
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|image_dock
+operator|->
+name|ui_manager
+return|;
+block|}
+end_function
+
 end_unit
 

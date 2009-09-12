@@ -149,6 +149,18 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|GimpUIManager
+modifier|*
+name|gimp_image_dock_get_ui_manager
+parameter_list|(
+name|GimpImageDock
+modifier|*
+name|image_dock
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
