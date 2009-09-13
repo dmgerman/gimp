@@ -429,6 +429,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3149,7 +3152,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type)
+DECL|function|gimp_group_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,gboolean push_undo)
 name|gimp_group_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3162,6 +3165,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpGroupLayer
@@ -3180,6 +3186,33 @@ decl_stmt|;
 name|GimpImageType
 name|new_type
 decl_stmt|;
+if|if
+condition|(
+name|push_undo
+condition|)
+block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|group
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|gimp_image_undo_push_group_layer_convert
+argument_list|(
+name|image
+argument_list|,
+name|NULL
+argument_list|,
+name|group
+argument_list|)
+expr_stmt|;
+block|}
 name|new_type
 operator|=
 name|GIMP_IMAGE_TYPE_FROM_BASE_TYPE

@@ -248,6 +248,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 DECL|member|apply_region
@@ -617,6 +620,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

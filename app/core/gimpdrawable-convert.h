@@ -23,6 +23,9 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -34,6 +37,9 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl

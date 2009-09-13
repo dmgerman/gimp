@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a29003a0103
+DECL|enum|__anon2b65b2a60103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a29003a0203
+DECL|enum|__anon2b65b2a60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -702,6 +702,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2401,6 +2404,8 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_base_type
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3704,7 +3709,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type)
+DECL|function|gimp_layer_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,gboolean push_undo)
 name|gimp_layer_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3717,6 +3722,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 switch|switch
@@ -3742,6 +3750,8 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_base_type
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3885,13 +3895,7 @@ name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
 argument_list|,
-name|gimp_item_is_attached
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
+name|push_undo
 argument_list|,
 name|NULL
 argument_list|,

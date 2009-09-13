@@ -4477,6 +4477,14 @@ literal|"group-layer-resume"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_GROUP_LAYER_CONVERT
+block|,
+literal|"GIMP_UNDO_GROUP_LAYER_CONVERT"
+block|,
+literal|"group-layer-convert"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_TEXT_LAYER
 block|,
 literal|"GIMP_UNDO_TEXT_LAYER"
@@ -5443,6 +5451,19 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Resume group layer resize"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_UNDO_GROUP_LAYER_CONVERT
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Convert group layer"
 argument_list|)
 block|,
 name|NULL

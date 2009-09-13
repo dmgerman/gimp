@@ -59,12 +59,15 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_rgb (GimpDrawable * drawable)
+DECL|function|gimp_drawable_convert_rgb (GimpDrawable * drawable,gboolean push_undo)
 name|gimp_drawable_convert_rgb
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImageType
@@ -146,13 +149,7 @@ name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
 argument_list|,
-name|gimp_item_is_attached
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
+name|push_undo
 argument_list|,
 name|NULL
 argument_list|,
@@ -171,12 +168,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_grayscale (GimpDrawable * drawable)
+DECL|function|gimp_drawable_convert_grayscale (GimpDrawable * drawable,gboolean push_undo)
 name|gimp_drawable_convert_grayscale
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImageType
@@ -258,13 +258,7 @@ name|gimp_drawable_set_tiles
 argument_list|(
 name|drawable
 argument_list|,
-name|gimp_item_is_attached
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|drawable
-argument_list|)
-argument_list|)
+name|push_undo
 argument_list|,
 name|NULL
 argument_list|,

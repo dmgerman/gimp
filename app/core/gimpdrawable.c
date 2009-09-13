@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2926a9510103
+DECL|enum|__anon2936dd340103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -538,6 +538,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -3088,7 +3091,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type)
+DECL|function|gimp_drawable_real_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,gboolean push_undo)
 name|gimp_drawable_real_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -3101,6 +3104,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3121,6 +3127,8 @@ case|:
 name|gimp_drawable_convert_rgb
 argument_list|(
 name|drawable
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3130,6 +3138,8 @@ case|:
 name|gimp_drawable_convert_grayscale
 argument_list|(
 name|drawable
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5374,7 +5384,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type)
+DECL|function|gimp_drawable_convert_type (GimpDrawable * drawable,GimpImage * dest_image,GimpImageBaseType new_base_type,gboolean push_undo)
 name|gimp_drawable_convert_type
 parameter_list|(
 name|GimpDrawable
@@ -5387,6 +5397,9 @@ name|dest_image
 parameter_list|,
 name|GimpImageBaseType
 name|new_base_type
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|)
 block|{
 name|GimpImageType
@@ -5424,6 +5437,21 @@ name|dest_image
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gimp_item_is_attached
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+condition|)
+name|push_undo
+operator|=
+name|FALSE
+expr_stmt|;
 name|type
 operator|=
 name|gimp_drawable_type
@@ -5453,6 +5481,8 @@ argument_list|,
 name|dest_image
 argument_list|,
 name|new_base_type
+argument_list|,
+name|push_undo
 argument_list|)
 expr_stmt|;
 block|}
