@@ -131,10 +131,6 @@ name|GtkWidget
 modifier|*
 name|auto_button
 decl_stmt|;
-DECL|member|update_title_idle_id
-name|guint
-name|update_title_idle_id
-decl_stmt|;
 block|}
 struct|;
 end_struct

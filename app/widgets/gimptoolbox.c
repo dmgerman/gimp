@@ -302,6 +302,19 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|gchar
+modifier|*
+name|gimp_toolbox_get_title
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|void
 name|gimp_toolbox_book_added
 parameter_list|(
@@ -705,6 +718,12 @@ operator|->
 name|expose_event
 operator|=
 name|gimp_toolbox_expose_event
+expr_stmt|;
+name|dock_class
+operator|->
+name|get_title
+operator|=
+name|gimp_toolbox_get_title
 expr_stmt|;
 name|dock_class
 operator|->
@@ -2509,6 +2528,30 @@ end_function
 
 begin_function
 specifier|static
+name|gchar
+modifier|*
+DECL|function|gimp_toolbox_get_title (GimpDock * dock)
+name|gimp_toolbox_get_title
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+block|{
+return|return
+name|g_strdup
+argument_list|(
+name|_
+argument_list|(
+literal|"Toolbox"
+argument_list|)
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|void
 DECL|function|gimp_toolbox_book_added (GimpDock * dock,GimpDockbook * dockbook)
 name|gimp_toolbox_book_added
@@ -2857,13 +2900,6 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_TOOLBOX
-argument_list|,
-literal|"title"
-argument_list|,
-name|_
-argument_list|(
-literal|"Toolbox"
-argument_list|)
 argument_list|,
 literal|"role"
 argument_list|,
