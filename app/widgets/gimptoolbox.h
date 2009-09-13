@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimagedock.h"
+file|"gimpdock.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpToolbox
 block|{
 DECL|member|parent_instance
-name|GimpImageDock
+name|GimpDock
 name|parent_instance
 decl_stmt|;
 DECL|member|vbox
@@ -164,7 +164,7 @@ struct|struct
 name|_GimpToolboxClass
 block|{
 DECL|member|parent_class
-name|GimpImageDockClass
+name|GimpDockClass
 name|parent_class
 decl_stmt|;
 block|}

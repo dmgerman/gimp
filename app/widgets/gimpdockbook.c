@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdock.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdockable.h"
 end_include
 
@@ -73,12 +79,6 @@ begin_include
 include|#
 directive|include
 file|"gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimagedock.h"
 end_include
 
 begin_include
@@ -161,7 +161,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e0c5960103
+DECL|enum|__anon28f6db520103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1802,7 +1802,7 @@ block|}
 comment|/* EEK */
 if|if
 condition|(
-name|GIMP_IS_IMAGE_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|dockbook
 operator|->

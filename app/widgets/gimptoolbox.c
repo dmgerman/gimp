@@ -614,14 +614,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpToolbox,gimp_toolbox,GIMP_TYPE_IMAGE_DOCK)
+DECL|function|G_DEFINE_TYPE (GimpToolbox,gimp_toolbox,GIMP_TYPE_DOCK)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpToolbox
 argument_list|,
 argument|gimp_toolbox
 argument_list|,
-argument|GIMP_TYPE_IMAGE_DOCK
+argument|GIMP_TYPE_DOCK
 argument_list|)
 end_macro
 
