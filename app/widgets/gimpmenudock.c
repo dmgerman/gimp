@@ -1698,6 +1698,10 @@ literal|"dialog-factory"
 argument_list|,
 name|dialog_factory
 argument_list|,
+literal|"ui-manager-name"
+argument_list|,
+literal|"<Dock>"
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

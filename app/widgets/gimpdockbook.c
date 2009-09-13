@@ -161,7 +161,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a31a9c90103
+DECL|enum|__anon27e0c5960103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1809,9 +1809,9 @@ operator|->
 name|dock
 argument_list|)
 operator|&&
-name|gimp_image_dock_get_ui_manager
+name|gimp_dock_window_get_ui_manager
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dockbook
 operator|->
@@ -1850,9 +1850,9 @@ name|group
 operator|=
 name|gimp_ui_manager_get_action_group
 argument_list|(
-name|gimp_image_dock_get_ui_manager
+name|gimp_dock_window_get_ui_manager
 argument_list|(
-name|GIMP_IMAGE_DOCK
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dockbook
 operator|->

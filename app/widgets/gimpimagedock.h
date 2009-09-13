@@ -107,15 +107,6 @@ DECL|member|parent_instance
 name|GimpDock
 name|parent_instance
 decl_stmt|;
-DECL|member|ui_manager
-name|GimpUIManager
-modifier|*
-name|ui_manager
-decl_stmt|;
-DECL|member|image_flush_handler_id
-name|GQuark
-name|image_flush_handler_id
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -128,12 +119,6 @@ block|{
 DECL|member|parent_class
 name|GimpDockClass
 name|parent_class
-decl_stmt|;
-DECL|member|ui_manager_name
-specifier|const
-name|gchar
-modifier|*
-name|ui_manager_name
 decl_stmt|;
 block|}
 struct|;
@@ -148,18 +133,6 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
-
-begin_function_decl
-name|GimpUIManager
-modifier|*
-name|gimp_image_dock_get_ui_manager
-parameter_list|(
-name|GimpImageDock
-modifier|*
-name|image_dock
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_endif
 endif|#
