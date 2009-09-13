@@ -111,15 +111,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImageDock
-typedef|typedef
-name|struct
-name|_GimpImageDock
-name|GimpImageDock
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpMenuDock
 typedef|typedef
 name|struct
