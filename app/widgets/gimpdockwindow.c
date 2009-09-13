@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2739cf680103
+DECL|enum|__anon2b6e881d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -453,6 +453,14 @@ operator|->
 name|p
 operator|->
 name|context
+operator|=
+name|NULL
+expr_stmt|;
+name|dock_window
+operator|->
+name|p
+operator|->
+name|dialog_factory
 operator|=
 name|NULL
 expr_stmt|;
