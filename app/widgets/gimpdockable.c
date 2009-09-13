@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1e84d0103
+DECL|enum|__anon29d5f02d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4103,11 +4103,12 @@ argument_list|)
 expr_stmt|;
 name|src_dock
 operator|=
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 expr_stmt|;
 name|dock
 operator|=
@@ -4807,11 +4808,12 @@ name|GimpUIManager
 modifier|*
 name|dockbook_ui_manager
 init|=
+name|gimp_dockbook_get_ui_manager
+argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|->
-name|ui_manager
+argument_list|)
 decl_stmt|;
 name|GimpUIManager
 modifier|*

@@ -775,6 +775,10 @@ name|GimpDocked
 modifier|*
 name|docked
 decl_stmt|;
+name|GimpDock
+modifier|*
+name|dock
+decl_stmt|;
 name|GimpDialogFactoryEntry
 modifier|*
 name|entry
@@ -911,6 +915,13 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|dock
+operator|=
+name|gimp_dockbook_get_dock
+argument_list|(
+name|dockbook
+argument_list|)
+expr_stmt|;
 name|gimp_dialog_factory_from_widget
 argument_list|(
 name|GTK_WIDGET
@@ -1001,8 +1012,6 @@ name|gimp_dialog_factory_find_entry
 argument_list|(
 name|gimp_dock_get_dialog_factory
 argument_list|(
-name|dockbook
-operator|->
 name|dock
 argument_list|)
 argument_list|,
@@ -1028,8 +1037,6 @@ name|gimp_dialog_factory_find_entry
 argument_list|(
 name|gimp_dock_get_dialog_factory
 argument_list|(
-name|dockbook
-operator|->
 name|dock
 argument_list|)
 argument_list|,
@@ -1089,8 +1096,6 @@ name|g_list_length
 argument_list|(
 name|gimp_dock_get_dockbooks
 argument_list|(
-name|dockbook
-operator|->
 name|dock
 argument_list|)
 argument_list|)

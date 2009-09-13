@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d3fe50103
+DECL|enum|__anon27c5aa060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4d3fe50203
+DECL|enum|__anon27c5aa060203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1686,11 +1686,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 operator|==
 name|dock
 argument_list|)
@@ -1745,9 +1746,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 operator|==
 name|NULL
 argument_list|)
@@ -1777,11 +1779,12 @@ name|index
 operator|=
 name|old_length
 expr_stmt|;
+name|gimp_dockbook_set_dock
+argument_list|(
 name|dockbook
-operator|->
+argument_list|,
 name|dock
-operator|=
-name|dock
+argument_list|)
 expr_stmt|;
 name|dock
 operator|->
@@ -2169,9 +2172,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 operator|==
 name|dock
 argument_list|)
@@ -2200,11 +2204,12 @@ argument_list|,
 name|dockbook
 argument_list|)
 expr_stmt|;
+name|gimp_dockbook_set_dock
+argument_list|(
 name|dockbook
-operator|->
-name|dock
-operator|=
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
 name|dock
 operator|->

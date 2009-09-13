@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3405b30103
+DECL|enum|__anon2b0cf95f0103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3405b30203
+DECL|enum|__anon2b0cf95f0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -2108,11 +2108,12 @@ name|dockable
 operator|->
 name|dockbook
 operator|&&
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 condition|)
 block|{
 name|GtkNotebook

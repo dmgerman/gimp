@@ -838,11 +838,12 @@ expr_stmt|;
 comment|/*  if dropping to the same dock, take care that we don't try            *  to reorder the *only* dockable in the dock            */
 if|if
 condition|(
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 operator|==
 name|dock
 condition|)
