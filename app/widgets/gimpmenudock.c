@@ -1686,10 +1686,6 @@ literal|"role"
 argument_list|,
 literal|"gimp-dock"
 argument_list|,
-literal|"gimp-context"
-argument_list|,
-name|context
-argument_list|,
 literal|"context"
 argument_list|,
 name|context
@@ -1701,6 +1697,14 @@ argument_list|,
 literal|"ui-manager-name"
 argument_list|,
 literal|"<Dock>"
+argument_list|,
+literal|"gimp-context"
+argument_list|,
+name|context
+argument_list|,
+literal|"gimp-dialog-factory"
+argument_list|,
+name|dialog_factory
 argument_list|,
 name|NULL
 argument_list|)
