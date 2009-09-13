@@ -308,6 +308,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_dock_get_n_dockables
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_dock_get_main_vbox
