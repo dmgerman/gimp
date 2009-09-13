@@ -149,6 +149,17 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|gint
+name|gimp_dock_window_get_id
+parameter_list|(
+name|GimpDockWindow
+modifier|*
+name|dock_window
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpUIManager
 modifier|*
 name|gimp_dock_window_get_ui_manager

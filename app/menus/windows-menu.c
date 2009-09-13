@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -1025,9 +1031,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"windows-dock-%04d"
 argument_list|,
-name|gimp_dock_get_id
+name|gimp_dock_window_get_id
+argument_list|(
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dock
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1046,9 +1055,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"windows-dock-%04d-merge-id"
 argument_list|,
-name|gimp_dock_get_id
+name|gimp_dock_window_get_id
+argument_list|(
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dock
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1142,9 +1154,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"windows-dock-%04d-merge-id"
 argument_list|,
-name|gimp_dock_get_id
+name|gimp_dock_window_get_id
+argument_list|(
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dock
+argument_list|)
 argument_list|)
 argument_list|)
 decl_stmt|;
