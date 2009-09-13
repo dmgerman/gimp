@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af73acf0103
+DECL|enum|__anon2b1904d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1001,6 +1001,33 @@ argument_list|,
 name|dock_window
 argument_list|,
 name|G_CONNECT_SWAPPED
+argument_list|)
+expr_stmt|;
+comment|/* Some docks like the toolbox dock needs to maintain special hints    * on its container GtkWindow, allow those to do so    */
+name|gimp_dock_set_host_geometry_hints
+argument_list|(
+name|dock
+argument_list|,
+name|GTK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_object
+argument_list|(
+name|dock
+argument_list|,
+literal|"geometry-invalidated"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_dock_set_host_geometry_hints
+argument_list|)
+argument_list|,
+name|dock_window
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Done! */
