@@ -64,6 +64,17 @@ value|(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GIMP_TYPE_FILTERED_CONTAINER))
 end_define
 
 begin_define
+DECL|macro|GIMP_IS_FILTERED_CONTAINER_CLASS (class)
+define|#
+directive|define
+name|GIMP_IS_FILTERED_CONTAINER_CLASS
+parameter_list|(
+name|class
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_TYPE ((class), GIMP_TYPE_FILTERED_CONTAINER))
+end_define
+
+begin_define
 DECL|macro|GIMP_FILTERED_CONTAINER_GET_CLASS (obj)
 define|#
 directive|define
