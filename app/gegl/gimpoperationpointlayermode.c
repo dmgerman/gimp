@@ -217,7 +217,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8196f0103
+DECL|enum|__anon2bf43f080103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -227,36 +227,6 @@ name|PROP_BLEND_MODE
 block|}
 enum|;
 end_enum
-
-begin_struct
-DECL|struct|_GimpOperationPointLayerModeClass
-struct|struct
-name|_GimpOperationPointLayerModeClass
-block|{
-DECL|member|parent_class
-name|GeglOperationPointComposerClass
-name|parent_class
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpOperationPointLayerMode
-struct|struct
-name|_GimpOperationPointLayerMode
-block|{
-DECL|member|parent_instance
-name|GeglOperationPointComposer
-name|parent_instance
-decl_stmt|;
-DECL|member|blend_mode
-name|GimpLayerModeEffects
-name|blend_mode
-decl_stmt|;
-block|}
-struct|;
-end_struct
 
 begin_function_decl
 specifier|static
