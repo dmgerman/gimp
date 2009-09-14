@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc7afc0108
+DECL|struct|__anon27fbaf4b0108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bc7afc0208
+DECL|struct|__anon27fbaf4b0208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -2944,7 +2944,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * siox_init:  * @pixels:   the tiles to extract the foreground from  * @colormap: colormap in case @pixels are indexed, %NULL otherwise  * @offset_x: horizontal offset of @pixels with respect to the @mask  * @offset_y: vertical offset of @pixels with respect to the @mask  * @x:        horizontal offset into the mask  * @y:        vertical offset into the mask  * @width:    width of working area on mask  * @height:   height of working area on mask  *  * Initializes the SIOX segmentator.  * Creates and returns a SioxState struct that has to be passed to all  * function calls of this module as it maintaines the state.  */
+comment|/**  * siox_init:  * @pixels:   the tiles to extract the foreground from  * @colormap: colormap in case @pixels are indexed, %NULL otherwise  * @offset_x: horizontal offset of @pixels with respect to the @mask  * @offset_y: vertical offset of @pixels with respect to the @mask  * @x:        horizontal offset into the mask  * @y:        vertical offset into the mask  * @width:    width of working area on mask  * @height:   height of working area on mask  *  * Initializes the SIOX segmentator.  * Creates and returns a SioxState struct that has to be passed to all  * function calls of this module as it maintaines the state.  * '* Returns: a new siox state structure.  */
 end_comment
 
 begin_function
@@ -3155,7 +3155,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * siox_foreground_extract:  * @state:       current state struct as constructed by siox_init  * @refinement:  #SioxRefinementType  * @mask:        a mask indicating sure foreground (255), sure background (0)  *               and undecided regions ([1..254]).  * @x1:          region of interest  * @y1:          region of interest  * @x2:          region of interest  * @y2:          region of interest  * @sensitivity: a double array with three entries specifing the accuracy,  *               a good value is: { 0.64, 1.28, 2.56 }  * @smoothness:  boundary smoothness (a good value is 3)  * @multiblob:   allow multiple blobs (true) or only one (false)  *  * Writes the resulting segmentation into @mask. The region of  * interest as specified using @x1, @y1, @x2 and @y2 defines the  * bounding box of the background and undecided areas. No changes to  * the mask are done outside this rectangle.  */
+comment|/**  * siox_foreground_extract:  * @state:       current state struct as constructed by siox_init  * @refinement:  #SioxRefinementType  * @mask:        a mask indicating sure foreground (255), sure background (0)  *               and undecided regions ([1..254]).  * @x1:          region of interest  * @y1:          region of interest  * @x2:          region of interest  * @y2:          region of interest  * @sensitivity: a double array with three entries specifing the accuracy,  *               a good value is: { 0.64, 1.28, 2.56 }  * @smoothness:  boundary smoothness (a good value is 3)  * @multiblob:   allow multiple blobs (true) or only one (false)  * @progress_callback: a progress callback  * @progress_data: data passed to @progress_callback  *  * Writes the resulting segmentation into @mask. The region of  * interest as specified using @x1, @y1, @x2 and @y2 defines the  * bounding box of the background and undecided areas. No changes to  * the mask are done outside this rectangle.  */
 end_comment
 
 begin_function
