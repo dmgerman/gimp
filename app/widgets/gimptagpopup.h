@@ -36,6 +36,17 @@ value|(G_TYPE_CHECK_INSTANCE_CAST ((obj), GIMP_TYPE_TAG_POPUP, GimpTagPopup))
 end_define
 
 begin_define
+DECL|macro|GIMP_TAG_POPUP_CLASS (klass)
+define|#
+directive|define
+name|GIMP_TAG_POPUP_CLASS
+parameter_list|(
+name|klass
+parameter_list|)
+value|(G_TYPE_CHECK_CLASS_CAST ((klass), GIMP_TYPE_TAG_POPUP, GimpTagPopupClass))
+end_define
+
+begin_define
 DECL|macro|GIMP_IS_TAG_POPUP (obj)
 define|#
 directive|define
