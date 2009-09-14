@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"actions/windows-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"windows-menu.h"
 end_include
 
@@ -1027,17 +1033,9 @@ argument_list|)
 expr_stmt|;
 name|action_name
 operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"windows-dock-%04d"
-argument_list|,
-name|gimp_dock_window_get_id
-argument_list|(
-name|GIMP_DOCK_WINDOW
+name|windows_actions_dock_to_action_name
 argument_list|(
 name|dock
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|action_path
