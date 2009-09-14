@@ -111,7 +111,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_cairo_wilber:  * @cr: Cairo context  *  * Draw a Wilber path at position @x, @y.  */
+comment|/**  * gimp_cairo_wilber:  * @cr: Cairo context  * @x: x position  * @y: y position  *  * Draw a Wilber path at position @x, @y.  */
 end_comment
 
 begin_function
@@ -301,7 +301,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297c161a0108
+DECL|struct|__anon299b974e0108
 block|{
 DECL|member|cr
 name|cairo_t
