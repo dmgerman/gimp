@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -654,16 +660,15 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DOCK
+name|GimpDockWindow
+modifier|*
+name|dock_window
+init|=
+name|gimp_dock_window_from_dock
 argument_list|(
 name|dock
 argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
+decl_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -671,10 +676,7 @@ literal|"windows-dock-%04d"
 argument_list|,
 name|gimp_dock_window_get_id
 argument_list|(
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|dock
-argument_list|)
+name|dock_window
 argument_list|)
 argument_list|)
 return|;

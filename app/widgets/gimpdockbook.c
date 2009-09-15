@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimphelp-ids.h"
 end_include
 
@@ -161,7 +167,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1ee6ad0103
+DECL|enum|__anon28b1548a0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1875,6 +1881,10 @@ name|GtkWidget
 modifier|*
 name|tab_widget
 decl_stmt|;
+name|GimpDockWindow
+modifier|*
+name|dock_window
+decl_stmt|;
 name|GtkIconSize
 name|tab_size
 init|=
@@ -1982,9 +1992,9 @@ name|event_box
 expr_stmt|;
 block|}
 comment|/* EEK */
-if|if
-condition|(
-name|GIMP_IS_DOCK_WINDOW
+name|dock_window
+operator|=
+name|gimp_dock_window_from_dock
 argument_list|(
 name|dockbook
 operator|->
@@ -1992,17 +2002,14 @@ name|p
 operator|->
 name|dock
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|dock_window
 operator|&&
 name|gimp_dock_window_get_ui_manager
 argument_list|(
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|dockbook
-operator|->
-name|p
-operator|->
-name|dock
-argument_list|)
+name|dock_window
 argument_list|)
 condition|)
 block|{
@@ -2038,14 +2045,7 @@ name|gimp_ui_manager_get_action_group
 argument_list|(
 name|gimp_dock_window_get_ui_manager
 argument_list|(
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|dockbook
-operator|->
-name|p
-operator|->
-name|dock
-argument_list|)
+name|dock_window
 argument_list|)
 argument_list|,
 literal|"dialogs"

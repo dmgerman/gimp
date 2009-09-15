@@ -1220,6 +1220,15 @@ modifier|*
 name|dock
 parameter_list|)
 block|{
+name|GimpDockWindow
+modifier|*
+name|dock_window
+init|=
+name|gimp_dock_window_from_dock
+argument_list|(
+name|dock
+argument_list|)
+decl_stmt|;
 return|return
 name|g_strdup_printf
 argument_list|(
@@ -1227,10 +1236,7 @@ literal|"windows-dock-%04d-merge-id"
 argument_list|,
 name|gimp_dock_window_get_id
 argument_list|(
-name|GIMP_DOCK_WINDOW
-argument_list|(
-name|dock
-argument_list|)
+name|dock_window
 argument_list|)
 argument_list|)
 return|;
