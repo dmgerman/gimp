@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5afb8f0108
+DECL|struct|__anon2a4fc1fc0108
 block|{
 DECL|member|dummy
 name|int
@@ -106,6 +106,9 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|int
+name|test_result
+decl_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;
@@ -154,9 +157,21 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Run the tests and return status */
-return|return
+name|test_result
+operator|=
 name|g_test_run
 argument_list|()
+expr_stmt|;
+comment|/* Exit somewhat properly to avoid annoying warnings */
+name|gimp_exit
+argument_list|(
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return
+name|test_result
 return|;
 block|}
 end_function
