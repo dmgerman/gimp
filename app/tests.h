@@ -41,6 +41,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_test_run_temp_mainloop
+parameter_list|(
+name|guint32
+name|running_time
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
