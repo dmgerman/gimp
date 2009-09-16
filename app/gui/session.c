@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e63b20103
+DECL|enum|__anon27a949b60103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -861,7 +861,7 @@ argument_list|(
 name|writer
 argument_list|)
 expr_stmt|;
-comment|/* save last tip shown */
+comment|/* save last tip shown    *    * FIXME: Make last-tip-shown increment only when used within the    * session    */
 name|gimp_config_writer_open
 argument_list|(
 name|writer
@@ -883,8 +883,6 @@ name|config
 argument_list|)
 operator|->
 name|last_tip
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close
