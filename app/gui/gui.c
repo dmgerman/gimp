@@ -1069,7 +1069,7 @@ DECL|macro|GTK_REQUIRED_MICRO
 define|#
 directive|define
 name|GTK_REQUIRED_MICRO
-value|1
+value|6
 specifier|const
 name|gchar
 modifier|*
