@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29550ee10108
+DECL|struct|__anon29965f1b0108
 block|{
 DECL|member|dummy
 name|int
@@ -109,6 +109,16 @@ block|{
 name|int
 name|test_result
 decl_stmt|;
+comment|/* Disable the user dir for this test */
+name|g_setenv
+argument_list|(
+literal|"GIMP2_DIRECTORY"
+argument_list|,
+literal|"/tmp/gimpdir"
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;
