@@ -191,11 +191,14 @@ end_comment
 begin_function
 name|Gimp
 modifier|*
-DECL|function|gimp_init_for_gui_testing (gboolean use_cpu_accel)
+DECL|function|gimp_init_for_gui_testing (gboolean use_cpu_accel,gboolean show_gui)
 name|gimp_init_for_gui_testing
 parameter_list|(
 name|gboolean
 name|use_cpu_accel
+parameter_list|,
+name|gboolean
+name|show_gui
 parameter_list|)
 block|{
 name|Gimp
@@ -226,7 +229,8 @@ name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
-name|TRUE
+operator|!
+name|show_gui
 argument_list|,
 name|FALSE
 argument_list|,
@@ -241,7 +245,7 @@ name|gimp_set_show_gui
 argument_list|(
 name|gimp
 argument_list|,
-name|FALSE
+name|show_gui
 argument_list|)
 expr_stmt|;
 name|units_init

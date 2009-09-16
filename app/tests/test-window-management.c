@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4fc1fc0108
+DECL|struct|__anon29550ee10108
 block|{
 DECL|member|dummy
 name|int
@@ -137,6 +137,8 @@ name|gimp
 operator|=
 name|gimp_init_for_gui_testing
 argument_list|(
+name|FALSE
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
