@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_SESSION_INFO_AUX_H__
 end_define
 
+begin_comment
+comment|/**  * Contains arbitrary data in the session management system, used for  * example by dockables to manage dockable-specific data.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpSessionInfoAux
 struct|struct

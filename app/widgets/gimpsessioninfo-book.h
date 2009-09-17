@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_SESSION_INFO_BOOK_H__
 end_define
 
+begin_comment
+comment|/**  * Contains information about a book (a GtkNotebook of dockables) in  * the interface.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpSessionInfoBook
 struct|struct

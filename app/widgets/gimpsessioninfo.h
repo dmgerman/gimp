@@ -94,6 +94,10 @@ name|GimpSessionInfoClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * Contains session info for one toplevel window in the interface such  * as a dock, the empty-image-window, or the open/save dialog.  */
+end_comment
+
 begin_struct
 DECL|struct|_GimpSessionInfo
 struct|struct
