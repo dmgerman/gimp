@@ -217,7 +217,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_session_info_set_geometry
+name|gimp_session_info_apply_geometry
 parameter_list|(
 name|GimpSessionInfo
 modifier|*
@@ -228,7 +228,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_session_info_get_geometry
+name|gimp_session_info_read_geometry
 parameter_list|(
 name|GimpSessionInfo
 modifier|*

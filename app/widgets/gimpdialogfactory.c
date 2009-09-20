@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a222cb50103
+DECL|enum|__anon2b9e1ce70103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a222cb50203
+DECL|enum|__anon2b9e1ce70203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -2983,7 +2983,7 @@ name|dialog
 argument_list|)
 condition|)
 block|{
-name|gimp_session_info_set_geometry
+name|gimp_session_info_apply_geometry
 argument_list|(
 name|current_info
 argument_list|)
@@ -3042,7 +3042,7 @@ name|factory_entry
 operator|=
 name|entry
 expr_stmt|;
-comment|/*  if we create a new session info, we never call            *  gimp_session_info_set_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
+comment|/*  if we create a new session info, we never call            *  gimp_session_info_apply_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
 if|if
 condition|(
 name|gimp_session_info_is_session_managed
@@ -3148,7 +3148,7 @@ operator|->
 name|widget
 argument_list|)
 expr_stmt|;
-name|gimp_session_info_set_geometry
+name|gimp_session_info_apply_geometry
 argument_list|(
 name|current_info
 argument_list|)
@@ -3201,7 +3201,7 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
-comment|/*  if we create a new session info, we never call            *  gimp_session_info_set_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
+comment|/*  if we create a new session info, we never call            *  gimp_session_info_apply_geometry(), but still the            *  dialog needs GDK_HINT_USER_POS so it keeps its            *  position when hidden/shown within this(!) session.            */
 name|g_signal_connect
 argument_list|(
 name|dialog
@@ -4761,7 +4761,7 @@ operator|==
 name|dialog
 condition|)
 block|{
-name|gimp_session_info_get_geometry
+name|gimp_session_info_read_geometry
 argument_list|(
 name|session_info
 argument_list|)

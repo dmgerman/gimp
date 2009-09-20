@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c61b5a50103
+DECL|enum|__anon2b0fbb140103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1550,10 +1550,14 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_session_info_apply_geometry:  * @info:  *  * Apply the geometry stored in the session info object to the  * associated widget.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_session_info_set_geometry (GimpSessionInfo * info)
-name|gimp_session_info_set_geometry
+DECL|function|gimp_session_info_apply_geometry (GimpSessionInfo * info)
+name|gimp_session_info_apply_geometry
 parameter_list|(
 name|GimpSessionInfo
 modifier|*
@@ -1892,10 +1896,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_session_info_read_geometry:  * @info:  *  * Read geometry related information from the associated widget.  **/
+end_comment
+
 begin_function
 name|void
-DECL|function|gimp_session_info_get_geometry (GimpSessionInfo * info)
-name|gimp_session_info_get_geometry
+DECL|function|gimp_session_info_read_geometry (GimpSessionInfo * info)
+name|gimp_session_info_read_geometry
 parameter_list|(
 name|GimpSessionInfo
 modifier|*
@@ -2181,7 +2189,7 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_session_info_get_geometry
+name|gimp_session_info_read_geometry
 argument_list|(
 name|info
 argument_list|)
