@@ -63,9 +63,15 @@ directive|include
 file|"gimpsessioninfo-dock.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpsessioninfo-private.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon288e44490103
+DECL|enum|__anon28f7a1050103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -288,11 +294,15 @@ condition|)
 block|{
 name|info
 operator|->
+name|p
+operator|->
 name|books
 operator|=
 name|g_list_append
 argument_list|(
 name|info
+operator|->
+name|p
 operator|->
 name|books
 argument_list|,
@@ -581,6 +591,8 @@ name|dock
 operator|&&
 name|info
 operator|->
+name|p
+operator|->
 name|aux_info
 condition|)
 name|gimp_session_info_aux_set_list
@@ -592,6 +604,8 @@ argument_list|)
 argument_list|,
 name|info
 operator|->
+name|p
+operator|->
 name|aux_info
 argument_list|)
 expr_stmt|;
@@ -600,6 +614,8 @@ control|(
 name|books
 operator|=
 name|info
+operator|->
+name|p
 operator|->
 name|books
 init|;
