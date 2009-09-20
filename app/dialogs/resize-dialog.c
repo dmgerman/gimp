@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a536bb0108
+DECL|struct|__anon2ac2fda60108
 block|{
 DECL|member|viewable
 name|GimpViewable
@@ -684,7 +684,7 @@ name|yres
 argument_list|,
 literal|"keep-aspect"
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|"edit-resolution"
 argument_list|,
@@ -1716,19 +1716,6 @@ argument_list|,
 name|private
 operator|->
 name|old_unit
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_object_set
-argument_list|(
-name|private
-operator|->
-name|box
-argument_list|,
-literal|"keep-aspect"
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
