@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b885eca0103
+DECL|enum|__anon28c0b4500103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -156,6 +156,11 @@ decl_stmt|;
 DECL|member|remember_if_open
 name|gboolean
 name|remember_if_open
+decl_stmt|;
+comment|/* If TRUE the entry is for a dockable, otherwise it is for a    * toplevel    */
+DECL|member|dockable
+name|gboolean
+name|dockable
 decl_stmt|;
 block|}
 struct|;

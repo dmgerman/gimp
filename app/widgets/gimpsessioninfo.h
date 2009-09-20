@@ -151,16 +151,11 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
-comment|/*  only one of these is valid  */
-DECL|member|toplevel_entry
+comment|/*  the dialog factory entry for object we have session info for    *  note that pure "dock" entries don't have any factory entry    */
+DECL|member|factory_entry
 name|GimpDialogFactoryEntry
 modifier|*
-name|toplevel_entry
-decl_stmt|;
-DECL|member|dockable_entry
-name|GimpDialogFactoryEntry
-modifier|*
-name|dockable_entry
+name|factory_entry
 decl_stmt|;
 comment|/*  list of GimpSessionInfoBook  */
 DECL|member|books

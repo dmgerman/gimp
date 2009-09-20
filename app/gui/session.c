@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde34720103
+DECL|enum|__anon2c2f8b4e0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -476,7 +476,7 @@ condition|)
 block|{
 name|info
 operator|->
-name|toplevel_entry
+name|factory_entry
 operator|=
 name|gimp_dialog_factory_find_entry
 argument_list|(
@@ -491,7 +491,7 @@ operator|=
 operator|(
 name|info
 operator|->
-name|toplevel_entry
+name|factory_entry
 operator|==
 name|NULL
 operator|)
