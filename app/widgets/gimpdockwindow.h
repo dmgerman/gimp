@@ -183,6 +183,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpDock
+modifier|*
+name|gimp_dock_window_get_dock
+parameter_list|(
+name|GimpDockWindow
+modifier|*
+name|dock_window
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

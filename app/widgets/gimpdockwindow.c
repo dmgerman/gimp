@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b107e0103
+DECL|enum|__anon2c25446c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -309,19 +309,6 @@ parameter_list|,
 name|GdkEventAny
 modifier|*
 name|event
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|GimpDock
-modifier|*
-name|gimp_dock_window_get_dock
-parameter_list|(
-name|GimpDockWindow
-modifier|*
-name|dock_window
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1749,28 +1736,6 @@ end_function
 
 begin_function
 specifier|static
-name|GimpDock
-modifier|*
-DECL|function|gimp_dock_window_get_dock (GimpDockWindow * dock_window)
-name|gimp_dock_window_get_dock
-parameter_list|(
-name|GimpDockWindow
-modifier|*
-name|dock_window
-parameter_list|)
-block|{
-comment|/* Change this to return the GimpDock *inside* the GimpDockWindow    * once GimpDock is not a subclass of GimpDockWindow any longer    */
-return|return
-name|GIMP_DOCK
-argument_list|(
-name|dock_window
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
 name|void
 DECL|function|gimp_dock_window_display_changed (GimpDockWindow * dock_window,GimpObject * display,GimpContext * context)
 name|gimp_dock_window_display_changed
@@ -2129,6 +2094,31 @@ return|;
 else|else
 return|return
 name|NULL
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_dock_window_get_dock:  * @dock_window:  *  * Get the #GimpDock within the #GimpDockWindow.  *  * Returns:   **/
+end_comment
+
+begin_function
+name|GimpDock
+modifier|*
+DECL|function|gimp_dock_window_get_dock (GimpDockWindow * dock_window)
+name|gimp_dock_window_get_dock
+parameter_list|(
+name|GimpDockWindow
+modifier|*
+name|dock_window
+parameter_list|)
+block|{
+comment|/* Change this to return the GimpDock *inside* the GimpDockWindow    * once GimpDock is not a subclass of GimpDockWindow any longer    */
+return|return
+name|GIMP_DOCK
+argument_list|(
+name|dock_window
+argument_list|)
 return|;
 block|}
 end_function
