@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29ad71ac0108
+DECL|struct|__anon2c2f781a0108
 block|{
 DECL|member|shell
 name|GtkWidget
@@ -676,12 +676,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|layer
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -950,12 +948,10 @@ operator|->
 name|label
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|current_layer
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 block|}

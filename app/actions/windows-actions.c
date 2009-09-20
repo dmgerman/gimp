@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimphelp-ids.h"
 end_include
 
@@ -643,6 +649,40 @@ parameter_list|)
 block|{ }
 end_function
 
+begin_function
+name|gchar
+modifier|*
+DECL|function|windows_actions_dock_to_action_name (GimpDock * dock)
+name|windows_actions_dock_to_action_name
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+block|{
+name|GimpDockWindow
+modifier|*
+name|dock_window
+init|=
+name|gimp_dock_window_from_dock
+argument_list|(
+name|dock
+argument_list|)
+decl_stmt|;
+return|return
+name|g_strdup_printf
+argument_list|(
+literal|"windows-dock-%04d"
+argument_list|,
+name|gimp_dock_window_get_id
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|)
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
@@ -1097,14 +1137,9 @@ name|gchar
 modifier|*
 name|action_name
 init|=
-name|g_strdup_printf
-argument_list|(
-literal|"windows-dock-%04d"
-argument_list|,
-name|gimp_dock_get_id
+name|windows_actions_dock_to_action_name
 argument_list|(
 name|dock
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|entry
@@ -1269,14 +1304,9 @@ name|gchar
 modifier|*
 name|action_name
 init|=
-name|g_strdup_printf
-argument_list|(
-literal|"windows-dock-%04d"
-argument_list|,
-name|gimp_dock_get_id
+name|windows_actions_dock_to_action_name
 argument_list|(
 name|dock
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|action
@@ -1343,14 +1373,9 @@ name|action_name
 decl_stmt|;
 name|action_name
 operator|=
-name|g_strdup_printf
-argument_list|(
-literal|"windows-dock-%04d"
-argument_list|,
-name|gimp_dock_get_id
+name|windows_actions_dock_to_action_name
 argument_list|(
 name|dock
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|action
@@ -1512,10 +1537,7 @@ name|label
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry
@@ -1530,10 +1552,7 @@ name|tooltip
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|entry

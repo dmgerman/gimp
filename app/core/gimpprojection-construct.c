@@ -187,7 +187,7 @@ directive|if
 literal|0
 block|GList *layers = gimp_projectable_get_layers (proj->projectable);    if (layers&& ! layers->next)
 comment|/* a single layer */
-block|{       GimpLayer    *layer    = layers->data;       GimpDrawable *drawable = GIMP_DRAWABLE (layer);       GimpItem     *item     = GIMP_ITEM (layer);       gint          width, height;       gint          off_x, off_y;        gimp_projectable_get_size (proj->projectable,&width,&height);        gimp_item_get_offset (item,&off_x,&off_y);        if (gimp_drawable_has_alpha (drawable)&&           gimp_item_get_visible (item)&&           gimp_item_get_width  (item) == width&&           gimp_item_get_height (item) == height&&           ! gimp_drawable_is_indexed (layer)&&           gimp_layer_get_opacity (layer) == GIMP_OPACITY_OPAQUE&&           off_x == 0&&           off_y == 0)         {           PixelRegion srcPR, destPR;            g_printerr ("cow-projection!");            pixel_region_init (&srcPR,                              gimp_drawable_get_tiles (layer),                              x, y, w,h, FALSE);           pixel_region_init (&destPR,                              gimp_pickable_get_tiles (GIMP_PICKABLE (proj)),                              x, y, w,h, TRUE);            copy_region (&srcPR,&destPR);            proj->construct_flag = TRUE;            gimp_projection_construct_legacy (proj, FALSE, x, y, w, h);            return;         }     }
+block|{       GimpLayer    *layer    = layers->data;       GimpDrawable *drawable = GIMP_DRAWABLE (layer);       GimpItem     *item     = GIMP_ITEM (layer);       gint          width, height;       gint          off_x, off_y;        gimp_projectable_get_offset (proj->projectable,&proj_off_x,&proj_off_y);       gimp_projectable_get_size (proj->projectable,&width,&height);        gimp_item_get_offset (item,&off_x,&off_y);        if (gimp_drawable_has_alpha (drawable)&&           gimp_item_get_visible (item)&&           gimp_item_get_width  (item) == width&&           gimp_item_get_height (item) == height&&           ! gimp_drawable_is_indexed (layer)&&           gimp_layer_get_opacity (layer) == GIMP_OPACITY_OPAQUE&&           off_x == 0&&           off_y == 0&&           proj_offset_x == 0&&           proj_offset_y == 0)         {           PixelRegion srcPR, destPR;            g_printerr ("cow-projection!");            pixel_region_init (&srcPR,                              gimp_drawable_get_tiles (layer),                              x, y, w,h, FALSE);           pixel_region_init (&destPR,                              gimp_pickable_get_tiles (GIMP_PICKABLE (proj)),                              x, y, w,h, TRUE);            copy_region (&srcPR,&destPR);            proj->construct_flag = TRUE;            gimp_projection_construct_legacy (proj, FALSE, x, y, w, h);            return;         }     }
 endif|#
 directive|endif
 comment|/*  First, determine if the projection image needs to be    *  initialized--this is the case when there are no visible    *  layers that cover the entire canvas--either because layers    *  are offset or only a floating selection is visible    */
@@ -413,6 +413,12 @@ name|reverse_list
 init|=
 name|NULL
 decl_stmt|;
+name|gint
+name|proj_off_x
+decl_stmt|;
+name|gint
+name|proj_off_y
+decl_stmt|;
 for|for
 control|(
 name|list
@@ -524,6 +530,19 @@ expr_stmt|;
 block|}
 block|}
 block|}
+name|gimp_projectable_get_offset
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|,
+operator|&
+name|proj_off_x
+argument_list|,
+operator|&
+name|proj_off_y
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -577,6 +596,15 @@ argument_list|,
 operator|&
 name|off_y
 argument_list|)
+expr_stmt|;
+comment|/*  subtract the projectable's offsets because the list of        *  update areas is in tile-pyramid coordinates, but our        *  external API is always in terms of image coordinates.        */
+name|off_x
+operator|-=
+name|proj_off_x
+expr_stmt|;
+name|off_y
+operator|-=
+name|proj_off_y
 expr_stmt|;
 name|x1
 operator|=
@@ -746,11 +774,30 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|gint
+name|proj_off_x
+decl_stmt|;
+name|gint
+name|proj_off_y
+decl_stmt|;
 name|gboolean
 name|coverage
 init|=
 name|FALSE
 decl_stmt|;
+name|gimp_projectable_get_offset
+argument_list|(
+name|proj
+operator|->
+name|projectable
+argument_list|,
+operator|&
+name|proj_off_x
+argument_list|,
+operator|&
+name|proj_off_y
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -813,6 +860,15 @@ argument_list|,
 operator|&
 name|off_y
 argument_list|)
+expr_stmt|;
+comment|/*  subtract the projectable's offsets because the list of        *  update areas is in tile-pyramid coordinates, but our        *  external API is always in terms of image coordinates.        */
+name|off_x
+operator|-=
+name|proj_off_x
+expr_stmt|;
+name|off_y
+operator|-=
+name|proj_off_y
 expr_stmt|;
 if|if
 condition|(

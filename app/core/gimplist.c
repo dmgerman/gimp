@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d69a720103
+DECL|enum|__anon2b42d3ce0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1318,9 +1318,10 @@ condition|(
 operator|!
 name|strcmp
 argument_list|(
+name|gimp_object_get_name
+argument_list|(
 name|object
-operator|->
-name|name
+argument_list|)
 argument_list|,
 name|name
 argument_list|)

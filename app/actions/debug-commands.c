@@ -1105,7 +1105,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gimp_image_update
+name|gimp_image_invalidate
 argument_list|(
 name|image
 argument_list|,

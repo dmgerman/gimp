@@ -106,6 +106,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprocedure.h"
 end_include
 
@@ -361,10 +367,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1431,6 +1434,16 @@ argument_list|)
 argument_list|,
 name|error
 argument_list|)
+operator|&&
+name|gimp_pdb_item_is_not_group
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|error
+argument_list|)
 condition|)
 block|{
 name|GimpStrokeOptions
@@ -2256,10 +2269,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|vectors
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

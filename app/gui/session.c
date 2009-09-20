@@ -135,7 +135,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288e63b20103
+DECL|enum|__anon2bde34720103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -462,9 +462,11 @@ operator|=
 name|gimp_session_info_new
 argument_list|()
 expr_stmt|;
+comment|/* "dock" entries in the "dock" factory are just dummy                * entries and don't have any dialog factory entry, so                * don't bother looking for entires for them                */
 if|if
 condition|(
-name|strcmp
+operator|!
+name|g_str_equal
 argument_list|(
 name|entry_name
 argument_list|,
@@ -483,6 +485,7 @@ argument_list|,
 name|entry_name
 argument_list|)
 expr_stmt|;
+comment|/* If we expected a dialog factory entry but failed                    * to find one, skip to add this session info object                    */
 name|skip
 operator|=
 operator|(
@@ -501,12 +504,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_CONFIG_GET_INTERFACE
-argument_list|(
-name|info
-argument_list|)
-operator|->
-name|deserialize
+name|gimp_config_deserialize
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
@@ -861,7 +859,7 @@ argument_list|(
 name|writer
 argument_list|)
 expr_stmt|;
-comment|/* save last tip shown */
+comment|/* save last tip shown    *    * FIXME: Make last-tip-shown increment only when used within the    * session    */
 name|gimp_config_writer_open
 argument_list|(
 name|writer
@@ -883,8 +881,6 @@ name|config
 argument_list|)
 operator|->
 name|last_tip
-operator|+
-literal|1
 argument_list|)
 expr_stmt|;
 name|gimp_config_writer_close

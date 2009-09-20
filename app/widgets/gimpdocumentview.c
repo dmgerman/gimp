@@ -594,10 +594,7 @@ name|uri
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|)
 decl_stmt|;
 return|return

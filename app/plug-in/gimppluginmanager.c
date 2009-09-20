@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baec0710103
+DECL|enum|__anon2c839d280103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -1376,19 +1376,15 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|procedure
 argument_list|)
-operator|->
-name|name
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|tmp_proc
 argument_list|)
-operator|->
-name|name
 argument_list|)
 operator|==
 literal|0
@@ -1412,12 +1408,10 @@ argument_list|(
 literal|"Removing duplicate PDB procedure '%s' "
 literal|"registered by '%s'\n"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|tmp_proc
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(

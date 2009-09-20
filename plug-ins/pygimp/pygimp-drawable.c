@@ -7321,6 +7321,8 @@ literal|"height"
 block|,
 literal|"local_origin"
 block|,
+literal|"interpolation"
+block|,
 name|NULL
 block|}
 decl_stmt|;

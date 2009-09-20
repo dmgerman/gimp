@@ -500,9 +500,10 @@ name|drawable_mod_undo
 operator|->
 name|type
 operator|=
+name|gimp_drawable_type
+argument_list|(
 name|drawable
-operator|->
-name|type
+argument_list|)
 expr_stmt|;
 name|gimp_item_get_offset
 argument_list|(

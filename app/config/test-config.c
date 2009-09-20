@@ -921,6 +921,8 @@ condition|)
 block|{
 name|g_print
 argument_list|(
+literal|"%s"
+argument_list|,
 operator|*
 name|header
 argument_list|)

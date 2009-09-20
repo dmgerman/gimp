@@ -40,6 +40,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpitemstack.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimppalette.h"
 end_include
 
@@ -515,6 +521,17 @@ argument_list|,
 name|GIMP_INDEXED
 argument_list|,
 name|error
+argument_list|)
+operator|&&
+name|gimp_item_stack_is_flat
+argument_list|(
+name|GIMP_ITEM_STACK
+argument_list|(
+name|gimp_image_get_layers
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
 argument_list|)
 condition|)
 block|{

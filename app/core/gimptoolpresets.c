@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c4ec10103
+DECL|enum|__anon276c907f0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0c4ec10203
+DECL|enum|__anon276c907f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -766,10 +766,7 @@ literal|"%s options"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|tool_info
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -943,12 +940,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"end of %s"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|presets
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|retval
@@ -962,12 +957,10 @@ argument_list|)
 argument_list|,
 name|filename
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|presets
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|footer
 argument_list|,

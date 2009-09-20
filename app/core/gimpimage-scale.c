@@ -587,6 +587,18 @@ argument_list|,
 name|progress_steps
 argument_list|)
 expr_stmt|;
+comment|/*  group layers are updated automatically  */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+continue|continue;
 if|if
 condition|(
 operator|!
@@ -949,6 +961,17 @@ argument_list|,
 name|GIMP_ITEM_SET_ALL
 argument_list|)
 expr_stmt|;
+name|gimp_image_item_list_filter
+argument_list|(
+name|NULL
+argument_list|,
+name|drawables
+argument_list|,
+name|TRUE
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|drawables
 operator|=
 name|g_list_prepend
@@ -1222,6 +1245,18 @@ name|list
 operator|->
 name|data
 decl_stmt|;
+comment|/*  group layers are updated automatically  */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+condition|)
+continue|continue;
 if|if
 condition|(
 operator|!

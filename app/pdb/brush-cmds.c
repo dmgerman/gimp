@@ -192,10 +192,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -366,10 +363,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|brush_copy
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -692,10 +686,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|brush
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

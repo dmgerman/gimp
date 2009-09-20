@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1790700103
+DECL|enum|__anon2920fad80103
 block|{
 DECL|enumerator|COL_XMP_NAME
 name|COL_XMP_NAME
@@ -263,17 +263,6 @@ modifier|*
 name|xmp_model_new
 parameter_list|(
 name|void
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|xmp_model_free
-parameter_list|(
-name|XMPModel
-modifier|*
-name|xmp_model
 parameter_list|)
 function_decl|;
 end_function_decl

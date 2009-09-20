@@ -581,7 +581,7 @@ argument_list|)
 expr_stmt|;
 name|layer
 operator|=
-name|gimp_image_pick_correlate_layer
+name|gimp_image_pick_layer
 argument_list|(
 name|display
 operator|->

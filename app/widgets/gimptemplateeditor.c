@@ -116,7 +116,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon294666ba0103
+DECL|enum|__anon280035800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3653,12 +3653,10 @@ name|template
 argument_list|,
 literal|"stock-id"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|template
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|NULL
 argument_list|)

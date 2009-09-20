@@ -117,7 +117,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c899dc80103
+DECL|enum|__anon28021eca0103
 block|{
 DECL|enumerator|DIRTY
 name|DIRTY
@@ -130,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c899dc80203
+DECL|enum|__anon28021eca0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1322,6 +1322,7 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Emit the "name-changed" to signal general dirtiness */
 name|gimp_object_name_changed
 argument_list|(
 name|GIMP_OBJECT
@@ -2393,10 +2394,7 @@ name|g_filename_from_utf8
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|)
 argument_list|,
 operator|-
@@ -2423,10 +2421,7 @@ literal|"g_filename_from_utf8() failed for '%s': %s"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|data
-argument_list|)
 argument_list|)
 argument_list|,
 name|error

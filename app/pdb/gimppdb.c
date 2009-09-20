@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275c12480103
+DECL|enum|__anon29abeea90103
 block|{
 DECL|enumerator|REGISTER_PROCEDURE
 name|REGISTER_PROCEDURE
@@ -605,10 +605,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|list
@@ -675,10 +672,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|list
@@ -715,12 +709,9 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|list
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_hash_table_replace
@@ -1655,10 +1646,7 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|procedure
-argument_list|)
 argument_list|)
 argument_list|,
 name|i

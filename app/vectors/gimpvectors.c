@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d44e40103
+DECL|enum|__anon27ddaafe0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -190,6 +190,7 @@ specifier|static
 name|gboolean
 name|gimp_vectors_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1274,9 +1275,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_vectors_is_attached (GimpItem * item)
+DECL|function|gimp_vectors_is_attached (const GimpItem * item)
 name|gimp_vectors_is_attached
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -1453,22 +1455,19 @@ modifier|*
 name|dest_image
 parameter_list|)
 block|{
+name|gimp_item_set_size
+argument_list|(
 name|item
-operator|->
-name|width
-operator|=
+argument_list|,
 name|gimp_image_get_width
 argument_list|(
 name|dest_image
 argument_list|)
-expr_stmt|;
-name|item
-operator|->
-name|height
-operator|=
+argument_list|,
 name|gimp_image_get_height
 argument_list|(
 name|dest_image
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|GIMP_ITEM_CLASS

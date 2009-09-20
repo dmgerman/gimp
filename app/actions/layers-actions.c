@@ -400,7 +400,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"_New Group Layer..."
+literal|"New Layer _Group..."
 argument_list|)
 block|,
 name|NULL
@@ -409,7 +409,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Create a new group layer and add it to the image"
+literal|"Create a new layer group and add it to the image"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -2164,12 +2164,22 @@ init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
+name|can_lock_alpha
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|text_layer
 init|=
 name|FALSE
 decl_stmt|;
 name|gboolean
 name|writable
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
+name|children
 init|=
 name|FALSE
 decl_stmt|;
@@ -2274,6 +2284,13 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
+name|can_lock_alpha
+operator|=
+name|gimp_layer_can_lock_alpha
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 name|alpha
 operator|=
 name|gimp_drawable_has_alpha
@@ -2287,13 +2304,27 @@ expr_stmt|;
 name|writable
 operator|=
 operator|!
-name|gimp_item_get_lock_content
+name|gimp_item_is_content_locked
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+name|children
+operator|=
+name|TRUE
 expr_stmt|;
 name|layer_list
 operator|=
@@ -2358,7 +2389,30 @@ operator|->
 name|data
 argument_list|)
 condition|)
+block|{
+comment|/*  "next_visible" is actually "next_visible" and                        *  "writable" and "not group"                        */
+if|if
+condition|(
+name|gimp_item_is_content_locked
+argument_list|(
+name|next_visible
+operator|->
+name|data
+argument_list|)
+operator|||
+name|gimp_viewable_get_children
+argument_list|(
+name|next_visible
+operator|->
+name|data
+argument_list|)
+condition|)
+name|next_visible
+operator|=
+name|NULL
+expr_stmt|;
 break|break;
+block|}
 block|}
 block|}
 name|text_layer
@@ -2455,6 +2509,9 @@ argument_list|(
 literal|"layers-new-group"
 argument_list|,
 name|image
+operator|&&
+operator|!
+name|indexed
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -2624,6 +2681,9 @@ operator|&&
 operator|!
 name|ac
 operator|&&
+operator|!
+name|children
+operator|&&
 name|next_visible
 argument_list|)
 expr_stmt|;
@@ -2769,6 +2829,9 @@ argument_list|,
 name|writable
 operator|&&
 operator|!
+name|children
+operator|&&
+operator|!
 name|fs
 operator|&&
 operator|!
@@ -2782,6 +2845,9 @@ argument_list|,
 name|writable
 operator|&&
 operator|!
+name|children
+operator|&&
+operator|!
 name|fs
 operator|&&
 name|alpha
@@ -2791,7 +2857,7 @@ name|SET_SENSITIVE
 argument_list|(
 literal|"layers-lock-alpha"
 argument_list|,
-name|layer
+name|can_lock_alpha
 argument_list|)
 expr_stmt|;
 name|SET_ACTIVE
@@ -2815,6 +2881,9 @@ name|ac
 operator|&&
 operator|!
 name|mask
+operator|&&
+operator|!
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
@@ -2830,6 +2899,9 @@ operator|!
 name|ac
 operator|&&
 name|mask
+operator|&&
+operator|!
+name|children
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE

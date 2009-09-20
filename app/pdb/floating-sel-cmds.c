@@ -556,6 +556,16 @@ name|TRUE
 argument_list|,
 name|error
 argument_list|)
+operator|&&
+name|gimp_pdb_item_is_not_group
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|,
+name|error
+argument_list|)
 condition|)
 name|floating_sel_attach
 argument_list|(

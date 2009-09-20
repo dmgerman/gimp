@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b406aed0103
+DECL|enum|__anon2b9f07c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1277,10 +1277,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|tool_info
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

@@ -118,7 +118,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon294ab23b0103
+DECL|enum|__anon2930f64b0103
 block|{
 DECL|enumerator|FILE_MATCH_NONE
 name|FILE_MATCH_NONE
@@ -779,10 +779,7 @@ name|name
 init|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|file_proc
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|gboolean

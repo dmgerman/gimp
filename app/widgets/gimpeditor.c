@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7dcc7c0103
+DECL|enum|__anon2c1af8c20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2158,7 +2158,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7dcc7c0208
+DECL|struct|__anon2c1af8c20208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType
@@ -3055,6 +3055,9 @@ name|child
 argument_list|)
 condition|)
 block|{
+name|GtkIconSize
+name|old_size
+decl_stmt|;
 name|gchar
 modifier|*
 name|stock_id
@@ -3069,9 +3072,16 @@ argument_list|,
 operator|&
 name|stock_id
 argument_list|,
-name|NULL
+operator|&
+name|old_size
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|button_icon_size
+operator|!=
+name|old_size
+condition|)
 name|gtk_image_set_from_stock
 argument_list|(
 name|GTK_IMAGE

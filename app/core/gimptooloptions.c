@@ -115,7 +115,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27833af90103
+DECL|enum|__anon27ebbbcf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -583,14 +583,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"GIMP %s options"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|tool_options
 operator|->
 name|tool_info
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|footer
@@ -599,14 +597,12 @@ name|g_strdup_printf
 argument_list|(
 literal|"end of %s options"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|tool_options
 operator|->
 name|tool_info
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|retval

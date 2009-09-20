@@ -1123,7 +1123,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_container_tree_view_prepend_toggle_cell_renderer
+name|gimp_container_tree_view_add_toggle_cell
 argument_list|(
 name|tree_view
 argument_list|,
@@ -1179,10 +1179,13 @@ name|GTK_STOCK_GO_UP
 argument_list|,
 name|_
 argument_list|(
-literal|"Raise this tool Raise this tool to the top"
+literal|"Raise this tool"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Raise this tool to the top"
+argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -1212,10 +1215,13 @@ name|GTK_STOCK_GO_DOWN
 argument_list|,
 name|_
 argument_list|(
-literal|"Lower this tool Lower this tool to the bottom"
+literal|"Lower this tool"
 argument_list|)
 argument_list|,
-name|NULL
+name|_
+argument_list|(
+literal|"Lower this tool to the bottom"
+argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(

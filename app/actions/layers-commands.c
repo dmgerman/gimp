@@ -758,10 +758,7 @@ name|widget
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 argument_list|,
 name|layer_fill_type
@@ -1946,6 +1943,8 @@ name|data
 argument_list|)
 argument_list|,
 name|GIMP_EXPAND_AS_NECESSARY
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -4084,10 +4083,7 @@ name|new_name
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|layer
-argument_list|)
 argument_list|)
 argument_list|)
 condition|)

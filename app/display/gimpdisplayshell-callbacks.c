@@ -1734,12 +1734,9 @@ name|space_shaded_tool
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|active_tool
 operator|->
 name|tool_info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_set_tool
@@ -2814,13 +2811,21 @@ name|GIMP_LOG
 argument_list|(
 name|TOOL_EVENTS
 argument_list|,
-literal|"event (display %p): BUTTON_PRESS (%d)"
+literal|"event (display %p): BUTTON_PRESS (%d @ %0.0f:%0.0f)"
 argument_list|,
 name|display
 argument_list|,
 name|bevent
 operator|->
 name|button
+argument_list|,
+name|bevent
+operator|->
+name|x
+argument_list|,
+name|bevent
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 comment|/*  if the toplevel window didn't have focus, the above          *  gtk_widget_grab_focus() didn't set the canvas' HAS_FOCUS          *  flags, so check for it here again.          *          *  this happens in "click to focus" mode.          */
@@ -3424,13 +3429,21 @@ name|GIMP_LOG
 argument_list|(
 name|TOOL_EVENTS
 argument_list|,
-literal|"event (display %p): 2BUTTON_PRESS (%d)"
+literal|"event (display %p): 2BUTTON_PRESS (%d @ %0.0f:%0.0f)"
 argument_list|,
 name|display
 argument_list|,
 name|bevent
 operator|->
 name|button
+argument_list|,
+name|bevent
+operator|->
+name|x
+argument_list|,
+name|bevent
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 if|if
@@ -3515,13 +3528,21 @@ name|GIMP_LOG
 argument_list|(
 name|TOOL_EVENTS
 argument_list|,
-literal|"event (display %p): 3BUTTON_PRESS (%d)"
+literal|"event (display %p): 3BUTTON_PRESS (%d @ %0.0f:%0.0f)"
 argument_list|,
 name|display
 argument_list|,
 name|bevent
 operator|->
 name|button
+argument_list|,
+name|bevent
+operator|->
+name|x
+argument_list|,
+name|bevent
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 if|if
@@ -3606,13 +3627,21 @@ name|GIMP_LOG
 argument_list|(
 name|TOOL_EVENTS
 argument_list|,
-literal|"event (display %p): BUTTON_RELEASE (%d)"
+literal|"event (display %p): BUTTON_RELEASE (%d @ %0.0f:%0.0f)"
 argument_list|,
 name|display
 argument_list|,
 name|bevent
 operator|->
 name|button
+argument_list|,
+name|bevent
+operator|->
+name|x
+argument_list|,
+name|bevent
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_autoscroll_stop
@@ -4200,9 +4229,21 @@ name|GIMP_LOG
 argument_list|(
 name|TOOL_EVENTS
 argument_list|,
-literal|"event (display %p): MOTION_NOTIFY"
+literal|"event (display %p): MOTION_NOTIFY (%0.0f:%0.0f %d)"
 argument_list|,
 name|display
+argument_list|,
+name|mevent
+operator|->
+name|x
+argument_list|,
+name|mevent
+operator|->
+name|y
+argument_list|,
+name|mevent
+operator|->
+name|time
 argument_list|)
 expr_stmt|;
 if|if

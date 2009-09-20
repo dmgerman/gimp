@@ -929,12 +929,10 @@ argument_list|(
 literal|"Delete '%s'?"
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_text
@@ -952,12 +950,10 @@ literal|"Are you sure you want to remove '%s' "
 literal|"from the list and delete it on disk?"
 argument_list|)
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|data
 argument_list|)
-operator|->
-name|name
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -445,9 +445,10 @@ name|callback_name
 argument_list|,
 name|G_TYPE_STRING
 argument_list|,
+name|gimp_object_get_name
+argument_list|(
 name|object
-operator|->
-name|name
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,

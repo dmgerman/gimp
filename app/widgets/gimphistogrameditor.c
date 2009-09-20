@@ -2164,12 +2164,9 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|drawable
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_editor_set_name

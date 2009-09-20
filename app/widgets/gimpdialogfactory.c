@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon296dfb280103
+DECL|enum|__anon297752740103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon296dfb280203
+DECL|enum|__anon297752740203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -771,12 +771,10 @@ if|if
 condition|(
 name|strcmp
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-operator|->
-name|name
 argument_list|,
 literal|"toolbox"
 argument_list|)
@@ -790,12 +788,13 @@ expr_stmt|;
 else|else
 name|key
 operator|=
-name|GIMP_OBJECT
+operator|(
+name|gpointer
+operator|)
+name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-operator|->
-name|name
 expr_stmt|;
 name|g_hash_table_remove
 argument_list|(
@@ -1073,12 +1072,13 @@ expr_stmt|;
 else|else
 name|key
 operator|=
-name|GIMP_OBJECT
+operator|(
+name|gpointer
+operator|)
+name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-operator|->
-name|name
 expr_stmt|;
 name|g_hash_table_insert
 argument_list|(
@@ -2108,11 +2108,12 @@ name|dockable
 operator|->
 name|dockbook
 operator|&&
+name|gimp_dockbook_get_dock
+argument_list|(
 name|dockable
 operator|->
 name|dockbook
-operator|->
-name|dock
+argument_list|)
 condition|)
 block|{
 name|GtkNotebook
@@ -2196,7 +2197,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
@@ -2278,7 +2279,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_raise:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifiers:  a '|' separated list of identifiers of dialogs as  *                registered with gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size if a dialog needs to be created  *  * Raises any of a list of already existing toplevel dialog or  * #GimpDockable if it was already created by this %facory.  *  * Implicitly creates the first dialog in the list if none of the dialogs  * were found.  *  * Return value: the raised or newly created dialog.  **/
 end_comment
 
 begin_function
@@ -4950,10 +4951,7 @@ name|writer
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|factory
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0efd820103
+DECL|enum|__anon27b7b5800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0efd820203
+DECL|enum|__anon27b7b5800203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2439,12 +2439,9 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|list
 operator|->
 name|dest_info
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_message_box_set_primary_text

@@ -839,10 +839,7 @@ name|GIMP_CONTAINER_ENTRY_COLUMN_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|)
 argument_list|,
 operator|-
@@ -1363,10 +1360,7 @@ name|GIMP_CONTAINER_ENTRY_COLUMN_NAME
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|)
 argument_list|,
 operator|-
@@ -1426,10 +1420,7 @@ name|iter
 condition|?
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|viewable
-argument_list|)
 argument_list|)
 else|:
 literal|""

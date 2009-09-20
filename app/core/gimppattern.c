@@ -671,12 +671,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s (%d Ã %d)"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|pattern
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|pattern
 operator|->

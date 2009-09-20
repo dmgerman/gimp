@@ -1069,7 +1069,7 @@ DECL|macro|GTK_REQUIRED_MICRO
 define|#
 directive|define
 name|GTK_REQUIRED_MICRO
-value|1
+value|6
 specifier|const
 name|gchar
 modifier|*
@@ -2105,6 +2105,14 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|gimp_get_show_gui
+argument_list|(
+name|gimp
+argument_list|)
+condition|)
+block|{
 comment|/*  create the empty display  */
 name|display
 operator|=
@@ -2147,6 +2155,7 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  indicate that the application has finished loading  */
 name|gdk_notify_startup_complete
 argument_list|()

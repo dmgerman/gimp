@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon276a0fd60103
+DECL|enum|__anon275af66c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1042,10 +1042,7 @@ name|g_strdup
 argument_list|(
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|device_info
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1058,10 +1055,7 @@ literal|"%s (%s)"
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|device_info
-argument_list|)
 argument_list|)
 argument_list|,
 name|gdk_display_get_name

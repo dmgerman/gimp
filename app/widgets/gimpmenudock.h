@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimpimagedock.h"
+file|"gimpdock.h"
 end_include
 
 begin_define
@@ -100,7 +100,7 @@ struct|struct
 name|_GimpMenuDock
 block|{
 DECL|member|parent_instance
-name|GimpImageDock
+name|GimpDock
 name|parent_instance
 decl_stmt|;
 DECL|member|image_container
@@ -131,10 +131,6 @@ name|GtkWidget
 modifier|*
 name|auto_button
 decl_stmt|;
-DECL|member|update_title_idle_id
-name|guint
-name|update_title_idle_id
-decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -145,7 +141,7 @@ struct|struct
 name|_GimpMenuDockClass
 block|{
 DECL|member|parent_class
-name|GimpImageDockClass
+name|GimpDockClass
 name|parent_class
 decl_stmt|;
 block|}

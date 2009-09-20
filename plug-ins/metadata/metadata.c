@@ -1853,12 +1853,12 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|xmp_model_free
+block|}
+name|g_object_unref
 argument_list|(
 name|xmp_model
 argument_list|)
 expr_stmt|;
-block|}
 name|values
 index|[
 literal|0

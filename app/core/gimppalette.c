@@ -1228,12 +1228,10 @@ name|g_strdup_printf
 argument_list|(
 literal|"%s (%d)"
 argument_list|,
-name|GIMP_OBJECT
+name|gimp_object_get_name
 argument_list|(
 name|palette
 argument_list|)
-operator|->
-name|name
 argument_list|,
 name|palette
 operator|->

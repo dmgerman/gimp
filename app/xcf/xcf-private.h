@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d9b8d10103
+DECL|enum|__anon292c415f0103
 block|{
 DECL|enumerator|PROP_END
 name|PROP_END
@@ -160,6 +160,21 @@ DECL|enumerator|PROP_SAMPLE_POINTS
 name|PROP_SAMPLE_POINTS
 init|=
 literal|27
+block|,
+DECL|enumerator|PROP_LOCK_CONTENT
+name|PROP_LOCK_CONTENT
+init|=
+literal|28
+block|,
+DECL|enumerator|PROP_GROUP_ITEM
+name|PROP_GROUP_ITEM
+init|=
+literal|29
+block|,
+DECL|enumerator|PROP_ITEM_PATH
+name|PROP_ITEM_PATH
+init|=
+literal|30
 DECL|typedef|PropType
 block|}
 name|PropType
@@ -169,7 +184,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d9b8d10203
+DECL|enum|__anon292c415f0203
 block|{
 DECL|enumerator|COMPRESS_NONE
 name|COMPRESS_NONE
@@ -201,7 +216,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d9b8d10303
+DECL|enum|__anon292c415f0303
 block|{
 DECL|enumerator|XCF_ORIENTATION_HORIZONTAL
 name|XCF_ORIENTATION_HORIZONTAL
@@ -221,7 +236,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29d9b8d10403
+DECL|enum|__anon292c415f0403
 block|{
 DECL|enumerator|XCF_STROKETYPE_STROKE
 name|XCF_STROKETYPE_STROKE

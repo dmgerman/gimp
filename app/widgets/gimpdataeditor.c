@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon274885c80103
+DECL|enum|__anon273a1c2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1703,12 +1703,9 @@ name|value
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|aux
@@ -1888,12 +1885,9 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|data
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2313,12 +2307,9 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|data
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2410,12 +2401,9 @@ argument_list|)
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|editor
 operator|->
 name|data
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

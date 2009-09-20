@@ -94,7 +94,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785b2950103
+DECL|enum|__anon2ab390930103
 block|{
 DECL|enumerator|ADD
 name|ADD
@@ -119,7 +119,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2785b2950203
+DECL|enum|__anon2ab390930203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -136,7 +136,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785b2950308
+DECL|struct|__anon2ab390930308
 block|{
 DECL|member|signame
 name|gchar
@@ -1280,7 +1280,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2785b2950408
+DECL|struct|__anon2ab390930408
 block|{
 DECL|member|writer
 name|GimpConfigWriter
@@ -1370,10 +1370,7 @@ name|name
 operator|=
 name|gimp_object_get_name
 argument_list|(
-name|GIMP_OBJECT
-argument_list|(
 name|object
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
