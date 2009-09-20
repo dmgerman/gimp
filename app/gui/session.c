@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275709960103
+DECL|enum|__anon2b8a76380103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -471,8 +471,7 @@ expr_stmt|;
 comment|/* "dock" entries in the "dock" factory are just dummy                * entries and don't have any dialog factory entry, so                * don't bother looking for entires for them                */
 if|if
 condition|(
-operator|!
-name|g_str_equal
+name|strcmp
 argument_list|(
 name|entry_name
 argument_list|,
