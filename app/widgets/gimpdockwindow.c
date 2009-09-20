@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad22d2f0103
+DECL|enum|__anon276b107e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1704,13 +1704,14 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_session_info_set_widget
+argument_list|(
 name|info
-operator|->
-name|widget
-operator|=
+argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|dock
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_get_info
@@ -1718,11 +1719,12 @@ argument_list|(
 name|info
 argument_list|)
 expr_stmt|;
+name|gimp_session_info_set_widget
+argument_list|(
 name|info
-operator|->
-name|widget
-operator|=
+argument_list|,
 name|NULL
+argument_list|)
 expr_stmt|;
 name|gimp_container_add
 argument_list|(
