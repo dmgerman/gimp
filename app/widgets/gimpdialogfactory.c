@@ -108,7 +108,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292d8a800103
+DECL|enum|__anon2744bdd90103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,7 +128,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon292d8a800203
+DECL|enum|__anon2744bdd90203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -5041,6 +5041,18 @@ argument_list|)
 expr_stmt|;
 name|gimp_session_info_clear_info
 argument_list|(
+name|info
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"skipping to restore session info %p, not open"
+argument_list|,
 name|info
 argument_list|)
 expr_stmt|;

@@ -75,9 +75,15 @@ directive|include
 file|"gimpsessioninfo-private.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon29af96b50103
+DECL|enum|__anon2a32bed20103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1404,6 +1410,23 @@ name|GtkWidget
 modifier|*
 name|dialog
 decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"restoring toplevel \"%s\" (info %p)"
+argument_list|,
+name|info
+operator|->
+name|p
+operator|->
+name|factory_entry
+operator|->
+name|identifier
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 name|dialog
 operator|=
 name|gimp_dialog_factory_dialog_new
@@ -1455,6 +1478,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"restoring dock  (info %p)"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 name|gimp_session_info_dock_restore
 argument_list|(
 name|info

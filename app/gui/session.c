@@ -130,12 +130,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41b64a0103
+DECL|enum|__anon275709960103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -535,6 +541,15 @@ operator|!
 name|skip
 condition|)
 block|{
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"successfully parsed and added session info %p"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 name|factory
 operator|->
 name|session_infos
@@ -551,6 +566,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"failed to parse session info %p, not adding"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|info
