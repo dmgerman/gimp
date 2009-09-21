@@ -926,6 +926,14 @@ value|"gimp-layer-merge-down"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_MERGE_GROUP
+define|#
+directive|define
+name|GIMP_HELP_LAYER_MERGE_GROUP
+value|"gimp-layer-merge-group"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_DELETE
 define|#
 directive|define
