@@ -2710,9 +2710,6 @@ operator|&&
 operator|!
 name|ac
 operator|&&
-operator|!
-name|children
-operator|&&
 name|next_visible
 argument_list|)
 expr_stmt|;
