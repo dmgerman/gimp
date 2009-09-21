@@ -1539,6 +1539,13 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|gimp_group_layer_suspend_resize
+argument_list|(
+name|new_group
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -1676,6 +1683,22 @@ operator|++
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME: need to change the item's extents to resume_resize()        * will actually reallocate the projection's pyramid        */
+name|GIMP_ITEM
+argument_list|(
+name|new_group
+argument_list|)
+operator|->
+name|width
+operator|++
+expr_stmt|;
+name|gimp_group_layer_resume_resize
+argument_list|(
+name|new_group
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|new_item
