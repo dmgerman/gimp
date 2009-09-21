@@ -1484,7 +1484,7 @@ name|g_type_is_a
 argument_list|(
 name|new_type
 argument_list|,
-name|GIMP_TYPE_GROUP_LAYER
+name|GIMP_TYPE_DRAWABLE
 argument_list|)
 argument_list|,
 name|NULL
