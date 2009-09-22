@@ -4233,7 +4233,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the entire projection since the poition of            *  the children relative to each other might have changed            *  in a way that happens to leave the group's width and            *  height the same            */
+comment|/*  invalidate the entire projection since the position of            *  the children relative to each other might have changed            *  in a way that happens to leave the group's width and            *  height the same            */
 name|gimp_projectable_invalidate
 argument_list|(
 name|GIMP_PROJECTABLE
