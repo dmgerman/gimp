@@ -60,6 +60,15 @@ comment|/* typedef struct _GimpDisplayOptions GimpDisplayOptions; in config-type
 end_comment
 
 begin_typedef
+DECL|typedef|GimpImageWindow
+typedef|typedef
+name|struct
+name|_GimpImageWindow
+name|GimpImageWindow
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpCursorView
 typedef|typedef
 name|struct
