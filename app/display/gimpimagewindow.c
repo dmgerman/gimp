@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae005c00103
+DECL|enum|__anon2b170ace0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -217,7 +217,6 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpImageWindow,gimp_image_window,GIMP_TYPE_WINDOW)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpImageWindow
@@ -236,9 +235,26 @@ name|parent_class
 value|gimp_image_window_parent_class
 end_define
 
+begin_decl_stmt
+specifier|static
+specifier|const
+name|gchar
+name|image_window_rc_style
+index|[]
+init|=
+literal|"style \"fullscreen-menubar-style\"\n"
+literal|"{\n"
+literal|"  GtkMenuBar::shadow-type      = none\n"
+literal|"  GtkMenuBar::internal-padding = 0\n"
+literal|"}\n"
+literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\"\n"
+decl_stmt|;
+end_decl_stmt
+
 begin_function
 specifier|static
 name|void
+DECL|function|gimp_image_window_class_init (GimpImageWindowClass * klass)
 name|gimp_image_window_class_init
 parameter_list|(
 name|GimpImageWindowClass
@@ -329,6 +345,11 @@ name|GIMP_PARAM_WRITABLE
 operator||
 name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_rc_parse_string
+argument_list|(
+name|image_window_rc_style
 argument_list|)
 expr_stmt|;
 block|}

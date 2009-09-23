@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fccb9c0103
+DECL|enum|__anon29c96f670103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29fccb9c0203
+DECL|enum|__anon29c96f670203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -689,13 +689,6 @@ name|gchar
 name|display_rc_style
 index|[]
 init|=
-literal|"style \"fullscreen-menubar-style\"\n"
-literal|"{\n"
-literal|"  GtkMenuBar::shadow-type      = none\n"
-literal|"  GtkMenuBar::internal-padding = 0\n"
-literal|"}\n"
-literal|"widget \"*.gimp-menubar-fullscreen\" style \"fullscreen-menubar-style\"\n"
-literal|"\n"
 literal|"style \"check-button-style\"\n"
 literal|"{\n"
 literal|"  GtkToggleButton::child-displacement-x = 0\n"
