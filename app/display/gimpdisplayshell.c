@@ -216,12 +216,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayoptions.h"
 end_include
 
@@ -341,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279760660103
+DECL|enum|__anon2a1fc1ef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -354,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279760660203
+DECL|enum|__anon2a1fc1ef0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2734,52 +2728,6 @@ operator|&
 name|GDK_WINDOW_STATE_ICONIFIED
 condition|)
 block|{
-name|gboolean
-name|iconified
-init|=
-operator|(
-name|event
-operator|->
-name|new_window_state
-operator|&
-name|GDK_WINDOW_STATE_ICONIFIED
-operator|)
-operator|!=
-literal|0
-decl_stmt|;
-if|if
-condition|(
-name|iconified
-condition|)
-block|{
-if|if
-condition|(
-name|gimp_displays_get_num_visible
-argument_list|(
-name|gimp
-argument_list|)
-operator|==
-literal|0
-condition|)
-block|{
-name|GIMP_LOG
-argument_list|(
-name|WM
-argument_list|,
-literal|"No displays visible any longer"
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_factories_hide_with_display
-argument_list|()
-expr_stmt|;
-block|}
-block|}
-else|else
-block|{
-name|gimp_dialog_factories_show_with_display
-argument_list|()
-expr_stmt|;
-block|}
 name|gimp_display_shell_progress_window_state_changed
 argument_list|(
 name|shell
