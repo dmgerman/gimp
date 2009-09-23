@@ -528,12 +528,6 @@ modifier|*
 name|nav_ebox
 decl_stmt|;
 comment|/*  SE: navigation event box           */
-DECL|member|statusbar
-name|GtkWidget
-modifier|*
-name|statusbar
-decl_stmt|;
-comment|/*  statusbar                          */
 DECL|member|render_buf
 name|guchar
 modifier|*

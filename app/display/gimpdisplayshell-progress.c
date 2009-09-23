@@ -102,13 +102,17 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 name|progress
 operator|=
 name|gimp_progress_start
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -165,11 +169,15 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 name|gimp_progress_end
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -210,12 +218,16 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 return|return
 name|gimp_progress_is_active
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -249,11 +261,15 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 name|gimp_progress_set_text
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -261,13 +277,17 @@ argument_list|,
 name|message
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 if|if
 condition|(
 name|gimp_progress_is_active
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -316,11 +336,15 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 name|gimp_progress_set_value
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -351,12 +375,16 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 return|return
 name|gimp_progress_get_value
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -385,11 +413,15 @@ argument_list|(
 name|progress
 argument_list|)
 decl_stmt|;
+comment|/* FIXME image window */
 name|gimp_progress_pulse
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -484,6 +516,7 @@ case|case
 name|GIMP_MESSAGE_WARNING
 case|:
 comment|/* warning messages go to the statusbar, if it's visible */
+comment|/* FIXME image window */
 if|if
 condition|(
 operator|!
@@ -491,7 +524,10 @@ name|gimp_statusbar_get_visible
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -499,12 +535,16 @@ argument_list|)
 condition|)
 break|break;
 else|else
+comment|/* FIXME image window */
 return|return
 name|gimp_progress_message
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -522,11 +562,15 @@ case|case
 name|GIMP_MESSAGE_INFO
 case|:
 comment|/* info messages go to the statusbar;        * if they are not handled there, they are swallowed        */
+comment|/* FIXME image window */
 name|gimp_progress_message
 argument_list|(
 name|GIMP_PROGRESS
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -697,6 +741,7 @@ name|shell
 argument_list|)
 condition|)
 block|{
+comment|/* FIXME image window */
 specifier|const
 name|gchar
 modifier|*
@@ -706,7 +751,10 @@ name|gimp_statusbar_peek
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)

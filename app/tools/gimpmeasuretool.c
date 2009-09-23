@@ -1380,10 +1380,14 @@ name|options
 operator|->
 name|use_info_window
 operator|||
+comment|/* FIXME image window */
 operator|!
 name|GTK_WIDGET_VISIBLE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)

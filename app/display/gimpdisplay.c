@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297762420103
+DECL|enum|__anon289b47070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1493,9 +1493,10 @@ operator|->
 name|shell
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|g_signal_connect
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|GIMP_IMAGE_WINDOW
 argument_list|(
 name|display
 operator|->

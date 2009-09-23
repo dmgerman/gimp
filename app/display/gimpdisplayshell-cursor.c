@@ -507,11 +507,15 @@ operator|=
 name|display_y
 expr_stmt|;
 comment|/*  use the passed image_coords for the statusbar because they are    *  possibly snapped...    */
+comment|/* FIXME image window */
 name|gimp_statusbar_update_cursor
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -666,11 +670,15 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|gimp_statusbar_clear_cursor
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)

@@ -217,9 +217,6 @@ name|GimpDisplayOptions
 modifier|*
 name|options
 decl_stmt|;
-name|gboolean
-name|fullscreen
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -233,30 +230,6 @@ operator|=
 name|GET_OPTIONS
 argument_list|(
 name|shell
-argument_list|)
-expr_stmt|;
-comment|/* FIXME temp image window hack */
-name|fullscreen
-operator|=
-name|gimp_image_window_get_fullscreen
-argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_statusbar_set_has_resize_grip
-argument_list|(
-name|GTK_STATUSBAR
-argument_list|(
-name|shell
-operator|->
-name|statusbar
-argument_list|)
-argument_list|,
-operator|!
-name|fullscreen
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_set_show_menubar
@@ -1033,11 +1006,15 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|gimp_statusbar_set_visible
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)

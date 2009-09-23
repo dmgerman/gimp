@@ -402,11 +402,15 @@ operator|->
 name|image_status_format
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|gimp_statusbar_replace
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)
@@ -433,11 +437,15 @@ argument_list|,
 name|GIMP_NAME
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|gimp_statusbar_replace
 argument_list|(
 name|GIMP_STATUSBAR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|statusbar
 argument_list|)

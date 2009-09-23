@@ -118,6 +118,11 @@ name|GtkWidget
 modifier|*
 name|menubar
 decl_stmt|;
+DECL|member|statusbar
+name|GtkWidget
+modifier|*
+name|statusbar
+decl_stmt|;
 DECL|member|window_state
 name|GdkWindowState
 name|window_state

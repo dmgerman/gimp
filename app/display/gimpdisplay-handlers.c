@@ -513,11 +513,12 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+comment|/* FIXME image window */
 name|GtkWidget
 modifier|*
 name|statusbar
 init|=
-name|GIMP_DISPLAY_SHELL
+name|GIMP_IMAGE_WINDOW
 argument_list|(
 name|display
 operator|->
@@ -582,11 +583,12 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+comment|/* FIXME image window */
 name|GtkWidget
 modifier|*
 name|statusbar
 init|=
-name|GIMP_DISPLAY_SHELL
+name|GIMP_IMAGE_WINDOW
 argument_list|(
 name|display
 operator|->
