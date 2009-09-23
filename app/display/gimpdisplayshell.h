@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwindow.h"
+file|"gimpimagewindow.h"
 end_include
 
 begin_comment
@@ -262,7 +262,7 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GimpWindow
+name|GimpImageWindow
 name|parent_instance
 decl_stmt|;
 comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
@@ -779,7 +779,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GimpWindowClass
+name|GimpImageWindowClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled
