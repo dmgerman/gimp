@@ -341,7 +341,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3aa7490103
+DECL|enum|__anon27dc97120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -354,7 +354,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3aa7490203
+DECL|enum|__anon27dc97120203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2620,6 +2620,18 @@ name|display
 operator|->
 name|gimp
 decl_stmt|;
+name|GTK_WIDGET_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|window_state_event
+argument_list|(
+name|widget
+argument_list|,
+name|event
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|window_state

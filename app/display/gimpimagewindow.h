@@ -108,6 +108,10 @@ name|GimpUIManager
 modifier|*
 name|menubar_manager
 decl_stmt|;
+DECL|member|window_state
+name|GdkWindowState
+name|window_state
+decl_stmt|;
 block|}
 struct|;
 end_struct
