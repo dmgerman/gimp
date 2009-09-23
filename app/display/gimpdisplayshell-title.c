@@ -205,18 +205,6 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_title_init (GimpDisplayShell * shell)
-name|gimp_display_shell_title_init
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-name|void
 DECL|function|gimp_display_shell_title_update (GimpDisplayShell * shell)
 name|gimp_display_shell_title_update
 parameter_list|(
