@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fc1ef0103
+DECL|enum|__anon29fccb9c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fc1ef0203
+DECL|enum|__anon29fccb9c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3443,10 +3443,6 @@ name|filter
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|main_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|disp_vbox
 decl_stmt|;
 name|GtkWidget
@@ -3807,25 +3803,6 @@ expr_stmt|;
 comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  main_vbox    *     |    *     +-- menubar    *     |    *     +-- disp_vbox    *     |      |    *     |      +-- upper_hbox    *     |      |      |    *     |      |      +-- inner_table    *     |      |      |      |    *     |      |      |      +-- origin    *     |      |      |      +-- hruler    *     |      |      |      +-- vruler    *     |      |      |      +-- canvas    *     |      |      |    *     |      |      +-- right_vbox    *     |      |             |    *     |      |             +-- zoom_on_resize_button    *     |      |             +-- vscrollbar    *     |      |    *     |      +-- lower_hbox    *     |             |    *     |             +-- quick_mask    *     |             +-- hscrollbar    *     |             +-- navbutton    *     |    *     +-- statusbar    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the vbox containing all widgets  */
-name|main_vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-name|main_vbox
-argument_list|)
-expr_stmt|;
 ifndef|#
 directive|ifndef
 name|GDK_WINDOWING_QUARTZ
@@ -3859,6 +3836,11 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|shell
+argument_list|)
+operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -3975,6 +3957,11 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|shell
+argument_list|)
+operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -5279,6 +5266,11 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|shell
+argument_list|)
+operator|->
 name|main_vbox
 argument_list|)
 argument_list|,
@@ -5387,11 +5379,6 @@ argument_list|(
 name|shell
 operator|->
 name|statusbar
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|main_vbox
 argument_list|)
 expr_stmt|;
 comment|/*  add display filter for color management  */

@@ -108,6 +108,11 @@ name|GimpUIManager
 modifier|*
 name|menubar_manager
 decl_stmt|;
+DECL|member|main_vbox
+name|GtkWidget
+modifier|*
+name|main_vbox
+decl_stmt|;
 DECL|member|window_state
 name|GdkWindowState
 name|window_state
