@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cd73330103
+DECL|enum|__anon2afa7aef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -348,7 +348,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29cd73330203
+DECL|enum|__anon2afa7aef0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2709,22 +2709,6 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/* FIXME image window */
-comment|/* update the<Image>/View/Zoom menu */
-name|gimp_ui_manager_update
-argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|menubar_manager
-argument_list|,
-name|shell
-operator|->
-name|display
-argument_list|)
-expr_stmt|;
 name|user_context
 operator|=
 name|gimp_get_user_context
@@ -3219,28 +3203,27 @@ name|display
 operator|=
 name|display
 expr_stmt|;
-name|shell
-operator|->
-name|popup_manager
-operator|=
-name|popup_manager
-expr_stmt|;
-name|shell
-operator|->
-name|display_factory
-operator|=
-name|display_factory
-expr_stmt|;
 comment|/* FIXME image window */
-name|gimp_image_window_set_active_display
-argument_list|(
 name|GIMP_IMAGE_WINDOW
 argument_list|(
 name|shell
 argument_list|)
-argument_list|,
+operator|->
+name|active_display
+operator|=
 name|display
-argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|popup_manager
+operator|=
+name|popup_manager
+expr_stmt|;
+name|shell
+operator|->
+name|display_factory
+operator|=
+name|display_factory
 expr_stmt|;
 if|if
 condition|(

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289b47070103
+DECL|enum|__anon28a2d7a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1491,6 +1491,19 @@ argument_list|(
 name|display
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+comment|/* FIXME image window */
+name|gimp_image_window_set_active_display
+argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+argument_list|,
+name|display
 argument_list|)
 expr_stmt|;
 comment|/* FIXME image window */
