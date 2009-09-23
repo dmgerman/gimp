@@ -271,11 +271,6 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
-DECL|member|menubar_manager
-name|GimpUIManager
-modifier|*
-name|menubar_manager
-decl_stmt|;
 DECL|member|popup_manager
 name|GimpUIManager
 modifier|*
@@ -533,12 +528,6 @@ modifier|*
 name|nav_ebox
 decl_stmt|;
 comment|/*  SE: navigation event box           */
-DECL|member|menubar
-name|GtkWidget
-modifier|*
-name|menubar
-decl_stmt|;
-comment|/*  menubar                            */
 DECL|member|statusbar
 name|GtkWidget
 modifier|*

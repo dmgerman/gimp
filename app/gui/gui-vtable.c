@@ -1596,9 +1596,10 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|gimp_ui_manager_update
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|GIMP_IMAGE_WINDOW
 argument_list|(
 name|display
 operator|->

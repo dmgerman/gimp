@@ -246,28 +246,6 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|menubar
-condition|)
-name|gtk_widget_set_name
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-operator|->
-name|menubar
-argument_list|)
-argument_list|,
-name|fullscreen
-condition|?
-literal|"gimp-menubar-fullscreen"
-else|:
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gtk_statusbar_set_has_resize_grip
 argument_list|(
 name|GTK_STATUSBAR
@@ -422,9 +400,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 if|if
 condition|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar
 condition|)
@@ -435,7 +417,10 @@ name|show
 condition|)
 name|gtk_widget_show
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar
 argument_list|)
@@ -443,15 +428,22 @@ expr_stmt|;
 else|else
 name|gtk_widget_hide
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -662,9 +654,13 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -926,9 +922,13 @@ literal|0
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1045,9 +1045,13 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1160,9 +1164,13 @@ operator|!
 name|show
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1275,9 +1283,13 @@ operator|!
 name|show
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1465,9 +1477,13 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1596,9 +1612,13 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1727,9 +1747,13 @@ name|shell
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1831,9 +1855,13 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -1933,9 +1961,13 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -2035,9 +2067,13 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -2137,9 +2173,13 @@ name|TRUE
 else|:
 name|FALSE
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_ACTIVE
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,
@@ -2357,9 +2397,13 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
+comment|/* FIXME image window */
 name|SET_COLOR
 argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
 name|shell
+argument_list|)
 operator|->
 name|menubar_manager
 argument_list|,

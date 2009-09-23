@@ -113,6 +113,11 @@ name|GtkWidget
 modifier|*
 name|main_vbox
 decl_stmt|;
+DECL|member|menubar
+name|GtkWidget
+modifier|*
+name|menubar
+decl_stmt|;
 DECL|member|window_state
 name|GdkWindowState
 name|window_state
