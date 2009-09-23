@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimagewindow.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e38720103
+DECL|enum|__anon29fbac8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -562,6 +568,42 @@ argument_list|(
 name|object
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_function
+name|GimpDisplay
+modifier|*
+DECL|function|gimp_image_window_get_active_display (GimpImageWindow * window)
+name|gimp_image_window_get_active_display
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|window
+argument_list|)
+operator|->
+name|display
+return|;
 block|}
 end_function
 
