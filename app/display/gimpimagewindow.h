@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpWindow
 name|parent_instance
 decl_stmt|;
+DECL|member|menubar_manager
+name|GimpUIManager
+modifier|*
+name|menubar_manager
+decl_stmt|;
 block|}
 struct|;
 end_struct

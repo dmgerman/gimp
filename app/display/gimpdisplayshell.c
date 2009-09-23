@@ -341,7 +341,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aebbd3b0103
+DECL|enum|__anon2b3aa7490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -354,7 +354,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aebbd3b0203
+DECL|enum|__anon2b3aa7490203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3621,6 +3621,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DISPLAY_SHELL
+argument_list|,
+literal|"menu-factory"
+argument_list|,
+name|menu_factory
 argument_list|,
 literal|"unit"
 argument_list|,
