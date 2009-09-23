@@ -679,11 +679,6 @@ name|GimpTreeHandler
 modifier|*
 name|vectors_visible_handler
 decl_stmt|;
-DECL|member|window_state
-name|GdkWindowState
-name|window_state
-decl_stmt|;
-comment|/* for fullscreen display              */
 DECL|member|zoom_on_resize
 name|gboolean
 name|zoom_on_resize

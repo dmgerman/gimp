@@ -138,6 +138,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpimagewindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions.h"
 end_include
 
@@ -2253,6 +2259,17 @@ condition|(
 name|display
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|window
+init|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+decl_stmt|;
 name|image
 operator|=
 name|display
@@ -2270,9 +2287,12 @@ argument_list|)
 expr_stmt|;
 name|fullscreen
 operator|=
-name|gimp_display_shell_get_fullscreen
+name|gimp_image_window_get_fullscreen
 argument_list|(
-name|shell
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|options

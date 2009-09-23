@@ -159,6 +159,12 @@ directive|include
 file|"gimpdisplayshell-title.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimagewindow.h"
+end_include
+
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -2732,6 +2738,10 @@ name|GimpDisplayConfig
 modifier|*
 name|display_config
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|window
+decl_stmt|;
 name|gboolean
 name|fullscreen
 decl_stmt|;
@@ -2749,11 +2759,24 @@ name|display
 operator|->
 name|config
 expr_stmt|;
-name|fullscreen
+name|window
 operator|=
-name|gimp_display_shell_get_fullscreen
+name|gtk_widget_get_toplevel
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|fullscreen
+operator|=
+name|gimp_image_window_get_fullscreen
+argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  if the user did not set the padding mode for this display explicitely  */
