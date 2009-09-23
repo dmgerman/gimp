@@ -570,6 +570,15 @@ argument_list|(
 name|shell
 argument_list|)
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|toplevel
+init|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 return|return
 operator|(
 name|GTK_WIDGET_DRAWABLE
@@ -581,7 +590,7 @@ name|gdk_window_get_state
 argument_list|(
 name|gtk_widget_get_window
 argument_list|(
-name|widget
+name|toplevel
 argument_list|)
 argument_list|)
 operator|==
