@@ -103,6 +103,11 @@ DECL|member|parent_instance
 name|GimpWindow
 name|parent_instance
 decl_stmt|;
+DECL|member|active_display
+name|GimpDisplay
+modifier|*
+name|active_display
+decl_stmt|;
 DECL|member|menubar_manager
 name|GimpUIManager
 modifier|*
@@ -153,6 +158,21 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|void
+name|gimp_image_window_set_active_display
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GimpDisplay

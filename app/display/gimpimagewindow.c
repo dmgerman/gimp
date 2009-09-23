@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27701c1e0103
+DECL|enum|__anon28d709510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1297,6 +1297,61 @@ comment|/*  public functions  */
 end_comment
 
 begin_function
+name|void
+DECL|function|gimp_image_window_set_active_display (GimpImageWindow * window,GimpDisplay * display)
+name|gimp_image_window_set_active_display
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_IMAGE_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|display
+operator|==
+name|window
+operator|->
+name|active_display
+condition|)
+return|return;
+if|if
+condition|(
+name|window
+operator|->
+name|active_display
+condition|)
+block|{     }
+name|window
+operator|->
+name|active_display
+operator|=
+name|display
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|GimpDisplay
 modifier|*
 DECL|function|gimp_image_window_get_active_display (GimpImageWindow * window)
@@ -1318,12 +1373,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|window
-argument_list|)
 operator|->
-name|display
+name|active_display
 return|;
 block|}
 end_function
