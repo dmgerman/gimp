@@ -539,6 +539,18 @@ name|guint
 name|title_idle_id
 decl_stmt|;
 comment|/*  title update idle ID               */
+DECL|member|title
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
+comment|/*  current title                      */
+DECL|member|status
+name|gchar
+modifier|*
+name|status
+decl_stmt|;
+comment|/*  current default statusbar content  */
 DECL|member|icon_size
 name|gint
 name|icon_size
