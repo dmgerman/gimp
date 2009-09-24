@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8529a0108
+DECL|struct|__anon277dafba0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -471,9 +471,12 @@ operator|->
 name|scale_dialog
 argument_list|)
 argument_list|,
+name|gtk_widget_get_toplevel
+argument_list|(
 name|GTK_WINDOW
 argument_list|(
 name|shell
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
