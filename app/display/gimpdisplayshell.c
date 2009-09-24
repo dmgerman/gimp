@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f61460103
+DECL|enum|__anon28016d660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5f61460203
+DECL|enum|__anon28016d660203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1551,26 +1551,6 @@ operator|->
 name|last_active_state
 operator|=
 literal|0
-expr_stmt|;
-name|gtk_window_set_role
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-literal|"gimp-image-window"
-argument_list|)
-expr_stmt|;
-name|gtk_window_set_resizable
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-name|TRUE
-argument_list|)
 expr_stmt|;
 name|gtk_widget_set_events
 argument_list|(

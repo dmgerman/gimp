@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8ba4600103
+DECL|enum|__anon2c7666430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -515,7 +515,28 @@ name|GimpImageWindow
 modifier|*
 name|window
 parameter_list|)
-block|{ }
+block|{
+name|gtk_window_set_role
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+literal|"gimp-image-window"
+argument_list|)
+expr_stmt|;
+name|gtk_window_set_resizable
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
