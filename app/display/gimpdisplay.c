@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a2d7a70103
+DECL|enum|__anon2922181e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1958,6 +1958,12 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|old_image
+operator|!=
+name|image
+condition|)
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
