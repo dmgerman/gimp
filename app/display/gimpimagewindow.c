@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7666430103
+DECL|enum|__anon2b5c957e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -745,18 +745,12 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* FIXME display shell */
 name|window
 operator|->
 name|statusbar
 operator|=
 name|gimp_statusbar_new
-argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|window
-argument_list|)
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
@@ -1446,6 +1440,18 @@ operator|->
 name|active_display
 operator|->
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_statusbar_set_shell
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|window
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|active_shell
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

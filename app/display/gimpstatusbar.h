@@ -239,9 +239,7 @@ name|GtkWidget
 modifier|*
 name|gimp_statusbar_new
 parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
+name|void
 parameter_list|)
 function_decl|;
 end_function_decl
