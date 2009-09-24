@@ -247,6 +247,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_statusbar_set_shell
+parameter_list|(
+name|GimpStatusbar
+modifier|*
+name|statusbar
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gboolean
 name|gimp_statusbar_get_visible
 parameter_list|(
