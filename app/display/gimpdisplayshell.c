@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28016d660103
+DECL|enum|__anon29b09ce00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28016d660203
+DECL|enum|__anon29b09ce00203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4607,17 +4607,11 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-comment|/* FIXME image window */
 name|action
 operator|=
 name|gimp_ui_manager_find_action
 argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|menubar_manager
+name|popup_manager
 argument_list|,
 literal|"quick-mask"
 argument_list|,
