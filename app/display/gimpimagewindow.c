@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1fbea40103
+DECL|enum|__anon2b8ba4600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -322,6 +322,27 @@ begin_function_decl
 specifier|static
 name|void
 name|gimp_image_window_shell_status_notify
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+specifier|const
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_image_window_shell_icon_notify
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -1392,7 +1413,7 @@ if|#
 directive|if
 literal|0
 comment|/* FIXME enable this when the display is a separate widget */
-block|if (display == window->active_display)     return;    if (window->active_display)     {       active_shell = GIMP_DISPLAY_SHELL (window->active_display->shell);        g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_scaled,                                             window);       g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_title_notify,                                             window);       g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_status_notify,                                             window);     }    window->active_display = display;
+block|if (display == window->active_display)     return;    if (window->active_display)     {       active_shell = GIMP_DISPLAY_SHELL (window->active_display->shell);        g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_scaled,                                             window);       g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_title_notify,                                             window);       g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_status_notify,                                             window);       g_signal_handlers_disconnect_by_func (active_shell,                                             gimp_image_window_shell_icon_notify,                                             window);     }    window->active_display = display;
 endif|#
 directive|endif
 name|active_shell
@@ -1444,6 +1465,21 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_image_window_shell_status_notify
+argument_list|)
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
+comment|/* FIXME: "icon" later */
+name|g_signal_connect
+argument_list|(
+name|active_shell
+argument_list|,
+literal|"notify::gimp-icon"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_image_window_shell_icon_notify
 argument_list|)
 argument_list|,
 name|window
@@ -1760,6 +1796,41 @@ argument_list|,
 name|shell
 operator|->
 name|status
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_image_window_shell_icon_notify (GimpDisplayShell * shell,const GParamSpec * pspec,GimpImageWindow * window)
+name|gimp_image_window_shell_icon_notify
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+specifier|const
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|,
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|)
+block|{
+name|gtk_window_set_icon
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|window
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|icon
 argument_list|)
 expr_stmt|;
 block|}

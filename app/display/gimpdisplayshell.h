@@ -561,6 +561,12 @@ name|guint
 name|icon_idle_id
 decl_stmt|;
 comment|/*  ID of the idle-function            */
+DECL|member|icon
+name|GdkPixbuf
+modifier|*
+name|icon
+decl_stmt|;
+comment|/*  icon                               */
 DECL|member|fill_idle_id
 name|guint
 name|fill_idle_id
