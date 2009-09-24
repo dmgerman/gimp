@@ -335,7 +335,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b09ce00103
+DECL|enum|__anon27d9cba70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b09ce00203
+DECL|enum|__anon27d9cba70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3373,6 +3373,10 @@ argument_list|,
 literal|"menu-factory"
 argument_list|,
 name|menu_factory
+argument_list|,
+literal|"display-factory"
+argument_list|,
+name|display_factory
 argument_list|,
 literal|"unit"
 argument_list|,
