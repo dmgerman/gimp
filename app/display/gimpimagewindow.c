@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd229a60103
+DECL|enum|__anon28adf82e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1864,7 +1864,31 @@ name|display
 operator|->
 name|image
 condition|)
-block|{     }
+block|{
+comment|/* FIXME don't run this code for revert */
+name|gimp_dialog_factory_remove_dialog
+argument_list|(
+name|window
+operator|->
+name|display_factory
+argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_statusbar_fill
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|window
+operator|->
+name|statusbar
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 else|else
 block|{
 name|GimpSessionInfo

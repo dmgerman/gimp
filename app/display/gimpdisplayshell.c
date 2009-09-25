@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29197d7f0103
+DECL|enum|__anon29653ab00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29197d7f0203
+DECL|enum|__anon29653ab00203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5501,18 +5501,6 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_remove_dialog
-argument_list|(
-name|shell
-operator|->
-name|display_factory
-argument_list|,
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_display_shell_set_unit
 argument_list|(
 name|shell
@@ -5534,20 +5522,6 @@ expr_stmt|;
 name|gimp_display_shell_scale_changed
 argument_list|(
 name|shell
-argument_list|)
-expr_stmt|;
-comment|/* FIXME image window */
-name|gimp_statusbar_fill
-argument_list|(
-name|GIMP_STATUSBAR
-argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|statusbar
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_sync_config
