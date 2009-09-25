@@ -105,6 +105,12 @@ directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimpimagewindow.h"
+end_include
+
 begin_define
 DECL|macro|SCALE_TIMEOUT
 define|#

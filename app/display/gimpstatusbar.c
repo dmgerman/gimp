@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimagewindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpscalecombobox.h"
 end_include
 

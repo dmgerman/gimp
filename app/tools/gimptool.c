@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpimagewindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpstatusbar.h"
 end_include
 
@@ -107,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1dffd10103
+DECL|enum|__anon29b1330a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
