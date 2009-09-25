@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a116dca0103
+DECL|enum|__anon2c2d7cd70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a116dca0203
+DECL|enum|__anon2c2d7cd70203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5115,32 +5115,6 @@ expr_stmt|;
 block|}
 else|else
 block|{
-comment|/* FIXME image window */
-name|gimp_statusbar_empty
-argument_list|(
-name|GIMP_STATUSBAR
-argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|statusbar
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_factory_add_foreign
-argument_list|(
-name|display_factory
-argument_list|,
-literal|"gimp-empty-image-window"
-argument_list|,
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_help_set_help_data
 argument_list|(
 name|shell
