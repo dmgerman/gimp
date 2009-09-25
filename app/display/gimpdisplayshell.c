@@ -234,12 +234,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-close.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-cursor.h"
 end_include
 
@@ -329,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a597a3f0103
+DECL|enum|__anon2968c8cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a597a3f0203
+DECL|enum|__anon2968c8cf0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -504,22 +498,6 @@ parameter_list|,
 name|GdkScreen
 modifier|*
 name|previous
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|gboolean
-name|gimp_display_shell_delete_event
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEventAny
-modifier|*
-name|aevent
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -854,12 +832,6 @@ operator|->
 name|screen_changed
 operator|=
 name|gimp_display_shell_screen_changed
-expr_stmt|;
-name|widget_class
-operator|->
-name|delete_event
-operator|=
-name|gimp_display_shell_delete_event
 expr_stmt|;
 name|widget_class
 operator|->
@@ -2710,43 +2682,6 @@ operator|->
 name|monitor_yres
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gboolean
-DECL|function|gimp_display_shell_delete_event (GtkWidget * widget,GdkEventAny * aevent)
-name|gimp_display_shell_delete_event
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEventAny
-modifier|*
-name|aevent
-parameter_list|)
-block|{
-name|GimpDisplayShell
-modifier|*
-name|shell
-init|=
-name|GIMP_DISPLAY_SHELL
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
-name|gimp_display_shell_close
-argument_list|(
-name|shell
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
