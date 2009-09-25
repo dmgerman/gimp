@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e516330103
+DECL|enum|__anon295ade970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -262,7 +262,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_image_window_window_state
+name|gimp_image_window_window_state_event
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -547,7 +547,7 @@ name|widget_class
 operator|->
 name|window_state_event
 operator|=
-name|gimp_image_window_window_state
+name|gimp_image_window_window_state_event
 expr_stmt|;
 name|widget_class
 operator|->
@@ -1343,8 +1343,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_image_window_window_state (GtkWidget * widget,GdkEventWindowState * event)
-name|gimp_image_window_window_state
+DECL|function|gimp_image_window_window_state_event (GtkWidget * widget,GdkEventWindowState * event)
+name|gimp_image_window_window_state_event
 parameter_list|(
 name|GtkWidget
 modifier|*
