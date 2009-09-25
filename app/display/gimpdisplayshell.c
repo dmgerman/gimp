@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29653ab00103
+DECL|enum|__anon2a116dca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29653ab00203
+DECL|enum|__anon2a116dca0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3411,12 +3411,6 @@ operator|->
 name|popup_manager
 operator|=
 name|popup_manager
-expr_stmt|;
-name|shell
-operator|->
-name|display_factory
-operator|=
-name|display_factory
 expr_stmt|;
 if|if
 condition|(

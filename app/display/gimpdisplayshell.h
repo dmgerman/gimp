@@ -276,11 +276,6 @@ name|GimpUIManager
 modifier|*
 name|popup_manager
 decl_stmt|;
-DECL|member|display_factory
-name|GimpDialogFactory
-modifier|*
-name|display_factory
-decl_stmt|;
 DECL|member|options
 name|GimpDisplayOptions
 modifier|*
