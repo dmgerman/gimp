@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a644c0103
+DECL|enum|__anon2b4bb0000103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon294a644c0203
+DECL|enum|__anon2b4bb0000203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3434,49 +3434,6 @@ else|else
 name|gtk_widget_hide
 argument_list|(
 name|menubar
-argument_list|)
-expr_stmt|;
-comment|/*  active display callback  */
-name|g_signal_connect
-argument_list|(
-name|menubar
-argument_list|,
-literal|"button-press-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_display_shell_events
-argument_list|)
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|menubar
-argument_list|,
-literal|"button-release-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_display_shell_events
-argument_list|)
-argument_list|,
-name|shell
-argument_list|)
-expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|menubar
-argument_list|,
-literal|"key-press-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_display_shell_events
-argument_list|)
-argument_list|,
-name|shell
 argument_list|)
 expr_stmt|;
 block|}
