@@ -266,6 +266,12 @@ name|GimpImageWindow
 name|parent_instance
 decl_stmt|;
 comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
+DECL|member|disp_vbox
+name|GtkWidget
+modifier|*
+name|disp_vbox
+decl_stmt|;
+comment|/* FIXME temp hack */
 DECL|member|display
 name|GimpDisplay
 modifier|*

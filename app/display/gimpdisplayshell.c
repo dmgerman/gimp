@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c372dec0103
+DECL|enum|__anon294a644c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c372dec0203
+DECL|enum|__anon294a644c0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3112,10 +3112,6 @@ name|filter
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|disp_vbox
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|upper_hbox
 decl_stmt|;
 name|GtkWidget
@@ -3485,6 +3481,8 @@ argument_list|)
 expr_stmt|;
 block|}
 comment|/*  another vbox for everything except the statusbar  */
+name|shell
+operator|->
 name|disp_vbox
 operator|=
 name|gtk_vbox_new
@@ -3494,32 +3492,12 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|main_vbox
-argument_list|)
-argument_list|,
-name|disp_vbox
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
+if|#
+directive|if
 literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|disp_vbox
-argument_list|)
-expr_stmt|;
+block|gtk_box_pack_start (GTK_BOX (GIMP_IMAGE_WINDOW (shell)->main_vbox),                       disp_vbox, TRUE, TRUE, 0);   gtk_widget_show (disp_vbox);
+endif|#
+directive|endif
 comment|/*  a hbox for the inner_table and the vertical scrollbar  */
 name|upper_hbox
 operator|=
@@ -3534,6 +3512,8 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|shell
+operator|->
 name|disp_vbox
 argument_list|)
 argument_list|,
@@ -3653,6 +3633,8 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|shell
+operator|->
 name|disp_vbox
 argument_list|)
 argument_list|,
