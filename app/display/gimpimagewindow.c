@@ -102,6 +102,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-progress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimagewindow.h"
 end_include
 
@@ -125,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c82b7cb0103
+DECL|enum|__anon2b70cbbd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1550,6 +1556,17 @@ name|gimp_dialog_factories_show_with_display
 argument_list|()
 expr_stmt|;
 block|}
+comment|/* FIXME multiple shells */
+name|gimp_display_shell_progress_window_state_changed
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|FALSE
