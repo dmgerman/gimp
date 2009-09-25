@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4bb0000103
+DECL|enum|__anon29a14b720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4bb0000203
+DECL|enum|__anon29a14b720203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3394,7 +3394,7 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  disp_vbox    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *            |    *            +-- quick_mask    *            +-- hscrollbar    *            +-- navbutton    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *            |    *            +-- quick_mask    *            +-- hscrollbar    *            +-- navbutton    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the vbox containing all widgets  */
 comment|/* FIXME image window */
@@ -3437,7 +3437,7 @@ name|menubar
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  another vbox for everything except the statusbar  */
+comment|/*  FIXME this will be the shell  */
 name|shell
 operator|->
 name|disp_vbox
@@ -3449,12 +3449,6 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|gtk_box_pack_start (GTK_BOX (GIMP_IMAGE_WINDOW (shell)->main_vbox),                       disp_vbox, TRUE, TRUE, 0);   gtk_widget_show (disp_vbox);
-endif|#
-directive|endif
 comment|/*  a hbox for the inner_table and the vertical scrollbar  */
 name|upper_hbox
 operator|=
