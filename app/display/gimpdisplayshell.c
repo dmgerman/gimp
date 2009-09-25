@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a14b720103
+DECL|enum|__anon28d80c1a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a14b720203
+DECL|enum|__anon28d80c1a0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3102,10 +3102,6 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
-name|GimpDisplayOptions
-modifier|*
-name|options
-decl_stmt|;
 name|GimpColorDisplayStack
 modifier|*
 name|filter
@@ -3238,12 +3234,6 @@ operator|->
 name|image
 condition|)
 block|{
-name|options
-operator|=
-name|shell
-operator|->
-name|options
-expr_stmt|;
 name|image_width
 operator|=
 name|gimp_image_get_width
@@ -3265,13 +3255,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|options
-operator|=
-name|shell
-operator|->
-name|no_image_options
-expr_stmt|;
-comment|/*        * These values are arbitrary. The width is determined by the        * menubar and the height is chosen to give a window aspect        * ratio of roughly 3:1 (as requested by the UI team).        */
+comment|/* These values are arbitrary. The width is determined by the        * menubar and the height is chosen to give a window aspect        * ratio of roughly 3:1 (as requested by the UI team).        */
 name|image_width
 operator|=
 name|GIMP_DEFAULT_IMAGE_WIDTH
@@ -3397,46 +3381,6 @@ expr_stmt|;
 comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *            |    *            +-- quick_mask    *            +-- hscrollbar    *            +-- navbutton    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the vbox containing all widgets  */
-comment|/* FIXME image window */
-if|if
-condition|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|menubar
-condition|)
-block|{
-name|GtkWidget
-modifier|*
-name|menubar
-init|=
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|menubar
-decl_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|show_menubar
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|menubar
-argument_list|)
-expr_stmt|;
-else|else
-name|gtk_widget_hide
-argument_list|(
-name|menubar
-argument_list|)
-expr_stmt|;
-block|}
 comment|/*  FIXME this will be the shell  */
 name|shell
 operator|->
@@ -4712,36 +4656,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  show everything  *******************************************************/
-if|if
-condition|(
-name|options
-operator|->
-name|show_rulers
-condition|)
-block|{
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|origin
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|hrule
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|vrule
-argument_list|)
-expr_stmt|;
-block|}
+comment|/*  show everything that is always shwon***********************************/
 name|gtk_widget_show
 argument_list|(
 name|GTK_WIDGET
@@ -4750,66 +4665,6 @@ name|shell
 operator|->
 name|canvas
 argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|options
-operator|->
-name|show_scrollbars
-condition|)
-block|{
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|vsb
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|hsb
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|zoom_button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|quick_mask_button
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|shell
-operator|->
-name|nav_ebox
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|options
-operator|->
-name|show_statusbar
-condition|)
-comment|/* FIXME image window */
-name|gtk_widget_show
-argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|statusbar
 argument_list|)
 expr_stmt|;
 comment|/*  add display filter for color management  */
