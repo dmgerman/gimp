@@ -1596,14 +1596,24 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* FIXME image window */
-name|gimp_ui_manager_update
-argument_list|(
-name|GIMP_IMAGE_WINDOW
+comment|/* FIXME image window: do this elsewhere */
+block|{
+name|GtkWidget
+modifier|*
+name|toplevel
+init|=
+name|gtk_widget_get_toplevel
 argument_list|(
 name|display
 operator|->
 name|shell
+argument_list|)
+decl_stmt|;
+name|gimp_ui_manager_update
+argument_list|(
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|toplevel
 argument_list|)
 operator|->
 name|menubar_manager
@@ -1611,6 +1621,7 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|GIMP_OBJECT
 argument_list|(
