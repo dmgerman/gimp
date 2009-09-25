@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-appearance.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-close.h"
 end_include
 
@@ -119,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ade970103
+DECL|enum|__anon278df8910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1457,6 +1463,16 @@ argument_list|)
 argument_list|,
 operator|!
 name|fullscreen
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|display
+operator|->
+name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|group

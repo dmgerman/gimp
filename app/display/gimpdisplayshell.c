@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27988e610103
+DECL|enum|__anon27c4fdda0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27988e610203
+DECL|enum|__anon27c4fdda0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2734,11 +2734,6 @@ operator|=
 name|gtk_widget_get_toplevel
 argument_list|(
 name|widget
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_appearance_update
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 name|fullscreen
