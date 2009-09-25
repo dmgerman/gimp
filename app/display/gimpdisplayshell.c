@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be367060103
+DECL|enum|__anon2c372dec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be367060203
+DECL|enum|__anon2c372dec0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5219,6 +5219,18 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|GtkWidget
+modifier|*
+name|toplevel
+init|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+decl_stmt|;
 name|shell
 operator|->
 name|fill_idle_id
@@ -5232,12 +5244,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* FIXME image window */
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
-name|shell
+name|toplevel
 argument_list|)
 argument_list|)
 expr_stmt|;
