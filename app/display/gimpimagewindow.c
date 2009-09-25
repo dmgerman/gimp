@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c602a80103
+DECL|enum|__anon2a9838620103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2181,6 +2181,11 @@ name|gimp_image_window_shell_icon_notify
 argument_list|)
 argument_list|,
 name|window
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_appearance_update
+argument_list|(
+name|active_shell
 argument_list|)
 expr_stmt|;
 if|if
