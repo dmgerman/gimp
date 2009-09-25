@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2968c8cf0103
+DECL|enum|__anon28f623600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2968c8cf0203
+DECL|enum|__anon28f623600203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3698,7 +3698,7 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  main_vbox    *     |    *     +-- menubar    *     |    *     +-- disp_vbox    *     |      |    *     |      +-- upper_hbox    *     |      |      |    *     |      |      +-- inner_table    *     |      |      |      |    *     |      |      |      +-- origin    *     |      |      |      +-- hruler    *     |      |      |      +-- vruler    *     |      |      |      +-- canvas    *     |      |      |    *     |      |      +-- right_vbox    *     |      |             |    *     |      |             +-- zoom_on_resize_button    *     |      |             +-- vscrollbar    *     |      |    *     |      +-- lower_hbox    *     |             |    *     |             +-- quick_mask    *     |             +-- hscrollbar    *     |             +-- navbutton    *     |    *     +-- statusbar    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  disp_vbox    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *            |    *            +-- quick_mask    *            +-- hscrollbar    *            +-- navbutton    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  the vbox containing all widgets  */
 comment|/* FIXME image window */
