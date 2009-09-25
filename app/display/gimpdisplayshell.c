@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d7cd70103
+DECL|enum|__anon29a329250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2d7cd70203
+DECL|enum|__anon29a329250203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3393,16 +3393,6 @@ expr_stmt|;
 name|shell
 operator|->
 name|display
-operator|=
-name|display
-expr_stmt|;
-comment|/* FIXME image window */
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|shell
-argument_list|)
-operator|->
-name|active_display
 operator|=
 name|display
 expr_stmt|;
