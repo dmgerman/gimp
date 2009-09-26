@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29b7cc460103
+DECL|enum|__anon2b42f3100103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b7cc460203
+DECL|enum|__anon2b42f3100203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1652,7 +1652,7 @@ modifier|*
 name|widget
 parameter_list|)
 block|{
-comment|/* Note that GimpDocks don't have any entry */
+comment|/* Note that GimpDockWindows don't have any entry */
 if|if
 condition|(
 operator|!
@@ -2851,7 +2851,7 @@ if|if
 condition|(
 name|entry
 condition|)
-comment|/* dialog is a toplevel (but not a GimpDock) or a GimpDockable */
+comment|/* dialog is a toplevel (but not a GimpDockWindow) or a GimpDockable */
 block|{
 name|GIMP_LOG
 argument_list|(
@@ -3098,7 +3098,7 @@ expr_stmt|;
 block|}
 block|}
 else|else
-comment|/*  dialog is a GimpDock  */
+comment|/*  dialog is a GimpDockWindow  */
 block|{
 name|GIMP_LOG
 argument_list|(
