@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsessioninfo.h"
 end_include
 
@@ -83,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32bed20103
+DECL|enum|__anon28c3756d0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -195,7 +201,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_session_info_is_for_dock
+name|gimp_session_info_is_for_dock_window
 parameter_list|(
 name|GimpSessionInfo
 modifier|*
@@ -1213,14 +1219,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_session_info_is_for_dock:  * @info:  *  * Helper function to determine if the session info is for a dock. It  * uses the dialog factory entry state and the associated widget state  * if any to determine that.  *  * Returns: %TRUE if session info is for a dock, %FALSE otherwise.  **/
+comment|/**  * gimp_session_info_is_for_dock_window:  * @info:  *  * Helper function to determine if the session info is for a dock. It  * uses the dialog factory entry state and the associated widget state  * if any to determine that.  *  * Returns: %TRUE if session info is for a dock, %FALSE otherwise.  **/
 end_comment
 
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_session_info_is_for_dock (GimpSessionInfo * info)
-name|gimp_session_info_is_for_dock
+DECL|function|gimp_session_info_is_for_dock_window (GimpSessionInfo * info)
+name|gimp_session_info_is_for_dock_window
 parameter_list|(
 name|GimpSessionInfo
 modifier|*
@@ -1250,7 +1256,7 @@ name|widget
 operator|==
 name|NULL
 operator|||
-name|GIMP_IS_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|info
 operator|->
@@ -2470,15 +2476,18 @@ operator|->
 name|dockable
 operator|)
 condition|)
-name|info
-operator|->
-name|p
-operator|->
-name|books
+block|{
+name|GimpDock
+modifier|*
+name|dock
+init|=
+name|NULL
+decl_stmt|;
+name|dock
 operator|=
-name|gimp_session_info_dock_from_widget
+name|gimp_dock_window_get_dock
 argument_list|(
-name|GIMP_DOCK
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|info
 operator|->
@@ -2488,6 +2497,18 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|info
+operator|->
+name|p
+operator|->
+name|books
+operator|=
+name|gimp_session_info_dock_from_widget
+argument_list|(
+name|dock
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -2621,7 +2642,7 @@ expr_stmt|;
 return|return
 operator|(
 operator|!
-name|gimp_session_info_is_for_dock
+name|gimp_session_info_is_for_dock_window
 argument_list|(
 name|info
 argument_list|)
@@ -2666,7 +2687,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|(
-name|gimp_session_info_is_for_dock
+name|gimp_session_info_is_for_dock_window
 argument_list|(
 name|info
 argument_list|)
@@ -2713,7 +2734,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|(
-name|gimp_session_info_is_for_dock
+name|gimp_session_info_is_for_dock_window
 argument_list|(
 name|info
 argument_list|)
@@ -2760,7 +2781,7 @@ argument_list|)
 expr_stmt|;
 return|return
 operator|(
-name|gimp_session_info_is_for_dock
+name|gimp_session_info_is_for_dock_window
 argument_list|(
 name|info
 argument_list|)

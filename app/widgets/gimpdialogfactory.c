@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a9561b40103
+DECL|enum|__anon29b7cc460103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9561b40203
+DECL|enum|__anon29b7cc460203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1663,7 +1663,7 @@ operator|!
 name|widget_entry
 operator|&&
 operator|!
-name|GIMP_IS_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|widget
 argument_list|)
@@ -3694,7 +3694,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|dialog
 argument_list|)

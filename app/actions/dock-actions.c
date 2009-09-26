@@ -342,9 +342,29 @@ define|\
 value|gimp_action_group_set_action_visible (group, action, (active) != 0)
 if|if
 condition|(
-name|GIMP_IS_MENU_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|toplevel
+argument_list|)
+condition|)
+block|{
+name|GimpDock
+modifier|*
+name|dock
+init|=
+name|gimp_dock_window_get_dock
+argument_list|(
+name|GIMP_DOCK_WINDOW
+argument_list|(
+name|toplevel
+argument_list|)
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_MENU_DOCK
+argument_list|(
+name|dock
 argument_list|)
 condition|)
 block|{
@@ -407,14 +427,6 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GIMP_IS_DOCK
-argument_list|(
-name|toplevel
-argument_list|)
-condition|)
-block|{
 comment|/*  update the window actions only in the context of their        *  own window (not in the context of some display or NULL)        *  (see view-actions.c)        */
 name|window_actions_update
 argument_list|(
