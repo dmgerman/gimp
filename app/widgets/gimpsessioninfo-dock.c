@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsessioninfo.h"
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7a1050103
+DECL|enum|__anon2c51a9490103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -545,10 +551,20 @@ block|{
 name|GimpDock
 modifier|*
 name|dock
+init|=
+name|NULL
+decl_stmt|;
+name|GimpDockWindow
+modifier|*
+name|dock_window
+init|=
+name|NULL
 decl_stmt|;
 name|GList
 modifier|*
 name|books
+init|=
+name|NULL
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -585,6 +601,16 @@ name|screen
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|dock_window
+operator|=
+name|gimp_dock_window_from_dock
+argument_list|(
+name|GIMP_DOCK
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|dock
@@ -599,7 +625,7 @@ name|gimp_session_info_aux_set_list
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
-name|dock
+name|dock_window
 argument_list|)
 argument_list|,
 name|info
@@ -711,6 +737,14 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|gtk_widget_show
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_widget_show
 argument_list|(
 name|GTK_WIDGET

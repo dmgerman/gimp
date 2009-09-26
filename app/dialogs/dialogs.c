@@ -1266,6 +1266,7 @@ name|menu_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Toplevel */
 name|global_dialog_factory
 operator|=
 name|gimp_dialog_factory_new
@@ -1284,6 +1285,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/* Toolbox */
 name|global_toolbox_factory
 operator|=
 name|gimp_dialog_factory_new
@@ -1309,6 +1311,14 @@ argument_list|,
 name|dialogs_dockable_constructor
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factory_set_dock_window_func
+argument_list|(
+name|global_toolbox_factory
+argument_list|,
+name|dialogs_toolbox_dock_window_new
+argument_list|)
+expr_stmt|;
+comment|/* Dock */
 name|global_dock_factory
 operator|=
 name|gimp_dialog_factory_new
@@ -1334,6 +1344,14 @@ argument_list|,
 name|dialogs_dockable_constructor
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factory_set_dock_window_func
+argument_list|(
+name|global_dock_factory
+argument_list|,
+name|dialogs_dock_window_new
+argument_list|)
+expr_stmt|;
+comment|/* Display */
 name|global_display_factory
 operator|=
 name|gimp_dialog_factory_new

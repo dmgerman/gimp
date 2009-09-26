@@ -193,6 +193,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|)
 function_decl|;
 end_function_decl
