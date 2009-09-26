@@ -380,7 +380,7 @@ name|menu_dock
 init|=
 name|GIMP_MENU_DOCK
 argument_list|(
-name|toplevel
+name|dock
 argument_list|)
 decl_stmt|;
 name|SET_VISIBLE
