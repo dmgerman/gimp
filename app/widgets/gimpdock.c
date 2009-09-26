@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c9fcf0103
+DECL|enum|__anon27f0f5b70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +108,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0c9fcf0203
+DECL|enum|__anon27f0f5b70203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1093,26 +1093,7 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|)
-block|{
-if|if
-condition|(
-name|dock
-operator|->
-name|p
-operator|->
-name|dockbooks
-operator|==
-name|NULL
-condition|)
-name|gtk_widget_destroy
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|dock
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_comment
