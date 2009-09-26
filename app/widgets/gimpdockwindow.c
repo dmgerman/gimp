@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296602aa0103
+DECL|enum|__anon28ca9d8a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -508,7 +508,7 @@ name|PROP_CONTEXT
 argument_list|,
 name|g_param_spec_object
 argument_list|(
-literal|"gimp-context"
+literal|"context"
 argument_list|,
 name|NULL
 argument_list|,
@@ -530,7 +530,7 @@ name|PROP_DIALOG_FACTORY
 argument_list|,
 name|g_param_spec_object
 argument_list|(
-literal|"gimp-dialog-factory"
+literal|"dialog-factory"
 argument_list|,
 name|NULL
 argument_list|,

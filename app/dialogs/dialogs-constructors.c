@@ -872,11 +872,11 @@ literal|"ui-manager-name"
 argument_list|,
 literal|"<Toolbox>"
 argument_list|,
-literal|"gimp-dialog-factory"
+literal|"dialog-factory"
 argument_list|,
 name|factory
 argument_list|,
-literal|"gimp-context"
+literal|"context"
 argument_list|,
 name|context
 argument_list|,
@@ -957,11 +957,11 @@ literal|"ui-manager-name"
 argument_list|,
 literal|"<Dock>"
 argument_list|,
-literal|"gimp-dialog-factory"
+literal|"dialog-factory"
 argument_list|,
 name|factory
 argument_list|,
-literal|"gimp-context"
+literal|"context"
 argument_list|,
 name|context
 argument_list|,
