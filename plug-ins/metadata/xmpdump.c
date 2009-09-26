@@ -523,7 +523,13 @@ name|XMPParseContext
 modifier|*
 name|context
 decl_stmt|;
-comment|// XMPModel          *xmp_model = xmp_model_new ();
+name|XMPModel
+modifier|*
+name|xmp_model
+init|=
+name|xmp_model_new
+argument_list|()
+decl_stmt|;
 name|g_print
 argument_list|(
 literal|"\nFile: %s\n"
@@ -591,7 +597,39 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/*    * used for testing the XMPModel    *   g_signal_connect (xmp_model, "property-changed::xmpMM:DocumentID",                     G_CALLBACK (property_changed), NULL);    if (! xmp_model_parse_file (xmp_model, filename,&error))     {       xmp_model_free (xmp_model);       return 1;     }   */
+comment|/*    * used for testing the XMPModel    */
+name|g_signal_connect
+argument_list|(
+name|xmp_model
+argument_list|,
+literal|"property-changed::xmpMM:DocumentID"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|property_changed
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|xmp_model_parse_file
+argument_list|(
+name|xmp_model
+argument_list|,
+name|filename
+argument_list|,
+operator|&
+name|error
+argument_list|)
+condition|)
+block|{
+return|return
+literal|1
+return|;
+block|}
 if|if
 condition|(
 operator|!
