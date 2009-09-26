@@ -141,7 +141,7 @@ parameter_list|)
 block|{
 name|GtkWindow
 modifier|*
-name|dock
+name|dock_window
 init|=
 name|g_object_get_data
 argument_list|(
@@ -150,12 +150,12 @@ argument_list|(
 name|action
 argument_list|)
 argument_list|,
-literal|"dock"
+literal|"dock-window"
 argument_list|)
 decl_stmt|;
 name|gtk_window_present
 argument_list|(
-name|dock
+name|dock_window
 argument_list|)
 expr_stmt|;
 block|}

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmenufactory.h"
 end_include
 
@@ -108,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2744bdd90103
+DECL|enum|__anon2a9561b40103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -128,13 +134,13 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2744bdd90203
+DECL|enum|__anon2a9561b40203
 block|{
-DECL|enumerator|DOCK_ADDED
-name|DOCK_ADDED
+DECL|enumerator|DOCK_WINDOW_ADDED
+name|DOCK_WINDOW_ADDED
 block|,
-DECL|enumerator|DOCK_REMOVED
-name|DOCK_REMOVED
+DECL|enumerator|DOCK_WINDOW_REMOVED
+name|DOCK_WINDOW_REMOVED
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -489,12 +495,12 @@ argument_list|)
 expr_stmt|;
 name|factory_signals
 index|[
-name|DOCK_ADDED
+name|DOCK_WINDOW_ADDED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"dock-added"
+literal|"dock-window-added"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -507,7 +513,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpDialogFactoryClass
 argument_list|,
-name|dock_added
+name|dock_window_added
 argument_list|)
 argument_list|,
 name|NULL
@@ -520,17 +526,17 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_DOCK
+name|GIMP_TYPE_DOCK_WINDOW
 argument_list|)
 expr_stmt|;
 name|factory_signals
 index|[
-name|DOCK_REMOVED
+name|DOCK_WINDOW_REMOVED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"dock-removed"
+literal|"dock-window-removed"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -543,7 +549,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpDialogFactoryClass
 argument_list|,
-name|dock_removed
+name|dock_window_removed
 argument_list|)
 argument_list|,
 name|NULL
@@ -556,7 +562,7 @@ name|G_TYPE_NONE
 argument_list|,
 literal|1
 argument_list|,
-name|GIMP_TYPE_DOCK
+name|GIMP_TYPE_DOCK_WINDOW
 argument_list|)
 expr_stmt|;
 block|}
@@ -3254,7 +3260,7 @@ name|factory
 argument_list|,
 name|factory_signals
 index|[
-name|DOCK_ADDED
+name|DOCK_WINDOW_ADDED
 index|]
 argument_list|,
 literal|0
@@ -3719,7 +3725,7 @@ name|factory
 argument_list|,
 name|factory_signals
 index|[
-name|DOCK_REMOVED
+name|DOCK_WINDOW_REMOVED
 index|]
 argument_list|,
 literal|0
