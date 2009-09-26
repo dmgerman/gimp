@@ -214,9 +214,12 @@ name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW
 argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
 name|display
 operator|->
 name|shell
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
