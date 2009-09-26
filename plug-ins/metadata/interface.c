@@ -183,7 +183,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2c2d3e0108
+DECL|struct|__anon29c530f00108
 block|{
 DECL|member|dlg
 name|GtkWidget
@@ -740,7 +740,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2c2d3e0208
+DECL|struct|__anon29c530f00208
 block|{
 DECL|member|schema
 specifier|const
@@ -1230,7 +1230,6 @@ operator|->
 name|xmp_model
 argument_list|)
 expr_stmt|;
-comment|//register_entry_xref (entry, XMP_SCHEMA_DUBLIN_CORE, "creator", mgui);
 name|gimp_table_attach_aligned
 argument_list|(
 name|GTK_TABLE
@@ -1364,18 +1363,15 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|=
-name|gtk_entry_new
-argument_list|()
-expr_stmt|;
-name|register_entry_xref
+name|gimp_xmp_model_entry_new
 argument_list|(
-name|entry
-argument_list|,
 name|XMP_SCHEMA_PHOTOSHOP
 argument_list|,
 literal|"CaptionWriter"
 argument_list|,
 name|mgui
+operator|->
+name|xmp_model
 argument_list|)
 expr_stmt|;
 name|gimp_table_attach_aligned
