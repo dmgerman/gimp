@@ -44,7 +44,7 @@ specifier|static
 name|void
 name|gimp_xmp_model_entry_init
 parameter_list|(
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 parameter_list|)
@@ -74,9 +74,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|entry_changed
+name|gimp_xmp_model_entry_entry_changed
 parameter_list|(
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|widget
 parameter_list|)
@@ -102,7 +102,7 @@ specifier|static
 name|void
 name|set_property_edit_icon
 parameter_list|(
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 parameter_list|,
@@ -114,10 +114,10 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpXMPModelEntry,gimp_xmp_model_entry,GTK_TYPE_ENTRY)
+DECL|function|G_DEFINE_TYPE (GimpXmpModelEntry,gimp_xmp_model_entry,GTK_TYPE_ENTRY)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpXMPModelEntry
+argument|GimpXmpModelEntry
 argument_list|,
 argument|gimp_xmp_model_entry
 argument_list|,
@@ -133,30 +133,63 @@ name|parent_class
 value|gimp_xmp_model_entry_parent_class
 end_define
 
+begin_define
+DECL|macro|GIMP_XMP_MODEL_ENTRY_GET_PRIVATE (obj)
+define|#
+directive|define
+name|GIMP_XMP_MODEL_ENTRY_GET_PRIVATE
+parameter_list|(
+name|obj
+parameter_list|)
+value|(G_TYPE_INSTANCE_GET_PRIVATE ((obj), GIMP_TYPE_XMP_MODEL_ENTRY, GimpXmpModelEntryPrivate))
+end_define
+
 begin_function
 specifier|static
 name|void
 name|gimp_xmp_model_entry_class_init
 parameter_list|(
-name|GimpXMPModelEntryClass
+name|GimpXmpModelEntryClass
 modifier|*
 name|klass
 parameter_list|)
-block|{ }
+block|{
+name|g_type_class_add_private
+argument_list|(
+name|klass
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|GimpXmpModelEntryPrivate
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_xmp_model_entry_init (GimpXMPModelEntry * entry)
+DECL|function|gimp_xmp_model_entry_init (GimpXmpModelEntry * entry)
 name|gimp_xmp_model_entry_init
 parameter_list|(
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 parameter_list|)
 block|{
 name|entry
+operator|->
+name|p
+operator|=
+name|GIMP_XMP_MODEL_ENTRY_GET_PRIVATE
+argument_list|(
+name|entry
+argument_list|)
+expr_stmt|;
+name|entry
+operator|->
+name|p
 operator|->
 name|schema_uri
 operator|=
@@ -164,11 +197,15 @@ name|NULL
 expr_stmt|;
 name|entry
 operator|->
+name|p
+operator|->
 name|property_name
 operator|=
 name|NULL
 expr_stmt|;
 name|entry
+operator|->
+name|p
 operator|->
 name|xmp_model
 operator|=
@@ -182,7 +219,7 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|entry_changed
+name|gimp_xmp_model_entry_entry_changed
 argument_list|)
 argument_list|,
 name|NULL
@@ -192,7 +229,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_xmp_model_entry_new:  * @schema_uri: the XMP schema_uri this entry belongs to  * @property_name: the property name this entry changes in the XMP model  * @xmp_model: the xmp_model for itself  *  * Returns: a new #GimpXMPModelEntry widget  *  **/
+comment|/**  * gimp_xmp_model_entry_new:  * @schema_uri: the XMP schema_uri this entry belongs to  * @property_name: the property name this entry changes in the XMP model  * @xmp_model: the xmp_model for itself  *  * Returns: a new #GimpXmpModelEntry widget  *  **/
 end_comment
 
 begin_function
@@ -216,7 +253,7 @@ modifier|*
 name|xmp_model
 parameter_list|)
 block|{
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 decl_stmt|;
@@ -251,17 +288,23 @@ argument_list|)
 expr_stmt|;
 name|entry
 operator|->
+name|p
+operator|->
 name|schema_uri
 operator|=
 name|schema_uri
 expr_stmt|;
 name|entry
 operator|->
+name|p
+operator|->
 name|property_name
 operator|=
 name|property_name
 expr_stmt|;
 name|entry
+operator|->
+name|p
 operator|->
 name|xmp_model
 operator|=
@@ -380,7 +423,7 @@ modifier|*
 name|user_data
 parameter_list|)
 block|{
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 init|=
@@ -438,6 +481,8 @@ name|strcmp
 argument_list|(
 name|entry
 operator|->
+name|p
+operator|->
 name|property_name
 argument_list|,
 name|property_name
@@ -473,10 +518,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|entry_changed (GimpXMPModelEntry * entry)
-name|entry_changed
+DECL|function|gimp_xmp_model_entry_entry_changed (GimpXmpModelEntry * entry)
+name|gimp_xmp_model_entry_entry_changed
 parameter_list|(
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 parameter_list|)
@@ -485,13 +530,19 @@ name|xmp_model_set_scalar_property
 argument_list|(
 name|entry
 operator|->
+name|p
+operator|->
 name|xmp_model
 argument_list|,
 name|entry
 operator|->
+name|p
+operator|->
 name|schema_uri
 argument_list|,
 name|entry
+operator|->
+name|p
 operator|->
 name|property_name
 argument_list|,
@@ -579,10 +630,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|set_property_edit_icon (GimpXMPModelEntry * entry,GtkTreeIter * iter)
+DECL|function|set_property_edit_icon (GimpXmpModelEntry * entry,GtkTreeIter * iter)
 name|set_property_edit_icon
 parameter_list|(
-name|GimpXMPModelEntry
+name|GimpXmpModelEntry
 modifier|*
 name|entry
 parameter_list|,
@@ -603,6 +654,8 @@ argument_list|(
 name|GTK_TREE_MODEL
 argument_list|(
 name|entry
+operator|->
+name|p
 operator|->
 name|xmp_model
 argument_list|)
@@ -652,6 +705,8 @@ name|GTK_TREE_STORE
 argument_list|(
 name|entry
 operator|->
+name|p
+operator|->
 name|xmp_model
 argument_list|)
 argument_list|,
@@ -695,6 +750,8 @@ argument_list|(
 name|GTK_TREE_STORE
 argument_list|(
 name|entry
+operator|->
+name|p
 operator|->
 name|xmp_model
 argument_list|)

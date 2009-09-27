@@ -183,7 +183,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b045cc90103
+DECL|enum|__anon29d662cf0103
 block|{
 DECL|enumerator|COL_XMP_NAME
 name|COL_XMP_NAME
