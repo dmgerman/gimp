@@ -511,8 +511,9 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 parameter_list|,
-name|gpointer
-name|data
+name|GimpToolbox
+modifier|*
+name|toolbox
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -569,9 +570,9 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpToolInfo
+name|GimpToolbox
 modifier|*
-name|tool_info
+name|toolbox
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1511,8 +1512,6 @@ name|toolbox_tool_changed
 argument_list|)
 argument_list|,
 name|toolbox
-operator|->
-name|tool_wbox
 argument_list|,
 literal|0
 argument_list|)
@@ -3359,7 +3358,7 @@ argument_list|(
 name|toolbox_tool_button_toggled
 argument_list|)
 argument_list|,
-name|tool_info
+name|toolbox
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -3966,7 +3965,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|toolbox_tool_changed (GimpContext * context,GimpToolInfo * tool_info,gpointer data)
+DECL|function|toolbox_tool_changed (GimpContext * context,GimpToolInfo * tool_info,GimpToolbox * toolbox)
 name|toolbox_tool_changed
 parameter_list|(
 name|GimpContext
@@ -3977,8 +3976,9 @@ name|GimpToolInfo
 modifier|*
 name|tool_info
 parameter_list|,
-name|gpointer
-name|data
+name|GimpToolbox
+modifier|*
+name|toolbox
 parameter_list|)
 block|{
 if|if
@@ -4020,7 +4020,7 @@ name|toolbox_button
 argument_list|,
 name|toolbox_tool_button_toggled
 argument_list|,
-name|tool_info
+name|toolbox
 argument_list|)
 expr_stmt|;
 name|gtk_toggle_button_set_active
@@ -4039,7 +4039,7 @@ name|toolbox_button
 argument_list|,
 name|toolbox_tool_button_toggled
 argument_list|,
-name|tool_info
+name|toolbox
 argument_list|)
 expr_stmt|;
 block|}
@@ -4146,25 +4146,30 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|toolbox_tool_button_toggled (GtkWidget * widget,GimpToolInfo * tool_info)
+DECL|function|toolbox_tool_button_toggled (GtkWidget * widget,GimpToolbox * toolbox)
 name|toolbox_tool_button_toggled
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+name|GimpToolbox
+modifier|*
+name|toolbox
+parameter_list|)
+block|{
 name|GimpToolInfo
 modifier|*
 name|tool_info
-parameter_list|)
-block|{
-name|GtkWidget
-modifier|*
-name|toolbox
 init|=
-name|gtk_widget_get_toplevel
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|widget
+argument_list|)
+argument_list|,
+name|TOOL_INFO_DATA_KEY
 argument_list|)
 decl_stmt|;
 if|if
