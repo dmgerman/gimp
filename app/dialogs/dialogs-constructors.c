@@ -872,6 +872,10 @@ literal|"ui-manager-name"
 argument_list|,
 literal|"<Toolbox>"
 argument_list|,
+literal|"allow-dockbook-absence"
+argument_list|,
+name|TRUE
+argument_list|,
 literal|"dialog-factory"
 argument_list|,
 name|factory
@@ -956,6 +960,10 @@ argument_list|,
 literal|"ui-manager-name"
 argument_list|,
 literal|"<Dock>"
+argument_list|,
+literal|"allow-dockbook-absence"
+argument_list|,
+name|FALSE
 argument_list|,
 literal|"dialog-factory"
 argument_list|,
