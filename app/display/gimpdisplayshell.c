@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d80c1a0103
+DECL|enum|__anon28d4d9d90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d80c1a0203
+DECL|enum|__anon28d4d9d90203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6667,14 +6667,12 @@ name|context
 decl_stmt|;
 if|if
 condition|(
-name|gimp_image_window_get_active_display
+name|gimp_image_window_get_active_shell
 argument_list|(
 name|window
 argument_list|)
 operator|==
 name|shell
-operator|->
-name|display
 condition|)
 block|{
 name|gimp_ui_manager_update

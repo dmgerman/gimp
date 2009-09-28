@@ -105,14 +105,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|gimp_image_window_get_active_display
+name|gimp_image_window_get_active_shell
 argument_list|(
 name|window
 argument_list|)
 operator|==
 name|shell
-operator|->
-name|display
 condition|)
 return|return
 name|GIMP_PROGRESS
