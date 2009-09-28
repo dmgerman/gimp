@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6bf3870103
+DECL|enum|__anon27771fb50103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6bf3870203
+DECL|enum|__anon27771fb50203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -10185,7 +10185,7 @@ name|dynamics_name
 operator|=
 name|g_strdup
 argument_list|(
-name|GIMP_OBJECT
+name|GIMP_DYNAMICS
 argument_list|(
 name|dynamics
 argument_list|)
@@ -10442,7 +10442,7 @@ name|dynamics_name
 operator|=
 name|g_strdup
 argument_list|(
-name|GIMP_OBJECT
+name|GIMP_DYNAMICS
 argument_list|(
 name|dynamics
 argument_list|)

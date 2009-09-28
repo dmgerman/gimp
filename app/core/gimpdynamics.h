@@ -201,6 +201,11 @@ DECL|member|parent_instance
 name|GimpDataClass
 name|parent_instance
 decl_stmt|;
+DECL|member|name
+name|gchar
+modifier|*
+name|name
+decl_stmt|;
 DECL|member|opacity_dynamics
 name|GimpDynamicsOutput
 modifier|*
