@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4d9d90103
+DECL|enum|__anon290f6a8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4d9d90203
+DECL|enum|__anon290f6a8e0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4751,6 +4751,44 @@ return|return
 name|GTK_WIDGET
 argument_list|(
 name|shell
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpImageWindow
+modifier|*
+DECL|function|gimp_display_shell_get_window (GimpDisplayShell * shell)
+name|gimp_display_shell_get_window
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_IMAGE_WINDOW
+argument_list|(
+name|gtk_widget_get_ancestor
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|GIMP_TYPE_IMAGE_WINDOW
+argument_list|)
 argument_list|)
 return|;
 block|}
