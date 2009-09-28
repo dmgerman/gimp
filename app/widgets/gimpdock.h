@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DOCK_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdockwindow.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_DOCK
 define|#
@@ -104,7 +98,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * A top-level window containing GimpDockbooks.  */
+comment|/**  * Contains a column of GimpDockbooks.  */
 end_comment
 
 begin_struct
@@ -113,7 +107,7 @@ struct|struct
 name|_GimpDock
 block|{
 DECL|member|parent_instance
-name|GimpDockWindow
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
 DECL|member|p
@@ -131,7 +125,7 @@ struct|struct
 name|_GimpDockClass
 block|{
 DECL|member|parent_class
-name|GimpDockWindowClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
@@ -389,6 +383,18 @@ begin_function_decl
 name|GimpDialogFactory
 modifier|*
 name|gimp_dock_get_dialog_factory
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpUIManager
+modifier|*
+name|gimp_dock_get_ui_manager
 parameter_list|(
 name|GimpDock
 modifier|*

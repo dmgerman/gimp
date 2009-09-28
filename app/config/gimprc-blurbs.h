@@ -866,6 +866,15 @@ value|N_("Show a tooltip when the pointer hovers over an item.")
 end_define
 
 begin_define
+DECL|macro|SINGLE_WINDOW_MODE_BLURB
+define|#
+directive|define
+name|SINGLE_WINDOW_MODE_BLURB
+define|\
+value|N_("Use GIMP in a single-window mode.")
+end_define
+
+begin_define
 DECL|macro|SPACE_BAR_ACTION_BLURB
 define|#
 directive|define

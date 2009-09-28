@@ -162,7 +162,7 @@ parameter_list|,
 name|remember_size
 parameter_list|)
 define|\
-value|{ id, NULL, NULL, NULL, NULL, \     NULL, 0, singleton,  TRUE, remember_size, FALSE }
+value|{ id, NULL, NULL, NULL, NULL, \     NULL, 0, singleton,  TRUE, remember_size, FALSE, FALSE }
 end_define
 
 begin_define
@@ -182,7 +182,7 @@ parameter_list|,
 name|remember_size
 parameter_list|)
 define|\
-value|{ id, NULL, NULL, NULL, NULL, \     new_func, 0, singleton, session_managed, remember_size, FALSE }
+value|{ id, NULL, NULL, NULL, NULL, \     new_func, 0, singleton, session_managed, remember_size, FALSE, FALSE }
 end_define
 
 begin_decl_stmt
@@ -621,7 +621,7 @@ parameter_list|,
 name|singleton
 parameter_list|)
 define|\
-value|{ id, name, blurb, stock_id, help_id, \     new_func, view_size, singleton, FALSE, FALSE, TRUE }
+value|{ id, name, blurb, stock_id, help_id, \     new_func, view_size, singleton, FALSE, FALSE, TRUE, TRUE }
 end_define
 
 begin_define
@@ -643,7 +643,7 @@ DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,\\\nview_size)
 name|view_size
 parameter_list|)
 define|\
-value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE }, \   { "gimp-"#id"-grid", name, blurb, stock_id, help_id, \     dialogs_##id##_grid_view_new, view_size, FALSE, FALSE, FALSE, TRUE }
+value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }, \   { "gimp-"#id"-grid", name, blurb, stock_id, help_id, \     dialogs_##id##_grid_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }
 end_define
 
 begin_decl_stmt
@@ -1288,6 +1288,7 @@ name|menu_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Toplevel */
 name|global_dialog_factory
 operator|=
 name|gimp_dialog_factory_new
@@ -1306,6 +1307,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/* Toolbox */
 name|global_toolbox_factory
 operator|=
 name|gimp_dialog_factory_new
@@ -1331,6 +1333,14 @@ argument_list|,
 name|dialogs_dockable_constructor
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factory_set_dock_window_func
+argument_list|(
+name|global_toolbox_factory
+argument_list|,
+name|dialogs_toolbox_dock_window_new
+argument_list|)
+expr_stmt|;
+comment|/* Dock */
 name|global_dock_factory
 operator|=
 name|gimp_dialog_factory_new
@@ -1356,6 +1366,14 @@ argument_list|,
 name|dialogs_dockable_constructor
 argument_list|)
 expr_stmt|;
+name|gimp_dialog_factory_set_dock_window_func
+argument_list|(
+name|global_dock_factory
+argument_list|,
+name|dialogs_dock_window_new
+argument_list|)
+expr_stmt|;
+comment|/* Display */
 name|global_display_factory
 operator|=
 name|gimp_dialog_factory_new

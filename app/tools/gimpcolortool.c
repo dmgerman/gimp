@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be426bf0103
+DECL|enum|__anon292ec1f10103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2628,9 +2628,10 @@ if|if
 condition|(
 name|info
 operator|&&
+name|gimp_session_info_get_widget
+argument_list|(
 name|info
-operator|->
-name|widget
+argument_list|)
 condition|)
 block|{
 name|GimpColormapEditor
@@ -2645,9 +2646,10 @@ name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
+name|gimp_session_info_get_widget
+argument_list|(
 name|info
-operator|->
-name|widget
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)
@@ -2681,9 +2683,10 @@ if|if
 condition|(
 name|info
 operator|&&
+name|gimp_session_info_get_widget
+argument_list|(
 name|info
-operator|->
-name|widget
+argument_list|)
 condition|)
 block|{
 name|GimpPaletteEditor
@@ -2701,9 +2704,10 @@ name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
+name|gimp_session_info_get_widget
+argument_list|(
 name|info
-operator|->
-name|widget
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)

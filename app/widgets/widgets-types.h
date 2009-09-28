@@ -88,6 +88,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDockColumns
+typedef|typedef
+name|struct
+name|_GimpDockColumns
+name|GimpDockColumns
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDockSeparator
 typedef|typedef
 name|struct

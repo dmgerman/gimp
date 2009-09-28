@@ -44,11 +44,11 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|windows_actions_dock_to_action_name
+name|windows_actions_dock_window_to_action_name
 parameter_list|(
-name|GimpDock
+name|GimpDockWindow
 modifier|*
-name|dock
+name|dock_window
 parameter_list|)
 function_decl|;
 end_function_decl

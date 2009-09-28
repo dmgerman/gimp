@@ -2303,7 +2303,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293160510108
+DECL|struct|__anon2a21e8730108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2697,7 +2697,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293160510208
+DECL|struct|__anon2a21e8730208
 block|{
 DECL|member|mask_column
 name|gint
@@ -5110,11 +5110,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|renderer
-condition|)
-block|{
 name|gimp_layer_tree_view_update_borders
 argument_list|(
 name|layer_view
@@ -5122,6 +5117,11 @@ argument_list|,
 name|iter
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|renderer
+condition|)
+block|{
 name|gimp_view_renderer_remove_idle
 argument_list|(
 name|renderer

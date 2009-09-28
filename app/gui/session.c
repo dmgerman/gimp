@@ -130,12 +130,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bde34720103
+DECL|enum|__anon2b8a76380103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -465,8 +471,7 @@ expr_stmt|;
 comment|/* "dock" entries in the "dock" factory are just dummy                * entries and don't have any dialog factory entry, so                * don't bother looking for entires for them                */
 if|if
 condition|(
-operator|!
-name|g_str_equal
+name|strcmp
 argument_list|(
 name|entry_name
 argument_list|,
@@ -474,28 +479,38 @@ literal|"dock"
 argument_list|)
 condition|)
 block|{
-name|info
-operator|->
-name|toplevel_entry
-operator|=
+name|GimpDialogFactoryEntry
+modifier|*
+name|entry
+init|=
 name|gimp_dialog_factory_find_entry
 argument_list|(
 name|factory
 argument_list|,
 name|entry_name
 argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|entry
+condition|)
+block|{
+name|gimp_session_info_set_factory_entry
+argument_list|(
+name|info
+argument_list|,
+name|entry
+argument_list|)
 expr_stmt|;
-comment|/* If we expected a dialog factory entry but failed                    * to find one, skip to add this session info object                    */
+block|}
+else|else
+block|{
+comment|/* If we expected a dialog factory entry but failed                        * to find one, skip to add this session info object                        */
 name|skip
 operator|=
-operator|(
-name|info
-operator|->
-name|toplevel_entry
-operator|==
-name|NULL
-operator|)
+name|TRUE
 expr_stmt|;
+block|}
 block|}
 name|g_free
 argument_list|(
@@ -525,6 +540,15 @@ operator|!
 name|skip
 condition|)
 block|{
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"successfully parsed and added session info %p"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 name|factory
 operator|->
 name|session_infos
@@ -541,6 +565,15 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|GIMP_LOG
+argument_list|(
+name|DIALOG_FACTORY
+argument_list|,
+literal|"failed to parse session info %p, not adding"
+argument_list|,
+name|info
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|info

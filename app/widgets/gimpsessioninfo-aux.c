@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdockwindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpsessioninfo-aux.h"
 end_include
 
@@ -1020,16 +1026,19 @@ block|{
 comment|/* FIXME: make the aux-info stuff generic */
 if|if
 condition|(
-name|GIMP_IS_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|dialog
 argument_list|)
 condition|)
 name|gimp_dock_set_aux_info
 argument_list|(
-name|GIMP_DOCK
+name|gimp_dock_window_get_dock
+argument_list|(
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 argument_list|,
 name|aux_list
@@ -1070,7 +1079,7 @@ block|{
 comment|/* FIXME: make the aux-info stuff generic */
 if|if
 condition|(
-name|GIMP_IS_DOCK
+name|GIMP_IS_DOCK_WINDOW
 argument_list|(
 name|dialog
 argument_list|)
@@ -1078,9 +1087,12 @@ condition|)
 return|return
 name|gimp_dock_get_aux_info
 argument_list|(
-name|GIMP_DOCK
+name|gimp_dock_window_get_dock
+argument_list|(
+name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dialog
+argument_list|)
 argument_list|)
 argument_list|)
 return|;

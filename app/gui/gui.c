@@ -2644,9 +2644,10 @@ if|if
 condition|(
 name|session_info
 operator|&&
+name|gimp_session_info_get_widget
+argument_list|(
 name|session_info
-operator|->
-name|widget
+argument_list|)
 condition|)
 block|{
 name|GtkWidget
@@ -2659,9 +2660,10 @@ name|gtk_bin_get_child
 argument_list|(
 name|GTK_BIN
 argument_list|(
+name|gimp_session_info_get_widget
+argument_list|(
 name|session_info
-operator|->
-name|widget
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

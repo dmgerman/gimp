@@ -1484,7 +1484,7 @@ name|g_type_is_a
 argument_list|(
 name|new_type
 argument_list|,
-name|GIMP_TYPE_GROUP_LAYER
+name|GIMP_TYPE_DRAWABLE
 argument_list|)
 argument_list|,
 name|NULL
@@ -1539,6 +1539,13 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
+name|gimp_group_layer_suspend_resize
+argument_list|(
+name|new_group
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
@@ -1676,6 +1683,22 @@ operator|++
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* FIXME: need to change the item's extents to resume_resize()        * will actually reallocate the projection's pyramid        */
+name|GIMP_ITEM
+argument_list|(
+name|new_group
+argument_list|)
+operator|->
+name|width
+operator|++
+expr_stmt|;
+name|gimp_group_layer_resume_resize
+argument_list|(
+name|new_group
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 block|}
 return|return
 name|new_item
@@ -4210,7 +4233,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*  invalidate the entire projection since the poition of            *  the children relative to each other might have changed            *  in a way that happens to leave the group's width and            *  height the same            */
+comment|/*  invalidate the entire projection since the position of            *  the children relative to each other might have changed            *  in a way that happens to leave the group's width and            *  height the same            */
 name|gimp_projectable_invalidate
 argument_list|(
 name|GIMP_PROJECTABLE

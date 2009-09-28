@@ -341,7 +341,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2954b9030103
+DECL|enum|__anon2c2eba640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -354,7 +354,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2954b9030203
+DECL|enum|__anon2c2eba640203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5776,15 +5776,17 @@ condition|)
 block|{
 name|width
 operator|=
+name|gimp_session_info_get_width
+argument_list|(
 name|session_info
-operator|->
-name|width
+argument_list|)
 expr_stmt|;
 name|height
 operator|=
+name|gimp_session_info_get_height
+argument_list|(
 name|session_info
-operator|->
-name|height
+argument_list|)
 expr_stmt|;
 block|}
 else|else

@@ -926,6 +926,14 @@ value|"gimp-layer-merge-down"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_LAYER_MERGE_GROUP
+define|#
+directive|define
+name|GIMP_HELP_LAYER_MERGE_GROUP
+value|"gimp-layer-merge-group"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_LAYER_DELETE
 define|#
 directive|define
@@ -3395,6 +3403,14 @@ define|#
 directive|define
 name|GIMP_HELP_WINDOWS_SHOW_DOCK
 value|"gimp-windows-show-dock"
+end_define
+
+begin_define
+DECL|macro|GIMP_HELP_WINDOWS_USE_SINGLE_WINDOW_MODE
+define|#
+directive|define
+name|GIMP_HELP_WINDOWS_USE_SINGLE_WINDOW_MODE
+value|"gimp-windows-use-single-window-mode"
 end_define
 
 begin_define
