@@ -902,6 +902,14 @@ operator|->
 name|shell
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|GTK_IS_WINDOW
+argument_list|(
+name|toplevel
+argument_list|)
+condition|)
+block|{
 name|GdkWindow
 modifier|*
 name|window
@@ -937,6 +945,7 @@ block|{
 name|visible
 operator|++
 expr_stmt|;
+block|}
 block|}
 block|}
 block|}

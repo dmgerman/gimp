@@ -737,6 +737,13 @@ name|shell
 argument_list|)
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|GTK_IS_WINDOW
+argument_list|(
+name|toplevel
+argument_list|)
+condition|)
 name|gtk_window_present
 argument_list|(
 name|GTK_WINDOW

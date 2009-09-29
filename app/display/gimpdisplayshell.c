@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f6a8e0103
+DECL|enum|__anon2b64b3030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290f6a8e0203
+DECL|enum|__anon2b64b3030203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5063,6 +5063,14 @@ name|fill_idle_id
 operator|=
 literal|0
 expr_stmt|;
+if|if
+condition|(
+name|GTK_IS_WINDOW
+argument_list|(
+name|toplevel
+argument_list|)
+condition|)
+block|{
 name|gimp_display_shell_scale_shrink_wrap
 argument_list|(
 name|shell
@@ -5078,6 +5086,7 @@ name|toplevel
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|FALSE
 return|;
@@ -6678,25 +6687,13 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|GtkWidget
-modifier|*
-name|toplevel
-init|=
-name|gtk_widget_get_toplevel
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|GimpImageWindow
 modifier|*
 name|window
 init|=
-name|GIMP_IMAGE_WINDOW
+name|gimp_display_shell_get_window
 argument_list|(
-name|toplevel
+name|shell
 argument_list|)
 decl_stmt|;
 name|GimpContext
@@ -6705,6 +6702,8 @@ name|context
 decl_stmt|;
 if|if
 condition|(
+name|window
+operator|&&
 name|gimp_image_window_get_active_shell
 argument_list|(
 name|window

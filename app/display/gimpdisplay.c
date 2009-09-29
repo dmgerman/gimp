@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08171a0103
+DECL|enum|__anon2bf9fe820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1668,29 +1668,26 @@ operator|->
 name|shell
 condition|)
 block|{
-name|GtkWidget
+name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
 name|display
 operator|->
 name|shell
+argument_list|)
 decl_stmt|;
-name|GtkWidget
+name|GimpImageWindow
 modifier|*
-name|toplevel
+name|window
 init|=
-name|gtk_widget_get_toplevel
+name|gimp_display_shell_get_window
 argument_list|(
 name|shell
 argument_list|)
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|GimpImageWindow *window   = GIMP_IMAGE_WINDOW (toplevel);
-endif|#
-directive|endif
 comment|/*  set display->shell to NULL *before* destroying the shell.        *  all callbacks in gimpdisplayshell-callbacks.c will check        *  this pointer and do nothing if the shell is in destruction.        */
 name|display
 operator|->
@@ -1702,13 +1699,16 @@ comment|/* FIXME image window: enable this code for multiple shells */
 if|#
 directive|if
 literal|0
-block|if (gimp_image_window_get_n_displays (window)> 1)         {           gimp_image_window_remove_display (window, display);         }       else
+block|if (window&& gimp_image_window_get_n_displays (window)> 1)         {           gimp_image_window_remove_display (window, display);         }       else if (window)
 endif|#
 directive|endif
 block|{
 name|gtk_widget_destroy
 argument_list|(
-name|toplevel
+name|GTK_WIDGET
+argument_list|(
+name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
