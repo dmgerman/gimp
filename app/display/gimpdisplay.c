@@ -126,12 +126,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimagewindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf9fe820103
+DECL|enum|__anon29ebeccc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1366,6 +1372,10 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|window
+decl_stmt|;
 name|gint
 name|ID
 decl_stmt|;
@@ -1467,6 +1477,34 @@ name|image
 argument_list|)
 expr_stmt|;
 comment|/*  create the shell for the image  */
+name|window
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_IMAGE_WINDOW
+argument_list|,
+literal|"menu-factory"
+argument_list|,
+name|menu_factory
+argument_list|,
+literal|"display-factory"
+argument_list|,
+name|display_factory
+argument_list|,
+comment|/* The window position will be overridden by the                           * dialog factory, it is only really used on first                           * startup.                           */
+name|display
+operator|->
+name|image
+condition|?
+name|NULL
+else|:
+literal|"window-position"
+argument_list|,
+name|GTK_WIN_POS_CENTER
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|display
 operator|->
 name|shell
@@ -1479,11 +1517,7 @@ name|unit
 argument_list|,
 name|scale
 argument_list|,
-name|menu_factory
-argument_list|,
 name|popup_manager
-argument_list|,
-name|display_factory
 argument_list|)
 expr_stmt|;
 comment|/* FIXME image window */
@@ -1491,9 +1525,7 @@ name|gimp_image_window_add_shell
 argument_list|(
 name|GIMP_IMAGE_WINDOW
 argument_list|(
-name|display
-operator|->
-name|shell
+name|window
 argument_list|)
 argument_list|,
 name|GIMP_DISPLAY_SHELL
@@ -1509,9 +1541,7 @@ name|gimp_image_window_set_active_shell
 argument_list|(
 name|GIMP_IMAGE_WINDOW
 argument_list|(
-name|display
-operator|->
-name|shell
+name|window
 argument_list|)
 argument_list|,
 name|GIMP_DISPLAY_SHELL
@@ -1527,9 +1557,7 @@ name|g_signal_connect
 argument_list|(
 name|GIMP_IMAGE_WINDOW
 argument_list|(
-name|display
-operator|->
-name|shell
+name|window
 argument_list|)
 operator|->
 name|statusbar
@@ -1546,9 +1574,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|display
-operator|->
-name|shell
+name|window
 argument_list|)
 expr_stmt|;
 comment|/* add the display to the list */

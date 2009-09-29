@@ -306,6 +306,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimagewindow.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpstatusbar.h"
 end_include
 
@@ -323,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64b3030103
+DECL|enum|__anon2c9403db0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b64b3030203
+DECL|enum|__anon2c9403db0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -574,7 +580,7 @@ argument|GimpDisplayShell
 argument_list|,
 argument|gimp_display_shell
 argument_list|,
-argument|GIMP_TYPE_IMAGE_WINDOW
+argument|GTK_TYPE_VBOX
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)
 argument_list|)
@@ -1573,6 +1579,16 @@ name|GDK_VISIBILITY_NOTIFY_MASK
 operator||
 name|GDK_SCROLL_MASK
 operator|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+literal|1
 argument_list|)
 expr_stmt|;
 comment|/*  zoom model callback  */
@@ -3072,7 +3088,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_display_shell_new (GimpDisplay * display,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * display_factory)
+DECL|function|gimp_display_shell_new (GimpDisplay * display,GimpUnit unit,gdouble scale,GimpUIManager * popup_manager)
 name|gimp_display_shell_new
 parameter_list|(
 name|GimpDisplay
@@ -3085,17 +3101,9 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
-parameter_list|,
-name|GimpDialogFactory
-modifier|*
-name|display_factory
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -3158,29 +3166,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_MENU_FACTORY
-argument_list|(
-name|menu_factory
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
 name|GIMP_IS_UI_MANAGER
 argument_list|(
 name|popup_manager
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DIALOG_FACTORY
-argument_list|(
-name|display_factory
 argument_list|)
 argument_list|,
 name|NULL
@@ -3193,14 +3181,6 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DISPLAY_SHELL
 argument_list|,
-literal|"menu-factory"
-argument_list|,
-name|menu_factory
-argument_list|,
-literal|"display-factory"
-argument_list|,
-name|display_factory
-argument_list|,
 literal|"popup-manager"
 argument_list|,
 name|popup_manager
@@ -3212,17 +3192,6 @@ argument_list|,
 literal|"unit"
 argument_list|,
 name|unit
-argument_list|,
-comment|/* The window position will be overridden by the                          * dialog factory, it is only really used on first                          * startup.                          */
-name|display
-operator|->
-name|image
-condition|?
-name|NULL
-else|:
-literal|"window-position"
-argument_list|,
-name|GTK_WIN_POS_CENTER
 argument_list|,
 name|NULL
 argument_list|)
@@ -3380,19 +3349,6 @@ argument_list|)
 expr_stmt|;
 comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *            |    *            +-- quick_mask    *            +-- hscrollbar    *            +-- navbutton    */
 comment|/*  first, set up the container hierarchy  *********************************/
-comment|/*  the vbox containing all widgets  */
-comment|/*  FIXME this will be the shell  */
-name|shell
-operator|->
-name|disp_vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 comment|/*  a hbox for the inner_table and the vertical scrollbar  */
 name|upper_hbox
 operator|=
@@ -3408,8 +3364,6 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|shell
-operator|->
-name|disp_vbox
 argument_list|)
 argument_list|,
 name|upper_hbox
@@ -3529,8 +3483,6 @@ argument_list|(
 name|GTK_BOX
 argument_list|(
 name|shell
-operator|->
-name|disp_vbox
 argument_list|)
 argument_list|,
 name|lower_hbox

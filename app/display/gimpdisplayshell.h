@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"gimpimagewindow.h"
-end_include
-
 begin_comment
 comment|/* Apply to a float the same rounding mode used in the renderer */
 end_comment
@@ -262,16 +256,10 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GimpImageWindow
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
 comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
-DECL|member|disp_vbox
-name|GtkWidget
-modifier|*
-name|disp_vbox
-decl_stmt|;
-comment|/* FIXME temp hack */
 DECL|member|display
 name|GimpDisplay
 modifier|*
@@ -776,7 +764,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GimpImageWindowClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled
@@ -844,17 +832,9 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
-parameter_list|,
-name|GimpDialogFactory
-modifier|*
-name|display_factory
 parameter_list|)
 function_decl|;
 end_function_decl
