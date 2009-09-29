@@ -390,8 +390,7 @@ name|g_object_set
 argument_list|(
 name|shell
 argument_list|,
-comment|/* FIXME: "title" later */
-literal|"gimp-title"
+literal|"title"
 argument_list|,
 name|title
 argument_list|,
@@ -409,8 +408,7 @@ name|g_object_set
 argument_list|(
 name|shell
 argument_list|,
-comment|/* FIXME: "title" later */
-literal|"gimp-title"
+literal|"title"
 argument_list|,
 name|GIMP_NAME
 argument_list|,

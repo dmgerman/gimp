@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6eb8880103
+DECL|enum|__anon27b4d7380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6eb8880203
+DECL|enum|__anon27b4d7380203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -905,10 +905,9 @@ name|object_class
 argument_list|,
 name|PROP_TITLE
 argument_list|,
-comment|/* FIXME: "title" later */
 name|g_param_spec_string
 argument_list|(
-literal|"gimp-title"
+literal|"title"
 argument_list|,
 name|NULL
 argument_list|,
@@ -946,10 +945,9 @@ name|object_class
 argument_list|,
 name|PROP_ICON
 argument_list|,
-comment|/* FIXME: "icon" later */
 name|g_param_spec_object
 argument_list|(
-literal|"gimp-icon"
+literal|"icon"
 argument_list|,
 name|NULL
 argument_list|,

@@ -3310,7 +3310,6 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME title later */
 name|g_object_notify
 argument_list|(
 name|G_OBJECT
@@ -3320,7 +3319,7 @@ operator|->
 name|shell
 argument_list|)
 argument_list|,
-literal|"gimp-title"
+literal|"title"
 argument_list|)
 expr_stmt|;
 block|}

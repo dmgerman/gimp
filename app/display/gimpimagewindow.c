@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon287011c70103
+DECL|enum|__anon28a17cf30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3619,14 +3619,13 @@ argument_list|,
 name|window
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: "title" later */
 name|g_signal_connect
 argument_list|(
 name|private
 operator|->
 name|active_shell
 argument_list|,
-literal|"notify::gimp-title"
+literal|"notify::title"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -3652,14 +3651,13 @@ argument_list|,
 name|window
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: "icon" later */
 name|g_signal_connect
 argument_list|(
 name|private
 operator|->
 name|active_shell
 argument_list|,
-literal|"notify::gimp-icon"
+literal|"notify::icon"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
