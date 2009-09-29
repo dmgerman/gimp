@@ -362,12 +362,19 @@ condition|(
 name|window
 condition|)
 block|{
+name|GimpUIManager
+modifier|*
+name|manager
+init|=
+name|gimp_image_window_get_ui_manager
+argument_list|(
+name|window
+argument_list|)
+decl_stmt|;
 comment|/* Activate the action instead of simply calling gimp_exit(), so            * the quit action's sensitivity is taken into account.            */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|window
-operator|->
-name|menubar_manager
+name|manager
 argument_list|,
 literal|"file"
 argument_list|,
@@ -990,12 +997,19 @@ condition|(
 name|window
 condition|)
 block|{
+name|GimpUIManager
+modifier|*
+name|manager
+init|=
+name|gimp_image_window_get_ui_manager
+argument_list|(
+name|window
+argument_list|)
+decl_stmt|;
 comment|/* FIXME image window: set this display active */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|window
-operator|->
-name|menubar_manager
+name|manager
 argument_list|,
 literal|"file"
 argument_list|,

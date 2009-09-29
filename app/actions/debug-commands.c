@@ -703,9 +703,10 @@ name|manager
 operator|=
 name|GTK_UI_MANAGER
 argument_list|(
+name|gimp_image_window_get_ui_manager
+argument_list|(
 name|window
-operator|->
-name|menubar_manager
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|accel_group

@@ -1398,11 +1398,9 @@ operator|->
 name|use_info_window
 operator|||
 operator|!
-name|GTK_WIDGET_VISIBLE
+name|gimp_image_window_get_show_statusbar
 argument_list|(
 name|window
-operator|->
-name|statusbar
 argument_list|)
 condition|)
 block|{

@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ebeccc0103
+DECL|enum|__anon28a1f6b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1555,12 +1555,13 @@ expr_stmt|;
 comment|/* FIXME image window */
 name|g_signal_connect
 argument_list|(
+name|gimp_image_window_get_statusbar
+argument_list|(
 name|GIMP_IMAGE_WINDOW
 argument_list|(
 name|window
 argument_list|)
-operator|->
-name|statusbar
+argument_list|)
 argument_list|,
 literal|"cancel"
 argument_list|,

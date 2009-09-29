@@ -884,9 +884,10 @@ name|window
 condition|)
 name|SET_ACTIVE
 argument_list|(
+name|gimp_image_window_get_ui_manager
+argument_list|(
 name|window
-operator|->
-name|menubar_manager
+argument_list|)
 argument_list|,
 literal|"view-dot-for-dot"
 argument_list|,

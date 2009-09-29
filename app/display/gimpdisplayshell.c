@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9403db0103
+DECL|enum|__anon2c6eb8880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c9403db0203
+DECL|enum|__anon2c6eb8880203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6664,11 +6664,18 @@ operator|==
 name|shell
 condition|)
 block|{
-name|gimp_ui_manager_update
+name|GimpUIManager
+modifier|*
+name|manager
+init|=
+name|gimp_image_window_get_ui_manager
 argument_list|(
 name|window
-operator|->
-name|menubar_manager
+argument_list|)
+decl_stmt|;
+name|gimp_ui_manager_update
+argument_list|(
+name|manager
 argument_list|,
 name|shell
 operator|->
