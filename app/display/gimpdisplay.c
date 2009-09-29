@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a1f6b80103
+DECL|enum|__anon2b3ff3a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1722,13 +1722,30 @@ name|shell
 operator|=
 name|NULL
 expr_stmt|;
-comment|/* FIXME image window: enable this code for multiple shells */
-if|#
-directive|if
-literal|0
-block|if (window&& gimp_image_window_get_n_displays (window)> 1)         {           gimp_image_window_remove_display (window, display);         }       else if (window)
-endif|#
-directive|endif
+if|if
+condition|(
+name|window
+condition|)
+block|{
+if|if
+condition|(
+name|gimp_image_window_get_n_shells
+argument_list|(
+name|window
+argument_list|)
+operator|>
+literal|1
+condition|)
+block|{
+name|gimp_image_window_remove_shell
+argument_list|(
+name|window
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+else|else
 block|{
 name|gtk_widget_destroy
 argument_list|(
@@ -1736,6 +1753,15 @@ name|GTK_WIDGET
 argument_list|(
 name|window
 argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+else|else
+block|{
+name|g_object_unref
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
