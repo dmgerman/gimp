@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eb9e820103
+DECL|enum|__anon27565c200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4051,6 +4051,7 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_ui_manager_update
 argument_list|(
 name|private
@@ -4060,7 +4061,6 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
