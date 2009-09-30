@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpviewrenderer-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -173,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a0ea030103
+DECL|enum|__anon2b579c6f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
