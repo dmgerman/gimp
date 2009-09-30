@@ -245,12 +245,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpimagewindow.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions/plug-in-actions.h"
 end_include
 
