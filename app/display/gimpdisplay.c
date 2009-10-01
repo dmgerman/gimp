@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3ff3a70103
+DECL|enum|__anon2b416df70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1737,10 +1737,28 @@ operator|>
 literal|1
 condition|)
 block|{
+name|g_object_ref
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_image_window_remove_shell
 argument_list|(
 name|window
 argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gtk_widget_destroy
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
