@@ -81,19 +81,6 @@ directive|include
 file|<io.h>
 end_include
 
-begin_define
-DECL|macro|access (f,a)
-define|#
-directive|define
-name|access
-parameter_list|(
-name|f
-parameter_list|,
-name|a
-parameter_list|)
-value|_access(f,a)
-end_define
-
 begin_endif
 endif|#
 directive|endif
@@ -9815,7 +9802,7 @@ literal|0
 return|;
 name|fin
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fname
 argument_list|,
@@ -10106,7 +10093,7 @@ expr_stmt|;
 block|}
 name|f
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|fn
 argument_list|,
@@ -12189,7 +12176,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon27e7c5880103
+DECL|enum|__anon290728e00103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -29500,7 +29487,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon27e7c5880208
+DECL|struct|__anon290728e00208
 specifier|static
 struct|struct
 block|{
@@ -29735,7 +29722,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon27e7c5880308
+DECL|struct|__anon290728e00308
 typedef|typedef
 struct|struct
 block|{
@@ -33201,7 +33188,7 @@ operator|++
 expr_stmt|;
 if|if
 condition|(
-name|access
+name|g_access
 argument_list|(
 name|file_name
 argument_list|,
@@ -33321,7 +33308,7 @@ condition|)
 block|{
 name|fin
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|file_name
 argument_list|,
@@ -33403,7 +33390,7 @@ else|else
 block|{
 name|fin
 operator|=
-name|fopen
+name|g_fopen
 argument_list|(
 name|file_name
 argument_list|,
