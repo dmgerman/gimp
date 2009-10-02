@@ -114,6 +114,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-expose.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-handlers.h"
 end_include
 
@@ -143,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b43f0070103
+DECL|enum|__anon29aef5500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

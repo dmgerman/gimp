@@ -192,6 +192,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-expose.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplayshell-transform.h"
 end_include
 

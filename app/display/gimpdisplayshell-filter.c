@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-expose.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-filter.h"
 end_include
 
