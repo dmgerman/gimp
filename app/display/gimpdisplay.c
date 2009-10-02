@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpdisplayconfig.h"
+file|"config/gimpguiconfig.h"
 end_include
 
 begin_include
@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b416df70103
+DECL|enum|__anon2b8a91be0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1372,9 +1372,11 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
-name|GtkWidget
+name|GimpImageWindow
 modifier|*
 name|window
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|ID
@@ -1476,7 +1478,65 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*  create the shell for the image  */
+comment|/*  get an image window  */
+if|if
+condition|(
+name|GIMP_GUI_CONFIG
+argument_list|(
+name|display
+operator|->
+name|config
+argument_list|)
+operator|->
+name|single_window_mode
+condition|)
+block|{
+name|GimpDisplay
+modifier|*
+name|first_display
+decl_stmt|;
+name|first_display
+operator|=
+name|GIMP_DISPLAY
+argument_list|(
+name|gimp_container_get_first_child
+argument_list|(
+name|gimp
+operator|->
+name|displays
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|first_display
+condition|)
+block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|GIMP_DISPLAY_SHELL
+argument_list|(
+name|first_display
+operator|->
+name|shell
+argument_list|)
+decl_stmt|;
+name|window
+operator|=
+name|gimp_display_shell_get_window
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+if|if
+condition|(
+operator|!
+name|window
+condition|)
 name|window
 operator|=
 name|g_object_new
@@ -1491,7 +1551,7 @@ literal|"display-factory"
 argument_list|,
 name|display_factory
 argument_list|,
-comment|/* The window position will be overridden by the                           * dialog factory, it is only really used on first                           * startup.                           */
+comment|/* The window position will be overridden by the                             * dialog factory, it is only really used on first                             * startup.                             */
 name|display
 operator|->
 name|image
@@ -1505,6 +1565,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+comment|/*  create the shell for the image  */
 name|display
 operator|->
 name|shell
@@ -1520,13 +1581,9 @@ argument_list|,
 name|popup_manager
 argument_list|)
 expr_stmt|;
-comment|/* FIXME image window */
 name|gimp_image_window_add_shell
 argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
@@ -1536,13 +1593,9 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* FIXME image window */
 name|gimp_image_window_set_active_shell
 argument_list|(
-name|GIMP_IMAGE_WINDOW
-argument_list|(
 name|window
-argument_list|)
 argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
@@ -1573,9 +1626,12 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
+name|gtk_window_present
+argument_list|(
+name|GTK_WINDOW
 argument_list|(
 name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* add the display to the list */
