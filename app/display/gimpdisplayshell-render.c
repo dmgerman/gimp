@@ -167,14 +167,6 @@ DECL|macro|GIMP_DISPLAY_ZOOM_PIXEL_AA
 comment|/* provide AA edges when zooming in                                                on the actual pixels (in current                                                code only enables it between                                                100% and 200% zoom)                                              */
 end_comment
 
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_WIDTH
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_BUF_WIDTH
-value|256
-end_define
-
 begin_typedef
 DECL|typedef|RenderInfo
 typedef|typedef
