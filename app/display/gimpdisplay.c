@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -137,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a91be0103
+DECL|enum|__anon2b43f0070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1493,9 +1499,25 @@ condition|)
 block|{
 name|GimpDisplay
 modifier|*
-name|first_display
+name|active_display
 decl_stmt|;
-name|first_display
+name|active_display
+operator|=
+name|gimp_context_get_display
+argument_list|(
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|active_display
+condition|)
+block|{
+name|active_display
 operator|=
 name|GIMP_DISPLAY
 argument_list|(
@@ -1507,9 +1529,10 @@ name|displays
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
-name|first_display
+name|active_display
 condition|)
 block|{
 name|GimpDisplayShell
@@ -1518,7 +1541,7 @@ name|shell
 init|=
 name|GIMP_DISPLAY_SHELL
 argument_list|(
-name|first_display
+name|active_display
 operator|->
 name|shell
 argument_list|)
