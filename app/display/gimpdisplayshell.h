@@ -158,26 +158,6 @@ parameter_list|)
 value|((y) / (s)->scale_y)
 end_define
 
-begin_comment
-comment|/*  the size of the display render buffer  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_WIDTH
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_BUF_WIDTH
-value|256
-end_define
-
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-value|256
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_DISPLAY_SHELL
 define|#

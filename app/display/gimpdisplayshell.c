@@ -264,6 +264,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-render.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-scale.h"
 end_include
 
@@ -317,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4c2a600103
+DECL|enum|__anon2c6501540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4c2a600203
+DECL|enum|__anon2c6501540203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

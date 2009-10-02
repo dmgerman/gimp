@@ -16,6 +16,22 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_RENDER_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_DISPLAY_RENDER_BUF_WIDTH
+define|#
+directive|define
+name|GIMP_DISPLAY_RENDER_BUF_WIDTH
+value|256
+end_define
+
+begin_define
+DECL|macro|GIMP_DISPLAY_RENDER_BUF_HEIGHT
+define|#
+directive|define
+name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
+value|256
+end_define
+
 begin_function_decl
 name|void
 name|gimp_display_shell_render_init
