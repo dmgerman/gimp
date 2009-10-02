@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b4d7380103
+DECL|enum|__anon275789190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b4d7380203
+DECL|enum|__anon275789190203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3466,7 +3466,7 @@ argument_list|(
 name|right_vbox
 argument_list|)
 expr_stmt|;
-comment|/*  the hbox containing the quickmask button, vertical scrollbar and       the navigation button  */
+comment|/*  the hbox containing the quickmask button, vertical scrollbar and    *  the navigation button    */
 name|lower_hbox
 operator|=
 name|gtk_hbox_new
@@ -4606,7 +4606,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  show everything that is always shwon***********************************/
+comment|/*  show everything that is always shown ***********************************/
 name|gtk_widget_show
 argument_list|(
 name|GTK_WIDGET
@@ -5171,7 +5171,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * We used to calculate the scale factor in the SCALEFACTOR_X() and  * SCALEFACTOR_Y() macros. But since these are rather frequently  * called and the values rarely change, we now store them in the  * shell and call this function whenever they need to be recalculated.  */
+comment|/* We used to calculate the scale factor in the SCALEFACTOR_X() and  * SCALEFACTOR_Y() macros. But since these are rather frequently  * called and the values rarely change, we now store them in the  * shell and call this function whenever they need to be recalculated.  */
 end_comment
 
 begin_function
