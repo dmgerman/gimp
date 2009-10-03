@@ -315,7 +315,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288fda100103
+DECL|enum|__anon298c419d0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2482,9 +2482,9 @@ name|gimp
 argument_list|,
 name|GIMP_TYPE_DYNAMICS
 argument_list|,
-literal|"dynamics-path"
+literal|"brush-path"
 argument_list|,
-literal|"dynamics-path-writable"
+literal|"brush-path-writable"
 argument_list|,
 name|dynamics_loader_entries
 argument_list|,
@@ -2894,6 +2894,13 @@ argument_list|(
 name|gimp
 operator|->
 name|brush_factory
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_save
+argument_list|(
+name|gimp
+operator|->
+name|dynamics_factory
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_save
@@ -3782,6 +3789,30 @@ operator|->
 name|no_data
 argument_list|)
 expr_stmt|;
+comment|/*  initialize the list of gimp dynamics   */
+name|status_callback
+argument_list|(
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Dynamics"
+argument_list|)
+argument_list|,
+literal|0.2
+argument_list|)
+expr_stmt|;
+name|gimp_data_factory_data_init
+argument_list|(
+name|gimp
+operator|->
+name|dynamics_factory
+argument_list|,
+name|gimp
+operator|->
+name|no_data
+argument_list|)
+expr_stmt|;
 comment|/*  initialize the list of gimp patterns   */
 name|status_callback
 argument_list|(
@@ -3792,7 +3823,7 @@ argument_list|(
 literal|"Patterns"
 argument_list|)
 argument_list|,
-literal|0.2
+literal|0.3
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3816,7 +3847,7 @@ argument_list|(
 literal|"Palettes"
 argument_list|)
 argument_list|,
-literal|0.3
+literal|0.4
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3840,7 +3871,7 @@ argument_list|(
 literal|"Gradients"
 argument_list|)
 argument_list|,
-literal|0.4
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|gimp_data_factory_data_init
@@ -3864,7 +3895,7 @@ argument_list|(
 literal|"Fonts (this may take a while)"
 argument_list|)
 argument_list|,
-literal|0.5
+literal|0.6
 argument_list|)
 expr_stmt|;
 if|if
@@ -3889,7 +3920,7 @@ argument_list|(
 literal|"Templates"
 argument_list|)
 argument_list|,
-literal|0.6
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|gimp_templates_load
@@ -3907,7 +3938,7 @@ argument_list|(
 literal|"Modules"
 argument_list|)
 argument_list|,
-literal|0.7
+literal|0.8
 argument_list|)
 expr_stmt|;
 name|gimp_modules_load
@@ -3925,7 +3956,7 @@ argument_list|(
 literal|"Updating tag cache"
 argument_list|)
 argument_list|,
-literal|0.8
+literal|0.9
 argument_list|)
 expr_stmt|;
 name|gimp_tag_cache_load

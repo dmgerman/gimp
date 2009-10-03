@@ -197,7 +197,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdccc520103
+DECL|enum|__anon2a1042550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -617,7 +617,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-comment|/*(object_class, PROP_RANDOM_ASPECT_RATIO,                                     "random-aspect-ratio", NULL,                                     DEFAULT_RANDOM_ASPECT_RATIO,                                     GIMP_PARAM_STATIC_STRINGS);   GIMP_CONFIG_INSTALL_PROP_BOOLEAN (object_class, PROP_FADING_ASPECT_RATIO,                                     "fading-aspect-ratio", NULL,                                     DEFAULT_FADING_ASPECT_RATIO,                                     GIMP_PARAM_STATIC_STRINGS);*/
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
 name|object_class

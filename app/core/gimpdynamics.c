@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon289493b50103
+DECL|enum|__anon2a08ffc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3008,7 +3008,15 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-comment|/*   GimpDynamics *options = GIMP_DYNAMICS (object);    if (pspec->param_id == PROP_USE_GRADIENT)     {       if (options->gradient_options->use_gradient)         {           options->application_mode_save = options->application_mode;           options->application_mode      = GIMP_PAINT_INCREMENTAL;         }       else         {           options->application_mode = options->application_mode_save;         }        g_object_notify (object, "application-mode");     }    if (G_OBJECT_CLASS (parent_class)->notify)     G_OBJECT_CLASS (parent_class)->notify (object, pspec);     */
+name|GimpDynamics
+modifier|*
+name|options
+init|=
+name|GIMP_DYNAMICS
+argument_list|(
+name|object
+argument_list|)
+decl_stmt|;
 block|}
 end_function
 

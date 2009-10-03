@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a47776e0103
+DECL|enum|__anon2c5128710103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1608,38 +1608,16 @@ name|paint_options
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* If context does not have dynamics object for us, lets get standard*/
-if|if
-condition|(
-operator|!
-name|core
-operator|->
-name|dynamics
-condition|)
-block|{
-name|core
-operator|->
-name|dynamics
-operator|=
-name|GIMP_DYNAMICS
+name|printf
 argument_list|(
-name|gimp_dynamics_get_standard
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gimp_context_set_dynamics
-argument_list|(
+literal|"PC: %d\n"
+argument_list|,
 name|GIMP_CONTEXT
 argument_list|(
 name|paint_options
 argument_list|)
-argument_list|,
-name|core
-operator|->
-name|dynamics
 argument_list|)
 expr_stmt|;
-block|}
 name|brush
 operator|=
 name|gimp_context_get_brush

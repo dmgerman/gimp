@@ -776,7 +776,7 @@ specifier|static
 name|void
 name|gimp_context_dynamics_dirty
 parameter_list|(
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|,
@@ -796,7 +796,7 @@ name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|,
@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27771fb50103
+DECL|enum|__anon2a14c3fd0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27771fb50203
+DECL|enum|__anon2a14c3fd0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1631,7 +1631,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|standard_dynamics
 specifier|static
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|standard_dynamics
 init|=
@@ -10062,6 +10062,18 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DYNAMICS
+argument_list|(
+name|context
+operator|->
+name|dynamics
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|context
 operator|->
@@ -10108,6 +10120,11 @@ argument_list|(
 name|context
 argument_list|,
 name|GIMP_CONTEXT_PROP_DYNAMICS
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"setting&OK\n"
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_dynamics
@@ -10160,10 +10177,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_context_dynamics_dirty (GimpDynamicsOptions * dynamics,GimpContext * context)
+DECL|function|gimp_context_dynamics_dirty (GimpDynamics * dynamics,GimpContext * context)
 name|gimp_context_dynamics_dirty
 parameter_list|(
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|,
@@ -10197,7 +10214,7 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_context_dynamics_removed (GimpContainer * container,GimpDynamicsOptions * dynamics,GimpContext * context)
+DECL|function|gimp_context_dynamics_removed (GimpContainer * container,GimpDynamics * dynamics,GimpContext * context)
 specifier|static
 name|void
 name|gimp_context_dynamics_removed
@@ -10206,7 +10223,7 @@ name|GimpContainer
 modifier|*
 name|container
 parameter_list|,
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 parameter_list|,
@@ -10278,7 +10295,7 @@ modifier|*
 name|context
 parameter_list|)
 block|{
-name|GimpDynamicsOptions
+name|GimpDynamics
 modifier|*
 name|dynamics
 decl_stmt|;
@@ -10324,11 +10341,22 @@ modifier|*
 name|dynamics
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DYNAMICS
+argument_list|(
+name|dynamics
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
 name|standard_dynamics
 condition|)
+block|{
 name|standard_dynamics
 operator|=
 name|GIMP_DYNAMICS
@@ -10337,6 +10365,7 @@ name|gimp_dynamics_get_standard
 argument_list|()
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|context
@@ -10345,7 +10374,9 @@ name|dynamics
 operator|==
 name|dynamics
 condition|)
+block|{
 return|return;
+block|}
 if|if
 condition|(
 name|context
@@ -10371,7 +10402,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  disconnect from the old brush's signals  */
+comment|/*  disconnect from the old 's signals  */
 if|if
 condition|(
 name|context
