@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a14c3fd0103
+DECL|enum|__anon2bd4bd9f0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a14c3fd0203
+DECL|enum|__anon2bd4bd9f0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -10062,18 +10062,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DYNAMICS
-argument_list|(
-name|context
-operator|->
-name|dynamics
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 return|return
 name|context
 operator|->
@@ -10120,11 +10108,6 @@ argument_list|(
 name|context
 argument_list|,
 name|GIMP_CONTEXT_PROP_DYNAMICS
-argument_list|)
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"setting&OK\n"
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_dynamics
@@ -10341,16 +10324,6 @@ modifier|*
 name|dynamics
 parameter_list|)
 block|{
-name|g_return_val_if_fail
-argument_list|(
-name|GIMP_IS_DYNAMICS
-argument_list|(
-name|dynamics
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!

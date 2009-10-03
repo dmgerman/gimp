@@ -302,7 +302,7 @@ end_function_decl
 
 begin_function_decl
 name|gdouble
-name|gimp_dynamics_get_output_val
+name|gimp_dynamics_get_linear_output_val
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*

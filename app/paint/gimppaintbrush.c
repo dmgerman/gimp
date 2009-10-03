@@ -420,7 +420,7 @@ name|application_mode
 expr_stmt|;
 name|grad_point
 operator|=
-name|gimp_dynamics_get_output_val
+name|gimp_dynamics_get_linear_output_val
 argument_list|(
 name|brush_core
 operator|->
@@ -605,7 +605,7 @@ expr_stmt|;
 block|}
 name|opacity
 operator|*=
-name|gimp_dynamics_get_output_val
+name|gimp_dynamics_get_linear_output_val
 argument_list|(
 name|brush_core
 operator|->
@@ -619,7 +619,7 @@ argument_list|)
 expr_stmt|;
 name|hardness
 operator|=
-name|gimp_dynamics_get_output_val
+name|gimp_dynamics_get_linear_output_val
 argument_list|(
 name|brush_core
 operator|->

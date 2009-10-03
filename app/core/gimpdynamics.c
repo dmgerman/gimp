@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a08ffc20103
+DECL|enum|__anon27a6ce360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3111,8 +3111,8 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_output_val (GimpDynamicsOutput * output,GimpCoords coords)
-name|gimp_dynamics_get_output_val
+DECL|function|gimp_dynamics_get_linear_output_val (GimpDynamicsOutput * output,GimpCoords coords)
+name|gimp_dynamics_get_linear_output_val
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
@@ -3177,6 +3177,26 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+name|output
+operator|->
+name|random
+condition|)
+block|{
+name|total
+operator|+=
+name|g_random_double_range
+argument_list|(
+literal|0.0
+argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
+block|}
+if|if
+condition|(
 name|factors
 operator|>
 literal|0
@@ -3187,7 +3207,17 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
-comment|//printf("Dynamics queried. Result: %f, vel %f, f: %f, t: %f \n", result, coords.velocity, factors, total);
+name|printf
+argument_list|(
+literal|"Dynamics queried. Result: %f, factors: %f, total: %f \n"
+argument_list|,
+name|result
+argument_list|,
+name|factors
+argument_list|,
+name|total
+argument_list|)
+expr_stmt|;
 return|return
 name|result
 return|;
