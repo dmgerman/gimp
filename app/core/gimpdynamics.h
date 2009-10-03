@@ -356,6 +356,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_dynamics_output_get_enabled
+parameter_list|(
+name|GimpDynamicsOutput
+modifier|*
+name|output
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

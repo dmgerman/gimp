@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afae07c0103
+DECL|enum|__anon2c38f89f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3536,9 +3536,10 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
-comment|//printf("Dynamics queried(linear). Result: %f, factors: %f, total: %f \n", result, factors, total);
 return|return
 name|result
+operator|+
+literal|0.5
 return|;
 block|}
 end_function
@@ -3805,7 +3806,7 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
-comment|//printf("Dynamics queried(linear). Result: %f, factors: %f, total: %f \n", result, factors, total);
+comment|/* printf("Dynamics queried(aspect). Result: %f, factors: %f, total: %f \n", result, factors, total);*/
 return|return
 name|result
 return|;
@@ -3997,9 +3998,49 @@ argument_list|(
 name|scale
 argument_list|)
 expr_stmt|;
-comment|//printf("Dynamics queried(linear). Result: %f, factors: %f, total: %f \n", result, factors, total);
+comment|/* printf("Dynamics queried(scale). Result: %f, factors: %f, total: %f \n", result, factors, total);*/
 return|return
 name|scale
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_dynamics_output_get_enabled (GimpDynamicsOutput * output)
+name|gimp_dynamics_output_get_enabled
+parameter_list|(
+name|GimpDynamicsOutput
+modifier|*
+name|output
+parameter_list|)
+block|{
+return|return
+operator|(
+name|output
+operator|->
+name|pressure
+operator|||
+name|output
+operator|->
+name|velocity
+operator|||
+name|output
+operator|->
+name|direction
+operator|||
+name|output
+operator|->
+name|tilt
+operator|||
+name|output
+operator|->
+name|random
+operator|||
+name|output
+operator|->
+name|fade
+operator|)
 return|;
 block|}
 end_function

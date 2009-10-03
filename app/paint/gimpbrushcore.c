@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27894b330103
+DECL|enum|__anon2c3e91100103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1608,16 +1608,6 @@ name|paint_options
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|printf
-argument_list|(
-literal|"PC: %d\n"
-argument_list|,
-name|GIMP_CONTEXT
-argument_list|(
-name|paint_options
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|brush
 operator|=
 name|gimp_context_get_brush
@@ -1730,7 +1720,7 @@ name|core
 operator|->
 name|angle
 operator|+=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_get_angular_output_val
 argument_list|(
 name|core
 operator|->
@@ -1746,7 +1736,7 @@ name|core
 operator|->
 name|aspect_ratio
 operator|*=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_get_aspect_output_val
 argument_list|(
 name|core
 operator|->
@@ -3336,7 +3326,7 @@ name|core
 operator|->
 name|angle
 operator|+=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_get_angular_output_val
 argument_list|(
 name|core
 operator|->
@@ -3352,7 +3342,7 @@ name|core
 operator|->
 name|aspect_ratio
 operator|*=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_get_aspect_output_val
 argument_list|(
 name|core
 operator|->
