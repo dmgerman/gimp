@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdynamics.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimagefile.h"
 end_include
 
@@ -139,12 +145,6 @@ begin_include
 include|#
 directive|include
 file|"gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdynamics.h"
 end_include
 
 begin_include
@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4bd9f0103
+DECL|enum|__anon2aa840dc0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4bd9f0203
+DECL|enum|__anon2aa840dc0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0

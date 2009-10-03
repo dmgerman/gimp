@@ -174,12 +174,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dynamics-editor-actions.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"brushes-actions.h"
 end_include
 
@@ -253,6 +247,12 @@ begin_include
 include|#
 directive|include
 file|"drawable-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dynamics-editor-actions.h"
 end_include
 
 begin_include
@@ -454,21 +454,6 @@ name|brush_editor_actions_update
 block|}
 block|,
 block|{
-literal|"dynamics-editor"
-block|,
-name|N_
-argument_list|(
-literal|"Dynamics Editor"
-argument_list|)
-block|,
-name|GIMP_STOCK_DYNAMICS
-block|,
-name|dynamics_editor_actions_setup
-block|,
-name|dynamics_editor_actions_update
-block|}
-block|,
-block|{
 literal|"brushes"
 block|,
 name|N_
@@ -662,6 +647,21 @@ block|,
 name|drawable_actions_setup
 block|,
 name|drawable_actions_update
+block|}
+block|,
+block|{
+literal|"dynamics-editor"
+block|,
+name|N_
+argument_list|(
+literal|"Dynamics Editor"
+argument_list|)
+block|,
+name|GIMP_STOCK_DYNAMICS
+block|,
+name|dynamics_editor_actions_setup
+block|,
+name|dynamics_editor_actions_update
 block|}
 block|,
 block|{
