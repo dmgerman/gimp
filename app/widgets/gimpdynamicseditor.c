@@ -734,20 +734,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|printf
-argument_list|(
-literal|"SET to context %d\n"
-argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|data_editor
-operator|->
-name|context
-operator|->
-name|gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1142,19 +1128,23 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+comment|//gtk_container_add (GTK_CONTAINER (data_editor->view), vbox);
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|data_editor
-operator|->
-name|view
 argument_list|)
 argument_list|,
 name|vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-comment|//gtk_box_pack_start (GTK_BOX (data_editor), vbox, TRUE, TRUE, 0);
 name|gtk_widget_show
 argument_list|(
 name|vbox
