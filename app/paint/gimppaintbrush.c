@@ -363,6 +363,9 @@ decl_stmt|;
 name|gdouble
 name|hardness
 decl_stmt|;
+name|gdouble
+name|fade_point
+decl_stmt|;
 name|image
 operator|=
 name|gimp_item_get_image
@@ -373,8 +376,8 @@ name|drawable
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|opacity
-operator|*=
+name|fade_point
+operator|=
 name|gimp_paint_options_get_fade
 argument_list|(
 name|paint_options
@@ -386,13 +389,6 @@ operator|->
 name|pixel_dist
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|opacity
-operator|==
-literal|0.0
-condition|)
-return|return;
 name|area
 operator|=
 name|gimp_paint_core_get_paint_area
@@ -430,6 +426,8 @@ name|color_dynamics
 argument_list|,
 operator|*
 name|coords
+argument_list|,
+name|fade_point
 argument_list|)
 expr_stmt|;
 comment|/* optionally take the color from the current gradient */
@@ -615,6 +613,8 @@ name|opacity_dynamics
 argument_list|,
 operator|*
 name|coords
+argument_list|,
+name|fade_point
 argument_list|)
 expr_stmt|;
 name|hardness
@@ -629,6 +629,8 @@ name|hardness_dynamics
 argument_list|,
 operator|*
 name|coords
+argument_list|,
+name|fade_point
 argument_list|)
 expr_stmt|;
 comment|/* finally, let the brush core paste the colored area on the canvas */

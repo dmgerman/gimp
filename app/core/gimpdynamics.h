@@ -310,6 +310,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -324,6 +327,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -338,6 +344,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -352,6 +361,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -363,6 +375,17 @@ parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
 name|output
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_dynamics_input_fade_enabled
+parameter_list|(
+name|GimpDynamics
+modifier|*
+name|dynamics
 parameter_list|)
 function_decl|;
 end_function_decl

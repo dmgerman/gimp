@@ -421,7 +421,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c38f89f0103
+DECL|enum|__anon2c5462c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3111,7 +3111,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_linear_output_val (GimpDynamicsOutput * output,GimpCoords coords)
+DECL|function|gimp_dynamics_get_linear_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
 name|gimp_dynamics_get_linear_output_val
 parameter_list|(
 name|GimpDynamicsOutput
@@ -3120,6 +3120,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 block|{
 name|gdouble
@@ -3253,9 +3256,13 @@ operator|->
 name|fade
 condition|)
 block|{
-comment|//total += g_random_double_range (0.0, 1.0);
-comment|//factors++;
-comment|/*Implementation needs fixing*/
+name|total
+operator|+=
+name|fade_point
+expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -3278,7 +3285,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_angular_output_val (GimpDynamicsOutput * output,GimpCoords coords)
+DECL|function|gimp_dynamics_get_angular_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
 name|gimp_dynamics_get_angular_output_val
 parameter_list|(
 name|GimpDynamicsOutput
@@ -3287,6 +3294,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 block|{
 name|gdouble
@@ -3520,9 +3530,13 @@ operator|->
 name|fade
 condition|)
 block|{
-comment|//total += g_random_double_range (0.0, 1.0);
-comment|//factors++;
-comment|/*Implementation needs fixing*/
+name|total
+operator|+=
+name|fade_point
+expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -3546,7 +3560,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_aspect_output_val (GimpDynamicsOutput * output,GimpCoords coords)
+DECL|function|gimp_dynamics_get_aspect_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
 name|gimp_dynamics_get_aspect_output_val
 parameter_list|(
 name|GimpDynamicsOutput
@@ -3555,6 +3569,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 block|{
 name|gdouble
@@ -3790,9 +3807,13 @@ operator|->
 name|fade
 condition|)
 block|{
-comment|//total += g_random_double_range (0.0, 1.0);
-comment|//factors++;
-comment|/*Implementation needs fixing*/
+name|total
+operator|+=
+name|fade_point
+expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -3815,7 +3836,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_scale_output_val (GimpDynamicsOutput * output,GimpCoords coords)
+DECL|function|gimp_dynamics_get_scale_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
 name|gimp_dynamics_get_scale_output_val
 parameter_list|(
 name|GimpDynamicsOutput
@@ -3824,6 +3845,9 @@ name|output
 parameter_list|,
 name|GimpCoords
 name|coords
+parameter_list|,
+name|gdouble
+name|fade_point
 parameter_list|)
 block|{
 name|gdouble
@@ -3960,9 +3984,13 @@ operator|->
 name|fade
 condition|)
 block|{
-comment|//total += g_random_double_range (0.0, 1.0);
-comment|//factors++;
-comment|/*Implementation needs fixing*/
+name|total
+operator|+=
+name|fade_point
+expr_stmt|;
+name|factors
+operator|++
+expr_stmt|;
 block|}
 if|if
 condition|(
@@ -4038,6 +4066,64 @@ operator|->
 name|random
 operator|||
 name|output
+operator|->
+name|fade
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_dynamics_input_fade_enabled (GimpDynamics * dynamics)
+name|gimp_dynamics_input_fade_enabled
+parameter_list|(
+name|GimpDynamics
+modifier|*
+name|dynamics
+parameter_list|)
+block|{
+return|return
+operator|(
+name|dynamics
+operator|->
+name|opacity_dynamics
+operator|->
+name|fade
+operator|||
+name|dynamics
+operator|->
+name|hardness_dynamics
+operator|->
+name|fade
+operator|||
+name|dynamics
+operator|->
+name|rate_dynamics
+operator|->
+name|fade
+operator|||
+name|dynamics
+operator|->
+name|size_dynamics
+operator|->
+name|fade
+operator|||
+name|dynamics
+operator|->
+name|aspect_ratio_dynamics
+operator|->
+name|fade
+operator|||
+name|dynamics
+operator|->
+name|color_dynamics
+operator|->
+name|fade
+operator|||
+name|dynamics
+operator|->
+name|angle_dynamics
 operator|->
 name|fade
 operator|)
