@@ -28,6 +28,12 @@ directive|include
 file|<glib.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<glib/gstdio.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -331,7 +337,7 @@ DECL|member|is_fixnum
 name|char
 name|is_fixnum
 decl_stmt|;
-DECL|union|__anon2a3bdc47010a
+DECL|union|__anon27870b8e010a
 union|union
 block|{
 DECL|member|ivalue
@@ -354,7 +360,7 @@ if|#
 directive|if
 operator|!
 name|STANDALONE
-DECL|enum|__anon2a3bdc470203
+DECL|enum|__anon27870b8e0203
 DECL|enumerator|TS_OUTPUT_NORMAL
 DECL|enumerator|TS_OUTPUT_ERROR
 DECL|typedef|TsOutputType

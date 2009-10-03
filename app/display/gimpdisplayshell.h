@@ -16,12 +16,6 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_H__
 end_define
 
-begin_include
-include|#
-directive|include
-file|"widgets/gimpwindow.h"
-end_include
-
 begin_comment
 comment|/* Apply to a float the same rounding mode used in the renderer */
 end_comment
@@ -164,26 +158,6 @@ parameter_list|)
 value|((y) / (s)->scale_y)
 end_define
 
-begin_comment
-comment|/*  the size of the display render buffer  */
-end_comment
-
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_WIDTH
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_BUF_WIDTH
-value|256
-end_define
-
-begin_define
-DECL|macro|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-define|#
-directive|define
-name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
-value|256
-end_define
-
 begin_define
 DECL|macro|GIMP_TYPE_DISPLAY_SHELL
 define|#
@@ -262,7 +236,7 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GimpWindow
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
 comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
@@ -271,20 +245,10 @@ name|GimpDisplay
 modifier|*
 name|display
 decl_stmt|;
-DECL|member|menubar_manager
-name|GimpUIManager
-modifier|*
-name|menubar_manager
-decl_stmt|;
 DECL|member|popup_manager
 name|GimpUIManager
 modifier|*
 name|popup_manager
-decl_stmt|;
-DECL|member|display_factory
-name|GimpDialogFactory
-modifier|*
-name|display_factory
 decl_stmt|;
 DECL|member|options
 name|GimpDisplayOptions
@@ -533,18 +497,6 @@ modifier|*
 name|nav_ebox
 decl_stmt|;
 comment|/*  SE: navigation event box           */
-DECL|member|menubar
-name|GtkWidget
-modifier|*
-name|menubar
-decl_stmt|;
-comment|/*  menubar                            */
-DECL|member|statusbar
-name|GtkWidget
-modifier|*
-name|statusbar
-decl_stmt|;
-comment|/*  statusbar                          */
 DECL|member|render_buf
 name|guchar
 modifier|*
@@ -556,6 +508,18 @@ name|guint
 name|title_idle_id
 decl_stmt|;
 comment|/*  title update idle ID               */
+DECL|member|title
+name|gchar
+modifier|*
+name|title
+decl_stmt|;
+comment|/*  current title                      */
+DECL|member|status
+name|gchar
+modifier|*
+name|status
+decl_stmt|;
+comment|/*  current default statusbar content  */
 DECL|member|icon_size
 name|gint
 name|icon_size
@@ -566,6 +530,12 @@ name|guint
 name|icon_idle_id
 decl_stmt|;
 comment|/*  ID of the idle-function            */
+DECL|member|icon
+name|GdkPixbuf
+modifier|*
+name|icon
+decl_stmt|;
+comment|/*  icon                               */
 DECL|member|fill_idle_id
 name|guint
 name|fill_idle_id
@@ -679,11 +649,6 @@ name|GimpTreeHandler
 modifier|*
 name|vectors_visible_handler
 decl_stmt|;
-DECL|member|window_state
-name|GdkWindowState
-name|window_state
-decl_stmt|;
-comment|/* for fullscreen display              */
 DECL|member|zoom_on_resize
 name|gboolean
 name|zoom_on_resize
@@ -779,7 +744,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GimpWindowClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled
@@ -847,17 +812,21 @@ parameter_list|,
 name|gdouble
 name|scale
 parameter_list|,
-name|GimpMenuFactory
-modifier|*
-name|menu_factory
-parameter_list|,
 name|GimpUIManager
 modifier|*
 name|popup_manager
-parameter_list|,
-name|GimpDialogFactory
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImageWindow
 modifier|*
-name|display_factory
+name|gimp_display_shell_get_window
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1019,70 +988,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_expose_area
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|,
-name|gint
-name|w
-parameter_list|,
-name|gint
-name|h
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_expose_guide
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|GimpGuide
-modifier|*
-name|guide
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_expose_sample_point
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|GimpSamplePoint
-modifier|*
-name|sample_point
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_expose_full
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_flush
 parameter_list|(
 name|GimpDisplayShell
@@ -1113,31 +1018,6 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_update_icon
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_shrink_wrap
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|gboolean
-name|grow_only
 parameter_list|)
 function_decl|;
 end_function_decl

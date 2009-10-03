@@ -18,17 +18,6 @@ end_define
 
 begin_function_decl
 name|void
-name|gimp_display_shell_title_init
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_title_update
 parameter_list|(
 name|GimpDisplayShell

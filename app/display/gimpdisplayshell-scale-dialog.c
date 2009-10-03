@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b8529a0108
+DECL|struct|__anon290d46b50108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -220,6 +220,10 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
+decl_stmt|;
+name|GtkWidget
+modifier|*
+name|toplevel
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -462,6 +466,16 @@ operator|->
 name|scale_dialog
 argument_list|)
 expr_stmt|;
+name|toplevel
+operator|=
+name|gtk_widget_get_toplevel
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gtk_window_set_transient_for
 argument_list|(
 name|GTK_WINDOW
@@ -473,7 +487,7 @@ argument_list|)
 argument_list|,
 name|GTK_WINDOW
 argument_list|(
-name|shell
+name|toplevel
 argument_list|)
 argument_list|)
 expr_stmt|;

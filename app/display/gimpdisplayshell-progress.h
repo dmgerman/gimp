@@ -33,17 +33,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_display_shell_progress_window_state_changed
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
