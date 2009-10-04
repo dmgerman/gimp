@@ -497,6 +497,12 @@ modifier|*
 name|nav_ebox
 decl_stmt|;
 comment|/*  SE: navigation event box           */
+DECL|member|statusbar
+name|GtkWidget
+modifier|*
+name|statusbar
+decl_stmt|;
+comment|/*  statusbar                          */
 DECL|member|render_buf
 name|guchar
 modifier|*
@@ -823,6 +829,18 @@ begin_function_decl
 name|GimpImageWindow
 modifier|*
 name|gimp_display_shell_get_window
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpStatusbar
+modifier|*
+name|gimp_display_shell_get_statusbar
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

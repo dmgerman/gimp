@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpimagewindow.h"
+file|"display/gimpdisplayshell-appearance.h"
 end_include
 
 begin_include
@@ -1382,15 +1382,6 @@ operator|->
 name|dialog
 condition|)
 block|{
-name|GimpImageWindow
-modifier|*
-name|window
-init|=
-name|gimp_display_shell_get_window
-argument_list|(
-name|shell
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|options
@@ -1398,9 +1389,9 @@ operator|->
 name|use_info_window
 operator|||
 operator|!
-name|gimp_image_window_get_show_statusbar
+name|gimp_display_shell_get_show_statusbar
 argument_list|(
-name|window
+name|shell
 argument_list|)
 condition|)
 block|{

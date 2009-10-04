@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6501540103
+DECL|enum|__anon27ddcfc50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6501540203
+DECL|enum|__anon27ddcfc50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3339,7 +3339,7 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *            |    *            +-- quick_mask    *            +-- hscrollbar    *            +-- navbutton    */
+comment|/*  GtkTable widgets are not able to shrink a row/column correctly if    *  widgets are attached with GTK_EXPAND even if those widgets have    *  other rows/columns in their rowspan/colspan where they could    *  nicely expand without disturbing the row/column which is supposed    *  to shrink. --Mitch    *    *  Changed the packing to use hboxes and vboxes which behave nicer:    *    *  shell    *     |    *     +-- upper_hbox    *     |      |    *     |      +-- inner_table    *     |      |      |    *     |      |      +-- origin    *     |      |      +-- hruler    *     |      |      +-- vruler    *     |      |      +-- canvas    *     |      |    *     |      +-- right_vbox    *     |             |    *     |             +-- zoom_on_resize_button    *     |             +-- vscrollbar    *     |    *     +-- lower_hbox    *     |      |    *     |      +-- quick_mask    *     |      +-- hscrollbar    *     |      +-- navbutton    *     |    *     +-- statusbar    */
 comment|/*  first, set up the container hierarchy  *********************************/
 comment|/*  a hbox for the inner_table and the vertical scrollbar  */
 name|upper_hbox
@@ -4378,6 +4378,55 @@ argument_list|,
 name|GIMP_HELP_IMAGE_WINDOW_NAV_BUTTON
 argument_list|)
 expr_stmt|;
+comment|/*  the statusbar  ********************************************************/
+name|shell
+operator|->
+name|statusbar
+operator|=
+name|gimp_statusbar_new
+argument_list|()
+expr_stmt|;
+name|gimp_statusbar_set_shell
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_HELP_IMAGE_WINDOW_STATUS_BAR
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_end
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|statusbar
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
 comment|/*  pack all the widgets  **************************************************/
 comment|/*  fill the inner_table  */
 name|gtk_table_attach
@@ -4684,6 +4733,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_statusbar_empty
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 comment|/* make sure the information is up-to-date */
 name|gimp_display_shell_scale_changed
@@ -4733,6 +4792,38 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_IMAGE_WINDOW
 argument_list|)
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpStatusbar
+modifier|*
+DECL|function|gimp_display_shell_get_statusbar (GimpDisplayShell * shell)
+name|gimp_display_shell_get_statusbar
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
 argument_list|)
 return|;
 block|}
@@ -4937,6 +5028,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_statusbar_empty
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_expose_full
 argument_list|(
 name|shell
@@ -5131,6 +5232,16 @@ argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_statusbar_fill
+argument_list|(
+name|GIMP_STATUSBAR
+argument_list|(
+name|shell
+operator|->
+name|statusbar
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* A size-allocate will always occur because the scrollbars will    * become visible forcing the canvas to become smaller    */
