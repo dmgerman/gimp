@@ -241,6 +241,11 @@ name|GimpDynamicsOutput
 modifier|*
 name|angle_dynamics
 decl_stmt|;
+DECL|member|jitter_dynamics
+name|GimpDynamicsOutput
+modifier|*
+name|jitter_dynamics
+decl_stmt|;
 block|}
 struct|;
 end_struct

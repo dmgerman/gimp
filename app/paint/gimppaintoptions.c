@@ -189,7 +189,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2923dabe0103
+DECL|enum|__anon2b02a9a00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2027,11 +2027,13 @@ name|jitter_options
 operator|->
 name|use_jitter
 condition|)
+block|{
 return|return
 name|jitter_options
 operator|->
 name|jitter_amount
 return|;
+block|}
 return|return
 literal|0.0
 return|;
