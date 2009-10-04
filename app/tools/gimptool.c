@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b13a7c20103
+DECL|enum|__anon2c86212c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4303,8 +4303,6 @@ name|gimp_message_valist
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|,
 name|G_OBJECT
@@ -4372,8 +4370,6 @@ expr_stmt|;
 name|gimp_message_literal
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,

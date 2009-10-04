@@ -726,8 +726,6 @@ name|gimp_message_literal
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|,
 name|G_OBJECT

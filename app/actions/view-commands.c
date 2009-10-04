@@ -214,7 +214,7 @@ parameter_list|(
 name|display
 parameter_list|)
 define|\
-value|((display) == \    gimp_context_get_display (gimp_get_user_context ((display)->image->gimp)))
+value|((display) == \    gimp_context_get_display (gimp_get_user_context ((display)->gimp)))
 end_define
 
 begin_comment
@@ -287,8 +287,6 @@ expr_stmt|;
 name|gimp_create_display
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1b25700103
+DECL|enum|__anon28f89d290103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1973,8 +1973,6 @@ operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 operator|->

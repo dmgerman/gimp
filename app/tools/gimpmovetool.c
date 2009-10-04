@@ -1019,8 +1019,6 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 operator|->
 name|config
@@ -1461,8 +1459,6 @@ init|=
 name|GIMP_GUI_CONFIG
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 operator|->
@@ -2615,8 +2611,6 @@ name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 operator|->
 name|config
@@ -2923,8 +2917,6 @@ operator|=
 name|GIMP_DISPLAY_CONFIG
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 operator|->

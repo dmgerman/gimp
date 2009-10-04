@@ -1859,8 +1859,6 @@ name|gimp_clipboard_get_svg
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|,
 operator|&
@@ -1924,8 +1922,6 @@ operator|=
 name|gimp_clipboard_get_buffer
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2019,8 +2015,6 @@ block|{
 name|gimp_message_literal
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,

@@ -234,7 +234,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af9c7940108
+DECL|struct|__anon2a42c5e10108
 block|{
 DECL|member|context
 name|GimpContext
@@ -1275,8 +1275,6 @@ condition|)
 name|image_scale_interp
 operator|=
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 operator|->

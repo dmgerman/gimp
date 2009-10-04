@@ -5367,8 +5367,6 @@ name|gimp_set_busy
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -5713,8 +5711,6 @@ block|}
 name|gimp_unset_busy
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)

@@ -1936,8 +1936,6 @@ name|gimp_get_tool_info
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|,
 literal|"gimp-color-picker-tool"

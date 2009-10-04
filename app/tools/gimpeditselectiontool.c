@@ -1844,8 +1844,6 @@ name|tool_manager_push_tool
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|,
 name|tool
@@ -1978,8 +1976,6 @@ expr_stmt|;
 name|tool_manager_pop_tool
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2266,8 +2262,6 @@ name|tool_manager_get_active
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 condition|)
@@ -2275,8 +2269,6 @@ block|{
 name|tool_manager_button_release_active
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2671,8 +2663,6 @@ name|gimp_get_user_context
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 argument_list|,
@@ -2695,8 +2685,6 @@ comment|/* no region to float, abort safely */
 name|gimp_message_literal
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,
@@ -5062,8 +5050,6 @@ argument_list|,
 name|gimp_get_user_context
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)
