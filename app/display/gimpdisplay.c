@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf8daed0103
+DECL|enum|__anon276de1360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1637,10 +1637,8 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_image_window_set_active_shell
+name|gimp_display_shell_present
 argument_list|(
-name|window
-argument_list|,
 name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|display
@@ -1669,14 +1667,6 @@ name|gimp_display_progress_canceled
 argument_list|)
 argument_list|,
 name|display
-argument_list|)
-expr_stmt|;
-name|gtk_window_present
-argument_list|(
-name|GTK_WINDOW
-argument_list|(
-name|window
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* add the display to the list */

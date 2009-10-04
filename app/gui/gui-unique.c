@@ -409,7 +409,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcd54d40108
+DECL|struct|__anon2badf67c0108
 block|{
 DECL|member|name
 name|gchar
@@ -571,9 +571,9 @@ operator|->
 name|displays
 argument_list|)
 expr_stmt|;
-name|gtk_window_present
+name|gimp_display_shell_present
 argument_list|(
-name|GTK_WINDOW
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(

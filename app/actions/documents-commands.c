@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"documents-commands.h"
 end_include
 
@@ -150,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad09a1b0108
+DECL|struct|__anon2c2f21180108
 block|{
 DECL|member|name
 specifier|const
@@ -1380,9 +1386,9 @@ name|found
 operator|=
 name|TRUE
 expr_stmt|;
-name|gtk_window_present
+name|gimp_display_shell_present
 argument_list|(
-name|GTK_WINDOW
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|display
 operator|->

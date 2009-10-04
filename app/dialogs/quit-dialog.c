@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontainertreeview.h"
 end_include
 
@@ -1058,9 +1064,9 @@ name|image
 operator|==
 name|image
 condition|)
-name|gtk_window_present
+name|gimp_display_shell_present
 argument_list|(
-name|GTK_WINDOW
+name|GIMP_DISPLAY_SHELL
 argument_list|(
 name|display
 operator|->
