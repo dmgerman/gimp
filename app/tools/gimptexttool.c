@@ -9219,13 +9219,11 @@ name|text_tool
 operator|->
 name|im_context
 argument_list|,
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|tool
 operator|->
 name|display
-operator|->
-name|shell
 argument_list|)
 operator|->
 name|canvas

@@ -1000,7 +1000,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(
@@ -1008,8 +1008,6 @@ name|list
 operator|->
 name|data
 argument_list|)
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|gimp_display_shell_set_override_cursor
@@ -1068,7 +1066,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(
@@ -1076,8 +1074,6 @@ name|list
 operator|->
 name|data
 argument_list|)
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|gimp_display_shell_unset_override_cursor

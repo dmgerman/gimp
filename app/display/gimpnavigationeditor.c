@@ -681,11 +681,9 @@ name|display
 condition|)
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 name|gimp_navigation_editor_set_shell

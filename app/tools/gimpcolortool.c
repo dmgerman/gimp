@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292ec1f10103
+DECL|enum|__anon2b1b25700103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -816,11 +816,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 switch|switch
@@ -944,11 +942,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 comment|/*  Chain up to activate the tool  */
@@ -1186,11 +1182,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 comment|/*  Chain up to halt the tool  */
@@ -1545,11 +1539,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 if|if
@@ -1948,11 +1940,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|GimpSamplePoint
@@ -3222,11 +3212,9 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_selection_control
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 argument_list|,
 name|GIMP_SELECTION_PAUSE
@@ -3262,11 +3250,9 @@ name|sample_point
 condition|)
 name|gimp_display_shell_draw_sample_point
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 argument_list|,
 name|color_tool

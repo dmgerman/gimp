@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f21180108
+DECL|struct|__anon2c2ce50e0108
 block|{
 DECL|member|name
 specifier|const
@@ -1388,11 +1388,9 @@ name|TRUE
 expr_stmt|;
 name|gimp_display_shell_present
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;

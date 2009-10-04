@@ -2835,11 +2835,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|GimpStatusbar

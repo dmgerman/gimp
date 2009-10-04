@@ -3181,13 +3181,11 @@ name|FALSE
 return|;
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|draw_tool
 operator|->
 name|display
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 if|if

@@ -831,11 +831,9 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  Make a check to see if it should be a floating selection translation  */
@@ -1944,11 +1942,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|GimpItem
@@ -4500,11 +4496,9 @@ name|ARROW_VELOCITY
 operator|/
 name|gimp_zoom_model_get_factor
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 operator|->
 name|zoom

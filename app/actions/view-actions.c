@@ -2271,11 +2271,9 @@ name|image
 expr_stmt|;
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 name|window

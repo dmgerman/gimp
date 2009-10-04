@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8b75020103
+DECL|enum|__anon2b8274030103
 block|{
 DECL|enumerator|OPENED
 name|OPENED
@@ -91,7 +91,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8b75020208
+DECL|struct|__anon2b8274030208
 block|{
 DECL|member|uri
 name|gchar
@@ -776,14 +776,12 @@ name|display
 condition|)
 name|gimp_display_shell_present
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(
 name|display
 argument_list|)
-operator|->
-name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;

@@ -202,11 +202,9 @@ name|image
 condition|)
 name|gimp_display_shell_present
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
