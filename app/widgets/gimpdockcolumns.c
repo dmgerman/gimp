@@ -158,7 +158,7 @@ argument_list|(
 name|dock
 argument_list|)
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 name|TRUE
 argument_list|,
