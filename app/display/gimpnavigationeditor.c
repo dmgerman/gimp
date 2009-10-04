@@ -1388,12 +1388,11 @@ name|GimpDisplayConfig
 modifier|*
 name|config
 init|=
-name|GIMP_DISPLAY_CONFIG
-argument_list|(
-name|gimp
+name|shell
+operator|->
+name|display
 operator|->
 name|config
-argument_list|)
 decl_stmt|;
 name|GimpView
 modifier|*
