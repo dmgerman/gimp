@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aef5500103
+DECL|enum|__anon28b1c1f40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1566,6 +1566,7 @@ condition|(
 operator|!
 name|window
 condition|)
+block|{
 name|window
 operator|=
 name|g_object_new
@@ -1580,7 +1581,7 @@ literal|"display-factory"
 argument_list|,
 name|display_factory
 argument_list|,
-comment|/* The window position will be overridden by the                             * dialog factory, it is only really used on first                             * startup.                             */
+comment|/* The window position will be overridden by the                               * dialog factory, it is only really used on first                               * startup.                               */
 name|display
 operator|->
 name|image
@@ -1594,6 +1595,20 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp
+operator|->
+name|image_windows
+operator|=
+name|g_list_prepend
+argument_list|(
+name|gimp
+operator|->
+name|image_windows
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
+block|}
 comment|/*  create the shell for the image  */
 name|display
 operator|->
@@ -1850,6 +1865,27 @@ expr_stmt|;
 block|}
 else|else
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|display
+operator|->
+name|gimp
+decl_stmt|;
+name|gimp
+operator|->
+name|image_windows
+operator|=
+name|g_list_remove
+argument_list|(
+name|gimp
+operator|->
+name|image_windows
+argument_list|,
+name|window
+argument_list|)
+expr_stmt|;
 name|gtk_widget_destroy
 argument_list|(
 name|GTK_WIDGET
