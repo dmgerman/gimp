@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9d3feb0103
+DECL|enum|__anon28b8c4340103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d3feb0203
+DECL|enum|__anon28b8c4340203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -3197,7 +3197,9 @@ name|GIMP_LOG
 argument_list|(
 name|DIALOG_FACTORY
 argument_list|,
-literal|"adding dock"
+literal|"adding dock (dialog = %p)"
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
 for|for
@@ -3670,7 +3672,7 @@ name|GIMP_LOG
 argument_list|(
 name|DIALOG_FACTORY
 argument_list|,
-literal|"removing \"%s\""
+literal|"removing \"%s\" (dialog = %p)"
 argument_list|,
 name|entry
 condition|?
@@ -3679,6 +3681,8 @@ operator|->
 name|identifier
 else|:
 literal|"dock"
+argument_list|,
+name|dialog
 argument_list|)
 expr_stmt|;
 for|for
