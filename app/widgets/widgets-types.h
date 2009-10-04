@@ -1301,6 +1301,15 @@ name|GimpDialogFactory
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpUIConfigurer
+typedef|typedef
+name|struct
+name|_GimpUIConfigurer
+name|GimpUIConfigurer
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  session management objects and structs  */
 end_comment

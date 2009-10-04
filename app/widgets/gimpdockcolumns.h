@@ -142,6 +142,21 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_function_decl
+name|void
+name|gimp_dock_columns_add_dock
+parameter_list|(
+name|GimpDockColumns
+modifier|*
+name|dock_columns
+parameter_list|,
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
