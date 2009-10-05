@@ -1237,9 +1237,13 @@ argument_list|(
 literal|"Create New Template"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1436,9 +1440,13 @@ argument_list|)
 argument_list|,
 name|GTK_STOCK_REVERT_TO_SAVED
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,

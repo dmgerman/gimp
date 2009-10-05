@@ -1257,9 +1257,13 @@ name|gimp_tool_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 name|klass
 operator|->

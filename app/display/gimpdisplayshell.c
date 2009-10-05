@@ -323,7 +323,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8488460103
+DECL|enum|__anon29488a820103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +351,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8488460203
+DECL|enum|__anon29488a820203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2989,11 +2989,12 @@ name|shell
 operator|->
 name|display
 operator|&&
+name|gimp_display_get_shell
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|shell
+argument_list|)
 condition|)
 block|{
 comment|/*  if the shell is already fully constructed, use proper API        *  so the actions are updated accordingly.        */

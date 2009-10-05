@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f89d290103
+DECL|enum|__anon27b63ac90103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2765,6 +2765,17 @@ case|case
 name|GIMP_COLOR_PICK_MODE_PALETTE
 case|:
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
+decl_stmt|;
 name|GdkScreen
 modifier|*
 name|screen
@@ -2777,11 +2788,10 @@ name|screen
 operator|=
 name|gtk_widget_get_screen
 argument_list|(
-name|tool
-operator|->
-name|display
-operator|->
+name|GTK_WIDGET
+argument_list|(
 name|shell
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|dockable

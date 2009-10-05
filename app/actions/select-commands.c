@@ -589,9 +589,13 @@ argument_list|(
 literal|"Feather Selection"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -752,9 +756,13 @@ argument_list|(
 literal|"Shrink Selection"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -926,9 +934,13 @@ argument_list|(
 literal|"Grow Selection"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,
@@ -1047,9 +1059,13 @@ argument_list|(
 literal|"Border Selection"
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|,
 name|gimp_standard_help_func
 argument_list|,

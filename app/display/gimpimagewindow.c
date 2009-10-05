@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275e7aa10103
+DECL|enum|__anon2c517f6d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4395,9 +4395,13 @@ operator|->
 name|notebook
 argument_list|)
 argument_list|,
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_view_set_viewable

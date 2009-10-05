@@ -1165,9 +1165,10 @@ name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
-name|display
-operator|->
+name|GTK_WIDGET
+argument_list|(
 name|shell
+argument_list|)
 argument_list|)
 argument_list|,
 literal|"gimp-navigation-view"
@@ -2184,6 +2185,15 @@ operator|!
 name|color_dialog
 condition|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|color_dialog
 operator|=
 name|gimp_color_dialog_new
@@ -2212,9 +2222,10 @@ argument_list|(
 literal|"Set Custom Canvas Padding Color"
 argument_list|)
 argument_list|,
-name|display
-operator|->
+name|GTK_WIDGET
+argument_list|(
 name|shell
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2241,8 +2252,6 @@ argument_list|(
 name|view_padding_color_dialog_update
 argument_list|)
 argument_list|,
-name|display
-operator|->
 name|shell
 argument_list|)
 expr_stmt|;

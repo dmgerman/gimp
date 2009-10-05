@@ -2032,9 +2032,13 @@ condition|(
 name|display
 condition|)
 return|return
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+argument_list|)
 return|;
 return|return
 name|dialogs_get_toolbox

@@ -465,7 +465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/*  * The following code is written on the assumption that this is for a  * context menu, activated by right-clicking in a text layer.  * Therefore, the tool must have a display.  If for any reason the  * code is adapted to a different situation, some existence testing  * will need to be added.  */
+comment|/* The following code is written on the assumption that this is for a  * context menu, activated by right-clicking in a text layer.  * Therefore, the tool must have a display.  If for any reason the  * code is adapted to a different situation, some existence testing  * will need to be added.  */
 end_comment
 
 begin_function
@@ -510,6 +510,10 @@ decl_stmt|;
 name|GimpVectors
 modifier|*
 name|vectors
+decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
 decl_stmt|;
 name|GtkClipboard
 modifier|*
@@ -568,9 +572,9 @@ name|text_tool
 argument_list|)
 expr_stmt|;
 comment|/*    * see whether there is text available for pasting    */
-name|clipboard
+name|shell
 operator|=
-name|gtk_widget_get_clipboard
+name|gimp_display_get_shell
 argument_list|(
 name|GIMP_TOOL
 argument_list|(
@@ -578,8 +582,16 @@ name|text_tool
 argument_list|)
 operator|->
 name|display
-operator|->
+argument_list|)
+expr_stmt|;
+name|clipboard
+operator|=
+name|gtk_widget_get_clipboard
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|shell
+argument_list|)
 argument_list|,
 name|GDK_SELECTION_CLIPBOARD
 argument_list|)

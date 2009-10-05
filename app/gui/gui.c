@@ -2179,6 +2179,10 @@ name|gimp
 argument_list|)
 condition|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 comment|/*  create the empty display  */
 name|display
 operator|=
@@ -2194,6 +2198,13 @@ name|GIMP_UNIT_PIXEL
 argument_list|,
 literal|1.0
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|shell
+operator|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -2217,9 +2228,10 @@ name|GTK_WINDOW
 argument_list|(
 name|gtk_widget_get_toplevel
 argument_list|(
-name|display
-operator|->
+name|GTK_WIDGET
+argument_list|(
 name|shell
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|)

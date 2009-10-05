@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c86212c0103
+DECL|enum|__anon2bc1d07e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2125,6 +2125,10 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpDisplayShell
+modifier|*
+name|shell
+decl_stmt|;
 name|gint
 name|double_click_time
 decl_stmt|;
@@ -2141,13 +2145,21 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|shell
+operator|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 name|g_object_get
 argument_list|(
 name|gtk_widget_get_settings
 argument_list|(
-name|display
-operator|->
+name|GTK_WIDGET
+argument_list|(
 name|shell
+argument_list|)
 argument_list|)
 argument_list|,
 literal|"gtk-double-click-time"
