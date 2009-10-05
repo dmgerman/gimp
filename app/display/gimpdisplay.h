@@ -131,18 +131,6 @@ name|instance
 decl_stmt|;
 comment|/*  the instance # of this display as   */
 comment|/*  taken from the image at creation    */
-DECL|member|shell
-name|GtkWidget
-modifier|*
-name|shell
-decl_stmt|;
-comment|/*  shell widget for this display       */
-DECL|member|update_areas
-name|GSList
-modifier|*
-name|update_areas
-decl_stmt|;
-comment|/*  Update areas list                   */
 block|}
 struct|;
 end_struct
