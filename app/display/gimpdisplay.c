@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d692d50103
+DECL|enum|__anon292c4c590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -183,6 +183,11 @@ DECL|struct|_GimpDisplayPrivate
 struct|struct
 name|_GimpDisplayPrivate
 block|{
+DECL|member|ID
+name|gint
+name|ID
+decl_stmt|;
+comment|/*  unique identifier for this display  */
 DECL|member|shell
 name|GtkWidget
 modifier|*
@@ -634,12 +639,6 @@ parameter_list|)
 block|{
 name|display
 operator|->
-name|ID
-operator|=
-literal|0
-expr_stmt|;
-name|display
-operator|->
 name|gimp
 operator|=
 name|NULL
@@ -759,6 +758,15 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+name|GimpDisplayPrivate
+modifier|*
+name|private
+init|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 switch|switch
 condition|(
 name|property_id
@@ -836,7 +844,7 @@ name|ID
 argument_list|)
 condition|)
 do|;
-name|display
+name|private
 operator|->
 name|ID
 operator|=
@@ -924,7 +932,7 @@ name|g_value_set_int
 argument_list|(
 name|value
 argument_list|,
-name|display
+name|private
 operator|->
 name|ID
 argument_list|)
@@ -2109,6 +2117,10 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
@@ -2120,8 +2132,15 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-return|return
+name|private
+operator|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
 name|display
+argument_list|)
+expr_stmt|;
+return|return
+name|private
 operator|->
 name|ID
 return|;
@@ -2185,9 +2204,10 @@ name|data
 decl_stmt|;
 if|if
 condition|(
+name|gimp_display_get_ID
+argument_list|(
 name|display
-operator|->
-name|ID
+argument_list|)
 operator|==
 name|ID
 condition|)

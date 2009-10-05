@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|ID
-name|gint
-name|ID
-decl_stmt|;
-comment|/*  unique identifier for this display  */
 DECL|member|gimp
 name|Gimp
 modifier|*
