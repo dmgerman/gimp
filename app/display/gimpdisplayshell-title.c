@@ -887,11 +887,12 @@ name|i
 argument_list|,
 literal|"%d"
 argument_list|,
+name|gimp_display_get_instance
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|instance
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;

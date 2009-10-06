@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292c4c590103
+DECL|enum|__anon27a5cd2a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,6 +188,11 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique identifier for this display  */
+DECL|member|instance
+name|gint
+name|instance
+decl_stmt|;
+comment|/*  the instance # of this display as                             *  taken from the image at creation    */
 DECL|member|shell
 name|GtkWidget
 modifier|*
@@ -636,26 +641,7 @@ name|GimpDisplay
 modifier|*
 name|display
 parameter_list|)
-block|{
-name|display
-operator|->
-name|gimp
-operator|=
-name|NULL
-expr_stmt|;
-name|display
-operator|->
-name|image
-operator|=
-name|NULL
-expr_stmt|;
-name|display
-operator|->
-name|instance
-operator|=
-literal|0
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_function
@@ -1634,6 +1620,16 @@ if|if
 condition|(
 name|image
 condition|)
+block|{
+name|private
+operator|->
+name|instance
+operator|=
+name|image
+operator|->
+name|instance_count
+operator|++
+expr_stmt|;
 name|gimp_display_connect
 argument_list|(
 name|display
@@ -1641,6 +1637,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 comment|/*  get an image window  */
 if|if
 condition|(
@@ -2293,6 +2290,10 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|old_image
@@ -2317,6 +2318,13 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
+name|display
 argument_list|)
 expr_stmt|;
 if|if
@@ -2365,6 +2373,16 @@ if|if
 condition|(
 name|image
 condition|)
+block|{
+name|private
+operator|->
+name|instance
+operator|=
+name|image
+operator|->
+name|instance_count
+operator|++
+expr_stmt|;
 name|gimp_display_connect
 argument_list|(
 name|display
@@ -2372,6 +2390,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|old_image
@@ -2418,6 +2437,45 @@ argument_list|,
 literal|"image"
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gint
+DECL|function|gimp_display_get_instance (GimpDisplay * display)
+name|gimp_display_get_instance
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+block|{
+name|GimpDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY
+argument_list|(
+name|display
+argument_list|)
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+return|return
+name|private
+operator|->
+name|instance
+return|;
 block|}
 end_function
 

@@ -1168,9 +1168,10 @@ operator|->
 name|image
 argument_list|)
 argument_list|,
+name|gimp_display_get_instance
+argument_list|(
 name|display
-operator|->
-name|instance
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_free

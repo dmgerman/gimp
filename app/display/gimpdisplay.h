@@ -120,12 +120,6 @@ modifier|*
 name|image
 decl_stmt|;
 comment|/*  pointer to the associated image     */
-DECL|member|instance
-name|gint
-name|instance
-decl_stmt|;
-comment|/*  the instance # of this display as   */
-comment|/*  taken from the image at creation    */
 block|}
 struct|;
 end_struct
@@ -270,6 +264,17 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_display_get_instance
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl
