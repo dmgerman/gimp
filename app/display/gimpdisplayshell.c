@@ -312,6 +312,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"about.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-log.h"
 end_include
 
@@ -323,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29488a820103
+DECL|enum|__anon29d6b5400103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -351,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29488a820203
+DECL|enum|__anon29d6b5400203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -907,9 +913,11 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|NULL
+name|GIMP_NAME
 argument_list|,
 name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
 argument_list|)
 argument_list|)
 expr_stmt|;
