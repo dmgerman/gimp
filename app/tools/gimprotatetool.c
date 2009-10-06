@@ -1205,6 +1205,15 @@ argument_list|(
 name|tr_tool
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|gdouble
 name|xres
 decl_stmt|;
@@ -1253,8 +1262,6 @@ name|cy
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 operator|&
@@ -1342,8 +1349,6 @@ literal|65536
 operator|+
 name|gimp_image_get_width
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -1366,8 +1371,6 @@ literal|65536
 operator|+
 name|gimp_image_get_height
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)

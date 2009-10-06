@@ -954,9 +954,10 @@ literal|0
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|,
 operator|&
 name|xres

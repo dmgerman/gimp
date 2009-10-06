@@ -414,11 +414,12 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 expr_stmt|;
 name|new_cursor
 operator|=
@@ -632,10 +633,6 @@ argument_list|(
 name|cursor_view
 argument_list|)
 argument_list|,
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|,
 name|shell

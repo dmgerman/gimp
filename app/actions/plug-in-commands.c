@@ -1665,9 +1665,10 @@ name|image
 init|=
 name|display
 condition|?
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 else|:
 name|NULL
 decl_stmt|;

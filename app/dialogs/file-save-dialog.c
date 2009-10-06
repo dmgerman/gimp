@@ -947,9 +947,10 @@ condition|(
 operator|!
 name|gimp_image_is_dirty
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 condition|)
 name|gimp_display_close

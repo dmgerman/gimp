@@ -925,9 +925,10 @@ argument_list|)
 operator|&&
 name|gimp_image_get_active_drawable
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 operator|&&
 name|proximity

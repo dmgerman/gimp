@@ -442,11 +442,12 @@ if|if
 condition|(
 name|image
 operator|&&
+name|gimp_display_get_image
+argument_list|(
 name|draw_tool
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 operator|==
 name|image
 condition|)
@@ -7377,9 +7378,10 @@ name|all_vectors
 operator|=
 name|gimp_image_get_vectors_list
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

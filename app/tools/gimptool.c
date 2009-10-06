@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d07e0103
+DECL|enum|__anon29a2123b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1042,11 +1042,12 @@ if|if
 condition|(
 name|image
 operator|&&
+name|gimp_display_get_image
+argument_list|(
 name|tool
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 operator|==
 name|image
 condition|)
@@ -1179,6 +1180,15 @@ operator|==
 name|GIMP_BUTTON_PRESS_NORMAL
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|tool
 operator|->
 name|display
@@ -1191,8 +1201,6 @@ name|drawable
 operator|=
 name|gimp_image_get_active_drawable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1671,9 +1679,10 @@ name|data
 decl_stmt|;
 if|if
 condition|(
+name|gimp_display_get_image
+argument_list|(
 name|status_display
-operator|->
-name|image
+argument_list|)
 operator|==
 name|image
 condition|)
@@ -3466,9 +3475,10 @@ name|G_UNLIKELY
 argument_list|(
 name|gimp_image_is_empty
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 operator|&&
 operator|!

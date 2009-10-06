@@ -2265,9 +2265,10 @@ name|window
 decl_stmt|;
 name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 expr_stmt|;
 name|shell
 operator|=
@@ -2944,8 +2945,6 @@ literal|"view-use-gegl"
 argument_list|,
 name|image
 operator|&&
-name|display
-operator|->
 name|image
 operator|->
 name|projection

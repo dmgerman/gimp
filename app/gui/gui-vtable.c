@@ -1352,12 +1352,13 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_display_get_image
+argument_list|(
 name|GIMP_DISPLAY
 argument_list|(
 name|display
 argument_list|)
-operator|->
-name|image
+argument_list|)
 condition|)
 block|{
 comment|/* The display was not empty */

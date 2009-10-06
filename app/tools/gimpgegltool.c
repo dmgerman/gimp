@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a9b6c9c0103
+DECL|enum|__anon289231d40103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -542,14 +542,21 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
 init|=
 name|gimp_image_get_active_drawable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 decl_stmt|;

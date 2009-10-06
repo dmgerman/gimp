@@ -3031,9 +3031,10 @@ name|data
 decl_stmt|;
 if|if
 condition|(
+name|gimp_display_get_image
+argument_list|(
 name|display2
-operator|->
-name|image
+argument_list|)
 operator|==
 name|image
 condition|)

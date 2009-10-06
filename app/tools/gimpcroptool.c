@@ -1233,6 +1233,13 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
 decl_stmt|;
 name|gimp_tool_pop_status
 argument_list|(
@@ -1242,14 +1249,6 @@ name|tool
 operator|->
 name|display
 argument_list|)
-expr_stmt|;
-name|image
-operator|=
-name|tool
-operator|->
-name|display
-operator|->
-name|image
 expr_stmt|;
 comment|/* if rectangle exists, crop it */
 if|if

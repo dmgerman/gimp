@@ -304,9 +304,10 @@ if|if
 condition|(
 name|display
 operator|&&
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 condition|)
 name|tool_manager_initialize_active
 argument_list|(

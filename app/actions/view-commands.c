@@ -290,9 +290,10 @@ name|display
 operator|->
 name|gimp
 argument_list|,
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|,
 name|shell
 operator|->
@@ -2185,6 +2186,15 @@ operator|!
 name|color_dialog
 condition|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2200,8 +2210,6 @@ name|gimp_color_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,

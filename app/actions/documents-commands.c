@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2ce50e0108
+DECL|struct|__anon295ac83e0108
 block|{
 DECL|member|name
 specifier|const
@@ -1360,9 +1360,10 @@ name|uri
 init|=
 name|gimp_object_get_name
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
