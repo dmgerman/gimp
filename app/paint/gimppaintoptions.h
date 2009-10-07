@@ -246,7 +246,7 @@ DECL|macro|GIMP_PAINT_PRESSURE_SCALE
 define|#
 directive|define
 name|GIMP_PAINT_PRESSURE_SCALE
-value|1.5
+value|1.0
 end_define
 
 begin_define
