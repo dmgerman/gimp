@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad405df0103
+DECL|enum|__anon29895e5c0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad405df0203
+DECL|enum|__anon29895e5c0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ad405df0303
+DECL|enum|__anon29895e5c0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -13842,13 +13842,6 @@ decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|tool
-operator|->
-name|display
-argument_list|)
 decl_stmt|;
 name|gint
 name|min_x_dummy
@@ -13930,6 +13923,15 @@ operator|->
 name|display
 condition|)
 return|return;
+name|image
+operator|=
+name|gimp_display_get_image
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|constraint
