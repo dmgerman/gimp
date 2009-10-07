@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279ebccc0108
+DECL|struct|__anon2ae4a3b40108
 block|{
 DECL|member|width
 name|gint
@@ -2557,9 +2557,10 @@ name|GimpImage
 modifier|*
 name|image
 init|=
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 decl_stmt|;
 name|GimpDrawable
 modifier|*
@@ -3089,6 +3090,15 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|fg_select
@@ -3102,8 +3112,6 @@ name|gimp_channel_select_channel
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,
@@ -3150,8 +3158,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
