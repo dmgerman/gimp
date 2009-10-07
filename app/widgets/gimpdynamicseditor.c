@@ -1798,11 +1798,7 @@ name|i
 index|]
 argument_list|)
 argument_list|,
-name|rtl
-condition|?
-literal|315
-else|:
-literal|45
+literal|90
 argument_list|)
 expr_stmt|;
 name|gtk_misc_set_alignment
