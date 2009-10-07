@@ -66,10 +66,6 @@ DECL|member|fade
 name|gboolean
 name|fade
 decl_stmt|;
-DECL|member|fade_length
-name|gdouble
-name|fade_length
-decl_stmt|;
 DECL|member|pressure_curve
 name|GimpCurve
 modifier|*
@@ -103,22 +99,6 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
-
-begin_define
-DECL|macro|GIMP_PAINT_PRESSURE_SCALE
-define|#
-directive|define
-name|GIMP_PAINT_PRESSURE_SCALE
-value|1.5
-end_define
-
-begin_define
-DECL|macro|GIMP_PAINT_VELOCITY_SCALE
-define|#
-directive|define
-name|GIMP_PAINT_VELOCITY_SCALE
-value|1.0
-end_define
 
 begin_define
 DECL|macro|GIMP_TYPE_DYNAMICS

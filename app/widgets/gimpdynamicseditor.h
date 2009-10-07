@@ -113,7 +113,6 @@ name|GtkWidget
 modifier|*
 name|options_vbox
 decl_stmt|;
-comment|/*   GimpContext    *context_dynamics;   GimpContext    *context;   GObject        *config_data;   GtkAdjustment  *pressure_hardness_data;*/
 block|}
 struct|;
 end_struct
