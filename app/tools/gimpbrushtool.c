@@ -925,9 +925,10 @@ argument_list|)
 operator|&&
 name|gimp_image_get_active_drawable
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 operator|&&
 name|proximity
@@ -1277,13 +1278,11 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|draw_tool
 operator|->
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|gdouble

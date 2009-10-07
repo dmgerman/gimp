@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bab75a30108
+DECL|struct|__anon27ec81a50108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -169,6 +169,10 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|ColorDisplayDialog
 modifier|*
 name|cdd
@@ -185,6 +189,15 @@ name|shell
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|image
+operator|=
+name|gimp_display_get_image
+argument_list|(
+name|shell
+operator|->
+name|display
 argument_list|)
 expr_stmt|;
 name|cdd
@@ -208,10 +221,6 @@ name|gimp_viewable_dialog_new
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,

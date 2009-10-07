@@ -522,11 +522,12 @@ if|if
 condition|(
 name|image
 operator|&&
+name|gimp_display_get_image
+argument_list|(
 name|source_tool
 operator|->
 name|src_display
-operator|->
-name|image
+argument_list|)
 operator|==
 name|image
 condition|)

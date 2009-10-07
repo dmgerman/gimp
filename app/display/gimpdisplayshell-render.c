@@ -832,11 +832,12 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 expr_stmt|;
 name|projection
 operator|=

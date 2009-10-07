@@ -770,6 +770,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|GimpItem
 modifier|*
 name|active_item
@@ -831,11 +835,16 @@ argument_list|)
 expr_stmt|;
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+expr_stmt|;
+name|image
+operator|=
+name|gimp_display_get_image
+argument_list|(
+name|display
 argument_list|)
 expr_stmt|;
 comment|/*  Make a check to see if it should be a floating selection translation  */
@@ -853,8 +862,6 @@ operator|)
 operator|&&
 name|gimp_image_get_floating_selection
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 condition|)
@@ -877,8 +884,6 @@ name|layer
 init|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 decl_stmt|;
@@ -906,8 +911,6 @@ name|gimp_edit_selection_tool_get_active_item
 argument_list|(
 name|edit_select
 argument_list|,
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -963,8 +966,6 @@ break|break;
 block|}
 name|gimp_image_undo_group_start
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|edit_select
@@ -1068,8 +1069,6 @@ name|channel
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1175,8 +1174,6 @@ name|x2
 operator|=
 name|gimp_image_get_width
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1186,8 +1183,6 @@ name|y2
 operator|=
 name|gimp_image_get_height
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1325,8 +1320,6 @@ name|gimp_channel_bounds
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,
@@ -1435,8 +1428,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|active_item
@@ -1625,8 +1616,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|active_item
@@ -1846,8 +1835,6 @@ name|tool_manager_push_tool
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|,
 name|tool
@@ -1944,11 +1931,18 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
+argument_list|)
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
 argument_list|)
 decl_stmt|;
 name|GimpItem
@@ -1983,8 +1977,6 @@ name|tool_manager_pop_tool
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 expr_stmt|;
@@ -1994,8 +1986,6 @@ name|gimp_edit_selection_tool_get_active_item
 argument_list|(
 name|edit_select
 argument_list|,
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -2029,8 +2019,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -2141,8 +2129,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|active_item
@@ -2167,8 +2153,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_translate
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|linked
@@ -2194,8 +2178,6 @@ block|}
 block|}
 name|gimp_image_undo_group_end
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -2209,16 +2191,12 @@ block|{
 comment|/* Operation cancelled - undo the undo-group! */
 name|gimp_image_undo
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
 block|}
 name|gimp_image_flush
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -2270,8 +2248,6 @@ name|tool_manager_get_active
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 condition|)
@@ -2279,8 +2255,6 @@ block|{
 name|tool_manager_button_release_active
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2341,6 +2315,15 @@ argument_list|(
 name|edit_select
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpItem
 modifier|*
 name|active_item
@@ -2374,8 +2357,6 @@ name|gimp_edit_selection_tool_get_active_item
 argument_list|(
 name|edit_select
 argument_list|,
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -2595,8 +2576,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|active_item
@@ -2623,8 +2602,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_item_list_translate
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|linked
@@ -2660,8 +2637,6 @@ name|GIMP_SELECTION
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -2674,8 +2649,6 @@ argument_list|,
 name|gimp_get_user_context
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|)
@@ -2699,8 +2672,6 @@ comment|/* no region to float, abort safely */
 name|gimp_message_literal
 argument_list|(
 name|display
-operator|->
-name|image
 operator|->
 name|gimp
 argument_list|,
@@ -2785,8 +2756,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_drawable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -2821,8 +2790,6 @@ name|gimp_projection_flush
 argument_list|(
 name|gimp_image_get_projection
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -3045,6 +3012,15 @@ argument_list|)
 operator|->
 name|display
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpItem
 modifier|*
 name|active_item
@@ -3055,8 +3031,6 @@ name|gimp_edit_selection_tool_get_active_item
 argument_list|(
 name|edit_select
 argument_list|,
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -3107,8 +3081,6 @@ name|layer
 init|=
 name|gimp_image_get_active_layer
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 decl_stmt|;
@@ -3318,8 +3290,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_layer
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -3374,8 +3344,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|active_item
@@ -3554,8 +3522,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -3601,8 +3567,6 @@ name|linked
 operator|=
 name|gimp_image_item_list_get_list
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|active_item
@@ -4436,6 +4400,15 @@ name|push_undo
 init|=
 name|TRUE
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpItem
 modifier|*
 name|item
@@ -4500,11 +4473,9 @@ name|ARROW_VELOCITY
 operator|/
 name|gimp_zoom_model_get_factor
 argument_list|(
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 operator|->
 name|zoom
@@ -4660,8 +4631,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -4684,8 +4653,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_vectors
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -4708,8 +4675,6 @@ name|GIMP_ITEM
 argument_list|(
 name|gimp_image_get_active_drawable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -4819,8 +4784,6 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|GIMP_TYPE_UNDO_STACK
@@ -4892,8 +4855,6 @@ if|if
 condition|(
 name|gimp_image_undo_group_start
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|undo_type
@@ -4906,8 +4867,6 @@ name|undo
 operator|=
 name|gimp_image_undo_can_compress
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|GIMP_TYPE_UNDO_STACK
@@ -5055,8 +5014,6 @@ name|push_undo
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -5069,16 +5026,12 @@ name|gimp_get_user_context
 argument_list|(
 name|display
 operator|->
-name|image
-operator|->
 name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;

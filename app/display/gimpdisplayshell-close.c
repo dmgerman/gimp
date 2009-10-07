@@ -246,11 +246,12 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 expr_stmt|;
 comment|/*  FIXME: gimp_busy HACK not really appropriate here because we only    *  want to prevent the busy image and display to be closed.  --Mitch    */
 if|if

@@ -120,7 +120,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpimagewindow.h"
+file|"display/gimpdisplayshell-appearance.h"
 end_include
 
 begin_include
@@ -743,11 +743,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|gint
@@ -1382,15 +1380,6 @@ operator|->
 name|dialog
 condition|)
 block|{
-name|GimpImageWindow
-modifier|*
-name|window
-init|=
-name|gimp_display_shell_get_window
-argument_list|(
-name|shell
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|options
@@ -1398,9 +1387,9 @@ operator|->
 name|use_info_window
 operator|||
 operator|!
-name|gimp_image_window_get_show_statusbar
+name|gimp_display_shell_get_show_statusbar
 argument_list|(
-name|window
+name|shell
 argument_list|)
 condition|)
 block|{
@@ -3200,13 +3189,11 @@ name|arc_radius
 decl_stmt|;
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|tool
 operator|->
 name|display
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 name|target
@@ -3518,11 +3505,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|GimpImage

@@ -515,6 +515,15 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -523,8 +532,6 @@ name|drawable
 operator|=
 name|gimp_image_get_active_drawable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;

@@ -625,9 +625,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 condition|)
 name|windows_menu_image_notify
 argument_list|(
@@ -748,9 +749,10 @@ parameter_list|)
 block|{
 if|if
 condition|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 condition|)
 block|{
 name|gchar

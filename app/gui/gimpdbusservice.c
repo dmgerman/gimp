@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdbusservice.h"
 end_include
 
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29426cf40103
+DECL|enum|__anon2b8274030103
 block|{
 DECL|enumerator|OPENED
 name|OPENED
@@ -85,7 +91,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29426cf40208
+DECL|struct|__anon2b8274030208
 block|{
 DECL|member|uri
 name|gchar
@@ -768,16 +774,14 @@ if|if
 condition|(
 name|display
 condition|)
-name|gtk_window_present
+name|gimp_display_shell_present
 argument_list|(
-name|GTK_WINDOW
+name|gimp_display_get_shell
 argument_list|(
 name|GIMP_DISPLAY
 argument_list|(
 name|display
 argument_list|)
-operator|->
-name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;

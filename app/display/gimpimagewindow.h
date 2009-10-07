@@ -143,18 +143,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpStatusbar
-modifier|*
-name|gimp_image_window_get_statusbar
-parameter_list|(
-name|GimpImageWindow
-modifier|*
-name|window
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpDockColumns
 modifier|*
 name|gimp_image_window_get_left_docks

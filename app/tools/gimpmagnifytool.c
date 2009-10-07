@@ -646,13 +646,11 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|tool
 operator|->
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|gimp_draw_tool_stop
@@ -956,9 +954,10 @@ literal|0
 decl_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|,
 operator|&
 name|xres

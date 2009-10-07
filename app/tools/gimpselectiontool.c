@@ -525,6 +525,10 @@ name|GimpSelectionOptions
 modifier|*
 name|options
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 name|GimpChannel
 modifier|*
 name|selection
@@ -561,12 +565,17 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
+name|image
+operator|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 name|selection
 operator|=
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -574,8 +583,6 @@ name|drawable
 operator|=
 name|gimp_image_get_active_drawable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -583,8 +590,6 @@ name|layer
 operator|=
 name|gimp_image_pick_layer
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|coords
@@ -600,8 +605,6 @@ name|floating_sel
 operator|=
 name|gimp_image_get_floating_selection
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;

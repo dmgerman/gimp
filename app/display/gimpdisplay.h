@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
-DECL|member|ID
-name|gint
-name|ID
-decl_stmt|;
-comment|/*  unique identifier for this display  */
 DECL|member|gimp
 name|Gimp
 modifier|*
@@ -125,24 +120,6 @@ modifier|*
 name|image
 decl_stmt|;
 comment|/*  pointer to the associated image     */
-DECL|member|instance
-name|gint
-name|instance
-decl_stmt|;
-comment|/*  the instance # of this display as   */
-comment|/*  taken from the image at creation    */
-DECL|member|shell
-name|GtkWidget
-modifier|*
-name|shell
-decl_stmt|;
-comment|/*  shell widget for this display       */
-DECL|member|update_areas
-name|GSList
-modifier|*
-name|update_areas
-decl_stmt|;
-comment|/*  Update areas list                   */
 block|}
 struct|;
 end_struct
@@ -253,6 +230,30 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|Gimp
+modifier|*
+name|gimp_display_get_gimp
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpImage
+modifier|*
+name|gimp_display_get_image
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_display_set_image
 parameter_list|(
@@ -263,6 +264,29 @@ parameter_list|,
 name|GimpImage
 modifier|*
 name|image
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gint
+name|gimp_display_get_instance
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDisplayShell
+modifier|*
+name|gimp_display_get_shell
+parameter_list|(
+name|GimpDisplay
+modifier|*
+name|display
 parameter_list|)
 function_decl|;
 end_function_decl

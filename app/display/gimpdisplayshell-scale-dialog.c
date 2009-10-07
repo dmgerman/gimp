@@ -111,7 +111,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290d46b50108
+DECL|struct|__anon28beecf50108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -302,11 +302,12 @@ expr_stmt|;
 block|}
 name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 expr_stmt|;
 name|data
 operator|=

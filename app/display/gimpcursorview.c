@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27bb6f400103
+DECL|enum|__anon2c6016e80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2936,11 +2936,9 @@ name|display
 condition|)
 name|shell
 operator|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 expr_stmt|;
 if|if

@@ -473,11 +473,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 init|=
-name|GIMP_DISPLAY_SHELL
+name|gimp_display_get_shell
 argument_list|(
 name|display
-operator|->
-name|shell
 argument_list|)
 decl_stmt|;
 name|gimp_display_shell_untransform_viewport
@@ -499,9 +497,10 @@ argument_list|)
 expr_stmt|;
 name|image
 operator|=
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 expr_stmt|;
 block|}
 else|else

@@ -1811,9 +1811,10 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 condition|)
 name|sensitive
 operator|=
