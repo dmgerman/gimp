@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8bf9980103
+DECL|enum|__anon2bab55040103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2320,6 +2320,13 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+name|shell
+operator|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|display
@@ -2341,10 +2348,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_disconnect
 argument_list|(
-name|gimp_display_get_shell
-argument_list|(
-name|display
-argument_list|)
+name|shell
 argument_list|)
 expr_stmt|;
 name|old_image
@@ -2391,13 +2395,6 @@ condition|)
 name|g_object_unref
 argument_list|(
 name|old_image
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|gimp_display_get_shell
-argument_list|(
-name|display
 argument_list|)
 expr_stmt|;
 if|if
