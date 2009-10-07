@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bab55040103
+DECL|enum|__anon2c7e903c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2385,6 +2385,15 @@ argument_list|(
 name|display
 argument_list|,
 name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|shell
+condition|)
+name|gimp_display_shell_connect
+argument_list|(
+name|shell
 argument_list|)
 expr_stmt|;
 block|}
