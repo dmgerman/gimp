@@ -565,7 +565,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d714d30103
+DECL|enum|__anon278d8be40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5441,8 +5441,6 @@ name|opacity
 condition|)
 name|pressure
 operator|=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -5457,15 +5455,11 @@ name|opacity
 condition|)
 name|velocity
 operator|=
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
-operator|(
 literal|1
 operator|-
 name|coords
 operator|->
 name|velocity
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -6375,8 +6369,6 @@ name|rate
 condition|)
 name|pressure
 operator|=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -6391,15 +6383,11 @@ name|rate
 condition|)
 name|velocity
 operator|=
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
-operator|(
 literal|1
 operator|-
 name|coords
 operator|->
 name|velocity
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -6628,8 +6616,6 @@ name|color
 condition|)
 name|pressure
 operator|=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -6644,8 +6630,6 @@ name|color
 condition|)
 name|velocity
 operator|=
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
 name|coords
 operator|->
 name|velocity
@@ -6877,8 +6861,6 @@ name|hardness
 condition|)
 name|pressure
 operator|=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -6893,15 +6875,11 @@ name|hardness
 condition|)
 name|velocity
 operator|=
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
-operator|(
 literal|1
 operator|-
 name|coords
 operator|->
 name|velocity
-operator|)
 expr_stmt|;
 if|if
 condition|(
@@ -7130,8 +7108,6 @@ name|angle
 condition|)
 name|pressure
 operator|=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -7146,15 +7122,11 @@ name|angle
 condition|)
 name|velocity
 operator|=
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
-operator|(
 literal|1
 operator|-
 name|coords
 operator|->
 name|velocity
-operator|)
 expr_stmt|;
 if|if
 condition|(

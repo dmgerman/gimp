@@ -241,22 +241,6 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_PAINT_OPTIONS, GimpPaintOptionsClass))
 end_define
 
-begin_define
-DECL|macro|GIMP_PAINT_PRESSURE_SCALE
-define|#
-directive|define
-name|GIMP_PAINT_PRESSURE_SCALE
-value|1.0
-end_define
-
-begin_define
-DECL|macro|GIMP_PAINT_VELOCITY_SCALE
-define|#
-directive|define
-name|GIMP_PAINT_VELOCITY_SCALE
-value|1.0
-end_define
-
 begin_typedef
 DECL|typedef|GimpPaintOptionsClass
 typedef|typedef

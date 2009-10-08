@@ -657,8 +657,6 @@ name|saved_pressure
 condition|)
 name|opacity
 operator|*=
-name|GIMP_PAINT_PRESSURE_SCALE
-operator|*
 name|coords
 operator|->
 name|pressure
@@ -673,10 +671,6 @@ name|MAX
 argument_list|(
 literal|0.0
 argument_list|,
-literal|1
-operator|-
-name|GIMP_PAINT_VELOCITY_SCALE
-operator|*
 name|coords
 operator|->
 name|velocity
