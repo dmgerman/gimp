@@ -671,6 +671,8 @@ name|MAX
 argument_list|(
 literal|0.0
 argument_list|,
+literal|1
+operator|-
 name|coords
 operator|->
 name|velocity
