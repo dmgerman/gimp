@@ -1183,7 +1183,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_layer_set_hidden
+name|gimp_display_shell_selection_set_layer_hidden
 argument_list|(
 name|shell
 argument_list|,
