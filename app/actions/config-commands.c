@@ -69,11 +69,15 @@ name|Gimp
 modifier|*
 name|gimp
 init|=
-name|action_data_get_gimp
+name|NULL
+decl_stmt|;
+name|return_if_no_gimp
 argument_list|(
+name|gimp
+argument_list|,
 name|data
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|gimp
