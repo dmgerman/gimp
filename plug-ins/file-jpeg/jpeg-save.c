@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296310b50108
+DECL|struct|__anon28f665060108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296310b50208
+DECL|struct|__anon28f665060208
 block|{
 DECL|member|run
 name|gboolean
@@ -6257,9 +6257,10 @@ name|jsvals
 operator|.
 name|restart
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 else|else
 name|jsvals
@@ -6527,7 +6528,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296310b50308
+DECL|struct|__anon28f665060308
 block|{
 DECL|member|pub
 name|struct
