@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fe12060103
+DECL|enum|__anon2967d3e60103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28fe12060203
+DECL|enum|__anon2967d3e60203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060308
+DECL|struct|__anon2967d3e60308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -188,7 +188,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon28fe1206040a
+DECL|union|__anon2967d3e6040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060508
+DECL|struct|__anon2967d3e60508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060608
+DECL|struct|__anon2967d3e60608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060708
+DECL|struct|__anon2967d3e60708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060808
+DECL|struct|__anon2967d3e60808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060908
+DECL|struct|__anon2967d3e60908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fe12060a08
+DECL|struct|__anon2967d3e60a08
 block|{
 DECL|member|run
 name|gboolean
@@ -7726,9 +7726,10 @@ argument_list|)
 decl_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|cursor
 argument_list|)
@@ -7791,11 +7792,12 @@ name|selected_gc
 operator|=
 name|gdk_gc_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|ifsDesign
 operator|->
 name|area
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_gc_set_line_attributes
@@ -8014,9 +8016,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_draw_drawable
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
@@ -8200,9 +8203,10 @@ name|pixmap
 operator|=
 name|gdk_pixmap_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|widget
 operator|->
