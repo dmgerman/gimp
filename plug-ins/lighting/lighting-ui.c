@@ -5672,9 +5672,10 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|previewarea
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|cursor
 argument_list|)
