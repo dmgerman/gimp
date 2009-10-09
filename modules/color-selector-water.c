@@ -1130,9 +1130,10 @@ expr_stmt|;
 block|}
 name|gdk_draw_rgb_image_dithalign
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
