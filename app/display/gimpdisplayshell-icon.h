@@ -29,18 +29,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_icon_idle_update
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_display_shell_icon_idle_stop
+name|gimp_display_shell_icon_update_stop
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

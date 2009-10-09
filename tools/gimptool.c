@@ -230,7 +230,7 @@ directive|endif
 end_endif
 
 begin_struct
-DECL|struct|__anon2b0d898f0108
+DECL|struct|__anon27e0eb8c0108
 specifier|static
 struct|struct
 block|{
@@ -2390,6 +2390,8 @@ argument_list|(
 name|what
 argument_list|,
 literal|".exe"
+argument_list|,
+name|NULL
 argument_list|)
 return|;
 endif|#

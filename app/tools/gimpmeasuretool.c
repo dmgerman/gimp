@@ -748,6 +748,15 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -931,8 +940,6 @@ literal|0
 argument_list|,
 name|gimp_image_get_height
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -969,8 +976,6 @@ literal|0
 argument_list|,
 name|gimp_image_get_width
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -985,8 +990,6 @@ name|create_vguide
 condition|)
 name|gimp_image_undo_group_start
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_GUIDE
@@ -1006,8 +1009,6 @@ name|guide
 operator|=
 name|gimp_image_add_hguide
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|measure
@@ -1022,8 +1023,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|guide
@@ -1039,8 +1038,6 @@ name|guide
 operator|=
 name|gimp_image_add_vguide
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|measure
@@ -1055,8 +1052,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_update_guide
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|guide
@@ -1071,8 +1066,6 @@ name|create_vguide
 condition|)
 name|gimp_image_undo_group_end
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1084,8 +1077,6 @@ name|create_vguide
 condition|)
 name|gimp_image_flush
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1439,10 +1430,6 @@ argument_list|)
 argument_list|,
 name|GIMP_VIEWABLE
 argument_list|(
-name|tool
-operator|->
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,
@@ -3514,9 +3501,10 @@ name|GimpImage
 modifier|*
 name|image
 init|=
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 decl_stmt|;
 name|gint
 name|ax

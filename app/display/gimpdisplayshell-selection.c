@@ -885,8 +885,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_selection_layer_set_hidden (GimpDisplayShell * shell,gboolean hidden)
-name|gimp_display_shell_selection_layer_set_hidden
+DECL|function|gimp_display_shell_selection_set_layer_hidden (GimpDisplayShell * shell,gboolean hidden)
+name|gimp_display_shell_selection_set_layer_hidden
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

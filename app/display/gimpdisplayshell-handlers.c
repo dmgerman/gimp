@@ -1375,7 +1375,7 @@ name|image
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_icon_idle_stop
+name|gimp_display_shell_icon_update_stop
 argument_list|(
 name|shell
 argument_list|)
@@ -2347,7 +2347,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-name|gimp_display_shell_icon_idle_update
+name|gimp_display_shell_icon_update
 argument_list|(
 name|shell
 argument_list|)

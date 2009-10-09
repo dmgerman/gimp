@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b63ac90103
+DECL|enum|__anon2b940d920103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1187,6 +1187,15 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 comment|/*  Chain up to halt the tool  */
 name|GIMP_TOOL_CLASS
 argument_list|(
@@ -1359,8 +1368,6 @@ condition|)
 block|{
 name|gimp_image_remove_sample_point
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|color_tool
@@ -1389,8 +1396,6 @@ condition|)
 block|{
 name|gimp_image_move_sample_point
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|color_tool
@@ -1417,8 +1422,6 @@ name|sample_point
 operator|=
 name|gimp_image_add_sample_point_at_pos
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|color_tool
@@ -1443,8 +1446,6 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_flush
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 expr_stmt|;
@@ -1945,6 +1946,15 @@ argument_list|(
 name|display
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpSamplePoint
 modifier|*
 name|sample_point
@@ -1985,8 +1995,6 @@ name|sample_point
 operator|=
 name|gimp_image_find_sample_point
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|coords
@@ -2027,10 +2035,6 @@ name|sample_point
 condition|)
 name|gimp_image_update_sample_point
 argument_list|(
-name|shell
-operator|->
-name|display
-operator|->
 name|image
 argument_list|,
 name|color_tool
@@ -2096,6 +2100,15 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|color_tool
@@ -2135,8 +2148,6 @@ if|if
 condition|(
 name|gimp_image_coords_in_active_pickable
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|,
 name|coords
@@ -2283,11 +2294,12 @@ name|GimpImage
 modifier|*
 name|image
 init|=
+name|gimp_display_get_image
+argument_list|(
 name|draw_tool
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 decl_stmt|;
 name|gimp_draw_tool_draw_line
 argument_list|(
@@ -2450,6 +2462,17 @@ argument_list|(
 name|color_tool
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|tool
+operator|->
+name|display
+argument_list|)
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|tool
@@ -2475,10 +2498,6 @@ expr_stmt|;
 return|return
 name|gimp_image_pick_color
 argument_list|(
-name|tool
-operator|->
-name|display
-operator|->
 name|image
 argument_list|,
 name|tool

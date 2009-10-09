@@ -23,10 +23,6 @@ parameter_list|(
 name|GimpDisplay
 modifier|*
 name|display
-parameter_list|,
-name|GimpImage
-modifier|*
-name|image
 parameter_list|)
 function_decl|;
 end_function_decl

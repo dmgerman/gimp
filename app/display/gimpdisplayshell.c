@@ -329,7 +329,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7976d80103
+DECL|enum|__anon2c5487c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +357,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7976d80203
+DECL|enum|__anon2c5487c40203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4955,11 +4955,6 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|gimp_display_shell_connect
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 name|g_signal_emit
 argument_list|(
 name|shell

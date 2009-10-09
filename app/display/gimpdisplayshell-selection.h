@@ -68,7 +68,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_selection_layer_set_hidden
+name|gimp_display_shell_selection_set_layer_hidden
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791c1ef0108
+DECL|struct|__anon2af897970108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -2892,9 +2892,10 @@ expr_stmt|;
 block|}
 name|gimp_image_flush
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3100,13 +3101,20 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 comment|/*  If there is a floating selection, anchor it  */
 if|if
 condition|(
 name|gimp_image_get_floating_selection
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 condition|)
@@ -3115,8 +3123,6 @@ name|floating_sel_anchor
 argument_list|(
 name|gimp_image_get_floating_selection
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|)
@@ -5503,12 +5509,19 @@ argument_list|(
 name|fst
 argument_list|)
 decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_display_get_image
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|gimp_channel_select_polygon
 argument_list|(
 name|gimp_image_get_mask
 argument_list|(
-name|display
-operator|->
 name|image
 argument_list|)
 argument_list|,
