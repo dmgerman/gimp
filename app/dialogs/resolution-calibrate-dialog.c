@@ -243,9 +243,10 @@ name|gdk_screen_get_monitor_at_window
 argument_list|(
 name|screen
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|resolution_entry
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gdk_screen_get_monitor_geometry
