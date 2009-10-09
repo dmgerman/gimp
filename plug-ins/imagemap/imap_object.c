@@ -52,7 +52,7 @@ file|"imap_string.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2bbbb6780108
+DECL|struct|__anon2893ae360108
 typedef|typedef
 struct|struct
 block|{
@@ -2075,9 +2075,10 @@ name|factory
 operator|->
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|factory
@@ -2103,9 +2104,10 @@ name|factory
 operator|->
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
@@ -2281,9 +2283,10 @@ name|object_draw
 argument_list|(
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|object_unref
@@ -2324,9 +2327,10 @@ name|object_draw
 argument_list|(
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2383,9 +2387,10 @@ name|object_draw
 argument_list|(
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
