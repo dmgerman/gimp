@@ -1549,11 +1549,12 @@ literal|0
 expr_stmt|;
 name|gdk_drawable_get_size
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|shell
 operator|->
 name|canvas
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|x2
