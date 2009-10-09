@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a59d9dc0108
+DECL|struct|__anon28d2147e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1211,9 +1211,10 @@ expr_stmt|;
 block|}
 name|gdk_draw_layout
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|text_gc
 argument_list|,
