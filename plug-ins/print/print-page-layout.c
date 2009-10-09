@@ -54,7 +54,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a8e301e0108
+DECL|struct|__anon2b67768d0108
 block|{
 DECL|member|data
 name|PrintData
@@ -127,7 +127,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a8e301e0203
+DECL|enum|__anon2b67768d0203
 block|{
 DECL|enumerator|BOTTOM
 name|BOTTOM
@@ -3711,13 +3711,15 @@ name|size_entry
 argument_list|,
 name|index
 argument_list|,
+name|gtk_adjustment_get_upper
+argument_list|(
 name|adj
-operator|->
-name|upper
+argument_list|)
 operator|-
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
