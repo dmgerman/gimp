@@ -252,6 +252,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dynamics-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dynamics-editor-actions.h"
 end_include
 
@@ -857,6 +863,21 @@ block|,
 name|patterns_actions_setup
 block|,
 name|patterns_actions_update
+block|}
+block|,
+block|{
+literal|"dynamics"
+block|,
+name|N_
+argument_list|(
+literal|"Dynamics"
+argument_list|)
+block|,
+name|GIMP_STOCK_DYNAMICS
+block|,
+name|dynamics_actions_setup
+block|,
+name|dynamics_actions_update
 block|}
 block|,
 block|{

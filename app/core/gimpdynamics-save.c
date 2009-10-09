@@ -59,8 +59,8 @@ end_include
 
 begin_function
 name|gboolean
-DECL|function|gimp_curve_save (GimpData * data,GError ** error)
-name|gimp_curve_save
+DECL|function|gimp_dynamics_save (GimpData * data,GError ** error)
+name|gimp_dynamics_save
 parameter_list|(
 name|GimpData
 modifier|*

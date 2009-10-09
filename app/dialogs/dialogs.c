@@ -646,6 +646,28 @@ define|\
 value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }, \   { "gimp-"#id"-grid", name, blurb, stock_id, help_id, \     dialogs_##id##_grid_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }
 end_define
 
+begin_define
+define|#
+directive|define
+name|LIST
+parameter_list|(
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|stock_id
+parameter_list|,
+name|help_id
+parameter_list|,\
+DECL|macro|LIST (id,name,blurb,stock_id,help_id,\\\nview_size)
+name|view_size
+parameter_list|)
+define|\
+value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }
+end_define
+
 begin_decl_stmt
 DECL|variable|dock_entries
 specifier|static
@@ -920,6 +942,25 @@ argument_list|,
 name|GIMP_HELP_TEMPLATE_DIALOG
 argument_list|,
 name|GIMP_VIEW_SIZE_SMALL
+argument_list|)
+block|,
+comment|/* Some things do not have grids, so just list */
+name|LIST
+argument_list|(
+name|dynamics
+argument_list|,
+name|N_
+argument_list|(
+literal|"Dynamics"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_STOCK_DYNAMICS
+argument_list|,
+name|GIMP_HELP_DYNAMICS_DIALOG
+argument_list|,
+name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|)
 block|,
 comment|/*  image related  */

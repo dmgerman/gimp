@@ -550,6 +550,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDynamicsFactoryView
+typedef|typedef
+name|struct
+name|_GimpDynamicsFactoryView
+name|GimpDynamicsFactoryView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpPatternFactoryView
 typedef|typedef
 name|struct
