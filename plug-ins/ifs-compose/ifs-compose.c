@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2967d3e60103
+DECL|enum|__anon27ec060b0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -150,7 +150,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2967d3e60203
+DECL|enum|__anon27ec060b0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60308
+DECL|struct|__anon27ec060b0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -188,7 +188,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon2967d3e6040a
+DECL|union|__anon27ec060b040a
 block|{
 DECL|member|d
 name|gdouble
@@ -213,7 +213,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60508
+DECL|struct|__anon27ec060b0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60608
+DECL|struct|__anon27ec060b0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60708
+DECL|struct|__anon27ec060b0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -314,7 +314,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60808
+DECL|struct|__anon27ec060b0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -381,7 +381,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60908
+DECL|struct|__anon27ec060b0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -530,7 +530,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2967d3e60a08
+DECL|struct|__anon27ec060b0a08
 block|{
 DECL|member|run
 name|gboolean
@@ -11182,9 +11182,10 @@ name|data
 operator|.
 name|d
 operator|!=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 condition|)
 block|{
 name|changed
@@ -11198,9 +11199,10 @@ name|data
 operator|.
 name|d
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -11218,9 +11220,10 @@ operator|!=
 operator|(
 name|gint
 operator|)
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 condition|)
 block|{
 name|changed
@@ -11234,9 +11237,10 @@ name|data
 operator|.
 name|i
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 block|}
 block|}
