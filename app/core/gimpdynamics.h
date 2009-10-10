@@ -164,11 +164,11 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DYNAMICS, GimpDynamicsClass))
 end_define
 
 begin_typedef
-DECL|typedef|GimpDynamics
+DECL|typedef|GimpDynamicsClass
 typedef|typedef
 name|struct
-name|_GimpDynamics
-name|GimpDynamics
+name|_GimpDynamicsClass
+name|GimpDynamicsClass
 typedef|;
 end_typedef
 
@@ -230,23 +230,14 @@ block|}
 struct|;
 end_struct
 
-begin_typedef
-DECL|typedef|GimpDynamicsClass
-typedef|typedef
-name|struct
-name|_GimpDynamicsClass
-name|GimpDynamicsClass
-typedef|;
-end_typedef
-
 begin_struct
 DECL|struct|_GimpDynamicsClass
 struct|struct
 name|_GimpDynamicsClass
 block|{
-DECL|member|parent_instance
+DECL|member|parent_class
 name|GimpDataClass
-name|parent_instance
+name|parent_class
 decl_stmt|;
 block|}
 struct|;

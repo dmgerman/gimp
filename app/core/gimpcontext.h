@@ -22,12 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_include
-include|#
-directive|include
-file|"gimpdynamics.h"
-end_include
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTEXT
 define|#

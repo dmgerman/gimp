@@ -394,6 +394,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDynamics
+typedef|typedef
+name|struct
+name|_GimpDynamics
+name|GimpDynamics
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGradient
 typedef|typedef
 name|struct

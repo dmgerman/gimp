@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2753d10103
+DECL|enum|__anon2ba96bf70103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2753d10203
+DECL|enum|__anon2ba96bf70203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -10197,9 +10197,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_context_dynamics_removed (GimpContainer * container,GimpDynamics * dynamics,GimpContext * context)
 specifier|static
 name|void
+DECL|function|gimp_context_dynamics_removed (GimpContainer * container,GimpDynamics * dynamics,GimpContext * context)
 name|gimp_context_dynamics_removed
 parameter_list|(
 name|GimpContainer
@@ -10264,9 +10264,9 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_context_dynamics_list_thaw (GimpContainer * container,GimpContext * context)
 specifier|static
 name|void
+DECL|function|gimp_context_dynamics_list_thaw (GimpContainer * container,GimpContext * context)
 name|gimp_context_dynamics_list_thaw
 parameter_list|(
 name|GimpContainer
