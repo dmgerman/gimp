@@ -87,7 +87,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2926211c0103
+DECL|enum|__anon2abf7e8c0103
 block|{
 DECL|enumerator|LINEAR
 name|LINEAR
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2926211c0203
+DECL|enum|__anon2abf7e8c0203
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
@@ -121,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2926211c0308
+DECL|struct|__anon2abf7e8c0308
 block|{
 DECL|member|bumpmap_id
 name|gint32
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2926211c0408
+DECL|struct|__anon2abf7e8c0408
 block|{
 DECL|member|lx
 DECL|member|ly
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2926211c0508
+DECL|struct|__anon2abf7e8c0508
 block|{
 DECL|member|mouse_x
 name|gint
@@ -5341,14 +5341,6 @@ condition|(
 name|adj
 condition|)
 block|{
-name|adj
-operator|->
-name|value
-operator|=
-name|bmvals
-operator|.
-name|xofs
-expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|adj
@@ -5361,9 +5353,13 @@ operator|.
 name|xofs
 argument_list|)
 expr_stmt|;
-name|gtk_adjustment_value_changed
+name|gtk_adjustment_set_value
 argument_list|(
 name|adj
+argument_list|,
+name|bmvals
+operator|.
+name|xofs
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
@@ -5394,14 +5390,6 @@ condition|(
 name|adj
 condition|)
 block|{
-name|adj
-operator|->
-name|value
-operator|=
-name|bmvals
-operator|.
-name|yofs
-expr_stmt|;
 name|g_signal_handlers_block_by_func
 argument_list|(
 name|adj
@@ -5414,9 +5402,13 @@ operator|.
 name|yofs
 argument_list|)
 expr_stmt|;
-name|gtk_adjustment_value_changed
+name|gtk_adjustment_set_value
 argument_list|(
 name|adj
+argument_list|,
+name|bmvals
+operator|.
+name|yofs
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_unblock_by_func
