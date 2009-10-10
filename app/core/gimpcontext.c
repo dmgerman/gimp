@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba96bf70103
+DECL|enum|__anon275a80400103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba96bf70203
+DECL|enum|__anon275a80400203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -10282,7 +10282,28 @@ name|GimpDynamics
 modifier|*
 name|dynamics
 decl_stmt|;
-comment|/*   if (! context->dynamics_name)     context->dynamics_name = g_strdup (context->gimp->config->default_dynamics);   */
+if|if
+condition|(
+operator|!
+name|context
+operator|->
+name|dynamics_name
+condition|)
+name|context
+operator|->
+name|dynamics_name
+operator|=
+name|g_strdup
+argument_list|(
+name|context
+operator|->
+name|gimp
+operator|->
+name|config
+operator|->
+name|default_dynamics
+argument_list|)
+expr_stmt|;
 name|dynamics
 operator|=
 name|gimp_context_find_object
