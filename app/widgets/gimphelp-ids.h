@@ -3070,6 +3070,14 @@ value|"gimp-prefs-folders-brushes"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_PREFS_FOLDERS_DYNAMICS
+define|#
+directive|define
+name|GIMP_HELP_PREFS_FOLDERS_DYNAMICS
+value|"gimp-prefs-folders-dynamics"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_PREFS_FOLDERS_PATTERNS
 define|#
 directive|define
