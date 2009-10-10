@@ -315,7 +315,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290896200103
+DECL|enum|__anon29c492980103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2487,9 +2487,9 @@ name|gimp
 argument_list|,
 name|GIMP_TYPE_DYNAMICS
 argument_list|,
-literal|"brush-path"
+literal|"dynamics-path"
 argument_list|,
-literal|"brush-path-writable"
+literal|"dynamics-path-writable"
 argument_list|,
 name|dynamics_loader_entries
 argument_list|,
