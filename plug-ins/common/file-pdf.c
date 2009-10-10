@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360c700108
+DECL|struct|__anon29d376a20108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360c700208
+DECL|struct|__anon29d376a20208
 block|{
 DECL|member|n_pages
 name|gint
@@ -681,7 +681,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a360c700303
+DECL|enum|__anon29d376a20303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -2754,7 +2754,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360c700408
+DECL|struct|__anon29d376a20408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2779,7 +2779,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a360c700508
+DECL|struct|__anon29d376a20508
 block|{
 DECL|member|selector
 name|GimpPageSelector
@@ -5185,12 +5185,13 @@ name|new_value
 decl_stmt|;
 name|new_value
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
