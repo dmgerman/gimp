@@ -97,7 +97,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * A kind of adpater to make other widgets dockable. The widget to  * dock is put inside the GimpDockable, which is put in a  * GimpDockbook.  */
+comment|/**  * GimpDockable:  *  * A kind of adpater to make other widgets dockable. The widget to  * dock is put inside the GimpDockable, which is put in a  * GimpDockbook.  */
 end_comment
 
 begin_struct

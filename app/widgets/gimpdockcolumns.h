@@ -98,7 +98,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * A widget containing GimpDocks so that dockables are arranged in  * columns.  */
+comment|/**  * GimpDockColumns:  *  * A widget containing GimpDocks so that dockables are arranged in  * columns.  */
 end_comment
 
 begin_struct
