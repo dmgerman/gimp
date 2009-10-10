@@ -47,6 +47,23 @@ value|""
 end_define
 
 begin_define
+DECL|macro|DYNAMICS_PATH_BLURB
+define|#
+directive|define
+name|DYNAMICS_PATH_BLURB
+define|\
+value|"Sets the dynamics search path."
+end_define
+
+begin_define
+DECL|macro|DYNAMICS_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|DYNAMICS_PATH_WRITABLE_BLURB
+value|""
+end_define
+
+begin_define
 DECL|macro|CANVAS_PADDING_COLOR_BLURB
 define|#
 directive|define
@@ -125,6 +142,15 @@ directive|define
 name|DEFAULT_BRUSH_BLURB
 define|\
 value|"Specify a default brush.  The brush is searched for in the " \ "specified brush path."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_DYNAMICS_BLURB
+define|#
+directive|define
+name|DEFAULT_DYNAMICS_BLURB
+define|\
+value|"Specify a default dynamics.  The dynamics is searched for in the " \ "specified dynamics path."
 end_define
 
 begin_define
@@ -344,6 +370,15 @@ directive|define
 name|GLOBAL_BRUSH_BLURB
 define|\
 value|N_("When enabled, the selected brush will be used for all tools.")
+end_define
+
+begin_define
+DECL|macro|GLOBAL_DYNAMICS_BLURB
+define|#
+directive|define
+name|GLOBAL_DYNAMICS_BLURB
+define|\
+value|N_("When enabled, the selected dynamics will be used for all tools.")
 end_define
 
 begin_define
