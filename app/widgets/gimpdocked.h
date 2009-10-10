@@ -67,7 +67,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * Interface with common methods for stuff that is docked.  */
+comment|/**  * GimpDockedInterface:  *  * Interface with common methods for stuff that is docked.  */
 end_comment
 
 begin_struct

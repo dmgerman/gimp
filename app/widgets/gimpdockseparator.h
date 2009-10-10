@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * Separates dockable and acts as drop-targets to allow rearrangements  * of them.  */
+comment|/**  * GimpDockSeparator:  *  * Separates dockable and acts as drop-targets to allow rearrangements  * of them.  */
 end_comment
 
 begin_struct

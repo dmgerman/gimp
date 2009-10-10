@@ -17,7 +17,7 @@ name|__GIMP_SESSION_INFO_DOCKABLE_H__
 end_define
 
 begin_comment
-comment|/**  * Contains information about a dockable in the interface.  */
+comment|/**  * GimpSessionInfoDockable:  *  * Contains information about a dockable in the interface.  */
 end_comment
 
 begin_struct

@@ -104,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * A top-level window containing GimpDocks.  */
+comment|/**  * GimpDockWindow:  *  * A top-level window containing GimpDocks.  */
 end_comment
 
 begin_struct

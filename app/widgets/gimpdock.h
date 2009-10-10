@@ -98,7 +98,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * Contains a column of GimpDockbooks.  */
+comment|/**  * GimpDock:  *  * Contains a column of GimpDockbooks.  */
 end_comment
 
 begin_struct
