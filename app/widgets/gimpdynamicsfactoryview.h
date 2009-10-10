@@ -85,6 +85,15 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DYNAMICS_FACTORY_VIEW, GimpDynamicsFactoryViewClass))
 end_define
 
+begin_typedef
+DECL|typedef|GimpDynamicsFactoryViewClass
+typedef|typedef
+name|struct
+name|_GimpDynamicsFactoryViewClass
+name|GimpDynamicsFactoryViewClass
+typedef|;
+end_typedef
+
 begin_struct
 DECL|struct|_GimpDynamicsFactoryView
 struct|struct
