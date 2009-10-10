@@ -196,7 +196,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptagcache.h"
+file|"gimpdynamics.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimpdynamics-load.h"
 end_include
 
 begin_include
@@ -286,6 +292,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptagcache.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptemplate.h"
 end_include
 
@@ -298,24 +310,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdynamics.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdynamics-load.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bca92830103
+DECL|enum|__anon290896200103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
