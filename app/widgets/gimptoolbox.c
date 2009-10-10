@@ -1190,9 +1190,9 @@ operator|->
 name|tool_wbox
 argument_list|)
 argument_list|,
-literal|2.0
+literal|1.0
 operator|/
-literal|15.0
+literal|30.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1278,9 +1278,9 @@ operator|->
 name|area_wbox
 argument_list|)
 argument_list|,
-literal|2.0
+literal|1.0
 operator|/
-literal|15.0
+literal|30.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start

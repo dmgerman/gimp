@@ -84,7 +84,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2c4bcbb90108
+DECL|struct|__anon29bf29ec0108
 typedef|typedef
 struct|struct
 block|{
@@ -607,9 +607,10 @@ name|object_draw
 argument_list|(
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|object_move
@@ -625,9 +626,10 @@ name|object_draw
 argument_list|(
 name|obj
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

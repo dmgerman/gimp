@@ -596,9 +596,10 @@ name|TRUE
 expr_stmt|;
 name|gdk_window_raise
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|open_dialog
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

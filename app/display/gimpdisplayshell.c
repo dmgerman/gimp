@@ -144,25 +144,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpactiongroup.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdialogfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpmenufactory.h"
 end_include
 
 begin_include
@@ -329,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5487c40103
+DECL|enum|__anon2b7b86860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -357,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5487c40203
+DECL|enum|__anon2b7b86860203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

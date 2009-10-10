@@ -1793,9 +1793,10 @@ name|gdk_screen_get_monitor_at_window
 argument_list|(
 name|screen
 argument_list|,
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1822,7 +1823,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a8e0120108
+DECL|struct|__anon2c6d24ec0108
 block|{
 DECL|member|data
 name|guchar
@@ -1841,7 +1842,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a8e0120203
+DECL|enum|__anon2c6d24ec0203
 block|{
 DECL|enumerator|openReadSpool
 name|openReadSpool

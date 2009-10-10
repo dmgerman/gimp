@@ -104,10 +104,12 @@ if|if
 condition|(
 name|widget
 operator|&&
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 condition|)
+empty_stmt|;
 block|{
 name|GdkEvent
 modifier|*
@@ -126,9 +128,10 @@ name|window
 operator|=
 name|g_object_ref
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|event

@@ -90,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d2dea0108
+DECL|struct|__anon27f14fab0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +151,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d2dea0203
+DECL|enum|__anon27f14fab0203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR
@@ -2034,13 +2034,15 @@ name|gtk_adjustment_set_value
 argument_list|(
 name|adj
 argument_list|,
+name|gtk_adjustment_get_upper
+argument_list|(
 name|adj
-operator|->
-name|upper
+argument_list|)
 operator|-
+name|gtk_adjustment_get_page_size
+argument_list|(
 name|adj
-operator|->
-name|page_size
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_object_unref
