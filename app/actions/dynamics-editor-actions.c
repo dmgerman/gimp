@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdataeditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"dynamics-editor-actions.h"
 end_include
 
