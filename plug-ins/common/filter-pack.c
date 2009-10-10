@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3229ac0108
+DECL|struct|__anon2b3dfa1f0108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3229ac0208
+DECL|struct|__anon2b3dfa1f0208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3229ac0303
+DECL|enum|__anon2b3dfa1f0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3229ac0403
+DECL|enum|__anon2b3dfa1f0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3229ac0503
+DECL|enum|__anon2b3dfa1f0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3229ac0603
+DECL|enum|__anon2b3dfa1f0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3229ac0703
+DECL|enum|__anon2b3dfa1f0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3229ac0808
+DECL|struct|__anon2b3dfa1f0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3229ac0908
+DECL|struct|__anon2b3dfa1f0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3229ac0a08
+DECL|struct|__anon2b3dfa1f0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3229ac0b08
+DECL|struct|__anon2b3dfa1f0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -6066,17 +6066,19 @@ decl_stmt|;
 operator|*
 name|scale_val
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|prevValue
 operator|!=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 condition|)
 block|{
 name|fp_create_nudge
@@ -6115,9 +6117,10 @@ argument_list|)
 expr_stmt|;
 name|prevValue
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 block|}
 block|}
@@ -6675,9 +6678,10 @@ name|fpvals
 operator|.
 name|preview_size
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 name|fp_redraw_all_windows
 argument_list|()
@@ -7931,11 +7935,12 @@ argument_list|)
 decl_stmt|;
 name|draw_slider
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
@@ -7958,11 +7963,12 @@ argument_list|)
 expr_stmt|;
 name|draw_slider
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
@@ -7985,11 +7991,12 @@ argument_list|)
 expr_stmt|;
 name|draw_slider
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
@@ -8198,11 +8205,12 @@ name|offset
 expr_stmt|;
 name|slider_erase
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|*
 name|new
@@ -8284,11 +8292,12 @@ condition|)
 block|{
 name|slider_erase
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|AW
 operator|.
 name|aliasing_graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|*
 name|new
