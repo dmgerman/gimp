@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdynamics-load.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdynamics-save.h"
 end_include
 
@@ -467,7 +473,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad68de90103
+DECL|enum|__anon2c0c06100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -708,6 +714,20 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+specifier|const
+name|gchar
+modifier|*
+name|gimp_dynamics_get_extension
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|GimpDynamicsOutput
 modifier|*
 name|gimp_dynamics_output_init
@@ -806,6 +826,12 @@ operator|->
 name|save
 operator|=
 name|gimp_dynamics_save
+expr_stmt|;
+name|data_class
+operator|->
+name|get_extension
+operator|=
+name|gimp_dynamics_get_extension
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
@@ -3459,6 +3485,25 @@ expr_stmt|;
 block|}
 return|return
 name|standard_dynamics
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+specifier|const
+name|gchar
+modifier|*
+DECL|function|gimp_dynamics_get_extension (GimpData * data)
+name|gimp_dynamics_get_extension
+parameter_list|(
+name|GimpData
+modifier|*
+name|data
+parameter_list|)
+block|{
+return|return
+name|GIMP_DYNAMICS_FILE_EXTENSION
 return|;
 block|}
 end_function

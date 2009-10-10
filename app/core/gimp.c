@@ -315,7 +315,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdb1a0c0103
+DECL|enum|__anon2bca92830103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2315,7 +2315,7 @@ name|gimp_dynamics_load
 block|,
 name|GIMP_DYNAMICS_FILE_EXTENSION
 block|,
-name|FALSE
+name|TRUE
 block|}
 block|}
 decl_stmt|;
