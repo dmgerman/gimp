@@ -1969,6 +1969,16 @@ if|if
 condition|(
 name|config
 operator|->
+name|global_dynamics
+condition|)
+name|global_props
+operator||=
+name|GIMP_CONTEXT_DYNAMICS_MASK
+expr_stmt|;
+if|if
+condition|(
+name|config
+operator|->
 name|global_pattern
 condition|)
 name|global_props

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b534b950103
+DECL|enum|__anon28f7c8000103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -138,7 +138,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b534b950203
+DECL|enum|__anon28f7c8000203
 block|{
 DECL|enumerator|DASH_INFO_CHANGED
 name|DASH_INFO_CHANGED
@@ -1577,6 +1577,16 @@ condition|)
 name|global_props
 operator||=
 name|GIMP_CONTEXT_BRUSH_MASK
+expr_stmt|;
+if|if
+condition|(
+name|config
+operator|->
+name|global_dynamics
+condition|)
+name|global_props
+operator||=
+name|GIMP_CONTEXT_DYNAMICS_MASK
 expr_stmt|;
 if|if
 condition|(
