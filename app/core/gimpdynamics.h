@@ -178,7 +178,7 @@ struct|struct
 name|_GimpDynamics
 block|{
 DECL|member|parent_instance
-name|GimpDataClass
+name|GimpData
 name|parent_instance
 decl_stmt|;
 DECL|member|name

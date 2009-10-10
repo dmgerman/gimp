@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdynamics-save.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdata.h"
 end_include
 
@@ -461,7 +467,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29af56100103
+DECL|enum|__anon2a0564050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -762,6 +768,15 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+name|GimpDataClass
+modifier|*
+name|data_class
+init|=
+name|GIMP_DATA_CLASS
+argument_list|(
+name|klass
+argument_list|)
+decl_stmt|;
 name|object_class
 operator|->
 name|finalize
@@ -785,6 +800,12 @@ operator|->
 name|notify
 operator|=
 name|gimp_dynamics_notify
+expr_stmt|;
+name|data_class
+operator|->
+name|save
+operator|=
+name|gimp_dynamics_save
 expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_BOOLEAN
 argument_list|(
