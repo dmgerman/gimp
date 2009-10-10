@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c3ef210103
+DECL|enum|__anon2c5d384d0103
 block|{
 DECL|enumerator|GROW
 name|GROW
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3ef210208
+DECL|struct|__anon2c5d384d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -131,7 +131,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c3ef210308
+DECL|struct|__anon2c5d384d0308
 block|{
 DECL|member|deform_area_radius
 name|gint
@@ -8836,9 +8836,10 @@ argument_list|)
 decl_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|widget
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|cursor
 argument_list|)
