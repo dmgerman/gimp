@@ -467,7 +467,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3a84fe0103
+DECL|enum|__anon2ad68de90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3435,7 +3435,7 @@ name|standard_dynamics
 operator|=
 name|gimp_dynamics_new
 argument_list|(
-literal|"Standard"
+literal|"Standard dynamics"
 argument_list|)
 expr_stmt|;
 name|standard_dynamics

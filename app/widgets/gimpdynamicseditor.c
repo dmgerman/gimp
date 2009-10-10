@@ -923,7 +923,6 @@ argument_list|(
 name|vbox
 argument_list|)
 expr_stmt|;
-comment|/*gboolean  pressure;   gboolean  velocity;   gboolean  direction;   gboolean  tilt;   gboolean  random;   gboolean  fade; */
 name|dynamics_labels
 index|[
 name|n_dynamics
