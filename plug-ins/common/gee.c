@@ -1045,9 +1045,10 @@ argument_list|)
 decl_stmt|;
 name|gdk_draw_rgb_32_image
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|drawing_area
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|style
 operator|->
@@ -1983,9 +1984,10 @@ name|i
 decl_stmt|;
 name|gdk_window_get_pointer
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|drawing_area
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|rxp

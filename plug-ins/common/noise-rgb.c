@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9f20d0108
+DECL|struct|__anon28d7af0f0108
 block|{
 DECL|member|independent
 name|gboolean
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e9f20d0208
+DECL|struct|__anon28d7af0f0208
 block|{
 DECL|member|channels
 name|gint
@@ -2764,9 +2764,10 @@ name|i
 index|]
 argument_list|)
 argument_list|,
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

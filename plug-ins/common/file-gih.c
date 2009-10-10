@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2a3847160108
+DECL|struct|__anon27e4c9af0108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3847160208
+DECL|struct|__anon27e4c9af0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3318,12 +3318,13 @@ operator|->
 name|value
 operator|)
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
 name|widget
 argument_list|)
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -3761,9 +3762,10 @@ name|dim
 operator|=
 name|RINT
 argument_list|(
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for

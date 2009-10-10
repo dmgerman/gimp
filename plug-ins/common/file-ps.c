@@ -289,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd0a940108
+DECL|struct|__anon2bd5d50c0108
 block|{
 DECL|member|resolution
 name|guint
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd0a940208
+DECL|struct|__anon2bd5d50c0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1031,7 +1031,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd0a940308
+DECL|struct|__anon2bd5d50c0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1900,7 +1900,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd0a940408
+DECL|struct|__anon2bd5d50c0408
 block|{
 DECL|member|eol
 name|long
@@ -17231,6 +17231,8 @@ control|)
 block|{
 name|value
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|GTK_ADJUSTMENT
 argument_list|(
 name|vals
@@ -17240,8 +17242,7 @@ index|[
 name|i
 index|]
 argument_list|)
-operator|->
-name|value
+argument_list|)
 operator|*
 name|factor
 expr_stmt|;
@@ -17302,9 +17303,10 @@ operator|=
 operator|(
 name|gdouble
 operator|)
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 operator|/
 operator|*
 name|old_resolution
