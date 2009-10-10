@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b263cb90108
+DECL|struct|__anon27decf070108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b263cb90208
+DECL|struct|__anon27decf070208
 block|{
 DECL|member|y
 name|gint32
@@ -7199,14 +7199,15 @@ condition|)
 block|{
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|cd
 operator|->
 name|shell
 argument_list|)
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|cd
 operator|->
@@ -7278,14 +7279,15 @@ argument_list|)
 expr_stmt|;
 name|gdk_window_set_cursor
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|cd
 operator|->
 name|shell
 argument_list|)
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)
@@ -7763,11 +7765,12 @@ block|}
 block|}
 name|gdk_draw_drawable
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|cd
 operator|->
 name|graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|graph_style
 operator|->
@@ -9188,9 +9191,10 @@ name|client_data
 decl_stmt|;
 if|if
 condition|(
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 operator|!=
 name|cd
 operator|->
@@ -9201,9 +9205,10 @@ name|cd
 operator|->
 name|rotation
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adjustment
-operator|->
-name|value
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -10987,11 +10992,12 @@ expr_stmt|;
 comment|/*  get the pointer position  */
 name|gdk_window_get_pointer
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|cd
 operator|->
 name|graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 operator|&
 name|tx
@@ -11171,11 +11177,12 @@ name|pixmap
 operator|=
 name|gdk_pixmap_new
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|cd
 operator|->
 name|graph
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|GRAPH_WIDTH
 operator|+
@@ -11934,7 +11941,7 @@ name|cursor_type
 operator|=
 name|new_type
 expr_stmt|;
-comment|/* change_win_cursor (cd->graph->window, cursor_type); */
+comment|/* change_win_cursor (gtk_widget_get_window (cd->graph), cursor_type); */
 block|}
 break|break;
 default|default:
