@@ -189,7 +189,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b02a9a00103
+DECL|enum|__anon2a09cab20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2133,7 +2133,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_dynamics_output_get_enabled
+name|gimp_dynamics_output_is_enabled
 argument_list|(
 name|dynamics
 operator|->
@@ -2425,7 +2425,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_dynamics_output_get_enabled
+name|gimp_dynamics_output_is_enabled
 argument_list|(
 name|dynamics
 operator|->

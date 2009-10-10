@@ -355,7 +355,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_dynamics_output_get_enabled
+name|gimp_dynamics_output_is_enabled
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*

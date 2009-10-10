@@ -841,10 +841,6 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DYNAMICS
 argument_list|,
-literal|"name"
-argument_list|,
-literal|"Default"
-argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;

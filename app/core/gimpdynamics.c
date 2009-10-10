@@ -467,7 +467,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0564050103
+DECL|enum|__anon2a3a84fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4389,8 +4389,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_dynamics_output_get_enabled (GimpDynamicsOutput * output)
-name|gimp_dynamics_output_get_enabled
+DECL|function|gimp_dynamics_output_is_enabled (GimpDynamicsOutput * output)
+name|gimp_dynamics_output_is_enabled
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
