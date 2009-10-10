@@ -137,7 +137,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6412a0108
+DECL|struct|__anon2ad397240108
 block|{
 DECL|member|scalex
 name|gdouble
@@ -246,7 +246,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6412a0208
+DECL|struct|__anon2ad397240208
 block|{
 DECL|member|height
 DECL|member|width
@@ -328,7 +328,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf6412a0308
+DECL|struct|__anon2ad397240308
 block|{
 DECL|member|width
 name|gint
@@ -3159,9 +3159,10 @@ argument_list|(
 operator|&
 name|color
 argument_list|,
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_color_button_set_color

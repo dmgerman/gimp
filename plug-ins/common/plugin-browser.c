@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdedc40103
+DECL|enum|__anon2bc205660103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bdedc40203
+DECL|enum|__anon2bc205660203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bdedc40308
+DECL|struct|__anon2bc205660308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29bdedc40408
+DECL|struct|__anon2bc205660408
 block|{
 DECL|member|menu
 name|gchar
@@ -2141,6 +2141,10 @@ name|GtkWidget
 modifier|*
 name|tree_view
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|parent
+decl_stmt|;
 name|GtkTreeViewColumn
 modifier|*
 name|column
@@ -2926,7 +2930,9 @@ argument_list|(
 name|notebook
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_size_request
+name|parent
+operator|=
+name|gtk_widget_get_parent
 argument_list|(
 name|GIMP_BROWSER
 argument_list|(
@@ -2936,9 +2942,17 @@ name|browser
 argument_list|)
 operator|->
 name|right_vbox
-operator|->
+argument_list|)
+expr_stmt|;
 name|parent
-operator|->
+operator|=
+name|gtk_widget_get_parent
+argument_list|(
+name|parent
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_size_request
+argument_list|(
 name|parent
 argument_list|,
 name|DBL_WIDTH
