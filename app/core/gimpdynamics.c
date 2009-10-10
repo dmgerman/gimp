@@ -18,12 +18,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -36,25 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"paint/paint-types.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcurve.h"
+file|"core-types.h"
 end_include
 
 begin_include
@@ -73,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdynamics-save.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdata.h"
 end_include
 
 begin_include
@@ -481,7 +451,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f9ba3a0103
+DECL|enum|__anon28fac7d00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -632,21 +602,9 @@ name|PROP_FADING_ANGLE
 block|,
 DECL|enumerator|PROP_FADING_JITTER
 name|PROP_FADING_JITTER
-block|, }
+block|}
 enum|;
 end_enum
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dynamics_class_init
-parameter_list|(
-name|GimpDynamicsClass
-modifier|*
-name|klass
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
@@ -656,22 +614,6 @@ parameter_list|(
 name|GObject
 modifier|*
 name|object
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_dynamics_notify
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -825,12 +767,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_dynamics_get_property
-expr_stmt|;
-name|object_class
-operator|->
-name|notify
-operator|=
-name|gimp_dynamics_notify
 expr_stmt|;
 name|data_class
 operator|->
@@ -2025,7 +1961,10 @@ name|PROP_NAME
 case|:
 name|gimp_object_set_name
 argument_list|(
+name|GIMP_OBJECT
+argument_list|(
 name|dynamics
+argument_list|)
 argument_list|,
 name|g_value_get_string
 argument_list|(
@@ -3428,33 +3367,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
-name|void
-DECL|function|gimp_dynamics_notify (GObject * object,GParamSpec * pspec)
-name|gimp_dynamics_notify
-parameter_list|(
-name|GObject
-modifier|*
-name|object
-parameter_list|,
-name|GParamSpec
-modifier|*
-name|pspec
-parameter_list|)
-block|{
-name|GimpDynamics
-modifier|*
-name|dynamics
-init|=
-name|GIMP_DYNAMICS
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
-block|}
-end_function
-
-begin_function
 name|GimpData
 modifier|*
 DECL|function|gimp_dynamics_new (const gchar * name)
@@ -3466,12 +3378,7 @@ modifier|*
 name|name
 parameter_list|)
 block|{
-name|GimpDynamics
-modifier|*
-name|dynamics
-decl_stmt|;
-name|dynamics
-operator|=
+return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_DYNAMICS
@@ -3482,9 +3389,6 @@ name|name
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-return|return
-name|dynamics
 return|;
 block|}
 end_function
