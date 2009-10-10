@@ -48,25 +48,25 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimphelp-ids.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdataeditor.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"dynamics-editor-actions.h"
+file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
 include|#
 directive|include
 file|"data-editor-commands.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dynamics-editor-actions.h"
 end_include
 
 begin_include
