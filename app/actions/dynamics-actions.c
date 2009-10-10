@@ -415,7 +415,6 @@ operator|&&
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|// SET_SENSITIVE ("dynamics-open-as-image", dynamics&& data->filename);
 name|SET_SENSITIVE
 argument_list|(
 literal|"dynamics-duplicate"
