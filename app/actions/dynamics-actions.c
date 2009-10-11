@@ -411,8 +411,6 @@ argument_list|(
 literal|"dynamics-edit"
 argument_list|,
 name|dynamics
-operator|&&
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|SET_SENSITIVE
