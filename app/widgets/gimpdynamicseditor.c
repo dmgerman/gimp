@@ -165,7 +165,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 parameter_list|(
 name|GObject
 modifier|*
@@ -573,7 +573,7 @@ literal|"Fade"
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -597,7 +597,7 @@ argument_list|,
 name|input_labels
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -621,7 +621,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -645,7 +645,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -669,7 +669,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -693,7 +693,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -717,7 +717,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -741,7 +741,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|dynamics_output_maping_row_gui
+name|gimp_dynamics_editor_add_output_row
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1295,8 +1295,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|dynamics_output_maping_row_gui (GObject * config,const gchar * row_label,GtkTable * table,gint row,GtkWidget * labels[])
-name|dynamics_output_maping_row_gui
+DECL|function|gimp_dynamics_editor_add_output_row (GObject * config,const gchar * row_label,GtkTable * table,gint row,GtkWidget * labels[])
+name|gimp_dynamics_editor_add_output_row
 parameter_list|(
 name|GObject
 modifier|*
