@@ -451,7 +451,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fac7d00103
+DECL|enum|__anon292a95f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4361,21 +4361,6 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
-if|if
-condition|(
-name|scale
-operator|<
-literal|1
-operator|/
-literal|64.0
-condition|)
-name|scale
-operator|=
-literal|1
-operator|/
-literal|8.0
-expr_stmt|;
-else|else
 name|scale
 operator|=
 name|sqrt

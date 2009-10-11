@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c22e7e60103
+DECL|enum|__anon29aa10a30103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c22e7e60203
+DECL|enum|__anon29aa10a30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2070,6 +2070,25 @@ argument_list|,
 name|angle
 argument_list|,
 name|width
+argument_list|,
+name|height
+argument_list|)
+expr_stmt|;
+comment|/*Transform size can not be less than 1 px*/
+name|width
+operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
+name|width
+argument_list|)
+expr_stmt|;
+name|height
+operator|=
+name|MAX
+argument_list|(
+literal|1
 argument_list|,
 name|height
 argument_list|)
