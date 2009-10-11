@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf5b4aa0103
+DECL|enum|__anon2c53380a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -187,14 +187,16 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDynamicsOutput,gimp_dynamics_output,GIMP_TYPE_OBJECT)
-name|G_DEFINE_TYPE
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpDynamicsOutput,gimp_dynamics_output,GIMP_TYPE_OBJECT,G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG,NULL))
+name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpDynamicsOutput
 argument_list|,
 argument|gimp_dynamics_output
 argument_list|,
 argument|GIMP_TYPE_OBJECT
+argument_list|,
+argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_CONFIG, NULL)
 argument_list|)
 end_macro
 
