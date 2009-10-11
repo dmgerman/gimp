@@ -788,7 +788,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-comment|/* 	   gimp_menu_factory_manager_register (global_menu_factory, "<DynamicsEditor>",                                       "dynamics",                                       NULL,                                       NULL); */
 name|gimp_menu_factory_manager_register
 argument_list|(
 name|global_menu_factory
