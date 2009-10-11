@@ -328,23 +328,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gdouble
-name|gimp_dynamics_get_scale_output_val
-parameter_list|(
-name|GimpDynamicsOutput
-modifier|*
-name|output
-parameter_list|,
-name|GimpCoords
-name|coords
-parameter_list|,
-name|gdouble
-name|fade_point
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_dynamics_output_is_enabled
 parameter_list|(

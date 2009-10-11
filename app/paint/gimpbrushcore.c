@@ -127,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a1ff470103
+DECL|enum|__anon2c1a50870103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1726,7 +1726,7 @@ name|core
 operator|->
 name|scale
 operator|*=
-name|gimp_dynamics_get_scale_output_val
+name|gimp_dynamics_get_linear_output_val
 argument_list|(
 name|core
 operator|->
@@ -3396,7 +3396,7 @@ name|core
 operator|->
 name|scale
 operator|*=
-name|gimp_dynamics_get_scale_output_val
+name|gimp_dynamics_get_linear_output_val
 argument_list|(
 name|core
 operator|->
