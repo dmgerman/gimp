@@ -72,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdynamics.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpdynamicsoutput.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimperror.h"
 end_include
 

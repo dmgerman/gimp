@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdynamicsoutput.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpgradient.h"
 end_include
 
@@ -195,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2233c60103
+DECL|enum|__anon2c6222640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

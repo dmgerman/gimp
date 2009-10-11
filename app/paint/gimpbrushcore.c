@@ -72,6 +72,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpdynamics.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpdynamicsoutput.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimperror.h"
 end_include
 
@@ -85,12 +97,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpmarshal.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpdynamics.h"
 end_include
 
 begin_include
@@ -127,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1a50870103
+DECL|enum|__anon275a98d50103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
