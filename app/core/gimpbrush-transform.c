@@ -203,25 +203,6 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
-comment|/*Transform size can not be less than 1 px*/
-name|width
-operator|=
-name|MAX
-argument_list|(
-literal|1
-argument_list|,
-name|width
-argument_list|)
-expr_stmt|;
-name|height
-operator|=
-name|MAX
-argument_list|(
-literal|1
-argument_list|,
-name|height
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -2403,6 +2384,29 @@ argument_list|)
 operator|-
 operator|*
 name|y
+argument_list|)
+expr_stmt|;
+comment|/*Transform size can not be less than 1 px*/
+operator|*
+name|width
+operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
+operator|*
+name|width
+argument_list|)
+expr_stmt|;
+operator|*
+name|height
+operator|=
+name|MAX
+argument_list|(
+literal|1
+argument_list|,
+operator|*
+name|height
 argument_list|)
 expr_stmt|;
 block|}
