@@ -22,10 +22,22 @@ directive|include
 file|"gimppaintcore.h"
 end_include
 
+begin_warning
+warning|#
+directive|warning
+warning|FIXME: remove these asap!
+end_warning
+
 begin_include
 include|#
 directive|include
 file|"core/gimpdynamics.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpdynamicsoutput.h"
 end_include
 
 begin_define
