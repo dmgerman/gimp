@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpdynamicseditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpbrushfactoryview.h"
 end_include
 
@@ -162,6 +156,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdynamicseditor.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpdynamicsfactoryview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimperrorconsole.h"
 end_include
 
@@ -223,12 +229,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimppatternfactoryview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdynamicsfactoryview.h"
 end_include
 
 begin_include
@@ -2574,7 +2574,6 @@ name|gint
 name|view_size
 parameter_list|)
 block|{
-comment|//return gimp_dynamics_editor_new (factory->menu_factory);
 return|return
 name|gimp_dynamics_editor_new
 argument_list|(
