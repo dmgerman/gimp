@@ -19,23 +19,8 @@ end_define
 begin_include
 include|#
 directive|include
-file|"core/gimpdata.h"
+file|"gimpdata.h"
 end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcurve.h"
-end_include
-
-begin_typedef
-DECL|typedef|GimpDynamicsOutput
-typedef|typedef
-name|struct
-name|_GimpDynamicsOutput
-name|GimpDynamicsOutput
-typedef|;
-end_typedef
 
 begin_struct
 DECL|struct|_GimpDynamicsOutput
@@ -355,7 +340,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/*  __GIMP_DYNAMICS_OPTIONS_H__  */
+comment|/*  __GIMP_DYNAMICS_H__  */
 end_comment
 
 end_unit

@@ -403,6 +403,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDynamicsOutput
+typedef|typedef
+name|struct
+name|_GimpDynamicsOutput
+name|GimpDynamicsOutput
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGradient
 typedef|typedef
 name|struct
