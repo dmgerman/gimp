@@ -595,7 +595,7 @@ name|rate
 expr_stmt|;
 name|rate
 operator|*=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|GIMP_BRUSH_CORE
 argument_list|(

@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon275a98d50103
+DECL|enum|__anon2760ed5d0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1732,7 +1732,7 @@ name|core
 operator|->
 name|scale
 operator|*=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|core
 operator|->
@@ -1750,7 +1750,7 @@ name|core
 operator|->
 name|angle
 operator|+=
-name|gimp_dynamics_get_angular_output_val
+name|gimp_dynamics_output_get_angular_value
 argument_list|(
 name|core
 operator|->
@@ -1768,7 +1768,7 @@ name|core
 operator|->
 name|aspect_ratio
 operator|*=
-name|gimp_dynamics_get_aspect_output_val
+name|gimp_dynamics_output_get_aspect_value
 argument_list|(
 name|core
 operator|->
@@ -3014,7 +3014,7 @@ name|core
 operator|->
 name|jitter
 operator|*
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|core
 operator|->
@@ -3402,7 +3402,7 @@ name|core
 operator|->
 name|scale
 operator|*=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|core
 operator|->
@@ -3420,7 +3420,7 @@ name|core
 operator|->
 name|angle
 operator|+=
-name|gimp_dynamics_get_angular_output_val
+name|gimp_dynamics_output_get_angular_value
 argument_list|(
 name|core
 operator|->
@@ -3438,7 +3438,7 @@ name|core
 operator|->
 name|aspect_ratio
 operator|*=
-name|gimp_dynamics_get_aspect_output_val
+name|gimp_dynamics_output_get_aspect_value
 argument_list|(
 name|core
 operator|->

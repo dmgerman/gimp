@@ -486,7 +486,7 @@ argument_list|)
 expr_stmt|;
 name|opacity
 operator|*=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|GIMP_BRUSH_CORE
 argument_list|(
@@ -505,7 +505,7 @@ argument_list|)
 expr_stmt|;
 name|hardness
 operator|=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|GIMP_BRUSH_CORE
 argument_list|(

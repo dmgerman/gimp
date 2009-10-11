@@ -546,7 +546,7 @@ name|paint_options
 expr_stmt|;
 name|dynamic_rate
 operator|=
-name|gimp_dynamics_get_linear_output_val
+name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|dynamics
 operator|->

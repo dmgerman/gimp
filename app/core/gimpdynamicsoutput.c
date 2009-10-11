@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c29b5460103
+DECL|enum|__anon2bf5b4aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -756,6 +756,10 @@ block|}
 block|}
 end_function
 
+begin_comment
+comment|/*  public functions  */
+end_comment
+
 begin_function
 name|GimpDynamicsOutput
 modifier|*
@@ -793,9 +797,49 @@ block|}
 end_function
 
 begin_function
+name|gboolean
+DECL|function|gimp_dynamics_output_is_enabled (GimpDynamicsOutput * output)
+name|gimp_dynamics_output_is_enabled
+parameter_list|(
+name|GimpDynamicsOutput
+modifier|*
+name|output
+parameter_list|)
+block|{
+return|return
+operator|(
+name|output
+operator|->
+name|pressure
+operator|||
+name|output
+operator|->
+name|velocity
+operator|||
+name|output
+operator|->
+name|direction
+operator|||
+name|output
+operator|->
+name|tilt
+operator|||
+name|output
+operator|->
+name|random
+operator|||
+name|output
+operator|->
+name|fade
+operator|)
+return|;
+block|}
+end_function
+
+begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_linear_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
-name|gimp_dynamics_get_linear_output_val
+DECL|function|gimp_dynamics_output_get_linear_value (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
+name|gimp_dynamics_output_get_linear_value
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
@@ -968,8 +1012,8 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_angular_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
-name|gimp_dynamics_get_angular_output_val
+DECL|function|gimp_dynamics_output_get_angular_value (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
+name|gimp_dynamics_output_get_angular_value
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
@@ -1243,8 +1287,8 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_get_aspect_output_val (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
-name|gimp_dynamics_get_aspect_output_val
+DECL|function|gimp_dynamics_output_get_aspect_value (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
+name|gimp_dynamics_output_get_aspect_value
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
@@ -1513,46 +1557,6 @@ expr_stmt|;
 comment|/* printf("Dynamics queried(aspect). Result: %f, factors: %f, total: %f \n", result, factors, total);*/
 return|return
 name|result
-return|;
-block|}
-end_function
-
-begin_function
-name|gboolean
-DECL|function|gimp_dynamics_output_is_enabled (GimpDynamicsOutput * output)
-name|gimp_dynamics_output_is_enabled
-parameter_list|(
-name|GimpDynamicsOutput
-modifier|*
-name|output
-parameter_list|)
-block|{
-return|return
-operator|(
-name|output
-operator|->
-name|pressure
-operator|||
-name|output
-operator|->
-name|velocity
-operator|||
-name|output
-operator|->
-name|direction
-operator|||
-name|output
-operator|->
-name|tilt
-operator|||
-name|output
-operator|->
-name|random
-operator|||
-name|output
-operator|->
-name|fade
-operator|)
 return|;
 block|}
 end_function
