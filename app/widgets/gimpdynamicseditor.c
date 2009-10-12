@@ -1378,7 +1378,7 @@ name|dynamics_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"pressure"
+literal|"use-pressure"
 argument_list|,
 name|table
 argument_list|,
@@ -1419,7 +1419,7 @@ name|dynamics_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"velocity"
+literal|"use-velocity"
 argument_list|,
 name|table
 argument_list|,
@@ -1460,7 +1460,7 @@ name|dynamics_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"direction"
+literal|"use-direction"
 argument_list|,
 name|table
 argument_list|,
@@ -1501,7 +1501,7 @@ name|dynamics_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"tilt"
+literal|"use-tilt"
 argument_list|,
 name|table
 argument_list|,
@@ -1542,7 +1542,7 @@ name|dynamics_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"random"
+literal|"use-random"
 argument_list|,
 name|table
 argument_list|,
@@ -1583,7 +1583,7 @@ name|dynamics_check_button_new
 argument_list|(
 name|config
 argument_list|,
-literal|"fade"
+literal|"use-fade"
 argument_list|,
 name|table
 argument_list|,
