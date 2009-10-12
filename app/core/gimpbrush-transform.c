@@ -2386,7 +2386,7 @@ operator|*
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*Transform size can not be less than 1 px*/
+comment|/* Transform size can not be less than 1 px */
 operator|*
 name|width
 operator|=

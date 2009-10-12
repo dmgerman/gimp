@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29539b1e0103
+DECL|enum|__anon2c22e7e60103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29539b1e0203
+DECL|enum|__anon2c22e7e60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
