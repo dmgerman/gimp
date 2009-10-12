@@ -86,7 +86,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b89ad1a0108
+DECL|struct|__anon29aa66180108
 block|{
 DECL|member|u
 DECL|member|v
@@ -329,6 +329,10 @@ argument_list|)
 expr_stmt|;
 name|RV
 operator|=
+literal|0.0
+operator|<
+name|RV
+condition|?
 name|pow
 argument_list|(
 name|RV
@@ -339,6 +343,8 @@ name|material
 operator|.
 name|highlight
 argument_list|)
+else|:
+literal|0.0
 expr_stmt|;
 comment|/* Compute diffuse and specular intensity contribution */
 comment|/* =================================================== */
