@@ -955,7 +955,7 @@ argument_list|)
 operator|->
 name|dynamics
 operator|->
-name|opacity_dynamics
+name|opacity_output
 argument_list|,
 operator|*
 name|coords
@@ -974,7 +974,7 @@ argument_list|)
 operator|->
 name|dynamics
 operator|->
-name|hardness_dynamics
+name|hardness_output
 argument_list|,
 operator|*
 name|coords

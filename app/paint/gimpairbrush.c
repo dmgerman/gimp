@@ -550,7 +550,7 @@ name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|dynamics
 operator|->
-name|rate_dynamics
+name|rate_output
 argument_list|,
 operator|*
 name|coords

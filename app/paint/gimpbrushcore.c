@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6b992b0103
+DECL|enum|__anon2b26fa620103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1738,7 +1738,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|size_dynamics
+name|size_output
 argument_list|,
 operator|*
 name|coords
@@ -1756,7 +1756,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|angle_dynamics
+name|angle_output
 argument_list|,
 operator|*
 name|coords
@@ -1774,7 +1774,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|aspect_ratio_dynamics
+name|aspect_ratio_output
 argument_list|,
 operator|*
 name|coords
@@ -3020,7 +3020,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|jitter_dynamics
+name|jitter_output
 argument_list|,
 name|current_coords
 argument_list|,
@@ -3408,7 +3408,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|size_dynamics
+name|size_output
 argument_list|,
 operator|*
 name|coords
@@ -3426,7 +3426,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|angle_dynamics
+name|angle_output
 argument_list|,
 operator|*
 name|coords
@@ -3444,7 +3444,7 @@ name|core
 operator|->
 name|dynamics
 operator|->
-name|aspect_ratio_dynamics
+name|aspect_ratio_output
 argument_list|,
 operator|*
 name|coords

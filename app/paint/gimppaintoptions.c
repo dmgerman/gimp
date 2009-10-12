@@ -201,7 +201,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6222640103
+DECL|enum|__anon2b0f46910103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2149,7 +2149,7 @@ name|gimp_dynamics_output_is_enabled
 argument_list|(
 name|dynamics
 operator|->
-name|color_dynamics
+name|color_output
 argument_list|)
 condition|)
 block|{
@@ -2441,7 +2441,7 @@ name|gimp_dynamics_output_is_enabled
 argument_list|(
 name|dynamics
 operator|->
-name|hardness_dynamics
+name|hardness_output
 argument_list|)
 condition|)
 return|return

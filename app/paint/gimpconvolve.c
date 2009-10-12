@@ -604,7 +604,7 @@ argument_list|)
 operator|->
 name|dynamics
 operator|->
-name|rate_dynamics
+name|rate_output
 argument_list|,
 operator|*
 name|coords

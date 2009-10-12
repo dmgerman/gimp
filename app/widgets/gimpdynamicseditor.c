@@ -579,7 +579,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|opacity_dynamics
+name|opacity_output
 argument_list|)
 argument_list|,
 name|_
@@ -603,7 +603,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|hardness_dynamics
+name|hardness_output
 argument_list|)
 argument_list|,
 name|_
@@ -627,7 +627,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|rate_dynamics
+name|rate_output
 argument_list|)
 argument_list|,
 name|_
@@ -651,7 +651,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|size_dynamics
+name|size_output
 argument_list|)
 argument_list|,
 name|_
@@ -675,7 +675,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|aspect_ratio_dynamics
+name|aspect_ratio_output
 argument_list|)
 argument_list|,
 name|_
@@ -699,7 +699,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|color_dynamics
+name|color_output
 argument_list|)
 argument_list|,
 name|_
@@ -723,7 +723,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|angle_dynamics
+name|angle_output
 argument_list|)
 argument_list|,
 name|_
@@ -747,7 +747,7 @@ name|G_OBJECT
 argument_list|(
 name|dynamics
 operator|->
-name|jitter_dynamics
+name|jitter_output
 argument_list|)
 argument_list|,
 name|_
