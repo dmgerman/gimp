@@ -51,7 +51,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5951fe0103
+DECL|enum|__anon288a59cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,12 +61,6 @@ name|PROP_RATE
 block|,
 DECL|enumerator|PROP_PRESSURE
 name|PROP_PRESSURE
-block|,
-DECL|enumerator|PROP_VELOCITY_SIZE
-name|PROP_VELOCITY_SIZE
-block|,
-DECL|enumerator|PROP_VELOCITY_HARDNESS
-name|PROP_VELOCITY_HARDNESS
 block|}
 enum|;
 end_enum
@@ -199,9 +193,6 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
-comment|/* override velocity-size because its unnatural as a default for airbrush */
-comment|/*  GIMP_CONFIG_INSTALL_PROP_BOOLEAN (object_class, PROP_VELOCITY_SIZE,                                     "velocity-size", NULL,                                     FALSE,                                     GIMP_PARAM_STATIC_STRINGS);    /* override velocity-hardness to default to a true,    * because that is natural for airbrush    */
-comment|/* GIMP_CONFIG_INSTALL_PROP_BOOLEAN (object_class, PROP_VELOCITY_HARDNESS,                                     "velocity-hardness", NULL,                                     TRUE,                                     GIMP_PARAM_STATIC_STRINGS);*/
 block|}
 end_function
 
@@ -281,7 +272,6 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/*    case PROP_VELOCITY_SIZE:       GIMP_PAINT_OPTIONS (options)->velocity_options->size = g_value_get_boolean (value);       break;     case PROP_VELOCITY_HARDNESS:       GIMP_PAINT_OPTIONS (options)->velocity_options->hardness = g_value_get_boolean (value);       break; */
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
@@ -359,7 +349,6 @@ name|pressure
 argument_list|)
 expr_stmt|;
 break|break;
-comment|/*    case PROP_VELOCITY_SIZE:       g_value_set_boolean (value, GIMP_PAINT_OPTIONS (options)->velocity_options->size);       break;     case PROP_VELOCITY_HARDNESS:       g_value_set_boolean (value, GIMP_PAINT_OPTIONS (options)->velocity_options->hardness);       break;*/
 default|default:
 name|G_OBJECT_WARN_INVALID_PROPERTY_ID
 argument_list|(
