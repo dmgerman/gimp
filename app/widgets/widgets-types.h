@@ -241,6 +241,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDynamicsEditor
+typedef|typedef
+name|struct
+name|_GimpDynamicsEditor
+name|GimpDynamicsEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpGradientEditor
 typedef|typedef
 name|struct
@@ -255,15 +264,6 @@ typedef|typedef
 name|struct
 name|_GimpPaletteEditor
 name|GimpPaletteEditor
-typedef|;
-end_typedef
-
-begin_typedef
-DECL|typedef|GimpDynamicsEditor
-typedef|typedef
-name|struct
-name|_GimpDynamicsEditor
-name|GimpDynamicsEditor
 typedef|;
 end_typedef
 
