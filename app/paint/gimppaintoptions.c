@@ -209,7 +209,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b28fc960103
+DECL|enum|__anon2b68223e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1894,16 +1894,9 @@ name|fade_options
 expr_stmt|;
 if|if
 condition|(
-name|gimp_dynamics_input_fade_enabled
-argument_list|(
-name|gimp_context_get_dynamics
-argument_list|(
-name|GIMP_CONTEXT
-argument_list|(
-name|paint_options
-argument_list|)
-argument_list|)
-argument_list|)
+name|fade_options
+operator|->
+name|use_fade
 condition|)
 block|{
 name|gdouble

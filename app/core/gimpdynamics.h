@@ -193,17 +193,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|gboolean
-name|gimp_dynamics_input_fade_enabled
-parameter_list|(
-name|GimpDynamics
-modifier|*
-name|dynamics
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
