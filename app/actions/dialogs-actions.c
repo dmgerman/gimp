@@ -458,7 +458,7 @@ block|,
 block|{
 literal|"dialogs-dynamics"
 block|,
-name|GIMP_STOCK_PATTERN
+name|GIMP_STOCK_DYNAMICS
 block|,
 name|NC_
 argument_list|(
