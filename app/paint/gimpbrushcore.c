@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b26fa620103
+DECL|enum|__anon2b6807530103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -3839,6 +3839,19 @@ operator|->
 name|dynamics
 operator|=
 name|dynamics
+expr_stmt|;
+if|if
+condition|(
+name|core
+operator|->
+name|dynamics
+condition|)
+name|g_object_ref
+argument_list|(
+name|core
+operator|->
+name|dynamics
+argument_list|)
 expr_stmt|;
 block|}
 end_function
