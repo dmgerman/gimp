@@ -938,29 +938,22 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|table
-argument_list|)
-expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_prop_expanding_frame_new
 argument_list|(
+name|config
+argument_list|,
+literal|"use-fade"
+argument_list|,
 name|_
 argument_list|(
-literal|"Fade settings"
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_container_add
-argument_list|(
-name|GTK_CONTAINER
-argument_list|(
-name|frame
+literal|"Fade out"
 argument_list|)
 argument_list|,
 name|table
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/*  the fade-out sizeentry  */
