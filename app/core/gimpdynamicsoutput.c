@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e9595e0103
+DECL|enum|__anon287bada50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -860,14 +860,14 @@ init|=
 literal|0.0
 decl_stmt|;
 name|gdouble
-name|factors
-init|=
-literal|0.0
-decl_stmt|;
-name|gdouble
 name|result
 init|=
 literal|1.0
+decl_stmt|;
+name|gint
+name|factors
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -1005,7 +1005,12 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
-comment|//printf("Dynamics queried(linear). Result: %f, factors: %f, total: %f \n", result, factors, total);
+if|#
+directive|if
+literal|0
+block|g_printerr ("Dynamics queried(linear). Result: %f, factors: %d, total: %f\n",               result, factors, total);
+endif|#
+directive|endif
 return|return
 name|result
 return|;
@@ -1034,14 +1039,14 @@ init|=
 literal|0.0
 decl_stmt|;
 name|gdouble
-name|factors
-init|=
-literal|0.0
-decl_stmt|;
-name|gdouble
 name|result
 init|=
 literal|1.0
+decl_stmt|;
+name|gint
+name|factors
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -1100,7 +1105,7 @@ name|factors
 operator|++
 expr_stmt|;
 block|}
-comment|/* For tilt to make sense, it needs to be converted to an angle, not just vector */
+comment|/* For tilt to make sense, it needs to be converted to an angle, not    * just a vector    */
 if|if
 condition|(
 name|output
@@ -1279,6 +1284,12 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|g_printerr ("Dynamics queried(angle). Result: %f, factors: %d, total: %f\n",               result, factors, total);
+endif|#
+directive|endif
 return|return
 name|result
 operator|+
@@ -1309,14 +1320,14 @@ init|=
 literal|0.0
 decl_stmt|;
 name|gdouble
-name|factors
-init|=
-literal|0.0
-decl_stmt|;
-name|gdouble
 name|result
 init|=
 literal|1.0
+decl_stmt|;
+name|gint
+name|factors
+init|=
+literal|0
 decl_stmt|;
 if|if
 condition|(
@@ -1476,7 +1487,6 @@ name|random
 operator|<=
 literal|0.5
 condition|)
-block|{
 name|random
 operator|=
 literal|1
@@ -1495,9 +1505,7 @@ operator|+
 literal|1.0
 operator|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|random
 operator|=
 operator|(
@@ -1520,7 +1528,6 @@ operator|)
 operator|+
 literal|1.0
 expr_stmt|;
-block|}
 name|total
 operator|+=
 name|random
@@ -1556,7 +1563,12 @@ name|total
 operator|/
 name|factors
 expr_stmt|;
-comment|/* printf("Dynamics queried(aspect). Result: %f, factors: %f, total: %f \n", result, factors, total);*/
+if|#
+directive|if
+literal|0
+block|g_printerr ("Dynamics queried(aspect). Result: %f, factors: %d, total: %f\n",               result, factors, total);
+endif|#
+directive|endif
 return|return
 name|result
 return|;
