@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e982c0103
+DECL|enum|__anon287bada50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -997,7 +997,7 @@ if|if
 condition|(
 name|factors
 operator|>
-literal|1
+literal|0
 condition|)
 name|result
 operator|=
@@ -1276,7 +1276,7 @@ if|if
 condition|(
 name|factors
 operator|>
-literal|1
+literal|0
 condition|)
 name|result
 operator|=
@@ -1555,7 +1555,7 @@ if|if
 condition|(
 name|factors
 operator|>
-literal|1
+literal|0
 condition|)
 name|result
 operator|=
