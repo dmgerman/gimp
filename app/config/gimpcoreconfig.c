@@ -82,13 +82,8 @@ DECL|macro|DEFAULT_DYNAMICS
 define|#
 directive|define
 name|DEFAULT_DYNAMICS
-value|"Foo"
+value|"Basic Dynamics"
 end_define
-
-begin_comment
-DECL|macro|DEFAULT_DYNAMICS
-comment|/* alexia, fix me */
-end_comment
 
 begin_define
 DECL|macro|DEFAULT_PATTERN
@@ -132,7 +127,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ec923c0103
+DECL|enum|__anon2b0272720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
