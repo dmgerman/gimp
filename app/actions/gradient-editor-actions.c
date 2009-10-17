@@ -2330,9 +2330,12 @@ comment|/*  pretend the gradient not being editable while the dialog is    *  in
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_SENSITIVE
+name|gtk_widget_is_sensitive
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|editor
+argument_list|)
 argument_list|)
 condition|)
 name|editable
