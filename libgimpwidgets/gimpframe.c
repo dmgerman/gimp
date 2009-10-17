@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -385,7 +391,7 @@ if|if
 condition|(
 name|label_widget
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|label_widget
 argument_list|)
@@ -427,7 +433,7 @@ if|if
 condition|(
 name|child
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|child
 argument_list|)
@@ -549,12 +555,12 @@ name|widget
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|gtk_widget_set_allocation
+argument_list|(
 name|widget
-operator|->
+argument_list|,
 name|allocation
-operator|=
-operator|*
-name|allocation
+argument_list|)
 expr_stmt|;
 name|gimp_frame_child_allocate
 argument_list|(
@@ -570,7 +576,7 @@ if|if
 condition|(
 name|child
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|child
 argument_list|)
@@ -589,7 +595,7 @@ if|if
 condition|(
 name|label_widget
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|label_widget
 argument_list|)
@@ -715,12 +721,6 @@ name|frame
 argument_list|)
 decl_stmt|;
 name|GtkAllocation
-modifier|*
-name|allocation
-init|=
-operator|&
-name|widget
-operator|->
 name|allocation
 decl_stmt|;
 name|gint
@@ -739,6 +739,14 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border_width
 operator|=
 name|gtk_container_get_border_width
@@ -753,7 +761,7 @@ if|if
 condition|(
 name|label_widget
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|label_widget
 argument_list|)
@@ -825,7 +833,7 @@ argument_list|(
 literal|1
 argument_list|,
 name|allocation
-operator|->
+operator|.
 name|width
 operator|-
 literal|2
@@ -844,7 +852,7 @@ argument_list|(
 literal|1
 argument_list|,
 name|allocation
-operator|->
+operator|.
 name|height
 operator|-
 name|child_allocation
@@ -859,7 +867,7 @@ operator|->
 name|x
 operator|+=
 name|allocation
-operator|->
+operator|.
 name|x
 expr_stmt|;
 name|child_allocation
@@ -867,7 +875,7 @@ operator|->
 name|y
 operator|+=
 name|allocation
-operator|->
+operator|.
 name|y
 expr_stmt|;
 block|}
@@ -930,7 +938,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)
@@ -1269,7 +1277,7 @@ condition|(
 operator|(
 name|label_widget
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|label_widget
 argument_list|)

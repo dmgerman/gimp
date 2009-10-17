@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f73b500103
+DECL|enum|__anon2afcb75d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f73b500203
+DECL|enum|__anon2afcb75d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1715,7 +1715,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_IS_SENSITIVE
+name|gtk_widget_is_sensitive
 argument_list|(
 name|widget
 argument_list|)

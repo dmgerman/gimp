@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -57,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3747a00103
+DECL|enum|__anon2890e4950103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3747a00203
+DECL|enum|__anon2890e4950203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +90,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c3747a00308
+DECL|struct|__anon2890e4950308
 block|{
 DECL|member|controls
 name|GtkWidget

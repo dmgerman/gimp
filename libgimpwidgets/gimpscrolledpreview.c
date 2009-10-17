@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -50,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2947953f0108
+DECL|struct|__anon2b6228020108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -2872,6 +2878,9 @@ name|GtkAdjustment
 modifier|*
 name|vadj
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|cx
 decl_stmt|,
@@ -2906,6 +2915,14 @@ name|vscr
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|gtk_widget_get_pointer
 argument_list|(
 name|widget
@@ -2933,8 +2950,6 @@ name|hadj
 argument_list|)
 operator|)
 operator|/
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2955,8 +2970,6 @@ name|vadj
 argument_list|)
 operator|)
 operator|/
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -3097,6 +3110,9 @@ name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -3121,6 +3137,14 @@ name|preview
 operator|->
 name|hscr
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
 argument_list|)
 expr_stmt|;
 name|x
@@ -3241,8 +3265,6 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -3257,8 +3279,6 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -3277,8 +3297,6 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -3298,8 +3316,6 @@ operator|*
 operator|(
 name|gdouble
 operator|)
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -3338,14 +3354,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
