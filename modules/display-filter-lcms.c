@@ -1771,9 +1771,12 @@ argument_list|(
 name|managed
 argument_list|)
 operator|&&
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|managed
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1823,7 +1826,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6d24ec0108
+DECL|struct|__anon2be13a7b0108
 block|{
 DECL|member|data
 name|guchar
@@ -1842,7 +1845,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6d24ec0203
+DECL|enum|__anon2be13a7b0203
 block|{
 DECL|enumerator|openReadSpool
 name|openReadSpool
