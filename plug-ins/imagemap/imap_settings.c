@@ -58,7 +58,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2c6e42910108
+DECL|struct|__anon2945572e0108
 typedef|typedef
 struct|struct
 block|{
@@ -308,7 +308,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_STATE
+name|gtk_widget_get_state
 argument_list|(
 name|widget
 argument_list|)

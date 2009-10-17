@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfa1f0108
+DECL|struct|__anon2a067a7b0108
 block|{
 DECL|member|run
 name|gboolean
@@ -121,7 +121,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfa1f0208
+DECL|struct|__anon2a067a7b0208
 block|{
 DECL|member|width
 name|gint
@@ -155,7 +155,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b3dfa1f0303
+DECL|enum|__anon2a067a7b0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -176,7 +176,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3dfa1f0403
+DECL|enum|__anon2a067a7b0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -208,7 +208,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3dfa1f0503
+DECL|enum|__anon2a067a7b0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -227,7 +227,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3dfa1f0603
+DECL|enum|__anon2a067a7b0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -255,7 +255,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3dfa1f0703
+DECL|enum|__anon2a067a7b0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -274,7 +274,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfa1f0808
+DECL|struct|__anon2a067a7b0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -305,7 +305,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfa1f0908
+DECL|struct|__anon2a067a7b0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -402,7 +402,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3dfa1f0a08
+DECL|struct|__anon2a067a7b0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1284,7 +1284,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b3dfa1f0b08
+DECL|struct|__anon2a067a7b0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3545,7 +3545,7 @@ name|AW
 operator|.
 name|window
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|AW
 operator|.
@@ -4462,7 +4462,7 @@ name|AW
 operator|.
 name|window
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|AW
 operator|.
@@ -5283,7 +5283,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|frame
 argument_list|)
@@ -5372,7 +5372,7 @@ else|else
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|frame
 argument_list|)
@@ -6101,7 +6101,7 @@ name|window
 operator|!=
 name|NULL
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|AW
 operator|.

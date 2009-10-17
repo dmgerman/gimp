@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|enum|__anon2a3c999d0103
+DECL|enum|__anon29fa0f200103
 DECL|enumerator|GRID_HIDDEN
 DECL|enumerator|GRID_LINES
 DECL|enumerator|GRID_CROSSES
@@ -89,7 +89,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2a3c999d0208
+DECL|struct|__anon29fa0f200208
 typedef|typedef
 struct|struct
 block|{
@@ -443,7 +443,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_STATE
+name|gtk_widget_get_state
 argument_list|(
 name|widget
 argument_list|)

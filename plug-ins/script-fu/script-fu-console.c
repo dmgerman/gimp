@@ -27,6 +27,12 @@ directive|include
 file|<glib/gstdio.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -90,7 +96,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27f14fab0108
+DECL|struct|__anon2c49d2a60108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -151,7 +157,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f14fab0203
+DECL|enum|__anon2c49d2a60203
 block|{
 DECL|enumerator|RESPONSE_CLEAR
 name|RESPONSE_CLEAR

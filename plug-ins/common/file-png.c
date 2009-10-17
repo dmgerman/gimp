@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913f7280108
+DECL|struct|__anon2a9c176a0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2913f7280208
+DECL|struct|__anon2a9c176a0208
 block|{
 DECL|member|run
 name|gboolean
@@ -7952,7 +7952,7 @@ parameter_list|(
 name|field
 parameter_list|)
 define|\
-value|if (GTK_WIDGET_IS_SENSITIVE (pg->field)) \     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pg->field), pngvals.field)
+value|if (gtk_widget_is_sensitive (pg->field)) \     gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (pg->field), pngvals.field)
 name|SET_ACTIVE
 argument_list|(
 name|interlaced

@@ -2313,11 +2313,11 @@ operator|=
 name|gtk_button_new
 argument_list|()
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|button
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach

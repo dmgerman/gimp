@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27decf070108
+DECL|struct|__anon2c2cc9bb0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27decf070208
+DECL|struct|__anon2c2cc9bb0208
 block|{
 DECL|member|y
 name|gint32
@@ -5084,7 +5084,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|cd
 operator|->
