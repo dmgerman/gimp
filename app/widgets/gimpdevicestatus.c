@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon275af66c0103
+DECL|enum|__anon2afc9eee0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1967,8 +1967,12 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-if|if
-condition|(
+name|gtk_widget_set_visible
+argument_list|(
+name|entry
+operator|->
+name|arrow
+argument_list|,
 name|entry
 operator|->
 name|device_info
@@ -1984,20 +1988,6 @@ operator|==
 name|status
 operator|->
 name|current_device
-condition|)
-name|gtk_widget_show
-argument_list|(
-name|entry
-operator|->
-name|arrow
-argument_list|)
-expr_stmt|;
-else|else
-name|gtk_widget_hide
-argument_list|(
-name|entry
-operator|->
-name|arrow
 argument_list|)
 expr_stmt|;
 block|}

@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a66e1f0103
+DECL|enum|__anon2956bad20103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a66e1f0203
+DECL|enum|__anon2956bad20203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a66e1f0308
+DECL|struct|__anon2956bad20308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -1748,6 +1748,9 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gboolean
+name|show_error
+decl_stmt|;
 for|for
 control|(
 name|iter_valid
@@ -2031,8 +2034,10 @@ else|:
 literal|"--"
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+comment|/* Show errors */
+name|show_error
+operator|=
+operator|(
 name|module
 operator|->
 name|state
@@ -2042,8 +2047,8 @@ operator|&&
 name|module
 operator|->
 name|last_module_error
-condition|)
-block|{
+operator|)
+expr_stmt|;
 name|gtk_label_set_text
 argument_list|(
 name|GTK_LABEL
@@ -2053,41 +2058,24 @@ operator|->
 name|error_label
 argument_list|)
 argument_list|,
+name|show_error
+condition|?
 name|module
 operator|->
 name|last_module_error
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|dialog
-operator|->
-name|error_box
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gtk_label_set_text
-argument_list|(
-name|GTK_LABEL
-argument_list|(
-name|dialog
-operator|->
-name|error_label
-argument_list|)
-argument_list|,
+else|:
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_hide
+name|gtk_widget_set_visible
 argument_list|(
 name|dialog
 operator|->
 name|error_box
+argument_list|,
+name|show_error
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
