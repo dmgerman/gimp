@@ -898,9 +898,12 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|shell
+argument_list|)
 argument_list|)
 condition|)
 block|{
