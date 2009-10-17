@@ -1095,11 +1095,12 @@ argument_list|)
 expr_stmt|;
 name|window
 operator|=
+name|gtk_widget_get_window
+argument_list|(
 name|info
 operator|->
 name|window
-operator|->
-name|window
+argument_list|)
 expr_stmt|;
 name|gtk_widget_show_now
 argument_list|(
