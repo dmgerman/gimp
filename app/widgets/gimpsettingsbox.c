@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc6c260103
+DECL|enum|__anon2ad453840103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -114,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cc6c260203
+DECL|enum|__anon2ad453840203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1065,11 +1065,11 @@ operator|=
 name|gtk_button_new
 argument_list|()
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|button
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_button_set_relief
@@ -1158,11 +1158,11 @@ operator|=
 name|gtk_button_new
 argument_list|()
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|button
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_button_set_relief

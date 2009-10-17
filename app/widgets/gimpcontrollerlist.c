@@ -156,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7b5800103
+DECL|enum|__anon292512680103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -169,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b7b5800203
+DECL|enum|__anon292512680203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -1974,7 +1974,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_IS_SENSITIVE
+name|gtk_widget_is_sensitive
 argument_list|(
 name|list
 operator|->
@@ -2160,7 +2160,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_IS_SENSITIVE
+name|gtk_widget_is_sensitive
 argument_list|(
 name|list
 operator|->

@@ -807,7 +807,7 @@ name|cursor_type
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|shell
 operator|->

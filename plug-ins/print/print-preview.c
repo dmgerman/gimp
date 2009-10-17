@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2babd79e0103
+DECL|enum|__anon29741bd10103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1673,6 +1673,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -1701,6 +1704,14 @@ decl_stmt|;
 name|gint
 name|border
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|gtk_container_get_border_width
@@ -1762,16 +1773,12 @@ name|cairo_translate
 argument_list|(
 name|cr
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
 operator|+
 name|border
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y
@@ -1792,8 +1799,6 @@ block|{
 name|gint
 name|width
 init|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1914,9 +1919,10 @@ name|style
 operator|->
 name|mid
 index|[
+name|gtk_widget_get_state
+argument_list|(
 name|widget
-operator|->
-name|state
+argument_list|)
 index|]
 argument_list|)
 expr_stmt|;
@@ -2028,8 +2034,6 @@ name|drawable
 argument_list|,
 name|MIN
 argument_list|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2039,8 +2043,6 @@ argument_list|)
 argument_list|,
 name|MIN
 argument_list|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2566,6 +2568,9 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gdouble
 name|left_margin
 decl_stmt|;
@@ -2584,6 +2589,14 @@ decl_stmt|;
 name|gint
 name|border
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|gtk_container_get_border_width
@@ -2626,8 +2639,6 @@ decl_stmt|;
 name|gint
 name|width
 init|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2767,7 +2778,7 @@ name|inside
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)
@@ -2817,6 +2828,9 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gdouble
 name|paper_width
 decl_stmt|;
@@ -2832,6 +2846,14 @@ decl_stmt|;
 name|gint
 name|border
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|gtk_container_get_border_width
@@ -2861,8 +2883,6 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2880,8 +2900,6 @@ call|(
 name|gdouble
 call|)
 argument_list|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height

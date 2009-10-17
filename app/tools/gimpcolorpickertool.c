@@ -1611,7 +1611,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|picker_tool
 operator|->
@@ -1620,11 +1620,12 @@ argument_list|)
 condition|)
 name|gdk_window_show
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|picker_tool
 operator|->
 name|dialog
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else

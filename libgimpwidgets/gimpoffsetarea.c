@@ -43,7 +43,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b71bd080103
+DECL|enum|__anon27c506e60103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -1607,6 +1607,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GdkPixbuf
 modifier|*
 name|pixbuf
@@ -1621,6 +1624,14 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|x
 operator|=
 operator|(
@@ -1895,8 +1906,6 @@ literal|1
 expr_stmt|;
 name|w
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1951,8 +1960,6 @@ literal|1
 expr_stmt|;
 name|h
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height

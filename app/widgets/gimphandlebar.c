@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -35,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2770ebec0103
+DECL|enum|__anon2c6e07990103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -552,7 +558,8 @@ name|y
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_NO_WINDOW
+operator|!
+name|gtk_widget_get_has_window
 argument_list|(
 name|widget
 argument_list|)

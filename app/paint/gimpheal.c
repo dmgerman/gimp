@@ -1126,6 +1126,7 @@ modifier|*
 name|mask
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|rowstride
 init|=
@@ -1213,7 +1214,7 @@ operator|(
 name|j
 operator|==
 operator|(
-name|height
+name|width
 operator|-
 literal|1
 operator|)

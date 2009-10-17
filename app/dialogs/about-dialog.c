@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d2147e0108
+DECL|struct|__anon29e9fa4a0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1059,6 +1059,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GdkGC
 modifier|*
 name|text_gc
@@ -1083,6 +1086,14 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|text_gc
 operator|=
 name|style
@@ -1108,8 +1119,6 @@ expr_stmt|;
 name|x
 operator|=
 operator|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1122,8 +1131,6 @@ expr_stmt|;
 name|y
 operator|=
 operator|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height

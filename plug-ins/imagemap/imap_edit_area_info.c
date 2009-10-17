@@ -410,7 +410,7 @@ else|else
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_STATE
+name|gtk_widget_get_state
 argument_list|(
 name|widget
 argument_list|)

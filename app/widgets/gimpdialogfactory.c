@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b8c4340103
+DECL|enum|__anon2bca54a50103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8c4340203
+DECL|enum|__anon2bca54a50203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -679,7 +679,7 @@ control|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|list
 operator|->
@@ -2160,7 +2160,7 @@ name|NULL
 return|;
 if|if
 condition|(
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|dialog
 argument_list|)
@@ -2935,7 +2935,7 @@ condition|)
 return|return;
 name|toplevel
 operator|=
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|dialog
 argument_list|)
@@ -3085,7 +3085,7 @@ name|current_info
 argument_list|)
 operator|&&
 operator|!
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|dialog
 argument_list|)
@@ -3471,7 +3471,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|dialog
 argument_list|)
@@ -3901,7 +3901,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|dialog
 argument_list|)
@@ -5286,7 +5286,7 @@ argument_list|(
 name|widget
 argument_list|)
 operator|&&
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|widget
 argument_list|)
@@ -5299,7 +5299,7 @@ name|GIMP_DIALOG_VISIBILITY_UNKNOWN
 decl_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|widget
 argument_list|)
@@ -5413,7 +5413,7 @@ argument_list|(
 name|widget
 argument_list|)
 operator|&&
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|widget
 argument_list|)
@@ -5440,7 +5440,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|widget
 argument_list|)
@@ -5475,7 +5475,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|widget
 argument_list|)
@@ -5560,7 +5560,7 @@ argument_list|(
 name|widget
 argument_list|)
 operator|&&
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|widget
 argument_list|)
@@ -5696,7 +5696,7 @@ argument_list|(
 name|widget
 argument_list|)
 operator|&&
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|widget
 argument_list|)
@@ -5770,7 +5770,7 @@ operator|->
 name|data
 argument_list|)
 operator|&&
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|list
 operator|->

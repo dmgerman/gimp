@@ -1028,7 +1028,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|drawing_area
 argument_list|)

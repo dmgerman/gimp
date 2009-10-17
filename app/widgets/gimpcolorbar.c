@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ab7aa80103
+DECL|enum|__anon289fab250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -510,6 +510,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|guchar
 modifier|*
 name|buf
@@ -533,6 +536,14 @@ name|i
 decl_stmt|,
 name|j
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|x
 operator|=
 name|y
@@ -547,8 +558,6 @@ argument_list|)
 expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -559,8 +568,6 @@ name|x
 expr_stmt|;
 name|height
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -829,16 +836,12 @@ name|style
 operator|->
 name|black_gc
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
 operator|+
 name|x
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y

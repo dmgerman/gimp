@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -871,6 +877,9 @@ decl_stmt|;
 name|GimpRGB
 name|padding_color
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gtk_widget_grab_focus
 argument_list|(
 name|shell
@@ -899,6 +908,14 @@ operator|&
 name|padding_color
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|canvas
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_title_update
 argument_list|(
 name|shell
@@ -908,8 +925,6 @@ name|shell
 operator|->
 name|disp_width
 operator|=
-name|canvas
-operator|->
 name|allocation
 operator|.
 name|width
@@ -918,8 +933,6 @@ name|shell
 operator|->
 name|disp_height
 operator|=
-name|canvas
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2464,7 +2477,7 @@ if|if
 condition|(
 name|device_changed
 operator|&&
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|canvas
 argument_list|)
@@ -2812,7 +2825,7 @@ comment|/*  focus the widget if it isn't; if the toplevel window          *  alr
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|canvas
 argument_list|)
@@ -2847,7 +2860,7 @@ comment|/*  if the toplevel window didn't have focus, the above          *  gtk_
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|canvas
 argument_list|)
@@ -6033,7 +6046,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|shell
 operator|->

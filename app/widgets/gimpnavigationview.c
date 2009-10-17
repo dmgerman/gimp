@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -73,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e93bcf0103
+DECL|enum|__anon2a5233710103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -550,11 +556,14 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GTK_WIDGET_SET_FLAGS
+name|gtk_widget_set_can_focus
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|view
+argument_list|)
 argument_list|,
-name|GTK_CAN_FOCUS
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_add_events
@@ -564,11 +573,9 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
-operator|(
 name|GDK_POINTER_MOTION_MASK
 operator||
 name|GDK_KEY_PRESS_MASK
-operator|)
 argument_list|)
 expr_stmt|;
 name|view
@@ -706,7 +713,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)

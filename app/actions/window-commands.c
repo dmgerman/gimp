@@ -88,7 +88,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|widget
 argument_list|)
@@ -442,7 +442,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|widget
 argument_list|)

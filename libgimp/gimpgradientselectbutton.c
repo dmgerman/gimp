@@ -137,7 +137,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04f0c60103
+DECL|enum|__anon28f8232e0103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -150,7 +150,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b04f0c60203
+DECL|enum|__anon28f8232e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1846,9 +1846,10 @@ name|style
 operator|->
 name|fg_gc
 index|[
+name|gtk_widget_get_state
+argument_list|(
 name|widget
-operator|->
-name|state
+argument_list|)
 index|]
 argument_list|,
 name|event

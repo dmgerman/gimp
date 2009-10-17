@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -20,7 +26,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon2c41f07e0103
+DECL|enum|__anon2bac257b0103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -54,7 +60,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2c41f07e0203
+DECL|enum|__anon2bac257b0203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0

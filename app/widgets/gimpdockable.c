@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -113,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d6539d0103
+DECL|enum|__anon292746b50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -845,13 +851,13 @@ expr_stmt|;
 name|gtk_widget_pop_composite_child
 argument_list|()
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|dockable
 operator|->
 name|menu_button
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_parent
@@ -1389,7 +1395,7 @@ name|dockable
 operator|->
 name|menu_button
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|dockable
 operator|->
@@ -1433,7 +1439,7 @@ if|if
 condition|(
 name|child
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|child
 argument_list|)
@@ -1545,7 +1551,7 @@ name|dockable
 operator|->
 name|menu_button
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|dockable
 operator|->
@@ -1644,7 +1650,7 @@ if|if
 condition|(
 name|child
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|child
 argument_list|)
@@ -2361,7 +2367,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)
@@ -2579,9 +2585,10 @@ operator|)
 condition|?
 name|GTK_STATE_SELECTED
 else|:
+name|gtk_widget_get_state
+argument_list|(
 name|widget
-operator|->
-name|state
+argument_list|)
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4381,7 +4388,10 @@ condition|(
 operator|!
 name|GTK_WIDGET_REALIZED
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|dockable
+argument_list|)
 argument_list|)
 condition|)
 return|return;
@@ -4589,9 +4599,12 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|dockable
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -5311,9 +5324,12 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|dockable
+argument_list|)
 argument_list|)
 condition|)
 block|{

@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d4bc970103
+DECL|enum|__anon29fc91a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -266,11 +272,14 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GTK_WIDGET_SET_FLAGS
+name|gtk_widget_set_has_window
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|view
+argument_list|)
 argument_list|,
-name|GTK_NO_WINDOW
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|view
@@ -790,7 +799,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)

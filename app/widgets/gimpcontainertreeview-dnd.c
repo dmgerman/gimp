@@ -813,6 +813,9 @@ modifier|*
 name|tree_view
 parameter_list|)
 block|{
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GtkTreePath
 modifier|*
 name|path
@@ -820,6 +823,14 @@ decl_stmt|;
 name|GtkTreeViewDropPosition
 name|drop_pos
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|y
@@ -829,8 +840,6 @@ operator|||
 name|y
 operator|>
 operator|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -883,8 +892,6 @@ name|distance
 operator|=
 name|MAX
 argument_list|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height

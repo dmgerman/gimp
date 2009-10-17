@@ -1577,7 +1577,7 @@ name|priv
 operator|->
 name|edit_button
 operator|&&
-name|GTK_WIDGET_SENSITIVE
+name|gtk_widget_is_sensitive
 argument_list|(
 name|view
 operator|->

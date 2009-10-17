@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b98d91a0103
+DECL|enum|__anon2a40778f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b98d91a0203
+DECL|enum|__anon2a40778f0203
 block|{
 DECL|enumerator|COLOR_CLICKED
 name|COLOR_CLICKED
@@ -95,7 +101,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b98d91a0303
+DECL|enum|__anon2a40778f0303
 block|{
 DECL|enumerator|INVALID_AREA
 name|INVALID_AREA
@@ -1129,7 +1135,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)

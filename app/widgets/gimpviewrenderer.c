@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a918a0103
+DECL|enum|__anon29332f440103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2314,7 +2314,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
 argument_list|(
 name|widget
 argument_list|)

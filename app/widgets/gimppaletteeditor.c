@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -927,9 +933,10 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
+name|gtk_widget_get_parent
+argument_list|(
 name|eventbox
-operator|->
-name|parent
+argument_list|)
 argument_list|,
 literal|"size-allocate"
 argument_list|,

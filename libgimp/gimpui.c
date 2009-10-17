@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -707,7 +713,10 @@ if|if
 condition|(
 name|GTK_WIDGET_REALIZED
 argument_list|(
+name|GTK_WIDGET
+argument_list|(
 name|window
+argument_list|)
 argument_list|)
 condition|)
 name|gdk_window_set_transient_for

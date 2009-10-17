@@ -147,7 +147,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2bcbcb400108
+DECL|struct|__anon2b9822d90108
 block|{
 DECL|member|randomize
 name|gint
@@ -2140,7 +2140,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_SENSITIVE
+name|gtk_widget_get_sensitive
 argument_list|(
 name|load_button
 argument_list|)
@@ -2155,7 +2155,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_SENSITIVE
+name|gtk_widget_get_sensitive
 argument_list|(
 name|save_button
 argument_list|)

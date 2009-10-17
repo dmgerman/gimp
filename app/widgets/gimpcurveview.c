@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af34cd50103
+DECL|enum|__anon2b9dd71a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -549,11 +555,14 @@ operator|=
 operator|-
 literal|1.0
 expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
+name|gtk_widget_set_can_focus
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|view
+argument_list|)
 argument_list|,
-name|GTK_CAN_FOCUS
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_add_events
@@ -2740,7 +2749,7 @@ block|}
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|widget
 argument_list|)

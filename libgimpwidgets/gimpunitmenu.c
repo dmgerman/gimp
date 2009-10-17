@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b02f90103
+DECL|enum|__anon2a41e8360103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -72,7 +78,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3b02f90203
+DECL|enum|__anon2a41e8360203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN

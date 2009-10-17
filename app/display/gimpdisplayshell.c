@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -311,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b86860103
+DECL|enum|__anon2bc937c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b86860203
+DECL|enum|__anon2bc937c30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3522,13 +3528,13 @@ operator|->
 name|hsbdata
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|shell
 operator|->
 name|hsb
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  the vertical scrollbar  */
@@ -3565,13 +3571,13 @@ operator|->
 name|vsbdata
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|shell
 operator|->
 name|vsb
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  create the contents of the inner_table  ********************************/
@@ -4110,13 +4116,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|shell
 operator|->
 name|zoom_button
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_image
@@ -4204,13 +4210,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|shell
 operator|->
 name|quick_mask_button
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_image

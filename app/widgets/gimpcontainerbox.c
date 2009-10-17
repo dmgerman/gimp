@@ -280,11 +280,11 @@ name|scrolled_win
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+name|gtk_widget_set_can_focus
 argument_list|(
 name|sb
 argument_list|,
-name|GTK_CAN_FOCUS
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_set_dnd_widget

@@ -4562,7 +4562,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|measure
 operator|->
@@ -4571,11 +4571,12 @@ argument_list|)
 condition|)
 name|gdk_window_show
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|measure
 operator|->
 name|dialog
-operator|->
-name|window
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
