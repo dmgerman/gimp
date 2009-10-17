@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpconfig/gimpconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core-types.h"
 end_include
 
@@ -86,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec13640108
+DECL|struct|__anon28a03eda0108
 block|{
 DECL|member|locale
 specifier|const
@@ -238,10 +232,6 @@ name|gchar
 modifier|*
 name|filename
 decl_stmt|;
-name|GError
-modifier|*
-name|error
-decl_stmt|;
 name|GMarkupParser
 name|markup_parser
 decl_stmt|;
@@ -261,12 +251,18 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 name|gboolean
 name|result
 init|=
 name|TRUE
 decl_stmt|;
-comment|/* This is a special string to specify the language identifier to      look for in the gimp-tags-default.xml file. Please translate the      C in it according to the name of the po file used for      gimp-tags-default.xml. E.g. lithuanian for the translation,      that would be "tags-locale:lt".    */
+comment|/* This is a special string to specify the language identifier to    * look for in the gimp-tags-default.xml file. Please translate the    * C in it according to the name of the po file used for    * gimp-tags-default.xml. E.g. lithuanian for the translation,    * that would be "tags-locale:lt".    */
 name|tags_locale
 operator|=
 name|_
@@ -356,10 +352,6 @@ literal|"gimp-tags-default.xml"
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|error
-operator|=
-name|NULL
 expr_stmt|;
 name|markup_parser
 operator|.
@@ -463,10 +455,6 @@ name|GIMP_TAGS_FILE
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-name|error
-operator|=
-name|NULL
 expr_stmt|;
 name|result
 operator|=
@@ -574,10 +562,6 @@ name|GimpTagsInstaller
 modifier|*
 name|tags_installer
 init|=
-operator|(
-name|GimpTagsInstaller
-operator|*
-operator|)
 name|user_data
 decl_stmt|;
 if|if
@@ -737,10 +721,6 @@ name|GimpTagsInstaller
 modifier|*
 name|tags_installer
 init|=
-operator|(
-name|GimpTagsInstaller
-operator|*
-operator|)
 name|user_data
 decl_stmt|;
 if|if
@@ -799,10 +779,6 @@ name|GimpTagsInstaller
 modifier|*
 name|tags_installer
 init|=
-operator|(
-name|GimpTagsInstaller
-operator|*
-operator|)
 name|user_data
 decl_stmt|;
 specifier|const
