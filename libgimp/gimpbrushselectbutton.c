@@ -142,7 +142,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b792c930103
+DECL|enum|__anon28dc72450103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -155,7 +155,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b792c930203
+DECL|enum|__anon28dc72450203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2347,6 +2347,9 @@ argument_list|(
 name|preview
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -2357,14 +2360,20 @@ name|width
 decl_stmt|,
 name|height
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|preview
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
 name|MIN
 argument_list|(
 name|brush_width
 argument_list|,
-name|preview
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2376,8 +2385,6 @@ name|MIN
 argument_list|(
 name|brush_height
 argument_list|,
-name|preview
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2387,8 +2394,6 @@ name|x
 operator|=
 operator|(
 operator|(
-name|preview
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2403,8 +2408,6 @@ name|y
 operator|=
 operator|(
 operator|(
-name|preview
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2429,14 +2432,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|preview
-operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|preview
-operator|->
 name|allocation
 operator|.
 name|height

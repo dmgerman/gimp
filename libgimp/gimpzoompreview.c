@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a7d0550103
+DECL|enum|__anon2b0cd0830103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a7d0550208
+DECL|struct|__anon2b0cd0830208
 block|{
 DECL|member|update
 name|gboolean
