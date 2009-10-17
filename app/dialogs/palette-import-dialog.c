@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f94abb0103
+DECL|enum|__anon28c2e1650103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f94abb0208
+DECL|struct|__anon28c2e1650208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3388,7 +3388,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_IS_SENSITIVE
+name|gtk_widget_is_sensitive
 argument_list|(
 name|dialog
 operator|->

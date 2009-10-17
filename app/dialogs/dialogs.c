@@ -1974,7 +1974,7 @@ control|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_TOPLEVEL
+name|gtk_widget_is_toplevel
 argument_list|(
 name|list
 operator|->

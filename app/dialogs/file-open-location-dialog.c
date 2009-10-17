@@ -779,9 +779,13 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
+name|gtk_dialog_get_content_area
+argument_list|(
+name|GTK_DIALOG
+argument_list|(
 name|dialog
-operator|->
-name|vbox
+argument_list|)
+argument_list|)
 argument_list|)
 argument_list|,
 name|box

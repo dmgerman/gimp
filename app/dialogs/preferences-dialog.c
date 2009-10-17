@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -9493,7 +9499,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ad6731e0108
+DECL|struct|__anon278d6fc90108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10660,7 +10666,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad6731e0208
+DECL|struct|__anon278d6fc90208
 block|{
 DECL|member|label
 specifier|const
@@ -11772,7 +11778,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad6731e0308
+DECL|struct|__anon278d6fc90308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11927,7 +11933,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad6731e0408
+DECL|struct|__anon278d6fc90408
 block|{
 DECL|member|tree_label
 specifier|const
