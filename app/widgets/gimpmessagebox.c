@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -55,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d42220103
+DECL|enum|__anon2a070a3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -909,7 +915,7 @@ name|box
 operator|->
 name|image
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|box
 operator|->
@@ -1033,6 +1039,13 @@ condition|(
 name|box
 operator|->
 name|image
+operator|&&
+name|gtk_widget_get_visible
+argument_list|(
+name|box
+operator|->
+name|image
+argument_list|)
 condition|)
 block|{
 name|GtkRequisition

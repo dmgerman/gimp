@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd0b88e0103
+DECL|enum|__anon2b5c9dc80103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -922,11 +922,14 @@ argument_list|,
 name|grid_view
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
+name|gtk_widget_set_can_focus
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|grid_view
+argument_list|)
 argument_list|,
-name|GTK_CAN_FOCUS
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1270,7 +1273,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -1393,13 +1396,13 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_CAN_FOCUS
+name|gtk_widget_get_can_focus
 argument_list|(
 name|widget
 argument_list|)
 operator|&&
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|widget
 argument_list|)
@@ -1525,6 +1528,9 @@ name|GtkWidget
 modifier|*
 name|widget
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 if|if
 condition|(
 name|grid_view
@@ -1550,6 +1556,14 @@ operator|->
 name|wrap_box
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|gdk_window_get_origin
 argument_list|(
 name|gtk_widget_get_window
@@ -1564,7 +1578,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_NO_WINDOW
+operator|!
+name|gtk_widget_get_has_window
 argument_list|(
 name|widget
 argument_list|)
@@ -1573,8 +1588,6 @@ block|{
 operator|*
 name|x
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
@@ -1582,8 +1595,6 @@ expr_stmt|;
 operator|*
 name|y
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y
@@ -1599,8 +1610,6 @@ block|{
 operator|*
 name|x
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1610,8 +1619,6 @@ expr_stmt|;
 operator|*
 name|y
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2400,13 +2407,13 @@ condition|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_CAN_FOCUS
+name|gtk_widget_get_can_focus
 argument_list|(
 name|data
 argument_list|)
 operator|&&
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|data
 argument_list|)

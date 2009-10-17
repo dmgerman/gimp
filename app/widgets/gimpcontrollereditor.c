@@ -108,7 +108,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ad9270103
+DECL|enum|__anon29225c010103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +124,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289ad9270203
+DECL|enum|__anon29225c010203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2408,7 +2408,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_IS_SENSITIVE
+name|gtk_widget_is_sensitive
 argument_list|(
 name|editor
 operator|->

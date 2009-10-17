@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -669,9 +675,10 @@ name|style
 operator|->
 name|fg
 index|[
+name|gtk_widget_get_state
+argument_list|(
 name|widget
-operator|->
-name|state
+argument_list|)
 index|]
 argument_list|)
 expr_stmt|;

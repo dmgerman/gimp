@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -1809,9 +1815,12 @@ name|editor
 operator|->
 name|bg_histogram
 operator|&&
-name|GTK_WIDGET_DRAWABLE
+name|gtk_widget_is_drawable
+argument_list|(
+name|GTK_WIDGET
 argument_list|(
 name|editor
+argument_list|)
 argument_list|)
 condition|)
 block|{

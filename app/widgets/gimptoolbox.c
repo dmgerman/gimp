@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -2465,7 +2471,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|toolbox
 operator|->
@@ -2500,6 +2506,14 @@ modifier|*
 name|style
 init|=
 name|gtk_widget_get_style
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
+name|GtkStateType
+name|state
+init|=
+name|gtk_widget_get_state
 argument_list|(
 name|widget
 argument_list|)
@@ -2631,8 +2645,6 @@ name|style
 operator|->
 name|fg
 index|[
-name|widget
-operator|->
 name|state
 index|]
 operator|.
@@ -2644,8 +2656,6 @@ name|style
 operator|->
 name|fg
 index|[
-name|widget
-operator|->
 name|state
 index|]
 operator|.
@@ -2657,8 +2667,6 @@ name|style
 operator|->
 name|fg
 index|[
-name|widget
-operator|->
 name|state
 index|]
 operator|.

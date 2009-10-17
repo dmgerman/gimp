@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63c70c0103
+DECL|enum|__anon2b7a36ed0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63c70c0203
+DECL|enum|__anon2b7a36ed0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -676,6 +676,16 @@ name|GimpCellRendererViewable
 modifier|*
 name|cellviewable
 decl_stmt|;
+name|gfloat
+name|xalign
+decl_stmt|,
+name|yalign
+decl_stmt|;
+name|gint
+name|xpad
+decl_stmt|,
+name|ypad
+decl_stmt|;
 name|gint
 name|view_width
 init|=
@@ -692,6 +702,28 @@ decl_stmt|;
 name|gint
 name|calc_height
 decl_stmt|;
+name|gtk_cell_renderer_get_alignment
+argument_list|(
+name|cell
+argument_list|,
+operator|&
+name|xalign
+argument_list|,
+operator|&
+name|yalign
+argument_list|)
+expr_stmt|;
+name|gtk_cell_renderer_get_padding
+argument_list|(
+name|cell
+argument_list|,
+operator|&
+name|xpad
+argument_list|,
+operator|&
+name|ypad
+argument_list|)
+expr_stmt|;
 name|cellviewable
 operator|=
 name|GIMP_CELL_RENDERER_VIEWABLE
@@ -748,8 +780,6 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|cell
-operator|->
 name|xpad
 operator|*
 literal|2
@@ -761,8 +791,6 @@ operator|=
 operator|(
 name|gint
 operator|)
-name|cell
-operator|->
 name|ypad
 operator|*
 literal|2
@@ -821,12 +849,8 @@ operator|)
 condition|?
 literal|1.0
 operator|-
-name|cell
-operator|->
 name|xalign
 else|:
-name|cell
-operator|->
 name|xalign
 operator|)
 operator|*
@@ -839,8 +863,6 @@ name|calc_width
 operator|-
 literal|2
 operator|*
-name|cell
-operator|->
 name|xpad
 operator|)
 operator|)
@@ -857,8 +879,6 @@ argument_list|,
 literal|0
 argument_list|)
 operator|+
-name|cell
-operator|->
 name|xpad
 operator|)
 expr_stmt|;
@@ -872,8 +892,6 @@ operator|*
 name|y_offset
 operator|=
 operator|(
-name|cell
-operator|->
 name|yalign
 operator|*
 operator|(
@@ -885,8 +903,6 @@ name|calc_height
 operator|-
 literal|2
 operator|*
-name|cell
-operator|->
 name|ypad
 operator|)
 operator|)
@@ -903,8 +919,6 @@ argument_list|,
 literal|0
 argument_list|)
 operator|+
-name|cell
-operator|->
 name|ypad
 operator|)
 expr_stmt|;

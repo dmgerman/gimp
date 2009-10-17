@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -71,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b4d70c0103
+DECL|enum|__anon296b52b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1576,9 +1582,10 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|gtk_widget_get_state
+argument_list|(
 name|widget
-operator|->
-name|state
+argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
 argument_list|,

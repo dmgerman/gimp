@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2acd0fef0103
+DECL|enum|__anon28ecf7500103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +132,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acd0fef0203
+DECL|enum|__anon28ecf7500203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1607,7 +1607,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_HAS_FOCUS
+name|gtk_widget_has_focus
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

@@ -1318,7 +1318,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_SENSITIVE
+name|gtk_widget_get_sensitive
 argument_list|(
 name|editor
 operator|->

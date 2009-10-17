@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c3756d0103
+DECL|enum|__anon2bccf9c10103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -2297,7 +2297,7 @@ name|p
 operator|->
 name|open
 operator|=
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|info
 operator|->

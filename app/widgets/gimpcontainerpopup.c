@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b38747c0103
+DECL|enum|__anon28a3785c0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -869,6 +869,17 @@ operator|==
 name|widget
 condition|)
 block|{
+name|GtkAllocation
+name|allocation
+decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 comment|/*  the event was on the popup, which can either be really on the        *  popup or outside gimp (owner_events == TRUE, see map())        */
 if|if
 condition|(
@@ -888,8 +899,6 @@ name|bevent
 operator|->
 name|x
 operator|>
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -898,8 +907,6 @@ name|bevent
 operator|->
 name|y
 operator|>
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -1557,6 +1564,9 @@ decl_stmt|;
 name|GtkRequisition
 name|requisition
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GdkRectangle
 name|rect
 decl_stmt|;
@@ -1602,6 +1612,14 @@ operator|&
 name|requisition
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|gdk_window_get_origin
 argument_list|(
 name|gtk_widget_get_window
@@ -1618,7 +1636,8 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_NO_WINDOW
+operator|!
+name|gtk_widget_get_has_window
 argument_list|(
 name|widget
 argument_list|)
@@ -1626,16 +1645,12 @@ condition|)
 block|{
 name|orig_x
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
 expr_stmt|;
 name|orig_y
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y
@@ -1683,8 +1698,6 @@ name|x
 operator|=
 name|orig_x
 operator|+
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1703,8 +1716,6 @@ name|x
 condition|)
 name|x
 operator|-=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1738,8 +1749,6 @@ name|width
 condition|)
 name|x
 operator|+=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1753,8 +1762,6 @@ name|y
 operator|=
 name|orig_y
 operator|+
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -1945,8 +1952,8 @@ name|GtkWidget
 modifier|*
 name|viewport
 decl_stmt|;
-name|gint
-name|viewport_width
+name|GtkAllocation
+name|allocation
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -1979,13 +1986,13 @@ name|scrolled_win
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|viewport_width
-operator|=
+name|gtk_widget_get_allocation
+argument_list|(
 name|viewport
-operator|->
+argument_list|,
+operator|&
 name|allocation
-operator|.
-name|width
+argument_list|)
 expr_stmt|;
 name|view_size
 operator|=
@@ -1999,7 +2006,9 @@ name|MIN
 argument_list|(
 name|GIMP_VIEW_SIZE_GIGANTIC
 argument_list|,
-name|viewport_width
+name|allocation
+operator|.
+name|width
 operator|-
 literal|2
 operator|*
