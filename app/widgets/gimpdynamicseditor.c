@@ -339,10 +339,6 @@ name|dynamics
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|table
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|fixed
 decl_stmt|;
 name|GtkWidget
@@ -390,6 +386,8 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
+name|editor
+operator|->
 name|table
 operator|=
 name|gtk_table_new
@@ -410,6 +408,8 @@ argument_list|(
 name|data_editor
 argument_list|)
 argument_list|,
+name|editor
+operator|->
 name|table
 argument_list|,
 name|TRUE
@@ -421,6 +421,8 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 expr_stmt|;
@@ -518,6 +520,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -542,6 +546,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -566,6 +572,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -590,6 +598,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -614,6 +624,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -638,6 +650,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -662,6 +676,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -686,6 +702,8 @@ argument_list|)
 argument_list|,
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -703,6 +721,8 @@ name|gtk_table_attach
 argument_list|(
 name|GTK_TABLE
 argument_list|(
+name|editor
+operator|->
 name|table
 argument_list|)
 argument_list|,
@@ -979,6 +999,17 @@ name|editor
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_set_sensitive
+argument_list|(
+name|dynamics_editor
+operator|->
+name|table
+argument_list|,
+name|editor
+operator|->
+name|data_editable
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

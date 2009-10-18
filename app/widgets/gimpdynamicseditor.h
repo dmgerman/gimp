@@ -108,10 +108,10 @@ name|GimpDynamics
 modifier|*
 name|dynamics_model
 decl_stmt|;
-DECL|member|options_vbox
+DECL|member|table
 name|GtkWidget
 modifier|*
-name|options_vbox
+name|table
 decl_stmt|;
 block|}
 struct|;
@@ -155,10 +155,6 @@ name|menu_factory
 parameter_list|)
 function_decl|;
 end_function_decl
-
-begin_comment
-comment|//GObject *   get_config_value          (GimpDynamics     *options);
-end_comment
 
 begin_endif
 endif|#
