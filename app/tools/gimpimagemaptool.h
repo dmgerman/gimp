@@ -148,6 +148,10 @@ modifier|*
 name|image_map
 decl_stmt|;
 comment|/* dialog */
+DECL|member|overlay
+name|gboolean
+name|overlay
+decl_stmt|;
 DECL|member|shell
 name|GtkWidget
 modifier|*
