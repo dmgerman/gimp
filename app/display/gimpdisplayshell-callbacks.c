@@ -1424,6 +1424,21 @@ condition|)
 return|return
 name|TRUE
 return|;
+comment|/*  ignore events on overlays  */
+if|if
+condition|(
+name|eevent
+operator|->
+name|window
+operator|!=
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
 if|if
 condition|(
 name|gimp_display_get_image
@@ -1443,8 +1458,9 @@ argument_list|)
 expr_stmt|;
 comment|/* Return TRUE here to avoid redrawing the image when it gets the        * keyboard focus.        */
 return|return
-name|TRUE
+name|FALSE
 return|;
+comment|/* TRUE; */
 block|}
 else|else
 block|{
@@ -2280,6 +2296,26 @@ argument_list|)
 condition|)
 return|return
 name|TRUE
+return|;
+comment|/*  ignore events on overlays  */
+if|if
+condition|(
+operator|(
+operator|(
+name|GdkEventAny
+operator|*
+operator|)
+name|event
+operator|)
+operator|->
+name|window
+operator|!=
+name|canvas
+operator|->
+name|window
+condition|)
+return|return
+name|FALSE
 return|;
 name|display
 operator|=

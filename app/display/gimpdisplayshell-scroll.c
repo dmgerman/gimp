@@ -130,7 +130,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b84f09b0108
+DECL|struct|__anon2923740b0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -374,9 +374,9 @@ name|offset_y
 operator|+=
 name|y_offset
 expr_stmt|;
-name|gimp_canvas_scroll
+name|gimp_overlay_box_scroll
 argument_list|(
-name|GIMP_CANVAS
+name|GIMP_OVERLAY_BOX
 argument_list|(
 name|shell
 operator|->
