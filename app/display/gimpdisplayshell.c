@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc937c30103
+DECL|enum|__anon2c6e25a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc937c30203
+DECL|enum|__anon2c6e25a30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3665,6 +3665,18 @@ argument_list|,
 name|shell_width
 argument_list|,
 name|shell_height
+argument_list|)
+expr_stmt|;
+name|gtk_container_set_border_width
+argument_list|(
+name|GTK_CONTAINER
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+argument_list|,
+literal|10
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_dnd_init
