@@ -1034,6 +1034,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOverlayBox
+typedef|typedef
+name|struct
+name|_GimpOverlayBox
+name|GimpOverlayBox
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpProgressBox
 typedef|typedef
 name|struct
