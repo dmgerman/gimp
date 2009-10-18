@@ -951,7 +951,7 @@ name|dynamics
 argument_list|,
 name|N_
 argument_list|(
-literal|"Dynamics"
+literal|"Paint Dynamics"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1230,7 +1230,7 @@ literal|"gimp-dynamics-editor"
 argument_list|,
 name|N_
 argument_list|(
-literal|"Dynamics Editor"
+literal|"Paint Dynamics Editor"
 argument_list|)
 argument_list|,
 name|NULL

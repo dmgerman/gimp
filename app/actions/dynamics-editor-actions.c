@@ -93,7 +93,7 @@ name|NC_
 argument_list|(
 literal|"dynamics-editor-action"
 argument_list|,
-literal|"Dynamics Editor Menu"
+literal|"Paint Dynamics Editor Menu"
 argument_list|)
 block|,
 name|NULL
@@ -126,7 +126,7 @@ name|NC_
 argument_list|(
 literal|"dynamics-editor-action"
 argument_list|,
-literal|"Edit Brush Dynamics"
+literal|"Edit Active Dynamics"
 argument_list|)
 block|,
 name|NULL

@@ -660,7 +660,7 @@ literal|"dynamics"
 block|,
 name|N_
 argument_list|(
-literal|"Dynamics"
+literal|"Paint Dynamics"
 argument_list|)
 block|,
 name|GIMP_STOCK_DYNAMICS
@@ -675,7 +675,7 @@ literal|"dynamics-editor"
 block|,
 name|N_
 argument_list|(
-literal|"Dynamics Editor"
+literal|"Paint Dynamics Editor"
 argument_list|)
 block|,
 name|GIMP_STOCK_DYNAMICS

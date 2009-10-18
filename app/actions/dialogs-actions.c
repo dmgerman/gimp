@@ -464,7 +464,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Dynamics"
+literal|"Paint Dynamics"
 argument_list|)
 block|,
 name|NULL
@@ -473,7 +473,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Open dynamics list dialog"
+literal|"Open paint dynamics dialog"
 argument_list|)
 block|,
 literal|"gimp-dynamics-list"
@@ -490,7 +490,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Dynamics Editor"
+literal|"Paint Dynamics Editor"
 argument_list|)
 block|,
 name|NULL
@@ -499,7 +499,7 @@ name|NC_
 argument_list|(
 literal|"dialogs-action"
 argument_list|,
-literal|"Open the dynamics editor"
+literal|"Open the paint dynamics editor"
 argument_list|)
 block|,
 literal|"gimp-dynamics-editor"

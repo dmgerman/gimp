@@ -307,7 +307,7 @@ name|title
 operator|=
 name|_
 argument_list|(
-literal|"Dynamics Editor"
+literal|"Paint Dynamics Editor"
 argument_list|)
 expr_stmt|;
 block|}

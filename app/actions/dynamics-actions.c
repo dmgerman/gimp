@@ -93,7 +93,7 @@ name|NC_
 argument_list|(
 literal|"dynamics-action"
 argument_list|,
-literal|"Dynamics Menu"
+literal|"Paint Dynamics Menu"
 argument_list|)
 block|,
 name|NULL
