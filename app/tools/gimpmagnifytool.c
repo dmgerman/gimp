@@ -297,9 +297,11 @@ argument_list|(
 literal|"Zoom Tool: Adjust the zoom level"
 argument_list|)
 argument_list|,
-name|N_
+name|NC_
 argument_list|(
-literal|"tool|_Zoom"
+literal|"tool"
+argument_list|,
+literal|"_Zoom"
 argument_list|)
 argument_list|,
 literal|"Z"
