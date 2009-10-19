@@ -18,6 +18,16 @@ end_include
 begin_undef
 undef|#
 directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
+begin_comment
+comment|/* GtkInputDialog */
+end_comment
+
+begin_undef
+undef|#
+directive|undef
 name|GSEAL_ENABLE
 end_undef
 
@@ -9520,7 +9530,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2bee06d40108
+DECL|struct|__anon2bbb030a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10687,7 +10697,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bee06d40208
+DECL|struct|__anon2bbb030a0208
 block|{
 DECL|member|label
 specifier|const
@@ -11799,7 +11809,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bee06d40308
+DECL|struct|__anon2bbb030a0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11954,7 +11964,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2bee06d40408
+DECL|struct|__anon2bbb030a0408
 block|{
 DECL|member|tree_label
 specifier|const
