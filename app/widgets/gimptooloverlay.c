@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon294713580103
+DECL|enum|__anon28fe27790103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -376,35 +376,13 @@ argument_list|(
 name|overlay
 argument_list|)
 decl_stmt|;
-name|GdkScreen
-modifier|*
-name|screen
-init|=
-name|gtk_widget_get_screen
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
-name|GdkColormap
-modifier|*
-name|rgba
-init|=
-name|gdk_screen_get_rgba_colormap
-argument_list|(
-name|screen
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|rgba
-condition|)
-name|gtk_widget_set_colormap
-argument_list|(
-name|widget
-argument_list|,
-name|rgba
-argument_list|)
-expr_stmt|;
+if|#
+directive|if
+literal|0
+comment|/* crashes badly beause gtk+ doesn't support offscreen windows        * with colormap != parent_colormap yet        */
+block|GdkScreen   *screen = gtk_widget_get_screen (widget);   GdkColormap *rgba   = gdk_screen_get_rgba_colormap (screen);    if (rgba)     gtk_widget_set_colormap (widget, rgba);
+endif|#
+directive|endif
 name|gtk_widget_set_app_paintable
 argument_list|(
 name|widget
