@@ -2297,9 +2297,21 @@ condition|)
 return|return
 name|TRUE
 return|;
-comment|/*  ignore events on overlays  */
+comment|/*  ignore events on overlays, but make sure key events go through    *  anyway because they are always originating from the toplevel    */
 if|if
 condition|(
+name|event
+operator|->
+name|type
+operator|!=
+name|GDK_KEY_PRESS
+operator|&&
+name|event
+operator|->
+name|type
+operator|!=
+name|GDK_KEY_RELEASE
+operator|&&
 operator|(
 operator|(
 name|GdkEventAny
@@ -2314,9 +2326,11 @@ name|canvas
 operator|->
 name|window
 condition|)
+block|{
 return|return
 name|FALSE
 return|;
+block|}
 name|display
 operator|=
 name|shell
