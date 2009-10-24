@@ -149,6 +149,17 @@ name|gimp_dock_separator_new
 parameter_list|(
 name|GtkAnchorType
 name|anchor
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dock_separator_set_dropped_cb
+parameter_list|(
+name|GimpDockSeparator
+modifier|*
+name|separator
 parameter_list|,
 name|GimpDockSeparatorDroppedFunc
 name|dropped_cb
