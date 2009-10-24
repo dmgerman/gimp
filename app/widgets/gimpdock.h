@@ -530,20 +530,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|void
-name|gimp_dock_class_show_separators
-parameter_list|(
-name|GimpDockClass
-modifier|*
-name|klass
-parameter_list|,
-name|gboolean
-name|show
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif

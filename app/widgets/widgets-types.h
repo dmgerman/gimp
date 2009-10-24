@@ -169,6 +169,15 @@ DECL|typedef|GimpDocked
 comment|/* dummy typedef */
 end_comment
 
+begin_typedef
+DECL|typedef|GimpPanedBox
+typedef|typedef
+name|struct
+name|_GimpPanedBox
+name|GimpPanedBox
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  GimpEditor widgets  */
 end_comment
