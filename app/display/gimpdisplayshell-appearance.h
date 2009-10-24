@@ -45,7 +45,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_menubar
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -71,7 +70,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_statusbar
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -97,7 +95,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_rulers
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -123,7 +120,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_scrollbars
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -149,7 +145,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_selection
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -175,7 +170,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_layer
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -201,7 +195,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_transform
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -227,7 +220,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_grid
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -253,7 +245,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_guides
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -279,7 +270,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_snap_to_grid
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -305,7 +295,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_show_sample_points
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -331,7 +320,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_snap_to_guides
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -357,7 +345,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_snap_to_canvas
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -383,7 +370,6 @@ begin_function_decl
 name|gboolean
 name|gimp_display_shell_get_snap_to_vectors
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -414,7 +400,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_get_padding
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
