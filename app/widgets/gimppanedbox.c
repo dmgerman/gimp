@@ -261,6 +261,16 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
+name|G_OBJECT_CLASS
+argument_list|(
+name|parent_class
+argument_list|)
+operator|->
+name|finalize
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
