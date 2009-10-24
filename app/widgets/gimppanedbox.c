@@ -518,6 +518,9 @@ name|GtkWidget
 modifier|*
 name|paned
 decl_stmt|;
+name|GtkOrientation
+name|orientation
+decl_stmt|;
 comment|/* Figure out what widget to detach */
 if|if
 condition|(
@@ -612,14 +615,34 @@ argument_list|,
 name|old_widget
 argument_list|)
 expr_stmt|;
+comment|/* GtkPaned is abstract :( */
+name|orientation
+operator|=
+name|gtk_orientable_get_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|paned_box
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|paned
 operator|=
+operator|(
+name|orientation
+operator|==
+name|GTK_ORIENTATION_VERTICAL
+condition|?
 name|gtk_vpaned_new
 argument_list|()
+else|:
+name|gtk_hpaned_new
+argument_list|()
+operator|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_VPANED
+name|GTK_IS_PANED
 argument_list|(
 name|parent
 argument_list|)
@@ -955,7 +978,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_IS_VPANED
+name|GTK_IS_PANED
 argument_list|(
 name|grandparent
 argument_list|)
