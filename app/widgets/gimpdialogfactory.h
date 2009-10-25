@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27588b750103
+DECL|enum|__anon2930afe10103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -262,6 +262,10 @@ name|_GimpDialogFactoryClass
 name|GimpDialogFactoryClass
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpDialogFactory:  *  * A factory with the main purpose of creating toplevel windows and  * position them according to the session information kept within the  * factory. Over time it has accumulated more functionality than this.  */
+end_comment
 
 begin_struct
 DECL|struct|_GimpDialogFactory
