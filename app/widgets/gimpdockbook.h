@@ -305,6 +305,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpDockable
+modifier|*
+name|gimp_dockbook_drag_source_to_dockable
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|drag_source
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
