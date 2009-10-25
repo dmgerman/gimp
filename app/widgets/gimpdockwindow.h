@@ -161,7 +161,25 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dock_window_set_dock
+name|gimp_dock_window_add_dock
+parameter_list|(
+name|GimpDockWindow
+modifier|*
+name|dock_window
+parameter_list|,
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|,
+name|gint
+name|index
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dock_window_remove_dock
 parameter_list|(
 name|GimpDockWindow
 modifier|*

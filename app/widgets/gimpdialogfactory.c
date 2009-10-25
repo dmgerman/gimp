@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1b86280103
+DECL|enum|__anon27a530060103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b86280203
+DECL|enum|__anon27a530060203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -2775,7 +2775,7 @@ name|dock
 condition|)
 block|{
 comment|/* Put the dock in the dock window */
-name|gimp_dock_window_set_dock
+name|gimp_dock_window_add_dock
 argument_list|(
 name|GIMP_DOCK_WINDOW
 argument_list|(
@@ -2786,6 +2786,9 @@ name|GIMP_DOCK
 argument_list|(
 name|dock
 argument_list|)
+argument_list|,
+operator|-
+literal|1
 argument_list|)
 expr_stmt|;
 block|}
