@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba92a010103
+DECL|enum|__anon2adb4ded0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -527,17 +527,11 @@ argument_list|(
 name|dock
 argument_list|)
 expr_stmt|;
-name|gtk_container_remove
-argument_list|(
-name|GTK_CONTAINER
+name|gimp_dock_window_remove_dock
 argument_list|(
 name|dock_window
-argument_list|)
 argument_list|,
-name|GTK_WIDGET
-argument_list|(
 name|dock
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_dock_columns_add_dock
