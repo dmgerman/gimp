@@ -620,7 +620,7 @@ end_function_decl
 begin_function_decl
 name|GList
 modifier|*
-name|gimp_get_image_window_iter
+name|gimp_get_image_windows
 parameter_list|(
 name|Gimp
 modifier|*

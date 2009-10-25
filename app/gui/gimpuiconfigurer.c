@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2adb4ded0103
+DECL|enum|__anon2bc064700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -632,6 +632,15 @@ argument_list|)
 decl_stmt|;
 name|GList
 modifier|*
+name|windows
+init|=
+name|gimp_get_image_windows
+argument_list|(
+name|gimp
+argument_list|)
+decl_stmt|;
+name|GList
+modifier|*
 name|iter
 init|=
 name|NULL
@@ -645,10 +654,7 @@ for|for
 control|(
 name|iter
 operator|=
-name|gimp_get_image_window_iter
-argument_list|(
-name|gimp
-argument_list|)
+name|windows
 init|;
 name|iter
 condition|;
@@ -731,6 +737,11 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|windows
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -760,6 +771,15 @@ argument_list|)
 decl_stmt|;
 name|GList
 modifier|*
+name|windows
+init|=
+name|gimp_get_image_windows
+argument_list|(
+name|gimp
+argument_list|)
+decl_stmt|;
+name|GList
+modifier|*
 name|iter
 init|=
 name|NULL
@@ -768,10 +788,7 @@ for|for
 control|(
 name|iter
 operator|=
-name|gimp_get_image_window_iter
-argument_list|(
-name|gimp
-argument_list|)
+name|windows
 init|;
 name|iter
 condition|;
@@ -803,6 +820,11 @@ name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
+name|g_list_free
+argument_list|(
+name|windows
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

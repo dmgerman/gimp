@@ -315,7 +315,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c492980103
+DECL|enum|__anon2ba550e50103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -4212,8 +4212,8 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_get_image_window_iter (Gimp * gimp)
-name|gimp_get_image_window_iter
+DECL|function|gimp_get_image_windows (Gimp * gimp)
+name|gimp_get_image_windows
 parameter_list|(
 name|Gimp
 modifier|*
@@ -4231,9 +4231,12 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|g_list_copy
+argument_list|(
 name|gimp
 operator|->
 name|image_windows
+argument_list|)
 return|;
 block|}
 end_function
