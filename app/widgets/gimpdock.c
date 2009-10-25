@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b63fd0103
+DECL|enum|__anon2bb7a5fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2b63fd0203
+DECL|enum|__anon2bb7a5fe0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -2129,7 +2129,7 @@ name|p
 operator|->
 name|dockbooks
 operator|=
-name|g_list_prepend
+name|g_list_insert
 argument_list|(
 name|dock
 operator|->
@@ -2138,6 +2138,8 @@ operator|->
 name|dockbooks
 argument_list|,
 name|dockbook
+argument_list|,
+name|index
 argument_list|)
 expr_stmt|;
 name|gimp_paned_box_add_widget
