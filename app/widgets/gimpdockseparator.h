@@ -171,8 +171,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkAnchorType
-name|gimp_dock_separator_get_anchor
+name|gint
+name|gimp_dock_separator_get_insert_pos
 parameter_list|(
 name|GimpDockSeparator
 modifier|*

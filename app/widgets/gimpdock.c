@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7a5fe0103
+DECL|enum|__anon28b3a4fe0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bb7a5fe0203
+DECL|enum|__anon28b3a4fe0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1141,8 +1141,10 @@ decl_stmt|;
 name|gint
 name|index
 init|=
-operator|-
-literal|1
+name|gimp_dock_separator_get_insert_pos
+argument_list|(
+name|separator
+argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -1190,34 +1192,6 @@ literal|"gimp-dock-drag-widget"
 argument_list|,
 name|NULL
 argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|gimp_dock_separator_get_anchor
-argument_list|(
-name|separator
-argument_list|)
-operator|==
-name|GTK_ANCHOR_NORTH
-condition|)
-name|index
-operator|=
-literal|0
-expr_stmt|;
-elseif|else
-if|if
-condition|(
-name|gimp_dock_separator_get_anchor
-argument_list|(
-name|separator
-argument_list|)
-operator|==
-name|GTK_ANCHOR_SOUTH
-condition|)
-name|index
-operator|=
-operator|-
-literal|1
 expr_stmt|;
 comment|/*  if dropping to the same dock, take care that we don't try    *  to reorder the *only* dockable in the dock    */
 if|if

@@ -912,10 +912,14 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_dock_separator_get_index_pos:  * @separator:  *  * Returns: The insert position the separator represents.  **/
+end_comment
+
 begin_function
-name|GtkAnchorType
-DECL|function|gimp_dock_separator_get_anchor (GimpDockSeparator * separator)
-name|gimp_dock_separator_get_anchor
+name|gint
+DECL|function|gimp_dock_separator_get_insert_pos (GimpDockSeparator * separator)
+name|gimp_dock_separator_get_insert_pos
 parameter_list|(
 name|GimpDockSeparator
 modifier|*
