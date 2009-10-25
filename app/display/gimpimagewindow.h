@@ -182,6 +182,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpDisplayShell
+modifier|*
+name|gimp_image_window_get_shell
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|,
+name|gint
+name|index
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_image_window_remove_shell
 parameter_list|(
