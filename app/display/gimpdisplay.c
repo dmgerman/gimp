@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289bac8b0103
+DECL|enum|__anon2761bbf60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1707,6 +1707,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_IMAGE_WINDOW
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|gimp
 argument_list|,
 literal|"menu-factory"
 argument_list|,
