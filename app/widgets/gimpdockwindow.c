@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b522ea20103
+DECL|enum|__anon29b790190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2417,7 +2417,45 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dock_window_get_dock:  * @dock_window:  *  * Get the #GimpDock within the #GimpDockWindow.  *  * Returns:   **/
+comment|/**  * gimp_dock_window_get_docks:  * @dock_window:  *  * Get a list of docks in the dock window.  *  * Returns:  **/
+end_comment
+
+begin_function
+name|GList
+modifier|*
+DECL|function|gimp_dock_window_get_docks (GimpDockWindow * dock_window)
+name|gimp_dock_window_get_docks
+parameter_list|(
+name|GimpDockWindow
+modifier|*
+name|dock_window
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DOCK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_dock_columns_get_docks
+argument_list|(
+name|dock_window
+operator|->
+name|p
+operator|->
+name|dock_columns
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_dock_window_get_dock:  * @dock_window:  *  * Get the #GimpDock within the #GimpDockWindow.  *  * Returns:  **/
 end_comment
 
 begin_function
