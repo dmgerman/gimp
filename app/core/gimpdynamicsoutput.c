@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon287bada50103
+DECL|enum|__anon2c1c74d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1041,8 +1041,9 @@ decl_stmt|;
 name|gdouble
 name|result
 init|=
-literal|1.0
+literal|0.0
 decl_stmt|;
+comment|/* angles are additive, so we retun zero for no change. */
 name|gint
 name|factors
 init|=
@@ -1098,8 +1099,6 @@ operator|+=
 name|coords
 operator|.
 name|direction
-operator|+
-literal|0.5
 expr_stmt|;
 name|factors
 operator|++
@@ -1292,8 +1291,6 @@ endif|#
 directive|endif
 return|return
 name|result
-operator|+
-literal|0.5
 return|;
 block|}
 end_function
