@@ -205,18 +205,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpDockWindow
-modifier|*
-name|gimp_dock_window_from_dock
-parameter_list|(
-name|GimpDock
-modifier|*
-name|dock
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GList
 modifier|*
 name|gimp_dock_window_get_docks
@@ -236,6 +224,18 @@ parameter_list|(
 name|GimpDockWindow
 modifier|*
 name|dock_window
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpDockWindow
+modifier|*
+name|gimp_dock_window_from_dock
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
 parameter_list|)
 function_decl|;
 end_function_decl
