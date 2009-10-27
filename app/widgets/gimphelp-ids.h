@@ -1662,6 +1662,14 @@ value|"gimp-tool-airbrush"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_ALIGN
+define|#
+directive|define
+name|GIMP_HELP_TOOL_ALIGN
+value|"gimp-tool-align"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_BLEND
 define|#
 directive|define
