@@ -343,6 +343,12 @@ name|handles_transforming_brush
 operator|=
 name|TRUE
 expr_stmt|;
+name|brush_core_class
+operator|->
+name|handles_dynamic_transforming_brush
+operator|=
+name|FALSE
+expr_stmt|;
 block|}
 end_function
 

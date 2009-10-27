@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a15c0a0103
+DECL|enum|__anon2c1cf0ea0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -706,6 +706,12 @@ expr_stmt|;
 name|klass
 operator|->
 name|handles_transforming_brush
+operator|=
+name|TRUE
+expr_stmt|;
+name|klass
+operator|->
+name|handles_dynamic_transforming_brush
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1778,6 +1784,16 @@ name|paint_options
 operator|->
 name|brush_aspect_ratio
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_BRUSH_CORE_GET_CLASS
+argument_list|(
+name|core
+argument_list|)
+operator|->
+name|handles_dynamic_transforming_brush
+condition|)
+block|{
 name|fade_point
 operator|=
 name|gimp_paint_options_get_fade
@@ -1842,6 +1858,7 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|core
 operator|->
@@ -3456,6 +3473,16 @@ name|paint_options
 operator|->
 name|brush_aspect_ratio
 expr_stmt|;
+if|if
+condition|(
+name|GIMP_BRUSH_CORE_GET_CLASS
+argument_list|(
+name|core
+argument_list|)
+operator|->
+name|handles_dynamic_transforming_brush
+condition|)
+block|{
 name|fade_point
 operator|=
 name|gimp_paint_options_get_fade
@@ -3520,6 +3547,7 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|core
 operator|->

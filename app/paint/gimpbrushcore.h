@@ -320,6 +320,11 @@ DECL|member|handles_transforming_brush
 name|gboolean
 name|handles_transforming_brush
 decl_stmt|;
+comment|/*  Set for tools that don't mind if the brush scales mid stroke  */
+DECL|member|handles_dynamic_transforming_brush
+name|gboolean
+name|handles_dynamic_transforming_brush
+decl_stmt|;
 DECL|member|set_brush
 name|void
 function_decl|(
