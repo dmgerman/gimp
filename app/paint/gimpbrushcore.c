@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3028b60103
+DECL|enum|__anon27a15c0a0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1803,7 +1803,6 @@ name|dynamics
 operator|->
 name|size_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point
@@ -1821,7 +1820,6 @@ name|dynamics
 operator|->
 name|angle_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point
@@ -1839,7 +1837,6 @@ name|dynamics
 operator|->
 name|aspect_ratio_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point
@@ -3100,6 +3097,7 @@ name|dynamics
 operator|->
 name|jitter_output
 argument_list|,
+operator|&
 name|current_coords
 argument_list|,
 name|fade_point
@@ -3483,7 +3481,6 @@ name|dynamics
 operator|->
 name|size_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point
@@ -3501,7 +3498,6 @@ name|dynamics
 operator|->
 name|angle_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point
@@ -3519,7 +3515,6 @@ name|dynamics
 operator|->
 name|aspect_ratio_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point

@@ -101,7 +101,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1c74d30103
+DECL|enum|__anon2b0381ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -840,14 +840,16 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_output_get_linear_value (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
+DECL|function|gimp_dynamics_output_get_linear_value (GimpDynamicsOutput * output,const GimpCoords * coords,gdouble fade_point)
 name|gimp_dynamics_output_get_linear_value
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
+specifier|const
 name|GimpCoords
+modifier|*
 name|coords
 parameter_list|,
 name|gdouble
@@ -879,7 +881,7 @@ block|{
 name|total
 operator|+=
 name|coords
-operator|.
+operator|->
 name|pressure
 expr_stmt|;
 name|factors
@@ -899,7 +901,7 @@ operator|(
 literal|1.0
 operator|-
 name|coords
-operator|.
+operator|->
 name|velocity
 operator|)
 expr_stmt|;
@@ -917,7 +919,7 @@ block|{
 name|total
 operator|+=
 name|coords
-operator|.
+operator|->
 name|direction
 operator|+
 literal|0.5
@@ -942,14 +944,14 @@ argument_list|(
 name|SQR
 argument_list|(
 name|coords
-operator|.
+operator|->
 name|xtilt
 argument_list|)
 operator|+
 name|SQR
 argument_list|(
 name|coords
-operator|.
+operator|->
 name|ytilt
 argument_list|)
 argument_list|)
@@ -1019,14 +1021,16 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_output_get_angular_value (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
+DECL|function|gimp_dynamics_output_get_angular_value (GimpDynamicsOutput * output,const GimpCoords * coords,gdouble fade_point)
 name|gimp_dynamics_output_get_angular_value
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
+specifier|const
 name|GimpCoords
+modifier|*
 name|coords
 parameter_list|,
 name|gdouble
@@ -1059,7 +1063,7 @@ block|{
 name|total
 operator|+=
 name|coords
-operator|.
+operator|->
 name|pressure
 expr_stmt|;
 name|factors
@@ -1079,7 +1083,7 @@ operator|(
 literal|1.0
 operator|-
 name|coords
-operator|.
+operator|->
 name|velocity
 operator|)
 expr_stmt|;
@@ -1097,7 +1101,7 @@ block|{
 name|total
 operator|+=
 name|coords
-operator|.
+operator|->
 name|direction
 expr_stmt|;
 name|factors
@@ -1116,14 +1120,14 @@ name|gdouble
 name|tilt_x
 init|=
 name|coords
-operator|.
+operator|->
 name|xtilt
 decl_stmt|;
 name|gdouble
 name|tilt_y
 init|=
 name|coords
-operator|.
+operator|->
 name|ytilt
 decl_stmt|;
 name|gdouble
@@ -1297,14 +1301,16 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_output_get_aspect_value (GimpDynamicsOutput * output,GimpCoords coords,gdouble fade_point)
+DECL|function|gimp_dynamics_output_get_aspect_value (GimpDynamicsOutput * output,const GimpCoords * coords,gdouble fade_point)
 name|gimp_dynamics_output_get_aspect_value
 parameter_list|(
 name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
+specifier|const
 name|GimpCoords
+modifier|*
 name|coords
 parameter_list|,
 name|gdouble
@@ -1338,7 +1344,7 @@ operator|+=
 literal|2
 operator|*
 name|coords
-operator|.
+operator|->
 name|pressure
 expr_stmt|;
 name|factors
@@ -1357,7 +1363,7 @@ operator|+=
 literal|2
 operator|*
 name|coords
-operator|.
+operator|->
 name|velocity
 expr_stmt|;
 name|factors
@@ -1383,7 +1389,7 @@ argument_list|(
 literal|1
 operator|+
 name|coords
-operator|.
+operator|->
 name|direction
 argument_list|,
 literal|0.5
@@ -1395,7 +1401,7 @@ if|if
 condition|(
 operator|(
 name|coords
-operator|.
+operator|->
 name|direction
 operator|>
 literal|0.0
@@ -1403,7 +1409,7 @@ operator|)
 operator|&&
 operator|(
 name|coords
-operator|.
+operator|->
 name|direction
 operator|<
 literal|0.5
@@ -1440,7 +1446,7 @@ operator|-
 name|fabs
 argument_list|(
 name|coords
-operator|.
+operator|->
 name|xtilt
 argument_list|)
 operator|)
@@ -1451,7 +1457,7 @@ operator|-
 name|fabs
 argument_list|(
 name|coords
-operator|.
+operator|->
 name|ytilt
 argument_list|)
 operator|)

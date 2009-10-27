@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b50125e0103
+DECL|enum|__anon279c7e120103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1376,7 +1376,6 @@ name|dynamics
 operator|->
 name|opacity_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point

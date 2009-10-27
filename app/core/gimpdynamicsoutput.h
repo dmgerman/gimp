@@ -216,7 +216,9 @@ name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
+specifier|const
 name|GimpCoords
+modifier|*
 name|coords
 parameter_list|,
 name|gdouble
@@ -233,7 +235,9 @@ name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
+specifier|const
 name|GimpCoords
+modifier|*
 name|coords
 parameter_list|,
 name|gdouble
@@ -250,7 +254,9 @@ name|GimpDynamicsOutput
 modifier|*
 name|output
 parameter_list|,
+specifier|const
 name|GimpCoords
+modifier|*
 name|coords
 parameter_list|,
 name|gdouble

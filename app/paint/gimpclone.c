@@ -939,7 +939,6 @@ name|dynamics
 operator|->
 name|hardness_output
 argument_list|,
-operator|*
 name|coords
 argument_list|,
 name|fade_point
