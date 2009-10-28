@@ -970,7 +970,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0550f0108
+DECL|struct|__anon2bbff4910108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1523,10 +1523,9 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_data_factory_data_reload (GimpDataFactory * factory)
-name|gimp_data_factory_data_reload
+DECL|function|gimp_data_factory_data_refresh (GimpDataFactory * factory)
+name|gimp_data_factory_data_refresh
 parameter_list|(
 name|GimpDataFactory
 modifier|*
@@ -1554,6 +1553,12 @@ operator|->
 name|container
 argument_list|)
 expr_stmt|;
+comment|/*  First, save all dirty data objects  */
+name|gimp_data_factory_data_save
+argument_list|(
+name|factory
+argument_list|)
+expr_stmt|;
 name|cache
 operator|=
 name|g_hash_table_new
@@ -1572,7 +1577,7 @@ argument_list|,
 name|cache
 argument_list|)
 expr_stmt|;
-comment|/* Now the cache contains a filename => list-of-objects mapping of    * the old objects. So we should now traverse the directory and for    * each file load it only if it's mtime is newer.    *    * Once a file was added, it is removed from the cache, so the only    * objects remaining there will be those that are not present on the    * disk (that have to be destroyed)    */
+comment|/*  Now the cache contains a filename => list-of-objects mapping of    *  the old objects. So we should now traverse the directory and for    *  each file load it only if its mtime is newer.    *    *  Once a file was added, it is removed from the cache, so the only    *  objects remaining there will be those that are not present on    *  the disk (that have to be destroyed)    */
 name|gimp_data_factory_data_load
 argument_list|(
 name|factory
@@ -1580,7 +1585,7 @@ argument_list|,
 name|cache
 argument_list|)
 expr_stmt|;
-comment|/* Now all the data is loaded. Free what remains in the cache. */
+comment|/*  Now all the data is loaded. Free what remains in the cache  */
 name|g_hash_table_foreach_remove
 argument_list|(
 name|cache
@@ -1593,55 +1598,6 @@ expr_stmt|;
 name|g_hash_table_destroy
 argument_list|(
 name|cache
-argument_list|)
-expr_stmt|;
-name|gimp_container_thaw
-argument_list|(
-name|factory
-operator|->
-name|priv
-operator|->
-name|container
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_data_factory_data_refresh (GimpDataFactory * factory)
-name|gimp_data_factory_data_refresh
-parameter_list|(
-name|GimpDataFactory
-modifier|*
-name|factory
-parameter_list|)
-block|{
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_DATA_FACTORY
-argument_list|(
-name|factory
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_container_freeze
-argument_list|(
-name|factory
-operator|->
-name|priv
-operator|->
-name|container
-argument_list|)
-expr_stmt|;
-name|gimp_data_factory_data_save
-argument_list|(
-name|factory
-argument_list|)
-expr_stmt|;
-name|gimp_data_factory_data_reload
-argument_list|(
-name|factory
 argument_list|)
 expr_stmt|;
 name|gimp_container_thaw
