@@ -1013,6 +1013,13 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
+if|if
+condition|(
+name|data
+operator|->
+name|filename
+condition|)
+block|{
 name|GHashTable
 modifier|*
 name|cache
@@ -1076,6 +1083,7 @@ argument_list|,
 name|list
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1228,7 +1236,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d3adeb0108
+DECL|struct|__anon2ac57f130108
 block|{
 DECL|member|factory
 name|GimpDataFactory
