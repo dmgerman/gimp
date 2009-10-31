@@ -406,6 +406,13 @@ name|data
 init|=
 name|NULL
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|filename
+init|=
+name|NULL
+decl_stmt|;
 if|if
 condition|(
 name|context
@@ -422,6 +429,7 @@ if|if
 condition|(
 name|gradient
 condition|)
+block|{
 name|data
 operator|=
 name|GIMP_DATA
@@ -429,6 +437,14 @@ argument_list|(
 name|gradient
 argument_list|)
 expr_stmt|;
+name|filename
+operator|=
+name|gimp_data_get_filename
+argument_list|(
+name|data
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
@@ -468,8 +484,6 @@ literal|"gradients-copy-location"
 argument_list|,
 name|gradient
 operator|&&
-name|data
-operator|->
 name|filename
 argument_list|)
 expr_stmt|;

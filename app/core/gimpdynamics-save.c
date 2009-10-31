@@ -86,9 +86,10 @@ argument_list|(
 name|data
 argument_list|)
 argument_list|,
+name|gimp_data_get_filename
+argument_list|(
 name|data
-operator|->
-name|filename
+argument_list|)
 argument_list|,
 literal|"GIMP dynamics file"
 argument_list|,
