@@ -158,12 +158,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdockseparator.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimperrordialog.h"
 end_include
 
@@ -2039,7 +2033,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b8aadc50108
+DECL|struct|__anon2c874d990108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
