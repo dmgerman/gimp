@@ -1732,9 +1732,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_data_is_writable
+argument_list|(
 name|data
-operator|->
-name|writable
+argument_list|)
 operator|&&
 name|strlen
 argument_list|(

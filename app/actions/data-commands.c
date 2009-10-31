@@ -799,9 +799,10 @@ if|if
 condition|(
 name|data
 operator|&&
+name|gimp_data_is_deletable
+argument_list|(
 name|data
-operator|->
-name|deletable
+argument_list|)
 operator|&&
 name|gimp_data_factory_view_have
 argument_list|(

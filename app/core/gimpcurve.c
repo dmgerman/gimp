@@ -75,7 +75,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c94adea0103
+DECL|enum|__anon27cb96370103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2183,11 +2183,10 @@ argument_list|(
 literal|"Standard"
 argument_list|)
 expr_stmt|;
+name|gimp_data_clean
+argument_list|(
 name|standard_curve
-operator|->
-name|dirty
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
@@ -3893,14 +3892,13 @@ name|p4
 decl_stmt|;
 if|if
 condition|(
+name|gimp_data_is_frozen
+argument_list|(
 name|GIMP_DATA
 argument_list|(
 name|curve
 argument_list|)
-operator|->
-name|freeze_count
-operator|>
-literal|0
+argument_list|)
 condition|)
 return|return;
 name|points

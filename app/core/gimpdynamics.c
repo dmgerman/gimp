@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3f054e0103
+DECL|enum|__anon29377d4d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1223,11 +1223,10 @@ argument_list|(
 literal|"Standard dynamics"
 argument_list|)
 expr_stmt|;
+name|gimp_data_clean
+argument_list|(
 name|standard_dynamics
-operator|->
-name|dirty
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(

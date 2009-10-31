@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c22e7e60103
+DECL|enum|__anon2a29fadc0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c22e7e60203
+DECL|enum|__anon2a29fadc0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1777,11 +1777,10 @@ argument_list|(
 literal|"Standard"
 argument_list|)
 expr_stmt|;
+name|gimp_data_clean
+argument_list|(
 name|standard_brush
-operator|->
-name|dirty
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
@@ -1790,7 +1789,6 @@ argument_list|,
 literal|"gimp-brush-standard"
 argument_list|)
 expr_stmt|;
-comment|/*  set ref_count to 2 --> never swap the standard brush  */
 name|g_object_ref
 argument_list|(
 name|standard_brush

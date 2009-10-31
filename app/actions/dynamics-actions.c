@@ -458,9 +458,10 @@ literal|"dynamics-delete"
 argument_list|,
 name|dynamics
 operator|&&
+name|gimp_data_is_deletable
+argument_list|(
 name|data
-operator|->
-name|deletable
+argument_list|)
 argument_list|)
 expr_stmt|;
 undef|#

@@ -1490,11 +1490,10 @@ argument_list|(
 literal|"Standard"
 argument_list|)
 expr_stmt|;
+name|gimp_data_clean
+argument_list|(
 name|standard_gradient
-operator|->
-name|dirty
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(

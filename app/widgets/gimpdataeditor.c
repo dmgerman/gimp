@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon273a1c2c0103
+DECL|enum|__anon297965050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1914,11 +1914,12 @@ name|editor
 operator|->
 name|data
 operator|&&
+name|gimp_data_is_writable
+argument_list|(
 name|editor
 operator|->
 name|data
-operator|->
-name|writable
+argument_list|)
 operator|)
 expr_stmt|;
 if|if
@@ -2551,13 +2552,15 @@ if|if
 condition|(
 name|data
 operator|&&
+name|gimp_data_is_dirty
+argument_list|(
 name|data
-operator|->
-name|dirty
+argument_list|)
 operator|&&
+name|gimp_data_is_writable
+argument_list|(
 name|data
-operator|->
-name|writable
+argument_list|)
 condition|)
 block|{
 name|GError

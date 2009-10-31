@@ -1019,11 +1019,10 @@ argument_list|(
 literal|"Standard"
 argument_list|)
 expr_stmt|;
+name|gimp_data_clean
+argument_list|(
 name|standard_pattern
-operator|->
-name|dirty
-operator|=
-name|FALSE
+argument_list|)
 expr_stmt|;
 name|gimp_data_make_internal
 argument_list|(
@@ -1032,7 +1031,6 @@ argument_list|,
 literal|"gimp-pattern-standard"
 argument_list|)
 expr_stmt|;
-comment|/*  set ref_count to 2 --> never swap the standard pattern  */
 name|g_object_ref
 argument_list|(
 name|standard_pattern
