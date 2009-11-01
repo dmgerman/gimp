@@ -856,6 +856,9 @@ name|G_PI
 expr_stmt|;
 name|ix
 operator|=
+operator|(
+name|gint
+operator|)
 name|RINT
 argument_list|(
 name|angle
@@ -873,6 +876,13 @@ index|[
 name|i
 index|]
 argument_list|)
+operator|%
+name|pipe
+operator|->
+name|rank
+index|[
+name|i
+index|]
 expr_stmt|;
 break|break;
 case|case
