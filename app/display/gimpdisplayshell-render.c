@@ -198,7 +198,6 @@ struct|struct
 name|_RenderInfo
 block|{
 DECL|member|shell
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -330,7 +329,6 @@ name|RenderInfo
 modifier|*
 name|info
 parameter_list|,
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -697,7 +695,6 @@ specifier|static
 name|void
 name|gimp_display_shell_render_highlight
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -727,7 +724,6 @@ specifier|static
 name|void
 name|gimp_display_shell_render_mask
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -765,10 +761,9 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_render (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h,const GdkRectangle * highlight)
+DECL|function|gimp_display_shell_render (GimpDisplayShell * shell,gint x,gint y,gint w,gint h,const GdkRectangle * highlight)
 name|gimp_display_shell_render
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1244,10 +1239,9 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_render_highlight (const GimpDisplayShell * shell,gint x,gint y,gint w,gint h,const GdkRectangle * highlight)
+DECL|function|gimp_display_shell_render_highlight (GimpDisplayShell * shell,gint x,gint y,gint w,gint h,const GdkRectangle * highlight)
 name|gimp_display_shell_render_highlight
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -1551,10 +1545,9 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_render_mask (const GimpDisplayShell * shell,RenderInfo * info)
+DECL|function|gimp_display_shell_render_mask (GimpDisplayShell * shell,RenderInfo * info)
 name|gimp_display_shell_render_mask
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -2605,14 +2598,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_render_info_scale (RenderInfo * info,const GimpDisplayShell * shell,TileManager * tiles,gint level,gboolean is_premult)
+DECL|function|gimp_display_shell_render_info_scale (RenderInfo * info,GimpDisplayShell * shell,TileManager * tiles,gint level,gboolean is_premult)
 name|gimp_display_shell_render_info_scale
 parameter_list|(
 name|RenderInfo
 modifier|*
 name|info
 parameter_list|,
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell

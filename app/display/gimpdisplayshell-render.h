@@ -58,7 +58,6 @@ begin_function_decl
 name|void
 name|gimp_display_shell_render
 parameter_list|(
-specifier|const
 name|GimpDisplayShell
 modifier|*
 name|shell
