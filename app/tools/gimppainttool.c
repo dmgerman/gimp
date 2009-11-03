@@ -155,14 +155,6 @@ name|HANDLE_SIZE
 value|15
 end_define
 
-begin_define
-DECL|macro|STATUSBAR_SIZE
-define|#
-directive|define
-name|STATUSBAR_SIZE
-value|200
-end_define
-
 begin_function_decl
 specifier|static
 name|GObject
