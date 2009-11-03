@@ -2847,11 +2847,6 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  stop the signal because otherwise gtk+ exposes the whole          *  canvas to get the non-existant focus indicator drawn          */
-name|return_val
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 break|break;
 case|case
