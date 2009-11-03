@@ -118,9 +118,10 @@ name|gtk_selection_data_set
 argument_list|(
 name|selection_data
 argument_list|,
+name|gtk_selection_data_get_target
+argument_list|(
 name|selection_data
-operator|->
-name|target
+argument_list|)
 argument_list|,
 literal|8
 argument_list|,
@@ -999,9 +1000,10 @@ name|context
 operator|=
 name|gdk_drag_begin
 argument_list|(
+name|gtk_widget_get_window
+argument_list|(
 name|source
-operator|->
-name|window
+argument_list|)
 argument_list|,
 name|targetlist
 argument_list|)
