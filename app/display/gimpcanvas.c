@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9d8e5a0103
+DECL|enum|__anon2c0a4e9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1079,6 +1079,7 @@ modifier|*
 name|event
 parameter_list|)
 block|{
+comment|/*  don't allow the default impl to invalidate the whole widget,    *  we don't draw a focus indicator anyway.    */
 return|return
 name|FALSE
 return|;
@@ -1100,6 +1101,7 @@ modifier|*
 name|event
 parameter_list|)
 block|{
+comment|/*  see focus-in-event    */
 return|return
 name|FALSE
 return|;
