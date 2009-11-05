@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc342e20103
+DECL|enum|__anon2bd03ae90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +129,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc342e20208
+DECL|struct|__anon2bd03ae90208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -159,7 +159,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc342e20308
+DECL|struct|__anon2bd03ae90308
 block|{
 DECL|member|records
 name|GArray
@@ -1144,17 +1144,27 @@ name|g_printerr
 argument_list|(
 literal|"remapping identifier: %s ==> %s\n"
 argument_list|,
+name|rec
+operator|->
+name|identifier
+condition|?
 name|g_quark_to_string
 argument_list|(
 name|rec
 operator|->
 name|identifier
 argument_list|)
+else|:
+literal|"(NULL)"
 argument_list|,
+name|identifier_quark
+condition|?
 name|g_quark_to_string
 argument_list|(
 name|identifier_quark
 argument_list|)
+else|:
+literal|"(NULL)"
 argument_list|)
 expr_stmt|;
 name|rec
