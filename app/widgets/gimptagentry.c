@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -114,7 +120,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ecf7500103
+DECL|enum|__anon2bdfdbb00103
 block|{
 DECL|enumerator|TAG_SEARCH_NONE
 name|TAG_SEARCH_NONE
@@ -132,7 +138,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ecf7500203
+DECL|enum|__anon2bdfdbb00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4851,14 +4857,16 @@ decl_stmt|;
 comment|/* eeeeeek */
 if|if
 condition|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-operator|==
 name|event
 operator|->
 name|window
+operator|!=
+name|GTK_ENTRY
+argument_list|(
+name|widget
+argument_list|)
+operator|->
+name|text_area
 condition|)
 return|return
 name|FALSE
