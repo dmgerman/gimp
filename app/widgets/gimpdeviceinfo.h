@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|<stdio.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -37,7 +31,7 @@ DECL|macro|GIMP_DEVICE_INFO_CONTEXT_MASK
 define|#
 directive|define
 name|GIMP_DEVICE_INFO_CONTEXT_MASK
-value|(GIMP_CONTEXT_TOOL_MASK       | \                                        GIMP_CONTEXT_PAINT_INFO_MASK | \                                        GIMP_CONTEXT_FOREGROUND_MASK | \                                        GIMP_CONTEXT_BACKGROUND_MASK | \                                        GIMP_CONTEXT_BRUSH_MASK      | \                                        GIMP_CONTEXT_PATTERN_MASK    | \                                        GIMP_CONTEXT_GRADIENT_MASK)
+value|(GIMP_CONTEXT_TOOL_MASK       | \                                        GIMP_CONTEXT_PAINT_INFO_MASK | \                                        GIMP_CONTEXT_FOREGROUND_MASK | \                                        GIMP_CONTEXT_BACKGROUND_MASK | \                                        GIMP_CONTEXT_BRUSH_MASK      | \                                        GIMP_CONTEXT_DYNAMICS_MASK   | \                                        GIMP_CONTEXT_PATTERN_MASK    | \                                        GIMP_CONTEXT_GRADIENT_MASK)
 end_define
 
 begin_define
