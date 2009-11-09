@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_comment
-comment|/*  * version 0.60  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  *  *  * 0.52: 10 Jan 1999<austin@greenend.org.uk>  *    gtk_label_set() -> gtk_label_set_text()  * 0.60: 18 Jun 2001<austin@gimp.org>  *    fixed long-standing bug where newsprint() function in GREYA images  *    treated them as RGB (bpp rather than colour_bpp) to select  *    colourspace to use.  Thanks to warner-gnome.bugzilla@lothar.com for  *    spotting this and providing the patch.  Bug #52981.  */
+comment|/*  * version 0.60  *  * This plug-in puts an image through a screen at a particular angle  * and lines per inch, to arrive at a newspaper-style effect.  *  * Austin Donnelly<austin@greenend.org.uk>  * http://www.cl.cam.ac.uk/~and1000/newsprint/  *  * Richard Mortier<rmm1002@cam.ac.uk> did the spot_round() function  * with correct tonal balance.  *  * Tim Harris<tim.harris@acm.org> provided valuable feedback on  * pre-press issues.  */
 end_comment
 
 begin_include
@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970108
+DECL|struct|__anon2b40a3240108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970208
+DECL|struct|__anon2b40a3240208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970308
+DECL|struct|__anon2b40a3240308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970408
+DECL|struct|__anon2b40a3240408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970508
+DECL|struct|__anon2b40a3240508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970608
+DECL|struct|__anon2b40a3240608
 block|{
 DECL|member|name
 specifier|const
@@ -7068,7 +7068,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29faa5970708
+DECL|struct|__anon2b40a3240708
 block|{
 DECL|member|index
 name|gint
