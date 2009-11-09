@@ -139,7 +139,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c54bc610108
+DECL|struct|__anon2923f2900108
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -204,22 +204,20 @@ begin_comment
 comment|/* Now, it goes like this:     To update entscale (width) when div_entry changes:      entscale_int_new has been slightly modified to return a pointer to       its entry widget.      This is fed to divbox_new as a "friend", which is in turn fed to       the div_entry_callback routine.  And that's not really so bad,       except...      Oh, well, maybe it isn't so bad.  We can play with our friend's       userdata to block his callbacks so we don't get feedback loops,       that works nicely enough.     To update div_entry when entscale (width) changes:      The entry/scale setup graciously provides for callbacks.  However,       this means we need to know about div_entry when we set up       entry/scale, which we don't...  Chicken and egg problem.  So we       set up a pointer to where div_entry will be, and pass this       through to divbox_new when it happens.      We need to block signal handlers for div_entry this time.  We       happen to know that div_entry's callback data is our old       "friend", so we pull our friend out from where we stuck him in       the entry's userdata...  Hopefully that does it.  */
 end_comment
 
-begin_comment
-comment|/* Questions:       Gosh that was dumb.  Is there a way to        signal_handler_block_by_name?      That would make life so much nicer.           You could pass the handler_id around and use          gtk_signal_handler_block ().   (Sven) */
-end_comment
-
-begin_function_decl
+begin_expr_stmt
+operator|*
+operator|/
 specifier|static
 name|void
 name|maze_message
-parameter_list|(
+argument_list|(
 specifier|const
 name|gchar
-modifier|*
+operator|*
 name|message
-parameter_list|)
-function_decl|;
-end_function_decl
+argument_list|)
+expr_stmt|;
+end_expr_stmt
 
 begin_function_decl
 specifier|static
