@@ -29,7 +29,7 @@ file|"imap_object.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2919f3010108
+DECL|struct|__anon2ae9764b0108
 typedef|typedef
 struct|struct
 block|{
@@ -57,26 +57,6 @@ DECL|member|selected_child
 name|GtkWidget
 modifier|*
 name|selected_child
-decl_stmt|;
-DECL|member|arrow_up
-name|GtkWidget
-modifier|*
-name|arrow_up
-decl_stmt|;
-DECL|member|arrow_down
-name|GtkWidget
-modifier|*
-name|arrow_down
-decl_stmt|;
-DECL|member|remove
-name|GtkWidget
-modifier|*
-name|remove
-decl_stmt|;
-DECL|member|edit
-name|GtkWidget
-modifier|*
-name|edit
 decl_stmt|;
 DECL|member|object_list
 name|ObjectList_t
