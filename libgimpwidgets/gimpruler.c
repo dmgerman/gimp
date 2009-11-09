@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27705b3e0103
+DECL|enum|__anon275db6110103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -102,7 +102,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27705b3e0208
+DECL|struct|__anon275db6110208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -165,7 +165,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon27705b3e0308
+DECL|struct|__anon275db6110308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -2801,7 +2801,7 @@ operator|-
 name|lower
 operator|)
 expr_stmt|;
-comment|/* determine the scale    *   use the maximum extents of the ruler to determine the largest    *   possible number to be displayed.  Calculate the height in pixels    *   of this displayed text. Use this height to find a scale which    *   leaves sufficient room for drawing the ruler.    *    *   We calculate the text size as for the vruler instead of using    *   text_size = gdk_string_width(font, unit_str), so that the result    *   for the scale looks consistent with an accompanying vruler    */
+comment|/* determine the scale    *   use the maximum extents of the ruler to determine the largest    *   possible number to be displayed.  Calculate the height in pixels    *   of this displayed text. Use this height to find a scale which    *   leaves sufficient room for drawing the ruler.    *    *   We calculate the text size as for the vruler instead of    *   actually measuring the text width, so that the result for the    *   scale looks consistent with an accompanying vruler.    */
 name|scale
 operator|=
 name|ceil
