@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298ed9a20108
+DECL|struct|__anon2940cd5c0108
 block|{
 DECL|member|name
 name|gchar
@@ -540,16 +540,6 @@ name|data
 operator|->
 name|file
 condition|)
-if|#
-directive|if
-name|GLIB_CHECK_VERSION
-argument_list|(
-literal|2
-operator|,
-literal|21
-operator|,
-literal|3
-argument_list|)
 name|g_mapped_file_unref
 argument_list|(
 name|data
@@ -557,17 +547,6 @@ operator|->
 name|file
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|g_mapped_file_free
-argument_list|(
-name|data
-operator|->
-name|file
-argument_list|)
-expr_stmt|;
-endif|#
-directive|endif
 name|g_free
 argument_list|(
 name|data
@@ -1077,7 +1056,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon298ed9a20203
+DECL|enum|__anon2940cd5c0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB
