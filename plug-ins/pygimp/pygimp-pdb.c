@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon294fec790108
+DECL|struct|__anon2b5e54460108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon294fec790208
+DECL|struct|__anon2b5e54460208
 typedef|typedef
 struct|struct
 block|{
@@ -1475,7 +1475,7 @@ name|GIMP_PDB_SELECTION
 case|:
 name|value
 operator|=
-name|pygimp_layer_new
+name|pygimp_channel_new
 argument_list|(
 name|params
 index|[
@@ -3129,10 +3129,31 @@ break|break;
 case|case
 name|GIMP_PDB_SELECTION
 case|:
+if|if
+condition|(
+name|item
+operator|==
+name|Py_None
+condition|)
+block|{
+name|ret
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_channel
+operator|=
+operator|-
+literal|1
+expr_stmt|;
+break|break;
+block|}
 name|check
 argument_list|(
 operator|!
-name|pygimp_layer_check
+name|pygimp_channel_check
 argument_list|(
 name|item
 argument_list|)
@@ -3149,7 +3170,7 @@ name|d_selection
 operator|=
 operator|(
 operator|(
-name|PyGimpLayer
+name|PyGimpChannel
 operator|*
 operator|)
 name|item
