@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c48a7ca0103
+DECL|enum|__anon2b5341b70103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -909,14 +909,11 @@ name|dock_columns
 parameter_list|)
 block|{
 return|return
-name|g_list_copy
-argument_list|(
 name|dock_columns
 operator|->
 name|p
 operator|->
 name|docks
-argument_list|)
 return|;
 block|}
 end_function

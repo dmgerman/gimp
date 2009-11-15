@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af5eb660103
+DECL|enum|__anon29b782bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -636,9 +636,12 @@ argument_list|)
 expr_stmt|;
 name|docks
 operator|=
+name|g_list_copy
+argument_list|(
 name|gimp_dock_window_get_docks
 argument_list|(
 name|dock_window
+argument_list|)
 argument_list|)
 expr_stmt|;
 for|for
@@ -895,9 +898,12 @@ name|GList
 modifier|*
 name|docks
 init|=
+name|g_list_copy
+argument_list|(
 name|gimp_dock_columns_get_docks
 argument_list|(
 name|dock_columns
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GList
