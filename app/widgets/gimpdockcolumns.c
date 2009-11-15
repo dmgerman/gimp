@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5341b70103
+DECL|enum|__anon28a2d3430103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -182,7 +182,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dock_columns_dock_book_remove
+name|gimp_dock_columns_dock_book_removed
 parameter_list|(
 name|GimpDockColumns
 modifier|*
@@ -648,8 +648,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dock_columns_dock_book_remove (GimpDockColumns * dock_columns,GimpDockbook * dockbook,GimpDock * dock)
-name|gimp_dock_columns_dock_book_remove
+DECL|function|gimp_dock_columns_dock_book_removed (GimpDockColumns * dock_columns,GimpDockbook * dockbook,GimpDock * dock)
+name|gimp_dock_columns_dock_book_removed
 parameter_list|(
 name|GimpDockColumns
 modifier|*
@@ -772,7 +772,7 @@ literal|"book-removed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dock_columns_dock_book_remove
+name|gimp_dock_columns_dock_book_removed
 argument_list|)
 argument_list|,
 name|dock_columns
@@ -848,7 +848,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|dock
 argument_list|,
-name|gimp_dock_columns_dock_book_remove
+name|gimp_dock_columns_dock_book_removed
 argument_list|,
 name|dock_columns
 argument_list|)
