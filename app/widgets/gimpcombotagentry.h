@@ -108,10 +108,6 @@ name|GtkWidget
 modifier|*
 name|popup
 decl_stmt|;
-DECL|member|focus_width
-name|gint
-name|focus_width
-decl_stmt|;
 DECL|member|normal_item_attr
 name|PangoAttrList
 modifier|*
@@ -130,14 +126,6 @@ decl_stmt|;
 DECL|member|selected_item_color
 name|GdkColor
 name|selected_item_color
-decl_stmt|;
-DECL|member|interior_focus
-name|gboolean
-name|interior_focus
-decl_stmt|;
-DECL|member|cursor_type
-name|GdkCursorType
-name|cursor_type
 decl_stmt|;
 block|}
 struct|;
