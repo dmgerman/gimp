@@ -2381,8 +2381,62 @@ literal|1
 return|;
 block|}
 block|}
-comment|/* Valid bitpdepthis 1, 4, 8, 16, 24, 32 */
+comment|/* Valid bit depth is 1, 4, 8, 16, 24, 32 */
 comment|/* 16 is awful, we should probably shoot whoever invented it */
+switch|switch
+condition|(
+name|Bitmap_Head
+operator|.
+name|biBitCnt
+condition|)
+block|{
+case|case
+literal|1
+case|:
+case|case
+literal|2
+case|:
+case|case
+literal|4
+case|:
+case|case
+literal|8
+case|:
+case|case
+literal|16
+case|:
+case|case
+literal|24
+case|:
+case|case
+literal|32
+case|:
+break|break;
+default|default:
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|G_FILE_ERROR
+argument_list|,
+name|G_FILE_ERROR_FAILED
+argument_list|,
+name|_
+argument_list|(
+literal|"'%s' is not a valid BMP file"
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|filename
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
 comment|/* There should be some colors used! */
 name|ColormapSize
 operator|=
