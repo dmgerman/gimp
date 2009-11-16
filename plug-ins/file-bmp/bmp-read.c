@@ -2480,6 +2480,7 @@ operator|-
 literal|1
 return|;
 block|}
+comment|/* biHeight may be negative, but G_MININT32 is dangerous because:      G_MININT32 == -(G_MININT32) */
 if|if
 condition|(
 name|Bitmap_Head
@@ -2488,14 +2489,11 @@ name|biWidth
 operator|<
 literal|0
 operator|||
-name|ABS
-argument_list|(
 name|Bitmap_Head
 operator|.
 name|biHeight
-argument_list|)
-operator|<
-literal|0
+operator|==
+name|G_MININT32
 condition|)
 block|{
 name|g_set_error
