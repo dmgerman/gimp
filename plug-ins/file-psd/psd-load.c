@@ -2622,7 +2622,7 @@ index|]
 operator|->
 name|top
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -2639,7 +2639,7 @@ index|]
 operator|->
 name|left
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -2656,7 +2656,7 @@ index|]
 operator|->
 name|bottom
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -2673,7 +2673,7 @@ index|]
 operator|->
 name|right
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -3913,7 +3913,7 @@ name|layer_mask
 operator|.
 name|top
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -3934,7 +3934,7 @@ name|layer_mask
 operator|.
 name|left
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -3955,7 +3955,7 @@ name|layer_mask
 operator|.
 name|bottom
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -3976,7 +3976,7 @@ name|layer_mask
 operator|.
 name|right
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4351,7 +4351,7 @@ name|layer_mask_extra
 operator|.
 name|top
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4372,7 +4372,7 @@ name|layer_mask_extra
 operator|.
 name|left
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4393,7 +4393,7 @@ name|layer_mask_extra
 operator|.
 name|bottom
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4414,7 +4414,7 @@ name|layer_mask_extra
 operator|.
 name|right
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4435,7 +4435,7 @@ name|layer_mask
 operator|.
 name|top
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4456,7 +4456,7 @@ name|layer_mask
 operator|.
 name|left
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4477,7 +4477,7 @@ name|layer_mask
 operator|.
 name|bottom
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
@@ -4498,7 +4498,7 @@ name|layer_mask
 operator|.
 name|right
 operator|=
-name|GUINT32_FROM_BE
+name|GINT32_FROM_BE
 argument_list|(
 name|lyr_a
 index|[
