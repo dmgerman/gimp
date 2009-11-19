@@ -730,12 +730,9 @@ argument_list|,
 name|show
 argument_list|)
 expr_stmt|;
-block|}
-comment|/*  Maybe gimp_dialog_factory_dockable_new() returned                *  an already existing singleton dockable, so check                *  if it already is attached to a dockbook.                */
+comment|/*  Maybe gimp_dialog_factory_dockable_new() returned                    *  an already existing singleton dockable, so check                    *  if it already is attached to a dockbook.                    */
 if|if
 condition|(
-name|new_dockable
-operator|&&
 operator|!
 name|GIMP_DOCKABLE
 argument_list|(
@@ -774,6 +771,7 @@ argument_list|,
 name|page_num
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 name|g_free
