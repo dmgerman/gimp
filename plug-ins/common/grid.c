@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a59f050108
+DECL|struct|__anon28b573320108
 block|{
 DECL|member|hwidth
 name|gint
@@ -3534,7 +3534,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Horizontal"
+literal|"Horizontal\nLines"
 argument_list|)
 argument_list|,
 literal|0
@@ -3553,7 +3553,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Vertical"
+literal|"Vertical\nLines"
 argument_list|)
 argument_list|,
 literal|0
