@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2936dd340103
+DECL|enum|__anon2c7542b10103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3437,7 +3437,7 @@ name|node
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:normal"
+literal|"gegl:over"
 argument_list|,
 name|NULL
 argument_list|)
