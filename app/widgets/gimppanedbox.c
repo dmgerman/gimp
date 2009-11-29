@@ -886,6 +886,16 @@ operator|==
 literal|1
 condition|)
 block|{
+comment|/* The widget might already be parent-less if we are in        * destruction, .e.g when closing a dock window.        */
+if|if
+condition|(
+name|gtk_widget_get_parent
+argument_list|(
+name|widget
+argument_list|)
+operator|!=
+name|NULL
+condition|)
 name|gtk_container_remove
 argument_list|(
 name|GTK_CONTAINER
