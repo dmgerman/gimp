@@ -93,9 +93,15 @@ directive|include
 file|"gimppanedbox.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon28a2d3430103
+DECL|enum|__anon2c54393c0103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -133,13 +139,12 @@ specifier|static
 name|gboolean
 name|gimp_dock_columns_dropped_cb
 parameter_list|(
-name|GimpDockSeparator
-modifier|*
-name|separator
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|source
+parameter_list|,
+name|gint
+name|insert_index
 parameter_list|,
 name|gpointer
 name|data
@@ -424,16 +429,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dock_columns_dropped_cb (GimpDockSeparator * separator,GtkWidget * source,gpointer data)
+DECL|function|gimp_dock_columns_dropped_cb (GtkWidget * source,gint insert_index,gpointer data)
 name|gimp_dock_columns_dropped_cb
 parameter_list|(
-name|GimpDockSeparator
-modifier|*
-name|separator
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|source
+parameter_list|,
+name|gint
+name|insert_index
 parameter_list|,
 name|gpointer
 name|data
@@ -468,14 +472,6 @@ modifier|*
 name|dockbook
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|index
-init|=
-name|gimp_dock_separator_get_insert_pos
-argument_list|(
-name|separator
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -518,7 +514,7 @@ argument_list|(
 name|dock
 argument_list|)
 argument_list|,
-name|index
+name|insert_index
 argument_list|)
 expr_stmt|;
 comment|/* Put a now dockbook in the dock */
@@ -728,6 +724,17 @@ name|dock
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|DND
+argument_list|,
+literal|"Adding GimpDock %p to GimpDockColumns %p"
+argument_list|,
+name|dock
+argument_list|,
+name|dock_columns
+argument_list|)
+expr_stmt|;
 name|dock_columns
 operator|->
 name|p
@@ -825,6 +832,17 @@ name|GIMP_IS_DOCK
 argument_list|(
 name|dock
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|DND
+argument_list|,
+literal|"Removing GimpDock %p from GimpDockColumns %p"
+argument_list|,
+name|dock
+argument_list|,
+name|dock_columns
 argument_list|)
 expr_stmt|;
 name|dock_columns

@@ -306,6 +306,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_dockbook_set_drag_handler
+parameter_list|(
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
+name|GimpPanedBox
+modifier|*
+name|drag_handler
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpDockable
 modifier|*
 name|gimp_dockbook_drag_source_to_dockable

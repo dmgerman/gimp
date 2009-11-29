@@ -1532,21 +1532,20 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpDockSeparatorDroppedFunc
+DECL|typedef|GimpPanedBoxDroppedFunc
 typedef|typedef
 name|gboolean
 function_decl|(
 modifier|*
-name|GimpDockSeparatorDroppedFunc
+name|GimpPanedBoxDroppedFunc
 function_decl|)
 parameter_list|(
-name|GimpDockSeparator
-modifier|*
-name|separator
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|source
+parameter_list|,
+name|gint
+name|insert_index
 parameter_list|,
 name|gpointer
 name|data

@@ -93,7 +93,7 @@ struct|struct
 name|_GimpDockSeparatorPrivate
 block|{
 DECL|member|dropped_cb
-name|GimpDockSeparatorDroppedFunc
+name|GimpPanedBoxDroppedFunc
 name|dropped_cb
 decl_stmt|;
 DECL|member|dropped_cb_data
@@ -807,9 +807,12 @@ name|p
 operator|->
 name|dropped_cb
 argument_list|(
-name|separator
-argument_list|,
 name|source
+argument_list|,
+name|gimp_dock_separator_get_insert_pos
+argument_list|(
+name|separator
+argument_list|)
 argument_list|,
 name|separator
 operator|->
@@ -871,14 +874,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dock_separator_set_dropped_cb (GimpDockSeparator * separator,GimpDockSeparatorDroppedFunc dropped_cb,gpointer dropped_cb_data)
+DECL|function|gimp_dock_separator_set_dropped_cb (GimpDockSeparator * separator,GimpPanedBoxDroppedFunc dropped_cb,gpointer dropped_cb_data)
 name|gimp_dock_separator_set_dropped_cb
 parameter_list|(
 name|GimpDockSeparator
 modifier|*
 name|separator
 parameter_list|,
-name|GimpDockSeparatorDroppedFunc
+name|GimpPanedBoxDroppedFunc
 name|dropped_cb
 parameter_list|,
 name|gpointer

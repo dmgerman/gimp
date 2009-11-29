@@ -170,6 +170,11 @@ DECL|member|blink_counter
 name|gint
 name|blink_counter
 decl_stmt|;
+DECL|member|drag_handler
+name|GimpPanedBox
+modifier|*
+name|drag_handler
+decl_stmt|;
 comment|/*  drag icon hotspot  */
 DECL|member|drag_x
 name|gint
@@ -367,6 +372,21 @@ parameter_list|,
 name|gpointer
 modifier|*
 name|popup_data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_dockable_set_drag_handler
+parameter_list|(
+name|GimpDockable
+modifier|*
+name|dockable
+parameter_list|,
+name|GimpPanedBox
+modifier|*
+name|drag_handler
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d6c59d0103
+DECL|enum|__anon2c6344e00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d6c59d0203
+DECL|enum|__anon2c6344e00203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -275,13 +275,12 @@ specifier|static
 name|gboolean
 name|gimp_dock_dropped_cb
 parameter_list|(
-name|GimpDockSeparator
-modifier|*
-name|separator
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|source
+parameter_list|,
+name|gint
+name|insert_index
 parameter_list|,
 name|gpointer
 name|data
@@ -1102,16 +1101,15 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dock_dropped_cb (GimpDockSeparator * separator,GtkWidget * source,gpointer data)
+DECL|function|gimp_dock_dropped_cb (GtkWidget * source,gint insert_index,gpointer data)
 name|gimp_dock_dropped_cb
 parameter_list|(
-name|GimpDockSeparator
-modifier|*
-name|separator
-parameter_list|,
 name|GtkWidget
 modifier|*
 name|source
+parameter_list|,
+name|gint
+name|insert_index
 parameter_list|,
 name|gpointer
 name|data
@@ -1140,14 +1138,6 @@ modifier|*
 name|dockbook
 init|=
 name|NULL
-decl_stmt|;
-name|gint
-name|index
-init|=
-name|gimp_dock_separator_get_insert_pos
-argument_list|(
-name|separator
-argument_list|)
 decl_stmt|;
 if|if
 condition|(
@@ -1266,7 +1256,7 @@ argument_list|(
 name|dockbook
 argument_list|)
 argument_list|,
-name|index
+name|insert_index
 argument_list|)
 expr_stmt|;
 comment|/* Add the dockable to new new dockbook */

@@ -161,7 +161,7 @@ name|GimpDockSeparator
 modifier|*
 name|separator
 parameter_list|,
-name|GimpDockSeparatorDroppedFunc
+name|GimpPanedBoxDroppedFunc
 name|dropped_cb
 parameter_list|,
 name|gpointer
