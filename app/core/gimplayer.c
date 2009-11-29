@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b905d40103
+DECL|enum|__anon27c2e57c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b905d40203
+DECL|enum|__anon27c2e57c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4411,6 +4411,29 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
+switch|switch
+condition|(
+name|layer
+operator|->
+name|mode
+condition|)
+block|{
+case|case
+name|GIMP_NORMAL_MODE
+case|:
+name|gegl_node_set
+argument_list|(
+name|mode_node
+argument_list|,
+literal|"operation"
+argument_list|,
+literal|"gegl:over"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+break|break;
+default|default:
 name|gegl_node_set
 argument_list|(
 name|mode_node
@@ -4428,6 +4451,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+break|break;
+block|}
 block|}
 block|}
 end_function
