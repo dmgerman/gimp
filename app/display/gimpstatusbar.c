@@ -732,11 +732,11 @@ name|store
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|message_area
+name|original_child
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|message_area_parent
+name|original_child_parent
 decl_stmt|;
 name|statusbar
 operator|->
@@ -821,8 +821,18 @@ name|progress_shown
 operator|=
 name|FALSE
 expr_stmt|;
-comment|/* remove the message area and insert a hbox */
-name|message_area
+comment|/* remove the message area or label and insert a hbox */
+if|#
+directive|if
+name|GTK_CHECK_VERSION
+argument_list|(
+literal|2
+operator|,
+literal|19
+operator|,
+literal|1
+argument_list|)
+name|original_child
 operator|=
 name|gtk_statusbar_get_message_area
 argument_list|(
@@ -832,23 +842,36 @@ name|statusbar
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|message_area_parent
+else|#
+directive|else
+name|original_child
+operator|=
+name|GTK_STATUSBAR
+argument_list|(
+name|statusbar
+argument_list|)
+operator|->
+name|label
+expr_stmt|;
+endif|#
+directive|endif
+name|original_child_parent
 operator|=
 name|gtk_widget_get_parent
 argument_list|(
-name|message_area
+name|original_child
 argument_list|)
 expr_stmt|;
 name|gtk_container_remove
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|message_area_parent
+name|original_child_parent
 argument_list|)
 argument_list|,
 name|g_object_ref
 argument_list|(
-name|message_area
+name|original_child
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -865,7 +888,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|message_area_parent
+name|original_child_parent
 argument_list|)
 argument_list|,
 name|hbox
@@ -1094,7 +1117,7 @@ argument_list|,
 name|statusbar
 argument_list|)
 expr_stmt|;
-comment|/*  put the message area back into our hbox  */
+comment|/*  put the message area or label back into our hbox  */
 name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
@@ -1102,7 +1125,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-name|message_area
+name|original_child
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1113,7 +1136,7 @@ argument_list|)
 expr_stmt|;
 name|g_object_unref
 argument_list|(
-name|message_area
+name|original_child
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_after
