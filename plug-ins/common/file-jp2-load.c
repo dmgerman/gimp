@@ -286,7 +286,7 @@ literal|"2009"
 argument_list|,
 name|N_
 argument_list|(
-literal|"JPEG-2000 image"
+literal|"JPEG 2000 image"
 argument_list|)
 argument_list|,
 name|NULL
@@ -1034,7 +1034,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"The image '%s' is in RGB but is missing some of the "
+literal|"The image '%s' is in RGB, but is missing some of the "
 literal|"components."
 argument_list|)
 argument_list|,
@@ -1106,7 +1106,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"The image '%s' is in the CIEXYZ color space but there is "
+literal|"The image '%s' is in the CIEXYZ color space, but there is "
 literal|"no code in place to convert it to RGB."
 argument_list|)
 argument_list|,
@@ -1133,7 +1133,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"The image '%s' is in the CIELAB color space but there is "
+literal|"The image '%s' is in the CIELAB color space, but there is "
 literal|"no code in place to convert it to RGB."
 argument_list|)
 argument_list|,
@@ -1160,7 +1160,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"The image '%s' is in the YCbCr color space but there is "
+literal|"The image '%s' is in the YCbCr color space, but there is "
 literal|"no code in place to convert it to RGB."
 argument_list|)
 argument_list|,
@@ -1188,7 +1188,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"The image '%s' is in an unkown color space."
+literal|"The image '%s' is in an unknown color space."
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
