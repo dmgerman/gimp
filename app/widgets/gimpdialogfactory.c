@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a530060103
+DECL|enum|__anon2c6d84980103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a530060203
+DECL|enum|__anon2c6d84980203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1919,7 +1919,7 @@ name|dockbook
 decl_stmt|;
 name|dock
 operator|=
-name|gimp_dialog_factory_dock_new
+name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
 name|factory
 argument_list|,
@@ -2666,14 +2666,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dock_new:  * @factory: a #GimpDialogFacotry  * @screen:  the #GdkScreen the dock should appear on  *  * Returns a new #GimpDock in this %factory's context. We use a function  * pointer passed to this %factory's constructor instead of simply  * gimp_dock_new() because we may want different instances of  * #GimpDialogFactory create different subclasses of #GimpDock.  *  * Return value: the newly created #GimpDock.  **/
+comment|/**  * gimp_dialog_factory_dock_with_window_new:  * @factory: a #GimpDialogFacotry  * @screen:  the #GdkScreen the dock window should appear on  *  * Returns a new #GimpDock in this %factory's context, put inside a  * #GimpDockWindow. We use a function pointer passed to this  * %factory's constructor instead of simply gimp_dock_new() because we  * may want different instances of #GimpDialogFactory create different  * subclasses of #GimpDock.  *  * Return value: the newly created #GimpDock.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dock_new (GimpDialogFactory * factory,GdkScreen * screen)
-name|gimp_dialog_factory_dock_new
+DECL|function|gimp_dialog_factory_dock_with_window_new (GimpDialogFactory * factory,GdkScreen * screen)
+name|gimp_dialog_factory_dock_with_window_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*

@@ -348,7 +348,7 @@ name|toolbox
 decl_stmt|;
 name|toolbox
 operator|=
-name|gimp_dialog_factory_dock_new
+name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
 name|global_toolbox_factory
 argument_list|,

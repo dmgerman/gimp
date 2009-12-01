@@ -66,7 +66,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2790ec8d0108
+DECL|struct|__anon2a0e1d040108
 block|{
 DECL|member|dummy
 name|int
@@ -244,7 +244,7 @@ name|NULL
 decl_stmt|;
 name|dock
 operator|=
-name|gimp_dialog_factory_dock_new
+name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
 name|global_dock_factory
 argument_list|,
@@ -254,7 +254,7 @@ argument_list|)
 expr_stmt|;
 name|toolbox
 operator|=
-name|gimp_dialog_factory_dock_new
+name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
 name|global_toolbox_factory
 argument_list|,

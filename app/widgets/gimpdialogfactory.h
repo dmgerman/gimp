@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b42c6960103
+DECL|enum|__anon2c5b19930103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -616,7 +616,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_dialog_factory_dock_new
+name|gimp_dialog_factory_dock_with_window_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
