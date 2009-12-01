@@ -1027,7 +1027,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bb888b10108
+DECL|struct|__anon2c7649fa0108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1104,7 +1104,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2bb888b10208
+DECL|struct|__anon2c7649fa0208
 specifier|static
 struct|struct
 block|{
@@ -1752,6 +1752,35 @@ name|_
 argument_list|(
 literal|"Invalid number of bytes per line in PCX header"
 argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+operator|-
+literal|1
+return|;
+block|}
+comment|/* Shield against potential buffer overflows in load_*() functions. */
+if|if
+condition|(
+name|G_MAXSIZE
+operator|/
+name|width
+operator|/
+name|height
+operator|<
+literal|3
+condition|)
+block|{
+name|g_message
+argument_list|(
+name|_
+argument_list|(
+literal|"Image dimensions too large: width %d x height %d"
+argument_list|)
+argument_list|,
+name|width
+argument_list|,
+name|height
 argument_list|)
 expr_stmt|;
 return|return
