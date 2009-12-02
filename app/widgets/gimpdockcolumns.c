@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdockseparator.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpmenudock.h"
 end_include
 
@@ -101,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c54393c0103
+DECL|enum|__anon27efdf8d0103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED

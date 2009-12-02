@@ -102,12 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdockseparator.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdockwindow.h"
 end_include
 
@@ -409,30 +403,6 @@ parameter_list|,
 name|GimpDockbook
 modifier|*
 name|dockbook
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|toolbox_separator_expand
-parameter_list|(
-name|GimpToolbox
-modifier|*
-name|toolbox
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|toolbox_separator_collapse
-parameter_list|(
-name|GimpToolbox
-modifier|*
-name|toolbox
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1683,11 +1653,6 @@ argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|toolbox_separator_expand
-argument_list|(
-name|toolbox
-argument_list|)
-expr_stmt|;
 return|return
 name|object
 return|;
@@ -2751,14 +2716,6 @@ argument_list|(
 name|dock
 argument_list|)
 expr_stmt|;
-name|toolbox_separator_collapse
-argument_list|(
-name|GIMP_TOOLBOX
-argument_list|(
-name|dock
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -2804,14 +2761,6 @@ block|{
 name|gimp_dock_invalidate_geometry
 argument_list|(
 name|dock
-argument_list|)
-expr_stmt|;
-name|toolbox_separator_expand
-argument_list|(
-name|GIMP_TOOLBOX
-argument_list|(
-name|dock
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -3134,32 +3083,6 @@ end_function
 begin_comment
 comment|/*  private functions  */
 end_comment
-
-begin_function
-specifier|static
-name|void
-DECL|function|toolbox_separator_expand (GimpToolbox * toolbox)
-name|toolbox_separator_expand
-parameter_list|(
-name|GimpToolbox
-modifier|*
-name|toolbox
-parameter_list|)
-block|{ }
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|toolbox_separator_collapse (GimpToolbox * toolbox)
-name|toolbox_separator_collapse
-parameter_list|(
-name|GimpToolbox
-modifier|*
-name|toolbox
-parameter_list|)
-block|{ }
-end_function
 
 begin_function
 specifier|static

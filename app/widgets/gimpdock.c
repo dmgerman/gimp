@@ -72,12 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdockseparator.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimppanedbox.h"
 end_include
 
@@ -101,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6344e00103
+DECL|enum|__anon29fbd9ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -120,7 +114,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6344e00203
+DECL|enum|__anon29fbd9ea0203
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
