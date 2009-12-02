@@ -1027,7 +1027,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7649fa0108
+DECL|struct|__anon2acb46720108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1104,7 +1104,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2c7649fa0208
+DECL|struct|__anon2acb46720208
 specifier|static
 struct|struct
 block|{
@@ -1926,7 +1926,12 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|width
+operator|)
 operator|*
 name|height
 argument_list|)
@@ -1976,7 +1981,12 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|width
+operator|)
 operator|*
 name|height
 argument_list|)
@@ -2028,7 +2038,12 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|width
+operator|)
 operator|*
 name|height
 argument_list|)
@@ -2099,7 +2114,12 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|width
+operator|)
 operator|*
 name|height
 operator|*
