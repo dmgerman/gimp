@@ -151,7 +151,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2934c58f0103
+DECL|enum|__anon292081c10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -677,7 +677,7 @@ parameter_list|)
 block|{
 specifier|static
 name|gint
-name|dock_ID
+name|dock_window_ID
 init|=
 literal|1
 decl_stmt|;
@@ -745,7 +745,7 @@ name|p
 operator|->
 name|ID
 operator|=
-name|dock_ID
+name|dock_window_ID
 operator|++
 expr_stmt|;
 name|dock_window
