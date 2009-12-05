@@ -65,9 +65,9 @@ begin_function_decl
 name|void
 name|gimp_session_info_dock_restore
 parameter_list|(
-name|GimpSessionInfo
+name|GList
 modifier|*
-name|info
+name|books
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
@@ -76,6 +76,10 @@ parameter_list|,
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|GimpDockWindow
+modifier|*
+name|dock_window
 parameter_list|)
 function_decl|;
 end_function_decl
