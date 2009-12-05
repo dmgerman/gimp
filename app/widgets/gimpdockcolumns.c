@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27efdf8d0103
+DECL|enum|__anon2b657d7b0103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -479,25 +479,7 @@ comment|/* Create and insert new dock into columns */
 name|dock
 operator|=
 name|gimp_menu_dock_new
-argument_list|(
-name|global_dock_factory
-argument_list|,
-name|global_dock_factory
-operator|->
-name|context
-operator|->
-name|gimp
-operator|->
-name|images
-argument_list|,
-name|global_dock_factory
-operator|->
-name|context
-operator|->
-name|gimp
-operator|->
-name|displays
-argument_list|)
+argument_list|()
 expr_stmt|;
 name|gimp_dock_columns_add_dock
 argument_list|(

@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainerview.h"
+file|"gimpcontainerview-utils.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpcontainerview-utils.h"
+file|"gimpcontainerview.h"
 end_include
 
 begin_include
@@ -69,9 +69,15 @@ directive|include
 file|"gimpsessioninfo-dockable.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimptoolbox.h"
+end_include
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b94088f0103
+DECL|enum|__anon2ba9f7e10103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_LOCKED
 name|SESSION_INFO_DOCKABLE_LOCKED
@@ -1005,15 +1011,30 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/*  use the new dock's dialog factory to create dockables    *  because it may be different from the dialog factory    *  the dock was created from.    */
+comment|/* FIXME: Merge global_dock_factory and global_toolbox_factory    * somehow so we don't need this hack    */
 name|dockable
 operator|=
 name|gimp_dialog_factory_dockable_new
 argument_list|(
+operator|(
+name|GIMP_IS_TOOLBOX
+argument_list|(
+name|dock
+argument_list|)
+condition|?
+name|gimp_toolbox_get_dialog_factory
+argument_list|(
+name|GIMP_TOOLBOX
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+else|:
 name|gimp_dock_get_dialog_factory
 argument_list|(
 name|dock
 argument_list|)
+operator|)
 argument_list|,
 name|dock
 argument_list|,

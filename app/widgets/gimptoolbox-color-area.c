@@ -219,12 +219,9 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|gimp_dock_get_context
-argument_list|(
-name|GIMP_DOCK
+name|gimp_toolbox_get_context
 argument_list|(
 name|toolbox
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|color_area
