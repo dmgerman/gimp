@@ -71,11 +71,11 @@ name|GimpDialogFactoryEntry
 modifier|*
 name|factory_entry
 decl_stmt|;
-comment|/*  list of GimpSessionInfoBook  */
-DECL|member|books
+comment|/*  list of GimpSessionInfoDock  */
+DECL|member|docks
 name|GList
 modifier|*
-name|books
+name|docks
 decl_stmt|;
 block|}
 struct|;

@@ -16,6 +16,46 @@ directive|define
 name|__GIMP_SESSION_INFO_DOCK_H__
 end_define
 
+begin_comment
+comment|/**  * GimpSessionInfoDock:  *  * Contains information about a dock in the interface.  */
+end_comment
+
+begin_struct
+DECL|struct|_GimpSessionInfoDock
+struct|struct
+name|_GimpSessionInfoDock
+block|{
+comment|/*  list of GimpSessionInfoBook  */
+DECL|member|books
+name|GList
+modifier|*
+name|books
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_function_decl
+name|GimpSessionInfoDock
+modifier|*
+name|gimp_session_info_dock_new
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_session_info_dock_free
+parameter_list|(
+name|GimpSessionInfoDock
+modifier|*
+name|dock_info
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_function_decl
 name|void
 name|gimp_session_info_dock_serialize
@@ -24,9 +64,9 @@ name|GimpConfigWriter
 modifier|*
 name|writer
 parameter_list|,
-name|GList
+name|GimpSessionInfoDock
 modifier|*
-name|books
+name|dock
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -42,7 +82,8 @@ parameter_list|,
 name|gint
 name|scope
 parameter_list|,
-name|GimpSessionInfo
+name|GimpSessionInfoDock
+modifier|*
 modifier|*
 name|info
 parameter_list|)
@@ -50,7 +91,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GList
+name|GimpSessionInfoDock
 modifier|*
 name|gimp_session_info_dock_from_widget
 parameter_list|(
@@ -65,9 +106,9 @@ begin_function_decl
 name|void
 name|gimp_session_info_dock_restore
 parameter_list|(
-name|GList
+name|GimpSessionInfoDock
 modifier|*
-name|books
+name|dock_info
 parameter_list|,
 name|GimpDialogFactory
 modifier|*

@@ -1346,6 +1346,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpSessionInfoDock
+typedef|typedef
+name|struct
+name|_GimpSessionInfoDock
+name|GimpSessionInfoDock
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpSessionInfoDockable
 typedef|typedef
 name|struct
