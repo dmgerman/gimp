@@ -389,7 +389,10 @@ argument_list|)
 argument_list|,
 literal|"gimp-file-export"
 argument_list|,
-name|GTK_STOCK_SAVE
+name|_
+argument_list|(
+literal|"_Export"
+argument_list|)
 argument_list|,
 name|GIMP_HELP_FILE_EXPORT
 argument_list|)
