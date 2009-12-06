@@ -66,6 +66,10 @@ DECL|member|use_fade
 name|gboolean
 name|use_fade
 decl_stmt|;
+DECL|member|fade_reverse
+name|gboolean
+name|fade_reverse
+decl_stmt|;
 DECL|member|fade_length
 name|gdouble
 name|fade_length
@@ -73,6 +77,10 @@ decl_stmt|;
 DECL|member|fade_unit
 name|GimpUnit
 name|fade_unit
+decl_stmt|;
+DECL|member|fade_repeat
+name|GimpRepeatMode
+name|fade_repeat
 decl_stmt|;
 block|}
 struct|;
