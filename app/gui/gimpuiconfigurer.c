@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b782bc0103
+DECL|enum|__anon2c62fe9b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -704,7 +704,15 @@ argument_list|(
 name|docks
 argument_list|)
 expr_stmt|;
-comment|/* Kill the dock window, we don't need it any longer */
+comment|/* Kill the window if removing the dock didn't destroy it        * already. This will be the case forthe toolbox dock window        */
+if|if
+condition|(
+name|GTK_IS_WIDGET
+argument_list|(
+name|dock_window
+argument_list|)
+condition|)
+block|{
 name|gimp_dialog_factory_remove_dialog
 argument_list|(
 name|dialog_factory
@@ -723,6 +731,7 @@ name|dock_window
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
