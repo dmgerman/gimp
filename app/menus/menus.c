@@ -1021,15 +1021,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|global_menu_factory
-operator|->
-name|gimp
-operator|==
-name|gimp
-argument_list|)
-expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|global_menu_factory

@@ -422,9 +422,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_menu_factory_get_registered_menus
+argument_list|(
 name|global_menu_factory
-operator|->
-name|registered_menus
+argument_list|)
 init|;
 name|list
 condition|;
@@ -572,9 +573,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_menu_factory_get_registered_menus
+argument_list|(
 name|global_menu_factory
-operator|->
-name|registered_menus
+argument_list|)
 init|;
 name|list
 condition|;
