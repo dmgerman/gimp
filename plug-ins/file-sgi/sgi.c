@@ -1401,7 +1401,12 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|tile_height
+operator|)
 operator|*
 name|sgip
 operator|->
@@ -1466,7 +1471,7 @@ name|g_new
 argument_list|(
 argument|unsigned short
 argument_list|,
-argument|sgip->xsize * sgip->zsize
+argument|((gsize) sgip->xsize) * sgip->zsize
 argument_list|)
 expr_stmt|;
 for|for
@@ -2059,7 +2064,12 @@ name|g_new
 argument_list|(
 name|guchar
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|tile_height
+operator|)
 operator|*
 name|drawable
 operator|->
@@ -2127,9 +2137,14 @@ name|g_new
 argument_list|(
 name|gushort
 argument_list|,
+operator|(
+operator|(
+name|gsize
+operator|)
 name|sgip
 operator|->
 name|xsize
+operator|)
 operator|*
 name|sgip
 operator|->
