@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af897970108
+DECL|struct|__anon28daec520108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -1843,6 +1843,14 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|priv
+operator|->
+name|n_segment_indices
+operator|>
+literal|0
+condition|)
 name|priv
 operator|->
 name|n_segment_indices
@@ -1853,7 +1861,7 @@ condition|(
 name|priv
 operator|->
 name|n_segment_indices
-operator|==
+operator|<=
 literal|0
 condition|)
 block|{
