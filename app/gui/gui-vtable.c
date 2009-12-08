@@ -1605,6 +1605,8 @@ operator|->
 name|data
 argument_list|,
 name|global_display_factory
+argument_list|,
+name|global_dock_factory
 argument_list|)
 expr_stmt|;
 block|}

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d958530103
+DECL|enum|__anon28dd4d970103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1513,7 +1513,7 @@ end_comment
 begin_function
 name|GimpDisplay
 modifier|*
-DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * display_factory)
+DECL|function|gimp_display_new (Gimp * gimp,GimpImage * image,GimpUnit unit,gdouble scale,GimpMenuFactory * menu_factory,GimpUIManager * popup_manager,GimpDialogFactory * display_factory,GimpDialogFactory * dock_factory)
 name|gimp_display_new
 parameter_list|(
 name|Gimp
@@ -1541,6 +1541,10 @@ parameter_list|,
 name|GimpDialogFactory
 modifier|*
 name|display_factory
+parameter_list|,
+name|GimpDialogFactory
+modifier|*
+name|dock_factory
 parameter_list|)
 block|{
 name|GimpDisplay
@@ -1715,6 +1719,8 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|display_factory
+argument_list|,
+name|dock_factory
 argument_list|)
 expr_stmt|;
 block|}

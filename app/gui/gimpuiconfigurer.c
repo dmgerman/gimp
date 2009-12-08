@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c62fe9b0103
+DECL|enum|__anon2c29aa560103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1087,6 +1087,8 @@ argument_list|,
 name|global_menu_factory
 argument_list|,
 name|global_display_factory
+argument_list|,
+name|global_dock_factory
 argument_list|)
 expr_stmt|;
 comment|/* Move the shell there */
