@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"menus/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdialogfactory.h"
 end_include
 
@@ -59,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c729f7b0103
+DECL|enum|__anon2b2802d80103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK_POSITION
 name|SESSION_INFO_BOOK_POSITION
@@ -835,12 +841,7 @@ name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
-name|gimp_dock_get_dialog_factory
-argument_list|(
-name|dock
-argument_list|)
-operator|->
-name|menu_factory
+name|global_menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book

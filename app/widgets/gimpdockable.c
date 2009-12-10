@@ -42,6 +42,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"menus/menus.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -125,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bddfeec0103
+DECL|enum|__anon28d8ae0d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4428,10 +4440,7 @@ name|dock
 operator|=
 name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
-name|gimp_dock_get_dialog_factory
-argument_list|(
-name|src_dock
-argument_list|)
+name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -4462,6 +4471,10 @@ argument_list|,
 name|GTK_WIN_POS_MOUSE
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|src_dock_window
+condition|)
 name|gimp_dock_window_setup
 argument_list|(
 name|dock_window
@@ -4473,15 +4486,7 @@ name|dockbook
 operator|=
 name|gimp_dockbook_new
 argument_list|(
-name|gimp_dock_get_dialog_factory
-argument_list|(
-name|GIMP_DOCK
-argument_list|(
-name|dock
-argument_list|)
-argument_list|)
-operator|->
-name|menu_factory
+name|global_menu_factory
 argument_list|)
 expr_stmt|;
 name|gimp_dock_add_book
