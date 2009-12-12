@@ -1928,7 +1928,7 @@ name|gimp_paned_box_set_widget_drag_handler
 argument_list|(
 name|widget
 argument_list|,
-name|paned_box
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Remove from widget hierarchy */
