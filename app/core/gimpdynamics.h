@@ -143,6 +143,11 @@ name|GimpDynamicsOutput
 modifier|*
 name|jitter_output
 decl_stmt|;
+DECL|member|spacing_output
+name|GimpDynamicsOutput
+modifier|*
+name|spacing_output
+decl_stmt|;
 block|}
 struct|;
 end_struct
