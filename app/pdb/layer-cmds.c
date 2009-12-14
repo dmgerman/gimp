@@ -490,6 +490,11 @@ name|image
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|gimp_pickable_flush
+argument_list|(
+name|pickable
+argument_list|)
+expr_stmt|;
 name|layer
 operator|=
 name|gimp_layer_new_from_tiles
