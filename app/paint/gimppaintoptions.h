@@ -116,14 +116,6 @@ DECL|member|gradient_reverse
 name|gboolean
 name|gradient_reverse
 decl_stmt|;
-DECL|member|gradient_length
-name|gdouble
-name|gradient_length
-decl_stmt|;
-DECL|member|gradient_unit
-name|GimpUnit
-name|gradient_unit
-decl_stmt|;
 DECL|member|gradient_repeat
 name|GimpRepeatMode
 name|gradient_repeat
