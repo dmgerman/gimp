@@ -252,7 +252,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Create"
+literal|"Crea_te"
 argument_list|)
 block|}
 block|,
@@ -365,7 +365,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Create _Template..."
+literal|"Create Template..."
 argument_list|)
 block|,
 name|NULL
