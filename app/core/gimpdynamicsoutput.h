@@ -221,6 +221,10 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
+parameter_list|,
 name|gdouble
 name|fade_point
 parameter_list|)
@@ -240,6 +244,10 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
+parameter_list|,
 name|gdouble
 name|fade_point
 parameter_list|)
@@ -258,6 +266,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
 parameter_list|,
 name|gdouble
 name|fade_point

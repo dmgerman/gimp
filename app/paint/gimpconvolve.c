@@ -565,6 +565,8 @@ name|opacity_output
 argument_list|,
 name|coords
 argument_list|,
+name|paint_options
+argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
@@ -609,6 +611,8 @@ operator|->
 name|rate_output
 argument_list|,
 name|coords
+argument_list|,
+name|paint_options
 argument_list|,
 name|fade_point
 argument_list|)

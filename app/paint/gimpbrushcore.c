@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a729a60103
+DECL|enum|__anon2b8cfb530103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -1821,6 +1821,8 @@ name|size_output
 argument_list|,
 name|coords
 argument_list|,
+name|paint_options
+argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
@@ -1838,6 +1840,8 @@ name|angle_output
 argument_list|,
 name|coords
 argument_list|,
+name|paint_options
+argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
@@ -1854,6 +1858,8 @@ operator|->
 name|aspect_ratio_output
 argument_list|,
 name|coords
+argument_list|,
+name|paint_options
 argument_list|,
 name|fade_point
 argument_list|)
@@ -2171,6 +2177,8 @@ name|spacing_output
 argument_list|,
 operator|&
 name|current_coords
+argument_list|,
+name|paint_options
 argument_list|,
 name|fade_point
 argument_list|)
@@ -3237,6 +3245,8 @@ argument_list|,
 operator|&
 name|current_coords
 argument_list|,
+name|paint_options
+argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
@@ -3630,6 +3640,8 @@ name|size_output
 argument_list|,
 name|coords
 argument_list|,
+name|paint_options
+argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
@@ -3647,6 +3659,8 @@ name|angle_output
 argument_list|,
 name|coords
 argument_list|,
+name|paint_options
+argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
@@ -3663,6 +3677,8 @@ operator|->
 name|aspect_ratio_output
 argument_list|,
 name|coords
+argument_list|,
+name|paint_options
 argument_list|,
 name|fade_point
 argument_list|)

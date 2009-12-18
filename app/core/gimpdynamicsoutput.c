@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"paint/gimppaintoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcurve.h"
 end_include
 
@@ -101,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0381ed0103
+DECL|enum|__anon27a7dcc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -840,7 +846,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_output_get_linear_value (GimpDynamicsOutput * output,const GimpCoords * coords,gdouble fade_point)
+DECL|function|gimp_dynamics_output_get_linear_value (GimpDynamicsOutput * output,const GimpCoords * coords,GimpPaintOptions * options,gdouble fade_point)
 name|gimp_dynamics_output_get_linear_value
 parameter_list|(
 name|GimpDynamicsOutput
@@ -851,6 +857,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
 parameter_list|,
 name|gdouble
 name|fade_point
@@ -982,7 +992,28 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|(
 name|output
+operator|->
+name|use_fade
+operator|)
+operator|&&
+operator|(
+name|options
+operator|)
+condition|)
+block|{
+name|GimpFadeOptions
+modifier|*
+name|fade_options
+init|=
+name|options
+operator|->
+name|fade_options
+decl_stmt|;
+if|if
+condition|(
+name|fade_options
 operator|->
 name|use_fade
 condition|)
@@ -994,6 +1025,7 @@ expr_stmt|;
 name|factors
 operator|++
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -1021,7 +1053,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_output_get_angular_value (GimpDynamicsOutput * output,const GimpCoords * coords,gdouble fade_point)
+DECL|function|gimp_dynamics_output_get_angular_value (GimpDynamicsOutput * output,const GimpCoords * coords,GimpPaintOptions * options,gdouble fade_point)
 name|gimp_dynamics_output_get_angular_value
 parameter_list|(
 name|GimpDynamicsOutput
@@ -1032,6 +1064,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
 parameter_list|,
 name|gdouble
 name|fade_point
@@ -1262,7 +1298,28 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|(
 name|output
+operator|->
+name|use_fade
+operator|)
+operator|&&
+operator|(
+name|options
+operator|)
+condition|)
+block|{
+name|GimpFadeOptions
+modifier|*
+name|fade_options
+init|=
+name|options
+operator|->
+name|fade_options
+decl_stmt|;
+if|if
+condition|(
+name|fade_options
 operator|->
 name|use_fade
 condition|)
@@ -1274,6 +1331,7 @@ expr_stmt|;
 name|factors
 operator|++
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -1301,7 +1359,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_dynamics_output_get_aspect_value (GimpDynamicsOutput * output,const GimpCoords * coords,gdouble fade_point)
+DECL|function|gimp_dynamics_output_get_aspect_value (GimpDynamicsOutput * output,const GimpCoords * coords,GimpPaintOptions * options,gdouble fade_point)
 name|gimp_dynamics_output_get_aspect_value
 parameter_list|(
 name|GimpDynamicsOutput
@@ -1312,6 +1370,10 @@ specifier|const
 name|GimpCoords
 modifier|*
 name|coords
+parameter_list|,
+name|GimpPaintOptions
+modifier|*
+name|options
 parameter_list|,
 name|gdouble
 name|fade_point
@@ -1541,7 +1603,28 @@ expr_stmt|;
 block|}
 if|if
 condition|(
+operator|(
 name|output
+operator|->
+name|use_fade
+operator|)
+operator|&&
+operator|(
+name|options
+operator|)
+condition|)
+block|{
+name|GimpFadeOptions
+modifier|*
+name|fade_options
+init|=
+name|options
+operator|->
+name|fade_options
+decl_stmt|;
+if|if
+condition|(
+name|fade_options
 operator|->
 name|use_fade
 condition|)
@@ -1553,6 +1636,7 @@ expr_stmt|;
 name|factors
 operator|++
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
