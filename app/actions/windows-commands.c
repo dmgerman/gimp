@@ -97,7 +97,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|gimp_dialog_factory_get_toolbox
+name|windows_commands_get_toolbox
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -110,8 +110,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_get_toolbox (GimpDialogFactory * toolbox_factory)
-name|gimp_dialog_factory_get_toolbox
+DECL|function|windows_commands_get_toolbox (GimpDialogFactory * toolbox_factory)
+name|windows_commands_get_toolbox
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -410,6 +410,8 @@ block|{
 name|GtkWidget
 modifier|*
 name|toolbox
+init|=
+name|NULL
 decl_stmt|;
 if|if
 condition|(
@@ -439,7 +441,7 @@ else|else
 block|{
 name|toolbox
 operator|=
-name|gimp_dialog_factory_get_toolbox
+name|windows_commands_get_toolbox
 argument_list|(
 name|global_toolbox_factory
 argument_list|)
