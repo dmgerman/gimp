@@ -162,7 +162,31 @@ parameter_list|,
 name|remember_size
 parameter_list|)
 define|\
-value|{ id, NULL, NULL, NULL, NULL, \     NULL, 0, singleton,  TRUE, remember_size, FALSE, FALSE }
+value|{ id
+comment|/* identifier       */
+value|, \     NULL
+comment|/* name             */
+value|, \     NULL
+comment|/* blurb            */
+value|, \     NULL
+comment|/* stock_id         */
+value|, \     NULL
+comment|/* help_id          */
+value|, \     NULL
+comment|/* new_func         */
+value|, \     0
+comment|/* view_size        */
+value|, \     singleton
+comment|/* singleton        */
+value|, \     TRUE
+comment|/* session_managed  */
+value|, \     remember_size
+comment|/* remember_size    */
+value|, \     FALSE
+comment|/* remember_if_open */
+value|, \     FALSE
+comment|/* dockable         */
+value|}
 end_define
 
 begin_define
@@ -182,7 +206,31 @@ parameter_list|,
 name|remember_size
 parameter_list|)
 define|\
-value|{ id, NULL, NULL, NULL, NULL, \     new_func, 0, singleton, session_managed, remember_size, FALSE, FALSE }
+value|{ id
+comment|/* identifier       */
+value|, \     NULL
+comment|/* name             */
+value|, \     NULL
+comment|/* blurb            */
+value|, \     NULL
+comment|/* stock_id         */
+value|, \     NULL
+comment|/* help_id          */
+value|, \     new_func
+comment|/* new_func         */
+value|, \     0
+comment|/* view_size        */
+value|, \     singleton
+comment|/* singleton        */
+value|, \     session_managed
+comment|/* session_managed  */
+value|, \     remember_size
+comment|/* remember_size    */
+value|, \     FALSE
+comment|/* remember_if_open */
+value|, \     FALSE
+comment|/* dockable         */
+value|}
 end_define
 
 begin_decl_stmt
