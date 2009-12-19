@@ -233,6 +233,172 @@ comment|/* dockable         */
 value|}
 end_define
 
+begin_define
+DECL|macro|DOCKABLE (id,name,blurb,stock_id,help_id,new_func,view_size,singleton)
+define|#
+directive|define
+name|DOCKABLE
+parameter_list|(
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|stock_id
+parameter_list|,
+name|help_id
+parameter_list|,
+name|new_func
+parameter_list|,
+name|view_size
+parameter_list|,
+name|singleton
+parameter_list|)
+define|\
+value|{ id
+comment|/* identifier       */
+value|, \     name
+comment|/* name             */
+value|, \     blurb
+comment|/* blurb            */
+value|, \     stock_id
+comment|/* stock_id         */
+value|, \     help_id
+comment|/* help_id          */
+value|, \     new_func
+comment|/* new_func         */
+value|, \     view_size
+comment|/* view_size        */
+value|, \     singleton
+comment|/* singleton        */
+value|, \     FALSE
+comment|/* session_managed  */
+value|, \     FALSE
+comment|/* remember_size    */
+value|, \     TRUE
+comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* dockable         */
+value|}
+end_define
+
+begin_define
+DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,view_size)
+define|#
+directive|define
+name|LISTGRID
+parameter_list|(
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|stock_id
+parameter_list|,
+name|help_id
+parameter_list|,
+name|view_size
+parameter_list|)
+define|\
+value|{ "gimp-"#id"-list"
+comment|/* identifier       */
+value|,  \     name
+comment|/* name             */
+value|,  \     blurb
+comment|/* blurb            */
+value|,  \     stock_id
+comment|/* stock_id         */
+value|,  \     help_id
+comment|/* help_id          */
+value|,  \     dialogs_##id##_list_view_new
+comment|/* new_func         */
+value|,  \     view_size
+comment|/* view_size        */
+value|,  \     FALSE
+comment|/* singleton        */
+value|,  \     FALSE
+comment|/* session_managed  */
+value|,  \     FALSE
+comment|/* remember_size    */
+value|,  \     TRUE
+comment|/* remember_if_open */
+value|,  \     TRUE
+comment|/* dockable         */
+value|}, \   { "gimp-"#id"-grid"
+comment|/* identifier       */
+value|,  \     name
+comment|/* name             */
+value|,  \     blurb
+comment|/* blurb            */
+value|,  \     stock_id
+comment|/* stock_id         */
+value|,  \     help_id
+comment|/* help_id          */
+value|,  \     dialogs_##id##_grid_view_new
+comment|/* new_func         */
+value|,  \     view_size
+comment|/* view_size        */
+value|,  \     FALSE
+comment|/* singleton        */
+value|,  \     FALSE
+comment|/* session_managed  */
+value|,  \     FALSE
+comment|/* remember_size    */
+value|,  \     TRUE
+comment|/* remember_if_open */
+value|,  \     TRUE
+comment|/* dockable         */
+value|}
+end_define
+
+begin_define
+DECL|macro|LIST (id,name,blurb,stock_id,help_id,view_size)
+define|#
+directive|define
+name|LIST
+parameter_list|(
+name|id
+parameter_list|,
+name|name
+parameter_list|,
+name|blurb
+parameter_list|,
+name|stock_id
+parameter_list|,
+name|help_id
+parameter_list|,
+name|view_size
+parameter_list|)
+define|\
+value|{ "gimp-"#id"-list"
+comment|/* identifier       */
+value|, \     name
+comment|/* name             */
+value|, \     blurb
+comment|/* blurb            */
+value|, \     stock_id
+comment|/* stock_id         */
+value|, \     help_id
+comment|/* help_id          */
+value|, \     dialogs_##id##_list_view_new
+comment|/* new_func         */
+value|, \     view_size
+comment|/* view_size        */
+value|, \     FALSE
+comment|/* singleton        */
+value|, \     FALSE
+comment|/* session_managed  */
+value|, \     FALSE
+comment|/* remember_size    */
+value|, \     TRUE
+comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* dockable         */
+value|}
+end_define
+
 begin_decl_stmt
 DECL|variable|toplevel_entries
 specifier|static
@@ -645,76 +811,6 @@ argument_list|)
 block|}
 decl_stmt|;
 end_decl_stmt
-
-begin_define
-define|#
-directive|define
-name|DOCKABLE
-parameter_list|(
-name|id
-parameter_list|,
-name|name
-parameter_list|,
-name|blurb
-parameter_list|,
-name|stock_id
-parameter_list|,
-name|help_id
-parameter_list|,\
-DECL|macro|DOCKABLE (id,name,blurb,stock_id,help_id,\\\nnew_func,view_size,singleton)
-name|new_func
-parameter_list|,
-name|view_size
-parameter_list|,
-name|singleton
-parameter_list|)
-define|\
-value|{ id, name, blurb, stock_id, help_id, \     new_func, view_size, singleton, FALSE, FALSE, TRUE, TRUE }
-end_define
-
-begin_define
-define|#
-directive|define
-name|LISTGRID
-parameter_list|(
-name|id
-parameter_list|,
-name|name
-parameter_list|,
-name|blurb
-parameter_list|,
-name|stock_id
-parameter_list|,
-name|help_id
-parameter_list|,\
-DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,\\\nview_size)
-name|view_size
-parameter_list|)
-define|\
-value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }, \   { "gimp-"#id"-grid", name, blurb, stock_id, help_id, \     dialogs_##id##_grid_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }
-end_define
-
-begin_define
-define|#
-directive|define
-name|LIST
-parameter_list|(
-name|id
-parameter_list|,
-name|name
-parameter_list|,
-name|blurb
-parameter_list|,
-name|stock_id
-parameter_list|,
-name|help_id
-parameter_list|,\
-DECL|macro|LIST (id,name,blurb,stock_id,help_id,\\\nview_size)
-name|view_size
-parameter_list|)
-define|\
-value|{ "gimp-"#id"-list", name, blurb, stock_id, help_id, \     dialogs_##id##_list_view_new, view_size, FALSE, FALSE, FALSE, TRUE, TRUE }
-end_define
 
 begin_decl_stmt
 DECL|variable|dock_entries
