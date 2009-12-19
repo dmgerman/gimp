@@ -1506,7 +1506,7 @@ argument_list|)
 argument_list|,
 name|menu_factory
 argument_list|,
-name|dialogs_toolbox_get
+name|dialogs_toolbox_new
 argument_list|,
 name|TRUE
 argument_list|)

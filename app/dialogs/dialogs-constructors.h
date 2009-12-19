@@ -293,7 +293,7 @@ end_comment
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|dialogs_toolbox_get
+name|dialogs_toolbox_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*

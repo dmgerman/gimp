@@ -823,8 +823,8 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_toolbox_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager)
-name|dialogs_toolbox_get
+DECL|function|dialogs_toolbox_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager)
+name|dialogs_toolbox_new
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
