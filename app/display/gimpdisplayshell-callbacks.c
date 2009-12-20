@@ -4701,6 +4701,14 @@ operator|==
 name|GIMP_MOTION_MODE_EXACT
 operator|)
 operator|&&
+name|shell
+operator|->
+name|display
+operator|->
+name|config
+operator|->
+name|use_event_history
+operator|&&
 name|gdk_device_get_history
 argument_list|(
 name|mevent

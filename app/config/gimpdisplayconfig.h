@@ -238,6 +238,10 @@ DECL|member|zoom_quality
 name|GimpZoomQuality
 name|zoom_quality
 decl_stmt|;
+DECL|member|use_event_history
+name|gboolean
+name|use_event_history
+decl_stmt|;
 block|}
 struct|;
 end_struct

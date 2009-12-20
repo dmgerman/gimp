@@ -1152,6 +1152,15 @@ define|\
 value|"There's a tradeoff between speed and quality of the zoomed-out display."
 end_define
 
+begin_define
+DECL|macro|DEFAULT_USE_EVENT_HISTORY_BLURB
+define|#
+directive|define
+name|DEFAULT_USE_EVENT_HISTORY_BLURB
+define|\
+value|"Bugs in event history buffer are frequent so in case of curor " \ "offset problems turning it off helps."
+end_define
+
 begin_endif
 endif|#
 directive|endif
