@@ -576,7 +576,7 @@ expr_stmt|;
 block|}
 name|g_signal_connect_object
 argument_list|(
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|,
 literal|"dock-window-added"
 argument_list|,
@@ -592,7 +592,7 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|,
 literal|"dock-window-removed"
 argument_list|,
@@ -610,7 +610,7 @@ for|for
 control|(
 name|list
 operator|=
-name|global_dock_factory
+name|global_dock_window_factory
 operator|->
 name|open_dialogs
 init|;
@@ -641,7 +641,7 @@ argument_list|)
 condition|)
 name|windows_actions_dock_window_added
 argument_list|(
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|,
 name|dock_window
 argument_list|,

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9f7e10103
+DECL|enum|__anon2933c5730103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_LOCKED
 name|SESSION_INFO_DOCKABLE_LOCKED
@@ -1011,7 +1011,7 @@ operator|=
 operator|-
 literal|1
 expr_stmt|;
-comment|/* FIXME: Merge global_dock_factory and global_toolbox_factory    * somehow so we don't need this hack    */
+comment|/* FIXME: Merge global_dock_window_factory and global_toolbox_factory    * somehow so we don't need this hack    */
 name|dockable
 operator|=
 name|gimp_dialog_factory_dockable_new

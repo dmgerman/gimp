@@ -28,7 +28,7 @@ begin_decl_stmt
 specifier|extern
 name|GimpDialogFactory
 modifier|*
-name|global_dock_factory
+name|global_dock_window_factory
 decl_stmt|;
 end_decl_stmt
 

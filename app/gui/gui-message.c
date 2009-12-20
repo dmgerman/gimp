@@ -335,7 +335,7 @@ name|info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|,
 literal|"gimp-error-console"
 argument_list|)
@@ -369,7 +369,7 @@ name|dockable
 operator|=
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()

@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c29aa560103
+DECL|enum|__anon2b2665a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -970,7 +970,7 @@ argument_list|)
 condition|?
 name|global_toolbox_factory
 else|:
-name|global_dock_factory
+name|global_dock_window_factory
 operator|)
 expr_stmt|;
 comment|/* Create a dock window to put the dock in */
@@ -1088,7 +1088,7 @@ name|global_menu_factory
 argument_list|,
 name|global_display_factory
 argument_list|,
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|)
 expr_stmt|;
 comment|/* Move the shell there */
@@ -1250,7 +1250,7 @@ name|gimp_ui_configurer_move_docks_to_columns
 argument_list|(
 name|ui_configurer
 argument_list|,
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|,
 name|right_docks
 argument_list|)

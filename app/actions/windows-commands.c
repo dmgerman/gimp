@@ -371,13 +371,13 @@ name|info
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|global_dock_factory
+name|global_dock_window_factory
 operator|->
 name|session_infos
 operator|=
 name|g_list_append
 argument_list|(
-name|global_dock_factory
+name|global_dock_window_factory
 operator|->
 name|session_infos
 argument_list|,
@@ -388,7 +388,7 @@ name|gimp_session_info_restore
 argument_list|(
 name|info
 argument_list|,
-name|global_dock_factory
+name|global_dock_window_factory
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_clear_info
