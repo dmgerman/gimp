@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4a023a0103
+DECL|enum|__anon2b431f3a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1081,11 +1081,12 @@ name|config
 operator|=
 name|GIMP_GUI_CONFIG
 argument_list|(
+name|gimp_dialog_factory_get_context
+argument_list|(
 name|private
 operator|->
 name|display_factory
-operator|->
-name|context
+argument_list|)
 operator|->
 name|gimp
 operator|->

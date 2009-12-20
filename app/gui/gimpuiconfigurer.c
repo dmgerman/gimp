@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2665a50103
+DECL|enum|__anon28dcaab80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -570,9 +570,10 @@ name|dialogs
 init|=
 name|g_list_copy
 argument_list|(
+name|gimp_dialog_factory_get_open_dialogs
+argument_list|(
 name|dialog_factory
-operator|->
-name|open_dialogs
+argument_list|)
 argument_list|)
 decl_stmt|;
 name|GList

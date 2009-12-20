@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a76380103
+DECL|enum|__anon2a099be40103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -549,15 +549,9 @@ argument_list|,
 name|info
 argument_list|)
 expr_stmt|;
-name|factory
-operator|->
-name|session_infos
-operator|=
-name|g_list_append
+name|gimp_dialog_factory_add_session_info
 argument_list|(
 name|factory
-operator|->
-name|session_infos
 argument_list|,
 name|info
 argument_list|)

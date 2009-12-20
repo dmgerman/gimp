@@ -610,9 +610,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_dialog_factory_get_open_dialogs
+argument_list|(
 name|global_dock_window_factory
-operator|->
-name|open_dialogs
+argument_list|)
 init|;
 name|list
 condition|;

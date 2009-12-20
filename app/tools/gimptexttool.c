@@ -3982,9 +3982,10 @@ name|ui_manager
 operator|=
 name|gimp_menu_factory_manager_new
 argument_list|(
+name|gimp_dialog_factory_get_menu_factory
+argument_list|(
 name|dialog_factory
-operator|->
-name|menu_factory
+argument_list|)
 argument_list|,
 literal|"<TextTool>"
 argument_list|,
@@ -9196,9 +9197,10 @@ name|parent
 argument_list|,
 name|options
 argument_list|,
+name|gimp_dialog_factory_get_menu_factory
+argument_list|(
 name|dialog_factory
-operator|->
-name|menu_factory
+argument_list|)
 argument_list|,
 name|_
 argument_list|(
