@@ -1525,7 +1525,7 @@ argument_list|,
 name|dialogs_toolbox_dock_window_new
 argument_list|)
 expr_stmt|;
-comment|/* Dock */
+comment|/* Dock window */
 name|global_dock_window_factory
 operator|=
 name|gimp_dialog_factory_new
