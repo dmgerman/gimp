@@ -385,5 +385,51 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_test_run_mainloop_until_idle:  *  * Creates and runs a main loop until it is idle, i.e. has no more  * work to do.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_test_run_mainloop_until_idle (void)
+name|gimp_test_run_mainloop_until_idle
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GMainLoop
+modifier|*
+name|loop
+init|=
+name|g_main_loop_new
+argument_list|(
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|)
+decl_stmt|;
+name|g_idle_add
+argument_list|(
+operator|(
+name|GSourceFunc
+operator|)
+name|gimp_tests_quit_mainloop
+argument_list|,
+name|loop
+argument_list|)
+expr_stmt|;
+name|g_main_loop_run
+argument_list|(
+name|loop
+argument_list|)
+expr_stmt|;
+name|g_main_loop_unref
+argument_list|(
+name|loop
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 
