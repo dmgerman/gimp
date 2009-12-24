@@ -160,6 +160,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpToolOptions
+modifier|*
+name|gimp_tool_options_editor_get_tool_options
+parameter_list|(
+name|GimpToolOptionsEditor
+modifier|*
+name|editor
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

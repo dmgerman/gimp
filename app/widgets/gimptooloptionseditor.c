@@ -1299,6 +1299,37 @@ return|;
 block|}
 end_function
 
+begin_function
+name|GimpToolOptions
+modifier|*
+DECL|function|gimp_tool_options_editor_get_tool_options (GimpToolOptionsEditor * editor)
+name|gimp_tool_options_editor_get_tool_options
+parameter_list|(
+name|GimpToolOptionsEditor
+modifier|*
+name|editor
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TOOL_OPTIONS_EDITOR
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|editor
+operator|->
+name|p
+operator|->
+name|visible_tool_options
+return|;
+block|}
+end_function
+
 begin_comment
 comment|/*  private functions  */
 end_comment
