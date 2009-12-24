@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b73170108
+DECL|struct|__anon296a803b0108
 block|{
 DECL|member|dummy
 name|int
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275b73170208
+DECL|struct|__anon296a803b0208
 block|{
 DECL|member|md5
 name|gchar
@@ -310,10 +310,8 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Let the main loop run for a while (quits after a short timeout)    * to let things stabilize. This includes parsing sessionrc and    * dockrc    */
-name|gimp_test_run_temp_mainloop
-argument_list|(
-literal|4000
-argument_list|)
+name|gimp_test_run_mainloop_until_idle
+argument_list|()
 expr_stmt|;
 comment|/* Exit. This includes writing sessionrc and dockrc*/
 name|gimp_exit
