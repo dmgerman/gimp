@@ -105,10 +105,16 @@ directive|include
 file|"tests.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-app-test-utils.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b94000108
+DECL|struct|__anon2a07e3f70108
 block|{
 DECL|member|dummy
 name|int
@@ -123,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3b94000208
+DECL|struct|__anon2a07e3f70208
 block|{
 DECL|member|md5
 name|gchar
@@ -202,6 +208,11 @@ operator|&
 name|argv
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"gimpdir"
 argument_list|)
 expr_stmt|;
 comment|/* Start up GIMP */

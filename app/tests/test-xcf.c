@@ -117,6 +117,12 @@ directive|include
 file|"tests.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-app-test-utils.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_MAINIMAGE_WIDTH
 define|#
@@ -325,7 +331,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29216eed0108
+DECL|struct|__anon2a98d7090108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -1431,6 +1437,11 @@ operator|&
 name|argv
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"gimpdir"
 argument_list|)
 expr_stmt|;
 comment|/* We share the same application instance across all tests. We need    * the GUI variant for the file procs    */

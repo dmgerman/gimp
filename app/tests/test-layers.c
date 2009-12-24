@@ -39,6 +39,12 @@ directive|include
 file|"tests.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-app-test-utils.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TEST_IMAGE_SIZE
 define|#
@@ -50,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28eaa7dc0108
+DECL|struct|__anon2923e8630108
 block|{
 DECL|member|image
 name|GimpImage
@@ -165,6 +171,11 @@ operator|&
 name|argv
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"gimpdir"
 argument_list|)
 expr_stmt|;
 comment|/* We share the same application instance across all tests */

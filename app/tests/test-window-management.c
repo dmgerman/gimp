@@ -63,10 +63,16 @@ directive|include
 file|"tests.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-app-test-utils.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3b19540108
+DECL|struct|__anon2ae81e830108
 block|{
 DECL|member|dummy
 name|int
@@ -121,16 +127,6 @@ block|{
 name|int
 name|test_result
 decl_stmt|;
-comment|/* Disable the user dir for this test */
-name|g_setenv
-argument_list|(
-literal|"GIMP2_DIRECTORY"
-argument_list|,
-literal|"/tmp/gimpdir"
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;
@@ -152,6 +148,11 @@ operator|&
 name|argv
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"gimpdir-empty"
 argument_list|)
 expr_stmt|;
 comment|/* We share the same application instance across all tests */

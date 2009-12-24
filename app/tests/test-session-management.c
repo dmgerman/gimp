@@ -81,10 +81,16 @@ directive|include
 file|"tests.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-app-test-utils.h"
+end_include
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a803b0108
+DECL|struct|__anon2ae494740108
 block|{
 DECL|member|dummy
 name|int
@@ -99,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon296a803b0208
+DECL|struct|__anon2ae494740208
 block|{
 DECL|member|md5
 name|gchar
@@ -233,19 +239,13 @@ name|gchar
 modifier|*
 name|sessionrc_filename
 init|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"sessionrc"
-argument_list|)
+name|NULL
 decl_stmt|;
 name|gchar
 modifier|*
 name|dockrc_filename
 init|=
-name|gimp_personal_rc_file
-argument_list|(
-literal|"dockrc"
-argument_list|)
+name|NULL
 decl_stmt|;
 name|g_type_init
 argument_list|()
@@ -268,6 +268,26 @@ operator|&
 name|argv
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* Make sure to run this before we use any GIMP functions */
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"gimpdir"
+argument_list|)
+expr_stmt|;
+name|sessionrc_filename
+operator|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"sessionrc"
+argument_list|)
+expr_stmt|;
+name|dockrc_filename
+operator|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"dockrc"
 argument_list|)
 expr_stmt|;
 comment|/* Remeber the modtimes and MD5s */
