@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af08d210103
+DECL|enum|__anon2c3ebf8d0103
 block|{
 DECL|enumerator|CURVE_NONE
 name|CURVE_NONE
@@ -609,7 +609,7 @@ index|]
 operator|=
 name|gimp_curve_map_value
 argument_list|(
-name|curve_green
+name|curve_blue
 argument_list|,
 name|src
 index|[
