@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794c5890103
+DECL|enum|__anon29b36d860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1952,15 +1952,8 @@ operator|*
 name|y
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|spikes
-operator|>
-literal|2
-condition|)
-block|{
 name|gdouble
-name|angle
+name|ang
 init|=
 name|atan2
 argument_list|(
@@ -1971,7 +1964,7 @@ argument_list|)
 decl_stmt|;
 while|while
 condition|(
-name|angle
+name|ang
 operator|>
 name|G_PI
 operator|/
@@ -2008,7 +2001,7 @@ name|cs
 operator|*
 name|sy
 expr_stmt|;
-name|angle
+name|ang
 operator|-=
 literal|2
 operator|*
@@ -2016,7 +2009,6 @@ name|G_PI
 operator|/
 name|spikes
 expr_stmt|;
-block|}
 block|}
 name|ty
 operator|*=
