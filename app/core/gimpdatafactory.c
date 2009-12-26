@@ -1241,7 +1241,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdcf3710108
+DECL|struct|__anon2793f0760108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -2937,7 +2937,7 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|utf8
+name|display_name
 init|=
 name|g_filename_display_name
 argument_list|(
@@ -2958,15 +2958,15 @@ literal|"You have a writable data folder "
 literal|"configured (%s), but this folder does "
 literal|"not exist. Please create the folder or "
 literal|"fix your configuation in the "
-literal|"preferences dialog's 'folders' section."
+literal|"Preferences dialog's 'Folders' section."
 argument_list|)
 argument_list|,
-name|utf8
+name|display_name
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|utf8
+name|display_name
 argument_list|)
 expr_stmt|;
 block|}
@@ -3004,9 +3004,9 @@ argument_list|,
 name|_
 argument_list|(
 literal|"You have a writable data folder configured, but this "
-literal|"folder is not part of your data search path. This "
-literal|"can only happen if you edited gimprc manually, "
-literal|"please fix it in the preferences dialog's 'folders' "
+literal|"folder is not part of your data search path. You "
+literal|"probably edited the gimprc file manually, "
+literal|"please fix it in the Preferences dialog's 'Folders' "
 literal|"section."
 argument_list|)
 argument_list|)
