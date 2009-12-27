@@ -762,16 +762,23 @@ decl_stmt|;
 name|PyObject
 modifier|*
 name|ip
-decl_stmt|,
+decl_stmt|;
+comment|// init proc
+name|PyObject
 modifier|*
 name|qp
-decl_stmt|,
+decl_stmt|;
+comment|// quit proc
+name|PyObject
 modifier|*
 name|query
-decl_stmt|,
+decl_stmt|;
+comment|// query proc
+name|PyObject
 modifier|*
 name|rp
 decl_stmt|;
+comment|// run proc
 if|if
 condition|(
 operator|!
