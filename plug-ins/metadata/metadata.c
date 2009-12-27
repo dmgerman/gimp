@@ -94,7 +94,7 @@ DECL|macro|METADATA_MARKER_LEN
 define|#
 directive|define
 name|METADATA_MARKER_LEN
-value|(sizeof (METADATA_MARKER) - 1)
+value|(strlen (METADATA_MARKER))
 end_define
 
 begin_comment
@@ -198,7 +198,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"run-mode"
 block|,
-literal|"The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
+literal|"Run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }"
 block|}
 block|,
 block|{
@@ -1147,7 +1147,7 @@ condition|)
 block|{
 name|g_printerr
 argument_list|(
-literal|"\nMetadata parasite seems to be corrupt"
+literal|"\nMetadata parasite seems to be corrupt\n"
 argument_list|)
 expr_stmt|;
 comment|/* continue anyway, we will attach a clean parasite later */
