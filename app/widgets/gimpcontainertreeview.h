@@ -24,7 +24,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ed17630103
+DECL|enum|__anon297e48b20103
 block|{
 DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
@@ -207,6 +207,10 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|dest_viewable
+parameter_list|,
+name|GtkTreePath
+modifier|*
+name|drop_path
 parameter_list|,
 name|GtkTreeViewDropPosition
 name|drop_pos

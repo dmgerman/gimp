@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af35c3d0103
+DECL|enum|__anon275b6abc0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -541,6 +541,10 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|dest_viewable
+parameter_list|,
+name|GtkTreePath
+modifier|*
+name|drop_path
 parameter_list|,
 name|GtkTreeViewDropPosition
 name|drop_pos
@@ -4405,7 +4409,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_item_tree_view_drop_possible (GimpContainerTreeView * tree_view,GimpDndType src_type,GimpViewable * src_viewable,GimpViewable * dest_viewable,GtkTreeViewDropPosition drop_pos,GtkTreeViewDropPosition * return_drop_pos,GdkDragAction * return_drag_action)
+DECL|function|gimp_item_tree_view_drop_possible (GimpContainerTreeView * tree_view,GimpDndType src_type,GimpViewable * src_viewable,GimpViewable * dest_viewable,GtkTreePath * drop_path,GtkTreeViewDropPosition drop_pos,GtkTreeViewDropPosition * return_drop_pos,GdkDragAction * return_drag_action)
 name|gimp_item_tree_view_drop_possible
 parameter_list|(
 name|GimpContainerTreeView
@@ -4422,6 +4426,10 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|dest_viewable
+parameter_list|,
+name|GtkTreePath
+modifier|*
+name|drop_path
 parameter_list|,
 name|GtkTreeViewDropPosition
 name|drop_pos
@@ -4502,6 +4510,8 @@ argument_list|,
 name|src_viewable
 argument_list|,
 name|dest_viewable
+argument_list|,
+name|drop_path
 argument_list|,
 name|drop_pos
 argument_list|,
