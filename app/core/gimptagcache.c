@@ -113,9 +113,13 @@ name|GIMP_TAG_CACHE_FILE
 value|"tags.xml"
 end_define
 
+begin_comment
+comment|/* #define DEBUG_GIMP_TAG_CACHE  1 */
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bd03ae90103
+DECL|enum|__anon277296ae0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -129,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd03ae90208
+DECL|struct|__anon277296ae0208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -159,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd03ae90308
+DECL|struct|__anon277296ae0308
 block|{
 DECL|member|records
 name|GArray
@@ -1140,6 +1144,9 @@ operator|==
 name|checksum_quark
 condition|)
 block|{
+if|#
+directive|if
+name|DEBUG_GIMP_TAG_CACHE
 name|g_printerr
 argument_list|(
 literal|"remapping identifier: %s ==> %s\n"
@@ -1167,6 +1174,8 @@ else|:
 literal|"(NULL)"
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|rec
 operator|->
 name|identifier
