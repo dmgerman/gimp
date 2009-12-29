@@ -27,6 +27,12 @@ directive|include
 file|<stdlib.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|<locale.h>
+end_include
+
 begin_ifdef
 ifdef|#
 directive|ifdef
@@ -187,7 +193,7 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|app_init_update_none
+name|app_init_update_noop
 parameter_list|(
 specifier|const
 name|gchar
@@ -201,6 +207,19 @@ name|text2
 parameter_list|,
 name|gdouble
 name|percentage
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|app_init_language
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|language
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -563,6 +582,16 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
+comment|/*  change the locale if a language if specified  */
+name|app_init_language
+argument_list|(
+name|gimp
+operator|->
+name|config
+operator|->
+name|language
+argument_list|)
+expr_stmt|;
 comment|/*  initialize lowlevel stuff  */
 name|swap_is_ok
 operator|=
@@ -606,7 +635,7 @@ name|update_status_func
 condition|)
 name|update_status_func
 operator|=
-name|app_init_update_none
+name|app_init_update_noop
 expr_stmt|;
 comment|/*  Create all members of the global Gimp instance which need an already    *  parsed gimprc, e.g. the data factories    */
 name|gimp_initialize
@@ -792,8 +821,8 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|app_init_update_none (const gchar * text1,const gchar * text2,gdouble percentage)
-name|app_init_update_none
+DECL|function|app_init_update_noop (const gchar * text1,const gchar * text2,gdouble percentage)
+name|app_init_update_noop
 parameter_list|(
 specifier|const
 name|gchar
@@ -808,7 +837,54 @@ parameter_list|,
 name|gdouble
 name|percentage
 parameter_list|)
-block|{ }
+block|{
+comment|/*  deliberately do nothing  */
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|app_init_language (const gchar * language)
+name|app_init_language
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|language
+parameter_list|)
+block|{
+comment|/*  We already set the locale according to the environment, so just    *  return early if no language is set in gimprc.    */
+if|if
+condition|(
+operator|!
+name|language
+condition|)
+return|return;
+name|g_printerr
+argument_list|(
+literal|"Setting language to %s\n"
+argument_list|,
+name|language
+argument_list|)
+expr_stmt|;
+name|g_setenv
+argument_list|(
+literal|"LANGUAGE"
+argument_list|,
+name|language
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|setlocale
+argument_list|(
+name|LC_ALL
+argument_list|,
+literal|""
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function

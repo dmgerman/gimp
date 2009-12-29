@@ -2511,6 +2511,7 @@ parameter_list|(
 name|void
 parameter_list|)
 block|{
+comment|/*  We may change the locale later if the user specifies a language    *  in the gimprc file. Here we are just initializing the locale    *  according to the environment variables and set up the paths to    *  the message catalogs.    */
 name|setlocale
 argument_list|(
 name|LC_ALL

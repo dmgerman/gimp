@@ -525,6 +525,15 @@ value|"Sets the interpreter search path."
 end_define
 
 begin_define
+DECL|macro|LANGUAGE_BLURB
+define|#
+directive|define
+name|LANGUAGE_BLURB
+define|\
+value|N_("Specifies the language to use.")
+end_define
+
+begin_define
 DECL|macro|LAST_OPENED_SIZE_BLURB
 define|#
 directive|define
