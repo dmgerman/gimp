@@ -44,6 +44,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+specifier|const
+name|gchar
+modifier|*
+name|gimp_layer_mode_to_gegl_operation
+argument_list|(
+name|GimpLayerModeEffects
+name|mode
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif
