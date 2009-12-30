@@ -984,15 +984,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpImagePropView
-typedef|typedef
-name|struct
-name|_GimpImagePropView
-name|GimpImagePropView
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpImageProfileView
 typedef|typedef
 name|struct
@@ -1002,11 +993,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpLanguageStore
+DECL|typedef|GimpImagePropView
 typedef|typedef
 name|struct
-name|_GimpLanguageStore
-name|GimpLanguageStore
+name|_GimpImagePropView
+name|GimpImagePropView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLanguageComboBox
+typedef|typedef
+name|struct
+name|_GimpLanguageComboBox
+name|GimpLanguageComboBox
 typedef|;
 end_typedef
 
@@ -1016,6 +1016,15 @@ typedef|typedef
 name|struct
 name|_GimpLanguageEntry
 name|GimpLanguageEntry
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpLanguageStore
+typedef|typedef
+name|struct
+name|_GimpLanguageStore
+name|GimpLanguageStore
 typedef|;
 end_typedef
 

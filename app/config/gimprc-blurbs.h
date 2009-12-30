@@ -530,7 +530,7 @@ define|#
 directive|define
 name|LANGUAGE_BLURB
 define|\
-value|N_("Specifies the language to use.")
+value|N_("Specifies the language to use for the user interface.")
 end_define
 
 begin_define
