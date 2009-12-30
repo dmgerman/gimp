@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2794c5890103
+DECL|enum|__anon290961a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2249,6 +2249,18 @@ decl_stmt|;
 name|GimpVector2
 name|y_axis
 decl_stmt|;
+comment|/* Since floatongpoint is not really accurate,     * we need to round to limit the errors.     * Errors in some border cases resulted in     * different height and width reported for     * the same input value on calling procedure side.    * This became problem at the rise of dynamics that    * allows for any angle to turn up.    **/
+name|angle_in_degrees
+operator|=
+name|ROUND
+argument_list|(
+name|angle_in_degrees
+operator|*
+literal|1000.0
+argument_list|)
+operator|/
+literal|1000.0
+expr_stmt|;
 name|s
 operator|=
 name|sin
