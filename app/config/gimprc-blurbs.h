@@ -1158,7 +1158,7 @@ define|#
 directive|define
 name|DEFAULT_USE_EVENT_HISTORY_BLURB
 define|\
-value|"Bugs in event history buffer are frequent so in case of curor " \ "offset problems turning it off helps."
+value|"Bugs in event history buffer are frequent so in case of cursor " \ "offset problems turning it off helps."
 end_define
 
 begin_endif
