@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimplanguagestore.h  * Copyright (C) 2008  Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimplanguagestore.h  * Copyright (C) 2008, 2009  Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_ifndef
@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcdd820103
+DECL|enum|__anon2781f50b0103
 block|{
 DECL|enumerator|GIMP_LANGUAGE_STORE_LANGUAGE
 name|GIMP_LANGUAGE_STORE_LANGUAGE
@@ -110,6 +110,28 @@ DECL|member|parent_class
 name|GtkListStoreClass
 name|parent_class
 decl_stmt|;
+DECL|member|add
+name|void
+function_decl|(
+modifier|*
+name|add
+function_decl|)
+parameter_list|(
+name|GimpLanguageStore
+modifier|*
+name|store
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|lang
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|code
+parameter_list|)
+function_decl|;
 block|}
 struct|;
 end_struct
@@ -148,6 +170,30 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_language_store_lookup
+parameter_list|(
+name|GimpLanguageStore
+modifier|*
+name|store
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|code
+parameter_list|,
+name|GtkTreeIter
+modifier|*
+name|iter
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  used from gimplanguagestore-parser.c  */
+end_comment
+
+begin_function_decl
 name|void
 name|gimp_language_store_add
 parameter_list|(
@@ -164,26 +210,6 @@ specifier|const
 name|gchar
 modifier|*
 name|code
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_language_store_lookup
-parameter_list|(
-name|GimpLanguageStore
-modifier|*
-name|store
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|code
-parameter_list|,
-name|GtkTreeIter
-modifier|*
-name|iter
 parameter_list|)
 function_decl|;
 end_function_decl

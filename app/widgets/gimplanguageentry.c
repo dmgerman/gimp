@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c8c9d80103
+DECL|enum|__anon29b274cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -521,17 +521,13 @@ block|{
 case|case
 name|PROP_MODEL
 case|:
-if|if
-condition|(
-name|entry
-operator|->
-name|store
-condition|)
-name|g_object_unref
+name|g_return_if_fail
 argument_list|(
 name|entry
 operator|->
 name|store
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|entry

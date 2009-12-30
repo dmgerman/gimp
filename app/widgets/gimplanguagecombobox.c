@@ -40,7 +40,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplanguagestore.h"
+file|"gimptranslationstore.h"
 end_include
 
 begin_struct
@@ -158,7 +158,7 @@ name|store
 decl_stmt|;
 name|store
 operator|=
-name|gimp_language_store_new
+name|gimp_translation_store_new
 argument_list|()
 expr_stmt|;
 name|combo

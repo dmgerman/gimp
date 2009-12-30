@@ -861,13 +861,6 @@ operator|!
 name|language
 condition|)
 return|return;
-name|g_printerr
-argument_list|(
-literal|"Setting language to %s\n"
-argument_list|,
-name|language
-argument_list|)
-expr_stmt|;
 name|g_setenv
 argument_list|(
 literal|"LANGUAGE"

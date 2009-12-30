@@ -1137,6 +1137,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTranslationStore
+typedef|typedef
+name|struct
+name|_GimpTranslationStore
+name|GimpTranslationStore
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpUnitStore
 typedef|typedef
 name|struct
