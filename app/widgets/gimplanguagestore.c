@@ -70,7 +70,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|lang
+name|label
 parameter_list|,
 specifier|const
 name|gchar
@@ -202,7 +202,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
 name|gimp_language_store_sort
 argument_list|,
@@ -218,7 +218,7 @@ argument_list|(
 name|store
 argument_list|)
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
 name|GTK_SORT_ASCENDING
 argument_list|)
@@ -283,7 +283,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_language_store_real_add (GimpLanguageStore * store,const gchar * lang,const gchar * code)
+DECL|function|gimp_language_store_real_add (GimpLanguageStore * store,const gchar * label,const gchar * code)
 name|gimp_language_store_real_add
 parameter_list|(
 name|GimpLanguageStore
@@ -293,7 +293,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|lang
+name|label
 parameter_list|,
 specifier|const
 name|gchar
@@ -325,11 +325,11 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
-name|lang
+name|label
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 name|code
 argument_list|,
@@ -388,7 +388,7 @@ name|model
 argument_list|,
 name|a
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 operator|&
 name|avalue
@@ -400,7 +400,7 @@ name|model
 argument_list|,
 name|b
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 operator|&
 name|bvalue
@@ -452,14 +452,14 @@ condition|)
 return|return
 name|cmp
 return|;
-comment|/*  sort lanugages alphabetically  */
+comment|/*  sort labels alphabetically  */
 name|gtk_tree_model_get_value
 argument_list|(
 name|model
 argument_list|,
 name|a
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
 operator|&
 name|avalue
@@ -471,7 +471,7 @@ name|model
 argument_list|,
 name|b
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
 operator|&
 name|bvalue
@@ -534,7 +534,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_language_store_add (GimpLanguageStore * store,const gchar * lang,const gchar * code)
+DECL|function|gimp_language_store_add (GimpLanguageStore * store,const gchar * label,const gchar * code)
 name|gimp_language_store_add
 parameter_list|(
 name|GimpLanguageStore
@@ -544,7 +544,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|lang
+name|label
 parameter_list|,
 specifier|const
 name|gchar
@@ -562,7 +562,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|lang
+name|label
 operator|!=
 name|NULL
 argument_list|)
@@ -576,7 +576,7 @@ name|add
 argument_list|(
 name|store
 argument_list|,
-name|lang
+name|label
 argument_list|,
 name|code
 argument_list|)
@@ -714,7 +714,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 operator|&
 name|value

@@ -124,7 +124,7 @@ end_function_decl
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_language_combo_box_get_iso_code
+name|gimp_language_combo_box_get_code
 parameter_list|(
 name|GimpLanguageComboBox
 modifier|*
@@ -135,7 +135,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_language_combo_box_set_iso_code
+name|gimp_language_combo_box_set_code
 parameter_list|(
 name|GimpLanguageComboBox
 modifier|*

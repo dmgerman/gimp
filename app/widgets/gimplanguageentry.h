@@ -125,7 +125,7 @@ begin_function_decl
 specifier|const
 name|gchar
 modifier|*
-name|gimp_language_entry_get_iso_code
+name|gimp_language_entry_get_code
 parameter_list|(
 name|GimpLanguageEntry
 modifier|*
@@ -136,7 +136,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_language_entry_set_iso_code
+name|gimp_language_entry_set_code
 parameter_list|(
 name|GimpLanguageEntry
 modifier|*

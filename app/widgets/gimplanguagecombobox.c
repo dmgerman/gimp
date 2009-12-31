@@ -131,7 +131,7 @@ name|renderer
 argument_list|,
 literal|"text"
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
 name|NULL
 argument_list|)
@@ -188,8 +188,8 @@ end_function
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_language_combo_box_get_iso_code (GimpLanguageComboBox * combo)
-name|gimp_language_combo_box_get_iso_code
+DECL|function|gimp_language_combo_box_get_code (GimpLanguageComboBox * combo)
+name|gimp_language_combo_box_get_code
 parameter_list|(
 name|GimpLanguageComboBox
 modifier|*
@@ -243,7 +243,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 operator|&
 name|code
@@ -260,8 +260,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_language_combo_box_set_iso_code (GimpLanguageComboBox * combo,const gchar * code)
-name|gimp_language_combo_box_set_iso_code
+DECL|function|gimp_language_combo_box_set_code (GimpLanguageComboBox * combo,const gchar * code)
+name|gimp_language_combo_box_set_code
 parameter_list|(
 name|GimpLanguageComboBox
 modifier|*

@@ -45,7 +45,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b274cf0103
+DECL|enum|__anon28a306f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -367,7 +367,7 @@ name|gtk_entry_completion_set_text_column
 argument_list|(
 name|completion
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|)
 expr_stmt|;
 name|gtk_entry_set_completion
@@ -655,7 +655,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 operator|&
 name|entry
@@ -722,8 +722,8 @@ begin_function
 specifier|const
 name|gchar
 modifier|*
-DECL|function|gimp_language_entry_get_iso_code (GimpLanguageEntry * entry)
-name|gimp_language_entry_get_iso_code
+DECL|function|gimp_language_entry_get_code (GimpLanguageEntry * entry)
+name|gimp_language_entry_get_code
 parameter_list|(
 name|GimpLanguageEntry
 modifier|*
@@ -750,8 +750,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_language_entry_set_iso_code (GimpLanguageEntry * entry,const gchar * code)
-name|gimp_language_entry_set_iso_code
+DECL|function|gimp_language_entry_set_code (GimpLanguageEntry * entry,const gchar * code)
+name|gimp_language_entry_set_code
 parameter_list|(
 name|GimpLanguageEntry
 modifier|*
@@ -843,7 +843,7 @@ condition|)
 block|{
 name|gchar
 modifier|*
-name|language
+name|label
 decl_stmt|;
 name|gtk_tree_model_get
 argument_list|(
@@ -857,12 +857,12 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+name|GIMP_LANGUAGE_STORE_LABEL
 argument_list|,
 operator|&
-name|language
+name|label
 argument_list|,
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+name|GIMP_LANGUAGE_STORE_CODE
 argument_list|,
 operator|&
 name|entry
@@ -880,12 +880,12 @@ argument_list|(
 name|entry
 argument_list|)
 argument_list|,
-name|language
+name|label
 argument_list|)
 expr_stmt|;
 name|g_free
 argument_list|(
-name|language
+name|label
 argument_list|)
 expr_stmt|;
 return|return

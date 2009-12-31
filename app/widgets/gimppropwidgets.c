@@ -1829,7 +1829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b78fad40108
+DECL|struct|__anon28dd426c0108
 block|{
 DECL|member|config
 name|GObject
@@ -2789,7 +2789,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_language_combo_box_set_iso_code
+name|gimp_language_combo_box_set_code
 argument_list|(
 name|GIMP_LANGUAGE_COMBO_BOX
 argument_list|(
@@ -2891,7 +2891,7 @@ condition|)
 return|return;
 name|code
 operator|=
-name|gimp_language_combo_box_get_iso_code
+name|gimp_language_combo_box_get_code
 argument_list|(
 name|GIMP_LANGUAGE_COMBO_BOX
 argument_list|(
@@ -2984,7 +2984,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-name|gimp_language_combo_box_set_iso_code
+name|gimp_language_combo_box_set_code
 argument_list|(
 name|GIMP_LANGUAGE_COMBO_BOX
 argument_list|(
@@ -3125,7 +3125,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_language_entry_set_iso_code
+name|gimp_language_entry_set_code
 argument_list|(
 name|GIMP_LANGUAGE_ENTRY
 argument_list|(
@@ -3228,7 +3228,7 @@ condition|)
 return|return;
 name|code
 operator|=
-name|gimp_language_entry_get_iso_code
+name|gimp_language_entry_get_code
 argument_list|(
 name|GIMP_LANGUAGE_ENTRY
 argument_list|(
@@ -3316,7 +3316,7 @@ argument_list|,
 name|config
 argument_list|)
 expr_stmt|;
-name|gimp_language_entry_set_iso_code
+name|gimp_language_entry_set_code
 argument_list|(
 name|GIMP_LANGUAGE_ENTRY
 argument_list|(

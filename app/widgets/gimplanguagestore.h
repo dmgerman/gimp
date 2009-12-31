@@ -18,13 +18,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2781f50b0103
+DECL|enum|__anon277ad8410103
 block|{
-DECL|enumerator|GIMP_LANGUAGE_STORE_LANGUAGE
-name|GIMP_LANGUAGE_STORE_LANGUAGE
+DECL|enumerator|GIMP_LANGUAGE_STORE_LABEL
+name|GIMP_LANGUAGE_STORE_LABEL
 block|,
-DECL|enumerator|GIMP_LANGUAGE_STORE_ISO_639_1
-name|GIMP_LANGUAGE_STORE_ISO_639_1
+DECL|enumerator|GIMP_LANGUAGE_STORE_CODE
+name|GIMP_LANGUAGE_STORE_CODE
 block|}
 enum|;
 end_enum
@@ -124,7 +124,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|lang
+name|label
 parameter_list|,
 specifier|const
 name|gchar
@@ -204,7 +204,7 @@ parameter_list|,
 specifier|const
 name|gchar
 modifier|*
-name|lang
+name|label
 parameter_list|,
 specifier|const
 name|gchar
