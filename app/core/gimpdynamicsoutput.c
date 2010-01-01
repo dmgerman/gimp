@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28871c790103
+DECL|enum|__anon279565e20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -928,11 +928,16 @@ condition|)
 block|{
 name|total
 operator|+=
+name|fmod
+argument_list|(
 name|coords
 operator|->
 name|direction
 operator|+
 literal|0.5
+argument_list|,
+literal|1
+argument_list|)
 expr_stmt|;
 name|factors
 operator|++
