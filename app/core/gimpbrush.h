@@ -244,6 +244,9 @@ name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 DECL|member|transform_pixmap
@@ -266,6 +269,9 @@ name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 comment|/*  signals  */
@@ -410,6 +416,9 @@ name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -431,6 +440,9 @@ name|scale_y
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl

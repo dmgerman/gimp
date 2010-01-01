@@ -65,6 +65,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,6 +89,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl

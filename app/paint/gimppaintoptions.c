@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c4b5b20103
+DECL|enum|__anon2b9990e10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2328,18 +2328,7 @@ name|paint_options
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|gimp_dynamics_output_is_enabled
-argument_list|(
-name|dynamics
-operator|->
-name|hardness_output
-argument_list|)
-condition|)
-return|return
-name|GIMP_BRUSH_PRESSURE
-return|;
+comment|/*  Im leaving the pressurize code in here, but Im not sure how,  *  or if at all it should be used. Not as hardness anyway.  *   *  if (gimp_dynamics_output_is_enabled(dynamics->hardness_output))  *    return GIMP_BRUSH_PRESSURE; */
 return|return
 name|GIMP_BRUSH_SOFT
 return|;

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a29fadc0103
+DECL|enum|__anon296b2d630103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a29fadc0203
+DECL|enum|__anon296b2d630203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1149,6 +1149,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 if|if
@@ -1188,6 +1190,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
+argument_list|,
+literal|1.0
 argument_list|)
 expr_stmt|;
 name|mask_width
@@ -2078,7 +2082,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_transform_mask (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle)
+DECL|function|gimp_brush_transform_mask (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -2093,6 +2097,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2142,6 +2149,12 @@ name|angle
 operator|==
 literal|0.0
 operator|)
+operator|&&
+operator|(
+name|hardness
+operator|==
+literal|1.0
+operator|)
 condition|)
 return|return
 name|temp_buf_copy
@@ -2168,6 +2181,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|hardness
 argument_list|)
 return|;
 block|}
@@ -2176,7 +2191,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle)
+DECL|function|gimp_brush_transform_pixmap (GimpBrush * brush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_transform_pixmap
 parameter_list|(
 name|GimpBrush
@@ -2191,6 +2206,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2251,6 +2269,12 @@ name|angle
 operator|==
 literal|0.0
 operator|)
+operator|&&
+operator|(
+name|hardness
+operator|==
+literal|1.0
+operator|)
 condition|)
 return|return
 name|temp_buf_copy
@@ -2277,6 +2301,8 @@ argument_list|,
 name|aspect_ratio
 argument_list|,
 name|angle
+argument_list|,
+name|hardness
 argument_list|)
 return|;
 block|}

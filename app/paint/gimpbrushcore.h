@@ -154,6 +154,10 @@ DECL|member|angle
 name|gdouble
 name|angle
 decl_stmt|;
+DECL|member|hardness
+name|gdouble
+name|hardness
+decl_stmt|;
 DECL|member|aspect_ratio
 name|gdouble
 name|aspect_ratio
@@ -209,6 +213,10 @@ decl_stmt|;
 DECL|member|last_angle
 name|gdouble
 name|last_angle
+decl_stmt|;
+DECL|member|last_hardness
+name|gdouble
+name|last_hardness
 decl_stmt|;
 DECL|member|last_aspect_ratio
 name|gdouble

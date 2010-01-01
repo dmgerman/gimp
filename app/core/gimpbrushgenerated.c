@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon290961a70103
+DECL|enum|__anon2c62c2de0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -236,6 +236,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1238,7 +1241,7 @@ begin_function
 specifier|static
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle)
+DECL|function|gimp_brush_generated_transform_mask (GimpBrush * gbrush,gdouble scale,gdouble aspect_ratio,gdouble angle,gdouble hardness)
 name|gimp_brush_generated_transform_mask
 parameter_list|(
 name|GimpBrush
@@ -1253,6 +1256,9 @@ name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle
+parameter_list|,
+name|gdouble
+name|hardness
 parameter_list|)
 block|{
 name|GimpBrushGenerated
@@ -1306,6 +1312,8 @@ name|spikes
 argument_list|,
 name|brush
 operator|->
+name|hardness
+operator|*
 name|hardness
 argument_list|,
 name|brush
