@@ -174,12 +174,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c7542b10103
+DECL|enum|__anon29aae9b00103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -8433,9 +8439,11 @@ name|floating_sel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"%s\n"
+name|FLOATING_SELECTION
+argument_list|,
+literal|"%s"
 argument_list|,
 name|G_STRFUNC
 argument_list|)
@@ -8551,9 +8559,11 @@ name|floating_sel
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"%s\n"
+name|FLOATING_SELECTION
+argument_list|,
+literal|"%s"
 argument_list|,
 name|G_STRFUNC
 argument_list|)

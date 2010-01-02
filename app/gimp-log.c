@@ -136,6 +136,12 @@ literal|"wm"
 block|,
 name|GIMP_LOG_WM
 block|}
+block|,
+block|{
+literal|"floating-selection"
+block|,
+name|GIMP_LOG_FLOATING_SELECTION
+block|}
 block|}
 decl_stmt|;
 comment|/*  g_parse_debug_string() has special treatment of the string 'help',        *  but we want to use it for the GIMP_LOG_HELP domain        */
