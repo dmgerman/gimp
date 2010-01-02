@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cd36e80103
+DECL|enum|__anon29a0bb8e0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4234,9 +4234,6 @@ name|angle
 decl_stmt|;
 name|gdouble
 name|aspect_ratio
-decl_stmt|;
-name|gdouble
-name|hardness
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
