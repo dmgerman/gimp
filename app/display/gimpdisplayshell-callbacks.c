@@ -6955,6 +6955,14 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+comment|/* If we are panning with mouse, scrollbars are to be ignored    * or they will cause jitter in motion    */
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|scrolling
+condition|)
 name|gimp_display_shell_scroll
 argument_list|(
 name|shell
@@ -6989,6 +6997,14 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+comment|/* If we are panning with mouse, scrollbars are to be ignored    * or they will cause jitter in motion     */
+if|if
+condition|(
+operator|!
+name|shell
+operator|->
+name|scrolling
+condition|)
 name|gimp_display_shell_scroll
 argument_list|(
 name|shell
