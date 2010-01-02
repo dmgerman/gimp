@@ -529,7 +529,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a4a0c50108
+DECL|struct|__anon2890e1440108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -1520,11 +1520,11 @@ argument_list|)
 expr_stmt|;
 name|stroke
 operator|=
-name|gimp_vectors_get_stroke
+name|gimp_vectors_stroke_get_next
 argument_list|(
 name|vectors
 argument_list|,
-literal|0
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_assert
