@@ -431,7 +431,7 @@ DECL|macro|GIMP_MAINIMAGE_CHANNEL1_WIDTH
 define|#
 directive|define
 name|GIMP_MAINIMAGE_CHANNEL1_WIDTH
-value|87
+value|GIMP_MAINIMAGE_WIDTH
 end_define
 
 begin_define
@@ -439,7 +439,7 @@ DECL|macro|GIMP_MAINIMAGE_CHANNEL1_HEIGHT
 define|#
 directive|define
 name|GIMP_MAINIMAGE_CHANNEL1_HEIGHT
-value|9
+value|GIMP_MAINIMAGE_HEIGHT
 end_define
 
 begin_define
@@ -529,7 +529,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890e1440108
+DECL|struct|__anon27b45b7b0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
