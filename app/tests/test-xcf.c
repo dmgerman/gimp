@@ -537,7 +537,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c23818c0108
+DECL|struct|__anon2bccb9d00108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -595,6 +595,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
+name|void
+name|gimp_write_and_read_gimp_2_8_format
+parameter_list|(
+name|GimpTestFixture
+modifier|*
+name|fixture
+parameter_list|,
+name|gconstpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpImage
 modifier|*
 name|gimp_test_load_image
@@ -621,6 +636,9 @@ name|with_unusual_stuff
 parameter_list|,
 name|gboolean
 name|compat_paths
+parameter_list|,
+name|gboolean
+name|use_gimp_2_8_features
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -636,6 +654,9 @@ name|with_unusual_stuff
 parameter_list|,
 name|gboolean
 name|compat_paths
+parameter_list|,
+name|gboolean
+name|use_gimp_2_8_features
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -654,6 +675,9 @@ name|with_unusual_stuff
 parameter_list|,
 name|gboolean
 name|compat_paths
+parameter_list|,
+name|gboolean
+name|use_gimp_2_8_features
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -694,6 +718,9 @@ comment|/*with_unusual_stuff*/
 argument_list|,
 name|FALSE
 comment|/*compat_paths*/
+argument_list|,
+name|FALSE
+comment|/*use_gimp_2_8_features*/
 argument_list|)
 expr_stmt|;
 block|}
@@ -724,6 +751,9 @@ comment|/*with_unusual_stuff*/
 argument_list|,
 name|TRUE
 comment|/*compat_paths*/
+argument_list|,
+name|FALSE
+comment|/*use_gimp_2_8_features*/
 argument_list|)
 expr_stmt|;
 block|}
@@ -792,6 +822,42 @@ comment|/*with_unusual_stuff*/
 argument_list|,
 name|FALSE
 comment|/*compat_paths*/
+argument_list|,
+name|FALSE
+comment|/*use_gimp_2_8_features*/
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_write_and_read_gimp_2_8_format:  * @fixture:  * @data:  *  * Writes an XCF file that uses GIMP 2.8 features such as layer  * groups, then reads the file and make sure no relevant information  * was lost.  **/
+end_comment
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_write_and_read_gimp_2_8_format (GimpTestFixture * fixture,gconstpointer data)
+name|gimp_write_and_read_gimp_2_8_format
+parameter_list|(
+name|GimpTestFixture
+modifier|*
+name|fixture
+parameter_list|,
+name|gconstpointer
+name|data
+parameter_list|)
+block|{
+name|gimp_write_and_read_file
+argument_list|(
+name|FALSE
+comment|/*with_unusual_stuff*/
+argument_list|,
+name|FALSE
+comment|/*compat_paths*/
+argument_list|,
+name|TRUE
+comment|/*use_gimp_2_8_features*/
 argument_list|)
 expr_stmt|;
 block|}
@@ -896,7 +962,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_write_and_read_file (gboolean with_unusual_stuff,gboolean compat_paths)
+DECL|function|gimp_write_and_read_file (gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
 name|gimp_write_and_read_file
 parameter_list|(
 name|gboolean
@@ -904,6 +970,9 @@ name|with_unusual_stuff
 parameter_list|,
 name|gboolean
 name|compat_paths
+parameter_list|,
+name|gboolean
+name|use_gimp_2_8_features
 parameter_list|)
 block|{
 name|GimpImage
@@ -938,6 +1007,8 @@ argument_list|(
 name|with_unusual_stuff
 argument_list|,
 name|compat_paths
+argument_list|,
+name|use_gimp_2_8_features
 argument_list|)
 expr_stmt|;
 comment|/* Assert valid state */
@@ -948,6 +1019,8 @@ argument_list|,
 name|with_unusual_stuff
 argument_list|,
 name|compat_paths
+argument_list|,
+name|use_gimp_2_8_features
 argument_list|)
 expr_stmt|;
 comment|/* Write to file */
@@ -1031,6 +1104,8 @@ argument_list|,
 name|with_unusual_stuff
 argument_list|,
 name|compat_paths
+argument_list|,
+name|use_gimp_2_8_features
 argument_list|)
 expr_stmt|;
 block|}
@@ -1044,7 +1119,7 @@ begin_function
 specifier|static
 name|GimpImage
 modifier|*
-DECL|function|gimp_create_mainimage (gboolean with_unusual_stuff,gboolean compat_paths)
+DECL|function|gimp_create_mainimage (gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
 name|gimp_create_mainimage
 parameter_list|(
 name|gboolean
@@ -1052,6 +1127,9 @@ name|with_unusual_stuff
 parameter_list|,
 name|gboolean
 name|compat_paths
+parameter_list|,
+name|gboolean
+name|use_gimp_2_8_features
 parameter_list|)
 block|{
 name|GimpImage
@@ -1635,6 +1713,14 @@ comment|/*error*/
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* Adds stuff like layer groups */
+if|if
+condition|(
+name|use_gimp_2_8_features
+condition|)
+block|{
+comment|/* TODO: mitch? ;) */
+block|}
 comment|/* Todo, should be tested somehow:    *    * - Color maps    * - Custom user units    * - Text layers    * - Layer parasites    * - Channel parasites    * - Different tile compression methods    */
 return|return
 name|image
@@ -1845,7 +1931,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_assert_mainimage (GimpImage * image,gboolean with_unusual_stuff,gboolean compat_paths)
+DECL|function|gimp_assert_mainimage (GimpImage * image,gboolean with_unusual_stuff,gboolean compat_paths,gboolean use_gimp_2_8_features)
 name|gimp_assert_mainimage
 parameter_list|(
 name|GimpImage
@@ -1857,6 +1943,9 @@ name|with_unusual_stuff
 parameter_list|,
 name|gboolean
 name|compat_paths
+parameter_list|,
+name|gboolean
+name|use_gimp_2_8_features
 parameter_list|)
 block|{
 specifier|const
@@ -2842,6 +2931,13 @@ operator|==
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|use_gimp_2_8_features
+condition|)
+block|{
+comment|/* TODO: mitch? ;) */
+block|}
 block|}
 end_function
 
@@ -2943,6 +3039,21 @@ argument_list|,
 name|NULL
 argument_list|,
 name|gimp_load_gimp_2_6_file
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_test_add
+argument_list|(
+literal|"/gimp-xcf/write-and-read-gimp-2-8"
+argument_list|,
+name|GimpTestFixture
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|gimp_write_and_read_gimp_2_8_format
 argument_list|,
 name|NULL
 argument_list|)
