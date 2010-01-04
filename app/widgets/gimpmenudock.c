@@ -656,9 +656,10 @@ name|g_string_append
 argument_list|(
 name|title
 argument_list|,
+name|gimp_dockable_get_name
+argument_list|(
 name|dockable
-operator|->
-name|name
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if

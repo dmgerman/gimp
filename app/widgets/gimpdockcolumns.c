@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6383c80103
+DECL|enum|__anon29b416640103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -536,9 +536,10 @@ argument_list|)
 expr_stmt|;
 name|gimp_dockbook_remove
 argument_list|(
+name|gimp_dockable_get_dockbook
+argument_list|(
 name|dockable
-operator|->
-name|dockbook
+argument_list|)
 argument_list|,
 name|dockable
 argument_list|)

@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933c5730103
+DECL|enum|__anon2934ea340103
 block|{
 DECL|enumerator|SESSION_INFO_DOCKABLE_LOCKED
 name|SESSION_INFO_DOCKABLE_LOCKED
@@ -866,9 +866,10 @@ name|info
 operator|->
 name|locked
 operator|=
+name|gimp_dockable_get_locked
+argument_list|(
 name|dockable
-operator|->
-name|locked
+argument_list|)
 expr_stmt|;
 name|info
 operator|->
@@ -885,9 +886,10 @@ name|info
 operator|->
 name|tab_style
 operator|=
+name|gimp_dockable_get_tab_style
+argument_list|(
 name|dockable
-operator|->
-name|tab_style
+argument_list|)
 expr_stmt|;
 name|info
 operator|->

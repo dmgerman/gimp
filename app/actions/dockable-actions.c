@@ -893,9 +893,10 @@ argument_list|)
 expr_stmt|;
 name|dockbook
 operator|=
+name|gimp_dockable_get_dockbook
+argument_list|(
 name|dockable
-operator|->
-name|dockbook
+argument_list|)
 expr_stmt|;
 block|}
 else|else
@@ -1076,9 +1077,10 @@ argument_list|)
 expr_stmt|;
 name|tab_style
 operator|=
+name|gimp_dockable_get_tab_style
+argument_list|(
 name|dockable
-operator|->
-name|tab_style
+argument_list|)
 expr_stmt|;
 name|n_pages
 operator|=
