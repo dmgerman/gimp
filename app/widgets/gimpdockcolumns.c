@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b416640103
+DECL|enum|__anon2935fe810103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -901,6 +901,16 @@ modifier|*
 name|dock_columns
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DOCK_COLUMNS
+argument_list|(
+name|dock_columns
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|dock_columns
 operator|->
