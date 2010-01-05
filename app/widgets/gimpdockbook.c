@@ -185,7 +185,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c42f270103
+DECL|enum|__anon29c68c4b0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1119,6 +1119,19 @@ argument_list|,
 name|prev_style
 argument_list|)
 expr_stmt|;
+comment|/* Don't attempt to construct widgets that require a GimpContext if    * we are detached from a top-level, we're either on our way to    * destruction, in which case we don't care, or we will be given a    * new parent, in which case the widget style will be reset again    * anyway, i.e. this function will be called again    */
+if|if
+condition|(
+operator|!
+name|gtk_widget_is_toplevel
+argument_list|(
+name|gtk_widget_get_toplevel
+argument_list|(
+name|widget
+argument_list|)
+argument_list|)
+condition|)
+return|return;
 name|gtk_widget_style_get
 argument_list|(
 name|widget
