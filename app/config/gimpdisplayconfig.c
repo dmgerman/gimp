@@ -39,6 +39,10 @@ directive|include
 file|"config-types.h"
 end_include
 
+begin_comment
+comment|/* FIXME: If we can get rid of this dependency to the display module,  * we will greatly improve the module dependencies in the core, see  * devel-docs/gimp-module-dependencies.svg. In particular, we will get  * rid of the (transitive) dependency from the core to the UI code  */
+end_comment
+
 begin_include
 include|#
 directive|include
@@ -103,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aad27350103
+DECL|enum|__anon279095420103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
