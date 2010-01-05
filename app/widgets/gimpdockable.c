@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295729380103
+DECL|enum|__anon2be1be480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3979,6 +3979,10 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
+name|dockbook
+operator|==
+name|NULL
+operator|||
 name|GIMP_IS_DOCKBOOK
 argument_list|(
 name|dockbook
