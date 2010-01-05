@@ -185,7 +185,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c513d1a0103
+DECL|enum|__anon28c42f270103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2481,7 +2481,7 @@ argument_list|,
 name|dockable
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|tab_widget
 argument_list|,
@@ -2493,9 +2493,11 @@ name|gimp_dockbook_tab_drag_begin
 argument_list|)
 argument_list|,
 name|dockable
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|tab_widget
 argument_list|,
@@ -2507,9 +2509,11 @@ name|gimp_dockbook_tab_drag_end
 argument_list|)
 argument_list|,
 name|dockable
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|dockable
 argument_list|,
@@ -2521,9 +2525,11 @@ name|gimp_dockbook_tab_drag_begin
 argument_list|)
 argument_list|,
 name|dockable
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|dockable
 argument_list|,
@@ -2535,6 +2541,8 @@ name|gimp_dockbook_tab_drag_end
 argument_list|)
 argument_list|,
 name|dockable
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_drag_dest_set
@@ -2553,7 +2561,7 @@ argument_list|,
 name|GDK_ACTION_MOVE
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|tab_widget
 argument_list|,
@@ -2565,9 +2573,11 @@ name|gimp_dockbook_tab_drag_leave
 argument_list|)
 argument_list|,
 name|dockable
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|tab_widget
 argument_list|,
@@ -2579,9 +2589,11 @@ name|gimp_dockbook_tab_drag_motion
 argument_list|)
 argument_list|,
 name|dockable
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
+name|g_signal_connect_object
 argument_list|(
 name|tab_widget
 argument_list|,
@@ -2593,6 +2605,8 @@ name|gimp_dockbook_tab_drag_drop
 argument_list|)
 argument_list|,
 name|dockbook
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 return|return
