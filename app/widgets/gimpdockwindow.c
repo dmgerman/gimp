@@ -215,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c473f2e0103
+DECL|enum|__anon29ff50f30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1454,6 +1454,22 @@ operator|=
 name|gimp
 operator|->
 name|displays
+expr_stmt|;
+comment|/* Let the GimpDockColumns mirror the context so that a GimpDock can    * get it when inside a dock window. We do the same thing in the    * GimpImageWindow so docks can get the GimpContext there as well    */
+name|gimp_dock_columns_set_context
+argument_list|(
+name|dock_window
+operator|->
+name|p
+operator|->
+name|dock_columns
+argument_list|,
+name|dock_window
+operator|->
+name|p
+operator|->
+name|context
+argument_list|)
 expr_stmt|;
 comment|/* Setup hints */
 name|gimp_window_set_hint
