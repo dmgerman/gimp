@@ -2282,6 +2282,18 @@ argument_list|,
 name|G_STRFUNC
 argument_list|)
 expr_stmt|;
+comment|/* Since single-window mode is not session managed yet, force    * disabling of the mode before exit to prevent loss of dockables    */
+name|g_object_set
+argument_list|(
+name|gui_config
+argument_list|,
+literal|"single-window-mode"
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
