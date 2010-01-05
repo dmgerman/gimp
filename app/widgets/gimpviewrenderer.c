@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29332f440103
+DECL|enum|__anon288df7e20103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3722,6 +3722,28 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|surface
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* In rare cases we can get here while GIMP is exiting, handle that    * by checking for availability of the buffers    */
+name|g_return_if_fail
+argument_list|(
+name|gimp_render_check_buf
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_render_empty_buf
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|gimp_render_white_buf
 operator|!=
 name|NULL
 argument_list|)
