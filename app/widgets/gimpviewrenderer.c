@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon288df7e20103
+DECL|enum|__anon29d96d3f0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3727,27 +3727,18 @@ name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* In rare cases we can get here while GIMP is exiting, handle that    * by checking for availability of the buffers    */
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|gimp_render_check_buf
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+operator|||
+operator|!
 name|gimp_render_empty_buf
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+operator|||
+operator|!
 name|gimp_render_white_buf
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 name|dest
 operator|=
 name|cairo_image_surface_get_data
