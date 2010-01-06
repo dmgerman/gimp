@@ -275,6 +275,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_dockbook_update_with_context
+parameter_list|(
+name|GimpDockbook
+modifier|*
+name|dockbook
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|gimp_dockbook_create_tab_widget

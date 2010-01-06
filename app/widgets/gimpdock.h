@@ -279,6 +279,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_dock_update_with_context
+parameter_list|(
+name|GimpDock
+modifier|*
+name|dock
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpContext
 modifier|*
 name|gimp_dock_get_context

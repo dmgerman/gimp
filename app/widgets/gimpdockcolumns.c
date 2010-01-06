@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9c7a080103
+DECL|enum|__anon28d439f50103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -732,6 +732,17 @@ argument_list|,
 name|dock
 argument_list|)
 expr_stmt|;
+name|gimp_dock_update_with_context
+argument_list|(
+name|dock
+argument_list|,
+name|dock_columns
+operator|->
+name|p
+operator|->
+name|context
+argument_list|)
+expr_stmt|;
 name|gimp_paned_box_add_widget
 argument_list|(
 name|GIMP_PANED_BOX
@@ -840,6 +851,13 @@ operator|->
 name|docks
 argument_list|,
 name|dock
+argument_list|)
+expr_stmt|;
+name|gimp_dock_update_with_context
+argument_list|(
+name|dock
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
