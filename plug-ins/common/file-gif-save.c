@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d7767a0103
+DECL|enum|__anon29d88e640103
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d7767a0208
+DECL|struct|__anon29d88e640208
 block|{
 DECL|member|interlace
 name|gint
@@ -3927,6 +3927,11 @@ name|gint32
 name|nlayers
 decl_stmt|;
 name|gboolean
+name|animation_supported
+init|=
+name|FALSE
+decl_stmt|;
+name|gboolean
 name|run
 decl_stmt|;
 name|gimp_image_get_layers
@@ -3936,6 +3941,12 @@ argument_list|,
 operator|&
 name|nlayers
 argument_list|)
+expr_stmt|;
+name|animation_supported
+operator|=
+name|nlayers
+operator|>
+literal|1
 expr_stmt|;
 name|dialog
 operator|=
@@ -4961,17 +4972,11 @@ name|vbox
 argument_list|)
 expr_stmt|;
 comment|/* If the image has only one layer it can't be animated, so      desensitize the animation options. */
-if|if
-condition|(
-name|nlayers
-operator|==
-literal|1
-condition|)
 name|gtk_widget_set_sensitive
 argument_list|(
 name|frame
 argument_list|,
-name|FALSE
+name|animation_supported
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
