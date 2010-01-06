@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eaf4a10103
+DECL|enum|__anon29d9d7fa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4563,6 +4563,17 @@ argument_list|(
 name|window
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"GimpImageWindow %p, private->active_shell = %p; \n"
+argument_list|,
+name|window
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
 name|private
 operator|->
 name|active_shell
@@ -4737,6 +4748,29 @@ argument_list|(
 name|window
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|GTK_WIDGET
+argument_list|(
+name|private
+operator|->
+name|active_shell
+argument_list|)
+operator|==
+name|widget
+condition|)
+block|{
+name|GIMP_LOG
+argument_list|(
+name|WM
+argument_list|,
+literal|"GimpImageWindow %p, private->active_shell = %p; \n"
+argument_list|,
+name|window
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_image_window_disconnect_from_active_shell
 argument_list|(
 name|window
@@ -4748,6 +4782,7 @@ name|active_shell
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 end_function
 
