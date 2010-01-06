@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f0bc580103
+DECL|enum|__anon28eaf4a10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -566,9 +566,9 @@ name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
+name|GtkWidget
 modifier|*
-name|page
+name|widget
 parameter_list|,
 name|gint
 name|page_num
@@ -4709,16 +4709,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_page_removed (GtkNotebook * notebook,GtkNotebookPage * page,gint page_num,GimpImageWindow * window)
+DECL|function|gimp_image_window_page_removed (GtkNotebook * notebook,GtkWidget * widget,gint page_num,GimpImageWindow * window)
 name|gimp_image_window_page_removed
 parameter_list|(
 name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
+name|GtkWidget
 modifier|*
-name|page
+name|widget
 parameter_list|,
 name|gint
 name|page_num
