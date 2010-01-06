@@ -96,12 +96,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-log.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d439f50103
+DECL|enum|__anon2b3c0ca20103
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -656,6 +662,12 @@ name|dock
 argument_list|)
 operator|==
 name|NULL
+operator|&&
+operator|!
+name|GIMP_IS_TOOLBOX
+argument_list|(
+name|dock
+argument_list|)
 condition|)
 name|gimp_dock_columns_remove_dock
 argument_list|(
