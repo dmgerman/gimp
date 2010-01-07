@@ -175,6 +175,18 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_dock_columns_new
+parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_dock_columns_add_dock
 parameter_list|(
