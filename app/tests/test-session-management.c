@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae494740108
+DECL|struct|__anon292375ad0108
 block|{
 DECL|member|dummy
 name|int
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae494740208
+DECL|struct|__anon292375ad0208
 block|{
 DECL|member|md5
 name|gchar
@@ -275,6 +275,9 @@ name|gimp_test_utils_set_gimp2_directory
 argument_list|(
 literal|"gimpdir"
 argument_list|)
+expr_stmt|;
+name|gimp_test_utils_setup_menus_dir
+argument_list|()
 expr_stmt|;
 name|sessionrc_filename
 operator|=

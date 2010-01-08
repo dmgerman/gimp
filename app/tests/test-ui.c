@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a85e650108
+DECL|struct|__anon295b49b70108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -194,6 +194,9 @@ name|gimp_test_utils_set_gimp2_directory
 argument_list|(
 literal|"gimpdir"
 argument_list|)
+expr_stmt|;
+name|gimp_test_utils_setup_menus_dir
+argument_list|()
 expr_stmt|;
 comment|/* Start up GIMP */
 name|gimp

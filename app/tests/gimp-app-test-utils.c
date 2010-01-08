@@ -70,5 +70,80 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_test_utils_setup_menus_dir:  *  * Sets GIMP_TESTING_MENUS_DIR to "$top_srcdir/menus".  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_test_utils_setup_menus_dir (void)
+name|gimp_test_utils_setup_menus_dir
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|gchar
+modifier|*
+name|menus_dir
+init|=
+name|NULL
+decl_stmt|;
+name|menus_dir
+operator|=
+name|gimp_test_utils_get_source_subdir
+argument_list|(
+literal|"menus"
+argument_list|)
+expr_stmt|;
+name|g_setenv
+argument_list|(
+literal|"GIMP_TESTING_MENUS_DIR"
+argument_list|,
+name|menus_dir
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|menus_dir
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_test_utils_get_source_subdir:  * @subdir:  *  * Returns: The source directory $top_srcdir/@subdir.  **/
+end_comment
+
+begin_function
+name|gchar
+modifier|*
+DECL|function|gimp_test_utils_get_source_subdir (const gchar * subdir)
+name|gimp_test_utils_get_source_subdir
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|subdir
+parameter_list|)
+block|{
+comment|/* GIMP_TESTING_ABS_TOP_SRCDIR is set by the automake test runner,    * see Makefile.am    */
+return|return
+name|g_build_filename
+argument_list|(
+name|g_getenv
+argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|)
+argument_list|,
+name|subdir
+argument_list|,
+name|NULL
+argument_list|)
+return|;
+block|}
+end_function
+
 end_unit
 

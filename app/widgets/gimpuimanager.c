@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e22630103
+DECL|enum|__anon2c6dec580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297e22630203
+DECL|enum|__anon2c6dec580203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2192,7 +2192,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297e22630308
+DECL|struct|__anon2c6dec580308
 block|{
 DECL|member|x
 name|guint
@@ -2712,7 +2712,38 @@ block|{
 name|gchar
 modifier|*
 name|filename
+init|=
+name|NULL
 decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|menus_dir_override
+init|=
+name|g_getenv
+argument_list|(
+literal|"GIMP_TESTING_MENUS_DIR"
+argument_list|)
+decl_stmt|;
+comment|/* In order for test cases to be able to run without GIMP being    * installed yet, allow them to override the menus directory to the    * menus dir in the source root    */
+if|if
+condition|(
+name|menus_dir_override
+condition|)
+name|filename
+operator|=
+name|g_build_filename
+argument_list|(
+name|menus_dir_override
+argument_list|,
+name|entry
+operator|->
+name|basename
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+else|else
 name|filename
 operator|=
 name|g_build_filename
