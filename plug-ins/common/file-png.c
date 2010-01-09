@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29630b6d0108
+DECL|struct|__anon2973784d0108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29630b6d0208
+DECL|struct|__anon2973784d0208
 block|{
 DECL|member|run
 name|gboolean
@@ -6700,6 +6700,12 @@ name|GimpParasite
 modifier|*
 name|parasite
 decl_stmt|;
+name|GError
+modifier|*
+name|error
+init|=
+name|NULL
+decl_stmt|;
 comment|/* Dialog init */
 name|dialog
 operator|=
@@ -6762,14 +6768,32 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gtk_builder_add_from_file
 argument_list|(
 name|builder
 argument_list|,
 name|ui_file
 argument_list|,
-name|NULL
-comment|/*error*/
+operator|&
+name|error
+argument_list|)
+condition|)
+name|g_printerr
+argument_list|(
+literal|"Failed loading '%s': %s"
+argument_list|,
+name|ui_file
+argument_list|,
+name|error
+condition|?
+name|error
+operator|->
+name|message
+else|:
+literal|"???"
 argument_list|)
 expr_stmt|;
 name|g_free
