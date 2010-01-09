@@ -358,7 +358,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b3911210108
+DECL|struct|__anon297dc1600108
 block|{
 DECL|member|raw
 name|gint
@@ -5141,6 +5141,13 @@ block|}
 block|}
 else|else
 block|{
+specifier|const
+name|guchar
+modifier|*
+name|c
+init|=
+name|cmap
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -5164,7 +5171,7 @@ name|i
 index|]
 operator|=
 operator|*
-name|cmap
+name|c
 operator|++
 expr_stmt|;
 name|grn
@@ -5173,7 +5180,7 @@ name|i
 index|]
 operator|=
 operator|*
-name|cmap
+name|c
 operator|++
 expr_stmt|;
 name|blu
@@ -5182,7 +5189,7 @@ name|i
 index|]
 operator|=
 operator|*
-name|cmap
+name|c
 operator|++
 expr_stmt|;
 block|}
@@ -5391,10 +5398,7 @@ operator|=
 name|data
 expr_stmt|;
 block|}
-call|(
-modifier|*
 name|saverow
-call|)
 argument_list|(
 operator|&
 name|rowinfo
