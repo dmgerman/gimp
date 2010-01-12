@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c0de990108
+DECL|struct|__anon2b66ba210108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c0de990208
+DECL|struct|__anon2b66ba210208
 block|{
 DECL|member|run
 name|gboolean
@@ -6766,7 +6766,7 @@ argument_list|(
 name|gimp_data_directory
 argument_list|()
 argument_list|,
-literal|"ui/file-png.ui"
+literal|"ui/plug-ins/plug-in-file-png.ui"
 argument_list|,
 name|NULL
 argument_list|)
