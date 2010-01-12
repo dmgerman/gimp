@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973784d0108
+DECL|struct|__anon29c0de990108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2973784d0208
+DECL|struct|__anon29c0de990208
 block|{
 DECL|member|run
 name|gboolean
@@ -2230,6 +2230,9 @@ comment|/* File pointer */
 specifier|volatile
 name|gint32
 name|image
+init|=
+operator|-
+literal|1
 decl_stmt|;
 comment|/* Image -- preserved against setjmp() */
 name|gint32
@@ -6781,11 +6784,24 @@ operator|&
 name|error
 argument_list|)
 condition|)
+block|{
+name|gchar
+modifier|*
+name|display_name
+init|=
+name|g_filename_display_name
+argument_list|(
+name|ui_file
+argument_list|)
+decl_stmt|;
 name|g_printerr
 argument_list|(
-literal|"Failed loading '%s': %s"
+name|_
+argument_list|(
+literal|"Error loading UI file '%s': %s"
+argument_list|)
 argument_list|,
-name|ui_file
+name|display_name
 argument_list|,
 name|error
 condition|?
@@ -6796,6 +6812,12 @@ else|:
 literal|"???"
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|display_name
+argument_list|)
+expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|ui_file
