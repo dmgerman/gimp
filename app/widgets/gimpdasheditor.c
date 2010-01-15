@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -83,7 +77,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b39a6c0103
+DECL|enum|__anon2791d2840103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -947,6 +941,9 @@ name|widget
 argument_list|)
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|;
@@ -955,6 +952,14 @@ name|w
 decl_stmt|,
 name|h
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|update_blocksize
 argument_list|(
 name|editor
@@ -1011,8 +1016,6 @@ operator|->
 name|x0
 operator|=
 operator|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1031,8 +1034,6 @@ operator|->
 name|y0
 operator|=
 operator|(
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -1206,8 +1207,6 @@ control|(
 init|;
 name|x
 operator|<
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1296,8 +1295,6 @@ control|(
 init|;
 name|x
 operator|<
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2248,6 +2245,17 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|block_height
@@ -2304,8 +2312,6 @@ operator|->
 name|dash_length
 argument_list|)
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height

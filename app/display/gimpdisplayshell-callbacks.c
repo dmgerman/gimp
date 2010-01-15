@@ -2322,9 +2322,10 @@ operator|)
 operator|->
 name|window
 operator|!=
+name|gtk_widget_get_window
+argument_list|(
 name|canvas
-operator|->
-name|window
+argument_list|)
 condition|)
 block|{
 return|return

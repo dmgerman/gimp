@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -77,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf746d80103
+DECL|enum|__anon2b081f060103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -676,6 +670,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -692,6 +689,14 @@ argument_list|(
 name|view
 operator|->
 name|renderer
+argument_list|)
+expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
 argument_list|)
 expr_stmt|;
 name|row
@@ -746,8 +751,6 @@ name|cairo_rectangle
 argument_list|(
 name|cr
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
@@ -760,8 +763,6 @@ name|cell_width
 operator|+
 literal|0.5
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y
@@ -1792,6 +1793,9 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|renderer
 operator|=
 name|GIMP_VIEW_RENDERER_PALETTE
@@ -1802,6 +1806,14 @@ name|view
 argument_list|)
 operator|->
 name|renderer
+argument_list|)
+expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
 argument_list|)
 expr_stmt|;
 name|row
@@ -1831,8 +1843,6 @@ argument_list|(
 name|view
 argument_list|)
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
@@ -1843,8 +1853,6 @@ name|renderer
 operator|->
 name|cell_width
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y

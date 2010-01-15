@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -61,7 +55,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a070a3a0103
+DECL|enum|__anon2b2ebafb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1232,12 +1226,12 @@ name|width
 operator|+=
 name|width
 expr_stmt|;
+name|gtk_widget_set_allocation
+argument_list|(
 name|widget
-operator|->
+argument_list|,
 name|allocation
-operator|=
-operator|*
-name|allocation
+argument_list|)
 expr_stmt|;
 block|}
 end_function

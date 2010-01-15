@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -69,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f40a4c0103
+DECL|enum|__anon277c28c30103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -82,7 +76,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f40a4c0203
+DECL|enum|__anon277c28c30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1055,6 +1049,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|x
 decl_stmt|;
@@ -1130,6 +1127,14 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|view
@@ -1138,8 +1143,6 @@ name|border_width
 expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1150,8 +1153,6 @@ name|border
 expr_stmt|;
 name|height
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -1217,14 +1218,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2205,6 +2202,9 @@ operator|==
 literal|1
 condition|)
 block|{
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -2230,10 +2230,16 @@ operator|->
 name|time
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2431,13 +2437,22 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width

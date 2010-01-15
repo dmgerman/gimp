@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -79,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a5233710103
+DECL|enum|__anon28c859140103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -1994,18 +1988,25 @@ argument_list|(
 name|view
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|cairo_translate
 argument_list|(
 name|cr
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y
@@ -2019,14 +2020,10 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height

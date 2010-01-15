@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2966d4a80103
+DECL|enum|__anon2b65ac8c0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -871,6 +871,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GdkWindowAttr
 name|attributes
 decl_stmt|;
@@ -887,6 +890,14 @@ argument_list|(
 name|widget
 argument_list|)
 expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|attributes
 operator|.
 name|window_type
@@ -897,8 +908,6 @@ name|attributes
 operator|.
 name|x
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|x
@@ -907,8 +916,6 @@ name|attributes
 operator|.
 name|y
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|y
@@ -917,8 +924,6 @@ name|attributes
 operator|.
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -927,8 +932,6 @@ name|attributes
 operator|.
 name|height
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -1654,12 +1657,12 @@ name|height
 operator|=
 name|height
 expr_stmt|;
+name|gtk_widget_set_allocation
+argument_list|(
 name|widget
-operator|->
+argument_list|,
 name|allocation
-operator|=
-operator|*
-name|allocation
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -1717,6 +1720,17 @@ name|widget
 argument_list|)
 condition|)
 block|{
+name|GtkAllocation
+name|allocation
+decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|gimp_view_renderer_draw
 argument_list|(
 name|GIMP_VIEW
@@ -1734,8 +1748,6 @@ argument_list|,
 name|widget
 argument_list|,
 operator|&
-name|widget
-operator|->
 name|allocation
 argument_list|,
 operator|&

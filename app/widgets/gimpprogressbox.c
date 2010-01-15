@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -823,6 +817,20 @@ operator|->
 name|progress
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|bar
+argument_list|)
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|box
 operator|->
 name|value
@@ -834,11 +842,6 @@ if|if
 condition|(
 name|fabs
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|bar
-argument_list|)
-operator|->
 name|allocation
 operator|.
 name|width

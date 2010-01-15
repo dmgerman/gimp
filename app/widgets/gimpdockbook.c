@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -185,7 +179,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf375dd0103
+DECL|enum|__anon2bdd80060103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -3049,6 +3043,9 @@ name|GimpPanedBoxClass
 modifier|*
 name|paned_box_class
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|window
@@ -3088,6 +3085,14 @@ name|gimp_dock_get_vbox
 argument_list|(
 name|dock
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
 argument_list|)
 expr_stmt|;
 name|window
@@ -3156,8 +3161,6 @@ name|requisition
 operator|.
 name|width
 operator|<
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -3166,8 +3169,6 @@ name|gtk_widget_set_size_request
 argument_list|(
 name|view
 argument_list|,
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width

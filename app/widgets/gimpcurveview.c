@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9dd71a0103
+DECL|enum|__anon2a294c280103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1475,6 +1469,9 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|cairo_t
 modifier|*
 name|cr
@@ -1518,6 +1515,14 @@ condition|)
 return|return
 name|FALSE
 return|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|GIMP_HISTOGRAM_VIEW
@@ -1529,8 +1534,6 @@ name|border_width
 expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -1543,8 +1546,6 @@ literal|1
 expr_stmt|;
 name|height
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2427,6 +2428,9 @@ name|view
 operator|->
 name|curve
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|gint
 name|border
 decl_stmt|;
@@ -2461,6 +2465,14 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|GIMP_HISTOGRAM_VIEW
@@ -2472,8 +2484,6 @@ name|border_width
 expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2484,8 +2494,6 @@ name|border
 expr_stmt|;
 name|height
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
@@ -2851,6 +2859,9 @@ name|view
 operator|->
 name|curve
 decl_stmt|;
+name|GtkAllocation
+name|allocation
+decl_stmt|;
 name|GimpCursorType
 name|new_cursor
 init|=
@@ -2884,6 +2895,14 @@ condition|)
 return|return
 name|TRUE
 return|;
+name|gtk_widget_get_allocation
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|allocation
+argument_list|)
+expr_stmt|;
 name|border
 operator|=
 name|GIMP_HISTOGRAM_VIEW
@@ -2895,8 +2914,6 @@ name|border_width
 expr_stmt|;
 name|width
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|width
@@ -2907,8 +2924,6 @@ name|border
 expr_stmt|;
 name|height
 operator|=
-name|widget
-operator|->
 name|allocation
 operator|.
 name|height
