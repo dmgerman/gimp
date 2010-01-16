@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292e5a890103
+DECL|enum|__anon287186b10103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -444,6 +444,9 @@ name|remember_size
 parameter_list|,
 name|gboolean
 name|remember_if_open
+parameter_list|,
+name|gboolean
+name|dockable
 parameter_list|)
 function_decl|;
 end_function_decl

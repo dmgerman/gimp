@@ -1679,6 +1679,13 @@ name|i
 index|]
 operator|.
 name|remember_if_open
+argument_list|,
+name|toplevel_entries
+index|[
+name|i
+index|]
+operator|.
+name|dockable
 argument_list|)
 expr_stmt|;
 for|for
@@ -1783,6 +1790,13 @@ name|i
 index|]
 operator|.
 name|remember_if_open
+argument_list|,
+name|dock_entries
+index|[
+name|i
+index|]
+operator|.
+name|dockable
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_register_entry
@@ -1809,6 +1823,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
