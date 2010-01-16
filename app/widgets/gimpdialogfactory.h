@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon287186b10103
+DECL|enum|__anon2b31366f0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -154,7 +154,7 @@ DECL|member|remember_if_open
 name|gboolean
 name|remember_if_open
 decl_stmt|;
-comment|/* If TRUE the entry is for a dockable, otherwise it is for a    * toplevel    */
+comment|/* If TRUE the entry is for a dockable, FALSE otherwise */
 DECL|member|dockable
 name|gboolean
 name|dockable
@@ -362,20 +362,6 @@ specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
-name|gimp_dialog_factory_set_put_in_dockables
-parameter_list|(
-name|GimpDialogFactory
-modifier|*
-name|factory
-parameter_list|,
-name|gboolean
-name|put_in_dockables
 parameter_list|)
 function_decl|;
 end_function_decl
