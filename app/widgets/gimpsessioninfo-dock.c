@@ -27,6 +27,16 @@ directive|include
 file|"widgets-types.h"
 end_include
 
+begin_comment
+comment|/* FIXME: Remove when the toolbox and dock window factories have been  * merged  */
+end_comment
+
+begin_include
+include|#
+directive|include
+file|"dialogs/dialogs.h"
+end_include
+
 begin_include
 include|#
 directive|include
@@ -77,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a41b6140103
+DECL|enum|__anon2bbe81af0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -662,6 +672,12 @@ modifier|*
 name|dock_window
 parameter_list|)
 block|{
+name|gchar
+modifier|*
+name|dock_id
+init|=
+name|NULL
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dock
@@ -706,15 +722,43 @@ name|dock_window
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|dock
+comment|/* Create the dock. Always use the dock window factory for it (but    * we want to refactor away that hard-coding eventually) but the    * type of dock depends on the factory    */
+name|dock_id
 operator|=
-name|gimp_dialog_factory_dock_new
+name|g_strconcat
+argument_list|(
+literal|"gimp-"
+argument_list|,
+name|gimp_object_get_name
 argument_list|(
 name|factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|dock
+operator|=
+name|gimp_dialog_factory_dialog_new
+argument_list|(
+name|global_dock_window_factory
+comment|/* FIXME */
 argument_list|,
 name|screen
 argument_list|,
-name|ui_manager
+name|dock_id
+argument_list|,
+operator|-
+literal|1
+comment|/*view_size*/
+argument_list|,
+name|FALSE
+comment|/*present*/
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|dock_id
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail

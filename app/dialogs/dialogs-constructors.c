@@ -406,7 +406,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_image_new_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_image_new_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_image_new_new
 parameter_list|(
 name|GimpDialogFactory
@@ -416,6 +416,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -433,7 +437,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_file_open_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_file_open_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_file_open_new
 parameter_list|(
 name|GimpDialogFactory
@@ -443,6 +447,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -462,7 +470,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_file_open_location_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_file_open_location_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_file_open_location_new
 parameter_list|(
 name|GimpDialogFactory
@@ -472,6 +480,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -491,7 +503,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_file_save_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_file_save_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_file_save_new
 parameter_list|(
 name|GimpDialogFactory
@@ -501,6 +513,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -522,7 +538,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_file_export_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_file_export_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_file_export_new
 parameter_list|(
 name|GimpDialogFactory
@@ -532,6 +548,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -553,7 +573,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_preferences_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_preferences_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_preferences_get
 parameter_list|(
 name|GimpDialogFactory
@@ -563,6 +583,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -582,7 +606,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_keyboard_shortcuts_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_keyboard_shortcuts_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_keyboard_shortcuts_get
 parameter_list|(
 name|GimpDialogFactory
@@ -592,6 +616,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -611,7 +639,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_module_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_module_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_module_get
 parameter_list|(
 name|GimpDialogFactory
@@ -621,6 +649,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -640,7 +672,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_import_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_palette_import_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_palette_import_get
 parameter_list|(
 name|GimpDialogFactory
@@ -650,6 +682,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -667,7 +703,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tips_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_tips_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_tips_get
 parameter_list|(
 name|GimpDialogFactory
@@ -677,6 +713,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -696,7 +736,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_about_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_about_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_about_get
 parameter_list|(
 name|GimpDialogFactory
@@ -706,6 +746,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -723,7 +767,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_error_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_error_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_error_get
 parameter_list|(
 name|GimpDialogFactory
@@ -733,6 +777,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -753,7 +801,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_close_all_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_close_all_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_close_all_get
 parameter_list|(
 name|GimpDialogFactory
@@ -763,6 +811,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -782,7 +834,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_quit_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_quit_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_quit_get
 parameter_list|(
 name|GimpDialogFactory
@@ -792,6 +844,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -823,7 +879,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_toolbox_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager)
+DECL|function|dialogs_toolbox_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_toolbox_new
 parameter_list|(
 name|GimpDialogFactory
@@ -837,6 +893,9 @@ parameter_list|,
 name|GimpUIManager
 modifier|*
 name|ui_manager
+parameter_list|,
+name|gint
+name|view_size
 parameter_list|)
 block|{
 comment|/*  we pass "global_dock_window_factory", _not_    *  "global_toolbox_factory" to the toolbox constructor, because the    *  global_toolbox_factory has no dockables registered    */
@@ -856,7 +915,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_toolbox_dock_window_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_toolbox_dock_window_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_toolbox_dock_window_new
 parameter_list|(
 name|GimpDialogFactory
@@ -866,6 +925,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -891,7 +954,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dock_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager)
+DECL|function|dialogs_dock_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_dock_new
 parameter_list|(
 name|GimpDialogFactory
@@ -905,6 +968,9 @@ parameter_list|,
 name|GimpUIManager
 modifier|*
 name|ui_manager
+parameter_list|,
+name|gint
+name|view_size
 parameter_list|)
 block|{
 return|return
@@ -917,7 +983,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dock_window_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_dock_window_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_dock_window_new
 parameter_list|(
 name|GimpDialogFactory
@@ -927,6 +993,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -968,7 +1038,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_tool_options_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_tool_options_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_tool_options_new
 parameter_list|(
 name|GimpDialogFactory
@@ -978,6 +1048,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1002,7 +1076,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_device_status_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_device_status_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_device_status_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1012,6 +1086,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1031,7 +1109,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_error_console_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_error_console_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_error_console_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1041,6 +1119,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1065,7 +1147,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_cursor_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_cursor_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_cursor_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1075,6 +1157,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1099,7 +1185,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_image_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_image_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_image_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1109,6 +1195,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1143,7 +1233,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_brush_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_brush_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1153,6 +1243,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1189,7 +1283,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dynamics_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_dynamics_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_dynamics_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1199,6 +1293,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1233,7 +1331,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_pattern_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_pattern_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1243,6 +1341,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1277,7 +1379,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_gradient_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_gradient_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1287,6 +1389,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1327,7 +1433,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_palette_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_palette_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1337,6 +1443,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1377,7 +1487,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_font_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_font_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_font_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1387,6 +1497,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1421,7 +1535,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_buffer_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_buffer_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_buffer_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1431,6 +1545,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1465,7 +1583,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_document_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_document_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_document_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1475,6 +1593,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1509,7 +1631,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_template_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_template_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_template_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1519,6 +1641,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1557,7 +1683,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_image_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_image_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_image_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1567,6 +1693,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1601,7 +1731,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_brush_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_brush_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1611,6 +1741,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1647,7 +1781,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_pattern_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_pattern_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_pattern_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1657,6 +1791,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1691,7 +1829,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_gradient_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_gradient_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1701,6 +1839,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1741,7 +1883,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_palette_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_palette_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1751,6 +1893,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1791,7 +1937,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_font_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_font_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_font_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1801,6 +1947,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1835,7 +1985,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_buffer_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_buffer_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_buffer_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1845,6 +1995,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1879,7 +2033,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_document_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_document_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_document_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1889,6 +2043,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1923,7 +2081,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_template_grid_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_template_grid_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_template_grid_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1933,6 +2091,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -1971,7 +2133,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_layer_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_layer_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_layer_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -1981,6 +2143,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2032,7 +2198,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_channel_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_channel_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_channel_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2042,6 +2208,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2093,7 +2263,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_vectors_list_view_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_vectors_list_view_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_vectors_list_view_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2103,6 +2273,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2154,7 +2328,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_colormap_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_colormap_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_colormap_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2164,6 +2338,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2206,7 +2384,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_histogram_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_histogram_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_histogram_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2216,6 +2394,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2231,7 +2413,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_selection_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_selection_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_selection_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2241,6 +2423,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2261,7 +2447,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_undo_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_undo_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_undo_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2271,6 +2457,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2297,7 +2487,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_sample_point_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_sample_point_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_sample_point_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2307,6 +2497,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2331,7 +2525,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_navigation_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_navigation_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_navigation_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2341,6 +2535,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2365,7 +2563,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_color_editor_new (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_color_editor_new (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_color_editor_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2375,6 +2573,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2404,7 +2606,7 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_brush_editor_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_brush_editor_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_brush_editor_get
 parameter_list|(
 name|GimpDialogFactory
@@ -2414,6 +2616,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2436,7 +2642,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_dynamics_editor_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_dynamics_editor_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_dynamics_editor_get
 parameter_list|(
 name|GimpDialogFactory
@@ -2446,6 +2652,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2468,7 +2678,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_gradient_editor_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_gradient_editor_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_gradient_editor_get
 parameter_list|(
 name|GimpDialogFactory
@@ -2478,6 +2688,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size
@@ -2500,7 +2714,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|dialogs_palette_editor_get (GimpDialogFactory * factory,GimpContext * context,gint view_size)
+DECL|function|dialogs_palette_editor_get (GimpDialogFactory * factory,GimpContext * context,GimpUIManager * ui_manager,gint view_size)
 name|dialogs_palette_editor_get
 parameter_list|(
 name|GimpDialogFactory
@@ -2510,6 +2724,10 @@ parameter_list|,
 name|GimpContext
 modifier|*
 name|context
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 name|gint
 name|view_size

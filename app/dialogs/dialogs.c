@@ -284,6 +284,44 @@ value|}
 end_define
 
 begin_define
+DECL|macro|DOCK (id,new_func)
+define|#
+directive|define
+name|DOCK
+parameter_list|(
+name|id
+parameter_list|,
+name|new_func
+parameter_list|)
+define|\
+value|{ id
+comment|/* identifier       */
+value|, \     NULL
+comment|/* name             */
+value|, \     NULL
+comment|/* blurb            */
+value|, \     NULL
+comment|/* stock_id         */
+value|, \     NULL
+comment|/* help_id          */
+value|, \     new_func
+comment|/* new_func         */
+value|, \     0
+comment|/* view_size        */
+value|, \     FALSE
+comment|/* singleton        */
+value|, \     FALSE
+comment|/* session_managed  */
+value|, \     FALSE
+comment|/* remember_size    */
+value|, \     FALSE
+comment|/* remember_if_open */
+value|, \     FALSE
+comment|/* dockable         */
+value|}
+end_define
+
+begin_define
 DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,view_size)
 define|#
 directive|define
@@ -821,6 +859,21 @@ name|dock_entries
 index|[]
 init|=
 block|{
+comment|/* docks */
+name|DOCK
+argument_list|(
+literal|"gimp-dock"
+argument_list|,
+name|dialogs_dock_new
+argument_list|)
+block|,
+name|DOCK
+argument_list|(
+literal|"gimp-toolbox"
+argument_list|,
+name|dialogs_toolbox_new
+argument_list|)
+block|,
 comment|/*  singleton dockables  */
 name|DOCKABLE
 argument_list|(
@@ -1487,8 +1540,6 @@ argument_list|)
 argument_list|,
 name|menu_factory
 argument_list|,
-name|NULL
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1505,8 +1556,6 @@ name|gimp
 argument_list|)
 argument_list|,
 name|menu_factory
-argument_list|,
-name|dialogs_toolbox_new
 argument_list|,
 name|TRUE
 argument_list|)
@@ -1532,8 +1581,6 @@ argument_list|)
 argument_list|,
 name|menu_factory
 argument_list|,
-name|dialogs_dock_new
-argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -1557,8 +1604,6 @@ name|gimp
 argument_list|)
 argument_list|,
 name|menu_factory
-argument_list|,
-name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
