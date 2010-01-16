@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bc0596e0103
+DECL|enum|__anon2bc3750e0103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0596e0203
+DECL|enum|__anon2bc3750e0203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -4875,12 +4875,6 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|dockable
-init|=
-name|NULL
-decl_stmt|;
-name|GtkWidget
-modifier|*
 name|widget
 decl_stmt|;
 name|widget
@@ -4906,6 +4900,12 @@ operator|->
 name|dockable
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|dockable
+init|=
+name|NULL
+decl_stmt|;
 name|dockable
 operator|=
 name|gimp_dockable_new
@@ -4957,9 +4957,14 @@ operator|->
 name|identifier
 argument_list|)
 expr_stmt|;
+comment|/* Return the dockable instead */
+name|widget
+operator|=
+name|dockable
+expr_stmt|;
 block|}
 return|return
-name|dockable
+name|widget
 return|;
 block|}
 end_function
