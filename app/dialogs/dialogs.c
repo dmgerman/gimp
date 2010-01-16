@@ -1511,11 +1511,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_set_constructor
+name|gimp_dialog_factory_set_put_in_dockables
 argument_list|(
 name|global_toolbox_factory
 argument_list|,
-name|dialogs_dockable_constructor
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_set_dock_window_func
@@ -1544,11 +1544,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_set_constructor
+name|gimp_dialog_factory_set_put_in_dockables
 argument_list|(
 name|global_dock_window_factory
 argument_list|,
-name|dialogs_dockable_constructor
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_set_dock_window_func
