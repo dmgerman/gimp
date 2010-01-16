@@ -128,6 +128,27 @@ modifier|*
 name|subdir
 parameter_list|)
 block|{
+specifier|const
+name|gchar
+modifier|*
+name|abs_top_srcdir
+init|=
+name|g_getenv
+argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+operator|!
+name|abs_top_srcdir
+condition|)
+name|g_printerr
+argument_list|(
+literal|"The env var GIMP_TESTING_ABS_TOP_SRCDIR is not set, you are probably\n"
+literal|"running in a debugger. Set it manually to e.g. ~/source/gimp"
+argument_list|)
+expr_stmt|;
 comment|/* GIMP_TESTING_ABS_TOP_SRCDIR is set by the automake test runner,    * see Makefile.am    */
 return|return
 name|g_build_filename
