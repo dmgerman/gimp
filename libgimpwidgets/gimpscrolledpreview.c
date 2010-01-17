@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6228020108
+DECL|struct|__anon2c87fada0108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -1460,14 +1460,14 @@ name|preview
 operator|->
 name|nav_icon
 argument_list|,
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|preview
 operator|->
 name|vscr
 argument_list|)
 operator|&&
-name|GTK_WIDGET_VISIBLE
+name|gtk_widget_get_visible
 argument_list|(
 name|preview
 operator|->
