@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcaab80103
+DECL|enum|__anon2984c1600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -954,15 +954,11 @@ name|dock_window
 init|=
 name|NULL
 decl_stmt|;
-name|GimpDialogFactory
-modifier|*
-name|dialog_factory
-init|=
-name|NULL
-decl_stmt|;
-comment|/* This is kind of ugly but not a disaster. We need the dock        * window correctly configured if we create it for the toolbox        */
-name|dialog_factory
+comment|/* Create a dock window to put the dock in. Checking for        * GIMP_IS_TOOLBOX() is kind of ugly but not a disaster. We need        * the dock window correctly configured if we create it for the        * toolbox        */
+name|dock_window
 operator|=
+name|gimp_dialog_factory_dialog_new
+argument_list|(
 operator|(
 name|GIMP_IS_TOOLBOX
 argument_list|(
@@ -973,15 +969,26 @@ name|global_toolbox_factory
 else|:
 name|global_dock_window_factory
 operator|)
-expr_stmt|;
-comment|/* Create a dock window to put the dock in */
-name|dock_window
-operator|=
-name|gimp_dialog_factory_dock_window_new
-argument_list|(
-name|dialog_factory
 argument_list|,
 name|screen
+argument_list|,
+operator|(
+name|GIMP_IS_TOOLBOX
+argument_list|(
+name|dock
+argument_list|)
+condition|?
+literal|"gimp-toolbox-window"
+else|:
+literal|"gimp-dock-window"
+operator|)
+argument_list|,
+operator|-
+literal|1
+comment|/*view_size*/
+argument_list|,
+name|FALSE
+comment|/*present*/
 argument_list|)
 expr_stmt|;
 comment|/* Move the dock to the window */

@@ -87,7 +87,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe81af0103
+DECL|enum|__anon27a3ea1a0103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -741,8 +741,7 @@ name|dock
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dock_window_factory
-comment|/* FIXME */
+name|factory
 argument_list|,
 name|screen
 argument_list|,

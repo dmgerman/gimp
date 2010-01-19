@@ -322,6 +322,44 @@ value|}
 end_define
 
 begin_define
+DECL|macro|DOCK_WINDOW (id,new_func)
+define|#
+directive|define
+name|DOCK_WINDOW
+parameter_list|(
+name|id
+parameter_list|,
+name|new_func
+parameter_list|)
+define|\
+value|{ id
+comment|/* identifier       */
+value|, \     NULL
+comment|/* name             */
+value|, \     NULL
+comment|/* blurb            */
+value|, \     NULL
+comment|/* stock_id         */
+value|, \     NULL
+comment|/* help_id          */
+value|, \     new_func
+comment|/* new_func         */
+value|, \     0
+comment|/* view_size        */
+value|, \     FALSE
+comment|/* singleton        */
+value|, \     TRUE
+comment|/* session_managed  */
+value|, \     TRUE
+comment|/* remember_size    */
+value|, \     TRUE
+comment|/* remember_if_open */
+value|, \     FALSE
+comment|/* dockable         */
+value|}
+end_define
+
+begin_define
 DECL|macro|LISTGRID (id,name,blurb,stock_id,help_id,view_size)
 define|#
 directive|define
@@ -872,6 +910,21 @@ argument_list|(
 literal|"gimp-toolbox"
 argument_list|,
 name|dialogs_toolbox_new
+argument_list|)
+block|,
+comment|/*  dock windows  */
+name|DOCK_WINDOW
+argument_list|(
+literal|"gimp-dock-window"
+argument_list|,
+name|dialogs_dock_window_new
+argument_list|)
+block|,
+name|DOCK_WINDOW
+argument_list|(
+literal|"gimp-toolbox-window"
+argument_list|,
+name|dialogs_toolbox_dock_window_new
 argument_list|)
 block|,
 comment|/*  singleton dockables  */
@@ -1489,6 +1542,34 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|toolbox_entries
+specifier|static
+specifier|const
+name|GimpDialogFactoryEntry
+name|toolbox_entries
+index|[]
+init|=
+block|{
+comment|/*  docks  */
+name|DOCK
+argument_list|(
+literal|"gimp-toolbox"
+argument_list|,
+name|dialogs_toolbox_new
+argument_list|)
+block|,
+comment|/*  dock windows  */
+name|DOCK_WINDOW
+argument_list|(
+literal|"gimp-toolbox-window"
+argument_list|,
+argument|dialogs_toolbox_dock_window_new
+argument_list|)
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -1560,13 +1641,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_set_dock_window_func
-argument_list|(
-name|global_toolbox_factory
-argument_list|,
-name|dialogs_toolbox_dock_window_new
-argument_list|)
-expr_stmt|;
 comment|/* Dock window */
 name|global_dock_window_factory
 operator|=
@@ -1582,13 +1656,6 @@ argument_list|,
 name|menu_factory
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_dialog_factory_set_dock_window_func
-argument_list|(
-name|global_dock_window_factory
-argument_list|,
-name|dialogs_dock_window_new
 argument_list|)
 expr_stmt|;
 comment|/* Display */
@@ -1823,6 +1890,117 @@ operator|.
 name|remember_if_open
 argument_list|,
 name|dock_entries
+index|[
+name|i
+index|]
+operator|.
+name|dockable
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|G_N_ELEMENTS
+argument_list|(
+name|toolbox_entries
+argument_list|)
+condition|;
+name|i
+operator|++
+control|)
+name|gimp_dialog_factory_register_entry
+argument_list|(
+name|global_toolbox_factory
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|identifier
+argument_list|,
+name|gettext
+argument_list|(
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|name
+argument_list|)
+argument_list|,
+name|gettext
+argument_list|(
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|blurb
+argument_list|)
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|stock_id
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|help_id
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|new_func
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|view_size
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|singleton
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|session_managed
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|remember_size
+argument_list|,
+name|toolbox_entries
+index|[
+name|i
+index|]
+operator|.
+name|remember_if_open
+argument_list|,
+name|toolbox_entries
 index|[
 name|i
 index|]

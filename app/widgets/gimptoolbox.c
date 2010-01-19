@@ -205,7 +205,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58f67a0103
+DECL|enum|__anon2b68ee0a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1304,6 +1304,7 @@ argument_list|,
 name|GTK_JUSTIFY_LEFT
 argument_list|)
 expr_stmt|;
+comment|/* Be careful with this mechanism, it has a tendency to make the    * toolbox explode, meaning the size request for height becomes huge    */
 name|gtk_wrap_box_set_aspect_ratio
 argument_list|(
 name|GTK_WRAP_BOX
@@ -1315,9 +1316,9 @@ operator|->
 name|tool_wbox
 argument_list|)
 argument_list|,
-literal|1.0
+literal|2.0
 operator|/
-literal|30.0
+literal|15.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1403,9 +1404,9 @@ operator|->
 name|area_wbox
 argument_list|)
 argument_list|,
-literal|1.0
+literal|2.0
 operator|/
-literal|30.0
+literal|15.0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
