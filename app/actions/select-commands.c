@@ -1311,7 +1311,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

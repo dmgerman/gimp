@@ -374,7 +374,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_session_info
 argument_list|(
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|,
 name|info
 argument_list|)
@@ -383,7 +383,7 @@ name|gimp_session_info_restore
 argument_list|(
 name|info
 argument_list|,
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_clear_info

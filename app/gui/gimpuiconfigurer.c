@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2984c1600103
+DECL|enum|__anon29d9c7870103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -705,7 +705,7 @@ argument_list|(
 name|docks
 argument_list|)
 expr_stmt|;
-comment|/* Kill the window if removing the dock didn't destroy it        * already. This will be the case forthe toolbox dock window        */
+comment|/* Kill the window if removing the dock didn't destroy it        * already. This will be the case for the toolbox dock window        */
 if|if
 condition|(
 name|GTK_IS_WIDGET
@@ -967,7 +967,7 @@ argument_list|)
 condition|?
 name|global_toolbox_factory
 else|:
-name|global_dock_window_factory
+name|global_dock_factory
 operator|)
 argument_list|,
 name|screen
@@ -1096,7 +1096,7 @@ name|global_menu_factory
 argument_list|,
 name|global_display_factory
 argument_list|,
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|)
 expr_stmt|;
 comment|/* Move the shell there */
@@ -1258,7 +1258,7 @@ name|gimp_ui_configurer_move_docks_to_columns
 argument_list|(
 name|ui_configurer
 argument_list|,
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|,
 name|right_docks
 argument_list|)

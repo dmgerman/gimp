@@ -45,16 +45,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_comment
-comment|/* FIXME: Remove when the toolbox and dock window factories have been  * merged  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -124,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bf11f350103
+DECL|enum|__anon2a0a10f30103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -144,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf11f350203
+DECL|enum|__anon2a0a10f30203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED

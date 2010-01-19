@@ -27,16 +27,6 @@ directive|include
 file|"widgets-types.h"
 end_include
 
-begin_comment
-comment|/* FIXME: Remove when the toolbox and dock window factories have been  * merged  */
-end_comment
-
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs.h"
-end_include
-
 begin_include
 include|#
 directive|include
@@ -87,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a3ea1a0103
+DECL|enum|__anon28c759280103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK

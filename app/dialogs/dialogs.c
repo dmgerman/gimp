@@ -110,10 +110,10 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|global_dock_window_factory
+DECL|variable|global_dock_factory
 name|GimpDialogFactory
 modifier|*
-name|global_dock_window_factory
+name|global_dock_factory
 init|=
 name|NULL
 decl_stmt|;
@@ -897,7 +897,7 @@ name|dock_entries
 index|[]
 init|=
 block|{
-comment|/* docks */
+comment|/*  docks  */
 name|DOCK
 argument_list|(
 literal|"gimp-dock"
@@ -1641,8 +1641,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Dock window */
-name|global_dock_window_factory
+comment|/* Dock windows and docks */
+name|global_dock_factory
 operator|=
 name|gimp_dialog_factory_new
 argument_list|(
@@ -1804,7 +1804,7 @@ operator|++
 control|)
 name|gimp_dialog_factory_register_entry
 argument_list|(
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|,
 name|dock_entries
 index|[
@@ -2083,7 +2083,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  destroy the "global_toolbox_factory" _before_ destroying the    *  "global_dock_window_factory" because the    *  "global_toolbox_factory" owns dockables which were created by    *  the "global_dock_window_factory".  This way they are properly    *  removed from the "global_dock_window_factory", which would    *  complain about stale entries otherwise.    */
+comment|/*  destroy the "global_toolbox_factory" _before_ destroying the    *  "global_dock_factory" because the "global_toolbox_factory" owns    *  dockables which were created by the "global_dock_factory".  This    *  way they are properly removed from the "global_dock_factory",    *  which would complain about stale entries otherwise.    */
 if|if
 condition|(
 name|global_toolbox_factory
@@ -2101,15 +2101,15 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|global_dock_window_factory
+name|global_dock_factory
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|global_dock_window_factory
+name|global_dock_factory
 argument_list|)
 expr_stmt|;
-name|global_dock_window_factory
+name|global_dock_factory
 operator|=
 name|NULL
 expr_stmt|;
