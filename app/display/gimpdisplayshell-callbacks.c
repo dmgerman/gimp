@@ -1128,7 +1128,7 @@ decl_stmt|;
 name|gint
 name|offset_y
 decl_stmt|;
-comment|/* FIXMEEEEE!!! */
+comment|/* FIXME: The code is a bit of a mess */
 comment|/*  multiply the zoom_factor with the ratio of the new and            *  old canvas diagonals            */
 name|scale
 operator|*=
