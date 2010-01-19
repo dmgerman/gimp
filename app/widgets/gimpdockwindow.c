@@ -215,7 +215,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d49940103
+DECL|enum|__anon2b7a935e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2058,31 +2058,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_if
-if|#
-directive|if
-literal|0
-end_if
-
-begin_comment
-comment|/* XXX: Do we need this any longer? Doesn't seem like it */
-end_comment
-
-begin_comment
-unit|static void       gimp_dock_window_destroy           (GtkObject      *object);   GtkObjectClass *gtk_object_class = GTK_OBJECT_CLASS (klass);   gtk_object_class->destroy     = gimp_dock_window_destroy; static void gimp_dock_window_destroy (GtkObject *object) {   GimpDockWindow *dock = GIMP_DOCK_WINDOW (object);
-comment|/*  remove the image menu and the auto button manually here because    *  of weird cross-connections with GimpDock's context    */
-end_comment
-
-begin_comment
-comment|/*  FIXME: Fix this when fixing GimpContext management */
-end_comment
-
-begin_endif
-unit|if (gimp_dock_get_main_vbox (GIMP_DOCK (dock))&& dock->p->image_combo)     {       GtkWidget *parent = gtk_widget_get_parent (dock->p->image_combo);        if (parent)         gtk_container_remove (GTK_CONTAINER (gimp_dock_get_main_vbox (GIMP_DOCK (dock))),                               parent);     }    GTK_OBJECT_CLASS (parent_class)->destroy (object); }
-endif|#
-directive|endif
-end_endif
 
 begin_function
 specifier|static
