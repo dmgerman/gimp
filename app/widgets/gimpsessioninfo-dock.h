@@ -25,6 +25,12 @@ DECL|struct|_GimpSessionInfoDock
 struct|struct
 name|_GimpSessionInfoDock
 block|{
+comment|/* Identifier written to/read from sessionrc */
+DECL|member|identifier
+name|gchar
+modifier|*
+name|identifier
+decl_stmt|;
 comment|/*  list of GimpSessionInfoBook  */
 DECL|member|books
 name|GList
@@ -40,7 +46,10 @@ name|GimpSessionInfoDock
 modifier|*
 name|gimp_session_info_dock_new
 parameter_list|(
-name|void
+specifier|const
+name|gchar
+modifier|*
+name|identifier
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -86,6 +95,11 @@ name|GimpSessionInfoDock
 modifier|*
 modifier|*
 name|info
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|identifier
 parameter_list|)
 function_decl|;
 end_function_decl

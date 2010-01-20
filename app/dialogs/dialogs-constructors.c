@@ -898,11 +898,10 @@ name|gint
 name|view_size
 parameter_list|)
 block|{
-comment|/*  we pass "global_dock_factory", _not_ "global_toolbox_factory" to    *  the toolbox constructor, because the global_toolbox_factory has    *  no dockables registered    */
 return|return
 name|gimp_toolbox_new
 argument_list|(
-name|global_dock_factory
+name|factory
 argument_list|,
 name|context
 argument_list|,

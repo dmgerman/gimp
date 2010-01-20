@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2756d9e60103
+DECL|enum|__anon2b33781a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5064,6 +5064,9 @@ argument_list|(
 name|dockable
 argument_list|)
 argument_list|)
+argument_list|,
+name|FALSE
+comment|/*toolbox*/
 argument_list|)
 expr_stmt|;
 name|dock_window

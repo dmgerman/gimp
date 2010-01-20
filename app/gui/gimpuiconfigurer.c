@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9c7870103
+DECL|enum|__anon2903217f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -182,13 +182,12 @@ name|GimpUIConfigurer
 modifier|*
 name|ui_configurer
 parameter_list|,
-name|GimpDialogFactory
-modifier|*
-name|dialog_factory
-parameter_list|,
 name|GimpDockColumns
 modifier|*
 name|dock_columns
+parameter_list|,
+name|gboolean
+name|only_toolbox
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -548,33 +547,26 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_ui_configurer_move_docks_to_columns (GimpUIConfigurer * ui_configurer,GimpDialogFactory * dialog_factory,GimpDockColumns * dock_columns)
+DECL|function|gimp_ui_configurer_move_docks_to_columns (GimpUIConfigurer * ui_configurer,GimpDockColumns * dock_columns,gboolean only_toolbox)
 name|gimp_ui_configurer_move_docks_to_columns
 parameter_list|(
 name|GimpUIConfigurer
 modifier|*
 name|ui_configurer
 parameter_list|,
-name|GimpDialogFactory
-modifier|*
-name|dialog_factory
-parameter_list|,
 name|GimpDockColumns
 modifier|*
 name|dock_columns
+parameter_list|,
+name|gboolean
+name|only_toolbox
 parameter_list|)
 block|{
 name|GList
 modifier|*
 name|dialogs
 init|=
-name|g_list_copy
-argument_list|(
-name|gimp_dialog_factory_get_open_dialogs
-argument_list|(
-name|dialog_factory
-argument_list|)
-argument_list|)
+name|NULL
 decl_stmt|;
 name|GList
 modifier|*
@@ -582,6 +574,16 @@ name|dialog_iter
 init|=
 name|NULL
 decl_stmt|;
+name|dialogs
+operator|=
+name|g_list_copy
+argument_list|(
+name|gimp_dialog_factory_get_open_dialogs
+argument_list|(
+name|global_dock_factory
+argument_list|)
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|dialog_iter
@@ -671,6 +673,17 @@ operator|->
 name|data
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|only_toolbox
+operator|&&
+operator|!
+name|GIMP_IS_TOOLBOX
+argument_list|(
+name|dock
+argument_list|)
+condition|)
+continue|continue;
 comment|/* Move the dock from the image window to the dock columns            * widget. Note that we need a ref while the dock is parentless            */
 name|g_object_ref
 argument_list|(
@@ -706,17 +719,28 @@ name|docks
 argument_list|)
 expr_stmt|;
 comment|/* Kill the window if removing the dock didn't destroy it        * already. This will be the case for the toolbox dock window        */
+comment|/* FIXME: We should solve this in a more elegant way, valgrind        * complains about invalid reads when the dock window already is        * destroyed        */
 if|if
 condition|(
 name|GTK_IS_WIDGET
 argument_list|(
 name|dock_window
 argument_list|)
+operator|&&
+name|g_list_length
+argument_list|(
+name|gimp_dock_window_get_docks
+argument_list|(
+name|dock_window
+argument_list|)
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|gimp_dialog_factory_remove_dialog
 argument_list|(
-name|dialog_factory
+name|global_dock_factory
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -959,16 +983,7 @@ name|dock_window
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-operator|(
-name|GIMP_IS_TOOLBOX
-argument_list|(
-name|dock
-argument_list|)
-condition|?
-name|global_toolbox_factory
-else|:
 name|global_dock_factory
-operator|)
 argument_list|,
 name|screen
 argument_list|,
@@ -1248,9 +1263,10 @@ name|gimp_ui_configurer_move_docks_to_columns
 argument_list|(
 name|ui_configurer
 argument_list|,
-name|global_toolbox_factory
-argument_list|,
 name|left_docks
+argument_list|,
+name|TRUE
+comment|/*only_toolbox*/
 argument_list|)
 expr_stmt|;
 comment|/* Then move the other docks to the right side of the image    * window    */
@@ -1258,9 +1274,10 @@ name|gimp_ui_configurer_move_docks_to_columns
 argument_list|(
 name|ui_configurer
 argument_list|,
-name|global_dock_factory
-argument_list|,
 name|right_docks
+argument_list|,
+name|FALSE
+comment|/*only_toolbox*/
 argument_list|)
 expr_stmt|;
 comment|/* Show the docks in the window */
