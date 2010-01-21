@@ -327,6 +327,7 @@ argument_list|(
 name|toolbox
 argument_list|)
 expr_stmt|;
+comment|/* We need to set this on the toolbox to make gimp-remote    * work. Remove this when we have gotten rid of gimp-remote.    */
 name|gimp_dnd_uri_list_dest_add
 argument_list|(
 name|GTK_WIDGET
