@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolbox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -515,7 +521,7 @@ modifier|*
 name|drag_handler
 parameter_list|)
 block|{
-comment|/* Hook us in for drag events. We could abstract this properly and    * put gimp_paned_box_will_handle_drag() in an interface for    * example, but it doesn't feel worth it at this point    */
+comment|/* Hook us in for drag events. We could abstract this properly and    * put gimp_paned_box_will_handle_drag() in an interface for    * example, but it doesn't feel worth it at this point    *    * Note that we don't have 'else if's because a widget can be both a    * dock and a toolbox for example, in which case we want to set a    * drag handler in two ways    *    * We so need to introduce som abstractions here...    */
 if|if
 condition|(
 name|GIMP_IS_DOCKBOOK
@@ -565,6 +571,31 @@ expr_stmt|;
 name|gimp_paned_box_set_drag_handler
 argument_list|(
 name|dock_paned_box
+argument_list|,
+name|drag_handler
+argument_list|)
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|GIMP_IS_TOOLBOX
+argument_list|(
+name|widget
+argument_list|)
+condition|)
+block|{
+name|GimpToolbox
+modifier|*
+name|toolbox
+init|=
+name|GIMP_TOOLBOX
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
+name|gimp_toolbox_set_drag_handler
+argument_list|(
+name|toolbox
 argument_list|,
 name|drag_handler
 argument_list|)

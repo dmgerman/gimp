@@ -212,6 +212,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_toolbox_set_drag_handler
+parameter_list|(
+name|GimpToolbox
+modifier|*
+name|toolbox
+parameter_list|,
+name|GimpPanedBox
+modifier|*
+name|drag_handler
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
