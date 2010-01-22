@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ade8690103
+DECL|enum|__anon2ab19d030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3319,17 +3319,6 @@ argument_list|)
 operator|!=
 name|GDK_NONE
 operator|)
-expr_stmt|;
-name|g_printerr
-argument_list|(
-literal|"%s: %d %d\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|other_will_handle
-argument_list|,
-name|we_will_handle
-argument_list|)
 expr_stmt|;
 name|handled
 operator|=
