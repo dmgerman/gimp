@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb0bce00108
+DECL|struct|__anon2a40a1960108
 block|{
 DECL|member|dummy
 name|int
@@ -152,7 +152,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
-literal|"gimpdir-empty"
+literal|"app/tests/gimpdir-empty"
 argument_list|)
 expr_stmt|;
 comment|/* We share the same application instance across all tests */
@@ -186,6 +186,12 @@ name|test_result
 operator|=
 name|g_test_run
 argument_list|()
+expr_stmt|;
+comment|/* Don't write files to the source dir */
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"app/tests/gimpdir-output"
+argument_list|)
 expr_stmt|;
 comment|/* Exit somewhat properly to avoid annoying warnings */
 name|gimp_exit

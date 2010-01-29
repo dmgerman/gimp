@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0cc40c0108
+DECL|struct|__anon2a3061430108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -256,7 +256,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
-literal|"gimpdir"
+literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
 name|gimp_test_utils_setup_menus_dir
@@ -341,6 +341,12 @@ name|result
 operator|=
 name|g_test_run
 argument_list|()
+expr_stmt|;
+comment|/* Don't write files to the source dir */
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"app/tests/gimpdir-output"
+argument_list|)
 expr_stmt|;
 comment|/* Exit properly so we don't break script-fu plug-in wire */
 name|gimp_exit

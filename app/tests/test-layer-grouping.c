@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba54ca00108
+DECL|struct|__anon2c1c9b340108
 block|{
 DECL|member|image
 name|GimpImage
@@ -160,7 +160,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
-literal|"gimpdir"
+literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
 comment|/* We share the same application instance across all tests */

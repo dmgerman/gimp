@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292375ad0108
+DECL|struct|__anon2b0716f90108
 block|{
 DECL|member|dummy
 name|int
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292375ad0208
+DECL|struct|__anon2b0716f90208
 block|{
 DECL|member|md5
 name|gchar
@@ -273,17 +273,18 @@ expr_stmt|;
 comment|/* Make sure to run this before we use any GIMP functions */
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
-literal|"gimpdir"
+literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
 name|gimp_test_utils_setup_menus_dir
 argument_list|()
 expr_stmt|;
+comment|/* Note that we expect the resulting sessionrc to be different from    * the read file, which is why we check the MD5 of the -expected    * variant    */
 name|sessionrc_filename
 operator|=
 name|gimp_personal_rc_file
 argument_list|(
-literal|"sessionrc"
+literal|"sessionrc-expected"
 argument_list|)
 expr_stmt|;
 name|dockrc_filename
@@ -332,9 +333,39 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Let the main loop run for a while (quits after a short timeout)    * to let things stabilize. This includes parsing sessionrc and    * dockrc    */
+comment|/* Let the main loop run until idle to let things stabilize. This    * includes parsing sessionrc and dockrc    */
 name|gimp_test_run_mainloop_until_idle
 argument_list|()
+expr_stmt|;
+comment|/* Change the gimp dir to the output dir so files are written there,    * we don't want to (can't always) write to files in the source    * dir. There is a hook in Makefile.am that makes sure the output    * dir exists    */
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"app/tests/gimpdir-output"
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|sessionrc_filename
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|dockrc_filename
+argument_list|)
+expr_stmt|;
+name|sessionrc_filename
+operator|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"sessionrc"
+argument_list|)
+expr_stmt|;
+name|dockrc_filename
+operator|=
+name|gimp_personal_rc_file
+argument_list|(
+literal|"dockrc"
+argument_list|)
 expr_stmt|;
 comment|/* Exit. This includes writing sessionrc and dockrc*/
 name|gimp_exit

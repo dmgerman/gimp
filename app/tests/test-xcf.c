@@ -537,7 +537,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bccb9d00108
+DECL|struct|__anon2b51ae4c0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -2984,7 +2984,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
-literal|"gimpdir"
+literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
 comment|/* We share the same application instance across all tests. We need    * the GUI variant for the file procs    */
@@ -3056,6 +3056,12 @@ argument_list|,
 name|gimp_write_and_read_gimp_2_8_format
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+comment|/* Don't write files to the source dir */
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"app/tests/gimpdir-output"
 argument_list|)
 expr_stmt|;
 comment|/* Exit so we don't break script-fu plug-in wire */
