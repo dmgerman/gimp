@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b1669b0103
+DECL|enum|__anon29635d450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b1669b0203
+DECL|enum|__anon29635d450203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1213,16 +1213,6 @@ name|GDK_SCROLL_MASK
 operator|)
 argument_list|)
 expr_stmt|;
-name|gtk_box_set_spacing
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|shell
-argument_list|)
-argument_list|,
-literal|1
-argument_list|)
-expr_stmt|;
 comment|/*  zoom model callback  */
 name|g_signal_connect_swapped
 argument_list|(
@@ -1581,7 +1571,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1626,7 +1616,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_table_set_row_spacing
@@ -1638,7 +1628,7 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-literal|1
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
