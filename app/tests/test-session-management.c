@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0716f90108
+DECL|struct|__anon29b7cb600108
 block|{
 DECL|member|dummy
 name|int
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0716f90208
+DECL|struct|__anon29b7cb600208
 block|{
 DECL|member|md5
 name|gchar
@@ -273,6 +273,8 @@ expr_stmt|;
 comment|/* Make sure to run this before we use any GIMP functions */
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|,
 literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
@@ -340,6 +342,8 @@ expr_stmt|;
 comment|/* Change the gimp dir to the output dir so files are written there,    * we don't want to (can't always) write to files in the source    * dir. There is a hook in Makefile.am that makes sure the output    * dir exists    */
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_BUILDDIR"
+argument_list|,
 literal|"app/tests/gimpdir-output"
 argument_list|)
 expr_stmt|;

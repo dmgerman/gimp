@@ -120,7 +120,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a3061430108
+DECL|struct|__anon2b9593cb0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -256,6 +256,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|,
 literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
@@ -345,6 +347,8 @@ expr_stmt|;
 comment|/* Don't write files to the source dir */
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_BUILDDIR"
+argument_list|,
 literal|"app/tests/gimpdir-output"
 argument_list|)
 expr_stmt|;

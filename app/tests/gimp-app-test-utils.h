@@ -23,6 +23,11 @@ parameter_list|(
 specifier|const
 name|gchar
 modifier|*
+name|root_env_var
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
 name|subdir
 parameter_list|)
 function_decl|;

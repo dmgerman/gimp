@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ba09280108
+DECL|struct|__anon2795fbed0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -175,6 +175,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_test_utils_set_gimp2_directory
 argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|,
 literal|"app/tests/gimpdir"
 argument_list|)
 expr_stmt|;
