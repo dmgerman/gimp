@@ -77,6 +77,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"git-version.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -357,6 +363,21 @@ condition|(
 name|be_verbose
 condition|)
 block|{
+name|g_print
+argument_list|(
+name|_
+argument_list|(
+literal|"git commit %s"
+argument_list|)
+argument_list|,
+name|GIMP_GIT_VERSION
+argument_list|)
+expr_stmt|;
+name|g_print
+argument_list|(
+literal|"\n"
+argument_list|)
+expr_stmt|;
 name|g_print
 argument_list|(
 literal|"\n"
