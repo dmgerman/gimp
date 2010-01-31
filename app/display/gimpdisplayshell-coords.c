@@ -81,6 +81,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_decl_stmt
+DECL|variable|default_coords
+specifier|static
+specifier|const
+name|GimpCoords
+name|default_coords
+init|=
+name|GIMP_COORDS_DEFAULT_VALUES
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -107,6 +118,9 @@ modifier|*
 name|coords
 parameter_list|)
 block|{
+name|gdouble
+name|x
+decl_stmt|;
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -116,12 +130,21 @@ argument_list|,
 name|GDK_AXIS_X
 argument_list|,
 operator|&
-name|coords
-operator|->
 name|x
 argument_list|)
 condition|)
 block|{
+operator|*
+name|coords
+operator|=
+name|default_coords
+expr_stmt|;
+name|coords
+operator|->
+name|x
+operator|=
+name|x
+expr_stmt|;
 name|gdk_event_get_axis
 argument_list|(
 name|event
@@ -134,7 +157,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*  CLAMP() the return value of each *_get_axis() call to be safe        *  against buggy XInput drivers. Provide default values if the        *  requested axis does not exist.        */
+comment|/*  CLAMP() the return value of each *_get_axis() call to be safe        *  against buggy XInput drivers.        */
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -163,13 +186,6 @@ name|GIMP_COORDS_MIN_PRESSURE
 argument_list|,
 name|GIMP_COORDS_MAX_PRESSURE
 argument_list|)
-expr_stmt|;
-else|else
-name|coords
-operator|->
-name|pressure
-operator|=
-name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 if|if
 condition|(
@@ -200,13 +216,6 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
-else|else
-name|coords
-operator|->
-name|xtilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -236,13 +245,6 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
-else|else
-name|coords
-operator|->
-name|ytilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -271,13 +273,6 @@ name|GIMP_COORDS_MIN_WHEEL
 argument_list|,
 name|GIMP_COORDS_MAX_WHEEL
 argument_list|)
-expr_stmt|;
-else|else
-name|coords
-operator|->
-name|wheel
-operator|=
-name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 return|return
 name|TRUE
@@ -322,6 +317,11 @@ index|[
 name|GDK_AXIS_LAST
 index|]
 decl_stmt|;
+operator|*
+name|coords
+operator|=
+name|default_coords
+expr_stmt|;
 name|gdk_device_get_state
 argument_list|(
 name|device
@@ -366,7 +366,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*  CLAMP() the return value of each *_get_axis() call to be safe    *  against buggy XInput drivers. Provide default values if the    *  requested axis does not exist.    */
+comment|/*  CLAMP() the return value of each *_get_axis() call to be safe    *  against buggy XInput drivers.    */
 if|if
 condition|(
 name|gdk_device_get_axis
@@ -397,13 +397,6 @@ name|GIMP_COORDS_MIN_PRESSURE
 argument_list|,
 name|GIMP_COORDS_MAX_PRESSURE
 argument_list|)
-expr_stmt|;
-else|else
-name|coords
-operator|->
-name|pressure
-operator|=
-name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 if|if
 condition|(
@@ -436,13 +429,6 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
-else|else
-name|coords
-operator|->
-name|xtilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
 if|if
 condition|(
 name|gdk_device_get_axis
@@ -473,13 +459,6 @@ name|GIMP_COORDS_MIN_TILT
 argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
-expr_stmt|;
-else|else
-name|coords
-operator|->
-name|ytilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
 expr_stmt|;
 if|if
 condition|(
@@ -512,13 +491,6 @@ argument_list|,
 name|GIMP_COORDS_MAX_WHEEL
 argument_list|)
 expr_stmt|;
-else|else
-name|coords
-operator|->
-name|wheel
-operator|=
-name|GIMP_COORDS_DEFAULT_WHEEL
-expr_stmt|;
 block|}
 end_function
 
@@ -544,6 +516,11 @@ modifier|*
 name|coords
 parameter_list|)
 block|{
+operator|*
+name|coords
+operator|=
+name|default_coords
+expr_stmt|;
 name|gdk_device_get_axis
 argument_list|(
 name|device
@@ -576,7 +553,7 @@ operator|->
 name|y
 argument_list|)
 expr_stmt|;
-comment|/*  CLAMP() the return value of each *_get_axis() call to be safe    *  against buggy XInput drivers. Provide default values if the    *  requested axis does not exist.    */
+comment|/*  CLAMP() the return value of each *_get_axis() call to be safe    *  against buggy XInput drivers.    */
 if|if
 condition|(
 name|gdk_device_get_axis
@@ -609,13 +586,6 @@ name|GIMP_COORDS_MIN_PRESSURE
 argument_list|,
 name|GIMP_COORDS_MAX_PRESSURE
 argument_list|)
-expr_stmt|;
-else|else
-name|coords
-operator|->
-name|pressure
-operator|=
-name|GIMP_COORDS_DEFAULT_PRESSURE
 expr_stmt|;
 if|if
 condition|(
@@ -650,13 +620,6 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
-else|else
-name|coords
-operator|->
-name|xtilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
 if|if
 condition|(
 name|gdk_device_get_axis
@@ -690,13 +653,6 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
-else|else
-name|coords
-operator|->
-name|ytilt
-operator|=
-name|GIMP_COORDS_DEFAULT_TILT
-expr_stmt|;
 if|if
 condition|(
 name|gdk_device_get_axis
@@ -729,13 +685,6 @@ name|GIMP_COORDS_MIN_WHEEL
 argument_list|,
 name|GIMP_COORDS_MAX_WHEEL
 argument_list|)
-expr_stmt|;
-else|else
-name|coords
-operator|->
-name|wheel
-operator|=
-name|GIMP_COORDS_DEFAULT_WHEEL
 expr_stmt|;
 block|}
 end_function
