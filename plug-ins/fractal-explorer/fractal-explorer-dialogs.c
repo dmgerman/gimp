@@ -2166,7 +2166,10 @@ name|maindlg
 operator|=
 name|gimp_dialog_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Fractal Explorer"
+argument_list|)
 argument_list|,
 name|PLUG_IN_BINARY
 argument_list|,
