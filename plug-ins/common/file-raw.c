@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd5c08c0103
+DECL|enum|__anon28daecb60103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd5c08c0203
+DECL|enum|__anon28daecb60203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -184,7 +184,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5c08c0308
+DECL|struct|__anon28daecb60308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5c08c0408
+DECL|struct|__anon28daecb60408
 block|{
 DECL|member|fp
 name|FILE
@@ -899,6 +899,9 @@ decl_stmt|;
 name|gint32
 name|drawable_id
 decl_stmt|;
+name|INIT_I18N
+argument_list|()
+expr_stmt|;
 name|run_mode
 operator|=
 name|param
