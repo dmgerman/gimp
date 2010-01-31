@@ -1336,7 +1336,7 @@ block|{
 case|case
 name|PNG_COLOR_TYPE_GRAY
 case|:
-name|png_set_gray_1_2_4_to_8
+name|png_set_expand_gray_1_2_4_to_8
 argument_list|(
 name|png_ptr
 argument_list|)
@@ -1370,7 +1370,7 @@ break|break;
 case|case
 name|PNG_COLOR_TYPE_GRAY_ALPHA
 case|:
-name|png_set_gray_1_2_4_to_8
+name|png_set_expand_gray_1_2_4_to_8
 argument_list|(
 name|png_ptr
 argument_list|)
