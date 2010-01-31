@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289231d40103
+DECL|enum|__anon28d3c73e0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -915,9 +915,11 @@ init|=
 block|{
 literal|"gegl:convert-format"
 block|,
-literal|"gegl:text"
-block|,
 literal|"gegl:introspect"
+block|,
+literal|"gegl:path"
+block|,
+literal|"gegl:text"
 block|,
 literal|"gimp-"
 block|}
