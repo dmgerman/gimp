@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b57588a0103
+DECL|enum|__anon29bf67eb0103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1323,6 +1323,21 @@ operator|->
 name|p
 operator|->
 name|docks
+operator|&&
+name|strcmp
+argument_list|(
+literal|"gimp-toolbox-window"
+argument_list|,
+name|info
+operator|->
+name|p
+operator|->
+name|factory_entry
+operator|->
+name|identifier
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|info
