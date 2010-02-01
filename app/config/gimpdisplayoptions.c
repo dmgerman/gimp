@@ -42,19 +42,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"config-types.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"display-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"config/gimprc-blurbs.h"
+file|"gimprc-blurbs.h"
 end_include
 
 begin_include
@@ -71,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27aa1eeb0103
+DECL|enum|__anon2b7a47390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

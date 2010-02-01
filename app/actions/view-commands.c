@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"config/gimpguiconfig.h"
 end_include
 
@@ -85,12 +91,6 @@ begin_include
 include|#
 directive|include
 file|"display/gimpdisplay-foreach.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"display/gimpdisplayoptions.h"
 end_include
 
 begin_include

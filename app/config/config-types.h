@@ -22,6 +22,28 @@ directive|include
 file|"libgimpconfig/gimpconfigtypes.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"config/config-enums.h"
+end_include
+
+begin_define
+DECL|macro|GIMP_OPACITY_TRANSPARENT
+define|#
+directive|define
+name|GIMP_OPACITY_TRANSPARENT
+value|0.0
+end_define
+
+begin_define
+DECL|macro|GIMP_OPACITY_OPAQUE
+define|#
+directive|define
+name|GIMP_OPACITY_OPAQUE
+value|1.0
+end_define
+
 begin_typedef
 DECL|typedef|GimpBaseConfig
 typedef|typedef
@@ -84,10 +106,6 @@ name|_GimpXmlParser
 name|GimpXmlParser
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* should be in display/display-types.h */
-end_comment
 
 begin_typedef
 DECL|typedef|GimpDisplayOptions

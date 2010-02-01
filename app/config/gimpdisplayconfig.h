@@ -19,12 +19,6 @@ end_define
 begin_include
 include|#
 directive|include
-file|"display/display-enums.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"config/gimpcoreconfig.h"
 end_include
 

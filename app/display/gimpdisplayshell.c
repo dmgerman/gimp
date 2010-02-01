@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"config/gimpdisplayoptions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -175,12 +181,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplay.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayoptions.h"
 end_include
 
 begin_include
@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29635d450103
+DECL|enum|__anon28c7ddfd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29635d450203
+DECL|enum|__anon28c7ddfd0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

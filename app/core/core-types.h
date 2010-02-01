@@ -45,22 +45,6 @@ comment|/*  defines  */
 end_comment
 
 begin_define
-DECL|macro|GIMP_OPACITY_TRANSPARENT
-define|#
-directive|define
-name|GIMP_OPACITY_TRANSPARENT
-value|0.0
-end_define
-
-begin_define
-DECL|macro|GIMP_OPACITY_OPAQUE
-define|#
-directive|define
-name|GIMP_OPACITY_OPAQUE
-value|1.0
-end_define
-
-begin_define
 DECL|macro|GIMP_COORDS_MIN_PRESSURE
 define|#
 directive|define

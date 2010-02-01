@@ -17,46 +17,6 @@ name|__DISPLAY_ENUMS_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_TYPE_CURSOR_MODE
-define|#
-directive|define
-name|GIMP_TYPE_CURSOR_MODE
-value|(gimp_cursor_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_cursor_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28a0b6ce0103
-block|{
-DECL|enumerator|GIMP_CURSOR_MODE_TOOL_ICON
-name|GIMP_CURSOR_MODE_TOOL_ICON
-block|,
-comment|/*< desc="Tool icon">*/
-DECL|enumerator|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
-name|GIMP_CURSOR_MODE_TOOL_CROSSHAIR
-block|,
-comment|/*< desc="Tool icon with crosshair">*/
-DECL|enumerator|GIMP_CURSOR_MODE_CROSSHAIR
-name|GIMP_CURSOR_MODE_CROSSHAIR
-comment|/*< desc="Crosshair only">*/
-DECL|typedef|GimpCursorMode
-block|}
-name|GimpCursorMode
-typedef|;
-end_typedef
-
-begin_define
 DECL|macro|GIMP_TYPE_CURSOR_PRECISION
 define|#
 directive|define
@@ -77,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a0b6ce0203
+DECL|enum|__anon27f96ced0103
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -90,133 +50,6 @@ name|GIMP_CURSOR_PRECISION_SUBPIXEL
 DECL|typedef|GimpCursorPrecision
 block|}
 name|GimpCursorPrecision
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_CANVAS_PADDING_MODE
-define|#
-directive|define
-name|GIMP_TYPE_CANVAS_PADDING_MODE
-value|(gimp_canvas_padding_mode_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_canvas_padding_mode_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28a0b6ce0303
-block|{
-DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DEFAULT
-name|GIMP_CANVAS_PADDING_MODE_DEFAULT
-block|,
-comment|/*< desc="From theme">*/
-DECL|enumerator|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
-name|GIMP_CANVAS_PADDING_MODE_LIGHT_CHECK
-block|,
-comment|/*< desc="Light check color">*/
-DECL|enumerator|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
-name|GIMP_CANVAS_PADDING_MODE_DARK_CHECK
-block|,
-comment|/*< desc="Dark check color">*/
-DECL|enumerator|GIMP_CANVAS_PADDING_MODE_CUSTOM
-name|GIMP_CANVAS_PADDING_MODE_CUSTOM
-block|,
-comment|/*< desc="Custom color">*/
-DECL|enumerator|GIMP_CANVAS_PADDING_MODE_RESET
-name|GIMP_CANVAS_PADDING_MODE_RESET
-init|=
-operator|-
-literal|1
-comment|/*< skip>*/
-DECL|typedef|GimpCanvasPaddingMode
-block|}
-name|GimpCanvasPaddingMode
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_SPACE_BAR_ACTION
-define|#
-directive|define
-name|GIMP_TYPE_SPACE_BAR_ACTION
-value|(gimp_space_bar_action_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_space_bar_action_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28a0b6ce0403
-block|{
-DECL|enumerator|GIMP_SPACE_BAR_ACTION_NONE
-name|GIMP_SPACE_BAR_ACTION_NONE
-block|,
-comment|/*< desc="No action">*/
-DECL|enumerator|GIMP_SPACE_BAR_ACTION_PAN
-name|GIMP_SPACE_BAR_ACTION_PAN
-block|,
-comment|/*< desc="Pan view">*/
-DECL|enumerator|GIMP_SPACE_BAR_ACTION_MOVE
-name|GIMP_SPACE_BAR_ACTION_MOVE
-comment|/*< desc="Switch to Move tool">*/
-DECL|typedef|GimpSpaceBarAction
-block|}
-name|GimpSpaceBarAction
-typedef|;
-end_typedef
-
-begin_define
-DECL|macro|GIMP_TYPE_ZOOM_QUALITY
-define|#
-directive|define
-name|GIMP_TYPE_ZOOM_QUALITY
-value|(gimp_zoom_quality_get_type ())
-end_define
-
-begin_decl_stmt
-name|GType
-name|gimp_zoom_quality_get_type
-argument_list|(
-name|void
-argument_list|)
-name|G_GNUC_CONST
-decl_stmt|;
-end_decl_stmt
-
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon28a0b6ce0503
-block|{
-DECL|enumerator|GIMP_ZOOM_QUALITY_LOW
-name|GIMP_ZOOM_QUALITY_LOW
-block|,
-comment|/*< desc="Low">*/
-DECL|enumerator|GIMP_ZOOM_QUALITY_HIGH
-name|GIMP_ZOOM_QUALITY_HIGH
-comment|/*< desc="High">*/
-DECL|typedef|GimpZoomQuality
-block|}
-name|GimpZoomQuality
 typedef|;
 end_typedef
 
@@ -241,7 +74,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a0b6ce0603
+DECL|enum|__anon27f96ced0203
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
