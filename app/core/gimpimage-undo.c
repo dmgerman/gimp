@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-undo.h"
 end_include
 
@@ -433,12 +439,23 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 comment|/*  Emit the UNDO_FREE event before actually freeing everything    *  so the views can properly detach from the undo items    */
@@ -478,13 +495,13 @@ expr_stmt|;
 comment|/* If the image was dirty, but could become clean by redo-ing    * some actions, then it should now become 'infinitely' dirty.    * This is because we've just nuked the actions that would allow    * the image to become clean again.    */
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|dirty
 operator|<
 literal|0
 condition|)
-name|image
+name|private
 operator|->
 name|dirty
 operator|=
@@ -512,6 +529,10 @@ modifier|*
 name|name
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|GimpUndoStack
 modifier|*
 name|undo_group
@@ -540,6 +561,13 @@ operator|<=
 name|GIMP_UNDO_GROUP_LAST
 argument_list|,
 name|FALSE
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 if|if
@@ -583,7 +611,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|undo_freeze_count
 operator|>
@@ -684,6 +712,10 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -694,9 +726,16 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|undo_freeze_count
 operator|>
@@ -790,6 +829,10 @@ parameter_list|,
 modifier|...
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|GParameter
 modifier|*
 name|params
@@ -839,6 +882,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 comment|/* Does this undo dirty the image?  If so, we always want to mark    * image dirty, even if we can't actually push the undo.    */
 if|if
 condition|(
@@ -855,7 +905,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|undo_freeze_count
 operator|>
@@ -1598,6 +1648,15 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|GimpContainer
 modifier|*
 name|container
@@ -1713,7 +1772,7 @@ block|}
 comment|/* We need to use<= here because the undo counter has already been    * incremented at this point.    */
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|dirty
 operator|<=
@@ -1721,7 +1780,7 @@ literal|0
 condition|)
 block|{
 comment|/* If the image was dirty, but could become clean by redo-ing        * some actions, then it should now become 'infinitely' dirty.        * This is because we've just nuked the actions that would allow        * the image to become clean again.        */
-name|image
+name|private
 operator|->
 name|dirty
 operator|=

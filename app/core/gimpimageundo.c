@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimageundo.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0b4b3d0103
+DECL|enum|__anon278420c30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1112,6 +1118,15 @@ name|undo
 operator|->
 name|image
 decl_stmt|;
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|GIMP_UNDO_CLASS
 argument_list|(
 name|parent_class
@@ -1422,7 +1437,7 @@ operator|>=
 literal|1e-5
 condition|)
 block|{
-name|image
+name|private
 operator|->
 name|xresolution
 operator|=
@@ -1430,7 +1445,7 @@ name|image_undo
 operator|->
 name|xresolution
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|yresolution
 operator|=
@@ -1480,7 +1495,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|resolution_unit
 operator|=

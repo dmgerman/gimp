@@ -155,6 +155,16 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-private.h"
+end_include
+
+begin_comment
+comment|/* FIXME: add api for undo freeze count */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
@@ -2374,7 +2384,10 @@ expr_stmt|;
 comment|/* make sure that undo is enabled */
 while|while
 condition|(
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|undo_freeze_count
 condition|)
