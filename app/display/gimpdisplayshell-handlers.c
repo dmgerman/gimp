@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-grid.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -789,9 +795,10 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
+name|gimp_image_get_grid
+argument_list|(
 name|image
-operator|->
-name|grid
+argument_list|)
 argument_list|,
 literal|"notify"
 argument_list|,
@@ -1692,9 +1699,10 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
+name|gimp_image_get_grid
+argument_list|(
 name|image
-operator|->
-name|grid
+argument_list|)
 argument_list|,
 name|gimp_display_shell_grid_notify_handler
 argument_list|,

@@ -130,6 +130,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-sample-points.h"
 end_include
 
@@ -1747,6 +1753,15 @@ case|case
 name|PROP_GUIDES
 case|:
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|gint32
 name|position
 decl_stmt|;
@@ -1883,14 +1898,14 @@ expr_stmt|;
 continue|continue;
 block|}
 block|}
-comment|/*  this is silly as the order of guides doesn't really matter,              *  but it restores the list to it's original order, which              *  cannot be wrong  --Mitch              */
-name|image
+comment|/*  this is silly as the order of guides doesn't really matter,              *  but it restores the list to its original order, which              *  cannot be wrong  --Mitch              */
+name|private
 operator|->
 name|guides
 operator|=
 name|g_list_reverse
 argument_list|(
-name|image
+name|private
 operator|->
 name|guides
 argument_list|)

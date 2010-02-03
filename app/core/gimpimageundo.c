@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278420c30103
+DECL|enum|__anon2870ad2d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1531,9 +1531,10 @@ name|gimp_config_duplicate
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
+name|gimp_image_get_grid
+argument_list|(
 name|image
-operator|->
-name|grid
+argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;

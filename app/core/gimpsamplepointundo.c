@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-sample-points.h"
 end_include
 
@@ -47,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae149b00103
+DECL|enum|__anon2c35771b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -559,17 +565,24 @@ operator|-
 literal|1
 condition|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|undo
 operator|->
 name|image
+argument_list|)
+decl_stmt|;
+name|private
 operator|->
 name|sample_points
 operator|=
 name|g_list_append
 argument_list|(
-name|undo
-operator|->
-name|image
+name|private
 operator|->
 name|sample_points
 argument_list|,

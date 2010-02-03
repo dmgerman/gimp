@@ -141,6 +141,24 @@ modifier|*
 name|graph
 decl_stmt|;
 comment|/*  GEGL projection graph        */
+DECL|member|guides
+name|GList
+modifier|*
+name|guides
+decl_stmt|;
+comment|/*  guides                       */
+DECL|member|grid
+name|GimpGrid
+modifier|*
+name|grid
+decl_stmt|;
+comment|/*  grid                         */
+DECL|member|sample_points
+name|GList
+modifier|*
+name|sample_points
+decl_stmt|;
+comment|/*  color sample points          */
 block|}
 struct|;
 end_struct

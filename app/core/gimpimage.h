@@ -250,24 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|guides
-name|GList
-modifier|*
-name|guides
-decl_stmt|;
-comment|/*  guides                       */
-DECL|member|grid
-name|GimpGrid
-modifier|*
-name|grid
-decl_stmt|;
-comment|/*  grid                         */
-DECL|member|sample_points
-name|GList
-modifier|*
-name|sample_points
-decl_stmt|;
-comment|/*  color sample points          */
 comment|/*  Layer/Channel attributes  */
 DECL|member|layers
 name|GimpContainer

@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpimage-undo-push.h"
 end_include
 
@@ -79,7 +85,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|grid
 return|;
@@ -103,6 +112,10 @@ name|gboolean
 name|push_undo
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -119,13 +132,20 @@ name|grid
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_config_is_equal_to
 argument_list|(
 name|GIMP_CONFIG
 argument_list|(
-name|image
+name|private
 operator|->
 name|grid
 argument_list|)
@@ -150,7 +170,7 @@ argument_list|(
 literal|"Grid"
 argument_list|)
 argument_list|,
-name|image
+name|private
 operator|->
 name|grid
 argument_list|)
@@ -164,7 +184,7 @@ argument_list|)
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|image
+name|private
 operator|->
 name|grid
 argument_list|)

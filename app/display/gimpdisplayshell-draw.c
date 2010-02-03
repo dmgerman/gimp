@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-grid.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-guides.h"
 end_include
 
@@ -815,11 +821,9 @@ name|CROSSHAIR
 value|2
 name|grid
 operator|=
-name|GIMP_GRID
+name|gimp_image_get_grid
 argument_list|(
 name|image
-operator|->
-name|grid
 argument_list|)
 expr_stmt|;
 if|if

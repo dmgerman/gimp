@@ -1667,11 +1667,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_GRID
+name|gimp_image_get_grid
 argument_list|(
 name|image
-operator|->
-name|grid
 argument_list|)
 condition|)
 block|{
@@ -6885,7 +6883,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab283310108
+DECL|struct|__anon2771b9000108
 block|{
 DECL|member|info
 name|XcfInfo
