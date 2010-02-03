@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon298fdf250103
+DECL|enum|__anon2bd1e8cb0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon298fdf250203
+DECL|enum|__anon2bd1e8cb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2812,19 +2812,19 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|active_layer
 operator|=
 name|NULL
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|active_channel
 operator|=
 name|NULL
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|active_vectors
 operator|=
@@ -11468,6 +11468,10 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -11478,10 +11482,17 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 comment|/*  If there is an active channel (a saved selection, etc.),    *  we ignore the active layer    */
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|active_channel
 condition|)
@@ -11489,7 +11500,7 @@ block|{
 return|return
 name|GIMP_DRAWABLE
 argument_list|(
-name|image
+name|private
 operator|->
 name|active_channel
 argument_list|)
@@ -11498,7 +11509,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|active_layer
 condition|)
@@ -11507,7 +11518,7 @@ name|GimpLayer
 modifier|*
 name|layer
 init|=
-name|image
+name|private
 operator|->
 name|active_layer
 decl_stmt|;
@@ -11572,7 +11583,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|active_layer
 return|;
@@ -11602,7 +11616,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|active_channel
 return|;
@@ -11632,7 +11649,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|active_vectors
 return|;
@@ -11745,7 +11765,7 @@ if|if
 condition|(
 name|layer
 operator|!=
-name|image
+name|private
 operator|->
 name|active_layer
 condition|)
@@ -11786,7 +11806,7 @@ block|}
 comment|/*  Don't cache selection info for the previous active layer  */
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|active_layer
 condition|)
@@ -11794,13 +11814,13 @@ name|gimp_drawable_invalidate_boundary
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(
-name|image
+name|private
 operator|->
 name|active_layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|active_layer
 operator|=
@@ -11822,7 +11842,7 @@ if|if
 condition|(
 name|layer
 operator|&&
-name|image
+name|private
 operator|->
 name|active_channel
 condition|)
@@ -11835,7 +11855,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|image
+name|private
 operator|->
 name|active_layer
 return|;
@@ -11857,6 +11877,10 @@ modifier|*
 name|channel
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -11910,6 +11934,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 comment|/*  Not if there is a floating selection  */
 if|if
 condition|(
@@ -11927,12 +11958,12 @@ if|if
 condition|(
 name|channel
 operator|!=
-name|image
+name|private
 operator|->
 name|active_channel
 condition|)
 block|{
-name|image
+name|private
 operator|->
 name|active_channel
 operator|=
@@ -11954,7 +11985,7 @@ if|if
 condition|(
 name|channel
 operator|&&
-name|image
+name|private
 operator|->
 name|active_layer
 condition|)
@@ -11967,7 +11998,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|image
+name|private
 operator|->
 name|active_channel
 return|;
@@ -12068,6 +12099,10 @@ modifier|*
 name|vectors
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -12121,16 +12156,23 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|vectors
 operator|!=
-name|image
+name|private
 operator|->
 name|active_vectors
 condition|)
 block|{
-name|image
+name|private
 operator|->
 name|active_vectors
 operator|=
@@ -12150,7 +12192,7 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|image
+name|private
 operator|->
 name|active_vectors
 return|;

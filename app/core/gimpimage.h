@@ -250,24 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|active_layer
-name|GimpLayer
-modifier|*
-name|active_layer
-decl_stmt|;
-comment|/*  the active layer             */
-DECL|member|active_channel
-name|GimpChannel
-modifier|*
-name|active_channel
-decl_stmt|;
-comment|/*  the active channel           */
-DECL|member|active_vectors
-name|GimpVectors
-modifier|*
-name|active_vectors
-decl_stmt|;
-comment|/*  the active vectors           */
 DECL|member|floating_sel
 name|GimpLayer
 modifier|*

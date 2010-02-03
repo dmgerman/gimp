@@ -196,6 +196,24 @@ DECL|member|channel_color_changed_handler
 name|GQuark
 name|channel_color_changed_handler
 decl_stmt|;
+DECL|member|active_layer
+name|GimpLayer
+modifier|*
+name|active_layer
+decl_stmt|;
+comment|/*  the active layer             */
+DECL|member|active_channel
+name|GimpChannel
+modifier|*
+name|active_channel
+decl_stmt|;
+comment|/*  the active channel           */
+DECL|member|active_vectors
+name|GimpVectors
+modifier|*
+name|active_vectors
+decl_stmt|;
+comment|/*  the active vectors           */
 block|}
 struct|;
 end_struct
