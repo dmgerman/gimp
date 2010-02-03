@@ -1511,9 +1511,7 @@ expr_stmt|;
 name|width
 operator|*=
 operator|(
-name|image
-operator|->
-name|yresolution
+name|yres
 operator|/
 name|_gimp_unit_get_factor
 argument_list|(
