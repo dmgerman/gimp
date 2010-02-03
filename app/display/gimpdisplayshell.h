@@ -43,32 +43,6 @@ value|((gint64) RINT (coord))
 end_define
 
 begin_comment
-comment|/* finding the effective screen resolution (double) */
-end_comment
-
-begin_define
-DECL|macro|SCREEN_XRES (s)
-define|#
-directive|define
-name|SCREEN_XRES
-parameter_list|(
-name|s
-parameter_list|)
-value|((s)->dot_for_dot ? \                            (s)->display->image->xresolution : (s)->monitor_xres)
-end_define
-
-begin_define
-DECL|macro|SCREEN_YRES (s)
-define|#
-directive|define
-name|SCREEN_YRES
-parameter_list|(
-name|s
-parameter_list|)
-value|((s)->dot_for_dot ? \                            (s)->display->image->yresolution : (s)->monitor_yres)
-end_define
-
-begin_comment
 comment|/* scale values */
 end_comment
 
