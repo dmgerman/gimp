@@ -250,11 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|tattoo_state
-name|GimpTattoo
-name|tattoo_state
-decl_stmt|;
-comment|/*  the last used tattoo         */
 DECL|member|projection
 name|GimpProjection
 modifier|*

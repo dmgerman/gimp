@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f964910103
+DECL|enum|__anon28b39ff00103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f964910203
+DECL|enum|__anon28b39ff00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2619,7 +2619,7 @@ name|disp_count
 operator|=
 literal|0
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|tattoo_state
 operator|=
@@ -10474,6 +10474,10 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -10484,7 +10488,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
+expr_stmt|;
+name|private
 operator|->
 name|tattoo_state
 operator|++
@@ -10493,7 +10504,7 @@ if|if
 condition|(
 name|G_UNLIKELY
 argument_list|(
-name|image
+name|private
 operator|->
 name|tattoo_state
 operator|==
@@ -10508,7 +10519,7 @@ name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 return|return
-name|image
+name|private
 operator|->
 name|tattoo_state
 return|;
@@ -10536,7 +10547,10 @@ literal|0
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|tattoo_state
 return|;
@@ -10808,7 +10822,10 @@ name|retval
 operator|==
 name|TRUE
 condition|)
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|tattoo_state
 operator|=

@@ -124,6 +124,11 @@ name|gint
 name|disp_count
 decl_stmt|;
 comment|/*  number of displays           */
+DECL|member|tattoo_state
+name|GimpTattoo
+name|tattoo_state
+decl_stmt|;
+comment|/*  the last used tattoo         */
 block|}
 struct|;
 end_struct
