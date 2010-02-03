@@ -388,6 +388,15 @@ argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
+name|GimpProjection
+modifier|*
+name|projection
+init|=
+name|gimp_image_get_projection
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|TempBuf
 modifier|*
 name|buf
@@ -442,8 +451,6 @@ name|level
 operator|=
 name|gimp_projection_get_level
 argument_list|(
-name|image
-operator|->
 name|projection
 argument_list|,
 name|scale_x
@@ -455,8 +462,6 @@ name|tiles
 operator|=
 name|gimp_projection_get_tiles_at_level
 argument_list|(
-name|image
-operator|->
 name|projection
 argument_list|,
 name|level

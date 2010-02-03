@@ -2559,9 +2559,10 @@ name|action
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gimp_image_get_projection
+argument_list|(
 name|image
-operator|->
-name|projection
+argument_list|)
 operator|->
 name|use_gegl
 operator|=

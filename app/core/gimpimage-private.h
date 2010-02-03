@@ -129,6 +129,18 @@ name|GimpTattoo
 name|tattoo_state
 decl_stmt|;
 comment|/*  the last used tattoo         */
+DECL|member|projection
+name|GimpProjection
+modifier|*
+name|projection
+decl_stmt|;
+comment|/*  projection layers& channels */
+DECL|member|graph
+name|GeglNode
+modifier|*
+name|graph
+decl_stmt|;
+comment|/*  GEGL projection graph        */
 block|}
 struct|;
 end_struct

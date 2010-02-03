@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289cc3820103
+DECL|enum|__anon2a2bbba50103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -1356,9 +1356,10 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
 name|image
-operator|->
-name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

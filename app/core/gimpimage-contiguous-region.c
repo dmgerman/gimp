@@ -84,7 +84,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de40750108
+DECL|struct|__anon29d291200108
 block|{
 DECL|member|image
 name|GimpImage
@@ -441,9 +441,10 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
 name|image
-operator|->
-name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else
@@ -860,9 +861,10 @@ name|pickable
 operator|=
 name|GIMP_PICKABLE
 argument_list|(
+name|gimp_image_get_projection
+argument_list|(
 name|image
-operator|->
-name|projection
+argument_list|)
 argument_list|)
 expr_stmt|;
 else|else

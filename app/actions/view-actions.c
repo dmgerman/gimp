@@ -2254,6 +2254,11 @@ init|=
 name|FALSE
 decl_stmt|;
 comment|/* able to revert zoom? */
+name|gboolean
+name|use_gegl
+init|=
+name|FALSE
+decl_stmt|;
 if|if
 condition|(
 name|display
@@ -2323,6 +2328,19 @@ name|gimp_display_shell_scale_can_revert
 argument_list|(
 name|shell
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+name|use_gegl
+operator|=
+name|gimp_image_get_projection
+argument_list|(
+name|image
+argument_list|)
+operator|->
+name|use_gegl
 expr_stmt|;
 block|}
 DECL|macro|SET_ACTIVE (action,condition)
@@ -2943,12 +2961,6 @@ name|SET_ACTIVE
 argument_list|(
 literal|"view-use-gegl"
 argument_list|,
-name|image
-operator|&&
-name|image
-operator|->
-name|projection
-operator|->
 name|use_gegl
 argument_list|)
 expr_stmt|;
