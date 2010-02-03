@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a0bb8e0103
+DECL|enum|__anon296ca3960103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -2109,6 +2109,10 @@ name|mag
 decl_stmt|;
 name|gdouble
 name|dyn_spacing
+init|=
+name|core
+operator|->
+name|spacing
 decl_stmt|;
 name|gdouble
 name|fade_point
@@ -2189,9 +2193,10 @@ argument_list|,
 name|fade_point
 argument_list|)
 expr_stmt|;
-comment|/* Dynamic spacing assumes that the value set in core is the min value        * and the max is full 200% spacing. This approach differs ofrom the usual        * factor from user input approach because making spacing smaller than        * the nominal value is unlikely and spacing has a hard defined max.        */
+comment|/* Dynamic spacing assumes that the value set in core is the min        * value and the max is full 200% spacing. This approach differs        * from the usual factor from user input approach because making        * spacing smaller than the nominal value is unlikely and        * spacing has a hard defined max.        */
 name|dyn_spacing
 operator|=
+operator|(
 name|core
 operator|->
 name|spacing
@@ -2211,7 +2216,9 @@ operator|-
 name|dyn_spacing
 operator|)
 operator|)
+operator|)
 expr_stmt|;
+comment|/*  Limiting spacing to minimum 1%  */
 name|dyn_spacing
 operator|=
 name|MAX
@@ -2223,7 +2230,6 @@ argument_list|,
 name|dyn_spacing
 argument_list|)
 expr_stmt|;
-comment|/*Limiting spacing to minimum 1%*/
 block|}
 name|gimp_avoid_exact_integer
 argument_list|(
