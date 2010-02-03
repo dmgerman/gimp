@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b387fc00103
+DECL|enum|__anon294380290103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2312,7 +2312,7 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_image_inc_display_count
+name|gimp_image_dec_display_count
 argument_list|(
 name|display
 operator|->
@@ -2369,7 +2369,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gimp_image_dec_display_count
+name|gimp_image_inc_display_count
 argument_list|(
 name|image
 argument_list|)
