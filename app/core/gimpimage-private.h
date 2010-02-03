@@ -214,6 +214,18 @@ modifier|*
 name|active_vectors
 decl_stmt|;
 comment|/*  the active vectors           */
+DECL|member|floating_sel
+name|GimpLayer
+modifier|*
+name|floating_sel
+decl_stmt|;
+comment|/*  the FS layer                 */
+DECL|member|selection_mask
+name|GimpChannel
+modifier|*
+name|selection_mask
+decl_stmt|;
+comment|/*  the selection mask channel   */
 block|}
 struct|;
 end_struct

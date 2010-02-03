@@ -3674,6 +3674,15 @@ case|case
 name|PROP_SELECTION
 case|:
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|GimpChannel
 modifier|*
 name|mask
@@ -3688,7 +3697,7 @@ argument_list|)
 expr_stmt|;
 name|mask
 operator|=
-name|image
+name|private
 operator|->
 name|selection_mask
 operator|=

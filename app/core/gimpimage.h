@@ -250,18 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|floating_sel
-name|GimpLayer
-modifier|*
-name|floating_sel
-decl_stmt|;
-comment|/*  the FS layer                 */
-DECL|member|selection_mask
-name|GimpChannel
-modifier|*
-name|selection_mask
-decl_stmt|;
-comment|/*  the selection mask channel   */
 DECL|member|parasites
 name|GimpParasiteList
 modifier|*
