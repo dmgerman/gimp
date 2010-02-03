@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e774d0103
+DECL|enum|__anon298fdf250103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292e774d0203
+DECL|enum|__anon298fdf250203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2704,7 +2704,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|layer_alpha_handler
 operator|=
@@ -2740,7 +2740,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|channel_name_changed_handler
 operator|=
@@ -2760,7 +2760,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|channel_color_changed_handler
 operator|=
@@ -3626,7 +3626,7 @@ name|private
 operator|->
 name|layers
 argument_list|,
-name|image
+name|private
 operator|->
 name|layer_alpha_handler
 argument_list|)
@@ -3648,7 +3648,7 @@ name|private
 operator|->
 name|channels
 argument_list|,
-name|image
+name|private
 operator|->
 name|channel_name_changed_handler
 argument_list|)
@@ -3659,7 +3659,7 @@ name|private
 operator|->
 name|channels
 argument_list|,
-name|image
+name|private
 operator|->
 name|channel_color_changed_handler
 argument_list|)

@@ -250,18 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|layer_alpha_handler
-name|GQuark
-name|layer_alpha_handler
-decl_stmt|;
-DECL|member|channel_name_changed_handler
-name|GQuark
-name|channel_name_changed_handler
-decl_stmt|;
-DECL|member|channel_color_changed_handler
-name|GQuark
-name|channel_color_changed_handler
-decl_stmt|;
 DECL|member|active_layer
 name|GimpLayer
 modifier|*
