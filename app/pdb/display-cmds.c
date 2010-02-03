@@ -266,9 +266,10 @@ block|{
 comment|/* the first display takes ownership of the image */
 if|if
 condition|(
+name|gimp_image_get_display_count
+argument_list|(
 name|image
-operator|->
-name|disp_count
+argument_list|)
 operator|==
 literal|1
 condition|)
@@ -688,15 +689,17 @@ name|old_image
 operator|!=
 name|new_image
 operator|&&
+name|gimp_image_get_display_count
+argument_list|(
 name|old_image
-operator|->
-name|disp_count
+argument_list|)
 operator|>
 literal|0
 operator|&&
+name|gimp_image_get_display_count
+argument_list|(
 name|new_image
-operator|->
-name|disp_count
+argument_list|)
 operator|==
 literal|0
 operator|)
@@ -718,9 +721,10 @@ expr_stmt|;
 comment|/* take ownership of the image */
 if|if
 condition|(
+name|gimp_image_get_display_count
+argument_list|(
 name|new_image
-operator|->
-name|disp_count
+argument_list|)
 operator|>
 literal|0
 condition|)

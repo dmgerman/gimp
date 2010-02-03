@@ -256,10 +256,16 @@ name|image
 init|=
 name|NULL
 decl_stmt|;
+name|gint
+name|disp_count
+init|=
+literal|0
+decl_stmt|;
 if|if
 condition|(
 name|context
 condition|)
+block|{
 name|image
 operator|=
 name|gimp_context_get_image
@@ -267,6 +273,18 @@ argument_list|(
 name|context
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|image
+condition|)
+name|disp_count
+operator|=
+name|gimp_image_get_display_count
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+block|}
 DECL|macro|SET_SENSITIVE (action,condition)
 define|#
 directive|define
@@ -298,8 +316,6 @@ literal|"images-delete"
 argument_list|,
 name|image
 operator|&&
-name|image
-operator|->
 name|disp_count
 operator|==
 literal|0

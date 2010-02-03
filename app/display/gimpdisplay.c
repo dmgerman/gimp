@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dd4d970103
+DECL|enum|__anon2b387fc00103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2312,12 +2312,12 @@ argument_list|(
 name|display
 argument_list|)
 expr_stmt|;
+name|gimp_image_inc_display_count
+argument_list|(
 name|display
 operator|->
 name|image
-operator|->
-name|disp_count
-operator|--
+argument_list|)
 expr_stmt|;
 comment|/*  set display->image before unrefing because there may be code        *  that listens for image removals and then iterates the        *  display list to find a valid display.        */
 name|old_image
@@ -2359,15 +2359,20 @@ name|private
 operator|->
 name|instance
 operator|=
+name|gimp_image_get_instance_count
+argument_list|(
 name|image
-operator|->
-name|instance_count
-operator|++
+argument_list|)
 expr_stmt|;
+name|gimp_image_inc_instance_count
+argument_list|(
 name|image
-operator|->
-name|disp_count
-operator|++
+argument_list|)
+expr_stmt|;
+name|gimp_image_dec_display_count
+argument_list|(
+name|image
+argument_list|)
 expr_stmt|;
 name|gimp_display_connect
 argument_list|(

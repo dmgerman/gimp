@@ -273,9 +273,10 @@ name|kill_it
 operator|&&
 name|image
 operator|&&
+name|gimp_image_get_display_count
+argument_list|(
 name|image
-operator|->
-name|disp_count
+argument_list|)
 operator|==
 literal|1
 operator|&&
@@ -813,7 +814,6 @@ literal|"gimp-image"
 argument_list|)
 decl_stmt|;
 name|gint
-modifier|*
 name|dirty_time
 init|=
 name|gimp_image_get_dirty_time

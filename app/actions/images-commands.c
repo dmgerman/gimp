@@ -381,9 +381,10 @@ condition|)
 block|{
 if|if
 condition|(
+name|gimp_image_get_display_count
+argument_list|(
 name|image
-operator|->
-name|disp_count
+argument_list|)
 operator|==
 literal|0
 condition|)

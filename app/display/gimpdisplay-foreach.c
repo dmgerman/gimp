@@ -185,9 +185,10 @@ argument_list|(
 name|image
 argument_list|)
 operator|&&
+name|gimp_image_get_display_count
+argument_list|(
 name|image
-operator|->
-name|disp_count
+argument_list|)
 operator|>
 literal|0
 operator|&&
@@ -515,9 +516,10 @@ argument_list|(
 name|image
 argument_list|)
 operator|&&
+name|gimp_image_get_display_count
+argument_list|(
 name|image
-operator|->
-name|disp_count
+argument_list|)
 operator|>
 literal|0
 condition|)

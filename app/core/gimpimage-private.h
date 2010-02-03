@@ -114,6 +114,16 @@ name|gint
 name|undo_freeze_count
 decl_stmt|;
 comment|/*  counts the _freeze's         */
+DECL|member|instance_count
+name|gint
+name|instance_count
+decl_stmt|;
+comment|/*  number of instances          */
+DECL|member|disp_count
+name|gint
+name|disp_count
+decl_stmt|;
+comment|/*  number of displays           */
 block|}
 struct|;
 end_struct
