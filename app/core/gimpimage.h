@@ -250,31 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-comment|/*  Layer/Channel attributes  */
-DECL|member|layers
-name|GimpContainer
-modifier|*
-name|layers
-decl_stmt|;
-comment|/*  the list of layers           */
-DECL|member|channels
-name|GimpContainer
-modifier|*
-name|channels
-decl_stmt|;
-comment|/*  the list of masks            */
-DECL|member|vectors
-name|GimpContainer
-modifier|*
-name|vectors
-decl_stmt|;
-comment|/*  the list of vectors          */
-DECL|member|layer_stack
-name|GSList
-modifier|*
-name|layer_stack
-decl_stmt|;
-comment|/*  the layers in MRU order      */
 DECL|member|layer_alpha_handler
 name|GQuark
 name|layer_alpha_handler

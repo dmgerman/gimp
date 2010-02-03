@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dfc3c70103
+DECL|enum|__anon277176420103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dfc3c70203
+DECL|enum|__anon277176420203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2109,24 +2109,28 @@ modifier|*
 name|item
 parameter_list|)
 block|{
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
 return|return
 operator|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|item
-argument_list|)
+name|image
 argument_list|)
 operator|&&
 name|gimp_container_have
 argument_list|(
-name|gimp_item_get_image
+name|gimp_image_get_layers
 argument_list|(
-name|item
+name|image
 argument_list|)
-operator|->
-name|layers
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(

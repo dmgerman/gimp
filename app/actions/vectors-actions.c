@@ -1100,11 +1100,9 @@ condition|)
 block|{
 name|n_vectors
 operator|=
-name|gimp_container_get_n_children
+name|gimp_image_get_n_vectors
 argument_list|(
 name|image
-operator|->
-name|vectors
 argument_list|)
 expr_stmt|;
 name|mask_empty

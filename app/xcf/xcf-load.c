@@ -1140,9 +1140,10 @@ argument_list|,
 comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
+name|gimp_image_get_channels
+argument_list|(
 name|image
-operator|->
-name|channels
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -6862,9 +6863,10 @@ name|GIMP_VECTORS
 argument_list|(
 name|gimp_container_get_child_by_index
 argument_list|(
+name|gimp_image_get_vectors
+argument_list|(
 name|image
-operator|->
-name|vectors
+argument_list|)
 argument_list|,
 name|last_selected_row
 argument_list|)
@@ -7405,9 +7407,10 @@ argument_list|,
 comment|/* can't be a tree */
 name|gimp_container_get_n_children
 argument_list|(
+name|gimp_image_get_vectors
+argument_list|(
 name|image
-operator|->
-name|vectors
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE
@@ -7586,9 +7589,10 @@ name|GIMP_VECTORS
 argument_list|(
 name|gimp_container_get_child_by_index
 argument_list|(
+name|gimp_image_get_vectors
+argument_list|(
 name|image
-operator|->
-name|vectors
+argument_list|)
 argument_list|,
 name|active_index
 argument_list|)
@@ -8334,9 +8338,10 @@ argument_list|,
 comment|/* FIXME tree */
 name|gimp_container_get_n_children
 argument_list|(
+name|gimp_image_get_vectors
+argument_list|(
 name|image
-operator|->
-name|vectors
+argument_list|)
 argument_list|)
 argument_list|,
 name|FALSE

@@ -159,6 +159,31 @@ modifier|*
 name|sample_points
 decl_stmt|;
 comment|/*  color sample points          */
+comment|/*  Layer/Channel attributes  */
+DECL|member|layers
+name|GimpContainer
+modifier|*
+name|layers
+decl_stmt|;
+comment|/*  the list of layers           */
+DECL|member|channels
+name|GimpContainer
+modifier|*
+name|channels
+decl_stmt|;
+comment|/*  the list of masks            */
+DECL|member|vectors
+name|GimpContainer
+modifier|*
+name|vectors
+decl_stmt|;
+comment|/*  the list of vectors          */
+DECL|member|layer_stack
+name|GSList
+modifier|*
+name|layer_stack
+decl_stmt|;
+comment|/*  the layers in MRU order      */
 block|}
 struct|;
 end_struct

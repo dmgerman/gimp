@@ -210,9 +210,10 @@ name|path_list
 operator|=
 name|gimp_container_get_name_array
 argument_list|(
+name|gimp_image_get_vectors
+argument_list|(
 name|image
-operator|->
-name|vectors
+argument_list|)
 argument_list|,
 operator|&
 name|num_paths

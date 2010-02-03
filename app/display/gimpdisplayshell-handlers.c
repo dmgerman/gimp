@@ -716,6 +716,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpContainer
+modifier|*
+name|vectors
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -741,6 +745,13 @@ argument_list|(
 name|shell
 operator|->
 name|display
+argument_list|)
+expr_stmt|;
+name|vectors
+operator|=
+name|gimp_image_get_vectors
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
@@ -970,8 +981,6 @@ name|vectors_freeze_handler
 operator|=
 name|gimp_tree_handler_connect
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 literal|"freeze"
@@ -990,8 +999,6 @@ name|vectors_thaw_handler
 operator|=
 name|gimp_tree_handler_connect
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 literal|"thaw"
@@ -1010,8 +1017,6 @@ name|vectors_visible_handler
 operator|=
 name|gimp_tree_handler_connect
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 literal|"visibility-changed"
@@ -1026,8 +1031,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 literal|"add"
@@ -1042,8 +1045,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 literal|"remove"
@@ -1347,6 +1348,10 @@ name|GimpImage
 modifier|*
 name|image
 decl_stmt|;
+name|GimpContainer
+modifier|*
+name|vectors
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -1380,6 +1385,13 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|vectors
+operator|=
+name|gimp_image_get_vectors
+argument_list|(
+name|image
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_icon_update_stop
@@ -1539,8 +1551,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 name|gimp_display_shell_vectors_remove_handler
@@ -1550,8 +1560,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|image
-operator|->
 name|vectors
 argument_list|,
 name|gimp_display_shell_vectors_add_handler
