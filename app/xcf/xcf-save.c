@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-sample-points.h"
 end_include
 
@@ -1384,6 +1390,15 @@ modifier|*
 name|error
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 name|GimpParasite
 modifier|*
 name|parasite
@@ -1692,10 +1707,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_parasite_list_add
 argument_list|(
-name|GIMP_IMAGE
-argument_list|(
-name|image
-argument_list|)
+name|private
 operator|->
 name|parasites
 argument_list|,
@@ -1707,10 +1719,7 @@ if|if
 condition|(
 name|gimp_parasite_list_length
 argument_list|(
-name|GIMP_IMAGE
-argument_list|(
-name|image
-argument_list|)
+name|private
 operator|->
 name|parasites
 argument_list|)
@@ -1730,10 +1739,7 @@ name|PROP_PARASITES
 argument_list|,
 name|error
 argument_list|,
-name|GIMP_IMAGE
-argument_list|(
-name|image
-argument_list|)
+name|private
 operator|->
 name|parasites
 argument_list|)
@@ -1747,10 +1753,7 @@ condition|)
 block|{
 name|gimp_parasite_list_remove
 argument_list|(
-name|GIMP_IMAGE
-argument_list|(
-name|image
-argument_list|)
+name|private
 operator|->
 name|parasites
 argument_list|,
@@ -6884,7 +6887,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e0b9440108
+DECL|struct|__anon2c5142c50108
 block|{
 DECL|member|info
 name|XcfInfo

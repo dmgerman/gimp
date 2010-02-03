@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21c1f40103
+DECL|enum|__anon296a85f40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b21c1f40203
+DECL|enum|__anon296a85f40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2842,7 +2842,7 @@ name|selection_mask
 operator|=
 name|NULL
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|parasites
 operator|=
@@ -3961,19 +3961,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|parasites
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|parasites
 operator|=
@@ -4464,7 +4464,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|)
@@ -10149,7 +10149,10 @@ expr_stmt|;
 return|return
 name|gimp_parasite_list_find
 argument_list|(
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|parasites
 argument_list|,
@@ -10216,6 +10219,10 @@ modifier|*
 name|count
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|gchar
 modifier|*
 modifier|*
@@ -10236,12 +10243,19 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 operator|*
 name|count
 operator|=
 name|gimp_parasite_list_length
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|)
@@ -10261,7 +10275,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_parasite_list_foreach
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|,
@@ -10344,7 +10358,10 @@ expr_stmt|;
 comment|/*  We used to push an cantundo on te stack here. This made the undo stack    *  unusable (NULL on the stack) and prevented people from undoing after a    *  save (since most save plug-ins attach an undoable comment parasite).    *  Now we simply attach the parasite without pushing an undo. That way    *  it's undoable but does not block the undo system.   --Sven    */
 name|gimp_parasite_list_add
 argument_list|(
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|parasites
 argument_list|,
@@ -10435,6 +10452,10 @@ modifier|*
 name|name
 parameter_list|)
 block|{
+name|GimpImagePrivate
+modifier|*
+name|private
+decl_stmt|;
 specifier|const
 name|GimpParasite
 modifier|*
@@ -10455,6 +10476,13 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -10463,7 +10491,7 @@ name|parasite
 operator|=
 name|gimp_parasite_list_find
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|,
@@ -10493,7 +10521,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_parasite_list_remove
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|,

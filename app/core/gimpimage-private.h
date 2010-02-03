@@ -226,6 +226,12 @@ modifier|*
 name|selection_mask
 decl_stmt|;
 comment|/*  the selection mask channel   */
+DECL|member|parasites
+name|GimpParasiteList
+modifier|*
+name|parasites
+decl_stmt|;
+comment|/*  Plug-in parasite data        */
 block|}
 struct|;
 end_struct

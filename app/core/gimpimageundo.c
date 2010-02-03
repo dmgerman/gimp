@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2870ad2d0103
+DECL|enum|__anon289218b80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1678,7 +1678,7 @@ name|parasite
 condition|)
 name|gimp_parasite_list_add
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|,
@@ -1688,7 +1688,7 @@ expr_stmt|;
 else|else
 name|gimp_parasite_list_remove
 argument_list|(
-name|image
+name|private
 operator|->
 name|parasites
 argument_list|,

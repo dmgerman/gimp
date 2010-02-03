@@ -250,12 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|parasites
-name|GimpParasiteList
-modifier|*
-name|parasites
-decl_stmt|;
-comment|/*  Plug-in parasite data        */
 DECL|member|visible
 name|gboolean
 name|visible
