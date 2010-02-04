@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d141780103
+DECL|enum|__anon29e1c1860103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d141780203
+DECL|enum|__anon29e1c1860203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2882,13 +2882,13 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
-name|image
+name|private
 operator|->
 name|quick_mask_state
 operator|=
 name|FALSE
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|quick_mask_inverted
 operator|=
@@ -2897,7 +2897,7 @@ expr_stmt|;
 name|gimp_rgba_set
 argument_list|(
 operator|&
-name|image
+name|private
 operator|->
 name|quick_mask_color
 argument_list|,
@@ -5693,7 +5693,10 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|quick_mask_color
 operator|=
@@ -7783,6 +7786,10 @@ index|]
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  emitting image signals  */
+end_comment
 
 begin_function
 name|void

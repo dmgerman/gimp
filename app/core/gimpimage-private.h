@@ -248,6 +248,21 @@ name|MAX_CHANNELS
 index|]
 decl_stmt|;
 comment|/*  active channels              */
+DECL|member|quick_mask_state
+name|gboolean
+name|quick_mask_state
+decl_stmt|;
+comment|/*  TRUE if quick mask is on       */
+DECL|member|quick_mask_inverted
+name|gboolean
+name|quick_mask_inverted
+decl_stmt|;
+comment|/*  TRUE if quick mask is inverted */
+DECL|member|quick_mask_color
+name|GimpRGB
+name|quick_mask_color
+decl_stmt|;
+comment|/*  rgba triplet of the color      */
 block|}
 struct|;
 end_struct

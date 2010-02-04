@@ -84,6 +84,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-quick-mask.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpitem.h"
 end_include
 
@@ -1994,6 +2000,9 @@ name|GtkImage
 modifier|*
 name|gtk_image
 decl_stmt|;
+name|gboolean
+name|quick_mask_state
+decl_stmt|;
 name|gtk_image
 operator|=
 name|GTK_IMAGE
@@ -2020,6 +2029,13 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+name|quick_mask_state
+operator|=
+name|gimp_image_get_quick_mask_state
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
 name|gtk_toggle_button_set_active
 argument_list|(
 name|GTK_TOGGLE_BUTTON
@@ -2029,15 +2045,11 @@ operator|->
 name|quick_mask_button
 argument_list|)
 argument_list|,
-name|image
-operator|->
 name|quick_mask_state
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image
-operator|->
 name|quick_mask_state
 condition|)
 name|gtk_image_set_from_stock

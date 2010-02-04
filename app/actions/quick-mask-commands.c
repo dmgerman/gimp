@@ -228,9 +228,10 @@ if|if
 condition|(
 name|value
 operator|!=
+name|gimp_image_get_quick_mask_inverted
+argument_list|(
 name|image
-operator|->
-name|quick_mask_inverted
+argument_list|)
 condition|)
 block|{
 name|gimp_image_quick_mask_invert

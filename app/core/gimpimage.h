@@ -250,21 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|quick_mask_state
-name|gboolean
-name|quick_mask_state
-decl_stmt|;
-comment|/*  TRUE if quick mask is on       */
-DECL|member|quick_mask_inverted
-name|gboolean
-name|quick_mask_inverted
-decl_stmt|;
-comment|/*  TRUE if quick mask is inverted */
-DECL|member|quick_mask_color
-name|GimpRGB
-name|quick_mask_color
-decl_stmt|;
-comment|/*  rgba triplet of the color      */
 comment|/*  Undo apparatus  */
 DECL|member|undo_stack
 name|GimpUndoStack
@@ -1268,6 +1253,10 @@ name|components
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  emitting image signals  */
+end_comment
 
 begin_function_decl
 name|void
