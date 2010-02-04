@@ -220,6 +220,12 @@ decl_stmt|;
 name|CombinationMode
 name|combination_mode
 decl_stmt|;
+name|gboolean
+name|visible
+index|[
+name|MAX_CHANNELS
+index|]
+decl_stmt|;
 name|gimp_drawable_init_src_region
 argument_list|(
 name|drawable
@@ -360,6 +366,13 @@ argument_list|()
 expr_stmt|;
 break|break;
 block|}
+name|gimp_image_get_visible_array
+argument_list|(
+name|image
+argument_list|,
+name|visible
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|combine
@@ -390,8 +403,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|image
-operator|->
 name|visible
 argument_list|,
 name|combination_mode
@@ -423,8 +434,6 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
-name|image
-operator|->
 name|visible
 argument_list|,
 name|initial_mode

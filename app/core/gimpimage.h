@@ -250,22 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-DECL|member|visible
-name|gboolean
-name|visible
-index|[
-name|MAX_CHANNELS
-index|]
-decl_stmt|;
-comment|/*  visible channels             */
-DECL|member|active
-name|gboolean
-name|active
-index|[
-name|MAX_CHANNELS
-index|]
-decl_stmt|;
-comment|/*  active channels              */
 DECL|member|quick_mask_state
 name|gboolean
 name|quick_mask_state
@@ -1170,6 +1154,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  image components  */
+end_comment
+
 begin_function_decl
 name|gint
 name|gimp_image_get_component_index
@@ -1219,6 +1207,22 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_image_get_active_array
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gboolean
+modifier|*
+name|components
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_image_set_component_visible
 parameter_list|(
 name|GimpImage
@@ -1245,6 +1249,22 @@ name|image
 parameter_list|,
 name|GimpChannelType
 name|type
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_image_get_visible_array
+parameter_list|(
+specifier|const
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
+name|gboolean
+modifier|*
+name|components
 parameter_list|)
 function_decl|;
 end_function_decl

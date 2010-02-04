@@ -232,6 +232,22 @@ modifier|*
 name|parasites
 decl_stmt|;
 comment|/*  Plug-in parasite data        */
+DECL|member|visible
+name|gboolean
+name|visible
+index|[
+name|MAX_CHANNELS
+index|]
+decl_stmt|;
+comment|/*  visible channels             */
+DECL|member|active
+name|gboolean
+name|active
+index|[
+name|MAX_CHANNELS
+index|]
+decl_stmt|;
+comment|/*  active channels              */
 block|}
 struct|;
 end_struct

@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon277176420103
+DECL|enum|__anon29abb95c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277176420203
+DECL|enum|__anon29abb95c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3655,34 +3655,13 @@ name|drawable
 argument_list|)
 argument_list|)
 decl_stmt|;
-name|gint
-name|i
-decl_stmt|;
 comment|/*  first copy the image active channels  */
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|MAX_CHANNELS
-condition|;
-name|i
-operator|++
-control|)
-name|active
-index|[
-name|i
-index|]
-operator|=
+name|gimp_image_get_active_array
+argument_list|(
 name|image
-operator|->
+argument_list|,
 name|active
-index|[
-name|i
-index|]
+argument_list|)
 expr_stmt|;
 if|if
 condition|(
