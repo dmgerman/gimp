@@ -1134,9 +1134,10 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
+name|gimp_image_get_undo_stack
+argument_list|(
 name|image
-operator|->
-name|undo_stack
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL
@@ -1148,9 +1149,10 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
+name|gimp_image_get_redo_stack
+argument_list|(
 name|image
-operator|->
-name|redo_stack
+argument_list|)
 argument_list|)
 argument_list|,
 name|NULL

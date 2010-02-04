@@ -95,6 +95,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpundostack.h"
 end_include
 
@@ -154,7 +160,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acb781f0103
+DECL|enum|__anon2c1cda1c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2142,9 +2148,10 @@ name|view
 operator|->
 name|undo_label
 argument_list|,
+name|gimp_image_get_undo_stack
+argument_list|(
 name|image
-operator|->
-name|undo_stack
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_prop_view_label_set_undo
@@ -2153,9 +2160,10 @@ name|view
 operator|->
 name|redo_label
 argument_list|,
+name|gimp_image_get_redo_stack
+argument_list|(
 name|image
-operator|->
-name|redo_stack
+argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  number of layers  */

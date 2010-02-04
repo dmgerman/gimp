@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e1c1860103
+DECL|enum|__anon28dacfb30103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e1c1860203
+DECL|enum|__anon28dacfb30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2910,7 +2910,7 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|undo_stack
 operator|=
@@ -2919,7 +2919,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|redo_stack
 operator|=
@@ -2928,13 +2928,13 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|group_count
 operator|=
 literal|0
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|pushing_undo_group
 operator|=
@@ -4073,19 +4073,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|undo_stack
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|image
+name|private
 operator|->
 name|undo_stack
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|undo_stack
 operator|=
@@ -4094,19 +4094,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|redo_stack
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
-name|image
+name|private
 operator|->
 name|redo_stack
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|redo_stack
 operator|=
@@ -4478,7 +4478,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|image
+name|private
 operator|->
 name|undo_stack
 argument_list|)
@@ -4492,7 +4492,7 @@ name|gimp_object_get_memsize
 argument_list|(
 name|GIMP_OBJECT
 argument_list|(
-name|image
+name|private
 operator|->
 name|redo_stack
 argument_list|)

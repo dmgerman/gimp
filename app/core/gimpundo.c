@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpmarshal.h"
 end_include
 
@@ -89,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c376d520103
+DECL|enum|__anon27fbba9a0103
 block|{
 DECL|enumerator|POP
 name|POP
@@ -105,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c376d520203
+DECL|enum|__anon27fbba9a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1640,6 +1646,19 @@ name|idle
 init|=
 name|data
 decl_stmt|;
+name|GimpUndoStack
+modifier|*
+name|stack
+init|=
+name|gimp_image_get_undo_stack
+argument_list|(
+name|idle
+operator|->
+name|undo
+operator|->
+name|image
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|idle
@@ -1648,13 +1667,7 @@ name|undo
 operator|==
 name|gimp_undo_stack_peek
 argument_list|(
-name|idle
-operator|->
-name|undo
-operator|->
-name|image
-operator|->
-name|undo_stack
+name|stack
 argument_list|)
 condition|)
 block|{

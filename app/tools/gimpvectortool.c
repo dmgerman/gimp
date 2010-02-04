@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo-push.h"
 end_include
 
@@ -2607,9 +2613,10 @@ name|undo
 operator|=
 name|gimp_undo_stack_pop_undo
 argument_list|(
+name|gimp_image_get_undo_stack
+argument_list|(
 name|image
-operator|->
-name|undo_stack
+argument_list|)
 argument_list|,
 name|GIMP_UNDO_MODE_UNDO
 argument_list|,

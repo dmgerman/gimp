@@ -263,6 +263,29 @@ name|GimpRGB
 name|quick_mask_color
 decl_stmt|;
 comment|/*  rgba triplet of the color      */
+comment|/*  Undo apparatus  */
+DECL|member|undo_stack
+name|GimpUndoStack
+modifier|*
+name|undo_stack
+decl_stmt|;
+comment|/*  stack for undo operations    */
+DECL|member|redo_stack
+name|GimpUndoStack
+modifier|*
+name|redo_stack
+decl_stmt|;
+comment|/*  stack for redo operations    */
+DECL|member|group_count
+name|gint
+name|group_count
+decl_stmt|;
+comment|/*  nested undo groups           */
+DECL|member|pushing_undo_group
+name|GimpUndoType
+name|pushing_undo_group
+decl_stmt|;
+comment|/*  undo group status flag       */
 block|}
 struct|;
 end_struct
