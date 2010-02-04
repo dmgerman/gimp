@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dacfb30103
+DECL|enum|__anon29bed9ed0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dacfb30203
+DECL|enum|__anon29bed9ed0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2940,7 +2940,7 @@ name|pushing_undo_group
 operator|=
 name|GIMP_UNDO_GROUP_NONE
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|preview
 operator|=
@@ -3940,19 +3940,19 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|preview
 condition|)
 block|{
 name|temp_buf_free
 argument_list|(
-name|image
+name|private
 operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|preview
 operator|=
@@ -4505,7 +4505,7 @@ name|gui_size
 operator|+=
 name|temp_buf_get_memsize
 argument_list|(
-name|image
+name|private
 operator|->
 name|preview
 argument_list|)
@@ -4589,11 +4589,11 @@ modifier|*
 name|viewable
 parameter_list|)
 block|{
-name|GimpImage
+name|GimpImagePrivate
 modifier|*
-name|image
+name|private
 init|=
-name|GIMP_IMAGE
+name|GIMP_IMAGE_GET_PRIVATE
 argument_list|(
 name|viewable
 argument_list|)
@@ -4610,19 +4610,19 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|preview
 condition|)
 block|{
 name|temp_buf_free
 argument_list|(
-name|image
+name|private
 operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|preview
 operator|=

@@ -250,13 +250,6 @@ modifier|*
 name|gimp
 decl_stmt|;
 comment|/*  the GIMP the image belongs to*/
-comment|/*  Preview  */
-DECL|member|preview
-name|TempBuf
-modifier|*
-name|preview
-decl_stmt|;
-comment|/*  the projection preview       */
 comment|/*  Signal emmision accumulator  */
 DECL|member|flush_accum
 name|GimpImageFlushAccumulator

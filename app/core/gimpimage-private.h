@@ -286,6 +286,13 @@ name|GimpUndoType
 name|pushing_undo_group
 decl_stmt|;
 comment|/*  undo group status flag       */
+comment|/*  Preview  */
+DECL|member|preview
+name|TempBuf
+modifier|*
+name|preview
+decl_stmt|;
+comment|/*  the projection preview       */
 block|}
 struct|;
 end_struct

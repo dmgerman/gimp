@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-private.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpprojection.h"
 end_include
 
@@ -279,22 +285,22 @@ name|gint
 name|height
 parameter_list|)
 block|{
-name|GimpImage
+name|GimpImagePrivate
 modifier|*
-name|image
+name|private
 init|=
-name|GIMP_IMAGE
+name|GIMP_IMAGE_GET_PRIVATE
 argument_list|(
 name|viewable
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|preview
 operator|&&
-name|image
+name|private
 operator|->
 name|preview
 operator|->
@@ -302,7 +308,7 @@ name|width
 operator|==
 name|width
 operator|&&
-name|image
+name|private
 operator|->
 name|preview
 operator|->
@@ -313,7 +319,7 @@ condition|)
 block|{
 comment|/*  The easy way  */
 return|return
-name|image
+name|private
 operator|->
 name|preview
 return|;
@@ -323,18 +329,18 @@ block|{
 comment|/*  The hard way  */
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|preview
 condition|)
 name|temp_buf_free
 argument_list|(
-name|image
+name|private
 operator|->
 name|preview
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|preview
 operator|=
@@ -350,7 +356,7 @@ name|height
 argument_list|)
 expr_stmt|;
 return|return
-name|image
+name|private
 operator|->
 name|preview
 return|;
