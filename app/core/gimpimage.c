@@ -306,7 +306,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bed9ed0103
+DECL|enum|__anon2a1feab40103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +394,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bed9ed0203
+DECL|enum|__anon2a1feab40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2946,7 +2946,7 @@ name|preview
 operator|=
 name|NULL
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -2954,7 +2954,7 @@ name|alpha_changed
 operator|=
 name|FALSE
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -2962,7 +2962,7 @@ name|mask_changed
 operator|=
 name|FALSE
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -2970,7 +2970,7 @@ name|floating_selection_changed
 operator|=
 name|FALSE
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5103,9 +5103,18 @@ argument_list|(
 name|projectable
 argument_list|)
 decl_stmt|;
+name|GimpImagePrivate
+modifier|*
+name|private
+init|=
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
+name|image
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5117,7 +5126,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5128,7 +5137,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5140,7 +5149,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5151,7 +5160,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5163,7 +5172,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5174,7 +5183,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5182,7 +5191,7 @@ name|preview_invalidated
 condition|)
 block|{
 comment|/*  don't invalidate the preview here, the projection does this when        *  it is completely constructed.        */
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -5456,7 +5465,10 @@ modifier|*
 name|image
 parameter_list|)
 block|{
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|flush_accum
 operator|.
@@ -5502,7 +5514,7 @@ argument_list|)
 operator|==
 literal|1
 condition|)
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -7009,7 +7021,7 @@ name|floating_sel
 operator|=
 name|floating_sel
 expr_stmt|;
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -7903,7 +7915,10 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|flush_accum
 operator|.
@@ -9125,7 +9140,10 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
+name|GIMP_IMAGE_GET_PRIVATE
+argument_list|(
 name|image
+argument_list|)
 operator|->
 name|flush_accum
 operator|.
@@ -13397,7 +13415,7 @@ argument_list|(
 name|image
 argument_list|)
 condition|)
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.
@@ -13951,7 +13969,7 @@ argument_list|(
 name|image
 argument_list|)
 condition|)
-name|image
+name|private
 operator|->
 name|flush_accum
 operator|.

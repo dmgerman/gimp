@@ -129,40 +129,6 @@ name|GIMP_IMAGE_ACTIVE_PARENT
 value|((gpointer) 1)
 end_define
 
-begin_typedef
-DECL|typedef|GimpImageFlushAccumulator
-typedef|typedef
-name|struct
-name|_GimpImageFlushAccumulator
-name|GimpImageFlushAccumulator
-typedef|;
-end_typedef
-
-begin_struct
-DECL|struct|_GimpImageFlushAccumulator
-struct|struct
-name|_GimpImageFlushAccumulator
-block|{
-DECL|member|alpha_changed
-name|gboolean
-name|alpha_changed
-decl_stmt|;
-DECL|member|mask_changed
-name|gboolean
-name|mask_changed
-decl_stmt|;
-DECL|member|floating_selection_changed
-name|gboolean
-name|floating_selection_changed
-decl_stmt|;
-DECL|member|preview_invalidated
-name|gboolean
-name|preview_invalidated
-decl_stmt|;
-block|}
-struct|;
-end_struct
-
 begin_define
 DECL|macro|GIMP_TYPE_IMAGE
 define|#
@@ -249,12 +215,7 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-comment|/*  the GIMP the image belongs to*/
-comment|/*  Signal emmision accumulator  */
-DECL|member|flush_accum
-name|GimpImageFlushAccumulator
-name|flush_accum
-decl_stmt|;
+comment|/*  the GIMP the image belongs to  */
 block|}
 struct|;
 end_struct
