@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_IMAGE_SAMPLE_POINTS_H__
 end_define
 
+begin_comment
+comment|/*  public sample point adding API  */
+end_comment
+
 begin_function_decl
 name|GimpSamplePoint
 modifier|*
@@ -36,6 +40,10 @@ name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  internal sample point adding API, does not check the sample  *  point's position and is publically declared only to be used from  *  undo  */
+end_comment
 
 begin_function_decl
 name|void

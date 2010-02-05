@@ -16,6 +16,10 @@ directive|define
 name|__GIMP_IMAGE_GUIDES_H__
 end_define
 
+begin_comment
+comment|/*  public guide adding API  */
+end_comment
+
 begin_function_decl
 name|GimpGuide
 modifier|*
@@ -51,6 +55,10 @@ name|push_undo
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_comment
+comment|/*  internal guide adding API, does not check the guide's position and  *  is publically declared only to be used from undo  */
+end_comment
 
 begin_function_decl
 name|void
