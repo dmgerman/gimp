@@ -195,23 +195,23 @@ decl_stmt|;
 comment|/*  color sample points          */
 comment|/*  Layer/Channel attributes  */
 DECL|member|layers
-name|GimpContainer
+name|GimpItemTree
 modifier|*
 name|layers
 decl_stmt|;
-comment|/*  the list of layers           */
+comment|/*  the tree of layers           */
 DECL|member|channels
-name|GimpContainer
+name|GimpItemTree
 modifier|*
 name|channels
 decl_stmt|;
-comment|/*  the list of masks            */
+comment|/*  the tree of masks            */
 DECL|member|vectors
-name|GimpContainer
+name|GimpItemTree
 modifier|*
 name|vectors
 decl_stmt|;
-comment|/*  the list of vectors          */
+comment|/*  the tree of vectors          */
 DECL|member|layer_stack
 name|GSList
 modifier|*

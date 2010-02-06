@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpitemtree.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -306,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1feab40103
+DECL|enum|__anon27e943830103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -394,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1feab40203
+DECL|enum|__anon27e943830203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2659,8 +2665,10 @@ name|private
 operator|->
 name|layers
 operator|=
-name|gimp_drawable_stack_new
+name|gimp_item_tree_new
 argument_list|(
+name|GIMP_TYPE_DRAWABLE_STACK
+argument_list|,
 name|GIMP_TYPE_LAYER
 argument_list|)
 expr_stmt|;
@@ -2668,8 +2676,10 @@ name|private
 operator|->
 name|channels
 operator|=
-name|gimp_drawable_stack_new
+name|gimp_item_tree_new
 argument_list|(
+name|GIMP_TYPE_DRAWABLE_STACK
+argument_list|,
 name|GIMP_TYPE_CHANNEL
 argument_list|)
 expr_stmt|;
@@ -2677,8 +2687,10 @@ name|private
 operator|->
 name|vectors
 operator|=
-name|gimp_item_stack_new
+name|gimp_item_tree_new
 argument_list|(
+name|GIMP_TYPE_ITEM_STACK
+argument_list|,
 name|GIMP_TYPE_VECTORS
 argument_list|)
 expr_stmt|;
@@ -2693,6 +2705,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 literal|"update"
 argument_list|,
@@ -2713,6 +2727,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 literal|"alpha-changed"
 argument_list|,
@@ -2729,6 +2745,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 literal|"update"
 argument_list|,
@@ -2749,6 +2767,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 literal|"name-changed"
 argument_list|,
@@ -2769,6 +2789,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 literal|"color-changed"
 argument_list|,
@@ -2785,6 +2807,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 literal|"add"
 argument_list|,
@@ -2801,6 +2825,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 literal|"remove"
 argument_list|,
@@ -3272,6 +3298,8 @@ argument_list|,
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -3290,6 +3318,8 @@ argument_list|,
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 name|G_CONNECT_SWAPPED
 argument_list|)
@@ -3614,6 +3644,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 name|gimp_image_invalidate
 argument_list|,
@@ -3625,6 +3657,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 name|private
 operator|->
@@ -3636,6 +3670,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 name|gimp_image_invalidate
 argument_list|,
@@ -3647,6 +3683,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 name|private
 operator|->
@@ -3658,6 +3696,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 name|private
 operator|->
@@ -3669,6 +3709,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 name|gimp_image_channel_add
 argument_list|,
@@ -3680,6 +3722,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 name|gimp_image_channel_remove
 argument_list|,
@@ -3691,6 +3735,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 operator|(
 name|GFunc
@@ -3705,6 +3751,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 operator|(
 name|GFunc
@@ -3719,6 +3767,8 @@ argument_list|(
 name|private
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|,
 operator|(
 name|GFunc
@@ -5000,6 +5050,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5338,6 +5390,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5359,6 +5413,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -5510,6 +5566,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 operator|==
 literal|1
@@ -6896,6 +6954,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -6956,6 +7016,8 @@ name|image
 argument_list|)
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 return|;
 block|}
@@ -11212,6 +11274,8 @@ name|image
 argument_list|)
 operator|->
 name|layers
+operator|->
+name|container
 return|;
 block|}
 end_function
@@ -11245,6 +11309,8 @@ name|image
 argument_list|)
 operator|->
 name|channels
+operator|->
+name|container
 return|;
 block|}
 end_function
@@ -11278,6 +11344,8 @@ name|image
 argument_list|)
 operator|->
 name|vectors
+operator|->
+name|container
 return|;
 block|}
 end_function
@@ -11322,6 +11390,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11368,6 +11438,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11414,6 +11486,8 @@ argument_list|(
 name|private
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11461,6 +11535,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11508,6 +11584,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11555,6 +11633,8 @@ argument_list|(
 name|private
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11602,6 +11682,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11649,6 +11731,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -11696,6 +11780,8 @@ argument_list|(
 name|private
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|)
 argument_list|)
 return|;
@@ -12484,6 +12570,8 @@ name|image
 argument_list|)
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 return|return
@@ -12539,6 +12627,8 @@ name|image
 argument_list|)
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 return|return
@@ -12594,6 +12684,8 @@ name|image
 argument_list|)
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 return|return
@@ -12660,6 +12752,8 @@ name|image
 argument_list|)
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 return|return
@@ -12726,6 +12820,8 @@ name|image
 argument_list|)
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 return|return
@@ -12792,6 +12888,8 @@ name|image
 argument_list|)
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 return|return
@@ -13294,6 +13392,8 @@ argument_list|,
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 operator|&
 name|container
@@ -13319,6 +13419,8 @@ operator|==
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 operator|&&
 name|floating_sel
 condition|)
@@ -14196,6 +14298,8 @@ argument_list|,
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|,
 operator|&
 name|container
@@ -15060,6 +15164,8 @@ argument_list|,
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 if|if
@@ -15372,6 +15478,8 @@ argument_list|,
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|,
 operator|&
 name|container
@@ -16440,6 +16548,8 @@ argument_list|,
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 if|if
@@ -16752,6 +16862,8 @@ argument_list|,
 name|private
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|,
 operator|&
 name|container
@@ -17737,6 +17849,8 @@ argument_list|,
 name|private
 operator|->
 name|vectors
+operator|->
+name|container
 argument_list|)
 expr_stmt|;
 if|if
@@ -18239,6 +18353,8 @@ argument_list|(
 name|private
 operator|->
 name|layers
+operator|->
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -18249,6 +18365,8 @@ argument_list|(
 name|private
 operator|->
 name|channels
+operator|->
+name|container
 argument_list|)
 argument_list|)
 expr_stmt|;
