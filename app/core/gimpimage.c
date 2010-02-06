@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e943830103
+DECL|enum|__anon28cee12b0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -400,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e943830203
+DECL|enum|__anon28cee12b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2667,6 +2667,8 @@ name|layers
 operator|=
 name|gimp_item_tree_new
 argument_list|(
+name|image
+argument_list|,
 name|GIMP_TYPE_DRAWABLE_STACK
 argument_list|,
 name|GIMP_TYPE_LAYER
@@ -2678,6 +2680,8 @@ name|channels
 operator|=
 name|gimp_item_tree_new
 argument_list|(
+name|image
+argument_list|,
 name|GIMP_TYPE_DRAWABLE_STACK
 argument_list|,
 name|GIMP_TYPE_CHANNEL
@@ -2689,6 +2693,8 @@ name|vectors
 operator|=
 name|gimp_item_tree_new
 argument_list|(
+name|image
+argument_list|,
 name|GIMP_TYPE_ITEM_STACK
 argument_list|,
 name|GIMP_TYPE_VECTORS

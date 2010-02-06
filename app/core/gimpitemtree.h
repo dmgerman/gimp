@@ -129,6 +129,10 @@ name|GimpItemTree
 modifier|*
 name|gimp_item_tree_new
 parameter_list|(
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
 name|GType
 name|container_type
 parameter_list|,
