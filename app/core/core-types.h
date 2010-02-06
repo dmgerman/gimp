@@ -257,6 +257,19 @@ typedef|;
 end_typedef
 
 begin_comment
+comment|/*  not really a container  */
+end_comment
+
+begin_typedef
+DECL|typedef|GimpItemTree
+typedef|typedef
+name|struct
+name|_GimpItemTree
+name|GimpItemTree
+typedef|;
+end_typedef
+
+begin_comment
 comment|/*  context objects  */
 end_comment
 
