@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo-push.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpitem.h"
 end_include
 
@@ -53,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275f464d0103
+DECL|enum|__anon2bfb2b190103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -903,7 +909,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_item_tree_reorder_item (GimpItemTree * tree,GimpItem * item,GimpItem * new_parent,gint new_index,GimpItemReorderUndoFunc undo_func,const gchar * undo_desc)
+DECL|function|gimp_item_tree_reorder_item (GimpItemTree * tree,GimpItem * item,GimpItem * new_parent,gint new_index,gboolean push_undo,const gchar * undo_desc)
 name|gimp_item_tree_reorder_item
 parameter_list|(
 name|GimpItemTree
@@ -921,8 +927,8 @@ parameter_list|,
 name|gint
 name|new_index
 parameter_list|,
-name|GimpItemReorderUndoFunc
-name|undo_func
+name|gboolean
+name|push_undo
 parameter_list|,
 specifier|const
 name|gchar
@@ -1138,9 +1144,9 @@ condition|)
 block|{
 if|if
 condition|(
-name|undo_func
+name|push_undo
 condition|)
-name|undo_func
+name|gimp_image_undo_push_item_reorder
 argument_list|(
 name|private
 operator|->

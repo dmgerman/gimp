@@ -22,36 +22,6 @@ directive|include
 file|"gimpobject.h"
 end_include
 
-begin_comment
-comment|/*  this is temporary, reorder undo will operate generically on the  *  item tree too  */
-end_comment
-
-begin_typedef
-DECL|typedef|GimpItemReorderUndoFunc
-typedef|typedef
-name|GimpUndo
-modifier|*
-function_decl|(
-modifier|*
-name|GimpItemReorderUndoFunc
-function_decl|)
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_desc
-parameter_list|,
-name|GimpItem
-modifier|*
-name|item
-parameter_list|)
-function_decl|;
-end_typedef
-
 begin_define
 DECL|macro|GIMP_TYPE_ITEM_TREE
 define|#
@@ -191,8 +161,8 @@ parameter_list|,
 name|gint
 name|new_index
 parameter_list|,
-name|GimpItemReorderUndoFunc
-name|undo_func
+name|gboolean
+name|push_undo
 parameter_list|,
 specifier|const
 name|gchar

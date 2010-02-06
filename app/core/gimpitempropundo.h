@@ -103,6 +103,15 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
+DECL|member|parent
+name|GimpItem
+modifier|*
+name|parent
+decl_stmt|;
+DECL|member|position
+name|gint
+name|position
+decl_stmt|;
 DECL|member|name
 name|gchar
 modifier|*

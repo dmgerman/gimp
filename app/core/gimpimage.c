@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40b6ab0103
+DECL|enum|__anon28dad70d0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -400,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b40b6ab0203
+DECL|enum|__anon28dad70d0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -15044,16 +15044,7 @@ name|new_parent
 argument_list|,
 name|new_index
 argument_list|,
-call|(
-name|GimpItemReorderUndoFunc
-call|)
-argument_list|(
 name|push_undo
-condition|?
-name|gimp_image_undo_push_layer_reorder
-else|:
-name|NULL
-argument_list|)
 argument_list|,
 name|undo_desc
 argument_list|)
@@ -16207,16 +16198,7 @@ name|new_parent
 argument_list|,
 name|new_index
 argument_list|,
-call|(
-name|GimpItemReorderUndoFunc
-call|)
-argument_list|(
 name|push_undo
-condition|?
-name|gimp_image_undo_push_channel_reorder
-else|:
-name|NULL
-argument_list|)
 argument_list|,
 name|undo_desc
 argument_list|)
@@ -17287,16 +17269,7 @@ name|new_parent
 argument_list|,
 name|new_index
 argument_list|,
-call|(
-name|GimpItemReorderUndoFunc
-call|)
-argument_list|(
 name|push_undo
-condition|?
-name|gimp_image_undo_push_vectors_reorder
-else|:
-name|NULL
-argument_list|)
 argument_list|,
 name|undo_desc
 argument_list|)

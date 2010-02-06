@@ -4381,6 +4381,14 @@ literal|"mask"
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_REORDER
+block|,
+literal|"GIMP_UNDO_ITEM_REORDER"
+block|,
+literal|"item-reorder"
+block|}
+block|,
+block|{
 name|GIMP_UNDO_ITEM_RENAME
 block|,
 literal|"GIMP_UNDO_ITEM_RENAME"
@@ -4426,14 +4434,6 @@ block|,
 literal|"GIMP_UNDO_LAYER_REMOVE"
 block|,
 literal|"layer-remove"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_LAYER_REORDER
-block|,
-literal|"GIMP_UNDO_LAYER_REORDER"
-block|,
-literal|"layer-reorder"
 block|}
 block|,
 block|{
@@ -4549,14 +4549,6 @@ literal|"channel-remove"
 block|}
 block|,
 block|{
-name|GIMP_UNDO_CHANNEL_REORDER
-block|,
-literal|"GIMP_UNDO_CHANNEL_REORDER"
-block|,
-literal|"channel-reorder"
-block|}
-block|,
-block|{
 name|GIMP_UNDO_CHANNEL_COLOR
 block|,
 literal|"GIMP_UNDO_CHANNEL_COLOR"
@@ -4586,14 +4578,6 @@ block|,
 literal|"GIMP_UNDO_VECTORS_MOD"
 block|,
 literal|"vectors-mod"
-block|}
-block|,
-block|{
-name|GIMP_UNDO_VECTORS_REORDER
-block|,
-literal|"GIMP_UNDO_VECTORS_REORDER"
-block|,
-literal|"vectors-reorder"
 block|}
 block|,
 block|{
@@ -5301,6 +5285,19 @@ name|NULL
 block|}
 block|,
 block|{
+name|GIMP_UNDO_ITEM_REORDER
+block|,
+name|NC_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Reorder item"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
 name|GIMP_UNDO_ITEM_RENAME
 block|,
 name|NC_
@@ -5373,19 +5370,6 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Delete layer"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_UNDO_LAYER_REORDER
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Reorder layer"
 argument_list|)
 block|,
 name|NULL
@@ -5574,19 +5558,6 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_UNDO_CHANNEL_REORDER
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Reorder channel"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
 name|GIMP_UNDO_CHANNEL_COLOR
 block|,
 name|NC_
@@ -5633,19 +5604,6 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Path modification"
-argument_list|)
-block|,
-name|NULL
-block|}
-block|,
-block|{
-name|GIMP_UNDO_VECTORS_REORDER
-block|,
-name|NC_
-argument_list|(
-literal|"undo-type"
-argument_list|,
-literal|"Reorder path"
 argument_list|)
 block|,
 name|NULL

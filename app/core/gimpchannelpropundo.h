@@ -103,15 +103,6 @@ DECL|member|parent_instance
 name|GimpItemUndo
 name|parent_instance
 decl_stmt|;
-DECL|member|parent
-name|GimpChannel
-modifier|*
-name|parent
-decl_stmt|;
-DECL|member|position
-name|gint
-name|position
-decl_stmt|;
 DECL|member|color
 name|GimpRGB
 name|color
