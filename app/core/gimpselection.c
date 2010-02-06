@@ -144,9 +144,9 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpContainer
+name|GimpItemTree
 modifier|*
-name|gimp_selection_get_container
+name|gimp_selection_get_tree
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -654,9 +654,9 @@ name|gimp_selection_is_attached
 expr_stmt|;
 name|item_class
 operator|->
-name|get_container
+name|get_tree
 operator|=
-name|gimp_selection_get_container
+name|gimp_selection_get_tree
 expr_stmt|;
 name|item_class
 operator|->
@@ -920,10 +920,10 @@ end_function
 
 begin_function
 specifier|static
-name|GimpContainer
+name|GimpItemTree
 modifier|*
-DECL|function|gimp_selection_get_container (GimpItem * item)
-name|gimp_selection_get_container
+DECL|function|gimp_selection_get_tree (GimpItem * item)
+name|gimp_selection_get_tree
 parameter_list|(
 name|GimpItem
 modifier|*

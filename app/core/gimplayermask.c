@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f6ebc30103
+DECL|enum|__anon2bcde5750103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -128,9 +128,9 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpContainer
+name|GimpItemTree
 modifier|*
-name|gimp_layer_mask_get_container
+name|gimp_layer_mask_get_tree
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -384,9 +384,9 @@ name|gimp_layer_mask_is_content_locked
 expr_stmt|;
 name|item_class
 operator|->
-name|get_container
+name|get_tree
 operator|=
-name|gimp_layer_mask_get_container
+name|gimp_layer_mask_get_tree
 expr_stmt|;
 name|item_class
 operator|->
@@ -565,10 +565,10 @@ end_function
 
 begin_function
 specifier|static
-name|GimpContainer
+name|GimpItemTree
 modifier|*
-DECL|function|gimp_layer_mask_get_container (GimpItem * item)
-name|gimp_layer_mask_get_container
+DECL|function|gimp_layer_mask_get_tree (GimpItem * item)
+name|gimp_layer_mask_get_tree
 parameter_list|(
 name|GimpItem
 modifier|*

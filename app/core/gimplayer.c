@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29abb95c0103
+DECL|enum|__anon27494cb80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29abb95c0203
+DECL|enum|__anon27494cb80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -386,9 +386,9 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GimpContainer
+name|GimpItemTree
 modifier|*
-name|gimp_layer_get_container
+name|gimp_layer_get_tree
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -1088,9 +1088,9 @@ name|gimp_layer_is_attached
 expr_stmt|;
 name|item_class
 operator|->
-name|get_container
+name|get_tree
 operator|=
-name|gimp_layer_get_container
+name|gimp_layer_get_tree
 expr_stmt|;
 name|item_class
 operator|->
@@ -2144,10 +2144,10 @@ end_function
 
 begin_function
 specifier|static
-name|GimpContainer
+name|GimpItemTree
 modifier|*
-DECL|function|gimp_layer_get_container (GimpItem * item)
-name|gimp_layer_get_container
+DECL|function|gimp_layer_get_tree (GimpItem * item)
+name|gimp_layer_get_tree
 parameter_list|(
 name|GimpItem
 modifier|*
@@ -2172,7 +2172,7 @@ name|item
 argument_list|)
 decl_stmt|;
 return|return
-name|gimp_image_get_layers
+name|gimp_image_get_layer_tree
 argument_list|(
 name|image
 argument_list|)
