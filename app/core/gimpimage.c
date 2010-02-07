@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b23ae970103
+DECL|enum|__anon274f71360103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -400,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b23ae970203
+DECL|enum|__anon274f71360203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -13275,10 +13275,6 @@ name|GimpImagePrivate
 modifier|*
 name|private
 decl_stmt|;
-name|GimpLayer
-modifier|*
-name|floating_sel
-decl_stmt|;
 name|gboolean
 name|old_has_alpha
 decl_stmt|;
@@ -13442,13 +13438,6 @@ name|position
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|floating_sel
-operator|=
-name|gimp_image_get_floating_selection
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 comment|/*  If there is a floating selection (and this isn't it!),    *  make sure the insert position is greater than 0    */
 if|if
 condition|(
@@ -13460,7 +13449,10 @@ name|position
 operator|==
 literal|0
 operator|&&
-name|floating_sel
+name|gimp_image_get_floating_selection
+argument_list|(
+name|image
+argument_list|)
 condition|)
 name|position
 operator|=
