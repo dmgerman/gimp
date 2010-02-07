@@ -360,10 +360,6 @@ literal|"policy"
 argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
 argument_list|,
-literal|"unique-names"
-argument_list|,
-name|TRUE
-argument_list|,
 name|NULL
 argument_list|)
 return|;

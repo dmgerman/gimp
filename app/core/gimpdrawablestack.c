@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4cb4710103
+DECL|enum|__anon2b022c500103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -863,10 +863,6 @@ argument_list|,
 literal|"policy"
 argument_list|,
 name|GIMP_CONTAINER_POLICY_STRONG
-argument_list|,
-literal|"unique-names"
-argument_list|,
-name|TRUE
 argument_list|,
 name|NULL
 argument_list|)
