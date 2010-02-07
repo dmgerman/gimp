@@ -2307,7 +2307,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64ed3e0108
+DECL|struct|__anon2757987b0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2701,7 +2701,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b64ed3e0208
+DECL|struct|__anon2757987b0208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3761,10 +3761,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Empty Layer"
-argument_list|)
+name|NULL
 argument_list|,
 literal|1.0
 argument_list|,

@@ -934,7 +934,7 @@ name|layer_name
 else|:
 name|_
 argument_list|(
-literal|"New Layer"
+literal|"Layer"
 argument_list|)
 argument_list|,
 name|layer_fill_type
@@ -1242,13 +1242,6 @@ name|image
 argument_list|)
 argument_list|,
 name|layer_name
-condition|?
-name|layer_name
-else|:
-name|_
-argument_list|(
-literal|"New Layer"
-argument_list|)
 argument_list|,
 name|opacity
 argument_list|,

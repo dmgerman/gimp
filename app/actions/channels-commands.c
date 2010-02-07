@@ -402,7 +402,7 @@ name|channel_name
 else|:
 name|_
 argument_list|(
-literal|"New Channel"
+literal|"Channel"
 argument_list|)
 argument_list|,
 name|_
@@ -594,13 +594,6 @@ argument_list|,
 name|height
 argument_list|,
 name|channel_name
-condition|?
-name|channel_name
-else|:
-name|_
-argument_list|(
-literal|"New Channel"
-argument_list|)
 argument_list|,
 operator|&
 name|color

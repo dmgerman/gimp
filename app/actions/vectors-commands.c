@@ -636,7 +636,7 @@ name|vectors_name
 else|:
 name|_
 argument_list|(
-literal|"New Path"
+literal|"Path"
 argument_list|)
 argument_list|,
 name|_
@@ -717,13 +717,6 @@ argument_list|(
 name|image
 argument_list|,
 name|vectors_name
-condition|?
-name|vectors_name
-else|:
-name|_
-argument_list|(
-literal|"New Path"
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_image_add_vectors

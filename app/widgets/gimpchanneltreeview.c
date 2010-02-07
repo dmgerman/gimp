@@ -1479,7 +1479,7 @@ argument_list|)
 argument_list|,
 name|_
 argument_list|(
-literal|"Empty Channel"
+literal|"Channel"
 argument_list|)
 argument_list|,
 operator|&
