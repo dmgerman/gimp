@@ -661,6 +661,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpItem
+modifier|*
+name|gimp_item_get_parent
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpItemTree
 modifier|*
 name|gimp_item_get_tree

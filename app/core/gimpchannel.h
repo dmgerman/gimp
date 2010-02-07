@@ -598,6 +598,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpChannel
+modifier|*
+name|gimp_channel_get_parent
+parameter_list|(
+name|GimpChannel
+modifier|*
+name|channel
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_channel_get_opacity
 parameter_list|(

@@ -402,6 +402,18 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpVectors
+modifier|*
+name|gimp_vectors_get_parent
+parameter_list|(
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_vectors_freeze
 parameter_list|(

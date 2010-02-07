@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27494cb80103
+DECL|enum|__anon2bf494020103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27494cb80203
+DECL|enum|__anon2bf494020203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5300,6 +5300,42 @@ break|break;
 block|}
 return|return
 name|new_layer
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpLayer
+modifier|*
+DECL|function|gimp_layer_get_parent (GimpLayer * layer)
+name|gimp_layer_get_parent
+parameter_list|(
+name|GimpLayer
+modifier|*
+name|layer
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_LAYER
+argument_list|(
+name|layer
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_LAYER
+argument_list|(
+name|gimp_viewable_get_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+argument_list|)
 return|;
 block|}
 end_function

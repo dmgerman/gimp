@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1bd3d10103
+DECL|enum|__anon2933be4b0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1bd3d10203
+DECL|enum|__anon2933be4b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2775,6 +2775,42 @@ operator|->
 name|is_attached
 argument_list|(
 name|item
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GimpItem
+modifier|*
+DECL|function|gimp_item_get_parent (GimpItem * item)
+name|gimp_item_get_parent
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_ITEM
+argument_list|(
+name|gimp_viewable_get_parent
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
 argument_list|)
 return|;
 block|}
