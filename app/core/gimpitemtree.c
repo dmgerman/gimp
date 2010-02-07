@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2790f99b0103
+DECL|enum|__anon294215850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1057,15 +1057,9 @@ argument_list|)
 expr_stmt|;
 name|parent
 operator|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|container

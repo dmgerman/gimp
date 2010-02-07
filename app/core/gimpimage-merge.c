@@ -1089,14 +1089,11 @@ argument_list|)
 expr_stmt|;
 name|parent
 operator|=
+name|gimp_layer_get_parent
+argument_list|(
 name|GIMP_LAYER
 argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
-argument_list|(
 name|group
-argument_list|)
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1680,14 +1677,11 @@ name|NULL
 expr_stmt|;
 name|parent
 operator|=
-name|GIMP_LAYER
-argument_list|(
-name|gimp_viewable_get_parent
+name|gimp_layer_get_parent
 argument_list|(
 name|merge_list
 operator|->
 name|data
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  Get the layer extents  */

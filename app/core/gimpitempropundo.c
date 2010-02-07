@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dcf23c0103
+DECL|enum|__anon2b65800c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -396,15 +396,9 @@ name|item_prop_undo
 operator|->
 name|parent
 operator|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|item_prop_undo
@@ -798,15 +792,9 @@ name|position
 decl_stmt|;
 name|parent
 operator|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|position

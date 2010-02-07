@@ -991,15 +991,9 @@ expr_stmt|;
 comment|/*  use the actual parent here, not GIMP_IMAGE_ACTIVE_PARENT because        *  the latter would add a duplicated group inside itself instead of        *  above it        */
 name|parent
 operator|=
-name|GIMP_CHANNEL
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_channel_get_parent
 argument_list|(
 name|channel
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

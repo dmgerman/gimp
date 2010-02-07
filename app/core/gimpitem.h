@@ -665,6 +665,7 @@ name|GimpItem
 modifier|*
 name|gimp_item_get_parent
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item

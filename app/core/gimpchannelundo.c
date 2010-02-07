@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9e4e350103
+DECL|enum|__anon2950df880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -740,15 +740,9 @@ name|channel_undo
 operator|->
 name|prev_parent
 operator|=
-name|GIMP_CHANNEL
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_channel_get_parent
 argument_list|(
 name|channel
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|channel_undo

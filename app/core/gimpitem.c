@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933be4b0103
+DECL|enum|__anon29ff18ff0103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2933be4b0203
+DECL|enum|__anon29ff18ff0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1610,16 +1610,13 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpViewable
+name|GimpItem
 modifier|*
 name|parent
 init|=
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
 argument_list|)
 decl_stmt|;
 if|if
@@ -1628,10 +1625,7 @@ name|parent
 operator|&&
 name|gimp_item_is_content_locked
 argument_list|(
-name|GIMP_ITEM
-argument_list|(
 name|parent
-argument_list|)
 argument_list|)
 condition|)
 return|return
@@ -2729,7 +2723,7 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpViewable
+name|GimpItem
 modifier|*
 name|parent
 decl_stmt|;
@@ -2745,12 +2739,9 @@ argument_list|)
 expr_stmt|;
 name|parent
 operator|=
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -2760,10 +2751,7 @@ condition|)
 return|return
 name|gimp_item_is_attached
 argument_list|(
-name|GIMP_ITEM
-argument_list|(
 name|parent
-argument_list|)
 argument_list|)
 return|;
 return|return
@@ -2783,9 +2771,10 @@ end_function
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_get_parent (GimpItem * item)
+DECL|function|gimp_item_get_parent (const GimpItem * item)
 name|gimp_item_get_parent
 parameter_list|(
+specifier|const
 name|GimpItem
 modifier|*
 name|item
@@ -2874,7 +2863,7 @@ modifier|*
 name|item
 parameter_list|)
 block|{
-name|GimpViewable
+name|GimpItem
 modifier|*
 name|parent
 decl_stmt|;
@@ -2894,12 +2883,9 @@ argument_list|)
 expr_stmt|;
 name|parent
 operator|=
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -3121,15 +3107,9 @@ argument_list|)
 expr_stmt|;
 name|item
 operator|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_viewable_get_parent
-argument_list|(
-name|GIMP_VIEWABLE
+name|gimp_item_get_parent
 argument_list|(
 name|item
-argument_list|)
-argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
