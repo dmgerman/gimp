@@ -278,6 +278,9 @@ name|gchar
 modifier|*
 name|new_name
 parameter_list|,
+name|gboolean
+name|push_undo
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

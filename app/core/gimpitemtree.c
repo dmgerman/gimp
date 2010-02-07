@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4c03c30103
+DECL|enum|__anon27f2f2440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1951,7 +1951,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_item_tree_rename_item (GimpItemTree * tree,GimpItem * item,const gchar * new_name,const gchar * undo_desc)
+DECL|function|gimp_item_tree_rename_item (GimpItemTree * tree,GimpItem * item,const gchar * new_name,gboolean push_undo,const gchar * undo_desc)
 name|gimp_item_tree_rename_item
 parameter_list|(
 name|GimpItemTree
@@ -1966,6 +1966,9 @@ specifier|const
 name|gchar
 modifier|*
 name|new_name
+parameter_list|,
+name|gboolean
+name|push_undo
 parameter_list|,
 specifier|const
 name|gchar
@@ -2040,6 +2043,10 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
+if|if
+condition|(
+name|push_undo
+condition|)
 name|gimp_image_undo_push_item_rename
 argument_list|(
 name|item

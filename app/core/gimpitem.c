@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6fac100103
+DECL|enum|__anon291390c10103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6fac100203
+DECL|enum|__anon291390c10203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2023,6 +2023,8 @@ argument_list|,
 name|item
 argument_list|,
 name|new_name
+argument_list|,
+name|TRUE
 argument_list|,
 name|undo_desc
 argument_list|)

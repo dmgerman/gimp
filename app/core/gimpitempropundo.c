@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b65800c0103
+DECL|enum|__anon2c3d74f60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -858,13 +858,26 @@ name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_object_take_name
+name|gimp_item_tree_rename_item
 argument_list|(
-name|GIMP_OBJECT
+name|gimp_item_get_tree
 argument_list|(
 name|item
 argument_list|)
 argument_list|,
+name|item
+argument_list|,
+name|item_prop_undo
+operator|->
+name|name
+argument_list|,
+name|FALSE
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
 name|item_prop_undo
 operator|->
 name|name
