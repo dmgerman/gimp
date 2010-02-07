@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c91b8d00103
+DECL|enum|__anon29c6ca980103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -400,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c91b8d00203
+DECL|enum|__anon29c6ca980203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -11839,6 +11839,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  active drawable, layer, channel, vectors  */
+end_comment
+
 begin_function
 name|GimpDrawable
 modifier|*
@@ -12691,6 +12695,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  layer, channel, vectors by tattoo  */
+end_comment
+
 begin_function
 name|GimpLayer
 modifier|*
@@ -12849,6 +12857,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  layer, channel, vectors by name  */
+end_comment
 
 begin_function
 name|GimpLayer
@@ -13032,6 +13044,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  layers  */
+end_comment
 
 begin_function
 name|gboolean
@@ -14661,6 +14677,10 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  channels  */
+end_comment
+
 begin_function
 name|gboolean
 DECL|function|gimp_image_add_channel (GimpImage * image,GimpChannel * channel,GimpChannel * parent,gint position,gboolean push_undo)
@@ -15609,6 +15629,10 @@ argument_list|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/*  vectors  */
+end_comment
 
 begin_function
 name|gboolean
