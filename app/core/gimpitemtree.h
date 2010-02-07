@@ -185,10 +185,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|position
-parameter_list|,
-name|GimpItem
-modifier|*
-name|active_item
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -227,10 +223,6 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpItem
-modifier|*
-name|current_active
 parameter_list|,
 name|GimpItem
 modifier|*

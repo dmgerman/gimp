@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1b03a50103
+DECL|enum|__anon2a2383a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1094,7 +1094,7 @@ end_function
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_tree_get_insert_pos (GimpItemTree * tree,GimpItem * parent,gint * position,GimpItem * active_item)
+DECL|function|gimp_item_tree_get_insert_pos (GimpItemTree * tree,GimpItem * parent,gint * position)
 name|gimp_item_tree_get_insert_pos
 parameter_list|(
 name|GimpItemTree
@@ -1108,12 +1108,12 @@ parameter_list|,
 name|gint
 modifier|*
 name|position
-parameter_list|,
-name|GimpItem
-modifier|*
-name|active_item
 parameter_list|)
 block|{
+name|GimpItemTreePrivate
+modifier|*
+name|private
+decl_stmt|;
 name|GimpContainer
 modifier|*
 name|container
@@ -1128,6 +1128,13 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_ITEM_TREE_GET_PRIVATE
+argument_list|(
+name|tree
+argument_list|)
+expr_stmt|;
 comment|/*  if we want to insert in the active item's parent container  */
 if|if
 condition|(
@@ -1138,6 +1145,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|private
+operator|->
 name|active_item
 condition|)
 block|{
@@ -1148,6 +1157,8 @@ name|gimp_viewable_get_children
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
+name|private
+operator|->
 name|active_item
 argument_list|)
 argument_list|)
@@ -1155,6 +1166,8 @@ condition|)
 block|{
 name|parent
 operator|=
+name|private
+operator|->
 name|active_item
 expr_stmt|;
 operator|*
@@ -1169,6 +1182,8 @@ name|parent
 operator|=
 name|gimp_item_get_parent
 argument_list|(
+name|private
+operator|->
 name|active_item
 argument_list|)
 expr_stmt|;
@@ -1216,6 +1231,8 @@ condition|)
 block|{
 if|if
 condition|(
+name|private
+operator|->
 name|active_item
 condition|)
 operator|*
@@ -1227,6 +1244,8 @@ name|container
 argument_list|,
 name|GIMP_OBJECT
 argument_list|(
+name|private
+operator|->
 name|active_item
 argument_list|)
 argument_list|)
@@ -1366,7 +1385,7 @@ end_function
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_item_tree_remove_item (GimpItemTree * tree,GimpItem * item,GimpItem * current_active,GimpItem * new_active)
+DECL|function|gimp_item_tree_remove_item (GimpItemTree * tree,GimpItem * item,GimpItem * new_active)
 name|gimp_item_tree_remove_item
 parameter_list|(
 name|GimpItemTree
@@ -1376,10 +1395,6 @@ parameter_list|,
 name|GimpItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpItem
-modifier|*
-name|current_active
 parameter_list|,
 name|GimpItem
 modifier|*
