@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff18ff0103
+DECL|enum|__anon2c6fac100103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ff18ff0203
+DECL|enum|__anon2c6fac100203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2013,17 +2013,21 @@ argument_list|(
 name|item
 argument_list|)
 condition|)
-name|gimp_image_undo_push_item_rename
+name|gimp_item_tree_rename_item
+argument_list|(
+name|gimp_item_get_tree
 argument_list|(
 name|item
-operator|->
-name|image
-argument_list|,
-name|undo_desc
+argument_list|)
 argument_list|,
 name|item
+argument_list|,
+name|new_name
+argument_list|,
+name|undo_desc
 argument_list|)
 expr_stmt|;
+else|else
 name|gimp_object_set_name
 argument_list|(
 name|GIMP_OBJECT
