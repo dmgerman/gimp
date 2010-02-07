@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291390c10103
+DECL|enum|__anon28ea9f960103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291390c10203
+DECL|enum|__anon28ea9f960203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2678,6 +2678,11 @@ expr_stmt|;
 if|if
 condition|(
 name|name
+operator|&&
+name|strlen
+argument_list|(
+name|name
+argument_list|)
 condition|)
 name|gimp_object_set_name
 argument_list|(
@@ -2697,10 +2702,12 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|_
+name|GIMP_ITEM_GET_CLASS
 argument_list|(
-literal|"Unnamed"
+name|item
 argument_list|)
+operator|->
+name|default_name
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
