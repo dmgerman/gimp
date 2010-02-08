@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f71360103
+DECL|enum|__anon2aef05da0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -400,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon274f71360203
+DECL|enum|__anon2aef05da0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -12582,10 +12582,6 @@ name|GimpImagePrivate
 modifier|*
 name|private
 decl_stmt|;
-name|GimpChannel
-modifier|*
-name|active_channel
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -12659,18 +12655,14 @@ condition|)
 return|return
 name|NULL
 return|;
-name|active_channel
-operator|=
-name|gimp_image_get_active_channel
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|channel
 operator|!=
-name|active_channel
+name|gimp_image_get_active_channel
+argument_list|(
+name|image
+argument_list|)
 condition|)
 block|{
 name|gimp_item_tree_set_active_item
@@ -12793,10 +12785,6 @@ name|GimpImagePrivate
 modifier|*
 name|private
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|active_vectors
-decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
@@ -12857,18 +12845,14 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|active_vectors
-operator|=
-name|gimp_image_get_active_vectors
-argument_list|(
-name|image
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|vectors
 operator|!=
-name|active_vectors
+name|gimp_image_get_active_vectors
+argument_list|(
+name|image
+argument_list|)
 condition|)
 block|{
 name|gimp_item_tree_set_active_item
