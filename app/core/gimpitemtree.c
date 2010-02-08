@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1576150103
+DECL|enum|__anon2bd1f6850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1738,6 +1738,18 @@ expr_stmt|;
 name|g_object_ref
 argument_list|(
 name|item
+argument_list|)
+expr_stmt|;
+name|g_hash_table_remove
+argument_list|(
+name|private
+operator|->
+name|name_hash
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|item
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_remove
