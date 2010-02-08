@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpimage-undo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimplayer.h"
 end_include
 
@@ -91,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b97aff20103
+DECL|enum|__anon2781eb200103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
