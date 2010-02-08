@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpbufferview.h"
 end_include
 
@@ -274,7 +280,7 @@ name|new_image
 decl_stmt|;
 name|new_image
 operator|=
-name|gimp_edit_paste_as_new
+name|gimp_image_new_from_buffer
 argument_list|(
 name|image
 operator|->
@@ -285,11 +291,6 @@ argument_list|,
 name|buffer
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|new_image
-condition|)
-block|{
 name|gimp_create_display
 argument_list|(
 name|image
@@ -308,7 +309,6 @@ argument_list|(
 name|new_image
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 block|}

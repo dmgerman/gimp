@@ -70,6 +70,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -960,7 +966,7 @@ condition|)
 block|{
 name|image
 operator|=
-name|gimp_edit_paste_as_new
+name|gimp_image_new_from_buffer
 argument_list|(
 name|gimp
 argument_list|,
@@ -2011,7 +2017,7 @@ condition|)
 block|{
 name|image
 operator|=
-name|gimp_edit_paste_as_new
+name|gimp_image_new_from_buffer
 argument_list|(
 name|gimp
 argument_list|,

@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-new.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
@@ -1181,7 +1187,7 @@ name|image
 decl_stmt|;
 name|image
 operator|=
-name|gimp_edit_paste_as_new
+name|gimp_image_new_from_buffer
 argument_list|(
 name|gimp
 argument_list|,
@@ -1198,11 +1204,6 @@ argument_list|(
 name|buffer
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-condition|)
-block|{
 name|gimp_create_display
 argument_list|(
 name|image
@@ -1221,7 +1222,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{

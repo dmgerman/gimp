@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp-edit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpbuffer.h"
 end_include
 
@@ -841,7 +835,7 @@ condition|)
 return|return;
 name|image
 operator|=
-name|gimp_edit_paste_as_new
+name|gimp_image_new_from_buffer
 argument_list|(
 name|context
 operator|->
@@ -855,11 +849,6 @@ name|viewable
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|image
-condition|)
-block|{
 name|gimp_create_display
 argument_list|(
 name|image
@@ -878,7 +867,6 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 end_function
 
