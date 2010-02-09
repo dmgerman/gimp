@@ -945,6 +945,9 @@ argument_list|(
 name|module
 argument_list|)
 decl_stmt|;
+name|gdouble
+name|value
+decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -973,6 +976,13 @@ operator|==
 name|adj
 condition|)
 break|break;
+name|value
+operator|=
+name|gtk_adjustment_get_value
+argument_list|(
+name|adj
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|i
@@ -987,8 +997,6 @@ name|cmyk
 operator|.
 name|c
 operator|=
-name|adj
-operator|->
 name|value
 operator|/
 literal|100.0
@@ -1003,8 +1011,6 @@ name|cmyk
 operator|.
 name|m
 operator|=
-name|adj
-operator|->
 name|value
 operator|/
 literal|100.0
@@ -1019,8 +1025,6 @@ name|cmyk
 operator|.
 name|y
 operator|=
-name|adj
-operator|->
 name|value
 operator|/
 literal|100.0
@@ -1035,8 +1039,6 @@ name|cmyk
 operator|.
 name|k
 operator|=
-name|adj
-operator|->
 name|value
 operator|/
 literal|100.0
@@ -1107,9 +1109,10 @@ name|module
 operator|->
 name|pullout
 operator|=
+name|gtk_adjustment_get_value
+argument_list|(
 name|adj
-operator|->
-name|value
+argument_list|)
 operator|/
 literal|100.0
 expr_stmt|;
