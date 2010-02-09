@@ -187,8 +187,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpItem
-modifier|*
+name|gboolean
 name|gimp_item_tree_get_insert_pos
 parameter_list|(
 name|GimpItemTree
@@ -196,6 +195,11 @@ modifier|*
 name|tree
 parameter_list|,
 name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpItem
+modifier|*
 modifier|*
 name|parent
 parameter_list|,
