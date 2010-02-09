@@ -4660,14 +4660,23 @@ break|break;
 case|case
 name|VECTORS_MOVE_HANDLE
 case|:
+if|if
+condition|(
+name|vector_tool
+operator|->
+name|restriction
+operator|!=
+name|GIMP_ANCHOR_FEATURE_SYMMETRIC
+condition|)
+block|{
 name|status
 operator|=
 name|gimp_suggest_modifiers
 argument_list|(
 name|_
 argument_list|(
-literal|"Click-Drag to move the handle "
-literal|"around"
+literal|"Click-Drag to move the "
+literal|"handle around"
 argument_list|)
 argument_list|,
 name|GDK_SHIFT_MASK
@@ -4682,6 +4691,32 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|status
+operator|=
+name|gimp_suggest_modifiers
+argument_list|(
+name|_
+argument_list|(
+literal|"Click-Drag to move the "
+literal|"handles around symmetrically"
+argument_list|)
+argument_list|,
+name|GDK_SHIFT_MASK
+operator|&
+operator|~
+name|state
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|free_status
 operator|=
 name|TRUE
