@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd5b4ac0103
+DECL|enum|__anon2c9a90890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -294,13 +294,15 @@ name|object_class
 argument_list|,
 name|PROP_TILES
 argument_list|,
-name|g_param_spec_pointer
+name|g_param_spec_boxed
 argument_list|(
 literal|"tiles"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
+argument_list|,
+name|GIMP_TYPE_TILE_MANAGER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 operator||
@@ -571,12 +573,9 @@ name|drawable_undo
 operator|->
 name|tiles
 operator|=
-name|tile_manager_ref
-argument_list|(
-name|g_value_get_pointer
+name|g_value_dup_boxed
 argument_list|(
 name|value
-argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
@@ -699,7 +698,7 @@ block|{
 case|case
 name|PROP_TILES
 case|:
-name|g_value_set_pointer
+name|g_value_set_boxed
 argument_list|(
 name|value
 argument_list|,
