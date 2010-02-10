@@ -107,6 +107,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tile-manager.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tile-swap.h"
 end_include
 
@@ -411,6 +417,14 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|GIMP_UNSTABLE
+name|tile_manager_exit
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 name|pixel_processor_exit
 argument_list|()
 expr_stmt|;
