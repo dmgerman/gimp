@@ -214,6 +214,12 @@ directive|include
 file|"gimppluginshm.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_define
 DECL|macro|TILE_MAP_SIZE
 define|#
@@ -760,6 +766,20 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
+else|else
+block|{
+name|GIMP_LOG
+argument_list|(
+name|SHM
+argument_list|,
+literal|"attached shared memory segment ID = %d"
+argument_list|,
+name|shm
+operator|->
+name|shm_ID
+argument_list|)
+expr_stmt|;
+block|}
 return|return
 name|shm
 return|;
@@ -799,9 +819,6 @@ name|defined
 argument_list|(
 name|USE_SYSV_SHM
 argument_list|)
-ifndef|#
-directive|ifndef
-name|IPC_RMID_DEFERRED_RELEASE
 name|shmdt
 argument_list|(
 name|shm
@@ -809,6 +826,9 @@ operator|->
 name|shm_addr
 argument_list|)
 expr_stmt|;
+ifndef|#
+directive|ifndef
+name|IPC_RMID_DEFERRED_RELEASE
 name|shmctl
 argument_list|(
 name|shm
@@ -820,18 +840,8 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-else|#
-directive|else
-name|shmdt
-argument_list|(
-name|shm
-operator|->
-name|shm_addr
-argument_list|)
-expr_stmt|;
 endif|#
 directive|endif
-comment|/* IPC_RMID_DEFERRED_RELEASE */
 elif|#
 directive|elif
 name|defined
@@ -895,6 +905,17 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
+name|GIMP_LOG
+argument_list|(
+name|SHM
+argument_list|,
+literal|"detached shared memory segment ID = %d"
+argument_list|,
+name|shm
+operator|->
+name|shm_ID
+argument_list|)
+expr_stmt|;
 block|}
 name|g_slice_free
 argument_list|(
