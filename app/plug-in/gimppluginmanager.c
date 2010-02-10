@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c839d280103
+DECL|enum|__anon2c12a1c00103
 block|{
 DECL|enumerator|PLUG_IN_OPENED
 name|PLUG_IN_OPENED
@@ -751,27 +751,6 @@ if|if
 condition|(
 name|manager
 operator|->
-name|shm
-condition|)
-block|{
-name|gimp_plug_in_shm_free
-argument_list|(
-name|manager
-operator|->
-name|shm
-argument_list|)
-expr_stmt|;
-name|manager
-operator|->
-name|shm
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|manager
-operator|->
 name|environ_table
 condition|)
 block|{
@@ -1310,6 +1289,28 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+comment|/*  need to deatch from shared memory, we can't rely on exit()    *  cleaning up behind us (see bug #609026)    */
+if|if
+condition|(
+name|manager
+operator|->
+name|shm
+condition|)
+block|{
+name|gimp_plug_in_shm_free
+argument_list|(
+name|manager
+operator|->
+name|shm
+argument_list|)
+expr_stmt|;
+name|manager
+operator|->
+name|shm
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 block|}
 end_function
 
