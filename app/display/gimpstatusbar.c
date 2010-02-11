@@ -242,7 +242,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_statusbar_frame_size_request
+name|gimp_statusbar_hbox_size_request
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -923,6 +923,20 @@ expr_stmt|;
 block|}
 endif|#
 directive|endif
+name|g_signal_connect
+argument_list|(
+name|hbox
+argument_list|,
+literal|"size-request"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_statusbar_hbox_size_request
+argument_list|)
+argument_list|,
+name|statusbar
+argument_list|)
+expr_stmt|;
 name|statusbar
 operator|->
 name|cursor_label
@@ -1322,25 +1336,6 @@ argument_list|,
 name|statusbar
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|GTK_STATUSBAR
-argument_list|(
-name|statusbar
-argument_list|)
-operator|->
-name|frame
-argument_list|,
-literal|"size-request"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gimp_statusbar_frame_size_request
-argument_list|)
-argument_list|,
-name|statusbar
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1503,8 +1498,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_statusbar_frame_size_request (GtkWidget * widget,GtkRequisition * requisition,GimpStatusbar * statusbar)
-name|gimp_statusbar_frame_size_request
+DECL|function|gimp_statusbar_hbox_size_request (GtkWidget * widget,GtkRequisition * requisition,GimpStatusbar * statusbar)
+name|gimp_statusbar_hbox_size_request
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1526,18 +1521,6 @@ name|gint
 name|width
 init|=
 literal|0
-decl_stmt|;
-name|gint
-name|padding
-init|=
-literal|2
-operator|*
-name|gtk_widget_get_style
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|ythickness
 decl_stmt|;
 comment|/*  also consider the children which can be invisible  */
 name|gtk_widget_size_request
@@ -1566,8 +1549,6 @@ name|requisition
 operator|->
 name|height
 argument_list|,
-name|padding
-operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1599,8 +1580,6 @@ name|requisition
 operator|->
 name|height
 argument_list|,
-name|padding
-operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1632,8 +1611,6 @@ name|requisition
 operator|->
 name|height
 argument_list|,
-name|padding
-operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1659,8 +1636,6 @@ name|requisition
 operator|->
 name|height
 argument_list|,
-name|padding
-operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1686,8 +1661,6 @@ name|requisition
 operator|->
 name|height
 argument_list|,
-name|padding
-operator|+
 name|child_requisition
 operator|.
 name|height
@@ -1705,7 +1678,7 @@ name|width
 argument_list|,
 name|width
 operator|+
-literal|24
+literal|32
 argument_list|)
 expr_stmt|;
 block|}
@@ -6158,16 +6131,6 @@ name|width
 argument_list|,
 operator|-
 literal|1
-argument_list|)
-expr_stmt|;
-name|gtk_widget_queue_resize
-argument_list|(
-name|GTK_STATUSBAR
-argument_list|(
-name|statusbar
-argument_list|)
-operator|->
-name|frame
 argument_list|)
 expr_stmt|;
 name|gimp_statusbar_clear_cursor
