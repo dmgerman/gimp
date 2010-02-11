@@ -148,6 +148,18 @@ value|256
 end_define
 
 begin_comment
+comment|/*  the spacing of the hbox                                     */
+end_comment
+
+begin_define
+DECL|macro|HBOX_SPACING
+define|#
+directive|define
+name|HBOX_SPACING
+value|1
+end_define
+
+begin_comment
 comment|/*  spacing between the icon and the statusbar label            */
 end_comment
 
@@ -858,7 +870,7 @@ argument_list|(
 name|hbox
 argument_list|)
 argument_list|,
-literal|1
+name|HBOX_SPACING
 argument_list|)
 expr_stmt|;
 name|gtk_container_remove
@@ -902,7 +914,7 @@ name|gtk_hbox_new
 argument_list|(
 name|FALSE
 argument_list|,
-literal|1
+name|HBOX_SPACING
 argument_list|)
 expr_stmt|;
 name|gtk_container_add
@@ -6067,8 +6079,10 @@ name|statusbar
 argument_list|,
 name|GIMP_CURSOR_PRECISION_SUBPIXEL
 argument_list|,
+operator|-
 name|image_width
 argument_list|,
+operator|-
 name|image_height
 argument_list|)
 expr_stmt|;
