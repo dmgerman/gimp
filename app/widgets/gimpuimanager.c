@@ -9,17 +9,17 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
 file|<string.h>
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
 
 begin_include
 include|#
@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6dec580103
+DECL|enum|__anon28a547640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -111,7 +111,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6dec580203
+DECL|enum|__anon28a547640203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2192,7 +2192,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6dec580308
+DECL|struct|__anon28a547640308
 block|{
 DECL|member|x
 name|guint
@@ -3770,18 +3770,22 @@ name|widget
 argument_list|)
 condition|)
 block|{
+name|GtkWidget
+modifier|*
+name|parent
+init|=
+name|gtk_widget_get_parent
+argument_list|(
+name|widget
+argument_list|)
+decl_stmt|;
 name|GdkWindow
 modifier|*
 name|window
 init|=
 name|gtk_widget_get_window
 argument_list|(
-name|GTK_MENU
-argument_list|(
-name|widget
-argument_list|)
-operator|->
-name|toplevel
+name|parent
 argument_list|)
 decl_stmt|;
 name|gint
