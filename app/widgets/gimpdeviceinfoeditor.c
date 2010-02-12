@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea7e5c0103
+DECL|enum|__anon27ecc0500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea7e5c0203
+DECL|enum|__anon27ecc0500203
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -1769,9 +1769,9 @@ name|info
 argument_list|,
 name|index
 argument_list|,
-literal|0
+name|accel_key
 argument_list|,
-literal|0
+name|accel_mask
 argument_list|)
 expr_stmt|;
 block|}
