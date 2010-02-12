@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e915ff0103
+DECL|enum|__anon279abf860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e915ff0203
+DECL|enum|__anon279abf860203
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -481,6 +481,21 @@ name|cell
 operator|=
 name|gtk_cell_renderer_accel_new
 argument_list|()
+expr_stmt|;
+name|g_object_set
+argument_list|(
+name|cell
+argument_list|,
+literal|"mode"
+argument_list|,
+name|GTK_CELL_RENDERER_MODE_EDITABLE
+argument_list|,
+literal|"editable"
+argument_list|,
+name|TRUE
+argument_list|,
+name|NULL
+argument_list|)
 expr_stmt|;
 name|gtk_tree_view_insert_column_with_attributes
 argument_list|(
