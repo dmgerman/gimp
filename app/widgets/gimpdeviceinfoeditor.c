@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ecc0500103
+DECL|enum|__anon27e915ff0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ecc0500203
+DECL|enum|__anon27e915ff0203
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -1155,6 +1155,9 @@ operator|->
 name|key_store
 argument_list|,
 name|NULL
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|KEY_COLUMN_INDEX
 argument_list|,
