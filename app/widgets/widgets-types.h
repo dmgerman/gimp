@@ -894,6 +894,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDeviceEditor
+typedef|typedef
+name|struct
+name|_GimpDeviceEditor
+name|GimpDeviceEditor
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpDeviceInfoEditor
+typedef|typedef
+name|struct
+name|_GimpDeviceInfoEditor
+name|GimpDeviceInfoEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFgBgEditor
 typedef|typedef
 name|struct
