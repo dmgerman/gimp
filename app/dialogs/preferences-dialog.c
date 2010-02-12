@@ -2176,7 +2176,9 @@ expr_stmt|;
 name|editor
 operator|=
 name|gimp_device_editor_new
-argument_list|()
+argument_list|(
+name|gimp
+argument_list|)
 expr_stmt|;
 name|gtk_container_set_border_width
 argument_list|(
@@ -9656,7 +9658,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2ae9366b0108
+DECL|struct|__anon2b4bb3990108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10823,7 +10825,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae9366b0208
+DECL|struct|__anon2b4bb3990208
 block|{
 DECL|member|label
 specifier|const
@@ -11935,7 +11937,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae9366b0308
+DECL|struct|__anon2b4bb3990308
 block|{
 DECL|member|property_name
 specifier|const
@@ -12090,7 +12092,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ae9366b0408
+DECL|struct|__anon2b4bb3990408
 block|{
 DECL|member|tree_label
 specifier|const
