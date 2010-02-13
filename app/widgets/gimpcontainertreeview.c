@@ -752,6 +752,15 @@ index|]
 operator|=
 name|PANGO_TYPE_ATTR_LIST
 expr_stmt|;
+name|tree_view
+operator|->
+name|model_columns
+index|[
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_USER_DATA
+index|]
+operator|=
+name|G_TYPE_POINTER
+expr_stmt|;
 name|gtk_scrolled_window_set_shadow_type
 argument_list|(
 name|GTK_SCROLLED_WINDOW
@@ -3539,7 +3548,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac4b7080108
+DECL|struct|__anon2bffec1c0108
 block|{
 DECL|member|view_size
 name|gint
