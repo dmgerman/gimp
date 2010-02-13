@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae6af970103
+DECL|enum|__anon2961aab60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1044,6 +1044,13 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|viewable
+operator|&&
+name|insert_data
+condition|)
+block|{
 name|GimpContainerTreeView
 modifier|*
 name|treeview
@@ -1110,6 +1117,7 @@ argument_list|,
 name|page_num
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
