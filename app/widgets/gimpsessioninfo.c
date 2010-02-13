@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bf67eb0103
+DECL|enum|__anon2ae1d5050103
 block|{
 DECL|enumerator|SESSION_INFO_POSITION
 name|SESSION_INFO_POSITION
@@ -1636,6 +1636,12 @@ name|DEFAULT_SCREEN
 expr_stmt|;
 if|if
 condition|(
+name|info
+operator|->
+name|p
+operator|->
+name|factory_entry
+operator|&&
 operator|!
 name|info
 operator|->
