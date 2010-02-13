@@ -208,6 +208,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GdkDevice
+modifier|*
+name|gimp_device_info_get_device
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|,
+name|GdkDisplay
+modifier|*
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_device_info_set_device
 parameter_list|(
