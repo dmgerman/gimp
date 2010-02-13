@@ -84,10 +84,10 @@ name|unsigned
 name|char
 name|kind
 decl_stmt|;
-DECL|union|__anon2b693229010a
+DECL|union|__anon2b2d019c010a
 union|union
 block|{
-DECL|struct|__anon2b6932290208
+DECL|struct|__anon2b2d019c0208
 struct|struct
 block|{
 DECL|member|file
@@ -103,7 +103,7 @@ DECL|member|stdio
 block|}
 name|stdio
 struct|;
-DECL|struct|__anon2b6932290308
+DECL|struct|__anon2b2d019c0308
 struct|struct
 block|{
 DECL|member|start
@@ -149,10 +149,10 @@ name|unsigned
 name|int
 name|_flag
 decl_stmt|;
-DECL|union|__anon2b693229040a
+DECL|union|__anon2b2d019c040a
 union|union
 block|{
-DECL|struct|__anon2b6932290508
+DECL|struct|__anon2b2d019c0508
 struct|struct
 block|{
 DECL|member|_svalue
@@ -181,7 +181,7 @@ DECL|member|_ff
 name|foreign_func
 name|_ff
 decl_stmt|;
-DECL|struct|__anon2b6932290608
+DECL|struct|__anon2b2d019c0608
 struct|struct
 block|{
 DECL|member|_car
@@ -494,7 +494,7 @@ DECL|macro|STRBUFFSIZE
 define|#
 directive|define
 name|STRBUFFSIZE
-value|256
+value|1024
 DECL|member|strbuff
 name|char
 name|strbuff
