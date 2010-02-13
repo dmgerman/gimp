@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b831a60103
+DECL|enum|__anon2baf808b0103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b831a60203
+DECL|enum|__anon2baf808b0203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -157,7 +157,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b831a60308
+DECL|struct|__anon2baf808b0308
 block|{
 DECL|member|interlace
 name|gint
@@ -958,6 +958,7 @@ break|break;
 default|default:
 break|break;
 block|}
+block|}
 if|if
 condition|(
 name|status
@@ -1010,7 +1011,6 @@ name|status
 operator|=
 name|GIMP_PDB_EXECUTION_ERROR
 expr_stmt|;
-block|}
 block|}
 block|}
 if|if
