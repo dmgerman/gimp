@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e7aef0103
+DECL|enum|__anon28eec6c70103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e7aef0203
+DECL|enum|__anon28eec6c70203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -487,51 +487,51 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_device_info_init (GimpDeviceInfo * device_info)
+DECL|function|gimp_device_info_init (GimpDeviceInfo * info)
 name|gimp_device_info_init
 parameter_list|(
 name|GimpDeviceInfo
 modifier|*
-name|device_info
+name|info
 parameter_list|)
 block|{
-name|device_info
+name|info
 operator|->
 name|device
 operator|=
 name|NULL
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|display
 operator|=
 name|NULL
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|mode
 operator|=
 name|GDK_MODE_DISABLED
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|n_axes
 operator|=
 literal|0
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|axes
 operator|=
 name|NULL
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|n_keys
 operator|=
 literal|0
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|keys
 operator|=
@@ -539,7 +539,7 @@ name|NULL
 expr_stmt|;
 name|g_signal_connect
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 literal|"notify::name"
 argument_list|,
@@ -864,7 +864,7 @@ parameter_list|)
 block|{
 name|GimpDeviceInfo
 modifier|*
-name|device_info
+name|info
 init|=
 name|GIMP_DEVICE_INFO
 argument_list|(
@@ -873,26 +873,26 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|device_info
+name|info
 operator|->
 name|axes
 condition|)
 name|g_free
 argument_list|(
-name|device_info
+name|info
 operator|->
 name|axes
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|device_info
+name|info
 operator|->
 name|keys
 condition|)
 name|g_free
 argument_list|(
-name|device_info
+name|info
 operator|->
 name|keys
 argument_list|)
@@ -935,7 +935,7 @@ parameter_list|)
 block|{
 name|GimpDeviceInfo
 modifier|*
-name|device_info
+name|info
 init|=
 name|GIMP_DEVICE_INFO
 argument_list|(
@@ -946,7 +946,7 @@ name|GdkDevice
 modifier|*
 name|device
 init|=
-name|device_info
+name|info
 operator|->
 name|device
 decl_stmt|;
@@ -958,7 +958,7 @@ block|{
 case|case
 name|PROP_DEVICE
 case|:
-name|device_info
+name|info
 operator|->
 name|device
 operator|=
@@ -971,7 +971,7 @@ break|break;
 case|case
 name|PROP_DISPLAY
 case|:
-name|device_info
+name|info
 operator|->
 name|display
 operator|=
@@ -986,7 +986,7 @@ name|PROP_MODE
 case|:
 name|gimp_device_info_set_mode
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|g_value_get_enum
 argument_list|(
@@ -1046,13 +1046,13 @@ name|array
 operator|->
 name|n_values
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|n_axes
 operator|=
 name|n_device_values
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|axes
 operator|=
@@ -1095,7 +1095,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_device_info_set_axis_use
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|i
 argument_list|,
@@ -1157,13 +1157,13 @@ name|array
 operator|->
 name|n_values
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|n_keys
 operator|=
 name|n_device_values
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|keys
 operator|=
@@ -1225,7 +1225,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_device_info_set_key
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|i
 argument_list|,
@@ -1277,7 +1277,7 @@ parameter_list|)
 block|{
 name|GimpDeviceInfo
 modifier|*
-name|device_info
+name|info
 init|=
 name|GIMP_DEVICE_INFO
 argument_list|(
@@ -1296,7 +1296,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|device_info
+name|info
 operator|->
 name|device
 argument_list|)
@@ -1309,7 +1309,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|device_info
+name|info
 operator|->
 name|display
 argument_list|)
@@ -1324,7 +1324,7 @@ name|value
 argument_list|,
 name|gimp_device_info_get_mode
 argument_list|(
-name|device_info
+name|info
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1369,7 +1369,7 @@ name|n_axes
 operator|=
 name|gimp_device_info_get_n_axes
 argument_list|(
-name|device_info
+name|info
 argument_list|)
 expr_stmt|;
 for|for
@@ -1393,7 +1393,7 @@ name|enum_value
 argument_list|,
 name|gimp_device_info_get_axis_use
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|i
 argument_list|)
@@ -1463,7 +1463,7 @@ name|n_keys
 operator|=
 name|gimp_device_info_get_n_keys
 argument_list|(
-name|device_info
+name|info
 argument_list|)
 expr_stmt|;
 for|for
@@ -1488,7 +1488,7 @@ name|modifiers
 decl_stmt|;
 name|gimp_device_info_get_key
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|i
 argument_list|,
@@ -1854,12 +1854,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_device_info_set_device (GimpDeviceInfo * device_info,GdkDevice * device,GdkDisplay * display)
+DECL|function|gimp_device_info_set_device (GimpDeviceInfo * info,GdkDevice * device,GdkDisplay * display)
 name|gimp_device_info_set_device
 parameter_list|(
 name|GimpDeviceInfo
 modifier|*
-name|device_info
+name|info
 parameter_list|,
 name|GdkDevice
 modifier|*
@@ -1877,7 +1877,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DEVICE_INFO
 argument_list|(
-name|device_info
+name|info
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1899,7 +1899,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|device_info
+name|info
 operator|->
 name|device
 operator|==
@@ -1908,7 +1908,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|device_info
+name|info
 operator|->
 name|display
 operator|==
@@ -1925,7 +1925,7 @@ name|name
 argument_list|,
 name|gimp_object_get_name
 argument_list|(
-name|device_info
+name|info
 argument_list|)
 argument_list|)
 operator|==
@@ -1941,16 +1941,16 @@ argument_list|)
 argument_list|,
 name|GIMP_DEVICE_INFO_DATA_KEY
 argument_list|,
-name|device_info
+name|info
 argument_list|)
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|device
 operator|=
 name|device
 expr_stmt|;
-name|device_info
+name|info
 operator|->
 name|display
 operator|=
@@ -1960,14 +1960,14 @@ name|gdk_device_set_mode
 argument_list|(
 name|device
 argument_list|,
-name|device_info
+name|info
 operator|->
 name|mode
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|device_info
+name|info
 operator|->
 name|n_axes
 operator|!=
@@ -1997,7 +1997,7 @@ name|i
 operator|<
 name|MIN
 argument_list|(
-name|device_info
+name|info
 operator|->
 name|n_axes
 argument_list|,
@@ -2011,11 +2011,11 @@ operator|++
 control|)
 name|gimp_device_info_set_axis_use
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|i
 argument_list|,
-name|device_info
+name|info
 operator|->
 name|axes
 index|[
@@ -2025,7 +2025,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|device_info
+name|info
 operator|->
 name|n_keys
 operator|!=
@@ -2055,7 +2055,7 @@ name|i
 operator|<
 name|MIN
 argument_list|(
-name|device_info
+name|info
 operator|->
 name|n_keys
 argument_list|,
@@ -2069,11 +2069,11 @@ operator|++
 control|)
 name|gimp_device_info_set_key
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|i
 argument_list|,
-name|device_info
+name|info
 operator|->
 name|keys
 index|[
@@ -2082,7 +2082,7 @@ index|]
 operator|.
 name|keyval
 argument_list|,
-name|device_info
+name|info
 operator|->
 name|keys
 index|[
@@ -2709,25 +2709,25 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_device_info_changed (GimpDeviceInfo * device_info)
+DECL|function|gimp_device_info_changed (GimpDeviceInfo * info)
 name|gimp_device_info_changed
 parameter_list|(
 name|GimpDeviceInfo
 modifier|*
-name|device_info
+name|info
 parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DEVICE_INFO
 argument_list|(
-name|device_info
+name|info
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|device_info
+name|info
 argument_list|,
 name|device_info_signals
 index|[
