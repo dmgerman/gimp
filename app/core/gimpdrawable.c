@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aae9b00103
+DECL|enum|__anon29b527f80103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1593,12 +1593,21 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|GeglNode
+modifier|*
+name|item_node
+decl_stmt|;
 comment|/*  don't use gimp_item_get_node() because that would create    *  the node.    */
+name|item_node
+operator|=
+name|gimp_item_peek_node
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
-name|item
-operator|->
-name|node
+name|item_node
 condition|)
 block|{
 name|GeglNode
@@ -1613,9 +1622,7 @@ name|input
 operator|=
 name|gegl_node_get_input_proxy
 argument_list|(
-name|item
-operator|->
-name|node
+name|item_node
 argument_list|,
 literal|"input"
 argument_list|)
@@ -1624,9 +1631,7 @@ name|output
 operator|=
 name|gegl_node_get_output_proxy
 argument_list|(
-name|item
-operator|->
-name|node
+name|item_node
 argument_list|,
 literal|"output"
 argument_list|)

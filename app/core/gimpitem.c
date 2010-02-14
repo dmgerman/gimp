@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea9f960103
+DECL|enum|__anon28f7f0230103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ea9f960203
+DECL|enum|__anon28f7f0230203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5400,6 +5400,35 @@ name|get_node
 argument_list|(
 name|item
 argument_list|)
+return|;
+block|}
+end_function
+
+begin_function
+name|GeglNode
+modifier|*
+DECL|function|gimp_item_peek_node (GimpItem * item)
+name|gimp_item_peek_node
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|item
+operator|->
+name|node
 return|;
 block|}
 end_function
