@@ -756,6 +756,15 @@ name|tree_view
 operator|->
 name|model_columns
 index|[
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_SENSITIVE
+index|]
+operator|=
+name|G_TYPE_BOOLEAN
+expr_stmt|;
+name|tree_view
+operator|->
+name|model_columns
+index|[
 name|GIMP_CONTAINER_TREE_VIEW_COLUMN_USER_DATA
 index|]
 operator|=
@@ -1106,6 +1115,10 @@ argument_list|,
 literal|"attributes"
 argument_list|,
 name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+argument_list|,
+literal|"sensitive"
+argument_list|,
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_SENSITIVE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2234,6 +2247,10 @@ argument_list|,
 name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
 argument_list|,
 name|name
+argument_list|,
+name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_SENSITIVE
+argument_list|,
+name|TRUE
 argument_list|,
 operator|-
 literal|1
@@ -3548,7 +3565,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bffec1c0108
+DECL|struct|__anon277c1e1f0108
 block|{
 DECL|member|view_size
 name|gint
