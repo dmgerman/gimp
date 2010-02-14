@@ -185,7 +185,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b527f80103
+DECL|enum|__anon29f3559c0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3434,6 +3434,17 @@ operator|->
 name|get_node
 argument_list|(
 name|item
+argument_list|)
+expr_stmt|;
+name|g_warn_if_fail
+argument_list|(
+name|drawable
+operator|->
+name|private
+operator|->
+name|mode_node
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|drawable
@@ -6710,7 +6721,7 @@ name|private
 operator|->
 name|mode_node
 condition|)
-name|gimp_drawable_get_node
+name|gimp_item_get_node
 argument_list|(
 name|GIMP_ITEM
 argument_list|(

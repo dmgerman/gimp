@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf494020103
+DECL|enum|__anon289551b80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf494020203
+DECL|enum|__anon289551b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3313,6 +3313,15 @@ argument_list|(
 name|node
 argument_list|,
 name|source
+argument_list|)
+expr_stmt|;
+name|g_warn_if_fail
+argument_list|(
+name|layer
+operator|->
+name|opacity_node
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|layer

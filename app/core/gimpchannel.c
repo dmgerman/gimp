@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1b87540103
+DECL|enum|__anon2a4070080103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -3894,6 +3894,15 @@ operator|.
 name|a
 argument_list|)
 expr_stmt|;
+name|g_warn_if_fail
+argument_list|(
+name|channel
+operator|->
+name|color_node
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
 name|channel
 operator|->
 name|color_node
@@ -3916,6 +3925,15 @@ expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|color
+argument_list|)
+expr_stmt|;
+name|g_warn_if_fail
+argument_list|(
+name|channel
+operator|->
+name|mask_node
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|channel
@@ -3946,6 +3964,15 @@ operator|->
 name|mask_node
 argument_list|,
 literal|"input"
+argument_list|)
+expr_stmt|;
+name|g_warn_if_fail
+argument_list|(
+name|channel
+operator|->
+name|invert_node
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|channel
