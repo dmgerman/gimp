@@ -386,6 +386,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_device_info_compare
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|a
+parameter_list|,
+name|GimpDeviceInfo
+modifier|*
+name|b
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 name|G_END_DECLS
 end_macro
