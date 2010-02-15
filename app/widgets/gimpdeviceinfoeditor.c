@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d8380103
+DECL|enum|__anon2a29df0e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d8380203
+DECL|enum|__anon2a29df0e0203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -79,7 +79,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d8380303
+DECL|enum|__anon2a29df0e0303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -95,7 +95,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc1d8380403
+DECL|enum|__anon2a29df0e0403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -133,16 +133,6 @@ DECL|member|info
 name|GimpDeviceInfo
 modifier|*
 name|info
-decl_stmt|;
-DECL|member|axis_combos
-name|GtkWidget
-modifier|*
-name|axis_combos
-index|[
-name|GDK_AXIS_LAST
-operator|-
-name|GDK_AXIS_X
-index|]
 decl_stmt|;
 DECL|member|input_store
 name|GtkListStore
