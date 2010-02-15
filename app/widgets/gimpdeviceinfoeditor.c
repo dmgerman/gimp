@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279abf860103
+DECL|enum|__anon2b8a03440103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279abf860203
+DECL|enum|__anon2b8a03440203
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -570,6 +570,18 @@ name|scrolled_win
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
+argument_list|)
+expr_stmt|;
+name|gtk_scrolled_window_set_policy
+argument_list|(
+name|GTK_SCROLLED_WINDOW
+argument_list|(
+name|scrolled_win
+argument_list|)
+argument_list|,
+name|GTK_POLICY_AUTOMATIC
+argument_list|,
+name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end
