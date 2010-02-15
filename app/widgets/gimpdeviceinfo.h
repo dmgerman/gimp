@@ -148,6 +148,12 @@ name|GdkDeviceKey
 modifier|*
 name|keys
 decl_stmt|;
+comment|/*  curves  */
+DECL|member|pressure_curve
+name|GimpCurve
+modifier|*
+name|pressure_curve
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -359,6 +365,21 @@ name|keyval
 parameter_list|,
 name|GdkModifierType
 name|modifiers
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpCurve
+modifier|*
+name|gimp_device_info_get_curve
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|,
+name|GdkAxisUse
+name|use
 parameter_list|)
 function_decl|;
 end_function_decl
