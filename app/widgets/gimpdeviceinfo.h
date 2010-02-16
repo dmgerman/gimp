@@ -406,7 +406,7 @@ parameter_list|,
 name|GdkAxisUse
 name|use
 parameter_list|,
-name|gboolean
+name|gdouble
 name|value
 parameter_list|)
 function_decl|;

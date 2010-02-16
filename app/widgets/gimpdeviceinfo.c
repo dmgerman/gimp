@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d5f400103
+DECL|enum|__anon28d365710103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2d5f400203
+DECL|enum|__anon28d365710203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3129,7 +3129,7 @@ end_function
 
 begin_function
 name|gdouble
-DECL|function|gimp_device_info_map_axis (GimpDeviceInfo * info,GdkAxisUse use,gboolean value)
+DECL|function|gimp_device_info_map_axis (GimpDeviceInfo * info,GdkAxisUse use,gdouble value)
 name|gimp_device_info_map_axis
 parameter_list|(
 name|GimpDeviceInfo
@@ -3139,7 +3139,7 @@ parameter_list|,
 name|GdkAxisUse
 name|use
 parameter_list|,
-name|gboolean
+name|gdouble
 name|value
 parameter_list|)
 block|{
