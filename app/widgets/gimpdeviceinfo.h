@@ -396,6 +396,23 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gdouble
+name|gimp_device_info_map_axis
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|,
+name|GdkAxisUse
+name|use
+parameter_list|,
+name|gboolean
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_device_info_changed
 parameter_list|(

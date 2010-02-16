@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpcurve-map.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdatafactory.h"
 end_include
 
@@ -85,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299b6e240103
+DECL|enum|__anon2a2d5f400103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -98,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299b6e240203
+DECL|enum|__anon2a2d5f400203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3118,6 +3124,63 @@ return|return
 name|NULL
 return|;
 block|}
+block|}
+end_function
+
+begin_function
+name|gdouble
+DECL|function|gimp_device_info_map_axis (GimpDeviceInfo * info,GdkAxisUse use,gboolean value)
+name|gimp_device_info_map_axis
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|,
+name|GdkAxisUse
+name|use
+parameter_list|,
+name|gboolean
+name|value
+parameter_list|)
+block|{
+name|GimpCurve
+modifier|*
+name|curve
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DEVICE_INFO
+argument_list|(
+name|info
+argument_list|)
+argument_list|,
+name|value
+argument_list|)
+expr_stmt|;
+name|curve
+operator|=
+name|gimp_device_info_get_curve
+argument_list|(
+name|info
+argument_list|,
+name|use
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|curve
+condition|)
+return|return
+name|gimp_curve_map_value
+argument_list|(
+name|curve
+argument_list|,
+name|value
+argument_list|)
+return|;
+return|return
+name|value
+return|;
 block|}
 end_function
 
