@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299aee690103
+DECL|enum|__anon295a9c130103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299aee690203
+DECL|enum|__anon295a9c130203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -6086,15 +6086,36 @@ argument_list|(
 name|frame
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|num_layers
+operator|<=
+literal|1
+condition|)
+block|{
 name|gtk_widget_set_sensitive
 argument_list|(
 name|frame
 argument_list|,
-name|num_layers
-operator|>
-literal|1
+name|FALSE
 argument_list|)
 expr_stmt|;
+name|gimp_help_set_help_data
+argument_list|(
+name|frame
+argument_list|,
+name|_
+argument_list|(
+literal|"These options are only available when "
+literal|"the exported image has more than one "
+literal|"layer. The image you are exporting only has "
+literal|"one layer."
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+block|}
 name|gtk_widget_show
 argument_list|(
 name|main_vbox
@@ -6521,7 +6542,7 @@ name|GIMP_EXPORT_CAN_HANDLE_INDEXED
 operator||
 name|GIMP_EXPORT_CAN_HANDLE_ALPHA
 operator||
-name|GIMP_EXPORT_CAN_HANDLE_LAYERS_AS_ANIMATION
+name|GIMP_EXPORT_CAN_HANDLE_LAYERS
 operator|)
 argument_list|)
 expr_stmt|;
