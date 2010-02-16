@@ -356,7 +356,7 @@ argument_list|,
 literal|"_Fit Image in Window"
 argument_list|)
 block|,
-literal|"<shift><control>R"
+literal|"<shift><control>J"
 block|,
 name|NC_
 argument_list|(
@@ -501,7 +501,7 @@ argument_list|,
 literal|"Shrink _Wrap"
 argument_list|)
 block|,
-literal|"<control>R"
+literal|"<control>J"
 block|,
 name|NC_
 argument_list|(
