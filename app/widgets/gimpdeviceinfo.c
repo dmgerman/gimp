@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279629440103
+DECL|enum|__anon299b6e240103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279629440203
+DECL|enum|__anon299b6e240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2535,6 +2535,45 @@ name|info
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_device_info_has_cursor (GimpDeviceInfo * info)
+name|gimp_device_info_has_cursor
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DEVICE_INFO
+argument_list|(
+name|info
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|info
+operator|->
+name|device
+condition|)
+return|return
+name|info
+operator|->
+name|device
+operator|->
+name|has_cursor
+return|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 

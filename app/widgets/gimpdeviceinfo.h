@@ -275,6 +275,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_device_info_has_cursor
+parameter_list|(
+name|GimpDeviceInfo
+modifier|*
+name|info
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_device_info_get_n_axes
 parameter_list|(
