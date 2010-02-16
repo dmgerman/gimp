@@ -123,6 +123,37 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/*  curve  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_selection_data_set_curve
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|,
+name|GimpCurve
+modifier|*
+name|curve
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpCurve
+modifier|*
+name|gimp_selection_data_get_curve
+parameter_list|(
+name|GtkSelectionData
+modifier|*
+name|selection
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/*  image  */
 end_comment
 

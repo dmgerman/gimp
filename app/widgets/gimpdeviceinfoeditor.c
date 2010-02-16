@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c187ba0103
+DECL|enum|__anon297ba8bb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c187ba0203
+DECL|enum|__anon297ba8bb0203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c187ba0303
+DECL|enum|__anon297ba8bb0303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c187ba0403
+DECL|enum|__anon297ba8bb0403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -1890,6 +1890,17 @@ expr_stmt|;
 name|g_object_set
 argument_list|(
 name|view
+argument_list|,
+literal|"gimp"
+argument_list|,
+name|GIMP_CONTEXT
+argument_list|(
+name|private
+operator|->
+name|info
+argument_list|)
+operator|->
+name|gimp
 argument_list|,
 literal|"border-width"
 argument_list|,
