@@ -124,6 +124,7 @@ operator|->
 name|pressure
 argument_list|)
 condition|)
+block|{
 name|coords
 operator|->
 name|pressure
@@ -139,6 +140,7 @@ argument_list|,
 name|GIMP_COORDS_MAX_PRESSURE
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -153,6 +155,7 @@ operator|->
 name|xtilt
 argument_list|)
 condition|)
+block|{
 name|coords
 operator|->
 name|xtilt
@@ -168,6 +171,7 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -182,6 +186,7 @@ operator|->
 name|ytilt
 argument_list|)
 condition|)
+block|{
 name|coords
 operator|->
 name|ytilt
@@ -197,6 +202,7 @@ argument_list|,
 name|GIMP_COORDS_MAX_TILT
 argument_list|)
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|gdk_event_get_axis
@@ -211,6 +217,7 @@ operator|->
 name|wheel
 argument_list|)
 condition|)
+block|{
 name|coords
 operator|->
 name|wheel
@@ -226,6 +233,7 @@ argument_list|,
 name|GIMP_COORDS_MAX_WHEEL
 argument_list|)
 expr_stmt|;
+block|}
 return|return
 name|TRUE
 return|;
