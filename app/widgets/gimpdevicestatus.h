@@ -118,7 +118,7 @@ modifier|*
 name|gimp
 decl_stmt|;
 DECL|member|current_device
-name|GdkDevice
+name|GimpDeviceInfo
 modifier|*
 name|current_device
 decl_stmt|;

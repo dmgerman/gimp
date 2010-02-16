@@ -24,6 +24,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdeviceinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpdeviceinfo-coords.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -37,12 +49,6 @@ begin_include
 include|#
 directive|include
 file|"gimpdisplayshell-autoscroll.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpdisplayshell-coords.h"
 end_include
 
 begin_include
@@ -100,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be3cb6c0108
+DECL|struct|__anon2c83fd620108
 block|{
 DECL|member|mevent
 name|GdkEventMotion
@@ -108,7 +114,7 @@ modifier|*
 name|mevent
 decl_stmt|;
 DECL|member|device
-name|GdkDevice
+name|GimpDeviceInfo
 modifier|*
 name|device
 decl_stmt|;
@@ -202,9 +208,12 @@ name|info
 operator|->
 name|device
 operator|=
+name|gimp_device_info_get_by_device
+argument_list|(
 name|mevent
 operator|->
 name|device
+argument_list|)
 expr_stmt|;
 name|info
 operator|->
@@ -367,13 +376,18 @@ name|dy
 init|=
 literal|0
 decl_stmt|;
-name|gimp_display_shell_get_device_coords
+name|gimp_device_info_get_device_coords
 argument_list|(
-name|shell
-argument_list|,
 name|info
 operator|->
 name|device
+argument_list|,
+name|gtk_widget_get_window
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
 argument_list|,
 operator|&
 name|device_coords

@@ -111,7 +111,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GdkDevice
+name|GimpDeviceInfo
 modifier|*
 name|gimp_devices_get_current
 parameter_list|(
@@ -145,9 +145,9 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GdkDevice
+name|GimpDeviceInfo
 modifier|*
-name|device
+name|info
 parameter_list|)
 function_decl|;
 end_function_decl
