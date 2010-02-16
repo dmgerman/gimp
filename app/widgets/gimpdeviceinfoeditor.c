@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c405e00103
+DECL|enum|__anon28c187ba0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c405e00203
+DECL|enum|__anon28c187ba0203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c405e00303
+DECL|enum|__anon28c187ba0303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c405e00403
+DECL|enum|__anon28c187ba0403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -959,6 +959,19 @@ argument_list|(
 name|sel
 argument_list|,
 name|GTK_SELECTION_BROWSE
+argument_list|)
+expr_stmt|;
+name|gtk_tree_selection_select_iter
+argument_list|(
+name|sel
+argument_list|,
+operator|&
+name|private
+operator|->
+name|axis_iters
+index|[
+literal|0
+index|]
 argument_list|)
 expr_stmt|;
 name|g_signal_connect
@@ -2400,7 +2413,7 @@ block|{
 name|gchar
 name|input_name
 index|[
-literal|23
+literal|16
 index|]
 decl_stmt|;
 name|gint
