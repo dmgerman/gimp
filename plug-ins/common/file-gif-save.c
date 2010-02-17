@@ -127,7 +127,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a99e6370103
+DECL|enum|__anon289560930103
 block|{
 DECL|enumerator|DISPOSE_STORE_VALUE_COLUMN
 name|DISPOSE_STORE_VALUE_COLUMN
@@ -140,7 +140,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a99e6370203
+DECL|enum|__anon289560930203
 block|{
 DECL|enumerator|DISPOSE_UNSPECIFIED
 name|DISPOSE_UNSPECIFIED
@@ -157,7 +157,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99e6370308
+DECL|struct|__anon289560930308
 block|{
 DECL|member|interlace
 name|gint
@@ -4167,8 +4167,6 @@ block|, }
 decl_stmt|;
 name|va_list
 name|values
-init|=
-name|NULL
 decl_stmt|;
 name|combo
 operator|=
