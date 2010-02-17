@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b905790103
+DECL|enum|__anon28ca13c90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2213,6 +2213,13 @@ name|_
 argument_list|(
 literal|"Dynamic Text Box"
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_widget_set_sensitive
+argument_list|(
+name|button
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
