@@ -802,7 +802,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_editor
+name|gimp_text_tool_editor_dialog
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -814,7 +814,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_canvas_editor
+name|gimp_text_tool_editor
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -827,7 +827,7 @@ begin_function_decl
 specifier|static
 name|gchar
 modifier|*
-name|gimp_text_tool_canvas_editor_get_text
+name|gimp_text_tool_editor_get_text
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -2301,7 +2301,7 @@ operator|!=
 name|text
 condition|)
 block|{
-name|gimp_text_tool_canvas_editor
+name|gimp_text_tool_editor
 argument_list|(
 name|text_tool
 argument_list|)
@@ -2516,7 +2516,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_canvas_editor
+name|gimp_text_tool_editor
 argument_list|(
 name|text_tool
 argument_list|)
@@ -7715,7 +7715,7 @@ name|text_tool
 operator|->
 name|text
 condition|)
-name|gimp_text_tool_editor
+name|gimp_text_tool_editor_dialog
 argument_list|(
 name|text_tool
 argument_list|)
@@ -8768,7 +8768,7 @@ name|gchar
 modifier|*
 name|str
 init|=
-name|gimp_text_tool_canvas_editor_get_text
+name|gimp_text_tool_editor_get_text
 argument_list|(
 name|text_tool
 argument_list|)
@@ -9069,8 +9069,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_editor (GimpTextTool * text_tool)
-name|gimp_text_tool_editor
+DECL|function|gimp_text_tool_editor_dialog (GimpTextTool * text_tool)
+name|gimp_text_tool_editor_dialog
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -9230,8 +9230,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_canvas_editor (GimpTextTool * text_tool)
-name|gimp_text_tool_canvas_editor
+DECL|function|gimp_text_tool_editor (GimpTextTool * text_tool)
+name|gimp_text_tool_editor
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -9334,7 +9334,7 @@ name|options
 operator|->
 name|use_editor
 condition|)
-name|gimp_text_tool_editor
+name|gimp_text_tool_editor_dialog
 argument_list|(
 name|text_tool
 argument_list|)
@@ -9346,8 +9346,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_text_tool_canvas_editor_get_text (GimpTextTool * text_tool)
-name|gimp_text_tool_canvas_editor_get_text
+DECL|function|gimp_text_tool_editor_get_text (GimpTextTool * text_tool)
+name|gimp_text_tool_editor_get_text
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -9449,7 +9449,6 @@ name|fb
 operator|==
 name|NULL
 condition|)
-block|{
 name|string
 operator|=
 name|g_strconcat
@@ -9463,9 +9462,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 else|else
-block|{
 name|string
 operator|=
 name|g_strconcat
@@ -9481,7 +9478,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 else|else
 block|{
@@ -9612,7 +9608,7 @@ argument_list|,
 literal|"text"
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_canvas_editor
+name|gimp_text_tool_editor
 argument_list|(
 name|text_tool
 argument_list|)
@@ -10585,7 +10581,7 @@ name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_canvas_editor
+name|gimp_text_tool_editor
 argument_list|(
 name|text_tool
 argument_list|)
@@ -10617,7 +10613,7 @@ name|gchar
 modifier|*
 name|string
 init|=
-name|gimp_text_tool_canvas_editor_get_text
+name|gimp_text_tool_editor_get_text
 argument_list|(
 name|text_tool
 argument_list|)
