@@ -38,13 +38,15 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon273a4bee0103
+DECL|enum|__anon28f750a50103
 block|{
 DECL|enumerator|GIMP_TEXT_BOX_DYNAMIC
 name|GIMP_TEXT_BOX_DYNAMIC
 block|,
+comment|/*< desc="Dynamic">*/
 DECL|enumerator|GIMP_TEXT_BOX_FIXED
 name|GIMP_TEXT_BOX_FIXED
+comment|/*< desc="Fixed">*/
 DECL|typedef|GimpTextBoxMode
 block|}
 name|GimpTextBoxMode
@@ -73,7 +75,7 @@ begin_typedef
 typedef|typedef
 enum|enum
 comment|/*< pdb-skip>*/
-DECL|enum|__anon273a4bee0203
+DECL|enum|__anon28f750a50203
 block|{
 DECL|enumerator|GIMP_TEXT_OUTLINE_NONE
 name|GIMP_TEXT_OUTLINE_NONE

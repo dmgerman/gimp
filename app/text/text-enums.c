@@ -87,7 +87,12 @@ block|{
 block|{
 name|GIMP_TEXT_BOX_DYNAMIC
 block|,
-literal|"GIMP_TEXT_BOX_DYNAMIC"
+name|NC_
+argument_list|(
+literal|"text-box-mode"
+argument_list|,
+literal|"Dynamic"
+argument_list|)
 block|,
 name|NULL
 block|}
@@ -95,7 +100,12 @@ block|,
 block|{
 name|GIMP_TEXT_BOX_FIXED
 block|,
-literal|"GIMP_TEXT_BOX_FIXED"
+name|NC_
+argument_list|(
+literal|"text-box-mode"
+argument_list|,
+literal|"Fixed"
+argument_list|)
 block|,
 name|NULL
 block|}
