@@ -153,6 +153,10 @@ DECL|member|letter_spacing
 name|gdouble
 name|letter_spacing
 decl_stmt|;
+DECL|member|box_mode
+name|GimpTextBoxMode
+name|box_mode
+decl_stmt|;
 DECL|member|font_view_type
 name|GimpViewType
 name|font_view_type
@@ -170,11 +174,6 @@ DECL|member|size_entry
 name|GtkWidget
 modifier|*
 name|size_entry
-decl_stmt|;
-DECL|member|dynamic_box_button
-name|GtkWidget
-modifier|*
-name|dynamic_box_button
 decl_stmt|;
 block|}
 struct|;
