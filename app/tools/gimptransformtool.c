@@ -5360,6 +5360,12 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+name|tr_tool
+operator|->
+name|dialog
+condition|)
 name|gimp_dialog_factory_hide_dialog
 argument_list|(
 name|tr_tool
