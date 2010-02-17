@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpTextTool  * Copyright (C) 2002-2004  Sven Neumann<sven@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * GimpTextTool  * Copyright (C) 2002-2010  Sven Neumann<sven@gimp.org>  *                          Daniel Eddeland<danedde@svn.gnome.org>  *                          Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -2924,14 +2924,11 @@ decl_stmt|;
 if|if
 condition|(
 name|display
-operator|!=
+operator|==
 name|tool
 operator|->
 name|display
 condition|)
-return|return
-name|FALSE
-return|;
 return|return
 name|gimp_text_tool_editor_key_press
 argument_list|(
@@ -2941,6 +2938,9 @@ name|kevent
 argument_list|,
 name|display
 argument_list|)
+return|;
+return|return
+name|FALSE
 return|;
 block|}
 end_function
@@ -5095,10 +5095,6 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
-
-begin_comment
-comment|/*  private functions  */
-end_comment
 
 begin_function
 specifier|static
@@ -7396,6 +7392,60 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_tool_text_buffer_changed (GtkTextBuffer * text_buffer,GimpTextTool * text_tool)
+name|gimp_text_tool_text_buffer_changed
+parameter_list|(
+name|GtkTextBuffer
+modifier|*
+name|text_buffer
+parameter_list|,
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+block|{
+name|gimp_text_tool_update_proxy
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_text_tool_text_buffer_mark_set (GtkTextBuffer * text_buffer,GtkTextIter * iter,GtkTextMark * mark,GimpTextTool * text_tool)
+name|gimp_text_tool_text_buffer_mark_set
+parameter_list|(
+name|GtkTextBuffer
+modifier|*
+name|text_buffer
+parameter_list|,
+name|GtkTextIter
+modifier|*
+name|iter
+parameter_list|,
+name|GtkTextMark
+modifier|*
+name|mark
+parameter_list|,
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+block|{
+name|gimp_text_tool_update_layout
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_text_tool_update_proxy (GimpTextTool * text_tool)
 name|gimp_text_tool_update_proxy
@@ -7450,60 +7500,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_text_tool_text_buffer_changed (GtkTextBuffer * text_buffer,GimpTextTool * text_tool)
-name|gimp_text_tool_text_buffer_changed
-parameter_list|(
-name|GtkTextBuffer
-modifier|*
-name|text_buffer
-parameter_list|,
-name|GimpTextTool
-modifier|*
-name|text_tool
-parameter_list|)
-block|{
-name|gimp_text_tool_update_proxy
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_text_tool_text_buffer_mark_set (GtkTextBuffer * text_buffer,GtkTextIter * iter,GtkTextMark * mark,GimpTextTool * text_tool)
-name|gimp_text_tool_text_buffer_mark_set
-parameter_list|(
-name|GtkTextBuffer
-modifier|*
-name|text_buffer
-parameter_list|,
-name|GtkTextIter
-modifier|*
-name|iter
-parameter_list|,
-name|GtkTextMark
-modifier|*
-name|mark
-parameter_list|,
-name|GimpTextTool
-modifier|*
-name|text_tool
-parameter_list|)
-block|{
-name|gimp_text_tool_update_layout
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
