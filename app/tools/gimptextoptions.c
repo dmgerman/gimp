@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b314c480103
+DECL|enum|__anon27b905790103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2199,6 +2199,41 @@ argument_list|,
 literal|1
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|options
+operator|->
+name|dynamic_box_button
+operator|=
+name|button
+operator|=
+name|gtk_button_new_with_label
+argument_list|(
+name|_
+argument_list|(
+literal|"Dynamic Text Box"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_box_pack_start
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|main_vbox
+argument_list|)
+argument_list|,
+name|button
+argument_list|,
+name|FALSE
+argument_list|,
+name|FALSE
+argument_list|,
+literal|0
+argument_list|)
+expr_stmt|;
+name|gtk_widget_show
+argument_list|(
+name|button
 argument_list|)
 expr_stmt|;
 comment|/*  Only add the language entry if the iso-codes package is available.  */

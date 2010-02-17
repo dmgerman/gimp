@@ -171,6 +171,11 @@ name|GtkWidget
 modifier|*
 name|size_entry
 decl_stmt|;
+DECL|member|dynamic_box_button
+name|GtkWidget
+modifier|*
+name|dynamic_box_button
+decl_stmt|;
 block|}
 struct|;
 end_struct
