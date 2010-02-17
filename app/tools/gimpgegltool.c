@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d3c73e0103
+DECL|enum|__anon2ae71c5d0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -328,9 +328,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|"foo"
+name|GIMP_HELP_TOOL_GEGL
 argument_list|,
-comment|/* GIMP_HELP_TOOL_GEGL, */
 name|GIMP_STOCK_GEGL
 argument_list|,
 name|data
