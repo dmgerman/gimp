@@ -367,6 +367,32 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  only for the text editor  */
+end_comment
+
+begin_function_decl
+name|void
+name|gimp_text_tool_update_layout
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_text_tool_update_proxy
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
