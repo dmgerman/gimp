@@ -144,6 +144,12 @@ name|GIMP_LOG_FLOATING_SELECTION
 block|}
 block|,
 block|{
+literal|"text-editing"
+block|,
+name|GIMP_LOG_TEXT_EDITING
+block|}
+block|,
+block|{
 literal|"shm"
 block|,
 name|GIMP_LOG_SHM

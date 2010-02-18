@@ -108,6 +108,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -736,9 +742,11 @@ name|kevent
 argument_list|)
 condition|)
 block|{
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"binding handled event!\n"
+name|TEXT_EDITING
+argument_list|,
+literal|"binding handled event"
 argument_list|)
 expr_stmt|;
 return|return
@@ -1437,11 +1445,11 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"%s: %s count = %d, select = %s\n"
+name|TEXT_EDITING
 argument_list|,
-name|G_STRFUNC
+literal|"%s count = %d, select = %s"
 argument_list|,
 name|g_enum_get_value
 argument_list|(
@@ -2349,11 +2357,11 @@ decl_stmt|;
 name|GtkTextIter
 name|end
 decl_stmt|;
-name|g_printerr
+name|GIMP_LOG
 argument_list|(
-literal|"%s: %s count = %d\n"
+name|TEXT_EDITING
 argument_list|,
-name|G_STRFUNC
+literal|"%s count = %d"
 argument_list|,
 name|g_enum_get_value
 argument_list|(

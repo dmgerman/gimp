@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c70c10e0103
+DECL|enum|__anon2c2c257e0103
 block|{
 DECL|enumerator|GIMP_LOG_TOOL_EVENTS
 name|GIMP_LOG_TOOL_EVENTS
@@ -111,6 +111,13 @@ init|=
 literal|1
 operator|<<
 literal|12
+block|,
+DECL|enumerator|GIMP_LOG_TEXT_EDITING
+name|GIMP_LOG_TEXT_EDITING
+init|=
+literal|1
+operator|<<
+literal|13
 DECL|typedef|GimpLogFlags
 block|}
 name|GimpLogFlags
@@ -356,6 +363,14 @@ define|#
 directive|define
 name|SHM
 value|GIMP_LOG_SHM
+end_define
+
+begin_define
+DECL|macro|TEXT_EDITING
+define|#
+directive|define
+name|TEXT_EDITING
+value|GIMP_LOG_TEXT_EDITING
 end_define
 
 begin_if
