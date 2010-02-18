@@ -80,6 +80,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_text_tool_editor_key_release
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|,
+name|GdkEventKey
+modifier|*
+name|kevent
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gchar
 modifier|*
 name|gimp_text_tool_editor_get_text
