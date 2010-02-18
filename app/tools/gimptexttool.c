@@ -1719,7 +1719,7 @@ name|display
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* bail out now if the rectangle is narrow and the button press is        * outside the layer        */
+comment|/*  bail out now if the user user clicked on a handle of an        *  existing rectangle        */
 if|if
 condition|(
 name|text_tool
@@ -1875,7 +1875,14 @@ name|TRUE
 argument_list|)
 condition|)
 block|{
-comment|/*  if we clicked on a text layer while the tool was idle            *  (didn't show a rectangle), frame the layer and switch to            *  selecting instead of drawing a new rectangle            */
+if|if
+condition|(
+name|press_type
+operator|==
+name|GIMP_BUTTON_PRESS_NORMAL
+condition|)
+block|{
+comment|/*  if we clicked on a text layer while the tool was idle                *  (didn't show a rectangle), frame the layer and switch to                *  selecting instead of drawing a new rectangle                */
 if|if
 condition|(
 name|gimp_rectangle_tool_get_function
@@ -1905,13 +1912,6 @@ name|text_tool
 argument_list|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|press_type
-operator|==
-name|GIMP_BUTTON_PRESS_NORMAL
-condition|)
-block|{
 if|if
 condition|(
 name|text_tool
