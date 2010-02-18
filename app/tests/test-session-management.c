@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<string.h>
 end_include
 
@@ -90,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b7cb600108
+DECL|struct|__anon279019270108
 block|{
 DECL|member|dummy
 name|int
@@ -105,8 +111,13 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b7cb600208
+DECL|struct|__anon279019270208
 block|{
+DECL|member|filename
+name|gchar
+modifier|*
+name|filename
+decl_stmt|;
 DECL|member|md5
 name|gchar
 modifier|*
@@ -127,6 +138,7 @@ specifier|static
 name|gboolean
 name|gimp_test_get_file_state_verbose
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -143,6 +155,7 @@ specifier|static
 name|gboolean
 name|gimp_test_file_state_changes
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -189,6 +202,8 @@ init|=
 block|{
 name|NULL
 block|,
+name|NULL
+block|,
 block|{
 literal|0
 block|,
@@ -200,6 +215,8 @@ name|GimpTestFileState
 name|initial_dockrc_state
 init|=
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 block|{
@@ -215,6 +232,8 @@ init|=
 block|{
 name|NULL
 block|,
+name|NULL
+block|,
 block|{
 literal|0
 block|,
@@ -226,6 +245,8 @@ name|GimpTestFileState
 name|final_dockrc_state
 init|=
 block|{
+name|NULL
+block|,
 name|NULL
 block|,
 block|{
@@ -459,9 +480,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_test_get_file_state_verbose (gchar * filename,GimpTestFileState * filestate)
+DECL|function|gimp_test_get_file_state_verbose (const gchar * filename,GimpTestFileState * filestate)
 name|gimp_test_get_file_state_verbose
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -476,6 +498,15 @@ name|success
 init|=
 name|TRUE
 decl_stmt|;
+name|filestate
+operator|->
+name|filename
+operator|=
+name|g_strdup
+argument_list|(
+name|filename
+argument_list|)
+expr_stmt|;
 comment|/* Get checksum */
 if|if
 condition|(
@@ -624,9 +655,10 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_test_file_state_changes (gchar * filename,GimpTestFileState * state1,GimpTestFileState * state2)
+DECL|function|gimp_test_file_state_changes (const gchar * filename,GimpTestFileState * state1,GimpTestFileState * state2)
 name|gimp_test_file_state_changes
 parameter_list|(
+specifier|const
 name|gchar
 modifier|*
 name|filename
@@ -694,11 +726,37 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|gchar
+name|cmd
+index|[
+literal|400
+index|]
+decl_stmt|;
 name|g_printerr
 argument_list|(
-literal|"'%s' was changed but should not have been\n"
+literal|"'%s' was changed but should not have been. Reason (using system()):\n"
 argument_list|,
 name|filename
+argument_list|)
+expr_stmt|;
+name|sprintf
+argument_list|(
+name|cmd
+argument_list|,
+literal|"diff -u '%s' '%s'"
+argument_list|,
+name|state1
+operator|->
+name|filename
+argument_list|,
+name|state2
+operator|->
+name|filename
+argument_list|)
+expr_stmt|;
+name|system
+argument_list|(
+name|cmd
 argument_list|)
 expr_stmt|;
 return|return
