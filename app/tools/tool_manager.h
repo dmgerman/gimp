@@ -225,6 +225,25 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|tool_manager_key_release_active
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GdkEventKey
+modifier|*
+name|kevent
+parameter_list|,
+name|GimpDisplay
+modifier|*
+name|display
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|tool_manager_focus_display_active
 parameter_list|(
