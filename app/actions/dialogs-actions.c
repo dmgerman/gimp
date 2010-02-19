@@ -843,6 +843,33 @@ name|GIMP_HELP_PREFS_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-input-devices"
+block|,
+name|GIMP_STOCK_DEVICE_STATUS
+block|,
+comment|/* FIXME stock-id */
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"_Input Devices"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Open the input devices editor"
+argument_list|)
+block|,
+literal|"gimp-input-devices-dialog"
+block|,
+name|GIMP_HELP_INPUT_DEVICES
+block|}
+block|,
+block|{
 literal|"dialogs-keyboard-shortcuts"
 block|,
 name|GIMP_STOCK_CHAR_PICKER

@@ -3174,6 +3174,14 @@ value|"gimp-prefs-folders-themes"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_INPUT_DEVICES
+define|#
+directive|define
+name|GIMP_HELP_INPUT_DEVICES
+value|"gimp-help-input-devices"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_KEYBOARD_SHORTCUTS
 define|#
 directive|define
