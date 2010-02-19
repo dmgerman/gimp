@@ -5505,38 +5505,12 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* we need to redraw the rectangle if it is visible and the shape of    * the layer has changed, because of an undo for example.    */
-if|if
-condition|(
-name|strcmp
-argument_list|(
-name|pspec
-operator|->
-name|name
-argument_list|,
-literal|"box-width"
-argument_list|)
-operator|==
-literal|0
-operator|||
-name|strcmp
-argument_list|(
-name|pspec
-operator|->
-name|name
-argument_list|,
-literal|"box-height"
-argument_list|)
-operator|==
-literal|0
-condition|)
-block|{
+comment|/* we need to redraw the rectangle in any case because whatever changes    * to the text can change its size    */
 name|gimp_text_tool_frame_item
 argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
-block|}
 comment|/* if the text has changed, (probably because of an undo), we put    * the new text into the text buffer    */
 if|if
 condition|(
