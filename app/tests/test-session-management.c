@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279019270108
+DECL|struct|__anon2ad8428e0108
 block|{
 DECL|member|dummy
 name|int
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279019270208
+DECL|struct|__anon2ad8428e0208
 block|{
 DECL|member|filename
 name|gchar
@@ -739,9 +739,14 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-name|sprintf
+name|g_snprintf
 argument_list|(
 name|cmd
+argument_list|,
+sizeof|sizeof
+argument_list|(
+name|cmd
+argument_list|)
 argument_list|,
 literal|"diff -u '%s' '%s'"
 argument_list|,
