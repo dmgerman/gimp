@@ -5594,7 +5594,6 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
-return|return;
 block|}
 block|}
 end_function
