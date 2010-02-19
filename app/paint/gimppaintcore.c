@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2802e5880103
+DECL|enum|__anon28da82bd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1719,7 +1719,17 @@ operator|->
 name|y1
 operator|)
 condition|)
+block|{
+name|gimp_viewable_preview_thaw
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|drawable
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 if|if
 condition|(
 name|push_undo
