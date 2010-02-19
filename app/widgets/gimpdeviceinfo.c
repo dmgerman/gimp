@@ -91,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon278468400103
+DECL|enum|__anon2ae614c30103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -104,7 +104,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278468400203
+DECL|enum|__anon2ae614c30203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -352,9 +352,8 @@ name|viewable_class
 operator|->
 name|default_stock_id
 operator|=
-name|GIMP_STOCK_DEVICE_STATUS
+name|GIMP_STOCK_INPUT_DEVICE
 expr_stmt|;
-comment|/* FIXME */
 name|g_object_class_install_property
 argument_list|(
 name|object_class

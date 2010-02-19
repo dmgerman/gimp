@@ -818,6 +818,11 @@ define|#
 directive|define
 name|GIMP_STOCK_DEVICE_STATUS
 value|"gimp-device-status"
+DECL|macro|GIMP_STOCK_INPUT_DEVICE
+define|#
+directive|define
+name|GIMP_STOCK_INPUT_DEVICE
+value|"gimp-input-device"
 DECL|macro|GIMP_STOCK_CURSOR
 define|#
 directive|define

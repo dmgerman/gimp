@@ -845,9 +845,8 @@ block|,
 block|{
 literal|"dialogs-input-devices"
 block|,
-name|GIMP_STOCK_DEVICE_STATUS
+name|GIMP_STOCK_INPUT_DEVICE
 block|,
-comment|/* FIXME stock-id */
 name|NC_
 argument_list|(
 literal|"dialogs-action"
