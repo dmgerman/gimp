@@ -5556,7 +5556,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|text_tool
 operator|->
-name|proxy
+name|text_buffer
 argument_list|,
 name|gimp_text_tool_text_buffer_changed
 argument_list|,
@@ -5581,7 +5581,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|text_tool
 operator|->
-name|proxy
+name|text_buffer
 argument_list|,
 name|gimp_text_tool_text_buffer_changed
 argument_list|,
@@ -7358,6 +7358,11 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_text_tool_update_layout
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -7371,25 +7376,17 @@ modifier|*
 name|text_tool
 parameter_list|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 if|if
 condition|(
-operator|!
 name|text_tool
 operator|->
 name|text
 condition|)
 block|{
-name|gimp_text_tool_update_proxy
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
-return|return;
-block|}
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
 if|if
 condition|(
 name|text_tool
@@ -7430,6 +7427,7 @@ argument_list|,
 name|image
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -548,11 +548,6 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_update_layout
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|options
@@ -833,11 +828,6 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_update_layout
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GDK_Tab
@@ -856,11 +846,6 @@ literal|"\t"
 argument_list|)
 expr_stmt|;
 name|gimp_text_tool_reset_im_context
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
-name|gimp_text_tool_update_layout
 argument_list|(
 name|text_tool
 argument_list|)
@@ -3426,6 +3411,7 @@ operator|->
 name|preedit_string
 argument_list|)
 expr_stmt|;
+comment|/* FIXME: call gimp_text_tool_update_layout() here, and make sure    * the preedit string is *only* honored for the display, and never    * ends up on the text object    */
 name|gimp_text_tool_update_proxy
 argument_list|(
 name|text_tool
