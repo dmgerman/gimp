@@ -1130,6 +1130,13 @@ name|event_delay
 operator|=
 name|TRUE
 expr_stmt|;
+name|gimp_display_shell_push_event_history
+argument_list|(
+name|shell
+argument_list|,
+name|coords
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 else|else
