@@ -204,10 +204,6 @@ name|gchar
 modifier|*
 name|preedit_string
 decl_stmt|;
-DECL|member|preedit_len
-name|gint
-name|preedit_len
-decl_stmt|;
 DECL|member|preedit_cursor
 name|gint
 name|preedit_cursor

@@ -361,12 +361,6 @@ name|NULL
 expr_stmt|;
 name|text_tool
 operator|->
-name|preedit_len
-operator|=
-literal|0
-expr_stmt|;
-name|text_tool
-operator|->
 name|preedit_cursor
 operator|=
 literal|0
@@ -3398,17 +3392,6 @@ operator|&
 name|text_tool
 operator|->
 name|preedit_cursor
-argument_list|)
-expr_stmt|;
-name|text_tool
-operator|->
-name|preedit_len
-operator|=
-name|strlen
-argument_list|(
-name|text_tool
-operator|->
-name|preedit_string
 argument_list|)
 expr_stmt|;
 comment|/* FIXME: call gimp_text_tool_update_layout() here, and make sure    * the preedit string is *only* honored for the display, and never    * ends up on the text object    */
