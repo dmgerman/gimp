@@ -2100,6 +2100,13 @@ expr_stmt|;
 return|return;
 block|}
 block|}
+if|if
+condition|(
+name|press_type
+operator|==
+name|GIMP_BUTTON_PRESS_NORMAL
+condition|)
+block|{
 comment|/*  create a new text layer  */
 name|text_tool
 operator|->
@@ -2121,6 +2128,7 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
+block|}
 name|gimp_draw_tool_resume
 argument_list|(
 name|GIMP_DRAW_TOOL
