@@ -72,7 +72,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bae2bb80108
+DECL|struct|__anon2c1bf4b30108
 block|{
 DECL|member|dummy
 name|int
@@ -257,7 +257,7 @@ name|dock
 operator|=
 name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()
@@ -270,7 +270,7 @@ name|toolbox
 operator|=
 name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()

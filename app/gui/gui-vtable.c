@@ -1606,7 +1606,7 @@ name|data
 argument_list|,
 name|global_display_factory
 argument_list|,
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 block|}

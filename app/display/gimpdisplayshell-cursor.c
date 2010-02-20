@@ -540,7 +540,7 @@ name|factory
 operator|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 expr_stmt|;
 name|session_info
@@ -695,7 +695,7 @@ name|factory
 operator|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 expr_stmt|;
 name|session_info

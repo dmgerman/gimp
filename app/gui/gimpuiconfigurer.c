@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2903217f0103
+DECL|enum|__anon28889f810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -580,7 +580,7 @@ name|g_list_copy
 argument_list|(
 name|gimp_dialog_factory_get_open_dialogs
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -740,7 +740,7 @@ condition|)
 block|{
 name|gimp_dialog_factory_remove_dialog
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|GTK_WIDGET
 argument_list|(
@@ -983,7 +983,7 @@ name|dock_window
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|screen
 argument_list|,
@@ -1111,7 +1111,7 @@ name|global_menu_factory
 argument_list|,
 name|global_display_factory
 argument_list|,
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 comment|/* Move the shell there */

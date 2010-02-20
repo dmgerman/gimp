@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d4c1970108
+DECL|struct|__anon28a3e0370108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -561,7 +561,7 @@ name|dock_factory
 init|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 decl_stmt|;
 name|GtkWidget
@@ -923,7 +923,7 @@ name|dock_window
 operator|=
 name|gimp_ui_find_non_toolbox_dock_window
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|g_assert
@@ -938,7 +938,7 @@ name|session_infos
 operator|=
 name|gimp_dialog_factory_get_session_infos
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|n_session_infos_before_close
@@ -965,7 +965,7 @@ name|session_infos
 operator|=
 name|gimp_dialog_factory_get_session_infos
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|n_session_infos_after_close
@@ -1005,7 +1005,7 @@ name|session_infos
 operator|=
 name|gimp_dialog_factory_get_session_infos
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|n_session_infos_after_restore
@@ -1104,7 +1104,7 @@ name|dock_window
 operator|=
 name|gimp_ui_find_non_toolbox_dock_window
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|g_assert

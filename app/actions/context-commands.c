@@ -3484,7 +3484,7 @@ name|dialog_factory
 operator|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3558,7 +3558,7 @@ name|dialog_factory
 operator|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail

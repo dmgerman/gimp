@@ -751,7 +751,7 @@ literal|1
 argument_list|,
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 argument_list|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
@@ -1688,7 +1688,7 @@ literal|1
 argument_list|,
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 argument_list|,
 name|dialog_identifier

@@ -1128,7 +1128,7 @@ name|dockable
 operator|=
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|screen
 argument_list|,

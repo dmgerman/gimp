@@ -138,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4d389c0103
+DECL|enum|__anon2a0cce3c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2241,7 +2241,7 @@ name|dialog_factory
 operator|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_dialog_raise

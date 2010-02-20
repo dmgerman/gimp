@@ -296,7 +296,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_session_info
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|info
 argument_list|)
@@ -305,7 +305,7 @@ name|gimp_session_info_restore
 argument_list|(
 name|info
 argument_list|,
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_clear_info
@@ -341,7 +341,7 @@ name|toolbox
 operator|=
 name|gimp_dialog_factory_dock_with_window_new
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()

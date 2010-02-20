@@ -143,7 +143,7 @@ name|value
 condition|)
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

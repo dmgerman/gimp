@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b940d920103
+DECL|enum|__anon27f2e2a40103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2592,7 +2592,7 @@ name|dialog_factory
 operator|=
 name|gimp_dialog_factory_from_name
 argument_list|(
-literal|"dock"
+literal|"toplevel"
 argument_list|)
 expr_stmt|;
 if|if

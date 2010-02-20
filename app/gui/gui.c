@@ -2759,7 +2759,7 @@ name|session_info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dock_factory
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-device-status"
 argument_list|)
