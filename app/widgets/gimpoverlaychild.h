@@ -40,6 +40,10 @@ name|GdkWindow
 modifier|*
 name|window
 decl_stmt|;
+DECL|member|has_position
+name|gboolean
+name|has_position
+decl_stmt|;
 DECL|member|xalign
 name|gdouble
 name|xalign
@@ -47,6 +51,14 @@ decl_stmt|;
 DECL|member|yalign
 name|gdouble
 name|yalign
+decl_stmt|;
+DECL|member|x
+name|gdouble
+name|x
+decl_stmt|;
+DECL|member|y
+name|gdouble
+name|y
 decl_stmt|;
 DECL|member|angle
 name|gdouble

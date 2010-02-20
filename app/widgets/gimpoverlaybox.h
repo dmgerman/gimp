@@ -145,7 +145,7 @@ name|gimp_overlay_box_add_child
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
-name|canvas
+name|box
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -162,11 +162,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_overlay_box_set_child_packing
+name|gimp_overlay_box_set_child_alignment
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
-name|canvas
+name|box
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -177,6 +177,27 @@ name|xalign
 parameter_list|,
 name|gdouble
 name|yalign
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_overlay_box_set_child_position
+parameter_list|(
+name|GimpOverlayBox
+modifier|*
+name|box
+parameter_list|,
+name|GtkWidget
+modifier|*
+name|child
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -187,7 +208,7 @@ name|gimp_overlay_box_set_child_angle
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
-name|canvas
+name|box
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -205,7 +226,7 @@ name|gimp_overlay_box_set_child_opacity
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
-name|canvas
+name|box
 parameter_list|,
 name|GtkWidget
 modifier|*
@@ -223,7 +244,7 @@ name|gimp_overlay_box_scroll
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
-name|canvas
+name|box
 parameter_list|,
 name|gint
 name|offset_x
