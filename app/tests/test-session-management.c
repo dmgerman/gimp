@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2982e0108
+DECL|struct|__anon28efaca60108
 block|{
 DECL|member|dummy
 name|int
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd2982e0208
+DECL|struct|__anon28efaca60208
 block|{
 DECL|member|filename
 name|gchar
@@ -319,7 +319,7 @@ name|dockrc_filename
 operator|=
 name|gimp_personal_rc_file
 argument_list|(
-literal|"dockrc"
+literal|"dockrc-expected"
 argument_list|)
 expr_stmt|;
 comment|/* Remeber the modtimes and MD5s */

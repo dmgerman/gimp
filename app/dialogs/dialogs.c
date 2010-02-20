@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * dialogs.c  * Copyright (C) 2010 Martin Nordholts<martinn@src.gnome.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -1827,6 +1827,53 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|dialogs_ensure_factory_entry_on_recent_dock (GimpSessionInfo * info)
+name|dialogs_ensure_factory_entry_on_recent_dock
+parameter_list|(
+name|GimpSessionInfo
+modifier|*
+name|info
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|gimp_session_info_get_factory_entry
+argument_list|(
+name|info
+argument_list|)
+condition|)
+block|{
+name|GimpDialogFactoryEntry
+modifier|*
+name|entry
+init|=
+name|NULL
+decl_stmt|;
+comment|/* The recent docks container only contains session infos for        * dock windows        */
+name|entry
+operator|=
+name|gimp_dialog_factory_find_entry
+argument_list|(
+name|global_dialog_factory
+argument_list|,
+literal|"gimp-dock-window"
+argument_list|)
+expr_stmt|;
+name|gimp_session_info_set_factory_entry
+argument_list|(
+name|info
+argument_list|,
+name|entry
+argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|dialogs_load_recent_docks (Gimp * gimp)
 name|dialogs_load_recent_docks
@@ -1924,6 +1971,19 @@ name|error
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* In GIMP 2.6 dockrc did not contain the factory entries for the    * session infos, so set that up manually if needed    */
+name|gimp_container_foreach
+argument_list|(
+name|global_recent_docks
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|dialogs_ensure_factory_entry_on_recent_dock
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|gimp_list_reverse
 argument_list|(
 name|GIMP_LIST
