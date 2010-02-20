@@ -635,18 +635,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gui_display_remove
-parameter_list|(
-name|GimpContainer
-modifier|*
-name|displays
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_comment
 comment|/*  private variables  */
 end_comment
@@ -1574,22 +1562,6 @@ argument_list|,
 name|gimp
 argument_list|)
 expr_stmt|;
-name|g_signal_connect
-argument_list|(
-name|gimp
-operator|->
-name|displays
-argument_list|,
-literal|"remove"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gui_display_remove
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/* make sure the monitor resolution is valid */
 if|if
 condition|(
@@ -2388,17 +2360,6 @@ argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
 argument_list|(
-name|gimp
-operator|->
-name|displays
-argument_list|,
-name|gui_display_remove
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_handlers_disconnect_by_func
-argument_list|(
 name|gimp_get_user_context
 argument_list|(
 name|gimp
@@ -3084,31 +3045,6 @@ name|image_ui_manager
 argument_list|,
 name|display
 argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gui_display_remove (GimpContainer * displays)
-name|gui_display_remove
-parameter_list|(
-name|GimpContainer
-modifier|*
-name|displays
-parameter_list|)
-block|{
-comment|/* show the toolbox when the last image window is closed */
-if|if
-condition|(
-name|gimp_container_is_empty
-argument_list|(
-name|displays
-argument_list|)
-condition|)
-name|windows_show_toolbox
-argument_list|()
 expr_stmt|;
 block|}
 end_function
