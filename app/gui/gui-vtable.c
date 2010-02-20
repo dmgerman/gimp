@@ -1604,7 +1604,7 @@ name|image_managers
 operator|->
 name|data
 argument_list|,
-name|global_display_factory
+name|global_dialog_factory
 argument_list|,
 name|global_dialog_factory
 argument_list|)

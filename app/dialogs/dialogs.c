@@ -122,16 +122,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|global_display_factory
-name|GimpDialogFactory
-modifier|*
-name|global_display_factory
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|global_recent_docks
 name|GimpContainer
 modifier|*
@@ -177,6 +167,48 @@ comment|/* remember_size    */
 value|, \     FALSE
 comment|/* remember_if_open */
 value|, \     TRUE
+comment|/* hideable         */
+value|, \     FALSE
+comment|/* dockable         */
+value|}
+end_define
+
+begin_define
+DECL|macro|FOREIGN_NOT_HIDEABLE (id,singleton,remember_size)
+define|#
+directive|define
+name|FOREIGN_NOT_HIDEABLE
+parameter_list|(
+name|id
+parameter_list|,
+name|singleton
+parameter_list|,
+name|remember_size
+parameter_list|)
+define|\
+value|{ id
+comment|/* identifier       */
+value|, \     NULL
+comment|/* name             */
+value|, \     NULL
+comment|/* blurb            */
+value|, \     NULL
+comment|/* stock_id         */
+value|, \     NULL
+comment|/* help_id          */
+value|, \     NULL
+comment|/* new_func         */
+value|, \     0
+comment|/* view_size        */
+value|, \     singleton
+comment|/* singleton        */
+value|, \     TRUE
+comment|/* session_managed  */
+value|, \     remember_size
+comment|/* remember_size    */
+value|, \     FALSE
+comment|/* remember_if_open */
+value|, \     FALSE
 comment|/* hideable         */
 value|, \     FALSE
 comment|/* dockable         */
@@ -1531,19 +1563,30 @@ name|DOCKABLE
 argument_list|(
 literal|"gimp-palette-editor"
 argument_list|,
-argument|N_(
+name|N_
+argument_list|(
 literal|"Palette Editor"
-argument|)
+argument_list|)
 argument_list|,
-argument|NULL
+name|NULL
 argument_list|,
-argument|GIMP_STOCK_PALETTE
+name|GIMP_STOCK_PALETTE
 argument_list|,
-argument|GIMP_HELP_PALETTE_EDITOR_DIALOG
+name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 argument_list|,
-argument|dialogs_palette_editor_get
+name|dialogs_palette_editor_get
 argument_list|,
 literal|0
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
+comment|/*  emtpy image window  */
+name|FOREIGN_NOT_HIDEABLE
+argument_list|(
+literal|"gimp-empty-image-window"
+argument_list|,
+argument|TRUE
 argument_list|,
 argument|TRUE
 argument_list|)
@@ -1588,27 +1631,11 @@ name|menu_factory
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* Toplevel */
 name|global_dialog_factory
 operator|=
 name|gimp_dialog_factory_new
 argument_list|(
 literal|"toplevel"
-argument_list|,
-name|gimp_get_user_context
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|menu_factory
-argument_list|)
-expr_stmt|;
-comment|/* Display */
-name|global_display_factory
-operator|=
-name|gimp_dialog_factory_new
-argument_list|(
-literal|"display"
 argument_list|,
 name|gimp_get_user_context
 argument_list|(
@@ -1736,38 +1763,6 @@ operator|.
 name|dockable
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factory_register_entry
-argument_list|(
-name|global_display_factory
-argument_list|,
-literal|"gimp-empty-image-window"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-operator|-
-literal|1
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
 name|global_recent_docks
 operator|=
 name|gimp_list_new
@@ -1809,21 +1804,6 @@ name|global_dialog_factory
 argument_list|)
 expr_stmt|;
 name|global_dialog_factory
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-if|if
-condition|(
-name|global_display_factory
-condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|global_display_factory
-argument_list|)
-expr_stmt|;
-name|global_display_factory
 operator|=
 name|NULL
 expr_stmt|;

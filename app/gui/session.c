@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbe8e8e0103
+DECL|enum|__anon2a2cc5c60103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -447,7 +447,7 @@ name|factory_name
 argument_list|)
 condition|)
 break|break;
-comment|/* In versions<= GIMP 2.6 there was a "toolbox", a                * "dock" and a "toplevel" factory. These are now merged                * so if the factory name is "toolbox" or "dock", get                * the "toplevel" factory instead. We don't change                * factory_name because we need it below                */
+comment|/* In versions<= GIMP 2.6 there was a "toolbox", a                * "dock", a "display" and a "toplevel" factory. These                * are now merged so if the factory name is "toolbox",                * "dock" or "display", get the "toplevel" factory                * instead. We don't change factory_name though because                * we need it below                */
 name|factory
 operator|=
 name|gimp_dialog_factory_from_name
@@ -465,6 +465,15 @@ operator|||
 name|strcmp
 argument_list|(
 literal|"dock"
+argument_list|,
+name|factory_name
+argument_list|)
+operator|==
+literal|0
+operator|||
+name|strcmp
+argument_list|(
+literal|"display"
 argument_list|,
 name|factory_name
 argument_list|)
