@@ -117,30 +117,9 @@ directive|include
 file|"gimp-log.h"
 end_include
 
-begin_typedef
-typedef|typedef
-enum|enum
-DECL|enum|__anon2bf2cf770103
-block|{
-DECL|enumerator|GIMP_DIALOGS_SHOWN
-name|GIMP_DIALOGS_SHOWN
-block|,
-DECL|enumerator|GIMP_DIALOGS_HIDDEN_EXPLICITLY
-name|GIMP_DIALOGS_HIDDEN_EXPLICITLY
-block|,
-comment|/* user used the Tab key to hide dialogs */
-DECL|enumerator|GIMP_DIALOGS_HIDDEN_WITH_DISPLAY
-name|GIMP_DIALOGS_HIDDEN_WITH_DISPLAY
-comment|/* dialogs are hidden with the display   */
-DECL|typedef|GimpDialogsState
-block|}
-name|GimpDialogsState
-typedef|;
-end_typedef
-
 begin_enum
 enum|enum
-DECL|enum|__anon2bf2cf770203
+DECL|enum|__anon296776500103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -3891,7 +3870,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_dialog_factories_set_state (GimpDialogsState state)
 name|gimp_dialog_factories_set_state
@@ -3954,6 +3932,20 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+end_function
+
+begin_function
+name|GimpDialogsState
+DECL|function|gimp_dialog_factories_get_state (void)
+name|gimp_dialog_factories_get_state
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+return|return
+name|dialogs_state
+return|;
 block|}
 end_function
 
