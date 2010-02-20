@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b6b7930103
+DECL|enum|__anon2c1d25fa0103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -136,6 +136,11 @@ decl_stmt|;
 DECL|member|remember_if_open
 name|gboolean
 name|remember_if_open
+decl_stmt|;
+comment|/* If TRUE the visibility of the dialog is toggleable */
+DECL|member|hideable
+name|gboolean
+name|hideable
 decl_stmt|;
 comment|/* If TRUE the entry is for a dockable, FALSE otherwise */
 DECL|member|dockable
@@ -326,9 +331,6 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
-parameter_list|,
-name|gboolean
-name|toggle_visibility
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -396,6 +398,9 @@ name|remember_size
 parameter_list|,
 name|gboolean
 name|remember_if_open
+parameter_list|,
+name|gboolean
+name|hideable
 parameter_list|,
 name|gboolean
 name|dockable

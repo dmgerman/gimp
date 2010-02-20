@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2909bad20103
+DECL|enum|__anon2c2760bc0103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2909bad20203
+DECL|enum|__anon2c2760bc0203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -177,10 +177,6 @@ DECL|member|registered_dialogs
 name|GList
 modifier|*
 name|registered_dialogs
-decl_stmt|;
-DECL|member|toggle_visibility
-name|gboolean
-name|toggle_visibility
 decl_stmt|;
 block|}
 struct|;
@@ -974,7 +970,7 @@ end_function
 begin_function
 name|GimpDialogFactory
 modifier|*
-DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpMenuFactory * menu_factory,gboolean toggle_visibility)
+DECL|function|gimp_dialog_factory_new (const gchar * name,GimpContext * context,GimpMenuFactory * menu_factory)
 name|gimp_dialog_factory_new
 parameter_list|(
 specifier|const
@@ -989,9 +985,6 @@ parameter_list|,
 name|GimpMenuFactory
 modifier|*
 name|menu_factory
-parameter_list|,
-name|gboolean
-name|toggle_visibility
 parameter_list|)
 block|{
 name|GimpDialogFactory
@@ -1113,14 +1106,6 @@ name|menu_factory
 operator|=
 name|menu_factory
 expr_stmt|;
-name|factory
-operator|->
-name|p
-operator|->
-name|toggle_visibility
-operator|=
-name|toggle_visibility
-expr_stmt|;
 return|return
 name|factory
 return|;
@@ -1194,7 +1179,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean dockable)
+DECL|function|gimp_dialog_factory_register_entry (GimpDialogFactory * factory,const gchar * identifier,const gchar * name,const gchar * blurb,const gchar * stock_id,const gchar * help_id,GimpDialogNewFunc new_func,gint view_size,gboolean singleton,gboolean session_managed,gboolean remember_size,gboolean remember_if_open,gboolean hideable,gboolean dockable)
 name|gimp_dialog_factory_register_entry
 parameter_list|(
 name|GimpDialogFactory
@@ -1243,6 +1228,9 @@ name|remember_size
 parameter_list|,
 name|gboolean
 name|remember_if_open
+parameter_list|,
+name|gboolean
+name|hideable
 parameter_list|,
 name|gboolean
 name|dockable
@@ -1366,6 +1354,16 @@ operator|->
 name|remember_if_open
 operator|=
 name|remember_if_open
+condition|?
+name|TRUE
+else|:
+name|FALSE
+expr_stmt|;
+name|entry
+operator|->
+name|hideable
+operator|=
+name|hideable
 condition|?
 name|TRUE
 else|:
@@ -5287,16 +5285,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-if|if
-condition|(
-operator|!
-name|factory
-operator|->
-name|p
-operator|->
-name|toggle_visibility
-condition|)
-return|return;
 for|for
 control|(
 name|list
@@ -5338,11 +5326,33 @@ name|widget
 argument_list|)
 condition|)
 block|{
+name|GimpDialogFactoryEntry
+modifier|*
+name|entry
+init|=
+name|NULL
+decl_stmt|;
 name|GimpDialogVisibilityState
 name|visibility
 init|=
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
 decl_stmt|;
+name|gimp_dialog_factory_from_widget
+argument_list|(
+name|widget
+argument_list|,
+operator|&
+name|entry
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|entry
+operator|->
+name|hideable
+condition|)
+continue|continue;
 if|if
 condition|(
 name|gtk_widget_get_visible

@@ -176,6 +176,8 @@ value|, \     remember_size
 comment|/* remember_size    */
 value|, \     FALSE
 comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* hideable         */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -220,6 +222,8 @@ value|, \     remember_size
 comment|/* remember_size    */
 value|, \     FALSE
 comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* hideable         */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -271,6 +275,8 @@ comment|/* remember_size    */
 value|, \     TRUE
 comment|/* remember_if_open */
 value|, \     TRUE
+comment|/* hideable         */
+value|, \     TRUE
 comment|/* dockable         */
 value|}
 end_define
@@ -308,6 +314,8 @@ value|, \     FALSE
 comment|/* remember_size    */
 value|, \     FALSE
 comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* hideable         */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -346,6 +354,8 @@ value|, \     TRUE
 comment|/* remember_size    */
 value|, \     TRUE
 comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* hideable         */
 value|, \     FALSE
 comment|/* dockable         */
 value|}
@@ -393,6 +403,8 @@ comment|/* remember_size    */
 value|,  \     TRUE
 comment|/* remember_if_open */
 value|,  \     TRUE
+comment|/* hideable         */
+value|,  \     TRUE
 comment|/* dockable         */
 value|}, \   { "gimp-"#id"-grid"
 comment|/* identifier       */
@@ -416,6 +428,8 @@ value|,  \     FALSE
 comment|/* remember_size    */
 value|,  \     TRUE
 comment|/* remember_if_open */
+value|,  \     TRUE
+comment|/* hideable         */
 value|,  \     TRUE
 comment|/* dockable         */
 value|}
@@ -462,6 +476,8 @@ value|, \     FALSE
 comment|/* remember_size    */
 value|, \     TRUE
 comment|/* remember_if_open */
+value|, \     TRUE
+comment|/* hideable         */
 value|, \     TRUE
 comment|/* dockable         */
 value|}
@@ -1585,8 +1601,6 @@ name|gimp
 argument_list|)
 argument_list|,
 name|menu_factory
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Display */
@@ -1602,8 +1616,6 @@ name|gimp
 argument_list|)
 argument_list|,
 name|menu_factory
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -1714,6 +1726,13 @@ index|[
 name|i
 index|]
 operator|.
+name|hideable
+argument_list|,
+name|entries
+index|[
+name|i
+index|]
+operator|.
 name|dockable
 argument_list|)
 expr_stmt|;
@@ -1741,6 +1760,8 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|TRUE
+argument_list|,
+name|FALSE
 argument_list|,
 name|FALSE
 argument_list|,
