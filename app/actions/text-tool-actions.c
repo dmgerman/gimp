@@ -414,6 +414,20 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_define
+DECL|macro|SET_HIDE_EMPTY (action,condition)
+define|#
+directive|define
+name|SET_HIDE_EMPTY
+parameter_list|(
+name|action
+parameter_list|,
+name|condition
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_hide_empty (group, action, (condition) != 0)
+end_define
+
 begin_function
 name|void
 DECL|function|text_tool_actions_setup (GimpActionGroup * group)
@@ -459,6 +473,13 @@ name|G_CALLBACK
 argument_list|(
 name|text_tool_direction_cmd_callback
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|SET_HIDE_EMPTY
+argument_list|(
+literal|"text-tool-input-methods-menu"
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
