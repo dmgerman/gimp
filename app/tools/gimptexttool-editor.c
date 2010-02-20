@@ -298,7 +298,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_commit_cb
+name|gimp_text_tool_im_commit
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -319,7 +319,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_preedit_start
+name|gimp_text_tool_im_preedit_start
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -335,7 +335,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_preedit_end
+name|gimp_text_tool_im_preedit_end
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -351,7 +351,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_preedit_changed
+name|gimp_text_tool_im_preedit_changed
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -426,7 +426,7 @@ literal|"commit"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_tool_commit_cb
+name|gimp_text_tool_im_commit
 argument_list|)
 argument_list|,
 name|text_tool
@@ -442,7 +442,7 @@ literal|"preedit-start"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_tool_preedit_start
+name|gimp_text_tool_im_preedit_start
 argument_list|)
 argument_list|,
 name|text_tool
@@ -458,7 +458,7 @@ literal|"preedit-end"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_tool_preedit_end
+name|gimp_text_tool_im_preedit_end
 argument_list|)
 argument_list|,
 name|text_tool
@@ -474,7 +474,7 @@ literal|"preedit-changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_tool_preedit_changed
+name|gimp_text_tool_im_preedit_changed
 argument_list|)
 argument_list|,
 name|text_tool
@@ -4399,8 +4399,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_commit_cb (GtkIMContext * context,const gchar * str,GimpTextTool * text_tool)
-name|gimp_text_tool_commit_cb
+DECL|function|gimp_text_tool_im_commit (GtkIMContext * context,const gchar * str,GimpTextTool * text_tool)
+name|gimp_text_tool_im_commit
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -4429,8 +4429,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_preedit_start (GtkIMContext * context,GimpTextTool * text_tool)
-name|gimp_text_tool_preedit_start
+DECL|function|gimp_text_tool_im_preedit_start (GtkIMContext * context,GimpTextTool * text_tool)
+name|gimp_text_tool_im_preedit_start
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -4720,8 +4720,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_preedit_end (GtkIMContext * context,GimpTextTool * text_tool)
-name|gimp_text_tool_preedit_end
+DECL|function|gimp_text_tool_im_preedit_end (GtkIMContext * context,GimpTextTool * text_tool)
+name|gimp_text_tool_im_preedit_end
 parameter_list|(
 name|GtkIMContext
 modifier|*
@@ -4765,8 +4765,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_preedit_changed (GtkIMContext * context,GimpTextTool * text_tool)
-name|gimp_text_tool_preedit_changed
+DECL|function|gimp_text_tool_im_preedit_changed (GtkIMContext * context,GimpTextTool * text_tool)
+name|gimp_text_tool_im_preedit_changed
 parameter_list|(
 name|GtkIMContext
 modifier|*
