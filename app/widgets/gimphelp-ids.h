@@ -3494,6 +3494,14 @@ value|"gimp-windows-show-dock"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_WINDOWS_HIDE_DOCKS
+define|#
+directive|define
+name|GIMP_HELP_WINDOWS_HIDE_DOCKS
+value|"gimp-windows-hide-docks"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_WINDOWS_USE_SINGLE_WINDOW_MODE
 define|#
 directive|define

@@ -407,6 +407,38 @@ index|[]
 init|=
 block|{
 block|{
+literal|"windows-hide-docks"
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"windows-action"
+argument_list|,
+literal|"Hide docks"
+argument_list|)
+block|,
+comment|/* The only reason we have Tab here is to give away the hardcoded      * keyboard shortcut. If the user changes the shortcut to      * something else, both that shortcut and Tab will work. The      * reason we have the shortcut hardcoded is beccause      * gtk_accelerator_valid() returns FALSE for GDK_tab.      */
+literal|"Tab"
+block|,
+name|NC_
+argument_list|(
+literal|"windows-action"
+argument_list|,
+literal|"When enabled docks and other dialogs are hidden, leaving only image windows."
+argument_list|)
+block|,
+name|G_CALLBACK
+argument_list|(
+name|windows_hide_docks_cmd_callback
+argument_list|)
+block|,
+name|FALSE
+block|,
+name|GIMP_HELP_WINDOWS_HIDE_DOCKS
+block|}
+block|,
+block|{
 literal|"windows-use-single-window-mode"
 block|,
 name|NULL
@@ -788,6 +820,18 @@ argument_list|,
 name|config
 operator|->
 name|single_window_mode
+argument_list|)
+expr_stmt|;
+name|SET_ACTIVE
+argument_list|(
+literal|"windows-hide-docks"
+argument_list|,
+operator|(
+name|gimp_dialog_factories_get_state
+argument_list|()
+operator|!=
+name|GIMP_DIALOGS_SHOWN
+operator|)
 argument_list|)
 expr_stmt|;
 undef|#

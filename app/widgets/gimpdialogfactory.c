@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296776500103
+DECL|enum|__anon2b564b540103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -3991,38 +3991,6 @@ block|{
 name|gimp_dialog_factories_set_state
 argument_list|(
 name|GIMP_DIALOGS_HIDDEN_WITH_DISPLAY
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_dialog_factories_toggle (void)
-name|gimp_dialog_factories_toggle
-parameter_list|(
-name|void
-parameter_list|)
-block|{
-if|if
-condition|(
-name|dialogs_state
-operator|==
-name|GIMP_DIALOGS_SHOWN
-condition|)
-block|{
-name|gimp_dialog_factories_set_state
-argument_list|(
-name|GIMP_DIALOGS_HIDDEN_EXPLICITLY
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|gimp_dialog_factories_set_state
-argument_list|(
-name|GIMP_DIALOGS_SHOWN
 argument_list|)
 expr_stmt|;
 block|}
