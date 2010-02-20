@@ -199,6 +199,16 @@ DECL|member|needs_im_reset
 name|gboolean
 name|needs_im_reset
 decl_stmt|;
+DECL|member|preedit_overlay
+name|GtkWidget
+modifier|*
+name|preedit_overlay
+decl_stmt|;
+DECL|member|preedit_label
+name|GtkWidget
+modifier|*
+name|preedit_label
+decl_stmt|;
 DECL|member|preedit_string
 name|gchar
 modifier|*

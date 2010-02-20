@@ -110,13 +110,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
-modifier|*
-name|gimp_text_tool_editor_get_text
+name|void
+name|gimp_text_tool_editor_get_cursor_rect
 parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
+parameter_list|,
+name|PangoRectangle
+modifier|*
+name|cursor_rect
+parameter_list|,
+name|gint
+modifier|*
+name|logical_off_x
+parameter_list|,
+name|gint
+modifier|*
+name|logical_off_y
 parameter_list|)
 function_decl|;
 end_function_decl
