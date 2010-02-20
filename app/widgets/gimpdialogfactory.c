@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c2760bc0103
+DECL|enum|__anon29a113880103
 block|{
 DECL|enumerator|GIMP_DIALOGS_SHOWN
 name|GIMP_DIALOGS_SHOWN
@@ -134,7 +134,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2760bc0203
+DECL|enum|__anon29a113880203
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -5064,18 +5064,6 @@ name|gimp_object_get_name
 argument_list|(
 name|factory
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_config_writer_string
-argument_list|(
-name|writer
-argument_list|,
-name|gimp_session_info_get_factory_entry
-argument_list|(
-name|info
-argument_list|)
-operator|->
-name|identifier
 argument_list|)
 expr_stmt|;
 name|GIMP_CONFIG_GET_INTERFACE

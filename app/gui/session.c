@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2cc5c60103
+DECL|enum|__anon2a58508f0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -426,11 +426,6 @@ name|entry
 init|=
 name|NULL
 decl_stmt|;
-name|gboolean
-name|skip
-init|=
-name|FALSE
-decl_stmt|;
 name|token
 operator|=
 name|G_TOKEN_STRING
@@ -492,9 +487,12 @@ operator|!
 name|factory
 condition|)
 break|break;
-if|if
-condition|(
-operator|!
+name|info
+operator|=
+name|gimp_session_info_new
+argument_list|()
+expr_stmt|;
+comment|/* GIMP 2.6 has the entry name as part of the                * session-info header, so try to get it                */
 name|gimp_scanner_parse_string
 argument_list|(
 name|scanner
@@ -502,14 +500,13 @@ argument_list|,
 operator|&
 name|entry_name
 argument_list|)
-condition|)
-break|break;
-name|info
-operator|=
-name|gimp_session_info_new
-argument_list|()
 expr_stmt|;
-comment|/* Previously, GimpDock was a toplevel. That is why                * versions<= GIMP 2.6 has "dock" as the entry name. We                * want "dock" to be interpreted as 'dock window'                * however so have some special-casing for that. When                * the entry name is "dock" the factory name is either                * "dock" or "toolbox".                */
+if|if
+condition|(
+name|entry_name
+condition|)
+block|{
+comment|/* Previously, GimpDock was a toplevel. That is why                    * versions<= GIMP 2.6 has "dock" as the entry name. We                    * want "dock" to be interpreted as 'dock window'                    * however so have some special-casing for that. When                    * the entry name is "dock" the factory name is either                    * "dock" or "toolbox".                    */
 if|if
 condition|(
 name|strcmp
@@ -557,6 +554,7 @@ name|entry_name
 argument_list|)
 expr_stmt|;
 block|}
+block|}
 comment|/* We're done with these now */
 name|g_free
 argument_list|(
@@ -568,6 +566,7 @@ argument_list|(
 name|entry_name
 argument_list|)
 expr_stmt|;
+comment|/* We can get the factory entry either now (the GIMP<=                * 2.6 way), or when we deserialize (the GIMP 2.8 way)                */
 if|if
 condition|(
 name|entry
@@ -581,13 +580,7 @@ name|entry
 argument_list|)
 expr_stmt|;
 block|}
-else|else
-block|{
-name|skip
-operator|=
-name|TRUE
-expr_stmt|;
-block|}
+comment|/* Always try to deserialize */
 if|if
 condition|(
 name|gimp_config_deserialize
@@ -605,10 +598,13 @@ name|NULL
 argument_list|)
 condition|)
 block|{
+comment|/* Make sure we got a factory entry either the 2.6                    * or 2.8 way                    */
 if|if
 condition|(
-operator|!
-name|skip
+name|gimp_session_info_get_factory_entry
+argument_list|(
+name|info
+argument_list|)
 condition|)
 block|{
 name|GIMP_LOG

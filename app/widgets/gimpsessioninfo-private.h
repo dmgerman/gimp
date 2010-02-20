@@ -21,6 +21,12 @@ DECL|struct|_GimpSessionInfoPrivate
 struct|struct
 name|_GimpSessionInfoPrivate
 block|{
+comment|/*  the dialog factory entry for object we have session info for    *  note that pure "dock" entries don't have any factory entry    */
+DECL|member|factory_entry
+name|GimpDialogFactoryEntry
+modifier|*
+name|factory_entry
+decl_stmt|;
 DECL|member|x
 name|gint
 name|x
@@ -64,12 +70,6 @@ DECL|member|widget
 name|GtkWidget
 modifier|*
 name|widget
-decl_stmt|;
-comment|/*  the dialog factory entry for object we have session info for    *  note that pure "dock" entries don't have any factory entry    */
-DECL|member|factory_entry
-name|GimpDialogFactoryEntry
-modifier|*
-name|factory_entry
 decl_stmt|;
 comment|/*  list of GimpSessionInfoDock  */
 DECL|member|docks
