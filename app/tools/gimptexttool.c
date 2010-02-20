@@ -736,7 +736,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_text_buffer_changed
+name|gimp_text_tool_buffer_changed
 parameter_list|(
 name|GtkTextBuffer
 modifier|*
@@ -1110,7 +1110,7 @@ literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_tool_text_buffer_changed
+name|gimp_text_tool_buffer_changed
 argument_list|)
 argument_list|,
 name|text_tool
@@ -4866,7 +4866,7 @@ name|text_tool
 operator|->
 name|text_buffer
 argument_list|,
-name|gimp_text_tool_text_buffer_changed
+name|gimp_text_tool_buffer_changed
 argument_list|,
 name|text_tool
 argument_list|)
@@ -4891,7 +4891,7 @@ name|text_tool
 operator|->
 name|text_buffer
 argument_list|,
-name|gimp_text_tool_text_buffer_changed
+name|gimp_text_tool_buffer_changed
 argument_list|,
 name|text_tool
 argument_list|)
@@ -6591,31 +6591,13 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_text_buffer_changed (GtkTextBuffer * text_buffer,GimpTextTool * text_tool)
-name|gimp_text_tool_text_buffer_changed
+DECL|function|gimp_text_tool_buffer_changed (GtkTextBuffer * text_buffer,GimpTextTool * text_tool)
+name|gimp_text_tool_buffer_changed
 parameter_list|(
 name|GtkTextBuffer
 modifier|*
 name|text_buffer
 parameter_list|,
-name|GimpTextTool
-modifier|*
-name|text_tool
-parameter_list|)
-block|{
-name|gimp_text_tool_update_proxy
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-name|void
-DECL|function|gimp_text_tool_update_proxy (GimpTextTool * text_tool)
-name|gimp_text_tool_update_proxy
-parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
