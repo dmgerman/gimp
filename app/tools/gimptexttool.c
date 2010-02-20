@@ -6599,11 +6599,6 @@ name|NULL
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_text_tool_update_layout
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
