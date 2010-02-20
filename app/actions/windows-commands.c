@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -339,7 +345,7 @@ condition|)
 block|{
 name|toolbox
 operator|=
-name|gimp_dialog_factory_dock_with_window_new
+name|gimp_dock_with_window_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,

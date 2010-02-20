@@ -463,6 +463,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_dock_with_window_new
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|,
+name|GdkScreen
+modifier|*
+name|screen
+parameter_list|,
+name|gboolean
+name|toolbox
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

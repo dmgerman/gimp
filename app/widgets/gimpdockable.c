@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895f92f0103
+DECL|enum|__anon2b1cc6100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5053,7 +5053,7 @@ argument_list|)
 expr_stmt|;
 name|dock
 operator|=
-name|gimp_dialog_factory_dock_with_window_new
+name|gimp_dock_with_window_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,

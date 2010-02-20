@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpwidgets-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -72,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1bf4b30108
+DECL|struct|__anon2c08bc420108
 block|{
 DECL|member|dummy
 name|int
@@ -255,7 +261,7 @@ name|NULL
 decl_stmt|;
 name|dock
 operator|=
-name|gimp_dialog_factory_dock_with_window_new
+name|gimp_dock_with_window_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
@@ -268,7 +274,7 @@ argument_list|)
 expr_stmt|;
 name|toolbox
 operator|=
-name|gimp_dialog_factory_dock_with_window_new
+name|gimp_dock_with_window_new
 argument_list|(
 name|global_dialog_factory
 argument_list|,
