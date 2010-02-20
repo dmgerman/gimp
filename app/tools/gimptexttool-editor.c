@@ -2140,6 +2140,12 @@ operator|&
 name|logical
 argument_list|)
 expr_stmt|;
+name|x_pos
+operator|+=
+name|logical
+operator|.
+name|x
+expr_stmt|;
 name|pango_layout_iter_free
 argument_list|(
 name|layout_iter
@@ -2164,6 +2170,10 @@ name|x
 operator|||
 name|x_pos
 operator|>=
+name|logical
+operator|.
+name|x
+operator|+
 name|logical
 operator|.
 name|width
@@ -2261,6 +2271,10 @@ argument_list|(
 name|layout_line
 argument_list|,
 name|x_pos
+operator|-
+name|logical
+operator|.
+name|x
 argument_list|,
 operator|&
 name|cursor_index
