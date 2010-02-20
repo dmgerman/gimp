@@ -168,6 +168,12 @@ DECL|member|text_box_fixed
 name|gboolean
 name|text_box_fixed
 decl_stmt|;
+DECL|member|layout
+name|GimpTextLayout
+modifier|*
+name|layout
+decl_stmt|;
+comment|/* text editor state: */
 DECL|member|selecting
 name|gboolean
 name|selecting
@@ -184,12 +190,6 @@ DECL|member|select_lines
 name|gboolean
 name|select_lines
 decl_stmt|;
-DECL|member|layout
-name|GimpTextLayout
-modifier|*
-name|layout
-decl_stmt|;
-comment|/* text editor state: */
 DECL|member|im_context
 name|GtkIMContext
 modifier|*
