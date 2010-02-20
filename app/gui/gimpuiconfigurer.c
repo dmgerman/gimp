@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be50d170103
+DECL|enum|__anon2980b6480103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1108,8 +1108,6 @@ argument_list|,
 name|NULL
 argument_list|,
 name|global_menu_factory
-argument_list|,
-name|global_dialog_factory
 argument_list|,
 name|global_dialog_factory
 argument_list|)

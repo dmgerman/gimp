@@ -176,11 +176,7 @@ name|popup_manager
 parameter_list|,
 name|GimpDialogFactory
 modifier|*
-name|display_factory
-parameter_list|,
-name|GimpDialogFactory
-modifier|*
-name|dock_factory
+name|dialog_factory
 parameter_list|)
 function_decl|;
 end_function_decl
