@@ -1767,6 +1767,8 @@ index|]
 operator|.
 name|direction
 operator|=
+literal|1.0
+operator|-
 name|atan
 argument_list|(
 name|delta_y
