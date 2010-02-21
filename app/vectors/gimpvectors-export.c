@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpunit.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpanchor.h"
 end_include
 
@@ -729,12 +723,8 @@ literal|"%g"
 argument_list|,
 name|w
 operator|*
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|unit
 argument_list|)
 argument_list|)
@@ -752,12 +742,8 @@ literal|"%g"
 argument_list|,
 name|h
 operator|*
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|unit
 argument_list|)
 argument_list|)

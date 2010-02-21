@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimptoolinfo.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpunit.h"
 end_include
 
 begin_include
@@ -2626,23 +2626,15 @@ argument_list|)
 argument_list|,
 literal|"%%.%df %s.  %%s"
 argument_list|,
-name|_gimp_unit_get_digits
+name|gimp_unit_get_digits
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|shell
 operator|->
 name|unit
 argument_list|)
 argument_list|,
-name|_gimp_unit_get_symbol
+name|gimp_unit_get_symbol
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|shell
 operator|->
 name|unit
@@ -2652,12 +2644,8 @@ expr_stmt|;
 name|dist
 operator|=
 operator|(
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|shell
 operator|->
 name|unit

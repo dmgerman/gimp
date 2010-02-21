@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -109,12 +115,6 @@ begin_include
 include|#
 directive|include
 file|"gimpstrokeoptions.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpunit.h"
 end_include
 
 begin_include
@@ -1509,21 +1509,19 @@ name|xres
 argument_list|)
 expr_stmt|;
 name|width
-operator|*=
-operator|(
-name|yres
-operator|/
-name|_gimp_unit_get_factor
+operator|=
+name|gimp_units_to_pixels
 argument_list|(
-name|image
+name|stroke_options
 operator|->
-name|gimp
+name|width
 argument_list|,
 name|stroke_options
 operator|->
 name|unit
+argument_list|,
+name|yres
 argument_list|)
-operator|)
 expr_stmt|;
 block|}
 name|gimp_scan_convert_stroke

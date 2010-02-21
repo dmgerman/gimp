@@ -24,6 +24,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"libgimpbase/gimpbase.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpmath/gimpmath.h"
 end_include
 
@@ -37,12 +43,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpimage.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimpunit.h"
 end_include
 
 begin_include
@@ -140,10 +140,6 @@ specifier|static
 name|gint
 name|gimp_text_layout_pixel_size
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|gdouble
 name|value
 parameter_list|,
@@ -161,10 +157,6 @@ specifier|static
 name|gint
 name|gimp_text_layout_point_size
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|gdouble
 name|value
 parameter_list|,
@@ -419,10 +411,6 @@ name|size
 operator|=
 name|gimp_text_layout_point_size
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|text
 operator|->
 name|font_size
@@ -636,10 +624,6 @@ name|layout
 argument_list|,
 name|gimp_text_layout_pixel_size
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|text
 operator|->
 name|box_width
@@ -662,10 +646,6 @@ name|layout
 argument_list|,
 name|gimp_text_layout_pixel_size
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|text
 operator|->
 name|indent
@@ -686,10 +666,6 @@ name|layout
 argument_list|,
 name|gimp_text_layout_pixel_size
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|text
 operator|->
 name|line_spacing
@@ -800,10 +776,6 @@ name|PANGO_PIXELS
 argument_list|(
 name|gimp_text_layout_pixel_size
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|text
 operator|->
 name|box_width
@@ -826,10 +798,6 @@ name|PANGO_PIXELS
 argument_list|(
 name|gimp_text_layout_pixel_size
 argument_list|(
-name|image
-operator|->
-name|gimp
-argument_list|,
 name|text
 operator|->
 name|box_height
@@ -2563,13 +2531,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_text_layout_pixel_size (Gimp * gimp,gdouble value,GimpUnit unit,gdouble res)
+DECL|function|gimp_text_layout_pixel_size (gdouble value,GimpUnit unit,gdouble res)
 name|gimp_text_layout_pixel_size
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|gdouble
 name|value
 parameter_list|,
@@ -2599,10 +2563,8 @@ return|;
 default|default:
 name|factor
 operator|=
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|gimp
-argument_list|,
 name|unit
 argument_list|)
 expr_stmt|;
@@ -2631,13 +2593,9 @@ end_function
 begin_function
 specifier|static
 name|gint
-DECL|function|gimp_text_layout_point_size (Gimp * gimp,gdouble value,GimpUnit unit,gdouble res)
+DECL|function|gimp_text_layout_point_size (gdouble value,GimpUnit unit,gdouble res)
 name|gimp_text_layout_point_size
 parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
 name|gdouble
 name|value
 parameter_list|,
@@ -2682,10 +2640,8 @@ name|PANGO_SCALE
 operator|*
 name|value
 operator|*
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_UNIT_POINT
 argument_list|)
 operator|/
@@ -2695,10 +2651,8 @@ return|;
 default|default:
 name|factor
 operator|=
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|gimp
-argument_list|,
 name|unit
 argument_list|)
 expr_stmt|;
@@ -2717,10 +2671,8 @@ name|PANGO_SCALE
 operator|*
 name|value
 operator|*
-name|_gimp_unit_get_factor
+name|gimp_unit_get_factor
 argument_list|(
-name|gimp
-argument_list|,
 name|GIMP_UNIT_POINT
 argument_list|)
 operator|/
