@@ -3115,12 +3115,6 @@ name|gchar
 modifier|*
 name|string
 decl_stmt|;
-if|#
-directive|if
-literal|0
-block|gint             firstline, lastline;   gint             first_x,   last_x;   gdouble          first_tmp, last_tmp;
-endif|#
-directive|endif
 name|gint
 name|i
 decl_stmt|;
@@ -3206,12 +3200,6 @@ operator|->
 name|layout
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|pango_layout_index_to_line_x (layout, min, 0,&firstline,&first_x);   pango_layout_index_to_line_x (layout, max, 0,&lastline,&last_x);    first_tmp = first_x;   last_tmp  = last_x;    gimp_text_layout_transform_distance (text_tool->layout,&first_tmp, NULL);   gimp_text_layout_transform_distance (text_tool->layout,&last_tmp,  NULL);    first_x = PANGO_PIXELS (first_tmp) + logical_off_x;   last_x  = PANGO_PIXELS (last_tmp)  + logical_off_x;
-endif|#
-directive|endif
 name|iter
 operator|=
 name|pango_layout_get_iter
@@ -3256,13 +3244,6 @@ name|ytop
 decl_stmt|,
 name|ybottom
 decl_stmt|;
-name|g_printerr
-argument_list|(
-literal|"index %d is selected\n"
-argument_list|,
-name|i
-argument_list|)
-expr_stmt|;
 name|pango_layout_iter_get_char_extents
 argument_list|(
 name|iter
@@ -3361,12 +3342,6 @@ name|iter
 argument_list|)
 condition|)
 do|;
-if|#
-directive|if
-literal|0
-block|i = 0;    do     {       if (i>= firstline&& i<= lastline)         {           PangoRectangle crect;            pango_layout_iter_get_line_extents (iter, NULL,&crect);           pango_extents_to_pixels (&crect, NULL);            gimp_text_layout_transform_rect (text_tool->layout,&crect);            crect.x += logical_off_x;           crect.y += logical_off_y;            if (i == lastline)             {               crect.width = last_x;             }            if (i == firstline)             {               crect.width -= first_x;               crect.x     += first_x;             }            gimp_draw_tool_draw_rectangle (draw_tool, TRUE,                                          crect.x, crect.y,                                          crect.width, crect.height,                                          TRUE);         }        i++;     }   while (pango_layout_iter_next_line (iter));
-endif|#
-directive|endif
 name|pango_layout_iter_free
 argument_list|(
 name|iter
