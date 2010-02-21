@@ -107,10 +107,13 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon279565e20103
+DECL|enum|__anon278043fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
+block|,
+DECL|enumerator|PROP_TYPE
+name|PROP_TYPE
 block|,
 DECL|enumerator|PROP_USE_PRESSURE
 name|PROP_USE_PRESSURE
@@ -341,6 +344,33 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+name|g_object_class_install_property
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_TYPE
+argument_list|,
+name|g_param_spec_enum
+argument_list|(
+literal|"type"
+argument_list|,
+name|NULL
+argument_list|,
+name|_
+argument_list|(
+literal|"Output type"
+argument_list|)
+argument_list|,
+name|GIMP_TYPE_DYNAMICS_OUTPUT_TYPE
+argument_list|,
+name|GIMP_DYNAMICS_OUTPUT_OPACITY
+argument_list|,
+name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -543,6 +573,19 @@ name|property_id
 condition|)
 block|{
 case|case
+name|PROP_TYPE
+case|:
+name|output
+operator|->
+name|type
+operator|=
+name|g_value_get_enum
+argument_list|(
+name|value
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_USE_PRESSURE
 case|:
 name|output
@@ -672,6 +715,19 @@ name|property_id
 condition|)
 block|{
 case|case
+name|PROP_TYPE
+case|:
+name|g_value_set_enum
+argument_list|(
+name|value
+argument_list|,
+name|output
+operator|->
+name|type
+argument_list|)
+expr_stmt|;
+break|break;
+case|case
 name|PROP_USE_PRESSURE
 case|:
 name|g_value_set_boolean
@@ -771,13 +827,16 @@ end_comment
 begin_function
 name|GimpDynamicsOutput
 modifier|*
-DECL|function|gimp_dynamics_output_new (const gchar * name)
+DECL|function|gimp_dynamics_output_new (const gchar * name,GimpDynamicsOutputType type)
 name|gimp_dynamics_output_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpDynamicsOutputType
+name|type
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -797,6 +856,10 @@ argument_list|,
 literal|"name"
 argument_list|,
 name|name
+argument_list|,
+literal|"type"
+argument_list|,
+name|type
 argument_list|,
 name|NULL
 argument_list|)

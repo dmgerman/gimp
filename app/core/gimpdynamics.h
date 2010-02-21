@@ -198,6 +198,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpDynamicsOutput
+modifier|*
+name|gimp_dynamics_get_output
+parameter_list|(
+name|GimpDynamics
+modifier|*
+name|dynamics
+parameter_list|,
+name|GimpDynamicsOutputType
+name|type_id
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

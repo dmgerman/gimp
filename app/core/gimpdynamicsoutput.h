@@ -103,6 +103,10 @@ DECL|member|parent_instance
 name|GimpObject
 name|parent_instance
 decl_stmt|;
+DECL|member|type
+name|GimpDynamicsOutputType
+name|type
+decl_stmt|;
 DECL|member|use_pressure
 name|gboolean
 name|use_pressure
@@ -193,6 +197,9 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpDynamicsOutputType
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
