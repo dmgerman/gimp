@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ab1794e0108
+DECL|struct|__anon27a5af1c0108
 block|{
 DECL|member|vectors
 name|GimpVectors
@@ -242,6 +242,10 @@ argument_list|(
 name|layout
 argument_list|,
 name|cr
+argument_list|,
+name|text
+operator|->
+name|base_dir
 argument_list|,
 name|TRUE
 argument_list|)

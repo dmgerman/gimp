@@ -28,6 +28,9 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
+name|GimpTextDirection
+name|base_dir
+parameter_list|,
 name|gboolean
 name|path
 parameter_list|)

@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4bfaf70103
+DECL|enum|__anon29d8ee240103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2524,6 +2524,12 @@ argument_list|(
 name|layout
 argument_list|,
 name|cr
+argument_list|,
+name|layer
+operator|->
+name|text
+operator|->
+name|base_dir
 argument_list|,
 name|FALSE
 argument_list|)

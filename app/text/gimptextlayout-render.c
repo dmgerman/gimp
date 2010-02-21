@@ -53,7 +53,7 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_text_layout_render (GimpTextLayout * layout,cairo_t * cr,gboolean path)
+DECL|function|gimp_text_layout_render (GimpTextLayout * layout,cairo_t * cr,GimpTextDirection base_dir,gboolean path)
 name|gimp_text_layout_render
 parameter_list|(
 name|GimpTextLayout
@@ -63,6 +63,9 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
+parameter_list|,
+name|GimpTextDirection
+name|base_dir
 parameter_list|,
 name|gboolean
 name|path
@@ -113,7 +116,7 @@ argument_list|(
 name|layout
 argument_list|)
 expr_stmt|;
-comment|/* If the width of the layout is> 0, then the text-box is FIXED    * and the layout position should be offset if the alignment    * is centered or right-aligned*/
+comment|/* If the width of the layout is> 0, then the text-box is FIXED and    * the layout position should be offset if the alignment is centered    * or right-aligned, also adjust for RTL text direction.    */
 if|if
 condition|(
 name|pango_layout_get_width
@@ -124,6 +127,14 @@ operator|>
 literal|0
 condition|)
 block|{
+name|PangoAlignment
+name|align
+init|=
+name|pango_layout_get_alignment
+argument_list|(
+name|pango_layout
+argument_list|)
+decl_stmt|;
 name|gint
 name|width
 decl_stmt|;
@@ -137,21 +148,29 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-switch|switch
+if|if
 condition|(
-name|pango_layout_get_alignment
-argument_list|(
-name|pango_layout
-argument_list|)
+operator|(
+name|base_dir
+operator|==
+name|GIMP_TEXT_DIRECTION_LTR
+operator|&&
+name|align
+operator|==
+name|PANGO_ALIGN_RIGHT
+operator|)
+operator|||
+operator|(
+name|base_dir
+operator|==
+name|GIMP_TEXT_DIRECTION_RTL
+operator|&&
+name|align
+operator|==
+name|PANGO_ALIGN_LEFT
+operator|)
 condition|)
 block|{
-case|case
-name|PANGO_ALIGN_LEFT
-case|:
-break|break;
-case|case
-name|PANGO_ALIGN_RIGHT
-case|:
 name|x
 operator|+=
 name|PANGO_PIXELS
@@ -164,10 +183,15 @@ argument_list|)
 operator|-
 name|width
 expr_stmt|;
-break|break;
-case|case
+block|}
+elseif|else
+if|if
+condition|(
+name|align
+operator|==
 name|PANGO_ALIGN_CENTER
-case|:
+condition|)
+block|{
 name|x
 operator|+=
 operator|(
@@ -184,7 +208,6 @@ operator|)
 operator|/
 literal|2
 expr_stmt|;
-break|break;
 block|}
 block|}
 name|cairo_translate
