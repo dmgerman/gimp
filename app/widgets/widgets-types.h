@@ -912,6 +912,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpDynamicsOutputEditor
+typedef|typedef
+name|struct
+name|_GimpDynamicsOutputEditor
+name|GimpDynamicsOutputEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpFgBgEditor
 typedef|typedef
 name|struct
