@@ -94,7 +94,7 @@ struct|struct
 name|_GimpDynamicsOutputEditor
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkVBox
 name|parent_instance
 decl_stmt|;
 block|}
@@ -107,7 +107,7 @@ struct|struct
 name|_GimpDynamicsOutputEditorClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 block|}

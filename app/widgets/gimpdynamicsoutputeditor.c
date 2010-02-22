@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a1e06c0103
+DECL|enum|__anon2aa94d9d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -226,14 +226,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDynamicsOutputEditor,gimp_dynamics_output_editor,GTK_TYPE_HBOX)
+DECL|function|G_DEFINE_TYPE (GimpDynamicsOutputEditor,gimp_dynamics_output_editor,GTK_TYPE_VBOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpDynamicsOutputEditor
 argument_list|,
 argument|gimp_dynamics_output_editor
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_VBOX
 argument_list|)
 end_macro
 
@@ -345,6 +345,16 @@ argument_list|(
 name|editor
 argument_list|)
 expr_stmt|;
+name|gtk_box_set_spacing
+argument_list|(
+name|GTK_BOX
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+literal|6
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -377,10 +387,6 @@ decl_stmt|;
 name|GimpDynamicsOutputEditorPrivate
 modifier|*
 name|private
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -434,46 +440,6 @@ name|output
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|vbox
-operator|=
-name|gtk_vbox_new
-argument_list|(
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_box_set_spacing
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|vbox
-argument_list|)
-argument_list|,
-literal|6
-argument_list|)
-expr_stmt|;
-name|gtk_box_pack_start
-argument_list|(
-name|GTK_BOX
-argument_list|(
-name|editor
-argument_list|)
-argument_list|,
-name|vbox
-argument_list|,
-name|FALSE
-argument_list|,
-name|FALSE
-argument_list|,
-literal|0
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|vbox
-argument_list|)
-expr_stmt|;
 name|label
 operator|=
 name|gtk_label_new
@@ -485,7 +451,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|editor
 argument_list|)
 argument_list|,
 name|label
@@ -539,14 +505,14 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|editor
 argument_list|)
 argument_list|,
 name|view
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|,
 literal|0
 argument_list|)
@@ -584,7 +550,7 @@ name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|vbox
+name|editor
 argument_list|)
 argument_list|,
 name|button

@@ -431,9 +431,9 @@ name|editor
 operator|->
 name|view_selector
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 literal|0
 argument_list|)
@@ -535,7 +535,7 @@ argument_list|)
 expr_stmt|;
 name|frame
 operator|=
-name|gtk_frame_new
+name|gimp_frame_new
 argument_list|(
 name|_
 argument_list|(
@@ -1734,6 +1734,11 @@ argument_list|)
 expr_stmt|;
 name|i
 operator|++
+expr_stmt|;
+name|g_free
+argument_list|(
+name|label
+argument_list|)
 expr_stmt|;
 block|}
 name|g_signal_connect
