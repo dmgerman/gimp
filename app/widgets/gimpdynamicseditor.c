@@ -539,7 +539,7 @@ name|gtk_frame_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Maping matrix"
+literal|"Mapping matrix"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -580,7 +580,7 @@ name|GIMP_INT_STORE_LABEL
 argument_list|,
 name|_
 argument_list|(
-literal|"Maping matrix"
+literal|"Mapping matrix"
 argument_list|)
 argument_list|,
 name|GIMP_INT_STORE_USER_DATA
