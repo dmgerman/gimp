@@ -208,7 +208,7 @@ modifier|*
 name|dynamics
 parameter_list|,
 name|GimpDynamicsOutputType
-name|type_id
+name|type
 parameter_list|)
 function_decl|;
 end_function_decl
