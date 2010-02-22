@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b501ac40103
+DECL|enum|__anon2bef0f070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b501ac40203
+DECL|enum|__anon2bef0f070203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b501ac40308
+DECL|struct|__anon2bef0f070308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -2184,7 +2184,7 @@ name|width
 operator|+
 literal|4
 argument_list|,
-name|width
+name|height
 operator|+
 literal|4
 argument_list|)
