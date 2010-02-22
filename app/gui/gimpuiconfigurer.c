@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2980b6480103
+DECL|enum|__anon29229c8d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1278,14 +1278,6 @@ name|FALSE
 comment|/*only_toolbox*/
 argument_list|)
 expr_stmt|;
-comment|/* Show the docks in the window */
-name|gimp_image_window_set_show_docks
-argument_list|(
-name|uber_image_window
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
 comment|/* Move stuff from other windows to the uber image window */
 for|for
 control|(
@@ -1429,14 +1421,6 @@ argument_list|(
 name|ui_configurer
 argument_list|,
 name|image_window
-argument_list|)
-expr_stmt|;
-comment|/* Don't show docks in the new image winows */
-name|gimp_image_window_set_show_docks
-argument_list|(
-name|image_window
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
