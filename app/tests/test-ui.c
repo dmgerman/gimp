@@ -146,7 +146,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a3e0370108
+DECL|struct|__anon28ae139f0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1045,6 +1045,15 @@ name|gconstpointer
 name|data
 parameter_list|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
 name|GtkWidget
 modifier|*
 name|dock_window
@@ -1155,8 +1164,17 @@ name|h_before_hide
 argument_list|)
 expr_stmt|;
 comment|/* Hide all dock windows */
-name|gimp_dialog_factories_toggle
-argument_list|()
+name|gimp_ui_manager_activate_action
+argument_list|(
+name|gimp_ui_get_ui_manager
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+literal|"windows"
+argument_list|,
+literal|"windows-hide-docks"
+argument_list|)
 expr_stmt|;
 name|gimp_test_run_mainloop_until_idle
 argument_list|()
@@ -1171,8 +1189,17 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/* Show them again */
-name|gimp_dialog_factories_toggle
-argument_list|()
+name|gimp_ui_manager_activate_action
+argument_list|(
+name|gimp_ui_get_ui_manager
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+literal|"windows"
+argument_list|,
+literal|"windows-hide-docks"
+argument_list|)
 expr_stmt|;
 name|gimp_test_run_mainloop_until_idle
 argument_list|()
