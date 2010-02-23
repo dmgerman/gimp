@@ -128,6 +128,10 @@ DECL|member|show_tooltips
 name|gboolean
 name|show_tooltips
 decl_stmt|;
+DECL|member|hide_docks
+name|gboolean
+name|hide_docks
+decl_stmt|;
 DECL|member|single_window_mode
 name|gboolean
 name|single_window_mode

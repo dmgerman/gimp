@@ -826,12 +826,9 @@ name|SET_ACTIVE
 argument_list|(
 literal|"windows-hide-docks"
 argument_list|,
-operator|(
-name|gimp_dialog_factories_get_state
-argument_list|()
-operator|!=
-name|GIMP_DIALOGS_SHOWN
-operator|)
+name|config
+operator|->
+name|hide_docks
 argument_list|)
 expr_stmt|;
 undef|#

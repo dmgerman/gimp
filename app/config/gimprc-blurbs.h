@@ -919,6 +919,15 @@ value|N_("Use GIMP in a single-window mode.")
 end_define
 
 begin_define
+DECL|macro|HIDE_DOCKS_BLURB
+define|#
+directive|define
+name|HIDE_DOCKS_BLURB
+define|\
+value|N_("Hide docks and other windows, leaving only image windows.")
+end_define
+
+begin_define
 DECL|macro|SPACE_BAR_ACTION_BLURB
 define|#
 directive|define
