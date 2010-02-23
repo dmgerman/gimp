@@ -2007,7 +2007,7 @@ operator|->
 name|selecting
 condition|)
 block|{
-comment|/*  we are in a selection process (user has initially clicked        *  on an existing text layer), so finish the selection process        *  any ignore rectangle-change-complete.        */
+comment|/*  we are in a selection process (user has initially clicked on        *  an existing text layer), so finish the selection process and        *  ignore rectangle-change-complete.        */
 name|gimp_text_tool_editor_button_release
 argument_list|(
 name|text_tool
@@ -2037,7 +2037,7 @@ operator|==
 name|GIMP_RECTANGLE_TOOL_DEAD
 condition|)
 block|{
-comment|/*  the user clicked in dead space (like between th corner and edge        *  handles, completely ignore that too.        */
+comment|/*  the user clicked in dead space (like between the corner and        *  edge handles, completely ignore that too.        */
 name|text_tool
 operator|->
 name|handle_rectangle_change_complete
@@ -2057,7 +2057,7 @@ name|x2
 decl_stmt|,
 name|y2
 decl_stmt|;
-comment|/*  otherwise the user has clicked outside of any text layer to        *  create a new text, fall through and let rectangle-change-complete        *  do its job of setting the new text layer's size.        */
+comment|/*  otherwise the user has clicked outside of any text layer in        *  order to create a new text, fall through and let        *  rectangle-change-complete do its job of setting the new text        *  layer's size.        */
 name|g_object_get
 argument_list|(
 name|text_tool
@@ -4141,7 +4141,7 @@ name|value
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* we need to redraw the rectangle in any case because whatever changes    * to the text can change its size    */
+comment|/* we need to redraw the rectangle in any case because whatever    * changes to the text can change its size    */
 name|gimp_text_tool_frame_item
 argument_list|(
 name|text_tool
