@@ -379,7 +379,18 @@ end_comment
 
 begin_function_decl
 name|void
-name|gimp_text_tool_update_layout
+name|gimp_text_tool_clear_layout
+parameter_list|(
+name|GimpTextTool
+modifier|*
+name|text_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_text_tool_ensure_layout
 parameter_list|(
 name|GimpTextTool
 modifier|*

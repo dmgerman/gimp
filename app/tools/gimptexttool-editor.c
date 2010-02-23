@@ -1820,14 +1820,7 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-operator|!
-name|text_tool
-operator|->
-name|layout
-condition|)
-name|gimp_text_tool_update_layout
+name|gimp_text_tool_ensure_layout
 argument_list|(
 name|text_tool
 argument_list|)
@@ -2700,6 +2693,11 @@ argument_list|(
 name|string
 argument_list|)
 expr_stmt|;
+name|gimp_text_tool_ensure_layout
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 name|layout
 operator|=
 name|gimp_text_layout_get_pango_layout
@@ -3154,7 +3152,7 @@ name|text_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_insert_interactive_at_cursor
+name|gtk_text_buffer_insert_at_cursor
 argument_list|(
 name|text_tool
 operator|->
@@ -3164,8 +3162,6 @@ name|str
 argument_list|,
 operator|-
 literal|1
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -3656,7 +3652,7 @@ name|text_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_delete_interactive
+name|gtk_text_buffer_delete
 argument_list|(
 name|buffer
 argument_list|,
@@ -3665,8 +3661,6 @@ name|cursor
 argument_list|,
 operator|&
 name|end
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
@@ -4363,6 +4357,11 @@ decl_stmt|;
 name|gint
 name|trailing
 decl_stmt|;
+name|gimp_text_tool_ensure_layout
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 name|gimp_text_layout_untransform_point
 argument_list|(
 name|text_tool
