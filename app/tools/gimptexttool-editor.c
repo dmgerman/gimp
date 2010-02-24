@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpoverlaybox.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptexteditor.h"
 end_include
 
@@ -4659,10 +4665,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_display_shell_add_overlay
 argument_list|(
-name|GIMP_DISPLAY_SHELL
-argument_list|(
 name|shell
-argument_list|)
 argument_list|,
 name|text_tool
 operator|->
@@ -4679,6 +4682,22 @@ operator|.
 name|y
 operator|+
 name|off_y
+argument_list|)
+expr_stmt|;
+name|gimp_overlay_box_set_child_opacity
+argument_list|(
+name|GIMP_OVERLAY_BOX
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+argument_list|,
+name|text_tool
+operator|->
+name|preedit_overlay
+argument_list|,
+literal|0.7
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
