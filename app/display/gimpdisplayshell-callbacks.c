@@ -3859,15 +3859,6 @@ name|control
 argument_list|)
 condition|)
 block|{
-name|g_array_append_val
-argument_list|(
-name|shell
-operator|->
-name|event_queue
-argument_list|,
-name|image_coords
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|shell
