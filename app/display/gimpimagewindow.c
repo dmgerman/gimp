@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291241620103
+DECL|enum|__anon2955ec610103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -308,7 +308,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291241620208
+DECL|struct|__anon2955ec610208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -564,6 +564,18 @@ parameter_list|(
 name|GimpImageWindow
 modifier|*
 name|window
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_image_window_resume_shell
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4487,6 +4499,22 @@ name|data
 init|=
 name|NULL
 decl_stmt|;
+comment|/* Freeze the active tool until the UI has stabilized. If it draws    * while we hide widgets there will be flicker    */
+name|gimp_display_shell_pause
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+name|g_idle_add
+argument_list|(
+operator|(
+name|GSourceFunc
+operator|)
+name|gimp_image_window_resume_shell
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_transform_xy
 argument_list|(
 name|shell
@@ -4576,6 +4604,28 @@ argument_list|,
 name|G_CONNECT_AFTER
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_image_window_resume_shell (GimpDisplayShell * shell)
+name|gimp_image_window_resume_shell
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+name|gimp_display_shell_resume
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
 block|}
 end_function
 
