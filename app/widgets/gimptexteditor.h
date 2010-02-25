@@ -163,7 +163,7 @@ name|GimpMenuFactory
 modifier|*
 name|menu_factory
 parameter_list|,
-name|GtkTextBuffer
+name|GimpTextBuffer
 modifier|*
 name|text_buffer
 parameter_list|)

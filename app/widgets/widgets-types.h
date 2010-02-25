@@ -1347,7 +1347,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/*  misc utilities& constructors  */
+comment|/*  misc objects  */
 end_comment
 
 begin_typedef
@@ -1356,6 +1356,15 @@ typedef|typedef
 name|struct
 name|_GimpDialogFactory
 name|GimpDialogFactory
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpTextBuffer
+typedef|typedef
+name|struct
+name|_GimpTextBuffer
+name|GimpTextBuffer
 typedef|;
 end_typedef
 

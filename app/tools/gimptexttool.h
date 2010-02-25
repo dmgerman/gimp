@@ -131,7 +131,7 @@ name|gboolean
 name|moving
 decl_stmt|;
 DECL|member|text_buffer
-name|GtkTextBuffer
+name|GimpTextBuffer
 modifier|*
 name|text_buffer
 decl_stmt|;

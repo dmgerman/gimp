@@ -54,7 +54,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpwidgets-utils.h"
+file|"widgets/gimptextbuffer.h"
 end_include
 
 begin_include
@@ -532,9 +532,12 @@ condition|(
 operator|!
 name|gimp_text_buffer_save
 argument_list|(
+name|GIMP_TEXT_BUFFER
+argument_list|(
 name|console
 operator|->
 name|text_buffer
+argument_list|)
 argument_list|,
 name|filename
 argument_list|,

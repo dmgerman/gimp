@@ -238,7 +238,7 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|GtkTextBuffer
+name|GimpTextBuffer
 modifier|*
 name|text_buffer
 parameter_list|)

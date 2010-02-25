@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptextbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimptexteditor.h"
 end_include
 
@@ -131,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290ca6f70103
+DECL|enum|__anon274f29090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2550,7 +2556,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_text_options_editor_new (GtkWindow * parent,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title,GtkTextBuffer * text_buffer)
+DECL|function|gimp_text_options_editor_new (GtkWindow * parent,GimpTextOptions * options,GimpMenuFactory * menu_factory,const gchar * title,GimpTextBuffer * text_buffer)
 name|gimp_text_options_editor_new
 parameter_list|(
 name|GtkWindow
@@ -2570,7 +2576,7 @@ name|gchar
 modifier|*
 name|title
 parameter_list|,
-name|GtkTextBuffer
+name|GimpTextBuffer
 modifier|*
 name|text_buffer
 parameter_list|)
@@ -2609,6 +2615,16 @@ argument_list|(
 name|title
 operator|!=
 name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_TEXT_BUFFER
+argument_list|(
+name|text_buffer
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|)

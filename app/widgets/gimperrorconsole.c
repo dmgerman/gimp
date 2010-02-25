@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptextbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpwidgets-utils.h"
 end_include
 
@@ -223,9 +229,10 @@ name|console
 operator|->
 name|text_buffer
 operator|=
-name|gtk_text_buffer_new
+name|GTK_TEXT_BUFFER
 argument_list|(
-name|NULL
+name|gimp_text_buffer_new
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gtk_text_buffer_create_tag
