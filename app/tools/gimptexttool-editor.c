@@ -782,7 +782,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|GtkTextIter
@@ -973,7 +973,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 if|if
@@ -1055,7 +1055,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|GtkTextIter
@@ -1389,7 +1389,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|GtkTextIter
@@ -1762,7 +1762,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|PangoLayout
@@ -1894,7 +1894,7 @@ name|gimp_text_buffer_get_iter_index
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 operator|&
 name|cursor
@@ -2326,7 +2326,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|GtkTextIter
@@ -2628,7 +2628,7 @@ name|gimp_text_buffer_get_iter_index
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 operator|&
 name|cursor
@@ -3099,7 +3099,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 argument_list|,
 name|str
@@ -3282,7 +3282,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|GtkTextIter
@@ -3641,7 +3641,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|gimp_text_tool_reset_im_context
@@ -3778,7 +3778,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|gimp_draw_tool_pause
@@ -4060,7 +4060,7 @@ argument_list|)
 argument_list|,
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 expr_stmt|;
 name|g_object_add_weak_pointer
@@ -4180,7 +4180,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|gboolean
@@ -4385,7 +4385,7 @@ name|gimp_text_buffer_get_text
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 expr_stmt|;
 name|pango_layout_xy_to_index

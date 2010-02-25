@@ -130,10 +130,10 @@ DECL|member|moving
 name|gboolean
 name|moving
 decl_stmt|;
-DECL|member|text_buffer
+DECL|member|buffer
 name|GimpTextBuffer
 modifier|*
-name|text_buffer
+name|buffer
 decl_stmt|;
 DECL|member|text
 name|GimpText

@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimptextbuffer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpuimanager.h"
 end_include
 
@@ -528,7 +534,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|GtkTextIter
@@ -767,7 +773,7 @@ name|gimp_text_buffer_load
 argument_list|(
 name|tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|filename
 argument_list|,

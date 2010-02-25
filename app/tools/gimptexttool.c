@@ -1075,7 +1075,7 @@ name|NULL
 expr_stmt|;
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 operator|=
 name|gimp_text_buffer_new
 argument_list|()
@@ -1084,7 +1084,7 @@ name|g_signal_connect
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 literal|"changed"
 argument_list|,
@@ -1376,19 +1376,19 @@ if|if
 condition|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 condition|)
 block|{
 name|g_object_unref
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 expr_stmt|;
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 operator|=
 name|NULL
 expr_stmt|;
@@ -2798,7 +2798,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|PangoRectangle
@@ -2972,7 +2972,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|PangoLayout
@@ -3013,7 +3013,7 @@ name|gimp_text_buffer_get_iter_index
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 operator|&
 name|sel_start
@@ -3025,7 +3025,7 @@ name|gimp_text_buffer_get_iter_index
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 operator|&
 name|sel_end
@@ -3605,7 +3605,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|gimp_text_tool_buffer_changed
 argument_list|,
@@ -3671,7 +3671,7 @@ name|gimp_text_buffer_set_text
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|NULL
 argument_list|)
@@ -3722,7 +3722,7 @@ name|gimp_text_buffer_set_text
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|text
 operator|->
@@ -3762,7 +3762,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|gimp_text_tool_buffer_changed
 argument_list|,
@@ -4113,7 +4113,7 @@ name|g_signal_handlers_block_by_func
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|gimp_text_tool_buffer_changed
 argument_list|,
@@ -4124,7 +4124,7 @@ name|gimp_text_buffer_set_text
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|text
 operator|->
@@ -4135,7 +4135,7 @@ name|g_signal_handlers_unblock_by_func
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|,
 name|gimp_text_tool_buffer_changed
 argument_list|,
@@ -4825,7 +4825,7 @@ name|gimp_text_buffer_get_text
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 name|g_object_set
@@ -6319,7 +6319,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 return|return
@@ -6349,7 +6349,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 decl_stmt|;
 if|if
@@ -6453,7 +6453,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 argument_list|,
 name|clipboard
@@ -6528,7 +6528,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 argument_list|,
 name|clipboard
@@ -6601,7 +6601,7 @@ name|GTK_TEXT_BUFFER
 argument_list|(
 name|text_tool
 operator|->
-name|text_buffer
+name|buffer
 argument_list|)
 argument_list|,
 name|clipboard
