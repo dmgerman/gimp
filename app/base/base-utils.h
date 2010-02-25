@@ -43,6 +43,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|char
+modifier|*
+name|get_backtrace
+parameter_list|(
+name|void
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
