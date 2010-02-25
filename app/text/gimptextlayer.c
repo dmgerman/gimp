@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d8ee240103
+DECL|enum|__anon2a10cec50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1448,6 +1448,11 @@ operator|!
 name|text
 operator|->
 name|text
+operator|&&
+operator|!
+name|text
+operator|->
+name|markup
 condition|)
 return|return
 name|NULL

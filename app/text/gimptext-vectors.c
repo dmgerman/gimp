@@ -78,7 +78,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a5af1c0108
+DECL|struct|__anon29b546f30108
 block|{
 DECL|member|vectors
 name|GimpVectors
@@ -177,6 +177,10 @@ condition|(
 name|text
 operator|->
 name|text
+operator|||
+name|text
+operator|->
+name|markup
 condition|)
 block|{
 name|GimpTextLayout
@@ -191,6 +195,12 @@ name|cairo_t
 modifier|*
 name|cr
 decl_stmt|;
+if|if
+condition|(
+name|text
+operator|->
+name|text
+condition|)
 name|gimp_object_set_name_safe
 argument_list|(
 name|GIMP_OBJECT

@@ -114,6 +114,11 @@ name|gchar
 modifier|*
 name|text
 decl_stmt|;
+DECL|member|markup
+name|gchar
+modifier|*
+name|markup
+decl_stmt|;
 DECL|member|font
 name|gchar
 modifier|*
