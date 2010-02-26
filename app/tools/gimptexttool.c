@@ -1916,6 +1916,11 @@ condition|(
 name|text_tool
 operator|->
 name|text
+operator|&&
+operator|!
+name|text_tool
+operator|->
+name|moving
 condition|)
 block|{
 name|text_tool
