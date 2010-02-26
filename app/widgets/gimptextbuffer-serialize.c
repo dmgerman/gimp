@@ -447,7 +447,7 @@ name|tag
 argument_list|)
 condition|)
 block|{
-comment|/* Drop all tags that were opened after this one (which are                * above this on in the stack)                */
+comment|/* Drop all tags that were opened after this one (which are                * above this on in the stack), but move them to the added                * list so they get re-opened again, *unless* they are also                * closed at this iter                */
 while|while
 condition|(
 name|active_tags
@@ -471,6 +471,19 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
+comment|/* if it also in the list of removed tags, *don't* add                    * it to the list of added tags again                    */
+if|if
+condition|(
+operator|!
+name|g_list_find
+argument_list|(
+name|removed
+argument_list|,
+name|active_tags
+operator|->
+name|data
+argument_list|)
+condition|)
 name|added
 operator|=
 name|g_list_prepend
@@ -784,7 +797,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29471c350103
+DECL|enum|__anon2bd317d30103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -806,7 +819,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29471c350208
+DECL|struct|__anon2bd317d30208
 block|{
 DECL|member|states
 name|GSList
@@ -837,7 +850,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29471c350308
+DECL|struct|__anon2bd317d30308
 block|{
 DECL|member|text
 name|gchar
