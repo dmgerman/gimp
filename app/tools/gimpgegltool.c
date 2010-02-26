@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc0ee240103
+DECL|enum|__anon28db9ee00103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -1674,7 +1674,10 @@ name|options_table
 operator|=
 name|gtk_label_new
 argument_list|(
+name|_
+argument_list|(
 literal|"Select an operation from the list above"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_label_set_attributes
