@@ -174,6 +174,16 @@ modifier|*
 name|layout
 decl_stmt|;
 comment|/* text editor state: */
+DECL|member|style_overlay
+name|GtkWidget
+modifier|*
+name|style_overlay
+decl_stmt|;
+DECL|member|style_editor
+name|GtkWidget
+modifier|*
+name|style_editor
+decl_stmt|;
 DECL|member|selecting
 name|gboolean
 name|selecting
