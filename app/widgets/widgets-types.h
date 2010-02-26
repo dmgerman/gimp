@@ -1155,6 +1155,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpTextStyleEditor
+typedef|typedef
+name|struct
+name|_GimpTextStyleEditor
+name|GimpTextStyleEditor
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpThumbBox
 typedef|typedef
 name|struct
