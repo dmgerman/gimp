@@ -238,6 +238,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_text_buffer_insert
+parameter_list|(
+name|GimpTextBuffer
+modifier|*
+name|buffer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gint
 name|gimp_text_buffer_get_iter_index
 parameter_list|(

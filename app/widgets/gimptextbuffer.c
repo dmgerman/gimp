@@ -1008,6 +1008,45 @@ block|}
 end_function
 
 begin_function
+name|void
+DECL|function|gimp_text_buffer_insert (GimpTextBuffer * buffer,const gchar * text)
+name|gimp_text_buffer_insert
+parameter_list|(
+name|GimpTextBuffer
+modifier|*
+name|buffer
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_TEXT_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gtk_text_buffer_insert_at_cursor
+argument_list|(
+name|GTK_TEXT_BUFFER
+argument_list|(
+name|buffer
+argument_list|)
+argument_list|,
+name|text
+argument_list|,
+operator|-
+literal|1
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|gint
 DECL|function|gimp_text_buffer_get_iter_index (GimpTextBuffer * buffer,GtkTextIter * iter)
 name|gimp_text_buffer_get_iter_index
