@@ -834,6 +834,8 @@ operator|->
 name|style_overlay
 argument_list|,
 name|x
+operator|+
+literal|2
 argument_list|,
 name|y
 operator|-
