@@ -3325,6 +3325,11 @@ argument_list|(
 name|rect_tool
 argument_list|)
 decl_stmt|;
+name|gimp_text_tool_editor_position
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|text_tool
@@ -3546,11 +3551,6 @@ argument_list|(
 name|text_tool
 operator|->
 name|image
-argument_list|)
-expr_stmt|;
-name|gimp_text_tool_editor_position
-argument_list|(
-name|text_tool
 argument_list|)
 expr_stmt|;
 block|}
