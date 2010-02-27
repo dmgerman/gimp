@@ -338,6 +338,17 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_curve_view_remove_all_backgrounds
+parameter_list|(
+name|GimpCurveView
+modifier|*
+name|view
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_curve_view_set_selected
 parameter_list|(
 name|GimpCurveView
