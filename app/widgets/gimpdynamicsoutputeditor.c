@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a092e750103
+DECL|enum|__anon293e22f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a092e750203
+DECL|enum|__anon293e22f80203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a092e750303
+DECL|enum|__anon293e22f80303
 block|{
 DECL|enumerator|INPUT_PRESSURE
 name|INPUT_PRESSURE
@@ -161,6 +161,11 @@ DECL|member|notebook
 name|GtkWidget
 modifier|*
 name|notebook
+decl_stmt|;
+DECL|member|curve_view
+name|GtkWidget
+modifier|*
+name|curve_view
 decl_stmt|;
 DECL|member|input_list
 name|GtkListStore
@@ -524,14 +529,18 @@ argument_list|(
 name|label
 argument_list|)
 expr_stmt|;
-name|view
+name|private
+operator|->
+name|curve_view
 operator|=
 name|gimp_curve_view_new
 argument_list|()
 expr_stmt|;
 name|g_object_set
 argument_list|(
-name|view
+name|private
+operator|->
+name|curve_view
 argument_list|,
 literal|"border-width"
 argument_list|,
@@ -542,7 +551,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|view
+name|private
+operator|->
+name|curve_view
 argument_list|,
 name|CURVE_SIZE
 operator|+
@@ -564,7 +575,9 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|view
+name|private
+operator|->
+name|curve_view
 argument_list|,
 name|TRUE
 argument_list|,
@@ -575,14 +588,18 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|view
+name|private
+operator|->
+name|curve_view
 argument_list|)
 expr_stmt|;
 name|gimp_curve_view_set_curve
 argument_list|(
 name|GIMP_CURVE_VIEW
 argument_list|(
-name|view
+name|private
+operator|->
+name|curve_view
 argument_list|)
 argument_list|,
 name|private
@@ -870,9 +887,9 @@ name|cell
 argument_list|,
 literal|"mode"
 argument_list|,
-name|GTK_CELL_RENDERER_MODE_EDITABLE
+name|GTK_CELL_RENDERER_MODE_ACTIVATABLE
 argument_list|,
-literal|"editable"
+literal|"activatable"
 argument_list|,
 name|TRUE
 argument_list|,
