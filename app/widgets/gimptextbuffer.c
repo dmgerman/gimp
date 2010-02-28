@@ -882,6 +882,12 @@ name|start
 decl_stmt|,
 name|end
 decl_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_text_buffer_post_deserialize (buffer, content);
+endif|#
+directive|endif
 name|gtk_text_buffer_get_bounds
 argument_list|(
 name|content
@@ -1025,6 +1031,12 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
+if|#
+directive|if
+literal|0
+block|gimp_text_buffer_pre_serialize (buffer, content);
+endif|#
+directive|endif
 name|gtk_text_buffer_get_bounds
 argument_list|(
 name|content
