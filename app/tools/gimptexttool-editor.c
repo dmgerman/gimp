@@ -4413,6 +4413,12 @@ name|end
 operator|=
 name|start
 expr_stmt|;
+name|gtk_text_iter_forward_char
+argument_list|(
+operator|&
+name|end
+argument_list|)
+expr_stmt|;
 block|}
 name|gimp_draw_tool_pause
 argument_list|(
