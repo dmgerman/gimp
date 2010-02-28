@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d3f670103
+DECL|enum|__anon2b1c88e40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297d3f670203
+DECL|enum|__anon2b1c88e40203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon297d3f670308
+DECL|struct|__anon2b1c88e40308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -4971,6 +4971,14 @@ name|view
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_widget_queue_draw
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|view
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -5216,10 +5224,6 @@ modifier|*
 name|view
 parameter_list|)
 block|{
-name|GList
-modifier|*
-name|list
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CURVE_VIEW
@@ -5228,29 +5232,20 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
-for|for
-control|(
-name|list
-operator|=
+while|while
+condition|(
 name|view
 operator|->
 name|bg_curves
-init|;
-name|list
-condition|;
-name|list
-operator|=
-name|g_list_next
-argument_list|(
-name|list
-argument_list|)
-control|)
+condition|)
 block|{
 name|BGCurve
 modifier|*
 name|bg
 init|=
-name|list
+name|view
+operator|->
+name|bg_curves
 operator|->
 name|data
 decl_stmt|;
