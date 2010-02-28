@@ -537,7 +537,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae6c47b0108
+DECL|struct|__anon2acf5e0f0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -2959,6 +2959,9 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|int
+name|result
+decl_stmt|;
 name|g_type_init
 argument_list|()
 expr_stmt|;
@@ -3068,6 +3071,12 @@ argument_list|,
 literal|"app/tests/gimpdir-output"
 argument_list|)
 expr_stmt|;
+comment|/* Run the tests */
+name|result
+operator|=
+name|g_test_run
+argument_list|()
+expr_stmt|;
 comment|/* Exit so we don't break script-fu plug-in wire */
 name|gimp_exit
 argument_list|(
@@ -3076,10 +3085,8 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-comment|/* Run the tests and return status */
 return|return
-name|g_test_run
-argument_list|()
+name|result
 return|;
 block|}
 end_function
