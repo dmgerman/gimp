@@ -145,11 +145,6 @@ name|GList
 modifier|*
 name|toggles
 decl_stmt|;
-DECL|member|tag_to_toggle_hash
-name|GHashTable
-modifier|*
-name|tag_to_toggle_hash
-decl_stmt|;
 block|}
 struct|;
 end_struct
