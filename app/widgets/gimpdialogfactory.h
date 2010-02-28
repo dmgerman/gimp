@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29368f470103
+DECL|enum|__anon2c7813a40103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -716,18 +716,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_factories_set_busy
+name|gimp_dialog_factory_set_busy
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dialog_factories_unset_busy
+name|gimp_dialog_factory_unset_busy
 parameter_list|(
-name|void
+name|GimpDialogFactory
+modifier|*
+name|factory
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -1015,8 +1015,10 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factories_set_busy
-argument_list|()
+name|gimp_dialog_factory_set_busy
+argument_list|(
+name|global_dialog_factory
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()
@@ -1040,8 +1042,10 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factories_unset_busy
-argument_list|()
+name|gimp_dialog_factory_unset_busy
+argument_list|(
+name|global_dialog_factory
+argument_list|)
 expr_stmt|;
 name|gdk_flush
 argument_list|()
