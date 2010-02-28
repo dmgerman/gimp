@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c257adc0103
+DECL|enum|__anon293e56d30103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -262,11 +262,6 @@ block|{
 DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
-decl_stmt|;
-DECL|member|factories
-name|GHashTable
-modifier|*
-name|factories
 decl_stmt|;
 DECL|member|dock_window_added
 name|void
