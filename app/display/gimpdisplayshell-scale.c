@@ -3561,12 +3561,9 @@ name|gimp_pixels_to_units
 argument_list|(
 name|len
 argument_list|,
-name|gimp_unit_get_factor
-argument_list|(
 name|shell
 operator|->
 name|unit
-argument_list|)
 argument_list|,
 name|xdir
 condition|?
