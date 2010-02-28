@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2955ec610103
+DECL|enum|__anon28e72bd60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -308,7 +308,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955ec610208
+DECL|struct|__anon28e72bd60208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -4538,6 +4538,8 @@ argument_list|(
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|GTK_WIDGET
@@ -4678,6 +4680,8 @@ argument_list|,
 name|GTK_WIDGET
 argument_list|(
 name|shell
+operator|->
+name|canvas
 argument_list|)
 argument_list|,
 name|data
