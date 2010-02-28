@@ -78,12 +78,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdnd.h"
 end_include
 
@@ -144,7 +138,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d899260103
+DECL|enum|__anon27c448a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2245,7 +2239,8 @@ name|dialog_factory
 decl_stmt|;
 name|dialog_factory
 operator|=
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 expr_stmt|;
 name|gimp_dialog_factory_dialog_raise
 argument_list|(

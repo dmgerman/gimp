@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -137,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cc6100103
+DECL|enum|__anon2a4d062c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5055,7 +5049,8 @@ name|dock
 operator|=
 name|gimp_dock_with_window_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

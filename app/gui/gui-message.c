@@ -108,12 +108,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui-message.h"
 end_include
 
@@ -335,7 +329,8 @@ name|info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-error-console"
 argument_list|)
@@ -369,7 +364,8 @@ name|dockable
 operator|=
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()
@@ -615,7 +611,8 @@ block|{
 return|return
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()

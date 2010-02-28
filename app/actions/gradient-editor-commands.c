@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpdialogfactory.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpgradienteditor.h"
 end_include
 
@@ -79,12 +85,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpviewabledialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"dialogs/dialogs.h"
 end_include
 
 begin_include
@@ -316,7 +316,8 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-gradient-editor-color-dialog"
 argument_list|,
@@ -940,7 +941,8 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-gradient-editor-color-dialog"
 argument_list|,

@@ -168,12 +168,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/grid-dialog.h"
 end_include
 
@@ -234,7 +228,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5be9470108
+DECL|struct|__anon28c8073c0108
 block|{
 DECL|member|context
 name|GimpContext
@@ -483,7 +477,8 @@ name|dialog
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

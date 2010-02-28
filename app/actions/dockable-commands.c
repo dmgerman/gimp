@@ -84,12 +84,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dockable-commands.h"
 end_include
 

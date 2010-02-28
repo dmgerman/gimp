@@ -54,12 +54,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdialogfactory.h"
 end_include
 
@@ -96,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efaca60108
+DECL|struct|__anon27a41be10108
 block|{
 DECL|member|dummy
 name|int
@@ -111,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28efaca60208
+DECL|struct|__anon27a41be10208
 block|{
 DECL|member|filename
 name|gchar

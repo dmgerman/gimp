@@ -61,12 +61,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainertreeview.h"
 end_include
 
@@ -162,7 +156,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f06ce50103
+DECL|enum|__anon2932b1c80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -175,7 +169,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f06ce50203
+DECL|enum|__anon2932b1c80203
 block|{
 DECL|enumerator|COLUMN_ICON
 name|COLUMN_ICON
@@ -2672,7 +2666,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-controller-editor-dialog"
 argument_list|,

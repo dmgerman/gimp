@@ -2267,7 +2267,8 @@ condition|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()
@@ -2720,7 +2721,8 @@ name|session_info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-device-status"
 argument_list|)

@@ -114,12 +114,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions.h"
 end_include
 
@@ -3488,7 +3482,8 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 argument_list|,
 name|NULL
@@ -3498,7 +3493,8 @@ name|info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-palette-editor"
 argument_list|)
@@ -3553,7 +3549,8 @@ name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DIALOG_FACTORY
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 argument_list|,
 name|NULL
@@ -3563,7 +3560,8 @@ name|info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-indexed-palette"
 argument_list|)

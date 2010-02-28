@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/file-save-dialog.h"
 end_include
 
@@ -537,7 +531,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -1664,7 +1659,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -1799,7 +1795,8 @@ name|dialog
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -1971,7 +1968,8 @@ name|dialog
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -2168,7 +2166,8 @@ name|dialog
 operator|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

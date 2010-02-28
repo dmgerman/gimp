@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcolordialog.h"
 end_include
 
@@ -512,7 +506,8 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-toolbox-color-dialog"
 argument_list|,

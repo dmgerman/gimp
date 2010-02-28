@@ -119,7 +119,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a32d40f0103
+DECL|enum|__anon293b407e0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -348,6 +348,21 @@ init|=
 block|{
 literal|0
 block|}
+decl_stmt|;
+end_decl_stmt
+
+begin_comment
+comment|/* Is set by dialogs.c to a dialog factory initialized there.  *  * FIXME: The layer above should not do this kind of initialization of  * layers below.  */
+end_comment
+
+begin_decl_stmt
+DECL|variable|gimp_toplevel_factory
+specifier|static
+name|GimpDialogFactory
+modifier|*
+name|gimp_toplevel_factory
+init|=
+name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -5103,6 +5118,66 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_dialog_factory_get_singleton:  *  * Returns: The toplevel GimpDialogFactory instance.  **/
+end_comment
+
+begin_function
+name|GimpDialogFactory
+modifier|*
+DECL|function|gimp_dialog_factory_get_singleton (void)
+name|gimp_dialog_factory_get_singleton
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|g_return_val_if_fail
+argument_list|(
+name|gimp_toplevel_factory
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+return|return
+name|gimp_toplevel_factory
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_dialog_factory_set_singleton:  * @:  *  * Set the toplevel GimpDialogFactory instance. Must only be called by  * dialogs_init()!.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_dialog_factory_set_singleton (GimpDialogFactory * factory)
+name|gimp_dialog_factory_set_singleton
+parameter_list|(
+name|GimpDialogFactory
+modifier|*
+name|factory
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|gimp_toplevel_factory
+operator|==
+name|NULL
+operator|||
+name|factory
+operator|==
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_toplevel_factory
+operator|=
+name|factory
+expr_stmt|;
 block|}
 end_function
 

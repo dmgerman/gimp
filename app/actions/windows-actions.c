@@ -608,7 +608,8 @@ expr_stmt|;
 block|}
 name|g_signal_connect_object
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"dock-window-added"
 argument_list|,
@@ -624,7 +625,8 @@ argument_list|)
 expr_stmt|;
 name|g_signal_connect_object
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"dock-window-removed"
 argument_list|,
@@ -644,7 +646,8 @@ name|list
 operator|=
 name|gimp_dialog_factory_get_open_dialogs
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 init|;
 name|list
@@ -674,7 +677,8 @@ argument_list|)
 condition|)
 name|windows_actions_dock_window_added
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|dock_window
 argument_list|,

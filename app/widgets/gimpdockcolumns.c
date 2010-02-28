@@ -48,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdialogfactory.h"
 end_include
 
@@ -113,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8e3fb0103
+DECL|enum|__anon2a3500d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -132,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e8e3fb0203
+DECL|enum|__anon2a3500d60203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED

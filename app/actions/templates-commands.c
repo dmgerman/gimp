@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"dialogs/template-options-dialog.h"
 end_include
 
@@ -150,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c056c590108
+DECL|struct|__anon2757b35d0108
 block|{
 DECL|member|context
 name|GimpContext

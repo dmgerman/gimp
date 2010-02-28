@@ -221,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f836f90103
+DECL|enum|__anon2ad029690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2691,7 +2691,8 @@ name|entry
 operator|=
 name|gimp_dialog_factory_find_entry
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|entry_name
 argument_list|)

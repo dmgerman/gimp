@@ -168,12 +168,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"actions.h"
 end_include
 
@@ -1110,7 +1104,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(

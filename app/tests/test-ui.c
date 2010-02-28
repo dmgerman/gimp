@@ -42,12 +42,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -182,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7652bf0108
+DECL|struct|__anon2baa618c0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -657,7 +651,8 @@ name|dockable
 init|=
 name|gimp_dialog_factory_dialog_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -864,7 +859,8 @@ name|new_image_dialog
 operator|=
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -1001,7 +997,8 @@ name|dock_window
 operator|=
 name|gimp_ui_find_non_toolbox_dock_window
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_assert
@@ -1016,7 +1013,8 @@ name|session_infos
 operator|=
 name|gimp_dialog_factory_get_session_infos
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|n_session_infos_before_close
@@ -1043,7 +1041,8 @@ name|session_infos
 operator|=
 name|gimp_dialog_factory_get_session_infos
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|n_session_infos_after_close
@@ -1083,7 +1082,8 @@ name|session_infos
 operator|=
 name|gimp_dialog_factory_get_session_infos
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|n_session_infos_after_restore
@@ -1191,7 +1191,8 @@ name|dock_window
 operator|=
 name|gimp_ui_find_non_toolbox_dock_window
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|g_assert

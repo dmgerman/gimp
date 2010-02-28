@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1290800103
+DECL|enum|__anon2924673d0103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -442,10 +442,11 @@ name|factory_name
 argument_list|)
 condition|)
 break|break;
-comment|/* In versions<= GIMP 2.6 there was a "toolbox", a                * "dock", a "display" and a "toplevel" factory. These                * are now merged to a single global_dialog_factory. We                * need the legacy name though, so keep it around.                */
+comment|/* In versions<= GIMP 2.6 there was a "toolbox", a                * "dock", a "display" and a "toplevel" factory. These                * are now merged to a single gimp_dialog_factory_get_singleton (). We                * need the legacy name though, so keep it around.                */
 name|factory
 operator|=
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 expr_stmt|;
 name|info
 operator|=
@@ -801,7 +802,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_restore
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
@@ -907,7 +909,8 @@ condition|)
 return|return;
 name|gimp_dialog_factory_save
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|writer
 argument_list|)

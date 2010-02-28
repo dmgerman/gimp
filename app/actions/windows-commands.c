@@ -147,7 +147,8 @@ name|state
 init|=
 name|gimp_dialog_factory_get_state
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 decl_stmt|;
 name|GimpDialogsState
@@ -213,7 +214,8 @@ name|new_state
 condition|)
 name|gimp_dialog_factory_set_state
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|new_state
 argument_list|)
@@ -418,7 +420,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|info
 argument_list|)
@@ -427,7 +430,8 @@ name|gimp_session_info_restore
 argument_list|(
 name|info
 argument_list|,
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gimp_session_info_clear_info
@@ -463,7 +467,8 @@ name|toolbox
 operator|=
 name|gimp_dock_with_window_new
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|gdk_screen_get_default
 argument_list|()

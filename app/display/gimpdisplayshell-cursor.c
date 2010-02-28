@@ -66,12 +66,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -542,7 +536,8 @@ name|session_info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-cursor-view"
 argument_list|)
@@ -686,7 +681,8 @@ name|session_info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 literal|"gimp-cursor-view"
 argument_list|)

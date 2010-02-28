@@ -36,12 +36,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdialogfactory.h"
 end_include
 
@@ -95,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8c1f8f0103
+DECL|enum|__anon2c41c1be0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1057,7 +1051,8 @@ name|entry
 operator|=
 name|gimp_dialog_factory_find_entry
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|,
 name|identifier
 argument_list|)

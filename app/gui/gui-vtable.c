@@ -257,12 +257,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"dialogs/dialogs.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gui-message.h"
 end_include
 
@@ -1017,7 +1011,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_set_busy
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gdk_flush
@@ -1044,7 +1039,8 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_unset_busy
 argument_list|(
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 name|gdk_flush
@@ -1608,7 +1604,8 @@ name|image_managers
 operator|->
 name|data
 argument_list|,
-name|global_dialog_factory
+name|gimp_dialog_factory_get_singleton
+argument_list|()
 argument_list|)
 expr_stmt|;
 block|}
