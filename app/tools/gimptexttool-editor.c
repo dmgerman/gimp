@@ -4323,13 +4323,9 @@ name|buffer
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_get_end_iter
-argument_list|(
-name|buffer
-argument_list|,
-operator|&
 name|end
-argument_list|)
+operator|=
+name|start
 expr_stmt|;
 block|}
 name|gimp_draw_tool_pause
@@ -4362,6 +4358,8 @@ operator|&
 name|end
 argument_list|,
 name|count
+operator|*
+name|PANGO_SCALE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
