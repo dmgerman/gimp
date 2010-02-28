@@ -384,6 +384,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_image_window_keep_canvas_pos
+parameter_list|(
+name|GimpImageWindow
+modifier|*
+name|window
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
