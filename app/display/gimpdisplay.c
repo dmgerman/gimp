@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ee76a20103
+DECL|enum|__anon2b3765d50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,6 +188,12 @@ name|gint
 name|ID
 decl_stmt|;
 comment|/*  unique identifier for this display  */
+DECL|member|image
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
+comment|/*  pointer to the associated image     */
 DECL|member|instance
 name|gint
 name|instance
@@ -944,7 +950,7 @@ name|g_value_set_object
 argument_list|(
 name|value
 argument_list|,
-name|display
+name|private
 operator|->
 name|image
 argument_list|)
@@ -1708,7 +1714,7 @@ name|gimp_image_window_new
 argument_list|(
 name|gimp
 argument_list|,
-name|display
+name|private
 operator|->
 name|image
 argument_list|,
@@ -2208,7 +2214,10 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
 name|display
+argument_list|)
 operator|->
 name|image
 return|;
@@ -2279,7 +2288,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|display
+name|private
 operator|->
 name|image
 condition|)
@@ -2308,15 +2317,15 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_dec_display_count
 argument_list|(
-name|display
+name|private
 operator|->
 name|image
 argument_list|)
 expr_stmt|;
-comment|/*  set display->image before unrefing because there may be code        *  that listens for image removals and then iterates the        *  display list to find a valid display.        */
+comment|/*  set private->image before unrefing because there may be code        *  that listens for image removals and then iterates the        *  display list to find a valid display.        */
 name|old_image
 operator|=
-name|display
+name|private
 operator|->
 name|image
 expr_stmt|;
@@ -2327,7 +2336,7 @@ block|g_print ("%s: image->ref_count before unrefing: %d\n",                G_ST
 endif|#
 directive|endif
 block|}
-name|display
+name|private
 operator|->
 name|image
 operator|=
@@ -2524,6 +2533,10 @@ modifier|*
 name|display
 parameter_list|)
 block|{
+name|GimpDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
@@ -2532,11 +2545,18 @@ name|display
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|private
+operator|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
-name|display
+name|private
 operator|->
 name|image
 argument_list|)
@@ -2580,6 +2600,10 @@ name|gdouble
 name|scale
 parameter_list|)
 block|{
+name|GimpDisplayPrivate
+modifier|*
+name|private
+decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY
@@ -2594,6 +2618,22 @@ name|GIMP_IS_IMAGE
 argument_list|(
 name|image
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|private
+operator|->
+name|image
+operator|==
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_display_set_image
@@ -2694,7 +2734,7 @@ name|image_width
 init|=
 name|gimp_image_get_width
 argument_list|(
-name|display
+name|private
 operator|->
 name|image
 argument_list|)
@@ -2704,7 +2744,7 @@ name|image_height
 init|=
 name|gimp_image_get_height
 argument_list|(
-name|display
+name|private
 operator|->
 name|image
 argument_list|)
@@ -2999,6 +3039,15 @@ name|gint
 name|h
 parameter_list|)
 block|{
+name|GimpDisplayPrivate
+modifier|*
+name|private
+init|=
+name|GIMP_DISPLAY_GET_PRIVATE
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpDisplayShell
 modifier|*
 name|shell
@@ -3013,7 +3062,7 @@ name|image_width
 init|=
 name|gimp_image_get_width
 argument_list|(
-name|display
+name|private
 operator|->
 name|image
 argument_list|)
@@ -3023,7 +3072,7 @@ name|image_height
 init|=
 name|gimp_image_get_height
 argument_list|(
-name|display
+name|private
 operator|->
 name|image
 argument_list|)

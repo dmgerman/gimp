@@ -108,18 +108,11 @@ name|Gimp
 modifier|*
 name|gimp
 decl_stmt|;
-comment|/*  global gimp instance                */
 DECL|member|config
 name|GimpDisplayConfig
 modifier|*
 name|config
 decl_stmt|;
-DECL|member|image
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
-comment|/*  pointer to the associated image     */
 block|}
 struct|;
 end_struct

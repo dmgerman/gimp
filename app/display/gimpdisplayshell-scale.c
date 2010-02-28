@@ -1130,11 +1130,12 @@ condition|)
 block|{
 name|gimp_image_get_resolution
 argument_list|(
+name|gimp_display_get_image
+argument_list|(
 name|shell
 operator|->
 name|display
-operator|->
-name|image
+argument_list|)
 argument_list|,
 operator|&
 name|x
