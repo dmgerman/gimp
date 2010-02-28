@@ -91,6 +91,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpDisplayShell
+modifier|*
+name|action_data_get_shell
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkWidget
 modifier|*
 name|action_data_get_widget
@@ -277,6 +288,20 @@ name|data
 parameter_list|)
 define|\
 value|display = action_data_get_display (data); \   if (! display) \     return
+end_define
+
+begin_define
+DECL|macro|return_if_no_shell (shell,data)
+define|#
+directive|define
+name|return_if_no_shell
+parameter_list|(
+name|shell
+parameter_list|,
+name|data
+parameter_list|)
+define|\
+value|shell = action_data_get_shell (data); \   if (! shell) \     return
 end_define
 
 begin_define
