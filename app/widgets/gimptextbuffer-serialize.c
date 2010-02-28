@@ -511,7 +511,7 @@ name|close_tag
 argument_list|(
 name|GIMP_TEXT_BUFFER
 argument_list|(
-name|content_buffer
+name|register_buffer
 argument_list|)
 argument_list|,
 name|string
@@ -562,7 +562,7 @@ name|close_tag
 argument_list|(
 name|GIMP_TEXT_BUFFER
 argument_list|(
-name|content_buffer
+name|register_buffer
 argument_list|)
 argument_list|,
 name|string
@@ -611,7 +611,7 @@ name|open_tag
 argument_list|(
 name|GIMP_TEXT_BUFFER
 argument_list|(
-name|content_buffer
+name|register_buffer
 argument_list|)
 argument_list|,
 name|string
@@ -796,7 +796,7 @@ name|close_tag
 argument_list|(
 name|GIMP_TEXT_BUFFER
 argument_list|(
-name|content_buffer
+name|register_buffer
 argument_list|)
 argument_list|,
 name|string
@@ -847,7 +847,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon292fe2a10103
+DECL|enum|__anon2c77e09e0103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -869,17 +869,22 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fe2a10208
+DECL|struct|__anon2c77e09e0208
 block|{
 DECL|member|states
 name|GSList
 modifier|*
 name|states
 decl_stmt|;
-DECL|member|buffer
+DECL|member|register_buffer
 name|GtkTextBuffer
 modifier|*
-name|buffer
+name|register_buffer
+decl_stmt|;
+DECL|member|content_buffer
+name|GtkTextBuffer
+modifier|*
+name|content_buffer
 decl_stmt|;
 DECL|member|tag_stack
 name|GSList
@@ -900,7 +905,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292fe2a10308
+DECL|struct|__anon2c77e09e0308
 block|{
 DECL|member|text
 name|gchar
@@ -1311,7 +1316,7 @@ name|GIMP_TEXT_BUFFER
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|register_buffer
 argument_list|)
 argument_list|,
 name|element_name
@@ -1886,7 +1891,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|parse_info_init (ParseInfo * info,GtkTextBuffer * buffer)
+DECL|function|parse_info_init (ParseInfo * info,GtkTextBuffer * register_buffer,GtkTextBuffer * content_buffer)
 name|parse_info_init
 parameter_list|(
 name|ParseInfo
@@ -1895,7 +1900,11 @@ name|info
 parameter_list|,
 name|GtkTextBuffer
 modifier|*
-name|buffer
+name|register_buffer
+parameter_list|,
+name|GtkTextBuffer
+modifier|*
+name|content_buffer
 parameter_list|)
 block|{
 name|info
@@ -1926,9 +1935,15 @@ name|NULL
 expr_stmt|;
 name|info
 operator|->
-name|buffer
+name|register_buffer
 operator|=
-name|buffer
+name|register_buffer
+expr_stmt|;
+name|info
+operator|->
+name|content_buffer
+operator|=
+name|content_buffer
 expr_stmt|;
 block|}
 end_function
@@ -2056,7 +2071,7 @@ name|gtk_text_buffer_create_mark
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|content_buffer
 argument_list|,
 literal|"deserialize-insert-point"
 argument_list|,
@@ -2101,7 +2116,7 @@ name|gtk_text_buffer_insert
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|content_buffer
 argument_list|,
 name|iter
 argument_list|,
@@ -2117,7 +2132,7 @@ name|gtk_text_buffer_get_iter_at_mark
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|content_buffer
 argument_list|,
 operator|&
 name|start_iter
@@ -2155,7 +2170,7 @@ name|gtk_text_buffer_apply_tag
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|content_buffer
 argument_list|,
 name|tag
 argument_list|,
@@ -2170,7 +2185,7 @@ name|gtk_text_buffer_move_mark
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|content_buffer
 argument_list|,
 name|mark
 argument_list|,
@@ -2182,7 +2197,7 @@ name|gtk_text_buffer_delete_mark
 argument_list|(
 name|info
 operator|->
-name|buffer
+name|content_buffer
 argument_list|,
 name|mark
 argument_list|)
@@ -2260,6 +2275,8 @@ name|parse_info_init
 argument_list|(
 operator|&
 name|info
+argument_list|,
+name|register_buffer
 argument_list|,
 name|content_buffer
 argument_list|)
