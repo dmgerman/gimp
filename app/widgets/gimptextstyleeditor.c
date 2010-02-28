@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2771a4a80103
+DECL|enum|__anon292cd38a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1433,6 +1433,11 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
+name|gtk_text_buffer_begin_user_action
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gtk_toggle_button_get_active
@@ -1471,6 +1476,11 @@ name|end
 argument_list|)
 expr_stmt|;
 block|}
+name|gtk_text_buffer_end_user_action
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 block|}
 name|list
 operator|=
