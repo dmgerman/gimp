@@ -204,6 +204,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"preferences-dialog.h"
 end_include
 
@@ -2030,10 +2036,7 @@ parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -2065,10 +2068,7 @@ parameter_list|)
 block|{
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 name|gtk_widget_get_screen
 argument_list|(
@@ -9448,7 +9448,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2b41ee9e0108
+DECL|struct|__anon2949e4080108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10615,7 +10615,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b41ee9e0208
+DECL|struct|__anon2949e4080208
 block|{
 DECL|member|label
 specifier|const
@@ -11727,7 +11727,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b41ee9e0308
+DECL|struct|__anon2949e4080308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11882,7 +11882,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b41ee9e0408
+DECL|struct|__anon2949e4080408
 block|{
 DECL|member|tree_label
 specifier|const

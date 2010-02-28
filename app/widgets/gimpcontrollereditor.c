@@ -55,6 +55,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpactioneditor.h"
 end_include
 
@@ -108,7 +114,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29225c010103
+DECL|enum|__anon2c1d0a2c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +130,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29225c010203
+DECL|enum|__anon2c1d0a2c0203
 block|{
 DECL|enumerator|COLUMN_EVENT
 name|COLUMN_EVENT
@@ -2931,10 +2937,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_dialog_factory_add_foreign
 argument_list|(
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-controller-action-dialog"
 argument_list|,

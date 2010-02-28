@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29daa3e40103
+DECL|enum|__anon2b8c1f8f0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1057,10 +1057,7 @@ name|entry
 operator|=
 name|gimp_dialog_factory_find_entry
 argument_list|(
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 name|identifier
 argument_list|)

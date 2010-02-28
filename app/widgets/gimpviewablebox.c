@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainerentry.h"
 end_include
 
@@ -749,10 +755,7 @@ name|view_size
 argument_list|,
 literal|1
 argument_list|,
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-gradient-list|gimp-gradient-grid"
 argument_list|,
@@ -1686,10 +1689,7 @@ name|view_size
 argument_list|,
 literal|1
 argument_list|,
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 name|dialog_identifier
 argument_list|,

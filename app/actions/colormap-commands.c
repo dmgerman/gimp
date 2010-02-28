@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"actions.h"
 end_include
 
@@ -270,10 +276,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-colormap-editor-color-dialog"
 argument_list|,

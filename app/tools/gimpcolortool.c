@@ -168,6 +168,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -191,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f2e2a40103
+DECL|enum|__anon2bf9fa620103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2573,10 +2579,6 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-name|GimpDialogFactory
-modifier|*
-name|dialog_factory
-decl_stmt|;
 comment|/*  use this tool's own options here (NOT color_tool->options)  */
 name|context
 operator|=
@@ -2586,13 +2588,6 @@ name|gimp_tool_get_options
 argument_list|(
 name|tool
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|dialog_factory
-operator|=
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2626,7 +2621,7 @@ name|info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|dialog_factory
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-indexed-palette"
 argument_list|)
@@ -2681,7 +2676,7 @@ name|info
 operator|=
 name|gimp_dialog_factory_find_session_info
 argument_list|(
-name|dialog_factory
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-palette-editor"
 argument_list|)
@@ -2817,7 +2812,7 @@ name|dockable
 operator|=
 name|gimp_dialog_factory_dialog_raise
 argument_list|(
-name|dialog_factory
+name|global_dialog_factory
 argument_list|,
 name|screen
 argument_list|,

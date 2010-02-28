@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimprectangletool.h"
 end_include
 
@@ -2644,10 +2650,7 @@ name|children
 decl_stmt|;
 name|dialog_factory
 operator|=
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
+name|global_dialog_factory
 expr_stmt|;
 name|text_tool
 operator|->

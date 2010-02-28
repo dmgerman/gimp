@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"dialogs/dialogs.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcolordialog.h"
 end_include
 
@@ -487,17 +493,6 @@ operator|!
 name|color_dialog
 condition|)
 block|{
-name|GimpDialogFactory
-modifier|*
-name|toplevel_factory
-decl_stmt|;
-name|toplevel_factory
-operator|=
-name|gimp_dialog_factory_from_name
-argument_list|(
-literal|"toplevel"
-argument_list|)
-expr_stmt|;
 name|color_dialog
 operator|=
 name|gimp_color_dialog_new
@@ -517,7 +512,7 @@ argument_list|(
 name|editor
 argument_list|)
 argument_list|,
-name|toplevel_factory
+name|global_dialog_factory
 argument_list|,
 literal|"gimp-toolbox-color-dialog"
 argument_list|,
