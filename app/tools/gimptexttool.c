@@ -3681,15 +3681,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_text_buffer_set_text
-argument_list|(
-name|text_tool
-operator|->
-name|buffer
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gimp_text_buffer_set_markup
 argument_list|(
 name|text_tool
