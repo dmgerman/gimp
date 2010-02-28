@@ -145,8 +145,10 @@ decl_stmt|;
 name|GimpDialogsState
 name|state
 init|=
-name|gimp_dialog_factories_get_state
-argument_list|()
+name|gimp_dialog_factory_get_state
+argument_list|(
+name|global_dialog_factory
+argument_list|)
 decl_stmt|;
 name|GimpDialogsState
 name|new_state
@@ -209,8 +211,10 @@ name|state
 operator|!=
 name|new_state
 condition|)
-name|gimp_dialog_factories_set_state
+name|gimp_dialog_factory_set_state
 argument_list|(
+name|global_dialog_factory
+argument_list|,
 name|new_state
 argument_list|)
 expr_stmt|;

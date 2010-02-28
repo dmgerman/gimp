@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b73e9f0103
+DECL|enum|__anon2b56fdbc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -308,7 +308,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b73e9f0208
+DECL|struct|__anon2b56fdbc0208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -2338,15 +2338,23 @@ argument_list|,
 literal|"No displays visible any longer"
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factories_hide_with_display
-argument_list|()
+name|gimp_dialog_factory_hide_with_display
+argument_list|(
+name|private
+operator|->
+name|dialog_factory
+argument_list|)
 expr_stmt|;
 block|}
 block|}
 else|else
 block|{
-name|gimp_dialog_factories_show_with_display
-argument_list|()
+name|gimp_dialog_factory_show_with_display
+argument_list|(
+name|private
+operator|->
+name|dialog_factory
+argument_list|)
 expr_stmt|;
 block|}
 if|if
