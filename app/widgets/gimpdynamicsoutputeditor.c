@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a8bc10103
+DECL|enum|__anon28a4231e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a8bc10203
+DECL|enum|__anon28a4231e0203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8a8bc10303
+DECL|enum|__anon28a4231e0303
 block|{
 DECL|enumerator|INPUT_PRESSURE
 name|INPUT_PRESSURE
@@ -1981,13 +1981,6 @@ name|bg_color
 argument_list|)
 expr_stmt|;
 block|}
-name|gtk_widget_queue_draw
-argument_list|(
-name|private
-operator|->
-name|curve_view
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
