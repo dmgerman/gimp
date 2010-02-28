@@ -141,7 +141,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a58508f0103
+DECL|enum|__anon27b6d1430103
 block|{
 DECL|enumerator|SESSION_INFO
 name|SESSION_INFO
@@ -839,8 +839,10 @@ name|gimp
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dialog_factories_session_restore
-argument_list|()
+name|gimp_dialog_factory_restore
+argument_list|(
+name|global_dialog_factory
+argument_list|)
 expr_stmt|;
 block|}
 end_function
@@ -943,8 +945,10 @@ operator|!
 name|writer
 condition|)
 return|return;
-name|gimp_dialog_factories_session_save
+name|gimp_dialog_factory_save
 argument_list|(
+name|global_dialog_factory
+argument_list|,
 name|writer
 argument_list|)
 expr_stmt|;
