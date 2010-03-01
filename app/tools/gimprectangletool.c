@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29895e5c0103
+DECL|enum|__anon296276060103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29895e5c0203
+DECL|enum|__anon296276060203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29895e5c0303
+DECL|enum|__anon296276060303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5269,6 +5269,18 @@ operator|--
 expr_stmt|;
 return|return;
 block|}
+if|if
+condition|(
+operator|!
+name|proximity
+condition|)
+block|{
+name|function
+operator|=
+name|GIMP_RECTANGLE_TOOL_DEAD
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|gimp_rectangle_tool_coord_outside
