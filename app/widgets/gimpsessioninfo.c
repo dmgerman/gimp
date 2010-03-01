@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e8ce10103
+DECL|enum|__anon27b8708b0103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1823,6 +1823,7 @@ operator|->
 name|view_size
 argument_list|,
 name|TRUE
+comment|/*present*/
 argument_list|)
 expr_stmt|;
 if|if
@@ -1885,11 +1886,6 @@ name|GIMP_DOCK_WINDOW
 argument_list|(
 name|dialog
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gtk_widget_show
-argument_list|(
-name|dialog
 argument_list|)
 expr_stmt|;
 block|}
