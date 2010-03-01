@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -695,6 +701,17 @@ operator|->
 name|style_overlay
 condition|)
 block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+operator|->
+name|gimp
+decl_stmt|;
 name|gdouble
 name|xres
 init|=
@@ -786,9 +803,15 @@ name|style_editor
 operator|=
 name|gimp_text_style_editor_new
 argument_list|(
+name|gimp
+argument_list|,
 name|text_tool
 operator|->
 name|buffer
+argument_list|,
+name|gimp
+operator|->
+name|fonts
 argument_list|,
 name|xres
 argument_list|,
