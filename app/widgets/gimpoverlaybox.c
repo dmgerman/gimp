@@ -414,7 +414,18 @@ name|GimpOverlayBox
 modifier|*
 name|box
 parameter_list|)
-block|{ }
+block|{
+name|gtk_widget_set_has_window
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
