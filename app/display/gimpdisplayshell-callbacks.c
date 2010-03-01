@@ -906,8 +906,6 @@ name|allocation
 decl_stmt|;
 name|gtk_widget_grab_focus
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 expr_stmt|;
@@ -2443,8 +2441,6 @@ argument_list|)
 argument_list|,
 name|gtk_widget_get_window
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 argument_list|,
@@ -2463,8 +2459,6 @@ argument_list|)
 argument_list|,
 name|gtk_widget_get_window
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 argument_list|,
@@ -4433,8 +4427,6 @@ name|device
 argument_list|,
 name|gtk_widget_get_window
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 argument_list|,
@@ -4450,8 +4442,6 @@ name|device
 argument_list|,
 name|gtk_widget_get_window
 argument_list|(
-name|shell
-operator|->
 name|canvas
 argument_list|)
 argument_list|,
