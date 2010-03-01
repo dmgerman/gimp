@@ -127,9 +127,12 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_comment
-comment|/* #define ENABLE_SPACING */
-end_comment
+begin_define
+DECL|macro|ENABLE_SPACING
+define|#
+directive|define
+name|ENABLE_SPACING
+end_define
 
 begin_comment
 comment|/*  local function prototypes  */
