@@ -3974,7 +3974,7 @@ name|text_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_text_buffer_delete
+name|gtk_text_buffer_delete_interactive
 argument_list|(
 name|buffer
 argument_list|,
@@ -3983,6 +3983,8 @@ name|cursor
 argument_list|,
 operator|&
 name|end
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_resume
