@@ -198,6 +198,11 @@ parameter_list|(
 name|GimpTextStyleEditor
 modifier|*
 name|editor
+parameter_list|,
+name|GList
+modifier|*
+modifier|*
+name|remove_tags
 parameter_list|)
 function_decl|;
 end_function_decl
