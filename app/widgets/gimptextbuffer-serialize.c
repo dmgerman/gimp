@@ -847,7 +847,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon298ec6d00103
+DECL|enum|__anon29a5556d0103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -869,7 +869,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298ec6d00208
+DECL|struct|__anon29a5556d0208
 block|{
 DECL|member|states
 name|GSList
@@ -905,7 +905,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon298ec6d00308
+DECL|struct|__anon29a5556d0308
 block|{
 DECL|member|text
 name|gchar
@@ -2465,7 +2465,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-literal|"\342\200\215"
+name|WORD_JOINER
 argument_list|,
 operator|-
 literal|1

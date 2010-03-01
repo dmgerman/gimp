@@ -16,6 +16,22 @@ directive|define
 name|__GIMP_TEXT_BUFFER_SERIALIZE_H__
 end_define
 
+begin_define
+DECL|macro|WORD_JOINER
+define|#
+directive|define
+name|WORD_JOINER
+value|"\342\201\240"
+end_define
+
+begin_define
+DECL|macro|WORD_JOINER_LENGTH
+define|#
+directive|define
+name|WORD_JOINER_LENGTH
+value|3
+end_define
+
 begin_function_decl
 name|guint8
 modifier|*

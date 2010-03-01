@@ -3019,10 +3019,7 @@ condition|)
 block|{
 name|index
 operator|+=
-name|strlen
-argument_list|(
-literal|"\342\200\215"
-argument_list|)
+name|WORD_JOINER_LENGTH
 expr_stmt|;
 break|break;
 block|}
@@ -3244,10 +3241,7 @@ condition|)
 block|{
 name|index
 operator|-=
-name|strlen
-argument_list|(
-literal|"\342\200\215"
-argument_list|)
+name|WORD_JOINER_LENGTH
 expr_stmt|;
 break|break;
 block|}
