@@ -3020,6 +3020,8 @@ name|buffer
 argument_list|,
 operator|&
 name|sel_start
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|max
@@ -3032,6 +3034,8 @@ name|buffer
 argument_list|,
 operator|&
 name|sel_end
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|layout
