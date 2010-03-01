@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon292cd38a0103
+DECL|enum|__anon29b6cf780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1350,6 +1350,11 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
+name|gtk_text_buffer_begin_user_action
+argument_list|(
+name|buffer
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_remove_all_tags
 argument_list|(
 name|buffer
@@ -1359,6 +1364,11 @@ name|start
 argument_list|,
 operator|&
 name|end
+argument_list|)
+expr_stmt|;
+name|gtk_text_buffer_end_user_action
+argument_list|(
+name|buffer
 argument_list|)
 expr_stmt|;
 block|}
