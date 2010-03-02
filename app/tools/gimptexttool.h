@@ -188,9 +188,9 @@ DECL|member|selecting
 name|gboolean
 name|selecting
 decl_stmt|;
-DECL|member|select_start_index
-name|gint
-name|select_start_index
+DECL|member|select_start_iter
+name|GtkTextIter
+name|select_start_iter
 decl_stmt|;
 DECL|member|select_words
 name|gboolean
