@@ -233,6 +233,17 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gboolean
+name|gimp_text_buffer_has_markup
+parameter_list|(
+name|GimpTextBuffer
+modifier|*
+name|buffer
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GtkTextTag
 modifier|*
 name|gimp_text_buffer_get_iter_baseline
