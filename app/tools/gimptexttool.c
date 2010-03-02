@@ -3447,7 +3447,7 @@ name|text_tool
 operator|->
 name|proxy
 operator|->
-name|unit
+name|box_unit
 argument_list|,
 name|xres
 argument_list|)
@@ -3464,7 +3464,7 @@ name|text_tool
 operator|->
 name|proxy
 operator|->
-name|unit
+name|box_unit
 argument_list|,
 name|yres
 argument_list|)
@@ -5144,7 +5144,7 @@ name|text_tool
 operator|->
 name|proxy
 operator|->
-name|unit
+name|box_unit
 argument_list|,
 name|xres
 argument_list|)
@@ -5161,7 +5161,7 @@ name|text_tool
 operator|->
 name|proxy
 operator|->
-name|unit
+name|box_unit
 argument_list|,
 name|yres
 argument_list|)
