@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a10cec50103
+DECL|enum|__anon299b3b850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -353,7 +353,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_layer_text_notify
+name|gimp_text_layer_text_changed
 parameter_list|(
 name|GimpTextLayer
 modifier|*
@@ -1400,6 +1400,10 @@ block|}
 end_function
 
 begin_comment
+comment|/*  public functions  */
+end_comment
+
+begin_comment
 comment|/**  * gimp_text_layer_new:  * @image: the #GimpImage the layer should belong to  * @text: a #GimpText object  *  * Creates a new text layer.  *  * Return value: a new #GimpTextLayer or %NULL in case of a problem  **/
 end_comment
 
@@ -1583,7 +1587,7 @@ name|text
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_layer_text_notify
+name|gimp_text_layer_text_changed
 argument_list|)
 argument_list|,
 name|layer
@@ -1621,11 +1625,11 @@ name|g_signal_connect_object
 argument_list|(
 name|text
 argument_list|,
-literal|"notify"
+literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_layer_text_notify
+name|gimp_text_layer_text_changed
 argument_list|)
 argument_list|,
 name|layer
@@ -1991,11 +1995,15 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/*  private functions  */
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_layer_text_notify (GimpTextLayer * layer)
-name|gimp_text_layer_text_notify
+DECL|function|gimp_text_layer_text_changed (GimpTextLayer * layer)
+name|gimp_text_layer_text_changed
 parameter_list|(
 name|GimpTextLayer
 modifier|*
