@@ -165,6 +165,10 @@ name|GList
 modifier|*
 name|toggles
 decl_stmt|;
+DECL|member|update_idle_id
+name|guint
+name|update_idle_id
+decl_stmt|;
 block|}
 struct|;
 end_struct
