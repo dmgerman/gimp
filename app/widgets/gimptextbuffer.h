@@ -233,8 +233,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_text_buffer_get_baseline
+name|GtkTextTag
+modifier|*
+name|gimp_text_buffer_get_iter_baseline
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
@@ -245,10 +246,9 @@ name|GtkTextIter
 modifier|*
 name|iter
 parameter_list|,
-name|GtkTextTag
+name|gint
 modifier|*
-modifier|*
-name|baseline_tag
+name|baseline
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -278,8 +278,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gint
-name|gimp_text_buffer_get_spacing
+name|GtkTextTag
+modifier|*
+name|gimp_text_buffer_get_iter_spacing
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
@@ -290,10 +291,9 @@ name|GtkTextIter
 modifier|*
 name|iter
 parameter_list|,
-name|GtkTextTag
+name|gint
 modifier|*
-modifier|*
-name|spacing_tag
+name|spacing
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -323,9 +323,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gchar
+name|GtkTextTag
 modifier|*
-name|gimp_text_buffer_get_font
+name|gimp_text_buffer_get_iter_font
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
@@ -336,10 +336,10 @@ name|GtkTextIter
 modifier|*
 name|iter
 parameter_list|,
-name|GtkTextTag
+name|gchar
 modifier|*
 modifier|*
-name|font_tag
+name|font
 parameter_list|)
 function_decl|;
 end_function_decl
