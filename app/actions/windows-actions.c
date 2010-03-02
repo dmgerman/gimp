@@ -364,36 +364,7 @@ argument_list|,
 literal|"_Dockable Dialogs"
 argument_list|)
 block|}
-block|,
-block|{
-literal|"windows-show-toolbox"
-block|,
-name|NULL
-block|,
-name|NC_
-argument_list|(
-literal|"windows-action"
-argument_list|,
-literal|"Tool_box"
-argument_list|)
-block|,
-literal|"<control>B"
-block|,
-name|NC_
-argument_list|(
-literal|"windows-action"
-argument_list|,
-literal|"Raise the toolbox"
-argument_list|)
-block|,
-name|G_CALLBACK
-argument_list|(
-name|windows_show_toolbox_cmd_callback
-argument_list|)
-block|,
-name|GIMP_HELP_TOOLBOX
-block|}
-block|}
+block|, }
 decl_stmt|;
 end_decl_stmt
 

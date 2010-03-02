@@ -2190,9 +2190,6 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|windows_show_toolbox
-argument_list|()
-expr_stmt|;
 comment|/*  move keyboard focus to the display  */
 name|gtk_window_present
 argument_list|(
