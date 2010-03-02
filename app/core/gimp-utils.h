@@ -314,6 +314,19 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gchar
+modifier|*
+name|gimp_markup_extract_text
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|markup
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Common values for the n_snap_lines parameter of  * gimp_constrain_line.  */
 end_comment
