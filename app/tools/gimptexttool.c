@@ -2005,8 +2005,31 @@ name|selecting
 condition|)
 block|{
 comment|/*  we are in a selection process (user has initially clicked on        *  an existing text layer), so finish the selection process and        *  ignore rectangle-change-complete.        */
+comment|/*  need to block "end-user-action" on the text buffer, because        *  GtkTextBuffer considers copying text to the clipboard an        *  undo-relevant user action, which is clearly a bug, but what        *  can we do...        */
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|text_tool
+operator|->
+name|buffer
+argument_list|,
+name|gimp_text_tool_buffer_edited
+argument_list|,
+name|text_tool
+argument_list|)
+expr_stmt|;
 name|gimp_text_tool_editor_button_release
 argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|text_tool
+operator|->
+name|buffer
+argument_list|,
+name|gimp_text_tool_buffer_edited
+argument_list|,
 name|text_tool
 argument_list|)
 expr_stmt|;
