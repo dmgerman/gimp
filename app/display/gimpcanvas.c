@@ -75,9 +75,17 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|MAX_BATCH_SIZE
+define|#
+directive|define
+name|MAX_BATCH_SIZE
+value|32000
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c0a4e9b0103
+DECL|enum|__anon2b17c84a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2692,7 +2700,7 @@ while|while
 condition|(
 name|num_segments
 operator|>=
-literal|32000
+name|MAX_BATCH_SIZE
 condition|)
 block|{
 name|gdk_draw_segments
@@ -2714,16 +2722,16 @@ index|]
 argument_list|,
 name|segments
 argument_list|,
-literal|32000
+name|MAX_BATCH_SIZE
 argument_list|)
 expr_stmt|;
 name|num_segments
 operator|-=
-literal|32000
+name|MAX_BATCH_SIZE
 expr_stmt|;
 name|segments
 operator|+=
-literal|32000
+name|MAX_BATCH_SIZE
 expr_stmt|;
 block|}
 name|gdk_draw_segments
