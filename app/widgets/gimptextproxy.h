@@ -123,11 +123,11 @@ name|gint
 name|count
 parameter_list|)
 function_decl|;
-DECL|member|change_spacing
+DECL|member|change_kerning
 name|void
 function_decl|(
 modifier|*
-name|change_spacing
+name|change_kerning
 function_decl|)
 parameter_list|(
 name|GimpTextProxy

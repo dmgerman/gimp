@@ -127,13 +127,6 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
-begin_define
-DECL|macro|ENABLE_SPACING
-define|#
-directive|define
-name|ENABLE_SPACING
-end_define
-
 begin_comment
 comment|/*  local function prototypes  */
 end_comment
@@ -545,19 +538,19 @@ if|if
 condition|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 condition|)
 block|{
 name|g_list_free
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|)
 expr_stmt|;
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 operator|=
 name|NULL
 expr_stmt|;
@@ -910,9 +903,6 @@ name|start
 decl_stmt|,
 name|end
 decl_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_SPACING
 name|gimp_text_buffer_post_deserialize
 argument_list|(
 name|buffer
@@ -920,8 +910,6 @@ argument_list|,
 name|content
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gtk_text_buffer_get_bounds
 argument_list|(
 name|content
@@ -1065,9 +1053,6 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_SPACING
 name|gimp_text_buffer_pre_serialize
 argument_list|(
 name|buffer
@@ -1075,8 +1060,6 @@ argument_list|,
 name|content
 argument_list|)
 expr_stmt|;
-endif|#
-directive|endif
 name|gtk_text_buffer_get_bounds
 argument_list|(
 name|content
@@ -1698,8 +1681,8 @@ end_function
 begin_function
 name|GtkTextTag
 modifier|*
-DECL|function|gimp_text_buffer_get_iter_spacing (GimpTextBuffer * buffer,const GtkTextIter * iter,gint * spacing)
-name|gimp_text_buffer_get_iter_spacing
+DECL|function|gimp_text_buffer_get_iter_kerning (GimpTextBuffer * buffer,const GtkTextIter * iter,gint * kerning)
+name|gimp_text_buffer_get_iter_kerning
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
@@ -1712,7 +1695,7 @@ name|iter
 parameter_list|,
 name|gint
 modifier|*
-name|spacing
+name|kerning
 parameter_list|)
 block|{
 name|GList
@@ -1725,7 +1708,7 @@ name|list
 operator|=
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 init|;
 name|list
 condition|;
@@ -1757,7 +1740,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|spacing
+name|kerning
 condition|)
 name|g_object_get
 argument_list|(
@@ -1765,7 +1748,7 @@ name|tag
 argument_list|,
 literal|"rise"
 argument_list|,
-name|spacing
+name|kerning
 argument_list|,
 comment|/* FIXME */
 name|NULL
@@ -1778,10 +1761,10 @@ block|}
 block|}
 if|if
 condition|(
-name|spacing
+name|kerning
 condition|)
 operator|*
-name|spacing
+name|kerning
 operator|=
 literal|0
 expr_stmt|;
@@ -1795,15 +1778,15 @@ begin_function
 specifier|static
 name|GtkTextTag
 modifier|*
-DECL|function|gimp_text_buffer_get_spacing_tag (GimpTextBuffer * buffer,gint spacing)
-name|gimp_text_buffer_get_spacing_tag
+DECL|function|gimp_text_buffer_get_kerning_tag (GimpTextBuffer * buffer,gint kerning)
+name|gimp_text_buffer_get_kerning_tag
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
 name|buffer
 parameter_list|,
 name|gint
-name|spacing
+name|kerning
 parameter_list|)
 block|{
 name|GList
@@ -1826,7 +1809,7 @@ name|list
 operator|=
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 init|;
 name|list
 condition|;
@@ -1839,7 +1822,7 @@ argument_list|)
 control|)
 block|{
 name|gint
-name|tag_spacing
+name|tag_kerning
 decl_stmt|;
 name|tag
 operator|=
@@ -1854,7 +1837,7 @@ argument_list|,
 literal|"rise"
 argument_list|,
 operator|&
-name|tag_spacing
+name|tag_kerning
 argument_list|,
 comment|/* FIXME */
 name|NULL
@@ -1862,9 +1845,9 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|tag_spacing
+name|tag_kerning
 operator|==
-name|spacing
+name|kerning
 condition|)
 return|return
 name|tag
@@ -1879,9 +1862,9 @@ argument_list|(
 name|name
 argument_list|)
 argument_list|,
-literal|"spacing-%d"
+literal|"kerning-%d"
 argument_list|,
-name|spacing
+name|kerning
 argument_list|)
 expr_stmt|;
 name|tag
@@ -1897,7 +1880,7 @@ name|name
 argument_list|,
 literal|"rise"
 argument_list|,
-name|spacing
+name|kerning
 argument_list|,
 comment|/* FIXME */
 name|NULL
@@ -1905,13 +1888,13 @@ argument_list|)
 expr_stmt|;
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 operator|=
 name|g_list_prepend
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)
@@ -1924,8 +1907,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_text_buffer_change_spacing (GimpTextBuffer * buffer,const GtkTextIter * start,const GtkTextIter * end,gint count)
-name|gimp_text_buffer_change_spacing
+DECL|function|gimp_text_buffer_change_kerning (GimpTextBuffer * buffer,const GtkTextIter * start,const GtkTextIter * end,gint count)
+name|gimp_text_buffer_change_kerning
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
@@ -1959,7 +1942,7 @@ modifier|*
 name|span_tag
 decl_stmt|;
 name|gint
-name|span_spacing
+name|span_kerning
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -2005,7 +1988,7 @@ name|start
 expr_stmt|;
 name|span_tag
 operator|=
-name|gimp_text_buffer_get_iter_spacing
+name|gimp_text_buffer_get_iter_kerning
 argument_list|(
 name|buffer
 argument_list|,
@@ -2013,7 +1996,7 @@ operator|&
 name|iter
 argument_list|,
 operator|&
-name|span_spacing
+name|span_kerning
 argument_list|)
 expr_stmt|;
 name|gtk_text_buffer_begin_user_action
@@ -2031,7 +2014,7 @@ modifier|*
 name|iter_tag
 decl_stmt|;
 name|gint
-name|iter_spacing
+name|iter_kerning
 decl_stmt|;
 name|gtk_text_iter_forward_char
 argument_list|(
@@ -2041,7 +2024,7 @@ argument_list|)
 expr_stmt|;
 name|iter_tag
 operator|=
-name|gimp_text_buffer_get_iter_spacing
+name|gimp_text_buffer_get_iter_kerning
 argument_list|(
 name|buffer
 argument_list|,
@@ -2049,7 +2032,7 @@ operator|&
 name|iter
 argument_list|,
 operator|&
-name|iter_spacing
+name|iter_kerning
 argument_list|)
 expr_stmt|;
 name|span_end
@@ -2058,9 +2041,9 @@ name|iter
 expr_stmt|;
 if|if
 condition|(
-name|iter_spacing
+name|iter_kerning
 operator|!=
-name|span_spacing
+name|span_kerning
 operator|||
 name|gtk_text_iter_compare
 argument_list|(
@@ -2075,7 +2058,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|span_spacing
+name|span_kerning
 operator|!=
 literal|0
 condition|)
@@ -2099,7 +2082,7 @@ expr_stmt|;
 block|}
 if|if
 condition|(
-name|span_spacing
+name|span_kerning
 operator|+
 name|count
 operator|!=
@@ -2108,11 +2091,11 @@ condition|)
 block|{
 name|span_tag
 operator|=
-name|gimp_text_buffer_get_spacing_tag
+name|gimp_text_buffer_get_kerning_tag
 argument_list|(
 name|buffer
 argument_list|,
-name|span_spacing
+name|span_kerning
 operator|+
 name|count
 argument_list|)
@@ -2138,9 +2121,9 @@ name|span_start
 operator|=
 name|iter
 expr_stmt|;
-name|span_spacing
+name|span_kerning
 operator|=
-name|iter_spacing
+name|iter_kerning
 expr_stmt|;
 name|span_tag
 operator|=
@@ -2763,7 +2746,7 @@ name|g_list_find
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)
@@ -2784,7 +2767,7 @@ name|value
 condition|)
 block|{
 name|gint
-name|spacing
+name|kerning
 decl_stmt|;
 name|g_object_get
 argument_list|(
@@ -2793,7 +2776,7 @@ argument_list|,
 literal|"rise"
 argument_list|,
 operator|&
-name|spacing
+name|kerning
 argument_list|,
 comment|/* FIXME */
 name|NULL
@@ -2806,7 +2789,7 @@ name|g_strdup_printf
 argument_list|(
 literal|"%d"
 argument_list|,
-name|spacing
+name|kerning
 argument_list|)
 expr_stmt|;
 block|}
@@ -3035,7 +3018,7 @@ argument_list|)
 condition|)
 block|{
 return|return
-name|gimp_text_buffer_get_spacing_tag
+name|gimp_text_buffer_get_kerning_tag
 argument_list|(
 name|buffer
 argument_list|,
@@ -3486,7 +3469,7 @@ name|g_list_find
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)
@@ -3614,9 +3597,6 @@ argument_list|(
 name|string
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_SPACING
 if|if
 condition|(
 name|layout_index
@@ -3668,7 +3648,7 @@ name|g_list_find
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)
@@ -3724,8 +3704,6 @@ argument_list|)
 condition|)
 do|;
 block|}
-endif|#
-directive|endif
 return|return
 name|index
 return|;
@@ -3802,9 +3780,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|ENABLE_SPACING
 if|if
 condition|(
 name|layout_index
@@ -3890,7 +3865,7 @@ name|g_list_find
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)
@@ -3951,8 +3926,6 @@ argument_list|)
 condition|)
 do|;
 block|}
-endif|#
-directive|endif
 name|string
 index|[
 name|index

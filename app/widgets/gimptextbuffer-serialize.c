@@ -847,7 +847,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29a5556d0103
+DECL|enum|__anon2767adff0103
 block|{
 DECL|enumerator|STATE_START
 name|STATE_START
@@ -869,7 +869,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5556d0208
+DECL|struct|__anon2767adff0208
 block|{
 DECL|member|states
 name|GSList
@@ -905,7 +905,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a5556d0308
+DECL|struct|__anon2767adff0308
 block|{
 DECL|member|text
 name|gchar
@@ -2449,7 +2449,7 @@ name|g_list_find
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)
@@ -2606,7 +2606,7 @@ name|g_list_find
 argument_list|(
 name|buffer
 operator|->
-name|spacing_tags
+name|kerning_tags
 argument_list|,
 name|tag
 argument_list|)

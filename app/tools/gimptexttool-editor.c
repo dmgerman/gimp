@@ -276,7 +276,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_text_tool_change_spacing
+name|gimp_text_tool_change_kerning
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -2641,11 +2641,11 @@ name|text_tool
 operator|->
 name|proxy_text_view
 argument_list|,
-literal|"change-spacing"
+literal|"change-kerning"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_text_tool_change_spacing
+name|gimp_text_tool_change_kerning
 argument_list|)
 argument_list|,
 name|text_tool
@@ -4300,8 +4300,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_change_spacing (GimpTextTool * text_tool,gint count)
-name|gimp_text_tool_change_spacing
+DECL|function|gimp_text_tool_change_kerning (GimpTextTool * text_tool,gint count)
+name|gimp_text_tool_change_kerning
 parameter_list|(
 name|GimpTextTool
 modifier|*
@@ -4384,7 +4384,7 @@ operator|&
 name|end
 argument_list|)
 expr_stmt|;
-name|gimp_text_buffer_change_spacing
+name|gimp_text_buffer_change_kerning
 argument_list|(
 name|text_tool
 operator|->

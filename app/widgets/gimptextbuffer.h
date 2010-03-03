@@ -111,10 +111,10 @@ name|GList
 modifier|*
 name|baseline_tags
 decl_stmt|;
-DECL|member|spacing_tags
+DECL|member|kerning_tags
 name|GList
 modifier|*
-name|spacing_tags
+name|kerning_tags
 decl_stmt|;
 DECL|member|font_tags
 name|GList
@@ -291,7 +291,7 @@ end_function_decl
 begin_function_decl
 name|GtkTextTag
 modifier|*
-name|gimp_text_buffer_get_iter_spacing
+name|gimp_text_buffer_get_iter_kerning
 parameter_list|(
 name|GimpTextBuffer
 modifier|*
@@ -304,14 +304,14 @@ name|iter
 parameter_list|,
 name|gint
 modifier|*
-name|spacing
+name|kerning
 parameter_list|)
 function_decl|;
 end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_text_buffer_change_spacing
+name|gimp_text_buffer_change_kerning
 parameter_list|(
 name|GimpTextBuffer
 modifier|*

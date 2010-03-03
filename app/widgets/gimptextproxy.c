@@ -35,13 +35,13 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a878c10103
+DECL|enum|__anon28f5fbd30103
 block|{
 DECL|enumerator|CHANGE_BASELINE
 name|CHANGE_BASELINE
 block|,
-DECL|enumerator|CHANGE_SPACING
-name|CHANGE_SPACING
+DECL|enumerator|CHANGE_KERNING
+name|CHANGE_KERNING
 block|,
 DECL|enumerator|LAST_SIGNAL
 name|LAST_SIGNAL
@@ -302,12 +302,12 @@ argument_list|)
 expr_stmt|;
 name|proxy_signals
 index|[
-name|CHANGE_SPACING
+name|CHANGE_KERNING
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"change-spacing"
+literal|"change-kerning"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -322,7 +322,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpTextProxyClass
 argument_list|,
-name|change_spacing
+name|change_kerning
 argument_list|)
 argument_list|,
 name|NULL
@@ -388,7 +388,7 @@ name|GDK_Left
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
-literal|"change-spacing"
+literal|"change-kerning"
 argument_list|,
 literal|1
 argument_list|,
@@ -406,7 +406,7 @@ name|GDK_Right
 argument_list|,
 name|GDK_MOD1_MASK
 argument_list|,
-literal|"change-spacing"
+literal|"change-kerning"
 argument_list|,
 literal|1
 argument_list|,
