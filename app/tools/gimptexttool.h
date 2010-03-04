@@ -173,6 +173,10 @@ name|GimpTextLayout
 modifier|*
 name|layout
 decl_stmt|;
+DECL|member|drawing_blocked
+name|gboolean
+name|drawing_blocked
+decl_stmt|;
 comment|/* text editor state: */
 DECL|member|style_overlay
 name|GtkWidget
