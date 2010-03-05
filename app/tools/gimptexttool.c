@@ -5166,7 +5166,14 @@ condition|(
 operator|!
 name|layer
 condition|)
+block|{
+name|gimp_text_tool_unblock_drawing
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 name|gimp_text_tool_connect
 argument_list|(
 name|text_tool
