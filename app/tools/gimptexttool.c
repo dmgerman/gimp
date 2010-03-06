@@ -1170,6 +1170,15 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|gimp_tool_control_set_wants_click
+argument_list|(
+name|tool
+operator|->
+name|control
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 name|gimp_tool_control_set_wants_double_click
 argument_list|(
 name|tool
@@ -1996,14 +2005,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_define
-DECL|macro|MIN_LAYER_WIDTH
-define|#
-directive|define
-name|MIN_LAYER_WIDTH
-value|20
-end_define
-
 begin_function
 specifier|static
 name|void
@@ -2121,6 +2122,17 @@ name|handle_rectangle_change_complete
 operator|=
 name|FALSE
 expr_stmt|;
+comment|/*  there is no cancelling of selections yet  */
+if|if
+condition|(
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
+condition|)
+name|release_type
+operator|=
+name|GIMP_BUTTON_RELEASE_NORMAL
+expr_stmt|;
 block|}
 elseif|else
 if|if
@@ -2133,7 +2145,28 @@ operator|==
 name|GIMP_RECTANGLE_TOOL_DEAD
 condition|)
 block|{
-comment|/*  the user clicked in dead space (like between the corner and        *  edge handles, completely ignore that too.        */
+comment|/*  the user clicked in dead space (like between the corner and        *  edge handles, so completely ignore that.        */
+name|text_tool
+operator|->
+name|handle_rectangle_change_complete
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CANCEL
+condition|)
+block|{
+comment|/*  user has clicked outside of any text layer in order to        *  create a new text, but cancelled the operation.        */
+name|gimp_text_tool_editor_halt
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 name|text_tool
 operator|->
 name|handle_rectangle_change_complete
@@ -2183,13 +2216,25 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|release_type
+operator|==
+name|GIMP_BUTTON_RELEASE_CLICK
+operator|||
+operator|(
+name|x2
+operator|-
+name|x1
+operator|)
+operator|<
+literal|3
+operator|||
 operator|(
 name|y2
 operator|-
 name|y1
 operator|)
 operator|<
-name|MIN_LAYER_WIDTH
+literal|3
 condition|)
 block|{
 comment|/*  unless the rectangle is unreasonably small to hold any            *  real text (the user has eitherjust clicked or just made            *  a rectangle of a few pixels), so set the text box to            *  dynamic and ignore rectangle-change-complete.            */
