@@ -25,6 +25,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -70,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a5809e10103
+DECL|enum|__anon2c4b87fa0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -728,7 +734,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a5809e10208
+DECL|struct|__anon2c4b87fa0208
 block|{
 DECL|member|x
 DECL|member|y

@@ -15,6 +15,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -56,7 +62,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c87fada0108
+DECL|struct|__anon287fd1320108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType

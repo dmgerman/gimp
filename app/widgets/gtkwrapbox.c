@@ -15,6 +15,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -26,7 +32,7 @@ comment|/* --- properties --- */
 end_comment
 
 begin_enum
-DECL|enum|__anon2bac257b0103
+DECL|enum|__anon2acef44f0103
 enum|enum
 block|{
 DECL|enumerator|PROP_0
@@ -60,7 +66,7 @@ enum|;
 end_enum
 
 begin_enum
-DECL|enum|__anon2bac257b0203
+DECL|enum|__anon2acef44f0203
 enum|enum
 block|{
 DECL|enumerator|CHILD_PROP_0

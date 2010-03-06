@@ -15,6 +15,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -1969,7 +1975,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2c6f703d0108
+DECL|struct|__anon2a18e6520108
 block|{
 DECL|member|modifiers
 name|GdkModifierType

@@ -15,6 +15,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -63,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890e4950103
+DECL|enum|__anon29a3c1260103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -76,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890e4950203
+DECL|enum|__anon29a3c1260203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +96,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2890e4950308
+DECL|struct|__anon29a3c1260308
 block|{
 DECL|member|controls
 name|GtkWidget

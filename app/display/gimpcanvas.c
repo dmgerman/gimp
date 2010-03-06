@@ -15,6 +15,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -85,7 +91,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b17c84a0103
+DECL|enum|__anon27c9e9af0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

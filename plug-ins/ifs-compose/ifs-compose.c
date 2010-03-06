@@ -37,6 +37,12 @@ directive|undef
 name|GSEAL_ENABLE
 end_undef
 
+begin_undef
+undef|#
+directive|undef
+name|GTK_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -136,7 +142,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f5f3ca0103
+DECL|enum|__anon27b1eeed0103
 block|{
 DECL|enumerator|OP_TRANSLATE
 name|OP_TRANSLATE
@@ -156,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29f5f3ca0203
+DECL|enum|__anon27b1eeed0203
 block|{
 DECL|enumerator|VALUE_PAIR_INT
 name|VALUE_PAIR_INT
@@ -172,7 +178,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0308
+DECL|struct|__anon27b1eeed0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -194,7 +200,7 @@ name|ValuePairType
 name|type
 decl_stmt|;
 union|union
-DECL|union|__anon29f5f3ca040a
+DECL|union|__anon27b1eeed040a
 block|{
 DECL|member|d
 name|gdouble
@@ -219,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0508
+DECL|struct|__anon27b1eeed0508
 block|{
 DECL|member|ifsvals
 name|IfsComposeVals
@@ -249,7 +255,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0608
+DECL|struct|__anon27b1eeed0608
 block|{
 DECL|member|color
 name|GimpRGB
@@ -284,7 +290,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0708
+DECL|struct|__anon27b1eeed0708
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -320,7 +326,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0808
+DECL|struct|__anon27b1eeed0808
 block|{
 DECL|member|area
 name|GtkWidget
@@ -387,7 +393,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0908
+DECL|struct|__anon27b1eeed0908
 block|{
 DECL|member|prob_pair
 name|ValuePair
@@ -536,7 +542,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f5f3ca0a08
+DECL|struct|__anon27b1eeed0a08
 block|{
 DECL|member|run
 name|gboolean
