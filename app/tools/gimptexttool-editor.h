@@ -171,14 +171,6 @@ parameter_list|,
 name|PangoRectangle
 modifier|*
 name|cursor_rect
-parameter_list|,
-name|gint
-modifier|*
-name|logical_off_x
-parameter_list|,
-name|gint
-modifier|*
-name|logical_off_y
 parameter_list|)
 function_decl|;
 end_function_decl
