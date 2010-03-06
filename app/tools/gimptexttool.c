@@ -3494,11 +3494,6 @@ operator|&
 name|yres
 argument_list|)
 expr_stmt|;
-name|gimp_text_tool_block_drawing
-argument_list|(
-name|text_tool
-argument_list|)
-expr_stmt|;
 name|g_object_set
 argument_list|(
 name|text_tool
