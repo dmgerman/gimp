@@ -3087,6 +3087,11 @@ operator|->
 name|text
 condition|)
 return|return;
+name|gimp_text_tool_ensure_layout
+argument_list|(
+name|text_tool
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gtk_text_buffer_get_has_selection
