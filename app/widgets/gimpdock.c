@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b72f77c0103
+DECL|enum|__anon29c173250103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -1089,7 +1089,10 @@ name|g_string_append
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|", "
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1109,7 +1112,10 @@ name|g_string_append
 argument_list|(
 name|title
 argument_list|,
+name|_
+argument_list|(
 literal|" - "
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
