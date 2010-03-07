@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d5692f0103
+DECL|enum|__anon2c4de3dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d5692f0203
+DECL|enum|__anon2c4de3dd0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -1032,11 +1032,8 @@ argument_list|(
 name|dock
 argument_list|)
 argument_list|)
-operator|==
-name|GTK_WIDGET
-argument_list|(
-name|dock_columns
-argument_list|)
+operator|!=
+name|NULL
 condition|)
 name|gimp_dock_columns_remove_dock
 argument_list|(
