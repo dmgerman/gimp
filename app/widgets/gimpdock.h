@@ -243,17 +243,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_dock_invalidate_title
-parameter_list|(
-name|GimpDock
-modifier|*
-name|dock
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_dock_set_host_geometry_hints
 parameter_list|(
 name|GimpDock
