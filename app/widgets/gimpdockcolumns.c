@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3500d60103
+DECL|enum|__anon27d5692f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3500d60203
+DECL|enum|__anon27d5692f0203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -1023,6 +1023,19 @@ operator|!
 name|GIMP_IS_TOOLBOX
 argument_list|(
 name|dock
+argument_list|)
+operator|&&
+name|gtk_widget_get_parent
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|dock
+argument_list|)
+argument_list|)
+operator|==
+name|GTK_WIDGET
+argument_list|(
+name|dock_columns
 argument_list|)
 condition|)
 name|gimp_dock_columns_remove_dock
