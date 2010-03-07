@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9990e10103
+DECL|enum|__anon27b099f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2061,18 +2061,9 @@ name|gint
 operator|)
 name|pos
 expr_stmt|;
-comment|/*  Model the amount of paint left as a gaussian curve  */
 name|z
 operator|=
-name|exp
-argument_list|(
-operator|-
 name|pos
-operator|*
-name|pos
-operator|*
-literal|5.541
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
@@ -2328,7 +2319,7 @@ name|paint_options
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/*  Im leaving the pressurize code in here, but Im not sure how,  *  or if at all it should be used. Not as hardness anyway.  *   *  if (gimp_dynamics_output_is_enabled(dynamics->hardness_output))  *    return GIMP_BRUSH_PRESSURE; */
+comment|/*  Im leaving the pressurize code in here, but Im not sure how,  *  or if at all it should be used. Not as hardness anyway.  *  *  if (gimp_dynamics_output_is_enabled(dynamics->hardness_output))  *    return GIMP_BRUSH_PRESSURE; */
 return|return
 name|GIMP_BRUSH_SOFT
 return|;
