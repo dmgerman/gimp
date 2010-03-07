@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27d933000103
+DECL|enum|__anon27c5f0b80103
 block|{
 DECL|enumerator|GIMP_CONTAINER_VIEW_PROP_0
 name|GIMP_CONTAINER_VIEW_PROP_0
@@ -324,6 +324,23 @@ modifier|*
 name|view
 parameter_list|)
 function_decl|;
+DECL|member|get_selected
+name|gint
+function_decl|(
+modifier|*
+name|get_selected
+function_decl|)
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GList
+modifier|*
+modifier|*
+name|items
+parameter_list|)
+function_decl|;
 comment|/*  the destroy notifier for private->hash_table's values  */
 DECL|member|insert_data_free
 name|GDestroyNotify
@@ -548,6 +565,22 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gint
+name|gimp_container_view_get_selected
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GList
+modifier|*
+modifier|*
+name|list
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  protected  */
 end_comment
@@ -578,6 +611,21 @@ parameter_list|,
 name|GimpViewable
 modifier|*
 name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_container_view_multi_selected
+parameter_list|(
+name|GimpContainerView
+modifier|*
+name|view
+parameter_list|,
+name|GList
+modifier|*
+name|items
 parameter_list|)
 function_decl|;
 end_function_decl

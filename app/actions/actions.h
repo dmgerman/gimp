@@ -113,6 +113,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|action_data_sel_count
+parameter_list|(
+name|gpointer
+name|data
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|action_select_value
 parameter_list|(
