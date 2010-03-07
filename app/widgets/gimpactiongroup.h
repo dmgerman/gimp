@@ -772,6 +772,27 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_action_group_set_action_tooltip
+parameter_list|(
+name|GimpActionGroup
+modifier|*
+name|group
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|action_name
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|tooltip
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_action_group_set_action_color
 parameter_list|(
 name|GimpActionGroup
