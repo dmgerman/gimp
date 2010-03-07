@@ -118,6 +118,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpimage-pick-layer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-resize.h"
 end_include
 

@@ -2710,25 +2710,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpLayer
-modifier|*
-name|gimp_image_pick_layer
-parameter_list|(
-specifier|const
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gboolean
 name|gimp_image_coords_in_active_pickable
 parameter_list|(
