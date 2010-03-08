@@ -267,8 +267,8 @@ name|GimpTextTool
 modifier|*
 name|text_tool
 parameter_list|,
-name|gint
-name|count
+name|gdouble
+name|amount
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -282,8 +282,8 @@ name|GimpTextTool
 modifier|*
 name|text_tool
 parameter_list|,
-name|gint
-name|count
+name|gdouble
+name|amount
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -4029,15 +4029,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_change_baseline (GimpTextTool * text_tool,gint count)
+DECL|function|gimp_text_tool_change_baseline (GimpTextTool * text_tool,gdouble amount)
 name|gimp_text_tool_change_baseline
 parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
 parameter_list|,
-name|gint
-name|count
+name|gdouble
+name|amount
 parameter_list|)
 block|{
 name|GtkTextBuffer
@@ -4115,7 +4115,7 @@ argument_list|,
 operator|&
 name|end
 argument_list|,
-name|count
+name|amount
 operator|*
 name|PANGO_SCALE
 argument_list|)
@@ -4126,15 +4126,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_text_tool_change_kerning (GimpTextTool * text_tool,gint count)
+DECL|function|gimp_text_tool_change_kerning (GimpTextTool * text_tool,gdouble amount)
 name|gimp_text_tool_change_kerning
 parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
 parameter_list|,
-name|gint
-name|count
+name|gdouble
+name|amount
 parameter_list|)
 block|{
 name|GtkTextBuffer
@@ -4214,7 +4214,7 @@ argument_list|,
 operator|&
 name|end
 argument_list|,
-name|count
+name|amount
 operator|*
 name|PANGO_SCALE
 argument_list|)
