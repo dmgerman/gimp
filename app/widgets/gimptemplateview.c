@@ -323,8 +323,6 @@ name|view_size
 argument_list|,
 name|view_border_width
 argument_list|,
-name|FALSE
-argument_list|,
 name|menu_factory
 argument_list|,
 literal|"<Templates>"

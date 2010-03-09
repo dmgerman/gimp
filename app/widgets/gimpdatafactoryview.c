@@ -889,8 +889,6 @@ name|view_size
 argument_list|,
 name|view_border_width
 argument_list|,
-name|TRUE
-argument_list|,
 name|menu_factory
 argument_list|,
 name|menu_identifier

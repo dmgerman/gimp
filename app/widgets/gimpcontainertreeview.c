@@ -876,9 +876,6 @@ name|GObject
 modifier|*
 name|object
 decl_stmt|;
-name|gboolean
-name|multiple_selection
-decl_stmt|;
 name|object
 operator|=
 name|G_OBJECT_CLASS
@@ -1215,23 +1212,6 @@ operator|->
 name|view
 argument_list|)
 expr_stmt|;
-name|g_object_get
-argument_list|(
-name|tree_view
-argument_list|,
-literal|"multiple-selection"
-argument_list|,
-operator|&
-name|multiple_selection
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|multiple_selection
-condition|)
-block|{
 name|gtk_tree_selection_set_mode
 argument_list|(
 name|tree_view
@@ -1243,7 +1223,6 @@ argument_list|,
 name|GTK_SELECTION_MULTIPLE
 argument_list|)
 expr_stmt|;
-block|}
 name|g_signal_connect
 argument_list|(
 name|tree_view
@@ -1776,7 +1755,7 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_container_tree_view_new (GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width,gboolean multiple_selection)
+DECL|function|gimp_container_tree_view_new (GimpContainer * container,GimpContext * context,gint view_size,gint view_border_width)
 name|gimp_container_tree_view_new
 parameter_list|(
 name|GimpContainer
@@ -1792,9 +1771,6 @@ name|view_size
 parameter_list|,
 name|gint
 name|view_border_width
-parameter_list|,
-name|gboolean
-name|multiple_selection
 parameter_list|)
 block|{
 name|GimpContainerTreeView
@@ -1864,10 +1840,6 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CONTAINER_TREE_VIEW
-argument_list|,
-literal|"multiple-selection"
-argument_list|,
-name|multiple_selection
 argument_list|,
 name|NULL
 argument_list|)
@@ -3640,7 +3612,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b73adff0108
+DECL|struct|__anon29fc74c40108
 block|{
 DECL|member|view_size
 name|gint

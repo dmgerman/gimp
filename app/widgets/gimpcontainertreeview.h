@@ -24,7 +24,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29698bf40103
+DECL|enum|__anon2c2d39c10103
 block|{
 DECL|enumerator|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
 name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
@@ -408,9 +408,6 @@ name|view_size
 parameter_list|,
 name|gint
 name|view_border_width
-parameter_list|,
-name|gboolean
-name|multiple_selection
 parameter_list|)
 function_decl|;
 end_function_decl

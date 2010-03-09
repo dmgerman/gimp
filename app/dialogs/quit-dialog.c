@@ -552,8 +552,6 @@ argument_list|,
 name|view_size
 argument_list|,
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_container_box_set_size_request
