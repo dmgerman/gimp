@@ -123,6 +123,10 @@ DECL|member|use_tilt
 name|gboolean
 name|use_tilt
 decl_stmt|;
+DECL|member|use_wheel
+name|gboolean
+name|use_wheel
+decl_stmt|;
 DECL|member|use_random
 name|gboolean
 name|use_random
@@ -150,6 +154,11 @@ DECL|member|tilt_curve
 name|GimpCurve
 modifier|*
 name|tilt_curve
+decl_stmt|;
+DECL|member|wheel_curve
+name|GimpCurve
+modifier|*
+name|wheel_curve
 decl_stmt|;
 DECL|member|random_curve
 name|GimpCurve
