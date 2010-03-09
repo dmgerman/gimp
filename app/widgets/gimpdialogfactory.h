@@ -33,7 +33,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2975b2310103
+DECL|enum|__anon29ab97060103
 block|{
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_UNKNOWN
 name|GIMP_DIALOG_VISIBILITY_UNKNOWN
@@ -45,6 +45,9 @@ name|GIMP_DIALOG_VISIBILITY_INVISIBLE
 block|,
 DECL|enumerator|GIMP_DIALOG_VISIBILITY_VISIBLE
 name|GIMP_DIALOG_VISIBILITY_VISIBLE
+block|,
+DECL|enumerator|GIMP_DIALOG_VISIBILITY_HIDDEN
+name|GIMP_DIALOG_VISIBILITY_HIDDEN
 DECL|typedef|GimpDialogVisibilityState
 block|}
 name|GimpDialogVisibilityState

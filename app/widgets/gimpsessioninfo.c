@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41c1be0103
+DECL|enum|__anon296e8ce10103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -2709,8 +2709,12 @@ name|FALSE
 expr_stmt|;
 break|break;
 case|case
+name|GIMP_DIALOG_VISIBILITY_HIDDEN
+case|:
+case|case
 name|GIMP_DIALOG_VISIBILITY_VISIBLE
 case|:
+comment|/* Even if a dialog is hidden (with Windows->Hide docks) it            * is still considered open. It will be restored the next            * time GIMP starts            */
 name|info
 operator|->
 name|p
