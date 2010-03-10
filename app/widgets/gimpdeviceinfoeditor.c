@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ba8bb0103
+DECL|enum|__anon27dcb2850103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ba8bb0203
+DECL|enum|__anon27dcb2850203
 block|{
 DECL|enumerator|AXIS_COLUMN_INDEX
 name|AXIS_COLUMN_INDEX
@@ -107,7 +107,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ba8bb0303
+DECL|enum|__anon27dcb2850303
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -123,7 +123,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ba8bb0403
+DECL|enum|__anon27dcb2850403
 block|{
 DECL|enumerator|KEY_COLUMN_INDEX
 name|KEY_COLUMN_INDEX
@@ -291,6 +291,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|gimp_device_info_editor_set_axes
 parameter_list|(
@@ -302,6 +303,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|gimp_device_info_editor_axis_changed
 parameter_list|(
@@ -326,6 +328,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+specifier|static
 name|void
 name|gimp_device_info_editor_axis_selected
 parameter_list|(
@@ -2372,6 +2375,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_device_info_editor_set_axes (GimpDeviceInfoEditor * editor)
 name|gimp_device_info_editor_set_axes
@@ -2538,6 +2542,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_device_info_editor_axis_changed (GtkCellRendererCombo * combo,const gchar * path_string,GtkTreeIter * new_iter,GimpDeviceInfoEditor * editor)
 name|gimp_device_info_editor_axis_changed
@@ -2837,6 +2842,7 @@ block|}
 end_function
 
 begin_function
+specifier|static
 name|void
 DECL|function|gimp_device_info_editor_axis_selected (GtkTreeSelection * selection,GimpDeviceInfoEditor * editor)
 name|gimp_device_info_editor_axis_selected
