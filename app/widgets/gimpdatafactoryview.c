@@ -908,6 +908,13 @@ argument_list|(
 name|factory_view
 argument_list|)
 expr_stmt|;
+name|gimp_container_editor_set_multiple_selection
+argument_list|(
+name|editor
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_CONTAINER_TREE_VIEW
