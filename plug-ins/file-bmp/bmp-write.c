@@ -82,7 +82,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27a4e86e0103
+DECL|enum|__anon29db6c3b0103
 block|{
 DECL|enumerator|RGB_565
 name|RGB_565
@@ -110,7 +110,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27a4e86e0208
+DECL|struct|__anon29db6c3b0208
 block|{
 DECL|member|rgb_format
 name|RGBMode
@@ -4442,7 +4442,7 @@ name|g_signal_connect
 argument_list|(
 name|toggle
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4512,7 +4512,7 @@ name|g_signal_connect
 argument_list|(
 name|toggle
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4569,7 +4569,7 @@ name|g_signal_connect
 argument_list|(
 name|toggle
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4651,7 +4651,7 @@ name|g_signal_connect
 argument_list|(
 name|toggle
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4815,7 +4815,7 @@ name|g_signal_connect
 argument_list|(
 name|toggle
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -4866,7 +4866,7 @@ name|g_signal_connect
 argument_list|(
 name|toggle
 argument_list|,
-literal|"pressed"
+literal|"clicked"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
