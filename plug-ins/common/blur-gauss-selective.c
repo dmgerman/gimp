@@ -106,7 +106,7 @@ end_endif
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a4d9c790108
+DECL|struct|__anon27db42fb0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -2969,6 +2969,7 @@ argument_list|,
 name|numrad
 argument_list|)
 expr_stmt|;
+comment|/*  allocate with extra padding because MMX instructions may read       more than strictly necessary  */
 name|src
 operator|=
 name|g_new
@@ -2980,6 +2981,8 @@ operator|*
 name|height
 operator|*
 name|bytes
+operator|+
+literal|16
 argument_list|)
 expr_stmt|;
 name|dest
@@ -3270,6 +3273,7 @@ operator|*
 name|bytes
 argument_list|)
 expr_stmt|;
+comment|/*  allocate with extra padding because MMX instructions may read       more than strictly necessary  */
 name|src
 operator|=
 name|g_new
@@ -3281,6 +3285,8 @@ operator|*
 name|height
 operator|*
 name|bytes
+operator|+
+literal|16
 argument_list|)
 expr_stmt|;
 comment|/* render image */
