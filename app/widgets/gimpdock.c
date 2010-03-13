@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29eabfcd0103
+DECL|enum|__anon2c2b14790103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -206,6 +206,9 @@ parameter_list|(
 name|GimpDock
 modifier|*
 name|dock
+parameter_list|,
+name|gboolean
+name|complete
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -976,12 +979,15 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_dock_real_get_description (GimpDock * dock)
+DECL|function|gimp_dock_real_get_description (GimpDock * dock,gboolean complete)
 name|gimp_dock_real_get_description
 parameter_list|(
 name|GimpDock
 modifier|*
 name|dock
+parameter_list|,
+name|gboolean
+name|complete
 parameter_list|)
 block|{
 name|GString
@@ -1034,6 +1040,12 @@ name|GList
 modifier|*
 name|child
 decl_stmt|;
+if|if
+condition|(
+name|complete
+condition|)
+block|{
+comment|/* Include all dockables */
 name|children
 operator|=
 name|gtk_container_get_children
@@ -1044,6 +1056,53 @@ name|dockbook
 argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
+else|else
+block|{
+name|GtkWidget
+modifier|*
+name|dockable
+init|=
+name|NULL
+decl_stmt|;
+name|gint
+name|page_num
+init|=
+literal|0
+decl_stmt|;
+name|page_num
+operator|=
+name|gtk_notebook_get_current_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|dockable
+operator|=
+name|gtk_notebook_get_nth_page
+argument_list|(
+name|GTK_NOTEBOOK
+argument_list|(
+name|dockbook
+argument_list|)
+argument_list|,
+name|page_num
+argument_list|)
+expr_stmt|;
+comment|/* Only include active dockables */
+name|children
+operator|=
+name|g_list_append
+argument_list|(
+name|NULL
+argument_list|,
+name|dockable
+argument_list|)
+expr_stmt|;
+block|}
 for|for
 control|(
 name|child
@@ -1138,7 +1197,24 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|)
-block|{ }
+block|{
+name|g_signal_connect_object
+argument_list|(
+name|dockbook
+argument_list|,
+literal|"switch-page"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_dock_invalidate_description
+argument_list|)
+argument_list|,
+name|dock
+argument_list|,
+name|G_CONNECT_SWAPPED
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1155,7 +1231,17 @@ name|GimpDockbook
 modifier|*
 name|dockbook
 parameter_list|)
-block|{ }
+block|{
+name|g_signal_handlers_disconnect_by_func
+argument_list|(
+name|dockbook
+argument_list|,
+name|gimp_dock_invalidate_description
+argument_list|,
+name|dock
+argument_list|)
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -1440,15 +1526,22 @@ begin_comment
 comment|/*  public functions  */
 end_comment
 
+begin_comment
+comment|/**  * gimp_dock_get_description:  * @dock:  * @complete: If %TRUE, only includes the active dockables, i.e. not the  *            dockables in a non-active GtkNotebook tab  *  * Returns: A string describing the contents of the dock.  **/
+end_comment
+
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_dock_get_description (GimpDock * dock)
+DECL|function|gimp_dock_get_description (GimpDock * dock,gboolean complete)
 name|gimp_dock_get_description
 parameter_list|(
 name|GimpDock
 modifier|*
 name|dock
+parameter_list|,
+name|gboolean
+name|complete
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1479,6 +1572,8 @@ operator|->
 name|get_description
 argument_list|(
 name|dock
+argument_list|,
+name|complete
 argument_list|)
 return|;
 return|return
