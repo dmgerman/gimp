@@ -165,12 +165,12 @@ name|GtkVBoxClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */
-DECL|member|get_title
+DECL|member|get_description
 name|gchar
 modifier|*
 function_decl|(
 modifier|*
-name|get_title
+name|get_description
 function_decl|)
 parameter_list|(
 name|GimpDock
@@ -227,11 +227,11 @@ modifier|*
 name|dockbook
 parameter_list|)
 function_decl|;
-DECL|member|title_invalidated
+DECL|member|description_invalidated
 name|void
 function_decl|(
 modifier|*
-name|title_invalidated
+name|description_invalidated
 function_decl|)
 parameter_list|(
 name|GimpDock
@@ -268,7 +268,7 @@ end_decl_stmt
 begin_function_decl
 name|gchar
 modifier|*
-name|gimp_dock_get_title
+name|gimp_dock_get_description
 parameter_list|(
 name|GimpDock
 modifier|*

@@ -221,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf755ba0103
+DECL|enum|__anon2b54b0950103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3078,7 +3078,7 @@ name|gchar
 modifier|*
 name|title
 init|=
-name|gimp_dock_get_title
+name|gimp_dock_get_description
 argument_list|(
 name|GIMP_DOCK
 argument_list|(
@@ -3692,7 +3692,7 @@ name|g_signal_connect_object
 argument_list|(
 name|dock
 argument_list|,
-literal|"title-invalidated"
+literal|"description-invalidated"
 argument_list|,
 name|G_CALLBACK
 argument_list|(

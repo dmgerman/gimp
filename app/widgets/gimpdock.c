@@ -121,7 +121,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29ea98730103
+DECL|enum|__anon29eabfcd0103
 block|{
 DECL|enumerator|BOOK_ADDED
 name|BOOK_ADDED
@@ -129,8 +129,8 @@ block|,
 DECL|enumerator|BOOK_REMOVED
 name|BOOK_REMOVED
 block|,
-DECL|enumerator|TITLE_INVALIDATED
-name|TITLE_INVALIDATED
+DECL|enumerator|DESCRIPTION_INVALIDATED
+name|DESCRIPTION_INVALIDATED
 block|,
 DECL|enumerator|GEOMETRY_INVALIDATED
 name|GEOMETRY_INVALIDATED
@@ -201,7 +201,7 @@ begin_function_decl
 specifier|static
 name|gchar
 modifier|*
-name|gimp_dock_real_get_title
+name|gimp_dock_real_get_description
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -245,7 +245,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -421,12 +421,12 @@ argument_list|)
 expr_stmt|;
 name|dock_signals
 index|[
-name|TITLE_INVALIDATED
+name|DESCRIPTION_INVALIDATED
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"title-invalidated"
+literal|"description-invalidated"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -439,7 +439,7 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpDockClass
 argument_list|,
-name|title_invalidated
+name|description_invalidated
 argument_list|)
 argument_list|,
 name|NULL
@@ -501,9 +501,9 @@ name|gimp_dock_style_set
 expr_stmt|;
 name|klass
 operator|->
-name|get_title
+name|get_description
 operator|=
-name|gimp_dock_real_get_title
+name|gimp_dock_real_get_description
 expr_stmt|;
 name|klass
 operator|->
@@ -525,7 +525,7 @@ name|gimp_dock_real_book_removed
 expr_stmt|;
 name|klass
 operator|->
-name|title_invalidated
+name|description_invalidated
 operator|=
 name|NULL
 expr_stmt|;
@@ -976,8 +976,8 @@ begin_function
 specifier|static
 name|gchar
 modifier|*
-DECL|function|gimp_dock_real_get_title (GimpDock * dock)
-name|gimp_dock_real_get_title
+DECL|function|gimp_dock_real_get_description (GimpDock * dock)
+name|gimp_dock_real_get_description
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -986,13 +986,13 @@ parameter_list|)
 block|{
 name|GString
 modifier|*
-name|title
+name|desc
 decl_stmt|;
 name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|title
+name|desc
 operator|=
 name|g_string_new
 argument_list|(
@@ -1070,7 +1070,7 @@ name|data
 decl_stmt|;
 name|g_string_append
 argument_list|(
-name|title
+name|desc
 argument_list|,
 name|gimp_dockable_get_name
 argument_list|(
@@ -1087,7 +1087,7 @@ argument_list|)
 condition|)
 name|g_string_append
 argument_list|(
-name|title
+name|desc
 argument_list|,
 name|GIMP_DOCK_DOCKABLE_SEPARATOR
 argument_list|)
@@ -1107,7 +1107,7 @@ argument_list|)
 condition|)
 name|g_string_append
 argument_list|(
-name|title
+name|desc
 argument_list|,
 name|GIMP_DOCK_BOOK_SEPARATOR
 argument_list|)
@@ -1116,7 +1116,7 @@ block|}
 return|return
 name|g_string_free
 argument_list|(
-name|title
+name|desc
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1161,8 +1161,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_dock_invalidate_title (GimpDock * dock)
-name|gimp_dock_invalidate_title
+DECL|function|gimp_dock_invalidate_description (GimpDock * dock)
+name|gimp_dock_invalidate_description
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -1183,7 +1183,7 @@ name|dock
 argument_list|,
 name|dock_signals
 index|[
-name|TITLE_INVALIDATED
+name|DESCRIPTION_INVALIDATED
 index|]
 argument_list|,
 literal|0
@@ -1443,8 +1443,8 @@ end_comment
 begin_function
 name|gchar
 modifier|*
-DECL|function|gimp_dock_get_title (GimpDock * dock)
-name|gimp_dock_get_title
+DECL|function|gimp_dock_get_description (GimpDock * dock)
+name|gimp_dock_get_description
 parameter_list|(
 name|GimpDock
 modifier|*
@@ -1468,7 +1468,7 @@ argument_list|(
 name|dock
 argument_list|)
 operator|->
-name|get_title
+name|get_description
 condition|)
 return|return
 name|GIMP_DOCK_GET_CLASS
@@ -1476,7 +1476,7 @@ argument_list|(
 name|dock
 argument_list|)
 operator|->
-name|get_title
+name|get_description
 argument_list|(
 name|dock
 argument_list|)
@@ -2285,7 +2285,7 @@ literal|"dockable-added"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 argument_list|)
 argument_list|,
 name|dock
@@ -2301,7 +2301,7 @@ literal|"dockable-removed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 argument_list|)
 argument_list|,
 name|dock
@@ -2317,7 +2317,7 @@ literal|"dockable-reordered"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 argument_list|)
 argument_list|,
 name|dock
@@ -2371,7 +2371,7 @@ name|dockbook
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 argument_list|(
 name|dock
 argument_list|)
@@ -2444,7 +2444,7 @@ name|g_signal_handlers_disconnect_by_func
 argument_list|(
 name|dockbook
 argument_list|,
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 argument_list|,
 name|dock
 argument_list|)
@@ -2489,7 +2489,7 @@ name|dockbook
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_dock_invalidate_title
+name|gimp_dock_invalidate_description
 argument_list|(
 name|dock
 argument_list|)
