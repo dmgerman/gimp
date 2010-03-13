@@ -79,6 +79,42 @@ parameter_list|)
 value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_DOCK, GimpDockClass))
 end_define
 
+begin_comment
+comment|/* String used to separate dockables, e.g. "Tool Options, Layers" */
+end_comment
+
+begin_define
+DECL|macro|GIMP_DOCK_DOCKABLE_SEPARATOR
+define|#
+directive|define
+name|GIMP_DOCK_DOCKABLE_SEPARATOR
+value|C_("dock", ", ")
+end_define
+
+begin_comment
+comment|/* String used to separate books (GtkNotebooks) within a dock,    e.g. "Tool Options, Layers - Brushes"  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_DOCK_BOOK_SEPARATOR
+define|#
+directive|define
+name|GIMP_DOCK_BOOK_SEPARATOR
+value|C_("dock", " - ")
+end_define
+
+begin_comment
+comment|/* String used to separate dock columns,    e.g. "Tool Options, Layers - Brushes | Gradients"  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_DOCK_COLUMN_SEPARATOR
+define|#
+directive|define
+name|GIMP_DOCK_COLUMN_SEPARATOR
+value|C_("dock", " | ")
+end_define
+
 begin_typedef
 DECL|typedef|GimpDockClass
 typedef|typedef

@@ -211,7 +211,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e657ec0103
+DECL|enum|__anon27dfee130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3536,7 +3536,7 @@ name|g_string_append
 argument_list|(
 name|title
 argument_list|,
-literal|" - "
+name|GIMP_DOCK_BOOK_SEPARATOR
 argument_list|)
 expr_stmt|;
 name|g_string_append
