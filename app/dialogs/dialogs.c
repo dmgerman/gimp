@@ -1571,10 +1571,19 @@ argument_list|,
 name|TRUE
 argument_list|)
 block|,
-comment|/*  emtpy image window  */
+comment|/*  image windows  */
 name|FOREIGN_NOT_HIDEABLE
 argument_list|(
 literal|"gimp-empty-image-window"
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
+name|FOREIGN_NOT_HIDEABLE
+argument_list|(
+literal|"gimp-single-image-window"
 argument_list|,
 argument|TRUE
 argument_list|,
