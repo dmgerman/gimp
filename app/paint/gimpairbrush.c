@@ -734,7 +734,7 @@ argument_list|)
 operator|->
 name|dynamics
 operator|->
-name|opacity_output
+name|flow_output
 argument_list|,
 name|coords
 argument_list|,

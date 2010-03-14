@@ -118,6 +118,11 @@ name|GimpDynamicsOutput
 modifier|*
 name|rate_output
 decl_stmt|;
+DECL|member|flow_output
+name|GimpDynamicsOutput
+modifier|*
+name|flow_output
+decl_stmt|;
 DECL|member|size_output
 name|GimpDynamicsOutput
 modifier|*
