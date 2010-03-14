@@ -309,7 +309,7 @@ name|gimp_prop_scale_entry_new
 argument_list|(
 name|config
 argument_list|,
-literal|"pressure"
+literal|"flow"
 argument_list|,
 name|GTK_TABLE
 argument_list|(
@@ -322,7 +322,7 @@ literal|1
 argument_list|,
 name|_
 argument_list|(
-literal|"Pressure:"
+literal|"Flow:"
 argument_list|)
 argument_list|,
 literal|1.0

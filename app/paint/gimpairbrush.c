@@ -710,7 +710,7 @@ name|opacity
 operator|=
 name|options
 operator|->
-name|pressure
+name|flow
 operator|/
 literal|100.0
 expr_stmt|;

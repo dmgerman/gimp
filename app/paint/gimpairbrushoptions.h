@@ -107,9 +107,9 @@ DECL|member|rate
 name|gdouble
 name|rate
 decl_stmt|;
-DECL|member|pressure
+DECL|member|flow
 name|gdouble
-name|pressure
+name|flow
 decl_stmt|;
 block|}
 struct|;

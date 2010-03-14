@@ -42,16 +42,16 @@ value|80.0
 end_define
 
 begin_define
-DECL|macro|AIRBRUSH_DEFAULT_PRESSURE
+DECL|macro|AIRBRUSH_DEFAULT_FLOW
 define|#
 directive|define
-name|AIRBRUSH_DEFAULT_PRESSURE
+name|AIRBRUSH_DEFAULT_FLOW
 value|10.0
 end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon288a59cd0103
+DECL|enum|__anon29a414d10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,8 +59,8 @@ block|,
 DECL|enumerator|PROP_RATE
 name|PROP_RATE
 block|,
-DECL|enumerator|PROP_PRESSURE
-name|PROP_PRESSURE
+DECL|enumerator|PROP_FLOW
+name|PROP_FLOW
 block|}
 enum|;
 end_enum
@@ -178,9 +178,9 @@ name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_PRESSURE
+name|PROP_FLOW
 argument_list|,
-literal|"pressure"
+literal|"flow"
 argument_list|,
 name|NULL
 argument_list|,
@@ -188,7 +188,7 @@ literal|0.0
 argument_list|,
 literal|100.0
 argument_list|,
-name|AIRBRUSH_DEFAULT_PRESSURE
+name|AIRBRUSH_DEFAULT_FLOW
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -260,11 +260,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRESSURE
+name|PROP_FLOW
 case|:
 name|options
 operator|->
-name|pressure
+name|flow
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -337,7 +337,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_PRESSURE
+name|PROP_FLOW
 case|:
 name|g_value_set_double
 argument_list|(
@@ -345,7 +345,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|pressure
+name|flow
 argument_list|)
 expr_stmt|;
 break|break;
