@@ -107,6 +107,10 @@ DECL|member|rate
 name|gdouble
 name|rate
 decl_stmt|;
+DECL|member|motion_only
+name|gboolean
+name|motion_only
+decl_stmt|;
 DECL|member|flow
 name|gdouble
 name|flow
