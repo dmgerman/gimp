@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297ef6620103
+DECL|enum|__anon29749ddb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -72,6 +72,10 @@ name|PROP_MOTION_ONLY
 block|,
 DECL|enumerator|PROP_FLOW
 name|PROP_FLOW
+block|,
+DECL|enumerator|PROP_PRESSURE
+name|PROP_PRESSURE
+comment|/*for backwards copatibility of tool options*/
 block|}
 enum|;
 end_enum
@@ -219,6 +223,26 @@ argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
+comment|/*backwads-compadibility prop for flow fomerly known as pressure*/
+name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
+argument_list|(
+name|object_class
+argument_list|,
+name|PROP_PRESSURE
+argument_list|,
+literal|"pressure"
+argument_list|,
+name|NULL
+argument_list|,
+literal|0.0
+argument_list|,
+literal|100.0
+argument_list|,
+name|AIRBRUSH_DEFAULT_FLOW
+argument_list|,
+name|GIMP_CONFIG_PARAM_IGNORE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -298,6 +322,9 @@ name|value
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_PRESSURE
+case|:
 case|case
 name|PROP_FLOW
 case|:
@@ -388,6 +415,9 @@ name|motion_only
 argument_list|)
 expr_stmt|;
 break|break;
+case|case
+name|PROP_PRESSURE
+case|:
 case|case
 name|PROP_FLOW
 case|:
