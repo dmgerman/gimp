@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer-floating-sel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayermask.h"
 end_include
 
@@ -2489,6 +2495,17 @@ name|condition
 parameter_list|)
 define|\
 value|gimp_action_group_set_action_active (group, action, (condition) != 0)
+DECL|macro|SET_LABEL (action,label)
+define|#
+directive|define
+name|SET_LABEL
+parameter_list|(
+name|action
+parameter_list|,
+name|label
+parameter_list|)
+define|\
+value|gimp_action_group_set_action_label (group, action, label)
 name|SET_VISIBLE
 argument_list|(
 literal|"layers-text-tool"
@@ -2512,6 +2529,48 @@ operator|!
 name|ac
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|layer
+operator|&&
+name|gimp_layer_is_floating_sel
+argument_list|(
+name|layer
+argument_list|)
+condition|)
+block|{
+name|SET_LABEL
+argument_list|(
+literal|"layers-new"
+argument_list|,
+literal|"To _New Layer"
+argument_list|)
+expr_stmt|;
+name|SET_LABEL
+argument_list|(
+literal|"layers-new-last-values"
+argument_list|,
+literal|"To _New Layer"
+argument_list|)
+expr_stmt|;
+block|}
+else|else
+block|{
+name|SET_LABEL
+argument_list|(
+literal|"layers-new"
+argument_list|,
+literal|"_New Layer..."
+argument_list|)
+expr_stmt|;
+name|SET_LABEL
+argument_list|(
+literal|"layers-new-last-values"
+argument_list|,
+literal|"_New Layer"
+argument_list|)
+expr_stmt|;
+block|}
 name|SET_SENSITIVE
 argument_list|(
 literal|"layers-new"
@@ -3170,6 +3229,9 @@ name|SET_SENSITIVE
 undef|#
 directive|undef
 name|SET_ACTIVE
+undef|#
+directive|undef
+name|SET_LABEL
 block|}
 end_function
 
