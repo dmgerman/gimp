@@ -2543,14 +2543,24 @@ name|SET_LABEL
 argument_list|(
 literal|"layers-new"
 argument_list|,
+name|C_
+argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"To _New Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
 literal|"layers-new-last-values"
 argument_list|,
+name|C_
+argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"To _New Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2560,14 +2570,24 @@ name|SET_LABEL
 argument_list|(
 literal|"layers-new"
 argument_list|,
+name|C_
+argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_New Layer..."
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|SET_LABEL
 argument_list|(
 literal|"layers-new-last-values"
 argument_list|,
+name|C_
+argument_list|(
+literal|"layers-action"
+argument_list|,
 literal|"_New Layer"
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
