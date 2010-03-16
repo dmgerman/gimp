@@ -111,6 +111,10 @@ DECL|member|draw_brush
 name|gboolean
 name|draw_brush
 decl_stmt|;
+DECL|member|in_motion
+name|gboolean
+name|in_motion
+decl_stmt|;
 DECL|member|brush_x
 name|gdouble
 name|brush_x
