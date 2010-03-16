@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b2ff340103
+DECL|enum|__anon290320cd0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -7478,16 +7478,17 @@ name|paint_options
 operator|->
 name|brush_aspect_ratio
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+if|if
+condition|(
+operator|!
 name|GIMP_IS_DYNAMICS
 argument_list|(
 name|core
 operator|->
 name|dynamics
 argument_list|)
-argument_list|)
-expr_stmt|;
+condition|)
+return|return;
 if|if
 condition|(
 name|GIMP_BRUSH_CORE_GET_CLASS
