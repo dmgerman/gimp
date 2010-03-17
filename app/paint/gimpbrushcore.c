@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c721cff0103
+DECL|enum|__anon2bedd72b0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4460,21 +4460,13 @@ name|height
 operator|=
 name|core
 operator|->
-name|main_brush
-operator|->
-name|mask
-operator|->
-name|height
+name|brush_bound_width
 expr_stmt|;
 name|width
 operator|=
 name|core
 operator|->
-name|main_brush
-operator|->
-name|mask
-operator|->
-name|width
+name|brush_bound_height
 expr_stmt|;
 if|if
 condition|(
