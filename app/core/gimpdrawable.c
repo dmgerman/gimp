@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<gegl-plugin.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|"libgimpbase/gimpbase.h"
 end_include
 
@@ -185,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f3559c0103
+DECL|enum|__anon2c6e4b830103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3042,10 +3048,15 @@ name|height
 expr_stmt|;
 name|gegl_operation_invalidate
 argument_list|(
+name|GEGL_OPERATION
+argument_list|(
 name|operation
+argument_list|)
 argument_list|,
 operator|&
 name|rect
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_object_unref
