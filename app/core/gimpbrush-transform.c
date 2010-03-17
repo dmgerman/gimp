@@ -64,31 +64,6 @@ end_comment
 begin_function_decl
 specifier|static
 name|void
-name|gimp_brush_transform_matrix
-parameter_list|(
-name|TempBuf
-modifier|*
-name|brush
-parameter_list|,
-name|gdouble
-name|scale_x
-parameter_list|,
-name|gdouble
-name|scale_y
-parameter_list|,
-name|gdouble
-name|angle
-parameter_list|,
-name|GimpMatrix3
-modifier|*
-name|matrix
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
 name|gimp_brush_transform_bounding_box
 parameter_list|(
 name|TempBuf
@@ -224,6 +199,14 @@ argument_list|(
 name|brush
 operator|->
 name|mask
+operator|->
+name|width
+argument_list|,
+name|brush
+operator|->
+name|mask
+operator|->
+name|height
 argument_list|,
 name|scale
 operator|*
@@ -243,6 +226,14 @@ argument_list|(
 name|brush
 operator|->
 name|mask
+operator|->
+name|width
+argument_list|,
+name|brush
+operator|->
+name|mask
+operator|->
+name|height
 argument_list|,
 name|scale
 argument_list|,
@@ -500,6 +491,12 @@ condition|)
 name|gimp_brush_transform_matrix
 argument_list|(
 name|source
+operator|->
+name|height
+argument_list|,
+name|source
+operator|->
+name|width
 argument_list|,
 name|scale
 operator|*
@@ -517,6 +514,12 @@ else|else
 name|gimp_brush_transform_matrix
 argument_list|(
 name|source
+operator|->
+name|height
+argument_list|,
+name|source
+operator|->
+name|width
 argument_list|,
 name|scale
 argument_list|,
@@ -1503,6 +1506,12 @@ condition|)
 name|gimp_brush_transform_matrix
 argument_list|(
 name|source
+operator|->
+name|height
+argument_list|,
+name|source
+operator|->
+name|width
 argument_list|,
 name|scale
 operator|*
@@ -1520,6 +1529,12 @@ else|else
 name|gimp_brush_transform_matrix
 argument_list|(
 name|source
+operator|->
+name|height
+argument_list|,
+name|source
+operator|->
+name|width
 argument_list|,
 name|scale
 argument_list|,
@@ -2405,19 +2420,16 @@ return|;
 block|}
 end_function
 
-begin_comment
-comment|/*  private functions  */
-end_comment
-
 begin_function
-specifier|static
 name|void
-DECL|function|gimp_brush_transform_matrix (TempBuf * brush,gdouble scale_x,gdouble scale_y,gdouble angle,GimpMatrix3 * matrix)
+DECL|function|gimp_brush_transform_matrix (gdouble width,gdouble height,gdouble scale_x,gdouble scale_y,gdouble angle,GimpMatrix3 * matrix)
 name|gimp_brush_transform_matrix
 parameter_list|(
-name|TempBuf
-modifier|*
-name|brush
+name|gdouble
+name|width
+parameter_list|,
+name|gdouble
+name|height
 parameter_list|,
 name|gdouble
 name|scale_x
@@ -2437,8 +2449,6 @@ specifier|const
 name|gdouble
 name|center_x
 init|=
-name|brush
-operator|->
 name|width
 operator|/
 literal|2
@@ -2447,8 +2457,6 @@ specifier|const
 name|gdouble
 name|center_y
 init|=
-name|brush
-operator|->
 name|height
 operator|/
 literal|2
@@ -2501,6 +2509,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/*  private functions  */
+end_comment
 
 begin_function
 specifier|static
