@@ -108,6 +108,10 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
+DECL|member|copy_tiles
+name|gboolean
+name|copy_tiles
+decl_stmt|;
 DECL|member|type
 name|GimpImageType
 name|type

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6e4b830103
+DECL|enum|__anon28b5a6f30103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3278,6 +3278,8 @@ argument_list|,
 name|undo_desc
 argument_list|,
 name|drawable
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  ref new before unrefing old, they might be the same  */
