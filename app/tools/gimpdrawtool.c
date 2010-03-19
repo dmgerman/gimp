@@ -104,7 +104,7 @@ DECL|macro|DRAW_TIMEOUT
 define|#
 directive|define
 name|DRAW_TIMEOUT
-value|35
+value|4
 end_define
 
 begin_comment
