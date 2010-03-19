@@ -114,6 +114,22 @@ function_decl|;
 end_function_decl
 
 begin_comment
+comment|/* Make a copy of the tile manager.  */
+end_comment
+
+begin_function_decl
+name|TileManager
+modifier|*
+name|tile_manager_duplicate
+parameter_list|(
+name|TileManager
+modifier|*
+name|tm
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
 comment|/* Set the validate procedure for the tile manager.  The validate  *  procedure is called when an invalid tile is referenced. If the  *  procedure is NULL, then the tile is set to valid and its memory is  *  allocated, but not initialized.  */
 end_comment
 
