@@ -945,7 +945,10 @@ name|buffer
 operator|->
 name|tiles
 operator|=
+name|tile_manager_ref
+argument_list|(
 name|tiles
+argument_list|)
 expr_stmt|;
 block|}
 return|return
@@ -970,6 +973,10 @@ modifier|*
 name|name
 parameter_list|)
 block|{
+name|GimpBuffer
+modifier|*
+name|buffer
+decl_stmt|;
 name|TileManager
 modifier|*
 name|tiles
@@ -1112,7 +1119,8 @@ name|pixels
 argument_list|)
 expr_stmt|;
 block|}
-return|return
+name|buffer
+operator|=
 name|gimp_buffer_new
 argument_list|(
 name|tiles
@@ -1121,6 +1129,14 @@ name|name
 argument_list|,
 name|FALSE
 argument_list|)
+expr_stmt|;
+name|tile_manager_unref
+argument_list|(
+name|tiles
+argument_list|)
+expr_stmt|;
+return|return
+name|buffer
 return|;
 block|}
 end_function
