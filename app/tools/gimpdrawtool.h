@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a8f886a0103
+DECL|enum|__anon29e3b89d0103
 block|{
 DECL|enumerator|GIMP_HANDLE_SQUARE
 name|GIMP_HANDLE_SQUARE
@@ -138,12 +138,17 @@ DECL|member|paused_count
 name|gint
 name|paused_count
 decl_stmt|;
-comment|/*  count to keep track of multiple pauses */
+comment|/*  count to keep track of multiple pauses  */
 DECL|member|is_drawn
 name|gboolean
 name|is_drawn
 decl_stmt|;
-comment|/*  is the stuff we draw currently visible */
+comment|/*  is the stuff we draw currently visible  */
+DECL|member|draw_timeout
+name|guint
+name|draw_timeout
+decl_stmt|;
+comment|/*  draw delay timeout ID                   */
 block|}
 struct|;
 end_struct
