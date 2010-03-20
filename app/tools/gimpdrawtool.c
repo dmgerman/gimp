@@ -107,11 +107,6 @@ name|DRAW_TIMEOUT
 value|4
 end_define
 
-begin_comment
-DECL|macro|DRAW_TIMEOUT
-comment|/* ~29 FPS */
-end_comment
-
 begin_define
 DECL|macro|USE_TIMEOUT
 define|#
@@ -1019,7 +1014,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_calc_distance_square:  * @draw_tool: a #GimpDrawTool  * @display:   a #GimpDisplay  * @x1:        start point X in image coordinates  * @y1:        start point Y in image coordinates  * @x2:        end point X in image coordinates  * @y2:        end point Y in image coordinates  *  * This function is more effective than gimp_draw_tool_calc_distance()  * as it doesn't perform a sqrt(). Use this if you just need to compare  * distances.  *  * Returns: the square of the distance between the given points in             display coordinates  **/
+comment|/**  * gimp_draw_tool_calc_distance_square:  * @draw_tool: a #GimpDrawTool  * @display:   a #GimpDisplay  * @x1:        start point X in image coordinates  * @y1:        start point Y in image coordinates  * @x2:        end point X in image coordinates  * @y2:        end point Y in image coordinates  *  * This function is more effective than gimp_draw_tool_calc_distance()  * as it doesn't perform a sqrt(). Use this if you just need to compare  * distances.  *  * Returns: the square of the distance between the given points in  *          display coordinates  **/
 end_comment
 
 begin_function
