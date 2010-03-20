@@ -386,7 +386,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"Hide docks"
+literal|"Hide Docks"
 argument_list|)
 block|,
 comment|/* The only reason we have Tab here is to give away the hardcoded      * keyboard shortcut. If the user changes the shortcut to      * something else, both that shortcut and Tab will work. The      * reason we have the shortcut hardcoded is beccause      * gtk_accelerator_valid() returns FALSE for GDK_tab.      */
@@ -418,7 +418,7 @@ name|NC_
 argument_list|(
 literal|"windows-action"
 argument_list|,
-literal|"Single-window mode"
+literal|"Single-Window Mode"
 argument_list|)
 block|,
 name|NULL
