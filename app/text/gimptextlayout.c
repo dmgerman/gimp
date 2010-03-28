@@ -852,6 +852,29 @@ name|yres
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* #define VERBOSE */
+ifdef|#
+directive|ifdef
+name|VERBOSE
+name|g_printerr
+argument_list|(
+literal|"extents set to %d x %d\n"
+argument_list|,
+name|layout
+operator|->
+name|extents
+operator|.
+name|width
+argument_list|,
+name|layout
+operator|->
+name|extents
+operator|.
+name|height
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 break|break;
 block|}
 return|return
@@ -2076,7 +2099,7 @@ expr_stmt|;
 ifdef|#
 directive|ifdef
 name|VERBOSE
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"ink rect: %d x %d @ %d, %d\n"
 argument_list|,
@@ -2097,7 +2120,7 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"logical rect: %d x %d @ %d, %d\n"
 argument_list|,
@@ -2422,7 +2445,7 @@ block|}
 ifdef|#
 directive|ifdef
 name|VERBOSE
-name|g_print
+name|g_printerr
 argument_list|(
 literal|"layout extents: %d x %d @ %d, %d\n"
 argument_list|,
