@@ -893,12 +893,6 @@ modifier|*
 name|error
 parameter_list|)
 block|{
-name|gchar
-modifier|*
-name|tmpname
-init|=
-name|NULL
-decl_stmt|;
 name|gint32
 name|image_ID
 init|=
@@ -910,8 +904,14 @@ name|name_image
 init|=
 name|FALSE
 decl_stmt|;
+name|gchar
+modifier|*
+name|tmpname
+decl_stmt|;
 name|gboolean
 name|mapped
+init|=
+name|FALSE
 decl_stmt|;
 name|tmpname
 operator|=
@@ -1079,6 +1079,8 @@ name|tmpname
 decl_stmt|;
 name|gboolean
 name|mapped
+init|=
+name|FALSE
 decl_stmt|;
 name|tmpname
 operator|=
