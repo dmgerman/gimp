@@ -1377,7 +1377,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b888f6f0103
+DECL|enum|__anon2771b7db0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1391,7 +1391,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b888f6f0203
+DECL|enum|__anon2771b7db0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -4970,6 +4970,15 @@ argument_list|(
 name|context
 operator|->
 name|brush_name
+argument_list|)
+expr_stmt|;
+name|memsize
+operator|+=
+name|gimp_string_get_memsize
+argument_list|(
+name|context
+operator|->
+name|dynamics_name
 argument_list|)
 expr_stmt|;
 name|memsize
