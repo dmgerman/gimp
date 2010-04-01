@@ -1245,17 +1245,6 @@ operator|->
 name|view
 argument_list|)
 expr_stmt|;
-name|gtk_tree_selection_set_mode
-argument_list|(
-name|tree_view
-operator|->
-name|priv
-operator|->
-name|selection
-argument_list|,
-name|GTK_SELECTION_MULTIPLE
-argument_list|)
-expr_stmt|;
 name|g_signal_connect
 argument_list|(
 name|tree_view
@@ -3727,7 +3716,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9eccf10108
+DECL|struct|__anon2a1d48190108
 block|{
 DECL|member|view_size
 name|gint
