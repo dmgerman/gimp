@@ -458,12 +458,14 @@ value|}
 end_define
 
 begin_define
-DECL|macro|LIST (id,name,blurb,stock_id,help_id,view_size)
+DECL|macro|LIST (id,new_func,name,blurb,stock_id,help_id,view_size)
 define|#
 directive|define
 name|LIST
 parameter_list|(
 name|id
+parameter_list|,
+name|new_func
 parameter_list|,
 name|name
 parameter_list|,
@@ -486,7 +488,7 @@ value|, \     stock_id
 comment|/* stock_id         */
 value|, \     help_id
 comment|/* help_id          */
-value|, \     dialogs_##id##_list_view_new
+value|, \     dialogs_##new_func##_list_view_new
 comment|/* new_func         */
 value|, \     view_size
 comment|/* view_size        */
@@ -1230,6 +1232,8 @@ name|LIST
 argument_list|(
 name|dynamics
 argument_list|,
+name|dynamics
+argument_list|,
 name|N_
 argument_list|(
 literal|"Paint Dynamics"
@@ -1240,6 +1244,28 @@ argument_list|,
 name|GIMP_STOCK_DYNAMICS
 argument_list|,
 name|GIMP_HELP_DYNAMICS_DIALOG
+argument_list|,
+name|GIMP_VIEW_SIZE_MEDIUM
+argument_list|)
+block|,
+name|LIST
+argument_list|(
+name|tool
+operator|-
+name|preset
+argument_list|,
+name|tool_preset
+argument_list|,
+name|N_
+argument_list|(
+literal|"Tool Presets"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_STOCK_TOOL_PRESET
+argument_list|,
+name|GIMP_HELP_TOOL_PRESET_DIALOG
 argument_list|,
 name|GIMP_VIEW_SIZE_MEDIUM
 argument_list|)
@@ -1565,6 +1591,28 @@ argument_list|,
 name|GIMP_HELP_PALETTE_EDITOR_DIALOG
 argument_list|,
 name|dialogs_palette_editor_get
+argument_list|,
+literal|0
+argument_list|,
+name|TRUE
+argument_list|)
+block|,
+name|DOCKABLE
+argument_list|(
+literal|"gimp-tool-preset-editor"
+argument_list|,
+name|N_
+argument_list|(
+literal|"Tool Preset Editor"
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_STOCK_TOOL_PRESET
+argument_list|,
+name|GIMP_HELP_TOOL_PRESET_EDITOR_DIALOG
+argument_list|,
+name|dialogs_tool_preset_editor_get
 argument_list|,
 literal|0
 argument_list|,

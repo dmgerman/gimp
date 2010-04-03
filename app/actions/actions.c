@@ -390,6 +390,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool-preset-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-actions.h"
 end_include
 
@@ -773,6 +779,21 @@ block|,
 name|gradients_actions_setup
 block|,
 name|gradients_actions_update
+block|}
+block|,
+block|{
+literal|"tool-preset"
+block|,
+name|N_
+argument_list|(
+literal|"Tool Presets"
+argument_list|)
+block|,
+name|GIMP_STOCK_DYNAMICS
+block|,
+name|tool_preset_actions_setup
+block|,
+name|tool_preset_actions_update
 block|}
 block|,
 block|{

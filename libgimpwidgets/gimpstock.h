@@ -1055,6 +1055,11 @@ define|#
 directive|define
 name|GIMP_STOCK_PATTERN
 value|GIMP_STOCK_TOOL_BUCKET_FILL
+DECL|macro|GIMP_STOCK_TOOL_PRESET
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_PRESET
+value|GIMP_STOCK_TOOL_PAINTBRUSH
 DECL|macro|GIMP_STOCK_TOOL_DESATURATE
 define|#
 directive|define

@@ -262,6 +262,15 @@ name|GimpPaletteEditor
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpToolPresetEditor
+typedef|typedef
+name|struct
+name|_GimpToolPresetEditor
+name|GimpToolPresetEditor
+typedef|;
+end_typedef
+
 begin_comment
 comment|/*  GimpImageEditor widgets  */
 end_comment
@@ -559,6 +568,15 @@ typedef|typedef
 name|struct
 name|_GimpPatternFactoryView
 name|GimpPatternFactoryView
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpToolPresetFactoryView
+typedef|typedef
+name|struct
+name|_GimpToolPresetFactoryView
+name|GimpToolPresetFactoryView
 typedef|;
 end_typedef
 

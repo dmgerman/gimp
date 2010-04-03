@@ -52,7 +52,7 @@ define|#
 directive|define
 name|DYNAMICS_PATH_BLURB
 define|\
-value|"Sets the dynamics search path."
+value|N_("Sets the dynamics search path.")
 end_define
 
 begin_define
@@ -60,6 +60,23 @@ DECL|macro|DYNAMICS_PATH_WRITABLE_BLURB
 define|#
 directive|define
 name|DYNAMICS_PATH_WRITABLE_BLURB
+value|""
+end_define
+
+begin_define
+DECL|macro|TOOL_PRESET_PATH_BLURB
+define|#
+directive|define
+name|TOOL_PRESET_PATH_BLURB
+define|\
+value|N_("Sets the dynamics search path.")
+end_define
+
+begin_define
+DECL|macro|TOOL_PRESET_PATH_WRITABLE_BLURB
+define|#
+directive|define
+name|TOOL_PRESET_PATH_WRITABLE_BLURB
 value|""
 end_define
 
@@ -151,6 +168,15 @@ directive|define
 name|DEFAULT_DYNAMICS_BLURB
 define|\
 value|"Specify a default dynamics.  The dynamics is searched for in the " \ "specified dynamics path."
+end_define
+
+begin_define
+DECL|macro|DEFAULT_TOOL_PRESET_BLURB
+define|#
+directive|define
+name|DEFAULT_TOOL_PRESET_BLURB
+define|\
+value|"Specify a default tool preset.  The tool preset is searched for in the " \ "specified tool prests path."
 end_define
 
 begin_define

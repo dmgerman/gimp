@@ -532,6 +532,32 @@ name|GIMP_HELP_DYNAMICS_DIALOG
 block|}
 block|,
 block|{
+literal|"dialogs-tool-presets"
+block|,
+name|GIMP_STOCK_TOOL_PRESET
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Tool presets"
+argument_list|)
+block|,
+name|NULL
+block|,
+name|NC_
+argument_list|(
+literal|"dialogs-action"
+argument_list|,
+literal|"Open tool presets dialog"
+argument_list|)
+block|,
+literal|"gimp-tool-preset-list"
+block|,
+name|GIMP_HELP_TOOL_PRESET_DIALOG
+block|}
+block|,
+block|{
 literal|"dialogs-dynamics-editor"
 block|,
 name|GIMP_STOCK_DYNAMICS

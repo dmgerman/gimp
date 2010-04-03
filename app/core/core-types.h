@@ -453,6 +453,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpToolPreset
+typedef|typedef
+name|struct
+name|_GimpToolPreset
+name|GimpToolPreset
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpTagCache
 typedef|typedef
 name|struct
