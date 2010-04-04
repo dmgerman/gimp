@@ -3716,7 +3716,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1d48190108
+DECL|struct|__anon2b666fa00108
 block|{
 DECL|member|view_size
 name|gint
@@ -5748,10 +5748,7 @@ for|for
 control|(
 name|current_row
 operator|=
-name|g_list_first
-argument_list|(
 name|selected_rows
-argument_list|)
 init|;
 name|current_row
 condition|;
@@ -5808,7 +5805,6 @@ name|renderer
 operator|->
 name|viewable
 condition|)
-block|{
 operator|*
 name|items
 operator|=
@@ -5822,7 +5818,6 @@ operator|->
 name|viewable
 argument_list|)
 expr_stmt|;
-block|}
 name|g_object_unref
 argument_list|(
 name|renderer

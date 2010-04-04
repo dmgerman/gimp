@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaaf0d00103
+DECL|enum|__anon296266400103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -2959,13 +2959,11 @@ if|if
 condition|(
 name|list
 condition|)
-block|{
 operator|*
 name|list
 operator|=
 name|NULL
 expr_stmt|;
-block|}
 if|if
 condition|(
 operator|!
@@ -2978,11 +2976,9 @@ name|private
 operator|->
 name|context
 condition|)
-block|{
 return|return
 literal|0
 return|;
-block|}
 name|children_type
 operator|=
 name|gimp_container_get_children_type
@@ -3009,7 +3005,6 @@ name|list
 operator|&&
 name|object
 condition|)
-block|{
 operator|*
 name|list
 operator|=
@@ -3021,11 +3016,12 @@ argument_list|,
 name|object
 argument_list|)
 expr_stmt|;
-block|}
 return|return
 name|object
-operator|!=
-name|NULL
+condition|?
+literal|1
+else|:
+literal|0
 return|;
 block|}
 end_function
