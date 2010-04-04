@@ -397,15 +397,11 @@ condition|)
 block|{
 name|tool_preset
 operator|=
-name|GIMP_TOOL_PRESET
+name|gimp_context_get_tool_preset
 argument_list|(
-name|gimp_tool_preset_new
-argument_list|(
-literal|"Current Options"
-argument_list|)
+name|context
 argument_list|)
 expr_stmt|;
-comment|//FIXMEE!!!!!!!!!!!!
 if|if
 condition|(
 name|tool_preset
