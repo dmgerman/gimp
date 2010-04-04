@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c6bfc20103
+DECL|enum|__anon2b62a8ad0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE

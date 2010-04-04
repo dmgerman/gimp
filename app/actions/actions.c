@@ -789,7 +789,7 @@ argument_list|(
 literal|"Tool Presets"
 argument_list|)
 block|,
-name|GIMP_STOCK_DYNAMICS
+name|GIMP_STOCK_TOOL_PRESET
 block|,
 name|tool_preset_actions_setup
 block|,

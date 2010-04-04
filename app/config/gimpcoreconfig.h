@@ -177,6 +177,16 @@ name|gchar
 modifier|*
 name|gradient_path_writable
 decl_stmt|;
+DECL|member|tool_preset_path
+name|gchar
+modifier|*
+name|tool_preset_path
+decl_stmt|;
+DECL|member|tool_preset_path_writable
+name|gchar
+modifier|*
+name|tool_preset_path_writable
+decl_stmt|;
 DECL|member|font_path
 name|gchar
 modifier|*
@@ -188,16 +198,6 @@ modifier|*
 name|font_path_writable
 decl_stmt|;
 comment|/*  unused  */
-DECL|member|tool_preset_path
-name|gchar
-modifier|*
-name|tool_preset_path
-decl_stmt|;
-DECL|member|tool_preset_path_writable
-name|gchar
-modifier|*
-name|tool_preset_path_writable
-decl_stmt|;
 DECL|member|default_brush
 name|gchar
 modifier|*
