@@ -180,6 +180,8 @@ operator|->
 name|brush_factory
 argument_list|,
 name|name
+argument_list|,
+name|context
 argument_list|)
 decl_stmt|;
 if|if

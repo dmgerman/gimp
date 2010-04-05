@@ -36,6 +36,10 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_typedef
@@ -73,7 +77,9 @@ modifier|*
 name|GimpDataGetStandardFunc
 function_decl|)
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_typedef
@@ -331,6 +337,10 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -382,6 +392,10 @@ parameter_list|(
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

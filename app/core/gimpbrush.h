@@ -310,6 +310,10 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -319,7 +323,9 @@ name|GimpData
 modifier|*
 name|gimp_brush_get_standard
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 function_decl|;
 end_function_decl

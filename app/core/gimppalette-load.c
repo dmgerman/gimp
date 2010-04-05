@@ -1039,9 +1039,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_act (const gchar * filename,GError ** error)
+DECL|function|gimp_palette_load_act (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_palette_load_act
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1167,6 +1171,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1248,9 +1254,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_riff (const gchar * filename,GError ** error)
+DECL|function|gimp_palette_load_riff (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_palette_load_riff
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1376,6 +1386,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1472,9 +1484,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_psp (const gchar * filename,GError ** error)
+DECL|function|gimp_palette_load_psp (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_palette_load_psp
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1631,6 +1647,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1880,9 +1898,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_aco (const gchar * filename,GError ** error)
+DECL|function|gimp_palette_load_aco (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_palette_load_aco
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2084,6 +2106,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2853,9 +2877,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load_css (const gchar * filename,GError ** error)
+DECL|function|gimp_palette_load_css (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_palette_load_css
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2997,6 +3025,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;

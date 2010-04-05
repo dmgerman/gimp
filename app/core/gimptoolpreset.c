@@ -36,6 +36,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimptoolinfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptooloptions.h"
 end_include
 
@@ -65,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296d58aa0103
+DECL|enum|__anon29497e310103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -281,9 +287,9 @@ literal|"tool-options"
 argument_list|,
 name|NULL
 argument_list|,
-name|GIMP_TYPE_TOOL_PRESET
+name|GIMP_TYPE_TOOL_OPTIONS
 argument_list|,
-name|GIMP_CONFIG_PARAM_AGGREGATE
+name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
 expr_stmt|;
 block|}
@@ -641,15 +647,64 @@ end_comment
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_tool_preset_new (const gchar * name)
+DECL|function|gimp_tool_preset_new (const gchar * name,GimpContext * context)
 name|gimp_tool_preset_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
+name|GimpToolInfo
+modifier|*
+name|tool_info
+decl_stmt|;
+specifier|const
+name|gchar
+modifier|*
+name|stock_id
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|tool_info
+operator|=
+name|gimp_context_get_tool
+argument_list|(
+name|context
+argument_list|)
+expr_stmt|;
+name|stock_id
+operator|=
+name|gimp_viewable_get_stock_id
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|tool_info
+argument_list|)
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
@@ -659,7 +714,16 @@ literal|"name"
 argument_list|,
 name|name
 argument_list|,
-comment|//                      "tool-options", options,
+literal|"stock-id"
+argument_list|,
+name|stock_id
+argument_list|,
+literal|"tool-options"
+argument_list|,
+name|tool_info
+operator|->
+name|tool_options
+argument_list|,
 name|NULL
 argument_list|)
 return|;
@@ -669,10 +733,12 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_tool_preset_get_standard (void)
+DECL|function|gimp_tool_preset_get_standard (GimpContext * context)
 name|gimp_tool_preset_get_standard
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 specifier|static
@@ -682,6 +748,16 @@ name|standard_tool_preset
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -693,6 +769,8 @@ operator|=
 name|gimp_tool_preset_new
 argument_list|(
 literal|"Standard tool preset"
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 name|gimp_data_clean

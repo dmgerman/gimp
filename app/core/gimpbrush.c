@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b2d630103
+DECL|enum|__anon2a00760a0103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b2d630203
+DECL|enum|__anon2a00760a0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1713,13 +1713,17 @@ end_comment
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_new (const gchar * name)
+DECL|function|gimp_brush_new (const gchar * name,GimpContext * context)
 name|gimp_brush_new
 parameter_list|(
 specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1755,10 +1759,12 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_brush_get_standard (void)
+DECL|function|gimp_brush_get_standard (GimpContext * context)
 name|gimp_brush_get_standard
 parameter_list|(
-name|void
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 specifier|static
@@ -1779,6 +1785,8 @@ operator|=
 name|gimp_brush_new
 argument_list|(
 literal|"Standard"
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 name|gimp_data_clean

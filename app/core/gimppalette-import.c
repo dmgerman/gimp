@@ -215,6 +215,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -936,7 +938,7 @@ begin_function
 specifier|static
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_make_palette (GHashTable * table,const gchar * palette_name,gint n_colors)
+DECL|function|gimp_palette_import_make_palette (GHashTable * table,const gchar * palette_name,GimpContext * context,gint n_colors)
 name|gimp_palette_import_make_palette
 parameter_list|(
 name|GHashTable
@@ -948,6 +950,10 @@ name|gchar
 modifier|*
 name|palette_name
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|n_colors
 parameter_list|)
@@ -955,14 +961,6 @@ block|{
 name|GimpPalette
 modifier|*
 name|palette
-init|=
-name|GIMP_PALETTE
-argument_list|(
-name|gimp_palette_new
-argument_list|(
-name|palette_name
-argument_list|)
-argument_list|)
 decl_stmt|;
 name|GSList
 modifier|*
@@ -974,6 +972,18 @@ name|GSList
 modifier|*
 name|iter
 decl_stmt|;
+name|palette
+operator|=
+name|GIMP_PALETTE
+argument_list|(
+name|gimp_palette_new
+argument_list|(
+name|palette_name
+argument_list|,
+name|context
+argument_list|)
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -1501,12 +1511,16 @@ end_function
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_image (GimpImage * image,const gchar * palette_name,gint n_colors,gint threshold,gboolean selection_only)
+DECL|function|gimp_palette_import_from_image (GimpImage * image,GimpContext * context,const gchar * palette_name,gint n_colors,gint threshold,gboolean selection_only)
 name|gimp_palette_import_from_image
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -1546,6 +1560,16 @@ argument_list|(
 name|GIMP_IS_IMAGE
 argument_list|(
 name|image
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -1689,6 +1713,8 @@ name|colors
 argument_list|,
 name|palette_name
 argument_list|,
+name|context
+argument_list|,
 name|n_colors
 argument_list|)
 return|;
@@ -1702,12 +1728,16 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_indexed_image (GimpImage * image,const gchar * palette_name)
+DECL|function|gimp_palette_import_from_indexed_image (GimpImage * image,GimpContext * context,const gchar * palette_name)
 name|gimp_palette_import_from_indexed_image
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -1745,6 +1775,16 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|gimp_image_base_type
 argument_list|(
 name|image
@@ -1771,6 +1811,8 @@ argument_list|(
 name|gimp_palette_new
 argument_list|(
 name|palette_name
+argument_list|,
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1887,12 +1929,16 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_drawable (GimpDrawable * drawable,const gchar * palette_name,gint n_colors,gint threshold,gboolean selection_only)
+DECL|function|gimp_palette_import_from_drawable (GimpDrawable * drawable,GimpContext * context,const gchar * palette_name,gint n_colors,gint threshold,gboolean selection_only)
 name|gimp_palette_import_from_drawable
 parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -1935,6 +1981,16 @@ argument_list|(
 name|GIMP_IS_DRAWABLE
 argument_list|(
 name|drawable
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -2097,6 +2153,8 @@ name|colors
 argument_list|,
 name|palette_name
 argument_list|,
+name|context
+argument_list|,
 name|n_colors
 argument_list|)
 return|;
@@ -2110,9 +2168,13 @@ end_comment
 begin_function
 name|GimpPalette
 modifier|*
-DECL|function|gimp_palette_import_from_file (const gchar * filename,const gchar * palette_name,GError ** error)
+DECL|function|gimp_palette_import_from_file (GimpContext * context,const gchar * filename,const gchar * palette_name,GError ** error)
 name|gimp_palette_import_from_file
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -2135,6 +2197,16 @@ name|palette_list
 init|=
 name|NULL
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|filename
@@ -2195,6 +2267,8 @@ name|palette_list
 operator|=
 name|gimp_palette_load_act
 argument_list|(
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|error
@@ -2208,6 +2282,8 @@ name|palette_list
 operator|=
 name|gimp_palette_load_riff
 argument_list|(
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|error
@@ -2221,6 +2297,8 @@ name|palette_list
 operator|=
 name|gimp_palette_load_psp
 argument_list|(
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|error
@@ -2234,6 +2312,8 @@ name|palette_list
 operator|=
 name|gimp_palette_load_aco
 argument_list|(
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|error
@@ -2247,6 +2327,8 @@ name|palette_list
 operator|=
 name|gimp_palette_load_css
 argument_list|(
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|error

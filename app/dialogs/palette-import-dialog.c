@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c2e1650103
+DECL|enum|__anon275f967a0103
 block|{
 DECL|enumerator|GRADIENT_IMPORT
 name|GRADIENT_IMPORT
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c2e1650208
+DECL|struct|__anon275f967a0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -3690,6 +3690,10 @@ name|gimp_palette_import_from_indexed_image
 argument_list|(
 name|image
 argument_list|,
+name|dialog
+operator|->
+name|context
+argument_list|,
 name|palette_name
 argument_list|)
 expr_stmt|;
@@ -3705,6 +3709,10 @@ operator|=
 name|gimp_palette_import_from_image
 argument_list|(
 name|image
+argument_list|,
+name|dialog
+operator|->
+name|context
 argument_list|,
 name|palette_name
 argument_list|,
@@ -3737,6 +3745,10 @@ operator|=
 name|gimp_palette_import_from_drawable
 argument_list|(
 name|drawable
+argument_list|,
+name|dialog
+operator|->
+name|context
 argument_list|,
 name|palette_name
 argument_list|,
@@ -3780,6 +3792,10 @@ name|palette
 operator|=
 name|gimp_palette_import_from_file
 argument_list|(
+name|dialog
+operator|->
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|palette_name

@@ -1241,7 +1241,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2793f0760108
+DECL|struct|__anon2c1300ef0108
 block|{
 DECL|member|factory
 name|GimpDataFactory
@@ -1875,7 +1875,7 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_data_factory_data_new (GimpDataFactory * factory,const gchar * name)
+DECL|function|gimp_data_factory_data_new (GimpDataFactory * factory,const gchar * name,GimpContext * context)
 name|gimp_data_factory_data_new
 parameter_list|(
 name|GimpDataFactory
@@ -1886,6 +1886,10 @@ specifier|const
 name|gchar
 modifier|*
 name|name
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1917,6 +1921,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|factory
@@ -1937,6 +1951,8 @@ operator|->
 name|data_new_func
 argument_list|(
 name|name
+argument_list|,
+name|context
 argument_list|)
 decl_stmt|;
 if|if
@@ -2336,12 +2352,16 @@ end_function
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_data_factory_data_get_standard (GimpDataFactory * factory)
+DECL|function|gimp_data_factory_data_get_standard (GimpDataFactory * factory,GimpContext * context)
 name|gimp_data_factory_data_get_standard
 parameter_list|(
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -2349,6 +2369,16 @@ argument_list|(
 name|GIMP_IS_DATA_FACTORY
 argument_list|(
 name|factory
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|,
 name|NULL
@@ -2368,7 +2398,9 @@ operator|->
 name|priv
 operator|->
 name|data_get_standard_func
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 return|;
 return|return
 name|NULL

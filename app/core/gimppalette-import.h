@@ -52,6 +52,10 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -78,6 +82,10 @@ name|GimpImage
 modifier|*
 name|image
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -94,6 +102,10 @@ parameter_list|(
 name|GimpDrawable
 modifier|*
 name|drawable
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 specifier|const
 name|gchar
@@ -117,6 +129,10 @@ name|GimpPalette
 modifier|*
 name|gimp_palette_import_from_file
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

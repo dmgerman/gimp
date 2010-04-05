@@ -1455,7 +1455,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon296741b10103
+DECL|enum|__anon2b3a0fdb0103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1469,7 +1469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296741b10203
+DECL|enum|__anon2b3a0fdb0203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -10167,7 +10167,9 @@ operator|->
 name|brush_name
 argument_list|,
 name|gimp_brush_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_brush
@@ -10276,7 +10278,9 @@ operator|=
 name|GIMP_BRUSH
 argument_list|(
 name|gimp_brush_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -10691,7 +10695,9 @@ operator|->
 name|dynamics_name
 argument_list|,
 name|gimp_dynamics_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_dynamics
@@ -10730,7 +10736,9 @@ operator|=
 name|GIMP_DYNAMICS
 argument_list|(
 name|gimp_dynamics_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -11078,7 +11086,9 @@ operator|->
 name|pattern_name
 argument_list|,
 name|gimp_pattern_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_pattern
@@ -11187,7 +11197,9 @@ operator|=
 name|GIMP_PATTERN
 argument_list|(
 name|gimp_pattern_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11532,7 +11544,9 @@ operator|->
 name|gradient_name
 argument_list|,
 name|gimp_gradient_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_gradient
@@ -11641,7 +11655,9 @@ operator|=
 name|GIMP_GRADIENT
 argument_list|(
 name|gimp_gradient_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -11986,7 +12002,9 @@ operator|->
 name|palette_name
 argument_list|,
 name|gimp_palette_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_palette
@@ -12095,7 +12113,9 @@ operator|=
 name|GIMP_PALETTE
 argument_list|(
 name|gimp_palette_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
@@ -12510,7 +12530,9 @@ operator|->
 name|tool_preset_name
 argument_list|,
 name|gimp_tool_preset_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_context_real_set_tool_preset
@@ -12543,16 +12565,16 @@ condition|(
 operator|!
 name|standard_tool_preset
 condition|)
-block|{
 name|standard_tool_preset
 operator|=
 name|GIMP_TOOL_PRESET
 argument_list|(
 name|gimp_tool_preset_get_standard
-argument_list|()
+argument_list|(
+name|context
+argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|context
@@ -12561,9 +12583,7 @@ name|tool_preset
 operator|==
 name|tool_preset
 condition|)
-block|{
 return|return;
-block|}
 if|if
 condition|(
 name|context
