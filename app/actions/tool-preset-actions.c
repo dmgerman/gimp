@@ -213,7 +213,7 @@ name|NC_
 argument_list|(
 literal|"tool-preset-action"
 argument_list|,
-literal|"_Delete ToolPreset"
+literal|"_Delete Tool Preset"
 argument_list|)
 block|,
 literal|""
@@ -222,7 +222,7 @@ name|NC_
 argument_list|(
 literal|"tool-preset-action"
 argument_list|,
-literal|"Delete this tool_preset"
+literal|"Delete this tool preset"
 argument_list|)
 block|,
 name|G_CALLBACK
@@ -283,7 +283,7 @@ name|NC_
 argument_list|(
 literal|"tool-preset-action"
 argument_list|,
-literal|"_Edit ToolPreset..."
+literal|"_Edit Tool Preset..."
 argument_list|)
 block|,
 name|NULL
@@ -292,7 +292,7 @@ name|NC_
 argument_list|(
 literal|"tool-preset-action"
 argument_list|,
-literal|"Edit tool preset"
+literal|"Edit this tool preset"
 argument_list|)
 block|,
 literal|"gimp-tool-preset-editor"
