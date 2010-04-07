@@ -3750,6 +3750,55 @@ block|}
 if|if
 condition|(
 operator|!
+name|strlen
+argument_list|(
+name|proc
+operator|->
+name|menu_label
+argument_list|)
+condition|)
+block|{
+name|gimp_message
+argument_list|(
+name|plug_in
+operator|->
+name|manager
+operator|->
+name|gimp
+argument_list|,
+name|NULL
+argument_list|,
+name|GIMP_MESSAGE_ERROR
+argument_list|,
+literal|"Plug-in \"%s\"\n(%s)\n"
+literal|"attempted to register the procedure \"%s\" "
+literal|"in the menu \"%s\", but the procedure has no label.  "
+literal|"This is not allowed."
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|plug_in
+argument_list|)
+argument_list|,
+name|gimp_filename_to_utf8
+argument_list|(
+name|plug_in
+operator|->
+name|prog
+argument_list|)
+argument_list|,
+name|proc_name
+argument_list|,
+name|menu_path
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+if|if
+condition|(
+operator|!
 name|gimp_plug_in_procedure_add_menu_path
 argument_list|(
 name|proc
