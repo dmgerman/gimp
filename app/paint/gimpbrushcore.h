@@ -158,6 +158,10 @@ DECL|member|hardness
 name|gdouble
 name|hardness
 decl_stmt|;
+DECL|member|force
+name|gdouble
+name|force
+decl_stmt|;
 DECL|member|aspect_ratio
 name|gdouble
 name|aspect_ratio

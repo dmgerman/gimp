@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bedd72b0103
+DECL|enum|__anon2a1f2ee10103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -791,6 +791,12 @@ expr_stmt|;
 name|core
 operator|->
 name|hardness
+operator|=
+literal|1.0
+expr_stmt|;
+name|core
+operator|->
+name|force
 operator|=
 literal|1.0
 expr_stmt|;
@@ -4605,7 +4611,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_paste_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpLayerModeEffects paint_mode,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode)
 name|gimp_brush_core_paste_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4634,7 +4640,7 @@ name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
-name|dynamic_hardness
+name|dynamic_force
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
@@ -4652,7 +4658,7 @@ name|coords
 argument_list|,
 name|brush_hardness
 argument_list|,
-name|dynamic_hardness
+name|dynamic_force
 argument_list|)
 decl_stmt|;
 if|if
@@ -4802,7 +4808,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness,GimpPaintApplicationMode mode)
+DECL|function|gimp_brush_core_replace_canvas (GimpBrushCore * core,GimpDrawable * drawable,const GimpCoords * coords,gdouble brush_opacity,gdouble image_opacity,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force,GimpPaintApplicationMode mode)
 name|gimp_brush_core_replace_canvas
 parameter_list|(
 name|GimpBrushCore
@@ -4828,7 +4834,7 @@ name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
-name|dynamic_hardness
+name|dynamic_force
 parameter_list|,
 name|GimpPaintApplicationMode
 name|mode
@@ -4846,7 +4852,7 @@ name|coords
 argument_list|,
 name|brush_hardness
 argument_list|,
-name|dynamic_hardness
+name|dynamic_force
 argument_list|)
 decl_stmt|;
 if|if
@@ -7239,7 +7245,7 @@ end_function
 begin_function
 name|TempBuf
 modifier|*
-DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,const GimpCoords * coords,GimpBrushApplicationMode brush_hardness,gdouble dynamic_hardness)
+DECL|function|gimp_brush_core_get_brush_mask (GimpBrushCore * core,const GimpCoords * coords,GimpBrushApplicationMode brush_hardness,gdouble dynamic_force)
 name|gimp_brush_core_get_brush_mask
 parameter_list|(
 name|GimpBrushCore
@@ -7255,7 +7261,7 @@ name|GimpBrushApplicationMode
 name|brush_hardness
 parameter_list|,
 name|gdouble
-name|dynamic_hardness
+name|dynamic_force
 parameter_list|)
 block|{
 name|TempBuf
@@ -7347,7 +7353,7 @@ name|coords
 operator|->
 name|y
 argument_list|,
-name|dynamic_hardness
+name|dynamic_force
 argument_list|)
 expr_stmt|;
 break|break;

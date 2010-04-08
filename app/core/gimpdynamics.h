@@ -113,6 +113,11 @@ name|GimpDynamicsOutput
 modifier|*
 name|hardness_output
 decl_stmt|;
+DECL|member|force_output
+name|GimpDynamicsOutput
+modifier|*
+name|force_output
+decl_stmt|;
 DECL|member|rate_output
 name|GimpDynamicsOutput
 modifier|*

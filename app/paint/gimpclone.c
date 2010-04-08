@@ -659,7 +659,7 @@ name|gdouble
 name|fade_point
 decl_stmt|;
 name|gdouble
-name|hardness
+name|force
 decl_stmt|;
 switch|switch
 condition|(
@@ -931,13 +931,13 @@ operator|->
 name|pixel_dist
 argument_list|)
 expr_stmt|;
-name|hardness
+name|force
 operator|=
 name|gimp_dynamics_output_get_linear_value
 argument_list|(
 name|dynamics
 operator|->
-name|hardness_output
+name|force_output
 argument_list|,
 name|coords
 argument_list|,
@@ -979,7 +979,7 @@ argument_list|(
 name|paint_options
 argument_list|)
 argument_list|,
-name|hardness
+name|force
 argument_list|,
 comment|/* In fixed mode, paint incremental so the                                  * individual brushes are properly applied                                  * on top of each other.                                  * Otherwise the stuff we paint is seamless                                  * and we don't need intermediate masking.                                  */
 name|source_options
