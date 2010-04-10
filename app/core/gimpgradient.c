@@ -1400,17 +1400,17 @@ end_comment
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_gradient_new (const gchar * name,GimpContext * context)
+DECL|function|gimp_gradient_new (GimpContext * context,const gchar * name)
 name|gimp_gradient_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|)
 block|{
 name|GimpGradient
@@ -1493,9 +1493,9 @@ name|standard_gradient
 operator|=
 name|gimp_gradient_new
 argument_list|(
-literal|"Standard"
-argument_list|,
 name|context
+argument_list|,
+literal|"Standard"
 argument_list|)
 expr_stmt|;
 name|gimp_data_clean

@@ -214,9 +214,9 @@ name|GIMP_PALETTE
 argument_list|(
 name|gimp_palette_new
 argument_list|(
-name|palette_name
-argument_list|,
 name|context
+argument_list|,
+name|palette_name
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -978,9 +978,9 @@ name|GIMP_PALETTE
 argument_list|(
 name|gimp_palette_new
 argument_list|(
-name|palette_name
-argument_list|,
 name|context
+argument_list|,
+name|palette_name
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1810,9 +1810,9 @@ name|GIMP_PALETTE
 argument_list|(
 name|gimp_palette_new
 argument_list|(
-name|palette_name
-argument_list|,
 name|context
+argument_list|,
+name|palette_name
 argument_list|)
 argument_list|)
 expr_stmt|;

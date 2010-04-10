@@ -453,12 +453,12 @@ name|gimp_data_factory_data_new
 argument_list|(
 name|factory
 argument_list|,
+name|context
+argument_list|,
 name|_
 argument_list|(
 literal|"Untitled"
 argument_list|)
-argument_list|,
-name|context
 argument_list|)
 expr_stmt|;
 if|if

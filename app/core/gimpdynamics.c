@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27f6f57c0103
+DECL|enum|__anon2891ec090103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1393,19 +1393,40 @@ end_comment
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_dynamics_new (const gchar * name,GimpContext * context)
+DECL|function|gimp_dynamics_new (GimpContext * context,const gchar * name)
 name|gimp_dynamics_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|name
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|name
+index|[
+literal|0
+index|]
+operator|!=
+literal|'\0'
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
@@ -1449,9 +1470,9 @@ name|standard_dynamics
 operator|=
 name|gimp_dynamics_new
 argument_list|(
-literal|"Standard dynamics"
-argument_list|,
 name|context
+argument_list|,
+literal|"Standard dynamics"
 argument_list|)
 expr_stmt|;
 name|gimp_data_clean

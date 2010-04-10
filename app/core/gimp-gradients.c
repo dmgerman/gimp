@@ -472,12 +472,12 @@ name|GIMP_GRADIENT
 argument_list|(
 name|gimp_gradient_new
 argument_list|(
-name|name
-argument_list|,
 name|gimp_get_user_context
 argument_list|(
 name|gimp
 argument_list|)
+argument_list|,
+name|name
 argument_list|)
 argument_list|)
 expr_stmt|;

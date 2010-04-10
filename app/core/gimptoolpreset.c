@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29497e310103
+DECL|enum|__anon2906bcfb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -647,17 +647,17 @@ end_comment
 begin_function
 name|GimpData
 modifier|*
-DECL|function|gimp_tool_preset_new (const gchar * name,GimpContext * context)
+DECL|function|gimp_tool_preset_new (GimpContext * context,const gchar * name)
 name|gimp_tool_preset_new
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
 name|name
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
 parameter_list|)
 block|{
 name|GimpToolInfo
@@ -671,6 +671,16 @@ name|stock_id
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
 name|name
 operator|!=
 name|NULL
@@ -680,10 +690,12 @@ argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
-argument_list|(
-name|context
-argument_list|)
+name|name
+index|[
+literal|0
+index|]
+operator|!=
+literal|'\0'
 argument_list|,
 name|NULL
 argument_list|)
@@ -768,9 +780,9 @@ name|standard_tool_preset
 operator|=
 name|gimp_tool_preset_new
 argument_list|(
-literal|"Standard tool preset"
-argument_list|,
 name|context
+argument_list|,
+literal|"Standard tool preset"
 argument_list|)
 expr_stmt|;
 name|gimp_data_clean
