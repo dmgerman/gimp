@@ -119,6 +119,12 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_TOOL_PRESET
 argument_list|,
+literal|"gimp"
+argument_list|,
+name|context
+operator|->
+name|gimp
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
