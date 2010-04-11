@@ -489,9 +489,13 @@ end_comment
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_load (const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_brush_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -596,6 +600,8 @@ name|brush
 operator|=
 name|gimp_brush_load_brush
 argument_list|(
+name|context
+argument_list|,
 name|fd
 argument_list|,
 name|filename
@@ -630,9 +636,13 @@ end_function
 begin_function
 name|GimpBrush
 modifier|*
-DECL|function|gimp_brush_load_brush (gint fd,const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_brush (GimpContext * context,gint fd,const gchar * filename,GError ** error)
 name|gimp_brush_load_brush
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|fd
 parameter_list|,
@@ -1389,7 +1399,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon29ac675f010a
+DECL|union|__anon2c508465010a
 block|{
 DECL|member|u
 name|guint16
@@ -1777,9 +1787,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_load_abr (const gchar * filename,GError ** error)
+DECL|function|gimp_brush_load_abr (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_brush_load_abr
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

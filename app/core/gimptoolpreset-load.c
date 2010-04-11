@@ -30,6 +30,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontext.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimptoolpreset.h"
 end_include
 
@@ -42,9 +48,13 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_tool_preset_load (const gchar * filename,GError ** error)
+DECL|function|gimp_tool_preset_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_tool_preset_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -60,6 +70,16 @@ name|GimpToolPreset
 modifier|*
 name|tool_preset
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_return_val_if_fail
 argument_list|(
 name|filename

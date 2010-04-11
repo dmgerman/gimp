@@ -2254,6 +2254,8 @@ name|palette_list
 operator|=
 name|gimp_palette_load
 argument_list|(
+name|context
+argument_list|,
 name|filename
 argument_list|,
 name|error

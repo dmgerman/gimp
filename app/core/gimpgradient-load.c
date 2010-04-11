@@ -84,9 +84,13 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_gradient_load (const gchar * filename,GError ** error)
+DECL|function|gimp_gradient_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_gradient_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1172,7 +1176,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de00e40108
+DECL|struct|__anon27dc7b260108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -1200,7 +1204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27de00e40208
+DECL|struct|__anon27dc7b260208
 block|{
 DECL|member|offset
 name|gdouble
@@ -1339,9 +1343,13 @@ end_decl_stmt
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_gradient_load_svg (const gchar * filename,GError ** error)
+DECL|function|gimp_gradient_load_svg (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_gradient_load_svg
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

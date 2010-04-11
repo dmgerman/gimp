@@ -203,6 +203,10 @@ name|GimpDataFactory
 modifier|*
 name|factory
 parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|GHashTable
 modifier|*
 name|cache
@@ -907,12 +911,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_data_factory_data_init (GimpDataFactory * factory,gboolean no_data)
+DECL|function|gimp_data_factory_data_init (GimpDataFactory * factory,GimpContext * context,gboolean no_data)
 name|gimp_data_factory_data_init
 parameter_list|(
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|gboolean
 name|no_data
@@ -923,6 +931,14 @@ argument_list|(
 name|GIMP_IS_DATA_FACTORY
 argument_list|(
 name|factory
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -978,6 +994,8 @@ block|}
 name|gimp_data_factory_data_load
 argument_list|(
 name|factory
+argument_list|,
+name|context
 argument_list|,
 name|NULL
 argument_list|)
@@ -1241,12 +1259,17 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b6683940108
+DECL|struct|__anon289268dc0108
 block|{
 DECL|member|factory
 name|GimpDataFactory
 modifier|*
 name|factory
+decl_stmt|;
+DECL|member|context
+name|GimpContext
+modifier|*
+name|context
 decl_stmt|;
 DECL|member|cache
 name|GHashTable
@@ -1262,12 +1285,16 @@ end_typedef
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_data_factory_data_load (GimpDataFactory * factory,GHashTable * cache)
+DECL|function|gimp_data_factory_data_load (GimpDataFactory * factory,GimpContext * context,GHashTable * cache)
 name|gimp_data_factory_data_load
 parameter_list|(
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|,
 name|GHashTable
 modifier|*
@@ -1334,15 +1361,21 @@ modifier|*
 name|tmp
 decl_stmt|;
 name|GimpDataLoadContext
-name|context
+name|load_context
 decl_stmt|;
-name|context
+name|load_context
 operator|.
 name|factory
 operator|=
 name|factory
 expr_stmt|;
+name|load_context
+operator|.
 name|context
+operator|=
+name|context
+expr_stmt|;
+name|load_context
 operator|.
 name|cache
 operator|=
@@ -1428,7 +1461,7 @@ argument_list|,
 name|gimp_data_factory_load_data
 argument_list|,
 operator|&
-name|context
+name|load_context
 argument_list|)
 expr_stmt|;
 name|gimp_datafiles_read_directories
@@ -1440,7 +1473,7 @@ argument_list|,
 name|gimp_data_factory_load_data_recursive
 argument_list|,
 operator|&
-name|context
+name|load_context
 argument_list|)
 expr_stmt|;
 if|if
@@ -1482,12 +1515,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_data_factory_data_refresh (GimpDataFactory * factory)
+DECL|function|gimp_data_factory_data_refresh (GimpDataFactory * factory,GimpContext * context)
 name|gimp_data_factory_data_refresh
 parameter_list|(
 name|GimpDataFactory
 modifier|*
 name|factory
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
 parameter_list|)
 block|{
 name|GHashTable
@@ -1499,6 +1536,14 @@ argument_list|(
 name|GIMP_IS_DATA_FACTORY
 argument_list|(
 name|factory
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1541,6 +1586,8 @@ comment|/*  Now the cache contains a filename => list-of-objects mapping of    *
 name|gimp_data_factory_data_load
 argument_list|(
 name|factory
+argument_list|,
+name|context
 argument_list|,
 name|cache
 argument_list|)
@@ -3345,6 +3392,10 @@ name|loader
 operator|->
 name|load_func
 argument_list|(
+name|context
+operator|->
+name|context
+argument_list|,
 name|file_data
 operator|->
 name|filename

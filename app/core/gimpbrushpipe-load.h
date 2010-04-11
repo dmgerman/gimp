@@ -29,6 +29,10 @@ name|GList
 modifier|*
 name|gimp_brush_pipe_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

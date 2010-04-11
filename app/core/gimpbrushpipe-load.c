@@ -155,9 +155,13 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_brush_pipe_load (const gchar * filename,GError ** error)
+DECL|function|gimp_brush_pipe_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_brush_pipe_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -1124,6 +1128,8 @@ index|]
 operator|=
 name|gimp_brush_load_brush
 argument_list|(
+name|context
+argument_list|,
 name|fd
 argument_list|,
 name|filename

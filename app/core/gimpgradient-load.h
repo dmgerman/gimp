@@ -37,6 +37,10 @@ name|GList
 modifier|*
 name|gimp_gradient_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -55,6 +59,10 @@ name|GList
 modifier|*
 name|gimp_gradient_load_svg
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

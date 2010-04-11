@@ -143,9 +143,13 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_palette_load (const gchar * filename,GError ** error)
+DECL|function|gimp_palette_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_palette_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

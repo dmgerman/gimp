@@ -155,9 +155,13 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_pattern_load (const gchar * filename,GError ** error)
+DECL|function|gimp_pattern_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_pattern_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -753,9 +757,13 @@ end_function
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_pattern_load_pixbuf (const gchar * filename,GError ** error)
+DECL|function|gimp_pattern_load_pixbuf (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_pattern_load_pixbuf
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

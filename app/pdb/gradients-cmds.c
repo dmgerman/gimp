@@ -130,6 +130,8 @@ argument_list|(
 name|gimp
 operator|->
 name|gradient_factory
+argument_list|,
+name|context
 argument_list|)
 expr_stmt|;
 return|return

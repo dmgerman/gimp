@@ -1024,6 +1024,11 @@ name|gimp_data_factory_view_get_data_factory
 argument_list|(
 name|view
 argument_list|)
+argument_list|,
+name|action_data_get_context
+argument_list|(
+name|user_data
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_unset_busy

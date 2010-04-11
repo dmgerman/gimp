@@ -42,9 +42,13 @@ end_include
 begin_function
 name|GList
 modifier|*
-DECL|function|gimp_dynamics_load (const gchar * filename,GError ** error)
+DECL|function|gimp_dynamics_load (GimpContext * context,const gchar * filename,GError ** error)
 name|gimp_dynamics_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*

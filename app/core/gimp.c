@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b62a8ad0103
+DECL|enum|__anon2916e56e0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -3918,6 +3918,10 @@ name|brush_factory
 argument_list|,
 name|gimp
 operator|->
+name|user_context
+argument_list|,
+name|gimp
+operator|->
 name|no_data
 argument_list|)
 expr_stmt|;
@@ -3939,6 +3943,10 @@ argument_list|(
 name|gimp
 operator|->
 name|dynamics_factory
+argument_list|,
+name|gimp
+operator|->
+name|user_context
 argument_list|,
 name|gimp
 operator|->
@@ -3966,6 +3974,10 @@ name|pattern_factory
 argument_list|,
 name|gimp
 operator|->
+name|user_context
+argument_list|,
+name|gimp
+operator|->
 name|no_data
 argument_list|)
 expr_stmt|;
@@ -3990,6 +4002,10 @@ name|palette_factory
 argument_list|,
 name|gimp
 operator|->
+name|user_context
+argument_list|,
+name|gimp
+operator|->
 name|no_data
 argument_list|)
 expr_stmt|;
@@ -4011,6 +4027,10 @@ argument_list|(
 name|gimp
 operator|->
 name|gradient_factory
+argument_list|,
+name|gimp
+operator|->
+name|user_context
 argument_list|,
 name|gimp
 operator|->
@@ -4060,6 +4080,10 @@ argument_list|(
 name|gimp
 operator|->
 name|tool_preset_factory
+argument_list|,
+name|gimp
+operator|->
+name|user_context
 argument_list|,
 name|gimp
 operator|->

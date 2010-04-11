@@ -53,6 +53,10 @@ name|GList
 modifier|*
 name|gimp_brush_load
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
@@ -71,6 +75,10 @@ name|GimpBrush
 modifier|*
 name|gimp_brush_load_brush
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 name|gint
 name|fd
 parameter_list|,
@@ -92,6 +100,10 @@ name|GList
 modifier|*
 name|gimp_brush_load_abr
 parameter_list|(
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
 specifier|const
 name|gchar
 modifier|*
