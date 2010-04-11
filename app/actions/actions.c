@@ -396,6 +396,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tool-preset-editor-actions.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools-actions.h"
 end_include
 
@@ -794,6 +800,21 @@ block|,
 name|tool_preset_actions_setup
 block|,
 name|tool_preset_actions_update
+block|}
+block|,
+block|{
+literal|"tool-preset-editor"
+block|,
+name|N_
+argument_list|(
+literal|"Tool Preset Editor"
+argument_list|)
+block|,
+name|GIMP_STOCK_TOOL_PRESET
+block|,
+name|tool_preset_editor_actions_setup
+block|,
+name|tool_preset_editor_actions_update
 block|}
 block|,
 block|{

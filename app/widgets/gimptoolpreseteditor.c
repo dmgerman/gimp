@@ -256,7 +256,17 @@ argument_list|(
 name|editor
 argument_list|)
 decl_stmt|;
-comment|/*Nuffink*/
+name|editor
+operator|->
+name|tool_preset_model
+operator|=
+name|g_object_new
+argument_list|(
+name|GIMP_TYPE_TOOL_PRESET
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
