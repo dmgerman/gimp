@@ -115,7 +115,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon297965050103
+DECL|enum|__anon2af47b050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -583,6 +583,8 @@ argument_list|,
 name|GIMP_TYPE_CONTEXT
 argument_list|,
 name|GIMP_PARAM_READWRITE
+operator||
+name|G_PARAM_CONSTRUCT_ONLY
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -874,6 +876,16 @@ argument_list|(
 name|editor
 operator|->
 name|data_factory
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|GIMP_IS_CONTEXT
+argument_list|(
+name|editor
+operator|->
+name|context
 argument_list|)
 argument_list|)
 expr_stmt|;
