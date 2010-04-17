@@ -93,7 +93,7 @@ name|NC_
 argument_list|(
 literal|"tool-preset-editor-action"
 argument_list|,
-literal|"Paint ToolPreset Editor Menu"
+literal|"Tool Preset Editor Menu"
 argument_list|)
 block|,
 name|NULL
@@ -126,7 +126,7 @@ name|NC_
 argument_list|(
 literal|"tool-preset-editor-action"
 argument_list|,
-literal|"Edit Active ToolPreset"
+literal|"Edit Active Tool Preset"
 argument_list|)
 block|,
 name|NULL
