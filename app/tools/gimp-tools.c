@@ -1084,6 +1084,7 @@ name|GtkWidget
 modifier|*
 name|options_gui
 decl_stmt|;
+comment|/*  copy all context properties except those the tool actually        *  uses, because the subsequent deserialize() on the tool        *  options will only set the properties that were set to        *  non-default values at the time of saving, and we want to        *  keep these default values as if they have been saved.        * (see bug #541586).        */
 name|gimp_context_copy_properties
 argument_list|(
 name|gimp_get_user_context
@@ -1099,6 +1100,11 @@ name|tool_options
 argument_list|)
 argument_list|,
 name|GIMP_CONTEXT_ALL_PROPS_MASK
+operator|&
+operator|~
+name|tool_info
+operator|->
+name|context_props
 argument_list|)
 expr_stmt|;
 name|gimp_tool_options_deserialize
