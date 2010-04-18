@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a1f2ee10103
+DECL|enum|__anon293d2c3c0103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4556,9 +4556,9 @@ name|height
 argument_list|,
 name|width
 argument_list|,
-name|scale_y
-argument_list|,
 name|scale_x
+argument_list|,
+name|scale_y
 argument_list|,
 name|angle
 argument_list|,
