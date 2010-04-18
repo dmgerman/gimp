@@ -127,31 +127,6 @@ name|gboolean
 name|has_alpha
 decl_stmt|;
 comment|/* drawable has alpha             */
-DECL|member|dirty_x1
-name|gint
-name|dirty_x1
-decl_stmt|;
-DECL|member|dirty_y1
-name|gint
-name|dirty_y1
-decl_stmt|;
-DECL|member|dirty_x2
-name|gint
-name|dirty_x2
-decl_stmt|;
-DECL|member|dirty_y2
-name|gint
-name|dirty_y2
-decl_stmt|;
-DECL|member|update_timeout
-name|guint
-name|update_timeout
-decl_stmt|;
-comment|/* update delay timeout ID         */
-DECL|member|update_count
-name|guint
-name|update_count
-decl_stmt|;
 DECL|member|private
 name|GimpDrawablePrivate
 modifier|*
