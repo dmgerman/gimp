@@ -383,7 +383,7 @@ end_function_decl
 begin_function_decl
 name|GtkWidget
 modifier|*
-name|gimp_dockable_new_tab_widget_for_style
+name|gimp_dockable_new_tab_widget
 parameter_list|(
 name|GimpDockable
 modifier|*
