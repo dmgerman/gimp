@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c98be980103
+DECL|enum|__anon28b801540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3507,8 +3507,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_get_tab_widget_internal (GimpDockable * dockable,GimpContext * context,GimpTabStyle tab_style,GtkIconSize size,gboolean dnd)
-name|gimp_dockable_get_tab_widget_internal
+DECL|function|gimp_dockable_new_tab_widget_internal (GimpDockable * dockable,GimpContext * context,GimpTabStyle tab_style,GtkIconSize size,gboolean dnd)
+name|gimp_dockable_new_tab_widget_internal
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -4616,8 +4616,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_get_tab_widget (GimpDockable * dockable,GimpContext * context,GimpTabStyle tab_style,GtkIconSize size)
-name|gimp_dockable_get_tab_widget
+DECL|function|gimp_dockable_new_tab_widget_for_style (GimpDockable * dockable,GimpContext * context,GimpTabStyle tab_style,GtkIconSize size)
+name|gimp_dockable_new_tab_widget_for_style
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -4655,7 +4655,7 @@ name|NULL
 argument_list|)
 expr_stmt|;
 return|return
-name|gimp_dockable_get_tab_widget_internal
+name|gimp_dockable_new_tab_widget_internal
 argument_list|(
 name|dockable
 argument_list|,
@@ -4674,8 +4674,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_get_drag_widget (GimpDockable * dockable)
-name|gimp_dockable_get_drag_widget
+DECL|function|gimp_dockable_new_drag_widget (GimpDockable * dockable)
+name|gimp_dockable_new_drag_widget
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -4719,7 +4719,7 @@ argument_list|)
 expr_stmt|;
 name|widget
 operator|=
-name|gimp_dockable_get_tab_widget_internal
+name|gimp_dockable_new_tab_widget_internal
 argument_list|(
 name|dockable
 argument_list|,
