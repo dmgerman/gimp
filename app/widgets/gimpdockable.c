@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2af721ae0103
+DECL|enum|__anon2a1ed6dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4604,8 +4604,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_new_tab_widget (GimpDockable * dockable,GimpContext * context,GimpTabStyle tab_style,GtkIconSize size)
-name|gimp_dockable_new_tab_widget
+DECL|function|gimp_dockable_create_tab_widget (GimpDockable * dockable,GimpContext * context,GimpTabStyle tab_style,GtkIconSize size)
+name|gimp_dockable_create_tab_widget
 parameter_list|(
 name|GimpDockable
 modifier|*
@@ -4662,8 +4662,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dockable_new_drag_widget (GimpDockable * dockable)
-name|gimp_dockable_new_drag_widget
+DECL|function|gimp_dockable_create_drag_widget (GimpDockable * dockable)
+name|gimp_dockable_create_drag_widget
 parameter_list|(
 name|GimpDockable
 modifier|*

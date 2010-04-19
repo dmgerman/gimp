@@ -179,7 +179,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c420e4a0103
+DECL|enum|__anon28b28db90103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -1846,7 +1846,7 @@ expr_stmt|;
 comment|/* For the notebook right-click menu, always use the icon style */
 name|menu_widget
 operator|=
-name|gimp_dockable_new_tab_widget
+name|gimp_dockable_create_tab_widget
 argument_list|(
 name|dockable
 argument_list|,
@@ -2287,7 +2287,7 @@ argument_list|)
 expr_stmt|;
 name|tab_widget
 operator|=
-name|gimp_dockable_new_tab_widget
+name|gimp_dockable_create_tab_widget
 argument_list|(
 name|dockable
 argument_list|,
@@ -3112,7 +3112,7 @@ argument_list|)
 expr_stmt|;
 name|view
 operator|=
-name|gimp_dockable_new_drag_widget
+name|gimp_dockable_create_drag_widget
 argument_list|(
 name|dockable
 argument_list|)
