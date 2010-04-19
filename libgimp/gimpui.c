@@ -9,18 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -649,7 +637,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|window
 argument_list|)
@@ -717,7 +705,7 @@ condition|)
 return|return;
 if|if
 condition|(
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

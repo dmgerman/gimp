@@ -9,18 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -3339,7 +3327,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|widget
 argument_list|)

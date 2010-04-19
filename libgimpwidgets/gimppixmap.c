@@ -244,7 +244,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

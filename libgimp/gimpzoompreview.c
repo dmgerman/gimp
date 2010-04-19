@@ -9,18 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -59,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be24c910103
+DECL|enum|__anon29982ed40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -102,7 +90,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2be24c910208
+DECL|struct|__anon29982ed40208
 block|{
 DECL|member|update
 name|gboolean
@@ -2339,7 +2327,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|preview
 operator|->

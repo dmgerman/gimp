@@ -15,12 +15,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_comment
 comment|/* FIXME: #undef GTK_DISABLE_DEPRECATED */
 end_comment
@@ -139,7 +133,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b8fa00103
+DECL|enum|__anon2b9eee900103
 block|{
 DECL|enumerator|SELECTED
 name|SELECTED
@@ -1437,7 +1431,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_MAPPED
+name|gtk_widget_get_mapped
 argument_list|(
 name|GTK_WIDGET
 argument_list|(

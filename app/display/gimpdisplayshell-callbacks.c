@@ -2291,7 +2291,7 @@ name|FALSE
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|canvas
 argument_list|)

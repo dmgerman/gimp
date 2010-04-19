@@ -15,18 +15,6 @@ directive|include
 file|<string.h>
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -75,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c63b67b0103
+DECL|enum|__anon2ba701600103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +96,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c63b67b0208
+DECL|struct|__anon2ba701600208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -171,7 +159,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c63b67b0308
+DECL|struct|__anon2ba701600308
 block|{
 DECL|member|ruler_scale
 specifier|const
@@ -1625,11 +1613,11 @@ decl_stmt|;
 name|gint
 name|attributes_mask
 decl_stmt|;
-name|GTK_WIDGET_SET_FLAGS
+name|gtk_widget_set_realized
 argument_list|(
-name|ruler
+name|widget
 argument_list|,
-name|GTK_REALIZED
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_get_allocation
@@ -1757,21 +1745,9 @@ argument_list|,
 name|ruler
 argument_list|)
 expr_stmt|;
-name|widget
-operator|->
-name|style
-operator|=
-name|gtk_style_attach
-argument_list|(
-name|gtk_widget_get_style
+name|gtk_widget_style_attach
 argument_list|(
 name|widget
-argument_list|)
-argument_list|,
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_style_set_background
@@ -1935,7 +1911,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|widget
 argument_list|)

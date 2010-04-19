@@ -9,18 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -62,7 +50,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon287fd1320108
+DECL|struct|__anon28cc37390108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType
@@ -3468,7 +3456,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|GTK_WIDGET_REALIZED
+name|gtk_widget_get_realized
 argument_list|(
 name|preview
 operator|->
