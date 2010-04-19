@@ -1089,12 +1089,12 @@ DECL|macro|GTK_REQUIRED_MINOR
 define|#
 directive|define
 name|GTK_REQUIRED_MINOR
-value|18
+value|20
 DECL|macro|GTK_REQUIRED_MICRO
 define|#
 directive|define
 name|GTK_REQUIRED_MICRO
-value|1
+value|0
 specifier|const
 name|gchar
 modifier|*

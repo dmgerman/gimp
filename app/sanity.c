@@ -389,7 +389,7 @@ DECL|macro|GLIB_REQUIRED_MINOR
 define|#
 directive|define
 name|GLIB_REQUIRED_MINOR
-value|22
+value|24
 DECL|macro|GLIB_REQUIRED_MICRO
 define|#
 directive|define
