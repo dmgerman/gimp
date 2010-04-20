@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9f07c60103
+DECL|enum|__anon297aa5a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1056,6 +1056,10 @@ argument_list|(
 name|tool_info
 operator|->
 name|tool_options
+argument_list|,
+literal|"tool"
+argument_list|,
+name|tool_info
 argument_list|,
 literal|"tool-info"
 argument_list|,

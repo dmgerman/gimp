@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27a143670103
+DECL|enum|__anon2b0a22c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1047,6 +1047,24 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+comment|/* this is a hack */
+name|g_object_set
+argument_list|(
+name|options
+argument_list|,
+literal|"tool-info"
+argument_list|,
+name|gimp_context_get_tool
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_value_take_object
 argument_list|(
 name|value
