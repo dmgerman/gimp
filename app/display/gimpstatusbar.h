@@ -185,6 +185,12 @@ name|GtkWidget
 modifier|*
 name|scale_combo
 decl_stmt|;
+DECL|member|label
+name|GtkWidget
+modifier|*
+name|label
+decl_stmt|;
+comment|/* same as GtkStatusbar->label */
 DECL|member|progressbar
 name|GtkWidget
 modifier|*
