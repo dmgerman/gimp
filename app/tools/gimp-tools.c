@@ -1102,9 +1102,15 @@ argument_list|,
 name|GIMP_CONTEXT_ALL_PROPS_MASK
 operator|&
 operator|~
+operator|(
 name|tool_info
 operator|->
 name|context_props
+operator||
+name|GIMP_CONTEXT_TOOL_MASK
+operator||
+name|GIMP_CONTEXT_PAINT_INFO_MASK
+operator|)
 argument_list|)
 expr_stmt|;
 name|gimp_tool_options_deserialize
