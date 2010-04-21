@@ -115,7 +115,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baf77680103
+DECL|enum|__anon289d5c390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -184,6 +184,22 @@ parameter_list|(
 name|GimpToolOptions
 modifier|*
 name|tool_options
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_tool_options_tool_notify
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|options
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -286,6 +302,20 @@ name|tool_info
 operator|=
 name|NULL
 expr_stmt|;
+name|g_signal_connect
+argument_list|(
+name|options
+argument_list|,
+literal|"notify::tool"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_tool_options_tool_notify
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -297,7 +327,7 @@ begin_function
 specifier|static
 name|GimpToolInfo
 modifier|*
-DECL|function|gimp_tool_options_check_tool_info (GimpToolOptions * options,GimpToolInfo * tool_info)
+DECL|function|gimp_tool_options_check_tool_info (GimpToolOptions * options,GimpToolInfo * tool_info,gboolean warn)
 name|gimp_tool_options_check_tool_info
 parameter_list|(
 name|GimpToolOptions
@@ -307,6 +337,9 @@ parameter_list|,
 name|GimpToolInfo
 modifier|*
 name|tool_info
+parameter_list|,
+name|gboolean
+name|warn
 parameter_list|)
 block|{
 if|if
@@ -372,6 +405,10 @@ operator|->
 name|tool_options_type
 condition|)
 block|{
+if|if
+condition|(
+name|warn
+condition|)
 name|g_printerr
 argument_list|(
 literal|"%s: correcting bogus deserialized tool "
@@ -492,6 +529,8 @@ argument_list|(
 name|options
 argument_list|,
 name|tool_info
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -546,6 +585,8 @@ argument_list|(
 name|options
 argument_list|,
 name|tool_info
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 if|if
@@ -683,6 +724,89 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_tool_options_tool_notify (GimpToolOptions * options,GParamSpec * pspec)
+name|gimp_tool_options_tool_notify
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|options
+parameter_list|,
+name|GParamSpec
+modifier|*
+name|pspec
+parameter_list|)
+block|{
+name|GimpToolInfo
+modifier|*
+name|tool_info
+init|=
+name|gimp_context_get_tool
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|options
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|GimpToolInfo
+modifier|*
+name|new_info
+decl_stmt|;
+name|new_info
+operator|=
+name|gimp_tool_options_check_tool_info
+argument_list|(
+name|options
+argument_list|,
+name|tool_info
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|tool_info
+operator|&&
+name|new_info
+operator|!=
+name|tool_info
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: 'tool' property on %s was set to bogus value "
+literal|"'%s', it MUST be '%s'."
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|g_type_name
+argument_list|(
+name|G_OBJECT_TYPE
+argument_list|(
+name|options
+argument_list|)
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|tool_info
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|new_info
+argument_list|)
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/*  public functions  */
+end_comment
 
 begin_function
 name|void
