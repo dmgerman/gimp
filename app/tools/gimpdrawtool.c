@@ -958,15 +958,15 @@ name|draw_tool
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
+name|g_return_if_fail
+argument_list|(
 name|draw_tool
 operator|->
 name|paused_count
 operator|>
 literal|0
-condition|)
-block|{
+argument_list|)
+expr_stmt|;
 name|draw_tool
 operator|->
 name|paused_count
@@ -1017,17 +1017,6 @@ argument_list|)
 expr_stmt|;
 endif|#
 directive|endif
-block|}
-else|else
-block|{
-name|g_warning
-argument_list|(
-literal|"%s: called with draw_tool->paused_count == 0"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
-block|}
 block|}
 end_function
 
