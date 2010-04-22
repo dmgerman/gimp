@@ -977,6 +977,12 @@ directive|ifdef
 name|USE_TIMEOUT
 if|if
 condition|(
+name|draw_tool
+operator|->
+name|paused_count
+operator|==
+literal|0
+operator|&&
 operator|!
 name|draw_tool
 operator|->
@@ -988,7 +994,7 @@ name|draw_timeout
 operator|=
 name|gdk_threads_add_timeout_full
 argument_list|(
-name|G_PRIORITY_HIGH
+name|G_PRIORITY_HIGH_IDLE
 argument_list|,
 name|DRAW_TIMEOUT
 argument_list|,
