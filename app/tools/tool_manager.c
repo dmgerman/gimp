@@ -2212,6 +2212,23 @@ argument_list|,
 name|preset_tool
 argument_list|)
 expr_stmt|;
+name|gimp_context_copy_properties
+argument_list|(
+name|GIMP_CONTEXT
+argument_list|(
+name|preset
+operator|->
+name|tool_options
+argument_list|)
+argument_list|,
+name|user_context
+argument_list|,
+name|gimp_tool_preset_get_prop_mask
+argument_list|(
+name|preset
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
