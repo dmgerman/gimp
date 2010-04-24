@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299bec570103
+DECL|enum|__anon2ae3673d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -665,6 +665,16 @@ operator|=
 name|GIMP_TOOL_PRESET
 argument_list|(
 name|object
+argument_list|)
+expr_stmt|;
+name|g_assert
+argument_list|(
+name|GIMP_IS_GIMP
+argument_list|(
+name|preset
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 return|return
