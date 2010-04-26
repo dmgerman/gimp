@@ -133,7 +133,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae3673d0103
+DECL|enum|__anon2a3ed7460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1649,7 +1649,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*  FG and BG are always shared between all tools  */
 if|if
 condition|(
 name|preset
