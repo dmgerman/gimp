@@ -1458,15 +1458,13 @@ condition|(
 name|eevent
 operator|->
 name|window
-operator|!=
+operator|==
 name|gtk_widget_get_window
 argument_list|(
 name|widget
 argument_list|)
 condition|)
-return|return
-name|FALSE
-return|;
+block|{
 if|if
 condition|(
 name|gimp_display_get_image
@@ -1484,11 +1482,6 @@ argument_list|,
 name|eevent
 argument_list|)
 expr_stmt|;
-comment|/* Return TRUE here to avoid redrawing the image when it gets the        * keyboard focus.        */
-return|return
-name|FALSE
-return|;
-comment|/* TRUE; */
 block|}
 else|else
 block|{
@@ -1499,11 +1492,11 @@ argument_list|,
 name|eevent
 argument_list|)
 expr_stmt|;
-comment|/* Return FALSE here so that the drag indicator is drawn around        * the empty canvas during DND operations.        */
+block|}
+block|}
 return|return
 name|FALSE
 return|;
-block|}
 block|}
 end_function
 
