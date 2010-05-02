@@ -7955,6 +7955,10 @@ comment|/* draw the sample points */
 name|gimp_display_shell_draw_sample_points
 argument_list|(
 name|shell
+argument_list|,
+name|eevent
+operator|->
+name|region
 argument_list|)
 expr_stmt|;
 comment|/* and the cursor (if we have a software cursor) */

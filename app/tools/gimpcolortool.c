@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0456d00103
+DECL|enum|__anon279f30630103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -852,6 +852,8 @@ name|color_tool
 operator|->
 name|sample_point
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -877,6 +879,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1462,6 +1466,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|)
@@ -2061,6 +2067,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3277,6 +3285,8 @@ argument_list|,
 name|color_tool
 operator|->
 name|sample_point
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
