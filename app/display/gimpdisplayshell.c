@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a23f60103
+DECL|enum|__anon2b9355eb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290a23f60203
+DECL|enum|__anon2b9355eb0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2220,6 +2220,22 @@ argument_list|,
 name|G_CALLBACK
 argument_list|(
 name|gimp_display_shell_canvas_expose
+argument_list|)
+argument_list|,
+name|shell
+argument_list|)
+expr_stmt|;
+name|g_signal_connect_after
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|,
+literal|"expose-event"
+argument_list|,
+name|G_CALLBACK
+argument_list|(
+name|gimp_display_shell_canvas_expose_after
 argument_list|)
 argument_list|,
 name|shell

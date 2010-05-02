@@ -90,6 +90,25 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_display_shell_canvas_expose_after
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEventExpose
+modifier|*
+name|eevent
+parameter_list|,
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_display_shell_canvas_tool_events
 parameter_list|(
 name|GtkWidget

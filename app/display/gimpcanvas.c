@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3f6b720103
+DECL|enum|__anon2c91f2380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -599,6 +599,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|gtk_widget_set_double_buffered
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|gtk_widget_set_can_focus
 argument_list|(
 name|widget
