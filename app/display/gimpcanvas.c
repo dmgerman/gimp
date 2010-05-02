@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c91f2380103
+DECL|enum|__anon289459f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3220,7 +3220,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_clip_rect (GimpCanvas * canvas,GimpCanvasStyle style,GdkRectangle * rect)
+DECL|function|gimp_canvas_set_clip_rect (GimpCanvas * canvas,GimpCanvasStyle style,const GdkRectangle * rect)
 name|gimp_canvas_set_clip_rect
 parameter_list|(
 name|GimpCanvas
@@ -3230,6 +3230,7 @@ parameter_list|,
 name|GimpCanvasStyle
 name|style
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|rect
@@ -3288,7 +3289,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_canvas_set_clip_region (GimpCanvas * canvas,GimpCanvasStyle style,GdkRegion * region)
+DECL|function|gimp_canvas_set_clip_region (GimpCanvas * canvas,GimpCanvasStyle style,const GdkRegion * region)
 name|gimp_canvas_set_clip_region
 parameter_list|(
 name|GimpCanvas
@@ -3298,6 +3299,7 @@ parameter_list|,
 name|GimpCanvasStyle
 name|style
 parameter_list|,
+specifier|const
 name|GdkRegion
 modifier|*
 name|region

@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2bd4b2650103
+DECL|enum|__anon2b42dfbd0103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -560,6 +560,7 @@ parameter_list|,
 name|GimpCanvasStyle
 name|style
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|rect
@@ -578,6 +579,7 @@ parameter_list|,
 name|GimpCanvasStyle
 name|style
 parameter_list|,
+specifier|const
 name|GdkRegion
 modifier|*
 name|region
