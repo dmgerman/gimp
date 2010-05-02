@@ -7936,16 +7936,19 @@ name|gimp_display_shell_draw_grid
 argument_list|(
 name|shell
 argument_list|,
-operator|&
 name|eevent
 operator|->
-name|area
+name|region
 argument_list|)
 expr_stmt|;
 comment|/* draw the guides */
 name|gimp_display_shell_draw_guides
 argument_list|(
 name|shell
+argument_list|,
+name|eevent
+operator|->
+name|region
 argument_list|)
 expr_stmt|;
 comment|/* draw the sample points */

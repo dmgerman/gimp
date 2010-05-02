@@ -778,6 +778,8 @@ name|move
 operator|->
 name|guide
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -803,6 +805,8 @@ argument_list|,
 name|move
 operator|->
 name|guide
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)
@@ -1786,6 +1790,8 @@ name|move
 operator|->
 name|guide
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
@@ -2647,6 +2653,8 @@ name|move
 operator|->
 name|guide
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -2669,6 +2677,8 @@ argument_list|,
 name|move
 operator|->
 name|guide
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|)
@@ -3282,6 +3292,8 @@ argument_list|,
 name|move
 operator|->
 name|guide
+argument_list|,
+name|NULL
 argument_list|,
 name|FALSE
 argument_list|)

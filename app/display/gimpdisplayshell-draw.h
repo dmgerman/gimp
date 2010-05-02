@@ -69,6 +69,11 @@ name|GimpGuide
 modifier|*
 name|guide
 parameter_list|,
+specifier|const
+name|GdkRectangle
+modifier|*
+name|area
+parameter_list|,
 name|gboolean
 name|active
 parameter_list|)
@@ -82,6 +87,11 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+specifier|const
+name|GdkRegion
+modifier|*
+name|region
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -95,9 +105,9 @@ modifier|*
 name|shell
 parameter_list|,
 specifier|const
-name|GdkRectangle
+name|GdkRegion
 modifier|*
-name|area
+name|region
 parameter_list|)
 function_decl|;
 end_function_decl
