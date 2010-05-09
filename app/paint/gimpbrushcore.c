@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpbrushgenerated.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -139,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e712e40103
+DECL|enum|__anon2c72b1740103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4462,6 +4468,43 @@ name|core
 operator|->
 name|aspect_ratio
 expr_stmt|;
+comment|/* Generated brushes have their aspect ratio appled before base angle */
+if|if
+condition|(
+name|aspect_ratio
+operator|!=
+literal|1.0
+operator|&&
+name|GIMP_IS_BRUSH_GENERATED
+argument_list|(
+name|core
+operator|->
+name|main_brush
+argument_list|)
+condition|)
+block|{
+name|gdouble
+name|base_angle
+init|=
+name|gimp_brush_generated_get_angle
+argument_list|(
+name|GIMP_BRUSH_GENERATED
+argument_list|(
+name|core
+operator|->
+name|main_brush
+argument_list|)
+argument_list|)
+decl_stmt|;
+name|angle
+operator|=
+name|angle
+operator|+
+name|base_angle
+operator|/
+literal|360
+expr_stmt|;
+block|}
 name|height
 operator|=
 name|core

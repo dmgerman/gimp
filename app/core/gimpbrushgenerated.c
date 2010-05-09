@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon294b00e90103
+DECL|enum|__anon2b4b9e700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1185,11 +1185,16 @@ name|brush
 operator|->
 name|hardness
 argument_list|,
+name|MIN
+argument_list|(
 name|brush
 operator|->
 name|aspect_ratio
 operator|*
 name|aspect_ratio
+argument_list|,
+literal|20
+argument_list|)
 argument_list|,
 operator|(
 name|brush
@@ -1270,7 +1275,7 @@ argument_list|(
 name|gbrush
 argument_list|)
 decl_stmt|;
-comment|/* Since generated brushes are symmetric the dont have intput    * for aspect ratios< 1.0. its same as rotate by 90 degrees and    * 1 / ratio. So we fix the input up for this case.   */
+comment|/* Since generated brushes are symmetric the dont have intput    * for aspect ratios< 1.0. its same as rotate by extra 90 degrees and    * 1 / ratio. So we fix the input up for this case.   */
 if|if
 condition|(
 name|aspect_ratio
