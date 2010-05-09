@@ -449,7 +449,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Sizes:"
+literal|"Size variants:"
 argument_list|)
 argument_list|,
 literal|150
@@ -704,7 +704,7 @@ name|gtk_label_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Size:"
+literal|"Size depends on:"
 argument_list|)
 argument_list|)
 expr_stmt|;
