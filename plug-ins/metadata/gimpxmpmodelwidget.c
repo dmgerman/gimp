@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* gimpxmpmodelwidget.c - interface definition for xmpmodel gtkwidgets  *  * Copyright (C) 2010, RÃ³man Joost<romanofski@gimp.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
+comment|/* gimpxmpmodelwidget.c - interface definition for XMPModel bound  *                        GTKWidgets  *  * Copyright (C) 2010, RÃ³man Joost<romanofski@gimp.org>  *  * This library is free software: you can redistribute it and/or  * modify it under the terms of the GNU Lesser General Public  * License as published by the Free Software Foundation; either  * version 3 of the License, or (at your option) any later version.  *  * This library is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU  * Lesser General Public License for more details.  *  * You should have received a copy of the GNU Lesser General Public  * License along with this library.  If not, see  *<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -114,7 +114,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_widget_xmp_model_changed
+name|gimp_xmp_model_widget_xmpmodel_changed
 parameter_list|(
 name|XMPModel
 modifier|*
@@ -429,7 +429,7 @@ name|signal
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_widget_xmp_model_changed
+name|gimp_xmp_model_widget_xmpmodel_changed
 argument_list|)
 argument_list|,
 name|widget
@@ -715,11 +715,15 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_xmp_model_widget_xmpmodel_changed:  * @xmp_model: XMPModel this widget is bound to.  * @iter: The iter which points to the last change in the XMPModel  * @user_data: which should be the GtkWidget displaying the value.  *  * If the XMPModel has been changed, the GtkWidget needs to be updated.  * This method updates the corresponding GtkWidget with the new value  * from the XMPModel.  **/
+end_comment
+
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_widget_xmp_model_changed (XMPModel * xmp_model,GtkTreeIter * iter,gpointer * user_data)
-name|gimp_widget_xmp_model_changed
+DECL|function|gimp_xmp_model_widget_xmpmodel_changed (XMPModel * xmp_model,GtkTreeIter * iter,gpointer * user_data)
+name|gimp_xmp_model_widget_xmpmodel_changed
 parameter_list|(
 name|XMPModel
 modifier|*
@@ -837,6 +841,10 @@ return|return;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_xmp_model_widget_set_text:  * @widget: The GtkWidget where the new value is set.  * @tree_value: The new string which will be set on the widget.  *  * This method sets the new value on the GtkWidget implementing the  * #GimpXmpModelWidgetInterface.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_xmp_model_widget_set_text (GimpXmpModelWidget * widget,const gchar * tree_value)
@@ -881,6 +889,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_xmp_model_widget_changed:  * @widget: The GtkWidget which was changed.  * @value: The new string from the GtkWidget.  *  * If the GtkWidget was changed, a new value is set in the #XMPModel.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_xmp_model_widget_changed (GimpXmpModelWidget * widget,const gchar * value)
@@ -924,6 +936,10 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_comment
+comment|/**  * utility methods  **/
+end_comment
 
 begin_comment
 comment|/* find the schema prefix for the given URI */
