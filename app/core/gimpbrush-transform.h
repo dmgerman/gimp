@@ -107,10 +107,10 @@ name|gdouble
 name|height
 parameter_list|,
 name|gdouble
-name|scale_x
+name|scale
 parameter_list|,
 name|gdouble
-name|scale_y
+name|aspect_ratio
 parameter_list|,
 name|gdouble
 name|angle

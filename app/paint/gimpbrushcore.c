@@ -139,7 +139,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon293d2c3c0103
+DECL|enum|__anon27e712e40103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4556,9 +4556,9 @@ name|height
 argument_list|,
 name|width
 argument_list|,
-name|scale_x
+name|scale
 argument_list|,
-name|scale_y
+name|aspect_ratio
 argument_list|,
 name|angle
 argument_list|,
@@ -4585,6 +4585,7 @@ operator|&
 name|matrix
 argument_list|)
 expr_stmt|;
+comment|//FIXME. Do noy use scale_x/scale_y
 name|core
 operator|->
 name|transformed_brush_bound_width
