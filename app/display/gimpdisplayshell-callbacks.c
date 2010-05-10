@@ -1404,6 +1404,43 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_display_shell_is_double_buffered (GimpDisplayShell * shell)
+name|gimp_display_shell_is_double_buffered
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|)
+block|{
+comment|/*  always double-buffer if there are overlay children or a    *  transform preview, or they will flicker badly    */
+if|if
+condition|(
+name|GIMP_OVERLAY_BOX
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+operator|->
+name|children
+operator|||
+name|gimp_display_shell_get_show_transform
+argument_list|(
+name|shell
+argument_list|)
+condition|)
+return|return
+name|TRUE
+return|;
+return|return
+name|FALSE
+return|;
+block|}
+end_function
+
+begin_function
 name|gboolean
 DECL|function|gimp_display_shell_canvas_expose (GtkWidget * widget,GdkEventExpose * eevent,GimpDisplayShell * shell)
 name|gimp_display_shell_canvas_expose
@@ -1468,15 +1505,12 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-comment|/*  only double-buffer if there are overlay children, or            *  they will flicker badly            */
 if|if
 condition|(
-name|GIMP_OVERLAY_BOX
+name|gimp_display_shell_is_double_buffered
 argument_list|(
-name|widget
+name|shell
 argument_list|)
-operator|->
-name|children
 condition|)
 name|gdk_window_begin_paint_region
 argument_list|(
@@ -1574,15 +1608,12 @@ name|display
 argument_list|)
 condition|)
 block|{
-comment|/*  see above  */
 if|if
 condition|(
-name|GIMP_OVERLAY_BOX
+name|gimp_display_shell_is_double_buffered
 argument_list|(
-name|widget
+name|shell
 argument_list|)
-operator|->
-name|children
 condition|)
 name|gdk_window_end_paint
 argument_list|(
