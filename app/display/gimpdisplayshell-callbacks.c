@@ -9,18 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
-begin_undef
-undef|#
-directive|undef
-name|GTK_DISABLE_DEPRECATED
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -2921,11 +2909,22 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_SET_FLAGS
+if|if
+condition|(
+name|G_UNLIKELY
+argument_list|(
+operator|!
+name|gtk_widget_has_focus
 argument_list|(
 name|canvas
+argument_list|)
+argument_list|)
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: FOCUS_IN but canvas has no focus"
 argument_list|,
-name|GTK_HAS_FOCUS
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 comment|/*  press modifier keys when the canvas gets the focus              *              *  in "click to focus" mode, we did this on BUTTON_PRESS, so              *  do it here only if button_press_before_focus is FALSE              */
@@ -2960,11 +2959,21 @@ argument_list|,
 name|display
 argument_list|)
 expr_stmt|;
-name|GTK_WIDGET_UNSET_FLAGS
+if|if
+condition|(
+name|G_LIKELY
+argument_list|(
+name|gtk_widget_has_focus
 argument_list|(
 name|canvas
+argument_list|)
+argument_list|)
+condition|)
+name|g_warning
+argument_list|(
+literal|"%s: FOCUS_OUT but canvas has focus"
 argument_list|,
-name|GTK_HAS_FOCUS
+name|G_STRFUNC
 argument_list|)
 expr_stmt|;
 comment|/*  reset it here to be prepared for the next              *  FOCUS_IN / BUTTON_PRESS confusion              */
