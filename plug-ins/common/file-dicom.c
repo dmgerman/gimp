@@ -1038,7 +1038,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * add_parasites_to_image:  * @data: pointer to a GimpParasite to be attached to the image specified by @user_data.  * @user_data: pointer to the image_ID to which parasite @data should be added.  *  * Attaches parasite to image and also frees that parasite **/
+comment|/**  * add_parasites_to_image:  * @data:      pointer to a GimpParasite to be attached to the image  *             specified by @user_data.  * @user_data: pointer to the image_ID to which parasite @data should  *             be added.  *  * Attaches parasite to image and also frees that parasite **/
 end_comment
 
 begin_function
@@ -2082,10 +2082,8 @@ argument_list|)
 operator|)
 condition|)
 block|{
-comment|/*                * at this point, the image has not yet been created, so image_ID is not valid.                * keep the parasite around until we're able to attach it.                */
-comment|/* gimp_image_parasite_attach (image_ID, parasite);*/
-comment|/* gimp_parasite_free (parasite); */
-comment|/* add to our list of parasites to be added (prepending for speed. we'll reverse it later) */
+comment|/*                * at this point, the image has not yet been created, so                * image_ID is not valid.  keep the parasite around                * until we're able to attach it.                */
+comment|/* add to our list of parasites to be added (prepending                * for speed. we'll reverse it later)                */
 name|elements
 operator|=
 name|g_slist_prepend
@@ -2388,7 +2386,7 @@ condition|(
 name|elements
 condition|)
 block|{
-comment|/* flip the parasites back around into the order they were created (read from the file) */
+comment|/* flip the parasites back around into the order they were        * created (read from the file)        */
 name|elements
 operator|=
 name|g_slist_reverse
@@ -2416,7 +2414,6 @@ name|elements
 argument_list|)
 expr_stmt|;
 block|}
-comment|/* free the structures */
 name|g_free
 argument_list|(
 name|pix_buf
@@ -2427,14 +2424,11 @@ argument_list|(
 name|dicominfo
 argument_list|)
 expr_stmt|;
-comment|/* close the file */
 name|fclose
 argument_list|(
 name|DICOM
 argument_list|)
 expr_stmt|;
-comment|/* Tell GIMP to display the image and detach. */
-comment|/* gimp_drawable_flush (drawable); -- implicitely done via gimp_drawable_detach() */
 name|gimp_drawable_detach
 argument_list|(
 name|drawable
@@ -3099,10 +3093,9 @@ block|}
 end_function
 
 begin_typedef
-DECL|struct|_DicomElement
 typedef|typedef
 struct|struct
-name|_DicomElement
+DECL|struct|__anon29b05fff0108
 block|{
 DECL|member|group_word
 name|guint16
@@ -3129,7 +3122,7 @@ modifier|*
 name|value
 decl_stmt|;
 DECL|member|free
-name|gint
+name|gboolean
 name|free
 decl_stmt|;
 DECL|typedef|DICOMELEMENT
@@ -3139,14 +3132,14 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * dicom_add_element:  * @elements: head of a GSList containing DICOMELEMENT structures.  * @group_word: Dicom Element group number for the tag to be added to @elements.  * @element_word: Dicom Element element number for the tag to be added to @elements.  * @value_rep: a string representing the Dicom VR for the new element.  * @value: a pointer to an integer containing the value for the element to be created.  *  * Creates a DICOMELEMENT object and inserts it into @elements.  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_add_element:  * @elements:     head of a GSList containing DICOMELEMENT structures.  * @group_word:   Dicom Element group number for the tag to be added to  *                @elements.  * @element_word: Dicom Element element number for the tag to be added  *                to @elements.  * @value_rep:    a string representing the Dicom VR for the new element.  * @value:        a pointer to an integer containing the value for the  *                element to be created.  *  * Creates a DICOMELEMENT object and inserts it into @elements.  *  * Return value: the new head of @elements **/
 end_comment
 
 begin_function
 specifier|static
 name|GSList
 modifier|*
-DECL|function|dicom_add_element (GSList * elements,guint16 group_word,guint16 element_word,gchar * value_rep,guint32 element_length,guint8 * value,gint copy)
+DECL|function|dicom_add_element (GSList * elements,guint16 group_word,guint16 element_word,const gchar * value_rep,guint32 element_length,guint8 * value)
 name|dicom_add_element
 parameter_list|(
 name|GSList
@@ -3159,6 +3152,7 @@ parameter_list|,
 name|guint16
 name|element_word
 parameter_list|,
+specifier|const
 name|gchar
 modifier|*
 name|value_rep
@@ -3169,75 +3163,17 @@ parameter_list|,
 name|guint8
 modifier|*
 name|value
-parameter_list|,
-name|gint
-name|copy
 parameter_list|)
 block|{
 name|DICOMELEMENT
 modifier|*
 name|element
 init|=
-name|g_new0
+name|g_slice_new0
 argument_list|(
 name|DICOMELEMENT
-argument_list|,
-literal|1
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|element
-condition|)
-block|{
-name|element
-operator|->
-name|free
-operator|=
-literal|0
-expr_stmt|;
-if|if
-condition|(
-name|copy
-condition|)
-block|{
-name|guint8
-modifier|*
-name|v
-init|=
-name|g_new
-argument_list|(
-name|guint8
-argument_list|,
-name|element_length
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|v
-condition|)
-block|{
-name|memcpy
-argument_list|(
-name|v
-argument_list|,
-name|value
-argument_list|,
-name|element_length
-argument_list|)
-expr_stmt|;
-name|value
-operator|=
-name|v
-expr_stmt|;
-name|element
-operator|->
-name|free
-operator|=
-literal|1
-expr_stmt|;
-block|}
-block|}
 name|element
 operator|->
 name|group_word
@@ -3278,16 +3214,83 @@ name|value
 operator|=
 name|value
 expr_stmt|;
-name|elements
-operator|=
+return|return
 name|g_slist_prepend
 argument_list|(
 name|elements
 argument_list|,
 name|element
 argument_list|)
-expr_stmt|;
+return|;
 block|}
+end_function
+
+begin_function
+specifier|static
+name|GSList
+modifier|*
+DECL|function|dicom_add_element_copy (GSList * elements,guint16 group_word,guint16 element_word,gchar * value_rep,guint32 element_length,const guint8 * value)
+name|dicom_add_element_copy
+parameter_list|(
+name|GSList
+modifier|*
+name|elements
+parameter_list|,
+name|guint16
+name|group_word
+parameter_list|,
+name|guint16
+name|element_word
+parameter_list|,
+name|gchar
+modifier|*
+name|value_rep
+parameter_list|,
+name|guint32
+name|element_length
+parameter_list|,
+specifier|const
+name|guint8
+modifier|*
+name|value
+parameter_list|)
+block|{
+name|elements
+operator|=
+name|dicom_add_element
+argument_list|(
+name|elements
+argument_list|,
+name|group_word
+argument_list|,
+name|element_word
+argument_list|,
+name|value_rep
+argument_list|,
+name|element_length
+argument_list|,
+name|g_memdup
+argument_list|(
+name|value
+argument_list|,
+name|element_length
+argument_list|)
+argument_list|)
+expr_stmt|;
+operator|(
+operator|(
+name|DICOMELEMENT
+operator|*
+operator|)
+name|elements
+operator|->
+name|data
+operator|)
+operator|->
+name|free
+operator|=
+name|TRUE
+expr_stmt|;
 return|return
 name|elements
 return|;
@@ -3295,7 +3298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_add_element_int:  * @elements: head of a GSList containing DICOMELEMENT structures.  * @group_word: Dicom Element group number for the tag to be added to @elements.  * @element_word: Dicom Element element number for the tag to be added to @elements.  * @value_rep: a string representing the Dicom VR for the new element.  * @value: a pointer to an integer containing the value for the element to be created.  *  * Creates a DICOMELEMENT object from the passed integer pointer and adds it to @elements.  * Note: value should be the address of a guint16 for @value_rep==%US or guint32 for other values of @value_rep  *  * Return value: the new head of @elements  */
+comment|/**  * dicom_add_element_int:  * @elements:     head of a GSList containing DICOMELEMENT structures.   * @group_word:   Dicom Element group number for the tag to be added to  *                @elements.  * @element_word: Dicom Element element number for the tag to be added to  *                @elements.  * @value_rep:    a string representing the Dicom VR for the new element.  * @value:        a pointer to an integer containing the value for the  *                element to be created.  *  * Creates a DICOMELEMENT object from the passed integer pointer and  * adds it to @elements.  Note: value should be the address of a  * guint16 for @value_rep == %US or guint32 for other values of  * @value_rep  *  * Return value: the new head of @elements  */
 end_comment
 
 begin_function
@@ -3361,8 +3364,6 @@ argument_list|,
 name|len
 argument_list|,
 name|value
-argument_list|,
-literal|0
 argument_list|)
 return|;
 block|}
@@ -3394,10 +3395,6 @@ name|DICOMELEMENT
 modifier|*
 name|e
 init|=
-operator|(
-name|DICOMELEMENT
-operator|*
-operator|)
 name|data
 decl_stmt|;
 if|if
@@ -3406,7 +3403,6 @@ name|e
 operator|->
 name|free
 condition|)
-block|{
 name|g_free
 argument_list|(
 name|e
@@ -3414,9 +3410,10 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
-block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|DICOMELEMENT
+argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
@@ -3502,7 +3499,6 @@ name|ele
 operator|->
 name|free
 condition|)
-block|{
 name|g_free
 argument_list|(
 name|ele
@@ -3510,9 +3506,10 @@ operator|->
 name|value
 argument_list|)
 expr_stmt|;
-block|}
-name|g_free
+name|g_slice_free
 argument_list|(
+name|DICOMELEMENT
+argument_list|,
 name|ele
 argument_list|)
 expr_stmt|;
@@ -3524,7 +3521,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_elements_compare:  * @a: pointer to a DICOMELEMENT structure.  * @b: pointer to a DICOMELEMENT structure.  *   * Determines the equality of @a and @b as strcmp  *  * Return value: an integer indicating the equality of @a and @b. **/
+comment|/**  * dicom_elements_compare:  * @a: pointer to a DICOMELEMENT structure.  * @b: pointer to a DICOMELEMENT structure.  *  * Determines the equality of @a and @b as strcmp  *  * Return value: an integer indicating the equality of @a and @b. **/
 end_comment
 
 begin_function
@@ -3634,7 +3631,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_element_find_by_num:  * @head: head of a GSList containing DICOMELEMENT structures.  * @group_word: Dicom Element group number for the tag to be found.  * @element_word: Dicom Element element number for the tag to be found.  *  * Retrieves the specified DICOMELEMENT from @head, if available.  *  * Return value: a DICOMELEMENT matching the specified group,element, or NULL if the specified element was not found. **/
+comment|/**  * dicom_element_find_by_num:  * @head: head of a GSList containing DICOMELEMENT structures.  * @group_word: Dicom Element group number for the tag to be found.  * @element_word: Dicom Element element number for the tag to be found.  *  * Retrieves the specified DICOMELEMENT from @head, if available.  *  * Return value: a DICOMELEMENT matching the specified group,element,  *               or NULL if the specified element was not found. **/
 end_comment
 
 begin_function
@@ -3685,6 +3682,7 @@ name|dicom_elements_compare
 argument_list|)
 decl_stmt|;
 return|return
+operator|(
 name|ele
 condition|?
 name|ele
@@ -3692,12 +3690,13 @@ operator|->
 name|data
 else|:
 name|NULL
+operator|)
 return|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_get_elements_list:  * @image_ID: the image_ID from which to read parasites in order to retrieve the dicom elements  *  * Reads all DICOMELEMENTs from the specified image's parasites.  *  * Return value: a GSList of all known dicom elements **/
+comment|/**  * dicom_get_elements_list:  * @image_ID: the image_ID from which to read parasites in order to  *            retrieve the dicom elements  *  * Reads all DICOMELEMENTs from the specified image's parasites.  *  * Return value: a GSList of all known dicom elements **/
 end_comment
 
 begin_function
@@ -3852,7 +3851,7 @@ name|buf
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* buf should now hold a string of the form dcm/XXXX-XXXX-AA                    * where XXXX are Hex values for group and element respectively                    * AA is the Value Representation of the element                    *                    * start off by jumping over the dcm/ to the first Hex blob                    */
+comment|/* buf should now hold a string of the form                    * dcm/XXXX-XXXX-AA where XXXX are Hex values for                    * group and element respectively AA is the Value                    * Representation of the element                    *                    * start off by jumping over the dcm/ to the first Hex blob                    */
 name|ptr1
 operator|=
 name|strchr
@@ -3889,13 +3888,11 @@ if|if
 condition|(
 name|ptr2
 condition|)
-block|{
 operator|*
 name|ptr2
 operator|=
 literal|'\0'
 expr_stmt|;
-block|}
 name|g_snprintf
 argument_list|(
 name|t
@@ -3956,13 +3953,11 @@ if|if
 condition|(
 name|ptr2
 condition|)
-block|{
 operator|*
 name|ptr2
 operator|=
 literal|'\0'
 expr_stmt|;
-block|}
 name|g_snprintf
 argument_list|(
 name|t
@@ -4003,7 +3998,6 @@ if|if
 condition|(
 name|ptr1
 condition|)
-block|{
 name|strncpy
 argument_list|(
 name|value_rep
@@ -4016,8 +4010,7 @@ name|value_rep
 argument_list|)
 argument_list|)
 expr_stmt|;
-block|}
-comment|/*                    * If all went according to plan, we should be able to add this element                    */
+comment|/*                    * If all went according to plan, we should be able                    * to add this element                    */
 if|if
 condition|(
 name|group_word
@@ -4029,8 +4022,18 @@ operator|>
 literal|0
 condition|)
 block|{
-comment|/* create a copy of the parasite's data so we can drop the const qualifier */
-name|guint32
+specifier|const
+name|guint8
+modifier|*
+name|val
+init|=
+name|gimp_parasite_data
+argument_list|(
+name|parasite
+argument_list|)
+decl_stmt|;
+specifier|const
+name|guint
 name|len
 init|=
 name|gimp_parasite_data_size
@@ -4038,45 +4041,10 @@ argument_list|(
 name|parasite
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|len
-operator|>
-literal|0
-condition|)
-block|{
-name|guint8
-modifier|*
-name|val
-init|=
-name|g_new0
-argument_list|(
-name|guint8
-argument_list|,
-name|len
-argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|val
-condition|)
-block|{
-name|memcpy
-argument_list|(
-name|val
-argument_list|,
-name|gimp_parasite_data
-argument_list|(
-name|parasite
-argument_list|)
-argument_list|,
-name|len
-argument_list|)
-expr_stmt|;
-comment|/* and add the dicom element, asking to have it's value copied for later garbage collection */
+comment|/* and add the dicom element, asking to have                          it's value copied for later garbage collection */
 name|elements
 operator|=
-name|dicom_add_element
+name|dicom_add_element_copy
 argument_list|(
 name|elements
 argument_list|,
@@ -4089,17 +4057,8 @@ argument_list|,
 name|len
 argument_list|,
 name|val
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|val
-argument_list|)
-expr_stmt|;
-block|}
-block|}
 block|}
 name|gimp_parasite_free
 argument_list|(
@@ -4108,7 +4067,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-comment|/* make sure we free each individual parasite name, in addition to the array of names */
+comment|/* make sure we free each individual parasite name, in            * addition to the array of names            */
 name|g_free
 argument_list|(
 name|parasites
@@ -4138,7 +4097,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_remove_gimp_specified_elements:  * @elements:  GSList to remove elements from  * @samples_per_pixel: samples per pixel of the image to be written.  *                     if set to %3 the planar configuration for color images  *                     will also be removed from @elements  *   * Removes certain DICOMELEMENTs from the elements list which are specific to the output of this plugin.  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_remove_gimp_specified_elements:  * @elements:  GSList to remove elements from  * @samples_per_pixel: samples per pixel of the image to be written.  *                     if set to %3 the planar configuration for color images  *                     will also be removed from @elements  *  * Removes certain DICOMELEMENTs from the elements list which are specific to the output of this plugin.  *  * Return value: the new head of @elements **/
 end_comment
 
 begin_function
@@ -4386,7 +4345,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_ensure_required_elements_present:  * @elements:  GSList to remove elements from  * @today_string: string containing today's date in DICOM format. This is used to default any required Dicom elements of date type to today's date.  *  * Defaults DICOMELEMENTs to the values set by previous version of this plugin, but only if they do not already exist.  *  * Return value: the new head of @elements **/
+comment|/**  * dicom_ensure_required_elements_present:  * @elements:     GSList to remove elements from  * @today_string: string containing today's date in DICOM format. This  *                is used to default any required Dicom elements of date  *                type to today's date.  *  * Defaults DICOMELEMENTs to the values set by previous version of  * this plugin, but only if they do not already exist.  *  * Return value: the new head of @elements **/
 end_comment
 
 begin_function
@@ -4405,13 +4364,14 @@ modifier|*
 name|today_string
 parameter_list|)
 block|{
+specifier|const
 name|DICOMELEMENT
 name|defaults
 index|[]
 init|=
 block|{
 comment|/* Meta element group */
-comment|/* 0002,0001 - File Meta Information Version */
+comment|/* 0002, 0001 - File Meta Information Version */
 block|{
 literal|0x0002
 block|,
@@ -4428,7 +4388,7 @@ operator|)
 literal|"\0\1"
 block|}
 block|,
-comment|/* 0002,0010 - Transfer syntax uid */
+comment|/* 0002, 0010 - Transfer syntax uid */
 block|{
 literal|0x0002
 block|,
@@ -4448,7 +4408,7 @@ operator|)
 literal|"1.2.840.10008.1.2.1"
 block|}
 block|,
-comment|/* 0002,0013 - Implementation version name */
+comment|/* 0002, 0013 - Implementation version name */
 block|{
 literal|0x0002
 block|,
@@ -4458,14 +4418,14 @@ literal|"SH"
 block|,
 name|strlen
 argument_list|(
-literal|"Gimp Dicom Plugin 1.0"
+literal|"GIMP Dicom Plugin 1.0"
 argument_list|)
 block|,
 operator|(
 name|guint8
 operator|*
 operator|)
-literal|"Gimp Dicom Plugin 1.0"
+literal|"GIMP Dicom Plugin 1.0"
 block|}
 block|,
 comment|/* Identifying group */
@@ -4772,8 +4732,6 @@ name|i
 index|]
 operator|.
 name|value
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 block|}
@@ -5193,8 +5151,6 @@ name|guint8
 operator|*
 operator|)
 name|photometric_interp
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 comment|/* Planar configuration for color images */
@@ -5456,8 +5412,6 @@ name|guint8
 operator|*
 operator|)
 name|src
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
 name|elements
@@ -5513,7 +5467,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_print_tags:  * @data: pointer to a DICOMELEMENT structure which is to be written to file  * @user_data: structure containing state information and output parameters  *   * Writes the specified DICOMELEMENT to @user_data's group_stream member.  * Between groups, flushes the group_stream to @user_data's DICOM member.  */
+comment|/**  * dicom_print_tags:  * @data: pointer to a DICOMELEMENT structure which is to be written to file  * @user_data: structure containing state information and output parameters  *  * Writes the specified DICOMELEMENT to @user_data's group_stream member.  * Between groups, flushes the group_stream to @user_data's DICOM member.  */
 end_comment
 
 begin_function
@@ -5529,7 +5483,7 @@ name|gpointer
 name|user_data
 parameter_list|)
 block|{
-DECL|struct|__anon2aac082d0108
+DECL|struct|__anon29b05fff0208
 struct|struct
 block|{
 DECL|member|DICOM
@@ -5634,7 +5588,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * dicom_add_tags:  * @DICOM: File pointer to which @elements should be written.  * @group_stream: byte array used for staging Dicom Element groups before flushing them to disk.  * @elements:  GSList container the Dicom Element elements from  *   * Writes all Dicom tags in @elements to the file @DICOM  *   * Return value: the new head of @elements **/
+comment|/**  * dicom_add_tags:  * @DICOM:        File pointer to which @elements should be written.  * @group_stream: byte array used for staging Dicom Element groups  *                before flushing them to disk.  * @elements:     GSList container the Dicom Element elements from  *  * Writes all Dicom tags in @elements to the file @DICOM  *  * Return value: the new head of @elements **/
 end_comment
 
 begin_function
@@ -5657,7 +5611,7 @@ modifier|*
 name|elements
 parameter_list|)
 block|{
-DECL|struct|__anon2aac082d0208
+DECL|struct|__anon29b05fff0308
 struct|struct
 block|{
 DECL|member|DICOM
