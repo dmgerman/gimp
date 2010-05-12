@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b423aa60103
+DECL|enum|__anon28b977890103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -642,35 +642,6 @@ name|GtkWidget
 modifier|*
 name|image
 decl_stmt|;
-comment|/*  don't let unhandled key events drop through to the text editor  */
-name|g_signal_connect_after
-argument_list|(
-name|editor
-argument_list|,
-literal|"key-press-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_true
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_signal_connect_after
-argument_list|(
-name|editor
-argument_list|,
-literal|"key-release-event"
-argument_list|,
-name|G_CALLBACK
-argument_list|(
-name|gtk_false
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 comment|/*  upper row  */
 name|editor
 operator|->
