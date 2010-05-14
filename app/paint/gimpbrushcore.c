@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c72b1740103
+DECL|enum|__anon29fa6dc10103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4468,13 +4468,9 @@ name|core
 operator|->
 name|aspect_ratio
 expr_stmt|;
-comment|/* Generated brushes have their aspect ratio appled before base angle */
+comment|/* Generated brushes have their angle applied on top of base angle */
 if|if
 condition|(
-name|aspect_ratio
-operator|!=
-literal|1.0
-operator|&&
 name|GIMP_IS_BRUSH_GENERATED
 argument_list|(
 name|core
@@ -4483,17 +4479,23 @@ name|main_brush
 argument_list|)
 condition|)
 block|{
-name|gdouble
-name|base_angle
+name|GimpBrushGenerated
+modifier|*
+name|generated_brush
 init|=
-name|gimp_brush_generated_get_angle
-argument_list|(
 name|GIMP_BRUSH_GENERATED
 argument_list|(
 name|core
 operator|->
 name|main_brush
 argument_list|)
+decl_stmt|;
+name|gdouble
+name|base_angle
+init|=
+name|gimp_brush_generated_get_angle
+argument_list|(
+name|generated_brush
 argument_list|)
 decl_stmt|;
 name|angle
@@ -4503,6 +4505,11 @@ operator|+
 name|base_angle
 operator|/
 literal|360
+expr_stmt|;
+comment|/* Dont apply  the ratio. I wont make sense. The outlines for generated brushes need to be recreated */
+name|aspect_ratio
+operator|=
+literal|1.0
 expr_stmt|;
 block|}
 name|height
