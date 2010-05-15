@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c077cbe0103
+DECL|enum|__anon2bbbc0300103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c077cbe0208
+DECL|struct|__anon2bbbc0300208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -1526,7 +1526,7 @@ name|left_docks
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_visible
@@ -1700,7 +1700,7 @@ name|right_docks
 argument_list|,
 name|FALSE
 argument_list|,
-name|FALSE
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_visible
