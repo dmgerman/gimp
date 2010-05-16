@@ -92,7 +92,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956803c0103
+DECL|enum|__anon2c0308f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -291,6 +291,15 @@ literal|2
 expr_stmt|;
 endif|#
 directive|endif
+name|num_processors
+operator|=
+name|MIN
+argument_list|(
+name|num_processors
+argument_list|,
+name|GIMP_MAX_NUM_THREADS
+argument_list|)
+expr_stmt|;
 name|GIMP_CONFIG_INSTALL_PROP_UINT
 argument_list|(
 name|object_class
