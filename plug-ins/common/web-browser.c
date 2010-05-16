@@ -619,7 +619,7 @@ name|err
 operator|=
 name|_
 argument_list|(
-literal|"Unknown Windows error."
+literal|"Unknown Microsoft Windows error."
 argument_list|)
 expr_stmt|;
 block|}
