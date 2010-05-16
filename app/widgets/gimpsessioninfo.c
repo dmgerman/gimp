@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27fb589d0103
+DECL|enum|__anon29f468040103
 block|{
 DECL|enumerator|SESSION_INFO_FACTORY_ENTRY
 name|SESSION_INFO_FACTORY_ENTRY
@@ -1836,6 +1836,9 @@ argument_list|(
 name|factory
 argument_list|,
 name|screen
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
 argument_list|,
 name|info
 operator|->

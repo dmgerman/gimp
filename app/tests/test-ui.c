@@ -198,7 +198,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2889dc460108
+DECL|struct|__anon28bf68640108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -707,6 +707,9 @@ name|gtk_widget_get_screen
 argument_list|(
 name|toplevel
 argument_list|)
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
 argument_list|,
 literal|"gimp-tool-options"
 argument_list|,

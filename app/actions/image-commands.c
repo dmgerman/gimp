@@ -228,7 +228,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c8073c0108
+DECL|struct|__anon290652360108
 block|{
 DECL|member|context
 name|GimpContext
@@ -484,6 +484,9 @@ name|gtk_widget_get_screen
 argument_list|(
 name|widget
 argument_list|)
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
 argument_list|,
 literal|"gimp-image-new-dialog"
 argument_list|,

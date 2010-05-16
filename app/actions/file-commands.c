@@ -539,6 +539,9 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
+name|NULL
+comment|/*ui_manager*/
+argument_list|,
 literal|"gimp-file-open-location-dialog"
 argument_list|,
 operator|-
@@ -1803,6 +1806,9 @@ argument_list|(
 name|parent
 argument_list|)
 argument_list|,
+name|NULL
+comment|/*ui_manager*/
+argument_list|,
 literal|"gimp-file-open-dialog"
 argument_list|,
 operator|-
@@ -1975,6 +1981,9 @@ name|gtk_widget_get_screen
 argument_list|(
 name|parent
 argument_list|)
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
 argument_list|,
 literal|"gimp-file-save-dialog"
 argument_list|,
@@ -2173,6 +2182,9 @@ name|gtk_widget_get_screen
 argument_list|(
 name|parent
 argument_list|)
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
 argument_list|,
 literal|"gimp-file-export-dialog"
 argument_list|,

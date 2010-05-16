@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1327710103
+DECL|enum|__anon276024a60103
 block|{
 DECL|enumerator|SESSION_INFO_BOOK
 name|SESSION_INFO_BOOK
@@ -780,6 +780,8 @@ argument_list|(
 name|factory
 argument_list|,
 name|screen
+argument_list|,
+name|ui_manager
 argument_list|,
 name|dock_info
 operator|->

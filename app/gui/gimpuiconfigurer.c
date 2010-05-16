@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd05ef0103
+DECL|enum|__anon2a9e82c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -983,6 +983,9 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 argument_list|,
 name|screen
+argument_list|,
+name|NULL
+comment|/*ui_manager*/
 argument_list|,
 operator|(
 name|GIMP_IS_TOOLBOX

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c765a50103
+DECL|enum|__anon2b5c5bcf0103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -1757,6 +1757,9 @@ name|factory
 argument_list|,
 name|screen
 argument_list|,
+name|NULL
+comment|/*ui_manager*/
+argument_list|,
 literal|"gimp-toolbox-window"
 argument_list|,
 operator|-
@@ -1765,6 +1768,17 @@ comment|/*view_size*/
 argument_list|,
 name|FALSE
 comment|/*present*/
+argument_list|)
+expr_stmt|;
+comment|/* When we get a dock window, we also get a UI                * manager                */
+name|ui_manager
+operator|=
+name|gimp_dock_window_get_ui_manager
+argument_list|(
+name|GIMP_DOCK_WINDOW
+argument_list|(
+name|dock_window
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -2217,13 +2231,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
+comment|/**  * gimp_dialog_factory_dialog_new:  * @factory:      a #GimpDialogFactory  * @screen:       the #GdkScreen the dialog should appear on  * @ui_manager:   A #GimpUIManager, if applicable.  * @identifier:   the identifier of the dialog as registered with  *                gimp_dialog_factory_register_entry()  * @view_size:    the initial preview size  * @present:      whether gtk_window_present() should be called  *  * Creates a new toplevel dialog or a #GimpDockable, depending on whether  * %factory is a toplevel of dockable factory.  *  * Return value: the newly created dialog or an already existing singleton  *               dialog.  **/
 end_comment
 
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,const gchar * identifier,gint view_size,gboolean present)
+DECL|function|gimp_dialog_factory_dialog_new (GimpDialogFactory * factory,GdkScreen * screen,GimpUIManager * ui_manager,const gchar * identifier,gint view_size,gboolean present)
 name|gimp_dialog_factory_dialog_new
 parameter_list|(
 name|GimpDialogFactory
@@ -2233,6 +2247,10 @@ parameter_list|,
 name|GdkScreen
 modifier|*
 name|screen
+parameter_list|,
+name|GimpUIManager
+modifier|*
+name|ui_manager
 parameter_list|,
 specifier|const
 name|gchar
@@ -2288,7 +2306,7 @@ name|p
 operator|->
 name|context
 argument_list|,
-name|NULL
+name|ui_manager
 argument_list|,
 name|identifier
 argument_list|,

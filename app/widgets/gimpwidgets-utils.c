@@ -1963,7 +1963,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28c7f03e0108
+DECL|struct|__anon28a869560108
 block|{
 DECL|member|modifiers
 name|GdkModifierType
@@ -3910,6 +3910,9 @@ name|factory
 argument_list|,
 name|screen
 argument_list|,
+name|NULL
+comment|/*ui_manager*/
+argument_list|,
 operator|(
 name|toolbox
 condition|?
@@ -3944,6 +3947,8 @@ argument_list|(
 name|factory
 argument_list|,
 name|screen
+argument_list|,
+name|ui_manager
 argument_list|,
 operator|(
 name|toolbox

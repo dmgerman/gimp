@@ -617,6 +617,9 @@ argument_list|,
 name|gdk_screen_get_default
 argument_list|()
 argument_list|,
+name|NULL
+comment|/*ui_manager*/
+argument_list|,
 literal|"gimp-error-dialog"
 argument_list|,
 operator|-
