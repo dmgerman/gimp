@@ -91,7 +91,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add1bf90108
+DECL|struct|__anon27563bd60108
 block|{
 DECL|member|target
 name|GimpPageSelectorTarget
@@ -125,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add1bf90208
+DECL|struct|__anon27563bd60208
 block|{
 DECL|member|n_pages
 name|gint
@@ -681,7 +681,7 @@ end_function_decl
 
 begin_enum
 enum|enum
-DECL|enum|__anon2add1bf90303
+DECL|enum|__anon27563bd60303
 block|{
 DECL|enumerator|WIDTH_CHANGED
 name|WIDTH_CHANGED
@@ -1956,9 +1956,9 @@ name|PopplerDocument
 modifier|*
 name|doc
 decl_stmt|;
-name|gchar
+name|GMappedFile
 modifier|*
-name|uri
+name|mapped_file
 decl_stmt|;
 name|GError
 modifier|*
@@ -1966,13 +1966,13 @@ name|error
 init|=
 name|NULL
 decl_stmt|;
-name|uri
+name|mapped_file
 operator|=
-name|g_filename_to_uri
+name|g_mapped_file_new
 argument_list|(
 name|filename
 argument_list|,
-name|NULL
+name|FALSE
 argument_list|,
 operator|&
 name|error
@@ -1981,7 +1981,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|uri
+name|mapped_file
 condition|)
 block|{
 name|g_set_error
@@ -1992,7 +1992,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-literal|"Could not convert '%s' to an URI: %s"
+literal|"Could not load '%s' %s"
 argument_list|,
 name|gimp_filename_to_utf8
 argument_list|(
@@ -2015,9 +2015,17 @@ return|;
 block|}
 name|doc
 operator|=
-name|poppler_document_new_from_file
+name|poppler_document_new_from_data
 argument_list|(
-name|uri
+name|g_mapped_file_get_contents
+argument_list|(
+name|mapped_file
+argument_list|)
+argument_list|,
+name|g_mapped_file_get_length
+argument_list|(
+name|mapped_file
+argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
@@ -2025,11 +2033,7 @@ operator|&
 name|error
 argument_list|)
 expr_stmt|;
-name|g_free
-argument_list|(
-name|uri
-argument_list|)
-expr_stmt|;
+comment|/* We can't g_mapped_file_unref(mapped_file) as apparently doc has    * references to data in there. No big deal, this is just a    * short-lived plug-in.    */
 if|if
 condition|(
 operator|!
@@ -2046,7 +2050,7 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Could not open '%s' for reading: %s"
+literal|"Could not load '%s': %s"
 argument_list|)
 argument_list|,
 name|gimp_filename_to_utf8
@@ -2754,7 +2758,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add1bf90408
+DECL|struct|__anon27563bd60408
 block|{
 DECL|member|document
 name|PopplerDocument
@@ -2779,7 +2783,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2add1bf90508
+DECL|struct|__anon27563bd60508
 block|{
 DECL|member|selector
 name|GimpPageSelector
