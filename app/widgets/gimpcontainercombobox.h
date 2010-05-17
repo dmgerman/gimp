@@ -16,22 +16,6 @@ directive|define
 name|__GIMP_CONTAINER_COMBO_BOX_H__
 end_define
 
-begin_enum
-enum|enum
-DECL|enum|__anon2a3ca1b80103
-block|{
-DECL|enumerator|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
-name|GIMP_CONTAINER_COMBO_BOX_COLUMN_RENDERER
-block|,
-DECL|enumerator|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
-name|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
-block|,
-DECL|enumerator|GIMP_CONTAINER_COMBO_BOX_N_COLUMNS
-name|GIMP_CONTAINER_COMBO_BOX_N_COLUMNS
-block|}
-enum|;
-end_enum
-
 begin_define
 DECL|macro|GIMP_TYPE_CONTAINER_COMBO_BOX
 define|#

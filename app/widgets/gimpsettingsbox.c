@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainertreestore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainerview.h"
 end_include
 
@@ -95,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad453840103
+DECL|enum|__anon2950e23f0103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -114,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad453840203
+DECL|enum|__anon2950e23f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2194,7 +2200,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_COMBO_BOX_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 argument_list|,
 operator|&
 name|name
