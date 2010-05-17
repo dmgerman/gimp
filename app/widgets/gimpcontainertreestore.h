@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27731f640103
+DECL|enum|__anon2a9780ea0103
 block|{
 DECL|enumerator|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
@@ -148,6 +148,24 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|gint
+name|gimp_container_tree_store_columns_add
+parameter_list|(
+name|GType
+modifier|*
+name|types
+parameter_list|,
+name|gint
+modifier|*
+name|n_types
+parameter_list|,
+name|GType
+name|type
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|GtkTreeModel
