@@ -2300,7 +2300,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c193a0108
+DECL|struct|__anon295b5b6e0108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2694,7 +2694,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6c193a0208
+DECL|struct|__anon295b5b6e0208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3874,7 +3874,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|layer_view
 operator|->
@@ -3956,7 +3956,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(
@@ -5349,7 +5349,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|layer_renderer
@@ -6013,7 +6013,7 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 name|gimp_drawable_has_alpha
 argument_list|(

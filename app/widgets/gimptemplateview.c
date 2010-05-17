@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainertreestore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainertreeview.h"
 end_include
 
@@ -762,7 +768,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -850,7 +856,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 argument_list|,
 name|name
 argument_list|,

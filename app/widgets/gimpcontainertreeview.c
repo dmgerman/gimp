@@ -783,7 +783,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 operator|==
 name|gimp_container_tree_store_columns_add
 argument_list|(
@@ -802,7 +802,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 operator|==
 name|gimp_container_tree_store_columns_add
 argument_list|(
@@ -821,7 +821,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_ATTRIBUTES
 operator|==
 name|gimp_container_tree_store_columns_add
 argument_list|(
@@ -840,7 +840,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_SENSITIVE
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_SENSITIVE
 operator|==
 name|gimp_container_tree_store_columns_add
 argument_list|(
@@ -859,7 +859,7 @@ argument_list|)
 expr_stmt|;
 name|g_assert
 argument_list|(
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_USER_DATA
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_USER_DATA
 operator|==
 name|gimp_container_tree_store_columns_add
 argument_list|(
@@ -1009,7 +1009,7 @@ name|model
 argument_list|,
 literal|"search-column"
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 argument_list|,
 literal|"enable-search"
 argument_list|,
@@ -1153,7 +1153,7 @@ name|renderer_cell
 argument_list|,
 literal|"renderer"
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 name|NULL
 argument_list|)
@@ -1211,15 +1211,15 @@ name|name_cell
 argument_list|,
 literal|"text"
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 argument_list|,
 literal|"attributes"
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_ATTRIBUTES
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_ATTRIBUTES
 argument_list|,
 literal|"sensitive"
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_SENSITIVE
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_SENSITIVE
 argument_list|,
 name|NULL
 argument_list|)
@@ -2842,7 +2842,7 @@ argument_list|,
 operator|&
 name|selected_iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -3470,7 +3470,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -3502,7 +3502,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 argument_list|,
 name|name
 argument_list|,
@@ -3905,7 +3905,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -4364,7 +4364,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME
 argument_list|,
 name|real_name
 argument_list|,
@@ -4650,7 +4650,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer
@@ -5128,7 +5128,7 @@ argument_list|,
 operator|&
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_RENDERER
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 operator|&
 name|renderer

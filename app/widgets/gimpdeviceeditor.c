@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainertreestore.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainertreeview.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c49fc30103
+DECL|enum|__anon29c14cec0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1408,11 +1414,11 @@ argument_list|)
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_USER_DATA
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_USER_DATA
 argument_list|,
 name|widget
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_NAME_SENSITIVE
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_NAME_SENSITIVE
 argument_list|,
 name|gimp_device_info_get_device
 argument_list|(
@@ -1510,7 +1516,7 @@ name|model
 argument_list|,
 name|iter
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_USER_DATA
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_USER_DATA
 argument_list|,
 operator|&
 name|widget
@@ -1595,7 +1601,7 @@ name|model
 argument_list|,
 name|insert_data
 argument_list|,
-name|GIMP_CONTAINER_TREE_VIEW_COLUMN_USER_DATA
+name|GIMP_CONTAINER_TREE_STORE_COLUMN_USER_DATA
 argument_list|,
 operator|&
 name|widget
