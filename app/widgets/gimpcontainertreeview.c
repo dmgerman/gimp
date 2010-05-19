@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainertreeview.c  * Copyright (C) 2003-2004 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainertreeview.c  * Copyright (C) 2003-2010 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -213,14 +213,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_tree_view_set_multiple_selection
+name|gimp_container_tree_view_set_selection_mode
 parameter_list|(
 name|GimpContainerView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -684,9 +684,9 @@ name|gimp_container_tree_view_set_context
 expr_stmt|;
 name|iface
 operator|->
-name|set_multiple_selection
+name|set_selection_mode
 operator|=
-name|gimp_container_tree_view_set_multiple_selection
+name|gimp_container_tree_view_set_selection_mode
 expr_stmt|;
 name|iface
 operator|->
@@ -2423,15 +2423,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_tree_view_set_multiple_selection (GimpContainerView * view,gboolean value)
-name|gimp_container_tree_view_set_multiple_selection
+DECL|function|gimp_container_tree_view_set_selection_mode (GimpContainerView * view,GtkSelectionMode mode)
+name|gimp_container_tree_view_set_selection_mode
 parameter_list|(
 name|GimpContainerView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 block|{
 name|GimpContainerTreeView
@@ -2451,20 +2451,16 @@ name|priv
 operator|->
 name|selection
 argument_list|,
-name|value
-condition|?
-name|GTK_SELECTION_MULTIPLE
-else|:
-name|GTK_SELECTION_NONE
+name|mode
 argument_list|)
 expr_stmt|;
 name|parent_view_iface
 operator|->
-name|set_multiple_selection
+name|set_selection_mode
 argument_list|(
 name|view
 argument_list|,
-name|value
+name|mode
 argument_list|)
 expr_stmt|;
 block|}

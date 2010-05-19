@@ -178,8 +178,8 @@ decl_stmt|;
 end_decl_stmt
 
 begin_function_decl
-name|gboolean
-name|gimp_container_editor_get_multiple_selection
+name|GtkSelectionMode
+name|gimp_container_editor_get_selection_mode
 parameter_list|(
 name|GimpContainerEditor
 modifier|*
@@ -190,14 +190,14 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_container_editor_set_multiple_selection
+name|gimp_container_editor_set_selection_mode
 parameter_list|(
 name|GimpContainerEditor
 modifier|*
 name|editor
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 function_decl|;
 end_function_decl

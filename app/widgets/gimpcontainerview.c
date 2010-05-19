@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainerview.c  * Copyright (C) 2001-2009 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpcontainerview.c  * Copyright (C) 2001-2010 Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296266400103
+DECL|enum|__anon2c3e81110103
 block|{
 DECL|enumerator|SELECT_ITEM
 name|SELECT_ITEM
@@ -164,9 +164,9 @@ DECL|member|reorderable
 name|gboolean
 name|reorderable
 decl_stmt|;
-DECL|member|multiple_selection
-name|gboolean
-name|multiple_selection
+DECL|member|selection_mode
+name|GtkSelectionMode
+name|selection_mode
 decl_stmt|;
 comment|/*  initialized by subclass  */
 DECL|member|dnd_widget
@@ -243,14 +243,14 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_container_view_real_set_multiple_selection
+name|gimp_container_view_real_set_selection_mode
 parameter_list|(
 name|GimpContainerView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -813,9 +813,9 @@ name|gimp_container_view_real_set_context
 expr_stmt|;
 name|view_iface
 operator|->
-name|set_multiple_selection
+name|set_selection_mode
 operator|=
-name|gimp_container_view_real_set_multiple_selection
+name|gimp_container_view_real_set_selection_mode
 expr_stmt|;
 name|view_iface
 operator|->
@@ -917,15 +917,17 @@ name|g_object_interface_install_property
 argument_list|(
 name|view_iface
 argument_list|,
-name|g_param_spec_boolean
+name|g_param_spec_enum
 argument_list|(
-literal|"multiple-selection"
+literal|"selection-mode"
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|FALSE
+name|GTK_TYPE_SELECTION_MODE
+argument_list|,
+name|GTK_SELECTION_SINGLE
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1265,9 +1267,9 @@ name|g_object_class_override_property
 argument_list|(
 name|klass
 argument_list|,
-name|GIMP_CONTAINER_VIEW_PROP_MULTIPLE_SELECTION
+name|GIMP_CONTAINER_VIEW_PROP_SELECTION_MODE
 argument_list|,
-literal|"multiple-selection"
+literal|"selection-mode"
 argument_list|)
 expr_stmt|;
 name|g_object_class_override_property
@@ -1819,9 +1821,9 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|gimp_container_view_get_multiple_selection (GimpContainerView * view)
-name|gimp_container_view_get_multiple_selection
+name|GtkSelectionMode
+DECL|function|gimp_container_view_get_selection_mode (GimpContainerView * view)
+name|gimp_container_view_get_selection_mode
 parameter_list|(
 name|GimpContainerView
 modifier|*
@@ -1840,22 +1842,22 @@ decl_stmt|;
 return|return
 name|private
 operator|->
-name|multiple_selection
+name|selection_mode
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_view_set_multiple_selection (GimpContainerView * view,gboolean value)
-name|gimp_container_view_set_multiple_selection
+DECL|function|gimp_container_view_set_selection_mode (GimpContainerView * view,GtkSelectionMode mode)
+name|gimp_container_view_set_selection_mode
 parameter_list|(
 name|GimpContainerView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1866,16 +1868,27 @@ name|view
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|mode
+operator|==
+name|GTK_SELECTION_SINGLE
+operator|||
+name|mode
+operator|==
+name|GTK_SELECTION_MULTIPLE
+argument_list|)
+expr_stmt|;
 name|GIMP_CONTAINER_VIEW_GET_INTERFACE
 argument_list|(
 name|view
 argument_list|)
 operator|->
-name|set_multiple_selection
+name|set_selection_mode
 argument_list|(
 name|view
 argument_list|,
-name|value
+name|mode
 argument_list|)
 expr_stmt|;
 block|}
@@ -1884,15 +1897,15 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_view_real_set_multiple_selection (GimpContainerView * view,gboolean value)
-name|gimp_container_view_real_set_multiple_selection
+DECL|function|gimp_container_view_real_set_selection_mode (GimpContainerView * view,GtkSelectionMode mode)
+name|gimp_container_view_real_set_selection_mode
 parameter_list|(
 name|GimpContainerView
 modifier|*
 name|view
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 block|{
 name|GimpContainerViewPrivate
@@ -1906,9 +1919,9 @@ argument_list|)
 decl_stmt|;
 name|private
 operator|->
-name|multiple_selection
+name|selection_mode
 operator|=
-name|value
+name|mode
 expr_stmt|;
 block|}
 end_function
@@ -3171,13 +3184,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_CONTAINER_VIEW_PROP_MULTIPLE_SELECTION
+name|GIMP_CONTAINER_VIEW_PROP_SELECTION_MODE
 case|:
-name|gimp_container_view_set_multiple_selection
+name|gimp_container_view_set_selection_mode
 argument_list|(
 name|view
 argument_list|,
-name|g_value_get_boolean
+name|g_value_get_enum
 argument_list|(
 name|value
 argument_list|)
@@ -3331,13 +3344,13 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_CONTAINER_VIEW_PROP_MULTIPLE_SELECTION
+name|GIMP_CONTAINER_VIEW_PROP_SELECTION_MODE
 case|:
-name|g_value_set_boolean
+name|g_value_set_enum
 argument_list|(
 name|value
 argument_list|,
-name|gimp_container_view_get_multiple_selection
+name|gimp_container_view_get_selection_mode
 argument_list|(
 name|view
 argument_list|)

@@ -756,9 +756,9 @@ block|}
 end_function
 
 begin_function
-name|gboolean
-DECL|function|gimp_container_editor_get_multiple_selection (GimpContainerEditor * editor)
-name|gimp_container_editor_get_multiple_selection
+name|GtkSelectionMode
+DECL|function|gimp_container_editor_get_selection_mode (GimpContainerEditor * editor)
+name|gimp_container_editor_get_selection_mode
 parameter_list|(
 name|GimpContainerEditor
 modifier|*
@@ -766,7 +766,7 @@ name|editor
 parameter_list|)
 block|{
 return|return
-name|gimp_container_view_get_multiple_selection
+name|gimp_container_view_get_selection_mode
 argument_list|(
 name|GIMP_CONTAINER_VIEW
 argument_list|(
@@ -781,18 +781,18 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_container_editor_set_multiple_selection (GimpContainerEditor * editor,gboolean value)
-name|gimp_container_editor_set_multiple_selection
+DECL|function|gimp_container_editor_set_selection_mode (GimpContainerEditor * editor,GtkSelectionMode mode)
+name|gimp_container_editor_set_selection_mode
 parameter_list|(
 name|GimpContainerEditor
 modifier|*
 name|editor
 parameter_list|,
-name|gboolean
-name|value
+name|GtkSelectionMode
+name|mode
 parameter_list|)
 block|{
-name|gimp_container_view_set_multiple_selection
+name|gimp_container_view_set_selection_mode
 argument_list|(
 name|GIMP_CONTAINER_VIEW
 argument_list|(
@@ -801,7 +801,7 @@ operator|->
 name|view
 argument_list|)
 argument_list|,
-name|value
+name|mode
 argument_list|)
 expr_stmt|;
 block|}

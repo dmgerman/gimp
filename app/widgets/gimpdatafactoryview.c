@@ -914,11 +914,11 @@ argument_list|(
 name|factory_view
 argument_list|)
 expr_stmt|;
-name|gimp_container_editor_set_multiple_selection
+name|gimp_container_editor_set_selection_mode
 argument_list|(
 name|editor
 argument_list|,
-name|TRUE
+name|GTK_SELECTION_MULTIPLE
 argument_list|)
 expr_stmt|;
 if|if
