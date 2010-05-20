@@ -1290,8 +1290,8 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Image component %d of image '%s' did not have the "
-literal|"same size as the image which is currently not "
+literal|"Image component %d of image '%s' does not have the "
+literal|"same size as the image. This is currently not "
 literal|"supported."
 argument_list|)
 argument_list|,
@@ -1385,8 +1385,8 @@ name|G_FILE_ERROR_FAILED
 argument_list|,
 name|_
 argument_list|(
-literal|"Image component %d of image '%s' is signed which is "
-literal|"currently not supported by GIMP."
+literal|"Image component %d of image '%s' is signed. "
+literal|"This is currently not supported."
 argument_list|)
 argument_list|,
 name|i
