@@ -271,8 +271,6 @@ operator|=
 name|gradient
 operator|->
 name|segments
-operator|->
-name|next
 expr_stmt|;
 name|gradient
 operator|->
