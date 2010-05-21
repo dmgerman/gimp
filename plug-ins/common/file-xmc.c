@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0288910108
+DECL|struct|__anon2b8abdda0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b0288910208
+DECL|struct|__anon2b8abdda0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1095,7 +1095,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"x_hot"
 block|,
-literal|"X-coordinate of hotspot"
+literal|"X-coordinate of hot spot"
 block|}
 block|,
 block|{
@@ -1103,8 +1103,8 @@ name|GIMP_PDB_INT32
 block|,
 literal|"y_hot"
 block|,
-literal|"Y-coordinate of hotspot\n"
-literal|"Use (-1, -1) to keep original hotspot."
+literal|"Y-coordinate of hot spot\n"
+literal|"Use (-1, -1) to keep original hot spot."
 block|}
 block|,
 block|{
@@ -1831,7 +1831,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot set the hotspot!\n"
+literal|"Cannot set the hot spot!\n"
 literal|"You must arrange layers so that all of them have an intersection."
 argument_list|)
 argument_list|)
@@ -4503,7 +4503,7 @@ name|table
 argument_list|)
 expr_stmt|;
 comment|/*    *  Hotspot    */
-comment|/* label "Hotspot  _X:" + spinbox */
+comment|/* label "Hot spot  _X:" + spinbox */
 name|x1
 operator|=
 name|hotspotRange
@@ -4598,7 +4598,7 @@ name|tmpwidget
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter the X coordinate of the hotspot."
+literal|"Enter the X coordinate of the hot spot."
 literal|"The origin is top left corner."
 argument_list|)
 argument_list|,
@@ -4618,7 +4618,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Hotspot _X:"
+literal|"Hot spot _X:"
 argument_list|)
 argument_list|,
 literal|0
@@ -4728,7 +4728,7 @@ name|tmpwidget
 argument_list|,
 name|_
 argument_list|(
-literal|"Enter the Y coordinate of the hotspot."
+literal|"Enter the Y coordinate of the hot spot."
 literal|"The origin is top left corner."
 argument_list|)
 argument_list|,
@@ -6916,8 +6916,8 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Cannot save the cursor because the hotspot is not on '%s'.\n"
-literal|"Try to change the hotspot position, layer geometry or "
+literal|"Cannot save the cursor because the hot spot is not on '%s'.\n"
+literal|"Try to change the hot spot position, layer geometry or "
 literal|"save without auto-crop."
 argument_list|)
 argument_list|,
@@ -9218,7 +9218,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b0288910308
+DECL|struct|__anon2b8abdda0308
 block|{
 DECL|member|size
 name|guint32
