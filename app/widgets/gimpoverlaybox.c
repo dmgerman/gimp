@@ -1471,6 +1471,13 @@ name|widget
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|gtk_widget_set_double_buffered
+argument_list|(
+name|widget
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 name|child
 operator|=
 name|gimp_overlay_child_new
