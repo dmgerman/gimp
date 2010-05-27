@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8abdda0108
+DECL|struct|__anon28d8c7da0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b8abdda0208
+DECL|struct|__anon28d8c7da0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -6604,7 +6604,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Width of '%s' is too large. Please reduce more than %dpx)"
+literal|"Width of '%s' is too large. Please reduce more than %dpx."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -6643,7 +6643,7 @@ literal|0
 argument_list|,
 name|_
 argument_list|(
-literal|"Height of '%s' is too large. Please reduce more than %dpx)"
+literal|"Height of '%s' is too large. Please reduce more than %dpx."
 argument_list|)
 argument_list|,
 name|gimp_any_to_utf8
@@ -9218,7 +9218,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon2b8abdda0308
+DECL|struct|__anon28d8c7da0308
 block|{
 DECL|member|size
 name|guint32
