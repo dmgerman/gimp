@@ -102,30 +102,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpcontainergridview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcontainertreeview.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpcontainerview-utils.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdataeditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpdevicestatus.h"
 end_include
 
@@ -133,12 +109,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpdialogfactory.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpdockable.h"
 end_include
 
 begin_include
@@ -187,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimpgradienteditor.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimphelp-ids.h"
 end_include
 
 begin_include
