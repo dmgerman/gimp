@@ -32,6 +32,12 @@ endif|#
 directive|endif
 end_endif
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include

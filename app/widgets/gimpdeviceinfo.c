@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -91,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae614c30103
+DECL|enum|__anon27a7e33e0103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -104,7 +110,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae614c30203
+DECL|enum|__anon27a7e33e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

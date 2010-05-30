@@ -15,6 +15,12 @@ directive|include
 file|<string.h>
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GSEAL_ENABLE
+end_undef
+
 begin_include
 include|#
 directive|include
