@@ -96,12 +96,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpcontainergridview.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpcontainertreestore.h"
 end_include
 
