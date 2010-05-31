@@ -759,7 +759,7 @@ name|gimp_message_dialog_new
 argument_list|(
 name|_
 argument_list|(
-literal|"Reset Tool Options"
+literal|"Reset All Tool Options"
 argument_list|)
 argument_list|,
 name|GIMP_STOCK_QUESTION
