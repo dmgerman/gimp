@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpoverlaydialog.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpsettingsbox.h"
 end_include
 
@@ -151,12 +157,6 @@ begin_include
 include|#
 directive|include
 file|"widgets/gimptooldialog.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimptooloverlay.h"
 end_include
 
 begin_include
@@ -1324,7 +1324,7 @@ name|shell
 operator|=
 name|shell
 operator|=
-name|gimp_tool_overlay_new
+name|gimp_overlay_dialog_new
 argument_list|(
 name|tool_info
 argument_list|,
@@ -1636,7 +1636,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_IS_TOOL_OVERLAY
+name|GIMP_IS_OVERLAY_DIALOG
 argument_list|(
 name|image_map_tool
 operator|->
@@ -2776,7 +2776,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|GIMP_IS_TOOL_OVERLAY
+name|GIMP_IS_OVERLAY_DIALOG
 argument_list|(
 name|shell
 argument_list|)

@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimptooloverlay.c  * Copyright (C) 2009-2010  Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoverlaydialog.c  * Copyright (C) 2009-2010  Michael Natterer<mitch@gimp.org>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -48,12 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimptooloverlay.h"
+file|"gimpoverlaydialog.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279798870103
+DECL|enum|__anon2b21584e0103
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -92,7 +92,7 @@ end_struct
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_overlay_destroy
+name|gimp_overlay_dialog_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
@@ -104,7 +104,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_overlay_size_request
+name|gimp_overlay_dialog_size_request
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -120,7 +120,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_overlay_size_allocate
+name|gimp_overlay_dialog_size_allocate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -136,7 +136,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_tool_overlay_expose
+name|gimp_overlay_dialog_expose
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -152,7 +152,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_overlay_forall
+name|gimp_overlay_dialog_forall
 parameter_list|(
 name|GtkContainer
 modifier|*
@@ -173,11 +173,11 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_tool_overlay_close
+name|gimp_overlay_dialog_close
 parameter_list|(
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -201,9 +201,9 @@ end_function_decl
 begin_macro
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpToolOverlay
+argument|GimpOverlayDialog
 argument_list|,
-argument|gimp_tool_overlay
+argument|gimp_overlay_dialog
 argument_list|,
 argument|GTK_TYPE_BIN
 argument_list|)
@@ -228,16 +228,16 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_tool_overlay_parent_class
+value|gimp_overlay_dialog_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_class_init (GimpToolOverlayClass * klass)
-name|gimp_tool_overlay_class_init
+DECL|function|gimp_overlay_dialog_class_init (GimpOverlayDialogClass * klass)
+name|gimp_overlay_dialog_class_init
 parameter_list|(
-name|GimpToolOverlayClass
+name|GimpOverlayDialogClass
 modifier|*
 name|klass
 parameter_list|)
@@ -273,37 +273,37 @@ name|gtk_object_class
 operator|->
 name|destroy
 operator|=
-name|gimp_tool_overlay_destroy
+name|gimp_overlay_dialog_destroy
 expr_stmt|;
 name|widget_class
 operator|->
 name|size_request
 operator|=
-name|gimp_tool_overlay_size_request
+name|gimp_overlay_dialog_size_request
 expr_stmt|;
 name|widget_class
 operator|->
 name|size_allocate
 operator|=
-name|gimp_tool_overlay_size_allocate
+name|gimp_overlay_dialog_size_allocate
 expr_stmt|;
 name|widget_class
 operator|->
 name|expose_event
 operator|=
-name|gimp_tool_overlay_expose
+name|gimp_overlay_dialog_expose
 expr_stmt|;
 name|container_class
 operator|->
 name|forall
 operator|=
-name|gimp_tool_overlay_forall
+name|gimp_overlay_dialog_forall
 expr_stmt|;
 name|klass
 operator|->
 name|close
 operator|=
-name|gimp_tool_overlay_close
+name|gimp_overlay_dialog_close
 expr_stmt|;
 name|signals
 index|[
@@ -323,7 +323,7 @@ name|G_SIGNAL_RUN_LAST
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
-name|GimpToolOverlayClass
+name|GimpOverlayDialogClass
 argument_list|,
 name|response
 argument_list|)
@@ -361,7 +361,7 @@ name|G_SIGNAL_ACTION
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
-name|GimpToolOverlayClass
+name|GimpOverlayDialogClass
 argument_list|,
 name|close
 argument_list|)
@@ -399,12 +399,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_init (GimpToolOverlay * overlay)
-name|gimp_tool_overlay_init
+DECL|function|gimp_overlay_dialog_init (GimpOverlayDialog * dialog)
+name|gimp_overlay_dialog_init
 parameter_list|(
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|)
 block|{
 name|GtkWidget
@@ -413,7 +413,7 @@ name|widget
 init|=
 name|GTK_WIDGET
 argument_list|(
-name|overlay
+name|dialog
 argument_list|)
 decl_stmt|;
 if|#
@@ -430,7 +430,7 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|overlay
+name|dialog
 operator|->
 name|action_area
 operator|=
@@ -441,7 +441,7 @@ name|gtk_button_box_set_layout
 argument_list|(
 name|GTK_BUTTON_BOX
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|)
@@ -451,7 +451,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_parent
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|,
@@ -460,7 +460,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|)
@@ -471,38 +471,38 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_destroy (GtkObject * object)
-name|gimp_tool_overlay_destroy
+DECL|function|gimp_overlay_dialog_destroy (GtkObject * object)
+name|gimp_overlay_dialog_destroy
 parameter_list|(
 name|GtkObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 init|=
-name|GIMP_TOOL_OVERLAY
+name|GIMP_OVERLAY_DIALOG
 argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 condition|)
 block|{
 name|gtk_widget_unparent
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|)
 expr_stmt|;
-name|overlay
+name|dialog
 operator|->
 name|action_area
 operator|=
@@ -525,8 +525,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_size_request (GtkWidget * widget,GtkRequisition * requisition)
-name|gimp_tool_overlay_size_request
+DECL|function|gimp_overlay_dialog_size_request (GtkWidget * widget,GtkRequisition * requisition)
+name|gimp_overlay_dialog_size_request
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -546,11 +546,11 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 init|=
-name|GIMP_TOOL_OVERLAY
+name|GIMP_OVERLAY_DIALOG
 argument_list|(
 name|widget
 argument_list|)
@@ -635,7 +635,7 @@ expr_stmt|;
 block|}
 name|gtk_widget_size_request
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|,
@@ -680,8 +680,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
-name|gimp_tool_overlay_size_allocate
+DECL|function|gimp_overlay_dialog_size_allocate (GtkWidget * widget,GtkAllocation * allocation)
+name|gimp_overlay_dialog_size_allocate
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -701,11 +701,11 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 init|=
-name|GIMP_TOOL_OVERLAY
+name|GIMP_OVERLAY_DIALOG
 argument_list|(
 name|widget
 argument_list|)
@@ -750,7 +750,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_size_request
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|,
@@ -893,7 +893,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_size_allocate
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|,
@@ -907,8 +907,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_tool_overlay_expose (GtkWidget * widget,GdkEventExpose * eevent)
-name|gimp_tool_overlay_expose
+DECL|function|gimp_overlay_dialog_expose (GtkWidget * widget,GdkEventExpose * eevent)
+name|gimp_overlay_dialog_expose
 parameter_list|(
 name|GtkWidget
 modifier|*
@@ -1219,8 +1219,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_forall (GtkContainer * container,gboolean include_internals,GtkCallback callback,gpointer callback_data)
-name|gimp_tool_overlay_forall
+DECL|function|gimp_overlay_dialog_forall (GtkContainer * container,gboolean include_internals,GtkCallback callback,gpointer callback_data)
+name|gimp_overlay_dialog_forall
 parameter_list|(
 name|GtkContainer
 modifier|*
@@ -1257,18 +1257,18 @@ condition|(
 name|include_internals
 condition|)
 block|{
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 init|=
-name|GIMP_TOOL_OVERLAY
+name|GIMP_OVERLAY_DIALOG
 argument_list|(
 name|container
 argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 condition|)
@@ -1277,7 +1277,7 @@ modifier|*
 name|callback
 call|)
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|,
@@ -1291,12 +1291,12 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_tool_overlay_close (GimpToolOverlay * overlay)
-name|gimp_tool_overlay_close
+DECL|function|gimp_overlay_dialog_close (GimpOverlayDialog * dialog)
+name|gimp_overlay_dialog_close
 parameter_list|(
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|)
 block|{
 name|GList
@@ -1319,7 +1319,7 @@ name|gtk_container_get_children
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|)
@@ -1389,9 +1389,9 @@ if|if
 condition|(
 name|ad
 condition|)
-name|gimp_tool_overlay_response
+name|gimp_overlay_dialog_response
 argument_list|(
-name|overlay
+name|dialog
 argument_list|,
 name|ad
 operator|->
@@ -1404,8 +1404,8 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tool_overlay_new (GimpToolInfo * tool_info,const gchar * desc,...)
-name|gimp_tool_overlay_new
+DECL|function|gimp_overlay_dialog_new (GimpToolInfo * tool_info,const gchar * desc,...)
+name|gimp_overlay_dialog_new
 parameter_list|(
 name|GimpToolInfo
 modifier|*
@@ -1421,7 +1421,7 @@ parameter_list|)
 block|{
 name|GtkWidget
 modifier|*
-name|overlay
+name|dialog
 decl_stmt|;
 specifier|const
 name|gchar
@@ -1451,11 +1451,11 @@ name|tool_info
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|overlay
+name|dialog
 operator|=
 name|g_object_new
 argument_list|(
-name|GIMP_TYPE_TOOL_OVERLAY
+name|GIMP_TYPE_OVERLAY_DIALOG
 argument_list|,
 name|NULL
 argument_list|)
@@ -1467,11 +1467,11 @@ argument_list|,
 name|desc
 argument_list|)
 expr_stmt|;
-name|gimp_tool_overlay_add_buttons_valist
+name|gimp_overlay_dialog_add_buttons_valist
 argument_list|(
-name|GIMP_TOOL_OVERLAY
+name|GIMP_OVERLAY_DIALOG
 argument_list|(
-name|overlay
+name|dialog
 argument_list|)
 argument_list|,
 name|args
@@ -1483,19 +1483,19 @@ name|args
 argument_list|)
 expr_stmt|;
 return|return
-name|overlay
+name|dialog
 return|;
 block|}
 end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_overlay_response (GimpToolOverlay * overlay,gint response_id)
-name|gimp_tool_overlay_response
+DECL|function|gimp_overlay_dialog_response (GimpOverlayDialog * dialog,gint response_id)
+name|gimp_overlay_dialog_response
 parameter_list|(
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|,
 name|gint
 name|response_id
@@ -1503,15 +1503,15 @@ parameter_list|)
 block|{
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_TOOL_OVERLAY
+name|GIMP_IS_OVERLAY_DIALOG
 argument_list|(
-name|overlay
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_emit
 argument_list|(
-name|overlay
+name|dialog
 argument_list|,
 name|signals
 index|[
@@ -1528,12 +1528,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_tool_overlay_add_buttons_valist (GimpToolOverlay * overlay,va_list args)
-name|gimp_tool_overlay_add_buttons_valist
+DECL|function|gimp_overlay_dialog_add_buttons_valist (GimpOverlayDialog * dialog,va_list args)
+name|gimp_overlay_dialog_add_buttons_valist
 parameter_list|(
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|,
 name|va_list
 name|args
@@ -1549,9 +1549,9 @@ name|response_id
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_TOOL_OVERLAY
+name|GIMP_IS_OVERLAY_DIALOG
 argument_list|(
-name|overlay
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1580,9 +1580,9 @@ argument_list|,
 name|gint
 argument_list|)
 expr_stmt|;
-name|gimp_tool_overlay_add_button
+name|gimp_overlay_dialog_add_button
 argument_list|(
-name|overlay
+name|dialog
 argument_list|,
 name|button_text
 argument_list|,
@@ -1596,16 +1596,16 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|action_widget_activated (GtkWidget * widget,GimpToolOverlay * overlay)
+DECL|function|action_widget_activated (GtkWidget * widget,GimpOverlayDialog * dialog)
 name|action_widget_activated
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|)
 block|{
 name|ResponseData
@@ -1619,9 +1619,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 decl_stmt|;
-name|gimp_tool_overlay_response
+name|gimp_overlay_dialog_response
 argument_list|(
-name|overlay
+name|dialog
 argument_list|,
 name|ad
 operator|->
@@ -1634,12 +1634,12 @@ end_function
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_tool_overlay_add_button (GimpToolOverlay * overlay,const gchar * button_text,gint response_id)
-name|gimp_tool_overlay_add_button
+DECL|function|gimp_overlay_dialog_add_button (GimpOverlayDialog * dialog,const gchar * button_text,gint response_id)
+name|gimp_overlay_dialog_add_button
 parameter_list|(
-name|GimpToolOverlay
+name|GimpOverlayDialog
 modifier|*
-name|overlay
+name|dialog
 parameter_list|,
 specifier|const
 name|gchar
@@ -1667,9 +1667,9 @@ name|closure
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_TOOL_OVERLAY
+name|GIMP_IS_OVERLAY_DIALOG
 argument_list|(
-name|overlay
+name|dialog
 argument_list|)
 argument_list|,
 name|NULL
@@ -1738,7 +1738,7 @@ argument_list|)
 argument_list|,
 name|G_OBJECT
 argument_list|(
-name|overlay
+name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1759,7 +1759,7 @@ name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|)
@@ -1783,7 +1783,7 @@ name|gtk_button_box_set_child_secondary
 argument_list|(
 name|GTK_BUTTON_BOX
 argument_list|(
-name|overlay
+name|dialog
 operator|->
 name|action_area
 argument_list|)
@@ -1845,7 +1845,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-tool-overlay-response-data"
+literal|"gimp-overlay-dialog-response-data"
 argument_list|)
 decl_stmt|;
 if|if
@@ -1870,7 +1870,7 @@ argument_list|(
 name|widget
 argument_list|)
 argument_list|,
-literal|"gimp-tool-overlay-response-data"
+literal|"gimp-overlay-dialog-response-data"
 argument_list|,
 name|ad
 argument_list|,
