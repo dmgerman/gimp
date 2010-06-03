@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcontainericonview.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainertreeview.h"
 end_include
 
@@ -530,6 +536,12 @@ block|{
 case|case
 name|GIMP_VIEW_TYPE_GRID
 case|:
+if|#
+directive|if
+literal|0
+block|editor->view =         GIMP_CONTAINER_VIEW (gimp_container_icon_view_new (container,                                                            context,                                                            view_size,                                                            view_border_width));
+else|#
+directive|else
 name|editor
 operator|->
 name|view
@@ -548,6 +560,8 @@ name|view_border_width
 argument_list|)
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 break|break;
 case|case
 name|GIMP_VIEW_TYPE_LIST

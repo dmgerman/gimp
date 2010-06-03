@@ -393,6 +393,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpContainerIconView
+typedef|typedef
+name|struct
+name|_GimpContainerIconView
+name|GimpContainerIconView
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpContainerTreeStore
 typedef|typedef
 name|struct
