@@ -603,6 +603,16 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+name|gimp_container_tree_store_add_renderer_cell
+argument_list|(
+name|GIMP_CONTAINER_TREE_STORE
+argument_list|(
+name|model
+argument_list|)
+argument_list|,
+name|cell
+argument_list|)
+expr_stmt|;
 name|gtk_entry_completion_set_text_column
 argument_list|(
 name|completion

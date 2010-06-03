@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ffac650103
+DECL|enum|__anon27b0f9ea0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -596,6 +596,16 @@ argument_list|,
 name|GIMP_CONTAINER_TREE_STORE_COLUMN_RENDERER
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_container_tree_store_add_renderer_cell
+argument_list|(
+name|GIMP_CONTAINER_TREE_STORE
+argument_list|(
+name|model
+argument_list|)
+argument_list|,
+name|cell
 argument_list|)
 expr_stmt|;
 name|combo
@@ -1123,11 +1133,7 @@ expr_stmt|;
 if|if
 condition|(
 name|iter
-condition|)
-block|{
-comment|/*  If the store is now empty, clear out renderers from all cells        *  so that they don't reference the viewables.  See bug #149906.        */
-if|if
-condition|(
+operator|&&
 name|gtk_tree_model_iter_n_children
 argument_list|(
 name|model
@@ -1138,22 +1144,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|g_object_set
-argument_list|(
-name|GIMP_CONTAINER_COMBO_BOX
-argument_list|(
-name|view
-argument_list|)
-operator|->
-name|viewable_renderer
-argument_list|,
-literal|"renderer"
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|gtk_widget_set_sensitive
 argument_list|(
 name|GTK_WIDGET
@@ -1164,7 +1154,6 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 block|}
 end_function
