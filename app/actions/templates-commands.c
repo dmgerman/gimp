@@ -144,7 +144,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2757b35d0108
+DECL|struct|__anon2bc3b7550108
 block|{
 DECL|member|context
 name|GimpContext
@@ -329,7 +329,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|gimp_template_create_image
+name|gimp_image_new_from_template
 argument_list|(
 name|gimp
 argument_list|,

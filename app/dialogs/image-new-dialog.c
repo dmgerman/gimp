@@ -140,7 +140,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf308020108
+DECL|struct|__anon2bd430ba0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -1418,7 +1418,7 @@ operator|->
 name|dialog
 argument_list|)
 expr_stmt|;
-name|gimp_template_create_image
+name|gimp_image_new_from_template
 argument_list|(
 name|gimp
 argument_list|,

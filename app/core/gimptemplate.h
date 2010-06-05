@@ -264,26 +264,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-name|GimpImage
-modifier|*
-name|gimp_template_create_image
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpTemplate
-modifier|*
-name|template
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_endif
 endif|#
 directive|endif
