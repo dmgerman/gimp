@@ -4690,7 +4690,7 @@ literal|"Start of the intensity measurement range"
 argument_list|,
 literal|0
 argument_list|,
-literal|256
+literal|255
 argument_list|,
 literal|0
 argument_list|,
@@ -4712,7 +4712,7 @@ literal|"End of the intensity measurement range"
 argument_list|,
 literal|0
 argument_list|,
-literal|256
+literal|255
 argument_list|,
 literal|0
 argument_list|,
