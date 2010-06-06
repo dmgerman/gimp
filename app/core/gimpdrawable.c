@@ -94,6 +94,16 @@ end_comment
 begin_include
 include|#
 directive|include
+file|"gimp-utils.h"
+end_include
+
+begin_comment
+comment|/* temp for GIMP_TIMER */
+end_comment
+
+begin_include
+include|#
+directive|include
 file|"gimpchannel.h"
 end_include
 
@@ -213,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b7b128a0103
+DECL|enum|__anon2a1bbf3d0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2014,6 +2024,9 @@ operator|->
 name|bytes
 argument_list|)
 expr_stmt|;
+name|GIMP_TIMER_START
+argument_list|()
+expr_stmt|;
 if|if
 condition|(
 name|gimp_use_gegl
@@ -2212,6 +2225,11 @@ name|progress
 argument_list|)
 expr_stmt|;
 block|}
+name|GIMP_TIMER_END
+argument_list|(
+literal|"scaling"
+argument_list|)
+expr_stmt|;
 name|gimp_drawable_set_tiles_full
 argument_list|(
 name|drawable

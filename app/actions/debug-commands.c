@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -1101,10 +1107,6 @@ name|TileManager
 modifier|*
 name|tiles
 decl_stmt|;
-name|GTimer
-modifier|*
-name|timer
-decl_stmt|;
 name|gint
 name|x
 decl_stmt|,
@@ -1144,9 +1146,7 @@ name|projection
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|timer
-operator|=
-name|g_timer_new
+name|GIMP_TIMER_START
 argument_list|()
 expr_stmt|;
 for|for
@@ -1211,23 +1211,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|g_print
+name|GIMP_TIMER_END
 argument_list|(
-literal|"Validation of the entire projection took %.0f ms\n"
-argument_list|,
-literal|1000
-operator|*
-name|g_timer_elapsed
-argument_list|(
-name|timer
-argument_list|,
-name|NULL
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_timer_destroy
-argument_list|(
-name|timer
+literal|"Validation of the entire projection"
 argument_list|)
 expr_stmt|;
 name|g_object_unref

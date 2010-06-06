@@ -16,6 +16,28 @@ directive|define
 name|__APP_GIMP_UTILS_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TIMER_START ()
+define|#
+directive|define
+name|GIMP_TIMER_START
+parameter_list|()
+define|\
+value|{ GTimer *_timer = g_timer_new ();
+end_define
+
+begin_define
+DECL|macro|GIMP_TIMER_END (message)
+define|#
+directive|define
+name|GIMP_TIMER_END
+parameter_list|(
+name|message
+parameter_list|)
+define|\
+value|g_printerr ("%s: " message " took %0.2f seconds\n", \               G_STRFUNC, g_timer_elapsed (_timer, NULL)); \   g_timer_destroy (_timer); }
+end_define
+
 begin_function_decl
 name|gint64
 name|gimp_g_type_instance_get_memsize
