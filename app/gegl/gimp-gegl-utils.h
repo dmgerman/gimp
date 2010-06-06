@@ -57,6 +57,19 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+specifier|const
+name|gchar
+modifier|*
+name|gimp_interpolation_to_gegl_filter
+argument_list|(
+name|GimpInterpolationType
+name|interpolation
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_endif
 endif|#
 directive|endif
