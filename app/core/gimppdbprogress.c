@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c9e8340103
+DECL|enum|__anon2bc417c40103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1594,11 +1594,8 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-name|progress
-operator|->
-name|callback_name
-operator|&&
-name|strcmp
+operator|!
+name|g_strcmp0
 argument_list|(
 name|callback_name
 argument_list|,
@@ -1606,8 +1603,6 @@ name|progress
 operator|->
 name|callback_name
 argument_list|)
-operator|==
-literal|0
 condition|)
 return|return
 name|progress

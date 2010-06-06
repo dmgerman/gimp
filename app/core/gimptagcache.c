@@ -119,7 +119,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon277296ae0103
+DECL|enum|__anon2ae83d770103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -133,7 +133,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277296ae0208
+DECL|struct|__anon2ae83d770208
 block|{
 DECL|member|identifier
 name|GQuark
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon277296ae0308
+DECL|struct|__anon2ae83d770308
 block|{
 DECL|member|records
 name|GArray
@@ -2314,9 +2314,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|current_element
-operator|&&
-name|strcmp
+name|g_strcmp0
 argument_list|(
 name|current_element
 argument_list|,

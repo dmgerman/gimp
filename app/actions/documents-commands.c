@@ -156,7 +156,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295ac83e0108
+DECL|struct|__anon277e36520108
 block|{
 DECL|member|name
 specifier|const
@@ -1368,10 +1368,8 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|uri
-operator|&&
 operator|!
-name|strcmp
+name|g_strcmp0
 argument_list|(
 name|closure
 operator|->
