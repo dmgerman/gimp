@@ -405,9 +405,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|io_encoding
-operator|&&
-name|strcmp
+name|g_strcmp0
 argument_list|(
 name|io_encoding
 argument_list|,
