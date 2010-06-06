@@ -12,22 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<stdlib.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<string.h>
-end_include
-
-begin_comment
-comment|/* strcmp */
-end_comment
-
-begin_include
-include|#
-directive|include
 file|<glib-object.h>
 end_include
 
@@ -64,18 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimplist.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpfilteredcontainer.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be6c5670103
+DECL|enum|__anon2a2154960103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -88,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be6c5670203
+DECL|enum|__anon2a2154960203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -998,37 +976,12 @@ modifier|*
 name|gui_size
 parameter_list|)
 block|{
-name|GimpFilteredContainer
-modifier|*
-name|filtered_container
-init|=
-name|GIMP_FILTERED_CONTAINER
-argument_list|(
-name|object
-argument_list|)
-decl_stmt|;
 name|gint64
 name|memsize
 init|=
 literal|0
 decl_stmt|;
-name|memsize
-operator|+=
-operator|(
-name|gimp_container_get_n_children
-argument_list|(
-name|GIMP_CONTAINER
-argument_list|(
-name|filtered_container
-argument_list|)
-argument_list|)
-operator|*
-sizeof|sizeof
-argument_list|(
-name|GList
-argument_list|)
-operator|)
-expr_stmt|;
+comment|/* FIXME take members into account */
 return|return
 name|memsize
 operator|+
