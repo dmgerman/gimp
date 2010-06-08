@@ -1093,8 +1093,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_PASTE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Paste"
 argument_list|)
 argument_list|)
@@ -1719,8 +1721,10 @@ name|GIMP_OPACITY_OPAQUE
 argument_list|,
 name|GIMP_ERASE_MODE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Clear"
 argument_list|)
 argument_list|)
@@ -1807,8 +1811,10 @@ name|GIMP_FOREGROUND_FILL
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Fill with Foreground Color"
 argument_list|)
 expr_stmt|;
@@ -1818,8 +1824,10 @@ name|GIMP_BACKGROUND_FILL
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Fill with Background Color"
 argument_list|)
 expr_stmt|;
@@ -1829,8 +1837,10 @@ name|GIMP_WHITE_FILL
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Fill with White"
 argument_list|)
 expr_stmt|;
@@ -1840,8 +1850,10 @@ name|GIMP_TRANSPARENT_FILL
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Fill with Transparency"
 argument_list|)
 expr_stmt|;
@@ -1851,8 +1863,10 @@ name|GIMP_PATTERN_FILL
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Fill with Pattern"
 argument_list|)
 expr_stmt|;
@@ -2130,8 +2144,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_EDIT_CUT
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Cut"
 argument_list|)
 argument_list|)

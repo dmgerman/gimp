@@ -137,7 +137,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7f0230103
+DECL|enum|__anon28d71b180103
 block|{
 DECL|enumerator|REMOVED
 name|REMOVED
@@ -159,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f7f0230203
+DECL|enum|__anon28d71b180203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -5844,8 +5844,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_PARASITE_ATTACH
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Attach Parasite"
 argument_list|)
 argument_list|)
@@ -5899,8 +5901,10 @@ name|item
 operator|->
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Attach Parasite to Item"
 argument_list|)
 argument_list|)
@@ -6073,8 +6077,10 @@ name|item
 operator|->
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Parasite from Item"
 argument_list|)
 argument_list|,
@@ -6102,8 +6108,10 @@ name|item
 operator|->
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Parasite from Item"
 argument_list|)
 argument_list|)

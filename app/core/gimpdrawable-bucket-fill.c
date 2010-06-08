@@ -1181,7 +1181,7 @@ name|TRUE
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Bucket Fill"
 argument_list|)

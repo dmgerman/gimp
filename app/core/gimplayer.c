@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289551b80103
+DECL|enum|__anon2795b7680103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon289551b80203
+DECL|enum|__anon2795b7680203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1165,8 +1165,10 @@ name|item_class
 operator|->
 name|rename_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rename Layer"
 argument_list|)
 expr_stmt|;
@@ -1174,8 +1176,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Layer"
 argument_list|)
 expr_stmt|;
@@ -1183,8 +1187,10 @@ name|item_class
 operator|->
 name|scale_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale Layer"
 argument_list|)
 expr_stmt|;
@@ -1192,8 +1198,10 @@ name|item_class
 operator|->
 name|resize_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Layer"
 argument_list|)
 expr_stmt|;
@@ -1201,8 +1209,10 @@ name|item_class
 operator|->
 name|flip_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip Layer"
 argument_list|)
 expr_stmt|;
@@ -1210,8 +1220,10 @@ name|item_class
 operator|->
 name|rotate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate Layer"
 argument_list|)
 expr_stmt|;
@@ -1219,8 +1231,10 @@ name|item_class
 operator|->
 name|transform_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Layer"
 argument_list|)
 expr_stmt|;
@@ -5578,8 +5592,10 @@ name|gimp_image_undo_push_layer_mask_add
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Layer Mask"
 argument_list|)
 argument_list|,
@@ -6038,8 +6054,10 @@ name|gimp_drawable_push_undo
 argument_list|(
 name|drawable
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transfer Alpha to Mask"
 argument_list|)
 argument_list|,
@@ -6700,13 +6718,17 @@ operator|==
 name|GIMP_MASK_APPLY
 operator|)
 condition|?
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Apply Layer Mask"
 argument_list|)
 else|:
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Delete Layer Mask"
 argument_list|)
 argument_list|)
@@ -7180,8 +7202,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Alpha Channel"
 argument_list|)
 argument_list|,
@@ -7405,8 +7429,10 @@ name|layer
 argument_list|)
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Alpha Channel"
 argument_list|)
 argument_list|,
@@ -7490,8 +7516,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_RESIZE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Layer to Image Size"
 argument_list|)
 argument_list|)

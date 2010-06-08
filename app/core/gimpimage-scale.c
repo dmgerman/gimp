@@ -304,8 +304,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_SCALE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale Image"
 argument_list|)
 argument_list|)

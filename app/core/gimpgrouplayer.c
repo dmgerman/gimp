@@ -795,8 +795,10 @@ name|item_class
 operator|->
 name|rename_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rename Layer Group"
 argument_list|)
 expr_stmt|;
@@ -804,8 +806,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Layer Group"
 argument_list|)
 expr_stmt|;
@@ -813,8 +817,10 @@ name|item_class
 operator|->
 name|scale_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale Layer Group"
 argument_list|)
 expr_stmt|;
@@ -822,8 +828,10 @@ name|item_class
 operator|->
 name|resize_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Layer Group"
 argument_list|)
 expr_stmt|;
@@ -831,8 +839,10 @@ name|item_class
 operator|->
 name|flip_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip Layer Group"
 argument_list|)
 expr_stmt|;
@@ -840,8 +850,10 @@ name|item_class
 operator|->
 name|rotate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate Layer Group"
 argument_list|)
 expr_stmt|;
@@ -849,8 +861,10 @@ name|item_class
 operator|->
 name|transform_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Layer Group"
 argument_list|)
 expr_stmt|;

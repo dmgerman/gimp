@@ -136,8 +136,10 @@ name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Horizontal Guide"
 argument_list|)
 argument_list|,
@@ -236,8 +238,10 @@ name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Vertical Guide"
 argument_list|)
 argument_list|,
@@ -408,8 +412,10 @@ name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Guide"
 argument_list|)
 argument_list|,
@@ -534,8 +540,10 @@ name|gimp_image_undo_push_guide
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Guide"
 argument_list|)
 argument_list|,

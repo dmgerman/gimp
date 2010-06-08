@@ -1420,8 +1420,10 @@ argument_list|(
 name|item
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Offset Drawable"
 argument_list|)
 argument_list|,

@@ -157,7 +157,7 @@ name|channel
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Rectangle Select"
 argument_list|)
@@ -362,7 +362,7 @@ name|channel
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Ellipse Select"
 argument_list|)
@@ -577,7 +577,7 @@ name|channel
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Rounded Rectangle Select"
 argument_list|)
@@ -1684,8 +1684,10 @@ name|gimp_channel_select_channel
 argument_list|(
 name|channel
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Alpha to Selection"
 argument_list|)
 argument_list|,
@@ -1832,8 +1834,10 @@ name|undo_desc
 operator|=
 name|g_strdup_printf
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"%s Channel to Selection"
 argument_list|)
 argument_list|,
@@ -2024,7 +2028,7 @@ name|channel
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Fuzzy Select"
 argument_list|)
@@ -2206,7 +2210,7 @@ name|channel
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Select by Color"
 argument_list|)

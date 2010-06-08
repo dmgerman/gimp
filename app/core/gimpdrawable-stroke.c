@@ -1872,8 +1872,10 @@ name|basePR
 argument_list|,
 name|push_undo
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Render Stroke"
 argument_list|)
 argument_list|,

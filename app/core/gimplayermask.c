@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcde5750103
+DECL|enum|__anon295bb2c30103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -404,8 +404,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Layer Mask"
 argument_list|)
 expr_stmt|;
@@ -1033,8 +1035,10 @@ name|gimp_image_undo_push_layer_mask_apply
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Apply Layer Mask"
 argument_list|)
 argument_list|,
@@ -1305,8 +1309,10 @@ name|gimp_image_undo_push_layer_mask_show
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Show Layer Mask"
 argument_list|)
 argument_list|,

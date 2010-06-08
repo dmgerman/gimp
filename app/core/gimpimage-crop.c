@@ -114,7 +114,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a2bbba50103
+DECL|enum|__anon2c84830f0103
 block|{
 DECL|enumerator|AUTO_CROP_NOTHING
 name|AUTO_CROP_NOTHING
@@ -442,7 +442,7 @@ name|GIMP_UNDO_GROUP_IMAGE_CROP
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Crop Image"
 argument_list|)
@@ -455,8 +455,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Image"
 argument_list|)
 argument_list|)

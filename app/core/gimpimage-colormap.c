@@ -199,8 +199,10 @@ name|gimp_image_undo_push_image_colormap
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Set Colormap"
 argument_list|)
 argument_list|)
@@ -491,8 +493,10 @@ name|gimp_image_undo_push_image_colormap
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Change Colormap entry"
 argument_list|)
 argument_list|)
@@ -609,8 +613,10 @@ name|gimp_image_undo_push_image_colormap
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Color to Colormap"
 argument_list|)
 argument_list|)

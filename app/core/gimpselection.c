@@ -698,8 +698,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Selection"
 argument_list|)
 expr_stmt|;
@@ -707,8 +709,10 @@ name|item_class
 operator|->
 name|stroke_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Stroke Selection"
 argument_list|)
 expr_stmt|;
@@ -788,8 +792,10 @@ name|channel_class
 operator|->
 name|feather_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Feather Selection"
 argument_list|)
 expr_stmt|;
@@ -797,8 +803,10 @@ name|channel_class
 operator|->
 name|sharpen_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Sharpen Selection"
 argument_list|)
 expr_stmt|;
@@ -806,8 +814,10 @@ name|channel_class
 operator|->
 name|clear_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Select None"
 argument_list|)
 expr_stmt|;
@@ -815,8 +825,10 @@ name|channel_class
 operator|->
 name|all_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Select All"
 argument_list|)
 expr_stmt|;
@@ -824,8 +836,10 @@ name|channel_class
 operator|->
 name|invert_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Invert Selection"
 argument_list|)
 expr_stmt|;
@@ -833,8 +847,10 @@ name|channel_class
 operator|->
 name|border_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Border Selection"
 argument_list|)
 expr_stmt|;
@@ -842,8 +858,10 @@ name|channel_class
 operator|->
 name|grow_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Grow Selection"
 argument_list|)
 expr_stmt|;
@@ -851,8 +869,10 @@ name|channel_class
 operator|->
 name|shrink_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Shrink Selection"
 argument_list|)
 expr_stmt|;
@@ -2461,8 +2481,10 @@ argument_list|(
 name|selection
 argument_list|)
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Channel to Selection"
 argument_list|)
 argument_list|)
@@ -3621,8 +3643,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_FLOAT
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Float Selection"
 argument_list|)
 argument_list|)

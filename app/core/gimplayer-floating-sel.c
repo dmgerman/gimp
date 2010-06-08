@@ -310,8 +310,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_ANCHOR
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Anchor Floating Selection"
 argument_list|)
 argument_list|)
@@ -462,8 +464,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_FS_TO_LAYER
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Floating Selection to Layer"
 argument_list|)
 argument_list|)

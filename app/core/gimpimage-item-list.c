@@ -117,8 +117,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Translate Items"
 argument_list|)
 argument_list|)
@@ -225,8 +227,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip Items"
 argument_list|)
 argument_list|)
@@ -334,8 +338,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate Items"
 argument_list|)
 argument_list|)
@@ -466,8 +472,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Items"
 argument_list|)
 argument_list|)

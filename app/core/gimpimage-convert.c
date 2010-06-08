@@ -401,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon28a58d5a0103
+DECL|enum|__anon27ca31f80103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1442,7 +1442,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a58d5a0208
+DECL|struct|__anon27ca31f80208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1685,7 +1685,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a58d5a0308
+DECL|struct|__anon27ca31f80308
 block|{
 DECL|member|used_count
 name|signed
@@ -2982,8 +2982,10 @@ name|GIMP_RGB
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Convert Image to RGB"
 argument_list|)
 expr_stmt|;
@@ -2993,8 +2995,10 @@ name|GIMP_GRAY
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Convert Image to Grayscale"
 argument_list|)
 expr_stmt|;
@@ -3004,8 +3008,10 @@ name|GIMP_INDEXED
 case|:
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Convert Image to Indexed"
 argument_list|)
 expr_stmt|;

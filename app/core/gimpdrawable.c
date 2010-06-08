@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29343c3d0103
+DECL|enum|__anon2be863ed0103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -2121,8 +2121,10 @@ name|drawable
 argument_list|,
 name|progress
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale"
 argument_list|)
 argument_list|,

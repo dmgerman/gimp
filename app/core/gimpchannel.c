@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a4070080103
+DECL|enum|__anon2749a7990103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1223,8 +1223,10 @@ name|item_class
 operator|->
 name|rename_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rename Channel"
 argument_list|)
 expr_stmt|;
@@ -1232,8 +1234,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Channel"
 argument_list|)
 expr_stmt|;
@@ -1241,8 +1245,10 @@ name|item_class
 operator|->
 name|scale_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale Channel"
 argument_list|)
 expr_stmt|;
@@ -1250,8 +1256,10 @@ name|item_class
 operator|->
 name|resize_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Channel"
 argument_list|)
 expr_stmt|;
@@ -1259,8 +1267,10 @@ name|item_class
 operator|->
 name|flip_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip Channel"
 argument_list|)
 expr_stmt|;
@@ -1268,8 +1278,10 @@ name|item_class
 operator|->
 name|rotate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate Channel"
 argument_list|)
 expr_stmt|;
@@ -1277,8 +1289,10 @@ name|item_class
 operator|->
 name|transform_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Channel"
 argument_list|)
 expr_stmt|;
@@ -1286,8 +1300,10 @@ name|item_class
 operator|->
 name|stroke_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Stroke Channel"
 argument_list|)
 expr_stmt|;
@@ -1403,8 +1419,10 @@ name|klass
 operator|->
 name|feather_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Feather Channel"
 argument_list|)
 expr_stmt|;
@@ -1412,8 +1430,10 @@ name|klass
 operator|->
 name|sharpen_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Sharpen Channel"
 argument_list|)
 expr_stmt|;
@@ -1421,8 +1441,10 @@ name|klass
 operator|->
 name|clear_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Clear Channel"
 argument_list|)
 expr_stmt|;
@@ -1430,8 +1452,10 @@ name|klass
 operator|->
 name|all_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Fill Channel"
 argument_list|)
 expr_stmt|;
@@ -1439,8 +1463,10 @@ name|klass
 operator|->
 name|invert_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Invert Channel"
 argument_list|)
 expr_stmt|;
@@ -1448,8 +1474,10 @@ name|klass
 operator|->
 name|border_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Border Channel"
 argument_list|)
 expr_stmt|;
@@ -1457,8 +1485,10 @@ name|klass
 operator|->
 name|grow_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Grow Channel"
 argument_list|)
 expr_stmt|;
@@ -1466,8 +1496,10 @@ name|klass
 operator|->
 name|shrink_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Shrink Channel"
 argument_list|)
 expr_stmt|;
@@ -7916,8 +7948,10 @@ name|gimp_image_undo_push_channel_color
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Set Channel Color"
 argument_list|)
 argument_list|,
@@ -8188,8 +8222,10 @@ name|gimp_image_undo_push_channel_color
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Set Channel Opacity"
 argument_list|)
 argument_list|,

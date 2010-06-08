@@ -144,8 +144,10 @@ name|drawable
 argument_list|,
 name|NULL
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Equalize"
 argument_list|)
 argument_list|,

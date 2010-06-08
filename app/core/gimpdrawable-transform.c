@@ -2496,8 +2496,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform"
 argument_list|)
 argument_list|)
@@ -2762,7 +2764,7 @@ name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Flip"
 argument_list|)
@@ -3116,7 +3118,7 @@ name|GIMP_UNDO_GROUP_TRANSFORM
 argument_list|,
 name|C_
 argument_list|(
-literal|"command"
+literal|"undo-type"
 argument_list|,
 literal|"Rotate"
 argument_list|)
@@ -3668,8 +3670,10 @@ argument_list|)
 condition|)
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Layer"
 argument_list|)
 expr_stmt|;
@@ -3683,8 +3687,10 @@ argument_list|)
 condition|)
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Channel"
 argument_list|)
 expr_stmt|;

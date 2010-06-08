@@ -388,8 +388,10 @@ name|gchar
 modifier|*
 name|undo_desc
 init|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge Visible Layers"
 argument_list|)
 decl_stmt|;
@@ -429,8 +431,10 @@ name|context
 argument_list|,
 name|merge_type
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge Visible Layers"
 argument_list|)
 argument_list|)
@@ -642,8 +646,10 @@ name|context
 argument_list|,
 name|GIMP_FLATTEN_IMAGE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flatten Image"
 argument_list|)
 argument_list|)
@@ -977,8 +983,10 @@ name|context
 argument_list|,
 name|merge_type
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge Down"
 argument_list|)
 argument_list|)
@@ -1081,8 +1089,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_LAYERS_MERGE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge Layer Group"
 argument_list|)
 argument_list|)
@@ -1316,8 +1326,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_VECTORS_MERGE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Merge Visible Paths"
 argument_list|)
 argument_list|)

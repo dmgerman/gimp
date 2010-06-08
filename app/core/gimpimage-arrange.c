@@ -387,8 +387,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_ITEM_DISPLACE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Arrange Objects"
 argument_list|)
 argument_list|)

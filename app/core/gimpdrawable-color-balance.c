@@ -236,8 +236,10 @@ name|drawable
 argument_list|,
 name|progress
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Color Balance"
 argument_list|)
 argument_list|,
@@ -271,8 +273,10 @@ name|drawable
 argument_list|,
 name|progress
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Color Balance"
 argument_list|)
 argument_list|,

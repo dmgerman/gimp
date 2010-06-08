@@ -239,8 +239,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Enable Quick Mask"
 argument_list|)
 argument_list|)
@@ -417,8 +419,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_QUICK_MASK
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Disable Quick Mask"
 argument_list|)
 argument_list|)

@@ -165,8 +165,10 @@ name|gimp_image_undo_push_image_grid
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Grid"
 argument_list|)
 argument_list|,

@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon291340f60103
+DECL|enum|__anon2912edcf0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -400,7 +400,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291340f60203
+DECL|enum|__anon2912edcf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6858,8 +6858,10 @@ name|gimp_image_undo_push_image_resolution
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Change Image Resolution"
 argument_list|)
 argument_list|)
@@ -7055,8 +7057,10 @@ name|gimp_image_undo_push_image_resolution
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Change Image Unit"
 argument_list|)
 argument_list|)
@@ -10676,8 +10680,10 @@ name|gimp_image_undo_push_image_parasite
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Attach Parasite to Image"
 argument_list|)
 argument_list|,
@@ -10841,8 +10847,10 @@ name|gimp_image_undo_push_image_parasite_remove
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Parasite from Image"
 argument_list|)
 argument_list|,
@@ -13125,8 +13133,10 @@ name|gimp_image_undo_push_layer_add
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Layer"
 argument_list|)
 argument_list|,
@@ -13328,8 +13338,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_ITEM_REMOVE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Layer"
 argument_list|)
 argument_list|)
@@ -13377,8 +13389,10 @@ condition|)
 block|{
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Floating Selection"
 argument_list|)
 expr_stmt|;
@@ -13397,8 +13411,10 @@ else|else
 block|{
 name|undo_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Layer"
 argument_list|)
 expr_stmt|;
@@ -14092,8 +14108,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Raise Layer"
 argument_list|)
 argument_list|)
@@ -14151,8 +14169,10 @@ literal|0
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Raise Layer to Top"
 argument_list|)
 argument_list|)
@@ -14288,8 +14308,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lower Layer"
 argument_list|)
 argument_list|)
@@ -14373,8 +14395,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lower Layer to Bottom"
 argument_list|)
 argument_list|)
@@ -14542,8 +14566,10 @@ name|gimp_image_undo_push_channel_add
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Channel"
 argument_list|)
 argument_list|,
@@ -14695,8 +14721,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_ITEM_REMOVE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Channel"
 argument_list|)
 argument_list|)
@@ -14742,8 +14770,10 @@ name|gimp_image_undo_push_channel_remove
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Channel"
 argument_list|)
 argument_list|,
@@ -14933,8 +14963,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Raise Channel"
 argument_list|)
 argument_list|)
@@ -14992,8 +15024,10 @@ literal|0
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Raise Channel to Top"
 argument_list|)
 argument_list|)
@@ -15129,8 +15163,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lower Channel"
 argument_list|)
 argument_list|)
@@ -15214,8 +15250,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lower Channel to Bottom"
 argument_list|)
 argument_list|)
@@ -15383,8 +15421,10 @@ name|gimp_image_undo_push_vectors_add
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Add Path"
 argument_list|)
 argument_list|,
@@ -15519,8 +15559,10 @@ name|gimp_image_undo_push_vectors_remove
 argument_list|(
 name|image
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Remove Path"
 argument_list|)
 argument_list|,
@@ -15689,8 +15731,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Raise Path"
 argument_list|)
 argument_list|)
@@ -15748,8 +15792,10 @@ literal|0
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Raise Path to Top"
 argument_list|)
 argument_list|)
@@ -15885,8 +15931,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lower Path"
 argument_list|)
 argument_list|)
@@ -15970,8 +16018,10 @@ literal|1
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Lower Path to Bottom"
 argument_list|)
 argument_list|)

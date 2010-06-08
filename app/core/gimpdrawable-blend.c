@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77fa8a0108
+DECL|struct|__anon2b99dd580108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b77fa8a0208
+DECL|struct|__anon2b99dd580208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -1011,8 +1011,10 @@ name|bufPR
 argument_list|,
 name|TRUE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Blend"
 argument_list|)
 argument_list|,

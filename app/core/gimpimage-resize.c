@@ -289,8 +289,10 @@ name|image
 argument_list|,
 name|GIMP_UNDO_GROUP_IMAGE_RESIZE
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Image"
 argument_list|)
 argument_list|)
