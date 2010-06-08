@@ -122,11 +122,6 @@ name|GimpImageType
 name|type
 decl_stmt|;
 comment|/* type of drawable               */
-DECL|member|has_alpha
-name|gboolean
-name|has_alpha
-decl_stmt|;
-comment|/* drawable has alpha             */
 DECL|member|private
 name|GimpDrawablePrivate
 modifier|*
