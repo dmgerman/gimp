@@ -39,6 +39,12 @@ directive|include
 file|"gimpwindow.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimp-log.h"
+end_include
+
 begin_function_decl
 specifier|static
 name|gboolean
@@ -165,6 +171,7 @@ argument_list|(
 name|focus
 argument_list|)
 condition|)
+block|{
 name|handled
 operator|=
 name|gtk_window_propagate_key_event
@@ -174,6 +181,18 @@ argument_list|,
 name|event
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|handled
+condition|)
+name|GIMP_LOG
+argument_list|(
+name|KEY_EVENTS
+argument_list|,
+literal|"handled by gtk_window_propagate_key_event(text_widget)"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* invoke control/alt accelerators */
 if|if
 condition|(
@@ -190,6 +209,7 @@ operator||
 name|GDK_MOD1_MASK
 operator|)
 condition|)
+block|{
 name|handled
 operator|=
 name|gtk_window_activate_key
@@ -199,12 +219,25 @@ argument_list|,
 name|event
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|handled
+condition|)
+name|GIMP_LOG
+argument_list|(
+name|KEY_EVENTS
+argument_list|,
+literal|"handled by gtk_window_activate_key(modified)"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* invoke focus widget handlers */
 if|if
 condition|(
 operator|!
 name|handled
 condition|)
+block|{
 name|handled
 operator|=
 name|gtk_window_propagate_key_event
@@ -214,6 +247,18 @@ argument_list|,
 name|event
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|handled
+condition|)
+name|GIMP_LOG
+argument_list|(
+name|KEY_EVENTS
+argument_list|,
+literal|"handled by gtk_window_propagate_key_event(other_widget)"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* invoke non-(control/alt) accelerators */
 if|if
 condition|(
@@ -233,6 +278,7 @@ name|GDK_MOD1_MASK
 operator|)
 operator|)
 condition|)
+block|{
 name|handled
 operator|=
 name|gtk_window_activate_key
@@ -242,6 +288,18 @@ argument_list|,
 name|event
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|handled
+condition|)
+name|GIMP_LOG
+argument_list|(
+name|KEY_EVENTS
+argument_list|,
+literal|"handled by gtk_window_activate_key(unmodified)"
+argument_list|)
+expr_stmt|;
+block|}
 comment|/* chain up, bypassing gtk_window_key_press(), to invoke binding set */
 if|if
 condition|(
@@ -272,6 +330,17 @@ argument_list|(
 name|widget
 argument_list|,
 name|event
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|handled
+condition|)
+name|GIMP_LOG
+argument_list|(
+name|KEY_EVENTS
+argument_list|,
+literal|"handled by widget_class->key_press_event()"
 argument_list|)
 expr_stmt|;
 block|}
