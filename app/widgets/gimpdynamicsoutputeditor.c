@@ -81,7 +81,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ee20e0103
+DECL|enum|__anon27ec0e4c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -94,7 +94,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ee20e0203
+DECL|enum|__anon27ec0e4c0203
 block|{
 DECL|enumerator|INPUT_COLUMN_INDEX
 name|INPUT_COLUMN_INDEX
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276ee20e0303
+DECL|enum|__anon27ec0e4c0303
 block|{
 DECL|enumerator|INPUT_PRESSURE
 name|INPUT_PRESSURE
@@ -2511,6 +2511,11 @@ operator|->
 name|use_fade
 expr_stmt|;
 break|break;
+default|default:
+name|g_warn_if_reached
+argument_list|()
+expr_stmt|;
+return|return;
 block|}
 name|gtk_list_store_set
 argument_list|(
