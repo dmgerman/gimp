@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279249460103
+DECL|enum|__anon2b54685a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -315,6 +315,18 @@ specifier|static
 name|gchar
 modifier|*
 name|gimp_tool_options_editor_get_title
+parameter_list|(
+name|GimpDocked
+modifier|*
+name|docked
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|gboolean
+name|gimp_tool_options_editor_get_prefer_icon
 parameter_list|(
 name|GimpDocked
 modifier|*
@@ -802,6 +814,12 @@ operator|->
 name|get_title
 operator|=
 name|gimp_tool_options_editor_get_title
+expr_stmt|;
+name|docked_iface
+operator|->
+name|get_prefer_icon
+operator|=
+name|gimp_tool_options_editor_get_prefer_icon
 expr_stmt|;
 block|}
 end_function
@@ -1451,6 +1469,24 @@ name|blurb
 argument_list|)
 else|:
 name|NULL
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|gboolean
+DECL|function|gimp_tool_options_editor_get_prefer_icon (GimpDocked * docked)
+name|gimp_tool_options_editor_get_prefer_icon
+parameter_list|(
+name|GimpDocked
+modifier|*
+name|docked
+parameter_list|)
+block|{
+comment|/* We support get_preview() for tab tyles, but we prefer to show our    * icon    */
+return|return
+name|TRUE
 return|;
 block|}
 end_function

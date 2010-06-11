@@ -160,6 +160,12 @@ literal|"key-events"
 block|,
 name|GIMP_LOG_KEY_EVENTS
 block|}
+block|,
+block|{
+literal|"auto-tab-style"
+block|,
+name|GIMP_LOG_AUTO_TAB_STYLE
+block|}
 block|}
 decl_stmt|;
 comment|/*  g_parse_debug_string() has special treatment of the string 'help',        *  but we want to use it for the GIMP_LOG_HELP domain        */
