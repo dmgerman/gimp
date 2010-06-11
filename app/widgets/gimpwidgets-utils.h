@@ -158,6 +158,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|GimpTabStyle
+name|gimp_preview_tab_style_to_icon
+parameter_list|(
+name|GimpTabStyle
+name|tab_style
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 specifier|const
 name|gchar
 modifier|*
