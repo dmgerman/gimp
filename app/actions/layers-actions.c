@@ -647,7 +647,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Merge this layer with the one below it"
+literal|"Merge this layer with the first visible layer below it"
 argument_list|)
 block|,
 name|G_CALLBACK
