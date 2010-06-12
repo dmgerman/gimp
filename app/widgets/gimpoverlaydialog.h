@@ -16,6 +16,12 @@ directive|define
 name|__GIMP_OVERLAY_DIALOG_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|"gimpoverlayframe.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_OVERLAY_DIALOG
 define|#
@@ -103,7 +109,7 @@ struct|struct
 name|_GimpOverlayDialog
 block|{
 DECL|member|parent_instance
-name|GtkBin
+name|GimpOverlayFrame
 name|parent_instance
 decl_stmt|;
 DECL|member|action_area
@@ -121,7 +127,7 @@ struct|struct
 name|_GimpOverlayDialogClass
 block|{
 DECL|member|parent_class
-name|GtkBinClass
+name|GimpOverlayFrameClass
 name|parent_class
 decl_stmt|;
 DECL|member|response
