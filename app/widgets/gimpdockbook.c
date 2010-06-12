@@ -206,7 +206,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a286a500103
+DECL|enum|__anon2b4e70bb0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2121,7 +2121,6 @@ name|GtkAction
 modifier|*
 name|child_menu_action
 decl_stmt|;
-specifier|const
 name|gchar
 modifier|*
 name|label
@@ -2228,6 +2227,11 @@ argument_list|,
 name|TRUE
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|label
 argument_list|)
 expr_stmt|;
 if|if
@@ -2475,7 +2479,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-comment|/*  release gimp_dockable_show_menu()'s references  */
+comment|/*  release gimp_dockbook_show_menu()'s references  */
 name|g_object_set_data
 argument_list|(
 name|G_OBJECT
