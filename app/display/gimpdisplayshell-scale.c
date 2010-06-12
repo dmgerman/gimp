@@ -3249,6 +3249,10 @@ name|GdkEvent
 modifier|*
 name|event
 decl_stmt|;
+name|GtkWidget
+modifier|*
+name|window
+decl_stmt|;
 name|gboolean
 name|event_looks_sane
 decl_stmt|;
@@ -3260,7 +3264,17 @@ name|canvas_pointer_x
 decl_stmt|,
 name|canvas_pointer_y
 decl_stmt|;
-comment|/*  Center on the mouse position instead of the display center if      *  one of the following conditions are fulfilled and pointer is      *  within the canvas:      *      *   (1) there's no current event (the action was triggered by an      *       input controller)      *   (2) the event originates from the canvas (a scroll event)      *   (3) the event originates from the shell (a key press event)      *      *  Basically the only situation where we don't want to center on      *  mouse position is if the action is being called from a menu.      */
+name|window
+operator|=
+name|GTK_WIDGET
+argument_list|(
+name|gimp_display_shell_get_window
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+comment|/*  Center on the mouse position instead of the display center if      *  one of the following conditions are fulfilled and pointer is      *  within the canvas:      *      *   (1) there's no current event (the action was triggered by an      *       input controller)      *   (2) the event originates from the canvas (a scroll event)      *   (3) the event originates from the window (a key press event)      *      *  Basically the only situation where we don't want to center on      *  mouse position is if the action is being called from a menu.      */
 name|event
 operator|=
 name|gtk_get_current_event
@@ -3268,6 +3282,7 @@ argument_list|()
 expr_stmt|;
 name|event_looks_sane
 operator|=
+operator|(
 operator|!
 name|event
 operator|||
@@ -3285,10 +3300,8 @@ argument_list|(
 name|event
 argument_list|)
 operator|==
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
+name|window
+operator|)
 expr_stmt|;
 name|gtk_widget_get_pointer
 argument_list|(
