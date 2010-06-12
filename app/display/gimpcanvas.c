@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6ec9820103
+DECL|enum|__anon2baadd490103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1164,7 +1164,7 @@ name|widget
 argument_list|)
 argument_list|)
 decl_stmt|;
-comment|/* override GtkContainer's focus() implementation which would always    * give focus to the canvas because it is focussable. Instead, try    * navigating in the focussed overlay child first, and use    * GtkContainer's default implementation only if that fails (which    * happens when cursor navigation leaves the overlay child's    * widget).    */
+comment|/* override GtkContainer's focus() implementation which would always    * give focus to the canvas because it is focussable. Instead, try    * navigating in the focussed overlay child first, and use    * GtkContainer's default implementation only if that fails (which    * happens when focus navigation leaves the overlay child).    */
 if|if
 condition|(
 name|focus
