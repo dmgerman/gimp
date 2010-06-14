@@ -72,6 +72,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationCage
+typedef|typedef
+name|struct
+name|_GimpOperationCage
+name|GimpOperationCage
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationCurves
 typedef|typedef
 name|struct

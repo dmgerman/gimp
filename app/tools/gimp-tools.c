@@ -132,6 +132,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcagetool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpclonetool.h"
 end_include
 
@@ -524,6 +530,8 @@ block|,
 name|gimp_align_tool_register
 block|,
 name|gimp_move_tool_register
+block|,
+name|gimp_cage_tool_register
 block|,
 comment|/*  non-modifying tools  */
 name|gimp_measure_tool_register
