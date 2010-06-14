@@ -174,22 +174,6 @@ value|10
 end_define
 
 begin_define
-DECL|macro|GIMP_UI_WINDOW_POSITION_EPSILON
-define|#
-directive|define
-name|GIMP_UI_WINDOW_POSITION_EPSILON
-value|10
-end_define
-
-begin_define
-DECL|macro|GIMP_UI_POSITION_EPSILON
-define|#
-directive|define
-name|GIMP_UI_POSITION_EPSILON
-value|1
-end_define
-
-begin_define
 DECL|macro|GIMP_UI_POSITION_EPSILON
 define|#
 directive|define
@@ -228,7 +212,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29a8c0f30108
+DECL|struct|__anon2b77e5c90108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
