@@ -53,10 +53,22 @@ name|GIMP_TEST_IMAGE_SIZE
 value|100
 end_define
 
+begin_define
+DECL|macro|ADD_TEST (function)
+define|#
+directive|define
+name|ADD_TEST
+parameter_list|(
+name|function
+parameter_list|)
+define|\
+value|g_test_add ("/gimp-layer-grouping/" #function, \               GimpTestFixture, \               gimp, \               gimp_test_image_setup, \               function, \               gimp_test_image_teardown);
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b68bf840108
+DECL|struct|__anon294003590108
 block|{
 DECL|member|image
 name|GimpImage
@@ -99,21 +111,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_test_add_layer
-parameter_list|(
-name|GimpTestFixture
-modifier|*
-name|fixture
-parameter_list|,
-name|gconstpointer
-name|data
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_decl_stmt
 DECL|variable|gimp
 specifier|static
@@ -124,78 +121,6 @@ init|=
 name|NULL
 decl_stmt|;
 end_decl_stmt
-
-begin_function
-name|int
-DECL|function|main (int argc,char ** argv)
-name|main
-parameter_list|(
-name|int
-name|argc
-parameter_list|,
-name|char
-modifier|*
-modifier|*
-name|argv
-parameter_list|)
-block|{
-name|g_thread_init
-argument_list|(
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_type_init
-argument_list|()
-expr_stmt|;
-name|g_test_init
-argument_list|(
-operator|&
-name|argc
-argument_list|,
-operator|&
-name|argv
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_test_utils_set_gimp2_directory
-argument_list|(
-literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
-argument_list|,
-literal|"app/tests/gimpdir"
-argument_list|)
-expr_stmt|;
-comment|/* We share the same application instance across all tests */
-name|gimp
-operator|=
-name|gimp_init_for_testing
-argument_list|(
-name|TRUE
-argument_list|)
-expr_stmt|;
-comment|/* Setup the tests */
-name|g_test_add
-argument_list|(
-literal|"/gimp-layer-grouping/add-layer"
-argument_list|,
-name|GimpTestFixture
-argument_list|,
-name|NULL
-argument_list|,
-name|gimp_test_image_setup
-argument_list|,
-name|gimp_test_add_layer
-argument_list|,
-name|gimp_test_image_teardown
-argument_list|)
-expr_stmt|;
-comment|/* Run the tests and return status */
-return|return
-name|g_test_run
-argument_list|()
-return|;
-block|}
-end_function
 
 begin_comment
 comment|/**  * gimp_test_image_setup:  * @fixture:  * @data:  *  * Test fixture setup for a single image.  **/
@@ -262,14 +187,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_add_layer:  * @fixture:  * @data:  *  * Super basic test that makes sure we can add a layer.  **/
+comment|/**  * add_layer:  * @fixture:  * @data:  *  * Super basic test that makes sure we can add a layer.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_add_layer (GimpTestFixture * fixture,gconstpointer data)
-name|gimp_test_add_layer
+DECL|function|add_layer (GimpTestFixture * fixture,gconstpointer data)
+name|add_layer
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -345,6 +270,68 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|int
+DECL|function|main (int argc,char ** argv)
+name|main
+parameter_list|(
+name|int
+name|argc
+parameter_list|,
+name|char
+modifier|*
+modifier|*
+name|argv
+parameter_list|)
+block|{
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_type_init
+argument_list|()
+expr_stmt|;
+name|g_test_init
+argument_list|(
+operator|&
+name|argc
+argument_list|,
+operator|&
+name|argv
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_test_utils_set_gimp2_directory
+argument_list|(
+literal|"GIMP_TESTING_ABS_TOP_SRCDIR"
+argument_list|,
+literal|"app/tests/gimpdir"
+argument_list|)
+expr_stmt|;
+comment|/* We share the same application instance across all tests */
+name|gimp
+operator|=
+name|gimp_init_for_testing
+argument_list|(
+name|TRUE
+argument_list|)
+expr_stmt|;
+comment|/* Add tests */
+name|ADD_TEST
+argument_list|(
+name|add_layer
+argument_list|)
+expr_stmt|;
+comment|/* Run the tests and return status */
+return|return
+name|g_test_run
+argument_list|()
+return|;
 block|}
 end_function
 

@@ -69,10 +69,22 @@ directive|include
 file|"gimp-app-test-utils.h"
 end_include
 
+begin_define
+DECL|macro|ADD_TEST (function)
+define|#
+directive|define
+name|ADD_TEST
+parameter_list|(
+name|function
+parameter_list|)
+define|\
+value|g_test_add ("/gimp-window-management/" #function, \               GimpTestFixture, \               NULL, \               NULL, \               function, \               NULL);
+end_define
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c953a70108
+DECL|struct|__anon29fb5c2b0108
 block|{
 DECL|member|dummy
 name|int
@@ -87,7 +99,7 @@ end_typedef
 begin_function_decl
 specifier|static
 name|void
-name|gimp_test_window_roles
+name|window_roles
 parameter_list|(
 name|GimpTestFixture
 modifier|*
@@ -167,20 +179,10 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Setup the tests */
-name|g_test_add
+comment|/* Add tests */
+name|ADD_TEST
 argument_list|(
-literal|"/gimp-window-management/window-roles"
-argument_list|,
-name|GimpTestFixture
-argument_list|,
-name|NULL
-argument_list|,
-name|NULL
-argument_list|,
-name|gimp_test_window_roles
-argument_list|,
-name|NULL
+name|window_roles
 argument_list|)
 expr_stmt|;
 comment|/* Run the tests and return status */
@@ -212,14 +214,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_test_window_roles:  * @fixture:  * @data:  *  * Makes sure that different windows have the right roles specified.  **/
+comment|/**  * window_roles:  * @fixture:  * @data:  *  * Makes sure that different windows have the right roles specified.  **/
 end_comment
 
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_test_window_roles (GimpTestFixture * fixture,gconstpointer data)
-name|gimp_test_window_roles
+DECL|function|window_roles (GimpTestFixture * fixture,gconstpointer data)
+name|window_roles
 parameter_list|(
 name|GimpTestFixture
 modifier|*
