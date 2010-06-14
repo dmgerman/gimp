@@ -265,6 +265,10 @@ expr_stmt|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_display_shell_transform_xy:  * @shell:  * @x:  * @y:  * @nx:  * @ny:  * @use_offsets:  *  * Transforms an image coordinate to a shell coordinate.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_display_shell_transform_xy (const GimpDisplayShell * shell,gdouble x,gdouble y,gint * nx,gint * ny,gboolean use_offsets)
