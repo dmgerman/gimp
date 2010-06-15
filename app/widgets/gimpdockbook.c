@@ -206,7 +206,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e70bb0103
+DECL|enum|__anon2b3cfa7b0103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2515,11 +2515,6 @@ modifier|*
 name|dockable
 parameter_list|)
 block|{
-name|gimp_dockbook_refresh_tab_layout_lut
-argument_list|(
-name|dockbook
-argument_list|)
-expr_stmt|;
 name|gtk_notebook_set_current_page
 argument_list|(
 name|GTK_NOTEBOOK
@@ -2558,13 +2553,7 @@ name|GimpDockable
 modifier|*
 name|dockable
 parameter_list|)
-block|{
-name|gimp_dockbook_refresh_tab_layout_lut
-argument_list|(
-name|dockbook
-argument_list|)
-expr_stmt|;
-block|}
+block|{ }
 end_function
 
 begin_comment
