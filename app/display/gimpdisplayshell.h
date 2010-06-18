@@ -711,6 +711,11 @@ name|gboolean
 name|event_delay
 decl_stmt|;
 comment|/* TRUE if theres an unsent event in                                           the history buffer                  */
+DECL|member|zoom_focus_pointer_queue
+name|GQueue
+modifier|*
+name|zoom_focus_pointer_queue
+decl_stmt|;
 DECL|member|event_delay_timeout
 name|gint
 name|event_delay_timeout

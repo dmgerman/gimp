@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9355eb0103
+DECL|enum|__anon297305550103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9355eb0203
+DECL|enum|__anon297305550203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1268,6 +1268,13 @@ argument_list|(
 name|GimpCoords
 argument_list|)
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|zoom_focus_pointer_queue
+operator|=
+name|g_queue_new
+argument_list|()
 expr_stmt|;
 name|gtk_widget_set_events
 argument_list|(
