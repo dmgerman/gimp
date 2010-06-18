@@ -97,7 +97,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2931772d0103
+DECL|enum|__anon2774691c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -759,7 +759,7 @@ literal|"default-snap-to-canvas"
 argument_list|,
 name|DEFAULT_SNAP_TO_CANVAS_BLURB
 argument_list|,
-name|TRUE
+name|FALSE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
