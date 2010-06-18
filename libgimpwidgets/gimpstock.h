@@ -365,6 +365,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_CURVES
 value|"gimp-tool-curves"
+DECL|macro|GIMP_STOCK_TOOL_DESATURATE
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_DESATURATE
+value|"gimp-tool-desaturate"
 DECL|macro|GIMP_STOCK_TOOL_DODGE
 define|#
 directive|define
@@ -1060,11 +1065,6 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_PRESET
 value|GIMP_STOCK_TOOL_PAINTBRUSH
-DECL|macro|GIMP_STOCK_TOOL_DESATURATE
-define|#
-directive|define
-name|GIMP_STOCK_TOOL_DESATURATE
-value|GIMP_STOCK_CONVERT_GRAYSCALE
 name|void
 name|gimp_stock_init
 parameter_list|(
