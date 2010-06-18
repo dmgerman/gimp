@@ -960,7 +960,7 @@ name|shell
 operator|->
 name|hsbdata
 argument_list|,
-literal|"value-changed"
+literal|"notify::value"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -976,7 +976,7 @@ name|shell
 operator|->
 name|vsbdata
 argument_list|,
-literal|"value-changed"
+literal|"notify::value"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
