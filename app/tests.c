@@ -42,6 +42,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpsessioninfo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"base/base.h"
 end_include
 
@@ -195,6 +201,10 @@ name|gboolean
 name|show_gui
 parameter_list|)
 block|{
+name|GimpSessionInfoClass
+modifier|*
+name|klass
+decl_stmt|;
 name|Gimp
 modifier|*
 name|gimp
@@ -207,6 +217,21 @@ argument_list|)
 expr_stmt|;
 name|g_type_init
 argument_list|()
+expr_stmt|;
+comment|/* Introduce an error margin for positions written to sessionrc */
+name|klass
+operator|=
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_SESSION_INFO
+argument_list|)
+expr_stmt|;
+name|gimp_session_info_class_set_position_accuracy
+argument_list|(
+name|klass
+argument_list|,
+literal|5
+argument_list|)
 expr_stmt|;
 comment|/* from app_run() */
 name|gimp
@@ -289,6 +314,11 @@ argument_list|(
 name|gimp
 argument_list|,
 name|gimp_status_func_dummy
+argument_list|)
+expr_stmt|;
+name|g_type_class_unref
+argument_list|(
+name|klass
 argument_list|)
 expr_stmt|;
 return|return
