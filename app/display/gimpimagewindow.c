@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbbc0300103
+DECL|enum|__anon2c70b4d60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbbc0300208
+DECL|struct|__anon2c70b4d60208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -572,6 +572,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|new_display
+parameter_list|,
+name|gboolean
+name|from_switch_page
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -5130,6 +5133,9 @@ argument_list|(
 name|window
 argument_list|,
 name|active_display
+argument_list|,
+name|TRUE
+comment|/*from_switch_page*/
 argument_list|)
 expr_stmt|;
 name|gimp_ui_manager_update
@@ -5347,6 +5353,9 @@ argument_list|(
 name|window
 argument_list|,
 name|display
+argument_list|,
+name|FALSE
+comment|/*from_switch_page*/
 argument_list|)
 expr_stmt|;
 name|view
@@ -5599,7 +5608,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_session_update (GimpImageWindow * window,GimpDisplay * new_display)
+DECL|function|gimp_image_window_session_update (GimpImageWindow * window,GimpDisplay * new_display,gboolean from_switch_page)
 name|gimp_image_window_session_update
 parameter_list|(
 name|GimpImageWindow
@@ -5609,6 +5618,9 @@ parameter_list|,
 name|GimpDisplay
 modifier|*
 name|new_display
+parameter_list|,
+name|gboolean
+name|from_switch_page
 parameter_list|)
 block|{
 name|GimpImageWindowPrivate
@@ -5704,7 +5716,12 @@ operator|==
 literal|0
 condition|)
 block|{
-comment|/* Always session manage the single image window */
+comment|/* Always session manage the single image window, but not if all        * we did was switch tabs        */
+if|if
+condition|(
+operator|!
+name|from_switch_page
+condition|)
 name|gimp_image_window_session_apply
 argument_list|(
 name|window
@@ -5828,6 +5845,9 @@ operator|->
 name|active_shell
 operator|->
 name|display
+argument_list|,
+name|FALSE
+comment|/*from_switch_page*/
 argument_list|)
 expr_stmt|;
 block|}
