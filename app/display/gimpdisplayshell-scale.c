@@ -406,6 +406,16 @@ name|hsbdata
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Update upper and lower value before we set the new value */
+name|gimp_display_shell_scroll_setup_hscrollbar
+argument_list|(
+name|shell
+argument_list|,
+name|shell
+operator|->
+name|offset_x
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|shell
@@ -442,15 +452,6 @@ operator|/
 literal|2
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scroll_setup_hscrollbar
-argument_list|(
-name|shell
-argument_list|,
-name|shell
-operator|->
-name|offset_x
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
@@ -475,6 +476,16 @@ name|vsbdata
 argument_list|)
 argument_list|)
 expr_stmt|;
+comment|/* Update upper and lower value before we set the new value */
+name|gimp_display_shell_scroll_setup_vscrollbar
+argument_list|(
+name|shell
+argument_list|,
+name|shell
+operator|->
+name|offset_y
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|shell
@@ -511,15 +522,6 @@ operator|/
 literal|2
 argument_list|,
 name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_scroll_setup_vscrollbar
-argument_list|(
-name|shell
-argument_list|,
-name|shell
-operator|->
-name|offset_y
 argument_list|)
 expr_stmt|;
 name|g_object_thaw_notify
