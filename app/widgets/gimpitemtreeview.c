@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aaeb5360103
+DECL|enum|__anon2790509f0103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -2284,7 +2284,7 @@ expr_stmt|;
 block|}
 name|g_list_free
 argument_list|(
-name|list
+name|children
 argument_list|)
 expr_stmt|;
 block|}
