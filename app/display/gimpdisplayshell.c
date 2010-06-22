@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon297305550103
+DECL|enum|__anon299f9c640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon297305550203
+DECL|enum|__anon299f9c640203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3704,6 +3704,27 @@ expr_stmt|;
 name|shell
 operator|->
 name|event_queue
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|shell
+operator|->
+name|zoom_focus_pointer_queue
+condition|)
+block|{
+name|g_queue_free
+argument_list|(
+name|shell
+operator|->
+name|zoom_focus_pointer_queue
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|zoom_focus_pointer_queue
 operator|=
 name|NULL
 expr_stmt|;
