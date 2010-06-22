@@ -5213,6 +5213,11 @@ argument_list|(
 name|fp
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|entries
+argument_list|)
+expr_stmt|;
 return|return
 name|GIMP_PDB_SUCCESS
 return|;

@@ -891,6 +891,11 @@ index|]
 operator|=
 literal|'\0'
 expr_stmt|;
+name|g_free
+argument_list|(
+name|name
+argument_list|)
+expr_stmt|;
 block|}
 switch|switch
 condition|(

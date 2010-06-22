@@ -112,7 +112,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2782e1b90103
+DECL|enum|__anon296669c70103
 block|{
 DECL|enumerator|SQUARES
 name|SQUARES
@@ -174,7 +174,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782e1b90208
+DECL|struct|__anon296669c70208
 block|{
 DECL|member|x
 DECL|member|y
@@ -192,7 +192,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782e1b90308
+DECL|struct|__anon296669c70308
 block|{
 DECL|member|npts
 name|guint
@@ -214,7 +214,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782e1b90408
+DECL|struct|__anon296669c70408
 block|{
 DECL|member|base_x
 DECL|member|base_y
@@ -243,7 +243,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2782e1b90508
+DECL|struct|__anon296669c70508
 block|{
 DECL|member|tile_size
 name|gdouble
@@ -12112,7 +12112,19 @@ condition|(
 operator|!
 name|total
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|max_scanlines
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|min_scanlines
+argument_list|)
+expr_stmt|;
 return|return;
+block|}
 if|if
 condition|(
 operator|(

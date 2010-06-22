@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb79a860108
+DECL|struct|__anon29d3eda30108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb79a860208
+DECL|struct|__anon29d3eda30208
 block|{
 DECL|member|run
 name|gboolean
@@ -5923,6 +5923,11 @@ name|tmpvals
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|def_str
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6528,7 +6533,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bb79a860308
+DECL|struct|__anon29d3eda30308
 block|{
 DECL|member|pub
 name|struct
