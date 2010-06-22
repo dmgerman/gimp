@@ -438,14 +438,9 @@ literal|1
 decl_stmt|;
 name|source
 operator|=
-name|temp_buf_copy
-argument_list|(
 name|brush
 operator|->
 name|mask
-argument_list|,
-name|NULL
-argument_list|)
 expr_stmt|;
 name|gimp_brush_transform_matrix
 argument_list|(
