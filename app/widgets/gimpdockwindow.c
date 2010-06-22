@@ -221,7 +221,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28db4a4d0103
+DECL|enum|__anon27fe0fcf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3086,9 +3086,8 @@ decl_stmt|;
 if|if
 condition|(
 name|desc
-operator|!=
-name|NULL
 condition|)
+block|{
 name|gtk_window_set_title
 argument_list|(
 name|GTK_WINDOW
@@ -3099,6 +3098,12 @@ argument_list|,
 name|desc
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|desc
+argument_list|)
+expr_stmt|;
+block|}
 name|dock_window
 operator|->
 name|p
