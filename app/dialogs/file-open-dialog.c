@@ -432,6 +432,24 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
+comment|/* When we are going to open new image windows, unset the transient    * window. We don't need it since we will use gdk_window_raise() to    * keep the dialog on top. And if we don't do it, then the dialog    * will pull the image window it was invoked from on top of all the    * new opened image windows, and we don't want that to happen.    */
+if|if
+condition|(
+operator|!
+name|dialog
+operator|->
+name|open_as_layers
+condition|)
+name|gtk_window_set_transient_for
+argument_list|(
+name|GTK_WINDOW
+argument_list|(
+name|open_dialog
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|list
