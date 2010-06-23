@@ -2117,6 +2117,11 @@ argument_list|(
 name|other_widget
 argument_list|)
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|widget
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
