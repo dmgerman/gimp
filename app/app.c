@@ -802,6 +802,14 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|DEBUG_INSTANCES
+name|gimp_object_debug_instances
+argument_list|()
+expr_stmt|;
+endif|#
+directive|endif
 name|errors_exit
 argument_list|()
 expr_stmt|;
