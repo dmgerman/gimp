@@ -594,6 +594,7 @@ name|success
 operator|=
 name|TRUE
 expr_stmt|;
+comment|/* Make the dialog stay on top of all images we open if                * we open say 10 at once                */
 name|gdk_window_raise
 argument_list|(
 name|gtk_widget_get_window
