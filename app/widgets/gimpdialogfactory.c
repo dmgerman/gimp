@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5c5bcf0103
+DECL|enum|__anon297d58350103
 block|{
 DECL|enumerator|DOCK_WINDOW_ADDED
 name|DOCK_WINDOW_ADDED
@@ -636,9 +636,18 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"%s: stale non-toplevel entries in factory->p->open_dialogs"
+literal|"%s: %d stale non-toplevel entries in factory->p->open_dialogs"
 argument_list|,
 name|G_STRFUNC
+argument_list|,
+name|g_list_length
+argument_list|(
+name|factory
+operator|->
+name|p
+operator|->
+name|open_dialogs
+argument_list|)
 argument_list|)
 expr_stmt|;
 break|break;
