@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2891ec090103
+DECL|enum|__anon274b88470103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1487,8 +1487,18 @@ argument_list|,
 literal|"gimp-dynamics-standard"
 argument_list|)
 expr_stmt|;
-name|g_object_ref
+name|g_object_add_weak_pointer
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|standard_dynamics
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|*
+operator|)
+operator|&
 name|standard_dynamics
 argument_list|)
 expr_stmt|;

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad2b5c30103
+DECL|enum|__anon2b786ef00103
 block|{
 DECL|enumerator|SPACING_CHANGED
 name|SPACING_CHANGED
@@ -96,7 +96,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad2b5c30203
+DECL|enum|__anon2b786ef00203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1801,8 +1801,18 @@ argument_list|,
 literal|"gimp-brush-standard"
 argument_list|)
 expr_stmt|;
-name|g_object_ref
+name|g_object_add_weak_pointer
 argument_list|(
+name|G_OBJECT
+argument_list|(
+name|standard_brush
+argument_list|)
+argument_list|,
+operator|(
+name|gpointer
+operator|*
+operator|)
+operator|&
 name|standard_brush
 argument_list|)
 expr_stmt|;
