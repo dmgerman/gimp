@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2acffddf0103
+DECL|enum|__anon2be5ac5c0103
 block|{
 DECL|enumerator|CANCEL
 name|CANCEL
@@ -740,9 +740,21 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
 name|was_grabbed
 condition|)
+return|return;
+comment|/* ignore grabs on one of our children, like the scrollbar */
+if|if
+condition|(
+name|gtk_widget_is_ancestor
+argument_list|(
+name|gtk_grab_get_current
+argument_list|()
+argument_list|,
+name|widget
+argument_list|)
+condition|)
+return|return;
 name|g_signal_emit
 argument_list|(
 name|widget
