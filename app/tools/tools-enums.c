@@ -365,6 +365,14 @@ literal|"thirds"
 block|}
 block|,
 block|{
+name|GIMP_RECTANGLE_GUIDE_FIFTHS
+block|,
+literal|"GIMP_RECTANGLE_GUIDE_FIFTHS"
+block|,
+literal|"fifths"
+block|}
+block|,
+block|{
 name|GIMP_RECTANGLE_GUIDE_GOLDEN
 block|,
 literal|"GIMP_RECTANGLE_GUIDE_GOLDEN"
@@ -430,6 +438,19 @@ argument_list|(
 literal|"rectangle-guide"
 argument_list|,
 literal|"Rule of thirds"
+argument_list|)
+block|,
+name|NULL
+block|}
+block|,
+block|{
+name|GIMP_RECTANGLE_GUIDE_FIFTHS
+block|,
+name|NC_
+argument_list|(
+literal|"rectangle-guide"
+argument_list|,
+literal|"Rule of fifths"
 argument_list|)
 block|,
 name|NULL
