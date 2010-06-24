@@ -358,6 +358,7 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+comment|/* This is evil: the hash table of "insert_data" is created on    * demand when GimpContainerView API is used, using a    * value_free_func that is set in the interface_init functions of    * its implementors. Therefore, no GimpContainerView API must be    * called from any init() function, because the interface_init()    * function of a subclass that sets the right value_free_func might    * not have been called yet, leaving the insert_data hash table    * without memory management.    *    * Call GimpContainerView API from GObject::constructed() instead,    * which runs after everything is set up correctly.    */
 name|gimp_container_view_set_dnd_widget
 argument_list|(
 name|GIMP_CONTAINER_VIEW
