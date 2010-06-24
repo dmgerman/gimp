@@ -2465,6 +2465,15 @@ name|image_ui_manager
 operator|=
 name|NULL
 expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|ui_configurer
+argument_list|)
+expr_stmt|;
+name|ui_configurer
+operator|=
+name|NULL
+expr_stmt|;
 name|session_exit
 argument_list|(
 name|gimp
