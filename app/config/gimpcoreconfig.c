@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2a318b0103
+DECL|enum|__anon28a4b24d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1590,6 +1590,10 @@ name|g_object_new
 argument_list|(
 name|GIMP_TYPE_TEMPLATE
 argument_list|,
+literal|"name"
+argument_list|,
+literal|"Default Image"
+argument_list|,
 literal|"comment"
 argument_list|,
 name|DEFAULT_COMMENT
@@ -1620,6 +1624,10 @@ operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_GRID
+argument_list|,
+literal|"name"
+argument_list|,
+literal|"Default Grid"
 argument_list|,
 name|NULL
 argument_list|)
