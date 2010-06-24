@@ -1455,7 +1455,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon290235da0103
+DECL|enum|__anon2b1d95d60103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1469,7 +1469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon290235da0203
+DECL|enum|__anon2b1d95d60203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -8787,7 +8787,7 @@ name|paint_name
 operator|=
 name|g_strdup
 argument_list|(
-literal|"GimpPaintbrush"
+literal|"gimp-paintbrush"
 argument_list|)
 expr_stmt|;
 name|paint_info
