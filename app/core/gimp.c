@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2916e56e0103
+DECL|enum|__anon2c1497750103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -1414,6 +1414,20 @@ operator|->
 name|tool_info_list
 condition|)
 block|{
+name|gimp_container_foreach
+argument_list|(
+name|gimp
+operator|->
+name|tool_info_list
+argument_list|,
+operator|(
+name|GFunc
+operator|)
+name|g_object_run_dispose
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|gimp
