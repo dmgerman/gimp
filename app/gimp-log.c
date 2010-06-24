@@ -18,6 +18,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-debug.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-log.h"
 end_include
 
@@ -166,6 +172,12 @@ literal|"auto-tab-style"
 block|,
 name|GIMP_LOG_AUTO_TAB_STYLE
 block|}
+block|,
+block|{
+literal|"instances"
+block|,
+name|GIMP_LOG_INSTANCES
+block|}
 block|}
 decl_stmt|;
 comment|/*  g_parse_debug_string() has special treatment of the string 'help',        *  but we want to use it for the GIMP_LOG_HELP domain        */
@@ -198,6 +210,15 @@ argument_list|(
 name|log_keys
 argument_list|)
 argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|gimp_log_flags
+operator|&
+name|GIMP_LOG_INSTANCES
+condition|)
+name|gimp_debug_enable_instances
+argument_list|()
 expr_stmt|;
 block|}
 block|}

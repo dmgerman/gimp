@@ -183,6 +183,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-debug.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
@@ -802,14 +808,9 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|DEBUG_INSTANCES
-name|gimp_object_debug_instances
+name|gimp_debug_instances
 argument_list|()
 expr_stmt|;
-endif|#
-directive|endif
 name|errors_exit
 argument_list|()
 expr_stmt|;
