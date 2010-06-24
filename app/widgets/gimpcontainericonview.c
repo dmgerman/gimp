@@ -2594,15 +2594,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerIconView
-modifier|*
-name|icon_view
-init|=
-name|GIMP_CONTAINER_ICON_VIEW
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 if|if
 condition|(
 name|context
@@ -2618,12 +2609,6 @@ name|data
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|#
-directive|if
-literal|0
-block|if (icon_view->priv->dnd_renderer)     return icon_view->priv->dnd_renderer->viewable;
-endif|#
-directive|endif
 return|return
 name|NULL
 return|;
@@ -2645,15 +2630,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpContainerIconView
-modifier|*
-name|icon_view
-init|=
-name|GIMP_CONTAINER_ICON_VIEW
-argument_list|(
-name|data
-argument_list|)
-decl_stmt|;
 name|GimpViewRenderer
 modifier|*
 name|renderer
