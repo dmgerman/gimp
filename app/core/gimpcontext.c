@@ -1455,7 +1455,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d95d60103
+DECL|enum|__anon2b9973290103
 block|{
 DECL|enumerator|GIMP_CONTEXT_PROP_0
 name|GIMP_CONTEXT_PROP_0
@@ -1469,7 +1469,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1d95d60203
+DECL|enum|__anon2b9973290203
 block|{
 DECL|enumerator|DUMMY_0
 name|DUMMY_0
@@ -1677,105 +1677,6 @@ init|=
 block|{
 literal|0
 block|}
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_tool_info
-specifier|static
-name|GimpToolInfo
-modifier|*
-name|standard_tool_info
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_paint_info
-specifier|static
-name|GimpPaintInfo
-modifier|*
-name|standard_paint_info
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_brush
-specifier|static
-name|GimpBrush
-modifier|*
-name|standard_brush
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_dynamics
-specifier|static
-name|GimpDynamics
-modifier|*
-name|standard_dynamics
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_pattern
-specifier|static
-name|GimpPattern
-modifier|*
-name|standard_pattern
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_gradient
-specifier|static
-name|GimpGradient
-modifier|*
-name|standard_gradient
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_palette
-specifier|static
-name|GimpPalette
-modifier|*
-name|standard_palette
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_tool_preset
-specifier|static
-name|GimpToolPreset
-modifier|*
-name|standard_tool_preset
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
-DECL|variable|standard_font
-specifier|static
-name|GimpFont
-modifier|*
-name|standard_font
-init|=
-name|NULL
 decl_stmt|;
 end_decl_stmt
 
@@ -6752,7 +6653,12 @@ name|tool_info
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_tool_info
+name|gimp_tool_info_get_standard
+argument_list|(
+name|src
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -6788,7 +6694,12 @@ name|paint_info
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_paint_info
+name|gimp_paint_info_get_standard
+argument_list|(
+name|src
+operator|->
+name|gimp
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -6878,7 +6789,10 @@ name|brush
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_brush
+name|gimp_brush_get_standard
+argument_list|(
+name|src
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -6914,7 +6828,10 @@ name|dynamics
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_dynamics
+name|gimp_dynamics_get_standard
+argument_list|(
+name|src
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -6950,7 +6867,10 @@ name|pattern
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_pattern
+name|gimp_pattern_get_standard
+argument_list|(
+name|src
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -6986,7 +6906,10 @@ name|gradient
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_gradient
+name|gimp_gradient_get_standard
+argument_list|(
+name|src
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -7022,7 +6945,10 @@ name|palette
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_palette
+name|gimp_palette_get_standard
+argument_list|(
+name|src
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -7058,7 +6984,10 @@ name|tool_preset
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_tool_preset
+name|gimp_tool_preset_get_standard
+argument_list|(
+name|src
+argument_list|)
 expr_stmt|;
 name|src_name
 operator|=
@@ -7094,7 +7023,8 @@ name|font
 expr_stmt|;
 name|standard_object
 operator|=
-name|standard_font
+name|gimp_font_get_standard
+argument_list|()
 expr_stmt|;
 name|src_name
 operator|=
@@ -8429,20 +8359,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_tool_info
-condition|)
-name|standard_tool_info
-operator|=
-name|gimp_tool_info_get_standard
-argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|tool_info
@@ -8458,7 +8374,12 @@ name|tool_name
 operator|&&
 name|tool_info
 operator|!=
-name|standard_tool_info
+name|gimp_tool_info_get_standard
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -8538,7 +8459,12 @@ if|if
 condition|(
 name|tool_info
 operator|!=
-name|standard_tool_info
+name|gimp_tool_info_get_standard
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -8908,20 +8834,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_paint_info
-condition|)
-name|standard_paint_info
-operator|=
-name|gimp_paint_info_get_standard
-argument_list|(
-name|context
-operator|->
-name|gimp
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|paint_info
@@ -8937,7 +8849,12 @@ name|paint_name
 operator|&&
 name|paint_info
 operator|!=
-name|standard_paint_info
+name|gimp_paint_info_get_standard
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -9017,7 +8934,12 @@ if|if
 condition|(
 name|paint_info
 operator|!=
-name|standard_paint_info
+name|gimp_paint_info_get_standard
+argument_list|(
+name|context
+operator|->
+name|gimp
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -10270,21 +10192,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_brush
-condition|)
-name|standard_brush
-operator|=
-name|GIMP_BRUSH
-argument_list|(
-name|gimp_brush_get_standard
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|brush
@@ -10300,7 +10207,13 @@ name|brush_name
 operator|&&
 name|brush
 operator|!=
-name|standard_brush
+name|GIMP_BRUSH
+argument_list|(
+name|gimp_brush_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -10380,7 +10293,13 @@ if|if
 condition|(
 name|brush
 operator|!=
-name|standard_brush
+name|GIMP_BRUSH
+argument_list|(
+name|gimp_brush_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -10727,32 +10646,13 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_dynamics
-condition|)
-block|{
-name|standard_dynamics
-operator|=
-name|GIMP_DYNAMICS
-argument_list|(
-name|gimp_dynamics_get_standard
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-if|if
-condition|(
 name|context
 operator|->
 name|dynamics
 operator|==
 name|dynamics
 condition|)
-block|{
 return|return;
-block|}
 if|if
 condition|(
 name|context
@@ -10761,7 +10661,13 @@ name|dynamics_name
 operator|&&
 name|dynamics
 operator|!=
-name|standard_dynamics
+name|GIMP_DYNAMICS
+argument_list|(
+name|gimp_dynamics_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -10778,7 +10684,7 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-comment|/*  disconnect from the old 's signals  */
+comment|/*  disconnect from the old dynamics' signals  */
 if|if
 condition|(
 name|context
@@ -10841,7 +10747,13 @@ if|if
 condition|(
 name|dynamics
 operator|!=
-name|standard_dynamics
+name|GIMP_DYNAMICS
+argument_list|(
+name|gimp_dynamics_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -11189,21 +11101,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_pattern
-condition|)
-name|standard_pattern
-operator|=
-name|GIMP_PATTERN
-argument_list|(
-name|gimp_pattern_get_standard
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|pattern
@@ -11219,7 +11116,13 @@ name|pattern_name
 operator|&&
 name|pattern
 operator|!=
-name|standard_pattern
+name|GIMP_PATTERN
+argument_list|(
+name|gimp_pattern_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -11299,7 +11202,13 @@ if|if
 condition|(
 name|pattern
 operator|!=
-name|standard_pattern
+name|GIMP_PATTERN
+argument_list|(
+name|gimp_pattern_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -11647,21 +11556,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_gradient
-condition|)
-name|standard_gradient
-operator|=
-name|GIMP_GRADIENT
-argument_list|(
-name|gimp_gradient_get_standard
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|gradient
@@ -11677,7 +11571,13 @@ name|gradient_name
 operator|&&
 name|gradient
 operator|!=
-name|standard_gradient
+name|GIMP_GRADIENT
+argument_list|(
+name|gimp_gradient_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -11757,7 +11657,13 @@ if|if
 condition|(
 name|gradient
 operator|!=
-name|standard_gradient
+name|GIMP_GRADIENT
+argument_list|(
+name|gimp_gradient_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -12105,21 +12011,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_palette
-condition|)
-name|standard_palette
-operator|=
-name|GIMP_PALETTE
-argument_list|(
-name|gimp_palette_get_standard
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|palette
@@ -12135,7 +12026,13 @@ name|palette_name
 operator|&&
 name|palette
 operator|!=
-name|standard_palette
+name|GIMP_PALETTE
+argument_list|(
+name|gimp_palette_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -12215,7 +12112,13 @@ if|if
 condition|(
 name|palette
 operator|!=
-name|standard_palette
+name|GIMP_PALETTE
+argument_list|(
+name|gimp_palette_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -12562,21 +12465,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_tool_preset
-condition|)
-name|standard_tool_preset
-operator|=
-name|GIMP_TOOL_PRESET
-argument_list|(
-name|gimp_tool_preset_get_standard
-argument_list|(
-name|context
-argument_list|)
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|tool_preset
@@ -12592,7 +12480,13 @@ name|tool_preset_name
 operator|&&
 name|tool_preset
 operator|!=
-name|standard_tool_preset
+name|GIMP_TOOL_PRESET
+argument_list|(
+name|gimp_tool_preset_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 block|{
 name|g_free
@@ -12672,7 +12566,13 @@ if|if
 condition|(
 name|tool_preset
 operator|!=
-name|standard_tool_preset
+name|GIMP_TOOL_PRESET
+argument_list|(
+name|gimp_tool_preset_get_standard
+argument_list|(
+name|context
+argument_list|)
+argument_list|)
 condition|)
 name|context
 operator|->
@@ -13112,19 +13012,6 @@ parameter_list|)
 block|{
 if|if
 condition|(
-operator|!
-name|standard_font
-condition|)
-name|standard_font
-operator|=
-name|GIMP_FONT
-argument_list|(
-name|gimp_font_get_standard
-argument_list|()
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
 name|context
 operator|->
 name|font
@@ -13140,7 +13027,8 @@ name|font_name
 operator|&&
 name|font
 operator|!=
-name|standard_font
+name|gimp_font_get_standard
+argument_list|()
 condition|)
 block|{
 name|g_free
@@ -13220,7 +13108,8 @@ if|if
 condition|(
 name|font
 operator|!=
-name|standard_font
+name|gimp_font_get_standard
+argument_list|()
 condition|)
 name|context
 operator|->
@@ -13259,10 +13148,6 @@ end_comment
 
 begin_comment
 comment|/*  buffer  ******************************************************************/
-end_comment
-
-begin_comment
-comment|/* static GimpBuffer *standard_buffer = NULL; */
 end_comment
 
 begin_function
@@ -13434,7 +13319,6 @@ name|GimpBuffer
 modifier|*
 name|buffer
 decl_stmt|;
-comment|/*   if (! context->buffer_name)     context->buffer_name = g_strdup (context->gimp->config->default_buffer);   */
 name|buffer
 operator|=
 name|gimp_context_find_object
@@ -13448,7 +13332,6 @@ operator|->
 name|buffer_name
 argument_list|,
 name|NULL
-comment|/* gimp_buffer_get_standard () */
 argument_list|)
 expr_stmt|;
 if|if
@@ -13571,7 +13454,6 @@ modifier|*
 name|buffer
 parameter_list|)
 block|{
-comment|/*   if (! standard_buffer)     standard_buffer = GIMP_BUFFER (gimp_buffer_get_standard ());   */
 if|if
 condition|(
 name|context
@@ -13586,7 +13468,6 @@ condition|(
 name|context
 operator|->
 name|buffer_name
-comment|/*&& buffer != standard_buffer */
 condition|)
 block|{
 name|g_free
@@ -13662,7 +13543,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*       if (buffer != standard_buffer)       */
 name|context
 operator|->
 name|buffer_name
@@ -13700,10 +13580,6 @@ end_comment
 
 begin_comment
 comment|/*  imagefile  ***************************************************************/
-end_comment
-
-begin_comment
-comment|/* static GimpImagefile *standard_imagefile = NULL; */
 end_comment
 
 begin_function
@@ -13875,7 +13751,6 @@ name|GimpImagefile
 modifier|*
 name|imagefile
 decl_stmt|;
-comment|/*   if (! context->imagefile_name)     context->imagefile_name = g_strdup (context->gimp->config->default_imagefile);   */
 name|imagefile
 operator|=
 name|gimp_context_find_object
@@ -13889,7 +13764,6 @@ operator|->
 name|imagefile_name
 argument_list|,
 name|NULL
-comment|/* gimp_imagefile_get_standard () */
 argument_list|)
 expr_stmt|;
 if|if
@@ -14012,7 +13886,6 @@ modifier|*
 name|imagefile
 parameter_list|)
 block|{
-comment|/*   if (! standard_imagefile)     standard_imagefile = GIMP_IMAGEFILE (gimp_imagefile_get_standard ());   */
 if|if
 condition|(
 name|context
@@ -14027,7 +13900,6 @@ condition|(
 name|context
 operator|->
 name|imagefile_name
-comment|/*&& imagefile != standard_imagefile */
 condition|)
 block|{
 name|g_free
@@ -14103,7 +13975,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*       if (imagefile != standard_imagefile)       */
 name|context
 operator|->
 name|imagefile_name
@@ -14141,10 +14012,6 @@ end_comment
 
 begin_comment
 comment|/*  template  ***************************************************************/
-end_comment
-
-begin_comment
-comment|/* static GimpTemplate *standard_template = NULL; */
 end_comment
 
 begin_function
@@ -14316,7 +14183,6 @@ name|GimpTemplate
 modifier|*
 name|template
 decl_stmt|;
-comment|/*   if (! context->template_name)     context->template_name = g_strdup (context->gimp->config->default_template);   */
 name|template
 operator|=
 name|gimp_context_find_object
@@ -14330,7 +14196,6 @@ operator|->
 name|template_name
 argument_list|,
 name|NULL
-comment|/* gimp_template_get_standard () */
 argument_list|)
 expr_stmt|;
 if|if
@@ -14453,7 +14318,6 @@ modifier|*
 name|template
 parameter_list|)
 block|{
-comment|/*   if (! standard_template)     standard_template = GIMP_TEMPLATE (gimp_template_get_standard ());   */
 if|if
 condition|(
 name|context
@@ -14468,7 +14332,6 @@ condition|(
 name|context
 operator|->
 name|template_name
-comment|/*&& template != standard_template */
 condition|)
 block|{
 name|g_free
@@ -14544,7 +14407,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-comment|/*       if (template != standard_template)       */
 name|context
 operator|->
 name|template_name
