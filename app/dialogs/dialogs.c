@@ -1860,6 +1860,16 @@ name|gimp_dialog_factory_get_singleton
 argument_list|()
 condition|)
 block|{
+comment|/* run dispose manually so the factory destroys its dialogs, which        * might in turn directly or indirectly ref the factory        */
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp_dialog_factory_get_singleton
+argument_list|()
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|gimp_dialog_factory_get_singleton
