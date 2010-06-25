@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0defc30108
+DECL|struct|__anon29526ef40108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -294,7 +294,7 @@ begin_function_decl
 specifier|static
 name|GtkWidget
 modifier|*
-name|gimp_ui_find_dock_window
+name|gimp_ui_find_window
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -1210,7 +1210,7 @@ decl_stmt|;
 comment|/* Find a non-toolbox dock window */
 name|dock_window
 operator|=
-name|gimp_ui_find_dock_window
+name|gimp_ui_find_window
 argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
@@ -1406,7 +1406,7 @@ decl_stmt|;
 comment|/* Find a non-toolbox dock window */
 name|dock_window
 operator|=
-name|gimp_ui_find_dock_window
+name|gimp_ui_find_window
 argument_list|(
 name|gimp_dialog_factory_get_singleton
 argument_list|()
@@ -2235,8 +2235,8 @@ begin_function
 specifier|static
 name|GtkWidget
 modifier|*
-DECL|function|gimp_ui_find_dock_window (GimpDialogFactory * dialog_factory,GimpUiTestFunc predicate)
-name|gimp_ui_find_dock_window
+DECL|function|gimp_ui_find_window (GimpDialogFactory * dialog_factory,GimpUiTestFunc predicate)
+name|gimp_ui_find_window
 parameter_list|(
 name|GimpDialogFactory
 modifier|*
@@ -2299,11 +2299,6 @@ argument_list|)
 decl_stmt|;
 if|if
 condition|(
-name|GIMP_IS_DOCK_WINDOW
-argument_list|(
-name|widget
-argument_list|)
-operator|&&
 name|predicate
 argument_list|(
 name|G_OBJECT
@@ -2338,6 +2333,12 @@ name|object
 parameter_list|)
 block|{
 return|return
+operator|(
+name|GIMP_IS_DOCK_WINDOW
+argument_list|(
+name|object
+argument_list|)
+operator|&&
 operator|!
 name|gimp_dock_window_has_toolbox
 argument_list|(
@@ -2346,6 +2347,7 @@ argument_list|(
 name|object
 argument_list|)
 argument_list|)
+operator|)
 return|;
 block|}
 end_function
@@ -2370,6 +2372,24 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+operator|!
+name|GIMP_IS_DOCK_WINDOW
+argument_list|(
+name|object
+argument_list|)
+condition|)
+return|return
+name|FALSE
+return|;
+name|dock_window
+operator|=
+name|GIMP_DOCK_WINDOW
+argument_list|(
+name|object
+argument_list|)
+expr_stmt|;
 return|return
 operator|(
 operator|!
