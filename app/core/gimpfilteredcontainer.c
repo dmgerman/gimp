@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2154960103
+DECL|enum|__anon2bd394410103
 block|{
 DECL|enumerator|TAG_COUNT_CHANGED
 name|TAG_COUNT_CHANGED
@@ -66,7 +66,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2154960203
+DECL|enum|__anon2bd394410203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -690,6 +690,27 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
+if|if
+condition|(
+name|filtered_container
+operator|->
+name|tag_ref_counts
+condition|)
+block|{
+name|g_hash_table_unref
+argument_list|(
+name|filtered_container
+operator|->
+name|tag_ref_counts
+argument_list|)
+expr_stmt|;
+name|filtered_container
+operator|->
+name|tag_ref_counts
+operator|=
+name|NULL
+expr_stmt|;
+block|}
 if|if
 condition|(
 name|filtered_container
