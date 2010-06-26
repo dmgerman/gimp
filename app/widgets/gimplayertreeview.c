@@ -2300,7 +2300,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b5b6e0108
+DECL|struct|__anon2c2ad5400108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2694,7 +2694,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon295b5b6e0208
+DECL|struct|__anon2c2ad5400208
 block|{
 DECL|member|mask_column
 name|gint
