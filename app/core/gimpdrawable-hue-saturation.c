@@ -162,7 +162,7 @@ literal|"hue"
 argument_list|,
 name|hue
 operator|/
-literal|100.0
+literal|180.0
 argument_list|,
 literal|"saturation"
 argument_list|,
