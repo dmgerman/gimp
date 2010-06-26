@@ -215,6 +215,16 @@ operator|->
 name|paint_options
 condition|)
 block|{
+name|g_object_run_dispose
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|paint_info
+operator|->
+name|paint_options
+argument_list|)
+argument_list|)
+expr_stmt|;
 name|g_object_unref
 argument_list|(
 name|paint_info
