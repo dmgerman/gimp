@@ -2348,7 +2348,7 @@ block|}
 else|else
 comment|/* if (export) */
 block|{
-comment|/*        * Priority of default paths for Export:        *        *   1. Last Export path        *   2. Last Export path of any document        *   3. Path of import source        *   4. Path of XCF source        *   5. Last path of any save to XCF        *   6. The OS 'Documents' path        */
+comment|/*        * Priority of default paths for Export:        *        *   1. Last Export path        *   2. Path of import source        *   3. Path of XCF source        *   4. Last path of any save to XCF        *   5. Last Export path of any document        *   6. The OS 'Documents' path        */
 name|dir_uri
 operator|=
 name|g_object_get_data
@@ -2359,23 +2359,6 @@ name|image
 argument_list|)
 argument_list|,
 name|GIMP_FILE_EXPORT_URI_KEY
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|dir_uri
-condition|)
-name|dir_uri
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|,
-name|GIMP_FILE_EXPORT_LAST_URI_KEY
 argument_list|)
 expr_stmt|;
 if|if
@@ -2439,6 +2422,23 @@ name|gimp
 argument_list|)
 argument_list|,
 name|GIMP_FILE_SAVE_LAST_URI_KEY
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|dir_uri
+condition|)
+name|dir_uri
+operator|=
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
+argument_list|(
+name|gimp
+argument_list|)
+argument_list|,
+name|GIMP_FILE_EXPORT_LAST_URI_KEY
 argument_list|)
 expr_stmt|;
 if|if
