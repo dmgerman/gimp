@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a41be10108
+DECL|struct|__anon27b749250108
 block|{
 DECL|member|dummy
 name|int
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a41be10208
+DECL|struct|__anon27b749250208
 block|{
 DECL|member|filename
 name|gchar
@@ -474,6 +474,17 @@ name|result
 operator|=
 operator|-
 literal|1
+expr_stmt|;
+if|if
+condition|(
+name|result
+operator|==
+literal|0
+condition|)
+name|g_print
+argument_list|(
+literal|"/gimp-session-management/sessionrc_compatibility: OK\n"
+argument_list|)
 expr_stmt|;
 comment|/* Don't bother freeing stuff, the process is short-lived */
 return|return
