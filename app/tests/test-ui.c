@@ -243,6 +243,18 @@ define|\
 value|g_test_add ("/gimp-ui/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
 end_define
 
+begin_comment
+comment|/* Put this in the code below when you want the test to pause so you  * can do measurements of widgets on the screen for example  */
+end_comment
+
+begin_define
+DECL|macro|GIMP_PAUSE
+define|#
+directive|define
+name|GIMP_PAUSE
+value|(g_usleep (20 * 1000 * 1000))
+end_define
+
 begin_typedef
 DECL|typedef|GimpUiTestFunc
 typedef|typedef
@@ -262,7 +274,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ace4e2f0108
+DECL|struct|__anon29a18c150108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1278,7 +1290,7 @@ decl_stmt|;
 name|gint
 name|assumed_layer_y
 decl_stmt|;
-comment|/* Hardcode an assumption of where the layer is in the    * GtkTreeView. Doesn't feel worth adding propery API for this. One    * can just add a g_usleep() and re-measure new coordinates if we    * start to layout layers in the GtkTreeView differently    */
+comment|/* Hardcode an assumption of where the layer is in the    * GtkTreeView. Doesn't feel worth adding proper API for this. One    * can just use GIMP_PAUSE and re-measure new coordinates if we    * start to layout layers in the GtkTreeView differently    */
 name|assumed_layer_x
 operator|=
 literal|96
