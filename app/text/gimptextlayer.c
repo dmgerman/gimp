@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52ac360103
+DECL|enum|__anon29579fcf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2616,6 +2616,11 @@ argument_list|,
 name|height
 argument_list|,
 name|TRUE
+argument_list|)
+expr_stmt|;
+name|cairo_surface_flush
+argument_list|(
+name|surface
 argument_list|)
 expr_stmt|;
 name|data

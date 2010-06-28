@@ -707,6 +707,13 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
+name|cairo_surface_flush
+argument_list|(
+name|renderer
+operator|->
+name|surface
+argument_list|)
+expr_stmt|;
 name|dest
 operator|=
 name|cairo_image_surface_get_data
@@ -759,6 +766,13 @@ literal|4
 argument_list|)
 expr_stmt|;
 block|}
+name|cairo_surface_mark_dirty
+argument_list|(
+name|renderer
+operator|->
+name|surface
+argument_list|)
+expr_stmt|;
 name|renderer
 operator|->
 name|needs_render

@@ -622,6 +622,11 @@ argument_list|,
 name|height
 argument_list|)
 expr_stmt|;
+name|cairo_surface_flush
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
 name|src
 operator|=
 name|gdk_pixbuf_get_pixels
@@ -823,6 +828,11 @@ break|break;
 default|default:
 break|break;
 block|}
+name|cairo_surface_mark_dirty
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
 return|return
 name|surface
 return|;

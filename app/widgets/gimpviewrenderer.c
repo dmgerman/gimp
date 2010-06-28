@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d96d3f0103
+DECL|enum|__anon2c5f78170103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -3739,6 +3739,11 @@ operator|!
 name|gimp_render_white_buf
 condition|)
 return|return;
+name|cairo_surface_flush
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
 name|dest
 operator|=
 name|cairo_image_surface_get_data
@@ -4415,6 +4420,11 @@ operator|+=
 name|dest_stride
 expr_stmt|;
 block|}
+name|cairo_surface_mark_dirty
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
