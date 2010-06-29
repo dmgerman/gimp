@@ -389,7 +389,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_properties:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  *  * This function uses the @scanner to configure the properties of @config.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_deserialize_properties:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level: the nest level  *  * This function uses the @scanner to configure the properties of @config.  *  * Return value: %TRUE on success, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -686,7 +686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_property:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level:  *  * This function deserializes a single property of @config. You  * shouldn't need to call this function directly. If possible, use  * gimp_config_deserialize_properties() instead.  *  * Return value: %G_TOKEN_RIGHT_PAREN on success, otherwise the  * expected #GTokenType or %G_TOKEN_NONE if the expected token was  * found but couldn't be parsed.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_deserialize_property:  * @config: a #GimpConfig.  * @scanner: a #GScanner.  * @nest_level: the nest level  *  * This function deserializes a single property of @config. You  * shouldn't need to call this function directly. If possible, use  * gimp_config_deserialize_properties() instead.  *  * Return value: %G_TOKEN_RIGHT_PAREN on success, otherwise the  * expected #GTokenType or %G_TOKEN_NONE if the expected token was  * found but couldn't be parsed.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

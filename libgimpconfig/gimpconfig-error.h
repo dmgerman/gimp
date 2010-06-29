@@ -24,30 +24,29 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpConfigError:  * @GIMP_CONFIG_ERROR_OPEN:        open failed  * @GIMP_CONFIG_ERROR_OPEN_ENOENT: file does not exist  * @GIMP_CONFIG_ERROR_WRITE:       write failed  * @GIMP_CONFIG_ERROR_PARSE:       parser error  * @GIMP_CONFIG_ERROR_VERSION:     parser failed due to version mismatch  *  * The possible values of a #GError thrown by libgimpconfig.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9360550103
+DECL|enum|__anon29c213d30103
 block|{
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN
 name|GIMP_CONFIG_ERROR_OPEN
 block|,
-comment|/*  open failed                            */
 DECL|enumerator|GIMP_CONFIG_ERROR_OPEN_ENOENT
 name|GIMP_CONFIG_ERROR_OPEN_ENOENT
 block|,
-comment|/*  file does not exist                    */
 DECL|enumerator|GIMP_CONFIG_ERROR_WRITE
 name|GIMP_CONFIG_ERROR_WRITE
 block|,
-comment|/*  write failed                           */
 DECL|enumerator|GIMP_CONFIG_ERROR_PARSE
 name|GIMP_CONFIG_ERROR_PARSE
 block|,
-comment|/*  parser error                           */
 DECL|enumerator|GIMP_CONFIG_ERROR_VERSION
 name|GIMP_CONFIG_ERROR_VERSION
-comment|/*  parser failed due to version mismatch  */
 DECL|typedef|GimpConfigError
 block|}
 name|GimpConfigError

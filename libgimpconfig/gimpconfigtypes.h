@@ -45,6 +45,20 @@ name|GimpConfigWriter
 typedef|;
 end_typedef
 
+begin_typedef
+DECL|typedef|GimpConfigPath
+typedef|typedef
+name|gchar
+modifier|*
+name|GimpConfigPath
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|GimpConfigPath
+comment|/* to satisfy docs */
+end_comment
+
 begin_include
 include|#
 directive|include

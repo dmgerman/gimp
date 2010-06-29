@@ -262,7 +262,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_param_spec_config_path:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @type:          a #GimpParamConfigPathType value.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a filename, dir name,  * or list of file or dir names.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_param_spec_config_path:  * @name:          Canonical name of the param  * @nick:          Nickname of the param  * @blurb:         Brief desciption of param.  * @type:          a #GimpConfigPathType value.  * @default_value: Value to use if none is assigned.  * @flags:         a combination of #GParamFlags  *  * Creates a param spec to hold a filename, dir name,  * or list of file or dir names.  * See g_param_spec_internal() for more information.  *  * Returns: a newly allocated #GParamSpec instance  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -529,7 +529,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_path_expand:  * @path: a %NUL-terminated string in UTF-8 encoding  * @recode: whether to convert to the filesystem's encoding  * @error: return location for errors  *  * Paths as stored in the gimprc have to be treated special.  The  * string may contain special identifiers such as for example  * ${gimp_dir} that have to be substituted before use. Also the user's  * filesystem may be in a different encoding than UTF-8 (which is what  * is used for the gimprc). This function does the variable  * substitution for you and can also attempt to convert to the  * filesystem encoding.  *  * Return value: a newly allocated %NUL-terminated string  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_path_expand:  * @path: a NUL-terminated string in UTF-8 encoding  * @recode: whether to convert to the filesystem's encoding  * @error: return location for errors  *  * Paths as stored in the gimprc have to be treated special.  The  * string may contain special identifiers such as for example  * ${gimp_dir} that have to be substituted before use. Also the user's  * filesystem may be in a different encoding than UTF-8 (which is what  * is used for the gimprc). This function does the variable  * substitution for you and can also attempt to convert to the  * filesystem encoding.  *  * Return value: a newly allocated NUL-terminated string  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

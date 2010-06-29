@@ -963,7 +963,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error:  *  * Serializes the object properties of @config to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_to_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to write the configuration to.  * @header: optional file header (must be ASCII only)  * @footer: optional file footer (must be ASCII only)  * @data: user data passed to the serialize implementation.  * @error: return location for a possible error  *  * Serializes the object properties of @config to the file specified  * by @filename. If a file with that name already exists, it is  * overwritten. Basically this function opens @filename for you and  * calls the serialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if serialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1170,7 +1170,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_serialize_to_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a string.  *  * Return value: a newly allocated %NUL-terminated string.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_serialize_to_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @data: user data passed to the serialize implementation.  *  * Serializes the object properties of @config to a string.  *  * Return value: a newly allocated NUL-terminated string.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1254,7 +1254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error:  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @config accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_deserialize_file:  * @config: a #GObject that implements the #GimpConfigInterface.  * @filename: the name of the file to read configuration from.  * @data: user data passed to the deserialize implementation.  * @error: return location for a possible error  *  * Opens the file specified by @filename, reads configuration data  * from it and configures @config accordingly. Basically this function  * creates a properly configured #GScanner for you and calls the  * deserialize function of the @config's #GimpConfigInterface.  *  * Return value: %TRUE if deserialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1400,7 +1400,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_string:  * @config: a #GObject that implements the #GimpConfigInterface.  * @text: string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:  * @error:  *  * Configures @config from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @config's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_deserialize_string:  * @config:   a #GObject that implements the #GimpConfigInterface.  * @text:     string to deserialize (in UTF-8 encoding)  * @text_len: length of @text in bytes or -1  * @data:     client data  * @error:    return location for a possible error  *  * Configures @config from @text. Basically this function creates a  * properly configured #GScanner for you and calls the deserialize  * function of the @config's #GimpConfigInterface.  *  * Returns: %TRUE if deserialization succeeded, %FALSE otherwise.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1547,7 +1547,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_config_deserialize_return:  * @scanner:  * @expected_token:  * @nest_level:  *  * Returns:  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_config_deserialize_return:  * @scanner:        a #GScanner  * @expected_token: the expected token  * @nest_level:     the next level  *  * Returns:  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
