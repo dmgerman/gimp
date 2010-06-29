@@ -22,6 +22,10 @@ file|"gimprectangle.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimprectangle  * @title: gimprectangle  * @short_description: Utility functions dealing with rectangle extents.  *  * Utility functions dealing with rectangle extents.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_rectangle_intersect:  * @x1:          origin of first rectangle  * @y1:          origin of first rectangle  * @width1:      width of first rectangle  * @height1:     height of first rectangle  * @x2:          origin of second rectangle  * @y2:          origin of second rectangle  * @width2:      width of second rectangle  * @height2:     height of second rectangle  * @dest_x:      return location for origin of intersection (may be %NULL)  * @dest_y:      return location for origin of intersection (may be %NULL)  * @dest_width:  return location for width of intersection (may be %NULL)  * @dest_height: return location for height of intersection (may be %NULL)  *  * Calculates the intersection of two rectangles.  *  * Return value: %TRUE if the intersection is non-empty, %FALSE otherwise  *  * Since: GIMP 2.4  **/
 end_comment
 

@@ -41,9 +41,18 @@ value|4
 end_define
 
 begin_typedef
+DECL|typedef|GimpPixPipeParams
 typedef|typedef
+name|struct
+name|_GimpPixPipeParams
+name|GimpPixPipeParams
+typedef|;
+end_typedef
+
+begin_struct
+DECL|struct|_GimpPixPipeParams
 struct|struct
-DECL|struct|__anon2a4009f20108
+name|_GimpPixPipeParams
 block|{
 DECL|member|step
 name|gint
@@ -101,11 +110,9 @@ DECL|member|free_selection_string
 name|gboolean
 name|free_selection_string
 decl_stmt|;
-DECL|typedef|GimpPixPipeParams
 block|}
-name|GimpPixPipeParams
-typedef|;
-end_typedef
+struct|;
+end_struct
 
 begin_comment
 comment|/* Initalize with dummy values */

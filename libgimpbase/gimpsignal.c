@@ -34,6 +34,10 @@ file|"gimpsignal.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpsignal  * @title: gimpsignal  * @short_description: Portable signal handling.  * @see_also: signal(2), signal(5 or 7), sigaction(2).  *  * Portable signal handling.  **/
+end_comment
+
+begin_comment
 comment|/* Courtesy of Austin Donnelly 06-04-2000 to address bug #2742 */
 end_comment
 

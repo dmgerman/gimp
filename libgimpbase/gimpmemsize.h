@@ -18,7 +18,7 @@ end_define
 
 begin_decl_stmt
 name|G_BEGIN_DECLS
-comment|/*  * GIMP_TYPE_MEMSIZE  */
+comment|/**  * GIMP_TYPE_MEMSIZE:  *  * #GIMP_TYPE_MEMSIZE is a #GType derived from #G_TYPE_UINT64.  **/
 DECL|macro|GIMP_TYPE_MEMSIZE
 define|#
 directive|define

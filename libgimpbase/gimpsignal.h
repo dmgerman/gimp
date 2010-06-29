@@ -31,7 +31,7 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/* GimpSignalHandlerFunc is a reference to a (signal handler) function  * that takes a signal ID and returns void.  * signal(2) returns such references; so does gimp_signal_private.  */
+comment|/**  * GimpSignalHandlerFunc:  * @signum: The number of the signal. Useful if different signals are  *          handled by a single handler.  *  * A prototype for a reference to a signal handler functions. Note  * that each function which takes or returns a variable of this type  * also accepts or may return special values defined by your system's  * signal.h header file (like @SIG_DFL or @SIG_IGN).  **/
 end_comment
 
 begin_typedef

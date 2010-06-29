@@ -250,6 +250,10 @@ endif|#
 directive|endif
 end_endif
 
+begin_comment
+comment|/**  * SECTION: gimpenv  * @title: gimpenv  * @short_description: Functions to access the GIMP environment.  *  * A set of functions to find the locations of GIMP's data directories  * and configuration files.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|gchar

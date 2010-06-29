@@ -21,6 +21,10 @@ directive|include
 file|"gimpbasetypes.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpbasetypes  * @title: gimpbasetypes  * @short_description: Translation between gettext translation domain  *                     identifier and GType.  *  * Translation between gettext translation domain identifier and  * GType.  **/
+end_comment
+
 begin_decl_stmt
 specifier|static
 name|GQuark
@@ -55,7 +59,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_type_set_translation_domain:  * @type:   a #GType  * @domain: a constant string that identifies a translation domain or %NULL  *  * This function attaches a constant string as a gettext translation  * domain identifier to a #GType. The only purpose of this function is  * to use it when registering a #GTypeEnum with translatable value  * names.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_type_set_translation_domain:  * @type:   a #GType  * @domain: a constant string that identifies a translation domain or %NULL  *  * This function attaches a constant string as a gettext translation  * domain identifier to a #GType. The only purpose of this function is  * to use it when registering a #G_TYPE_ENUM with translatable value  * names.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -89,7 +93,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_get_translation_domain:  * @type: a #GType  *  * Retrieves the gettext translation domain identifier that has been  * previously set using gimp_type_set_translation_domain(). You should  * not need to use this function directly, use gimp_enum_get_value()  * or gimp_enum_value_get_name() instead.  *  * Return value: the translation domain associated with @type  *               or %NULL if no domain was set  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_type_get_translation_domain:  * @type: a #GType  *  * Retrieves the gettext translation domain identifier that has been  * previously set using gimp_type_set_translation_domain(). You should  * not need to use this function directly, use gimp_enum_get_value()  * or gimp_enum_value_get_desc() instead.  *  * Return value: the translation domain associated with @type  *               or %NULL if no domain was set  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -121,7 +125,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_set_translation_context:  * @type:   a #GType  * @domain: a constant string that identifies a translation context or %NULL  *  * This function attaches a constant string as a translation context  * to a #GType. The only purpose of this function is to use it when  * registering a #GTypeEnum with translatable value names.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_type_set_translation_context:  * @type:    a #GType  * @context: a constant string that identifies a translation context or %NULL  *  * This function attaches a constant string as a translation context  * to a #GType. The only purpose of this function is to use it when  * registering a #G_TYPE_ENUM with translatable value names.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -155,7 +159,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_type_get_translation_context:  * @type: a #GType  *  * Retrieves the translation context that has been previously set  * using gimp_type_set_translation_context(). You should not need to  * use this function directly, use gimp_enum_get_value() or  * gimp_enum_value_get_name() instead.  *  * Return value: the translation context associated with @type  *               or %NULL if no context was set  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_type_get_translation_context:  * @type: a #GType  *  * Retrieves the translation context that has been previously set  * using gimp_type_set_translation_context(). You should not need to  * use this function directly, use gimp_enum_get_value() or  * gimp_enum_value_get_desc() instead.  *  * Return value: the translation context associated with @type  *               or %NULL if no context was set  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

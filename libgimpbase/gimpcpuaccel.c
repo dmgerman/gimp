@@ -47,6 +47,10 @@ directive|include
 file|"gimpcpuaccel.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcpuaccel  * @title: gimpcpuaccel  * @short_description: Functions to query and configure CPU acceleration.  *  * Functions to query and configure CPU acceleration.  **/
+end_comment
+
 begin_decl_stmt
 specifier|static
 name|GimpCpuAccelFlags
@@ -145,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon278d01100103
+DECL|enum|__anon2c0bbb600103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -192,7 +196,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d01100203
+DECL|enum|__anon2c0bbb600203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -269,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon278d01100303
+DECL|enum|__anon2c0bbb600303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI

@@ -46,6 +46,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimputils  * @title: gimputils  * @short_description: Utilities of general interest  *  * Utilities of general interest  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_utf8_strtrim:  * @str: an UTF-8 encoded string (or %NULL)  * @max_chars: the maximum number of characters before the string get  * trimmed  *  * Creates a (possibly trimmed) copy of @str. The string is cut if it  * exceeds @max_chars characters or on the first newline. The fact  * that the string was trimmed is indicated by appending an ellipsis.  *  * Returns: A (possibly trimmed) copy of @str which should be freed  * using g_free() when it is not needed any longer.  **/
 end_comment
 
@@ -535,7 +539,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_strip_uline:  * @str: underline infested string (or %NULL)  *  * This function returns a copy of @str stripped of underline  * characters. This comes in handy when needing to strip mnemonics  * from menu paths etc.  *  * In some languages, mnemonics are handled by adding the mnemonic  * character in brackets (like "File (_F)"). This function recognizes  * this construct and removes the whole bracket construction to get  * rid of the mnemonic (see bug #157561).  *  * Return value: A (possibly stripped) copy of @str which should be  *               freed using g_free() when it is not needed any longer.  **/
+comment|/**  * gimp_strip_uline:  * @str: underline infested string (or %NULL)  *  * This function returns a copy of @str stripped of underline  * characters. This comes in handy when needing to strip mnemonics  * from menu paths etc.  *  * In some languages, mnemonics are handled by adding the mnemonic  * character in brackets (like "File (_F)"). This function recognizes  * this construct and removes the whole bracket construction to get  * rid of the mnemonic (see bug 157561).  *  * Return value: A (possibly stripped) copy of @str which should be  *               freed using g_free() when it is not needed any longer.  **/
 end_comment
 
 begin_function

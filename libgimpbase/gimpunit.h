@@ -19,7 +19,7 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
-comment|/*  * GIMP_TYPE_UNIT  */
+comment|/**  * GIMP_TYPE_UNIT:  *  * #GIMP_TYPE_UNIT is a #GType derived from #G_TYPE_INT.  **/
 DECL|macro|GIMP_TYPE_UNIT
 define|#
 directive|define
@@ -286,7 +286,7 @@ name|gdouble
 name|gimp_units_to_pixels
 parameter_list|(
 name|gdouble
-name|units
+name|value
 parameter_list|,
 name|GimpUnit
 name|unit

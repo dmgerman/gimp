@@ -95,6 +95,10 @@ directive|include
 file|"gimpenv.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpdatafiles  * @title: gimpdatafiles  * @short_description: Functions to handle GIMP data files.  *  * Functions to handle GIMP data files.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 specifier|inline

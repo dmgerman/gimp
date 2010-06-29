@@ -39,6 +39,10 @@ directive|include
 file|"gimpunit.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpunit  * @title: gimpunit  * @short_description: Provides a collection of predefined units and  *                     functions for creating user-defined units.  * @see_also: #GimpUnitMenu, #GimpSizeEntry.  *  * Provides a collection of predefined units and functions for  * creating user-defined units.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|void
@@ -1181,7 +1185,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pixels_to_units:  * @pixels:     value in pixels  * @unit:       unit to convert to  * @resolution: resloution in DPI  *  * Returns: %pixels converted to units.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_pixels_to_units:  * @pixels:     value in pixels  * @unit:       unit to convert to  * @resolution: resloution in DPI  *  * Converts a @value specified in pixels to @unit.  *  * Returns: @pixels converted to units.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1222,7 +1226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_units_to_pixels:  * @value:      value in units  * @unit:       unit of %value  * @resolution: resloution in DPI  *  * Returns: %value converted to pixels.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_units_to_pixels:  * @value:      value in units  * @unit:       unit of @value  * @resolution: resloution in DPI  *  * Converts a @value specified in @unit to pixels.  *  * Returns: @value converted to pixels.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

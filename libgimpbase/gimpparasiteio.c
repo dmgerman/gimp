@@ -43,6 +43,10 @@ directive|include
 file|"gimpparasiteio.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpparasiteio  * @title: gimpparasiteio  * @short_description: Utility functions to (de)serialize certain C  *                     structures to/from #GimpParasite's.  * @see_also: #GimpParasite  *  * Utility functions to (de)serialize certain C structures to/from*  * #GimpParasite's.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|gimp_pixpipe_params_init (GimpPixPipeParams * params)

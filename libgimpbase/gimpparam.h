@@ -17,7 +17,11 @@ name|__GIMP_PARAM_H__
 end_define
 
 begin_comment
-comment|/* For information look into the C source or the html documentation */
+comment|/**  * SECTION: gimpparam  * @title: gimpparam  * @short_description: Definitions of useful #GParamFlags.  *  * Definitions of useful #GParamFlags.  **/
+end_comment
+
+begin_comment
+comment|/**  * GIMP_PARAM_STATIC_STRINGS:  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_define
@@ -28,6 +32,10 @@ name|GIMP_PARAM_STATIC_STRINGS
 value|(G_PARAM_STATIC_NAME | \                                    G_PARAM_STATIC_NICK | \                                    G_PARAM_STATIC_BLURB)
 end_define
 
+begin_comment
+comment|/**  * GIMP_PARAM_READABLE:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_PARAM_READABLE
 define|#
@@ -36,6 +44,10 @@ name|GIMP_PARAM_READABLE
 value|(G_PARAM_READABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
 end_define
 
+begin_comment
+comment|/**  * GIMP_PARAM_WRITABLE:  *  * Since: GIMP 2.4  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_PARAM_WRITABLE
 define|#
@@ -43,6 +55,10 @@ directive|define
 name|GIMP_PARAM_WRITABLE
 value|(G_PARAM_WRITABLE    | \                                    GIMP_PARAM_STATIC_STRINGS)
 end_define
+
+begin_comment
+comment|/**  * GIMP_PARAM_READWRITE:  *  * Since: GIMP 2.4  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_PARAM_READWRITE

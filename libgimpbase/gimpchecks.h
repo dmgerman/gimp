@@ -18,23 +18,25 @@ end_define
 
 begin_function_decl
 name|G_BEGIN_DECLS
-comment|/*  the default size of the checks which indicate transparency ...  */
+comment|/**  * GIMP_CHECK_SIZE:  *  * The default checkerboard size in pixels. This is configurable in  * the core but GIMP plug-ins can't access the user preference and  * should use this constant instead.  **/
 DECL|macro|GIMP_CHECK_SIZE
 define|#
 directive|define
 name|GIMP_CHECK_SIZE
 value|8
+comment|/**  * GIMP_CHECK_SIZE_SM:  *  * The default small checkerboard size in pixels.  **/
 DECL|macro|GIMP_CHECK_SIZE_SM
 define|#
 directive|define
 name|GIMP_CHECK_SIZE_SM
 value|4
-comment|/*  ... and their default shades  */
+comment|/**  * GIMP_CHECK_DARK:  *  * The dark gray value for the default checkerboard pattern.  **/
 DECL|macro|GIMP_CHECK_DARK
 define|#
 directive|define
 name|GIMP_CHECK_DARK
 value|0.4
+comment|/**  * GIMP_CHECK_LIGHT:  *  * The dark light value for the default checkerboard pattern.  **/
 DECL|macro|GIMP_CHECK_LIGHT
 define|#
 directive|define
