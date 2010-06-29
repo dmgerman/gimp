@@ -44,6 +44,10 @@ file|"gimprgb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: GimpRGB  * @title: GimpRGB  * @short_description: Definitions and Functions relating to RGB colors.  *  * Definitions and Functions relating to RGB colors.  **/
+end_comment
+
+begin_comment
 comment|/*  * GIMP_TYPE_RGB  */
 end_comment
 

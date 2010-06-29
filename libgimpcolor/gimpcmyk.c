@@ -34,6 +34,10 @@ file|"gimpcmyk.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: GimpCMYK  * @title: GimpCMYK  * @short_description: Definitions and Functions relating to CMYK colors.  *  * Definitions and Functions relating to CMYK colors.  **/
+end_comment
+
+begin_comment
 comment|/*  * GIMP_TYPE_CMYK  */
 end_comment
 

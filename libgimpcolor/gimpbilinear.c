@@ -33,6 +33,10 @@ directive|include
 file|"gimpbilinear.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: GimpBilinear  * @title: GimpBilinear  * @short_description: Utility functions for bilinear interpolation.  *  * Utility functions for bilinear interpolation.  **/
+end_comment
+
 begin_function
 name|gdouble
 DECL|function|gimp_bilinear (gdouble x,gdouble y,gdouble * values)

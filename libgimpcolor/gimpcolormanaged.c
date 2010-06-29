@@ -27,9 +27,13 @@ directive|include
 file|"gimpcolormanaged.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: GimpColorManaged  * @title: GimpColorManaged  * @short_description: An interface dealing with color profiles.  *  * An interface dealing with color profiles.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a5772720103
+DECL|enum|__anon2b0b34960103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED
