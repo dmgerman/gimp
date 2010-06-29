@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dba8680103
+DECL|enum|__anon29699b550103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
@@ -1236,7 +1236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_module_register_enum:  * @module:  * @name:  * @const_static_values:  *  * This function is deprecated! Use g_type_module_register_enum() instead.  *  * Return value: a new enum #GType  **/
+comment|/**  * gimp_module_register_enum:  * @module:              a module  * @name:                the name of the new enum type  * @const_static_values: the enum values  *  * This function is deprecated! Use g_type_module_register_enum() instead.  *  * Return value: a new enum #GType  **/
 end_comment
 
 begin_function
