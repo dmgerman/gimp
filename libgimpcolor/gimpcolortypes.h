@@ -78,6 +78,10 @@ name|GimpCMYK
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpRGB:  * @r: the red component  * @g: the green component  * @b: the blue component  * @a: the alpha component  *  * Used to keep RGB and RGBA colors. All components are in a range of  * [0.0..1.0].  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpRGB
 struct|struct
@@ -99,6 +103,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpHSV:  * @h: the hue component  * @s: the saturation component  * @v: the value component  * @a: the alpha component  *  * Used to keep HSV and HSVA colors. All components are in a range of  * [0.0..1.0].  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpHSV
@@ -122,6 +130,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/**  * GimpHSL:  * @h: the hue component  * @s: the saturation component  * @l: the lightness component  * @a: the alpha component  *  * Used to keep HSL and HSLA colors. All components are in a range of  * [0.0..1.0].  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpHSL
 struct|struct
@@ -143,6 +155,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpCMYK:  * @c: the cyan component  * @m: the magenta component  * @y: the yellow component  * @k: the black component  * @a: the alpha component  *  * Used to keep CMYK and CMYKA colors. All components are in a range  * of [0.0..1.0]. An alpha value is somewhat useless in the CMYK  * colorspace, but we keep one around anyway so color conversions  * going to CMYK and back can preserve alpha.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpCMYK

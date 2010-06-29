@@ -46,7 +46,7 @@ file|"gimphsv.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: GimpColorSpace  * @title: GimpColorSpace  * @short_description: Utility functions which convert colors between  *                     different color models.  *  * When programming pixel data manipulation functions you will often  * use algorithms operating on a color model different from the one  * GIMP uses.  This file provides utility functions to convert colors  * between different color spaces.  **/
+comment|/**  * SECTION: gimpcolorspace  * @title: GimpColorSpace  * @short_description: Utility functions which convert colors between  *                     different color models.  *  * When programming pixel data manipulation functions you will often  * use algorithms operating on a color model different from the one  * GIMP uses.  This file provides utility functions to convert colors  * between different color spaces.  **/
 end_comment
 
 begin_define

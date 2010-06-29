@@ -28,12 +28,12 @@ file|"gimpcolormanaged.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: GimpColorManaged  * @title: GimpColorManaged  * @short_description: An interface dealing with color profiles.  *  * An interface dealing with color profiles.  **/
+comment|/**  * SECTION: gimpcolormanaged  * @title: GimpColorManaged  * @short_description: An interface dealing with color profiles.  *  * An interface dealing with color profiles.  **/
 end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0b34960103
+DECL|enum|__anon287d5f5a0103
 block|{
 DECL|enumerator|PROFILE_CHANGED
 name|PROFILE_CHANGED

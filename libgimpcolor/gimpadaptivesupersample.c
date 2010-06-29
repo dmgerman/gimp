@@ -40,7 +40,7 @@ file|"gimprgb.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: GimpAdaptiveSupersample  * @title: GimpAdaptiveSupersample  * @short_description: Functions to perform adaptive supersampling on  *                     an area.  *  * Functions to perform adaptive supersampling on an area.  **/
+comment|/**  * SECTION: gimpadaptivesupersample  * @title: GimpAdaptiveSupersample  * @short_description: Functions to perform adaptive supersampling on  *                     an area.  *  * Functions to perform adaptive supersampling on an area.  **/
 end_comment
 
 begin_comment

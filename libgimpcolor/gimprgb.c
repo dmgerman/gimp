@@ -44,7 +44,7 @@ file|"gimprgb.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: GimpRGB  * @title: GimpRGB  * @short_description: Definitions and Functions relating to RGB colors.  *  * Definitions and Functions relating to RGB colors.  **/
+comment|/**  * SECTION: gimprgb  * @title: GimpRGB  * @short_description: Definitions and Functions relating to RGB colors.  *  * Definitions and Functions relating to RGB colors.  **/
 end_comment
 
 begin_comment
@@ -256,7 +256,7 @@ comment|/*  RGB functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgb_set:  * @rgb: a #GimpRGB struct  * @red:  * @green:  * @blue:  *  * Sets the red, green and blue components of @rgb and leaves the  * alpha component unchanged. The color values should be between 0.0  * and 1.0 but there is no check to enforce this and the values are  * set exactly as they are passed in.  **/
+comment|/**  * gimp_rgb_set:  * @rgb:   a #GimpRGB struct  * @red:   the red component  * @green: the green component  * @blue:  the blue component  *  * Sets the red, green and blue components of @rgb and leaves the  * alpha component unchanged. The color values should be between 0.0  * and 1.0 but there is no check to enforce this and the values are  * set exactly as they are passed in.  **/
 end_comment
 
 begin_function
@@ -307,7 +307,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set_alpha:  * @rgb: a #GimpRGB struct  * @alpha:  *  * Sets the alpha component of @rgb and leaves the RGB components unchanged.  **/
+comment|/**  * gimp_rgb_set_alpha:  * @rgb:   a #GimpRGB struct  * @alpha: the alpha component  *  * Sets the alpha component of @rgb and leaves the RGB components unchanged.  **/
 end_comment
 
 begin_function
@@ -340,7 +340,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_set_uchar:  * @rgb: a #GimpRGB struct  * @red:  * @green:  * @blue:  *  * Sets the red, green and blue components of @rgb from 8bit values  * (0 to 255) and leaves the alpha component unchanged.  **/
+comment|/**  * gimp_rgb_set_uchar:  * @rgb:   a #GimpRGB struct  * @red:   the red component  * @green: the green component  * @blue:  the blue component  *  * Sets the red, green and blue components of @rgb from 8bit values  * (0 to 255) and leaves the alpha component unchanged.  **/
 end_comment
 
 begin_function
@@ -1040,7 +1040,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_luminance:  * @rgb:  *  * Return value: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_rgb_luminance:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity of the range from 0.0 to 1.0.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1097,7 +1097,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_luminance_uchar:  * @rgb:  *  * Return value: the luminous intensity in the range from 0 to 255.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_rgb_luminance_uchar:  * @rgb: a #GimpRGB struct  *  * Return value: the luminous intensity in the range from 0 to 255.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1135,7 +1135,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_intensity:  * @rgb:  *  * This function is deprecated! Use gimp_rgb_luminance() instead.  *  * Return value: the intensity in the range from 0.0 to 1.0.  **/
+comment|/**  * gimp_rgb_intensity:  * @rgb: a #GimpRGB struct  *  * This function is deprecated! Use gimp_rgb_luminance() instead.  *  * Return value: the intensity in the range from 0.0 to 1.0.  **/
 end_comment
 
 begin_function
@@ -1192,7 +1192,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgb_intensity_uchar:  * @rgb:  *  * This function is deprecated! Use gimp_rgb_luminance_uchar() instead.  *  * Return value: the intensity in the range from 0 to 255.  **/
+comment|/**  * gimp_rgb_intensity_uchar:  * @rgb: a #GimpRGB struct  *  * This function is deprecated! Use gimp_rgb_luminance_uchar() instead.  *  * Return value: the intensity in the range from 0 to 255.  **/
 end_comment
 
 begin_function
@@ -1476,7 +1476,7 @@ comment|/*  RGBA functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_rgba_set:  * @rgba: a #GimpRGB struct  * @red:  * @green:  * @blue:  * @alpha:  *  * Sets the red, green, blue and alpha components of @rgb. The values  * should be between 0.0 and 1.0 but there is no check to enforce this  * and the values are set exactly as they are passed in.  **/
+comment|/**  * gimp_rgba_set:  * @rgba:  a #GimpRGB struct  * @red:   the red component  * @green: the green component  * @blue:  the blue component  * @alpha: the alpha component  *  * Sets the red, green, blue and alpha components of @rgb. The values  * should be between 0.0 and 1.0 but there is no check to enforce this  * and the values are set exactly as they are passed in.  **/
 end_comment
 
 begin_function
@@ -1536,7 +1536,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_rgba_set_uchar:  * @rgba: a #GimpRGB struct  * @red:  * @green:  * @blue:  * @alpha:  *  * Sets the red, green, blue and alpha components of @rgb from 8bit  * values (0 to 255).  **/
+comment|/**  * gimp_rgba_set_uchar:  * @rgba:  a #GimpRGB struct  * @red:   the red component  * @green: the green component  * @blue:  the blue component  * @alpha: the alpha component  *  * Sets the red, green, blue and alpha components of @rgb from 8bit  * values (0 to 255).  **/
 end_comment
 
 begin_function

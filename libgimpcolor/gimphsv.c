@@ -28,7 +28,7 @@ file|"gimphsv.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: GimpHSV  * @title: GimpHSV  * @short_description: Definitions and Functions relating to HSV colors.  *  * Definitions and Functions relating to HSV colors.  **/
+comment|/**  * SECTION: gimphsv  * @title: GimpHSV  * @short_description: Definitions and Functions relating to HSV colors.  *  * Definitions and Functions relating to HSV colors.  **/
 end_comment
 
 begin_comment
