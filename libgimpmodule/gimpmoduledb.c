@@ -45,9 +45,13 @@ directive|include
 file|"gimpmoduledb.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpmoduledb  * @title: GimpModuleDB  * @short_description: Keeps a list of #GimpModule's found in a given  *                     searchpath.  *  * Keeps a list of #GimpModule's found in a given searchpath.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2bf522800103
+DECL|enum|__anon29ae1b390103
 block|{
 DECL|enumerator|ADD
 name|ADD

@@ -45,9 +45,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpmodule  * @title: GimpModule  * @short_description: A #GTypeModule subclass which implements module  *                     loading using #GModule.  * @see_also: #GModule, #GTypeModule  *  * A #GTypeModule subclass which implements module loading using #GModule.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c748cbb0103
+DECL|enum|__anon28dba8680103
 block|{
 DECL|enumerator|MODIFIED
 name|MODIFIED
