@@ -82,6 +82,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpconfig-deserialize  * @title: GimpConfig-deserialize  * @short_description: Deserializing code for libgimpconfig.  *  * Deserializing code for libgimpconfig.  **/
+end_comment
+
+begin_comment
 comment|/*  *  All functions return G_TOKEN_RIGHT_PAREN on success,  *  the GTokenType they would have expected but didn't get  *  or G_TOKEN_NONE if they got the expected token but  *  couldn't parse it.  */
 end_comment
 

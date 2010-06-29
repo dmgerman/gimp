@@ -22,6 +22,10 @@ file|"gimpconfig-error.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpconfig-error  * @title: GimpConfig-error  * @short_description: Error utils for libgimpconfig.  *  * Error utils for libgimpconfig.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_config_error_quark:  *  * This function is never called directly. Use GIMP_CONFIG_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpConfig error domain.  *  * Since: GIMP 2.4  **/
 end_comment
 

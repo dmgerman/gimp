@@ -82,6 +82,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpconfig-iface  * @title: GimpConfig-iface  * @short_description: High-level API for libgimpconfig.  *  * High-level API for libgimpconfig.  **/
+end_comment
+
+begin_comment
 comment|/*  * The GimpConfig serialization and deserialization interface.  */
 end_comment
 

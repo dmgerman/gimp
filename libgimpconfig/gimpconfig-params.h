@@ -25,6 +25,10 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
+comment|/**  * SECTION: gimpconfig-params  * @title: GimpConfig-params  * @short_description: Macros and defines to install config properties.  *  * Macros and defines to install config properties.  **/
+end_comment
+
+begin_comment
 comment|/*  * GIMP_CONFIG_PARAM_SERIALIZE - A property that can and should be  *                               serialized and deserialized.  * GIMP_CONFIG_PARAM_AGGREGATE - The object property is to be treated as  *                               part of the parent object.  * GIMP_CONFIG_PARAM_RESTART   - Changes to this property take effect only  *                               after a restart.  * GIMP_CONFIG_PARAM_CONFIRM   - Changes to this property should be  *                               confirmed by the user before being applied.  * GIMP_CONFIG_PARAM_DEFAULTS  - Don't serialize this property if it has the  *                               default value.  * GIMP_CONFIG_PARAM_IGNORE    - This property exists for obscure reasons  *                               and is needed for backward compatibility.  *                               Ignore the value read and don't serialize it.  */
 end_comment
 

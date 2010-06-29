@@ -52,6 +52,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpconfig-path  * @title: GimpConfig-path  * @short_description: File path utilities for libgimpconfig.  *  * File path utilities for libgimpconfig.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_config_path_get_type:  *  * Reveals the object type  *  * Returns: the #GType for a GimpConfigPath string property  *  * Since: GIMP 2.4  **/
 end_comment
 

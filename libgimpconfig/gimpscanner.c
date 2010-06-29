@@ -63,10 +63,14 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpscanner  * @title: GimpScanner  * @short_description: A wrapper around #GScanner with some convenience API.  *  * A wrapper around #GScanner with some convenience API.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2940cd5c0108
+DECL|struct|__anon28cb836a0108
 block|{
 DECL|member|name
 name|gchar
@@ -1056,7 +1060,7 @@ end_function
 
 begin_enum
 enum|enum
-DECL|enum|__anon2940cd5c0203
+DECL|enum|__anon28cb836a0203
 block|{
 DECL|enumerator|COLOR_RGB
 name|COLOR_RGB

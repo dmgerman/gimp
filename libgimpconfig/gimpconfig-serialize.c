@@ -69,6 +69,10 @@ directive|include
 file|"gimpconfig-utils.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpconfig-serialize  * @title: GimpConfig-serialize  * @short_description: Serializing for libgimpconfig.  *  * Serializing interface for libgimpconfig.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|gboolean

@@ -63,6 +63,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorconfig  * @title: GimpColorConfig  * @short_description: Color management settings.  *  * Color management settings.  **/
+end_comment
+
 begin_define
 DECL|macro|COLOR_MANAGEMENT_MODE_BLURB
 define|#
@@ -155,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdf18370103
+DECL|enum|__anon28a6241e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

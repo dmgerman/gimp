@@ -127,6 +127,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpconfigwriter  * @title: GimpConfigWriter  * @short_description: Functions for writing config info to a file for  *                     libgimpconfig.  *  * Functions for writing config info to a file for libgimpconfig.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpConfigWriter
 struct|struct

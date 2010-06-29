@@ -51,6 +51,10 @@ directive|include
 file|"gimpconfig-utils.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpconfig-utils  * @title: GimpConfig-utils  * @short_description: Miscellaneous utility functions for libgimpconfig.  *  * Miscellaneous utility functions for libgimpconfig.  **/
+end_comment
+
 begin_function
 specifier|static
 name|gboolean
