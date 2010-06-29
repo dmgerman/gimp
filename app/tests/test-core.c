@@ -62,13 +62,13 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-layers/" #function, \               GimpTestFixture, \               gimp, \               gimp_test_image_setup, \               function, \               gimp_test_image_teardown);
+value|g_test_add ("/gimp-core/" #function, \               GimpTestFixture, \               gimp, \               gimp_test_image_setup, \               function, \               gimp_test_image_teardown);
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae59ba90108
+DECL|struct|__anon2c0738470108
 block|{
 DECL|member|image
 name|GimpImage
