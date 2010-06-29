@@ -54,6 +54,18 @@ value|100
 end_define
 
 begin_define
+DECL|macro|ADD_IMAGE_TEST (function)
+define|#
+directive|define
+name|ADD_IMAGE_TEST
+parameter_list|(
+name|function
+parameter_list|)
+define|\
+value|g_test_add ("/gimp-core/" #function, \               GimpTestFixture, \               gimp, \               gimp_test_image_setup, \               function, \               gimp_test_image_teardown);
+end_define
+
+begin_define
 DECL|macro|ADD_TEST (function)
 define|#
 directive|define
@@ -62,13 +74,13 @@ parameter_list|(
 name|function
 parameter_list|)
 define|\
-value|g_test_add ("/gimp-core/" #function, \               GimpTestFixture, \               gimp, \               gimp_test_image_setup, \               function, \               gimp_test_image_teardown);
+value|g_test_add ("/gimp-core/" #function, \               GimpTestFixture, \               gimp, \               NULL, \               function, \               NULL);
 end_define
 
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0738470108
+DECL|struct|__anon2998d2cb0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -488,12 +500,12 @@ name|TRUE
 argument_list|)
 expr_stmt|;
 comment|/* Add tests */
-name|ADD_TEST
+name|ADD_IMAGE_TEST
 argument_list|(
 name|add_layer
 argument_list|)
 expr_stmt|;
-name|ADD_TEST
+name|ADD_IMAGE_TEST
 argument_list|(
 name|remove_layer
 argument_list|)
