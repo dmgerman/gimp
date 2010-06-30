@@ -335,6 +335,11 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_BY_COLOR_SELECT
 value|"gimp-tool-by-color-select"
+DECL|macro|GIMP_STOCK_TOOL_CAGE
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_CAGE
+value|"gimp-tool-cage"
 DECL|macro|GIMP_STOCK_TOOL_CLONE
 define|#
 directive|define

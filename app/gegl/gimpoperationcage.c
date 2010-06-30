@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spencer Kimball and Peter Mattis  *  * gimpoperationcage.c  * Copyright (C) 2010 Michael MurÃ©<batolettre@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  *  * gimpoperationcage.c  * Copyright (C) 2010 Michael MurÃ©<batolettre@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -62,9 +62,6 @@ name|void
 modifier|*
 name|out_buf
 parameter_list|,
-name|glong
-name|samples
-parameter_list|,
 specifier|const
 name|GeglRectangle
 modifier|*
@@ -102,7 +99,48 @@ name|GimpOperationCageClass
 modifier|*
 name|klass
 parameter_list|)
-block|{    }
+block|{
+name|GeglOperationClass
+modifier|*
+name|operation_class
+decl_stmt|;
+name|GeglOperationFilterClass
+modifier|*
+name|filter_class
+decl_stmt|;
+name|operation_class
+operator|=
+name|GEGL_OPERATION_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|filter_class
+operator|=
+name|GEGL_OPERATION_FILTER_CLASS
+argument_list|(
+name|klass
+argument_list|)
+expr_stmt|;
+name|operation_class
+operator|->
+name|name
+operator|=
+literal|"gimp:cage"
+expr_stmt|;
+name|operation_class
+operator|->
+name|description
+operator|=
+literal|"GIMP cage transform"
+expr_stmt|;
+name|filter_class
+operator|->
+name|process
+operator|=
+name|gimp_operation_cage_process
+expr_stmt|;
+block|}
 end_function
 
 begin_function
@@ -121,7 +159,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_cage_process (GeglOperation * operation,void * in_buf,void * out_buf,glong samples,const GeglRectangle * roi)
+DECL|function|gimp_operation_cage_process (GeglOperation * operation,void * in_buf,void * out_buf,const GeglRectangle * roi)
 name|gimp_operation_cage_process
 parameter_list|(
 name|GeglOperation
@@ -136,15 +174,29 @@ name|void
 modifier|*
 name|out_buf
 parameter_list|,
-name|glong
-name|samples
-parameter_list|,
 specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
 parameter_list|)
-block|{    }
+block|{
+name|gfloat
+modifier|*
+name|in
+init|=
+name|in_buf
+decl_stmt|;
+name|gfloat
+modifier|*
+name|out
+init|=
+name|out_buf
+decl_stmt|;
+comment|/*while (samples--)     {       out[RED]   = in[RED];       out[GREEN] = in[GREEN];       out[BLUE]  = in[BLUE];       out[ALPHA] = in[ALPHA];        in    += 4;       out   += 4;     }*/
+return|return
+name|TRUE
+return|;
+block|}
 end_function
 
 end_unit

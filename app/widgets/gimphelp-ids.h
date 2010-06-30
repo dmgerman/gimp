@@ -1702,6 +1702,14 @@ value|"gimp-tool-by-color-select"
 end_define
 
 begin_define
+DECL|macro|GIMP_HELP_TOOL_CAGE
+define|#
+directive|define
+name|GIMP_HELP_TOOL_CAGE
+value|"gimp-tool-cage"
+end_define
+
+begin_define
 DECL|macro|GIMP_HELP_TOOL_CLONE
 define|#
 directive|define
