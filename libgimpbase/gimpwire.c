@@ -319,14 +319,7 @@ name|user_data
 argument_list|)
 condition|)
 block|{
-name|g_warning
-argument_list|(
-literal|"%s: gimp_wire_read: error"
-argument_list|,
-name|g_get_prgname
-argument_list|()
-argument_list|)
-expr_stmt|;
+comment|/* Gives a confusing error message most of the time, disable:           g_warning ("%s: gimp_wire_read: error", g_get_prgname ());            */
 name|wire_error_val
 operator|=
 name|TRUE
