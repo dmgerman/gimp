@@ -18,6 +18,8 @@ end_define
 
 begin_decl_stmt
 name|G_BEGIN_DECLS
+comment|/**  * SECTION: gimpthumb-enums  * @title: GimpThumb-enums  * @short_description: Enumerations used by libgimpthumb  *  * Enumerations used by libgimpthumb  **/
+comment|/**  * GimpThumbFileType:  * @GIMP_THUMB_FILE_TYPE_NONE:    file does not exist  * @GIMP_THUMB_FILE_TYPE_REGULAR: a regular file  * @GIMP_THUMB_FILE_TYPE_FOLDER:  a directory  * @GIMP_THUMB_FILE_TYPE_SPECIAL: a special file (device node, fifo, socket, ...)  *  * File types as returned by gimp_thumb_file_test().  **/
 DECL|macro|GIMP_TYPE_THUMB_FILE_TYPE
 define|#
 directive|define
@@ -35,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c18cc490103
+DECL|enum|__anon28efd0200103
 block|{
 DECL|enumerator|GIMP_THUMB_FILE_TYPE_NONE
 name|GIMP_THUMB_FILE_TYPE_NONE
@@ -53,6 +55,10 @@ block|}
 name|GimpThumbFileType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpThumbSize:  * @GIMP_THUMB_SIZE_FAIL:   special size used to indicate a thumbnail  *                          creation failure  * @GIMP_THUMB_SIZE_NORMAL: normal thumbnail size (128 pixels)  * @GIMP_THUMB_SIZE_LARGE:  large thumbnail size (256 pixels)  *  * Possible thumbnail sizes as defined by the Thumbnail Managaging  * Standard.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_THUMB_SIZE
@@ -75,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c18cc490203
+DECL|enum|__anon28efd0200203
 block|{
 DECL|enumerator|GIMP_THUMB_SIZE_FAIL
 name|GIMP_THUMB_SIZE_FAIL
@@ -96,6 +102,10 @@ block|}
 name|GimpThumbSize
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpThumbState:  * @GIMP_THUMB_STATE_UNKNOWN:   nothing is known about the file/thumbnail  * @GIMP_THUMB_STATE_REMOTE:    the file is on a remote file system  * @GIMP_THUMB_STATE_FOLDER:  * @GIMP_THUMB_STATE_SPECIAL:  * @GIMP_THUMB_STATE_NOT_FOUND: the file/thumbnail doesn't exist  * @GIMP_THUMB_STATE_EXISTS:    the file/thumbnail exists  * @GIMP_THUMB_STATE_OLD:       the thumbnail may be outdated  * @GIMP_THUMB_STATE_FAILED:    the thumbnail couldn't be created  * @GIMP_THUMB_STATE_OK:        the thumbnail exists and matches the image  *  * Possible image and thumbnail file states used by libgimpthumb.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_THUMB_STATE
@@ -118,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c18cc490303
+DECL|enum|__anon28efd0200303
 block|{
 DECL|enumerator|GIMP_THUMB_STATE_UNKNOWN
 name|GIMP_THUMB_STATE_UNKNOWN

@@ -97,6 +97,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpthumb-utils  * @title: GimpThumb-utils  * @short_description: Utility functions provided and used by libgimpthumb  *  * Utility functions provided and used by libgimpthumb  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|gint

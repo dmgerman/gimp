@@ -20,27 +20,32 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_comment
+comment|/**  * GimpThumbError:  * @GIMP_THUMB_ERROR_OPEN:         there was a problem opening the file  * @GIMP_THUMB_ERROR_OPEN_ENOENT:  the file doesn't exist  * @GIMP_THUMB_ERROR_MKDIR:        there was a problem creating a directory  *  * These are the possible error codes used when a #GError is set by  * libgimpthumb.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2aba9a7c0103
+DECL|enum|__anon2b29b6090103
 block|{
 DECL|enumerator|GIMP_THUMB_ERROR_OPEN
 name|GIMP_THUMB_ERROR_OPEN
 block|,
-comment|/*  open failed                            */
 DECL|enumerator|GIMP_THUMB_ERROR_OPEN_ENOENT
 name|GIMP_THUMB_ERROR_OPEN_ENOENT
 block|,
-comment|/*  file does not exist                    */
 DECL|enumerator|GIMP_THUMB_ERROR_MKDIR
 name|GIMP_THUMB_ERROR_MKDIR
-comment|/*  mkdir failed                           */
 DECL|typedef|GimpThumbError
 block|}
 name|GimpThumbError
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GIMP_THUMB_ERROR:  *  * Identifier for the libgimpthumb error domain.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_THUMB_ERROR

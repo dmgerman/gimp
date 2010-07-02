@@ -124,6 +124,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpthumbnail  * @title: GimpThumbnail  * @short_description: The GimpThumbnail object  *  * The GimpThumbnail object  **/
+end_comment
+
+begin_comment
 comment|/*  #define GIMP_THUMB_DEBUG  */
 end_comment
 
@@ -256,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951ff9e0103
+DECL|enum|__anon29afd1d30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
