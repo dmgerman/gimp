@@ -92,6 +92,10 @@ name|GimpThumbnailClass
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpThumbnail:  *  * All members of #GimpThumbnail are private and should only be accessed  * using object properties.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpThumbnail
 struct|struct

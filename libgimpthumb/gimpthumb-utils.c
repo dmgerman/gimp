@@ -568,7 +568,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_get_thumb_dir_local:  * @dirname:  * @size: a GimpThumbSize  *  * Retrieve the name of the local thumbnail folder for a specific  * size.  Unlike gimp_thumb_get_thumb_dir() the returned string is not  * constant and should be free'd when it is not any longer needed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumb_get_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  *  * Retrieve the name of the local thumbnail folder for a specific  * size.  Unlike gimp_thumb_get_thumb_dir() the returned string is not  * constant and should be free'd when it is not any longer needed.  *  * Return value: the thumbnail directory in the encoding of the filesystem  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -793,7 +793,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_thumb_ensure_thumb_dir_local:  * @dirname:  * @size: a GimpThumbSize  * @error: return location for possible errors  *  * This function checks if the directory that is required to store  * local thumbnails for a particular @size exist and attempts to  * create it if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb_local() will do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_thumb_ensure_thumb_dir_local:  * @dirname: the basename of the dir, without the actual dirname itself  * @size:    a GimpThumbSize  * @error:   return location for possible errors  *  * This function checks if the directory that is required to store  * local thumbnails for a particular @size exist and attempts to  * create it if necessary.  *  * You shouldn't have to call this function directly since  * gimp_thumbnail_save_thumb_local() will do this for you.  *  * Return value: %TRUE is the directory exists, %FALSE if it could not  *               be created  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

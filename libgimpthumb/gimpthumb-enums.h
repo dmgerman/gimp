@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efd0200103
+DECL|enum|__anon2c70ad940103
 block|{
 DECL|enumerator|GIMP_THUMB_FILE_TYPE_NONE
 name|GIMP_THUMB_FILE_TYPE_NONE
@@ -81,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efd0200203
+DECL|enum|__anon2c70ad940203
 block|{
 DECL|enumerator|GIMP_THUMB_SIZE_FAIL
 name|GIMP_THUMB_SIZE_FAIL
@@ -104,7 +104,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpThumbState:  * @GIMP_THUMB_STATE_UNKNOWN:   nothing is known about the file/thumbnail  * @GIMP_THUMB_STATE_REMOTE:    the file is on a remote file system  * @GIMP_THUMB_STATE_FOLDER:  * @GIMP_THUMB_STATE_SPECIAL:  * @GIMP_THUMB_STATE_NOT_FOUND: the file/thumbnail doesn't exist  * @GIMP_THUMB_STATE_EXISTS:    the file/thumbnail exists  * @GIMP_THUMB_STATE_OLD:       the thumbnail may be outdated  * @GIMP_THUMB_STATE_FAILED:    the thumbnail couldn't be created  * @GIMP_THUMB_STATE_OK:        the thumbnail exists and matches the image  *  * Possible image and thumbnail file states used by libgimpthumb.  **/
+comment|/**  * GimpThumbState:  * @GIMP_THUMB_STATE_UNKNOWN:   nothing is known about the file/thumbnail  * @GIMP_THUMB_STATE_REMOTE:    the file is on a remote file system  * @GIMP_THUMB_STATE_FOLDER:    the file is a directory  * @GIMP_THUMB_STATE_SPECIAL:   the file is a special file  * @GIMP_THUMB_STATE_NOT_FOUND: the file/thumbnail doesn't exist  * @GIMP_THUMB_STATE_EXISTS:    the file/thumbnail exists  * @GIMP_THUMB_STATE_OLD:       the thumbnail may be outdated  * @GIMP_THUMB_STATE_FAILED:    the thumbnail couldn't be created  * @GIMP_THUMB_STATE_OK:        the thumbnail exists and matches the image  *  * Possible image and thumbnail file states used by libgimpthumb.  **/
 end_comment
 
 begin_define
@@ -128,7 +128,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28efd0200303
+DECL|enum|__anon2c70ad940303
 block|{
 DECL|enumerator|GIMP_THUMB_STATE_UNKNOWN
 name|GIMP_THUMB_STATE_UNKNOWN
