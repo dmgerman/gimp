@@ -1949,7 +1949,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_matrix3_affine:  * @matrix: The input matrix.  * @a:  * @b:  * @c:  * @d:  * @e:  * @f:  *  * Applies the affine transformation given by six values to @matrix.  * The six values form define an affine transformation matrix as  * illustrated below:  *  *  ( a c e )  *  ( b d f )  *  ( 0 0 1 )  **/
+comment|/**  * gimp_matrix3_affine:  * @matrix: The input matrix.  * @a: the 'a' coefficient  * @b: the 'b' coefficient  * @c: the 'c' coefficient  * @d: the 'd' coefficient  * @e: the 'e' coefficient  * @f: the 'f' coefficient  *  * Applies the affine transformation given by six values to @matrix.  * The six values form define an affine transformation matrix as  * illustrated below:  *  *  ( a c e )  *  ( b d f )  *  ( 0 0 1 )  **/
 end_comment
 
 begin_function
