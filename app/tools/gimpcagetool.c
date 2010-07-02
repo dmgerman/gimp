@@ -191,11 +191,13 @@ call|)
 argument_list|(
 name|GIMP_TYPE_CAGE_TOOL
 argument_list|,
+comment|//Tool type
 name|GIMP_TYPE_CAGE_OPTIONS
 argument_list|,
-literal|0
+comment|//Tool options type
+name|gimp_cage_options_gui
 argument_list|,
-comment|//options_gui_func
+comment|//Tool opions gui
 literal|0
 argument_list|,
 comment|//context_props

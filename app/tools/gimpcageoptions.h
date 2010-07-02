@@ -22,6 +22,12 @@ directive|include
 file|"tools/gimptransformoptions.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"tools/tools-enums.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_CAGE_OPTIONS
 define|#
@@ -112,6 +118,10 @@ DECL|member|parent_instance
 name|GimpTransformOptions
 name|parent_instance
 decl_stmt|;
+DECL|member|cage_mode
+name|GimpCageMode
+name|cage_mode
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -138,6 +148,18 @@ argument_list|)
 name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_cage_options_gui
+parameter_list|(
+name|GimpToolOptions
+modifier|*
+name|tool_options
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_endif
 endif|#
