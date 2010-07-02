@@ -24,6 +24,10 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpMatrix2  * @coeff: the coefficients  *  * A two by two matrix.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpMatrix2
 struct|struct
@@ -43,6 +47,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/**  * GimpMatrix3  * @coeff: the coefficients  *  * A three by three matrix.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpMatrix3
 struct|struct
@@ -61,6 +69,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpMatrix4  * @coeff: the coefficients  *  * A four by four matrix.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpMatrix4

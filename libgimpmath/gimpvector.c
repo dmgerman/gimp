@@ -34,6 +34,10 @@ file|"gimpmath.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpvector  * @title: GimpVector  * @short_description: Utilities to set up and manipulate vectors.  * @see_also: #GimpMatrix2, #GimpMatrix3, #GimpMatrix4  *  * Utilities to set up and manipulate vectors.  **/
+end_comment
+
+begin_comment
 comment|/*************************/
 end_comment
 

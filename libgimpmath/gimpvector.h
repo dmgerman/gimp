@@ -24,6 +24,10 @@ begin_comment
 comment|/* For information look into the C source or the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpVector2:  * @x: the x axis  * @y: the y axis  *  * A two dimensional vector.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpVector2
 struct|struct
@@ -39,6 +43,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpVector3:  * @x: the x axis  * @y: the y axis  * @z: the z axis  *  * A three dimensional vector.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpVector3
@@ -58,6 +66,10 @@ decl_stmt|;
 block|}
 struct|;
 end_struct
+
+begin_comment
+comment|/**  * GimpVector4:  * @x: the x axis  * @y: the y axis  * @z: the z axis  * @w: the w axis  *  * A four dimensional vector.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpVector4

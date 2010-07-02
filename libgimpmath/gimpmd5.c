@@ -28,6 +28,10 @@ file|"gimpmd5.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpmd5  * @title: GimpMD5  * @short_description: The MD5 message-digest algorithm  *  * The MD5 message-digest algorithm  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_md5_get_digest:  * @buffer:      byte buffer  * @buffer_size: buffer size (in bytes) or -1 if @buffer is nul-terminated.  * @digest:      16 bytes buffer receiving the hash code.  *  * This function is deprecated! Use %GChecksum from GLib instead.  *  * Get the md5 hash of a buffer. The result is put in the 16 bytes  * buffer @digest. For more information see RFC 1321.  **/
 end_comment
 
