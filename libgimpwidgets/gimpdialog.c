@@ -33,9 +33,13 @@ directive|include
 file|"gimphelpui.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpdialog  * @title: GimpDialog  * @short_description: Constructors for #GtkDialog's and action_areas as  *                     well as other dialog-related stuff.  *  * Constructors for #GtkDialog's and action_areas as well as other  * dialog-related stuff.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a10222e0103
+DECL|enum|__anon2b28a3ab0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1585,7 +1589,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a10222e0208
+DECL|struct|__anon2b28a3ab0208
 block|{
 DECL|member|dialog
 name|GtkDialog

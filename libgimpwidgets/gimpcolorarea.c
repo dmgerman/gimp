@@ -39,6 +39,10 @@ directive|include
 file|"gimpcolorarea.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorarea  * @title: GimpColorArea  * @short_description: Displays a #GimpRGB color, optionally with  *                     alpha-channel.  *  * Displays a #GimpRGB color, optionally with alpha-channel.  **/
+end_comment
+
 begin_define
 DECL|macro|DRAG_PREVIEW_SIZE
 define|#
@@ -57,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon277913880103
+DECL|enum|__anon2c0b718b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -70,7 +74,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon277913880203
+DECL|enum|__anon2c0b718b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

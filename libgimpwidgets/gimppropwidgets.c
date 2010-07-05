@@ -58,6 +58,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppropwidgets  * @title: GimpPropWidgets  * @short_description: Editable views on #GObject properties.  *  * Editable views on #GObject properties.  **/
+end_comment
+
+begin_comment
 comment|/*  utility function prototypes  */
 end_comment
 

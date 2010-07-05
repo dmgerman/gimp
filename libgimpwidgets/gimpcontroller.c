@@ -58,9 +58,13 @@ directive|include
 file|"gimpstock.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcontroller  * @title: GimpController  * @short_description: Pluggable GIMP input controller modules.  *  * An abstract interface for implementing arbitrary input controllers.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2ac28c5c0103
+DECL|enum|__anon29595cef0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -76,7 +80,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ac28c5c0203
+DECL|enum|__anon29595cef0203
 block|{
 DECL|enumerator|EVENT
 name|EVENT

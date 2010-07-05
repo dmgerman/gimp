@@ -39,6 +39,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpscrolledpreview  * @title: GimpScrolledPreview  * @short_description: A widget providing a #GimpPreview enhanced by  *                     scrolling capabilities.  *  * A widget providing a #GimpPreview enhanced by scrolling capabilities.  **/
+end_comment
+
 begin_define
 DECL|macro|POPUP_SIZE
 define|#
@@ -50,7 +54,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28cc37390108
+DECL|struct|__anon2b43cd670108
 block|{
 DECL|member|hscr_policy
 name|GtkPolicyType

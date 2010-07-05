@@ -50,6 +50,10 @@ file|"gimpoldwidgets.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpoldwidgets  * @title: GimpOldWidgets  * @short_description: Old API that is still available but declared  *                     as deprecated.  * @see_also: #GimpIntComboBox  *  * These functions are not defined if you #define GIMP_DISABLE_DEPRECATED.  **/
+end_comment
+
+begin_comment
 comment|/*  *  Widget Constructors  */
 end_comment
 

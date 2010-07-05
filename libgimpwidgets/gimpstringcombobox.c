@@ -33,9 +33,13 @@ directive|include
 file|"gimpstringcombobox.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpstringcombobox  * @title: GimpStringComboBox  * @short_description: A #GtkComboBox subclass to select strings.  *  * A #GtkComboBox subclass to select strings.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a0f3b0c0103
+DECL|enum|__anon28b254e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0f3b0c0208
+DECL|struct|__anon28b254e60208
 block|{
 DECL|member|id_column
 name|gint

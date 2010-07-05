@@ -39,9 +39,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpenumcombobox  * @title: GimpEnumComboBox  * @short_description: A #GimpIntComboBox subclass for selecting an enum value.  *  * A #GtkComboBox subclass for selecting an enum value.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b315a890103
+DECL|enum|__anon2999b7cf0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

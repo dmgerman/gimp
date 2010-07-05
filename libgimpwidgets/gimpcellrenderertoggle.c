@@ -33,6 +33,10 @@ directive|include
 file|"gimpcellrenderertoggle.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcellrenderertoggle  * @title: GimpCellRendererToggle  * @short_description: A #GtkCellRendererToggle that displays icons instead  *                     of a checkbox.  *  * A #GtkCellRendererToggle that displays icons instead of a checkbox.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_ICON_SIZE
 define|#
@@ -43,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b0c320103
+DECL|enum|__anon29c5035b0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b0c320203
+DECL|enum|__anon29c5035b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

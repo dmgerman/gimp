@@ -51,6 +51,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolornotebook  * @title: GimpColorNotebook  * @short_description: A #GimpColorSelector implementation.  *  * The #GimpColorNotebook widget is an implementation of a  * #GimpColorSelector. It serves as a container for  * #GimpColorSelectors.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_TAB_BORDER
 define|#

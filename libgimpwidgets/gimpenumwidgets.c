@@ -46,6 +46,10 @@ file|"gimphelpui.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpenumwidgets  * @title: GimpEnumWidgets  * @short_description: A set of utility functions to create widgets  *                     based on enums.  *  * A set of utility functions to create widgets based on enums.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_enum_radio_box_new:  * @enum_type: the #GType of an enum.  * @callback: a callback to connect to the "toggled" signal of each  *            #GtkRadioButton that is created.  * @callback_data: data to pass to the @callback.  * @first_button: returns the first button in the created group.  *  * Creates a new group of #GtkRadioButtons representing the enum  * values.  A group of radiobuttons is a good way to represent enums  * with up to three or four values. Often it is better to use a  * #GimpEnumComboBox instead.  *  * Return value: a new #GtkVBox holding a group of #GtkRadioButtons.  *  * Since: GIMP 2.4  **/
 end_comment
 

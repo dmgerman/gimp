@@ -33,9 +33,13 @@ directive|include
 file|"gimpstock.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpchainbutton  * @title: GimpChainButton  * @short_description: Widget to visually connect two entry widgets.  * @see_also: You may want to use the convenience function  *            gimp_coordinates_new() to set up two GimpSizeEntries  *            (see #GimpSizeEntry) linked with a #GimpChainButton.  *  * This widget provides a button showing either a linked or a broken  * chain that can be used to link two entries, spinbuttons, colors or  * other GUI elements and show that they may be locked. Use it for  * example to connect X and Y ratios to provide the possibility of a  * constrained aspect ratio.  *  * The #GimpChainButton only gives visual feedback, it does not really  * connect widgets. You have to take care of locking the values  * yourself by checking the state of the #GimpChainButton whenever a  * value changes in one of the connected widgets and adjusting the  * other value if necessary.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon28b016a00103
+DECL|enum|__anon27cd5a3d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -48,7 +52,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b016a00203
+DECL|enum|__anon27cd5a3d0203
 block|{
 DECL|enumerator|TOGGLED
 name|TOGGLED

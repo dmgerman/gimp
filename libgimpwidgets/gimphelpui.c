@@ -39,10 +39,14 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimphelpui  * @title: GimpHelpUI  * @short_description: Functions for setting tooltip and help identifier  *                     used by the GIMP help system.  *  * Functions for setting tooltip and help identifier used by the GIMP  * help system.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0c3e5c0103
+DECL|enum|__anon2b1a93bd0103
 block|{
 DECL|enumerator|GIMP_WIDGET_HELP_TYPE_HELP
 name|GIMP_WIDGET_HELP_TYPE_HELP

@@ -82,6 +82,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpwidgets  * @title: GimpWidgets  * @short_description: A collection of convenient widget constructors,  *                     standard callbacks and helper functions.  *  * A collection of convenient widget constructors, standard callbacks  * and helper functions.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_radio_group_new:  * @in_frame:    %TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or %NULL if you don't want a title.  * @...:         A %NULL-terminated @va_list describing the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
 end_comment
 
@@ -1677,7 +1681,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e500a0108
+DECL|struct|__anon2c37804c0108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

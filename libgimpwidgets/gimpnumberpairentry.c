@@ -51,6 +51,10 @@ directive|include
 file|"gimpnumberpairentry.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpnumberpairentry  * @title: GimpNumberPairEntry  * @short_description: A #GtkEntry subclass to enter ratios.  *  * A #GtkEntry subclass to enter ratios.  **/
+end_comment
+
 begin_define
 DECL|macro|EPSILON
 define|#
@@ -61,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14d1be0103
+DECL|enum|__anon2758b18e0103
 block|{
 DECL|enumerator|NUMBERS_CHANGED
 name|NUMBERS_CHANGED
@@ -77,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c14d1be0203
+DECL|enum|__anon2758b18e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -124,7 +128,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c14d1be0303
+DECL|enum|__anon2758b18e0303
 block|{
 DECL|enumerator|PARSE_VALID
 name|PARSE_VALID
@@ -143,7 +147,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c14d1be0408
+DECL|struct|__anon2758b18e0408
 block|{
 comment|/* The current number pair displayed in the widget. */
 DECL|member|left_number

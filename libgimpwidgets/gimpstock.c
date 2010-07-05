@@ -33,6 +33,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpstock  * @title: GimpStock  * @short_description: Prebuilt common menu/toolbar items and  *                     corresponding icons  *  * GIMP registers a set of menu/toolbar items and corresponding icons  * in addition to the standard GTK+ stock items. These can be used  * just like GTK+ stock items. GIMP also overrides a few of the GTK+  * icons (namely the ones in dialog size).  *  * Stock icons may have a RTL variant which gets used for  * right-to-left locales.  **/
+end_comment
+
 begin_define
 DECL|macro|LIBGIMP_DOMAIN
 define|#
@@ -2681,7 +2685,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a9710e80108
+DECL|struct|__anon2790bbfa0108
 block|{
 DECL|member|stock_id
 specifier|const
@@ -3517,7 +3521,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a9710e80208
+DECL|struct|__anon2790bbfa0208
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4445,7 +4449,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a9710e80308
+DECL|struct|__anon2790bbfa0308
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4548,7 +4552,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a9710e80408
+DECL|struct|__anon2790bbfa0408
 block|{
 DECL|member|stock_id
 specifier|const
@@ -4699,7 +4703,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2a9710e80508
+DECL|struct|__anon2790bbfa0508
 block|{
 DECL|member|stock_id
 specifier|const

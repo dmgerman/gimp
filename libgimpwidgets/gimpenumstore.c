@@ -33,9 +33,13 @@ directive|include
 file|"gimpenumstore.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpenumstore  * @title: GimpEnumStore  * @short_description: A #GimpIntStore subclass that keeps enum values.  *  * A #GimpIntStore subclass that keeps enum values.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2877d0150103
+DECL|enum|__anon2a2ed92d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

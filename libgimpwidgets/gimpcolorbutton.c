@@ -87,6 +87,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorbutton  * @title: GimpColorButton  * @short_description: Widget for selecting a color from a simple button.  * @see_also: #libgimpcolor-gimpcolorspace  *  * This widget provides a simple button with a preview showing the  * color.  *  * On click a color selection dialog is opened. Additionally the  * button supports Drag and Drop and has a right-click menu that  * allows to choose the color from the current FG or BG color. If the  * user changes the color, the "color-changed" signal is emitted.  **/
+end_comment
+
 begin_define
 DECL|macro|COLOR_SELECTION_KEY
 define|#
@@ -159,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afcb75d0103
+DECL|enum|__anon2a3b549b0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afcb75d0203
+DECL|enum|__anon2a3b549b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

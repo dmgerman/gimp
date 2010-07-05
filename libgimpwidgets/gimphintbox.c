@@ -21,6 +21,10 @@ directive|include
 file|"gimpwidgets.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimphintbox  * @title: GimpHintBox  * @short_description: Displays a wilber icon and a text.  *  * Displays a wilber icon and a text.  **/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpHintBoxClass
 typedef|typedef
@@ -32,7 +36,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e529f20108
+DECL|struct|__anon2786e1850108
 block|{
 DECL|member|parent_instance
 name|GtkHBox
@@ -67,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e529f20203
+DECL|enum|__anon2786e1850203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

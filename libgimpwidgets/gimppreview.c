@@ -39,6 +39,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppreview  * @title: GimpPreview  * @short_description: A widget providing a #GimpPreviewArea plus  *                     framework to update the preview.  *  * A widget providing a #GimpPreviewArea plus framework to update the  * preview.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_SIZE
 define|#
@@ -57,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5be8910103
+DECL|enum|__anon2b2ac1de0103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -70,7 +74,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5be8910203
+DECL|enum|__anon2b2ac1de0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +88,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5be8910308
+DECL|struct|__anon2b2ac1de0308
 block|{
 DECL|member|controls
 name|GtkWidget

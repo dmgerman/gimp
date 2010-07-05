@@ -63,9 +63,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppageselector  * @title: GimpPageSelector  * @short_description: A widget to select pages from multi-page things.  *  * Use this for example for specifying what pages to import from  * a PDF or PS document.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon28e755fc0103
+DECL|enum|__anon2784e5e20103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e755fc0203
+DECL|enum|__anon2784e5e20203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e755fc0303
+DECL|enum|__anon2784e5e20303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e755fc0408
+DECL|struct|__anon2784e5e20408
 block|{
 DECL|member|n_pages
 name|gint

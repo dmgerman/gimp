@@ -45,9 +45,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppreviewarea  * @title: GimpPreviewArea  * @short_description: A general purpose preview widget which caches  *                     its pixel data.  *  * A general purpose preview widget which caches its pixel data.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2aa716510103
+DECL|enum|__anon2965097b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

@@ -63,9 +63,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpunitmenu  * @title: GimpUnitMenu  * @short_description: Widget for selecting a #GimpUnit.  * @see_also: #GimpUnit, #GimpSizeEntry, gimp_coordinates_new()  *  * This widget provides a #GtkOptionMenu which contains a list of  * #GimpUnit's.  *  * You can specify the string that will be displayed for each unit by  * passing a printf-like @format string to gimp_unit_menu_new().  *  * The constructor also lets you choose if the menu should contain  * items for GIMP_UNIT_PIXEL, GIMP_UNIT_PERCENT and a "More..." item  * which will pop up a dialog for selecting user-defined units.  *  * Whenever the user selects a unit from the menu or the dialog, the  * "unit_changed" signal will be emitted.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a41e8360103
+DECL|enum|__anon2bcdd6810103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -78,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a41e8360203
+DECL|enum|__anon2bcdd6810203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN

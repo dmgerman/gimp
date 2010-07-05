@@ -63,9 +63,13 @@ directive|include
 file|"gimpcolordisplay.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolordisplay  * @title: GimpColorDisplay  * @short_description: Pluggable GIMP display color correction modules.  * @see_also: #GModule, #GTypeModule, #GimpModule  *  * Functions and definitions for creating pluggable GIMP  * display color correction modules.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon27eea5e40103
+DECL|enum|__anon2888c7810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -84,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27eea5e40203
+DECL|enum|__anon2888c7810203
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED
@@ -98,7 +102,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27eea5e40308
+DECL|struct|__anon2888c7810308
 block|{
 DECL|member|config
 name|GimpColorConfig

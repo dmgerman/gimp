@@ -27,9 +27,13 @@ directive|include
 file|"gimpbutton.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpbutton  * @title: GimpButton  * @short_description: A #GtkButton with a little extra functionality.  *  * #GimpButton adds an extra signal to the #GtkButton widget that  * allows to distinguish a normal click from a click that was  * performed with modifier keys pressed.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2ac055070103
+DECL|enum|__anon28f6b3430103
 block|{
 DECL|enumerator|EXTENDED_CLICKED
 name|EXTENDED_CLICKED
@@ -130,6 +134,7 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+comment|/**    * GimpButton::extended-clicked:    * @gimpbutton: the object that received the signal.    * @arg1: the state of modifier keys when the button was clicked    *    * This signal is emitted when the button is clicked with a modifier    * key pressed.    **/
 name|button_signals
 index|[
 name|EXTENDED_CLICKED

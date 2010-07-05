@@ -25,7 +25,7 @@ comment|/* For information look into the C source or the html documentation */
 end_comment
 
 begin_comment
-comment|/*  query box callback prototypes  */
+comment|/**  * GimpQueryStringCallback:  * @query_box: The query box.  * @string:    The entered string.  * @data:      The user data.  *  * Note that you must not g_free() the passed string.  **/
 end_comment
 
 begin_typedef
@@ -52,6 +52,10 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpQueryIntCallback:  * @query_box: The query box.  * @value:     The entered integer value.  * @data:      The user data.  *  * The callback for an int query box.  **/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpQueryIntCallback
 typedef|typedef
@@ -74,6 +78,10 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpQueryDoubleCallback:  * @query_box: The query box.  * @value:     The entered double value.  * @data:      The user data.  *  * The callback for a double query box.  **/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpQueryDoubleCallback
 typedef|typedef
@@ -95,6 +103,10 @@ name|data
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpQuerySizeCallback:  * @query_box: The query box.  * @size:      The entered size in pixels.  * @unit:      The selected unit from the #GimpUnitMenu.  * @data:      The user data.  *  * The callback for a size query box.  **/
+end_comment
 
 begin_typedef
 DECL|typedef|GimpQuerySizeCallback
@@ -121,6 +133,10 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpQueryBooleanCallback:  * @query_box: The query box.  * @value:     The entered boolean value.  * @data:      The user data.  *  * The callback for a boolean query box.  **/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpQueryBooleanCallback
 typedef|typedef
@@ -142,6 +158,10 @@ name|data
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_comment
+comment|/**  * GIMP_QUERY_BOX_VBOX:  * @qbox: The query box.  *  * A macro to access the #GtkVBox in a #GimpQueryBox. Useful if you  * want to add more widgets.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_QUERY_BOX_VBOX (qbox)

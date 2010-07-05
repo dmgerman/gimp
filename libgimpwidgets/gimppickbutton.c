@@ -57,9 +57,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppickbutton  * @title: GimpPickButton  * @short_description: Widget to pick a color from screen.  *  * #GimpPickButton is a specialized button. When clicked, it changes  * the cursor to a color-picker pipette and allows the user to pick a  * color from any point on the screen.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b1599170103
+DECL|enum|__anon278e9c4f0103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -270,6 +274,7 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
+comment|/**    * GimpPickButton::color-picked:    * @gimppickbutton: the object which received the signal.    * @arg1: pointer to a #GimpRGB structure that holds the picked color    *    * This signal is emitted when the user has picked a color.    **/
 name|pick_button_signals
 index|[
 name|COLOR_PICKED

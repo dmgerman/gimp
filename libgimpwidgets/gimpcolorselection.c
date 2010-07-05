@@ -99,6 +99,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorselection  * @title: GimpColorSelection  * @short_description: Widget for doing a color selection.  *  * Widget for doing a color selection.  **/
+end_comment
+
 begin_define
 DECL|macro|COLOR_AREA_SIZE
 define|#
@@ -110,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29c2e3420103
+DECL|enum|__anon2bc39be60103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -155,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2e3420203
+DECL|enum|__anon2bc39be60203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -168,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c2e3420303
+DECL|enum|__anon2bc39be60303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

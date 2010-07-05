@@ -40,6 +40,10 @@ file|"gimpcairo-utils.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpcairo-utils  * @title: GimpCairo-utils  * @short_description: Utility functions for cairo  *  * Utility functions that make cairo easier to use with common  * GIMP data types.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_cairo_set_source_rgb:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid opaque color  * described by @color.  *  * This function calls cairo_set_source_rgb() for you.  *  * Since: GIMP 2.6  **/
 end_comment
 

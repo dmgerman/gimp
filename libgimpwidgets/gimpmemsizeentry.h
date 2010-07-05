@@ -101,6 +101,7 @@ DECL|member|parent_instance
 name|GtkHBox
 name|parent_instance
 decl_stmt|;
+comment|/*< private>*/
 DECL|member|value
 name|guint64
 name|value

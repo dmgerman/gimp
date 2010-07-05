@@ -39,9 +39,13 @@ directive|include
 file|"gimpintstore.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpintcombobox  * @title: GimpIntComboBox  * @short_description: A widget providing a popup menu of integer  *                     values (e.g. enums).  *  * A widget providing a popup menu of integer values (e.g. enums).  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b8aa8be0103
+DECL|enum|__anon296de2bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8aa8be0208
+DECL|struct|__anon296de2bc0208
 block|{
 DECL|member|pixbuf_renderer
 name|GtkCellRenderer

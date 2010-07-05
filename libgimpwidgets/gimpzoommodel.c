@@ -51,6 +51,10 @@ directive|include
 file|"gimpzoommodel.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpzoommodel  * @title: GimpZoomModel  * @short_description: A model for zoom values.  *  * A model for zoom values.  **/
+end_comment
+
 begin_define
 DECL|macro|ZOOM_MIN
 define|#
@@ -69,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc65e70103
+DECL|enum|__anon28f933110103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -82,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc65e70203
+DECL|enum|__anon28f933110203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc65e70308
+DECL|struct|__anon28f933110308
 block|{
 DECL|member|value
 name|gdouble

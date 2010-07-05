@@ -75,6 +75,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorselect  * @title: GimpColorSelect  * @short_description: A #GimpColorSelector implementation.  *  * The #GimpColorSelect widget is an implementation of a  * #GimpColorSelector. It shows a square area that allows to  * interactively change two color channels and a smaller area to  * change the third channel. You can select which channel should be  * the third by calling gimp_color_selector_set_channel(). The widget  * will then change the other two channels accordingly.  **/
+end_comment
+
 begin_define
 DECL|macro|COLOR_AREA_EVENT_MASK
 define|#
@@ -86,7 +90,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289183860103
+DECL|enum|__anon2bc853620103
 block|{
 DECL|enumerator|COLOR_SELECT_HUE
 name|COLOR_SELECT_HUE
@@ -137,7 +141,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289183860203
+DECL|enum|__anon2bc853620203
 block|{
 DECL|enumerator|UPDATE_VALUES
 name|UPDATE_VALUES
@@ -182,7 +186,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon289183860303
+DECL|enum|__anon2bc853620303
 block|{
 DECL|enumerator|DRAG_NONE
 name|DRAG_NONE
