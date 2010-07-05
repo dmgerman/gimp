@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2892f9ec0103
+DECL|enum|__anon29d317bd0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -2467,7 +2467,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_value;  * @gse:   The sizeentry you want to know a value of.  * @field: The index of the field you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  **/
+comment|/**  * gimp_size_entry_get_value:  * @gse:   The sizeentry you want to know a value of.  * @field: The index of the field you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  **/
 end_comment
 
 begin_function
@@ -2769,7 +2769,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_value;  * @gse:   The sizeentry you want to set a value for.  * @field: The index of the field you want to set a value for.  * @value: The new value for @field.  *  * Sets the value for field # @field of the #GimpSizeEntry.  *  * The @value passed is treated to be a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval() instead.  **/
+comment|/**  * gimp_size_entry_set_value:  * @gse:   The sizeentry you want to set a value for.  * @field: The index of the field you want to set a value for.  * @value: The new value for @field.  *  * Sets the value for field # @field of the #GimpSizeEntry.  *  * The @value passed is treated to be a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval() instead.  **/
 end_comment
 
 begin_function
@@ -3394,7 +3394,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_refval;  * @gse:   The sizeentry you want to know a reference value of.  * @field: The index of the field you want to know the reference value of.  *  * Returns the reference value for field # @field of the #GimpSizeEntry.  *  * The reference value is either a distance in pixels or a resolution  * in dpi, depending on which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  *  * Returns: The reference value of the chosen @field.  **/
+comment|/**  * gimp_size_entry_get_refval:  * @gse:   The sizeentry you want to know a reference value of.  * @field: The index of the field you want to know the reference value of.  *  * Returns the reference value for field # @field of the #GimpSizeEntry.  *  * The reference value is either a distance in pixels or a resolution  * in dpi, depending on which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  *  * Returns: The reference value of the chosen @field.  **/
 end_comment
 
 begin_function
@@ -3683,7 +3683,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_refval;  * @gse:    The sizeentry you want to set a reference value for.  * @field:  The index of the field you want to set the reference value for.  * @refval: The new reference value for @field.  *  * Sets the reference value for field # @field of the #GimpSizeEntry.  *  * The @refval passed is either a distance in pixels or a resolution in dpi,  * depending on which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  **/
+comment|/**  * gimp_size_entry_set_refval:  * @gse:    The sizeentry you want to set a reference value for.  * @field:  The index of the field you want to set the reference value for.  * @refval: The new reference value for @field.  *  * Sets the reference value for field # @field of the #GimpSizeEntry.  *  * The @refval passed is either a distance in pixels or a resolution in dpi,  * depending on which #GimpSizeEntryUpdatePolicy you chose in  * gimp_size_entry_new().  **/
 end_comment
 
 begin_function
@@ -4224,7 +4224,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_attach_eevl:  * @spin_button:  * @gsef:  *  * Hooks in the GimpEevl unit expression parser into the  * #GtkSpinButton of the #GimpSizeEntryField.  **/
+comment|/**  * gimp_size_entry_attach_eevl:  * @spin_button: one of the size_entry's spinbuttons.  * @gsef:        a size entry field.  *  * Hooks in the GimpEevl unit expression parser into the  * #GtkSpinButton of the #GimpSizeEntryField.  **/
 end_comment
 
 begin_function
@@ -5021,7 +5021,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_activates_default:  * @gse: A #GimpSizeEntr  * @setting: %TRUE to activate window's default widget on Enter keypress  *  * Iterates over all entries in the #GimpSizeEntry and calls  * gtk_entry_set_activates_default() on them.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_size_entry_set_activates_default:  * @gse:     A #GimpSizeEntry  * @setting: %TRUE to activate window's default widget on Enter keypress  *  * Iterates over all entries in the #GimpSizeEntry and calls  * gtk_entry_set_activates_default() on them.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

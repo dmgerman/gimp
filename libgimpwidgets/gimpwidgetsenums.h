@@ -19,6 +19,7 @@ end_define
 begin_decl_stmt
 name|G_BEGIN_DECLS
 comment|/* For information look into the C source or the html documentation */
+comment|/**  * GimpAspectType:  * @GIMP_ASPECT_SQUARE:    it's a 1:1 square  * @GIMP_ASPECT_PORTRAIT:  it's higher than it's wide  * @GIMP_ASPECT_LANDSCAPE: it's wider than it's high  *  * Aspect ratios.  **/
 DECL|macro|GIMP_TYPE_ASPECT_TYPE
 define|#
 directive|define
@@ -36,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0103
+DECL|enum|__anon2bb227c70103
 block|{
 DECL|enumerator|GIMP_ASPECT_SQUARE
 name|GIMP_ASPECT_SQUARE
@@ -54,6 +55,10 @@ block|}
 name|GimpAspectType
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpChainPosition:  * @GIMP_CHAIN_TOP:    the chain is on top  * @GIMP_CHAIN_LEFT:   the chain is to the left  * @GIMP_CHAIN_BOTTOM: the chain is on bottom  * @GIMP_CHAIN_RIGHT:  the chain is to the right  *  * Possible chain positions for #GimpChainButton.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_CHAIN_POSITION
@@ -76,7 +81,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0203
+DECL|enum|__anon2bb227c70203
 block|{
 DECL|enumerator|GIMP_CHAIN_TOP
 name|GIMP_CHAIN_TOP
@@ -94,6 +99,10 @@ block|}
 name|GimpChainPosition
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpColorAreaType:  * @GIMP_COLOR_AREA_FLAT:         don't display transparency  * @GIMP_COLOR_AREA_SMALL_CHECKS: display transparency using small checks  * @GIMP_COLOR_AREA_LARGE_CHECKS: display transparency using large checks  *  * The types of transparency display for #GimpColorArea.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_COLOR_AREA_TYPE
@@ -116,7 +125,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0303
+DECL|enum|__anon2bb227c70303
 block|{
 DECL|enumerator|GIMP_COLOR_AREA_FLAT
 name|GIMP_COLOR_AREA_FLAT
@@ -135,7 +144,7 @@ typedef|;
 end_typedef
 
 begin_comment
-comment|/**  * GimpColorSelectorChannel:  * @GIMP_COLOR_SELECTOR_HUE: the hue channel  * @GIMP_COLOR_SELECTOR_SATURATION: the saturation channel  * @GIMP_COLOR_SELECTOR_VALUE: the value channel  * @GIMP_COLOR_SELECTOR_RED: the red channel  * @GIMP_COLOR_SELECTOR_GREEN: the green channel  * @GIMP_COLOR_SELECTOR_BLUE: the blue channel  * @GIMP_COLOR_SELECTOR_ALPHA: the alpha channel  *  * An enum to specify the types of color channels edited in  * #GimpColorSelector widgets.  **/
+comment|/**  * GimpColorSelectorChannel:  * @GIMP_COLOR_SELECTOR_HUE:        the hue channel  * @GIMP_COLOR_SELECTOR_SATURATION: the saturation channel  * @GIMP_COLOR_SELECTOR_VALUE:      the value channel  * @GIMP_COLOR_SELECTOR_RED:        the red channel  * @GIMP_COLOR_SELECTOR_GREEN:      the green channel  * @GIMP_COLOR_SELECTOR_BLUE:       the blue channel  * @GIMP_COLOR_SELECTOR_ALPHA:      the alpha channel  *  * An enum to specify the types of color channels edited in  * #GimpColorSelector widgets.  **/
 end_comment
 
 begin_define
@@ -159,7 +168,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0403
+DECL|enum|__anon2bb227c70403
 block|{
 DECL|enumerator|GIMP_COLOR_SELECTOR_HUE
 name|GIMP_COLOR_SELECTOR_HUE
@@ -194,6 +203,10 @@ name|GimpColorSelectorChannel
 typedef|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpPageSelectorTarget:  * @GIMP_PAGE_SELECTOR_TARGET_LAYERS: import as layers of one image  * @GIMP_PAGE_SELECTOR_TARGET_IMAGES: import as separate images  *  * Import targets for #GimpPageSelector.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PAGE_SELECTOR_TARGET
 define|#
@@ -215,7 +228,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0503
+DECL|enum|__anon2bb227c70503
 block|{
 DECL|enumerator|GIMP_PAGE_SELECTOR_TARGET_LAYERS
 name|GIMP_PAGE_SELECTOR_TARGET_LAYERS
@@ -229,6 +242,10 @@ block|}
 name|GimpPageSelectorTarget
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpSizeEntryUpdatePolicy:  * @GIMP_SIZE_ENTRY_UPDATE_NONE:       the size entry's meaning is up to the user  * @GIMP_SIZE_ENTRY_UPDATE_SIZE:       the size entry displays values  * @GIMP_SIZE_ENTRY_UPDATE_RESOLUTION: the size entry displays resolutions  *  * Update policies for #GimpSizeEntry.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_SIZE_ENTRY_UPDATE_POLICY
@@ -251,7 +268,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0603
+DECL|enum|__anon2bb227c70603
 block|{
 DECL|enumerator|GIMP_SIZE_ENTRY_UPDATE_NONE
 name|GIMP_SIZE_ENTRY_UPDATE_NONE
@@ -272,6 +289,10 @@ block|}
 name|GimpSizeEntryUpdatePolicy
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpZoomType:  * @GIMP_ZOOM_IN:       zoom in  * @GIMP_ZOOM_OUT:      zoom out  * @GIMP_ZOOM_IN_MORE:  zoom in a lot  * @GIMP_ZOOM_OUT_MORE: zoom out a lot  * @GIMP_ZOOM_IN_MAX:   zoom in as far as possible  * @GIMP_ZOOM_OUT_MAX:  zoom out as far as possible  * @GIMP_ZOOM_TO:       zoom to a specific zoom factor  *  * the zoom types for #GimpZoomModel.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_ZOOM_TYPE
@@ -294,7 +315,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b53017e0703
+DECL|enum|__anon2bb227c70703
 block|{
 DECL|enumerator|GIMP_ZOOM_IN
 name|GIMP_ZOOM_IN

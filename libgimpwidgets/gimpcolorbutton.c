@@ -163,7 +163,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b549b0103
+DECL|enum|__anon28b989b40103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -176,7 +176,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3b549b0203
+DECL|enum|__anon28b989b40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2038,7 +2038,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_color_button_new:  * @title: String that will be used as title for the color_selector.  * @width: Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color: A pointer to a #GimpRGB color.  * @type:  *  * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color-changed"  * signal is emitted.  *  * Returns: Pointer to the new #GimpColorButton widget.  **/
+comment|/**  * gimp_color_button_new:  * @title:  String that will be used as title for the color_selector.  * @width:  Width of the colorpreview in pixels.  * @height: Height of the colorpreview in pixels.  * @color:  A pointer to a #GimpRGB color.  * @type:   The type of transparency to be displayed.  *  * Creates a new #GimpColorButton widget.  *  * This returns a button with a preview showing the color.  * When the button is clicked a GtkColorSelectionDialog is opened.  * If the user changes the color the new color is written into the  * array that was used to pass the initial color and the "color-changed"  * signal is emitted.  *  * Returns: Pointer to the new #GimpColorButton widget.  **/
 end_comment
 
 begin_function
@@ -2125,7 +2125,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_set_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to the new #GimpRGB color.  *  * Sets the @button to the given @color.  **/
+comment|/**  * gimp_color_button_set_color:  * @button: Pointer to a #GimpColorButton.  * @color:  Pointer to the new #GimpRGB color.  *  * Sets the @button to the given @color.  **/
 end_comment
 
 begin_function
@@ -2184,7 +2184,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color: Pointer to a #GimpRGB struct used to return the color.  *  * Retrieves the currently set color from the @button.  **/
+comment|/**  * gimp_color_button_get_color:  * @button: Pointer to a #GimpColorButton.  * @color:  Pointer to a #GimpRGB struct used to return the color.  *  * Retrieves the currently set color from the @button.  **/
 end_comment
 
 begin_function

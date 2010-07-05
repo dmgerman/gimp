@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ac1de0103
+DECL|enum|__anon29ebdef60103
 block|{
 DECL|enumerator|INVALIDATED
 name|INVALIDATED
@@ -74,7 +74,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2ac1de0203
+DECL|enum|__anon29ebdef60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -88,7 +88,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b2ac1de0308
+DECL|struct|__anon29ebdef60308
 block|{
 DECL|member|controls
 name|GtkWidget
@@ -2323,7 +2323,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_preview_set_bounds:  * @preview: a #GimpPreview widget  * @xmin:  * @ymin:  * @xmax:  * @ymax:  *  * Sets the lower and upper limits for the previewed area. The  * difference between the upper and lower value is used to set the  * maximum size of the #GimpPreviewArea used in the @preview.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_preview_set_bounds:  * @preview: a #GimpPreview widget  * @xmin:    the minimum X value  * @ymin:    the minimum Y value  * @xmax:    the maximum X value  * @ymax:    the maximum Y value  *  * Sets the lower and upper limits for the previewed area. The  * difference between the upper and lower value is used to set the  * maximum size of the #GimpPreviewArea used in the @preview.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

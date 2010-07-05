@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f933110103
+DECL|enum|__anon28d338e90103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -86,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f933110203
+DECL|enum|__anon28d338e90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -112,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f933110308
+DECL|struct|__anon28d338e90308
 block|{
 DECL|member|value
 name|gdouble
@@ -1850,7 +1850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type:  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type: the zoom type  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function

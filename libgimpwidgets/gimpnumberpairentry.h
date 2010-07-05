@@ -6,14 +6,14 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
-name|GIMP_NUMBER_PAIR_ENTRY_H
+name|__GIMP_NUMBER_PAIR_ENTRY_H__
 end_ifndef
 
 begin_define
-DECL|macro|GIMP_NUMBER_PAIR_ENTRY_H
+DECL|macro|__GIMP_NUMBER_PAIR_ENTRY_H__
 define|#
 directive|define
-name|GIMP_NUMBER_PAIR_ENTRY_H
+name|__GIMP_NUMBER_PAIR_ENTRY_H__
 end_define
 
 begin_macro
@@ -405,7 +405,7 @@ directive|endif
 end_endif
 
 begin_comment
-comment|/* GIMP_NUMBER_PAIR_ENTRY_H */
+comment|/* __GIMP_NUMBER_PAIR_ENTRY_H__ */
 end_comment
 
 end_unit

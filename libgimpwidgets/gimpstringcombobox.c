@@ -39,7 +39,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b254e60103
+DECL|enum|__anon2b5b0f590103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -59,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b254e60208
+DECL|struct|__anon2b5b0f590208
 block|{
 DECL|member|id_column
 name|gint
@@ -825,7 +825,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_string_combo_box_set_active:  * @combo_box: a #GimpStringComboBox  * @id:  *  * Looks up the item that belongs to the given @id and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_string_combo_box_set_active:  * @combo_box: a #GimpStringComboBox  * @id:        the ID of the item to select  *  * Looks up the item that belongs to the given @id and makes it the  * selected item in the @combo_box.  *  * Return value: %TRUE on success or %FALSE if there was no item for  *               this value.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

@@ -69,7 +69,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcdd6810103
+DECL|enum|__anon2baef0240103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bcdd6810203
+DECL|enum|__anon2baef0240203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -1465,7 +1465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_unit_menu_get_pixel_digits:  * @menu: a #GimpUnitMenu  *  * Retrieve the number of digits for a pixel size as set by  * gimp_unit_set_pixel_digits().  *  * Return value: the configured number of digits for a pixel size  **/
+comment|/**  * gimp_unit_menu_get_pixel_digits:  * @menu: a #GimpUnitMenu  *  * Retrieve the number of digits for a pixel size as set by  * gimp_unit_menu_set_pixel_digits().  *  * Return value: the configured number of digits for a pixel size  **/
 end_comment
 
 begin_function

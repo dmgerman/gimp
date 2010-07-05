@@ -20,10 +20,14 @@ begin_macro
 name|G_BEGIN_DECLS
 end_macro
 
+begin_comment
+comment|/**  * GimpIntStoreColumns:  * @GIMP_INT_STORE_VALUE:       the integer value  * @GIMP_INT_STORE_LABEL:       a human-readable label  * @GIMP_INT_STORE_STOCK_ID:    a stock ID  * @GIMP_INT_STORE_PIXBUF:      a #GdkPixbuf  * @GIMP_INT_STORE_USER_DATA:   arbitrary user data  * @GIMP_INT_STORE_NUM_COLUMNS: the number of columns  *  * The column types of #GimpIntStore.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28e6ac3a0103
+DECL|enum|__anon2c8134590103
 block|{
 DECL|enumerator|GIMP_INT_STORE_VALUE
 name|GIMP_INT_STORE_VALUE

@@ -47,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5035b0103
+DECL|enum|__anon29380b8c0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -60,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c5035b0203
+DECL|enum|__anon29380b8c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1636,7 +1636,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cell_renderer_toggle_clicked:  * @cell: a #GimpCellRendererToggle  * @path:  * @state:  *  * Emits the "clicked" signal from a #GimpCellRendererToggle.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_cell_renderer_toggle_clicked:  * @cell:  a #GimpCellRendererToggle  * @path:  the path to the clicked row  * @state: the modifier state  *  * Emits the "clicked" signal from a #GimpCellRendererToggle.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

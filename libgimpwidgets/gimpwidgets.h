@@ -478,7 +478,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * GIMP_RANDOM_SEED_SPINBUTTON:  * @hbox: The #GtkHBox returned by gimp_random_seed_new().  *  * Returns the random_seed's #GtkSpinButton.  **/
+comment|/**  * GIMP_RANDOM_SEED_SPINBUTTON:  * @hbox: The #GtkHBox returned by gimp_random_seed_new().  *  * Returns: the random_seed's #GtkSpinButton.  **/
 end_comment
 
 begin_define
@@ -494,7 +494,7 @@ value|(g_object_get_data (G_OBJECT (hbox), "spinbutton"))
 end_define
 
 begin_comment
-comment|/**  * GIMP_RANDOM_SEED_SPINBUTTON_ADJ:  * @hbox: The #GtkHBox returned by gimp_random_seed_new().  *  * Returns the #GtkAdjustment of the random_seed's #GtkSpinButton.  **/
+comment|/**  * GIMP_RANDOM_SEED_SPINBUTTON_ADJ:  * @hbox: The #GtkHBox returned by gimp_random_seed_new().  *  * Returns: the #GtkAdjustment of the random_seed's #GtkSpinButton.  **/
 end_comment
 
 begin_define
@@ -510,7 +510,7 @@ value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_da
 end_define
 
 begin_comment
-comment|/**  * GIMP_RANDOM_SEED_TOGGLE:  * @hbox: The #GtkHBox returned by gimp_random_seed_new().  *  * Returns the random_seed's #GtkToggleButton.  **/
+comment|/**  * GIMP_RANDOM_SEED_TOGGLE:  * @hbox: The #GtkHBox returned by gimp_random_seed_new().  *  * Returns: the random_seed's #GtkToggleButton.  **/
 end_comment
 
 begin_define
@@ -542,7 +542,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * GIMP_COORDINATES_CHAINBUTTON:  * @sizeentry: The #GimpSizeEntry returned by gimp_coordinates_new().  *  * Returns the #GimpChainButton which is attached to the  * #GimpSizeEntry.  **/
+comment|/**  * GIMP_COORDINATES_CHAINBUTTON:  * @sizeentry: The #GimpSizeEntry returned by gimp_coordinates_new().  *  * Returns: the #GimpChainButton which is attached to the  *          #GimpSizeEntry.  **/
 end_comment
 
 begin_define

@@ -58,7 +58,7 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpcolorprofilestore  * @title: GimpColorProfileStore  * @short_description: A #GtklistStore subclass that keep color profiles.  *  * A #GtklistStore subclass that keep color profiles.  **/
+comment|/**  * SECTION: gimpcolorprofilestore  * @title: GimpColorProfileStore  * @short_description: A #GtkListStore subclass that keep color profiles.  *  * A #GtkListStore subclass that keep color profiles.  **/
 end_comment
 
 begin_define
@@ -71,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fcd6d00103
+DECL|enum|__anon2b435efc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

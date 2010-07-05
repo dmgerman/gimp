@@ -160,7 +160,7 @@ function_decl|;
 end_typedef
 
 begin_comment
-comment|/**  * GIMP_QUERY_BOX_VBOX:  * @qbox: The query box.  *  * A macro to access the #GtkVBox in a #GimpQueryBox. Useful if you  * want to add more widgets.  **/
+comment|/**  * GIMP_QUERY_BOX_VBOX:  * @qbox: The query box.  *  * A macro to access the #GtkVBox in a #libgimpwidgets-gimpquerybox.  * Useful if you want to add more widgets.  **/
 end_comment
 
 begin_define
