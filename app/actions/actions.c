@@ -2476,7 +2476,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|action_select_property (GimpActionSelectType select_type,GimpDisplay * display,GObject * object,const gchar * property_name,gdouble small_inc,gdouble inc,gdouble skip_inc,gboolean wrap)
+DECL|function|action_select_property (GimpActionSelectType select_type,GimpDisplay * display,GObject * object,const gchar * property_name,gdouble small_inc,gdouble inc,gdouble skip_inc,gdouble delta_factor,gboolean wrap)
 name|action_select_property
 parameter_list|(
 name|GimpActionSelectType
@@ -2503,6 +2503,9 @@ name|inc
 parameter_list|,
 name|gdouble
 name|skip_inc
+parameter_list|,
+name|gdouble
+name|delta_factor
 parameter_list|,
 name|gboolean
 name|wrap
@@ -2609,7 +2612,7 @@ name|inc
 argument_list|,
 name|skip_inc
 argument_list|,
-literal|0
+name|delta_factor
 argument_list|,
 name|wrap
 argument_list|)
@@ -2724,7 +2727,7 @@ name|inc
 argument_list|,
 name|skip_inc
 argument_list|,
-literal|0
+name|delta_factor
 argument_list|,
 name|wrap
 argument_list|)
