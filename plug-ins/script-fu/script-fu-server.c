@@ -85,11 +85,48 @@ directive|ifdef
 name|G_OS_WIN32
 end_ifdef
 
+begin_define
+DECL|macro|_WIN32_WINNT
+define|#
+directive|define
+name|_WIN32_WINNT
+value|0x0502
+end_define
+
 begin_include
 include|#
 directive|include
 file|<winsock2.h>
 end_include
+
+begin_include
+include|#
+directive|include
+file|<ws2tcpip.h>
+end_include
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|AI_ADDRCONFIG
+end_ifndef
+
+begin_comment
+comment|/* Missing from mingw headers, but value is publicly documented   * on http://msdn.microsoft.com/en-us/library/ms737530%28v=VS.85%29.aspx  */
+end_comment
+
+begin_define
+DECL|macro|AI_ADDRCONFIG
+define|#
+directive|define
+name|AI_ADDRCONFIG
+value|0x0400
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_include
 include|#
@@ -419,7 +456,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1ac4f0108
+DECL|struct|__anon29b2fbf30108
 block|{
 DECL|member|command
 name|gchar
@@ -443,7 +480,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2af1ac4f0208
+DECL|struct|__anon29b2fbf30208
 block|{
 DECL|member|port_entry
 name|GtkWidget
