@@ -1388,8 +1388,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Replace the selection with the layer's alpha channel.\n"
-literal|"Shortcut: Alt-Click thumbnail in layers dialog."
+literal|"Replace the selection with the layer's alpha channel"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_REPLACE
@@ -1417,8 +1416,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Add the layer's alpha channel to the current selection.\n"
-literal|"Shortcut: Alt-Shift-Click thumbnail in layers dialog."
+literal|"Add the layer's alpha channel to the current selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_ADD
@@ -1446,8 +1444,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Subtract the layer's alpha channel from the current selection.\n"
-literal|"Shortcut: Alt-Ctrl-Click thumbnail in layers dialog."
+literal|"Subtract the layer's alpha channel from the current selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_SUBTRACT
@@ -1475,8 +1472,7 @@ name|NC_
 argument_list|(
 literal|"layers-action"
 argument_list|,
-literal|"Intersect the layer's alpha channel with the current selection.\n"
-literal|"Shortcut: Alt-Shift-Ctrl-Click thumbnail in layers dialog."
+literal|"Intersect the layer's alpha channel with the current selection"
 argument_list|)
 block|,
 name|GIMP_CHANNEL_OP_INTERSECT
