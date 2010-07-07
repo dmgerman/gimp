@@ -57,6 +57,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpprocbrowserdialog  * @title: GimpProcBrowserDialog  * @short_description: The dialog for the procedure and plugin browsers.  *  * The dialog for the procedure and plugin browsers.  **/
+end_comment
+
 begin_define
 DECL|macro|DBL_LIST_WIDTH
 define|#
@@ -83,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca888d0103
+DECL|enum|__anon2c3c65060103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -100,7 +104,7 @@ end_enum
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28ca888d0203
+DECL|enum|__anon2c3c65060203
 block|{
 DECL|enumerator|SEARCH_TYPE_ALL
 name|SEARCH_TYPE_ALL
@@ -133,7 +137,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ca888d0303
+DECL|enum|__anon2c3c65060303
 block|{
 DECL|enumerator|COLUMN_PROC_NAME
 name|COLUMN_PROC_NAME

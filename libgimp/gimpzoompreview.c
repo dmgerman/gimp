@@ -45,9 +45,13 @@ directive|include
 file|"gimpzoompreview.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpzoompreview  * @title: GimpZoomPreview  * @short_description: A drawable preview with zooming capabilities.  *  * A drawable preview with zooming capabilities.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon29982ed40103
+DECL|enum|__anon2a0b633e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -90,7 +94,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29982ed40208
+DECL|struct|__anon2a0b633e0208
 block|{
 DECL|member|update
 name|gboolean
@@ -3159,7 +3163,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_new:  * @drawable: a #GimpDrawable  *  * Creates a new #GimpZoomPreview widget for @drawable.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_new:  * @drawable: a #GimpDrawable  *  * Creates a new #GimpZoomPreview widget for @drawable.  *  * Since: GIMP 2.4  *  * Returns: a new #GimpZoomPreview.  **/
 end_comment
 
 begin_function
@@ -3198,7 +3202,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_preview_new_with_model:  * @drawable: a #GimpDrawable  * @model:    a #GimpZoomModel  *  * Creates a new #GimpZoomPreview widget for @drawable using the  * given @model.  *  * This variant of gimp_zoom_preview_new() allows you to create a  * preview using an existing zoom model. This may be useful if for  * example you want to have two zoom previews that keep their zoom  * factor in sync.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_zoom_preview_new_with_model:  * @drawable: a #GimpDrawable  * @model:    a #GimpZoomModel  *  * Creates a new #GimpZoomPreview widget for @drawable using the  * given @model.  *  * This variant of gimp_zoom_preview_new() allows you to create a  * preview using an existing zoom model. This may be useful if for  * example you want to have two zoom previews that keep their zoom  * factor in sync.  *  * Since: GIMP 2.4  *  * Returns: a new #GimpZoomPreview.  **/
 end_comment
 
 begin_function

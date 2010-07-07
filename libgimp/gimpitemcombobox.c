@@ -51,6 +51,10 @@ directive|include
 file|"gimppixbuf.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpitemcombobox  * @title: GimpItemComboBox  * @short_description: Widgets providing popup menus of items.  *  * Widgets providing popup menus of items (layers, channels,  * drawables, vectors).  **/
+end_comment
+
 begin_define
 DECL|macro|THUMBNAIL_SIZE
 define|#
@@ -70,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2795a21e0103
+DECL|enum|__anon27d65e8a0103
 block|{
 DECL|enumerator|DRAWABLE_COMBO_BOX
 name|DRAWABLE_COMBO_BOX

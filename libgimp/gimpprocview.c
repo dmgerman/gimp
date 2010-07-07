@@ -56,6 +56,10 @@ file|"libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpprocview  * @title: GimpProcView  * @short_description: A widget showing information about a PDB procedure.  *  * A widget showing information about a PDB procedure, mainly for the  * procedure and plug-in browsers.  **/
+end_comment
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 

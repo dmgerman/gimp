@@ -34,6 +34,10 @@ file|"gimpselectbutton.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpselectbutton  * @title: GimpSelectButton  * @short_description: The base class of the data select buttons.  *  * The base class of the brush, pattern, gradient, palette and font  * select buttons.  **/
+end_comment
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 

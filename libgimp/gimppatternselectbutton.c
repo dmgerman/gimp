@@ -51,6 +51,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppatternselectbutton  * @title: GimpPatternSelectButton  * @short_description: A button which pops up a pattern select dialog.  *  * A button which pops up a pattern select dialog.  **/
+end_comment
+
 begin_define
 DECL|macro|CELL_SIZE
 define|#
@@ -134,7 +138,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon275965f90103
+DECL|enum|__anon29802deb0103
 block|{
 DECL|enumerator|PATTERN_SET
 name|PATTERN_SET
@@ -147,7 +151,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275965f90203
+DECL|enum|__anon29802deb0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

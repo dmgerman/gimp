@@ -51,6 +51,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpgradientselectbutton  * @title: GimpGradientSelectButton  * @short_description: A button which pops up a gradient select dialog.  *  * A button which pops up a gradient select dialog.  **/
+end_comment
+
 begin_define
 DECL|macro|CELL_HEIGHT
 define|#
@@ -137,7 +141,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f8232e0103
+DECL|enum|__anon2968d7980103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -150,7 +154,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f8232e0203
+DECL|enum|__anon2968d7980203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

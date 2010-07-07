@@ -45,10 +45,14 @@ directive|include
 file|"gimpfontmenu.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpfontmenu  * @title: gimpfontmenu  * @short_description: A widget for selecting fonts.  *  * A widget for selecting fonts.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a08a8d0108
+DECL|struct|__anon2b28f4c00108
 block|{
 DECL|member|callback
 name|GimpRunFontCallback
@@ -232,7 +236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_font_select_widget_set;  * @widget:    A font select widget.  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_font_select_widget_new().  */
+comment|/**  * gimp_font_select_widget_set:  * @widget:    A font select widget.  * @font_name: Font name to set; %NULL means no change.  *  * Sets the current font for the font select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_font_select_widget_new().  */
 end_comment
 
 begin_function

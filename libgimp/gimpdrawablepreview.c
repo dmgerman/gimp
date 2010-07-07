@@ -39,6 +39,10 @@ directive|include
 file|"gimpdrawablepreview.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpdrawablepreview  * @title: GimpDrawablePreview  * @short_description: A widget providing a preview of a #GimpDrawable.  *  * A widget providing a preview of a #GimpDrawable.  **/
+end_comment
+
 begin_define
 DECL|macro|SELECTION_BORDER
 define|#
@@ -49,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27572c6d0103
+DECL|enum|__anon27b82d2a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -63,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27572c6d0208
+DECL|struct|__anon27b82d2a0208
 block|{
 DECL|member|x
 name|gint

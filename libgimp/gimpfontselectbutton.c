@@ -51,6 +51,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpfontselectbutton  * @title: GimpFontSelectButton  * @short_description: A button which pops up a font selection dialog.  *  * A button which pops up a font selection dialog.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_FONT_SELECT_BUTTON_GET_PRIVATE (obj)
 define|#
@@ -103,7 +107,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon292cb28a0103
+DECL|enum|__anon298ddd810103
 block|{
 DECL|enumerator|FONT_SET
 name|FONT_SET
@@ -116,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon292cb28a0203
+DECL|enum|__anon298ddd810203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

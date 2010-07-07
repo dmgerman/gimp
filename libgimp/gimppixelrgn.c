@@ -27,6 +27,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppixelrgn  * @title: gimppixelrgn  * @short_description: Functions for operating on pixel regions.  *  * Functions for operating on pixel regions. These functions provide  * fast ways of accessing and modifying portions of a drawable.  **/
+end_comment
+
 begin_define
 DECL|macro|TILE_WIDTH
 define|#

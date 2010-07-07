@@ -45,6 +45,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpmenu  * @title: gimpmenu  * @short_description: Menus for selecting images, layers, channels  *                     and drawables.  *  * Menus for selecting images, layers, channels and drawables.  **/
+end_comment
+
 begin_define
 DECL|macro|MENU_THUMBNAIL_WIDTH
 define|#
@@ -160,7 +164,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_menu_new:  * @constraint:  * @callback:  * @data:  * @active_image:  *  * Use gimp_image_combo_box_new() instead.  *  * Return value:  */
+comment|/**  * gimp_image_menu_new:  * @constraint:   a function to filter the menu contents  * @callback:     the callback to call when an image is selected  * @data:         the callback's user_data  * @active_image: an image to preselect  *  * Deprecated: Use gimp_image_combo_box_new() instead.  *  * Returns: the image menu.  */
 end_comment
 
 begin_function
@@ -405,7 +409,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_menu_new:  * @constraint:  * @callback:  * @data:  * @active_layer:  *  * Use gimp_layer_combo_box_new() instead.  *  * Return value:  */
+comment|/**  * gimp_layer_menu_new:  * @constraint:   a function to filter the menu contents  * @callback:     the callback to call when a channel is selected  * @data:         the callback's user_data  * @active_layer: a layer to preselect  *  * Deprecated: Use gimp_layer_combo_box_new() instead.  *  * Returns: the layer menu.  */
 end_comment
 
 begin_function
@@ -730,7 +734,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_menu_new:  * @constraint:  * @callback:  * @data:  * @active_channel:  *  * Use gimp_channel_combo_box_new() instead.  *  * Return value:  */
+comment|/**  * gimp_channel_menu_new:  * @constraint:     a function to filter the menu contents  * @callback:       the callback to call when a channel is selected  * @data:           the callback's user_data  * @active_channel: a channel to preselect  *  * Deprecated: Use gimp_channel_combo_box_new() instead.  *  * Returns: the channel menu.  */
 end_comment
 
 begin_function
@@ -1057,7 +1061,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_menu_new:  * @constraint:  * @callback:  * @data:  * @active_drawable:  *  * Use gimp_drawable_combo_box_new() instead.  *  * Return value:  */
+comment|/**  * gimp_drawable_menu_new:  * @constraint:      a function to filter the menu contents  * @callback:        the callback to call when a channel is selected  * @data:            the callback's user_data  * @active_drawable: a drawable to preselect  *  * Deprecated: Use gimp_drawable_combo_box_new() instead.  *  * Returns: the drawable menu.  */
 end_comment
 
 begin_function

@@ -51,6 +51,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpbrushselectbutton  * @title: gimpbrushselectbutton  * @short_description: A button that pops up a brush selection dialog.  *  * A button that pops up a brush selection dialog.  **/
+end_comment
+
 begin_define
 DECL|macro|CELL_SIZE
 define|#
@@ -142,7 +146,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc72450103
+DECL|enum|__anon287de0c40103
 block|{
 DECL|enumerator|BRUSH_SET
 name|BRUSH_SET
@@ -155,7 +159,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc72450203
+DECL|enum|__anon287de0c40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

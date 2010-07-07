@@ -39,6 +39,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpexport  * @title: gimpexport  * @short_description: Export an image before it is saved.  *  * This function should be called by all save_plugins unless they are  * able to save all image formats GIMP knows about. It takes care of  * asking the user if she wishes to export the image to a format the  * save_plugin can handle. It then performs the necessary conversions  * (e.g. Flatten) on a copy of the image so that the image can be  * saved without changing the original image.  *  * The capabilities of the save_plugin are specified by combining  * #GimpExportCapabilities using a bitwise OR.  *  * Make sure you have initialized GTK+ before you call this function  * as it will most probably have to open a dialog.  **/
+end_comment
+
 begin_typedef
 DECL|typedef|ExportFunc
 typedef|typedef
@@ -65,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2ed6fc0108
+DECL|struct|__anon2c08866b0108
 block|{
 DECL|member|default_action
 name|ExportFunc

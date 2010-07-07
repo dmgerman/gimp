@@ -45,10 +45,14 @@ directive|include
 file|"gimppatternmenu.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppatternmenu  * @title: gimppatternmenu  * @short_description: A widget for selecting patterns.  *  * A widget for selecting patterns.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon294f0de90108
+DECL|struct|__anon296e3e8b0108
 block|{
 DECL|member|callback
 name|GimpRunPatternCallback

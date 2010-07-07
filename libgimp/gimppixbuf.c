@@ -33,6 +33,10 @@ directive|include
 file|"gimppixbuf.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppixbuf  * @title: gimppixbuf  * @short_description: Get a thumbnail pixbuf for a drawable or image.  *  * Get a thumbnail pixbuf for a drawable or image.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|GdkPixbuf
