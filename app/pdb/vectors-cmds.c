@@ -12414,7 +12414,7 @@ literal|"gimp-vectors-export-to-string"
 argument_list|,
 literal|"Save a path as an SVG string."
 argument_list|,
-literal|"This procedure works like 'gimp-vectors-export-to-file' but creates a string rather than a file. The contents are a %NUL-terminated string that holds a complete XML document. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
+literal|"This procedure works like 'gimp-vectors-export-to-file' but creates a string rather than a file. The contents are a NUL-terminated string that holds a complete XML document. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,
