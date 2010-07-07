@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpgimprc  * @title: gimpgimprc  * @short_description: Interactions with settings from gimprc.  *  * Interactions with settings from gimprc.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (&lt;token&gt;&lt;value&gt;). The value must be a  * string. Entries not corresponding to this format will cause warnings  * to be issued on gimprc parsing and will not be queryable.  *  * Returns: The value associated with the queried token.  */
 end_comment
 

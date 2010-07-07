@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpfontselect  * @title: gimpfontselect  * @short_description: Functions providing a font selection dialog.  *  * Functions providing a font selection dialog.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_fonts_popup:  * @font_callback: The callback PDB proc to call when font selection is made.  * @popup_title: Title of the font selection dialog.  * @initial_font: The name of the font to set as the first selected.  *  * Invokes the Gimp font selection.  *  * This procedure opens the font selection dialog.  *  * Returns: TRUE on success.  */
 end_comment
 

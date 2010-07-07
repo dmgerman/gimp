@@ -44,6 +44,10 @@ file|"gimpimage_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpimage  * @title: gimpimage  * @short_description: Operations on complete images.  *  * Operations on complete images: creation, resizing/rescaling, and  * operations involving multiple layers.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 

@@ -44,6 +44,10 @@ file|"gimppatterns_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppatterns  * @title: gimppatterns  * @short_description: Functions relating to patterns.  *  * Functions relating to patterns.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_patterns_refresh:  *  * Refresh current patterns. This function always succeeds.  *  * This procedure retrieves all patterns currently in the user's  * pattern path and updates all pattern dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 

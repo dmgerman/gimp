@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpbuffer  * @title: gimpbuffer  * @short_description: Functions for manipulating cut buffers.  *  * Functions related to named cut buffers.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_buffers_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_buffers: The number of buffers.  *  * Retrieve a complete listing of the available buffers.  *  * This procedure returns a complete listing of available named  * buffers.  *  * Returns: The list of buffer names.  *  * Since: GIMP 2.4  */
 end_comment
 

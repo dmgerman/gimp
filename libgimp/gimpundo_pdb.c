@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpundo  * @title: gimpundo  * @short_description: Control of undo/redo.  *  * Control of undo/redo.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_image_undo_group_start:  * @image_ID: The ID of the image in which to open an undo group.  *  * Starts a group undo.  *  * This function is used to start a group undo--necessary for logically  * combining two or more undo operations into a single operation. This  * call must be used in conjunction with a gimp_image_undo_group_end()  * call.  *  * Returns: TRUE on success.  */
 end_comment
 

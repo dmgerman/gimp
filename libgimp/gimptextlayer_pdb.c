@@ -38,6 +38,10 @@ file|"gimptextlayer_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_description: Functions for querying and manipulating text layers.  *  * Functions for querying and manipulating text layers.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_add_layer().  *  * Returns: The new text layer.  *  * Since: GIMP 2.6  */
 end_comment
 

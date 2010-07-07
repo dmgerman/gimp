@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpedit  * @title: gimpedit  * @short_description: Edit menu functions (cut, copy, paste, clear, etc.)  *  * Edit menu functions (cut, copy, paste, clear, etc.)  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_edit_cut:  * @drawable_ID: The drawable to cut from.  *  * Cut from the specified drawable.  *  * If there is a selection in the image, then the area specified by the  * selection is cut from the specified drawable and placed in an  * internal GIMP edit buffer. It can subsequently be retrieved using  * the gimp_edit_paste() command. If there is no selection, then the  * specified drawable will be removed and its contents stored in the  * internal GIMP edit buffer. This procedure will fail if the selected  * area lies completely outside the bounds of the current drawable and  * there is nothing to copy from.  *  * Returns: TRUE if the cut was successful, FALSE if there was nothing to copy from.  */
 end_comment
 

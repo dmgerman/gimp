@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpmisc  * @title: gimpmisc  * @short_description: Miscellaneous procedures  *  * Miscellaneous procedures not fitting in any category.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_version:  *  * Returns the host GIMP version.  *  * This procedure returns the version number of the currently running  * GIMP.  *  * Returns: GIMP version number.  */
 end_comment
 

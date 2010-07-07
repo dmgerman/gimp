@@ -38,6 +38,10 @@ file|"gimptexttool_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimptexttool  * @title: gimptexttool  * @short_description: Functions for controlling the text tool.  *  * Functions for controlling the text tool.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_text_fontname:  * @image_ID: The image.  * @drawable_ID: The affected drawable: (-1 for a new text layer).  * @x: The x coordinate for the left of the text bounding box.  * @y: The y coordinate for the top of the text bounding box.  * @text: The text to generate (in UTF-8 encoding).  * @border: The size of the border.  * @antialias: Antialiasing.  * @size: The size of text in either pixels or points.  * @size_type: The units of specified size.  * @fontname: The name of the font.  *  * Add text at the specified location as a floating selection or a new  * layer.  *  * This tool requires a fontname matching an installed PangoFT2 font.  * You can specify the fontsize in units of pixels or points, and the  * appropriate metric is specified using the size_type argument. The x  * and y parameters together control the placement of the new text by  * specifying the upper left corner of the text bounding box. If the  * specified drawable parameter is valid, the text will be created as a  * floating selection attached to the drawable. If the drawable  * parameter is not valid (-1), the text will appear as a new layer.  * Finally, a border can be specified around the final rendered text.  * The border is measured in pixels. Parameter size-type is not used  * and is currently ignored. If you need to display a font in points,  * divide the size in points by 72.0 and multiply it by the image's  * vertical resolution.  *  * Returns: The new text layer or -1 if no layer was created.  */
 end_comment
 

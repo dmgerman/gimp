@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpunit  * @title: gimpunit  * @short_description: Provides a collection of predefined units and functions for creating user-defined units.  *  * Provides a collection of predefined units and functions for creating  * user-defined units.  **/
+end_comment
+
+begin_comment
 comment|/**  * _gimp_unit_get_number_of_units:  *  * Returns the number of units.  *  * This procedure returns the number of defined units.  *  * Returns: The number of units.  */
 end_comment
 

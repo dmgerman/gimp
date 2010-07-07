@@ -26,6 +26,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description: Functions for querying and manipulating vectors.  *  * Functions for querying and manipulating vectors.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_vectors_is_valid:  * @vectors_ID: The vectors object to check.  *  * Returns TRUE if the vectors object is valid.  *  * This procedure checks if the given vectors ID is valid and refers to  * an existing vectors object.  *  * Returns: Whether the vectors ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 
@@ -3656,7 +3660,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a %NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: A string whose contents are a complete SVG document.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: A string whose contents are a complete SVG document.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function

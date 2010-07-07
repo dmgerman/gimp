@@ -38,6 +38,10 @@ file|"gimppalettes_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppalettes  * @title: gimppalettes  * @short_description: Operations related to palettes.  *  * Operations related to palettes.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure retrieves all palettes currently in the user's  * palette path and updates the palette dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 

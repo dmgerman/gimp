@@ -38,6 +38,10 @@ file|"gimptransformtools_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimptransformtools  * @title: gimptransformtools  * @short_description: Access to toolbox transform tools.  *  * Functions giving access to toolbox transform tools.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_flip:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  *  * This procedure is deprecated! Use  * gimp_drawable_transform_flip_simple() instead.  *  * Returns: The flipped drawable.  */
 end_comment
 

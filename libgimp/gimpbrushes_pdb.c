@@ -44,6 +44,10 @@ file|"gimpbrushes_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpbrushes  * @title: gimpbrushes  * @short_description: Functions for manipulating brushes.  *  * Functions related to getting and setting brushes.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_brushes_refresh:  *  * Refresh current brushes. This function always succeeds.  *  * This procedure retrieves all brushes currently in the user's brush  * path and updates the brush dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 

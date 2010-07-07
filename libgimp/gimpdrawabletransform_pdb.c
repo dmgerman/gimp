@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpdrawabletransform  * @title: gimpdrawabletransform  * @short_description: Functions to perform transformatrions on drawables.  *  * Functions to perform transformatrions on drawables.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_drawable_transform_flip_simple:  * @drawable_ID: The affected drawable.  * @flip_type: Type of flip.  * @auto_center: Whether to automatically position the axis in the selection center.  * @axis: coord. of flip axis.  * @clip_result: Whether to clip results.  *  * Flip the specified drawable either vertically or horizontally.  *  * This procedure flips the specified drawable if no selection exists.  * If a selection exists, the portion of the drawable which lies under  * the selection is cut from the drawable and made into a floating  * selection which is then flipped. If auto_center is set to TRUE, the  * flip is around the selection's center. Otherwise, the coordinate of  * the axis needs to be specified. The return value is the ID of the  * flipped drawable. If there was no selection, this will be equal to  * the drawable ID supplied as input. Otherwise, this will be the newly  * created and flipped drawable.  *  * Returns: The flipped drawable.  *  * Since: GIMP 2.2  */
 end_comment
 

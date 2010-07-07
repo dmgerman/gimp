@@ -44,6 +44,10 @@ file|"gimpdrawable_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_description: Functions to manipulate drawables.  *  * Functions to manipulate drawables.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * Returns TRUE if the drawable is valid.  *  * This procedure checks if the given drawable ID is valid and refers  * to an existing drawable.  *  * Returns: Whether the drawable ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 

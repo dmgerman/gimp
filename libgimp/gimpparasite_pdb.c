@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpparasite  * @title: gimpparasite  * @short_description: Operations related to parasites.  *  * Operations related to parasites.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_parasite_find:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: The found parasite.  */
 end_comment
 

@@ -44,6 +44,10 @@ file|"gimpgradients_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpgradients  * @title: gimpgradients  * @short_description: Operations related to gradients.  *  * Operations related to gradients.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_gradients_refresh:  *  * Refresh current gradients. This function always succeeds.  *  * This procedure retrieves all gradients currently in the user's  * gradient path and updates the gradient dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 

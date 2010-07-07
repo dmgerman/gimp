@@ -26,6 +26,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpbrush  * @title: gimpbrush  * @short_description: Functions operating on a single brush.  *  * Functions operating on a single brush.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_brush_new:  * @name: The requested name of the new brush.  *  * Creates a new brush  *  * This procedure creates a new, uninitialized brush  *  * Returns: The actual new brush name.  *  * Since: GIMP 2.2  */
 end_comment
 
