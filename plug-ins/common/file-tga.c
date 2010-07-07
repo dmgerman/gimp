@@ -101,7 +101,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2baf2b0e0103
+DECL|enum|__anon29e3481b0103
 block|{
 DECL|enumerator|ORIGIN_TOP_LEFT
 name|ORIGIN_TOP_LEFT
@@ -4647,7 +4647,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gint
+name|gboolean
 DECL|function|save_image (const gchar * filename,gint32 image_ID,gint32 drawable_ID,GError ** error)
 name|save_image
 parameter_list|(
@@ -5095,6 +5095,19 @@ index|[
 literal|10
 index|]
 operator|=
+name|tsvals
+operator|.
+name|origin
+condition|?
+literal|0
+else|:
+operator|(
+name|height
+operator|%
+literal|256
+operator|)
+expr_stmt|;
+comment|/* yorigin */
 name|header
 index|[
 literal|11
@@ -5106,7 +5119,11 @@ name|origin
 condition|?
 literal|0
 else|:
+operator|(
 name|height
+operator|/
+literal|256
+operator|)
 expr_stmt|;
 comment|/* yorigin */
 name|header
