@@ -1015,15 +1015,6 @@ name|gimp_image_set_active_layer
 expr_stmt|;
 name|item_view_class
 operator|->
-name|reorder_item
-operator|=
-operator|(
-name|GimpReorderItemFunc
-operator|)
-name|gimp_image_reorder_layer
-expr_stmt|;
-name|item_view_class
-operator|->
 name|add_item
 operator|=
 operator|(
@@ -1111,15 +1102,6 @@ operator|->
 name|delete_action
 operator|=
 literal|"layers-delete"
-expr_stmt|;
-name|item_view_class
-operator|->
-name|reorder_desc
-operator|=
-name|_
-argument_list|(
-literal|"Reorder Layer"
-argument_list|)
 expr_stmt|;
 name|g_type_class_add_private
 argument_list|(
@@ -2346,7 +2328,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4267630108
+DECL|struct|__anon294867420108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2740,7 +2722,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c4267630208
+DECL|struct|__anon294867420208
 block|{
 DECL|member|mask_column
 name|gint

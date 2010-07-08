@@ -452,15 +452,6 @@ name|gimp_image_set_active_channel
 expr_stmt|;
 name|iv_class
 operator|->
-name|reorder_item
-operator|=
-operator|(
-name|GimpReorderItemFunc
-operator|)
-name|gimp_image_reorder_channel
-expr_stmt|;
-name|iv_class
-operator|->
 name|add_item
 operator|=
 operator|(
@@ -548,15 +539,6 @@ operator|->
 name|delete_action
 operator|=
 literal|"channels-delete"
-expr_stmt|;
-name|iv_class
-operator|->
-name|reorder_desc
-operator|=
-name|_
-argument_list|(
-literal|"Reorder Channel"
-argument_list|)
 expr_stmt|;
 name|g_type_class_add_private
 argument_list|(

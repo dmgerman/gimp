@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65f1fa0103
+DECL|enum|__anon29e467e30103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -980,6 +980,79 @@ operator|=
 name|_
 argument_list|(
 literal|"Stroke Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|reorder_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Reorder Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_to_top_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Path to Top"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_to_bottom_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Path to Bottom"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_failed
+operator|=
+name|_
+argument_list|(
+literal|"Path cannot be raised higher."
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_failed
+operator|=
+name|_
+argument_list|(
+literal|"Path cannot be lowered more."
 argument_list|)
 expr_stmt|;
 name|klass

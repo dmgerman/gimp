@@ -173,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795b7680103
+DECL|enum|__anon2901a8b80103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -195,7 +195,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795b7680203
+DECL|enum|__anon2901a8b80203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1236,6 +1236,79 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Transform Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|reorder_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Reorder Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_to_top_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Layer to Top"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Layer"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_to_bottom_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Layer to Bottom"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_failed
+operator|=
+name|_
+argument_list|(
+literal|"Layer cannot be raised higher."
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_failed
+operator|=
+name|_
+argument_list|(
+literal|"Layer cannot be lowered more."
 argument_list|)
 expr_stmt|;
 name|drawable_class

@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1e8d7f0103
+DECL|enum|__anon2932adb50103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -1051,12 +1051,6 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|reorder_item
-operator|=
-name|NULL
-expr_stmt|;
-name|klass
-operator|->
 name|add_item
 operator|=
 name|NULL
@@ -1130,12 +1124,6 @@ expr_stmt|;
 name|klass
 operator|->
 name|delete_action
-operator|=
-name|NULL
-expr_stmt|;
-name|klass
-operator|->
-name|reorder_desc
 operator|=
 name|NULL
 expr_stmt|;
@@ -4770,9 +4758,7 @@ name|dest_index
 operator|--
 expr_stmt|;
 block|}
-name|item_view_class
-operator|->
-name|reorder_item
+name|gimp_image_reorder_item
 argument_list|(
 name|item_view
 operator|->
@@ -4791,9 +4777,7 @@ name|dest_index
 argument_list|,
 name|TRUE
 argument_list|,
-name|item_view_class
-operator|->
-name|reorder_desc
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}

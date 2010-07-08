@@ -197,7 +197,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2749a7990103
+DECL|enum|__anon2b2ee23d0103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -1305,6 +1305,79 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Stroke Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|reorder_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Reorder Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_to_top_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Channel to Top"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Channel"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_to_bottom_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Channel to Bottom"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_failed
+operator|=
+name|_
+argument_list|(
+literal|"Channel cannot be raised higher."
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_failed
+operator|=
+name|_
+argument_list|(
+literal|"Channel cannot be lowered more."
 argument_list|)
 expr_stmt|;
 name|drawable_class
