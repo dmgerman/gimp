@@ -143,7 +143,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e467e30103
+DECL|enum|__anon2c4ac8340103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -914,8 +914,10 @@ name|item_class
 operator|->
 name|rename_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rename Path"
 argument_list|)
 expr_stmt|;
@@ -923,8 +925,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Path"
 argument_list|)
 expr_stmt|;
@@ -932,8 +936,10 @@ name|item_class
 operator|->
 name|scale_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale Path"
 argument_list|)
 expr_stmt|;
@@ -941,8 +947,10 @@ name|item_class
 operator|->
 name|resize_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Path"
 argument_list|)
 expr_stmt|;
@@ -950,8 +958,10 @@ name|item_class
 operator|->
 name|flip_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip Path"
 argument_list|)
 expr_stmt|;
@@ -959,8 +969,10 @@ name|item_class
 operator|->
 name|rotate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate Path"
 argument_list|)
 expr_stmt|;
@@ -968,8 +980,10 @@ name|item_class
 operator|->
 name|transform_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Path"
 argument_list|)
 expr_stmt|;
@@ -977,8 +991,10 @@ name|item_class
 operator|->
 name|stroke_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Stroke Path"
 argument_list|)
 expr_stmt|;
