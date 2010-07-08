@@ -4264,6 +4264,8 @@ argument_list|(
 name|layer
 argument_list|)
 argument_list|,
+name|image
+argument_list|,
 name|FALSE
 argument_list|,
 name|error
@@ -5175,6 +5177,8 @@ argument_list|(
 name|channel
 argument_list|)
 argument_list|,
+name|image
+argument_list|,
 name|FALSE
 argument_list|,
 name|error
@@ -5859,6 +5863,8 @@ name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|image
 argument_list|,
 name|FALSE
 argument_list|,
@@ -6917,6 +6923,8 @@ argument_list|(
 name|merge_layer
 argument_list|)
 argument_list|,
+name|image
+argument_list|,
 name|FALSE
 argument_list|,
 name|error
@@ -7265,6 +7273,8 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|image
 argument_list|,
 name|mode
 operator|==

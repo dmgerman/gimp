@@ -1240,12 +1240,16 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_pdb_item_is_attached (GimpItem * item,gboolean writable,GError ** error)
+DECL|function|gimp_pdb_item_is_attached (GimpItem * item,GimpImage * image,gboolean writable,GError ** error)
 name|gimp_pdb_item_is_attached
 parameter_list|(
 name|GimpItem
 modifier|*
 name|item
+parameter_list|,
+name|GimpImage
+modifier|*
+name|image
 parameter_list|,
 name|gboolean
 name|writable
@@ -1261,6 +1265,20 @@ argument_list|(
 name|GIMP_IS_ITEM
 argument_list|(
 name|item
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|image
+operator|==
+name|NULL
+operator|||
+name|GIMP_IS_IMAGE
+argument_list|(
+name|image
 argument_list|)
 argument_list|,
 name|FALSE
@@ -1301,6 +1319,47 @@ name|_
 argument_list|(
 literal|"Item '%s' (%d) can not be used because it has not "
 literal|"been added to an image"
+argument_list|)
+argument_list|,
+name|gimp_object_get_name
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|gimp_item_get_ID
+argument_list|(
+name|item
+argument_list|)
+argument_list|)
+expr_stmt|;
+return|return
+name|FALSE
+return|;
+block|}
+if|if
+condition|(
+name|image
+operator|&&
+name|image
+operator|!=
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+condition|)
+block|{
+name|g_set_error
+argument_list|(
+name|error
+argument_list|,
+name|GIMP_PDB_ERROR
+argument_list|,
+name|GIMP_PDB_INVALID_ARGUMENT
+argument_list|,
+name|_
+argument_list|(
+literal|"Item '%s' (%d) can not be used because it is "
+literal|"attached to another image"
 argument_list|)
 argument_list|,
 name|gimp_object_get_name
@@ -1731,6 +1790,8 @@ name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|writable
 argument_list|,

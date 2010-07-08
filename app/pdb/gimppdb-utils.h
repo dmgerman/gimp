@@ -212,6 +212,10 @@ name|GimpItem
 modifier|*
 name|item
 parameter_list|,
+name|GimpImage
+modifier|*
+name|image
+parameter_list|,
 name|gboolean
 name|writable
 parameter_list|,

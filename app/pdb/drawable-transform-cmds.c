@@ -258,6 +258,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -571,6 +573,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -919,6 +923,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1397,6 +1403,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -1825,6 +1833,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -2190,6 +2200,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|FALSE
 argument_list|,
 name|error
@@ -2505,6 +2517,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -2872,6 +2886,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -3306,6 +3322,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -3675,6 +3693,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4078,6 +4098,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -4397,6 +4419,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -4863,6 +4887,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -5284,6 +5310,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -5804,6 +5832,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -6319,6 +6349,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
