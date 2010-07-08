@@ -974,9 +974,6 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GType
-name|item_type
-parameter_list|,
 name|gboolean
 name|none_ok
 parameter_list|,
@@ -999,9 +996,6 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GType
-name|item_type
 parameter_list|)
 function_decl|;
 end_function_decl
