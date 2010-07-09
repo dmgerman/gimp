@@ -6083,9 +6083,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-valid"
 argument_list|,
-literal|"Returns TRUE if the drawable is valid."
+literal|"This procedure is deprecated! Use 'gimp-item-is-valid' instead."
 argument_list|,
-literal|"This procedure checks if the given drawable ID is valid and refers to an existing drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-is-valid' instead."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -6093,7 +6093,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2007"
 argument_list|,
-name|NULL
+literal|"gimp-item-is-valid"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6174,17 +6174,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-layer"
 argument_list|,
-literal|"Returns whether the drawable is a layer."
+literal|"This procedure is deprecated! Use 'gimp-item-is-layer' instead."
 argument_list|,
-literal|"This procedure returns TRUE if the specified drawable is a layer."
+literal|"This procedure is deprecated! Use 'gimp-item-is-layer' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-is-layer"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6352,17 +6352,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-layer-mask"
 argument_list|,
-literal|"Returns whether the drawable is a layer mask."
+literal|"This procedure is deprecated! Use 'gimp-item-is-layer-mask' instead."
 argument_list|,
-literal|"This procedure returns TRUE if the specified drawable is a layer mask."
+literal|"This procedure is deprecated! Use 'gimp-item-is-layer-mask' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-is-layer-mask"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6441,17 +6441,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-channel"
 argument_list|,
-literal|"Returns whether the drawable is a channel."
+literal|"This procedure is deprecated! Use 'gimp-item-is-channel' instead."
 argument_list|,
-literal|"This procedure returns TRUE if the specified drawable is a channel."
+literal|"This procedure is deprecated! Use 'gimp-item-is-channel' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-is-channel"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7507,17 +7507,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-delete"
 argument_list|,
-literal|"Delete a drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-delete' instead."
 argument_list|,
-literal|"This procedure deletes the specified drawable. This must not be done if the image containing this drawable was already deleted or if the drawable was already removed from the image. The only case in which this procedure is useful is if you want to get rid of a drawable which has not yet been added to an image."
+literal|"This procedure is deprecated! Use 'gimp-item-delete' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-delete"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7578,17 +7578,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-image"
 argument_list|,
-literal|"Returns the drawable's image."
+literal|"This procedure is deprecated! Use 'gimp-item-get-image' instead."
 argument_list|,
-literal|"This procedure returns the drawable's image."
+literal|"This procedure is deprecated! Use 'gimp-item-get-image' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-get-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7764,17 +7764,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-name"
 argument_list|,
-literal|"Get the name of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-get-name' instead."
 argument_list|,
-literal|"This procedure returns the specified drawable's name."
+literal|"This procedure is deprecated! Use 'gimp-item-get-name' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-get-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7859,17 +7859,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-name"
 argument_list|,
-literal|"Set the name of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-set-name' instead."
 argument_list|,
-literal|"This procedure sets the specified drawable's name."
+literal|"This procedure is deprecated! Use 'gimp-item-set-name' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-set-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7954,17 +7954,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-visible"
 argument_list|,
-literal|"Get the visibility of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-get-visible' instead."
 argument_list|,
-literal|"This procedure returns the specified drawable's visibility."
+literal|"This procedure is deprecated! Use 'gimp-item-get-visible' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-get-visible"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8043,17 +8043,17 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-visible"
 argument_list|,
-literal|"Set the visibility of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-set-visible' instead."
 argument_list|,
-literal|"This procedure sets the specified drawable's visibility."
+literal|"This procedure is deprecated! Use 'gimp-item-set-visible' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-set-visible"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8132,9 +8132,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-linked"
 argument_list|,
-literal|"Get the linked state of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-get-linked' instead."
 argument_list|,
-literal|"This procedure returns the specified drawable's linked state."
+literal|"This procedure is deprecated! Use 'gimp-item-get-linked' instead."
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -8142,7 +8142,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-linked"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8221,9 +8221,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-linked"
 argument_list|,
-literal|"Set the linked state of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-set-linked' instead."
 argument_list|,
-literal|"This procedure sets the specified drawable's linked state."
+literal|"This procedure is deprecated! Use 'gimp-item-set-linked' instead."
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -8231,7 +8231,7 @@ literal|"Wolfgang Hofer"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-linked"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8310,9 +8310,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-tattoo"
 argument_list|,
-literal|"Get the tattoo of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-get-tattoo' instead."
 argument_list|,
-literal|"This procedure returns the specified drawable's tattoo. A tattoo is a unique and permanent identifier attached to a drawable that can be used to uniquely identify a drawable within an image even between sessions."
+literal|"This procedure is deprecated! Use 'gimp-item-get-tattoo' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -8320,7 +8320,7 @@ literal|"Jay Cox"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-tattoo"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8403,9 +8403,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-tattoo"
 argument_list|,
-literal|"Set the tattoo of the specified drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-set-tattoo' instead."
 argument_list|,
-literal|"This procedure sets the specified drawable's tattoo. A tattoo is a unique and permanent identifier attached to a drawable that can be used to uniquely identify a drawable within an image even between sessions."
+literal|"This procedure is deprecated! Use 'gimp-item-set-tattoo' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -8413,7 +8413,7 @@ literal|"Jay Cox"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-tattoo"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

@@ -48,7 +48,7 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * Returns TRUE if the drawable is valid.  *  * This procedure checks if the given drawable ID is valid and refers  * to an existing drawable.  *  * Returns: Whether the drawable ID is valid.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * This procedure is deprecated! Use gimp_item_is_valid() instead.  *  * Returns: Whether the drawable ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer.  *  * This procedure returns TRUE if the specified drawable is a layer.  *  * Returns: TRUE if the drawable is a layer, FALSE otherwise.  */
+comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_is_layer() instead.  *  * Returns: TRUE if the drawable is a layer, FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -282,7 +282,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a layer mask.  *  * This procedure returns TRUE if the specified drawable is a layer  * mask.  *  * Returns: TRUE if the drawable is a layer mask, FALSE otherwise.  */
+comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_is_layer_mask() instead.  *  * Returns: TRUE if the drawable is a layer mask, FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -360,7 +360,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a channel.  *  * This procedure returns TRUE if the specified drawable is a channel.  *  * Returns: TRUE if the drawable is a channel, FALSE otherwise.  */
+comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_is_channel() instead.  *  * Returns: TRUE if the drawable is a channel, FALSE otherwise.  */
 end_comment
 
 begin_function
@@ -1255,7 +1255,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Delete a drawable.  *  * This procedure deletes the specified drawable. This must not be done  * if the image containing this drawable was already deleted or if the  * drawable was already removed from the image. The only case in which  * this procedure is useful is if you want to get rid of a drawable  * which has not yet been added to an image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * This procedure is deprecated! Use gimp_item_delete() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1322,7 +1322,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_image:  * @drawable_ID: The drawable.  *  * Returns the drawable's image.  *  * This procedure returns the drawable's image.  *  * Returns: The drawable's image.  */
+comment|/**  * gimp_drawable_get_image:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_get_image() instead.  *  * Returns: The drawable's image.  */
 end_comment
 
 begin_function
@@ -1475,7 +1475,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_name:  * @drawable_ID: The drawable.  *  * Get the name of the specified drawable.  *  * This procedure returns the specified drawable's name.  *  * Returns: The drawable name.  */
+comment|/**  * gimp_drawable_get_name:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_get_name() instead.  *  * Returns: The drawable name.  */
 end_comment
 
 begin_function
@@ -1558,7 +1558,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_name:  * @drawable_ID: The drawable.  * @name: The new drawable name.  *  * Set the name of the specified drawable.  *  * This procedure sets the specified drawable's name.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_name:  * @drawable_ID: The drawable.  * @name: The new drawable name.  *  * This procedure is deprecated! Use gimp_item_set_name() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1634,7 +1634,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_visible:  * @drawable_ID: The drawable.  *  * Get the visibility of the specified drawable.  *  * This procedure returns the specified drawable's visibility.  *  * Returns: The drawable visibility.  */
+comment|/**  * gimp_drawable_get_visible:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_get_visible() instead.  *  * Returns: The drawable visibility.  */
 end_comment
 
 begin_function
@@ -1712,7 +1712,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_visible:  * @drawable_ID: The drawable.  * @visible: The new drawable visibility.  *  * Set the visibility of the specified drawable.  *  * This procedure sets the specified drawable's visibility.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_visible:  * @drawable_ID: The drawable.  * @visible: The new drawable visibility.  *  * This procedure is deprecated! Use gimp_item_set_visible() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1786,7 +1786,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_linked:  * @drawable_ID: The drawable.  *  * Get the linked state of the specified drawable.  *  * This procedure returns the specified drawable's linked state.  *  * Returns: The drawable linked state (for moves).  */
+comment|/**  * gimp_drawable_get_linked:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_get_linked() instead.  *  * Returns: The drawable linked state (for moves).  */
 end_comment
 
 begin_function
@@ -1864,7 +1864,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_linked:  * @drawable_ID: The drawable.  * @linked: The new drawable linked state.  *  * Set the linked state of the specified drawable.  *  * This procedure sets the specified drawable's linked state.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_linked:  * @drawable_ID: The drawable.  * @linked: The new drawable linked state.  *  * This procedure is deprecated! Use gimp_item_set_linked() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1938,7 +1938,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_tattoo:  * @drawable_ID: The drawable.  *  * Get the tattoo of the specified drawable.  *  * This procedure returns the specified drawable's tattoo. A tattoo is  * a unique and permanent identifier attached to a drawable that can be  * used to uniquely identify a drawable within an image even between  * sessions.  *  * Returns: The drawable tattoo.  */
+comment|/**  * gimp_drawable_get_tattoo:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_item_get_tattoo() instead.  *  * Returns: The drawable tattoo.  */
 end_comment
 
 begin_function
@@ -2016,7 +2016,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_tattoo:  * @drawable_ID: The drawable.  * @tattoo: The new drawable tattoo.  *  * Set the tattoo of the specified drawable.  *  * This procedure sets the specified drawable's tattoo. A tattoo is a  * unique and permanent identifier attached to a drawable that can be  * used to uniquely identify a drawable within an image even between  * sessions.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_tattoo:  * @drawable_ID: The drawable.  * @tattoo: The new drawable tattoo.  *  * This procedure is deprecated! Use gimp_item_set_tattoo() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
