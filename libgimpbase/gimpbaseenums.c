@@ -4300,11 +4300,11 @@ literal|"color"
 block|}
 block|,
 block|{
-name|GIMP_PDB_REGION
+name|GIMP_PDB_ITEM
 block|,
-literal|"GIMP_PDB_REGION"
+literal|"GIMP_PDB_ITEM"
 block|,
-literal|"region"
+literal|"item"
 block|}
 block|,
 block|{
@@ -4500,9 +4500,9 @@ name|NULL
 block|}
 block|,
 block|{
-name|GIMP_PDB_REGION
+name|GIMP_PDB_ITEM
 block|,
-literal|"GIMP_PDB_REGION"
+literal|"GIMP_PDB_ITEM"
 block|,
 name|NULL
 block|}

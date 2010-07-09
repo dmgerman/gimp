@@ -469,6 +469,7 @@ DECL|member|d_region
 name|GimpParamRegion
 name|d_region
 decl_stmt|;
+comment|/* deprecated */
 DECL|member|d_display
 name|gint32
 name|d_display
@@ -476,6 +477,10 @@ decl_stmt|;
 DECL|member|d_image
 name|gint32
 name|d_image
+decl_stmt|;
+DECL|member|d_item
+name|gint32
+name|d_item
 decl_stmt|;
 DECL|member|d_layer
 name|gint32
