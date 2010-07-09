@@ -69,7 +69,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c08866b0108
+DECL|struct|__anon2a3aeb370108
 block|{
 DECL|member|default_action
 name|ExportFunc
@@ -169,7 +169,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layers
 index|[
@@ -2765,7 +2765,7 @@ condition|(
 name|format_name
 operator|&&
 operator|!
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 operator|*
 name|drawable_ID
@@ -2781,7 +2781,7 @@ condition|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_is_layer_mask
+name|gimp_item_is_layer_mask
 argument_list|(
 operator|*
 name|drawable_ID
@@ -2805,7 +2805,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimp_drawable_is_channel
+name|gimp_item_is_channel
 argument_list|(
 operator|*
 name|drawable_ID
@@ -2923,7 +2923,7 @@ name|n_layers
 operator|-
 literal|1
 operator|&&
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layers
 index|[
@@ -3013,7 +3013,7 @@ name|n_layers
 operator|==
 literal|1
 operator|&&
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 operator|*
 name|drawable_ID

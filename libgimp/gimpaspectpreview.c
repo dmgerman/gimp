@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d489f20103
+DECL|enum|__anon2b2a8cca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -65,7 +65,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29d489f20208
+DECL|struct|__anon2b2a8cca0208
 block|{
 DECL|member|update
 name|gboolean
@@ -1022,7 +1022,7 @@ name|image_id
 decl_stmt|;
 name|image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->

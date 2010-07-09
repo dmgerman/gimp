@@ -1181,7 +1181,7 @@ name|success
 decl_stmt|;
 name|success
 operator|=
-name|gimp_drawable_parasite_attach
+name|gimp_item_parasite_attach
 argument_list|(
 name|drawable_ID
 argument_list|,

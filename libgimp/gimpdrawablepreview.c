@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b82d2a0103
+DECL|enum|__anon286dcd740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -67,7 +67,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b82d2a0208
+DECL|struct|__anon286dcd740208
 block|{
 DECL|member|x
 name|gint
@@ -1577,7 +1577,7 @@ name|image_id
 decl_stmt|;
 name|image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -2102,7 +2102,7 @@ block|{
 name|guint32
 name|image
 init|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
