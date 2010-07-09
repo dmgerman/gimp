@@ -3727,9 +3727,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-find"
 argument_list|,
-literal|"Look up a parasite in a drawable"
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
 argument_list|,
-literal|"Finds and returns the parasite that was previously attached to a drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -3737,7 +3737,7 @@ literal|"Jay Cox"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-find"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3838,9 +3838,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-attach"
 argument_list|,
-literal|"Add a parasite to a drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
 argument_list|,
-literal|"This procedure attaches a parasite to a drawable. It has no return values."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -3848,7 +3848,7 @@ literal|"Jay Cox"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-attach"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3925,9 +3925,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-detach"
 argument_list|,
-literal|"Removes a parasite from a drawable."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
 argument_list|,
-literal|"This procedure detaches a parasite from a drawable. It has no return values."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -3935,7 +3935,7 @@ literal|"Jay Cox"
 argument_list|,
 literal|"1998"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-detach"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4020,9 +4020,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-list"
 argument_list|,
-literal|"List all parasites."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
 argument_list|,
-literal|"Returns a list of all currently attached parasites."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
 argument_list|,
 literal|"Marc Lehmann"
 argument_list|,
@@ -4030,7 +4030,7 @@ literal|"Marc Lehmann"
 argument_list|,
 literal|"1999"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-list"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4129,9 +4129,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-find"
 argument_list|,
-literal|"Look up a parasite in a vectors object"
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
 argument_list|,
-literal|"Finds and returns the parasite that was previously attached to a vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4139,7 +4139,7 @@ literal|"Michael Natterer"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-find"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4240,9 +4240,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-attach"
 argument_list|,
-literal|"Add a parasite to a vectors object"
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
 argument_list|,
-literal|"This procedure attaches a parasite to a vectors object. It has no return values."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4250,7 +4250,7 @@ literal|"Michael Natterer"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-attach"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4327,9 +4327,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-detach"
 argument_list|,
-literal|"Removes a parasite from a vectors object"
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
 argument_list|,
-literal|"This procedure detaches a parasite from a vectors object. It has no return values."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4337,7 +4337,7 @@ literal|"Michael Natterer"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-detach"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -4422,9 +4422,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-list"
 argument_list|,
-literal|"List all parasites."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
 argument_list|,
-literal|"Returns a list of all currently attached parasites."
+literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4432,7 +4432,7 @@ literal|"Michael Natterer"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-item-parasite-list"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
