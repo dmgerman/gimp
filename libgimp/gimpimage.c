@@ -34,69 +34,6 @@ file|"gimpimage.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_image_get_cmap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_get_colormap() instead.  *  * Returns: The image's colormap.  */
-end_comment
-
-begin_function
-name|guchar
-modifier|*
-DECL|function|gimp_image_get_cmap (gint32 image_ID,gint * num_colors)
-name|gimp_image_get_cmap
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-name|gint
-modifier|*
-name|num_colors
-parameter_list|)
-block|{
-return|return
-name|gimp_image_get_colormap
-argument_list|(
-name|image_ID
-argument_list|,
-name|num_colors
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_image_set_cmap:  * @image_ID:   The image.  * @cmap:       The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_set_colormap() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_image_set_cmap (gint32 image_ID,const guchar * cmap,gint num_colors)
-name|gimp_image_set_cmap
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|,
-specifier|const
-name|guchar
-modifier|*
-name|cmap
-parameter_list|,
-name|gint
-name|num_colors
-parameter_list|)
-block|{
-return|return
-name|gimp_image_set_colormap
-argument_list|(
-name|image_ID
-argument_list|,
-name|cmap
-argument_list|,
-name|num_colors
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_image_get_colormap:  * @image_ID:   The image.  * @num_colors: Returns the number of colors in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of colors contained in the colormap. If the image  * is not of base type INDEXED, this pointer will be NULL.  *  * Returns: The image's colormap.  */
 end_comment
 
@@ -261,7 +198,70 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_attach_new_parasite:  * @image_ID: the ID of the image to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_image_parasite_attach()  */
+comment|/**  * gimp_image_get_cmap:  * @image_ID:   The image.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_get_colormap() instead.  *  * Returns: The image's colormap.  */
+end_comment
+
+begin_function
+name|guchar
+modifier|*
+DECL|function|gimp_image_get_cmap (gint32 image_ID,gint * num_colors)
+name|gimp_image_get_cmap
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint
+modifier|*
+name|num_colors
+parameter_list|)
+block|{
+return|return
+name|gimp_image_get_colormap
+argument_list|(
+name|image_ID
+argument_list|,
+name|num_colors
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_set_cmap:  * @image_ID:   The image.  * @cmap:       The new colormap values.  * @num_colors: Number of colors in the colormap array.  *  * This procedure is deprecated! Use gimp_image_set_colormap() instead.  *  * Returns: TRUE on success.  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_image_set_cmap (gint32 image_ID,const guchar * cmap,gint num_colors)
+name|gimp_image_set_cmap
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+specifier|const
+name|guchar
+modifier|*
+name|cmap
+parameter_list|,
+name|gint
+name|num_colors
+parameter_list|)
+block|{
+return|return
+name|gimp_image_set_colormap
+argument_list|(
+name|image_ID
+argument_list|,
+name|cmap
+argument_list|,
+name|num_colors
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_image_attach_new_parasite:  * @image_ID: the ID of the image to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Deprecated: Use gimp_image_parasite_attach() instead.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_image_parasite_attach()  */
 end_comment
 
 begin_function
