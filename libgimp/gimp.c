@@ -373,6 +373,12 @@ directive|include
 file|"libgimpbase/gimpwire.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -418,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2be1942b0103
+DECL|enum|__anon278e4c520103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4523,7 +4529,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_attach_new_parasite:  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_parasite_attach()  */
+comment|/**  * gimp_attach_new_parasite:  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Deprecated: Use gimp_parasite_attach() instead.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_parasite_attach()  */
 end_comment
 
 begin_function

@@ -9,6 +9,12 @@ directive|include
 file|"config.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -1135,7 +1141,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_attach_new_parasite:  * @drawable_ID: the ID of the #GimpDrawable to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_drawable_parasite_attach()  */
+comment|/**  * gimp_drawable_attach_new_parasite:  * @drawable_ID: the ID of the #GimpDrawable to attach the #GimpParasite to.  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Deprecated: use gimp_image_parasite_attach() instead.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_drawable_parasite_attach()  */
 end_comment
 
 begin_function
