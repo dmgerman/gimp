@@ -1179,7 +1179,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_get_lock_content:  * @item_ID: The item.  *  * Get the 'lock content' state of the specified item.  *  * This procedure returns the specified item's lock content state.  *  * Returns: Whether the item's pixels are locked.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_item_get_lock_content:  * @item_ID: The item.  *  * Get the 'lock content' state of the specified item.  *  * This procedure returns the specified item's lock content state.  *  * Returns: Whether the item's contents are locked.  *  * Since: GIMP 2.8  */
 end_comment
 
 begin_function

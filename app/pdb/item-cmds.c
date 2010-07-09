@@ -3746,7 +3746,7 @@ literal|"lock-content"
 argument_list|,
 literal|"lock content"
 argument_list|,
-literal|"Whether the item's pixels are locked"
+literal|"Whether the item's contents are locked"
 argument_list|,
 name|FALSE
 argument_list|,
