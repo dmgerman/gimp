@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c7ccd0108
+DECL|struct|__anon28a51eec0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c7ccd0208
+DECL|struct|__anon28a51eec0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c7ccd0308
+DECL|struct|__anon28a51eec0308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c7ccd0408
+DECL|struct|__anon28a51eec0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon279c7ccd0508
+DECL|struct|__anon28a51eec0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -12118,7 +12118,7 @@ literal|1
 return|;
 if|if
 condition|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable_id
 argument_list|)
@@ -12449,7 +12449,7 @@ comment|/* there is no alpha channel */
 block|}
 name|image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -14802,7 +14802,7 @@ operator|)
 condition|)
 name|gimp_image_convert_rgb
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|g_values
 operator|.
