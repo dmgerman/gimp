@@ -7248,9 +7248,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-is-valid"
 argument_list|,
-literal|"Returns TRUE if the vectors object is valid."
+literal|"This procedure is deprecated! Use 'gimp-item-is-valid' instead."
 argument_list|,
-literal|"This procedure checks if the given vectors ID is valid and refers to an existing vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-is-valid' instead."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -7258,7 +7258,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2007"
 argument_list|,
-name|NULL
+literal|"gimp-item-is-valid"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7664,9 +7664,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-image"
 argument_list|,
-literal|"Returns the vectors objects image."
+literal|"This procedure is deprecated! Use 'gimp-item-get-image' instead."
 argument_list|,
-literal|"Returns the vectors objects image."
+literal|"This procedure is deprecated! Use 'gimp-item-get-image' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7674,7 +7674,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7757,9 +7757,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-name"
 argument_list|,
-literal|"Gets the name of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-name' instead."
 argument_list|,
-literal|"Gets the name of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-name' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7767,7 +7767,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7852,9 +7852,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-name"
 argument_list|,
-literal|"Sets the name of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-name' instead."
 argument_list|,
-literal|"Sets the name of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-name' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7862,7 +7862,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7947,9 +7947,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-visible"
 argument_list|,
-literal|"Gets the visibility of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-visible' instead."
 argument_list|,
-literal|"Gets the visibility of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-visible' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7957,7 +7957,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-visible"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8036,9 +8036,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-visible"
 argument_list|,
-literal|"Sets the visibility of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-visible' instead."
 argument_list|,
-literal|"Sets the visibility of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-visible' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8046,7 +8046,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-visible"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8125,9 +8125,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-linked"
 argument_list|,
-literal|"Gets the linked state of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-linked' instead."
 argument_list|,
-literal|"Gets the linked state of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-linked' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8135,7 +8135,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-linked"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8214,9 +8214,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-linked"
 argument_list|,
-literal|"Sets the linked state of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-linked' instead."
 argument_list|,
-literal|"Sets the linked state of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-linked' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8224,7 +8224,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-linked"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8303,9 +8303,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-tattoo"
 argument_list|,
-literal|"Get the tattoo of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-tattoo' instead."
 argument_list|,
-literal|"Get the tattoo state of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-get-tattoo' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8313,7 +8313,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-tattoo"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8396,9 +8396,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-tattoo"
 argument_list|,
-literal|"Set the tattoo of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-tattoo' instead."
 argument_list|,
-literal|"Set the tattoo of the vectors object."
+literal|"This procedure is deprecated! Use 'gimp-item-set-tattoo' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8406,7 +8406,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-tattoo"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
