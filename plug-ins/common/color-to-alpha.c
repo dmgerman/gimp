@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ac6bf2e0108
+DECL|struct|__anon2791707f0108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -564,7 +564,7 @@ operator|->
 name|drawable_id
 argument_list|)
 operator|&&
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|drawable
 operator|->

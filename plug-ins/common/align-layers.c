@@ -53,7 +53,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28afa85d0103
+DECL|enum|__anon28b1d9b50103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28afa85d0203
+DECL|enum|__anon28b1d9b50203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -91,7 +91,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28afa85d0303
+DECL|enum|__anon28b1d9b50303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -113,7 +113,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28afa85d0403
+DECL|enum|__anon28b1d9b50403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -237,7 +237,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28afa85d0508
+DECL|struct|__anon28b1d9b50508
 block|{
 DECL|member|h_style
 name|gint
@@ -791,7 +791,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layers
 index|[
@@ -815,7 +815,7 @@ operator|--
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layers
 index|[
@@ -871,7 +871,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layers
 index|[
@@ -1121,7 +1121,7 @@ control|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|layers
 index|[

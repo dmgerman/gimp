@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d8c7da0108
+DECL|struct|__anon29f05ec30108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28d8c7da0208
+DECL|struct|__anon29f05ec30208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -6547,7 +6547,7 @@ block|}
 comment|/* get framename of this layer */
 name|framename
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
@@ -7318,7 +7318,7 @@ condition|)
 return|return
 name|FALSE
 return|;
-name|gimp_drawable_set_name
+name|gimp_item_set_name
 argument_list|(
 name|orig_layers
 index|[
@@ -9218,7 +9218,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28d8c7da0308
+DECL|struct|__anon29f05ec30308
 block|{
 DECL|member|size
 name|guint32

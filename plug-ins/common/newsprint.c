@@ -351,7 +351,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240108
+DECL|struct|__anon291aaed50108
 block|{
 DECL|member|name
 specifier|const
@@ -611,7 +611,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240208
+DECL|struct|__anon291aaed50208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -684,7 +684,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240308
+DECL|struct|__anon291aaed50308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -714,7 +714,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240408
+DECL|struct|__anon291aaed50408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -821,7 +821,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240508
+DECL|struct|__anon291aaed50508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -986,7 +986,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240608
+DECL|struct|__anon291aaed50608
 block|{
 DECL|member|name
 specifier|const
@@ -5182,7 +5182,7 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_get_resolution
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -7068,7 +7068,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b40a3240708
+DECL|struct|__anon291aaed50708
 block|{
 DECL|member|index
 name|gint

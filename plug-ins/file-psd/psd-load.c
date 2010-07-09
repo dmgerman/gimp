@@ -7501,7 +7501,7 @@ argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|drawable
 operator|->
@@ -7526,7 +7526,7 @@ index|]
 operator|->
 name|id
 condition|)
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|drawable
 operator|->
@@ -7551,7 +7551,7 @@ name|layer_flags
 operator|.
 name|irrelevant
 condition|)
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|drawable
 operator|->
@@ -7898,7 +7898,7 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|drawable
 operator|->
@@ -7923,7 +7923,7 @@ index|]
 operator|->
 name|id
 condition|)
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|drawable
 operator|->
@@ -10040,7 +10040,7 @@ if|if
 condition|(
 name|alpha_id
 condition|)
-name|gimp_drawable_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|drawable
 operator|->
@@ -10049,7 +10049,7 @@ argument_list|,
 name|alpha_id
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|drawable
 operator|->

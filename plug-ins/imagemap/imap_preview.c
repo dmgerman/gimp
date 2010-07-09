@@ -585,7 +585,7 @@ name|cmap
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|srcrgn
 operator|->

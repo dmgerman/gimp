@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29741bd10103
+DECL|enum|__anon29db20520103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -2012,7 +2012,7 @@ name|thumbnail
 operator|==
 name|NULL
 operator|&&
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|preview
 operator|->

@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon286cd03e0103
+DECL|enum|__anon28e7f4990103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon286cd03e0208
+DECL|struct|__anon28e7f4990208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4732,7 +4732,7 @@ comment|/* -- Add two layers: X and Y Displacement vectors -- */
 comment|/* -- I'm using a RGB  drawable and using the first two bytes for a         16-bit pixel value. This is either clever, or a kluge,         depending on your point of view.  */
 name|image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -6712,7 +6712,7 @@ argument_list|)
 expr_stmt|;
 name|orig_image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|orig_draw
 operator|->
@@ -6807,7 +6807,7 @@ expr_stmt|;
 block|}
 name|image_ID
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|map_x
 operator|->

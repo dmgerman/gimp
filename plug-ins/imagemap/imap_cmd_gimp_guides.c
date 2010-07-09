@@ -70,7 +70,7 @@ file|"libgimp/stdplugins-intl.h"
 end_include
 
 begin_typedef
-DECL|struct|__anon2b1f87ac0108
+DECL|struct|__anon2a3c6d4c0108
 typedef|typedef
 struct|struct
 block|{
@@ -205,7 +205,7 @@ decl_stmt|;
 name|gint32
 name|image_ID
 init|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|param
 operator|->
@@ -1220,7 +1220,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon2b1f87ac0208
+DECL|struct|__anon2a3c6d4c0208
 typedef|typedef
 struct|struct
 block|{

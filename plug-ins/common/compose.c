@@ -76,10 +76,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae4f3a0108
+DECL|struct|__anon29eb49160108
 block|{
 union|union
-DECL|union|__anon28ae4f3a020a
+DECL|union|__anon29eb4916020a
 block|{
 DECL|member|ID
 name|gint32
@@ -654,7 +654,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae4f3a0308
+DECL|struct|__anon29eb49160308
 block|{
 DECL|member|compose_type
 specifier|const
@@ -1193,7 +1193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae4f3a0408
+DECL|struct|__anon29eb49160408
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1233,7 +1233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ae4f3a0508
+DECL|struct|__anon29eb49160508
 block|{
 DECL|member|width
 DECL|member|height
@@ -2960,7 +2960,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|inputs
 index|[
@@ -3052,7 +3052,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|inputs
 index|[
@@ -3577,7 +3577,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|layer_ID_dst
 argument_list|)
@@ -3653,7 +3653,7 @@ argument_list|)
 expr_stmt|;
 name|image_ID_dst
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|layer_ID_dst
 argument_list|)
@@ -7572,7 +7572,7 @@ name|layer_list
 operator|=
 name|gimp_image_get_layers
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable_ID
 argument_list|)

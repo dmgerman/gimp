@@ -3278,7 +3278,7 @@ name|char
 modifier|*
 name|chName
 init|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|PSDImageData
 operator|.
@@ -4833,7 +4833,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|PSDImageData
 operator|.
@@ -5074,7 +5074,7 @@ argument_list|)
 decl_stmt|;
 name|layerName
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|PSDImageData
 operator|.
@@ -5891,7 +5891,7 @@ block|}
 comment|/* Write layer mask, as last channel, id -2 */
 if|if
 condition|(
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|drawableID
 argument_list|)
@@ -7239,7 +7239,7 @@ name|image_id
 argument_list|)
 expr_stmt|;
 comment|/* Delete merged image now */
-name|gimp_drawable_delete
+name|gimp_item_delete
 argument_list|(
 name|PSDImageData
 operator|.

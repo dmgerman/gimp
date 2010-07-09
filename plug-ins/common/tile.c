@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b155b110108
+DECL|struct|__anon274c1aaa0108
 block|{
 DECL|member|new_width
 name|gint
@@ -1030,7 +1030,7 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|drawable_id
 argument_list|)

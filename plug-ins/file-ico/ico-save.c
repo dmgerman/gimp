@@ -2395,7 +2395,7 @@ block|{
 name|gint32
 name|image
 init|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|layer
 argument_list|)

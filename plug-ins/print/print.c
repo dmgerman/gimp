@@ -1078,12 +1078,12 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|layer
 argument_list|)
 condition|)
-name|gimp_drawable_delete
+name|gimp_item_delete
 argument_list|(
 name|layer
 argument_list|)
@@ -1393,14 +1393,14 @@ block|{
 comment|/* we don't need the print layer any longer, delete it */
 if|if
 condition|(
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 operator|*
 name|layer_ID
 argument_list|)
 condition|)
 block|{
-name|gimp_drawable_delete
+name|gimp_item_delete
 argument_list|(
 operator|*
 name|layer_ID

@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b9ff0ac0103
+DECL|enum|__anon2ae7a00f0103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b9ff0ac0208
+DECL|struct|__anon2ae7a00f0208
 block|{
 DECL|member|x
 DECL|member|y
@@ -7205,7 +7205,7 @@ name|layer_name
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
@@ -7258,7 +7258,7 @@ literal|0
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
