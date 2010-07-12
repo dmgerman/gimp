@@ -82,7 +82,7 @@ DECL|macro|DEFAULT_DYNAMICS
 define|#
 directive|define
 name|DEFAULT_DYNAMICS
-value|"Basic Dynamics"
+value|"Dynamics Off"
 end_define
 
 begin_define
@@ -135,7 +135,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a4b24d0103
+DECL|enum|__anon296e8c7e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
