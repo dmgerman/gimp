@@ -232,7 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels_auto:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_levels_stretch() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_levels_auto:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_levels_stretch() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

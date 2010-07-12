@@ -1401,9 +1401,9 @@ name|procedure
 argument_list|,
 literal|"gimp-gradients-sample-uniform"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+literal|"Deprecated: Use 'gimp-gradient-get-uniform-samples' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+literal|"Deprecated: Use 'gimp-gradient-get-uniform-samples' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1528,9 +1528,9 @@ name|procedure
 argument_list|,
 literal|"gimp-gradients-sample-custom"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-gradient-get-custom-samples' instead."
+literal|"Deprecated: Use 'gimp-gradient-get-custom-samples' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-gradient-get-custom-samples' instead."
+literal|"Deprecated: Use 'gimp-gradient-get-custom-samples' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1671,9 +1671,9 @@ name|procedure
 argument_list|,
 literal|"gimp-gradients-get-gradient-data"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+literal|"Deprecated: Use 'gimp-gradient-get-uniform-samples' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-gradient-get-uniform-samples' instead."
+literal|"Deprecated: Use 'gimp-gradient-get-uniform-samples' instead."
 argument_list|,
 literal|""
 argument_list|,

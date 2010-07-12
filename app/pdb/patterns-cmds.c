@@ -993,9 +993,9 @@ name|procedure
 argument_list|,
 literal|"gimp-patterns-get-pattern"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-context-get-pattern' instead."
+literal|"Deprecated: Use 'gimp-context-get-pattern' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-context-get-pattern' instead."
+literal|"Deprecated: Use 'gimp-context-get-pattern' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1110,9 +1110,9 @@ name|procedure
 argument_list|,
 literal|"gimp-patterns-get-pattern-data"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-pattern-get-pixels' instead."
+literal|"Deprecated: Use 'gimp-pattern-get-pixels' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-pattern-get-pixels' instead."
+literal|"Deprecated: Use 'gimp-pattern-get-pixels' instead."
 argument_list|,
 literal|""
 argument_list|,

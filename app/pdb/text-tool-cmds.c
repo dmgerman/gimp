@@ -2113,9 +2113,9 @@ name|procedure
 argument_list|,
 literal|"gimp-text"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-text-fontname' instead."
+literal|"Deprecated: Use 'gimp-text-fontname' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-text-fontname' instead."
+literal|"Deprecated: Use 'gimp-text-fontname' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -2574,9 +2574,9 @@ name|procedure
 argument_list|,
 literal|"gimp-text-get-extents"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-text-get-extents-fontname' instead."
+literal|"Deprecated: Use 'gimp-text-get-extents-fontname' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-text-get-extents-fontname' instead."
+literal|"Deprecated: Use 'gimp-text-get-extents-fontname' instead."
 argument_list|,
 literal|""
 argument_list|,

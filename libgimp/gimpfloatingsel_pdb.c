@@ -317,7 +317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -391,7 +391,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

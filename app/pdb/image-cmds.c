@@ -12474,9 +12474,9 @@ name|procedure
 argument_list|,
 literal|"gimp-image-free-shadow"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-free-shadow' instead."
+literal|"Deprecated: Use 'gimp-drawable-free-shadow' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-free-shadow' instead."
+literal|"Deprecated: Use 'gimp-drawable-free-shadow' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -16684,9 +16684,9 @@ name|procedure
 argument_list|,
 literal|"gimp-image-add-layer-mask"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-layer-add-mask' instead."
+literal|"Deprecated: Use 'gimp-layer-add-mask' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-layer-add-mask' instead."
+literal|"Deprecated: Use 'gimp-layer-add-mask' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -16799,9 +16799,9 @@ name|procedure
 argument_list|,
 literal|"gimp-image-remove-layer-mask"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-layer-remove-mask' instead."
+literal|"Deprecated: Use 'gimp-layer-remove-mask' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-layer-remove-mask' instead."
+literal|"Deprecated: Use 'gimp-layer-remove-mask' instead."
 argument_list|,
 literal|""
 argument_list|,

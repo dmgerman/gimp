@@ -3727,9 +3727,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-find"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-find' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-find' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -3838,9 +3838,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-attach"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-attach' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-attach' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -3925,9 +3925,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-detach"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-detach' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-detach' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -4020,9 +4020,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-parasite-list"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-list' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-list' instead."
 argument_list|,
 literal|"Marc Lehmann"
 argument_list|,
@@ -4129,9 +4129,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-find"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-find' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-find' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-find' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4240,9 +4240,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-attach"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-attach' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-attach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-attach' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4327,9 +4327,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-detach"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-detach' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-detach' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-detach' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -4422,9 +4422,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-parasite-list"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-list' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-parasite-list' instead."
+literal|"Deprecated: Use 'gimp-item-parasite-list' instead."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

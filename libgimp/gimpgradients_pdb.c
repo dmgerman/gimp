@@ -254,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_sample_uniform:  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  *  * This procedure is deprecated! Use  * gimp_gradient_get_uniform_samples() instead.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
+comment|/**  * gimp_gradients_sample_uniform:  * @num_samples: The number of samples to take.  * @reverse: Use the reverse gradient.  *  * Deprecated: Use gimp_gradient_get_uniform_samples() instead.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
 end_comment
 
 begin_function
@@ -376,7 +376,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_sample_custom:  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  *  * This procedure is deprecated! Use gimp_gradient_get_custom_samples()  * instead.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
+comment|/**  * gimp_gradients_sample_custom:  * @num_samples: The number of samples to take.  * @positions: The list of positions to sample along the gradient.  * @reverse: Use the reverse gradient.  *  * Deprecated: Use gimp_gradient_get_custom_samples() instead.  *  * Returns: Color samples: { R1, G1, B1, A1, ..., Rn, Gn, Bn, An }.  */
 end_comment
 
 begin_function
@@ -507,7 +507,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_get_gradient_data:  * @name: The gradient name (\"\" means current active gradient).  * @sample_size: Size of the sample to return when the gradient is changed.  * @reverse: Use the reverse gradient.  * @width: The gradient sample width (r,g,b,a).  * @grad_data: The gradient sample data.  *  * This procedure is deprecated! Use  * gimp_gradient_get_uniform_samples() instead.  *  * Returns: The gradient name.  */
+comment|/**  * gimp_gradients_get_gradient_data:  * @name: The gradient name (\"\" means current active gradient).  * @sample_size: Size of the sample to return when the gradient is changed.  * @reverse: Use the reverse gradient.  * @width: The gradient sample width (r,g,b,a).  * @grad_data: The gradient sample data.  *  * Deprecated: Use gimp_gradient_get_uniform_samples() instead.  *  * Returns: The gradient name.  */
 end_comment
 
 begin_function

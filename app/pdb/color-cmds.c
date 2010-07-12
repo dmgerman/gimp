@@ -3518,9 +3518,9 @@ name|procedure
 argument_list|,
 literal|"gimp-levels-auto"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-levels-stretch' instead."
+literal|"Deprecated: Use 'gimp-levels-stretch' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-levels-stretch' instead."
+literal|"Deprecated: Use 'gimp-levels-stretch' instead."
 argument_list|,
 literal|""
 argument_list|,

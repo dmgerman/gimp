@@ -716,7 +716,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * This procedure is deprecated! Use gimp_drawable_free_shadow()  * instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * Deprecated: Use gimp_drawable_free_shadow() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

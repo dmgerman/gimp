@@ -6083,9 +6083,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-valid"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-valid' instead."
+literal|"Deprecated: Use 'gimp-item-is-valid' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-valid' instead."
+literal|"Deprecated: Use 'gimp-item-is-valid' instead."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -6174,9 +6174,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-layer"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-layer' instead."
+literal|"Deprecated: Use 'gimp-item-is-layer' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-layer' instead."
+literal|"Deprecated: Use 'gimp-item-is-layer' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -6352,9 +6352,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-layer-mask"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-layer-mask' instead."
+literal|"Deprecated: Use 'gimp-item-is-layer-mask' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-layer-mask' instead."
+literal|"Deprecated: Use 'gimp-item-is-layer-mask' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -6441,9 +6441,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-is-channel"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-channel' instead."
+literal|"Deprecated: Use 'gimp-item-is-channel' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-is-channel' instead."
+literal|"Deprecated: Use 'gimp-item-is-channel' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -7507,9 +7507,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-delete"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-delete' instead."
+literal|"Deprecated: Use 'gimp-item-delete' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-delete' instead."
+literal|"Deprecated: Use 'gimp-item-delete' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -7578,9 +7578,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-image"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-image' instead."
+literal|"Deprecated: Use 'gimp-item-get-image' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-image' instead."
+literal|"Deprecated: Use 'gimp-item-get-image' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -7671,9 +7671,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-image"
 argument_list|,
-literal|"This procedure is deprecated!"
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"This procedure is deprecated!"
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
 literal|""
 argument_list|,
@@ -7764,9 +7764,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-name"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-name' instead."
+literal|"Deprecated: Use 'gimp-item-get-name' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-name' instead."
+literal|"Deprecated: Use 'gimp-item-get-name' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -7859,9 +7859,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-name"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-name' instead."
+literal|"Deprecated: Use 'gimp-item-set-name' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-name' instead."
+literal|"Deprecated: Use 'gimp-item-set-name' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -7954,9 +7954,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-visible"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-visible' instead."
+literal|"Deprecated: Use 'gimp-item-get-visible' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-visible' instead."
+literal|"Deprecated: Use 'gimp-item-get-visible' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -8043,9 +8043,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-visible"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-visible' instead."
+literal|"Deprecated: Use 'gimp-item-set-visible' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-visible' instead."
+literal|"Deprecated: Use 'gimp-item-set-visible' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -8132,9 +8132,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-linked"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-linked' instead."
+literal|"Deprecated: Use 'gimp-item-get-linked' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-linked' instead."
+literal|"Deprecated: Use 'gimp-item-get-linked' instead."
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -8221,9 +8221,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-linked"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-linked' instead."
+literal|"Deprecated: Use 'gimp-item-set-linked' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-linked' instead."
+literal|"Deprecated: Use 'gimp-item-set-linked' instead."
 argument_list|,
 literal|"Wolfgang Hofer"
 argument_list|,
@@ -8310,9 +8310,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-get-tattoo"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-tattoo' instead."
+literal|"Deprecated: Use 'gimp-item-get-tattoo' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-get-tattoo' instead."
+literal|"Deprecated: Use 'gimp-item-get-tattoo' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
@@ -8403,9 +8403,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-set-tattoo"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-tattoo' instead."
+literal|"Deprecated: Use 'gimp-item-set-tattoo' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-item-set-tattoo' instead."
+literal|"Deprecated: Use 'gimp-item-set-tattoo' instead."
 argument_list|,
 literal|"Jay Cox"
 argument_list|,
