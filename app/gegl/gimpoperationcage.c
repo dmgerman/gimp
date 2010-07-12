@@ -76,6 +76,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_operation_cage_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
 DECL|function|G_DEFINE_TYPE (GimpOperationCage,gimp_operation_cage,GEGL_TYPE_OPERATION_FILTER)
 name|G_DEFINE_TYPE
@@ -88,9 +100,13 @@ argument|GEGL_TYPE_OPERATION_FILTER
 argument_list|)
 end_macro
 
-begin_comment
-comment|//#define parent_class gimp_operation_cage_parent_class
-end_comment
+begin_define
+DECL|macro|parent_class
+define|#
+directive|define
+name|parent_class
+value|gimp_operation_cage_parent_class
+end_define
 
 begin_function
 specifier|static
@@ -124,17 +140,30 @@ argument_list|(
 name|klass
 argument_list|)
 expr_stmt|;
+comment|//FIXME: wrong categories and name, to appears in the gegl tool
 name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gimp:cage"
+literal|"gegl:cage"
+expr_stmt|;
+name|operation_class
+operator|->
+name|categories
+operator|=
+literal|"color"
 expr_stmt|;
 name|operation_class
 operator|->
 name|description
 operator|=
 literal|"GIMP cage transform"
+expr_stmt|;
+name|operation_class
+operator|->
+name|prepare
+operator|=
+name|gimp_operation_cage_prepare
 expr_stmt|;
 name|filter_class
 operator|->
@@ -192,7 +221,7 @@ name|format
 init|=
 name|babl_format
 argument_list|(
-literal|"RaGaBaA float"
+literal|"RGBA float"
 argument_list|)
 decl_stmt|;
 name|i
@@ -245,15 +274,9 @@ operator|->
 name|y
 decl_stmt|;
 comment|/*           and y coordinates */
-while|while
-condition|(
-name|n_pixels
-operator|--
-condition|)
-block|{
 name|gfloat
 modifier|*
-name|buf
+name|dest
 init|=
 name|i
 operator|->
@@ -262,33 +285,43 @@ index|[
 literal|0
 index|]
 decl_stmt|;
-name|buf
+while|while
+condition|(
+name|n_pixels
+operator|--
+condition|)
+block|{
+name|dest
 index|[
-literal|0
+name|RED
 index|]
 operator|=
-literal|0.5
+literal|1.0
 expr_stmt|;
-name|buf
+name|dest
 index|[
-literal|1
+name|GREEN
 index|]
 operator|=
-literal|0.5
+literal|0.0
 expr_stmt|;
-name|buf
+name|dest
 index|[
-literal|2
+name|BLUE
 index|]
 operator|=
-literal|0.5
+literal|1.0
 expr_stmt|;
-name|buf
+name|dest
 index|[
-literal|3
+name|ALPHA
 index|]
 operator|=
-literal|0.5
+literal|1.0
+expr_stmt|;
+name|dest
+operator|+=
+literal|4
 expr_stmt|;
 comment|/* update x and y coordinates */
 name|x
@@ -330,6 +363,44 @@ block|}
 return|return
 name|TRUE
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_operation_cage_prepare (GeglOperation * operation)
+name|gimp_operation_cage_prepare
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+block|{
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gegl_operation_set_format
+argument_list|(
+name|operation
+argument_list|,
+literal|"output"
+argument_list|,
+name|babl_format
+argument_list|(
+literal|"RGBA float"
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

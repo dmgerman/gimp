@@ -119,7 +119,7 @@ struct|struct
 name|_GimpOperationCageClass
 block|{
 DECL|member|parent_class
-name|GeglOperationFilter
+name|GeglOperationFilterClass
 name|parent_class
 decl_stmt|;
 block|}
