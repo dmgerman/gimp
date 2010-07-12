@@ -256,6 +256,17 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_cage_compute_coefficient
+parameter_list|(
+name|GimpCage
+modifier|*
+name|gc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif

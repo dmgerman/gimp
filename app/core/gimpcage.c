@@ -72,18 +72,6 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
-begin_function_decl
-specifier|static
-name|void
-name|gimp_cage_compute_coefficient
-parameter_list|(
-name|GimpCage
-modifier|*
-name|gc
-parameter_list|)
-function_decl|;
-end_function_decl
-
 begin_function
 specifier|static
 name|void
@@ -194,7 +182,6 @@ name|cage_edges_coef
 operator|=
 name|NULL
 expr_stmt|;
-comment|//gimp_cage_compute_coefficient (self);
 block|}
 end_function
 
@@ -273,7 +260,6 @@ block|}
 end_function
 
 begin_function
-specifier|static
 name|void
 DECL|function|gimp_cage_compute_coefficient (GimpCage * gc)
 name|gimp_cage_compute_coefficient
@@ -667,6 +653,28 @@ name|b
 operator|.
 name|y
 expr_stmt|;
+name|R
+operator|=
+literal|2.0
+operator|*
+operator|(
+name|a
+operator|.
+name|x
+operator|*
+name|b
+operator|.
+name|x
+operator|+
+name|a
+operator|.
+name|y
+operator|*
+name|b
+operator|.
+name|y
+operator|)
+expr_stmt|;
 name|BA
 operator|=
 name|b
@@ -869,6 +877,7 @@ operator|/
 name|Q
 operator|)
 expr_stmt|;
+block|}
 name|vertice_coef
 operator|+=
 name|gc
@@ -881,7 +890,6 @@ name|gc
 operator|->
 name|cage_vertice_number
 expr_stmt|;
-block|}
 comment|/* update x and y coordinates */
 name|x
 operator|++
