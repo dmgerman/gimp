@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66ba210108
+DECL|struct|__anon2ae402910108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b66ba210208
+DECL|struct|__anon2ae402910208
 block|{
 DECL|member|run
 name|gboolean
@@ -3011,6 +3011,14 @@ argument_list|,
 operator|&
 name|unit_type
 argument_list|)
+operator|&&
+name|xres
+operator|>
+literal|0
+operator|&&
+name|yres
+operator|>
+literal|0
 condition|)
 block|{
 switch|switch
