@@ -28,6 +28,12 @@ directive|include
 file|<operation/gegl-operation-filter.h>
 end_include
 
+begin_include
+include|#
+directive|include
+file|"core/gimpcage.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_CAGE
 define|#
@@ -108,6 +114,17 @@ block|{
 DECL|member|parent_instance
 name|GeglOperationFilter
 name|parent_instance
+decl_stmt|;
+comment|/* FIXME: for test */
+DECL|member|cage
+name|GimpCage
+modifier|*
+name|cage
+decl_stmt|;
+DECL|member|deformedCage
+name|GimpCage
+modifier|*
+name|deformedCage
 decl_stmt|;
 block|}
 struct|;
