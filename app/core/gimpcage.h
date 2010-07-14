@@ -267,6 +267,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpVector2
+name|gimp_cage_get_edge_normal
+parameter_list|(
+name|GimpCage
+modifier|*
+name|gc
+parameter_list|,
+name|gint
+name|edge_index
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
