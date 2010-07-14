@@ -365,6 +365,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpVector2
+name|gimp_vector2_normal
+parameter_list|(
+name|GimpVector2
+modifier|*
+name|vector
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpVector2
+name|gimp_vector2_normal_val
+parameter_list|(
+name|GimpVector2
+name|vector
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Three dimensional vector functions */
 end_comment
