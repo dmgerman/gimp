@@ -39,7 +39,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0103
+DECL|enum|__anon2ae9c1d60103
 block|{
 DECL|enumerator|GIMP_BRUSH_HARD
 name|GIMP_BRUSH_HARD
@@ -51,10 +51,6 @@ block|}
 name|GimpBrushApplicationMode
 typedef|;
 end_typedef
-
-begin_comment
-comment|/**  * GimpBrushGeneratedShape:  * @GIMP_BRUSH_GENERATED_CIRCLE:  The brush has a circle shape.  * @GIMP_BRUSH_GENERATED_SQUARE:  The brush has a square shape.  * @GIMP_BRUSH_GENERATED_DIAMOND: The brush has a diamond shape.  *  * The possible shapes generated brushes can take.  **/
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_BRUSH_GENERATED_SHAPE
@@ -77,7 +73,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0203
+DECL|enum|__anon2ae9c1d60203
 block|{
 DECL|enumerator|GIMP_BRUSH_GENERATED_CIRCLE
 name|GIMP_BRUSH_GENERATED_CIRCLE
@@ -114,7 +110,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0303
+DECL|enum|__anon2ae9c1d60303
 block|{
 DECL|enumerator|GIMP_NO_DITHER
 name|GIMP_NO_DITHER
@@ -154,7 +150,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0403
+DECL|enum|__anon2ae9c1d60403
 block|{
 DECL|enumerator|GIMP_MAKE_PALETTE
 name|GIMP_MAKE_PALETTE
@@ -197,7 +193,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0503
+DECL|enum|__anon2ae9c1d60503
 block|{
 DECL|enumerator|GIMP_NORMAL_CONVOL
 name|GIMP_NORMAL_CONVOL
@@ -212,10 +208,6 @@ block|}
 name|GimpConvolutionType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/**  * GimpConvolveMode:  * @GIMP_BLUR_CONVOLVE:    Blur the drawable.  * @GIMP_SHARPEN_CONVOLVE: Sharpen the drawable.  *  * Operation modes of the convolve tool.  **/
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_CONVOLVE_TYPE
@@ -238,7 +230,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0603
+DECL|enum|__anon2ae9c1d60603
 block|{
 DECL|enumerator|GIMP_BLUR_CONVOLVE
 name|GIMP_BLUR_CONVOLVE
@@ -272,7 +264,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0703
+DECL|enum|__anon2ae9c1d60703
 block|{
 DECL|enumerator|GIMP_FOREGROUND_FILL
 name|GIMP_FOREGROUND_FILL
@@ -315,7 +307,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0803
+DECL|enum|__anon2ae9c1d60803
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_RGB
 name|GIMP_GRADIENT_SEGMENT_RGB
@@ -352,7 +344,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0903
+DECL|enum|__anon2ae9c1d60903
 block|{
 DECL|enumerator|GIMP_GRADIENT_SEGMENT_LINEAR
 name|GIMP_GRADIENT_SEGMENT_LINEAR
@@ -395,7 +387,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0a03
+DECL|enum|__anon2ae9c1d60a03
 block|{
 DECL|enumerator|GIMP_HISTOGRAM_VALUE
 name|GIMP_HISTOGRAM_VALUE
@@ -438,7 +430,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0b03
+DECL|enum|__anon2ae9c1d60b03
 block|{
 DECL|enumerator|GIMP_ALL_HUES
 name|GIMP_ALL_HUES
@@ -487,7 +479,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0c03
+DECL|enum|__anon2ae9c1d60c03
 block|{
 DECL|enumerator|GIMP_NORMAL_MODE
 name|GIMP_NORMAL_MODE
@@ -584,7 +576,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0d03
+DECL|enum|__anon2ae9c1d60d03
 block|{
 DECL|enumerator|GIMP_MASK_APPLY
 name|GIMP_MASK_APPLY
@@ -618,7 +610,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0e03
+DECL|enum|__anon2ae9c1d60e03
 block|{
 DECL|enumerator|GIMP_EXPAND_AS_NECESSARY
 name|GIMP_EXPAND_AS_NECESSARY
@@ -658,7 +650,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d0f03
+DECL|enum|__anon2ae9c1d60f03
 block|{
 DECL|enumerator|GIMP_OFFSET_BACKGROUND
 name|GIMP_OFFSET_BACKGROUND
@@ -670,10 +662,6 @@ block|}
 name|GimpOffsetType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/**  * GimpOrientationType:  * @GIMP_ORIENTATION_HORIZONTAL: Horizontal ortientation.  * @GIMP_ORIENTATION_VERTICAL:   Vertical orientation.  * @GIMP_ORIENTATION_UNKNOWN:    Undetermined orientation.  *  * Orientation values for all kinds of purposes, like guides.  **/
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_ORIENTATION_TYPE
@@ -696,7 +684,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d1003
+DECL|enum|__anon2ae9c1d61003
 block|{
 DECL|enumerator|GIMP_ORIENTATION_HORIZONTAL
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -711,10 +699,6 @@ block|}
 name|GimpOrientationType
 typedef|;
 end_typedef
-
-begin_comment
-comment|/**  * GimpRotationType:  * @GIMP_ROTATE_90:   Rotate by 90 degrees.  * @GIMP_ROTATE_180:  Rotate by 180 degrees.  * @GIMP_ROTATE_270:  Rotate by 270 degrees.  *  * Steps for simple rotation based on multpiles of 90 degrees.  **/
-end_comment
 
 begin_define
 DECL|macro|GIMP_TYPE_ROTATION_TYPE
@@ -737,7 +721,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d1103
+DECL|enum|__anon2ae9c1d61103
 block|{
 DECL|enumerator|GIMP_ROTATE_90
 name|GIMP_ROTATE_90
@@ -774,7 +758,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b484b4d1203
+DECL|enum|__anon2ae9c1d61203
 block|{
 DECL|enumerator|GIMP_SELECT_CRITERION_COMPOSITE
 name|GIMP_SELECT_CRITERION_COMPOSITE
