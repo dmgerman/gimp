@@ -550,8 +550,6 @@ decl_stmt|;
 name|gint
 name|in
 decl_stmt|,
-name|out
-decl_stmt|,
 name|coef_vertices
 decl_stmt|,
 name|coef_edges
@@ -589,7 +587,10 @@ name|gegl_buffer_iterator_new
 argument_list|(
 name|in_buf
 argument_list|,
-name|roi
+operator|&
+name|cage
+operator|->
+name|bounding_box
 argument_list|,
 name|format_io
 argument_list|,
@@ -610,7 +611,10 @@ name|cage
 operator|->
 name|cage_vertices_coef
 argument_list|,
-name|roi
+operator|&
+name|cage
+operator|->
+name|bounding_box
 argument_list|,
 name|format_coef
 argument_list|,
@@ -627,11 +631,26 @@ name|cage
 operator|->
 name|cage_edges_coef
 argument_list|,
-name|roi
+operator|&
+name|cage
+operator|->
+name|bounding_box
 argument_list|,
 name|format_coef
 argument_list|,
 name|GEGL_BUFFER_READ
+argument_list|)
+expr_stmt|;
+comment|/* pre-copy the input buffer to the out buffer */
+name|gegl_buffer_copy
+argument_list|(
+name|in_buf
+argument_list|,
+name|roi
+argument_list|,
+name|out_buf
+argument_list|,
+name|roi
 argument_list|)
 expr_stmt|;
 comment|/* iterate on GeglBuffer */
