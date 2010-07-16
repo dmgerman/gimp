@@ -131,17 +131,24 @@ DECL|member|cage_vertice_number
 name|gint
 name|cage_vertice_number
 decl_stmt|;
-comment|//number of vertices used by the cage
+comment|/* number of vertices used by the cage */
 DECL|member|cage_vertices_max
 name|gint
 name|cage_vertices_max
 decl_stmt|;
-comment|//number of vertices allocated in memory
+comment|/* number of vertices allocated in memory */
 DECL|member|cage_vertices
 name|GimpVector2
 modifier|*
 name|cage_vertices
 decl_stmt|;
+comment|/* cage before deformation */
+DECL|member|cage_vertices_d
+name|GimpVector2
+modifier|*
+name|cage_vertices_d
+decl_stmt|;
+comment|/* cage after deformation */
 DECL|member|cage_vertices_coef
 name|GeglBuffer
 modifier|*
@@ -151,6 +158,11 @@ DECL|member|cage_edges_coef
 name|GeglBuffer
 modifier|*
 name|cage_edges_coef
+decl_stmt|;
+DECL|member|scaling_factor
+name|gdouble
+modifier|*
+name|scaling_factor
 decl_stmt|;
 comment|//test data
 DECL|member|extent
@@ -237,8 +249,48 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint
+name|gimp_cage_is_on_handle_d
+parameter_list|(
+name|GimpCage
+modifier|*
+name|cage
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
+name|gint
+name|handle_size
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|void
 name|gimp_cage_move_cage_point
+parameter_list|(
+name|GimpCage
+modifier|*
+name|cage
+parameter_list|,
+name|gint
+name|point_number
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_cage_move_cage_point_d
 parameter_list|(
 name|GimpCage
 modifier|*
