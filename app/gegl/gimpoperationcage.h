@@ -121,11 +121,6 @@ name|GimpCage
 modifier|*
 name|cage
 decl_stmt|;
-DECL|member|deformedCage
-name|GimpCage
-modifier|*
-name|deformedCage
-decl_stmt|;
 block|}
 struct|;
 end_struct
