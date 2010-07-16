@@ -164,10 +164,9 @@ name|gdouble
 modifier|*
 name|scaling_factor
 decl_stmt|;
-comment|//test data
-DECL|member|extent
+DECL|member|bounding_box
 name|GeglRectangle
-name|extent
+name|bounding_box
 decl_stmt|;
 block|}
 struct|;
