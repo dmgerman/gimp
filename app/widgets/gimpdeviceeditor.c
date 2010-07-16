@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29c14cec0103
+DECL|enum|__anon296b0d6e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -328,8 +328,7 @@ name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint
@@ -1650,15 +1649,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_device_editor_switch_page (GtkNotebook * notebook,GtkNotebookPage * page,guint page_num,GimpDeviceEditor * editor)
+DECL|function|gimp_device_editor_switch_page (GtkNotebook * notebook,gpointer page,guint page_num,GimpDeviceEditor * editor)
 name|gimp_device_editor_switch_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint

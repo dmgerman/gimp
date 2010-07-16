@@ -206,8 +206,7 @@ name|GtkNotebook
 modifier|*
 name|gtk_notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint
@@ -1216,15 +1215,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_notebook_switch_page (GtkNotebook * gtk_notebook,GtkNotebookPage * page,guint page_num,GimpColorNotebook * notebook)
+DECL|function|gimp_color_notebook_switch_page (GtkNotebook * gtk_notebook,gpointer page,guint page_num,GimpColorNotebook * notebook)
 name|gimp_color_notebook_switch_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
 name|gtk_notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint

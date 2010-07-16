@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b8867b40103
+DECL|enum|__anon2c65d2bc0103
 block|{
 DECL|enumerator|UPDATE_NOTEBOOK
 name|UPDATE_NOTEBOOK
@@ -159,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8867b40203
+DECL|enum|__anon2c65d2bc0203
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -172,7 +172,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8867b40303
+DECL|enum|__anon2c65d2bc0303
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -216,8 +216,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint
@@ -2084,15 +2083,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_selection_switch_page (GtkWidget * widget,GtkNotebookPage * page,guint page_num,GimpColorSelection * selection)
+DECL|function|gimp_color_selection_switch_page (GtkWidget * widget,gpointer page,guint page_num,GimpColorSelection * selection)
 name|gimp_color_selection_switch_page
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint

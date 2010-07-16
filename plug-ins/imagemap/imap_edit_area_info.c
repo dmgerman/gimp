@@ -2542,15 +2542,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|switch_page (GtkWidget * widget,GtkNotebookPage * page,gint page_num,gpointer data)
+DECL|function|switch_page (GtkWidget * widget,gpointer page,gint page_num,gpointer data)
 name|switch_page
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|gint
