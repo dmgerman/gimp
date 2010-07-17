@@ -19,7 +19,7 @@ end_define
 begin_include
 include|#
 directive|include
-file|"gimptransformtool.h"
+file|"gimpdrawtool.h"
 end_include
 
 begin_include
@@ -132,7 +132,7 @@ struct|struct
 name|_GimpCageTool
 block|{
 DECL|member|parent_instance
-name|GimpTransformTool
+name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
 DECL|member|cage
@@ -162,7 +162,7 @@ struct|struct
 name|_GimpCageToolClass
 block|{
 DECL|member|parent_class
-name|GimpTransformToolClass
+name|GimpDrawToolClass
 name|parent_class
 decl_stmt|;
 block|}
