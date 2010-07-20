@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -7290,21 +7284,14 @@ operator|=
 name|GIMP_CHANNEL_OP_SUBTRACT
 expr_stmt|;
 block|}
-name|gimp_channel_select_vectors
+name|gimp_item_to_selection
 argument_list|(
-name|gimp_image_get_mask
+name|GIMP_ITEM
 argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Path to selection"
-argument_list|)
-argument_list|,
 name|vector_tool
 operator|->
 name|vectors
+argument_list|)
 argument_list|,
 name|operation
 argument_list|,
@@ -7315,8 +7302,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush

@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -2803,19 +2797,12 @@ if|if
 condition|(
 name|vectors
 condition|)
-name|gimp_channel_select_vectors
+name|gimp_item_to_selection
 argument_list|(
-name|gimp_image_get_mask
+name|GIMP_ITEM
 argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Path to Selection"
-argument_list|)
-argument_list|,
 name|vectors
+argument_list|)
 argument_list|,
 name|op
 argument_list|,
@@ -2826,8 +2813,6 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 else|else

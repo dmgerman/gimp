@@ -60,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpcontext.h"
 end_include
 
@@ -1173,9 +1167,6 @@ name|gpointer
 name|data
 parameter_list|)
 block|{
-name|GimpChannelOps
-name|op
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1193,28 +1184,17 @@ argument_list|,
 name|data
 argument_list|)
 expr_stmt|;
-name|op
-operator|=
+name|gimp_item_to_selection
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|,
 operator|(
 name|GimpChannelOps
 operator|)
 name|value
-expr_stmt|;
-name|gimp_channel_select_vectors
-argument_list|(
-name|gimp_image_get_mask
-argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Path to Selection"
-argument_list|)
-argument_list|,
-name|vectors
-argument_list|,
-name|op
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1223,8 +1203,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
