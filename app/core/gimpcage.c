@@ -1276,6 +1276,11 @@ operator|->
 name|cage_vertice_number
 operator|++
 expr_stmt|;
+name|gimp_cage_compute_scaling_factor
+argument_list|(
+name|gc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
