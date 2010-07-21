@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpprogress.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -395,7 +401,7 @@ name|GimpCageTool
 modifier|*
 name|ct
 parameter_list|,
-name|GimpImage
+name|GimpDisplay
 modifier|*
 name|image
 parameter_list|)
