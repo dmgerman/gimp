@@ -1046,6 +1046,12 @@ operator|->
 name|handle_moved
 operator|==
 literal|0
+operator|&&
+name|cage
+operator|->
+name|cage_vertice_number
+operator|>
+literal|2
 condition|)
 block|{
 name|ct
@@ -2115,6 +2121,7 @@ argument_list|(
 name|node
 argument_list|)
 expr_stmt|;
+comment|// TODO: flush
 block|}
 block|}
 end_function
