@@ -22,6 +22,18 @@ directive|include
 file|"core/gimpimagemapconfig.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|<gegl.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimp-gegl-types.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_CAGE_CONFIG
 define|#
