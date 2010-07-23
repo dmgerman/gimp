@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2962039b0103
+DECL|enum|__anon27d44ad30103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -3343,7 +3343,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|,
-literal|"xX*"
+literal|"xX/*"
 argument_list|,
 name|FALSE
 argument_list|,
