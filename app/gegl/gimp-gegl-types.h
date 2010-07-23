@@ -382,6 +382,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCageConfig
+typedef|typedef
+name|struct
+name|_GimpCageConfig
+name|GimpCageConfig
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpColorBalanceConfig
 typedef|typedef
 name|struct
