@@ -137,6 +137,11 @@ modifier|*
 name|cage_vertices_d
 decl_stmt|;
 comment|/* cage after deformation */
+DECL|member|scaling_factor
+name|gdouble
+modifier|*
+name|scaling_factor
+decl_stmt|;
 block|}
 struct|;
 end_struct

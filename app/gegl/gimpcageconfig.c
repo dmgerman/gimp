@@ -175,6 +175,18 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|static
+name|void
+name|gimp_cage_config_compute_scaling_factor
+parameter_list|(
+name|GimpCageConfig
+modifier|*
+name|gcc
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* FIXME: to debug only */
 end_comment
@@ -389,6 +401,22 @@ operator|->
 name|cage_vertices_max
 argument_list|)
 expr_stmt|;
+name|self
+operator|->
+name|scaling_factor
+operator|=
+name|g_malloc
+argument_list|(
+name|self
+operator|->
+name|cage_vertices_max
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -424,6 +452,13 @@ argument_list|(
 name|gcc
 operator|->
 name|cage_vertices_d
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|gcc
+operator|->
+name|scaling_factor
 argument_list|)
 expr_stmt|;
 name|G_OBJECT_CLASS
@@ -660,12 +695,17 @@ operator|->
 name|cage_vertice_number
 operator|++
 expr_stmt|;
+name|gimp_cage_config_compute_scaling_factor
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gimp_cage_config_remove_last_cage_point (GimpCageConfig * gcc)
 name|void
+DECL|function|gimp_cage_config_remove_last_cage_point (GimpCageConfig * gcc)
 name|gimp_cage_config_remove_last_cage_point
 parameter_list|(
 name|GimpCageConfig
@@ -694,12 +734,17 @@ operator|->
 name|cage_vertice_number
 operator|--
 expr_stmt|;
+name|gimp_cage_config_compute_scaling_factor
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gimp_cage_config_is_on_handle (GimpCageConfig * gcc,GimpCageMode mode,gdouble x,gdouble y,gint handle_size)
 name|gint
+DECL|function|gimp_cage_config_is_on_handle (GimpCageConfig * gcc,GimpCageMode mode,gdouble x,gdouble y,gint handle_size)
 name|gimp_cage_config_is_on_handle
 parameter_list|(
 name|GimpCageConfig
@@ -869,8 +914,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_cage_config_move_cage_point (GimpCageConfig * gcc,GimpCageMode mode,gint point_number,gdouble x,gdouble y)
 name|void
+DECL|function|gimp_cage_config_move_cage_point (GimpCageConfig * gcc,GimpCageMode mode,gint point_number,gdouble x,gdouble y)
 name|gimp_cage_config_move_cage_point
 parameter_list|(
 name|GimpCageConfig
@@ -969,12 +1014,17 @@ operator|=
 name|y
 expr_stmt|;
 block|}
+name|gimp_cage_config_compute_scaling_factor
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
 begin_function
-DECL|function|gimp_cage_config_get_edge_normal (GimpCageConfig * gcc,gint edge_index)
 name|GimpVector2
+DECL|function|gimp_cage_config_get_edge_normal (GimpCageConfig * gcc,gint edge_index)
 name|gimp_cage_config_get_edge_normal
 parameter_list|(
 name|GimpCageConfig
@@ -1074,8 +1124,8 @@ block|}
 end_function
 
 begin_function
-DECL|function|gimp_cage_config_get_bounding_box (GimpCageConfig * gcc)
 name|GeglRectangle
+DECL|function|gimp_cage_config_get_bounding_box (GimpCageConfig * gcc)
 name|gimp_cage_config_get_bounding_box
 parameter_list|(
 name|GimpCageConfig
@@ -1433,6 +1483,11 @@ operator|=
 name|temp
 expr_stmt|;
 block|}
+name|gimp_cage_config_compute_scaling_factor
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1601,6 +1656,143 @@ name|printf
 argument_list|(
 literal|"reverse the cage !\n"
 argument_list|)
+expr_stmt|;
+block|}
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_cage_config_compute_scaling_factor (GimpCageConfig * gcc)
+name|gimp_cage_config_compute_scaling_factor
+parameter_list|(
+name|GimpCageConfig
+modifier|*
+name|gcc
+parameter_list|)
+block|{
+name|gint
+name|i
+decl_stmt|;
+name|gdouble
+name|length
+decl_stmt|,
+name|length_d
+decl_stmt|;
+name|GimpVector2
+name|edge
+decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CAGE_CONFIG
+argument_list|(
+name|gcc
+argument_list|)
+argument_list|)
+expr_stmt|;
+for|for
+control|(
+name|i
+operator|=
+literal|0
+init|;
+name|i
+operator|<
+name|gcc
+operator|->
+name|cage_vertice_number
+condition|;
+name|i
+operator|++
+control|)
+block|{
+name|gimp_vector2_sub
+argument_list|(
+operator|&
+name|edge
+argument_list|,
+operator|&
+name|gcc
+operator|->
+name|cage_vertices
+index|[
+name|i
+index|]
+argument_list|,
+operator|&
+name|gcc
+operator|->
+name|cage_vertices
+index|[
+operator|(
+name|i
+operator|+
+literal|1
+operator|)
+operator|%
+name|gcc
+operator|->
+name|cage_vertice_number
+index|]
+argument_list|)
+expr_stmt|;
+name|length
+operator|=
+name|gimp_vector2_length
+argument_list|(
+operator|&
+name|edge
+argument_list|)
+expr_stmt|;
+name|gimp_vector2_sub
+argument_list|(
+operator|&
+name|edge
+argument_list|,
+operator|&
+name|gcc
+operator|->
+name|cage_vertices_d
+index|[
+name|i
+index|]
+argument_list|,
+operator|&
+name|gcc
+operator|->
+name|cage_vertices_d
+index|[
+operator|(
+name|i
+operator|+
+literal|1
+operator|)
+operator|%
+name|gcc
+operator|->
+name|cage_vertice_number
+index|]
+argument_list|)
+expr_stmt|;
+name|length_d
+operator|=
+name|gimp_vector2_length
+argument_list|(
+operator|&
+name|edge
+argument_list|)
+expr_stmt|;
+name|gcc
+operator|->
+name|scaling_factor
+index|[
+name|i
+index|]
+operator|=
+name|length_d
+operator|/
+name|length
 expr_stmt|;
 block|}
 block|}
