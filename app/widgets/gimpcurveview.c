@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c88e40103
+DECL|enum|__anon2a09b14f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -105,7 +105,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1c88e40203
+DECL|enum|__anon2a09b14f0203
 block|{
 DECL|enumerator|CUT_CLIPBOARD
 name|CUT_CLIPBOARD
@@ -125,7 +125,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1c88e40308
+DECL|struct|__anon2a09b14f0308
 block|{
 DECL|member|curve
 name|GimpCurve
@@ -4558,6 +4558,17 @@ operator|=
 name|TRUE
 expr_stmt|;
 block|}
+break|break;
+case|case
+name|GDK_Delete
+case|:
+name|gimp_curve_delete_point
+argument_list|(
+name|curve
+argument_list|,
+name|i
+argument_list|)
+expr_stmt|;
 break|break;
 default|default:
 break|break;
