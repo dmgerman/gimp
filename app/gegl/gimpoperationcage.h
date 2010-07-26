@@ -25,14 +25,21 @@ end_include
 begin_include
 include|#
 directive|include
-file|<operation/gegl-operation-filter.h>
+file|<operation/gegl-operation-composer.h>
 end_include
 
-begin_include
-include|#
-directive|include
-file|"core/gimpcage.h"
-end_include
+begin_enum
+enum|enum
+DECL|enum|__anon2b1e6c250103
+block|{
+DECL|enumerator|GIMP_OPERATION_CAGE_PROP_0
+name|GIMP_OPERATION_CAGE_PROP_0
+block|,
+DECL|enumerator|GIMP_OPERATION_CAGE_PROP_CONFIG
+name|GIMP_OPERATION_CAGE_PROP_CONFIG
+block|}
+enum|;
+end_enum
 
 begin_define
 DECL|macro|GIMP_TYPE_OPERATION_CAGE
@@ -112,14 +119,13 @@ struct|struct
 name|_GimpOperationCage
 block|{
 DECL|member|parent_instance
-name|GeglOperationFilter
+name|GeglOperationComposer
 name|parent_instance
 decl_stmt|;
-comment|/* FIXME: for test */
-DECL|member|cage
-name|GimpCage
+DECL|member|config
+name|GimpCageConfig
 modifier|*
-name|cage
+name|config
 decl_stmt|;
 block|}
 struct|;
@@ -131,7 +137,7 @@ struct|struct
 name|_GimpOperationCageClass
 block|{
 DECL|member|parent_class
-name|GeglOperationFilterClass
+name|GeglOperationComposerClass
 name|parent_class
 decl_stmt|;
 block|}
