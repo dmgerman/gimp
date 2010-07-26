@@ -31,7 +31,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcage.h"
+file|"gegl/gimpcageconfig.h"
 end_include
 
 begin_define
@@ -135,10 +135,10 @@ DECL|member|parent_instance
 name|GimpDrawTool
 name|parent_instance
 decl_stmt|;
-DECL|member|cage
-name|GimpCage
+DECL|member|config
+name|GimpCageConfig
 modifier|*
-name|cage
+name|config
 decl_stmt|;
 DECL|member|cursor_position
 name|GimpVector2
@@ -151,6 +151,11 @@ decl_stmt|;
 DECL|member|cage_complete
 name|gboolean
 name|cage_complete
+decl_stmt|;
+DECL|member|coef
+name|GeglBuffer
+modifier|*
+name|coef
 decl_stmt|;
 block|}
 struct|;
