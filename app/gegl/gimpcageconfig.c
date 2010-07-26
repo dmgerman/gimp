@@ -241,7 +241,7 @@ control|)
 block|{
 name|printf
 argument_list|(
-literal|"cgx: %.0f    cgy: %.0f    cvdx: %.0f    cvdy: %.0f\n"
+literal|"cgx: %.0f    cgy: %.0f    cvdx: %.0f    cvdy: %.0f  sf: %.2f\n"
 argument_list|,
 name|gcc
 operator|->
@@ -278,6 +278,13 @@ name|i
 index|]
 operator|.
 name|y
+argument_list|,
+name|gcc
+operator|->
+name|scaling_factor
+index|[
+name|i
+index|]
 argument_list|)
 expr_stmt|;
 block|}
@@ -635,6 +642,26 @@ argument_list|,
 name|gcc
 operator|->
 name|cage_vertices_max
+argument_list|)
+expr_stmt|;
+name|gcc
+operator|->
+name|scaling_factor
+operator|=
+name|g_realloc
+argument_list|(
+name|gcc
+operator|->
+name|scaling_factor
+argument_list|,
+name|gcc
+operator|->
+name|cage_vertices_max
+operator|*
+sizeof|sizeof
+argument_list|(
+name|gfloat
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
@@ -1658,6 +1685,14 @@ literal|"reverse the cage !\n"
 argument_list|)
 expr_stmt|;
 block|}
+else|else
+block|{
+name|printf
+argument_list|(
+literal|"Cage OK !\n"
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 
@@ -1795,6 +1830,11 @@ operator|/
 name|length
 expr_stmt|;
 block|}
+name|print_cage
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
