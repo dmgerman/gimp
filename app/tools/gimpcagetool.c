@@ -2198,6 +2198,13 @@ argument_list|,
 name|FALSE
 argument_list|)
 decl_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|ct
+operator|->
+name|coef
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|GIMP_IS_LAYER
