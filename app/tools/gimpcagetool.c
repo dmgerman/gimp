@@ -2220,10 +2220,6 @@ decl_stmt|,
 modifier|*
 name|cage
 decl_stmt|;
-comment|//coef = gegl_node_new_child (gegl,
-comment|//"operation", "gegl:cage_coef_calc",
-comment|//"config", ct->config,
-comment|//NULL);
 name|cage
 operator|=
 name|gegl_node_new_child
