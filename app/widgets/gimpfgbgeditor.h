@@ -106,15 +106,6 @@ DECL|member|active_color
 name|GimpActiveColor
 name|active_color
 decl_stmt|;
-DECL|member|render_buf
-name|guchar
-modifier|*
-name|render_buf
-decl_stmt|;
-DECL|member|render_buf_size
-name|gint
-name|render_buf_size
-decl_stmt|;
 DECL|member|default_icon
 name|GdkPixbuf
 modifier|*
