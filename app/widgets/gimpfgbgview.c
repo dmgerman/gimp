@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27b98af40103
+DECL|enum|__anon29072f060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -780,6 +780,11 @@ argument_list|,
 name|rect_w
 argument_list|,
 name|rect_h
+argument_list|)
+expr_stmt|;
+name|cairo_destroy
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 return|return
