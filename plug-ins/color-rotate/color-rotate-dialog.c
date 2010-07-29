@@ -1865,8 +1865,10 @@ name|rcm_create_one_circle
 argument_list|(
 name|SUM
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"color-rotate"
+argument_list|,
 literal|"From:"
 argument_list|)
 argument_list|)
@@ -1879,8 +1881,10 @@ name|rcm_create_one_circle
 argument_list|(
 name|SUM
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"color-rotate"
+argument_list|,
 literal|"To:"
 argument_list|)
 argument_list|)

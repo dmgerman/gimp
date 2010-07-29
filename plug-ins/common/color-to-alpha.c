@@ -66,7 +66,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791707f0108
+DECL|struct|__anon27732c670108
 block|{
 DECL|member|color
 name|GimpRGB
@@ -1720,8 +1720,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"color-to-alpha"
+argument_list|,
 literal|"From:"
 argument_list|)
 argument_list|)
