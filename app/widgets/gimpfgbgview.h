@@ -102,15 +102,6 @@ name|GimpContext
 modifier|*
 name|context
 decl_stmt|;
-DECL|member|render_buf
-name|guchar
-modifier|*
-name|render_buf
-decl_stmt|;
-DECL|member|render_buf_size
-name|gint
-name|render_buf_size
-decl_stmt|;
 block|}
 struct|;
 end_struct
