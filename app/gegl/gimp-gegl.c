@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpoperationcagetransform.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpoperationcolorbalance.h"
 end_include
 
@@ -370,6 +376,11 @@ expr_stmt|;
 name|g_type_class_ref
 argument_list|(
 name|GIMP_TYPE_OPERATION_CAGE_COEF_CALC
+argument_list|)
+expr_stmt|;
+name|g_type_class_ref
+argument_list|(
+name|GIMP_TYPE_OPERATION_CAGE_TRANSFORM
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref

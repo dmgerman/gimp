@@ -90,6 +90,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpOperationCageTransform
+typedef|typedef
+name|struct
+name|_GimpOperationCageTransform
+name|GimpOperationCageTransform
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpOperationCurves
 typedef|typedef
 name|struct
