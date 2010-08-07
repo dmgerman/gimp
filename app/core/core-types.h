@@ -390,15 +390,6 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpCage
-typedef|typedef
-name|struct
-name|_GimpCage
-name|GimpCage
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCurve
 typedef|typedef
 name|struct
