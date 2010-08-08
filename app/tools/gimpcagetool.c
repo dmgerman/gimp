@@ -895,6 +895,19 @@ name|cage_complete
 operator|=
 name|FALSE
 expr_stmt|;
+name|gegl_buffer_destroy
+argument_list|(
+name|ct
+operator|->
+name|coef
+argument_list|)
+expr_stmt|;
+name|ct
+operator|->
+name|coef
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 end_function
 
