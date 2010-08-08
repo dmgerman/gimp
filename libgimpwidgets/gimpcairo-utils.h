@@ -163,6 +163,64 @@ directive|endif
 end_endif
 
 begin_comment
+comment|/**  * GIMP_CAIRO_RGB24_GET_PIXEL:  * @s: pointer to the source buffer  * @r: red component  * @g: green component  * @b: blue component  *  * Gets a single pixel from a Cairo image surface in %CAIRO_FORMAT_RGB24.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_if
+if|#
+directive|if
+name|G_BYTE_ORDER
+operator|==
+name|G_LITTLE_ENDIAN
+end_if
+
+begin_define
+DECL|macro|GIMP_CAIRO_RGB24_GET_PIXEL (s,r,g,b)
+define|#
+directive|define
+name|GIMP_CAIRO_RGB24_GET_PIXEL
+parameter_list|(
+name|s
+parameter_list|,
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|)
+define|\
+value|G_STMT_START { (b) = s[0]; (g) = s[1]; (r) = s[2]; } G_STMT_END
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|GIMP_CAIRO_RGB24_GET_PIXEL (s,r,g,b)
+define|#
+directive|define
+name|GIMP_CAIRO_RGB24_GET_PIXEL
+parameter_list|(
+name|s
+parameter_list|,
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|)
+define|\
+value|G_STMT_START { (r) = s[1]; (g) = s[2]; (b) = s[3]; } G_STMT_END
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
 comment|/**  * GIMP_CAIRO_ARGB32_SET_PIXEL:  * @d: pointer to the destination buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Sets a single pixel in an Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: GIMP 2.6  **/
 end_comment
 
