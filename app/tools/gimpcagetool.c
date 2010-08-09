@@ -1072,6 +1072,11 @@ operator|->
 name|handle_moved
 operator|<
 literal|0
+operator|&&
+operator|!
+name|ct
+operator|->
+name|cage_complete
 condition|)
 block|{
 name|gimp_cage_config_add_cage_point
