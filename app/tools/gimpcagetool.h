@@ -157,6 +157,11 @@ name|GeglBuffer
 modifier|*
 name|coef
 decl_stmt|;
+DECL|member|image_map
+name|GimpImageMap
+modifier|*
+name|image_map
+decl_stmt|;
 block|}
 struct|;
 end_struct

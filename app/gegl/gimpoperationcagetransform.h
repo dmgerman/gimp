@@ -25,12 +25,12 @@ end_include
 begin_include
 include|#
 directive|include
-file|<operation/gegl-operation-filter.h>
+file|<operation/gegl-operation-composer.h>
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad4bd0e0103
+DECL|enum|__anon2bbdb5590103
 block|{
 DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
 name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
@@ -119,7 +119,7 @@ struct|struct
 name|_GimpOperationCageTransform
 block|{
 DECL|member|parent_instance
-name|GeglOperationFilter
+name|GeglOperationComposer
 name|parent_instance
 decl_stmt|;
 DECL|member|config
@@ -142,7 +142,7 @@ struct|struct
 name|_GimpOperationCageTransformClass
 block|{
 DECL|member|parent_class
-name|GeglOperationFilterClass
+name|GeglOperationComposerClass
 name|parent_class
 decl_stmt|;
 block|}

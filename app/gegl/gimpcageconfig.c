@@ -1666,7 +1666,7 @@ operator|+=
 name|z
 expr_stmt|;
 block|}
-comment|/* sum> 0 mean a cage defined clockwise, so we reverse it */
+comment|/* sum> 0 mean a cage defined counter-clockwise, so we reverse it */
 if|if
 condition|(
 name|sum
