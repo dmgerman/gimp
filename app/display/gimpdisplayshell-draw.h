@@ -104,10 +104,9 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-specifier|const
-name|GdkRegion
+name|cairo_t
 modifier|*
-name|region
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl

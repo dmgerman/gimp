@@ -407,12 +407,6 @@ modifier|*
 name|canvas
 decl_stmt|;
 comment|/*  GimpCanvas widget                  */
-DECL|member|grid_gc
-name|GdkGC
-modifier|*
-name|grid_gc
-decl_stmt|;
-comment|/*  GC for grid drawing                */
 DECL|member|pen_gc
 name|GdkGC
 modifier|*

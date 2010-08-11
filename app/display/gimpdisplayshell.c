@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f9c640103
+DECL|enum|__anon297a7a330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon299f9c640203
+DECL|enum|__anon297a7a330203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3852,27 +3852,6 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
-name|grid_gc
-condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|shell
-operator|->
-name|grid_gc
-argument_list|)
-expr_stmt|;
-name|shell
-operator|->
-name|grid_gc
-operator|=
-name|NULL
-expr_stmt|;
-block|}
 if|if
 condition|(
 name|shell
