@@ -510,16 +510,6 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_ZOOM
 value|"gimp-tool-zoom"
-DECL|macro|GIMP_STOCK_DYNAMICS
-define|#
-directive|define
-name|GIMP_STOCK_DYNAMICS
-value|"gimp-dynamics"
-DECL|macro|GIMP_STOCK_TOOL_PRESET
-define|#
-directive|define
-name|GIMP_STOCK_TOOL_PRESET
-value|"gimp-tool-preset"
 comment|/*  in menu size:  */
 DECL|macro|GIMP_STOCK_CONVERT_RGB
 define|#
@@ -848,6 +838,16 @@ define|#
 directive|define
 name|GIMP_STOCK_SAMPLE_POINT
 value|"gimp-sample-point"
+DECL|macro|GIMP_STOCK_DYNAMICS
+define|#
+directive|define
+name|GIMP_STOCK_DYNAMICS
+value|"gimp-dynamics"
+DECL|macro|GIMP_STOCK_TOOL_PRESET
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_PRESET
+value|"gimp-tool-preset"
 DECL|macro|GIMP_STOCK_CONTROLLER
 define|#
 directive|define
