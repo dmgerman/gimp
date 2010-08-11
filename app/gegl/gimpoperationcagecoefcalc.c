@@ -741,6 +741,18 @@ name|n_pixels
 operator|--
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_cage_config_point_inside
+argument_list|(
+name|config
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|)
+condition|)
+block|{
 for|for
 control|(
 name|j
@@ -765,6 +777,8 @@ decl_stmt|,
 name|a
 decl_stmt|,
 name|b
+decl_stmt|,
+name|p
 decl_stmt|;
 name|gfloat
 name|Q
@@ -814,6 +828,18 @@ name|config
 operator|->
 name|cage_vertice_number
 index|]
+expr_stmt|;
+name|p
+operator|.
+name|x
+operator|=
+name|x
+expr_stmt|;
+name|p
+operator|.
+name|y
+operator|=
+name|y
 expr_stmt|;
 name|a
 operator|.
@@ -1006,6 +1032,7 @@ name|L1
 operator|-
 name|L0
 expr_stmt|;
+comment|/* edge coef */
 name|coef
 index|[
 name|j
@@ -1053,6 +1080,7 @@ operator|-
 literal|2.0
 operator|)
 expr_stmt|;
+comment|/* vertice coef */
 name|coef
 index|[
 name|j
@@ -1123,6 +1151,7 @@ operator|/
 name|Q
 operator|)
 expr_stmt|;
+block|}
 block|}
 name|coef
 operator|+=
