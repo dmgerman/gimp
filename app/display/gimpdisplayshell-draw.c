@@ -1066,9 +1066,9 @@ name|gimp_display_shell_set_grid_style
 argument_list|(
 name|shell
 argument_list|,
-name|grid
-argument_list|,
 name|cr
+argument_list|,
+name|grid
 argument_list|)
 expr_stmt|;
 switch|switch

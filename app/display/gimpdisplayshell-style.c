@@ -59,20 +59,20 @@ end_include
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_grid_style (GimpDisplayShell * shell,GimpGrid * grid,cairo_t * cr)
+DECL|function|gimp_display_shell_set_grid_style (GimpDisplayShell * shell,cairo_t * cr,GimpGrid * grid)
 name|gimp_display_shell_set_grid_style
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GimpGrid
-modifier|*
-name|grid
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
+parameter_list|,
+name|GimpGrid
+modifier|*
+name|grid
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -85,17 +85,17 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_GRID
-argument_list|(
-name|grid
-argument_list|)
+name|cr
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|cr
-operator|!=
-name|NULL
+name|GIMP_IS_GRID
+argument_list|(
+name|grid
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|cairo_set_line_width
