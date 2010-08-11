@@ -18,6 +18,24 @@ end_define
 
 begin_function_decl
 name|void
+name|gimp_display_shell_set_guide_style
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|gboolean
+name|active
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_display_shell_set_grid_style
 parameter_list|(
 name|GimpDisplayShell
