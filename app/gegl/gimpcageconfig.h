@@ -322,6 +322,27 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * gimp_cage_config_point_inside:  * @gcc: the cage config  * @x: x coordinate of the point to test  * @y: y coordinate of the point to test  *   * Check if the given point is inside the cage. This test is done in the regard of the topological inside of the cage.  *   * Returns: TRUE if the point is inside, FALSE if not.  */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|gimp_cage_config_point_inside
+parameter_list|(
+name|GimpCageConfig
+modifier|*
+name|gcc
+parameter_list|,
+name|gfloat
+name|x
+parameter_list|,
+name|gfloat
+name|y
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
