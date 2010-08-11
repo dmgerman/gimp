@@ -510,6 +510,16 @@ define|#
 directive|define
 name|GIMP_STOCK_TOOL_ZOOM
 value|"gimp-tool-zoom"
+DECL|macro|GIMP_STOCK_DYNAMICS
+define|#
+directive|define
+name|GIMP_STOCK_DYNAMICS
+value|"gimp-dynamics"
+DECL|macro|GIMP_STOCK_TOOL_PRESET
+define|#
+directive|define
+name|GIMP_STOCK_TOOL_PRESET
+value|"gimp-tool-preset"
 comment|/*  in menu size:  */
 DECL|macro|GIMP_STOCK_CONVERT_RGB
 define|#
@@ -1025,11 +1035,6 @@ define|#
 directive|define
 name|GIMP_STOCK_BRUSH
 value|GIMP_STOCK_TOOL_PAINTBRUSH
-DECL|macro|GIMP_STOCK_DYNAMICS
-define|#
-directive|define
-name|GIMP_STOCK_DYNAMICS
-value|GIMP_STOCK_TOOL_PAINTBRUSH
 DECL|macro|GIMP_STOCK_BUFFER
 define|#
 directive|define
@@ -1060,11 +1065,6 @@ define|#
 directive|define
 name|GIMP_STOCK_PATTERN
 value|GIMP_STOCK_TOOL_BUCKET_FILL
-DECL|macro|GIMP_STOCK_TOOL_PRESET
-define|#
-directive|define
-name|GIMP_STOCK_TOOL_PRESET
-value|GIMP_STOCK_TOOL_PAINTBRUSH
 name|void
 name|gimp_stock_init
 parameter_list|(
