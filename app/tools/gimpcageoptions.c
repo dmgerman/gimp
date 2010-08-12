@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd42a340103
+DECL|enum|__anon27b6dcca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -222,7 +222,7 @@ name|GimpCageOptions
 modifier|*
 name|options
 parameter_list|)
-block|{ 	 }
+block|{  }
 end_function
 
 begin_function

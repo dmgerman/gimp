@@ -211,19 +211,19 @@ name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gegl:cage_coef_calc"
+literal|"gimp:cage_coef_calc"
 expr_stmt|;
 name|operation_class
 operator|->
 name|categories
 operator|=
-literal|"color"
+literal|"transform"
 expr_stmt|;
 name|operation_class
 operator|->
 name|description
 operator|=
-literal|"GIMP cage transform"
+literal|"GIMP cage transform coefficient calc"
 expr_stmt|;
 name|operation_class
 operator|->
