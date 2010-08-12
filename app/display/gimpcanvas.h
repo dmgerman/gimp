@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c410b2a0103
+DECL|enum|__anon27e9b2b00103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_BLACK
 name|GIMP_CANVAS_STYLE_BLACK
@@ -56,12 +56,6 @@ name|GIMP_CANVAS_STYLE_LAYER_BOUNDARY
 block|,
 DECL|enumerator|GIMP_CANVAS_STYLE_LAYER_GROUP_BOUNDARY
 name|GIMP_CANVAS_STYLE_LAYER_GROUP_BOUNDARY
-block|,
-DECL|enumerator|GIMP_CANVAS_STYLE_SAMPLE_POINT_NORMAL
-name|GIMP_CANVAS_STYLE_SAMPLE_POINT_NORMAL
-block|,
-DECL|enumerator|GIMP_CANVAS_STYLE_SAMPLE_POINT_ACTIVE
-name|GIMP_CANVAS_STYLE_SAMPLE_POINT_ACTIVE
 block|,
 DECL|enumerator|GIMP_CANVAS_STYLE_LAYER_MASK_ACTIVE
 name|GIMP_CANVAS_STYLE_LAYER_MASK_ACTIVE
@@ -454,21 +448,13 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_canvas_draw_text
+name|PangoLayout
+modifier|*
+name|gimp_canvas_get_layout
 parameter_list|(
 name|GimpCanvas
 modifier|*
 name|canvas
-parameter_list|,
-name|GimpCanvasStyle
-name|style
-parameter_list|,
-name|gint
-name|x
-parameter_list|,
-name|gint
-name|y
 parameter_list|,
 specifier|const
 name|gchar
@@ -479,9 +465,9 @@ modifier|...
 parameter_list|)
 function_decl|G_GNUC_PRINTF
 parameter_list|(
-function_decl|5
+function_decl|2
 operator|,
-function_decl|6
+function_decl|3
 end_function_decl
 
 begin_empty_stmt
