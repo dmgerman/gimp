@@ -289,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b7e7d0108
+DECL|struct|__anon2790717d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b7e7d0208
+DECL|struct|__anon2790717d0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1031,7 +1031,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b7e7d0308
+DECL|struct|__anon2790717d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1900,7 +1900,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b7e7d0408
+DECL|struct|__anon2790717d0408
 block|{
 DECL|member|eol
 name|long
@@ -7559,6 +7559,10 @@ comment|/* Use a real outputfile. Wait until ghostscript has finished */
 name|flags
 operator|=
 name|G_SPAWN_SEARCH_PATH
+operator||
+name|G_SPAWN_STDOUT_TO_DEV_NULL
+operator||
+name|G_SPAWN_STDERR_TO_DEV_NULL
 expr_stmt|;
 if|if
 condition|(
