@@ -902,13 +902,7 @@ name|b
 decl_stmt|,
 name|p
 decl_stmt|;
-name|gfloat
-name|Q
-decl_stmt|,
-name|S
-decl_stmt|,
-name|R
-decl_stmt|,
+name|gdouble
 name|BA
 decl_stmt|,
 name|SRT
@@ -924,6 +918,12 @@ decl_stmt|,
 name|A10
 decl_stmt|,
 name|L10
+decl_stmt|,
+name|Q
+decl_stmt|,
+name|S
+decl_stmt|,
+name|R
 decl_stmt|;
 name|v1
 operator|=
@@ -1233,6 +1233,13 @@ name|cage_vertice_number
 index|]
 operator|=
 literal|0.0
+expr_stmt|;
+name|printf
+argument_list|(
+literal|"NAN SRT: %f\n"
+argument_list|,
+name|SRT
+argument_list|)
 expr_stmt|;
 block|}
 comment|/* vertice coef */
