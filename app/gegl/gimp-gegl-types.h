@@ -72,20 +72,20 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpOperationCage
-typedef|typedef
-name|struct
-name|_GimpOperationCage
-name|GimpOperationCage
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpOperationCageCoefCalc
 typedef|typedef
 name|struct
 name|_GimpOperationCageCoefCalc
 name|GimpOperationCageCoefCalc
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpOperationCagePreview
+typedef|typedef
+name|struct
+name|_GimpOperationCagePreview
+name|GimpOperationCagePreview
 typedef|;
 end_typedef
 

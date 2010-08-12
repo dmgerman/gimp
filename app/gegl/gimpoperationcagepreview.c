@@ -1,6 +1,6 @@
 begin_unit|revision:0.9.5;language:C;cregit-version:0.0.1
 begin_comment
-comment|/* GIMP - The GNU Image Manipulation Program  *  * gimpoperationcage.c  * Copyright (C) 2010 Michael MurÃ©<batolettre@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
+comment|/* GIMP - The GNU Image Manipulation Program  *  * gimpoperationcagepreview.c  * Copyright (C) 2010 Michael MurÃ©<batolettre@gmail.com>  *  * This program is free software: you can redistribute it and/or modify  * it under the terms of the GNU General Public License as published by  * the Free Software Foundation; either version 3 of the License, or  * (at your option) any later version.  *  * This program is distributed in the hope that it will be useful,  * but WITHOUT ANY WARRANTY; without even the implied warranty of  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the  * GNU General Public License for more details.  *  * You should have received a copy of the GNU General Public License  * along with this program.  If not, see<http://www.gnu.org/licenses/>.  */
 end_comment
 
 begin_include
@@ -42,7 +42,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationcage.h"
+file|"gimpoperationcagepreview.h"
 end_include
 
 begin_include
@@ -54,7 +54,7 @@ end_include
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_cage_finalize
+name|gimp_operation_cage_preview_finalize
 parameter_list|(
 name|GObject
 modifier|*
@@ -66,7 +66,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_cage_get_property
+name|gimp_operation_cage_preview_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -89,7 +89,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_cage_set_property
+name|gimp_operation_cage_preview_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -113,7 +113,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_operation_cage_prepare
+name|gimp_operation_cage_preview_prepare
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -125,7 +125,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_operation_cage_process
+name|gimp_operation_cage_preview_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -153,7 +153,7 @@ end_function_decl
 
 begin_function_decl
 name|GeglRectangle
-name|gimp_operation_cage_get_cached_region
+name|gimp_operation_cage_preview_get_cached_region
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -169,7 +169,7 @@ end_function_decl
 
 begin_function_decl
 name|GeglRectangle
-name|gimp_operation_cage_get_required_for_output
+name|gimp_operation_cage_preview_get_required_for_output
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -188,13 +188,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GeglRectangle
+name|gimp_operation_cage_preview_get_bounding_box
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpOperationCage,gimp_operation_cage,GEGL_TYPE_OPERATION_COMPOSER)
+DECL|function|G_DEFINE_TYPE (GimpOperationCagePreview,gimp_operation_cage_preview,GEGL_TYPE_OPERATION_COMPOSER)
 name|G_DEFINE_TYPE
 argument_list|(
-argument|GimpOperationCage
+argument|GimpOperationCagePreview
 argument_list|,
-argument|gimp_operation_cage
+argument|gimp_operation_cage_preview
 argument_list|,
 argument|GEGL_TYPE_OPERATION_COMPOSER
 argument_list|)
@@ -205,15 +216,15 @@ DECL|macro|parent_class
 define|#
 directive|define
 name|parent_class
-value|gimp_operation_cage_parent_class
+value|gimp_operation_cage_preview_parent_class
 end_define
 
 begin_function
 specifier|static
 name|void
-name|gimp_operation_cage_class_init
+name|gimp_operation_cage_preview_class_init
 parameter_list|(
-name|GimpOperationCageClass
+name|GimpOperationCagePreviewClass
 modifier|*
 name|klass
 parameter_list|)
@@ -249,56 +260,56 @@ name|object_class
 operator|->
 name|get_property
 operator|=
-name|gimp_operation_cage_get_property
+name|gimp_operation_cage_preview_get_property
 expr_stmt|;
 name|object_class
 operator|->
 name|set_property
 operator|=
-name|gimp_operation_cage_set_property
+name|gimp_operation_cage_preview_set_property
 expr_stmt|;
 name|object_class
 operator|->
 name|finalize
 operator|=
-name|gimp_operation_cage_finalize
+name|gimp_operation_cage_preview_finalize
 expr_stmt|;
 comment|/* FIXME: wrong categories and name, to appears in the gegl tool */
 name|operation_class
 operator|->
 name|name
 operator|=
-literal|"gegl:cage"
+literal|"gimp:cage_preview"
 expr_stmt|;
 name|operation_class
 operator|->
 name|categories
 operator|=
-literal|"color"
+literal|"transform"
 expr_stmt|;
 name|operation_class
 operator|->
 name|description
 operator|=
-literal|"GIMP cage transform"
+literal|"GIMP cage transform preview"
 expr_stmt|;
 name|operation_class
 operator|->
 name|prepare
 operator|=
-name|gimp_operation_cage_prepare
+name|gimp_operation_cage_preview_prepare
 expr_stmt|;
 name|operation_class
 operator|->
 name|get_required_for_output
 operator|=
-name|gimp_operation_cage_get_required_for_output
+name|gimp_operation_cage_preview_get_required_for_output
 expr_stmt|;
 name|operation_class
 operator|->
 name|get_cached_region
 operator|=
-name|gimp_operation_cage_get_cached_region
+name|gimp_operation_cage_preview_get_cached_region
 expr_stmt|;
 name|operation_class
 operator|->
@@ -306,17 +317,23 @@ name|no_cache
 operator|=
 name|FALSE
 expr_stmt|;
+name|operation_class
+operator|->
+name|get_bounding_box
+operator|=
+name|gimp_operation_cage_preview_get_bounding_box
+expr_stmt|;
 name|composer_class
 operator|->
 name|process
 operator|=
-name|gimp_operation_cage_process
+name|gimp_operation_cage_preview_process
 expr_stmt|;
 name|g_object_class_install_property
 argument_list|(
 name|object_class
 argument_list|,
-name|GIMP_OPERATION_CAGE_PROP_CONFIG
+name|GIMP_OPERATION_CAGE_PREVIEW_PROP_CONFIG
 argument_list|,
 name|g_param_spec_object
 argument_list|(
@@ -340,10 +357,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_cage_init (GimpOperationCage * self)
-name|gimp_operation_cage_init
+DECL|function|gimp_operation_cage_preview_init (GimpOperationCagePreview * self)
+name|gimp_operation_cage_preview_init
 parameter_list|(
-name|GimpOperationCage
+name|GimpOperationCagePreview
 modifier|*
 name|self
 parameter_list|)
@@ -353,19 +370,19 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_cage_finalize (GObject * object)
-name|gimp_operation_cage_finalize
+DECL|function|gimp_operation_cage_preview_finalize (GObject * object)
+name|gimp_operation_cage_preview_finalize
 parameter_list|(
 name|GObject
 modifier|*
 name|object
 parameter_list|)
 block|{
-name|GimpOperationCage
+name|GimpOperationCagePreview
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_CAGE
+name|GIMP_OPERATION_CAGE_PREVIEW
 argument_list|(
 name|object
 argument_list|)
@@ -407,8 +424,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_cage_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
-name|gimp_operation_cage_get_property
+DECL|function|gimp_operation_cage_preview_get_property (GObject * object,guint property_id,GValue * value,GParamSpec * pspec)
+name|gimp_operation_cage_preview_get_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -426,11 +443,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpOperationCage
+name|GimpOperationCagePreview
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_CAGE
+name|GIMP_OPERATION_CAGE_PREVIEW
 argument_list|(
 name|object
 argument_list|)
@@ -441,7 +458,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|GIMP_OPERATION_CAGE_PROP_CONFIG
+name|GIMP_OPERATION_CAGE_PREVIEW_PROP_CONFIG
 case|:
 name|g_value_set_object
 argument_list|(
@@ -471,8 +488,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_cage_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
-name|gimp_operation_cage_set_property
+DECL|function|gimp_operation_cage_preview_set_property (GObject * object,guint property_id,const GValue * value,GParamSpec * pspec)
+name|gimp_operation_cage_preview_set_property
 parameter_list|(
 name|GObject
 modifier|*
@@ -491,11 +508,11 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-name|GimpOperationCage
+name|GimpOperationCagePreview
 modifier|*
 name|self
 init|=
-name|GIMP_OPERATION_CAGE
+name|GIMP_OPERATION_CAGE_PREVIEW
 argument_list|(
 name|object
 argument_list|)
@@ -506,7 +523,7 @@ name|property_id
 condition|)
 block|{
 case|case
-name|GIMP_OPERATION_CAGE_PROP_CONFIG
+name|GIMP_OPERATION_CAGE_PREVIEW_PROP_CONFIG
 case|:
 if|if
 condition|(
@@ -549,8 +566,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_operation_cage_prepare (GeglOperation * operation)
-name|gimp_operation_cage_prepare
+DECL|function|gimp_operation_cage_preview_prepare (GeglOperation * operation)
+name|gimp_operation_cage_preview_prepare
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -587,8 +604,8 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_operation_cage_process (GeglOperation * operation,GeglBuffer * in_buf,GeglBuffer * aux_buf,GeglBuffer * out_buf,const GeglRectangle * roi)
-name|gimp_operation_cage_process
+DECL|function|gimp_operation_cage_preview_process (GeglOperation * operation,GeglBuffer * in_buf,GeglBuffer * aux_buf,GeglBuffer * out_buf,const GeglRectangle * roi)
+name|gimp_operation_cage_preview_process
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -612,11 +629,11 @@ modifier|*
 name|roi
 parameter_list|)
 block|{
-name|GimpOperationCage
+name|GimpOperationCagePreview
 modifier|*
-name|oc
+name|ocp
 init|=
-name|GIMP_OPERATION_CAGE
+name|GIMP_OPERATION_CAGE_PREVIEW
 argument_list|(
 name|operation
 argument_list|)
@@ -627,7 +644,7 @@ name|config
 init|=
 name|GIMP_CAGE_CONFIG
 argument_list|(
-name|oc
+name|ocp
 operator|->
 name|config
 argument_list|)
@@ -730,7 +747,17 @@ name|GEGL_BUFFER_READ
 argument_list|)
 expr_stmt|;
 comment|/* pre-copy the input buffer to the out buffer */
-comment|//gegl_buffer_copy (aux_buf, roi, out_buf, roi);
+name|gegl_buffer_copy
+argument_list|(
+name|in_buf
+argument_list|,
+name|roi
+argument_list|,
+name|out_buf
+argument_list|,
+name|roi
+argument_list|)
+expr_stmt|;
 comment|/* iterate on GeglBuffer */
 while|while
 condition|(
@@ -953,7 +980,6 @@ argument_list|(
 name|pos_y
 argument_list|)
 expr_stmt|;
-comment|/*if (sqrt ((pos_x-x) * (pos_x-x) + (pos_y-y) * (pos_y-y))< 20)       {         if (rect.x != x || rect.y != y)         {           printf("x: %d    y: %d\n", rect.x, rect.y);         }       }*/
 comment|/* copy the source pixel in the out buffer */
 name|gegl_buffer_set
 argument_list|(
@@ -1024,8 +1050,8 @@ end_function
 
 begin_function
 name|GeglRectangle
-DECL|function|gimp_operation_cage_get_cached_region (GeglOperation * operation,const GeglRectangle * roi)
-name|gimp_operation_cage_get_cached_region
+DECL|function|gimp_operation_cage_preview_get_cached_region (GeglOperation * operation,const GeglRectangle * roi)
+name|gimp_operation_cage_preview_get_cached_region
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -1056,8 +1082,8 @@ end_function
 
 begin_function
 name|GeglRectangle
-DECL|function|gimp_operation_cage_get_required_for_output (GeglOperation * operation,const gchar * input_pad,const GeglRectangle * roi)
-name|gimp_operation_cage_get_required_for_output
+DECL|function|gimp_operation_cage_preview_get_required_for_output (GeglOperation * operation,const gchar * input_pad,const GeglRectangle * roi)
+name|gimp_operation_cage_preview_get_required_for_output
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -1072,6 +1098,33 @@ specifier|const
 name|GeglRectangle
 modifier|*
 name|roi
+parameter_list|)
+block|{
+name|GeglRectangle
+name|result
+init|=
+operator|*
+name|gegl_operation_source_get_bounding_box
+argument_list|(
+name|operation
+argument_list|,
+literal|"input"
+argument_list|)
+decl_stmt|;
+return|return
+name|result
+return|;
+block|}
+end_function
+
+begin_function
+name|GeglRectangle
+DECL|function|gimp_operation_cage_preview_get_bounding_box (GeglOperation * operation)
+name|gimp_operation_cage_preview_get_bounding_box
+parameter_list|(
+name|GeglOperation
+modifier|*
+name|operation
 parameter_list|)
 block|{
 name|GeglRectangle

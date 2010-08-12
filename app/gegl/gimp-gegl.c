@@ -48,13 +48,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpoperationcage.h"
+file|"gimpoperationcagecoefcalc.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"gimpoperationcagecoefcalc.h"
+file|"gimpoperationcagepreview.h"
 end_include
 
 begin_include
@@ -370,12 +370,12 @@ argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_CAGE
+name|GIMP_TYPE_OPERATION_CAGE_COEF_CALC
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
 argument_list|(
-name|GIMP_TYPE_OPERATION_CAGE_COEF_CALC
+name|GIMP_TYPE_OPERATION_CAGE_PREVIEW
 argument_list|)
 expr_stmt|;
 name|g_type_class_ref
