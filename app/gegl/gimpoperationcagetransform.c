@@ -255,7 +255,7 @@ end_function_decl
 
 begin_function_decl
 name|GeglRectangle
-name|gimp_operation_cage_get_bounding_box
+name|gimp_operation_cage_transform_get_bounding_box
 parameter_list|(
 name|GeglOperation
 modifier|*
@@ -386,7 +386,7 @@ name|operation_class
 operator|->
 name|get_bounding_box
 operator|=
-name|gimp_operation_cage_get_bounding_box
+name|gimp_operation_cage_transform_get_bounding_box
 expr_stmt|;
 name|filter_class
 operator|->
@@ -2420,8 +2420,8 @@ end_function
 
 begin_function
 name|GeglRectangle
-DECL|function|gimp_operation_cage_get_bounding_box (GeglOperation * operation)
-name|gimp_operation_cage_get_bounding_box
+DECL|function|gimp_operation_cage_transform_get_bounding_box (GeglOperation * operation)
+name|gimp_operation_cage_transform_get_bounding_box
 parameter_list|(
 name|GeglOperation
 modifier|*
