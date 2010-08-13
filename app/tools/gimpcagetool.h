@@ -162,6 +162,11 @@ name|GimpImageMap
 modifier|*
 name|image_map
 decl_stmt|;
+DECL|member|node_preview
+name|GeglNode
+modifier|*
+name|node_preview
+decl_stmt|;
 block|}
 struct|;
 end_struct
