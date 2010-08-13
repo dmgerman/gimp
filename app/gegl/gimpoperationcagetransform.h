@@ -30,7 +30,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bbdb5590103
+DECL|enum|__anon2c6db34a0103
 block|{
 DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
 name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
