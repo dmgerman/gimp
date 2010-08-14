@@ -1256,6 +1256,12 @@ operator|->
 name|handle_moved
 operator|>
 literal|0
+operator|&&
+name|ct
+operator|->
+name|idle_id
+operator|>
+literal|0
 condition|)
 block|{
 name|g_source_remove
@@ -1788,6 +1794,13 @@ name|image_map
 operator|=
 name|NULL
 expr_stmt|;
+if|if
+condition|(
+name|ct
+operator|->
+name|idle_id
+condition|)
+block|{
 name|g_source_remove
 argument_list|(
 name|ct
@@ -1802,6 +1815,7 @@ operator|=
 literal|0
 expr_stmt|;
 comment|/*Stop preview update for now*/
+block|}
 name|gimp_cage_tool_process
 argument_list|(
 name|ct
@@ -2182,7 +2196,14 @@ name|config
 decl_stmt|;
 name|gint
 name|active_handle
+init|=
+operator|-
+literal|1
 decl_stmt|;
+if|if
+condition|(
+name|config
+condition|)
 name|active_handle
 operator|=
 name|gimp_cage_config_is_on_handle
