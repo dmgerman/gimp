@@ -924,6 +924,8 @@ decl_stmt|,
 name|S
 decl_stmt|,
 name|R
+decl_stmt|,
+name|absa
 decl_stmt|;
 name|v1
 operator|=
@@ -986,6 +988,14 @@ operator|-
 name|v1
 operator|.
 name|y
+expr_stmt|;
+name|absa
+operator|=
+name|gimp_vector2_length
+argument_list|(
+operator|&
+name|a
+argument_list|)
 expr_stmt|;
 name|b
 operator|.
@@ -1165,7 +1175,8 @@ name|cage_vertice_number
 index|]
 operator|=
 operator|(
-literal|1.0
+operator|-
+name|absa
 operator|/
 operator|(
 literal|4.0
