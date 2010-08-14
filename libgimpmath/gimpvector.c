@@ -1181,6 +1181,7 @@ name|result
 operator|.
 name|x
 operator|=
+operator|-
 name|vector
 operator|->
 name|y
@@ -1189,14 +1190,14 @@ name|result
 operator|.
 name|y
 operator|=
-operator|-
 name|vector
 operator|->
 name|x
 expr_stmt|;
 name|gimp_vector2_normalize
 argument_list|(
-name|vector
+operator|&
+name|result
 argument_list|)
 expr_stmt|;
 return|return
@@ -1225,6 +1226,7 @@ name|result
 operator|.
 name|x
 operator|=
+operator|-
 name|vector
 operator|.
 name|y
@@ -1233,7 +1235,6 @@ name|result
 operator|.
 name|y
 operator|=
-operator|-
 name|vector
 operator|.
 name|x
