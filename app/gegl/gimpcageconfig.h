@@ -142,6 +142,11 @@ name|gdouble
 modifier|*
 name|scaling_factor
 decl_stmt|;
+DECL|member|normal_d
+name|GimpVector2
+modifier|*
+name|normal_d
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -255,24 +260,6 @@ name|x
 parameter_list|,
 name|gdouble
 name|y
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
-comment|/**  * gimp_cage_config_get_edge_normal:  * @gcc: the cage config  * @edge_index: the index of the edge considered  *   * Compute the normal vector to an edge of the cage  *   * Returns: The normal vector to the specified edge of the cage. This vector is normalized (length = 1.0)  */
-end_comment
-
-begin_function_decl
-name|GimpVector2
-name|gimp_cage_config_get_edge_normal
-parameter_list|(
-name|GimpCageConfig
-modifier|*
-name|gcc
-parameter_list|,
-name|gint
-name|edge_index
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -921,12 +921,12 @@ index|[
 name|i
 index|]
 operator|*
-name|gimp_cage_config_get_edge_normal
-argument_list|(
 name|config
-argument_list|,
+operator|->
+name|normal_d
+index|[
 name|i
-argument_list|)
+index|]
 operator|.
 name|x
 expr_stmt|;
@@ -946,12 +946,12 @@ index|[
 name|i
 index|]
 operator|*
-name|gimp_cage_config_get_edge_normal
-argument_list|(
 name|config
-argument_list|,
+operator|->
+name|normal_d
+index|[
 name|i
-argument_list|)
+index|]
 operator|.
 name|y
 expr_stmt|;
@@ -967,6 +967,8 @@ name|rint
 argument_list|(
 name|pos_x
 argument_list|)
+operator|-
+literal|1
 expr_stmt|;
 name|rect
 operator|.
@@ -979,6 +981,8 @@ name|rint
 argument_list|(
 name|pos_y
 argument_list|)
+operator|-
+literal|1
 expr_stmt|;
 comment|/* copy the source pixel in the out buffer */
 name|gegl_buffer_set
