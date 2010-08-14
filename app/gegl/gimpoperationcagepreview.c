@@ -830,6 +830,18 @@ name|n_pixels
 operator|--
 condition|)
 block|{
+if|if
+condition|(
+name|gimp_cage_config_point_inside
+argument_list|(
+name|config
+argument_list|,
+name|x
+argument_list|,
+name|y
+argument_list|)
+condition|)
+block|{
 comment|/* computing of the final position of the source pixel */
 name|gdouble
 name|pos_x
@@ -999,6 +1011,7 @@ argument_list|,
 name|GEGL_AUTO_ROWSTRIDE
 argument_list|)
 expr_stmt|;
+block|}
 name|source
 operator|+=
 literal|4
