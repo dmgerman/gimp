@@ -697,13 +697,13 @@ name|rect
 operator|.
 name|height
 operator|=
-literal|1
+literal|3
 expr_stmt|;
 name|rect
 operator|.
 name|width
 operator|=
-literal|1
+literal|3
 expr_stmt|;
 name|bb_cage
 operator|=
