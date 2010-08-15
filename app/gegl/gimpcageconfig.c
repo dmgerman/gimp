@@ -458,7 +458,7 @@ name|cage_vertices_max
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gfloat
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -718,7 +718,7 @@ name|cage_vertices_max
 operator|*
 sizeof|sizeof
 argument_list|(
-name|gfloat
+name|gdouble
 argument_list|)
 argument_list|)
 expr_stmt|;
