@@ -30,13 +30,16 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6db34a0103
+DECL|enum|__anon28b1cc5f0103
 block|{
 DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
 name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_0
 block|,
 DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
 name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_CONFIG
+block|,
+DECL|enumerator|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
+name|GIMP_OPERATION_CAGE_TRANSFORM_PROP_FILL
 block|}
 enum|;
 end_enum
@@ -126,6 +129,10 @@ DECL|member|config
 name|GimpCageConfig
 modifier|*
 name|config
+decl_stmt|;
+DECL|member|fill_plain_color
+name|gboolean
+name|fill_plain_color
 decl_stmt|;
 DECL|member|format_coords
 name|Babl

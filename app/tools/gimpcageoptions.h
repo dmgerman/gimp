@@ -122,6 +122,10 @@ DECL|member|cage_mode
 name|GimpCageMode
 name|cage_mode
 decl_stmt|;
+DECL|member|fill_plain_color
+name|gboolean
+name|fill_plain_color
+decl_stmt|;
 block|}
 struct|;
 end_struct
