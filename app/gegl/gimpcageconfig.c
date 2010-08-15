@@ -116,6 +116,14 @@ name|N_ITEMS_PER_ALLOC
 value|10
 end_define
 
+begin_define
+DECL|macro|DELTA
+define|#
+directive|define
+name|DELTA
+value|0.010309278351
+end_define
+
 begin_function_decl
 specifier|static
 name|void
@@ -744,6 +752,8 @@ operator|.
 name|x
 operator|=
 name|x
+operator|+
+name|DELTA
 expr_stmt|;
 name|gcc
 operator|->
@@ -757,6 +767,8 @@ operator|.
 name|y
 operator|=
 name|y
+operator|+
+name|DELTA
 expr_stmt|;
 name|gcc
 operator|->
@@ -770,6 +782,8 @@ operator|.
 name|x
 operator|=
 name|x
+operator|+
+name|DELTA
 expr_stmt|;
 name|gcc
 operator|->
@@ -783,6 +797,8 @@ operator|.
 name|y
 operator|=
 name|y
+operator|+
+name|DELTA
 expr_stmt|;
 name|gcc
 operator|->
@@ -1080,6 +1096,8 @@ operator|.
 name|x
 operator|=
 name|x
+operator|+
+name|DELTA
 expr_stmt|;
 name|gcc
 operator|->
@@ -1091,6 +1109,8 @@ operator|.
 name|y
 operator|=
 name|y
+operator|+
+name|DELTA
 expr_stmt|;
 block|}
 else|else
@@ -1105,6 +1125,8 @@ operator|.
 name|x
 operator|=
 name|x
+operator|+
+name|DELTA
 expr_stmt|;
 name|gcc
 operator|->
@@ -1116,6 +1138,8 @@ operator|.
 name|y
 operator|=
 name|y
+operator|+
+name|DELTA
 expr_stmt|;
 block|}
 name|gimp_cage_config_compute_scaling_factor
