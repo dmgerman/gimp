@@ -838,6 +838,11 @@ argument_list|(
 name|gcc
 argument_list|)
 expr_stmt|;
+name|gimp_cage_config_compute_edge_normal
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1487,6 +1492,11 @@ name|temp
 expr_stmt|;
 block|}
 name|gimp_cage_config_compute_scaling_factor
+argument_list|(
+name|gcc
+argument_list|)
+expr_stmt|;
+name|gimp_cage_config_compute_edge_normal
 argument_list|(
 name|gcc
 argument_list|)
