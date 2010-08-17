@@ -878,7 +878,7 @@ name|no_splash
 block|,
 name|N_
 argument_list|(
-literal|"Do not show a startup window"
+literal|"Do not show a splash screen"
 argument_list|)
 block|,
 name|NULL
