@@ -42,18 +42,18 @@ name|drawable
 decl_stmt|;
 comment|/* pointer to drawable */
 DECL|member|bpp
-name|guint
+name|gint
 name|bpp
 decl_stmt|;
 comment|/* bytes per pixel */
 DECL|member|rowstride
-name|guint
+name|gint
 name|rowstride
 decl_stmt|;
 comment|/* bytes per pixel row */
 DECL|member|x
 DECL|member|y
-name|guint
+name|gint
 name|x
 decl_stmt|,
 name|y
@@ -61,28 +61,28 @@ decl_stmt|;
 comment|/* origin */
 DECL|member|w
 DECL|member|h
-name|guint
+name|gint
 name|w
 decl_stmt|,
 name|h
 decl_stmt|;
 comment|/* width and height of region */
 DECL|member|dirty
-name|guint
+name|gint
 name|dirty
 range|:
 literal|1
 decl_stmt|;
 comment|/* will this region be dirtied? */
 DECL|member|shadow
-name|guint
+name|gint
 name|shadow
 range|:
 literal|1
 decl_stmt|;
 comment|/* will this region use the shadow or normal tiles */
 DECL|member|process_count
-name|guint
+name|gint
 name|process_count
 decl_stmt|;
 comment|/* used internally */
