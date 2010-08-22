@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fbaf4b0108
+DECL|struct|__anon2aad7fd90108
 block|{
 DECL|member|l
 name|gfloat
@@ -246,7 +246,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27fbaf4b0208
+DECL|struct|__anon2aad7fd90208
 block|{
 DECL|member|bgdist
 name|gfloat
@@ -526,7 +526,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|stageone (lab * points,gint left,gint right,gint depth,gint * clusters,const gfloat * limits,const gint dims)
+DECL|function|stageone (lab * points,gint left,gint right,const gint depth,gint * clusters,const gfloat * limits,const gint dims)
 name|stageone
 parameter_list|(
 name|lab
@@ -539,6 +539,7 @@ parameter_list|,
 name|gint
 name|right
 parameter_list|,
+specifier|const
 name|gint
 name|depth
 parameter_list|,
@@ -556,6 +557,7 @@ name|gint
 name|dims
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|curdim
 init|=
@@ -651,6 +653,7 @@ name|curdim
 index|]
 condition|)
 block|{
+specifier|const
 name|gfloat
 name|pivot
 init|=
@@ -936,7 +939,7 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|stagetwo (lab * points,gint left,gint right,gint depth,gint * clusters,const gfloat * limits,const gfloat threshold,const gint dims)
+DECL|function|stagetwo (lab * points,gint left,gint right,const gint depth,gint * clusters,const gfloat * limits,const gfloat threshold,const gint dims)
 name|stagetwo
 parameter_list|(
 name|lab
@@ -949,6 +952,7 @@ parameter_list|,
 name|gint
 name|right
 parameter_list|,
+specifier|const
 name|gint
 name|depth
 parameter_list|,
@@ -970,6 +974,7 @@ name|gint
 name|dims
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|curdim
 init|=
@@ -1065,6 +1070,7 @@ name|curdim
 index|]
 condition|)
 block|{
+specifier|const
 name|gfloat
 name|pivot
 init|=
@@ -3428,6 +3434,31 @@ index|[
 literal|2
 index|]
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|SIOX_DEBUG
+name|g_printerr
+argument_list|(
+literal|"siox.c: limits %f %f %f\n"
+argument_list|,
+name|limits
+index|[
+literal|0
+index|]
+argument_list|,
+name|limits
+index|[
+literal|1
+index|]
+argument_list|,
+name|limits
+index|[
+literal|2
+index|]
+argument_list|)
+expr_stmt|;
+endif|#
+directive|endif
 name|clustersize
 operator|=
 name|get_clustersize
