@@ -2072,12 +2072,12 @@ operator|/
 literal|3
 index|]
 expr_stmt|;
+block|}
 name|g_free
 argument_list|(
 name|tmpcol
 argument_list|)
 expr_stmt|;
-block|}
 block|}
 name|fclose
 argument_list|(
