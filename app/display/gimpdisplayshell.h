@@ -407,12 +407,6 @@ modifier|*
 name|canvas
 decl_stmt|;
 comment|/*  GimpCanvas widget                  */
-DECL|member|pen_gc
-name|GdkGC
-modifier|*
-name|pen_gc
-decl_stmt|;
-comment|/*  GC for felt pen drawing            */
 DECL|member|hsbdata
 name|GtkAdjustment
 modifier|*
