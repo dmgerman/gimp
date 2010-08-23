@@ -208,6 +208,10 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
