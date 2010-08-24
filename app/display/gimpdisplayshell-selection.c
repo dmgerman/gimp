@@ -2486,7 +2486,7 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
-name|gimp_display_shell_transform_segments
+name|gimp_display_shell_transform_segments_old
 argument_list|(
 name|selection
 operator|->

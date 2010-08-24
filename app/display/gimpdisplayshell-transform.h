@@ -231,7 +231,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_transform_segments
+name|gimp_display_shell_transform_segments_old
 parameter_list|(
 specifier|const
 name|GimpDisplayShell

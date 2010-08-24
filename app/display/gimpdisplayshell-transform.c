@@ -1362,13 +1362,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_segments:  * @shell:       a #GimpDisplayShell  * @src_segs:    array of segments in image coordinates  * @dest_segs:   returns the corresponding segments in display coordinates  * @n_segs:      number of segments  * @use_offsets: if %TRUE, the source coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_segments_old:  * @shell:       a #GimpDisplayShell  * @src_segs:    array of segments in image coordinates  * @dest_segs:   returns the corresponding segments in display coordinates  * @n_segs:      number of segments  * @use_offsets: if %TRUE, the source coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_segments (const GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs,gboolean use_offsets)
-name|gimp_display_shell_transform_segments
+DECL|function|gimp_display_shell_transform_segments_old (const GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs,gboolean use_offsets)
+name|gimp_display_shell_transform_segments_old
 parameter_list|(
 specifier|const
 name|GimpDisplayShell
