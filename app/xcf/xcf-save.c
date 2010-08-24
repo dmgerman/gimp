@@ -685,6 +685,7 @@ init|=
 literal|0
 decl_stmt|;
 comment|/* default to oldest */
+comment|/* need version 1 for colormaps */
 if|if
 condition|(
 name|gimp_image_get_colormap
@@ -696,7 +697,6 @@ name|save_version
 operator|=
 literal|1
 expr_stmt|;
-comment|/* need version 1 for colormaps */
 for|for
 control|(
 name|list
@@ -710,7 +710,7 @@ name|list
 operator|&&
 name|save_version
 operator|<
-literal|2
+literal|3
 condition|;
 name|list
 operator|=
@@ -754,13 +754,47 @@ name|GIMP_COLOR_ERASE_MODE
 case|:
 name|save_version
 operator|=
+name|MAX
+argument_list|(
 literal|2
+argument_list|,
+name|save_version
+argument_list|)
 expr_stmt|;
 break|break;
 default|default:
 break|break;
 block|}
+comment|/* need version 3 for layer trees */
+if|if
+condition|(
+name|gimp_viewable_get_children
+argument_list|(
+name|GIMP_VIEWABLE
+argument_list|(
+name|layer
+argument_list|)
+argument_list|)
+condition|)
+name|save_version
+operator|=
+name|MAX
+argument_list|(
+literal|3
+argument_list|,
+name|save_version
+argument_list|)
+expr_stmt|;
 block|}
+name|g_printerr
+argument_list|(
+literal|"%s: version = %d\n"
+argument_list|,
+name|G_STRFUNC
+argument_list|,
+name|save_version
+argument_list|)
+expr_stmt|;
 name|info
 operator|->
 name|file_version
@@ -6845,7 +6879,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0d333e0108
+DECL|struct|__anon2c022ed40108
 block|{
 DECL|member|info
 name|XcfInfo
