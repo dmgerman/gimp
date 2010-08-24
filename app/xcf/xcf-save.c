@@ -786,15 +786,6 @@ name|save_version
 argument_list|)
 expr_stmt|;
 block|}
-name|g_printerr
-argument_list|(
-literal|"%s: version = %d\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|,
-name|save_version
-argument_list|)
-expr_stmt|;
 name|info
 operator|->
 name|file_version
@@ -6879,7 +6870,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c022ed40108
+DECL|struct|__anon277de9be0108
 block|{
 DECL|member|info
 name|XcfInfo
