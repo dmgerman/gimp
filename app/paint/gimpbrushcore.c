@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b9c3eb90103
+DECL|enum|__anon29bd09f10103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4227,7 +4227,7 @@ argument_list|,
 name|scale
 argument_list|)
 expr_stmt|;
-comment|/* Generated brushes are a bit special*/
+comment|/* Generated brushes are a bit special */
 if|if
 condition|(
 name|GIMP_IS_BRUSH_GENERATED
@@ -4241,22 +4241,26 @@ block|{
 name|GimpBrushGenerated
 modifier|*
 name|generated_brush
-init|=
+decl_stmt|;
+name|gdouble
+name|ratio
+decl_stmt|;
+name|generated_brush
+operator|=
 name|GIMP_BRUSH_GENERATED
 argument_list|(
 name|core
 operator|->
 name|main_brush
 argument_list|)
-decl_stmt|;
-name|gdouble
+expr_stmt|;
 name|ratio
-init|=
+operator|=
 name|gimp_brush_generated_get_aspect_ratio
 argument_list|(
 name|generated_brush
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gimp_brush_generated_set_aspect_ratio
 argument_list|(
 name|generated_brush
@@ -4290,6 +4294,7 @@ argument_list|)
 expr_stmt|;
 block|}
 else|else
+block|{
 name|mask
 operator|=
 name|gimp_brush_transform_mask
@@ -4307,6 +4312,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 if|if
 condition|(
@@ -4545,22 +4551,26 @@ block|{
 name|GimpBrushGenerated
 modifier|*
 name|generated_brush
-init|=
+decl_stmt|;
+name|gdouble
+name|base_angle
+decl_stmt|;
+name|generated_brush
+operator|=
 name|GIMP_BRUSH_GENERATED
 argument_list|(
 name|core
 operator|->
 name|main_brush
 argument_list|)
-decl_stmt|;
-name|gdouble
+expr_stmt|;
 name|base_angle
-init|=
+operator|=
 name|gimp_brush_generated_get_angle
 argument_list|(
 name|generated_brush
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|angle
 operator|=
 name|angle
