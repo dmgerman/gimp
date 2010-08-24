@@ -144,31 +144,31 @@ modifier|*
 name|segs_in
 decl_stmt|;
 comment|/*  gdk segments of area boundary     */
+DECL|member|n_segs_in
+name|gint
+name|n_segs_in
+decl_stmt|;
+comment|/*  number of segments in segs1       */
 DECL|member|segs_out
 name|GdkSegment
 modifier|*
 name|segs_out
 decl_stmt|;
 comment|/*  gdk segments of area boundary     */
+DECL|member|n_segs_out
+name|gint
+name|n_segs_out
+decl_stmt|;
+comment|/*  number of segments in segs2       */
 DECL|member|segs_layer
 name|GdkSegment
 modifier|*
 name|segs_layer
 decl_stmt|;
 comment|/*  gdk segments of layer boundary    */
-DECL|member|num_segs_in
+DECL|member|n_segs_layer
 name|gint
-name|num_segs_in
-decl_stmt|;
-comment|/*  number of segments in segs1       */
-DECL|member|num_segs_out
-name|gint
-name|num_segs_out
-decl_stmt|;
-comment|/*  number of segments in segs2       */
-DECL|member|num_segs_layer
-name|gint
-name|num_segs_layer
+name|n_segs_layer
 decl_stmt|;
 comment|/*  number of segments in segs3       */
 DECL|member|index
@@ -386,7 +386,7 @@ modifier|*
 name|dest_segs
 parameter_list|,
 name|gint
-name|num_segs
+name|n_segs
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -1176,7 +1176,7 @@ literal|"%d segments, %d points\n"
 argument_list|,
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 argument_list|,
 name|sum
 argument_list|)
@@ -1414,7 +1414,7 @@ name|segs_in
 argument_list|,
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 argument_list|)
 expr_stmt|;
 endif|#
@@ -1517,6 +1517,13 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
+if|if
+condition|(
+name|selection
+operator|->
+name|segs_layer
+condition|)
+block|{
 name|GimpCanvas
 modifier|*
 name|canvas
@@ -1552,13 +1559,6 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-if|if
-condition|(
-name|selection
-operator|->
-name|segs_layer
-condition|)
-block|{
 name|GimpCanvasStyle
 name|style
 decl_stmt|;
@@ -1605,7 +1605,7 @@ name|segs_layer
 argument_list|,
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -1636,7 +1636,7 @@ name|segs_layer
 operator|&&
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 operator|==
 literal|4
 condition|)
@@ -2088,7 +2088,7 @@ name|i
 operator|<
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 condition|;
 name|i
 operator|++
@@ -2442,7 +2442,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (Selection * selection,const BoundSeg * src_segs,GdkSegment * dest_segs,gint num_segs)
+DECL|function|selection_transform_segs (Selection * selection,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs)
 name|selection_transform_segs
 parameter_list|(
 name|Selection
@@ -2459,7 +2459,7 @@ modifier|*
 name|dest_segs
 parameter_list|,
 name|gint
-name|num_segs
+name|n_segs
 parameter_list|)
 block|{
 name|gint
@@ -2497,7 +2497,7 @@ name|src_segs
 argument_list|,
 name|dest_segs
 argument_list|,
-name|num_segs
+name|n_segs
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2510,7 +2510,7 @@ literal|0
 init|;
 name|i
 operator|<
-name|num_segs
+name|n_segs
 condition|;
 name|i
 operator|++
@@ -2734,12 +2734,12 @@ argument_list|,
 operator|&
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 argument_list|,
 operator|&
 name|selection
 operator|->
-name|num_segs_out
+name|n_segs_out
 argument_list|,
 literal|0
 argument_list|,
@@ -2754,7 +2754,7 @@ if|if
 condition|(
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 condition|)
 block|{
 name|selection
@@ -2767,7 +2767,7 @@ name|GdkSegment
 argument_list|,
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 argument_list|)
 expr_stmt|;
 name|selection_transform_segs
@@ -2782,7 +2782,7 @@ name|segs_in
 argument_list|,
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 argument_list|)
 expr_stmt|;
 ifdef|#
@@ -2810,7 +2810,7 @@ if|if
 condition|(
 name|selection
 operator|->
-name|num_segs_out
+name|n_segs_out
 condition|)
 block|{
 name|selection
@@ -2823,7 +2823,7 @@ name|GdkSegment
 argument_list|,
 name|selection
 operator|->
-name|num_segs_out
+name|n_segs_out
 argument_list|)
 expr_stmt|;
 name|selection_transform_segs
@@ -2838,7 +2838,7 @@ name|segs_out
 argument_list|,
 name|selection
 operator|->
-name|num_segs_out
+name|n_segs_out
 argument_list|)
 expr_stmt|;
 block|}
@@ -2876,14 +2876,14 @@ argument_list|,
 operator|&
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 argument_list|)
 expr_stmt|;
 if|if
 condition|(
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 condition|)
 block|{
 name|selection
@@ -2896,7 +2896,7 @@ name|GdkSegment
 argument_list|,
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 argument_list|)
 expr_stmt|;
 name|selection_transform_segs
@@ -2911,7 +2911,7 @@ name|segs_layer
 argument_list|,
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -2960,7 +2960,7 @@ name|NULL
 expr_stmt|;
 name|selection
 operator|->
-name|num_segs_in
+name|n_segs_in
 operator|=
 literal|0
 expr_stmt|;
@@ -2987,7 +2987,7 @@ name|NULL
 expr_stmt|;
 name|selection
 operator|->
-name|num_segs_out
+name|n_segs_out
 operator|=
 literal|0
 expr_stmt|;
@@ -3014,7 +3014,7 @@ name|NULL
 expr_stmt|;
 name|selection
 operator|->
-name|num_segs_layer
+name|n_segs_layer
 operator|=
 literal|0
 expr_stmt|;
@@ -3193,7 +3193,7 @@ name|segs_out
 argument_list|,
 name|selection
 operator|->
-name|num_segs_out
+name|n_segs_out
 argument_list|)
 expr_stmt|;
 if|if
