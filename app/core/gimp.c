@@ -327,7 +327,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1497750103
+DECL|enum|__anon288b613c0103
 block|{
 DECL|enumerator|INITIALIZE
 name|INITIALIZE
@@ -2748,7 +2748,7 @@ argument_list|)
 argument_list|,
 name|gimp_tool_preset_new
 argument_list|,
-name|gimp_tool_preset_get_standard
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_object_set_static_name

@@ -186,18 +186,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpData
-modifier|*
-name|gimp_tool_preset_get_standard
-parameter_list|(
-name|GimpContext
-modifier|*
-name|context
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|GimpContextPropMask
 name|gimp_tool_preset_get_prop_mask
 parameter_list|(
