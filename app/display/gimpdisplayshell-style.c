@@ -673,15 +673,6 @@ argument_list|,
 name|CAIRO_LINE_CAP_SQUARE
 argument_list|)
 expr_stmt|;
-name|cairo_translate
-argument_list|(
-name|cr
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -761,15 +752,6 @@ argument_list|(
 name|cr
 argument_list|,
 name|CAIRO_LINE_JOIN_ROUND
-argument_list|)
-expr_stmt|;
-name|cairo_translate
-argument_list|(
-name|cr
-argument_list|,
-literal|0.5
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 switch|switch
