@@ -2340,7 +2340,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_layer_boundary (GimpDisplayShell * shell,cairo_t * cr,GimpDrawable * drawable,BoundSeg * segs,gint n_segs)
+DECL|function|gimp_display_shell_draw_layer_boundary (GimpDisplayShell * shell,cairo_t * cr,GimpDrawable * drawable,GdkSegment * segs,gint n_segs)
 name|gimp_display_shell_draw_layer_boundary
 parameter_list|(
 name|GimpDisplayShell
@@ -2355,7 +2355,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BoundSeg
+name|GdkSegment
 modifier|*
 name|segs
 parameter_list|,

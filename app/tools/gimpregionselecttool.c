@@ -1548,7 +1548,7 @@ operator|*
 name|num_segs
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_transform_segments_old
+name|gimp_display_shell_transform_segments
 argument_list|(
 name|shell
 argument_list|,

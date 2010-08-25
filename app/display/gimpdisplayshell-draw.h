@@ -195,7 +195,7 @@ name|GimpDrawable
 modifier|*
 name|drawable
 parameter_list|,
-name|BoundSeg
+name|GdkSegment
 modifier|*
 name|segs
 parameter_list|,
