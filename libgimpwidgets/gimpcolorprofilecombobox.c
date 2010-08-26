@@ -39,9 +39,13 @@ directive|include
 file|"gimpcolorprofilestore-private.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorprofilecombobox  * @title: GimpColorProfileComboBox  * @short_description: A combo box for selecting color profiles.  *  * A combo box for selecting color profiles.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2791f1be0103
+DECL|enum|__anon2b97d9a70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -58,7 +62,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2791f1be0208
+DECL|struct|__anon2b97d9a70208
 block|{
 DECL|member|last_path
 name|GtkTreePath

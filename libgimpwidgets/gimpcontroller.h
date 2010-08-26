@@ -41,10 +41,14 @@ begin_comment
 comment|/* For information look at the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GimpControllerEventType:  * @GIMP_CONTROLLER_EVENT_TRIGGER: the event is a simple trigger  * @GIMP_CONTROLLER_EVENT_VALUE:   the event carries a double value  *  * Event types for #GimpController.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a1f71a40103
+DECL|enum|__anon2b4a62d00103
 block|{
 DECL|enumerator|GIMP_CONTROLLER_EVENT_TRIGGER
 name|GIMP_CONTROLLER_EVENT_TRIGGER

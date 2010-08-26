@@ -912,7 +912,7 @@ operator|->
 name|drawable_id
 argument_list|)
 operator|||
-name|gimp_drawable_is_channel
+name|gimp_item_is_channel
 argument_list|(
 name|drawable
 operator|->

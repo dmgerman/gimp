@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2955f4840108
+DECL|struct|__anon2a9cf4e10108
 typedef|typedef
 struct|struct
 block|{
@@ -1453,7 +1453,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_vectors_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->
@@ -2421,7 +2421,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_vectors_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->
@@ -3230,7 +3230,7 @@ return|;
 return|return
 name|pygimp_parasite_new
 argument_list|(
-name|gimp_vectors_parasite_find
+name|gimp_item_parasite_find
 argument_list|(
 name|self
 operator|->
@@ -3285,7 +3285,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_vectors_parasite_attach
+name|gimp_item_parasite_attach
 argument_list|(
 name|self
 operator|->
@@ -3368,7 +3368,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_vectors_parasite_detach
+name|gimp_item_parasite_detach
 argument_list|(
 name|self
 operator|->
@@ -3428,7 +3428,7 @@ name|parasites
 decl_stmt|;
 if|if
 condition|(
-name|gimp_vectors_parasite_list
+name|gimp_item_parasite_list
 argument_list|(
 name|self
 operator|->
@@ -3628,7 +3628,7 @@ block|{
 return|return
 name|pygimp_image_new
 argument_list|(
-name|gimp_vectors_get_image
+name|gimp_item_get_image
 argument_list|(
 name|self
 operator|->
@@ -3685,7 +3685,7 @@ block|{
 return|return
 name|PyString_FromString
 argument_list|(
-name|gimp_vectors_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->
@@ -3761,7 +3761,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_vectors_set_name
+name|gimp_item_set_name
 argument_list|(
 name|self
 operator|->
@@ -3798,7 +3798,7 @@ block|{
 return|return
 name|PyBool_FromLong
 argument_list|(
-name|gimp_vectors_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|self
 operator|->
@@ -3868,7 +3868,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_vectors_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|self
 operator|->
@@ -3905,7 +3905,7 @@ block|{
 return|return
 name|PyBool_FromLong
 argument_list|(
-name|gimp_vectors_get_linked
+name|gimp_item_get_linked
 argument_list|(
 name|self
 operator|->
@@ -3975,7 +3975,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_vectors_set_linked
+name|gimp_item_set_linked
 argument_list|(
 name|self
 operator|->
@@ -4012,7 +4012,7 @@ block|{
 return|return
 name|PyInt_FromLong
 argument_list|(
-name|gimp_vectors_get_tattoo
+name|gimp_item_get_tattoo
 argument_list|(
 name|self
 operator|->
@@ -4082,7 +4082,7 @@ operator|-
 literal|1
 return|;
 block|}
-name|gimp_vectors_set_tattoo
+name|gimp_item_set_tattoo
 argument_list|(
 name|self
 operator|->
@@ -4362,7 +4362,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_vectors_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->
@@ -4769,7 +4769,7 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_vectors_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|ID
 argument_list|)

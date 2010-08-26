@@ -45,9 +45,13 @@ directive|include
 file|"gimpwidgetsmarshal.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolordisplaystack  * @title: GimpColorDisplayStack  * @short_description: A stack of color correction modules.  * @see_also: #GimpColorDisplay  *  * A stack of color correction modules.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2b04397c0103
+DECL|enum|__anon2c0767100103
 block|{
 DECL|enumerator|CHANGED
 name|CHANGED

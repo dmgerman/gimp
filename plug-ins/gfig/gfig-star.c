@@ -837,6 +837,16 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* DEBUG */
+name|g_free
+argument_list|(
+name|line_pnts
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|min_max
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|inner_radius_pnt
@@ -863,6 +873,16 @@ expr_stmt|;
 endif|#
 directive|endif
 comment|/* DEBUG */
+name|g_free
+argument_list|(
+name|line_pnts
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|min_max
+argument_list|)
+expr_stmt|;
 return|return;
 block|}
 name|shift_x

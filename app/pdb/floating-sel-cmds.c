@@ -552,6 +552,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -1136,9 +1138,9 @@ name|procedure
 argument_list|,
 literal|"gimp-floating-sel-rigor"
 argument_list|,
-literal|"This procedure is deprecated!"
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"This procedure is deprecated!"
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
 literal|""
 argument_list|,
@@ -1225,9 +1227,9 @@ name|procedure
 argument_list|,
 literal|"gimp-floating-sel-relax"
 argument_list|,
-literal|"This procedure is deprecated!"
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
-literal|"This procedure is deprecated!"
+literal|"Deprecated: There is no replacement for this procedure."
 argument_list|,
 literal|""
 argument_list|,

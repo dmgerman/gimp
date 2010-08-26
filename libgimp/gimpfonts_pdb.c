@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpfonts  * @title: gimpfonts  * @short_description: Operations related to fonts.  *  * Operations related to fonts.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_fonts_refresh:  *  * Refresh current fonts. This function always succeeds.  *  * This procedure retrieves all fonts currently in the user's font path  * and updates the font dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 

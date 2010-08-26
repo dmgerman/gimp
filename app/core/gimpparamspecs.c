@@ -3354,7 +3354,7 @@ end_function
 begin_function
 name|GParamSpec
 modifier|*
-DECL|function|gimp_param_spec_item_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,GType item_type,gboolean none_ok,GParamFlags flags)
+DECL|function|gimp_param_spec_item_id (const gchar * name,const gchar * nick,const gchar * blurb,Gimp * gimp,gboolean none_ok,GParamFlags flags)
 name|gimp_param_spec_item_id
 parameter_list|(
 specifier|const
@@ -3376,9 +3376,6 @@ name|Gimp
 modifier|*
 name|gimp
 parameter_list|,
-name|GType
-name|item_type
-parameter_list|,
 name|gboolean
 name|none_ok
 parameter_list|,
@@ -3395,18 +3392,6 @@ argument_list|(
 name|GIMP_IS_GIMP
 argument_list|(
 name|gimp
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|g_type_is_a
-argument_list|(
-name|item_type
-argument_list|,
-name|GIMP_TYPE_ITEM
 argument_list|)
 argument_list|,
 name|NULL
@@ -3435,12 +3420,6 @@ name|gimp
 expr_stmt|;
 name|ispec
 operator|->
-name|item_type
-operator|=
-name|item_type
-expr_stmt|;
-name|ispec
-operator|->
 name|none_ok
 operator|=
 name|none_ok
@@ -3457,7 +3436,7 @@ end_function
 begin_function
 name|GimpItem
 modifier|*
-DECL|function|gimp_value_get_item (const GValue * value,Gimp * gimp,GType item_type)
+DECL|function|gimp_value_get_item (const GValue * value,Gimp * gimp)
 name|gimp_value_get_item
 parameter_list|(
 specifier|const
@@ -3468,9 +3447,6 @@ parameter_list|,
 name|Gimp
 modifier|*
 name|gimp
-parameter_list|,
-name|GType
-name|item_type
 parameter_list|)
 block|{
 name|GimpItem
@@ -3497,18 +3473,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_val_if_fail
-argument_list|(
-name|g_type_is_a
-argument_list|(
-name|item_type
-argument_list|,
-name|GIMP_TYPE_ITEM
-argument_list|)
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
 name|item
 operator|=
 name|gimp_item_get_by_ID
@@ -3530,14 +3494,9 @@ condition|(
 name|item
 operator|&&
 operator|!
-name|g_type_is_a
-argument_list|(
-name|G_TYPE_FROM_INSTANCE
+name|GIMP_IS_ITEM
 argument_list|(
 name|item
-argument_list|)
-argument_list|,
-name|item_type
 argument_list|)
 condition|)
 return|return

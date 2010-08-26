@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c5015bc0108
+DECL|struct|__anon2a45d6830108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -2493,6 +2493,61 @@ end_function
 
 begin_function
 specifier|static
+name|void
+DECL|function|paintbrush_is_standard_tool (GimpTestFixture * fixture,gconstpointer data)
+name|paintbrush_is_standard_tool
+parameter_list|(
+name|GimpTestFixture
+modifier|*
+name|fixture
+parameter_list|,
+name|gconstpointer
+name|data
+parameter_list|)
+block|{
+name|Gimp
+modifier|*
+name|gimp
+init|=
+name|GIMP
+argument_list|(
+name|data
+argument_list|)
+decl_stmt|;
+name|GimpContext
+modifier|*
+name|user_context
+init|=
+name|gimp_get_user_context
+argument_list|(
+name|gimp
+argument_list|)
+decl_stmt|;
+name|GimpToolInfo
+modifier|*
+name|tool_info
+init|=
+name|gimp_context_get_tool
+argument_list|(
+name|user_context
+argument_list|)
+decl_stmt|;
+name|g_assert_cmpstr
+argument_list|(
+name|tool_info
+operator|->
+name|help_id
+argument_list|,
+operator|==
+argument_list|,
+literal|"gimp-tool-paintbrush"
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
 name|GimpUIManager
 modifier|*
 DECL|function|gimp_ui_get_ui_manager (Gimp * gimp)
@@ -3098,7 +3153,12 @@ expr_stmt|;
 name|gimp_test_run_mainloop_until_idle
 argument_list|()
 expr_stmt|;
-comment|/* Add tests */
+comment|/* Add tests. Note that the order matters. For example,    * 'paintbrush_is_standard_tool' can't be after    * 'tool_options_editor_updates'    */
+name|ADD_TEST
+argument_list|(
+name|paintbrush_is_standard_tool
+argument_list|)
+expr_stmt|;
 name|ADD_TEST
 argument_list|(
 name|tool_options_editor_updates

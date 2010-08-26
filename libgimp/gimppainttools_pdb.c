@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppainttools  * @title: gimppainttools  * @short_description: Access to toolbox paint tools.  *  * Functions giving access to toolbox paint tools.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_airbrush:  * @drawable_ID: The affected drawable.  * @pressure: The pressure of the airbrush strokes.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. Paint pressure  * represents the relative intensity of the paint application. High  * pressure results in a thicker layer of paint while low pressure  * results in a thinner layer.  *  * Returns: TRUE on success.  */
 end_comment
 

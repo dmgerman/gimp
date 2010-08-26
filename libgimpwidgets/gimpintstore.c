@@ -39,9 +39,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpintstore  * @title: GimpIntStore  * @short_description: A model for integer based name-value pairs  *                     (e.g. enums)  *  * A model for integer based name-value pairs (e.g. enums)  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2ba9ad750103
+DECL|enum|__anon2a4614250103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -55,7 +59,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9ad750208
+DECL|struct|__anon2a4614250208
 block|{
 DECL|member|user_data_type
 name|GType

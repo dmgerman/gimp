@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimplayer  * @title: gimplayer  * @short_description: Operations on a single layer.  *  * Operations on a single layer.  **/
+end_comment
+
+begin_comment
 comment|/**  * _gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_add_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
 end_comment
 

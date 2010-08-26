@@ -58,6 +58,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppropwidgets  * @title: GimpPropWidgets  * @short_description: Editable views on #GObject properties.  *  * Editable views on #GObject properties.  **/
+end_comment
+
+begin_comment
 comment|/*  utility function prototypes  */
 end_comment
 
@@ -2869,7 +2873,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #GimpEnumStockBox containing the radio buttons.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_enum_stock_box_new:  * @config:        Object to which property is attached.  * @property_name: Name of enum property controlled by the radio buttons.  * @stock_prefix:  The prefix of the group of stock ids to use.  * @minimum:       Smallest value of enum to be included.  * @maximum:       Largest value of enum to be included.  *  * Creates a horizontal box of radio buttons with stock icons, which  * function to set and display the value of the specified Enum  * property.  The stock_id for each icon is created by appending the  * enum_value's nick to the given @stock_prefix.  See  * gimp_enum_stock_box_new() for more information.  *  * Return value: A #libgimpwidgets-gimpenumstockbox containing the radio buttons.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3246,7 +3250,7 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_prop_spin_button_new:  * @config:            Object to which property is attached.  * @property_name:     Name of double property controlled by the spin button.  * @step_increment:    Step size.  * @page_increment:    Page size.  * @digits:            Number of digits after decimal point to display.  *  * Creates a spin button to set and display the value of the  * specified double property.  *  * Return value: A new #GimpSpinButton.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_spin_button_new:  * @config:            Object to which property is attached.  * @property_name:     Name of double property controlled by the spin button.  * @step_increment:    Step size.  * @page_increment:    Page size.  * @digits:            Number of digits after decimal point to display.  *  * Creates a spin button to set and display the value of the  * specified double property.  *  * Return value: A new #libgimpwidgets-gimpspinbutton.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3606,7 +3610,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %TRUE if the range of possible values of the  *                  GtkSpinButton should be the same as of the GtkHScale.  * @lower_limit:    The spinbutton's lower boundary if @limit_scale is %FALSE.  * @upper_limit:    The spinbutton's upper boundary if @limit_scale is %FALSE.  *  * Creates a #GimpScaleEntry (slider and spin button) to set and  * display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_scale_entry_new:  * @config:         Object to which property is attached.  * @property_name:  Name of double property controlled by the spin button.  * @table:          The #GtkTable the widgets will be attached to.  * @column:         The column to start with.  * @row:            The row to attach the widgets.  * @label:          The text for the #GtkLabel which will appear left of  *                  the #GtkHScale.  * @step_increment: Step size.  * @page_increment: Page size.  * @digits:         Number of digits after decimal point to display.  * @limit_scale:    %TRUE if the range of possible values of the  *                  GtkSpinButton should be the same as of the GtkHScale.  * @lower_limit:    The spinbutton's lower boundary if @limit_scale is %FALSE.  * @upper_limit:    The spinbutton's upper boundary if @limit_scale is %FALSE.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property.  See  * gimp_scale_entry_new() for more information.  *  * Return value: The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3880,7 +3884,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_prop_opacity_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of double property controlled by the spin button.  * @table:         The #GtkTable the widgets will be attached to.  * @column:        The column to start with.  * @row:           The row to attach the widgets.  * @label:         The text for the #GtkLabel which will appear left of the  *                 #GtkHScale.  *  * Creates a #GimpScaleEntry (slider and spin button) to set and  * display the value of the specified double property, which should  * represent an "opacity" variable with range 0 to 100.  See  * gimp_scale_entry_new() for more information.  *  * Return value:  The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
+comment|/**  * gimp_prop_opacity_entry_new:  * @config:        Object to which property is attached.  * @property_name: Name of double property controlled by the spin button.  * @table:         The #GtkTable the widgets will be attached to.  * @column:        The column to start with.  * @row:           The row to attach the widgets.  * @label:         The text for the #GtkLabel which will appear left of the  *                 #GtkHScale.  *  * Creates a #libgimpwidgets-gimpscaleentry (slider and spin button)  * to set and display the value of the specified double property,  * which should represent an "opacity" variable with range 0 to 100.  * See gimp_scale_entry_new() for more information.  *  * Return value:  The #GtkSpinButton's #GtkAdjustment.  *  * Since GIMP 2.4  */
 end_comment
 
 begin_function

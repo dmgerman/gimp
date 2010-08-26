@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpconvert  * @title: gimpconvert  * @short_description: Conversions between RGB, indexed, and grayscale modes.  *  * Conversions between RGB, indexed, and grayscale modes.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_image_convert_rgb:  * @image_ID: The image.  *  * Convert specified image to RGB color  *  * This procedure converts the specified image to RGB color. This  * process requires an image in Grayscale or Indexed color mode. No  * image content is lost in this process aside from the colormap for an  * indexed image.  *  * Returns: TRUE on success.  */
 end_comment
 

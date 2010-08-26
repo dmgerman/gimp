@@ -289,7 +289,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5d50c0108
+DECL|struct|__anon2790717d0108
 block|{
 DECL|member|resolution
 name|guint
@@ -400,7 +400,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5d50c0208
+DECL|struct|__anon2790717d0208
 block|{
 DECL|member|width
 DECL|member|height
@@ -1031,7 +1031,7 @@ end_function_decl
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5d50c0308
+DECL|struct|__anon2790717d0308
 block|{
 DECL|member|adjustment
 name|GtkObject
@@ -1900,7 +1900,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd5d50c0408
+DECL|struct|__anon2790717d0408
 block|{
 DECL|member|eol
 name|long
@@ -4739,7 +4739,7 @@ argument_list|)
 expr_stmt|;
 name|name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|tmp_ID
 argument_list|)
@@ -4753,7 +4753,7 @@ argument_list|,
 name|image_ID
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_name
+name|gimp_item_set_name
 argument_list|(
 name|current_layer
 argument_list|,
@@ -7559,6 +7559,10 @@ comment|/* Use a real outputfile. Wait until ghostscript has finished */
 name|flags
 operator|=
 name|G_SPAWN_SEARCH_PATH
+operator||
+name|G_SPAWN_STDOUT_TO_DEV_NULL
+operator||
+name|G_SPAWN_STDERR_TO_DEV_NULL
 expr_stmt|;
 if|if
 condition|(
@@ -11165,7 +11169,7 @@ name|cmap
 operator|=
 name|gimp_image_get_colormap
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable_ID
 argument_list|)

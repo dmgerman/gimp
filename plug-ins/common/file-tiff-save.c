@@ -147,7 +147,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf133240108
+DECL|struct|__anon275ce5130108
 block|{
 DECL|member|compression
 name|gint
@@ -170,7 +170,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bf133240208
+DECL|struct|__anon275ce5130208
 block|{
 DECL|member|ID
 name|gint32
@@ -1887,7 +1887,7 @@ expr_stmt|;
 comment|/*        * - use iso8859-1 if possible        * - otherwise use UTF-8, prepended with \xef\xbb\xbf (Byte-Order-Mark)        */
 name|name
 operator|=
-name|gimp_vectors_get_name
+name|gimp_item_get_name
 argument_list|(
 name|vectors
 index|[

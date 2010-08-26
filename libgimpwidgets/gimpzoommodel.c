@@ -51,6 +51,10 @@ directive|include
 file|"gimpzoommodel.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpzoommodel  * @title: GimpZoomModel  * @short_description: A model for zoom values.  *  * A model for zoom values.  **/
+end_comment
+
 begin_define
 DECL|macro|ZOOM_MIN
 define|#
@@ -69,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc65e70103
+DECL|enum|__anon28d338e90103
 block|{
 DECL|enumerator|ZOOMED
 name|ZOOMED
@@ -82,7 +86,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc65e70203
+DECL|enum|__anon28d338e90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,7 +112,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28dc65e70308
+DECL|struct|__anon28d338e90308
 block|{
 DECL|member|value
 name|gdouble
@@ -1846,7 +1850,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type:  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
+comment|/**  * gimp_zoom_model_zoom_step:  * @zoom_type: the zoom type  * @scale:     ignored unless @zoom_type == %GIMP_ZOOM_TO  *  * Utility function to calculate a new scale factor.  *  * Return value: the new scale factor  *  * Since GIMP 2.4  **/
 end_comment
 
 begin_function

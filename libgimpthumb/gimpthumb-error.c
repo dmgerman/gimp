@@ -22,6 +22,10 @@ file|"gimpthumb-error.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpthumb-error  * @title: GimpThumb-error  * @short_description: Error codes used by libgimpthumb  *  * Error codes used by libgimpthumb  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_thumb_error_quark:  *  * This function is never called directly. Use GIMP_THUMB_ERROR() instead.  *  * Return value: the #GQuark that defines the GimpThumb error domain.  **/
 end_comment
 

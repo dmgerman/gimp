@@ -33,6 +33,10 @@ directive|include
 file|"gimpcellrenderertoggle.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcellrenderertoggle  * @title: GimpCellRendererToggle  * @short_description: A #GtkCellRendererToggle that displays icons instead  *                     of a checkbox.  *  * A #GtkCellRendererToggle that displays icons instead of a checkbox.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_ICON_SIZE
 define|#
@@ -43,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b0c320103
+DECL|enum|__anon2ad3de5f0103
 block|{
 DECL|enumerator|CLICKED
 name|CLICKED
@@ -56,7 +60,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon276b0c320203
+DECL|enum|__anon2ad3de5f0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1387,58 +1391,57 @@ operator|&
 name|draw_rect
 argument_list|)
 condition|)
-name|gdk_draw_pixbuf
+block|{
+name|cairo_t
+modifier|*
+name|cr
+init|=
+name|gdk_cairo_create
 argument_list|(
 name|window
+argument_list|)
+decl_stmt|;
+name|gdk_cairo_rectangle
+argument_list|(
+name|cr
 argument_list|,
-name|style
-operator|->
-name|black_gc
+operator|&
+name|draw_rect
+argument_list|)
+expr_stmt|;
+name|cairo_clip
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|gdk_cairo_set_source_pixbuf
+argument_list|(
+name|cr
 argument_list|,
 name|toggle
 operator|->
 name|pixbuf
 argument_list|,
-comment|/* pixbuf 0, 0 is at toggle_rect.x, toggle_rect.y */
-name|draw_rect
-operator|.
-name|x
-operator|-
 name|toggle_rect
 operator|.
 name|x
 argument_list|,
-name|draw_rect
-operator|.
-name|y
-operator|-
 name|toggle_rect
 operator|.
 name|y
-argument_list|,
-name|draw_rect
-operator|.
-name|x
-argument_list|,
-name|draw_rect
-operator|.
-name|y
-argument_list|,
-name|draw_rect
-operator|.
-name|width
-argument_list|,
-name|draw_rect
-operator|.
-name|height
-argument_list|,
-name|GDK_RGB_DITHER_NORMAL
-argument_list|,
-literal|0
-argument_list|,
-literal|0
 argument_list|)
 expr_stmt|;
+name|cairo_paint
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_destroy
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 block|}
 end_function
@@ -1632,7 +1635,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cell_renderer_toggle_clicked:  * @cell: a #GimpCellRendererToggle  * @path:  * @state:  *  * Emits the "clicked" signal from a #GimpCellRendererToggle.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_cell_renderer_toggle_clicked:  * @cell:  a #GimpCellRendererToggle  * @path:  the path to the clicked row  * @state: the modifier state  *  * Emits the "clicked" signal from a #GimpCellRendererToggle.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

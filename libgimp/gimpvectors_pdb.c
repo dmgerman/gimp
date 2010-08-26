@@ -25,8 +25,30 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_VECTORS_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpvectors_pdb.h"
+end_include
+
 begin_comment
-comment|/**  * gimp_vectors_is_valid:  * @vectors_ID: The vectors object to check.  *  * Returns TRUE if the vectors object is valid.  *  * This procedure checks if the given vectors ID is valid and refers to  * an existing vectors object.  *  * Returns: Whether the vectors ID is valid.  *  * Since: GIMP 2.4  */
+comment|/**  * SECTION: gimpvectors  * @title: gimpvectors  * @short_description: Functions for querying and manipulating vectors.  *  * Functions for querying and manipulating vectors.  **/
+end_comment
+
+begin_comment
+comment|/**  * gimp_vectors_is_valid:  * @vectors_ID: The vectors object to check.  *  * Deprecated: Use gimp_item_is_valid() instead.  *  * Returns: Whether the vectors ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -357,7 +379,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_image:  * @vectors_ID: The vectors object.  *  * Returns the vectors objects image.  *  * Returns the vectors objects image.  *  * Returns: The vectors image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_image:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_image() instead.  *  * Returns: The vectors image.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -436,7 +458,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_name:  * @vectors_ID: The vectors object.  *  * Gets the name of the vectors object.  *  * Gets the name of the vectors object.  *  * Returns: The name of the vectors object.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_name:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_name() instead.  *  * Returns: The name of the vectors object.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -519,7 +541,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_name:  * @vectors_ID: The vectors object.  * @name: the new name of the path.  *  * Sets the name of the vectors object.  *  * Sets the name of the vectors object.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_name:  * @vectors_ID: The vectors object.  * @name: the new name of the path.  *  * Deprecated: Use gimp_item_set_name() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -595,7 +617,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_visible:  * @vectors_ID: The vectors object.  *  * Gets the visibility of the vectors object.  *  * Gets the visibility of the vectors object.  *  * Returns: TRUE if the path is visible, FALSE otherwise.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_visible:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_visible() instead.  *  * Returns: TRUE if the path is visible, FALSE otherwise.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -673,7 +695,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_visible:  * @vectors_ID: The vectors object.  * @visible: Whether the path is visible.  *  * Sets the visibility of the vectors object.  *  * Sets the visibility of the vectors object.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_visible:  * @vectors_ID: The vectors object.  * @visible: Whether the path is visible.  *  * Deprecated: Use gimp_item_set_visible() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -747,7 +769,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_linked:  * @vectors_ID: The vectors object.  *  * Gets the linked state of the vectors object.  *  * Gets the linked state of the vectors object.  *  * Returns: TRUE if the path is linked, FALSE otherwise.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_linked:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_linked() instead.  *  * Returns: TRUE if the path is linked, FALSE otherwise.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -825,7 +847,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_linked:  * @vectors_ID: The vectors object.  * @linked: Whether the path is linked.  *  * Sets the linked state of the vectors object.  *  * Sets the linked state of the vectors object.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_linked:  * @vectors_ID: The vectors object.  * @linked: Whether the path is linked.  *  * Deprecated: Use gimp_item_set_linked() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -899,159 +921,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_get_lock_content:  * @vectors_ID: The vectors object.  *  * Gets the 'lock content' state of the vectors object.  *  * Gets the 'lock content' state of the vectors object.  *  * Returns: Whether the path's strokes are locked.  *  * Since: GIMP 2.8  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_vectors_get_lock_content (gint32 vectors_ID)
-name|gimp_vectors_get_lock_content
-parameter_list|(
-name|gint32
-name|vectors_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|lock_content
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-vectors-get-lock-content"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_VECTORS
-argument_list|,
-name|vectors_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|lock_content
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|lock_content
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_vectors_set_lock_content:  * @vectors_ID: The vectors object.  * @lock_content: Whether the path's strokes are locked.  *  * Sets the 'lock content' state of the vectors object.  *  * Sets the 'lock content' state of the vectors object.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_vectors_set_lock_content (gint32 vectors_ID,gboolean lock_content)
-name|gimp_vectors_set_lock_content
-parameter_list|(
-name|gint32
-name|vectors_ID
-parameter_list|,
-name|gboolean
-name|lock_content
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-vectors-set-lock-content"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_VECTORS
-argument_list|,
-name|vectors_ID
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|lock_content
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_vectors_get_tattoo:  * @vectors_ID: The vectors object.  *  * Get the tattoo of the vectors object.  *  * Get the tattoo state of the vectors object.  *  * Returns: The vectors tattoo.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_get_tattoo:  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_item_get_tattoo() instead.  *  * Returns: The vectors tattoo.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -1129,7 +999,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_set_tattoo:  * @vectors_ID: The vectors object.  * @tattoo: the new tattoo.  *  * Set the tattoo of the vectors object.  *  * Set the tattoo of the vectors object.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_set_tattoo:  * @vectors_ID: The vectors object.  * @tattoo: the new tattoo.  *  * Deprecated: Use gimp_item_set_tattoo() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -3656,7 +3526,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a %NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: A string whose contents are a complete SVG document.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_vectors_export_to_string:  * @image_ID: The image.  * @vectors_ID: The vectors object to save, or 0 for all in the image.  *  * Save a path as an SVG string.  *  * This procedure works like gimp_vectors_export_to_file() but creates  * a string rather than a file. The contents are a NUL-terminated  * string that holds a complete XML document. If you pass 0 as the  * 'vectors' argument, then all paths in the image will be exported.  *  * Returns: A string whose contents are a complete SVG document.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function

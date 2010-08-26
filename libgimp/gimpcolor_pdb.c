@@ -38,6 +38,10 @@ file|"gimpcolor_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpcolor  * @title: gimpcolor  * @short_description: Functions for manipulating color.  *  * Functions for manipulating color, including curves and histograms.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_brightness_contrast:  * @drawable_ID: The drawable.  * @brightness: Brightness adjustment.  * @contrast: Contrast adjustment.  *  * Modify brightness/contrast in the specified drawable.  *  * This procedures allows the brightness and contrast of the specified  * drawable to be modified. Both 'brightness' and 'contrast' parameters  * are defined between -127 and 127.  *  * Returns: TRUE on success.  */
 end_comment
 
@@ -228,7 +232,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_levels_auto:  * @drawable_ID: The drawable.  *  * This procedure is deprecated! Use gimp_levels_stretch() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_levels_auto:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_levels_stretch() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

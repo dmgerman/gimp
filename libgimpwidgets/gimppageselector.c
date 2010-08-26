@@ -63,9 +63,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppageselector  * @title: GimpPageSelector  * @short_description: A widget to select pages from multi-page things.  *  * Use this for example for specifying what pages to import from  * a PDF or PS document.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon28e755fc0103
+DECL|enum|__anon2af0a1370103
 block|{
 DECL|enumerator|SELECTION_CHANGED
 name|SELECTION_CHANGED
@@ -81,7 +85,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e755fc0203
+DECL|enum|__anon2af0a1370203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -97,7 +101,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e755fc0303
+DECL|enum|__anon2af0a1370303
 block|{
 DECL|enumerator|COLUMN_PAGE_NO
 name|COLUMN_PAGE_NO
@@ -117,7 +121,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e755fc0408
+DECL|struct|__anon2af0a1370408
 block|{
 DECL|member|n_pages
 name|gint
@@ -2238,7 +2242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_set_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to set the thumbnail for.  * @thumbnail: The thumbnail pixbuf.  *  * Sets the thumbnail for given %page_no. A default "page" icon will  * be used if no page thumbnail is set.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_page_selector_set_page_thumbnail:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to set the thumbnail for.  * @thumbnail: The thumbnail pixbuf.  *  * Sets the thumbnail for given @page_no. A default "page" icon will  * be used if no page thumbnail is set.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2653,7 +2657,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_set_page_label:  * @selector: Pointer to a #GimpPageSelector.  * @page_no: The number of the page to set the label for.  * @label: The label.  *  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_page_selector_set_page_label:  * @selector: Pointer to a #GimpPageSelector.  * @page_no:  The number of the page to set the label for.  * @label:    The label.  *  * Sets the label of the specified page.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -3529,7 +3533,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_select_range:  * @selector: Pointer to a #GimpPageSelector.  * @range: A string representing the set of selected pages.  *  * Selectes the pages described by %range. The range string is a  * user-editable list of pages and ranges, e.g. "1,3,5-7,9-12,14".  * Note that the page numbering in the range string starts with 1,  * not 0.  *  * Invalid pages and ranges will be silently ignored, duplicate and  * overlapping pages and ranges will be merged.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_page_selector_select_range:  * @selector: Pointer to a #GimpPageSelector.  * @range: A string representing the set of selected pages.  *  * Selectes the pages described by @range. The range string is a  * user-editable list of pages and ranges, e.g. "1,3,5-7,9-12,14".  * Note that the page numbering in the range string starts with 1,  * not 0.  *  * Invalid pages and ranges will be silently ignored, duplicate and  * overlapping pages and ranges will be merged.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -3901,7 +3905,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_page_selector_get_selected_range:  * @selector: Pointer to a #GimpPageSelector.  *  * Returns: A newly allocated string representing the set of selected  *          pages. See gimp_page_selector_set_selected_range() for the  *          format of the string.  *  * Since: GIMP 2.4  **/
+comment|/**  * gimp_page_selector_get_selected_range:  * @selector: Pointer to a #GimpPageSelector.  *  * Returns: A newly allocated string representing the set of selected  *          pages. See gimp_page_selector_select_range() for the  *          format of the string.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

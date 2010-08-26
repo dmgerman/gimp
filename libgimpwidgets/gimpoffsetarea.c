@@ -33,6 +33,10 @@ directive|include
 file|"gimpoffsetarea.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpoffsetarea  * @title: GimpOffsetArea  * @short_description: Widget to control image offsets.  *  * Widget to control image offsets.  **/
+end_comment
+
 begin_define
 DECL|macro|DRAWING_AREA_SIZE
 define|#
@@ -43,7 +47,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c506e60103
+DECL|enum|__anon299fcd450103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED

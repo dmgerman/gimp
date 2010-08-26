@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpdisplay  * @title: gimpdisplay  * @short_description: Functions to create, delete and flush displays (views) on an image.  *  * Functions to create, delete and flush displays (views) on an image.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_display_is_valid:  * @display_ID: The display to check.  *  * Returns TRUE if the display is valid.  *  * This procedure checks if the given display ID is valid and refers to  * an existing display.  *  * Returns: Whether the display ID is valid.  *  * Since: GIMP 2.4  */
 end_comment
 

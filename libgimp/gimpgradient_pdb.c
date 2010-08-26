@@ -26,6 +26,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpgradient  * @title: gimpgradient  * @short_description: Functions operating on a single gradient.  *  * Functions operating on a single gradient.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_gradient_new:  * @name: The requested name of the new gradient.  *  * Creates a new gradient  *  * This procedure creates a new, uninitialized gradient  *  * Returns: The actual new gradient name.  *  * Since: GIMP 2.2  */
 end_comment
 

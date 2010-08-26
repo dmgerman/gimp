@@ -45,9 +45,13 @@ directive|include
 file|"gimpaspectpreview.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpaspectpreview  * @title: GimpAspectPreview  * @short_description: A widget providing a preview with fixed aspect ratio.  *  * A widget providing a preview with fixed aspect ratio.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2a203a230103
+DECL|enum|__anon2b2a8cca0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -61,7 +65,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a203a230208
+DECL|struct|__anon2b2a8cca0208
 block|{
 DECL|member|update
 name|gboolean
@@ -1018,7 +1022,7 @@ name|image_id
 decl_stmt|;
 name|image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
@@ -1488,7 +1492,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_aspect_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   unused  *  * Creates a new #GimpAspectPreview widget for @drawable. See also  * gimp_drawable_preview_new().  *  * In GIMP 2.2 the @toggle parameter was provided to conviently access  * the state of the "Preview" check-button. This is not any longer  * necessary as the preview itself now stores this state, as well as  * the scroll offset.  *  * Since: GIMP 2.2  **/
+comment|/**  * gimp_aspect_preview_new:  * @drawable: a #GimpDrawable  * @toggle:   unused  *  * Creates a new #GimpAspectPreview widget for @drawable. See also  * gimp_drawable_preview_new().  *  * In GIMP 2.2 the @toggle parameter was provided to conviently access  * the state of the "Preview" check-button. This is not any longer  * necessary as the preview itself now stores this state, as well as  * the scroll offset.  *  * Since: GIMP 2.2  *  * Returns: a new #GimpAspectPreview.  **/
 end_comment
 
 begin_function

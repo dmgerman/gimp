@@ -51,9 +51,13 @@ directive|include
 file|"gimpcolorhexentry.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorhexentry  * @title: GimpColorHexEntry  * @short_description: Widget for entering a color's hex triplet.  *  * Widget for entering a color's hex triplet.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon296f814b0103
+DECL|enum|__anon2c26cb190103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -66,7 +70,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon296f814b0203
+DECL|enum|__anon2c26cb190203
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME

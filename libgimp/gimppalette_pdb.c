@@ -26,6 +26,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppalette  * @title: gimppalette  * @short_description: Functions operating on a single palette.  *  * Functions operating on a single palette.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_palette_new:  * @name: The requested name of the new palette.  *  * Creates a new palette  *  * This procedure creates a new, uninitialized palette  *  * Returns: The actual new palette name.  *  * Since: GIMP 2.2  */
 end_comment
 

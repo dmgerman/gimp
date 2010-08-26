@@ -46,6 +46,10 @@ file|"libgimpwidgets/gimpwidgets-private.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpui  * @title: gimpui  * @short_description: Common user interface functions. This header includes  *                     all other GIMP User Interface Library headers.  * @see_also: gtk_init(), gdk_set_use_xshm(), gdk_rgb_set_min_colors(),  *            gdk_rgb_set_install(), gdk_rgb_get_visual(),  *            gdk_rgb_get_cmap(), gtk_widget_set_default_visual(),  *            gtk_widget_set_default_colormap(), gtk_preview_set_gamma().  *  * Common user interface functions. This header includes all other  * GIMP User Interface Library headers.  **/
+end_comment
+
+begin_comment
 comment|/*  local function prototypes  */
 end_comment
 
@@ -331,7 +335,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_ui_get_display_window:  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Return value: A reference to a #GdkWindow or %NULL. You should  *               unref the window using g_object_unref() as soon as  *               you don't need it any longer.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_ui_get_display_window:  * @gdisp_ID: a #GimpDisplay ID.  *  * Returns the #GdkWindow of a display window. The purpose is to allow  * to make plug-in dialogs transient to the image display as explained  * with gdk_window_set_transient_for().  *  * You shouldn't have to call this function directly. Use  * gimp_window_set_transient_for_display() instead.  *  * Return value: A reference to a #GdkWindow or %NULL. You should  *               unref the window using g_object_unref() as soon as  *               you don't need it any longer.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

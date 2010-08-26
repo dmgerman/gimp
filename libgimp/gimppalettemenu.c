@@ -45,10 +45,14 @@ directive|include
 file|"gimppalettemenu.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppalettemenu  * @title: gimppalettemenu  * @short_description: A widget for selecting palettes.  *  * A widget for selecting palettes.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a38a1e0108
+DECL|struct|__anon2ae638ee0108
 block|{
 DECL|member|callback
 name|GimpRunPaletteCallback
@@ -232,7 +236,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_select_widget_set;  * @widget:       A palette select widget.  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_palette_select_widget_new().  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_select_widget_set:  * @widget:       A palette select widget.  * @palette_name: Palette name to set; %NULL means no change.  *  * Sets the current palette for the palette select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_palette_select_widget_new().  *  * Since: GIMP 2.2  */
 end_comment
 
 begin_function

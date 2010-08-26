@@ -45,6 +45,10 @@ directive|include
 file|"gimpcolorscale.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorscale  * @title: GimpColorScale  * @short_description: Fancy colored sliders.  *  * Fancy colored sliders.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|void

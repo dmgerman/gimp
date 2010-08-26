@@ -69,6 +69,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorscales  * @title: GimpColorScales  * @short_description: A #GimpColorSelector implementation.  *  * The #GimpColorScales widget is an implementation of a  * #GimpColorSelector. It shows a group of #GimpColorScale widgets  * that allow to adjust the HSV and RGB color channels.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_COLOR_SCALES_CLASS (klass)
 define|#

@@ -557,7 +557,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->
@@ -3735,7 +3735,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->
@@ -5015,7 +5015,7 @@ name|name
 decl_stmt|;
 name|name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|self
 operator|->

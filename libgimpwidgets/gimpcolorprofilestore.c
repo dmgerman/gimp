@@ -57,6 +57,10 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorprofilestore  * @title: GimpColorProfileStore  * @short_description: A #GtkListStore subclass that keep color profiles.  *  * A #GtkListStore subclass that keep color profiles.  **/
+end_comment
+
 begin_define
 DECL|macro|HISTORY_SIZE
 define|#
@@ -67,7 +71,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a3eca10103
+DECL|enum|__anon2b435efc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

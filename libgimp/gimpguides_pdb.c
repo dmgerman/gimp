@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpguides  * @title: gimpguides  * @short_description: Functions for manipulating guides.  *  * Functions for manipulating guides.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_image_add_hguide:  * @image_ID: The image.  * @yposition: The guide's y-offset from top of image.  *  * Add a horizontal guide to an image.  *  * This procedure adds a horizontal guide to an image. It takes the  * input image and the y-position of the new guide as parameters. It  * returns the guide ID of the new guide.  *  * Returns: The new guide.  */
 end_comment
 

@@ -7680,9 +7680,9 @@ name|procedure
 argument_list|,
 literal|"gimp-text-layer-get-hinting"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-text-layer-get-hint-style' instead."
+literal|"Deprecated: Use 'gimp-text-layer-get-hint-style' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-text-layer-get-hint-style' instead."
+literal|"Deprecated: Use 'gimp-text-layer-get-hint-style' instead."
 argument_list|,
 literal|""
 argument_list|,

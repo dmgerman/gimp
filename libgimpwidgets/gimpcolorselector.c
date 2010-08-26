@@ -45,9 +45,13 @@ directive|include
 file|"gimpwidgetsmarshal.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcolorselector  * @title: GimpColorSelector  * @short_description: Pluggable GIMP color selector modules.  * @see_also: #GModule, #GTypeModule, #GimpModule  *  * Functions and definitions for creating pluggable GIMP color  * selector modules.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon298a0c5b0103
+DECL|enum|__anon276084d40103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -860,7 +864,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_color_selector_set_config:  * @selector:  * @config:  *  * Sets the color management configuration to use with this color selector.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_color_selector_set_config:  * @selector: a #GimpColorSelector widget.  * @config:   a #GimpColorConfig object.  *  * Sets the color management configuration to use with this color selector.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

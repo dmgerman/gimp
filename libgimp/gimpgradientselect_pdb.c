@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpgradientselect  * @title: gimpgradientselect  * @short_description: Functions providing a gradient selection dialog.  *  * Functions providing a gradient selection dialog.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_gradients_popup:  * @gradient_callback: The callback PDB proc to call when gradient selection is made.  * @popup_title: Title of the gradient selection dialog.  * @initial_gradient: The name of the gradient to set as the first selected.  * @sample_size: Size of the sample to return when the gradient is changed.  *  * Invokes the Gimp gradients selection.  *  * This procedure opens the gradient selection dialog.  *  * Returns: TRUE on success.  */
 end_comment
 

@@ -44,6 +44,10 @@ file|"gimpbrushes_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpbrushes  * @title: gimpbrushes  * @short_description: Functions for manipulating brushes.  *  * Functions related to getting and setting brushes.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_brushes_refresh:  *  * Refresh current brushes. This function always succeeds.  *  * This procedure retrieves all brushes currently in the user's brush  * path and updates the brush dialogs accordingly.  *  * Returns: TRUE on success.  */
 end_comment
 
@@ -250,7 +254,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_brush:  * @width: The brush width.  * @height: The brush height.  * @spacing: The brush spacing.  *  * This procedure is deprecated! Use gimp_context_get_brush() instead.  *  * Returns: The brush name.  */
+comment|/**  * gimp_brushes_get_brush:  * @width: The brush width.  * @height: The brush height.  * @spacing: The brush spacing.  *  * Deprecated: Use gimp_context_get_brush() instead.  *  * Returns: The brush name.  */
 end_comment
 
 begin_function
@@ -376,7 +380,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_spacing:  *  * This procedure is deprecated! Use gimp_brush_get_spacing() instead.  *  * Returns: The brush spacing.  */
+comment|/**  * gimp_brushes_get_spacing:  *  * Deprecated: Use gimp_brush_get_spacing() instead.  *  * Returns: The brush spacing.  */
 end_comment
 
 begin_function
@@ -449,7 +453,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_set_spacing:  * @spacing: The brush spacing.  *  * This procedure is deprecated! Use gimp_brush_set_spacing() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_set_spacing:  * @spacing: The brush spacing.  *  * Deprecated: Use gimp_brush_set_spacing() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -516,7 +520,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_get_brush_data:  * @name: The brush name (\"\" means current active brush).  * @opacity: The brush opacity.  * @spacing: The brush spacing.  * @paint_mode: The paint mode.  * @width: The brush width.  * @height: The brush height.  * @length: Length of brush mask data.  * @mask_data: The brush mask data.  *  * This procedure is deprecated! Use gimp_brush_get_pixels() instead.  *  * Returns: The brush name.  */
+comment|/**  * gimp_brushes_get_brush_data:  * @name: The brush name (\"\" means current active brush).  * @opacity: The brush opacity.  * @spacing: The brush spacing.  * @paint_mode: The paint mode.  * @width: The brush width.  * @height: The brush height.  * @length: Length of brush mask data.  * @mask_data: The brush mask data.  *  * Deprecated: Use gimp_brush_get_pixels() instead.  *  * Returns: The brush name.  */
 end_comment
 
 begin_function

@@ -15,6 +15,10 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppixelfetcher  * @title: gimppixelfetcher  * @short_description: Functions for operating on pixel regions.  *  * These functions provide neighbourhood-based algorithms which get  * dramatically slower on region boundaries, to the point where a  * special treatment for neighbourhoods which are completely inside a  * tile is called for. It hides the special treatment of tile borders,  * making plug-in code more readable and shorter.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpPixelFetcher
 struct|struct
@@ -120,7 +124,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_pixel_fetcher_new:  * @drawable: the #GimpDrawable the new region will be attached to.  * @shadow:   a #gboolean indicating whether the region is attached to  *            the shadow tiles or the real %drawable tiles.  *  * Initialize a pixel region from the drawable.  *  * Return value: a pointer to a #GimpPixelRgn structure (or NULL).  **/
+comment|/**  * gimp_pixel_fetcher_new:  * @drawable: the #GimpDrawable the new region will be attached to.  * @shadow:   a #gboolean indicating whether the region is attached to  *            the shadow tiles or the real @drawable tiles.  *  * Initialize a pixel region from the drawable.  *  * Return value: a pointer to a #GimpPixelRgn structure (or NULL).  **/
 end_comment
 
 begin_function

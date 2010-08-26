@@ -38,6 +38,10 @@ file|"gimpfloatingsel_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpfloatingsel  * @title: gimpfloatingsel  * @short_description: Functions for removing or attaching floating selections.  *  * Functions for removing or attaching floating selections.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_floating_sel_remove:  * @floating_sel_ID: The floating selection.  *  * Remove the specified floating selection from its associated  * drawable.  *  * This procedure removes the floating selection completely, without  * any side effects. The associated drawable is then set to active.  *  * Returns: TRUE on success.  */
 end_comment
 
@@ -313,7 +317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -387,7 +391,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * This procedure is deprecated!  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

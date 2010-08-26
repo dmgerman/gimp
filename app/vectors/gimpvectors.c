@@ -48,6 +48,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpchannel-select.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpcontainer.h"
 end_include
 
@@ -143,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c65f1fa0103
+DECL|enum|__anon290a1a6d0103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -441,6 +447,33 @@ name|GError
 modifier|*
 modifier|*
 name|error
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|void
+name|gimp_vectors_to_selection
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpChannelOps
+name|op
+parameter_list|,
+name|gboolean
+name|antialias
+parameter_list|,
+name|gboolean
+name|feather
+parameter_list|,
+name|gdouble
+name|feather_radius_x
+parameter_list|,
+name|gdouble
+name|feather_radius_y
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -903,6 +936,12 @@ name|gimp_vectors_stroke
 expr_stmt|;
 name|item_class
 operator|->
+name|to_selection
+operator|=
+name|gimp_vectors_to_selection
+expr_stmt|;
+name|item_class
+operator|->
 name|default_name
 operator|=
 name|_
@@ -914,8 +953,10 @@ name|item_class
 operator|->
 name|rename_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rename Path"
 argument_list|)
 expr_stmt|;
@@ -923,8 +964,10 @@ name|item_class
 operator|->
 name|translate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Move Path"
 argument_list|)
 expr_stmt|;
@@ -932,8 +975,10 @@ name|item_class
 operator|->
 name|scale_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Scale Path"
 argument_list|)
 expr_stmt|;
@@ -941,8 +986,10 @@ name|item_class
 operator|->
 name|resize_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Resize Path"
 argument_list|)
 expr_stmt|;
@@ -950,8 +997,10 @@ name|item_class
 operator|->
 name|flip_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Flip Path"
 argument_list|)
 expr_stmt|;
@@ -959,8 +1008,10 @@ name|item_class
 operator|->
 name|rotate_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Rotate Path"
 argument_list|)
 expr_stmt|;
@@ -968,8 +1019,10 @@ name|item_class
 operator|->
 name|transform_desc
 operator|=
-name|_
+name|C_
 argument_list|(
+literal|"undo-type"
+argument_list|,
 literal|"Transform Path"
 argument_list|)
 expr_stmt|;
@@ -977,9 +1030,95 @@ name|item_class
 operator|->
 name|stroke_desc
 operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Stroke Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|to_selection_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Path to Selection"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|reorder_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Reorder Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_to_top_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Raise Path to Top"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Path"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_to_bottom_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Lower Path to Bottom"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|raise_failed
+operator|=
 name|_
 argument_list|(
-literal|"Stroke Path"
+literal|"Path cannot be raised higher."
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|lower_failed
+operator|=
+name|_
+argument_list|(
+literal|"Path cannot be lowered more."
 argument_list|)
 expr_stmt|;
 name|klass
@@ -2436,6 +2575,82 @@ block|}
 return|return
 name|retval
 return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_vectors_to_selection (GimpItem * item,GimpChannelOps op,gboolean antialias,gboolean feather,gdouble feather_radius_x,gdouble feather_radius_y)
+name|gimp_vectors_to_selection
+parameter_list|(
+name|GimpItem
+modifier|*
+name|item
+parameter_list|,
+name|GimpChannelOps
+name|op
+parameter_list|,
+name|gboolean
+name|antialias
+parameter_list|,
+name|gboolean
+name|feather
+parameter_list|,
+name|gdouble
+name|feather_radius_x
+parameter_list|,
+name|gdouble
+name|feather_radius_y
+parameter_list|)
+block|{
+name|GimpVectors
+modifier|*
+name|vectors
+init|=
+name|GIMP_VECTORS
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+init|=
+name|gimp_item_get_image
+argument_list|(
+name|item
+argument_list|)
+decl_stmt|;
+name|gimp_channel_select_vectors
+argument_list|(
+name|gimp_image_get_mask
+argument_list|(
+name|image
+argument_list|)
+argument_list|,
+name|GIMP_ITEM_GET_CLASS
+argument_list|(
+name|item
+argument_list|)
+operator|->
+name|to_selection_desc
+argument_list|,
+name|vectors
+argument_list|,
+name|op
+argument_list|,
+name|antialias
+argument_list|,
+name|feather
+argument_list|,
+name|feather_radius_x
+argument_list|,
+name|feather_radius_x
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 

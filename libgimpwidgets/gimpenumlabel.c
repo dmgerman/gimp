@@ -33,6 +33,10 @@ directive|include
 file|"gimpenumlabel.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpenumlabel  * @title: GimpEnumLabel  * @short_description: A #GtkLabel subclass that displays an enum value.  *  * A #GtkLabel subclass that displays an enum value.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|void

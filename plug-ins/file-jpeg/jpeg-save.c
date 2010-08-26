@@ -276,7 +276,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f665060108
+DECL|struct|__anon29d3eda30108
 block|{
 DECL|member|cinfo
 name|struct
@@ -352,7 +352,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f665060208
+DECL|struct|__anon29d3eda30208
 block|{
 DECL|member|run
 name|gboolean
@@ -3223,7 +3223,7 @@ argument_list|(
 name|preview_image_ID
 argument_list|)
 operator|&&
-name|gimp_drawable_is_valid
+name|gimp_item_is_valid
 argument_list|(
 name|preview_layer_ID
 argument_list|)
@@ -5923,6 +5923,11 @@ name|tmpvals
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|g_free
+argument_list|(
+name|def_str
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -6528,7 +6533,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f665060308
+DECL|struct|__anon29d3eda30308
 block|{
 DECL|member|pub
 name|struct

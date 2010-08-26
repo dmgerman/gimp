@@ -38,6 +38,10 @@ file|"gimptextlayer_pdb.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_description: Functions for querying and manipulating text layers.  *  * Functions for querying and manipulating text layers.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_add_layer().  *  * Returns: The new text layer.  *  * Since: GIMP 2.6  */
 end_comment
 
@@ -2346,7 +2350,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_get_hinting:  * @layer_ID: The text layer.  * @autohint: A flag which is true if the text layer is forced to use the autohinter from FreeType.  *  * This procedure is deprecated! Use gimp_text_layer_get_hint_style()  * instead.  *  * Returns: A flag which is true if hinting is used on the font.  */
+comment|/**  * gimp_text_layer_get_hinting:  * @layer_ID: The text layer.  * @autohint: A flag which is true if the text layer is forced to use the autohinter from FreeType.  *  * Deprecated: Use gimp_text_layer_get_hint_style() instead.  *  * Returns: A flag which is true if hinting is used on the font.  */
 end_comment
 
 begin_function
@@ -2442,7 +2446,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_text_layer_set_hinting:  * @layer_ID: The text layer.  * @hinting: Enable/disable the use of hinting on the text.  * @autohint: Force the use of the autohinter provided through FreeType.  *  * This procedure is deprecated! Use gimp_text_layer_set_hint_style()  * instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_text_layer_set_hinting:  * @layer_ID: The text layer.  * @hinting: Enable/disable the use of hinting on the text.  * @autohint: Force the use of the autohinter provided through FreeType.  *  * Deprecated: Use gimp_text_layer_set_hint_style() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function

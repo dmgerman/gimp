@@ -60,7 +60,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e5af40108
+DECL|struct|__anon2c2990f80108
 block|{
 DECL|member|posx
 name|gint
@@ -111,7 +111,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290e5af40208
+DECL|struct|__anon2c2990f80208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -4780,7 +4780,7 @@ argument_list|)
 expr_stmt|;
 name|image_ID
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->

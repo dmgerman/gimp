@@ -51,6 +51,10 @@ directive|include
 file|"gimppixmap.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppixmap  * @title: GimpPixmap  * @short_description: Widget which creates a #GtkPixmap from XPM data.  * @see_also: gimp_pixmap_button_new(), #GtkPixmap  *  * Widget which creates a #GtkPixmap from XPM data.  *  * Use this widget instead of #GtkPixmap if you don't want to worry  * about the parent container's "realized" state.  *  * Note that the drawback of the easy interface is that the actual  * #GdkPixmap and it's mask have to be constructed every time you call  * gimp_pixmap_new() and cannot be cached in memory without doing bad  * hacks.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|void

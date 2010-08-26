@@ -46,6 +46,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimptile  * @title: gimptile  * @short_description: Functions for working with tiles.  *  * Functions for working with tiles.  **/
+end_comment
+
+begin_comment
 comment|/*  This is the percentage of the maximum cache size that  *  should be cleared from the cache when an eviction is  *  necessary.  */
 end_comment
 

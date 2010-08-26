@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3c66d0108
+DECL|struct|__anon2b0df3ce0108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d3c66d0208
+DECL|struct|__anon2b0df3ce0208
 block|{
 DECL|member|y
 name|gint32
@@ -2793,7 +2793,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|l_layer_id
 argument_list|)
@@ -13734,7 +13734,7 @@ name|PREVIEW_SIZE_Y
 argument_list|,
 name|gimp_image_base_type
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|src_drawable
 operator|->
@@ -14055,7 +14055,7 @@ name|stack_position
 decl_stmt|;
 name|image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|src_drawable
 operator|->
@@ -14079,7 +14079,7 @@ argument_list|)
 expr_stmt|;
 name|l_visible
 operator|=
-name|gimp_drawable_get_visible
+name|gimp_item_get_visible
 argument_list|(
 name|src_drawable
 operator|->
@@ -14088,7 +14088,7 @@ argument_list|)
 expr_stmt|;
 name|l_name2
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|src_drawable
 operator|->
@@ -14201,7 +14201,7 @@ name|stack_position
 argument_list|)
 expr_stmt|;
 comment|/* copy visiblity state */
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|l_new_layer_id
 argument_list|,
@@ -16334,7 +16334,7 @@ name|smoothing
 expr_stmt|;
 name|l_image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|original_drawable
 operator|->
@@ -16404,14 +16404,14 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|l_tmp_layer_id
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_name
+name|gimp_item_set_name
 argument_list|(
 name|l_tmp_layer_id
 argument_list|,

@@ -1724,7 +1724,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_scale_entry_set_sensitive:  * @adjustment: a #GtkAdjustment returned by gimp_scale_entry_new()  * @sensitive:  a boolean value with the same semantics as the @sensitive  *              parameter of gtk_widget_set_sensitive()  *  * Sets the sensitivity of the scale_entry's #GtkLabel, #GtkHScale and  * #GtkSpinbutton.  **/
+comment|/**  * gimp_scale_entry_set_sensitive:  * @adjustment: a #GtkAdjustment returned by gimp_scale_entry_new()  * @sensitive:  a boolean value with the same semantics as the @sensitive  *              parameter of gtk_widget_set_sensitive()  *  * Sets the sensitivity of the scale_entry's #GtkLabel, #GtkHScale and  * #GtkSpinButton.  **/
 end_comment
 
 begin_function

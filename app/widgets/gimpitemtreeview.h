@@ -79,41 +79,6 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|typedef|GimpReorderItemFunc
-typedef|typedef
-name|void
-function_decl|(
-modifier|*
-name|GimpReorderItemFunc
-function_decl|)
-parameter_list|(
-name|GimpImage
-modifier|*
-name|image
-parameter_list|,
-name|GimpItem
-modifier|*
-name|item
-parameter_list|,
-name|GimpItem
-modifier|*
-name|new_parent
-parameter_list|,
-name|gint
-name|new_index
-parameter_list|,
-name|gboolean
-name|push_undo
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|undo_desc
-parameter_list|)
-function_decl|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpAddItemFunc
 typedef|typedef
 name|void
@@ -335,10 +300,6 @@ DECL|member|set_active_item
 name|GimpSetItemFunc
 name|set_active_item
 decl_stmt|;
-DECL|member|reorder_item
-name|GimpReorderItemFunc
-name|reorder_item
-decl_stmt|;
 DECL|member|add_item
 name|GimpAddItemFunc
 name|add_item
@@ -417,13 +378,6 @@ specifier|const
 name|gchar
 modifier|*
 name|delete_action
-decl_stmt|;
-comment|/*  undo descriptions  */
-DECL|member|reorder_desc
-specifier|const
-name|gchar
-modifier|*
-name|reorder_desc
 decl_stmt|;
 comment|/*  lock content button appearance  */
 DECL|member|lock_content_stock_id

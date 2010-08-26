@@ -124,6 +124,10 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpthumbnail  * @title: GimpThumbnail  * @short_description: The GimpThumbnail object  *  * The GimpThumbnail object  **/
+end_comment
+
+begin_comment
 comment|/*  #define GIMP_THUMB_DEBUG  */
 end_comment
 
@@ -256,7 +260,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2951ff9e0103
+DECL|enum|__anon27e0fde80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -600,7 +604,7 @@ name|GIMP_PARAM_READWRITE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/**    * GimpThumbnail::image-mimetype:    *    * Since: GIMP 2.2    **/
+comment|/**    * GimpThumbnail::image-mimetype:    *    * Image mimetype    *    * Since: GIMP 2.2    **/
 name|g_object_class_install_property
 argument_list|(
 name|object_class

@@ -39,7 +39,7 @@ name|G_BEGIN_DECLS
 end_macro
 
 begin_comment
-comment|/*  increment the ABI version each time one of the following changes:  *  *  - the libgimpmodule implementation (if the change affects modules).  *  - one of the classes implemented by modules (currently GimpColorDisplay,  *    GimpColorSelector and GimpController).  */
+comment|/**  * GIMP_MODULE_ABI_VERSION:  *  * The version of the module system's ABI. Modules put this value into  * #GimpModuleInfo's @abi_version field so the code loading the modules  * can check if it was compiled against the same module ABI the modules  * are compiled against.  *  *  GIMP_MODULE_ABI_VERSION is incremented each time one of the  *  following changes:  *  *  - the libgimpmodule implementation (if the change affects modules).  *  *  - one of the classes implemented by modules (currently #GimpColorDisplay,  *    #GimpColorSelector and #GimpController).  **/
 end_comment
 
 begin_define
@@ -50,26 +50,26 @@ name|GIMP_MODULE_ABI_VERSION
 value|0x0004
 end_define
 
+begin_comment
+comment|/**  * GimpModuleState:  * @GIMP_MODULE_STATE_ERROR:       Missing gimp_module_register() function  *                                 or other error.  * @GIMP_MODULE_STATE_LOADED:      An instance of a type implemented by  *                                 this module is allocated.  * @GIMP_MODULE_STATE_LOAD_FAILED: gimp_module_register() returned %FALSE.  * @GIMP_MODULE_STATE_NOT_LOADED:  There are no instances allocated of  *                                 types implemented by this module.  *  * The possible states a #GimpModule can be in.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a54d0e80103
+DECL|enum|__anon2bfdc3bf0103
 block|{
 DECL|enumerator|GIMP_MODULE_STATE_ERROR
 name|GIMP_MODULE_STATE_ERROR
 block|,
-comment|/* missing gimp_module_register function                                   * or other error                                   */
 DECL|enumerator|GIMP_MODULE_STATE_LOADED
 name|GIMP_MODULE_STATE_LOADED
 block|,
-comment|/* an instance of a type implemented by                                   * this module is allocated                                   */
 DECL|enumerator|GIMP_MODULE_STATE_LOAD_FAILED
 name|GIMP_MODULE_STATE_LOAD_FAILED
 block|,
-comment|/* gimp_module_register returned FALSE                                   */
 DECL|enumerator|GIMP_MODULE_STATE_NOT_LOADED
 name|GIMP_MODULE_STATE_NOT_LOADED
-comment|/* there are no instances allocated of                                   * types implemented by this module                                   */
 DECL|typedef|GimpModuleState
 block|}
 name|GimpModuleState
@@ -97,7 +97,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a54d0e80203
+DECL|enum|__anon2bfdc3bf0203
 block|{
 DECL|enumerator|GIMP_MODULE_FAILED
 name|GIMP_MODULE_FAILED
@@ -107,6 +107,10 @@ block|}
 name|GimpModuleError
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpModuleInfo:  * @abi_version: The #GIMP_MODULE_ABI_VERSION the module was compiled against.  * @purpose:     The module's general purpose.  * @author:      The module's author.  * @version:     The module's version.  * @copyright:   The module's copyright.  * @date:        The module's release date.  *  * This structure contains information about a loadable module.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpModuleInfo
@@ -146,6 +150,10 @@ block|}
 struct|;
 end_struct
 
+begin_comment
+comment|/**  * GimpModuleQueryFunc:  * @module:  The #GimpModule responsible for this loadable module.  * @Returns: The #GimpModuleInfo struct describing the module.  *  * The signature of the query function a loadable GIMP module must  * implement.  In the module, the function must be called  * gimp_module_query().  *  * #GimpModule will copy the returned #GimpModuleInfo struct, so the  * module doesn't need to keep these values around (however in most  * cases the module will just return a pointer to a constant  * structure).  **/
+end_comment
+
 begin_typedef
 DECL|typedef|GimpModuleQueryFunc
 typedef|typedef
@@ -163,6 +171,10 @@ name|module
 parameter_list|)
 function_decl|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpModuleRegisterFunc:  * @module:  The #GimpModule responsible for this loadable module.  * @Returns: %TRUE on success, %FALSE otherwise.  *  * The signature of the register function a loadable GIMP module must  * implement.  In the module, the function must be called  * gimp_module_register().  *  * When this function is called, the module should register all the types  * it implements with the passed @module.  **/
+end_comment
 
 begin_typedef
 DECL|typedef|GimpModuleRegisterFunc
@@ -281,6 +293,10 @@ name|_GimpModuleClass
 name|GimpModuleClass
 typedef|;
 end_typedef
+
+begin_comment
+comment|/**  * GimpModule:  * @filename:  * @verbose:  * @state:  * @on_disk:  * @load_inhibit:  * @info:  * @last_module_error:  *  * #GimpModule is a generic mechanism to dynamically load modules into  * GIMP.  It is a #GTypeModule subclass, implementing module loading  * using #GModule.  #GimpModule does not know which functionality is  * implemented by the modules, it just provides a framework to get  * arbitrary #GType implementations loaded from disk.  **/
+end_comment
 
 begin_struct
 DECL|struct|_GimpModule

@@ -40,12 +40,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage.h"
 end_include
 
@@ -2803,19 +2797,12 @@ if|if
 condition|(
 name|vectors
 condition|)
-name|gimp_channel_select_vectors
+name|gimp_item_to_selection
 argument_list|(
-name|gimp_image_get_mask
+name|GIMP_ITEM
 argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Path to Selection"
-argument_list|)
-argument_list|,
 name|vectors
+argument_list|)
 argument_list|,
 name|op
 argument_list|,
@@ -2826,8 +2813,6 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -3046,9 +3031,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-list"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-get-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-get-vectors' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-get-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-get-vectors' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3155,9 +3140,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-get-current"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-get-active-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-get-active-vectors' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-get-active-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-get-active-vectors' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3250,9 +3235,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-set-current"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-set-active-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-set-active-vectors' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-set-active-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-set-active-vectors' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3345,9 +3330,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-delete"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-remove-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-remove-vectors' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-remove-vectors' instead."
+literal|"Deprecated: Use 'gimp-image-remove-vectors' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3440,9 +3425,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-get-points"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-points' instead."
+literal|"Deprecated: Use 'gimp-vectors-stroke-get-points' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-points' instead."
+literal|"Deprecated: Use 'gimp-vectors-stroke-get-points' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3617,17 +3602,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-set-points"
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors-stroke-new-from-points' instead."
+literal|"Deprecated: Use 'gimp-vectors-stroke-new-from-points' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors-stroke-new-from-points' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-vectors-stroke-new-from-points' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"vectors-stroke-new-from-points"
+literal|""
+argument_list|,
+literal|"gimp-vectors-stroke-new-from-points"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3772,9 +3757,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-stroke-current"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-edit-stroke-vectors' instead."
+literal|"Deprecated: Use 'gimp-edit-stroke-vectors' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-edit-stroke-vectors' instead."
+literal|"Deprecated: Use 'gimp-edit-stroke-vectors' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3843,9 +3828,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-get-point-at-dist"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-point-at-dist' instead."
+literal|"Deprecated: Use 'gimp-vectors-stroke-get-point-at-dist' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-stroke-get-point-at-dist' instead."
+literal|"Deprecated: Use 'gimp-vectors-stroke-get-point-at-dist' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4004,9 +3989,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-get-tattoo"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-get-tattoo' instead."
+literal|"Deprecated: Use 'gimp-vectors-get-tattoo' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-get-tattoo' instead."
+literal|"Deprecated: Use 'gimp-vectors-get-tattoo' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4121,9 +4106,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-set-tattoo"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-set-tattoo' instead."
+literal|"Deprecated: Use 'gimp-vectors-set-tattoo' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-set-tattoo' instead."
+literal|"Deprecated: Use 'gimp-vectors-set-tattoo' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4238,9 +4223,9 @@ name|procedure
 argument_list|,
 literal|"gimp-get-path-by-tattoo"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-get-vectors-by-tattoo' instead."
+literal|"Deprecated: Use 'gimp-image-get-vectors-by-tattoo' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-image-get-vectors-by-tattoo' instead."
+literal|"Deprecated: Use 'gimp-image-get-vectors-by-tattoo' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4355,9 +4340,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-get-locked"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-get-linked' instead."
+literal|"Deprecated: Use 'gimp-vectors-get-linked' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-get-linked' instead."
+literal|"Deprecated: Use 'gimp-vectors-get-linked' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4468,9 +4453,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-set-locked"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-set-linked' instead."
+literal|"Deprecated: Use 'gimp-vectors-set-linked' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-set-linked' instead."
+literal|"Deprecated: Use 'gimp-vectors-set-linked' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4581,9 +4566,9 @@ name|procedure
 argument_list|,
 literal|"gimp-path-to-selection"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-to-selection' instead."
+literal|"Deprecated: Use 'gimp-vectors-to-selection' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-vectors-to-selection' instead."
+literal|"Deprecated: Use 'gimp-vectors-to-selection' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -4778,17 +4763,17 @@ name|procedure
 argument_list|,
 literal|"gimp-path-import"
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors-import-from-file' instead."
+literal|"Deprecated: Use 'gimp-vectors-import-from-file' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'vectors-import-from-file' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-vectors-import-from-file' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"vectors-import-from-file"
+literal|""
+argument_list|,
+literal|"gimp-vectors-import-from-file"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

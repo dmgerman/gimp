@@ -351,8 +351,7 @@ name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint
@@ -3242,15 +3241,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|prefs_notebook_page_callback (GtkNotebook * notebook,GtkNotebookPage * page,guint page_num,GtkTreeSelection * sel)
+DECL|function|prefs_notebook_page_callback (GtkNotebook * notebook,gpointer page,guint page_num,GtkTreeSelection * sel)
 name|prefs_notebook_page_callback
 parameter_list|(
 name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|guint
@@ -9444,7 +9442,7 @@ argument_list|)
 block|}
 decl_stmt|;
 struct|struct
-DECL|struct|__anon2c9a9f140108
+DECL|struct|__anon293f664a0108
 block|{
 DECL|member|current_setting
 name|gchar
@@ -10611,7 +10609,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c9a9f140208
+DECL|struct|__anon293f664a0208
 block|{
 DECL|member|label
 specifier|const
@@ -11723,7 +11721,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c9a9f140308
+DECL|struct|__anon293f664a0308
 block|{
 DECL|member|property_name
 specifier|const
@@ -11878,7 +11876,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2c9a9f140408
+DECL|struct|__anon293f664a0408
 block|{
 DECL|member|tree_label
 specifier|const

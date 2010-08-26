@@ -45,6 +45,10 @@ directive|include
 file|"gimpcellrenderercolor.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpcellrenderercolor  * @title: GimpCellRendererColor  * @short_description: A #GtkCellRenderer to display a #GimpRGB color.  *  * A #GtkCellRenderer to display a #GimpRGB color.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_ICON_SIZE
 define|#
@@ -55,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c076efe0103
+DECL|enum|__anon29fb3bc20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

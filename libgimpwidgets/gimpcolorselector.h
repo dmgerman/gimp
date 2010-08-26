@@ -24,6 +24,10 @@ begin_comment
 comment|/* For information look at the html documentation */
 end_comment
 
+begin_comment
+comment|/**  * GIMP_COLOR_SELECTOR_SIZE:  *  * The suggested size for a color area in a #GimpColorSelector  * implementation.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_COLOR_SELECTOR_SIZE
 define|#
@@ -31,6 +35,10 @@ directive|define
 name|GIMP_COLOR_SELECTOR_SIZE
 value|150
 end_define
+
+begin_comment
+comment|/**  * GIMP_COLOR_SELECTOR_BAR_SIZE:  *  * The suggested width for a color bar in a #GimpColorSelector  * implementation.  **/
+end_comment
 
 begin_define
 DECL|macro|GIMP_COLOR_SELECTOR_BAR_SIZE

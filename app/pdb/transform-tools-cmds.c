@@ -210,6 +210,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -523,6 +525,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -840,6 +844,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1193,6 +1199,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -1530,6 +1538,8 @@ name|GIMP_ITEM
 argument_list|(
 name|drawable
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 name|TRUE
 argument_list|,
@@ -1932,6 +1942,8 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 name|TRUE
 argument_list|,
 name|error
@@ -2153,9 +2165,9 @@ name|procedure
 argument_list|,
 literal|"gimp-flip"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-flip-simple' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-flip-simple' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-flip-simple' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-flip-simple' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -2281,9 +2293,9 @@ name|procedure
 argument_list|,
 literal|"gimp-perspective"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-perspective-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-perspective-default' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-perspective-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-perspective-default' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -2576,9 +2588,9 @@ name|procedure
 argument_list|,
 literal|"gimp-rotate"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-rotate-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-rotate-default' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-rotate-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-rotate-default' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -2710,9 +2722,9 @@ name|procedure
 argument_list|,
 literal|"gimp-scale"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-scale-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-scale-default' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-scale-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-scale-default' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -2913,9 +2925,9 @@ name|procedure
 argument_list|,
 literal|"gimp-shear"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-shear-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-shear-default' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-shear-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-shear-default' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -3082,9 +3094,9 @@ name|procedure
 argument_list|,
 literal|"gimp-transform-2d"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-2d-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-2d-default' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-drawable-transform-2d-default' instead."
+literal|"Deprecated: Use 'gimp-drawable-transform-2d-default' instead."
 argument_list|,
 literal|""
 argument_list|,

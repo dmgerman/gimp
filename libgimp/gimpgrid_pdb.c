@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpgrid  * @title: gimpgrid  * @short_description: Functions manuipulating an image's grid.  *  * Functions manuipulating an image's grid.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_image_grid_get_spacing:  * @image_ID: The image.  * @xspacing: The image's grid horizontal spacing.  * @yspacing: The image's grid vertical spacing.  *  * Gets the spacing of an image's grid.  *  * This procedure retrieves the horizontal and vertical spacing of an  * image's grid. It takes the image as parameter.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 

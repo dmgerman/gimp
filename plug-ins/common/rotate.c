@@ -88,7 +88,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb72a80108
+DECL|struct|__anon2c52c19e0108
 block|{
 DECL|member|angle
 name|gint
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbb72a80208
+DECL|struct|__anon2c52c19e0208
 block|{
 DECL|member|ID
 name|gint32
@@ -1687,7 +1687,7 @@ return|return;
 block|}
 if|if
 condition|(
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|active_drawable
 operator|->
@@ -1724,7 +1724,7 @@ block|{
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|active_drawable
 operator|->

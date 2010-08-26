@@ -45,6 +45,10 @@ directive|include
 file|"gimpruler.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpruler  * @title: GimpRuler  * @short_description: A ruler widget with configurable unit and orientation.  *  * A ruler widget with configurable unit and orientation.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_RULER_FONT_SCALE
 define|#
@@ -63,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba701600103
+DECL|enum|__anon2c54c0b10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -96,7 +100,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba701600208
+DECL|struct|__anon2c54c0b10208
 block|{
 DECL|member|orientation
 name|GtkOrientation
@@ -159,7 +163,7 @@ begin_struct
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ba701600308
+DECL|struct|__anon2c54c0b10308
 block|{
 DECL|member|ruler_scale
 specifier|const

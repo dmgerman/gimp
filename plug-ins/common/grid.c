@@ -244,7 +244,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b573320108
+DECL|struct|__anon2b8dfdbc0108
 block|{
 DECL|member|hwidth
 name|gint
@@ -2726,7 +2726,7 @@ argument_list|()
 expr_stmt|;
 name|grid
 argument_list|(
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->

@@ -146,6 +146,10 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/**  * GIMP_HELP_ID:  *  * The #GQuark used to attach GIMP help IDs to widgets.  *  * Since: GIMP 2.2  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_HELP_ID
 define|#

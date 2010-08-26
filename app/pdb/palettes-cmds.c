@@ -921,9 +921,9 @@ name|procedure
 argument_list|,
 literal|"gimp-palettes-get-palette"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-context-get-palette' instead."
+literal|"Deprecated: Use 'gimp-context-get-palette' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-context-get-palette' instead."
+literal|"Deprecated: Use 'gimp-context-get-palette' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1016,9 +1016,9 @@ name|procedure
 argument_list|,
 literal|"gimp-palettes-get-palette-entry"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-palette-entry-get-color' instead."
+literal|"Deprecated: Use 'gimp-palette-entry-get-color' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-palette-entry-get-color' instead."
+literal|"Deprecated: Use 'gimp-palette-entry-get-color' instead."
 argument_list|,
 literal|""
 argument_list|,

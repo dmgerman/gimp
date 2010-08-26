@@ -45,10 +45,14 @@ directive|include
 file|"gimpgradientmenu.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpgradientmenu  * @title: gimpgradientmenu  * @short_description: A widget for selecting gradients.  *  * A widget for selecting gradients.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2977f6070108
+DECL|struct|__anon27820d870108
 block|{
 DECL|member|callback
 name|GimpRunGradientCallback
@@ -240,7 +244,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradient_select_widget_set;  * @widget:        A gradient select widget.  * @gradient_name: Gradient name to set.  *  * Sets the current gradient for the gradient select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_gradient_select_widget_new().  */
+comment|/**  * gimp_gradient_select_widget_set:  * @widget:        A gradient select widget.  * @gradient_name: Gradient name to set.  *  * Sets the current gradient for the gradient select widget.  Calls the  * callback function if one was supplied in the call to  * gimp_gradient_select_widget_new().  */
 end_comment
 
 begin_function

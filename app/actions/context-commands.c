@@ -1675,6 +1675,8 @@ literal|0.01
 argument_list|,
 literal|0.1
 argument_list|,
+literal|0.1
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -2221,6 +2223,8 @@ literal|5.0
 argument_list|,
 literal|20.0
 argument_list|,
+literal|0.1
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -2636,6 +2640,8 @@ literal|1.0
 argument_list|,
 literal|4.0
 argument_list|,
+literal|0.1
+argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
@@ -2719,6 +2725,8 @@ argument_list|,
 literal|0.001
 argument_list|,
 literal|0.01
+argument_list|,
+literal|0.1
 argument_list|,
 literal|0.1
 argument_list|,
@@ -2807,6 +2815,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|4.0
+argument_list|,
+literal|0.1
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2937,7 +2947,7 @@ literal|1.0
 argument_list|,
 literal|15.0
 argument_list|,
-literal|0.0
+literal|0.1
 argument_list|,
 name|TRUE
 argument_list|)

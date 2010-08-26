@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a9c130103
+DECL|enum|__anon28be0b7e0103
 block|{
 DECL|enumerator|CHUNKS_PNG_D
 name|CHUNKS_PNG_D
@@ -260,7 +260,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295a9c130203
+DECL|enum|__anon28be0b7e0203
 block|{
 DECL|enumerator|DISPOSE_COMBINE
 name|DISPOSE_COMBINE
@@ -2325,7 +2325,7 @@ name|ms
 init|=
 name|parse_ms_tag_from_layer_name
 argument_list|(
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
@@ -2369,7 +2369,7 @@ name|ms
 init|=
 name|parse_ms_tag_from_layer_name
 argument_list|(
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
@@ -2746,7 +2746,7 @@ index|]
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[

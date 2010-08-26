@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimphelp  * @title: gimphelp  * @short_description: Loading help pages using gimp_help.  *  * Loading help pages using gimp_help.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_help:  * @help_domain: The help domain in which help_id is registered.  * @help_id: The help page's ID.  *  * Load a help page.  *  * This procedure loads the specified help page into the helpbrowser or  * what ever is configured as help viewer. The help page is identified  * by its domain and ID: if help_domain is NULL, we use the help_domain  * which was registered using the gimp_plugin_help_register()  * procedure. If help_domain is NULL and no help domain was registered,  * the help domain of the main GIMP installation is used.  *  * Returns: TRUE on success.  */
 end_comment
 

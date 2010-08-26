@@ -67,6 +67,10 @@ directive|include
 file|"gimpprogressbar.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpprogressbar  * @title: GimpProgressBar  * @short_description: A widget providing a progress bar.  *  * A widget providing a progress bar that automatically redirects any  * progress calls to itself.  **/
+end_comment
+
 begin_function_decl
 specifier|static
 name|void

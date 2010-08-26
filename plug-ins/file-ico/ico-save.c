@@ -2395,7 +2395,7 @@ block|{
 name|gint32
 name|image
 init|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|layer
 argument_list|)
@@ -5211,6 +5211,11 @@ expr_stmt|;
 name|fclose
 argument_list|(
 name|fp
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|entries
 argument_list|)
 expr_stmt|;
 return|return

@@ -82,8 +82,8 @@ end_include
 
 begin_expr_stmt
 name|G_BEGIN_DECLS
-comment|/* Some portability enhancing stuff. For use both by the gimp app  * as well as plug-ins and modules.  *  * Include this instead of just<math.h>.  */
-comment|/* Use RINT() instead of rint() */
+comment|/**  * SECTION: gimpmath  * @title: GimpMath  * @short_description: Mathematical definitions and macros.  *  * Mathematical definitions and macros for use both by the GIMP  * application and plug-ins. These macros should be used rather than  * the ones from&lt;math.h&gt; for enhanced portability.  **/
+comment|/**  * RINT:  * @x: the value to be rounded  *  * This macro rounds its argument @x to an integer value in floating  * point format. Use RINT() instead of rint().  **/
 ifdef|#
 directive|ifdef
 name|HAVE_RINT
@@ -106,6 +106,7 @@ parameter_list|)
 value|floor ((x) + 0.5)
 endif|#
 directive|endif
+comment|/**  * ROUND:  * @x: the value to be rounded.  *  * This macro rounds its argument @x to the nearest integer.  **/
 DECL|macro|ROUND (x)
 define|#
 directive|define
@@ -114,7 +115,7 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((int) ((x) + 0.5))
-comment|/* Square */
+comment|/**  * SQR:  * @x: the value to be squared.  *  * This macro squares its argument @x.  **/
 DECL|macro|SQR (x)
 define|#
 directive|define
@@ -123,7 +124,7 @@ parameter_list|(
 name|x
 parameter_list|)
 value|((x) * (x))
-comment|/* Limit a (0->511) int to 255 */
+comment|/**  * MAX255:  * @a: the value to be limited.  *  * This macro limits it argument @a, an (0-511) int, to 255.  **/
 DECL|macro|MAX255 (a)
 define|#
 directive|define
@@ -132,7 +133,7 @@ parameter_list|(
 name|a
 parameter_list|)
 value|((a) | (((a)& 256) - (((a)& 256)>> 8)))
-comment|/* Clamp a>>int32<<-range int between 0 and 255 inclusive */
+comment|/**  * CLAMP0255:  * @a: the value to be clamped.  *  * This macro clamps its argument @a, an int32-range int, between 0  * and 255 inclusive.  **/
 DECL|macro|CLAMP0255 (a)
 define|#
 directive|define
@@ -141,6 +142,7 @@ parameter_list|(
 name|a
 parameter_list|)
 value|CLAMP(a,0,255)
+comment|/**  * gimp_deg_to_rad:  * @angle: the angle to be converted.  *  * This macro converts its argument @angle from degree to radian.  **/
 DECL|macro|gimp_deg_to_rad (angle)
 define|#
 directive|define
@@ -149,6 +151,7 @@ parameter_list|(
 name|angle
 parameter_list|)
 value|((angle) * (2.0 * G_PI) / 360.0)
+comment|/**  * gimp_rad_to_deg:  * @angle: the angle to be converted.  *  * This macro converts its argument @angle from radian to degree.  **/
 DECL|macro|gimp_rad_to_deg (angle)
 define|#
 directive|define

@@ -132,7 +132,7 @@ function_decl|)
 parameter_list|(
 name|GimpButton
 modifier|*
-name|preview
+name|button
 parameter_list|,
 name|GdkModifierType
 name|modifier_state

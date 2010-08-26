@@ -87,7 +87,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc205660103
+DECL|enum|__anon2a3ef7b00103
 block|{
 DECL|enumerator|LIST_COLUMN_NAME
 name|LIST_COLUMN_NAME
@@ -115,7 +115,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc205660203
+DECL|enum|__anon2a3ef7b00203
 block|{
 DECL|enumerator|TREE_COLUMN_PATH_NAME
 name|TREE_COLUMN_PATH_NAME
@@ -144,7 +144,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc205660308
+DECL|struct|__anon2a3ef7b00308
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -175,7 +175,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bc205660408
+DECL|struct|__anon2a3ef7b00408
 block|{
 DECL|member|menu
 name|gchar
@@ -1143,8 +1143,15 @@ name|str_ptr
 operator|==
 name|NULL
 condition|)
+block|{
+name|g_free
+argument_list|(
+name|tmp_ptr
+argument_list|)
+expr_stmt|;
 return|return;
 comment|/* No node */
+block|}
 name|leaf_ptr
 operator|=
 name|g_strdup
@@ -1258,6 +1265,11 @@ name|pinfo
 argument_list|,
 operator|-
 literal|1
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|leaf_ptr
 argument_list|)
 expr_stmt|;
 block|}

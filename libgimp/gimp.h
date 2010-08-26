@@ -327,27 +327,27 @@ parameter_list|)
 function_decl|;
 end_typedef
 
+begin_comment
+comment|/**  * GimpPlugInInfo:  * @init_proc:  called when the gimp application initially starts up  * @quit_proc:  called when the gimp application exits  * @query_proc: called by gimp so that the plug-in can inform the  *              gimp of what it does. (ie. installing a procedure database  *              procedure).  * @run_proc:   called to run a procedure the plug-in installed in the  *              procedure database.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpPlugInInfo
 struct|struct
 name|_GimpPlugInInfo
 block|{
-comment|/* called when the gimp application initially starts up */
 DECL|member|init_proc
 name|GimpInitProc
 name|init_proc
 decl_stmt|;
-comment|/* called when the gimp application exits */
 DECL|member|quit_proc
 name|GimpQuitProc
 name|quit_proc
 decl_stmt|;
-comment|/* called by gimp so that the plug-in can inform the    *  gimp of what it does. (ie. installing a procedure database    *  procedure).    */
 DECL|member|query_proc
 name|GimpQueryProc
 name|query_proc
 decl_stmt|;
-comment|/* called to run a procedure the plug-in installed in the    *  procedure database.    */
 DECL|member|run_proc
 name|GimpRunProc
 name|run_proc
@@ -469,6 +469,7 @@ DECL|member|d_region
 name|GimpParamRegion
 name|d_region
 decl_stmt|;
+comment|/* deprecated */
 DECL|member|d_display
 name|gint32
 name|d_display
@@ -476,6 +477,10 @@ decl_stmt|;
 DECL|member|d_image
 name|gint32
 name|d_image
+decl_stmt|;
+DECL|member|d_item
+name|gint32
+name|d_item
 decl_stmt|;
 DECL|member|d_layer
 name|gint32
@@ -548,7 +553,7 @@ struct|;
 end_struct
 
 begin_comment
-comment|/**  * MAIN():  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  * MAIN() at the toplevel of your file.  No semicolon should be used.  *  */
+comment|/**  * MAIN:  *  * A macro that expands to the appropriate main() function for the  * platform being compiled for.  *  * To use this macro, simply place a line that contains just the code  * MAIN() at the toplevel of your file.  No semicolon should be used.  **/
 end_comment
 
 begin_ifdef
@@ -1144,6 +1149,12 @@ name|G_GNUC_CONST
 decl_stmt|;
 end_decl_stmt
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_attach_new_parasite
@@ -1164,6 +1175,15 @@ name|data
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_macro
 name|G_END_DECLS

@@ -300,6 +300,20 @@ end_function_decl
 
 begin_function_decl
 name|void
+name|gimp_curve_delete_point
+parameter_list|(
+name|GimpCurve
+modifier|*
+name|curve
+parameter_list|,
+name|gint
+name|point
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
 name|gimp_curve_get_point
 parameter_list|(
 name|GimpCurve

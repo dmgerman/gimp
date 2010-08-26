@@ -45,10 +45,14 @@ directive|include
 file|"gimpbrushmenu.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpbrushmenu  * @title: gimpbrushmenu  * @short_description: A widget for selecting brushes.  *  * A widget for selecting brushes.  **/
+end_comment
+
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b67dd520108
+DECL|struct|__anon28dc5ac20108
 block|{
 DECL|member|callback
 name|GimpRunBrushCallback
@@ -267,7 +271,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brush_select_widget_set;  * @widget:     A brush select widget.  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1.0 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * widget.  Calls the callback function if one was supplied in the  * call to gimp_brush_select_widget_new().  */
+comment|/**  * gimp_brush_select_widget_set:  * @widget:     A brush select widget.  * @brush_name: Brush name to set; %NULL means no change.  * @opacity:    Opacity to set. -1.0 means no change.  * @spacing:    Spacing to set. -1 means no change.  * @paint_mode: Paint mode to set.  -1 means no change.  *  * Sets the current brush and other values for the brush select  * widget.  Calls the callback function if one was supplied in the  * call to gimp_brush_select_widget_new().  */
 end_comment
 
 begin_function

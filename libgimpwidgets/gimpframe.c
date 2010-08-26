@@ -39,6 +39,10 @@ directive|include
 file|"gimpframe.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpframe  * @title: GimpFrame  * @short_description: A widget providing a HIG-compliant subclass  *                     of #GtkFrame.  *  * A widget providing a HIG-compliant subclass of #GtkFrame.  **/
+end_comment
+
 begin_define
 DECL|macro|DEFAULT_LABEL_SPACING
 define|#

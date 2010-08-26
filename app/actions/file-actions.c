@@ -558,7 +558,7 @@ name|NC_
 argument_list|(
 literal|"file-action"
 argument_list|,
-literal|"Save this image with a different name, but keep its current name"
+literal|"Save a copy of this image, without affecting the source file (if any) or the current state of the image"
 argument_list|)
 block|,
 name|GIMP_SAVE_MODE_SAVE_A_COPY

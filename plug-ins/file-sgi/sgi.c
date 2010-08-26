@@ -375,7 +375,7 @@ name|gimp_register_magic_load_handler
 argument_list|(
 name|LOAD_PROC
 argument_list|,
-literal|"sgi,rgb,bw,icon"
+literal|"sgi,rgb,rgba,bw,icon"
 argument_list|,
 literal|""
 argument_list|,
@@ -428,7 +428,7 @@ name|gimp_register_save_handler
 argument_list|(
 name|SAVE_PROC
 argument_list|,
-literal|"sgi,rgb,bw,icon"
+literal|"sgi,rgb,rgba,bw,icon"
 argument_list|,
 literal|""
 argument_list|)

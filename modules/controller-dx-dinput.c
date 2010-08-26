@@ -110,7 +110,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3422b80103
+DECL|enum|__anon2bdf672a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3328,7 +3328,7 @@ block|, }
 decl_stmt|;
 name|data
 operator|=
-name|g_malloc
+name|g_alloca
 argument_list|(
 name|format
 operator|->
@@ -3358,11 +3358,6 @@ operator|)
 argument_list|)
 condition|)
 block|{
-name|g_free
-argument_list|(
-name|data
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;

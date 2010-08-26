@@ -51,6 +51,10 @@ directive|include
 file|"libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimppaletteselectbutton  * @title: GimpPaletteSelect  * @short_description: A button which pops up a palette select dialog.  *  * A button which pops up a palette select dialog.  **/
+end_comment
+
 begin_define
 DECL|macro|GIMP_PALETTE_SELECT_BUTTON_GET_PRIVATE (obj)
 define|#
@@ -103,7 +107,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4685f0103
+DECL|enum|__anon2bcacfb60103
 block|{
 DECL|enumerator|PALETTE_SET
 name|PALETTE_SET
@@ -116,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bd4685f0203
+DECL|enum|__anon2bcacfb60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0

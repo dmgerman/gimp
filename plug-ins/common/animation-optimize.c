@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299b04200103
+DECL|enum|__anon2c1491290103
 block|{
 DECL|enumerator|DISPOSE_UNDEFINED
 name|DISPOSE_UNDEFINED
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon299b04200203
+DECL|enum|__anon2c1491290203
 block|{
 DECL|enumerator|OPOPTIMIZE
 name|OPOPTIMIZE
@@ -4017,7 +4017,7 @@ expr_stmt|;
 comment|/*            *            * PUT THIS FRAME INTO A NEW LAYER IN THE NEW IMAGE            *            */
 name|oldlayer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
@@ -4128,7 +4128,7 @@ argument_list|)
 expr_stmt|;
 name|oldlayer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|last_true_frame
 argument_list|)
@@ -4202,7 +4202,7 @@ else|:
 literal|"(replace)"
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_name
+name|gimp_item_set_name
 argument_list|(
 name|last_true_frame
 argument_list|,
@@ -4442,7 +4442,7 @@ name|disposal
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[
@@ -4495,7 +4495,7 @@ literal|0
 decl_stmt|;
 name|layer_name
 operator|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|layers
 index|[

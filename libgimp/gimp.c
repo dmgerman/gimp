@@ -373,6 +373,12 @@ directive|include
 file|"libgimpbase/gimpwire.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
 begin_include
 include|#
 directive|include
@@ -390,6 +396,10 @@ include|#
 directive|include
 file|"libgimp-intl.h"
 end_include
+
+begin_comment
+comment|/**  * SECTION: gimp  * @title: Gimp  * @short_description: Main functions needed for building a GIMP plug-in.  *                     This header includes all other GIMP Library headers.  *  * Main functions needed for building a GIMP plug-in. This header  * includes all other GIMP Library headers.  **/
+end_comment
 
 begin_define
 DECL|macro|TILE_MAP_SIZE
@@ -414,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2772d85c0103
+DECL|enum|__anon278e4c520103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -1080,7 +1090,7 @@ decl_stmt|;
 end_decl_stmt
 
 begin_comment
-comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: the arguments  *  * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *  * Return value:  **/
+comment|/**  * gimp_main:  * @info: the PLUG_IN_INFO structure  * @argc: the number of arguments  * @argv: the arguments  *  * The main procedure that must be called with the PLUG_IN_INFO structure  * and the 'argc' and 'argv' that are passed to "main".  *  * Returns: an exit status as defined by the C library,  *          on success %EXIT_SUCCESS.  **/
 end_comment
 
 begin_function
@@ -2657,6 +2667,9 @@ case|case
 name|GIMP_PDB_IMAGE
 case|:
 case|case
+name|GIMP_PDB_ITEM
+case|:
+case|case
 name|GIMP_PDB_LAYER
 case|:
 case|case
@@ -2850,10 +2863,6 @@ name|GimpParasite
 operator|*
 argument_list|)
 expr_stmt|;
-break|break;
-case|case
-name|GIMP_PDB_REGION
-case|:
 break|break;
 case|case
 name|GIMP_PDB_END
@@ -3174,8 +3183,24 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GIMP_PDB_REGION
+name|GIMP_PDB_ITEM
 case|:
+name|params
+index|[
+name|i
+index|]
+operator|.
+name|data
+operator|.
+name|d_item
+operator|=
+name|va_arg
+argument_list|(
+name|args
+argument_list|,
+name|gint32
+argument_list|)
+expr_stmt|;
 break|break;
 case|case
 name|GIMP_PDB_DISPLAY
@@ -4504,7 +4529,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_attach_new_parasite:  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_parasite_attach()  */
+comment|/**  * gimp_attach_new_parasite:  * @name: the name of the #GimpParasite to create and attach.  * @flags: the flags set on the #GimpParasite.  * @size: the size of the parasite data in bytes.  * @data: a pointer to the data attached with the #GimpParasite.  *  * Convenience function that creates a parasite and attaches it  * to GIMP.  *  * Deprecated: Use gimp_parasite_attach() instead.  *  * Return value: TRUE on successful creation and attachment of  * the new parasite.  *  * See Also: gimp_parasite_attach()  */
 end_comment
 
 begin_function

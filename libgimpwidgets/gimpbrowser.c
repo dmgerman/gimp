@@ -45,9 +45,13 @@ directive|include
 file|"libgimp/libgimp-intl.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpbrowser  * @title: GimpBrowser  * @short_description: A base class for a documentation browser.  *  * A base class for a documentation browser.  **/
+end_comment
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c7656ef0103
+DECL|enum|__anon28c84c900103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH

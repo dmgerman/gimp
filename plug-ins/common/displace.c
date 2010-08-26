@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c73a9420103
+DECL|enum|__anon29d711e40103
 block|{
 DECL|enumerator|CARTESIAN_MODE
 name|CARTESIAN_MODE
@@ -96,7 +96,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c73a9420208
+DECL|struct|__anon29d711e40208
 block|{
 DECL|member|amount_x
 name|gdouble
@@ -520,7 +520,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"displace-type"
 block|,
-literal|"Edge behavior { WRAP (0), SMEAR (1), BLACK (2) }"
+literal|"Edge behavior { WRAP (1), SMEAR (2), BLACK (3) }"
 block|}
 block|}
 decl_stmt|;

@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon299dae630103
+DECL|enum|__anon29f44dc50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299dae630208
+DECL|struct|__anon29f44dc50208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -732,8 +732,7 @@ name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|gint
@@ -5043,15 +5042,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_window_switch_page (GtkNotebook * notebook,GtkNotebookPage * page,gint page_num,GimpImageWindow * window)
+DECL|function|gimp_image_window_switch_page (GtkNotebook * notebook,gpointer page,gint page_num,GimpImageWindow * window)
 name|gimp_image_window_switch_page
 parameter_list|(
 name|GtkNotebook
 modifier|*
 name|notebook
 parameter_list|,
-name|GtkNotebookPage
-modifier|*
+name|gpointer
 name|page
 parameter_list|,
 name|gint

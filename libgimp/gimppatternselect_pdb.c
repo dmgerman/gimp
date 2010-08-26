@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppatternselect  * @title: gimppatternselect  * @short_description: Functions providing a pattern selection dialog.  *  * Functions providing a pattern selection dialog.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_patterns_popup:  * @pattern_callback: The callback PDB proc to call when pattern selection is made.  * @popup_title: Title of the pattern selection dialog.  * @initial_pattern: The name of the pattern to set as the first selected.  *  * Invokes the Gimp pattern selection.  *  * This procedure opens the pattern selection dialog.  *  * Returns: TRUE on success.  */
 end_comment
 

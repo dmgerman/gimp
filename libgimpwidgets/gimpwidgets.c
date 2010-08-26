@@ -82,7 +82,11 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/**  * gimp_radio_group_new:  * @in_frame:    %TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or %NULL if you don't want a title.  * @...:         A %NULL-terminated @va_list describing the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * SECTION: gimpwidgets  * @title: GimpWidgets  * @short_description: A collection of convenient widget constructors,  *                     standard callbacks and helper functions.  *  * A collection of convenient widget constructors, standard callbacks  * and helper functions.  **/
+end_comment
+
+begin_comment
+comment|/**  * gimp_radio_group_new:  * @in_frame:    %TRUE if you want a #GtkFrame around the radio button group.  * @frame_title: The title of the Frame or %NULL if you don't want a title.  * @...:         A %NULL-terminated @va_list describing the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVBox.  *  * Returns: A #GtkFrame or #GtkVBox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -406,7 +410,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_group_new2:  * @in_frame:              %TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or %NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A %NULL-terminated @va_list describing  *                         the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox.  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_radio_group_new2:  * @in_frame:              %TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or %NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A %NULL-terminated @va_list describing  *                         the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVBox.  *  * Returns: A #GtkFrame or #GtkVBox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -706,7 +710,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_int_radio_group_new:  * @in_frame:              %TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or %NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A %NULL-terminated @va_list describing  *                         the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVbox. This function does the same thing as  * gimp_radio_group_new2(), but it takes integers as @item_data instead of  * pointers, since that is a very common case (mapping an enum to a radio  * group).  *  * Returns: A #GtkFrame or #GtkVbox (depending on @in_frame).  **/
+comment|/**  * gimp_int_radio_group_new:  * @in_frame:              %TRUE if you want a #GtkFrame around the  *                         radio button group.  * @frame_title:           The title of the Frame or %NULL if you don't want  *                         a title.  * @radio_button_callback: The callback each button's "toggled" signal will  *                         be connected with.  * @radio_button_callback_data:  *                         The data which will be passed to g_signal_connect().  * @initial:               The @item_data of the initially pressed radio button.  * @...:                   A %NULL-terminated @va_list describing  *                         the radio buttons.  *  * Convenience function to create a group of radio buttons embedded into  * a #GtkFrame or #GtkVBox. This function does the same thing as  * gimp_radio_group_new2(), but it takes integers as @item_data instead of  * pointers, since that is a very common case (mapping an enum to a radio  * group).  *  * Returns: A #GtkFrame or #GtkVBox (depending on @in_frame).  **/
 end_comment
 
 begin_function
@@ -1146,7 +1150,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_spin_button_new:  * @adjustment:     Returns the spinbutton's #GtkAdjustment.  * @value:          The initial value of the spinbutton.  * @lower:          The lower boundary.  * @upper:          The uppper boundary.  * @step_increment: The spinbutton's step increment.  * @page_increment: The spinbutton's page increment (mouse button 2).  * @page_size:      The spinbutton's page size.  * @climb_rate:     The spinbutton's climb rate.  * @digits:         The spinbutton's number of decimal digits.  *  * This function is a shortcut for gtk_adjustment_new() and a  * subsequent gtk_spin_button_new(). It also calls  * gtk_spin_button_set_numeric() so that non-numeric text cannot be  * entered.  *  * Returns: A #GtkSpinbutton and it's #GtkAdjustment.  **/
+comment|/**  * gimp_spin_button_new:  * @adjustment:     Returns the spinbutton's #GtkAdjustment.  * @value:          The initial value of the spinbutton.  * @lower:          The lower boundary.  * @upper:          The uppper boundary.  * @step_increment: The spinbutton's step increment.  * @page_increment: The spinbutton's page increment (mouse button 2).  * @page_size:      The spinbutton's page size.  * @climb_rate:     The spinbutton's climb rate.  * @digits:         The spinbutton's number of decimal digits.  *  * This function is a shortcut for gtk_adjustment_new() and a  * subsequent gtk_spin_button_new(). It also calls  * gtk_spin_button_set_numeric() so that non-numeric text cannot be  * entered.  *  * Returns: A #GtkSpinButton and its #GtkAdjustment.  **/
 end_comment
 
 begin_function
@@ -1677,7 +1681,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275e500a0108
+DECL|struct|__anon27b037350108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton

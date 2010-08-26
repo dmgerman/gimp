@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b847f2f0108
+DECL|struct|__anon2c7d92e30108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b847f2f0208
+DECL|struct|__anon2c7d92e30208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -6322,7 +6322,7 @@ name|gchar
 modifier|*
 name|name
 init|=
-name|gimp_drawable_get_name
+name|gimp_item_get_name
 argument_list|(
 name|drawable
 operator|->

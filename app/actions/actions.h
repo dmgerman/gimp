@@ -188,6 +188,9 @@ parameter_list|,
 name|gdouble
 name|skip_inc
 parameter_list|,
+name|gdouble
+name|delta_factor
+parameter_list|,
 name|gboolean
 name|wrap
 parameter_list|)

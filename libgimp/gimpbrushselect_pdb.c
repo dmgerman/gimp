@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpbrushselect  * @title: gimpbrushselect  * @short_description: Functions providing a brush selection dialog.  *  * Functions providing a brush selection dialog.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_brushes_popup:  * @brush_callback: The callback PDB proc to call when brush selection is made.  * @popup_title: Title of the brush selection dialog.  * @initial_brush: The name of the brush to set as the first selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Invokes the Gimp brush selection.  *  * This procedure opens the brush selection dialog.  *  * Returns: TRUE on success.  */
 end_comment
 

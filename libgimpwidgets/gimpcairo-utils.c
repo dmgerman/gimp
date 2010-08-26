@@ -40,6 +40,10 @@ file|"gimpcairo-utils.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpcairo-utils  * @title: GimpCairo-utils  * @short_description: Utility functions for cairo  *  * Utility functions that make cairo easier to use with common  * GIMP data types.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_cairo_set_source_rgb:  * @cr:    Cairo context  * @color: GimpRGB color  *  * Sets the source pattern within @cr to the solid opaque color  * described by @color.  *  * This function calls cairo_set_source_rgb() for you.  *  * Since: GIMP 2.6  **/
 end_comment
 
@@ -512,7 +516,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_cairo_surface_create_from_pixbuf:  * @pixbuf: a GdkPixbuf  *  * Create a Cairo image surface from a GdkPixbuf.  *  * You should avoid calling this function as there are probably more  * efficient ways of achieving the result you are looking for.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_cairo_surface_create_from_pixbuf:  * @pixbuf: a #GdkPixbuf  *  * Create a Cairo image surface from a GdkPixbuf.  *  * You should avoid calling this function as there are probably more  * efficient ways of achieving the result you are looking for.  *  * Returns: a #cairo_surface_t.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function

@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpchannel-select.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpimage-undo-push.h"
 end_include
 
@@ -1539,253 +1533,6 @@ name|linked
 argument_list|,
 name|TRUE
 argument_list|)
-expr_stmt|;
-block|}
-return|return
-name|gimp_procedure_get_return_values
-argument_list|(
-name|procedure
-argument_list|,
-name|success
-argument_list|,
-name|error
-condition|?
-operator|*
-name|error
-else|:
-name|NULL
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GValueArray
-modifier|*
-DECL|function|vectors_get_lock_content_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
-name|vectors_get_lock_content_invoker
-parameter_list|(
-name|GimpProcedure
-modifier|*
-name|procedure
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|,
-specifier|const
-name|GValueArray
-modifier|*
-name|args
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
-parameter_list|)
-block|{
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|GValueArray
-modifier|*
-name|return_vals
-decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
-name|gboolean
-name|lock_content
-init|=
-name|FALSE
-decl_stmt|;
-name|vectors
-operator|=
-name|gimp_value_get_vectors
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|0
-index|]
-argument_list|,
-name|gimp
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
-name|lock_content
-operator|=
-name|gimp_item_get_lock_content
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|)
-expr_stmt|;
-block|}
-name|return_vals
-operator|=
-name|gimp_procedure_get_return_values
-argument_list|(
-name|procedure
-argument_list|,
-name|success
-argument_list|,
-name|error
-condition|?
-operator|*
-name|error
-else|:
-name|NULL
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-name|g_value_set_boolean
-argument_list|(
-operator|&
-name|return_vals
-operator|->
-name|values
-index|[
-literal|1
-index|]
-argument_list|,
-name|lock_content
-argument_list|)
-expr_stmt|;
-return|return
-name|return_vals
-return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GValueArray
-modifier|*
-DECL|function|vectors_set_lock_content_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
-name|vectors_set_lock_content_invoker
-parameter_list|(
-name|GimpProcedure
-modifier|*
-name|procedure
-parameter_list|,
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|,
-name|GimpContext
-modifier|*
-name|context
-parameter_list|,
-name|GimpProgress
-modifier|*
-name|progress
-parameter_list|,
-specifier|const
-name|GValueArray
-modifier|*
-name|args
-parameter_list|,
-name|GError
-modifier|*
-modifier|*
-name|error
-parameter_list|)
-block|{
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|GimpVectors
-modifier|*
-name|vectors
-decl_stmt|;
-name|gboolean
-name|lock_content
-decl_stmt|;
-name|vectors
-operator|=
-name|gimp_value_get_vectors
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|0
-index|]
-argument_list|,
-name|gimp
-argument_list|)
-expr_stmt|;
-name|lock_content
-operator|=
-name|g_value_get_boolean
-argument_list|(
-operator|&
-name|args
-operator|->
-name|values
-index|[
-literal|1
-index|]
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|success
-condition|)
-block|{
-if|if
-condition|(
-name|gimp_item_can_lock_content
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|)
-condition|)
-name|gimp_item_set_lock_content
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|vectors
-argument_list|)
-argument_list|,
-name|lock_content
-argument_list|,
-name|TRUE
-argument_list|)
-expr_stmt|;
-else|else
-name|success
-operator|=
-name|FALSE
 expr_stmt|;
 block|}
 return|return
@@ -6505,35 +6252,28 @@ condition|(
 name|success
 condition|)
 block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_item_get_image
+if|if
+condition|(
+name|gimp_pdb_item_is_attached
 argument_list|(
 name|GIMP_ITEM
 argument_list|(
 name|vectors
 argument_list|)
+argument_list|,
+name|NULL
+argument_list|,
+name|FALSE
+argument_list|,
+name|error
 argument_list|)
-decl_stmt|;
-if|if
-condition|(
-name|image
 condition|)
-name|gimp_channel_select_vectors
+name|gimp_item_to_selection
 argument_list|(
-name|gimp_image_get_mask
+name|GIMP_ITEM
 argument_list|(
-name|image
-argument_list|)
-argument_list|,
-name|_
-argument_list|(
-literal|"Path to Selection"
-argument_list|)
-argument_list|,
 name|vectors
+argument_list|)
 argument_list|,
 name|operation
 argument_list|,
@@ -6544,8 +6284,6 @@ argument_list|,
 name|feather_radius_x
 argument_list|,
 name|feather_radius_y
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 else|else
@@ -7495,9 +7233,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-is-valid"
 argument_list|,
-literal|"Returns TRUE if the vectors object is valid."
+literal|"Deprecated: Use 'gimp-item-is-valid' instead."
 argument_list|,
-literal|"This procedure checks if the given vectors ID is valid and refers to an existing vectors object."
+literal|"Deprecated: Use 'gimp-item-is-valid' instead."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -7505,7 +7243,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2007"
 argument_list|,
-name|NULL
+literal|"gimp-item-is-valid"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7911,9 +7649,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-image"
 argument_list|,
-literal|"Returns the vectors objects image."
+literal|"Deprecated: Use 'gimp-item-get-image' instead."
 argument_list|,
-literal|"Returns the vectors objects image."
+literal|"Deprecated: Use 'gimp-item-get-image' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7921,7 +7659,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-image"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8004,9 +7742,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-name"
 argument_list|,
-literal|"Gets the name of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-name' instead."
 argument_list|,
-literal|"Gets the name of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-name' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8014,7 +7752,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8099,9 +7837,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-name"
 argument_list|,
-literal|"Sets the name of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-name' instead."
 argument_list|,
-literal|"Sets the name of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-name' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8109,7 +7847,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-name"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8194,9 +7932,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-visible"
 argument_list|,
-literal|"Gets the visibility of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-visible' instead."
 argument_list|,
-literal|"Gets the visibility of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-visible' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8204,7 +7942,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-visible"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8283,9 +8021,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-visible"
 argument_list|,
-literal|"Sets the visibility of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-visible' instead."
 argument_list|,
-literal|"Sets the visibility of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-visible' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8293,7 +8031,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-visible"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8372,9 +8110,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-linked"
 argument_list|,
-literal|"Gets the linked state of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-linked' instead."
 argument_list|,
-literal|"Gets the linked state of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-linked' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8382,7 +8120,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-linked"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8461,9 +8199,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-linked"
 argument_list|,
-literal|"Sets the linked state of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-linked' instead."
 argument_list|,
-literal|"Sets the linked state of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-linked' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8471,7 +8209,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-linked"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8526,184 +8264,6 @@ argument_list|(
 name|procedure
 argument_list|)
 expr_stmt|;
-comment|/*    * gimp-vectors-get-lock-content    */
-name|procedure
-operator|=
-name|gimp_procedure_new
-argument_list|(
-name|vectors_get_lock_content_invoker
-argument_list|)
-expr_stmt|;
-name|gimp_object_set_static_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|procedure
-argument_list|)
-argument_list|,
-literal|"gimp-vectors-get-lock-content"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_static_strings
-argument_list|(
-name|procedure
-argument_list|,
-literal|"gimp-vectors-get-lock-content"
-argument_list|,
-literal|"Gets the 'lock content' state of the vectors object."
-argument_list|,
-literal|"Gets the 'lock content' state of the vectors object."
-argument_list|,
-literal|"Michael Natterer<mitch@gimp.org>"
-argument_list|,
-literal|"Michael Natterer"
-argument_list|,
-literal|"2009"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_vectors_id
-argument_list|(
-literal|"vectors"
-argument_list|,
-literal|"vectors"
-argument_list|,
-literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_return_value
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"lock-content"
-argument_list|,
-literal|"lock content"
-argument_list|,
-literal|"Whether the path's strokes are locked"
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_pdb_register_procedure
-argument_list|(
-name|pdb
-argument_list|,
-name|procedure
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|procedure
-argument_list|)
-expr_stmt|;
-comment|/*    * gimp-vectors-set-lock-content    */
-name|procedure
-operator|=
-name|gimp_procedure_new
-argument_list|(
-name|vectors_set_lock_content_invoker
-argument_list|)
-expr_stmt|;
-name|gimp_object_set_static_name
-argument_list|(
-name|GIMP_OBJECT
-argument_list|(
-name|procedure
-argument_list|)
-argument_list|,
-literal|"gimp-vectors-set-lock-content"
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_set_static_strings
-argument_list|(
-name|procedure
-argument_list|,
-literal|"gimp-vectors-set-lock-content"
-argument_list|,
-literal|"Sets the 'lock content' state of the vectors object."
-argument_list|,
-literal|"Sets the 'lock content' state of the vectors object."
-argument_list|,
-literal|"Michael Natterer<mitch@gimp.org>"
-argument_list|,
-literal|"Michael Natterer"
-argument_list|,
-literal|"2009"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|gimp_param_spec_vectors_id
-argument_list|(
-literal|"vectors"
-argument_list|,
-literal|"vectors"
-argument_list|,
-literal|"The vectors object"
-argument_list|,
-name|pdb
-operator|->
-name|gimp
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_procedure_add_argument
-argument_list|(
-name|procedure
-argument_list|,
-name|g_param_spec_boolean
-argument_list|(
-literal|"lock-content"
-argument_list|,
-literal|"lock content"
-argument_list|,
-literal|"Whether the path's strokes are locked"
-argument_list|,
-name|FALSE
-argument_list|,
-name|GIMP_PARAM_READWRITE
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_pdb_register_procedure
-argument_list|(
-name|pdb
-argument_list|,
-name|procedure
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|procedure
-argument_list|)
-expr_stmt|;
 comment|/*    * gimp-vectors-get-tattoo    */
 name|procedure
 operator|=
@@ -8728,9 +8288,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-get-tattoo"
 argument_list|,
-literal|"Get the tattoo of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-tattoo' instead."
 argument_list|,
-literal|"Get the tattoo state of the vectors object."
+literal|"Deprecated: Use 'gimp-item-get-tattoo' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8738,7 +8298,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-get-tattoo"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8821,9 +8381,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-set-tattoo"
 argument_list|,
-literal|"Set the tattoo of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-tattoo' instead."
 argument_list|,
-literal|"Set the tattoo of the vectors object."
+literal|"Deprecated: Use 'gimp-item-set-tattoo' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -8831,7 +8391,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2005"
 argument_list|,
-name|NULL
+literal|"gimp-item-set-tattoo"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -12414,7 +11974,7 @@ literal|"gimp-vectors-export-to-string"
 argument_list|,
 literal|"Save a path as an SVG string."
 argument_list|,
-literal|"This procedure works like 'gimp-vectors-export-to-file' but creates a string rather than a file. The contents are a %NUL-terminated string that holds a complete XML document. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
+literal|"This procedure works like 'gimp-vectors-export-to-file' but creates a string rather than a file. The contents are a NUL-terminated string that holds a complete XML document. If you pass 0 as the 'vectors' argument, then all paths in the image will be exported."
 argument_list|,
 literal|"Bill Skaggs<weskaggs@primate.ucdavis.edu>"
 argument_list|,

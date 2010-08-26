@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpselectiontools  * @title: gimpselectiontools  * @short_description: Access to toolbox selection tools.  *  * Functions giving access to toolbox selection tools.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_by_color_select:  * @drawable_ID: The affected drawable.  * @color: The color to select.  * @threshold: Threshold in intensity levels.  * @operation: The selection operation.  * @antialias: Antialiasing.  * @feather: Feather option for selections.  * @feather_radius: Radius for feather operation.  * @sample_merged: Use the composite image, not the drawable.  *  * Create a selection by selecting all pixels (in the specified  * drawable) with the same (or similar) color to that specified.  *  * This tool creates a selection over the specified image. A by-color  * selection is determined by the supplied color under the constraints  * of the specified threshold. Essentially, all pixels (in the  * drawable) that have color sufficiently close to the specified color  * (as determined by the threshold value) are included in the  * selection. The antialiasing parameter allows the final selection  * mask to contain intermediate values based on close misses to the  * threshold bar. Feathering can be enabled optionally and is  * controlled with the 'feather-radius' parameter. If the  * 'sample-merged' parameter is TRUE, the data of the composite image  * will be used instead of that for the specified drawable. This is  * equivalent to sampling for colors after merging all visible layers.  * In the case of a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
 end_comment
 

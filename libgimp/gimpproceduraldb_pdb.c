@@ -26,6 +26,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimpproceduraldb  * @title: gimpproceduraldb  * @short_description: Functions for querying and changing procedural database (PDB) entries.  *  * Functions for querying and changing procedural database (PDB)  * entries.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_procedural_db_temp_name:  *  * Generates a unique temporary PDB name.  *  * This procedure generates a temporary PDB entry name that is  * guaranteed to be unique.  *  * Returns: A unique temporary name for a temporary PDB entry.  */
 end_comment
 

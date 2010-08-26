@@ -43,7 +43,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c2f268a0108
+DECL|struct|__anon2a8c446a0108
 block|{
 DECL|member|progress_callback
 name|gchar
@@ -155,7 +155,7 @@ comment|/*  public functions  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.2  *  * Note that since GIMP 2.4, @value_callback can be called with  * negative values. This is triggered by calls to gimp_progress_pulse().  * The callback should then implement a progress indicating business,  * e.g. by calling gtk_progress_bar_pulse().  **/
+comment|/**  * gimp_progress_install:  * @start_callback: the function to call when progress starts  * @end_callback:   the function to call when progress finishes  * @text_callback:  the function to call to change the text  * @value_callback: the function to call to change the value  * @user_data:      a pointer that is returned when uninstalling the progress  *  * Note that since GIMP 2.4, @value_callback can be called with  * negative values. This is triggered by calls to gimp_progress_pulse().  * The callback should then implement a progress indicating business,  * e.g. by calling gtk_progress_bar_pulse().  *  * Return value: the name of the temporary procedure that's been installed  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

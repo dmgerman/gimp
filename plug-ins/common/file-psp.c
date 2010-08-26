@@ -121,7 +121,7 @@ comment|/* Block identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80103
+DECL|enum|__anon29104af90103
 typedef|typedef
 enum|enum
 block|{
@@ -250,7 +250,7 @@ comment|/* Bitmap type.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80203
+DECL|enum|__anon29104af90203
 typedef|typedef
 enum|enum
 block|{
@@ -319,7 +319,7 @@ comment|/* Type of image in the composite image bank block. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80303
+DECL|enum|__anon29104af90303
 typedef|typedef
 enum|enum
 block|{
@@ -344,7 +344,7 @@ comment|/* Graphic contents flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80403
+DECL|enum|__anon29104af90403
 typedef|typedef
 enum|enum
 block|{
@@ -427,7 +427,7 @@ comment|/* Character style flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80503
+DECL|enum|__anon29104af90503
 typedef|typedef
 enum|enum
 block|{
@@ -472,7 +472,7 @@ comment|/* Table type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80603
+DECL|enum|__anon29104af90603
 typedef|typedef
 enum|enum
 block|{
@@ -504,7 +504,7 @@ comment|/* Layer flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80703
+DECL|enum|__anon29104af90703
 typedef|typedef
 enum|enum
 block|{
@@ -531,7 +531,7 @@ comment|/* Shape property flags. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80803
+DECL|enum|__anon29104af90803
 typedef|typedef
 enum|enum
 block|{
@@ -564,7 +564,7 @@ comment|/* Polyline node type flags. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80903
+DECL|enum|__anon29104af90903
 typedef|typedef
 enum|enum
 block|{
@@ -658,7 +658,7 @@ comment|/* Blend modes. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80a03
+DECL|enum|__anon29104af90a03
 typedef|typedef
 enum|enum
 block|{
@@ -744,7 +744,7 @@ comment|/* Adjustment layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80b03
+DECL|enum|__anon29104af90b03
 typedef|typedef
 enum|enum
 block|{
@@ -800,7 +800,7 @@ comment|/* Vector shape types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80c03
+DECL|enum|__anon29104af90c03
 typedef|typedef
 enum|enum
 block|{
@@ -841,7 +841,7 @@ comment|/* Text element types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80d03
+DECL|enum|__anon29104af90d03
 typedef|typedef
 enum|enum
 block|{
@@ -873,7 +873,7 @@ comment|/* Text alignment types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80e03
+DECL|enum|__anon29104af90e03
 typedef|typedef
 enum|enum
 block|{
@@ -901,7 +901,7 @@ comment|/* Paint style types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a80f03
+DECL|enum|__anon29104af90f03
 typedef|typedef
 enum|enum
 block|{
@@ -952,7 +952,7 @@ comment|/* Gradient type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81003
+DECL|enum|__anon29104af91003
 typedef|typedef
 enum|enum
 block|{
@@ -984,7 +984,7 @@ comment|/* Paint Style Cap Type (Start& End). (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81103
+DECL|enum|__anon29104af91103
 typedef|typedef
 enum|enum
 block|{
@@ -1056,7 +1056,7 @@ comment|/* Paint Style Join Type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81203
+DECL|enum|__anon29104af91203
 typedef|typedef
 enum|enum
 block|{
@@ -1081,7 +1081,7 @@ comment|/* Organic pen type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81303
+DECL|enum|__anon29104af91303
 typedef|typedef
 enum|enum
 block|{
@@ -1129,7 +1129,7 @@ comment|/* Channel types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81403
+DECL|enum|__anon29104af91403
 typedef|typedef
 enum|enum
 block|{
@@ -1161,7 +1161,7 @@ comment|/* Possible metrics used to measure resolution.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81503
+DECL|enum|__anon29104af91503
 typedef|typedef
 enum|enum
 block|{
@@ -1189,7 +1189,7 @@ comment|/* Possible types of compression.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81603
+DECL|enum|__anon29104af91603
 typedef|typedef
 enum|enum
 block|{
@@ -1221,7 +1221,7 @@ comment|/* Picture tube placement mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81703
+DECL|enum|__anon29104af91703
 typedef|typedef
 enum|enum
 block|{
@@ -1243,7 +1243,7 @@ comment|/* Picture tube selection mode.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81803
+DECL|enum|__anon29104af91803
 typedef|typedef
 enum|enum
 block|{
@@ -1279,7 +1279,7 @@ comment|/* Extended data field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81903
+DECL|enum|__anon29104af91903
 typedef|typedef
 enum|enum
 block|{
@@ -1312,7 +1312,7 @@ comment|/* Creator field types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81a03
+DECL|enum|__anon29104af91a03
 typedef|typedef
 enum|enum
 block|{
@@ -1360,7 +1360,7 @@ comment|/* Grid units type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81b03
+DECL|enum|__anon29104af91b03
 typedef|typedef
 enum|enum
 block|{
@@ -1388,7 +1388,7 @@ comment|/* Guide orientation type. (since PSP7)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81c03
+DECL|enum|__anon29104af91c03
 typedef|typedef
 enum|enum
 block|{
@@ -1410,7 +1410,7 @@ comment|/* Creator application identifiers.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81d03
+DECL|enum|__anon29104af91d03
 typedef|typedef
 enum|enum
 block|{
@@ -1434,7 +1434,7 @@ comment|/* Layer types.  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81e03
+DECL|enum|__anon29104af91e03
 typedef|typedef
 enum|enum
 block|{
@@ -1458,7 +1458,7 @@ comment|/* Layer types. (since PSP6)  */
 end_comment
 
 begin_typedef
-DECL|enum|__anon2781e8a81f03
+DECL|enum|__anon29104af91f03
 typedef|typedef
 enum|enum
 block|{
@@ -1537,7 +1537,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781e8a82008
+DECL|struct|__anon29104af92008
 block|{
 DECL|member|width
 DECL|member|height
@@ -1700,7 +1700,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2781e8a82108
+DECL|struct|__anon29104af92108
 block|{
 DECL|member|compression
 name|PSPCompression
@@ -5863,7 +5863,7 @@ condition|(
 operator|!
 name|visibility
 condition|)
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|layer_ID
 argument_list|,

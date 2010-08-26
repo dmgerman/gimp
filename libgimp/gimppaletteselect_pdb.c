@@ -20,6 +20,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppaletteselect  * @title: gimppaletteselect  * @short_description: Functions providing a palette selection dialog.  *  * Functions providing a palette selection dialog.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_palettes_popup:  * @palette_callback: The callback PDB proc to call when palette selection is made.  * @popup_title: Title of the palette selection dialog.  * @initial_palette: The name of the palette to set as the first selected.  *  * Invokes the Gimp palette selection.  *  * This procedure opens the palette selection dialog.  *  * Returns: TRUE on success.  */
 end_comment
 

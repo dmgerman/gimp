@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295bb2c30103
+DECL|enum|__anon2b1cb4c70103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -409,6 +409,17 @@ argument_list|(
 literal|"undo-type"
 argument_list|,
 literal|"Move Layer Mask"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
+name|to_selection_desc
+operator|=
+name|C_
+argument_list|(
+literal|"undo-type"
+argument_list|,
+literal|"Layer Mask to Selection"
 argument_list|)
 expr_stmt|;
 block|}

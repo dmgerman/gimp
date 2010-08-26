@@ -1258,9 +1258,9 @@ name|procedure
 argument_list|,
 literal|"gimp-brushes-get-brush"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-context-get-brush' instead."
+literal|"Deprecated: Use 'gimp-context-get-brush' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-context-get-brush' instead."
+literal|"Deprecated: Use 'gimp-context-get-brush' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1397,9 +1397,9 @@ name|procedure
 argument_list|,
 literal|"gimp-brushes-get-spacing"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-brush-get-spacing' instead."
+literal|"Deprecated: Use 'gimp-brush-get-spacing' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-brush-get-spacing' instead."
+literal|"Deprecated: Use 'gimp-brush-get-spacing' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1468,9 +1468,9 @@ name|procedure
 argument_list|,
 literal|"gimp-brushes-set-spacing"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-brush-set-spacing' instead."
+literal|"Deprecated: Use 'gimp-brush-set-spacing' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-brush-set-spacing' instead."
+literal|"Deprecated: Use 'gimp-brush-set-spacing' instead."
 argument_list|,
 literal|""
 argument_list|,
@@ -1539,9 +1539,9 @@ name|procedure
 argument_list|,
 literal|"gimp-brushes-get-brush-data"
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-brush-get-pixels' instead."
+literal|"Deprecated: Use 'gimp-brush-get-pixels' instead."
 argument_list|,
-literal|"This procedure is deprecated! Use 'gimp-brush-get-pixels' instead."
+literal|"Deprecated: Use 'gimp-brush-get-pixels' instead."
 argument_list|,
 literal|""
 argument_list|,

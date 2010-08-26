@@ -26,6 +26,10 @@ file|"gimp.h"
 end_include
 
 begin_comment
+comment|/**  * SECTION: gimppattern  * @title: gimppattern  * @short_description: Functions operating on a single pattern.  *  * Functions operating on a single pattern.  **/
+end_comment
+
+begin_comment
 comment|/**  * gimp_pattern_get_info:  * @name: The pattern name.  * @width: The pattern width.  * @height: The pattern height.  * @bpp: The pattern bpp.  *  * Retrieve information about the specified pattern.  *  * This procedure retrieves information about the specified pattern.  * This includes the pattern extents (width and height).  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
 end_comment
 

@@ -126,6 +126,10 @@ begin_comment
 comment|/*  Function definitions  */
 end_comment
 
+begin_comment
+comment|/**  * pixel_region_init:  * @PR:    Pointer to PixelRegion struct, typically allocated on the  *         stack  * @tiles: Tiles  * @x:     X of region  * @y:     Y of region  * @w:     Width of region  * @h:     Height of region  * @dirty: %TRUE if there will be changes to the pixel region that  *         shall be written back to the tiles, %FALSE otherwise  *  * Initializes a pixel region over a set of tiles.  **/
+end_comment
+
 begin_function
 name|void
 DECL|function|pixel_region_init (PixelRegion * PR,TileManager * tiles,gint x,gint y,gint w,gint h,gboolean dirty)

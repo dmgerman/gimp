@@ -27,6 +27,10 @@ directive|include
 file|"gimpregioniterator.h"
 end_include
 
+begin_comment
+comment|/**  * SECTION: gimpregioniterator  * @title: gimpregioniterator  * @short_description: Functions to traverse a pixel regions.  *  * The GimpRgnIterator functions provide a variety of common ways to  * traverse a PixelRegion, using a pre-defined function pointer per  * pixel.  **/
+end_comment
+
 begin_struct
 DECL|struct|_GimpRgnIterator
 struct|struct

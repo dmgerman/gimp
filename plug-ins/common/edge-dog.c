@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1a3b000108
+DECL|struct|__anon27a760940108
 block|{
 DECL|member|inner
 name|gdouble
@@ -573,7 +573,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_layer
+name|gimp_item_is_layer
 argument_list|(
 name|param
 index|[
@@ -1917,14 +1917,14 @@ argument_list|(
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|layer1
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_name
+name|gimp_item_set_name
 argument_list|(
 name|layer1
 argument_list|,
@@ -1947,14 +1947,14 @@ argument_list|(
 name|drawable_id
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_visible
+name|gimp_item_set_visible
 argument_list|(
 name|layer2
 argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_drawable_set_name
+name|gimp_item_set_name
 argument_list|(
 name|layer2
 argument_list|,
@@ -4602,7 +4602,7 @@ expr_stmt|;
 comment|/* set up gimp drawable for rendering preview into */
 name|src_image_id
 operator|=
-name|gimp_drawable_get_image
+name|gimp_item_get_image
 argument_list|(
 name|drawable
 operator|->
