@@ -229,7 +229,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_draw_selection_in
+name|gimp_display_shell_draw_selection_segments
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -245,6 +245,25 @@ name|segs
 parameter_list|,
 name|gint
 name|n_segs
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_draw_selection_in_mask
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|cairo_pattern_t
+modifier|*
+name|mask
 parameter_list|,
 name|gint
 name|index

@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2754cf1e0103
+DECL|enum|__anon2b0084330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -137,18 +137,6 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_canvas_realize
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -245,6 +233,7 @@ function_decl|;
 end_function_decl
 
 begin_macro
+DECL|function|G_DEFINE_TYPE (GimpCanvas,gimp_canvas,GIMP_TYPE_OVERLAY_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpCanvas
@@ -263,242 +252,9 @@ name|parent_class
 value|gimp_canvas_parent_class
 end_define
 
-begin_decl_stmt
-specifier|static
-specifier|const
-name|guchar
-name|stipples
-index|[
-name|GIMP_CANVAS_NUM_STIPPLES
-index|]
-index|[
-literal|8
-index|]
-init|=
-block|{
-block|{
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-block|}
-block|,
-block|{
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-block|}
-block|,
-block|{
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-block|}
-block|,
-block|{
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-block|}
-block|,
-block|{
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-block|}
-block|,
-block|{
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-block|}
-block|,
-block|{
-literal|0x3C
-block|,
-comment|/*  --####--  */
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-block|}
-block|,
-block|{
-literal|0x78
-block|,
-comment|/*  -####---  */
-literal|0xF0
-block|,
-comment|/*  ####----  */
-literal|0xE1
-block|,
-comment|/*  ###----#  */
-literal|0xC3
-block|,
-comment|/*  ##----##  */
-literal|0x87
-block|,
-comment|/*  #----###  */
-literal|0x0F
-block|,
-comment|/*  ----####  */
-literal|0x1E
-block|,
-comment|/*  ---####-  */
-literal|0x3C
-block|,
-comment|/*  --####--  */
-block|}
-block|, }
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_class_init (GimpCanvasClass * klass)
 name|gimp_canvas_class_init
 parameter_list|(
 name|GimpCanvasClass
@@ -535,12 +291,6 @@ operator|->
 name|get_property
 operator|=
 name|gimp_canvas_get_property
-expr_stmt|;
-name|widget_class
-operator|->
-name|realize
-operator|=
-name|gimp_canvas_realize
 expr_stmt|;
 name|widget_class
 operator|->
@@ -664,28 +414,6 @@ control|)
 name|canvas
 operator|->
 name|gc
-index|[
-name|i
-index|]
-operator|=
-name|NULL
-expr_stmt|;
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|GIMP_CANVAS_NUM_STIPPLES
-condition|;
-name|i
-operator|++
-control|)
-name|canvas
-operator|->
-name|stipple
 index|[
 name|i
 index|]
@@ -828,68 +556,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_realize (GtkWidget * widget)
-name|gimp_canvas_realize
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|)
-block|{
-name|GimpCanvas
-modifier|*
-name|canvas
-init|=
-name|GIMP_CANVAS
-argument_list|(
-name|widget
-argument_list|)
-decl_stmt|;
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|realize
-argument_list|(
-name|widget
-argument_list|)
-expr_stmt|;
-name|canvas
-operator|->
-name|stipple
-index|[
-literal|0
-index|]
-operator|=
-name|gdk_bitmap_create_from_data
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|)
-name|stipples
-index|[
-literal|0
-index|]
-argument_list|,
-literal|8
-argument_list|,
-literal|8
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_canvas_unrealize (GtkWidget * widget)
 name|gimp_canvas_unrealize
 parameter_list|(
@@ -947,51 +613,6 @@ expr_stmt|;
 name|canvas
 operator|->
 name|gc
-index|[
-name|i
-index|]
-operator|=
-name|NULL
-expr_stmt|;
-block|}
-block|}
-for|for
-control|(
-name|i
-operator|=
-literal|0
-init|;
-name|i
-operator|<
-name|GIMP_CANVAS_NUM_STIPPLES
-condition|;
-name|i
-operator|++
-control|)
-block|{
-if|if
-condition|(
-name|canvas
-operator|->
-name|stipple
-index|[
-name|i
-index|]
-condition|)
-block|{
-name|g_object_unref
-argument_list|(
-name|canvas
-operator|->
-name|stipple
-index|[
-name|i
-index|]
-argument_list|)
-expr_stmt|;
-name|canvas
-operator|->
-name|stipple
 index|[
 name|i
 index|]
@@ -1367,13 +988,6 @@ name|style
 condition|)
 block|{
 case|case
-name|GIMP_CANVAS_STYLE_BLACK
-case|:
-case|case
-name|GIMP_CANVAS_STYLE_WHITE
-case|:
-break|break;
-case|case
 name|GIMP_CANVAS_STYLE_RENDER
 case|:
 name|mask
@@ -1451,44 +1065,6 @@ operator|=
 name|GDK_JOIN_MITER
 expr_stmt|;
 break|break;
-case|case
-name|GIMP_CANVAS_STYLE_SELECTION_IN
-case|:
-case|case
-name|GIMP_CANVAS_STYLE_SELECTION_OUT
-case|:
-name|mask
-operator||=
-name|GDK_GC_CAP_STYLE
-operator||
-name|GDK_GC_FILL
-operator||
-name|GDK_GC_STIPPLE
-expr_stmt|;
-name|values
-operator|.
-name|cap_style
-operator|=
-name|GDK_CAP_NOT_LAST
-expr_stmt|;
-name|values
-operator|.
-name|fill
-operator|=
-name|GDK_OPAQUE_STIPPLED
-expr_stmt|;
-name|values
-operator|.
-name|stipple
-operator|=
-name|canvas
-operator|->
-name|stipple
-index|[
-literal|0
-index|]
-expr_stmt|;
-break|break;
 default|default:
 return|return
 name|NULL
@@ -1555,111 +1131,6 @@ case|:
 case|case
 name|GIMP_CANVAS_STYLE_XOR
 case|:
-break|break;
-case|case
-name|GIMP_CANVAS_STYLE_WHITE
-case|:
-name|fg
-operator|.
-name|red
-operator|=
-literal|0xffff
-expr_stmt|;
-name|fg
-operator|.
-name|green
-operator|=
-literal|0xffff
-expr_stmt|;
-name|fg
-operator|.
-name|blue
-operator|=
-literal|0xffff
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_CANVAS_STYLE_BLACK
-case|:
-case|case
-name|GIMP_CANVAS_STYLE_SELECTION_IN
-case|:
-name|fg
-operator|.
-name|red
-operator|=
-literal|0x0
-expr_stmt|;
-name|fg
-operator|.
-name|green
-operator|=
-literal|0x0
-expr_stmt|;
-name|fg
-operator|.
-name|blue
-operator|=
-literal|0x0
-expr_stmt|;
-name|bg
-operator|.
-name|red
-operator|=
-literal|0xffff
-expr_stmt|;
-name|bg
-operator|.
-name|green
-operator|=
-literal|0xffff
-expr_stmt|;
-name|bg
-operator|.
-name|blue
-operator|=
-literal|0xffff
-expr_stmt|;
-break|break;
-case|case
-name|GIMP_CANVAS_STYLE_SELECTION_OUT
-case|:
-name|fg
-operator|.
-name|red
-operator|=
-literal|0xffff
-expr_stmt|;
-name|fg
-operator|.
-name|green
-operator|=
-literal|0xffff
-expr_stmt|;
-name|fg
-operator|.
-name|blue
-operator|=
-literal|0xffff
-expr_stmt|;
-name|bg
-operator|.
-name|red
-operator|=
-literal|0x7f7f
-expr_stmt|;
-name|bg
-operator|.
-name|green
-operator|=
-literal|0x7f7f
-expr_stmt|;
-name|bg
-operator|.
-name|blue
-operator|=
-literal|0x7f7f
-expr_stmt|;
 break|break;
 block|}
 name|gdk_gc_set_rgb_fg_color
@@ -2896,107 +2367,6 @@ name|style
 index|]
 argument_list|,
 name|region
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_canvas_set_stipple_index:  * @canvas: a #GimpCanvas widget  * @style:  the #GimpCanvasStyle to alter  * @index:  the new stipple index  *  * Some styles of the #GimpCanvas do a stipple fill. #GimpCanvas has a  * set of %GIMP_CANVAS_NUM_STIPPLES stipple bitmaps. This function  * allows you to change the bitmap being used. This can be used to  * implement a marching ants effect. An older implementation used to  * use this feature and so it is included since it might be useful in  * the future. All stipple bitmaps but the default one are created on  * the fly.  */
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_canvas_set_stipple_index (GimpCanvas * canvas,GimpCanvasStyle style,guint index)
-name|gimp_canvas_set_stipple_index
-parameter_list|(
-name|GimpCanvas
-modifier|*
-name|canvas
-parameter_list|,
-name|GimpCanvasStyle
-name|style
-parameter_list|,
-name|guint
-name|index
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|gimp_canvas_ensure_style
-argument_list|(
-name|canvas
-argument_list|,
-name|style
-argument_list|)
-condition|)
-return|return;
-name|index
-operator|=
-name|index
-operator|%
-name|GIMP_CANVAS_NUM_STIPPLES
-expr_stmt|;
-if|if
-condition|(
-operator|!
-name|canvas
-operator|->
-name|stipple
-index|[
-name|index
-index|]
-condition|)
-block|{
-name|canvas
-operator|->
-name|stipple
-index|[
-name|index
-index|]
-operator|=
-name|gdk_bitmap_create_from_data
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|canvas
-argument_list|)
-argument_list|)
-argument_list|,
-operator|(
-specifier|const
-name|gchar
-operator|*
-operator|)
-name|stipples
-index|[
-name|index
-index|]
-argument_list|,
-literal|8
-argument_list|,
-literal|8
-argument_list|)
-expr_stmt|;
-block|}
-name|gdk_gc_set_stipple
-argument_list|(
-name|canvas
-operator|->
-name|gc
-index|[
-name|style
-index|]
-argument_list|,
-name|canvas
-operator|->
-name|stipple
-index|[
-name|index
-index|]
 argument_list|)
 expr_stmt|;
 block|}
