@@ -1314,6 +1314,7 @@ operator|==
 literal|4
 condition|)
 block|{
+specifier|const
 name|gint
 name|x1
 init|=
@@ -1328,6 +1329,7 @@ name|x1
 operator|-
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|y1
 init|=
@@ -1342,6 +1344,7 @@ name|y1
 operator|-
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|x2
 init|=
@@ -1356,6 +1359,7 @@ name|x2
 operator|+
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|y2
 init|=
@@ -1370,6 +1374,7 @@ name|y2
 operator|+
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|x3
 init|=
@@ -1384,6 +1389,7 @@ name|x1
 operator|+
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|y3
 init|=
@@ -1398,6 +1404,7 @@ name|y1
 operator|+
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|x4
 init|=
@@ -1412,6 +1419,7 @@ name|x2
 operator|-
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|y4
 init|=
@@ -1640,6 +1648,7 @@ name|gint
 name|n_segs
 parameter_list|)
 block|{
+specifier|const
 name|gint
 name|xclamp
 init|=
@@ -1651,6 +1660,7 @@ name|disp_width
 operator|+
 literal|1
 decl_stmt|;
+specifier|const
 name|gint
 name|yclamp
 init|=
