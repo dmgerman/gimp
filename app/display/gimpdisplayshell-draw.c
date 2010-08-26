@@ -162,6 +162,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpdisplayshell-cursor.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplayshell-draw.h"
 end_include
 
@@ -3223,11 +3229,6 @@ argument_list|,
 literal|0.5
 argument_list|)
 expr_stmt|;
-DECL|macro|CURSOR_SIZE
-define|#
-directive|define
-name|CURSOR_SIZE
-value|14
 name|cairo_set_source_rgb
 argument_list|(
 name|cr
@@ -3247,7 +3248,7 @@ name|shell
 operator|->
 name|cursor_x
 operator|-
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|,
 name|shell
 operator|->
@@ -3264,7 +3265,7 @@ name|shell
 operator|->
 name|cursor_x
 operator|+
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|,
 name|shell
 operator|->
@@ -3281,7 +3282,7 @@ name|shell
 operator|->
 name|cursor_x
 operator|-
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|,
 name|shell
 operator|->
@@ -3298,7 +3299,7 @@ name|shell
 operator|->
 name|cursor_x
 operator|+
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|,
 name|shell
 operator|->
@@ -3321,7 +3322,7 @@ name|shell
 operator|->
 name|cursor_y
 operator|-
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -3338,7 +3339,7 @@ name|shell
 operator|->
 name|cursor_y
 operator|+
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|)
 expr_stmt|;
 name|cairo_move_to
@@ -3355,7 +3356,7 @@ name|shell
 operator|->
 name|cursor_y
 operator|-
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -3372,7 +3373,7 @@ name|shell
 operator|->
 name|cursor_y
 operator|+
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
@@ -3399,7 +3400,7 @@ name|shell
 operator|->
 name|cursor_x
 operator|-
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|,
 name|shell
 operator|->
@@ -3414,7 +3415,7 @@ name|shell
 operator|->
 name|cursor_x
 operator|+
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|,
 name|shell
 operator|->
@@ -3433,7 +3434,7 @@ name|shell
 operator|->
 name|cursor_y
 operator|-
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -3448,7 +3449,7 @@ name|shell
 operator|->
 name|cursor_y
 operator|+
-name|CURSOR_SIZE
+name|GIMP_CURSOR_SIZE
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
