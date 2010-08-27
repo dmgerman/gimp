@@ -62,6 +62,10 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
 name|gint
 name|x
 parameter_list|,

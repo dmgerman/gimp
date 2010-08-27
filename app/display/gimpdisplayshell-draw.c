@@ -3113,12 +3113,16 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_area (GimpDisplayShell * shell,gint x,gint y,gint w,gint h)
+DECL|function|gimp_display_shell_draw_area (GimpDisplayShell * shell,cairo_t * cr,gint x,gint y,gint w,gint h)
 name|gimp_display_shell_draw_area
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|,
 name|gint
 name|x
@@ -3162,6 +3166,13 @@ name|shell
 operator|->
 name|display
 argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|cr
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|x2
@@ -3329,6 +3340,8 @@ expr_stmt|;
 name|gimp_display_shell_render
 argument_list|(
 name|shell
+argument_list|,
+name|cr
 argument_list|,
 name|j
 operator|-

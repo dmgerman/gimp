@@ -7946,6 +7946,11 @@ operator|&
 name|n_rects
 argument_list|)
 expr_stmt|;
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 for|for
 control|(
 name|i
@@ -7962,6 +7967,8 @@ control|)
 name|gimp_display_shell_draw_area
 argument_list|(
 name|shell
+argument_list|,
+name|cr
 argument_list|,
 name|rects
 index|[
@@ -7990,6 +7997,11 @@ name|i
 index|]
 operator|.
 name|height
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 name|g_free
