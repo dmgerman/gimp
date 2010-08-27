@@ -37,6 +37,24 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_cairo_add_segments
+parameter_list|(
+name|cairo_t
+modifier|*
+name|cr
+parameter_list|,
+name|GdkSegment
+modifier|*
+name|segs
+parameter_list|,
+name|gint
+name|n_segs
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
