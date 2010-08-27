@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcairo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -1078,7 +1084,7 @@ name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_draw_selection_in_mask
+name|gimp_display_shell_draw_selection_in
 argument_list|(
 name|selection
 operator|->
@@ -1585,12 +1591,15 @@ argument_list|,
 name|CAIRO_CONTENT_ALPHA
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_draw_selection_segments
+name|cairo_set_line_width
 argument_list|(
-name|selection
-operator|->
-name|shell
+name|cr
 argument_list|,
+literal|1.0
+argument_list|)
+expr_stmt|;
+name|gimp_cairo_add_segments
+argument_list|(
 name|cr
 argument_list|,
 name|selection
@@ -1600,6 +1609,11 @@ argument_list|,
 name|selection
 operator|->
 name|n_segs_in
+argument_list|)
+expr_stmt|;
+name|cairo_stroke
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 name|selection
