@@ -150,7 +150,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon275af1740108
+DECL|struct|__anon27603d460108
 typedef|typedef
 struct|struct
 block|{
@@ -173,7 +173,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275af1740208
+DECL|struct|__anon27603d460208
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +202,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon275af1740308
+DECL|struct|__anon27603d460308
 typedef|typedef
 struct|struct
 block|{
@@ -222,7 +222,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon275af1740403
+DECL|enum|__anon27603d460403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -241,7 +241,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon275af1740508
+DECL|struct|__anon27603d460508
 typedef|typedef
 struct|struct
 block|{
@@ -428,7 +428,9 @@ begin_function_decl
 specifier|static
 name|void
 name|recount_pages
-parameter_list|()
+parameter_list|(
+name|void
+parameter_list|)
 function_decl|;
 end_function_decl
 
@@ -1068,14 +1070,21 @@ name|single_color
 decl_stmt|;
 name|gint32
 name|mask_id
+init|=
+operator|-
+literal|1
 decl_stmt|;
 name|GimpDrawable
 modifier|*
 name|mask
+init|=
+name|NULL
 decl_stmt|;
 name|cairo_surface_t
 modifier|*
 name|mask_image
+init|=
+name|NULL
 decl_stmt|;
 comment|/* Setting mandatory output values */
 operator|*
@@ -1531,6 +1540,7 @@ name|optimize
 operator|.
 name|ignore
 operator|||
+operator|(
 name|optimize
 operator|.
 name|ignore
@@ -1538,6 +1548,7 @@ operator|&&
 name|opacity
 operator|>
 literal|0.0
+operator|)
 operator|)
 condition|)
 block|{
@@ -2582,7 +2593,7 @@ operator|.
 name|ignore
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end_defaults
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2590,6 +2601,12 @@ name|vbox
 argument_list|)
 argument_list|,
 name|ignore_c
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|convert_c
@@ -2611,7 +2628,7 @@ operator|.
 name|convert
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end_defaults
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2619,6 +2636,12 @@ name|vbox
 argument_list|)
 argument_list|,
 name|convert_c
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|apply_c
@@ -2640,7 +2663,7 @@ operator|.
 name|apply_masks
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_end_defaults
+name|gtk_box_pack_end
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2648,6 +2671,12 @@ name|vbox
 argument_list|)
 argument_list|,
 name|apply_c
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show_all
@@ -2939,7 +2968,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2947,6 +2976,12 @@ name|file_hbox
 argument_list|)
 argument_list|,
 name|file_entry
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -2965,7 +3000,7 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -2973,6 +3008,12 @@ name|vbox
 argument_list|)
 argument_list|,
 name|file_hbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|page_view
@@ -3086,7 +3127,7 @@ argument_list|,
 name|page_view
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -3094,6 +3135,12 @@ name|vbox
 argument_list|)
 argument_list|,
 name|scroll
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|h_but_box
@@ -3118,7 +3165,7 @@ argument_list|(
 literal|"Remove the selected pages"
 argument_list|)
 expr_stmt|;
-name|gtk_box_pack_start_defaults
+name|gtk_box_pack_start
 argument_list|(
 name|GTK_BOX
 argument_list|(
@@ -3126,6 +3173,12 @@ name|h_but_box
 argument_list|)
 argument_list|,
 name|del
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -4155,7 +4208,7 @@ name|item
 argument_list|)
 expr_stmt|;
 comment|/* Now you can free the data */
-name|gdk_pixbuf_unref
+name|g_object_unref
 argument_list|(
 name|thumb
 argument_list|)
@@ -4394,6 +4447,8 @@ decl_stmt|;
 name|guchar
 modifier|*
 name|colors
+init|=
+name|NULL
 decl_stmt|;
 name|gint
 name|num_colors
@@ -5482,7 +5537,7 @@ comment|/* When dealing with a gray/indexed image, the viewed color of the text 
 if|if
 condition|(
 name|type
-operator|=
+operator|==
 name|GIMP_RGB
 condition|)
 name|gimp_text_layer_get_color
