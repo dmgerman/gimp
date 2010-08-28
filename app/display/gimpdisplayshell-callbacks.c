@@ -156,6 +156,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"widgets/gimpcairo.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"widgets/gimpcontrollers.h"
 end_include
 
@@ -8241,14 +8247,11 @@ argument_list|(
 name|rects
 argument_list|)
 expr_stmt|;
-name|gimp_canvas_draw_drop_zone
-argument_list|(
-name|GIMP_CANVAS
+name|gimp_cairo_draw_drop_wilber
 argument_list|(
 name|shell
 operator|->
 name|canvas
-argument_list|)
 argument_list|,
 name|cr
 argument_list|)

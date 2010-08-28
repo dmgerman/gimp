@@ -25,7 +25,7 @@ end_include
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b0d87e40103
+DECL|enum|__anon27a41fe50103
 block|{
 DECL|enumerator|GIMP_CANVAS_STYLE_XOR
 name|GIMP_CANVAS_STYLE_XOR
@@ -389,21 +389,6 @@ begin_empty_stmt
 unit|)
 empty_stmt|;
 end_empty_stmt
-
-begin_function_decl
-name|void
-name|gimp_canvas_draw_drop_zone
-parameter_list|(
-name|GimpCanvas
-modifier|*
-name|canvas
-parameter_list|,
-name|cairo_t
-modifier|*
-name|cr
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 name|void
