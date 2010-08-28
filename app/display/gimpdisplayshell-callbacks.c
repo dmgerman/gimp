@@ -1536,6 +1536,7 @@ name|region
 argument_list|)
 expr_stmt|;
 block|}
+comment|/*  create the cairo_t after enabling double buffering, or we        *  will get the wrong window destination surface        */
 name|cr
 operator|=
 name|gdk_cairo_create
