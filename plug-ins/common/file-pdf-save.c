@@ -18,25 +18,7 @@ end_comment
 begin_include
 include|#
 directive|include
-file|<libgimp/gimp.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimp/gimpui.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<cairo.h>
+file|"config.h"
 end_include
 
 begin_include
@@ -54,7 +36,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|<pango/pango.h>
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
 end_include
 
 begin_define
@@ -150,7 +138,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon27603d460108
+DECL|struct|__anon2935c5620108
 typedef|typedef
 struct|struct
 block|{
@@ -173,7 +161,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27603d460208
+DECL|struct|__anon2935c5620208
 typedef|typedef
 struct|struct
 block|{
@@ -202,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon27603d460308
+DECL|struct|__anon2935c5620308
 typedef|typedef
 struct|struct
 block|{
@@ -222,7 +210,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon27603d460403
+DECL|enum|__anon2935c5620403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -241,7 +229,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon27603d460508
+DECL|struct|__anon2935c5620508
 typedef|typedef
 struct|struct
 block|{
