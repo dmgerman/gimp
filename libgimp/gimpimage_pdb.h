@@ -535,6 +535,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|gboolean
+name|gimp_image_reorder_item
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|item_ID
+parameter_list|,
+name|gint32
+name|parent_ID
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_ifndef
 ifndef|#
 directive|ifndef
