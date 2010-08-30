@@ -419,7 +419,7 @@ name|cage_vertices_max
 operator|=
 literal|50
 expr_stmt|;
-comment|//pre-allocation for 50 vertices for the cage.
+comment|/*pre-allocation for 50 vertices for the cage.*/
 name|self
 operator|->
 name|cage_vertices
