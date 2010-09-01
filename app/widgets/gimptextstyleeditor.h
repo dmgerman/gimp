@@ -140,6 +140,11 @@ name|GtkWidget
 modifier|*
 name|font_entry
 decl_stmt|;
+DECL|member|color_button
+name|GtkWidget
+modifier|*
+name|color_button
+decl_stmt|;
 DECL|member|clear_button
 name|GtkWidget
 modifier|*
