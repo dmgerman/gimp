@@ -470,10 +470,10 @@ modifier|*
 name|statusbar
 decl_stmt|;
 comment|/*  statusbar                          */
-DECL|member|render_buf
-name|guchar
+DECL|member|render_surface
+name|cairo_surface_t
 modifier|*
-name|render_buf
+name|render_surface
 decl_stmt|;
 comment|/*  buffer for rendering the image     */
 DECL|member|title_idle_id

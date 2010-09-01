@@ -41,7 +41,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27ab2be80108
+DECL|struct|__anon2c63438e0108
 block|{
 DECL|member|str
 specifier|const
@@ -728,6 +728,9 @@ literal|"%d out of %d samples failed!\n\n"
 argument_list|,
 name|failures
 argument_list|,
+operator|(
+name|int
+operator|)
 name|G_N_ELEMENTS
 argument_list|(
 name|samples
@@ -744,6 +747,9 @@ name|g_print
 argument_list|(
 literal|"All %d samples passed.\n\n"
 argument_list|,
+operator|(
+name|int
+operator|)
 name|G_N_ELEMENTS
 argument_list|(
 name|samples

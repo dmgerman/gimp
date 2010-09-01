@@ -239,12 +239,9 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GdkSegment
+name|cairo_pattern_t
 modifier|*
-name|segs
-parameter_list|,
-name|gint
-name|n_segs
+name|mask
 parameter_list|,
 name|gint
 name|index
@@ -300,6 +297,10 @@ parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|,
 name|gint
 name|x
