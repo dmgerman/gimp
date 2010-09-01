@@ -48,6 +48,16 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_comment
+comment|/*  This is a bad hack that allows to include this file from the app's  *  non-gui files. I haven't decided yet how to split this header and  *  where to move the non-GTK+ part. --Mitch  */
+end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|__GTK_H__
+end_ifdef
+
 begin_function_decl
 name|gboolean
 name|gimp_cairo_set_focus_line_pattern
@@ -62,6 +72,11 @@ name|widget
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function_decl
 name|cairo_pattern_t
