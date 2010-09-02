@@ -206,7 +206,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-comment|/* FIXME: wrong categories and name, to appears in the gegl tool */
 name|operation_class
 operator|->
 name|name
@@ -1244,13 +1243,6 @@ name|cage_vertice_number
 index|]
 operator|=
 literal|0.0
-expr_stmt|;
-name|printf
-argument_list|(
-literal|"NAN SRT: %f\n"
-argument_list|,
-name|SRT
-argument_list|)
 expr_stmt|;
 block|}
 comment|/* vertice coef */
