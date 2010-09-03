@@ -58,7 +58,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2974e4600103
+DECL|enum|__anon29b53c1f0103
 DECL|enumerator|CMD_APPEND
 DECL|enumerator|CMD_DESTRUCT
 DECL|enumerator|CMD_IGNORE
@@ -75,18 +75,6 @@ block|}
 name|CmdExecuteValue_t
 typedef|;
 end_typedef
-
-begin_define
-DECL|macro|COMMAND_PROTO (class)
-define|#
-directive|define
-name|COMMAND_PROTO
-parameter_list|(
-name|class
-parameter_list|)
-define|\
-value|static void class##_destruct(Command_t *command); \ static CmdExecuteValue_t class##_execute(Command_t *command); \ static void class##_undo(Command_t *command); \ static void class##_redo(Command_t *command)
-end_define
 
 begin_struct
 DECL|struct|CommandClass_t
@@ -203,7 +191,7 @@ function_decl|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2974e4600208
+DECL|struct|__anon29b53c1f0208
 typedef|typedef
 struct|struct
 block|{
@@ -222,7 +210,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2974e4600308
+DECL|struct|__anon29b53c1f0308
 typedef|typedef
 struct|struct
 block|{

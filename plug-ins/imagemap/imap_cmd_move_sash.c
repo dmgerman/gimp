@@ -33,13 +33,29 @@ directive|include
 file|"libgimp/stdplugins-intl.h"
 end_include
 
-begin_expr_stmt
-name|COMMAND_PROTO
-argument_list|(
-name|move_sash_command
-argument_list|)
-expr_stmt|;
-end_expr_stmt
+begin_function_decl
+specifier|static
+name|void
+name|move_sash_command_destruct
+parameter_list|(
+name|Command_t
+modifier|*
+name|command
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
+name|CmdExecuteValue_t
+name|move_sash_command_execute
+parameter_list|(
+name|Command_t
+modifier|*
+name|command
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_decl_stmt
 DECL|variable|move_sash_command_class
@@ -53,16 +69,16 @@ block|,
 name|move_sash_command_execute
 block|,
 name|NULL
+comment|/*undo*/
 block|,
-comment|/* move_sash_command_undo */
 name|NULL
-comment|/* move_sash_command_redo */
+comment|/*redo*/
 block|}
 decl_stmt|;
 end_decl_stmt
 
 begin_typedef
-DECL|struct|__anon288ac3170108
+DECL|struct|__anon28c55dfb0108
 typedef|typedef
 struct|struct
 block|{
