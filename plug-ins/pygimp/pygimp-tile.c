@@ -4677,7 +4677,7 @@ name|pf_as_mapping
 init|=
 block|{
 operator|(
-name|inquiry
+name|lenfunc
 operator|)
 name|pf_length
 block|,
