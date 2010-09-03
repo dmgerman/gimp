@@ -5027,14 +5027,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|hsv_setitem (PyObject * self,int pos,PyObject * value)
+DECL|function|hsv_setitem (PyObject * self,Py_ssize_t pos,PyObject * value)
 name|hsv_setitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|,
 name|PyObject
@@ -7636,14 +7636,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|hsl_setitem (PyObject * self,int pos,PyObject * value)
+DECL|function|hsl_setitem (PyObject * self,Py_ssize_t pos,PyObject * value)
 name|hsl_setitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|,
 name|PyObject
@@ -10242,14 +10242,14 @@ end_function
 begin_function
 specifier|static
 name|int
-DECL|function|cmyk_setitem (PyObject * self,int pos,PyObject * value)
+DECL|function|cmyk_setitem (PyObject * self,Py_ssize_t pos,PyObject * value)
 name|cmyk_setitem
 parameter_list|(
 name|PyObject
 modifier|*
 name|self
 parameter_list|,
-name|int
+name|Py_ssize_t
 name|pos
 parameter_list|,
 name|PyObject
