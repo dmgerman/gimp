@@ -401,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2a1055040103
+DECL|enum|__anon2ba7cedf0103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1442,7 +1442,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1055040208
+DECL|struct|__anon2ba7cedf0208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1685,7 +1685,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a1055040308
+DECL|struct|__anon2ba7cedf0308
 block|{
 DECL|member|used_count
 name|signed
@@ -10032,6 +10032,10 @@ name|BOX_G_ELEMS
 operator|*
 name|BOX_B_ELEMS
 index|]
+init|=
+block|{
+literal|0
+block|, }
 decl_stmt|;
 comment|/* Convert cell coordinates to update box id */
 name|R
