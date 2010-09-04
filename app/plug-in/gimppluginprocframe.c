@@ -30,13 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"core/gimpprogress.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"core/gimpprogress.h"
+file|"pdb/gimppdbcontext.h"
 end_include
 
 begin_include
@@ -104,7 +104,7 @@ name|proc_frame
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
+name|GIMP_IS_PDB_CONTEXT
 argument_list|(
 name|context
 argument_list|)
@@ -197,7 +197,7 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_CONTEXT
+name|GIMP_IS_PDB_CONTEXT
 argument_list|(
 name|context
 argument_list|)

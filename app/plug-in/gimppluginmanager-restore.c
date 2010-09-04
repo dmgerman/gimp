@@ -54,13 +54,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"pdb/gimppdb.h"
 end_include
 
 begin_include
 include|#
 directive|include
-file|"pdb/gimppdb.h"
+file|"pdb/gimppdbcontext.h"
 end_include
 
 begin_include
@@ -379,6 +379,18 @@ operator|=
 name|manager
 operator|->
 name|gimp
+expr_stmt|;
+comment|/* need a GimpPDBContext for calling gimp_plug_in_manager_run_foo() */
+name|context
+operator|=
+name|gimp_pdb_context_new
+argument_list|(
+name|gimp
+argument_list|,
+name|context
+argument_list|,
+name|TRUE
+argument_list|)
 expr_stmt|;
 comment|/* search for binaries in the plug-in directory path */
 name|gimp_plug_in_manager_search
@@ -765,6 +777,11 @@ argument_list|,
 name|context
 argument_list|,
 name|status_callback
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|context
 argument_list|)
 expr_stmt|;
 block|}
