@@ -4130,7 +4130,6 @@ name|error
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_layer
@@ -4670,7 +4669,6 @@ name|error
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_channel
@@ -5192,7 +5190,6 @@ name|error
 argument_list|)
 condition|)
 block|{
-comment|/* FIXME tree */
 name|success
 operator|=
 name|gimp_image_add_vectors
@@ -15999,17 +15996,17 @@ name|procedure
 argument_list|,
 literal|"gimp-image-add-layer"
 argument_list|,
-literal|"Add the specified layer to the image."
+literal|"Deprecated: Use 'gimp-image-insert-layer' instead."
 argument_list|,
-literal|"This procedure adds the specified layer to the image at the given position. If the position is specified as -1, then the layer is inserted above the active layer. The layer type must be compatible with the image base type."
+literal|"Deprecated: Use 'gimp-image-insert-layer' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-insert-layer"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16344,17 +16341,17 @@ name|procedure
 argument_list|,
 literal|"gimp-image-add-channel"
 argument_list|,
-literal|"Add the specified channel to the image."
+literal|"Deprecated: Use 'gimp-image-insert-channel' instead."
 argument_list|,
-literal|"This procedure adds the specified channel to the image at the given position. If the position is specified as -1, then the channel is inserted above the active channel or, if no channel is active, at the top of the channel stack."
+literal|"Deprecated: Use 'gimp-image-insert-channel' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-insert-channel"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -16689,17 +16686,17 @@ name|procedure
 argument_list|,
 literal|"gimp-image-add-vectors"
 argument_list|,
-literal|"Add the specified vectors object to the image."
+literal|"Deprecated: Use 'gimp-image-insert-vectors' instead."
 argument_list|,
-literal|"This procedure adds the specified vectors object to the image at the given position. If the position is specified as -1, then the vectors object is inserted at the top of the vectors stack."
+literal|"Deprecated: Use 'gimp-image-insert-vectors' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-image-insert-vectors"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

@@ -383,6 +383,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_add_layer
@@ -398,6 +404,15 @@ name|position
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gboolean
@@ -431,6 +446,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_add_channel
@@ -446,6 +467,15 @@ name|position
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gboolean
@@ -479,6 +509,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_add_vectors
@@ -494,6 +530,15 @@ name|position
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gboolean

@@ -2255,7 +2255,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the position is specified as -1, then the layer is  * inserted above the active layer. The layer type must be compatible  * with the image base type.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @position: The layer position.  *  * Deprecated: Use gimp_image_insert_layer() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2498,7 +2498,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. If the position is specified as -1, then the channel is  * inserted above the active channel or, if no channel is active, at  * the top of the channel stack.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @position: The channel position.  *  * Deprecated: Use gimp_image_insert_channel() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2741,7 +2741,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  * @position: The vectors objects position.  *  * Add the specified vectors object to the image.  *  * This procedure adds the specified vectors object to the image at the  * given position. If the position is specified as -1, then the vectors  * object is inserted at the top of the vectors stack.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  * @position: The vectors objects position.  *  * Deprecated: Use gimp_image_insert_vectors() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
