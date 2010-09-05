@@ -3012,7 +3012,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_to_selection:  * @vectors_ID: The vectors object to render to the selection.  * @operation: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * Transforms the specified vectors object into a selection  *  * This procedure renders the desired vectors object into the current  * selection of the image the vectors object belongs to.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_to_selection:  * @vectors_ID: The vectors object to render to the selection.  * @operation: The desired operation with current selection.  * @antialias: Antialias selection.  * @feather: Feather selection.  * @feather_radius_x: Feather radius x.  * @feather_radius_y: Feather radius y.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function

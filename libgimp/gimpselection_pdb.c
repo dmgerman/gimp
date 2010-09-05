@@ -19,6 +19,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_SELECTION_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimpselection_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimpselection  * @title: gimpselection  * @short_description: Functions for manipulating selections.  *  * Functions for manipulating selections.  **/
 end_comment
@@ -1110,7 +1128,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Transfer the specified layer's alpha channel to the selection mask.  *  * The alpha channel information is used to create a selection mask  * such that for any pixel in the image defined in the specified layer,  * that layer pixel's alpha value is transferred to the selection mask.  * If the layer is undefined at a particular image pixel, the  * associated selection mask value is set to 0. A layer without an  * alpha channel is considered opaque.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1177,7 +1195,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Transfer the specified channel to the selection mask.  *  * This procedure loads the specified channel into the selection mask.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -1323,7 +1341,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Combines the specified channel with the selection mask.  *  * This procedure combines the specified channel into the selection  * mask.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function

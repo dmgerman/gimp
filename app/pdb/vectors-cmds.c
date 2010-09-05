@@ -11320,9 +11320,9 @@ name|procedure
 argument_list|,
 literal|"gimp-vectors-to-selection"
 argument_list|,
-literal|"Transforms the specified vectors object into a selection"
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"This procedure renders the desired vectors object into the current selection of the image the vectors object belongs to."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -11330,7 +11330,7 @@ literal|"Simon Budig"
 argument_list|,
 literal|"2006"
 argument_list|,
-name|NULL
+literal|"gimp-item-to-selection"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

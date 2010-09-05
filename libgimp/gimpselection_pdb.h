@@ -203,6 +203,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_selection_layer_alpha
@@ -223,6 +229,15 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
+
 begin_function_decl
 name|gint32
 name|gimp_selection_save
@@ -232,6 +247,12 @@ name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
 
 begin_function_decl
 name|gboolean
@@ -245,6 +266,15 @@ name|operation
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_macro
 name|G_END_DECLS
