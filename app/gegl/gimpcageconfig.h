@@ -211,33 +211,6 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/**  * gimp_cage_config_is_on_handle:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @x: x value to check  * @y: y value to check  * @handle_size: size of the handle, in pixels  *   * Check if a given point is on a handle of the cage, and return his number if yes.  *   * Returns: the number of the handle if the point is on a handle, or -1 if not.  */
-end_comment
-
-begin_function_decl
-name|gint
-name|gimp_cage_config_is_on_handle
-parameter_list|(
-name|GimpCageConfig
-modifier|*
-name|gcc
-parameter_list|,
-name|GimpCageMode
-name|mode
-parameter_list|,
-name|gdouble
-name|x
-parameter_list|,
-name|gdouble
-name|y
-parameter_list|,
-name|gint
-name|handle_size
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/**  * gimp_cage_config_move_cage_point:  * @gcc: the cage config  * @mode: the actual mode of the cage, GIMP_CAGE_MODE_CAGE_CHANGE or GIMP_CAGE_MODE_DEFORM  * @point_number: the point of the cage to move  * @x: new x value  * @y: new y value  *   * Move a point of the source or destination cage, according to the cage mode provided  */
 end_comment
 

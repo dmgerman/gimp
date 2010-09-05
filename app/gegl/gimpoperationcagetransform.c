@@ -857,6 +857,22 @@ decl_stmt|;
 name|GimpVector2
 name|plain_color
 decl_stmt|;
+comment|/* pre-fill the out buffer with no-displacement coordinate */
+name|GeglBufferIterator
+modifier|*
+name|it
+init|=
+name|gegl_buffer_iterator_new
+argument_list|(
+name|out_buf
+argument_list|,
+name|roi
+argument_list|,
+name|NULL
+argument_list|,
+name|GEGL_BUFFER_WRITE
+argument_list|)
+decl_stmt|;
 name|plain_color
 operator|.
 name|x
@@ -902,22 +918,6 @@ operator|.
 name|y
 argument_list|)
 expr_stmt|;
-comment|/* pre-fill the out buffer with no-displacement coordinate */
-name|GeglBufferIterator
-modifier|*
-name|it
-init|=
-name|gegl_buffer_iterator_new
-argument_list|(
-name|out_buf
-argument_list|,
-name|roi
-argument_list|,
-name|NULL
-argument_list|,
-name|GEGL_BUFFER_WRITE
-argument_list|)
-decl_stmt|;
 while|while
 condition|(
 name|gegl_buffer_iterator_next
