@@ -107,7 +107,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c972f740103
+DECL|enum|__anon29c5d19c0103
 block|{
 DECL|enumerator|STATUS
 name|STATUS
@@ -129,7 +129,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c972f740203
+DECL|enum|__anon29c5d19c0203
 block|{
 DECL|enumerator|PROC_SET
 name|PROC_SET
@@ -158,7 +158,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c972f740308
+DECL|struct|__anon29c5d19c0308
 block|{
 DECL|member|name
 specifier|const
@@ -180,7 +180,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c972f740408
+DECL|struct|__anon29c5d19c0408
 block|{
 DECL|member|intent
 name|GimpColorRenderingIntent
@@ -3548,9 +3548,11 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_selection_load
+name|gimp_item_to_selection
 argument_list|(
 name|saved_selection
+argument_list|,
+name|GIMP_CHANNEL_OP_REPLACE
 argument_list|)
 expr_stmt|;
 name|gimp_image_remove_channel
