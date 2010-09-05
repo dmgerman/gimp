@@ -1579,7 +1579,7 @@ literal|"gimp-channel-new"
 argument_list|,
 literal|"Create a new channel."
 argument_list|,
-literal|"This procedure creates a new channel with the specified width and height. Name, opacity, and color are also supplied parameters. The new channel still needs to be added to the image, as this is not automatic. Add the new channel with the 'gimp-image-add-channel' command. Other attributes such as channel show masked, should be set with explicit procedure calls. The channel's contents are undefined initially."
+literal|"This procedure creates a new channel with the specified width and height. Name, opacity, and color are also supplied parameters. The new channel still needs to be added to the image, as this is not automatic. Add the new channel with the 'gimp-image-insert-channel' command. Other attributes such as channel show masked, should be set with explicit procedure calls. The channel's contents are undefined initially."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,

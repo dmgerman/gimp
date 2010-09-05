@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimplayer  * @title: gimplayer  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * _gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_add_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
+comment|/**  * _gimp_layer_new:  * @image_ID: The image to which to add the layer.  * @width: The layer width.  * @height: The layer height.  * @type: The layer type.  * @name: The layer name.  * @opacity: The layer opacity.  * @mode: The layer combination mode.  *  * Create a new layer.  *  * This procedure creates a new layer with the specified width, height,  * and type. Name, opacity, and mode are also supplied parameters. The  * new layer still needs to be added to the image, as this is not  * automatic. Add the new layer with the gimp_image_insert_layer()  * command. Other attributes such as layer mask modes, and offsets  * should be set with explicit procedure calls.  *  * Returns: The newly created layer.  */
 end_comment
 
 begin_function
@@ -147,7 +147,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_visible:  * @image_ID: The source image from where the content is copied.  * @dest_image_ID: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_add_layer() command. Other attributes such as layer mask  * modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_layer_new_from_visible:  * @image_ID: The source image from where the content is copied.  * @dest_image_ID: The destination image to which to add the layer.  * @name: The layer name.  *  * Create a new layer from what is visible in an image.  *  * This procedure creates a new layer from what is visible in the given  * image. The new layer still needs to be added to the destination  * image, as this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly created layer.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function
@@ -242,7 +242,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_new_from_drawable:  * @drawable_ID: The source drawable from where the new layer is copied.  * @dest_image_ID: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_add_layer() command. Other attributes such as layer mask  * modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly copied layer.  */
+comment|/**  * gimp_layer_new_from_drawable:  * @drawable_ID: The source drawable from where the new layer is copied.  * @dest_image_ID: The destination image to which to add the layer.  *  * Create a new layer by copying an existing drawable.  *  * This procedure creates a new layer as a copy of the specified  * drawable. The new layer still needs to be added to the image, as  * this is not automatic. Add the new layer with the  * gimp_image_insert_layer() command. Other attributes such as layer  * mask modes, and offsets should be set with explicit procedure calls.  *  * Returns: The newly copied layer.  */
 end_comment
 
 begin_function

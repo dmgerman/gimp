@@ -7326,7 +7326,7 @@ literal|"gimp-vectors-new"
 argument_list|,
 literal|"Creates a new empty vectors object."
 argument_list|,
-literal|"Creates a new empty vectors object. The vectors object needs to be added to the image using 'gimp-image-add-vectors'."
+literal|"Creates a new empty vectors object. The vectors object needs to be added to the image using 'gimp-image-insert-vectors'."
 argument_list|,
 literal|"Simon Budig"
 argument_list|,
@@ -7443,7 +7443,7 @@ literal|"gimp-vectors-new-from-text-layer"
 argument_list|,
 literal|"Creates a new vectors object from a text layer."
 argument_list|,
-literal|"Creates a new vectors object from a text layer. The vectors object needs to be added to the image using 'gimp-image-add-vectors'."
+literal|"Creates a new vectors object from a text layer. The vectors object needs to be added to the image using 'gimp-image-insert-vectors'."
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,

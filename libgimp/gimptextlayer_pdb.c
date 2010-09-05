@@ -42,7 +42,7 @@ comment|/**  * SECTION: gimptextlayer  * @title: gimptextlayer  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_add_layer().  *  * Returns: The new text layer.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_text_layer_new:  * @image_ID: The image.  * @text: The text to generate (in UTF-8 encoding).  * @fontname: The name of the font.  * @size: The size of text in either pixels or points.  * @unit: The units of specified size.  *  * Creates a new text layer.  *  * This procedure creates a new text layer. The arguments are kept as  * simple as necessary for the normal case. All text attributes,  * however, can be modified with the appropriate  * gimp_text_layer_set_*() procedures. The new layer still needs to be  * added to the image, as this is not automatic. Add the new layer  * using gimp_image_insert_layer().  *  * Returns: The new text layer.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function

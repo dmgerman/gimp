@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_add_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_new:  * @image_ID: The image.  * @name: the name of the new vector object.  *  * Creates a new empty vectors object.  *  * Creates a new empty vectors object. The vectors object needs to be  * added to the image using gimp_image_insert_vectors().  *  * Returns: the current vector object, 0 if no vector exists in the image.  *  * Since: GIMP 2.4  */
 end_comment
 
 begin_function
@@ -214,7 +214,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_new_from_text_layer:  * @image_ID: The image.  * @layer_ID: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_add_vectors().  *  * Returns: The vectors of the text layer.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_vectors_new_from_text_layer:  * @image_ID: The image.  * @layer_ID: The text layer.  *  * Creates a new vectors object from a text layer.  *  * Creates a new vectors object from a text layer. The vectors object  * needs to be added to the image using gimp_image_insert_vectors().  *  * Returns: The vectors of the text layer.  *  * Since: GIMP 2.6  */
 end_comment
 
 begin_function

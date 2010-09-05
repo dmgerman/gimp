@@ -4597,7 +4597,7 @@ literal|"gimp-layer-new"
 argument_list|,
 literal|"Create a new layer."
 argument_list|,
-literal|"This procedure creates a new layer with the specified width, height, and type. Name, opacity, and mode are also supplied parameters. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-add-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
+literal|"This procedure creates a new layer with the specified width, height, and type. Name, opacity, and mode are also supplied parameters. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4820,7 +4820,7 @@ literal|"gimp-layer-new-from-visible"
 argument_list|,
 literal|"Create a new layer from what is visible in an image."
 argument_list|,
-literal|"This procedure creates a new layer from what is visible in the given image. The new layer still needs to be added to the destination image, as this is not automatic. Add the new layer with the 'gimp-image-add-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
+literal|"This procedure creates a new layer from what is visible in the given image. The new layer still needs to be added to the destination image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -4959,7 +4959,7 @@ literal|"gimp-layer-new-from-drawable"
 argument_list|,
 literal|"Create a new layer by copying an existing drawable."
 argument_list|,
-literal|"This procedure creates a new layer as a copy of the specified drawable. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-add-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
+literal|"This procedure creates a new layer as a copy of the specified drawable. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
