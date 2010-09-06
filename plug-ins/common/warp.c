@@ -83,7 +83,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28e7f4990103
+DECL|enum|__anon2b0b2d6a0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -103,7 +103,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28e7f4990208
+DECL|struct|__anon2b0b2d6a0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -4810,20 +4810,26 @@ argument_list|(
 name|xlayer_id
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|new_image_id
 argument_list|,
 name|xlayer_id
 argument_list|,
+operator|-
+literal|1
+argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|new_image_id
 argument_list|,
 name|ylayer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|1
 argument_list|)

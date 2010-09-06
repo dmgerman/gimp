@@ -419,7 +419,7 @@ comment|/* Currently unused... Eventually may be used  * to track dialog data.  
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c0358e20108
+DECL|struct|__anon295253db0108
 typedef|typedef
 struct|struct
 block|{
@@ -1387,7 +1387,7 @@ comment|/* Data used to carry data between each of  * the callback function call
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c0358e20208
+DECL|struct|__anon295253db0208
 typedef|typedef
 struct|struct
 block|{
@@ -1721,7 +1721,7 @@ name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
 comment|/* Add the layer to the image */
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|theClientData
 operator|->
@@ -1730,6 +1730,9 @@ argument_list|,
 name|theClientData
 operator|->
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

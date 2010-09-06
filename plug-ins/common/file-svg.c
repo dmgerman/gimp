@@ -118,7 +118,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bacbb6a0108
+DECL|struct|__anon29c5ef6d0108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -1420,11 +1420,14 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

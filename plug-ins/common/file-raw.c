@@ -132,7 +132,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28daecb60103
+DECL|enum|__anon2a32a5140103
 block|{
 DECL|enumerator|RAW_RGB
 name|RAW_RGB
@@ -166,7 +166,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28daecb60203
+DECL|enum|__anon2a32a5140203
 block|{
 DECL|enumerator|RAW_PALETTE_RGB
 name|RAW_PALETTE_RGB
@@ -184,7 +184,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28daecb60308
+DECL|struct|__anon2a32a5140308
 block|{
 DECL|member|file_offset
 name|gint32
@@ -225,7 +225,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28daecb60408
+DECL|struct|__anon2a32a5140408
 block|{
 DECL|member|fp
 name|FILE
@@ -3537,13 +3537,16 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|data
 operator|->
 name|image_id
 argument_list|,
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

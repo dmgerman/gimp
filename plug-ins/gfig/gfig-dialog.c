@@ -424,7 +424,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c11f2d30108
+DECL|struct|__anon2c36baa90108
 block|{
 DECL|member|gridspacing
 name|GtkAdjustment
@@ -1119,13 +1119,16 @@ argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|gfig_context
 operator|->
 name|image_id
 argument_list|,
 name|newlayer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 operator|-
 literal|1

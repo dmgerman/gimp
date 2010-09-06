@@ -1027,7 +1027,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2acb46720108
+DECL|struct|__anon286db9c60108
 block|{
 DECL|member|manufacturer
 name|guint8
@@ -1104,7 +1104,7 @@ struct|;
 end_struct
 
 begin_struct
-DECL|struct|__anon2acb46720208
+DECL|struct|__anon286db9c60208
 specifier|static
 struct|struct
 block|{
@@ -1880,11 +1880,14 @@ argument_list|,
 name|filename
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

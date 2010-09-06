@@ -56,7 +56,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon274c1aaa0108
+DECL|struct|__anon29b3758e0108
 block|{
 DECL|member|new_width
 name|gint
@@ -977,12 +977,15 @@ return|return
 operator|-
 literal|1
 return|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|new_image_id
 argument_list|,
 operator|*
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

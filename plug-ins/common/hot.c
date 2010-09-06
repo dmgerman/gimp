@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c0c67d20108
+DECL|struct|__anon2b0e94f40108
 block|{
 DECL|member|image
 name|gint32
@@ -95,7 +95,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c67d20203
+DECL|enum|__anon2b0e94f40203
 block|{
 DECL|enumerator|ACT_LREDUX
 name|ACT_LREDUX
@@ -114,7 +114,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0c67d20303
+DECL|enum|__anon2b0e94f40303
 block|{
 DECL|enumerator|MODE_NTSC
 name|MODE_NTSC
@@ -159,7 +159,7 @@ end_comment
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c0c67d20408
+DECL|struct|__anon2b0e94f40408
 block|{
 DECL|member|pedestal
 name|gdouble
@@ -1268,13 +1268,16 @@ argument_list|,
 name|GIMP_TRANSPARENT_FILL
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|argp
 operator|->
 name|image
 argument_list|,
 name|nl
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

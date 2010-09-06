@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0df3ce0108
+DECL|struct|__anon2be597280108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -718,7 +718,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0df3ce0208
+DECL|struct|__anon2be597280208
 block|{
 DECL|member|y
 name|gint32
@@ -13870,12 +13870,15 @@ name|layer_id
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|l_new_image_id
 argument_list|,
 operator|*
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)
@@ -14191,11 +14194,14 @@ name|NULL
 return|;
 block|}
 comment|/* add the copied layer to the temp. working image */
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_id
 argument_list|,
 name|l_new_layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|stack_position
 argument_list|)
@@ -16395,11 +16401,14 @@ name|drawable_id
 argument_list|)
 expr_stmt|;
 comment|/* set layer invisible and dummyname and     * add at top of the image while working     * (for the case of undo GIMP must know,     *  that the layer was part of the image)     */
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|l_image_id
 argument_list|,
 name|l_tmp_layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

@@ -139,7 +139,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c02d3d10108
+DECL|struct|__anon2999394d0108
 block|{
 DECL|member|compression
 name|gint
@@ -162,7 +162,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c02d3d10208
+DECL|struct|__anon2999394d0208
 block|{
 DECL|member|ID
 name|gint32
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c02d3d10308
+DECL|struct|__anon2999394d0308
 block|{
 DECL|member|o_pages
 name|gint
@@ -3755,7 +3755,7 @@ operator|&
 name|color
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_channel
+name|gimp_image_insert_channel
 argument_list|(
 name|image
 argument_list|,
@@ -3765,6 +3765,9 @@ name|i
 index|]
 operator|.
 name|ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)
@@ -4138,11 +4141,14 @@ argument_list|(
 name|layer
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 operator|-
 literal|1
@@ -4901,11 +4907,14 @@ argument_list|,
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_vectors
+name|gimp_image_insert_vectors
 argument_list|(
 name|image
 argument_list|,
 name|vectors
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|path_index
 argument_list|)
