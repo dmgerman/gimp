@@ -83,7 +83,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_image_add_channel
+name|gimp_image_insert_channel
 argument_list|(
 name|self
 operator|->
@@ -92,6 +92,9 @@ argument_list|,
 name|chn
 operator|->
 name|ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|pos
 argument_list|)
@@ -178,7 +181,7 @@ return|;
 if|if
 condition|(
 operator|!
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|self
 operator|->
@@ -187,6 +190,9 @@ argument_list|,
 name|lay
 operator|->
 name|ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|pos
 argument_list|)
@@ -539,13 +545,16 @@ block|}
 if|if
 condition|(
 operator|!
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|self
 operator|->
 name|ID
 argument_list|,
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|pos
 argument_list|)
