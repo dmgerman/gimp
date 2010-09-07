@@ -223,7 +223,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be863ed0103
+DECL|enum|__anon2c6541040103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -7988,6 +7988,14 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
+name|tmp_width
+operator|-=
+name|tmp_x
+expr_stmt|;
+name|tmp_height
+operator|-=
+name|tmp_y
+expr_stmt|;
 name|retval
 operator|=
 name|gimp_rectangle_intersect
@@ -8001,12 +8009,8 @@ operator|-
 name|off_y
 argument_list|,
 name|tmp_width
-operator|-
-name|tmp_x
 argument_list|,
 name|tmp_height
-operator|-
-name|tmp_y
 argument_list|,
 literal|0
 argument_list|,
