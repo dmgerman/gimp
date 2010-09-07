@@ -2827,9 +2827,9 @@ argument_list|)
 condition|)
 name|non_empty
 operator|=
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|pickable
 argument_list|)
@@ -3589,9 +3589,12 @@ comment|/*  Make sure there is a region to float...  */
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x1

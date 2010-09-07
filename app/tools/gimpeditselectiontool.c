@@ -1190,12 +1190,9 @@ block|}
 else|else
 block|{
 comment|/*  find the bounding box of the selection mask -        *  this is used for the case of a GIMP_TRANSLATE_MODE_MASK_TO_LAYER,        *  where the translation will result in floating the selection        *  mask and translating the resulting layer        */
-name|gimp_drawable_mask_bounds
-argument_list|(
-name|GIMP_DRAWABLE
+name|gimp_item_mask_bounds
 argument_list|(
 name|active_item
-argument_list|)
 argument_list|,
 operator|&
 name|edit_select

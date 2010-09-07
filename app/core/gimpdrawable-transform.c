@@ -3455,9 +3455,12 @@ decl_stmt|;
 comment|/* set the keep_indexed flag to FALSE here, since we use        * gimp_layer_new_from_tiles() later which assumes that the tiles        * are either RGB or GRAY.  Eeek!!!              (Sven)        */
 if|if
 condition|(
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x

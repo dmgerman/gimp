@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b53eba0103
+DECL|enum|__anon278e35530103
 block|{
 DECL|enumerator|FLUSH
 name|FLUSH
@@ -1409,11 +1409,14 @@ comment|/*  The application should occur only within selection bounds  */
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|image_map
 operator|->
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|rect

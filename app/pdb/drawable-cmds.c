@@ -3359,9 +3359,12 @@ argument_list|)
 condition|)
 name|non_empty
 operator|=
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -3585,9 +3588,12 @@ argument_list|)
 condition|)
 name|non_empty
 operator|=
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x

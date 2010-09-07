@@ -1387,7 +1387,7 @@ decl_stmt|;
 name|PixelRegion
 name|basePR
 decl_stmt|;
-comment|/*  must call gimp_channel_is_empty() instead of relying on    *  gimp_drawable_mask_intersect() because the selection pretends to    *  be empty while it is being stroked, to prevent masking itself.    */
+comment|/*  must call gimp_channel_is_empty() instead of relying on    *  gimp_item_mask_intersect() because the selection pretends to    *  be empty while it is being stroked, to prevent masking itself.    */
 if|if
 condition|(
 name|gimp_channel_is_empty
@@ -1432,9 +1432,12 @@ elseif|else
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x

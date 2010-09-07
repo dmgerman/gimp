@@ -132,7 +132,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b28ef30108
+DECL|struct|__anon2a0d70680108
 block|{
 DECL|member|gradient
 name|GimpGradient
@@ -203,7 +203,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29b28ef30208
+DECL|struct|__anon2a0d70680208
 block|{
 DECL|member|PR
 name|PixelRegion
@@ -841,9 +841,12 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -2522,9 +2525,12 @@ name|off_x
 decl_stmt|,
 name|off_y
 decl_stmt|;
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x

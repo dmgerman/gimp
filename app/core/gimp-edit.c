@@ -828,9 +828,12 @@ argument_list|)
 expr_stmt|;
 name|have_mask
 operator|=
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x1
@@ -2296,9 +2299,12 @@ decl_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
