@@ -5754,7 +5754,7 @@ argument_list|)
 argument_list|,
 name|RESPONSE_NEW
 argument_list|,
-name|GTK_RESPONSE_OK
+name|GTK_RESPONSE_ACCEPT
 argument_list|,
 name|GTK_RESPONSE_CANCEL
 argument_list|,
