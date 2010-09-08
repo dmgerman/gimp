@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62c730108
+DECL|struct|__anon27b6c47d0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -386,7 +386,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|explict_update
+name|explicit_update
 parameter_list|(
 name|gboolean
 parameter_list|)
@@ -415,7 +415,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|tileit_preview_expose
 parameter_list|(
 name|GtkWidget
@@ -431,7 +431,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|gint
+name|gboolean
 name|tileit_preview_events
 parameter_list|(
 name|GtkWidget
@@ -489,13 +489,13 @@ comment|/* Structures for call backs... */
 end_comment
 
 begin_comment
-comment|/* The "explict tile"& family */
+comment|/* The "explicit tile"& family */
 end_comment
 
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2ae62c730203
+DECL|enum|__anon27b6c47d0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -503,8 +503,8 @@ block|,
 DECL|enumerator|ALT
 name|ALT
 block|,
-DECL|enumerator|EXPLICT
-name|EXPLICT
+DECL|enumerator|EXPLICIT
+name|EXPLICIT
 DECL|typedef|AppliedTo
 block|}
 name|AppliedTo
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62c730308
+DECL|struct|__anon27b6c47d0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae62c730408
+DECL|struct|__anon27b6c47d0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -2490,7 +2490,7 @@ literal|"gimp-item-data"
 argument_list|,
 name|GINT_TO_POINTER
 argument_list|(
-name|EXPLICT
+name|EXPLICIT
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -2932,7 +2932,7 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|EXPLICT
+name|EXPLICIT
 case|:
 break|break;
 block|}
@@ -2944,11 +2944,17 @@ end_function
 
 begin_function
 specifier|static
-name|void
-DECL|function|draw_explict_sel (void)
-name|draw_explict_sel
+name|gboolean
+DECL|function|tileit_preview_expose (GtkWidget * widget,GdkEvent * event)
+name|tileit_preview_expose
 parameter_list|(
-name|void
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|GdkEvent
+modifier|*
+name|event
 parameter_list|)
 block|{
 if|if
@@ -2957,7 +2963,7 @@ name|exp_call
 operator|.
 name|type
 operator|==
-name|EXPLICT
+name|EXPLICIT
 condition|)
 block|{
 name|cairo_t
@@ -3110,27 +3116,6 @@ name|cr
 argument_list|)
 expr_stmt|;
 block|}
-block|}
-end_function
-
-begin_function
-specifier|static
-name|gint
-DECL|function|tileit_preview_expose (GtkWidget * widget,GdkEvent * event)
-name|tileit_preview_expose
-parameter_list|(
-name|GtkWidget
-modifier|*
-name|widget
-parameter_list|,
-name|GdkEvent
-modifier|*
-name|event
-parameter_list|)
-block|{
-name|draw_explict_sel
-argument_list|()
-expr_stmt|;
 return|return
 name|FALSE
 return|;
@@ -3453,8 +3438,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|explict_update (gboolean settile)
-name|explict_update
+DECL|function|explicit_update (gboolean settile)
+name|explicit_update
 parameter_list|(
 name|gboolean
 name|settile
@@ -3829,9 +3814,9 @@ argument_list|()
 expr_stmt|;
 break|break;
 case|case
-name|EXPLICT
+name|EXPLICIT
 case|:
-name|explict_update
+name|explicit_update
 argument_list|(
 name|FALSE
 argument_list|)
@@ -4010,7 +3995,7 @@ name|gpointer
 name|applied
 parameter_list|)
 block|{
-name|explict_update
+name|explicit_update
 argument_list|(
 name|TRUE
 argument_list|)
@@ -4035,7 +4020,7 @@ name|gpointer
 name|applied
 parameter_list|)
 block|{
-name|explict_update
+name|explicit_update
 argument_list|(
 name|FALSE
 argument_list|)
