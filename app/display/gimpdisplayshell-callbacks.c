@@ -8053,9 +8053,21 @@ argument_list|)
 expr_stmt|;
 comment|/*  finally, draw all the remaining image window stuff on top    */
 comment|/* draw the transform tool preview */
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_preview_transform
 argument_list|(
 name|shell
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 comment|/* draw the grid */
