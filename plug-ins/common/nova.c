@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99fb160108
+DECL|struct|__anon2b993dee0108
 block|{
 DECL|member|xcenter
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a99fb160208
+DECL|struct|__anon2b993dee0208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2255,7 +2255,7 @@ literal|1.0
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0.3
+literal|0.6
 argument_list|)
 expr_stmt|;
 name|cairo_stroke_preserve
@@ -2280,7 +2280,7 @@ literal|0.0
 argument_list|,
 literal|0.0
 argument_list|,
-literal|0.7
+literal|0.8
 argument_list|)
 expr_stmt|;
 name|cairo_stroke

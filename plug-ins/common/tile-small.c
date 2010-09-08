@@ -112,7 +112,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29115f8a0108
+DECL|struct|__anon2ae62c730108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -495,7 +495,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon29115f8a0203
+DECL|enum|__anon2ae62c730203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -514,7 +514,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29115f8a0308
+DECL|struct|__anon2ae62c730308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -585,7 +585,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29115f8a0408
+DECL|struct|__anon2ae62c730408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -3061,7 +3061,7 @@ argument_list|,
 literal|3.0
 argument_list|)
 expr_stmt|;
-name|cairo_set_source_rgb
+name|cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -3070,6 +3070,8 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|0.6
 argument_list|)
 expr_stmt|;
 name|cairo_stroke_preserve
@@ -3084,7 +3086,7 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
-name|cairo_set_source_rgb
+name|cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -3093,6 +3095,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|,
+literal|0.8
 argument_list|)
 expr_stmt|;
 name|cairo_stroke_preserve
