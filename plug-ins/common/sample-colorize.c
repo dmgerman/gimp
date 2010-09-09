@@ -341,7 +341,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a51eec0108
+DECL|struct|__anon2797c1020108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a51eec0208
+DECL|struct|__anon2797c1020208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -518,7 +518,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a51eec0308
+DECL|struct|__anon2797c1020308
 block|{
 DECL|member|color
 name|guchar
@@ -547,7 +547,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a51eec0408
+DECL|struct|__anon2797c1020408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -574,7 +574,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a51eec0508
+DECL|struct|__anon2797c1020508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -7437,7 +7437,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_di
@@ -7530,7 +7530,7 @@ literal|0.02
 argument_list|,
 literal|0.2
 argument_list|,
-literal|0.2
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_di
@@ -7623,7 +7623,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_di
@@ -7790,7 +7790,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_di
@@ -7883,7 +7883,7 @@ literal|1
 argument_list|,
 literal|10
 argument_list|,
-literal|10
+literal|0
 argument_list|)
 expr_stmt|;
 name|g_di
