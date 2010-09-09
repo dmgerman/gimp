@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a14c080108
+DECL|struct|__anon27b7c3c30108
 block|{
 DECL|member|xcenter
 name|gint
@@ -99,7 +99,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27a14c080208
+DECL|struct|__anon27b7c3c30208
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -2298,7 +2298,7 @@ end_comment
 
 begin_function
 specifier|static
-name|gboolean
+name|void
 DECL|function|nova_center_update (GtkWidget * widget,NovaCenter * center,gint x,gint y)
 name|nova_center_update
 parameter_list|(
@@ -2410,9 +2410,6 @@ operator|->
 name|area
 argument_list|)
 expr_stmt|;
-return|return
-name|TRUE
-return|;
 block|}
 end_function
 
@@ -2465,9 +2462,6 @@ operator|&
 name|GDK_BUTTON1_MASK
 condition|)
 block|{
-name|gboolean
-name|retval
-init|=
 name|nova_center_update
 argument_list|(
 name|widget
@@ -2482,14 +2476,14 @@ name|mevent
 operator|->
 name|y
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|gdk_event_request_motions
 argument_list|(
 name|mevent
 argument_list|)
 expr_stmt|;
 return|return
-name|retval
+name|TRUE
 return|;
 block|}
 block|}
@@ -2516,7 +2510,7 @@ name|button
 operator|==
 literal|1
 condition|)
-return|return
+block|{
 name|nova_center_update
 argument_list|(
 name|widget
@@ -2531,7 +2525,11 @@ name|bevent
 operator|->
 name|y
 argument_list|)
+expr_stmt|;
+return|return
+name|TRUE
 return|;
+block|}
 block|}
 break|break;
 default|default:
