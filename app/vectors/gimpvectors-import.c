@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05ab050108
+DECL|struct|__anon2950e5780108
 block|{
 DECL|member|stack
 name|GQueue
@@ -222,7 +222,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05ab050208
+DECL|struct|__anon2950e5780208
 block|{
 DECL|member|id
 name|gchar
@@ -4778,6 +4778,14 @@ name|p
 expr_stmt|;
 break|break;
 block|}
+if|if
+condition|(
+operator|*
+name|p
+condition|)
+name|n
+operator|++
+expr_stmt|;
 while|while
 condition|(
 operator|*
@@ -4796,9 +4804,6 @@ operator|!=
 literal|','
 condition|)
 name|p
-operator|++
-expr_stmt|;
-name|n
 operator|++
 expr_stmt|;
 block|}
@@ -6228,7 +6233,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b05ab050308
+DECL|struct|__anon2950e5780308
 block|{
 DECL|member|strokes
 name|GList
