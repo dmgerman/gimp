@@ -103,7 +103,6 @@ DECL|member|parent_instance
 name|GimpStroke
 name|parent_instance
 decl_stmt|;
-comment|/* Stuff missing? */
 block|}
 struct|;
 end_struct
