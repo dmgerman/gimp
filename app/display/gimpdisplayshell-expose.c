@@ -396,6 +396,44 @@ end_function
 
 begin_function
 name|void
+DECL|function|gimp_display_shell_expose_vectors (GimpDisplayShell * shell,GimpVectors * vectors)
+name|gimp_display_shell_expose_vectors
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
+name|GimpVectors
+modifier|*
+name|vectors
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|vectors
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
+comment|// FIXME
+name|gimp_display_shell_expose_full
+argument_list|(
+name|shell
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|void
 DECL|function|gimp_display_shell_expose_full (GimpDisplayShell * shell)
 name|gimp_display_shell_expose_full
 parameter_list|(

@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bec97d40103
+DECL|enum|__anon2b2ab19d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bec97d40203
+DECL|enum|__anon2b2ab19d0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7027,11 +7027,6 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_draw_vectors
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -7081,11 +7076,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gimp_display_shell_draw_vectors
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 comment|/* start the currently active tool */
 name|tool_manager_control_active
 argument_list|(

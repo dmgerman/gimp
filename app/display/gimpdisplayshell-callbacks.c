@@ -1039,11 +1039,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_draw_vectors
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -8059,6 +8054,24 @@ name|cr
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_preview_transform
+argument_list|(
+name|shell
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+comment|/* draw the vectors */
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_draw_vectors
 argument_list|(
 name|shell
 argument_list|,
