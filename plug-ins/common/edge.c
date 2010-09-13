@@ -69,7 +69,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29698a100103
+DECL|enum|__anon29db66730103
 block|{
 DECL|enumerator|SOBEL
 name|SOBEL
@@ -95,7 +95,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29698a100208
+DECL|struct|__anon29db66730208
 block|{
 DECL|member|amount
 name|gdouble
@@ -394,7 +394,7 @@ name|GIMP_PDB_INT32
 block|,
 literal|"wrapmode"
 block|,
-literal|"Edge detection behavior { WRAP (0), SMEAR (1), BLACK (2) }"
+literal|"Edge detection behavior { WRAP (1), SMEAR (2), BLACK (3) }"
 block|}
 block|,
 block|{
