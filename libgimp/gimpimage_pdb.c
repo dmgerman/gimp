@@ -2336,7 +2336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the position is specified as -1 and the parent is  * specified as NULL, then the layer is inserted above the active  * layer. The layer type must be compatible with the image base type.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_insert_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is NULL, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as NULL, then the layer is inserted above the active  * layer. The layer type must be compatible with the image base type.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2579,7 +2579,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. If the position is specified as -1 and the parent is  * specified as NULL, then the channel is inserted above the active  * channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_insert_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be NULL. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
@@ -2822,7 +2822,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. If the position is specified as -1 and the parent is  * specified as NULL, then the vectors is inserted above the active  * vectors.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_insert_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be NULL. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  */
 end_comment
 
 begin_function
