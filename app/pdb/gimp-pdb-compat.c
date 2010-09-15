@@ -788,7 +788,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2b14d7950108
+DECL|struct|__anon27609b5a0108
 block|{
 DECL|member|g_type
 name|GType
@@ -1102,7 +1102,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2b14d7950208
+DECL|struct|__anon27609b5a0208
 block|{
 DECL|member|old_name
 specifier|const
@@ -1482,6 +1482,12 @@ block|{
 literal|"gimp-drawable-is-layer"
 block|,
 literal|"gimp-item-is-layer"
+block|}
+block|,
+block|{
+literal|"gimp-drawable-is-text-layer"
+block|,
+literal|"gimp-item-is-text-layer"
 block|}
 block|,
 block|{

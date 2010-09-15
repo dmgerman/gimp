@@ -1185,6 +1185,28 @@ block|}
 end_function
 
 begin_comment
+comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_text_layer() instead.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: GIMP 2.6  */
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_drawable_is_text_layer (gint32 drawable_ID)
+name|gimp_drawable_is_text_layer
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+block|{
+return|return
+name|gimp_item_is_text_layer
+argument_list|(
+name|drawable_ID
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
 comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_layer_mask() instead.  *  * Returns: TRUE if the drawable is a layer mask, FALSE otherwise.  */
 end_comment
 

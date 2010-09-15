@@ -255,6 +255,16 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_drawable_is_text_layer
+parameter_list|(
+name|gint32
+name|drawable_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_drawable_is_layer_mask
 parameter_list|(
 name|gint32
