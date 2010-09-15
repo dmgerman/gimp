@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpchannel  * @title: gimpchannel  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * _gimp_channel_new:  * @image_ID: The image to which to add the channel.  * @width: The channel width.  * @height: The channel height.  * @name: The channel name.  * @opacity: The channel opacity.  * @color: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be set  * with explicit procedure calls. The channel's contents are undefined  * initially.  *  * Returns: The newly created channel.  */
+comment|/**  * _gimp_channel_new:  * @image_ID: The image to which to add the channel.  * @width: The channel width.  * @height: The channel height.  * @name: The channel name.  * @opacity: The channel opacity.  * @color: The channel compositing color.  *  * Create a new channel.  *  * This procedure creates a new channel with the specified width and  * height. Name, opacity, and color are also supplied parameters. The  * new channel still needs to be added to the image, as this is not  * automatic. Add the new channel with the gimp_image_insert_channel()  * command. Other attributes such as channel show masked, should be set  * with explicit procedure calls. The channel's contents are undefined  * initially.  *  * Returns: The newly created channel.  **/
 end_comment
 
 begin_function
@@ -142,7 +142,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_new_from_component:  * @image_ID: The image to which to add the channel.  * @component: The image component.  * @name: The channel name.  *  * Create a new channel from a color component  *  * This procedure creates a new channel from a color component.  *  * Returns: The newly created channel.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_channel_new_from_component:  * @image_ID: The image to which to add the channel.  * @component: The image component.  * @name: The channel name.  *  * Create a new channel from a color component  *  * This procedure creates a new channel from a color component.  *  * Returns: The newly created channel.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -237,7 +237,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_copy:  * @channel_ID: The channel to copy.  *  * Copy a channel.  *  * This procedure copies the specified channel and returns the copy.  *  * Returns: The newly copied channel.  */
+comment|/**  * gimp_channel_copy:  * @channel_ID: The channel to copy.  *  * Copy a channel.  *  * This procedure copies the specified channel and returns the copy.  *  * Returns: The newly copied channel.  **/
 end_comment
 
 begin_function
@@ -316,7 +316,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_combine_masks:  * @channel1_ID: The channel1.  * @channel2_ID: The channel2.  * @operation: The selection operation.  * @offx: x offset between upper left corner of channels: (second - first).  * @offy: y offset between upper left corner of channels: (second - first).  *  * Combine two channel masks.  *  * This procedure combines two channel masks. The result is stored in  * the first channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_channel_combine_masks:  * @channel1_ID: The channel1.  * @channel2_ID: The channel2.  * @operation: The selection operation.  * @offx: x offset between upper left corner of channels: (second - first).  * @offy: y offset between upper left corner of channels: (second - first).  *  * Combine two channel masks.  *  * This procedure combines two channel masks. The result is stored in  * the first channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -411,7 +411,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_get_show_masked:  * @channel_ID: The channel.  *  * Get the composite method of the specified channel.  *  * This procedure returns the specified channel's composite method. If  * it is TRUE, then the channel is composited with the image so that  * masked regions are shown. Otherwise, selected regions are shown.  *  * Returns: The channel composite method.  */
+comment|/**  * gimp_channel_get_show_masked:  * @channel_ID: The channel.  *  * Get the composite method of the specified channel.  *  * This procedure returns the specified channel's composite method. If  * it is TRUE, then the channel is composited with the image so that  * masked regions are shown. Otherwise, selected regions are shown.  *  * Returns: The channel composite method.  **/
 end_comment
 
 begin_function
@@ -489,7 +489,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_set_show_masked:  * @channel_ID: The channel.  * @show_masked: The new channel composite method.  *  * Set the composite method of the specified channel.  *  * This procedure sets the specified channel's composite method. If it  * is TRUE, then the channel is composited with the image so that  * masked regions are shown. Otherwise, selected regions are shown.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_channel_set_show_masked:  * @channel_ID: The channel.  * @show_masked: The new channel composite method.  *  * Set the composite method of the specified channel.  *  * This procedure sets the specified channel's composite method. If it  * is TRUE, then the channel is composited with the image so that  * masked regions are shown. Otherwise, selected regions are shown.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -563,7 +563,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_get_opacity:  * @channel_ID: The channel.  *  * Get the opacity of the specified channel.  *  * This procedure returns the specified channel's opacity.  *  * Returns: The channel opacity.  */
+comment|/**  * gimp_channel_get_opacity:  * @channel_ID: The channel.  *  * Get the opacity of the specified channel.  *  * This procedure returns the specified channel's opacity.  *  * Returns: The channel opacity.  **/
 end_comment
 
 begin_function
@@ -641,7 +641,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_set_opacity:  * @channel_ID: The channel.  * @opacity: The new channel opacity.  *  * Set the opacity of the specified channel.  *  * This procedure sets the specified channel's opacity.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_channel_set_opacity:  * @channel_ID: The channel.  * @opacity: The new channel opacity.  *  * Set the opacity of the specified channel.  *  * This procedure sets the specified channel's opacity.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -715,7 +715,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_get_color:  * @channel_ID: The channel.  * @color: The channel compositing color.  *  * Get the compositing color of the specified channel.  *  * This procedure returns the specified channel's compositing color.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_channel_get_color:  * @channel_ID: The channel.  * @color: The channel compositing color.  *  * Get the compositing color of the specified channel.  *  * This procedure returns the specified channel's compositing color.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -802,7 +802,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_channel_set_color:  * @channel_ID: The channel.  * @color: The new channel compositing color.  *  * Set the compositing color of the specified channel.  *  * This procedure sets the specified channel's compositing color.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_channel_set_color:  * @channel_ID: The channel.  * @color: The new channel compositing color.  *  * Set the compositing color of the specified channel.  *  * This procedure sets the specified channel's compositing color.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

@@ -48,7 +48,7 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_drawable_type:  * @drawable_ID: The drawable.  *  * Returns the drawable's type.  *  * This procedure returns the drawable's type.  *  * Returns: The drawable's type.  */
+comment|/**  * gimp_drawable_type:  * @drawable_ID: The drawable.  *  * Returns the drawable's type.  *  * This procedure returns the drawable's type.  *  * Returns: The drawable's type.  **/
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_type_with_alpha:  * @drawable_ID: The drawable.  *  * Returns the drawable's type with alpha.  *  * This procedure returns the drawable's type as if had an alpha  * channel. If the type is currently Gray, for instance, the returned  * type would be GrayA. If the drawable already has an alpha channel,  * the drawable's type is simply returned.  *  * Returns: The drawable's type with alpha.  */
+comment|/**  * gimp_drawable_type_with_alpha:  * @drawable_ID: The drawable.  *  * Returns the drawable's type with alpha.  *  * This procedure returns the drawable's type as if had an alpha  * channel. If the type is currently Gray, for instance, the returned  * type would be GrayA. If the drawable already has an alpha channel,  * the drawable's type is simply returned.  *  * Returns: The drawable's type with alpha.  **/
 end_comment
 
 begin_function
@@ -204,7 +204,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_has_alpha:  * @drawable_ID: The drawable.  *  * Returns TRUE if the drawable has an alpha channel.  *  * This procedure returns whether the specified drawable has an alpha  * channel. This can only be true for layers, and the associated type  * will be one of: { RGBA , GRAYA, INDEXEDA }.  *  * Returns: Does the drawable have an alpha channel?  */
+comment|/**  * gimp_drawable_has_alpha:  * @drawable_ID: The drawable.  *  * Returns TRUE if the drawable has an alpha channel.  *  * This procedure returns whether the specified drawable has an alpha  * channel. This can only be true for layers, and the associated type  * will be one of: { RGBA , GRAYA, INDEXEDA }.  *  * Returns: Does the drawable have an alpha channel?  **/
 end_comment
 
 begin_function
@@ -282,7 +282,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_rgb:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an RGB type.  *  * This procedure returns TRUE if the specified drawable is of type {  * RGB, RGBA }.  *  * Returns: TRUE if the drawable is an RGB type.  */
+comment|/**  * gimp_drawable_is_rgb:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an RGB type.  *  * This procedure returns TRUE if the specified drawable is of type {  * RGB, RGBA }.  *  * Returns: TRUE if the drawable is an RGB type.  **/
 end_comment
 
 begin_function
@@ -360,7 +360,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_gray:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a grayscale type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Gray, GrayA }.  *  * Returns: TRUE if the drawable is a grayscale type.  */
+comment|/**  * gimp_drawable_is_gray:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a grayscale type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Gray, GrayA }.  *  * Returns: TRUE if the drawable is a grayscale type.  **/
 end_comment
 
 begin_function
@@ -438,7 +438,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_indexed:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an indexed type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Indexed, IndexedA }.  *  * Returns: TRUE if the drawable is an indexed type.  */
+comment|/**  * gimp_drawable_is_indexed:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an indexed type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Indexed, IndexedA }.  *  * Returns: TRUE if the drawable is an indexed type.  **/
 end_comment
 
 begin_function
@@ -516,7 +516,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel (or the number  * of channels) for the specified drawable.  *  * Returns: Bytes per pixel.  */
+comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel (or the number  * of channels) for the specified drawable.  *  * Returns: Bytes per pixel.  **/
 end_comment
 
 begin_function
@@ -594,7 +594,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_width:  * @drawable_ID: The drawable.  *  * Returns the width of the drawable.  *  * This procedure returns the specified drawable's width in pixels.  *  * Returns: Width of drawable.  */
+comment|/**  * gimp_drawable_width:  * @drawable_ID: The drawable.  *  * Returns the width of the drawable.  *  * This procedure returns the specified drawable's width in pixels.  *  * Returns: Width of drawable.  **/
 end_comment
 
 begin_function
@@ -672,7 +672,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_height:  * @drawable_ID: The drawable.  *  * Returns the height of the drawable.  *  * This procedure returns the specified drawable's height in pixels.  *  * Returns: Height of drawable.  */
+comment|/**  * gimp_drawable_height:  * @drawable_ID: The drawable.  *  * Returns the height of the drawable.  *  * This procedure returns the specified drawable's height in pixels.  *  * Returns: Height of drawable.  **/
 end_comment
 
 begin_function
@@ -750,7 +750,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_offsets:  * @drawable_ID: The drawable.  * @offset_x: x offset of drawable.  * @offset_y: y offset of drawable.  *  * Returns the offsets for the drawable.  *  * This procedure returns the specified drawable's offsets. This only  * makes sense if the drawable is a layer since channels are anchored.  * The offsets of a channel will be returned as 0.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_offsets:  * @drawable_ID: The drawable.  * @offset_x: x offset of drawable.  * @offset_y: y offset of drawable.  *  * Returns the offsets for the drawable.  *  * This procedure returns the specified drawable's offsets. This only  * makes sense if the drawable is a layer since channels are anchored.  * The offsets of a channel will be returned as 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -865,7 +865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_image:  * @drawable_ID: The drawable.  * @image_ID: The image.  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_image:  * @drawable_ID: The drawable.  * @image_ID: The image.  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -939,7 +939,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_bounds:  * @drawable_ID: The drawable.  * @x1: x coordinate of the upper left corner of selection bounds.  * @y1: y coordinate of the upper left corner of selection bounds.  * @x2: x coordinate of the lower right corner of selection bounds.  * @y2: y coordinate of the lower right corner of selection bounds.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is a selection. If there is  * one, the upper left and lower right-hand corners of its bounding box  * are returned. These coordinates are specified relative to the  * drawable's origin, and bounded by the drawable's extents. Please  * note that the pixel specified by the lower right-hand coordinate of  * the bounding box is not part of the selection. The selection ends at  * the upper left corner of this pixel. This means the width of the  * selection can be calculated as (x2 - x1), its height as (y2 - y1).  * Note that the returned boolean does NOT correspond with the returned  * region being empty or not, it always returns whether the selection  * is non_empty. See gimp_drawable_mask_intersect() for a boolean  * return value which is more useful in most cases.  *  * Returns: TRUE if there is a selection.  */
+comment|/**  * gimp_drawable_mask_bounds:  * @drawable_ID: The drawable.  * @x1: x coordinate of the upper left corner of selection bounds.  * @y1: y coordinate of the upper left corner of selection bounds.  * @x2: x coordinate of the lower right corner of selection bounds.  * @y2: y coordinate of the lower right corner of selection bounds.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is a selection. If there is  * one, the upper left and lower right-hand corners of its bounding box  * are returned. These coordinates are specified relative to the  * drawable's origin, and bounded by the drawable's extents. Please  * note that the pixel specified by the lower right-hand coordinate of  * the bounding box is not part of the selection. The selection ends at  * the upper left corner of this pixel. This means the width of the  * selection can be calculated as (x2 - x1), its height as (y2 - y1).  * Note that the returned boolean does NOT correspond with the returned  * region being empty or not, it always returns whether the selection  * is non_empty. See gimp_drawable_mask_intersect() for a boolean  * return value which is more useful in most cases.  *  * Returns: TRUE if there is a selection.  **/
 end_comment
 
 begin_function
@@ -1083,7 +1083,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height. If there  * is no selection this function returns TRUE and the returned bounds  * are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height. If there  * is no selection this function returns TRUE and the returned bounds  * are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1227,7 +1227,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_merge_shadow:  * @drawable_ID: The drawable.  * @undo: Push merge to undo stack?  *  * Merge the shadow buffer with the specified drawable.  *  * This procedure combines the contents of the drawable's shadow buffer  * (for temporary processing) with the specified drawable. The 'undo'  * parameter specifies whether to add an undo step for the operation.  * Requesting no undo is useful for such applications as 'auto-apply'.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_merge_shadow:  * @drawable_ID: The drawable.  * @undo: Push merge to undo stack?  *  * Merge the shadow buffer with the specified drawable.  *  * This procedure combines the contents of the drawable's shadow buffer  * (for temporary processing) with the specified drawable. The 'undo'  * parameter specifies whether to add an undo step for the operation.  * Requesting no undo is useful for such applications as 'auto-apply'.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1301,7 +1301,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -1368,7 +1368,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_update:  * @drawable_ID: The drawable.  * @x: x coordinate of upper left corner of update region.  * @y: y coordinate of upper left corner of update region.  * @width: Width of update region.  * @height: Height of update region.  *  * Update the specified region of the drawable.  *  * This procedure updates the specified region of the drawable. The (x,  * y) coordinate pair is relative to the drawable's origin, not to the  * image origin. Therefore, the entire drawable can be updated using  * (0, 0, width, height).  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_update:  * @drawable_ID: The drawable.  * @x: x coordinate of upper left corner of update region.  * @y: y coordinate of upper left corner of update region.  * @width: Width of update region.  * @height: Height of update region.  *  * Update the specified region of the drawable.  *  * This procedure updates the specified region of the drawable. The (x,  * y) coordinate pair is relative to the drawable's origin, not to the  * image origin. Therefore, the entire drawable can be updated using  * (0, 0, width, height).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1463,7 +1463,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: The pixel value.  */
+comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: The pixel value.  **/
 end_comment
 
 begin_function
@@ -1601,7 +1601,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  * @pixel: The pixel value.  *  * Sets the value of the pixel at the specified coordinates.  *  * This procedure sets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable. Note that this  * function is not undoable, you should use it only on drawables you  * just created yourself.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  * @pixel: The pixel value.  *  * Sets the value of the pixel at the specified coordinates.  *  * This procedure sets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable. Note that this  * function is not undoable, you should use it only on drawables you  * just created yourself.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1698,7 +1698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_fill:  * @drawable_ID: The drawable.  * @fill_type: The type of fill.  *  * Fill the drawable with the specified fill mode.  *  * This procedure fills the drawable. If the fill mode is foreground  * the current foreground color is used. If the fill mode is  * background, the current background color is used. If the fill type  * is white, then white is used. Transparent fill only affects layers  * with an alpha channel, in which case the alpha channel is set to  * transparent. If the drawable has no alpha channel, it is filled to  * white. No fill leaves the drawable's contents undefined. This  * procedure is unlike gimp_edit_fill() or the bucket fill tool because  * it fills regardless of a selection. Its main purpose is to fill a  * newly created drawable before adding it to the image. This operation  * cannot be undone.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_fill:  * @drawable_ID: The drawable.  * @fill_type: The type of fill.  *  * Fill the drawable with the specified fill mode.  *  * This procedure fills the drawable. If the fill mode is foreground  * the current foreground color is used. If the fill mode is  * background, the current background color is used. If the fill type  * is white, then white is used. Transparent fill only affects layers  * with an alpha channel, in which case the alpha channel is set to  * transparent. If the drawable has no alpha channel, it is filled to  * white. No fill leaves the drawable's contents undefined. This  * procedure is unlike gimp_edit_fill() or the bucket fill tool because  * it fills regardless of a selection. Its main purpose is to fill a  * newly created drawable before adding it to the image. This operation  * cannot be undone.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1772,7 +1772,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_offset:  * @drawable_ID: The drawable to offset.  * @wrap_around: wrap image around or fill vacated regions.  * @fill_type: fill vacated regions of drawable with background or transparent.  * @offset_x: offset by this amount in X direction.  * @offset_y: offset by this amount in Y direction.  *  * Offset the drawable by the specified amounts in the X and Y  * directions  *  * This procedure offsets the specified drawable by the amounts  * specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to  * TRUE, then portions of the drawable which are offset out of bounds  * are wrapped around. Alternatively, the undefined regions of the  * drawable can be filled with transparency or the background color, as  * specified by the 'fill-type' parameter.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_offset:  * @drawable_ID: The drawable to offset.  * @wrap_around: wrap image around or fill vacated regions.  * @fill_type: fill vacated regions of drawable with background or transparent.  * @offset_x: offset by this amount in X direction.  * @offset_y: offset by this amount in Y direction.  *  * Offset the drawable by the specified amounts in the X and Y  * directions  *  * This procedure offsets the specified drawable by the amounts  * specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to  * TRUE, then portions of the drawable which are offset out of bounds  * are wrapped around. Alternatively, the undefined regions of the  * drawable can be filled with transparency or the background color, as  * specified by the 'fill-type' parameter.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1867,7 +1867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2082,7 +2082,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2325,7 +2325,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpfontselect  * @title: gimpfontselect  * @short_descr
 end_comment
 
 begin_comment
-comment|/**  * gimp_fonts_popup:  * @font_callback: The callback PDB proc to call when font selection is made.  * @popup_title: Title of the font selection dialog.  * @initial_font: The name of the font to set as the first selected.  *  * Invokes the Gimp font selection.  *  * This procedure opens the font selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_fonts_popup:  * @font_callback: The callback PDB proc to call when font selection is made.  * @popup_title: Title of the font selection dialog.  * @initial_font: The name of the font to set as the first selected.  *  * Invokes the Gimp font selection.  *  * This procedure opens the font selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -111,7 +111,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fonts_close_popup:  * @font_callback: The name of the callback registered for this pop-up.  *  * Close the font selection dialog.  *  * This procedure closes an opened font selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_fonts_close_popup:  * @font_callback: The name of the callback registered for this pop-up.  *  * Close the font selection dialog.  *  * This procedure closes an opened font selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -180,7 +180,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fonts_set_popup:  * @font_callback: The name of the callback registered for this pop-up.  * @font_name: The name of the font to set as selected.  *  * Sets the current font in a font selection dialog.  *  * Sets the current font in a font selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_fonts_set_popup:  * @font_callback: The name of the callback registered for this pop-up.  * @font_name: The name of the font to set as selected.  *  * Sets the current font in a font selection dialog.  *  * Sets the current font in a font selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

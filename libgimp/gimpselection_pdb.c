@@ -42,7 +42,7 @@ comment|/**  * SECTION: gimpselection  * @title: gimpselection  * @short_descrip
 end_comment
 
 begin_comment
-comment|/**  * gimp_selection_bounds:  * @image_ID: The image.  * @non_empty: TRUE if there is a selection.  * @x1: x coordinate of upper left corner of selection bounds.  * @y1: y coordinate of upper left corner of selection bounds.  * @x2: x coordinate of lower right corner of selection bounds.  * @y2: y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image. Please note that the pixel specified by the  * lower righthand coordinate of the bounding box is not part of the  * selection. The selection ends at the upper left corner of this  * pixel. This means the width of the selection can be calculated as  * (x2 - x1), its height as (y2 - y1).  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_bounds:  * @image_ID: The image.  * @non_empty: TRUE if there is a selection.  * @x1: x coordinate of upper left corner of selection bounds.  * @y1: y coordinate of upper left corner of selection bounds.  * @x2: x coordinate of lower right corner of selection bounds.  * @y2: y coordinate of lower right corner of selection bounds.  *  * Find the bounding box of the current selection.  *  * This procedure returns whether there is a selection for the  * specified image. If there is one, the upper left and lower right  * corners of the bounding box are returned. These coordinates are  * relative to the image. Please note that the pixel specified by the  * lower righthand coordinate of the bounding box is not part of the  * selection. The selection ends at the upper left corner of this  * pixel. This means the width of the selection can be calculated as  * (x2 - x1), its height as (y2 - y1).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -220,7 +220,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_value:  * @image_ID: The image.  * @x: x coordinate of value.  * @y: y coordinate of value.  *  * Find the value of the selection at the specified coordinates.  *  * This procedure returns the value of the selection at the specified  * coordinates. If the coordinates lie out of bounds, 0 is returned.  *  * Returns: Value of the selection.  */
+comment|/**  * gimp_selection_value:  * @image_ID: The image.  * @x: x coordinate of value.  * @y: y coordinate of value.  *  * Find the value of the selection at the specified coordinates.  *  * This procedure returns the value of the selection at the specified  * coordinates. If the coordinates lie out of bounds, 0 is returned.  *  * Returns: Value of the selection.  **/
 end_comment
 
 begin_function
@@ -312,7 +312,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is empty.  *  * Returns: Is the selection empty?  */
+comment|/**  * gimp_selection_is_empty:  * @image_ID: The image.  *  * Determine whether the selection is empty.  *  * This procedure returns TRUE if the selection for the specified image  * is empty.  *  * Returns: Is the selection empty?  **/
 end_comment
 
 begin_function
@@ -390,7 +390,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_translate:  * @image_ID: The image.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Translate the selection by the specified offsets.  *  * This procedure actually translates the selection for the specified  * image by the specified offsets. Regions that are translated from  * beyond the bounds of the image are set to empty. Valid regions of  * the selection which are translated beyond the bounds of the image  * because of this call are lost.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_translate:  * @image_ID: The image.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Translate the selection by the specified offsets.  *  * This procedure actually translates the selection for the specified  * image by the specified offsets. Regions that are translated from  * beyond the bounds of the image are set to empty. Valid regions of  * the selection which are translated beyond the bounds of the image  * because of this call are lost.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -471,7 +471,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_selection_float:  * @drawable_ID: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: The floated layer.  */
+comment|/**  * _gimp_selection_float:  * @drawable_ID: The drawable from which to float selection.  * @offx: x offset for translation.  * @offy: y offset for translation.  *  * Float the selection from the specified drawable with initial offsets  * as specified.  *  * This procedure determines the region of the specified drawable that  * lies beneath the current selection. The region is then cut from the  * drawable and the resulting data is made into a new layer which is  * instantiated as a floating selection. The offsets allow initial  * positioning of the new floating selection.  *  * Returns: The floated layer.  **/
 end_comment
 
 begin_function
@@ -564,7 +564,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_invert:  * @image_ID: The image.  *  * Invert the selection mask.  *  * This procedure inverts the selection mask. For every pixel in the  * selection channel, its new value is calculated as (255 - old-value).  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_invert:  * @image_ID: The image.  *  * Invert the selection mask.  *  * This procedure inverts the selection mask. For every pixel in the  * selection channel, its new value is calculated as (255 - old-value).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -631,7 +631,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_sharpen:  * @image_ID: The image.  *  * Sharpen the selection mask.  *  * This procedure sharpens the selection mask. For every pixel in the  * selection channel, if the value is&gt; 127, the new pixel is  * assigned a value of 255. This removes any \"anti-aliasing\" that  * might exist in the selection mask's boundary.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_sharpen:  * @image_ID: The image.  *  * Sharpen the selection mask.  *  * This procedure sharpens the selection mask. For every pixel in the  * selection channel, if the value is&gt; 127, the new pixel is  * assigned a value of 255. This removes any \"anti-aliasing\" that  * might exist in the selection mask's boundary.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -698,7 +698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_all:  * @image_ID: The image.  *  * Select all of the image.  *  * This procedure sets the selection mask to completely encompass the  * image. Every pixel in the selection channel is set to 255.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_all:  * @image_ID: The image.  *  * Select all of the image.  *  * This procedure sets the selection mask to completely encompass the  * image. Every pixel in the selection channel is set to 255.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -765,7 +765,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_none:  * @image_ID: The image.  *  * Deselect the entire image.  *  * This procedure deselects the entire image. Every pixel in the  * selection channel is set to 0.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_none:  * @image_ID: The image.  *  * Deselect the entire image.  *  * This procedure deselects the entire image. Every pixel in the  * selection channel is set to 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -832,7 +832,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_feather:  * @image_ID: The image.  * @radius: Radius of feather (in pixels).  *  * Feather the image's selection  *  * This procedure feathers the selection. Feathering is implemented  * using a gaussian blur.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_feather:  * @image_ID: The image.  * @radius: Radius of feather (in pixels).  *  * Feather the image's selection  *  * This procedure feathers the selection. Feathering is implemented  * using a gaussian blur.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -906,7 +906,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_border:  * @image_ID: The image.  * @radius: Radius of border (in pixels).  *  * Border the image's selection  *  * This procedure borders the selection. Bordering creates a new  * selection which is defined along the boundary of the previous  * selection at every point within the specified radius.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_border:  * @image_ID: The image.  * @radius: Radius of border (in pixels).  *  * Border the image's selection  *  * This procedure borders the selection. Bordering creates a new  * selection which is defined along the boundary of the previous  * selection at every point within the specified radius.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -980,7 +980,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_grow:  * @image_ID: The image.  * @steps: Steps of grow (in pixels).  *  * Grow the image's selection  *  * This procedure grows the selection. Growing involves expanding the  * boundary in all directions by the specified pixel amount.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_grow:  * @image_ID: The image.  * @steps: Steps of grow (in pixels).  *  * Grow the image's selection  *  * This procedure grows the selection. Growing involves expanding the  * boundary in all directions by the specified pixel amount.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1054,7 +1054,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_shrink:  * @image_ID: The image.  * @steps: Steps of shrink (in pixels).  *  * Shrink the image's selection  *  * This procedure shrinks the selection. Shrinking invovles trimming  * the existing selection boundary on all sides by the specified number  * of pixels.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_shrink:  * @image_ID: The image.  * @steps: Steps of shrink (in pixels).  *  * Shrink the image's selection  *  * This procedure shrinks the selection. Shrinking invovles trimming  * the existing selection boundary on all sides by the specified number  * of pixels.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1128,7 +1128,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1195,7 +1195,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1262,7 +1262,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_save:  * @image_ID: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: The new channel.  */
+comment|/**  * gimp_selection_save:  * @image_ID: The image.  *  * Copy the selection mask to a new channel.  *  * This procedure copies the selection mask and stores the content in a  * new channel. The new channel is automatically inserted into the  * image's list of channels.  *  * Returns: The new channel.  **/
 end_comment
 
 begin_function
@@ -1341,7 +1341,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

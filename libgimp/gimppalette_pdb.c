@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimppalette  * @title: gimppalette  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_palette_new:  * @name: The requested name of the new palette.  *  * Creates a new palette  *  * This procedure creates a new, uninitialized palette  *  * Returns: The actual new palette name.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_new:  * @name: The requested name of the new palette.  *  * Creates a new palette  *  * This procedure creates a new, uninitialized palette  *  * Returns: The actual new palette name.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -115,7 +115,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_duplicate:  * @name: The palette name.  *  * Duplicates a palette  *  * This procedure creates an identical palette by a different name  *  * Returns: The name of the palette's copy.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_duplicate:  * @name: The palette name.  *  * Duplicates a palette  *  * This procedure creates an identical palette by a different name  *  * Returns: The name of the palette's copy.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -200,7 +200,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_rename:  * @name: The palette name.  * @new_name: The new name of the palette.  *  * Rename a palette  *  * This procedure renames a palette  *  * Returns: The actual new name of the palette.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_rename:  * @name: The palette name.  * @new_name: The new name of the palette.  *  * Rename a palette  *  * This procedure renames a palette  *  * Returns: The actual new name of the palette.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -294,7 +294,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_delete:  * @name: The palette name.  *  * Deletes a palette  *  * This procedure deletes a palette  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_delete:  * @name: The palette name.  *  * Deletes a palette  *  * This procedure deletes a palette  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -363,7 +363,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_is_editable:  * @name: The palette name.  *  * Tests if palette can be edited  *  * Returns TRUE if you have permission to change the palette  *  * Returns: TRUE if the palette can be edited.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_is_editable:  * @name: The palette name.  *  * Tests if palette can be edited  *  * Returns TRUE if you have permission to change the palette  *  * Returns: TRUE if the palette can be edited.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -443,7 +443,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_info:  * @name: The palette name.  * @num_colors: The number of colors in the palette.  *  * Retrieve information about the specified palette.  *  * This procedure retrieves information about the specified palette.  * This includes the name, and the number of colors.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_get_info:  * @name: The palette name.  * @num_colors: The number of colors in the palette.  *  * Retrieve information about the specified palette.  *  * This procedure retrieves information about the specified palette.  * This includes the name, and the number of colors.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -537,7 +537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_colors:  * @name: The palette name.  * @num_colors: Length of the colors array.  *  * Gets all colors from the specified palette.  *  * This procedure retrieves all color entries of the specified palette.  *  * Returns: The colors in the palette.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_palette_get_colors:  * @name: The palette name.  * @num_colors: Length of the colors array.  *  * Gets all colors from the specified palette.  *  * This procedure retrieves all color entries of the specified palette.  *  * Returns: The colors in the palette.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -663,7 +663,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_get_columns:  * @name: The palette name.  *  * Retrieves the number of columns to use to display this palette  *  * This procedures retrieves the prefered number of columns to use when  * the palette is being displayed.  *  * Returns: The number of columns used to display this palette.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_get_columns:  * @name: The palette name.  *  * Retrieves the number of columns to use to display this palette  *  * This procedures retrieves the prefered number of columns to use when  * the palette is being displayed.  *  * Returns: The number of columns used to display this palette.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -743,7 +743,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_set_columns:  * @name: The palette name.  * @columns: The new number of columns.  *  * Sets the number of columns to use when displaying the palette  *  * This procedures allows to control how many colors are shown per row  * when the palette is being displayed. This value can only be changed  * if the palette is writable. The maximum allowed value is 64.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_palette_set_columns:  * @name: The palette name.  * @columns: The new number of columns.  *  * Sets the number of columns to use when displaying the palette  *  * This procedures allows to control how many colors are shown per row  * when the palette is being displayed. This value can only be changed  * if the palette is writable. The maximum allowed value is 64.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -819,7 +819,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_add_entry:  * @name: The palette name.  * @entry_name: The name of the entry.  * @color: The new entry's color color.  * @entry_num: The index of the added entry.  *  * Adds a palette entry to the specified palette.  *  * This procedure adds an entry to the specifed palette. It returns an  * error if the entry palette does not exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_add_entry:  * @name: The palette name.  * @entry_name: The name of the entry.  * @color: The new entry's color color.  * @entry_num: The index of the added entry.  *  * Adds a palette entry to the specified palette.  *  * This procedure adds an entry to the specifed palette. It returns an  * error if the entry palette does not exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -931,7 +931,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_delete_entry:  * @name: The palette name.  * @entry_num: The index of the added entry.  *  * Deletes a palette entry from the specified palette.  *  * This procedure deletes an entry from the specifed palette. It  * returns an error if the entry palette does not exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_delete_entry:  * @name: The palette name.  * @entry_num: The index of the added entry.  *  * Deletes a palette entry from the specified palette.  *  * This procedure deletes an entry from the specifed palette. It  * returns an error if the entry palette does not exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1007,7 +1007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_get_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specifed  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_entry_get_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: The color requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the color of the zero-based entry specifed  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1103,7 +1103,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_set_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: The new color.  *  * Sets the specified palette entry in the specified palette.  *  * This procedure sets the color of the zero-based entry specifed for  * the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_entry_set_color:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @color: The new color.  *  * Sets the specified palette entry in the specified palette.  *  * This procedure sets the color of the zero-based entry specifed for  * the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1188,7 +1188,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_get_name:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @entry_name: The name requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the name of the zero-based entry specifed  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_entry_get_name:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @entry_name: The name requested.  *  * Gets the specified palette entry from the specified palette.  *  * This procedure retrieves the name of the zero-based entry specifed  * for the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1293,7 +1293,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palette_entry_set_name:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @entry_name: The new name.  *  * Sets the specified palette entry in the specified palette.  *  * This procedure sets the name of the zero-based entry specifed for  * the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_palette_entry_set_name:  * @name: The palette name.  * @entry_num: The entry to retrieve.  * @entry_name: The new name.  *  * Sets the specified palette entry in the specified palette.  *  * This procedure sets the name of the zero-based entry specifed for  * the specified palette. It returns an error if the entry does not  * exist.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

@@ -42,7 +42,7 @@ comment|/**  * SECTION: gimppalettes  * @title: gimppalettes  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure retrieves all palettes currently in the user's  * palette path and updates the palette dialogs accordingly.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_palettes_refresh:  *  * Refreshes current palettes. This function always succeeds.  *  * This procedure retrieves all palettes currently in the user's  * palette path and updates the palette dialogs accordingly.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -104,7 +104,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * gimp_context_set_palette().  *  * Returns: The list of palette names.  */
+comment|/**  * gimp_palettes_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_palettes: The number of palettes in the list.  *  * Retrieves a list of all of the available palettes  *  * This procedure returns a complete listing of available palettes.  * Each name returned can be used as input to the command  * gimp_context_set_palette().  *  * Returns: The list of palette names.  **/
 end_comment
 
 begin_function
@@ -248,7 +248,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_palette:  * @num_colors: The palette num_colors.  *  * Deprecated: Use gimp_context_get_palette() instead.  *  * Returns: The palette name.  */
+comment|/**  * gimp_palettes_get_palette:  * @num_colors: The palette num_colors.  *  * Deprecated: Use gimp_context_get_palette() instead.  *  * Returns: The palette name.  **/
 end_comment
 
 begin_function
@@ -342,7 +342,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_palettes_get_palette_entry:  * @name: The palette name (\"\" means currently active palette).  * @entry_num: The entry to retrieve.  * @num_colors: The palette num_colors.  * @color: The color requested.  *  * Deprecated: Use gimp_palette_entry_get_color() instead.  *  * Returns: The palette name.  */
+comment|/**  * gimp_palettes_get_palette_entry:  * @name: The palette name (\"\" means currently active palette).  * @entry_num: The entry to retrieve.  * @num_colors: The palette num_colors.  * @color: The color requested.  *  * Deprecated: Use gimp_palette_entry_get_color() instead.  *  * Returns: The palette name.  **/
 end_comment
 
 begin_function

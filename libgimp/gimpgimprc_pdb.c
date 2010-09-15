@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpgimprc  * @title: gimpgimprc  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (&lt;token&gt;&lt;value&gt;). The value must be a  * string. Entries not corresponding to this format will cause warnings  * to be issued on gimprc parsing and will not be queryable.  *  * Returns: The value associated with the queried token.  */
+comment|/**  * gimp_gimprc_query:  * @token: The token to query for.  *  * Queries the gimprc file parser for information on a specified token.  *  * This procedure is used to locate additional information contained in  * the gimprc file considered extraneous to the operation of GIMP.  * Plug-ins that need configuration information can expect it will be  * stored in the user gimprc file and can use this procedure to  * retrieve it. This query procedure will return the value associated  * with the specified token. This corresponds _only_ to entries with  * the format: (&lt;token&gt;&lt;value&gt;). The value must be a  * string. Entries not corresponding to this format will cause warnings  * to be issued on gimprc parsing and will not be queryable.  *  * Returns: The value associated with the queried token.  **/
 end_comment
 
 begin_function
@@ -109,7 +109,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gimprc_set:  * @token: The token to add or modify.  * @value: The value to set the token to.  *  * Sets a gimprc token to a value and saves it in the gimprc.  *  * This procedure is used to add or change additional information in  * the gimprc file that is considered extraneous to the operation of  * GIMP. Plug-ins that need configuration information can use this  * function to store it, and gimp_gimprc_query() to retrieve it. This  * will accept _only_ string values in UTF-8 encoding.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gimprc_set:  * @token: The token to add or modify.  * @value: The value to set the token to.  *  * Sets a gimprc token to a value and saves it in the gimprc.  *  * This procedure is used to add or change additional information in  * the gimprc file that is considered extraneous to the operation of  * GIMP. Plug-ins that need configuration information can use this  * function to store it, and gimp_gimprc_query() to retrieve it. This  * will accept _only_ string values in UTF-8 encoding.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -187,7 +187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_default_comment:  *  * Get the default image comment as specified in the Preferences.  *  * Returns a copy of the default image comment.  *  * Returns: Default image comment.  */
+comment|/**  * gimp_get_default_comment:  *  * Get the default image comment as specified in the Preferences.  *  * Returns a copy of the default image comment.  *  * Returns: Default image comment.  **/
 end_comment
 
 begin_function
@@ -265,7 +265,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_default_unit:  *  * Get the default unit (taken from the user's locale).  *  * Returns the default unit's integer ID.  *  * Returns: Default unit.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_get_default_unit:  *  * Get the default unit (taken from the user's locale).  *  * Returns the default unit's integer ID.  *  * Returns: Default unit.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -338,7 +338,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_monitor_resolution:  * @xres: X resolution.  * @yres: Y resolution.  *  * Get the monitor resolution as specified in the Preferences.  *  * Returns the resolution of the monitor in pixels/inch. This value is  * taken from the Preferences (or the windowing system if this is set  * in the Preferences) and there's no guarantee for the value to be  * reasonable.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_get_monitor_resolution:  * @xres: X resolution.  * @yres: Y resolution.  *  * Get the monitor resolution as specified in the Preferences.  *  * Returns the resolution of the monitor in pixels/inch. This value is  * taken from the Preferences (or the windowing system if this is set  * in the Preferences) and there's no guarantee for the value to be  * reasonable.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -446,7 +446,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_theme_dir:  *  * Get the directory of the current GUI theme.  *  * Returns a copy of the current GUI theme dir.  *  * Returns: The GUI theme dir.  */
+comment|/**  * gimp_get_theme_dir:  *  * Get the directory of the current GUI theme.  *  * Returns a copy of the current GUI theme dir.  *  * Returns: The GUI theme dir.  **/
 end_comment
 
 begin_function
@@ -524,7 +524,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_get_color_configuration:  *  * Get a serialized version of the color management configuration.  *  * Returns a string that can be deserialized into a GimpColorConfig  * object representing the current color management configuration.  *  * Returns: Serialized color management configuration.  *  * Since: GIMP 2.4  */
+comment|/**  * _gimp_get_color_configuration:  *  * Get a serialized version of the color management configuration.  *  * Returns a string that can be deserialized into a GimpColorConfig  * object representing the current color management configuration.  *  * Returns: Serialized color management configuration.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -602,7 +602,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_get_module_load_inhibit:  *  * Get the list of modules which should not be loaded.  *  * Returns a copy of the list of modules which should not be loaded.  *  * Returns: The list of modules.  */
+comment|/**  * gimp_get_module_load_inhibit:  *  * Get the list of modules which should not be loaded.  *  * Returns a copy of the list of modules which should not be loaded.  *  * Returns: The list of modules.  **/
 end_comment
 
 begin_function

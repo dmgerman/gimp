@@ -48,7 +48,7 @@ comment|/**  * SECTION: gimpimage  * @title: gimpimage  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_is_valid:  * @image_ID: The image to check.  *  * Returns TRUE if the image is valid.  *  * This procedure checks if the given image ID is valid and refers to  * an existing image.  *  * Returns: Whether the image ID is valid.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -126,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_list:  * @num_images: The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: The list of images currently open.  */
+comment|/**  * gimp_image_list:  * @num_images: The number of images currently open.  *  * Returns the list of images currently open.  *  * This procedure returns the list of images currently open in GIMP.  *  * Returns: The list of images currently open.  **/
 end_comment
 
 begin_function
@@ -243,7 +243,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * Returns: The ID of the newly created image.  */
+comment|/**  * gimp_image_new:  * @width: The width of the image.  * @height: The height of the image.  * @type: The type of image.  *  * Creates a new image with the specified width, height, and type.  *  * Creates a new image, undisplayed with the specified extents and  * type. A layer should be created and added before this image is  * displayed, or subsequent calls to gimp_display_new() with this image  * as an argument will fail. Layers can be created using the  * gimp_layer_new() commands. They can be added to an image using the  * gimp_image_insert_layer() command.  *  * Returns: The ID of the newly created image.  **/
 end_comment
 
 begin_function
@@ -336,7 +336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_duplicate:  * @image_ID: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: The new, duplicated image.  */
+comment|/**  * gimp_image_duplicate:  * @image_ID: The image.  *  * Duplicate the specified image  *  * This procedure duplicates the specified image, copying all layers,  * channels, and image information.  *  * Returns: The new, duplicated image.  **/
 end_comment
 
 begin_function
@@ -415,7 +415,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_delete:  * @image_ID: The image.  *  * Delete the specified image.  *  * If there are no displays associated with this image it will be  * deleted. This means that you can not delete an image through the PDB  * that was created by the user. If the associated display was however  * created through the PDB and you know the display ID, you may delete  * the display. Removal of the last associated display will then delete  * the image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_delete:  * @image_ID: The image.  *  * Delete the specified image.  *  * If there are no displays associated with this image it will be  * deleted. This means that you can not delete an image through the PDB  * that was created by the user. If the associated display was however  * created through the PDB and you know the display ID, you may delete  * the display. Removal of the last associated display will then delete  * the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -482,7 +482,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_base_type:  * @image_ID: The image.  *  * Get the base type of the image.  *  * This procedure returns the image's base type. Layers in the image  * must be of this subtype, but can have an optional alpha channel.  *  * Returns: The image's base type.  */
+comment|/**  * gimp_image_base_type:  * @image_ID: The image.  *  * Get the base type of the image.  *  * This procedure returns the image's base type. Layers in the image  * must be of this subtype, but can have an optional alpha channel.  *  * Returns: The image's base type.  **/
 end_comment
 
 begin_function
@@ -560,7 +560,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_width:  * @image_ID: The image.  *  * Return the width of the image  *  * This procedure returns the image's width. This value is independent  * of any of the layers in this image. This is the \"canvas\" width.  *  * Returns: The image's width.  */
+comment|/**  * gimp_image_width:  * @image_ID: The image.  *  * Return the width of the image  *  * This procedure returns the image's width. This value is independent  * of any of the layers in this image. This is the \"canvas\" width.  *  * Returns: The image's width.  **/
 end_comment
 
 begin_function
@@ -638,7 +638,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_height:  * @image_ID: The image.  *  * Return the height of the image  *  * This procedure returns the image's height. This value is independent  * of any of the layers in this image. This is the \"canvas\" height.  *  * Returns: The image's height.  */
+comment|/**  * gimp_image_height:  * @image_ID: The image.  *  * Return the height of the image  *  * This procedure returns the image's height. This value is independent  * of any of the layers in this image. This is the \"canvas\" height.  *  * Returns: The image's height.  **/
 end_comment
 
 begin_function
@@ -716,7 +716,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * Deprecated: Use gimp_drawable_free_shadow() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_free_shadow:  * @image_ID: The image.  *  * Deprecated: Use gimp_drawable_free_shadow() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -783,7 +783,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_resize:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @offx: x offset between upper left corner of old and new images: (new - old).  * @offy: y offset between upper left corner of old and new images: (new - old).  *  * Resize the image to the specified extents.  *  * This procedure resizes the image so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous image's content. All  * channels within the image are resized according to the specified  * parameters; this includes the image selection mask. All layers  * within the image are repositioned according to the specified  * offsets.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_resize:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @offx: x offset between upper left corner of old and new images: (new - old).  * @offy: y offset between upper left corner of old and new images: (new - old).  *  * Resize the image to the specified extents.  *  * This procedure resizes the image so that it's new width and height  * are equal to the supplied parameters. Offsets are also provided  * which describe the position of the previous image's content. All  * channels within the image are resized according to the specified  * parameters; this includes the image selection mask. All layers  * within the image are repositioned according to the specified  * offsets.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -878,7 +878,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_resize_to_layers:  * @image_ID: The image.  *  * Resize the image to fit all layers.  *  * This procedure resizes the image to the bounding box of all layers  * of the image. All channels within the image are resized to the new  * size; this includes the image selection mask. All layers within the  * image are repositioned to the new image area.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_image_resize_to_layers:  * @image_ID: The image.  *  * Resize the image to fit all layers.  *  * This procedure resizes the image to the bounding box of all layers  * of the image. All channels within the image are resized to the new  * size; this includes the image selection mask. All layers within the  * image are repositioned to the new image area.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -945,7 +945,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image using the default interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. The default interpolation method  * is used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image using the default interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. The default interpolation method  * is used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1026,7 +1026,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale_full:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @interpolation: Type of interpolation.  *  * Scale the image using a specific interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. This procedure allows you to  * specify the interpolation method explicitly.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_image_scale_full:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @interpolation: Type of interpolation.  *  * Scale the image using a specific interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. This procedure allows you to  * specify the interpolation method explicitly.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -1114,7 +1114,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_crop:  * @image_ID: The image.  * @new_width: New image width: (0< new_width<= width).  * @new_height: New image height: (0< new_height<= height).  * @offx: X offset: (0<= offx<= (width - new_width)).  * @offy: Y offset: (0<= offy<= (height - new_height)).  *  * Crop the image to the specified extents.  *  * This procedure crops the image so that it's new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. All channels  * and layers within the image are cropped to the new image extents;  * this includes the image selection mask. If any parameters are out of  * range, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_crop:  * @image_ID: The image.  * @new_width: New image width: (0< new_width<= width).  * @new_height: New image height: (0< new_height<= height).  * @offx: X offset: (0<= offx<= (width - new_width)).  * @offy: Y offset: (0<= offy<= (height - new_height)).  *  * Crop the image to the specified extents.  *  * This procedure crops the image so that it's new width and height are  * equal to the supplied parameters. Offsets are also provided which  * describe the position of the previous image's content. All channels  * and layers within the image are cropped to the new image extents;  * this includes the image selection mask. If any parameters are out of  * range, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1209,7 +1209,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_flip:  * @image_ID: The image.  * @flip_type: Type of flip.  *  * Flips the image horizontally or vertically.  *  * This procedure flips (mirrors) the image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_flip:  * @image_ID: The image.  * @flip_type: Type of flip.  *  * Flips the image horizontally or vertically.  *  * This procedure flips (mirrors) the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1283,7 +1283,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_rotate:  * @image_ID: The image.  * @rotate_type: Angle of rotation.  *  * Rotates the image by the specified degrees.  *  * This procedure rotates the image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_rotate:  * @image_ID: The image.  * @rotate_type: Angle of rotation.  *  * Rotates the image by the specified degrees.  *  * This procedure rotates the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1357,7 +1357,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: The list of layers contained in the image.  */
+comment|/**  * gimp_image_get_layers:  * @image_ID: The image.  * @num_layers: The number of layers contained in the image.  *  * Returns the list of layers contained in the specified image.  *  * This procedure returns the list of layers contained in the specified  * image. The order of layers is from topmost to bottommost.  *  * Returns: The list of layers contained in the image.  **/
 end_comment
 
 begin_function
@@ -1481,7 +1481,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost.  *  * Returns: The list of channels contained in the image.  */
+comment|/**  * gimp_image_get_channels:  * @image_ID: The image.  * @num_channels: The number of channels contained in the image.  *  * Returns the list of channels contained in the specified image.  *  * This procedure returns the list of channels contained in the  * specified image. This does not include the selection mask, or layer  * masks. The order is from topmost to bottommost.  *  * Returns: The list of channels contained in the image.  **/
 end_comment
 
 begin_function
@@ -1605,7 +1605,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: The list of vectors contained in the image.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_vectors:  * @image_ID: The image.  * @num_vectors: The number of vectors contained in the image.  *  * Returns the list of vectors contained in the specified image.  *  * This procedure returns the list of vectors contained in the  * specified image.  *  * Returns: The list of vectors contained in the image.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1729,7 +1729,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_drawable:  * @image_ID: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: The active drawable.  */
+comment|/**  * gimp_image_get_active_drawable:  * @image_ID: The image.  *  * Get the image's active drawable  *  * This procedure returns the ID of the image's active drawable. This  * can be either a layer, a channel, or a layer mask. The active  * drawable is specified by the active image channel. If that is -1,  * then by the active image layer. If the active image layer has a  * layer mask and the layer mask is in edit mode, then the layer mask  * is the active drawable.  *  * Returns: The active drawable.  **/
 end_comment
 
 begin_function
@@ -1808,7 +1808,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_unset_active_channel:  * @image_ID: The image.  *  * Unsets the active channel in the specified image.  *  * If an active channel exists, it is unset. There then exists no  * active channel, and if desired, one can be set through a call to  * 'Set Active Channel'. No error is returned in the case of no  * existing active channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_unset_active_channel:  * @image_ID: The image.  *  * Unsets the active channel in the specified image.  *  * If an active channel exists, it is unset. There then exists no  * active channel, and if desired, one can be set through a call to  * 'Set Active Channel'. No error is returned in the case of no  * existing active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1875,7 +1875,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_floating_sel:  * @image_ID: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: The image's floating selection.  */
+comment|/**  * gimp_image_get_floating_sel:  * @image_ID: The image.  *  * Return the floating selection of the image.  *  * This procedure returns the image's floating selection, if it exists.  * If it doesn't exist, -1 is returned as the layer ID.  *  * Returns: The image's floating selection.  **/
 end_comment
 
 begin_function
@@ -1954,7 +1954,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_floating_sel_attached_to:  * @image_ID: The image.  *  * Return the drawable the floating selection is attached to.  *  * This procedure returns the drawable the image's floating selection  * is attached to, if it exists. If it doesn't exist, -1 is returned as  * the drawable ID.  *  * Returns: The drawable the floating selection is attached to.  */
+comment|/**  * gimp_image_floating_sel_attached_to:  * @image_ID: The image.  *  * Return the drawable the floating selection is attached to.  *  * This procedure returns the drawable the image's floating selection  * is attached to, if it exists. If it doesn't exist, -1 is returned as  * the drawable ID.  *  * Returns: The drawable the floating selection is attached to.  **/
 end_comment
 
 begin_function
@@ -2033,7 +2033,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_color:  * @image_ID: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_pick_color:  * @image_ID: The image.  * @drawable_ID: The drawable to pick from.  * @x: x coordinate of upper-left corner of rectangle.  * @y: y coordinate of upper-left corner of rectangle.  * @sample_merged: Use the composite image, not the drawable.  * @sample_average: Average the color of all the pixels in a specified radius.  * @average_radius: The radius of pixels to average.  * @color: The return color.  *  * Determine the color at the given drawable coordinates  *  * This tool determines the color at the specified coordinates. The  * returned color is an RGB triplet even for grayscale and indexed  * drawables. If the coordinates lie outside of the extents of the  * specified drawable, then an error is returned. If the drawable has  * an alpha channel, the algorithm examines the alpha value of the  * drawable at the coordinates. If the alpha value is completely  * transparent (0), then an error is returned. If the sample_merged  * parameter is TRUE, the data of the composite image will be used  * instead of that for the specified drawable. This is equivalent to  * sampling for colors after merging all visible layers. In the case of  * a merged sampling, the supplied drawable is ignored.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2162,7 +2162,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_pick_correlate_layer:  * @image_ID: The image.  * @x: The x coordinate for the pick.  * @y: The y coordinate for the pick.  *  * Find the layer visible at the specified coordinates.  *  * This procedure finds the layer which is visible at the specified  * coordinates. Layers which do not qualify are those whose extents do  * not pass within the specified coordinates, or which are transparent  * at the specified coordinates. This procedure will return -1 if no  * layer is found.  *  * Returns: The layer found at the specified coordinates.  */
+comment|/**  * gimp_image_pick_correlate_layer:  * @image_ID: The image.  * @x: The x coordinate for the pick.  * @y: The y coordinate for the pick.  *  * Find the layer visible at the specified coordinates.  *  * This procedure finds the layer which is visible at the specified  * coordinates. Layers which do not qualify are those whose extents do  * not pass within the specified coordinates, or which are transparent  * at the specified coordinates. This procedure will return -1 if no  * layer is found.  *  * Returns: The layer found at the specified coordinates.  **/
 end_comment
 
 begin_function
@@ -2255,7 +2255,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @position: The layer position.  *  * Deprecated: Use gimp_image_insert_layer() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @position: The layer position.  *  * Deprecated: Use gimp_image_insert_layer() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2336,7 +2336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is NULL, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as NULL, then the layer is inserted above the active  * layer. The layer type must be compatible with the image base type.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_insert_layer:  * @image_ID: The image.  * @layer_ID: The layer.  * @parent_ID: The parent layer.  * @position: The layer position.  *  * Add the specified layer to the image.  *  * This procedure adds the specified layer to the image at the given  * position. If the specified parent is a valid layer group (See  * gimp_item_is_group() and gimp_layer_group_new()) then the layer is  * added inside the group. If the parent is NULL, the layer is added  * inside the main stack, outside of any group. The position argument  * specifies the location of the layer inside the stack (or the group,  * if a valid parent was supplied), starting from the top (0) and  * increasing. If the position is specified as -1 and the parent is  * specified as NULL, then the layer is inserted above the active  * layer. The layer type must be compatible with the image base type.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2424,7 +2424,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_layer:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Remove the specified layer from the image.  *  * This procedure removes the specified layer from the image. If the  * layer doesn't exist, an error is returned. If there are no layers  * left in the image, this call will fail. If this layer is the last  * layer remaining, the image will become empty and have no active  * layer.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_remove_layer:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Remove the specified layer from the image.  *  * This procedure removes the specified layer from the image. If the  * layer doesn't exist, an error is returned. If there are no layers  * left in the image, this call will fail. If this layer is the last  * layer remaining, the image will become empty and have no active  * layer.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2498,7 +2498,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @position: The channel position.  *  * Deprecated: Use gimp_image_insert_channel() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @position: The channel position.  *  * Deprecated: Use gimp_image_insert_channel() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2579,7 +2579,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be NULL. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_insert_channel:  * @image_ID: The image.  * @channel_ID: The channel.  * @parent_ID: The parent channel.  * @position: The channel position.  *  * Add the specified channel to the image.  *  * This procedure adds the specified channel to the image at the given  * position. Since channel groups are not currently supported, the  * parent argument must always be NULL. The position argument specifies  * the location of the channel inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * channel is inserted above the active channel.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2667,7 +2667,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_channel:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Remove the specified channel from the image.  *  * This procedure removes the specified channel from the image. If the  * channel doesn't exist, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_remove_channel:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Remove the specified channel from the image.  *  * This procedure removes the specified channel from the image. If the  * channel doesn't exist, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2741,7 +2741,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_add_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  * @position: The vectors objects position.  *  * Deprecated: Use gimp_image_insert_vectors() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_add_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  * @position: The vectors objects position.  *  * Deprecated: Use gimp_image_insert_vectors() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2822,7 +2822,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_insert_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be NULL. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_insert_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors.  * @parent_ID: The parent vectors.  * @position: The vectors position.  *  * Add the specified vectors to the image.  *  * This procedure adds the specified vectors to the image at the given  * position. Since vectors groups are not currently supported, the  * parent argument must always be NULL. The position argument specifies  * the location of the vectors inside the stack, starting from the top  * (0) and increasing. If the position is specified as -1, then the  * vectors is inserted above the active vectors.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2910,7 +2910,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_remove_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_remove_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Remove the specified path from the image.  *  * This procedure removes the specified path from the image. If the  * path doesn't exist, an error is returned.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -2984,7 +2984,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_item_position:  * @image_ID: The image.  * @item_ID: The item.  *  * Returns the position of the item in its level of its item tree.  *  * This procedure determines the position of the specified item in its  * level in its item tree in the image. If the item doesn't exist in  * the image, or the item is not part of an item tree, an error is  * returned.  *  * Returns: The position of the item in its level in the item tree.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_get_item_position:  * @image_ID: The image.  * @item_ID: The item.  *  * Returns the position of the item in its level of its item tree.  *  * This procedure determines the position of the specified item in its  * level in its item tree in the image. If the item doesn't exist in  * the image, or the item is not part of an item tree, an error is  * returned.  *  * Returns: The position of the item in its level in the item tree.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3069,7 +3069,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procecure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_raise_item:  * @image_ID: The image.  * @item_ID: The item to raise.  *  * Raise the specified item in its level in its item tree  *  * This procedure raises the specified item one step in the item tree.  * The procecure call will fail if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3143,7 +3143,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procecure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_lower_item:  * @image_ID: The image.  * @item_ID: The item to lower.  *  * Lower the specified item in its level in its item tree  *  * This procedure lowers the specified item one step in the item tree.  * The procecure call will fail if there is no item below it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3217,7 +3217,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_item_to_top:  * @image_ID: The image.  * @item_ID: The item to raise to top.  *  * Raise the specified item to the top of its level in its item tree  *  * This procedure raises the specified item to top of its level in the  * item tree. It will not move the item if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_raise_item_to_top:  * @image_ID: The image.  * @item_ID: The item to raise to top.  *  * Raise the specified item to the top of its level in its item tree  *  * This procedure raises the specified item to top of its level in the  * item tree. It will not move the item if there is no item above it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3291,7 +3291,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_item_to_bottom:  * @image_ID: The image.  * @item_ID: The item to lower to bottom.  *  * Lower the specified item to the bottom of its level in its item tree  *  * This procedure lowers the specified item to bottom of its level in  * the item tree. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_lower_item_to_bottom:  * @image_ID: The image.  * @item_ID: The item to lower to bottom.  *  * Lower the specified item to the bottom of its level in its item tree  *  * This procedure lowers the specified item to bottom of its level in  * the item tree. It will not move the layer if there is no layer below  * it.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3365,7 +3365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_reorder_item:  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_reorder_item:  * @image_ID: The image.  * @item_ID: The item to reorder.  * @parent_ID: The new parent item.  * @position: The new position of the item.  *  * Reorder the specified item within its item tree  *  * This procedure reorders the specified item within its item tree.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -3453,7 +3453,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the layer in the layer stack.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_layer_position:  * @image_ID: The image.  * @layer_ID: The layer.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the layer in the layer stack.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -3538,7 +3538,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_layer:  * @image_ID: The image.  * @layer_ID: The layer to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_layer:  * @image_ID: The image.  * @layer_ID: The layer to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3612,7 +3612,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_layer:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_layer:  * @image_ID: The image.  * @layer_ID: The layer to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3686,7 +3686,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_layer_to_top:  * @image_ID: The image.  * @layer_ID: The layer to raise to top.  *  * Deprecated: Use gimp_image_raise_item_to_top() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_layer_to_top:  * @image_ID: The image.  * @layer_ID: The layer to raise to top.  *  * Deprecated: Use gimp_image_raise_item_to_top() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3760,7 +3760,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_layer_to_bottom:  * @image_ID: The image.  * @layer_ID: The layer to lower to bottom.  *  * Deprecated: Use gimp_image_lower_item_to_bottom() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_layer_to_bottom:  * @image_ID: The image.  * @layer_ID: The layer to lower to bottom.  *  * Deprecated: Use gimp_image_lower_item_to_bottom() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3834,7 +3834,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the channel in the channel stack.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_channel_position:  * @image_ID: The image.  * @channel_ID: The channel.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the channel in the channel stack.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -3919,7 +3919,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_channel:  * @image_ID: The image.  * @channel_ID: The channel to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_raise_channel:  * @image_ID: The image.  * @channel_ID: The channel to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3993,7 +3993,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @channel_ID: The channel to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_lower_channel:  * @image_ID: The image.  * @channel_ID: The channel to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4067,7 +4067,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_get_vectors_position:  * @image_ID: The image.  * @vectors_ID: The vectors object.  *  * Deprecated: Use gimp_image_get_item_position() instead.  *  * Returns: The position of the vectors object in the vectors stack.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -4152,7 +4152,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_raise_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise.  *  * Deprecated: Use gimp_image_raise_item() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -4226,7 +4226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_lower_vectors:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower.  *  * Deprecated: Use gimp_image_lower_item() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -4300,7 +4300,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_raise_vectors_to_top:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise to top.  *  * Deprecated: Use gimp_image_raise_item_to_top() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_raise_vectors_to_top:  * @image_ID: The image.  * @vectors_ID: The vectors object to raise to top.  *  * Deprecated: Use gimp_image_raise_item_to_top() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -4374,7 +4374,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_lower_vectors_to_bottom:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower to bottom.  *  * Deprecated: Use gimp_image_lower_item_to_bottom() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_image_lower_vectors_to_bottom:  * @image_ID: The image.  * @vectors_ID: The vectors object to lower to bottom.  *  * Deprecated: Use gimp_image_lower_item_to_bottom() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -4448,7 +4448,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_flatten:  * @image_ID: The image.  *  * Flatten all visible layers into a single layer. Discard all  * invisible layers.  *  * This procedure combines the visible layers in a manner analogous to  * merging with the CLIP_TO_IMAGE merge type. Non-visible layers are  * discarded, and the resulting image is stripped of its alpha channel.  *  * Returns: The resulting layer.  */
+comment|/**  * gimp_image_flatten:  * @image_ID: The image.  *  * Flatten all visible layers into a single layer. Discard all  * invisible layers.  *  * This procedure combines the visible layers in a manner analogous to  * merging with the CLIP_TO_IMAGE merge type. Non-visible layers are  * discarded, and the resulting image is stripped of its alpha channel.  *  * Returns: The resulting layer.  **/
 end_comment
 
 begin_function
@@ -4527,7 +4527,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_visible_layers:  * @image_ID: The image.  * @merge_type: The type of merge.  *  * Merge the visible image layers into one.  *  * This procedure combines the visible layers into a single layer using  * the specified merge type. A merge type of EXPAND_AS_NECESSARY  * expands the final layer to encompass the areas of the visible  * layers. A merge type of CLIP_TO_IMAGE clips the final layer to the  * extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the  * final layer to the size of the bottommost layer.  *  * Returns: The resulting layer.  */
+comment|/**  * gimp_image_merge_visible_layers:  * @image_ID: The image.  * @merge_type: The type of merge.  *  * Merge the visible image layers into one.  *  * This procedure combines the visible layers into a single layer using  * the specified merge type. A merge type of EXPAND_AS_NECESSARY  * expands the final layer to encompass the areas of the visible  * layers. A merge type of CLIP_TO_IMAGE clips the final layer to the  * extents of the image. A merge type of CLIP_TO_BOTTOM_LAYER clips the  * final layer to the size of the bottommost layer.  *  * Returns: The resulting layer.  **/
 end_comment
 
 begin_function
@@ -4613,7 +4613,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_merge_down:  * @image_ID: The image.  * @merge_layer_ID: The layer to merge down from.  * @merge_type: The type of merge.  *  * Merge the layer passed and the first visible layer below.  *  * This procedure combines the passed layer and the first visible layer  * below it using the specified merge type. A merge type of  * EXPAND_AS_NECESSARY expands the final layer to encompass the areas  * of the visible layers. A merge type of CLIP_TO_IMAGE clips the final  * layer to the extents of the image. A merge type of  * CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the  * bottommost layer.  *  * Returns: The resulting layer.  */
+comment|/**  * gimp_image_merge_down:  * @image_ID: The image.  * @merge_layer_ID: The layer to merge down from.  * @merge_type: The type of merge.  *  * Merge the layer passed and the first visible layer below.  *  * This procedure combines the passed layer and the first visible layer  * below it using the specified merge type. A merge type of  * EXPAND_AS_NECESSARY expands the final layer to encompass the areas  * of the visible layers. A merge type of CLIP_TO_IMAGE clips the final  * layer to the extents of the image. A merge type of  * CLIP_TO_BOTTOM_LAYER clips the final layer to the size of the  * bottommost layer.  *  * Returns: The resulting layer.  **/
 end_comment
 
 begin_function
@@ -4706,7 +4706,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap.  */
+comment|/**  * _gimp_image_get_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  *  * Returns the image's colormap  *  * This procedure returns an actual pointer to the image's colormap, as  * well as the number of bytes contained in the colormap. The actual  * number of colors in the transmitted colormap will be 'num-bytes' /  * 3. If the image is not in Indexed color mode, no colormap is  * returned.  *  * Returns: The image's colormap.  **/
 end_comment
 
 begin_function
@@ -4830,7 +4830,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_image_set_colormap:  * @image_ID: The image.  * @num_bytes: Number of bytes in the colormap array.  * @colormap: The new colormap values.  *  * Sets the entries in the image's colormap.  *  * This procedure sets the entries in the specified image's colormap.  * The number of entries is specified by the 'num-bytes' parameter and  * corresponds to the number of INT8 triples that must be contained in  * the 'colormap' array. The actual number of colors in the transmitted  * colormap is 'num-bytes' / 3.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4913,7 +4913,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_clean_all:  * @image_ID: The image.  *  * Set the image dirty count to 0.  *  * This procedure sets the specified image's dirty count to 0, allowing  * operations to occur without having a 'dirtied' image. This is  * especially useful for creating and loading images which should not  * initially be considered dirty, even though layers must be created,  * filled, and installed in the image. Note that save plug-ins must NOT  * call this function themselves after saving the image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_clean_all:  * @image_ID: The image.  *  * Set the image dirty count to 0.  *  * This procedure sets the specified image's dirty count to 0, allowing  * operations to occur without having a 'dirtied' image. This is  * especially useful for creating and loading images which should not  * initially be considered dirty, even though layers must be created,  * filled, and installed in the image. Note that save plug-ins must NOT  * call this function themselves after saving the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -4980,7 +4980,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved. Note that saving the image does not automatically  * set the dirty count to 0, you need to call gimp_image_clean_all()  * after calling a save procedure to make the image clean.  *  * Returns: TRUE if the image has unsaved changes.  */
+comment|/**  * gimp_image_is_dirty:  * @image_ID: The image.  *  * Checks if the image has unsaved changes.  *  * This procedure checks the specified image's dirty count to see if it  * needs to be saved. Note that saving the image does not automatically  * set the dirty count to 0, you need to call gimp_image_clean_all()  * after calling a save procedure to make the image clean.  *  * Returns: TRUE if the image has unsaved changes.  **/
 end_comment
 
 begin_function
@@ -5058,7 +5058,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_image_thumbnail:  * @image_ID: The image.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of an image.  *  * This function gets data from which a thumbnail of an image preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bits per pixel in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5273,7 +5273,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_layer:  * @image_ID: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: The active layer.  */
+comment|/**  * gimp_image_get_active_layer:  * @image_ID: The image.  *  * Returns the specified image's active layer.  *  * If there is an active layer, its ID will be returned, otherwise, -1.  * If a channel is currently active, then no layer will be. If a layer  * mask is active, then this will return the associated layer.  *  * Returns: The active layer.  **/
 end_comment
 
 begin_function
@@ -5352,7 +5352,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_layer:  * @image_ID: The image.  * @active_layer_ID: The new image active layer.  *  * Sets the specified image's active layer.  *  * If the layer exists, it is set as the active layer in the image. Any  * previous active layer or channel is set to inactive. An exception is  * a previously existing floating selection, in which case this  * procedure will return an execution error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_active_layer:  * @image_ID: The image.  * @active_layer_ID: The new image active layer.  *  * Sets the specified image's active layer.  *  * If the layer exists, it is set as the active layer in the image. Any  * previous active layer or channel is set to inactive. An exception is  * a previously existing floating selection, in which case this  * procedure will return an execution error.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5426,7 +5426,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_channel:  * @image_ID: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  */
+comment|/**  * gimp_image_get_active_channel:  * @image_ID: The image.  *  * Returns the specified image's active channel.  *  * If there is an active channel, this will return the channel ID,  * otherwise, -1.  *  * Returns: The active channel.  **/
 end_comment
 
 begin_function
@@ -5505,7 +5505,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or channel is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_active_channel:  * @image_ID: The image.  * @active_channel_ID: The new image active channel.  *  * Sets the specified image's active channel.  *  * If the channel exists, it is set as the active channel in the image.  * Any previous active channel or channel is set to inactive. An  * exception is a previously existing floating selection, in which case  * this procedure will return an execution error.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5579,7 +5579,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_active_vectors:  * @image_ID: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: The active vectors.  */
+comment|/**  * gimp_image_get_active_vectors:  * @image_ID: The image.  *  * Returns the specified image's active vectors.  *  * If there is an active path, its ID will be returned, otherwise, -1.  *  * Returns: The active vectors.  **/
 end_comment
 
 begin_function
@@ -5658,7 +5658,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_active_vectors:  * @image_ID: The image.  * @active_vectors_ID: The new image active vectors.  *  * Sets the specified image's active vectors.  *  * If the path exists, it is set as the active path in the image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_active_vectors:  * @image_ID: The image.  * @active_vectors_ID: The new image active vectors.  *  * Sets the specified image's active vectors.  *  * If the path exists, it is set as the active path in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5732,7 +5732,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_selection:  * @image_ID: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: The selection channel.  */
+comment|/**  * gimp_image_get_selection:  * @image_ID: The image.  *  * Returns the specified image's selection.  *  * This will always return a valid ID for a selection -- which is  * represented as a channel internally.  *  * Returns: The selection channel.  **/
 end_comment
 
 begin_function
@@ -5811,7 +5811,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_component_active:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is active.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is active  * or inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: Component is active.  */
+comment|/**  * gimp_image_get_component_active:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is active.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is active  * or inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: Component is active.  **/
 end_comment
 
 begin_function
@@ -5896,7 +5896,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_component_active:  * @image_ID: The image.  * @component: The image component.  * @active: Component is active.  *  * Sets if the specified image's image component is active.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is active or  * inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_component_active:  * @image_ID: The image.  * @component: The image component.  * @active: Component is active.  *  * Sets if the specified image's image component is active.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is active or  * inactive -- whether or not it can be modified. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -5977,7 +5977,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_component_visible:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is visible.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is  * visible or invisible -- whether or not it can be seen. If the  * specified component is not valid for the image type, an error is  * returned.  *  * Returns: Component is visible.  */
+comment|/**  * gimp_image_get_component_visible:  * @image_ID: The image.  * @component: The image component.  *  * Returns if the specified image's image component is visible.  *  * This procedure returns if the specified image's image component  * (i.e. Red, Green, Blue intensity channels in an RGB image) is  * visible or invisible -- whether or not it can be seen. If the  * specified component is not valid for the image type, an error is  * returned.  *  * Returns: Component is visible.  **/
 end_comment
 
 begin_function
@@ -6062,7 +6062,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_component_visible:  * @image_ID: The image.  * @component: The image component.  * @visible: Component is visible.  *  * Sets if the specified image's image component is visible.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is visible or  * invisible -- whether or not it can be seen. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_component_visible:  * @image_ID: The image.  * @component: The image component.  * @visible: Component is visible.  *  * Sets if the specified image's image component is visible.  *  * This procedure sets if the specified image's image component (i.e.  * Red, Green, Blue intensity channels in an RGB image) is visible or  * invisible -- whether or not it can be seen. If the specified  * component is not valid for the image type, an error is returned.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6143,7 +6143,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * from a local filesystem or has since been saved locally. Otherwise,  * this function returns %NULL. See also gimp_image_get_uri().  *  * Returns: The filename.  */
+comment|/**  * gimp_image_get_filename:  * @image_ID: The image.  *  * Returns the specified image's filename.  *  * This procedure returns the specified image's filename in the  * filesystem encoding. The image has a filename only if it was loaded  * from a local filesystem or has since been saved locally. Otherwise,  * this function returns %NULL. See also gimp_image_get_uri().  *  * Returns: The filename.  **/
 end_comment
 
 begin_function
@@ -6226,7 +6226,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename. The filename  * should be in the filesystem encoding.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_filename:  * @image_ID: The image.  * @filename: The new image filename.  *  * Sets the specified image's filename.  *  * This procedure sets the specified image's filename. The filename  * should be in the filesystem encoding.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6302,7 +6302,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded from a file or has since  * been saved. Otherwise, this function returns %NULL.  *  * Returns: The URI.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_image_get_uri:  * @image_ID: The image.  *  * Returns the URI for the specified image.  *  * This procedure returns the URI associated with the specified image.  * The image has an URI only if it was loaded from a file or has since  * been saved. Otherwise, this function returns %NULL.  *  * Returns: The URI.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -6385,7 +6385,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then this is the base name (the last component of the  * path). Otherwise it is the translated string \"Untitled\".  *  * Returns: The name.  */
+comment|/**  * gimp_image_get_name:  * @image_ID: The image.  *  * Returns the specified image's name.  *  * This procedure returns the image's name. If the image has a filename  * or an URI, then this is the base name (the last component of the  * path). Otherwise it is the translated string \"Untitled\".  *  * Returns: The name.  **/
 end_comment
 
 begin_function
@@ -6468,7 +6468,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: The resolution in the x-axis, in dots per inch.  * @yresolution: The resolution in the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_get_resolution:  * @image_ID: The image.  * @xresolution: The resolution in the x-axis, in dots per inch.  * @yresolution: The resolution in the y-axis, in dots per inch.  *  * Returns the specified image's resolution.  *  * This procedure returns the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6583,7 +6583,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_resolution:  * @image_ID: The image.  * @xresolution: The new image resolution in the x-axis, in dots per inch.  * @yresolution: The new image resolution in the y-axis, in dots per inch.  *  * Sets the specified image's resolution.  *  * This procedure sets the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  * No scaling or resizing is performed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_resolution:  * @image_ID: The image.  * @xresolution: The new image resolution in the x-axis, in dots per inch.  * @yresolution: The new image resolution in the y-axis, in dots per inch.  *  * Sets the specified image's resolution.  *  * This procedure sets the specified image's resolution in dots per  * inch. This value is independent of any of the layers in this image.  * No scaling or resizing is performed.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6664,7 +6664,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: The unit.  */
+comment|/**  * gimp_image_get_unit:  * @image_ID: The image.  *  * Returns the specified image's unit.  *  * This procedure returns the specified image's unit. This value is  * independent of any of the layers in this image. See the  * gimp_unit_*() procedure definitions for the valid range of unit IDs  * and a description of the unit system.  *  * Returns: The unit.  **/
 end_comment
 
 begin_function
@@ -6742,7 +6742,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_*() procedure definitions  * for the valid range of unit IDs and a description of the unit  * system.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_unit:  * @image_ID: The image.  * @unit: The new image unit.  *  * Sets the specified image's unit.  *  * This procedure sets the specified image's unit. No scaling or  * resizing is performed. This value is independent of any of the  * layers in this image. See the gimp_unit_*() procedure definitions  * for the valid range of unit IDs and a description of the unit  * system.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6816,7 +6816,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_tattoo_state:  * @image_ID: The image.  *  * Returns the tattoo state associated with the image.  *  * This procedure returns the tattoo state of the image. Use only by  * save/load plugins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  *  * Returns: The tattoo state.  */
+comment|/**  * gimp_image_get_tattoo_state:  * @image_ID: The image.  *  * Returns the tattoo state associated with the image.  *  * This procedure returns the tattoo state of the image. Use only by  * save/load plugins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  *  * Returns: The tattoo state.  **/
 end_comment
 
 begin_function
@@ -6894,7 +6894,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_set_tattoo_state:  * @image_ID: The image.  * @tattoo_state: The new image tattoo state.  *  * Set the tattoo state associated with the image.  *  * This procedure sets the tattoo state of the image. Use only by  * save/load plugins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  * A full check of uniqueness of states in layers, channels and paths  * will be performed by this procedure and a execution failure will be  * returned if this fails. A failure will also be returned if the new  * tattoo state value is less than the maximum tattoo value from all of  * the tattoos from the paths, layers and channels. After the image  * data has been loaded and all the tattoos have been set then this is  * the last procedure that should be called. If effectively does a  * status check on the tattoo values that have been set to make sure  * that all is OK.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_set_tattoo_state:  * @image_ID: The image.  * @tattoo_state: The new image tattoo state.  *  * Set the tattoo state associated with the image.  *  * This procedure sets the tattoo state of the image. Use only by  * save/load plugins that wish to preserve an images tattoo state.  * Using this function at other times will produce unexpected results.  * A full check of uniqueness of states in layers, channels and paths  * will be performed by this procedure and a execution failure will be  * returned if this fails. A failure will also be returned if the new  * tattoo state value is less than the maximum tattoo value from all of  * the tattoos from the paths, layers and channels. After the image  * data has been loaded and all the tattoos have been set then this is  * the last procedure that should be called. If effectively does a  * status check on the tattoo values that have been set to make sure  * that all is OK.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -6968,7 +6968,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_layer_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the layer to find.  *  * Find a layer with a given tattoo in an image.  *  * This procedure returns the layer with the given tattoo in the  * specified image.  *  * Returns: The layer with the specified tattoo.  */
+comment|/**  * gimp_image_get_layer_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the layer to find.  *  * Find a layer with a given tattoo in an image.  *  * This procedure returns the layer with the given tattoo in the  * specified image.  *  * Returns: The layer with the specified tattoo.  **/
 end_comment
 
 begin_function
@@ -7054,7 +7054,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_channel_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: The channel with the specified tattoo.  */
+comment|/**  * gimp_image_get_channel_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the channel to find.  *  * Find a channel with a given tattoo in an image.  *  * This procedure returns the channel with the given tattoo in the  * specified image.  *  * Returns: The channel with the specified tattoo.  **/
 end_comment
 
 begin_function
@@ -7140,7 +7140,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_image_get_vectors_by_tattoo:  * @image_ID: The image.  * @tattoo: The tattoo of the vectors to find.  *  * Find a vectors with a given tattoo in an image.  *  * This procedure returns the vectors with the given tattoo in the  * specified image.  *  * Returns: The vectors with the specified tattoo.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function

@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpplugin  * @title: gimpplugin  * @short_description: 
 end_comment
 
 begin_comment
-comment|/**  * gimp_plugin_domain_register:  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: The absolute path to the compiled message catalog (may be NULL).  *  * Registers a textdomain for localisation.  *  * This procedure adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another location. This  * procedure can only be called in the query function of a plug-in and  * it has to be called before any procedure is installed.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_domain_register:  * @domain_name: The name of the textdomain (must be unique).  * @domain_path: The absolute path to the compiled message catalog (may be NULL).  *  * Registers a textdomain for localisation.  *  * This procedure adds a textdomain to the list of domains Gimp  * searches for strings when translating its menu entries. There is no  * need to call this function for plug-ins that have their strings  * included in the 'gimp-std-plugins' domain as that is used by  * default. If the compiled message catalog is not in the standard  * location, you may specify an absolute path to another location. This  * procedure can only be called in the query function of a plug-in and  * it has to be called before any procedure is installed.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -102,7 +102,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_plugin_help_register:  * @domain_name: The XML namespace of the plug-in's help pages.  * @domain_uri: The root URI of the plug-in's help pages.  *  * Register a help path for a plug-in.  *  * This procedure registers user documentation for the calling plug-in  * with the GIMP help system. The domain_uri parameter points to the  * root directory where the plug-in help is installed. For each  * supported language there should be a file called 'gimp-help.xml'  * that maps the help IDs to the actual help files.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -180,7 +180,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_menu_register:  * @procedure_name: The procedure for which to install the menu path.  * @menu_path: The procedure's additional menu path.  *  * Register an additional menu path for a plug-in procedure.  *  * This procedure installs an additional menu entry for the given  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_plugin_menu_register:  * @procedure_name: The procedure for which to install the menu path.  * @menu_path: The procedure's additional menu path.  *  * Register an additional menu path for a plug-in procedure.  *  * This procedure installs an additional menu entry for the given  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -258,7 +258,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_menu_branch_register:  * @menu_path: The sub-menu's menu path.  * @menu_name: The name of the sub-menu.  *  * Register a sub-menu.  *  * This procedure installs a sub-menu which does not belong to any  * procedure. The menu-name should be the untranslated menu label. GIMP  * will look up the translation in the textdomain registered for the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_plugin_menu_branch_register:  * @menu_path: The sub-menu's menu path.  * @menu_name: The name of the sub-menu.  *  * Register a sub-menu.  *  * This procedure installs a sub-menu which does not belong to any  * procedure. The menu-name should be the untranslated menu label. GIMP  * will look up the translation in the textdomain registered for the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -336,7 +336,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_plugin_icon_register:  * @procedure_name: The procedure for which to install the icon.  * @icon_type: The type of the icon.  * @icon_data_length: The length of 'icon-data'.  * @icon_data: The procedure's icon. The format depends on the 'icon_type' parameter.  *  * Register an icon for a plug-in procedure.  *  * This procedure installs an icon for the given procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * _gimp_plugin_icon_register:  * @procedure_name: The procedure for which to install the icon.  * @icon_type: The type of the icon.  * @icon_data_length: The length of 'icon-data'.  * @icon_data: The procedure's icon. The format depends on the 'icon_type' parameter.  *  * Register an icon for a plug-in procedure.  *  * This procedure installs an icon for the given procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -428,7 +428,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_set_pdb_error_handler:  * @handler: Who is responsible for handling procedure call errors.  *  * Sets an error handler for procedure calls.  *  * This procedure changes the way that errors in procedure calls are  * handled. By default GIMP will raise an error dialog if a procedure  * call made by a plug-in fails. Using this procedure the plug-in can  * change this behavior. If the error handler is set to  * %GIMP_PDB_ERROR_HANDLER_PLUGIN, then the plug-in is responsible for  * calling gimp_get_pdb_error() and handling the error whenever one if  * its procedure calls fails. It can do this by displaying the error  * message or by forwarding it in its own return values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_plugin_set_pdb_error_handler:  * @handler: Who is responsible for handling procedure call errors.  *  * Sets an error handler for procedure calls.  *  * This procedure changes the way that errors in procedure calls are  * handled. By default GIMP will raise an error dialog if a procedure  * call made by a plug-in fails. Using this procedure the plug-in can  * change this behavior. If the error handler is set to  * %GIMP_PDB_ERROR_HANDLER_PLUGIN, then the plug-in is responsible for  * calling gimp_get_pdb_error() and handling the error whenever one if  * its procedure calls fails. It can do this by displaying the error  * message or by forwarding it in its own return values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -495,7 +495,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plugin_get_pdb_error_handler:  *  * Retrieves the active error handler for procedure calls.  *  * This procedure retrieves the currently active error handler for  * procedure calls made by the calling plug-in. See  * gimp_plugin_set_pdb_error_handler() for details.  *  * Returns: Who is responsible for handling procedure call errors.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_plugin_get_pdb_error_handler:  *  * Retrieves the active error handler for procedure calls.  *  * This procedure retrieves the currently active error handler for  * procedure calls made by the calling plug-in. See  * gimp_plugin_set_pdb_error_handler() for details.  *  * Returns: Who is responsible for handling procedure call errors.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function

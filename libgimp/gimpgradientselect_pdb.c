@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpgradientselect  * @title: gimpgradientselect  * @sho
 end_comment
 
 begin_comment
-comment|/**  * gimp_gradients_popup:  * @gradient_callback: The callback PDB proc to call when gradient selection is made.  * @popup_title: Title of the gradient selection dialog.  * @initial_gradient: The name of the gradient to set as the first selected.  * @sample_size: Size of the sample to return when the gradient is changed.  *  * Invokes the Gimp gradients selection.  *  * This procedure opens the gradient selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_popup:  * @gradient_callback: The callback PDB proc to call when gradient selection is made.  * @popup_title: Title of the gradient selection dialog.  * @initial_gradient: The name of the gradient to set as the first selected.  * @sample_size: Size of the sample to return when the gradient is changed.  *  * Invokes the Gimp gradients selection.  *  * This procedure opens the gradient selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -118,7 +118,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_close_popup:  * @gradient_callback: The name of the callback registered for this pop-up.  *  * Close the gradient selection dialog.  *  * This procedure closes an opened gradient selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_close_popup:  * @gradient_callback: The name of the callback registered for this pop-up.  *  * Close the gradient selection dialog.  *  * This procedure closes an opened gradient selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -187,7 +187,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_gradients_set_popup:  * @gradient_callback: The name of the callback registered for this pop-up.  * @gradient_name: The name of the gradient to set as selected.  *  * Sets the current gradient in a gradient selection dialog.  *  * Sets the current gradient in a gradient selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_gradients_set_popup:  * @gradient_callback: The name of the callback registered for this pop-up.  * @gradient_name: The name of the gradient to set as selected.  *  * Sets the current gradient in a gradient selection dialog.  *  * Sets the current gradient in a gradient selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

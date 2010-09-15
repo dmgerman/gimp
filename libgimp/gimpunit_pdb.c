@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpunit  * @title: gimpunit  * @short_description: Prov
 end_comment
 
 begin_comment
-comment|/**  * _gimp_unit_get_number_of_units:  *  * Returns the number of units.  *  * This procedure returns the number of defined units.  *  * Returns: The number of units.  */
+comment|/**  * _gimp_unit_get_number_of_units:  *  * Returns the number of units.  *  * This procedure returns the number of defined units.  *  * Returns: The number of units.  **/
 end_comment
 
 begin_function
@@ -97,7 +97,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_number_of_built_in_units:  *  * Returns the number of built-in units.  *  * This procedure returns the number of defined units built-in to GIMP.  *  * Returns: The number of built-in units.  */
+comment|/**  * _gimp_unit_get_number_of_built_in_units:  *  * Returns the number of built-in units.  *  * This procedure returns the number of defined units built-in to GIMP.  *  * Returns: The number of built-in units.  **/
 end_comment
 
 begin_function
@@ -170,7 +170,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_new:  * @identifier: The new unit's identifier.  * @factor: The new unit's factor.  * @digits: The new unit's digits.  * @symbol: The new unit's symbol.  * @abbreviation: The new unit's abbreviation.  * @singular: The new unit's singular form.  * @plural: The new unit's plural form.  *  * Creates a new unit and returns it's integer ID.  *  * This procedure creates a new unit and returns it's integer ID. Note  * that the new unit will have it's deletion flag set to TRUE, so you  * will have to set it to FALSE with gimp_unit_set_deletion_flag() to  * make it persistent.  *  * Returns: The new unit's ID.  */
+comment|/**  * _gimp_unit_new:  * @identifier: The new unit's identifier.  * @factor: The new unit's factor.  * @digits: The new unit's digits.  * @symbol: The new unit's symbol.  * @abbreviation: The new unit's abbreviation.  * @singular: The new unit's singular form.  * @plural: The new unit's plural form.  *  * Creates a new unit and returns it's integer ID.  *  * This procedure creates a new unit and returns it's integer ID. Note  * that the new unit will have it's deletion flag set to TRUE, so you  * will have to set it to FALSE with gimp_unit_set_deletion_flag() to  * make it persistent.  *  * Returns: The new unit's ID.  **/
 end_comment
 
 begin_function
@@ -300,7 +300,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_deletion_flag:  * @unit_id: The unit's integer ID.  *  * Returns the deletion flag of the unit.  *  * This procedure returns the deletion flag of the unit. If this value  * is TRUE the unit's definition will not be saved in the user's unitrc  * file on gimp exit.  *  * Returns: The unit's deletion flag.  */
+comment|/**  * _gimp_unit_get_deletion_flag:  * @unit_id: The unit's integer ID.  *  * Returns the deletion flag of the unit.  *  * This procedure returns the deletion flag of the unit. If this value  * is TRUE the unit's definition will not be saved in the user's unitrc  * file on gimp exit.  *  * Returns: The unit's deletion flag.  **/
 end_comment
 
 begin_function
@@ -378,7 +378,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_set_deletion_flag:  * @unit_id: The unit's integer ID.  * @deletion_flag: The new deletion flag of the unit.  *  * Sets the deletion flag of a unit.  *  * This procedure sets the unit's deletion flag. If the deletion flag  * of a unit is TRUE on gimp exit, this unit's definition will not be  * saved in the user's unitrc.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_unit_set_deletion_flag:  * @unit_id: The unit's integer ID.  * @deletion_flag: The new deletion flag of the unit.  *  * Sets the deletion flag of a unit.  *  * This procedure sets the unit's deletion flag. If the deletion flag  * of a unit is TRUE on gimp exit, this unit's definition will not be  * saved in the user's unitrc.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -452,7 +452,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_identifier:  * @unit_id: The unit's integer ID.  *  * Returns the textual identifier of the unit.  *  * This procedure returns the textual identifier of the unit. For  * built-in units it will be the english singular form of the unit's  * name. For user-defined units this should equal to the singular form.  *  * Returns: The unit's textual identifier.  */
+comment|/**  * _gimp_unit_get_identifier:  * @unit_id: The unit's integer ID.  *  * Returns the textual identifier of the unit.  *  * This procedure returns the textual identifier of the unit. For  * built-in units it will be the english singular form of the unit's  * name. For user-defined units this should equal to the singular form.  *  * Returns: The unit's textual identifier.  **/
 end_comment
 
 begin_function
@@ -535,7 +535,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_factor:  * @unit_id: The unit's integer ID.  *  * Returns the factor of the unit.  *  * This procedure returns the unit's factor which indicates how many  * units make up an inch. Note that asking for the factor of \"pixels\"  * will produce an error.  *  * Returns: The unit's factor.  */
+comment|/**  * _gimp_unit_get_factor:  * @unit_id: The unit's integer ID.  *  * Returns the factor of the unit.  *  * This procedure returns the unit's factor which indicates how many  * units make up an inch. Note that asking for the factor of \"pixels\"  * will produce an error.  *  * Returns: The unit's factor.  **/
 end_comment
 
 begin_function
@@ -613,7 +613,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_digits:  * @unit_id: The unit's integer ID.  *  * Returns the number of digits of the unit.  *  * This procedure returns the number of digits you should provide in  * input or output functions to get approximately the same accuracy as  * with two digits and inches. Note that asking for the digits of  * \"pixels\" will produce an error.  *  * Returns: The unit's number of digits.  */
+comment|/**  * _gimp_unit_get_digits:  * @unit_id: The unit's integer ID.  *  * Returns the number of digits of the unit.  *  * This procedure returns the number of digits you should provide in  * input or output functions to get approximately the same accuracy as  * with two digits and inches. Note that asking for the digits of  * \"pixels\" will produce an error.  *  * Returns: The unit's number of digits.  **/
 end_comment
 
 begin_function
@@ -691,7 +691,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_symbol:  * @unit_id: The unit's integer ID.  *  * Returns the symbol of the unit.  *  * This procedure returns the symbol of the unit (\"''\" for inches).  *  * Returns: The unit's symbol.  */
+comment|/**  * _gimp_unit_get_symbol:  * @unit_id: The unit's integer ID.  *  * Returns the symbol of the unit.  *  * This procedure returns the symbol of the unit (\"''\" for inches).  *  * Returns: The unit's symbol.  **/
 end_comment
 
 begin_function
@@ -774,7 +774,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_abbreviation:  * @unit_id: The unit's integer ID.  *  * Returns the abbreviation of the unit.  *  * This procedure returns the abbreviation of the unit (\"in\" for  * inches).  *  * Returns: The unit's abbreviation.  */
+comment|/**  * _gimp_unit_get_abbreviation:  * @unit_id: The unit's integer ID.  *  * Returns the abbreviation of the unit.  *  * This procedure returns the abbreviation of the unit (\"in\" for  * inches).  *  * Returns: The unit's abbreviation.  **/
 end_comment
 
 begin_function
@@ -857,7 +857,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_singular:  * @unit_id: The unit's integer ID.  *  * Returns the singular form of the unit.  *  * This procedure returns the singular form of the unit.  *  * Returns: The unit's singular form.  */
+comment|/**  * _gimp_unit_get_singular:  * @unit_id: The unit's integer ID.  *  * Returns the singular form of the unit.  *  * This procedure returns the singular form of the unit.  *  * Returns: The unit's singular form.  **/
 end_comment
 
 begin_function
@@ -940,7 +940,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_unit_get_plural:  * @unit_id: The unit's integer ID.  *  * Returns the plural form of the unit.  *  * This procedure returns the plural form of the unit.  *  * Returns: The unit's plural form.  */
+comment|/**  * _gimp_unit_get_plural:  * @unit_id: The unit's integer ID.  *  * Returns the plural form of the unit.  *  * This procedure returns the plural form of the unit.  *  * Returns: The unit's plural form.  **/
 end_comment
 
 begin_function
