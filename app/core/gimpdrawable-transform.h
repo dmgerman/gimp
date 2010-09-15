@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c07fff30103
+DECL|enum|__anon2a21de7b0103
 block|{
 DECL|enumerator|X0
 name|X0
@@ -153,7 +153,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpDrawable
+modifier|*
 name|gimp_drawable_transform_affine
 parameter_list|(
 name|GimpDrawable
@@ -189,7 +190,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpDrawable
+modifier|*
 name|gimp_drawable_transform_flip
 parameter_list|(
 name|GimpDrawable
@@ -213,7 +215,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpDrawable
+modifier|*
 name|gimp_drawable_transform_rotate
 parameter_list|(
 name|GimpDrawable
@@ -260,7 +263,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|gboolean
+name|GimpDrawable
+modifier|*
 name|gimp_drawable_transform_paste
 parameter_list|(
 name|GimpDrawable

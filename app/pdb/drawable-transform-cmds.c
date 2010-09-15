@@ -308,8 +308,9 @@ operator|&
 name|axis
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_flip
 argument_list|(
 name|drawable
@@ -322,7 +323,13 @@ name|axis
 argument_list|,
 name|clip_result
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 block|}
 block|}
 name|return_vals
@@ -692,9 +699,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -714,7 +721,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -1062,9 +1075,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -1084,7 +1097,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -1543,9 +1562,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -1565,7 +1584,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -1993,9 +2018,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -2015,7 +2040,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -2292,8 +2323,9 @@ operator|&
 name|cy
 argument_list|)
 expr_stmt|;
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_rotate
 argument_list|(
 name|drawable
@@ -2308,7 +2340,13 @@ name|cy
 argument_list|,
 name|clip_result
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 block|}
 block|}
 name|return_vals
@@ -2697,9 +2735,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -2719,7 +2757,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -3086,9 +3130,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -3108,7 +3152,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -3509,9 +3559,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -3531,7 +3581,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -3901,9 +3957,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -3923,7 +3979,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -4274,9 +4336,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -4296,7 +4358,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -4616,9 +4684,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -4638,7 +4706,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -5091,9 +5165,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -5113,7 +5187,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -5535,9 +5615,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -5557,7 +5637,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -6104,9 +6190,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -6126,7 +6212,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -6642,9 +6734,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -6664,7 +6756,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress

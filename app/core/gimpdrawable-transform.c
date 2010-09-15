@@ -2373,7 +2373,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpDrawable
+modifier|*
 DECL|function|gimp_drawable_transform_affine (GimpDrawable * drawable,GimpContext * context,const GimpMatrix3 * matrix,GimpTransformDirection direction,GimpInterpolationType interpolation_type,gint recursion_level,GimpTransformResize clip_result,GimpProgress * progress)
 name|gimp_drawable_transform_affine
 parameter_list|(
@@ -2418,10 +2419,11 @@ decl_stmt|;
 name|gboolean
 name|new_layer
 decl_stmt|;
-name|gboolean
-name|success
+name|GimpDrawable
+modifier|*
+name|result
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2430,7 +2432,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2443,7 +2445,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2453,7 +2455,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2462,7 +2464,7 @@ name|matrix
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2476,7 +2478,7 @@ argument_list|(
 name|progress
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|image
@@ -2640,7 +2642,7 @@ condition|(
 name|new_tiles
 condition|)
 block|{
-name|success
+name|result
 operator|=
 name|gimp_drawable_transform_paste
 argument_list|(
@@ -2665,13 +2667,14 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|result
 return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpDrawable
+modifier|*
 DECL|function|gimp_drawable_transform_flip (GimpDrawable * drawable,GimpContext * context,GimpOrientationType flip_type,gdouble axis,gboolean clip_result)
 name|gimp_drawable_transform_flip
 parameter_list|(
@@ -2704,10 +2707,11 @@ decl_stmt|;
 name|gboolean
 name|new_layer
 decl_stmt|;
-name|gboolean
-name|success
+name|GimpDrawable
+modifier|*
+name|result
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2716,7 +2720,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2729,7 +2733,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2739,7 +2743,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|image
@@ -2899,7 +2903,7 @@ condition|(
 name|new_tiles
 condition|)
 block|{
-name|success
+name|result
 operator|=
 name|gimp_drawable_transform_paste
 argument_list|(
@@ -2924,13 +2928,14 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|result
 return|;
 block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpDrawable
+modifier|*
 DECL|function|gimp_drawable_transform_rotate (GimpDrawable * drawable,GimpContext * context,GimpRotationType rotate_type,gdouble center_x,gdouble center_y,gboolean clip_result)
 name|gimp_drawable_transform_rotate
 parameter_list|(
@@ -2966,10 +2971,11 @@ decl_stmt|;
 name|gboolean
 name|new_layer
 decl_stmt|;
-name|gboolean
-name|success
+name|GimpDrawable
+modifier|*
+name|result
 init|=
-name|FALSE
+name|NULL
 decl_stmt|;
 name|g_return_val_if_fail
 argument_list|(
@@ -2978,7 +2984,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -2991,7 +2997,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3001,7 +3007,7 @@ argument_list|(
 name|context
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|image
@@ -3157,7 +3163,7 @@ condition|(
 name|new_tiles
 condition|)
 block|{
-name|success
+name|result
 operator|=
 name|gimp_drawable_transform_paste
 argument_list|(
@@ -3182,7 +3188,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|success
+name|result
 return|;
 block|}
 end_function
@@ -3419,7 +3425,8 @@ block|}
 end_function
 
 begin_function
-name|gboolean
+name|GimpDrawable
+modifier|*
 DECL|function|gimp_drawable_transform_paste (GimpDrawable * drawable,TileManager * tiles,gboolean new_layer)
 name|gimp_drawable_transform_paste
 parameter_list|(
@@ -3465,7 +3472,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3478,7 +3485,7 @@ name|drawable
 argument_list|)
 argument_list|)
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_return_val_if_fail
@@ -3487,7 +3494,7 @@ name|tiles
 operator|!=
 name|NULL
 argument_list|,
-name|FALSE
+name|NULL
 argument_list|)
 expr_stmt|;
 name|image
@@ -3535,7 +3542,7 @@ argument_list|)
 expr_stmt|;
 else|else
 return|return
-name|FALSE
+name|NULL
 return|;
 name|tile_manager_get_offsets
 argument_list|(
@@ -3602,6 +3609,13 @@ argument_list|(
 name|layer
 argument_list|,
 name|drawable
+argument_list|)
+expr_stmt|;
+name|drawable
+operator|=
+name|GIMP_DRAWABLE
+argument_list|(
+name|layer
 argument_list|)
 expr_stmt|;
 block|}
@@ -3676,7 +3690,7 @@ name|image
 argument_list|)
 expr_stmt|;
 return|return
-name|TRUE
+name|drawable
 return|;
 block|}
 end_function
