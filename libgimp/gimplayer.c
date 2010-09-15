@@ -112,28 +112,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_group_new:  * @image_ID: The image to which to add the layer.  *  * Create a new layer group.  *  * This procedure creates a new layer group. Attributes such as layer  * mode and opacity should be set with explicit procedure calls. Add  * the new layer group (which is a kind of layer) with the  * gimp_image_insert_layer() command.  *  * Returns: The newly created layer group.  */
-end_comment
-
-begin_function
-name|gint32
-DECL|function|gimp_layer_group_new (gint32 image_ID)
-name|gimp_layer_group_new
-parameter_list|(
-name|gint32
-name|image_ID
-parameter_list|)
-block|{
-return|return
-name|_gimp_layer_group_new
-argument_list|(
-name|image_ID
-argument_list|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_layer_get_preserve_trans:  * @layer_ID: The layer.  *  * This procedure is deprecated! Use gimp_layer_get_lock_alpha() instead.  *  * Returns: The layer's preserve transperancy setting.  */
 end_comment
 

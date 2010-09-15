@@ -85,6 +85,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint32
+name|gimp_layer_group_new
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_GNUC_INTERNAL
 name|gint32
 name|_gimp_layer_copy
@@ -426,17 +436,6 @@ name|layer_ID
 parameter_list|,
 name|GimpLayerModeEffects
 name|mode
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|G_GNUC_INTERNAL
-name|gint32
-name|_gimp_layer_group_new
-parameter_list|(
-name|gint32
-name|image_ID
 parameter_list|)
 function_decl|;
 end_function_decl
