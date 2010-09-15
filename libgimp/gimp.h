@@ -199,6 +199,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpvectors.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimp_pdb.h>
 end_include
 
