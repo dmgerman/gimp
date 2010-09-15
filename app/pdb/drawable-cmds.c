@@ -94,18 +94,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimplayer.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"core/gimplayermask.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpparamspecs.h"
 end_include
 
@@ -125,12 +113,6 @@ begin_include
 include|#
 directive|include
 file|"plug-in/gimppluginmanager.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"text/gimptextlayer.h"
 end_include
 
 begin_include
