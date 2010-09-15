@@ -3601,10 +3601,7 @@ argument_list|(
 name|image
 argument_list|)
 argument_list|,
-name|_
-argument_list|(
-literal|"Layer Group"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

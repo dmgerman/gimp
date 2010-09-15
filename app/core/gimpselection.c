@@ -696,6 +696,15 @@ name|gimp_selection_stroke
 expr_stmt|;
 name|item_class
 operator|->
+name|default_name
+operator|=
+name|_
+argument_list|(
+literal|"Selection Mask"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
 name|translate_desc
 operator|=
 name|C_
@@ -2268,10 +2277,7 @@ name|height
 argument_list|,
 name|GIMP_GRAY_IMAGE
 argument_list|,
-name|_
-argument_list|(
-literal|"Selection Mask"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_channel_set_color
