@@ -788,7 +788,7 @@ name|pdb_type_quark
 condition|)
 block|{
 struct|struct
-DECL|struct|__anon2ad456d30108
+DECL|struct|__anon2c62d2e30108
 block|{
 DECL|member|g_type
 name|GType
@@ -1102,7 +1102,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon2ad456d30208
+DECL|struct|__anon2c62d2e30208
 block|{
 DECL|member|old_name
 specifier|const
@@ -1142,7 +1142,7 @@ block|,
 block|{
 literal|"gimp-channel-delete"
 block|,
-literal|"gimp-drawable-delete"
+literal|"gimp-item-delete"
 block|}
 block|,
 block|{
@@ -1238,7 +1238,7 @@ block|,
 block|{
 literal|"gimp-layer-delete"
 block|,
-literal|"gimp-drawable-delete"
+literal|"gimp-item-delete"
 block|}
 block|,
 block|{
@@ -1292,7 +1292,7 @@ block|,
 block|{
 literal|"gimp-layer-set-visible"
 block|,
-literal|"gimp-drawable-set-visible"
+literal|"gimp-item-set-visible"
 block|}
 block|,
 block|{
