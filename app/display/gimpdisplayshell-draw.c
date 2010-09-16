@@ -2571,7 +2571,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_draw_one_vectors (GimpDisplayShell * shell,cairo_t * cr,GimpVectors * vectors,gboolean active,gdouble width)
+DECL|function|gimp_display_shell_draw_one_vectors (GimpDisplayShell * shell,cairo_t * cr,GimpVectors * vectors,gdouble width)
 name|gimp_display_shell_draw_one_vectors
 parameter_list|(
 name|GimpDisplayShell
@@ -2585,9 +2585,6 @@ parameter_list|,
 name|GimpVectors
 modifier|*
 name|vectors
-parameter_list|,
-name|gboolean
-name|active
 parameter_list|,
 name|gdouble
 name|width
@@ -2639,24 +2636,7 @@ operator|)
 name|desc
 argument_list|)
 expr_stmt|;
-comment|/* FIXME: need better styles */
-if|if
-condition|(
-name|active
-condition|)
-name|cairo_set_source_rgb
-argument_list|(
-name|cr
-argument_list|,
-literal|0.3
-argument_list|,
-literal|0.7
-argument_list|,
-literal|1.0
-argument_list|)
-expr_stmt|;
-else|else
-name|cairo_set_source_rgb
+name|cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -2665,13 +2645,15 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|1.0
+argument_list|,
+literal|0.6
 argument_list|)
 expr_stmt|;
 name|cairo_set_line_width
 argument_list|(
 name|cr
 argument_list|,
-literal|1.6
+literal|3
 operator|*
 name|width
 argument_list|)
@@ -2681,7 +2663,7 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_set_source_rgb
+name|cairo_set_source_rgba
 argument_list|(
 name|cr
 argument_list|,
@@ -2690,6 +2672,8 @@ argument_list|,
 literal|0.0
 argument_list|,
 literal|0.0
+argument_list|,
+literal|0.8
 argument_list|)
 expr_stmt|;
 name|cairo_set_line_width
@@ -2761,15 +2745,6 @@ argument_list|(
 name|image
 argument_list|)
 decl_stmt|;
-name|GimpVectors
-modifier|*
-name|active
-init|=
-name|gimp_image_get_active_vectors
-argument_list|(
-name|image
-argument_list|)
-decl_stmt|;
 specifier|const
 name|GList
 modifier|*
@@ -2823,7 +2798,7 @@ name|xscale
 operator|=
 name|yscale
 operator|=
-literal|2.0
+literal|1.0
 expr_stmt|;
 name|cairo_device_to_user_distance
 argument_list|(
@@ -2851,7 +2826,7 @@ name|MIN
 argument_list|(
 name|width
 argument_list|,
-literal|2.0
+literal|1.0
 argument_list|)
 expr_stmt|;
 for|for
@@ -2879,7 +2854,6 @@ name|data
 decl_stmt|;
 if|if
 condition|(
-operator|!
 name|gimp_item_get_visible
 argument_list|(
 name|GIMP_ITEM
@@ -2888,7 +2862,6 @@ name|vectors
 argument_list|)
 argument_list|)
 condition|)
-continue|continue;
 name|gimp_display_shell_draw_one_vectors
 argument_list|(
 name|shell
@@ -2896,12 +2869,6 @@ argument_list|,
 name|cr
 argument_list|,
 name|vectors
-argument_list|,
-operator|(
-name|vectors
-operator|==
-name|active
-operator|)
 argument_list|,
 name|width
 argument_list|)
