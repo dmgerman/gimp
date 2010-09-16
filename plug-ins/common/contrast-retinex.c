@@ -92,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e71aa00108
+DECL|struct|__anon2c90cc6b0108
 block|{
 DECL|member|scale
 name|gint
@@ -119,7 +119,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e71aa00203
+DECL|enum|__anon2c90cc6b0203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -177,7 +177,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27e71aa00308
+DECL|struct|__anon2c90cc6b0308
 block|{
 DECL|member|N
 name|gint
@@ -2735,6 +2735,8 @@ operator|*
 name|w1
 index|[
 name|n
+operator|+
+literal|3
 index|]
 operator|+
 operator|(
