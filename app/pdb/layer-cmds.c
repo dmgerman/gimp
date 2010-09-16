@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -107,6 +101,12 @@ begin_include
 include|#
 directive|include
 file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppdbcontext.h"
 end_include
 
 begin_include
@@ -1427,6 +1427,15 @@ name|error
 argument_list|)
 condition|)
 block|{
+name|GimpPDBContext
+modifier|*
+name|pdb_context
+init|=
+name|GIMP_PDB_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|progress
@@ -1454,11 +1463,9 @@ name|new_width
 argument_list|,
 name|new_height
 argument_list|,
-name|gimp
+name|pdb_context
 operator|->
-name|config
-operator|->
-name|interpolation_type
+name|interpolation
 argument_list|,
 name|progress
 argument_list|,
@@ -5549,7 +5556,7 @@ literal|"gimp-layer-scale"
 argument_list|,
 literal|"Scale the layer using the default interpolation method."
 argument_list|,
-literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The 'local-origin' parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image. The default interpolation method is used for scaling."
+literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The 'local-origin' parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image. The interpolation method used can be set with 'gimp-context-set-interpolation'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5680,9 +5687,9 @@ name|procedure
 argument_list|,
 literal|"gimp-layer-scale-full"
 argument_list|,
-literal|"Scale the layer using a specific interpolation method."
+literal|"Deprecated: Use 'gimp-layer-scale' instead."
 argument_list|,
-literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The 'local-origin' parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image. This procedure allows you to specify the interpolation method explicitly."
+literal|"Deprecated: Use 'gimp-layer-scale' instead."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -5690,7 +5697,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2008"
 argument_list|,
-name|NULL
+literal|"gimp-layer-scale"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

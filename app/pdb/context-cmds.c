@@ -6120,7 +6120,7 @@ literal|"gimp-context-set-interpolation"
 argument_list|,
 literal|"Set the interpolation type."
 argument_list|,
-literal|"This procedure modifies the interpolation setting. It affects all transform procedures which can produce sub-pixel results."
+literal|"This procedure modifies the interpolation setting. It affects the following procedures: all transform procedures which can produce sub-pixel results, 'gimp-image-scale', 'gimp-layer-scale'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

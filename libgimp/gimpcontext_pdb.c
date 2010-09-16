@@ -2417,7 +2417,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting. It affects all  * transform procedures which can produce sub-pixel results.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting. It affects the  * following procedures: all transform procedures which can produce  * sub-pixel results, gimp_image_scale(), gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

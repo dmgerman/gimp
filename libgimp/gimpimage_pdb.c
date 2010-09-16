@@ -945,7 +945,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image using the default interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. The default interpolation method  * is used.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_image_scale:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  *  * Scale the image using the default interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. The interpolation method used can  * be set with gimp_context_set_interpolation().  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1026,7 +1026,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_scale_full:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @interpolation: Type of interpolation.  *  * Scale the image using a specific interpolation method.  *  * This procedure scales the image so that its new width and height are  * equal to the supplied parameters. All layers and channels within the  * image are scaled according to the specified parameters; this  * includes the image selection mask. This procedure allows you to  * specify the interpolation method explicitly.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_image_scale_full:  * @image_ID: The image.  * @new_width: New image width.  * @new_height: New image height.  * @interpolation: Type of interpolation.  *  * Deprecated: Use gimp_image_scale() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function

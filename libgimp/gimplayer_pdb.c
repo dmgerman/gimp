@@ -19,6 +19,24 @@ directive|include
 file|"gimp.h"
 end_include
 
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
+
+begin_undef
+undef|#
+directive|undef
+name|__GIMP_LAYER_PDB_H__
+end_undef
+
+begin_include
+include|#
+directive|include
+file|"gimplayer_pdb.h"
+end_include
+
 begin_comment
 comment|/**  * SECTION: gimplayer  * @title: gimplayer  * @short_description: Operations on a single layer.  *  * Operations on a single layer.  **/
 end_comment
@@ -627,7 +645,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  *  * Scale the layer using the default interpolation method.  *  * This procedure scales the layer so that its new width and height are  * equal to the supplied parameters. The 'local-origin' parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image. The default interpolation method is used for scaling.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_layer_scale:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  *  * Scale the layer using the default interpolation method.  *  * This procedure scales the layer so that its new width and height are  * equal to the supplied parameters. The 'local-origin' parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image. The interpolation method used can be set with  * gimp_context_set_interpolation().  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -715,7 +733,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_layer_scale_full:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  * @interpolation: Type of interpolation.  *  * Scale the layer using a specific interpolation method.  *  * This procedure scales the layer so that its new width and height are  * equal to the supplied parameters. The 'local-origin' parameter  * specifies whether to scale from the center of the layer, or from the  * image origin. This operation only works if the layer has been added  * to an image. This procedure allows you to specify the interpolation  * method explicitly.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
+comment|/**  * gimp_layer_scale_full:  * @layer_ID: The layer.  * @new_width: New layer width.  * @new_height: New layer height.  * @local_origin: Use a local origin (as opposed to the image origin).  * @interpolation: Type of interpolation.  *  * Deprecated: Use gimp_layer_scale() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
