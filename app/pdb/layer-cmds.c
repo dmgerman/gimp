@@ -46,6 +46,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimpgrouplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimpimage-undo.h"
 end_include
 
