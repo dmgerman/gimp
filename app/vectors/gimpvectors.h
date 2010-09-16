@@ -121,6 +121,12 @@ DECL|member|precision
 name|gdouble
 name|precision
 decl_stmt|;
+DECL|member|bezier_desc
+name|GimpBezierDesc
+modifier|*
+name|bezier_desc
+decl_stmt|;
+comment|/* Cached bezier representation   */
 block|}
 struct|;
 end_struct
@@ -827,15 +833,15 @@ comment|/* usually overloaded */
 end_comment
 
 begin_comment
-comment|/* creates a bezier representation. */
+comment|/* returns a bezier representation */
 end_comment
 
 begin_function_decl
+specifier|const
 name|GimpBezierDesc
 modifier|*
-name|gimp_vectors_make_bezier
+name|gimp_vectors_get_bezier
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
