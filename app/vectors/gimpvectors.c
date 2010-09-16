@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28be831f0103
+DECL|enum|__anon2c3cd9f10103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -816,7 +816,7 @@ argument_list|(
 name|klass
 argument_list|)
 argument_list|,
-name|G_SIGNAL_RUN_FIRST
+name|G_SIGNAL_RUN_LAST
 argument_list|,
 name|G_STRUCT_OFFSET
 argument_list|(
@@ -1314,8 +1314,10 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpBezierDesc
+argument_list|,
 name|vectors
 operator|->
 name|bezier_desc
@@ -2738,8 +2740,10 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpBezierDesc
+argument_list|,
 name|vectors
 operator|->
 name|bezier_desc
@@ -4980,8 +4984,10 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|g_free
+name|g_slice_free
 argument_list|(
+name|GimpBezierDesc
+argument_list|,
 name|bezdesc
 argument_list|)
 expr_stmt|;
@@ -4998,11 +5004,9 @@ condition|)
 block|{
 name|ret_bezdesc
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpBezierDesc
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|ret_bezdesc
