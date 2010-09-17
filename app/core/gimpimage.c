@@ -318,7 +318,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba90da0103
+DECL|enum|__anon2be5b3bf0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -409,7 +409,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ba90da0203
+DECL|enum|__anon2be5b3bf0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -6198,7 +6198,23 @@ modifier|*
 name|image
 parameter_list|)
 block|{
-comment|/* do nothing */
+if|if
+condition|(
+name|gimp_item_get_visible
+argument_list|(
+name|GIMP_ITEM
+argument_list|(
+name|vectors
+argument_list|)
+argument_list|)
+condition|)
+name|gimp_image_update_vectors
+argument_list|(
+name|image
+argument_list|,
+name|vectors
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
