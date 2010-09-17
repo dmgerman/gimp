@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpvectortool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -1417,7 +1423,7 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-comment|/*  always double-buffer if there are overlay children or a    *  transform preview, or they will flicker badly    */
+comment|/*  always double-buffer if there are overlay children or a    *  transform preview, or they will flicker badly. Also double    *  buffer when we are editing paths.    */
 if|if
 condition|(
 name|GIMP_OVERLAY_BOX
@@ -1432,6 +1438,18 @@ operator|||
 name|gimp_display_shell_get_show_transform
 argument_list|(
 name|shell
+argument_list|)
+operator|||
+name|GIMP_IS_VECTOR_TOOL
+argument_list|(
+name|tool_manager_get_active
+argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 condition|)
 return|return
