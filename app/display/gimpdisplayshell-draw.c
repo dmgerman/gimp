@@ -2593,12 +2593,20 @@ block|{
 name|GimpStroke
 modifier|*
 name|stroke
-init|=
-name|NULL
 decl_stmt|;
-while|while
-condition|(
-operator|(
+for|for
+control|(
+name|stroke
+operator|=
+name|gimp_vectors_stroke_get_next
+argument_list|(
+name|vectors
+argument_list|,
+name|NULL
+argument_list|)
+init|;
+name|stroke
+condition|;
 name|stroke
 operator|=
 name|gimp_vectors_stroke_get_next
@@ -2607,8 +2615,7 @@ name|vectors
 argument_list|,
 name|stroke
 argument_list|)
-operator|)
-condition|)
+control|)
 block|{
 specifier|const
 name|GimpBezierDesc
@@ -2636,6 +2643,8 @@ operator|)
 name|desc
 argument_list|)
 expr_stmt|;
+block|}
+block|}
 name|cairo_set_source_rgba
 argument_list|(
 name|cr
@@ -2688,8 +2697,6 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-block|}
-block|}
 block|}
 end_function
 
