@@ -7404,6 +7404,14 @@ begin_comment
 comment|/* Only uses fill_char if str is NULL.    */
 end_comment
 
+begin_comment
+comment|/* This routine automatically adds 1 byte */
+end_comment
+
+begin_comment
+comment|/* to allow space for terminating NUL.    */
+end_comment
+
 begin_function
 DECL|function|store_string (scheme * sc,int char_cnt,const char * str,gunichar fill)
 specifier|static
@@ -12190,7 +12198,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon2bf83e3d0103
+DECL|enum|__anon2c73fc8f0103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -23574,7 +23582,13 @@ argument_list|(
 name|a
 argument_list|)
 operator|=
-name|newlen
+name|g_utf8_strlen
+argument_list|(
+name|newstr
+argument_list|,
+operator|-
+literal|1
+argument_list|)
 expr_stmt|;
 name|s_return
 argument_list|(
@@ -23605,6 +23619,10 @@ name|char
 modifier|*
 name|pos
 decl_stmt|;
+name|char
+modifier|*
+name|end
+decl_stmt|;
 comment|/* compute needed length for new string */
 for|for
 control|(
@@ -23628,14 +23646,38 @@ name|x
 argument_list|)
 control|)
 block|{
-name|len
-operator|+=
-name|strlength
-argument_list|(
+name|car_x
+operator|=
 name|car
 argument_list|(
 name|x
 argument_list|)
+expr_stmt|;
+name|end
+operator|=
+name|g_utf8_offset_to_pointer
+argument_list|(
+name|strvalue
+argument_list|(
+name|car_x
+argument_list|)
+argument_list|,
+operator|(
+name|long
+operator|)
+name|strlength
+argument_list|(
+name|car_x
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|len
+operator|+=
+name|end
+operator|-
+name|strvalue
+argument_list|(
+name|car_x
 argument_list|)
 expr_stmt|;
 block|}
@@ -23687,6 +23729,33 @@ argument_list|(
 name|x
 argument_list|)
 expr_stmt|;
+name|end
+operator|=
+name|g_utf8_offset_to_pointer
+argument_list|(
+name|strvalue
+argument_list|(
+name|car_x
+argument_list|)
+argument_list|,
+operator|(
+name|long
+operator|)
+name|strlength
+argument_list|(
+name|car_x
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|len
+operator|=
+name|end
+operator|-
+name|strvalue
+argument_list|(
+name|car_x
+argument_list|)
+expr_stmt|;
 name|memcpy
 argument_list|(
 name|pos
@@ -23696,18 +23765,12 @@ argument_list|(
 name|car_x
 argument_list|)
 argument_list|,
-name|strlength
-argument_list|(
-name|car_x
-argument_list|)
+name|len
 argument_list|)
 expr_stmt|;
 name|pos
 operator|+=
-name|strlength
-argument_list|(
-name|car_x
-argument_list|)
+name|len
 expr_stmt|;
 block|}
 operator|*
@@ -26614,6 +26677,8 @@ name|args
 argument_list|)
 argument_list|)
 argument_list|,
+name|g_utf8_offset_to_pointer
+argument_list|(
 name|strvalue
 argument_list|(
 name|car
@@ -26623,7 +26688,7 @@ operator|->
 name|args
 argument_list|)
 argument_list|)
-operator|+
+argument_list|,
 name|strlength
 argument_list|(
 name|car
@@ -26631,6 +26696,7 @@ argument_list|(
 name|sc
 operator|->
 name|args
+argument_list|)
 argument_list|)
 argument_list|)
 argument_list|,
@@ -29607,7 +29673,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon2bf83e3d0208
+DECL|struct|__anon2c73fc8f0208
 specifier|static
 struct|struct
 block|{
@@ -29842,7 +29908,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon2bf83e3d0308
+DECL|struct|__anon2c73fc8f0308
 typedef|typedef
 struct|struct
 block|{
