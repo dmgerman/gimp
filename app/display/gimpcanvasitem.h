@@ -145,11 +145,12 @@ modifier|*
 name|cr
 parameter_list|)
 function_decl|;
-DECL|member|invalidate
-name|void
+DECL|member|get_extents
+name|GdkRegion
+modifier|*
 function_decl|(
 modifier|*
-name|invalidate
+name|get_extents
 function_decl|)
 parameter_list|(
 name|GimpCanvasItem
@@ -195,8 +196,9 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_canvas_item_invalidate
+name|GdkRegion
+modifier|*
+name|gimp_canvas_item_get_extents
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
@@ -212,6 +214,29 @@ end_function_decl
 begin_comment
 comment|/*  protected  */
 end_comment
+
+begin_function_decl
+name|void
+name|_gimp_canvas_item_set_extents
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|,
+name|gdouble
+name|x
+parameter_list|,
+name|gdouble
+name|y
+parameter_list|,
+name|gdouble
+name|width
+parameter_list|,
+name|gdouble
+name|height
+parameter_list|)
+function_decl|;
+end_function_decl
 
 begin_function_decl
 name|void
