@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a540990103
+DECL|enum|__anon2bbb03740103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -820,7 +820,7 @@ argument_list|,
 name|x2
 argument_list|)
 operator|-
-literal|0.5
+literal|1.5
 argument_list|,
 name|MIN
 argument_list|(
@@ -829,7 +829,7 @@ argument_list|,
 name|y2
 argument_list|)
 operator|-
-literal|0.5
+literal|1.5
 argument_list|,
 name|ABS
 argument_list|(
@@ -838,7 +838,7 @@ operator|-
 name|x1
 argument_list|)
 operator|+
-literal|1.0
+literal|3.0
 argument_list|,
 name|ABS
 argument_list|(
@@ -847,7 +847,7 @@ operator|-
 name|y1
 argument_list|)
 operator|+
-literal|1.0
+literal|3.0
 argument_list|)
 expr_stmt|;
 name|_gimp_canvas_item_stroke
