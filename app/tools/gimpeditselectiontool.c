@@ -3763,9 +3763,11 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Mark the center because we snap to it */
-name|gimp_draw_tool_draw_cross_by_anchor
+name|gimp_draw_tool_draw_handle
 argument_list|(
 name|draw_tool
+argument_list|,
+name|GIMP_HANDLE_CROSS
 argument_list|,
 name|edit_select
 operator|->
