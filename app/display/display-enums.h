@@ -37,7 +37,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f96ced0103
+DECL|enum|__anon27c253cd0103
 block|{
 DECL|enumerator|GIMP_CURSOR_PRECISION_PIXEL_CENTER
 name|GIMP_CURSOR_PRECISION_PIXEL_CENTER
@@ -50,6 +50,49 @@ name|GIMP_CURSOR_PRECISION_SUBPIXEL
 DECL|typedef|GimpCursorPrecision
 block|}
 name|GimpCursorPrecision
+typedef|;
+end_typedef
+
+begin_define
+DECL|macro|GIMP_TYPE_HANDLE_TYPE
+define|#
+directive|define
+name|GIMP_TYPE_HANDLE_TYPE
+value|(gimp_handle_type_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_handle_type_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
+begin_typedef
+typedef|typedef
+enum|enum
+DECL|enum|__anon27c253cd0203
+block|{
+DECL|enumerator|GIMP_HANDLE_SQUARE
+name|GIMP_HANDLE_SQUARE
+block|,
+DECL|enumerator|GIMP_HANDLE_FILLED_SQUARE
+name|GIMP_HANDLE_FILLED_SQUARE
+block|,
+DECL|enumerator|GIMP_HANDLE_CIRCLE
+name|GIMP_HANDLE_CIRCLE
+block|,
+DECL|enumerator|GIMP_HANDLE_FILLED_CIRCLE
+name|GIMP_HANDLE_FILLED_CIRCLE
+block|,
+DECL|enumerator|GIMP_HANDLE_CROSS
+name|GIMP_HANDLE_CROSS
+DECL|typedef|GimpHandleType
+block|}
+name|GimpHandleType
 typedef|;
 end_typedef
 
@@ -74,7 +117,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27f96ced0203
+DECL|enum|__anon27c253cd0303
 block|{
 comment|/* Make a best guess */
 DECL|enumerator|GIMP_ZOOM_FOCUS_BEST_GUESS
