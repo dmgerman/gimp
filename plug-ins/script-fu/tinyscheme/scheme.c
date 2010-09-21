@@ -7689,6 +7689,10 @@ block|}
 end_function
 
 begin_comment
+comment|/* str points to a NUL terminated string. */
+end_comment
+
+begin_comment
 comment|/* len is the length of str in characters */
 end_comment
 
@@ -7768,6 +7772,10 @@ operator|)
 return|;
 block|}
 end_function
+
+begin_comment
+comment|/* len is the length for the empty string in characters */
+end_comment
 
 begin_function
 DECL|function|mk_empty_string (scheme * sc,int len,gunichar fill)
@@ -12130,7 +12138,7 @@ decl_stmt|;
 name|int
 name|len
 decl_stmt|;
-DECL|enum|__anon293f5ae20103
+DECL|enum|__anon296b2b620103
 DECL|enumerator|st_ok
 DECL|enumerator|st_bsl
 DECL|enumerator|st_x1
@@ -23550,10 +23558,11 @@ init|=
 literal|0
 decl_stmt|;
 name|pointer
-name|newstr
-decl_stmt|;
-name|pointer
 name|car_x
+decl_stmt|;
+name|char
+modifier|*
+name|newstr
 decl_stmt|;
 name|char
 modifier|*
@@ -23623,22 +23632,51 @@ expr_stmt|;
 block|}
 name|newstr
 operator|=
-name|mk_empty_string
+operator|(
+name|char
+operator|*
+operator|)
+name|sc
+operator|->
+name|malloc
+argument_list|(
+name|len
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|newstr
+operator|==
+name|NULL
+condition|)
+block|{
+name|sc
+operator|->
+name|no_memory
+operator|=
+literal|1
+expr_stmt|;
+name|Error_1
 argument_list|(
 name|sc
 argument_list|,
-name|len
+literal|"string-set!: No memory to append strings:"
 argument_list|,
-literal|' '
+name|car
+argument_list|(
+name|sc
+operator|->
+name|args
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 comment|/* store the contents of the argument strings into the new string */
 name|pos
 operator|=
-name|strvalue
-argument_list|(
 name|newstr
-argument_list|)
 expr_stmt|;
 for|for
 control|(
@@ -23718,11 +23756,25 @@ name|pos
 operator|=
 literal|'\0'
 expr_stmt|;
-name|s_return
+name|car_x
+operator|=
+name|mk_string
 argument_list|(
 name|sc
 argument_list|,
 name|newstr
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|newstr
+argument_list|)
+expr_stmt|;
+name|s_return
+argument_list|(
+name|sc
+argument_list|,
+name|car_x
 argument_list|)
 expr_stmt|;
 block|}
@@ -23879,6 +23931,7 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
+comment|/* store the contents of the argument strings into the new string */
 name|beg
 operator|=
 name|g_utf8_offset_to_pointer
@@ -23909,38 +23962,78 @@ name|end
 operator|-
 name|beg
 expr_stmt|;
-name|x
+name|str
 operator|=
-name|mk_empty_string
+operator|(
+name|char
+operator|*
+operator|)
+name|sc
+operator|->
+name|malloc
+argument_list|(
+name|len
+operator|+
+literal|1
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|str
+operator|==
+name|NULL
+condition|)
+block|{
+name|sc
+operator|->
+name|no_memory
+operator|=
+literal|1
+expr_stmt|;
+name|Error_1
 argument_list|(
 name|sc
 argument_list|,
-name|len
+literal|"string-set!: No memory to extract substring:"
 argument_list|,
-literal|' '
+name|car
+argument_list|(
+name|sc
+operator|->
+name|args
+argument_list|)
 argument_list|)
 expr_stmt|;
+block|}
 name|memcpy
 argument_list|(
-name|strvalue
-argument_list|(
-name|x
-argument_list|)
+name|str
 argument_list|,
 name|beg
 argument_list|,
 name|len
 argument_list|)
 expr_stmt|;
-name|strvalue
-argument_list|(
-name|x
-argument_list|)
+name|str
 index|[
 name|len
 index|]
 operator|=
 literal|'\0'
+expr_stmt|;
+name|x
+operator|=
+name|mk_string
+argument_list|(
+name|sc
+argument_list|,
+name|str
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|str
+argument_list|)
 expr_stmt|;
 name|s_return
 argument_list|(
@@ -29613,7 +29706,7 @@ comment|/* Correspond carefully with following defines! */
 end_comment
 
 begin_struct
-DECL|struct|__anon293f5ae20208
+DECL|struct|__anon296b2b620208
 specifier|static
 struct|struct
 block|{
@@ -29848,7 +29941,7 @@ value|"\016"
 end_define
 
 begin_typedef
-DECL|struct|__anon293f5ae20308
+DECL|struct|__anon296b2b620308
 typedef|typedef
 struct|struct
 block|{
