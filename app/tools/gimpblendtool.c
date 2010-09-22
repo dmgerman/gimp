@@ -554,6 +554,15 @@ argument_list|,
 literal|"context/context-gradient-select-set"
 argument_list|)
 expr_stmt|;
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|use_cairo
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -1568,6 +1577,30 @@ argument_list|(
 name|draw_tool
 argument_list|)
 decl_stmt|;
+comment|/*  Draw the line between the start and end coords  */
+name|gimp_draw_tool_draw_line
+argument_list|(
+name|draw_tool
+argument_list|,
+name|blend_tool
+operator|->
+name|start_x
+argument_list|,
+name|blend_tool
+operator|->
+name|start_y
+argument_list|,
+name|blend_tool
+operator|->
+name|end_x
+argument_list|,
+name|blend_tool
+operator|->
+name|end_y
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
 comment|/*  Draw start target  */
 name|gimp_draw_tool_draw_handle
 argument_list|(
@@ -1612,30 +1645,6 @@ argument_list|,
 name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
-argument_list|)
-expr_stmt|;
-comment|/*  Draw the line between the start and end coords  */
-name|gimp_draw_tool_draw_line
-argument_list|(
-name|draw_tool
-argument_list|,
-name|blend_tool
-operator|->
-name|start_x
-argument_list|,
-name|blend_tool
-operator|->
-name|start_y
-argument_list|,
-name|blend_tool
-operator|->
-name|end_x
-argument_list|,
-name|blend_tool
-operator|->
-name|end_y
 argument_list|,
 name|FALSE
 argument_list|)
