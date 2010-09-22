@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70352a0103
+DECL|enum|__anon2ad7fdbb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -356,7 +356,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+operator|-
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
@@ -380,7 +381,8 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-literal|0
+operator|-
+name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
 name|GIMP_MAX_IMAGE_SIZE
 argument_list|,
