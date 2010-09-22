@@ -119,6 +119,15 @@ name|gboolean
 name|is_drawn
 decl_stmt|;
 comment|/*  is the stuff we draw currently visible  */
+DECL|member|use_cairo
+name|gboolean
+name|use_cairo
+decl_stmt|;
+DECL|member|items
+name|GList
+modifier|*
+name|items
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -225,6 +234,21 @@ parameter_list|(
 name|GimpDrawTool
 modifier|*
 name|draw_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_draw_tool_draw_items
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
