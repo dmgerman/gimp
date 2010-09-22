@@ -119,11 +119,6 @@ name|gboolean
 name|is_drawn
 decl_stmt|;
 comment|/*  is the stuff we draw currently visible  */
-DECL|member|draw_timeout
-name|guint
-name|draw_timeout
-decl_stmt|;
-comment|/*  draw delay timeout ID                   */
 block|}
 struct|;
 end_struct
