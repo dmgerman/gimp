@@ -230,21 +230,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_draw_tool_set_transform
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-parameter_list|,
-name|GimpMatrix3
-modifier|*
-name|transform
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gdouble
 name|gimp_draw_tool_calc_distance
 parameter_list|(
