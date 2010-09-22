@@ -158,6 +158,25 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|GimpCanvasItem
+modifier|*
+name|gimp_canvas_polygon_new_from_coords
+parameter_list|(
+specifier|const
+name|GimpCoords
+modifier|*
+name|points
+parameter_list|,
+name|gint
+name|n_points
+parameter_list|,
+name|gboolean
+name|filled
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
