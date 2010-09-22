@@ -64,7 +64,13 @@ begin_struct
 DECL|struct|_GimpCanvasItemPrivate
 struct|struct
 name|_GimpCanvasItemPrivate
-block|{ }
+block|{
+DECL|member|unused
+name|gint
+name|unused
+decl_stmt|;
+comment|/*  gobject doesn't like empty private structs  */
+block|}
 struct|;
 end_struct
 
