@@ -1279,13 +1279,6 @@ name|draw_tool
 argument_list|)
 condition|)
 return|return;
-name|g_printerr
-argument_list|(
-literal|"%s: drawing!\n"
-argument_list|,
-name|G_STRFUNC
-argument_list|)
-expr_stmt|;
 name|shell
 operator|=
 name|gimp_display_get_shell
