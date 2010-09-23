@@ -981,6 +981,15 @@ name|saved_mode
 operator|=
 name|GIMP_VECTOR_MODE_DESIGN
 expr_stmt|;
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|use_cairo
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
