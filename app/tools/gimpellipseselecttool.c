@@ -359,8 +359,6 @@ argument_list|,
 literal|360
 operator|*
 literal|64
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

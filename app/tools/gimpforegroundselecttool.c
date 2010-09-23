@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a97d7460108
+DECL|struct|__anon2bdd4dd20108
 block|{
 DECL|member|width
 name|gint
@@ -2508,8 +2508,6 @@ argument_list|,
 name|y2
 operator|-
 name|y1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2541,8 +2539,6 @@ argument_list|,
 literal|360
 operator|*
 literal|64
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

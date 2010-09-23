@@ -1458,8 +1458,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1484,8 +1482,6 @@ argument_list|,
 literal|5
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

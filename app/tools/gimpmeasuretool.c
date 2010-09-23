@@ -884,8 +884,6 @@ operator|*
 literal|2
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -2403,8 +2401,6 @@ operator|*
 literal|2
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -2919,8 +2915,6 @@ argument_list|,
 name|TARGET
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2955,8 +2949,6 @@ operator|*
 literal|2
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2998,8 +2990,6 @@ name|y
 index|[
 name|i
 index|]
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  only draw the arc if the lines are long enough  */
@@ -3151,8 +3141,6 @@ argument_list|,
 name|angle2
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3267,8 +3255,6 @@ name|y
 index|[
 literal|0
 index|]
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

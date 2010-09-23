@@ -1312,8 +1312,6 @@ argument_list|,
 literal|90
 operator|*
 literal|64
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_arc
@@ -1337,8 +1335,6 @@ argument_list|,
 literal|90
 operator|*
 literal|64
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_arc
@@ -1366,8 +1362,6 @@ argument_list|,
 literal|90
 operator|*
 literal|64
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_arc
@@ -1393,8 +1387,6 @@ argument_list|,
 literal|90
 operator|*
 literal|64
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

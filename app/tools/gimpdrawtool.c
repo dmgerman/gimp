@@ -1577,12 +1577,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
+comment|/**  * gimp_draw_tool_draw_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_draw_line
 parameter_list|(
 name|GimpDrawTool
@@ -1600,9 +1600,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -1689,7 +1686,7 @@ argument_list|,
 operator|&
 name|ty1
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -1706,7 +1703,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_draw_line
@@ -1745,12 +1742,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_dashed_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a dashed line between the  * resulting coordindates.  **/
+comment|/**  * gimp_draw_tool_draw_dashed_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a dashed line between the  * resulting coordindates.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_dashed_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_dashed_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_draw_dashed_line
 parameter_list|(
 name|GimpDrawTool
@@ -1768,9 +1765,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -1818,7 +1812,7 @@ argument_list|,
 operator|&
 name|ty1
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -1835,7 +1829,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_draw_line
@@ -2040,12 +2034,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_rectangle:  * @draw_tool:   the #GimpDrawTool  * @filled:      whether to fill the rectangle  * @x:           horizontal image coordinate  * @y:           vertical image coordinate  * @width:       width in image coordinates  * @height:      height in image coordinates  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws the resulting rectangle.  **/
+comment|/**  * gimp_draw_tool_draw_rectangle:  * @draw_tool:   the #GimpDrawTool  * @filled:      whether to fill the rectangle  * @x:           horizontal image coordinate  * @y:           vertical image coordinate  * @width:       width in image coordinates  * @height:      height in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws the resulting rectangle.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_rectangle (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_rectangle (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height)
 name|gimp_draw_tool_draw_rectangle
 parameter_list|(
 name|GimpDrawTool
@@ -2066,9 +2060,6 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2176,7 +2167,7 @@ argument_list|,
 operator|&
 name|ty1
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -2207,7 +2198,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tx1
@@ -2364,7 +2355,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_arc (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height,gint angle1,gint angle2,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_arc (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height,gint angle1,gint angle2)
 name|gimp_draw_tool_draw_arc
 parameter_list|(
 name|GimpDrawTool
@@ -2391,9 +2382,6 @@ name|angle1
 parameter_list|,
 name|gint
 name|angle2
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2460,7 +2448,7 @@ argument_list|,
 operator|&
 name|ty1
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -2491,7 +2479,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tx2
@@ -2633,7 +2621,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_draw_rectangle_by_anchor (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_rectangle_by_anchor (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_rectangle_by_anchor
 parameter_list|(
 name|GimpDrawTool
@@ -2657,9 +2645,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2692,7 +2677,7 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_shift_to_north_west
@@ -2762,7 +2747,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_arc_by_anchor (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gint width,gint height,gint angle1,gint angle2,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_arc_by_anchor (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gint width,gint height,gint angle1,gint angle2,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_arc_by_anchor
 parameter_list|(
 name|GimpDrawTool
@@ -2792,9 +2777,6 @@ name|angle2
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2837,7 +2819,7 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_shift_to_north_west
@@ -2912,7 +2894,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_draw_cross_by_anchor (GimpDrawTool * draw_tool,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_cross_by_anchor (GimpDrawTool * draw_tool,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_cross_by_anchor
 parameter_list|(
 name|GimpDrawTool
@@ -2933,9 +2915,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -2968,7 +2947,7 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_shift_to_center
@@ -3091,7 +3070,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_handle
 parameter_list|(
 name|GimpDrawTool
@@ -3115,9 +3094,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -3194,8 +3170,6 @@ argument_list|,
 name|height
 argument_list|,
 name|anchor
-argument_list|,
-name|use_offsets
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3217,8 +3191,6 @@ argument_list|,
 name|height
 argument_list|,
 name|anchor
-argument_list|,
-name|use_offsets
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3246,8 +3218,6 @@ operator|*
 literal|64
 argument_list|,
 name|anchor
-argument_list|,
-name|use_offsets
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3275,8 +3245,6 @@ operator|*
 literal|64
 argument_list|,
 name|anchor
-argument_list|,
-name|use_offsets
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3296,8 +3264,6 @@ argument_list|,
 name|height
 argument_list|,
 name|anchor
-argument_list|,
-name|use_offsets
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3317,12 +3283,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_corner:  * @draw_tool:   the #GimpDrawTool  * @highlight:  * @put_outside: whether to put the handles on the outside of the rectangle  * @x1:  * @y1:  * @x2:  * @y2:  * @width:       corner width  * @height:      corner height  * @anchor:      which corner to draw  * @use_offsets: whether to use the image pixel offsets of the tool's display  *  * This function takes image space coordinates and transforms them to  * screen window coordinates. It draws a corner into an already drawn  * rectangle outline, taking care of not drawing over an already drawn line.  **/
+comment|/**  * gimp_draw_tool_draw_corner:  * @draw_tool:   the #GimpDrawTool  * @highlight:  * @put_outside: whether to put the handles on the outside of the rectangle  * @x1:  * @y1:  * @x2:  * @y2:  * @width:       corner width  * @height:      corner height  * @anchor:      which corner to draw  *  * This function takes image space coordinates and transforms them to  * screen window coordinates. It draws a corner into an already drawn  * rectangle outline, taking care of not drawing over an already drawn line.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_corner
 parameter_list|(
 name|GimpDrawTool
@@ -3355,9 +3321,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -3429,7 +3392,7 @@ argument_list|,
 operator|&
 name|ty1
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -3446,7 +3409,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|tw
@@ -5384,7 +5347,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled)
 name|gimp_draw_tool_draw_lines
 parameter_list|(
 name|GimpDrawTool
@@ -5401,9 +5364,6 @@ name|n_points
 parameter_list|,
 name|gboolean
 name|filled
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -5498,7 +5458,7 @@ name|coords
 argument_list|,
 name|n_points
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5554,7 +5514,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled)
 name|gimp_draw_tool_draw_strokes
 parameter_list|(
 name|GimpDrawTool
@@ -5571,9 +5531,6 @@ name|n_points
 parameter_list|,
 name|gboolean
 name|filled
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -5668,7 +5625,7 @@ name|coords
 argument_list|,
 name|n_points
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5723,12 +5680,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x:     x offset  * @offset_y:     y offset  * @use_offsets:  whether to use offsets  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
+comment|/**  * gimp_draw_tool_draw_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x:     x offset  * @offset_y:     y offset  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
 name|gimp_draw_tool_draw_boundary
 parameter_list|(
 name|GimpDrawTool
@@ -5748,9 +5705,6 @@ name|offset_x
 parameter_list|,
 name|gdouble
 name|offset_y
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -5955,7 +5909,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdk_points
@@ -6092,7 +6046,7 @@ argument_list|,
 operator|&
 name|y
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdk_points
@@ -6224,7 +6178,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_draw_tool_draw_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite,gboolean use_offsets)
+DECL|function|gimp_draw_tool_draw_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite)
 name|gimp_draw_tool_draw_text_cursor
 parameter_list|(
 name|GimpDrawTool
@@ -6237,9 +6191,6 @@ name|cursor
 parameter_list|,
 name|gboolean
 name|overwrite
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -6291,7 +6242,7 @@ argument_list|,
 operator|&
 name|ty1
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -6335,7 +6286,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|x
@@ -6447,7 +6398,7 @@ argument_list|,
 operator|&
 name|ty2
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  vertical line  */
@@ -6691,7 +6642,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_handle (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x,gdouble y,GimpHandleType type,gdouble handle_x,gdouble handle_y,gint width,gint height,GtkAnchorType anchor,gboolean use_offsets)
+DECL|function|gimp_draw_tool_on_handle (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x,gdouble y,GimpHandleType type,gdouble handle_x,gdouble handle_y,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_on_handle
 parameter_list|(
 name|GimpDrawTool
@@ -6725,9 +6676,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
 name|GimpDisplayShell
@@ -6785,7 +6733,7 @@ argument_list|,
 operator|&
 name|ty
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -6802,7 +6750,7 @@ argument_list|,
 operator|&
 name|handle_ty
 argument_list|,
-name|use_offsets
+name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -7344,8 +7292,6 @@ argument_list|,
 name|height
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 operator|&&
 operator|(
@@ -7408,8 +7354,6 @@ argument_list|,
 name|height
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -7476,8 +7420,6 @@ argument_list|,
 name|height
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -7835,8 +7777,6 @@ argument_list|,
 name|height
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{

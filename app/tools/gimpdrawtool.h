@@ -356,9 +356,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -382,9 +379,6 @@ name|x2
 parameter_list|,
 name|gdouble
 name|y2
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -428,9 +422,6 @@ name|width
 parameter_list|,
 name|gdouble
 name|height
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -463,9 +454,6 @@ name|angle1
 parameter_list|,
 name|gint
 name|angle2
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -501,9 +489,6 @@ name|angle2
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -533,9 +518,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -574,9 +556,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -599,9 +578,6 @@ name|n_points
 parameter_list|,
 name|gboolean
 name|filled
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -624,9 +600,6 @@ name|n_points
 parameter_list|,
 name|gboolean
 name|filled
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -652,9 +625,6 @@ name|offset_x
 parameter_list|,
 name|gdouble
 name|offset_y
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -673,9 +643,6 @@ name|cursor
 parameter_list|,
 name|gboolean
 name|overwrite
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -715,9 +682,6 @@ name|height
 parameter_list|,
 name|GtkAnchorType
 name|anchor
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl

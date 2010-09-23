@@ -2625,8 +2625,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -3277,8 +3275,6 @@ argument_list|,
 name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* Draw a line boundary */
@@ -3318,8 +3314,6 @@ argument_list|,
 name|iscissors
 operator|->
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3560,8 +3554,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3634,8 +3626,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3708,8 +3698,6 @@ argument_list|,
 name|iscissors
 operator|->
 name|ny
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3743,8 +3731,6 @@ argument_list|,
 name|iscissors
 operator|->
 name|ny
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3767,8 +3753,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3896,8 +3880,6 @@ argument_list|,
 name|points
 argument_list|,
 name|len
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -4101,8 +4083,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -5001,8 +4981,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -5057,8 +5035,6 @@ argument_list|,
 name|POINT_WIDTH
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{

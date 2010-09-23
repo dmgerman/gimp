@@ -1453,8 +1453,6 @@ argument_list|,
 name|magnify
 operator|->
 name|h
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c761b320103
+DECL|enum|__anon2a3c8cc90103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c761b320203
+DECL|enum|__anon2a3c8cc90203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c761b320303
+DECL|enum|__anon2a3c8cc90303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5761,8 +5761,6 @@ argument_list|,
 name|pub_y2
 operator|-
 name|pub_y1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -5813,8 +5811,6 @@ argument_list|,
 name|CENTER_CROSS_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5856,8 +5852,6 @@ operator|->
 name|corner_handle_h
 argument_list|,
 name|GTK_ANCHOR_NORTH_WEST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_corner
@@ -5887,8 +5881,6 @@ operator|->
 name|corner_handle_h
 argument_list|,
 name|GTK_ANCHOR_NORTH_EAST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_corner
@@ -5918,8 +5910,6 @@ operator|->
 name|corner_handle_h
 argument_list|,
 name|GTK_ANCHOR_SOUTH_WEST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_corner
@@ -5949,8 +5939,6 @@ operator|->
 name|corner_handle_h
 argument_list|,
 name|GTK_ANCHOR_SOUTH_EAST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5996,8 +5984,6 @@ name|gimp_rectangle_tool_get_anchor
 argument_list|(
 name|private
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6043,8 +6029,6 @@ name|gimp_rectangle_tool_get_anchor
 argument_list|(
 name|private
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6085,8 +6069,6 @@ name|gimp_rectangle_tool_get_anchor
 argument_list|(
 name|private
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6189,8 +6171,6 @@ name|y2
 operator|)
 operator|/
 literal|2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6216,8 +6196,6 @@ operator|/
 literal|2
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6251,8 +6229,6 @@ name|y2
 operator|)
 operator|/
 literal|3
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6282,8 +6258,6 @@ name|y2
 operator|)
 operator|/
 literal|3
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6313,8 +6287,6 @@ operator|/
 literal|3
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6344,8 +6316,6 @@ operator|/
 literal|3
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6379,8 +6349,6 @@ name|y1
 operator|)
 operator|/
 literal|5
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6414,8 +6382,6 @@ name|y1
 operator|)
 operator|/
 literal|5
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6449,8 +6415,6 @@ name|y1
 operator|)
 operator|/
 literal|5
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6484,8 +6448,6 @@ name|y1
 operator|)
 operator|/
 literal|5
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6515,8 +6477,6 @@ operator|/
 literal|5
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6550,8 +6510,6 @@ operator|/
 literal|5
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6585,8 +6543,6 @@ operator|/
 literal|5
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6620,8 +6576,6 @@ operator|/
 literal|5
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6675,8 +6629,6 @@ literal|3
 operator|+
 name|SQRT5
 operator|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6726,8 +6678,6 @@ literal|3
 operator|+
 name|SQRT5
 operator|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6777,8 +6727,6 @@ name|SQRT5
 operator|)
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -6828,8 +6776,6 @@ name|SQRT5
 operator|)
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -6870,8 +6816,6 @@ argument_list|,
 name|y1
 operator|+
 name|square_side
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* diagonal from the top-right edge */
@@ -6890,8 +6834,6 @@ argument_list|,
 name|y1
 operator|+
 name|square_side
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* If user selected a square, we cannot draw from bottom points          * as we would erase the guides drawn from the top points          */
@@ -6930,8 +6872,6 @@ argument_list|,
 name|y2
 operator|-
 name|square_side
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* diagonal from the bottom-right edge */
@@ -6950,8 +6890,6 @@ argument_list|,
 name|y2
 operator|-
 name|square_side
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -10464,8 +10402,6 @@ argument_list|,
 name|handle_height
 argument_list|,
 name|anchor
-argument_list|,
-name|FALSE
 argument_list|)
 return|;
 block|}

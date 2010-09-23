@@ -1597,8 +1597,6 @@ argument_list|,
 name|blend_tool
 operator|->
 name|end_y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Draw start target  */
@@ -1621,8 +1619,6 @@ argument_list|,
 name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Draw end target  */
@@ -1645,8 +1641,6 @@ argument_list|,
 name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -5320,8 +5320,6 @@ argument_list|,
 name|TARGET
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5400,8 +5398,6 @@ operator|-
 literal|3
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5505,8 +5501,6 @@ literal|1
 argument_list|)
 operator|.
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5573,8 +5567,6 @@ argument_list|,
 name|coords
 operator|->
 name|len
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -5750,8 +5742,6 @@ argument_list|,
 name|coords
 operator|->
 name|len
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)

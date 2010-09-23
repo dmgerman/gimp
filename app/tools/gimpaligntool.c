@@ -2802,8 +2802,6 @@ argument_list|,
 name|w
 argument_list|,
 name|h
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -2960,8 +2958,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_NORTH_WEST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -2981,8 +2977,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_NORTH_EAST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3002,8 +2996,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_SOUTH_WEST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3025,8 +3017,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_SOUTH_EAST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3116,8 +3106,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_SOUTH
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3135,8 +3123,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_NORTH
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3172,8 +3158,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_EAST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3191,8 +3175,6 @@ argument_list|,
 name|MARKER_WIDTH
 argument_list|,
 name|GTK_ANCHOR_WEST
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 break|break;

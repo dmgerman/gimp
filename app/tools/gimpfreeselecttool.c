@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2964b20f0108
+DECL|struct|__anon2753c71d0108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -5367,8 +5367,6 @@ operator|->
 name|n_points
 argument_list|,
 name|FALSE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* We always show the handle for the first point, even with button1    * down, since releasing the button on the first point will close    * the polygon, so it's a significant state which we must give    * feedback for    */
@@ -5555,8 +5553,6 @@ argument_list|,
 name|HANDLE_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -5605,8 +5601,6 @@ operator|->
 name|pending_point
 operator|.
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

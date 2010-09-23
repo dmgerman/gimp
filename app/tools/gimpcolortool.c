@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d314c90103
+DECL|enum|__anon27c2a0ee0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2364,8 +2364,6 @@ operator|->
 name|sample_point_y
 operator|+
 literal|0.5
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -2390,8 +2388,6 @@ name|gimp_image_get_height
 argument_list|(
 name|image
 argument_list|)
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2445,8 +2441,6 @@ operator|*
 name|radius
 operator|+
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -2681,8 +2681,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -2752,8 +2750,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -2823,8 +2819,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -2894,8 +2888,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -2961,8 +2953,6 @@ name|handle_h
 argument_list|)
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 condition|)
 block|{
@@ -3317,8 +3307,6 @@ argument_list|,
 name|tr_tool
 operator|->
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -3340,8 +3328,6 @@ argument_list|,
 name|tr_tool
 operator|->
 name|ty4
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -3363,8 +3349,6 @@ argument_list|,
 name|tr_tool
 operator|->
 name|ty4
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_line
@@ -3386,8 +3370,6 @@ argument_list|,
 name|tr_tool
 operator|->
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* We test if the transformed polygon is convex.        * if z1 and z2 have the same sign as well as z3 and z4        * the polygon is convex.        */
@@ -3667,8 +3649,6 @@ name|gci
 operator|+
 literal|3
 index|]
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -3714,8 +3694,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3741,8 +3719,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3768,8 +3744,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -3795,8 +3769,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -3858,8 +3830,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x
@@ -3909,8 +3879,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x
@@ -3960,8 +3928,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x
@@ -4011,8 +3977,6 @@ operator|->
 name|handle_h
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -4058,8 +4022,6 @@ argument_list|,
 name|d
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_draw_handle
@@ -4081,8 +4043,6 @@ argument_list|,
 name|d
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -4372,8 +4332,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4562,8 +4520,6 @@ argument_list|,
 literal|0
 argument_list|,
 literal|0
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_free
@@ -4743,8 +4699,6 @@ argument_list|,
 name|coords
 operator|->
 name|len
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
