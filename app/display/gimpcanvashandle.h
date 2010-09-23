@@ -165,6 +165,23 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_handle_set_angles
+parameter_list|(
+name|GimpCanvasHandle
+modifier|*
+name|handle
+parameter_list|,
+name|gdouble
+name|start_handle
+parameter_list|,
+name|gdouble
+name|slice_handle
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
