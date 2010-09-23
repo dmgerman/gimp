@@ -403,6 +403,8 @@ name|i
 index|]
 operator|.
 name|y1
+operator|+
+literal|0.5
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -424,6 +426,8 @@ name|i
 index|]
 operator|.
 name|y2
+operator|-
+literal|1.0
 argument_list|)
 expr_stmt|;
 block|}
@@ -439,6 +443,8 @@ name|i
 index|]
 operator|.
 name|x1
+operator|+
+literal|0.5
 argument_list|,
 name|segs
 index|[
@@ -460,6 +466,8 @@ name|i
 index|]
 operator|.
 name|x2
+operator|-
+literal|1.0
 argument_list|,
 name|segs
 index|[
