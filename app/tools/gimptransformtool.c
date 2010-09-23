@@ -6122,8 +6122,6 @@ argument_list|,
 name|dy
 operator|+
 literal|0
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -6145,8 +6143,6 @@ argument_list|,
 name|dy
 operator|+
 literal|1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -6168,8 +6164,6 @@ argument_list|,
 name|dy
 operator|+
 literal|2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -6191,8 +6185,6 @@ argument_list|,
 name|dy
 operator|+
 literal|3
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/* find bounding box around preview */
@@ -7398,8 +7390,6 @@ name|dx1
 argument_list|,
 operator|&
 name|dy1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -7422,8 +7412,6 @@ name|dx2
 argument_list|,
 operator|&
 name|dy2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -7446,8 +7434,6 @@ name|dx3
 argument_list|,
 operator|&
 name|dy3
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -7470,8 +7456,6 @@ name|dx4
 argument_list|,
 operator|&
 name|dy4
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x1

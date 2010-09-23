@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c2a0ee0103
+DECL|enum|__anon29e1a5db0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -1638,8 +1638,6 @@ name|tx
 argument_list|,
 operator|&
 name|ty
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if

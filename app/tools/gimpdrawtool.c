@@ -1478,8 +1478,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -1495,8 +1493,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 return|return
@@ -1685,8 +1681,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -1702,8 +1696,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_draw_line
@@ -1811,8 +1803,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -1828,8 +1818,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_draw_line
@@ -1967,8 +1955,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|y1
@@ -1994,8 +1980,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x1
@@ -2166,8 +2150,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -2197,8 +2179,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|tx1
@@ -2447,8 +2427,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -2478,8 +2456,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|tx2
@@ -2676,8 +2652,6 @@ name|tx
 argument_list|,
 operator|&
 name|ty
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_shift_to_north_west
@@ -2818,8 +2792,6 @@ name|tx
 argument_list|,
 operator|&
 name|ty
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_shift_to_north_west
@@ -2946,8 +2918,6 @@ name|tx
 argument_list|,
 operator|&
 name|ty
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_shift_to_center
@@ -3391,8 +3361,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -3408,8 +3376,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|tw
@@ -5457,8 +5423,6 @@ argument_list|,
 name|coords
 argument_list|,
 name|n_points
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5624,8 +5588,6 @@ argument_list|,
 name|coords
 argument_list|,
 name|n_points
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -5908,8 +5870,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdk_points
@@ -6045,8 +6005,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gdk_points
@@ -6241,8 +6199,6 @@ name|tx1
 argument_list|,
 operator|&
 name|ty1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -6285,8 +6241,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x
@@ -6397,8 +6351,6 @@ name|tx2
 argument_list|,
 operator|&
 name|ty2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  vertical line  */
@@ -6732,8 +6684,6 @@ name|tx
 argument_list|,
 operator|&
 name|ty
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -6749,8 +6699,6 @@ name|handle_tx
 argument_list|,
 operator|&
 name|handle_ty
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch

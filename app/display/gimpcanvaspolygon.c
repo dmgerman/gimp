@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon278a57260103
+DECL|enum|__anon2bdc7a980103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,8 +645,6 @@ name|i
 index|]
 operator|.
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|points

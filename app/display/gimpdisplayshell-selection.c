@@ -1694,8 +1694,6 @@ argument_list|,
 name|dest_segs
 argument_list|,
 name|n_segs
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for

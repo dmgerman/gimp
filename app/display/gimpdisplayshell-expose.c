@@ -276,8 +276,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch
@@ -405,8 +403,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|x1
@@ -566,8 +562,6 @@ name|x1
 argument_list|,
 operator|&
 name|y1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -583,8 +577,6 @@ name|x2
 argument_list|,
 operator|&
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_expose_region

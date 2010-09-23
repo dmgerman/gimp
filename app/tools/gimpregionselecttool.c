@@ -1616,8 +1616,6 @@ name|segs
 argument_list|,
 operator|*
 name|num_segs
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|g_free

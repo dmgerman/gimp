@@ -207,7 +207,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f44dc50103
+DECL|enum|__anon2ae6b80b0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -320,7 +320,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29f44dc50208
+DECL|struct|__anon2ae6b80b0208
 block|{
 DECL|member|window
 name|GimpImageWindow
@@ -4517,9 +4517,6 @@ name|image_origin_shell_x
 argument_list|,
 operator|&
 name|image_origin_shell_y
-argument_list|,
-name|FALSE
-comment|/*use_offsets*/
 argument_list|)
 expr_stmt|;
 name|gtk_widget_translate_coordinates

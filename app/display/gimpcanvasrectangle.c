@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ad7fdbb0103
+DECL|enum|__anon2a11f9d80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -748,8 +748,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -789,8 +787,6 @@ argument_list|,
 name|w
 argument_list|,
 name|h
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 operator|*

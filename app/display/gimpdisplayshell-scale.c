@@ -2811,8 +2811,6 @@ name|image_focus_x
 argument_list|,
 operator|&
 name|image_focus_y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_calculate_scale_x_and_y

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ebce440103
+DECL|enum|__anon29ab86880103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -942,8 +942,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 switch|switch

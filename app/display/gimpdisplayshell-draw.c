@@ -602,8 +602,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -657,8 +655,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1089,8 +1085,6 @@ name|x_real
 argument_list|,
 operator|&
 name|y_real
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1141,8 +1135,6 @@ name|x_real
 argument_list|,
 operator|&
 name|y_real
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1224,8 +1216,6 @@ name|x_real
 argument_list|,
 operator|&
 name|y_real
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1280,8 +1270,6 @@ name|x_real
 argument_list|,
 operator|&
 name|y_real
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1440,8 +1428,6 @@ name|x0
 argument_list|,
 operator|&
 name|y0
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -1457,8 +1443,6 @@ name|x3
 argument_list|,
 operator|&
 name|y3
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 for|for
@@ -1498,8 +1482,6 @@ name|x_real
 argument_list|,
 operator|&
 name|y_real
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1576,8 +1558,6 @@ name|x_real
 argument_list|,
 operator|&
 name|y_real
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 if|if
@@ -1754,8 +1734,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|cairo_move_to
@@ -1804,8 +1782,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|cairo_line_to
@@ -2008,8 +1984,6 @@ name|x
 argument_list|,
 operator|&
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|sx1

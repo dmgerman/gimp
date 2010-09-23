@@ -78,9 +78,6 @@ parameter_list|,
 name|gint
 modifier|*
 name|ny
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -110,9 +107,6 @@ name|ny
 parameter_list|,
 name|gboolean
 name|round
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -139,9 +133,6 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|ny
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -168,9 +159,6 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|ny
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -195,9 +183,6 @@ name|coords
 parameter_list|,
 name|gint
 name|n_points
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -222,9 +207,6 @@ name|disp_coords
 parameter_list|,
 name|gint
 name|n_coords
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -249,9 +231,6 @@ name|dest_segs
 parameter_list|,
 name|gint
 name|n_segs
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 function_decl|;
 end_function_decl

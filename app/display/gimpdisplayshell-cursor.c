@@ -646,8 +646,6 @@ operator|&
 name|t_y
 argument_list|,
 name|FALSE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_cursor_view_update_cursor
