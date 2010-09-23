@@ -499,6 +499,25 @@ block|}
 decl_stmt|;
 end_decl_stmt
 
+begin_decl_stmt
+DECL|variable|tool_fg_highlight
+specifier|static
+specifier|const
+name|GimpRGB
+name|tool_fg_highlight
+init|=
+block|{
+literal|0.0
+block|,
+literal|1.0
+block|,
+literal|1.0
+block|,
+literal|0.8
+block|}
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/*  public functions  */
 end_comment
@@ -1501,7 +1520,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_tool_fg_style (GimpDisplayShell * shell,cairo_t * cr)
+DECL|function|gimp_display_shell_set_tool_fg_style (GimpDisplayShell * shell,cairo_t * cr,gboolean highlight)
 name|gimp_display_shell_set_tool_fg_style
 parameter_list|(
 name|GimpDisplayShell
@@ -1511,6 +1530,9 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
+parameter_list|,
+name|gboolean
+name|highlight
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -1549,6 +1571,19 @@ argument_list|,
 name|CAIRO_LINE_JOIN_ROUND
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|highlight
+condition|)
+name|gimp_cairo_set_source_rgba
+argument_list|(
+name|cr
+argument_list|,
+operator|&
+name|tool_fg_highlight
+argument_list|)
+expr_stmt|;
+else|else
 name|gimp_cairo_set_source_rgba
 argument_list|(
 name|cr

@@ -211,6 +211,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_item_set_highlight
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|,
+name|gboolean
+name|highlight
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/*  protected  */
 end_comment

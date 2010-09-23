@@ -231,6 +231,9 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
+parameter_list|,
+name|gboolean
+name|highlight
 parameter_list|)
 function_decl|;
 end_function_decl
