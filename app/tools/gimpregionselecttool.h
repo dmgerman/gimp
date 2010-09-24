@@ -140,13 +140,13 @@ modifier|*
 name|region_mask
 decl_stmt|;
 DECL|member|segs
-name|GdkSegment
+name|BoundSeg
 modifier|*
 name|segs
 decl_stmt|;
-DECL|member|num_segs
+DECL|member|n_segs
 name|gint
-name|num_segs
+name|n_segs
 decl_stmt|;
 block|}
 struct|;
