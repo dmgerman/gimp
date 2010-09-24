@@ -981,6 +981,15 @@ name|press_y
 operator|=
 literal|0.0
 expr_stmt|;
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|use_cairo
+operator|=
+name|TRUE
+expr_stmt|;
 block|}
 end_function
 
@@ -1198,11 +1207,6 @@ argument_list|(
 name|rect_sel_tool
 argument_list|)
 expr_stmt|;
-name|gimp_rectangle_tool_draw
-argument_list|(
-name|draw_tool
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|priv
@@ -1390,6 +1394,11 @@ literal|64
 argument_list|)
 expr_stmt|;
 block|}
+name|gimp_rectangle_tool_draw
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
