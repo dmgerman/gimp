@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3c8cc90103
+DECL|enum|__anon276e1c1d0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3c8cc90203
+DECL|enum|__anon276e1c1d0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a3c8cc90303
+DECL|enum|__anon276e1c1d0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5744,6 +5744,11 @@ operator|==
 name|GIMP_RECTANGLE_TOOL_INACTIVE
 condition|)
 return|return;
+name|gimp_rectangle_tool_draw_guides
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_draw_rectangle
 argument_list|(
 name|draw_tool
@@ -6073,11 +6078,6 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
-name|gimp_rectangle_tool_draw_guides
-argument_list|(
-name|draw_tool
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -6130,6 +6130,14 @@ argument_list|,
 operator|&
 name|y2
 argument_list|)
+expr_stmt|;
+name|x2
+operator|-=
+literal|1.0
+expr_stmt|;
+name|y2
+operator|-=
+literal|1.0
 expr_stmt|;
 switch|switch
 condition|(
