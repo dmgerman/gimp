@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2753c71d0108
+DECL|struct|__anon2ad0ba120108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -937,15 +937,6 @@ operator|->
 name|last_click_time
 operator|=
 name|NO_CLICK_TIME_AVAILABLE
-expr_stmt|;
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|tool
-argument_list|)
-operator|->
-name|use_cairo
-operator|=
-name|TRUE
 expr_stmt|;
 block|}
 end_function

@@ -1239,15 +1239,6 @@ argument_list|,
 literal|"context/context-font-select-set"
 argument_list|)
 expr_stmt|;
-name|GIMP_DRAW_TOOL
-argument_list|(
-name|tool
-argument_list|)
-operator|->
-name|use_cairo
-operator|=
-name|TRUE
-expr_stmt|;
 block|}
 end_function
 

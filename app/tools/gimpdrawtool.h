@@ -119,10 +119,6 @@ name|gboolean
 name|is_drawn
 decl_stmt|;
 comment|/*  is the stuff we draw currently visible  */
-DECL|member|use_cairo
-name|gboolean
-name|use_cairo
-decl_stmt|;
 DECL|member|items
 name|GList
 modifier|*
