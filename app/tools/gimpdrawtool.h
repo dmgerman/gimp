@@ -114,11 +114,6 @@ name|gint
 name|paused_count
 decl_stmt|;
 comment|/*  count to keep track of multiple pauses  */
-DECL|member|is_drawn
-name|gboolean
-name|is_drawn
-decl_stmt|;
-comment|/*  is the stuff we draw currently visible  */
 DECL|member|items
 name|GList
 modifier|*
@@ -215,17 +210,6 @@ end_function_decl
 begin_function_decl
 name|void
 name|gimp_draw_tool_resume
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|gboolean
-name|gimp_draw_tool_is_drawn
 parameter_list|(
 name|GimpDrawTool
 modifier|*
