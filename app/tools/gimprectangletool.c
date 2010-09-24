@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276e1c1d0103
+DECL|enum|__anon2979ea290103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -221,7 +221,7 @@ DECL|macro|CENTER_CROSS_SIZE
 define|#
 directive|define
 name|CENTER_CROSS_SIZE
-value|6
+value|7
 end_define
 
 begin_define
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276e1c1d0203
+DECL|enum|__anon2979ea290203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon276e1c1d0303
+DECL|enum|__anon2979ea290303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
