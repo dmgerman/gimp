@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c771a6f0103
+DECL|enum|__anon28eff0f20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1171,10 +1171,6 @@ name|width
 operator|=
 name|ceil
 argument_list|(
-name|rectangle
-operator|.
-name|x
-operator|+
 literal|2
 operator|*
 name|radius_x
@@ -1188,10 +1184,6 @@ name|height
 operator|=
 name|ceil
 argument_list|(
-name|rectangle
-operator|.
-name|y
-operator|+
 literal|2
 operator|*
 name|radius_y
