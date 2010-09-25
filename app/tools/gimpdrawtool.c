@@ -1320,7 +1320,7 @@ name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CANVAS_ITEM
 argument_list|(
-name|draw_tool
+name|item
 argument_list|)
 argument_list|)
 expr_stmt|;
