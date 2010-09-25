@@ -5246,7 +5246,7 @@ expr_stmt|;
 comment|/*  Is the specified point close enough to the curve?  */
 if|if
 condition|(
-name|gimp_draw_tool_in_radius
+name|gimp_draw_tool_calc_distance_square
 argument_list|(
 name|GIMP_DRAW_TOOL
 argument_list|(
@@ -5267,7 +5267,10 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
+argument_list|)
+operator|<
+name|SQR
+argument_list|(
 name|POINT_WIDTH
 operator|/
 literal|2

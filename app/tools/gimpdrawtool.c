@@ -1339,65 +1339,6 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_in_radius:  * @draw_tool: a #GimpDrawTool  * @display:   a #GimpDisplay  * @x1:        start point X in image coordinates  * @y1:        start point Y in image coordinates  * @x2:        end point X in image coordinates  * @y2:        end point Y in image coordinates  * @radius:    distance in screen coordinates, not image coordinates  *  * The points are in image space coordinates.  *  * Returns: %TRUE if the points are within radius of each other,  *          %FALSE otherwise  **/
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_draw_tool_in_radius (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint radius)
-name|gimp_draw_tool_in_radius
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-parameter_list|,
-name|GimpDisplay
-modifier|*
-name|display
-parameter_list|,
-name|gdouble
-name|x1
-parameter_list|,
-name|gdouble
-name|y1
-parameter_list|,
-name|gdouble
-name|x2
-parameter_list|,
-name|gdouble
-name|y2
-parameter_list|,
-name|gint
-name|radius
-parameter_list|)
-block|{
-return|return
-operator|(
-name|gimp_draw_tool_calc_distance_square
-argument_list|(
-name|draw_tool
-argument_list|,
-name|display
-argument_list|,
-name|x1
-argument_list|,
-name|y1
-argument_list|,
-name|x2
-argument_list|,
-name|y2
-argument_list|)
-operator|<
-name|SQR
-argument_list|(
-name|radius
-argument_list|)
-operator|)
-return|;
-block|}
-end_function
-
-begin_comment
 comment|/**  * gimp_draw_tool_draw_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
 end_comment
 
