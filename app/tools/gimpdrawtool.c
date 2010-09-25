@@ -1402,7 +1402,8 @@ comment|/**  * gimp_draw_tool_draw_line:  * @draw_tool:   the #GimpDrawTool  * @
 end_comment
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_draw_line
 parameter_list|(
@@ -1427,12 +1428,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1460,6 +1463,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
@@ -1468,7 +1474,8 @@ comment|/**  * gimp_draw_tool_draw_dashed_line:  * @draw_tool:   the #GimpDrawTo
 end_comment
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_dashed_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_draw_tool_draw_dashed_line
 parameter_list|(
@@ -1493,12 +1500,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1533,6 +1542,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
@@ -1541,7 +1553,8 @@ comment|/**  * gimp_draw_tool_draw_guide:  * @draw_tool:   the #GimpDrawTool  * 
 end_comment
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_guide_line (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position)
 name|gimp_draw_tool_draw_guide_line
 parameter_list|(
@@ -1560,12 +1573,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1589,6 +1604,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
@@ -1597,7 +1615,8 @@ comment|/**  * gimp_draw_tool_draw_rectangle:  * @draw_tool:   the #GimpDrawTool
 end_comment
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_rectangle (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height)
 name|gimp_draw_tool_draw_rectangle
 parameter_list|(
@@ -1625,12 +1644,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1660,11 +1681,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_arc (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height,gdouble start_angle,gdouble slice_angle)
 name|gimp_draw_tool_draw_arc
 parameter_list|(
@@ -1698,12 +1723,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1749,11 +1776,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_arc_by_anchor (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gint width,gint height,gdouble start_angle,gdouble slice_angle,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_arc_by_anchor
 parameter_list|(
@@ -1790,12 +1821,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1843,11 +1876,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_handle
 parameter_list|(
@@ -1878,12 +1915,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -1915,6 +1954,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
@@ -1923,7 +1965,8 @@ comment|/**  * gimp_draw_tool_draw_corner:  * @draw_tool:   the #GimpDrawTool  *
 end_comment
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GtkAnchorType anchor)
 name|gimp_draw_tool_draw_corner
 parameter_list|(
@@ -1963,12 +2006,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -2015,11 +2060,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled)
 name|gimp_draw_tool_draw_lines
 parameter_list|(
@@ -2043,12 +2092,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2061,7 +2112,9 @@ name|n_points
 operator|<
 literal|2
 condition|)
-return|return;
+return|return
+name|NULL
+return|;
 name|item
 operator|=
 name|gimp_canvas_polygon_new
@@ -2085,11 +2138,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled)
 name|gimp_draw_tool_draw_strokes
 parameter_list|(
@@ -2113,12 +2170,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -2131,7 +2190,9 @@ name|n_points
 operator|<
 literal|2
 condition|)
-return|return;
+return|return
+name|NULL
+return|;
 name|item
 operator|=
 name|gimp_canvas_polygon_new_from_coords
@@ -2155,6 +2216,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
@@ -2163,7 +2227,8 @@ comment|/**  * gimp_draw_tool_draw_boundary:  * @draw_tool:    a #GimpDrawTool  
 end_comment
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
 name|gimp_draw_tool_draw_boundary
 parameter_list|(
@@ -2190,25 +2255,31 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|n_bound_segs
 operator|>
 literal|0
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|bound_segs
 operator|!=
+name|NULL
+argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
@@ -2237,11 +2308,15 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 
 begin_function
-name|void
+name|GimpCanvasItem
+modifier|*
 DECL|function|gimp_draw_tool_draw_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite)
 name|gimp_draw_tool_draw_text_cursor
 parameter_list|(
@@ -2261,12 +2336,14 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
-name|g_return_if_fail
+name|g_return_val_if_fail
 argument_list|(
 name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|draw_tool
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item
@@ -2290,6 +2367,9 @@ argument_list|(
 name|item
 argument_list|)
 expr_stmt|;
+return|return
+name|item
+return|;
 block|}
 end_function
 

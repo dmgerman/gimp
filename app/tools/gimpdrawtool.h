@@ -318,7 +318,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_line
 parameter_list|(
 name|GimpDrawTool
@@ -341,7 +342,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_dashed_line
 parameter_list|(
 name|GimpDrawTool
@@ -364,7 +366,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_guide_line
 parameter_list|(
 name|GimpDrawTool
@@ -381,7 +384,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_rectangle
 parameter_list|(
 name|GimpDrawTool
@@ -407,7 +411,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_arc
 parameter_list|(
 name|GimpDrawTool
@@ -439,7 +444,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_arc_by_anchor
 parameter_list|(
 name|GimpDrawTool
@@ -474,7 +480,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_handle
 parameter_list|(
 name|GimpDrawTool
@@ -503,7 +510,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_corner
 parameter_list|(
 name|GimpDrawTool
@@ -541,7 +549,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_lines
 parameter_list|(
 name|GimpDrawTool
@@ -563,7 +572,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_strokes
 parameter_list|(
 name|GimpDrawTool
@@ -585,7 +595,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_boundary
 parameter_list|(
 name|GimpDrawTool
@@ -610,7 +621,8 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|GimpCanvasItem
+modifier|*
 name|gimp_draw_tool_draw_text_cursor
 parameter_list|(
 name|GimpDrawTool
