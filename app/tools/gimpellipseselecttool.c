@@ -354,11 +354,11 @@ name|y2
 operator|-
 name|y1
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|360
+literal|2
 operator|*
-literal|64
+name|G_PI
 argument_list|)
 expr_stmt|;
 block|}

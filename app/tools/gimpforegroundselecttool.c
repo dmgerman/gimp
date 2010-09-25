@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bdd4dd20108
+DECL|struct|__anon2c803d570108
 block|{
 DECL|member|width
 name|gint
@@ -2534,11 +2534,11 @@ literal|2
 operator|*
 name|radius
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|360
+literal|2.0
 operator|*
-literal|64
+name|G_PI
 argument_list|)
 expr_stmt|;
 block|}
