@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CANVAS_ITEM, GimpCanvasItemCl
 end_define
 
 begin_typedef
-DECL|typedef|GimpCanvasItem
-typedef|typedef
-name|struct
-name|_GimpCanvasItem
-name|GimpCanvasItem
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCanvasItemClass
 typedef|typedef
 name|struct
