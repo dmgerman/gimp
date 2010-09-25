@@ -114,10 +114,10 @@ name|gint
 name|paused_count
 decl_stmt|;
 comment|/*  count to keep track of multiple pauses  */
-DECL|member|items
-name|GList
+DECL|member|item
+name|GimpCanvasItem
 modifier|*
-name|items
+name|item
 decl_stmt|;
 block|}
 struct|;
