@@ -161,7 +161,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2979ea290103
+DECL|enum|__anon2ad14d4d0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -235,7 +235,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2979ea290203
+DECL|enum|__anon2ad14d4d0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -278,7 +278,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2979ea290303
+DECL|enum|__anon2ad14d4d0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -5749,7 +5749,7 @@ argument_list|(
 name|draw_tool
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5789,7 +5789,7 @@ argument_list|)
 condition|)
 block|{
 comment|/* Mark the center because we snap to it */
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5830,7 +5830,7 @@ case|:
 case|case
 name|GIMP_RECTANGLE_TOOL_CREATING
 case|:
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5859,7 +5859,7 @@ argument_list|,
 name|GTK_ANCHOR_NORTH_WEST
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5888,7 +5888,7 @@ argument_list|,
 name|GTK_ANCHOR_NORTH_EAST
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5917,7 +5917,7 @@ argument_list|,
 name|GTK_ANCHOR_SOUTH_WEST
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5953,7 +5953,7 @@ case|:
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_BOTTOM
 case|:
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5998,7 +5998,7 @@ case|:
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_RIGHT
 case|:
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6038,7 +6038,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 default|default:
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6156,7 +6156,7 @@ break|break;
 case|case
 name|GIMP_RECTANGLE_GUIDE_CENTER_LINES
 case|:
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6181,7 +6181,7 @@ operator|/
 literal|2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6210,7 +6210,7 @@ break|break;
 case|case
 name|GIMP_RECTANGLE_GUIDE_THIRDS
 case|:
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6239,7 +6239,7 @@ operator|/
 literal|3
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6268,7 +6268,7 @@ operator|/
 literal|3
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6297,7 +6297,7 @@ argument_list|,
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6330,7 +6330,7 @@ break|break;
 case|case
 name|GIMP_RECTANGLE_GUIDE_FIFTHS
 case|:
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6359,7 +6359,7 @@ operator|/
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6392,7 +6392,7 @@ operator|/
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6425,7 +6425,7 @@ operator|/
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6458,7 +6458,7 @@ operator|/
 literal|5
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6487,7 +6487,7 @@ argument_list|,
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6520,7 +6520,7 @@ argument_list|,
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6553,7 +6553,7 @@ argument_list|,
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6590,7 +6590,7 @@ break|break;
 case|case
 name|GIMP_RECTANGLE_GUIDE_GOLDEN
 case|:
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6639,7 +6639,7 @@ name|SQRT5
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6688,7 +6688,7 @@ name|SQRT5
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6737,7 +6737,7 @@ argument_list|,
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6809,7 +6809,7 @@ name|y1
 argument_list|)
 decl_stmt|;
 comment|/* diagonal from the top-left edge */
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6827,7 +6827,7 @@ name|square_side
 argument_list|)
 expr_stmt|;
 comment|/* diagonal from the top-right edge */
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6865,7 +6865,7 @@ operator|)
 condition|)
 block|{
 comment|/* diagonal from the bottom-left edge */
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -6883,7 +6883,7 @@ name|square_side
 argument_list|)
 expr_stmt|;
 comment|/* diagonal from the bottom-right edge */
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,

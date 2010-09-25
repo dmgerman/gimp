@@ -1434,7 +1434,7 @@ undef|#
 directive|undef
 name|EPSILON
 block|}
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1458,7 +1458,7 @@ condition|(
 name|draw_fallback
 condition|)
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,

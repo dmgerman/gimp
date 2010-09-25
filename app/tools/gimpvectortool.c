@@ -5291,7 +5291,7 @@ name|coords
 operator|->
 name|len
 condition|)
-name|gimp_draw_tool_draw_strokes
+name|gimp_draw_tool_add_strokes
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5363,7 +5363,7 @@ operator|==
 name|GIMP_ANCHOR_ANCHOR
 condition|)
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5460,7 +5460,7 @@ name|item
 decl_stmt|;
 name|item
 operator|=
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5563,7 +5563,7 @@ operator|->
 name|data
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5744,7 +5744,7 @@ name|coords
 operator|->
 name|len
 condition|)
-name|gimp_draw_tool_draw_strokes
+name|gimp_draw_tool_add_strokes
 argument_list|(
 name|draw_tool
 argument_list|,

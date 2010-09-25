@@ -1286,7 +1286,7 @@ operator|*
 literal|2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1309,7 +1309,7 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1332,7 +1332,7 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1359,7 +1359,7 @@ operator|/
 literal|2.0
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 argument_list|(
 name|draw_tool
 argument_list|,

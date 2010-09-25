@@ -3174,7 +3174,7 @@ name|width
 operator|>
 literal|0
 expr_stmt|;
-name|gimp_draw_tool_draw_text_cursor
+name|gimp_draw_tool_add_text_cursor
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3443,7 +3443,7 @@ name|y
 operator|+=
 name|offset_y
 expr_stmt|;
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,

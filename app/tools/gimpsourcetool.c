@@ -1568,7 +1568,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,

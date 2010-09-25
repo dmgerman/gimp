@@ -2891,7 +2891,7 @@ operator|==
 literal|3
 condition|)
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2921,7 +2921,7 @@ expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2960,7 +2960,7 @@ operator|>
 literal|0
 condition|)
 block|{
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3125,7 +3125,7 @@ name|item
 decl_stmt|;
 name|item
 operator|=
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3222,7 +3222,7 @@ argument_list|,
 name|ARC_RADIUS
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,

@@ -3050,7 +3050,7 @@ name|use_handles
 condition|)
 block|{
 comment|/*  draw the bounding box  */
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3071,7 +3071,7 @@ operator|->
 name|ty2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3092,7 +3092,7 @@ operator|->
 name|ty4
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3113,7 +3113,7 @@ operator|->
 name|ty4
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3135,7 +3135,7 @@ name|ty1
 argument_list|)
 expr_stmt|;
 comment|/*  draw the tool handles  */
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3156,7 +3156,7 @@ argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3177,7 +3177,7 @@ argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3198,7 +3198,7 @@ argument_list|,
 name|GTK_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3258,7 +3258,7 @@ name|clone_tool
 operator|->
 name|src_display
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,

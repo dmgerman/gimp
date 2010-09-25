@@ -3247,7 +3247,7 @@ operator|&
 name|DRAW_CURRENT_SEED
 condition|)
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3286,7 +3286,7 @@ name|DRAW_LIVEWIRE
 operator|)
 condition|)
 block|{
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3526,7 +3526,7 @@ operator|->
 name|connected
 condition|)
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3598,7 +3598,7 @@ name|curve1
 condition|)
 continue|continue;
 block|}
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3666,7 +3666,7 @@ operator|->
 name|curve1
 condition|)
 block|{
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3699,7 +3699,7 @@ operator|->
 name|curve2
 condition|)
 block|{
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3725,7 +3725,7 @@ name|ny
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3864,7 +3864,7 @@ literal|16
 operator|)
 expr_stmt|;
 block|}
-name|gimp_draw_tool_draw_lines
+name|gimp_draw_tool_add_lines
 argument_list|(
 name|draw_tool
 argument_list|,

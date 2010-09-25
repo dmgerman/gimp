@@ -288,9 +288,24 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_draw_tool_add_item
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_line
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpCanvasItem
+modifier|*
+name|gimp_draw_tool_add_line
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -314,7 +329,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_guide_line
+name|gimp_draw_tool_add_guide_line
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -332,7 +347,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -359,7 +374,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -392,7 +407,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -422,7 +437,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_corner
+name|gimp_draw_tool_add_corner
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -461,7 +476,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_lines
+name|gimp_draw_tool_add_lines
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -484,7 +499,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_strokes
+name|gimp_draw_tool_add_strokes
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -507,7 +522,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -533,7 +548,7 @@ end_function_decl
 begin_function_decl
 name|GimpCanvasItem
 modifier|*
-name|gimp_draw_tool_draw_text_cursor
+name|gimp_draw_tool_add_text_cursor
 parameter_list|(
 name|GimpDrawTool
 modifier|*

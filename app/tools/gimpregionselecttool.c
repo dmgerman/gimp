@@ -1334,7 +1334,7 @@ name|off_y
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
 argument_list|,

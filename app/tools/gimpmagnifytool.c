@@ -1423,7 +1423,7 @@ argument_list|(
 name|draw_tool
 argument_list|)
 decl_stmt|;
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,

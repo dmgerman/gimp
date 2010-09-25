@@ -150,7 +150,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c803d570108
+DECL|struct|__anon298d43730108
 block|{
 DECL|member|width
 name|gint
@@ -2491,7 +2491,7 @@ operator|-
 name|radius
 condition|)
 block|{
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2512,7 +2512,7 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 argument_list|(
 name|draw_tool
 argument_list|,

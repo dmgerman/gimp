@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29e1a5db0103
+DECL|enum|__anon295805e50103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2340,7 +2340,7 @@ operator|->
 name|display
 argument_list|)
 decl_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2364,7 +2364,7 @@ operator|+
 literal|0.5
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2410,7 +2410,7 @@ name|options
 operator|->
 name|average_radius
 decl_stmt|;
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,

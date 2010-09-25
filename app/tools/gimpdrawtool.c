@@ -662,50 +662,6 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_draw_tool_add_item (GimpDrawTool * draw_tool,GimpCanvasItem * item)
-name|gimp_draw_tool_add_item
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-parameter_list|,
-name|GimpCanvasItem
-modifier|*
-name|item
-parameter_list|)
-block|{
-if|if
-condition|(
-operator|!
-name|draw_tool
-operator|->
-name|item
-condition|)
-name|draw_tool
-operator|->
-name|item
-operator|=
-name|gimp_canvas_group_new
-argument_list|()
-expr_stmt|;
-name|gimp_canvas_group_add_item
-argument_list|(
-name|GIMP_CANVAS_GROUP
-argument_list|(
-name|draw_tool
-operator|->
-name|item
-argument_list|)
-argument_list|,
-name|item
-argument_list|)
-expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
 DECL|function|gimp_draw_tool_clear_items (GimpDrawTool * draw_tool)
 name|gimp_draw_tool_clear_items
 parameter_list|(
@@ -1338,15 +1294,74 @@ return|;
 block|}
 end_function
 
+begin_function
+name|void
+DECL|function|gimp_draw_tool_add_item (GimpDrawTool * draw_tool,GimpCanvasItem * item)
+name|gimp_draw_tool_add_item
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_DRAW_TOOL
+argument_list|(
+name|draw_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
+name|GIMP_IS_CANVAS_ITEM
+argument_list|(
+name|draw_tool
+argument_list|)
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|draw_tool
+operator|->
+name|item
+condition|)
+name|draw_tool
+operator|->
+name|item
+operator|=
+name|gimp_canvas_group_new
+argument_list|()
+expr_stmt|;
+name|gimp_canvas_group_add_item
+argument_list|(
+name|GIMP_CANVAS_GROUP
+argument_list|(
+name|draw_tool
+operator|->
+name|item
+argument_list|)
+argument_list|,
+name|item
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 begin_comment
-comment|/**  * gimp_draw_tool_draw_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
+comment|/**  * gimp_draw_tool_add_line:  * @draw_tool:   the #GimpDrawTool  * @x1:          start point X in image coordinates  * @y1:          start point Y in image coordinates  * @x2:          end point X in image coordinates  * @y2:          end point Y in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws a line between the resulting  * coordindates.  **/
 end_comment
 
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
-name|gimp_draw_tool_draw_line
+DECL|function|gimp_draw_tool_add_line (GimpDrawTool * draw_tool,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+name|gimp_draw_tool_add_line
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1417,8 +1432,8 @@ end_comment
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_guide_line (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position)
-name|gimp_draw_tool_draw_guide_line
+DECL|function|gimp_draw_tool_add_guide_line (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position)
+name|gimp_draw_tool_add_guide_line
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1473,14 +1488,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_rectangle:  * @draw_tool:   the #GimpDrawTool  * @filled:      whether to fill the rectangle  * @x:           horizontal image coordinate  * @y:           vertical image coordinate  * @width:       width in image coordinates  * @height:      height in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws the resulting rectangle.  **/
+comment|/**  * gimp_draw_tool_add_rectangle:  * @draw_tool:   the #GimpDrawTool  * @filled:      whether to fill the rectangle  * @x:           horizontal image coordinate  * @y:           vertical image coordinate  * @width:       width in image coordinates  * @height:      height in image coordinates  *  * This function takes image space coordinates and transforms them to  * screen window coordinates, then draws the resulting rectangle.  **/
 end_comment
 
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_rectangle (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height)
-name|gimp_draw_tool_draw_rectangle
+DECL|function|gimp_draw_tool_add_rectangle (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height)
+name|gimp_draw_tool_add_rectangle
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1552,8 +1567,8 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_arc (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height,gdouble start_angle,gdouble slice_angle)
-name|gimp_draw_tool_draw_arc
+DECL|function|gimp_draw_tool_add_arc (GimpDrawTool * draw_tool,gboolean filled,gdouble x,gdouble y,gdouble width,gdouble height,gdouble start_angle,gdouble slice_angle)
+name|gimp_draw_tool_add_arc
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1647,8 +1662,8 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
-name|gimp_draw_tool_draw_handle
+DECL|function|gimp_draw_tool_add_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
+name|gimp_draw_tool_add_handle
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1723,14 +1738,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_corner:  * @draw_tool:   the #GimpDrawTool  * @highlight:  * @put_outside: whether to put the handles on the outside of the rectangle  * @x1:  * @y1:  * @x2:  * @y2:  * @width:       corner width  * @height:      corner height  * @anchor:      which corner to draw  *  * This function takes image space coordinates and transforms them to  * screen window coordinates. It draws a corner into an already drawn  * rectangle outline, taking care of not drawing over an already drawn line.  **/
+comment|/**  * gimp_draw_tool_add_corner:  * @draw_tool:   the #GimpDrawTool  * @highlight:  * @put_outside: whether to put the handles on the outside of the rectangle  * @x1:  * @y1:  * @x2:  * @y2:  * @width:       corner width  * @height:      corner height  * @anchor:      which corner to draw  *  * This function takes image space coordinates and transforms them to  * screen window coordinates. It draws a corner into an already drawn  * rectangle outline, taking care of not drawing over an already drawn line.  **/
 end_comment
 
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GtkAnchorType anchor)
-name|gimp_draw_tool_draw_corner
+DECL|function|gimp_draw_tool_add_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GtkAnchorType anchor)
+name|gimp_draw_tool_add_corner
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1831,8 +1846,8 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled)
-name|gimp_draw_tool_draw_lines
+DECL|function|gimp_draw_tool_add_lines (GimpDrawTool * draw_tool,const GimpVector2 * points,gint n_points,gboolean filled)
+name|gimp_draw_tool_add_lines
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1909,8 +1924,8 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled)
-name|gimp_draw_tool_draw_strokes
+DECL|function|gimp_draw_tool_add_strokes (GimpDrawTool * draw_tool,const GimpCoords * points,gint n_points,gboolean filled)
+name|gimp_draw_tool_add_strokes
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -1985,14 +2000,14 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x:     x offset  * @offset_y:     y offset  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
+comment|/**  * gimp_draw_tool_add_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x:     x offset  * @offset_y:     y offset  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
 end_comment
 
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
-name|gimp_draw_tool_draw_boundary
+DECL|function|gimp_draw_tool_add_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
+name|gimp_draw_tool_add_boundary
 parameter_list|(
 name|GimpDrawTool
 modifier|*
@@ -2079,8 +2094,8 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_draw_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite)
-name|gimp_draw_tool_draw_text_cursor
+DECL|function|gimp_draw_tool_add_text_cursor (GimpDrawTool * draw_tool,PangoRectangle * cursor,gboolean overwrite)
+name|gimp_draw_tool_add_text_cursor
 parameter_list|(
 name|GimpDrawTool
 modifier|*

@@ -3121,7 +3121,7 @@ operator|->
 name|segs_in
 condition|)
 block|{
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3154,7 +3154,7 @@ operator|->
 name|segs_out
 condition|)
 block|{
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3190,7 +3190,7 @@ operator|!=
 name|GIMP_TRANSLATE_MODE_MASK
 condition|)
 block|{
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3246,7 +3246,7 @@ operator|&
 name|off_y
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3488,7 +3488,7 @@ name|linked
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3724,7 +3724,7 @@ argument_list|(
 name|y2
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_rectangle
+name|gimp_draw_tool_add_rectangle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3748,7 +3748,7 @@ break|break;
 case|case
 name|GIMP_TRANSLATE_MODE_FLOATING_SEL
 case|:
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3772,7 +3772,7 @@ expr_stmt|;
 break|break;
 block|}
 comment|/* Mark the center because we snap to it */
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,

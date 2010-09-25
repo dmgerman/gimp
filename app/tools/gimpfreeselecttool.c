@@ -180,7 +180,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ad0ba120108
+DECL|struct|__anon27bbd1930108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -5345,7 +5345,7 @@ operator|&
 name|coords
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_lines
+name|gimp_draw_tool_add_lines
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5525,7 +5525,7 @@ operator|!=
 operator|-
 literal|1
 condition|)
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5569,7 +5569,7 @@ operator|-
 literal|1
 index|]
 decl_stmt|;
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,

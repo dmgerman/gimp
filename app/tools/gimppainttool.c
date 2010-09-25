@@ -2907,7 +2907,7 @@ name|off_y
 argument_list|)
 expr_stmt|;
 comment|/*  Draw the line between the start and end coords  */
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2945,7 +2945,7 @@ name|off_y
 argument_list|)
 expr_stmt|;
 comment|/*  Draw start target  */
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2975,7 +2975,7 @@ name|GTK_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 comment|/*  Draw end target  */
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
