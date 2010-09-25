@@ -142,6 +142,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpcanvasitem.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -5448,7 +5454,13 @@ operator|+=
 literal|2
 control|)
 block|{
-name|gimp_draw_tool_draw_dashed_line
+name|GimpCanvasItem
+modifier|*
+name|item
+decl_stmt|;
+name|item
+operator|=
+name|gimp_draw_tool_draw_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -5499,6 +5511,13 @@ literal|1
 argument_list|)
 operator|.
 name|y
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_set_highlight
+argument_list|(
+name|item
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
