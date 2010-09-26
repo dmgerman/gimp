@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bad001e0103
+DECL|enum|__anon28aba2da0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -124,9 +124,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_view_destroy
+name|gimp_view_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -410,11 +410,11 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -572,9 +572,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_view_destroy
+name|gimp_view_dispose
 expr_stmt|;
 name|widget_class
 operator|->
@@ -781,10 +781,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_destroy (GtkObject * object)
-name|gimp_view_destroy
+DECL|function|gimp_view_dispose (GObject * object)
+name|gimp_view_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -832,12 +832,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)

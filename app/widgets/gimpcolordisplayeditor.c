@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4f08c70103
+DECL|enum|__anon2b1d76cc0103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4f08c70203
+DECL|enum|__anon2b1d76cc0203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -105,9 +105,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_display_editor_destroy
+name|gimp_color_display_editor_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -375,20 +375,20 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_color_display_editor_destroy
+name|gimp_color_display_editor_dispose
 expr_stmt|;
 block|}
 end_function
@@ -1547,10 +1547,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_editor_destroy (GtkObject * object)
-name|gimp_color_display_editor_destroy
+DECL|function|gimp_color_display_editor_dispose (GObject * object)
+name|gimp_color_display_editor_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -1585,12 +1585,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)
