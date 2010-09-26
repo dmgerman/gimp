@@ -1179,15 +1179,6 @@ value|"The location of the online user manual. This is used if " \ "'user-manual
 end_define
 
 begin_define
-DECL|macro|XOR_COLOR_BLURB
-define|#
-directive|define
-name|XOR_COLOR_BLURB
-define|\
-value|"Sets the color that is used for XOR drawing. This setting only exists as " \ "a workaround for buggy display drivers. If lines on the canvas are not " \ "correctly undrawn, try to set this to white."
-end_define
-
-begin_define
 DECL|macro|ZOOM_QUALITY_BLURB
 define|#
 directive|define
