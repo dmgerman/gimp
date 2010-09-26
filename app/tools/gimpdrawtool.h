@@ -303,6 +303,21 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|void
+name|gimp_draw_tool_remove_item
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|GimpCanvasItem
 modifier|*
 name|gimp_draw_tool_add_line
