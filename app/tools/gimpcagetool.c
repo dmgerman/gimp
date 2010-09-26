@@ -2110,7 +2110,7 @@ operator|->
 name|cage_vertices_d
 expr_stmt|;
 block|}
-name|gimp_draw_tool_draw_lines
+name|gimp_draw_tool_add_lines
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2119,8 +2119,6 @@ argument_list|,
 name|config
 operator|->
 name|cage_vertice_number
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)
@@ -2142,7 +2140,7 @@ operator|-
 literal|1000
 condition|)
 block|{
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2179,14 +2177,12 @@ operator|->
 name|cursor_position
 operator|.
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
 else|else
 block|{
-name|gimp_draw_tool_draw_line
+name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2225,8 +2221,6 @@ literal|0
 index|]
 operator|.
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -2302,7 +2296,7 @@ operator|=
 name|GIMP_HANDLE_FILLED_CIRCLE
 expr_stmt|;
 block|}
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -2321,8 +2315,6 @@ argument_list|,
 name|HANDLE_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
