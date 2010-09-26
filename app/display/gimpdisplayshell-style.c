@@ -1295,6 +1295,13 @@ argument_list|,
 literal|1.0
 argument_list|)
 expr_stmt|;
+name|cairo_set_line_cap
+argument_list|(
+name|cr
+argument_list|,
+name|CAIRO_LINE_CAP_SQUARE
+argument_list|)
+expr_stmt|;
 name|pattern
 operator|=
 name|gimp_cairo_stipple_pattern_create

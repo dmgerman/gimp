@@ -511,7 +511,7 @@ index|]
 operator|.
 name|y2
 operator|-
-literal|1.0
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
@@ -551,7 +551,7 @@ index|]
 operator|.
 name|x2
 operator|-
-literal|1.0
+literal|0.5
 argument_list|,
 name|segs
 index|[
