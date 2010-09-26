@@ -8180,6 +8180,17 @@ name|GIMP_IS_DRAW_TOOL
 argument_list|(
 name|tool
 argument_list|)
+operator|&&
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|display
+operator|==
+name|shell
+operator|->
+name|display
 condition|)
 block|{
 name|cairo_save
