@@ -108,7 +108,7 @@ name|GList
 modifier|*
 name|strokes
 decl_stmt|;
-comment|/* The List of GimpStrokes        */
+comment|/* The List of GimpStrokes      */
 DECL|member|last_stroke_ID
 name|gint
 name|last_stroke_ID
@@ -120,6 +120,37 @@ decl_stmt|;
 DECL|member|precision
 name|gdouble
 name|precision
+decl_stmt|;
+DECL|member|bezier_desc
+name|GimpBezierDesc
+modifier|*
+name|bezier_desc
+decl_stmt|;
+comment|/* Cached bezier representation */
+DECL|member|bounds_valid
+name|gboolean
+name|bounds_valid
+decl_stmt|;
+comment|/* Cached bounding box          */
+DECL|member|bounds_empty
+name|gboolean
+name|bounds_empty
+decl_stmt|;
+DECL|member|bounds_x1
+name|gdouble
+name|bounds_x1
+decl_stmt|;
+DECL|member|bounds_y1
+name|gdouble
+name|bounds_y1
+decl_stmt|;
+DECL|member|bounds_x2
+name|gdouble
+name|bounds_x2
+decl_stmt|;
+DECL|member|bounds_y2
+name|gdouble
+name|bounds_y2
 decl_stmt|;
 block|}
 struct|;
@@ -767,7 +798,6 @@ begin_function_decl
 name|gboolean
 name|gimp_vectors_bounds
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors
@@ -827,15 +857,15 @@ comment|/* usually overloaded */
 end_comment
 
 begin_comment
-comment|/* creates a bezier representation. */
+comment|/* returns a bezier representation */
 end_comment
 
 begin_function_decl
+specifier|const
 name|GimpBezierDesc
 modifier|*
-name|gimp_vectors_make_bezier
+name|gimp_vectors_get_bezier
 parameter_list|(
-specifier|const
 name|GimpVectors
 modifier|*
 name|vectors

@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimppainttools  * @title: gimppainttools  * @short_descr
 end_comment
 
 begin_comment
-comment|/**  * gimp_airbrush:  * @drawable_ID: The affected drawable.  * @pressure: The pressure of the airbrush strokes.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. Paint pressure  * represents the relative intensity of the paint application. High  * pressure results in a thicker layer of paint while low pressure  * results in a thinner layer.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_airbrush:  * @drawable_ID: The affected drawable.  * @pressure: The pressure of the airbrush strokes.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. Paint pressure  * represents the relative intensity of the paint application. High  * pressure results in a thicker layer of paint while low pressure  * results in a thinner layer.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -114,7 +114,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_airbrush_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. It is similar to  * gimp_airbrush() except that the pressure is derived from the  * airbrush tools options box. It the option has not been set the  * default for the option will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_airbrush_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush with varying pressure. Paint application  * is time-dependent.  *  * This tool simulates the use of an airbrush. It is similar to  * gimp_airbrush() except that the pressure is derived from the  * airbrush tools options box. It the option has not been set the  * default for the option will be used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -197,7 +197,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clone:  * @drawable_ID: The affected drawable.  * @src_drawable_ID: The source drawable.  * @clone_type: The type of clone.  * @src_x: The x coordinate in the source image.  * @src_y: The y coordinate in the source image.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Clone from the source to the dest drawable using the current brush  *  * This tool clones (copies) from the source drawable starting at the  * specified source coordinates to the dest drawable. If the  * \"clone_type\" argument is set to PATTERN-CLONE, then the current  * pattern is used as the source and the \"src_drawable\" argument is  * ignored. Pattern cloning assumes a tileable pattern and mods the sum  * of the src coordinates and subsequent stroke offsets with the width  * and height of the pattern. For image cloning, if the sum of the src  * coordinates and subsequent stroke offsets exceeds the extents of the  * src drawable, then no paint is transferred. The clone tool is  * capable of transforming between any image types including  * RGB-&gt;Indexed--although converting from any type to indexed is  * significantly slower.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_clone:  * @drawable_ID: The affected drawable.  * @src_drawable_ID: The source drawable.  * @clone_type: The type of clone.  * @src_x: The x coordinate in the source image.  * @src_y: The y coordinate in the source image.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Clone from the source to the dest drawable using the current brush  *  * This tool clones (copies) from the source drawable starting at the  * specified source coordinates to the dest drawable. If the  * \"clone_type\" argument is set to PATTERN-CLONE, then the current  * pattern is used as the source and the \"src_drawable\" argument is  * ignored. Pattern cloning assumes a tileable pattern and mods the sum  * of the src coordinates and subsequent stroke offsets with the width  * and height of the pattern. For image cloning, if the sum of the src  * coordinates and subsequent stroke offsets exceeds the extents of the  * src drawable, then no paint is transferred. The clone tool is  * capable of transforming between any image types including  * RGB-&gt;Indexed--although converting from any type to indexed is  * significantly slower.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -308,7 +308,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_clone_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Clone from the source to the dest drawable using the current brush  *  * This tool clones (copies) from the source drawable starting at the  * specified source coordinates to the dest drawable. This function  * performs exactly the same as the gimp_clone() function except that  * the tools arguments are obtained from the clones option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_clone_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Clone from the source to the dest drawable using the current brush  *  * This tool clones (copies) from the source drawable starting at the  * specified source coordinates to the dest drawable. This function  * performs exactly the same as the gimp_clone() function except that  * the tools arguments are obtained from the clones option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -391,7 +391,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_convolve:  * @drawable_ID: The affected drawable.  * @pressure: The pressure.  * @convolve_type: Convolve type.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Convolve (Blur, Sharpen) using the current brush.  *  * This tool convolves the specified drawable with either a sharpening  * or blurring kernel. The pressure parameter controls the magnitude of  * the operation. Like the paintbrush, this tool linearly interpolates  * between the specified stroke coordinates.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_convolve:  * @drawable_ID: The affected drawable.  * @pressure: The pressure.  * @convolve_type: Convolve type.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Convolve (Blur, Sharpen) using the current brush.  *  * This tool convolves the specified drawable with either a sharpening  * or blurring kernel. The pressure parameter controls the magnitude of  * the operation. Like the paintbrush, this tool linearly interpolates  * between the specified stroke coordinates.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -488,7 +488,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_convolve_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Convolve (Blur, Sharpen) using the current brush.  *  * This tool convolves the specified drawable with either a sharpening  * or blurring kernel. This function performs exactly the same as the  * gimp_convolve() function except that the tools arguments are  * obtained from the convolve option dialog. It this dialog has not  * been activated then the dialogs default values will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_convolve_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Convolve (Blur, Sharpen) using the current brush.  *  * This tool convolves the specified drawable with either a sharpening  * or blurring kernel. This function performs exactly the same as the  * gimp_convolve() function except that the tools arguments are  * obtained from the convolve option dialog. It this dialog has not  * been activated then the dialogs default values will be used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -571,7 +571,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dodgeburn:  * @drawable_ID: The affected drawable.  * @exposure: The exposure of the strokes.  * @dodgeburn_type: The type either dodge or burn.  * @dodgeburn_mode: The mode.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_dodgeburn:  * @drawable_ID: The affected drawable.  * @exposure: The exposure of the strokes.  * @dodgeburn_type: The type either dodge or burn.  * @dodgeburn_mode: The mode.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -675,7 +675,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_dodgeburn_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure. This is the same as the  * gimp_dodgeburn() function except that the exposure, type and mode  * are taken from the tools option dialog. If the dialog has not been  * activated then the defaults as used by the dialog will be used.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_dodgeburn_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Dodgeburn image with varying exposure. This is the same as the  * gimp_dodgeburn() function except that the exposure, type and mode  * are taken from the tools option dialog. If the dialog has not been  * activated then the defaults as used by the dialog will be used.  *  * Dodgeburn. More details here later.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -758,7 +758,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_eraser:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  * @hardness: How to apply the brush.  * @method: The paint method to use.  *  * Erase using the current brush.  *  * This tool erases using the current brush mask. If the specified  * drawable contains an alpha channel, then the erased pixels will  * become transparent. Otherwise, the eraser tool replaces the contents  * of the drawable with the background color. Like paintbrush, this  * tool linearly interpolates between the specified stroke coordinates.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_eraser:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  * @hardness: How to apply the brush.  * @method: The paint method to use.  *  * Erase using the current brush.  *  * This tool erases using the current brush mask. If the specified  * drawable contains an alpha channel, then the erased pixels will  * become transparent. Otherwise, the eraser tool replaces the contents  * of the drawable with the background color. Like paintbrush, this  * tool linearly interpolates between the specified stroke coordinates.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -855,7 +855,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_eraser_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Erase using the current brush.  *  * This tool erases using the current brush mask. This function  * performs exactly the same as the gimp_eraser() function except that  * the tools arguments are obtained from the eraser option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_eraser_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Erase using the current brush.  *  * This tool erases using the current brush mask. This function  * performs exactly the same as the gimp_eraser() function except that  * the tools arguments are obtained from the eraser option dialog. It  * this dialog has not been activated then the dialogs default values  * will be used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -938,7 +938,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_heal:  * @drawable_ID: The affected drawable.  * @src_drawable_ID: The source drawable.  * @src_x: The x coordinate in the source image.  * @src_y: The y coordinate in the source image.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals the source drawable starting at the specified source  * coordinates to the dest drawable. For image healing, if the sum of  * the src coordinates and subsequent stroke offsets exceeds the  * extents of the src drawable, then no paint is transferred. The  * healing tool is capable of transforming between any image types  * except RGB-&gt;Indexed.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_heal:  * @drawable_ID: The affected drawable.  * @src_drawable_ID: The source drawable.  * @src_x: The x coordinate in the source image.  * @src_y: The y coordinate in the source image.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals the source drawable starting at the specified source  * coordinates to the dest drawable. For image healing, if the sum of  * the src coordinates and subsequent stroke offsets exceeds the  * extents of the src drawable, then no paint is transferred. The  * healing tool is capable of transforming between any image types  * except RGB-&gt;Indexed.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1042,7 +1042,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_heal_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals from the source drawable starting at the specified  * source coordinates to the dest drawable. This function performs  * exactly the same as the gimp_heal() function except that the tools  * arguments are obtained from the healing option dialog. It this  * dialog has not been activated then the dialogs default values will  * be used.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_heal_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Heal from the source to the dest drawable using the current brush  *  * This tool heals from the source drawable starting at the specified  * source coordinates to the dest drawable. This function performs  * exactly the same as the gimp_heal() function except that the tools  * arguments are obtained from the healing option dialog. It this  * dialog has not been activated then the dialogs default values will  * be used.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1125,7 +1125,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paintbrush:  * @drawable_ID: The affected drawable.  * @fade_out: Fade out parameter.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  * @method: The paint method to use.  * @gradient_length: Length of gradient to draw.  *  * Paint in the current brush with optional fade out parameter and pull  * colors from a gradient.  *  * This tool is the standard paintbrush. It draws linearly interpolated  * lines through the specified stroke coordinates. It operates on the  * specified drawable in the foreground color with the active brush.  * The 'fade-out' parameter is measured in pixels and allows the brush  * stroke to linearly fall off. The pressure is set to the maximum at  * the beginning of the stroke. As the distance of the stroke nears the  * fade-out value, the pressure will approach zero. The gradient-length  * is the distance to spread the gradient over. It is measured in  * pixels. If the gradient-length is 0, no gradient is used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_paintbrush:  * @drawable_ID: The affected drawable.  * @fade_out: Fade out parameter.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  * @method: The paint method to use.  * @gradient_length: Length of gradient to draw.  *  * Paint in the current brush with optional fade out parameter and pull  * colors from a gradient.  *  * This tool is the standard paintbrush. It draws linearly interpolated  * lines through the specified stroke coordinates. It operates on the  * specified drawable in the foreground color with the active brush.  * The 'fade-out' parameter is measured in pixels and allows the brush  * stroke to linearly fall off. The pressure is set to the maximum at  * the beginning of the stroke. As the distance of the stroke nears the  * fade-out value, the pressure will approach zero. The gradient-length  * is the distance to spread the gradient over. It is measured in  * pixels. If the gradient-length is 0, no gradient is used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1229,7 +1229,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_paintbrush_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush. The fade out parameter and pull colors  * from a gradient parameter are set from the paintbrush options  * dialog. If this dialog has not been activated then the dialog  * defaults will be used.  *  * This tool is similar to the standard paintbrush. It draws linearly  * interpolated lines through the specified stroke coordinates. It  * operates on the specified drawable in the foreground color with the  * active brush. The 'fade-out' parameter is measured in pixels and  * allows the brush stroke to linearly fall off (value obtained from  * the option dialog). The pressure is set to the maximum at the  * beginning of the stroke. As the distance of the stroke nears the  * fade-out value, the pressure will approach zero. The gradient-length  * (value obtained from the option dialog) is the distance to spread  * the gradient over. It is measured in pixels. If the gradient-length  * is 0, no gradient is used.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_paintbrush_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush. The fade out parameter and pull colors  * from a gradient parameter are set from the paintbrush options  * dialog. If this dialog has not been activated then the dialog  * defaults will be used.  *  * This tool is similar to the standard paintbrush. It draws linearly  * interpolated lines through the specified stroke coordinates. It  * operates on the specified drawable in the foreground color with the  * active brush. The 'fade-out' parameter is measured in pixels and  * allows the brush stroke to linearly fall off (value obtained from  * the option dialog). The pressure is set to the maximum at the  * beginning of the stroke. As the distance of the stroke nears the  * fade-out value, the pressure will approach zero. The gradient-length  * (value obtained from the option dialog) is the distance to spread  * the gradient over. It is measured in pixels. If the gradient-length  * is 0, no gradient is used.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1312,7 +1312,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_pencil:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush without sub-pixel sampling.  *  * This tool is the standard pencil. It draws linearly interpolated  * lines through the specified stroke coordinates. It operates on the  * specified drawable in the foreground color with the active brush.  * The brush mask is treated as though it contains only black and white  * values. Any value below half is treated as black; any above half, as  * white.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_pencil:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Paint in the current brush without sub-pixel sampling.  *  * This tool is the standard pencil. It draws linearly interpolated  * lines through the specified stroke coordinates. It operates on the  * specified drawable in the foreground color with the active brush.  * The brush mask is treated as though it contains only black and white  * values. Any value below half is treated as black; any above half, as  * white.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1395,7 +1395,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_smudge:  * @drawable_ID: The affected drawable.  * @pressure: The pressure of the smudge strokes.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Smudge image with varying pressure.  *  * This tool simulates a smudge using the current brush. High pressure  * results in a greater smudge of paint while low pressure results in a  * lesser smudge.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_smudge:  * @drawable_ID: The affected drawable.  * @pressure: The pressure of the smudge strokes.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Smudge image with varying pressure.  *  * This tool simulates a smudge using the current brush. High pressure  * results in a greater smudge of paint while low pressure results in a  * lesser smudge.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1485,7 +1485,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_smudge_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Smudge image with varying pressure.  *  * This tool simulates a smudge using the current brush. It behaves  * exactly the same as gimp_smudge() except that the pressure value is  * taken from the smudge tool options or the options default if the  * tools option dialog has not been activated.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_smudge_default:  * @drawable_ID: The affected drawable.  * @num_strokes: Number of stroke control points (count each coordinate as 2 points).  * @strokes: Array of stroke coordinates: { s1.x, s1.y, s2.x, s2.y, ..., sn.x, sn.y }.  *  * Smudge image with varying pressure.  *  * This tool simulates a smudge using the current brush. It behaves  * exactly the same as gimp_smudge() except that the pressure value is  * taken from the smudge tool options or the options default if the  * tools option dialog has not been activated.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

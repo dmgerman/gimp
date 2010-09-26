@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29bd09f10103
+DECL|enum|__anon2c88a0790103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4261,6 +4261,15 @@ argument_list|(
 name|generated_brush
 argument_list|)
 expr_stmt|;
+name|g_signal_handlers_block_by_func
+argument_list|(
+name|generated_brush
+argument_list|,
+name|gimp_brush_core_invalidate_cache
+argument_list|,
+name|core
+argument_list|)
+expr_stmt|;
 name|gimp_brush_generated_set_aspect_ratio
 argument_list|(
 name|generated_brush
@@ -4290,6 +4299,15 @@ argument_list|(
 name|generated_brush
 argument_list|,
 name|ratio
+argument_list|)
+expr_stmt|;
+name|g_signal_handlers_unblock_by_func
+argument_list|(
+name|generated_brush
+argument_list|,
+name|gimp_brush_core_invalidate_cache
+argument_list|,
+name|core
 argument_list|)
 expr_stmt|;
 block|}

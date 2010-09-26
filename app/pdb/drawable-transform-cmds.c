@@ -269,9 +269,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -287,8 +290,27 @@ name|height
 argument_list|)
 condition|)
 block|{
-name|success
-operator|=
+name|gimp_transform_get_flip_axis
+argument_list|(
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|flip_type
+argument_list|,
+name|auto_center
+argument_list|,
+operator|&
+name|axis
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_flip
 argument_list|(
 name|drawable
@@ -297,13 +319,17 @@ name|context
 argument_list|,
 name|flip_type
 argument_list|,
-name|auto_center
-argument_list|,
 name|axis
 argument_list|,
 name|clip_result
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 block|}
 block|}
 name|return_vals
@@ -585,9 +611,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -670,9 +699,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -692,7 +721,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -935,9 +970,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -1037,9 +1075,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -1059,7 +1097,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -1414,9 +1458,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -1515,9 +1562,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -1537,7 +1584,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -1844,9 +1897,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -1962,9 +2018,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -1984,7 +2040,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -2211,9 +2273,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -2229,8 +2294,38 @@ name|height
 argument_list|)
 condition|)
 block|{
-name|success
-operator|=
+name|gdouble
+name|cx
+init|=
+name|center_x
+decl_stmt|;
+name|gdouble
+name|cy
+init|=
+name|center_y
+decl_stmt|;
+name|gimp_transform_get_rotate_center
+argument_list|(
+name|x
+argument_list|,
+name|y
+argument_list|,
+name|width
+argument_list|,
+name|height
+argument_list|,
+name|auto_center
+argument_list|,
+operator|&
+name|cx
+argument_list|,
+operator|&
+name|cy
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_rotate
 argument_list|(
 name|drawable
@@ -2239,15 +2334,19 @@ name|context
 argument_list|,
 name|rotate_type
 argument_list|,
-name|auto_center
+name|cx
 argument_list|,
-name|center_x
-argument_list|,
-name|center_y
+name|cy
 argument_list|,
 name|clip_result
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 block|}
 block|}
 name|return_vals
@@ -2529,9 +2628,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -2633,9 +2735,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -2655,7 +2757,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -2898,9 +3006,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -3019,9 +3130,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -3041,7 +3152,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -3342,9 +3459,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -3439,9 +3559,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -3461,7 +3581,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -3714,9 +3840,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -3828,9 +3957,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -3850,7 +3979,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -4109,9 +4244,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -4198,9 +4336,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -4220,7 +4358,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -4431,9 +4575,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -4537,9 +4684,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -4559,7 +4706,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -4898,9 +5051,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -5009,9 +5165,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -5031,7 +5187,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -5322,9 +5484,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -5450,9 +5615,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -5472,7 +5637,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -5843,9 +6014,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -6016,9 +6190,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -6038,7 +6212,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -6361,9 +6541,12 @@ if|if
 condition|(
 name|success
 operator|&&
-name|gimp_drawable_mask_intersect
+name|gimp_item_mask_intersect
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x
@@ -6551,9 +6734,9 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-comment|/* Transform the selection */
-name|success
-operator|=
+if|if
+condition|(
+operator|!
 name|gimp_drawable_transform_affine
 argument_list|(
 name|drawable
@@ -6573,7 +6756,13 @@ name|clip_result
 argument_list|,
 name|progress
 argument_list|)
+condition|)
+block|{
+name|success
+operator|=
+name|FALSE
 expr_stmt|;
+block|}
 if|if
 condition|(
 name|progress
@@ -6662,9 +6851,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-flip-simple"
 argument_list|,
-literal|"Flip the specified drawable either vertically or horizontally."
+literal|"Deprecated: Use 'gimp-item-transform-flip-simple' instead."
 argument_list|,
-literal|"This procedure flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. If auto_center is set to TRUE, the flip is around the selection's center. Otherwise, the coordinate of the axis needs to be specified. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable."
+literal|"Deprecated: Use 'gimp-item-transform-flip-simple' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -6672,7 +6861,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-flip-simple"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -6849,9 +7038,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-flip"
 argument_list|,
-literal|"Flip the specified drawable around a given line."
+literal|"Deprecated: Use 'gimp-item-transform-flip' instead."
 argument_list|,
-literal|"This procedure flips the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then flipped. The axis to flip around is specified by specifying two points from that line. The return value is the ID of the flipped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and flipped drawable. The clip results parameter specifies wheter current selection will affect the transform."
+literal|"Deprecated: Use 'gimp-item-transform-flip' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -6859,7 +7048,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-flip"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7132,9 +7321,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-flip-default"
 argument_list|,
-literal|"Flip the specified drawable around a given line."
+literal|"Deprecated: Use 'gimp-item-transform-flip' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-flip' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-flip' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -7142,7 +7331,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-flip"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7353,9 +7542,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-perspective"
 argument_list|,
-literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-perspective' instead."
 argument_list|,
-literal|"This procedure performs a possibly non-affine transformation on the specified drawable by allowing the corners of the original bounding box to be arbitrarily remapped to any values. The specified drawable is remapped if no selection exists. However, if a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then remapped as specified. The return value is the ID of the remapped drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and remapped drawable. The 4 coordinates specify the new locations of each corner of the original bounding box. By specifying these values, any affine transformation (rotation, scaling, translation) can be affected. Additionally, these values can be specified such that the resulting transformed drawable will appear to have been projected via a perspective transform."
+literal|"Deprecated: Use 'gimp-item-transform-perspective' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -7363,7 +7552,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-perspective"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -7730,9 +7919,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-perspective-default"
 argument_list|,
-literal|"Perform a possibly non-affine transformation on the specified drawable, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-perspective' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-perspective' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-perspective' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -7740,7 +7929,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-perspective"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8045,9 +8234,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-rotate-simple"
 argument_list|,
-literal|"Rotate the specified drawable about given coordinates through the specified angle."
+literal|"Deprecated: Use 'gimp-item-transform-rotate-simple' instead."
 argument_list|,
-literal|"This function rotates the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and rotated drawable."
+literal|"Deprecated: Use 'gimp-item-transform-rotate-simple' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -8055,7 +8244,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-rotate-simple"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8238,9 +8427,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-rotate"
 argument_list|,
-literal|"Rotate the specified drawable about given coordinates through the specified angle."
+literal|"Deprecated: Use 'gimp-item-transform-rotate' instead."
 argument_list|,
-literal|"This function rotates the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then rotated by the specified amount. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and rotated drawable."
+literal|"Deprecated: Use 'gimp-item-transform-rotate' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -8248,7 +8437,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-rotate"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8516,9 +8705,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-rotate-default"
 argument_list|,
-literal|"Rotate the specified drawable about given coordinates through the specified angle."
+literal|"Deprecated: Use 'gimp-item-transform-rotate' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-rotate' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-rotate' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -8526,7 +8715,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-rotate"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -8732,9 +8921,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-scale"
 argument_list|,
-literal|"Scale the specified drawable with extra parameters"
+literal|"Deprecated: Use 'gimp-item-transform-scale' instead."
 argument_list|,
-literal|"This procedure scales the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then scaled by the specified amount. The return value is the ID of the scaled drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and scaled drawable."
+literal|"Deprecated: Use 'gimp-item-transform-scale' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -8742,7 +8931,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-scale"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9017,9 +9206,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-scale-default"
 argument_list|,
-literal|"Scale the specified drawable with extra parameters"
+literal|"Deprecated: Use 'gimp-item-transform-scale' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-scale' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-scale' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -9027,7 +9216,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-scale"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9240,9 +9429,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-shear"
 argument_list|,
-literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-shear' instead."
 argument_list|,
-literal|"This procedure shears the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then sheard by the specified amount. The return value is the ID of the sheard drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and sheard drawable. The shear type parameter indicates whether the shear will be applied horizontally or vertically. The magnitude can be either positive or negative and indicates the extent (in pixels) to shear by."
+literal|"Deprecated: Use 'gimp-item-transform-shear' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -9250,7 +9439,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-shear"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9491,9 +9680,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-shear-default"
 argument_list|,
-literal|"Shear the specified drawable about its center by the specified magnitude, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-shear' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-shear' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-shear' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -9501,7 +9690,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-shear"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -9680,9 +9869,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-2d"
 argument_list|,
-literal|"Transform the specified drawable in 2d, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-2d' instead."
 argument_list|,
-literal|"This procedure transforms the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The transformation is done by scaling the image by the x and y scale factors about the point (source_x, source_y), then rotating around the same point, then translating that point to the new position (dest_x, dest_y). The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and transformed drawable."
+literal|"Deprecated: Use 'gimp-item-transform-2d' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -9690,7 +9879,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-2d"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -10034,9 +10223,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-2d-default"
 argument_list|,
-literal|"Transform the specified drawable in 2d, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-2d' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-2d' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-2d' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -10044,7 +10233,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-2d"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -10326,9 +10515,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-matrix"
 argument_list|,
-literal|"Transform the specified drawable in 2d, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-matrix' instead."
 argument_list|,
-literal|"This procedure transforms the specified drawable if no selection exists. If a selection exists, the portion of the drawable which lies under the selection is cut from the drawable and made into a floating selection which is then transformed. The transformation is done by assembling a 3x3 matrix from the coefficients passed. The return value is the ID of the rotated drawable. If there was no selection, this will be equal to the drawable ID supplied as input. Otherwise, this will be the newly created and transformed drawable."
+literal|"Deprecated: Use 'gimp-item-transform-matrix' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -10336,7 +10525,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-matrix"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -10726,9 +10915,9 @@ name|procedure
 argument_list|,
 literal|"gimp-drawable-transform-matrix-default"
 argument_list|,
-literal|"Transform the specified drawable in 2d, with extra parameters."
+literal|"Deprecated: Use 'gimp-item-transform-matrix' instead."
 argument_list|,
-literal|"This procedure is a variant of 'gimp-drawable-transform-matrix' which uses no interpolation/supersampling at all, or default values (depending on the 'interpolate' parameter)."
+literal|"Deprecated: Use 'gimp-item-transform-matrix' instead."
 argument_list|,
 literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
@@ -10736,7 +10925,7 @@ literal|"Jo\xc3\xa3o S. O. Bueno"
 argument_list|,
 literal|"2004"
 argument_list|,
-name|NULL
+literal|"gimp-item-transform-matrix"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

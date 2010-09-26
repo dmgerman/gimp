@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a9970fe0108
+DECL|struct|__anon2973e0930108
 block|{
 DECL|member|resolution
 name|gdouble
@@ -5076,11 +5076,14 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 comment|/* Tell GIMP to display the image.    */
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

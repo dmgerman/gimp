@@ -351,7 +351,7 @@ comment|/* Data structure holding data between runs */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab8f480108
+DECL|struct|__anon2c4ebbed0108
 typedef|typedef
 struct|struct
 block|{
@@ -398,7 +398,7 @@ comment|/* The dialog information */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2bab8f480208
+DECL|struct|__anon2c4ebbed0208
 typedef|typedef
 struct|struct
 block|{
@@ -3997,11 +3997,14 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_id
 argument_list|,
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

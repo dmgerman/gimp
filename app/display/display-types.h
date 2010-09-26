@@ -38,6 +38,24 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCanvasItem
+typedef|typedef
+name|struct
+name|_GimpCanvasItem
+name|GimpCanvasItem
+typedef|;
+end_typedef
+
+begin_typedef
+DECL|typedef|GimpCanvasGroup
+typedef|typedef
+name|struct
+name|_GimpCanvasGroup
+name|GimpCanvasGroup
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDisplay
 typedef|typedef
 name|struct
@@ -54,10 +72,6 @@ name|_GimpDisplayShell
 name|GimpDisplayShell
 typedef|;
 end_typedef
-
-begin_comment
-comment|/* typedef struct _GimpDisplayOptions GimpDisplayOptions; in config-types.h */
-end_comment
 
 begin_typedef
 DECL|typedef|GimpImageWindow

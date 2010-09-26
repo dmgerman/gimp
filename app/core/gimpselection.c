@@ -696,6 +696,15 @@ name|gimp_selection_stroke
 expr_stmt|;
 name|item_class
 operator|->
+name|default_name
+operator|=
+name|_
+argument_list|(
+literal|"Selection Mask"
+argument_list|)
+expr_stmt|;
+name|item_class
+operator|->
 name|translate_desc
 operator|=
 name|C_
@@ -2268,10 +2277,7 @@ name|height
 argument_list|,
 name|GIMP_GRAY_IMAGE
 argument_list|,
-name|_
-argument_list|(
-literal|"Selection Mask"
-argument_list|)
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_channel_set_color
@@ -2827,9 +2833,9 @@ argument_list|)
 condition|)
 name|non_empty
 operator|=
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|pickable
 argument_list|)
@@ -3589,9 +3595,12 @@ comment|/*  Make sure there is a region to float...  */
 if|if
 condition|(
 operator|!
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x1

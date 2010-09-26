@@ -365,7 +365,7 @@ condition|)
 block|{
 name|g_print
 argument_list|(
-literal|"git commit %s"
+literal|"git-describe: %s"
 argument_list|,
 name|GIMP_GIT_VERSION
 argument_list|)

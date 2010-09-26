@@ -85,6 +85,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gint32
+name|gimp_layer_group_new
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|G_GNUC_INTERNAL
 name|gint32
 name|_gimp_layer_copy
@@ -137,6 +147,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_layer_scale_full
@@ -158,6 +174,15 @@ name|interpolation
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gboolean

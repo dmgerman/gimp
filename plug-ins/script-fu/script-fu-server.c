@@ -105,6 +105,19 @@ directive|include
 file|<ws2tcpip.h>
 end_include
 
+begin_typedef
+DECL|typedef|sa_family_t
+typedef|typedef
+name|short
+name|sa_family_t
+typedef|;
+end_typedef
+
+begin_comment
+DECL|typedef|sa_family_t
+comment|/* Not defined by winsock */
+end_comment
+
 begin_ifndef
 ifndef|#
 directive|ifndef
@@ -456,7 +469,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957f10e0108
+DECL|struct|__anon2a985d790108
 block|{
 DECL|member|command
 name|gchar
@@ -480,7 +493,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2957f10e0208
+DECL|struct|__anon2a985d790208
 block|{
 DECL|member|port_entry
 name|GtkWidget
@@ -514,7 +527,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2957f10e030a
+DECL|union|__anon2a985d79030a
 block|{
 DECL|member|family
 name|sa_family_t

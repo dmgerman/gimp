@@ -3631,17 +3631,17 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-layer-alpha"
 argument_list|,
-literal|"Transfer the specified layer's alpha channel to the selection mask."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"The alpha channel information is used to create a selection mask such that for any pixel in the image defined in the specified layer, that layer pixel's alpha value is transferred to the selection mask. If the layer is undefined at a particular image pixel, the associated selection mask value is set to 0. A layer without an alpha channel is considered opaque."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-to-selection"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3702,17 +3702,17 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-load"
 argument_list|,
-literal|"Transfer the specified channel to the selection mask."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"This procedure loads the specified channel into the selection mask."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-to-selection"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3866,17 +3866,17 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-combine"
 argument_list|,
-literal|"Combines the specified channel with the selection mask."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"This procedure combines the specified channel into the selection mask."
+literal|"Deprecated: Use 'gimp-item-to-selection' instead."
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"Spencer Kimball& Peter Mattis"
+literal|""
 argument_list|,
-literal|"1995-1996"
+literal|""
 argument_list|,
-name|NULL
+literal|"gimp-item-to-selection"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

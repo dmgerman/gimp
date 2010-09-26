@@ -92,7 +92,7 @@ comment|/* Declarations for objects of type pdb */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b5e54460108
+DECL|struct|__anon2b3631a30108
 typedef|typedef
 struct|struct
 block|{
@@ -112,7 +112,7 @@ comment|/* Declarations for objects of type pdbFunc */
 end_comment
 
 begin_typedef
-DECL|struct|__anon2b5e54460208
+DECL|struct|__anon2b3631a30208
 typedef|typedef
 struct|struct
 block|{
@@ -3755,7 +3755,7 @@ name|pdb_as_mapping
 init|=
 block|{
 operator|(
-name|inquiry
+name|lenfunc
 operator|)
 literal|0
 block|,

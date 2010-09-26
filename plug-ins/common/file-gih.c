@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2c7d92e30108
+DECL|struct|__anon2bd659de0108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7d92e30208
+DECL|struct|__anon2bd659de0208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -2581,11 +2581,14 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
 name|layer_ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|num_layers
 operator|++

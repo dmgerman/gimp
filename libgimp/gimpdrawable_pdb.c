@@ -48,397 +48,7 @@ comment|/**  * SECTION: gimpdrawable  * @title: gimpdrawable  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_drawable_is_valid:  * @drawable_ID: The drawable to check.  *  * Deprecated: Use gimp_item_is_valid() instead.  *  * Returns: Whether the drawable ID is valid.  *  * Since: GIMP 2.4  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_is_valid (gint32 drawable_ID)
-name|gimp_drawable_is_valid
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|valid
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-is-valid"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|valid
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|valid
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_is_layer:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_layer() instead.  *  * Returns: TRUE if the drawable is a layer, FALSE otherwise.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_is_layer (gint32 drawable_ID)
-name|gimp_drawable_is_layer
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|layer
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-is-layer"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|layer
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|layer
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_is_text_layer:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a text layer.  *  * This procedure returns TRUE if the specified drawable is a text  * layer.  *  * Returns: TRUE if the drawable is a text layer, FALSE otherwise.  *  * Since: GIMP 2.6  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_is_text_layer (gint32 drawable_ID)
-name|gimp_drawable_is_text_layer
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|text_layer
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-is-text-layer"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|text_layer
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|text_layer
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_is_layer_mask:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_layer_mask() instead.  *  * Returns: TRUE if the drawable is a layer mask, FALSE otherwise.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_is_layer_mask (gint32 drawable_ID)
-name|gimp_drawable_is_layer_mask
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|layer_mask
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-is-layer-mask"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|layer_mask
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|layer_mask
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_is_channel:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_is_channel() instead.  *  * Returns: TRUE if the drawable is a channel, FALSE otherwise.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_is_channel (gint32 drawable_ID)
-name|gimp_drawable_is_channel
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|channel
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-is-channel"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|channel
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|channel
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_type:  * @drawable_ID: The drawable.  *  * Returns the drawable's type.  *  * This procedure returns the drawable's type.  *  * Returns: The drawable's type.  */
+comment|/**  * gimp_drawable_type:  * @drawable_ID: The drawable.  *  * Returns the drawable's type.  *  * This procedure returns the drawable's type.  *  * Returns: The drawable's type.  **/
 end_comment
 
 begin_function
@@ -516,7 +126,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_type_with_alpha:  * @drawable_ID: The drawable.  *  * Returns the drawable's type with alpha.  *  * This procedure returns the drawable's type as if had an alpha  * channel. If the type is currently Gray, for instance, the returned  * type would be GrayA. If the drawable already has an alpha channel,  * the drawable's type is simply returned.  *  * Returns: The drawable's type with alpha.  */
+comment|/**  * gimp_drawable_type_with_alpha:  * @drawable_ID: The drawable.  *  * Returns the drawable's type with alpha.  *  * This procedure returns the drawable's type as if had an alpha  * channel. If the type is currently Gray, for instance, the returned  * type would be GrayA. If the drawable already has an alpha channel,  * the drawable's type is simply returned.  *  * Returns: The drawable's type with alpha.  **/
 end_comment
 
 begin_function
@@ -594,7 +204,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_has_alpha:  * @drawable_ID: The drawable.  *  * Returns TRUE if the drawable has an alpha channel.  *  * This procedure returns whether the specified drawable has an alpha  * channel. This can only be true for layers, and the associated type  * will be one of: { RGBA , GRAYA, INDEXEDA }.  *  * Returns: Does the drawable have an alpha channel?  */
+comment|/**  * gimp_drawable_has_alpha:  * @drawable_ID: The drawable.  *  * Returns TRUE if the drawable has an alpha channel.  *  * This procedure returns whether the specified drawable has an alpha  * channel. This can only be true for layers, and the associated type  * will be one of: { RGBA , GRAYA, INDEXEDA }.  *  * Returns: Does the drawable have an alpha channel?  **/
 end_comment
 
 begin_function
@@ -672,7 +282,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_rgb:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an RGB type.  *  * This procedure returns TRUE if the specified drawable is of type {  * RGB, RGBA }.  *  * Returns: TRUE if the drawable is an RGB type.  */
+comment|/**  * gimp_drawable_is_rgb:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an RGB type.  *  * This procedure returns TRUE if the specified drawable is of type {  * RGB, RGBA }.  *  * Returns: TRUE if the drawable is an RGB type.  **/
 end_comment
 
 begin_function
@@ -750,7 +360,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_gray:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a grayscale type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Gray, GrayA }.  *  * Returns: TRUE if the drawable is a grayscale type.  */
+comment|/**  * gimp_drawable_is_gray:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is a grayscale type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Gray, GrayA }.  *  * Returns: TRUE if the drawable is a grayscale type.  **/
 end_comment
 
 begin_function
@@ -828,7 +438,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_is_indexed:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an indexed type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Indexed, IndexedA }.  *  * Returns: TRUE if the drawable is an indexed type.  */
+comment|/**  * gimp_drawable_is_indexed:  * @drawable_ID: The drawable.  *  * Returns whether the drawable is an indexed type.  *  * This procedure returns TRUE if the specified drawable is of type {  * Indexed, IndexedA }.  *  * Returns: TRUE if the drawable is an indexed type.  **/
 end_comment
 
 begin_function
@@ -906,7 +516,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel (or the number  * of channels) for the specified drawable.  *  * Returns: Bytes per pixel.  */
+comment|/**  * gimp_drawable_bpp:  * @drawable_ID: The drawable.  *  * Returns the bytes per pixel.  *  * This procedure returns the number of bytes per pixel (or the number  * of channels) for the specified drawable.  *  * Returns: Bytes per pixel.  **/
 end_comment
 
 begin_function
@@ -984,7 +594,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_width:  * @drawable_ID: The drawable.  *  * Returns the width of the drawable.  *  * This procedure returns the specified drawable's width in pixels.  *  * Returns: Width of drawable.  */
+comment|/**  * gimp_drawable_width:  * @drawable_ID: The drawable.  *  * Returns the width of the drawable.  *  * This procedure returns the specified drawable's width in pixels.  *  * Returns: Width of drawable.  **/
 end_comment
 
 begin_function
@@ -1062,7 +672,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_height:  * @drawable_ID: The drawable.  *  * Returns the height of the drawable.  *  * This procedure returns the specified drawable's height in pixels.  *  * Returns: Height of drawable.  */
+comment|/**  * gimp_drawable_height:  * @drawable_ID: The drawable.  *  * Returns the height of the drawable.  *  * This procedure returns the specified drawable's height in pixels.  *  * Returns: Height of drawable.  **/
 end_comment
 
 begin_function
@@ -1140,7 +750,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_offsets:  * @drawable_ID: The drawable.  * @offset_x: x offset of drawable.  * @offset_y: y offset of drawable.  *  * Returns the offsets for the drawable.  *  * This procedure returns the specified drawable's offsets. This only  * makes sense if the drawable is a layer since channels are anchored.  * The offsets of a channel will be returned as 0.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_offsets:  * @drawable_ID: The drawable.  * @offset_x: x offset of drawable.  * @offset_y: y offset of drawable.  *  * Returns the offsets for the drawable.  *  * This procedure returns the specified drawable's offsets. This only  * makes sense if the drawable is a layer since channels are anchored.  * The offsets of a channel will be returned as 0.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1255,153 +865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_delete:  * @drawable_ID: The drawable to delete.  *  * Deprecated: Use gimp_item_delete() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_delete (gint32 drawable_ID)
-name|gimp_drawable_delete
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-delete"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_get_image:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_get_image() instead.  *  * Returns: The drawable's image.  */
-end_comment
-
-begin_function
-name|gint32
-DECL|function|gimp_drawable_get_image (gint32 drawable_ID)
-name|gimp_drawable_get_image
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gint32
-name|image_ID
-init|=
-operator|-
-literal|1
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-get-image"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|image_ID
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_image
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|image_ID
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_set_image:  * @drawable_ID: The drawable.  * @image_ID: The image.  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_image:  * @drawable_ID: The drawable.  * @image_ID: The image.  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1475,622 +939,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_name:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_get_name() instead.  *  * Returns: The drawable name.  */
-end_comment
-
-begin_function
-name|gchar
-modifier|*
-DECL|function|gimp_drawable_get_name (gint32 drawable_ID)
-name|gimp_drawable_get_name
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gchar
-modifier|*
-name|name
-init|=
-name|NULL
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-get-name"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|name
-operator|=
-name|g_strdup
-argument_list|(
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_string
-argument_list|)
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|name
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_set_name:  * @drawable_ID: The drawable.  * @name: The new drawable name.  *  * Deprecated: Use gimp_item_set_name() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_set_name (gint32 drawable_ID,const gchar * name)
-name|gimp_drawable_set_name
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|name
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-set-name"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_STRING
-argument_list|,
-name|name
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_get_visible:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_get_visible() instead.  *  * Returns: The drawable visibility.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_get_visible (gint32 drawable_ID)
-name|gimp_drawable_get_visible
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|visible
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-get-visible"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|visible
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|visible
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_set_visible:  * @drawable_ID: The drawable.  * @visible: The new drawable visibility.  *  * Deprecated: Use gimp_item_set_visible() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_set_visible (gint32 drawable_ID,gboolean visible)
-name|gimp_drawable_set_visible
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gboolean
-name|visible
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-set-visible"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|visible
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_get_linked:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_get_linked() instead.  *  * Returns: The drawable linked state (for moves).  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_get_linked (gint32 drawable_ID)
-name|gimp_drawable_get_linked
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|linked
-init|=
-name|FALSE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-get-linked"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|linked
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_int32
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|linked
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_set_linked:  * @drawable_ID: The drawable.  * @linked: The new drawable linked state.  *  * Deprecated: Use gimp_item_set_linked() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_set_linked (gint32 drawable_ID,gboolean linked)
-name|gimp_drawable_set_linked
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gboolean
-name|linked
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-set-linked"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|linked
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_get_tattoo:  * @drawable_ID: The drawable.  *  * Deprecated: Use gimp_item_get_tattoo() instead.  *  * Returns: The drawable tattoo.  */
-end_comment
-
-begin_function
-name|gint
-DECL|function|gimp_drawable_get_tattoo (gint32 drawable_ID)
-name|gimp_drawable_get_tattoo
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gint
-name|tattoo
-init|=
-literal|0
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-get-tattoo"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-if|if
-condition|(
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-condition|)
-name|tattoo
-operator|=
-name|return_vals
-index|[
-literal|1
-index|]
-operator|.
-name|data
-operator|.
-name|d_tattoo
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|tattoo
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_set_tattoo:  * @drawable_ID: The drawable.  * @tattoo: The new drawable tattoo.  *  * Deprecated: Use gimp_item_set_tattoo() instead.  *  * Returns: TRUE on success.  */
-end_comment
-
-begin_function
-name|gboolean
-DECL|function|gimp_drawable_set_tattoo (gint32 drawable_ID,gint tattoo)
-name|gimp_drawable_set_tattoo
-parameter_list|(
-name|gint32
-name|drawable_ID
-parameter_list|,
-name|gint
-name|tattoo
-parameter_list|)
-block|{
-name|GimpParam
-modifier|*
-name|return_vals
-decl_stmt|;
-name|gint
-name|nreturn_vals
-decl_stmt|;
-name|gboolean
-name|success
-init|=
-name|TRUE
-decl_stmt|;
-name|return_vals
-operator|=
-name|gimp_run_procedure
-argument_list|(
-literal|"gimp-drawable-set-tattoo"
-argument_list|,
-operator|&
-name|nreturn_vals
-argument_list|,
-name|GIMP_PDB_DRAWABLE
-argument_list|,
-name|drawable_ID
-argument_list|,
-name|GIMP_PDB_INT32
-argument_list|,
-name|tattoo
-argument_list|,
-name|GIMP_PDB_END
-argument_list|)
-expr_stmt|;
-name|success
-operator|=
-name|return_vals
-index|[
-literal|0
-index|]
-operator|.
-name|data
-operator|.
-name|d_status
-operator|==
-name|GIMP_PDB_SUCCESS
-expr_stmt|;
-name|gimp_destroy_params
-argument_list|(
-name|return_vals
-argument_list|,
-name|nreturn_vals
-argument_list|)
-expr_stmt|;
-return|return
-name|success
-return|;
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_drawable_mask_bounds:  * @drawable_ID: The drawable.  * @x1: x coordinate of the upper left corner of selection bounds.  * @y1: y coordinate of the upper left corner of selection bounds.  * @x2: x coordinate of the lower right corner of selection bounds.  * @y2: y coordinate of the lower right corner of selection bounds.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is a selection. If there is  * one, the upper left and lower right-hand corners of its bounding box  * are returned. These coordinates are specified relative to the  * drawable's origin, and bounded by the drawable's extents. Please  * note that the pixel specified by the lower right-hand coordinate of  * the bounding box is not part of the selection. The selection ends at  * the upper left corner of this pixel. This means the width of the  * selection can be calculated as (x2 - x1), its height as (y2 - y1).  * Note that the returned boolean does NOT correspond with the returned  * region being empty or not, it always returns whether the selection  * is non_empty. See gimp_drawable_mask_intersect() for a boolean  * return value which is more useful in most cases.  *  * Returns: TRUE if there is a selection.  */
+comment|/**  * gimp_drawable_mask_bounds:  * @drawable_ID: The drawable.  * @x1: x coordinate of the upper left corner of selection bounds.  * @y1: y coordinate of the upper left corner of selection bounds.  * @x2: x coordinate of the lower right corner of selection bounds.  * @y2: y coordinate of the lower right corner of selection bounds.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is a selection. If there is  * one, the upper left and lower right-hand corners of its bounding box  * are returned. These coordinates are specified relative to the  * drawable's origin, and bounded by the drawable's extents. Please  * note that the pixel specified by the lower right-hand coordinate of  * the bounding box is not part of the selection. The selection ends at  * the upper left corner of this pixel. This means the width of the  * selection can be calculated as (x2 - x1), its height as (y2 - y1).  * Note that the returned boolean does NOT correspond with the returned  * region being empty or not, it always returns whether the selection  * is non_empty. See gimp_drawable_mask_intersect() for a boolean  * return value which is more useful in most cases.  *  * Returns: TRUE if there is a selection.  **/
 end_comment
 
 begin_function
@@ -2234,7 +1083,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height. If there  * is no selection this function returns TRUE and the returned bounds  * are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_drawable_mask_intersect:  * @drawable_ID: The drawable.  * @x: x coordinate of the upper left corner of the intersection.  * @y: y coordinate of the upper left corner of the intersection.  * @width: width of the intersection.  * @height: height of the intersection.  *  * Find the bounding box of the current selection in relation to the  * specified drawable.  *  * This procedure returns whether there is an intersection between the  * drawable and the selection. Unlike gimp_drawable_mask_bounds(), the  * intersection's bounds are returned as x, y, width, height. If there  * is no selection this function returns TRUE and the returned bounds  * are the extents of the whole drawable.  *  * Returns: TRUE if the returned area is not empty.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -2378,7 +1227,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_merge_shadow:  * @drawable_ID: The drawable.  * @undo: Push merge to undo stack?  *  * Merge the shadow buffer with the specified drawable.  *  * This procedure combines the contents of the drawable's shadow buffer  * (for temporary processing) with the specified drawable. The 'undo'  * parameter specifies whether to add an undo step for the operation.  * Requesting no undo is useful for such applications as 'auto-apply'.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_merge_shadow:  * @drawable_ID: The drawable.  * @undo: Push merge to undo stack?  *  * Merge the shadow buffer with the specified drawable.  *  * This procedure combines the contents of the drawable's shadow buffer  * (for temporary processing) with the specified drawable. The 'undo'  * parameter specifies whether to add an undo step for the operation.  * Requesting no undo is useful for such applications as 'auto-apply'.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2452,7 +1301,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  */
+comment|/**  * gimp_drawable_free_shadow:  * @drawable_ID: The drawable.  *  * Free the specified drawable's shadow data (if it exists).  *  * This procedure is intended as a memory saving device. If any shadow  * memory has been allocated, it will be freed automatically when the  * drawable is removed from the image, or when the plug-in procedure  * which allocated it returns.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.6  **/
 end_comment
 
 begin_function
@@ -2519,7 +1368,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_update:  * @drawable_ID: The drawable.  * @x: x coordinate of upper left corner of update region.  * @y: y coordinate of upper left corner of update region.  * @width: Width of update region.  * @height: Height of update region.  *  * Update the specified region of the drawable.  *  * This procedure updates the specified region of the drawable. The (x,  * y) coordinate pair is relative to the drawable's origin, not to the  * image origin. Therefore, the entire drawable can be updated using  * (0, 0, width, height).  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_update:  * @drawable_ID: The drawable.  * @x: x coordinate of upper left corner of update region.  * @y: y coordinate of upper left corner of update region.  * @width: Width of update region.  * @height: Height of update region.  *  * Update the specified region of the drawable.  *  * This procedure updates the specified region of the drawable. The (x,  * y) coordinate pair is relative to the drawable's origin, not to the  * image origin. Therefore, the entire drawable can be updated using  * (0, 0, width, height).  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2614,7 +1463,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: The pixel value.  */
+comment|/**  * gimp_drawable_get_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  *  * Gets the value of the pixel at the specified coordinates.  *  * This procedure gets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable.  *  * Returns: The pixel value.  **/
 end_comment
 
 begin_function
@@ -2752,7 +1601,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_set_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  * @pixel: The pixel value.  *  * Sets the value of the pixel at the specified coordinates.  *  * This procedure sets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable. Note that this  * function is not undoable, you should use it only on drawables you  * just created yourself.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_set_pixel:  * @drawable_ID: The drawable.  * @x_coord: The x coordinate.  * @y_coord: The y coordinate.  * @num_channels: The number of channels for the pixel.  * @pixel: The pixel value.  *  * Sets the value of the pixel at the specified coordinates.  *  * This procedure sets the pixel value at the specified coordinates.  * The 'num_channels' argument must always be equal to the  * bytes-per-pixel value for the specified drawable. Note that this  * function is not undoable, you should use it only on drawables you  * just created yourself.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2849,7 +1698,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_fill:  * @drawable_ID: The drawable.  * @fill_type: The type of fill.  *  * Fill the drawable with the specified fill mode.  *  * This procedure fills the drawable. If the fill mode is foreground  * the current foreground color is used. If the fill mode is  * background, the current background color is used. If the fill type  * is white, then white is used. Transparent fill only affects layers  * with an alpha channel, in which case the alpha channel is set to  * transparent. If the drawable has no alpha channel, it is filled to  * white. No fill leaves the drawable's contents undefined. This  * procedure is unlike the bucket fill tool because it fills regardless  * of a selection. Its main purpose is to fill a newly created drawable  * before adding it to the image. This operation cannot be undone.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_fill:  * @drawable_ID: The drawable.  * @fill_type: The type of fill.  *  * Fill the drawable with the specified fill mode.  *  * This procedure fills the drawable. If the fill mode is foreground  * the current foreground color is used. If the fill mode is  * background, the current background color is used. If the fill type  * is white, then white is used. Transparent fill only affects layers  * with an alpha channel, in which case the alpha channel is set to  * transparent. If the drawable has no alpha channel, it is filled to  * white. No fill leaves the drawable's contents undefined. This  * procedure is unlike gimp_edit_fill() or the bucket fill tool because  * it fills regardless of a selection. Its main purpose is to fill a  * newly created drawable before adding it to the image. This operation  * cannot be undone.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -2923,7 +1772,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_offset:  * @drawable_ID: The drawable to offset.  * @wrap_around: wrap image around or fill vacated regions.  * @fill_type: fill vacated regions of drawable with background or transparent.  * @offset_x: offset by this amount in X direction.  * @offset_y: offset by this amount in Y direction.  *  * Offset the drawable by the specified amounts in the X and Y  * directions  *  * This procedure offsets the specified drawable by the amounts  * specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to  * TRUE, then portions of the drawable which are offset out of bounds  * are wrapped around. Alternatively, the undefined regions of the  * drawable can be filled with transparency or the background color, as  * specified by the 'fill-type' parameter.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_offset:  * @drawable_ID: The drawable to offset.  * @wrap_around: wrap image around or fill vacated regions.  * @fill_type: fill vacated regions of drawable with background or transparent.  * @offset_x: offset by this amount in X direction.  * @offset_y: offset by this amount in Y direction.  *  * Offset the drawable by the specified amounts in the X and Y  * directions  *  * This procedure offsets the specified drawable by the amounts  * specified by 'offset_x' and 'offset_y'. If 'wrap_around' is set to  * TRUE, then portions of the drawable which are offset out of bounds  * are wrapped around. Alternatively, the undefined regions of the  * drawable can be filled with transparency or the background color, as  * specified by the 'fill-type' parameter.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3018,7 +1867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  */
+comment|/**  * _gimp_drawable_thumbnail:  * @drawable_ID: The drawable.  * @width: The requested thumbnail width.  * @height: The requested thumbnail height.  * @actual_width: The previews width.  * @actual_height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -3233,7 +2082,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * _gimp_drawable_sub_thumbnail:  * @drawable_ID: The drawable.  * @src_x: The x coordinate of the area.  * @src_y: The y coordinate of the area.  * @src_width: The width of the area.  * @src_height: The height of the area.  * @dest_width: The thumbnail width.  * @dest_height: The thumbnail height.  * @width: The previews width.  * @height: The previews height.  * @bpp: The previews bpp.  * @thumbnail_data_count: The number of bytes in thumbnail data.  * @thumbnail_data: The thumbnail data.  *  * Get a thumbnail of a sub-area of a drawable drawable.  *  * This function gets data from which a thumbnail of a drawable preview  * can be created. Maximum x or y dimension is 1024 pixels. The pixels  * are returned in RGB[A] or GRAY[A] format. The bpp return value gives  * the number of bytes in the image.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -3476,7 +2325,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_drawable_foreground_extract:  * @drawable_ID: The drawable.  * @mode: The algorithm to use.  * @mask_ID: Tri-Map.  *  * Extract the foreground of a drawable using a given trimap.  *  * Image Segmentation by Uniform Color Clustering, see  * http://www.inf.fu-berlin.de/inst/pubs/tr-b-05-07.pdf  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

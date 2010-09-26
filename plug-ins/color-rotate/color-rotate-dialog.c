@@ -858,12 +858,6 @@ argument_list|)
 expr_stmt|;
 name|st
 operator|->
-name|action_flag
-operator|=
-name|VIRGIN
-expr_stmt|;
-name|st
-operator|->
 name|angle
 operator|=
 name|g_new
@@ -2049,12 +2043,6 @@ operator|->
 name|satur
 operator|=
 literal|0
-expr_stmt|;
-name|st
-operator|->
-name|action_flag
-operator|=
-name|VIRGIN
 expr_stmt|;
 name|top_vbox
 operator|=

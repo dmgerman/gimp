@@ -183,6 +183,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_scale_full
@@ -201,6 +207,15 @@ name|interpolation
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_function_decl
 name|gboolean
@@ -383,6 +398,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_add_layer
@@ -392,6 +413,34 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|layer_ID
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|gimp_image_insert_layer
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|layer_ID
+parameter_list|,
+name|gint32
+name|parent_ID
 parameter_list|,
 name|gint
 name|position
@@ -412,6 +461,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_add_channel
@@ -421,6 +476,34 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|channel_ID
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|gimp_image_insert_channel
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|channel_ID
+parameter_list|,
+name|gint32
+name|parent_ID
 parameter_list|,
 name|gint
 name|position
@@ -441,6 +524,12 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
 begin_function_decl
 name|gboolean
 name|gimp_image_add_vectors
@@ -450,6 +539,34 @@ name|image_ID
 parameter_list|,
 name|gint32
 name|vectors_ID
+parameter_list|,
+name|gint
+name|position
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
+
+begin_function_decl
+name|gboolean
+name|gimp_image_insert_vectors
+parameter_list|(
+name|gint32
+name|image_ID
+parameter_list|,
+name|gint32
+name|vectors_ID
+parameter_list|,
+name|gint32
+name|parent_ID
 parameter_list|,
 name|gint
 name|position

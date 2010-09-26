@@ -1299,7 +1299,6 @@ argument_list|(
 name|brush_tool
 argument_list|)
 expr_stmt|;
-comment|/*  don't create the segments for the purpose of undrawing (if we    *  don't have the segments, we can hardly have drawn them before)    */
 if|if
 condition|(
 operator|!
@@ -1310,14 +1309,7 @@ operator|&&
 name|brush_core
 operator|->
 name|main_brush
-operator|&&
-operator|!
-name|gimp_draw_tool_is_drawn
-argument_list|(
-name|draw_tool
-argument_list|)
 condition|)
-block|{
 name|gimp_brush_core_create_bound_segs
 argument_list|(
 name|brush_core
@@ -1325,7 +1317,6 @@ argument_list|,
 name|options
 argument_list|)
 expr_stmt|;
-block|}
 if|if
 condition|(
 name|brush_core
@@ -1443,7 +1434,7 @@ undef|#
 directive|undef
 name|EPSILON
 block|}
-name|gimp_draw_tool_draw_boundary
+name|gimp_draw_tool_add_boundary
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1458,8 +1449,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}
@@ -1469,7 +1458,7 @@ condition|(
 name|draw_fallback
 condition|)
 block|{
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1484,8 +1473,6 @@ argument_list|,
 literal|5
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

@@ -30,7 +30,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpcontext.h"
+file|"pdb/gimppdbcontext.h"
 end_include
 
 begin_include
@@ -113,7 +113,7 @@ name|main_context
 expr_stmt|;
 name|context
 operator|=
-name|gimp_context_new
+name|gimp_pdb_context_new
 argument_list|(
 name|plug_in
 operator|->
@@ -121,18 +121,9 @@ name|manager
 operator|->
 name|gimp
 argument_list|,
-literal|"plug-in context"
-argument_list|,
-name|NULL
-argument_list|)
-expr_stmt|;
-name|gimp_context_copy_properties
-argument_list|(
 name|parent
 argument_list|,
-name|context
-argument_list|,
-name|GIMP_CONTEXT_ALL_PROPS_MASK
+name|FALSE
 argument_list|)
 expr_stmt|;
 name|proc_frame

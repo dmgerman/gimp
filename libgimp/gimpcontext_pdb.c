@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpcontext  * @title: gimpcontext  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_context_push:  *  * Pushes a context to the top of the plug-in's context stack.  *  * This procedure creates a new context by copying the current context.  * This copy becomes the new current context for the calling plug-in  * until it is popped again using gimp_context_pop().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_push:  *  * Pushes a context to the top of the plug-in's context stack.  *  * This procedure creates a new context by copying the current context.  * This copy becomes the new current context for the calling plug-in  * until it is popped again using gimp_context_pop().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_pop:  *  * Pops the topmost context from the plug-in's context stack.  *  * This procedure removes the topmost context from the plug-in's  * context stack. The context that was active before the corresponding  * call to gimp_context_push() becomes the new current context of the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_pop:  *  * Pops the topmost context from the plug-in's context stack.  *  * This procedure removes the topmost context from the plug-in's  * context stack. The context that was active before the corresponding  * call to gimp_context_push() becomes the new current context of the  * plug-in.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -148,7 +148,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_context_list_paint_methods:  * @num_paint_methods: The number of the available paint methods.  * @paint_methods: The names of the available paint methods.  *  * Lists the available paint methods.  *  * This procedure lists the names of the available paint methods. Any  * of the results can be used for gimp_context_set_paint_method().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -298,7 +298,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: The name of the active paint method.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_context_get_paint_method:  *  * Retrieve the currently active paint method.  *  * This procedure returns the name of the currently active paint  * method.  *  * Returns: The name of the active paint method.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -376,7 +376,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_paint_method:  * @name: The name of the paint method.  *  * Set the specified paint method as the active paint method.  *  * This procedure allows the active paint method to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the available paint methods. If there is no  * matching method found, this procedure will return an error.  * Otherwise, the specified method becomes active and will be used in  * all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_context_set_paint_method:  * @name: The name of the paint method.  *  * Set the specified paint method as the active paint method.  *  * This procedure allows the active paint method to be set by  * specifying its name. The name is simply a string which corresponds  * to one of the names of the available paint methods. If there is no  * matching method found, this procedure will return an error.  * Otherwise, the specified method becomes active and will be used in  * all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -445,7 +445,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_foreground:  * @foreground: The foreground color.  *  * Get the current GIMP foreground color.  *  * This procedure returns the current GIMP foreground color. The  * foreground color is used in a variety of tools such as paint tools,  * blending, and bucket fill.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -525,7 +525,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_foreground:  * @foreground: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_foreground:  * @foreground: The foreground color.  *  * Set the current GIMP foreground color.  *  * This procedure sets the current GIMP foreground color. After this is  * set, operations which use foreground such as paint tools, blending,  * and bucket fill will use the new value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -594,7 +594,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_background:  * @background: The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_background:  * @background: The background color.  *  * Get the current GIMP background color.  *  * This procedure returns the current GIMP background color. The  * background color is used in a variety of tools such as blending,  * erasing (with non-alpha images), and image filling.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -674,7 +674,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_background:  * @background: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_background:  * @background: The background color.  *  * Set the current GIMP background color.  *  * This procedure sets the current GIMP background color. After this is  * set, operations which use background such as blending, filling  * images, clearing, and erasing (in non-alpha images) will use the new  * value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -743,7 +743,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_default_colors:  *  * Set the current GIMP foreground and background colors to black and  * white.  *  * This procedure sets the current GIMP foreground and background  * colors to their initial default values, black and white.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_default_colors:  *  * Set the current GIMP foreground and background colors to black and  * white.  *  * This procedure sets the current GIMP foreground and background  * colors to their initial default values, black and white.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -805,7 +805,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_swap_colors:  *  * Swap the current GIMP foreground and background colors.  *  * This procedure swaps the current GIMP foreground and background  * colors, so that the new foreground color becomes the old background  * color and vice versa.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_swap_colors:  *  * Swap the current GIMP foreground and background colors.  *  * This procedure swaps the current GIMP foreground and background  * colors, so that the new foreground color becomes the old background  * color and vice versa.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -867,7 +867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_opacity:  *  * Get the opacity.  *  * This procedure returns the opacity setting. The return value is a  * floating point number between 0 and 100.  *  * Returns: The opacity.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_opacity:  *  * Get the opacity.  *  * This procedure returns the opacity setting. The return value is a  * floating point number between 0 and 100.  *  * Returns: The opacity.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -940,7 +940,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_opacity:  * @opacity: The opacity.  *  * Set the opacity.  *  * This procedure modifies the opacity setting. The value should be a  * floating point number between 0 and 100.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_opacity:  * @opacity: The opacity.  *  * Set the opacity.  *  * This procedure modifies the opacity setting. The value should be a  * floating point number between 0 and 100.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1007,7 +1007,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_paint_mode:  *  * Get the paint mode.  *  * This procedure returns the paint-mode setting. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The paint mode.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_paint_mode:  *  * Get the paint mode.  *  * This procedure returns the paint-mode setting. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The paint mode.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1080,7 +1080,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_paint_mode:  * @paint_mode: The paint mode.  *  * Set the paint mode.  *  * This procedure modifies the paint_mode setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_paint_mode:  * @paint_mode: The paint mode.  *  * Set the paint mode.  *  * This procedure modifies the paint_mode setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1147,7 +1147,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: The name of the active brush.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_brush:  *  * Retrieve the currently active brush.  *  * This procedure returns the name of the currently active brush. All  * paint operations and stroke operations use this brush to control the  * application of paint to the image.  *  * Returns: The name of the active brush.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1225,7 +1225,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_brush:  * @name: The name of the brush.  *  * Set the specified brush as the active brush.  *  * This procedure allows the active brush to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed brushes. If there is no matching brush found,  * this procedure will return an error. Otherwise, the specified brush  * becomes active and will be used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_brush:  * @name: The name of the brush.  *  * Set the specified brush as the active brush.  *  * This procedure allows the active brush to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed brushes. If there is no matching brush found,  * this procedure will return an error. Otherwise, the specified brush  * becomes active and will be used in all subsequent paint operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1294,7 +1294,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_pattern:  *  * Retrieve the currently active pattern.  *  * This procedure returns name of the the currently active pattern. All  * clone and bucket-fill operations with patterns will use this pattern  * to control the application of paint to the image.  *  * Returns: The name of the active pattern.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_pattern:  *  * Retrieve the currently active pattern.  *  * This procedure returns name of the the currently active pattern. All  * clone and bucket-fill operations with patterns will use this pattern  * to control the application of paint to the image.  *  * Returns: The name of the active pattern.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1372,7 +1372,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_pattern:  * @name: The name of the pattern.  *  * Set the specified pattern as the active pattern.  *  * This procedure allows the active pattern to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed patterns. If there is no matching pattern  * found, this procedure will return an error. Otherwise, the specified  * pattern becomes active and will be used in all subsequent paint  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_pattern:  * @name: The name of the pattern.  *  * Set the specified pattern as the active pattern.  *  * This procedure allows the active pattern to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed patterns. If there is no matching pattern  * found, this procedure will return an error. Otherwise, the specified  * pattern becomes active and will be used in all subsequent paint  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1441,7 +1441,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_gradient:  *  * Retrieve the currently active gradient.  *  * This procedure returns the name of the currently active gradient.  *  * Returns: The name of the active gradient.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_gradient:  *  * Retrieve the currently active gradient.  *  * This procedure returns the name of the currently active gradient.  *  * Returns: The name of the active gradient.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1519,7 +1519,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_gradient:  * @name: The name of the gradient.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients. If no matching gradient is found, this  * procedure will return an error. Otherwise, the specified gradient  * will become active and will be used for subsequent custom gradient  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_gradient:  * @name: The name of the gradient.  *  * Sets the specified gradient as the active gradient.  *  * This procedure lets you set the specified gradient as the active or  * \"current\" one. The name is simply a string which corresponds to  * one of the loaded gradients. If no matching gradient is found, this  * procedure will return an error. Otherwise, the specified gradient  * will become active and will be used for subsequent custom gradient  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1588,7 +1588,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: The name of the active palette.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_palette:  *  * Retrieve the currently active palette.  *  * This procedure returns the name of the the currently active palette.  *  * Returns: The name of the active palette.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1666,7 +1666,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_palette:  * @name: The name of the palette.  *  * Set the specified palette as the active palette.  *  * This procedure allows the active palette to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed palettes. If no matching palette is found,  * this procedure will return an error. Otherwise, the specified  * palette becomes active and will be used in all subsequent palette  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_palette:  * @name: The name of the palette.  *  * Set the specified palette as the active palette.  *  * This procedure allows the active palette to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed palettes. If no matching palette is found,  * this procedure will return an error. Otherwise, the specified  * palette becomes active and will be used in all subsequent palette  * operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1735,7 +1735,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_font:  *  * Retrieve the currently active font.  *  * This procedure returns the name of the currently active font.  *  * Returns: The name of the active font.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_get_font:  *  * Retrieve the currently active font.  *  * This procedure returns the name of the currently active font.  *  * Returns: The name of the active font.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1813,7 +1813,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_font:  * @name: The name of the font.  *  * Set the specified font as the active font.  *  * This procedure allows the active font to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed fonts. If no matching font is found, this  * procedure will return an error. Otherwise, the specified font  * becomes active and will be used in all subsequent font operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_context_set_font:  * @name: The name of the font.  *  * Set the specified font as the active font.  *  * This procedure allows the active font to be set by specifying its  * name. The name is simply a string which corresponds to one of the  * names of the installed fonts. If no matching font is found, this  * procedure will return an error. Otherwise, the specified font  * becomes active and will be used in all subsequent font operations.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -1851,6 +1851,1028 @@ argument_list|,
 name|GIMP_PDB_STRING
 argument_list|,
 name|name
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_antialias:  *  * Get the antialias setting.  *  * This procedure returns the antialias setting.  *  * Returns: The antialias setting.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_get_antialias (void)
+name|gimp_context_get_antialias
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|antialias
+init|=
+name|FALSE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-antialias"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|antialias
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|antialias
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. This settings affects  * the following procedures: gimp-item-to-selection.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_antialias (gboolean antialias)
+name|gimp_context_set_antialias
+parameter_list|(
+name|gboolean
+name|antialias
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-antialias"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|antialias
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_feather:  *  * Get the feather setting.  *  * This procedure returns the feather setting.  *  * Returns: The feather setting.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_get_feather (void)
+name|gimp_context_get_feather
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|feather
+init|=
+name|FALSE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-feather"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|feather
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|feather
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. This settings affects  * the following procedures: gimp-item-to-selection.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_feather (gboolean feather)
+name|gimp_context_set_feather
+parameter_list|(
+name|gboolean
+name|feather
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-feather"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|feather
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Get the feather radius setting.  *  * This procedure returns the feather radius setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_get_feather_radius (gdouble * feather_radius_x,gdouble * feather_radius_y)
+name|gimp_context_get_feather_radius
+parameter_list|(
+name|gdouble
+modifier|*
+name|feather_radius_x
+parameter_list|,
+name|gdouble
+modifier|*
+name|feather_radius_y
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-feather-radius"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+operator|*
+name|feather_radius_x
+operator|=
+literal|0.0
+expr_stmt|;
+operator|*
+name|feather_radius_y
+operator|=
+literal|0.0
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+operator|*
+name|feather_radius_x
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+operator|*
+name|feather_radius_y
+operator|=
+name|return_vals
+index|[
+literal|2
+index|]
+operator|.
+name|data
+operator|.
+name|d_float
+expr_stmt|;
+block|}
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting. This settings  * affects the following procedures: gimp-item-to-selection.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_feather_radius (gdouble feather_radius_x,gdouble feather_radius_y)
+name|gimp_context_set_feather_radius
+parameter_list|(
+name|gdouble
+name|feather_radius_x
+parameter_list|,
+name|gdouble
+name|feather_radius_y
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-feather-radius"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_FLOAT
+argument_list|,
+name|feather_radius_x
+argument_list|,
+name|GIMP_PDB_FLOAT
+argument_list|,
+name|feather_radius_y
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_interpolation:  *  * Get the interpolation type.  *  * This procedure returns the interpolation setting. The return value  * is an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The interpolation type.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|GimpInterpolationType
+DECL|function|gimp_context_get_interpolation (void)
+name|gimp_context_get_interpolation
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|GimpInterpolationType
+name|interpolation
+init|=
+literal|0
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-interpolation"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|interpolation
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|interpolation
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_interpolation:  * @interpolation: The interpolation type.  *  * Set the interpolation type.  *  * This procedure modifies the interpolation setting. It affects the  * following procedures: all transform procedures which can produce  * sub-pixel results, gimp_image_scale(), gimp_layer_scale().  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_interpolation (GimpInterpolationType interpolation)
+name|gimp_context_set_interpolation
+parameter_list|(
+name|GimpInterpolationType
+name|interpolation
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-interpolation"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|interpolation
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_transform_direction:  *  * Get the transform direction.  *  * This procedure returns the transform direction. The return value is  * an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The transform direction.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|GimpTransformDirection
+DECL|function|gimp_context_get_transform_direction (void)
+name|gimp_context_get_transform_direction
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|GimpTransformDirection
+name|transform_direction
+init|=
+literal|0
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-transform-direction"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|transform_direction
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|transform_direction
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_transform_direction:  * @transform_direction: The transform direction.  *  * Set the transform direction.  *  * This procedure modifies the transform direction setting.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_transform_direction (GimpTransformDirection transform_direction)
+name|gimp_context_set_transform_direction
+parameter_list|(
+name|GimpTransformDirection
+name|transform_direction
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-transform-direction"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|transform_direction
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_transform_resize:  *  * Get the transform resize type.  *  * This procedure returns the transform resize setting. The return  * value is an integer which corresponds to the values listed in the  * argument description.  *  * Returns: The transform resize type.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|GimpTransformResize
+DECL|function|gimp_context_get_transform_resize (void)
+name|gimp_context_get_transform_resize
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|GimpTransformResize
+name|transform_resize
+init|=
+literal|0
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-transform-resize"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|transform_resize
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|transform_resize
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_transform_resize:  * @transform_resize: The transform resize type.  *  * Set the transform resize type.  *  * This procedure modifies the transform resize setting. When  * transforming pixels, if the result of a transform operation has a  * different size than the original area, this setting determines how  * the resulting area is sized.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_transform_resize (GimpTransformResize transform_resize)
+name|gimp_context_set_transform_resize
+parameter_list|(
+name|GimpTransformResize
+name|transform_resize
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-transform-resize"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|transform_resize
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+name|success
+operator|=
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|success
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_get_transform_recursion:  *  * Get the transform supersampling recursion.  *  * This procedure returns the transform supersampling recursion level.  *  * Returns: The transform recursion level.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gint
+DECL|function|gimp_context_get_transform_recursion (void)
+name|gimp_context_get_transform_recursion
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gint
+name|transform_recursion
+init|=
+literal|0
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-get-transform-recursion"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_END
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|return_vals
+index|[
+literal|0
+index|]
+operator|.
+name|data
+operator|.
+name|d_status
+operator|==
+name|GIMP_PDB_SUCCESS
+condition|)
+name|transform_recursion
+operator|=
+name|return_vals
+index|[
+literal|1
+index|]
+operator|.
+name|data
+operator|.
+name|d_int32
+expr_stmt|;
+name|gimp_destroy_params
+argument_list|(
+name|return_vals
+argument_list|,
+name|nreturn_vals
+argument_list|)
+expr_stmt|;
+return|return
+name|transform_recursion
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_context_set_transform_recursion:  * @transform_recursion: The transform recursion level.  *  * Set the transform supersampling recursion.  *  * This procedure modifies the transform supersampling recursion level  * setting. Whether or not a transformation does supersampling is  * determined by the interplolation type. The recursion level defaults  * to 3, which is a nice default value.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_function
+name|gboolean
+DECL|function|gimp_context_set_transform_recursion (gint transform_recursion)
+name|gimp_context_set_transform_recursion
+parameter_list|(
+name|gint
+name|transform_recursion
+parameter_list|)
+block|{
+name|GimpParam
+modifier|*
+name|return_vals
+decl_stmt|;
+name|gint
+name|nreturn_vals
+decl_stmt|;
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|return_vals
+operator|=
+name|gimp_run_procedure
+argument_list|(
+literal|"gimp-context-set-transform-recursion"
+argument_list|,
+operator|&
+name|nreturn_vals
+argument_list|,
+name|GIMP_PDB_INT32
+argument_list|,
+name|transform_recursion
 argument_list|,
 name|GIMP_PDB_END
 argument_list|)

@@ -4,7 +4,7 @@ comment|/* GIMP - The GNU Image Manipulation Program  * Copyright (C) 1995 Spenc
 end_comment
 
 begin_typedef
-DECL|struct|__anon2c6534f10108
+DECL|struct|__anon29bd65a90108
 typedef|typedef
 struct|struct
 block|{
@@ -34,7 +34,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6534f10208
+DECL|struct|__anon29bd65a90208
 typedef|typedef
 struct|struct
 block|{
@@ -55,7 +55,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6534f10308
+DECL|struct|__anon29bd65a90308
 typedef|typedef
 struct|struct
 block|{
@@ -75,7 +75,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6534f10408
+DECL|struct|__anon29bd65a90408
 typedef|typedef
 struct|struct
 block|{
@@ -151,7 +151,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6534f10508
+DECL|struct|__anon29bd65a90508
 block|{
 DECL|member|num_elements
 name|gint
@@ -192,7 +192,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2c6534f10608
+DECL|struct|__anon29bd65a90608
 typedef|typedef
 struct|struct
 block|{
@@ -626,17 +626,13 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GdkDrawable
+name|cairo_t
 modifier|*
-name|win
+name|cr
 parameter_list|,
-name|GdkGC
+name|GdkColor
 modifier|*
-name|normal_gc
-parameter_list|,
-name|GdkGC
-modifier|*
-name|selected_gc
+name|color
 parameter_list|,
 name|PangoLayout
 modifier|*

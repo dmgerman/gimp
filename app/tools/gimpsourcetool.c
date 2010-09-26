@@ -1568,7 +1568,7 @@ argument_list|,
 name|FALSE
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_handle
+name|gimp_draw_tool_add_handle
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -1591,8 +1591,6 @@ argument_list|,
 name|TARGET_SIZE
 argument_list|,
 name|GTK_ANCHOR_CENTER
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|draw_tool

@@ -12,7 +12,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|<cairo/cairo.h>
+file|<cairo.h>
 end_include
 
 begin_include
@@ -589,12 +589,12 @@ DECL|macro|PANGO_REQUIRED_MINOR
 define|#
 directive|define
 name|PANGO_REQUIRED_MINOR
-value|20
+value|22
 DECL|macro|PANGO_REQUIRED_MICRO
 define|#
 directive|define
 name|PANGO_REQUIRED_MICRO
-value|1
+value|0
 specifier|const
 name|gchar
 modifier|*

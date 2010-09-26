@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bec97d40103
+DECL|enum|__anon29d24f070103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bec97d40203
+DECL|enum|__anon29d24f070203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4499,8 +4499,6 @@ argument_list|,
 name|x
 argument_list|,
 name|y
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gtk_widget_size_request
@@ -6730,8 +6728,6 @@ argument_list|,
 name|x1
 argument_list|,
 name|y1
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy
@@ -6747,8 +6743,6 @@ argument_list|,
 name|x2
 argument_list|,
 name|y2
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  Make sure the extents are within bounds  */
@@ -7027,11 +7021,6 @@ operator|->
 name|display
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_draw_vectors
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -7081,11 +7070,6 @@ operator|==
 literal|0
 condition|)
 block|{
-name|gimp_display_shell_draw_vectors
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 comment|/* start the currently active tool */
 name|tool_manager_control_active
 argument_list|(

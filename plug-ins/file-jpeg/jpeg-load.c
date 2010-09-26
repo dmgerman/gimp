@@ -1641,11 +1641,14 @@ name|drawable
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
 name|layer_ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)
@@ -1898,7 +1901,7 @@ end_ifdef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon290a8d250108
+DECL|struct|__anon2af5922d0108
 block|{
 DECL|member|pub
 name|struct
@@ -2861,11 +2864,14 @@ name|buf
 argument_list|)
 expr_stmt|;
 comment|/* At this point you may want to check to see whether any    * corrupt-data warnings occurred (test whether    * jerr.num_warnings is nonzero).    */
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
 name|layer_ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

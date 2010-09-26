@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"tools/gimpvectortool.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/tool_manager.h"
 end_include
 
@@ -1039,11 +1045,6 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_draw_vectors
-argument_list|(
-name|shell
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
@@ -1422,7 +1423,11 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
-comment|/*  always double-buffer if there are overlay children or a    *  transform preview, or they will flicker badly    */
+return|return
+name|TRUE
+return|;
+comment|/* FIXME: repair this after cairo tool drawing is done */
+comment|/*  always double-buffer if there are overlay children or a    *  transform preview, or they will flicker badly. Also double    *  buffer when we are editing paths.    */
 if|if
 condition|(
 name|GIMP_OVERLAY_BOX
@@ -1437,6 +1442,18 @@ operator|||
 name|gimp_display_shell_get_show_transform
 argument_list|(
 name|shell
+argument_list|)
+operator|||
+name|GIMP_IS_VECTOR_TOOL
+argument_list|(
+name|tool_manager_get_active
+argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 condition|)
 return|return
@@ -8053,9 +8070,39 @@ argument_list|)
 expr_stmt|;
 comment|/*  finally, draw all the remaining image window stuff on top    */
 comment|/* draw the transform tool preview */
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_preview_transform
 argument_list|(
 name|shell
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+comment|/* draw the vectors */
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|gimp_display_shell_draw_vectors
+argument_list|(
+name|shell
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 comment|/* draw the grid */
@@ -8112,6 +8159,62 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+comment|/* draw tool items */
+block|{
+name|GimpTool
+modifier|*
+name|tool
+init|=
+name|tool_manager_get_active
+argument_list|(
+name|shell
+operator|->
+name|display
+operator|->
+name|gimp
+argument_list|)
+decl_stmt|;
+if|if
+condition|(
+name|GIMP_IS_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|&&
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+operator|->
+name|display
+operator|==
+name|shell
+operator|->
+name|display
+condition|)
+block|{
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_draw_items
+argument_list|(
+name|GIMP_DRAW_TOOL
+argument_list|(
+name|tool
+argument_list|)
+argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
+block|}
+block|}
 comment|/* and the cursor (if we have a software cursor) */
 name|cairo_save
 argument_list|(

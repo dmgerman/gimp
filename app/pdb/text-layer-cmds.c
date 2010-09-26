@@ -4835,7 +4835,7 @@ literal|"gimp-text-layer-new"
 argument_list|,
 literal|"Creates a new text layer."
 argument_list|,
-literal|"This procedure creates a new text layer. The arguments are kept as simple as necessary for the normal case. All text attributes, however, can be modified with the appropriate gimp_text_layer_set_*() procedures. The new layer still needs to be added to the image, as this is not automatic. Add the new layer using 'gimp-image-add-layer'."
+literal|"This procedure creates a new text layer. The arguments are kept as simple as necessary for the normal case. All text attributes, however, can be modified with the appropriate gimp_text_layer_set_*() procedures. The new layer still needs to be added to the image, as this is not automatic. Add the new layer using 'gimp-image-insert-layer'."
 argument_list|,
 literal|"Marcus Heese<heese@cip.ifi.lmu.de>"
 argument_list|,

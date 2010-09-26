@@ -104,7 +104,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c767830108
+DECL|struct|__anon2a4fceb60108
 block|{
 DECL|member|l_header_size
 name|L_CARD32
@@ -238,7 +238,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c767830208
+DECL|struct|__anon2a4fceb60208
 block|{
 DECL|member|l_pixel
 name|L_CARD32
@@ -296,7 +296,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c767830308
+DECL|struct|__anon2a4fceb60308
 block|{
 DECL|member|pixel_val
 name|L_CARD32
@@ -323,7 +323,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c767830408
+DECL|struct|__anon2a4fceb60408
 block|{
 DECL|member|npixel
 name|gint
@@ -5625,12 +5625,15 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
 operator|*
 name|layer_ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpfonts  * @title: gimpfonts  * @short_description: Op
 end_comment
 
 begin_comment
-comment|/**  * gimp_fonts_refresh:  *  * Refresh current fonts. This function always succeeds.  *  * This procedure retrieves all fonts currently in the user's font path  * and updates the font dialogs accordingly.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_fonts_refresh:  *  * Refresh current fonts. This function always succeeds.  *  * This procedure retrieves all fonts currently in the user's font path  * and updates the font dialogs accordingly.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -86,7 +86,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_fonts_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_fonts: The number of available fonts.  *  * Retrieve the list of loaded fonts.  *  * This procedure returns a list of the fonts that are currently  * available.  *  * Returns: The list of font names.  */
+comment|/**  * gimp_fonts_get_list:  * @filter: An optional regular expression used to filter the list.  * @num_fonts: The number of available fonts.  *  * Retrieve the list of loaded fonts.  *  * This procedure returns a list of the fonts that are currently  * available.  *  * Returns: The list of font names.  **/
 end_comment
 
 begin_function

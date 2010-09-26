@@ -149,7 +149,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b3765d50103
+DECL|enum|__anon297cb8690103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3182,8 +3182,6 @@ name|x1_f
 argument_list|,
 operator|&
 name|y1_f
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_transform_xy_f
@@ -3203,8 +3201,6 @@ name|x2_f
 argument_list|,
 operator|&
 name|y2_f
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 comment|/*  make sure to expose a superset of the transformed sub-pixel expose    *  area, not a subset. bug #126942. --mitch    *    *  also acommodate for spill introduced by potential box filtering.    *  (bug #474509). --simon    */

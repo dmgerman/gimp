@@ -165,7 +165,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2955515c0108
+DECL|struct|__anon29e2e4d00108
 block|{
 DECL|member|description
 name|gchar
@@ -2240,7 +2240,7 @@ operator|++
 control|)
 block|{
 union|union
-DECL|union|__anon2955515c020a
+DECL|union|__anon29e2e4d0020a
 block|{
 DECL|member|u
 name|guint16
@@ -2462,11 +2462,14 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
 name|layer_ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

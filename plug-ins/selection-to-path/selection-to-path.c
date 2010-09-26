@@ -1919,11 +1919,14 @@ literal|1
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_image_add_vectors
+name|gimp_image_insert_vectors
 argument_list|(
 name|image_ID
 argument_list|,
 name|vectors
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 operator|-
 literal|1

@@ -173,6 +173,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpitemtransform_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimplayer_pdb.h>
 end_include
 

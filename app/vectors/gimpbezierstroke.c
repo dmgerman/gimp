@@ -6922,11 +6922,9 @@ argument_list|)
 expr_stmt|;
 name|bezdesc
 operator|=
-name|g_new
+name|g_slice_new
 argument_list|(
 name|GimpBezierDesc
-argument_list|,
-literal|1
 argument_list|)
 expr_stmt|;
 name|bezdesc

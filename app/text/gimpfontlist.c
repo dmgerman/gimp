@@ -278,7 +278,7 @@ modifier|*
 name|list
 parameter_list|)
 block|{
-name|PangoCairoFontMap
+name|PangoFontMap
 modifier|*
 name|fontmap
 decl_stmt|;
@@ -373,28 +373,28 @@ expr_stmt|;
 block|}
 name|fontmap
 operator|=
-name|PANGO_CAIRO_FONT_MAP
-argument_list|(
 name|pango_cairo_font_map_new_for_font_type
 argument_list|(
 name|CAIRO_FONT_TYPE_FT
 argument_list|)
-argument_list|)
 expr_stmt|;
 if|if
 condition|(
+operator|!
 name|fontmap
-operator|==
-name|NULL
 condition|)
 name|g_error
 argument_list|(
-literal|"You are using a Pango that has been built against a cairo that lacks the Freetype font backend"
+literal|"You are using a Pango that has been built against a cairo "
+literal|"that lacks the Freetype font backend"
 argument_list|)
 expr_stmt|;
 name|pango_cairo_font_map_set_resolution
 argument_list|(
+name|PANGO_CAIRO_FONT_MAP
+argument_list|(
 name|fontmap
+argument_list|)
 argument_list|,
 name|list
 operator|->
@@ -403,7 +403,7 @@ argument_list|)
 expr_stmt|;
 name|context
 operator|=
-name|pango_cairo_font_map_create_context
+name|pango_font_map_create_context
 argument_list|(
 name|fontmap
 argument_list|)

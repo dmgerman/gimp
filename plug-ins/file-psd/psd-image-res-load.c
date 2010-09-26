@@ -4777,11 +4777,14 @@ name|rgb_buf
 argument_list|)
 expr_stmt|;
 comment|/* At this point you may want to check to see whether any    * corrupt-data warnings occurred (test whether    * jerr.num_warnings is nonzero).    */
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_id
 argument_list|,
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)
@@ -6409,11 +6412,14 @@ operator|->
 name|name
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_vectors
+name|gimp_image_insert_vectors
 argument_list|(
 name|image_id
 argument_list|,
 name|vector_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 operator|-
 literal|1

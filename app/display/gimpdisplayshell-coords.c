@@ -510,6 +510,7 @@ block|}
 if|if
 condition|(
 operator|(
+operator|(
 name|fabs
 argument_list|(
 name|delta_x
@@ -525,6 +526,17 @@ name|delta_y
 argument_list|)
 operator|>
 name|DIRECTION_RADIUS
+operator|)
+operator|)
+operator|||
+operator|(
+name|shell
+operator|->
+name|event_history
+operator|->
+name|len
+operator|<
+literal|4
 operator|)
 condition|)
 block|{

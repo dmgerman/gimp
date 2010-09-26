@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpmessage  * @title: gimpmessage  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_message:  * @message: Message to display in the dialog.  *  * Displays a dialog box with a message.  *  * Displays a dialog box with a message. Useful for status or error  * reporting. The message must be in UTF-8 encoding.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_message:  * @message: Message to display in the dialog.  *  * Displays a dialog box with a message.  *  * Displays a dialog box with a message. Useful for status or error  * reporting. The message must be in UTF-8 encoding.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -93,7 +93,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_message_get_handler:  *  * Returns the current state of where warning messages are displayed.  *  * This procedure returns the way g_message warnings are displayed.  * They can be shown in a dialog box or printed on the console where  * gimp was started.  *  * Returns: The current handler type.  */
+comment|/**  * gimp_message_get_handler:  *  * Returns the current state of where warning messages are displayed.  *  * This procedure returns the way g_message warnings are displayed.  * They can be shown in a dialog box or printed on the console where  * gimp was started.  *  * Returns: The current handler type.  **/
 end_comment
 
 begin_function
@@ -166,7 +166,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_message_set_handler:  * @handler: The new handler type.  *  * Controls where warning messages are displayed.  *  * This procedure controls how g_message warnings are displayed. They  * can be shown in a dialog box or printed on the console where gimp  * was started.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_message_set_handler:  * @handler: The new handler type.  *  * Controls where warning messages are displayed.  *  * This procedure controls how g_message warnings are displayed. They  * can be shown in a dialog box or printed on the console where gimp  * was started.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

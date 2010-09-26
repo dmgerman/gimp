@@ -154,7 +154,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae402910108
+DECL|struct|__anon2c01bd390108
 block|{
 DECL|member|interlaced
 name|gboolean
@@ -201,7 +201,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae402910208
+DECL|struct|__anon2c01bd390208
 block|{
 DECL|member|run
 name|gboolean
@@ -2804,11 +2804,14 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

@@ -42,7 +42,7 @@ comment|/**  * SECTION: gimpparasite  * @title: gimpparasite  * @short_descripti
 end_comment
 
 begin_comment
-comment|/**  * gimp_parasite_find:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: The found parasite.  */
+comment|/**  * gimp_parasite_find:  * @name: The name of the parasite to find.  *  * Look up a global parasite.  *  * Finds and returns the global parasite that was previously attached.  *  * Returns: The found parasite.  **/
 end_comment
 
 begin_function
@@ -128,7 +128,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_attach:  * @parasite: The parasite to attach.  *  * Add a global parasite.  *  * This procedure attaches a global parasite. It has no return values.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_parasite_attach:  * @parasite: The parasite to attach.  *  * Add a global parasite.  *  * This procedure attaches a global parasite. It has no return values.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -197,7 +197,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_detach:  * @name: The name of the parasite to detach.  *  * Removes a global parasite.  *  * This procedure detaches a global parasite from. It has no return  * values.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_parasite_detach:  * @name: The name of the parasite to detach.  *  * Removes a global parasite.  *  * This procedure detaches a global parasite from. It has no return  * values.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -266,7 +266,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_parasite_list:  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_parasite_list:  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached global parasites.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -416,7 +416,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_parasite_find:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: The found parasite.  */
+comment|/**  * gimp_image_parasite_find:  * @image_ID: The image.  * @name: The name of the parasite to find.  *  * Look up a parasite in an image  *  * Finds and returns the parasite that was previously attached to an  * image.  *  * Returns: The found parasite.  **/
 end_comment
 
 begin_function
@@ -509,7 +509,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_parasite_attach:  * @image_ID: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_parasite_attach:  * @image_ID: The image.  * @parasite: The parasite to attach to an image.  *  * Add a parasite to an image.  *  * This procedure attaches a parasite to an image. It has no return  * values.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -585,7 +585,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_parasite_detach:  * @image_ID: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_parasite_detach:  * @image_ID: The image.  * @name: The name of the parasite to detach from an image.  *  * Removes a parasite from an image.  *  * This procedure detaches a parasite from an image. It has no return  * values.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -661,7 +661,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_image_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_image_parasite_list:  * @image_ID: The image.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all currently attached parasites.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -818,7 +818,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_parasite_find:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_item_parasite_find:  * @item_ID: The item.  * @name: The name of the parasite to find.  *  * Look up a parasite in an item  *  * Finds and returns the parasite that is attached to an item.  *  * Returns: The found parasite.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -911,7 +911,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_parasite_attach:  * @item_ID: The item.  * @parasite: The parasite to attach to the item.  *  * Add a parasite to an item.  *  * This procedure attaches a parasite to an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_item_parasite_attach:  * @item_ID: The item.  * @parasite: The parasite to attach to the item.  *  * Add a parasite to an item.  *  * This procedure attaches a parasite to an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -987,7 +987,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_parasite_detach:  * @item_ID: The item.  * @name: The name of the parasite to detach from the item.  *  * Removes a parasite from an item.  *  * This procedure detaches a parasite from an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_item_parasite_detach:  * @item_ID: The item.  * @name: The name of the parasite to detach from the item.  *  * Removes a parasite from an item.  *  * This procedure detaches a parasite from an item. It has no return  * values.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1063,7 +1063,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_item_parasite_list:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  */
+comment|/**  * gimp_item_parasite_list:  * @item_ID: The item.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * List all parasites.  *  * Returns a list of all parasites currently attached the an item.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -1220,7 +1220,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_parasite_find() instead.  *  * Returns: The found parasite.  */
+comment|/**  * gimp_drawable_parasite_find:  * @drawable_ID: The drawable.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_parasite_find() instead.  *  * Returns: The found parasite.  **/
 end_comment
 
 begin_function
@@ -1313,7 +1313,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_attach:  * @drawable_ID: The drawable.  * @parasite: The parasite to attach to a drawable.  *  * Deprecated: Use gimp_item_parasite_attach() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_parasite_attach:  * @drawable_ID: The drawable.  * @parasite: The parasite to attach to a drawable.  *  * Deprecated: Use gimp_item_parasite_attach() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1389,7 +1389,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_detach:  * @drawable_ID: The drawable.  * @name: The name of the parasite to detach from a drawable.  *  * Deprecated: Use gimp_item_parasite_detach() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_parasite_detach:  * @drawable_ID: The drawable.  * @name: The name of the parasite to detach from a drawable.  *  * Deprecated: Use gimp_item_parasite_detach() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1465,7 +1465,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_parasite_list() instead.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_drawable_parasite_list:  * @drawable_ID: The drawable.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_parasite_list() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1622,7 +1622,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_parasite_find() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_parasite_find:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to find.  *  * Deprecated: Use gimp_item_parasite_find() instead.  *  * Returns: The found parasite.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1715,7 +1715,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_attach:  * @vectors_ID: The vectors object.  * @parasite: The parasite to attach to a vectors object.  *  * Deprecated: Use gimp_item_parasite_attach() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_parasite_attach:  * @vectors_ID: The vectors object.  * @parasite: The parasite to attach to a vectors object.  *  * Deprecated: Use gimp_item_parasite_attach() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1791,7 +1791,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_detach:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to detach from a vectors object.  *  * Deprecated: Use gimp_item_parasite_detach() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_parasite_detach:  * @vectors_ID: The vectors object.  * @name: The name of the parasite to detach from a vectors object.  *  * Deprecated: Use gimp_item_parasite_detach() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -1867,7 +1867,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vectors_parasite_list:  * @vectors_ID: The vectors object.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_parasite_list() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_vectors_parasite_list:  * @vectors_ID: The vectors object.  * @num_parasites: The number of attached parasites.  * @parasites: The names of currently attached parasites.  *  * Deprecated: Use gimp_item_parasite_list() instead.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function

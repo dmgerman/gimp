@@ -3147,11 +3147,14 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image
 argument_list|,
 name|layer
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 name|icon_num
 argument_list|)

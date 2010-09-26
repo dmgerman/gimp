@@ -336,7 +336,7 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_draw_tool_draw_arc
+name|gimp_draw_tool_add_arc
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -354,13 +354,11 @@ name|y2
 operator|-
 name|y1
 argument_list|,
-literal|0
+literal|0.0
 argument_list|,
-literal|360
+literal|2
 operator|*
-literal|64
-argument_list|,
-name|FALSE
+name|G_PI
 argument_list|)
 expr_stmt|;
 block|}

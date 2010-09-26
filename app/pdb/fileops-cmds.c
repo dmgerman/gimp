@@ -2622,7 +2622,7 @@ literal|"gimp-file-load-layer"
 argument_list|,
 literal|"Loads an image file as a layer for an existing image."
 argument_list|,
-literal|"This procedure behaves like the file-load procedure but opens the specified image as a layer for an existing image. The returned layer needs to be added to the existing image with 'gimp-image-add-layer'."
+literal|"This procedure behaves like the file-load procedure but opens the specified image as a layer for an existing image. The returned layer needs to be added to the existing image with 'gimp-image-insert-layer'."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -2774,7 +2774,7 @@ literal|"gimp-file-load-layers"
 argument_list|,
 literal|"Loads an image file as layers for an existing image."
 argument_list|,
-literal|"This procedure behaves like the file-load procedure but opens the specified image as layers for an existing image. The returned layers needs to be added to the existing image with 'gimp-image-add-layer'."
+literal|"This procedure behaves like the file-load procedure but opens the specified image as layers for an existing image. The returned layers needs to be added to the existing image with 'gimp-image-insert-layer'."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,

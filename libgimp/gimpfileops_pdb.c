@@ -30,7 +30,7 @@ comment|/**  * SECTION: gimpfileops  * @title: gimpfileops  * @short_description
 end_comment
 
 begin_comment
-comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name as entered by the user.  *  * Loads an image file by invoking the right load handler.  *  * This procedure invokes the correct file load handler using magic if  * possible, and falling back on the file's extension and/or prefix if  * not. The name of the file to load is typically a full pathname, and  * the name entered is what the user actually typed before prepending a  * directory path. The reason for this is that if the user types  * http://www.xcf/~gimp/ he wants to fetch a URL, and the full pathname  * will not look like a URL.\"  *  * Returns: The output image.  */
+comment|/**  * gimp_file_load:  * @run_mode: The run mode.  * @filename: The name of the file to load.  * @raw_filename: The name as entered by the user.  *  * Loads an image file by invoking the right load handler.  *  * This procedure invokes the correct file load handler using magic if  * possible, and falling back on the file's extension and/or prefix if  * not. The name of the file to load is typically a full pathname, and  * the name entered is what the user actually typed before prepending a  * directory path. The reason for this is that if the user types  * http://www.xcf/~gimp/ he wants to fetch a URL, and the full pathname  * will not look like a URL.\"  *  * Returns: The output image.  **/
 end_comment
 
 begin_function
@@ -127,7 +127,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with gimp_image_add_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_file_load_layer:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  *  * Loads an image file as a layer for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as a layer for an existing image. The returned layer  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The layer created when loading the image file.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -222,7 +222,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with gimp_image_add_layer().  *  * Returns: The list of loaded layers.  *  * Since: GIMP 2.4  */
+comment|/**  * gimp_file_load_layers:  * @run_mode: The run mode.  * @image_ID: Destination image.  * @filename: The name of the file to load.  * @num_layers: The number of loaded layers.  *  * Loads an image file as layers for an existing image.  *  * This procedure behaves like the file-load procedure but opens the  * specified image as layers for an existing image. The returned layers  * needs to be added to the existing image with  * gimp_image_insert_layer().  *  * Returns: The list of loaded layers.  *  * Since: GIMP 2.4  **/
 end_comment
 
 begin_function
@@ -362,7 +362,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image_ID: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types http://www.xcf/~gimp/ she wants to  * fetch a URL, and the full pathname will not look like a URL.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_file_save:  * @run_mode: The run mode.  * @image_ID: Input image.  * @drawable_ID: Drawable to save.  * @filename: The name of the file to save the image in.  * @raw_filename: The name as entered by the user.  *  * Saves a file by extension.  *  * This procedure invokes the correct file save handler according to  * the file's extension and/or prefix. The name of the file to save is  * typically a full pathname, and the name entered is what the user  * actually typed before prepending a directory path. The reason for  * this is that if the user types http://www.xcf/~gimp/ she wants to  * fetch a URL, and the full pathname will not look like a URL.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -461,7 +461,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_file_save_thumbnail:  * @image_ID: The image.  * @filename: The name of the file the thumbnail belongs to.  *  * Saves a thumbnail for the given image  *  * This procedure saves a thumbnail for the given image according to  * the Free Desktop Thumbnail Managing Standard. The thumbnail is saved  * so that it belongs to the file with the given filename. This means  * you have to save the image under this name first, otherwise this  * procedure will fail. This procedure may become useful if you want to  * explicitely save a thumbnail with a file.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_file_save_thumbnail:  * @image_ID: The image.  * @filename: The name of the file the thumbnail belongs to.  *  * Saves a thumbnail for the given image  *  * This procedure saves a thumbnail for the given image according to  * the Free Desktop Thumbnail Managing Standard. The thumbnail is saved  * so that it belongs to the file with the given filename. This means  * you have to save the image under this name first, otherwise this  * procedure will fail. This procedure may become useful if you want to  * explicitely save a thumbnail with a file.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -537,7 +537,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_temp_name:  * @extension: The extension the file will have.  *  * Generates a unique filename.  *  * Generates a unique filename using the temp path supplied in the  * user's gimprc.  *  * Returns: The new temp filename.  */
+comment|/**  * gimp_temp_name:  * @extension: The extension the file will have.  *  * Generates a unique filename.  *  * Generates a unique filename using the temp path supplied in the  * user's gimprc.  *  * Returns: The new temp filename.  **/
 end_comment
 
 begin_function
@@ -622,7 +622,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_magic_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can load (i.e. \"http:,ftp:\").  * @magics: comma separated list of magic file information this handler can load (i.e. \"0,string,GIF\").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format using magic file information.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_register_magic_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can load (i.e. \"http:,ftp:\").  * @magics: comma separated list of magic file information this handler can load (i.e. \"0,string,GIF\").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format using magic file information.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -718,7 +718,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can load (i.e. \"http:,ftp:\").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_register_load_handler:  * @procedure_name: The name of the procedure to be used for loading.  * @extensions: comma separated list of extensions this handler can load (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can load (i.e. \"http:,ftp:\").  *  * Registers a file load handler procedure.  *  * Registers a procedural database procedure to be called to load files  * of a particular file format.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -805,7 +805,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_save_handler:  * @procedure_name: The name of the procedure to be used for saving.  * @extensions: comma separated list of extensions this handler can save (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can save (i.e. \"http:,ftp:\").  *  * Registers a file save handler procedure.  *  * Registers a procedural database procedure to be called to save files  * in a particular file format.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_register_save_handler:  * @procedure_name: The name of the procedure to be used for saving.  * @extensions: comma separated list of extensions this handler can save (i.e. \"jpg,jpeg\").  * @prefixes: comma separated list of prefixes this handler can save (i.e. \"http:,ftp:\").  *  * Registers a file save handler procedure.  *  * Registers a procedural database procedure to be called to save files  * in a particular file format.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -892,7 +892,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_register_file_handler_mime:  * @procedure_name: The name of the procedure to associate a MIME type with.  * @mime_type: A single MIME type, like for example \"image/jpeg\".  *  * Associates a MIME type with a file handler procedure.  *  * Registers a MIME type for a file handler procedure. This allows GIMP  * to determine the MIME type of the file opened or saved using this  * procedure.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function
@@ -970,7 +970,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_register_thumbnail_loader:  * @load_proc: The name of the procedure the thumbnail loader with.  * @thumb_proc: The name of the thumbnail load procedure.  *  * Associates a thumbnail loader with a file load procedure.  *  * Some file formats allow for embedded thumbnails, other file formats  * contain a scalable image or provide the image data in different  * resolutions. A file plug-in for such a format may register a special  * procedure that allows GIMP to load a thumbnail preview of the image.  * This procedure is then associated with the standard load procedure  * using this function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  */
+comment|/**  * gimp_register_thumbnail_loader:  * @load_proc: The name of the procedure the thumbnail loader with.  * @thumb_proc: The name of the thumbnail load procedure.  *  * Associates a thumbnail loader with a file load procedure.  *  * Some file formats allow for embedded thumbnails, other file formats  * contain a scalable image or provide the image data in different  * resolutions. A file plug-in for such a format may register a special  * procedure that allows GIMP to load a thumbnail preview of the image.  * This procedure is then associated with the standard load procedure  * using this function.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.2  **/
 end_comment
 
 begin_function

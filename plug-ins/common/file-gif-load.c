@@ -935,7 +935,7 @@ end_typedef
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27bc91970108
+DECL|struct|__anon27fb9caa0108
 block|{
 DECL|member|Width
 name|guint
@@ -979,7 +979,7 @@ end_struct
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon27bc91970208
+DECL|struct|__anon27fb9caa0208
 block|{
 DECL|member|transparent
 name|gint
@@ -4401,11 +4401,14 @@ block|}
 name|frame_number
 operator|++
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|image_ID
 argument_list|,
 name|layer_ID
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

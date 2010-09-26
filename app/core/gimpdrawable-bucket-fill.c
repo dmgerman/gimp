@@ -529,9 +529,12 @@ argument_list|)
 expr_stmt|;
 name|selection
 operator|=
-name|gimp_drawable_mask_bounds
+name|gimp_item_mask_bounds
+argument_list|(
+name|GIMP_ITEM
 argument_list|(
 name|drawable
+argument_list|)
 argument_list|,
 operator|&
 name|x1

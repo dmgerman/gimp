@@ -42,7 +42,7 @@ comment|/**  * SECTION: gimpfloatingsel  * @title: gimpfloatingsel  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_floating_sel_remove:  * @floating_sel_ID: The floating selection.  *  * Remove the specified floating selection from its associated  * drawable.  *  * This procedure removes the floating selection completely, without  * any side effects. The associated drawable is then set to active.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_remove:  * @floating_sel_ID: The floating selection.  *  * Remove the specified floating selection from its associated  * drawable.  *  * This procedure removes the floating selection completely, without  * any side effects. The associated drawable is then set to active.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -109,7 +109,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_anchor:  * @floating_sel_ID: The floating selection.  *  * Anchor the specified floating selection to its associated drawable.  *  * This procedure anchors the floating selection to its associated  * drawable. This is similar to merging with a merge type of  * ClipToBottomLayer. The floating selection layer is no longer valid  * after this operation.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_anchor:  * @floating_sel_ID: The floating selection.  *  * Anchor the specified floating selection to its associated drawable.  *  * This procedure anchors the floating selection to its associated  * drawable. This is similar to merging with a merge type of  * ClipToBottomLayer. The floating selection layer is no longer valid  * after this operation.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -176,7 +176,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_to_layer:  * @floating_sel_ID: The floating selection.  *  * Transforms the specified floating selection into a layer.  *  * This procedure transforms the specified floating selection into a  * layer with the same offsets and extents. The composited image will  * look precisely the same, but the floating selection layer will no  * longer be clipped to the extents of the drawable it was attached to.  * The floating selection will become the active layer. This procedure  * will not work if the floating selection has a different base type  * from the underlying image. This might be the case if the floating  * selection is above an auxillary channel or a layer mask.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_to_layer:  * @floating_sel_ID: The floating selection.  *  * Transforms the specified floating selection into a layer.  *  * This procedure transforms the specified floating selection into a  * layer with the same offsets and extents. The composited image will  * look precisely the same, but the floating selection layer will no  * longer be clipped to the extents of the drawable it was attached to.  * The floating selection will become the active layer. This procedure  * will not work if the floating selection has a different base type  * from the underlying image. This might be the case if the floating  * selection is above an auxillary channel or a layer mask.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -243,7 +243,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_attach:  * @layer_ID: The layer (is attached as floating selection).  * @drawable_ID: The drawable (where to attach the floating selection).  *  * Attach the specified layer as floating to the specified drawable.  *  * This procedure attaches the layer as floating selection to the  * drawable.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_attach:  * @layer_ID: The layer (is attached as floating selection).  * @drawable_ID: The drawable (where to attach the floating selection).  *  * Attach the specified layer as floating to the specified drawable.  *  * This procedure attaches the layer as floating selection to the  * drawable.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -317,7 +317,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_rigor:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -391,7 +391,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_floating_sel_relax:  * @floating_sel_ID: The floating selection.  * @undo: .  *  * Deprecated: There is no replacement for this procedure.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

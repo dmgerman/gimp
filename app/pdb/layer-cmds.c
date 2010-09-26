@@ -34,12 +34,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"config/gimpcoreconfig.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimp.h"
 end_include
 
@@ -47,6 +41,12 @@ begin_include
 include|#
 directive|include
 file|"core/gimpdrawable.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"core/gimpgrouplayer.h"
 end_include
 
 begin_include
@@ -107,6 +107,12 @@ begin_include
 include|#
 directive|include
 file|"gimppdb-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"gimppdbcontext.h"
 end_include
 
 begin_include
@@ -775,6 +781,135 @@ begin_function
 specifier|static
 name|GValueArray
 modifier|*
+DECL|function|layer_group_new_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
+name|layer_group_new_invoker
+parameter_list|(
+name|GimpProcedure
+modifier|*
+name|procedure
+parameter_list|,
+name|Gimp
+modifier|*
+name|gimp
+parameter_list|,
+name|GimpContext
+modifier|*
+name|context
+parameter_list|,
+name|GimpProgress
+modifier|*
+name|progress
+parameter_list|,
+specifier|const
+name|GValueArray
+modifier|*
+name|args
+parameter_list|,
+name|GError
+modifier|*
+modifier|*
+name|error
+parameter_list|)
+block|{
+name|gboolean
+name|success
+init|=
+name|TRUE
+decl_stmt|;
+name|GValueArray
+modifier|*
+name|return_vals
+decl_stmt|;
+name|GimpImage
+modifier|*
+name|image
+decl_stmt|;
+name|GimpLayer
+modifier|*
+name|layer_group
+init|=
+name|NULL
+decl_stmt|;
+name|image
+operator|=
+name|gimp_value_get_image
+argument_list|(
+operator|&
+name|args
+operator|->
+name|values
+index|[
+literal|0
+index|]
+argument_list|,
+name|gimp
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+block|{
+name|layer_group
+operator|=
+name|gimp_group_layer_new
+argument_list|(
+name|image
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+operator|!
+name|layer_group
+condition|)
+name|success
+operator|=
+name|FALSE
+expr_stmt|;
+block|}
+name|return_vals
+operator|=
+name|gimp_procedure_get_return_values
+argument_list|(
+name|procedure
+argument_list|,
+name|success
+argument_list|,
+name|error
+condition|?
+operator|*
+name|error
+else|:
+name|NULL
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|success
+condition|)
+name|gimp_value_set_layer
+argument_list|(
+operator|&
+name|return_vals
+operator|->
+name|values
+index|[
+literal|1
+index|]
+argument_list|,
+name|layer_group
+argument_list|)
+expr_stmt|;
+return|return
+name|return_vals
+return|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|GValueArray
+modifier|*
 DECL|function|layer_copy_invoker (GimpProcedure * procedure,Gimp * gimp,GimpContext * context,GimpProgress * progress,const GValueArray * args,GError ** error)
 name|layer_copy_invoker
 parameter_list|(
@@ -1298,6 +1433,15 @@ name|error
 argument_list|)
 condition|)
 block|{
+name|GimpPDBContext
+modifier|*
+name|pdb_context
+init|=
+name|GIMP_PDB_CONTEXT
+argument_list|(
+name|context
+argument_list|)
+decl_stmt|;
 if|if
 condition|(
 name|progress
@@ -1325,11 +1469,9 @@ name|new_width
 argument_list|,
 name|new_height
 argument_list|,
-name|gimp
+name|pdb_context
 operator|->
-name|config
-operator|->
-name|interpolation_type
+name|interpolation
 argument_list|,
 name|progress
 argument_list|,
@@ -4597,7 +4739,7 @@ literal|"gimp-layer-new"
 argument_list|,
 literal|"Create a new layer."
 argument_list|,
-literal|"This procedure creates a new layer with the specified width, height, and type. Name, opacity, and mode are also supplied parameters. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-add-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
+literal|"This procedure creates a new layer with the specified width, height, and type. Name, opacity, and mode are also supplied parameters. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -4820,7 +4962,7 @@ literal|"gimp-layer-new-from-visible"
 argument_list|,
 literal|"Create a new layer from what is visible in an image."
 argument_list|,
-literal|"This procedure creates a new layer from what is visible in the given image. The new layer still needs to be added to the destination image, as this is not automatic. Add the new layer with the 'gimp-image-add-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
+literal|"This procedure creates a new layer from what is visible in the given image. The new layer still needs to be added to the destination image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -4959,7 +5101,7 @@ literal|"gimp-layer-new-from-drawable"
 argument_list|,
 literal|"Create a new layer by copying an existing drawable."
 argument_list|,
-literal|"This procedure creates a new layer as a copy of the specified drawable. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-add-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
+literal|"This procedure creates a new layer as a copy of the specified drawable. The new layer still needs to be added to the image, as this is not automatic. Add the new layer with the 'gimp-image-insert-layer' command. Other attributes such as layer mask modes, and offsets should be set with explicit procedure calls."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5025,6 +5167,99 @@ argument_list|,
 literal|"layer copy"
 argument_list|,
 literal|"The newly copied layer"
+argument_list|,
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_pdb_register_procedure
+argument_list|(
+name|pdb
+argument_list|,
+name|procedure
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|procedure
+argument_list|)
+expr_stmt|;
+comment|/*    * gimp-layer-group-new    */
+name|procedure
+operator|=
+name|gimp_procedure_new
+argument_list|(
+name|layer_group_new_invoker
+argument_list|)
+expr_stmt|;
+name|gimp_object_set_static_name
+argument_list|(
+name|GIMP_OBJECT
+argument_list|(
+name|procedure
+argument_list|)
+argument_list|,
+literal|"gimp-layer-group-new"
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_set_static_strings
+argument_list|(
+name|procedure
+argument_list|,
+literal|"gimp-layer-group-new"
+argument_list|,
+literal|"Create a new layer group."
+argument_list|,
+literal|"This procedure creates a new layer group. Attributes such as layer mode and opacity should be set with explicit procedure calls. Add the new layer group (which is a kind of layer) with the 'gimp-image-insert-layer' command."
+argument_list|,
+literal|"Barak Itkin<lightningismyname@gmail.com>"
+argument_list|,
+literal|"Barak Itkin"
+argument_list|,
+literal|"2010"
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_argument
+argument_list|(
+name|procedure
+argument_list|,
+name|gimp_param_spec_image_id
+argument_list|(
+literal|"image"
+argument_list|,
+literal|"image"
+argument_list|,
+literal|"The image to which to add the layer group"
+argument_list|,
+name|pdb
+operator|->
+name|gimp
+argument_list|,
+name|FALSE
+argument_list|,
+name|GIMP_PARAM_READWRITE
+argument_list|)
+argument_list|)
+expr_stmt|;
+name|gimp_procedure_add_return_value
+argument_list|(
+name|procedure
+argument_list|,
+name|gimp_param_spec_layer_id
+argument_list|(
+literal|"layer-group"
+argument_list|,
+literal|"layer group"
+argument_list|,
+literal|"The newly created layer group"
 argument_list|,
 name|pdb
 operator|->
@@ -5327,7 +5562,7 @@ literal|"gimp-layer-scale"
 argument_list|,
 literal|"Scale the layer using the default interpolation method."
 argument_list|,
-literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The 'local-origin' parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image. The default interpolation method is used for scaling."
+literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The 'local-origin' parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image. The interpolation method used can be set with 'gimp-context-set-interpolation'."
 argument_list|,
 literal|"Spencer Kimball& Peter Mattis"
 argument_list|,
@@ -5458,9 +5693,9 @@ name|procedure
 argument_list|,
 literal|"gimp-layer-scale-full"
 argument_list|,
-literal|"Scale the layer using a specific interpolation method."
+literal|"Deprecated: Use 'gimp-layer-scale' instead."
 argument_list|,
-literal|"This procedure scales the layer so that its new width and height are equal to the supplied parameters. The 'local-origin' parameter specifies whether to scale from the center of the layer, or from the image origin. This operation only works if the layer has been added to an image. This procedure allows you to specify the interpolation method explicitly."
+literal|"Deprecated: Use 'gimp-layer-scale' instead."
 argument_list|,
 literal|"Sven Neumann<sven@gimp.org>"
 argument_list|,
@@ -5468,7 +5703,7 @@ literal|"Sven Neumann"
 argument_list|,
 literal|"2008"
 argument_list|,
-name|NULL
+literal|"gimp-layer-scale"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

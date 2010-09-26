@@ -300,7 +300,7 @@ end_function
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2b4cb2b80108
+DECL|struct|__anon2ac2be880108
 block|{
 DECL|member|width
 name|gint
@@ -1032,12 +1032,15 @@ argument_list|,
 name|GIMP_NORMAL_MODE
 argument_list|)
 expr_stmt|;
-name|gimp_image_add_layer
+name|gimp_image_insert_layer
 argument_list|(
 name|new_image_id
 argument_list|,
 operator|*
 name|layer_id
+argument_list|,
+operator|-
+literal|1
 argument_list|,
 literal|0
 argument_list|)

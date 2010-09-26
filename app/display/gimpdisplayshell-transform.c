@@ -266,12 +266,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_xy:  * @shell:  * @x:  * @y:  * @nx:  * @ny:  * @use_offsets:  *  * Transforms an image coordinate to a shell coordinate.  **/
+comment|/**  * gimp_display_shell_transform_xy:  * @shell:  * @x:  * @y:  * @nx:  * @ny:  *  * Transforms an image coordinate to a shell coordinate.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_xy (const GimpDisplayShell * shell,gdouble x,gdouble y,gint * nx,gint * ny,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_xy (const GimpDisplayShell * shell,gdouble x,gdouble y,gint * nx,gint * ny)
 name|gimp_display_shell_transform_xy
 parameter_list|(
 specifier|const
@@ -292,21 +292,8 @@ parameter_list|,
 name|gint
 modifier|*
 name|ny
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|gint64
 name|tx
 decl_stmt|;
@@ -335,54 +322,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-name|x
-operator|+=
-name|offset_x
-expr_stmt|;
-name|y
-operator|+=
-name|offset_y
-expr_stmt|;
-block|}
 name|tx
 operator|=
 operator|(
@@ -458,12 +397,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_xy:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          returns x oordinate in image coordinates  * @ny:          returns y coordinate in image coordinates  * @round:       if %TRUE, round the results to the nearest integer;  *               if %FALSE, simply cast them to @gint.  * @use_offsets: if %TRUE, @nx and @ny will be returned in the coordinate  *               system of the active drawable instead of the image  *  * Transform from display coordinates to image coordinates, so that  * points on the display can be mapped to the corresponding points  * in the image.  **/
+comment|/**  * gimp_display_shell_untransform_xy:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          returns x oordinate in image coordinates  * @ny:          returns y coordinate in image coordinates  * @round:       if %TRUE, round the results to the nearest integer;  *               if %FALSE, simply cast them to @gint.  *  * Transform from display coordinates to image coordinates, so that  * points on the display can be mapped to the corresponding points  * in the image.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_xy (const GimpDisplayShell * shell,gint x,gint y,gint * nx,gint * ny,gboolean round,gboolean use_offsets)
+DECL|function|gimp_display_shell_untransform_xy (const GimpDisplayShell * shell,gint x,gint y,gint * nx,gint * ny,gboolean round)
 name|gimp_display_shell_untransform_xy
 parameter_list|(
 specifier|const
@@ -487,21 +426,8 @@ name|ny
 parameter_list|,
 name|gboolean
 name|round
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|gint64
 name|tx
 decl_stmt|;
@@ -530,46 +456,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-block|}
 name|tx
 operator|=
 operator|(
@@ -650,8 +536,6 @@ operator|=
 name|CLAMP
 argument_list|(
 name|tx
-operator|-
-name|offset_x
 argument_list|,
 name|G_MININT
 argument_list|,
@@ -664,8 +548,6 @@ operator|=
 name|CLAMP
 argument_list|(
 name|ty
-operator|-
-name|offset_y
 argument_list|,
 name|G_MININT
 argument_list|,
@@ -676,12 +558,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate of point in image coordinates  * @y:           y coordinate of point in image coordinate  * @nx:          returns the transformed x coordinate  * @ny:          returns the transformed y coordinate  * @use_offsets: if %TRUE, the @x and @y coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * This function is identical to gimp_display_shell_transfrom_xy(),  * except that it returns its results as doubles rather than ints.  **/
+comment|/**  * gimp_display_shell_transform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate of point in image coordinates  * @y:           y coordinate of point in image coordinate  * @nx:          returns the transformed x coordinate  * @ny:          returns the transformed y coordinate  *  * This function is identical to gimp_display_shell_transfrom_xy(),  * except that it returns its results as doubles rather than ints.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_xy_f (const GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_xy_f (const GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny)
 name|gimp_display_shell_transform_xy_f
 parameter_list|(
 specifier|const
@@ -702,21 +584,8 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|ny
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -739,46 +608,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-block|}
 operator|*
 name|nx
 operator|=
@@ -787,8 +616,6 @@ argument_list|(
 name|shell
 argument_list|,
 name|x
-operator|+
-name|offset_x
 argument_list|)
 operator|-
 name|shell
@@ -803,8 +630,6 @@ argument_list|(
 name|shell
 argument_list|,
 name|y
-operator|+
-name|offset_y
 argument_list|)
 operator|-
 name|shell
@@ -815,12 +640,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_untransform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          place to return x coordinate in image coordinates  * @ny:          place to return y coordinate in image coordinates  * @use_offsets: if %TRUE, @nx and @ny will be returned in the coordinate  *               system of the active drawable instead of the image  *  * This function is identical to gimp_display_shell_untransform_xy(),  * except that the input and output coordinates are doubles rather than  * ints, and consequently there is no option related to rounding.  **/
+comment|/**  * gimp_display_shell_untransform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate in display coordinates  * @y:           y coordinate in display coordinates  * @nx:          place to return x coordinate in image coordinates  * @ny:          place to return y coordinate in image coordinates  *  * This function is identical to gimp_display_shell_untransform_xy(),  * except that the input and output coordinates are doubles rather than  * ints, and consequently there is no option related to rounding.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_untransform_xy_f (const GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny,gboolean use_offsets)
+DECL|function|gimp_display_shell_untransform_xy_f (const GimpDisplayShell * shell,gdouble x,gdouble y,gdouble * nx,gdouble * ny)
 name|gimp_display_shell_untransform_xy_f
 parameter_list|(
 specifier|const
@@ -841,21 +666,8 @@ parameter_list|,
 name|gdouble
 modifier|*
 name|ny
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_DISPLAY_SHELL
@@ -878,46 +690,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-block|}
 operator|*
 name|nx
 operator|=
@@ -932,8 +704,6 @@ operator|/
 name|shell
 operator|->
 name|scale_x
-operator|-
-name|offset_x
 expr_stmt|;
 operator|*
 name|ny
@@ -949,19 +719,17 @@ operator|/
 name|shell
 operator|->
 name|scale_y
-operator|-
-name|offset_y
 expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_points:  * @shell:       a #GimpDisplayShell  * @points:      array of GimpVectors2 coordinate pairs  * @coords:      returns the corresponding display coordinates  * @n_points:    number of points  * @use_offsets: if %TRUE, the source coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_points:  * @shell:       a #GimpDisplayShell  * @points:      array of GimpVectors2 coordinate pairs  * @coords:      returns the corresponding display coordinates  * @n_points:    number of points  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_points (const GimpDisplayShell * shell,const GimpVector2 * points,GdkPoint * coords,gint n_points,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_points (const GimpDisplayShell * shell,const GimpVector2 * points,GdkPoint * coords,gint n_points)
 name|gimp_display_shell_transform_points
 parameter_list|(
 specifier|const
@@ -980,21 +748,8 @@ name|coords
 parameter_list|,
 name|gint
 name|n_points
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1006,46 +761,6 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-block|}
 for|for
 control|(
 name|i
@@ -1069,8 +784,6 @@ name|i
 index|]
 operator|.
 name|x
-operator|+
-name|offset_x
 decl_stmt|;
 name|gdouble
 name|y
@@ -1081,8 +794,6 @@ name|i
 index|]
 operator|.
 name|y
-operator|+
-name|offset_y
 decl_stmt|;
 name|x
 operator|=
@@ -1159,12 +870,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_coords:  * @shell:        a #GimpDisplayShell  * @image_coords: array of image coordinates  * @disp_coords:  returns the corresponding display coordinates  * @n_coords:     number of coordinates  * @use_offsets:  if %TRUE, the source coordinates are in the coordinate  *                system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_coords:  * @shell:        a #GimpDisplayShell  * @image_coords: array of image coordinates  * @disp_coords:  returns the corresponding display coordinates  * @n_coords:     number of coordinates  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_coords (const GimpDisplayShell * shell,const GimpCoords * image_coords,GdkPoint * disp_coords,gint n_coords,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_coords (const GimpDisplayShell * shell,const GimpCoords * image_coords,GdkPoint * disp_coords,gint n_coords)
 name|gimp_display_shell_transform_coords
 parameter_list|(
 specifier|const
@@ -1183,21 +894,8 @@ name|disp_coords
 parameter_list|,
 name|gint
 name|n_coords
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1209,46 +907,6 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-block|}
 for|for
 control|(
 name|i
@@ -1272,8 +930,6 @@ name|i
 index|]
 operator|.
 name|x
-operator|+
-name|offset_x
 decl_stmt|;
 name|gdouble
 name|y
@@ -1284,8 +940,6 @@ name|i
 index|]
 operator|.
 name|y
-operator|+
-name|offset_y
 decl_stmt|;
 name|x
 operator|=
@@ -1362,12 +1016,12 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_segments:  * @shell:       a #GimpDisplayShell  * @src_segs:    array of segments in image coordinates  * @dest_segs:   returns the corresponding segments in display coordinates  * @n_segs:      number of segments  * @use_offsets: if %TRUE, the source coordinates are in the coordinate  *               system of the active drawable instead of the image  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
+comment|/**  * gimp_display_shell_transform_segments:  * @shell:       a #GimpDisplayShell  * @src_segs:    array of segments in image coordinates  * @dest_segs:   returns the corresponding segments in display coordinates  * @n_segs:      number of segments  *  * Transforms from image coordinates to display coordinates, so that  * objects can be rendered at the correct points on the display.  **/
 end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_segments (const GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs,gboolean use_offsets)
+DECL|function|gimp_display_shell_transform_segments (const GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs)
 name|gimp_display_shell_transform_segments
 parameter_list|(
 specifier|const
@@ -1386,21 +1040,8 @@ name|dest_segs
 parameter_list|,
 name|gint
 name|n_segs
-parameter_list|,
-name|gboolean
-name|use_offsets
 parameter_list|)
 block|{
-name|gint
-name|offset_x
-init|=
-literal|0
-decl_stmt|;
-name|gint
-name|offset_y
-init|=
-literal|0
-decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
@@ -1412,46 +1053,6 @@ name|shell
 argument_list|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|use_offsets
-condition|)
-block|{
-name|GimpImage
-modifier|*
-name|image
-init|=
-name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-decl_stmt|;
-name|GimpItem
-modifier|*
-name|item
-init|=
-name|GIMP_ITEM
-argument_list|(
-name|gimp_image_get_active_drawable
-argument_list|(
-name|image
-argument_list|)
-argument_list|)
-decl_stmt|;
-name|gimp_item_get_offset
-argument_list|(
-name|item
-argument_list|,
-operator|&
-name|offset_x
-argument_list|,
-operator|&
-name|offset_y
-argument_list|)
-expr_stmt|;
-block|}
 for|for
 control|(
 name|i
@@ -1484,8 +1085,6 @@ name|i
 index|]
 operator|.
 name|x1
-operator|+
-name|offset_x
 expr_stmt|;
 name|x2
 operator|=
@@ -1495,8 +1094,6 @@ name|i
 index|]
 operator|.
 name|x2
-operator|+
-name|offset_x
 expr_stmt|;
 name|y1
 operator|=
@@ -1506,8 +1103,6 @@ name|i
 index|]
 operator|.
 name|y1
-operator|+
-name|offset_y
 expr_stmt|;
 name|y2
 operator|=
@@ -1517,8 +1112,6 @@ name|i
 index|]
 operator|.
 name|y2
-operator|+
-name|offset_y
 expr_stmt|;
 name|x1
 operator|=
@@ -1727,8 +1320,6 @@ operator|&
 name|y1
 argument_list|,
 name|FALSE
-argument_list|,
-name|FALSE
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_untransform_xy
@@ -1748,8 +1339,6 @@ name|x2
 argument_list|,
 operator|&
 name|y2
-argument_list|,
-name|FALSE
 argument_list|,
 name|FALSE
 argument_list|)

@@ -74,6 +74,16 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
+name|gimp_item_is_text_layer
+parameter_list|(
+name|gint32
+name|item_ID
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
 name|gimp_item_is_channel
 parameter_list|(
 name|gint32
@@ -261,6 +271,19 @@ name|item_ID
 parameter_list|,
 name|gint
 name|tattoo
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|gboolean
+name|gimp_item_to_selection
+parameter_list|(
+name|gint32
+name|item_ID
+parameter_list|,
+name|GimpChannelOps
+name|operation
 parameter_list|)
 function_decl|;
 end_function_decl

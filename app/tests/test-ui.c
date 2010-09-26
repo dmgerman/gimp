@@ -218,7 +218,7 @@ DECL|macro|GIMP_UI_WINDOW_POSITION_EPSILON
 define|#
 directive|define
 name|GIMP_UI_WINDOW_POSITION_EPSILON
-value|10
+value|25
 end_define
 
 begin_define
@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a45d6830108
+DECL|struct|__anon2bbcd3e30108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1187,9 +1187,6 @@ name|shell_x_before_zoom
 argument_list|,
 operator|&
 name|shell_y_before_zoom
-argument_list|,
-name|FALSE
-comment|/*use_offsets*/
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_push_zoom_focus_pointer_pos
@@ -1238,9 +1235,6 @@ name|shell_x_after_zoom
 argument_list|,
 operator|&
 name|shell_y_after_zoom
-argument_list|,
-name|FALSE
-comment|/*use_offsets*/
 argument_list|)
 expr_stmt|;
 name|factor_after_zoom
@@ -2143,9 +2137,6 @@ name|x_temp
 argument_list|,
 operator|&
 name|y_temp
-argument_list|,
-name|FALSE
-comment|/*use_offsets*/
 argument_list|)
 expr_stmt|;
 name|gtk_widget_translate_coordinates
@@ -2201,9 +2192,6 @@ name|x_temp
 argument_list|,
 operator|&
 name|y_temp
-argument_list|,
-name|FALSE
-comment|/*use_offsets*/
 argument_list|)
 expr_stmt|;
 name|gtk_widget_translate_coordinates

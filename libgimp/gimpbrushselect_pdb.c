@@ -24,7 +24,7 @@ comment|/**  * SECTION: gimpbrushselect  * @title: gimpbrushselect  * @short_des
 end_comment
 
 begin_comment
-comment|/**  * gimp_brushes_popup:  * @brush_callback: The callback PDB proc to call when brush selection is made.  * @popup_title: Title of the brush selection dialog.  * @initial_brush: The name of the brush to set as the first selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Invokes the Gimp brush selection.  *  * This procedure opens the brush selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_popup:  * @brush_callback: The callback PDB proc to call when brush selection is made.  * @popup_title: Title of the brush selection dialog.  * @initial_brush: The name of the brush to set as the first selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Invokes the Gimp brush selection.  *  * This procedure opens the brush selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -132,7 +132,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_close_popup:  * @brush_callback: The name of the callback registered for this pop-up.  *  * Close the brush selection dialog.  *  * This procedure closes an opened brush selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_close_popup:  * @brush_callback: The name of the callback registered for this pop-up.  *  * Close the brush selection dialog.  *  * This procedure closes an opened brush selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -201,7 +201,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_brushes_set_popup:  * @brush_callback: The name of the callback registered for this pop-up.  * @brush_name: The name of the brush to set as selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Sets the current brush in a brush selection dialog.  *  * Sets the current brush in a brush selection dialog.  *  * Returns: TRUE on success.  */
+comment|/**  * gimp_brushes_set_popup:  * @brush_callback: The name of the callback registered for this pop-up.  * @brush_name: The name of the brush to set as selected.  * @opacity: The initial opacity of the brush.  * @spacing: The initial spacing of the brush (if< 0 then use brush default spacing).  * @paint_mode: The initial paint mode.  *  * Sets the current brush in a brush selection dialog.  *  * Sets the current brush in a brush selection dialog.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
