@@ -47,6 +47,15 @@ typedef|;
 end_typedef
 
 begin_typedef
+DECL|typedef|GimpCanvasGroup
+typedef|typedef
+name|struct
+name|_GimpCanvasGroup
+name|GimpCanvasGroup
+typedef|;
+end_typedef
+
+begin_typedef
 DECL|typedef|GimpDisplay
 typedef|typedef
 name|struct

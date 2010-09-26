@@ -86,15 +86,6 @@ value|(G_TYPE_INSTANCE_GET_CLASS ((obj), GIMP_TYPE_CANVAS_GROUP, GimpCanvasGroup
 end_define
 
 begin_typedef
-DECL|typedef|GimpCanvasGroup
-typedef|typedef
-name|struct
-name|_GimpCanvasGroup
-name|GimpCanvasGroup
-typedef|;
-end_typedef
-
-begin_typedef
 DECL|typedef|GimpCanvasGroupClass
 typedef|typedef
 name|struct
