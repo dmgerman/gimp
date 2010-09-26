@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295ac6b60103
+DECL|enum|__anon2b6e14c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -547,6 +547,16 @@ argument_list|(
 name|handle
 argument_list|)
 decl_stmt|;
+name|gimp_canvas_item_set_line_cap
+argument_list|(
+name|GIMP_CANVAS_ITEM
+argument_list|(
+name|handle
+argument_list|)
+argument_list|,
+name|CAIRO_LINE_CAP_SQUARE
+argument_list|)
+expr_stmt|;
 name|private
 operator|->
 name|start_angle
