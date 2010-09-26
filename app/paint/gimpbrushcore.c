@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c88a0790103
+DECL|enum|__anon2a3fbfd00103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4344,13 +4344,6 @@ block|{
 literal|0
 block|, }
 decl_stmt|;
-name|BoundSeg
-modifier|*
-name|boundary
-decl_stmt|;
-name|gint
-name|num_groups
-decl_stmt|;
 name|pixel_region_init_temp_buf
 argument_list|(
 operator|&
@@ -4392,7 +4385,9 @@ operator|&
 name|PR
 argument_list|)
 expr_stmt|;
-name|boundary
+name|core
+operator|->
+name|brush_bound_segs
 operator|=
 name|boundary_find
 argument_list|(
@@ -4419,33 +4414,6 @@ operator|&
 name|core
 operator|->
 name|n_brush_bound_segs
-argument_list|)
-expr_stmt|;
-name|core
-operator|->
-name|brush_bound_segs
-operator|=
-name|boundary_sort
-argument_list|(
-name|boundary
-argument_list|,
-name|core
-operator|->
-name|n_brush_bound_segs
-argument_list|,
-operator|&
-name|num_groups
-argument_list|)
-expr_stmt|;
-name|core
-operator|->
-name|n_brush_bound_segs
-operator|+=
-name|num_groups
-expr_stmt|;
-name|g_free
-argument_list|(
-name|boundary
 argument_list|)
 expr_stmt|;
 name|core
