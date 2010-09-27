@@ -184,6 +184,20 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_canvas_group_set_group_filling
+parameter_list|(
+name|GimpCanvasGroup
+modifier|*
+name|group
+parameter_list|,
+name|gboolean
+name|group_filling
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
