@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon295074aa0103
+DECL|enum|__anon291d9be30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon295074aa0203
+DECL|enum|__anon291d9be30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -7370,7 +7370,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GimpDrawable * mask,GimpChannelType color)
+DECL|function|gimp_display_shell_set_mask (GimpDisplayShell * shell,GimpDrawable * mask,const GimpRGB * color)
 name|gimp_display_shell_set_mask
 parameter_list|(
 name|GimpDisplayShell
@@ -7381,7 +7381,9 @@ name|GimpDrawable
 modifier|*
 name|mask
 parameter_list|,
-name|GimpChannelType
+specifier|const
+name|GimpRGB
+modifier|*
 name|color
 parameter_list|)
 block|{
@@ -7414,21 +7416,17 @@ literal|1
 operator|)
 argument_list|)
 expr_stmt|;
-if|if
-condition|(
-name|shell
-operator|->
+name|g_return_if_fail
+argument_list|(
 name|mask
 operator|==
-name|mask
-operator|&&
-name|shell
-operator|->
-name|mask_color
-operator|==
+name|NULL
+operator|||
 name|color
-condition|)
-return|return;
+operator|!=
+name|NULL
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|mask
@@ -7457,10 +7455,15 @@ name|mask
 operator|=
 name|mask
 expr_stmt|;
+if|if
+condition|(
+name|mask
+condition|)
 name|shell
 operator|->
 name|mask_color
 operator|=
+operator|*
 name|color
 expr_stmt|;
 name|gimp_display_shell_expose_full

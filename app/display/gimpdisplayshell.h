@@ -678,7 +678,7 @@ modifier|*
 name|mask
 decl_stmt|;
 DECL|member|mask_color
-name|GimpChannelType
+name|GimpRGB
 name|mask_color
 decl_stmt|;
 DECL|member|event_history
@@ -1108,7 +1108,9 @@ name|GimpDrawable
 modifier|*
 name|mask
 parameter_list|,
-name|GimpChannelType
+specifier|const
+name|GimpRGB
+modifier|*
 name|color
 parameter_list|)
 function_decl|;

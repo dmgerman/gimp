@@ -168,6 +168,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+name|void
+name|gimp_foreground_select_options_get_mask_color
+parameter_list|(
+name|GimpForegroundSelectOptions
+modifier|*
+name|options
+parameter_list|,
+name|GimpRGB
+modifier|*
+name|color
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_endif
 endif|#
 directive|endif
