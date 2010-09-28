@@ -488,7 +488,7 @@ comment|/*****************************************************************/
 end_comment
 
 begin_comment
-comment|/*  This function is the core of the display--it offsets and     */
+comment|/*  This function is the core of the display -- it offsets and   */
 end_comment
 
 begin_comment
@@ -496,11 +496,11 @@ comment|/*  scales the image according to the current parameters in the  */
 end_comment
 
 begin_comment
-comment|/*  display object.  It handles color, grayscale, 8, 15, 16, 24  */
+comment|/*  display object.  It handles RGBA and GRAYA projection tiles  */
 end_comment
 
 begin_comment
-comment|/*& 32 bit output depths.                                      */
+comment|/*  and renders them to an ARGB32 cairo surface.                 */
 end_comment
 
 begin_comment
