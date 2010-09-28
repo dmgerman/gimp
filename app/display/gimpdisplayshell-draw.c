@@ -3681,18 +3681,11 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-comment|/*  FIXME: make this configurable or at least use gimpdisplayshell-style.c  */
-name|cairo_set_source_rgba
+name|gimp_display_shell_set_dim_style
 argument_list|(
+name|shell
+argument_list|,
 name|cr
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0
-argument_list|,
-literal|0.5
 argument_list|)
 expr_stmt|;
 name|cairo_paint
