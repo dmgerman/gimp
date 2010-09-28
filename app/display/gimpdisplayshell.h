@@ -476,6 +476,12 @@ modifier|*
 name|render_surface
 decl_stmt|;
 comment|/*  buffer for rendering the image     */
+DECL|member|checkerboard
+name|cairo_pattern_t
+modifier|*
+name|checkerboard
+decl_stmt|;
+comment|/*  checkerboard pattern               */
 DECL|member|title_idle_id
 name|guint
 name|title_idle_id

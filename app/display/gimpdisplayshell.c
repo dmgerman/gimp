@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5eee760103
+DECL|enum|__anon2895e4c50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c5eee760203
+DECL|enum|__anon2895e4c50203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1175,7 +1175,7 @@ name|render_surface
 operator|=
 name|cairo_image_surface_create
 argument_list|(
-name|CAIRO_FORMAT_RGB24
+name|CAIRO_FORMAT_ARGB32
 argument_list|,
 name|GIMP_DISPLAY_RENDER_BUF_WIDTH
 argument_list|,
@@ -3198,6 +3198,27 @@ expr_stmt|;
 name|shell
 operator|->
 name|render_surface
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|shell
+operator|->
+name|checkerboard
+condition|)
+block|{
+name|cairo_pattern_destroy
+argument_list|(
+name|shell
+operator|->
+name|checkerboard
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|checkerboard
 operator|=
 name|NULL
 expr_stmt|;
