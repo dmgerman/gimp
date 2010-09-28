@@ -311,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895e4c50103
+DECL|enum|__anon295074aa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2895e4c50203
+DECL|enum|__anon295074aa0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -3198,6 +3198,27 @@ expr_stmt|;
 name|shell
 operator|->
 name|render_surface
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|shell
+operator|->
+name|mask_surface
+condition|)
+block|{
+name|cairo_surface_destroy
+argument_list|(
+name|shell
+operator|->
+name|mask_surface
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|mask_surface
 operator|=
 name|NULL
 expr_stmt|;
@@ -7344,7 +7365,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  *  * Allows to preview a selection (used by the foreground selection  * tool).  Pixels that are not selected (> 127) in the mask are tinted  * with dark blue.  **/
+comment|/**  * gimp_display_shell_set_mask:  * @shell: a #GimpDisplayShell  * @mask:  a #GimpDrawable (1 byte per pixel)  * @color: the color to use for drawing the mask  *  * Allows to preview a selection (used by the foreground selection  * tool).  Pixels that are not selected (> 127) in the mask are tinted  * with the given color.  **/
 end_comment
 
 begin_function

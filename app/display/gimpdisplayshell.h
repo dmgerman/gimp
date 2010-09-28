@@ -476,6 +476,12 @@ modifier|*
 name|render_surface
 decl_stmt|;
 comment|/*  buffer for rendering the image     */
+DECL|member|mask_surface
+name|cairo_surface_t
+modifier|*
+name|mask_surface
+decl_stmt|;
+comment|/*  buffer for rendering the mask      */
 DECL|member|checkerboard
 name|cairo_pattern_t
 modifier|*
