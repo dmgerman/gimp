@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-render.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpstatusbar.h"
 end_include
 
@@ -1637,11 +1631,6 @@ argument_list|(
 name|gimp
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_render_init
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
 name|dialogs_init
 argument_list|(
 name|gimp
@@ -2485,11 +2474,6 @@ name|gimp
 argument_list|)
 expr_stmt|;
 name|actions_exit
-argument_list|(
-name|gimp
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_render_exit
 argument_list|(
 name|gimp
 argument_list|)
