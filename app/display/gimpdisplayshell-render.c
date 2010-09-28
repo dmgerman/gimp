@@ -12,12 +12,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<string.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<gegl.h>
 end_include
 
@@ -25,24 +19,6 @@ begin_include
 include|#
 directive|include
 file|<gtk/gtk.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpbase/gimpbase.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpmath/gimpmath.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"libgimpwidgets/gimpwidgets.h"
 end_include
 
 begin_include
@@ -72,12 +48,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimp.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimpdrawable.h"
 end_include
 
@@ -90,12 +60,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/gimpimage-colormap.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"core/gimppickable.h"
 end_include
 
@@ -103,12 +67,6 @@ begin_include
 include|#
 directive|include
 file|"core/gimpprojection.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"gimpcanvas.h"
 end_include
 
 begin_include
