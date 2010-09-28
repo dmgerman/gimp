@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"git-version.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"about-dialog.h"
 end_include
 
@@ -90,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e27a0f0108
+DECL|struct|__anon2b42ae1e0108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -321,6 +327,10 @@ name|GList
 modifier|*
 name|children
 decl_stmt|;
+name|gchar
+modifier|*
+name|copyright
+decl_stmt|;
 name|dialog
 operator|=
 name|g_new0
@@ -345,6 +355,15 @@ name|pixbuf
 operator|=
 name|about_dialog_load_logo
 argument_list|()
+expr_stmt|;
+name|copyright
+operator|=
+name|g_strdup_printf
+argument_list|(
+name|GIMP_COPYRIGHT
+argument_list|,
+name|GIMP_GIT_LAST_COMMIT_YEAR
+argument_list|)
 expr_stmt|;
 name|widget
 operator|=
@@ -377,7 +396,7 @@ name|GIMP_VERSION
 argument_list|,
 literal|"copyright"
 argument_list|,
-name|GIMP_COPYRIGHT
+name|copyright
 argument_list|,
 literal|"comments"
 argument_list|,
@@ -436,6 +455,11 @@ condition|)
 name|g_object_unref
 argument_list|(
 name|pixbuf
+argument_list|)
+expr_stmt|;
+name|g_free
+argument_list|(
+name|copyright
 argument_list|)
 expr_stmt|;
 name|dialog
