@@ -138,7 +138,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpcanvasguide.h"
+file|"display/gimpcanvasitem.h"
 end_include
 
 begin_include
@@ -3054,8 +3054,10 @@ name|item
 decl_stmt|;
 name|item
 operator|=
-name|gimp_canvas_guide_new
+name|gimp_draw_tool_add_guide_line
 argument_list|(
+name|draw_tool
+argument_list|,
 name|gimp_guide_get_orientation
 argument_list|(
 name|move
@@ -3087,18 +3089,6 @@ argument_list|(
 name|item
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_draw_tool_add_item
-argument_list|(
-name|draw_tool
-argument_list|,
-name|item
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|item
 argument_list|)
 expr_stmt|;
 block|}
