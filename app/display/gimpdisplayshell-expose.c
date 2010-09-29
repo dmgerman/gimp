@@ -550,7 +550,7 @@ name|GIMP_SAMPLE_POINT_DRAW_SIZE
 argument_list|)
 argument_list|)
 expr_stmt|;
-comment|/* HACK: add 3 instead of 1 so the number gets cleared too */
+comment|/* HACK: add 4 instead of 1 so the number gets cleared too */
 name|gimp_display_shell_expose_area
 argument_list|(
 name|shell
@@ -563,13 +563,13 @@ name|x2
 operator|-
 name|x1
 operator|+
-literal|3
+literal|4
 argument_list|,
 name|y2
 operator|-
 name|y1
 operator|+
-literal|3
+literal|4
 argument_list|)
 expr_stmt|;
 block|}
