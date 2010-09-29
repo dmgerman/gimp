@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28938fb30103
+DECL|enum|__anon2bdcf5100103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -946,6 +946,45 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_function
+name|gboolean
+DECL|function|gimp_canvas_item_get_highlight (GimpCanvasItem * item)
+name|gimp_canvas_item_get_highlight
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|)
+block|{
+name|GimpCanvasItemPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_CANVAS_ITEM
+argument_list|(
+name|item
+argument_list|)
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|private
+operator|=
+name|GET_PRIVATE
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
+return|return
+name|private
+operator|->
+name|highlight
+return|;
 block|}
 end_function
 
