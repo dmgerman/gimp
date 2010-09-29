@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b42ae1e0108
+DECL|struct|__anon275645000108
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -437,7 +437,7 @@ literal|"documenters"
 argument_list|,
 name|documenters
 argument_list|,
-comment|/* Translators: insert your names here, separated by newline */
+comment|/* Translators: insert your names here,                                 separated by newline */
 literal|"translator-credits"
 argument_list|,
 name|_
