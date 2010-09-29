@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorpanel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainerentry.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276dbff70103
+DECL|enum|__anon2b5563800103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -886,21 +892,21 @@ name|editor
 operator|->
 name|color_button
 operator|=
-name|gimp_color_button_new
+name|gimp_color_panel_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Change color of selected text"
 argument_list|)
 argument_list|,
-literal|20
-argument_list|,
-literal|20
-argument_list|,
 operator|&
 name|color
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
+argument_list|,
+literal|20
+argument_list|,
+literal|20
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1407,6 +1413,24 @@ name|gimp_text_style_editor_font_changed
 argument_list|)
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+comment|/* use the global user context so we get the global FG/BG colors */
+name|gimp_color_panel_set_context
+argument_list|(
+name|GIMP_COLOR_PANEL
+argument_list|(
+name|editor
+operator|->
+name|color_button
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|editor
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_set_container
