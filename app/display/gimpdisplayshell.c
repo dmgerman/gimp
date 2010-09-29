@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvasgroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -311,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon291d9be30103
+DECL|enum|__anon2c290e210103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon291d9be30203
+DECL|enum|__anon2c290e210203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1181,6 +1187,13 @@ name|GIMP_DISPLAY_RENDER_BUF_WIDTH
 argument_list|,
 name|GIMP_DISPLAY_RENDER_BUF_HEIGHT
 argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|canvas_item
+operator|=
+name|gimp_canvas_group_new
+argument_list|()
 expr_stmt|;
 name|shell
 operator|->
@@ -3284,6 +3297,27 @@ expr_stmt|;
 name|shell
 operator|->
 name|mask
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+if|if
+condition|(
+name|shell
+operator|->
+name|canvas_item
+condition|)
+block|{
+name|g_object_unref
+argument_list|(
+name|shell
+operator|->
+name|canvas_item
+argument_list|)
+expr_stmt|;
+name|shell
+operator|->
+name|canvas_item
 operator|=
 name|NULL
 expr_stmt|;

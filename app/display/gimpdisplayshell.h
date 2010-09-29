@@ -488,6 +488,12 @@ modifier|*
 name|checkerboard
 decl_stmt|;
 comment|/*  checkerboard pattern               */
+DECL|member|canvas_item
+name|GimpCanvasItem
+modifier|*
+name|canvas_item
+decl_stmt|;
+comment|/*  items drawn on the canvas          */
 DECL|member|title_idle_id
 name|guint
 name|title_idle_id

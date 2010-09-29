@@ -219,21 +219,6 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_draw_tool_draw_items
-parameter_list|(
-name|GimpDrawTool
-modifier|*
-name|draw_tool
-parameter_list|,
-name|cairo_t
-modifier|*
-name|cr
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
 name|gdouble
 name|gimp_draw_tool_calc_distance
 parameter_list|(
