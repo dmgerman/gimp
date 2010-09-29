@@ -8050,7 +8050,7 @@ condition|;
 name|i
 operator|++
 control|)
-name|gimp_display_shell_draw_area
+name|gimp_display_shell_draw_image
 argument_list|(
 name|shell
 argument_list|,

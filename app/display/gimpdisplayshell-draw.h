@@ -281,7 +281,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_draw_area
+name|gimp_display_shell_draw_image
 parameter_list|(
 name|GimpDisplayShell
 modifier|*

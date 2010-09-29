@@ -3155,8 +3155,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_area (GimpDisplayShell * shell,cairo_t * cr,gint x,gint y,gint w,gint h)
-name|gimp_display_shell_draw_area
+DECL|function|gimp_display_shell_draw_image (GimpDisplayShell * shell,cairo_t * cr,gint x,gint y,gint w,gint h)
+name|gimp_display_shell_draw_image
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
