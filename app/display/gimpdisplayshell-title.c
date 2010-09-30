@@ -651,10 +651,6 @@ modifier|*
 name|format
 parameter_list|)
 block|{
-name|Gimp
-modifier|*
-name|gimp
-decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -682,15 +678,6 @@ expr_stmt|;
 name|image
 operator|=
 name|gimp_display_get_image
-argument_list|(
-name|shell
-operator|->
-name|display
-argument_list|)
-expr_stmt|;
-name|gimp
-operator|=
-name|gimp_display_get_gimp
 argument_list|(
 name|shell
 operator|->
