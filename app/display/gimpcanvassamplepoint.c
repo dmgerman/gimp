@@ -75,9 +75,17 @@ directive|include
 file|"gimpdisplayshell-transform.h"
 end_include
 
+begin_define
+DECL|macro|GIMP_SAMPLE_POINT_DRAW_SIZE
+define|#
+directive|define
+name|GIMP_SAMPLE_POINT_DRAW_SIZE
+value|10
+end_define
+
 begin_enum
 enum|enum
-DECL|enum|__anon2c1222d20103
+DECL|enum|__anon2c842e8e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
