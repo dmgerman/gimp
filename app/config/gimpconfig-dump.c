@@ -830,6 +830,7 @@ literal|"%w  image width in pixels\n"
 literal|"%W  image width in real-world units\n"
 literal|"%h  image height in pixels\n"
 literal|"%H  image height in real-world units\n"
+literal|"%M  the image size expressed in megapixels\n"
 literal|"%u  unit symbol\n"
 literal|"%U  unit abbreviation\n\n"
 decl_stmt|;

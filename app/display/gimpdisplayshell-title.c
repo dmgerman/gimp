@@ -1275,13 +1275,16 @@ argument_list|,
 literal|"%.1f"
 argument_list|,
 operator|(
-name|double
+name|gdouble
 operator|)
 name|gimp_image_get_width
 argument_list|(
 name|image
 argument_list|)
 operator|*
+operator|(
+name|gdouble
+operator|)
 name|gimp_image_get_height
 argument_list|(
 name|image
