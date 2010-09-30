@@ -1262,7 +1262,6 @@ case|case
 literal|'M'
 case|:
 comment|/* image size in megapixels */
-block|{
 name|i
 operator|+=
 name|print
@@ -1275,6 +1274,9 @@ name|i
 argument_list|,
 literal|"%.1f"
 argument_list|,
+operator|(
+name|double
+operator|)
 name|gimp_image_get_width
 argument_list|(
 name|image
@@ -1285,10 +1287,9 @@ argument_list|(
 name|image
 argument_list|)
 operator|/
-literal|1000000.0f
+literal|1000000.0
 argument_list|)
 expr_stmt|;
-block|}
 break|break;
 case|case
 literal|'l'
