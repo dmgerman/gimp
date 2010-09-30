@@ -328,7 +328,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c140e70108
+DECL|struct|__anon2bb8ca1a0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -517,6 +517,14 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+specifier|static
+name|GimpParam
+name|values
+index|[
+literal|1
+index|]
+decl_stmt|;
+comment|/* Return values */
 name|GimpRunMode
 name|run_mode
 decl_stmt|;
@@ -525,11 +533,6 @@ name|GimpPDBStatusType
 name|status
 decl_stmt|;
 comment|/* Return status */
-name|GimpParam
-modifier|*
-name|values
-decl_stmt|;
-comment|/* Return values */
 name|GimpDrawable
 modifier|*
 name|drawable
@@ -553,15 +556,6 @@ name|d_int32
 expr_stmt|;
 name|INIT_I18N
 argument_list|()
-expr_stmt|;
-name|values
-operator|=
-name|g_new
-argument_list|(
-name|GimpParam
-argument_list|,
-literal|1
-argument_list|)
 expr_stmt|;
 operator|*
 name|nreturn_vals

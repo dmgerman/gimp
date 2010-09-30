@@ -638,16 +638,6 @@ expr_stmt|;
 block|}
 end_function
 
-begin_decl_stmt
-DECL|variable|values
-name|GimpParam
-name|values
-index|[
-literal|5
-index|]
-decl_stmt|;
-end_decl_stmt
-
 begin_function
 specifier|static
 name|void
@@ -677,6 +667,13 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+specifier|static
+name|GimpParam
+name|values
+index|[
+literal|5
+index|]
+decl_stmt|;
 name|GimpPDBStatusType
 name|status
 init|=
