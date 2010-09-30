@@ -132,7 +132,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpcanvassamplepoint.h"
+file|"display/gimpcanvasitem.h"
 end_include
 
 begin_include
@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c64b02e0103
+DECL|enum|__anon289dad410103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2139,8 +2139,10 @@ literal|1
 expr_stmt|;
 name|item
 operator|=
-name|gimp_canvas_sample_point_new
+name|gimp_draw_tool_add_sample_point
 argument_list|(
+name|draw_tool
+argument_list|,
 name|color_tool
 operator|->
 name|sample_point
@@ -2172,18 +2174,6 @@ argument_list|(
 name|item
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_draw_tool_add_item
-argument_list|(
-name|draw_tool
-argument_list|,
-name|item
-argument_list|)
-expr_stmt|;
-name|g_object_unref
-argument_list|(
-name|item
 argument_list|)
 expr_stmt|;
 block|}

@@ -2978,7 +2978,7 @@ name|item
 decl_stmt|;
 name|item
 operator|=
-name|gimp_draw_tool_add_guide_line
+name|gimp_draw_tool_add_guide
 argument_list|(
 name|draw_tool
 argument_list|,
@@ -3030,7 +3030,7 @@ operator|-
 literal|1
 condition|)
 block|{
-name|gimp_draw_tool_add_guide_line
+name|gimp_draw_tool_add_guide
 argument_list|(
 name|draw_tool
 argument_list|,
