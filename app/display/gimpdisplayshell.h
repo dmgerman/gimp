@@ -494,6 +494,12 @@ modifier|*
 name|canvas_item
 decl_stmt|;
 comment|/*  items drawn on the canvas          */
+DECL|member|sample_points
+name|GimpCanvasItem
+modifier|*
+name|sample_points
+decl_stmt|;
+comment|/*  item proxies of sample points      */
 DECL|member|title_idle_id
 name|guint
 name|title_idle_id
