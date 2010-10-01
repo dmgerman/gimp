@@ -548,13 +548,6 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_image_update_guide
-argument_list|(
-name|image
-argument_list|,
-name|guide
-argument_list|)
-expr_stmt|;
 break|break;
 case|case
 name|GIMP_ORIENTATION_HORIZONTAL
@@ -570,13 +563,6 @@ operator|+
 name|ytranslate
 argument_list|,
 name|TRUE
-argument_list|)
-expr_stmt|;
-name|gimp_image_update_guide
-argument_list|(
-name|image
-argument_list|,
-name|guide
 argument_list|)
 expr_stmt|;
 break|break;
