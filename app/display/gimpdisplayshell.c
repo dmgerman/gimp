@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c058e60103
+DECL|enum|__anon2abd8e460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c058e60203
+DECL|enum|__anon2abd8e460203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1194,6 +1194,34 @@ name|canvas_item
 operator|=
 name|gimp_canvas_group_new
 argument_list|()
+expr_stmt|;
+name|shell
+operator|->
+name|guides
+operator|=
+name|gimp_canvas_proxy_group_new
+argument_list|()
+expr_stmt|;
+name|gimp_canvas_group_add_item
+argument_list|(
+name|GIMP_CANVAS_GROUP
+argument_list|(
+name|shell
+operator|->
+name|canvas_item
+argument_list|)
+argument_list|,
+name|shell
+operator|->
+name|guides
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|shell
+operator|->
+name|guides
+argument_list|)
 expr_stmt|;
 name|shell
 operator|->
@@ -3346,6 +3374,12 @@ expr_stmt|;
 name|shell
 operator|->
 name|canvas_item
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
+name|guides
 operator|=
 name|NULL
 expr_stmt|;

@@ -494,6 +494,12 @@ modifier|*
 name|canvas_item
 decl_stmt|;
 comment|/*  items drawn on the canvas          */
+DECL|member|guides
+name|GimpCanvasItem
+modifier|*
+name|guides
+decl_stmt|;
+comment|/*  item proxies of guides             */
 DECL|member|sample_points
 name|GimpCanvasItem
 modifier|*
