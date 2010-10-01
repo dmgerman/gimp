@@ -3264,7 +3264,14 @@ decl_stmt|;
 name|fill_group
 operator|=
 name|gimp_canvas_group_new
-argument_list|()
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
+name|draw_tool
+operator|->
+name|display
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_canvas_group_set_group_filling
 argument_list|(

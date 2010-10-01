@@ -144,6 +144,10 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_rectangle_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,

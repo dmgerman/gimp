@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abd8e460103
+DECL|enum|__anon2b81d4f80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2abd8e460203
+DECL|enum|__anon2b81d4f80203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -1193,14 +1193,18 @@ operator|->
 name|canvas_item
 operator|=
 name|gimp_canvas_group_new
-argument_list|()
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 name|shell
 operator|->
 name|guides
 operator|=
 name|gimp_canvas_proxy_group_new
-argument_list|()
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 name|gimp_canvas_group_add_item
 argument_list|(
@@ -1228,7 +1232,9 @@ operator|->
 name|sample_points
 operator|=
 name|gimp_canvas_proxy_group_new
-argument_list|()
+argument_list|(
+name|shell
+argument_list|)
 expr_stmt|;
 name|gimp_canvas_group_add_item
 argument_list|(

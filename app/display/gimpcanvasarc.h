@@ -144,6 +144,10 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_arc_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|center_x
 parameter_list|,

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c2977940103
+DECL|enum|__anon28769afa0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1212,9 +1212,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_arc_new (gdouble center_x,gdouble center_y,gdouble radius_x,gdouble radius_y,gdouble start_angle,gdouble slice_angle,gboolean filled)
+DECL|function|gimp_canvas_arc_new (GimpDisplayShell * shell,gdouble center_x,gdouble center_y,gdouble radius_x,gdouble radius_y,gdouble start_angle,gdouble slice_angle,gboolean filled)
 name|gimp_canvas_arc_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|center_x
 parameter_list|,
@@ -1237,10 +1241,24 @@ name|gboolean
 name|filled
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_ARC
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"center-x"
 argument_list|,

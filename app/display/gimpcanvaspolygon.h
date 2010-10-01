@@ -144,6 +144,10 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_polygon_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 specifier|const
 name|GimpVector2
 modifier|*
@@ -163,6 +167,10 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_polygon_new_from_coords
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*

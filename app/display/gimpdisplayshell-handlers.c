@@ -2245,6 +2245,8 @@ name|item
 operator|=
 name|gimp_canvas_guide_new
 argument_list|(
+name|shell
+argument_list|,
 name|gimp_guide_get_orientation
 argument_list|(
 name|guide
@@ -2477,6 +2479,8 @@ name|item
 operator|=
 name|gimp_canvas_sample_point_new
 argument_list|(
+name|shell
+argument_list|,
 name|sample_point
 operator|->
 name|x

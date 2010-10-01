@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c6c59820103
+DECL|enum|__anon290a6e540103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1299,9 +1299,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_sample_point_new (gint x,gint y,gint index)
+DECL|function|gimp_canvas_sample_point_new (GimpDisplayShell * shell,gint x,gint y,gint index)
 name|gimp_canvas_sample_point_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gint
 name|x
 parameter_list|,
@@ -1312,10 +1316,24 @@ name|gint
 name|index
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_SAMPLE_POINT
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"x"
 argument_list|,

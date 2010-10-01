@@ -186,7 +186,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon291f11260108
+DECL|struct|__anon2b8529b80108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -5362,7 +5362,14 @@ expr_stmt|;
 name|stroke_group
 operator|=
 name|gimp_canvas_group_new
-argument_list|()
+argument_list|(
+name|gimp_display_get_shell
+argument_list|(
+name|draw_tool
+operator|->
+name|display
+argument_list|)
+argument_list|)
 expr_stmt|;
 name|gimp_canvas_group_set_group_stroking
 argument_list|(

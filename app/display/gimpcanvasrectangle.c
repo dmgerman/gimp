@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be7f0c30103
+DECL|enum|__anon278123dd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1329,9 +1329,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_rectangle_new (gdouble x,gdouble y,gdouble width,gdouble height,gboolean filled)
+DECL|function|gimp_canvas_rectangle_new (GimpDisplayShell * shell,gdouble x,gdouble y,gdouble width,gdouble height,gboolean filled)
 name|gimp_canvas_rectangle_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -1348,10 +1352,24 @@ name|gboolean
 name|filled
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_RECTANGLE
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"x"
 argument_list|,

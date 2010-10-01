@@ -135,7 +135,9 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_group_new
 parameter_list|(
-name|void
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl

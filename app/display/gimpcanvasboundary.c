@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8313ed0103
+DECL|enum|__anon29e291d20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1209,9 +1209,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_boundary_new (const BoundSeg * segs,gint n_segs,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_canvas_boundary_new (GimpDisplayShell * shell,const BoundSeg * segs,gint n_segs,gdouble offset_x,gdouble offset_y)
 name|gimp_canvas_boundary_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 specifier|const
 name|BoundSeg
 modifier|*
@@ -1235,11 +1239,25 @@ name|GimpCanvasBoundaryPrivate
 modifier|*
 name|private
 decl_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 name|item
 operator|=
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_BOUNDARY
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"offset-x"
 argument_list|,

@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6e14c60103
+DECL|enum|__anon28def3050103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1816,9 +1816,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_handle_new (GimpHandleType type,GtkAnchorType anchor,gdouble x,gdouble y,gint width,gint height)
+DECL|function|gimp_canvas_handle_new (GimpDisplayShell * shell,GimpHandleType type,GtkAnchorType anchor,gdouble x,gdouble y,gint width,gint height)
 name|gimp_canvas_handle_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|GimpHandleType
 name|type
 parameter_list|,
@@ -1838,10 +1842,24 @@ name|gint
 name|height
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_HANDLE
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"type"
 argument_list|,
