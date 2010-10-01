@@ -122,21 +122,6 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_draw_sample_points
-parameter_list|(
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
-name|cairo_t
-modifier|*
-name|cr
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-name|void
 name|gimp_display_shell_draw_layer_boundary
 parameter_list|(
 name|GimpDisplayShell

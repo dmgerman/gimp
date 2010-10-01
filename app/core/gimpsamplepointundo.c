@@ -47,7 +47,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c70e1cb0103
+DECL|enum|__anon28e7f3e30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -637,6 +637,17 @@ operator|->
 name|y
 expr_stmt|;
 name|gimp_image_update_sample_point
+argument_list|(
+name|undo
+operator|->
+name|image
+argument_list|,
+name|sample_point_undo
+operator|->
+name|sample_point
+argument_list|)
+expr_stmt|;
+name|gimp_image_sample_point_moved
 argument_list|(
 name|undo
 operator|->

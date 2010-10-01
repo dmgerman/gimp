@@ -558,6 +558,13 @@ argument_list|,
 name|sample_point
 argument_list|)
 expr_stmt|;
+name|gimp_image_sample_point_moved
+argument_list|(
+name|image
+argument_list|,
+name|sample_point
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
