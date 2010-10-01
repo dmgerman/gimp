@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27cef5e40103
+DECL|enum|__anon29e9974a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -543,7 +543,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_canvas_proxy_group_remove_item (GimpCanvasProxyGroup * group,gpointer object,GimpCanvasItem * proxy_item)
+DECL|function|gimp_canvas_proxy_group_remove_item (GimpCanvasProxyGroup * group,gpointer object)
 name|gimp_canvas_proxy_group_remove_item
 parameter_list|(
 name|GimpCanvasProxyGroup
@@ -552,15 +552,15 @@ name|group
 parameter_list|,
 name|gpointer
 name|object
-parameter_list|,
-name|GimpCanvasItem
-modifier|*
-name|proxy_item
 parameter_list|)
 block|{
 name|GimpCanvasProxyGroupPrivate
 modifier|*
 name|private
+decl_stmt|;
+name|GimpCanvasItem
+modifier|*
+name|proxy_item
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -577,14 +577,6 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|GIMP_IS_CANVAS_ITEM
-argument_list|(
-name|proxy_item
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|private
 operator|=
 name|GET_PRIVATE
@@ -592,8 +584,8 @@ argument_list|(
 name|group
 argument_list|)
 expr_stmt|;
-name|g_return_if_fail
-argument_list|(
+name|proxy_item
+operator|=
 name|g_hash_table_lookup
 argument_list|(
 name|private
@@ -602,8 +594,12 @@ name|proxy_hash
 argument_list|,
 name|object
 argument_list|)
-operator|==
+expr_stmt|;
+name|g_return_if_fail
+argument_list|(
 name|proxy_item
+operator|!=
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_hash_table_remove

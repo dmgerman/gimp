@@ -177,10 +177,6 @@ name|group
 parameter_list|,
 name|gpointer
 name|object
-parameter_list|,
-name|GimpCanvasItem
-modifier|*
-name|proxy_item
 parameter_list|)
 function_decl|;
 end_function_decl
