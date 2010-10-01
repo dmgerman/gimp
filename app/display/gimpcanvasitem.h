@@ -116,6 +116,24 @@ DECL|member|parent_class
 name|GimpObjectClass
 name|parent_class
 decl_stmt|;
+comment|/*  signals  */
+DECL|member|update
+name|void
+function_decl|(
+modifier|*
+name|update
+function_decl|)
+parameter_list|(
+name|GimpCanvasItem
+modifier|*
+name|item
+parameter_list|,
+name|GdkRegion
+modifier|*
+name|region
+parameter_list|)
+function_decl|;
+comment|/*  virtual functions  */
 DECL|member|draw
 name|void
 function_decl|(
