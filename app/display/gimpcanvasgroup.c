@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2beee08e0103
+DECL|enum|__anon286d5b260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -645,8 +645,6 @@ name|gimp_canvas_item_draw
 argument_list|(
 name|sub_item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -661,8 +659,6 @@ name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -675,8 +671,6 @@ condition|)
 name|_gimp_canvas_item_fill
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|cr
 argument_list|)
@@ -752,8 +746,6 @@ init|=
 name|gimp_canvas_item_get_extents
 argument_list|(
 name|sub_item
-argument_list|,
-name|shell
 argument_list|)
 decl_stmt|;
 if|if

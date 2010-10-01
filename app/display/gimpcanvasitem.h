@@ -215,10 +215,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -234,10 +230,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -337,10 +329,6 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
-parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
@@ -355,10 +343,6 @@ parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
-parameter_list|,
-name|GimpDisplayShell
-modifier|*
-name|shell
 parameter_list|,
 name|cairo_t
 modifier|*

@@ -244,8 +244,6 @@ operator|=
 name|gimp_canvas_item_get_extents
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|)
 expr_stmt|;
 if|if

@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290d689c0103
+DECL|enum|__anon29aa1b510103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -991,8 +991,6 @@ block|}
 name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|cr
 argument_list|)

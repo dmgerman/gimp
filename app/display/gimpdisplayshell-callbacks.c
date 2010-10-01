@@ -8215,8 +8215,6 @@ name|shell
 operator|->
 name|canvas_item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
