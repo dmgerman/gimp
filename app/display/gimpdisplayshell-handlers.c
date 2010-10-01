@@ -2369,6 +2369,11 @@ argument_list|,
 name|guide
 argument_list|)
 expr_stmt|;
+name|gimp_canvas_item_begin_change
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|item
@@ -2388,6 +2393,11 @@ name|guide
 argument_list|)
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_end_change
+argument_list|(
+name|item
 argument_list|)
 expr_stmt|;
 block|}
@@ -2683,6 +2693,11 @@ argument_list|,
 name|sample_point
 argument_list|)
 expr_stmt|;
+name|gimp_canvas_item_begin_change
+argument_list|(
+name|item
+argument_list|)
+expr_stmt|;
 name|g_object_set
 argument_list|(
 name|item
@@ -2700,6 +2715,11 @@ operator|->
 name|y
 argument_list|,
 name|NULL
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_item_end_change
+argument_list|(
+name|item
 argument_list|)
 expr_stmt|;
 block|}
