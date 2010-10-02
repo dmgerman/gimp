@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5563800103
+DECL|enum|__anon27e8b75e0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -4032,6 +4032,8 @@ if|if
 condition|(
 operator|!
 name|any_toggle_active
+operator|&&
+name|color_differs
 operator|&&
 name|font_differs
 operator|&&
