@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ab24b80103
+DECL|enum|__anon2a2257240103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27ab24b80203
+DECL|enum|__anon2a2257240203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -7800,13 +7800,6 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|item
-operator|=
-name|GIMP_ITEM
-argument_list|(
-name|layer
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 name|gimp_layer_is_floating_sel
@@ -7856,6 +7849,13 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
+name|item
+operator|=
+name|GIMP_ITEM
+argument_list|(
+name|layer
+argument_list|)
+expr_stmt|;
 comment|/*  Create the four boundary segments that encompass this    *  layer's boundary.    */
 name|new_segs
 operator|=
