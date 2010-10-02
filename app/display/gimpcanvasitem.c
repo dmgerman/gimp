@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dff1400103
+DECL|enum|__anon28fe3d9d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dff1400203
+DECL|enum|__anon28fe3d9d0203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1795,6 +1795,28 @@ name|region
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+elseif|else
+if|if
+condition|(
+name|private
+operator|->
+name|change_region
+condition|)
+block|{
+name|gdk_region_destroy
+argument_list|(
+name|private
+operator|->
+name|change_region
+argument_list|)
+expr_stmt|;
+name|private
+operator|->
+name|change_region
+operator|=
+name|NULL
+expr_stmt|;
 block|}
 block|}
 end_function
