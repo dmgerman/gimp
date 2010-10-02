@@ -512,6 +512,12 @@ modifier|*
 name|sample_points
 decl_stmt|;
 comment|/*  item proxies of sample points      */
+DECL|member|cursor
+name|GimpCanvasItem
+modifier|*
+name|cursor
+decl_stmt|;
+comment|/*  item for the software cursor       */
 DECL|member|title_idle_id
 name|guint
 name|title_idle_id
@@ -584,21 +590,6 @@ name|gboolean
 name|draw_cursor
 decl_stmt|;
 comment|/* should we draw software cursor ?    */
-DECL|member|have_cursor
-name|gboolean
-name|have_cursor
-decl_stmt|;
-comment|/* is cursor currently drawn ?         */
-DECL|member|cursor_x
-name|gint
-name|cursor_x
-decl_stmt|;
-comment|/* software cursor X value             */
-DECL|member|cursor_y
-name|gint
-name|cursor_y
-decl_stmt|;
-comment|/* software cursor Y value             */
 DECL|member|close_dialog
 name|GtkWidget
 modifier|*

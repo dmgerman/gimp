@@ -8205,24 +8205,6 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-comment|/* and the cursor (if we have a software cursor) */
-name|cairo_save
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_draw_cursor
-argument_list|(
-name|shell
-argument_list|,
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_restore
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 comment|/* restart (and recalculate) the selection boundaries */
 name|gimp_display_shell_selection_control
 argument_list|(
