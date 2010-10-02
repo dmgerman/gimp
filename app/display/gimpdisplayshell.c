@@ -216,12 +216,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-draw.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-expose.h"
 end_include
 
@@ -317,7 +311,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dce3590103
+DECL|enum|__anon2b8d6b130103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +339,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dce3590203
+DECL|enum|__anon2b8d6b130203
 block|{
 DECL|enumerator|SCALED
 name|SCALED

@@ -180,12 +180,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-draw.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-expose.h"
 end_include
 
