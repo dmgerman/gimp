@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fe3d9d0103
+DECL|enum|__anon2b1ca8780103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fe3d9d0203
+DECL|enum|__anon2b1ca8780203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1701,7 +1701,10 @@ operator|->
 name|change_count
 operator|==
 literal|0
-operator|&&
+condition|)
+block|{
+if|if
+condition|(
 name|g_signal_has_handler_pending
 argument_list|(
 name|item
@@ -1817,6 +1820,7 @@ name|change_region
 operator|=
 name|NULL
 expr_stmt|;
+block|}
 block|}
 block|}
 end_function
