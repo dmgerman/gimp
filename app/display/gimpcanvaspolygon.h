@@ -174,10 +174,10 @@ parameter_list|,
 specifier|const
 name|GimpCoords
 modifier|*
-name|points
+name|coords
 parameter_list|,
 name|gint
-name|n_points
+name|n_coords
 parameter_list|,
 name|gboolean
 name|filled
