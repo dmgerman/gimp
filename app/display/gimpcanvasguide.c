@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3e9d3e0103
+DECL|enum|__anon2bc8172f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -964,6 +964,21 @@ operator|->
 name|guide_style
 condition|)
 block|{
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+operator|-
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+operator|-
+name|shell
+operator|->
+name|offset_y
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_set_guide_style
 argument_list|(
 name|shell

@@ -89,7 +89,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2890f0f70103
+DECL|enum|__anon27e825f70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1649,6 +1649,21 @@ operator|->
 name|grid_style
 condition|)
 block|{
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+operator|-
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+operator|-
+name|shell
+operator|->
+name|offset_y
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_set_grid_style
 argument_list|(
 name|shell

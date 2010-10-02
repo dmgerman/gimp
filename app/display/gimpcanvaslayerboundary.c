@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon290af7480103
+DECL|enum|__anon2bfac5410103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -636,6 +636,21 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+operator|-
+name|shell
+operator|->
+name|offset_x
+argument_list|,
+operator|-
+name|shell
+operator|->
+name|offset_y
+argument_list|)
+expr_stmt|;
 name|gimp_display_shell_set_layer_style
 argument_list|(
 name|shell
