@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29aa1b510103
+DECL|enum|__anon2c6eb2360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -768,7 +768,7 @@ expr_stmt|;
 operator|*
 name|x
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x
@@ -779,7 +779,7 @@ expr_stmt|;
 operator|*
 name|y
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y
@@ -797,7 +797,7 @@ block|{
 operator|*
 name|w
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 operator|*
 name|w
@@ -808,7 +808,7 @@ expr_stmt|;
 operator|*
 name|h
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 operator|*
 name|h
@@ -827,7 +827,7 @@ expr_stmt|;
 operator|*
 name|h
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 operator|*
 name|h
@@ -1117,7 +1117,7 @@ name|floor
 argument_list|(
 name|x
 operator|-
-literal|3.5
+literal|4.5
 argument_list|)
 expr_stmt|;
 name|rectangle
@@ -1137,7 +1137,7 @@ name|width
 operator|=
 name|ceil
 argument_list|(
-literal|8.0
+literal|9.0
 argument_list|)
 expr_stmt|;
 name|rectangle
@@ -1148,7 +1148,7 @@ name|ceil
 argument_list|(
 name|h
 operator|+
-literal|1.5
+literal|3.0
 argument_list|)
 expr_stmt|;
 block|}
