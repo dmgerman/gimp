@@ -144,6 +144,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvaslayerboundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcanvasproxygroup.h"
 end_include
 
@@ -1474,6 +1480,21 @@ argument_list|,
 name|shell
 argument_list|)
 expr_stmt|;
+name|gimp_canvas_layer_boundary_set_layer
+argument_list|(
+name|GIMP_CANVAS_LAYER_BOUNDARY
+argument_list|(
+name|shell
+operator|->
+name|layer_boundary
+argument_list|)
+argument_list|,
+name|gimp_image_get_active_layer
+argument_list|(
+name|image
+argument_list|)
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
@@ -1533,6 +1554,18 @@ expr_stmt|;
 name|gimp_display_shell_icon_update_stop
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_layer_boundary_set_layer
+argument_list|(
+name|GIMP_CANVAS_LAYER_BOUNDARY
+argument_list|(
+name|shell
+operator|->
+name|layer_boundary
+argument_list|)
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func

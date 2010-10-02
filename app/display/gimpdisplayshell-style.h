@@ -108,9 +108,9 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GimpDrawable
+name|GimpLayer
 modifier|*
-name|drawable
+name|layer
 parameter_list|)
 function_decl|;
 end_function_decl

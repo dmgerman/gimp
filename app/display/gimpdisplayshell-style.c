@@ -54,6 +54,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimplayer.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimplayermask.h"
 end_include
 
@@ -1008,7 +1014,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_layer_style (GimpDisplayShell * shell,cairo_t * cr,GimpDrawable * drawable)
+DECL|function|gimp_display_shell_set_layer_style (GimpDisplayShell * shell,cairo_t * cr,GimpLayer * layer)
 name|gimp_display_shell_set_layer_style
 parameter_list|(
 name|GimpDisplayShell
@@ -1019,9 +1025,9 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GimpDrawable
+name|GimpLayer
 modifier|*
-name|drawable
+name|layer
 parameter_list|)
 block|{
 name|cairo_pattern_t
@@ -1045,9 +1051,9 @@ argument_list|)
 expr_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|GIMP_IS_DRAWABLE
+name|GIMP_IS_LAYER
 argument_list|(
-name|drawable
+name|layer
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -1067,9 +1073,17 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
-name|GIMP_IS_LAYER_MASK
+name|gimp_layer_get_mask
 argument_list|(
-name|drawable
+name|layer
+argument_list|)
+operator|&&
+name|gimp_layer_mask_get_edit
+argument_list|(
+name|gimp_layer_get_mask
+argument_list|(
+name|layer
+argument_list|)
 argument_list|)
 condition|)
 block|{
@@ -1094,7 +1108,7 @@ name|gimp_viewable_get_children
 argument_list|(
 name|GIMP_VIEWABLE
 argument_list|(
-name|drawable
+name|layer
 argument_list|)
 argument_list|)
 condition|)

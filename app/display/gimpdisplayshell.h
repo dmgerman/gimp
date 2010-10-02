@@ -512,6 +512,12 @@ modifier|*
 name|sample_points
 decl_stmt|;
 comment|/*  item proxies of sample points      */
+DECL|member|layer_boundary
+name|GimpCanvasItem
+modifier|*
+name|layer_boundary
+decl_stmt|;
+comment|/*  item for the layer boundary        */
 DECL|member|cursor
 name|GimpCanvasItem
 modifier|*

@@ -1000,11 +1000,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_set_layer_hidden
+name|gimp_canvas_item_set_visible
 argument_list|(
 name|shell
+operator|->
+name|layer_boundary
 argument_list|,
-operator|!
 name|show
 argument_list|)
 expr_stmt|;

@@ -180,6 +180,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcanvaslayerboundary.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpdisplay.h"
 end_include
 
@@ -311,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d6b130103
+DECL|enum|__anon2afac9a30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -339,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8d6b130203
+DECL|enum|__anon2afac9a30203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -6907,6 +6913,26 @@ comment|/* make sure the information is up-to-date */
 name|gimp_display_shell_scale_changed
 argument_list|(
 name|shell
+argument_list|)
+expr_stmt|;
+name|gimp_canvas_layer_boundary_set_layer
+argument_list|(
+name|GIMP_CANVAS_LAYER_BOUNDARY
+argument_list|(
+name|shell
+operator|->
+name|layer_boundary
+argument_list|)
+argument_list|,
+name|gimp_image_get_active_layer
+argument_list|(
+name|gimp_display_get_image
+argument_list|(
+name|shell
+operator|->
+name|display
+argument_list|)
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
