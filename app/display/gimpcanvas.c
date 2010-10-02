@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2942c7180103
+DECL|enum|__anon2b11c3d10103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -948,6 +948,14 @@ argument_list|)
 argument_list|,
 operator|&
 name|gdk_color
+argument_list|)
+expr_stmt|;
+name|gtk_widget_queue_draw
+argument_list|(
+name|GTK_WIDGET
+argument_list|(
+name|canvas
+argument_list|)
 argument_list|)
 expr_stmt|;
 block|}

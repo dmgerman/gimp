@@ -120,12 +120,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpdisplayshell-expose.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"gimpdisplayshell-selection.h"
 end_include
 
@@ -1892,11 +1886,6 @@ operator|&
 name|options
 operator|->
 name|padding_color
-argument_list|)
-expr_stmt|;
-name|gimp_display_shell_expose_full
-argument_list|(
-name|shell
 argument_list|)
 expr_stmt|;
 block|}
