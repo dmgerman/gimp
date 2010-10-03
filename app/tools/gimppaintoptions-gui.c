@@ -567,9 +567,10 @@ argument_list|,
 name|table_row
 operator|++
 argument_list|,
+comment|/* Label for a slider that affects                                                        aspect ratio for brushes */
 name|_
 argument_list|(
-literal|"Aspect Ratio:"
+literal|"Aspect:"
 argument_list|)
 argument_list|,
 literal|0.01
