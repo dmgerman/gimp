@@ -83,12 +83,10 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GimpContext
+specifier|const
+name|GimpRGB
 modifier|*
-name|context
-parameter_list|,
-name|GimpActiveColor
-name|active
+name|color
 parameter_list|,
 name|gint
 name|width
