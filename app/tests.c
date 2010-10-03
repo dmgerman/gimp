@@ -12,6 +12,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<stdlib.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<gtk/gtk.h>
 end_include
 
@@ -452,6 +458,41 @@ argument_list|(
 name|loop
 argument_list|)
 expr_stmt|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_test_bail_if_no_display:  * @void:  *  * If no DISPLAY is set, call exit(EXIT_SUCCESS). There is no use in  * having UI tests failing in DISPLAY-less environments.  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_test_bail_if_no_display (void)
+name|gimp_test_bail_if_no_display
+parameter_list|(
+name|void
+parameter_list|)
+block|{
+if|if
+condition|(
+operator|!
+name|g_getenv
+argument_list|(
+literal|"DISPLAY"
+argument_list|)
+condition|)
+block|{
+name|g_message
+argument_list|(
+literal|"No DISPLAY set, not running UI tests\n"
+argument_list|)
+expr_stmt|;
+name|exit
+argument_list|(
+name|EXIT_SUCCESS
+argument_list|)
+expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bbcd3e30108
+DECL|struct|__anon27b1bf280108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -3107,6 +3107,9 @@ init|=
 operator|-
 literal|1
 decl_stmt|;
+name|gimp_test_bail_if_no_display
+argument_list|()
+expr_stmt|;
 name|gtk_test_init
 argument_list|(
 operator|&

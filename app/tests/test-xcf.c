@@ -595,7 +595,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2895260f0108
+DECL|struct|__anon2b0b01c50108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -3269,6 +3269,9 @@ block|{
 name|int
 name|result
 decl_stmt|;
+name|gimp_test_bail_if_no_display
+argument_list|()
+expr_stmt|;
 name|gtk_test_init
 argument_list|(
 operator|&

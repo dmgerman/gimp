@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d58d40108
+DECL|struct|__anon2b039b420108
 block|{
 DECL|member|dummy
 name|int
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0d58d40208
+DECL|struct|__anon2b039b420208
 block|{
 DECL|member|filename
 name|gchar
@@ -267,6 +267,9 @@ name|result
 init|=
 literal|0
 decl_stmt|;
+name|gimp_test_bail_if_no_display
+argument_list|()
+expr_stmt|;
 name|gtk_test_init
 argument_list|(
 operator|&
