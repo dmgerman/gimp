@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be1850a0103
+DECL|enum|__anon28fc81e90103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -628,6 +628,14 @@ operator|->
 name|width
 operator|+
 literal|1
+expr_stmt|;
+name|gdk_region_union_with_rect
+argument_list|(
+name|region
+argument_list|,
+operator|&
+name|rectangle
+argument_list|)
 expr_stmt|;
 block|}
 return|return
