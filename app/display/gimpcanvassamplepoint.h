@@ -156,6 +156,9 @@ name|y
 parameter_list|,
 name|gint
 name|index
+parameter_list|,
+name|gboolean
+name|sample_point_style
 parameter_list|)
 function_decl|;
 end_function_decl

@@ -191,7 +191,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289dad410103
+DECL|enum|__anon288eafbc0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -2156,17 +2156,6 @@ operator|->
 name|y
 argument_list|,
 name|index
-argument_list|)
-expr_stmt|;
-name|g_object_set
-argument_list|(
-name|item
-argument_list|,
-literal|"sample-point-style"
-argument_list|,
-name|TRUE
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_set_highlight

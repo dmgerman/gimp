@@ -1556,7 +1556,7 @@ end_comment
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_guide (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position)
+DECL|function|gimp_draw_tool_add_guide (GimpDrawTool * draw_tool,GimpOrientationType orientation,gint position,gboolean guide_style)
 name|gimp_draw_tool_add_guide
 parameter_list|(
 name|GimpDrawTool
@@ -1568,6 +1568,9 @@ name|orientation
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|gboolean
+name|guide_style
 parameter_list|)
 block|{
 name|GimpCanvasItem
@@ -1598,6 +1601,8 @@ argument_list|,
 name|orientation
 argument_list|,
 name|position
+argument_list|,
+name|guide_style
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item
@@ -1672,6 +1677,8 @@ argument_list|,
 name|y
 argument_list|,
 name|index
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item

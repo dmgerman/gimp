@@ -2995,17 +2995,8 @@ name|move
 operator|->
 name|guide
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|g_object_set
-argument_list|(
-name|item
-argument_list|,
-literal|"guide-style"
 argument_list|,
 name|TRUE
-argument_list|,
-name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_item_set_highlight
@@ -3041,6 +3032,8 @@ argument_list|,
 name|move
 operator|->
 name|guide_position
+argument_list|,
+name|FALSE
 argument_list|)
 expr_stmt|;
 block|}

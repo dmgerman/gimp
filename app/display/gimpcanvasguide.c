@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bc8172f0103
+DECL|enum|__anon2c4f9d380103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1020,7 +1020,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_guide_new (GimpDisplayShell * shell,GimpOrientationType orientation,gint position)
+DECL|function|gimp_canvas_guide_new (GimpDisplayShell * shell,GimpOrientationType orientation,gint position,gboolean guide_style)
 name|gimp_canvas_guide_new
 parameter_list|(
 name|GimpDisplayShell
@@ -1032,6 +1032,9 @@ name|orientation
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|gboolean
+name|guide_style
 parameter_list|)
 block|{
 name|g_return_val_if_fail
@@ -1060,6 +1063,10 @@ argument_list|,
 literal|"position"
 argument_list|,
 name|position
+argument_list|,
+literal|"guide-style"
+argument_list|,
+name|guide_style
 argument_list|,
 name|NULL
 argument_list|)

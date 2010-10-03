@@ -364,6 +364,9 @@ name|orientation
 parameter_list|,
 name|gint
 name|position
+parameter_list|,
+name|gboolean
+name|guide_style
 parameter_list|)
 function_decl|;
 end_function_decl
