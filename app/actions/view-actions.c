@@ -132,12 +132,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"display/gimpdisplayshell-selection.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"display/gimpimagewindow.h"
 end_include
 
