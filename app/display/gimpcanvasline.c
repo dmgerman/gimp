@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2aef60bf0103
+DECL|enum|__anon27f0fe060103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -695,7 +695,7 @@ expr_stmt|;
 operator|*
 name|x1
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x1
@@ -706,7 +706,7 @@ expr_stmt|;
 operator|*
 name|y1
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y1
@@ -717,7 +717,7 @@ expr_stmt|;
 operator|*
 name|x2
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x2
@@ -728,7 +728,7 @@ expr_stmt|;
 operator|*
 name|y2
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y2

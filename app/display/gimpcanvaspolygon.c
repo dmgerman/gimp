@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2887b4290103
+DECL|enum|__anon2bdad7580103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -772,7 +772,7 @@ index|]
 operator|.
 name|x
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 name|points
 index|[
@@ -791,7 +791,7 @@ index|]
 operator|.
 name|y
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 name|points
 index|[
