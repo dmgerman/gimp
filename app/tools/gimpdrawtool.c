@@ -1864,7 +1864,7 @@ name|start_angle
 argument_list|,
 name|slice_angle
 argument_list|,
-name|FALSE
+name|filled
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_item
