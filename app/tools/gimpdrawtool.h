@@ -119,6 +119,11 @@ name|GimpCanvasItem
 modifier|*
 name|item
 decl_stmt|;
+DECL|member|group_stack
+name|GList
+modifier|*
+name|group_stack
+decl_stmt|;
 block|}
 struct|;
 end_struct
@@ -303,7 +308,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCanvasItem
+name|GimpCanvasGroup
 modifier|*
 name|gimp_draw_tool_add_stroke_group
 parameter_list|(
@@ -315,9 +320,35 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpCanvasItem
+name|GimpCanvasGroup
 modifier|*
 name|gimp_draw_tool_add_fill_group
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_draw_tool_push_group
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|GimpCanvasGroup
+modifier|*
+name|group
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_draw_tool_pop_group
 parameter_list|(
 name|GimpDrawTool
 modifier|*

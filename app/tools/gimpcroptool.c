@@ -303,6 +303,18 @@ end_function_decl
 
 begin_function_decl
 specifier|static
+name|void
+name|gimp_crop_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+specifier|static
 name|gboolean
 name|gimp_crop_tool_execute
 parameter_list|(
@@ -628,7 +640,7 @@ name|draw_tool_class
 operator|->
 name|draw
 operator|=
-name|gimp_rectangle_tool_draw
+name|gimp_crop_tool_draw
 expr_stmt|;
 block|}
 end_function
@@ -1184,6 +1196,27 @@ argument_list|,
 name|state
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_crop_tool_draw (GimpDrawTool * draw_tool)
+name|gimp_crop_tool_draw
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|)
+block|{
+name|gimp_rectangle_tool_draw
+argument_list|(
+name|draw_tool
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
