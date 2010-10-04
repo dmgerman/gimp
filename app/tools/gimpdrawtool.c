@@ -1706,7 +1706,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_guide:  * @draw_tool:   the #GimpDrawTool  * @orientation: the orientation of the guide line  * @position:    the position of the guide line in image coordinates  *  * This function draws a guide line across the canvas.  **/
+comment|/**  * gimp_draw_tool_add_guide:  * @draw_tool:   the #GimpDrawTool  * @orientation: the orientation of the guide line  * @position:    the position of the guide line in image coordinates  *  * This function draws a guide line across the canvas.  **/
 end_comment
 
 begin_function
@@ -1780,7 +1780,82 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_draw_sample_point:  * @draw_tool: the #GimpDrawTool  * @x:         X position of the sample point  * @y:         Y position of the sample point  * @index:     Index of the sample point  *  * This function draws a sample point  **/
+comment|/**  * gimp_draw_tool_add_crosshair:  * @draw_tool:  the #GimpDrawTool  * @position_x: the position of the vertical guide line in image coordinates  * @position_y: the position of the horizontal guide line in image coordinates  *  * This function draws two crossing guide lines across the canvas.  **/
+end_comment
+
+begin_function
+name|GimpCanvasItem
+modifier|*
+DECL|function|gimp_draw_tool_add_crosshair (GimpDrawTool * draw_tool,gint position_x,gint position_y)
+name|gimp_draw_tool_add_crosshair
+parameter_list|(
+name|GimpDrawTool
+modifier|*
+name|draw_tool
+parameter_list|,
+name|gint
+name|position_x
+parameter_list|,
+name|gint
+name|position_y
+parameter_list|)
+block|{
+name|GimpCanvasGroup
+modifier|*
+name|group
+decl_stmt|;
+name|group
+operator|=
+name|gimp_draw_tool_add_stroke_group
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_push_group
+argument_list|(
+name|draw_tool
+argument_list|,
+name|group
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_add_guide
+argument_list|(
+name|draw_tool
+argument_list|,
+name|GIMP_ORIENTATION_VERTICAL
+argument_list|,
+name|position_x
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_add_guide
+argument_list|(
+name|draw_tool
+argument_list|,
+name|GIMP_ORIENTATION_HORIZONTAL
+argument_list|,
+name|position_y
+argument_list|,
+name|FALSE
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_pop_group
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
+return|return
+name|GIMP_CANVAS_ITEM
+argument_list|(
+name|group
+argument_list|)
+return|;
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_draw_tool_add_sample_point:  * @draw_tool: the #GimpDrawTool  * @x:         X position of the sample point  * @y:         Y position of the sample point  * @index:     Index of the sample point  *  * This function draws a sample point  **/
 end_comment
 
 begin_function
