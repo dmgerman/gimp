@@ -202,6 +202,14 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
+DECL|macro|GUIDE_POSITION_INVALID
+define|#
+directive|define
+name|GUIDE_POSITION_INVALID
+value|G_MININT
+end_define
+
+begin_define
 DECL|macro|SWAP_ORIENT (orient)
 define|#
 directive|define
@@ -629,8 +637,7 @@ name|move_tool
 operator|->
 name|guide_position
 operator|=
-operator|-
-literal|1
+name|GUIDE_POSITION_INVALID
 expr_stmt|;
 name|move_tool
 operator|->
@@ -881,6 +888,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+specifier|const
 name|gint
 name|snap_distance
 init|=
@@ -1405,8 +1413,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-operator|-
-literal|1
+name|GUIDE_POSITION_INVALID
 expr_stmt|;
 name|move
 operator|->
@@ -1642,8 +1649,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-operator|-
-literal|1
+name|GUIDE_POSITION_INVALID
 expr_stmt|;
 name|move
 operator|->
@@ -1899,8 +1905,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-operator|-
-literal|1
+name|GUIDE_POSITION_INVALID
 expr_stmt|;
 name|delete_guide
 operator|=
@@ -2445,6 +2450,7 @@ operator|&&
 name|proximity
 condition|)
 block|{
+specifier|const
 name|gint
 name|snap_distance
 init|=
@@ -2768,6 +2774,7 @@ name|GimpLayer
 modifier|*
 name|layer
 decl_stmt|;
+specifier|const
 name|gint
 name|snap_distance
 init|=
@@ -3017,8 +3024,7 @@ name|move
 operator|->
 name|guide_position
 operator|!=
-operator|-
-literal|1
+name|GUIDE_POSITION_INVALID
 condition|)
 block|{
 name|gimp_draw_tool_add_guide
@@ -3223,8 +3229,7 @@ name|move
 operator|->
 name|guide_position
 operator|=
-operator|-
-literal|1
+name|GUIDE_POSITION_INVALID
 expr_stmt|;
 name|move
 operator|->
