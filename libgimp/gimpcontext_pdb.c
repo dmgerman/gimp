@@ -2344,7 +2344,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_get_interpolation:  *  * Get the interpolation type.  *  * This procedure returns the interpolation setting. The return value  * is an integer which corresponds to the values listed in the argument  * description.  *  * Returns: The interpolation type.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_get_interpolation:  *  * Get the interpolation type.  *  * This procedure returns the interpolation setting. The return value  * is an integer which corresponds to the values listed in the argument  * description. If the interpolation has not been set explicitly by  * gimp_context_set_interpolation(), the default interpolation set in  * gimprc will be used.  *  * Returns: The interpolation type.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function

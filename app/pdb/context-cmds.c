@@ -6051,7 +6051,7 @@ literal|"gimp-context-get-interpolation"
 argument_list|,
 literal|"Get the interpolation type."
 argument_list|,
-literal|"This procedure returns the interpolation setting. The return value is an integer which corresponds to the values listed in the argument description."
+literal|"This procedure returns the interpolation setting. The return value is an integer which corresponds to the values listed in the argument description. If the interpolation has not been set explicitly by 'gimp-context-set-interpolation', the default interpolation set in gimprc will be used."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
