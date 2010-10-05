@@ -1073,7 +1073,7 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*    * Get the image dimensions and create the image...    */
-comment|/* Sanitize dimensions */
+comment|/* Sanitize dimensions (note that they are unsigned short and can    * thus never be larger than GIMP_MAX_IMAGE_SIZE    */
 if|if
 condition|(
 name|sgip
@@ -1081,12 +1081,7 @@ operator|->
 name|xsize
 operator|==
 literal|0
-operator|||
-name|sgip
-operator|->
-name|xsize
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
+comment|/*|| sgip->xsize> GIMP_MAX_IMAGE_SIZE*/
 condition|)
 block|{
 name|g_set_error
@@ -1119,12 +1114,7 @@ operator|->
 name|ysize
 operator|==
 literal|0
-operator|||
-name|sgip
-operator|->
-name|ysize
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
+comment|/*|| sgip->ysize> GIMP_MAX_IMAGE_SIZE*/
 condition|)
 block|{
 name|g_set_error
@@ -1157,12 +1147,7 @@ operator|->
 name|zsize
 operator|==
 literal|0
-operator|||
-name|sgip
-operator|->
-name|zsize
-operator|>
-name|GIMP_MAX_IMAGE_SIZE
+comment|/*|| sgip->zsize> GIMP_MAX_IMAGE_SIZE*/
 condition|)
 block|{
 name|g_set_error
