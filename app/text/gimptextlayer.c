@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1bc1770103
+DECL|enum|__anon2bed3df60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1731,7 +1731,7 @@ name|var_args
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 argument_list|(
 operator|(
 name|GimpDrawable
@@ -1959,8 +1959,8 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_drawable_is_text_layer (GimpDrawable * drawable)
-name|gimp_drawable_is_text_layer
+DECL|function|gimp_item_is_text_layer (GimpDrawable * drawable)
+name|gimp_item_is_text_layer
 parameter_list|(
 name|GimpDrawable
 modifier|*

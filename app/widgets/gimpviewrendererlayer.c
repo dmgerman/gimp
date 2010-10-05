@@ -171,7 +171,7 @@ block|}
 elseif|else
 if|if
 condition|(
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

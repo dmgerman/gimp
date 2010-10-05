@@ -2221,7 +2221,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

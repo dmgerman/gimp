@@ -2282,7 +2282,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bf78200108
+DECL|struct|__anon2babaa610108
 block|{
 DECL|member|mask_column
 name|gint
@@ -2676,7 +2676,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27bf78200208
+DECL|struct|__anon2babaa610208
 block|{
 DECL|member|mask_column
 name|gint
@@ -3007,7 +3007,7 @@ parameter_list|)
 block|{
 if|if
 condition|(
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 argument_list|(
 name|GIMP_DRAWABLE
 argument_list|(

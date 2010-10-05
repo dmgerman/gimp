@@ -230,7 +230,7 @@ end_decl_stmt
 
 begin_function_decl
 name|gboolean
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 parameter_list|(
 name|GimpDrawable
 modifier|*
