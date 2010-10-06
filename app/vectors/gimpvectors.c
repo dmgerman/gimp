@@ -126,7 +126,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpbezierdesc.c"
+file|"gimpbezierdesc.h"
 end_include
 
 begin_include
@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e533f90103
+DECL|enum|__anon2894f7f30103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
