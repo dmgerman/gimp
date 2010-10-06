@@ -1261,7 +1261,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_vectors_bg_style (GimpDisplayShell * shell,cairo_t * cr,gdouble width,gboolean active)
+DECL|function|gimp_display_shell_set_vectors_bg_style (GimpDisplayShell * shell,cairo_t * cr,gboolean active)
 name|gimp_display_shell_set_vectors_bg_style
 parameter_list|(
 name|GimpDisplayShell
@@ -1271,9 +1271,6 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
-parameter_list|,
-name|gdouble
-name|width
 parameter_list|,
 name|gboolean
 name|active
@@ -1298,8 +1295,6 @@ name|cairo_set_line_width
 argument_list|(
 name|cr
 argument_list|,
-name|width
-operator|*
 literal|3.0
 argument_list|)
 expr_stmt|;
@@ -1329,7 +1324,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_vectors_fg_style (GimpDisplayShell * shell,cairo_t * cr,gdouble width,gboolean active)
+DECL|function|gimp_display_shell_set_vectors_fg_style (GimpDisplayShell * shell,cairo_t * cr,gboolean active)
 name|gimp_display_shell_set_vectors_fg_style
 parameter_list|(
 name|GimpDisplayShell
@@ -1339,9 +1334,6 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
-parameter_list|,
-name|gdouble
-name|width
 parameter_list|,
 name|gboolean
 name|active
@@ -1366,7 +1358,7 @@ name|cairo_set_line_width
 argument_list|(
 name|cr
 argument_list|,
-name|width
+literal|1.0
 argument_list|)
 expr_stmt|;
 if|if

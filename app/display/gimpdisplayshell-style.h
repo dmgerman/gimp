@@ -158,9 +158,6 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|gdouble
-name|width
-parameter_list|,
 name|gboolean
 name|active
 parameter_list|)
@@ -178,9 +175,6 @@ parameter_list|,
 name|cairo_t
 modifier|*
 name|cr
-parameter_list|,
-name|gdouble
-name|width
 parameter_list|,
 name|gboolean
 name|active
