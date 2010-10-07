@@ -318,7 +318,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be41af90103
+DECL|enum|__anon27bb73b90103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -415,7 +415,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be41af90203
+DECL|enum|__anon27bb73b90203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
