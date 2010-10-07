@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdd8b160103
+DECL|enum|__anon2b252d0f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -538,11 +538,13 @@ operator|->
 name|path
 condition|)
 block|{
-name|cairo_path_destroy
+name|gimp_bezier_desc_free
 argument_list|(
 name|private
 operator|->
 name|path
+argument_list|,
+name|TRUE
 argument_list|)
 expr_stmt|;
 name|private
@@ -865,6 +867,11 @@ name|canvas
 argument_list|)
 argument_list|)
 expr_stmt|;
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|cairo_translate
 argument_list|(
 name|cr
@@ -900,6 +907,11 @@ argument_list|,
 name|private
 operator|->
 name|path
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
+name|cr
 argument_list|)
 expr_stmt|;
 name|cairo_path_extents
@@ -948,7 +960,7 @@ name|y
 operator|=
 name|floor
 argument_list|(
-name|x1
+name|y1
 operator|-
 literal|1.0
 argument_list|)
@@ -1003,7 +1015,7 @@ name|y
 operator|=
 name|floor
 argument_list|(
-name|x1
+name|y1
 operator|-
 literal|1.5
 argument_list|)
@@ -1148,13 +1160,14 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_path_new (GimpDisplayShell * shell,GimpBezierDesc * path,gboolean filled,gboolean path_style)
+DECL|function|gimp_canvas_path_new (GimpDisplayShell * shell,const GimpBezierDesc * path,gboolean filled,gboolean path_style)
 name|gimp_canvas_path_new
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GimpBezierDesc
 modifier|*
 name|path

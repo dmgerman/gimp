@@ -148,6 +148,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
+specifier|const
 name|GimpBezierDesc
 modifier|*
 name|path
