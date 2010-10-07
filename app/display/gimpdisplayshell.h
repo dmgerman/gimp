@@ -494,6 +494,12 @@ modifier|*
 name|canvas_item
 decl_stmt|;
 comment|/*  items drawn on the canvas          */
+DECL|member|vectors
+name|GimpCanvasItem
+modifier|*
+name|vectors
+decl_stmt|;
+comment|/*  item proxy of vectors              */
 DECL|member|grid
 name|GimpCanvasItem
 modifier|*
@@ -639,6 +645,21 @@ comment|/* color display filter dialog       */
 DECL|member|paused_count
 name|gint
 name|paused_count
+decl_stmt|;
+DECL|member|vectors_freeze_handler
+name|GimpTreeHandler
+modifier|*
+name|vectors_freeze_handler
+decl_stmt|;
+DECL|member|vectors_thaw_handler
+name|GimpTreeHandler
+modifier|*
+name|vectors_thaw_handler
+decl_stmt|;
+DECL|member|vectors_visible_handler
+name|GimpTreeHandler
+modifier|*
+name|vectors_visible_handler
 decl_stmt|;
 DECL|member|zoom_on_resize
 name|gboolean
