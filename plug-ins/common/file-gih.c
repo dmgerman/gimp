@@ -197,7 +197,7 @@ end_comment
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon2bd659de0108
+DECL|struct|__anon2761b7a00108
 block|{
 DECL|member|spacing
 name|guint
@@ -273,7 +273,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bd659de0208
+DECL|struct|__anon2761b7a00208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -883,7 +883,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|1
+literal|2
 index|]
 decl_stmt|;
 name|GimpRunMode
