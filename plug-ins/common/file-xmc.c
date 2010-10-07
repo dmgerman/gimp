@@ -312,7 +312,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec37ef0108
+DECL|struct|__anon2babd37e0108
 block|{
 DECL|member|crop
 name|gboolean
@@ -843,7 +843,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28ec37ef0208
+DECL|struct|__anon2babd37e0208
 block|{
 comment|/* saved as parasites of original image after this plug-in's process has gone.*/
 DECL|member|x
@@ -1361,7 +1361,7 @@ specifier|static
 name|GimpParam
 name|values
 index|[
-literal|2
+literal|6
 index|]
 decl_stmt|;
 name|GimpRunMode
@@ -9224,7 +9224,7 @@ parameter_list|)
 block|{
 specifier|static
 struct|struct
-DECL|struct|__anon28ec37ef0308
+DECL|struct|__anon2babd37e0308
 block|{
 DECL|member|size
 name|guint32
