@@ -371,6 +371,12 @@ name|NULL
 expr_stmt|;
 name|shell
 operator|->
+name|vectors
+operator|=
+name|NULL
+expr_stmt|;
+name|shell
+operator|->
 name|grid
 operator|=
 name|NULL
