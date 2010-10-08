@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a3fbfd00103
+DECL|enum|__anon288af5b70103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -4161,12 +4161,6 @@ decl_stmt|;
 name|gdouble
 name|scale
 decl_stmt|;
-name|gdouble
-name|angle
-decl_stmt|;
-name|gdouble
-name|aspect_ratio
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_BRUSH_CORE
@@ -4198,18 +4192,6 @@ operator|=
 name|paint_options
 operator|->
 name|brush_scale
-expr_stmt|;
-name|angle
-operator|=
-name|paint_options
-operator|->
-name|brush_angle
-expr_stmt|;
-name|aspect_ratio
-operator|=
-name|paint_options
-operator|->
-name|brush_aspect_ratio
 expr_stmt|;
 if|if
 condition|(
