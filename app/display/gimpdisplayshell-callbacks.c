@@ -8168,22 +8168,12 @@ name|cr
 argument_list|)
 expr_stmt|;
 comment|/* draw canvas items */
-name|cairo_save
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 name|gimp_canvas_item_draw
 argument_list|(
 name|shell
 operator|->
 name|canvas_item
 argument_list|,
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_restore
-argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
