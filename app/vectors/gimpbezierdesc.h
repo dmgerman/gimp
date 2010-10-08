@@ -16,6 +16,24 @@ directive|define
 name|__GIMP_BEZIER_DESC_H__
 end_define
 
+begin_define
+DECL|macro|GIMP_TYPE_BEZIER_DESC
+define|#
+directive|define
+name|GIMP_TYPE_BEZIER_DESC
+value|(gimp_bezier_desc_get_type ())
+end_define
+
+begin_decl_stmt
+name|GType
+name|gimp_bezier_desc_get_type
+argument_list|(
+name|void
+argument_list|)
+name|G_GNUC_CONST
+decl_stmt|;
+end_decl_stmt
+
 begin_comment
 comment|/* takes ownership of "data" */
 end_comment
@@ -49,16 +67,12 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|cairo_path_data_t
-modifier|*
+name|void
 name|gimp_bezier_desc_free
 parameter_list|(
 name|GimpBezierDesc
 modifier|*
 name|desc
-parameter_list|,
-name|gboolean
-name|free_data
 parameter_list|)
 function_decl|;
 end_function_decl

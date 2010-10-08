@@ -155,7 +155,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2894f7f30103
+DECL|enum|__anon2b9951790103
 block|{
 DECL|enumerator|FREEZE
 name|FREEZE
@@ -1328,8 +1328,6 @@ argument_list|(
 name|vectors
 operator|->
 name|bezier_desc
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|vectors
@@ -2745,8 +2743,6 @@ argument_list|(
 name|vectors
 operator|->
 name|bezier_desc
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|vectors
@@ -5039,8 +5035,6 @@ expr_stmt|;
 name|gimp_bezier_desc_free
 argument_list|(
 name|bezdesc
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 block|}
