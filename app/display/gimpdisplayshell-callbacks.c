@@ -8178,11 +8178,9 @@ name|cr
 argument_list|)
 expr_stmt|;
 comment|/* restart (and recalculate) the selection boundaries */
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_restart
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_ON
 argument_list|)
 expr_stmt|;
 block|}

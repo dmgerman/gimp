@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fb85a0103
+DECL|enum|__anon2be2c62c0103
 block|{
 DECL|enumerator|OPACITY_CHANGED
 name|OPACITY_CHANGED
@@ -201,7 +201,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon279fb85a0203
+DECL|enum|__anon2be2c62c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -3771,11 +3771,9 @@ operator|)
 condition|)
 return|return;
 comment|/*  Turn the current selection off  */
-name|gimp_image_selection_control
+name|gimp_image_selection_invalidate
 argument_list|(
 name|image
-argument_list|,
-name|GIMP_SELECTION_OFF
 argument_list|)
 expr_stmt|;
 comment|/*  get the selection mask channel  */

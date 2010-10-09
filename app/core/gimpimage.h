@@ -404,19 +404,16 @@ modifier|*
 name|image
 parameter_list|)
 function_decl|;
-DECL|member|selection_control
+DECL|member|selection_invalidate
 name|void
 function_decl|(
 modifier|*
-name|selection_control
+name|selection_invalidate
 function_decl|)
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-name|GimpSelectionControl
-name|control
 parameter_list|)
 function_decl|;
 DECL|member|clean
@@ -1372,14 +1369,11 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_image_selection_control
+name|gimp_image_selection_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-name|GimpSelectionControl
-name|control
 parameter_list|)
 function_decl|;
 end_function_decl

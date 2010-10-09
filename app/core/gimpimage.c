@@ -312,7 +312,7 @@ end_endif
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901f39a0103
+DECL|enum|__anon29b4e83e0103
 block|{
 DECL|enumerator|MODE_CHANGED
 name|MODE_CHANGED
@@ -353,8 +353,8 @@ block|,
 DECL|enumerator|QUICK_MASK_CHANGED
 name|QUICK_MASK_CHANGED
 block|,
-DECL|enumerator|SELECTION_CONTROL
-name|SELECTION_CONTROL
+DECL|enumerator|SELECTION_INVALIDATE
+name|SELECTION_INVALIDATE
 block|,
 DECL|enumerator|CLEAN
 name|CLEAN
@@ -406,7 +406,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2901f39a0203
+DECL|enum|__anon29b4e83e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1581,12 +1581,12 @@ argument_list|)
 expr_stmt|;
 name|gimp_image_signals
 index|[
-name|SELECTION_CONTROL
+name|SELECTION_INVALIDATE
 index|]
 operator|=
 name|g_signal_new
 argument_list|(
-literal|"selection-control"
+literal|"selection-invalidate"
 argument_list|,
 name|G_TYPE_FROM_CLASS
 argument_list|(
@@ -1599,20 +1599,18 @@ name|G_STRUCT_OFFSET
 argument_list|(
 name|GimpImageClass
 argument_list|,
-name|selection_control
+name|selection_invalidate
 argument_list|)
 argument_list|,
 name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|gimp_marshal_VOID__ENUM
+name|gimp_marshal_VOID__VOID
 argument_list|,
 name|G_TYPE_NONE
 argument_list|,
-literal|1
-argument_list|,
-name|GIMP_TYPE_SELECTION_CONTROL
+literal|0
 argument_list|)
 expr_stmt|;
 name|gimp_image_signals
@@ -2297,7 +2295,7 @@ name|NULL
 expr_stmt|;
 name|klass
 operator|->
-name|selection_control
+name|selection_invalidate
 operator|=
 name|NULL
 expr_stmt|;
@@ -8774,15 +8772,12 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_image_selection_control (GimpImage * image,GimpSelectionControl control)
-name|gimp_image_selection_control
+DECL|function|gimp_image_selection_invalidate (GimpImage * image)
+name|gimp_image_selection_invalidate
 parameter_list|(
 name|GimpImage
 modifier|*
 name|image
-parameter_list|,
-name|GimpSelectionControl
-name|control
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -8799,12 +8794,10 @@ name|image
 argument_list|,
 name|gimp_image_signals
 index|[
-name|SELECTION_CONTROL
+name|SELECTION_INVALIDATE
 index|]
 argument_list|,
 literal|0
-argument_list|,
-name|control
 argument_list|)
 expr_stmt|;
 block|}

@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afac9a30103
+DECL|enum|__anon2ab2b2220103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2afac9a30203
+DECL|enum|__anon2ab2b2220203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -5428,11 +5428,9 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_undraw
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_OFF
 argument_list|)
 expr_stmt|;
 name|gimp_display_shell_unset_cursor

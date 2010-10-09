@@ -40,14 +40,22 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_undraw
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
-parameter_list|,
-name|GimpSelectionControl
-name|control
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|void
+name|gimp_display_shell_selection_restart
+parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
 parameter_list|)
 function_decl|;
 end_function_decl
