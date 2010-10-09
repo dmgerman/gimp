@@ -906,11 +906,10 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_set_hidden
+name|gimp_display_shell_selection_set_show
 argument_list|(
 name|shell
 argument_list|,
-operator|!
 name|show
 argument_list|)
 expr_stmt|;

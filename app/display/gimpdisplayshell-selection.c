@@ -153,11 +153,11 @@ name|gboolean
 name|shell_visible
 decl_stmt|;
 comment|/*  visility of the display shell     */
-DECL|member|hidden
+DECL|member|show_selection
 name|gboolean
-name|hidden
+name|show_selection
 decl_stmt|;
-comment|/*  is the selection hidden?          */
+comment|/*  is the selection visible?         */
 DECL|member|timeout
 name|guint
 name|timeout
@@ -429,9 +429,8 @@ name|TRUE
 expr_stmt|;
 name|selection
 operator|->
-name|hidden
+name|show_selection
 operator|=
-operator|!
 name|gimp_display_shell_get_show_selection
 argument_list|(
 name|shell
@@ -666,15 +665,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_selection_set_hidden (GimpDisplayShell * shell,gboolean hidden)
-name|gimp_display_shell_selection_set_hidden
+DECL|function|gimp_display_shell_selection_set_show (GimpDisplayShell * shell,gboolean show)
+name|gimp_display_shell_selection_set_show
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
 name|gboolean
-name|hidden
+name|show
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -709,11 +708,11 @@ name|selection
 decl_stmt|;
 if|if
 condition|(
-name|hidden
+name|show
 operator|!=
 name|selection
 operator|->
-name|hidden
+name|show_selection
 condition|)
 block|{
 name|selection_undraw
@@ -723,9 +722,9 @@ argument_list|)
 expr_stmt|;
 name|selection
 operator|->
-name|hidden
+name|show_selection
 operator|=
-name|hidden
+name|show
 expr_stmt|;
 name|selection_start
 argument_list|(
@@ -1666,10 +1665,9 @@ expr_stmt|;
 comment|/*  Draw the ants  */
 if|if
 condition|(
-operator|!
 name|selection
 operator|->
-name|hidden
+name|show_selection
 condition|)
 block|{
 name|GimpDisplayConfig
