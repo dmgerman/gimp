@@ -210,7 +210,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29c52bb90108
+DECL|struct|__anon2c8a97ad0108
 block|{
 DECL|member|filename
 name|gchar
@@ -1695,8 +1695,10 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"email-address"
+argument_list|,
 literal|"_To:"
 argument_list|)
 argument_list|,
@@ -1784,8 +1786,10 @@ argument_list|,
 name|row
 operator|++
 argument_list|,
-name|_
+name|C_
 argument_list|(
+literal|"email-address"
+argument_list|,
 literal|"_From:"
 argument_list|)
 argument_list|,

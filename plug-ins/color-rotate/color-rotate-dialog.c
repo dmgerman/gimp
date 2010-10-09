@@ -1316,8 +1316,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"color-range"
+argument_list|,
 literal|"From:"
 argument_list|)
 argument_list|)
@@ -1513,8 +1515,10 @@ name|label
 operator|=
 name|gtk_label_new
 argument_list|(
-name|_
+name|C_
 argument_list|(
+literal|"color-range"
+argument_list|,
 literal|"To:"
 argument_list|)
 argument_list|)
