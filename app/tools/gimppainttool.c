@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -1055,6 +1061,15 @@ name|paint_tool
 operator|->
 name|core
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1382,9 +1397,9 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|gimp_image_selection_control
+name|gimp_display_shell_selection_control
 argument_list|(
-name|image
+name|shell
 argument_list|,
 name|GIMP_SELECTION_PAUSE
 argument_list|)
@@ -1522,6 +1537,15 @@ name|paint_tool
 operator|->
 name|core
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1596,9 +1620,9 @@ name|time
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection  */
-name|gimp_image_selection_control
+name|gimp_display_shell_selection_control
 argument_list|(
-name|image
+name|shell
 argument_list|,
 name|GIMP_SELECTION_RESUME
 argument_list|)
