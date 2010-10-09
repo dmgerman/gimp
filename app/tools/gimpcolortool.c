@@ -199,7 +199,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8d89c0103
+DECL|enum|__anon2a533dca0103
 block|{
 DECL|enumerator|PICKED
 name|PICKED
@@ -884,11 +884,9 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_pause
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_start
@@ -1130,11 +1128,9 @@ name|sample_point_y
 operator|=
 name|SAMPLE_POINT_POSITION_INVALID
 expr_stmt|;
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_resume
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 return|return;
@@ -1275,11 +1271,9 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_resume
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gimp_image_flush
@@ -3083,14 +3077,12 @@ argument_list|(
 name|tool
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_pause
 argument_list|(
 name|gimp_display_get_shell
 argument_list|(
 name|display
 argument_list|)
-argument_list|,
-name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 name|tool

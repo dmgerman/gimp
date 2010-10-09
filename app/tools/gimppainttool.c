@@ -1397,11 +1397,9 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_pause
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/*  Let the specific painting function initialize itself  */
@@ -1620,11 +1618,9 @@ name|time
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection  */
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_resume
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 comment|/*  chain up to halt the tool */

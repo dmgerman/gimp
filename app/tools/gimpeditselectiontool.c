@@ -1831,11 +1831,9 @@ name|tool
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_pause
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_PAUSE
 argument_list|)
 expr_stmt|;
 comment|/* initialize the statusbar display */
@@ -1940,11 +1938,9 @@ modifier|*
 name|active_item
 decl_stmt|;
 comment|/*  resume the current selection  */
-name|gimp_display_shell_selection_control
+name|gimp_display_shell_selection_resume
 argument_list|(
 name|shell
-argument_list|,
-name|GIMP_SELECTION_RESUME
 argument_list|)
 expr_stmt|;
 name|gimp_tool_pop_status
