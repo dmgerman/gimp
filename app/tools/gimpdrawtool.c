@@ -2618,13 +2618,13 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_draw_tool_add_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @offset_x:     x offset  * @offset_y:     y offset  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
+comment|/**  * gimp_draw_tool_add_boundary:  * @draw_tool:    a #GimpDrawTool  * @bound_segs:   the sorted brush outline  * @n_bound_segs: the number of segments in @bound_segs  * @matrix:       transform matrix for the boundary  * @offset_x:     x offset  * @offset_y:     y offset  *  * Draw the boundary of the brush that @draw_tool uses. The boundary  * should be sorted with sort_boundary(), and @n_bound_segs should  * include the sentinel segments inserted by sort_boundary() that  * indicate the end of connected segment sequences (groups) .  */
 end_comment
 
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_draw_tool_add_boundary (GimpDrawTool * draw_tool,const BoundSeg * bound_segs,gint n_bound_segs,GimpMatrix3 * transform,gdouble offset_x,gdouble offset_y)
 name|gimp_draw_tool_add_boundary
 parameter_list|(
 name|GimpDrawTool
@@ -2638,6 +2638,10 @@ name|bound_segs
 parameter_list|,
 name|gint
 name|n_bound_segs
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
 parameter_list|,
 name|gdouble
 name|offset_x
@@ -2692,6 +2696,8 @@ argument_list|,
 name|bound_segs
 argument_list|,
 name|n_bound_segs
+argument_list|,
+name|transform
 argument_list|,
 name|offset_x
 argument_list|,

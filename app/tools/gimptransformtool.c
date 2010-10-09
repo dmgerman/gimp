@@ -4307,6 +4307,8 @@ name|segs_in
 argument_list|,
 name|num_segs_in
 argument_list|,
+name|NULL
+argument_list|,
 literal|0
 argument_list|,
 literal|0
@@ -4450,6 +4452,8 @@ argument_list|,
 name|segs_out
 argument_list|,
 name|num_segs_out
+argument_list|,
+name|NULL
 argument_list|,
 literal|0
 argument_list|,

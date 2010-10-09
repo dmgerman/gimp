@@ -1346,6 +1346,8 @@ name|region_sel
 operator|->
 name|n_segs
 argument_list|,
+name|NULL
+argument_list|,
 name|off_x
 argument_list|,
 name|off_y

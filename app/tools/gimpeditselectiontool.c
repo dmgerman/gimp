@@ -3118,6 +3118,8 @@ name|edit_select
 operator|->
 name|num_segs_in
 argument_list|,
+name|NULL
+argument_list|,
 name|edit_select
 operator|->
 name|cumlx
@@ -3150,6 +3152,8 @@ argument_list|,
 name|edit_select
 operator|->
 name|num_segs_out
+argument_list|,
+name|NULL
 argument_list|,
 name|edit_select
 operator|->
@@ -3744,6 +3748,8 @@ argument_list|,
 name|edit_select
 operator|->
 name|num_segs_in
+argument_list|,
+name|NULL
 argument_list|,
 name|edit_select
 operator|->

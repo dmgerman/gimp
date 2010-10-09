@@ -156,6 +156,10 @@ parameter_list|,
 name|gint
 name|n_segs
 parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
+parameter_list|,
 name|gdouble
 name|offset_x
 parameter_list|,
