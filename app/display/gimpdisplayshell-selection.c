@@ -148,9 +148,9 @@ name|gint
 name|paused
 decl_stmt|;
 comment|/*  count of pause requests           */
-DECL|member|visible
+DECL|member|shell_visible
 name|gboolean
-name|visible
+name|shell_visible
 decl_stmt|;
 comment|/*  visility of the display shell     */
 DECL|member|hidden
@@ -423,7 +423,7 @@ name|shell
 expr_stmt|;
 name|selection
 operator|->
-name|visible
+name|shell_visible
 operator|=
 name|TRUE
 expr_stmt|;
@@ -1745,7 +1745,7 @@ name|segs_in
 operator|&&
 name|selection
 operator|->
-name|visible
+name|shell_visible
 condition|)
 name|selection
 operator|->
@@ -1806,35 +1806,35 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_set_visible (Selection * selection,gboolean visible)
-name|selection_set_visible
+DECL|function|selection_set_shell_visible (Selection * selection,gboolean shell_visible)
+name|selection_set_shell_visible
 parameter_list|(
 name|Selection
 modifier|*
 name|selection
 parameter_list|,
 name|gboolean
-name|visible
+name|shell_visible
 parameter_list|)
 block|{
 if|if
 condition|(
 name|selection
 operator|->
-name|visible
+name|shell_visible
 operator|!=
-name|visible
+name|shell_visible
 condition|)
 block|{
 name|selection
 operator|->
-name|visible
+name|shell_visible
 operator|=
-name|visible
+name|shell_visible
 expr_stmt|;
 if|if
 condition|(
-name|visible
+name|shell_visible
 condition|)
 name|selection_start
 argument_list|(
@@ -1870,7 +1870,7 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
-name|selection_set_visible
+name|selection_set_shell_visible
 argument_list|(
 name|selection
 argument_list|,
@@ -1914,7 +1914,7 @@ modifier|*
 name|selection
 parameter_list|)
 block|{
-name|selection_set_visible
+name|selection_set_shell_visible
 argument_list|(
 name|selection
 argument_list|,
