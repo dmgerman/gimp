@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998d2cb0108
+DECL|struct|__anon2a11cf840108
 block|{
 DECL|member|image
 name|GimpImage
@@ -495,9 +495,7 @@ comment|/* We share the same application instance across all tests */
 name|gimp
 operator|=
 name|gimp_init_for_testing
-argument_list|(
-name|TRUE
-argument_list|)
+argument_list|()
 expr_stmt|;
 comment|/* Add tests */
 name|ADD_IMAGE_TEST

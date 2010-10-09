@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27b1bf280108
+DECL|struct|__anon27955e5f0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -3136,9 +3136,8 @@ name|gimp
 operator|=
 name|gimp_init_for_gui_testing
 argument_list|(
-name|FALSE
-argument_list|,
 name|TRUE
+comment|/*show_gui*/
 argument_list|)
 expr_stmt|;
 name|gimp_test_run_mainloop_until_idle

@@ -595,7 +595,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b0b01c50108
+DECL|struct|__anon2aab4ca40108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -3295,9 +3295,8 @@ name|gimp
 operator|=
 name|gimp_init_for_gui_testing
 argument_list|(
-name|TRUE
-argument_list|,
 name|FALSE
+comment|/*show_gui*/
 argument_list|)
 expr_stmt|;
 comment|/* Add tests */

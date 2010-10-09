@@ -90,7 +90,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b039b420108
+DECL|struct|__anon28f76d860108
 block|{
 DECL|member|dummy
 name|int
@@ -105,7 +105,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b039b420208
+DECL|struct|__anon28f76d860208
 block|{
 DECL|member|filename
 name|gchar
@@ -345,9 +345,8 @@ name|gimp
 operator|=
 name|gimp_init_for_gui_testing
 argument_list|(
-name|FALSE
-argument_list|,
 name|TRUE
+comment|/*show_gui*/
 argument_list|)
 expr_stmt|;
 comment|/* Let the main loop run until idle to let things stabilize. This    * includes parsing sessionrc and dockrc    */
