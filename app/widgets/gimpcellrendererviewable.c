@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c5c4e0103
+DECL|enum|__anon2937a11c0103
 block|{
 DECL|enumerator|PRE_CLICKED
 name|PRE_CLICKED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2c5c4e0203
+DECL|enum|__anon2937a11c0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1341,10 +1341,6 @@ name|GdkModifierType
 name|state
 parameter_list|)
 block|{
-name|GdkEvent
-modifier|*
-name|event
-decl_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|GIMP_IS_CELL_RENDERER_VIEWABLE
@@ -1360,27 +1356,20 @@ operator|!=
 name|NULL
 argument_list|)
 expr_stmt|;
-name|g_signal_emit
-argument_list|(
+if|if
+condition|(
 name|cell
-argument_list|,
-name|viewable_cell_signals
-index|[
-name|CLICKED
-index|]
-argument_list|,
-literal|0
-argument_list|,
-name|path
-argument_list|,
-name|state
-argument_list|)
-expr_stmt|;
+operator|->
+name|renderer
+condition|)
+block|{
+name|GdkEvent
+modifier|*
 name|event
-operator|=
+init|=
 name|gtk_get_current_event
 argument_list|()
-expr_stmt|;
+decl_stmt|;
 if|if
 condition|(
 name|event
@@ -1466,6 +1455,24 @@ name|event
 argument_list|)
 expr_stmt|;
 block|}
+block|}
+comment|/*  emit the signal last so no callback effects can set    *  cell->renderer to NULL.    */
+name|g_signal_emit
+argument_list|(
+name|cell
+argument_list|,
+name|viewable_cell_signals
+index|[
+name|CLICKED
+index|]
+argument_list|,
+literal|0
+argument_list|,
+name|path
+argument_list|,
+name|state
+argument_list|)
+expr_stmt|;
 block|}
 end_function
 
