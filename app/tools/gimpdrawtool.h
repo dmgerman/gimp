@@ -114,6 +114,11 @@ name|gint
 name|paused_count
 decl_stmt|;
 comment|/*  count to keep track of multiple pauses  */
+DECL|member|draw_timeout
+name|guint
+name|draw_timeout
+decl_stmt|;
+comment|/*  draw delay timeout ID                   */
 DECL|member|item
 name|GimpCanvasItem
 modifier|*
