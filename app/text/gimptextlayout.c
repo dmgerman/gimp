@@ -524,6 +524,11 @@ argument_list|(
 name|font_desc
 argument_list|)
 expr_stmt|;
+name|gimp_text_layout_set_attrs
+argument_list|(
+name|layout
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|text
@@ -709,11 +714,6 @@ name|unit
 argument_list|,
 name|yres
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|gimp_text_layout_set_attrs
-argument_list|(
-name|layout
 argument_list|)
 expr_stmt|;
 name|gimp_text_layout_position
