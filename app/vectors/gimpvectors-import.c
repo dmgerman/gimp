@@ -102,7 +102,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b517580108
+DECL|struct|__anon290fb1440108
 block|{
 DECL|member|stack
 name|GQueue
@@ -222,7 +222,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b517580208
+DECL|struct|__anon290fb1440208
 block|{
 DECL|member|id
 name|gchar
@@ -6239,7 +6239,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b517580308
+DECL|struct|__anon290fb1440308
 block|{
 DECL|member|strokes
 name|GList
@@ -7276,6 +7276,13 @@ operator|->
 name|param
 operator|=
 literal|0
+expr_stmt|;
+comment|/* If a moveto is followed by multiple pairs of coordinates,            * the subsequent pairs are treated as implicit lineto commands.            */
+name|ctx
+operator|->
+name|cmd
+operator|=
+literal|'l'
 expr_stmt|;
 block|}
 break|break;
