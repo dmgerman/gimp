@@ -72,6 +72,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tools/gimptool.h"
 end_include
 
@@ -564,6 +570,12 @@ init|=
 name|FALSE
 decl_stmt|;
 comment|/* clipboard has text available */
+name|gboolean
+name|input_method_menu
+decl_stmt|;
+name|gboolean
+name|unicode_menu
+decl_stmt|;
 name|layer
 operator|=
 name|gimp_image_get_active_layer
@@ -599,7 +611,7 @@ argument_list|(
 name|text_tool
 argument_list|)
 expr_stmt|;
-comment|/*    * see whether there is text available for pasting    */
+comment|/* see whether there is text available for pasting */
 name|shell
 operator|=
 name|gimp_display_get_shell
@@ -611,10 +623,9 @@ name|clipboard
 operator|=
 name|gtk_widget_get_clipboard
 argument_list|(
-name|GTK_WIDGET
-argument_list|(
 name|shell
-argument_list|)
+operator|->
+name|canvas
 argument_list|,
 name|GDK_SELECTION_CLIPBOARD
 argument_list|)
@@ -624,6 +635,28 @@ operator|=
 name|gtk_clipboard_wait_is_text_available
 argument_list|(
 name|clipboard
+argument_list|)
+expr_stmt|;
+name|g_object_get
+argument_list|(
+name|gtk_widget_get_settings
+argument_list|(
+name|shell
+operator|->
+name|canvas
+argument_list|)
+argument_list|,
+literal|"gtk-show-input-method-menu"
+argument_list|,
+operator|&
+name|input_method_menu
+argument_list|,
+literal|"gtk-show-unicode-menu"
+argument_list|,
+operator|&
+name|unicode_menu
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 DECL|macro|SET_VISIBLE (action,condition)
@@ -715,6 +748,13 @@ argument_list|,
 name|text_layer
 operator|&&
 name|vectors
+argument_list|)
+expr_stmt|;
+name|SET_VISIBLE
+argument_list|(
+literal|"text-tool-input-methods-menu"
+argument_list|,
+name|input_method_menu
 argument_list|)
 expr_stmt|;
 block|}
