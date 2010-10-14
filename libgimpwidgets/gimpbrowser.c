@@ -51,7 +51,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon28c84c900103
+DECL|enum|__anon2c1a18d40103
 block|{
 DECL|enumerator|SEARCH
 name|SEARCH
@@ -65,9 +65,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_browser_destroy
+name|gimp_browser_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -184,11 +184,11 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
-name|gtk_object_class
+name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -231,11 +231,11 @@ argument_list|,
 name|G_TYPE_INT
 argument_list|)
 expr_stmt|;
-name|gtk_object_class
+name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_browser_destroy
+name|gimp_browser_dispose
 expr_stmt|;
 name|klass
 operator|->
@@ -659,10 +659,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_browser_destroy (GtkObject * object)
-name|gimp_browser_destroy
+DECL|function|gimp_browser_dispose (GObject * object)
+name|gimp_browser_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -697,12 +697,12 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)
