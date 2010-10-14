@@ -2735,13 +2735,6 @@ argument_list|(
 name|new_layer
 argument_list|)
 decl_stmt|;
-name|new_item
-operator|=
-name|GIMP_ITEM
-argument_list|(
-name|new_layer
-argument_list|)
-expr_stmt|;
 name|gimp_image_undo_group_start
 argument_list|(
 name|image

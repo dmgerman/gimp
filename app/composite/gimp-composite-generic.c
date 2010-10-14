@@ -6267,10 +6267,6 @@ name|D
 decl_stmt|;
 name|guint
 name|length
-init|=
-name|ctx
-operator|->
-name|n_pixels
 decl_stmt|;
 name|guint
 name|bytes1
