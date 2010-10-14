@@ -72,18 +72,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"widgets/gimpunitstore.h"
-end_include
-
-begin_include
-include|#
-directive|include
-file|"widgets/gimpunitcombobox.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"widgets/gimpwidgets-utils.h"
 end_include
 
