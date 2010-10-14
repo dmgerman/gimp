@@ -6,6 +6,12 @@ end_comment
 begin_ifndef
 ifndef|#
 directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_ifndef
+ifndef|#
+directive|ifndef
 name|__GIMP_UNIT_MENU_H__
 end_ifndef
 
@@ -334,6 +340,15 @@ end_endif
 
 begin_comment
 comment|/* __GIMP_UNIT_MENU_H__ */
+end_comment
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
 end_comment
 
 end_unit

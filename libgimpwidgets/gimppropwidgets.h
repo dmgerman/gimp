@@ -790,6 +790,29 @@ end_comment
 begin_function_decl
 name|GtkWidget
 modifier|*
+name|gimp_prop_unit_combo_box_new
+parameter_list|(
+name|GObject
+modifier|*
+name|config
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|property_name
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_ifndef
+ifndef|#
+directive|ifndef
+name|GIMP_DISABLE_DEPRECATED
+end_ifndef
+
+begin_function_decl
+name|GtkWidget
+modifier|*
 name|gimp_prop_unit_menu_new
 parameter_list|(
 name|GObject
@@ -808,6 +831,15 @@ name|unit_format
 parameter_list|)
 function_decl|;
 end_function_decl
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/* GIMP_DISABLE_DEPRECATED */
+end_comment
 
 begin_comment
 comment|/*  GParamString (stock_id)  */

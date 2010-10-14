@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4ae64a0103
+DECL|enum|__anon2a0efc490103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2491,13 +2491,11 @@ argument_list|)
 expr_stmt|;
 name|menu
 operator|=
-name|gimp_prop_unit_menu_new
+name|gimp_prop_unit_combo_box_new
 argument_list|(
 name|config
 argument_list|,
 name|unit_property_name
-argument_list|,
-literal|"%a"
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_end

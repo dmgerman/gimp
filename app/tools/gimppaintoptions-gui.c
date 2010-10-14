@@ -1021,13 +1021,11 @@ expr_stmt|;
 comment|/*  the fade-out unitmenu  */
 name|menu
 operator|=
-name|gimp_prop_unit_menu_new
+name|gimp_prop_unit_combo_box_new
 argument_list|(
 name|config
 argument_list|,
 literal|"fade-unit"
-argument_list|,
-literal|"%a"
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1065,28 +1063,13 @@ argument_list|(
 name|menu
 argument_list|)
 expr_stmt|;
-name|g_object_set_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|menu
-argument_list|)
-argument_list|,
-literal|"set_digits"
-argument_list|,
-name|spinbutton
-argument_list|)
-expr_stmt|;
-name|gimp_unit_menu_set_pixel_digits
-argument_list|(
-name|GIMP_UNIT_MENU
-argument_list|(
-name|menu
-argument_list|)
-argument_list|,
+if|#
+directive|if
 literal|0
-argument_list|)
-expr_stmt|;
+comment|/* FIXME pixel digits */
+block|g_object_set_data (G_OBJECT (menu), "set_digits", spinbutton);   gimp_unit_menu_set_pixel_digits (GIMP_UNIT_MENU (menu), 0);
+endif|#
+directive|endif
 comment|/*  the repeat type  */
 name|combo
 operator|=

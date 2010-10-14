@@ -52,7 +52,7 @@ file|"gimpsizeentry.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpsizeentry  * @title: GimpSizeEntry  * @short_description: Widget for entering pixel values and resolutions.  * @see_also: #GimpUnit, #GimpUnitMenu, gimp_coordinates_new()  *  * This widget is used to enter pixel distances/sizes and resolutions.  *  * You can specify the number of fields the widget should provide. For  * each field automatic mappings are performed between the field's  * "reference value" and its "value".  *  * There is a #GimpUnitMenu right of the entry fields which lets you  * specify the #GimpUnit of the displayed values.  *  * For each field, there can be one or two #GtkSpinButton's to enter  * "value" and "reference value". If you specify @show_refval as  * #FALSE in gimp_size_entry_new() there will be only one  * #GtkSpinButton and the #GimpUnitMenu will contain an item for  * selecting GIMP_UNIT_PIXEL.  *  * The "reference value" is either of GIMP_UNIT_PIXEL or dpi,  * depending on which #GimpSizeEntryUpdatePolicy you specify in  * gimp_size_entry_new().  The "value" is either the size in pixels  * mapped to the size in a real-world-unit (see #GimpUnit) or the dpi  * value mapped to pixels per real-world-unit.  **/
+comment|/**  * SECTION: gimpsizeentry  * @title: GimpSizeEntry  * @short_description: Widget for entering pixel values and resolutions.  * @see_also: #GimpUnit, #GimpUnitComboBox, gimp_coordinates_new()  *  * This widget is used to enter pixel distances/sizes and resolutions.  *  * You can specify the number of fields the widget should provide. For  * each field automatic mappings are performed between the field's  * "reference value" and its "value".  *  * There is a #GimpUnitComboBox right of the entry fields which lets  * you specify the #GimpUnit of the displayed values.  *  * For each field, there can be one or two #GtkSpinButton's to enter  * "value" and "reference value". If you specify @show_refval as  * #FALSE in gimp_size_entry_new() there will be only one  * #GtkSpinButton and the #GimpUnitComboBox will contain an item for  * selecting GIMP_UNIT_PIXEL.  *  * The "reference value" is either of GIMP_UNIT_PIXEL or dpi,  * depending on which #GimpSizeEntryUpdatePolicy you specify in  * gimp_size_entry_new().  The "value" is either the size in pixels  * mapped to the size in a real-world-unit (see #GimpUnit) or the dpi  * value mapped to pixels per real-world-unit.  **/
 end_comment
 
 begin_define
@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d317bd0103
+DECL|enum|__anon2b0dafb20103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -658,7 +658,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_new:  * @number_of_fields:  The number of input fields.  * @unit:              The initial unit.  * @unit_format:       A printf-like unit-format string as is used with  *                     gimp_unit_menu_new().  * @menu_show_pixels:  %TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                     GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: %TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval:       %TRUE if you want an extra "reference value"  *                     spinbutton per input field.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton's.  * @update_policy:     How the automatic pixel<-> real-world-unit  *                     calculations should be done.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitMenu to allow the caller to add labels or a  * #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  **/
+comment|/**  * gimp_size_entry_new:  * @number_of_fields:  The number of input fields.  * @unit:              The initial unit.  * @unit_format:       A printf-like unit-format string as is used with  *                     gimp_unit_menu_new().  * @menu_show_pixels:  %TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PIXEL (ignored if the @update_policy is not  *                     GIMP_SIZE_ENTRY_UPDATE_NONE).  * @menu_show_percent: %TRUE if the unit menu shold contain an item for  *                     GIMP_UNIT_PERCENT.  * @show_refval:       %TRUE if you want an extra "reference value"  *                     spinbutton per input field.  * @spinbutton_width:  The minimal horizontal size of the #GtkSpinButton's.  * @update_policy:     How the automatic pixel<-> real-world-unit  *                     calculations should be done.  *  * Creates a new #GimpSizeEntry widget.  *  * To have all automatic calculations performed correctly, set up the  * widget in the following order:  *  * 1. gimp_size_entry_new()  *  * 2. (for each additional input field) gimp_size_entry_add_field()  *  * 3. gimp_size_entry_set_unit()  *  * For each input field:  *  * 4. gimp_size_entry_set_resolution()  *  * 5. gimp_size_entry_set_refval_boundaries()  *    (or gimp_size_entry_set_value_boundaries())  *  * 6. gimp_size_entry_set_size()  *  * 7. gimp_size_entry_set_refval() (or gimp_size_entry_set_value())  *  * The #GimpSizeEntry is derived from #GtkTable and will have  * an empty border of one cell width on each side plus an empty column left  * of the #GimpUnitComboBox to allow the caller to add labels or a  * #GimpChainButton.  *  * Returns: A Pointer to the new #GimpSizeEntry widget.  **/
 end_comment
 
 begin_function
@@ -697,6 +697,10 @@ block|{
 name|GimpSizeEntry
 modifier|*
 name|gse
+decl_stmt|;
+name|GimpUnitStore
+modifier|*
+name|store
 decl_stmt|;
 name|gint
 name|i
@@ -1257,25 +1261,39 @@ name|refval_digits
 argument_list|)
 expr_stmt|;
 block|}
+name|store
+operator|=
+name|gimp_unit_store_new
+argument_list|(
+name|gse
+operator|->
+name|number_of_fields
+argument_list|)
+expr_stmt|;
 name|gse
 operator|->
 name|unitmenu
 operator|=
-name|gimp_unit_menu_new
+name|gimp_unit_combo_box_new_with_model
 argument_list|(
-name|unit_format
+name|store
+argument_list|)
+expr_stmt|;
+name|g_object_unref
+argument_list|(
+name|store
+argument_list|)
+expr_stmt|;
+name|gimp_unit_combo_box_set_active
+argument_list|(
+name|GIMP_UNIT_COMBO_BOX
+argument_list|(
+name|gse
+operator|->
+name|unitmenu
+argument_list|)
 argument_list|,
 name|unit
-argument_list|,
-name|gse
-operator|->
-name|menu_show_pixels
-argument_list|,
-name|gse
-operator|->
-name|menu_show_percent
-argument_list|,
-name|TRUE
 argument_list|)
 expr_stmt|;
 name|gtk_table_attach
@@ -1328,7 +1346,7 @@ name|gse
 operator|->
 name|unitmenu
 argument_list|,
-literal|"unit-changed"
+literal|"changed"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
@@ -2053,7 +2071,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_size:  * @gse:   The sizeentry you want to set a size for.  * @field: The index of the field you want to set the size for.  * @lower: The reference value which will be treated as 0%.  * @upper: The reference value which will be treated as 100%.  *  * Sets the pixel values for field # @field of the #GimpSizeEntry  * which will be treated as 0% and 100%.  *  * These values will be used if you specified @menu_show_percent as %TRUE  * in gimp_size_entry_new() and the user has selected GIMP_UNIT_PERCENT in  * the #GimpSizeEntry's #GimpUnitMenu.  *  * This function does nothing if the #GimpSizeEntryUpdatePolicy specified in  * gimp_size_entry_new() doesn't equal to GIMP_SIZE_ENTRY_UPDATE_SIZE.  **/
+comment|/**  * gimp_size_entry_set_size:  * @gse:   The sizeentry you want to set a size for.  * @field: The index of the field you want to set the size for.  * @lower: The reference value which will be treated as 0%.  * @upper: The reference value which will be treated as 100%.  *  * Sets the pixel values for field # @field of the #GimpSizeEntry  * which will be treated as 0% and 100%.  *  * These values will be used if you specified @menu_show_percent as %TRUE  * in gimp_size_entry_new() and the user has selected GIMP_UNIT_PERCENT in  * the #GimpSizeEntry's #GimpUnitComboBox.  *  * This function does nothing if the #GimpSizeEntryUpdatePolicy specified in  * gimp_size_entry_new() doesn't equal to GIMP_SIZE_ENTRY_UPDATE_SIZE.  **/
 end_comment
 
 begin_function
@@ -2467,7 +2485,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_value:  * @gse:   The sizeentry you want to know a value of.  * @field: The index of the field you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  **/
+comment|/**  * gimp_size_entry_get_value:  * @gse:   The sizeentry you want to know a value of.  * @field: The index of the field you want to know the value of.  *  * Returns the value of field # @field of the #GimpSizeEntry.  *  * The @value returned is a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitComboBox.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_get_refval() instead.  *  * Returns: The value of the chosen @field.  **/
 end_comment
 
 begin_function
@@ -2769,7 +2787,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_value:  * @gse:   The sizeentry you want to set a value for.  * @field: The index of the field you want to set a value for.  * @value: The new value for @field.  *  * Sets the value for field # @field of the #GimpSizeEntry.  *  * The @value passed is treated to be a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval() instead.  **/
+comment|/**  * gimp_size_entry_set_value:  * @gse:   The sizeentry you want to set a value for.  * @field: The index of the field you want to set a value for.  * @value: The new value for @field.  *  * Sets the value for field # @field of the #GimpSizeEntry.  *  * The @value passed is treated to be a distance or resolution  * in the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitComboBox.  *  * NOTE: In most cases you won't be interested in this value because the  *       #GimpSizeEntry's purpose is to shield the programmer from unit  *       calculations. Use gimp_size_entry_set_refval() instead.  **/
 end_comment
 
 begin_function
@@ -3847,7 +3865,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitMenu.  *  * Returns: The sizeentry's unit.  **/
+comment|/**  * gimp_size_entry_get_unit:  * @gse: The sizeentry you want to know the unit of.  *  * Returns the #GimpUnit the user has selected in the #GimpSizeEntry's  * #GimpUnitComboBox.  *  * Returns: The sizeentry's unit.  **/
 end_comment
 
 begin_function
@@ -3910,13 +3928,16 @@ name|unit
 expr_stmt|;
 name|digits
 operator|=
-name|gimp_unit_menu_get_pixel_digits
+name|GPOINTER_TO_INT
 argument_list|(
-name|GIMP_UNIT_MENU
+name|g_object_get_data
+argument_list|(
+name|G_OBJECT
 argument_list|(
 name|gse
-operator|->
-name|unitmenu
+argument_list|)
+argument_list|,
+literal|"gimp-pixel-digits"
 argument_list|)
 argument_list|)
 expr_stmt|;
@@ -4155,9 +4176,9 @@ name|GIMP_UNIT_PERCENT
 operator|)
 argument_list|)
 expr_stmt|;
-name|gimp_unit_menu_set_unit
+name|gimp_unit_combo_box_set_active
 argument_list|(
-name|GIMP_UNIT_MENU
+name|GIMP_UNIT_COMBO_BOX
 argument_list|(
 name|gse
 operator|->
@@ -4197,9 +4218,9 @@ name|new_unit
 decl_stmt|;
 name|new_unit
 operator|=
-name|gimp_unit_menu_get_unit
+name|gimp_unit_combo_box_get_active
 argument_list|(
-name|GIMP_UNIT_MENU
+name|GIMP_UNIT_COMBO_BOX
 argument_list|(
 name|widget
 argument_list|)
@@ -4907,7 +4928,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_size_entry_set_pixel_digits:  * @gse: a #GimpSizeEntry  * @digits: the number of digits to display for a pixel size  *  * Similar to gimp_unit_menu_set_pixel_digits(), this function allows  * you set up a #GimpSizeEntry so that sub-pixel sizes can be entered.  **/
+comment|/**  * gimp_size_entry_set_pixel_digits:  * @gse: a #GimpSizeEntry  * @digits: the number of digits to display for a pixel size  *  * This function allows you set up a #GimpSizeEntry so that sub-pixel  * sizes can be entered.  **/
 end_comment
 
 begin_function
@@ -4923,9 +4944,9 @@ name|gint
 name|digits
 parameter_list|)
 block|{
-name|GimpUnitMenu
+name|GimpUnitComboBox
 modifier|*
-name|menu
+name|combo
 decl_stmt|;
 name|g_return_if_fail
 argument_list|(
@@ -4935,29 +4956,37 @@ name|gse
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|menu
+name|combo
 operator|=
-name|GIMP_UNIT_MENU
+name|GIMP_UNIT_COMBO_BOX
 argument_list|(
 name|gse
 operator|->
 name|unitmenu
 argument_list|)
 expr_stmt|;
-name|gimp_unit_menu_set_pixel_digits
+name|g_object_set_data
 argument_list|(
-name|menu
+name|G_OBJECT
+argument_list|(
+name|gse
+argument_list|)
 argument_list|,
+literal|"gimp-pixel-digits"
+argument_list|,
+name|GINT_TO_POINTER
+argument_list|(
 name|digits
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_size_entry_update_unit
 argument_list|(
 name|gse
 argument_list|,
-name|gimp_unit_menu_get_unit
+name|gimp_unit_combo_box_get_active
 argument_list|(
-name|menu
+name|combo
 argument_list|)
 argument_list|)
 expr_stmt|;

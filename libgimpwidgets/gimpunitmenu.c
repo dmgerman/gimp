@@ -48,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpunitmenu.h"
+file|"gimpwidgets.h"
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#
 directive|include
-file|"gimpwidgets.h"
+file|"gimpunitmenu.h"
 end_include
 
 begin_include
@@ -69,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baef0240103
+DECL|enum|__anon29de15650103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -82,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baef0240203
+DECL|enum|__anon29de15650203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
