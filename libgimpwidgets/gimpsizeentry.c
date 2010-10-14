@@ -76,7 +76,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bf898f10103
+DECL|enum|__anon2987ce5a0103
 block|{
 DECL|enumerator|VALUE_CHANGED
 name|VALUE_CHANGED
@@ -1279,7 +1279,15 @@ operator|->
 name|menu_show_pixels
 argument_list|)
 expr_stmt|;
-comment|/* FIXME menu_show_percent */
+name|gimp_unit_store_set_has_percent
+argument_list|(
+name|store
+argument_list|,
+name|gse
+operator|->
+name|menu_show_percent
+argument_list|)
+expr_stmt|;
 name|gse
 operator|->
 name|unitmenu
