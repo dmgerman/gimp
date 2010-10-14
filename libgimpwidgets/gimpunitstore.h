@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29630fdc0103
+DECL|enum|__anon296813d60103
 block|{
 DECL|enumerator|GIMP_UNIT_STORE_UNIT
 name|GIMP_UNIT_STORE_UNIT
@@ -189,20 +189,6 @@ block|{
 DECL|member|parent_instance
 name|GObject
 name|parent_instance
-decl_stmt|;
-DECL|member|num_values
-name|gint
-name|num_values
-decl_stmt|;
-DECL|member|values
-name|gdouble
-modifier|*
-name|values
-decl_stmt|;
-DECL|member|resolutions
-name|gdouble
-modifier|*
-name|resolutions
 decl_stmt|;
 block|}
 struct|;
