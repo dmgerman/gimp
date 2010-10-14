@@ -6731,7 +6731,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_text_tool_ensure_layout (GimpTextTool * text_tool)
 name|gimp_text_tool_ensure_layout
 parameter_list|(
@@ -6782,6 +6782,13 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|text_tool
+operator|->
+name|layout
+operator|!=
+name|NULL
+return|;
 block|}
 end_function
 
