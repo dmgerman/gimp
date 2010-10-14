@@ -2050,12 +2050,15 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_text_tool_editor_get_cursor_rect (GimpTextTool * text_tool,PangoRectangle * cursor_rect)
+DECL|function|gimp_text_tool_editor_get_cursor_rect (GimpTextTool * text_tool,gboolean overwrite,PangoRectangle * cursor_rect)
 name|gimp_text_tool_editor_get_cursor_rect
 parameter_list|(
 name|GimpTextTool
 modifier|*
 name|text_tool
+parameter_list|,
+name|gboolean
+name|overwrite
 parameter_list|,
 name|PangoRectangle
 modifier|*
@@ -2158,6 +2161,10 @@ operator|&
 name|offset_y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|overwrite
+condition|)
 name|pango_layout_index_to_pos
 argument_list|(
 name|layout
@@ -2165,6 +2172,18 @@ argument_list|,
 name|cursor_index
 argument_list|,
 name|cursor_rect
+argument_list|)
+expr_stmt|;
+else|else
+name|pango_layout_get_cursor_pos
+argument_list|(
+name|layout
+argument_list|,
+name|cursor_index
+argument_list|,
+name|cursor_rect
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gimp_text_layout_transform_rect
@@ -2840,6 +2859,9 @@ operator|!=
 literal|0
 condition|)
 block|{
+name|gint
+name|new_index
+decl_stmt|;
 if|if
 condition|(
 name|count
@@ -2860,7 +2882,7 @@ argument_list|,
 literal|1
 argument_list|,
 operator|&
-name|index
+name|new_index
 argument_list|,
 operator|&
 name|trailing
@@ -2869,6 +2891,18 @@ expr_stmt|;
 name|count
 operator|--
 expr_stmt|;
+if|if
+condition|(
+name|new_index
+operator|!=
+name|G_MAXINT
+condition|)
+name|index
+operator|=
+name|new_index
+expr_stmt|;
+else|else
+break|break;
 block|}
 else|else
 block|{
@@ -2886,7 +2920,7 @@ operator|-
 literal|1
 argument_list|,
 operator|&
-name|index
+name|new_index
 argument_list|,
 operator|&
 name|trailing
@@ -2895,6 +2929,19 @@ expr_stmt|;
 name|count
 operator|++
 expr_stmt|;
+if|if
+condition|(
+name|new_index
+operator|!=
+operator|-
+literal|1
+condition|)
+name|index
+operator|=
+name|new_index
+expr_stmt|;
+else|else
+break|break;
 block|}
 block|}
 name|gimp_text_buffer_get_iter_at_index
@@ -5076,6 +5123,10 @@ condition|)
 name|gimp_text_tool_editor_get_cursor_rect
 argument_list|(
 name|text_tool
+argument_list|,
+name|text_tool
+operator|->
+name|overwrite_mode
 argument_list|,
 operator|&
 name|cursor_rect

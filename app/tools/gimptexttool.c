@@ -3138,6 +3138,10 @@ name|gimp_text_tool_editor_get_cursor_rect
 argument_list|(
 name|text_tool
 argument_list|,
+name|text_tool
+operator|->
+name|overwrite_mode
+argument_list|,
 operator|&
 name|cursor_rect
 argument_list|)
@@ -3179,7 +3183,7 @@ operator|&&
 name|cursor_rect
 operator|.
 name|width
-operator|>
+operator|!=
 literal|0
 expr_stmt|;
 name|gimp_draw_tool_add_text_cursor
