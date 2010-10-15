@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b081f060103
+DECL|enum|__anon2a33c1230103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -747,14 +747,23 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_rectangle
+name|cairo_translate
 argument_list|(
 name|cr
 argument_list|,
 name|allocation
 operator|.
 name|x
-operator|+
+argument_list|,
+name|allocation
+operator|.
+name|y
+argument_list|)
+expr_stmt|;
+name|cairo_rectangle
+argument_list|(
+name|cr
+argument_list|,
 name|col
 operator|*
 name|renderer
@@ -763,10 +772,6 @@ name|cell_width
 operator|+
 literal|0.5
 argument_list|,
-name|allocation
-operator|.
-name|y
-operator|+
 name|row
 operator|*
 name|renderer
