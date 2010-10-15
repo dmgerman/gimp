@@ -83,7 +83,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28a29c970103
+DECL|enum|__anon292d9b900103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -178,15 +178,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_dash_editor_expose
+name|gimp_dash_editor_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -368,9 +368,9 @@ name|gimp_dash_editor_size_request
 expr_stmt|;
 name|widget_class
 operator|->
-name|expose_event
+name|draw
 operator|=
-name|gimp_dash_editor_expose
+name|gimp_dash_editor_draw
 expr_stmt|;
 name|widget_class
 operator|->
@@ -881,16 +881,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_dash_editor_expose (GtkWidget * widget,GdkEventExpose * event)
-name|gimp_dash_editor_expose
+DECL|function|gimp_dash_editor_draw (GtkWidget * widget,cairo_t * cr)
+name|gimp_dash_editor_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 block|{
 name|GimpDashEditor
@@ -909,18 +909,6 @@ init|=
 name|gtk_widget_get_style
 argument_list|(
 name|widget
-argument_list|)
-decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-init|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
 argument_list|)
 decl_stmt|;
 name|GtkAllocation
@@ -945,21 +933,6 @@ expr_stmt|;
 name|update_blocksize
 argument_list|(
 name|editor
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_rectangle
-argument_list|(
-name|cr
-argument_list|,
-operator|&
-name|event
-operator|->
-name|area
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 comment|/*  draw the background  */
@@ -1510,11 +1483,6 @@ literal|1.0
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
 argument_list|(
 name|cr
 argument_list|)
