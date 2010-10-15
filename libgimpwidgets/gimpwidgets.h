@@ -483,7 +483,7 @@ modifier|*
 name|gimp_spin_button_new
 parameter_list|(
 comment|/* return value: */
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 modifier|*
 name|adjustment

@@ -1141,10 +1141,10 @@ end_comment
 begin_function
 name|GtkWidget
 modifier|*
-DECL|function|gimp_spin_button_new (GtkObject ** adjustment,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,gdouble page_size,gdouble climb_rate,guint digits)
+DECL|function|gimp_spin_button_new (GtkAdjustment ** adjustment,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,gdouble page_size,gdouble climb_rate,guint digits)
 name|gimp_spin_button_new
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 modifier|*
 name|adjustment
@@ -1681,7 +1681,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a0751380108
+DECL|struct|__anon28fa43550108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
