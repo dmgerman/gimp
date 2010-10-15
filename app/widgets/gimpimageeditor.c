@@ -88,9 +88,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_image_editor_destroy
+name|gimp_image_editor_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -164,20 +164,20 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_image_editor_destroy
+name|gimp_image_editor_dispose
 expr_stmt|;
 name|klass
 operator|->
@@ -331,10 +331,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_image_editor_destroy (GtkObject * object)
-name|gimp_image_editor_destroy
+DECL|function|gimp_image_editor_dispose (GObject * object)
+name|gimp_image_editor_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -361,12 +361,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)

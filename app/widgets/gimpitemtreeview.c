@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b812bdc0103
+DECL|enum|__anon29ad1f100103
 block|{
 DECL|enumerator|SET_IMAGE
 name|SET_IMAGE
@@ -338,9 +338,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_item_tree_view_destroy
+name|gimp_item_tree_view_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -942,15 +942,6 @@ argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
-name|GtkObjectClass
-modifier|*
-name|gtk_object_class
-init|=
-name|GTK_OBJECT_CLASS
-argument_list|(
-name|klass
-argument_list|)
-decl_stmt|;
 name|GtkWidgetClass
 modifier|*
 name|widget_class
@@ -1013,11 +1004,11 @@ name|constructor
 operator|=
 name|gimp_item_tree_view_constructor
 expr_stmt|;
-name|gtk_object_class
+name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_item_tree_view_destroy
+name|gimp_item_tree_view_dispose
 expr_stmt|;
 name|widget_class
 operator|->
@@ -2122,10 +2113,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_item_tree_view_destroy (GtkObject * object)
-name|gimp_item_tree_view_destroy
+DECL|function|gimp_item_tree_view_dispose (GObject * object)
+name|gimp_item_tree_view_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -2154,12 +2145,12 @@ argument_list|,
 name|NULL
 argument_list|)
 expr_stmt|;
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)
