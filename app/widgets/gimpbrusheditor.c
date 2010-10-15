@@ -643,8 +643,6 @@ name|editor
 operator|->
 name|radius_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -658,7 +656,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -721,8 +718,6 @@ name|editor
 operator|->
 name|spikes_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|2.0
@@ -736,7 +731,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -799,8 +793,6 @@ name|editor
 operator|->
 name|hardness_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -814,7 +806,6 @@ argument_list|,
 literal|0.1
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -877,8 +868,6 @@ name|editor
 operator|->
 name|aspect_ratio_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -892,7 +881,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -955,8 +943,6 @@ name|editor
 operator|->
 name|angle_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -970,7 +956,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
@@ -1033,8 +1018,6 @@ name|editor
 operator|->
 name|spacing_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -1048,7 +1031,6 @@ argument_list|,
 literal|10.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|scale
