@@ -65,7 +65,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b0991800103
+DECL|enum|__anon29afd8660103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -142,6 +142,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|rectangle
@@ -174,25 +175,23 @@ name|GtkCellRenderer
 modifier|*
 name|cell
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
-parameter_list|,
-name|GdkRectangle
-modifier|*
-name|expose_area
 parameter_list|,
 name|GtkCellRendererState
 name|flags
@@ -567,7 +566,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cell_renderer_color_get_size (GtkCellRenderer * cell,GtkWidget * widget,GdkRectangle * cell_area,gint * x_offset,gint * y_offset,gint * width,gint * height)
+DECL|function|gimp_cell_renderer_color_get_size (GtkCellRenderer * cell,GtkWidget * widget,const GdkRectangle * cell_area,gint * x_offset,gint * y_offset,gint * width,gint * height)
 name|gimp_cell_renderer_color_get_size
 parameter_list|(
 name|GtkCellRenderer
@@ -578,6 +577,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
@@ -816,32 +816,30 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cell_renderer_color_render (GtkCellRenderer * cell,GdkWindow * window,GtkWidget * widget,GdkRectangle * background_area,GdkRectangle * cell_area,GdkRectangle * expose_area,GtkCellRendererState flags)
+DECL|function|gimp_cell_renderer_color_render (GtkCellRenderer * cell,cairo_t * cr,GtkWidget * widget,const GdkRectangle * background_area,const GdkRectangle * cell_area,GtkCellRendererState flags)
 name|gimp_cell_renderer_color_render
 parameter_list|(
 name|GtkCellRenderer
 modifier|*
 name|cell
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
-parameter_list|,
-name|GdkRectangle
-modifier|*
-name|expose_area
 parameter_list|,
 name|GtkCellRendererState
 name|flags
@@ -956,15 +954,6 @@ operator|>
 literal|2
 condition|)
 block|{
-name|cairo_t
-modifier|*
-name|cr
-init|=
-name|gdk_cairo_create
-argument_list|(
-name|window
-argument_list|)
-decl_stmt|;
 name|GtkStyle
 modifier|*
 name|style
@@ -1245,11 +1234,6 @@ index|]
 argument_list|)
 expr_stmt|;
 name|cairo_stroke_preserve
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
 argument_list|(
 name|cr
 argument_list|)
