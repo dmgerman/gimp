@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976bca40103
+DECL|enum|__anon29b6a07e0103
 block|{
 DECL|enumerator|PRE_CLICKED
 name|PRE_CLICKED
@@ -75,7 +75,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2976bca40203
+DECL|enum|__anon29b6a07e0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -158,6 +158,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|rectangle
@@ -190,25 +191,23 @@ name|GtkCellRenderer
 modifier|*
 name|cell
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
-parameter_list|,
-name|GdkRectangle
-modifier|*
-name|expose_area
 parameter_list|,
 name|GtkCellRendererState
 name|flags
@@ -238,10 +237,12 @@ name|gchar
 modifier|*
 name|path
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
@@ -676,7 +677,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cell_renderer_viewable_get_size (GtkCellRenderer * cell,GtkWidget * widget,GdkRectangle * cell_area,gint * x_offset,gint * y_offset,gint * width,gint * height)
+DECL|function|gimp_cell_renderer_viewable_get_size (GtkCellRenderer * cell,GtkWidget * widget,const GdkRectangle * cell_area,gint * x_offset,gint * y_offset,gint * width,gint * height)
 name|gimp_cell_renderer_viewable_get_size
 parameter_list|(
 name|GtkCellRenderer
@@ -687,6 +688,7 @@ name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
@@ -984,32 +986,30 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_cell_renderer_viewable_render (GtkCellRenderer * cell,GdkWindow * window,GtkWidget * widget,GdkRectangle * background_area,GdkRectangle * cell_area,GdkRectangle * expose_area,GtkCellRendererState flags)
+DECL|function|gimp_cell_renderer_viewable_render (GtkCellRenderer * cell,cairo_t * cr,GtkWidget * widget,const GdkRectangle * background_area,const GdkRectangle * cell_area,GtkCellRendererState flags)
 name|gimp_cell_renderer_viewable_render
 parameter_list|(
 name|GtkCellRenderer
 modifier|*
 name|cell
 parameter_list|,
-name|GdkWindow
+name|cairo_t
 modifier|*
-name|window
+name|cr
 parameter_list|,
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
-parameter_list|,
-name|GdkRectangle
-modifier|*
-name|expose_area
 parameter_list|,
 name|GtkCellRendererState
 name|flags
@@ -1033,10 +1033,6 @@ operator|->
 name|renderer
 condition|)
 block|{
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
 if|if
 condition|(
 operator|!
@@ -1075,25 +1071,6 @@ name|renderer
 argument_list|)
 expr_stmt|;
 block|}
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|window
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_rectangle
-argument_list|(
-name|cr
-argument_list|,
-name|expose_area
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 name|cairo_translate
 argument_list|(
 name|cr
@@ -1126,11 +1103,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -1138,7 +1110,7 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_cell_renderer_viewable_activate (GtkCellRenderer * cell,GdkEvent * event,GtkWidget * widget,const gchar * path,GdkRectangle * background_area,GdkRectangle * cell_area,GtkCellRendererState flags)
+DECL|function|gimp_cell_renderer_viewable_activate (GtkCellRenderer * cell,GdkEvent * event,GtkWidget * widget,const gchar * path,const GdkRectangle * background_area,const GdkRectangle * cell_area,GtkCellRendererState flags)
 name|gimp_cell_renderer_viewable_activate
 parameter_list|(
 name|GtkCellRenderer
@@ -1158,10 +1130,12 @@ name|gchar
 modifier|*
 name|path
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|background_area
 parameter_list|,
+specifier|const
 name|GdkRectangle
 modifier|*
 name|cell_area
