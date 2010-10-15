@@ -1070,6 +1070,7 @@ expr_stmt|;
 while|while
 condition|(
 name|sample_size
+operator|--
 condition|)
 block|{
 name|seg
