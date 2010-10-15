@@ -114,7 +114,7 @@ file|"libgimpwidgets/gimpwidgets-private.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpui  * @title: gimpui  * @short_description: Common user interface functions. This header includes  *                     all other GIMP User Interface Library headers.  * @see_also: gtk_init(), gdk_set_use_xshm(), gdk_rgb_get_visual(),  *            gdk_rgb_get_cmap(), gtk_widget_set_default_visual(),  *            gtk_widget_set_default_colormap(), gtk_preview_set_gamma().  *  * Common user interface functions. This header includes all other  * GIMP User Interface Library headers.  **/
+comment|/**  * SECTION: gimpui  * @title: gimpui  * @short_description: Common user interface functions. This header includes  *                     all other GIMP User Interface Library headers.  * @see_also: gtk_init(), gdk_set_use_xshm(), gtk_widget_set_default_visual().  *  * Common user interface functions. This header includes all other  * GIMP User Interface Library headers.  **/
 end_comment
 
 begin_comment
@@ -276,10 +276,6 @@ name|gboolean
 name|preview
 parameter_list|)
 block|{
-name|GdkScreen
-modifier|*
-name|screen
-decl_stmt|;
 specifier|const
 name|gchar
 modifier|*
@@ -454,19 +450,6 @@ name|gdk_set_program_class
 argument_list|(
 name|gimp_wm_class
 argument_list|()
-argument_list|)
-expr_stmt|;
-name|screen
-operator|=
-name|gdk_screen_get_default
-argument_list|()
-expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gdk_screen_get_rgb_colormap
-argument_list|(
-name|screen
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|file
