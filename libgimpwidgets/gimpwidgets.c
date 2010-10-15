@@ -52,21 +52,6 @@ file|"libgimp/libgimp-intl.h"
 end_include
 
 begin_comment
-comment|/*  hack: declare prototype here instead of #undef GIMP_DISABLE_DEPRECATED  */
-end_comment
-
-begin_function_decl
-name|void
-name|gimp_toggle_button_sensitive_update
-parameter_list|(
-name|GtkToggleButton
-modifier|*
-name|toggle_button
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_comment
 comment|/**  * SECTION: gimpwidgets  * @title: GimpWidgets  * @short_description: A collection of convenient widget constructors,  *                     standard callbacks and helper functions.  *  * A collection of convenient widget constructors, standard callbacks  * and helper functions.  **/
 end_comment
 
@@ -1681,7 +1666,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fa43550108
+DECL|struct|__anon2c4142600108
 block|{
 DECL|member|chainbutton
 name|GimpChainButton
@@ -2752,113 +2737,7 @@ comment|/*  *  Standard Callbacks  */
 end_comment
 
 begin_comment
-comment|/**  * gimp_toggle_button_sensitive_update:  * @toggle_button: The #GtkToggleButton the "set_sensitive" and  *                 "inverse_sensitive" lists are attached to.  *  * If you attached a pointer to a #GtkWidget with g_object_set_data() and  * the "set_sensitive" key to the #GtkToggleButton, the sensitive state of  * the attached widget will be set according to the toggle button's  * "active" state.  *  * You can attach an arbitrary list of widgets by attaching another  * "set_sensitive" data pointer to the first widget (and so on...).  *  * This function can also set the sensitive state according to the toggle  * button's inverse "active" state by attaching widgets with the  * "inverse_sensitive" key.  *  * Deprecated: use g_object_bind_property() instead of using the  *             "set_sensitive" and "inverse_sensitive" data pointers.  **/
-end_comment
-
-begin_function
-name|void
-DECL|function|gimp_toggle_button_sensitive_update (GtkToggleButton * toggle_button)
-name|gimp_toggle_button_sensitive_update
-parameter_list|(
-name|GtkToggleButton
-modifier|*
-name|toggle_button
-parameter_list|)
-block|{
-name|GtkWidget
-modifier|*
-name|set_sensitive
-decl_stmt|;
-name|gboolean
-name|active
-decl_stmt|;
-name|active
-operator|=
-name|gtk_toggle_button_get_active
-argument_list|(
-name|toggle_button
-argument_list|)
-expr_stmt|;
-name|set_sensitive
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|toggle_button
-argument_list|)
-argument_list|,
-literal|"set_sensitive"
-argument_list|)
-expr_stmt|;
-while|while
-condition|(
-name|set_sensitive
-condition|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|set_sensitive
-argument_list|,
-name|active
-argument_list|)
-expr_stmt|;
-name|set_sensitive
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|set_sensitive
-argument_list|)
-argument_list|,
-literal|"set_sensitive"
-argument_list|)
-expr_stmt|;
-block|}
-name|set_sensitive
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|toggle_button
-argument_list|)
-argument_list|,
-literal|"inverse_sensitive"
-argument_list|)
-expr_stmt|;
-while|while
-condition|(
-name|set_sensitive
-condition|)
-block|{
-name|gtk_widget_set_sensitive
-argument_list|(
-name|set_sensitive
-argument_list|,
-operator|!
-name|active
-argument_list|)
-expr_stmt|;
-name|set_sensitive
-operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
-argument_list|(
-name|set_sensitive
-argument_list|)
-argument_list|,
-literal|"inverse_sensitive"
-argument_list|)
-expr_stmt|;
-block|}
-block|}
-end_function
-
-begin_comment
-comment|/**  * gimp_toggle_button_update:  * @widget: A #GtkToggleButton.  * @data:   A pointer to a #gint variable which will store the value of  *          gtk_toggle_button_get_active().  *  * Note that this function calls gimp_toggle_button_sensitive_update()  * which is a deprecated hack you shouldn't use. See that function's  * documentation for a proper replacement of its functionality.  **/
+comment|/**  * gimp_toggle_button_update:  * @widget: A #GtkToggleButton.  * @data:   A pointer to a #gint variable which will store the value of  *          gtk_toggle_button_get_active().  **/
 end_comment
 
 begin_function
@@ -2905,19 +2784,11 @@ name|toggle_val
 operator|=
 name|FALSE
 expr_stmt|;
-name|gimp_toggle_button_sensitive_update
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_radio_button_update:  * @widget: A #GtkRadioButton.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_data (@widget, "gimp-item-data")).  *  * Note that this function calls gimp_toggle_button_sensitive_update()  * which is a deprecated hack you shouldn't use. See that function's  * documentation for a proper replacement of its functionality.  **/
+comment|/**  * gimp_radio_button_update:  * @widget: A #GtkRadioButton.  * @data:   A pointer to a #gint variable which will store the value of  *          GPOINTER_TO_INT (g_object_get_data (@widget, "gimp-item-data")).  **/
 end_comment
 
 begin_function
@@ -2971,14 +2842,6 @@ argument_list|)
 argument_list|)
 expr_stmt|;
 block|}
-name|gimp_toggle_button_sensitive_update
-argument_list|(
-name|GTK_TOGGLE_BUTTON
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
