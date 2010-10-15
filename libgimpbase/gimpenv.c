@@ -594,7 +594,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP2_DIRECTORY exists, it is used. If it is  * an absolute path, it is used as is.  If it is a relative path, it  * is taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP2_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the local  * configuration directory:  *  * - UNIX: $XDG_CONFIG_HOME (defaults to $HOME/.config/)  *  * - Windows: CSIDL_APPDATA  *  * - OSX (UNIX exception): the Application Support Directory.  *  * If neither the configuration nor home directory exist,  * g_get_user_config_dir() will return {tmp}/{user_name}/.config/ where  * the temporary directory {tmp} and the {user_name} are determined  * according to platform rules.  *  * In any case, we always return some non-empty string, whether it  * corresponds to an existing directory or not.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8 (on Windows it is always  * UTF-8.)  *  * Returns: The user-specific GIMP settings directory.  **/
+comment|/**  * gimp_directory:  *  * Returns the user-specific GIMP settings directory. If the  * environment variable GIMP3_DIRECTORY exists, it is used. If it is  * an absolute path, it is used as is.  If it is a relative path, it  * is taken to be a subdirectory of the home directory. If it is a  * relative path, and no home directory can be determined, it is taken  * to be a subdirectory of gimp_data_directory().  *  * The usual case is that no GIMP3_DIRECTORY environment variable  * exists, and then we use the GIMPDIR subdirectory of the local  * configuration directory:  *  * - UNIX: $XDG_CONFIG_HOME (defaults to $HOME/.config/)  *  * - Windows: CSIDL_APPDATA  *  * - OSX (UNIX exception): the Application Support Directory.  *  * If neither the configuration nor home directory exist,  * g_get_user_config_dir() will return {tmp}/{user_name}/.config/ where  * the temporary directory {tmp} and the {user_name} are determined  * according to platform rules.  *  * In any case, we always return some non-empty string, whether it  * corresponds to an existing directory or not.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8 (on Windows it is always  * UTF-8.)  *  * Returns: The user-specific GIMP settings directory.  **/
 end_comment
 
 begin_function
@@ -630,7 +630,7 @@ name|env_gimp_dir
 operator|=
 name|g_getenv
 argument_list|(
-literal|"GIMP2_DIRECTORY"
+literal|"GIMP3_DIRECTORY"
 argument_list|)
 expr_stmt|;
 if|if
@@ -639,12 +639,12 @@ name|gimp_dir
 condition|)
 block|{
 name|gboolean
-name|gimp2_directory_changed
+name|gimp3_directory_changed
 init|=
 name|FALSE
 decl_stmt|;
-comment|/* We have constructed the gimp_dir already. We can return        * gimp_dir unless some parameter gimp_dir depends on has        * changed. For now we just check for changes to GIMP2_DIRECTORY        */
-name|gimp2_directory_changed
+comment|/* We have constructed the gimp_dir already. We can return        * gimp_dir unless some parameter gimp_dir depends on has        * changed. For now we just check for changes to GIMP3_DIRECTORY        */
+name|gimp3_directory_changed
 operator|=
 operator|(
 name|env_gimp_dir
@@ -688,7 +688,7 @@ expr_stmt|;
 if|if
 condition|(
 operator|!
-name|gimp2_directory_changed
+name|gimp3_directory_changed
 condition|)
 block|{
 return|return
@@ -709,7 +709,7 @@ name|NULL
 expr_stmt|;
 block|}
 block|}
-comment|/* Remember the GIMP2_DIRECTORY to next invocation so we can check    * if it changes    */
+comment|/* Remember the GIMP3_DIRECTORY to next invocation so we can check    * if it changes    */
 name|g_free
 argument_list|(
 name|last_env_gimp_dir
@@ -1340,7 +1340,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment  * variable GIMP2_DATADIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP data.  **/
+comment|/**  * gimp_data_directory:  *  * Returns the top directory for GIMP data. If the environment  * variable GIMP3_DATADIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP data.  **/
 end_comment
 
 begin_function
@@ -1385,7 +1385,7 @@ name|gimp_data_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP2_DATADIR"
+literal|"GIMP3_DATADIR"
 argument_list|,
 name|DATADIR
 argument_list|,
@@ -1405,7 +1405,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP2_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the C library, which isn't necessarily UTF-8. (On Windows, unlike  * the other similar functions here, the return value from this  * function is in the system codepage, never in UTF-8. It can thus be  * passed directly to the bindtextdomain() function from libintl which  * does not handle UTF-8.)  *  * Returns: The top directory for GIMP locale files.  */
+comment|/**  * gimp_locale_directory:  *  * Returns the top directory for GIMP locale files. If the environment  * variable GIMP3_LOCALEDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * the C library, which isn't necessarily UTF-8. (On Windows, unlike  * the other similar functions here, the return value from this  * function is in the system codepage, never in UTF-8. It can thus be  * passed directly to the bindtextdomain() function from libintl which  * does not handle UTF-8.)  *  * Returns: The top directory for GIMP locale files.  */
 end_comment
 
 begin_function
@@ -1448,7 +1448,7 @@ name|gimp_locale_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP2_LOCALEDIR"
+literal|"GIMP3_LOCALEDIR"
 argument_list|,
 name|LOCALEDIR
 argument_list|,
@@ -1490,7 +1490,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP2_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.).  *  * Returns: The top directory for GIMP config files.  **/
+comment|/**  * gimp_sysconf_directory:  *  * Returns the top directory for GIMP config files. If the environment  * variable GIMP3_SYSCONFDIR exists, that is used.  It should be an  * absolute pathname.  Otherwise, on Unix the compile-time defined  * directory is used. On Windows, the installation directory as deduced  * from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.).  *  * Returns: The top directory for GIMP config files.  **/
 end_comment
 
 begin_function
@@ -1535,7 +1535,7 @@ name|gimp_sysconf_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP2_SYSCONFDIR"
+literal|"GIMP3_SYSCONFDIR"
 argument_list|,
 name|SYSCONFDIR
 argument_list|,
@@ -1555,7 +1555,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the  * environment variable GIMP2_PLUGINDIR exists, that is used.  It  * should be an absolute pathname. Otherwise, on Unix the compile-time  * defined directory is used. On Windows, the installation directory as  * deduced from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
+comment|/**  * gimp_plug_in_directory:  *  * Returns the top directory for GIMP plug_ins and modules. If the  * environment variable GIMP3_PLUGINDIR exists, that is used.  It  * should be an absolute pathname. Otherwise, on Unix the compile-time  * defined directory is used. On Windows, the installation directory as  * deduced from the executable's full filename is used.  *  * The returned string is owned by GIMP and must not be modified or  * freed. The returned string is in the encoding used for filenames by  * GLib, which isn't necessarily UTF-8. (On Windows it always is  * UTF-8.)  *  * Returns: The top directory for GIMP plug_ins and modules.  **/
 end_comment
 
 begin_function
@@ -1600,7 +1600,7 @@ name|gimp_plug_in_dir
 operator|=
 name|gimp_env_get_dir
 argument_list|(
-literal|"GIMP2_PLUGINDIR"
+literal|"GIMP3_PLUGINDIR"
 argument_list|,
 name|PLUGINDIR
 argument_list|,
