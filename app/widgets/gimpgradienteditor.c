@@ -538,15 +538,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|control_expose
+name|control_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|GimpGradientEditor
 modifier|*
@@ -756,7 +756,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|control_draw
+name|control_draw_all
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
@@ -1488,11 +1488,11 @@ name|editor
 operator|->
 name|control
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|control_expose
+name|control_draw
 argument_list|)
 argument_list|,
 name|editor
@@ -5018,16 +5018,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|control_expose (GtkWidget * widget,GdkEventExpose * event,GimpGradientEditor * editor)
-name|control_expose
+DECL|function|control_draw (GtkWidget * widget,cairo_t * cr,GimpGradientEditor * editor)
+name|control_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|GimpGradientEditor
 modifier|*
@@ -5042,18 +5042,6 @@ name|editor
 operator|->
 name|scroll_data
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-init|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-decl_stmt|;
 name|GtkAllocation
 name|allocation
 decl_stmt|;
@@ -5065,7 +5053,7 @@ operator|&
 name|allocation
 argument_list|)
 expr_stmt|;
-name|control_draw
+name|control_draw_all
 argument_list|(
 name|editor
 argument_list|,
@@ -5103,11 +5091,6 @@ name|gtk_adjustment_get_page_size
 argument_list|(
 name|adj
 argument_list|)
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 return|return
@@ -6839,8 +6822,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|control_draw (GimpGradientEditor * editor,GimpGradient * gradient,cairo_t * cr,gint width,gint height,gdouble left,gdouble right)
-name|control_draw
+DECL|function|control_draw_all (GimpGradientEditor * editor,GimpGradient * gradient,cairo_t * cr,gint width,gint height,gdouble left,gdouble right)
+name|control_draw_all
 parameter_list|(
 name|GimpGradientEditor
 modifier|*
