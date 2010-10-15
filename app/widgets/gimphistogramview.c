@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52168b0103
+DECL|enum|__anon28b412e60103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c52168b0203
+DECL|enum|__anon28b412e60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -186,15 +186,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_histogram_view_expose
+name|gimp_histogram_view_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -459,9 +459,9 @@ name|gimp_histogram_view_size_request
 expr_stmt|;
 name|widget_class
 operator|->
-name|expose_event
+name|draw
 operator|=
-name|gimp_histogram_view_expose
+name|gimp_histogram_view_draw
 expr_stmt|;
 name|widget_class
 operator|->
@@ -1042,16 +1042,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_histogram_view_expose (GtkWidget * widget,GdkEventExpose * event)
-name|gimp_histogram_view_expose
+DECL|function|gimp_histogram_view_draw (GtkWidget * widget,cairo_t * cr)
+name|gimp_histogram_view_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 block|{
 name|GimpHistogramView
@@ -1074,10 +1074,6 @@ argument_list|)
 decl_stmt|;
 name|GtkAllocation
 name|allocation
-decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
 decl_stmt|;
 name|gint
 name|x
@@ -1130,30 +1126,6 @@ index|[
 literal|3
 index|]
 decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_region
-argument_list|(
-name|cr
-argument_list|,
-name|event
-operator|->
-name|region
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 comment|/*  Draw the background  */
 name|gdk_cairo_set_source_color
 argument_list|(
@@ -1900,11 +1872,6 @@ argument_list|)
 expr_stmt|;
 block|}
 block|}
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
