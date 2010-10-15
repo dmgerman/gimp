@@ -376,7 +376,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_draw_selection_out (GimpDisplayShell * shell,cairo_t * cr,GdkSegment * segs,gint n_segs)
+DECL|function|gimp_display_shell_draw_selection_out (GimpDisplayShell * shell,cairo_t * cr,GimpSegment * segs,gint n_segs)
 name|gimp_display_shell_draw_selection_out
 parameter_list|(
 name|GimpDisplayShell
@@ -387,7 +387,7 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs
 parameter_list|,

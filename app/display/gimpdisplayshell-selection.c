@@ -117,7 +117,7 @@ name|shell
 decl_stmt|;
 comment|/*  shell that owns the selection     */
 DECL|member|segs_in
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs_in
 decl_stmt|;
@@ -128,7 +128,7 @@ name|n_segs_in
 decl_stmt|;
 comment|/*  number of segments in segs_in     */
 DECL|member|segs_out
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs_out
 decl_stmt|;
@@ -251,7 +251,7 @@ name|BoundSeg
 modifier|*
 name|src_segs
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|dest_segs
 parameter_list|,
@@ -1141,7 +1141,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|selection_transform_segs (Selection * selection,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs)
+DECL|function|selection_transform_segs (Selection * selection,const BoundSeg * src_segs,GimpSegment * dest_segs,gint n_segs)
 name|selection_transform_segs
 parameter_list|(
 name|Selection
@@ -1153,7 +1153,7 @@ name|BoundSeg
 modifier|*
 name|src_segs
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|dest_segs
 parameter_list|,
@@ -1416,7 +1416,7 @@ name|BoundSeg
 modifier|*
 name|segs_out
 decl_stmt|;
-comment|/*  Ask the image for the boundary of its selected region...    *  Then transform that information into a new buffer of GdkSegments    */
+comment|/*  Ask the image for the boundary of its selected region...    *  Then transform that information into a new buffer of GimpSegments    */
 name|gimp_channel_boundary
 argument_list|(
 name|gimp_image_get_mask
@@ -1462,7 +1462,7 @@ name|segs_in
 operator|=
 name|g_new
 argument_list|(
-name|GdkSegment
+name|GimpSegment
 argument_list|,
 name|selection
 operator|->
@@ -1513,7 +1513,7 @@ name|segs_out
 operator|=
 name|g_new
 argument_list|(
-name|GdkSegment
+name|GimpSegment
 argument_list|,
 name|selection
 operator|->

@@ -177,7 +177,7 @@ name|BoundSeg
 modifier|*
 name|src_segs
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|dest_segs
 parameter_list|,

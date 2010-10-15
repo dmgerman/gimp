@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dba83a0103
+DECL|enum|__anon2768ed530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -763,7 +763,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_boundary_transform (GimpCanvasItem * item,GimpDisplayShell * shell,GdkSegment * segs)
+DECL|function|gimp_canvas_boundary_transform (GimpCanvasItem * item,GimpDisplayShell * shell,GimpSegment * segs)
 name|gimp_canvas_boundary_transform
 parameter_list|(
 name|GimpCanvasItem
@@ -774,7 +774,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs
 parameter_list|)
@@ -1096,7 +1096,7 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs
 decl_stmt|;
@@ -1104,7 +1104,7 @@ name|segs
 operator|=
 name|g_new0
 argument_list|(
-name|GdkSegment
+name|GimpSegment
 argument_list|,
 name|private
 operator|->
@@ -1174,7 +1174,7 @@ decl_stmt|;
 name|GdkRectangle
 name|rectangle
 decl_stmt|;
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs
 decl_stmt|;
@@ -1194,7 +1194,7 @@ name|segs
 operator|=
 name|g_new0
 argument_list|(
-name|GdkSegment
+name|GimpSegment
 argument_list|,
 name|private
 operator|->

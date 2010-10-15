@@ -729,7 +729,7 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_transform_segments (const GimpDisplayShell * shell,const BoundSeg * src_segs,GdkSegment * dest_segs,gint n_segs,gdouble offset_x,gdouble offset_y)
+DECL|function|gimp_display_shell_transform_segments (const GimpDisplayShell * shell,const BoundSeg * src_segs,GimpSegment * dest_segs,gint n_segs,gdouble offset_x,gdouble offset_y)
 name|gimp_display_shell_transform_segments
 parameter_list|(
 specifier|const
@@ -742,7 +742,7 @@ name|BoundSeg
 modifier|*
 name|src_segs
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|dest_segs
 parameter_list|,

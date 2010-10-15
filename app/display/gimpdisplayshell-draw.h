@@ -69,7 +69,7 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs
 parameter_list|,
