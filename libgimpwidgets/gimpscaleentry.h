@@ -95,7 +95,7 @@ name|adj
 parameter_list|)
 define|\
 value|gtk_spin_button_get_adjustment \         (GTK_SPIN_BUTTON (g_object_get_data (G_OBJECT (adj), "spinbutton")))
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|gimp_scale_entry_new
 parameter_list|(
@@ -161,7 +161,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|gimp_color_scale_entry_new
 parameter_list|(
@@ -221,7 +221,7 @@ begin_function_decl
 name|void
 name|gimp_scale_entry_set_sensitive
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
@@ -235,7 +235,7 @@ begin_function_decl
 name|void
 name|gimp_scale_entry_set_logarithmic
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
@@ -249,7 +249,7 @@ begin_function_decl
 name|gboolean
 name|gimp_scale_entry_get_logarithmic
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|)

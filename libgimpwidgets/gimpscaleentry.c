@@ -452,10 +452,6 @@ argument_list|)
 expr_stmt|;
 name|scale_adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -487,10 +483,6 @@ condition|)
 block|{
 name|spin_adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -511,10 +503,6 @@ else|else
 block|{
 name|spin_adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|value
@@ -895,7 +883,7 @@ comment|/**  * gimp_scale_entry_new:  * @table:               The #GtkTable the 
 end_comment
 
 begin_function
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 DECL|function|gimp_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,gboolean constrain,gdouble unconstrained_lower,gdouble unconstrained_upper,const gchar * tooltip,const gchar * help_id)
 name|gimp_scale_entry_new
@@ -960,10 +948,6 @@ name|help_id
 parameter_list|)
 block|{
 return|return
-operator|(
-name|GtkObject
-operator|*
-operator|)
 name|gimp_scale_entry_new_internal
 argument_list|(
 name|FALSE
@@ -1011,7 +995,7 @@ comment|/**  * gimp_color_scale_entry_new:  * @table:               The #GtkTabl
 end_comment
 
 begin_function
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 DECL|function|gimp_color_scale_entry_new (GtkTable * table,gint column,gint row,const gchar * text,gint scale_width,gint spinbutton_width,gdouble value,gdouble lower,gdouble upper,gdouble step_increment,gdouble page_increment,guint digits,const gchar * tooltip,const gchar * help_id)
 name|gimp_color_scale_entry_new
@@ -1067,10 +1051,6 @@ name|help_id
 parameter_list|)
 block|{
 return|return
-operator|(
-name|GtkObject
-operator|*
-operator|)
 name|gimp_scale_entry_new_internal
 argument_list|(
 name|TRUE
@@ -1119,10 +1099,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scale_entry_set_logarithmic (GtkObject * adjustment,gboolean logarithmic)
+DECL|function|gimp_scale_entry_set_logarithmic (GtkAdjustment * adjustment,gboolean logarithmic)
 name|gimp_scale_entry_set_logarithmic
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
@@ -1539,10 +1519,10 @@ end_comment
 
 begin_function
 name|gboolean
-DECL|function|gimp_scale_entry_get_logarithmic (GtkObject * adjustment)
+DECL|function|gimp_scale_entry_get_logarithmic (GtkAdjustment * adjustment)
 name|gimp_scale_entry_get_logarithmic
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|)
@@ -1570,10 +1550,10 @@ end_comment
 
 begin_function
 name|void
-DECL|function|gimp_scale_entry_set_sensitive (GtkObject * adjustment,gboolean sensitive)
+DECL|function|gimp_scale_entry_set_sensitive (GtkAdjustment * adjustment,gboolean sensitive)
 name|gimp_scale_entry_set_sensitive
 parameter_list|(
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
