@@ -41,7 +41,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b06c4360103
+DECL|enum|__anon27a772920103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -108,15 +108,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_blob_editor_expose
+name|gimp_blob_editor_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -272,9 +272,9 @@ name|gimp_blob_editor_get_property
 expr_stmt|;
 name|widget_class
 operator|->
-name|expose_event
+name|draw
 operator|=
-name|gimp_blob_editor_expose
+name|gimp_blob_editor_draw
 expr_stmt|;
 name|widget_class
 operator|->
@@ -641,16 +641,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_blob_editor_expose (GtkWidget * widget,GdkEventExpose * event)
-name|gimp_blob_editor_expose
+DECL|function|gimp_blob_editor_draw (GtkWidget * widget,cairo_t * cr)
+name|gimp_blob_editor_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 block|{
 name|GimpBlobEditor
@@ -681,10 +681,6 @@ argument_list|)
 decl_stmt|;
 name|GtkAllocation
 name|allocation
-decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
 decl_stmt|;
 name|GdkRectangle
 name|rect
@@ -724,16 +720,6 @@ condition|)
 return|return
 name|TRUE
 return|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
 name|gimp_blob_editor_draw_blob
 argument_list|(
 name|editor
@@ -833,11 +819,6 @@ literal|1
 argument_list|)
 expr_stmt|;
 name|cairo_stroke
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
 argument_list|(
 name|cr
 argument_list|)
