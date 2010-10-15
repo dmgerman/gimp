@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6a0000103
+DECL|enum|__anon29b28ba60103
 block|{
 DECL|enumerator|COLOR_CHANGED
 name|COLOR_CHANGED
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba6a0000203
+DECL|enum|__anon29b28ba60203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -263,15 +263,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_color_area_expose
+name|gimp_color_area_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -589,9 +589,9 @@ name|gimp_color_area_state_changed
 expr_stmt|;
 name|widget_class
 operator|->
-name|expose_event
+name|draw
 operator|=
-name|gimp_color_area_expose
+name|gimp_color_area_draw
 expr_stmt|;
 name|widget_class
 operator|->
@@ -1322,16 +1322,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_color_area_expose (GtkWidget * widget,GdkEventExpose * event)
-name|gimp_color_area_expose
+DECL|function|gimp_color_area_draw (GtkWidget * widget,cairo_t * cr)
+name|gimp_color_area_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 block|{
 name|GimpColorArea
@@ -1361,10 +1361,6 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
 name|cairo_surface_t
 modifier|*
 name|buffer
@@ -1375,12 +1371,6 @@ operator|!
 name|area
 operator|->
 name|buf
-operator|||
-operator|!
-name|gtk_widget_is_drawable
-argument_list|(
-name|widget
-argument_list|)
 condition|)
 return|return
 name|FALSE
@@ -1394,30 +1384,6 @@ condition|)
 name|gimp_color_area_render
 argument_list|(
 name|area
-argument_list|)
-expr_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_region
-argument_list|(
-name|cr
-argument_list|,
-name|event
-operator|->
-name|region
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 if|if
@@ -1810,11 +1776,6 @@ name|cr
 argument_list|)
 expr_stmt|;
 block|}
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
