@@ -751,7 +751,7 @@ name|gdouble
 name|max
 parameter_list|)
 block|{
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

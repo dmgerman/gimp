@@ -618,10 +618,6 @@ name|box
 operator|->
 name|low_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0.0
@@ -714,12 +710,9 @@ argument_list|)
 argument_list|,
 literal|0
 argument_list|,
-name|GTK_ADJUSTMENT
-argument_list|(
 name|box
 operator|->
 name|low_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 comment|/*  high spinbutton  */
@@ -727,10 +720,6 @@ name|box
 operator|->
 name|high_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|255.0
@@ -823,12 +812,9 @@ argument_list|)
 argument_list|,
 literal|2
 argument_list|,
-name|GTK_ADJUSTMENT
-argument_list|(
 name|box
 operator|->
 name|high_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 ifdef|#

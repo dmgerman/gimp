@@ -1239,10 +1239,6 @@ name|editor
 operator|->
 name|columns_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0
