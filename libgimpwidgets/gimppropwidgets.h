@@ -441,7 +441,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|gimp_prop_scale_entry_new
 parameter_list|(
@@ -495,7 +495,7 @@ comment|/*  special form of gimp_prop_scale_entry_new() for GParamDouble  */
 end_comment
 
 begin_function_decl
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|gimp_prop_opacity_entry_new
 parameter_list|(
@@ -887,35 +887,6 @@ specifier|const
 name|gchar
 modifier|*
 name|property_name
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_macro
-name|GIMP_DEPRECATED_FOR
-argument_list|(
-argument|gimp_prop_unit_combo_box_new
-argument_list|)
-end_macro
-
-begin_function_decl
-name|GtkWidget
-modifier|*
-name|gimp_prop_unit_menu_new
-parameter_list|(
-name|GObject
-modifier|*
-name|config
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|property_name
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|unit_format
 parameter_list|)
 function_decl|;
 end_function_decl
