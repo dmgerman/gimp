@@ -266,12 +266,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpwidgets/gimppixmap.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimpwidgets/gimppreview.h>
 end_include
 
@@ -332,12 +326,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|<libgimpwidgets/gimpunitmenu.h>
-end_include
-
-begin_include
-include|#
-directive|include
 file|<libgimpwidgets/gimpunitstore.h>
 end_include
 
@@ -363,12 +351,6 @@ begin_include
 include|#
 directive|include
 file|<libgimpwidgets/gimp3migration.h>
-end_include
-
-begin_include
-include|#
-directive|include
-file|<libgimpwidgets/gimpoldwidgets.h>
 end_include
 
 begin_undef
