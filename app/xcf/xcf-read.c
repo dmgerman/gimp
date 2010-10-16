@@ -44,13 +44,8 @@ DECL|macro|MAX_XCF_STRING_LEN
 define|#
 directive|define
 name|MAX_XCF_STRING_LEN
-value|(16 * (1L<< 20))
+value|(16L * 1024 * 1024)
 end_define
-
-begin_comment
-DECL|macro|MAX_XCF_STRING_LEN
-comment|/* 16 MB */
-end_comment
 
 begin_function
 name|guint
@@ -305,8 +300,8 @@ condition|)
 block|{
 name|g_warning
 argument_list|(
-literal|"Maximum string length (%ld bytes) exceeded."
-literal|" Possibly corrupt XCF file."
+literal|"Maximum string length (%ld bytes) exceeded. "
+literal|"Possibly corrupt XCF file."
 argument_list|,
 name|MAX_XCF_STRING_LEN
 argument_list|)
