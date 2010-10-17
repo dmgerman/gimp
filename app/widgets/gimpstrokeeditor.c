@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d976cb0103
+DECL|enum|__anon28c15e390103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -153,15 +153,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_stroke_editor_paint_button
+name|gimp_stroke_editor_draw_button
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|gpointer
 name|data
@@ -931,11 +931,11 @@ name|g_signal_connect_after
 argument_list|(
 name|button
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_stroke_editor_paint_button
+name|gimp_stroke_editor_draw_button
 argument_list|)
 argument_list|,
 name|button
@@ -1016,11 +1016,11 @@ name|g_signal_connect_after
 argument_list|(
 name|button
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_stroke_editor_paint_button
+name|gimp_stroke_editor_draw_button
 argument_list|)
 argument_list|,
 name|NULL
@@ -1495,16 +1495,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_stroke_editor_paint_button (GtkWidget * widget,GdkEventExpose * event,gpointer data)
-name|gimp_stroke_editor_paint_button
+DECL|function|gimp_stroke_editor_draw_button (GtkWidget * widget,cairo_t * cr,gpointer data)
+name|gimp_stroke_editor_draw_button
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|gpointer
 name|data
@@ -1554,10 +1554,7 @@ name|gtk_paint_arrow
 argument_list|(
 name|style
 argument_list|,
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
+name|cr
 argument_list|,
 name|gtk_widget_get_state
 argument_list|(
@@ -1565,11 +1562,6 @@ name|widget
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
-argument_list|,
-operator|&
-name|event
-operator|->
-name|area
 argument_list|,
 name|widget
 argument_list|,
@@ -1583,10 +1575,6 @@ name|GTK_ARROW_RIGHT
 argument_list|,
 name|TRUE
 argument_list|,
-name|allocation
-operator|.
-name|x
-operator|+
 operator|(
 name|allocation
 operator|.
@@ -1597,10 +1585,6 @@ operator|)
 operator|/
 literal|2
 argument_list|,
-name|allocation
-operator|.
-name|y
-operator|+
 operator|(
 name|allocation
 operator|.
