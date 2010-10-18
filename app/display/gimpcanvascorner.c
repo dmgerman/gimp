@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2be419cf0103
+DECL|enum|__anon29379da30103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -122,7 +122,7 @@ name|gdouble
 name|height
 decl_stmt|;
 DECL|member|anchor
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 decl_stmt|;
 DECL|member|corner_width
@@ -427,9 +427,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_TYPE_ANCHOR_TYPE
+name|GIMP_TYPE_HANDLE_ANCHOR
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -1068,11 +1068,11 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 if|if
 condition|(
@@ -1115,7 +1115,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 if|if
 condition|(
@@ -1162,7 +1162,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 if|if
 condition|(
@@ -1209,7 +1209,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 if|if
 condition|(
@@ -1260,7 +1260,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 if|if
 condition|(
@@ -1306,7 +1306,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 if|if
 condition|(
@@ -1356,7 +1356,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 if|if
 condition|(
@@ -1402,7 +1402,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 if|if
 condition|(
@@ -1631,7 +1631,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_corner_new (GimpDisplayShell * shell,gdouble x,gdouble y,gdouble width,gdouble height,GtkAnchorType anchor,gint corner_width,gint corner_height,gboolean outside)
+DECL|function|gimp_canvas_corner_new (GimpDisplayShell * shell,gdouble x,gdouble y,gdouble width,gdouble height,GimpHandleAnchor anchor,gint corner_width,gint corner_height,gboolean outside)
 name|gimp_canvas_corner_new
 parameter_list|(
 name|GimpDisplayShell
@@ -1650,7 +1650,7 @@ parameter_list|,
 name|gdouble
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint

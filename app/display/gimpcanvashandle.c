@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298f2a960103
+DECL|enum|__anon2c3fbc430103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -116,7 +116,7 @@ name|GimpHandleType
 name|type
 decl_stmt|;
 DECL|member|anchor
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 decl_stmt|;
 DECL|member|x
@@ -356,9 +356,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_TYPE_ANCHOR_TYPE
+name|GIMP_TYPE_HANDLE_ANCHOR
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -922,7 +922,7 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 name|x
 operator|-=
@@ -938,7 +938,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|x
 operator|-=
@@ -948,12 +948,12 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 comment|/*  nothing, this is the default  */
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|x
 operator|-=
@@ -961,7 +961,7 @@ name|handle_width
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|x
 operator|-=
@@ -975,7 +975,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|y
 operator|-=
@@ -983,7 +983,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|x
 operator|-=
@@ -995,7 +995,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|y
 operator|-=
@@ -1005,7 +1005,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|x
 operator|-=
@@ -1079,12 +1079,12 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 comment|/*  nothing, this is the default  */
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|y
 operator|+=
@@ -1094,7 +1094,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 name|x
 operator|+=
@@ -1110,7 +1110,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|x
 operator|-=
@@ -1126,7 +1126,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|y
 operator|-=
@@ -1136,7 +1136,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|x
 operator|+=
@@ -1152,7 +1152,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|x
 operator|-=
@@ -1168,7 +1168,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|x
 operator|+=
@@ -1178,7 +1178,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|x
 operator|-=
@@ -1806,7 +1806,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_handle_new (GimpDisplayShell * shell,GimpHandleType type,GtkAnchorType anchor,gdouble x,gdouble y,gint width,gint height)
+DECL|function|gimp_canvas_handle_new (GimpDisplayShell * shell,GimpHandleType type,GimpHandleAnchor anchor,gdouble x,gdouble y,gint width,gint height)
 name|gimp_canvas_handle_new
 parameter_list|(
 name|GimpDisplayShell
@@ -1816,7 +1816,7 @@ parameter_list|,
 name|GimpHandleType
 name|type
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble

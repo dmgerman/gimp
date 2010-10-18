@@ -160,7 +160,7 @@ parameter_list|,
 name|gdouble
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint

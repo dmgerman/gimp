@@ -317,7 +317,7 @@ parameter_list|,
 name|gint
 name|handle_height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -349,7 +349,7 @@ parameter_list|,
 name|gint
 name|handle_height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -2253,7 +2253,7 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GtkAnchorType anchor)
+DECL|function|gimp_draw_tool_add_handle (GimpDrawTool * draw_tool,GimpHandleType type,gdouble x,gdouble y,gint width,gint height,GimpHandleAnchor anchor)
 name|gimp_draw_tool_add_handle
 parameter_list|(
 name|GimpDrawTool
@@ -2275,7 +2275,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 block|{
@@ -2342,7 +2342,7 @@ end_comment
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_draw_tool_add_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GtkAnchorType anchor)
+DECL|function|gimp_draw_tool_add_corner (GimpDrawTool * draw_tool,gboolean highlight,gboolean put_outside,gdouble x1,gdouble y1,gdouble x2,gdouble y2,gint width,gint height,GimpHandleAnchor anchor)
 name|gimp_draw_tool_add_corner
 parameter_list|(
 name|GimpDrawTool
@@ -2373,7 +2373,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 block|{
@@ -2962,7 +2962,7 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|gimp_draw_tool_on_handle (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x,gdouble y,GimpHandleType type,gdouble handle_x,gdouble handle_y,gint width,gint height,GtkAnchorType anchor)
+DECL|function|gimp_draw_tool_on_handle (GimpDrawTool * draw_tool,GimpDisplay * display,gdouble x,gdouble y,GimpHandleType type,gdouble handle_x,gdouble handle_y,gint width,gint height,GimpHandleAnchor anchor)
 name|gimp_draw_tool_on_handle
 parameter_list|(
 name|GimpDrawTool
@@ -2994,7 +2994,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 block|{
@@ -3607,7 +3607,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 operator|&&
 operator|(
@@ -3669,7 +3669,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -3735,7 +3735,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -4092,7 +4092,7 @@ name|width
 argument_list|,
 name|height
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -4335,7 +4335,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_draw_tool_shift_to_north_west (gdouble x,gdouble y,gint handle_width,gint handle_height,GtkAnchorType anchor,gdouble * shifted_x,gdouble * shifted_y)
+DECL|function|gimp_draw_tool_shift_to_north_west (gdouble x,gdouble y,gint handle_width,gint handle_height,GimpHandleAnchor anchor,gdouble * shifted_x,gdouble * shifted_y)
 name|gimp_draw_tool_shift_to_north_west
 parameter_list|(
 name|gdouble
@@ -4350,7 +4350,7 @@ parameter_list|,
 name|gint
 name|handle_height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -4368,7 +4368,7 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 name|x
 operator|-=
@@ -4388,7 +4388,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|x
 operator|-=
@@ -4400,12 +4400,12 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 comment|/*  nothing, this is the default  */
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|x
 operator|-=
@@ -4413,7 +4413,7 @@ name|handle_width
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|x
 operator|-=
@@ -4429,7 +4429,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|y
 operator|-=
@@ -4437,7 +4437,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|x
 operator|-=
@@ -4449,7 +4449,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|y
 operator|-=
@@ -4461,7 +4461,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|x
 operator|-=
@@ -4504,7 +4504,7 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_draw_tool_shift_to_center (gdouble x,gdouble y,gint handle_width,gint handle_height,GtkAnchorType anchor,gdouble * shifted_x,gdouble * shifted_y)
+DECL|function|gimp_draw_tool_shift_to_center (gdouble x,gdouble y,gint handle_width,gint handle_height,GimpHandleAnchor anchor,gdouble * shifted_x,gdouble * shifted_y)
 name|gimp_draw_tool_shift_to_center
 parameter_list|(
 name|gdouble
@@ -4519,7 +4519,7 @@ parameter_list|,
 name|gint
 name|handle_height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -4537,12 +4537,12 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 comment|/*  nothing, this is the default  */
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|y
 operator|+=
@@ -4554,7 +4554,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 name|x
 operator|+=
@@ -4574,7 +4574,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|x
 operator|-=
@@ -4594,7 +4594,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|y
 operator|-=
@@ -4606,7 +4606,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|x
 operator|+=
@@ -4626,7 +4626,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|x
 operator|-=
@@ -4646,7 +4646,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|x
 operator|+=
@@ -4658,7 +4658,7 @@ operator|)
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|x
 operator|-=

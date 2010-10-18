@@ -854,7 +854,7 @@ parameter_list|,
 name|gdouble
 name|image_y
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint
@@ -884,7 +884,7 @@ parameter_list|,
 name|gdouble
 name|image_y
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint

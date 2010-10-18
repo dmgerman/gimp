@@ -151,7 +151,7 @@ parameter_list|,
 name|GimpHandleType
 name|type
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble

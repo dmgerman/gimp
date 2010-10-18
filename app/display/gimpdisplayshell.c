@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab2b2220103
+DECL|enum|__anon2a0812860103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ab2b2220203
+DECL|enum|__anon2a0812860203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -385,7 +385,7 @@ name|gdouble
 name|image_y
 decl_stmt|;
 DECL|member|anchor
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 decl_stmt|;
 DECL|member|spacing_x
@@ -4566,7 +4566,7 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 operator|*
 name|x
@@ -4588,7 +4588,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 operator|*
 name|x
@@ -4608,7 +4608,7 @@ name|spacing_y
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 operator|*
 name|x
@@ -4626,7 +4626,7 @@ name|spacing_y
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 operator|*
 name|x
@@ -4648,7 +4648,7 @@ name|spacing_y
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 operator|*
 name|x
@@ -4672,7 +4672,7 @@ name|spacing_y
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 operator|*
 name|x
@@ -4694,7 +4694,7 @@ name|spacing_y
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 operator|*
 name|x
@@ -4720,7 +4720,7 @@ name|spacing_y
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 operator|*
 name|x
@@ -4740,7 +4740,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 operator|*
 name|x
@@ -4837,7 +4837,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_add_overlay (GimpDisplayShell * shell,GtkWidget * child,gdouble image_x,gdouble image_y,GtkAnchorType anchor,gint spacing_x,gint spacing_y)
+DECL|function|gimp_display_shell_add_overlay (GimpDisplayShell * shell,GtkWidget * child,gdouble image_x,gdouble image_y,GimpHandleAnchor anchor,gint spacing_x,gint spacing_y)
 name|gimp_display_shell_add_overlay
 parameter_list|(
 name|GimpDisplayShell
@@ -4854,7 +4854,7 @@ parameter_list|,
 name|gdouble
 name|image_y
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint
@@ -5008,7 +5008,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_move_overlay (GimpDisplayShell * shell,GtkWidget * child,gdouble image_x,gdouble image_y,GtkAnchorType anchor,gint spacing_x,gint spacing_y)
+DECL|function|gimp_display_shell_move_overlay (GimpDisplayShell * shell,GtkWidget * child,gdouble image_x,gdouble image_y,GimpHandleAnchor anchor,gint spacing_x,gint spacing_y)
 name|gimp_display_shell_move_overlay
 parameter_list|(
 name|GimpDisplayShell
@@ -5025,7 +5025,7 @@ parameter_list|,
 name|gdouble
 name|image_y
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint

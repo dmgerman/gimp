@@ -530,7 +530,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 function_decl|;
@@ -569,7 +569,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 function_decl|;
@@ -750,7 +750,7 @@ parameter_list|,
 name|gint
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 function_decl|;
