@@ -1035,7 +1035,7 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|gimp_display_shell_set_dim_style
+name|gimp_display_shell_set_passe_partout_style
 argument_list|(
 name|shell
 argument_list|,

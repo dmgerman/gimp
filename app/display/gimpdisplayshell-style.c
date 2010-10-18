@@ -456,11 +456,11 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|dim
+DECL|variable|passe_partout
 specifier|static
 specifier|const
 name|GimpRGB
-name|dim
+name|passe_partout
 init|=
 block|{
 literal|0.0
@@ -1387,8 +1387,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_display_shell_set_dim_style (GimpDisplayShell * shell,cairo_t * cr)
-name|gimp_display_shell_set_dim_style
+DECL|function|gimp_display_shell_set_passe_partout_style (GimpDisplayShell * shell,cairo_t * cr)
+name|gimp_display_shell_set_passe_partout_style
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
@@ -1419,7 +1419,7 @@ argument_list|(
 name|cr
 argument_list|,
 operator|&
-name|dim
+name|passe_partout
 argument_list|)
 expr_stmt|;
 block|}

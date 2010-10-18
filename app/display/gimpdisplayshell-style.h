@@ -184,7 +184,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_display_shell_set_dim_style
+name|gimp_display_shell_set_passe_partout_style
 parameter_list|(
 name|GimpDisplayShell
 modifier|*
