@@ -76,7 +76,7 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 parameter_list|,
@@ -506,14 +506,14 @@ end_comment
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_display_shell_item_update (GimpCanvasItem * item,GdkRegion * region,GimpDisplayShell * shell)
+DECL|function|gimp_display_shell_item_update (GimpCanvasItem * item,cairo_region_t * region,GimpDisplayShell * shell)
 name|gimp_display_shell_item_update
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 parameter_list|,

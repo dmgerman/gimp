@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a99d4c00103
+DECL|enum|__anon28ed3ce80103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -205,7 +205,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_rectangle_get_extents
 parameter_list|(
@@ -991,7 +991,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_rectangle_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_rectangle_get_extents
@@ -1097,6 +1097,22 @@ operator|+
 literal|2.0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+return|return
+name|cairo_region_create_rectangle
+argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+return|;
+else|#
+directive|else
 return|return
 name|gdk_region_rectangle
 argument_list|(
@@ -1104,6 +1120,8 @@ operator|&
 name|rectangle
 argument_list|)
 return|;
+endif|#
+directive|endif
 block|}
 elseif|else
 if|if
@@ -1117,7 +1135,7 @@ operator|>
 literal|64
 condition|)
 block|{
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 decl_stmt|;
@@ -1161,6 +1179,23 @@ operator|+
 literal|3.0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|region
+operator|=
+name|cairo_region_create_rectangle
+argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|region
 operator|=
 name|gdk_region_rectangle
@@ -1169,6 +1204,8 @@ operator|&
 name|rectangle
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* right */
 name|rectangle
 operator|.
@@ -1183,6 +1220,23 @@ operator|-
 literal|1.5
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_union_rectangle
+argument_list|(
+name|region
+argument_list|,
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_union_with_rect
 argument_list|(
 name|region
@@ -1191,6 +1245,8 @@ operator|&
 name|rectangle
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* top */
 name|rectangle
 operator|.
@@ -1231,6 +1287,23 @@ name|height
 operator|=
 literal|3.0
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_union_rectangle
+argument_list|(
+name|region
+argument_list|,
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_union_with_rect
 argument_list|(
 name|region
@@ -1239,6 +1312,8 @@ operator|&
 name|rectangle
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 comment|/* bottom */
 name|rectangle
 operator|.
@@ -1253,6 +1328,23 @@ operator|-
 literal|1.5
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_union_rectangle
+argument_list|(
+name|region
+argument_list|,
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_union_with_rect
 argument_list|(
 name|region
@@ -1261,6 +1353,8 @@ operator|&
 name|rectangle
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 return|return
 name|region
 return|;
@@ -1311,6 +1405,22 @@ operator|+
 literal|3.0
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+return|return
+name|cairo_region_create_rectangle
+argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+return|;
+else|#
+directive|else
 return|return
 name|gdk_region_rectangle
 argument_list|(
@@ -1318,6 +1428,8 @@ operator|&
 name|rectangle
 argument_list|)
 return|;
+endif|#
+directive|endif
 block|}
 block|}
 end_function

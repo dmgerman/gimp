@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c3fbc430103
+DECL|enum|__anon2a34e5330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -233,7 +233,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_handle_get_extents
 parameter_list|(
@@ -1638,7 +1638,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_handle_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_handle_get_extents
@@ -1793,6 +1793,22 @@ break|break;
 default|default:
 break|break;
 block|}
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+return|return
+name|cairo_region_create_rectangle
+argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+return|;
+else|#
+directive|else
 return|return
 name|gdk_region_rectangle
 argument_list|(
@@ -1800,6 +1816,8 @@ operator|&
 name|rectangle
 argument_list|)
 return|;
+endif|#
+directive|endif
 block|}
 end_function
 

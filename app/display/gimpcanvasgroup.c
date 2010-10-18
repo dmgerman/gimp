@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d632060103
+DECL|enum|__anon2bde457a0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -201,7 +201,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_group_get_extents
 parameter_list|(
@@ -225,7 +225,7 @@ name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 parameter_list|,
@@ -700,7 +700,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_group_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_group_get_extents
@@ -723,7 +723,7 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 init|=
@@ -759,7 +759,7 @@ name|list
 operator|->
 name|data
 decl_stmt|;
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|sub_region
 init|=
@@ -785,6 +785,23 @@ condition|(
 name|sub_region
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_union
+argument_list|(
+name|region
+argument_list|,
+name|sub_region
+argument_list|)
+expr_stmt|;
+name|cairo_region_destroy
+argument_list|(
+name|sub_region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_union
 argument_list|(
 name|region
@@ -797,6 +814,8 @@ argument_list|(
 name|sub_region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 return|return
@@ -808,14 +827,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_canvas_group_child_update (GimpCanvasItem * item,GdkRegion * region,GimpCanvasGroup * group)
+DECL|function|gimp_canvas_group_child_update (GimpCanvasItem * item,cairo_region_t * region,GimpCanvasGroup * group)
 name|gimp_canvas_group_child_update
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 parameter_list|,
@@ -987,7 +1006,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 init|=
@@ -1011,11 +1030,23 @@ argument_list|,
 name|region
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_destroy
+argument_list|(
+name|region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_destroy
 argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 name|g_signal_connect
@@ -1134,7 +1165,7 @@ argument_list|)
 argument_list|)
 condition|)
 block|{
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 init|=
@@ -1158,11 +1189,23 @@ argument_list|,
 name|region
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_destroy
+argument_list|(
+name|region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_destroy
 argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 name|g_signal_handlers_disconnect_by_func

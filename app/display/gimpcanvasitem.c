@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ca8780103
+DECL|enum|__anon2c03c4170103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1ca8780203
+DECL|enum|__anon2c03c4170203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -136,7 +136,7 @@ name|gint
 name|change_count
 decl_stmt|;
 DECL|member|change_region
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|change_region
 decl_stmt|;
@@ -261,7 +261,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_item_real_get_extents
 parameter_list|(
@@ -947,7 +947,7 @@ name|item
 argument_list|)
 condition|)
 block|{
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 init|=
@@ -975,11 +975,23 @@ argument_list|,
 name|region
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_destroy
+argument_list|(
+name|region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_destroy
 argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 block|}
@@ -1012,7 +1024,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_item_real_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_item_real_get_extents
@@ -1248,7 +1260,7 @@ block|}
 end_function
 
 begin_function
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_item_get_extents (GimpCanvasItem * item)
 name|gimp_canvas_item_get_extents
@@ -1720,7 +1732,7 @@ name|FALSE
 argument_list|)
 condition|)
 block|{
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 init|=
@@ -1750,6 +1762,27 @@ operator|->
 name|change_region
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_union
+argument_list|(
+name|region
+argument_list|,
+name|private
+operator|->
+name|change_region
+argument_list|)
+expr_stmt|;
+name|cairo_region_destroy
+argument_list|(
+name|private
+operator|->
+name|change_region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_union
 argument_list|(
 name|region
@@ -1766,6 +1799,8 @@ operator|->
 name|change_region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 name|private
 operator|->
@@ -1792,11 +1827,23 @@ argument_list|,
 name|region
 argument_list|)
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_destroy
+argument_list|(
+name|region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_destroy
 argument_list|(
 name|region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 block|}
 elseif|else
@@ -1807,6 +1854,18 @@ operator|->
 name|change_region
 condition|)
 block|{
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_destroy
+argument_list|(
+name|private
+operator|->
+name|change_region
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_destroy
 argument_list|(
 name|private
@@ -1814,6 +1873,8 @@ operator|->
 name|change_region
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|private
 operator|->
 name|change_region
@@ -1997,14 +2058,14 @@ end_comment
 
 begin_function
 name|void
-DECL|function|_gimp_canvas_item_update (GimpCanvasItem * item,GdkRegion * region)
+DECL|function|_gimp_canvas_item_update (GimpCanvasItem * item,cairo_region_t * region)
 name|_gimp_canvas_item_update
 parameter_list|(
 name|GimpCanvasItem
 modifier|*
 name|item
 parameter_list|,
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 parameter_list|)

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fc81e90103
+DECL|enum|__anon27a72e810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -188,7 +188,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_pen_get_extents
 parameter_list|(
@@ -526,7 +526,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_pen_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_pen_get_extents
@@ -549,7 +549,7 @@ argument_list|(
 name|item
 argument_list|)
 decl_stmt|;
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 decl_stmt|;
@@ -575,6 +575,23 @@ block|{
 name|GdkRectangle
 name|rectangle
 decl_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_get_extents
+argument_list|(
+name|region
+argument_list|,
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_get_clipbox
 argument_list|(
 name|region
@@ -583,6 +600,8 @@ operator|&
 name|rectangle
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 name|rectangle
 operator|.
 name|x
@@ -629,6 +648,23 @@ name|width
 operator|+
 literal|1
 expr_stmt|;
+ifdef|#
+directive|ifdef
+name|USE_CAIRO_REGION
+name|cairo_region_union_rectangle
+argument_list|(
+name|region
+argument_list|,
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
+operator|&
+name|rectangle
+argument_list|)
+expr_stmt|;
+else|#
+directive|else
 name|gdk_region_union_with_rect
 argument_list|(
 name|region
@@ -637,6 +673,8 @@ operator|&
 name|rectangle
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 return|return
 name|region

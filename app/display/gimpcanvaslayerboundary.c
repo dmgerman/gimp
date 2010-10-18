@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae7e1d60103
+DECL|enum|__anon29eb0fa60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -221,7 +221,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_layer_boundary_get_extents
 parameter_list|(
@@ -609,7 +609,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_layer_boundary_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_layer_boundary_get_extents

@@ -47,7 +47,7 @@ name|GimpDisplayShell
 modifier|*
 name|shell
 parameter_list|,
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|region
 parameter_list|)
