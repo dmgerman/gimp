@@ -1061,7 +1061,7 @@ argument_list|,
 name|JAS_IMAGE_CT_OPACITY
 argument_list|)
 expr_stmt|;
-comment|/* ImageMagick seems to write out the 'matte' component (number 3) */
+comment|/* ImageMagick seems to write out the 'matte' component type 	 (number 3) */
 if|if
 condition|(
 name|components
