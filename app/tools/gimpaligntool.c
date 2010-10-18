@@ -2957,7 +2957,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -2976,7 +2976,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -2995,7 +2995,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3016,7 +3016,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 argument_list|)
 expr_stmt|;
 block|}
@@ -3105,7 +3105,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3122,7 +3122,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 argument_list|)
 expr_stmt|;
 break|break;
@@ -3157,7 +3157,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3174,7 +3174,7 @@ name|MARKER_WIDTH
 argument_list|,
 name|MARKER_WIDTH
 argument_list|,
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 argument_list|)
 expr_stmt|;
 break|break;

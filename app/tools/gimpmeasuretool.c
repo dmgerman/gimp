@@ -895,7 +895,7 @@ name|TARGET
 operator|*
 literal|2
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -2388,7 +2388,7 @@ name|TARGET
 operator|*
 literal|2
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -2908,7 +2908,7 @@ name|TARGET
 argument_list|,
 name|TARGET
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -2942,7 +2942,7 @@ name|TARGET
 operator|*
 literal|2
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -3169,7 +3169,7 @@ literal|2
 operator|+
 literal|1
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_canvas_handle_set_angles

@@ -2686,7 +2686,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -2755,7 +2755,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -2824,7 +2824,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -2893,7 +2893,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -2958,7 +2958,7 @@ operator|->
 name|handle_h
 argument_list|)
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -3722,7 +3722,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3747,7 +3747,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3772,7 +3772,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3797,7 +3797,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 if|if
@@ -3858,7 +3858,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|x
@@ -3907,7 +3907,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|x
@@ -3956,7 +3956,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|x
@@ -4005,7 +4005,7 @@ name|tr_tool
 operator|->
 name|handle_h
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -4050,7 +4050,7 @@ name|d
 argument_list|,
 name|d
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -4071,7 +4071,7 @@ name|d
 argument_list|,
 name|d
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}

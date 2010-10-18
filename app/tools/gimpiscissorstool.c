@@ -2615,7 +2615,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -3265,7 +3265,7 @@ name|TARGET_SIZE
 argument_list|,
 name|TARGET_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 comment|/* Draw a line boundary */
@@ -3544,7 +3544,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -3616,7 +3616,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 if|if
@@ -3743,7 +3743,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -4073,7 +4073,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -4971,7 +4971,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -5025,7 +5025,7 @@ name|POINT_WIDTH
 argument_list|,
 name|POINT_WIDTH
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{

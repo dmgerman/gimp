@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a34e5330103
+DECL|enum|__anon2a0b61450103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -889,10 +889,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_canvas_handle_shift_to_north_west (GtkAnchorType anchor,gdouble x,gdouble y,gint handle_width,gint handle_height,gdouble * shifted_x,gdouble * shifted_y)
+DECL|function|gimp_canvas_handle_shift_to_north_west (GimpHandleAnchor anchor,gdouble x,gdouble y,gint handle_width,gint handle_height,gdouble * shifted_x,gdouble * shifted_y)
 name|gimp_canvas_handle_shift_to_north_west
 parameter_list|(
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -1046,10 +1046,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_canvas_handle_shift_to_center (GtkAnchorType anchor,gdouble x,gdouble y,gint width,gint height,gdouble * shifted_x,gdouble * shifted_y)
+DECL|function|gimp_canvas_handle_shift_to_center (GimpHandleAnchor anchor,gdouble x,gdouble y,gint width,gint height,gdouble * shifted_x,gdouble * shifted_y)
 name|gimp_canvas_handle_shift_to_center
 parameter_list|(
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble

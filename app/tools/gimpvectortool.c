@@ -5347,7 +5347,7 @@ name|TARGET
 argument_list|,
 name|TARGET
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -5547,7 +5547,7 @@ name|TARGET
 operator|-
 literal|3
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}

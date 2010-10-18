@@ -774,7 +774,7 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|,
 literal|0
 argument_list|,
@@ -958,7 +958,7 @@ name|x
 argument_list|,
 name|y
 argument_list|,
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 argument_list|,
 literal|4
 argument_list|,
@@ -5195,7 +5195,7 @@ name|y
 operator|+
 name|off_y
 argument_list|,
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 argument_list|,
 literal|0
 argument_list|,

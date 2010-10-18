@@ -186,7 +186,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon276d9f150108
+DECL|struct|__anon2c8311830108
 block|{
 comment|/* Index of grabbed segment index. */
 DECL|member|grabbed_segment_index
@@ -5572,7 +5572,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}

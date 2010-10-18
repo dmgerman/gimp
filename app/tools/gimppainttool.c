@@ -3030,7 +3030,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 comment|/*  Draw end target  */
@@ -3060,7 +3060,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}

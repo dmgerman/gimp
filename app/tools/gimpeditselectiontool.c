@@ -3789,7 +3789,7 @@ name|CENTER_CROSS_SIZE
 argument_list|,
 name|CENTER_CROSS_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAW_TOOL_CLASS

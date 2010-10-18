@@ -3182,7 +3182,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3203,7 +3203,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3224,7 +3224,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3245,7 +3245,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -3305,7 +3305,7 @@ name|TARGET_SIZE
 argument_list|,
 name|TARGET_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|draw_tool

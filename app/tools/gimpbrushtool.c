@@ -1473,7 +1473,7 @@ literal|5
 argument_list|,
 literal|5
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}

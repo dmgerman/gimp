@@ -167,7 +167,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27de3e650103
+DECL|enum|__anon2c1bc2f20103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -241,7 +241,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de3e650203
+DECL|enum|__anon2c1bc2f20203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -284,7 +284,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27de3e650303
+DECL|enum|__anon2c1bc2f20303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -694,7 +694,7 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 function_decl|;
@@ -702,7 +702,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|gimp_rectangle_tool_get_anchor
 parameter_list|(
 name|GimpRectangleToolPrivate
@@ -5312,7 +5312,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 argument_list|)
 condition|)
 block|{
@@ -5330,7 +5330,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 argument_list|)
 condition|)
 block|{
@@ -5348,7 +5348,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 argument_list|)
 condition|)
 block|{
@@ -5366,7 +5366,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 argument_list|)
 condition|)
 block|{
@@ -5384,7 +5384,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 argument_list|)
 condition|)
 block|{
@@ -5402,7 +5402,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 argument_list|)
 condition|)
 block|{
@@ -5420,7 +5420,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 argument_list|)
 condition|)
 block|{
@@ -5438,7 +5438,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 argument_list|)
 condition|)
 block|{
@@ -5456,7 +5456,7 @@ name|rect_tool
 argument_list|,
 name|coords
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 condition|)
 block|{
@@ -5864,7 +5864,7 @@ name|CENTER_CROSS_SIZE
 argument_list|,
 name|CENTER_CROSS_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 break|break;
@@ -5912,7 +5912,7 @@ name|private
 operator|->
 name|corner_handle_h
 argument_list|,
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_corner
@@ -5941,7 +5941,7 @@ name|private
 operator|->
 name|corner_handle_h
 argument_list|,
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_corner
@@ -5970,7 +5970,7 @@ name|private
 operator|->
 name|corner_handle_h
 argument_list|,
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_corner
@@ -5999,7 +5999,7 @@ name|private
 operator|->
 name|corner_handle_h
 argument_list|,
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_pop_group
@@ -9982,7 +9982,7 @@ end_comment
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_rectangle_tool_coord_on_handle (GimpRectangleTool * rect_tool,const GimpCoords * coords,GtkAnchorType anchor)
+DECL|function|gimp_rectangle_tool_coord_on_handle (GimpRectangleTool * rect_tool,const GimpCoords * coords,GimpHandleAnchor anchor)
 name|gimp_rectangle_tool_coord_on_handle
 parameter_list|(
 name|GimpRectangleTool
@@ -9994,7 +9994,7 @@ name|GimpCoords
 modifier|*
 name|coords
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|)
 block|{
@@ -10123,7 +10123,7 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 name|handle_x
 operator|=
@@ -10157,7 +10157,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|handle_x
 operator|=
@@ -10189,7 +10189,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|handle_x
 operator|=
@@ -10222,7 +10222,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|handle_x
 operator|=
@@ -10255,7 +10255,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|handle_x
 operator|=
@@ -10292,7 +10292,7 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|handle_x
 operator|=
@@ -10328,7 +10328,7 @@ literal|0
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|handle_x
 operator|=
@@ -10365,7 +10365,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|handle_x
 operator|=
@@ -10401,7 +10401,7 @@ literal|1
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 name|handle_x
 operator|=
@@ -10547,7 +10547,7 @@ end_function
 
 begin_function
 specifier|static
-name|GtkAnchorType
+name|GimpHandleAnchor
 DECL|function|gimp_rectangle_tool_get_anchor (GimpRectangleToolPrivate * private)
 name|gimp_rectangle_tool_get_anchor
 parameter_list|(
@@ -10567,53 +10567,53 @@ case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_UPPER_LEFT
 case|:
 return|return
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_UPPER_RIGHT
 case|:
 return|return
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_LOWER_LEFT
 case|:
 return|return
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_LOWER_RIGHT
 case|:
 return|return
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_LEFT
 case|:
 return|return
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_RIGHT
 case|:
 return|return
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_TOP
 case|:
 return|return
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 return|;
 case|case
 name|GIMP_RECTANGLE_TOOL_RESIZING_BOTTOM
 case|:
 return|return
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 return|;
 default|default:
 return|return
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 return|;
 block|}
 block|}
