@@ -641,6 +641,10 @@ argument_list|,
 literal|0
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|info
+condition|)
 name|pixbuf
 operator|=
 name|gtk_icon_info_load_icon
