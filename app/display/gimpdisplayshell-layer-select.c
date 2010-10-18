@@ -96,7 +96,7 @@ end_include
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a47b75a0108
+DECL|struct|__anon29fb02c30108
 block|{
 DECL|member|window
 name|GtkWidget
@@ -1036,7 +1036,7 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Tab
+name|GDK_KEY_Tab
 case|:
 name|layer_select_advance
 argument_list|(
@@ -1047,7 +1047,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|GDK_ISO_Left_Tab
+name|GDK_KEY_ISO_Left_Tab
 case|:
 name|layer_select_advance
 argument_list|(
@@ -1082,10 +1082,10 @@ name|keyval
 condition|)
 block|{
 case|case
-name|GDK_Alt_L
+name|GDK_KEY_Alt_L
 case|:
 case|case
-name|GDK_Alt_R
+name|GDK_KEY_Alt_R
 case|:
 name|kevent
 operator|->
@@ -1096,10 +1096,10 @@ name|GDK_MOD1_MASK
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Control_L
+name|GDK_KEY_Control_L
 case|:
 case|case
-name|GDK_Control_R
+name|GDK_KEY_Control_R
 case|:
 name|kevent
 operator|->
@@ -1110,10 +1110,10 @@ name|GDK_CONTROL_MASK
 expr_stmt|;
 break|break;
 case|case
-name|GDK_Shift_L
+name|GDK_KEY_Shift_L
 case|:
 case|case
-name|GDK_Shift_R
+name|GDK_KEY_Shift_R
 case|:
 name|kevent
 operator|->
