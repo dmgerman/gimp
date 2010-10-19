@@ -1121,14 +1121,6 @@ operator|&
 name|initial_screen
 argument_list|)
 expr_stmt|;
-name|gtk_widget_set_default_colormap
-argument_list|(
-name|gdk_screen_get_rgb_colormap
-argument_list|(
-name|initial_screen
-argument_list|)
-argument_list|)
-expr_stmt|;
 if|if
 condition|(
 operator|!
@@ -3582,7 +3574,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2bcabe330108
+DECL|struct|__anon28e7bb6f0108
 block|{
 DECL|member|path
 specifier|const
