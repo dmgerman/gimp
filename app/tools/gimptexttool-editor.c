@@ -1035,7 +1035,7 @@ name|x
 decl_stmt|,
 name|y
 decl_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|text_tool
 operator|->
@@ -1043,6 +1043,8 @@ name|style_overlay
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_object_get
@@ -1935,7 +1937,7 @@ if|if
 condition|(
 name|gtk_bindings_activate_event
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|text_tool
 operator|->
@@ -2119,7 +2121,7 @@ if|if
 condition|(
 name|gtk_bindings_activate_event
 argument_list|(
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|text_tool
 operator|->

@@ -117,7 +117,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c620e930103
+DECL|enum|__anon2a1f9c180103
 block|{
 DECL|enumerator|ANGLE
 name|ANGLE
@@ -752,10 +752,6 @@ name|rotate
 operator|->
 name|angle_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -920,10 +916,6 @@ argument_list|)
 expr_stmt|;
 name|adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0

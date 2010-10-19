@@ -2480,8 +2480,6 @@ name|tool
 operator|->
 name|gamma_linear
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|127
@@ -2495,7 +2493,6 @@ argument_list|,
 literal|1.0
 argument_list|,
 literal|0.0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|g_signal_connect

@@ -105,7 +105,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2790ccf30103
+DECL|enum|__anon2c0840690103
 block|{
 DECL|enumerator|ORIENTATION
 name|ORIENTATION
@@ -509,10 +509,6 @@ name|shear
 operator|->
 name|x_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -599,10 +595,6 @@ name|shear
 operator|->
 name|y_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 literal|0
