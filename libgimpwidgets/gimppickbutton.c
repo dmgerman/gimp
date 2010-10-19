@@ -75,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8a1f610103
+DECL|enum|__anon28dd90500103
 block|{
 DECL|enumerator|COLOR_PICKED
 name|COLOR_PICKED
@@ -1254,7 +1254,7 @@ argument_list|(
 name|image
 argument_list|)
 expr_stmt|;
-name|gdk_cairo_set_source_pixmap
+name|gdk_cairo_set_source_window
 argument_list|(
 name|cr
 argument_list|,
