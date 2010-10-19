@@ -117,7 +117,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7a84ea0108
+DECL|struct|__anon27dbe84a0108
 block|{
 DECL|member|shell
 name|GimpDisplayShell
@@ -660,10 +660,6 @@ name|data
 operator|->
 name|num_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|num
@@ -765,10 +761,6 @@ name|data
 operator|->
 name|denom_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|denom
@@ -879,10 +871,6 @@ name|data
 operator|->
 name|scale_adj
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fabs
