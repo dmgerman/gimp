@@ -198,7 +198,7 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_overlay_child_expose
+name|gimp_overlay_child_draw
 parameter_list|(
 name|GimpOverlayBox
 modifier|*
@@ -208,9 +208,9 @@ name|GimpOverlayChild
 modifier|*
 name|child
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
