@@ -2044,7 +2044,7 @@ init|=
 literal|0
 decl_stmt|;
 comment|/*  also consider the children which can be invisible  */
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|statusbar
 operator|->
@@ -2052,6 +2052,8 @@ name|cursor_label
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|width
@@ -2075,7 +2077,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|statusbar
 operator|->
@@ -2083,6 +2085,8 @@ name|unit_combo
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|width
@@ -2106,7 +2110,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|statusbar
 operator|->
@@ -2114,6 +2118,8 @@ name|scale_combo
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|width
@@ -2137,7 +2143,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|statusbar
 operator|->
@@ -2145,6 +2151,8 @@ name|progressbar
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|requisition
@@ -2162,7 +2170,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|statusbar
 operator|->
@@ -2170,6 +2178,8 @@ name|label
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|requisition
@@ -2187,7 +2197,7 @@ operator|.
 name|height
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|statusbar
 operator|->
@@ -2195,6 +2205,8 @@ name|cancel_button
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|requisition
