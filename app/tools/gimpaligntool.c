@@ -4266,6 +4266,11 @@ name|spinbutton
 operator|=
 name|gimp_spin_button_new
 argument_list|(
+operator|(
+name|GtkObject
+operator|*
+operator|*
+operator|)
 operator|&
 name|align_tool
 operator|->
