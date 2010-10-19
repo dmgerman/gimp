@@ -524,15 +524,6 @@ value|N_("When enabled, this will ensure that the full image is visible after a 
 end_define
 
 begin_define
-DECL|macro|INSTALL_COLORMAP_BLURB
-define|#
-directive|define
-name|INSTALL_COLORMAP_BLURB
-define|\
-value|N_("Install a private colormap; might be useful on 8-bit (256 colors) displays.")
-end_define
-
-begin_define
 DECL|macro|INTERPOLATION_TYPE_BLURB
 define|#
 directive|define
@@ -584,15 +575,6 @@ directive|define
 name|MAX_NEW_IMAGE_SIZE_BLURB
 define|\
 value|N_("GIMP will warn the user if an attempt is made to create an image that " \    "would take more memory than the size specified here.")
-end_define
-
-begin_define
-DECL|macro|MIN_COLORS_BLURB
-define|#
-directive|define
-name|MIN_COLORS_BLURB
-define|\
-value|N_("Generally only a concern for 8-bit displays, this sets the minimum " \    "number of system colors allocated for GIMP.")
 end_define
 
 begin_define
