@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon298bb0700103
+DECL|enum|__anon2b30a61c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1141,12 +1141,14 @@ name|child
 argument_list|)
 condition|)
 block|{
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|child
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|requisition

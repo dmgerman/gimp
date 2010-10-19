@@ -223,7 +223,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29d9d4890103
+DECL|enum|__anon29110d600103
 block|{
 DECL|enumerator|DOCKABLE_ADDED
 name|DOCKABLE_ADDED
@@ -2655,12 +2655,14 @@ argument_list|,
 name|tab_widget
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|tab_widget
 argument_list|,
 operator|&
 name|dockable_request
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 comment|/* Also destroys the widget */
@@ -5270,12 +5272,14 @@ argument_list|(
 name|view
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|view
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

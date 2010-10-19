@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74f0c90103
+DECL|enum|__anon2a90abde0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c74f0c90203
+DECL|enum|__anon2a90abde0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -4914,12 +4914,14 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|child
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 switch|switch

@@ -264,12 +264,14 @@ argument_list|,
 name|screen
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|widget
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -570,7 +572,7 @@ argument_list|,
 name|y
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -579,6 +581,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|menu_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|screen
@@ -4171,7 +4175,7 @@ block|{
 specifier|static
 specifier|const
 struct|struct
-DECL|struct|__anon29e4184e0108
+DECL|struct|__anon2ad64b090108
 block|{
 DECL|member|r
 name|guchar
@@ -4847,7 +4851,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e4184e0208
+DECL|struct|__anon2ad64b090208
 block|{
 DECL|member|timeout_id
 name|gint

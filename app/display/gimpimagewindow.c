@@ -383,7 +383,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29edff7b0103
+DECL|enum|__anon2c5a727d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -516,7 +516,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29edff7b0208
+DECL|struct|__anon2c5a727d0208
 block|{
 DECL|member|canvas_x
 name|gint
@@ -3424,7 +3424,7 @@ argument_list|(
 name|shell
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -3433,6 +3433,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|geometry
@@ -3464,7 +3466,7 @@ operator|->
 name|menubar
 condition|)
 block|{
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|private
 operator|->
@@ -3472,6 +3474,8 @@ name|menubar
 argument_list|,
 operator|&
 name|requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|geometry

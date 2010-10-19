@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon275855410103
+DECL|enum|__anon2933806f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -81,7 +81,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon275855410203
+DECL|enum|__anon2933806f0203
 block|{
 DECL|enumerator|RESPONSE
 name|RESPONSE
@@ -1509,12 +1509,14 @@ name|child
 argument_list|)
 condition|)
 block|{
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|child
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 block|}
@@ -1533,7 +1535,7 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|dialog
 operator|->
@@ -1541,9 +1543,11 @@ name|header
 argument_list|,
 operator|&
 name|header_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|dialog
 operator|->
@@ -1551,6 +1555,8 @@ name|action_area
 argument_list|,
 operator|&
 name|action_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|requisition
@@ -1681,7 +1687,7 @@ argument_list|(
 name|container
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|dialog
 operator|->
@@ -1689,9 +1695,11 @@ name|header
 argument_list|,
 operator|&
 name|header_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|dialog
 operator|->
@@ -1699,6 +1707,8 @@ name|action_area
 argument_list|,
 operator|&
 name|action_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if

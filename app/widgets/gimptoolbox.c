@@ -179,7 +179,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5278340103
+DECL|enum|__anon2b2777c60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1918,7 +1918,7 @@ operator|->
 name|config
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|toolbox
 operator|->
@@ -1928,9 +1928,11 @@ name|color_area
 argument_list|,
 operator|&
 name|color_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|toolbox
 operator|->
@@ -1940,9 +1942,11 @@ name|foo_area
 argument_list|,
 operator|&
 name|foo_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|toolbox
 operator|->
@@ -1952,6 +1956,8 @@ name|image_area
 argument_list|,
 operator|&
 name|image_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|width
@@ -3328,12 +3334,14 @@ argument_list|(
 name|parent
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|area
 argument_list|,
 operator|&
 name|req
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request

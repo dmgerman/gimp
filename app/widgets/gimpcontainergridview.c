@@ -113,7 +113,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27960a690103
+DECL|enum|__anon2b065e290103
 block|{
 DECL|enumerator|MOVE_CURSOR
 name|MOVE_CURSOR
@@ -2696,7 +2696,7 @@ name|scrolled_win
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2705,6 +2705,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|view_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|item_height
@@ -2941,7 +2943,7 @@ decl_stmt|;
 name|gint
 name|rows
 decl_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|GTK_WIDGET
 argument_list|(
@@ -2952,6 +2954,8 @@ argument_list|)
 argument_list|,
 operator|&
 name|view_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|g_list_free

@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon292632ed0103
+DECL|enum|__anon2ac1c3460103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -989,7 +989,7 @@ decl_stmt|;
 name|gint
 name|border_width
 decl_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|box
 operator|->
@@ -997,6 +997,8 @@ name|image
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|border_width
@@ -1120,7 +1122,7 @@ decl_stmt|;
 name|gint
 name|height
 decl_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|box
 operator|->
@@ -1128,6 +1130,8 @@ name|image
 argument_list|,
 operator|&
 name|child_requisition
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|border_width

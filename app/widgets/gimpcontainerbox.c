@@ -536,12 +536,14 @@ name|scrolled_win
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_widget_size_request
+name|gtk_widget_get_preferred_size
 argument_list|(
 name|sb
 argument_list|,
 operator|&
 name|req
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 name|scrollbar_width
