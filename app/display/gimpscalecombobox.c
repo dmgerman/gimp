@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c7982e0103
+DECL|enum|__anon29e096d50103
 block|{
 DECL|enumerator|COLUMN_SCALE
 name|COLUMN_SCALE
@@ -92,7 +92,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27c7982e0203
+DECL|enum|__anon29e096d50203
 block|{
 DECL|enumerator|ENTRY_ACTIVATED
 name|ENTRY_ACTIVATED
@@ -506,6 +506,10 @@ expr_stmt|;
 name|g_object_set
 argument_list|(
 name|entry
+argument_list|,
+literal|"has-entry"
+argument_list|,
+name|TRUE
 argument_list|,
 literal|"xalign"
 argument_list|,
