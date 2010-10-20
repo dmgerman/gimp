@@ -9,12 +9,6 @@ directive|include
 file|"config.h"
 end_include
 
-begin_undef
-undef|#
-directive|undef
-name|GSEAL_ENABLE
-end_undef
-
 begin_include
 include|#
 directive|include
@@ -165,7 +159,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1f4fc90103
+DECL|enum|__anon2ae899700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1762,25 +1756,16 @@ operator|=
 literal|0
 expr_stmt|;
 block|}
+name|gtk_widget_set_size_request
+argument_list|(
 name|popup
 operator|->
 name|tag_area
-operator|->
-name|requisition
-operator|.
+argument_list|,
 name|width
-operator|=
-name|width
-expr_stmt|;
-name|popup
-operator|->
-name|tag_area
-operator|->
-name|requisition
-operator|.
-name|height
-operator|=
+argument_list|,
 name|popup_height
+argument_list|)
 expr_stmt|;
 name|gtk_window_move
 argument_list|(
