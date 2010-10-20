@@ -67,15 +67,15 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|gimp_display_shell_canvas_expose
+name|gimp_display_shell_canvas_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|eevent
+name|cr
 parameter_list|,
 name|GimpDisplayShell
 modifier|*

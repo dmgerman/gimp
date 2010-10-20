@@ -365,7 +365,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a90abde0103
+DECL|enum|__anon2bd2e3cd0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -399,7 +399,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a90abde0203
+DECL|enum|__anon2bd2e3cd0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -2461,11 +2461,11 @@ name|shell
 operator|->
 name|canvas
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_display_shell_canvas_expose
+name|gimp_display_shell_canvas_draw
 argument_list|)
 argument_list|,
 name|shell
