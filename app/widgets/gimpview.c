@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5db3330103
+DECL|enum|__anon2b5b8dae0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -1257,27 +1257,6 @@ name|border_width
 operator|)
 expr_stmt|;
 block|}
-if|if
-condition|(
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|size_request
-condition|)
-name|GTK_WIDGET_CLASS
-argument_list|(
-name|parent_class
-argument_list|)
-operator|->
-name|size_request
-argument_list|(
-name|widget
-argument_list|,
-name|requisition
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 
