@@ -103,11 +103,6 @@ DECL|member|parent_instance
 name|GimpTagEntry
 name|parent_instance
 decl_stmt|;
-DECL|member|arrow_pixbuf
-name|GdkPixbuf
-modifier|*
-name|arrow_pixbuf
-decl_stmt|;
 DECL|member|popup
 name|GtkWidget
 modifier|*
