@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29b801c70103
+DECL|enum|__anon2931c7500103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2576,11 +2576,15 @@ literal|0
 argument_list|,
 literal|0
 argument_list|,
-operator|-
-literal|1
+name|gtk_widget_get_allocated_width
+argument_list|(
+name|widget
+argument_list|)
 argument_list|,
-operator|-
-literal|1
+name|gtk_widget_get_allocated_height
+argument_list|(
+name|widget
+argument_list|)
 argument_list|)
 expr_stmt|;
 if|if
