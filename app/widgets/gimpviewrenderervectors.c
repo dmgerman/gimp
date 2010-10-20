@@ -86,10 +86,11 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-specifier|const
-name|GdkRectangle
-modifier|*
-name|area
+name|gint
+name|available_width
+parameter_list|,
+name|gint
+name|available_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -158,7 +159,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_renderer_vectors_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * area)
+DECL|function|gimp_view_renderer_vectors_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,gint available_width,gint available_height)
 name|gimp_view_renderer_vectors_draw
 parameter_list|(
 name|GimpViewRenderer
@@ -173,10 +174,11 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-specifier|const
-name|GdkRectangle
-modifier|*
-name|area
+name|gint
+name|available_width
+parameter_list|,
+name|gint
+name|available_height
 parameter_list|)
 block|{
 name|GtkStyle
@@ -218,14 +220,8 @@ name|cairo_translate
 argument_list|(
 name|cr
 argument_list|,
-name|area
-operator|->
-name|x
-operator|+
 operator|(
-name|area
-operator|->
-name|width
+name|available_width
 operator|-
 name|renderer
 operator|->
@@ -234,14 +230,8 @@ operator|)
 operator|/
 literal|2
 argument_list|,
-name|area
-operator|->
-name|y
-operator|+
 operator|(
-name|area
-operator|->
-name|height
+name|available_height
 operator|-
 name|renderer
 operator|->

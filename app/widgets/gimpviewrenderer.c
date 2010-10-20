@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29f8d1eb0103
+DECL|enum|__anon29749b490103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -193,10 +193,11 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-specifier|const
-name|GdkRectangle
-modifier|*
-name|draw_area
+name|gint
+name|available_width
+parameter_list|,
+name|gint
+name|available_height
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -2222,7 +2223,7 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_view_renderer_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * draw_area)
+DECL|function|gimp_view_renderer_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,gint available_width,gint available_height)
 name|gimp_view_renderer_draw
 parameter_list|(
 name|GimpViewRenderer
@@ -2237,10 +2238,11 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-specifier|const
-name|GdkRectangle
-modifier|*
-name|draw_area
+name|gint
+name|available_width
+parameter_list|,
+name|gint
+name|available_height
 parameter_list|)
 block|{
 name|g_return_if_fail
@@ -2262,13 +2264,6 @@ expr_stmt|;
 name|g_return_if_fail
 argument_list|(
 name|cr
-operator|!=
-name|NULL
-argument_list|)
-expr_stmt|;
-name|g_return_if_fail
-argument_list|(
-name|draw_area
 operator|!=
 name|NULL
 argument_list|)
@@ -2325,7 +2320,9 @@ name|widget
 argument_list|,
 name|cr
 argument_list|,
-name|draw_area
+name|available_width
+argument_list|,
+name|available_height
 argument_list|)
 expr_stmt|;
 name|cairo_restore
@@ -2373,7 +2370,9 @@ name|widget
 argument_list|,
 name|cr
 argument_list|,
-name|draw_area
+name|available_width
+argument_list|,
+name|available_height
 argument_list|)
 expr_stmt|;
 block|}
@@ -2441,14 +2440,8 @@ argument_list|)
 expr_stmt|;
 name|x
 operator|=
-name|draw_area
-operator|->
-name|x
-operator|+
 operator|(
-name|draw_area
-operator|->
-name|width
+name|available_width
 operator|-
 name|width
 operator|)
@@ -2457,14 +2450,8 @@ literal|2.0
 expr_stmt|;
 name|y
 operator|=
-name|draw_area
-operator|->
-name|y
-operator|+
 operator|(
-name|draw_area
-operator|->
-name|height
+name|available_height
 operator|-
 name|height
 operator|)
@@ -2598,7 +2585,7 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_view_renderer_real_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,const GdkRectangle * area)
+DECL|function|gimp_view_renderer_real_draw (GimpViewRenderer * renderer,GtkWidget * widget,cairo_t * cr,gint available_width,gint available_height)
 name|gimp_view_renderer_real_draw
 parameter_list|(
 name|GimpViewRenderer
@@ -2613,10 +2600,11 @@ name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-specifier|const
-name|GdkRectangle
-modifier|*
-name|area
+name|gint
+name|available_width
+parameter_list|,
+name|gint
+name|available_height
 parameter_list|)
 block|{
 if|if
@@ -2711,14 +2699,8 @@ expr_stmt|;
 block|}
 name|x
 operator|=
-name|area
-operator|->
-name|x
-operator|+
 operator|(
-name|area
-operator|->
-name|width
+name|available_width
 operator|-
 name|width
 operator|)
@@ -2727,14 +2709,8 @@ literal|2
 expr_stmt|;
 name|y
 operator|=
-name|area
-operator|->
-name|y
-operator|+
 operator|(
-name|area
-operator|->
-name|height
+name|available_height
 operator|-
 name|height
 operator|)
@@ -2808,14 +2784,8 @@ decl_stmt|;
 name|gint
 name|offset_x
 init|=
-name|area
-operator|->
-name|x
-operator|+
 operator|(
-name|area
-operator|->
-name|width
+name|available_width
 operator|-
 name|width
 operator|)
@@ -2825,14 +2795,8 @@ decl_stmt|;
 name|gint
 name|offset_y
 init|=
-name|area
-operator|->
-name|y
-operator|+
 operator|(
-name|area
-operator|->
-name|height
+name|available_height
 operator|-
 name|height
 operator|)

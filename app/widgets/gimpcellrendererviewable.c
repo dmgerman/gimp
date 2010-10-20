@@ -53,7 +53,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c963da40103
+DECL|enum|__anon29f7fb5b0103
 block|{
 DECL|enumerator|PRE_CLICKED
 name|PRE_CLICKED
@@ -69,7 +69,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c963da40203
+DECL|enum|__anon29f7fb5b0203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1101,6 +1101,19 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+name|cell_area
+operator|->
+name|x
+argument_list|,
+name|cell_area
+operator|->
+name|y
+argument_list|)
+expr_stmt|;
 name|gimp_view_renderer_draw
 argument_list|(
 name|cellviewable
@@ -1112,6 +1125,12 @@ argument_list|,
 name|cr
 argument_list|,
 name|cell_area
+operator|->
+name|width
+argument_list|,
+name|cell_area
+operator|->
+name|height
 argument_list|)
 expr_stmt|;
 name|cairo_destroy

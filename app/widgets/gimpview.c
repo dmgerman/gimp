@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b5b8dae0103
+DECL|enum|__anon2c35a93d0103
 block|{
 DECL|enumerator|SET_VIEWABLE
 name|SET_VIEWABLE
@@ -1731,6 +1731,19 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
+name|cairo_translate
+argument_list|(
+name|cr
+argument_list|,
+name|allocation
+operator|.
+name|x
+argument_list|,
+name|allocation
+operator|.
+name|y
+argument_list|)
+expr_stmt|;
 name|gimp_view_renderer_draw
 argument_list|(
 name|GIMP_VIEW
@@ -1744,8 +1757,13 @@ name|widget
 argument_list|,
 name|cr
 argument_list|,
-operator|&
 name|allocation
+operator|.
+name|width
+argument_list|,
+name|allocation
+operator|.
+name|height
 argument_list|)
 expr_stmt|;
 name|cairo_destroy
