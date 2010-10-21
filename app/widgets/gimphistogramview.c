@@ -75,7 +75,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b412e60103
+DECL|enum|__anon29faac360103
 block|{
 DECL|enumerator|RANGE_CHANGED
 name|RANGE_CHANGED
@@ -88,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b412e60203
+DECL|enum|__anon29faac360203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1250,16 +1250,9 @@ name|view
 operator|->
 name|bg_histogram
 condition|)
-block|{
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;
-block|}
 name|x1
 operator|=
 name|CLAMP
