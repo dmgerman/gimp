@@ -125,7 +125,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28ad545e0103
+DECL|enum|__anon28d092bc0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -367,11 +367,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_histogram_editor_view_expose
+name|gimp_histogram_editor_view_draw
 parameter_list|(
 name|GimpHistogramEditor
 modifier|*
 name|editor
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -853,11 +857,11 @@ name|g_signal_connect_swapped
 argument_list|(
 name|view
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_histogram_editor_view_expose
+name|gimp_histogram_editor_view_draw
 argument_list|)
 argument_list|,
 name|editor
@@ -3092,12 +3096,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_histogram_editor_view_expose (GimpHistogramEditor * editor)
-name|gimp_histogram_editor_view_expose
+DECL|function|gimp_histogram_editor_view_draw (GimpHistogramEditor * editor,cairo_t * cr)
+name|gimp_histogram_editor_view_draw
 parameter_list|(
 name|GimpHistogramEditor
 modifier|*
 name|editor
+parameter_list|,
+name|cairo_t
+modifier|*
+name|cr
 parameter_list|)
 block|{
 name|gimp_histogram_editor_validate
