@@ -85,7 +85,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon296e3ffb0103
+DECL|enum|__anon294215700103
 block|{
 DECL|enumerator|MARKER_CHANGED
 name|MARKER_CHANGED
@@ -2039,19 +2039,6 @@ name|widget
 argument_list|,
 operator|&
 name|allocation
-argument_list|)
-expr_stmt|;
-name|cairo_translate
-argument_list|(
-name|cr
-argument_list|,
-name|allocation
-operator|.
-name|x
-argument_list|,
-name|allocation
-operator|.
-name|y
 argument_list|)
 expr_stmt|;
 name|cairo_rectangle
