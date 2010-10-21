@@ -80,7 +80,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a11cf840108
+DECL|struct|__anon29e2821c0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -465,6 +465,9 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|int
+name|result
+decl_stmt|;
 name|g_thread_init
 argument_list|(
 name|NULL
@@ -508,10 +511,22 @@ argument_list|(
 name|remove_layer
 argument_list|)
 expr_stmt|;
-comment|/* Run the tests and return status */
-return|return
+comment|/* Run the tests */
+name|result
+operator|=
 name|g_test_run
 argument_list|()
+expr_stmt|;
+comment|/* Exit so we don't break script-fu plug-in wire */
+name|gimp_exit
+argument_list|(
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return
+name|result
 return|;
 block|}
 end_function
