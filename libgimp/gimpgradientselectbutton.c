@@ -147,7 +147,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba616ca0103
+DECL|enum|__anon296d52220103
 block|{
 DECL|enumerator|GRADIENT_SET
 name|GRADIENT_SET
@@ -160,7 +160,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ba616ca0203
+DECL|enum|__anon296d52220203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -299,15 +299,15 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|gboolean
-name|gimp_gradient_select_preview_expose
+name|gimp_gradient_select_preview_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|preview
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|GimpGradientSelectButton
 modifier|*
@@ -1480,16 +1480,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|gimp_gradient_select_preview_expose (GtkWidget * widget,GdkEventExpose * event,GimpGradientSelectButton * button)
-name|gimp_gradient_select_preview_expose
+DECL|function|gimp_gradient_select_preview_draw (GtkWidget * widget,cairo_t * cr,GimpGradientSelectButton * button)
+name|gimp_gradient_select_preview_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|GimpGradientSelectButton
 modifier|*
@@ -1502,10 +1502,6 @@ name|priv
 decl_stmt|;
 name|GtkAllocation
 name|allocation
-decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
 decl_stmt|;
 name|cairo_pattern_t
 modifier|*
@@ -1557,29 +1553,6 @@ name|widget
 argument_list|,
 operator|&
 name|allocation
-argument_list|)
-expr_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|event
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_region
-argument_list|(
-name|cr
-argument_list|,
-name|event
-operator|->
-name|region
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
 argument_list|)
 expr_stmt|;
 name|pattern
@@ -1786,11 +1759,6 @@ name|pattern
 argument_list|)
 expr_stmt|;
 name|cairo_paint
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
 argument_list|(
 name|cr
 argument_list|)
@@ -2050,11 +2018,11 @@ name|priv
 operator|->
 name|preview
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_gradient_select_preview_expose
+name|gimp_gradient_select_preview_draw
 argument_list|)
 argument_list|,
 name|gradient_button
