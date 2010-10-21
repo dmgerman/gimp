@@ -87,6 +87,28 @@ directive|include
 file|"units.h"
 end_include
 
+begin_function
+specifier|static
+name|void
+DECL|function|gimp_status_func_dummy (const gchar * text1,const gchar * text2,gdouble percentage)
+name|gimp_status_func_dummy
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|text1
+parameter_list|,
+specifier|const
+name|gchar
+modifier|*
+name|text2
+parameter_list|,
+name|gdouble
+name|percentage
+parameter_list|)
+block|{ }
+end_function
+
 begin_comment
 comment|/**  * gimp_init_for_testing:  *  * Initialize the GIMP object system for unit testing. This is a  * selected subset of the initialization happning in app_run().  **/
 end_comment
@@ -157,6 +179,20 @@ name|FALSE
 comment|/*use_cpu_accel*/
 argument_list|)
 expr_stmt|;
+name|gimp_initialize
+argument_list|(
+name|gimp
+argument_list|,
+name|gimp_status_func_dummy
+argument_list|)
+expr_stmt|;
+name|gimp_restore
+argument_list|(
+name|gimp
+argument_list|,
+name|gimp_status_func_dummy
+argument_list|)
+expr_stmt|;
 return|return
 name|gimp
 return|;
@@ -168,28 +204,6 @@ ifndef|#
 directive|ifndef
 name|GIMP_CONSOLE_COMPILATION
 end_ifndef
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_status_func_dummy (const gchar * text1,const gchar * text2,gdouble percentage)
-name|gimp_status_func_dummy
-parameter_list|(
-specifier|const
-name|gchar
-modifier|*
-name|text1
-parameter_list|,
-specifier|const
-name|gchar
-modifier|*
-name|text2
-parameter_list|,
-name|gdouble
-name|percentage
-parameter_list|)
-block|{ }
-end_function
 
 begin_comment
 comment|/**  * gimp_init_for_gui_testing:  * @use_cpu_accel:  *  * Initializes a #Gimp instance for use in test cases that rely on GUI  * code to be initialized.  *  * Returns: The #Gimp instance.  **/
