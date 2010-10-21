@@ -2243,6 +2243,13 @@ name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|icon_view
+operator|->
+name|view
+condition|)
+block|{
 name|gtk_icon_view_set_columns
 argument_list|(
 name|icon_view
@@ -2263,6 +2270,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 
