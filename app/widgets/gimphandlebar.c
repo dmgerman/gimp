@@ -35,7 +35,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d819ad0103
+DECL|enum|__anon28cc02360103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1045,7 +1045,7 @@ name|value
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -1066,7 +1066,7 @@ name|bevent
 parameter_list|)
 block|{
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
@@ -1191,7 +1191,7 @@ name|value
 argument_list|)
 expr_stmt|;
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
