@@ -595,7 +595,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2aab4ca40108
+DECL|struct|__anon292559100108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -3269,10 +3269,15 @@ block|{
 name|int
 name|result
 decl_stmt|;
-name|gimp_test_bail_if_no_display
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_type_init
 argument_list|()
 expr_stmt|;
-name|gtk_test_init
+name|g_test_init
 argument_list|(
 operator|&
 name|argc
@@ -3293,11 +3298,8 @@ expr_stmt|;
 comment|/* We share the same application instance across all tests. We need    * the GUI variant for the file procs    */
 name|gimp
 operator|=
-name|gimp_init_for_gui_testing
-argument_list|(
-name|FALSE
-comment|/*show_gui*/
-argument_list|)
+name|gimp_init_for_testing
+argument_list|()
 expr_stmt|;
 comment|/* Add tests */
 name|ADD_TEST
