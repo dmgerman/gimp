@@ -2099,6 +2099,15 @@ argument_list|,
 name|icon_view
 argument_list|)
 expr_stmt|;
+name|gtk_icon_view_select_path
+argument_list|(
+name|icon_view
+operator|->
+name|view
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
 name|gtk_icon_view_set_cursor
 argument_list|(
 name|icon_view
