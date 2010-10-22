@@ -2300,6 +2300,25 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+comment|/* ugly workaround to force the icon view to invalidate all its        * cached icon sizes        */
+name|gtk_icon_view_set_item_orientation
+argument_list|(
+name|icon_view
+operator|->
+name|view
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
+name|gtk_icon_view_set_item_orientation
+argument_list|(
+name|icon_view
+operator|->
+name|view
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 block|}
 block|}
 end_function
