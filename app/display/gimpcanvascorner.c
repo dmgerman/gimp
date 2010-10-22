@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2975af790103
+DECL|enum|__anon298ffb810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1618,9 +1618,6 @@ operator|+
 literal|3.0
 argument_list|)
 expr_stmt|;
-ifdef|#
-directive|ifdef
-name|USE_CAIRO_REGION
 return|return
 name|cairo_region_create_rectangle
 argument_list|(
@@ -1632,17 +1629,6 @@ operator|&
 name|rectangle
 argument_list|)
 return|;
-else|#
-directive|else
-return|return
-name|gdk_region_rectangle
-argument_list|(
-operator|&
-name|rectangle
-argument_list|)
-return|;
-endif|#
-directive|endif
 block|}
 end_function
 

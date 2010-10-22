@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b493d600103
+DECL|enum|__anon2c08543d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1026,9 +1026,6 @@ operator|.
 name|y
 expr_stmt|;
 block|}
-ifdef|#
-directive|ifdef
-name|USE_CAIRO_REGION
 return|return
 name|cairo_region_create_rectangle
 argument_list|(
@@ -1040,17 +1037,6 @@ operator|&
 name|rectangle
 argument_list|)
 return|;
-else|#
-directive|else
-return|return
-name|gdk_region_rectangle
-argument_list|(
-operator|&
-name|rectangle
-argument_list|)
-return|;
-endif|#
-directive|endif
 block|}
 return|return
 name|NULL
