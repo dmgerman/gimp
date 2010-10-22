@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b8afb60103
+DECL|enum|__anon2c9d3ebb0103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -627,6 +627,11 @@ argument_list|(
 name|widget
 argument_list|)
 decl_stmt|;
+name|cairo_save
+argument_list|(
+name|cr
+argument_list|)
+expr_stmt|;
 name|GTK_WIDGET_CLASS
 argument_list|(
 name|parent_class
@@ -636,6 +641,11 @@ name|draw
 argument_list|(
 name|widget
 argument_list|,
+name|cr
+argument_list|)
+expr_stmt|;
+name|cairo_restore
+argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
