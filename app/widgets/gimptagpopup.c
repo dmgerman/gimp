@@ -165,7 +165,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2931c7500103
+DECL|enum|__anon2c0368a50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1402,6 +1402,28 @@ operator|&
 name|y
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+operator|!
+name|gtk_widget_get_has_window
+argument_list|(
+name|entry
+argument_list|)
+condition|)
+block|{
+name|x
+operator|+=
+name|entry_allocation
+operator|.
+name|x
+expr_stmt|;
+name|y
+operator|+=
+name|entry_allocation
+operator|.
+name|y
+expr_stmt|;
+block|}
 name|max_height
 operator|=
 name|entry_allocation
