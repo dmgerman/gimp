@@ -176,7 +176,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec4d800108
+DECL|struct|__anon29e59fbf0108
 block|{
 DECL|member|elems
 specifier|const
@@ -204,7 +204,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28ec4d800208
+DECL|struct|__anon29e59fbf0208
 block|{
 DECL|member|elems
 name|gint
@@ -1502,7 +1502,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

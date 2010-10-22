@@ -100,10 +100,10 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d70a90108
+DECL|struct|__anon29c76ce10108
 block|{
 union|union
-DECL|union|__anon2a2d70a9020a
+DECL|union|__anon29c76ce1020a
 block|{
 DECL|member|ID
 name|gint32
@@ -136,7 +136,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d70a90308
+DECL|struct|__anon29c76ce10308
 block|{
 DECL|member|babl_name
 specifier|const
@@ -187,7 +187,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d70a90408
+DECL|struct|__anon29c76ce10408
 block|{
 DECL|member|babl_model
 specifier|const
@@ -1009,7 +1009,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d70a90508
+DECL|struct|__anon29c76ce10508
 block|{
 DECL|member|inputs
 name|ComposeInput
@@ -1049,7 +1049,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a2d70a90608
+DECL|struct|__anon29c76ce10608
 block|{
 DECL|member|width
 DECL|member|height
@@ -5101,7 +5101,7 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale
 decl_stmt|;

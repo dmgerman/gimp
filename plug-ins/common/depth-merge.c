@@ -3716,7 +3716,7 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

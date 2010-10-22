@@ -72,7 +72,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28c01cf30108
+DECL|struct|__anon28f453ed0108
 block|{
 DECL|member|prefixed_name
 name|gchar
@@ -3762,7 +3762,7 @@ name|GtkWidget
 modifier|*
 name|alpha_toggle
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

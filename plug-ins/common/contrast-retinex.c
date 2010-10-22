@@ -100,7 +100,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a236f6d0108
+DECL|struct|__anon2ad7f2d80108
 block|{
 DECL|member|scale
 name|gint
@@ -127,7 +127,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a236f6d0203
+DECL|enum|__anon2ad7f2d80203
 block|{
 DECL|enumerator|filter_uniform
 name|filter_uniform
@@ -185,7 +185,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2a236f6d0308
+DECL|struct|__anon2ad7f2d80308
 block|{
 DECL|member|N
 name|gint
@@ -1015,7 +1015,7 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

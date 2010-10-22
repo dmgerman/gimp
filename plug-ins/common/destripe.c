@@ -186,7 +186,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c8819d50108
+DECL|struct|__anon2b7b65980108
 block|{
 DECL|member|histogram
 name|gboolean
@@ -1520,7 +1520,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

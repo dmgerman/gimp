@@ -59,7 +59,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28f973df0103
+DECL|enum|__anon27a7e1620103
 block|{
 DECL|enumerator|FUNCTION_BUMPMAP
 name|FUNCTION_BUMPMAP
@@ -77,7 +77,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f973df0208
+DECL|struct|__anon27a7e1620208
 block|{
 DECL|member|azimuth
 name|gdouble
@@ -2070,7 +2070,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

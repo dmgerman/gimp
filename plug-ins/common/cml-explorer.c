@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6b5fb0103
+DECL|enum|__anon28fd38d60103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6b5fb0203
+DECL|enum|__anon28fd38d60203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6b5fb0303
+DECL|enum|__anon28fd38d60303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28d6b5fb0403
+DECL|enum|__anon28fd38d60403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d6b5fb0508
+DECL|struct|__anon28fd38d60508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d6b5fb0608
+DECL|struct|__anon28fd38d60608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1244,7 +1244,7 @@ name|WidgetEntry
 modifier|*
 name|widget_entry
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|object
 parameter_list|,
@@ -1263,7 +1263,7 @@ name|WidgetEntry
 modifier|*
 name|widget_entry
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|object
 parameter_list|,
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28d6b5fb0708
+DECL|struct|__anon28fd38d60708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -7253,7 +7253,7 @@ name|GtkWidget
 modifier|*
 name|vbox
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -8583,7 +8583,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -9627,7 +9627,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -13389,14 +13389,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|CML_explorer_int_entry_init (WidgetEntry * widget_entry,GtkObject * adjustment,gpointer value_ptr)
+DECL|function|CML_explorer_int_entry_init (WidgetEntry * widget_entry,GtkAdjustment * adjustment,gpointer value_ptr)
 name|CML_explorer_int_entry_init
 parameter_list|(
 name|WidgetEntry
 modifier|*
 name|widget_entry
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,
@@ -13521,14 +13521,14 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|CML_explorer_double_entry_init (WidgetEntry * widget_entry,GtkObject * adjustment,gpointer value_ptr)
+DECL|function|CML_explorer_double_entry_init (WidgetEntry * widget_entry,GtkAdjustment * adjustment,gpointer value_ptr)
 name|CML_explorer_double_entry_init
 parameter_list|(
 name|WidgetEntry
 modifier|*
 name|widget_entry
 parameter_list|,
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adjustment
 parameter_list|,

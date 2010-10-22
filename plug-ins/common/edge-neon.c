@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dda28e0108
+DECL|struct|__anon296acf170108
 block|{
 DECL|member|radius
 name|gdouble
@@ -3386,7 +3386,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_data
 decl_stmt|;
