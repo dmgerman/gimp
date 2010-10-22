@@ -37,9 +37,9 @@ name|CAIRO_VERSION_ENCODE
 argument_list|(
 literal|1
 operator|,
-literal|10
+literal|9
 operator|,
-literal|0
+literal|15
 argument_list|)
 end_if
 
