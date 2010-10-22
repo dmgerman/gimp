@@ -28,6 +28,16 @@ directive|include
 file|"core/gimpobject.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
+begin_comment
+comment|/* GimpCircularQueue */
+end_comment
+
 begin_define
 DECL|macro|GIMP_TYPE_PAINT_CORE
 define|#
@@ -207,6 +217,11 @@ modifier|*
 name|canvas_buf
 decl_stmt|;
 comment|/*  the buffer to paint pixels to       */
+DECL|member|smoothing_history
+name|GimpCircularQueue
+modifier|*
+name|smoothing_history
+decl_stmt|;
 block|}
 struct|;
 end_struct

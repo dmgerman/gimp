@@ -28,6 +28,12 @@ directive|include
 file|"gimpink-blob.h"
 end_include
 
+begin_include
+include|#
+directive|include
+file|"gimppaintoptions.h"
+end_include
+
 begin_define
 DECL|macro|GIMP_TYPE_INK
 define|#
@@ -127,6 +133,11 @@ modifier|*
 name|last_blob
 decl_stmt|;
 comment|/*  blob for last cursor position  */
+DECL|member|queue
+name|GimpCircularQueue
+modifier|*
+name|queue
+decl_stmt|;
 block|}
 struct|;
 end_struct
