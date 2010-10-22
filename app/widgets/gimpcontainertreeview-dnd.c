@@ -806,9 +806,9 @@ name|new_value
 decl_stmt|;
 name|adj
 operator|=
-name|gtk_tree_view_get_vadjustment
+name|gtk_scrollable_get_vadjustment
 argument_list|(
-name|GTK_TREE_VIEW
+name|GTK_SCROLLABLE
 argument_list|(
 name|tree_view
 operator|->
