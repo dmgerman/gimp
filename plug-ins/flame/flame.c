@@ -155,7 +155,7 @@ end_define
 
 begin_struct
 struct|struct
-DECL|struct|__anon2c7fbe430108
+DECL|struct|__anon2a2d58620108
 block|{
 DECL|member|randomize
 name|gint
@@ -2948,7 +2948,7 @@ name|GtkWidget
 modifier|*
 name|label
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -4591,7 +4591,7 @@ name|GtkWidget
 modifier|*
 name|box
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
