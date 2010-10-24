@@ -87,7 +87,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28a02a700103
+DECL|enum|__anon295766ba0103
 block|{
 DECL|enumerator|LIC_HUE
 name|LIC_HUE
@@ -135,7 +135,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28a02a700208
+DECL|struct|__anon295766ba0208
 block|{
 DECL|member|filtlen
 name|gdouble
@@ -2901,7 +2901,7 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_data
 decl_stmt|;

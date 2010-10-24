@@ -60,7 +60,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c1c2b10103
+DECL|enum|__anon27ce3b170103
 block|{
 DECL|enumerator|BEZIER_1
 name|BEZIER_1
@@ -76,7 +76,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28c1c2b10203
+DECL|enum|__anon27ce3b170203
 block|{
 DECL|enumerator|LEFT
 name|LEFT
@@ -13991,7 +13991,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

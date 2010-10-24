@@ -94,7 +94,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1bf3ea0108
+DECL|struct|__anon2c8487a30108
 block|{
 DECL|member|description
 name|gchar
@@ -116,7 +116,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b1bf3ea0208
+DECL|struct|__anon2c8487a30208
 block|{
 DECL|member|orientation
 name|GimpOrientationType
@@ -3761,12 +3761,9 @@ name|NULL
 condition|)
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adj
 operator|->
 name|ncells
-argument_list|)
 argument_list|,
 operator|*
 operator|(
@@ -3793,12 +3790,9 @@ name|NULL
 condition|)
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|adj
 operator|->
 name|rank0
-argument_list|)
 argument_list|,
 operator|*
 operator|(
@@ -4234,10 +4228,6 @@ expr_stmt|;
 comment|/*    * Spacing: __    */
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|info
@@ -4332,10 +4322,6 @@ argument_list|)
 expr_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|gihparams
@@ -4497,10 +4483,6 @@ argument_list|)
 expr_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|gihparams
@@ -4688,10 +4670,6 @@ expr_stmt|;
 comment|/*    * Number of cells: ___    */
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|gihparams
@@ -5105,10 +5083,6 @@ expr_stmt|;
 comment|/*    * Dimension: ___    */
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|gihparams
@@ -5230,10 +5204,6 @@ name|j
 decl_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|gihparams

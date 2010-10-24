@@ -125,7 +125,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon299f08bf0108
+DECL|struct|__anon2b033b240108
 block|{
 DECL|member|lum_threshold
 name|gdouble
@@ -1427,7 +1427,7 @@ decl_stmt|,
 modifier|*
 name|r3
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_data
 decl_stmt|;

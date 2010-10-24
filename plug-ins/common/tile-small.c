@@ -120,7 +120,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da36000108
+DECL|struct|__anon276ee1df0108
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -503,7 +503,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28da36000203
+DECL|enum|__anon276ee1df0203
 block|{
 DECL|enumerator|ALL
 name|ALL
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da36000308
+DECL|struct|__anon276ee1df0308
 block|{
 DECL|member|type
 name|AppliedTo
@@ -539,13 +539,13 @@ name|y
 decl_stmt|;
 comment|/* Y - pos of tile   */
 DECL|member|r_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|r_adj
 decl_stmt|;
 comment|/* row adjustment    */
 DECL|member|c_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|c_adj
 decl_stmt|;
@@ -593,7 +593,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28da36000408
+DECL|struct|__anon276ee1df0408
 block|{
 DECL|member|htoggle
 name|GtkWidget
@@ -1295,11 +1295,11 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale
 decl_stmt|;

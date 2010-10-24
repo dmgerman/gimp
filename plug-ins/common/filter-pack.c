@@ -114,7 +114,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1e6b30108
+DECL|struct|__anon29bf2b2b0108
 block|{
 DECL|member|run
 name|gboolean
@@ -129,7 +129,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1e6b30208
+DECL|struct|__anon29bf2b2b0208
 block|{
 DECL|member|width
 name|gint
@@ -163,7 +163,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon28b1e6b30303
+DECL|enum|__anon29bf2b2b0303
 block|{
 DECL|enumerator|SHADOWS
 name|SHADOWS
@@ -184,7 +184,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1e6b30403
+DECL|enum|__anon29bf2b2b0403
 block|{
 DECL|enumerator|NONEATALL
 name|NONEATALL
@@ -216,7 +216,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1e6b30503
+DECL|enum|__anon29bf2b2b0503
 block|{
 DECL|enumerator|BY_HUE
 name|BY_HUE
@@ -235,7 +235,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1e6b30603
+DECL|enum|__anon29bf2b2b0603
 block|{
 DECL|enumerator|RED
 name|RED
@@ -263,7 +263,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon28b1e6b30703
+DECL|enum|__anon29bf2b2b0703
 block|{
 DECL|enumerator|DOWN
 name|DOWN
@@ -282,7 +282,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1e6b30808
+DECL|struct|__anon29bf2b2b0808
 block|{
 DECL|member|window
 name|GtkWidget
@@ -313,7 +313,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1e6b30908
+DECL|struct|__anon29bf2b2b0908
 block|{
 DECL|member|roughness
 name|gdouble
@@ -410,7 +410,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28b1e6b30a08
+DECL|struct|__anon29bf2b2b0a08
 block|{
 DECL|member|roughness_scale
 name|GtkWidget
@@ -1292,7 +1292,7 @@ end_decl_stmt
 begin_struct
 specifier|static
 struct|struct
-DECL|struct|__anon28b1e6b30b08
+DECL|struct|__anon29bf2b2b0b08
 block|{
 DECL|member|bna
 name|GtkWidget
@@ -3397,10 +3397,6 @@ argument_list|)
 expr_stmt|;
 name|data
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fpvals
@@ -7444,10 +7440,6 @@ expr_stmt|;
 block|}
 name|smoothnessData
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fpvals
@@ -7604,10 +7596,6 @@ argument_list|)
 expr_stmt|;
 name|smoothnessData
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|fpvals

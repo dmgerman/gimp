@@ -359,7 +359,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0108
+DECL|struct|__anon293550960108
 block|{
 DECL|member|name
 specifier|const
@@ -619,7 +619,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0208
+DECL|struct|__anon293550960208
 block|{
 comment|/* resolution section: */
 DECL|member|cell_width
@@ -692,7 +692,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0308
+DECL|struct|__anon293550960308
 block|{
 DECL|member|input_spi
 name|gdouble
@@ -722,7 +722,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0408
+DECL|struct|__anon293550960408
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -781,7 +781,7 @@ index|]
 decl_stmt|;
 comment|/* state for 3 preview widgets */
 DECL|member|angle_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|angle_adj
 decl_stmt|;
@@ -829,7 +829,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0508
+DECL|struct|__anon293550960508
 block|{
 DECL|member|pull_table
 name|GtkWidget
@@ -837,23 +837,23 @@ modifier|*
 name|pull_table
 decl_stmt|;
 DECL|member|pull
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|pull
 decl_stmt|;
 comment|/* black pullout percentage */
 DECL|member|input_spi
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|input_spi
 decl_stmt|;
 DECL|member|output_lpi
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|output_lpi
 decl_stmt|;
 DECL|member|cellsize
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|cellsize
 decl_stmt|;
@@ -872,7 +872,7 @@ index|[
 name|NUM_CS
 index|]
 decl_stmt|;
-comment|/* room for up to 4 channels per colorspace */
+comment|/* room for up to 4 channels per colourspace */
 DECL|member|chst
 name|channel_st
 modifier|*
@@ -994,7 +994,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0608
+DECL|struct|__anon293550960608
 block|{
 DECL|member|name
 specifier|const
@@ -3310,12 +3310,9 @@ condition|)
 block|{
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|c
 operator|->
 name|angle_adj
-argument_list|)
 argument_list|,
 operator|*
 name|angle_ptr
@@ -3379,12 +3376,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|st
 operator|->
 name|cellsize
-argument_list|)
 argument_list|,
 name|pvals_ui
 operator|.
@@ -3452,12 +3446,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|st
 operator|->
 name|output_lpi
-argument_list|)
 argument_list|,
 name|pvals_ui
 operator|.
@@ -3525,12 +3516,9 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|st
 operator|->
 name|output_lpi
-argument_list|)
 argument_list|,
 name|pvals_ui
 operator|.
@@ -3664,15 +3652,12 @@ condition|)
 block|{
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|chst
 index|[
 name|c
 index|]
 operator|->
 name|angle_adj
-argument_list|)
 argument_list|,
 operator|*
 operator|(
@@ -4704,7 +4689,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -7096,7 +7081,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba9672b0708
+DECL|struct|__anon293550960708
 block|{
 DECL|member|index
 name|gint

@@ -84,7 +84,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c643a0108
+DECL|struct|__anon2c38fd4c0108
 block|{
 DECL|member|radius
 name|gdouble
@@ -107,7 +107,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b8c643a0208
+DECL|struct|__anon2c38fd4c0208
 block|{
 DECL|member|run
 name|gboolean
@@ -3404,7 +3404,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

@@ -192,7 +192,7 @@ name|MAIN
 argument_list|()
 comment|/******************************************************************************/
 expr|enum
-DECL|enum|__anon2b5da0c60103
+DECL|enum|__anon274304820103
 block|{
 DECL|enumerator|OUTSIDE_TYPE_WRAP
 name|OUTSIDE_TYPE_WRAP
@@ -212,7 +212,7 @@ end_expr_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5da0c60208
+DECL|struct|__anon274304820208
 block|{
 DECL|member|x1
 name|gdouble
@@ -419,7 +419,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5da0c60308
+DECL|struct|__anon274304820308
 block|{
 DECL|member|x1
 name|gint
@@ -462,7 +462,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5da0c60408
+DECL|struct|__anon274304820408
 block|{
 DECL|member|width
 name|gint
@@ -1053,7 +1053,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5da0c60508
+DECL|struct|__anon274304820508
 block|{
 DECL|member|r
 name|guchar
@@ -2982,7 +2982,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b5da0c60608
+DECL|struct|__anon274304820608
 block|{
 DECL|member|preview
 name|GtkWidget
@@ -3921,7 +3921,7 @@ name|GtkWidget
 modifier|*
 name|abox
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

@@ -108,7 +108,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2767ce4c0108
+DECL|struct|__anon2ba3086c0108
 block|{
 DECL|member|film_height
 name|gint
@@ -212,10 +212,10 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2767ce4c0208
+DECL|struct|__anon2ba3086c0208
 block|{
 DECL|member|advanced_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|advanced_adj
 index|[
@@ -5454,7 +5454,7 @@ name|GtkWidget
 modifier|*
 name|frame
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
@@ -6532,15 +6532,12 @@ operator|++
 control|)
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|filmint
 operator|.
 name|advanced_adj
 index|[
 name|i
 index|]
-argument_list|)
 argument_list|,
 name|advanced_defaults
 index|[

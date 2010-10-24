@@ -661,7 +661,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6229420108
+DECL|struct|__anon2879ddc60108
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -715,7 +715,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c6229420208
+DECL|struct|__anon2879ddc60208
 block|{
 DECL|member|y
 name|gint32
@@ -6154,8 +6154,6 @@ name|cd
 operator|->
 name|rotate_data
 operator|=
-name|GTK_ADJUSTMENT
-argument_list|(
 name|gtk_adjustment_new
 argument_list|(
 literal|0
@@ -6169,7 +6167,6 @@ argument_list|,
 literal|45
 argument_list|,
 literal|0
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value

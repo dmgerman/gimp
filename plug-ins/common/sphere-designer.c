@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761bdc40103
+DECL|enum|__anon293792320103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761bdc40203
+DECL|enum|__anon293792320203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761bdc40303
+DECL|enum|__anon293792320303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761bdc40403
+DECL|enum|__anon293792320403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2761bdc40503
+DECL|enum|__anon293792320503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40608
+DECL|struct|__anon293792320608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40708
+DECL|struct|__anon293792320708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40808
+DECL|struct|__anon293792320808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40908
+DECL|struct|__anon293792320908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40a08
+DECL|struct|__anon293792320a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40b08
+DECL|struct|__anon293792320b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40c08
+DECL|struct|__anon293792320c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40d08
+DECL|struct|__anon293792320d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40e08
+DECL|struct|__anon293792320e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc40f08
+DECL|struct|__anon293792320f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc41008
+DECL|struct|__anon293792321008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2761bdc41108
+DECL|struct|__anon293792321108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon2761bdc4120a
+DECL|union|__anon29379232120a
 block|{
 DECL|member|com
 name|common
@@ -1252,7 +1252,7 @@ DECL|variable|scalexscale
 DECL|variable|scaleyscale
 DECL|variable|scalezscale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scalexscale
 decl_stmt|,
@@ -1269,7 +1269,7 @@ DECL|variable|rotxscale
 DECL|variable|rotyscale
 DECL|variable|rotzscale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|rotxscale
 decl_stmt|,
@@ -1286,7 +1286,7 @@ DECL|variable|posxscale
 DECL|variable|posyscale
 DECL|variable|poszscale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|posxscale
 decl_stmt|,
@@ -1301,7 +1301,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|scalescale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scalescale
 decl_stmt|;
@@ -1310,7 +1310,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|turbulencescale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|turbulencescale
 decl_stmt|;
@@ -1319,7 +1319,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|amountscale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|amountscale
 decl_stmt|;
@@ -1328,7 +1328,7 @@ end_decl_stmt
 begin_decl_stmt
 DECL|variable|expscale
 specifier|static
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|expscale
 decl_stmt|;
@@ -10624,10 +10624,7 @@ name|TRUE
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|amountscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10636,10 +10633,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|scalescale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10648,10 +10642,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|scalexscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10661,11 +10652,8 @@ name|x
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
-argument_list|(
-name|GTK_ADJUSTMENT
 argument_list|(
 name|scaleyscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10675,11 +10663,8 @@ name|y
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
-argument_list|(
-name|GTK_ADJUSTMENT
 argument_list|(
 name|scalezscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10690,10 +10675,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|rotxscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10703,11 +10685,8 @@ name|x
 argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
-argument_list|(
-name|GTK_ADJUSTMENT
 argument_list|(
 name|rotyscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10718,10 +10697,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|rotzscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10732,10 +10708,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|posxscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10746,10 +10719,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|posyscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10760,10 +10730,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|poszscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10774,10 +10741,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|turbulencescale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -10788,10 +10752,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|expscale
-argument_list|)
 argument_list|,
 name|t
 operator|->
@@ -13853,10 +13814,7 @@ name|amount
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|amountscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -13865,20 +13823,14 @@ name|exp
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|expscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|f
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|turbulencescale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|vset
@@ -13901,10 +13853,7 @@ name|oscale
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|scalescale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -13914,12 +13863,9 @@ operator|.
 name|x
 operator|=
 name|gtk_adjustment_get_value
-argument_list|(
-name|GTK_ADJUSTMENT
 argument_list|(
 name|scalexscale
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|t
 operator|->
@@ -13928,12 +13874,9 @@ operator|.
 name|y
 operator|=
 name|gtk_adjustment_get_value
-argument_list|(
-name|GTK_ADJUSTMENT
 argument_list|(
 name|scaleyscale
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|t
 operator|->
@@ -13943,10 +13886,7 @@ name|z
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|scalezscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -13956,12 +13896,9 @@ operator|.
 name|x
 operator|=
 name|gtk_adjustment_get_value
-argument_list|(
-name|GTK_ADJUSTMENT
 argument_list|(
 name|rotxscale
 argument_list|)
-argument_list|)
 expr_stmt|;
 name|t
 operator|->
@@ -13971,10 +13908,7 @@ name|y
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|rotyscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -13985,10 +13919,7 @@ name|z
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|rotzscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -13999,10 +13930,7 @@ name|x
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|posxscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -14013,10 +13941,7 @@ name|y
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|posyscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|t
@@ -14027,10 +13952,7 @@ name|z
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|poszscale
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|restartrender

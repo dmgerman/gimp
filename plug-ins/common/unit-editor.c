@@ -67,7 +67,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2ae089c10103
+DECL|enum|__anon2bbef3ed0103
 block|{
 DECL|enumerator|SAVE
 name|SAVE
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ae089c10208
+DECL|struct|__anon2bbef3ed0208
 block|{
 DECL|member|title
 specifier|const
@@ -1476,20 +1476,14 @@ name|factor
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|factor_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|digits
 operator|=
 name|gtk_adjustment_get_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|digits_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|symbol

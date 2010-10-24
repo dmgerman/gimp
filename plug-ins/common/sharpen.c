@@ -340,7 +340,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c28ef6e0108
+DECL|struct|__anon2a044ccf0108
 block|{
 DECL|member|sharpen_percent
 name|gint
@@ -1644,7 +1644,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

@@ -61,7 +61,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dac1d70103
+DECL|enum|__anon279d39f20103
 block|{
 DECL|enumerator|H_NONE
 name|H_NONE
@@ -83,7 +83,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dac1d70203
+DECL|enum|__anon279d39f20203
 block|{
 DECL|enumerator|H_BASE_LEFT
 name|H_BASE_LEFT
@@ -99,7 +99,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dac1d70303
+DECL|enum|__anon279d39f20303
 block|{
 DECL|enumerator|V_NONE
 name|V_NONE
@@ -121,7 +121,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon27dac1d70403
+DECL|enum|__anon279d39f20403
 block|{
 DECL|enumerator|V_BASE_TOP
 name|V_BASE_TOP
@@ -138,7 +138,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dac1d70508
+DECL|struct|__anon279d39f20508
 block|{
 DECL|member|step_x
 name|gint
@@ -396,7 +396,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dac1d70608
+DECL|struct|__anon279d39f20608
 block|{
 DECL|member|h_style
 name|gint
@@ -2285,7 +2285,7 @@ name|GtkWidget
 modifier|*
 name|toggle
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

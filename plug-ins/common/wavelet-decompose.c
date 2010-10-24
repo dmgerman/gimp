@@ -74,7 +74,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d347690108
+DECL|struct|__anon2c63d7ab0108
 block|{
 DECL|member|scales
 name|gint
@@ -1240,7 +1240,7 @@ name|GtkWidget
 modifier|*
 name|button
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

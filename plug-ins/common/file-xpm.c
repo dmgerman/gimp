@@ -162,7 +162,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7446bf0108
+DECL|struct|__anon27c4e43a0108
 block|{
 DECL|member|threshold
 name|gint
@@ -177,7 +177,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b7446bf0208
+DECL|struct|__anon27c4e43a0208
 block|{
 DECL|member|r
 name|guchar
@@ -3282,7 +3282,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|scale_data
 decl_stmt|;

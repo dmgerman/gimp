@@ -106,7 +106,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c7387590108
+DECL|struct|__anon2a2401920108
 block|{
 DECL|member|mask_size
 name|gdouble
@@ -3128,7 +3128,7 @@ name|GtkWidget
 modifier|*
 name|combo
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

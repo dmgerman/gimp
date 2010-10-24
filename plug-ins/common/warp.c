@@ -91,7 +91,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b4e73420103
+DECL|enum|__anon2925db9d0103
 block|{
 DECL|enumerator|WRAP
 name|WRAP
@@ -111,7 +111,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b4e73420208
+DECL|struct|__anon2925db9d0208
 block|{
 DECL|member|amount
 name|gdouble
@@ -1386,7 +1386,7 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;

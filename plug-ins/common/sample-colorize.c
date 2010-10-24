@@ -349,7 +349,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29383d120108
+DECL|struct|__anon2ad2fbfb0108
 block|{
 DECL|member|dst_id
 name|gint32
@@ -418,7 +418,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29383d120208
+DECL|struct|__anon2ad2fbfb0208
 block|{
 DECL|member|dialog
 name|GtkWidget
@@ -526,7 +526,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29383d120308
+DECL|struct|__anon2ad2fbfb0308
 block|{
 DECL|member|color
 name|guchar
@@ -555,7 +555,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29383d120408
+DECL|struct|__anon2ad2fbfb0408
 block|{
 DECL|member|all_samples
 name|gint32
@@ -582,7 +582,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29383d120508
+DECL|struct|__anon2ad2fbfb0508
 block|{
 DECL|member|drawable
 name|GimpDrawable
@@ -5904,7 +5904,7 @@ name|GtkWidget
 modifier|*
 name|spinbutton
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|data
 decl_stmt|;

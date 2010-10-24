@@ -76,7 +76,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dbdb330108
+DECL|struct|__anon2c0972ed0108
 block|{
 DECL|member|url
 name|char
@@ -118,7 +118,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27dbdb330208
+DECL|struct|__anon2c0972ed0208
 block|{
 DECL|member|url
 name|char
@@ -1209,10 +1209,6 @@ argument_list|)
 expr_stmt|;
 name|adjustment
 operator|=
-operator|(
-name|GtkAdjustment
-operator|*
-operator|)
 name|gtk_adjustment_new
 argument_list|(
 name|webpagevals

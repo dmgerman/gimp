@@ -64,7 +64,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2b647e840108
+DECL|struct|__anon28a1fecc0108
 block|{
 DECL|member|alpha
 name|gdouble
@@ -87,7 +87,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2b647e840203
+DECL|enum|__anon28a1fecc0203
 block|{
 DECL|enumerator|filter_alpha_trim
 name|filter_alpha_trim
@@ -5997,7 +5997,7 @@ name|GtkWidget
 modifier|*
 name|table
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
