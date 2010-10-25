@@ -558,7 +558,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_display_shell_transform_xy_f:  * @shell:       a #GimpDisplayShell  * @x:           x coordinate of point in image coordinates  * @y:           y coordinate of point in image coordinate  * @nx:          returns the transformed x coordinate  * @ny:          returns the transformed y coordinate  *  * This function is identical to gimp_display_shell_transfrom_xy(),  * except that it returns its results as doubles rather than ints.  **/
+comment|/**  * gimp_display_shell_transform_xy_f:  * @shell: a #GimpDisplayShell  * @x:     image x coordinate of point  * @y:     image y coordinate of point  * @nx:    returned shell canvas x coordinate  * @ny:    returned shell canvas y coordinate  *  * Transforms from image coordinates to display shell canvas  * coordinates.  **/
 end_comment
 
 begin_function
