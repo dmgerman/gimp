@@ -95,9 +95,12 @@ name|root_dir
 condition|)
 name|g_printerr
 argument_list|(
-literal|"The env var %s is not set, you are probably running\n"
-literal|"in a debugger. Set it manually, e.g.:\n"
-literal|"set env %s=%s/source/gimp\n"
+literal|"*\n"
+literal|"*  The env var %s is not set, you are probably running\n"
+literal|"*  in a debugger. Set it manually, e.g.:\n"
+literal|"*\n"
+literal|"*    set env %s=%s/source/gimp\n"
+literal|"*\n"
 argument_list|,
 name|root_env_var
 argument_list|,
