@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2901760d0108
+DECL|struct|__anon28f74f450108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -296,7 +296,7 @@ begin_function_decl
 specifier|static
 name|GimpUIManager
 modifier|*
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 parameter_list|(
 name|Gimp
 modifier|*
@@ -1642,7 +1642,7 @@ expr_stmt|;
 comment|/* Restore the (only avaiable) closed dock and make sure the session    * infos in the global dock factory are increased again    */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 argument_list|(
 name|gimp
 argument_list|)
@@ -1825,7 +1825,7 @@ expr_stmt|;
 comment|/* Hide all dock windows */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 argument_list|(
 name|gimp
 argument_list|)
@@ -1850,7 +1850,7 @@ expr_stmt|;
 comment|/* Show them again */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 argument_list|(
 name|gimp
 argument_list|)
@@ -1997,7 +1997,7 @@ decl_stmt|;
 comment|/* Switch to single-window mode. We consider this test as passed if    * we don't get any GLib warnings/errors    */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 argument_list|(
 name|gimp
 argument_list|)
@@ -2147,7 +2147,7 @@ expr_stmt|;
 comment|/* Hide all dock windows */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 argument_list|(
 name|gimp
 argument_list|)
@@ -2324,7 +2324,7 @@ decl_stmt|;
 comment|/* Switch back to multi-window mode. We consider this test as passed    * if we don't get any GLib warnings/errors    */
 name|gimp_ui_manager_activate_action
 argument_list|(
-name|gimp_ui_get_ui_manager
+name|gimp_test_utils_get_ui_manager
 argument_list|(
 name|gimp
 argument_list|)
@@ -2516,113 +2516,6 @@ argument_list|,
 literal|"gimp-tool-paintbrush"
 argument_list|)
 expr_stmt|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|GimpUIManager
-modifier|*
-DECL|function|gimp_ui_get_ui_manager (Gimp * gimp)
-name|gimp_ui_get_ui_manager
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-block|{
-name|GimpDisplay
-modifier|*
-name|display
-init|=
-name|NULL
-decl_stmt|;
-name|GimpDisplayShell
-modifier|*
-name|shell
-init|=
-name|NULL
-decl_stmt|;
-name|GtkWidget
-modifier|*
-name|toplevel
-init|=
-name|NULL
-decl_stmt|;
-name|GimpImageWindow
-modifier|*
-name|image_window
-init|=
-name|NULL
-decl_stmt|;
-name|GimpUIManager
-modifier|*
-name|ui_manager
-init|=
-name|NULL
-decl_stmt|;
-name|display
-operator|=
-name|GIMP_DISPLAY
-argument_list|(
-name|gimp_get_empty_display
-argument_list|(
-name|gimp
-argument_list|)
-argument_list|)
-expr_stmt|;
-comment|/* If there were not empty display, assume that there is at least    * one image display and use that    */
-if|if
-condition|(
-operator|!
-name|display
-condition|)
-name|display
-operator|=
-name|GIMP_DISPLAY
-argument_list|(
-name|gimp_get_display_iter
-argument_list|(
-name|gimp
-argument_list|)
-operator|->
-name|data
-argument_list|)
-expr_stmt|;
-name|shell
-operator|=
-name|gimp_display_get_shell
-argument_list|(
-name|display
-argument_list|)
-expr_stmt|;
-name|toplevel
-operator|=
-name|gtk_widget_get_toplevel
-argument_list|(
-name|GTK_WIDGET
-argument_list|(
-name|shell
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|image_window
-operator|=
-name|GIMP_IMAGE_WINDOW
-argument_list|(
-name|toplevel
-argument_list|)
-expr_stmt|;
-name|ui_manager
-operator|=
-name|gimp_image_window_get_ui_manager
-argument_list|(
-name|image_window
-argument_list|)
-expr_stmt|;
-return|return
-name|ui_manager
-return|;
 block|}
 end_function
 

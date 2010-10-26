@@ -43,8 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|GimpImage
-modifier|*
+name|void
 name|gimp_test_utils_create_image
 parameter_list|(
 name|Gimp
@@ -70,6 +69,18 @@ name|widget
 parameter_list|,
 name|guint
 name|keyval
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
+name|GimpUIManager
+modifier|*
+name|gimp_test_utils_get_ui_manager
+parameter_list|(
+name|Gimp
+modifier|*
+name|gimp
 parameter_list|)
 function_decl|;
 end_function_decl
