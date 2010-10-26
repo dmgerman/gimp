@@ -268,7 +268,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon275fe7000108
+DECL|struct|__anon2945271c0108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -1184,18 +1184,6 @@ operator|-
 literal|1.0
 decl_stmt|;
 name|gdouble
-name|end_canvas_x
-init|=
-operator|-
-literal|1.0
-decl_stmt|;
-name|gdouble
-name|end_canvas_y
-init|=
-operator|-
-literal|1.0
-decl_stmt|;
-name|gdouble
 name|middle_canvas_x
 init|=
 operator|-
@@ -1203,6 +1191,18 @@ literal|1.0
 decl_stmt|;
 name|gdouble
 name|middle_canvas_y
+init|=
+operator|-
+literal|1.0
+decl_stmt|;
+name|gdouble
+name|end_canvas_x
+init|=
+operator|-
+literal|1.0
+decl_stmt|;
+name|gdouble
+name|end_canvas_y
 init|=
 operator|-
 literal|1.0
@@ -1402,7 +1402,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * crop_tool_can_crop:  * @fixture:  * @data:  *  * Make sure it's possible to crop at all. Regression test for bug  * 315255.  **/
+comment|/**  * crop_tool_can_crop:  * @fixture:  * @data:  *  * Make sure it's possible to crop at all. Regression test for  * "Bug 315255 - SIGSEGV, while doing a crop".  **/
 end_comment
 
 begin_function
