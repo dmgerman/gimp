@@ -349,6 +349,21 @@ parameter_list|)
 function_decl|;
 end_function_decl
 
+begin_function_decl
+specifier|const
+name|gchar
+modifier|*
+name|gimp_enum_get_value_name
+parameter_list|(
+name|GType
+name|enum_type
+parameter_list|,
+name|gint
+name|value
+parameter_list|)
+function_decl|;
+end_function_decl
+
 begin_comment
 comment|/* Common values for the n_snap_lines parameter of  * gimp_constrain_line.  */
 end_comment
