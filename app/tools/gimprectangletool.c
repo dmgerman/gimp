@@ -60,6 +60,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"core/gimp-utils.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"core/gimp.h"
 end_include
 
@@ -162,12 +168,18 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimp-intl.h"
 end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c1bc2f20103
+DECL|enum|__anon2aa3149b0103
 block|{
 DECL|enumerator|RECTANGLE_CHANGE_COMPLETE
 name|RECTANGLE_CHANGE_COMPLETE
@@ -241,7 +253,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1bc2f20203
+DECL|enum|__anon2aa3149b0203
 block|{
 DECL|enumerator|CLAMPED_NONE
 name|CLAMPED_NONE
@@ -284,7 +296,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c1bc2f20303
+DECL|enum|__anon2aa3149b0303
 block|{
 DECL|enumerator|SIDE_TO_RESIZE_NONE
 name|SIDE_TO_RESIZE_NONE
@@ -2854,6 +2866,20 @@ argument_list|(
 name|tool
 argument_list|)
 decl_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|RECTANGLE_TOOL
+argument_list|,
+literal|"action = %s"
+argument_list|,
+name|gimp_enum_get_value_name
+argument_list|(
+name|GIMP_TYPE_TOOL_ACTION
+argument_list|,
+name|action
+argument_list|)
+argument_list|)
+expr_stmt|;
 switch|switch
 condition|(
 name|action
@@ -3008,6 +3034,21 @@ argument_list|(
 name|tool
 operator|->
 name|control
+argument_list|)
+expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|RECTANGLE_TOOL
+argument_list|,
+literal|"coords->x = %f, coords->y = %f"
+argument_list|,
+name|coords
+operator|->
+name|x
+argument_list|,
+name|coords
+operator|->
+name|y
 argument_list|)
 expr_stmt|;
 if|if
@@ -3419,6 +3460,21 @@ operator|->
 name|control
 argument_list|)
 expr_stmt|;
+name|GIMP_LOG
+argument_list|(
+name|RECTANGLE_TOOL
+argument_list|,
+literal|"coords->x = %f, coords->y = %f"
+argument_list|,
+name|coords
+operator|->
+name|x
+argument_list|,
+name|coords
+operator|->
+name|y
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|private
@@ -3722,6 +3778,21 @@ operator|==
 name|GIMP_RECTANGLE_TOOL_DEAD
 condition|)
 return|return;
+name|GIMP_LOG
+argument_list|(
+name|RECTANGLE_TOOL
+argument_list|,
+literal|"coords->x = %f, coords->y = %f"
+argument_list|,
+name|coords
+operator|->
+name|x
+argument_list|,
+name|coords
+operator|->
+name|y
+argument_list|)
+expr_stmt|;
 comment|/* Handle snapping. */
 name|gimp_tool_control_get_snap_offsets
 argument_list|(
