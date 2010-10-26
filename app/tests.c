@@ -78,6 +78,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimp-log.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"tests.h"
 end_include
 
@@ -125,7 +131,12 @@ block|{
 name|Gimp
 modifier|*
 name|gimp
-init|=
+decl_stmt|;
+name|gimp_log_init
+argument_list|()
+expr_stmt|;
+name|gimp
+operator|=
 name|gimp_new
 argument_list|(
 literal|"Unit Tested GIMP"
@@ -148,7 +159,7 @@ name|TRUE
 argument_list|,
 name|FALSE
 argument_list|)
-decl_stmt|;
+expr_stmt|;
 name|units_init
 argument_list|(
 name|gimp
@@ -234,6 +245,9 @@ name|NULL
 argument_list|)
 expr_stmt|;
 name|g_type_init
+argument_list|()
+expr_stmt|;
+name|gimp_log_init
 argument_list|()
 expr_stmt|;
 comment|/* Introduce an error margin for positions written to sessionrc */
