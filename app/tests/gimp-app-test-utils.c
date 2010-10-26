@@ -295,5 +295,69 @@ return|;
 block|}
 end_function
 
+begin_comment
+comment|/**  * gimp_test_utils_synthesize_key_event:  * @widget: Widget to target.  * @keyval: Keyval, e.g. GDK_Return  *  * Simulates a keypress and release with gdk_test_simulate_key().  **/
+end_comment
+
+begin_function
+name|void
+DECL|function|gimp_test_utils_synthesize_key_event (GtkWidget * widget,guint keyval)
+name|gimp_test_utils_synthesize_key_event
+parameter_list|(
+name|GtkWidget
+modifier|*
+name|widget
+parameter_list|,
+name|guint
+name|keyval
+parameter_list|)
+block|{
+name|gdk_test_simulate_key
+argument_list|(
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+comment|/*x, y*/
+name|keyval
+argument_list|,
+literal|0
+comment|/*modifiers*/
+argument_list|,
+name|GDK_KEY_PRESS
+argument_list|)
+expr_stmt|;
+name|gdk_test_simulate_key
+argument_list|(
+name|gtk_widget_get_window
+argument_list|(
+name|widget
+argument_list|)
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+operator|-
+literal|1
+argument_list|,
+comment|/*x, y*/
+name|keyval
+argument_list|,
+literal|0
+comment|/*modifiers*/
+argument_list|,
+name|GDK_KEY_RELEASE
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
 end_unit
 
