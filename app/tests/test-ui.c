@@ -280,7 +280,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28f74f450108
+DECL|struct|__anon2ae0e0420108
 block|{
 DECL|member|avoid_sizeof_zero
 name|int
@@ -291,19 +291,6 @@ block|}
 name|GimpTestFixture
 typedef|;
 end_typedef
-
-begin_function_decl
-specifier|static
-name|GimpUIManager
-modifier|*
-name|gimp_test_utils_get_ui_manager
-parameter_list|(
-name|Gimp
-modifier|*
-name|gimp
-parameter_list|)
-function_decl|;
-end_function_decl
 
 begin_function_decl
 specifier|static
