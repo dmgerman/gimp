@@ -86,7 +86,7 @@ name|GSList
 modifier|*
 name|list
 decl_stmt|;
-name|GtkObject
+name|GObject
 modifier|*
 name|widget
 decl_stmt|;
@@ -112,7 +112,7 @@ control|)
 block|{
 name|widget
 operator|=
-name|GTK_OBJECT
+name|G_OBJECT
 argument_list|(
 name|list
 operator|->
@@ -244,7 +244,7 @@ name|GtkWidget
 modifier|*
 name|check
 decl_stmt|;
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|adj
 decl_stmt|;
