@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -80,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon29e2821c0108
+DECL|struct|__anon2c7f8d3c0108
 block|{
 DECL|member|image
 name|GimpImage

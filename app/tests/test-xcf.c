@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -595,7 +601,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon292559100108
+DECL|struct|__anon29013b770108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
