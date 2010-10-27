@@ -200,9 +200,10 @@ literal|"Columns: %d\n#\n"
 argument_list|,
 name|CLAMP
 argument_list|(
+name|gimp_palette_get_columns
+argument_list|(
 name|palette
-operator|->
-name|n_columns
+argument_list|)
 argument_list|,
 literal|0
 argument_list|,
@@ -214,9 +215,10 @@ for|for
 control|(
 name|list
 operator|=
+name|gimp_palette_get_colors
+argument_list|(
 name|palette
-operator|->
-name|colors
+argument_list|)
 init|;
 name|list
 condition|;

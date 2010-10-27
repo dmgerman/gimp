@@ -830,9 +830,10 @@ argument_list|)
 expr_stmt|;
 if|if
 condition|(
+name|gimp_palette_get_n_colors
+argument_list|(
 name|palette
-operator|->
-name|n_colors
+argument_list|)
 operator|>=
 name|n_colors
 condition|)

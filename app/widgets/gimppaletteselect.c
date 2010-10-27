@@ -422,9 +422,10 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
+name|gimp_palette_get_n_colors
+argument_list|(
 name|palette
-operator|->
-name|n_colors
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,

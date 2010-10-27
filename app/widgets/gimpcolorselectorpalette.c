@@ -247,9 +247,10 @@ if|if
 condition|(
 name|palette
 operator|&&
+name|gimp_palette_get_n_colors
+argument_list|(
 name|palette
-operator|->
-name|n_colors
+argument_list|)
 operator|>
 literal|0
 condition|)

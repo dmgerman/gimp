@@ -401,7 +401,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|enum|__anon2ba7cedf0103
+DECL|enum|__anon2b3c8b400103
 DECL|enumerator|AXIS_UNDEF
 DECL|enumerator|AXIS_RED
 DECL|enumerator|AXIS_BLUE
@@ -1442,7 +1442,7 @@ end_struct
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7cedf0208
+DECL|struct|__anon2b3c8b400208
 block|{
 comment|/*  The bounds of the box (inclusive); expressed as histogram indexes  */
 DECL|member|Rmin
@@ -1685,7 +1685,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2ba7cedf0308
+DECL|struct|__anon2b3c8b400308
 block|{
 DECL|member|used_count
 name|signed
@@ -2901,9 +2901,10 @@ name|custom_palette
 operator|==
 name|NULL
 operator|||
+name|gimp_palette_get_n_colors
+argument_list|(
 name|custom_palette
-operator|->
-name|n_colors
+argument_list|)
 operator|<=
 literal|256
 argument_list|,
@@ -2921,11 +2922,12 @@ name|GIMP_MONO_PALETTE
 expr_stmt|;
 if|if
 condition|(
+name|gimp_palette_get_n_colors
+argument_list|(
 name|custom_palette
-operator|->
-name|n_colors
-operator|<
-literal|1
+argument_list|)
+operator|==
+literal|0
 condition|)
 block|{
 name|g_set_error_literal
@@ -10475,17 +10477,6 @@ name|GList
 modifier|*
 name|list
 decl_stmt|;
-name|GimpPaletteEntry
-modifier|*
-name|entry
-decl_stmt|;
-name|guchar
-name|r
-decl_stmt|,
-name|g
-decl_stmt|,
-name|b
-decl_stmt|;
 comment|/* fprintf(stderr,              "custompal_pass1: using (theCustomPalette %s) from (file %s)\n",              theCustomPalette->name, theCustomPalette->filename); */
 for|for
 control|(
@@ -10495,9 +10486,10 @@ literal|0
 operator|,
 name|list
 operator|=
+name|gimp_palette_get_colors
+argument_list|(
 name|theCustomPalette
-operator|->
-name|colors
+argument_list|)
 init|;
 name|list
 condition|;
@@ -10512,12 +10504,21 @@ name|list
 argument_list|)
 control|)
 block|{
+name|GimpPaletteEntry
+modifier|*
 name|entry
-operator|=
+init|=
 name|list
 operator|->
 name|data
-expr_stmt|;
+decl_stmt|;
+name|guchar
+name|r
+decl_stmt|,
+name|g
+decl_stmt|,
+name|b
+decl_stmt|;
 name|gimp_rgb_get_uchar
 argument_list|(
 operator|&
