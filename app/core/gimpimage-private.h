@@ -128,6 +128,12 @@ name|gint
 name|n_colors
 decl_stmt|;
 comment|/*  # of colors (for indexed)    */
+DECL|member|palette
+name|GimpPalette
+modifier|*
+name|palette
+decl_stmt|;
+comment|/*  palette of colormap          */
 DECL|member|dirty
 name|gint
 name|dirty
