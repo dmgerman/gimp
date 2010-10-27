@@ -257,6 +257,14 @@ DECL|member|brush_view_size
 name|GimpViewSize
 name|brush_view_size
 decl_stmt|;
+DECL|member|dynamics_view_type
+name|GimpViewType
+name|dynamics_view_type
+decl_stmt|;
+DECL|member|dynamics_view_size
+name|GimpViewSize
+name|dynamics_view_size
+decl_stmt|;
 DECL|member|pattern_view_type
 name|GimpViewType
 name|pattern_view_type
