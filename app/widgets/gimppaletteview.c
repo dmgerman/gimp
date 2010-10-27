@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29a22cf80103
+DECL|enum|__anon2c4243250103
 block|{
 DECL|enumerator|ENTRY_CLICKED
 name|ENTRY_CLICKED
@@ -934,7 +934,7 @@ operator|==
 literal|2
 condition|)
 return|return
-name|FALSE
+name|TRUE
 return|;
 if|if
 condition|(
@@ -1068,7 +1068,7 @@ default|default:
 break|break;
 block|}
 return|return
-name|FALSE
+name|TRUE
 return|;
 block|}
 end_function
