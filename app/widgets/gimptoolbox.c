@@ -162,12 +162,6 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gtkhwrapbox.h"
-end_include
-
-begin_include
-include|#
-directive|include
 file|"about.h"
 end_include
 
@@ -179,7 +173,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b8e93dd0103
+DECL|enum|__anon2c4d16a20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
