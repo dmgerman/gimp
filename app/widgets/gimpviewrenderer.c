@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29749b490103
+DECL|enum|__anon2b1cb8570103
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -1210,6 +1210,35 @@ block|}
 end_function
 
 begin_function
+specifier|static
+name|void
+DECL|function|gimp_view_renderer_weak_notify (GimpViewRenderer * renderer,GimpViewable * viewable)
+name|gimp_view_renderer_weak_notify
+parameter_list|(
+name|GimpViewRenderer
+modifier|*
+name|renderer
+parameter_list|,
+name|GimpViewable
+modifier|*
+name|viewable
+parameter_list|)
+block|{
+name|renderer
+operator|->
+name|viewable
+operator|=
+name|NULL
+expr_stmt|;
+name|gimp_view_renderer_update_idle
+argument_list|(
+name|renderer
+argument_list|)
+expr_stmt|;
+block|}
+end_function
+
+begin_function
 name|void
 DECL|function|gimp_view_renderer_set_viewable (GimpViewRenderer * renderer,GimpViewable * viewable)
 name|gimp_view_renderer_set_viewable
@@ -1320,7 +1349,7 @@ operator|->
 name|viewable
 condition|)
 block|{
-name|g_object_remove_weak_pointer
+name|g_object_weak_unref
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1330,12 +1359,11 @@ name|viewable
 argument_list|)
 argument_list|,
 operator|(
-name|gpointer
+name|GWeakNotify
 operator|)
-operator|&
+name|gimp_view_renderer_weak_notify
+argument_list|,
 name|renderer
-operator|->
-name|viewable
 argument_list|)
 expr_stmt|;
 name|g_signal_handlers_disconnect_by_func
@@ -1380,7 +1408,7 @@ operator|->
 name|viewable
 condition|)
 block|{
-name|g_object_add_weak_pointer
+name|g_object_weak_ref
 argument_list|(
 name|G_OBJECT
 argument_list|(
@@ -1390,12 +1418,11 @@ name|viewable
 argument_list|)
 argument_list|,
 operator|(
-name|gpointer
+name|GWeakNotify
 operator|)
-operator|&
+name|gimp_view_renderer_weak_notify
+argument_list|,
 name|renderer
-operator|->
-name|viewable
 argument_list|)
 expr_stmt|;
 name|g_signal_connect_swapped
