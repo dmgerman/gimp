@@ -2702,14 +2702,7 @@ name|rect
 operator|.
 name|height
 operator|=
-name|PANGO_SCALE
-operator|*
-name|gdk_pixbuf_get_height
-argument_list|(
-name|statusbar
-operator|->
-name|icon
-argument_list|)
+literal|0
 expr_stmt|;
 name|attrs
 operator|=
