@@ -88,11 +88,11 @@ file|"gimp-intl.h"
 end_include
 
 begin_define
-DECL|macro|DEFAULT_BRUSH_SCALE
+DECL|macro|DEFAULT_BRUSH_SIZE
 define|#
 directive|define
-name|DEFAULT_BRUSH_SCALE
-value|1.0
+name|DEFAULT_BRUSH_SIZE
+value|20.0
 end_define
 
 begin_define
@@ -241,7 +241,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon28dc7e970103
+DECL|enum|__anon28ef682c0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -249,8 +249,8 @@ block|,
 DECL|enumerator|PROP_PAINT_INFO
 name|PROP_PAINT_INFO
 block|,
-DECL|enumerator|PROP_BRUSH_SCALE
-name|PROP_BRUSH_SCALE
+DECL|enumerator|PROP_BRUSH_SIZE
+name|PROP_BRUSH_SIZE
 block|,
 DECL|enumerator|PROP_BRUSH_ASPECT_RATIO
 name|PROP_BRUSH_ASPECT_RATIO
@@ -500,20 +500,20 @@ name|GIMP_CONFIG_INSTALL_PROP_DOUBLE
 argument_list|(
 name|object_class
 argument_list|,
-name|PROP_BRUSH_SCALE
+name|PROP_BRUSH_SIZE
 argument_list|,
-literal|"brush-scale"
+literal|"brush-size"
 argument_list|,
 name|_
 argument_list|(
-literal|"Brush Scale"
+literal|"Brush Size"
 argument_list|)
 argument_list|,
-literal|0.01
+literal|1.0
 argument_list|,
-literal|10.0
+literal|10000.0
 argument_list|,
-name|DEFAULT_BRUSH_SCALE
+name|DEFAULT_BRUSH_SIZE
 argument_list|,
 name|GIMP_PARAM_STATIC_STRINGS
 argument_list|)
@@ -1127,11 +1127,11 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_BRUSH_SCALE
+name|PROP_BRUSH_SIZE
 case|:
 name|options
 operator|->
-name|brush_scale
+name|brush_size
 operator|=
 name|g_value_get_double
 argument_list|(
@@ -1507,7 +1507,7 @@ argument_list|)
 expr_stmt|;
 break|break;
 case|case
-name|PROP_BRUSH_SCALE
+name|PROP_BRUSH_SIZE
 case|:
 name|g_value_set_double
 argument_list|(
@@ -1515,7 +1515,7 @@ name|value
 argument_list|,
 name|options
 operator|->
-name|brush_scale
+name|brush_size
 argument_list|)
 expr_stmt|;
 break|break;

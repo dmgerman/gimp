@@ -210,9 +210,9 @@ name|GimpPaintInfo
 modifier|*
 name|paint_info
 decl_stmt|;
-DECL|member|brush_scale
+DECL|member|brush_size
 name|gdouble
-name|brush_scale
+name|brush_size
 decl_stmt|;
 DECL|member|brush_angle
 name|gdouble
