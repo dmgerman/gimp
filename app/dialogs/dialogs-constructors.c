@@ -2598,15 +2598,15 @@ block|}
 end_function
 
 begin_comment
-comment|/*********************/
+comment|/*************/
 end_comment
 
 begin_comment
-comment|/*****  editors  *****/
+comment|/*  editors  */
 end_comment
 
 begin_comment
-comment|/*********************/
+comment|/*************/
 end_comment
 
 begin_function
