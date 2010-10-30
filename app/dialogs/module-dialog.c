@@ -79,7 +79,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956bad20103
+DECL|enum|__anon27b3807d0103
 block|{
 DECL|enumerator|COLUMN_NAME
 name|COLUMN_NAME
@@ -98,7 +98,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2956bad20203
+DECL|enum|__anon27b3807d0203
 block|{
 DECL|enumerator|INFO_AUTHOR
 name|INFO_AUTHOR
@@ -124,7 +124,7 @@ end_enum
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2956bad20308
+DECL|struct|__anon27b3807d0308
 block|{
 DECL|member|gimp
 name|Gimp
@@ -366,7 +366,7 @@ name|vbox
 decl_stmt|;
 name|GtkWidget
 modifier|*
-name|listbox
+name|sw
 decl_stmt|;
 name|GtkWidget
 modifier|*
@@ -496,9 +496,9 @@ argument_list|,
 literal|12
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -510,6 +510,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -561,7 +567,7 @@ operator|->
 name|hint
 argument_list|)
 expr_stmt|;
-name|listbox
+name|sw
 operator|=
 name|gtk_scrolled_window_new
 argument_list|(
@@ -574,7 +580,7 @@ name|gtk_scrolled_window_set_shadow_type
 argument_list|(
 name|GTK_SCROLLED_WINDOW
 argument_list|(
-name|listbox
+name|sw
 argument_list|)
 argument_list|,
 name|GTK_SHADOW_IN
@@ -584,7 +590,7 @@ name|gtk_scrolled_window_set_policy
 argument_list|(
 name|GTK_SCROLLED_WINDOW
 argument_list|(
-name|listbox
+name|sw
 argument_list|)
 argument_list|,
 name|GTK_POLICY_AUTOMATIC
@@ -599,7 +605,7 @@ argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
-name|listbox
+name|sw
 argument_list|,
 name|TRUE
 argument_list|,
@@ -610,7 +616,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_set_size_request
 argument_list|(
-name|listbox
+name|sw
 argument_list|,
 literal|124
 argument_list|,
@@ -619,7 +625,7 @@ argument_list|)
 expr_stmt|;
 name|gtk_widget_show
 argument_list|(
-name|listbox
+name|sw
 argument_list|)
 expr_stmt|;
 name|dialog
@@ -761,7 +767,7 @@ name|gtk_container_add
 argument_list|(
 name|GTK_CONTAINER
 argument_list|(
-name|listbox
+name|sw
 argument_list|)
 argument_list|,
 name|view
