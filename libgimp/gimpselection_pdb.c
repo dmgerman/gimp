@@ -1128,7 +1128,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_layer_alpha:  * @layer_ID: Layer with alpha.  *  * Deprecated: Use gimp_image_select_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1195,7 +1195,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_load:  * @channel_ID: The channel.  *  * Deprecated: Use gimp_image_select_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function
@@ -1341,7 +1341,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Deprecated: Use gimp_item_to_selection() instead.  *  * Returns: TRUE on success.  **/
+comment|/**  * gimp_selection_combine:  * @channel_ID: The channel.  * @operation: The selection operation.  *  * Deprecated: Use gimp_image_select_item() instead.  *  * Returns: TRUE on success.  **/
 end_comment
 
 begin_function

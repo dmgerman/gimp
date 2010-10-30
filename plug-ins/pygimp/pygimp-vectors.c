@@ -43,7 +43,7 @@ function_decl|;
 end_function_decl
 
 begin_typedef
-DECL|struct|__anon2b9b1f8a0108
+DECL|struct|__anon27a633ec0108
 typedef|typedef
 struct|struct
 block|{
@@ -3183,8 +3183,15 @@ argument_list|,
 name|feather_radius_y
 argument_list|)
 expr_stmt|;
-name|gimp_item_to_selection
+name|gimp_image_select_item
 argument_list|(
+name|gimp_item_get_image
+argument_list|(
+name|self
+operator|->
+name|ID
+argument_list|)
+argument_list|,
 name|self
 operator|->
 name|ID
