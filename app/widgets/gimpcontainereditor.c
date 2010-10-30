@@ -295,14 +295,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpContainerEditor,gimp_container_editor,GTK_TYPE_VBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_container_editor_docked_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpContainerEditor,gimp_container_editor,GTK_TYPE_BOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_container_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpContainerEditor
 argument_list|,
 argument|gimp_container_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_container_editor_docked_iface_init)
 argument_list|)
@@ -400,15 +400,25 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_container_editor_init (GimpContainerEditor * view)
+DECL|function|gimp_container_editor_init (GimpContainerEditor * editor)
 name|gimp_container_editor_init
 parameter_list|(
 name|GimpContainerEditor
 modifier|*
-name|view
+name|editor
 parameter_list|)
 block|{
-name|view
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
+name|editor
 operator|->
 name|view
 operator|=
@@ -648,9 +658,9 @@ argument_list|,
 name|editor
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|editor
 argument_list|)
@@ -661,6 +671,12 @@ name|editor
 operator|->
 name|view
 argument_list|)
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -107,7 +107,7 @@ struct|struct
 name|_GimpDockColumns
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|p
@@ -125,7 +125,7 @@ struct|struct
 name|_GimpDockColumnsClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|dock_added

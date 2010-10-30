@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950e23f0103
+DECL|enum|__anon2b1a3dc40103
 block|{
 DECL|enumerator|FILE_DIALOG_SETUP
 name|FILE_DIALOG_SETUP
@@ -120,7 +120,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2950e23f0203
+DECL|enum|__anon2b1a3dc40203
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -510,7 +510,7 @@ argument|GimpSettingsBox
 argument_list|,
 argument|gimp_settings_box
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -810,6 +810,16 @@ modifier|*
 name|box
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX
@@ -2684,14 +2694,20 @@ name|editor_dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|content_area
 argument_list|)
 argument_list|,
 name|editor
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

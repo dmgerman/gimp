@@ -94,7 +94,7 @@ struct|struct
 name|_GimpEditor
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|menu_factory
@@ -145,7 +145,7 @@ struct|struct
 name|_GimpEditorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 block|}

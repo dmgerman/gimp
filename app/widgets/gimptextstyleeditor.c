@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27e8b75e0103
+DECL|enum|__anon2c6cceb20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -482,14 +482,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTextStyleEditor,gimp_text_style_editor,GTK_TYPE_VBOX)
+DECL|function|G_DEFINE_TYPE (GimpTextStyleEditor,gimp_text_style_editor,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpTextStyleEditor
 argument_list|,
 argument|gimp_text_style_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -689,6 +689,16 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 comment|/*  upper row  */
 name|editor
 operator|->

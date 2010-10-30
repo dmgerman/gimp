@@ -94,7 +94,7 @@ struct|struct
 name|_GimpSettingsBox
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|combo
@@ -182,7 +182,7 @@ struct|struct
 name|_GimpSettingsBoxClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|file_dialog_setup

@@ -73,7 +73,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b2f68ff0103
+DECL|enum|__anon27ef51150103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -273,14 +273,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpSizeBox,gimp_size_box,GTK_TYPE_VBOX)
+DECL|function|G_DEFINE_TYPE (GimpSizeBox,gimp_size_box,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpSizeBox
 argument_list|,
 argument|gimp_size_box
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -557,6 +557,16 @@ modifier|*
 name|box
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX

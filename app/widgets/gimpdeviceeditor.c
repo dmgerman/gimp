@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon296b0d6e0103
+DECL|enum|__anon279330260103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -358,14 +358,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpDeviceEditor,gimp_device_editor,GTK_TYPE_HBOX)
+DECL|function|G_DEFINE_TYPE (GimpDeviceEditor,gimp_device_editor,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpDeviceEditor
 argument_list|,
 argument|gimp_device_editor
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -493,6 +493,16 @@ decl_stmt|;
 name|gint
 name|icon_height
 decl_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX

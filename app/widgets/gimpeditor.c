@@ -103,7 +103,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c91ec4a0103
+DECL|enum|__anon2be63f9d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -314,14 +314,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpEditor,gimp_editor,GTK_TYPE_VBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_editor_docked_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpEditor,gimp_editor,GTK_TYPE_BOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,gimp_editor_docked_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpEditor
 argument_list|,
 argument|gimp_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_DOCKED,                                                 gimp_editor_docked_iface_init)
 argument_list|)
@@ -619,6 +619,16 @@ modifier|*
 name|editor
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|editor
 operator|->
 name|menu_factory
@@ -2137,7 +2147,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c91ec4a0208
+DECL|struct|__anon2be63f9d0208
 block|{
 DECL|member|mod_mask
 name|GdkModifierType

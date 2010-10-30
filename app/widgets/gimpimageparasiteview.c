@@ -71,7 +71,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8ff4940103
+DECL|enum|__anon2c72b1030103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -87,7 +87,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c8ff4940203
+DECL|enum|__anon2c72b1030203
 block|{
 DECL|enumerator|UPDATE
 name|UPDATE
@@ -212,7 +212,7 @@ argument|GimpImageParasiteView
 argument_list|,
 argument|gimp_image_parasite_view
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -380,6 +380,16 @@ modifier|*
 name|view
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|view
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|view
 operator|->
 name|parasite

@@ -107,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a28aad50103
+DECL|enum|__anon275fa5e60103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -126,7 +126,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a28aad50203
+DECL|enum|__anon275fa5e60203
 block|{
 DECL|enumerator|DOCK_ADDED
 name|DOCK_ADDED
@@ -310,7 +310,7 @@ argument|GimpDockColumns
 argument_list|,
 argument|gimp_dock_columns
 argument_list|,
-argument|GTK_TYPE_HBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -548,6 +548,16 @@ modifier|*
 name|dock_columns
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|dock_columns
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_HORIZONTAL
+argument_list|)
+expr_stmt|;
 name|dock_columns
 operator|->
 name|p
@@ -592,9 +602,9 @@ argument_list|,
 name|dock_columns
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|dock_columns
 argument_list|)
@@ -604,6 +614,12 @@ operator|->
 name|p
 operator|->
 name|paned_hbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
