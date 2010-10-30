@@ -144,7 +144,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c41177d0103
+DECL|enum|__anon2b7f34640103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -489,9 +489,9 @@ argument_list|,
 literal|6
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|status
 argument_list|)
@@ -499,6 +499,12 @@ argument_list|,
 name|status
 operator|->
 name|vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon28eab4f20103
+DECL|enum|__anon280342ac0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -745,9 +745,9 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|editor
 argument_list|)
@@ -757,6 +757,12 @@ operator|->
 name|p
 operator|->
 name|scrolled_window
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
