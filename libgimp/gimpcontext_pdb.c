@@ -1955,7 +1955,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. This settings affects  * the following procedures: gimp-item-to-selection.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_antialias:  * @antialias: The antialias setting.  *  * Set the antialias setting.  *  * This procedure modifies the antialias setting. If antialiasing is  * turned on, the edges of selected region will contain intermediate  * values which give the appearance of a sharper, less pixelized edge.  * This should be set as TRUE most of the time unless a binary-only  * selection is wanted. This settings affects the following procedures:  * The entire gimp-image-select-foo group of procedures.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2095,7 +2095,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. This settings affects  * the following procedures: gimp-item-to-selection.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather:  * @feather: The feather setting.  *  * Set the feather setting.  *  * This procedure modifies the feather setting. If the feather option  * is enabled, selections will be blurred before combining. The blur is  * a gaussian blur; its radii can be controlled using  * gimp_context_set_feather_radius(). This settings affects the  * following procedures: The entire gimp-image-select-foo group of  * procedures.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
@@ -2270,7 +2270,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting. This settings  * affects the following procedures: gimp-item-to-selection.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
+comment|/**  * gimp_context_set_feather_radius:  * @feather_radius_x: The horizontal feather radius.  * @feather_radius_y: The vertical feather radius.  *  * Set the feather radius setting.  *  * This procedure modifies the feather radius setting. This settings  * affects the following procedures: The entire gimp-image-select-foo  * group of procedures.  *  * Returns: TRUE on success.  *  * Since: GIMP 2.8  **/
 end_comment
 
 begin_function
