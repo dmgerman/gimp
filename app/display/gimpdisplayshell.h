@@ -210,7 +210,7 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
@@ -761,7 +761,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled

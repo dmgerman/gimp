@@ -317,7 +317,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795f0a20103
+DECL|enum|__anon298fe7ed0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -345,7 +345,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2795f0a20203
+DECL|enum|__anon298fe7ed0203
 block|{
 DECL|enumerator|SCALED
 name|SCALED
@@ -682,7 +682,7 @@ argument|GimpDisplayShell
 argument_list|,
 argument|gimp_display_shell
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_display_shell_progress_iface_init)                          G_IMPLEMENT_INTERFACE (GIMP_TYPE_COLOR_MANAGED,                                                 gimp_color_managed_iface_init)
 argument_list|)
@@ -1093,6 +1093,16 @@ modifier|*
 name|shell
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|shell
 operator|->
 name|options
