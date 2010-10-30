@@ -424,7 +424,7 @@ name|tool
 operator|->
 name|control
 argument_list|,
-literal|"tools/tools-paint-brush-scale-set"
+literal|"tools/tools-paint-brush-size-set"
 argument_list|)
 expr_stmt|;
 name|gimp_tool_control_set_action_value_3
@@ -653,7 +653,7 @@ argument_list|(
 name|tool
 argument_list|)
 argument_list|,
-literal|"notify::brush-scale"
+literal|"notify::brush-size"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
