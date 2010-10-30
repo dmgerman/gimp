@@ -145,7 +145,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon29361d190103
+DECL|enum|__anon2c077f690103
 block|{
 DECL|enumerator|SET_BRUSH
 name|SET_BRUSH
@@ -7491,10 +7491,6 @@ argument_list|(
 name|paint_core
 argument_list|)
 decl_stmt|;
-name|GimpImage
-modifier|*
-name|image
-decl_stmt|;
 name|gdouble
 name|fade_point
 init|=
@@ -7506,7 +7502,6 @@ name|core
 operator|->
 name|main_brush
 condition|)
-block|{
 name|core
 operator|->
 name|scale
@@ -7534,7 +7529,6 @@ operator|->
 name|height
 argument_list|)
 expr_stmt|;
-block|}
 else|else
 name|core
 operator|->
@@ -7585,8 +7579,10 @@ condition|(
 name|drawable
 condition|)
 block|{
+name|GimpImage
+modifier|*
 name|image
-operator|=
+init|=
 name|gimp_item_get_image
 argument_list|(
 name|GIMP_ITEM
@@ -7594,7 +7590,7 @@ argument_list|(
 name|drawable
 argument_list|)
 argument_list|)
-expr_stmt|;
+decl_stmt|;
 name|fade_point
 operator|=
 name|gimp_paint_options_get_fade
