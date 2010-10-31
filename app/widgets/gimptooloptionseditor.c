@@ -131,7 +131,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon280342ac0103
+DECL|enum|__anon28c230530103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -2038,18 +2038,13 @@ argument_list|)
 expr_stmt|;
 name|options_gui
 operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|gimp_tools_get_tool_options_gui
 argument_list|(
 name|editor
 operator|->
 name|p
 operator|->
 name|visible_tool_options
-argument_list|)
-argument_list|,
-literal|"gimp-tool-options-gui"
 argument_list|)
 expr_stmt|;
 if|if
@@ -2110,16 +2105,11 @@ argument_list|)
 expr_stmt|;
 name|options_gui
 operator|=
-name|g_object_get_data
-argument_list|(
-name|G_OBJECT
+name|gimp_tools_get_tool_options_gui
 argument_list|(
 name|tool_info
 operator|->
 name|tool_options
-argument_list|)
-argument_list|,
-literal|"gimp-tool-options-gui"
 argument_list|)
 expr_stmt|;
 if|if
