@@ -222,7 +222,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon293792320103
+DECL|enum|__anon2998244a0103
 block|{
 DECL|enumerator|TRIANGLE
 name|TRIANGLE
@@ -247,7 +247,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293792320203
+DECL|enum|__anon2998244a0203
 block|{
 DECL|enumerator|SOLID
 name|SOLID
@@ -296,7 +296,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293792320303
+DECL|enum|__anon2998244a0303
 block|{
 DECL|enumerator|PERSPECTIVE
 name|PERSPECTIVE
@@ -312,7 +312,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293792320403
+DECL|enum|__anon2998244a0403
 block|{
 DECL|enumerator|FOG
 name|FOG
@@ -322,7 +322,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon293792320503
+DECL|enum|__anon2998244a0503
 block|{
 DECL|enumerator|TYPE
 name|TYPE
@@ -375,7 +375,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320608
+DECL|struct|__anon2998244a0608
 block|{
 DECL|member|xsize
 DECL|member|ysize
@@ -398,7 +398,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320708
+DECL|struct|__anon2998244a0708
 block|{
 DECL|member|numcol
 name|gshort
@@ -427,7 +427,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320808
+DECL|struct|__anon2998244a0808
 block|{
 DECL|member|majtype
 name|gint
@@ -522,7 +522,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320908
+DECL|struct|__anon2998244a0908
 block|{
 DECL|member|type
 name|gshort
@@ -549,7 +549,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320a08
+DECL|struct|__anon2998244a0a08
 block|{
 DECL|member|type
 name|gshort
@@ -590,7 +590,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320b08
+DECL|struct|__anon2998244a0b08
 block|{
 DECL|member|com
 name|common
@@ -615,7 +615,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320c08
+DECL|struct|__anon2998244a0c08
 block|{
 DECL|member|com
 name|common
@@ -641,7 +641,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320d08
+DECL|struct|__anon2998244a0d08
 block|{
 DECL|member|com
 name|common
@@ -664,7 +664,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320e08
+DECL|struct|__anon2998244a0e08
 block|{
 DECL|member|com
 name|common
@@ -689,7 +689,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792320f08
+DECL|struct|__anon2998244a0f08
 block|{
 DECL|member|com
 name|common
@@ -712,7 +712,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792321008
+DECL|struct|__anon2998244a1008
 block|{
 DECL|member|com
 name|common
@@ -735,7 +735,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon293792321108
+DECL|struct|__anon2998244a1108
 block|{
 DECL|member|v1
 DECL|member|v2
@@ -761,7 +761,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 union|union
-DECL|union|__anon29379232120a
+DECL|union|__anon2998244a120a
 block|{
 DECL|member|com
 name|common
@@ -13559,46 +13559,18 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|expose_event (GtkWidget * widget,GdkEventExpose * event)
-name|expose_event
+DECL|function|draw (GtkWidget * widget,cairo_t * cr)
+name|draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
-modifier|*
-name|event
-parameter_list|)
-block|{
 name|cairo_t
 modifier|*
 name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_region
-argument_list|(
-name|cr
-argument_list|,
-name|event
-operator|->
-name|region
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
+parameter_list|)
+block|{
 name|cairo_set_source_surface
 argument_list|(
 name|cr
@@ -13611,11 +13583,6 @@ literal|0.0
 argument_list|)
 expr_stmt|;
 name|cairo_paint
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
-name|cairo_destroy
 argument_list|(
 name|cr
 argument_list|)
@@ -14898,11 +14865,11 @@ name|g_signal_connect
 argument_list|(
 name|drawarea
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|expose_event
+name|draw
 argument_list|)
 argument_list|,
 name|NULL
