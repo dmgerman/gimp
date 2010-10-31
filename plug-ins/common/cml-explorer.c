@@ -218,7 +218,7 @@ end_struct
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd38d60103
+DECL|enum|__anon2c480d550103
 block|{
 DECL|enumerator|CML_KEEP_VALUES
 name|CML_KEEP_VALUES
@@ -347,7 +347,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd38d60203
+DECL|enum|__anon2c480d550203
 block|{
 DECL|enumerator|COMP_NONE
 name|COMP_NONE
@@ -494,7 +494,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd38d60303
+DECL|enum|__anon2c480d550303
 block|{
 DECL|enumerator|STANDARD
 name|STANDARD
@@ -599,7 +599,7 @@ end_decl_stmt
 
 begin_enum
 enum|enum
-DECL|enum|__anon28fd38d60403
+DECL|enum|__anon2c480d550403
 block|{
 DECL|enumerator|CML_INITIAL_RANDOM_INDEPENDENT
 name|CML_INITIAL_RANDOM_INDEPENDENT
@@ -697,7 +697,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd38d60508
+DECL|struct|__anon2c480d550508
 block|{
 DECL|member|function
 name|gint
@@ -770,7 +770,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd38d60608
+DECL|struct|__anon2c480d550608
 block|{
 DECL|member|hue
 name|CML_PARAM
@@ -1592,7 +1592,7 @@ end_decl_stmt
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon28fd38d60708
+DECL|struct|__anon2c480d550708
 block|{
 DECL|member|widget
 name|GtkWidget
@@ -10023,16 +10023,16 @@ end_function
 begin_function
 specifier|static
 name|gboolean
-DECL|function|function_graph_expose (GtkWidget * widget,GdkEventExpose * event,gpointer * data)
-name|function_graph_expose
+DECL|function|function_graph_draw (GtkWidget * widget,cairo_t * cr,gpointer * data)
+name|function_graph_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|widget
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|event
+name|cr
 parameter_list|,
 name|gpointer
 modifier|*
@@ -10079,34 +10079,6 @@ index|[
 literal|1
 index|]
 decl_stmt|;
-name|cairo_t
-modifier|*
-name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|gtk_widget_get_window
-argument_list|(
-name|widget
-argument_list|)
-argument_list|)
-expr_stmt|;
-name|gdk_cairo_region
-argument_list|(
-name|cr
-argument_list|,
-name|event
-operator|->
-name|region
-argument_list|)
-expr_stmt|;
-name|cairo_clip
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 name|cairo_set_line_width
 argument_list|(
 name|cr
@@ -10416,11 +10388,6 @@ argument_list|(
 name|cr
 argument_list|)
 expr_stmt|;
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 return|return
 name|TRUE
 return|;
@@ -10573,11 +10540,11 @@ name|g_signal_connect
 argument_list|(
 name|preview
 argument_list|,
-literal|"expose-event"
+literal|"draw"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|function_graph_expose
+name|function_graph_draw
 argument_list|)
 argument_list|,
 name|data
