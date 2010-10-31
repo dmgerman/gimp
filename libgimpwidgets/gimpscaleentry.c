@@ -820,6 +820,8 @@ name|row
 operator|+
 literal|1
 argument_list|,
+name|GTK_FILL
+operator||
 name|GTK_SHRINK
 argument_list|,
 name|GTK_SHRINK
