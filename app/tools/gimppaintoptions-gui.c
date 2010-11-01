@@ -1186,7 +1186,7 @@ literal|0
 argument_list|,
 literal|1
 argument_list|,
-name|GTK_SHRINK
+name|GTK_EXPAND
 operator||
 name|GTK_FILL
 argument_list|,

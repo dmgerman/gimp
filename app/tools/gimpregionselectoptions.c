@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b15198e0103
+DECL|enum|__anon2bf4bda70103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -771,7 +771,7 @@ literal|"threshold"
 argument_list|,
 name|_
 argument_list|(
-literal|"Thrshold"
+literal|"Threshold"
 argument_list|)
 argument_list|,
 literal|1.0
