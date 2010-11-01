@@ -1603,7 +1603,7 @@ name|set_param_spec
 argument_list|(
 name|G_OBJECT
 argument_list|(
-name|scale
+name|adjustment
 argument_list|)
 argument_list|,
 name|scale
@@ -2190,7 +2190,7 @@ end_comment
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2c1f07580108
+DECL|struct|__anon290e173d0108
 block|{
 DECL|member|config
 name|GObject
