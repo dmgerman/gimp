@@ -16,14 +16,6 @@ directive|define
 name|__GIMP_PAINT_OPTIONS_GUI_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_PAINT_OPTIONS_TABLE_KEY
-define|#
-directive|define
-name|GIMP_PAINT_OPTIONS_TABLE_KEY
-value|"gimp-paint-options-table"
-end_define
-
 begin_function_decl
 name|GtkWidget
 modifier|*
