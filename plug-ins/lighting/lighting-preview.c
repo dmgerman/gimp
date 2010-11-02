@@ -2073,31 +2073,18 @@ end_function
 
 begin_function
 name|gboolean
-DECL|function|preview_expose (GtkWidget * area,GdkEventExpose * eevent)
-name|preview_expose
+DECL|function|preview_draw (GtkWidget * area,cairo_t * cr)
+name|preview_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|area
 parameter_list|,
-name|GdkEventExpose
-modifier|*
-name|eevent
-parameter_list|)
-block|{
 name|cairo_t
 modifier|*
 name|cr
-decl_stmt|;
-name|cr
-operator|=
-name|gdk_cairo_create
-argument_list|(
-name|eevent
-operator|->
-name|window
-argument_list|)
-expr_stmt|;
+parameter_list|)
+block|{
 name|cairo_set_source_surface
 argument_list|(
 name|cr
@@ -2126,11 +2113,6 @@ name|draw_handles
 argument_list|()
 expr_stmt|;
 block|}
-name|cairo_destroy
-argument_list|(
-name|cr
-argument_list|)
-expr_stmt|;
 return|return
 name|FALSE
 return|;

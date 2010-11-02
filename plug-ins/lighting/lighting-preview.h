@@ -88,15 +88,15 @@ end_function_decl
 
 begin_function_decl
 name|gboolean
-name|preview_expose
+name|preview_draw
 parameter_list|(
 name|GtkWidget
 modifier|*
 name|area
 parameter_list|,
-name|GdkEventExpose
+name|cairo_t
 modifier|*
-name|eevent
+name|cr
 parameter_list|)
 function_decl|;
 end_function_decl
