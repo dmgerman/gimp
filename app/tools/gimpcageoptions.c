@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4b7ef00103
+DECL|enum|__anon299244320103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -513,7 +513,7 @@ literal|"fill-plain-color"
 argument_list|,
 name|_
 argument_list|(
-literal|"Fill in background"
+literal|"Fill from first point"
 argument_list|)
 argument_list|)
 expr_stmt|;

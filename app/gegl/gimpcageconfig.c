@@ -208,8 +208,14 @@ function_decl|;
 end_function_decl
 
 begin_comment
-comment|/* FIXME: to debug only */
+comment|/*#define DEBUG_CAGE */
 end_comment
+
+begin_ifdef
+ifdef|#
+directive|ifdef
+name|DEBUG_CAGE
+end_ifdef
 
 begin_function
 specifier|static
@@ -354,6 +360,11 @@ argument_list|)
 expr_stmt|;
 block|}
 end_function
+
+begin_endif
+endif|#
+directive|endif
+end_endif
 
 begin_function
 specifier|static
@@ -561,7 +572,6 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-comment|/* GimpCageConfig *gcc = GIMP_CAGE_CONFIG (object); */
 switch|switch
 condition|(
 name|property_id
@@ -605,7 +615,6 @@ modifier|*
 name|pspec
 parameter_list|)
 block|{
-comment|/* GimpCageConfig *gcc = GIMP_CAGE_CONFIG (object); */
 switch|switch
 condition|(
 name|property_id
@@ -1518,19 +1527,6 @@ argument_list|(
 name|gcc
 argument_list|)
 expr_stmt|;
-name|printf
-argument_list|(
-literal|"reverse the cage !\n"
-argument_list|)
-expr_stmt|;
-block|}
-else|else
-block|{
-name|printf
-argument_list|(
-literal|"Cage OK !\n"
-argument_list|)
-expr_stmt|;
 block|}
 block|}
 end_function
@@ -1669,11 +1665,16 @@ operator|/
 name|length
 expr_stmt|;
 block|}
+ifdef|#
+directive|ifdef
+name|DEBUG_CAGE
 name|print_cage
 argument_list|(
 name|gcc
 argument_list|)
 expr_stmt|;
+endif|#
+directive|endif
 block|}
 end_function
 

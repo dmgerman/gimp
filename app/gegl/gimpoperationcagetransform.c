@@ -905,19 +905,6 @@ index|]
 operator|.
 name|y
 expr_stmt|;
-name|printf
-argument_list|(
-literal|"Color fill picked from (%f, %f)\n"
-argument_list|,
-name|plain_color
-operator|.
-name|x
-argument_list|,
-name|plain_color
-operator|.
-name|y
-argument_list|)
-expr_stmt|;
 while|while
 condition|(
 name|gegl_buffer_iterator_next
