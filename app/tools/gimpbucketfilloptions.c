@@ -101,7 +101,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon289175ee0103
+DECL|enum|__anon2912a7fb0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -848,6 +848,8 @@ name|GIMP_CONTEXT
 argument_list|(
 name|tool_options
 argument_list|)
+argument_list|,
+name|NULL
 argument_list|,
 literal|2
 argument_list|,
