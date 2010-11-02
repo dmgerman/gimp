@@ -2931,7 +2931,7 @@ name|parent
 argument_list|,
 literal|"operation"
 argument_list|,
-literal|"gegl:render_mapping"
+literal|"gegl:map-absolute"
 argument_list|,
 name|NULL
 argument_list|)
