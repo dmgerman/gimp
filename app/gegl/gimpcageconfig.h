@@ -125,6 +125,14 @@ name|gint
 name|cage_vertices_max
 decl_stmt|;
 comment|/* number of vertices allocated in memory */
+DECL|member|offset_x
+name|gint
+name|offset_x
+decl_stmt|;
+DECL|member|offset_y
+name|gint
+name|offset_y
+decl_stmt|;
 DECL|member|cage_vertices
 name|GimpVector2
 modifier|*

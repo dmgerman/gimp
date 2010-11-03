@@ -355,6 +355,19 @@ argument_list|)
 expr_stmt|;
 name|printf
 argument_list|(
+literal|"offsets: (%d, %d)"
+argument_list|,
+name|gcc
+operator|->
+name|offset_x
+argument_list|,
+name|gcc
+operator|->
+name|offset_y
+argument_list|)
+expr_stmt|;
+name|printf
+argument_list|(
 literal|"done\n"
 argument_list|)
 expr_stmt|;
@@ -763,6 +776,10 @@ operator|=
 name|x
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_x
 expr_stmt|;
 name|gcc
 operator|->
@@ -778,6 +795,10 @@ operator|=
 name|y
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_y
 expr_stmt|;
 name|gcc
 operator|->
@@ -793,6 +814,10 @@ operator|=
 name|x
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_x
 expr_stmt|;
 name|gcc
 operator|->
@@ -808,6 +833,10 @@ operator|=
 name|y
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_y
 expr_stmt|;
 name|gcc
 operator|->
@@ -936,6 +965,10 @@ operator|=
 name|x
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_x
 expr_stmt|;
 name|gcc
 operator|->
@@ -949,6 +982,10 @@ operator|=
 name|y
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_y
 expr_stmt|;
 block|}
 else|else
@@ -965,6 +1002,10 @@ operator|=
 name|x
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_x
 expr_stmt|;
 name|gcc
 operator|->
@@ -978,6 +1019,10 @@ operator|=
 name|y
 operator|+
 name|DELTA
+operator|-
+name|gcc
+operator|->
+name|offset_y
 expr_stmt|;
 block|}
 name|gimp_cage_config_compute_scaling_factor
