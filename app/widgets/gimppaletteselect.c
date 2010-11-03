@@ -336,9 +336,9 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|content_area
 argument_list|)
@@ -346,6 +346,12 @@ argument_list|,
 name|dialog
 operator|->
 name|view
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -422,9 +428,10 @@ argument_list|)
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,
+name|gimp_palette_get_n_colors
+argument_list|(
 name|palette
-operator|->
-name|n_colors
+argument_list|)
 argument_list|,
 name|GIMP_TYPE_INT32
 argument_list|,

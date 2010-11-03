@@ -174,6 +174,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpcanvasgroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -3065,6 +3071,8 @@ expr_stmt|;
 name|gimp_rectangle_tool_draw
 argument_list|(
 name|draw_tool
+argument_list|,
+name|NULL
 argument_list|)
 expr_stmt|;
 if|if
@@ -3130,6 +3138,10 @@ name|gimp_text_tool_editor_get_cursor_rect
 argument_list|(
 name|text_tool
 argument_list|,
+name|text_tool
+operator|->
+name|overwrite_mode
+argument_list|,
 operator|&
 name|cursor_rect
 argument_list|)
@@ -3171,7 +3183,7 @@ operator|&&
 name|cursor_rect
 operator|.
 name|width
-operator|>
+operator|!=
 literal|0
 expr_stmt|;
 name|gimp_draw_tool_add_text_cursor
@@ -3219,6 +3231,10 @@ operator|->
 name|buffer
 argument_list|)
 decl_stmt|;
+name|GimpCanvasGroup
+modifier|*
+name|fill_group
+decl_stmt|;
 name|PangoLayout
 modifier|*
 name|layout
@@ -3251,6 +3267,13 @@ decl_stmt|;
 name|gint
 name|i
 decl_stmt|;
+name|fill_group
+operator|=
+name|gimp_draw_tool_add_fill_group
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 name|gtk_text_buffer_get_selection_bounds
 argument_list|(
 name|buffer
@@ -3341,6 +3364,13 @@ operator|=
 name|pango_layout_get_iter
 argument_list|(
 name|layout
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_push_group
+argument_list|(
+name|draw_tool
+argument_list|,
+name|fill_group
 argument_list|)
 expr_stmt|;
 do|do
@@ -3476,6 +3506,11 @@ name|iter
 argument_list|)
 condition|)
 do|;
+name|gimp_draw_tool_pop_group
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 name|pango_layout_iter_free
 argument_list|(
 name|iter
@@ -6696,7 +6731,7 @@ block|}
 end_function
 
 begin_function
-name|void
+name|gboolean
 DECL|function|gimp_text_tool_ensure_layout (GimpTextTool * text_tool)
 name|gimp_text_tool_ensure_layout
 parameter_list|(
@@ -6747,6 +6782,13 @@ name|image
 argument_list|)
 expr_stmt|;
 block|}
+return|return
+name|text_tool
+operator|->
+name|layout
+operator|!=
+name|NULL
+return|;
 block|}
 end_function
 

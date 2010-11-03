@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon286ddab60103
+DECL|enum|__anon298ffb810103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -122,7 +122,7 @@ name|gdouble
 name|height
 decl_stmt|;
 DECL|member|anchor
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 decl_stmt|;
 DECL|member|corner_width
@@ -226,7 +226,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_corner_get_extents
 parameter_list|(
@@ -427,9 +427,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_TYPE_ANCHOR_TYPE
+name|GIMP_TYPE_HANDLE_ANCHOR
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -988,7 +988,7 @@ name|ry
 expr_stmt|;
 name|rx
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 name|rx
 argument_list|)
@@ -997,7 +997,7 @@ literal|0.5
 expr_stmt|;
 name|ry
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 name|ry
 argument_list|)
@@ -1006,7 +1006,7 @@ literal|0.5
 expr_stmt|;
 name|rw
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 name|rw
 argument_list|)
@@ -1015,7 +1015,7 @@ literal|1.0
 expr_stmt|;
 name|rh
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 name|rh
 argument_list|)
@@ -1068,11 +1068,11 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 if|if
 condition|(
@@ -1115,7 +1115,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 if|if
 condition|(
@@ -1162,7 +1162,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 if|if
 condition|(
@@ -1209,7 +1209,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 if|if
 condition|(
@@ -1260,7 +1260,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 if|if
 condition|(
@@ -1306,7 +1306,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 if|if
 condition|(
@@ -1356,7 +1356,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 if|if
 condition|(
@@ -1402,7 +1402,7 @@ expr_stmt|;
 block|}
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 if|if
 condition|(
@@ -1520,8 +1520,6 @@ name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -1530,7 +1528,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_corner_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_corner_get_extents
@@ -1621,8 +1619,12 @@ literal|3.0
 argument_list|)
 expr_stmt|;
 return|return
-name|gdk_region_rectangle
+name|cairo_region_create_rectangle
 argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
 operator|&
 name|rectangle
 argument_list|)
@@ -1633,9 +1635,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_corner_new (gdouble x,gdouble y,gdouble width,gdouble height,GtkAnchorType anchor,gint corner_width,gint corner_height,gboolean outside)
+DECL|function|gimp_canvas_corner_new (GimpDisplayShell * shell,gdouble x,gdouble y,gdouble width,gdouble height,GimpHandleAnchor anchor,gint corner_width,gint corner_height,gboolean outside)
 name|gimp_canvas_corner_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -1648,7 +1654,7 @@ parameter_list|,
 name|gdouble
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint
@@ -1661,10 +1667,24 @@ name|gboolean
 name|outside
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_CORNER
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"x"
 argument_list|,

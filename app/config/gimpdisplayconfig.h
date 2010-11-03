@@ -224,10 +224,6 @@ DECL|member|space_bar_action
 name|GimpSpaceBarAction
 name|space_bar_action
 decl_stmt|;
-DECL|member|xor_color
-name|GimpRGB
-name|xor_color
-decl_stmt|;
 DECL|member|zoom_quality
 name|GimpZoomQuality
 name|zoom_quality

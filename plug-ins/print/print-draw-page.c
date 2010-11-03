@@ -1053,6 +1053,11 @@ argument_list|(
 name|drawable
 argument_list|)
 expr_stmt|;
+name|cairo_surface_mark_dirty
+argument_list|(
+name|surface
+argument_list|)
+expr_stmt|;
 return|return
 name|surface
 return|;

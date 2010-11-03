@@ -29,7 +29,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29db20520103
+DECL|enum|__anon27a7e0e50103
 block|{
 DECL|enumerator|OFFSETS_CHANGED
 name|OFFSETS_CHANGED
@@ -3459,6 +3459,11 @@ block|}
 name|g_free
 argument_list|(
 name|data
+argument_list|)
+expr_stmt|;
+name|cairo_surface_mark_dirty
+argument_list|(
+name|surface
 argument_list|)
 expr_stmt|;
 return|return

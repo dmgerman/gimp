@@ -346,6 +346,7 @@ operator|->
 name|PRI
 condition|)
 block|{
+specifier|const
 name|guint
 name|pixels
 init|=
@@ -378,6 +379,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|processor
@@ -428,6 +430,7 @@ operator|.
 name|curtile
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|g_mutex_unlock
 argument_list|(
@@ -699,6 +702,7 @@ condition|;
 name|i
 operator|++
 control|)
+block|{
 if|if
 condition|(
 name|processor
@@ -735,6 +739,7 @@ operator|.
 name|dirty
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 name|processor
 operator|->

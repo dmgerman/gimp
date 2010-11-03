@@ -12,7 +12,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|<gtk/gtk.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -80,7 +92,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2998d2cb0108
+DECL|struct|__anon2c7f8d3c0108
 block|{
 DECL|member|image
 name|GimpImage
@@ -465,6 +477,9 @@ modifier|*
 name|argv
 parameter_list|)
 block|{
+name|int
+name|result
+decl_stmt|;
 name|g_thread_init
 argument_list|(
 name|NULL
@@ -495,9 +510,7 @@ comment|/* We share the same application instance across all tests */
 name|gimp
 operator|=
 name|gimp_init_for_testing
-argument_list|(
-name|TRUE
-argument_list|)
+argument_list|()
 expr_stmt|;
 comment|/* Add tests */
 name|ADD_IMAGE_TEST
@@ -510,10 +523,22 @@ argument_list|(
 name|remove_layer
 argument_list|)
 expr_stmt|;
-comment|/* Run the tests and return status */
-return|return
+comment|/* Run the tests */
+name|result
+operator|=
 name|g_test_run
 argument_list|()
+expr_stmt|;
+comment|/* Exit so we don't break script-fu plug-in wire */
+name|gimp_exit
+argument_list|(
+name|gimp
+argument_list|,
+name|TRUE
+argument_list|)
+expr_stmt|;
+return|return
+name|result
 return|;
 block|}
 end_function

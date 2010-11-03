@@ -432,7 +432,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2a17af580103
+DECL|enum|__anon2c76b7dc0103
 block|{
 DECL|enumerator|GIMP_DEBUG_PID
 name|GIMP_DEBUG_PID
@@ -4137,7 +4137,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_install_cmap:  *  * Returns whether or not the plug-in should allocate an own colormap  * when running on an 8 bit display. See also: gimp_min_colors().  *  * This is a constant value given at plug-in configuration time.  *  * Return value: the install_cmap boolean  **/
+comment|/**  * gimp_install_cmap:  *  * Returns whether or not the plug-in should allocate an own colormap  * when running on an 8 bit display. See also: gimp_min_colors().  *  * This is a constant value given at plug-in configuration time.  *  * @Deprecated: 2.8  *  * Return value: the install_cmap boolean  **/
 end_comment
 
 begin_function
@@ -4155,7 +4155,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_min_colors:  *  * Returns the minimum number of colors to use when allocating an own  * colormap on 8 bit displays.  *  * This is a constant value given at plug-in configuration time.  *  * See also: gimp_install_cmap()  *  * Return value: the minimum number of colors to allocate  **/
+comment|/**  * gimp_min_colors:  *  * Returns the minimum number of colors to use when allocating an own  * colormap on 8 bit displays.  *  * This is a constant value given at plug-in configuration time.  *  * See also: gimp_install_cmap()  *  * @Deprecated: 2.8  *  * Return value: the minimum number of colors to allocate  **/
 end_comment
 
 begin_function

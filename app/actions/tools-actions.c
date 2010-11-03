@@ -391,20 +391,20 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|tools_paint_brush_scale_actions
+DECL|variable|tools_paint_brush_size_actions
 specifier|static
 specifier|const
 name|GimpEnumActionEntry
-name|tools_paint_brush_scale_actions
+name|tools_paint_brush_size_actions
 index|[]
 init|=
 block|{
 block|{
-literal|"tools-paint-brush-scale-set"
+literal|"tools-paint-brush-size-set"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Set Brush Scale"
+literal|"Set Brush Size"
 block|,
 name|NULL
 block|,
@@ -418,11 +418,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-set-to-default"
+literal|"tools-paint-brush-size-set-to-default"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Set Brush Scale To Default Value"
+literal|"Set Brush Size To Default Value"
 block|,
 name|NULL
 block|,
@@ -436,11 +436,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-minimum"
+literal|"tools-paint-brush-size-minimum"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Minimize Brush Scale"
+literal|"Minimize Brush Size"
 block|,
 name|NULL
 block|,
@@ -454,11 +454,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-maximum"
+literal|"tools-paint-brush-size-maximum"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Maximize Brush Scale"
+literal|"Maximize Brush Size"
 block|,
 name|NULL
 block|,
@@ -472,11 +472,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-decrease"
+literal|"tools-paint-brush-size-decrease"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Decrease Brush Scale"
+literal|"Decrease Brush Size"
 block|,
 name|NULL
 block|,
@@ -490,11 +490,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-increase"
+literal|"tools-paint-brush-size-increase"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Increase Brush Scale"
+literal|"Increase Brush Size"
 block|,
 name|NULL
 block|,
@@ -508,11 +508,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-decrease-skip"
+literal|"tools-paint-brush-size-decrease-skip"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Decrease Brush Scale More"
+literal|"Decrease Brush Size More"
 block|,
 name|NULL
 block|,
@@ -526,11 +526,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-increase-skip"
+literal|"tools-paint-brush-size-increase-skip"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Increase Brush Scale More"
+literal|"Increase Brush Size More"
 block|,
 name|NULL
 block|,
@@ -700,11 +700,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-decrease-percent"
+literal|"tools-paint-brush-size-decrease-percent"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Decrease Brush Scale Relative"
+literal|"Decrease Brush Size Relative"
 block|,
 name|NULL
 block|,
@@ -718,11 +718,11 @@ name|NULL
 block|}
 block|,
 block|{
-literal|"tools-paint-brush-scale-increase-percent"
+literal|"tools-paint-brush-size-increase-percent"
 block|,
 name|GIMP_STOCK_TOOL_PAINTBRUSH
 block|,
-literal|"Increase Brush Scale Relative"
+literal|"Increase Brush Size Relative"
 block|,
 name|NULL
 block|,
@@ -2767,16 +2767,16 @@ name|group
 argument_list|,
 name|NULL
 argument_list|,
-name|tools_paint_brush_scale_actions
+name|tools_paint_brush_size_actions
 argument_list|,
 name|G_N_ELEMENTS
 argument_list|(
-name|tools_paint_brush_scale_actions
+name|tools_paint_brush_size_actions
 argument_list|)
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|tools_paint_brush_scale_cmd_callback
+name|tools_paint_brush_size_cmd_callback
 argument_list|)
 argument_list|)
 expr_stmt|;

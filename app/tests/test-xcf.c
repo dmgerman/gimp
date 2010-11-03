@@ -30,7 +30,13 @@ end_include
 begin_include
 include|#
 directive|include
-file|"core/core-types.h"
+file|"widgets/widgets-types.h"
+end_include
+
+begin_include
+include|#
+directive|include
+file|"widgets/gimpuimanager.h"
 end_include
 
 begin_include
@@ -595,7 +601,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon2895260f0108
+DECL|struct|__anon29013b770108
 block|{
 DECL|member|avoid_sizeof_zero
 name|gint
@@ -3269,7 +3275,15 @@ block|{
 name|int
 name|result
 decl_stmt|;
-name|gtk_test_init
+name|g_thread_init
+argument_list|(
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_type_init
+argument_list|()
+expr_stmt|;
+name|g_test_init
 argument_list|(
 operator|&
 name|argc
@@ -3290,12 +3304,8 @@ expr_stmt|;
 comment|/* We share the same application instance across all tests. We need    * the GUI variant for the file procs    */
 name|gimp
 operator|=
-name|gimp_init_for_gui_testing
-argument_list|(
-name|TRUE
-argument_list|,
-name|FALSE
-argument_list|)
+name|gimp_init_for_testing
+argument_list|()
 expr_stmt|;
 comment|/* Add tests */
 name|ADD_TEST

@@ -95,7 +95,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a2a21c80103
+DECL|enum|__anon289e9d700103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -259,7 +259,7 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_sample_point_editor_point_update
+name|gimp_sample_point_editor_point_moved
 parameter_list|(
 name|GimpImage
 modifier|*
@@ -1079,7 +1079,7 @@ name|image_editor
 operator|->
 name|image
 argument_list|,
-name|gimp_sample_point_editor_point_update
+name|gimp_sample_point_editor_point_moved
 argument_list|,
 name|editor
 argument_list|)
@@ -1148,11 +1148,11 @@ name|g_signal_connect
 argument_list|(
 name|image
 argument_list|,
-literal|"update-sample-point"
+literal|"sample-point-moved"
 argument_list|,
 name|G_CALLBACK
 argument_list|(
-name|gimp_sample_point_editor_point_update
+name|gimp_sample_point_editor_point_moved
 argument_list|)
 argument_list|,
 name|editor
@@ -1412,8 +1412,8 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_sample_point_editor_point_update (GimpImage * image,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
-name|gimp_sample_point_editor_point_update
+DECL|function|gimp_sample_point_editor_point_moved (GimpImage * image,GimpSamplePoint * sample_point,GimpSamplePointEditor * editor)
+name|gimp_sample_point_editor_point_moved
 parameter_list|(
 name|GimpImage
 modifier|*

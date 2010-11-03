@@ -535,7 +535,7 @@ name|GimpCompositeOptions
 name|gimp_composite_options
 init|=
 block|{
-name|GIMP_COMPOSITE_OPTION_USE
+literal|0
 block|}
 decl_stmt|;
 end_decl_stmt
@@ -1321,19 +1321,7 @@ name|be_verbose
 condition|)
 name|g_printerr
 argument_list|(
-literal|"gimp_composite: use=%s, verbose=%s\n"
-argument_list|,
-operator|(
-name|gimp_composite_options
-operator|.
-name|bits
-operator|&
-name|GIMP_COMPOSITE_OPTION_USE
-operator|)
-condition|?
-literal|"yes"
-else|:
-literal|"no"
+literal|"gimp_composite: verbose=%s\n"
 argument_list|,
 operator|(
 name|gimp_composite_options

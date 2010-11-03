@@ -2099,6 +2099,15 @@ argument_list|,
 name|icon_view
 argument_list|)
 expr_stmt|;
+name|gtk_icon_view_select_path
+argument_list|(
+name|icon_view
+operator|->
+name|view
+argument_list|,
+name|path
+argument_list|)
+expr_stmt|;
 name|gtk_icon_view_set_cursor
 argument_list|(
 name|icon_view
@@ -2243,6 +2252,13 @@ name|model
 argument_list|)
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|icon_view
+operator|->
+name|view
+condition|)
+block|{
 name|gtk_icon_view_set_columns
 argument_list|(
 name|icon_view
@@ -2263,6 +2279,7 @@ operator|-
 literal|1
 argument_list|)
 expr_stmt|;
+block|}
 block|}
 end_function
 

@@ -94,7 +94,7 @@ struct|struct
 name|_GimpControllerList
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|gimp
@@ -166,7 +166,7 @@ struct|struct
 name|_GimpControllerListClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 block|}

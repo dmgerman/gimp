@@ -113,12 +113,12 @@ name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
 DECL|member|x_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|x_adj
 decl_stmt|;
 DECL|member|y_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|y_adj
 decl_stmt|;

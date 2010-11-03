@@ -144,6 +144,10 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_corner_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|x
 parameter_list|,
@@ -156,7 +160,7 @@ parameter_list|,
 name|gdouble
 name|height
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint

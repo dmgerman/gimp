@@ -297,11 +297,6 @@ name|BoundSeg
 modifier|*
 name|brush_bound_segs
 decl_stmt|;
-DECL|member|transformed_brush_bound_segs
-name|BoundSeg
-modifier|*
-name|transformed_brush_bound_segs
-decl_stmt|;
 DECL|member|n_brush_bound_segs
 name|gint
 name|n_brush_bound_segs
@@ -428,7 +423,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|gimp_brush_core_create_bound_segs
+name|gimp_brush_core_create_boundary
 parameter_list|(
 name|GimpBrushCore
 modifier|*
@@ -442,16 +437,16 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
-name|gimp_brush_core_transform_bound_segs
+name|gboolean
+name|gimp_brush_core_get_transform
 parameter_list|(
 name|GimpBrushCore
 modifier|*
 name|core
 parameter_list|,
-name|GimpPaintOptions
+name|GimpMatrix3
 modifier|*
-name|paint_options
+name|matrix
 parameter_list|)
 function_decl|;
 end_function_decl

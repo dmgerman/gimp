@@ -66,9 +66,9 @@ end_function_decl
 begin_function_decl
 specifier|static
 name|void
-name|gimp_progress_box_destroy
+name|gimp_progress_box_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -177,14 +177,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpProgressBox,gimp_progress_box,GTK_TYPE_VBOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_progress_box_progress_iface_init))
+DECL|function|G_DEFINE_TYPE_WITH_CODE (GimpProgressBox,gimp_progress_box,GTK_TYPE_BOX,G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,gimp_progress_box_progress_iface_init))
 name|G_DEFINE_TYPE_WITH_CODE
 argument_list|(
 argument|GimpProgressBox
 argument_list|,
 argument|gimp_progress_box
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|,
 argument|G_IMPLEMENT_INTERFACE (GIMP_TYPE_PROGRESS,                                                 gimp_progress_box_progress_iface_init)
 argument_list|)
@@ -208,20 +208,20 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_progress_box_destroy
+name|gimp_progress_box_dispose
 expr_stmt|;
 block|}
 end_function
@@ -237,6 +237,16 @@ modifier|*
 name|box
 parameter_list|)
 block|{
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|box
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX
@@ -429,10 +439,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_progress_box_destroy (GtkObject * object)
-name|gimp_progress_box_destroy
+DECL|function|gimp_progress_box_dispose (GObject * object)
+name|gimp_progress_box_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -446,12 +456,12 @@ argument_list|(
 name|object
 argument_list|)
 decl_stmt|;
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)

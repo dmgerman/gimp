@@ -407,8 +407,8 @@ end_function
 
 begin_function
 name|void
-DECL|function|tools_paint_brush_scale_cmd_callback (GtkAction * action,gint value,gpointer data)
-name|tools_paint_brush_scale_cmd_callback
+DECL|function|tools_paint_brush_size_cmd_callback (GtkAction * action,gint value,gpointer data)
+name|tools_paint_brush_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*
@@ -474,15 +474,15 @@ operator|->
 name|tool_options
 argument_list|)
 argument_list|,
-literal|"brush-scale"
-argument_list|,
-literal|0.01
+literal|"brush-size"
 argument_list|,
 literal|0.1
 argument_list|,
 literal|1.0
 argument_list|,
-literal|0.1
+literal|10.0
+argument_list|,
+literal|1.0
 argument_list|,
 name|FALSE
 argument_list|)

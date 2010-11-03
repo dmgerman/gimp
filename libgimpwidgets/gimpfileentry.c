@@ -57,7 +57,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2bdd66330103
+DECL|enum|__anon28cb060c0103
 block|{
 DECL|enumerator|FILENAME_CHANGED
 name|FILENAME_CHANGED
@@ -71,9 +71,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_file_entry_destroy
+name|gimp_file_entry_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -188,11 +188,11 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
@@ -234,9 +234,9 @@ argument_list|)
 expr_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_file_entry_destroy
+name|gimp_file_entry_dispose
 expr_stmt|;
 name|klass
 operator|->
@@ -450,10 +450,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_file_entry_destroy (GtkObject * object)
-name|gimp_file_entry_destroy
+DECL|function|gimp_file_entry_dispose (GObject * object)
+name|gimp_file_entry_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -509,12 +509,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)

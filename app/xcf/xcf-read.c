@@ -39,6 +39,14 @@ directive|include
 file|"gimp-intl.h"
 end_include
 
+begin_define
+DECL|macro|MAX_XCF_STRING_LEN
+define|#
+directive|define
+name|MAX_XCF_STRING_LEN
+value|(16L * 1024 * 1024)
+end_define
+
 begin_function
 name|guint
 DECL|function|xcf_read_int32 (FILE * fp,guint32 * data,gint count)
@@ -283,6 +291,30 @@ argument_list|,
 literal|1
 argument_list|)
 expr_stmt|;
+if|if
+condition|(
+name|tmp
+operator|>
+name|MAX_XCF_STRING_LEN
+condition|)
+block|{
+name|g_warning
+argument_list|(
+literal|"Maximum string length (%ld bytes) exceeded. "
+literal|"Possibly corrupt XCF file."
+argument_list|,
+name|MAX_XCF_STRING_LEN
+argument_list|)
+expr_stmt|;
+name|data
+index|[
+name|i
+index|]
+operator|=
+name|NULL
+expr_stmt|;
+block|}
+elseif|else
 if|if
 condition|(
 name|tmp

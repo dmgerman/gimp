@@ -403,7 +403,7 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
-name|void
+name|gboolean
 name|gimp_text_tool_ensure_layout
 parameter_list|(
 name|GimpTextTool

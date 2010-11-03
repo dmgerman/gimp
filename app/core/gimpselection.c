@@ -1397,11 +1397,9 @@ modifier|*
 name|layer
 decl_stmt|;
 comment|/*  Turn the current selection off  */
-name|gimp_image_selection_control
+name|gimp_image_selection_invalidate
 argument_list|(
 name|image
-argument_list|,
-name|GIMP_SELECTION_OFF
 argument_list|)
 expr_stmt|;
 name|GIMP_DRAWABLE_CLASS

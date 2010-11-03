@@ -66,6 +66,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"gimpcolorpanel.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcontainerentry.h"
 end_include
 
@@ -101,7 +107,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon276dbff70103
+DECL|enum|__anon2c6cceb20103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -476,14 +482,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpTextStyleEditor,gimp_text_style_editor,GTK_TYPE_VBOX)
+DECL|function|G_DEFINE_TYPE (GimpTextStyleEditor,gimp_text_style_editor,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpTextStyleEditor
 argument_list|,
 argument|gimp_text_style_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -683,6 +689,16 @@ decl_stmt|;
 name|GimpRGB
 name|color
 decl_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 comment|/*  upper row  */
 name|editor
 operator|->
@@ -886,21 +902,21 @@ name|editor
 operator|->
 name|color_button
 operator|=
-name|gimp_color_button_new
+name|gimp_color_panel_new
 argument_list|(
 name|_
 argument_list|(
 literal|"Change color of selected text"
 argument_list|)
 argument_list|,
-literal|20
-argument_list|,
-literal|20
-argument_list|,
 operator|&
 name|color
 argument_list|,
 name|GIMP_COLOR_AREA_FLAT
+argument_list|,
+literal|20
+argument_list|,
+literal|20
 argument_list|)
 expr_stmt|;
 name|gtk_box_pack_start
@@ -1407,6 +1423,24 @@ name|gimp_text_style_editor_font_changed
 argument_list|)
 argument_list|,
 name|editor
+argument_list|)
+expr_stmt|;
+comment|/* use the global user context so we get the global FG/BG colors */
+name|gimp_color_panel_set_context
+argument_list|(
+name|GIMP_COLOR_PANEL
+argument_list|(
+name|editor
+operator|->
+name|color_button
+argument_list|)
+argument_list|,
+name|gimp_get_user_context
+argument_list|(
+name|editor
+operator|->
+name|gimp
+argument_list|)
 argument_list|)
 expr_stmt|;
 name|gimp_container_view_set_container
@@ -4008,6 +4042,8 @@ if|if
 condition|(
 operator|!
 name|any_toggle_active
+operator|&&
+name|color_differs
 operator|&&
 name|font_differs
 operator|&&

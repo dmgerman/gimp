@@ -94,7 +94,7 @@ struct|struct
 name|_GimpColorDisplayEditor
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|stack
@@ -177,7 +177,7 @@ struct|struct
 name|_GimpColorDisplayEditorClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 block|}

@@ -138,7 +138,7 @@ value|FALSE
 end_define
 
 begin_typedef
-DECL|struct|__anon2935c5620108
+DECL|struct|__anon27745e000108
 typedef|typedef
 struct|struct
 block|{
@@ -161,7 +161,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2935c5620208
+DECL|struct|__anon27745e000208
 typedef|typedef
 struct|struct
 block|{
@@ -190,7 +190,7 @@ typedef|;
 end_typedef
 
 begin_typedef
-DECL|struct|__anon2935c5620308
+DECL|struct|__anon27745e000308
 typedef|typedef
 struct|struct
 block|{
@@ -210,7 +210,7 @@ typedef|;
 end_typedef
 
 begin_enum
-DECL|enum|__anon2935c5620403
+DECL|enum|__anon27745e000403
 enum|enum
 block|{
 DECL|enumerator|THUMB
@@ -229,7 +229,7 @@ enum|;
 end_enum
 
 begin_typedef
-DECL|struct|__anon2935c5620508
+DECL|struct|__anon27745e000508
 typedef|typedef
 struct|struct
 block|{
@@ -1589,7 +1589,7 @@ comment|/* For raster layers */
 if|if
 condition|(
 operator|!
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 argument_list|(
 name|layer
 operator|->

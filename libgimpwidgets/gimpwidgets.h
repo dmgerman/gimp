@@ -307,7 +307,19 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimpwidgets/gimpunitcombobox.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimpwidgets/gimpunitmenu.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimpwidgets/gimpunitstore.h>
 end_include
 
 begin_include

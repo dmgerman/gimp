@@ -63,7 +63,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4f08c70103
+DECL|enum|__anon2c1d4df80103
 block|{
 DECL|enumerator|SRC_COLUMN_NAME
 name|SRC_COLUMN_NAME
@@ -82,7 +82,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c4f08c70203
+DECL|enum|__anon2c1d4df80203
 block|{
 DECL|enumerator|DEST_COLUMN_ENABLED
 name|DEST_COLUMN_ENABLED
@@ -105,9 +105,9 @@ end_enum
 begin_function_decl
 specifier|static
 name|void
-name|gimp_color_display_editor_destroy
+name|gimp_color_display_editor_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -346,14 +346,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpColorDisplayEditor,gimp_color_display_editor,GTK_TYPE_VBOX)
+DECL|function|G_DEFINE_TYPE (GimpColorDisplayEditor,gimp_color_display_editor,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpColorDisplayEditor
 argument_list|,
 argument|gimp_color_display_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -375,20 +375,20 @@ modifier|*
 name|klass
 parameter_list|)
 block|{
-name|GtkObjectClass
+name|GObjectClass
 modifier|*
 name|object_class
 init|=
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|klass
 argument_list|)
 decl_stmt|;
 name|object_class
 operator|->
-name|destroy
+name|dispose
 operator|=
-name|gimp_color_display_editor_destroy
+name|gimp_color_display_editor_dispose
 expr_stmt|;
 block|}
 end_function
@@ -440,6 +440,16 @@ name|GtkCellRenderer
 modifier|*
 name|rend
 decl_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|paned
 operator|=
 name|gtk_vpaned_new
@@ -1052,14 +1062,20 @@ argument_list|,
 name|GTK_POLICY_AUTOMATIC
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|ed
 argument_list|)
 argument_list|,
 name|scrolled_win
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -1547,10 +1563,10 @@ end_function
 begin_function
 specifier|static
 name|void
-DECL|function|gimp_color_display_editor_destroy (GtkObject * object)
-name|gimp_color_display_editor_destroy
+DECL|function|gimp_color_display_editor_dispose (GObject * object)
+name|gimp_color_display_editor_dispose
 parameter_list|(
-name|GtkObject
+name|GObject
 modifier|*
 name|object
 parameter_list|)
@@ -1585,12 +1601,12 @@ operator|=
 name|NULL
 expr_stmt|;
 block|}
-name|GTK_OBJECT_CLASS
+name|G_OBJECT_CLASS
 argument_list|(
 name|parent_class
 argument_list|)
 operator|->
-name|destroy
+name|dispose
 argument_list|(
 name|object
 argument_list|)

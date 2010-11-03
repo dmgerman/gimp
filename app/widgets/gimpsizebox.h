@@ -98,7 +98,7 @@ struct|struct
 name|_GimpSizeBox
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|size_group
@@ -144,7 +144,7 @@ struct|struct
 name|_GimpSizeBoxClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 block|}

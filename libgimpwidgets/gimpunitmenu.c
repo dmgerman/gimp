@@ -48,13 +48,19 @@ end_include
 begin_include
 include|#
 directive|include
-file|"gimpunitmenu.h"
+file|"gimpwidgets.h"
 end_include
+
+begin_undef
+undef|#
+directive|undef
+name|GIMP_DISABLE_DEPRECATED
+end_undef
 
 begin_include
 include|#
 directive|include
-file|"gimpwidgets.h"
+file|"gimpunitmenu.h"
 end_include
 
 begin_include
@@ -69,7 +75,7 @@ end_comment
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baef0240103
+DECL|enum|__anon27cb05670103
 block|{
 DECL|enumerator|UNIT_CHANGED
 name|UNIT_CHANGED
@@ -82,7 +88,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2baef0240203
+DECL|enum|__anon27cb05670203
 block|{
 DECL|enumerator|UNIT_COLUMN
 name|UNIT_COLUMN
@@ -2211,9 +2217,9 @@ argument_list|,
 literal|2
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|gtk_dialog_get_content_area
 argument_list|(
@@ -2227,6 +2233,12 @@ argument_list|)
 argument_list|)
 argument_list|,
 name|vbox
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show
@@ -2266,14 +2278,20 @@ argument_list|,
 name|GTK_POLICY_ALWAYS
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|vbox
 argument_list|)
 argument_list|,
 name|scrolled_win
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

@@ -144,6 +144,10 @@ name|GimpCanvasItem
 modifier|*
 name|gimp_canvas_boundary_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 specifier|const
 name|BoundSeg
 modifier|*
@@ -151,6 +155,10 @@ name|segs
 parameter_list|,
 name|gint
 name|n_segs
+parameter_list|,
+name|GimpMatrix3
+modifier|*
+name|transform
 parameter_list|,
 name|gdouble
 name|offset_x

@@ -149,7 +149,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon2c0bbb600103
+DECL|enum|__anon297efc070103
 block|{
 DECL|enumerator|ARCH_X86_VENDOR_NONE
 name|ARCH_X86_VENDOR_NONE
@@ -196,7 +196,7 @@ end_typedef
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0bbb600203
+DECL|enum|__anon297efc070203
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_MMX
 name|ARCH_X86_INTEL_FEATURE_MMX
@@ -273,7 +273,7 @@ end_enum
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c0bbb600303
+DECL|enum|__anon297efc070303
 block|{
 DECL|enumerator|ARCH_X86_INTEL_FEATURE_PNI
 name|ARCH_X86_INTEL_FEATURE_PNI
@@ -375,12 +375,26 @@ name|ecx
 decl_stmt|,
 name|edx
 decl_stmt|;
+DECL|union|__anon297efc07040a
+union|union
+block|{
+DECL|member|idaschar
 name|gchar
-name|id
+name|idaschar
 index|[
 literal|16
 index|]
 decl_stmt|;
+DECL|member|idasint
+name|int
+name|idasint
+index|[
+literal|4
+index|]
+decl_stmt|;
+block|}
+name|id
+union|;
 ifndef|#
 directive|ifndef
 name|ARCH_X86_64
@@ -419,46 +433,36 @@ condition|)
 return|return
 name|ARCH_X86_VENDOR_NONE
 return|;
-operator|*
-operator|(
-name|int
-operator|*
-operator|)
-operator|&
 name|id
+operator|.
+name|idasint
 index|[
 literal|0
 index|]
 operator|=
 name|ebx
 expr_stmt|;
-operator|*
-operator|(
-name|int
-operator|*
-operator|)
-operator|&
 name|id
+operator|.
+name|idasint
 index|[
-literal|4
+literal|1
 index|]
 operator|=
 name|edx
 expr_stmt|;
-operator|*
-operator|(
-name|int
-operator|*
-operator|)
-operator|&
 name|id
+operator|.
+name|idasint
 index|[
-literal|8
+literal|2
 index|]
 operator|=
 name|ecx
 expr_stmt|;
 name|id
+operator|.
+name|idaschar
 index|[
 literal|12
 index|]
@@ -473,6 +477,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"AuthenticAMD"
 argument_list|)
@@ -488,6 +494,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"GenuineIntel"
 argument_list|)
@@ -504,6 +512,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"GenuineIntel"
 argument_list|)
@@ -519,6 +529,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"AuthenticAMD"
 argument_list|)
@@ -534,6 +546,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"CentaurHauls"
 argument_list|)
@@ -549,6 +563,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"CyrixInstead"
 argument_list|)
@@ -564,6 +580,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"Geode by NSC"
 argument_list|)
@@ -579,6 +597,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"GenuineTMx86"
 argument_list|)
@@ -588,6 +608,8 @@ operator|||
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"TransmetaCPU"
 argument_list|)
@@ -603,6 +625,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"NexGenDriven"
 argument_list|)
@@ -618,6 +642,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"RiseRiseRise"
 argument_list|)
@@ -633,6 +659,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"UMC UMC UMC "
 argument_list|)
@@ -648,6 +676,8 @@ condition|(
 name|strcmp
 argument_list|(
 name|id
+operator|.
+name|idaschar
 argument_list|,
 literal|"SiS SiS SiS "
 argument_list|)

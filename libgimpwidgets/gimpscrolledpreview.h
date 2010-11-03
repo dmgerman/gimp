@@ -138,8 +138,7 @@ modifier|*
 name|cursor_move
 decl_stmt|;
 DECL|member|nav_gc
-name|GdkGC
-modifier|*
+name|gpointer
 name|nav_gc
 decl_stmt|;
 comment|/* unused */

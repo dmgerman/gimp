@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon29935b4f0103
+DECL|enum|__anon291ba1720103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -205,7 +205,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_text_cursor_get_extents
 parameter_list|(
@@ -715,13 +715,35 @@ name|gimp_display_shell_transform_xy_f
 argument_list|(
 name|shell
 argument_list|,
+name|MIN
+argument_list|(
 name|private
 operator|->
 name|x
 argument_list|,
 name|private
 operator|->
+name|x
+operator|+
+name|private
+operator|->
+name|width
+argument_list|)
+argument_list|,
+name|MIN
+argument_list|(
+name|private
+operator|->
 name|y
+argument_list|,
+name|private
+operator|->
+name|y
+operator|+
+name|private
+operator|->
+name|height
+argument_list|)
 argument_list|,
 name|x
 argument_list|,
@@ -732,6 +754,12 @@ name|gimp_display_shell_transform_xy_f
 argument_list|(
 name|shell
 argument_list|,
+name|MAX
+argument_list|(
+name|private
+operator|->
+name|x
+argument_list|,
 name|private
 operator|->
 name|x
@@ -739,6 +767,13 @@ operator|+
 name|private
 operator|->
 name|width
+argument_list|)
+argument_list|,
+name|MAX
+argument_list|(
+name|private
+operator|->
+name|y
 argument_list|,
 name|private
 operator|->
@@ -747,6 +782,7 @@ operator|+
 name|private
 operator|->
 name|height
+argument_list|)
 argument_list|,
 name|w
 argument_list|,
@@ -768,7 +804,7 @@ expr_stmt|;
 operator|*
 name|x
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x
@@ -779,7 +815,7 @@ expr_stmt|;
 operator|*
 name|y
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y
@@ -797,7 +833,7 @@ block|{
 operator|*
 name|w
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 operator|*
 name|w
@@ -808,7 +844,7 @@ expr_stmt|;
 operator|*
 name|h
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 operator|*
 name|h
@@ -827,7 +863,7 @@ expr_stmt|;
 operator|*
 name|h
 operator|=
-name|PROJ_ROUND
+name|ceil
 argument_list|(
 operator|*
 name|h
@@ -992,8 +1028,6 @@ name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -1002,7 +1036,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_text_cursor_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_text_cursor_get_extents
@@ -1119,7 +1153,7 @@ name|floor
 argument_list|(
 name|x
 operator|-
-literal|3.5
+literal|4.5
 argument_list|)
 expr_stmt|;
 name|rectangle
@@ -1139,7 +1173,7 @@ name|width
 operator|=
 name|ceil
 argument_list|(
-literal|8.0
+literal|9.0
 argument_list|)
 expr_stmt|;
 name|rectangle
@@ -1150,13 +1184,17 @@ name|ceil
 argument_list|(
 name|h
 operator|+
-literal|1.5
+literal|3.0
 argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gdk_region_rectangle
+name|cairo_region_create_rectangle
 argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
 operator|&
 name|rectangle
 argument_list|)
@@ -1167,9 +1205,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_text_cursor_new (PangoRectangle * cursor,gboolean overwrite)
+DECL|function|gimp_canvas_text_cursor_new (GimpDisplayShell * shell,PangoRectangle * cursor,gboolean overwrite)
 name|gimp_canvas_text_cursor_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|PangoRectangle
 modifier|*
 name|cursor
@@ -1178,10 +1220,33 @@ name|gboolean
 name|overwrite
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
+name|g_return_val_if_fail
+argument_list|(
+name|cursor
+operator|!=
+name|NULL
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_TEXT_CURSOR
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"x"
 argument_list|,

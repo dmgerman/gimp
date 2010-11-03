@@ -168,6 +168,9 @@ name|GimpTextTool
 modifier|*
 name|text_tool
 parameter_list|,
+name|gboolean
+name|overwrite
+parameter_list|,
 name|PangoRectangle
 modifier|*
 name|cursor_rect

@@ -264,7 +264,7 @@ parameter_list|,
 name|a
 parameter_list|)
 define|\
-value|G_STMT_START {                                   \     guint tr = (a) * (r) + 0x80;                   \     guint tg = (a) * (g) + 0x80;                   \     guint tb = (a) * (b) + 0x80;                   \     d[0] = (((tb)>> 8) + (tb))>> 8;              \     d[1] = (((tg)>> 8) + (tg))>> 8;              \     d[2] = (((tr)>> 8) + (tr))>> 8;              \     d[3] = (a);                                    \   } G_STMT_END
+value|G_STMT_START {                                   \     const guint tr = (a) * (r) + 0x80;             \     const guint tg = (a) * (g) + 0x80;             \     const guint tb = (a) * (b) + 0x80;             \     d[0] = (((tb)>> 8) + (tb))>> 8;              \     d[1] = (((tg)>> 8) + (tg))>> 8;              \     d[2] = (((tr)>> 8) + (tr))>> 8;              \     d[3] = (a);                                    \   } G_STMT_END
 end_define
 
 begin_else
@@ -289,7 +289,69 @@ parameter_list|,
 name|a
 parameter_list|)
 define|\
-value|G_STMT_START {                                   \     guint tr = (a) * (r) + 0x80;                   \     guint tg = (a) * (g) + 0x80;                   \     guint tb = (a) * (b) + 0x80;                   \     d[0] = (a);                                    \     d[1] = (((tr)>> 8) + (tr))>> 8;              \     d[2] = (((tg)>> 8) + (tg))>> 8;              \     d[3] = (((tb)>> 8) + (tb))>> 8;              \   } G_STMT_END
+value|G_STMT_START {                                   \     const guint tr = (a) * (r) + 0x80;             \     const guint tg = (a) * (g) + 0x80;             \     const guint tb = (a) * (b) + 0x80;             \     d[0] = (a);                                    \     d[1] = (((tr)>> 8) + (tr))>> 8;              \     d[2] = (((tg)>> 8) + (tg))>> 8;              \     d[3] = (((tb)>> 8) + (tb))>> 8;              \   } G_STMT_END
+end_define
+
+begin_endif
+endif|#
+directive|endif
+end_endif
+
+begin_comment
+comment|/**  * GIMP_CAIRO_ARGB32_GET_PIXEL:  * @s: pointer to the source buffer  * @r: red component, not pre-multiplied  * @g: green component, not pre-multiplied  * @b: blue component, not pre-multiplied  * @a: alpha component  *  * Gets a single pixel from a Cairo image surface in %CAIRO_FORMAT_ARGB32.  *  * Since: GIMP 2.8  **/
+end_comment
+
+begin_if
+if|#
+directive|if
+name|G_BYTE_ORDER
+operator|==
+name|G_LITTLE_ENDIAN
+end_if
+
+begin_define
+DECL|macro|GIMP_CAIRO_ARGB32_GET_PIXEL (s,r,g,b,a)
+define|#
+directive|define
+name|GIMP_CAIRO_ARGB32_GET_PIXEL
+parameter_list|(
+name|s
+parameter_list|,
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|,
+name|a
+parameter_list|)
+define|\
+value|G_STMT_START {                                   \     const guint tb = s[0];                         \     const guint tg = s[1];                         \     const guint tr = s[2];                         \     const guint ta = s[3];                         \     (r) = (tr<< 8) / (ta + 1);                    \     (g) = (tg<< 8) / (ta + 1);                    \     (b) = (tb<< 8) / (ta + 1);                    \     (a) = ta;                                      \   } G_STMT_END
+end_define
+
+begin_else
+else|#
+directive|else
+end_else
+
+begin_define
+DECL|macro|GIMP_CAIRO_ARGB32_GET_PIXEL (s,r,g,b,a)
+define|#
+directive|define
+name|GIMP_CAIRO_ARGB32_GET_PIXEL
+parameter_list|(
+name|s
+parameter_list|,
+name|r
+parameter_list|,
+name|g
+parameter_list|,
+name|b
+parameter_list|,
+name|a
+parameter_list|)
+define|\
+value|G_STMT_START {                                   \     const guint ta = s[0];                         \     const guint tr = s[1];                         \     const guint tg = s[2];                         \     const guint tb = s[3];                         \     (r) = (tr<< 8) / (ta + 1);                    \     (g) = (tg<< 8) / (ta + 1);                    \     (b) = (tb<< 8) / (ta + 1);                    \     (a) = ta;                                      \   } G_STMT_END
 end_define
 
 begin_endif

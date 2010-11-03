@@ -168,7 +168,7 @@ end_define
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb92070108
+DECL|struct|__anon2c1d109f0108
 block|{
 DECL|member|elems
 specifier|const
@@ -196,7 +196,7 @@ end_typedef
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27cb92070208
+DECL|struct|__anon2c1d109f0208
 block|{
 DECL|member|elems
 name|gint
@@ -680,9 +680,12 @@ decl_stmt|;
 name|GimpPDBStatusType
 name|status
 decl_stmt|;
+specifier|static
 name|GimpParam
-modifier|*
 name|values
+index|[
+literal|1
+index|]
 decl_stmt|;
 name|INIT_I18N
 argument_list|()
@@ -702,15 +705,6 @@ operator|.
 name|data
 operator|.
 name|d_int32
-expr_stmt|;
-name|values
-operator|=
-name|g_new
-argument_list|(
-name|GimpParam
-argument_list|,
-literal|1
-argument_list|)
 expr_stmt|;
 name|values
 index|[

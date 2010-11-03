@@ -126,6 +126,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpdisplayshell-selection.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"gimpcoloroptions.h"
 end_include
 
@@ -1055,6 +1061,15 @@ name|paint_tool
 operator|->
 name|core
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1382,11 +1397,9 @@ name|display
 argument_list|)
 expr_stmt|;
 comment|/*  pause the current selection  */
-name|gimp_image_selection_control
+name|gimp_display_shell_selection_pause
 argument_list|(
-name|image
-argument_list|,
-name|GIMP_SELECTION_PAUSE
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  Let the specific painting function initialize itself  */
@@ -1522,6 +1535,15 @@ name|paint_tool
 operator|->
 name|core
 decl_stmt|;
+name|GimpDisplayShell
+modifier|*
+name|shell
+init|=
+name|gimp_display_get_shell
+argument_list|(
+name|display
+argument_list|)
+decl_stmt|;
 name|GimpImage
 modifier|*
 name|image
@@ -1596,11 +1618,9 @@ name|time
 argument_list|)
 expr_stmt|;
 comment|/*  resume the current selection  */
-name|gimp_image_selection_control
+name|gimp_display_shell_selection_resume
 argument_list|(
-name|image
-argument_list|,
-name|GIMP_SELECTION_RESUME
+name|shell
 argument_list|)
 expr_stmt|;
 comment|/*  chain up to halt the tool */
@@ -2355,12 +2375,23 @@ argument_list|)
 expr_stmt|;
 return|return;
 block|}
+name|gimp_draw_tool_pause
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_draw_tool_is_active
 argument_list|(
 name|draw_tool
 argument_list|)
+operator|&&
+name|draw_tool
+operator|->
+name|display
+operator|!=
+name|display
 condition|)
 name|gimp_draw_tool_stop
 argument_list|(
@@ -2780,11 +2811,34 @@ operator|=
 name|FALSE
 expr_stmt|;
 block|}
+if|if
+condition|(
+operator|!
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
+condition|)
 name|gimp_draw_tool_start
 argument_list|(
 name|draw_tool
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+block|}
+elseif|else
+if|if
+condition|(
+name|gimp_draw_tool_is_active
+argument_list|(
+name|draw_tool
+argument_list|)
+condition|)
+block|{
+name|gimp_draw_tool_stop
+argument_list|(
+name|draw_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -2804,6 +2858,11 @@ argument_list|,
 name|proximity
 argument_list|,
 name|display
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_resume
+argument_list|(
+name|draw_tool
 argument_list|)
 expr_stmt|;
 block|}
@@ -2971,7 +3030,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 comment|/*  Draw end target  */
@@ -3001,7 +3060,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}

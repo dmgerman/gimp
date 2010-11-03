@@ -210,9 +210,9 @@ name|GimpPaintInfo
 modifier|*
 name|paint_info
 decl_stmt|;
-DECL|member|brush_scale
+DECL|member|brush_size
 name|gdouble
-name|brush_scale
+name|brush_size
 decl_stmt|;
 DECL|member|brush_angle
 name|gdouble
@@ -256,6 +256,14 @@ decl_stmt|;
 DECL|member|brush_view_size
 name|GimpViewSize
 name|brush_view_size
+decl_stmt|;
+DECL|member|dynamics_view_type
+name|GimpViewType
+name|dynamics_view_type
+decl_stmt|;
+DECL|member|dynamics_view_size
+name|GimpViewSize
+name|dynamics_view_size
 decl_stmt|;
 DECL|member|pattern_view_type
 name|GimpViewType

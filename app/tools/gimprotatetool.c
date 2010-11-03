@@ -769,6 +769,11 @@ name|button
 operator|=
 name|gimp_spin_button_new
 argument_list|(
+operator|(
+name|GtkObject
+operator|*
+operator|*
+operator|)
 operator|&
 name|rotate
 operator|->
@@ -865,12 +870,9 @@ name|scale
 operator|=
 name|gtk_hscale_new
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|rotate
 operator|->
 name|angle_adj
-argument_list|)
 argument_list|)
 expr_stmt|;
 name|gtk_scale_set_draw_value
@@ -1100,12 +1102,9 @@ argument_list|)
 decl_stmt|;
 name|gtk_adjustment_set_value
 argument_list|(
-name|GTK_ADJUSTMENT
-argument_list|(
 name|rotate
 operator|->
 name|angle_adj
-argument_list|)
 argument_list|,
 name|gimp_rad_to_deg
 argument_list|(

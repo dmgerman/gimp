@@ -98,7 +98,7 @@ struct|struct
 name|_GimpProgressBox
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|active
@@ -133,7 +133,7 @@ struct|struct
 name|_GimpProgressBoxClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 block|}

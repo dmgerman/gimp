@@ -178,6 +178,12 @@ literal|"instances"
 block|,
 name|GIMP_LOG_INSTANCES
 block|}
+block|,
+block|{
+literal|"rectangle-tool"
+block|,
+name|GIMP_LOG_RECTANGLE_TOOL
+block|}
 block|}
 decl_stmt|;
 comment|/*  g_parse_debug_string() has special treatment of the string 'help',        *  but we want to use it for the GIMP_LOG_HELP domain        */

@@ -304,14 +304,6 @@ DECL|member|thumbnail_filesize_limit
 name|guint64
 name|thumbnail_filesize_limit
 decl_stmt|;
-DECL|member|install_cmap
-name|gboolean
-name|install_cmap
-decl_stmt|;
-DECL|member|min_colors
-name|gint
-name|min_colors
-decl_stmt|;
 DECL|member|color_management
 name|GimpColorConfig
 modifier|*

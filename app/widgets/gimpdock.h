@@ -143,7 +143,7 @@ struct|struct
 name|_GimpDock
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 DECL|member|p
@@ -161,7 +161,7 @@ struct|struct
 name|_GimpDockClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 comment|/*  virtual functions  */

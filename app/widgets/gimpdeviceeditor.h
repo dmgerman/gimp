@@ -94,7 +94,7 @@ struct|struct
 name|_GimpDeviceEditor
 block|{
 DECL|member|parent_instance
-name|GtkHBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 block|}
@@ -107,7 +107,7 @@ struct|struct
 name|_GimpDeviceEditorClass
 block|{
 DECL|member|parent_class
-name|GtkHBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 block|}

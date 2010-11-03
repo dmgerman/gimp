@@ -285,6 +285,7 @@ modifier|*
 name|return_vals
 parameter_list|)
 block|{
+specifier|static
 name|GimpParam
 name|values
 index|[

@@ -29,7 +29,7 @@ end_comment
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27e0f4c80103
+DECL|enum|__anon2901eff80103
 block|{
 DECL|enumerator|ALIGN_TOOL_IDLE
 name|ALIGN_TOOL_IDLE
@@ -197,12 +197,12 @@ name|gdouble
 name|vert_offset
 decl_stmt|;
 DECL|member|horz_offset_adjustment
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|horz_offset_adjustment
 decl_stmt|;
 DECL|member|vert_offset_adjustment
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|vert_offset_adjustment
 decl_stmt|;

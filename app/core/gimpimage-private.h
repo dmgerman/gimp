@@ -128,6 +128,12 @@ name|gint
 name|n_colors
 decl_stmt|;
 comment|/*  # of colors (for indexed)    */
+DECL|member|palette
+name|GimpPalette
+modifier|*
+name|palette
+decl_stmt|;
+comment|/*  palette of colormap          */
 DECL|member|dirty
 name|gint
 name|dirty
@@ -229,21 +235,6 @@ decl_stmt|;
 DECL|member|channel_color_changed_handler
 name|GQuark
 name|channel_color_changed_handler
-decl_stmt|;
-DECL|member|vectors_freeze_handler
-name|GimpTreeHandler
-modifier|*
-name|vectors_freeze_handler
-decl_stmt|;
-DECL|member|vectors_thaw_handler
-name|GimpTreeHandler
-modifier|*
-name|vectors_thaw_handler
-decl_stmt|;
-DECL|member|vectors_visible_handler
-name|GimpTreeHandler
-modifier|*
-name|vectors_visible_handler
 decl_stmt|;
 DECL|member|floating_sel
 name|GimpLayer

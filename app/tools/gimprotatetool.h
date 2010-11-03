@@ -113,7 +113,7 @@ name|GimpTransformTool
 name|parent_instance
 decl_stmt|;
 DECL|member|angle_adj
-name|GtkObject
+name|GtkAdjustment
 modifier|*
 name|angle_adj
 decl_stmt|;

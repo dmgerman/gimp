@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a19b65a0103
+DECL|enum|__anon2c0b5a330103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -405,9 +405,9 @@ name|dialog
 argument_list|)
 argument_list|)
 expr_stmt|;
-name|gtk_container_add
+name|gtk_box_pack_start
 argument_list|(
-name|GTK_CONTAINER
+name|GTK_BOX
 argument_list|(
 name|content_area
 argument_list|)
@@ -415,6 +415,12 @@ argument_list|,
 name|dialog
 operator|->
 name|view
+argument_list|,
+name|TRUE
+argument_list|,
+name|TRUE
+argument_list|,
+literal|0
 argument_list|)
 expr_stmt|;
 name|gtk_widget_show

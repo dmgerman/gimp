@@ -59,7 +59,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b70700d0103
+DECL|enum|__anon28ad019f0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -198,7 +198,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_line_get_extents
 parameter_list|(
@@ -695,7 +695,7 @@ expr_stmt|;
 operator|*
 name|x1
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x1
@@ -706,7 +706,7 @@ expr_stmt|;
 operator|*
 name|y1
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y1
@@ -717,7 +717,7 @@ expr_stmt|;
 operator|*
 name|x2
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x2
@@ -728,7 +728,7 @@ expr_stmt|;
 operator|*
 name|y2
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y2
@@ -809,8 +809,6 @@ name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -819,7 +817,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_line_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_line_get_extents
@@ -997,8 +995,12 @@ argument_list|)
 expr_stmt|;
 block|}
 return|return
-name|gdk_region_rectangle
+name|cairo_region_create_rectangle
 argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
 operator|&
 name|rectangle
 argument_list|)
@@ -1009,9 +1011,13 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_line_new (gdouble x1,gdouble y1,gdouble x2,gdouble y2)
+DECL|function|gimp_canvas_line_new (GimpDisplayShell * shell,gdouble x1,gdouble y1,gdouble x2,gdouble y2)
 name|gimp_canvas_line_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|gdouble
 name|x1
 parameter_list|,
@@ -1025,10 +1031,24 @@ name|gdouble
 name|y2
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_LINE
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"x1"
 argument_list|,

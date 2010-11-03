@@ -46,7 +46,7 @@ file|"libgimpwidgets/gimpwidgets-private.h"
 end_include
 
 begin_comment
-comment|/**  * SECTION: gimpui  * @title: gimpui  * @short_description: Common user interface functions. This header includes  *                     all other GIMP User Interface Library headers.  * @see_also: gtk_init(), gdk_set_use_xshm(), gdk_rgb_set_min_colors(),  *            gdk_rgb_set_install(), gdk_rgb_get_visual(),  *            gdk_rgb_get_cmap(), gtk_widget_set_default_visual(),  *            gtk_widget_set_default_colormap(), gtk_preview_set_gamma().  *  * Common user interface functions. This header includes all other  * GIMP User Interface Library headers.  **/
+comment|/**  * SECTION: gimpui  * @title: gimpui  * @short_description: Common user interface functions. This header includes  *                     all other GIMP User Interface Library headers.  * @see_also: gtk_init(), gdk_set_use_xshm(), gdk_rgb_get_visual(),  *            gdk_rgb_get_cmap(), gtk_widget_set_default_visual(),  *            gtk_widget_set_default_colormap(), gtk_preview_set_gamma().  *  * Common user interface functions. This header includes all other  * GIMP User Interface Library headers.  **/
 end_comment
 
 begin_comment
@@ -273,18 +273,6 @@ expr_stmt|;
 name|gdk_set_program_class
 argument_list|(
 name|gimp_wm_class
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_rgb_set_min_colors
-argument_list|(
-name|gimp_min_colors
-argument_list|()
-argument_list|)
-expr_stmt|;
-name|gdk_rgb_set_install
-argument_list|(
-name|gimp_install_cmap
 argument_list|()
 argument_list|)
 expr_stmt|;

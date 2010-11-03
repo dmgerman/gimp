@@ -401,14 +401,14 @@ end_function
 
 begin_function
 name|void
-DECL|function|gimp_cairo_add_segments (cairo_t * cr,GdkSegment * segs,gint n_segs)
+DECL|function|gimp_cairo_add_segments (cairo_t * cr,GimpSegment * segs,gint n_segs)
 name|gimp_cairo_add_segments
 parameter_list|(
 name|cairo_t
 modifier|*
 name|cr
 parameter_list|,
-name|GdkSegment
+name|GimpSegment
 modifier|*
 name|segs
 parameter_list|,
@@ -511,7 +511,7 @@ index|]
 operator|.
 name|y2
 operator|-
-literal|1.0
+literal|0.5
 argument_list|)
 expr_stmt|;
 block|}
@@ -551,7 +551,7 @@ index|]
 operator|.
 name|x2
 operator|-
-literal|1.0
+literal|0.5
 argument_list|,
 name|segs
 index|[

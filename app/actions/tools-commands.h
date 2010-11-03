@@ -54,7 +54,7 @@ end_function_decl
 
 begin_function_decl
 name|void
-name|tools_paint_brush_scale_cmd_callback
+name|tools_paint_brush_size_cmd_callback
 parameter_list|(
 name|GtkAction
 modifier|*

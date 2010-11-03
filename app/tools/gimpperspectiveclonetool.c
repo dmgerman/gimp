@@ -90,6 +90,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|"display/gimpcanvasgroup.h"
+end_include
+
+begin_include
+include|#
+directive|include
 file|"display/gimpdisplay.h"
 end_include
 
@@ -3049,7 +3055,25 @@ operator|->
 name|use_handles
 condition|)
 block|{
+name|GimpCanvasGroup
+modifier|*
+name|stroke_group
+decl_stmt|;
+name|stroke_group
+operator|=
+name|gimp_draw_tool_add_stroke_group
+argument_list|(
+name|draw_tool
+argument_list|)
+expr_stmt|;
 comment|/*  draw the bounding box  */
+name|gimp_draw_tool_push_group
+argument_list|(
+name|draw_tool
+argument_list|,
+name|stroke_group
+argument_list|)
+expr_stmt|;
 name|gimp_draw_tool_add_line
 argument_list|(
 name|draw_tool
@@ -3132,6 +3156,11 @@ argument_list|,
 name|clone_tool
 operator|->
 name|ty1
+argument_list|)
+expr_stmt|;
+name|gimp_draw_tool_pop_group
+argument_list|(
+name|draw_tool
 argument_list|)
 expr_stmt|;
 comment|/*  draw the tool handles  */
@@ -3153,7 +3182,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3174,7 +3203,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3195,7 +3224,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|gimp_draw_tool_add_handle
@@ -3216,7 +3245,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -3276,7 +3305,7 @@ name|TARGET_SIZE
 argument_list|,
 name|TARGET_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 name|draw_tool

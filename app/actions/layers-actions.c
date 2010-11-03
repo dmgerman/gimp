@@ -2432,9 +2432,9 @@ block|}
 block|}
 name|text_layer
 operator|=
-name|gimp_drawable_is_text_layer
+name|gimp_item_is_text_layer
 argument_list|(
-name|GIMP_DRAWABLE
+name|GIMP_ITEM
 argument_list|(
 name|layer
 argument_list|)

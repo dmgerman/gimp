@@ -17,14 +17,6 @@ name|__GIMP_SAMPLE_POINT_H__
 end_define
 
 begin_define
-DECL|macro|GIMP_SAMPLE_POINT_DRAW_SIZE
-define|#
-directive|define
-name|GIMP_SAMPLE_POINT_DRAW_SIZE
-value|10
-end_define
-
-begin_define
 DECL|macro|GIMP_TYPE_SAMPLE_POINT
 define|#
 directive|define

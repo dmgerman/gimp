@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon27d4f0bd0103
+DECL|enum|__anon2b688e5d0103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -1186,11 +1186,6 @@ block|{
 name|GimpContainerTreeStorePrivate
 modifier|*
 name|private
-init|=
-name|GET_PRIVATE
-argument_list|(
-name|store
-argument_list|)
 decl_stmt|;
 name|GimpViewable
 modifier|*
@@ -1677,7 +1672,7 @@ end_function
 begin_typedef
 typedef|typedef
 struct|struct
-DECL|struct|__anon27d4f0bd0208
+DECL|struct|__anon2b688e5d0208
 block|{
 DECL|member|view_size
 name|gint

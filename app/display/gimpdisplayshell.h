@@ -210,7 +210,7 @@ struct|struct
 name|_GimpDisplayShell
 block|{
 DECL|member|parent_instance
-name|GtkVBox
+name|GtkBox
 name|parent_instance
 decl_stmt|;
 comment|/* --- cacheline 2 boundary (128 bytes) was 20 bytes ago --- */
@@ -476,6 +476,60 @@ modifier|*
 name|render_surface
 decl_stmt|;
 comment|/*  buffer for rendering the image     */
+DECL|member|mask_surface
+name|cairo_surface_t
+modifier|*
+name|mask_surface
+decl_stmt|;
+comment|/*  buffer for rendering the mask      */
+DECL|member|checkerboard
+name|cairo_pattern_t
+modifier|*
+name|checkerboard
+decl_stmt|;
+comment|/*  checkerboard pattern               */
+DECL|member|canvas_item
+name|GimpCanvasItem
+modifier|*
+name|canvas_item
+decl_stmt|;
+comment|/*  items drawn on the canvas          */
+DECL|member|vectors
+name|GimpCanvasItem
+modifier|*
+name|vectors
+decl_stmt|;
+comment|/*  item proxy of vectors              */
+DECL|member|grid
+name|GimpCanvasItem
+modifier|*
+name|grid
+decl_stmt|;
+comment|/*  item proxy of the grid             */
+DECL|member|guides
+name|GimpCanvasItem
+modifier|*
+name|guides
+decl_stmt|;
+comment|/*  item proxies of guides             */
+DECL|member|sample_points
+name|GimpCanvasItem
+modifier|*
+name|sample_points
+decl_stmt|;
+comment|/*  item proxies of sample points      */
+DECL|member|layer_boundary
+name|GimpCanvasItem
+modifier|*
+name|layer_boundary
+decl_stmt|;
+comment|/*  item for the layer boundary        */
+DECL|member|cursor
+name|GimpCanvasItem
+modifier|*
+name|cursor
+decl_stmt|;
+comment|/*  item for the software cursor       */
 DECL|member|title_idle_id
 name|guint
 name|title_idle_id
@@ -548,21 +602,6 @@ name|gboolean
 name|draw_cursor
 decl_stmt|;
 comment|/* should we draw software cursor ?    */
-DECL|member|have_cursor
-name|gboolean
-name|have_cursor
-decl_stmt|;
-comment|/* is cursor currently drawn ?         */
-DECL|member|cursor_x
-name|gint
-name|cursor_x
-decl_stmt|;
-comment|/* software cursor X value             */
-DECL|member|cursor_y
-name|gint
-name|cursor_y
-decl_stmt|;
-comment|/* software cursor Y value             */
 DECL|member|close_dialog
 name|GtkWidget
 modifier|*
@@ -606,6 +645,21 @@ comment|/* color display filter dialog       */
 DECL|member|paused_count
 name|gint
 name|paused_count
+decl_stmt|;
+DECL|member|vectors_freeze_handler
+name|GimpTreeHandler
+modifier|*
+name|vectors_freeze_handler
+decl_stmt|;
+DECL|member|vectors_thaw_handler
+name|GimpTreeHandler
+modifier|*
+name|vectors_thaw_handler
+decl_stmt|;
+DECL|member|vectors_visible_handler
+name|GimpTreeHandler
+modifier|*
+name|vectors_visible_handler
 decl_stmt|;
 DECL|member|zoom_on_resize
 name|gboolean
@@ -666,7 +720,7 @@ modifier|*
 name|mask
 decl_stmt|;
 DECL|member|mask_color
-name|GimpChannelType
+name|GimpRGB
 name|mask_color
 decl_stmt|;
 DECL|member|event_history
@@ -707,7 +761,7 @@ struct|struct
 name|_GimpDisplayShellClass
 block|{
 DECL|member|parent_class
-name|GtkVBoxClass
+name|GtkBoxClass
 name|parent_class
 decl_stmt|;
 DECL|member|scaled
@@ -800,7 +854,7 @@ parameter_list|,
 name|gdouble
 name|image_y
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint
@@ -830,7 +884,7 @@ parameter_list|,
 name|gdouble
 name|image_y
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gint
@@ -1096,7 +1150,9 @@ name|GimpDrawable
 modifier|*
 name|mask
 parameter_list|,
-name|GimpChannelType
+specifier|const
+name|GimpRGB
+modifier|*
 name|color
 parameter_list|)
 function_decl|;

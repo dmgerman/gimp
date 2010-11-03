@@ -16,14 +16,6 @@ directive|define
 name|__GIMP_DISPLAY_SHELL_CURSOR_H__
 end_define
 
-begin_define
-DECL|macro|GIMP_CURSOR_SIZE
-define|#
-directive|define
-name|GIMP_CURSOR_SIZE
-value|7
-end_define
-
 begin_function_decl
 name|void
 name|gimp_display_shell_set_cursor

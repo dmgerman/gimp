@@ -65,7 +65,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b6e14c60103
+DECL|enum|__anon289c95f50103
 block|{
 DECL|enumerator|PROP_0
 name|PROP_0
@@ -116,7 +116,7 @@ name|GimpHandleType
 name|type
 decl_stmt|;
 DECL|member|anchor
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 decl_stmt|;
 DECL|member|x
@@ -233,7 +233,7 @@ end_function_decl
 
 begin_function_decl
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 name|gimp_canvas_handle_get_extents
 parameter_list|(
@@ -356,9 +356,9 @@ name|NULL
 argument_list|,
 name|NULL
 argument_list|,
-name|GTK_TYPE_ANCHOR_TYPE
+name|GIMP_TYPE_HANDLE_ANCHOR
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|,
 name|GIMP_PARAM_READWRITE
 argument_list|)
@@ -889,10 +889,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_canvas_handle_shift_to_north_west (GtkAnchorType anchor,gdouble x,gdouble y,gint handle_width,gint handle_height,gdouble * shifted_x,gdouble * shifted_y)
+DECL|function|gimp_canvas_handle_shift_to_north_west (GimpHandleAnchor anchor,gdouble x,gdouble y,gint handle_width,gint handle_height,gdouble * shifted_x,gdouble * shifted_y)
 name|gimp_canvas_handle_shift_to_north_west
 parameter_list|(
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -922,7 +922,7 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 name|x
 operator|-=
@@ -938,7 +938,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|x
 operator|-=
@@ -948,12 +948,12 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 comment|/*  nothing, this is the default  */
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|x
 operator|-=
@@ -961,7 +961,7 @@ name|handle_width
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|x
 operator|-=
@@ -975,7 +975,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|y
 operator|-=
@@ -983,7 +983,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|x
 operator|-=
@@ -995,7 +995,7 @@ name|handle_height
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|y
 operator|-=
@@ -1005,7 +1005,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|x
 operator|-=
@@ -1046,10 +1046,10 @@ begin_function
 specifier|static
 specifier|inline
 name|void
-DECL|function|gimp_canvas_handle_shift_to_center (GtkAnchorType anchor,gdouble x,gdouble y,gint width,gint height,gdouble * shifted_x,gdouble * shifted_y)
+DECL|function|gimp_canvas_handle_shift_to_center (GimpHandleAnchor anchor,gdouble x,gdouble y,gint width,gint height,gdouble * shifted_x,gdouble * shifted_y)
 name|gimp_canvas_handle_shift_to_center
 parameter_list|(
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -1079,12 +1079,12 @@ name|anchor
 condition|)
 block|{
 case|case
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 case|:
 comment|/*  nothing, this is the default  */
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH
+name|GIMP_HANDLE_ANCHOR_NORTH
 case|:
 name|y
 operator|+=
@@ -1094,7 +1094,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_WEST
+name|GIMP_HANDLE_ANCHOR_NORTH_WEST
 case|:
 name|x
 operator|+=
@@ -1110,7 +1110,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_NORTH_EAST
+name|GIMP_HANDLE_ANCHOR_NORTH_EAST
 case|:
 name|x
 operator|-=
@@ -1126,7 +1126,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH
+name|GIMP_HANDLE_ANCHOR_SOUTH
 case|:
 name|y
 operator|-=
@@ -1136,7 +1136,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_WEST
+name|GIMP_HANDLE_ANCHOR_SOUTH_WEST
 case|:
 name|x
 operator|+=
@@ -1152,7 +1152,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_SOUTH_EAST
+name|GIMP_HANDLE_ANCHOR_SOUTH_EAST
 case|:
 name|x
 operator|-=
@@ -1168,7 +1168,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_WEST
+name|GIMP_HANDLE_ANCHOR_WEST
 case|:
 name|x
 operator|+=
@@ -1178,7 +1178,7 @@ literal|2
 expr_stmt|;
 break|break;
 case|case
-name|GTK_ANCHOR_EAST
+name|GIMP_HANDLE_ANCHOR_EAST
 case|:
 name|x
 operator|-=
@@ -1340,7 +1340,7 @@ block|}
 operator|*
 name|x
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|x
@@ -1351,7 +1351,7 @@ expr_stmt|;
 operator|*
 name|y
 operator|=
-name|PROJ_ROUND
+name|floor
 argument_list|(
 operator|*
 name|y
@@ -1443,8 +1443,6 @@ name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -1476,8 +1474,6 @@ expr_stmt|;
 name|_gimp_canvas_item_fill
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|cr
 argument_list|)
@@ -1512,8 +1508,6 @@ expr_stmt|;
 name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|cr
 argument_list|)
@@ -1560,8 +1554,6 @@ expr_stmt|;
 name|_gimp_canvas_item_fill
 argument_list|(
 name|item
-argument_list|,
-name|shell
 argument_list|,
 name|cr
 argument_list|)
@@ -1634,8 +1626,6 @@ name|_gimp_canvas_item_stroke
 argument_list|(
 name|item
 argument_list|,
-name|shell
-argument_list|,
 name|cr
 argument_list|)
 expr_stmt|;
@@ -1648,7 +1638,7 @@ end_function
 
 begin_function
 specifier|static
-name|GdkRegion
+name|cairo_region_t
 modifier|*
 DECL|function|gimp_canvas_handle_get_extents (GimpCanvasItem * item,GimpDisplayShell * shell)
 name|gimp_canvas_handle_get_extents
@@ -1804,8 +1794,12 @@ default|default:
 break|break;
 block|}
 return|return
-name|gdk_region_rectangle
+name|cairo_region_create_rectangle
 argument_list|(
+operator|(
+name|cairo_rectangle_int_t
+operator|*
+operator|)
 operator|&
 name|rectangle
 argument_list|)
@@ -1816,13 +1810,17 @@ end_function
 begin_function
 name|GimpCanvasItem
 modifier|*
-DECL|function|gimp_canvas_handle_new (GimpHandleType type,GtkAnchorType anchor,gdouble x,gdouble y,gint width,gint height)
+DECL|function|gimp_canvas_handle_new (GimpDisplayShell * shell,GimpHandleType type,GimpHandleAnchor anchor,gdouble x,gdouble y,gint width,gint height)
 name|gimp_canvas_handle_new
 parameter_list|(
+name|GimpDisplayShell
+modifier|*
+name|shell
+parameter_list|,
 name|GimpHandleType
 name|type
 parameter_list|,
-name|GtkAnchorType
+name|GimpHandleAnchor
 name|anchor
 parameter_list|,
 name|gdouble
@@ -1838,10 +1836,24 @@ name|gint
 name|height
 parameter_list|)
 block|{
+name|g_return_val_if_fail
+argument_list|(
+name|GIMP_IS_DISPLAY_SHELL
+argument_list|(
+name|shell
+argument_list|)
+argument_list|,
+name|NULL
+argument_list|)
+expr_stmt|;
 return|return
 name|g_object_new
 argument_list|(
 name|GIMP_TYPE_CANVAS_HANDLE
+argument_list|,
+literal|"shell"
+argument_list|,
+name|shell
 argument_list|,
 literal|"type"
 argument_list|,

@@ -83,7 +83,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2b1cb4c70103
+DECL|enum|__anon2b7f35260103
 block|{
 DECL|enumerator|APPLY_CHANGED
 name|APPLY_CHANGED
@@ -178,18 +178,6 @@ name|GError
 modifier|*
 modifier|*
 name|error
-parameter_list|)
-function_decl|;
-end_function_decl
-
-begin_function_decl
-specifier|static
-name|void
-name|gimp_layer_mask_real_edit_changed
-parameter_list|(
-name|GimpLayerMask
-modifier|*
-name|layer_mask
 parameter_list|)
 function_decl|;
 end_function_decl
@@ -368,7 +356,7 @@ name|klass
 operator|->
 name|edit_changed
 operator|=
-name|gimp_layer_mask_real_edit_changed
+name|NULL
 expr_stmt|;
 name|item_class
 operator|->
@@ -1237,33 +1225,6 @@ name|layer_mask
 operator|->
 name|edit_mask
 return|;
-block|}
-end_function
-
-begin_function
-specifier|static
-name|void
-DECL|function|gimp_layer_mask_real_edit_changed (GimpLayerMask * layer_mask)
-name|gimp_layer_mask_real_edit_changed
-parameter_list|(
-name|GimpLayerMask
-modifier|*
-name|layer_mask
-parameter_list|)
-block|{
-name|gimp_image_selection_control
-argument_list|(
-name|gimp_item_get_image
-argument_list|(
-name|GIMP_ITEM
-argument_list|(
-name|layer_mask
-argument_list|)
-argument_list|)
-argument_list|,
-name|GIMP_SELECTION_LAYER_ON
-argument_list|)
-expr_stmt|;
 block|}
 end_function
 

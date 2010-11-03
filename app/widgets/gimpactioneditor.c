@@ -84,14 +84,14 @@ function_decl|;
 end_function_decl
 
 begin_macro
-DECL|function|G_DEFINE_TYPE (GimpActionEditor,gimp_action_editor,GTK_TYPE_VBOX)
+DECL|function|G_DEFINE_TYPE (GimpActionEditor,gimp_action_editor,GTK_TYPE_BOX)
 name|G_DEFINE_TYPE
 argument_list|(
 argument|GimpActionEditor
 argument_list|,
 argument|gimp_action_editor
 argument_list|,
-argument|GTK_TYPE_VBOX
+argument|GTK_TYPE_BOX
 argument_list|)
 end_macro
 
@@ -138,6 +138,16 @@ name|GtkWidget
 modifier|*
 name|entry
 decl_stmt|;
+name|gtk_orientable_set_orientation
+argument_list|(
+name|GTK_ORIENTABLE
+argument_list|(
+name|editor
+argument_list|)
+argument_list|,
+name|GTK_ORIENTATION_VERTICAL
+argument_list|)
+expr_stmt|;
 name|gtk_box_set_spacing
 argument_list|(
 name|GTK_BOX
