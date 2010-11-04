@@ -648,7 +648,7 @@ argument_list|(
 literal|"_Cage Transform"
 argument_list|)
 argument_list|,
-literal|"<shift>R"
+literal|"<shift>G"
 argument_list|,
 name|NULL
 argument_list|,
