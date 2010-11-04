@@ -19,7 +19,7 @@ end_define
 begin_typedef
 typedef|typedef
 enum|enum
-DECL|enum|__anon27458de20103
+DECL|enum|__anon2ae26ab00103
 block|{
 DECL|enumerator|GIMP_RECTANGLE_OPTIONS_PROP_0
 name|GIMP_RECTANGLE_OPTIONS_PROP_0
@@ -495,6 +495,22 @@ parameter_list|,
 name|GParamSpec
 modifier|*
 name|pspec
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_comment
+comment|/*  testing helper functions  */
+end_comment
+
+begin_function_decl
+name|GtkWidget
+modifier|*
+name|gimp_rectangle_options_get_width_entry
+parameter_list|(
+name|GimpRectangleOptions
+modifier|*
+name|rectangle_options
 parameter_list|)
 function_decl|;
 end_function_decl

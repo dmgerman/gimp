@@ -167,6 +167,12 @@ end_include
 begin_include
 include|#
 directive|include
+file|<libgimp/gimpimageselect_pdb.h>
+end_include
+
+begin_include
+include|#
+directive|include
 file|<libgimp/gimpitem_pdb.h>
 end_include
 

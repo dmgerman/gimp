@@ -3861,6 +3861,8 @@ argument_list|(
 name|tool_options
 argument_list|)
 argument_list|,
+name|NULL
+argument_list|,
 literal|2
 argument_list|,
 literal|"pattern-view-type"

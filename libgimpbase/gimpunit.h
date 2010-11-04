@@ -266,6 +266,22 @@ function_decl|;
 end_function_decl
 
 begin_function_decl
+name|gchar
+modifier|*
+name|gimp_unit_format_string
+parameter_list|(
+specifier|const
+name|gchar
+modifier|*
+name|format
+parameter_list|,
+name|GimpUnit
+name|unit
+parameter_list|)
+function_decl|;
+end_function_decl
+
+begin_function_decl
 name|gdouble
 name|gimp_pixels_to_units
 parameter_list|(

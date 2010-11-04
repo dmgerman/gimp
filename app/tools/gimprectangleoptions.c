@@ -77,7 +77,7 @@ end_include
 
 begin_enum
 enum|enum
-DECL|enum|__anon2a0efc490103
+DECL|enum|__anon294aa7540103
 block|{
 DECL|enumerator|COLUMN_LEFT_NUMBER
 name|COLUMN_LEFT_NUMBER
@@ -2130,6 +2130,40 @@ argument_list|)
 expr_stmt|;
 break|break;
 block|}
+block|}
+end_function
+
+begin_comment
+comment|/**  * gimp_rectangle_options_get_width_entry:  * @rectangle_options:  *  * Returns: GtkEntry used to enter desired width of rectangle. For  *          testing purposes.  **/
+end_comment
+
+begin_function
+name|GtkWidget
+modifier|*
+DECL|function|gimp_rectangle_options_get_width_entry (GimpRectangleOptions * rectangle_options)
+name|gimp_rectangle_options_get_width_entry
+parameter_list|(
+name|GimpRectangleOptions
+modifier|*
+name|rectangle_options
+parameter_list|)
+block|{
+name|GimpRectangleOptionsPrivate
+modifier|*
+name|private
+decl_stmt|;
+name|private
+operator|=
+name|GIMP_RECTANGLE_OPTIONS_GET_PRIVATE
+argument_list|(
+name|rectangle_options
+argument_list|)
+expr_stmt|;
+return|return
+name|private
+operator|->
+name|width_entry
+return|;
 block|}
 end_function
 

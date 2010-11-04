@@ -18,7 +18,7 @@ end_define
 
 begin_enum
 enum|enum
-DECL|enum|__anon2c437cac0103
+DECL|enum|__anon2a56087e0103
 block|{
 DECL|enumerator|GIMP_UNIT_STORE_UNIT
 name|GIMP_UNIT_STORE_UNIT
@@ -128,6 +128,19 @@ typedef|;
 end_typedef
 
 begin_struct
+DECL|struct|_GimpUnitStore
+struct|struct
+name|_GimpUnitStore
+block|{
+DECL|member|parent_instance
+name|GObject
+name|parent_instance
+decl_stmt|;
+block|}
+struct|;
+end_struct
+
+begin_struct
 DECL|struct|_GimpUnitStoreClass
 struct|struct
 name|_GimpUnitStoreClass
@@ -177,19 +190,6 @@ parameter_list|(
 name|void
 parameter_list|)
 function_decl|;
-block|}
-struct|;
-end_struct
-
-begin_struct
-DECL|struct|_GimpUnitStore
-struct|struct
-name|_GimpUnitStore
-block|{
-DECL|member|parent_instance
-name|GObject
-name|parent_instance
-decl_stmt|;
 block|}
 struct|;
 end_struct

@@ -12,6 +12,18 @@ directive|define
 name|__LIGHTING_IMAGE_H__
 end_define
 
+begin_include
+include|#
+directive|include
+file|<libgimp/gimp.h>
+end_include
+
+begin_include
+include|#
+directive|include
+file|<libgimp/gimpui.h>
+end_include
+
 begin_decl_stmt
 specifier|extern
 name|GimpDrawable
@@ -67,6 +79,21 @@ specifier|extern
 name|guchar
 modifier|*
 name|preview_rgb_data
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|gint
+name|preview_rgb_stride
+decl_stmt|;
+end_decl_stmt
+
+begin_decl_stmt
+specifier|extern
+name|cairo_surface_t
+modifier|*
+name|preview_surface
 decl_stmt|;
 end_decl_stmt
 

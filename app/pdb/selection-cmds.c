@@ -3631,17 +3631,17 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-layer-alpha"
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-item-to-selection"
+literal|""
+argument_list|,
+literal|"gimp-image-select-item"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3702,17 +3702,17 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-load"
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-item-to-selection"
+literal|""
+argument_list|,
+literal|"gimp-image-select-item"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument
@@ -3866,17 +3866,17 @@ name|procedure
 argument_list|,
 literal|"gimp-selection-combine"
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
-literal|"Deprecated: Use 'gimp-item-to-selection' instead."
-argument_list|,
-literal|""
+literal|"Deprecated: Use 'gimp-image-select-item' instead."
 argument_list|,
 literal|""
 argument_list|,
 literal|""
 argument_list|,
-literal|"gimp-item-to-selection"
+literal|""
+argument_list|,
+literal|"gimp-image-select-item"
 argument_list|)
 expr_stmt|;
 name|gimp_procedure_add_argument

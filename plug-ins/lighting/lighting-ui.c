@@ -111,16 +111,6 @@ decl_stmt|;
 end_decl_stmt
 
 begin_decl_stmt
-DECL|variable|gc
-name|GdkGC
-modifier|*
-name|gc
-init|=
-name|NULL
-decl_stmt|;
-end_decl_stmt
-
-begin_decl_stmt
 DECL|variable|previewarea
 name|GtkWidget
 modifier|*
@@ -5693,6 +5683,11 @@ argument_list|,
 name|TRUE
 argument_list|)
 expr_stmt|;
+name|draw_preview_image
+argument_list|(
+name|TRUE
+argument_list|)
+expr_stmt|;
 if|if
 condition|(
 name|gimp_dialog_run
@@ -5718,6 +5713,17 @@ condition|)
 name|g_free
 argument_list|(
 name|preview_rgb_data
+argument_list|)
+expr_stmt|;
+if|if
+condition|(
+name|preview_surface
+operator|!=
+name|NULL
+condition|)
+name|cairo_surface_destroy
+argument_list|(
+name|preview_surface
 argument_list|)
 expr_stmt|;
 name|gtk_widget_destroy

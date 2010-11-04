@@ -5664,7 +5664,7 @@ literal|"gimp-context-set-antialias"
 argument_list|,
 literal|"Set the antialias setting."
 argument_list|,
-literal|"This procedure modifies the antialias setting. This settings affects the following procedures: gimp-item-to-selection."
+literal|"This procedure modifies the antialias setting. If antialiasing is turned on, the edges of selected region will contain intermediate values which give the appearance of a sharper, less pixelized edge. This should be set as TRUE most of the time unless a binary-only selection is wanted. This settings affects the following procedures: The entire gimp-image-select-foo group of procedures."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5798,7 +5798,7 @@ literal|"gimp-context-set-feather"
 argument_list|,
 literal|"Set the feather setting."
 argument_list|,
-literal|"This procedure modifies the feather setting. This settings affects the following procedures: gimp-item-to-selection."
+literal|"This procedure modifies the feather setting. If the feather option is enabled, selections will be blurred before combining. The blur is a gaussian blur; its radii can be controlled using 'gimp-context-set-feather-radius'. This settings affects the following procedures: The entire gimp-image-select-foo group of procedures."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
@@ -5958,7 +5958,7 @@ literal|"gimp-context-set-feather-radius"
 argument_list|,
 literal|"Set the feather radius setting."
 argument_list|,
-literal|"This procedure modifies the feather radius setting. This settings affects the following procedures: gimp-item-to-selection."
+literal|"This procedure modifies the feather radius setting. This settings affects the following procedures: The entire gimp-image-select-foo group of procedures."
 argument_list|,
 literal|"Michael Natterer<mitch@gimp.org>"
 argument_list|,
