@@ -2462,7 +2462,7 @@ name|HANDLE_SIZE
 argument_list|,
 name|HANDLE_SIZE
 argument_list|,
-name|GTK_ANCHOR_CENTER
+name|GIMP_HANDLE_ANCHOR_CENTER
 argument_list|)
 expr_stmt|;
 block|}
@@ -2772,10 +2772,12 @@ decl_stmt|;
 name|GeglNode
 modifier|*
 name|gegl
-decl_stmt|,
+decl_stmt|;
+name|GeglNode
 modifier|*
 name|input
-decl_stmt|,
+decl_stmt|;
+name|GeglNode
 modifier|*
 name|output
 decl_stmt|;
