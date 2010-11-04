@@ -1165,7 +1165,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_normal:  * @vector: a pointer to a #GimpVector2.  *  * Compute a normalized perpendicular vector to @vector  *  * Returns: a #GimpVector2 perpendicular to @vector, with a length of 1.0.  **/
+comment|/**  * gimp_vector2_normal:  * @vector: a pointer to a #GimpVector2.  *  * Compute a normalized perpendicular vector to @vector  *  * Returns: a #GimpVector2 perpendicular to @vector, with a length of 1.0.  *   * Since: 2.8  **/
 end_comment
 
 begin_function
@@ -1211,7 +1211,7 @@ block|}
 end_function
 
 begin_comment
-comment|/**  * gimp_vector2_normal_val:  * @vector: a #GimpVector2.  *  * This function is identical to gimp_vector2_normal() but the vector  * is passed by value rather than by reference.  *  * Returns: a #GimpVector2 perpendicular to @vector, with a length of 1.0.  **/
+comment|/**  * gimp_vector2_normal_val:  * @vector: a #GimpVector2.  *  * This function is identical to gimp_vector2_normal() but the vector  * is passed by value rather than by reference.  *  * Returns: a #GimpVector2 perpendicular to @vector, with a length of 1.0.  *  * Since: 2.8  **/
 end_comment
 
 begin_function

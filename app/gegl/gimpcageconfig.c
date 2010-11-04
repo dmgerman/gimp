@@ -60,7 +60,7 @@ end_include
 begin_include
 include|#
 directive|include
-file|"libgimpbase/gimpbaseenums.h"
+file|"tools/tools-enums.h"
 end_include
 
 begin_include
